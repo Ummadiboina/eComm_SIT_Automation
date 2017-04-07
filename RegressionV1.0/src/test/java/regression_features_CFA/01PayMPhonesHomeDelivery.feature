@@ -1,10 +1,11 @@
 Feature: CFA PayM Phones Home delivery E2E journey
 
-  @smokeTest
+  @smokeTesthomedelivery
   Scenario: CFA PayM Phones Home delivery E2E journey
     Given I am an CFA user and Lands on shop page
     And navigate to PAYM Phones page
-    And I choose PayM handset
+    And I choose PayM "handset"
+    And Choose to view all tariffs from device details page
     And Land on the 'Tariffs and extra' page
     And I Land on the basket page and choose home delivery option
     And click on "go to checkout" button

@@ -5,10 +5,10 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 
 
-public class ShopLandingPage {
+public class PhonesDetailsPage {
 	
 	//The below webelement is not right need to edit this
-	@FindBy(how=How.XPATH,using="(//a[contains(text(),'Remove')])[1]") 
-	public static WebElement Homepagelink;
+	@FindBy(how=How.ID,using=("//*[@id='deviceDetailsSubmit']"))
+	public static WebElement ViewOurTariffs;
 	
 }
