@@ -2,7 +2,6 @@ package actionsPerformed;
 
 
 import org.apache.log4j.Logger;
-import org.junit.Assert;
 
 import helpers.Environment;
 
