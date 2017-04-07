@@ -1,5 +1,5 @@
 Feature: CFA PayM Phones Home delivery E2E journey
-
+#launch hooks and get browser
   @smokeTesthomedelivery
   Scenario: CFA PayM Phones Home delivery E2E journey
     Given I am an CFA user and Lands on shop page
@@ -14,3 +14,5 @@ Feature: CFA PayM Phones Home delivery E2E journey
     And Continue to Agreements page and confirm all the agreement checks
     And Continue to Review page and review the order
     Then order confirmation is displayed
+    
+    #Close the browser
