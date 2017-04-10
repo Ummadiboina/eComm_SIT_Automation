@@ -40,12 +40,12 @@ public static void DisplayContent(String ElementName)
 {
 	if(ElementName.equalsIgnoreCase("paymheader"))
 	{
-		System.out.println("Pay monthly sims banner header - as per today is displayed :" +pageobjects.TariffAndExtrasPage.Tariffvaladity.getText());
+		System.out.println("Pay monthly sims banner header - as per today is displayed :" +pageobjects.SimFreeExtrasPage.Tariffvaladity.getText());
 
 	}	
 	else
 	{
-	  System.out.println("The Tariff detail is  Absent and the Text is :" +pageobjects.TariffAndExtrasPage.Tariffvaladity.getText());	
+	  System.out.println("The Tariff detail is  Absent and the Text is :" +pageobjects.SimFreeExtrasPage.Tariffvaladity.getText());	
 	
     }
 	

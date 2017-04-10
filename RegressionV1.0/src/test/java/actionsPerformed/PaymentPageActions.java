@@ -126,7 +126,6 @@ public class PaymentPageActions extends Environment {
 		   System.out.println("*********We are done***************");
 		   log.debug("Exiting the Payments section");
 		   driver.switchTo().defaultContent();
-		   Thread.sleep(3000);
 		  // System.out.println(driver.getTitle());
 		   	   
 		   

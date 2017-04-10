@@ -3,6 +3,7 @@ package GlobalActions;
 import java.awt.AWTException;
 import java.awt.Robot;
 import java.util.NoSuchElementException;
+import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.ElementNotVisibleException;
@@ -25,14 +26,18 @@ static	Logger log = Logger.getLogger("devpinoyLogger");
 	 
 	  //Below will navigate to PayM Phones Page
 	 
-	public static void PayMPhonesLandingPage() throws InterruptedException, AWTException 
+	public static void PayMPhonesLandingPage() throws Exception 
 	 {
-		  
+		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+		boolean Worksfine = false;
+		while(!Worksfine){
+
 			try
 	    	{
-		  System.out.println("Performing PAYM Phones landing page navigations");
+		 
+		System.out.println("Performing PAYM Phones landing page navigations");
 		  log.debug("Performing PAYM Phones landing page navigations");
-
+		  
 		  Point coordinates = pageobjects.MouseHoverPage.MoveMouseOnShopTab.getLocation();
 		  Robot robot = new Robot();
 		  robot.mouseMove(coordinates.getX(),coordinates.getY()+120);
@@ -59,8 +64,10 @@ static	Logger log = Logger.getLogger("devpinoyLogger");
    		  robot2.mouseMove(coordinates2.getX(),coordinates.getY()+120);
    		log.debug("Moved Mouse to somewhere side of page");
    		
+   		Worksfine = true;
+
 	    	}
-	    	catch(ElementNotVisibleException e)
+	    	catch(ElementNotVisibleException  e)
 	    	{
 	    	//check if popup is present, if yes, handle it.
 	    		Environment.driver.switchTo().frame("edr_l_first"); 
@@ -75,28 +82,9 @@ static	Logger log = Logger.getLogger("devpinoyLogger");
 	    		log.debug("Exiting the Survey");
 	    		Environment.driver.switchTo().defaultContent();
 	    		Thread.sleep(3000);
-	    		 System.out.println("Performing PAYM Phones landing page navigations");
-		    		log.debug("Performing PAYM Phones landing page navigations");
-
-	   		  Point coordinates = pageobjects.MouseHoverPage.MoveMouseOnShopTab.getLocation();
-	   		  Robot robot = new Robot();
-	   		  robot.mouseMove(coordinates.getX(),coordinates.getY()+120);
-	   		 		  
-	   		  Actions action = new Actions(driver);
-	   		  action.moveToElement(pageobjects.MouseHoverPage.MoveMouseOnPhones).build().perform();
-	   		  Thread.sleep(2000);
-	   		  action.moveToElement(pageobjects.MouseHoverPage.MoveMouseOnPAYMPhones).build().perform();
-	   		  Thread.sleep(2000);
-	   		  pageobjects.MouseHoverPage.MoveMouseOnPAYMPhones.click();
-
-	   		  //Move mouse pointer away from location
-	   		  Point coordinates2 = driver.findElement(By.xpath("//*[@id='header-consumer']/div")).getLocation();
-	      		  Robot robot2 = new Robot();
-	      		  robot2.mouseMove(coordinates2.getX(),coordinates.getY()+120);
-	    		
-	    		
+	    		    		
 	    	}
-			
+		}
 	  }
 	
 	  //Below will navigate to PayG Phones Page

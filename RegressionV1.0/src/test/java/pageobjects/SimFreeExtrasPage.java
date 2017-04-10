@@ -4,13 +4,13 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 
-public class TariffAndExtrasPage {
+public class SimFreeExtrasPage {
 
-	@FindBy(how=How.XPATH,using="(//a[contains(text(),'Pay Monthly')])[5]")
-	public static WebElement PayMTab;
+		@FindBy(how=How.XPATH,using="(//a[contains(text(),'Pay Monthly')])[5]")
+		public static WebElement PayMTab;
 	
-	@FindBy(how=How.XPATH,using=("(//a[contains(text(),'Pay As You Go')])[9]"))
-	public static WebElement PayGTab;		
+		@FindBy(how=How.XPATH,using=("(//a[contains(text(),'Pay As You Go')])[9]"))
+		public static WebElement PayGTab;		
 		
 		@FindBy(how=How.XPATH,using=("//*[@id='header']/div[2]/div[1]/div/button"))
 		public static WebElement GotoBasket;

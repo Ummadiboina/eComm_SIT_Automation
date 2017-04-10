@@ -21,7 +21,7 @@ public class BasketPageActions extends Environment
 	public static void validatelabel() throws InterruptedException
 	{   
 		System.out.println(" ");
-		System.out.println("SHOP_BASKET_PAGE_VALIDATION");
+		System.out.println("Verifying Shop basket pages");
 		  log.debug("Verifying Shop basket pages");
 
 		
@@ -71,8 +71,7 @@ public class BasketPageActions extends Environment
 
 	public static void ValidateBasketPage() throws InterruptedException
 	{   
-		System.out.println("SHOP_BASKET_PAGE_VALIDATION");
-		
+	
 		  log.debug("Shop basket pages validations");
 
 		
@@ -94,10 +93,76 @@ public class BasketPageActions extends Environment
 		Thread.sleep(5000);
 	 		
 	}
+	
+	//Below is for Clicking on the goto Checkout button
 	public static void gotoCheckout()
 	{
 		pageobjects.BasketPage.checkoutbtn.click();
 		log.debug("Clicking on Checkout button");
 	}
 
+	public static void ValidateBasketPageContents() throws InterruptedException
+	{   
+	
+		  log.debug("Shop basket pages validations"+driver.getTitle());
+
+		  boolean fname=pageobjects.BasketPage.checkoutbtn.isEnabled(); 
+		  System.out.print(fname);
+
+
+		if(fname!=false)
+		 {
+			System.out.println("Checkout is Enabled and Present and the Text is :" +pageobjects.BasketPage.checkoutbtn.getText() );
+			
+			  log.debug("Checkout is Present and the Text is :" +pageobjects.BasketPage.checkoutbtn.getText());
+			  System.out.println("Checkout is Enabled and Present and the Text is :" +pageobjects.BasketPage.DeviceDetailsDisplay.getText() );
+			 
+			 }
+		else
+		 {
+		  System.out.println("Go To Checkout is Absent and the Text is :" +pageobjects.BasketPage.checkoutbtn.getText());
+		  log.debug("Go To Checkout is Absent and the Text is :" +pageobjects.BasketPage.checkoutbtn.getText());
+
+		 }
+		//Below will display contents of the phone section
+		  
+		log.debug("The Main Headercontents are : " +pageobjects.BasketPage.MainHeaders.getText());
+		log.debug("The Phone contents are : " +pageobjects.BasketPage.DeviceDetailsDisplay.getText());
+
+		//log.debug("The Airtime details are :" +pageobjects.BasketPage.AirtimeDetails.getText());
+		String Stf1=driver.findElement(By.cssSelector("section.airtime-plan.is-refresh")).getText();
+		System.out.println("The String is "+Stf1);
+		
+		log.debug("The Airtime contents are : " +pageobjects.BasketPage.AirtimeDetails.getText());
+
+		log.debug("The Basket Totals are : " +pageobjects.BasketPage.totals.getText());
+		
+		log.debug("The Basket Totals are : " +pageobjects.BasketPage.HomeDeliveryText.getText());
+
+	}
+	
+	public static void CollectionorDelivery(String elementName) throws InterruptedException
+	{   
+		
+		if(elementName.contains("homeDelivery"))
+			{
+				System.out.println("HomeDelivery is Selected");
+
+				pageobjects.BasketPage.HomeDeliverySelect.click();
+				//Assert.assertEquals(elementName,"Galaxy S7 is not found");
+				log.debug("HomeDelivery is Selected");
+
+			}
+		if(elementName.contains("clickAndCollect"))
+		{
+			System.out.println("clickAndCollect is Selected");
+
+			pageobjects.BasketPage.clickAndCollectSelect.click();
+			//Assert.assertEquals(elementName,"Galaxy S7 is not found");
+			log.debug("click And Collect is Selected");
+
+		}
+			
+		
+	}
 }

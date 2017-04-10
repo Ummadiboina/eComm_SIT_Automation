@@ -1,0 +1,56 @@
+09/04/2017 23:53:53 devpinoyLogger Called openBrowser
+09/04/2017 23:53:53 devpinoyLogger The Relative path of the user.dirC:\Automation\Git Repositories New\RegressionV1.0
+09/04/2017 23:53:53 devpinoyLogger The Env prop path is C:\Automation\Git Repositories New\RegressionV1.0\src\test\java\Properties\AppConfig.properties
+09/04/2017 23:53:53 devpinoyLogger The Browser type read from EnvProp file is chrome
+09/04/2017 23:53:53 devpinoyLogger The current url is https://www.o2.co.uk/shop
+09/04/2017 23:53:59 devpinoyLogger Invoked browser
+09/04/2017 23:54:26 devpinoyLogger Invoked URL
+09/04/2017 23:54:27 devpinoyLogger Deleted all Cookies
+09/04/2017 23:54:27 devpinoyLogger Maxismised window
+09/04/2017 23:54:27 devpinoyLogger We are in the Shop Home page
+09/04/2017 23:54:27 devpinoyLogger The Page title is O2 | Shop | Latest Pay & Go, Pay Monthly and Sim Only Deals
+09/04/2017 23:54:27 devpinoyLogger Performing PAYM Phones landing page navigations
+09/04/2017 23:54:28 devpinoyLogger Moving Mouse on the Shop Tab
+09/04/2017 23:54:28 devpinoyLogger Moving Mouse on the Phones dropdown
+09/04/2017 23:54:30 devpinoyLogger Moving Mouse on the Paymonthly link
+09/04/2017 23:54:40 devpinoyLogger Clicking on PayM Phones
+09/04/2017 23:54:40 devpinoyLogger Moved Mouse to somewhere side of page
+09/04/2017 23:54:55 devpinoyLogger Selected GalaxyS7
+09/04/2017 23:54:56 devpinoyLogger Currently in Device details page
+09/04/2017 23:54:56 devpinoyLogger The Page title is Samsung Galaxy S7 Specs, Contract Deals & Pay As You Go
+09/04/2017 23:55:09 devpinoyLogger Clicked on ViewOurTariffs
+09/04/2017 23:55:10 devpinoyLogger Selected a Random Tariff
+09/04/2017 23:55:22 devpinoyLogger Clicked on Add to Basket in Tariff and Extras page
+09/04/2017 23:55:22 devpinoyLogger Shop basket pages validationsO2 | Basket
+09/04/2017 23:55:22 devpinoyLogger Checkout is Present and the Text is :
+09/04/2017 23:55:23 devpinoyLogger The Main Headercontents are :Your order
+Upfront
+Monthly
+09/04/2017 23:55:23 devpinoyLogger The Phone contents are :Samsung Galaxy S7
+32GB Gold Platinum
+?????
+?????
+Average user rating
+"Super fast phone"
+Mr Bike Rider, (September 2016)
+What's my Device Plan?
+£9.99
+£16.00
+09/04/2017 23:55:23 devpinoyLogger The Phone contents are :Airtime Plan
+24 month contract
+30GB data
+4G ready
+Unlimited texts
+Unlimited mins
+Subject to RPI 1
+Choose a different tariff
+More details
+Save £24. Was £55 tariff.
+Ends 26 April.
+£38.00
+09/04/2017 23:55:23 devpinoyLogger The Basket Totals are :Total cost
+£9.99
+upfront
+£54.00
+monthly
+09/04/2017 23:55:37 devpinoyLogger Clicking on Checkout button
