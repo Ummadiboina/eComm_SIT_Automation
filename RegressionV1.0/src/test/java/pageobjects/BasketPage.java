@@ -28,6 +28,32 @@ public class BasketPage {
 	public static WebElement monthlycost ;
 	
 	@FindBy(how=How.XPATH,using=("//*[@id='header']/div[2]/div[1]/div/button"))
-	WebElement GotoBasket;
+	public static WebElement GotoBasket;
 	
+	@FindBy(how=How.XPATH,using=("//Section[@class='product-details']"))
+	public static WebElement DeviceDetailsDisplay;
+	
+	@FindBy(how=How.XPATH,using=("//div[@class='your-order']"))
+	public static WebElement MainHeaders;
+	
+	
+	
+	//String text = driver.findElement(By.cssSelector('.airtime-plan.is-refresh')).getText()
+	//@FindBy(how=How.css,using=(.airtime-plan.is-refresh")
+	@FindBy(css= "section.airtime-plan.is-refresh") 
+	public static WebElement AirtimeDetails;
+
+	@FindBy(how=How.XPATH,using=("//li[@class='totals']"))
+	public static WebElement totals;
+	
+	@FindBy(how=How.ID,using=("homeDelivery"))
+	public static WebElement HomeDeliverySelect;
+	
+	@FindBy(how=How.XPATH,using=("//div[@class='hasDelayedDeliveryItems']"))
+	public static WebElement HomeDeliveryText;
+	
+	@FindBy(how=How.ID,using=("clickAndCollect"))
+	public static WebElement clickAndCollectSelect;
+
+
 }

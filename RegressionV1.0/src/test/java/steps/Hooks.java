@@ -2,6 +2,7 @@ package steps;
 
 import java.net.MalformedURLException;
 
+import org.apache.log4j.Logger;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
@@ -15,6 +16,8 @@ import helpers.*;
 
 public class Hooks extends Environment{
 	
+	static	Logger log = Logger.getLogger("devpinoyLogger");
+
    // protected static WebDriver driver;
 
 	    @Before
@@ -24,14 +27,33 @@ public class Hooks extends Environment{
      */
       public WebDriver openBrowser() throws MalformedURLException {
     	System.out.println("Called openBrowser");
+		  log.debug("Called openBrowser");
+
     	String relativePath = System.getProperty("user.dir");
+    	log.debug("The Relative path of the user.dir"+relativePath);
+    	
     	String EnvPropFilePath = relativePath + "\\src\\test\\java\\Properties\\AppConfig.properties";
+    	log.debug("The Env prop path is "+EnvPropFilePath);
+    	
     	String BrowserType = Filereadingutility.getPropertyValue(EnvPropFilePath, "Browser_Type");
+    	log.debug("The Browser type read from EnvProp file is "+BrowserType);
+    	
     	String Currenturl = Filereadingutility.getPropertyValue(EnvPropFilePath, "url");
+    	log.debug("The current url is "+Currenturl);
+
+    	
     	BrowserHelper.Invoke_browser(BrowserType);
+    	log.debug("Invoked browser");
+    	
     	driver.get(Currenturl);
+    	log.debug("Invoked URL");
+    	
     	Environment.driver.manage().deleteAllCookies();
+    	log.debug("Deleted all Cookies");
+    	
     	Environment.driver.manage().window().maximize();
+    	log.debug("Maxismised window");
+    	
 		return null;
     }
 
@@ -46,10 +68,11 @@ public class Hooks extends Environment{
         try {
         
         	 scenario.write("Current Page URL is " +driver.getCurrentUrl());
+        	 log.debug("The url where it has failed is "+driver.getCurrentUrl());
 //            byte[] screenshot = getScreenshotAs(OutputType.BYTES);
             byte[] screenshot = ((TakesScreenshot)driver).getScreenshotAs(OutputType.BYTES);
             scenario.embed(screenshot, "image/png");
-        } catch (WebDriverException somePlatformsDontSupportScreenshots) {
+         } catch (WebDriverException somePlatformsDontSupportScreenshots) {
             System.err.println(somePlatformsDontSupportScreenshots.getMessage());
         }
         

@@ -17,7 +17,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 @CucumberOptions(
-		features = {"src//test//java//regression_features_CFA"}, glue = {"steps"},
+		features = {"src//test//java//consumerScenarios_Features"}, glue = {"steps"},
 		tags = {"@smokeTesthomedelivery"}, format = {"json:testResult/cucumber.json", "pretty", "html:testResult/report"},
 		plugin = {"com.cucumber.listener.ExtentCucumberFormatter"}
 		)
