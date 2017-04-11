@@ -11,35 +11,27 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-public class Screenshots {
+import helpers.Environment;
+
+public class Screenshots extends Environment{
 	
 //public static void main(String[] args) throws IOException {
 	
 	//To Take screenshot
 
-	
-	/*
-	System.setProperty("webdriver.chrome.driver", "C:\\Selenium\\chromedriver.exe");
-	WebDriver driver = new ChromeDriver();
-	driver.get("http://www.google.com");
-	File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-	// Now you can do whatever you need to do with it, for example copy somewhere
-	FileUtils.copyFile(scrFile, new File("C:\\Selenium\\BDDAutomation\\Screenshots\\screenshot.png"));
-*/
-	 
-		WebDriver driver = new ChromeDriver();
-	public void screennewPics() throws IOException, InterruptedException
+ 
+		//WebDriver driver = new ChromeDriver();
+	public static void screennewPics() throws IOException, InterruptedException
 	{
 	    File scr=((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-	    File dest= new File("C:\\Selenium\\BDDAutomation\\Screenshots\\screenshot_"+timestamp()+".jpeg");
+	    File dest= new File("RegressionV1.0\\ScreenshotsForSteps\\Screenshot_"+timestamp()+".jpeg");
 	    FileUtils.copyFile(scr, dest);
+	    //C:\Automation\Git Repositories New\RegressionV1.0\ScreenshotsForSteps
 	}
 
-	public String timestamp() {
+	public static String timestamp() {
 	    return new SimpleDateFormat("yyyy-MM-dd HH-mm-ss").format(new Date());
 	}
-	
-	
-	
+		
 }
 	

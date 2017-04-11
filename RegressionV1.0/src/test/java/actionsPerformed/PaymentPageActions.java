@@ -18,7 +18,7 @@ import org.openqa.selenium.support.How;
 import helpers.*;
 import helpers.Environment;
 import pageobjects.PaymentPage;
-import steps.Hooks;
+
 
 public class PaymentPageActions extends Environment {
 	
@@ -64,41 +64,7 @@ public class PaymentPageActions extends Environment {
 	  
 	  public static void Card_Details() throws InterruptedException, AWTException
 	  {
-		  /*
-		
-		WebElement fr = driver.findElement(By.id("payment-iframe"));
-
-		  driver.switchTo().frame(fr);
-		  Thread.sleep(5000);
-		  
-		  pageobjects.PaymentPage.Name_On_Card.sendKeys("Test Accepta");
-		  Thread.sleep(5000);
-		  Robot r = new Robot();
-		  r.keyPress(KeyEvent.VK_ENTER);
-		  r.keyRelease(KeyEvent.VK_ENTER);
-		  pageobjects.PaymentPage.Card_Number.sendKeys("4539791001730106");
-		  Thread.sleep(5000);
-		  Robot r1 = new Robot();
-		  r1.keyPress(KeyEvent.VK_ENTER);
-		  r1.keyRelease(KeyEvent.VK_ENTER);
-		  pageobjects.PaymentPage.Expiry_Month.sendKeys("01");
-		  Thread.sleep(5000);
-		  Robot r2 = new Robot();
-		  r2.keyPress(KeyEvent.VK_ENTER);
-		  r2.keyRelease(KeyEvent.VK_ENTER);
-		  pageobjects.PaymentPage.Expiry_Year.sendKeys("2018");
-		  Thread.sleep(5000);
-		  Robot r3 = new Robot();
-		  r3.keyPress(KeyEvent.VK_ENTER);
-		  r3.keyRelease(KeyEvent.VK_ENTER);
-		  pageobjects.PaymentPage.CVV_Security_Code.sendKeys("123");
-		  Thread.sleep(5000);
-		  Robot r4 = new Robot();
-		  r4.keyPress(KeyEvent.VK_ENTER);
-		  r4.keyRelease(KeyEvent.VK_ENTER);
-		  pageobjects.PaymentPage.Continue_Next_Step.sendKeys(Keys.ENTER);
-		  
-		  driver.switchTo().defaultContent(); */
+		 
 		  
 		  driver.switchTo().frame("payment-iframe"); //switching the frame by ID
 
@@ -132,7 +98,24 @@ public class PaymentPageActions extends Environment {
 	  }
 	  
 	  
+	  public static void ValidateNonCreditPaymentPage()
+	  {
+			//Below will display contents of the section
+
+		  log.debug("Payment pages validations"+driver.getTitle());
+
+			log.debug("The Main Headercontents are : " +pageobjects.PaymentPage.UpfrontPaymentAmount.getText());
+			
+			
+			log.debug("The Basket contents are : " +pageobjects.PaymentPage.BasketContent.getText());
+
+			
+		
+		  
+
+		
+	  }
 	  
-	  
+	  //upfront-payment-amount
 	  
 }

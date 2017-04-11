@@ -11,7 +11,7 @@ import helpers.Environment;
 
 
 
-public class SimFreeDevicePageActions  extends Environment{
+public class LikeNewSimFreeDevicePageActions  extends Environment{
 	static Logger log = Logger.getLogger("devpinoyLogger");
 
 	public static void validatetile()

@@ -12,4 +12,31 @@ public class AccessoryPage {
 		
 		@FindBy(how=How.XPATH,using="//h2[contains(text(),'Sort')]")
 		public static WebElement AccessorySortTab;
+		
+		@FindBy(how=How.XPATH,using="//a[contains(@data-qa-device-model-family, 'AirPods')]")
+		public static WebElement AppleAirpods;
+		
+		@FindBy(how=How.XPATH,using="//a[contains(@data-qa-device-model-family, 'Onyx Studio 3 Bluetooth Speaker')]")
+		public static WebElement HarmanKardonOnyxStudio3;
+		
+		@FindBy(how=How.XPATH,using="//a[contains(@data-qa-device-model-family, 'Pencil for iPad Pro')]")
+		public static WebElement PencilforiPadPro;
+		
+		@FindBy(how=How.XPATH,using="//a[contains(@data-qa-device-model-family, 'Clip 2')]")
+		public static WebElement Clip2;
+		
+		
+		@FindBy(how=How.XPATH,using="//a[contains(@data-qa-device-model-family, 'Xtreme')]")
+		public static WebElement JBLXtreme;
+		
+		@FindBy(how=How.XPATH,using="//*[@id='o2-page-wrapper']/div[2]/div[3]/div[1]/div[1]/div/div/div/div/a")
+		public static WebElement RandomAccessory;
+		
+		//Below is for clicking on the Basket icon in Accessories page
+		
+		@FindBy(how=How.ID,using="basketIcon")
+		public static WebElement Basket;
+		
+		
+		
 }

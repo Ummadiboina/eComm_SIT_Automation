@@ -1,6 +1,8 @@
 package GlobalActions;
 
 
+import org.apache.log4j.Logger;
+
 import helpers.Environment;
 
 
@@ -8,12 +10,15 @@ import helpers.Environment;
 
 public class Autoredirection extends Environment {
 	
-	
+	static Logger log = Logger.getLogger("devpinoyLogger");
+
 
 public static void redirect() throws InterruptedException{
 		
 	String url=driver.getCurrentUrl();
 	System.out.println("The current url is "+url);
+	log.debug("The current url is "+url);
+
 	int length = url.length();//length of url
 	System.out.println("the length of url is "+length);
 	int numofChars=1;
@@ -24,6 +29,7 @@ public static void redirect() throws InterruptedException{
 String refurl = ".ref."; // put newurl name here
 String newUrl = url.substring(0, preo2inurl-numofChars)+refurl+url.substring(12,length);
 System.out.println("The new url is "+newUrl);
+log.debug("The new url is "+newUrl);
 
 driver.get(newUrl);
 Thread.sleep(4000);
@@ -34,6 +40,7 @@ public static void redirectUpgrades() throws InterruptedException{
 	
 	String url=driver.getCurrentUrl();
 	System.out.println("The current url is "+url);
+	log.debug("The current url is "+url);
 	int length = url.length();//length of url
 	System.out.println("the length of url is "+length);
 	int numofChars=2;
@@ -44,6 +51,7 @@ public static void redirectUpgrades() throws InterruptedException{
 String refurl = ".ref."; // put newurl name here
 String newUrl = url.substring(0, preo2inurl-numofChars)+refurl+url.substring(17,length);
 System.out.println("The new url is "+newUrl);
+log.debug("The new url is "+newUrl);
 
 driver.get(newUrl);
 Thread.sleep(4000);

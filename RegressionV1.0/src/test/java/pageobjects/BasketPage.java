@@ -35,7 +35,7 @@ public class BasketPage {
 	
 	@FindBy(how=How.XPATH,using=("//div[@class='your-order']"))
 	public static WebElement MainHeaders;
-	
+
 	
 	
 	//String text = driver.findElement(By.cssSelector('.airtime-plan.is-refresh')).getText()
@@ -55,5 +55,11 @@ public class BasketPage {
 	@FindBy(how=How.ID,using=("clickAndCollect"))
 	public static WebElement clickAndCollectSelect;
 
-
+	
+	//specific to accessories
+	
+	//orders
+	@FindBy(how=How.XPATH,using=("//li[@class='accessory has-image']"))
+	public static WebElement AccessoryDetails;
+	
 }

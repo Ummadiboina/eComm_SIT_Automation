@@ -57,11 +57,15 @@ public class PaymentPage {
 	    
 	  @FindBy(how=How.XPATH,using="//tbody/tr[2]/td[2]/b/input[1]") 
 		public static WebElement checkoutPassword;
-		
-	  
+  
 	  @FindBy(how=How.XPATH,using="//tbody/tr[4]/td[2]/b/input") 
 		public static WebElement CheckoutSubmitbutton;
 		
+	  @FindBy(how=How.ID,using="upfront-payment-amount") 
+	  public static WebElement UpfrontPaymentAmount;
 	  
-	  
+	  @FindBy(how=How.XPATH,using="//table[@class='basket-table']") 
+	  public static WebElement BasketContent;
+
+	
 }

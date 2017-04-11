@@ -10,6 +10,5 @@ Feature: PAYG MBB only E2E journey
     And click on "go to checkout" button
     And input all the fields on the Delivery page and Click on the 'Continue button'
     And I land on the Non Credit check payment page and input all the details and click 'Continue on next step'
-    And Continue to Agreements page and confirm all the agreement checks
     And Continue to Review page and review the order
     Then order confirmation is displayed
