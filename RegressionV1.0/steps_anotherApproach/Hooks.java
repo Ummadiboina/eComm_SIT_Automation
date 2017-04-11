@@ -1,4 +1,4 @@
-package steps;
+package steps_anotherApproach;
 
 import java.net.MalformedURLException;
 
@@ -48,10 +48,10 @@ public class Hooks extends Environment{
     	driver.get(Currenturl);
     	log.debug("Invoked URL");
     	
-    	driver.manage().deleteAllCookies();
+    	Environment.driver.manage().deleteAllCookies();
     	log.debug("Deleted all Cookies");
     	
-    	driver.manage().window().maximize();
+    	Environment.driver.manage().window().maximize();
     	log.debug("Maxismised window");
     	
 		return null;
@@ -78,7 +78,7 @@ public class Hooks extends Environment{
         
         }
         Thread.sleep(2000);
-//driver.close();
+       Environment.driver.close();
         
     }
     

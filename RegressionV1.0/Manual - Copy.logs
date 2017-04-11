@@ -1,0 +1,76 @@
+11/04/2017 18:33:26 devpinoyLogger Called openBrowser
+11/04/2017 18:33:26 devpinoyLogger The Relative path of the user.dirC:\Automation\Git Repositories New\RegressionV1.0
+11/04/2017 18:33:26 devpinoyLogger The Env prop path is C:\Automation\Git Repositories New\RegressionV1.0\src\test\java\Properties\AppConfig.properties
+11/04/2017 18:33:26 devpinoyLogger The Browser type read from EnvProp file is chrome
+11/04/2017 18:33:26 devpinoyLogger The current url is https://www.ref.o2.co.uk/shop
+11/04/2017 18:33:37 devpinoyLogger Invoked browser
+11/04/2017 18:33:45 devpinoyLogger Invoked URL
+11/04/2017 18:33:46 devpinoyLogger Deleted all Cookies
+11/04/2017 18:33:46 devpinoyLogger Maxismised window
+11/04/2017 18:33:47 devpinoyLogger We are in the Shop Home page
+11/04/2017 18:33:47 devpinoyLogger The Page title is O2 | Shop | Latest Pay & Go, Pay Monthly and Sim Only Deals
+11/04/2017 18:33:47 devpinoyLogger Performing Accessories navigations
+11/04/2017 18:34:02 devpinoyLogger Moved Mouse to somewhere side of page
+11/04/2017 18:34:02 devpinoyLogger The current url is https://www.o2.co.uk/shop/accessories/all/#sort=content.sorting.featured&page=1
+11/04/2017 18:34:02 devpinoyLogger The new url is https://www.ref.o2.co.uk/shop/accessories/all/#sort=content.sorting.featured&page=1
+11/04/2017 18:34:12 devpinoyLogger Selecting Any Accessory
+11/04/2017 18:34:12 devpinoyLogger Selected an accessory -  PRIORITY OFFER
+?????
+Harman Kardon Onyx Studio 3 Bluetooth Speaker
+Get 50% off, with Priority. Now £99.99. Ends 26 April.
+£199.99
+11/04/2017 18:34:12 devpinoyLogger Adding Accesories to basket
+11/04/2017 18:34:21 devpinoyLogger Exception in finding value
+11/04/2017 18:34:21 devpinoyLogger Adding Accesories to basket
+11/04/2017 18:34:26 devpinoyLogger Clicked on basket icon
+11/04/2017 18:34:26 devpinoyLogger Shop basket pages validationsHarman Kardon Onyx Studio 3 Bluetooth Speaker - accessories from O2
+11/04/2017 18:34:31 devpinoyLogger Checkout is Present and the Text is :
+11/04/2017 18:34:31 devpinoyLogger The Main Headercontents are : Your order
+Cost
+11/04/2017 18:34:31 devpinoyLogger The Phone contents are : Harman Kardon Onyx Studio 3 Bluetooth Speaker
+Remove
+£199.99
+11/04/2017 18:34:31 devpinoyLogger The Basket Totals are : Total cost
+£399.98
+11/04/2017 18:34:31 devpinoyLogger The Basket Totals are : In Stock Free delivery via Royal Mail within three working days
+11/04/2017 18:34:31 devpinoyLogger HomeDelivery is Selected
+11/04/2017 18:34:35 devpinoyLogger Clicking on Checkout button
+11/04/2017 18:34:36 devpinoyLogger Entered House number
+11/04/2017 18:34:36 devpinoyLogger Entered Post code
+11/04/2017 18:34:36 devpinoyLogger Clicked on the Find address button
+11/04/2017 18:34:41 devpinoyLogger Selected an address
+11/04/2017 18:34:41 devpinoyLogger Entering an Random email id
+11/04/2017 18:34:43 devpinoyLogger SITTester-647762a7-05c4-4a43-9b37-98cd1650ba11@gmail.com
+11/04/2017 18:34:43 devpinoyLogger Setting the About you options
+11/04/2017 18:34:44 devpinoyLogger Selected the dropdown Mrs
+11/04/2017 18:34:45 devpinoyLogger Entered first name and last name as Test Accepta
+11/04/2017 18:34:48 devpinoyLogger Entered all the other relavant details
+11/04/2017 18:34:48 devpinoyLogger Clicking on the continue link
+11/04/2017 18:34:48 devpinoyLogger Payment pages validationsO2 | Delivery
+11/04/2017 18:34:59 devpinoyLogger The Main Headercontents are : You have £399.98 to pay, including delivery.
+11/04/2017 18:34:59 devpinoyLogger The Basket contents are : Your order
+Cost
+Harman Kardon Onyx Studio 3 Bluetooth Speaker
+£199.99
+Harman Kardon Onyx Studio 3 Bluetooth Speaker
+£199.99
+Delivery/Collection
+Free
+Free delivery via Royal Mail within three working days.
+Total cost
+£399.98
+11/04/2017 18:35:02 devpinoyLogger Entering the Payments section
+11/04/2017 18:35:03 devpinoyLogger Entering name of the card as Test Accepta
+11/04/2017 18:35:04 devpinoyLogger Entered Card number as 4539xxxxxxxxxx06
+11/04/2017 18:35:04 devpinoyLogger Entered Expiry Month
+11/04/2017 18:35:04 devpinoyLogger Entered Expiry Year
+11/04/2017 18:35:05 devpinoyLogger Entered CVV security code
+11/04/2017 18:35:34 devpinoyLogger Clicking on continue to next step
+11/04/2017 18:35:34 devpinoyLogger Exiting the Payments section
+11/04/2017 18:35:34 devpinoyLogger Clicked the Checkbox in Terms
+11/04/2017 18:35:44 devpinoyLogger Clicked the Paynow button
+11/04/2017 18:35:44 devpinoyLogger The Page Title is O2 | Confirmation
+11/04/2017 18:35:44 devpinoyLogger This is order confirmation page and the message in this page is as below......
+11/04/2017 18:35:44 devpinoyLogger Trying to find the Element for order number using element identifier
+11/04/2017 18:35:44 devpinoyLogger Thanks for your order
+Your order number is: ms-300037494

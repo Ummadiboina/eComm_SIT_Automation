@@ -19,11 +19,9 @@ public class AgreementPageActions extends Environment {
 		  System.out.println("Now Entering Agreement Page..."); 
 		  System.out.println(driver.getTitle());
 		  log.debug("Entered Agreements page");
-
-	  
 	   }
 	  
-	  
+
 	  public static void Affordability()
 	  {
 		  

@@ -26,6 +26,5 @@ public class SimFreeDevicePage {
 		@FindBy(how=How.XPATH,using="(//*[@id='PayMonthlyTariffsGridTab']/li[3]/div/div[5]/button[@value='Select'])[1]") 
 		public static WebElement PayG_sim_free_Select;
 		
-
 	
 }

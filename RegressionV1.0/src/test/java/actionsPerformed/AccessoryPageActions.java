@@ -5,14 +5,15 @@ import org.apache.log4j.Logger;
 
 public class AccessoryPageActions extends Environment{
 	
+	static Logger log = Logger.getLogger("devpinoyLogger");
 	public static void Elementdisplayvalidation(String Tabname)
 	{
 		System.out.println(" ");
 		
 		System.out.println("Accessory_Page_Validation");
-		
-		
-		
+		  log.debug("Accessory Page validation");
+
+			
 		if(Tabname!=null)
 		{
 			switch (Tabname.toLowerCase())
@@ -22,16 +23,23 @@ public class AccessoryPageActions extends Environment{
 				{
 			
 					System.out.println("The Filter Tab is Present on the AccesoryPage and the Text is :" + pageobjects.AccessoryPage.AccessoryFilterTab.getText() );
+					log.debug("The Filter Tab is Present on the AccesoryPage and the Text is :" + pageobjects.AccessoryPage.AccessoryFilterTab.getText() );
+
 				 }else{
 				   System.out.println("The  Filter Tab is not Present on the AccessoryPage and the Text is :" + pageobjects.AccessoryPage.AccessoryFilterTab.getText());
+				   log.debug("The  Filter Tab is not Present on the AccessoryPage and the Text is :" + pageobjects.AccessoryPage.AccessoryFilterTab.getText());
+
 				 }
+				
 				break;
 			case "sort":
 				if(pageobjects.AccessoryPage.AccessorySortTab.isDisplayed())
 				 {
 					System.out.println("The Sort Tab is Present on the AccessoryPage and the Text is :" + pageobjects.AccessoryPage.AccessorySortTab.getText() );
+					 log.debug("The Sort Tab is Present on the AccessoryPage and the Text is :" + pageobjects.AccessoryPage.AccessorySortTab.getText() );
 				 }else{
-				  System.out.println("The  Sort Tab is not Present on the AccessoryPage and the Text is :" + pageobjects.AccessoryPage.AccessorySortTab.getText());
+					  System.out.println("The  Sort Tab is not Present on the AccessoryPage and the Text is :" + pageobjects.AccessoryPage.AccessorySortTab.getText());
+					  log.debug("The  Sort Tab is not Present on the AccessoryPage and the Text is :" + pageobjects.AccessoryPage.AccessorySortTab.getText());
 				 }
 				break;
 			
@@ -49,6 +57,7 @@ public class AccessoryPageActions extends Environment{
          System.out.println(" ");
 		
 		System.out.println("Accessory_Page_Action");
+		log.debug("Accessory Page validation");
 		
 		if(elementname!=null)
 		{
@@ -63,6 +72,21 @@ public class AccessoryPageActions extends Environment{
 			
 			}
 	
+		}
 	}
+	
+	
+	
+	//This Method is used to select Accessory from the accessory listing page 
+	
+	public static void SelectAnyAccessory() {
+			
+			System.out.println("Selecting Any Accessory");
+			log.debug("Selecting Any Accessory");
+			log.debug("Selected an accessory -  "+pageobjects.AccessoryPage.RandomAccessory.getText());
+			pageobjects.AccessoryPage.RandomAccessory.click();
+
+		}
+
 }
-}
+

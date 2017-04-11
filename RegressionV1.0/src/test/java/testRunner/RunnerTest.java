@@ -13,12 +13,14 @@ import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
 
 import java.io.File;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
 @CucumberOptions(
 		features = {"src//test//java//consumerScenarios_Features"}, glue = {"steps"},
-		tags = {"@smokeTesthomedelivery"}, format = {"json:testResult/cucumber.json", "pretty", "html:testResult/report"},
+		tags = {"@SmokeTest_CS_AccessoryOnly"}, format = {"json:testResult/cucumber.json", "pretty", "html:testResult/report"},
 		plugin = {"com.cucumber.listener.ExtentCucumberFormatter"}
 		)
 
@@ -54,17 +56,15 @@ public class RunnerTest {
 			//Creates the Detailed Result
 			CucumberDetailedResults results = new CucumberDetailedResults();
 			results.setOutputDirectory("testResult\\cucumber_detailed_result\\");
-	        results.setOutputName("cucumber-results");
+	        results.setOutputName("cucumber-results"+timestamp());
 	        results.setSourceFile("testResult\\cucumber.json");
 	        results.executeDetailedResultsReport(false, false);
 	        //Creates the Overview Result involves chart representation
 			CucumberResultsOverview result = new CucumberResultsOverview();
 			result.setOutputDirectory("testResult\\cucumber_result_overview\\");
-			result.setOutputName("cucumber-results");
+			result.setOutputName("cucumber-results"+timestamp());
 			result.setSourceFile("testResult\\cucumber.json");
 			result.executeFeaturesOverviewReport();
-
-
 		}
 		catch(Exception e) {
 
@@ -72,5 +72,9 @@ public class RunnerTest {
 		}
 	}
 
+	public static String timestamp() {
+	    return new SimpleDateFormat("yyyy-MM-dd HH-mm-ss").format(new Date());
+	}
+	}
 
-}
+

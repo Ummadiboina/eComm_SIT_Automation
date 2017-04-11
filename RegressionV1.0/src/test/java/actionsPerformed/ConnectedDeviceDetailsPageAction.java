@@ -12,7 +12,7 @@ import helpers.Environment;
 
 //This page will have details on the individual device
 
-public class PhonesDetailsPageAction extends Environment {
+public class ConnectedDeviceDetailsPageAction extends Environment {
 	static Logger log = Logger.getLogger("devpinoyLogger");
 
 	public static void GetTitle() throws InterruptedException
@@ -30,7 +30,7 @@ public class PhonesDetailsPageAction extends Environment {
 public static void ViewAllTariffs() throws InterruptedException
 {
 	driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
-	pageobjects.PhonesDetailsPage.ViewOurTariffs.click();
+	pageobjects.ConnectedDeviceDetailsPage.ViewOurTariffs.click();
 	//driver.findElement(By.id("deviceDetailsSubmit")).click();
 	log.debug("Clicked on ViewOurTariffs");
 

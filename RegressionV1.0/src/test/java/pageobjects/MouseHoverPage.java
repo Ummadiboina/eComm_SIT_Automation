@@ -70,7 +70,7 @@ public class MouseHoverPage extends Environment
 	public static WebElement MoveMouseOnAccessoriesTab;
 	
 	@FindBy(how=How.XPATH,using=("//a[contains(text(), 'All accessories')]"))
-	public static WebElement MoveMouseOnBrowseAccessories;
+	public static WebElement MoveMouseOnAllAccessories;
 	
 	
 	//Below is the link on the Smartwatches

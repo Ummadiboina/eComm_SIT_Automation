@@ -4,7 +4,7 @@ Feature: Sim Only PayM 12Months E2E validation
   Scenario Outline: Sim Only PayM 12Months E2E validation
     Given I am an CFA user and Lands on shop page
     And navigate to PAYM SIMO page
-    And select either of <Months> PayM sim only Tariff
+    And select either of recommended <Months> PayM sim only Tariff
     And Land on the 'Tariffs and extra' page
     And I Land on the basket page and choose Click and collect option
     And click on "go to checkout" button
