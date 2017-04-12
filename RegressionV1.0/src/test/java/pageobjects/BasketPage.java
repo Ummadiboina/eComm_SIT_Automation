@@ -40,6 +40,8 @@ public class BasketPage {
 	
 	//String text = driver.findElement(By.cssSelector('.airtime-plan.is-refresh')).getText()
 	//@FindBy(how=How.css,using=(.airtime-plan.is-refresh")
+	
+	
 	@FindBy(css= "section.airtime-plan.is-refresh") 
 	public static WebElement AirtimeDetails;
 
@@ -61,5 +63,16 @@ public class BasketPage {
 	//orders
 	@FindBy(how=How.XPATH,using=("//li[@class='accessory has-image']"))
 	public static WebElement AccessoryDetails;
+	
+
+	@FindBy(how=How.ID,using=("storePostcode"))
+	public static WebElement StorePostcode;
+	
+	@FindBy(how=How.ID,using=("store-postcode-submit"))
+	public static WebElement PostcodeSubmit;
+	
+	@FindBy(how=How.XPATH,using=("//*[@id='444']/div[4]/p/a"))
+	public static WebElement Collectfromthisstore;
+
 	
 }

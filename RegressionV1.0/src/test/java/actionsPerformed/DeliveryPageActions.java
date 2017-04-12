@@ -73,10 +73,10 @@ public class DeliveryPageActions {
 
 		}
 		
-		public static void ClickContinue()
+		public static void ClickContinue() throws InterruptedException
 		{
 			System.out.println("Continuing to next page");
-
+			Thread.sleep(3000);
 			pageobjects.DeliveryPage.Continue.click();	
 			log.debug("Clicking on the continue link");
 
