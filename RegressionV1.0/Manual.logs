@@ -1,70 +1,93 @@
-11/04/2017 21:35:54 devpinoyLogger Called openBrowser
-11/04/2017 21:35:54 devpinoyLogger The Relative path of the user.dirC:\Automation\Git Repositories New\RegressionV1.0
-11/04/2017 21:35:54 devpinoyLogger The Env prop path is C:\Automation\Git Repositories New\RegressionV1.0\src\test\java\Properties\AppConfig.properties
-11/04/2017 21:35:54 devpinoyLogger The Browser type read from EnvProp file is chrome
-11/04/2017 21:35:54 devpinoyLogger The current url is https://www.ref.o2.co.uk/shop
-11/04/2017 21:36:42 devpinoyLogger Invoked browser
-11/04/2017 21:37:09 devpinoyLogger Invoked URL
-11/04/2017 21:37:13 devpinoyLogger Deleted all Cookies
-11/04/2017 21:37:14 devpinoyLogger Maxismised window
-11/04/2017 21:37:17 devpinoyLogger We are in the Shop Home page
-11/04/2017 21:37:17 devpinoyLogger The Page title is O2 | Shop | Latest Pay & Go, Pay Monthly and Sim Only Deals
-11/04/2017 21:37:18 devpinoyLogger Performing Accessories navigations
-11/04/2017 21:38:09 devpinoyLogger Moved Mouse to somewhere side of page
-11/04/2017 21:38:09 devpinoyLogger The current url is https://www.o2.co.uk/shop/accessories/all/#sort=content.sorting.featured&page=1
-11/04/2017 21:38:09 devpinoyLogger The new url is https://www.ref.o2.co.uk/shop/accessories/all/#sort=content.sorting.featured&page=1
-11/04/2017 21:38:27 devpinoyLogger Selecting Any Accessory
-11/04/2017 21:38:28 devpinoyLogger Selected an accessory -  PRIORITY OFFER
+12/04/2017 17:33:25 devpinoyLogger Called openBrowser
+12/04/2017 17:33:25 devpinoyLogger The Relative path of the user.dirC:\Automation\Git Repositories New\RegressionV1.0
+12/04/2017 17:33:25 devpinoyLogger The Env prop path is C:\Automation\Git Repositories New\RegressionV1.0\src\test\java\Properties\AppConfig.properties
+12/04/2017 17:33:25 devpinoyLogger The Browser type read from EnvProp file is chrome
+12/04/2017 17:33:25 devpinoyLogger The current url is https://www.ref.o2.co.uk/shop
+12/04/2017 17:33:45 devpinoyLogger Invoked browser
+12/04/2017 17:33:58 devpinoyLogger Invoked URL
+12/04/2017 17:34:01 devpinoyLogger Deleted all Cookies
+12/04/2017 17:34:01 devpinoyLogger Maxismised window
+12/04/2017 17:34:04 devpinoyLogger We are in the Shop Home page
+12/04/2017 17:34:04 devpinoyLogger The Page title is O2 | Shop | Latest Pay & Go, Pay Monthly and Sim Only Deals
+12/04/2017 17:34:04 devpinoyLogger Performing PAYM Phones landing page navigations
+12/04/2017 17:34:07 devpinoyLogger Moving Mouse on the Shop Tab
+12/04/2017 17:34:09 devpinoyLogger Moving Mouse on the Phones dropdown
+12/04/2017 17:34:11 devpinoyLogger Moving Mouse on the Paymonthly link
+12/04/2017 17:34:36 devpinoyLogger Clicking on PayM Phones
+12/04/2017 17:34:36 devpinoyLogger Moved Mouse to somewhere side of page
+12/04/2017 17:34:36 devpinoyLogger The current url is https://www.o2.co.uk/shop/phones/#sort=content.sorting.featured&page=1
+12/04/2017 17:34:36 devpinoyLogger The new url is https://www.ref.o2.co.uk/shop/phones/#sort=content.sorting.featured&page=1
+12/04/2017 17:34:55 devpinoyLogger Selected Iphone7
+12/04/2017 17:35:27 devpinoyLogger Selected Iphone7Plus
+12/04/2017 17:35:39 devpinoyLogger Currently in Device details page
+12/04/2017 17:35:39 devpinoyLogger The Page title is Apple iPhone 7 Specs, Contract Deals & Pay As You Go
+12/04/2017 17:35:45 devpinoyLogger Clicked on ViewOurTariffs
+12/04/2017 17:36:44 devpinoyLogger Expanded the Full payment Tariff Section
+12/04/2017 17:36:46 devpinoyLogger Selected a full payment Tariff
+12/04/2017 17:36:59 devpinoyLogger Clicked on Add to Basket in Tariff and Extras page
+12/04/2017 17:36:59 devpinoyLogger Shop basket pages validationsO2 | Basket
+12/04/2017 17:37:01 devpinoyLogger Checkout is Present and the Text is :
+12/04/2017 17:37:03 devpinoyLogger The Main Headercontents are : Your order
+Upfront
+Monthly
+12/04/2017 17:37:04 devpinoyLogger The Phone contents are : Apple iPhone 7 Plus
+128GB (PRODUCT)RED
 ?????
-Harman Kardon Onyx Studio 3 Bluetooth Speaker
-Get 50% off, with Priority. Now £99.99. Ends 26 April.
-£199.99
-11/04/2017 21:38:30 devpinoyLogger Adding Accesories to basket
-11/04/2017 21:39:32 devpinoyLogger Exception in finding value
-11/04/2017 21:39:32 devpinoyLogger Adding Accesories to basket
-11/04/2017 21:39:39 devpinoyLogger Clicked on basket icon
-11/04/2017 21:39:39 devpinoyLogger Shop basket pages validationsHarman Kardon Onyx Studio 3 Bluetooth Speaker - accessories from O2
-11/04/2017 21:39:52 devpinoyLogger Checkout is Present and the Text is :
-11/04/2017 21:39:52 devpinoyLogger The Main Headercontents are : Your order
-Cost
-11/04/2017 21:39:53 devpinoyLogger The Phone contents are : Harman Kardon Onyx Studio 3 Bluetooth Speaker
-Remove
-£199.99
-11/04/2017 21:39:53 devpinoyLogger The Basket Totals are : Total cost
-£399.98
-11/04/2017 21:39:54 devpinoyLogger The Basket Totals are : In Stock Free delivery via Royal Mail within three working days
-11/04/2017 21:39:55 devpinoyLogger HomeDelivery is Selected
-11/04/2017 21:40:06 devpinoyLogger Clicking on Checkout button
-11/04/2017 21:40:08 devpinoyLogger Entered House number
-11/04/2017 21:40:10 devpinoyLogger Entered Post code
-11/04/2017 21:40:11 devpinoyLogger Clicked on the Find address button
-11/04/2017 21:40:17 devpinoyLogger Selected an address
-11/04/2017 21:40:17 devpinoyLogger Entering an Random email id
-11/04/2017 21:40:31 devpinoyLogger SITTester-844ed577-e7b3-4c59-be94-b28ade9a5aaa@gmail.com
-11/04/2017 21:40:31 devpinoyLogger Setting the About you options
-11/04/2017 21:40:34 devpinoyLogger Selected the dropdown Mrs
-11/04/2017 21:40:40 devpinoyLogger Entered first name and last name as Test Accepta
-11/04/2017 21:41:00 devpinoyLogger Entered all the other relavant details
-11/04/2017 21:41:02 devpinoyLogger Clicking on the continue link
-11/04/2017 21:41:12 devpinoyLogger Payment pages validationsO2 | Delivery
-11/04/2017 21:41:12 devpinoyLogger The Main Headercontents are : You have £399.98 to pay, including delivery.
-11/04/2017 21:41:14 devpinoyLogger The Basket contents are : Your order
-Cost
-Harman Kardon Onyx Studio 3 Bluetooth Speaker
-£199.99
-Harman Kardon Onyx Studio 3 Bluetooth Speaker
-£199.99
-Delivery/Collection
-Free
-Free delivery via Royal Mail within three working days.
-Total cost
-£399.98
-11/04/2017 21:41:18 devpinoyLogger Entering the Payments section
-11/04/2017 21:41:22 devpinoyLogger Entering name of the card as Test Accepta
-11/04/2017 21:41:26 devpinoyLogger Entered Card number as 4539xxxxxxxxxx06
-11/04/2017 21:41:27 devpinoyLogger Entered Expiry Month
-11/04/2017 21:41:28 devpinoyLogger Entered Expiry Year
-11/04/2017 21:41:29 devpinoyLogger Entered CVV security code
-11/04/2017 21:42:22 devpinoyLogger Clicking on continue to next step
-11/04/2017 21:42:22 devpinoyLogger Exiting the Payments section
-11/04/2017 21:42:39 devpinoyLogger The url where it has failed is https://checkout.ref.o2.co.uk/payment/?retry=true
+?????
+Average user rating
+"iPhone 7 Plus"
+Jay C, (November 2016)
+What's my Device Plan?
+£907.99
+£0.00
+12/04/2017 17:37:05 devpinoyLogger The Airtime contents are : Airtime Plan
+24 month contract
+10GB data
+4G ready
+Unlimited texts
+Unlimited mins
+Subject to RPI 1
+Choose a different tariff
+More details
+£30.00
+12/04/2017 17:37:06 devpinoyLogger The Basket Totals are : Total cost
+£907.99
+upfront
+£30.00
+monthly
+12/04/2017 17:37:06 devpinoyLogger The Basket Totals are : In Stock Order by midnight for free next working day delivery2
+12/04/2017 17:37:09 devpinoyLogger click And Collect is Selected
+12/04/2017 17:37:12 devpinoyLogger PostCode Entered for Search
+12/04/2017 17:37:19 devpinoyLogger Postcode Submitted for Search
+12/04/2017 17:37:26 devpinoyLogger Store Selected for Colletion
+12/04/2017 17:38:00 devpinoyLogger Clicking on Checkout button
+12/04/2017 17:38:02 devpinoyLogger Entering an Random email id
+12/04/2017 17:38:11 devpinoyLogger SITTester-5789d775-c9dd-4faa-b9e0-1a21a032963b@gmail.com
+12/04/2017 17:38:11 devpinoyLogger Setting the About you options
+12/04/2017 17:38:14 devpinoyLogger Selected the dropdown Mrs
+12/04/2017 17:38:16 devpinoyLogger Entered first name and last name as Test Accepta
+12/04/2017 17:38:26 devpinoyLogger Entered all the other relavant details
+12/04/2017 17:38:30 devpinoyLogger Clicking on the continue link
+12/04/2017 17:38:37 devpinoyLogger Entered name is Test Nine
+12/04/2017 17:38:38 devpinoyLogger Entered Account number - 10207136
+12/04/2017 17:38:40 devpinoyLogger Entered sort code - 20
+12/04/2017 17:38:40 devpinoyLogger Entered sort code - 15
+12/04/2017 17:38:41 devpinoyLogger Entered sort code - 96
+12/04/2017 17:38:43 devpinoyLogger Clicked on the Accept Terms checkbox
+12/04/2017 17:38:49 devpinoyLogger Entered the House Number - 41
+12/04/2017 17:38:50 devpinoyLogger Entered the Postcode - WA27JQ
+12/04/2017 17:38:51 devpinoyLogger Clicked on Find address
+12/04/2017 17:38:53 devpinoyLogger Home Address Selected
+12/04/2017 17:38:54 devpinoyLogger Entered the stayed at address - 9
+12/04/2017 17:38:55 devpinoyLogger Entered the stayed at months - 9
+12/04/2017 17:38:56 devpinoyLogger Clicked on the Confirm Address checkbox
+12/04/2017 17:39:02 devpinoyLogger Entering the Payments section
+12/04/2017 17:39:15 devpinoyLogger Entering name of the card as Test Nine
+12/04/2017 17:39:17 devpinoyLogger Entered Card number as 4539xxxxxxxxxx06
+12/04/2017 17:39:18 devpinoyLogger Entered Expiry Month
+12/04/2017 17:39:19 devpinoyLogger Entered Expiry Year
+12/04/2017 17:39:19 devpinoyLogger Entered CVV security code
+12/04/2017 17:39:47 devpinoyLogger Clicking on continue to next step
+12/04/2017 17:39:47 devpinoyLogger Exiting the Payments section
+12/04/2017 17:39:58 devpinoyLogger Entered Agreements page
+12/04/2017 17:40:55 devpinoyLogger The url where it has failed is https://checkout.ref.o2.co.uk/error/generalError/

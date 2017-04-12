@@ -53,7 +53,7 @@ public class AgreementPageActions extends Environment {
 	  public static void PayMMobileAgreement() 
 	  {
 		  System.out.println("Verifying Mobile Agreement section");
-		  pageobjects.AgreementPage.secciSection.click();
+		  pageobjects.AgreementPage.PayMMobileAgreement.click();
 		  log.debug("Clicking on the Mobile agreement section");
 	  }
 	  

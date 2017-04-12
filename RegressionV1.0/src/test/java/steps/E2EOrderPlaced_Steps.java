@@ -44,6 +44,7 @@ public class E2EOrderPlaced_Steps {
 	    	driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 	    	PageFactory.initElements(driver, MouseHoverPage.class);
 	    	MouseHoverAction.PayMPhonesLandingPage();
+	    	Autoredirection.redirect();
 	    }
 	    
 	    @Given("^Navigate to Accessories$")
@@ -63,6 +64,12 @@ public class E2EOrderPlaced_Steps {
 	    	PhonesListingPageAction.PhoneSelect("GalaxyS7");
 	    }
 	    
+	    @Given("^I choose high value PayM handset$")
+	    public void i_choose_high_value_PayM_handset() throws Throwable {
+	    	driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+	    	PageFactory.initElements(driver, PhonesListingPage.class);
+	    	PhonesListingPageAction.PhoneSelect("Iphone7Plus");
+	    }
 	    
 	    @Given("^Navigate to device details page$")
 	    public void  Navigate_to_device_details_page() throws Throwable 
@@ -100,6 +107,15 @@ public class E2EOrderPlaced_Steps {
 			PAYMandPAYGTariffAndExtrasPageActions.addToBasketLive();
 		
 		}
+	    
+	    @Given("^Land on the 'Tariffs and extra' page selecting pay device in full$")
+	    public void land_on_the_Tariffs_and_extra_page_selecting_pay_device_in_full() throws Throwable {
+	    	driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, PAYMandPAYGTariffAndExtrasPage.class);
+			PAYMandPAYGTariffAndExtrasPageActions.TariffSelect("fullpaymenttariff1");
+			PAYMandPAYGTariffAndExtrasPageActions.addToBasketLive();
+			
+	    }
 
 		@Given("^I Land on the basket page and choose home delivery option$")
 		public void i_Land_on_the_basket_page_and_choose_home_delivery_option() throws Throwable {
@@ -111,6 +127,17 @@ public class E2EOrderPlaced_Steps {
 
 		}
 		
+		@Given("^I Land on the basket page and choose to collect from store$")
+		public void i_Land_on_the_basket_page_and_choose_to_collect_from_store() throws Throwable {
+			// Write code here that turns the phrase above into concrete actions
+			driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);    
+			PageFactory.initElements(driver, BasketPage.class);
+			BasketPageActions.ValidateBasketPageContents() ;
+			BasketPageActions.CollectionorDelivery("clickAndCollect");
+			Thread.sleep(3000);
+		}
+
+		
 		@Given("^I Land on the Accessory basket page and choose home delivery option$")
 		public void i_Land_on_the_Accessory_basket_page_and_choose_home_delivery_option() throws Throwable {
 			driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS); 
@@ -118,13 +145,13 @@ public class E2EOrderPlaced_Steps {
 			BasketPageActions.AccessoryBasketPageContents() ;
 			BasketPageActions.CollectionorDelivery("homeDelivery");
 				
-
 		}
 
 		@Given("^click on \"([^\"]*)\" button$")
 		public void click_on_button(String arg1) throws Throwable {
 			driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 			BasketPageActions.gotoCheckout();
+			Thread.sleep(2000);
 		}
 
 		@Given("^input all the fields on the Delivery page and Click on the 'Continue button'$")
@@ -133,24 +160,50 @@ public class E2EOrderPlaced_Steps {
 			driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 			 PageFactory.initElements(driver, DeliveryPage.class);
 		     DeliveryPageActions.SetDelivery();
+		     Thread.sleep(2000);
+		     DeliveryPageActions.AboutYou(datamap);
+		     Thread.sleep(2000);
+		     DeliveryPageActions.ClickContinue();
+		}
+		
+		@Given("^input all the fields on the Delivery page for Click and collect and Click order on the 'Continue button'$")
+		public void input_all_the_fields_on_the_Delivery_page_for_Click_and_collect_and_Click_order_on_the_Continue_button() throws Throwable {	
+			driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+			 PageFactory.initElements(driver, DeliveryPage.class);
 		     DeliveryPageActions.AboutYou(datamap);
 		     DeliveryPageActions.ClickContinue();
 		}
-
+		
 		@Given("^I land on the payment page and input all the details and click 'Continue on next step'$")
 		public void i_land_on_the_payment_page_and_input_all_the_details_and_click_Continue_on_next_step() throws Throwable {
 			// Write code here that turns the phrase above into concrete actions
 			driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 			PageFactory.initElements(driver,PaymentPage.class);
-	    	PaymentPageActions.Set_Bank_details();
+			 PaymentPageActions.Set_Bank_details();
+			 Thread.sleep(2000);
 	    	 PaymentPageActions.Time_At_Address();
 	    	 PaymentPageActions.Card_Details();
 	    	 driver.switchTo().defaultContent();
+	    	 Thread.sleep(5000);
 		}
+		
+		@Given("^I land on the payment page and input all the details for Click and collect order and click 'Continue on next step'$")
+		public void i_land_on_the_payment_page_and_input_all_the_details_for_Click_and_collect_order_and_click_Continue_on_next_step() throws Throwable {
+			// Write code here that turns the phrase above into concrete actions
+			driver.manage().timeouts().implicitlyWait(25, TimeUnit.SECONDS);
+			PageFactory.initElements(driver,PaymentPage.class);
+	    	PaymentPageActions.Set_Bank_details();
+	    	Thread.sleep(5000);
+	    	PaymentPageActions.Time_At_Address_CC();
+	    	Thread.sleep(5000);
+	    	 PaymentPageActions.Card_Details();
+	    	Thread.sleep(5000);
+		}
+		
 		
 		@Given("^I land on the Non Credit check payment page and input all the details and click 'Continue on next step'$")
 		public void i_land_on_the_Non_Credit_check_payment_page_and_input_all_the_details_and_click_Continue_on_next_step() throws Throwable {
-			driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+			driver.manage().timeouts().implicitlyWait(25, TimeUnit.SECONDS);
 			PageFactory.initElements(driver,PaymentPage.class);
 			PaymentPageActions.ValidateNonCreditPaymentPage();
 			Thread.sleep(2000);
@@ -158,19 +211,36 @@ public class E2EOrderPlaced_Steps {
 	    
 		}
 
+		@Given("^I land on the payment page and input all the details for high value Click and collect order and click 'Continue on next step'$")
+		public void i_land_on_the_payment_page_and_input_all_the_details_for_high_value_Click_and_collect_order_and_click_Continue_on_next_step() throws Throwable {
+			// Write code here that turns the phrase above into concrete actions
+			driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+			PageFactory.initElements(driver,PaymentPage.class);
+	    	PaymentPageActions.Set_Bank_details_hv();
+	    	Thread.sleep(5000);
+	    	PaymentPageActions.Time_At_Address_CC();
+	    	Thread.sleep(5000);
+	    	 PaymentPageActions.Card_Details_hv();
+	    	 driver.switchTo().defaultContent();
+		}
 
 		@Given("^Continue to Agreements page and confirm all the agreement checks$")
 		public void continue_to_Agreements_page_and_confirm_all_the_agreement_checks() throws Throwable {
 			// Write code here that turns the phrase above into concrete actions
-			driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+			driver.manage().timeouts().implicitlyWait(25, TimeUnit.SECONDS);
 			PageFactory.initElements(driver,AgreementPage.class);
   	    	PageFactory.initElements(driver,ReviewPage.class);
-	    	 Thread.sleep(10000);
+	    	Thread.sleep(10000);
 	    	AgreementPageActions.gettitlepage();
+	      	Thread.sleep(2000);
   	    	AgreementPageActions.Affordability();
+  	    	Thread.sleep(5000);
   	    	AgreementPageActions.KeyInformation();
+  	    	Thread.sleep(5000);
   	    	AgreementPageActions.secciSection();
+  	    	Thread.sleep(5000);
   	    	AgreementPageActions.PayMMobileAgreement(); 
+  	    	Thread.sleep(5000);
   	    	AgreementPageActions.TermsDeclarationCheckbox(); 
   	    	Thread.sleep(5000);
 		}

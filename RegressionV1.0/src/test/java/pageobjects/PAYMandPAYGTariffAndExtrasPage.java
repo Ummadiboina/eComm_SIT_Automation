@@ -25,7 +25,22 @@ public class PAYMandPAYGTariffAndExtrasPage {
 	//Below is for Selecting Any Tariff
 	@FindBy(how=How.XPATH,using=("(//*[@id='callToAction'])[3]"))
 	public static WebElement RandomTariff2;
-			
+
+	//Below is for Selecting Any Tariff
+		@FindBy(how=How.XPATH,using=("(//*[@id='callToAction'])[7]"))
+		public static WebElement RandomfullTariff1;
+		
+		
+		//Below is for Selecting Any Tariff
+		@FindBy(how=How.XPATH,using=("(//*[@id='callToAction'])[8]"))
+		public static WebElement RandomfullTariff2;
+		
+
+		
+		//Below is for Selecting Any Tariff
+		@FindBy(id="link-pay-for-your-device")
+		public static WebElement paydevicefulllink;
+		
 	//Below is for Clicking on the Add to basket option which is at the bottom of the tariff and extras page
 	@FindBy(id="qa-proceed-to-basket")
 	public static WebElement addToBasketLive;

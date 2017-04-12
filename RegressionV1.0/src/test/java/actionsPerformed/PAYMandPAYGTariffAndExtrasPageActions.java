@@ -6,6 +6,7 @@ import java.util.concurrent.TimeUnit;
 
 import org.apache.log4j.Logger;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.JavascriptExecutor;
 
 
 
@@ -41,7 +42,17 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 				pageobjects.PAYMandPAYGTariffAndExtrasPage.SelectPromotedTariff.sendKeys(Keys.ENTER);
 				log.debug("Selected a Promoted Tariff");
 			}
-			
+			if(ElementName.contains("fullpaymenttariff1"))
+			{
+				
+				JavascriptExecutor jse = (JavascriptExecutor) driver;
+			    jse.executeScript("window.scrollBy(0,350)", "");
+				pageobjects.PAYMandPAYGTariffAndExtrasPage.paydevicefulllink.click();
+				log.debug("Expanded the Full payment Tariff Section");
+				
+				pageobjects.PAYMandPAYGTariffAndExtrasPage.RandomfullTariff2.sendKeys(Keys.ENTER);
+				log.debug("Selected a full payment Tariff");
+			}
 		}
 			
 		

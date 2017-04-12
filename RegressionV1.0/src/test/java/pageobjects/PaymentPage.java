@@ -66,6 +66,19 @@ public class PaymentPage {
 	  
 	  @FindBy(how=How.XPATH,using="//table[@class='basket-table']") 
 	  public static WebElement BasketContent;
-
+	  
+	  
+	  @FindBy(how=How.ID,using="housenumber")
+		public static WebElement housenumber;
+	  
+	  
+	  @FindBy(how=How.ID,using="postcode")
+		public static WebElement postcode;
+	  
+	  @FindBy(how=How.ID,using="postcode-submit")
+		public static WebElement postcodesubmit;
+	  
+	  @FindBy(how=How.XPATH,using="//*[@id='address-selection']/li/div/p/a") 
+		public static WebElement Selectaddress;
 	
 }
