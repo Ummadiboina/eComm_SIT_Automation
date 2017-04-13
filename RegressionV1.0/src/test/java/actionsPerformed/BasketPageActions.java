@@ -225,20 +225,21 @@ public class BasketPageActions extends Environment
 		if(elementName.contains("clickAndCollect"))
 		{
 			System.out.println("clickAndCollect is Selected");
-
-			pageobjects.BasketPage.clickAndCollectSelect.click();
-			//Assert.assertEquals(elementName,"Galaxy S7 is not found");
-			log.debug("click And Collect is Selected");
-			pageobjects.BasketPage.StorePostcode.sendKeys("G2");
-			log.debug("PostCode Entered for Search");
-			Thread.sleep(5000);
-			pageobjects.BasketPage.PostcodeSubmit.click();
-			//Assert.assertEquals(elementName,"Galaxy S7 is not found");
-			log.debug("Postcode Submitted for Search");
-			pageobjects.BasketPage.Collectfromthisstore.click();
-			//Assert.assertEquals(elementName,"Galaxy S7 is not found");
-			log.debug("Store Selected for Colletion");
-			Thread.sleep(5000);
+            pageobjects.BasketPage.clickAndCollectSelect.click();
+            //Assert.assertEquals(elementName,"Galaxy S7 is not found");
+            log.debug("click And Collect is Selected");
+            pageobjects.BasketPage.StorePostcode.sendKeys("G2");
+            log.debug("PostCode Entered for Search");
+            Thread.sleep(2000);
+            pageobjects.BasketPage.PostcodeSubmit.click();
+            Thread.sleep(2000);
+            //Assert.assertEquals(elementName,"Galaxy S7 is not found");
+            log.debug("Postcode Submitted for Search");
+            pageobjects.BasketPage.Collectfromthisstore.click();
+            //Assert.assertEquals(elementName,"Galaxy S7 is not found");
+            log.debug("Store Selected for Colletion");
+            Thread.sleep(5000);		
+			
 		
 		
 		}

@@ -76,7 +76,7 @@ public class PaymentPageActions extends Environment {
 		  log.debug("Clicked on the Confirm Address checkbox");
 	  }
 	  
-	  public static void Time_At_Address_CC()
+	  public static void Time_At_Address_CC() throws InterruptedException
 	  {
 		  pageobjects.PaymentPage.housenumber.sendKeys("41");
 		  log.debug("Entered the House Number - 41");
@@ -89,7 +89,7 @@ public class PaymentPageActions extends Environment {
 		  		  
 		  pageobjects.PaymentPage.Selectaddress.click();
 		  log.debug("Home Address Selected");
-		  
+		  Thread.sleep(3000);
 		  
 		  pageobjects.PaymentPage.Stay_Address_Years.sendKeys("9");
 		  log.debug("Entered the stayed at address - 9");
@@ -97,6 +97,7 @@ public class PaymentPageActions extends Environment {
 		  pageobjects.PaymentPage.Stay_Address_months.sendKeys("9");
 		  log.debug("Entered the stayed at months - 9");
 		  
+		  Thread.sleep(3000);
 		  pageobjects.PaymentPage.Confirm_Address_Checkbox.click();
 		  log.debug("Clicked on the Confirm Address checkbox");
 		  
@@ -110,25 +111,26 @@ public class PaymentPageActions extends Environment {
 
 			System.out.println("********We are switch to the iframe*******");
 			  log.debug("Entering the Payments section");
-
+			  Thread.sleep(2000);
 			PaymentPage.Name_On_Card.sendKeys("Test Accepta");
 			log.debug("Entering name of the card as Test Accepta");
 			
+			Thread.sleep(2000);
 			PaymentPage.Card_Number.sendKeys("4539791001730106");
 			log.debug("Entered Card number as 4539xxxxxxxxxx06");
-			
+			Thread.sleep(2000);
 			PaymentPage.Expiry_Month.sendKeys("01");
 			log.debug("Entered Expiry Month");
-			
+			Thread.sleep(2000);
 			PaymentPage.Expiry_Year.sendKeys("2020");
 			log.debug("Entered Expiry Year");
-			
+			Thread.sleep(2000);
 			PaymentPage.CVV_Security_Code.sendKeys("123");
 			log.debug("Entered CVV security code");
-			
+			Thread.sleep(2000);
 			PaymentPage.Continue_Next_Step.sendKeys(Keys.ENTER);
 			log.debug("Clicking on continue to next step");
-			
+			Thread.sleep(2000);
 		   System.out.println("*********We are done***************");
 		   log.debug("Exiting the Payments section");
 		   driver.switchTo().defaultContent();
@@ -142,25 +144,25 @@ public class PaymentPageActions extends Environment {
 
 		System.out.println("********We are switch to the iframe*******");
 		  log.debug("Entering the Payments section");
-
+		  Thread.sleep(2000);
 		PaymentPage.Name_On_Card.sendKeys("Test Nine");
 		log.debug("Entering name of the card as Test Nine");
-		
+		Thread.sleep(2000);
 		PaymentPage.Card_Number.sendKeys("4539791001730106");
 		log.debug("Entered Card number as 4539xxxxxxxxxx06");
-		
+		Thread.sleep(2000);
 		PaymentPage.Expiry_Month.sendKeys("01");
 		log.debug("Entered Expiry Month");
-		
+		Thread.sleep(2000);
 		PaymentPage.Expiry_Year.sendKeys("2020");
 		log.debug("Entered Expiry Year");
-		
+		Thread.sleep(2000);
 		PaymentPage.CVV_Security_Code.sendKeys("123");
 		log.debug("Entered CVV security code");
-		
+		Thread.sleep(2000);
 		PaymentPage.Continue_Next_Step.sendKeys(Keys.ENTER);
 		log.debug("Clicking on continue to next step");
-		
+		Thread.sleep(2000);
 	   System.out.println("*********We are done***************");
 	   log.debug("Exiting the Payments section");
 	   driver.switchTo().defaultContent();

@@ -26,8 +26,7 @@ public class BrowserHelper {
 			{
 				System.setProperty("webdriver.ie.driver", "src\\test\\java\\InternalLibraries\\BrowserDrivers\\Internet_Explorer\\IEDriverServer_x64_3.1.0\\IEDriverServer.exe") ;
 			}
-
-			; 
+			
 			DesiredCapabilities capability = DesiredCapabilities.internetExplorer();			
 			capability.setCapability(InternetExplorerDriver.INTRODUCE_FLAKINESS_BY_IGNORING_SECURITY_DOMAINS,true);
 			capability.setCapability("useLegacyInternalServer", true);
@@ -40,7 +39,7 @@ public class BrowserHelper {
 		}
 		else if (BrowserType.equalsIgnoreCase("chrome"))
 		{
-			System.setProperty("webdriver.chrome.driver","C:\\Automation\\Selenium\\chromedriver_win32\\chromedriver.exe");
+			System.setProperty("webdriver.chrome.driver","src\\test\\java\\InternalLibraries\\BrowserDrivers\\Internet_Explorer\\ChromeDriver\\chromedriver.exe");
 			//Environment.driver = new ChromeDriver();					
 			Environment.driver = new ChromeDriver();
 		}
