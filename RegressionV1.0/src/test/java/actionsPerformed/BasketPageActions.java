@@ -1,6 +1,7 @@
 package actionsPerformed;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.ElementNotVisibleException;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -8,6 +9,9 @@ import org.openqa.selenium.support.How;
 
 import helpers.Environment;
 import pageobjects.BasketPage.*;
+
+import java.util.NoSuchElementException;
+
 import org.apache.log4j.Logger;
 
 
@@ -130,31 +134,56 @@ public class BasketPageActions extends Environment
 		log.debug("The Phone contents are : " +pageobjects.BasketPage.DeviceDetailsDisplay.getText());
 
 		//log.debug("The Airtime details are :" +pageobjects.BasketPage.AirtimeDetails.getText());
-		String Stf1=driver.findElement(By.cssSelector("section.airtime-plan.is-refresh")).getText();
-		System.out.println("The String is "+Stf1);
+	/*	try
+		{
+			log.debug("The Airtime contents are : " +pageobjects.BasketPage.AirtimeDetails.getText());
+		}
+		catch(NoSuchElementException e)
+    	{
+			log.debug("The contents are : " +pageobjects.BasketPage.NonAirtimeDetails.getText());
+    	}
 		
-		log.debug("The Airtime contents are : " +pageobjects.BasketPage.AirtimeDetails.getText());
+		*/
+		
+		//System.out.println("The result is "+Stf1);
+		
+		
+		/*if(true)
+		{
+			log.debug("The Airtime contents are : " +pageobjects.BasketPage.AirtimeDetails.getText());
 
-		log.debug("The Basket Totals are : " +pageobjects.BasketPage.totals.getText());
+		}
+		
+		
+		else
+		{
+			log.debug("The contents are : " +pageobjects.BasketPage.NonAirtimeDetails.getText());
+
+		}*/
+		
+		
+			log.debug("The Basket Totals are : " +pageobjects.BasketPage.totals.getText());
 		
 		log.debug("The Basket Totals are : " +pageobjects.BasketPage.HomeDeliveryText.getText());
 
 	}
 	
-	public static void AccessoryBasketPageContents() throws InterruptedException
+	
+	
+	
+	public static void AccessoryPageContents() throws InterruptedException
 	{   
 	
 		  log.debug("Shop basket pages validations"+driver.getTitle());
 
 		  boolean fname=pageobjects.BasketPage.checkoutbtn.isEnabled(); 
-		  System.out.print(fname);
 
 
 		if(fname!=false)
 		 {
-			System.out.println("Checkout is Enabled and Present and the Text is :" +pageobjects.BasketPage.checkoutbtn.getText() );
+			System.out.println("Checkout is Enabled and Present" );
 			
-			  log.debug("Checkout is Present and the Text is :" +pageobjects.BasketPage.checkoutbtn.getText());
+			log.debug("Checkout is Enabled and Present" );
 			
 			 
 			 }

@@ -45,6 +45,9 @@ public class BasketPage {
 	@FindBy(css= "section.airtime-plan.is-refresh") 
 	public static WebElement AirtimeDetails;
 
+	@FindBy(css= "section.airtime-plan") 
+	public static WebElement NonAirtimeDetails;
+	
 	@FindBy(how=How.XPATH,using=("//li[@class='totals']"))
 	public static WebElement totals;
 	

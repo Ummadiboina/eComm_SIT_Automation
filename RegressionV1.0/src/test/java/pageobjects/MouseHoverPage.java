@@ -74,18 +74,26 @@ public class MouseHoverPage extends Environment
 	
 	
 	//Below is the link on the Smartwatches
-		@FindBy(how=How.XPATH,using=("//a[contains(text(), 'Smart Tech')]"))
-		public static WebElement MoveMouseOnSmarttechTab;
+	@FindBy(how=How.XPATH,using=("//a[contains(text(), 'Smart Tech')]"))
+	public static WebElement MoveMouseOnSmarttechTab;
+	
+	@FindBy(how=How.XPATH,using=("//a[contains(text(), 'Smartwatches')]"))
+	public static WebElement MoveMouseOnSmartwatches;
+
+	
+	//Below is the link on the Fitness
+	@FindBy(how=How.XPATH,using=("//a[contains(text(), 'Fitness trackers')]"))
+	public static WebElement MoveMouseOnFitnesstracker;
+
+
+	//Below will click on the MobileBroadband Link in Shop Drop down
+	@FindBy(how=How.XPATH,using=("//a[contains(text(), 'Mobile broadband')]"))
+	public static WebElement MoveMouseOnMobileBroadband;
 		
-		@FindBy(how=How.XPATH,using=("//a[contains(text(), 'Smartwatches')]"))
-		public static WebElement MoveMouseOnSmartwatches;
-	
+	//Below will click on the Pay as you Go Link under MobileBroadband tab
+	@FindBy(how=How.XPATH,using=("//a[contains(@href, 'https://www.o2.co.uk/shop/mobile-broadband/?contractType=payasyougo')]"))
+	public static WebElement MoveMouseOnPayGMBB;
 		
-		//Below is the link on the Fitness
-		@FindBy(how=How.XPATH,using=("//a[contains(text(), 'Fitness trackers')]"))
-		public static WebElement MoveMouseOnFitnesstracker;
-	
-	
 }
 
 

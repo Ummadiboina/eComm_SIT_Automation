@@ -25,6 +25,8 @@ public class NonConnectedDeviceDetailsPageAction extends Environment {
 		Thread.sleep(5000);
 
 	}
+	
+	/*
 
 public static void AddtoBasket()
 {
@@ -34,50 +36,12 @@ public static void AddtoBasket()
 	log.debug("The text of the button is  - "+pageobjects.NonConnectedDeviceDetailsPage.AddtoBasket.getText());
 	log.debug("Clicked on AddtoBasket");
 }	
+*/
+
+
 
 //This method is used to select any 6 Valid accessory
-	public static void selectAnyAccessoryLimit() throws InterruptedException {
-		// TODO Auto-generated method stub
-		
-		try
-		{
-			System.out.println("Adding Accesories to basket");
-			log.debug("Adding Accesories to basket");
-			//log.debug("The text of the button is  - "+pageobjects.NonConnectedDeviceDetailsPage.AddtoBasket.getText());
-				for(int i=0; i<2; i++)
-						{
-						pageobjects.NonConnectedDeviceDetailsPage.AddtoBasket.click();
-				//		System.out.println("Value of i is "+i );
-						}
-						
-		}
-		catch(org.openqa.selenium.StaleElementReferenceException ex)
-		{
-		    log.debug("Exception in finding value");
-			System.out.println("Adding Accesories to basket");
-			log.debug("Adding Accesories to basket");
-			//log.debug("The text of the button is  - "+pageobjects.NonConnectedDeviceDetailsPage.AddtoBasket.getText());
-				for(int i=0; i<2; i++)
-						{
-						pageobjects.NonConnectedDeviceDetailsPage.AddtoBasket.click();
-						Thread.sleep(2000);
-				//		System.out.println("Value of i is "+i );
-						}
-						}
-		    //WebElement date = driver.findElement(By.xpath("/html/body/table/tbody/tr/td/table/tbody/tr[6]/td[4]/a/font"));
-		    
-		}
-	/*	
-		System.out.println("Adding Accesories to basket");
-		log.debug("Adding Accesories to basket");
-		//log.debug("The text of the button is  - "+pageobjects.NonConnectedDeviceDetailsPage.AddtoBasket.getText());
-			for(int i=0; i<8; i++)
-					{
-					pageobjects.NonConnectedDeviceDetailsPage.AddtoBasket.click();
-			//		System.out.println("Value of i is "+i );
-					}
-					}
-	*/
+	
 	public static void ClickonBasketIcon() {
 		// TODO Auto-generated method stub
 		

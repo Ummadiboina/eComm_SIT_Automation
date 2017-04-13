@@ -1,93 +1,82 @@
-12/04/2017 17:33:25 devpinoyLogger Called openBrowser
-12/04/2017 17:33:25 devpinoyLogger The Relative path of the user.dirC:\Automation\Git Repositories New\RegressionV1.0
-12/04/2017 17:33:25 devpinoyLogger The Env prop path is C:\Automation\Git Repositories New\RegressionV1.0\src\test\java\Properties\AppConfig.properties
-12/04/2017 17:33:25 devpinoyLogger The Browser type read from EnvProp file is chrome
-12/04/2017 17:33:25 devpinoyLogger The current url is https://www.ref.o2.co.uk/shop
-12/04/2017 17:33:45 devpinoyLogger Invoked browser
-12/04/2017 17:33:58 devpinoyLogger Invoked URL
-12/04/2017 17:34:01 devpinoyLogger Deleted all Cookies
-12/04/2017 17:34:01 devpinoyLogger Maxismised window
-12/04/2017 17:34:04 devpinoyLogger We are in the Shop Home page
-12/04/2017 17:34:04 devpinoyLogger The Page title is O2 | Shop | Latest Pay & Go, Pay Monthly and Sim Only Deals
-12/04/2017 17:34:04 devpinoyLogger Performing PAYM Phones landing page navigations
-12/04/2017 17:34:07 devpinoyLogger Moving Mouse on the Shop Tab
-12/04/2017 17:34:09 devpinoyLogger Moving Mouse on the Phones dropdown
-12/04/2017 17:34:11 devpinoyLogger Moving Mouse on the Paymonthly link
-12/04/2017 17:34:36 devpinoyLogger Clicking on PayM Phones
-12/04/2017 17:34:36 devpinoyLogger Moved Mouse to somewhere side of page
-12/04/2017 17:34:36 devpinoyLogger The current url is https://www.o2.co.uk/shop/phones/#sort=content.sorting.featured&page=1
-12/04/2017 17:34:36 devpinoyLogger The new url is https://www.ref.o2.co.uk/shop/phones/#sort=content.sorting.featured&page=1
-12/04/2017 17:34:55 devpinoyLogger Selected Iphone7
-12/04/2017 17:35:27 devpinoyLogger Selected Iphone7Plus
-12/04/2017 17:35:39 devpinoyLogger Currently in Device details page
-12/04/2017 17:35:39 devpinoyLogger The Page title is Apple iPhone 7 Specs, Contract Deals & Pay As You Go
-12/04/2017 17:35:45 devpinoyLogger Clicked on ViewOurTariffs
-12/04/2017 17:36:44 devpinoyLogger Expanded the Full payment Tariff Section
-12/04/2017 17:36:46 devpinoyLogger Selected a full payment Tariff
-12/04/2017 17:36:59 devpinoyLogger Clicked on Add to Basket in Tariff and Extras page
-12/04/2017 17:36:59 devpinoyLogger Shop basket pages validationsO2 | Basket
-12/04/2017 17:37:01 devpinoyLogger Checkout is Present and the Text is :
-12/04/2017 17:37:03 devpinoyLogger The Main Headercontents are : Your order
+13/04/2017 01:35:24 devpinoyLogger Called openBrowser
+13/04/2017 01:35:24 devpinoyLogger The Relative path of the user.dirC:\Automation\Git Repositories New\RegressionV1.0
+13/04/2017 01:35:24 devpinoyLogger The Env prop path is C:\Automation\Git Repositories New\RegressionV1.0\src\test\java\Properties\AppConfig.properties
+13/04/2017 01:35:24 devpinoyLogger The Browser type read from EnvProp file is chrome
+13/04/2017 01:35:24 devpinoyLogger The current url is https://www.ref.o2.co.uk/shop
+13/04/2017 01:35:31 devpinoyLogger Invoked browser
+13/04/2017 01:35:38 devpinoyLogger Invoked URL
+13/04/2017 01:35:40 devpinoyLogger Deleted all Cookies
+13/04/2017 01:35:40 devpinoyLogger Maxismised window
+13/04/2017 01:35:41 devpinoyLogger We are in the Shop Home page
+13/04/2017 01:35:41 devpinoyLogger The Page title is O2 | Shop | Latest Pay & Go, Pay Monthly and Sim Only Deals
+13/04/2017 01:35:41 devpinoyLogger Performing navigations to PAYG MBB
+13/04/2017 01:35:41 devpinoyLogger Moving Mouse on the Shop Tab
+13/04/2017 01:35:53 devpinoyLogger Moving Mouse on the PAYG MBB tab
+13/04/2017 01:35:53 devpinoyLogger Moved Mouse to somewhere side of page
+13/04/2017 01:35:53 devpinoyLogger The current url is https://www.o2.co.uk/shop/mobile-broadband/?contractType=payasyougo#sort=content.sorting.featured&page=1
+13/04/2017 01:35:53 devpinoyLogger The new url is https://www.ref.o2.co.uk/shop/mobile-broadband/?contractType=payasyougo#sort=content.sorting.featured&page=1
+13/04/2017 01:36:02 devpinoyLogger Random Device Selected
+13/04/2017 01:36:02 devpinoyLogger Currently in Device details page
+13/04/2017 01:36:02 devpinoyLogger The Page title is O2 | Mobile Broadband | 3G / 4G Dongles & Mobile Wifi
+13/04/2017 01:36:16 devpinoyLogger Clicked on ViewOurTariffs
+13/04/2017 01:36:17 devpinoyLogger Selected a Random Tariff
+13/04/2017 01:36:23 devpinoyLogger Clicked on Add to Basket in Tariff and Extras page
+13/04/2017 01:36:23 devpinoyLogger Shop basket pages validationsO2 | Basket
+13/04/2017 01:36:23 devpinoyLogger Checkout is Present and the Text is :
+13/04/2017 01:36:23 devpinoyLogger The Main Headercontents are : Your order
 Upfront
 Monthly
-12/04/2017 17:37:04 devpinoyLogger The Phone contents are : Apple iPhone 7 Plus
-128GB (PRODUCT)RED
+13/04/2017 01:36:24 devpinoyLogger The Phone contents are : Huawei 4G In-Car wifi
+n/a Black
 ?????
 ?????
 Average user rating
-"iPhone 7 Plus"
-Jay C, (November 2016)
-What's my Device Plan?
-£907.99
-£0.00
-12/04/2017 17:37:05 devpinoyLogger The Airtime contents are : Airtime Plan
-24 month contract
-10GB data
-4G ready
-Unlimited texts
-Unlimited mins
-Subject to RPI 1
-Choose a different tariff
-More details
-£30.00
-12/04/2017 17:37:06 devpinoyLogger The Basket Totals are : Total cost
-£907.99
+"Excellent in good reception"
+RevdStephen, (November 2015)
+£63.00
+13/04/2017 01:36:24 devpinoyLogger The Basket Totals are : Total cost
+£63.00
 upfront
-£30.00
+£0.00
 monthly
-12/04/2017 17:37:06 devpinoyLogger The Basket Totals are : In Stock Order by midnight for free next working day delivery2
-12/04/2017 17:37:09 devpinoyLogger click And Collect is Selected
-12/04/2017 17:37:12 devpinoyLogger PostCode Entered for Search
-12/04/2017 17:37:19 devpinoyLogger Postcode Submitted for Search
-12/04/2017 17:37:26 devpinoyLogger Store Selected for Colletion
-12/04/2017 17:38:00 devpinoyLogger Clicking on Checkout button
-12/04/2017 17:38:02 devpinoyLogger Entering an Random email id
-12/04/2017 17:38:11 devpinoyLogger SITTester-5789d775-c9dd-4faa-b9e0-1a21a032963b@gmail.com
-12/04/2017 17:38:11 devpinoyLogger Setting the About you options
-12/04/2017 17:38:14 devpinoyLogger Selected the dropdown Mrs
-12/04/2017 17:38:16 devpinoyLogger Entered first name and last name as Test Accepta
-12/04/2017 17:38:26 devpinoyLogger Entered all the other relavant details
-12/04/2017 17:38:30 devpinoyLogger Clicking on the continue link
-12/04/2017 17:38:37 devpinoyLogger Entered name is Test Nine
-12/04/2017 17:38:38 devpinoyLogger Entered Account number - 10207136
-12/04/2017 17:38:40 devpinoyLogger Entered sort code - 20
-12/04/2017 17:38:40 devpinoyLogger Entered sort code - 15
-12/04/2017 17:38:41 devpinoyLogger Entered sort code - 96
-12/04/2017 17:38:43 devpinoyLogger Clicked on the Accept Terms checkbox
-12/04/2017 17:38:49 devpinoyLogger Entered the House Number - 41
-12/04/2017 17:38:50 devpinoyLogger Entered the Postcode - WA27JQ
-12/04/2017 17:38:51 devpinoyLogger Clicked on Find address
-12/04/2017 17:38:53 devpinoyLogger Home Address Selected
-12/04/2017 17:38:54 devpinoyLogger Entered the stayed at address - 9
-12/04/2017 17:38:55 devpinoyLogger Entered the stayed at months - 9
-12/04/2017 17:38:56 devpinoyLogger Clicked on the Confirm Address checkbox
-12/04/2017 17:39:02 devpinoyLogger Entering the Payments section
-12/04/2017 17:39:15 devpinoyLogger Entering name of the card as Test Nine
-12/04/2017 17:39:17 devpinoyLogger Entered Card number as 4539xxxxxxxxxx06
-12/04/2017 17:39:18 devpinoyLogger Entered Expiry Month
-12/04/2017 17:39:19 devpinoyLogger Entered Expiry Year
-12/04/2017 17:39:19 devpinoyLogger Entered CVV security code
-12/04/2017 17:39:47 devpinoyLogger Clicking on continue to next step
-12/04/2017 17:39:47 devpinoyLogger Exiting the Payments section
-12/04/2017 17:39:58 devpinoyLogger Entered Agreements page
-12/04/2017 17:40:55 devpinoyLogger The url where it has failed is https://checkout.ref.o2.co.uk/error/generalError/
+13/04/2017 01:36:24 devpinoyLogger The Basket Totals are : In Stock Order by midnight for free next working day delivery2
+13/04/2017 01:36:24 devpinoyLogger HomeDelivery is Selected
+13/04/2017 01:36:29 devpinoyLogger Clicking on Checkout button
+13/04/2017 01:36:31 devpinoyLogger Entered House number
+13/04/2017 01:36:31 devpinoyLogger Entered Post code
+13/04/2017 01:36:32 devpinoyLogger Clicked on the Find address button
+13/04/2017 01:36:37 devpinoyLogger Selected an address
+13/04/2017 01:36:39 devpinoyLogger Entering an Random email id
+13/04/2017 01:36:42 devpinoyLogger SITTester-ca01527f-6bfc-4b16-bf16-0cfe716d09f6@gmail.com
+13/04/2017 01:36:42 devpinoyLogger Setting the About you options
+13/04/2017 01:36:42 devpinoyLogger Selected the dropdown Mrs
+13/04/2017 01:36:43 devpinoyLogger Entered first name and last name as Test Accepta
+13/04/2017 01:36:45 devpinoyLogger Entered all the other relavant details
+13/04/2017 01:36:51 devpinoyLogger Clicking on the continue link
+13/04/2017 01:36:51 devpinoyLogger Payment pages validationsO2 | Delivery
+13/04/2017 01:36:54 devpinoyLogger The Main Headercontents are : You have an upfront payment of £63.00 to pay (including delivery).
+13/04/2017 01:36:55 devpinoyLogger The Basket contents are : Your order
+Upfront
+Monthly
+Huawei 4G In-Car wifi
+n/a Black
+£63.00
+$tariffView.description
+  £0.00
+Delivery/Collection
+Free
+Tuesday 18 Apr
+between 8am and 10pm
+Total cost
+£63.00
+Upfront
+£0.00
+Monthly
+13/04/2017 01:36:57 devpinoyLogger Entering the Payments section
+13/04/2017 01:37:04 devpinoyLogger Entering name of the card as Test Accepta
+13/04/2017 01:37:05 devpinoyLogger Entered Card number as 4539xxxxxxxxxx06
+13/04/2017 01:37:05 devpinoyLogger Entered Expiry Month
+13/04/2017 01:37:06 devpinoyLogger Entered Expiry Year
+13/04/2017 01:37:06 devpinoyLogger Entered CVV security code
+13/04/2017 01:37:53 devpinoyLogger Clicking on continue to next step
+13/04/2017 01:37:53 devpinoyLogger Exiting the Payments section
