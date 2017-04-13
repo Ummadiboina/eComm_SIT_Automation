@@ -11,7 +11,8 @@ public class PhonesListingPageAction extends Environment {
 	
 
 	
-public static void PhoneSelect(String elementName) {
+public static void PAYMPhoneSelect(String elementName) 
+{
 	
 	if(elementName.contains("GalaxyS7"))
 	{
@@ -92,6 +93,39 @@ public static void PhoneSelect(String elementName) {
 	
 	
 	}
+
+
+//Below is for PAYG phones
+public static void PAYGPhoneSelect(String elementName) {
+	
+	if(elementName.contains("Random Device"))
+	{
+		System.out.println("Selected Random Device");
+
+		pageobjects.PhonesListingPage.RandomDevice.click();
+		//Assert.assertEquals(elementName,"Galaxy S7 is not found");
+		log.debug("Selected Random Device");
+
+	}
+
+	
+	if(elementName.contains("MotoG5"))
+	{
+		System.out.println("Selected MotoG5");
+
+		pageobjects.PhonesListingPage.MotoG5.click();
+		//Assert.assertEquals(elementName,"Galaxy S7 is not found");
+		log.debug("Selected MotoG5");
+
+	}
+
+	
+	
+
+	
+	
+	}
+
 }
 
 

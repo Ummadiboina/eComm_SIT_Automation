@@ -56,6 +56,18 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 		}
 			
 		
+		public static void addAccessory() throws InterruptedException
+		{
+			driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+			  log.debug("The Accessory which will be added is  - "+pageobjects.PAYMandPAYGTariffAndExtrasPage.AddRandomAccessory.getText());
+			pageobjects.PAYMandPAYGTariffAndExtrasPage.AddRandomAccessory.sendKeys(Keys.ENTER);
+			Thread.sleep(2000);
+			  log.debug("Added a random accessory to basket");
+
+			
+		}
+		
+		
 		public static void addToBasketLive()
 		{
 			driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);

@@ -53,23 +53,55 @@ public class E2EOrderPlaced_Steps {
 	    	PageFactory.initElements(driver, MouseHoverPage.class);
 	    	MouseHoverAction.AccessoriesLandingPage();
 	    	Autoredirection.redirect();
-
 	    }
-
+	    
+	    @Given("^Navigate to PayG MBB page$")
+	    public void navigate_to_PayG_MBB_page() throws Throwable 
+	    {
+	    	driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+	    	PageFactory.initElements(driver, MouseHoverPage.class);
+	    	MouseHoverAction.PayGMBBPage();
+	    	Autoredirection.redirect();
+	    }
+	  
+	    @Given("^navigate to Pay as you Go Phones page$")
+	    public void navigate_to_Pay_as_you_Go_Phones_page() throws Throwable {
+	    	driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+	    	PageFactory.initElements(driver, MouseHoverPage.class);
+	    	MouseHoverAction.PayGPhonesLandingPage();
+	    	Autoredirection.redirect();
+	    }
 	    
 	    @Given("^I choose PayM \"([^\"]*)\"$")
 	    public void i_choose_PayM(String arg1) throws Throwable {
 	    	driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 	    	PageFactory.initElements(driver, PhonesListingPage.class);
-	    	PhonesListingPageAction.PhoneSelect("GalaxyS7");
+	    	PhonesListingPageAction.PAYMPhoneSelect("GalaxyS7");
+	    }
+	    
+	    @Given("^I choose PayG \"([^\"]*)\"$")
+	    public void i_choose_PayG(String arg1) throws Throwable {
+	    	driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+	    	PageFactory.initElements(driver, PhonesListingPage.class);
+	    	PhonesListingPageAction.PAYGPhoneSelect("Random Device");
+	    
 	    }
 	    
 	    @Given("^I choose high value PayM handset$")
 	    public void i_choose_high_value_PayM_handset() throws Throwable {
 	    	driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 	    	PageFactory.initElements(driver, PhonesListingPage.class);
-	    	PhonesListingPageAction.PhoneSelect("Iphone7Plus");
+	    	PhonesListingPageAction.PAYGPhoneSelect("Iphone7Plus");
 	    }
+	    
+	  
+	    @Given("^I choose MBB PayG \"([^\"]*)\"$")
+	    public void i_choose_MBB_PayG(String arg1) throws Throwable 
+	    {
+	    	driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+	    	PageFactory.initElements(driver, MobileBroadBandPage.class);
+	    	MobileBroadBandPageActions.DeviceSelect("Random Device");
+	    	}
 	    
 	    @Given("^Navigate to device details page$")
 	    public void  Navigate_to_device_details_page() throws Throwable 
@@ -77,6 +109,7 @@ public class E2EOrderPlaced_Steps {
 	    	driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 	    	PageFactory.initElements(driver, ConnectedDeviceDetailsPage.class);
 	    	ConnectedDeviceDetailsPageAction.GetTitle();
+	    	Thread.sleep(2000);
 	    	ConnectedDeviceDetailsPageAction.ViewAllTariffs();
 
 	    }
@@ -94,7 +127,7 @@ public class E2EOrderPlaced_Steps {
 	    	driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);   
 	    	PageFactory.initElements(driver, AccessoryPage.class);
 	    	PageFactory.initElements(driver, NonConnectedDeviceDetailsPage.class);
-	    	NonConnectedDeviceDetailsPageAction.selectAnyAccessoryLimit();
+	    	AccessoryPageActions.selectAnyAccessoryLimit();
 	    	NonConnectedDeviceDetailsPageAction.ClickonBasketIcon();
 	    	
 	    }
@@ -104,7 +137,7 @@ public class E2EOrderPlaced_Steps {
 			driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 			PageFactory.initElements(driver, PAYMandPAYGTariffAndExtrasPage.class);
 			PAYMandPAYGTariffAndExtrasPageActions.TariffSelect("Randomtariff");
-			PAYMandPAYGTariffAndExtrasPageActions.addToBasketLive();
+			//PAYMandPAYGTariffAndExtrasPageActions.addToBasketLive();
 		
 		}
 	    
@@ -113,14 +146,26 @@ public class E2EOrderPlaced_Steps {
 	    	driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 			PageFactory.initElements(driver, PAYMandPAYGTariffAndExtrasPage.class);
 			PAYMandPAYGTariffAndExtrasPageActions.TariffSelect("fullpaymenttariff1");
-			PAYMandPAYGTariffAndExtrasPageActions.addToBasketLive();
+			//PAYMandPAYGTariffAndExtrasPageActions.addToBasketLive();
 			
 	    }
+	    
+	    @Given("^Choose some Accesssory$")
+	    public void Choose_some_Accesssory() throws Throwable {
+	    	driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+	    	PageFactory.initElements(driver, PAYMandPAYGTariffAndExtrasPage.class);
+	    	PAYMandPAYGTariffAndExtrasPageActions.addAccessory();
+	    	Thread.sleep(2000);
+	    	
+	    }
 
-		@Given("^I Land on the basket page and choose home delivery option$")
+	    @Given("^I Land on the basket page and choose home delivery option$")
 		public void i_Land_on_the_basket_page_and_choose_home_delivery_option() throws Throwable {
 			driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);    
 			PageFactory.initElements(driver, BasketPage.class);
+			PageFactory.initElements(driver, PAYMandPAYGTariffAndExtrasPage.class);
+			PAYMandPAYGTariffAndExtrasPageActions.addToBasketLive();
+			Thread.sleep(3000);
 			BasketPageActions.ValidateBasketPageContents() ;
 			BasketPageActions.CollectionorDelivery("homeDelivery");
 				
@@ -132,17 +177,23 @@ public class E2EOrderPlaced_Steps {
 			// Write code here that turns the phrase above into concrete actions
 			driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);    
 			PageFactory.initElements(driver, BasketPage.class);
+			PageFactory.initElements(driver, PAYMandPAYGTariffAndExtrasPage.class);
+			PAYMandPAYGTariffAndExtrasPageActions.addToBasketLive();
+			Thread.sleep(3000);
 			BasketPageActions.ValidateBasketPageContents() ;
 			BasketPageActions.CollectionorDelivery("clickAndCollect");
 			Thread.sleep(3000);
 		}
 
 		
-		@Given("^I Land on the Accessory basket page and choose home delivery option$")
-		public void i_Land_on_the_Accessory_basket_page_and_choose_home_delivery_option() throws Throwable {
+		@Given("^I Land on the Non Phone related basket page and choose home delivery option$")
+		public void i_Land_on_the_Non_Phone_related_basket_page_and_choose_home_delivery_option() throws Throwable {
 			driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS); 
 			PageFactory.initElements(driver, BasketPage.class);
-			BasketPageActions.AccessoryBasketPageContents() ;
+			PageFactory.initElements(driver, PAYMandPAYGTariffAndExtrasPage.class);
+			PAYMandPAYGTariffAndExtrasPageActions.addToBasketLive();
+			Thread.sleep(3000);
+			BasketPageActions.AccessoryPageContents();
 			BasketPageActions.CollectionorDelivery("homeDelivery");
 				
 		}

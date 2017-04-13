@@ -3,54 +3,73 @@ package actionsPerformed;
 import helpers.Environment;
 import org.apache.log4j.Logger;
 
-public class AccessoryPageActions extends Environment{
+public class MobileBroadBandPageActions extends Environment{
 	
 	static Logger log = Logger.getLogger("devpinoyLogger");
 	
-	public static void Elementdisplayvalidation(String Tabname)
-	{
-		System.out.println(" ");
+	
+	public static void DeviceSelect(String elementName) {
 		
-		System.out.println("Accessory_Page_Validation");
-		  log.debug("Accessory Page validation");
-
-			
-		if(Tabname!=null)
+		if(elementName.contains("Random Device"))
 		{
-			switch (Tabname.toLowerCase())
-			{
-			case "filter":
-				if(pageobjects.AccessoryPage.AccessoryFilterTab.isDisplayed())
-				{
-			
-					System.out.println("The Filter Tab is Present on the AccesoryPage and the Text is :" + pageobjects.AccessoryPage.AccessoryFilterTab.getText() );
-					log.debug("The Filter Tab is Present on the AccesoryPage and the Text is :" + pageobjects.AccessoryPage.AccessoryFilterTab.getText() );
+			System.out.println("Random Device Selected");
 
-				 }else{
-				   System.out.println("The  Filter Tab is not Present on the AccessoryPage and the Text is :" + pageobjects.AccessoryPage.AccessoryFilterTab.getText());
-				   log.debug("The  Filter Tab is not Present on the AccessoryPage and the Text is :" + pageobjects.AccessoryPage.AccessoryFilterTab.getText());
+			pageobjects.MobileBroadBandPage.RandomPayGDeviceSelect.click();
+			//Assert.assertEquals(elementName,"Galaxy S7 is not found");
+			log.debug("Random Device Selected");
+		}
 
-				 }
-				
-				break;
-			case "sort":
-				if(pageobjects.AccessoryPage.AccessorySortTab.isDisplayed())
-				 {
-					System.out.println("The Sort Tab is Present on the AccessoryPage and the Text is :" + pageobjects.AccessoryPage.AccessorySortTab.getText() );
-					 log.debug("The Sort Tab is Present on the AccessoryPage and the Text is :" + pageobjects.AccessoryPage.AccessorySortTab.getText() );
-				 }else{
-					  System.out.println("The  Sort Tab is not Present on the AccessoryPage and the Text is :" + pageobjects.AccessoryPage.AccessorySortTab.getText());
-					  log.debug("The  Sort Tab is not Present on the AccessoryPage and the Text is :" + pageobjects.AccessoryPage.AccessorySortTab.getText());
-				 }
-				break;
+		if(elementName.contains("Huawei 4G in Car Wifi"))
+		{
+			System.out.println("Huawei 4G in Car Wifi Device Selected");
+
+			pageobjects.MobileBroadBandPage.Huawei4GinCarWifi.click();
+			//Assert.assertEquals(elementName,"Galaxy S7 is not found");
+			log.debug("Huawei 4G in Car Wifi Device Selected");
+		}
+		
+		if(elementName.contains("Huawei 4G Dongle"))
+		{
+			System.out.println("Huawei 4G Dongle Device Selected");
+
+			pageobjects.MobileBroadBandPage.Huawei4GDongle.click();
+			//Assert.assertEquals(elementName,"Galaxy S7 is not found");
+			log.debug("Huawei 4G Dongle Device Selected");
+		}
+		
+		if(elementName.contains("Huawei 4g Pocket Hotspot Plus"))
+		{
+			System.out.println("Huawei 4g Pocket Hotspot Plus Device Selected");
+
+			pageobjects.MobileBroadBandPage.Huawei4gPocketHotspotPlus.click();
+			//Assert.assertEquals(elementName,"Galaxy S7 is not found");
+			log.debug("Huawei 4g Pocket Hotspot Plus Device Selected");
 			
+		}
+		
+		if(elementName.contains("Huawei 4g Pocket Hotspot"))
+		{
+			System.out.println("Huawei 4g Pocket Hotspot Device Selected");
+
+			pageobjects.MobileBroadBandPage.Huawei4gPocketHotspot.click();
+			//Assert.assertEquals(elementName,"Galaxy S7 is not found");
+			log.debug("Huawei 4g Pocket Hotspot Device Selected");
 			
-			}
-	
-	
-	}
-	
- }
+		}
+		
+		if(elementName.contains("Huawei 4G Dongle With Wifi"))
+		{
+			System.out.println("Huawei 4G Dongle With Wifi Device Selected");
+
+			pageobjects.MobileBroadBandPage.Huawei4GDongleWithWifi.click();
+			//Assert.assertEquals(elementName,"Galaxy S7 is not found");
+			log.debug("Huawei 4G Dongle With Wifi Device Selected");
+			
+		}
+		
+		
+		}
+
 	
 	
 //this  method used to perform click action on the Accessory Page	

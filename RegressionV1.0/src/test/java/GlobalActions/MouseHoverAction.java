@@ -35,8 +35,7 @@ static	Logger log = Logger.getLogger("devpinoyLogger");
 		{
 
 			try
-	    	{
-		 
+	    	{		 
 		System.out.println("Performing PAYM Phones landing page navigations");
 		  log.debug("Performing PAYM Phones landing page navigations");
 		  
@@ -93,7 +92,72 @@ static	Logger log = Logger.getLogger("devpinoyLogger");
 	  }
 	
 	  //Below will navigate to PayG Phones Page
-	  
+	 //Below will navigate to PayM Phones Page
+	 
+		public static void PayGPhonesLandingPage() throws Exception 
+		 {
+			driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+			boolean Worksfine = false;
+			while(!Worksfine)
+			{
+
+				try
+		    	{		 
+			System.out.println("Performing PAYG Phones landing page navigations");
+			  log.debug("Performing PAYG Phones landing page navigations");
+			  
+			  Point coordinates = pageobjects.MouseHoverPage.MoveMouseOnShopTab.getLocation();
+			  Robot robot = new Robot();
+			  robot.mouseMove(coordinates.getX(),coordinates.getY()+120);
+				 log.debug("Moving Mouse on the Shop Tab");
+
+			  
+			  Actions action = new Actions(driver);
+			  action.moveToElement(pageobjects.MouseHoverPage.MoveMouseOnPhones).build().perform();
+				 log.debug("Moving Mouse on the Phones dropdown");
+
+			  Thread.sleep(2000);
+			  action.moveToElement(pageobjects.MouseHoverPage.MoveMouseOnPAYGPhones).build().perform();
+				 log.debug("Moving Mouse on the Pay as you Go link");
+			   Screenshots.screennewPics();
+
+			  Thread.sleep(2000);
+			  pageobjects.MouseHoverPage.MoveMouseOnPAYGPhones.click();
+			  Screenshots.screennewPics();
+			  
+			  log.debug("Clicking on PayG Phones");
+
+			  //Move mouse pointer away from location
+			  Point coordinates2 = driver.findElement(By.xpath("//*[@id='header-consumer']/div")).getLocation();
+				 
+
+	   		  Robot robot2 = new Robot();
+	   		  robot2.mouseMove(coordinates2.getX(),coordinates.getY()+120);
+	   		log.debug("Moved Mouse to somewhere side of page");
+	   		
+	   		Worksfine = true;
+
+		    	}
+		    	catch(ElementNotVisibleException  e)
+		    	{
+		    	//check if popup is present, if yes, handle it.
+		    		Environment.driver.switchTo().frame("edr_l_first"); 
+		    		System.out.println("********We are switch to the iframe*******");
+		       		log.debug("Popup has appeared on the screen, Hence trying to close the survey");
+		       		Screenshots.screennewPics();
+		    		//Saying no to survey
+		    		driver.findElement(By.xpath("//a[@id='no']/span")).click();
+		    		log.debug("Closing the popup by saying No to Survey");
+		    		System.out.println("*******Saying no to survey*******");
+		    		System.out.println("*********Existing the popups present in iframe***************");
+		    		log.debug("Exiting the Survey");
+		    		Environment.driver.switchTo().defaultContent();
+		    		Thread.sleep(3000);
+		    		    		
+		    	}
+			}
+		  }
+		
 	  //Below will navigate to Like New Phones Page
 		  
 	
@@ -426,28 +490,27 @@ static	Logger log = Logger.getLogger("devpinoyLogger");
 			while(!Worksfine)
 				try
 		    	{
-			  System.out.println("Performing Upgrade upgrade now navigations");
-			  log.debug("Performing Upgrade upgrade now navigations");
-			  
-			  Point coordinates = pageobjects.MouseHoverPage.MoveMouseOnShopTab.getLocation();
-			  Robot robot = new Robot();
-			  robot.mouseMove(coordinates.getX(),coordinates.getY()+120);
-			 		  
-			  Actions action = new Actions(driver);
-			  action.moveToElement(pageobjects.MouseHoverPage.MouseMoveonUpgrade).build().perform();
-			  Thread.sleep(2000);
-			  action.moveToElement(pageobjects.MouseHoverPage.MouseMoveonUpgradeAndUpgradeNow).build().perform();
-			  Thread.sleep(2000);
-			  pageobjects.MouseHoverPage.MouseMoveonUpgradeAndUpgradeNow.click();
+				  	
+					  System.out.println("Performing PAYG MBB navigations");
+					  log.debug("Performing PAYG MBB navigations");
+					  Point coordinates = pageobjects.MouseHoverPage.MoveMouseOnShopTab.getLocation();
+			   		  Robot robot = new Robot();
+			   		  robot.mouseMove(coordinates.getX(),coordinates.getY()+120);
+			   		 		  
+			   		  Actions action = new Actions(driver);
+			   		  action.moveToElement(pageobjects.MouseHoverPage.MoveMouseOnMobileBroadband).build().perform();
+			   		  Thread.sleep(2000);
+			   		  action.moveToElement(pageobjects.MouseHoverPage.MoveMouseOnPayGMBB).build().perform();
+			   		  Thread.sleep(2000);
+			   		  pageobjects.MouseHoverPage.MoveMouseOnPayGMBB.click();
 
-			  //Move mouse pointer away from location
-			  Point coordinates2 = driver.findElement(By.xpath("//*[@id='header-consumer']/div")).getLocation();
-			  Robot robot2 = new Robot();
-			  robot2.mouseMove(coordinates2.getX(),coordinates.getY()+120);
-			  
-	     		log.debug("Moved Mouse to somewhere side of page");
+			   		  //Move mouse pointer away from location
+					  Point coordinates2 = driver.findElement(By.xpath("//*[@id='header-consumer']/div")).getLocation();
+			   		  Robot robot2 = new Robot();
+			   		  robot2.mouseMove(coordinates2.getX(),coordinates.getY()+120);
+			     		log.debug("Moved Mouse to somewhere side of page");
 
-		   		Worksfine = true;
+			   		  Worksfine = true;
 		   		
 		    	}
 		    	catch(ElementNotVisibleException e)
@@ -466,8 +529,52 @@ static	Logger log = Logger.getLogger("devpinoyLogger");
 				
 		  }
 	  
-	 
- 
+	 //Below will navigate to PAYG MBB page
+	  public static void PayGMBBPage() throws Exception
+		 {
+			driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+			boolean Worksfine = false;
+			while(!Worksfine)
+				try
+		    	{
+			  System.out.println("Performing navigations to PAYG MBB");
+			  log.debug("Performing navigations to PAYG MBB");
+			  Point coordinates = pageobjects.MouseHoverPage.MoveMouseOnShopTab.getLocation();
+			  Robot robot = new Robot();
+			  robot.mouseMove(coordinates.getX(),coordinates.getY()+120);
+			  log.debug("Moving Mouse on the Shop Tab");
+			  Actions action = new Actions(driver);
+			  action.moveToElement(pageobjects.MouseHoverPage.MoveMouseOnMobileBroadband).build().perform();
+			  Thread.sleep(2000);
+			  action.moveToElement(pageobjects.MouseHoverPage.MoveMouseOnPayGMBB).build().perform();
+			  Thread.sleep(2000);
+			  pageobjects.MouseHoverPage.MoveMouseOnPayGMBB.click();
+			  log.debug("Moving Mouse on the PAYG MBB tab");
+
+			  //Move mouse pointer away from location
+			  Point coordinates2 = driver.findElement(By.xpath("//*[@id='header-consumer']/div")).getLocation();
+	   		  Robot robot2 = new Robot();
+	   		  robot2.mouseMove(coordinates2.getX(),coordinates.getY()+120);
+	     		log.debug("Moved Mouse to somewhere side of page");
+	     		Worksfine = true;
+	   		  
+		    	}
+		    	catch(ElementNotVisibleException e)
+		    	{
+		    	//check if popup is present, if yes, handle it.
+		    		Environment.driver.switchTo().frame("edr_l_first"); 
+		    		System.out.println("********We are switch to the iframe*******");
+		    		//Saying no to survey
+		    		driver.findElement(By.xpath("//a[@id='no']/span")).click();
+		    		System.out.println("*******Saying no to survey*******");
+		    		System.out.println("*********Existing the popups present in iframe***************");
+		    		Environment.driver.switchTo().defaultContent();
+		    		Thread.sleep(2000);
+		     		Worksfine = true;
+
+		    	}
+				
+		  }
 }
 
 
