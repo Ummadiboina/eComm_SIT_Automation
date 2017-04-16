@@ -1,7 +1,12 @@
 package steps;
 
+import java.io.File;
+import java.io.IOException;
 import java.net.MalformedURLException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
+import org.apache.commons.io.FileUtils;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
@@ -62,24 +67,39 @@ public class Hooks extends Environment{
     /**
      * Embed a screenshot in test report if test is marked as failed
      */
-    public void embedScreenshot(Scenario scenario) throws InterruptedException {
+    public void embedScreenshot(Scenario scenario) throws InterruptedException, IOException {
        
         if(scenario.isFailed()) {
         try {
         
-        	 scenario.write("Current Page URL is " +driver.getCurrentUrl());
+        /*	 scenario.write("Current Page URL is " +driver.getCurrentUrl());
         	 log.debug("The url where it has failed is "+driver.getCurrentUrl());
 //            byte[] screenshot = getScreenshotAs(OutputType.BYTES);
             byte[] screenshot = ((TakesScreenshot)driver).getScreenshotAs(OutputType.BYTES);
-            scenario.embed(screenshot, "image/png");
-         } catch (WebDriverException somePlatformsDontSupportScreenshots) {
+            scenario.embed(screenshot, "image/png"); */
+        	
+        	File screenshot = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+
+    		File scr=((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+    	    File dest= new File("ScreenshotsForFailures\\ScreenshotsForFailures_"+timestamp()+".jpeg");
+    	    FileUtils.copyFile(scr, dest);
+    	    //C:\Automation\Git Repositories New\RegressionV1.0\ScreenshotsForSteps
+    	
+
+        } catch (WebDriverException somePlatformsDontSupportScreenshots) {
             System.err.println(somePlatformsDontSupportScreenshots.getMessage());
         }
         
+      
         }
         Thread.sleep(2000);
 //driver.close();
         
     }
+
+
+	private String timestamp() {
+	    return new SimpleDateFormat("yyyy-MM-dd HH-mm-ss").format(new Date());
+	}
     
 }

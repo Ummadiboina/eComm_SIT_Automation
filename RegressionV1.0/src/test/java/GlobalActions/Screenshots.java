@@ -23,8 +23,11 @@ public class Screenshots extends Environment{
 		//WebDriver driver = new ChromeDriver();
 	public static void screennewPics() throws IOException, InterruptedException
 	{
-	    File scr=((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-	    File dest= new File("RegressionV1.0\\ScreenshotsForSteps\\Screenshot_"+timestamp()+".jpeg");
+	    
+		File screenshot = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+
+		File scr=((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+	    File dest= new File("ScreenshotsForSteps\\ScreenshotsForSteps_"+timestamp()+".jpeg");
 	    FileUtils.copyFile(scr, dest);
 	    //C:\Automation\Git Repositories New\RegressionV1.0\ScreenshotsForSteps
 	}
@@ -34,4 +37,3 @@ public class Screenshots extends Environment{
 	}
 		
 }
-	

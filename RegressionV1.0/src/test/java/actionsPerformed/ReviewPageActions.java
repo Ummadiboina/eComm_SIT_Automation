@@ -27,7 +27,6 @@ public class ReviewPageActions extends Environment  {
 		  System.out.println("Clicking on the checkbox");
 		  pageobjects.ReviewPage.TermsCheckBox.click();
 		  log.debug("Clicked the Checkbox in Terms");
-
 	  }
 	 
 	  public static void PayNow() 

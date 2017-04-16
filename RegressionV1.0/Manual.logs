@@ -1,84 +1,26 @@
-13/04/2017 10:48:10 devpinoyLogger Called openBrowser
-13/04/2017 10:48:10 devpinoyLogger The Relative path of the user.dirC:\Automation\Git Repositories New\RegressionV1.0
-13/04/2017 10:48:10 devpinoyLogger The Env prop path is C:\Automation\Git Repositories New\RegressionV1.0\src\test\java\Properties\AppConfig.properties
-13/04/2017 10:48:10 devpinoyLogger The Browser type read from EnvProp file is chrome
-13/04/2017 10:48:10 devpinoyLogger The current url is https://www.ref.o2.co.uk/shop
-13/04/2017 10:48:42 devpinoyLogger Invoked browser
-13/04/2017 10:48:56 devpinoyLogger Invoked URL
-13/04/2017 10:48:58 devpinoyLogger Deleted all Cookies
-13/04/2017 10:48:58 devpinoyLogger Maxismised window
-13/04/2017 10:49:00 devpinoyLogger We are in the Shop Home page
-13/04/2017 10:49:00 devpinoyLogger The Page title is O2 | Shop | Latest Pay & Go, Pay Monthly and Sim Only Deals
-13/04/2017 10:49:01 devpinoyLogger Performing PAYM Phones landing page navigations
-13/04/2017 10:49:02 devpinoyLogger Moving Mouse on the Shop Tab
-13/04/2017 10:49:02 devpinoyLogger Moving Mouse on the Phones dropdown
-13/04/2017 10:49:05 devpinoyLogger Moving Mouse on the Paymonthly link
-13/04/2017 10:49:22 devpinoyLogger Clicking on PayM Phones
-13/04/2017 10:49:23 devpinoyLogger Moved Mouse to somewhere side of page
-13/04/2017 10:49:23 devpinoyLogger The current url is https://www.o2.co.uk/shop/phones/#sort=content.sorting.featured&page=1
-13/04/2017 10:49:23 devpinoyLogger The new url is https://www.ref.o2.co.uk/shop/phones/#sort=content.sorting.featured&page=1
-13/04/2017 10:49:38 devpinoyLogger Selected GalaxyS7
-13/04/2017 10:50:14 devpinoyLogger Currently in Device details page
-13/04/2017 10:50:14 devpinoyLogger The Page title is Samsung Galaxy S7 Specs, Contract Deals & Pay As You Go
-13/04/2017 10:50:30 devpinoyLogger Clicked on ViewOurTariffs
-13/04/2017 10:50:31 devpinoyLogger Selected a Random Tariff
-13/04/2017 10:50:41 devpinoyLogger Clicked on Add to Basket in Tariff and Extras page
-13/04/2017 10:50:44 devpinoyLogger Shop basket pages validationsO2 | Basket
-13/04/2017 10:50:44 devpinoyLogger Checkout is Present and the Text is :
-13/04/2017 10:50:45 devpinoyLogger The Main Headercontents are : Your order
-Upfront
-Monthly
-13/04/2017 10:50:45 devpinoyLogger The Phone contents are : Samsung Galaxy S7
-32GB Gold Platinum
+16/04/2017 23:18:48 devpinoyLogger Called openBrowser
+16/04/2017 23:18:48 devpinoyLogger The Relative path of the user.dirC:\Automation\Git Repositories New\RegressionV1.0
+16/04/2017 23:18:48 devpinoyLogger The Env prop path is C:\Automation\Git Repositories New\RegressionV1.0\src\test\java\Properties\AppConfig.properties
+16/04/2017 23:18:48 devpinoyLogger The Browser type read from EnvProp file is chrome
+16/04/2017 23:18:48 devpinoyLogger The current url is https://www.ref.o2.co.uk/shop
+16/04/2017 23:18:54 devpinoyLogger Invoked browser
+16/04/2017 23:19:01 devpinoyLogger Invoked URL
+16/04/2017 23:19:02 devpinoyLogger Deleted all Cookies
+16/04/2017 23:19:02 devpinoyLogger Maxismised window
+16/04/2017 23:19:03 devpinoyLogger We are in the Shop Home page
+16/04/2017 23:19:03 devpinoyLogger The Page title is O2 | Shop | Latest Pay & Go, Pay Monthly and Sim Only Deals
+16/04/2017 23:19:03 devpinoyLogger Performing Accessories navigations
+16/04/2017 23:19:14 devpinoyLogger Moved Mouse to somewhere side of page
+16/04/2017 23:19:14 devpinoyLogger The current url is https://www.o2.co.uk/shop/accessories/all/#sort=content.sorting.featured&page=1
+16/04/2017 23:19:14 devpinoyLogger The new url is https://www.ref.o2.co.uk/shop/accessories/all/#sort=content.sorting.featured&page=1
+16/04/2017 23:19:21 devpinoyLogger Selecting Any Accessory
+16/04/2017 23:19:21 devpinoyLogger Selected an accessory -  PRIORITY OFFER
 ?????
-?????
-Average user rating
-"Super fast phone"
-Mr Bike Rider, (September 2016)
-What's my Device Plan?
-£9.99
-£16.00
-13/04/2017 10:50:45 devpinoyLogger The Basket Totals are : Total cost
-£9.99
-upfront
-£54.00
-monthly
-13/04/2017 10:50:45 devpinoyLogger The Basket Totals are : In Stock Order by midnight for free next working day delivery2
-13/04/2017 10:50:46 devpinoyLogger click And Collect is Selected
-13/04/2017 10:50:47 devpinoyLogger PostCode Entered for Search
-13/04/2017 10:50:52 devpinoyLogger Postcode Submitted for Search
-13/04/2017 10:50:54 devpinoyLogger Store Selected for Colletion
-13/04/2017 10:51:20 devpinoyLogger Clicking on Checkout button
-13/04/2017 10:51:22 devpinoyLogger Entering an Random email id
-13/04/2017 10:51:26 devpinoyLogger SITTester-dc334357-5f7f-4aa9-b49c-aa5b1c39314e@gmail.com
-13/04/2017 10:51:26 devpinoyLogger Setting the About you options
-13/04/2017 10:51:27 devpinoyLogger Selected the dropdown Mrs
-13/04/2017 10:51:29 devpinoyLogger Entered first name and last name as Test Accepta
-13/04/2017 10:51:34 devpinoyLogger Entered all the other relavant details
-13/04/2017 10:51:37 devpinoyLogger Clicking on the continue link
-13/04/2017 10:51:45 devpinoyLogger Entered name is Test Accepta
-13/04/2017 10:51:46 devpinoyLogger Entered Account number - 10207136
-13/04/2017 10:51:47 devpinoyLogger Entered sort code - 20
-13/04/2017 10:51:47 devpinoyLogger Entered sort code - 15
-13/04/2017 10:51:48 devpinoyLogger Entered sort code - 96
-13/04/2017 10:51:48 devpinoyLogger Clicked on the Accept Terms checkbox
-13/04/2017 10:51:53 devpinoyLogger Entered the House Number - 41
-13/04/2017 10:51:54 devpinoyLogger Entered the Postcode - WA27JQ
-13/04/2017 10:51:54 devpinoyLogger Clicked on Find address
-13/04/2017 10:51:56 devpinoyLogger Home Address Selected
-13/04/2017 10:51:57 devpinoyLogger Entered the stayed at address - 9
-13/04/2017 10:51:57 devpinoyLogger Entered the stayed at months - 9
-13/04/2017 10:51:57 devpinoyLogger Clicked on the Confirm Address checkbox
-13/04/2017 10:52:04 devpinoyLogger Entering the Payments section
-13/04/2017 10:52:05 devpinoyLogger Entering name of the card as Test Accepta
-13/04/2017 10:52:06 devpinoyLogger Entered Card number as 4539xxxxxxxxxx06
-13/04/2017 10:52:07 devpinoyLogger Entered Expiry Month
-13/04/2017 10:52:07 devpinoyLogger Entered Expiry Year
-13/04/2017 10:52:08 devpinoyLogger Entered CVV security code
-13/04/2017 10:52:32 devpinoyLogger Clicking on continue to next step
-13/04/2017 10:52:32 devpinoyLogger Exiting the Payments section
-13/04/2017 10:52:47 devpinoyLogger Entered Agreements page
-13/04/2017 10:53:06 devpinoyLogger Selecting affordability Checks # 1
-13/04/2017 10:53:07 devpinoyLogger Selecting affordability Checks # 2
-13/04/2017 10:53:07 devpinoyLogger Selecting affordability button
-13/04/2017 10:53:13 devpinoyLogger The url where it has failed is https://checkout.ref.o2.co.uk/agreement/
+Harman Kardon Onyx Studio 3 Bluetooth Speaker
+Get 50% off, with Priority. Now £99.99. Ends 26 April.
+£199.99
+16/04/2017 23:19:21 devpinoyLogger Adding Accesories to basket
+16/04/2017 23:19:28 devpinoyLogger Exception in finding value
+16/04/2017 23:19:28 devpinoyLogger Adding Accesories to basket
+16/04/2017 23:19:33 devpinoyLogger Clicked on basket icon
+16/04/2017 23:19:37 devpinoyLogger Shop basket pages validationsO2 | Basket

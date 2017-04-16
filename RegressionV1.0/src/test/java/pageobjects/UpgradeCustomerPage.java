@@ -19,10 +19,5 @@ public class UpgradeCustomerPage {
 		@FindBy(how=How.CLASS_NAME,using="simo-link")
 		public static WebElement SimOLink;
 		
-		////a[contains(text(), 'Pick a Sim only tariff')]		
-		/*
-		@FindBy(how=How.XPATH, using="a[contains(text(), 'Pick a sim only tariff')]")
-		public static WebElement SimOLink;
-		*/
-		
+			
 }

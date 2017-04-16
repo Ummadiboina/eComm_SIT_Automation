@@ -1,10 +1,10 @@
 Feature: CFA PayM Phones Click and collect scenario with E2E journey
 
   @smokeTest
-  Scenario: CFA PayM Phones Click and collect scenario with E2E journey
+  Scenario Outline: CFA PayM Phones Click and collect scenario with E2E journey
 Given I am an CFA user and Lands on shop page
       And navigate to PAYM Phones page
-    And I choose PayM "handset"
+And I choose PayM <handset>
     And Navigate to device details page
     And Land on the 'Tariffs and extra' page
     And I Land on the basket page and choose to collect from store 
@@ -14,3 +14,7 @@ Given I am an CFA user and Lands on shop page
     And Continue to Agreements page and confirm all the agreement checks
     And Continue to Review page and review the order
     Then order confirmation is displayed
+    
+     Examples:
+    |handset|
+    |GalaxyS7|

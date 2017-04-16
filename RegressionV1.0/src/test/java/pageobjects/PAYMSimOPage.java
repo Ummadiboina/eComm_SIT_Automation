@@ -8,17 +8,11 @@ import org.openqa.selenium.support.How;
 public class PAYMSimOPage {
 
 	
-//	@FindBy(how=How.XPATH,using="//*[@id='pn1']/a/dl/dt") 
-//	public static WebElement shomhome;
-	
-//	@FindBy(how=How.XPATH,using=("//*[@id='pn1']/ul/li[6]/a"))   
-//	public static WebElement shopsims;
+
 	
 	@FindBy(how=How.XPATH,using=("//*[@id='no']/span"))  //no thank for customer help
 	public static WebElement shopnothanks;
 	
-//	@FindBy(how=How.XPATH,using=("//*[@id='pn1']/ul/li[6]/ul/li[2]/a"))
-//	public static WebElement shopsimspaymsims;
 			
 	@FindBy(how=How.XPATH,using=("//*[@id='tablet']"))
 	public static  WebElement shoptablet;		
@@ -28,6 +22,18 @@ public class PAYMSimOPage {
 	
 	@FindBy(how=How.XPATH,using=("//*[@id='id-30-days']/p/a"))
 	public static WebElement thirtydays;
+	
+	@FindBy(how=How.XPATH,using=("//div[@class='tariff P12M  promoted-tariff ']/div[8]"))
+	public static WebElement BuyNowPromotedTariff;
+	
+	@FindBy(how=How.XPATH,using=("(//button[@id='callToAction'])[10]"))
+	public static WebElement BuyNowRandomTariff12Months;
+	
+	@FindBy(how=How.XPATH,using=("(//button[@id='callToAction'])[1]"))
+	public static WebElement BuyNowRandomTariff30Months;
+	
+	
+	////////////////////////////////////////////
 	
 	@FindBy(how=How.XPATH,using=("//*[@id='67533f03-4e8b-4089-8d3a-fdaf4e1cd2a2']/div[5]"))
 	public static WebElement month12firsttariff;

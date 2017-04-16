@@ -40,16 +40,23 @@ public class MouseHoverPage extends Environment
 	public static WebElement MoveMouseOnLikeNew;
 	
 	//Below will click on the Sims 
-	@FindBy(how=How.XPATH,using=("//a[contains(text(), 'Sims')]"))
+	@FindBy(how=How.XPATH,using=("//*[@id='pn1']/ul/li/a[contains(text(), 'Sims')]"))
 	public static WebElement MoveMouseOnSims;
 	
+	//Below will click on the Sims -- > Ipad 
+	@FindBy(how=How.XPATH,using=("//a[contains(text(), 'iPad sims')]"))
+	public static WebElement MoveMouseOnIpadSims;
+	
+	
+	//Below will click on the Sims -- > Tablet 
+		@FindBy(how=How.XPATH,using=("//a[contains(text(), 'Tablet sims')]"))
+		public static WebElement MoveMouseOnTabletSims;
+		
+		
 	//Below will click on the Sims -- > PayM 
 	@FindBy(how=How.XPATH,using=("//a[contains(text(), 'Pay Monthly sims')]"))
 	public static WebElement MoveMouseOnPayMSims;
-	
 		
-	
-	
 	@FindBy(how=How.XPATH,using=("//a[contains(text(), 'Upgrades')]"))
 	public static WebElement MouseMoveonUpgrade;
 	
@@ -73,18 +80,22 @@ public class MouseHoverPage extends Environment
 	public static WebElement MoveMouseOnAllAccessories;
 	
 	
-	//Below is the link on the Smartwatches
-	@FindBy(how=How.XPATH,using=("//a[contains(text(), 'Smart Tech')]"))
+	//Below is the link on the Smart Tech
+	
+	@FindBy(how=How.XPATH,using="//a[contains(@href, 'https://www.o2.co.uk/shop/smart-tech/')]")
 	public static WebElement MoveMouseOnSmarttechTab;
 	
+	
+	
+	//Below is the link on the Smartwatches
 	@FindBy(how=How.XPATH,using=("//a[contains(text(), 'Smartwatches')]"))
 	public static WebElement MoveMouseOnSmartwatches;
 
 	
 	//Below is the link on the Fitness
+	
 	@FindBy(how=How.XPATH,using=("//a[contains(text(), 'Fitness trackers')]"))
-	public static WebElement MoveMouseOnFitnesstracker;
-
+	public static WebElement MoveMouseOnFitnessTrackers;
 
 	//Below will click on the MobileBroadband Link in Shop Drop down
 	@FindBy(how=How.XPATH,using=("//a[contains(text(), 'Mobile broadband')]"))
@@ -93,7 +104,8 @@ public class MouseHoverPage extends Environment
 	//Below will click on the Pay as you Go Link under MobileBroadband tab
 	@FindBy(how=How.XPATH,using=("//a[contains(@href, 'https://www.o2.co.uk/shop/mobile-broadband/?contractType=payasyougo')]"))
 	public static WebElement MoveMouseOnPayGMBB;
-		
+	
+
 }
 
 
