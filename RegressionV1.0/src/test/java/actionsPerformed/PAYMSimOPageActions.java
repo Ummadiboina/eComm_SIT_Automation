@@ -14,6 +14,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 
 import helpers.Environment;
 
@@ -22,39 +23,54 @@ public class PAYMSimOPageActions extends Environment
 {
 	static Logger log = Logger.getLogger("devpinoyLogger");
 	
+	//Below will Select the element under Phones Tab under 12 months and 30 days contract
 	
-public static void ElementClick1(String elementName) throws InterruptedException, AWTException {
-			
-			if(elementName.contains("shoptablet"))
+public static void ValidateContractLengths(String elementName) throws InterruptedException, AWTException {
+			//Assert.assertTrue(driver.getTitle().contains("30 Days");
+	
+		if(elementName.contains("30 Days"))
 			{
-				pageobjects.PAYMSimOPage.shoptablet.click();
+				System.out.println("The Contract length is "+pageobjects.PAYMSimOPage.thirtydays.getText());
+				log.debug("The Contract length is "+pageobjects.PAYMSimOPage.thirtydays.getText());
+				
 			}
-			
-			if(elementName.contains("thirtydays"))
-			{
-				pageobjects.PAYMSimOPage.thirtydays.click();
-			}
-			}
-		
-public static void DisplayContent(String ElementName) 
-{
-	if(ElementName.equalsIgnoreCase("paymheader"))
-	{
-		System.out.println("Pay monthly sims banner header - as per today is displayed :" +pageobjects.SimFreeExtrasPage.Tariffvaladity.getText());
+		if(elementName.contains("12 Months"))
+		{
 
-	}	
-	else
+			System.out.println("The Contract length is "+pageobjects.PAYMSimOPage.twelevemonths.getText());
+			log.debug("The Contract length is "+pageobjects.PAYMSimOPage.twelevemonths.getText());
+		}
+			}
+
+
+public static void SelectTariffPhonesTab(String elementName) throws InterruptedException, AWTException {
+	//Assert.assertTrue(driver.getTitle().contains("30 Days");
+
+if(elementName.contains("30 Days"))
 	{
-	  System.out.println("The Tariff detail is  Absent and the Text is :" +pageobjects.SimFreeExtrasPage.Tariffvaladity.getText());	
-	
-    }
-	
+		System.out.println("Selecting a Random Tariff under 30 days tab");
+		log.debug("Selecting a Random Tariff under 30 days tab");
+		pageobjects.PAYMSimOPage.thirtydays.click();
+		Thread.sleep(3000);
+		pageobjects.PAYMSimOPage.BuyNowRandomTariff30Months.click();
+		
+		
+	}
+if(elementName.contains("12 Months"))
+{
+	System.out.println("Selecting a Random Tariff under 12 Months tab");
+	log.debug("Selecting a Random Tariff under 12 Months tab");
+	pageobjects.PAYMSimOPage.twelevemonths.click();
+	Thread.sleep(3000);
+	pageobjects.PAYMSimOPage.BuyNowRandomTariff12Months.click();
 }
-	
+
+}
+
 			
 public static void Elementverify(String elementName) throws InterruptedException {
 
-	if(elementName.contains("twelevemonths"))
+	if(elementName.contains("12 Months"))
 	{
 		if(driver.findElements(By.xpath("//*[@id='id-12-months']/p/a")).size() != 0){
 			System.out.println("12 month Contract length is Present");
@@ -64,7 +80,7 @@ public static void Elementverify(String elementName) throws InterruptedException
 		
 	}	
 	
-	if(elementName.contains("thirtydays"))
+	if(elementName.contains("30 Days"))
 	{
 		if(driver.findElements(By.xpath("//*[@id='id-30-days']/p/a")).size() != 0){
 			System.out.println("30 days Contract length is Present");
@@ -73,29 +89,65 @@ public static void Elementverify(String elementName) throws InterruptedException
 		}
 			}
 	
-	
-	if(elementName.contains("month12firsttariff"))
-	{
-		if(driver.findElements(By.xpath("//*[@id='67533f03-4e8b-4089-8d3a-fdaf4e1cd2a2']/div[5]")).size() != 0){
-			System.out.println("A 12 month Tariff is Present");
-			}else{
-			System.out.println("Not able to find any 12 month tariff");
-			}
 		
-	}
-	
-	if(elementName.contains("day30firsttariff"))
-	{
-		if(driver.findElements(By.xpath("//*[@id='11ca80ab-cee8-4b8a-afc5-d638ce897899']/div[6]")).size() != 0){
-			System.out.println("A 30 day Tariff is Present");
-			}else{
-			System.out.println("Not able to find any 30 day tariff");
-			}
-		
-	}
-	
 }
 
+
+
+public static void DisplayContent(String ElementName) 
+{
+if(ElementName.equalsIgnoreCase("paymheader"))
+{
+System.out.println("Pay monthly sims banner header - as per today is displayed :" +pageobjects.SimFreeExtrasPage.Tariffvaladity.getText());
+
+}	
+else
+{
+System.out.println("The Tariff detail is  Absent and the Text is :" +pageobjects.SimFreeExtrasPage.Tariffvaladity.getText());	
+
+}
+
+}
+
+
+
+
+public static void DisplayPromotionTariff(String elementName) throws InterruptedException 
+{
+
+	WebDriverWait wait = new WebDriverWait(driver, 40);
+	wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector(".col-xs-12.promotion-ribbon")));// instead of id u can use cssSelector or xpath of ur element.
+
+System.out.println("Displaying the Promotion tarriff as per page");
+
+String var1="Recommended";
+String var2="Most-Popular";
+String PromotionDisplayed=driver.findElement(By.cssSelector(".col-xs-12.promotion-ribbon")).getText();
+  ((JavascriptExecutor)driver).executeScript("scroll(0,500)");
+
+//Below is for the Display of recommended or not
+if (PromotionDisplayed.equals(var1))
+{
+System.out.println("The Promotion of the tariff displayed is Recommended");
+log.debug("The Promotion of the tariff displayed is Recommended");
+
+}
+else if (PromotionDisplayed.equals(var2))
+{
+System.out.println("The Promotion of the tariff displayed is Most-Popular");
+log.debug("The Promotion of the tariff displayed is Most-Popular");
+
+}
+else
+{
+System.out.println("The Promotion of the tariff displayed is unknown");
+}
+
+}
+
+
+
+//////////************Below were done for Jan Release********************/////////////////
 
 public static void Sorting(String elementName) throws InterruptedException {
 	List<WebElement> list = driver.findElements(By.xpath("//span[@class='pound'"));
@@ -567,38 +619,6 @@ public static void VerifyMinsDataDisplayed() throws IOException, InterruptedExce
 
 		
 }
-	public static void DisplayPromotionTariff(String elementName) throws InterruptedException 
-	{
-	
-		WebDriverWait wait = new WebDriverWait(driver, 40);
-		wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector(".col-xs-12.promotion-ribbon")));// instead of id u can use cssSelector or xpath of ur element.
-
-	System.out.println("Displaying the Promotion tarriff as per page");
-	
-	String var1="Recommended";
-	String var2="Most-Popular";
-	String PromotionDisplayed=driver.findElement(By.cssSelector(".col-xs-12.promotion-ribbon")).getText();
-	  ((JavascriptExecutor)driver).executeScript("scroll(0,500)");
-
-	//Below is for the Display of recommended or not
-	if (PromotionDisplayed.equals(var1))
-	{
-	System.out.println("The Promotion of the tariff displayed is Recommended");
-	log.debug("The Promotion of the tariff displayed is Recommended");
-
-	}
-	else if (PromotionDisplayed.equals(var2))
-	{
-	System.out.println("The Promotion of the tariff displayed is Most-Popular");
-	log.debug("The Promotion of the tariff displayed is Most-Popular");
-
-	}
-	else
-	{
-	System.out.println("The Promotion of the tariff displayed is unknown");
-	}
-	
-	}
 	
 	
 	public static void LengthPromotionTariff(String arg1) throws InterruptedException 

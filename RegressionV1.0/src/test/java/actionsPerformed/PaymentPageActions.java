@@ -16,12 +16,12 @@ public class PaymentPageActions extends Environment {
 	
 	static Logger log = Logger.getLogger("devpinoyLogger");
 
-	  public static void Set_Bank_details()
+	  public static void Set_Bank_details(String Username)
 	  {
 		
 		  
-		  pageobjects.PaymentPage.Name_On_Account.sendKeys("Test Accepta");
-		  log.debug("Entered name is Test Accepta");
+		  pageobjects.PaymentPage.Name_On_Account.sendKeys(Username);
+		  log.debug("Entered name is "+Username);
 
 		  pageobjects.PaymentPage.Account_Number.sendKeys("10207136");
 		  log.debug("Entered Account number - 10207136");
@@ -103,7 +103,7 @@ public class PaymentPageActions extends Environment {
 		  
 		  
 	  }
-	  public static void Card_Details() throws InterruptedException, AWTException
+	  public static void Card_Details(String Username) throws InterruptedException, AWTException
 	  {
 		 
 		  
@@ -112,8 +112,8 @@ public class PaymentPageActions extends Environment {
 			System.out.println("********We are switch to the iframe*******");
 			  log.debug("Entering the Payments section");
 			  Thread.sleep(2000);
-			PaymentPage.Name_On_Card.sendKeys("Test Accepta");
-			log.debug("Entering name of the card as Test Accepta");
+			PaymentPage.Name_On_Card.sendKeys(Username);
+			log.debug("Entering name of the card as "+Username);
 			
 			Thread.sleep(2000);
 			PaymentPage.Card_Number.sendKeys("4539791001730106");
@@ -176,10 +176,10 @@ public class PaymentPageActions extends Environment {
 
 		  log.debug("Payment pages validations"+driver.getTitle());
 
-			log.debug("The Main Headercontents are : " +pageobjects.PaymentPage.UpfrontPaymentAmount.getText());
+			log.debug("The Main Total are : " +pageobjects.PaymentPage.BasketTotal.getText());
 			
 			
-			log.debug("The Basket contents are : " +pageobjects.PaymentPage.BasketContent.getText());
+		//	log.debug("The Basket contents are : " +pageobjects.PaymentPage.BasketContent.getText());
 
 			
 		

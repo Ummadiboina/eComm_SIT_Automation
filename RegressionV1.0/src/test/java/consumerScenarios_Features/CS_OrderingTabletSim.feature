@@ -1,9 +1,17 @@
-Feature: Tablet SimO Only PAYG E2E validation
+Feature: Tablets SimO Only E2E validation
 
   @smokeTest
-  Scenario: Tablet SimO Only PAYG E2E validation
+  Scenario Outline: Tablet SimO Only PAYG E2E validation
     Given I am an CFA user and Lands on shop page
-    And Navigate to PayG sim only Tariffs page
-    And select any PAYG Tablet Tariff and continue
-    And Select to send Sim from Delivery page
+    And Navigate to sims and Tablet Sims page
+    And select any Tablet "Random Tariff" and continue
+    And I Land on the Non Phone related basket page and choose home delivery option
+    And click on "go to checkout" button
+    And input <Firstname> and <Surname> and other valid details in Delivery page and Click on the 'Continue button'
+    And land on the Non Credit check payment page and input <Username> and other details and click 'Continue on next step'
+    And Continue to Review page and review the order
     Then order confirmation is displayed
+
+       Examples: 
+      | Firstname | Surname | Username     |
+      | TEST      | ACCEPTA | TEST ACCEPTA |

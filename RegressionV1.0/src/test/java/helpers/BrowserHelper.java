@@ -39,7 +39,7 @@ public class BrowserHelper {
 		}
 		else if (BrowserType.equalsIgnoreCase("chrome"))
 		{
-			System.setProperty("webdriver.chrome.driver","src\\test\\java\\InternalLibraries\\BrowserDrivers\\Internet_Explorer\\ChromeDriver\\chromedriver.exe");
+			System.setProperty("webdriver.chrome.driver","src\\test\\java\\InternalLibraries\\BrowserDrivers\\ChromeDriver\\chromedriver.exe");
 			//Environment.driver = new ChromeDriver();					
 			Environment.driver = new ChromeDriver();
 		}

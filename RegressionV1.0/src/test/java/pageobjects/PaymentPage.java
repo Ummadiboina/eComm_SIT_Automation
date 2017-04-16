@@ -81,4 +81,6 @@ public class PaymentPage {
 	  @FindBy(how=How.XPATH,using="//*[@id='address-selection']/li/div/p/a") 
 		public static WebElement Selectaddress;
 	
+	  @FindBy(how=How.ID,using=("basket-total"))
+		public static WebElement BasketTotal;
 }

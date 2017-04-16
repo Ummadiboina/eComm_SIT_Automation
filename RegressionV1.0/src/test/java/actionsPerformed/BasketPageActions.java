@@ -210,6 +210,46 @@ public class BasketPageActions extends Environment
 
 	}
 	
+	public static void PlanOnlyPageContents() throws InterruptedException
+	{   
+	
+		  log.debug("Shop basket pages validations"+driver.getTitle());
+
+		  boolean fname=pageobjects.BasketPage.checkoutbtn.isEnabled(); 
+
+
+		if(fname!=false)
+		 {
+			System.out.println("Checkout is Enabled and Present" );
+			
+			log.debug("Checkout is Enabled and Present" );
+			
+			 
+			 }
+		else
+		 {
+		  System.out.println("Go To Checkout is Absent and the Text is :" +pageobjects.BasketPage.checkoutbtn.getText());
+		  log.debug("Go To Checkout is Absent and the Text is :" +pageobjects.BasketPage.checkoutbtn.getText());
+
+		 }
+		//Below will display contents of the section
+		  
+		log.debug("The Main Headercontents are : " +pageobjects.BasketPage.MainHeaders.getText());
+		
+		
+		log.debug("The Plan contents are : " +pageobjects.BasketPage.NonAirtimeDetails.getText());
+
+		
+		
+	
+
+		log.debug("The Basket Totals are : " +pageobjects.BasketPage.totals.getText());
+		
+		log.debug("The Basket Totals are : " +pageobjects.BasketPage.HomeDeliveryText.getText());
+
+	}
+	
+	
 	public static void CollectionorDelivery(String elementName) throws InterruptedException
 	{   
 		

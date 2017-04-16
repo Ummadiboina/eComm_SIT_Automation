@@ -22,7 +22,6 @@ static	Logger log = Logger.getLogger("devpinoyLogger");
 
    	 
 /*##############   All the Below are for the CFA customer journey ###################*/
-	  //Below will navigate to BestSelling Devices Page
 
 	 
 	  //Below will navigate to PayM Phones Page
@@ -33,7 +32,6 @@ static	Logger log = Logger.getLogger("devpinoyLogger");
 		boolean Worksfine = false;
 		while(!Worksfine)
 		{
-
 			try
 	    	{		 
 		System.out.println("Performing PAYM Phones landing page navigations");
@@ -91,7 +89,136 @@ static	Logger log = Logger.getLogger("devpinoyLogger");
 		}
 	  }
 	
-	  //Below will navigate to PayG Phones Page
+	 //Below will navigate to PayG Phones Page
+	
+	public static void SimIpadSimsPage() throws Exception 
+	 {
+		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+		boolean Worksfine = false;
+		while(!Worksfine)
+		{
+			try
+	    	{		 
+		System.out.println("Navigating to Sims --> Ipad Sims landing page navigations");
+		 log.debug("Navigating to Sims --> Ipad Sims landing page navigations");
+		  
+		  Point coordinates = pageobjects.MouseHoverPage.MoveMouseOnShopTab.getLocation();
+		  Robot robot = new Robot();
+		  robot.mouseMove(coordinates.getX(),coordinates.getY()+120);
+			 log.debug("Moving Mouse on the Shop Tab");
+
+		  
+		  Actions action = new Actions(driver);
+		  action.moveToElement(pageobjects.MouseHoverPage.MoveMouseOnSims).build().perform();
+			 log.debug("Moving Mouse on the Sims in Shop Dropdown");
+
+		  Thread.sleep(1000);
+		  action.moveToElement(pageobjects.MouseHoverPage.MoveMouseOnIpadSims).build().perform();
+			 log.debug("Moving Mouse on the Ipad Sims link");
+		   Screenshots.screennewPics();
+
+		  Thread.sleep(1000);
+		  pageobjects.MouseHoverPage.MoveMouseOnIpadSims.click();
+		  Screenshots.screennewPics();
+		  
+		  log.debug("Trying to take screenshots of page");
+
+		  //Move mouse pointer away from location
+		  Point coordinates2 = driver.findElement(By.xpath("//*[@id='header-consumer']/div")).getLocation();
+			 
+
+  		  Robot robot2 = new Robot();
+  		  robot2.mouseMove(coordinates2.getX(),coordinates.getY()+120);
+  		log.debug("Moved Mouse to somewhere side of page");
+  		
+  		Worksfine = true;
+
+	    	}
+	    	catch(ElementNotVisibleException  e)
+	    	{
+	    	//check if popup is present, if yes, handle it.
+	    		Environment.driver.switchTo().frame("edr_l_first"); 
+	    		System.out.println("********We are switch to the iframe*******");
+	       		log.debug("Popup has appeared on the screen, Hence trying to close the survey");
+	       	 Screenshots.screennewPics();
+	    		//Saying no to survey
+	    		driver.findElement(By.xpath("//a[@id='no']/span")).click();
+	    		log.debug("Closing the popup by saying No to Survey");
+	    		System.out.println("*******Saying no to survey*******");
+	    		System.out.println("*********Existing the popups present in iframe***************");
+	    		log.debug("Exiting the Survey");
+	    		Environment.driver.switchTo().defaultContent();
+	    		Thread.sleep(3000);
+	    		    		
+	    	}
+		}
+	  }
+	
+	//The Below will navigate to Sims --- > Tablet sims page
+	public static void SimTabletsSimsPage() throws Exception 
+	 {
+		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+		boolean Worksfine = false;
+		while(!Worksfine)
+		{
+			try
+	    	{		 
+		System.out.println("Navigating to Sims --> Tablet Sims landing page navigations");
+		 log.debug("Navigating to Sims --> Tablet Sims landing page navigations");
+		  
+		  Point coordinates = pageobjects.MouseHoverPage.MoveMouseOnShopTab.getLocation();
+		  Robot robot = new Robot();
+		  robot.mouseMove(coordinates.getX(),coordinates.getY()+120);
+			 log.debug("Moving Mouse on the Shop Tab");
+
+		  
+		  Actions action = new Actions(driver);
+		  action.moveToElement(pageobjects.MouseHoverPage.MoveMouseOnSims).build().perform();
+			 log.debug("Moving Mouse on the Sims in Shop Dropdown");
+
+		  Thread.sleep(1000);
+		  action.moveToElement(pageobjects.MouseHoverPage.MoveMouseOnTabletSims).build().perform();
+			 log.debug("Moving Mouse on the Ipad Sims link");
+		   Screenshots.screennewPics();
+
+		  Thread.sleep(1000);
+		  pageobjects.MouseHoverPage.MoveMouseOnTabletSims.click();
+		  Screenshots.screennewPics();
+		  
+		  log.debug("Trying to take screenshots of page");
+
+		  //Move mouse pointer away from location
+		  Point coordinates2 = driver.findElement(By.xpath("//*[@id='header-consumer']/div")).getLocation();
+			 
+
+ 		  Robot robot2 = new Robot();
+ 		  robot2.mouseMove(coordinates2.getX(),coordinates.getY()+120);
+ 		log.debug("Moved Mouse to somewhere side of page");
+ 		
+ 		Worksfine = true;
+
+	    	}
+	    	catch(ElementNotVisibleException  e)
+	    	{
+	    	//check if popup is present, if yes, handle it.
+	    		Environment.driver.switchTo().frame("edr_l_first"); 
+	    		System.out.println("********We are switch to the iframe*******");
+	       		log.debug("Popup has appeared on the screen, Hence trying to close the survey");
+	       	 Screenshots.screennewPics();
+	    		//Saying no to survey
+	    		driver.findElement(By.xpath("//a[@id='no']/span")).click();
+	    		log.debug("Closing the popup by saying No to Survey");
+	    		System.out.println("*******Saying no to survey*******");
+	    		System.out.println("*********Existing the popups present in iframe***************");
+	    		log.debug("Exiting the Survey");
+	    		Environment.driver.switchTo().defaultContent();
+	    		Thread.sleep(3000);
+	    		    		
+	    	}
+		}
+	  }
+	
+	
 	 //Below will navigate to PayM Phones Page
 	 
 		public static void PayGPhonesLandingPage() throws Exception 
@@ -198,15 +325,19 @@ static	Logger log = Logger.getLogger("devpinoyLogger");
 	    	}
 	    	catch(ElementNotVisibleException e)
 	    	{
-	    	//check if popup is present, if yes, handle it.
+	    		//check if popup is present, if yes, handle it.
 	    		Environment.driver.switchTo().frame("edr_l_first"); 
 	    		System.out.println("********We are switch to the iframe*******");
+	       		log.debug("Popup has appeared on the screen, Hence trying to close the survey");
+	       		Screenshots.screennewPics();
 	    		//Saying no to survey
 	    		driver.findElement(By.xpath("//a[@id='no']/span")).click();
+	    		log.debug("Closing the popup by saying No to Survey");
 	    		System.out.println("*******Saying no to survey*******");
 	    		System.out.println("*********Existing the popups present in iframe***************");
+	    		log.debug("Exiting the Survey");
 	    		Environment.driver.switchTo().defaultContent();
-	    		
+	    		Thread.sleep(3000);
 	  		  
 	    	}
 			
@@ -244,23 +375,24 @@ static	Logger log = Logger.getLogger("devpinoyLogger");
 		    	}
 		    	catch(ElementNotVisibleException e)
 		    	{
-		    	//check if popup is present, if yes, handle it.
+		    		//check if popup is present, if yes, handle it.
 		    		Environment.driver.switchTo().frame("edr_l_first"); 
 		    		System.out.println("********We are switch to the iframe*******");
+		       		log.debug("Popup has appeared on the screen, Hence trying to close the survey");
+		       		Screenshots.screennewPics();
 		    		//Saying no to survey
 		    		driver.findElement(By.xpath("//a[@id='no']/span")).click();
+		    		log.debug("Closing the popup by saying No to Survey");
 		    		System.out.println("*******Saying no to survey*******");
 		    		System.out.println("*********Existing the popups present in iframe***************");
+		    		log.debug("Exiting the Survey");
 		    		Environment.driver.switchTo().defaultContent();
+		    		Thread.sleep(3000);
 		    		
 		    	}
 				
 		  }
 		
-	  //Below will navigate to Tablets PayG Page
-	  
-	  
-	  //Below will navigate to Upgrade > Upgrade now Page
 	  
 	  
 	  //Below will navigate to PAYM SIMO Page
@@ -301,14 +433,19 @@ static	Logger log = Logger.getLogger("devpinoyLogger");
 	    	}
 	    	catch(NoSuchElementException e)
 	    	{
-	    	//check if popup is present, if yes, handle it.
+	    		//check if popup is present, if yes, handle it.
 	    		Environment.driver.switchTo().frame("edr_l_first"); 
 	    		System.out.println("********We are switch to the iframe*******");
+	       		log.debug("Popup has appeared on the screen, Hence trying to close the survey");
+	       		Screenshots.screennewPics();
 	    		//Saying no to survey
 	    		driver.findElement(By.xpath("//a[@id='no']/span")).click();
+	    		log.debug("Closing the popup by saying No to Survey");
 	    		System.out.println("*******Saying no to survey*******");
-	    		System.out.println("*********Exiting the popups present in iframe***************");
+	    		System.out.println("*********Existing the popups present in iframe***************");
+	    		log.debug("Exiting the Survey");
 	    		Environment.driver.switchTo().defaultContent();
+	    		Thread.sleep(3000);
 	    		
 	    		    		   		
 	    	}
@@ -317,32 +454,13 @@ static	Logger log = Logger.getLogger("devpinoyLogger");
 		 
 	  }
 	  
-	  //Below will navigate to PAYG SIMO Page
-
-	  
-	  //Below will navigate to INTERNATIONAL SIMO Page
-	  
-	  
-	  //Below will navigate to IPAD SIMO Page
-	  
-	  
-	  //Below will navigate to Tablet SIMO Page
-	  
-	  
-	  //Below will navigate to Great Deals Page
-	  
 	 
-	  //Below will navigate to SMART TECH Page
-	  
-	  
-	  //Below will navigate to BROWSE SMART TECH Page
-	  
 	  
 	  //Below will navigate to SMART TECH > SMART WATCHES Page
 	  public static void SmartwatchesLandingPage() throws Exception
 	  {
 		  driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
-			boolean Worksfine = false;
+		  boolean Worksfine = false;
 			while(!Worksfine)
 		  try
 	    	{
@@ -350,7 +468,7 @@ static	Logger log = Logger.getLogger("devpinoyLogger");
 			  System.out.println("Performing Smartwatches navigations");
 			  log.debug("Performing Smartwatches navigations");
 
-			  Thread.sleep(4000);
+			  Thread.sleep(2000);
 			  Point coordinates = pageobjects.MouseHoverPage.MoveMouseOnShopTab.getLocation();
 	   		  Robot robot = new Robot();
 	   		  robot.mouseMove(coordinates.getX(),coordinates.getY()+120);
@@ -373,32 +491,34 @@ static	Logger log = Logger.getLogger("devpinoyLogger");
 	    	}
 	    	catch(NoSuchElementException e)
 	    	{
-	    	//check if popup is present, if yes, handle it.
+	    		//check if popup is present, if yes, handle it.
 	    		Environment.driver.switchTo().frame("edr_l_first"); 
 	    		System.out.println("********We are switch to the iframe*******");
+	       		log.debug("Popup has appeared on the screen, Hence trying to close the survey");
+	       		Screenshots.screennewPics();
 	    		//Saying no to survey
 	    		driver.findElement(By.xpath("//a[@id='no']/span")).click();
+	    		log.debug("Closing the popup by saying No to Survey");
 	    		System.out.println("*******Saying no to survey*******");
-	    		System.out.println("*********Exiting the popups present in iframe***************");
+	    		System.out.println("*********Existing the popups present in iframe***************");
+	    		log.debug("Exiting the Survey");
 	    		Environment.driver.switchTo().defaultContent();
-	    		  
-	    		    		
-	    		
+	    		Thread.sleep(3000);
 	    	}
 	  }
 	  
 	  //Below will navigate to SMART TECH > FITNESS TRACKERS Page
-	  public static void FitnessLandingPage() throws Exception 
+	  public static void FitnessLandingPage() throws Exception
 	  {
+		 
 		  driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 			boolean Worksfine = false;
 			while(!Worksfine)
 		  try
 	    	{
 			  	
-			  System.out.println("Performing FitnessTracker navigations");
-			  log.debug("Performing FitnessTracker navigations");
-			  Thread.sleep(4000);
+			  System.out.println("Performing Fitness tracker navigations");
+			  log.debug("Performing Accessories navigations");
 			  Point coordinates = pageobjects.MouseHoverPage.MoveMouseOnShopTab.getLocation();
 	   		  Robot robot = new Robot();
 	   		  robot.mouseMove(coordinates.getX(),coordinates.getY()+120);
@@ -406,9 +526,9 @@ static	Logger log = Logger.getLogger("devpinoyLogger");
 	   		  Actions action = new Actions(driver);
 	   		  action.moveToElement(pageobjects.MouseHoverPage.MoveMouseOnSmarttechTab).build().perform();
 	   		  Thread.sleep(2000);
-	   		  action.moveToElement(pageobjects.MouseHoverPage.MoveMouseOnFitnesstracker).build().perform();
+	   		  action.moveToElement(pageobjects.MouseHoverPage.MoveMouseOnFitnessTrackers).build().perform();
 	   		  Thread.sleep(2000);
-	   		  pageobjects.MouseHoverPage.MoveMouseOnFitnesstracker.click();
+	   		  pageobjects.MouseHoverPage.MoveMouseOnFitnessTrackers.click();
 
 	   		  //Move mouse pointer away from location
 			  Point coordinates2 = driver.findElement(By.xpath("//*[@id='header-consumer']/div")).getLocation();
@@ -416,23 +536,28 @@ static	Logger log = Logger.getLogger("devpinoyLogger");
 	   		  robot2.mouseMove(coordinates2.getX(),coordinates.getY()+120);
 	     		log.debug("Moved Mouse to somewhere side of page");
 
-	     		Worksfine = true;
+	   		  Worksfine = true;
 	   		  
 	    	}
 	    	catch(NoSuchElementException e)
 	    	{
-	    	//check if popup is present, if yes, handle it.
+	    		//check if popup is present, if yes, handle it.
 	    		Environment.driver.switchTo().frame("edr_l_first"); 
 	    		System.out.println("********We are switch to the iframe*******");
+	       		log.debug("Popup has appeared on the screen, Hence trying to close the survey");
+	       		Screenshots.screennewPics();
 	    		//Saying no to survey
 	    		driver.findElement(By.xpath("//a[@id='no']/span")).click();
+	    		log.debug("Closing the popup by saying No to Survey");
 	    		System.out.println("*******Saying no to survey*******");
-	    		System.out.println("*********Exiting the popups present in iframe***************");
+	    		System.out.println("*********Existing the popups present in iframe***************");
+	    		log.debug("Exiting the Survey");
 	    		Environment.driver.switchTo().defaultContent();
-	    		
-	    		
+	    		Thread.sleep(3000);
 	    	}
 	  }
+	  
+	
 	  	  
 	  //Below will navigate to ACCESSORIES Page
 	  public static void AccessoriesLandingPage() throws Exception
@@ -468,66 +593,22 @@ static	Logger log = Logger.getLogger("devpinoyLogger");
 	    	}
 	    	catch(NoSuchElementException e)
 	    	{
-	    	//check if popup is present, if yes, handle it.
+	    		//check if popup is present, if yes, handle it.
 	    		Environment.driver.switchTo().frame("edr_l_first"); 
 	    		System.out.println("********We are switch to the iframe*******");
+	       		log.debug("Popup has appeared on the screen, Hence trying to close the survey");
+	       		Screenshots.screennewPics();
 	    		//Saying no to survey
 	    		driver.findElement(By.xpath("//a[@id='no']/span")).click();
+	    		log.debug("Closing the popup by saying No to Survey");
 	    		System.out.println("*******Saying no to survey*******");
-	    		System.out.println("*********Exiting the popups present in iframe***************");
+	    		System.out.println("*********Existing the popups present in iframe***************");
+	    		log.debug("Exiting the Survey");
 	    		Environment.driver.switchTo().defaultContent();
-	    		     		
+	    		Thread.sleep(3000);
 	    	}
 	  }
 	  
-  
-// Below will navigate to upgrade --- > upgrade now page
-	  
-	  public static void UpgradeandUpgradeNow() throws Exception 
-		 {
-		  driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
-			boolean Worksfine = false;
-			while(!Worksfine)
-				try
-		    	{
-				  	
-					  System.out.println("Performing PAYG MBB navigations");
-					  log.debug("Performing PAYG MBB navigations");
-					  Point coordinates = pageobjects.MouseHoverPage.MoveMouseOnShopTab.getLocation();
-			   		  Robot robot = new Robot();
-			   		  robot.mouseMove(coordinates.getX(),coordinates.getY()+120);
-			   		 		  
-			   		  Actions action = new Actions(driver);
-			   		  action.moveToElement(pageobjects.MouseHoverPage.MoveMouseOnMobileBroadband).build().perform();
-			   		  Thread.sleep(2000);
-			   		  action.moveToElement(pageobjects.MouseHoverPage.MoveMouseOnPayGMBB).build().perform();
-			   		  Thread.sleep(2000);
-			   		  pageobjects.MouseHoverPage.MoveMouseOnPayGMBB.click();
-
-			   		  //Move mouse pointer away from location
-					  Point coordinates2 = driver.findElement(By.xpath("//*[@id='header-consumer']/div")).getLocation();
-			   		  Robot robot2 = new Robot();
-			   		  robot2.mouseMove(coordinates2.getX(),coordinates.getY()+120);
-			     		log.debug("Moved Mouse to somewhere side of page");
-
-			   		  Worksfine = true;
-		   		
-		    	}
-		    	catch(ElementNotVisibleException e)
-		    	{
-		    	//check if popup is present, if yes, handle it.
-		    		Environment.driver.switchTo().frame("edr_l_first"); 
-		    		System.out.println("********We are switch to the iframe*******");
-		    		//Saying no to survey
-		    		driver.findElement(By.xpath("//a[@id='no']/span")).click();
-		    		System.out.println("*******Saying no to survey*******");
-		    		System.out.println("*********Existing the popups present in iframe***************");
-		    		Environment.driver.switchTo().defaultContent();
-		    		
-		    	}
-				
-				
-		  }
 	  
 	 //Below will navigate to PAYG MBB page
 	  public static void PayGMBBPage() throws Exception
@@ -561,6 +642,65 @@ static	Logger log = Logger.getLogger("devpinoyLogger");
 		    	}
 		    	catch(ElementNotVisibleException e)
 		    	{
+		    		//check if popup is present, if yes, handle it.
+		    		Environment.driver.switchTo().frame("edr_l_first"); 
+		    		System.out.println("********We are switch to the iframe*******");
+		       		log.debug("Popup has appeared on the screen, Hence trying to close the survey");
+		       		Screenshots.screennewPics();
+		    		//Saying no to survey
+		    		driver.findElement(By.xpath("//a[@id='no']/span")).click();
+		    		log.debug("Closing the popup by saying No to Survey");
+		    		System.out.println("*******Saying no to survey*******");
+		    		System.out.println("*********Existing the popups present in iframe***************");
+		    		log.debug("Exiting the Survey");
+		    		Environment.driver.switchTo().defaultContent();
+		    		Thread.sleep(3000);
+
+		    	}
+				
+		  }
+
+	  
+	  
+	  
+	  
+ /*##############   All the Below are for the CFU customer journey ###################*/
+
+// Below will navigate to upgrade --- > upgrade now page
+	  
+	  public static void UpgradeandUpgradeNow() throws Exception 
+		 {
+		  driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+			boolean Worksfine = false;
+			while(!Worksfine)
+				try
+		    	{
+				  	
+					  System.out.println("Performing Upgrade -- > upgrade now navigations");
+					  log.debug("Performing PAYG MBB navigations");
+					  Point coordinates = pageobjects.MouseHoverPage.MoveMouseOnShopTab.getLocation();
+			   		  Robot robot = new Robot();
+			   		  robot.mouseMove(coordinates.getX(),coordinates.getY()+120);
+			   		 		  
+			   		 Actions action = new Actions(driver);
+					  action.moveToElement(pageobjects.MouseHoverPage.MouseMoveonUpgrade).build().perform();
+					  Thread.sleep(2000);
+					  action.moveToElement(pageobjects.MouseHoverPage.MouseMoveonUpgradeAndUpgradeNow).build().perform();
+					  Thread.sleep(2000);
+					  pageobjects.MouseHoverPage.MouseMoveonUpgradeAndUpgradeNow.click();
+
+
+			   		  //Move mouse pointer away from location
+					  Point coordinates2 = driver.findElement(By.xpath("//*[@id='header-consumer']/div")).getLocation();
+			   		  Robot robot2 = new Robot();
+			   		  robot2.mouseMove(coordinates2.getX(),coordinates.getY()+120);
+			     		log.debug("Moved Mouse to somewhere side of page");
+
+			   		  Worksfine = true;
+		   		
+		    	}
+		    	catch(ElementNotVisibleException e)
+		    	{
 		    	//check if popup is present, if yes, handle it.
 		    		Environment.driver.switchTo().frame("edr_l_first"); 
 		    		System.out.println("********We are switch to the iframe*******");
@@ -569,10 +709,9 @@ static	Logger log = Logger.getLogger("devpinoyLogger");
 		    		System.out.println("*******Saying no to survey*******");
 		    		System.out.println("*********Existing the popups present in iframe***************");
 		    		Environment.driver.switchTo().defaultContent();
-		    		Thread.sleep(2000);
-		     		Worksfine = true;
-
+		    		
 		    	}
+				
 				
 		  }
 }
