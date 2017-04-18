@@ -43,7 +43,7 @@ public class E2EOrderPlaced_Steps {
 	    	driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 	    	PageFactory.initElements(driver, MouseHoverPage.class);
 	    	MouseHoverAction.PayMPhonesLandingPage();
-	    	//Autoredirection.redirect();
+	    	Autoredirection.redirect();
 	    }
 	    
 	    @Given("^Navigate to Accessories$")

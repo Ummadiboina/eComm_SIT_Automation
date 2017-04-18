@@ -1,7 +1,311 @@
-18/04/2017 01:22:16 devpinoyLogger Called openBrowser
-18/04/2017 01:22:16 devpinoyLogger The Relative path of the user.dirC:\Automation\Git Repositories New\RegressionV1.0
-18/04/2017 01:22:16 devpinoyLogger The Env prop path is C:\Automation\Git Repositories New\RegressionV1.0\src\test\java\Properties\AppConfig.properties
-18/04/2017 01:22:16 devpinoyLogger The Browser type read from EnvProp file is chrome
-18/04/2017 01:22:16 devpinoyLogger The current url is https://www.o2.co.uk/shop
-18/04/2017 01:22:21 devpinoyLogger Invoked browser
-18/04/2017 01:22:34 devpinoyLogger Invoked URL
+18/04/2017 01:50:23 devpinoyLogger Called openBrowser
+18/04/2017 01:50:23 devpinoyLogger The Relative path of the user.dirC:\Automation\Git Repositories New\RegressionV1.0
+18/04/2017 01:50:23 devpinoyLogger The Env prop path is C:\Automation\Git Repositories New\RegressionV1.0\src\test\java\Properties\AppConfig.properties
+18/04/2017 01:50:23 devpinoyLogger The Browser type read from EnvProp file is chrome
+18/04/2017 01:50:23 devpinoyLogger The current url is https://www.o2.co.uk/shop
+18/04/2017 01:50:49 devpinoyLogger Invoked browser
+18/04/2017 01:52:09 devpinoyLogger Invoked URL
+18/04/2017 01:52:10 devpinoyLogger Deleted all Cookies
+18/04/2017 01:52:10 devpinoyLogger Maxismised window
+18/04/2017 01:52:12 devpinoyLogger We are in the Shop Home page
+18/04/2017 01:52:12 devpinoyLogger The Page title is O2 | Shop | Latest Pay & Go, Pay Monthly and Sim Only Deals
+18/04/2017 01:52:13 devpinoyLogger Performing Accessories navigations
+18/04/2017 01:52:25 devpinoyLogger Called openBrowser
+18/04/2017 01:52:25 devpinoyLogger The Relative path of the user.dirC:\Automation\Git Repositories New\RegressionV1.0
+18/04/2017 01:52:25 devpinoyLogger The Env prop path is C:\Automation\Git Repositories New\RegressionV1.0\src\test\java\Properties\AppConfig.properties
+18/04/2017 01:52:25 devpinoyLogger The Browser type read from EnvProp file is chrome
+18/04/2017 01:52:25 devpinoyLogger The current url is https://www.o2.co.uk/shop
+18/04/2017 01:52:38 devpinoyLogger Invoked browser
+18/04/2017 01:53:03 devpinoyLogger Invoked URL
+18/04/2017 01:53:06 devpinoyLogger Deleted all Cookies
+18/04/2017 01:53:06 devpinoyLogger Maxismised window
+18/04/2017 01:53:07 devpinoyLogger We are in the Shop Home page
+18/04/2017 01:53:07 devpinoyLogger The Page title is O2 | Shop | Latest Pay & Go, Pay Monthly and Sim Only Deals
+18/04/2017 01:53:07 devpinoyLogger Performing navigations to PAYG MBB
+18/04/2017 01:53:07 devpinoyLogger Moving Mouse on the Shop Tab
+18/04/2017 01:53:12 devpinoyLogger Popup has appeared on the screen, Hence trying to close the survey
+18/04/2017 01:53:31 devpinoyLogger Called openBrowser
+18/04/2017 01:53:31 devpinoyLogger The Relative path of the user.dirC:\Automation\Git Repositories New\RegressionV1.0
+18/04/2017 01:53:31 devpinoyLogger The Env prop path is C:\Automation\Git Repositories New\RegressionV1.0\src\test\java\Properties\AppConfig.properties
+18/04/2017 01:53:31 devpinoyLogger The Browser type read from EnvProp file is chrome
+18/04/2017 01:53:31 devpinoyLogger The current url is https://www.o2.co.uk/shop
+18/04/2017 01:53:36 devpinoyLogger Invoked browser
+18/04/2017 01:54:06 devpinoyLogger Invoked URL
+18/04/2017 01:54:10 devpinoyLogger Deleted all Cookies
+18/04/2017 01:54:10 devpinoyLogger Maxismised window
+18/04/2017 01:54:10 devpinoyLogger Performing PAYG MBB navigations
+18/04/2017 01:54:18 devpinoyLogger Performing PAYG MBB navigations
+18/04/2017 01:54:56 devpinoyLogger Called openBrowser
+18/04/2017 01:54:56 devpinoyLogger The Relative path of the user.dirC:\Automation\Git Repositories New\RegressionV1.0
+18/04/2017 01:54:56 devpinoyLogger The Env prop path is C:\Automation\Git Repositories New\RegressionV1.0\src\test\java\Properties\AppConfig.properties
+18/04/2017 01:54:56 devpinoyLogger The Browser type read from EnvProp file is chrome
+18/04/2017 01:54:56 devpinoyLogger The current url is https://www.o2.co.uk/shop
+18/04/2017 01:55:08 devpinoyLogger Invoked browser
+18/04/2017 01:55:39 devpinoyLogger Invoked URL
+18/04/2017 01:55:46 devpinoyLogger Deleted all Cookies
+18/04/2017 01:55:46 devpinoyLogger Maxismised window
+18/04/2017 01:55:47 devpinoyLogger We are in the Shop Home page
+18/04/2017 01:55:47 devpinoyLogger The Page title is O2 | Shop | Latest Pay & Go, Pay Monthly and Sim Only Deals
+18/04/2017 01:55:48 devpinoyLogger Performing Accessories navigations
+18/04/2017 01:56:16 devpinoyLogger Moved Mouse to somewhere side of page
+18/04/2017 01:56:16 devpinoyLogger The current url is https://www.o2.co.uk/shop/fitness-trackers/#sort=content.sorting.featured&page=1
+18/04/2017 01:56:16 devpinoyLogger The new url is https://www.ref.o2.co.uk/shop/fitness-trackers/#sort=content.sorting.featured&page=1
+18/04/2017 01:57:45 devpinoyLogger Called openBrowser
+18/04/2017 01:57:45 devpinoyLogger The Relative path of the user.dirC:\Automation\Git Repositories New\RegressionV1.0
+18/04/2017 01:57:45 devpinoyLogger The Env prop path is C:\Automation\Git Repositories New\RegressionV1.0\src\test\java\Properties\AppConfig.properties
+18/04/2017 01:57:45 devpinoyLogger The Browser type read from EnvProp file is chrome
+18/04/2017 01:57:45 devpinoyLogger The current url is https://www.o2.co.uk/shop
+18/04/2017 01:57:56 devpinoyLogger Invoked browser
+18/04/2017 01:58:31 devpinoyLogger Invoked URL
+18/04/2017 01:58:37 devpinoyLogger Deleted all Cookies
+18/04/2017 01:58:37 devpinoyLogger Maxismised window
+18/04/2017 01:58:37 devpinoyLogger We are in the Shop Home page
+18/04/2017 01:58:37 devpinoyLogger The Page title is O2 | Shop | Latest Pay & Go, Pay Monthly and Sim Only Deals
+18/04/2017 01:58:37 devpinoyLogger Navigating to Sims --> Ipad Sims landing page navigations
+18/04/2017 01:58:39 devpinoyLogger Moving Mouse on the Shop Tab
+18/04/2017 01:58:43 devpinoyLogger Moving Mouse on the Sims in Shop Dropdown
+18/04/2017 01:58:45 devpinoyLogger Moving Mouse on the Ipad Sims link
+18/04/2017 01:58:59 devpinoyLogger Trying to take screenshots of page
+18/04/2017 01:58:59 devpinoyLogger Moved Mouse to somewhere side of page
+18/04/2017 01:58:59 devpinoyLogger The current url is http://www.o2.co.uk/broadband/ipad-sim
+18/04/2017 01:58:59 devpinoyLogger The new url is http://www.ref.o2.co.uk/broadband/ipad-sim
+18/04/2017 01:59:45 devpinoyLogger Currently in Device details page
+18/04/2017 01:59:45 devpinoyLogger The Page title is www.ref.o2.co.uk
+18/04/2017 01:59:52 devpinoyLogger Selecting Any Ipad Sim
+18/04/2017 02:00:28 devpinoyLogger Called openBrowser
+18/04/2017 02:00:28 devpinoyLogger The Relative path of the user.dirC:\Automation\Git Repositories New\RegressionV1.0
+18/04/2017 02:00:28 devpinoyLogger The Env prop path is C:\Automation\Git Repositories New\RegressionV1.0\src\test\java\Properties\AppConfig.properties
+18/04/2017 02:00:28 devpinoyLogger The Browser type read from EnvProp file is chrome
+18/04/2017 02:00:28 devpinoyLogger The current url is https://www.o2.co.uk/shop
+18/04/2017 02:00:47 devpinoyLogger Invoked browser
+18/04/2017 02:01:21 devpinoyLogger Invoked URL
+18/04/2017 02:01:37 devpinoyLogger Deleted all Cookies
+18/04/2017 02:01:37 devpinoyLogger Maxismised window
+18/04/2017 02:01:38 devpinoyLogger We are in the Shop Home page
+18/04/2017 02:01:38 devpinoyLogger The Page title is O2 | Shop | Latest Pay & Go, Pay Monthly and Sim Only Deals
+18/04/2017 02:01:38 devpinoyLogger Navigating to Sims --> Tablet Sims landing page navigations
+18/04/2017 02:01:40 devpinoyLogger Moving Mouse on the Shop Tab
+18/04/2017 02:01:45 devpinoyLogger Moving Mouse on the Sims in Shop Dropdown
+18/04/2017 02:01:48 devpinoyLogger Moving Mouse on the Ipad Sims link
+18/04/2017 02:02:01 devpinoyLogger Popup has appeared on the screen, Hence trying to close the survey
+18/04/2017 02:02:15 devpinoyLogger Closing the popup by saying No to Survey
+18/04/2017 02:02:15 devpinoyLogger Exiting the Survey
+18/04/2017 02:02:19 devpinoyLogger Navigating to Sims --> Tablet Sims landing page navigations
+18/04/2017 02:02:22 devpinoyLogger Moving Mouse on the Shop Tab
+18/04/2017 02:02:25 devpinoyLogger Moving Mouse on the Sims in Shop Dropdown
+18/04/2017 02:02:29 devpinoyLogger Moving Mouse on the Ipad Sims link
+18/04/2017 02:03:19 devpinoyLogger Called openBrowser
+18/04/2017 02:03:19 devpinoyLogger The Relative path of the user.dirC:\Automation\Git Repositories New\RegressionV1.0
+18/04/2017 02:03:19 devpinoyLogger The Env prop path is C:\Automation\Git Repositories New\RegressionV1.0\src\test\java\Properties\AppConfig.properties
+18/04/2017 02:03:19 devpinoyLogger The Browser type read from EnvProp file is chrome
+18/04/2017 02:03:19 devpinoyLogger The current url is https://www.o2.co.uk/shop
+18/04/2017 02:04:19 devpinoyLogger Invoked browser
+18/04/2017 02:05:19 devpinoyLogger Invoked URL
+18/04/2017 02:05:43 devpinoyLogger Deleted all Cookies
+18/04/2017 02:05:44 devpinoyLogger Maxismised window
+18/04/2017 02:05:45 devpinoyLogger We are in the Shop Home page
+18/04/2017 02:05:45 devpinoyLogger The Page title is O2 | Shop | Latest Pay & Go, Pay Monthly and Sim Only Deals
+18/04/2017 02:05:46 devpinoyLogger Performing PAYG Phones landing page navigations
+18/04/2017 02:05:51 devpinoyLogger Moving Mouse on the Shop Tab
+18/04/2017 02:05:58 devpinoyLogger Moving Mouse on the Phones dropdown
+18/04/2017 02:06:07 devpinoyLogger Moving Mouse on the Pay as you Go link
+18/04/2017 02:07:01 devpinoyLogger Called openBrowser
+18/04/2017 02:07:01 devpinoyLogger The Relative path of the user.dirC:\Automation\Git Repositories New\RegressionV1.0
+18/04/2017 02:07:01 devpinoyLogger The Env prop path is C:\Automation\Git Repositories New\RegressionV1.0\src\test\java\Properties\AppConfig.properties
+18/04/2017 02:07:01 devpinoyLogger The Browser type read from EnvProp file is chrome
+18/04/2017 02:07:01 devpinoyLogger The current url is https://www.o2.co.uk/shop
+18/04/2017 02:07:46 devpinoyLogger Invoked browser
+18/04/2017 02:08:53 devpinoyLogger Invoked URL
+18/04/2017 02:09:34 devpinoyLogger Deleted all Cookies
+18/04/2017 02:09:36 devpinoyLogger Maxismised window
+18/04/2017 02:09:36 devpinoyLogger We are in the Shop Home page
+18/04/2017 02:09:36 devpinoyLogger The Page title is O2 | Shop | Latest Pay & Go, Pay Monthly and Sim Only Deals
+18/04/2017 02:09:37 devpinoyLogger Performing PAYM Phones landing page navigations
+18/04/2017 02:09:38 devpinoyLogger Moving Mouse on the Shop Tab
+18/04/2017 02:09:38 devpinoyLogger Moving Mouse on the Phones dropdown
+18/04/2017 02:09:40 devpinoyLogger Moving Mouse on the Paymonthly link
+18/04/2017 02:09:59 devpinoyLogger Popup has appeared on the screen, Hence trying to close the survey
+18/04/2017 02:10:26 devpinoyLogger Closing the popup by saying No to Survey
+18/04/2017 02:10:26 devpinoyLogger Exiting the Survey
+18/04/2017 02:10:30 devpinoyLogger Performing PAYM Phones landing page navigations
+18/04/2017 02:10:33 devpinoyLogger Moving Mouse on the Shop Tab
+18/04/2017 02:10:35 devpinoyLogger Moving Mouse on the Phones dropdown
+18/04/2017 02:10:39 devpinoyLogger Moving Mouse on the Paymonthly link
+18/04/2017 02:11:50 devpinoyLogger Called openBrowser
+18/04/2017 02:11:50 devpinoyLogger The Relative path of the user.dirC:\Automation\Git Repositories New\RegressionV1.0
+18/04/2017 02:11:50 devpinoyLogger The Env prop path is C:\Automation\Git Repositories New\RegressionV1.0\src\test\java\Properties\AppConfig.properties
+18/04/2017 02:11:50 devpinoyLogger The Browser type read from EnvProp file is chrome
+18/04/2017 02:11:50 devpinoyLogger The current url is https://www.o2.co.uk/shop
+18/04/2017 02:12:49 devpinoyLogger Invoked browser
+18/04/2017 02:13:18 devpinoyLogger Invoked URL
+18/04/2017 02:13:51 devpinoyLogger Deleted all Cookies
+18/04/2017 02:13:53 devpinoyLogger Maxismised window
+18/04/2017 02:13:55 devpinoyLogger We are in the Shop Home page
+18/04/2017 02:13:55 devpinoyLogger The Page title is O2 | Shop | Latest Pay & Go, Pay Monthly and Sim Only Deals
+18/04/2017 02:13:56 devpinoyLogger Performing PAYM Phones landing page navigations
+18/04/2017 02:14:05 devpinoyLogger Moving Mouse on the Shop Tab
+18/04/2017 02:14:14 devpinoyLogger Moving Mouse on the Phones dropdown
+18/04/2017 02:14:21 devpinoyLogger Moving Mouse on the Paymonthly link
+18/04/2017 02:15:27 devpinoyLogger Clicking on PayM Phones
+18/04/2017 02:15:27 devpinoyLogger Moved Mouse to somewhere side of page
+18/04/2017 02:17:05 devpinoyLogger Selected GalaxyS7
+18/04/2017 02:17:05 devpinoyLogger Currently in Device details page
+18/04/2017 02:17:05 devpinoyLogger The Page title is Samsung Galaxy S7 Specs, Contract Deals & Pay As You Go
+18/04/2017 02:17:46 devpinoyLogger Clicked on ViewOurTariffs
+18/04/2017 02:17:51 devpinoyLogger Selected a Random Tariff
+18/04/2017 02:18:39 devpinoyLogger Clicked on Add to Basket in Tariff and Extras page
+18/04/2017 02:18:44 devpinoyLogger Shop basket pages validationsO2 | Basket
+18/04/2017 02:18:44 devpinoyLogger Checkout is Present and the Text is :
+18/04/2017 02:18:45 devpinoyLogger The Main Headercontents are : Your order
+Upfront
+Monthly
+18/04/2017 02:18:45 devpinoyLogger The Phone contents are : Samsung Galaxy S7
+32GB Gold Platinum
+?????
+?????
+Average user rating
+"Super fast phone"
+Mr Bike Rider, (September 2016)
+What's my Device Plan?
+£9.99
+£16.00
+18/04/2017 02:18:45 devpinoyLogger The Basket Totals are : Total cost
+£9.99
+upfront
+£54.00
+monthly
+18/04/2017 02:18:45 devpinoyLogger The Basket Totals are : In Stock Order by midnight for free next working day delivery2
+18/04/2017 02:18:47 devpinoyLogger HomeDelivery is Selected
+18/04/2017 02:18:57 devpinoyLogger Clicking on Checkout button
+18/04/2017 02:19:02 devpinoyLogger Entered House number
+18/04/2017 02:19:08 devpinoyLogger Entered Post code
+18/04/2017 02:19:09 devpinoyLogger Clicked on the Find address button
+18/04/2017 02:19:16 devpinoyLogger Selected an address
+18/04/2017 02:19:18 devpinoyLogger Entering an Random email id
+18/04/2017 02:19:29 devpinoyLogger SITTester-3cfa40cd-aa4a-4154-9d67-0342f823f927@gmail.com
+18/04/2017 02:19:29 devpinoyLogger Setting the About you options
+18/04/2017 02:19:30 devpinoyLogger Selected the dropdown Mrs
+18/04/2017 02:19:34 devpinoyLogger Entered first name and last name as TEST ACCEPTA
+18/04/2017 02:19:40 devpinoyLogger Entered all the other relavant details
+18/04/2017 02:19:48 devpinoyLogger Clicking on the continue link
+18/04/2017 02:20:30 devpinoyLogger Entered name is TEST ACCEPTA
+18/04/2017 02:20:35 devpinoyLogger Entered Account number - 10207136
+18/04/2017 02:20:36 devpinoyLogger Entered sort code - 20
+18/04/2017 02:20:38 devpinoyLogger Entered sort code - 15
+18/04/2017 02:20:39 devpinoyLogger Entered sort code - 96
+18/04/2017 02:20:39 devpinoyLogger Clicked on the Accept Terms checkbox
+18/04/2017 02:20:42 devpinoyLogger Entered the stayed at address - 9
+18/04/2017 02:20:43 devpinoyLogger Entered the stayed at months - 9
+18/04/2017 02:20:44 devpinoyLogger Clicked on the Confirm Address checkbox
+18/04/2017 02:20:54 devpinoyLogger Entering the Payments section
+18/04/2017 02:21:04 devpinoyLogger Entering name of the card as TEST ACCEPTA
+18/04/2017 02:21:08 devpinoyLogger Entered Card number as 4539xxxxxxxxxx06
+18/04/2017 02:21:11 devpinoyLogger Entered Expiry Month
+18/04/2017 02:21:14 devpinoyLogger Entered Expiry Year
+18/04/2017 02:21:18 devpinoyLogger Entered CVV security code
+18/04/2017 02:21:50 devpinoyLogger Clicking on continue to next step
+18/04/2017 02:21:52 devpinoyLogger Exiting the Payments section
+18/04/2017 02:22:08 devpinoyLogger Entered Agreements page
+18/04/2017 02:22:42 devpinoyLogger Called openBrowser
+18/04/2017 02:22:42 devpinoyLogger The Relative path of the user.dirC:\Automation\Git Repositories New\RegressionV1.0
+18/04/2017 02:22:42 devpinoyLogger The Env prop path is C:\Automation\Git Repositories New\RegressionV1.0\src\test\java\Properties\AppConfig.properties
+18/04/2017 02:22:42 devpinoyLogger The Browser type read from EnvProp file is chrome
+18/04/2017 02:22:42 devpinoyLogger The current url is https://www.o2.co.uk/shop
+18/04/2017 02:23:47 devpinoyLogger Invoked browser
+18/04/2017 02:24:27 devpinoyLogger Invoked URL
+18/04/2017 02:24:29 devpinoyLogger Deleted all Cookies
+18/04/2017 02:24:30 devpinoyLogger Maxismised window
+18/04/2017 02:24:30 devpinoyLogger We are in the Shop Home page
+18/04/2017 02:24:30 devpinoyLogger The Page title is O2 | Shop | Latest Pay & Go, Pay Monthly and Sim Only Deals
+18/04/2017 02:24:30 devpinoyLogger Performing PAYM SimO navigations
+18/04/2017 02:24:41 devpinoyLogger Moving mouse on the Shop Tab
+18/04/2017 02:24:41 devpinoyLogger Moving mouse on the Sims in Shop Dropdown
+18/04/2017 02:24:43 devpinoyLogger Moving mouse on the PayM Sims
+18/04/2017 02:25:20 devpinoyLogger Clicking on Pay M Sims
+18/04/2017 02:25:21 devpinoyLogger Moved Mouse to somewhere side of page
+18/04/2017 02:25:34 devpinoyLogger The current url is https://www.o2.co.uk/shop/sim-cards/sim-only-deals/#deviceType=phone&contractLength=P12M
+18/04/2017 02:25:34 devpinoyLogger The new url is https://www.ref.o2.co.uk/shop/sim-cards/sim-only-deals/#deviceType=phone&contractLength=P12M
+18/04/2017 02:27:05 devpinoyLogger Called openBrowser
+18/04/2017 02:27:05 devpinoyLogger The Relative path of the user.dirC:\Automation\Git Repositories New\RegressionV1.0
+18/04/2017 02:27:05 devpinoyLogger The Env prop path is C:\Automation\Git Repositories New\RegressionV1.0\src\test\java\Properties\AppConfig.properties
+18/04/2017 02:27:05 devpinoyLogger The Browser type read from EnvProp file is chrome
+18/04/2017 02:27:05 devpinoyLogger The current url is https://www.o2.co.uk/shop
+18/04/2017 02:27:30 devpinoyLogger Invoked browser
+18/04/2017 02:28:16 devpinoyLogger Invoked URL
+18/04/2017 02:28:40 devpinoyLogger Deleted all Cookies
+18/04/2017 02:28:40 devpinoyLogger Maxismised window
+18/04/2017 02:28:40 devpinoyLogger We are in the Shop Home page
+18/04/2017 02:28:40 devpinoyLogger The Page title is O2 | Shop | Latest Pay & Go, Pay Monthly and Sim Only Deals
+18/04/2017 02:28:41 devpinoyLogger Performing PAYM SimO navigations
+18/04/2017 02:28:42 devpinoyLogger Moving mouse on the Shop Tab
+18/04/2017 02:28:43 devpinoyLogger Moving mouse on the Sims in Shop Dropdown
+18/04/2017 02:28:50 devpinoyLogger Moving mouse on the PayM Sims
+18/04/2017 02:29:12 devpinoyLogger Clicking on Pay M Sims
+18/04/2017 02:29:14 devpinoyLogger Moved Mouse to somewhere side of page
+18/04/2017 02:29:25 devpinoyLogger The current url is https://www.o2.co.uk/shop/sim-cards/sim-only-deals/#deviceType=phone&contractLength=P12M
+18/04/2017 02:29:25 devpinoyLogger The new url is https://www.ref.o2.co.uk/shop/sim-cards/sim-only-deals/#deviceType=phone&contractLength=P12M
+18/04/2017 02:30:56 devpinoyLogger Called openBrowser
+18/04/2017 02:30:56 devpinoyLogger The Relative path of the user.dirC:\Automation\Git Repositories New\RegressionV1.0
+18/04/2017 02:30:56 devpinoyLogger The Env prop path is C:\Automation\Git Repositories New\RegressionV1.0\src\test\java\Properties\AppConfig.properties
+18/04/2017 02:30:56 devpinoyLogger The Browser type read from EnvProp file is chrome
+18/04/2017 02:30:56 devpinoyLogger The current url is https://www.o2.co.uk/shop
+18/04/2017 02:31:22 devpinoyLogger Called openBrowser
+18/04/2017 02:31:22 devpinoyLogger The Relative path of the user.dirC:\Automation\Git Repositories New\RegressionV1.0
+18/04/2017 02:31:22 devpinoyLogger The Env prop path is C:\Automation\Git Repositories New\RegressionV1.0\src\test\java\Properties\AppConfig.properties
+18/04/2017 02:31:22 devpinoyLogger The Browser type read from EnvProp file is chrome
+18/04/2017 02:31:22 devpinoyLogger The current url is https://www.o2.co.uk/shop
+18/04/2017 02:32:07 devpinoyLogger Called openBrowser
+18/04/2017 02:32:07 devpinoyLogger The Relative path of the user.dirC:\Automation\Git Repositories New\RegressionV1.0
+18/04/2017 02:32:07 devpinoyLogger The Env prop path is C:\Automation\Git Repositories New\RegressionV1.0\src\test\java\Properties\AppConfig.properties
+18/04/2017 02:32:07 devpinoyLogger The Browser type read from EnvProp file is chrome
+18/04/2017 02:32:07 devpinoyLogger The current url is https://www.o2.co.uk/shop
+18/04/2017 02:33:50 devpinoyLogger Called openBrowser
+18/04/2017 02:33:50 devpinoyLogger The Relative path of the user.dirC:\Automation\Git Repositories New\RegressionV1.0
+18/04/2017 02:33:50 devpinoyLogger The Env prop path is C:\Automation\Git Repositories New\RegressionV1.0\src\test\java\Properties\AppConfig.properties
+18/04/2017 02:33:51 devpinoyLogger The Browser type read from EnvProp file is chrome
+18/04/2017 02:33:51 devpinoyLogger The current url is https://www.o2.co.uk/shop
+18/04/2017 02:35:21 devpinoyLogger Called openBrowser
+18/04/2017 02:35:21 devpinoyLogger The Relative path of the user.dirC:\Automation\Git Repositories New\RegressionV1.0
+18/04/2017 02:35:21 devpinoyLogger The Env prop path is C:\Automation\Git Repositories New\RegressionV1.0\src\test\java\Properties\AppConfig.properties
+18/04/2017 02:35:21 devpinoyLogger The Browser type read from EnvProp file is chrome
+18/04/2017 02:35:21 devpinoyLogger The current url is https://www.o2.co.uk/shop
+18/04/2017 02:36:49 devpinoyLogger Called openBrowser
+18/04/2017 02:36:49 devpinoyLogger The Relative path of the user.dirC:\Automation\Git Repositories New\RegressionV1.0
+18/04/2017 02:36:49 devpinoyLogger The Env prop path is C:\Automation\Git Repositories New\RegressionV1.0\src\test\java\Properties\AppConfig.properties
+18/04/2017 02:36:49 devpinoyLogger The Browser type read from EnvProp file is chrome
+18/04/2017 02:36:49 devpinoyLogger The current url is https://www.o2.co.uk/shop
+18/04/2017 02:38:16 devpinoyLogger Called openBrowser
+18/04/2017 02:38:16 devpinoyLogger The Relative path of the user.dirC:\Automation\Git Repositories New\RegressionV1.0
+18/04/2017 02:38:16 devpinoyLogger The Env prop path is C:\Automation\Git Repositories New\RegressionV1.0\src\test\java\Properties\AppConfig.properties
+18/04/2017 02:38:16 devpinoyLogger The Browser type read from EnvProp file is chrome
+18/04/2017 02:38:16 devpinoyLogger The current url is https://www.o2.co.uk/shop
+18/04/2017 02:38:42 devpinoyLogger Called openBrowser
+18/04/2017 02:38:42 devpinoyLogger The Relative path of the user.dirC:\Automation\Git Repositories New\RegressionV1.0
+18/04/2017 02:38:42 devpinoyLogger The Env prop path is C:\Automation\Git Repositories New\RegressionV1.0\src\test\java\Properties\AppConfig.properties
+18/04/2017 02:38:42 devpinoyLogger The Browser type read from EnvProp file is chrome
+18/04/2017 02:38:42 devpinoyLogger The current url is https://www.o2.co.uk/shop
+18/04/2017 02:40:15 devpinoyLogger Called openBrowser
+18/04/2017 02:40:15 devpinoyLogger The Relative path of the user.dirC:\Automation\Git Repositories New\RegressionV1.0
+18/04/2017 02:40:15 devpinoyLogger The Env prop path is C:\Automation\Git Repositories New\RegressionV1.0\src\test\java\Properties\AppConfig.properties
+18/04/2017 02:40:15 devpinoyLogger The Browser type read from EnvProp file is chrome
+18/04/2017 02:40:15 devpinoyLogger The current url is https://www.o2.co.uk/shop
+18/04/2017 02:40:41 devpinoyLogger Called openBrowser
+18/04/2017 02:40:41 devpinoyLogger The Relative path of the user.dirC:\Automation\Git Repositories New\RegressionV1.0
+18/04/2017 02:40:41 devpinoyLogger The Env prop path is C:\Automation\Git Repositories New\RegressionV1.0\src\test\java\Properties\AppConfig.properties
+18/04/2017 02:40:41 devpinoyLogger The Browser type read from EnvProp file is chrome
+18/04/2017 02:40:41 devpinoyLogger The current url is https://www.o2.co.uk/shop
+18/04/2017 02:42:05 devpinoyLogger Called openBrowser
+18/04/2017 02:42:05 devpinoyLogger The Relative path of the user.dirC:\Automation\Git Repositories New\RegressionV1.0
+18/04/2017 02:42:05 devpinoyLogger The Env prop path is C:\Automation\Git Repositories New\RegressionV1.0\src\test\java\Properties\AppConfig.properties
+18/04/2017 02:42:05 devpinoyLogger The Browser type read from EnvProp file is chrome
+18/04/2017 02:42:05 devpinoyLogger The current url is https://www.o2.co.uk/shop
+18/04/2017 02:43:36 devpinoyLogger Called openBrowser
+18/04/2017 02:43:36 devpinoyLogger The Relative path of the user.dirC:\Automation\Git Repositories New\RegressionV1.0
+18/04/2017 02:43:36 devpinoyLogger The Env prop path is C:\Automation\Git Repositories New\RegressionV1.0\src\test\java\Properties\AppConfig.properties
+18/04/2017 02:43:36 devpinoyLogger The Browser type read from EnvProp file is chrome
+18/04/2017 02:43:36 devpinoyLogger The current url is https://www.o2.co.uk/shop
+18/04/2017 02:44:01 devpinoyLogger Called openBrowser
+18/04/2017 02:44:01 devpinoyLogger The Relative path of the user.dirC:\Automation\Git Repositories New\RegressionV1.0
+18/04/2017 02:44:01 devpinoyLogger The Env prop path is C:\Automation\Git Repositories New\RegressionV1.0\src\test\java\Properties\AppConfig.properties
+18/04/2017 02:44:01 devpinoyLogger The Browser type read from EnvProp file is chrome
+18/04/2017 02:44:01 devpinoyLogger The current url is https://www.o2.co.uk/shop
