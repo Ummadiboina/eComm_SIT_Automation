@@ -29,7 +29,7 @@ public class OrderConfirmationPageActions extends Environment {
 	  public static void MessageDisplayed() 
 	  {
 		  System.out.println("This is order confirmation page and the message in this page is as below......");
-		  log.info("This is order confirmation page and the message in this page is as below......");
+		  log.info("This is order confirmation/information page and the message in this page is as above......");
 
 		  try{
 		  List<WebElement> outercontainer = driver.findElements(By.xpath("//*[@id='order-number']"));

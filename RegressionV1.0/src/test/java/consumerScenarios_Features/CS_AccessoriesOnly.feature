@@ -1,6 +1,6 @@
 Feature: Accessories only E2E journey
 
-  @SmokeTest_CS_AccessoryOnly
+  @Regression
   Scenario Outline: Accessories only E2E journey
     Given I am an CFA user and Lands on shop page
     And Navigate to Accessories

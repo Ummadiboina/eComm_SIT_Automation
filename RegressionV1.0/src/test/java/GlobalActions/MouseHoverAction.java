@@ -47,12 +47,12 @@ static	Logger log = Logger.getLogger("devpinoyLogger");
 		  action.moveToElement(pageobjects.MouseHoverPage.MoveMouseOnPhones).build().perform();
 			 log.debug("Moving Mouse on the Phones dropdown");
 
-		  Thread.sleep(2000);
+		  Thread.sleep(1000);
 		  action.moveToElement(pageobjects.MouseHoverPage.MoveMouseOnPAYMPhones).build().perform();
 			 log.debug("Moving Mouse on the Paymonthly link");
 		   Screenshots.screennewPics();
 
-		  Thread.sleep(2000);
+		  Thread.sleep(1000);
 		  pageobjects.MouseHoverPage.MoveMouseOnPAYMPhones.click();
 		  Screenshots.screennewPics();
 		  
@@ -83,7 +83,7 @@ static	Logger log = Logger.getLogger("devpinoyLogger");
 	    		System.out.println("*********Existing the popups present in iframe***************");
 	    		log.debug("Exiting the Survey");
 	    		Environment.driver.switchTo().defaultContent();
-	    		Thread.sleep(3000);
+	    		Thread.sleep(2000);
 	    		    		
 	    	}
 		}
@@ -148,7 +148,7 @@ static	Logger log = Logger.getLogger("devpinoyLogger");
 	    		System.out.println("*********Existing the popups present in iframe***************");
 	    		log.debug("Exiting the Survey");
 	    		Environment.driver.switchTo().defaultContent();
-	    		Thread.sleep(3000);
+	    		Thread.sleep(2000);
 	    		    		
 	    	}
 		}

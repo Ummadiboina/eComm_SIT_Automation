@@ -1,7 +1,7 @@
 Feature: CFA PayM Phones Home delivery E2E journey
 
   #launch hooks and get browser
-  @smokeTesthomedelivery
+  @Regression
   Scenario Outline: CFA PayM Phones Home delivery E2E journey
     Given I am an CFA user and Lands on shop page
     And navigate to PAYM Phones page

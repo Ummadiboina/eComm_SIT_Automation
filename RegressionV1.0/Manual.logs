@@ -1,26 +1,7 @@
-16/04/2017 23:18:48 devpinoyLogger Called openBrowser
-16/04/2017 23:18:48 devpinoyLogger The Relative path of the user.dirC:\Automation\Git Repositories New\RegressionV1.0
-16/04/2017 23:18:48 devpinoyLogger The Env prop path is C:\Automation\Git Repositories New\RegressionV1.0\src\test\java\Properties\AppConfig.properties
-16/04/2017 23:18:48 devpinoyLogger The Browser type read from EnvProp file is chrome
-16/04/2017 23:18:48 devpinoyLogger The current url is https://www.ref.o2.co.uk/shop
-16/04/2017 23:18:54 devpinoyLogger Invoked browser
-16/04/2017 23:19:01 devpinoyLogger Invoked URL
-16/04/2017 23:19:02 devpinoyLogger Deleted all Cookies
-16/04/2017 23:19:02 devpinoyLogger Maxismised window
-16/04/2017 23:19:03 devpinoyLogger We are in the Shop Home page
-16/04/2017 23:19:03 devpinoyLogger The Page title is O2 | Shop | Latest Pay & Go, Pay Monthly and Sim Only Deals
-16/04/2017 23:19:03 devpinoyLogger Performing Accessories navigations
-16/04/2017 23:19:14 devpinoyLogger Moved Mouse to somewhere side of page
-16/04/2017 23:19:14 devpinoyLogger The current url is https://www.o2.co.uk/shop/accessories/all/#sort=content.sorting.featured&page=1
-16/04/2017 23:19:14 devpinoyLogger The new url is https://www.ref.o2.co.uk/shop/accessories/all/#sort=content.sorting.featured&page=1
-16/04/2017 23:19:21 devpinoyLogger Selecting Any Accessory
-16/04/2017 23:19:21 devpinoyLogger Selected an accessory -  PRIORITY OFFER
-?????
-Harman Kardon Onyx Studio 3 Bluetooth Speaker
-Get 50% off, with Priority. Now £99.99. Ends 26 April.
-£199.99
-16/04/2017 23:19:21 devpinoyLogger Adding Accesories to basket
-16/04/2017 23:19:28 devpinoyLogger Exception in finding value
-16/04/2017 23:19:28 devpinoyLogger Adding Accesories to basket
-16/04/2017 23:19:33 devpinoyLogger Clicked on basket icon
-16/04/2017 23:19:37 devpinoyLogger Shop basket pages validationsO2 | Basket
+18/04/2017 00:53:35 devpinoyLogger Called openBrowser
+18/04/2017 00:53:35 devpinoyLogger The Relative path of the user.dirC:\Automation\Git Repositories New\RegressionV1.0
+18/04/2017 00:53:35 devpinoyLogger The Env prop path is C:\Automation\Git Repositories New\RegressionV1.0\src\test\java\Properties\AppConfig.properties
+18/04/2017 00:53:35 devpinoyLogger The Browser type read from EnvProp file is chrome
+18/04/2017 00:53:35 devpinoyLogger The current url is https://www.o2.co.uk/shop
+18/04/2017 00:53:42 devpinoyLogger Invoked browser
+18/04/2017 00:53:46 devpinoyLogger Invoked URL
