@@ -3,3 +3,7 @@
 [0228/094906.678:WARNING:crash_report_exception_handler.cc(60)] ProcessSnapshotWin::Initialize failed
 [0403/234717.565:ERROR:exception_snapshot_win.cc(87)] thread ID 3660 not found in process
 [0403/234717.566:WARNING:crash_report_exception_handler.cc(60)] ProcessSnapshotWin::Initialize failed
+[0418/023708.053:ERROR:crash_report_database_win.cc(563)] CreateDirectory C:\Users\vMalalu1\AppData\Local\Temp\scoped_dir12504_28009\Crashpad: The system cannot find the path specified. (0x3)
+[0418/023813.574:ERROR:crash_report_database_win.cc(563)] CreateDirectory C:\Users\vMalalu1\AppData\Local\Temp\scoped_dir11600_10537\Crashpad: The system cannot find the path specified. (0x3)
+[0418/024015.120:ERROR:crash_report_database_win.cc(563)] CreateDirectory C:\Users\vMalalu1\AppData\Local\Temp\scoped_dir14136_7476\Crashpad: The system cannot find the path specified. (0x3)
+[0418/024202.422:ERROR:crash_report_database_win.cc(563)] CreateDirectory C:\Users\vMalalu1\AppData\Local\Temp\scoped_dir7676_30427\Crashpad: The system cannot find the path specified. (0x3)
