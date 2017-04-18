@@ -1,6 +1,6 @@
 Feature: FNT CFA PayM Phones Click and collect scenario for More than Max Transaction
 
-  @Regression
+  @FNTRegression
   Scenario Outline: FNT CFA PayM Phones Click and collect scenario for More than Max Transaction
     Given I am an CFA user and Lands on shop page
     And navigate to PAYM Phones page

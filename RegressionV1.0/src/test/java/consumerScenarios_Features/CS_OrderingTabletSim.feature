@@ -12,6 +12,6 @@ Feature: Tablets SimO Only E2E validation
     And Continue to Review page and review the order
     Then order confirmation is displayed
 
-       Examples: 
+    Examples: 
       | Firstname | Surname | Username     |
       | TEST      | ACCEPTA | TEST ACCEPTA |

@@ -1,6 +1,6 @@
 Feature: CFA PayM phones Additional information and Order confired
 
-  @Regression
+  @FNTRegression
   Scenario Outline: CFA PayM phones Additional information and Order confirmed
     Given I am an CFA user and Lands on shop page
     And navigate to PAYM Phones page

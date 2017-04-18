@@ -12,6 +12,7 @@ Feature: Sim Only PayM Recommended Tariff selection E2E validation
     And Continue to Review page and review the order
     Then order confirmation is displayed
 
-    Examples: 
-      | Contract  |
-      | 12 Months |
+ Examples: 
+      | Contract  | Firstname | Surname | Username     |
+      | 12 Months | TEST      | ACCEPTA | TEST ACCEPTA |
+      | 30 Days   | TEST      | ACCEPTA | TEST ACCEPTA |

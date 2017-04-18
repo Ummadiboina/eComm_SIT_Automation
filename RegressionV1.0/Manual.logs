@@ -1,7 +1,7 @@
-18/04/2017 00:53:35 devpinoyLogger Called openBrowser
-18/04/2017 00:53:35 devpinoyLogger The Relative path of the user.dirC:\Automation\Git Repositories New\RegressionV1.0
-18/04/2017 00:53:35 devpinoyLogger The Env prop path is C:\Automation\Git Repositories New\RegressionV1.0\src\test\java\Properties\AppConfig.properties
-18/04/2017 00:53:35 devpinoyLogger The Browser type read from EnvProp file is chrome
-18/04/2017 00:53:35 devpinoyLogger The current url is https://www.o2.co.uk/shop
-18/04/2017 00:53:42 devpinoyLogger Invoked browser
-18/04/2017 00:53:46 devpinoyLogger Invoked URL
+18/04/2017 01:22:16 devpinoyLogger Called openBrowser
+18/04/2017 01:22:16 devpinoyLogger The Relative path of the user.dirC:\Automation\Git Repositories New\RegressionV1.0
+18/04/2017 01:22:16 devpinoyLogger The Env prop path is C:\Automation\Git Repositories New\RegressionV1.0\src\test\java\Properties\AppConfig.properties
+18/04/2017 01:22:16 devpinoyLogger The Browser type read from EnvProp file is chrome
+18/04/2017 01:22:16 devpinoyLogger The current url is https://www.o2.co.uk/shop
+18/04/2017 01:22:21 devpinoyLogger Invoked browser
+18/04/2017 01:22:34 devpinoyLogger Invoked URL
