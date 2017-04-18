@@ -14,7 +14,7 @@ Feature: CFU Saved Basket Feature Validation - This feature is not automated due
      #  | username | password |
       # |ink_jun9198|test123|
 
-  @smokeTesthomedelivery
+  @Regression
  Scenario Outline: CFU to Verify is user can upgrade phone to refresh Tariff
   Given I am an Existing user and Navigates to Signin page
   And Signin using valid <username> and <password> credentials

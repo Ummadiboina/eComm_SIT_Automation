@@ -1,6 +1,6 @@
 Feature: PAYG MBB only E2E journey
 
- @smokeTestPAY
+ @Regression
   Scenario Outline: PAYG MBB only E2E journey
     Given I am an CFA user and Lands on shop page
     And Navigate to PayG MBB page

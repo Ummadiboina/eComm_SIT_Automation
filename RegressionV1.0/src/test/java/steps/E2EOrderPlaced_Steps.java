@@ -11,7 +11,7 @@ import GlobalActions.Autoredirection;
 import GlobalActions.MouseHoverAction;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
-
+import junit.framework.Assert;
 import pageobjects.*;
 import actionsPerformed.*;
 
@@ -43,7 +43,7 @@ public class E2EOrderPlaced_Steps {
 	    	driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 	    	PageFactory.initElements(driver, MouseHoverPage.class);
 	    	MouseHoverAction.PayMPhonesLandingPage();
-	    	Autoredirection.redirect();
+	    	//Autoredirection.redirect();
 	    }
 	    
 	    @Given("^Navigate to Accessories$")
@@ -129,14 +129,14 @@ public class E2EOrderPlaced_Steps {
 /*##################################################################################*/   	    
 		
 	    @Given("^I choose PayM ([^\"]*)$")
-	    public void i_choose_PayM(String handset) throws Throwable {
+	    public void Choose_PAYM_Handset(String handset) throws Throwable {
 	    	driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 	    	PageFactory.initElements(driver, PhonesListingPage.class);
 	    	PhonesListingPageAction.PAYMPhoneSelect(handset);
 	    }
 	    
 	    @Given("^I choose PayG \"([^\"]*)\"$")
-	    public void i_choose_PayG(String arg1) throws Throwable {
+	    public void Choose_PAYG_Handset(String arg1) throws Throwable {
 	    	driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 	    	PageFactory.initElements(driver, PhonesListingPage.class);
 	    	PhonesListingPageAction.PAYGPhoneSelect("Random Device");
@@ -144,13 +144,13 @@ public class E2EOrderPlaced_Steps {
 	    }
 	    
 	  
-	    
+	    /*
 	    @Given("^I choose high value PayM handset$")
 	    public void i_choose_high_value_PayM_handset() throws Throwable {
 	    	driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 	    	PageFactory.initElements(driver, PhonesListingPage.class);
-	    	PhonesListingPageAction.PAYGPhoneSelect("Iphone7Plus");
-	    }
+	    	PhonesListingPageAction.PAYMPhoneSelect(handset);
+	    }*/
 	    
 	    @Given("^select any available \"([^\"]*)\" Fitness tracker$")
 	    public void select_any_available_Fitness_tracker(String arg1) throws Throwable {
@@ -408,7 +408,7 @@ public void verifies_the_basket_page_for_the_upgrade_journey() throws Throwable 
 		}*/
 
 		@Given("^input ([^\"]*) and ([^\"]*) and other valid details in Delivery page and Click on the 'Continue button'$")
-		public void DeliveryPage_Inputs(String Firstname, String Surname) throws Throwable {
+		public void DeliveryPage_Inputs_homeDelivery(String Firstname, String Surname) throws Throwable {
 			driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 			 PageFactory.initElements(driver, DeliveryPage.class);
 		     DeliveryPageActions.SetDelivery();
@@ -419,11 +419,11 @@ public void verifies_the_basket_page_for_the_upgrade_journey() throws Throwable 
 		}
 
 		
-		@Given("^input all the fields on the Delivery page for Click and collect and Click order on the 'Continue button'$")
-		public void input_all_the_fields_on_the_Delivery_page_for_Click_and_collect_and_Click_order_on_the_Continue_button() throws Throwable {	
+		@Given("^input ([^\"]*) and ([^\"]*) and other valid details in Delivery page for Click and collect and Click on the 'Continue button'$")
+		public void DeliveryPage_Inputs_ClickandCollect(String Firstname, String Surname) throws Throwable {	
 			driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 			 PageFactory.initElements(driver, DeliveryPage.class);
-		     //DeliveryPageActions.AboutYou(datamap);
+		     DeliveryPageActions.AboutYou(Firstname, Surname);
 		     DeliveryPageActions.ClickContinue();
 		}
 
@@ -439,20 +439,20 @@ public void verifies_the_basket_page_for_the_upgrade_journey() throws Throwable 
 			 PaymentPageActions.Set_Bank_details(Username);
 			 Thread.sleep(2000);
 	    	 PaymentPageActions.Time_At_Address();
+			 Thread.sleep(2000);
 	    	 PaymentPageActions.Card_Details(Username);
-	    	 
-	    	 Thread.sleep(5000);
+	    	 Thread.sleep(3000);
 		}
 		
-		@Given("^I land on the payment page and input all the details for Click and collect order and click 'Continue on next step'$")
+		@Given("^land on the payment page and input ([^\"]*) and other details for Click and collect order and click 'Continue on next step'$")
 		public void CreditCheckPaymentPage_ClickAndCollect(String Username) throws Throwable {
 			// Write code here that turns the phrase above into concrete actions
 			driver.manage().timeouts().implicitlyWait(25, TimeUnit.SECONDS);
 			PageFactory.initElements(driver,PaymentPage.class);
 	    	PaymentPageActions.Set_Bank_details(Username);
-	    	Thread.sleep(5000);
+	    	Thread.sleep(3000);
 	    	PaymentPageActions.Time_At_Address_CC();
-	    	Thread.sleep(5000);
+	    	Thread.sleep(3000);
 	    	 PaymentPageActions.Card_Details(Username);
 	    	Thread.sleep(5000);
 		}
@@ -546,13 +546,14 @@ public void verifies_the_basket_page_for_the_upgrade_journey() throws Throwable 
 		}
 		
 		
-		@Then("^order Decline is displayed$")
+		@Then("^Order Decline page should be displayed$")
 		public void OrderDeclinePage() throws Throwable {
 			// Write code here that turns the phrase above into concrete actions
 			driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 			PageFactory.initElements(driver,OrderConfirmationPage.class);
   	    	OrderConfirmationPageActions.gettitlepage();
   	    	OrderConfirmationPageActions.MessageDisplayed();
+//  	    	/Assert.assertEquals(MessageDisplayed(), actual);
   	    	
 		}
 		

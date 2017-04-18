@@ -20,10 +20,9 @@ import java.util.Map;
 
 @CucumberOptions(
 		features = {"src//test//java//consumerScenarios_Features"}, glue = {"steps"},
-		tags = {"@SmokeTest_CS_AccessoryOnly"}, format = {"json:testResult/cucumber.json", "pretty", "html:testResult/report"},
-		plugin = {"com.cucumber.listener.ExtentCucumberFormatter"}
+				tags = {}, format = {"json:testResult/cucumber.json", "pretty", "html:testResult/report"},
+				plugin = {"com.cucumber.listener.ExtentCucumberFormatter"}
 		)
-
 
 /**
  * RunnerTest runs with ExtendedCucumberRunner class

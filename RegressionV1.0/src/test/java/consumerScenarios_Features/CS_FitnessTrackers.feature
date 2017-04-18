@@ -1,6 +1,6 @@
 Feature: Fitness Trackers only E2E journey
 
-  @SmokeTest_Fitness_Trackers
+  @Regression
   Scenario Outline: Fitness Trackers only E2E journey
     Given I am an CFA user and Lands on shop page
     And Navigate to Fitness Trackers

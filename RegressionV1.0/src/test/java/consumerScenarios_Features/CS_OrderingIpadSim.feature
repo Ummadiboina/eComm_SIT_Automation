@@ -1,6 +1,6 @@
 Feature: Ipad SimO Only PAYG E2E validation
 
-  @smokeTest
+  @Regression
   Scenario Outline: Ipad SimO Only PAYG E2E validation
     Given I am an CFA user and Lands on shop page
     And Navigate to sims and Ipad Sims page
