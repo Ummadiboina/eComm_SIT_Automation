@@ -1,6 +1,6 @@
 Feature: Volte PayM Phones Click and collect scenario with E2E journey
 
-  @Regression
+  @Volte_Regression
   Scenario Outline: Volte PayM Phones Click and collect scenario with E2E journey
     Given I am an CFA user and Lands on shop page
     And navigate to PAYM Phones page

@@ -1,6 +1,6 @@
 Feature: Sim Only PayM 12Months E2E validation
 
-  @Regression
+@Regression
   Scenario Outline: Sim Only PayM 12Months E2E validation
     Given I am an CFA user and Lands on shop page
     And navigate to PAYM SIMO page
@@ -16,7 +16,4 @@ Feature: Sim Only PayM 12Months E2E validation
     Examples: 
       | Contract  | Firstname | Surname | Username     |
       | 12 Months | TEST      | ACCEPTA | TEST ACCEPTA |
-      | 30 Days   |
-      
-      
-      
+      | 30 Days   | TEST      | ACCEPTA | TEST ACCEPTA |

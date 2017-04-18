@@ -1,6 +1,6 @@
 Feature: CFA PayM phones Straight Order Declined
 
-  @Regression
+  @FNTRegression
   Scenario Outline: CFA PayM phones Straight Order Declined
     Given I am an CFA user and Lands on shop page
     And navigate to PAYM Phones page
