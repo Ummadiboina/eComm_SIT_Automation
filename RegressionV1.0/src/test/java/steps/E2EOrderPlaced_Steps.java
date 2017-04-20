@@ -35,6 +35,7 @@ public class E2EOrderPlaced_Steps {
 	    public void i_am_an_CFA_user_and_Lands_on_shop_page() throws Throwable 
 	    {
 	      	ShopLandingPageAction.GetTitle();
+	      	
 	  	 }
 
 	    @Given("^navigate to PAYM Phones page$")
@@ -43,6 +44,7 @@ public class E2EOrderPlaced_Steps {
 	    	driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 	    	PageFactory.initElements(driver, MouseHoverPage.class);
 	    	MouseHoverAction.PayMPhonesLandingPage();
+	    	  
 	    	Autoredirection.redirect();
 	    }
 	    
@@ -527,6 +529,17 @@ public void verifies_the_basket_page_for_the_upgrade_journey() throws Throwable 
 			driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
 			PageFactory.initElements(driver,ReviewPage.class);
   	    	ReviewPageActions.gettitlepage();
+  	    	ReviewPageActions.TermsCheckBox();
+  	    	ReviewPageActions.PayNow();  	    	
+		}
+		
+		@Given("^Continue to Review page and review the order for Trustev details$")
+		public void ReviewPageConfirmationwithTrustev() throws Throwable {
+			// Write code here that turns the phrase above into concrete actions
+			driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+			PageFactory.initElements(driver,ReviewPage.class);
+  	    	ReviewPageActions.gettitlepage();
+  	    	ReviewPageActions.checktrustev();
   	    	ReviewPageActions.TermsCheckBox();
   	    	ReviewPageActions.PayNow();  	    	
 		}

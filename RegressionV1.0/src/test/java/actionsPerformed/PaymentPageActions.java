@@ -18,6 +18,7 @@ public class PaymentPageActions extends Environment {
 
 	  public static void Set_Bank_details(String Username)
 	  {
+			  
 		
 		  
 		  pageobjects.PaymentPage.Name_On_Account.sendKeys(Username);
@@ -39,8 +40,9 @@ public class PaymentPageActions extends Environment {
 		  log.debug("Clicked on the Accept Terms checkbox");
 		  
 		   }
-	  
-	  public static void Set_Bank_details_hv()
+	 
+
+	public static void Set_Bank_details_hv()
 	  {
 		
 		  
