@@ -1,4 +1,4 @@
-/*package actionsPerformed;
+package actionsPerformed;
 
 import helpers.Environment;
 import helpers.Filereadingutility;
@@ -16,6 +16,5 @@ public class GlobalAction  extends Environment{
 		return Currenturl;
 		
 	}
-	
+
 }
-*/

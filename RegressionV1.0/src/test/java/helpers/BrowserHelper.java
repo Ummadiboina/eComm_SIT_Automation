@@ -1,12 +1,10 @@
 package helpers;
 
-import java.io.File;
 import java.util.concurrent.TimeUnit;
-
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
+import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
 public class BrowserHelper {
@@ -40,13 +38,19 @@ public class BrowserHelper {
 		else if (BrowserType.equalsIgnoreCase("chrome"))
 		{
 			System.setProperty("webdriver.chrome.driver","src\\test\\java\\InternalLibraries\\BrowserDrivers\\ChromeDriver\\chromedriver.exe");
-			//Environment.driver = new ChromeDriver();					
-			Environment.driver = new ChromeDriver();
+			//Environment.driver = new ChromeDriver();			
+			
+			DesiredCapabilities handlSSLErr = DesiredCapabilities.chrome();       
+			handlSSLErr.setCapability (CapabilityType.ACCEPT_SSL_CERTS, true);
+			Environment.driver = new ChromeDriver(handlSSLErr);
+
+			//WebDriver driver = new ChromeDriver (handlSSLErr);
 		}
 		else
 		{
 			Environment.driver = new FirefoxDriver();	
 		}
+		
 		Environment.driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		Environment.driver.manage().window().maximize();
 	}

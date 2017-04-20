@@ -493,6 +493,31 @@ public void verifies_the_basket_page_for_the_upgrade_journey() throws Throwable 
 	    	 driver.switchTo().defaultContent();
 		}
 
+/*##############   All the Below are for the Additional Information section ###################*/
+
+
+@Then("^Additional information page should be displayed$")
+public void AdditionalInformation() throws Throwable 
+{
+	driver.manage().timeouts().implicitlyWait(25, TimeUnit.SECONDS);
+	PageFactory.initElements(driver,AdditionalInformationPage.class);
+	AdditionalInformationPageActions.gettitlepage();
+	Thread.sleep(2000);
+	AdditionalInformationPageActions.SectionsDisplayed();
+}
+
+@Then("^upon entering Valid details with valid new ([^\"]*) and card number$")
+public void EnterValidCard(String Username2) throws Throwable 
+{
+	driver.manage().timeouts().implicitlyWait(25, TimeUnit.SECONDS);
+	PageFactory.initElements(driver,AdditionalInformationPage.class);
+	Thread.sleep(2000);
+	AdditionalInformationPageActions.AdditionalCardDetails(Username2);
+	Thread.sleep(2000);
+	AdditionalInformationPageActions.ClickOn();
+
+}
+
 /*##############   All the Below are for the Agreements Validations ###################*/
 		
 		@Given("^Continue to Agreements page and confirm all the agreement checks$")

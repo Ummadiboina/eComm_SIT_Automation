@@ -29,6 +29,7 @@ import java.util.Map;
  * and this is the starting point of the test suite
  */
 
+
 @RunWith(CucumberRunner.class)
 public class RunnerTest {
 	@BeforeClass

@@ -30,9 +30,10 @@ public class Hooks extends Environment{
      * Delete all cookies at the start of each scenario to avoid
      * shared state between tests
      */
-      public WebDriver openBrowser() throws MalformedURLException {
+      public WebDriver openBrowser() throws MalformedURLException 
+	    {
     	System.out.println("Called openBrowser");
-		  log.debug("Called openBrowser");
+		log.debug("Called openBrowser");
 
     	String relativePath = System.getProperty("user.dir");
     	log.debug("The Relative path of the user.dir"+relativePath);
@@ -43,10 +44,9 @@ public class Hooks extends Environment{
     	String BrowserType = Filereadingutility.getPropertyValue(EnvPropFilePath, "Browser_Type");
     	log.debug("The Browser type read from EnvProp file is "+BrowserType);
     	
-    	String Currenturl = Filereadingutility.getPropertyValue(EnvPropFilePath, "url");
+    	String Currenturl = Filereadingutility.getPropertyValue(EnvPropFilePath, "Agenturl");
     	log.debug("The current url is "+Currenturl);
 
-    	
     	BrowserHelper.Invoke_browser(BrowserType);
     	log.debug("Invoked browser");
     	
