@@ -9,13 +9,19 @@ public class OrderConfirmationPage {
 	
 	  
 	  @FindBy(how=How.ID,using="terms") 
-		WebElement TermsCheckBox;
+	  public static WebElement TermsCheckBox;
 	  
 	  @FindBy(how=How.XPATH,using="//*[@id='order-number']/h2") 
-	  WebElement Message;
+	  public static WebElement Message;
+	  
+	  @FindBy(how=How.XPATH,using="//*[@id='order-number']/p") 
+	  public static WebElement OrderconfirmationMessage;
 
-	  
-	  
+	  @FindBy(how=How.XPATH,using="//*[@id='delivery-section']") 
+	  public static WebElement deliverySection;
+
+	  @FindBy(how=How.XPATH,using="//*[@id='imsMessage']") 
+	  public static WebElement imsMessage;
 
 	  }
 	 

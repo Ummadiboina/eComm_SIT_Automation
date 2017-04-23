@@ -37,4 +37,21 @@ public class ReviewPageActions extends Environment  {
 		  log.debug("Clicked the Paynow button");
 
 	  }
+
+
+	  public static void checktrustev() 
+	  {
+		  String Source= driver.getPageSource();		  
+		  String Trustev = "trustev" ;
+		  	
+		  if( containsIgnoreCase( Source, Trustev) ) {
+			  System.out.println( "Trustev is enabled" );
+			}else
+				System.out.println( "Trustev is NOT enabled" );	
+	  }
+	  
+	  private static boolean containsIgnoreCase(String source, String trustev) {
+		// TODO Auto-generated method stub
+		return false;
+	}
 }

@@ -44,7 +44,7 @@ public class Hooks extends Environment{
     	String BrowserType = Filereadingutility.getPropertyValue(EnvPropFilePath, "Browser_Type");
     	log.debug("The Browser type read from EnvProp file is "+BrowserType);
     	
-    	String Currenturl = Filereadingutility.getPropertyValue(EnvPropFilePath, "Agenturl");
+    	String Currenturl = Filereadingutility.getPropertyValue(EnvPropFilePath, "url");
     	log.debug("The current url is "+Currenturl);
 
     	BrowserHelper.Invoke_browser(BrowserType);
@@ -78,22 +78,20 @@ public class Hooks extends Environment{
             byte[] screenshot = ((TakesScreenshot)driver).getScreenshotAs(OutputType.BYTES);
             scenario.embed(screenshot, "image/png"); */
         	
-        	File screenshot = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+        	//File screenshot = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
 
     		File scr=((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
     	    File dest= new File("ScreenshotsForFailures\\ScreenshotsForFailures_"+timestamp()+".jpeg");
     	    FileUtils.copyFile(scr, dest);
-    	    //C:\Automation\Git Repositories New\RegressionV1.0\ScreenshotsForSteps
     	
 
         } catch (WebDriverException somePlatformsDontSupportScreenshots) {
             System.err.println(somePlatformsDontSupportScreenshots.getMessage());
         }
-        
       
         }
         Thread.sleep(2000);
-//driver.close();
+        driver.close();
         
     }
 

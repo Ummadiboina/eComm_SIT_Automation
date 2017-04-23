@@ -15,6 +15,6 @@ public class SmartwatchesPage{
 		@FindBy(how=How.XPATH,using="//h2[contains(text(),'Sort')]")
 		public static WebElement SmartwatchesSortTab;
 		
-		@FindBy(how=How.XPATH,using="//*[@id='o2-page-wrapper']/div[2]/div[3]/div[1]/div[1]/div/div/div/div/a")
+		@FindBy(how=How.XPATH,using="//*[@data-qa-device-contract-type='nonconnected'][1]")
 		public static WebElement RandomSmartWatch;
 }

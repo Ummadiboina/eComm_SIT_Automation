@@ -79,5 +79,9 @@ public class BasketPage {
 	@FindBy(how=How.XPATH,using=("//*[@id='444']/div[4]/p/a"))
 	public static WebElement Collectfromthisstore;
 
+	@FindBy(how=How.XPATH,using=("//div[@class='basket-header-xxl']"))
+	public static WebElement BasketHeaderXXL;
+	
+
 	
 }

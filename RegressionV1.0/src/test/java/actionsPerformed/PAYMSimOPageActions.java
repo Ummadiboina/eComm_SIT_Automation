@@ -67,6 +67,32 @@ if(elementName.contains("12 Months"))
 
 }
 
+
+
+public static void SelectRecommendedTariffPhonesTab(String elementName) throws InterruptedException, AWTException {
+	//Assert.assertTrue(driver.getTitle().contains("30 Days");
+
+if(elementName.contains("30 Days"))
+	{
+		System.out.println("Selecting a Recommended Tariff under 30 days tab");
+		log.debug("Selecting a Recommended Tariff under 30 days tab");
+		pageobjects.PAYMSimOPage.thirtydays.click();
+		Thread.sleep(3000);
+		pageobjects.PAYMSimOPage.BuyNowPromotedTariff.click();
+		
+		
+	}
+if(elementName.contains("12 Months"))
+{
+	System.out.println("Selecting a Recommended Tariff under 12 Months tab");
+	log.debug("Selecting a Recommended Tariff under 12 Months tab");
+	pageobjects.PAYMSimOPage.twelevemonths.click();
+	Thread.sleep(3000);
+	pageobjects.PAYMSimOPage.BuyNowPromotedTariff.click();
+	log.debug("Selected a Recommended Tariff under 12 Months tab");
+}
+
+}
 			
 public static void Elementverify(String elementName) throws InterruptedException {
 
@@ -105,42 +131,6 @@ else
 {
 System.out.println("The Tariff detail is  Absent and the Text is :" +pageobjects.SimFreeExtrasPage.Tariffvaladity.getText());	
 
-}
-
-}
-
-
-
-
-public static void DisplayPromotionTariff(String elementName) throws InterruptedException 
-{
-
-	WebDriverWait wait = new WebDriverWait(driver, 40);
-	wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector(".col-xs-12.promotion-ribbon")));// instead of id u can use cssSelector or xpath of ur element.
-
-System.out.println("Displaying the Promotion tarriff as per page");
-
-String var1="Recommended";
-String var2="Most-Popular";
-String PromotionDisplayed=driver.findElement(By.cssSelector(".col-xs-12.promotion-ribbon")).getText();
-  ((JavascriptExecutor)driver).executeScript("scroll(0,500)");
-
-//Below is for the Display of recommended or not
-if (PromotionDisplayed.equals(var1))
-{
-System.out.println("The Promotion of the tariff displayed is Recommended");
-log.debug("The Promotion of the tariff displayed is Recommended");
-
-}
-else if (PromotionDisplayed.equals(var2))
-{
-System.out.println("The Promotion of the tariff displayed is Most-Popular");
-log.debug("The Promotion of the tariff displayed is Most-Popular");
-
-}
-else
-{
-System.out.println("The Promotion of the tariff displayed is unknown");
 }
 
 }
@@ -693,4 +683,36 @@ public static void VerifyMinsDataDisplayed() throws IOException, InterruptedExce
 	}
 	
 
+public static void DisplayPromotionTariff(String elementName) throws InterruptedException 
+{
+
+	WebDriverWait wait = new WebDriverWait(driver, 40);
+	wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector(".col-xs-12.promotion-ribbon")));// instead of id u can use cssSelector or xpath of ur element.
+
+System.out.println("Displaying the Promotion tarriff as per page");
+
+String var1="Recommended";
+String var2="Most-Popular";
+String PromotionDisplayed=driver.findElement(By.cssSelector(".col-xs-12.promotion-ribbon")).getText();
+  ((JavascriptExecutor)driver).executeScript("scroll(0,500)");
+
+//Below is for the Display of recommended or not
+if (PromotionDisplayed.equals(var1))
+{
+System.out.println("The Promotion of the tariff displayed is Recommended");
+log.debug("The Promotion of the tariff displayed is Recommended");
+
+}
+else if (PromotionDisplayed.equals(var2))
+{
+System.out.println("The Promotion of the tariff displayed is Most-Popular");
+log.debug("The Promotion of the tariff displayed is Most-Popular");
+
+}
+else
+{
+System.out.println("The Promotion of the tariff displayed is unknown");
+}
+
+}
 }

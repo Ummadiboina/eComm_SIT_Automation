@@ -23,7 +23,10 @@ public class PAYMSimOPage {
 	@FindBy(how=How.XPATH,using=("//*[@id='id-30-days']/p/a"))
 	public static WebElement thirtydays;
 	
-	@FindBy(how=How.XPATH,using=("//div[@class='tariff P12M  promoted-tariff ']/div[8]"))
+	/*@FindBy(how=How.XPATH,using=("//div[@class='tariff P12M  promoted-tariff  ']/div[8]"))
+	public static WebElement BuyNowPromotedTariff;*/
+	
+	@FindBy(how=How.XPATH,using=("//div[@name='P12M']/div[8]/div"))
 	public static WebElement BuyNowPromotedTariff;
 	
 	@FindBy(how=How.XPATH,using=("(//button[@id='callToAction'])[10]"))
