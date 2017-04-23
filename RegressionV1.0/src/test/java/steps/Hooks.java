@@ -78,7 +78,7 @@ public class Hooks extends Environment{
             byte[] screenshot = ((TakesScreenshot)driver).getScreenshotAs(OutputType.BYTES);
             scenario.embed(screenshot, "image/png"); */
         	
-        	//File screenshot = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+        	File screenshot = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
 
     		File scr=((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
     	    File dest= new File("ScreenshotsForFailures\\ScreenshotsForFailures_"+timestamp()+".jpeg");
