@@ -11,6 +11,7 @@ import GlobalActions.Autoredirection;
 import GlobalActions.MouseHoverAction;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
+import helpers.Filereadingutility;
 import junit.framework.Assert;
 import pageobjects.*;
 import actionsPerformed.*;
@@ -34,6 +35,17 @@ public class E2EOrderPlaced_Steps {
 	    @Given("^I am an CFA user and Lands on shop page$")
 	    public void i_am_an_CFA_user_and_Lands_on_shop_page() throws Throwable 
 	    {
+	      	ShopLandingPageAction.GetTitle();
+	      	
+	  	 }
+	    @Given("^I am an AFA user and Lands on shop page$")
+	    public void i_am_an_AFA_user_and_Lands_on_shop_page() throws Throwable 
+	    {
+	    	String relativePath = System.getProperty("user.dir");
+	    	String EnvPropFilePath = relativePath + "\\src\\test\\java\\Properties\\AppConfig.properties";
+	    	String Newurl = Filereadingutility.getPropertyValue(EnvPropFilePath, "AgentUrl");
+	    	driver.navigate().to(Newurl);
+	    
 	      	ShopLandingPageAction.GetTitle();
 	      	
 	  	 }
