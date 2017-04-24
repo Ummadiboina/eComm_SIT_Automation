@@ -82,13 +82,56 @@ public class AccessoryPageActions extends Environment{
 	
 	//This Method is used to select Accessory from the accessory listing page 
 	
-	public static void SelectAnyAccessory() {
+	public static void SelectAnyAccessory(String elementName) {
 			
+		if(elementName.contains("Random"))
+		{
 			System.out.println("Selecting Any Accessory");
 			log.debug("Selecting Any Accessory");
 			log.debug("Selected an accessory -  "+pageobjects.AccessoryPage.RandomAccessory.getText());
 			pageobjects.AccessoryPage.RandomAccessory.click();
+			log.debug("Random Accessory Selected");
+		}
+		if(elementName.contains("HarmanKardonOnxyxStudio3"))
 
+		{
+			System.out.println("Selecting HarmanKardonOnxyxStudio3 Accessory");
+			log.debug("Selecting HarmanKardonOnxyxStudio3 Accessory");
+			log.debug("Selected an accessory -  "+pageobjects.AccessoryPage.RandomAccessory.getText());
+			pageobjects.AccessoryPage.RandomAccessory.click();
+			log.debug("HarmanKardonOnxyxStudio3 Accessory Selected");
+		}
+		
+		if(elementName.contains("PencilforiPadPro"))
+
+		{
+			System.out.println("Selecting PencilforiPadPro Accessory");
+			log.debug("Selecting PencilforiPadPro Accessory");
+			log.debug("Selected an accessory -  "+pageobjects.AccessoryPage.RandomAccessory.getText());
+			pageobjects.AccessoryPage.RandomAccessory.click();
+			log.debug("PencilforiPadPro Accessory Selected");
+		}
+		
+		if(elementName.contains("Clip2"))
+
+		{
+			System.out.println("Selecting Clip2 Accessory");
+			log.debug("Selecting Clip2 Accessory");
+			log.debug("Selected an accessory -  "+pageobjects.AccessoryPage.RandomAccessory.getText());
+			pageobjects.AccessoryPage.RandomAccessory.click();
+			log.debug("Clip2 Accessory Selected");
+		}
+		
+		if(elementName.contains("JBLXtreme"))
+
+		{
+			System.out.println("Selecting JBLXtreme Accessory");
+			log.debug("Selecting JBLXtreme Accessory");
+			log.debug("Selected an accessory -  "+pageobjects.AccessoryPage.RandomAccessory.getText());
+			pageobjects.AccessoryPage.RandomAccessory.click();
+			log.debug("JBLXtreme Accessory Selected");
+		}
+		
 		}
 
 	public static void selectAnyAccessoryLimit() throws InterruptedException {

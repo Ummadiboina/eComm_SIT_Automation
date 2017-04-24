@@ -1,6 +1,6 @@
 Feature: Tablets SimO Only E2E validation
 
-  @Regression
+  @RegressionTablet
   Scenario Outline: Tablet SimO Only PAYG E2E validation
     Given I am an CFA user and Lands on shop page
     And Navigate to sims and Tablet Sims page

@@ -1,7 +1,7 @@
-Feature: CFA PayM Phones Click and collect scenario with E2E journey
+Feature: FNT CFA PayM Phones Click and collect scenario with E2E journey
 
   @FNTRegression
-  Scenario Outline: CFA PayM Phones Click and collect scenario with E2E journey
+  Scenario Outline: FNT CFA PayM Phones Click and collect scenario with E2E journey
     Given I am an CFA user and Lands on shop page
     And navigate to PAYM Phones page
     And I choose PayM <handset>

@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 
@@ -92,7 +93,7 @@ public class E2EOrderPlaced_Steps {
 	    	driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 	    	PageFactory.initElements(driver, MouseHoverPage.class);
 	    	MouseHoverAction.SmartwatchesLandingPage();	    
-	    	//Autoredirection.redirect();
+	    	Autoredirection.redirect();
 	    }
 	    
 	    	  
@@ -158,14 +159,6 @@ public class E2EOrderPlaced_Steps {
 	    }
 	    
 	  
-	    /*
-	    @Given("^I choose high value PayM handset$")
-	    public void i_choose_high_value_PayM_handset() throws Throwable {
-	    	driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
-	    	PageFactory.initElements(driver, PhonesListingPage.class);
-	    	PhonesListingPageAction.PAYMPhoneSelect(handset);
-	    }*/
-	    
 	    @Given("^select any available \"([^\"]*)\" Fitness tracker$")
 	    public void select_any_available_Fitness_tracker(String arg1) throws Throwable {
 	    	driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
@@ -191,12 +184,12 @@ public class E2EOrderPlaced_Steps {
 	    	}
 	    
 	    @Given("^select any Tablet \"([^\"]*)\" and continue$")
-	    public void select_any_Tablet_and_continue(String arg1) throws Throwable {
+	    public void select_any_Tablet_and_continue(String elementname) throws Throwable {
 	    	driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 	    	PageFactory.initElements(driver, SimsPage.class);
 	    	ConnectedDeviceDetailsPageAction.GetTitle();
 	    	Thread.sleep(2000);
-	    	SimsPageActions.SelectRandomTabletSim();
+	    	SimsPageActions.SelectRandomTabletSim(elementname);
 	    }
 	    
 	    @Given("^Navigate to device details page$")
@@ -210,20 +203,20 @@ public class E2EOrderPlaced_Steps {
 	    }
 	    
 		@Given("^select any Ipad \"([^\"]*)\" and continue$")
-		public void select_any_Ipad_and_continue(String arg1) throws Throwable 
+		public void select_any_Ipad_and_continue(String elementname) throws Throwable 
 		{
 			driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 	    	PageFactory.initElements(driver, SimsPage.class);
 	    	ConnectedDeviceDetailsPageAction.GetTitle();
 	    	Thread.sleep(2000);
-	    	SimsPageActions.SelectRandomIpadSim();
+	    	SimsPageActions.SelectRandomIpadSim(elementname);
 		}
 	    
-	    @Given("^select an Accessory$")
-	    public void select_an_Accessory() throws Throwable {
+		@Given("^select an \"([^\"]*)\" Accessory$")
+		public void select_an_Accessory(String elementName) throws Throwable {
 	    	driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 	    	PageFactory.initElements(driver, AccessoryPage.class);
-	    	AccessoryPageActions.SelectAnyAccessory();
+	    	AccessoryPageActions.SelectAnyAccessory(elementName);;
 	    	
 	    }
 	    
@@ -242,12 +235,12 @@ public class E2EOrderPlaced_Steps {
 	    	PAYMSimOPageActions.SelectTariffPhonesTab(Contract);
 	    }
 	    
-	    @Given("^Select \"([^\"]*)\" Tariff in the displayed list of Tariffs under different ([^\"]*) tab$")
-	    public void select_Tariff_in_the_displayed_list_of_Tariffs(String elementName, String Contract) throws Throwable {
+	    @Given("^Select Recommended Tariff in the displayed list of Tariffs under different ([^\"]*) tab$")
+	    public void select_Recommended_Tariff_in_the_displayed_list_of_Tariffs_under_different_Months_tab(String Contract) throws Throwable {
 	    	driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 	    	PageFactory.initElements(driver, PAYMSimOPage.class);
-	    	PAYMSimOPageActions.DisplayPromotionTariff(elementName);
-	    	PAYMSimOPageActions.SelectTariffPhonesTab(Contract);
+	    	PAYMSimOPageActions.SelectRecommendedTariffPhonesTab(Contract);
+	    	//PAYMSimOPageActions.SelectPromotionTariff(Contract);
 
 	    }
 	    
@@ -277,7 +270,7 @@ public class E2EOrderPlaced_Steps {
 	    @Given("^add SmartWatch to basket within limit in details page and navigate to basket$")
 	    public void add_SmartWatch_to_basket_within_limit_in_details_page_and_navigate_to_basket() throws Throwable 
 	    {
-	    	driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);   
+	    	driver.manage().timeouts().implicitlyWait(25, TimeUnit.SECONDS);   
 	    	PageFactory.initElements(driver, AccessoryPage.class);
 	    	PageFactory.initElements(driver, NonConnectedDeviceDetailsPage.class);
 	    	FitnessTrackerPageActions.AddtoBasketFitnessTracker();
@@ -369,15 +362,15 @@ public class E2EOrderPlaced_Steps {
 
 		
 		@Given("^I Land on the Non Phone related basket page and choose home delivery option$")
-		public void i_Land_on_the_Non_Phone_related_basket_page_and_choose_home_delivery_option() throws Throwable {
+		public void NonPhoneRelatedBasketPage() throws InterruptedException {
 			driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS); 
 			PageFactory.initElements(driver, BasketPage.class);
 			PageFactory.initElements(driver, PAYMandPAYGTariffAndExtrasPage.class);
-		//	PAYMandPAYGTariffAndExtrasPageActions.addToBasketLive();
 			Thread.sleep(3000);
+			//Assert.assertEquals("The condition is ", driver.findElement(By.xpath("//*[@value='Go to checkout'][1]")));
 			BasketPageActions.AccessoryPageContents();
 			BasketPageActions.CollectionorDelivery("homeDelivery");
-				
+
 		}
 		
 		@Given("^I Land on the Plan included basket page and choose home delivery option$")
@@ -389,7 +382,7 @@ public class E2EOrderPlaced_Steps {
 				
 		}
 		@Given("^click on \"([^\"]*)\" button$")
-		public void click_on_button(String arg1) throws Throwable {
+		public void CheckoutFromBasket(String arg1) throws Throwable {
 			driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 			PageFactory.initElements(driver, BasketPage.class);
 			Thread.sleep(2000);
@@ -448,27 +441,27 @@ public void verifies_the_basket_page_for_the_upgrade_journey() throws Throwable 
 		@Given("^land on the payment page and input ([^\"]*) and other details and click 'Continue on next step'$")
 		public void CreditCheckPaymentPage_HomeDelivery(String Username) throws Throwable {
 			// Write code here that turns the phrase above into concrete actions
-			driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+			driver.manage().timeouts().implicitlyWait(55, TimeUnit.SECONDS);
 			PageFactory.initElements(driver,PaymentPage.class);
 			 PaymentPageActions.Set_Bank_details(Username);
 			 Thread.sleep(2000);
 	    	 PaymentPageActions.Time_At_Address();
 			 Thread.sleep(2000);
 	    	 PaymentPageActions.Card_Details(Username);
-	    	 Thread.sleep(3000);
+	    	 Thread.sleep(10000);
 		}
 		
 		@Given("^land on the payment page and input ([^\"]*) and other details for Click and collect order and click 'Continue on next step'$")
 		public void CreditCheckPaymentPage_ClickAndCollect(String Username) throws Throwable {
 			// Write code here that turns the phrase above into concrete actions
-			driver.manage().timeouts().implicitlyWait(25, TimeUnit.SECONDS);
+			driver.manage().timeouts().implicitlyWait(45, TimeUnit.SECONDS);
 			PageFactory.initElements(driver,PaymentPage.class);
 	    	PaymentPageActions.Set_Bank_details(Username);
 	    	Thread.sleep(3000);
 	    	PaymentPageActions.Time_At_Address_CC();
 	    	Thread.sleep(3000);
 	    	 PaymentPageActions.Card_Details(Username);
-	    	Thread.sleep(5000);
+	    	 Thread.sleep(10000);
 		}
 		
 		/*
@@ -485,11 +478,12 @@ public void verifies_the_basket_page_for_the_upgrade_journey() throws Throwable 
 		
 		@Given("^land on the Non Credit check payment page and input ([^\"]*) and other details and click 'Continue on next step'$")
 		public void NonCreditCheckPaymentPage_HomeDelivery(String Username) throws Throwable {
-			driver.manage().timeouts().implicitlyWait(25, TimeUnit.SECONDS);
+			driver.manage().timeouts().implicitlyWait(45, TimeUnit.SECONDS);
 			PageFactory.initElements(driver,PaymentPage.class);
 			PaymentPageActions.ValidateNonCreditPaymentPage();
 			Thread.sleep(2000);
 			PaymentPageActions.Card_Details(Username);
+			Thread.sleep(10000);
 	    
 		}
 		
@@ -497,7 +491,7 @@ public void verifies_the_basket_page_for_the_upgrade_journey() throws Throwable 
 		@Given("^I land on the payment page and input all the details for high value Click and collect order and click 'Continue on next step'$")
 		public void CreditCheckPaymentPage_ClickAndCollect_highvalue() throws Throwable {
 			// Write code here that turns the phrase above into concrete actions
-			driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+			driver.manage().timeouts().implicitlyWait(45, TimeUnit.SECONDS);
 			PageFactory.initElements(driver,PaymentPage.class);
 	    	PaymentPageActions.Set_Bank_details_hv();
 	    	Thread.sleep(5000);
@@ -505,19 +499,47 @@ public void verifies_the_basket_page_for_the_upgrade_journey() throws Throwable 
 	    	Thread.sleep(5000);
 	    	 PaymentPageActions.Card_Details_hv();
 	    	 driver.switchTo().defaultContent();
+	    	 Thread.sleep(10000);
 		}
+
+/*##############   All the Below are for the Additional Information section ###################*/
+
+
+@Then("^Additional information page should be displayed$")
+public void AdditionalInformation() throws Throwable 
+{
+	driver.manage().timeouts().implicitlyWait(25, TimeUnit.SECONDS);
+	PageFactory.initElements(driver,AdditionalInformationPage.class);
+	AdditionalInformationPageActions.gettitlepage();
+	Thread.sleep(2000);
+	AdditionalInformationPageActions.SectionsDisplayed();
+	Thread.sleep(10000);
+}
+
+@Then("^upon entering Valid details with valid new ([^\"]*) and card number$")
+public void EnterValidCard(String Username2) throws Throwable 
+{
+	driver.manage().timeouts().implicitlyWait(55, TimeUnit.SECONDS);
+	PageFactory.initElements(driver,AdditionalInformationPage.class);
+	Thread.sleep(2000);
+	AdditionalInformationPageActions.AdditionalCardDetails(Username2);
+	Thread.sleep(4000);
+	//AdditionalInformationPageActions.ClickOn();
+	//Thread.sleep(10000);
+
+}
 
 /*##############   All the Below are for the Agreements Validations ###################*/
 		
 		@Given("^Continue to Agreements page and confirm all the agreement checks$")
 		public void AgreementsPageConfirmation() throws Throwable {
 			// Write code here that turns the phrase above into concrete actions
-			driver.manage().timeouts().implicitlyWait(25, TimeUnit.SECONDS);
+			driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
 			PageFactory.initElements(driver,AgreementPage.class);
   	    	PageFactory.initElements(driver,ReviewPage.class);
 	    	Thread.sleep(10000);
 	    	AgreementPageActions.gettitlepage();
-	      	Thread.sleep(2000);
+	      	Thread.sleep(3000);
   	    	AgreementPageActions.Affordability();
   	    	Thread.sleep(5000);
   	    	AgreementPageActions.KeyInformation();
@@ -544,6 +566,18 @@ public void verifies_the_basket_page_for_the_upgrade_journey() throws Throwable 
   	    	ReviewPageActions.TermsCheckBox();
   	    	ReviewPageActions.PayNow();  	    	
 		}
+		
+		@Given("^Continue to Review page and review the order for Trustev details$")
+		public void ReviewPageConfirmationwithTrustev() throws Throwable {
+			// Write code here that turns the phrase above into concrete actions
+			driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+			PageFactory.initElements(driver,ReviewPage.class);
+  	    	ReviewPageActions.gettitlepage();
+  	    	ReviewPageActions.checktrustev();
+  	    	ReviewPageActions.TermsCheckBox();
+  	    	ReviewPageActions.PayNow();  	    	
+		}
+		
 		
 		@Given("^Continue to Review page and review the order for Trustev details$")
 		public void ReviewPageConfirmationwithTrustev() throws Throwable {
@@ -589,10 +623,20 @@ public void verifies_the_basket_page_for_the_upgrade_journey() throws Throwable 
 			driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 			PageFactory.initElements(driver,OrderConfirmationPage.class);
   	    	OrderConfirmationPageActions.gettitlepage();
-  	    	OrderConfirmationPageActions.MessageDisplayed();
-  	    	OrderConfirmationPageActions.VolteMessageDisplayed();
+  	    	//OrderConfirmationPageActions.MessageDisplayed();
+  	    	OrderConfirmationPageActions.OrderConfirmationPageSections();
 		}
 	  
+/*********************************Below is for Agent shop ****************************************/
 		
+		@Given("^I am an Agent user and Lands on shop page$")
+		public void i_am_an_Agent_user_and_Lands_on_shop_page() throws Throwable {
+		    
+		}
+
+		@Given("^performs new user new connection$")
+		public void performs_new_user_new_connection() throws Throwable {
+		    
+		}
 	  
 }

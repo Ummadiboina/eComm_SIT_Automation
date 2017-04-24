@@ -1,7 +1,7 @@
-Feature: CFA PayM Phones Click and collect scenario with E2E journey
+Feature: FNT PayM Different store address than billing address
 
   @FNTRegression
-  Scenario Outline: CFA PayM Phones Click and collect scenario with E2E journey
+  Scenario Outline: FNT PayM Different store address than billing address
     Given I am an CFA user and Lands on shop page
     And navigate to PAYM Phones page
     And I choose PayM <handset>

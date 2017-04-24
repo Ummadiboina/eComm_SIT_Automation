@@ -18,8 +18,9 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
-@CucumberOptions(
-		features = {"src//test//java//AgentScenarios_Features"}, glue = {"steps"},
+@CucumberOptions(strict = true,
+		features = {"src//test//java//consumerScenarios_Features"}, glue = {"steps"},
+
 				tags = {}, format = {"json:testResult/cucumber.json", "pretty", "html:testResult/report"},
 				plugin = {"com.cucumber.listener.ExtentCucumberFormatter"}
 		)
@@ -28,6 +29,7 @@ import java.util.Map;
  * RunnerTest runs with ExtendedCucumberRunner class
  * and this is the starting point of the test suite
  */
+
 
 @RunWith(CucumberRunner.class)
 public class RunnerTest {

@@ -1,7 +1,7 @@
-Feature: CFA PayM phones Straight Order Declined
+Feature: FNT CFA PayM phones Straight Order Declined
 
   @FNTRegression
-  Scenario Outline: CFA PayM phones Straight Order Declined
+  Scenario Outline: FNT CFA PayM phones Straight Order Declined
     Given I am an CFA user and Lands on shop page
     And navigate to PAYM Phones page
     And I choose PayM <handset>

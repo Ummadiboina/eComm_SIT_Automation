@@ -1,10 +1,10 @@
 Feature: Accessories only E2E journey
 
-  @Regression
+  @RegressionAccessory
   Scenario Outline: Accessories only E2E journey
     Given I am an CFA user and Lands on shop page
     And Navigate to Accessories
-    And select an Accessory
+    And select an "Random" Accessory
     And add Accessories to basket within limit in details page and navigate to basket
     And I Land on the Non Phone related basket page and choose home delivery option
     And click on "go to checkout" button

@@ -8,6 +8,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 
 import helpers.Environment;
+import junit.framework.Assert;
 import pageobjects.BasketPage.*;
 
 import java.util.NoSuchElementException;
@@ -174,7 +175,36 @@ public class BasketPageActions extends Environment
 	public static void AccessoryPageContents() throws InterruptedException
 	{   
 	
-		  log.debug("Shop basket pages validations"+driver.getTitle());
+		
+		try {
+			//Assert.assertEquals("The condition is ", driver.findElement(By.xpath("//*[@value='Go to checkout'][1]")));
+			//BasketPageActions.AccessoryPageContents();
+			
+			Assert.assertEquals("Your basket", pageobjects.BasketPage.BasketHeaderXXL.getText());
+			log.debug("Shop basket pages validations"+driver.getTitle());
+			log.debug("BasketHeaderXXL header is "+pageobjects.BasketPage.BasketHeaderXXL.getText());
+
+		} catch (Exception e) 
+		{
+		Assert.fail("Unable to find BasketHeaderXXL element in Reference shop Basket page");
+		}
+		
+		try {
+			//Assert.assertEquals("The condition is ", driver.findElement(By.xpath("//*[@value='Go to checkout'][1]")));
+			//BasketPageActions.AccessoryPageContents();
+			
+			Assert.assertTrue(pageobjects.BasketPage.checkoutbtn.isEnabled());
+			System.out.println("Checkout is Enabled and Present" );
+			
+			log.debug("Checkout is Enabled and Present" );
+			
+
+		} catch (Exception e) 
+		{
+		Assert.fail("Unable to find Checkout button in Reference shop Basket page");
+		}
+/*	
+		log.debug("Shop basket pages validations"+driver.getTitle());
 
 		  boolean fname=pageobjects.BasketPage.checkoutbtn.isEnabled(); 
 
@@ -189,18 +219,17 @@ public class BasketPageActions extends Environment
 			 }
 		else
 		 {
-		  System.out.println("Go To Checkout is Absent and the Text is :" +pageobjects.BasketPage.checkoutbtn.getText());
-		  log.debug("Go To Checkout is Absent and the Text is :" +pageobjects.BasketPage.checkoutbtn.getText());
+		  System.out.println("Go To Checkout is Absent ");
+		  log.debug("Go To Checkout is Absent ");
 
 		 }
 		//Below will display contents of the section
-		  
+	*/	  
 		log.debug("The Main Headercontents are : " +pageobjects.BasketPage.MainHeaders.getText());
 		
 		
 		log.debug("The Phone contents are : " +pageobjects.BasketPage.AccessoryDetails.getText());
 
-		
 		
 	
 
@@ -209,6 +238,8 @@ public class BasketPageActions extends Environment
 		log.debug("The Basket Totals are : " +pageobjects.BasketPage.HomeDeliveryText.getText());
 
 	}
+	
+	
 	
 	public static void PlanOnlyPageContents() throws InterruptedException
 	{   

@@ -12,8 +12,14 @@
           <name>Central</name>
           <url>http://repo1.maven.org/maven2</url>
 </repository>
-</repositories>
+ <repository>
+      <id>sonatype-ossrh</id>
+      <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
+    </repository>
+  </repositories>
 
+  
+  
   <properties>
 		<cucumber.version>1.2.0</cucumber.version>
 		<picocontainer.version>2.15</picocontainer.version>
@@ -21,7 +27,12 @@
 	
   <dependencies>
   
-
+  <dependency>
+      <groupId>com.sikulix</groupId>
+      <artifactId>sikulixapi</artifactId>
+      <version>1.1.1-SNAPSHOT</version>
+    </dependency>
+    
 		<dependency>
     <groupId>log4j</groupId>
     <artifactId>log4j</artifactId>

@@ -17,7 +17,7 @@ public class AccessoryPage {
 		public static WebElement AppleAirpods;
 		
 		@FindBy(how=How.XPATH,using="//a[contains(@data-qa-device-model-family, 'Onyx Studio 3 Bluetooth Speaker')]")
-		public static WebElement HarmanKardonOnyxStudio3;
+		public static WebElement HarmanKardonOnxyxStudio3;
 		
 		@FindBy(how=How.XPATH,using="//a[contains(@data-qa-device-model-family, 'Pencil for iPad Pro')]")
 		public static WebElement PencilforiPadPro;
@@ -29,7 +29,7 @@ public class AccessoryPage {
 		@FindBy(how=How.XPATH,using="//a[contains(@data-qa-device-model-family, 'Xtreme')]")
 		public static WebElement JBLXtreme;
 		
-		@FindBy(how=How.XPATH,using="//*[@id='o2-page-wrapper']/div[2]/div[3]/div[1]/div[1]/div/div/div/div/a")
+		@FindBy(how=How.XPATH,using="//*[@data-qa-subtypegroup='accessories'][1]")
 		public static WebElement RandomAccessory;
 		
 		//Below is for clicking on the Basket icon in Accessories page

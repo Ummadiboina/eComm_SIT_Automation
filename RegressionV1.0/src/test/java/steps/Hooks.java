@@ -30,9 +30,10 @@ public class Hooks extends Environment{
      * Delete all cookies at the start of each scenario to avoid
      * shared state between tests
      */
-      public WebDriver openBrowser() throws MalformedURLException {
+      public WebDriver openBrowser() throws MalformedURLException 
+	    {
     	System.out.println("Called openBrowser");
-		  log.debug("Called openBrowser");
+		log.debug("Called openBrowser");
 
     	String relativePath = System.getProperty("user.dir");
     	log.debug("The Relative path of the user.dir"+relativePath);
@@ -46,7 +47,6 @@ public class Hooks extends Environment{
     	String Currenturl = Filereadingutility.getPropertyValue(EnvPropFilePath, "url");
     	log.debug("The current url is "+Currenturl);
 
-    	
     	BrowserHelper.Invoke_browser(BrowserType);
     	log.debug("Invoked browser");
     	
@@ -83,17 +83,15 @@ public class Hooks extends Environment{
     		File scr=((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
     	    File dest= new File("ScreenshotsForFailures\\ScreenshotsForFailures_"+timestamp()+".jpeg");
     	    FileUtils.copyFile(scr, dest);
-    	    //C:\Automation\Git Repositories New\RegressionV1.0\ScreenshotsForSteps
     	
 
         } catch (WebDriverException somePlatformsDontSupportScreenshots) {
             System.err.println(somePlatformsDontSupportScreenshots.getMessage());
         }
-        
       
         }
         Thread.sleep(2000);
-//driver.close();
+        driver.close();
         
     }
 

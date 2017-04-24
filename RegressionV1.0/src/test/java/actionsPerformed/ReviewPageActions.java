@@ -37,6 +37,7 @@ public class ReviewPageActions extends Environment  {
 		  log.debug("Clicked the Paynow button");
 
 	  }
+
 	  
 	  public static void checktrustev() 
 	  {
@@ -50,8 +51,8 @@ public class ReviewPageActions extends Environment  {
 	  }
 
 
-	private static boolean containsIgnoreCase(String source, String trustev) {
-		// TODO Auto-generated method stub
+	  private static boolean containsIgnoreCase(String source, String trustev) {
+
 		return false;
 	}
 }
