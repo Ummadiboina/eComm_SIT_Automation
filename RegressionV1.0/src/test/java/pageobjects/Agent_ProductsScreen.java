@@ -6,7 +6,6 @@ import org.openqa.selenium.support.How;
 
 public class Agent_ProductsScreen {
 	  
-			
 		@FindBy(how=How.ID,using="plansTab")
 		public static WebElement Tariffs;
 		
@@ -25,4 +24,5 @@ public class Agent_ProductsScreen {
 		@FindBy(how=How.ID,using="startCheckoutFromPrivateBasketButton")
 		public static WebElement Checkout;
 		
+				
 }

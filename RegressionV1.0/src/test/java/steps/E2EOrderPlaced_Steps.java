@@ -463,19 +463,7 @@ public void verifies_the_basket_page_for_the_upgrade_journey() throws Throwable 
 	    	 PaymentPageActions.Card_Details(Username);
 	    	 Thread.sleep(10000);
 		}
-		
-		/*
-		@Given("^I land on the Non Credit check payment page and input all the details and click 'Continue on next step'$")
-		public void i_land_on_the_Non_Credit_check_payment_page_and_input_all_the_details_and_click_Continue_on_next_step() throws Throwable {
-			driver.manage().timeouts().implicitlyWait(25, TimeUnit.SECONDS);
-			PageFactory.initElements(driver,PaymentPage.class);
-			PaymentPageActions.ValidateNonCreditPaymentPage();
-			Thread.sleep(2000);
-			PaymentPageActions.Card_Details();
-	    
-		}
-		*/
-		
+
 		@Given("^land on the Non Credit check payment page and input ([^\"]*) and other details and click 'Continue on next step'$")
 		public void NonCreditCheckPaymentPage_HomeDelivery(String Username) throws Throwable {
 			driver.manage().timeouts().implicitlyWait(45, TimeUnit.SECONDS);
@@ -579,16 +567,7 @@ public void EnterValidCard(String Username2) throws Throwable
 		}
 		
 		
-		@Given("^Continue to Review page and review the order for Trustev details$")
-		public void ReviewPageConfirmationwithTrustev() throws Throwable {
-			// Write code here that turns the phrase above into concrete actions
-			driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
-			PageFactory.initElements(driver,ReviewPage.class);
-  	    	ReviewPageActions.gettitlepage();
-  	    	ReviewPageActions.checktrustev();
-  	    	ReviewPageActions.TermsCheckBox();
-  	    	ReviewPageActions.PayNow();  	    	
-		}
+
 		
 
 /*##################################################################################*/   	    
@@ -629,10 +608,7 @@ public void EnterValidCard(String Username2) throws Throwable
 	  
 /*********************************Below is for Agent shop ****************************************/
 		
-		@Given("^I am an Agent user and Lands on shop page$")
-		public void i_am_an_Agent_user_and_Lands_on_shop_page() throws Throwable {
-		    
-		}
+	
 
 		@Given("^performs new user new connection$")
 		public void performs_new_user_new_connection() throws Throwable {
