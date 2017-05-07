@@ -11,9 +11,8 @@ Feature: FNT CFA PayM Phones Click and collect scenario for More than Max Transa
     And click on "go to checkout" button
     And input <Firstname> and <Surname> and other valid details in Delivery page for Click and collect and Click on the 'Continue button'
     And land on the payment page and input <Username> and other details for Click and collect order and click 'Continue on next step'
-    And Continue to Review page and review the order
-    Then order confirmation is displayed
+    Then Order Decline page should be displayed
 
     Examples: 
-      | handset     | Firstname | Surname | Username     |
-      | Iphone7Plus | TEST      | ACCEPTA | TEST ACCEPTA |
+      | handset     | Firstname | Surname | Username  |
+      | Iphone7Plus | TEST      | NINE    | TEST NINE |

@@ -1,40 +1,12 @@
-23/04/2017 23:00:30 devpinoyLogger Called openBrowser
-23/04/2017 23:00:30 devpinoyLogger The Relative path of the user.dirC:\Users\vMalalu1\git\regression\RegressionV1.0
-23/04/2017 23:00:30 devpinoyLogger The Env prop path is C:\Users\vMalalu1\git\regression\RegressionV1.0\src\test\java\Properties\AppConfig.properties
-23/04/2017 23:00:30 devpinoyLogger The Browser type read from EnvProp file is chrome
-23/04/2017 23:00:30 devpinoyLogger The current url is https://www.ref.o2.co.uk/shop
-23/04/2017 23:00:38 devpinoyLogger Invoked browser
-23/04/2017 23:00:47 devpinoyLogger Invoked URL
-23/04/2017 23:00:47 devpinoyLogger Deleted all Cookies
-23/04/2017 23:00:47 devpinoyLogger Maxismised window
-23/04/2017 23:00:47 devpinoyLogger We are in the Shop Home page
-23/04/2017 23:00:47 devpinoyLogger The Page title is O2 | Shop | Latest Pay & Go, Pay Monthly and Sim Only Deals
-23/04/2017 23:00:48 devpinoyLogger Performing Accessories navigations
-23/04/2017 23:00:59 devpinoyLogger Moved Mouse to somewhere side of page
-23/04/2017 23:00:59 devpinoyLogger The current url is https://www.o2.co.uk/shop/fitness-trackers/#sort=content.sorting.featured&page=1
-23/04/2017 23:00:59 devpinoyLogger The new url is https://www.ref.o2.co.uk/shop/fitness-trackers/#sort=content.sorting.featured&page=1
-23/04/2017 23:01:06 devpinoyLogger Random Fitness tracker Device Selected
-23/04/2017 23:01:06 devpinoyLogger Adding Fitness trackers to basket in device details page
-23/04/2017 23:01:14 devpinoyLogger Exception in finding value
-23/04/2017 23:01:14 devpinoyLogger Adding Fitness trackers to basket in device details page
-23/04/2017 23:01:15 devpinoyLogger Clicked on basket icon
-23/04/2017 23:01:19 devpinoyLogger Shop basket pages validationsO2 | Basket
-23/04/2017 23:01:19 devpinoyLogger BasketHeaderXXL header is Your basket
-23/04/2017 23:01:19 devpinoyLogger Checkout is Enabled and Present
-23/04/2017 23:01:20 devpinoyLogger The Main Headercontents are : Your order
-Cost
-23/04/2017 23:01:20 devpinoyLogger The Phone contents are : Fitbit Alta
-£99.99
-Quantity
-1
-Remove
-23/04/2017 23:01:20 devpinoyLogger The Basket Totals are : Total cost
-£99.99
-23/04/2017 23:01:20 devpinoyLogger The Basket Totals are : In Stock Order by midnight for free next working day delivery2
-23/04/2017 23:01:20 devpinoyLogger HomeDelivery is Selected
-23/04/2017 23:01:26 devpinoyLogger Clicking on Checkout button
-23/04/2017 23:01:29 devpinoyLogger Entered House number
-23/04/2017 23:01:29 devpinoyLogger Entered Post code
-23/04/2017 23:01:29 devpinoyLogger Clicked on the Find address button
-23/04/2017 23:01:34 devpinoyLogger Selected an address
-23/04/2017 23:01:36 devpinoyLogger Entering an Random email id
+07/05/2017 01:13:11 devpinoyLogger Called openBrowser
+07/05/2017 01:13:11 devpinoyLogger The Relative path of the user.dirC:\Users\vMalalu1\workspace\RegressionV1.2
+07/05/2017 01:13:11 devpinoyLogger The Env prop path is C:\Users\vMalalu1\workspace\RegressionV1.2\Configurations\Properties\AppConfig.properties
+07/05/2017 01:13:11 devpinoyLogger The Browser type read from EnvProp file is chrome
+07/05/2017 01:13:11 devpinoyLogger The current url is https://www.o2.co.uk/shop
+07/05/2017 01:13:26 devpinoyLogger Invoked browser
+07/05/2017 01:13:49 devpinoyLogger Invoked URL
+07/05/2017 01:13:50 devpinoyLogger Deleted all Cookies
+07/05/2017 01:13:50 devpinoyLogger Maxismised window
+07/05/2017 01:13:51 devpinoyLogger We are in the Shop Home page
+07/05/2017 01:13:51 devpinoyLogger The Page title is O2 | Shop | Latest Pay & Go, Pay Monthly and Sim Only Deals
+07/05/2017 01:13:52 devpinoyLogger Performing Accessories navigations

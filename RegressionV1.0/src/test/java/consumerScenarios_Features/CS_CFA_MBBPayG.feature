@@ -4,7 +4,7 @@ Feature: PAYG MBB only E2E journey
   Scenario Outline: PAYG MBB only E2E journey
     Given I am an CFA user and Lands on shop page
     And Navigate to PayG MBB page
-    And I choose MBB PayG "Random Device"
+    And I choose MBB PayG "Huawei 4G Dongle"
     And Navigate to device details page
     And Land on the 'Tariffs and extra' page
     And I Land on the basket page and choose home delivery option

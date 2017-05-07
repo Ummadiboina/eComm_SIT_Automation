@@ -22,5 +22,21 @@ public class Agent_HomePage {
 		@FindBy(how=How.ID,using="searchBtn")
 		public static WebElement Search;
 	
+		@FindBy(how=How.XPATH,using="//h2")
+		public static WebElement sectionHeading;
+		
+		@FindBy(how=How.XPATH,using="//*[@class='upgradeLink']/a")
+		public static WebElement UpgradeLink;		
+		
+		@FindBy(how=How.ID, using = "emptyDealButton")
+		public static WebElement emptyDealButton;		
+		
+		
+		@FindBy(how=How.ID,using="notfound")
+		public static WebElement notfound;		
+		
+		@FindBy(how=How.ID,using="results")
+		public static WebElement results;	
+		
 		
 }

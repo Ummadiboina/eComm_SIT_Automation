@@ -42,45 +42,11 @@ public class DeliveryPageActions {
 
 			}
 		}
-	/*	
-		public static void AboutYou(List<HashMap<String,String>> map)
-		{
-			//Email_Address.sendKeys("TestersitAuto9@gmail.com");
-			//RandomEmailAddressCreation email = new RandomEmailAddressCreation();
-			//RandomEmailAddressCreation.RandomEmail();
-			log.debug("Entering an Random email id");
-			//RandomEmailAddressCreation.RandomEmail();
-			log.debug(RandomEmailAddressCreation.RandomEmail(), null);
-
-			System.out.println("Setting the About you options");
-			log.debug("Setting the About you options");
-
-			Select dropdown = new Select(pageobjects.DeliveryPage.Title);
-			dropdown.selectByIndex(2);
-			log.debug("Selected the dropdown Mrs");
-			Reporter.log("Selected the dropdown Mrs");
-			DeliveryPage.First_Name.sendKeys("Test");
-			//DeliveryPage.First_Name.sendKeys(map.get(0).get("FirstName"));
-			DeliveryPage.Last_Name.sendKeys("Accepta");
-			log.debug("Entered first name and last name as Test Accepta");
-			DeliveryPage.Contact_Number.sendKeys("07829483426");
-			DeliveryPage.Password.sendKeys("NTTDATA123");
-			DeliveryPage.security_answer.sendKeys("SitTester");
-			DeliveryPage.date.sendKeys("01");
-			DeliveryPage.Month.sendKeys("08");
-			DeliveryPage.year.sendKeys("1991");
-			log.debug("Entered all the other relavant details");
-
-		}*/
-		
+	
 		
 		public static void AboutYou(String Firstname, String Surname)
 		{
-			//Email_Address.sendKeys("TestersitAuto9@gmail.com");
-			//RandomEmailAddressCreation email = new RandomEmailAddressCreation();
-			//RandomEmailAddressCreation.RandomEmail();
 			log.debug("Entering an Random email id");
-			//RandomEmailAddressCreation.RandomEmail();
 			log.debug(RandomEmailAddressCreation.RandomEmail(), null);
 
 			System.out.println("Setting the About you options");

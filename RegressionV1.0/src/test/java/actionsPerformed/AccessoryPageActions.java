@@ -98,7 +98,7 @@ public class AccessoryPageActions extends Environment{
 			System.out.println("Selecting HarmanKardonOnxyxStudio3 Accessory");
 			log.debug("Selecting HarmanKardonOnxyxStudio3 Accessory");
 			log.debug("Selected an accessory -  "+pageobjects.AccessoryPage.RandomAccessory.getText());
-			pageobjects.AccessoryPage.RandomAccessory.click();
+			pageobjects.AccessoryPage.HarmanKardonOnxyxStudio3.click();
 			log.debug("HarmanKardonOnxyxStudio3 Accessory Selected");
 		}
 		
@@ -108,7 +108,7 @@ public class AccessoryPageActions extends Environment{
 			System.out.println("Selecting PencilforiPadPro Accessory");
 			log.debug("Selecting PencilforiPadPro Accessory");
 			log.debug("Selected an accessory -  "+pageobjects.AccessoryPage.RandomAccessory.getText());
-			pageobjects.AccessoryPage.RandomAccessory.click();
+			pageobjects.AccessoryPage.PencilforiPadPro.click();
 			log.debug("PencilforiPadPro Accessory Selected");
 		}
 		
@@ -118,7 +118,7 @@ public class AccessoryPageActions extends Environment{
 			System.out.println("Selecting Clip2 Accessory");
 			log.debug("Selecting Clip2 Accessory");
 			log.debug("Selected an accessory -  "+pageobjects.AccessoryPage.RandomAccessory.getText());
-			pageobjects.AccessoryPage.RandomAccessory.click();
+			pageobjects.AccessoryPage.Clip2.click();
 			log.debug("Clip2 Accessory Selected");
 		}
 		
@@ -128,7 +128,7 @@ public class AccessoryPageActions extends Environment{
 			System.out.println("Selecting JBLXtreme Accessory");
 			log.debug("Selecting JBLXtreme Accessory");
 			log.debug("Selected an accessory -  "+pageobjects.AccessoryPage.RandomAccessory.getText());
-			pageobjects.AccessoryPage.RandomAccessory.click();
+			pageobjects.AccessoryPage.JBLXtreme.click();
 			log.debug("JBLXtreme Accessory Selected");
 		}
 		
