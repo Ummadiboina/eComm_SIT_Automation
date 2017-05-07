@@ -83,5 +83,9 @@ public class BasketPage {
 	public static WebElement BasketHeaderXXL;
 	
 
+	/// out of stock messages
+	
+	@FindBy(how=How.XPATH,using=("//div[@class='basket-nav']"))
+	public static WebElement BasketErrorText;
 	
 }

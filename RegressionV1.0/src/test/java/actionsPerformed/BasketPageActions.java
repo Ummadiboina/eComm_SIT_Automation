@@ -11,6 +11,9 @@ import helpers.Environment;
 import junit.framework.Assert;
 import pageobjects.BasketPage.*;
 
+import static org.testng.Assert.assertEquals;
+import static org.testng.Assert.fail;
+
 import java.util.NoSuchElementException;
 
 import org.apache.log4j.Logger;
@@ -172,7 +175,7 @@ public class BasketPageActions extends Environment
 	
 	
 	
-	public static void AccessoryPageContents() throws InterruptedException
+	public static void BasketContentsforNonConnected() throws InterruptedException
 	{   
 	
 		
@@ -189,11 +192,33 @@ public class BasketPageActions extends Environment
 		Assert.fail("Unable to find BasketHeaderXXL element in Reference shop Basket page");
 		}
 		
+		
+		if(	pageobjects.BasketPage.BasketErrorText.getText().contains("out of stock"));
+		{
+			log.debug("Stock is not available, perhaps out of stock" );
+			System.out.println("Stock is not available, perhaps out of stock" );
+			Assert.fail("Stock is not available, perhaps out of stock");
+//Assert.fail
+		}
+	/*			
+		if(pageobjects.BasketPage.checkoutbtn.isDisplayed())
+		{
+		System.out.println("Checkout is Enabled and Present" );
+				log.debug("Checkout is Enabled and Present" );
+		}
+				else
+				{
+					System.out.println("Checkout is not Enabled and Present" );
+					log.debug("Checkout is not Present" );
+				}
+	
+		
+		/*
 		try {
 			//Assert.assertEquals("The condition is ", driver.findElement(By.xpath("//*[@value='Go to checkout'][1]")));
 			//BasketPageActions.AccessoryPageContents();
 			
-			Assert.assertTrue(pageobjects.BasketPage.checkoutbtn.isEnabled());
+			pageobjects.BasketPage.checkoutbtn.isDisplayed();
 			System.out.println("Checkout is Enabled and Present" );
 			
 			log.debug("Checkout is Enabled and Present" );
@@ -201,8 +226,12 @@ public class BasketPageActions extends Environment
 
 		} catch (Exception e) 
 		{
+			log.debug("Checkout is not Enabled or not Present" );
+
 		Assert.fail("Unable to find Checkout button in Reference shop Basket page");
 		}
+		*/
+		
 /*	
 		log.debug("Shop basket pages validations"+driver.getTitle());
 

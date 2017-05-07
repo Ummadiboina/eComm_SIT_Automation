@@ -18,9 +18,6 @@ public class PaymentPageActions extends Environment {
 
 	  public static void Set_Bank_details(String Username)
 	  {
-			  
-		
-		  
 		  pageobjects.PaymentPage.Name_On_Account.sendKeys(Username);
 		  log.debug("Entered name is "+Username);
 

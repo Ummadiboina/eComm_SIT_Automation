@@ -1,15 +1,17 @@
-Feature: Successful completion of a PAY M dongle upgrade Journey by selecting a dongle
+Feature: Successful completion of a PAY M tablet acquisition Journey for an existing user by selecting a tablet
 
-  #launch hooks and get browser
   @AgentsRegression
-  Scenario Outline: Successful completion of a PAY M dongle upgrade Journey by selecting a dongle
+  Scenario Outline: Successful completion of a PAY M tablet acquisition Journey for an existing user by selecting a tablet
     Given I login to Agent shop
-    And performs Upgrade for <user>
+    And performs Acquisition for New user
     And Select a valid PayM <Device>
     And Select valid <Tariffs> from tariffs tab
     And select a valid Handset and Tariff combination
     And Validate all the Basket content and checkout
     Then perform all the advisory checks
+    And perform the credit checks by capturing cards
+    And Register customer with valid email address and password
+    And update device plan link email address
     And accept the O2 Refresh deal summary
     Then check if CCA link is generated and click on the Generate CCA link
     When user select CCA link
@@ -23,5 +25,5 @@ Feature: Successful completion of a PAY M dongle upgrade Journey by selecting a 
     Then order confirmation is displayed
 
     Examples: 
-      | user        | AcquistionOrUpgrade | Device              | Username     | Tariffs   |
-      | 07521119805 | Upgrade             | S7 edge black 32 GB | TEST ACCEPTA | 24 Months |
+      | AcquistionOrUpgrade | Device              | Username     | Tariffs   |
+      | Acquistion          | S7 edge black 32 GB | TEST ACCEPTA | 24 Months |
