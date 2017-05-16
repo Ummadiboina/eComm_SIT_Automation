@@ -36,6 +36,8 @@ public class Agent_DealBuilderPageActions extends Environment{
 		//Assert.assertEquals("Your basket", pageobjects.BasketPage.BasketHeaderXXL.getText());
 	}
 
+	
+	
 public static void SelectPAYMDevice(String Device) throws InterruptedException
 	{
 		
@@ -45,7 +47,7 @@ public static void SelectPAYMDevice(String Device) throws InterruptedException
 		System.out.println("Clicked on Devices tab");
 		log.debug("Clicked on Devices tab");
 		Thread.sleep(3000);
-		Agent_DealBuilderPage.SearchTextPayMBox.sendKeys(Device);
+		Agent_DealBuilderPage.SearchTextBox_PayMDevice.sendKeys(Device);
 		System.out.println("Clicked on SearchTextBox to enter"+Device);
 		log.debug("Clicked on SearchTextBox to enter"+Device);
 		Agent_DealBuilderPage.SelectInStockPAYMDevice.click();
@@ -55,19 +57,58 @@ public static void SelectPAYMDevice(String Device) throws InterruptedException
 	}
 
 
-public static void SelectTariff() throws InterruptedException
-{
-	
+public static void SelectTariff(String elementName) 
+{	
+	/*
 	Reporter.log("Selected the dropdown Mrs");
 	
 	//Selecting a Tariff
 	Agent_DealBuilderPage.TariffsTab.click();
 	System.out.println("Clicked on Tariff Tab");
 	log.debug("Clicked on Tariff Tab");
-	Thread.sleep(3000);
-	Agent_DealBuilderPage.SelectingFirstAvailableTariff.click();
-	Thread.sleep(3000);
 	
+	
+	if(Tariff.contains("Random"))
+	{
+		Agent_DealBuilderPage.SearchTextPayMTariffBox.sendKeys("Standard / Phone");
+		Agent_DealBuilderPage.SelectingFirstAvailableTariff.click();
+		Thread.sleep(5000);
+		System.out.println("Selected Random Tariff ");
+		log.debug("Selected Random Tariff ");
+
+	}
+	
+	if(Tariff.contains("RandomSimO"))
+	{
+
+		Agent_DealBuilderPage.SearchTextPayMTariffBox.sendKeys("- / Simo");
+		Agent_DealBuilderPage.SelectingFirstAvailableTariff.click();
+		Thread.sleep(5000);
+		System.out.println("Selected Random SimO Tariff ");
+		log.debug("Selected Random SimO Tariff ");
+
+	}
+	*/
+	
+	
+		if(elementName.contains("Random"))
+		{
+
+			Agent_DealBuilderPage.SearchTextBox_Tariff.sendKeys("Standard / Phone");
+			Agent_DealBuilderPage.SelectingFirstAvailableTariff.click();
+			System.out.println("Selected Random Tariff ");
+			log.debug("Selected Random Tariff ");
+
+		}
+		if(elementName.contains("SimO"))
+		{
+			Agent_DealBuilderPage.SearchTextBox_Tariff.sendKeys("- / Simo");
+			Agent_DealBuilderPage.SelectingFirstAvailableTariff.click();
+			System.out.println("Selected Random SimO Tariff ");
+			log.debug("Selected Random SimO Tariff ");
+
+		}
+			
 }
 
 
@@ -85,9 +126,91 @@ public static void SelectExtras() throws InterruptedException
 	Agent_DealBuilderPage.SelectingAvailableDataAllowance.click();
 	Thread.sleep(3000);
 	
+	
+/*	
+	if(Extras.contains("Random"))
+	{
+
+		//pageobjects.Agent_DealBuilderPage.prepayDeviceTableFilter.click();
+		Agent_DealBuilderPage.SelectingAvailableDataAllowance.click();
+		Thread.sleep(5000);
+		System.out.println("Selected Random extra ");
+		log.debug("Selected Random extra ");
+
+	}
+	*/
 
 }
 		
+
+public static void SelectPayGDevice(String Device) throws InterruptedException
+{
+	
+	Agent_DealBuilderPage.prepayDevicesTab.click();
+
+	if(Device.contains("iPhone 7 Plus 128GB Jet Black"))
+	{
+		System.out.println("searched iPhone 7 Plus 128GB Jet Black");
+
+		//pageobjects.Agent_DealBuilderPage.prepayDeviceTableFilter.click();
+		Agent_DealBuilderPage.SearchTextBox_PrepayDevice.sendKeys(Device);
+
+		log.debug("searched iPhone 7 Plus 128GB Jet Black");
+	
+		Thread.sleep(6000);
+		Agent_DealBuilderPage.SelectInStockPAYGDevice.click();
+		System.out.println("Clicked on SearchTextBox to enter"+Device);
+		log.debug("Clicked on SearchTextBox to enter"+Device);
+		Thread.sleep(3000);
+	}
+}
+
+
+
+public static void SelectAccessoryDevice(String Device) throws InterruptedException
+{
+	
+	Agent_DealBuilderPage.AccessoriesTab.click();
+
+	if(Device.contains("iPhone 7 Evo Elite Brushed Black"))
+	{
+		System.out.println("searched iPhone 7 Evo Elite Brushed Black");
+
+		//pageobjects.Agent_DealBuilderPage.prepayDeviceTableFilter.click();
+		Agent_DealBuilderPage.SearchTextBox_Accessories.sendKeys(Device);
+
+		log.debug("searched iPhone 7 Evo Elite Brushed Black");
+	
+		Thread.sleep(6000);
+		Agent_DealBuilderPage.SelectSeachedaccessory.click();
+		System.out.println("Clicked on + symbol next to "+Device);
+		log.debug("Clicked on + symbol next to "+Device);
+		Thread.sleep(3000);
+	}
+}
+
+
+
+	public static void SelectPayGTariff(String Tariff) throws InterruptedException
+	{
+		
+		Thread.sleep(3000);
+		Agent_DealBuilderPage.prepayPlansTab.click();
+		System.out.println("Clicked on prepayPlansTab ");
+		log.debug("Clicked on prepayPlansTab ");
+
+
+		if(Tariff.contains("Random"))
+		{
+
+			//pageobjects.Agent_DealBuilderPage.prepayDeviceTableFilter.click();
+			Agent_DealBuilderPage.SelectingFirstAvailablePrePayTariff.click();
+			Thread.sleep(5000);
+			System.out.println("Selected Random Tariff ");
+			log.debug("Selected Random Tariff ");
+
+		}
+	}
 
 public static void eMailBasket() throws InterruptedException
 {
@@ -121,47 +244,7 @@ public static void eMailBasket() throws InterruptedException
     driver.switchTo().window(Mainwindow);				
 }
 
-public static void SelectPayGDevice(String Device) throws InterruptedException
-{
-	
-	Agent_DealBuilderPage.prepayDevicesTab.click();
 
-	if(Device.contains("iPhone 7 Plus 128GB Jet Black"))
-	{
-		System.out.println("searched iPhone 7 Plus 128GB Jet Black");
-
-		//pageobjects.Agent_DealBuilderPage.prepayDeviceTableFilter.click();
-		Agent_DealBuilderPage.prepayDeviceTableFilter.sendKeys(Device);
-
-		log.debug("searched iPhone 7 Plus 128GB Jet Black");
-	
-		Thread.sleep(6000);
-		Agent_DealBuilderPage.SelectInStockPAYGDevice.click();
-		System.out.println("Clicked on SearchTextBox to enter"+Device);
-		log.debug("Clicked on SearchTextBox to enter"+Device);
-		Thread.sleep(3000);
-	}
-}
-	public static void SelectPayGTariff(String Tariff) throws InterruptedException
-	{
-		
-		Thread.sleep(3000);
-		Agent_DealBuilderPage.prepayPlansTab.click();
-		System.out.println("Clicked on prepayPlansTab ");
-		log.debug("Clicked on prepayPlansTab ");
-
-
-		if(Tariff.contains("Random"))
-		{
-
-			//pageobjects.Agent_DealBuilderPage.prepayDeviceTableFilter.click();
-			Agent_DealBuilderPage.SelectingFirstAvailablePrePayTariff.click();
-			Thread.sleep(5000);
-			System.out.println("Selected Random Tariff ");
-			log.debug("Selected Random Tariff ");
-
-		}
-	}
 
 	
 	

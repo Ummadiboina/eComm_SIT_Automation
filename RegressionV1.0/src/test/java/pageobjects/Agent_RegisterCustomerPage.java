@@ -52,7 +52,7 @@ public class Agent_RegisterCustomerPage {
 		public static WebElement registerCustomer;
 		
 		
-		@FindBy(how=How.ID,using="//*[@id='packageControls']/table/tbody/tr/td[2]/input")
+		@FindBy(how=How.XPATH,using="//*[@id='packageControls']/table/tbody/tr/td[2]/input")
 		public static WebElement PayByCard;
 	
 		@FindBy(how=How.ID,using="yearsAtCurrentAddress")
@@ -88,25 +88,18 @@ public class Agent_RegisterCustomerPage {
 		@FindBy(how=How.ID,using="ddlMonth")
 		public static WebElement CardMonth;
 		
-		@FindBy(how=How.ID,using="ddYr")
+		@FindBy(how=How.ID,using="ddlYr")
 		public static WebElement CardYear;
-		
-		@FindBy(how=How.ID,using="lblCardSecurityCode")
+			
+		@FindBy(how=How.ID,using="txtSecurityCode")
 		public static WebElement SecurityCode;
 		
 		@FindBy(how=How.ID,using="btnPayNow")
 		public static WebElement UsethisCard;
-		
-		
-		
+				
 		@FindBy(how=How.XPATH,using="//*[@id='creditCheckAndAgreementAndStatus']/input[3]")
 		public static WebElement PerformCreditCheck;
 		
-		
-
-	
-	
-		
-		
+				
 		
 }

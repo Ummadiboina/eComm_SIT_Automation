@@ -18,5 +18,5 @@ Feature: Successful completion of a PAY M dongle upgrade Journey by selecting a 
     Then Order confirmation message should be displayed
 
     Examples: 
-      | AcquistionOrUpgrade | Device              | Tariffs   | Extras | DeliveryType |
-      | Acquistion          | S7 edge black 32 GB | 24 Months | Random | HomeDelivery |
+      | Device              | Tariffs   | Extras | DeliveryType |
+      | S7 edge black 32 GB | 24 Months | Random | HomeDelivery |

@@ -47,11 +47,9 @@ public class DeliveryPageActions {
 		public static void AboutYou(String Firstname, String Surname)
 		{
 			log.debug("Entering an Random email id");
-			log.debug(RandomEmailAddressCreation.RandomEmail(), null);
-
+			DeliveryPage.Email_Address.sendKeys(RandomEmailAddressCreation.RandomEmail());
 			System.out.println("Setting the About you options");
 			log.debug("Setting the About you options");
-
 			Select dropdown = new Select(pageobjects.DeliveryPage.Title);
 			dropdown.selectByIndex(2);
 			log.debug("Selected the dropdown Mrs");

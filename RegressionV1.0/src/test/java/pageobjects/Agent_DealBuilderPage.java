@@ -15,7 +15,7 @@ public class Agent_DealBuilderPage {
 		@FindBy(how=How.ID,using="extrasTab")
 		public static WebElement ExtrasTab;
 		
-		@FindBy(how=How.ID,using="accesoriesTab")
+		@FindBy(how=How.ID,using="accessoriesTab")
 		public static WebElement AccessoriesTab;
 		
 		@FindBy(how=How.ID,using="prepayDevicesTab")
@@ -36,10 +36,19 @@ public class Agent_DealBuilderPage {
 		public static WebElement dealBuilderContent;
 		
 		@FindBy(how=How.XPATH,using="//*[@id='deviceTable_filter']/label/input")
-		public static WebElement SearchTextPayMBox;		
+		public static WebElement SearchTextBox_PayMDevice;		
+		
+		
+		@FindBy(how=How.XPATH,using="//*[@id='planTable_filter']/label/input")
+		public static WebElement SearchTextBox_Tariff;		
+		
+		
+		@FindBy(how=How.XPATH,using="//*[@id='accessoryTable_filter']/label/input")
+		public static WebElement SearchTextBox_Accessories;	
+		
 		
 		@FindBy(how=How.XPATH,using="//*[@id='prepayDeviceTable_filter']/label/input")
-		public static WebElement prepayDeviceTableFilter;		
+		public static WebElement SearchTextBox_PrepayDevice;		
 		
 		
 		@FindBy(how=How.XPATH,using="//table[@id='deviceTable']/tbody/tr/td/a/img")
@@ -53,7 +62,12 @@ public class Agent_DealBuilderPage {
 		
 		@FindBy(how=How.XPATH,using="//table[@id='prepayDeviceTable']/tbody/tr/td/a/img")
 		public static WebElement SelectInStockPAYGDevice;	
-				
+		
+		
+		@FindBy(how=How.XPATH,using="//table[@id='accessoryTable']/tbody/tr/td/a/img")
+		public static WebElement SelectSeachedaccessory;	
+		
+		
 		@FindBy(how=How.XPATH,using="//*[@id='dataAllowances']/table/tbody/tr/td[1]/a")
 		public static WebElement SelectingAvailableDataAllowance;	
 		
