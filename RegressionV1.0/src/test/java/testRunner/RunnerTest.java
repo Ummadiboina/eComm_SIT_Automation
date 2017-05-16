@@ -67,8 +67,8 @@ public class RunnerTest {
 			result.setSourceFile("testResult\\cucumber.json");
 			result.executeFeaturesOverviewReport();
 		}
-		catch(Exception e) {
-
+		catch(Exception e) 
+		{
 			throw e;
 		}
 	}

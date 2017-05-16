@@ -183,7 +183,7 @@
 				<version>2.19.1</version>
 				<configuration>
 					<includes>
-						<include>**/*RunnerTest.java</include>
+						<exclude>**/*RunnerTest.java</exclude>
 					</includes>
 				</configuration>
 			</plugin>
