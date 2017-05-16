@@ -16,7 +16,7 @@ public class Agent_AdvisoryChecksActions extends Environment{
 //this  method used to perform click action on the Agent Home Page	
 	
 
-	public static void AgreeAdvsioryCheck() 
+	public static void AgreeAdvsioryCheck() throws InterruptedException 
 	{
 	
 		System.out.println("Going to Click on Advisory checks");	
@@ -24,6 +24,7 @@ public class Agent_AdvisoryChecksActions extends Environment{
 		Agent_AdvisoryPage.AgreeAdvsioryCheckYes.click();
 				log.debug("Clicked on Advisory checks");
 				System.out.println("Clicked on Advisory checks");	
+				Thread.sleep(3000);
 			}
 		
 

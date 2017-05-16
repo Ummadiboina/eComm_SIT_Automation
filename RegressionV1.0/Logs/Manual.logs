@@ -1,12 +1,5 @@
-07/05/2017 01:13:11 devpinoyLogger Called openBrowser
-07/05/2017 01:13:11 devpinoyLogger The Relative path of the user.dirC:\Users\vMalalu1\workspace\RegressionV1.2
-07/05/2017 01:13:11 devpinoyLogger The Env prop path is C:\Users\vMalalu1\workspace\RegressionV1.2\Configurations\Properties\AppConfig.properties
-07/05/2017 01:13:11 devpinoyLogger The Browser type read from EnvProp file is chrome
-07/05/2017 01:13:11 devpinoyLogger The current url is https://www.o2.co.uk/shop
-07/05/2017 01:13:26 devpinoyLogger Invoked browser
-07/05/2017 01:13:49 devpinoyLogger Invoked URL
-07/05/2017 01:13:50 devpinoyLogger Deleted all Cookies
-07/05/2017 01:13:50 devpinoyLogger Maxismised window
-07/05/2017 01:13:51 devpinoyLogger We are in the Shop Home page
-07/05/2017 01:13:51 devpinoyLogger The Page title is O2 | Shop | Latest Pay & Go, Pay Monthly and Sim Only Deals
-07/05/2017 01:13:52 devpinoyLogger Performing Accessories navigations
+15/05/2017 00:05:01 devpinoyLogger Called openBrowser
+15/05/2017 00:05:01 devpinoyLogger The Relative path of the user.dirC:\Users\vMalalu1\git\regression\RegressionV1.0
+15/05/2017 00:05:01 devpinoyLogger The Env prop path is C:\Users\vMalalu1\git\regression\RegressionV1.0\src\test\java\Properties\AppConfig.properties
+15/05/2017 00:05:01 devpinoyLogger The Browser type read from EnvProp file is chrome
+15/05/2017 00:05:01 devpinoyLogger The current url is https://www.ref.o2.co.uk/shop

@@ -639,14 +639,7 @@ public void SelectValid_Device(String Device) throws Throwable {
 	Agent_DealBuilderPageActions.SelectPAYMDevice(Device);
 }
 
-@Given("^Select valid Random from tariffs tab$")
-public void select_valid_Random_from_tariffs_tab() throws Throwable {
-	driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
-	PageFactory.initElements(driver,Agent_DealBuilderPage.class);
-	Agent_DealBuilderPageActions.SelectTariff();
-	Agent_DealBuilderPageActions.SelectExtras();
-    
-}
+
 
 @Given("^Select a valid PAYG ([^\"]*)")
 public void select_a_valid_PAYG_S_edge_black_GB(String Device) throws Throwable {
@@ -682,7 +675,15 @@ public void select_valid_Months_from_PAYG_tariffs_tab(String Tariff) throws Thro
 public void Select_Accessory(String Device) throws Throwable {
 	driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 	PageFactory.initElements(driver,Agent_DealBuilderPage.class);
- 
+	Agent_DealBuilderPageActions.SelectAccessoryDevice(Device);
+}
+
+@Given("^Select valid ([^\"]*) from tariffs tab$")
+public void SelectTariff(String Tariff) throws Throwable {
+	driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
+	PageFactory.initElements(driver,Agent_DealBuilderPage.class);
+	Agent_DealBuilderPageActions.SelectTariff(Tariff);
+   
 }
 
 /*##################################################################################*/   	    
@@ -694,7 +695,9 @@ public void validate_all_the_Basket_content_and_checkout() throws Throwable {
 	driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 	PageFactory.initElements(driver,Agent_DealBuilderPage.class);
 	Agent_DealBuilderPageActions.ValdiateBasket();
+	Thread.sleep(2000);
 	Agent_DealBuilderPageActions.checkout();
+	Thread.sleep(2000);
 }
 
 /*##################################################################################*/   	    
@@ -708,6 +711,20 @@ public void advisory_checks() throws Throwable
 	Agent_AdvisoryChecksActions.AgreeAdvsioryCheck();
 }
 
+/*##################################################################################*/   	    
+/*########   Credit Checks and Bank details                                #########*/
+/*##################################################################################*/ 
+
+@Then("^perform the credit checks using valid ([^\"]*) and ([^\"]*) and valid ([^\"]*)$")
+public void CreditCheck(String Firstname, String Surname, String Username) throws Throwable 
+{
+	driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+	PageFactory.initElements(driver,Agent_CreditCheckDetailsPage.class);
+	Agent_CreditCheckPageActions.Creditcheck(Firstname, Surname);
+	Agent_CreditCheckPageActions.BankDetails(Username);
+	Thread.sleep(10000);
+	
+}
 /*##################################################################################*/   	    
 /*########   Register                                                      #########*/
 /*##################################################################################*/   
@@ -734,7 +751,7 @@ public void HomeDelivery_Address() throws Throwable {
 @When("^Pay by card$")
 public void pay_by_card() throws Throwable 
 {
-	driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+	driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
 	PageFactory.initElements(driver,Agent_RegisterCustomerPage.class);
 	Agent_RegisterCustomerActions.PaybyCard();
 	Agent_RegisterCustomerActions.CardDetails();
@@ -747,7 +764,9 @@ public void pay_by_card() throws Throwable
 @Then("^Order confirmation message should be displayed$")
 public void order_confirmation_message_should_be_displayed() throws Throwable 
 {
-
+	driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
+	PageFactory.initElements(driver,Agent_ConfirmationPage.class);
+	Agent_ConfirmationPageActions.Confirmationdetails();
 }
 
 }

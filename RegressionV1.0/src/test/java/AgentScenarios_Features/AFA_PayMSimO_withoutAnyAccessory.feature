@@ -5,16 +5,15 @@ Feature: Successful completion of a PAY M SIMO acquisition Journey without an ac
   Scenario Outline: Successful completion of a PAY M SIMO acquisition Journey without an accessory
     Given I login to Agent shop
     And performs Acquisition for New user
-    And Select a valid PayM <SimOTariff> plan
-    And Select valid <Extras> from extras tab
+    And Select valid <Tariff> from tariffs tab
     And Validate all the Basket content and checkout
     Then perform all the advisory checks
-    And perform the credit checks by capturing cards
-    And Register customer with valid email address and password
+    And perform the credit checks using valid <Firstname> and <Surname> and valid <Username>
+    And Register customer with valid <Firstname> and <Surname> and other valid details in delivery page
     And Choose <DeliveryType> delivery address and delivery time
     When Pay by card
-    Then Order confirmation message should be displayed
+  Then Order confirmation message should be displayed
 
     Examples: 
-      | AcquistionOrUpgrade | SimOTariff | DeliveryType | Extras |
-      | Acquistion          | Random     | HomeDelivery | Random |
+      | Tariff | DeliveryType | Firstname | Surname | Username     |
+      | SimO   | HomeDelivery | Test      | Accepta | Test Accepta |
