@@ -6,9 +6,13 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
+import org.openqa.selenium.support.ui.Select;
+import org.testng.Reporter;
 
+import GlobalActions.RandomEmailAddressCreation;
 import helpers.Environment;
 import junit.framework.Assert;
+import pageobjects.DeliveryPage;
 import pageobjects.BasketPage.*;
 
 import static org.testng.Assert.assertEquals;
@@ -310,6 +314,15 @@ public class BasketPageActions extends Environment
 	}
 	
 	
+	public static void PromoCode(String PromoCode)
+	{
+		log.debug("Clicking promocode");
+		pageobjects.BasketPage.GotaPromoCode.click();
+		pageobjects.BasketPage.voucherCode.sendKeys(PromoCode);
+		pageobjects.BasketPage.applyVoucher.click();
+
+	}
+	
 	public static void CollectionorDelivery(String elementName) throws InterruptedException
 	{   
 		
@@ -348,3 +361,5 @@ public class BasketPageActions extends Environment
 		
 	}
 }
+
+

@@ -88,4 +88,16 @@ public class BasketPage {
 	@FindBy(how=How.XPATH,using=("//div[@class='basket-nav']"))
 	public static WebElement BasketErrorText;
 	
+	
+	//Specific to Voucher code
+	@FindBy(how=How.ID,using=("got-a-promo-code-label"))
+	public static WebElement GotaPromoCode;
+	
+	@FindBy(how=How.ID,using=("voucherCode"))
+	public static WebElement voucherCode;
+	
+	@FindBy(how=How.ID,using=("applyVoucher"))
+	public static WebElement applyVoucher;
+	
+
 }

@@ -1,7 +1,8 @@
-Feature: CFA PayM Phones Home delivery E2E journey without accessory
+Feature: Volte PayM Phones Home delivery E2E journey without accessory
 
-  @RegressionPayMCFA
-  Scenario Outline: CFA PayM Phones Home delivery E2E journey without accessory
+  #launch hooks and get browser
+  @Volte_Regression
+  Scenario Outline: Volte PayM Phones Home delivery E2E journey without accessory
     Given I am an CFA user and Lands on shop page
     And navigate to PAYM Phones page
     And I choose PayM <handset>
@@ -13,9 +14,8 @@ Feature: CFA PayM Phones Home delivery E2E journey without accessory
     And land on the payment page and input <Username> and other details and click 'Continue on next step'
     And Continue to Agreements page and confirm all the agreement checks
     And Continue to Review page and review the order
-    Then order confirmation is displayed
+    Then order confirmation is displayed with Volte message
 
-    #Close the browser
     Examples: 
-      | handset  | Firstname | Surname | Username     |
+      | handset | Firstname | Surname | Username     |
       | Iphone7 | TEST      | ACCEPTA | TEST ACCEPTA |
