@@ -55,4 +55,10 @@ public class ReviewPageActions extends Environment  {
 
 		return false;
 	}
+
+
+	public static void checkOrderContractText() {
+		// TODO Auto-generated method stub
+		
+	}
 }
