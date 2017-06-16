@@ -1,0 +1,54 @@
+<html>
+<head><style type="text/css">h1 {background-color:#9999CC}
+h2 {background-color:#BBBBCC}
+h3 {background-color:#DDDDFF}
+th {border:1px solid black;background-color:#CCCCDD;}
+td{border:1px solid black;}
+table {border:1px solid black;border-collapse: collapse;}
+.chart {border:0px none black;border-collapse: collapse;background-color: none;}
+.passed {background-color:lightgreen;font-weight:bold;color:darkgreen}
+.failed {background-color:tomato;font-weight:bold;color:darkred}
+.undefined {background-color:gold;font-weight:bold;color:goldenrod}
+.skipped {background-color:silver;font-weight:bold;color:darkgray}
+.passed_description {background-color:#D0FFD0;font-weight:bold;font-style:italic;color:black}
+.failed_description {background-color:#FFA898;font-weight:bold;font-style:italic;color:black}
+OL { counter-reset: item }
+OL>LI { display: block }
+OL>LI:before { content: counters(item, ".") " "; counter-increment: item }
+</style>
+<title>Detailed Results Report</title>
+  </head>
+  <body>
+  <h1>Overview</h1>
+<table><tr><th></th><th>Passed</th><th>Failed</th><th>Undefined</th><th>%Passed</th></tr><tr><th>Features</th><td class="passed">0</td><td class="failed">1</td><td class="undefined">0</td><td>0.00</td></tr><tr><th>Scenarios</th><td class="passed">0</td><td class="failed">1</td><td class="undefined">0</td><td>0.00</td></tr><tr><th>Steps</th><td class="passed">10</td><td class="failed">1</td><td class="undefined">3</td><td>71.43</td></tr></table><div><b>Overall Duration: 0h 00m 00s</b></div>
+<a id="top"></a><h1>Table of Contents</h1><ol><li> <span class="failed"><a href="#feature-cfa-refresh-order-basket-review-page-and-confirmation-page">CFA Refresh Order Basket Review Page and Confirmation Page</a></span><ol><li> <span class="failed"><a href="#sc-cfa-refresh-order-basket-review-page-and-confirmation-page;cfa-refresh-order-basket-review-page-and-confirmation-page;;2">CFA Refresh Order Basket Review Page and Confirmation Page</a></span></li></ol></li></ol><h1>Detailed Results Report</h1><table width="700px"><tr class="failed"><td colspan="4"><b>Feature:</b> <a id="feature-cfa-refresh-order-basket-review-page-and-confirmation-page">CFA Refresh Order Basket Review Page and Confirmation Page</a></td></tr><tr class="failed_description"><td colspan="4"><br></br></td></tr><tr class="failed"><td><small><b>Passed:</b> 0</small></td><td><small><b>Failed:</b> 1</small></td><td><small><b>Undefined:</b> 0</small></td><td><small>Duration: 673.22s</small></td></tr><tr class="failed"><td colspan="4" style="padding-left:20px"> <table width="100%"><tr class="failed"><td colspan="4"><b>Scenario Outline:</b> <a id="sc-cfa-refresh-order-basket-review-page-and-confirmation-page;cfa-refresh-order-basket-review-page-and-confirmation-page;;2">CFA Refresh Order Basket Review Page and Confirmation Page</a></td></tr><tr class="failed_description"><td colspan="4"><br></br></td></tr><tr class="failed"><td><small><b>Passed:</b> 10</small></td><td><small><b>Failed:</b> 1</small></td><td><small><b>Undefined:</b> 3</small></td><td><small>Duration: 673.22s</small></td></tr><tr class="passed"><td>Before</td><td colspan="2"></td><td width="100">65.75s</td></tr><tr class="passed"><td colspan="4"><br></br></td></tr><tr class="failed"><td colspan="4" style="padding-left:20px"> <table width="100%"><tr class="passed"><td><b>Given </b> I am an CFA user and Lands on shop page</td><td width="100">0.40s</td></tr><tr class="passed"><td><b>And </b> navigate to PAYM Phones page</td><td width="100">47.26s</td></tr><tr class="passed"><td><b>And </b> I choose PayM Iphone7</td><td width="100">0.93s</td></tr><tr class="passed"><td><b>And </b> Navigate to device details page</td><td width="100">116.03s</td></tr><tr class="passed"><td><b>And </b> Land on the 'Tariffs and extra' page</td><td width="100">0.61s</td></tr><tr class="passed"><td><b>And </b> I Land on the basket page and choose home delivery option</td><td width="100">35.28s</td></tr><tr class="passed"><td><b>And </b> Check for delivery text in Basket Page</td><td width="100">0.13s</td></tr><tr class="passed"><td><b>And </b> click on &quot;go to checkout&quot; button</td><td width="100">4.14s</td></tr><tr class="passed"><td><b>And </b> input TEST and ACCEPTA and other valid details in Delivery page and Click on the 'Continue button'</td><td width="100">296.33s</td></tr><tr class="passed"><td><b>And </b> land on the payment page and input TEST ACCEPTA and other details and click 'Continue on next step'</td><td width="100">70.26s</td></tr><tr class="failed"><td><b>And </b> Continue to Agreements page and confirm all the agreement checks</td><td width="100">33.12s</td></tr><tr class="failed"><td colspan="2"><div><br>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;id&quot;,&quot;selector&quot;:&quot;affordability-terms-declaration&quot;}
+  (Session info: chrome=58.0.3029.110)
+  (Driver info: chromedriver=2.29.461591 (62ebf098771772160f391d75e589dc567915b233),platform=Windows NT 6.1.7601 SP1 x86) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 20.09 seconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.0.1', revision: '1969d75', time: '2016-10-18 09:49:13 -0700'
+System info: host: 'LASST260449', ip: '10.172.41.125', os.name: 'Windows 7', os.arch: 'x86', os.version: '6.1', java.version: '1.8.0_131'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities [{applicationCacheEnabled=false, rotatable=false, mobileEmulationEnabled=false, networkConnectionEnabled=false, chrome={chromedriverVersion=2.29.461591 (62ebf098771772160f391d75e589dc567915b233), userDataDir=C:Usersravindv1AppDataLocalTempscoped_dir13124_7630}, takesHeapSnapshot=true, pageLoadStrategy=normal, databaseEnabled=false, handlesAlerts=true, hasTouchScreen=false, version=58.0.3029.110, platform=XP, browserConnectionEnabled=false, nativeEvents=true, acceptSslCerts=true, locationContextEnabled=true, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true, unexpectedAlertBehaviour=}]
+Session ID: 0e0bd15c5859d8d2fac1d3b7fbe420ab
+*** Element info: {Using=id, value=affordability-terms-declaration}</br><br>
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)</br><br>
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)</br><br>
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)</br><br>
+	at java.lang.reflect.Constructor.newInstance(Unknown Source)</br><br>
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:216)</br><br>
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:168)</br><br>
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:635)</br><br>
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:368)</br><br>
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementById(RemoteWebDriver.java:417)</br><br>
+	at org.openqa.selenium.By&#36;ById.findElement(By.java:218)</br><br>
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:360)</br><br>
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)</br><br>
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)</br><br>
+	at com.sun.proxy.&#36;Proxy18.click(Unknown Source)</br><br>
+	at actionsPerformed.AgreementPageActions.Affordability(AgreementPageActions.java:29)</br><br>
+	at steps.E2EOrderPlaced_Steps.AgreementsPageConfirmation(E2EOrderPlaced_Steps.java:540)</br><br>
+	at &#10045;.And Continue to Agreements page and confirm all the agreement checks(CFA_Refresh_Order_Basket_Review_Page_and_Confirmation_Page.feature:15)</br><br>
+</br></div></td></tr><tr class="skipped"><td><b>And </b> Continue to Review page, check delivery text and review the order</td><td width="100">0.00s</td></tr><tr class="skipped"><td><b>And </b> Check delivery text in Order Confirmation page</td><td width="100">0.00s</td></tr><tr class="skipped"><td><b>Then </b> order confirmation is displayed</td><td width="100">0.00s</td></tr></table></td></tr><tr class="passed"><td>After</td><td colspan="2"></td><td width="100">2.99s</td></tr><tr class="passed"><td colspan="4"><br></br></td></tr><tr><td colspan="5"><sup><a href="#top">Back to Table of Contents</a></sup></td></tr></table></td></tr><tr><td colspan="5"></td></tr></table>	
+	</body>
+</html>
