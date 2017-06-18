@@ -12,4 +12,8 @@ public class NonConnectedDeviceDetailsPage {
 	public static WebElement AddtoBasket;
 	//the element not found issue was mainly because not giving proper element idenfier, had declared ID in xpath defining format
 
+	@FindBy(how=How.XPATH,using="//select[@class='accessory-option ng-pristine ng-valid']")
+	public static WebElement QuantityDropdown;
+	
+	
 }

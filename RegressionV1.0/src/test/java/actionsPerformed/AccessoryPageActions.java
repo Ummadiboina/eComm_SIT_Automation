@@ -2,6 +2,11 @@ package actionsPerformed;
 
 import helpers.Environment;
 import org.apache.log4j.Logger;
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.Select;
+import org.testng.Assert;
 
 public class AccessoryPageActions extends Environment{
 	
@@ -133,8 +138,11 @@ public class AccessoryPageActions extends Environment{
 		}
 		
 		}
-
-	public static void selectAnyAccessoryLimit() throws InterruptedException {
+	/*Below has been modified as per the new ui layout, new function has been written which is below,
+	so please refer to this only if its necessary else follow "selectAnyAccessoryLimit()" instead of
+	"selectAnyAccessoryLimit_old"*/
+	
+	public static void selectAnyAccessoryLimit_old() throws InterruptedException {
 		// TODO Auto-generated method stub
 		
 		try
@@ -162,6 +170,56 @@ public class AccessoryPageActions extends Environment{
 						}
 						}
 		    
+		}
+	
+public static void selectAnyAccessoryLimit() throws InterruptedException {
+
+		
+		try {
+		// Below will give status like in stock / out of stock etc
+			Thread.sleep(5000);
+
+			String status = driver.findElement(By.className("status-info")).getText();
+			System.out.println(status);
+		
+			if (status.contains("In Stock")) {
+				WebElement element = driver
+						.findElement(By.xpath("//select[@class='accessory-option ng-pristine ng-valid']"));
+				JavascriptExecutor js = (JavascriptExecutor) driver;
+				js.executeScript("arguments[0].setAttribute('style', 'display:block;')", element);
+				new Select(element).selectByValue("2");
+
+				WebElement DeviceDetailsQuantity = driver.findElement(
+						By.xpath("//div[@on-dimension-select='selectQuantityDimension']/span[@role='combobox']"));
+				String DeviceDetailsQuantityValue = DeviceDetailsQuantity.getText();
+				System.out.println("DeviceDetailsQuantityValue is "+DeviceDetailsQuantityValue);
+
+				driver.findElement(By.id("deviceDetailsSubmit")).click();
+
+				Thread.sleep(3000);
+
+	
+			} else {
+				driver.navigate().back();
+			}
+
+		} catch (Exception e) {
+			WebElement DeviceDetailsQuantity = driver.findElement(
+					By.xpath("//div[@on-dimension-select='selectQuantityDimension']/span[@role='combobox']"));
+			String DeviceDetailsQuantityValue = DeviceDetailsQuantity.getText();
+			System.out.println(DeviceDetailsQuantityValue);
+			Assert.assertEquals("2", DeviceDetailsQuantityValue);
+
+			driver.findElement(By.id("deviceDetailsSubmit")).click();
+
+			Thread.sleep(3000);
+			WebElement BasketQuantity = driver.findElement(By.id("accessory-quantitySelectBoxIt"));
+			String BasketQuantityvalue = BasketQuantity.getText();
+			// Assert.assertEquals(DeviceDetailsQuantityValue,
+			// BasketQuantityvalue);
+			Assert.assertEquals("2", BasketQuantityvalue);
+
+		}
 		}
 	
 }

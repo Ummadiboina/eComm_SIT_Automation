@@ -343,4 +343,18 @@ public class BasketPageActions extends Environment
 
 	}
 
+	public static void JuneReleaseBasketContent() throws InterruptedException
+	{   
+	
+		try {
+			Assert.assertEquals("Your basket", pageobjects.BasketPage.BasketHeaderXXL.getText());
+			System.out.println("Shop basket page header - "+driver.getTitle());
+			System.out.println("Basket header is - "+pageobjects.BasketPage.BasketHeaderXXL.getText());
+
+		} catch (Exception e) 
+		{
+		Assert.fail("Unable to find BasketHeaderXXL element in Reference shop Basket page");
+		}
+	}	
+
 }

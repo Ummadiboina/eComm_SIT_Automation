@@ -9,6 +9,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 
 import GlobalActions.Autoredirection;
+import GlobalActions.JuneReleaseValidations;
 import GlobalActions.MouseHoverAction;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
@@ -194,7 +195,7 @@ public class E2EOrderPlaced_Steps {
 		Thread.sleep(2000);
 		ConnectedDeviceDetailsPageAction.ViewAllTariffs();
 	}
-	
+
 	@Given("^Navigate to device details page and select ([^\"]*)$")
 	public void Navigate_to_device_details_page_and_select_color(String color) throws Throwable {
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
@@ -204,8 +205,6 @@ public class E2EOrderPlaced_Steps {
 		ConnectedDeviceDetailsPageAction.colorSelect(color);
 		ConnectedDeviceDetailsPageAction.ViewAllTariffs();
 	}
-
-	
 
 	@Given("^select any Ipad \"([^\"]*)\" and continue$")
 	public void select_any_Ipad_and_continue(String elementname) throws Throwable {
@@ -257,7 +256,7 @@ public class E2EOrderPlaced_Steps {
 		PageFactory.initElements(driver, AccessoryPage.class);
 		PageFactory.initElements(driver, NonConnectedDeviceDetailsPage.class);
 		AccessoryPageActions.selectAnyAccessoryLimit();
-		NonConnectedDeviceDetailsPageAction.ClickonBasketIcon();
+		//NonConnectedDeviceDetailsPageAction.ClickonBasketIcon();
 
 	}
 
@@ -267,16 +266,14 @@ public class E2EOrderPlaced_Steps {
 		PageFactory.initElements(driver, AccessoryPage.class);
 		PageFactory.initElements(driver, NonConnectedDeviceDetailsPage.class);
 		FitnessTrackerPageActions.AddtoBasketFitnessTracker();
-		NonConnectedDeviceDetailsPageAction.ClickonBasketIcon();
+		//NonConnectedDeviceDetailsPageAction.ClickonBasketIcon();
 	}
 
 	@Given("^add SmartWatch to basket within limit in details page and navigate to basket$")
 	public void add_SmartWatch_to_basket_within_limit_in_details_page_and_navigate_to_basket() throws Throwable {
 		driver.manage().timeouts().implicitlyWait(25, TimeUnit.SECONDS);
-		PageFactory.initElements(driver, AccessoryPage.class);
-		PageFactory.initElements(driver, NonConnectedDeviceDetailsPage.class);
-		FitnessTrackerPageActions.AddtoBasketFitnessTracker();
-		NonConnectedDeviceDetailsPageAction.ClickonBasketIcon();
+		PageFactory.initElements(driver, SmartwatchesPage.class);
+		SmartwatchesPageActions.AddtoBasketSmartwatchTracker();
 	}
 
 	@Given("^Choose some Accesssory$")
@@ -301,8 +298,8 @@ public class E2EOrderPlaced_Steps {
 	}
 
 	/*
-	 * #########################################################################
-	 * #########
+	 * #########################################
+	 * 
 	 */
 	/*
 	 * ############## All the Below are for the Tariff and Extras Page
@@ -366,7 +363,7 @@ public class E2EOrderPlaced_Steps {
 		PageFactory.initElements(driver, BasketPage.class);
 		BasketPageActions.checkOrderContractTextBP();
 	}
-	
+
 	@Given("Check for order contract text for DD/PreOrder phone in Basket Page")
 	public void check_for_order_contract_text_for_DD_or_PreOrder_in_basket_page() throws Throwable {
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
@@ -935,5 +932,55 @@ public class E2EOrderPlaced_Steps {
 		PageFactory.initElements(driver, Agent_ConfirmationPage.class);
 		Agent_ConfirmationPageActions.Confirmationdetails();
 	}
+
+	/*
+	 * #########################################################################
+	 * #########
+	 */
+	/* ######## June Release ######### */
+	/*
+	 * #########################################################################
+	 * #########
+	 */
+	@Given("^I Land on the Non Phone related basket page$")
+	public void NonPhoneRelatedBasketPage_julyRelease() throws InterruptedException {
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		PageFactory.initElements(driver, BasketPage.class);
+		PageFactory.initElements(driver, PAYMandPAYGTariffAndExtrasPage.class);
+		Thread.sleep(3000);
+		BasketPageActions.JuneReleaseBasketContent();
+	}
+
+	@Then("^Verify that correct quantity of devices are displayed in Basket page$")
+	public void verifytheQuantityBasketPage() throws Throwable {
+		JuneReleaseValidations.QuantityValidationsBasket();
+	}
+
+	@Then("^Verify that correct quantity of devices are displayed in Delivery page$")
+	public void verifytheQuantityDeliveryPage() throws Throwable {
+		JuneReleaseValidations.QuantityValidationsDelivery();
+	}
+
+	@Then("^Verify that correct quantity of devices are displayed in Review page$")
+	public void verifytheQuantityReviewPage() throws Throwable {
+		JuneReleaseValidations.QuantityValidationsReview();
+	}
+	
+	@Then("^Verify that correct quantity of Grouped non connected items are displayed in Basket page$")
+	public void verifytheQuantityBasketPageGrouped() throws Throwable {
+		JuneReleaseValidations.QuantityValidationsBasket_Grouped();
+	}
+
+	@Then("^Verify that correct quantity of Grouped non connected items are displayed in Delivery page$")
+	public void verifytheQuantityDeliveryPageGrouped() throws Throwable {
+		JuneReleaseValidations.QuantityValidationsDelivery_Grouped();
+	}
+
+	@Then("^Verify that correct quantity of Grouped non connected items are displayed in Review page$")
+	public void verifytheQuantityReviewPageGrouped() throws Throwable {
+		JuneReleaseValidations.QuantityValidationsReview_Grouped();
+	}
+	
+	
 
 }
