@@ -1,0 +1,63 @@
+package actionsPerformed;
+
+import helpers.Environment;
+
+import pageobjects.Agent_DeliveryDetailsPage;
+import org.apache.log4j.Logger;
+import org.openqa.selenium.support.ui.Select;
+import org.testng.Reporter;
+
+import GlobalActions.RandomEmailAddressCreation;
+
+public class Agent_DeliveryPageActions extends Environment{
+	
+	static Logger log = Logger.getLogger("devpinoyLogger");
+	
+	/*
+//this  method used to perform click action on the Agent Home Page	
+	
+	public static void ElementClickAction(String elementname) {
+		// TODO Auto-generated method stub
+	System.out.println("Agent_Home_Page_Action");
+		log.debug("Agent Delivery page validation");
+		
+		if(elementname!=null)
+		{
+			switch (elementname.toLowerCase())
+			{
+			case "AgreeAdvsioryCheck":
+				pageobjects.Agent_Deliverydetails.AgreeAdvsioryCheck.click();
+				break;
+						
+			}
+	
+		}
+	}
+	
+	*/
+/*************************Vinu Edited below ***********************/
+	
+	
+	
+	
+	  public static void Set_Bank_details(String Username)
+	  {
+	  
+		  Agent_DeliveryDetailsPage.AccountName.sendKeys(Username);
+		  log.debug("Entered name is "+Username);
+
+		  Agent_DeliveryDetailsPage.AccountNumber.sendKeys("10207136");
+		  log.debug("Entered Account number - 10207136");
+		  
+		  Agent_DeliveryDetailsPage.SortCode.sendKeys("201596");
+		  log.debug("Entered sort code - 201596");
+		  
+		  pageobjects.Agent_DeliveryDetailsPage.CardCapture.click();
+		  log.debug("Card Cature Link is clicked");
+				  
+		  pageobjects.Agent_DeliveryDetailsPage.AgreeCreditCheck.click();
+		  log.debug("Clicked on the Accept Terms checkbox");
+		  
+		  }
+}
+
