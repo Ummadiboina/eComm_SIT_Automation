@@ -11,7 +11,7 @@ Feature: FTQ-Ecomm-11478-CFU_MultipleDevices
     Then Verify that correct quantity of devices are displayed in Basket page
     And click on "go to checkout" button
     Then Verify that correct quantity of devices are displayed in Delivery page
-    
+
     Examples: 
-      | username    | password | Firstname | Surname | Username     |
-      | ink_jun9198 | test123  | TEST      | ACCEPTA | TEST ACCEPTA |
+      | username   | password | Firstname | Surname | Username     |
+      | ing_jul987 | test123  | TEST      | ACCEPTA | TEST ACCEPTA |
