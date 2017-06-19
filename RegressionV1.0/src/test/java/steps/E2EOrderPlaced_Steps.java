@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 
@@ -23,6 +24,7 @@ import actionsPerformed.BasketPageActions;
 import actionsPerformed.ConnectedDeviceDetailsPageAction;
 import actionsPerformed.DeliveryPageActions;
 import actionsPerformed.FitnessTrackerPageActions;
+import actionsPerformed.FreeSimDeliveryPageActions;
 import actionsPerformed.MobileBroadBandPageActions;
 import actionsPerformed.OrderConfirmationPageActions;
 import actionsPerformed.PAYMSimOPageActions;
@@ -1050,5 +1052,109 @@ public class E2EOrderPlaced_Steps {
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		JuneReleaseValidations.ChangeQuantity();
 	}	
+	
+	/*
+	 * #########################################################################
+	 * #########
+	 */
+	/* ######## Upgrade Upsell ######### */
+	/*
+	 * #########################################################################
+	 * #########
+	 */
+
+	@Then("^I should be displayed the promo modules$")
+	public void i_should_be_displayed_the_promo_modules() throws Throwable {
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		PageFactory.initElements(driver, UpgradeCustomerPageActions.class);
+		UpgradeCustomerPageActions.UpgradeUpsellPromoModule_Validation();
+
+	}
+
+	@Then("^I should be displayed with Go to My O(\\d+) CTA and on clicking on it should land me to My O(\\d+) page$")
+	public void i_should_be_displayed_with_Go_to_My_O_CTA_and_on_clicking_on_it_should_land_me_to_My_O_page(int arg1,
+			int arg2) throws Throwable {
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		PageFactory.initElements(driver, UpgradeCustomerPageActions.class);
+		UpgradeCustomerPageActions.UpgradeUpsellPromoModule_MyO2Action();
+
+	}
+
+	/*
+	 * #########################################################################
+	 * #########
+	 */
+	/* ######## Upgrade Upsell iPad Sims ######### */
+	/*
+	 * #########################################################################
+	 * #########
+	 */
+
+	@When("^I Click on Pick a sim on the iPad promo module$")
+	public void i_Click_on_Pick_a_sim_on_the_iPad_promo_module() throws Throwable {
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		PageFactory.initElements(driver, UpgradeCustomerPage.class);
+		UpgradeCustomerPageActions.UpgradeUpsellPromoModule_iPadAction();
+		Autoredirection.redirect();
+	}
+
+	@When("^input ([^\"]*) and ([^\"]*) and other valid details in Delivery page and Click on the 'Send me my sim'$")
+	public void input_TEST_and_ACCEPTA_and_other_valid_details_in_Delivery_page_and_Click_on_the_Send_me_my_sim(String Firstname, String Surname) throws Throwable {
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		PageFactory.initElements(driver, DeliveryPage.class);
+		DeliveryPageActions.SetDelivery();
+		JavascriptExecutor jse = (JavascriptExecutor) driver;
+		jse.executeScript("window.scrollBy(0,100)", "");
+		PageFactory.initElements(driver, FreeSimDeliveryPageActions.class);
+		FreeSimDeliveryPageActions.FreeSimAboutYou(Firstname, Surname);
+		JavascriptExecutor jse_1 = (JavascriptExecutor) driver;
+		jse.executeScript("window.scrollBy(0,250)", "");
+		FreeSimDeliveryPageActions.ClickSendMeMySim();
+		Thread.sleep(2000);
+		
+		
+
+	}
+	
+	/*
+	 * #########################################################################
+	 * #########
+	 */
+	/* ######## Upgrade Upsell Tablet Sims ######### */
+	/*
+	 * #########################################################################
+	 * #########
+	 */
+
+	@When("^I Click on Pick a sim on the Tablet promo module$")
+	public void i_Click_on_Pick_a_sim_on_the_Tablet_promo_module() throws Throwable {
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		PageFactory.initElements(driver, UpgradeCustomerPage.class);
+		UpgradeCustomerPageActions.UpgradeUpsellPromoModule_TabletAction();
+		Autoredirection.redirect();
+	    
+	}
+	
+	
+	/*
+	 * #########################################################################
+	 * #########
+	 */
+	/* ######## Upgrade Upsell Dongle Sims ######### */
+	/*
+	 * #########################################################################
+	 * #########
+	 */
+	
+
+	@When("^I Click on Pick a sim on the Dongle promo module$")
+	public void i_Click_on_Pick_a_sim_on_the_Dongle_promo_module() throws Throwable {
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		PageFactory.initElements(driver, UpgradeCustomerPage.class);
+		UpgradeCustomerPageActions.UpgradeUpsellPromoModule_DongleAction();
+		Autoredirection.redirect(); 
+	   
+	}
+	
 
 }

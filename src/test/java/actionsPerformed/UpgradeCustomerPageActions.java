@@ -31,6 +31,9 @@ public class UpgradeCustomerPageActions extends Environment {
 		Thread.sleep(5000);
 	}
 
+	
+	////////////////////////////Customer not eligible for upgrade//////////////////////////
+	
 	public static void UpgradeUpsellPromoModule_Validation() throws InterruptedException {
 		JavascriptExecutor jse = (JavascriptExecutor) driver;
 		jse.executeScript("window.scrollBy(0,150)", "");
