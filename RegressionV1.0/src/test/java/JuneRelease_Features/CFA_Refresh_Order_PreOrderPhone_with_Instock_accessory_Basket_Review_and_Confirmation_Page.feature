@@ -16,7 +16,7 @@ Feature: CFA Refresh Order PreOrder phone with Instock accessory Basket Review a
 	And Continue to Agreements page and confirm all the agreement checks 
 	And Continue to Review page, check order contract text and review the order 
 	And Check order contract text in Order Confirmation page 
-	Then order confirmation is displayed 
+	Then order confirmation is displayed
 	
 	#Close the browser
 	Examples: 
