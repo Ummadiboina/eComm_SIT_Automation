@@ -3,9 +3,10 @@ package GlobalActions;
 
 import java.io.IOException;
 
-import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 
 import helpers.Environment;
@@ -86,8 +87,6 @@ public static void QuantityValidationsBasket_Grouped() throws Exception{
 		System.out.println("Not Working fine");
 		Assert.fail("Quantity Values are not correct");
 	}	
-
-
 	Screenshots.screennewPics();
 }
 
@@ -111,9 +110,53 @@ public static void QuantityValidationsDelivery_Grouped() throws IOException, Int
 	
 }
 
-public static void QuantityValidationsReview_Grouped() {
-	// TODO Auto-generated method stub
+public static void QuantityValidationsReviewPage_Grouped() {
 	
 }
 
+
+public static void NavigatebackFromDelivery() 
+{
+	
+	//Please include relevant steps after june release
+	driver.findElement(By.xpath("//*[@title='Exit checkout']")).click();
+	System.out.println("Clicked on the exit checkout");
 }
+
+public static void ChangeQuantity() throws InterruptedException {
+	// TODO Auto-generated method stub
+	
+	WebElement element2 = driver
+			.findElement(By.id("accessory-quantity"));
+	
+	JavascriptExecutor js = (JavascriptExecutor) driver;
+	js.executeScript("arguments[0].setAttribute('style', 'display:block;')", element2);
+	new Select(element2).selectByValue("2");
+	Thread.sleep(4000);
+		
+}
+
+public static void updatedQuantityValidationsDelivery() throws IOException, InterruptedException {
+	// TODO Auto-generated method stub
+	WebElement BasketQuantity = driver.findElement(By.className("basket-nonconnected"));
+	String BasketQuantityvalue = BasketQuantity.getText();
+	System.out.println("Your order contents is "+BasketQuantityvalue);
+	Screenshots.screennewPics();
+	
+	if(BasketQuantityvalue.contains("Quantity: 2"))
+	{
+		System.out.println(
+				"Values are correct , Basket quantity = " + BasketQuantityvalue + "Device added value = 2");
+
+	}
+	else
+	{
+		System.out.println("Not Working fine");
+		Assert.fail("Quantity Values are not correct");
+	}
+	
+	
+}
+}
+
+

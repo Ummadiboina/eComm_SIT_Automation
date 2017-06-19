@@ -4,20 +4,66 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 
 import GlobalActions.Autoredirection;
 import GlobalActions.JuneReleaseValidations;
 import GlobalActions.MouseHoverAction;
+import actionsPerformed.AccessoryPageActions;
+import actionsPerformed.AdditionalInformationPageActions;
+import actionsPerformed.Agent_AdvisoryChecksActions;
+import actionsPerformed.Agent_ConfirmationPageActions;
+import actionsPerformed.Agent_CreditCheckPageActions;
+import actionsPerformed.Agent_DealBuilderPageActions;
+import actionsPerformed.Agent_HomePagePageActions;
+import actionsPerformed.Agent_RegisterCustomerActions;
+import actionsPerformed.AgreementPageActions;
+import actionsPerformed.BasketPageActions;
+import actionsPerformed.ConnectedDeviceDetailsPageAction;
+import actionsPerformed.DeliveryPageActions;
+import actionsPerformed.FitnessTrackerPageActions;
+import actionsPerformed.MobileBroadBandPageActions;
+import actionsPerformed.OrderConfirmationPageActions;
+import actionsPerformed.PAYMSimOPageActions;
+import actionsPerformed.PAYMandPAYGTariffAndExtrasPageActions;
+import actionsPerformed.PaymentPageActions;
+import actionsPerformed.PhonesListingPageAction;
+import actionsPerformed.ReviewPageActions;
+import actionsPerformed.ShopLandingPageAction;
+import actionsPerformed.SimsPageActions;
+import actionsPerformed.SmartwatchesPageActions;
+import actionsPerformed.UpgradeCustomerPageActions;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import helpers.Filereadingutility;
 import junit.framework.Assert;
-import pageobjects.*;
-import actionsPerformed.*;
+import pageobjects.AccessoryPage;
+import pageobjects.AdditionalInformationPage;
+import pageobjects.Agent_AdvisoryPage;
+import pageobjects.Agent_ConfirmationPage;
+import pageobjects.Agent_CreditCheckDetailsPage;
+import pageobjects.Agent_DealBuilderPage;
+import pageobjects.Agent_HomePage;
+import pageobjects.Agent_RegisterCustomerPage;
+import pageobjects.AgreementPage;
+import pageobjects.BasketPage;
+import pageobjects.ConnectedDeviceDetailsPage;
+import pageobjects.DeliveryPage;
+import pageobjects.FitnessTrackerPage;
+import pageobjects.MobileBroadBandPage;
+import pageobjects.MouseHoverPage;
+import pageobjects.NonConnectedDeviceDetailsPage;
+import pageobjects.OrderConfirmationPage;
+import pageobjects.PAYMSimOPage;
+import pageobjects.PAYMandPAYGTariffAndExtrasPage;
+import pageobjects.PaymentPage;
+import pageobjects.PhonesListingPage;
+import pageobjects.ReviewPage;
+import pageobjects.SimsPage;
+import pageobjects.SmartwatchesPage;
+import pageobjects.UpgradeCustomerPage;
 
 public class E2EOrderPlaced_Steps {
 
@@ -953,34 +999,56 @@ public class E2EOrderPlaced_Steps {
 
 	@Then("^Verify that correct quantity of devices are displayed in Basket page$")
 	public void verifytheQuantityBasketPage() throws Throwable {
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		JuneReleaseValidations.QuantityValidationsBasket();
 	}
 
 	@Then("^Verify that correct quantity of devices are displayed in Delivery page$")
 	public void verifytheQuantityDeliveryPage() throws Throwable {
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		JuneReleaseValidations.QuantityValidationsDelivery();
 	}
 
+	@Then("^Verify that correct quantity of devices are displayed in Delivery page after update$")
+	public void verifyUpdatedQuantityDeliveryPage() throws Throwable {
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		JuneReleaseValidations.updatedQuantityValidationsDelivery();
+	}
+	
 	@Then("^Verify that correct quantity of devices are displayed in Review page$")
 	public void verifytheQuantityReviewPage() throws Throwable {
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		JuneReleaseValidations.QuantityValidationsReview();
 	}
 	
 	@Then("^Verify that correct quantity of Grouped non connected items are displayed in Basket page$")
 	public void verifytheQuantityBasketPageGrouped() throws Throwable {
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		JuneReleaseValidations.QuantityValidationsBasket_Grouped();
 	}
 
 	@Then("^Verify that correct quantity of Grouped non connected items are displayed in Delivery page$")
 	public void verifytheQuantityDeliveryPageGrouped() throws Throwable {
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		JuneReleaseValidations.QuantityValidationsDelivery_Grouped();
 	}
 
 	@Then("^Verify that correct quantity of Grouped non connected items are displayed in Review page$")
 	public void verifytheQuantityReviewPageGrouped() throws Throwable {
-		JuneReleaseValidations.QuantityValidationsReview_Grouped();
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		JuneReleaseValidations.QuantityValidationsReviewPage_Grouped();
+	}
+		
+	@Then("^navigate back to Basket page$")
+	public void navigate_back_to_Basket_page() throws Throwable {
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		JuneReleaseValidations.NavigatebackFromDelivery();
 	}
 	
-	
+	@Then("^Change the quantity of the items$")
+	public void change_the_quantity_of_the_items() throws Throwable {
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		JuneReleaseValidations.ChangeQuantity();
+	}	
 
 }
