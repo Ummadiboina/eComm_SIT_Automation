@@ -1,5 +1,4 @@
-Feature:
-CFA Standard Order PreOrder phone with Instock accessory Basket Review and Confirmation Page 
+Feature: CFA Standard Order PreOrder phone with Instock accessory Basket Review and Confirmation Page 
 
 @JuneRelease 
 Scenario Outline:
