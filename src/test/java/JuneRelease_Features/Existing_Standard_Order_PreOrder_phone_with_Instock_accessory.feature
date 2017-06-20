@@ -1,10 +1,10 @@
-Feature:
-CFA Standard Order PreOrder phone with Instock accessory Basket Review and Confirmation Page 
+Feature: Existing customer Standard Order PreOrder phone with Instock accessory 
 
 @JuneRelease 
-Scenario Outline:
-CFA Standard Order PreOrder phone with Instock accessory Basket Review and Confirmation Page 
-	Given I am an CFA user and Lands on shop page 
+Scenario Outline: 
+	Existing customer Standard Order PreOrder phone with Instock accessory 
+	Given I am existing user and I click on Signin button 
+	And Signin using valid <username> and <password> credentials 
 	And navigate to PAYM Phones page 
 	And I choose PayM <handset> 
 	And Navigate to device details page, check if the selected device is Pre Order and select <color> 
@@ -13,10 +13,8 @@ CFA Standard Order PreOrder phone with Instock accessory Basket Review and Confi
 	And I Land on the basket page and choose home delivery option 
 	And Check for order contract text for DD/PreOrder phone in Basket Page 
 	And click on "go to checkout" button 
-	And Input <Firstname> and <Surname> and other valid details in Delivery page 
-	And Check stock extended message for <handset> 
-	And Click on Continue button 
-	And land on the payment page, check stock limited message for <handset> and input <user> and other details and click 'Continue on next step' 
+	And Select existing account and begin fast checkout 
+	And land on the payment page, check stock extended message for <handset> and input <user> and other details for upgrade and click 'Continue on next step' 
 	And Continue to Agreements page, check stock extended message for <handset> and confirm all the agreement checks 
 	And Continue to Review page, check order contract text, stock extended message for <handset> and review the order 
 	And Check order contract text in Order Confirmation page 
@@ -24,5 +22,5 @@ CFA Standard Order PreOrder phone with Instock accessory Basket Review and Confi
 	
 	#Close the browser
 	Examples: 
-		| handset  | Firstname | Surname |   User     |    color     |
-		| AquarisM45 | TEST      | ACCEPTA | TEST ACCEPTA |    black      |
+		| handset  | Firstname | Surname | Username     |    color     |
+		| AquarisM45 | TEST      | ACCEPTA | TEST ACCEPTA |    black     |

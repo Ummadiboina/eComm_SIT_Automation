@@ -1,6 +1,6 @@
 Feature: CFA Standard Order Delayed delivery phone with Instock accessory Basket Review and Confirmation Page 
 
-@Test4
+@JuneRelease
 Scenario Outline: 
 	CFA Standard Order Delayed delivery phone with Instock accessory Basket Review and Confirmation Page 
 	Given I am an CFA user and Lands on shop page 
@@ -12,10 +12,12 @@ Scenario Outline:
 	And I Land on the basket page and choose home delivery option 
 	And Check for order contract text for DD/PreOrder phone in Basket Page 
 	And click on "go to checkout" button 
-	And input <Firstname> and <Surname> and other valid details in Delivery page and Click on the 'Continue button' 
-	And land on the payment page and input <Username> and other details and click 'Continue on next step' 
-	And Continue to Agreements page and confirm all the agreement checks 
-	And Continue to Review page, check order contract text and review the order 
+	And Input <Firstname> and <Surname> and other valid details in Delivery page 
+	And Check stock extended message for <handset> 
+	And Click on Continue button 
+	And land on the payment page, check stock limited message for <handset> and input <username> and other details and click 'Continue on next step' 
+	And Continue to Agreements page, check stock extended message for <handset> and confirm all the agreement checks
+	And Continue to Review page, check order contract text, stock extended message for <handset> and review the order 
 	And Check order contract text in Order Confirmation page 
 	Then order confirmation is displayed 
 	

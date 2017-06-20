@@ -1,6 +1,6 @@
 Feature: CFA Standard Order Basket Review Page and Confirmation Page
 
-  @Test1
+  @JuneRelease
   Scenario Outline: CFA Standard Order Basket Review Page and Confirmation Page
     Given I am an CFA user and Lands on shop page
     And navigate to PAYM Phones page

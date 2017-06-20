@@ -19,7 +19,11 @@ public class PhonesListingPageAction extends Environment {
 			System.out.println("Selected GalaxyS7");
 			log.debug("Selected GalaxyS7");
 		}
-
+		if (elementName.contains("AquarisM45")) {
+			pageobjects.PhonesListingPage.AquarisM45.click();
+			System.out.println("Selected AquarisM45");
+			log.debug("Selected AquarisM45");
+		}
 		if (elementName.contains("GalaxyS8")) {
 			pageobjects.PhonesListingPage.GalaxyS8.click();
 			// Assert.assertEquals(elementName,"Galaxy S7 is not found");

@@ -18,10 +18,10 @@ public class UpgradeCustomerPageActions extends Environment{
 
 	  		
 
-		public static void Login() throws InterruptedException
+		public static void Login(String username,String password) throws InterruptedException
 		{
-			pageobjects.UpgradeCustomerPage.username.sendKeys("ink_jun9198");
-			pageobjects.UpgradeCustomerPage.password.sendKeys("test123");
+			pageobjects.UpgradeCustomerPage.username.sendKeys(username);
+			pageobjects.UpgradeCustomerPage.password.sendKeys(password);
 			Thread.sleep(5000);
 			if(pageobjects.UpgradeCustomerPage.signInButton.isDisplayed())
 			{
@@ -39,7 +39,75 @@ public class UpgradeCustomerPageActions extends Environment{
 			Thread.sleep(5000);
 
 		}
-		
+		public static void upgradePAYMPhoneSelect(String elementName) throws Throwable {
+			//Below is to view all phones in the same page
+			if (pageobjects.PhonesListingPage.ViewAllPhones.isDisplayed()) {
+				executor.executeScript("arguments[0].click();", pageobjects.PhonesListingPage.ViewAllPhones);
+			}
+
+			if (elementName.contains("GalaxyS7")) {
+				pageobjects.UpgradePhonesListingPage.GalaxyS7.click();
+				System.out.println("Selected GalaxyS7");
+				log.debug("Selected GalaxyS7");
+			}
+
+			if (elementName.contains("GalaxyS8")) {
+				pageobjects.UpgradePhonesListingPage.GalaxyS8.click();
+				// Assert.assertEquals(elementName,"Galaxy S7 is not found");
+				log.debug("Selected GalaxyS8");
+
+			}
+
+			if (elementName.contains("GalaxyS8Plus")) {
+				pageobjects.UpgradePhonesListingPage.GalaxyS8Plus.click();
+				// Assert.assertEquals(elementName,"Galaxy S7 is not found");
+				log.debug("Selected GalaxyS8Plus");
+
+			}
+
+			if (elementName.contains("Iphone7")) {
+				pageobjects.UpgradePhonesListingPage.Iphone7.click();
+				// Assert.assertEquals(elementName,"Galaxy S7 is not found");
+				log.debug("Selected Iphone7");
+
+			}
+
+			if (elementName.contains("Iphone7Plus")) {
+				pageobjects.UpgradePhonesListingPage.Iphone7Plus.click();
+				// Assert.assertEquals(elementName,"Galaxy S7 is not found");
+				log.debug("Selected Iphone7Plus");
+
+			}
+
+			if (elementName.contains("IphoneSE")) {
+				pageobjects.UpgradePhonesListingPage.IphoneSE.click();
+				// Assert.assertEquals(elementName,"Galaxy S7 is not found");
+				log.debug("Selected IphoneSE");
+
+			}
+
+			if (elementName.contains("HuaweiP10")) {
+				pageobjects.UpgradePhonesListingPage.HuaweiP10.click();
+				// Assert.assertEquals(elementName,"Galaxy S7 is not found");
+				log.debug("Selected HuaweiP10");
+
+			}
+
+			if (elementName.contains("GalaxyS7Edge")) {
+				pageobjects.UpgradePhonesListingPage.GalaxyS7Edge.click();
+				// Assert.assertEquals(elementName,"Galaxy S7 is not found");
+				log.debug("Selected GalaxyS7Edge");
+			}
+
+			if (elementName.contains("Oneplus3T")) {
+				pageobjects.UpgradePhonesListingPage.Oneplus3T.click();
+				// Assert.assertEquals(elementName,"Galaxy S7 is not found");
+				log.debug("Selected Oneplus3T");
+
+			}
+
+		}
+
 ////////////////////////////Customer not eligible for upgrade//////////////////////////
 		
 public static void UpgradeUpsellPromoModule_Validation() throws InterruptedException {

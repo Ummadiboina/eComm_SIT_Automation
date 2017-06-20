@@ -14,7 +14,9 @@ public class PhonesListingPage {
 
 	// Below Are list of all the phones in first page of the PayM phones landing
 	// page
-
+	@FindBy(how = How.XPATH, using = "//a[contains(@href, '/shop/phones/bq/aquaris-m4-5/#contractType=paymonthly')]")
+	public static WebElement AquarisM45;
+	
 	@FindBy(how = How.XPATH, using = "//a[contains(@href, '/shop/phones/samsung/galaxy-s7/#contractType=paymonthly')]")
 	public static WebElement GalaxyS7;
 
@@ -41,10 +43,9 @@ public class PhonesListingPage {
 
 	@FindBy(how = How.XPATH, using = "//a[contains(@href, '/shop/phones/oneplus/3t/#contractType=paymonthly')]")
 	public static WebElement Oneplus3T;
-	
+
 	@FindBy(how = How.XPATH, using = "//a[contains(@href, '/shop/phones/sony/xperia-xz-premium/#contractType=paymonthly')]")
 	public static WebElement XperiaZ5Premium;
-	
 
 	// Below are for PAYG device
 

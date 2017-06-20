@@ -1,17 +1,19 @@
-Feature: CFA Refresh Order Delayed delivery phone with Instock accessory Basket Review and Confirmation Page 
+Feature: CFA Refresh Order Delayed delivery phone with Delayed Delivery accessory Basket Review and Confirmation Page 
 
 @JuneRelease
 Scenario Outline: 
-	CFA Refresh Order Delayed delivery phone with Instock accessory Basket Review and Confirmation Page 
+	CFA Refresh Order Delayed delivery phone with Delayed Delivery accessory Basket Review and Confirmation Page 
 	Given I am an CFA user and Lands on shop page 
 	And navigate to PAYM Phones page 
 	And I choose PayM <handset> 
-	And Navigate to device details page, check if the selected device is Delayed Delivery and select <color>
-	And Land on the 'Tariffs and extra' page selecting pay device in full
-	And Choose some Accesssory
-	And I Land on the basket page and choose home delivery option 
+	And Navigate to device details page, check if the selected device is Delayed Delivery and select <color> 
+	And Land on the 'Tariffs and extra' page 
+	And I Land on the basket page 
+	And Navigate to Accessories
+	And Select <DDAccessory> from accessories
+	And Choose <colorAcc> and add to basket
 	And Check for order contract text for DD/PreOrder phone in Basket Page 
-	And click on "go to checkout" button 
+	And click on "go to checkout" button
 	And Input <Firstname> and <Surname> and other valid details in Delivery page 
 	And Check stock extended message for <handset> 
 	And Click on Continue button 
@@ -23,5 +25,5 @@ Scenario Outline:
 	
 	#Close the browser
 	Examples: 
-		| handset  | Firstname | Surname | Username     |    color     |
-		| GalaxyS7 | TEST      | ACCEPTA | TEST ACCEPTA |    pink      |
+		| handset  | Firstname | Surname | Username     |    color     | DDAccessory | colorAcc |
+		| GalaxyS7 | TEST      | ACCEPTA | TEST ACCEPTA |    pink      | LightningDataCable1MeterBraided | Black |

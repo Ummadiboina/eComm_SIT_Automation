@@ -336,7 +336,7 @@ public class E2EOrderPlaced_Steps {
 	public void signin_using_valid_ink_jun_and_test_credentials(String username, String password) throws Throwable {
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		PageFactory.initElements(driver, UpgradeCustomerPage.class);
-		UpgradeCustomerPageActions.Login();
+		UpgradeCustomerPageActions.Login(username,password);
 	}
 
 	@Given("^choose to upgrade any Phone in My upgrade page$")
