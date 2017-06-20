@@ -1,13 +1,8 @@
 package actionsPerformed;
 
 
-import java.util.HashMap;
-import java.util.List;
-
+import org.apache.log4j.Logger;
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
-
-import org.openqa.selenium.support.ui.Select;
 
 import helpers.Environment;
 
@@ -16,7 +11,8 @@ import helpers.Environment;
 public class UpgradeCustomerPageActions extends Environment{
 	  
 
-	  		
+	static Logger log = Logger.getLogger("devpinoyLogger");
+	static JavascriptExecutor executor = (JavascriptExecutor) driver;	  		
 
 		public static void Login(String username,String password) throws InterruptedException
 		{
