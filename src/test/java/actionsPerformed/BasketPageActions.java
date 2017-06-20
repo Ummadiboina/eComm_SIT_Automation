@@ -355,6 +355,24 @@ public class BasketPageActions extends Environment
 		{
 		Assert.fail("Unable to find BasketHeaderXXL element in Reference shop Basket page");
 		}
-	}	
+	}
+
+	public static void WrongPromoCode(String voucher) {
+		log.debug("Clicking promocode");
+		pageobjects.BasketPage.GotaPromoCode.click();
+		pageobjects.BasketPage.voucherCode.sendKeys(voucher);
+		pageobjects.BasketPage.applyVoucher.click();
+		String Ele1= pageobjects.BasketPage.VoucherMessage.getText();
+		if (Ele1.contains("This promo code is invalid"))
+		{
+			System.out.println("This promo code is invalid");
+		}
+		else
+		{
+			Assert.fail("Expected message is not displayed for invalid promo code");
+		}
+		
+
+	}
 
 }

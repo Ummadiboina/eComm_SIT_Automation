@@ -99,4 +99,6 @@ public class BasketPage {
 	@FindBy(how = How.ID, using = ("applyVoucher"))
 	public static WebElement applyVoucher;
 
+	@FindBy(how = How.XPATH, using = ("//*[@id='apply-voucher-error']"))
+	public static WebElement VoucherMessage;
 }

@@ -1155,5 +1155,26 @@ public class E2EOrderPlaced_Steps {
 	   
 	}
 	
+	@When("^verify that error message is thrown$")
+	public void promocodeErrorMessage(String Voucher) throws Throwable {
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		PageFactory.initElements(driver, BasketPage.class);
+		Thread.sleep(2000);
+		BasketPageActions.WrongPromoCode(Voucher);
+		Thread.sleep(2000);
+	   
+	}
+	
+	@Given("^Apply the ([^\"]*) twice$")
+	public void Apply_Voucher_twice(String Voucher) throws Throwable {
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		PageFactory.initElements(driver, BasketPage.class);
+		Thread.sleep(2000);
+		BasketPageActions.PromoCode(Voucher);
+		Thread.sleep(2000);
+		BasketPageActions.PromoCode(Voucher);
+		Thread.sleep(2000);
 
+	}
+	
 }
