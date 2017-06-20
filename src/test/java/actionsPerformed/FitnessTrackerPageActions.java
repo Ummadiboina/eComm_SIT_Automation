@@ -1,6 +1,11 @@
 package actionsPerformed;
 
 import org.apache.log4j.Logger;
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.Select;
+import org.testng.Assert;
 
 import helpers.Environment;
 
@@ -99,40 +104,52 @@ public static void DeviceSelect(String elementName) {
 			
 }
 
-/*
 public static void AddtoBasketFitnessTracker() throws InterruptedException {
 	// TODO Auto-generated method stub
-	
-		System.out.println("Adding Fitness trackers to basket");
-		log.debug("Adding Fitness trackers to basket in device details page");
-		pageobjects.NonConnectedDeviceDetailsPage.AddtoBasket.click();
+	try {
+		// Below will give status like in stock / out of stock etc
+			Thread.sleep(5000);
+
+			String status = driver.findElement(By.className("status-info")).getText();
+			System.out.println(status);
 		
+			if (status.contains("In Stock")) {
+				WebElement element = driver
+						.findElement(By.xpath("//select[@class='accessory-option ng-pristine ng-valid']"));
+				JavascriptExecutor js = (JavascriptExecutor) driver;
+				js.executeScript("arguments[0].setAttribute('style', 'display:block;')", element);
+				new Select(element).selectByValue("3");
+
+				WebElement DeviceDetailsQuantity = driver.findElement(
+						By.xpath("//div[@on-dimension-select='selectQuantityDimension']/span[@role='combobox']"));
+				String DeviceDetailsQuantityValue = DeviceDetailsQuantity.getText();
+				System.out.println("DeviceDetailsQuantityValue is "+DeviceDetailsQuantityValue);
+
+				driver.findElement(By.id("deviceDetailsSubmit")).click();
+
+				Thread.sleep(3000);
+
+	
+			} else {
+				driver.navigate().back();
+			}
+
+		} catch (Exception e) {
+			WebElement DeviceDetailsQuantity = driver.findElement(
+					By.xpath("//div[@on-dimension-select='selectQuantityDimension']/span[@role='combobox']"));
+			String DeviceDetailsQuantityValue = DeviceDetailsQuantity.getText();
+			System.out.println(DeviceDetailsQuantityValue);
+			Assert.assertEquals("3", DeviceDetailsQuantityValue);
+
+			driver.findElement(By.id("deviceDetailsSubmit")).click();
+
+			Thread.sleep(3000);
+			WebElement BasketQuantity = driver.findElement(By.id("accessory-quantitySelectBoxIt"));
+			String BasketQuantityvalue = BasketQuantity.getText();
+		
+			Assert.assertEquals("3", BasketQuantityvalue);
+	
 }
-*/
 
-
-public static void AddtoBasketFitnessTracker() throws InterruptedException {
-	// TODO Auto-generated method stub
-	
-	try
-	{
-		System.out.println("Adding Fitness trackers to basket");
-		log.debug("Adding Fitness trackers to basket in device details page");
-		//log.debug("The text of the button is  - "+pageobjects.NonConnectedDeviceDetailsPage.AddtoBasket.getText());
-			
-					pageobjects.NonConnectedDeviceDetailsPage.AddtoBasket.click();
-			
-					
-	}
-	catch(org.openqa.selenium.StaleElementReferenceException ex)
-	{
-	    log.debug("Exception in finding value");
-	    System.out.println("Adding Fitness trackers to basket");
-		log.debug("Adding Fitness trackers to basket in device details page");
-		
-					pageobjects.NonConnectedDeviceDetailsPage.AddtoBasket.click();			}
-	    
-	}
-
-
+}
 }

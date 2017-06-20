@@ -1,21 +1,13 @@
 package helpers;
 
 import java.util.concurrent.TimeUnit;
-
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.firefox.FirefoxBinary;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.firefox.FirefoxProfile;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
-import com.gargoylesoftware.htmlunit.javascript.host.file.File;
-
 public class BrowserHelper {
-	
-	public WebDriver driver;
 	
 		
 	public static void Invoke_browser(String BrowserType)
@@ -54,18 +46,9 @@ public class BrowserHelper {
 
 			//WebDriver driver = new ChromeDriver (handlSSLErr);
 		}
-		else if ((BrowserType.equalsIgnoreCase("Mozilla")))
+		else
 		{
-		    //System.setProperty("webdriver.gecko.driver","<C:(\\Program Files\\Mozilla Firefox\\geckodriver.exe>>");
-			//DesiredCapabilities handlSSLErr_1 = DesiredCapabilities.firefox();
-			//Environment.driver = new FirefoxDriver();
-			//WebDriver driver = new FirefoxDriver();
-			
-			String driverPath = "<C:(\\Program Files\\Mozilla Firefox\\geckodriver.exe>";
-			System.out.println("launching firefox browser"); 
-			System.setProperty("webdriver.gecko.driver", driverPath+"geckodriver.exe");
-			Environment.driver = new FirefoxDriver();
-			
+			Environment.driver = new FirefoxDriver();	
 		}
 		
 		Environment.driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);

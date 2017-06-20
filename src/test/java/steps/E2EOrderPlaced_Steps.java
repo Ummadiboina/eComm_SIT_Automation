@@ -9,6 +9,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 
 import GlobalActions.Autoredirection;
+import GlobalActions.JuneReleaseValidations;
 import GlobalActions.MouseHoverAction;
 import actionsPerformed.AccessoryPageActions;
 import actionsPerformed.AdditionalInformationPageActions;
@@ -25,7 +26,6 @@ import actionsPerformed.DeliveryPageActions;
 import actionsPerformed.FitnessTrackerPageActions;
 import actionsPerformed.FreeSimDeliveryPageActions;
 import actionsPerformed.MobileBroadBandPageActions;
-import actionsPerformed.NonConnectedDeviceDetailsPageAction;
 import actionsPerformed.OrderConfirmationPageActions;
 import actionsPerformed.PAYMSimOPageActions;
 import actionsPerformed.PAYMandPAYGTariffAndExtrasPageActions;
@@ -36,11 +36,11 @@ import actionsPerformed.ShopLandingPageAction;
 import actionsPerformed.SimsPageActions;
 import actionsPerformed.SmartwatchesPageActions;
 import actionsPerformed.UpgradeCustomerPageActions;
-import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import helpers.Filereadingutility;
+import junit.framework.Assert;
 import pageobjects.AccessoryPage;
 import pageobjects.AdditionalInformationPage;
 import pageobjects.Agent_AdvisoryPage;
@@ -102,7 +102,7 @@ public class E2EOrderPlaced_Steps {
 		PageFactory.initElements(driver, MouseHoverPage.class);
 		MouseHoverAction.PayMPhonesLandingPage();
 
-		// Autoredirection.redirect();
+		Autoredirection.redirect();
 	}
 
 	@Given("^Navigate to Accessories$")
@@ -174,8 +174,7 @@ public class E2EOrderPlaced_Steps {
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		PageFactory.initElements(driver, MouseHoverPage.class);
 		MouseHoverAction.UpgradeandUpgradeNow();
-		Autoredirection.redirectUpgrades();
-		;
+		//Autoredirection.redirectUpgrades();
 	}
 	/*
 	 * #########################################################################
@@ -244,6 +243,16 @@ public class E2EOrderPlaced_Steps {
 		ConnectedDeviceDetailsPageAction.ViewAllTariffs();
 	}
 
+	@Given("^Navigate to device details page and select ([^\"]*)$")
+	public void Navigate_to_device_details_page_and_select_color(String color) throws Throwable {
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		PageFactory.initElements(driver, ConnectedDeviceDetailsPage.class);
+		ConnectedDeviceDetailsPageAction.GetTitle();
+		Thread.sleep(2000);
+		ConnectedDeviceDetailsPageAction.colorSelect(color);
+		ConnectedDeviceDetailsPageAction.ViewAllTariffs();
+	}
+
 	@Given("^select any Ipad \"([^\"]*)\" and continue$")
 	public void select_any_Ipad_and_continue(String elementname) throws Throwable {
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
@@ -294,7 +303,7 @@ public class E2EOrderPlaced_Steps {
 		PageFactory.initElements(driver, AccessoryPage.class);
 		PageFactory.initElements(driver, NonConnectedDeviceDetailsPage.class);
 		AccessoryPageActions.selectAnyAccessoryLimit();
-		NonConnectedDeviceDetailsPageAction.ClickonBasketIcon();
+		//NonConnectedDeviceDetailsPageAction.ClickonBasketIcon();
 
 	}
 
@@ -304,16 +313,14 @@ public class E2EOrderPlaced_Steps {
 		PageFactory.initElements(driver, AccessoryPage.class);
 		PageFactory.initElements(driver, NonConnectedDeviceDetailsPage.class);
 		FitnessTrackerPageActions.AddtoBasketFitnessTracker();
-		NonConnectedDeviceDetailsPageAction.ClickonBasketIcon();
+		//NonConnectedDeviceDetailsPageAction.ClickonBasketIcon();
 	}
 
 	@Given("^add SmartWatch to basket within limit in details page and navigate to basket$")
 	public void add_SmartWatch_to_basket_within_limit_in_details_page_and_navigate_to_basket() throws Throwable {
 		driver.manage().timeouts().implicitlyWait(25, TimeUnit.SECONDS);
-		PageFactory.initElements(driver, AccessoryPage.class);
-		PageFactory.initElements(driver, NonConnectedDeviceDetailsPage.class);
-		FitnessTrackerPageActions.AddtoBasketFitnessTracker();
-		NonConnectedDeviceDetailsPageAction.ClickonBasketIcon();
+		PageFactory.initElements(driver, SmartwatchesPage.class);
+		SmartwatchesPageActions.AddtoBasketSmartwatchTracker();
 	}
 
 	@Given("^Choose some Accesssory$")
@@ -338,8 +345,8 @@ public class E2EOrderPlaced_Steps {
 	}
 
 	/*
-	 * #########################################################################
-	 * #########
+	 * #########################################
+	 * 
 	 */
 	/*
 	 * ############## All the Below are for the Tariff and Extras Page
@@ -395,6 +402,20 @@ public class E2EOrderPlaced_Steps {
 		Thread.sleep(3000);
 		BasketPageActions.ValidateBasketPageContents();
 		BasketPageActions.CollectionorDelivery("homeDelivery");
+	}
+
+	@Given("Check for order contract text in Basket Page")
+	public void check_for_order_contract_text_in_basket_page() throws Throwable {
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		PageFactory.initElements(driver, BasketPage.class);
+		BasketPageActions.checkOrderContractTextBP();
+	}
+
+	@Given("Check for order contract text for DD/PreOrder phone in Basket Page")
+	public void check_for_order_contract_text_for_DD_or_PreOrder_in_basket_page() throws Throwable {
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		PageFactory.initElements(driver, BasketPage.class);
+		BasketPageActions.checkOrderContractTextDDPOBP();
 	}
 
 	@Given("^I Land on the basket page and choose to collect from store$")
@@ -469,8 +490,7 @@ public class E2EOrderPlaced_Steps {
 	 */
 
 	/*
-	 * @Given(
-	 * "^input all the fields on the Delivery page and Click on the 'Continue button'$"
+	 * @Given("^input all the fields on the Delivery page and Click on the 'Continue button'$"
 	 * ) public void
 	 * input_all_the_fields_on_the_Delivery_page_and_Click_on_the_Continue_button
 	 * () throws Throwable { // Write code here that turns the phrase above into
@@ -640,6 +660,17 @@ public class E2EOrderPlaced_Steps {
 		ReviewPageActions.PayNow();
 	}
 
+	@Given("^Continue to Review page, check order contract text and review the order$")
+	public void ReviewPageOrderContractTextConfirmation() throws Throwable {
+		// Write code here that turns the phrase above into concrete actions
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		PageFactory.initElements(driver, ReviewPage.class);
+		ReviewPageActions.gettitlepage();
+		ReviewPageActions.TermsCheckBox();
+		ReviewPageActions.checkOrderContractText();
+		ReviewPageActions.PayNow();
+	}
+
 	@Given("^Continue to Review page and review the order for Trustev details$")
 	public void ReviewPageConfirmationwithTrustev() throws Throwable {
 		// Write code here that turns the phrase above into concrete actions
@@ -663,6 +694,22 @@ public class E2EOrderPlaced_Steps {
 	 * #########################################################################
 	 * #########
 	 */
+
+	@Given("^Check order contract text in Order Confirmation page$")
+	public void checkOrderContractTextOC() throws Throwable {
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		PageFactory.initElements(driver, OrderConfirmationPage.class);
+		String ActOrderContractMsg = pageobjects.OrderConfirmationPage.OrderContractMessageOC.getText();
+		String ExpOrderContractMsg = "Your contract will not start until the order is on its way.";
+		if (ActOrderContractMsg.matches(ExpOrderContractMsg)) {
+			System.out.println("Act Del MSg" + ActOrderContractMsg);
+			System.out.println("Exp Del MSg" + ExpOrderContractMsg);
+			System.out.println("ActOrderContractMsg matches ExpDeliveryText");
+		} else {
+			Assert.fail("Order contract text does not match");
+
+		}
+	}
 
 	@Then("^order confirmation is displayed$")
 	public void OrderConfirmationPage() throws Throwable {
@@ -937,39 +984,74 @@ public class E2EOrderPlaced_Steps {
 	 * #########################################################################
 	 * #########
 	 */
-	/* ######## Basecomms Page ######### */
+	/* ######## June Release ######### */
 	/*
 	 * #########################################################################
 	 * #########
 	 */
-
-	@Then("^when I land on the my offers url I should be displayed with the header carousal on top of the page$")
-	public void when_I_land_on_the_my_offers_url_I_should_be_displayed_with_the_header_carousal_on_top_of_the_page()
-			throws Throwable {
-		driver.get("www.ref.o2.co.uk/shop/my-offers/ipad/");
-		driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
-
+	@Given("^I Land on the Non Phone related basket page$")
+	public void NonPhoneRelatedBasketPage_julyRelease() throws InterruptedException {
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		PageFactory.initElements(driver, BasketPage.class);
+		PageFactory.initElements(driver, PAYMandPAYGTariffAndExtrasPage.class);
+		Thread.sleep(3000);
+		BasketPageActions.JuneReleaseBasketContent();
 	}
 
-	@And("^the static sub navigation should be displayed on the top of the page above the header carousel$")
-	public void the_static_sub_navigation_should_be_displayed_on_the_top_of_the_page_above_the_header_carousel()
-			throws Throwable {
-		// Write code here that turns the phrase above into concrete actions
-
+	@Then("^Verify that correct quantity of devices are displayed in Basket page$")
+	public void verifytheQuantityBasketPage() throws Throwable {
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		JuneReleaseValidations.QuantityValidationsBasket();
 	}
 
-	@And("^the description for sub banner is displayed below the header carousal$")
-	public void the_description_for_sub_banner_is_displayed_below_the_header_carousal() throws Throwable {
-		// Write code here that turns the phrase above into concrete actions
-
+	@Then("^Verify that correct quantity of devices are displayed in Delivery page$")
+	public void verifytheQuantityDeliveryPage() throws Throwable {
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		JuneReleaseValidations.QuantityValidationsDelivery();
 	}
 
-	@Then("^the Footer banner should be displayed below the tariff tiles$")
-	public void the_Footer_banner_should_be_displayed_below_the_tariff_tiles() throws Throwable {
-		// Write code here that turns the phrase above into concrete actions
-
+	@Then("^Verify that correct quantity of devices are displayed in Delivery page after update$")
+	public void verifyUpdatedQuantityDeliveryPage() throws Throwable {
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		JuneReleaseValidations.updatedQuantityValidationsDelivery();
+	}
+	
+	@Then("^Verify that correct quantity of devices are displayed in Review page$")
+	public void verifytheQuantityReviewPage() throws Throwable {
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		JuneReleaseValidations.QuantityValidationsReview();
+	}
+	
+	@Then("^Verify that correct quantity of Grouped non connected items are displayed in Basket page$")
+	public void verifytheQuantityBasketPageGrouped() throws Throwable {
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		JuneReleaseValidations.QuantityValidationsBasket_Grouped();
 	}
 
+	@Then("^Verify that correct quantity of Grouped non connected items are displayed in Delivery page$")
+	public void verifytheQuantityDeliveryPageGrouped() throws Throwable {
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		JuneReleaseValidations.QuantityValidationsDelivery_Grouped();
+	}
+
+	@Then("^Verify that correct quantity of Grouped non connected items are displayed in Review page$")
+	public void verifytheQuantityReviewPageGrouped() throws Throwable {
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		JuneReleaseValidations.QuantityValidationsReviewPage_Grouped();
+	}
+		
+	@Then("^navigate back to Basket page$")
+	public void navigate_back_to_Basket_page() throws Throwable {
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		JuneReleaseValidations.NavigatebackFromDelivery();
+	}
+	
+	@Then("^Change the quantity of the items$")
+	public void change_the_quantity_of_the_items() throws Throwable {
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		JuneReleaseValidations.ChangeQuantity();
+	}	
+	
 	/*
 	 * #########################################################################
 	 * #########
@@ -1072,7 +1154,6 @@ public class E2EOrderPlaced_Steps {
 		Autoredirection.redirect(); 
 	   
 	}
-	
 	
 
 }

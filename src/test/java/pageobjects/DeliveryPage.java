@@ -70,14 +70,12 @@ public class DeliveryPage {
 		
 		@FindBy(how=How.ID,using="store-postcode-submit")
 		public static WebElement Use_my_Location;
-		
+
 		@FindBy(how=How.XPATH,using="//input[@id='checkbox-terms-agreement-required']")
 		public static WebElement FreeSimTC;
 		
 		@FindBy(how=How.XPATH,using="//button[@id='btn-continue']")
 		public static WebElement SendMeMySim;
-		
-		
 			
 		
 		

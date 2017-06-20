@@ -25,6 +25,7 @@ public class ExtentCucumberFormatter implements Reporter, Formatter {
     private static File htmlReportDir;
     @SuppressWarnings("rawtypes")
 	private static Map systemInfo;
+
     private boolean scenarioOutlineTest;
 
     @SuppressWarnings({ "unchecked", "serial", "rawtypes" })
