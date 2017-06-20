@@ -6,7 +6,7 @@ CFA Refresh Order PreOrder phone with Instock accessory Basket Review and Confir
 	Given I am an CFA user and Lands on shop page 
 	And navigate to PAYM Phones page 
 	And I choose PayM <handset> 
-	And Navigate to device details page and select <color> 
+	And Navigate to device details page, check if the selected device is Pre Order and select <color>
 	And Land on the 'Tariffs and extra' page 
 	And Choose some Accesssory 
 	And I Land on the basket page and choose home delivery option 
