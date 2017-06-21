@@ -17,6 +17,10 @@ public class UpgradeCustomerPage {
 
 	@FindBy(how = How.CLASS_NAME, using = "simo-link")
 	public static WebElement SimOLink;
+	
+	@FindBy(how = How.XPATH, using = "//a[@id='cancel']")
+	public static WebElement Continue;
+	
 
 	//////////////////////// When customer not////////////////////////////
 	//////////////////////// eligible/////////////////////////////////////

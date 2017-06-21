@@ -1,11 +1,7 @@
 package actionsPerformed;
 
 import org.apache.log4j.Logger;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.How;
+import org.junit.Assert;
 
 import helpers.Environment;
 
@@ -57,8 +53,34 @@ public class ReviewPageActions extends Environment  {
 	}
 
 
-	public static void checkOrderContractText() {
-		// TODO Auto-generated method stub
+		public static void checkOrderContractTextRP() {
+			// TODO Auto-generated method stub
+			String ActOrderContractMsg = pageobjects.ReviewPage.OrderContractMessageRP.getText();
+	                String ExpOrderContractMsg = "Your contract will not start until the order is on its way.";
+			System.out.println("Act Del MSg" + ActOrderContractMsg);
+			System.out.println("Exp Del MSg" + ExpOrderContractMsg);
+	if (ActOrderContractMsg.matches(ExpOrderContractMsg)) {
+				System.out.println("ActOrderContractMsg matches ExpOrderContractMsg in Review Page");
+			} else {
+				Assert.fail("Order Contract Text in Review Page does not match");
+
+			}
+		}
 		
-	}
+		public static void checkStockExtMsgRP() {
+			// TODO Auto-generated method stub
+			String ActualStockExtMsg = pageobjects.ReviewPage.StockExtMessageDDPORP.getText();
+			String ExpStockExtMsg = "You'll pay for your phone now. We’ll send you an email or text to let you know when it will be delivered";
+			System.out.println("Act Del MSg" + ActualStockExtMsg);
+			System.out.println("Exp Del MSg" + ExpStockExtMsg);
+
+			if (ActualStockExtMsg.matches(ExpStockExtMsg)) {
+				System.out.println("ActualStockExtMsg matches ExpStockExtMsg");
+			} else {
+				Assert.fail("Stock extended message for stock limited DD/Pre order phone does not match");
+
+			}
+		}
+		
+			
 }

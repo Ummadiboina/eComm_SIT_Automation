@@ -13,7 +13,13 @@ public class ReviewPage {
 	  
 	  @FindBy(how=How.ID,using="order-review-continue") 
 	  public static WebElement PayNow;
+	  
 
+	  @FindBy(how=How.ID,using="//div[@id='delivery-details-section']/div/p[@id='contract-message']") 
+	  public static WebElement OrderContractMessageRP; 
 	  
+	  @FindBy(how=How.ID,using="//*[@id='stock-extended-message-single']") 
+	  public static WebElement StockExtMessageDDPORP; 
 	  
+		
 }

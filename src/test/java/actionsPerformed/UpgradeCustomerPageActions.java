@@ -22,8 +22,15 @@ public class UpgradeCustomerPageActions extends Environment{
 			if(pageobjects.UpgradeCustomerPage.signInButton.isDisplayed())
 			{
 				pageobjects.UpgradeCustomerPage.signInButton.click();
+				JavascriptExecutor jse = (JavascriptExecutor) driver;
+				jse.executeScript("window.scrollBy(0,300)", "");
+				pageobjects.UpgradeCustomerPage.Continue.click();
 			}
 			Thread.sleep(5000);
+			
+			
+			
+			
 		}
 		
 		public static void PickSimOTariff() throws InterruptedException
@@ -101,7 +108,16 @@ public class UpgradeCustomerPageActions extends Environment{
 				log.debug("Selected Oneplus3T");
 
 			}
+			
+			
 
+		}
+		
+		public static void viewAllPhones() throws InterruptedException {
+			Thread.sleep(3000);
+			if (pageobjects.UpgradePhonesListingPage.ViewAllPhones.isDisplayed()) {
+				executor.executeScript("arguments[0].click();", pageobjects.UpgradePhonesListingPage.ViewAllPhones);
+			}
 		}
 
 ////////////////////////////Customer not eligible for upgrade//////////////////////////

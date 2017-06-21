@@ -15,5 +15,10 @@ public class NonConnectedDeviceDetailsPage {
 	@FindBy(how=How.XPATH,using="//select[@class='accessory-option ng-pristine ng-valid']")
 	public static WebElement QuantityDropdown;
 	
+	@FindBy(how = How.XPATH, using = "//a[@class='close-btn']")
+	public static WebElement CloseBtn;
+	
+
+
 	
 }

@@ -26,7 +26,9 @@ import actionsPerformed.DeliveryPageActions;
 import actionsPerformed.FitnessTrackerPageActions;
 import actionsPerformed.FreeSimDeliveryPageActions;
 import actionsPerformed.MobileBroadBandPageActions;
+import actionsPerformed.NonConnectedDeviceDetailsPageAction;
 import actionsPerformed.OrderConfirmationPageActions;
+import actionsPerformed.OrderSummarySectionActions;
 import actionsPerformed.PAYMSimOPageActions;
 import actionsPerformed.PAYMandPAYGTariffAndExtrasPageActions;
 import actionsPerformed.PaymentPageActions;
@@ -58,14 +60,17 @@ import pageobjects.MobileBroadBandPage;
 import pageobjects.MouseHoverPage;
 import pageobjects.NonConnectedDeviceDetailsPage;
 import pageobjects.OrderConfirmationPage;
+import pageobjects.OrderSummarySection;
 import pageobjects.PAYMSimOPage;
 import pageobjects.PAYMandPAYGTariffAndExtrasPage;
 import pageobjects.PaymentPage;
 import pageobjects.PhonesListingPage;
 import pageobjects.ReviewPage;
+import pageobjects.ShopLandingPage;
 import pageobjects.SimsPage;
 import pageobjects.SmartwatchesPage;
 import pageobjects.UpgradeCustomerPage;
+import pageobjects.UpgradePhonesListingPage;
 
 public class E2EOrderPlaced_Steps {
 
@@ -158,7 +163,7 @@ public class E2EOrderPlaced_Steps {
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		PageFactory.initElements(driver, MouseHoverPage.class);
 		MouseHoverAction.SimTabletsSimsPage();
-		Autoredirection.redirectforHTTPconnections();
+		//Autoredirection.redirectforHTTPconnections();
 	}
 
 	@Given("^navigate to PAYM SIMO page$")
@@ -667,7 +672,7 @@ public class E2EOrderPlaced_Steps {
 		PageFactory.initElements(driver, ReviewPage.class);
 		ReviewPageActions.gettitlepage();
 		ReviewPageActions.TermsCheckBox();
-		ReviewPageActions.checkOrderContractText();
+		ReviewPageActions.checkOrderContractTextRP();
 		ReviewPageActions.PayNow();
 	}
 
@@ -1175,6 +1180,220 @@ public class E2EOrderPlaced_Steps {
 		BasketPageActions.PromoCode(Voucher);
 		Thread.sleep(2000);
 
+	}
+	
+	///////////////////////////////June Release////////////////////////////////////////
+	
+	@Given("^Navigate to device details page, check if the selected device is Delayed Delivery and select ([^\"]*)$")
+	public void Navigate_to_device_details_page_check_if_DD_and_select_color(String color) throws Throwable {
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		PageFactory.initElements(driver, ConnectedDeviceDetailsPage.class);
+		ConnectedDeviceDetailsPageAction.GetTitle();
+		Thread.sleep(3000);
+		ConnectedDeviceDetailsPageAction.colorSelectOfDevice(color);
+		Thread.sleep(3000);
+		ConnectedDeviceDetailsPageAction.checkDevStatusAsDelayedDelivery();
+		Thread.sleep(2000);
+		ConnectedDeviceDetailsPageAction.ViewAllTariffs();
+	}
+
+	@Given("^Navigate to device details page, check if the selected device is Pre Order and select ([^\"]*)$")
+	public void Navigate_to_device_details_page_check_if_PO_and_select_color(String color) throws Throwable {
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		PageFactory.initElements(driver, ConnectedDeviceDetailsPage.class);
+		ConnectedDeviceDetailsPageAction.GetTitle();
+		Thread.sleep(3000);
+		ConnectedDeviceDetailsPageAction.colorSelectOfDevice(color);
+		Thread.sleep(3000);
+		ConnectedDeviceDetailsPageAction.checkDevStatusAsPreOrder();
+		Thread.sleep(2000);
+		ConnectedDeviceDetailsPageAction.ViewAllTariffs();
+	}
+	
+
+	@Given("^I Land on the basket page$")
+	public void i_Land_on_the_basket_page() throws Throwable {
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		PageFactory.initElements(driver, BasketPage.class);
+		PageFactory.initElements(driver, PAYMandPAYGTariffAndExtrasPage.class);
+		PAYMandPAYGTariffAndExtrasPageActions.addToBasketLive();
+		Thread.sleep(3000);
+		BasketPageActions.ValidateBasketPageContents();
+	}
+	
+	@Given("Select ([^\"]*) from accessories")
+	public void select_accessory(String accessoryname) throws Throwable {
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		PageFactory.initElements(driver, AccessoryPage.class);
+		Thread.sleep(2000);
+		AccessoryPageActions.SelectAnyAccessory(accessoryname);
+		Thread.sleep(3000);
+
+	}
+
+	
+	@Given("Choose ([^\"]*) and add to basket")
+	public void choose_color(String color) throws Throwable {
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		PageFactory.initElements(driver, NonConnectedDeviceDetailsPage.class);
+		Thread.sleep(2000);
+		NonConnectedDeviceDetailsPageAction.clickCloseBtn();
+		Thread.sleep(2000);
+		NonConnectedDeviceDetailsPageAction.colorSelectOfDevice(color);
+		NonConnectedDeviceDetailsPageAction.AddtoBasket();
+	}
+	
+	@Given("Select existing account and begin fast checkout")
+	public void Select_existing_account_and_begin_fast_checkout() throws Throwable {
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		PageFactory.initElements(driver, DeliveryPage.class);
+		DeliveryPageActions.selectExistingAcctAndFastCheckOut();
+	}
+
+	@Given("Check stock extended message in Delivery page")
+	public void Check_stock_extended_message_in_Delivery_page() throws Throwable {
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		PageFactory.initElements(driver, DeliveryPage.class);
+		DeliveryPageActions.checkStockExtMsgDP();
+	}
+@Given("^Input ([^\"]*) and ([^\"]*) and other valid details in Delivery page$")
+	public void Entering_DeliveryPage_Inputs_HomeDelivery(String Firstname, String Surname) throws Throwable {
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		PageFactory.initElements(driver, DeliveryPage.class);
+		DeliveryPageActions.SetDelivery();
+		Thread.sleep(2000);
+		DeliveryPageActions.AboutYou(Firstname, Surname);
+		Thread.sleep(2000);
+		//DeliveryPageActions.ClickContinue();
+	}
+	
+	@Given("^Click on Continue button$")
+	public void clickOnContinueButton(String Firstname, String Surname) throws Throwable {
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		PageFactory.initElements(driver, DeliveryPage.class);
+		DeliveryPageActions.ClickContinue();
+	}
+	
+	@Given("^Check stock extended message for ([^\"]*)$")
+	public void checkStockExtMsg(String product) throws Throwable {
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		PageFactory.initElements(driver, OrderSummarySection.class);
+		OrderSummarySectionActions.checkStockExtMessage(product);
+	}
+	
+	@Given("^land on the payment page, check stock limited message for ([^\"]*) and input ([^\"]*) and other details and click 'Continue on next step'$")
+	public void CreditCheckPaymentPage_check_stock_limited_msg_HomeDelivery(String Username, String product) throws Throwable {
+		// Write code here that turns the phrase above into concrete actions
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		PageFactory.initElements(driver, PaymentPage.class);
+		PageFactory.initElements(driver, OrderSummarySection.class);
+		PaymentPageActions.Set_Bank_details(Username);
+		Thread.sleep(2000);
+		OrderSummarySectionActions.checkStockExtMessage(product);
+		Thread.sleep(2000);
+		PaymentPageActions.Time_At_Address();
+		Thread.sleep(2000);
+		PaymentPageActions.Card_Details(Username);
+		Thread.sleep(10000);
+	}
+
+	@Given("^land on the payment page and input ([^\"]*) and other details for upgrade and click 'Continue on next step'$")
+	public void CreditCheckPaymentPage_Upgrade(String Username) throws Throwable {
+		// Write code here that turns the phrase above into concrete actions
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		PageFactory.initElements(driver, PaymentPage.class);
+		PageFactory.initElements(driver, DeliveryPage.class);
+		DeliveryPageActions.ClickContinue();
+		Thread.sleep(2000);
+		PaymentPageActions.Time_At_Address();
+		Thread.sleep(2000);
+		PaymentPageActions.Card_Details(Username);
+		Thread.sleep(10000);
+	}
+
+	@Given("^land on the payment page, check stock extended message for ([^\"]*) and input ([^\"]*) and other details for upgrade and click 'Continue on next step'$")
+	public void CreditCheckPaymentPage_check_Stock_ext_msg_Upgrade(String Username, String product) throws Throwable {
+		// Write code here that turns the phrase above into concrete actions
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		PageFactory.initElements(driver, PaymentPage.class);
+		PageFactory.initElements(driver, DeliveryPage.class);
+		PageFactory.initElements(driver, OrderSummarySection.class);
+		DeliveryPageActions.ClickContinue();
+		Thread.sleep(2000);
+		OrderSummarySectionActions.checkStockExtMessage(product);
+		Thread.sleep(2000);
+		PaymentPageActions.Time_At_Address();
+		Thread.sleep(2000);
+		PaymentPageActions.Card_Details(Username);
+		Thread.sleep(10000);
+	}
+	@Given("^Continue to Agreements page, check stock extended message for ([^\"]*) and confirm all the agreement checks$")
+	public void AgreementsPageConfirmation_alongwith_stock_ext_msg(String product) throws Throwable {
+		// Write code here that turns the phrase above into concrete actions
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		PageFactory.initElements(driver, AgreementPage.class);
+		PageFactory.initElements(driver, ReviewPage.class);
+		PageFactory.initElements(driver, OrderSummarySection.class);
+		Thread.sleep(10000);
+		AgreementPageActions.gettitlepage();
+		Thread.sleep(3000);
+		AgreementPageActions.Affordability();
+		Thread.sleep(5000);
+		OrderSummarySectionActions.checkStockExtMessage(product);
+		Thread.sleep(2000);
+		AgreementPageActions.KeyInformation();
+		Thread.sleep(5000);
+		AgreementPageActions.secciSection();
+		Thread.sleep(5000);
+		AgreementPageActions.PayMMobileAgreement();
+		Thread.sleep(5000);
+		AgreementPageActions.TermsDeclarationCheckbox();
+		Thread.sleep(5000);
+	}
+	
+	
+
+	@Given("^Continue to Review page, check order contract text, stock extended message for ([^\"]*) and review the order$")
+	public void ReviewPageStockExtMsgConfirmation(String product) throws Throwable {
+		// Write code here that turns the phrase above into concrete actions
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		PageFactory.initElements(driver, ReviewPage.class);
+		PageFactory.initElements(driver, OrderSummarySection.class);
+		ReviewPageActions.gettitlepage();
+		ReviewPageActions.TermsCheckBox();
+		ReviewPageActions.checkOrderContractTextRP();
+		OrderSummarySectionActions.checkStockExtMessage(product);
+		ReviewPageActions.PayNow();
+	}
+	
+	@Given("^I am existing user and I click on Signin button$")
+	public void I_am_existing_user_and_I_click_on_Signin_button() throws Throwable {
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		PageFactory.initElements(driver, ShopLandingPage.class);
+		ShopLandingPageAction.clickSignIn();
+		Autoredirection.redirectUpgrades();
+
+	}
+	
+	@Given("^Navigate to upgrade phone$")
+	public void navigate_to_upgrade_phone() throws Throwable {
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		PageFactory.initElements(driver, MouseHoverPage.class);
+		PageFactory.initElements(driver, UpgradePhonesListingPage.class);
+		MouseHoverAction.UpgradeandUpgradeNow();
+		Thread.sleep(5000);
+		// Autoredirection.redirectUpgrades();
+		UpgradeCustomerPageActions.viewAllPhones();
+		Thread.sleep(2000);
+	}
+	
+	@Given("^I choose upgrade PayM ([^\"]*)$")
+	public void Choose_upgradePAYM_Handset(String handset) throws Throwable {
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		PageFactory.initElements(driver, UpgradePhonesListingPage.class);
+		PageFactory.initElements(driver, PhonesListingPage.class);
+		Thread.sleep(3000);
+		UpgradeCustomerPageActions.upgradePAYMPhoneSelect(handset);
 	}
 	
 }

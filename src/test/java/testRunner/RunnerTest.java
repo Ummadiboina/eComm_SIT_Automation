@@ -19,9 +19,9 @@ import java.util.HashMap;
 import java.util.Map;
 
 @CucumberOptions(strict = true,
-		features = {"src//test//java//JuneRelease_Features"}, glue = {"steps"},
+		features = {"src//test//java//CompleteJuneReleaseTestCases"}, glue = {"steps"},
 
-				tags = {"@Test20June"}, format = {"json:testResult/cucumber.json", "pretty", "html:testResult/report"},
+				tags = {}, format = {"json:testResult/cucumber.json", "pretty", "html:testResult/report"},
 				plugin = {"com.cucumber.listener.ExtentCucumberFormatter"}
 		)
 

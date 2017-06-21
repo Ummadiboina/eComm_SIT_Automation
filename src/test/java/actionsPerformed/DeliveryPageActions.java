@@ -5,6 +5,7 @@ import java.util.HashMap;
 import java.util.List;
 
 import org.apache.log4j.Logger;
+import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 
 import org.openqa.selenium.support.ui.Select;
@@ -76,6 +77,32 @@ public class DeliveryPageActions {
 			log.debug("Clicking on the continue link");
 
 		
+		}
+		
+		public static void selectExistingAcctAndFastCheckOut() throws InterruptedException {
+			Thread.sleep(2000);
+			pageobjects.DeliveryPage.SelectAcct.click();
+			System.out.println("Existing Account is selected");
+			log.debug("Existing Account is selected");
+
+			pageobjects.DeliveryPage.FastCheckOut.click();
+			System.out.println("FastCheckout button is selected");
+			log.debug("FastCheckout button is selected");
+		}
+		
+		public static void checkStockExtMsgDP() {
+			// TODO Auto-generated method stub
+			String ActualStockExtMsg = pageobjects.DeliveryPage.StockExtMessageDDPODP.getText();
+			String ExpStockExtMsg = "You'll pay for your phone now. We’ll send you an email or text to let you know when it will be delivered";
+			System.out.println("Act Del MSg" + ActualStockExtMsg);
+			System.out.println("Exp Del MSg" + ExpStockExtMsg);
+
+			if (ActualStockExtMsg.matches(ExpStockExtMsg)) {
+				System.out.println("ActualStockExtMsg matches ExpStockExtMsg");
+			} else {
+				Assert.fail("Stock extended message for stock limited DD/Pre order phone does not match");
+
+			}
 		}
 		
 		

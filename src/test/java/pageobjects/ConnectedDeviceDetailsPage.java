@@ -6,6 +6,7 @@ import org.openqa.selenium.support.How;
 
 public class ConnectedDeviceDetailsPage {
 
+	
 	// The below webelement is not right need to edit this
 	@FindBy(how = How.ID, using = "deviceDetailsSubmit")
 	public static WebElement ViewOurTariffs;
@@ -30,5 +31,8 @@ public class ConnectedDeviceDetailsPage {
 
 	@FindBy(how = How.ID, using = "deviceBackground")
 	public static WebElement clickanywhere;
+
+	@FindBy(how = How.XPATH, using = "//p[@class='delivery-information']/span[1]")
+	public static WebElement DevStatusMsg;
 
 }

@@ -215,7 +215,8 @@ public class BasketPageActions extends Environment
 		}
 
 		if (pageobjects.BasketPage.BasketErrorText.getText().contains("out of stock"))
-			;
+			
+		
 		{
 			log.debug("Stock is not available, perhaps out of stock");
 			System.out.println("Stock is not available, perhaps out of stock");
