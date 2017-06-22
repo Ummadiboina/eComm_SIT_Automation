@@ -1,6 +1,6 @@
 Feature: CFA Refresh Order Basket Review Page and Confirmation Page 
 
-@JuneRelease 
+@JuneReleaseTest1
 Scenario Outline: CFA Refresh Order Basket Review Page and Confirmation Page 
 	Given I am an CFA user and Lands on shop page 
 	And navigate to PAYM Phones page 

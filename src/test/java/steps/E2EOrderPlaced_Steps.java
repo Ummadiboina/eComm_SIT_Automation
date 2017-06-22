@@ -97,89 +97,156 @@ public class E2EOrderPlaced_Steps {
 
 	@Given("^I am an CFA user and Lands on shop page$")
 	public void i_am_an_CFA_user_and_Lands_on_shop_page() throws Throwable {
-		ShopLandingPageAction.GetTitle();
+		try {
+			ShopLandingPageAction.GetTitle();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			System.out.println("unable to get title");
+			Assert.fail("unable to get title");
+		}
 
 	}
 
 	@Given("^navigate to PAYM Phones page$")
 	public void navigate_to_PAYM_Phones_page() throws Throwable {
-		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-		PageFactory.initElements(driver, MouseHoverPage.class);
-		MouseHoverAction.PayMPhonesLandingPage();
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, MouseHoverPage.class);
+			MouseHoverAction.PayMPhonesLandingPage();
 
-		Autoredirection.redirect();
+			Autoredirection.redirect();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			System.out.println("unable to do mousehover to phones");
+			Assert.fail("unable to do mousehover to phones");
+		}
 	}
 
 	@Given("^Navigate to Accessories$")
 	public void navigate_to_Accessories() throws Throwable {
-		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-		PageFactory.initElements(driver, MouseHoverPage.class);
-		MouseHoverAction.AccessoriesLandingPage();
-		Autoredirection.redirect();
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, MouseHoverPage.class);
+			MouseHoverAction.AccessoriesLandingPage();
+			Autoredirection.redirect();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			System.out.println("unable to do mousehover to Accessories");
+			Assert.fail("unable to do mousehover to Accessories");
+		}
 	}
 
 	@Given("^Navigate to PayG MBB page$")
 	public void navigate_to_PayG_MBB_page() throws Throwable {
-		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-		PageFactory.initElements(driver, MouseHoverPage.class);
-		MouseHoverAction.PayGMBBPage();
-		Autoredirection.redirect();
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, MouseHoverPage.class);
+			MouseHoverAction.PayGMBBPage();
+			Autoredirection.redirect();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			System.out.println("unable to do mousehover to PayGMBB");
+			Assert.fail("unable to do mousehover to Accessories");
+		}
 	}
 
 	@Given("^Navigate to Fitness Trackers$")
 	public void navigate_to_Fitness_Trackers() throws Throwable {
-		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-		PageFactory.initElements(driver, MouseHoverPage.class);
-		MouseHoverAction.FitnessLandingPage();
-		Autoredirection.redirect();
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, MouseHoverPage.class);
+			MouseHoverAction.FitnessLandingPage();
+			Autoredirection.redirect();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			System.out.println("unable to do mousehover to Fitness Trackers");
+			Assert.fail("unable to do mousehover to Fitness Trackers");
+		}
 	}
 
 	@Given("^Navigate to SmartWatches$")
 	public void navigate_to_SmartWatches() throws Throwable {
-		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-		PageFactory.initElements(driver, MouseHoverPage.class);
-		MouseHoverAction.SmartwatchesLandingPage();
-		Autoredirection.redirect();
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, MouseHoverPage.class);
+			MouseHoverAction.SmartwatchesLandingPage();
+			Autoredirection.redirect();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			System.out.println("unable to do mousehover to SmartWatches");
+			Assert.fail("unable to do mousehover to SmartWatches");
+		}
 	}
 
 	@Given("^navigate to Pay as you Go Phones page$")
 	public void navigate_to_Pay_as_you_Go_Phones_page() throws Throwable {
-		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-		PageFactory.initElements(driver, MouseHoverPage.class);
-		MouseHoverAction.PayGPhonesLandingPage();
-		Autoredirection.redirect();
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, MouseHoverPage.class);
+			MouseHoverAction.PayGPhonesLandingPage();
+			Autoredirection.redirect();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			System.out.println("unable to do mousehover to Pay as you Go Phones page");
+			Assert.fail("unable to do mousehover to Pay as you Go Phones page");
+
+		}
 	}
 
 	@Given("^Navigate to sims and Ipad Sims page$")
 	public void navigate_to_sims_and_Ipad_Sims_page() throws Throwable {
-		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-		PageFactory.initElements(driver, MouseHoverPage.class);
-		MouseHoverAction.SimIpadSimsPage();
-		Autoredirection.redirectforHTTPconnections();
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, MouseHoverPage.class);
+			MouseHoverAction.SimIpadSimsPage();
+			Autoredirection.redirectforHTTPconnections();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			System.out.println("unable to do mousehover to Sims and Ipad Sims page");
+			Assert.fail("unable to do mousehover to Sims and Ipad Sims page");
+		}
 	}
 
 	@Given("^Navigate to sims and Tablet Sims page$")
 	public void navigate_to_sims_and_Tablet_Sims_page() throws Throwable {
-		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-		PageFactory.initElements(driver, MouseHoverPage.class);
-		MouseHoverAction.SimTabletsSimsPage();
-		//Autoredirection.redirectforHTTPconnections();
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, MouseHoverPage.class);
+			MouseHoverAction.SimTabletsSimsPage();
+			// Autoredirection.redirectforHTTPconnections();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			System.out.println("Unable to do mousehover to Sims and Tablet Sims page");
+			Assert.fail("Unable to do mousehover to Sims and Tablet Sims page");
+		}
 	}
 
 	@Given("^navigate to PAYM SIMO page$")
 	public void navigate_to_PAYM_SIMO_page() throws Throwable {
-		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-		PageFactory.initElements(driver, MouseHoverPage.class);
-		MouseHoverAction.PayMSimoNavigation();
-		Autoredirection.redirect();
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, MouseHoverPage.class);
+			MouseHoverAction.PayMSimoNavigation();
+			Autoredirection.redirect();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			System.out.println("Unable to do mousehover to PAYM SIMO page");
+			Assert.fail("Unable to do mousehover to PAYM SIMO page");
+		}
 	}
 
 	@Given("^I am an Existing user and Navigates to Signin page$")
 	public void i_am_an_Existing_user_and_Navigates_to_Signin_page() throws Throwable {
-		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-		PageFactory.initElements(driver, MouseHoverPage.class);
-		MouseHoverAction.UpgradeandUpgradeNow();
-		//Autoredirection.redirectUpgrades();
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, MouseHoverPage.class);
+			MouseHoverAction.UpgradeandUpgradeNow();
+			// Autoredirection.redirectUpgrades();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			System.out.println("Unable to do mousehover to Existing user and Navigates to Signin page");
+			Assert.fail("Unable to do mousehover to Existing user and Navigates to Signin page");
+		}
 	}
 	/*
 	 * #########################################################################
@@ -196,152 +263,273 @@ public class E2EOrderPlaced_Steps {
 
 	@Given("^I choose PayM ([^\"]*)$")
 	public void Choose_PAYM_Handset(String handset) throws Throwable {
-		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-		PageFactory.initElements(driver, PhonesListingPage.class);
-		PhonesListingPageAction.PAYMPhoneSelect(handset);
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, PhonesListingPage.class);
+			PhonesListingPageAction.PAYMPhoneSelect(handset);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			System.out.println("Unable to choose PayM phone");
+			Assert.fail("Unable to choose PayM phone");
+		}
 	}
 
 	@Given("^I choose PayG \"([^\"]*)\"$")
 	public void Choose_PAYG_Handset(String arg1) throws Throwable {
-		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-		PageFactory.initElements(driver, PhonesListingPage.class);
-		PhonesListingPageAction.PAYGPhoneSelect("Random Device");
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, PhonesListingPage.class);
+			PhonesListingPageAction.PAYGPhoneSelect("Random Device");
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			System.out.println("Unable to choose PayG phone");
+			Assert.fail("Unable to choose PayG phone");
+		}
 
 	}
 
 	@Given("^select any available \"([^\"]*)\" Fitness tracker$")
 	public void select_any_available_Fitness_tracker(String arg1) throws Throwable {
-		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-		PageFactory.initElements(driver, FitnessTrackerPage.class);
-		FitnessTrackerPageActions.DeviceSelect("Random Device");
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, FitnessTrackerPage.class);
+			FitnessTrackerPageActions.DeviceSelect("Random Device");
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			System.out.println("Unable to select fitness tracker");
+			Assert.fail("Unable to select fitness tracker");
+		}
 	}
 
 	@Given("^select any available \"([^\"]*)\" Smartwatch$")
 	public void select_any_available_Smartwatch(String arg1) throws Throwable {
-		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-		PageFactory.initElements(driver, SmartwatchesPage.class);
-		SmartwatchesPageActions.DeviceSelect("Random Device");
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, SmartwatchesPage.class);
+			SmartwatchesPageActions.DeviceSelect("Random Device");
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			System.out.println("Unable to select Smartwatch");
+			Assert.fail("Unable to select Smartwatch");
+
+		}
 	}
 
 	@Given("^I choose MBB PayG \"([^\"]*)\"$")
 	public void i_choose_MBB_PayG(String elementName) throws Throwable {
-		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-		PageFactory.initElements(driver, MobileBroadBandPage.class);
-		MobileBroadBandPageActions.DeviceSelect(elementName);
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, MobileBroadBandPage.class);
+			MobileBroadBandPageActions.DeviceSelect(elementName);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			System.out.println("Unable to select MBB PayG device");
+			Assert.fail("Unable to select MBB PayG device");
+
+		}
 	}
 
 	@Given("^select any Tablet \"([^\"]*)\" and continue$")
 	public void select_any_Tablet_and_continue(String elementname) throws Throwable {
-		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-		PageFactory.initElements(driver, SimsPage.class);
-		ConnectedDeviceDetailsPageAction.GetTitle();
-		Thread.sleep(2000);
-		SimsPageActions.SelectRandomTabletSim(elementname);
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, SimsPage.class);
+			ConnectedDeviceDetailsPageAction.GetTitle();
+			Thread.sleep(2000);
+			SimsPageActions.SelectRandomTabletSim(elementname);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			System.out.println("Unable to select Tablet device");
+			Assert.fail("Unable to select Tablet device");
+
+		}
 	}
 
 	@Given("^Navigate to device details page$")
 	public void Navigate_to_device_details_page() throws Throwable {
-		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-		PageFactory.initElements(driver, ConnectedDeviceDetailsPage.class);
-		ConnectedDeviceDetailsPageAction.GetTitle();
-		Thread.sleep(2000);
-		ConnectedDeviceDetailsPageAction.ViewAllTariffs();
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, ConnectedDeviceDetailsPage.class);
+			ConnectedDeviceDetailsPageAction.GetTitle();
+			Thread.sleep(2000);
+			ConnectedDeviceDetailsPageAction.ViewAllTariffs();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			System.out.println("Unable to navigate to device details page");
+			Assert.fail("Unable to navigate to device details page");
+
+		}
 	}
 
 	@Given("^Navigate to device details page and select ([^\"]*)$")
 	public void Navigate_to_device_details_page_and_select_color(String color) throws Throwable {
-		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-		PageFactory.initElements(driver, ConnectedDeviceDetailsPage.class);
-		ConnectedDeviceDetailsPageAction.GetTitle();
-		Thread.sleep(2000);
-		ConnectedDeviceDetailsPageAction.colorSelect(color);
-		ConnectedDeviceDetailsPageAction.ViewAllTariffs();
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, ConnectedDeviceDetailsPage.class);
+			ConnectedDeviceDetailsPageAction.GetTitle();
+			Thread.sleep(2000);
+			ConnectedDeviceDetailsPageAction.colorSelect(color);
+			ConnectedDeviceDetailsPageAction.ViewAllTariffs();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			System.out.println("Unable to navigate to device details page");
+			Assert.fail("Unable to navigate to device details page");
+
+		}
 	}
 
 	@Given("^select any Ipad \"([^\"]*)\" and continue$")
 	public void select_any_Ipad_and_continue(String elementname) throws Throwable {
-		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-		PageFactory.initElements(driver, SimsPage.class);
-		ConnectedDeviceDetailsPageAction.GetTitle();
-		Thread.sleep(2000);
-		SimsPageActions.SelectRandomIpadSim(elementname);
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, SimsPage.class);
+			ConnectedDeviceDetailsPageAction.GetTitle();
+			Thread.sleep(2000);
+			SimsPageActions.SelectRandomIpadSim(elementname);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			System.out.println("Unable to select any Ipad sim");
+			Assert.fail("Unable to select any Ipad sim");
+
+		}
 	}
 
 	@Given("^select an \"([^\"]*)\" Accessory$")
 	public void select_an_Accessory(String elementName) throws Throwable {
-		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-		PageFactory.initElements(driver, AccessoryPage.class);
-		AccessoryPageActions.SelectAnyAccessory(elementName);
-		;
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, AccessoryPage.class);
+			AccessoryPageActions.SelectAnyAccessory(elementName);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			System.out.println("Unable to select accessory");
+			Assert.fail("Unable to select accessory");
+
+		}
 
 	}
 
 	@Given("^Click on different ([^\"]*) Months Tariff in Tab$")
 	public void click_on_different_Months_Tariff_in_Tab(String Contract) throws Throwable {
-		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-		PageFactory.initElements(driver, PAYMSimOPage.class);
-		PAYMSimOPageActions.ValidateContractLengths(Contract);
-		// PAYMSimOPageActions.SelectTariffPhonesTab(Contract);
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, PAYMSimOPage.class);
+			PAYMSimOPageActions.ValidateContractLengths(Contract);
+			// PAYMSimOPageActions.SelectTariffPhonesTab(Contract);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			System.out.println("Unable to click on different tariff");
+			Assert.fail("Unable to click on different tariff");
+
+		}
 	}
 
 	@Given("^Select any Random Tariff in the displayed list of Tariffs under different ([^\"]*) tab$")
 	public void select_any_Random_Tariff_in_the_displayed_list_of_Tariffs_under_different_Months_tab(String Contract)
 			throws Throwable {
-		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-		PageFactory.initElements(driver, PAYMSimOPage.class);
-		PAYMSimOPageActions.SelectTariffPhonesTab(Contract);
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, PAYMSimOPage.class);
+			PAYMSimOPageActions.SelectTariffPhonesTab(Contract);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			System.out.println("Unable to select Random Tariff ");
+			Assert.fail("Unable to select Random Tariff ");
+
+		}
 	}
 
 	@Given("^Select Recommended Tariff in the displayed list of Tariffs under different ([^\"]*) tab$")
 	public void select_Recommended_Tariff_in_the_displayed_list_of_Tariffs_under_different_Months_tab(String Contract)
 			throws Throwable {
-		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-		PageFactory.initElements(driver, PAYMSimOPage.class);
-		PAYMSimOPageActions.SelectRecommendedTariffPhonesTab(Contract);
-		// PAYMSimOPageActions.SelectPromotionTariff(Contract);
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, PAYMSimOPage.class);
+			PAYMSimOPageActions.SelectRecommendedTariffPhonesTab(Contract);
+			// PAYMSimOPageActions.SelectPromotionTariff(Contract);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			System.out.println("Unable to select Recommended Tariff ");
+			Assert.fail("Unable to select Recommended Tariff ");
+
+		}
 
 	}
 
 	@Given("^add Accessories to basket within limit in details page and navigate to basket$")
 	public void add_Accessories_to_basket_within_limit_in_details_page_and_navigate_to_basket() throws Throwable {
-		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-		PageFactory.initElements(driver, AccessoryPage.class);
-		PageFactory.initElements(driver, NonConnectedDeviceDetailsPage.class);
-		AccessoryPageActions.selectAnyAccessoryLimit();
-		//NonConnectedDeviceDetailsPageAction.ClickonBasketIcon();
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, AccessoryPage.class);
+			PageFactory.initElements(driver, NonConnectedDeviceDetailsPage.class);
+			AccessoryPageActions.selectAnyAccessoryLimit();
+			// NonConnectedDeviceDetailsPageAction.ClickonBasketIcon();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			System.out.println("Unable to add accessories to basket");
+			Assert.fail("Unable to add accessories to basket");
+
+		}
 
 	}
 
 	@Given("^add FitnessTracker to basket within limit in details page and navigate to basket$")
 	public void add_FitnessTracker_to_basket_within_limit_in_details_page_and_navigate_to_basket() throws Throwable {
-		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-		PageFactory.initElements(driver, AccessoryPage.class);
-		PageFactory.initElements(driver, NonConnectedDeviceDetailsPage.class);
-		FitnessTrackerPageActions.AddtoBasketFitnessTracker();
-		//NonConnectedDeviceDetailsPageAction.ClickonBasketIcon();
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, AccessoryPage.class);
+			PageFactory.initElements(driver, NonConnectedDeviceDetailsPage.class);
+			FitnessTrackerPageActions.AddtoBasketFitnessTracker();
+			// NonConnectedDeviceDetailsPageAction.ClickonBasketIcon();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			System.out.println("Unable to add Fitnesstracker to basket");
+			Assert.fail("Unable to add Fitnesstracker to basket");
+		}
 	}
 
 	@Given("^add SmartWatch to basket within limit in details page and navigate to basket$")
 	public void add_SmartWatch_to_basket_within_limit_in_details_page_and_navigate_to_basket() throws Throwable {
-		driver.manage().timeouts().implicitlyWait(25, TimeUnit.SECONDS);
-		PageFactory.initElements(driver, SmartwatchesPage.class);
-		SmartwatchesPageActions.AddtoBasketSmartwatchTracker();
+		try {
+			driver.manage().timeouts().implicitlyWait(25, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, SmartwatchesPage.class);
+			SmartwatchesPageActions.AddtoBasketSmartwatchTracker();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			System.out.println("Unable to add SmartWatch to basket");
+			Assert.fail("Unable to add SmartWatch to basket");
+
+		}
 	}
 
 	@Given("^Choose some Accesssory$")
 	public void Choose_some_Accesssory() throws Throwable {
-		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-		PageFactory.initElements(driver, PAYMandPAYGTariffAndExtrasPage.class);
-		PAYMandPAYGTariffAndExtrasPageActions.addAccessory();
-		Thread.sleep(2000);
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, PAYMandPAYGTariffAndExtrasPage.class);
+			PAYMandPAYGTariffAndExtrasPageActions.addAccessory();
+			Thread.sleep(2000);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			System.out.println("Unable to choose Accesssory");
+			Assert.fail("Unable to choose Accesssory");
+
+		}
 
 	}
 
 	@Given("^Signin using valid ([^\"]*) and ([^\"]*) credentials$")
 	public void signin_using_valid_ink_jun_and_test_credentials(String username, String password) throws Throwable {
-		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-		PageFactory.initElements(driver, UpgradeCustomerPage.class);
-		UpgradeCustomerPageActions.Login(username,password);
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, UpgradeCustomerPage.class);
+			UpgradeCustomerPageActions.Login(username, password);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			System.out.println("Unable to signin using credentials");
+			Assert.fail("Unable to signin using credentials");
+
+		}
 	}
 
 	@Given("^choose to upgrade any Phone in My upgrade page$")
@@ -364,19 +552,33 @@ public class E2EOrderPlaced_Steps {
 
 	@Given("^Land on the 'Tariffs and extra' page$")
 	public void land_on_the_Tariffs_and_extra_page() throws Throwable {
-		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-		PageFactory.initElements(driver, PAYMandPAYGTariffAndExtrasPage.class);
-		PAYMandPAYGTariffAndExtrasPageActions.TariffSelect("Randomtariff");
-		// PAYMandPAYGTariffAndExtrasPageActions.addToBasketLive();
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, PAYMandPAYGTariffAndExtrasPage.class);
+			PAYMandPAYGTariffAndExtrasPageActions.TariffSelect("Randomtariff");
+			// PAYMandPAYGTariffAndExtrasPageActions.addToBasketLive();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			System.out.println("Unable to Land on Tariff and extras page");
+			Assert.fail("Unable to Land on Tariff and extras page");
+
+		}
 
 	}
 
 	@Given("^Land on the 'Tariffs and extra' page selecting pay device in full$")
 	public void land_on_the_Tariffs_and_extra_page_selecting_pay_device_in_full() throws Throwable {
-		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-		PageFactory.initElements(driver, PAYMandPAYGTariffAndExtrasPage.class);
-		PAYMandPAYGTariffAndExtrasPageActions.TariffSelect("fullpaymenttariff1");
-		// PAYMandPAYGTariffAndExtrasPageActions.addToBasketLive();
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, PAYMandPAYGTariffAndExtrasPage.class);
+			PAYMandPAYGTariffAndExtrasPageActions.TariffSelect("fullpaymenttariff1");
+			// PAYMandPAYGTariffAndExtrasPageActions.addToBasketLive();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			System.out.println("Unable to pay tariff in full");
+			Assert.fail("Unable to pay tariff in full");
+
+		}
 
 	}
 
@@ -400,80 +602,132 @@ public class E2EOrderPlaced_Steps {
 
 	@Given("^I Land on the basket page and choose home delivery option$")
 	public void i_Land_on_the_basket_page_and_choose_home_delivery_option() throws Throwable {
-		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-		PageFactory.initElements(driver, BasketPage.class);
-		PageFactory.initElements(driver, PAYMandPAYGTariffAndExtrasPage.class);
-		PAYMandPAYGTariffAndExtrasPageActions.addToBasketLive();
-		Thread.sleep(3000);
-		BasketPageActions.ValidateBasketPageContents();
-		BasketPageActions.CollectionorDelivery("homeDelivery");
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, BasketPage.class);
+			PageFactory.initElements(driver, PAYMandPAYGTariffAndExtrasPage.class);
+			PAYMandPAYGTariffAndExtrasPageActions.addToBasketLive();
+			Thread.sleep(3000);
+			BasketPageActions.ValidateBasketPageContents();
+			BasketPageActions.CollectionorDelivery("homeDelivery");
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			System.out.println("Unable to Land on the basket page and choose home delivery option");
+			Assert.fail("Unable to Land on the basket page and choose home delivery option");
+
+		}
 	}
 
 	@Given("Check for order contract text in Basket Page")
 	public void check_for_order_contract_text_in_basket_page() throws Throwable {
-		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-		PageFactory.initElements(driver, BasketPage.class);
-		BasketPageActions.checkOrderContractTextBP();
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, BasketPage.class);
+			BasketPageActions.checkOrderContractTextBP();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			System.out.println("Unable to Check for order contract text in Basket Page");
+			Assert.fail("Unable to Check for order contract text in Basket Page");
+
+		}
 	}
 
 	@Given("Check for order contract text for DD/PreOrder phone in Basket Page")
 	public void check_for_order_contract_text_for_DD_or_PreOrder_in_basket_page() throws Throwable {
-		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-		PageFactory.initElements(driver, BasketPage.class);
-		BasketPageActions.checkOrderContractTextDDPOBP();
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, BasketPage.class);
+			BasketPageActions.checkOrderContractTextDDPOBP();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			System.out.println("Unable to Check for order contract text for DD/PreOrder phone in Basket Page");
+			Assert.fail("Unable to Check for order contract text for DD/PreOrder phone in Basket Page");
+
+		}
 	}
 
 	@Given("^I Land on the basket page and choose to collect from store$")
 	public void i_Land_on_the_basket_page_and_choose_to_collect_from_store() throws Throwable {
 		// Write code here that turns the phrase above into concrete actions
-		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-		PageFactory.initElements(driver, BasketPage.class);
-		PageFactory.initElements(driver, PAYMandPAYGTariffAndExtrasPage.class);
-		PAYMandPAYGTariffAndExtrasPageActions.addToBasketLive();
-		Thread.sleep(3000);
-		BasketPageActions.ValidateBasketPageContents();
-		BasketPageActions.CollectionorDelivery("clickAndCollect");
-		Thread.sleep(3000);
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, BasketPage.class);
+			PageFactory.initElements(driver, PAYMandPAYGTariffAndExtrasPage.class);
+			PAYMandPAYGTariffAndExtrasPageActions.addToBasketLive();
+			Thread.sleep(3000);
+			BasketPageActions.ValidateBasketPageContents();
+			BasketPageActions.CollectionorDelivery("clickAndCollect");
+			Thread.sleep(3000);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			System.out.println("Unable to Land on the basket page and choose to collect from store");
+			Assert.fail("Unable to Land on the basket page and choose to collect from store");
+		}
 	}
 
 	@Given("^I Land on the Non Phone related basket page and choose home delivery option$")
 	public void NonPhoneRelatedBasketPage() throws InterruptedException {
-		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-		PageFactory.initElements(driver, BasketPage.class);
-		PageFactory.initElements(driver, PAYMandPAYGTariffAndExtrasPage.class);
-		Thread.sleep(3000);
-		// Assert.assertEquals("The condition is ",
-		// driver.findElement(By.xpath("//*[@value='Go to checkout'][1]")));
-		BasketPageActions.BasketContentsforNonConnected();
-		BasketPageActions.CollectionorDelivery("homeDelivery");
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, BasketPage.class);
+			PageFactory.initElements(driver, PAYMandPAYGTariffAndExtrasPage.class);
+			Thread.sleep(3000);
+			// Assert.assertEquals("The condition is ",
+			// driver.findElement(By.xpath("//*[@value='Go to checkout'][1]")));
+			BasketPageActions.BasketContentsforNonConnected();
+			BasketPageActions.CollectionorDelivery("homeDelivery");
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			System.out.println("Unable to Land on the Non Phone related basket page and choose home delivery option");
+			Assert.fail("Unable to Land on the Non Phone related basket page and choose home delivery option");
+		}
 
 	}
 
 	@Given("^I Land on the Plan included basket page and choose home delivery option$")
 	public void i_Land_on_the_Plan_included_basket_page_and_choose_home_delivery_option() throws Throwable {
-		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-		PageFactory.initElements(driver, BasketPage.class);
-		Thread.sleep(3000);
-		BasketPageActions.PlanOnlyPageContents();
-
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, BasketPage.class);
+			Thread.sleep(3000);
+			BasketPageActions.PlanOnlyPageContents();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			System.out.println("Unable to Land on the Plan included basket page and choose home delivery option");
+			Assert.fail("Unable to Land on the Plan included basket page and choose home delivery option");
+		}
 	}
 
 	@Given("^Apply a ([^\"]*)$")
 	public void Apply_Voucher(String Voucher) throws Throwable {
-		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-		PageFactory.initElements(driver, BasketPage.class);
-		Thread.sleep(2000);
-		BasketPageActions.PromoCode(Voucher);
-		Thread.sleep(2000);
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, BasketPage.class);
+			Thread.sleep(2000);
+			BasketPageActions.PromoCode(Voucher);
+			Thread.sleep(2000);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			System.out.println("Unable to Apply voucher");
+			Assert.fail("Unable to Apply voucher");
+
+		}
 	}
 
 	@Given("^click on \"([^\"]*)\" button$")
 	public void CheckoutFromBasket(String arg1) throws Throwable {
-		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-		PageFactory.initElements(driver, BasketPage.class);
-		Thread.sleep(2000);
-		BasketPageActions.gotoCheckout();
-		Thread.sleep(2000);
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, BasketPage.class);
+			Thread.sleep(2000);
+			BasketPageActions.gotoCheckout();
+			Thread.sleep(2000);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			System.out.println("Unable to click on Go to Checkout button");
+			Assert.fail("Unable to click on Go to Checkout button");
+
+		}
 	}
 
 	@Given("^Verifies the basket page for the upgrade journey$")
@@ -494,35 +748,37 @@ public class E2EOrderPlaced_Steps {
 	 * #########
 	 */
 
-	/*
-	 * @Given("^input all the fields on the Delivery page and Click on the 'Continue button'$"
-	 * ) public void
-	 * input_all_the_fields_on_the_Delivery_page_and_Click_on_the_Continue_button
-	 * () throws Throwable { // Write code here that turns the phrase above into
-	 * concrete actions driver.manage().timeouts().implicitlyWait(20,
-	 * TimeUnit.SECONDS); PageFactory.initElements(driver, DeliveryPage.class);
-	 * DeliveryPageActions.SetDelivery(); Thread.sleep(2000);
-	 * DeliveryPageActions.AboutYou(datamap); Thread.sleep(2000);
-	 * DeliveryPageActions.ClickContinue(); }
-	 */
-
 	@Given("^input ([^\"]*) and ([^\"]*) and other valid details in Delivery page and Click on the 'Continue button'$")
 	public void DeliveryPage_Inputs_homeDelivery(String Firstname, String Surname) throws Throwable {
-		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-		PageFactory.initElements(driver, DeliveryPage.class);
-		DeliveryPageActions.SetDelivery();
-		Thread.sleep(2000);
-		DeliveryPageActions.AboutYou(Firstname, Surname);
-		Thread.sleep(2000);
-		DeliveryPageActions.ClickContinue();
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, DeliveryPage.class);
+			DeliveryPageActions.SetDelivery();
+			Thread.sleep(2000);
+			DeliveryPageActions.AboutYou(Firstname, Surname);
+			Thread.sleep(2000);
+			DeliveryPageActions.ClickContinue();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			System.out.println("Unable to input details in delivery page");
+			Assert.fail("Unable to input details in delivery page");
+
+		}
 	}
 
 	@Given("^input ([^\"]*) and ([^\"]*) and other valid details in Delivery page for Click and collect and Click on the 'Continue button'$")
 	public void DeliveryPage_Inputs_ClickandCollect(String Firstname, String Surname) throws Throwable {
-		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-		PageFactory.initElements(driver, DeliveryPage.class);
-		DeliveryPageActions.AboutYou(Firstname, Surname);
-		DeliveryPageActions.ClickContinue();
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, DeliveryPage.class);
+			DeliveryPageActions.AboutYou(Firstname, Surname);
+			DeliveryPageActions.ClickContinue();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			System.out.println("Unable to input details in delivery page");
+			Assert.fail("Unable to input details in delivery page");
+
+		}
 	}
 
 	/*
@@ -541,52 +797,80 @@ public class E2EOrderPlaced_Steps {
 	@Given("^land on the payment page and input ([^\"]*) and other details and click 'Continue on next step'$")
 	public void CreditCheckPaymentPage_HomeDelivery(String Username) throws Throwable {
 		// Write code here that turns the phrase above into concrete actions
-		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-		PageFactory.initElements(driver, PaymentPage.class);
-		PaymentPageActions.Set_Bank_details(Username);
-		Thread.sleep(2000);
-		PaymentPageActions.Time_At_Address();
-		Thread.sleep(2000);
-		PaymentPageActions.Card_Details(Username);
-		Thread.sleep(10000);
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, PaymentPage.class);
+			PaymentPageActions.Set_Bank_details(Username);
+			Thread.sleep(2000);
+			PaymentPageActions.Time_At_Address();
+			Thread.sleep(2000);
+			PaymentPageActions.Card_Details(Username);
+			Thread.sleep(10000);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			System.out.println("Unable to input details in payment page");
+			Assert.fail("Unable to input details in payment page");
+
+		}
 	}
 
 	@Given("^land on the payment page and input ([^\"]*) and other details for Click and collect order and click 'Continue on next step'$")
 	public void CreditCheckPaymentPage_ClickAndCollect(String Username) throws Throwable {
 		// Write code here that turns the phrase above into concrete actions
-		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-		PageFactory.initElements(driver, PaymentPage.class);
-		PaymentPageActions.Set_Bank_details(Username);
-		Thread.sleep(3000);
-		PaymentPageActions.Time_At_Address_CC();
-		Thread.sleep(3000);
-		PaymentPageActions.Card_Details(Username);
-		Thread.sleep(10000);
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, PaymentPage.class);
+			PaymentPageActions.Set_Bank_details(Username);
+			Thread.sleep(3000);
+			PaymentPageActions.Time_At_Address_CC();
+			Thread.sleep(3000);
+			PaymentPageActions.Card_Details(Username);
+			Thread.sleep(10000);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			System.out.println("Unable to input details in payment page");
+			Assert.fail("Unable to input details in payment page");
+
+		}
 	}
 
 	@Given("^land on the Non Credit check payment page and input ([^\"]*) and other details and click 'Continue on next step'$")
 	public void NonCreditCheckPaymentPage_HomeDelivery(String Username) throws Throwable {
-		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-		PageFactory.initElements(driver, PaymentPage.class);
-		PaymentPageActions.ValidateNonCreditPaymentPage();
-		Thread.sleep(2000);
-		PaymentPageActions.Card_Details(Username);
-		Thread.sleep(10000);
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, PaymentPage.class);
+			PaymentPageActions.ValidateNonCreditPaymentPage();
+			Thread.sleep(2000);
+			PaymentPageActions.Card_Details(Username);
+			Thread.sleep(10000);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			System.out.println("Unable to input details in payment page");
+			Assert.fail("Unable to input details in payment page");
+
+		}
 
 	}
 
 	@Given("^I land on the payment page and input all the details for high value Click and collect order and click 'Continue on next step'$")
 	public void CreditCheckPaymentPage_ClickAndCollect_highvalue() throws Throwable {
 		// Write code here that turns the phrase above into concrete actions
-		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-		PageFactory.initElements(driver, PaymentPage.class);
-		PaymentPageActions.Set_Bank_details_hv();
-		Thread.sleep(5000);
-		PaymentPageActions.Time_At_Address_CC();
-		Thread.sleep(5000);
-		PaymentPageActions.Card_Details_hv();
-		driver.switchTo().defaultContent();
-		Thread.sleep(10000);
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, PaymentPage.class);
+			PaymentPageActions.Set_Bank_details_hv();
+			Thread.sleep(5000);
+			PaymentPageActions.Time_At_Address_CC();
+			Thread.sleep(5000);
+			PaymentPageActions.Card_Details_hv();
+			driver.switchTo().defaultContent();
+			Thread.sleep(10000);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			System.out.println("Unable to input details in payment page");
+			Assert.fail("Unable to input details in payment page");
+
+		}
 	}
 
 	/*
@@ -596,21 +880,35 @@ public class E2EOrderPlaced_Steps {
 
 	@Then("^Additional information page should be displayed$")
 	public void AdditionalInformation() throws Throwable {
-		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-		PageFactory.initElements(driver, AdditionalInformationPage.class);
-		AdditionalInformationPageActions.gettitlepage();
-		Thread.sleep(2000);
-		AdditionalInformationPageActions.SectionsDisplayed();
-		Thread.sleep(10000);
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, AdditionalInformationPage.class);
+			AdditionalInformationPageActions.gettitlepage();
+			Thread.sleep(2000);
+			AdditionalInformationPageActions.SectionsDisplayed();
+			Thread.sleep(10000);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			System.out.println("Information is missing for Additional information page");
+			Assert.fail("Information is missing for Additional information page");
+
+		}
 	}
 
 	@Then("^upon entering Valid details with valid new ([^\"]*) and card number$")
 	public void EnterValidCard(String Username2) throws Throwable {
-		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-		PageFactory.initElements(driver, AdditionalInformationPage.class);
-		Thread.sleep(2000);
-		AdditionalInformationPageActions.AdditionalCardDetails(Username2);
-		Thread.sleep(4000);
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, AdditionalInformationPage.class);
+			Thread.sleep(2000);
+			AdditionalInformationPageActions.AdditionalCardDetails(Username2);
+			Thread.sleep(4000);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			System.out.println("unable to add details in Additional information page");
+			Assert.fail("unable to add details in Additional information page");
+
+		}
 		// AdditionalInformationPageActions.ClickOn();
 		// Thread.sleep(10000);
 
@@ -623,23 +921,32 @@ public class E2EOrderPlaced_Steps {
 
 	@Given("^Continue to Agreements page and confirm all the agreement checks$")
 	public void AgreementsPageConfirmation() throws Throwable {
-		// Write code here that turns the phrase above into concrete actions
-		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-		PageFactory.initElements(driver, AgreementPage.class);
-		PageFactory.initElements(driver, ReviewPage.class);
-		Thread.sleep(10000);
-		AgreementPageActions.gettitlepage();
-		Thread.sleep(3000);
-		AgreementPageActions.Affordability();
-		Thread.sleep(5000);
-		AgreementPageActions.KeyInformation();
-		Thread.sleep(5000);
-		AgreementPageActions.secciSection();
-		Thread.sleep(5000);
-		AgreementPageActions.PayMMobileAgreement();
-		Thread.sleep(5000);
-		AgreementPageActions.TermsDeclarationCheckbox();
-		Thread.sleep(5000);
+		try {
+			// Write code here that turns the phrase above into concrete actions
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, AgreementPage.class);
+			PageFactory.initElements(driver, ReviewPage.class);
+			Thread.sleep(10000);
+			AgreementPageActions.gettitlepage();
+			Thread.sleep(3000);
+			AgreementPageActions.Affordability();
+			Thread.sleep(5000);
+			AgreementPageActions.KeyInformation();
+			Thread.sleep(5000);
+			AgreementPageActions.secciSection();
+			Thread.sleep(5000);
+			AgreementPageActions.PayMMobileAgreement();
+			Thread.sleep(5000);
+			AgreementPageActions.TermsDeclarationCheckbox();
+			Thread.sleep(5000);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			System.out.println(
+					"Agreements page is not displayed or unable to enter some information in thie page, Please review the screenshots for failure");
+			Assert.fail(
+					"Agreements page is not displayed or unable to enter some information in thie page, Please review the screenshots for failure");
+
+		}
 	}
 
 	/*
@@ -658,33 +965,61 @@ public class E2EOrderPlaced_Steps {
 	@Given("^Continue to Review page and review the order$")
 	public void ReviewPageConfirmation() throws Throwable {
 		// Write code here that turns the phrase above into concrete actions
-		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-		PageFactory.initElements(driver, ReviewPage.class);
-		ReviewPageActions.gettitlepage();
-		ReviewPageActions.TermsCheckBox();
-		ReviewPageActions.PayNow();
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, ReviewPage.class);
+			ReviewPageActions.gettitlepage();
+			ReviewPageActions.TermsCheckBox();
+			ReviewPageActions.PayNow();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			System.out.println(
+					"Unable to Continue to Review page and review the order or unable to enter some information in this page, Please review the screenshots for failure");
+			Assert.fail(
+					"Unable to Continue to Review page and review the order or unable to enter some information in this page, Please review the screenshots for failure");
+
+		}
 	}
 
 	@Given("^Continue to Review page, check order contract text and review the order$")
 	public void ReviewPageOrderContractTextConfirmation() throws Throwable {
 		// Write code here that turns the phrase above into concrete actions
-		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-		PageFactory.initElements(driver, ReviewPage.class);
-		ReviewPageActions.gettitlepage();
-		ReviewPageActions.TermsCheckBox();
-		ReviewPageActions.checkOrderContractTextRP();
-		ReviewPageActions.PayNow();
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, ReviewPage.class);
+			ReviewPageActions.gettitlepage();
+			ReviewPageActions.TermsCheckBox();
+			ReviewPageActions.checkOrderContractTextRP();
+			ReviewPageActions.PayNow();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			System.out.println(
+					"Unable to Continue to Review page and review the order or unable to enter some information in this page, Please review the screenshots for failure");
+			Assert.fail(
+					"Unable to Continue to Review page and review the order or unable to enter some information in this page, Please review the screenshots for failure");
+
+
+		}
 	}
 
 	@Given("^Continue to Review page and review the order for Trustev details$")
 	public void ReviewPageConfirmationwithTrustev() throws Throwable {
 		// Write code here that turns the phrase above into concrete actions
-		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-		PageFactory.initElements(driver, ReviewPage.class);
-		ReviewPageActions.gettitlepage();
-		ReviewPageActions.checktrustev();
-		ReviewPageActions.TermsCheckBox();
-		ReviewPageActions.PayNow();
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, ReviewPage.class);
+			ReviewPageActions.gettitlepage();
+			ReviewPageActions.checktrustev();
+			ReviewPageActions.TermsCheckBox();
+			ReviewPageActions.PayNow();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			System.out.println(
+					"Unable to Continue to Review page and review the order or unable to enter some information in this page, Please review the screenshots for failure");
+			Assert.fail(
+					"Unable to Continue to Review page and review the order or unable to enter some information in this page, Please review the screenshots for failure");
+
+		}
 	}
 
 	/*
@@ -712,38 +1047,64 @@ public class E2EOrderPlaced_Steps {
 			System.out.println("ActOrderContractMsg matches ExpDeliveryText");
 		} else {
 			Assert.fail("Order contract text does not match");
-
-		}
+				}
 	}
 
 	@Then("^order confirmation is displayed$")
 	public void OrderConfirmationPage() throws Throwable {
 		// Write code here that turns the phrase above into concrete actions
-		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-		PageFactory.initElements(driver, OrderConfirmationPage.class);
-		OrderConfirmationPageActions.gettitlepage();
-		OrderConfirmationPageActions.MessageDisplayed();
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, OrderConfirmationPage.class);
+			OrderConfirmationPageActions.gettitlepage();
+			OrderConfirmationPageActions.MessageDisplayed();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			System.out.println(
+					"Error in order confirmation page , Please review the screenshots for failure");
+			Assert.fail(
+					"Error in order confirmation page , Please review the screenshots for failure");
+
+			}
 	}
 
 	@Then("^Order Decline page should be displayed$")
 	public void OrderDeclinePage() throws Throwable {
-		// Write code here that turns the phrase above into concrete actions
-		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-		PageFactory.initElements(driver, OrderConfirmationPage.class);
-		OrderConfirmationPageActions.gettitlepage();
-		OrderConfirmationPageActions.MessageDisplayed();
-		// /Assert.assertEquals(MessageDisplayed(), actual);
+		try {
+			// Write code here that turns the phrase above into concrete actions
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, OrderConfirmationPage.class);
+			OrderConfirmationPageActions.gettitlepage();
+			OrderConfirmationPageActions.MessageDisplayed();
+			// /Assert.assertEquals(MessageDisplayed(), actual);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			System.out.println(
+					"Unable to get Order Decline page");
+			Assert.fail(
+					"Unable to get Order Decline page");
+
+		}
 
 	}
 
 	@Then("^order confirmation is displayed with Volte message$")
 	public void OrderConfirmationVolte() throws Throwable {
 		// Write code here that turns the phrase above into concrete actions
-		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-		PageFactory.initElements(driver, OrderConfirmationPage.class);
-		OrderConfirmationPageActions.gettitlepage();
-		// OrderConfirmationPageActions.MessageDisplayed();
-		OrderConfirmationPageActions.OrderConfirmationPageSections();
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, OrderConfirmationPage.class);
+			OrderConfirmationPageActions.gettitlepage();
+			// OrderConfirmationPageActions.MessageDisplayed();
+			OrderConfirmationPageActions.OrderConfirmationPageSections();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			System.out.println(
+					"Unable to get Order confirmation page with volte message");
+			Assert.fail(
+					"Unable to get Order confirmation page with volte message");
+
+			}
 	}
 
 	/*********************************
@@ -761,12 +1122,22 @@ public class E2EOrderPlaced_Steps {
 	 */
 	@Given("^I login to Agent shop$")
 	public void LoginAgentShop() throws Throwable {
-		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-		String relativePath = System.getProperty("user.dir");
-		String EnvPropFilePath = relativePath + "\\src\\test\\java\\Properties\\AppConfig.properties";
-		String Newurl = Filereadingutility.getPropertyValue(EnvPropFilePath, "AgentUrl");
-		driver.navigate().to(Newurl);
-		Agent_HomePagePageActions.ValidateAgentHomepage();
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			String relativePath = System.getProperty("user.dir");
+			String EnvPropFilePath = relativePath + "\\src\\test\\java\\Properties\\AppConfig.properties";
+			String Newurl = Filereadingutility.getPropertyValue(EnvPropFilePath, "AgentUrl");
+			driver.navigate().to(Newurl);
+			Agent_HomePagePageActions.ValidateAgentHomepage();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			System.out.println(
+					"Unable to Login/validate home page, please see the failure screenshot");
+			Assert.fail(
+					"Unable to Login/validate home page, please see the failure screenshot");
+
+			
+		}
 
 	}
 
@@ -782,16 +1153,36 @@ public class E2EOrderPlaced_Steps {
 
 	@Given("^performs Upgrade for ([^\"]*)$")
 	public void performs_Upgrade(String msisdn) throws Throwable {
-		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-		PageFactory.initElements(driver, Agent_HomePage.class);
-		Agent_HomePagePageActions.FindUser(msisdn);
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, Agent_HomePage.class);
+			Agent_HomePagePageActions.FindUser(msisdn);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			System.out.println(
+					"Unable to login for upgrade for user in Agent shop, please see the failure screenshot");
+			Assert.fail(
+					"Unable to login for upgrade for user in Agent shop, please see the failure screenshot");
+
+			
+		}
 	}
 
 	@Given("^performs Acquisition for New user$")
 	public void performs_Acquisition_for_New_user() throws Throwable {
-		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-		PageFactory.initElements(driver, Agent_HomePage.class);
-		Agent_HomePagePageActions.NewUser();
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, Agent_HomePage.class);
+			Agent_HomePagePageActions.NewUser();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			System.out.println(
+					"Unable to perform Acquistion for user in Agent shop, please see the failure screenshot");
+			Assert.fail(
+					"Unable to perform Acquistion for user in Agent shop, please see the failure screenshot");
+
+			
+		}
 	}
 
 	/*
@@ -805,16 +1196,34 @@ public class E2EOrderPlaced_Steps {
 	 */
 	@Given("^Select a valid PayM ([^\"]*)")
 	public void SelectValid_Device(String Device) throws Throwable {
-		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-		PageFactory.initElements(driver, Agent_DealBuilderPage.class);
-		Agent_DealBuilderPageActions.SelectPAYMDevice(Device);
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, Agent_DealBuilderPage.class);
+			Agent_DealBuilderPageActions.SelectPAYMDevice(Device);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			System.out.println(
+					"Unable to select Valid device, please see the failure screenshot");	
+			Assert.fail(
+					"Unable to select Valid device, please see the failure screenshot");
+				
+			}
+		
 	}
 
 	@Given("^Select a valid PAYG ([^\"]*)")
 	public void select_a_valid_PAYG_S_edge_black_GB(String Device) throws Throwable {
-		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-		PageFactory.initElements(driver, Agent_DealBuilderPage.class);
-		Agent_DealBuilderPageActions.SelectPayGDevice(Device);
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, Agent_DealBuilderPage.class);
+			Agent_DealBuilderPageActions.SelectPayGDevice(Device);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			System.out.println(
+					"Unable to select Valid PAYG device, please see the failure screenshot");
+			Assert.fail(
+					"Unable to select Valid PAYG device, please see the failure screenshot");
+}
 	}
 
 	/*
@@ -828,9 +1237,18 @@ public class E2EOrderPlaced_Steps {
 	 */
 	@Given("^choose to email basket to save the basket$")
 	public void choose_to_email_basket_to_save_the_basket() throws Throwable {
-		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-		PageFactory.initElements(driver, Agent_DealBuilderPage.class);
-		Agent_DealBuilderPageActions.eMailBasket();
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, Agent_DealBuilderPage.class);
+			Agent_DealBuilderPageActions.eMailBasket();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			System.out.println(
+					"Unable to email basket, please see the failure screenshot");	
+			Assert.fail(
+					"Unable to email basket, please see the failure screenshot");	
+	
+		}
 	}
 
 	/*
@@ -845,23 +1263,51 @@ public class E2EOrderPlaced_Steps {
 
 	@Given("^Select valid ([^\"]*) from PAYG tariffs tab$")
 	public void select_valid_Months_from_PAYG_tariffs_tab(String Tariff) throws Throwable {
-		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-		PageFactory.initElements(driver, Agent_DealBuilderPage.class);
-		Agent_DealBuilderPageActions.SelectPayGTariff(Tariff);
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, Agent_DealBuilderPage.class);
+			Agent_DealBuilderPageActions.SelectPayGTariff(Tariff);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			System.out.println(
+					"Unable to select valid payg tariff, please see the failure screenshot");
+			
+			Assert.fail(
+					"Unable to select valid payg tariff, please see the failure screenshot");
+
+		}
 	}
 
 	@Given("^Select a valid Accessory ([^\"]*)")
 	public void Select_Accessory(String Device) throws Throwable {
-		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-		PageFactory.initElements(driver, Agent_DealBuilderPage.class);
-		Agent_DealBuilderPageActions.SelectAccessoryDevice(Device);
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, Agent_DealBuilderPage.class);
+			Agent_DealBuilderPageActions.SelectAccessoryDevice(Device);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			System.out.println(
+					"Unable to select accessory basket, please see the failure screenshot");
+			Assert.fail(
+					"Unable to select accessory basket, please see the failure screenshot");
+
+		}
 	}
 
 	@Given("^Select valid ([^\"]*) from tariffs tab$")
 	public void SelectTariff(String Tariff) throws Throwable {
-		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-		PageFactory.initElements(driver, Agent_DealBuilderPage.class);
-		Agent_DealBuilderPageActions.SelectTariff(Tariff);
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, Agent_DealBuilderPage.class);
+			Agent_DealBuilderPageActions.SelectTariff(Tariff);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			System.out.println(
+					"Unable to select valid tariff, please see the failure screenshot");
+			Assert.fail(
+					"Unable to select valid tariff, please see the failure screenshot");
+
+			}
 
 	}
 
@@ -877,12 +1323,21 @@ public class E2EOrderPlaced_Steps {
 
 	@Given("^Validate all the Basket content and checkout$")
 	public void validate_all_the_Basket_content_and_checkout() throws Throwable {
-		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-		PageFactory.initElements(driver, Agent_DealBuilderPage.class);
-		Agent_DealBuilderPageActions.ValdiateBasket();
-		Thread.sleep(2000);
-		Agent_DealBuilderPageActions.checkout();
-		Thread.sleep(2000);
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, Agent_DealBuilderPage.class);
+			Agent_DealBuilderPageActions.ValdiateBasket();
+			Thread.sleep(2000);
+			Agent_DealBuilderPageActions.checkout();
+			Thread.sleep(2000);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			System.out.println(
+					"Unable to validate basket content/checkout , please see the failure screenshot");
+			Assert.fail(
+					"Unable to validate basket content/checkout , please see the failure screenshot");
+
+		}
 	}
 
 	/*
@@ -896,9 +1351,18 @@ public class E2EOrderPlaced_Steps {
 	 */
 	@Then("^perform all the advisory checks$")
 	public void advisory_checks() throws Throwable {
-		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-		PageFactory.initElements(driver, Agent_AdvisoryPage.class);
-		Agent_AdvisoryChecksActions.AgreeAdvsioryCheck();
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, Agent_AdvisoryPage.class);
+			Agent_AdvisoryChecksActions.AgreeAdvsioryCheck();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			System.out.println(
+					"Unable to perform advisory checks , please see the failure screenshot");
+			Assert.fail(
+					"Unable to perform advisory checks , please see the failure screenshot");
+	
+		}
 	}
 
 	/*
@@ -913,11 +1377,20 @@ public class E2EOrderPlaced_Steps {
 
 	@Then("^perform the credit checks using valid ([^\"]*) and ([^\"]*) and valid ([^\"]*)$")
 	public void CreditCheck(String Firstname, String Surname, String Username) throws Throwable {
-		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-		PageFactory.initElements(driver, Agent_CreditCheckDetailsPage.class);
-		Agent_CreditCheckPageActions.Creditcheck(Firstname, Surname);
-		Agent_CreditCheckPageActions.BankDetails(Username);
-		Thread.sleep(10000);
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, Agent_CreditCheckDetailsPage.class);
+			Agent_CreditCheckPageActions.Creditcheck(Firstname, Surname);
+			Agent_CreditCheckPageActions.BankDetails(Username);
+			Thread.sleep(10000);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			System.out.println(
+					"Unable to perform credit checks , please see the failure screenshot");
+			Assert.fail(
+					"Unable to perform credit checks , please see the failure screenshot");
+
+			}
 
 	}
 	/*
@@ -932,9 +1405,19 @@ public class E2EOrderPlaced_Steps {
 
 	@Given("^Register customer with valid ([^\"]*) and ([^\"]*) and other valid details in delivery page$")
 	public void register_customer(String Firstname, String Surname) throws Throwable {
-		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-		PageFactory.initElements(driver, Agent_RegisterCustomerPage.class);
-		Agent_RegisterCustomerActions.PayGRegistration(Firstname, Surname);
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, Agent_RegisterCustomerPage.class);
+			Agent_RegisterCustomerActions.PayGRegistration(Firstname, Surname);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			System.out.println(
+					"Unable to Register customer , please see the failure screenshot");
+			Assert.fail(
+					"Unable to Register customer , please see the failure screenshot");
+	
+		}
+		
 	}
 
 	/*
@@ -963,9 +1446,18 @@ public class E2EOrderPlaced_Steps {
 	@When("^Pay by card$")
 	public void pay_by_card() throws Throwable {
 		driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
-		PageFactory.initElements(driver, Agent_RegisterCustomerPage.class);
-		Agent_RegisterCustomerActions.PaybyCard();
-		Agent_RegisterCustomerActions.CardDetails();
+		try {
+			PageFactory.initElements(driver, Agent_RegisterCustomerPage.class);
+			Agent_RegisterCustomerActions.PaybyCard();
+			Agent_RegisterCustomerActions.CardDetails();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			System.out.println(
+					"Unable to Pay by card , please see the failure screenshot");
+			Assert.fail(
+					"Unable to Pay by card , please see the failure screenshot");
+	
+		}
 	}
 
 	/*
@@ -980,9 +1472,19 @@ public class E2EOrderPlaced_Steps {
 
 	@Then("^Order confirmation message should be displayed$")
 	public void order_confirmation_message_should_be_displayed() throws Throwable {
-		driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
-		PageFactory.initElements(driver, Agent_ConfirmationPage.class);
-		Agent_ConfirmationPageActions.Confirmationdetails();
+		try {
+			driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, Agent_ConfirmationPage.class);
+			Agent_ConfirmationPageActions.Confirmationdetails();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			System.out.println(
+					"Unable to get order confirmation screen , please see the failure screenshot");		
+			Assert.fail(
+					"Unable to get order confirmation screen , please see the failure screenshot");
+	
+		
+		}
 	}
 
 	/*
@@ -996,67 +1498,159 @@ public class E2EOrderPlaced_Steps {
 	 */
 	@Given("^I Land on the Non Phone related basket page$")
 	public void NonPhoneRelatedBasketPage_julyRelease() throws InterruptedException {
-		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-		PageFactory.initElements(driver, BasketPage.class);
-		PageFactory.initElements(driver, PAYMandPAYGTariffAndExtrasPage.class);
-		Thread.sleep(3000);
-		BasketPageActions.JuneReleaseBasketContent();
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, BasketPage.class);
+			PageFactory.initElements(driver, PAYMandPAYGTariffAndExtrasPage.class);
+			Thread.sleep(3000);
+			BasketPageActions.JuneReleaseBasketContent();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			System.out.println(
+					"Unable to validate basket in basket page , please see the failure screenshot");
+			Assert.fail(
+					"Unable to validate basket in basket page , please see the failure screenshot");
+
+		}
 	}
 
 	@Then("^Verify that correct quantity of devices are displayed in Basket page$")
 	public void verifytheQuantityBasketPage() throws Throwable {
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-		JuneReleaseValidations.QuantityValidationsBasket();
+		try {
+			JuneReleaseValidations.QuantityValidationsBasket();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			System.out.println(
+					"Unable to validate Quantity , please see the failure screenshot");		
+						Assert.fail(
+								"Unable to validate Quantity , please see the failure screenshot");
+
+		}
 	}
 
 	@Then("^Verify that correct quantity of devices are displayed in Delivery page$")
 	public void verifytheQuantityDeliveryPage() throws Throwable {
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-		JuneReleaseValidations.QuantityValidationsDelivery();
+		try {
+			JuneReleaseValidations.QuantityValidationsDelivery();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			System.out.println(
+					"Unable to validate Quantity in Delivery page, please see the failure screenshot");		
+			Assert.fail(
+					"Unable to validate Quantity in Delivery page, please see the failure screenshot");
+	
+		}
+		
 	}
 
 	@Then("^Verify that correct quantity of devices are displayed in Delivery page after update$")
 	public void verifyUpdatedQuantityDeliveryPage() throws Throwable {
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-		JuneReleaseValidations.updatedQuantityValidationsDelivery();
+		try {
+			JuneReleaseValidations.updatedQuantityValidationsDelivery();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			System.out.println(
+					"Unable to validate Quantity in Delivery page, please see the failure screenshot");
+			
+			Assert.fail(
+					"Unable to validate Quantity in Delivery page, please see the failure screenshot");
+
+		}
 	}
-	
+
 	@Then("^Verify that correct quantity of devices are displayed in Review page$")
 	public void verifytheQuantityReviewPage() throws Throwable {
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-		JuneReleaseValidations.QuantityValidationsReview();
+		try {
+			JuneReleaseValidations.QuantityValidationsReview();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			System.out.println(
+					"Unable to validate Quantity in Review page, please see the failure screenshot");
+			
+			Assert.fail(
+					"Unable to validate Quantity in Review page, please see the failure screenshot");
+
+		}
 	}
-	
+
 	@Then("^Verify that correct quantity of Grouped non connected items are displayed in Basket page$")
 	public void verifytheQuantityBasketPageGrouped() throws Throwable {
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-		JuneReleaseValidations.QuantityValidationsBasket_Grouped();
+		try {
+			JuneReleaseValidations.QuantityValidationsBasket_Grouped();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			System.out.println(
+					"Unable to validate Quantity , please see the failure screenshot");
+			Assert.fail(
+					"Unable to validate Quantity , please see the failure screenshot");
+
+		}
 	}
 
 	@Then("^Verify that correct quantity of Grouped non connected items are displayed in Delivery page$")
 	public void verifytheQuantityDeliveryPageGrouped() throws Throwable {
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-		JuneReleaseValidations.QuantityValidationsDelivery_Grouped();
+		try {
+			JuneReleaseValidations.QuantityValidationsDelivery_Grouped();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			System.out.println(
+					"Unable to validate Quantity , please see the failure screenshot");
+			Assert.fail(
+					"Unable to validate Quantity , please see the failure screenshot");
+
+			}
 	}
 
 	@Then("^Verify that correct quantity of Grouped non connected items are displayed in Review page$")
 	public void verifytheQuantityReviewPageGrouped() throws Throwable {
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-		JuneReleaseValidations.QuantityValidationsReviewPage_Grouped();
+		try {
+			JuneReleaseValidations.QuantityValidationsReviewPage_Grouped();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			System.out.println(
+					"Unable to validate Quantity , please see the failure screenshot");
+			Assert.fail(
+					"Unable to validate Quantity , please see the failure screenshot");
+
+			}
 	}
-		
+
 	@Then("^navigate back to Basket page$")
 	public void navigate_back_to_Basket_page() throws Throwable {
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-		JuneReleaseValidations.NavigatebackFromDelivery();
-	}
+		try {
+			JuneReleaseValidations.NavigatebackFromDelivery();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			System.out.println(
+					"Unable to Navigate back , please see the failure screenshot");		
+			Assert.fail("Unable to Navigate back , please see the failure screenshot");
 	
+		}
+	}
+
 	@Then("^Change the quantity of the items$")
 	public void change_the_quantity_of_the_items() throws Throwable {
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-		JuneReleaseValidations.ChangeQuantity();
-	}	
-	
+		try {
+			JuneReleaseValidations.ChangeQuantity();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			System.out.println(
+					"Unable to validate Quantity , please see the failure screenshot");
+			Assert.fail(
+					"Unable to validate Quantity , please see the failure screenshot");
+
+			}
+	}
+
 	/*
 	 * #########################################################################
 	 * #########
@@ -1071,7 +1665,16 @@ public class E2EOrderPlaced_Steps {
 	public void i_should_be_displayed_the_promo_modules() throws Throwable {
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		PageFactory.initElements(driver, UpgradeCustomerPageActions.class);
-		UpgradeCustomerPageActions.UpgradeUpsellPromoModule_Validation();
+		try {
+			UpgradeCustomerPageActions.UpgradeUpsellPromoModule_Validation();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			System.out.println(
+					"Unable to validate promo modules , please see the failure screenshot");	
+			Assert.fail(
+					"Unable to validate promo modules , please see the failure screenshot");
+
+			}
 
 	}
 
@@ -1080,7 +1683,16 @@ public class E2EOrderPlaced_Steps {
 			int arg2) throws Throwable {
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		PageFactory.initElements(driver, UpgradeCustomerPageActions.class);
-		UpgradeCustomerPageActions.UpgradeUpsellPromoModule_MyO2Action();
+		try {
+			UpgradeCustomerPageActions.UpgradeUpsellPromoModule_MyO2Action();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			System.out.println(
+					"Unable to validate go to MyO2 CTA , please see the failure screenshot");
+			Assert.fail(
+					"Unable to validate go to MyO2 CTA , please see the failure screenshot");
+
+			}
 
 	}
 
@@ -1097,29 +1709,45 @@ public class E2EOrderPlaced_Steps {
 	@When("^I Click on Pick a sim on the iPad promo module$")
 	public void i_Click_on_Pick_a_sim_on_the_iPad_promo_module() throws Throwable {
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-		PageFactory.initElements(driver, UpgradeCustomerPage.class);
-		UpgradeCustomerPageActions.UpgradeUpsellPromoModule_iPadAction();
-		Autoredirection.redirect();
+		try {
+			PageFactory.initElements(driver, UpgradeCustomerPage.class);
+			UpgradeCustomerPageActions.UpgradeUpsellPromoModule_iPadAction();
+			Autoredirection.redirect();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			System.out.println(
+					"Unable to click on ipad promo module , please see the failure screenshot");
+			Assert.fail(
+					"Unable to click on ipad promo module , please see the failure screenshot");
+}
 	}
 
 	@When("^input ([^\"]*) and ([^\"]*) and other valid details in Delivery page and Click on the 'Send me my sim'$")
-	public void input_TEST_and_ACCEPTA_and_other_valid_details_in_Delivery_page_and_Click_on_the_Send_me_my_sim(String Firstname, String Surname) throws Throwable {
+	public void input_TEST_and_ACCEPTA_and_other_valid_details_in_Delivery_page_and_Click_on_the_Send_me_my_sim(
+			String Firstname, String Surname) throws Throwable {
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-		PageFactory.initElements(driver, DeliveryPage.class);
-		DeliveryPageActions.SetDelivery();
-		JavascriptExecutor jse = (JavascriptExecutor) driver;
-		jse.executeScript("window.scrollBy(0,100)", "");
-		PageFactory.initElements(driver, FreeSimDeliveryPageActions.class);
-		FreeSimDeliveryPageActions.FreeSimAboutYou(Firstname, Surname);
-		JavascriptExecutor jse_1 = (JavascriptExecutor) driver;
-		jse.executeScript("window.scrollBy(0,250)", "");
-		FreeSimDeliveryPageActions.ClickSendMeMySim();
-		Thread.sleep(2000);
-		
-		
+		try {
+			PageFactory.initElements(driver, DeliveryPage.class);
+			DeliveryPageActions.SetDelivery();
+			JavascriptExecutor jse = (JavascriptExecutor) driver;
+			jse.executeScript("window.scrollBy(0,100)", "");
+			PageFactory.initElements(driver, FreeSimDeliveryPageActions.class);
+			FreeSimDeliveryPageActions.FreeSimAboutYou(Firstname, Surname);
+			JavascriptExecutor jse_1 = (JavascriptExecutor) driver;
+			jse.executeScript("window.scrollBy(0,250)", "");
+			FreeSimDeliveryPageActions.ClickSendMeMySim();
+			Thread.sleep(2000);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			System.out.println(
+					"Unable to validate details in delivery page, please see the failure screenshot");
+			Assert.fail(
+					"Unable to validate details in delivery page, please see the failure screenshot");
+
+			}
 
 	}
-	
+
 	/*
 	 * #########################################################################
 	 * #########
@@ -1132,14 +1760,21 @@ public class E2EOrderPlaced_Steps {
 
 	@When("^I Click on Pick a sim on the Tablet promo module$")
 	public void i_Click_on_Pick_a_sim_on_the_Tablet_promo_module() throws Throwable {
-		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-		PageFactory.initElements(driver, UpgradeCustomerPage.class);
-		UpgradeCustomerPageActions.UpgradeUpsellPromoModule_TabletAction();
-		Autoredirection.redirect();
-	    
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, UpgradeCustomerPage.class);
+			UpgradeCustomerPageActions.UpgradeUpsellPromoModule_TabletAction();
+			Autoredirection.redirect();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			System.out.println(
+					"Unable to pick a sim on tablet promo , please see the failure screenshot");
+			Assert.fail(
+					"Unable to pick a sim on tablet promo , please see the failure screenshot");
+}
+
 	}
-	
-	
+
 	/*
 	 * #########################################################################
 	 * #########
@@ -1149,251 +1784,383 @@ public class E2EOrderPlaced_Steps {
 	 * #########################################################################
 	 * #########
 	 */
-	
 
 	@When("^I Click on Pick a sim on the Dongle promo module$")
 	public void i_Click_on_Pick_a_sim_on_the_Dongle_promo_module() throws Throwable {
-		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-		PageFactory.initElements(driver, UpgradeCustomerPage.class);
-		UpgradeCustomerPageActions.UpgradeUpsellPromoModule_DongleAction();
-		Autoredirection.redirect(); 
-	   
-	}
-	
-	@When("^verify that error message is thrown$")
-	public void promocodeErrorMessage(String Voucher) throws Throwable {
-		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-		PageFactory.initElements(driver, BasketPage.class);
-		Thread.sleep(2000);
-		BasketPageActions.WrongPromoCode(Voucher);
-		Thread.sleep(2000);
-	   
-	}
-	
-	@Given("^Apply the ([^\"]*) twice$")
-	public void Apply_Voucher_twice(String Voucher) throws Throwable {
-		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-		PageFactory.initElements(driver, BasketPage.class);
-		Thread.sleep(2000);
-		BasketPageActions.PromoCode(Voucher);
-		Thread.sleep(2000);
-		BasketPageActions.PromoCode(Voucher);
-		Thread.sleep(2000);
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, UpgradeCustomerPage.class);
+			UpgradeCustomerPageActions.UpgradeUpsellPromoModule_DongleAction();
+			Autoredirection.redirect();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			Assert.fail("Unable to pick promo module, please refer to failed screenshot");
+
+		}
 
 	}
-	
-	///////////////////////////////June Release////////////////////////////////////////
-	
+
+
+	@Given("^verify that error message is thrown$")
+public void verify_that_error_message_is_thrown() throws Throwable {
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, BasketPage.class);
+			Thread.sleep(2000);			
+			BasketPageActions.ValidatePromoCode();
+			Thread.sleep(2000);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			Assert.fail("Unable to verify error message is thrown or not, please refer to screenshot");
+		}
+	}
+
+	@Given("^Apply the ([^\"]*) twice$")
+	public void Apply_Voucher_twice(String Voucher) throws Throwable {
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, BasketPage.class);
+			Thread.sleep(2000);
+			BasketPageActions.PromoCode(Voucher);
+			Thread.sleep(2000);
+			BasketPageActions.PromoCode(Voucher);
+			Thread.sleep(2000);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			Assert.fail("Unable to apply promocode");
+		}
+
+	}
+
+	/////////////////////////////// June
+	/////////////////////////////// Release////////////////////////////////////////
+
 	@Given("^Navigate to device details page, check if the selected device is Delayed Delivery and select ([^\"]*)$")
 	public void Navigate_to_device_details_page_check_if_DD_and_select_color(String color) throws Throwable {
-		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-		PageFactory.initElements(driver, ConnectedDeviceDetailsPage.class);
-		ConnectedDeviceDetailsPageAction.GetTitle();
-		Thread.sleep(3000);
-		ConnectedDeviceDetailsPageAction.colorSelectOfDevice(color);
-		Thread.sleep(3000);
-		ConnectedDeviceDetailsPageAction.checkDevStatusAsDelayedDelivery();
-		Thread.sleep(2000);
-		ConnectedDeviceDetailsPageAction.ViewAllTariffs();
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, ConnectedDeviceDetailsPage.class);
+			ConnectedDeviceDetailsPageAction.GetTitle();
+			Thread.sleep(3000);
+			ConnectedDeviceDetailsPageAction.colorSelectOfDevice(color);
+			Thread.sleep(3000);
+			ConnectedDeviceDetailsPageAction.checkDevStatusAsDelayedDelivery();
+			Thread.sleep(2000);
+			ConnectedDeviceDetailsPageAction.ViewAllTariffs();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			Assert.fail("Unable to Navigate to device details page, check if the selected device is Delayed Delivery ");
+		}
 	}
 
 	@Given("^Navigate to device details page, check if the selected device is Pre Order and select ([^\"]*)$")
 	public void Navigate_to_device_details_page_check_if_PO_and_select_color(String color) throws Throwable {
-		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-		PageFactory.initElements(driver, ConnectedDeviceDetailsPage.class);
-		ConnectedDeviceDetailsPageAction.GetTitle();
-		Thread.sleep(3000);
-		ConnectedDeviceDetailsPageAction.colorSelectOfDevice(color);
-		Thread.sleep(3000);
-		ConnectedDeviceDetailsPageAction.checkDevStatusAsPreOrder();
-		Thread.sleep(2000);
-		ConnectedDeviceDetailsPageAction.ViewAllTariffs();
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, ConnectedDeviceDetailsPage.class);
+			ConnectedDeviceDetailsPageAction.GetTitle();
+			Thread.sleep(3000);
+			ConnectedDeviceDetailsPageAction.colorSelectOfDevice(color);
+			Thread.sleep(3000);
+			ConnectedDeviceDetailsPageAction.checkDevStatusAsPreOrder();
+			Thread.sleep(2000);
+			ConnectedDeviceDetailsPageAction.ViewAllTariffs();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			Assert.fail("Navigate to device details page, check if the selected device is Pre Order");
+		}
 	}
-	
 
 	@Given("^I Land on the basket page$")
 	public void i_Land_on_the_basket_page() throws Throwable {
-		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-		PageFactory.initElements(driver, BasketPage.class);
-		PageFactory.initElements(driver, PAYMandPAYGTariffAndExtrasPage.class);
-		PAYMandPAYGTariffAndExtrasPageActions.addToBasketLive();
-		Thread.sleep(3000);
-		BasketPageActions.ValidateBasketPageContents();
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, BasketPage.class);
+			PageFactory.initElements(driver, PAYMandPAYGTariffAndExtrasPage.class);
+			PAYMandPAYGTariffAndExtrasPageActions.addToBasketLive();
+			Thread.sleep(3000);
+			BasketPageActions.ValidateBasketPageContents();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			Assert.fail("Unable to land on Basket page");
+		}
 	}
-	
+
 	@Given("Select ([^\"]*) from accessories")
 	public void select_accessory(String accessoryname) throws Throwable {
-		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-		PageFactory.initElements(driver, AccessoryPage.class);
-		Thread.sleep(2000);
-		AccessoryPageActions.SelectAnyAccessory(accessoryname);
-		Thread.sleep(3000);
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, AccessoryPage.class);
+			Thread.sleep(2000);
+			AccessoryPageActions.SelectAnyAccessory(accessoryname);
+			Thread.sleep(3000);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			Assert.fail("Unable to select any accessory");
+		}
 
 	}
 
-	
 	@Given("Choose ([^\"]*) and add to basket")
 	public void choose_color(String color) throws Throwable {
-		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-		PageFactory.initElements(driver, NonConnectedDeviceDetailsPage.class);
-		Thread.sleep(2000);
-		NonConnectedDeviceDetailsPageAction.clickCloseBtn();
-		Thread.sleep(2000);
-		NonConnectedDeviceDetailsPageAction.colorSelectOfDevice(color);
-		NonConnectedDeviceDetailsPageAction.AddtoBasket();
+		try {
+			driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, NonConnectedDeviceDetailsPage.class);
+			Thread.sleep(2000);
+			NonConnectedDeviceDetailsPageAction.clickCloseBtn();
+			Thread.sleep(2000);
+			NonConnectedDeviceDetailsPageAction.colorSelectOfDevice(color);
+			NonConnectedDeviceDetailsPageAction.AddtoBasket();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			Assert.fail("Unabel to choose device and add to basket");
+		}
 	}
-	
+
 	@Given("Select existing account and begin fast checkout")
 	public void Select_existing_account_and_begin_fast_checkout() throws Throwable {
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-		PageFactory.initElements(driver, DeliveryPage.class);
-		DeliveryPageActions.selectExistingAcctAndFastCheckOut();
+		try {
+			PageFactory.initElements(driver, DeliveryPage.class);
+			DeliveryPageActions.selectExistingAcctAndFastCheckOut();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			Assert.fail("Unable to select existing account");
+
+		}
 	}
 
 	@Given("Check stock extended message in Delivery page")
 	public void Check_stock_extended_message_in_Delivery_page() throws Throwable {
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-		PageFactory.initElements(driver, DeliveryPage.class);
-		DeliveryPageActions.checkStockExtMsgDP();
+		try {
+			PageFactory.initElements(driver, DeliveryPage.class);
+			DeliveryPageActions.checkStockExtMsgDP();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			Assert.fail("Unable to check stock extended message");
+
+		}
 	}
-@Given("^Input ([^\"]*) and ([^\"]*) and other valid details in Delivery page$")
+
+	@Given("^Input ([^\"]*) and ([^\"]*) and other valid details in Delivery page$")
 	public void Entering_DeliveryPage_Inputs_HomeDelivery(String Firstname, String Surname) throws Throwable {
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-		PageFactory.initElements(driver, DeliveryPage.class);
-		DeliveryPageActions.SetDelivery();
-		Thread.sleep(2000);
-		DeliveryPageActions.AboutYou(Firstname, Surname);
-		Thread.sleep(2000);
-		//DeliveryPageActions.ClickContinue();
+		try {
+			PageFactory.initElements(driver, DeliveryPage.class);
+			DeliveryPageActions.SetDelivery();
+			Thread.sleep(2000);
+			DeliveryPageActions.AboutYou(Firstname, Surname);
+			Thread.sleep(2000);
+			// DeliveryPageActions.ClickContinue();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			Assert.fail("Unable to input details in delivery page");
+
+		}
 	}
-	
+
 	@Given("^Click on Continue button$")
 	public void clickOnContinueButton(String Firstname, String Surname) throws Throwable {
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-		PageFactory.initElements(driver, DeliveryPage.class);
-		DeliveryPageActions.ClickContinue();
+		try {
+			PageFactory.initElements(driver, DeliveryPage.class);
+			DeliveryPageActions.ClickContinue();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			Assert.fail("Unable to click on continue button");
+
+		}
 	}
-	
+
 	@Given("^Check stock extended message for ([^\"]*)$")
 	public void checkStockExtMsg(String product) throws Throwable {
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-		PageFactory.initElements(driver, OrderSummarySection.class);
-		OrderSummarySectionActions.checkStockExtMessage(product);
+		try {
+			PageFactory.initElements(driver, OrderSummarySection.class);
+			OrderSummarySectionActions.checkStockExtMessage(product);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			Assert.fail("Unable to Check stock extended message");
+
+		}
 	}
-	
+
 	@Given("^land on the payment page, check stock limited message for ([^\"]*) and input ([^\"]*) and other details and click 'Continue on next step'$")
-	public void CreditCheckPaymentPage_check_stock_limited_msg_HomeDelivery(String Username, String product) throws Throwable {
+	public void CreditCheckPaymentPage_check_stock_limited_msg_HomeDelivery(String Username, String product)
+			throws Throwable {
 		// Write code here that turns the phrase above into concrete actions
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-		PageFactory.initElements(driver, PaymentPage.class);
-		PageFactory.initElements(driver, OrderSummarySection.class);
-		PaymentPageActions.Set_Bank_details(Username);
-		Thread.sleep(2000);
-		OrderSummarySectionActions.checkStockExtMessage(product);
-		Thread.sleep(2000);
-		PaymentPageActions.Time_At_Address();
-		Thread.sleep(2000);
-		PaymentPageActions.Card_Details(Username);
-		Thread.sleep(10000);
+		try {
+			PageFactory.initElements(driver, PaymentPage.class);
+			PageFactory.initElements(driver, OrderSummarySection.class);
+			PaymentPageActions.Set_Bank_details(Username);
+			Thread.sleep(2000);
+			OrderSummarySectionActions.checkStockExtMessage(product);
+			Thread.sleep(2000);
+			PaymentPageActions.Time_At_Address();
+			Thread.sleep(2000);
+			PaymentPageActions.Card_Details(Username);
+			Thread.sleep(10000);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			Assert.fail("unable to land on the payment page, check stock limited message");
+
+		}
 	}
 
 	@Given("^land on the payment page and input ([^\"]*) and other details for upgrade and click 'Continue on next step'$")
 	public void CreditCheckPaymentPage_Upgrade(String Username) throws Throwable {
 		// Write code here that turns the phrase above into concrete actions
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-		PageFactory.initElements(driver, PaymentPage.class);
-		PageFactory.initElements(driver, DeliveryPage.class);
-		DeliveryPageActions.ClickContinue();
-		Thread.sleep(2000);
-		PaymentPageActions.Time_At_Address();
-		Thread.sleep(2000);
-		PaymentPageActions.Card_Details(Username);
-		Thread.sleep(10000);
+		try {
+			PageFactory.initElements(driver, PaymentPage.class);
+			PageFactory.initElements(driver, DeliveryPage.class);
+			DeliveryPageActions.ClickContinue();
+			Thread.sleep(2000);
+			PaymentPageActions.Time_At_Address();
+			Thread.sleep(2000);
+			PaymentPageActions.Card_Details(Username);
+			Thread.sleep(10000);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			Assert.fail("land on the payment page, Please refer to screenshots");
+
+		}
 	}
 
 	@Given("^land on the payment page, check stock extended message for ([^\"]*) and input ([^\"]*) and other details for upgrade and click 'Continue on next step'$")
 	public void CreditCheckPaymentPage_check_Stock_ext_msg_Upgrade(String Username, String product) throws Throwable {
 		// Write code here that turns the phrase above into concrete actions
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-		PageFactory.initElements(driver, PaymentPage.class);
-		PageFactory.initElements(driver, DeliveryPage.class);
-		PageFactory.initElements(driver, OrderSummarySection.class);
-		DeliveryPageActions.ClickContinue();
-		Thread.sleep(2000);
-		OrderSummarySectionActions.checkStockExtMessage(product);
-		Thread.sleep(2000);
-		PaymentPageActions.Time_At_Address();
-		Thread.sleep(2000);
-		PaymentPageActions.Card_Details(Username);
-		Thread.sleep(10000);
+		try {
+			PageFactory.initElements(driver, PaymentPage.class);
+			PageFactory.initElements(driver, DeliveryPage.class);
+			PageFactory.initElements(driver, OrderSummarySection.class);
+			DeliveryPageActions.ClickContinue();
+			Thread.sleep(2000);
+			OrderSummarySectionActions.checkStockExtMessage(product);
+			Thread.sleep(2000);
+			PaymentPageActions.Time_At_Address();
+			Thread.sleep(2000);
+			PaymentPageActions.Card_Details(Username);
+			Thread.sleep(10000);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			Assert.fail("Unabel to land on payment page");
+
+		}
 	}
+
 	@Given("^Continue to Agreements page, check stock extended message for ([^\"]*) and confirm all the agreement checks$")
 	public void AgreementsPageConfirmation_alongwith_stock_ext_msg(String product) throws Throwable {
 		// Write code here that turns the phrase above into concrete actions
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-		PageFactory.initElements(driver, AgreementPage.class);
-		PageFactory.initElements(driver, ReviewPage.class);
-		PageFactory.initElements(driver, OrderSummarySection.class);
-		Thread.sleep(10000);
-		AgreementPageActions.gettitlepage();
-		Thread.sleep(3000);
-		AgreementPageActions.Affordability();
-		Thread.sleep(5000);
-		OrderSummarySectionActions.checkStockExtMessage(product);
-		Thread.sleep(2000);
-		AgreementPageActions.KeyInformation();
-		Thread.sleep(5000);
-		AgreementPageActions.secciSection();
-		Thread.sleep(5000);
-		AgreementPageActions.PayMMobileAgreement();
-		Thread.sleep(5000);
-		AgreementPageActions.TermsDeclarationCheckbox();
-		Thread.sleep(5000);
+		try {
+			PageFactory.initElements(driver, AgreementPage.class);
+			PageFactory.initElements(driver, ReviewPage.class);
+			PageFactory.initElements(driver, OrderSummarySection.class);
+			Thread.sleep(10000);
+			AgreementPageActions.gettitlepage();
+			Thread.sleep(3000);
+			AgreementPageActions.Affordability();
+			Thread.sleep(5000);
+			OrderSummarySectionActions.checkStockExtMessage(product);
+			Thread.sleep(2000);
+			AgreementPageActions.KeyInformation();
+			Thread.sleep(5000);
+			AgreementPageActions.secciSection();
+			Thread.sleep(5000);
+			AgreementPageActions.PayMMobileAgreement();
+			Thread.sleep(5000);
+			AgreementPageActions.TermsDeclarationCheckbox();
+			Thread.sleep(5000);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			Assert.fail("Unable to continue to Agreements page");
+
+		}
 	}
-	
-	
 
 	@Given("^Continue to Review page, check order contract text, stock extended message for ([^\"]*) and review the order$")
 	public void ReviewPageStockExtMsgConfirmation(String product) throws Throwable {
 		// Write code here that turns the phrase above into concrete actions
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-		PageFactory.initElements(driver, ReviewPage.class);
-		PageFactory.initElements(driver, OrderSummarySection.class);
-		ReviewPageActions.gettitlepage();
-		ReviewPageActions.TermsCheckBox();
-		ReviewPageActions.checkOrderContractTextRP();
-		OrderSummarySectionActions.checkStockExtMessage(product);
-		ReviewPageActions.PayNow();
+		try {
+			PageFactory.initElements(driver, ReviewPage.class);
+			PageFactory.initElements(driver, OrderSummarySection.class);
+			ReviewPageActions.gettitlepage();
+			ReviewPageActions.TermsCheckBox();
+			ReviewPageActions.checkOrderContractTextRP();
+			OrderSummarySectionActions.checkStockExtMessage(product);
+			ReviewPageActions.PayNow();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			Assert.fail("Unable to continue to review page");
+
+		}
 	}
-	
+
 	@Given("^I am existing user and I click on Signin button$")
 	public void I_am_existing_user_and_I_click_on_Signin_button() throws Throwable {
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-		PageFactory.initElements(driver, ShopLandingPage.class);
-		ShopLandingPageAction.clickSignIn();
-		Autoredirection.redirectUpgrades();
+		try {
+			PageFactory.initElements(driver, ShopLandingPage.class);
+			ShopLandingPageAction.clickSignIn();
+			Autoredirection.redirectUpgrades();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			Assert.fail("Unable to use as existing user");
+
+		}
 
 	}
-	
+
 	@Given("^Navigate to upgrade phone$")
 	public void navigate_to_upgrade_phone() throws Throwable {
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-		PageFactory.initElements(driver, MouseHoverPage.class);
-		PageFactory.initElements(driver, UpgradePhonesListingPage.class);
-		MouseHoverAction.UpgradeandUpgradeNow();
-		Thread.sleep(5000);
-		// Autoredirection.redirectUpgrades();
-		UpgradeCustomerPageActions.viewAllPhones();
-		Thread.sleep(2000);
+		try {
+			PageFactory.initElements(driver, MouseHoverPage.class);
+			PageFactory.initElements(driver, UpgradePhonesListingPage.class);
+			MouseHoverAction.UpgradeandUpgradeNow();
+			Thread.sleep(5000);
+			// Autoredirection.redirectUpgrades();
+			UpgradeCustomerPageActions.viewAllPhones();
+			Thread.sleep(2000);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			Assert.fail("Unable to navigate to upgrade phones");
+
+		}
 	}
-	
+
 	@Given("^I choose upgrade PayM ([^\"]*)$")
 	public void Choose_upgradePAYM_Handset(String handset) throws Throwable {
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-		PageFactory.initElements(driver, UpgradePhonesListingPage.class);
-		PageFactory.initElements(driver, PhonesListingPage.class);
-		Thread.sleep(3000);
-		UpgradeCustomerPageActions.upgradePAYMPhoneSelect(handset);
+		try {
+			PageFactory.initElements(driver, UpgradePhonesListingPage.class);
+			PageFactory.initElements(driver, PhonesListingPage.class);
+			Thread.sleep(3000);
+			UpgradeCustomerPageActions.upgradePAYMPhoneSelect(handset);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			Assert.fail("Unable to choose upgrade paym Device");
+
+		}
 	}
-	
+
 }

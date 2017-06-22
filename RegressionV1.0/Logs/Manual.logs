@@ -1,0 +1,16 @@
+22/06/2017 18:42:33 devpinoyLogger Called openBrowser
+22/06/2017 18:42:33 devpinoyLogger The Relative path of the user.dirC:\Users\vMalalu1\git\regression
+22/06/2017 18:42:33 devpinoyLogger The Env prop path is C:\Users\vMalalu1\git\regression\src\test\java\Properties\AppConfig.properties
+22/06/2017 18:42:33 devpinoyLogger The Browser type read from EnvProp file is chrome
+22/06/2017 18:42:33 devpinoyLogger The current url is https://www.ref.o2.co.uk/
+22/06/2017 18:42:45 devpinoyLogger Invoked browser
+22/06/2017 18:43:15 devpinoyLogger Invoked URL
+22/06/2017 18:43:16 devpinoyLogger Deleted all Cookies
+22/06/2017 18:43:16 devpinoyLogger Maxismised window
+22/06/2017 18:43:16 devpinoyLogger We are in the Shop Home page
+22/06/2017 18:43:16 devpinoyLogger The Page title is O2 | Mobile Phones, Mobile Broadband and Sim Only Deals on O2
+22/06/2017 18:43:16 devpinoyLogger Performing PAYM Phones landing page navigations
+22/06/2017 18:43:16 devpinoyLogger Moving Mouse on the Shop Tab
+22/06/2017 18:43:17 devpinoyLogger Moving Mouse on the Phones dropdown
+22/06/2017 18:43:55 devpinoyLogger Moving Mouse on the Paymonthly link
+22/06/2017 18:43:59 devpinoyLogger Popup has appeared on the screen, Hence trying to close the survey

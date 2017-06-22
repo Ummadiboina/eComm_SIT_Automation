@@ -12,5 +12,5 @@ Feature: Surface voucher code test case  wrong voucher code
     And verify that error message is thrown
 
     Examples: 
-      | handset  | Firstname | Surname | Username     | voucher           |
-      | GalaxyS8 | TEST      | ACCEPTA | TEST ACCEPTA | TOPAZVOUCHER0%OFF |
+      | handset  | Firstname | Surname | Username     | voucher      |
+      | GalaxyS8 | TEST      | ACCEPTA | TEST ACCEPTA | TOPAZV2UCHER |

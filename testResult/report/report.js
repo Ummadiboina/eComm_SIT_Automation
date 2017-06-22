@@ -16,7 +16,7 @@ formatter.scenarioOutline({
   "tags": [
     {
       "line": 3,
-      "name": "@JuneRelease"
+      "name": "@JuneReleaseTest1"
     }
   ]
 });
@@ -126,7 +126,7 @@ formatter.examples({
   "keyword": "Examples"
 });
 formatter.before({
-  "duration": 66446513788,
+  "duration": 42886739515,
   "status": "passed"
 });
 formatter.scenario({
@@ -139,7 +139,7 @@ formatter.scenario({
   "tags": [
     {
       "line": 3,
-      "name": "@JuneRelease"
+      "name": "@JuneReleaseTest1"
     }
   ]
 });
@@ -227,15 +227,15 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.i_am_an_CFA_user_and_Lands_on_shop_page()"
 });
 formatter.result({
-  "duration": 686443059,
+  "duration": 237557291,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.navigate_to_PAYM_Phones_page()"
 });
 formatter.result({
-  "duration": 15780056280,
-  "error_message": "java.lang.NullPointerException\r\n\tat sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)\r\n\tat sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)\r\n\tat sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)\r\n\tat java.lang.reflect.Method.invoke(Method.java:498)\r\n\tat org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)\r\n\tat com.sun.proxy.$Proxy18.getLocation(Unknown Source)\r\n\tat GlobalActions.MouseHoverAction.PayMPhonesLandingPage(MouseHoverAction.java:40)\r\n\tat steps.E2EOrderPlaced_Steps.navigate_to_PAYM_Phones_page(E2EOrderPlaced_Steps.java:108)\r\n\tat ✽.And navigate to PAYM Phones page(CFA_Refresh_Order_Basket_Review_Page_and_Confirmation_Page.feature:6)\r\n",
+  "duration": 59911905540,
+  "error_message": "junit.framework.AssertionFailedError: unable to do mousehover to phones\r\n\tat junit.framework.Assert.fail(Assert.java:47)\r\n\tat steps.E2EOrderPlaced_Steps.navigate_to_PAYM_Phones_page(E2EOrderPlaced_Steps.java:121)\r\n\tat ✽.And navigate to PAYM Phones page(CFA_Refresh_Order_Basket_Review_Page_and_Confirmation_Page.feature:6)\r\n",
   "status": "failed"
 });
 formatter.match({
@@ -337,4 +337,9 @@ formatter.match({
 });
 formatter.result({
   "status": "skipped"
+});
+formatter.after({
+  "duration": 5382220401,
+  "status": "passed"
+});
 });

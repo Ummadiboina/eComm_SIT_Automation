@@ -358,11 +358,12 @@ public class BasketPageActions extends Environment
 		}
 	}
 
-	public static void WrongPromoCode(String voucher) {
+	public static void ValidatePromoCode() 
+	{
 		log.debug("Clicking promocode");
-		pageobjects.BasketPage.GotaPromoCode.click();
+/*		pageobjects.BasketPage.GotaPromoCode.click();
 		pageobjects.BasketPage.voucherCode.sendKeys(voucher);
-		pageobjects.BasketPage.applyVoucher.click();
+		pageobjects.BasketPage.applyVoucher.click();*/
 		String Ele1= pageobjects.BasketPage.VoucherMessage.getText();
 		if (Ele1.contains("This promo code is invalid"))
 		{

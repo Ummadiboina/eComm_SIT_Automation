@@ -23,8 +23,7 @@ public class DeliveryPageActions {
 	public List<HashMap<String, String>> datamap;
 	static Logger log = Logger.getLogger("devpinoyLogger");
 
-
-	  		
+  		
 
 		public static void SetDelivery() throws InterruptedException
 		{
@@ -62,9 +61,9 @@ public class DeliveryPageActions {
 			DeliveryPage.Contact_Number.sendKeys("07829483426");
 			DeliveryPage.Password.sendKeys("NTTDATA123");
 			DeliveryPage.security_answer.sendKeys("SitTester");
-			DeliveryPage.date.sendKeys("01");
-			DeliveryPage.Month.sendKeys("08");
-			DeliveryPage.year.sendKeys("1991");
+			DeliveryPage.date.sendKeys("25");
+			DeliveryPage.Month.sendKeys("01");
+			DeliveryPage.year.sendKeys("1957");
 			log.debug("Entered all the other relavant details");
 
 		}
