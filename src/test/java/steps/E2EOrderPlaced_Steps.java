@@ -1112,13 +1112,7 @@ public class E2EOrderPlaced_Steps {
 	 ****************************************/
 
 	/*
-	 * #########################################################################
-	 * #########
-	 */
-	/* ######## Launch Agent shop ######### */
-	/*
-	 * #########################################################################
-	 * #########
+
 	 */
 	@Given("^I login to Agent shop$")
 	public void LoginAgentShop() throws Throwable {
@@ -1140,6 +1134,63 @@ public class E2EOrderPlaced_Steps {
 		}
 
 	}
+
+@Given("^select a valid Handset and Tariff combination$")
+public void select_a_valid_Handset_and_Tariff_combination() throws Throwable {
+
+}
+
+@Given("^Select valid Random from extras tab$")
+public void select_valid_Random_from_extras_tab() throws Throwable {
+}
+
+@Then("^perform the credit checks by capturing cards$")
+public void perform_the_credit_checks_by_capturing_cards() throws Throwable {
+}
+
+@Then("^Register customer with valid email address and password$")
+public void register_customer_with_valid_email_address_and_password() throws Throwable {
+
+}
+
+@Then("^accept the O(\\d+) Refresh deal summary$")
+public void accept_the_O_Refresh_deal_summary(int arg1) throws Throwable {
+    // Write code here that turns the phrase above into concrete actions
+}
+
+@Then("^check if CCA link is generated and click on the Generate CCA link$")
+public void check_if_CCA_link_is_generated_and_click_on_the_Generate_CCA_link() throws Throwable {
+    // Write code here that turns the phrase above into concrete actions
+}
+
+@When("^user select CCA link$")
+public void user_select_CCA_link() throws Throwable {
+    // Write code here that turns the phrase above into concrete actions
+}
+
+@Then("^user should land on signin page$")
+public void user_should_land_on_signin_page() throws Throwable {
+    // Write code here that turns the phrase above into concrete actions
+
+}
+
+@When("^user enters valid user credentials$")
+public void user_enters_valid_user_credentials() throws Throwable {
+    // Write code here that turns the phrase above into concrete actions
+
+}
+
+@Then("^user should be logged in and user should be directly taken to the Otac Page$")
+public void user_should_be_logged_in_and_user_should_be_directly_taken_to_the_Otac_Page() throws Throwable {
+    // Write code here that turns the phrase above into concrete actions
+
+}
+
+@Then("^continue in Delivery page and Click on the 'Continue'$")
+public void continue_in_Delivery_page_and_Click_on_the_Continue() throws Throwable {
+    // Write code here that turns the phrase above into concrete actions
+
+}
 
 	/*
 	 * #########################################################################
@@ -1487,6 +1538,10 @@ public class E2EOrderPlaced_Steps {
 		}
 	}
 
+/////////***********************************/////////////
+
+
+/////////***********************************/////////////
 	/*
 	 * #########################################################################
 	 * #########

@@ -1,6 +1,5 @@
-Feature: Successful completion of a PAY M dongle upgrade Journey by selecting a dongle
+Feature: Successful completion of a PAY M Acquistion Journey
 
-  #launch hooks and get browser
   @AgentsRegression
   Scenario Outline: Successful completion of a PAY M dongle upgrade Journey by selecting a dongle
     Given I login to Agent shop
