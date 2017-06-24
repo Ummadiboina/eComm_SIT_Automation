@@ -82,4 +82,7 @@ public class Agent_DealBuilderPage {
 		
 		@FindBy(how=How.XPATH,using="//*[@id='prepayDeviceTable']/tbody/tr/td[4]")
 		public static WebElement Instock;
+
+		@FindBy(how=How.XPATH,using="//*[@class='priceSelection']/select")
+		public static WebElement HandsetTariffCombination;
 }

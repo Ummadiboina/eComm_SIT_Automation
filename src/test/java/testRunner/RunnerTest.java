@@ -21,7 +21,7 @@ import java.util.Map;
 @CucumberOptions(strict = true,
 		features = {"src//test//java//CompleteJuneReleaseTestCases"}, glue = {"steps"},
 
-				tags = {"@JuneReleaseTest1"}, format = {"json:testResult/cucumber.json", "pretty", "html:testResult/report"},
+				tags = {"@AgentsRegressionPAYM"}, format = {"json:testResult/cucumber.json", "pretty", "html:testResult/report"},
 				plugin = {"com.cucumber.listener.ExtentCucumberFormatter"}
 		)
 

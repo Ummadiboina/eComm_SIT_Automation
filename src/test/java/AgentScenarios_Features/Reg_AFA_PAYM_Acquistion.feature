@@ -1,7 +1,8 @@
-Feature: Successful completion of a PAY M Acquistion Journey
+Feature: Successful completion of a PAY M Acquistion journey
 
-  @AgentsRegression
-  Scenario Outline: Successful completion of a PAY M dongle upgrade Journey by selecting a dongle
+  #launch hooks and get browser
+  @AgentsRegressionPAYM
+  Scenario Outline: Successful completion of a PAY M Acquistion journey
     Given I login to Agent shop
     And performs Acquisition for New user
     And Select a valid PayM <Device>
@@ -10,12 +11,12 @@ Feature: Successful completion of a PAY M Acquistion Journey
     And Select valid <Extras> from extras tab
     And Validate all the Basket content and checkout
     Then perform all the advisory checks
-    And perform the credit checks by capturing cards
-    And Register customer with valid email address and password
+    And perform the credit checks using valid <Firstname> and <Surname> and valid <Username>
+    And Register customer with valid <Firstname> and <Surname> and other valid details in delivery page
     And Choose <DeliveryType> delivery address and delivery time
-    When Pay by card
-    Then Order confirmation message should be displayed
-
+    And Update Device Plan Link Email Address    
+    Then CCALink Should be generated
+    
     Examples: 
-      | Device              | Tariffs   | Extras | DeliveryType |
-      | S7 edge black 32 GB | 24 Months | Random | HomeDelivery |
+      | Device              | Tariffs | Extras | DeliveryType | Firstname | Surname | Username     |
+      | S7 edge black 32 GB | Random  | Random | HomeDelivery | Test      | Accepta | Test Accepta |

@@ -1,345 +1,352 @@
-$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("CFA_Refresh_Order_Basket_Review_Page_and_Confirmation_Page.feature");
+$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("Reg_AFA_PAYM_Acquistion.feature");
 formatter.feature({
   "line": 1,
-  "name": "CFA Refresh Order Basket Review Page and Confirmation Page",
+  "name": "Successful completion of a PAY M dongle upgrade Journey by selecting a dongle",
   "description": "",
-  "id": "cfa-refresh-order-basket-review-page-and-confirmation-page",
+  "id": "successful-completion-of-a-pay-m-dongle-upgrade-journey-by-selecting-a-dongle",
   "keyword": "Feature"
 });
 formatter.scenarioOutline({
-  "line": 4,
-  "name": "CFA Refresh Order Basket Review Page and Confirmation Page",
+  "comments": [
+    {
+      "line": 3,
+      "value": "#launch hooks and get browser"
+    }
+  ],
+  "line": 5,
+  "name": "Successful completion of a PAY M dongle upgrade Journey by selecting a dongle",
   "description": "",
-  "id": "cfa-refresh-order-basket-review-page-and-confirmation-page;cfa-refresh-order-basket-review-page-and-confirmation-page",
+  "id": "successful-completion-of-a-pay-m-dongle-upgrade-journey-by-selecting-a-dongle;successful-completion-of-a-pay-m-dongle-upgrade-journey-by-selecting-a-dongle",
   "type": "scenario_outline",
   "keyword": "Scenario Outline",
   "tags": [
     {
-      "line": 3,
-      "name": "@JuneReleaseTest1"
+      "line": 4,
+      "name": "@AgentsRegressionPAYM"
     }
   ]
 });
 formatter.step({
-  "line": 5,
-  "name": "I am an CFA user and Lands on shop page",
+  "line": 6,
+  "name": "I login to Agent shop",
   "keyword": "Given "
 });
 formatter.step({
-  "line": 6,
-  "name": "navigate to PAYM Phones page",
-  "keyword": "And "
-});
-formatter.step({
   "line": 7,
-  "name": "I choose PayM \u003chandset\u003e",
+  "name": "performs Acquisition for New user",
   "keyword": "And "
 });
 formatter.step({
   "line": 8,
-  "name": "Navigate to device details page",
+  "name": "Select a valid PayM \u003cDevice\u003e",
   "keyword": "And "
 });
 formatter.step({
   "line": 9,
-  "name": "Land on the \u0027Tariffs and extra\u0027 page",
+  "name": "Select valid \u003cTariffs\u003e from tariffs tab",
   "keyword": "And "
 });
 formatter.step({
   "line": 10,
-  "name": "I Land on the basket page and choose home delivery option",
+  "name": "select a valid Handset and Tariff combination",
   "keyword": "And "
 });
 formatter.step({
   "line": 11,
-  "name": "Check for order contract text in Basket Page",
+  "name": "Select valid \u003cExtras\u003e from extras tab",
   "keyword": "And "
 });
 formatter.step({
   "line": 12,
-  "name": "click on \"go to checkout\" button",
+  "name": "Validate all the Basket content and checkout",
   "keyword": "And "
 });
 formatter.step({
   "line": 13,
-  "name": "input \u003cFirstname\u003e and \u003cSurname\u003e and other valid details in Delivery page and Click on the \u0027Continue button\u0027",
-  "keyword": "And "
+  "name": "perform all the advisory checks",
+  "keyword": "Then "
 });
 formatter.step({
   "line": 14,
-  "name": "land on the payment page and input \u003cUsername\u003e and other details and click \u0027Continue on next step\u0027",
+  "name": "perform the credit checks using valid \u003cFirstname\u003e and \u003cSurname\u003e and valid \u003cUsername\u003e",
   "keyword": "And "
 });
 formatter.step({
   "line": 15,
-  "name": "Continue to Agreements page and confirm all the agreement checks",
+  "name": "Register customer with valid \u003cFirstname\u003e and \u003cSurname\u003e and other valid details in delivery page",
   "keyword": "And "
 });
 formatter.step({
   "line": 16,
-  "name": "Continue to Review page, check order contract text and review the order",
+  "name": "Choose \u003cDeliveryType\u003e delivery address and delivery time",
   "keyword": "And "
 });
 formatter.step({
   "line": 17,
-  "name": "Check order contract text in Order Confirmation page",
-  "keyword": "And "
+  "name": "Pay by card",
+  "keyword": "When "
 });
 formatter.step({
   "line": 18,
-  "name": "order confirmation is displayed",
+  "name": "Order confirmation message should be displayed",
   "keyword": "Then "
 });
 formatter.examples({
-  "comments": [
-    {
-      "line": 20,
-      "value": "#Close the browser"
-    }
-  ],
-  "line": 21,
+  "line": 20,
   "name": "",
   "description": "",
-  "id": "cfa-refresh-order-basket-review-page-and-confirmation-page;cfa-refresh-order-basket-review-page-and-confirmation-page;",
+  "id": "successful-completion-of-a-pay-m-dongle-upgrade-journey-by-selecting-a-dongle;successful-completion-of-a-pay-m-dongle-upgrade-journey-by-selecting-a-dongle;",
   "rows": [
     {
       "cells": [
-        "handset",
-        "Firstname",
-        "Surname",
-        "Username"
+        "Device",
+        "Tariffs",
+        "Extras",
+        "DeliveryType"
       ],
-      "line": 22,
-      "id": "cfa-refresh-order-basket-review-page-and-confirmation-page;cfa-refresh-order-basket-review-page-and-confirmation-page;;1"
+      "line": 21,
+      "id": "successful-completion-of-a-pay-m-dongle-upgrade-journey-by-selecting-a-dongle;successful-completion-of-a-pay-m-dongle-upgrade-journey-by-selecting-a-dongle;;1"
     },
     {
       "cells": [
-        "Iphone7",
-        "TEST",
-        "ACCEPTA",
-        "TEST ACCEPTA"
+        "S7 edge black 32 GB",
+        "Random",
+        "Random",
+        "HomeDelivery"
       ],
-      "line": 23,
-      "id": "cfa-refresh-order-basket-review-page-and-confirmation-page;cfa-refresh-order-basket-review-page-and-confirmation-page;;2"
+      "line": 22,
+      "id": "successful-completion-of-a-pay-m-dongle-upgrade-journey-by-selecting-a-dongle;successful-completion-of-a-pay-m-dongle-upgrade-journey-by-selecting-a-dongle;;2"
     }
   ],
   "keyword": "Examples"
 });
 formatter.before({
-  "duration": 42886739515,
+  "duration": 45327617834,
   "status": "passed"
 });
 formatter.scenario({
-  "line": 23,
-  "name": "CFA Refresh Order Basket Review Page and Confirmation Page",
+  "line": 22,
+  "name": "Successful completion of a PAY M dongle upgrade Journey by selecting a dongle",
   "description": "",
-  "id": "cfa-refresh-order-basket-review-page-and-confirmation-page;cfa-refresh-order-basket-review-page-and-confirmation-page;;2",
+  "id": "successful-completion-of-a-pay-m-dongle-upgrade-journey-by-selecting-a-dongle;successful-completion-of-a-pay-m-dongle-upgrade-journey-by-selecting-a-dongle;;2",
   "type": "scenario",
   "keyword": "Scenario Outline",
   "tags": [
     {
-      "line": 3,
-      "name": "@JuneReleaseTest1"
+      "line": 4,
+      "name": "@AgentsRegressionPAYM"
     }
   ]
 });
 formatter.step({
-  "line": 5,
-  "name": "I am an CFA user and Lands on shop page",
+  "line": 6,
+  "name": "I login to Agent shop",
   "keyword": "Given "
 });
 formatter.step({
-  "line": 6,
-  "name": "navigate to PAYM Phones page",
+  "line": 7,
+  "name": "performs Acquisition for New user",
   "keyword": "And "
 });
 formatter.step({
-  "line": 7,
-  "name": "I choose PayM Iphone7",
+  "line": 8,
+  "name": "Select a valid PayM S7 edge black 32 GB",
   "matchedColumns": [
     0
   ],
   "keyword": "And "
 });
 formatter.step({
-  "line": 8,
-  "name": "Navigate to device details page",
-  "keyword": "And "
-});
-formatter.step({
   "line": 9,
-  "name": "Land on the \u0027Tariffs and extra\u0027 page",
+  "name": "Select valid Random from tariffs tab",
+  "matchedColumns": [
+    1
+  ],
   "keyword": "And "
 });
 formatter.step({
   "line": 10,
-  "name": "I Land on the basket page and choose home delivery option",
+  "name": "select a valid Handset and Tariff combination",
   "keyword": "And "
 });
 formatter.step({
   "line": 11,
-  "name": "Check for order contract text in Basket Page",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 12,
-  "name": "click on \"go to checkout\" button",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 13,
-  "name": "input TEST and ACCEPTA and other valid details in Delivery page and Click on the \u0027Continue button\u0027",
+  "name": "Select valid Random from extras tab",
   "matchedColumns": [
-    1,
     2
   ],
   "keyword": "And "
 });
 formatter.step({
+  "line": 12,
+  "name": "Validate all the Basket content and checkout",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 13,
+  "name": "perform all the advisory checks",
+  "keyword": "Then "
+});
+formatter.step({
   "line": 14,
-  "name": "land on the payment page and input TEST ACCEPTA and other details and click \u0027Continue on next step\u0027",
+  "name": "perform the credit checks using valid \u003cFirstname\u003e and \u003cSurname\u003e and valid \u003cUsername\u003e",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 15,
+  "name": "Register customer with valid \u003cFirstname\u003e and \u003cSurname\u003e and other valid details in delivery page",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 16,
+  "name": "Choose HomeDelivery delivery address and delivery time",
   "matchedColumns": [
     3
   ],
   "keyword": "And "
 });
 formatter.step({
-  "line": 15,
-  "name": "Continue to Agreements page and confirm all the agreement checks",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 16,
-  "name": "Continue to Review page, check order contract text and review the order",
-  "keyword": "And "
-});
-formatter.step({
   "line": 17,
-  "name": "Check order contract text in Order Confirmation page",
-  "keyword": "And "
+  "name": "Pay by card",
+  "keyword": "When "
 });
 formatter.step({
   "line": 18,
-  "name": "order confirmation is displayed",
+  "name": "Order confirmation message should be displayed",
   "keyword": "Then "
 });
 formatter.match({
-  "location": "E2EOrderPlaced_Steps.i_am_an_CFA_user_and_Lands_on_shop_page()"
+  "location": "E2EOrderPlaced_Steps.LoginAgentShop()"
 });
 formatter.result({
-  "duration": 237557291,
+  "duration": 6754298375,
   "status": "passed"
 });
 formatter.match({
-  "location": "E2EOrderPlaced_Steps.navigate_to_PAYM_Phones_page()"
+  "location": "E2EOrderPlaced_Steps.performs_Acquisition_for_New_user()"
 });
 formatter.result({
-  "duration": 59911905540,
-  "error_message": "junit.framework.AssertionFailedError: unable to do mousehover to phones\r\n\tat junit.framework.Assert.fail(Assert.java:47)\r\n\tat steps.E2EOrderPlaced_Steps.navigate_to_PAYM_Phones_page(E2EOrderPlaced_Steps.java:121)\r\n\tat ✽.And navigate to PAYM Phones page(CFA_Refresh_Order_Basket_Review_Page_and_Confirmation_Page.feature:6)\r\n",
+  "duration": 11081792621,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "S7 edge black 32 GB",
+      "offset": 20
+    }
+  ],
+  "location": "E2EOrderPlaced_Steps.SelectValid_Device(String)"
+});
+formatter.result({
+  "duration": 15665053522,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "Random",
+      "offset": 13
+    }
+  ],
+  "location": "E2EOrderPlaced_Steps.SelectTariff(String)"
+});
+formatter.result({
+  "duration": 8489456616,
+  "status": "passed"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.select_a_valid_Handset_and_Tariff_combination()"
+});
+formatter.result({
+  "duration": 581078437,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "Random",
+      "offset": 13
+    }
+  ],
+  "location": "E2EOrderPlaced_Steps.select_valid_Random_from_extras_tab(String)"
+});
+formatter.result({
+  "duration": 6356888240,
+  "status": "passed"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.validate_all_the_Basket_content_and_checkout()"
+});
+formatter.result({
+  "duration": 15365313789,
+  "status": "passed"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.advisory_checks()"
+});
+formatter.result({
+  "duration": 9223189325,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "\u003cFirstname\u003e",
+      "offset": 38
+    },
+    {
+      "val": "\u003cSurname\u003e",
+      "offset": 54
+    },
+    {
+      "val": "\u003cUsername\u003e",
+      "offset": 74
+    }
+  ],
+  "location": "E2EOrderPlaced_Steps.CreditCheck(String,String,String)"
+});
+formatter.result({
+  "duration": 13424470926,
+  "error_message": "junit.framework.AssertionFailedError: Unable to perform credit checks , please see the failure screenshot\r\n\tat junit.framework.Assert.fail(Assert.java:47)\r\n\tat steps.E2EOrderPlaced_Steps.CreditCheck(E2EOrderPlaced_Steps.java:1461)\r\n\tat ✽.And perform the credit checks using valid \u003cFirstname\u003e and \u003cSurname\u003e and valid \u003cUsername\u003e(Reg_AFA_PAYM_Acquistion.feature:14)\r\n",
   "status": "failed"
 });
 formatter.match({
   "arguments": [
     {
-      "val": "Iphone7",
-      "offset": 14
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.Choose_PAYM_Handset(String)"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.Navigate_to_device_details_page()"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.land_on_the_Tariffs_and_extra_page()"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.i_Land_on_the_basket_page_and_choose_home_delivery_option()"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.check_for_order_contract_text_in_basket_page()"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "go to checkout",
-      "offset": 10
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.CheckoutFromBasket(String)"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "TEST",
-      "offset": 6
+      "val": "\u003cFirstname\u003e",
+      "offset": 29
     },
     {
-      "val": "ACCEPTA",
-      "offset": 15
+      "val": "\u003cSurname\u003e",
+      "offset": 45
     }
   ],
-  "location": "E2EOrderPlaced_Steps.DeliveryPage_Inputs_homeDelivery(String,String)"
+  "location": "E2EOrderPlaced_Steps.register_customer(String,String)"
 });
 formatter.result({
   "status": "skipped"
 });
 formatter.match({
-  "arguments": [
-    {
-      "val": "TEST ACCEPTA",
-      "offset": 35
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.CreditCheckPaymentPage_HomeDelivery(String)"
+  "location": "E2EOrderPlaced_Steps.HomeDelivery_Address()"
 });
 formatter.result({
   "status": "skipped"
 });
 formatter.match({
-  "location": "E2EOrderPlaced_Steps.AgreementsPageConfirmation()"
+  "location": "E2EOrderPlaced_Steps.pay_by_card()"
 });
 formatter.result({
   "status": "skipped"
 });
 formatter.match({
-  "location": "E2EOrderPlaced_Steps.ReviewPageOrderContractTextConfirmation()"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.checkOrderContractTextOC()"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.OrderConfirmationPage()"
+  "location": "E2EOrderPlaced_Steps.order_confirmation_message_should_be_displayed()"
 });
 formatter.result({
   "status": "skipped"
 });
 formatter.after({
-  "duration": 5382220401,
+  "duration": 2603794961,
   "status": "passed"
 });
 });

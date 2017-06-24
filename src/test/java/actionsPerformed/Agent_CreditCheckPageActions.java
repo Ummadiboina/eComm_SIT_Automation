@@ -9,6 +9,7 @@ import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
 import org.apache.log4j.Logger;
+import org.junit.Assert;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Reporter;
 
@@ -47,12 +48,17 @@ public class Agent_CreditCheckPageActions extends Environment{
 				log.debug("Entered House Postcode  as SL1 1EL");
 
 				Thread.sleep(2000);
-				pageobjects.Agent_CreditCheckDetailsPage.FindAddress.click();
-				Thread.sleep(2000);
-				log.debug("Clicked on the Find address button");
-				
-				pageobjects.Agent_CreditCheckDetailsPage.Selectedaddress.click();
-				log.debug("Selected an address");
+				try {
+					driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+					pageobjects.Agent_CreditCheckDetailsPage.FindAddress.click();
+					log.debug("Clicked on the Find address button");
+					pageobjects.Agent_CreditCheckDetailsPage.Selectedaddress.click();
+					log.debug("Selected an address");
+				} catch (Exception e) {
+					// TODO Auto-generated catch block
+					Assert.fail("Unable to select Post code address");				
+				}
+							
 
 				Agent_CreditCheckDetailsPage.YearsatAddress.sendKeys("09");
 				log.debug("Entered Number of Years at address");

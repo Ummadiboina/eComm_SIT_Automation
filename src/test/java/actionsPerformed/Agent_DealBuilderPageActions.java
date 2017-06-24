@@ -57,88 +57,68 @@ public static void SelectPAYMDevice(String Device) throws InterruptedException
 	}
 
 
-public static void SelectTariff(String elementName) 
+public static void SelectTariff(String Tariff) throws InterruptedException 
 {	
-	/*
-	Reporter.log("Selected the dropdown Mrs");
 	
-	//Selecting a Tariff
+	
 	Agent_DealBuilderPage.TariffsTab.click();
-	System.out.println("Clicked on Tariff Tab");
-	log.debug("Clicked on Tariff Tab");
-	
-	
+	Thread.sleep(5000);
 	if(Tariff.contains("Random"))
 	{
-		Agent_DealBuilderPage.SearchTextPayMTariffBox.sendKeys("Standard / Phone");
+		//Agent_DealBuilderPage.SearchTextBox_Tariff.sendKeys("Standard");
 		Agent_DealBuilderPage.SelectingFirstAvailableTariff.click();
-		Thread.sleep(5000);
+		Thread.sleep(3000);
 		System.out.println("Selected Random Tariff ");
 		log.debug("Selected Random Tariff ");
 
 	}
-	
-	if(Tariff.contains("RandomSimO"))
-	{
-
-		Agent_DealBuilderPage.SearchTextPayMTariffBox.sendKeys("- / Simo");
-		Agent_DealBuilderPage.SelectingFirstAvailableTariff.click();
-		Thread.sleep(5000);
-		System.out.println("Selected Random SimO Tariff ");
-		log.debug("Selected Random SimO Tariff ");
-
-	}
-	*/
-	
-	
-		if(elementName.contains("Random"))
+		if(Tariff.contains("Standard"))
 		{
-
-			Agent_DealBuilderPage.SearchTextBox_Tariff.sendKeys("Standard / Phone");
+			Agent_DealBuilderPage.SearchTextBox_Tariff.sendKeys("Standard");
 			Agent_DealBuilderPage.SelectingFirstAvailableTariff.click();
+			Thread.sleep(3000);
 			System.out.println("Selected Random Tariff ");
 			log.debug("Selected Random Tariff ");
 
 		}
-		if(elementName.contains("SimO"))
+		if(Tariff.contains("SimO"))
 		{
 			Agent_DealBuilderPage.SearchTextBox_Tariff.sendKeys("- / Simo");
 			Agent_DealBuilderPage.SelectingFirstAvailableTariff.click();
 			System.out.println("Selected Random SimO Tariff ");
 			log.debug("Selected Random SimO Tariff ");
-
 		}
 			
 }
 
-
-
-public static void SelectExtras() throws InterruptedException
+public static void HandsetTariffCombination() throws InterruptedException
 {
-	
-	
-		
+	Select dropdown = new Select(pageobjects.Agent_DealBuilderPage.HandsetTariffCombination);
+	dropdown.selectByIndex(2);
+	System.out.println("Selecting combination of handset and talkplan");
+	System.out.println("Selected combination is"+pageobjects.Agent_DealBuilderPage.HandsetTariffCombination.getText());
+}
+
+public static void SelectExtras(String Extras) throws InterruptedException
+{
+			
 	//Selecting an Extra
 	Agent_DealBuilderPage.ExtrasTab.click();
 	System.out.println("Clicked on Extras Tab");
 	log.debug("Clicked on Extras Tab");
 	Thread.sleep(3000);
-	Agent_DealBuilderPage.SelectingAvailableDataAllowance.click();
-	Thread.sleep(3000);
 	
-	
-/*	
 	if(Extras.contains("Random"))
 	{
 
 		//pageobjects.Agent_DealBuilderPage.prepayDeviceTableFilter.click();
 		Agent_DealBuilderPage.SelectingAvailableDataAllowance.click();
-		Thread.sleep(5000);
+		Thread.sleep(3000);
 		System.out.println("Selected Random extra ");
 		log.debug("Selected Random extra ");
 
 	}
-	*/
+	
 
 }
 		

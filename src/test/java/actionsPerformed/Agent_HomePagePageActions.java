@@ -8,6 +8,7 @@ import pageobjects.DeliveryPage;
 import static org.testng.Assert.assertEquals;
 
 import org.apache.log4j.Logger;
+import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Reporter;
 
@@ -47,12 +48,15 @@ public class Agent_HomePagePageActions extends Environment{
 			Agent_HomePage.MPN.sendKeys(msisdn);
 			log.debug("Entering Valid MPN");
 			System.out.println("Entering Valid MPN");
-			Reporter.log("Selected the dropdown Mrs");
 			Thread.sleep(3000);		
 			Agent_HomePage.Search.click();
 			log.debug("Clicking on Search button");
 			System.out.println("Clicking on Search button");
 			Thread.sleep(3000);
+			if(driver.findElement(By.id("notfound")).isDisplayed())
+					{
+				Assert.fail("MPN entered is wrong, please check back your test case");
+					}
 			try
 			{
 				//Assert.assertEquals("Upgrade", Agent_HomePage.results.getText().contains("Upgrade"));

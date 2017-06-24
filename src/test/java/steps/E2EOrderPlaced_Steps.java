@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
@@ -1137,15 +1138,33 @@ public class E2EOrderPlaced_Steps {
 
 @Given("^select a valid Handset and Tariff combination$")
 public void select_a_valid_Handset_and_Tariff_combination() throws Throwable {
-
+	try {
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		PageFactory.initElements(driver, Agent_DealBuilderPage.class);
+		Agent_DealBuilderPageActions.HandsetTariffCombination();
+	} catch (Exception e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+		Assert.fail("Unable to select valid tariff and handset combination");
+	}
 }
 
-@Given("^Select valid Random from extras tab$")
-public void select_valid_Random_from_extras_tab() throws Throwable {
+@Given("^Select valid ([^\"]*) from extras tab$")
+public void select_valid_Random_from_extras_tab(String Extras) throws Throwable 
+{
+	try {
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		PageFactory.initElements(driver, Agent_DealBuilderPage.class);
+		Agent_DealBuilderPageActions.SelectExtras(Extras);
+	} catch (Exception e) {
+		// TODO Auto-generated catch block
+		Assert.fail("Unable to select extras");
+	}
 }
 
-@Then("^perform the credit checks by capturing cards$")
-public void perform_the_credit_checks_by_capturing_cards() throws Throwable {
+@Then("^Update Device Plan Link Email Address$")
+public void updatedeviceplan() throws Throwable {
+	
 }
 
 @Then("^Register customer with valid email address and password$")
@@ -1153,15 +1172,13 @@ public void register_customer_with_valid_email_address_and_password() throws Thr
 
 }
 
-@Then("^accept the O(\\d+) Refresh deal summary$")
-public void accept_the_O_Refresh_deal_summary(int arg1) throws Throwable {
-    // Write code here that turns the phrase above into concrete actions
+@Then("^CCALink Should be generated$")
+public void ccaLink() throws Throwable {
+	driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+	driver.findElement(By.id("generateCcaForm")).click();
+	System.out.println("Generated CCA link");
 }
 
-@Then("^check if CCA link is generated and click on the Generate CCA link$")
-public void check_if_CCA_link_is_generated_and_click_on_the_Generate_CCA_link() throws Throwable {
-    // Write code here that turns the phrase above into concrete actions
-}
 
 @When("^user select CCA link$")
 public void user_select_CCA_link() throws Throwable {
@@ -1222,7 +1239,7 @@ public void continue_in_Delivery_page_and_Click_on_the_Continue() throws Throwab
 	@Given("^performs Acquisition for New user$")
 	public void performs_Acquisition_for_New_user() throws Throwable {
 		try {
-			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
 			PageFactory.initElements(driver, Agent_HomePage.class);
 			Agent_HomePagePageActions.NewUser();
 		} catch (Exception e) {
@@ -1248,7 +1265,7 @@ public void continue_in_Delivery_page_and_Click_on_the_Continue() throws Throwab
 	@Given("^Select a valid PayM ([^\"]*)")
 	public void SelectValid_Device(String Device) throws Throwable {
 		try {
-			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
 			PageFactory.initElements(driver, Agent_DealBuilderPage.class);
 			Agent_DealBuilderPageActions.SelectPAYMDevice(Device);
 		} catch (Exception e) {
@@ -1348,9 +1365,10 @@ public void continue_in_Delivery_page_and_Click_on_the_Continue() throws Throwab
 	@Given("^Select valid ([^\"]*) from tariffs tab$")
 	public void SelectTariff(String Tariff) throws Throwable {
 		try {
-			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
 			PageFactory.initElements(driver, Agent_DealBuilderPage.class);
 			Agent_DealBuilderPageActions.SelectTariff(Tariff);
+			//System.out.println("Selecting a valid tariff");
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			System.out.println(
@@ -1380,7 +1398,7 @@ public void continue_in_Delivery_page_and_Click_on_the_Continue() throws Throwab
 			Agent_DealBuilderPageActions.ValdiateBasket();
 			Thread.sleep(2000);
 			Agent_DealBuilderPageActions.checkout();
-			Thread.sleep(2000);
+			Thread.sleep(7000);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			System.out.println(
@@ -1403,9 +1421,10 @@ public void continue_in_Delivery_page_and_Click_on_the_Continue() throws Throwab
 	@Then("^perform all the advisory checks$")
 	public void advisory_checks() throws Throwable {
 		try {
-			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
 			PageFactory.initElements(driver, Agent_AdvisoryPage.class);
 			Agent_AdvisoryChecksActions.AgreeAdvsioryCheck();
+			Thread.sleep(6000);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			System.out.println(
