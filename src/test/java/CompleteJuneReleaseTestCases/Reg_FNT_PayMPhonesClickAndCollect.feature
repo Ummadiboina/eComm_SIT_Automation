@@ -1,4 +1,4 @@
-Feature: FNT CFA PayM Phones Click and collect scenario with E2E journey
+Feature: Reg_FNT_PayMPhonesClickAndCollect
 
   @FNTRegression
   Scenario Outline: FNT CFA PayM Phones Click and collect scenario with E2E journey

@@ -40,48 +40,42 @@ public class Agent_HomePagePageActions extends Environment{
 	}
 	
 	//This method will take care of Entering msisdn as per cucumber file and also for logging in 
-	public static void FindUser(String msisdn) throws InterruptedException
-	{
-		
-		
-			driver.manage().deleteAllCookies();
-			Agent_HomePage.MPN.sendKeys(msisdn);
-			log.debug("Entering Valid MPN");
-			System.out.println("Entering Valid MPN");
-			Thread.sleep(3000);		
-			Agent_HomePage.Search.click();
-			log.debug("Clicking on Search button");
-			System.out.println("Clicking on Search button");
+	public static void FindUser(String msisdn) throws InterruptedException {
+
+		driver.manage().deleteAllCookies();
+		Agent_HomePage.MPN.sendKeys(msisdn);
+		log.debug("Entering Valid MPN");
+		System.out.println("Entering Valid MPN");
+		Thread.sleep(3000);
+		Agent_HomePage.Search.click();
+		log.debug("Clicking on Search button");
+		System.out.println("Clicking on Search button");
+		Thread.sleep(3000);
+		if (Agent_HomePage.notfound.isDisplayed()) {
+			System.out.println("MPN entered is wrong, please check back your test case");
+			Assert.fail("MPN entered is wrong, please check back your test case");
+		}
+
+		else if (Agent_HomePage.UpgradeLink.isDisplayed()) {
+			System.out.println("Verifying if Upgrade link is enabled");
+			Agent_HomePage.UpgradeLink.click();
+			log.debug("Clicking on upgrade link");
+			System.out.println("Clicking on upgrade link");
 			Thread.sleep(3000);
-			if(driver.findElement(By.id("notfound")).isDisplayed())
-					{
-				Assert.fail("MPN entered is wrong, please check back your test case");
-					}
-			try
-			{
-				//Assert.assertEquals("Upgrade", Agent_HomePage.results.getText().contains("Upgrade"));
-				Agent_HomePage.UpgradeLink.click();
-				log.debug("Clicking on upgrade link");
-				System.out.println("Clicking on upgrade link");
-				Thread.sleep(3000);	
-			}
-			catch (Exception e)
-			{
-				Assert.fail("There is no Upgrade link available in page");
-				System.out.println("The current message is "+Agent_HomePage.notfound.getText());
-				
-			}
-			if(Agent_HomePage.emptyDealButton.isEnabled())
-			{
-				System.out.println("The Empty Deal button is enabled hence Emptying the basket");		
+			if (Agent_HomePage.emptyDealButton.isEnabled()) {
+				System.out.println("The Empty Deal button is enabled hence Emptying the basket");
 				Agent_HomePage.emptyDealButton.click();
 				log.debug("Clicking on emptyDealButton button");
 
+			} else {
+				System.out.println("The Empty Deal button is not present hence it should be alright");
 			}
-			else
-			{
-				System.out.println("The Empty Deal button is not present hence it should be alright");		
-			}
+
+		} else {
+			Assert.fail("There is no Upgrade link available in page");
+			System.out.println("The current message is " + Agent_HomePage.notfound.getText());
+
+		}
 
 	}
 	

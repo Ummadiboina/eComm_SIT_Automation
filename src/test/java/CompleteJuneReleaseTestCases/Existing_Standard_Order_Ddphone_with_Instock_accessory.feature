@@ -1,4 +1,4 @@
-Feature: Existing customer Standard Order Delayed delivery phone with Instock accessory Basket Review and Confirmation Page 
+Feature: Existing_Standard_Order_Ddphone_with_Instock_accessory 
 
 @JuneRelease 
 Scenario Outline: 

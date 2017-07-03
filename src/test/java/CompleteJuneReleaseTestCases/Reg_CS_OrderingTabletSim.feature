@@ -1,4 +1,4 @@
-Feature: Tablets SimO Only E2E validation
+Feature: Reg_CS_OrderingTabletSim
 
   @RegressionTablet
   Scenario Outline: Tablet SimO Only PAYG E2E validation

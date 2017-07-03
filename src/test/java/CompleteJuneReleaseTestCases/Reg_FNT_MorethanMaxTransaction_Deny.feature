@@ -1,4 +1,4 @@
-Feature: FNT CFA PayM Phones Click and collect scenario for More than Max Transaction
+Feature: Reg_FNT_MorethanMaxTransaction_Deny
 
   @FNTRegression
   Scenario Outline: FNT CFA PayM Phones Click and collect scenario for More than Max Transaction
@@ -14,5 +14,5 @@ Feature: FNT CFA PayM Phones Click and collect scenario for More than Max Transa
     Then Order Decline page should be displayed
 
     Examples: 
-      | handset     | Firstname | Surname | Username  |
-      | Iphone7Plus | TEST      | NINE    | TEST NINE |
+      | handset  | Firstname | Surname | Username  |
+      | GalaxyS8 | TEST      | NINE    | TEST NINE |

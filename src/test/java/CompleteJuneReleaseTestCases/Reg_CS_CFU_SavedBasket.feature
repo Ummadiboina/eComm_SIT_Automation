@@ -1,4 +1,5 @@
-Feature: CFU Saved Basket Feature Validation - This feature is not automated due to presence of Captcha
+Feature: Reg_CS_CFU_SavedBasket
+#CFU Saved Basket Feature Validation - This feature is not automated due to presence of Captcha
 
   # @smokeTesthomedelivery
   #Scenario Outline: CFU Saved Basket Feature Validation

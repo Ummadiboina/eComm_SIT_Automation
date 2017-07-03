@@ -25,7 +25,8 @@ public class Agent_HomePage {
 		@FindBy(how=How.XPATH,using="//h2")
 		public static WebElement sectionHeading;
 		
-		@FindBy(how=How.XPATH,using="//*[@class='upgradeLink']/a")
+		//@FindBy(how=How.XPATH,using="//*[@class='upgradeLink']/a")
+		@FindBy(how=How.LINK_TEXT,using="Upgrade")
 		public static WebElement UpgradeLink;		
 		
 		@FindBy(how=How.ID, using = "emptyDealButton")

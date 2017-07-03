@@ -1,4 +1,4 @@
-Feature: Volte PayM Phones Click and collect scenario with E2E journey Click and collect
+Feature: Reg_VOLTE_PayMPhonesClickAndCollect
 
   @Volte_Regression
   Scenario Outline: Volte PayM Phones Click and collect scenario with E2E journey Click and collect

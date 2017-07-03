@@ -1,4 +1,4 @@
-Feature: FNT CFA PayM phones Straight Order Declined
+Feature: Reg_FNT_PayMPhonesOrderStraightDecline_ClickandCollect
 
   @FNTRegression
   Scenario Outline: FNT CFA PayM phones Straight Order Declined

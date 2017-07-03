@@ -1,4 +1,4 @@
-Feature: CFA Standard Order Basket Review Page and Confirmation Page
+Feature: CFA_Standard_Order_Basket_Review_Page_and_Confirmation_Page
 
   @JuneRelease
   Scenario Outline: CFA Standard Order Basket Review Page and Confirmation Page
@@ -20,4 +20,4 @@ Feature: CFA Standard Order Basket Review Page and Confirmation Page
     #Close the browser
     Examples: 
       | handset  | Firstname | Surname | Username     |
-      | Iphone7 | TEST      | ACCEPTA | TEST ACCEPTA |
+      | GalaxyS8 | TEST      | ACCEPTA | TEST ACCEPTA |

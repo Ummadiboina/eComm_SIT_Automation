@@ -1,7 +1,7 @@
-Feature: Surface voucher code test case  wrong voucher code
+Feature: SurfaceVouchercodes_testcase_1
 
   @JuneRelease
-  Scenario Outline: CFA PayM Phones Home delivery E2E journey with Accessory
+  Scenario Outline: CFA PayM Phones Home delivery E2E journey with Accessory (Surface voucher code test case wrong voucher code)
     Given I am an CFA user and Lands on shop page
     And navigate to PAYM Phones page
     And I choose PayM <handset>

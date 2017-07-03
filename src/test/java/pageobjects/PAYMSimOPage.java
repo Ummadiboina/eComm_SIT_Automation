@@ -26,13 +26,16 @@ public class PAYMSimOPage {
 	/*@FindBy(how=How.XPATH,using=("//div[@class='tariff P12M  promoted-tariff  ']/div[8]"))
 	public static WebElement BuyNowPromotedTariff;*/
 	
-	@FindBy(how=How.XPATH,using=("//div[@name='P12M']/div[8]/div"))
+	//@FindBy(how=How.XPATH,using=("//div[@name='P12M']/div[8]/div"))
+	@FindBy(how=How.XPATH,using=("//*[@id='42621b54-0f2e-4866-9897-1e7b6c3f8d8a']/div[9]/div"))
 	public static WebElement BuyNowPromotedTariff;
 	
-	@FindBy(how=How.XPATH,using=("(//button[@id='callToAction'])[10]"))
+	//@FindBy(how=How.XPATH,using=("(//button[@id='callToAction'])[10]"))
+	@FindBy(how=How.XPATH,using=("//*[@id='b94d8ec0-bc4e-4a8a-85c9-4c8587de11c9']/div[8]/div"))
 	public static WebElement BuyNowRandomTariff12Months;
 	
-	@FindBy(how=How.XPATH,using=("(//button[@id='callToAction'])[1]"))
+	//@FindBy(how=How.XPATH,using=("(//button[@id='callToAction'])[1]"))
+	@FindBy(how=How.XPATH,using=("//*[@id='e1292536-6b96-4c88-ba56-17a694c2140b']/div[5]/div"))
 	public static WebElement BuyNowRandomTariff30Months;
 	
 	

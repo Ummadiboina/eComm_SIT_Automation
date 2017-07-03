@@ -1,4 +1,4 @@
-Feature: FTQ-Ecomm-11478-CFAMultipleFitnesTrackers-and-Accessories
+Feature: FTQ-Ecomm-11478-CFA_FitnessTrackerandAccessoryGroup
 
   @eComm11478_CFA_MultipleAccessoriesFitnessTrackers
   	Scenario Outline: CFA Multiple Accessories and Fitness Trackers Smarwatches of Same type/Model

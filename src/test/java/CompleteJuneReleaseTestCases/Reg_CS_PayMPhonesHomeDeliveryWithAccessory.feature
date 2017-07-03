@@ -1,4 +1,4 @@
-Feature: CFA PayM Phones Home delivery E2E journey with Accessory 
+Feature: Reg_CS_PayMPhonesHomeDeliveryWithAccessory 
 
 @1 
 Scenario Outline: CFA PayM Phones Home delivery E2E journey with Accessory 

@@ -15,7 +15,8 @@ public class ReviewPage {
 	  public static WebElement PayNow;
 	  
 
-	  @FindBy(how=How.ID,using="//div[@id='delivery-details-section']/div/p[@id='contract-message']") 
+	// @FindBy(how=How.ID,using="//div[@id='delivery-details-section']/div[3]/p[@id='contract-message']") 
+	  @FindBy(how=How.XPATH,using="//*[@id='contract-message']")
 	  public static WebElement OrderContractMessageRP; 
 	  
 	  @FindBy(how=How.ID,using="//*[@id='stock-extended-message-single']") 

@@ -1,4 +1,4 @@
-Feature: CFA PayM Phones Home delivery E2E journey without accessory
+Feature: Reg_CS_PayMPhonesHomeDeliveryWithoutAccessory
 
   @RegressionPayMCFA
   Scenario Outline: CFA PayM Phones Home delivery E2E journey without accessory

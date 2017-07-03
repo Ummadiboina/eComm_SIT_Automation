@@ -1,4 +1,4 @@
-Feature: Upgrade _not eligible customers
+Feature: UpgradeUpsellPromoModule_testcase_1
 
   # @smokeTesthomedelivery
   #Scenario Outline: CFU Saved Basket Feature Validation

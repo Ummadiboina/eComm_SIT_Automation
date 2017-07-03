@@ -41,30 +41,25 @@ public class OrderConfirmationPageActions extends Environment {
 	   }
 	  
 	
-	  public static void MessageDisplayed() 
-	  {
-		  System.out.println("This is order confirmation page and the message in this page is as below......");
-		  log.info("This is order confirmation/information page and the message in this page is as above......");
+	public static void MessageDisplayed() {
+		System.out.println("This is order confirmation page and the message in this page is as below......");
+		log.info("This is order confirmation/information page and the message in this page is as above......");
 
-		  try{
-		  List<WebElement> outercontainer = driver.findElements(By.xpath("//*[@id='order-number']"));
-		  log.debug("Trying to find the Element for order number using element identifier");
-
+		try {
+			List<WebElement> outercontainer = driver.findElements(By.xpath("//*[@id='order-number']"));
+			log.debug("Trying to find the Element for order number using element identifier");
 
 			List<WebElement> DataContainer = outercontainer.get(0).findElements(By.xpath("//*[@id='order-number']"));
-				        
-				      
-				        for (int i=0; i<=DataContainer.size();i++)
-				        {
-				        			            
-				        	System.out.println(DataContainer.get(i).getText());		
-				  		  log.info(DataContainer.get(i).getText());
-				        }
-		  }
-			catch (IndexOutOfBoundsException e) {
-				
+
+			for (int i = 0; i <= DataContainer.size(); i++) {
+
+				System.out.println(DataContainer.get(i).getText());
+				log.info(DataContainer.get(i).getText());
 			}
-						}
+		} catch (IndexOutOfBoundsException e) {
+
+		}
+	}
 		        	
 	  public static void VolteMessageDisplayed() 
 	  {

@@ -1,4 +1,4 @@
-Feature: Smart Watches only E2E journey
+Feature: Reg_CS_SmartWatch
 
  @Regression
   Scenario Outline:  Smart Watches only E2E journey

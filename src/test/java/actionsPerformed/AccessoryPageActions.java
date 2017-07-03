@@ -196,7 +196,7 @@ public static void selectAnyAccessoryLimit() throws InterruptedException {
 
 				driver.findElement(By.id("deviceDetailsSubmit")).click();
 
-				Thread.sleep(3000);
+				Thread.sleep(7000);
 
 	
 			} else {

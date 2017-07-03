@@ -49,7 +49,9 @@ public class PhonesListingPage {
 
 	// Below are for PAYG device
 
-	@FindBy(how = How.XPATH, using = "//*[@data-qa-device-contract-type='payasyougo']")
+	//@FindBy(how = How.XPATH, using = "//*[@data-qa-device-contract-type='payasyougo']")
+	//updated the xpath from Sony Experia to Alcatel since we are getting error message "You've reached the limit for the number of Pay As You Go devices you can order" after entering the card details
+	@FindBy(how = How.XPATH, using = "//*[@data-qa-canonical-modelfamily='20.45x']")
 	public static WebElement RandomDevice;
 
 	@FindBy(how = How.XPATH, using = "//a[contains(@href, '/shop/phones/moto/g5/#contractType=payasyougo')]")

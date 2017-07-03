@@ -1,4 +1,4 @@
-Feature: CFA Refresh Order Delayed delivery phone with Instock accessory Basket Review and Confirmation Page 
+Feature: CFA_Refresh_Order_Delayed_delivery_phone_with_Instock_accessory_Basket_Review_and_Confirmation_Page
 
 @JuneRelease
 Scenario Outline: 

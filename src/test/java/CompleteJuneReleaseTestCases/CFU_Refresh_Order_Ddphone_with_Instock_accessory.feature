@@ -1,4 +1,4 @@
-Feature: CFU Refresh Order Delayed delivery phone with InStock Accessory Basket Review and Confirmation Page 
+Feature: CFU_Refresh_Order_Ddphone_with_Instock_accessory
 
 @JuneRelease
 Scenario Outline: 

@@ -63,7 +63,7 @@ static	Logger log = Logger.getLogger("devpinoyLogger");
 			 
 
    		  Robot robot2 = new Robot();
-   		  robot2.mouseMove(coordinates2.getX(),coordinates.getY()+120);
+   		  robot2.mouseMove(coordinates2.getX(),coordinates.getY()+300);
    		log.debug("Moved Mouse to somewhere side of page");
    		
    		Worksfine = true;
@@ -128,7 +128,7 @@ static	Logger log = Logger.getLogger("devpinoyLogger");
 			 
 
   		  Robot robot2 = new Robot();
-  		  robot2.mouseMove(coordinates2.getX(),coordinates.getY()+120);
+  		  robot2.mouseMove(coordinates2.getX(),coordinates.getY()+300);
   		log.debug("Moved Mouse to somewhere side of page");
   		
   		Worksfine = true;
@@ -192,7 +192,7 @@ static	Logger log = Logger.getLogger("devpinoyLogger");
 			 
 
  		  Robot robot2 = new Robot();
- 		  robot2.mouseMove(coordinates2.getX(),coordinates.getY()+120);
+ 		  robot2.mouseMove(coordinates2.getX(),coordinates.getY()+300);
  		log.debug("Moved Mouse to somewhere side of page");
  		
  		Worksfine = true;
@@ -259,7 +259,7 @@ static	Logger log = Logger.getLogger("devpinoyLogger");
 				 
 
 	   		  Robot robot2 = new Robot();
-	   		  robot2.mouseMove(coordinates2.getX(),coordinates.getY()+120);
+	   		  robot2.mouseMove(coordinates2.getX(),coordinates.getY()+300);
 	   		log.debug("Moved Mouse to somewhere side of page");
 	   		
 	   		Worksfine = true;
@@ -315,7 +315,7 @@ static	Logger log = Logger.getLogger("devpinoyLogger");
 		  //Move mouse pointer away from location
 		  Point coordinates2 = driver.findElement(By.xpath("//*[@id='header-consumer']/div")).getLocation();
    		  Robot robot2 = new Robot();
-   		  robot2.mouseMove(coordinates2.getX(),coordinates.getY()+120);
+   		  robot2.mouseMove(coordinates2.getX(),coordinates.getY()+300);
    		  
      		log.debug("Moved Mouse to somewhere side of page");
 
@@ -367,7 +367,7 @@ static	Logger log = Logger.getLogger("devpinoyLogger");
 			  //Move mouse pointer away from location
 			  Point coordinates2 = driver.findElement(By.xpath("//*[@id='header-consumer']/div")).getLocation();
 	   		  Robot robot2 = new Robot();
-	   		  robot2.mouseMove(coordinates2.getX(),coordinates.getY()+120);
+	   		  robot2.mouseMove(coordinates2.getX(),coordinates.getY()+300);
 	     		log.debug("Moved Mouse to somewhere side of page");
 
 	     		Worksfine = true;
@@ -425,7 +425,7 @@ static	Logger log = Logger.getLogger("devpinoyLogger");
 	   		  //Move mouse pointer away from location
 			  Point coordinates2 = driver.findElement(By.xpath("//*[@id='header-consumer']/div")).getLocation();
 	   		  Robot robot2 = new Robot();
-	   		  robot2.mouseMove(coordinates2.getX(),coordinates.getY()+120);
+	   		  robot2.mouseMove(coordinates2.getX(),coordinates.getY()+300);
 	     		log.debug("Moved Mouse to somewhere side of page");
 
 	     		Worksfine = true;
@@ -483,7 +483,7 @@ static	Logger log = Logger.getLogger("devpinoyLogger");
 	   		  //Move mouse pointer away from location
 			  Point coordinates2 = driver.findElement(By.xpath("//*[@id='header-consumer']/div")).getLocation();
 	   		  Robot robot2 = new Robot();
-	   		  robot2.mouseMove(coordinates2.getX(),coordinates.getY()+120);
+	   		  robot2.mouseMove(coordinates2.getX(),coordinates.getY()+300);
 	     		log.debug("Moved Mouse to somewhere side of page");
 
 	     		Worksfine = true;
@@ -533,7 +533,7 @@ static	Logger log = Logger.getLogger("devpinoyLogger");
 	   		  //Move mouse pointer away from location
 			  Point coordinates2 = driver.findElement(By.xpath("//*[@id='header-consumer']/div")).getLocation();
 	   		  Robot robot2 = new Robot();
-	   		  robot2.mouseMove(coordinates2.getX(),coordinates.getY()+120);
+	   		  robot2.mouseMove(coordinates2.getX(),coordinates.getY()+300);
 	     		log.debug("Moved Mouse to somewhere side of page");
 
 	   		  Worksfine = true;
@@ -585,7 +585,7 @@ static	Logger log = Logger.getLogger("devpinoyLogger");
 	   		  //Move mouse pointer away from location
 			  Point coordinates2 = driver.findElement(By.xpath("//*[@id='header-consumer']/div")).getLocation();
 	   		  Robot robot2 = new Robot();
-	   		  robot2.mouseMove(coordinates2.getX(),coordinates.getY()+120);
+	   		  robot2.mouseMove(coordinates2.getX(),coordinates.getY()+300);
 	     		log.debug("Moved Mouse to somewhere side of page");
 
 	   		  Worksfine = true;
@@ -635,7 +635,7 @@ static	Logger log = Logger.getLogger("devpinoyLogger");
 			  //Move mouse pointer away from location
 			  Point coordinates2 = driver.findElement(By.xpath("//*[@id='header-consumer']/div")).getLocation();
 	   		  Robot robot2 = new Robot();
-	   		  robot2.mouseMove(coordinates2.getX(),coordinates.getY()+120);
+	   		  robot2.mouseMove(coordinates2.getX(),coordinates.getY()+300);
 	     		log.debug("Moved Mouse to somewhere side of page");
 	     		Worksfine = true;
 	   		  
@@ -693,7 +693,7 @@ static	Logger log = Logger.getLogger("devpinoyLogger");
 			   		  //Move mouse pointer away from location
 					  Point coordinates2 = driver.findElement(By.xpath("//*[@id='header-consumer']/div")).getLocation();
 			   		  Robot robot2 = new Robot();
-			   		  robot2.mouseMove(coordinates2.getX(),coordinates.getY()+120);
+			   		  robot2.mouseMove(coordinates2.getX(),coordinates.getY()+300);
 			     		log.debug("Moved Mouse to somewhere side of page");
 
 			   		  Worksfine = true;

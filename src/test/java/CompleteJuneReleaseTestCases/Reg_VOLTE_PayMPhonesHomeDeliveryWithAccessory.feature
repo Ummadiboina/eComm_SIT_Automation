@@ -1,4 +1,4 @@
-Feature: Volte PayM Phones Home delivery E2E journey with Accessory
+Feature: Reg_VOLTE_PayMPhonesHomeDeliveryWithAccessory
 
 @Volte_Regression
   Scenario Outline: CFA PayM Phones Home delivery E2E journey with Accessory

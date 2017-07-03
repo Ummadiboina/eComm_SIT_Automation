@@ -40,7 +40,8 @@ public class Agent_CreditCheckDetailsPage {
 	@FindBy(how=How.XPATH,using="//input[@value='Find address']")
 	public static WebElement FindAddress;
 	
-	@FindBy(how=How.XPATH,using="//input[@value='Select address']")
+	//@FindBy(how=How.XPATH,using="//input[@value='Select address']")
+	@FindBy(how=How.XPATH,using="//*[@id='creditCheckCurrentAddress']/div/div[2]/div[1]/div[1]/input")
 	public static WebElement Selectedaddress;		
 
 	@FindBy(how=How.ID,using="securityQuestion")

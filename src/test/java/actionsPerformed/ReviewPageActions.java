@@ -2,6 +2,7 @@ package actionsPerformed;
 
 import org.apache.log4j.Logger;
 import org.junit.Assert;
+import org.openqa.selenium.By;
 
 import helpers.Environment;
 
@@ -25,12 +26,13 @@ public class ReviewPageActions extends Environment  {
 		  log.debug("Clicked the Checkbox in Terms");
 	  }
 	 
-	  public static void PayNow() 
+	  public static void PayNow() throws InterruptedException 
 	  {
 		  System.out.println("Clicking on Pay now");
 		  pageobjects.ReviewPage.PayNow.click();
 		  System.out.println("Completing on Review page");
 		  log.debug("Clicked the Paynow button");
+		  Thread.sleep(5000L);
 
 	  }
 
@@ -53,19 +55,41 @@ public class ReviewPageActions extends Environment  {
 	}
 
 
-		public static void checkOrderContractTextRP() {
+	public static void checkOrderContractTextRP() {
+		String ActOrderContractMsg = "";
+		String ExpOrderContractMsg = "";
+
+		try {
 			// TODO Auto-generated method stub
-			String ActOrderContractMsg = pageobjects.ReviewPage.OrderContractMessageRP.getText();
-	                String ExpOrderContractMsg = "Your contract will not start until the order is on its way.";
+			
+			ActOrderContractMsg = pageobjects.ReviewPage.OrderContractMessageRP.getText();
+			ExpOrderContractMsg = "Your contract will not start until the order is on its way.";
+
 			System.out.println("Act Del MSg" + ActOrderContractMsg);
 			System.out.println("Exp Del MSg" + ExpOrderContractMsg);
-	if (ActOrderContractMsg.matches(ExpOrderContractMsg)) {
-				System.out.println("ActOrderContractMsg matches ExpOrderContractMsg in Review Page");
-			} else {
-				Assert.fail("Order Contract Text in Review Page does not match");
 
-			}
+			Assert.assertTrue("Assertion Failed: Order Contract Text in Review Page does not match",
+					ExpOrderContractMsg.equals(ActOrderContractMsg));
+
+			System.out.println("Assertion Passed: ActOrderContractMsg matches ExpOrderContractMsg in Review Page");
+
+			/*
+			 * if (ActOrderContractMsg.equals(ExpOrderContractMsg)) {
+			 * System.out.
+			 * println("ActOrderContractMsg matches ExpOrderContractMsg in Review Page"
+			 * ); } else { //
+			 * Assert.fail("Order Contract Text in Review Page does not match");
+			 * System.out.
+			 * println("Order Contract Text in Review Page does not match");
+			 * 
+			 * }
+			 */
+		} catch (AssertionError e) {
+			System.out.println("ActOrderContractMsg: " + ActOrderContractMsg
+					+ " does not match the ExpOrderContractMsg: " + ExpOrderContractMsg + " in Review Page");
+
 		}
+	}
 		
 		public static void checkStockExtMsgRP() {
 			// TODO Auto-generated method stub
