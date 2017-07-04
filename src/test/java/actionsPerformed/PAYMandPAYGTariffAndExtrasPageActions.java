@@ -1,9 +1,12 @@
 package actionsPerformed;
 
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 import org.apache.log4j.Logger;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 
 import helpers.*;
@@ -65,6 +68,42 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 		pageobjects.PAYMandPAYGTariffAndExtrasPage.addToBasketDockHeader.sendKeys(Keys.ENTER);
 		log.debug("Clicked on Add to Basket in Tariff and Extras page");
+
+	}
+
+	public static void addMoreAccessory() throws InterruptedException {
+		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+		System.out.println("addMoreAccessory() method");
+		log.debug("The Accessory which will be added is  - "
+				+ pageobjects.PAYMandPAYGTariffAndExtrasPage.AddRandomAccessory.getText());
+		try {
+			
+			WebElement ele0 = driver.findElement(By.xpath("//*[@class='accessory-button-container']"));
+			if (ele0 != null) 
+			{
+				System.out.println("selecting accessories");
+				
+			List<WebElement> DataContainer = driver
+					.findElements(
+					By.xpath("//*[@class='accessory-button-container']/input[@value='Add']"));
+
+			for (int i = 0; i <= DataContainer.size(); i++) 
+			{
+				
+				System.out.println(DataContainer.get(i).getText());
+				System.out.println("Printed something");
+				DataContainer.get(i).click();
+			}
+			
+			}
+		}
+		catch (Exception e) {
+			System.out.println("No accessories found in tariff and ");
+
+		}		
+		
+		Thread.sleep(2000);
+		log.debug("Added a random accessory to basket");
 
 	}
 

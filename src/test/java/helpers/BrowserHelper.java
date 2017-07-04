@@ -3,6 +3,8 @@ package helpers;
 import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxProfile;
+import org.openqa.selenium.firefox.internal.ProfilesIni;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
@@ -19,6 +21,7 @@ public class BrowserHelper {
 			System.out.println(OSArchitecture);
 			if (OSArchitecture.equalsIgnoreCase("x86"))
 			{
+				
 				System.setProperty("webdriver.ie.driver", "src\\test\\java\\InternalLibraries\\BrowserDrivers\\Internet_Explorer\\IEDriverServer_Win32_3.1.0\\IEDriverServer.exe"); 
 			}else
 			{
@@ -30,16 +33,14 @@ public class BrowserHelper {
 			capability.setCapability("useLegacyInternalServer", true);
 			Environment.driver = new InternetExplorerDriver(capability);
 			Environment.driver.manage().deleteAllCookies();
-            
 			Environment.driver.navigate().refresh();      
 
 			
 		}
 		else if (BrowserType.equalsIgnoreCase("chrome"))
 		{
-			System.setProperty("webdriver.chrome.driver","src\\test\\java\\InternalLibraries\\BrowserDrivers\\ChromeDriver\\chromedriver.exe");
+			System.setProperty("webdriver.chrome.driver","Browsers\\ChromeDriver\\chromedriver.exe");
 			//Environment.driver = new ChromeDriver();			
-			
 			DesiredCapabilities handlSSLErr = DesiredCapabilities.chrome();       
 			handlSSLErr.setCapability (CapabilityType.ACCEPT_SSL_CERTS, true);
 			Environment.driver = new ChromeDriver(handlSSLErr);
@@ -48,7 +49,12 @@ public class BrowserHelper {
 		}
 		else
 		{
-			Environment.driver = new FirefoxDriver();	
+			System.setProperty("webdriver.gecko.driver","Browsers\\GeckoDriver\\geckodriver.exe");
+			ProfilesIni prof = new ProfilesIni();				
+			FirefoxProfile ffProfile= prof.getProfile ("myProfile");
+			ffProfile.setAcceptUntrustedCertificates(true);
+			ffProfile.setAssumeUntrustedCertificateIssuer(false);
+			Environment.driver = new FirefoxDriver(ffProfile);
 		}
 		
 		Environment.driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);

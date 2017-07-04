@@ -1,0 +1,199 @@
+[
+  {
+    "line": 1,
+    "elements": [
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 88683962620,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Hooks.openBrowser()"
+            }
+          }
+        ],
+        "line": 18,
+        "name": "Accessories only E2E journey",
+        "description": "",
+        "id": "accessories-only-e2e-journey;accessories-only-e2e-journey;;2",
+        "after": [
+          {
+            "result": {
+              "duration": 11304820607,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Hooks.embedScreenshot(Scenario)"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 694471887,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "I am an CFA user and Lands on shop page",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.i_am_an_CFA_user_and_Lands_on_shop_page()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 48501214837,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "Navigate to Accessories",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.navigate_to_Accessories()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 46310414203,
+              "error_message": "junit.framework.AssertionFailedError: Unable to select accessory\r\n\tat junit.framework.Assert.fail(Assert.java:47)\r\n\tat steps.E2EOrderPlaced_Steps.select_an_Accessory(E2EOrderPlaced_Steps.java:411)\r\n\tat ✽.And select an \"Random\" Accessory(Reg_CS_AccessoriesOnly.feature:7)\r\n",
+              "status": "failed"
+            },
+            "line": 7,
+            "name": "select an \"Random\" Accessory",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Random",
+                  "offset": 11
+                }
+              ],
+              "location": "E2EOrderPlaced_Steps.select_an_Accessory(String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 8,
+            "name": "add Accessories to basket within limit in details page and navigate to basket",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.add_Accessories_to_basket_within_limit_in_details_page_and_navigate_to_basket()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 9,
+            "name": "I Land on the Non Phone related basket page and choose home delivery option",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.NonPhoneRelatedBasketPage()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 10,
+            "name": "click on \"go to checkout\" button",
+            "match": {
+              "arguments": [
+                {
+                  "val": "go to checkout",
+                  "offset": 10
+                }
+              ],
+              "location": "E2EOrderPlaced_Steps.CheckoutFromBasket(String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 11,
+            "name": "input TEST and ACCEPTA and other valid details in Delivery page and Click on the \u0027Continue button\u0027",
+            "match": {
+              "arguments": [
+                {
+                  "val": "TEST",
+                  "offset": 6
+                },
+                {
+                  "val": "ACCEPTA",
+                  "offset": 15
+                }
+              ],
+              "location": "E2EOrderPlaced_Steps.DeliveryPage_Inputs_homeDelivery(String,String)"
+            },
+            "matchedColumns": [
+              0,
+              1
+            ],
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 12,
+            "name": "land on the Non Credit check payment page and input TEST ACCEPTA and other details and click \u0027Continue on next step\u0027",
+            "match": {
+              "arguments": [
+                {
+                  "val": "TEST ACCEPTA",
+                  "offset": 52
+                }
+              ],
+              "location": "E2EOrderPlaced_Steps.NonCreditCheckPaymentPage_HomeDelivery(String)"
+            },
+            "matchedColumns": [
+              2
+            ],
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 13,
+            "name": "Continue to Review page and review the order",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.ReviewPageConfirmation()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 14,
+            "name": "order confirmation is displayed",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.OrderConfirmationPage()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "line": 3,
+            "name": "@AgentsRegressionPAYM"
+          }
+        ]
+      }
+    ],
+    "name": "Accessories only E2E journey",
+    "description": "",
+    "id": "accessories-only-e2e-journey",
+    "keyword": "Feature",
+    "uri": "Reg_CS_AccessoriesOnly.feature"
+  }
+]

@@ -522,6 +522,24 @@ public class E2EOrderPlaced_Steps {
 		}
 
 	}
+	
+	@And("^Choose all Accesssory$")
+	public void ChooseMoreAccessory() throws Throwable {
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, PAYMandPAYGTariffAndExtrasPage.class);
+			PAYMandPAYGTariffAndExtrasPageActions.addMoreAccessory();
+			System.out.println("Choose All accessory method");
+			Thread.sleep(2000);
+		} catch (Exception e) 
+		{
+			// TODO Auto-generated catch block
+			System.out.println("Unable to choose Accesssory");
+			Assert.fail("Unable to choose Accesssory");
+
+		}
+
+	}
 
 	@Given("^Signin using valid ([^\"]*) and ([^\"]*) credentials$")
 	public void signin_using_valid_ink_jun_and_test_credentials(String username, String password) throws Throwable {
