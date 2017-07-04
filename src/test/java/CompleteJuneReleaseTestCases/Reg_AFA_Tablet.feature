@@ -1,4 +1,4 @@
-Feature: Successful completion of a PAY M Tablet Journey
+Feature: Reg_AFA_Tablet
 
   #launch hooks and get browser
   @AgentsRegressionPAYM

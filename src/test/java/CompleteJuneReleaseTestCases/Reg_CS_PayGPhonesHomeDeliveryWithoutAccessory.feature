@@ -1,4 +1,4 @@
-Feature: CFA PayG Phones Home delivery E2E journey
+Feature: Reg_CS_PayGPhonesHomeDeliveryWithoutAccessory
 
   @Regression
   Scenario Outline: CFA PayG Phones Home delivery E2E journey

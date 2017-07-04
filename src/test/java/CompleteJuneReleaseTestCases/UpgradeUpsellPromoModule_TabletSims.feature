@@ -1,6 +1,6 @@
-Feature: Upgrade _not eligible customers selects Tablet sim
+Feature: UpgradeUpsellPromoModule_TabletSims
 
-  @Upgrade_Upsell_Promo_Module
+  @Upgrade_Upsell_Promo_Module_Test2
   Scenario Outline: Not eligible for upgrade customer selects iPad sims 
     Given I am an Existing user and Navigates to Signin page
     And Signin using valid <username> and <password> credentials

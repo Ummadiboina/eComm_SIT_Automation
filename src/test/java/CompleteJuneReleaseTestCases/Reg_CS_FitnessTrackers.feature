@@ -1,4 +1,4 @@
-Feature: Fitness Trackers only E2E journey
+Feature: Reg_CS_FitnessTrackers
 
   @Regression
   Scenario Outline: Fitness Trackers only E2E journey

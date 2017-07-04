@@ -1,4 +1,4 @@
-Feature: FTQ-Ecomm-11478-CFA_MultipleDevices
+Feature: FTQ-Ecomm-11478-CFA_Smartwatches_Group
 
   @eComm11478_CFA_MultipleDevices
   Scenario Outline: CFA Multiple Accessories/Smarwatches of Same type/Model

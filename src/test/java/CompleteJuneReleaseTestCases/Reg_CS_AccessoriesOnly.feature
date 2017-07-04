@@ -1,4 +1,4 @@
-Feature: Accessories only E2E journey
+Feature: Reg_CS_AccessoriesOnly
 
   @RegressionAccessory
   Scenario Outline: Accessories only E2E journey

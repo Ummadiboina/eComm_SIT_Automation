@@ -21,7 +21,8 @@ public class OrderConfirmationPage {
 	@FindBy(how = How.XPATH, using = "//*[@id='imsMessage']")
 	public static WebElement imsMessage;
 	
-	@FindBy(how = How.XPATH, using = "//*[@id='contract-message']")
+	//@FindBy(how = How.XPATH, using = "//*[@id='contract-message']")
+	@FindBy(how = How.ID, using = "contract-message")
 	public static WebElement OrderContractMessageOC;
 	
 

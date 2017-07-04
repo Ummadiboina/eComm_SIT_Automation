@@ -1,4 +1,4 @@
-Feature: Trustev PayM Phones Home delivery E2E journey without Accessory
+Feature: Reg_Trustev_PayMPhonesHomeDeliveryWithoutAccessory
 
   #launch hooks and get browser
 

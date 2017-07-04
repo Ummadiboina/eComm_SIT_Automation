@@ -1,4 +1,4 @@
-Feature: FTQ-Ecomm-11478-CFU_MultipleDevices
+Feature: FTQ-Ecomm-11478-CFU_Smartwatches_Group
 
   @eComm11478_CFU_MultipleDevices
   Scenario Outline: CFU to validate multiple accessories

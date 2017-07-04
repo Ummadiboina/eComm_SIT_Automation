@@ -1,4 +1,4 @@
-Feature: Existing customer Refresh Order PreOrder phone with Instock accessory 
+Feature: Existing_Refresh_Order_PreOrder_phone_with_Instock_accessory 
 
 @JuneRelease 
 Scenario Outline: 

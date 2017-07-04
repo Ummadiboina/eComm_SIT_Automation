@@ -1,4 +1,4 @@
-Feature: Successful completion of a PAY M Acquistion journey
+Feature: Reg_AFA_PAYM_Acquistion
 
   #launch hooks and get browser
   @AgentsRegressionPAYM

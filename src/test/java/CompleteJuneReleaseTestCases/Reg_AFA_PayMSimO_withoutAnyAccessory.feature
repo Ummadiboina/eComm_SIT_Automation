@@ -1,4 +1,4 @@
-Feature: Successful completion of a PAY M SIMO acquisition Journey without an accessory
+Feature: Reg_AFA_PayMSimO_withoutAnyAccessory
 
   #launch hooks and get browser
   @AgentsRegression

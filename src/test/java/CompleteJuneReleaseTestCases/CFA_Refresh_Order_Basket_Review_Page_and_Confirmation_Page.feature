@@ -1,4 +1,4 @@
-Feature: CFA Refresh Order Basket Review Page and Confirmation Page
+Feature: CFA_Refresh_Order_Basket_Review_Page_and_Confirmation_Page
 
   @JuneReleaseTest1
   Scenario Outline: CFA Refresh Order Basket Review Page and Confirmation Page
@@ -19,5 +19,5 @@ Feature: CFA Refresh Order Basket Review Page and Confirmation Page
 
     #Close the browser
     Examples: 
-      | handset | Firstname | Surname | Username     |
-      | Iphone7 | TEST      | ACCEPTA | TEST ACCEPTA |
+      | handset  | Firstname | Surname | Username     |
+      | GalaxyS8 | TEST      | ACCEPTA | TEST ACCEPTA |

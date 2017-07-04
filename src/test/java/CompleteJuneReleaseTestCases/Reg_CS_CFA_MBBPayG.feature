@@ -1,4 +1,4 @@
-Feature: PAYG MBB only E2E journey
+Feature: Reg_CS_CFA_MBBPayG
 
  @Regression
   Scenario Outline: PAYG MBB only E2E journey

@@ -1,4 +1,4 @@
-Feature: Upgrade _not eligible customers selects Dongle sim
+Feature: UpgradeUpsellPromoModuleDongleSims
 
   @Upgrade_Upsell_Promo_Module
   Scenario Outline: Not eligible for upgrade customer selects iPad sims 

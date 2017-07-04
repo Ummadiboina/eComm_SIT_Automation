@@ -1,4 +1,4 @@
-Feature: Ipad SimO Only PAYG E2E validation
+Feature: Reg_CS_OrderingIpadSim
 
   @RegressionIpad
   Scenario Outline: Ipad SimO Only PAYG E2E validation

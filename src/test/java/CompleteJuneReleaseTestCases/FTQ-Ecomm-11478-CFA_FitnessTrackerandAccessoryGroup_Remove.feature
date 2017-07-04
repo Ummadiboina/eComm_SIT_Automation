@@ -1,4 +1,4 @@
-Feature: FTQ-Ecomm-11478-remove
+Feature: FTQ-Ecomm-11478-CFA_FitnessTrackerandAccessoryGroup_Remove
 
   @eComm11478_CFA_Remove
   	Scenario: CFA Multiple non connected Remove and verify correct display

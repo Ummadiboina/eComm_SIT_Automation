@@ -1,4 +1,4 @@
-Feature: Volte PayM Phones Home delivery E2E journey without accessory
+Feature: Reg_VOLTE_PayMPhonesHomeDeliveryWithoutAccessory
 
   #launch hooks and get browser
   @Volte_Regression

@@ -1,4 +1,4 @@
-Feature: CFA Standard Order Delayed delivery phone with Instock accessory Basket Review and Confirmation Page 
+Feature: CFA_Standard_Order_Ddphone_with_Instock_accessory_Basket_Review_and_Confirmation_Page
 
 @JuneRelease
 Scenario Outline: 

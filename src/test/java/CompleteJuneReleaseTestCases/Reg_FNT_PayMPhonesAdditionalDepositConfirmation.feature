@@ -1,4 +1,4 @@
-Feature: FNT CFA PayM phones Additional information and Order confirmed
+Feature: Reg_FNT_PayMPhonesAdditionalDepositConfirmation
 
   @FNTRegression
   Scenario Outline: FNT CFA PayM phones Additional information and Order confirmed

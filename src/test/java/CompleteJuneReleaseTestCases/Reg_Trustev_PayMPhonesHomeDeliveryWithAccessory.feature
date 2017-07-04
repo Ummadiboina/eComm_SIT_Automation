@@ -1,4 +1,4 @@
-Feature: Trustev PayM Phones Home delivery E2E journey with Accessory
+Feature: Reg_Trustev_PayMPhonesHomeDeliveryWithAccessory
 
   @Trustev_Regression
   Scenario Outline: Trustev PayM Phones Home delivery E2E journey with Accessory

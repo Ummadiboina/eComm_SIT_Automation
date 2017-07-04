@@ -7,6 +7,7 @@ import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 
 import GlobalActions.Autoredirection;
@@ -39,6 +40,7 @@ import actionsPerformed.ShopLandingPageAction;
 import actionsPerformed.SimsPageActions;
 import actionsPerformed.SmartwatchesPageActions;
 import actionsPerformed.UpgradeCustomerPageActions;
+import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
@@ -108,7 +110,7 @@ public class E2EOrderPlaced_Steps {
 
 	}
 
-	@Given("^navigate to PAYM Phones page$")
+	@And("^navigate to PAYM Phones page$")
 	public void navigate_to_PAYM_Phones_page() throws Throwable {
 		try {
 			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
@@ -130,6 +132,7 @@ public class E2EOrderPlaced_Steps {
 			PageFactory.initElements(driver, MouseHoverPage.class);
 			MouseHoverAction.AccessoriesLandingPage();
 			Autoredirection.redirect();
+			Thread.sleep(10000);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			System.out.println("unable to do mousehover to Accessories");
@@ -200,7 +203,7 @@ public class E2EOrderPlaced_Steps {
 			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 			PageFactory.initElements(driver, MouseHoverPage.class);
 			MouseHoverAction.SimIpadSimsPage();
-			Autoredirection.redirectforHTTPconnections();
+			// Autoredirection.redirectforHTTPconnections();
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			System.out.println("unable to do mousehover to Sims and Ipad Sims page");
@@ -222,7 +225,7 @@ public class E2EOrderPlaced_Steps {
 		}
 	}
 
-	@Given("^navigate to PAYM SIMO page$")
+	@And("^navigate to PAYM SIMO page$")
 	public void navigate_to_PAYM_SIMO_page() throws Throwable {
 		try {
 			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
@@ -262,7 +265,7 @@ public class E2EOrderPlaced_Steps {
 	 * #########
 	 */
 
-	@Given("^I choose PayM ([^\"]*)$")
+	@And("^I choose PayM ([^\"]*)$")
 	public void Choose_PAYM_Handset(String handset) throws Throwable {
 		try {
 			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
@@ -281,6 +284,7 @@ public class E2EOrderPlaced_Steps {
 			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 			PageFactory.initElements(driver, PhonesListingPage.class);
 			PhonesListingPageAction.PAYGPhoneSelect("Random Device");
+			// PhonesListingPageAction.PAYGPhoneSelect("MotoG5");
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			System.out.println("Unable to choose PayG phone");
@@ -346,7 +350,7 @@ public class E2EOrderPlaced_Steps {
 		}
 	}
 
-	@Given("^Navigate to device details page$")
+	@And("^Navigate to device details page$")
 	public void Navigate_to_device_details_page() throws Throwable {
 		try {
 			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
@@ -410,7 +414,7 @@ public class E2EOrderPlaced_Steps {
 
 	}
 
-	@Given("^Click on different ([^\"]*) Months Tariff in Tab$")
+	@And("^Click on different ([^\"]*) Months Tariff in Tab$")
 	public void click_on_different_Months_Tariff_in_Tab(String Contract) throws Throwable {
 		try {
 			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
@@ -440,7 +444,7 @@ public class E2EOrderPlaced_Steps {
 		}
 	}
 
-	@Given("^Select Recommended Tariff in the displayed list of Tariffs under different ([^\"]*) tab$")
+	@And("^Select Recommended Tariff in the displayed list of Tariffs under different ([^\"]*) tab$")
 	public void select_Recommended_Tariff_in_the_displayed_list_of_Tariffs_under_different_Months_tab(String Contract)
 			throws Throwable {
 		try {
@@ -567,7 +571,7 @@ public class E2EOrderPlaced_Steps {
 
 	}
 
-	@Given("^Land on the 'Tariffs and extra' page selecting pay device in full$")
+	@And("^Land on the 'Tariffs and extra' page selecting pay device in full$")
 	public void land_on_the_Tariffs_and_extra_page_selecting_pay_device_in_full() throws Throwable {
 		try {
 			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
@@ -647,7 +651,7 @@ public class E2EOrderPlaced_Steps {
 		}
 	}
 
-	@Given("^I Land on the basket page and choose to collect from store$")
+	@And("^I Land on the basket page and choose to collect from store$")
 	public void i_Land_on_the_basket_page_and_choose_to_collect_from_store() throws Throwable {
 		// Write code here that turns the phrase above into concrete actions
 		try {
@@ -685,7 +689,7 @@ public class E2EOrderPlaced_Steps {
 
 	}
 
-	@Given("^I Land on the Plan included basket page and choose home delivery option$")
+	@And("^I Land on the Plan included basket page and choose home delivery option$")
 	public void i_Land_on_the_Plan_included_basket_page_and_choose_home_delivery_option() throws Throwable {
 		try {
 			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
@@ -715,7 +719,7 @@ public class E2EOrderPlaced_Steps {
 		}
 	}
 
-	@Given("^click on \"([^\"]*)\" button$")
+	@And("^click on \"([^\"]*)\" button$")
 	public void CheckoutFromBasket(String arg1) throws Throwable {
 		try {
 			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
@@ -749,7 +753,7 @@ public class E2EOrderPlaced_Steps {
 	 * #########
 	 */
 
-	@Given("^input ([^\"]*) and ([^\"]*) and other valid details in Delivery page and Click on the 'Continue button'$")
+	@And("^input ([^\"]*) and ([^\"]*) and other valid details in Delivery page and Click on the 'Continue button'$")
 	public void DeliveryPage_Inputs_homeDelivery(String Firstname, String Surname) throws Throwable {
 		try {
 			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
@@ -767,7 +771,7 @@ public class E2EOrderPlaced_Steps {
 		}
 	}
 
-	@Given("^input ([^\"]*) and ([^\"]*) and other valid details in Delivery page for Click and collect and Click on the 'Continue button'$")
+	@And("^input ([^\"]*) and ([^\"]*) and other valid details in Delivery page for Click and collect and Click on the 'Continue button'$")
 	public void DeliveryPage_Inputs_ClickandCollect(String Firstname, String Surname) throws Throwable {
 		try {
 			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
@@ -795,7 +799,7 @@ public class E2EOrderPlaced_Steps {
 	 * #########
 	 */
 
-	@Given("^land on the payment page and input ([^\"]*) and other details and click 'Continue on next step'$")
+	@And("^land on the payment page and input ([^\"]*) and other details and click 'Continue on next step'$")
 	public void CreditCheckPaymentPage_HomeDelivery(String Username) throws Throwable {
 		// Write code here that turns the phrase above into concrete actions
 		try {
@@ -806,7 +810,7 @@ public class E2EOrderPlaced_Steps {
 			PaymentPageActions.Time_At_Address();
 			Thread.sleep(2000);
 			PaymentPageActions.Card_Details(Username);
-			Thread.sleep(10000);
+			Thread.sleep(75000);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			System.out.println("Unable to input details in payment page");
@@ -815,7 +819,7 @@ public class E2EOrderPlaced_Steps {
 		}
 	}
 
-	@Given("^land on the payment page and input ([^\"]*) and other details for Click and collect order and click 'Continue on next step'$")
+	@And("^land on the payment page and input ([^\"]*) and other details for Click and collect order and click 'Continue on next step'$")
 	public void CreditCheckPaymentPage_ClickAndCollect(String Username) throws Throwable {
 		// Write code here that turns the phrase above into concrete actions
 		try {
@@ -826,7 +830,7 @@ public class E2EOrderPlaced_Steps {
 			PaymentPageActions.Time_At_Address_CC();
 			Thread.sleep(3000);
 			PaymentPageActions.Card_Details(Username);
-			Thread.sleep(10000);
+			Thread.sleep(75000);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			System.out.println("Unable to input details in payment page");
@@ -843,7 +847,7 @@ public class E2EOrderPlaced_Steps {
 			PaymentPageActions.ValidateNonCreditPaymentPage();
 			Thread.sleep(2000);
 			PaymentPageActions.Card_Details(Username);
-			Thread.sleep(10000);
+			Thread.sleep(25000);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			System.out.println("Unable to input details in payment page");
@@ -963,7 +967,7 @@ public class E2EOrderPlaced_Steps {
 	 * #########
 	 */
 
-	@Given("^Continue to Review page and review the order$")
+	@And("^Continue to Review page and review the order$")
 	public void ReviewPageConfirmation() throws Throwable {
 		// Write code here that turns the phrase above into concrete actions
 		try {
@@ -985,22 +989,24 @@ public class E2EOrderPlaced_Steps {
 	@Given("^Continue to Review page, check order contract text and review the order$")
 	public void ReviewPageOrderContractTextConfirmation() throws Throwable {
 		// Write code here that turns the phrase above into concrete actions
-		try {
-			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-			PageFactory.initElements(driver, ReviewPage.class);
-			ReviewPageActions.gettitlepage();
-			ReviewPageActions.TermsCheckBox();
-			ReviewPageActions.checkOrderContractTextRP();
-			ReviewPageActions.PayNow();
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			System.out.println(
-					"Unable to Continue to Review page and review the order or unable to enter some information in this page, Please review the screenshots for failure");
-			Assert.fail(
-					"Unable to Continue to Review page and review the order or unable to enter some information in this page, Please review the screenshots for failure");
-
-
-		}
+		// try {
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		PageFactory.initElements(driver, ReviewPage.class);
+		ReviewPageActions.gettitlepage();
+		ReviewPageActions.TermsCheckBox();
+		ReviewPageActions.checkOrderContractTextRP();
+		ReviewPageActions.PayNow();
+		/*
+		 * } catch (Exception e) { // TODO Auto-generated catch block
+		 * System.out.println(
+		 * "Unable to Continue to Review page and review the order or unable to enter some information in this page, Please review the screenshots for failure"
+		 * ); //Assert.fail( //
+		 * "Unable to Continue to Review page and review the order or unable to enter some information in this page, Please review the screenshots for failure"
+		 * );
+		 * 
+		 * 
+		 * }
+		 */
 	}
 
 	@Given("^Continue to Review page and review the order for Trustev details$")
@@ -1038,17 +1044,32 @@ public class E2EOrderPlaced_Steps {
 
 	@Given("^Check order contract text in Order Confirmation page$")
 	public void checkOrderContractTextOC() throws Throwable {
-		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-		PageFactory.initElements(driver, OrderConfirmationPage.class);
-		String ActOrderContractMsg = pageobjects.OrderConfirmationPage.OrderContractMessageOC.getText();
-		String ExpOrderContractMsg = "Your contract will not start until the order is on its way.";
-		if (ActOrderContractMsg.matches(ExpOrderContractMsg)) {
-			System.out.println("Act Del MSg" + ActOrderContractMsg);
-			System.out.println("Exp Del MSg" + ExpOrderContractMsg);
-			System.out.println("ActOrderContractMsg matches ExpDeliveryText");
-		} else {
-			Assert.fail("Order contract text does not match");
-				}
+
+		String ExpOrderContractMsg = "";
+
+		try {
+
+			JavascriptExecutor jse = (JavascriptExecutor) driver;
+			jse.executeScript("window.scrollBy(0,300)", "");
+
+			ExpOrderContractMsg = "Your contract will not start until the order is on its way.";
+
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, OrderConfirmationPage.class);
+
+			Assert.assertTrue(
+					"Assertion Failed: Expected Message: " + ExpOrderContractMsg + " is not present in the page",
+					driver.getPageSource().contains(ExpOrderContractMsg));
+
+			System.out.println("Assertion Passed: Expected Mesasge: " + ExpOrderContractMsg
+					+ " is present in the Order Confirmation page");
+		} catch (AssertionError e) {
+
+			System.out.println(
+					"Assertion Failed: Expected Message: " + ExpOrderContractMsg + " is not present in the page");
+
+		}
+
 	}
 
 	@Then("^order confirmation is displayed$")
@@ -1061,12 +1082,10 @@ public class E2EOrderPlaced_Steps {
 			OrderConfirmationPageActions.MessageDisplayed();
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
-			System.out.println(
-					"Error in order confirmation page , Please review the screenshots for failure");
-			Assert.fail(
-					"Error in order confirmation page , Please review the screenshots for failure");
+			System.out.println("Error in order confirmation page , Please review the screenshots for failure");
+			Assert.fail("Error in order confirmation page , Please review the screenshots for failure");
 
-			}
+		}
 	}
 
 	@Then("^Order Decline page should be displayed$")
@@ -1080,10 +1099,8 @@ public class E2EOrderPlaced_Steps {
 			// /Assert.assertEquals(MessageDisplayed(), actual);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
-			System.out.println(
-					"Unable to get Order Decline page");
-			Assert.fail(
-					"Unable to get Order Decline page");
+			System.out.println("Unable to get Order Decline page");
+			Assert.fail("Unable to get Order Decline page");
 
 		}
 
@@ -1100,12 +1117,10 @@ public class E2EOrderPlaced_Steps {
 			OrderConfirmationPageActions.OrderConfirmationPageSections();
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
-			System.out.println(
-					"Unable to get Order confirmation page with volte message");
-			Assert.fail(
-					"Unable to get Order confirmation page with volte message");
+			System.out.println("Unable to get Order confirmation page with volte message");
+			Assert.fail("Unable to get Order confirmation page with volte message");
 
-			}
+		}
 	}
 
 	/*********************************
@@ -1113,7 +1128,7 @@ public class E2EOrderPlaced_Steps {
 	 ****************************************/
 
 	/*
-
+	
 	 */
 	@Given("^I login to Agent shop$")
 	public void LoginAgentShop() throws Throwable {
@@ -1126,88 +1141,92 @@ public class E2EOrderPlaced_Steps {
 			Agent_HomePagePageActions.ValidateAgentHomepage();
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
-			System.out.println(
-					"Unable to Login/validate home page, please see the failure screenshot");
-			Assert.fail(
-					"Unable to Login/validate home page, please see the failure screenshot");
+			System.out.println("Unable to Login/validate home page, please see the failure screenshot");
+			Assert.fail("Unable to Login/validate home page, please see the failure screenshot");
 
-			
 		}
 
 	}
 
-@Given("^select a valid Handset and Tariff combination$")
-public void select_a_valid_Handset_and_Tariff_combination() throws Throwable {
-	try {
-		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-		PageFactory.initElements(driver, Agent_DealBuilderPage.class);
-		Agent_DealBuilderPageActions.HandsetTariffCombination();
-	} catch (Exception e) {
-		// TODO Auto-generated catch block
-		e.printStackTrace();
-		Assert.fail("Unable to select valid tariff and handset combination");
+	@Given("^select a valid Handset and Tariff combination$")
+	public void select_a_valid_Handset_and_Tariff_combination() throws Throwable {
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, Agent_DealBuilderPage.class);
+			Agent_DealBuilderPageActions.HandsetTariffCombination();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			Assert.fail("Unable to select valid tariff and handset combination");
+		}
 	}
-}
 
-@Given("^Select valid ([^\"]*) from extras tab$")
-public void select_valid_Random_from_extras_tab(String Extras) throws Throwable 
-{
-	try {
-		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-		PageFactory.initElements(driver, Agent_DealBuilderPage.class);
-		Agent_DealBuilderPageActions.SelectExtras(Extras);
-	} catch (Exception e) {
-		// TODO Auto-generated catch block
-		Assert.fail("Unable to select extras");
+	@Given("^Select valid ([^\"]*) from extras tab$")
+	public void select_valid_Random_from_extras_tab(String Extras) throws Throwable {
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, Agent_DealBuilderPage.class);
+			Agent_DealBuilderPageActions.SelectExtras(Extras);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			Assert.fail("Unable to select extras");
+		}
 	}
-}
 
-@Then("^Update Device Plan Link Email Address$")
-public void updatedeviceplan() throws Throwable {
-	
-}
+	@Then("^Update Device Plan Link Email Address$")
+	public void updatedeviceplan() throws Throwable {
+		Thread.sleep(3000);
+		driver.findElement(By.xpath("//*[@id='updateEmailAddressProceedButton']")).click();
+		System.out.println("Updated Device Plan Link Email Address");
+		Thread.sleep(3000);
+		driver.findElement(By.xpath("//*[@id='secciYesButton']")).click();
+		System.out.println("Clicked on the O2 Refresh Deal Summary YES button");
 
-@Then("^Register customer with valid email address and password$")
-public void register_customer_with_valid_email_address_and_password() throws Throwable {
+	}
 
-}
+	@Then("^Register customer with valid email address and password$")
+	public void register_customer_with_valid_email_address_and_password() throws Throwable {
 
-@Then("^CCALink Should be generated$")
-public void ccaLink() throws Throwable {
-	driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-	driver.findElement(By.id("generateCcaForm")).click();
-	System.out.println("Generated CCA link");
-}
+	}
 
+	@Then("^CCALink Should be generated$")
+	public void ccaLink() throws Throwable {
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		driver.findElement(By.xpath("//*[@id='generateCcaForm']/input[1]")).click();
+		System.out.println("Clicked on the Generate CCA link");
+		Thread.sleep(5000);
+		String CCALinkDetails = driver.findElement(By.xpath("//*[@id='ccaContent']")).getText();
+		System.out.println(CCALinkDetails);
+	}
 
-@When("^user select CCA link$")
-public void user_select_CCA_link() throws Throwable {
-    // Write code here that turns the phrase above into concrete actions
-}
+	@When("^user select CCA link$")
+	public void user_select_CCA_link() throws Throwable {
+		// Write code here that turns the phrase above into concrete actions
+	}
 
-@Then("^user should land on signin page$")
-public void user_should_land_on_signin_page() throws Throwable {
-    // Write code here that turns the phrase above into concrete actions
+	@Then("^user should land on signin page$")
+	public void user_should_land_on_signin_page() throws Throwable {
+		// Write code here that turns the phrase above into concrete actions
 
-}
+	}
 
-@When("^user enters valid user credentials$")
-public void user_enters_valid_user_credentials() throws Throwable {
-    // Write code here that turns the phrase above into concrete actions
+	@When("^user enters valid user credentials$")
+	public void user_enters_valid_user_credentials() throws Throwable {
+		// Write code here that turns the phrase above into concrete actions
 
-}
+	}
 
-@Then("^user should be logged in and user should be directly taken to the Otac Page$")
-public void user_should_be_logged_in_and_user_should_be_directly_taken_to_the_Otac_Page() throws Throwable {
-    // Write code here that turns the phrase above into concrete actions
+	@Then("^user should be logged in and user should be directly taken to the Otac Page$")
+	public void user_should_be_logged_in_and_user_should_be_directly_taken_to_the_Otac_Page() throws Throwable {
+		// Write code here that turns the phrase above into concrete actions
 
-}
+	}
 
-@Then("^continue in Delivery page and Click on the 'Continue'$")
-public void continue_in_Delivery_page_and_Click_on_the_Continue() throws Throwable {
-    // Write code here that turns the phrase above into concrete actions
+	@Then("^continue in Delivery page and Click on the 'Continue'$")
+	public void continue_in_Delivery_page_and_Click_on_the_Continue() throws Throwable {
+		// Write code here that turns the phrase above into concrete actions
 
-}
+	}
 
 	/*
 	 * #########################################################################
@@ -1227,12 +1246,9 @@ public void continue_in_Delivery_page_and_Click_on_the_Continue() throws Throwab
 			Agent_HomePagePageActions.FindUser(msisdn);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
-			System.out.println(
-					"Unable to login for upgrade for user in Agent shop, please see the failure screenshot");
-			Assert.fail(
-					"Unable to login for upgrade for user in Agent shop, please see the failure screenshot");
+			System.out.println("Unable to login for upgrade for user in Agent shop, please see the failure screenshot");
+			Assert.fail("Unable to login for upgrade for user in Agent shop, please see the failure screenshot");
 
-			
 		}
 	}
 
@@ -1244,12 +1260,10 @@ public void continue_in_Delivery_page_and_Click_on_the_Continue() throws Throwab
 			Agent_HomePagePageActions.NewUser();
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
-			System.out.println(
-					"Unable to perform Acquistion for user in Agent shop, please see the failure screenshot");
-			Assert.fail(
-					"Unable to perform Acquistion for user in Agent shop, please see the failure screenshot");
+			System.out
+					.println("Unable to perform Acquistion for user in Agent shop, please see the failure screenshot");
+			Assert.fail("Unable to perform Acquistion for user in Agent shop, please see the failure screenshot");
 
-			
 		}
 	}
 
@@ -1270,13 +1284,11 @@ public void continue_in_Delivery_page_and_Click_on_the_Continue() throws Throwab
 			Agent_DealBuilderPageActions.SelectPAYMDevice(Device);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
-			System.out.println(
-					"Unable to select Valid device, please see the failure screenshot");	
-			Assert.fail(
-					"Unable to select Valid device, please see the failure screenshot");
-				
-			}
-		
+			System.out.println("Unable to select Valid device, please see the failure screenshot");
+			Assert.fail("Unable to select Valid device, please see the failure screenshot");
+
+		}
+
 	}
 
 	@Given("^Select a valid PAYG ([^\"]*)")
@@ -1287,11 +1299,9 @@ public void continue_in_Delivery_page_and_Click_on_the_Continue() throws Throwab
 			Agent_DealBuilderPageActions.SelectPayGDevice(Device);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
-			System.out.println(
-					"Unable to select Valid PAYG device, please see the failure screenshot");
-			Assert.fail(
-					"Unable to select Valid PAYG device, please see the failure screenshot");
-}
+			System.out.println("Unable to select Valid PAYG device, please see the failure screenshot");
+			Assert.fail("Unable to select Valid PAYG device, please see the failure screenshot");
+		}
 	}
 
 	/*
@@ -1311,11 +1321,9 @@ public void continue_in_Delivery_page_and_Click_on_the_Continue() throws Throwab
 			Agent_DealBuilderPageActions.eMailBasket();
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
-			System.out.println(
-					"Unable to email basket, please see the failure screenshot");	
-			Assert.fail(
-					"Unable to email basket, please see the failure screenshot");	
-	
+			System.out.println("Unable to email basket, please see the failure screenshot");
+			Assert.fail("Unable to email basket, please see the failure screenshot");
+
 		}
 	}
 
@@ -1337,11 +1345,9 @@ public void continue_in_Delivery_page_and_Click_on_the_Continue() throws Throwab
 			Agent_DealBuilderPageActions.SelectPayGTariff(Tariff);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
-			System.out.println(
-					"Unable to select valid payg tariff, please see the failure screenshot");
-			
-			Assert.fail(
-					"Unable to select valid payg tariff, please see the failure screenshot");
+			System.out.println("Unable to select valid payg tariff, please see the failure screenshot");
+
+			Assert.fail("Unable to select valid payg tariff, please see the failure screenshot");
 
 		}
 	}
@@ -1354,10 +1360,8 @@ public void continue_in_Delivery_page_and_Click_on_the_Continue() throws Throwab
 			Agent_DealBuilderPageActions.SelectAccessoryDevice(Device);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
-			System.out.println(
-					"Unable to select accessory basket, please see the failure screenshot");
-			Assert.fail(
-					"Unable to select accessory basket, please see the failure screenshot");
+			System.out.println("Unable to select accessory basket, please see the failure screenshot");
+			Assert.fail("Unable to select accessory basket, please see the failure screenshot");
 
 		}
 	}
@@ -1368,15 +1372,13 @@ public void continue_in_Delivery_page_and_Click_on_the_Continue() throws Throwab
 			driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
 			PageFactory.initElements(driver, Agent_DealBuilderPage.class);
 			Agent_DealBuilderPageActions.SelectTariff(Tariff);
-			//System.out.println("Selecting a valid tariff");
+			// System.out.println("Selecting a valid tariff");
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
-			System.out.println(
-					"Unable to select valid tariff, please see the failure screenshot");
-			Assert.fail(
-					"Unable to select valid tariff, please see the failure screenshot");
+			System.out.println("Unable to select valid tariff, please see the failure screenshot");
+			Assert.fail("Unable to select valid tariff, please see the failure screenshot");
 
-			}
+		}
 
 	}
 
@@ -1401,10 +1403,8 @@ public void continue_in_Delivery_page_and_Click_on_the_Continue() throws Throwab
 			Thread.sleep(7000);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
-			System.out.println(
-					"Unable to validate basket content/checkout , please see the failure screenshot");
-			Assert.fail(
-					"Unable to validate basket content/checkout , please see the failure screenshot");
+			System.out.println("Unable to validate basket content/checkout , please see the failure screenshot");
+			Assert.fail("Unable to validate basket content/checkout , please see the failure screenshot");
 
 		}
 	}
@@ -1427,11 +1427,9 @@ public void continue_in_Delivery_page_and_Click_on_the_Continue() throws Throwab
 			Thread.sleep(6000);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
-			System.out.println(
-					"Unable to perform advisory checks , please see the failure screenshot");
-			Assert.fail(
-					"Unable to perform advisory checks , please see the failure screenshot");
-	
+			System.out.println("Unable to perform advisory checks , please see the failure screenshot");
+			Assert.fail("Unable to perform advisory checks , please see the failure screenshot");
+
 		}
 	}
 
@@ -1452,15 +1450,13 @@ public void continue_in_Delivery_page_and_Click_on_the_Continue() throws Throwab
 			PageFactory.initElements(driver, Agent_CreditCheckDetailsPage.class);
 			Agent_CreditCheckPageActions.Creditcheck(Firstname, Surname);
 			Agent_CreditCheckPageActions.BankDetails(Username);
-			Thread.sleep(10000);
+			Thread.sleep(30000);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
-			System.out.println(
-					"Unable to perform credit checks , please see the failure screenshot");
-			Assert.fail(
-					"Unable to perform credit checks , please see the failure screenshot");
+			System.out.println("Unable to perform credit checks , please see the failure screenshot");
+			Assert.fail("Unable to perform credit checks , please see the failure screenshot");
 
-			}
+		}
 
 	}
 	/*
@@ -1481,13 +1477,11 @@ public void continue_in_Delivery_page_and_Click_on_the_Continue() throws Throwab
 			Agent_RegisterCustomerActions.PayGRegistration(Firstname, Surname);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
-			System.out.println(
-					"Unable to Register customer , please see the failure screenshot");
-			Assert.fail(
-					"Unable to Register customer , please see the failure screenshot");
-	
+			System.out.println("Unable to Register customer , please see the failure screenshot");
+			Assert.fail("Unable to Register customer , please see the failure screenshot");
+
 		}
-		
+
 	}
 
 	/*
@@ -1501,7 +1495,8 @@ public void continue_in_Delivery_page_and_Click_on_the_Continue() throws Throwab
 	 */
 	@Then("^Choose HomeDelivery delivery address and delivery time$")
 	public void HomeDelivery_Address() throws Throwable {
-
+		// driver.findElement(By.xpath("//*[@id='deliveryDateTime']/div/table/tbody/tr[2]/td[2]/a")).click();
+		// Thread.sleep(5000);
 	}
 
 	/*
@@ -1522,11 +1517,9 @@ public void continue_in_Delivery_page_and_Click_on_the_Continue() throws Throwab
 			Agent_RegisterCustomerActions.CardDetails();
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
-			System.out.println(
-					"Unable to Pay by card , please see the failure screenshot");
-			Assert.fail(
-					"Unable to Pay by card , please see the failure screenshot");
-	
+			System.out.println("Unable to Pay by card , please see the failure screenshot");
+			Assert.fail("Unable to Pay by card , please see the failure screenshot");
+
 		}
 	}
 
@@ -1548,19 +1541,15 @@ public void continue_in_Delivery_page_and_Click_on_the_Continue() throws Throwab
 			Agent_ConfirmationPageActions.Confirmationdetails();
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
-			System.out.println(
-					"Unable to get order confirmation screen , please see the failure screenshot");		
-			Assert.fail(
-					"Unable to get order confirmation screen , please see the failure screenshot");
-	
-		
+			System.out.println("Unable to get order confirmation screen , please see the failure screenshot");
+			Assert.fail("Unable to get order confirmation screen , please see the failure screenshot");
+
 		}
 	}
 
-/////////***********************************/////////////
+	///////// ***********************************/////////////
 
-
-/////////***********************************/////////////
+	///////// ***********************************/////////////
 	/*
 	 * #########################################################################
 	 * #########
@@ -1580,10 +1569,8 @@ public void continue_in_Delivery_page_and_Click_on_the_Continue() throws Throwab
 			BasketPageActions.JuneReleaseBasketContent();
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
-			System.out.println(
-					"Unable to validate basket in basket page , please see the failure screenshot");
-			Assert.fail(
-					"Unable to validate basket in basket page , please see the failure screenshot");
+			System.out.println("Unable to validate basket in basket page , please see the failure screenshot");
+			Assert.fail("Unable to validate basket in basket page , please see the failure screenshot");
 
 		}
 	}
@@ -1595,10 +1582,8 @@ public void continue_in_Delivery_page_and_Click_on_the_Continue() throws Throwab
 			JuneReleaseValidations.QuantityValidationsBasket();
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
-			System.out.println(
-					"Unable to validate Quantity , please see the failure screenshot");		
-						Assert.fail(
-								"Unable to validate Quantity , please see the failure screenshot");
+			System.out.println("Unable to validate Quantity , please see the failure screenshot");
+			Assert.fail("Unable to validate Quantity , please see the failure screenshot");
 
 		}
 	}
@@ -1610,13 +1595,11 @@ public void continue_in_Delivery_page_and_Click_on_the_Continue() throws Throwab
 			JuneReleaseValidations.QuantityValidationsDelivery();
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
-			System.out.println(
-					"Unable to validate Quantity in Delivery page, please see the failure screenshot");		
-			Assert.fail(
-					"Unable to validate Quantity in Delivery page, please see the failure screenshot");
-	
+			System.out.println("Unable to validate Quantity in Delivery page, please see the failure screenshot");
+			Assert.fail("Unable to validate Quantity in Delivery page, please see the failure screenshot");
+
 		}
-		
+
 	}
 
 	@Then("^Verify that correct quantity of devices are displayed in Delivery page after update$")
@@ -1626,11 +1609,9 @@ public void continue_in_Delivery_page_and_Click_on_the_Continue() throws Throwab
 			JuneReleaseValidations.updatedQuantityValidationsDelivery();
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
-			System.out.println(
-					"Unable to validate Quantity in Delivery page, please see the failure screenshot");
-			
-			Assert.fail(
-					"Unable to validate Quantity in Delivery page, please see the failure screenshot");
+			System.out.println("Unable to validate Quantity in Delivery page, please see the failure screenshot");
+
+			Assert.fail("Unable to validate Quantity in Delivery page, please see the failure screenshot");
 
 		}
 	}
@@ -1642,11 +1623,9 @@ public void continue_in_Delivery_page_and_Click_on_the_Continue() throws Throwab
 			JuneReleaseValidations.QuantityValidationsReview();
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
-			System.out.println(
-					"Unable to validate Quantity in Review page, please see the failure screenshot");
-			
-			Assert.fail(
-					"Unable to validate Quantity in Review page, please see the failure screenshot");
+			System.out.println("Unable to validate Quantity in Review page, please see the failure screenshot");
+
+			Assert.fail("Unable to validate Quantity in Review page, please see the failure screenshot");
 
 		}
 	}
@@ -1658,10 +1637,8 @@ public void continue_in_Delivery_page_and_Click_on_the_Continue() throws Throwab
 			JuneReleaseValidations.QuantityValidationsBasket_Grouped();
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
-			System.out.println(
-					"Unable to validate Quantity , please see the failure screenshot");
-			Assert.fail(
-					"Unable to validate Quantity , please see the failure screenshot");
+			System.out.println("Unable to validate Quantity , please see the failure screenshot");
+			Assert.fail("Unable to validate Quantity , please see the failure screenshot");
 
 		}
 	}
@@ -1673,12 +1650,10 @@ public void continue_in_Delivery_page_and_Click_on_the_Continue() throws Throwab
 			JuneReleaseValidations.QuantityValidationsDelivery_Grouped();
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
-			System.out.println(
-					"Unable to validate Quantity , please see the failure screenshot");
-			Assert.fail(
-					"Unable to validate Quantity , please see the failure screenshot");
+			System.out.println("Unable to validate Quantity , please see the failure screenshot");
+			Assert.fail("Unable to validate Quantity , please see the failure screenshot");
 
-			}
+		}
 	}
 
 	@Then("^Verify that correct quantity of Grouped non connected items are displayed in Review page$")
@@ -1688,12 +1663,10 @@ public void continue_in_Delivery_page_and_Click_on_the_Continue() throws Throwab
 			JuneReleaseValidations.QuantityValidationsReviewPage_Grouped();
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
-			System.out.println(
-					"Unable to validate Quantity , please see the failure screenshot");
-			Assert.fail(
-					"Unable to validate Quantity , please see the failure screenshot");
+			System.out.println("Unable to validate Quantity , please see the failure screenshot");
+			Assert.fail("Unable to validate Quantity , please see the failure screenshot");
 
-			}
+		}
 	}
 
 	@Then("^navigate back to Basket page$")
@@ -1703,10 +1676,9 @@ public void continue_in_Delivery_page_and_Click_on_the_Continue() throws Throwab
 			JuneReleaseValidations.NavigatebackFromDelivery();
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
-			System.out.println(
-					"Unable to Navigate back , please see the failure screenshot");		
+			System.out.println("Unable to Navigate back , please see the failure screenshot");
 			Assert.fail("Unable to Navigate back , please see the failure screenshot");
-	
+
 		}
 	}
 
@@ -1717,12 +1689,10 @@ public void continue_in_Delivery_page_and_Click_on_the_Continue() throws Throwab
 			JuneReleaseValidations.ChangeQuantity();
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
-			System.out.println(
-					"Unable to validate Quantity , please see the failure screenshot");
-			Assert.fail(
-					"Unable to validate Quantity , please see the failure screenshot");
+			System.out.println("Unable to validate Quantity , please see the failure screenshot");
+			Assert.fail("Unable to validate Quantity , please see the failure screenshot");
 
-			}
+		}
 	}
 
 	/*
@@ -1743,12 +1713,10 @@ public void continue_in_Delivery_page_and_Click_on_the_Continue() throws Throwab
 			UpgradeCustomerPageActions.UpgradeUpsellPromoModule_Validation();
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
-			System.out.println(
-					"Unable to validate promo modules , please see the failure screenshot");	
-			Assert.fail(
-					"Unable to validate promo modules , please see the failure screenshot");
+			System.out.println("Unable to validate promo modules , please see the failure screenshot");
+			Assert.fail("Unable to validate promo modules , please see the failure screenshot");
 
-			}
+		}
 
 	}
 
@@ -1761,12 +1729,10 @@ public void continue_in_Delivery_page_and_Click_on_the_Continue() throws Throwab
 			UpgradeCustomerPageActions.UpgradeUpsellPromoModule_MyO2Action();
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
-			System.out.println(
-					"Unable to validate go to MyO2 CTA , please see the failure screenshot");
-			Assert.fail(
-					"Unable to validate go to MyO2 CTA , please see the failure screenshot");
+			System.out.println("Unable to validate go to MyO2 CTA , please see the failure screenshot");
+			Assert.fail("Unable to validate go to MyO2 CTA , please see the failure screenshot");
 
-			}
+		}
 
 	}
 
@@ -1789,11 +1755,9 @@ public void continue_in_Delivery_page_and_Click_on_the_Continue() throws Throwab
 			Autoredirection.redirect();
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
-			System.out.println(
-					"Unable to click on ipad promo module , please see the failure screenshot");
-			Assert.fail(
-					"Unable to click on ipad promo module , please see the failure screenshot");
-}
+			System.out.println("Unable to click on ipad promo module , please see the failure screenshot");
+			Assert.fail("Unable to click on ipad promo module , please see the failure screenshot");
+		}
 	}
 
 	@When("^input ([^\"]*) and ([^\"]*) and other valid details in Delivery page and Click on the 'Send me my sim'$")
@@ -1813,12 +1777,10 @@ public void continue_in_Delivery_page_and_Click_on_the_Continue() throws Throwab
 			Thread.sleep(2000);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
-			System.out.println(
-					"Unable to validate details in delivery page, please see the failure screenshot");
-			Assert.fail(
-					"Unable to validate details in delivery page, please see the failure screenshot");
+			System.out.println("Unable to validate details in delivery page, please see the failure screenshot");
+			Assert.fail("Unable to validate details in delivery page, please see the failure screenshot");
 
-			}
+		}
 
 	}
 
@@ -1841,11 +1803,9 @@ public void continue_in_Delivery_page_and_Click_on_the_Continue() throws Throwab
 			Autoredirection.redirect();
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
-			System.out.println(
-					"Unable to pick a sim on tablet promo , please see the failure screenshot");
-			Assert.fail(
-					"Unable to pick a sim on tablet promo , please see the failure screenshot");
-}
+			System.out.println("Unable to pick a sim on tablet promo , please see the failure screenshot");
+			Assert.fail("Unable to pick a sim on tablet promo , please see the failure screenshot");
+		}
 
 	}
 
@@ -1875,13 +1835,12 @@ public void continue_in_Delivery_page_and_Click_on_the_Continue() throws Throwab
 
 	}
 
-
 	@Given("^verify that error message is thrown$")
-public void verify_that_error_message_is_thrown() throws Throwable {
+	public void verify_that_error_message_is_thrown() throws Throwable {
 		try {
 			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 			PageFactory.initElements(driver, BasketPage.class);
-			Thread.sleep(2000);			
+			Thread.sleep(2000);
 			BasketPageActions.ValidatePromoCode();
 			Thread.sleep(2000);
 		} catch (Exception e) {
@@ -2078,10 +2037,12 @@ public void verify_that_error_message_is_thrown() throws Throwable {
 			Thread.sleep(2000);
 			OrderSummarySectionActions.checkStockExtMessage(product);
 			Thread.sleep(2000);
+			OrderSummarySectionActions.checkStockExtMessageDelText();
+			Thread.sleep(3000);
 			PaymentPageActions.Time_At_Address();
 			Thread.sleep(2000);
 			PaymentPageActions.Card_Details(Username);
-			Thread.sleep(10000);
+			Thread.sleep(75000);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -2102,7 +2063,7 @@ public void verify_that_error_message_is_thrown() throws Throwable {
 			PaymentPageActions.Time_At_Address();
 			Thread.sleep(2000);
 			PaymentPageActions.Card_Details(Username);
-			Thread.sleep(10000);
+			Thread.sleep(75000);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -2126,7 +2087,7 @@ public void verify_that_error_message_is_thrown() throws Throwable {
 			PaymentPageActions.Time_At_Address();
 			Thread.sleep(2000);
 			PaymentPageActions.Card_Details(Username);
-			Thread.sleep(10000);
+			Thread.sleep(75000);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -2146,10 +2107,12 @@ public void verify_that_error_message_is_thrown() throws Throwable {
 			Thread.sleep(10000);
 			AgreementPageActions.gettitlepage();
 			Thread.sleep(3000);
-			AgreementPageActions.Affordability();
-			Thread.sleep(5000);
 			OrderSummarySectionActions.checkStockExtMessage(product);
 			Thread.sleep(2000);
+			OrderSummarySectionActions.checkStockExtMessageDelText();
+			Thread.sleep(2000);
+			AgreementPageActions.Affordability();
+			Thread.sleep(5000);
 			AgreementPageActions.KeyInformation();
 			Thread.sleep(5000);
 			AgreementPageActions.secciSection();
@@ -2173,10 +2136,20 @@ public void verify_that_error_message_is_thrown() throws Throwable {
 		try {
 			PageFactory.initElements(driver, ReviewPage.class);
 			PageFactory.initElements(driver, OrderSummarySection.class);
-			ReviewPageActions.gettitlepage();
-			ReviewPageActions.TermsCheckBox();
+			ReviewPageActions.gettitlepage();			
+			Thread.sleep(2000);
 			ReviewPageActions.checkOrderContractTextRP();
+			Thread.sleep(2000);
+			ReviewPageActions.checkStockExtMsgRP(product);
+			Thread.sleep(2000);
+			ReviewPageActions.checkDelTextRP();
+			Thread.sleep(3000);
 			OrderSummarySectionActions.checkStockExtMessage(product);
+			Thread.sleep(2000);
+			OrderSummarySectionActions.checkStockExtMessageDelText();
+			Thread.sleep(2000);
+			ReviewPageActions.TermsCheckBox();
+			Thread.sleep(2000);
 			ReviewPageActions.PayNow();
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
@@ -2192,7 +2165,7 @@ public void verify_that_error_message_is_thrown() throws Throwable {
 		try {
 			PageFactory.initElements(driver, ShopLandingPage.class);
 			ShopLandingPageAction.clickSignIn();
-			Autoredirection.redirectUpgrades();
+			// Autoredirection.redirectUpgrades();
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

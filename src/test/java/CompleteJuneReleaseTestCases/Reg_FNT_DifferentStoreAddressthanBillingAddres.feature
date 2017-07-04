@@ -1,4 +1,4 @@
-Feature: FNT PayM Different store address than billing address
+Feature: Reg_FNT_DifferentStoreAddressthanBillingAddres
 
   @FNTRegression
   Scenario Outline: FNT PayM Different store address than billing address

@@ -1,4 +1,4 @@
-Feature: AFU_Saved Basket functionality
+Feature: Reg_AFU_SavedBasket
 
   #launch hooks and get browser
   @AgentsRegression

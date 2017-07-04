@@ -1,4 +1,4 @@
-Feature: Successful completion of a PAY G handset acquisition Journey without an accessory
+Feature: Reg_AFA_PayG_withoutAnyAccessory
 
   #launch hooks and get browser
   @AgentsRegression
