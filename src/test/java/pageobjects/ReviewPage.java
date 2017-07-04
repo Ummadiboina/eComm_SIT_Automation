@@ -22,5 +22,15 @@ public class ReviewPage {
 	  @FindBy(how=How.ID,using="//*[@id='stock-extended-message-single']") 
 	  public static WebElement StockExtMessageDDPORP; 
 	  
+	  @FindBy(how = How.XPATH, using = "//div[@id='delivery-details-section']//p[@id='review-generic-delivery-message']")
+		public static WebElement DeliveryTextRP;
+
+		@FindBy(how = How.XPATH, using = "//tr[@id='basket-delivery']/td/div/p[@id='contract-message']")
+		public static WebElement OrderContractMessageRPOrderSummary;
+	  
+	  
+	  
+	  
+	  
 		
 }

@@ -59,38 +59,39 @@ public class ReviewPageActions extends Environment  {
 		String ActOrderContractMsg = "";
 		String ExpOrderContractMsg = "";
 
+		String ActOrderContractMsgOrderSummary = "";
+		String ExpOrderContractMsgOrderSummary = "";
+
 		try {
 			// TODO Auto-generated method stub
-			
+
 			ActOrderContractMsg = pageobjects.ReviewPage.OrderContractMessageRP.getText();
 			ExpOrderContractMsg = "Your contract will not start until the order is on its way.";
 
-			System.out.println("Act Del MSg" + ActOrderContractMsg);
-			System.out.println("Exp Del MSg" + ExpOrderContractMsg);
+			log.debug("Act Del MSg" + ActOrderContractMsg);
+			log.debug("Exp Del MSg" + ExpOrderContractMsg);
+
+			ActOrderContractMsgOrderSummary = pageobjects.ReviewPage.OrderContractMessageRPOrderSummary.getText();
+			ExpOrderContractMsgOrderSummary = "Your contract will not start until the order is on its way.";
 
 			Assert.assertTrue("Assertion Failed: Order Contract Text in Review Page does not match",
 					ExpOrderContractMsg.equals(ActOrderContractMsg));
 
 			System.out.println("Assertion Passed: ActOrderContractMsg matches ExpOrderContractMsg in Review Page");
 
-			/*
-			 * if (ActOrderContractMsg.equals(ExpOrderContractMsg)) {
-			 * System.out.
-			 * println("ActOrderContractMsg matches ExpOrderContractMsg in Review Page"
-			 * ); } else { //
-			 * Assert.fail("Order Contract Text in Review Page does not match");
-			 * System.out.
-			 * println("Order Contract Text in Review Page does not match");
-			 * 
-			 * }
-			 */
+			Assert.assertTrue("Assertion Failed: Order Contract Text in the Order Summary Section does not match",
+					ExpOrderContractMsgOrderSummary.equals(ActOrderContractMsgOrderSummary));
+
+			System.out.println(
+					"Assertion Passed: ActOrderContractMsgOrderSummary matches ExpOrderContractMsgOrderSummary in the Order Summary Section");
+
 		} catch (AssertionError e) {
 			System.out.println("ActOrderContractMsg: " + ActOrderContractMsg
 					+ " does not match the ExpOrderContractMsg: " + ExpOrderContractMsg + " in Review Page");
 
 		}
 	}
-		
+
 		public static void checkStockExtMsgRP() {
 			// TODO Auto-generated method stub
 			String ActualStockExtMsg = pageobjects.ReviewPage.StockExtMessageDDPORP.getText();
@@ -105,6 +106,35 @@ public class ReviewPageActions extends Environment  {
 
 			}
 		}
+		
+		
+	public static void checkStockExtMsgRP(String product) {
+		// TODO Auto-generated method stub
+		String ActualStockExtMsg = pageobjects.ReviewPage.StockExtMessageDDPORP.getText();
+
+		String ExpStockExtMsg = null;
+		if (product.contains("GalaxyS7")) {
+
+			ExpStockExtMsg = "Your new Samsung Galaxy S7 32gb Gold may take up to 2 to 3 days. You'll pay for the new Phone now, but won't start paying for your contract until your iPhone is on its way.";
+		}
+
+		if (ActualStockExtMsg.matches(ExpStockExtMsg)) {
+			System.out.println("ActualStockExtMsg in Review Page matches ExpStockExtMsg");
+		} else {
+			Assert.fail("Stock extended message in Review Page is not present");
+
+		}
+	}
+
+	public static void checkDelTextRP() {
+		String ExpStockExtMsgDelText = "We will deliver the rest of your order as soon as possible.";
+		if (pageobjects.ReviewPage.DeliveryTextRP.getText().matches(ExpStockExtMsgDelText)) {
+			System.out.println("Delivery Text in Review Page is present");
+		} else {
+			Assert.fail("Delivery Text in Review Page is not present");
+		}
+	}
+
 		
 			
 }
