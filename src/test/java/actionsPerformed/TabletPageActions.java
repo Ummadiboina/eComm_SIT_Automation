@@ -87,6 +87,24 @@ public class TabletPageActions extends Environment {
 
 			log.debug("iPad is selected");
 		}
+		
+		if (elementName.contains("iPad97")) {
+			System.out.println("iPad is selected");
+
+			pageobjects.TabletPage.iPad.click();
+
+			log.debug("iPad is selected");
+		}
+		
+		if (elementName.contains("SamsungGalaxy10")) {
+			System.out.println("SamsungGalaxy10 is selected");
+
+			pageobjects.TabletPage.SamsungGalaxy10.click();
+
+			log.debug("SamsungGalaxy10 is selected");
+		}
+		
+		
 	}
 
 }

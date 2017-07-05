@@ -72,6 +72,13 @@ public class BasketPage {
 	@FindBy(how = How.XPATH, using = ("//li[@class='accessory has-image']"))
 	public static WebElement AccessoryDetails;
 
+	@FindBy(how = How.XPATH, using = ("//*[@class='ac-qauantity-heading']"))
+	public static WebElement DeviceHeadingNonConnected;
+	
+	//
+	@FindBy(how = How.XPATH, using = ("*[@id='accessory-quantitySelectBoxItContainer']"))
+	public static WebElement DeviceQuantityNonConnected;
+	
 	@FindBy(how = How.ID, using = ("storePostcode"))
 	public static WebElement StorePostcode;
 

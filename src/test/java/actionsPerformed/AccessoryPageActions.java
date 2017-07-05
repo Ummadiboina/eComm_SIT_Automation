@@ -221,6 +221,56 @@ public static void selectAnyAccessoryLimit() throws InterruptedException {
 
 		}
 		}
+
+public static void UserSpecifiedAccessoryLimit(String Limit) throws InterruptedException {
+
+	
+	try {
+	// Below will give status like in stock / out of stock etc
+		Thread.sleep(5000);
+
+		String status = driver.findElement(By.className("status-info")).getText();
+		System.out.println(status);
+	
+		if (status.contains("In Stock")) {
+			WebElement element = driver
+					.findElement(By.xpath("//select[@class='accessory-option ng-pristine ng-valid']"));
+			JavascriptExecutor js = (JavascriptExecutor) driver;
+			js.executeScript("arguments[0].setAttribute('style', 'display:block;')", element);
+			new Select(element).selectByValue(Limit);
+
+			WebElement DeviceDetailsQuantity = driver.findElement(
+					By.xpath("//div[@on-dimension-select='selectQuantityDimension']/span[@role='combobox']"));
+			String DeviceDetailsQuantityValue = DeviceDetailsQuantity.getText();
+			System.out.println("DeviceDetailsQuantityValue is "+DeviceDetailsQuantityValue);
+
+			driver.findElement(By.id("deviceDetailsSubmit")).click();
+
+			Thread.sleep(7000);
+
+
+		} else {
+			driver.navigate().back();
+		}
+
+	} catch (Exception e) {
+		WebElement DeviceDetailsQuantity = driver.findElement(
+				By.xpath("//div[@on-dimension-select='selectQuantityDimension']/span[@role='combobox']"));
+		String DeviceDetailsQuantityValue = DeviceDetailsQuantity.getText();
+		System.out.println(DeviceDetailsQuantityValue);
+		//Assert.assertEquals(Limit, DeviceDetailsQuantityValue);
+
+		driver.findElement(By.id("deviceDetailsSubmit")).click();
+
+		Thread.sleep(3000);
+		WebElement BasketQuantity = driver.findElement(By.id("accessory-quantitySelectBoxIt"));
+		String BasketQuantityvalue = BasketQuantity.getText();
+		// Assert.assertEquals(DeviceDetailsQuantityValue,
+		// BasketQuantityvalue);
+	//	Assert.assertEquals(Limit, BasketQuantityvalue);
+
+	}
+	}
 	
 }
 

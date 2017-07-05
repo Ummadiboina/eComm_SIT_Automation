@@ -170,31 +170,7 @@ public class BasketPageActions extends Environment
 		log.debug("The Main Headercontents are : " + pageobjects.BasketPage.MainHeaders.getText());
 		log.debug("The Phone contents are : " + pageobjects.BasketPage.DeviceDetailsDisplay.getText());
 
-		// log.debug("The Airtime details are :"
-		// +pageobjects.BasketPage.AirtimeDetails.getText());
-		/*
-		 * try { log.debug("The Airtime contents are : "
-		 * +pageobjects.BasketPage.AirtimeDetails.getText()); }
-		 * catch(NoSuchElementException e) { log.debug("The contents are : "
-		 * +pageobjects.BasketPage.NonAirtimeDetails.getText()); }
-		 * 
-		 */
-
-		// System.out.println("The result is "+Stf1);
-
-		/*
-		 * if(true) { log.debug("The Airtime contents are : "
-		 * +pageobjects.BasketPage.AirtimeDetails.getText());
-		 * 
-		 * }
-		 * 
-		 * 
-		 * else { log.debug("The contents are : "
-		 * +pageobjects.BasketPage.NonAirtimeDetails.getText());
-		 * 
-		 * }
-		 */
-
+		
 		log.debug("The Basket Totals are : " + pageobjects.BasketPage.totals.getText());
 
 		log.debug("The Basket Totals are : " + pageobjects.BasketPage.HomeDeliveryText.getText());
@@ -204,10 +180,6 @@ public class BasketPageActions extends Environment
 	public static void BasketContentsforNonConnected() throws InterruptedException {
 
 		try {
-			// Assert.assertEquals("The condition is ",
-			// driver.findElement(By.xpath("//*[@value='Go to checkout'][1]")));
-			// BasketPageActions.AccessoryPageContents();
-
 			Assert.assertEquals("Your basket", pageobjects.BasketPage.BasketHeaderXXL.getText());
 			log.debug("Shop basket pages validations" + driver.getTitle());
 			log.debug("BasketHeaderXXL header is " + pageobjects.BasketPage.BasketHeaderXXL.getText());
@@ -223,59 +195,31 @@ public class BasketPageActions extends Environment
 			log.debug("Stock is not available, perhaps out of stock");
 			System.out.println("Stock is not available, perhaps out of stock");
 			Assert.fail("Stock is not available, perhaps out of stock");
-			// Assert.fail
+
 		}
-		/*
-		 * if(pageobjects.BasketPage.checkoutbtn.isDisplayed()) {
-		 * System.out.println("Checkout is Enabled and Present" );
-		 * log.debug("Checkout is Enabled and Present" ); } else {
-		 * System.out.println("Checkout is not Enabled and Present" );
-		 * log.debug("Checkout is not Present" ); }
-		 * 
-		 * 
-		 * /* try { //Assert.assertEquals("The condition is ",
-		 * driver.findElement(By.xpath("//*[@value='Go to checkout'][1]")));
-		 * //BasketPageActions.AccessoryPageContents();
-		 * 
-		 * pageobjects.BasketPage.checkoutbtn.isDisplayed();
-		 * System.out.println("Checkout is Enabled and Present" );
-		 * 
-		 * log.debug("Checkout is Enabled and Present" );
-		 * 
-		 * 
-		 * } catch (Exception e) {
-		 * log.debug("Checkout is not Enabled or not Present" );
-		 * 
-		 * Assert.
-		 * fail("Unable to find Checkout button in Reference shop Basket page");
-		 * }
-		 */
 
-		/*
-		 * log.debug("Shop basket pages validations"+driver.getTitle());
-		 * 
-		 * boolean fname=pageobjects.BasketPage.checkoutbtn.isEnabled();
-		 * 
-		 * 
-		 * if(fname!=false) {
-		 * System.out.println("Checkout is Enabled and Present" );
-		 * 
-		 * log.debug("Checkout is Enabled and Present" );
-		 * 
-		 * 
-		 * } else { System.out.println("Go To Checkout is Absent ");
-		 * log.debug("Go To Checkout is Absent ");
-		 * 
-		 * } //Below will display contents of the section
-		 */
 		log.debug("The Main Headercontents are : " + pageobjects.BasketPage.MainHeaders.getText());
+		System.out.println("The Main Headercontents are : " + pageobjects.BasketPage.MainHeaders.getText());
 
-		log.debug("The Phone contents are : " + pageobjects.BasketPage.AccessoryDetails.getText());
+		log.debug("The Device names is/are : " + pageobjects.BasketPage.AccessoryDetails.getText());
+		System.out.println("The Device names is/are : " + pageobjects.BasketPage.AccessoryDetails.getText());
+		
+		log.debug("The Device names is/are : " + pageobjects.BasketPage.DeviceHeadingNonConnected.getText());
+		System.out.println("The Device names is/are : " + pageobjects.BasketPage.DeviceHeadingNonConnected.getText());
 
+		//Taking element name and storing it
+		String devicename1="Text111";
+		
+		
+		log.debug("The Device names is/are : " + pageobjects.BasketPage.DeviceQuantityNonConnected.getText());
+		System.out.println("The Device names is/are : " + pageobjects.BasketPage.DeviceQuantityNonConnected.getText());
+
+		System.out.println("The Device names is/are : " + pageobjects.BasketPage.DeviceQuantityNonConnected.getText());
+		
 		log.debug("The Basket Totals are : " + pageobjects.BasketPage.totals.getText());
-
-		log.debug("The Basket Totals are : " + pageobjects.BasketPage.HomeDeliveryText.getText());
-
+		System.out.println("The Basket Totals are : " + pageobjects.BasketPage.totals.getText());
+		
+			
 	}
 
 	public static void PlanOnlyPageContents() throws InterruptedException {
@@ -419,5 +363,35 @@ public static void verifyDevicesInBasket(String dev1, String dev2, String dev3) 
 log.debug("Selected devices are in basket");
 	}
 
+
+public static void ValidateContentEcomm11522()  throws InterruptedException {
+
+	boolean fname = pageobjects.BasketPage.checkoutbtn.isEnabled();
+if (fname != false) {
+		System.out.println(
+				"Checkout is Enabled and Present");
+		log.debug(
+				"Checkout is Enabled and Present");
+
+	} else {
+		System.out.println(
+				"Checkout is not Enabled and Present");
+		log.debug(
+				"Checkout is Not Enabled and Present");
+	}
+
+// Below will display contents of the phone section
+
+
+	log.debug("The Main Headercontents are : " + pageobjects.BasketPage.MainHeaders.getText());
+	
+	log.debug("The device contents are : " + pageobjects.BasketPage.DeviceDetailsDisplay.getText());
+
+	
+	log.debug("The Basket Totals are : " + pageobjects.BasketPage.totals.getText());
+
+	log.debug("The Basket Totals are : " + pageobjects.BasketPage.HomeDeliveryText.getText());
+
+}
 
 }

@@ -119,7 +119,7 @@ public class E2EOrderPlaced_Steps {
 			PageFactory.initElements(driver, MouseHoverPage.class);
 			MouseHoverAction.PayMPhonesLandingPage();
 
-			Autoredirection.redirect();
+			//Autoredirection.redirect();
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			System.out.println("unable to do mousehover to phones");
@@ -133,7 +133,7 @@ public class E2EOrderPlaced_Steps {
 			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 			PageFactory.initElements(driver, MouseHoverPage.class);
 			MouseHoverAction.AccessoriesLandingPage();
-			Autoredirection.redirect();
+			//Autoredirection.redirect();
 			Thread.sleep(10000);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
@@ -480,6 +480,7 @@ public class E2EOrderPlaced_Steps {
 
 	}
 
+
 	@Given("^add FitnessTracker to basket within limit in details page and navigate to basket$")
 	public void add_FitnessTracker_to_basket_within_limit_in_details_page_and_navigate_to_basket() throws Throwable {
 		try {
@@ -530,8 +531,9 @@ public class E2EOrderPlaced_Steps {
 		try {
 			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 			PageFactory.initElements(driver, PAYMandPAYGTariffAndExtrasPage.class);
+			System.out.println("Entering Choose All accessory method");
 			PAYMandPAYGTariffAndExtrasPageActions.addMoreAccessory();
-			System.out.println("Choose All accessory method");
+			System.out.println("Completed Choose All accessory method");
 			Thread.sleep(2000);
 		} catch (Exception e) 
 		{
@@ -633,7 +635,7 @@ public class E2EOrderPlaced_Steps {
 			PageFactory.initElements(driver, PAYMandPAYGTariffAndExtrasPage.class);
 			PAYMandPAYGTariffAndExtrasPageActions.addToBasketLive();
 			Thread.sleep(3000);
-			BasketPageActions.ValidateBasketPageContents();
+			//BasketPageActions.ValidateBasketPageContents();
 			BasketPageActions.CollectionorDelivery("homeDelivery");
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
@@ -2344,6 +2346,81 @@ public class E2EOrderPlaced_Steps {
 		}
 	}
 
+@And("^Verify the devices ([^\"]*), ([^\"]*) and ([^\"]*) in basket$")
+public void verifyDevicesInBasket(String smartwatchname, String fitnesstrackername, String tabletname) throws Throwable {
+	try {
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		PageFactory.initElements(driver, BasketPage.class);
+		BasketPageActions.verifyDevicesInBasket(smartwatchname, fitnesstrackername, tabletname);
+	} catch (Exception e) {
+		// TODO Auto-generated catch block
+		System.out.println("not able to verify if phone tab is selected");
+		Assert.fail("not able to verify if phone tab is selected");
+	}
+}
+
+@Given("^add quantity of accessories to basket within ([^\"]*) in details page and navigate to basket$")
+public void addQuantityAccessories(String Limit) throws Throwable {
+	try {
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		PageFactory.initElements(driver, AccessoryPage.class);
+		PageFactory.initElements(driver, NonConnectedDeviceDetailsPage.class);
+		AccessoryPageActions.UserSpecifiedAccessoryLimit(Limit);
+		// NonConnectedDeviceDetailsPageAction.ClickonBasketIcon();
+	} catch (Exception e) {
+		// TODO Auto-generated catch block
+		System.out.println("Unable to add accessories to basket");
+		Assert.fail("Unable to add accessories to basket");
+
+	}
+
+}
+
+@And("^add quantity of FitnessTracker to basket within ([^\"]*) in details page and navigate to basket$")
+public void addQuantityFitnessTracker(String Limit) throws Throwable {
+	try {
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		PageFactory.initElements(driver, AccessoryPage.class);
+		PageFactory.initElements(driver, NonConnectedDeviceDetailsPage.class);
+		FitnessTrackerPageActions.UserSpecifiedFitnessTrackerLimit(Limit);
+		// NonConnectedDeviceDetailsPageAction.ClickonBasketIcon();
+	} catch (Exception e) {
+		// TODO Auto-generated catch block
+		System.out.println("Unable to add Fitnesstracker to basket");
+		Assert.fail("Unable to add Fitnesstracker to basket");
+	}
+}
+
+@And("^the previously selected standalone non-connected items should be removed from my basket$")
+public void validateEcomm11522() throws Throwable {
+	try {
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		PageFactory.initElements(driver, BasketPage.class);
+		PageFactory.initElements(driver, PAYMandPAYGTariffAndExtrasPage.class);
+		Thread.sleep(3000);
+		BasketPageActions.ValidateContentEcomm11522();
+	} catch (Exception e) {
+		// TODO Auto-generated catch block
+		System.out.println("Unable to add Fitnesstracker to basket");
+		Assert.fail("Unable to add Fitnesstracker to basket");
+	}
+}
+
+@And("^Validate Basket content for non Connected$")
+public void validateBasketNonConnected() throws Throwable {
+	try {
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		PageFactory.initElements(driver, BasketPage.class);
+		PageFactory.initElements(driver, PAYMandPAYGTariffAndExtrasPage.class);
+		PAYMandPAYGTariffAndExtrasPageActions.addToBasketLive();
+		Thread.sleep(3000);
+		BasketPageActions.BasketContentsforNonConnected();
+	} catch (Exception e) {
+		// TODO Auto-generated catch block
+		System.out.println("Unable to add Fitnesstracker to basket");
+		Assert.fail("Unable to add Fitnesstracker to basket");
+	}
+}
 
 
 

@@ -1,7 +1,11 @@
 package pageobjects;
 
+import java.util.List;
+
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindAll;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.FindBys;
 import org.openqa.selenium.support.How;
 
 public class PAYMandPAYGTariffAndExtrasPage {
@@ -51,5 +55,19 @@ public class PAYMandPAYGTariffAndExtrasPage {
 	//Below is for Clicking on the Add to basket option which is at the top of the tariff and extras page
 	@FindBy(id="qa-proceed-to-basket-dock-header")
 	public static WebElement addToBasketDockHeader;
+	
+	@FindBy(how=How.XPATH,using=("//*[@class='accessory-button-container']"))
+	public static WebElement AccessoryContainer;
+	
+	/*@FindBy(how=How.XPATH,using=("//*[@class='accessory-button-container']/input[@value='Add']"))
+	public static WebElement Add_AccessoryContainer;
+	*/
+	
+	@FindBys({
+		@FindBy(how=How.XPATH,using=("//*[@class='accessory-button-container']/input[@value='Add']"))
+		})
+	public static List<WebElement> Add_AccessoryContainer;
+	
+		
 	
 }
