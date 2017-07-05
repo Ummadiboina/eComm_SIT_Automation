@@ -168,6 +168,14 @@ public static void Sorting(String elementName) throws InterruptedException {
 
 	}
 
+public static void elementSelected() {
+
+	Assert.assertEquals(true, pageobjects.PAYMSimOPage.simphonetab.isSelected());
+	log.debug("Phone tab is selected by default");
+
+}
+
+
 	public static void ElementColour(String elementName , String colouractual) throws InterruptedException {
 		
 		String blueexpected="rgba(3, 43, 90, 1)";

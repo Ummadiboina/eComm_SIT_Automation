@@ -39,6 +39,7 @@ import actionsPerformed.ReviewPageActions;
 import actionsPerformed.ShopLandingPageAction;
 import actionsPerformed.SimsPageActions;
 import actionsPerformed.SmartwatchesPageActions;
+import actionsPerformed.TabletPageActions;
 import actionsPerformed.UpgradeCustomerPageActions;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
@@ -72,6 +73,7 @@ import pageobjects.ReviewPage;
 import pageobjects.ShopLandingPage;
 import pageobjects.SimsPage;
 import pageobjects.SmartwatchesPage;
+import pageobjects.TabletPage;
 import pageobjects.UpgradeCustomerPage;
 import pageobjects.UpgradePhonesListingPage;
 
@@ -2227,5 +2229,122 @@ public class E2EOrderPlaced_Steps {
 
 		}
 	}
+/*================================
+	
+	July release
+	
+	================================
+*/
+	
+	@And("^click on Add to Basket button$")
+	public void click_on_Add_to_Basket_button() throws Throwable {
+
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		try {
+			PageFactory.initElements(driver, NonConnectedDeviceDetailsPage.class);
+			NonConnectedDeviceDetailsPageAction.AddtoBasket();
+		} catch (Exception e) {
+			e.printStackTrace();
+			Assert.fail("Unable to click on Add to Basket button");
+		}
+	}
+
+@And("^click on continue shopping button$")
+	public void click_on_continue_shopping_button() throws Throwable {
+		
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		try {
+			PageFactory.initElements(driver, BasketPage.class);
+			BasketPageActions.continueShopping();
+		} catch (Exception e) {
+			e.printStackTrace();
+			Assert.fail("Unable to click on Add to Basket button");
+		}
+	}
+
+@And("^navigate to PAYM Tablets page$")
+	public void navigate_to_PAYM_Tablets_page() throws Throwable {
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, MouseHoverPage.class);
+			MouseHoverAction.PayMTabletsLandingPage();
+
+			Autoredirection.redirect();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			System.out.println("unable to do mousehover to tablets");
+			Assert.fail("unable to do mousehover to tablets");
+		}
+	}
+
+@And("^select any available \"([^\"]*)\" Tablet$")
+	public void select_any_available_Tablet(String arg1) throws Throwable {
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, TabletPage.class);
+			TabletPageActions.DeviceSelect("Random Device");
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			System.out.println("Unable to select tablet");
+			Assert.fail("Unable to select tablet");
+		}
+	}
+
+@And("^I choose ([^\"]*) Smartwatch$")
+	public void i_choose_smartwatch(String elementName) throws Throwable {
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, SmartwatchesPage.class);
+			SmartwatchesPageActions.DeviceSelect(elementName);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			System.out.println("Unable to select MBB PayG device");
+			Assert.fail("Unable to select MBB PayG device");
+
+		}
+	}
+
+@And("^I choose ([^\"]*) FitnessTracker$")
+	public void i_choose_fitnesstracker(String elementName) throws Throwable {
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, FitnessTrackerPage.class);
+			FitnessTrackerPageActions.DeviceSelect(elementName);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			System.out.println("Unable to select FitnessTracker");
+			Assert.fail("Unable to select FitnessTracker");
+
+		}
+	}
+
+	@And("^I choose ([^\"]*) Tablet$")
+	public void i_choose_Tablet(String elementName) throws Throwable {
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, TabletPage.class);
+			TabletPageActions.DeviceSelect(elementName);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			System.out.println("Unable to select tablet");
+			Assert.fail("Unable to select tablet");
+		}
+	}
+
+@And("^verify the elements$")
+	public void verify_the_elements() throws Throwable {
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, PAYMSimOPage.class);
+			PAYMSimOPageActions.elementSelected();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			System.out.println("not able to verify if phone tab is selected");
+			Assert.fail("not able to verify if phone tab is selected");
+		}
+	}
+
+
+
 
 }

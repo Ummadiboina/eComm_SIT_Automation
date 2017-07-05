@@ -101,4 +101,12 @@ public class BasketPage {
 
 	@FindBy(how = How.XPATH, using = ("//*[@id='apply-voucher-error']"))
 	public static WebElement VoucherMessage;
+
+	@FindBy(how = How.XPATH, using = ("//a[@href='/shop/']"))
+	public static WebElement ContinueShopping;
+
+	@FindBy(how = How.XPATH, using = ("//div[@class='basket-list']//li[@data-qa-class='basket-item']/section/h3/span"))
+	public static WebElement DevicesList;
+
+
 }

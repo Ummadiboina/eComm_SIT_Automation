@@ -17,4 +17,8 @@ public class SmartwatchesPage{
 		
 		@FindBy(how=How.XPATH,using="//*[@data-qa-device-contract-type='nonconnected'][1]")
 		public static WebElement RandomSmartWatch;
+		
+		@FindBy(how = How.XPATH, using = "//a[contains(@href, '/shop/smartwatches/samsung/gear-s2/#contractType=nonconnected')]")
+		public static WebElement SamsungGearS2;
+
 }
