@@ -16,6 +16,7 @@ Feature: C1169_E11522_TC2
     And Land on the 'Tariffs and extra' page
     And Choose all Accesssory
     And I Land on the basket page and choose home delivery option
+    And the previously selected standalone non-connected items should be removed from my basket
     And click on "go to checkout" button
     And input <Firstname> and <Surname> and other valid details in Delivery page and Click on the 'Continue button'
     And land on the payment page and input <Username> and other details and click 'Continue on next step'

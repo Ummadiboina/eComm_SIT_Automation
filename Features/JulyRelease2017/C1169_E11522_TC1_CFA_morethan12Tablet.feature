@@ -10,13 +10,13 @@ Feature: C1169_E11522_TC1
     And select any available "Random" Fitness tracker
     And add quantity of FitnessTracker to basket within <limit> in details page and navigate to basket
     And Validate Basket content for non Connected
-    And navigate to PAYM Phones page
     And navigate to PAYM Tablets page
     And I choose <tabletname> Tablet
     And Navigate to device details page
     And Land on the 'Tariffs and extra' page
     And Choose all Accesssory
     And I Land on the basket page and choose home delivery option
+    And the previously selected standalone non-connected items should be removed from my basket
     And click on "go to checkout" button
     And input <Firstname> and <Surname> and other valid details in Delivery page and Click on the 'Continue button'
     And land on the payment page and input <Username> and other details and click 'Continue on next step'
@@ -25,5 +25,5 @@ Feature: C1169_E11522_TC1
     Then order confirmation is displayed
 
     Examples: 
-      | handset  | Firstname | Surname | Username     | limit | tabletname      |
-      | GalaxyS8 | TEST      | ACCEPTA | TEST ACCEPTA |     2 | SamsungGalaxy10 |
+      | Firstname | Surname | Username     | limit | tabletname      |
+      | TEST      | ACCEPTA | TEST ACCEPTA |     2 | SamsungGalaxy10 |

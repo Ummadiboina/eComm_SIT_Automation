@@ -2391,7 +2391,7 @@ public void addQuantityFitnessTracker(String Limit) throws Throwable {
 	}
 }
 
-@And("^the previously selected standalone non-connected items should be removed from my basket$")
+/*@And("^the previously selected standalone non-connected items should be removed from my basket$")
 public void validateEcomm11522() throws Throwable {
 	try {
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
@@ -2404,7 +2404,7 @@ public void validateEcomm11522() throws Throwable {
 		System.out.println("Unable to add Fitnesstracker to basket");
 		Assert.fail("Unable to add Fitnesstracker to basket");
 	}
-}
+}*/
 
 @And("^Validate Basket content for non Connected$")
 public void validateBasketNonConnected() throws Throwable {
