@@ -71,19 +71,6 @@ public class SmartwatchesPageActions extends Environment {
 
 		if (elementName.contains("Random Device")) {
 			System.out.println("Going to select Random Device");
-			
-			/*driver.findElement(By.className("enhanced-sorts-link")).click();
-			System.out.println("Clicked on sort tab");
-
-			Thread.sleep(4000);
-			Actions builder = new Actions(driver);
-			WebElement Relevance = driver.findElement(By.xpath("//*[@ng-show='showSortByUserRating']/li/label/input[1]"));
-			builder.moveToElement(Relevance);
-			builder.click().build().perform();
-			System.out.println("Clicked on User rating: High to low ");
-			
-			 Clicking on the done button 
-			driver.findElement(By.xpath("(//button[@value='Done'])[2]")).click();*/
 
 			pageobjects.SmartwatchesPage.RandomSmartWatch.click();
 
@@ -91,6 +78,12 @@ public class SmartwatchesPageActions extends Environment {
 
 		}
 
+		// The following has to be added in deviceSelect function –
+		if (elementName.contains("SamsungGearS2")) {
+			pageobjects.SmartwatchesPage.SamsungGearS2.click();
+			System.out.println("Selected SamsungGearS2");
+			log.debug("Selected SamsungGearS2");
+		}
 	}
 
 	/**
@@ -98,14 +91,13 @@ public class SmartwatchesPageActions extends Environment {
 	 */
 	public static void AddtoBasketSmartwatchTracker() throws InterruptedException {
 
-		
 		try {
-		// Below will give status like in stock / out of stock etc
+			// Below will give status like in stock / out of stock etc
 			Thread.sleep(5000);
 
 			String status = driver.findElement(By.className("status-info")).getText();
 			System.out.println(status);
-		
+
 			if (status.contains("In Stock")) {
 				WebElement element = driver
 						.findElement(By.xpath("//select[@class='accessory-option ng-pristine ng-valid']"));
@@ -116,19 +108,21 @@ public class SmartwatchesPageActions extends Environment {
 				WebElement DeviceDetailsQuantity = driver.findElement(
 						By.xpath("//div[@on-dimension-select='selectQuantityDimension']/span[@role='combobox']"));
 				String DeviceDetailsQuantityValue = DeviceDetailsQuantity.getText();
-				System.out.println("DeviceDetailsQuantityValue is "+DeviceDetailsQuantityValue);
+				System.out.println("DeviceDetailsQuantityValue is " + DeviceDetailsQuantityValue);
 
 				driver.findElement(By.id("deviceDetailsSubmit")).click();
 
 				Thread.sleep(3000);
 
-			/*	WebElement BasketQuantity = driver.findElement(By.id("accessory-quantitySelectBoxIt"));
-				String BasketQuantityvalue = BasketQuantity.getText();
-				System.out.println("Basket value is "+BasketQuantityvalue);
-				Assert.assertEquals("4", BasketQuantityvalue);
-				System.out.println(
-						"Values are correct , Basket quantity = " + BasketQuantityvalue + "Device added value = 4");
-*/
+				/*
+				 * WebElement BasketQuantity =
+				 * driver.findElement(By.id("accessory-quantitySelectBoxIt"));
+				 * String BasketQuantityvalue = BasketQuantity.getText();
+				 * System.out.println("Basket value is "+BasketQuantityvalue);
+				 * Assert.assertEquals("4", BasketQuantityvalue);
+				 * System.out.println( "Values are correct , Basket quantity = "
+				 * + BasketQuantityvalue + "Device added value = 4");
+				 */
 			} else {
 				driver.navigate().back();
 			}

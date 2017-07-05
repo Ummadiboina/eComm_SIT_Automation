@@ -18,6 +18,8 @@ import pageobjects.BasketPage.*;
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.fail;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.NoSuchElementException;
 
 import org.apache.log4j.Logger;
@@ -376,5 +378,46 @@ public class BasketPageActions extends Environment
 		
 
 	}
+	
+	
+	public static void continueShopping() {
+		log.debug("Verifying if the devices selected are in basket");	pageobjects.BasketPage.ContinueShopping.sendKeys(Keys.ENTER);
+		log.debug("Clicked on Continue Shopping in Basket Page");
+	}
+
+public static void verifyDevicesInBasket(String dev1, String dev2, String dev3) {
+
+		List<WebElement> MyDevices = driver.findElements((By) pageobjects.BasketPage.DevicesList);
+
+		List<String> DisplayedDevices = new ArrayList<>();
+		List<String> SelectedDevices = new ArrayList<>();
+
+		if (dev1.contains("SamsungGearS2")) {
+			dev1 = "Samsung Gear S2";
+		}
+		if (dev2.contains("FitbitAlta")) {
+			dev2 = "Fitbit Alta";
+		}
+		if (dev3.contains("iPad97")) {
+			dev3 = "Apple iPad 9.7";
+		}
+		
+		SelectedDevices.add(dev1);
+		SelectedDevices.add(dev2);
+		SelectedDevices.add(dev3);
+		/*
+		 * SelectedDevices.add(dev1.split("(?=[A-Z])").toString());
+		 * SelectedDevices.add(dev2.split("(?=[A-Z])").toString());
+		 * SelectedDevices.add(dev3.split("(?=[A-Z])").toString());
+		 */
+
+		for (int i = 0; i < MyDevices.size(); i++) {
+			DisplayedDevices.add(MyDevices.get(i).getText());
+		}
+
+		Assert.assertEquals(DisplayedDevices, SelectedDevices);
+log.debug("Selected devices are in basket");
+	}
+
 
 }

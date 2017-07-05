@@ -70,4 +70,23 @@ public class TabletPageActions extends Environment {
 	
 	}
 }
+	public static void DeviceSelect(String elementName) {
+
+		if (elementName.contains("Random Device")) {
+			System.out.println("Random Tablet is selected");
+
+			pageobjects.TabletPage.RandomTablet.click();
+
+			log.debug("Random Tablet is selected");
+		}
+
+		if (elementName.contains("iPad97")) {
+			System.out.println("iPad is selected");
+
+			pageobjects.TabletPage.iPad.click();
+
+			log.debug("iPad is selected");
+		}
+	}
+
 }
