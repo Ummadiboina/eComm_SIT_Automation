@@ -18,6 +18,12 @@ public class NonConnectedDeviceDetailsPage {
 	@FindBy(how = How.XPATH, using = "//a[@class='close-btn']")
 	public static WebElement CloseBtn;
 	
+	//have to change the below xpath after getting the environment
+		@FindBy(how = How.XPATH, using = "//select[@class='ng-pristine ng-valid accessory-option']")
+		public static WebElement ColorDropDown;
+		
+		@FindBy(how = How.XPATH, using = "//select[@class='ng-pristine ng-valid accessory-option']")
+		public static WebElement CapacityDropDown;
 
 
 	

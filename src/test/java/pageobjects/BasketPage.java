@@ -1,8 +1,11 @@
 package pageobjects;
 
+import java.util.List;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindAll;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 
@@ -72,6 +75,13 @@ public class BasketPage {
 	@FindBy(how = How.XPATH, using = ("//li[@class='accessory has-image']"))
 	public static WebElement AccessoryDetails;
 
+	@FindBy(how = How.XPATH, using = ("//*[@class='ac-qauantity-heading']"))
+	public static WebElement DeviceHeadingNonConnected;
+	
+	//
+	@FindBy(how = How.XPATH, using = ("*[@id='accessory-quantitySelectBoxItContainer']"))
+	public static WebElement DeviceQuantityNonConnected;
+	
 	@FindBy(how = How.ID, using = ("storePostcode"))
 	public static WebElement StorePostcode;
 
@@ -105,8 +115,10 @@ public class BasketPage {
 	@FindBy(how = How.XPATH, using = ("//a[@href='/shop/']"))
 	public static WebElement ContinueShopping;
 
-	@FindBy(how = How.XPATH, using = ("//div[@class='basket-list']//li[@data-qa-class='basket-item']/section/h3/span"))
-	public static WebElement DevicesList;
+	@FindAll({
+		@FindBy(how = How.XPATH, using = ("//div[@class='basket-list']//li[@data-qa-class='basket-item']/section/h3/span"))
+		})
+		public static List<WebElement> DevicesList;
 
 
 }
