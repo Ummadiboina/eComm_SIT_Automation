@@ -37,6 +37,26 @@ public class AccessoryPage {
 		@FindBy(how=How.ID,using="basketIcon")
 		public static WebElement Basket;
 		
+		@FindBy(how = How.XPATH, using = " ")
+		public static WebElement ContinueShoppingLink;
+
+		@FindBy(how = How.XPATH, using = " ")
+		public static WebElement AccesoryBeforePhoneSelection;
+
+		@FindBy(how = How.XPATH, using = " ")
+		public static WebElement FitnessTrackerBeforePhoneSelection;
+
+		@FindBy(how = How.XPATH, using = " ")
+		public static WebElement SmartWatchBeforePhoneSelection;
 		
+		@FindBy(how = How.XPATH, using = " ")
+		public static WebElement AccesoryAfterPhoneSelection;
+
+		@FindBy(how = How.XPATH, using = " ")
+		public static WebElement FitnessTrackerAfterPhoneSelection;
+
+		@FindBy(how = How.XPATH, using = " ")
+		public static WebElement SmartWatchAfterPhoneSelection;
+
 		
 }

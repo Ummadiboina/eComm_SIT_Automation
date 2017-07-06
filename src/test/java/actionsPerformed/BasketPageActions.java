@@ -328,7 +328,7 @@ public class BasketPageActions extends Environment
 		log.debug("Verifying if the devices selected are in basket");	pageobjects.BasketPage.ContinueShopping.sendKeys(Keys.ENTER);
 		log.debug("Clicked on Continue Shopping in Basket Page");
 	}
-
+/*
 public static void verifyDevicesInBasket(String dev1, String dev2, String dev3) {
 
 		List<WebElement> MyDevices = driver.findElements((By) pageobjects.BasketPage.DevicesList);
@@ -349,11 +349,11 @@ public static void verifyDevicesInBasket(String dev1, String dev2, String dev3) 
 		SelectedDevices.add(dev1);
 		SelectedDevices.add(dev2);
 		SelectedDevices.add(dev3);
-		/*
+		
 		 * SelectedDevices.add(dev1.split("(?=[A-Z])").toString());
 		 * SelectedDevices.add(dev2.split("(?=[A-Z])").toString());
 		 * SelectedDevices.add(dev3.split("(?=[A-Z])").toString());
-		 */
+		 
 
 		for (int i = 0; i < MyDevices.size(); i++) {
 			DisplayedDevices.add(MyDevices.get(i).getText());
@@ -362,7 +362,7 @@ public static void verifyDevicesInBasket(String dev1, String dev2, String dev3) 
 		Assert.assertEquals(DisplayedDevices, SelectedDevices);
 log.debug("Selected devices are in basket");
 	}
-
+*/
 
 public static void ValidateContentEcomm11522()  throws InterruptedException {
 
@@ -394,4 +394,57 @@ if (fname != false) {
 
 }
 
+public static void verifyDevicesInBasket(String dev1, String dev2, String dev3) 
+{
+
+	List<WebElement> MyDevices = pageobjects.BasketPage.DevicesList;
+	List<String> DisplayedDevices = new ArrayList<>();
+	List<String> SelectedDevices = new ArrayList<>();
+
+	SelectedDevices.add(dev1);
+	SelectedDevices.add(dev2);
+	SelectedDevices.add(dev3);
+
+	for (int i = 0; i < MyDevices.size(); i++) {
+		DisplayedDevices.add(MyDevices.get(i).getText());
+	}
+
+	Assert.assertEquals(DisplayedDevices, SelectedDevices);
+	log.debug("Selected devices are in basket");
+}
+
+public static void verifyDevicesInBasket(String dev1, String dev2) {
+
+	List<WebElement> MyDevices = pageobjects.BasketPage.DevicesList;
+	List<String> DisplayedDevices = new ArrayList<>();
+	List<String> SelectedDevices = new ArrayList<>();
+
+	SelectedDevices.add(dev1);
+	SelectedDevices.add(dev2);
+
+	for (int i = 0; i < MyDevices.size(); i++) {
+		DisplayedDevices.add(MyDevices.get(i).getText());
+	}
+
+	Assert.assertEquals(DisplayedDevices, SelectedDevices);
+	log.debug("Selected devices are in basket");
+}
+
+public static void verifyDevicesInBasket(String dev1) {
+
+	List<WebElement> MyDevices = pageobjects.BasketPage.DevicesList;
+	List<String> DisplayedDevices = new ArrayList<>();
+	List<String> SelectedDevices = new ArrayList<>();
+
+	SelectedDevices.add(dev1);
+
+	for (int i = 0; i < MyDevices.size(); i++) {
+		DisplayedDevices.add(MyDevices.get(i).getText());
+	}
+
+	Assert.assertEquals(DisplayedDevices, SelectedDevices);
+	log.debug("Selected devices are in basket");
+
+	
+}	
 }

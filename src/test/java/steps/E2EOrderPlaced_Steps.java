@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
+import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -13,6 +14,7 @@ import org.openqa.selenium.support.PageFactory;
 import GlobalActions.Autoredirection;
 import GlobalActions.JuneReleaseValidations;
 import GlobalActions.MouseHoverAction;
+import GlobalActions.scrollToAnElement;
 import actionsPerformed.AccessoryPageActions;
 import actionsPerformed.AdditionalInformationPageActions;
 import actionsPerformed.Agent_AdvisoryChecksActions;
@@ -60,6 +62,7 @@ import pageobjects.BasketPage;
 import pageobjects.ConnectedDeviceDetailsPage;
 import pageobjects.DeliveryPage;
 import pageobjects.FitnessTrackerPage;
+import pageobjects.LikeFreePage;
 import pageobjects.MobileBroadBandPage;
 import pageobjects.MouseHoverPage;
 import pageobjects.NonConnectedDeviceDetailsPage;
@@ -81,6 +84,7 @@ public class E2EOrderPlaced_Steps {
 
 	public WebDriver driver;
 	public List<HashMap<String, String>> datamap;
+	static Logger log = Logger.getLogger("devpinoyLogger");
 
 	public E2EOrderPlaced_Steps() {
 		driver = Hooks.driver;
@@ -2421,6 +2425,244 @@ public void validateBasketNonConnected() throws Throwable {
 		Assert.fail("Unable to add Fitnesstracker to basket");
 	}
 }
+
+@Then("^Verify the devices ([^\"]*), ([^\"]*) and ([^\"]*) in basket$")
+public void verify_3_devices_in_basket(String dev1, String dev2, String dev3) {
+
+	try {
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		PageFactory.initElements(driver, BasketPage.class);
+		BasketPageActions.verifyDevicesInBasket(dev1, dev2, dev3);
+	} catch (Exception e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+		System.out.println("Unable to verify the devices in basket");
+		Assert.fail("Unable to verify the devices in basket");
+	}
+}
+
+@Then("^Verify the devices ([^\"]*) and \"([^\"]*)\" in basket$")
+public void verify_2_devices_in_basket(String dev1, String dev2) {
+
+	try {
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		PageFactory.initElements(driver, BasketPage.class);
+		BasketPageActions.verifyDevicesInBasket(dev1, dev2);
+	} catch (Exception e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+		System.out.println("Unable to verify the devices in basket");
+		Assert.fail("Unable to verify the devices in basket");
+	}
+}
+@Then("^Verify the device ([^\"]*) in basket$")
+public void verify_1_device_in_basket(String dev1) {
+
+	try {
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		PageFactory.initElements(driver, BasketPage.class);
+		BasketPageActions.verifyDevicesInBasket(dev1);
+	} catch (Exception e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+		System.out.println("Unable to verify the devices in basket");
+		Assert.fail("Unable to verify the devices in basket");
+	}
+}
+@And("^select ([^\"]*) tab$")
+public void select_tab(String tabname) {
+
+	try {
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		PageFactory.initElements(driver, PAYMSimOPage.class);
+		PAYMSimOPageActions.ElementClick(tabname);
+	} catch (Exception e) {
+		e.printStackTrace();
+		System.out.println("Unable to select tab");
+		Assert.fail("Unable to select tab");
+	}
+}
+
+
+@And("^choose ([^\"]*) contract length$")
+public void choose_contract_length(String contractlength) {
+
+	try {
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		PageFactory.initElements(driver, PAYMSimOPage.class);
+		PAYMSimOPageActions.SelectRecommendedTariffPhonesTab(contractlength);
+	} catch (Exception e) {
+		e.printStackTrace();
+		System.out.println("Unable to choose contract length");
+		Assert.fail("Unable to choose contract length");
+	}
+}
+
+
+@Then("^check if the selected connected device has more than 1 variant for both colour and capacity$")
+public void check_if_the_selected_device_has_more_than_1_variant_for_both_colour_and_capacity() {
+
+	try {
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		PageFactory.initElements(driver, ConnectedDeviceDetailsPage.class);
+		ConnectedDeviceDetailsPageAction.isColorDropDownDisplayed();
+		ConnectedDeviceDetailsPageAction.isCapacityDropDownDisplayed();
+
+ConnectedDeviceDetailsPageAction.checkIfMoreThanOneOptionAvailable();
+		
+	} catch (Exception e) {
+		e.printStackTrace();
+		System.out.println("The selected device does not have more than 1 variant for both colour and capacity");
+		Assert.fail("The selected device does not have more than 1 variant for both colour and capacity");
+	}
+}
+
+@And("^select ([^\"]*) color of the connected device$")
+public void select_color_of_the_device(String color) {
+
+	try {
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		PageFactory.initElements(driver, ConnectedDeviceDetailsPage.class);
+		ConnectedDeviceDetailsPageAction.colorSelectOfDeviceDropDown(color);
+		
+	} catch (Exception e) {
+		e.printStackTrace();
+		System.out.println("selected color" + color);
+		Assert.fail("not able to select  color" + color);
+	}
+}
+
+@And("^select ([^\"]*) capacity of the connected device$")
+public void select_capacity_of_the_device(String capacity) {
+
+	try {
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		PageFactory.initElements(driver, ConnectedDeviceDetailsPage.class);
+		ConnectedDeviceDetailsPageAction.capacitySelectOfDeviceDropDown(capacity);
+		
+	} catch (Exception e) {
+		e.printStackTrace();
+		System.out.println("selected color" + capacity);
+		Assert.fail("not able to select  color" + capacity);
+	}
+}
+
+@Then("^check if the selected non connected device has more than 1 variant for both colour and capacity$")
+public void check_if_the_selected_non_connected_device_has_more_than_1_variant_for_both_colour_and_capacity() {
+
+	try {
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		PageFactory.initElements(driver, NonConnectedDeviceDetailsPage.class);
+		NonConnectedDeviceDetailsPageAction.isColorDropDownDisplayed();
+		NonConnectedDeviceDetailsPageAction.isCapacityDropDownDisplayed();
+
+NonConnectedDeviceDetailsPageAction.checkIfMoreThanOneOptionAvailable();
+		
+	} catch (Exception e) {
+		e.printStackTrace();
+		System.out.println("The selected device does not have more than 1 variant for both colour and capacity");
+		Assert.fail("The selected device does not have more than 1 variant for both colour and capacity");
+	}
+}
+
+@And("^select ([^\"]*) color of the non connected device$")
+public void select_color_of_the_non_connected_device(String color) {
+
+	try {
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		PageFactory.initElements(driver, NonConnectedDeviceDetailsPage.class);
+		NonConnectedDeviceDetailsPageAction.colorSelectOfDeviceDropDown(color);
+		
+	} catch (Exception e) {
+		e.printStackTrace();
+		System.out.println("selected color" + color);
+		Assert.fail("not able to select  color" + color);
+	}
+}
+
+@And("^select ([^\"]*) capacity of the non connected device$")
+public void select_capacity_of_the_non_connected_device(String capacity) {
+
+	try {
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		PageFactory.initElements(driver, NonConnectedDeviceDetailsPage.class);
+		NonConnectedDeviceDetailsPageAction.capacitySelectOfDeviceDropDown(capacity);
+		
+	} catch (Exception e) {
+		e.printStackTrace();
+		System.out.println("selected color" + capacity);
+		Assert.fail("not able to select  color" + capacity);
+	}
+}
+
+@And("^I click on Continue Shopping link$")
+public void continue_shopping() throws Throwable {
+	try {
+		log.debug("Running Test Step: @And(I click on Continue Shopping link)");
+		AccessoryPageActions.continueShopping();
+		log.debug("Pass: Executed continue shopping successfully");
+	} catch (Exception e) {
+		log.debug("Fail: Cannot carry out Continue shopping action" + e.getMessage() + "");
+	}
+}
+
+
+@And("^Verify all three non connected devices got added to the basket section before selecting connected device$")
+	public void verify_non_Connected_device_added_to_basket() throws Throwable {
+		try {
+			log.debug(
+					"Running Test Step: @And(Verify all three non connected devices got added to the basket section before selecting connected device)");
+			AccessoryPageActions.verifyNonConnectedDeviceAddedToBasketBefore();
+			log.debug("Pass: Verified that all non connected devices got added to basket successfully before selecting connected device");
+		} catch (Exception e) {
+			log.debug("Fail: Cannot verify that non connected device added to basket " + e.getMessage() + "");
+		}
+	}
+
+@And("^Verify all three non connected devices are still retained in the basket and not overridden$")
+public void verify_non_Connected_device_ratined_in_basket_after_selecting_connected_device() throws Throwable {
+	try {
+		log.debug(
+				"Running Test Step: @And(Verify all three non connected devices are still retained in the basket and not overridden)");
+		AccessoryPageActions.verifyNonConnectedDeviceRetainedInBasketAfterPhoneSelection();
+		log.debug("Pass: Verified that all non connected devices got added to basket successfully before selecting connected device");
+	} catch (Exception e) {
+		log.debug("Fail: Cannot verify that non connected device added to basket " + e.getMessage() + "");
+	}
+}
+
+@And("^navigate to Like New Phones page$")
+public void navigate_to_LikeNew_Phones_page() throws Throwable {
+	try {
+		log.debug("Running Test Step: @And(navigate to Like New Phones page)");
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		PageFactory.initElements(driver, MouseHoverPage.class);
+		MouseHoverAction.likeNewHomepageNavigation();
+		Autoredirection.redirect();
+		log.debug("Navigated to Like New Phones page successfully");
+	} catch (Exception e) {
+		// TODO Auto-generated catch block
+		System.out.println("unable to do mousehover to like new phones");
+		Assert.fail("unable to do mousehover to like new phones");
+	}
+}
+
+
+@And("^I select to buy a like new phone on Pay Monthly$")
+	public void buy_a_like_new_phone_on_pay_monthly() throws Throwable {
+		try {
+			log.debug(
+					"Running Test Step: @And(I select to buy a like new phone on Pay Monthly)");
+			scrollToAnElement.scrollToElement(LikeFreePage.Paym);
+			LikeFreePage.Paym.click();
+			Autoredirection.redirect();
+			log.debug("Pass: Successfully selected to buy a Like New Pay Monthly phone");
+		} catch (Exception e) {
+			log.debug("Fail: Cannot click Like New Pay Monthly phone  " + e.getMessage() + "");
+		}
+	}
+
+
 
 
 

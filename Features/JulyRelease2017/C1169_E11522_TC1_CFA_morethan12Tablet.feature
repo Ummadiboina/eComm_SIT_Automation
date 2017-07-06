@@ -26,4 +26,4 @@ Feature: C1169_E11522_TC1
 
     Examples: 
       | Firstname | Surname | Username     | limit | tabletname      |
-      | TEST      | ACCEPTA | TEST ACCEPTA |     2 | SamsungGalaxy10 |
+      | TEST      | ACCEPTA | TEST ACCEPTA |     3 | SamsungGalaxy10 |

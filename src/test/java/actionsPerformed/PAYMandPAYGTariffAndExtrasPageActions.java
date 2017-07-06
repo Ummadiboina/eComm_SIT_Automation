@@ -90,8 +90,8 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 
 				List<WebElement> DataContainer = pageobjects.PAYMandPAYGTariffAndExtrasPage.Add_AccessoryContainer;
 
-				//for (int i = 0; i <= DataContainer.size(); i++) 
-			for (int i = 0; i <= 6; i++)
+		for (int i = 0; i <= DataContainer.size(); i++) 
+			//for (int i = 0; i <= 5; i++)
 			{
 				
 				System.out.println(DataContainer.get(i).getText());

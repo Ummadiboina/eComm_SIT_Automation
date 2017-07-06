@@ -247,6 +247,9 @@ public static void ElementClick(String elementName) throws InterruptedException
 	if (elementName.equalsIgnoreCase("PhoneTab"))
 		pageobjects.PAYMSimOPage.PhoneTab.sendKeys(Keys.ENTER);
 	
+	if (elementName.equalsIgnoreCase("MBB")) {
+		pageobjects.PAYMSimOPage.simmbbtab.sendKeys(Keys.ENTER);
+	}
 
 }
 
