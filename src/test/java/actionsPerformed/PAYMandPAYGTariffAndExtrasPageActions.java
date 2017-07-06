@@ -6,6 +6,7 @@ import java.util.concurrent.TimeUnit;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
+import org.testng.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 
@@ -78,27 +79,33 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 				+ pageobjects.PAYMandPAYGTariffAndExtrasPage.AddRandomAccessory.getText());
 		try {
 			
-			WebElement ele0 = driver.findElement(By.xpath("//*[@class='accessory-button-container']"));
+			WebElement ele0 = pageobjects.PAYMandPAYGTariffAndExtrasPage.AccessoryContainer;
+					
+
+			System.out.println("The element is "+ele0.getText());
 			if (ele0 != null) 
 			{
 				System.out.println("selecting accessories");
 				
-			List<WebElement> DataContainer = driver
-					.findElements(
-					By.xpath("//*[@class='accessory-button-container']/input[@value='Add']"));
 
-			for (int i = 0; i <= DataContainer.size(); i++) 
+				List<WebElement> DataContainer = pageobjects.PAYMandPAYGTariffAndExtrasPage.Add_AccessoryContainer;
+
+		for (int i = 0; i <= DataContainer.size(); i++) 
+			//for (int i = 0; i <= 5; i++)
 			{
 				
 				System.out.println(DataContainer.get(i).getText());
-				System.out.println("Printed something");
 				DataContainer.get(i).click();
+				Thread.sleep(3000);
+				System.out.println("Selected accessories");
+				
 			}
 			
 			}
 		}
 		catch (Exception e) {
-			System.out.println("No accessories found in tariff and ");
+			System.out.println("No accessories found");
+			Assert.fail("No accessories found");
 
 		}		
 		

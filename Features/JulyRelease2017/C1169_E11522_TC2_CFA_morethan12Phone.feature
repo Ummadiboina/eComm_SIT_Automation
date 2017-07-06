@@ -1,7 +1,7 @@
-Feature: C1169_E11522_TC1
+Feature: C1169_E11522_TC2
 
-  @C1169_E11522_TC1
-  Scenario Outline: E11522_CFA_MoreThan12Accessory_Tablet
+  @C1169_E11522_TC2
+  Scenario Outline: E11522_CFA_MoreThan12Accessory_Phone
     Given I am an CFA user and Lands on shop page
     And Navigate to Accessories
     And select an "Random" Accessory
@@ -10,8 +10,8 @@ Feature: C1169_E11522_TC1
     And select any available "Random" Fitness tracker
     And add quantity of FitnessTracker to basket within <limit> in details page and navigate to basket
     And Validate Basket content for non Connected
-    And navigate to PAYM Tablets page
-    And I choose <tabletname> Tablet
+    And navigate to PAYM Phones page
+    And I choose PayM <handset>
     And Navigate to device details page
     And Land on the 'Tariffs and extra' page
     And Choose all Accesssory
@@ -25,5 +25,5 @@ Feature: C1169_E11522_TC1
     Then order confirmation is displayed
 
     Examples: 
-      | Firstname | Surname | Username     | limit | tabletname      |
-      | TEST      | ACCEPTA | TEST ACCEPTA |     3 | SamsungGalaxy10 |
+      | handset  | Firstname | Surname | Username     | limit |
+      | GalaxyS8 | TEST      | ACCEPTA | TEST ACCEPTA |     2 |

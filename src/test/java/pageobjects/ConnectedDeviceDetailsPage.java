@@ -34,5 +34,13 @@ public class ConnectedDeviceDetailsPage {
 
 	@FindBy(how = How.XPATH, using = "//p[@class='delivery-information']/span[1]")
 	public static WebElement DevStatusMsg;
+	//have to change the below xpath after getting the environment
 
+	@FindBy(how = How.XPATH, using = "//select[@class='ng-pristine ng-valid accessory-option']")
+		public static WebElement ColorDropDown;
+		
+		@FindBy(how = How.XPATH, using = "//select[@class='ng-pristine ng-valid accessory-option']")
+		public static WebElement CapacityDropDown;
+
+		
 }
