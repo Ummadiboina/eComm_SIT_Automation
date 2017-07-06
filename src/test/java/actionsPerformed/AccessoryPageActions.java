@@ -130,7 +130,7 @@ public class AccessoryPageActions extends Environment{
 			log.debug("Clip2 Accessory Selected");
 		}
 		
-		if(elementName.contains("JBLXtreme"))
+		if(elementName.contains("JBL Xtreme Black"))
 
 		{
 			System.out.println("Selecting JBLXtreme Accessory");

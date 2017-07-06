@@ -104,6 +104,9 @@ public class MouseHoverPage extends Environment
 	//Below will click on the Pay as you Go Link under MobileBroadband tab
 	@FindBy(how=How.XPATH,using=("//a[contains(@href, 'https://www.o2.co.uk/shop/mobile-broadband/?contractType=payasyougo')]"))
 	public static WebElement MoveMouseOnPayGMBB;
+
+	@FindBy(how = How.XPATH, using = ("//a[contains(@href, 'https://www.o2.co.uk/shop/mobile-broadband/?contractType=paymonthly')]"))
+	public static WebElement MoveMouseOnPayMMBB;
 	
 
 }
