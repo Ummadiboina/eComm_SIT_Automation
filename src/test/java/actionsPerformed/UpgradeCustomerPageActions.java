@@ -244,7 +244,22 @@ System.out.println("The Dongle sims promo module is not displayed");
 }
 
 
+public static void upgradePAYMTabletSelect(String elementName) throws Throwable {
+	// Below is to view all phones in the same page
+	
+	pageobjects.UpgradeTabletListingPage.TabletTab.click();
+	
+	
+	if (pageobjects.UpgradeTabletListingPage.ViewAllTablets.isDisplayed()) {
+		executor.executeScript("arguments[0].click();", pageobjects.UpgradeTabletListingPage.ViewAllTablets);
+	}
+	if (elementName.contains("Apple iPad 9.7")) {
+		pageobjects.UpgradeTabletListingPage.iPad97.click();
 		
+		log.debug("Selected Apple iPad 9.7");
+	}
+}
+
 				
 		
 		
