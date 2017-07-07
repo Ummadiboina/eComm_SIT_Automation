@@ -9,7 +9,8 @@ Feature: C1169_E11522_TC1
     And Navigate to Fitness Trackers
     And select any available "Random" Fitness tracker
     And add quantity of FitnessTracker to basket within <limit> in details page and navigate to basket
-    And Validate Basket content for non Connected
+    #And Validate Basket content for non Connected
+    And Verify all three non connected devices got added to the basket section before selecting connected device
     And navigate to PAYM Tablets page
     And I choose <tabletname> Tablet
     And Navigate to device details page

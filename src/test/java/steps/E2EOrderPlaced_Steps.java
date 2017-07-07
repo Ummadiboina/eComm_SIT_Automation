@@ -79,6 +79,7 @@ import pageobjects.SmartwatchesPage;
 import pageobjects.TabletPage;
 import pageobjects.UpgradeCustomerPage;
 import pageobjects.UpgradePhonesListingPage;
+import pageobjects.UpgradeTabletListingPage;
 
 public class E2EOrderPlaced_Steps {
 
@@ -131,6 +132,20 @@ public class E2EOrderPlaced_Steps {
 		}
 	}
 
+	@And("^Navigate to PayM MBB page$")
+    public void navigate_to_PayM_MBB_page() throws Throwable {
+          try {
+                driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+                PageFactory.initElements(driver, MouseHoverPage.class);
+                MouseHoverAction.PayMMBBPage();
+                Autoredirection.redirect();
+          } catch (Exception e) {
+                // TODO Auto-generated catch block
+                System.out.println("unable to do mousehover to PayGMBB");
+                Assert.fail("unable to do mousehover to Accessories");
+          }
+    }
+
 	@Given("^Navigate to Accessories$")
 	public void navigate_to_Accessories() throws Throwable {
 		try {
@@ -180,7 +195,7 @@ public class E2EOrderPlaced_Steps {
 			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 			PageFactory.initElements(driver, MouseHoverPage.class);
 			MouseHoverAction.SmartwatchesLandingPage();
-			Autoredirection.redirect();
+			//Autoredirection.redirect();
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			System.out.println("unable to do mousehover to SmartWatches");
@@ -299,6 +314,21 @@ public class E2EOrderPlaced_Steps {
 
 	}
 
+	@And("^I choose MBB PayM ([^\"]*)$")
+    public void i_choose_MBB_PayM(String elementName) throws Throwable {
+          try {
+                driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+                PageFactory.initElements(driver, MobileBroadBandPage.class);
+                MobileBroadBandPageActions.DeviceSelect(elementName);
+          } catch (Exception e) {
+                // TODO Auto-generated catch block
+                System.out.println("Unable to select MBB PayG device");
+                Assert.fail("Unable to select MBB PayG device");
+
+          }
+    }
+
+	
 	@Given("^select any available \"([^\"]*)\" Fitness tracker$")
 	public void select_any_available_Fitness_tracker(String arg1) throws Throwable {
 		try {
@@ -363,7 +393,7 @@ public class E2EOrderPlaced_Steps {
 			PageFactory.initElements(driver, ConnectedDeviceDetailsPage.class);
 			ConnectedDeviceDetailsPageAction.GetTitle();
 			Thread.sleep(2000);
-			ConnectedDeviceDetailsPageAction.ViewAllTariffs();
+			//ConnectedDeviceDetailsPageAction.ViewAllTariffs();
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			System.out.println("Unable to navigate to device details page");
@@ -1161,7 +1191,7 @@ public class E2EOrderPlaced_Steps {
 		try {
 			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 			String relativePath = System.getProperty("user.dir");
-			String EnvPropFilePath = relativePath + "\\src\\test\\java\\Properties\\AppConfig.properties";
+			String EnvPropFilePath = relativePath + "\\Configurations\\Properties\\AppConfig.properties";
 			String Newurl = Filereadingutility.getPropertyValue(EnvPropFilePath, "AgentUrl");
 			driver.navigate().to(Newurl);
 			Agent_HomePagePageActions.ValidateAgentHomepage();
@@ -2350,18 +2380,6 @@ public class E2EOrderPlaced_Steps {
 		}
 	}
 
-@And("^Verify the devices ([^\"]*), ([^\"]*) and ([^\"]*) in basket$")
-public void verifyDevicesInBasket(String smartwatchname, String fitnesstrackername, String tabletname) throws Throwable {
-	try {
-		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-		PageFactory.initElements(driver, BasketPage.class);
-		BasketPageActions.verifyDevicesInBasket(smartwatchname, fitnesstrackername, tabletname);
-	} catch (Exception e) {
-		// TODO Auto-generated catch block
-		System.out.println("not able to verify if phone tab is selected");
-		Assert.fail("not able to verify if phone tab is selected");
-	}
-}
 
 @Given("^add quantity of accessories to basket within ([^\"]*) in details page and navigate to basket$")
 public void addQuantityAccessories(String Limit) throws Throwable {
@@ -2395,20 +2413,21 @@ public void addQuantityFitnessTracker(String Limit) throws Throwable {
 	}
 }
 
-/*@And("^the previously selected standalone non-connected items should be removed from my basket$")
+@And("^the previously selected standalone non-connected items should be removed from my basket$")
 public void validateEcomm11522() throws Throwable {
 	try {
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		PageFactory.initElements(driver, BasketPage.class);
 		PageFactory.initElements(driver, PAYMandPAYGTariffAndExtrasPage.class);
 		Thread.sleep(3000);
-		BasketPageActions.ValidateContentEcomm11522();
+		//BasketPageActions.ValidateContentEcomm11522();
+	BasketPageActions.verifyNCDRemovedinBasketPageAfterCDSelection();
 	} catch (Exception e) {
 		// TODO Auto-generated catch block
 		System.out.println("Unable to add Fitnesstracker to basket");
 		Assert.fail("Unable to add Fitnesstracker to basket");
 	}
-}*/
+}
 
 @And("^Validate Basket content for non Connected$")
 public void validateBasketNonConnected() throws Throwable {
@@ -2469,6 +2488,22 @@ public void verify_1_device_in_basket(String dev1) {
 		Assert.fail("Unable to verify the devices in basket");
 	}
 }
+
+
+/*@And("^Verify the devices ([^\"]*), ([^\"]*) and ([^\"]*) in basket$")
+public void verifyDevicesInBasket(String smartwatchname, String fitnesstrackername, String tabletname) throws Throwable {
+	try {
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		PageFactory.initElements(driver, BasketPage.class);
+		BasketPageActions.verifyDevicesInBasket(smartwatchname, fitnesstrackername, tabletname);
+	} catch (Exception e) {
+		// TODO Auto-generated catch block
+		System.out.println("not able to verify if phone tab is selected");
+		Assert.fail("not able to verify if phone tab is selected");
+	}
+}*/
+
+
 @And("^select ([^\"]*) tab$")
 public void select_tab(String tabname) {
 
@@ -2509,6 +2544,42 @@ public void check_if_the_selected_device_has_more_than_1_variant_for_both_colour
 		ConnectedDeviceDetailsPageAction.isCapacityDropDownDisplayed();
 
 ConnectedDeviceDetailsPageAction.checkIfMoreThanOneOptionAvailable();
+		
+	} catch (Exception e) {
+		e.printStackTrace();
+		System.out.println("The selected device does not have more than 1 variant for both colour and capacity");
+		Assert.fail("The selected device does not have more than 1 variant for both colour and capacity");
+	}
+}
+
+@Then("^check if the selected connected device has only 1 variant for both colour and capacity$")
+public void check_if_the_selected_device_has_only_1_variant_for_both_colour_and_capacity() {
+
+	try {
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		PageFactory.initElements(driver, ConnectedDeviceDetailsPage.class);
+		ConnectedDeviceDetailsPageAction.isColorDropDownDisplayed();
+		ConnectedDeviceDetailsPageAction.isCapacityDropDownDisplayed();
+
+ConnectedDeviceDetailsPageAction.checkOnlyOneOptionAvailable();
+		
+	} catch (Exception e) {
+		e.printStackTrace();
+		System.out.println("The selected device does not have more than 1 variant for both colour and capacity");
+		Assert.fail("The selected device does not have more than 1 variant for both colour and capacity");
+	}
+}
+
+@Then("^check if the selected connected device has only 1 variant for capacity and dropdown for colour$")
+public void capacity_1_and_Colour_dropdown() {
+
+	try {
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		PageFactory.initElements(driver, ConnectedDeviceDetailsPage.class);
+		ConnectedDeviceDetailsPageAction.isColorDropDownDisplayed();
+		ConnectedDeviceDetailsPageAction.isCapacityDropDownDisplayed();
+
+ConnectedDeviceDetailsPageAction.checkOnlyOneCapacityAvailable();;
 		
 	} catch (Exception e) {
 		e.printStackTrace();
@@ -2663,6 +2734,40 @@ public void navigate_to_LikeNew_Phones_page() throws Throwable {
 	}
 
 
+@And("^I choose upgrade PayM ([^\"]*) tablet$")
+public void Choose_upgradePAYM_Tablet(String tablet) throws Throwable {
+	driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+	try {
+		PageFactory.initElements(driver, UpgradeTabletListingPage.class);
+		PageFactory.initElements(driver, TabletPage.class);
+		Thread.sleep(3000);
+		UpgradeCustomerPageActions.upgradePAYMTabletSelect(tablet);
+	} catch (Exception e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+		Assert.fail("Unable to choose upgrade paym tablet Device");
+
+	}
+}
+
+@And("^Navigate to upgrade tablet$")
+public void navigate_to_upgrade_tablet() throws Throwable {
+	driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+	try {
+		PageFactory.initElements(driver, MouseHoverPage.class);
+		PageFactory.initElements(driver, UpgradeTabletListingPage.class);
+		MouseHoverAction.UpgradeandUpgradeNow();
+		Thread.sleep(5000);
+		// Autoredirection.redirectUpgrades();
+		UpgradeTabletListingPage.ViewAllTablets.click();
+		Thread.sleep(2000);
+	} catch (Exception e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+		Assert.fail("Unable to navigate to upgrade tablet");
+
+	}
+}
 
 
 
