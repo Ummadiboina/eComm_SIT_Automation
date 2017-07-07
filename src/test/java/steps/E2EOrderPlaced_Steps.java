@@ -8,7 +8,6 @@ import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 
 import GlobalActions.Autoredirection;
@@ -25,6 +24,12 @@ import actionsPerformed.Agent_HomePagePageActions;
 import actionsPerformed.Agent_RegisterCustomerActions;
 import actionsPerformed.AgreementPageActions;
 import actionsPerformed.BasketPageActions;
+import actionsPerformed.CVOS_LandingPage;
+import actionsPerformed.CVOS_StockAllocationActions;
+import actionsPerformed.CVOS_StockMerchandiseActions;
+import actionsPerformed.CVOS_SupplyChainloggedIn;
+import actionsPerformed.CVOS_TradingAdminloggedIn;
+import actionsPerformed.CVOSstockpotPageActions;
 import actionsPerformed.ConnectedDeviceDetailsPageAction;
 import actionsPerformed.DeliveryPageActions;
 import actionsPerformed.FitnessTrackerPageActions;
@@ -2770,5 +2775,268 @@ public void navigate_to_upgrade_tablet() throws Throwable {
 }
 
 
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////CVOS  Pre Order   //////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+
+@Given("^I am a Supply Chain Admin$")
+public void i_am_a_Supply_Chain_Admin() throws Throwable {
+//try {
+driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+String relativePath = System.getProperty("user.dir");
+String EnvPropFilePath = relativePath + "\\Configurations\\Properties\\AppConfig.properties";
+String Newurl_CVOS = Filereadingutility.getPropertyValue(EnvPropFilePath, "CVOS");
+driver.navigate().to(Newurl_CVOS);
+Thread.sleep(3000);
+/*} catch (Exception e) {
+// TODO Auto-generated catch block
+System.out.println("Unable to Login/validate home page, please see the failure screenshot");
+Assert.fail("Unable to Login/validate home page, please see the failure screenshot");
 
 }
+*/
+}
+
+@And("^I Login with Supply Chain Credential ([^\"]*) and ([^\"]*)$")
+public void i_Login_with_Supply_Chain_Credential(String username, String password) throws Throwable {
+driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+PageFactory.initElements(driver, CVOS_LandingPage.class);
+//try {
+CVOS_LandingPage.CVOSSupplyChainLogin(username,password);
+/*	} catch (Exception e) {
+// TODO Auto-generated catch block
+System.out.println("Unable to Sign in to CVOS as SupplyChain");
+Assert.fail("Unable to Sign in to CVOS as SupplyChain");
+*/
+//}
+driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+PageFactory.initElements(driver, CVOS_SupplyChainloggedIn.class);
+try {
+CVOS_SupplyChainloggedIn.CVOSSupplyChainVal();
+} catch (Exception e) {
+// TODO Auto-generated catch block
+System.out.println("Unable to Validate the CVOS SupplyChain Home Page");
+Assert.fail("Unable to Validate the CVOS SupplyChain Home Page");
+
+}
+
+}
+
+
+@Then("^I click on  'Stockpot' tab in Supply Chain and search for (\\d+)AMFI(\\d+)N in SkU desciption$")
+public void i_click_on_Stockpot_tab_in_Supply_Chain_and_search_for_SKU_ID_in_SkU_desciption(String SKUID) throws Throwable {
+driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+PageFactory.initElements(driver,CVOSstockpotPageActions.class);
+try {
+CVOSstockpotPageActions.CVOSSupplyChainAct(SKUID);
+} catch (Exception e) {
+// TODO Auto-generated catch block
+System.out.println("Unable to Enter the SKU ID Page");
+Assert.fail("Unable to Enter the SKU ID Page");
+
+}
+
+}
+
+@And("^Click on Search button$")
+public void click_on_Search_button() throws Throwable {
+driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+PageFactory.initElements(driver,CVOSstockpotPageActions.class);
+try {
+CVOSstockpotPageActions.CVOSSupplyChainSearch();
+} catch (Exception e) {
+// TODO Auto-generated catch block
+System.out.println("Unable to Search the stockpots for the SKU");
+Assert.fail("Unable to Search the stockpots for the SKU");
+
+}
+
+}
+
+@Then("^I should see the uploaded stock for the SKU ID$")
+public void i_should_see_the_uploaded_stock_for_the_SKU_ID() throws Throwable {
+driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+PageFactory.initElements(driver,CVOSstockpotPageActions.class);
+try {
+CVOSstockpotPageActions.CVOSSupplyChainStockPot();
+} catch (Exception e) {
+// TODO Auto-generated catch block
+System.out.println("Uploaded stockpots not displayed");
+Assert.fail("Uploaded stockpots not displayed");
+
+}
+
+}
+
+@And("^I click on Online 'Stockpot' and move the delivery date to a past date$")
+public void i_click_on_Online_Stockpot_and_move_the_delivery_date_to_a_past_date() throws Throwable {
+driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+PageFactory.initElements(driver,CVOSstockpotPageActions.class);
+try {
+CVOSstockpotPageActions.CVOSSupplyChainMoveDelivery();
+} catch (Exception e) {
+// TODO Auto-generated catch block
+System.out.println("The Delivery date is not moved");
+Assert.fail("The Delivery date is not moved");
+
+}
+
+}
+
+@And("^I click on Stock Merchandise$")
+public void i_click_on_Stock_Merchandise() throws Throwable {
+driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+PageFactory.initElements(driver,CVOSstockpotPageActions.class);
+try {
+CVOSstockpotPageActions.CVOSSupplyChainStockMerchandise();
+} catch (Exception e) {
+// TODO Auto-generated catch block
+System.out.println("The Stock Merchandise tab is not clicked");
+Assert.fail("The Stock Merchandise tab is not clicked");
+
+}
+
+}
+
+@Then("^I click on Stock Merchandise and search using Amazon Fire phone (\\d+)GB$")
+public void i_click_on_Stock_Merchandise_and_search_using_Amazon_Fire_phone_GB(String Search_by_model) throws Throwable {
+driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+PageFactory.initElements(driver,CVOS_StockMerchandiseActions.class);
+try {
+CVOS_StockMerchandiseActions.CVOSSupplyChainStockMerch(Search_by_model);
+} catch (Exception e) {
+// TODO Auto-generated catch block
+System.out.println("The Launch date is not set");
+Assert.fail("The Launch date is not set");
+
+}
+
+}
+
+@When("^I login as a Trading Admin$")
+public void i_login_as_a_Trading_Admin() throws Throwable {
+driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+PageFactory.initElements(driver,CVOS_StockMerchandiseActions.class);
+try {
+CVOS_StockMerchandiseActions.CVOSSupplyChainlogout();
+} catch (Exception e) {
+// TODO Auto-generated catch block
+System.out.println("The TradingAdmin is not able to login");
+Assert.fail("The TradingAdmin is not able to login");
+
+}
+
+}
+
+
+@And("^I Login with Trading Admin Credentials TradingAdmin and TradingAdmin(\\d+)$")
+public void i_Login_with_Trading_Admin_Credentials_SupplyChainAdmin_and_SupplyChainAd(String Username1 ,String Password2) throws Throwable {
+driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+PageFactory.initElements(driver,CVOS_LandingPage.class);
+try {
+CVOS_LandingPage.CVOSTradingAdminLogin(Username1 ,Password2);
+} catch (Exception e) {
+// TODO Auto-generated catch block
+System.out.println("The TradingAdmin is not able to login");
+Assert.fail("The TradingAdmin is not able to login");
+
+}
+driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+PageFactory.initElements(driver,CVOS_TradingAdminloggedIn.class);
+
+try {
+CVOS_TradingAdminloggedIn.CVOSTradingStockpot();
+} catch (Exception e) {
+// TODO Auto-generated catch block
+System.out.println("Unable to click stockpot login");
+Assert.fail("Unable to click stockpot login");
+
+}
+
+
+}
+
+@Then("^I click on  'Stockpot' tab in Trading admin and search for (\\d+)AMFI(\\d+)N in SkU desciption$")
+public void i_click_on_Stockpot_tab_in_Trading_admin_and_search_for_SKU_ID_in_SkU_desciption(String SKUID) throws Throwable {
+driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+PageFactory.initElements(driver,CVOSstockpotPageActions.class);
+
+try {
+CVOSstockpotPageActions.CVOSTradingAdminAct(SKUID);
+} catch (Exception e) {
+// TODO Auto-generated catch block
+System.out.println("Unable to Search the SKU ID");
+Assert.fail("Unable to Searach the SKU ID");
+
+}
+
+}
+
+
+
+@And("^when I click on All shops I should be able to allocate to different stockspots using Amazon Fire phone (\\d+)GB$")
+public void when_I_click_on_All_shops_I_should_be_able_to_allocate_to_different_stockspots_using_Amazon_Fire_phone_GB(String Search_by_model) throws Throwable {
+driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+PageFactory.initElements(driver,CVOS_StockAllocationActions.class);
+
+try {
+CVOS_StockAllocationActions.CVOSSupplyTradeAllocate(Search_by_model);
+} catch (Exception e) {
+// TODO Auto-generated catch block
+System.out.println("Unable to allocate stock");
+Assert.fail("Unable to allocate stock");
+
+}
+
+}
+
+@And("^I click on 'Stockpot' tab and search using <SKU_ID> to see the stock status then I should see them in Pre Order status$")
+public void i_click_on_Stockpot_tab_and_search_using_SKU_ID_to_see_the_stock_status_then_I_should_see_them_in_Pre_Order_status(String SKUID) throws Throwable {
+driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+PageFactory.initElements(driver,CVOSstockpotPageActions.class);
+
+try {
+CVOSstockpotPageActions.CVOSTradingAdminPreOrderVerf(SKUID);
+} catch (Exception e) {
+// TODO Auto-generated catch block
+System.out.println("Unable to allocate stock");
+Assert.fail("Unable to allocate stock");
+
+}
+
+}
+
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////CVOS  Delayed Delivery    //////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+
+
+@Then("^I should be able to move the Launch date to a past dateAmazon Fire phone (\\d+)GB$")
+public void i_should_be_able_to_move_the_Launch_date_to_a_past_dateAmazon_Fire_phone_GB(String Search_by_model) throws Throwable {
+driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+PageFactory.initElements(driver,CVOS_StockMerchandiseActions.class);
+
+try {
+CVOS_StockMerchandiseActions.CVOSSupplyChainStockMerchDD(Search_by_model);
+} catch (Exception e) {
+// TODO Auto-generated catch block
+System.out.println("Unable to set launch date for delayed delivery stock");
+Assert.fail("Unable to set launch date for delayed delivery stock");
+
+}
+
+}
+
+@Then("^I click on 'Stockpot' tab and search using (\\d+)AMFI(\\d+)N to see the stock status then I should see them in Delayed Delivery status$")
+public void i_click_on_Stockpot_tab_and_search_using_SKU_ID_to_see_the_stock_status_then_I_should_see_them_in_Delayed_Delivery_status() throws Throwable {
+// Write code here that turns the phrase above into concrete actions
+
+}
+
+
+
+}
+
+
+
+
