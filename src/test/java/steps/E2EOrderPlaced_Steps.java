@@ -108,7 +108,7 @@ public class E2EOrderPlaced_Steps {
 	@Given("^I am an CFA user and Lands on shop page$")
 	public void i_am_an_CFA_user_and_Lands_on_shop_page() throws Throwable {
 		try {
-			ShopLandingPageAction.GetTitle();
+			ShopLandingPageAction.GetTitle();			
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			System.out.println("unable to get title");

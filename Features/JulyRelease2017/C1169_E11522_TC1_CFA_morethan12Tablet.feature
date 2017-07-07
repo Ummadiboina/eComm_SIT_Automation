@@ -26,5 +26,5 @@ Feature: C1169_E11522_TC1
     Then order confirmation is displayed
 
     Examples: 
-      | Firstname | Surname | Username     | limit | tabletname      |
-      | TEST      | ACCEPTA | TEST ACCEPTA |     3 | SamsungGalaxy10 |
+      | Firstname | Surname | Username     | limit | tabletname     |
+      | TEST      | ACCEPTA | TEST ACCEPTA |     3 | basecommtablet |
