@@ -4,7 +4,7 @@ import org.apache.log4j.Logger;
 
 import helpers.Environment;
 
-public class CVOS_LandingPage extends Environment {
+public class CVOS_LandingPageActions extends Environment {
 
 	static Logger log = Logger.getLogger("devpinoyLogger");
 
@@ -21,7 +21,6 @@ public class CVOS_LandingPage extends Environment {
 		{
 			pageobjects.CVOS_PageObjects.Login.click();
 			log.debug("The SupplyChain Admin clicks on Login");
-
 		}
 		Thread.sleep(5000);
 	

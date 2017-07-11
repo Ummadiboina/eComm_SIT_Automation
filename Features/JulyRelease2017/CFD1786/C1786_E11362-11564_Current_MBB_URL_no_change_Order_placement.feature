@@ -7,9 +7,9 @@ Feature: C1786_E11362-11564_Current_MBB_URL_no_change_Order_placement
 
     Given I am existing user and I click on Signin button
     And Signin using valid <username> and <password> credentials
-    And I launch the <OldMBBURL>
+    And I launch the OldMBBURL
     And select "random" MBBtariff
-    And I land on Basket page
+    And I Land on the basket page and choose home delivery option
     And click on "go to checkout" button
     And Select existing account and begin fast checkout
     And land on the payment page and input <user> and other details for upgrade and click 'Continue on next step'
@@ -18,6 +18,7 @@ Feature: C1786_E11362-11564_Current_MBB_URL_no_change_Order_placement
     Then order confirmation is displayed
 
     #Modify the above step to include pdf download
+    
     Examples: 
-      | username    | password | OldMBBURL                                            | user         |
-      | ink_jun9198 | test123  | https://www.o2.co.uk/shop/my-offers/mobile-broadband | TEST ACCEPTA |
+      | username           | password  | OldMBBURL                                            | user         |
+      | bvt2.cfu@gmail.com | cfubvt123 | https://www.o2.co.uk/shop/my-offers/mobile-broadband | TEST ACCEPTA |

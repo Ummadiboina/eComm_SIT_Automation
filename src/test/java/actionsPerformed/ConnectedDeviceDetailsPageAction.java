@@ -56,11 +56,11 @@ public class ConnectedDeviceDetailsPageAction extends Environment {
 		// TODO Auto-generated method stub
 		pageobjects.ConnectedDeviceDetailsPage.clickanywhere.click();
 	}
-	
+
 	public static void colorSelectOfDevice(String color) {
 		// TODO Auto-generated method stub
 		JavascriptExecutor executor = (JavascriptExecutor) driver;
-		
+
 		if (color.contains("pink")) {
 			executor.executeScript("arguments[0].click();", pageobjects.ConnectedDeviceDetailsPage.Pink);
 		}
@@ -75,46 +75,38 @@ public class ConnectedDeviceDetailsPageAction extends Environment {
 		if (color.contains("black")) {
 			executor.executeScript("arguments[0].click();", pageobjects.ConnectedDeviceDetailsPage.Black);
 		}
-		System.out.println("Selecting" +color);
+		System.out.println("Selecting" + color);
 	}
 
 	public static void checkDevStatusAsDelayedDelivery() {
 		// TODO Auto-generated method stub
-		if(pageobjects.ConnectedDeviceDetailsPage.DevStatusMsg.getText().contains("Home delivery"))
-		{
+		if (pageobjects.ConnectedDeviceDetailsPage.DevStatusMsg.getText().contains("Home delivery")) {
 			System.out.println("Device is Delayed Delivery Device");
 			log.debug("Device is Delayed Delivery Device");
-		}
-		else
-		{
+		} else {
 			System.out.println("Device is not Delayed Delivery Device");
 			Assert.fail("Device is not Delayed Delivery Device");
 		}
 	}
-	
+
 	public static void checkDevStatusAsInStock() {
 		// TODO Auto-generated method stub
-		if(pageobjects.ConnectedDeviceDetailsPage.DevStatusMsg.getText().contains("In Stock"))
-		{
+		if (pageobjects.ConnectedDeviceDetailsPage.DevStatusMsg.getText().contains("In Stock")) {
 			System.out.println("Device is in stock");
 			log.debug("Device is in stock");
-		}
-		else
-		{
+		} else {
 			System.out.println("Device is not in stock");
-			//Assert.fail("Device is not in stock");
+			// Assert.fail("Device is not in stock");
 		}
 	}
+
 	public static void checkDevStatusAsPreOrder() {
 		// TODO Auto-generated method stub
-		//Have to change the below text
-		if(pageobjects.ConnectedDeviceDetailsPage.DevStatusMsg.getText().contains("Pre"))
-		{
+		// Have to change the below text
+		if (pageobjects.ConnectedDeviceDetailsPage.DevStatusMsg.getText().contains("Pre")) {
 			System.out.println("Device is Pre Order Device");
 			log.debug("Device is Pre Order Device");
-		}
-		else
-		{
+		} else {
 			System.out.println("Device is not Pre Order Device");
 			Assert.fail("Device is not Pre Order Device");
 		}
@@ -129,13 +121,12 @@ public class ConnectedDeviceDetailsPageAction extends Environment {
 		if (capacity.isDisplayed()) {
 			List<WebElement> elementCount = new Select(capacity).getOptions();
 
-			if (elementCount.size() <= 1) 
-			{
+			if (elementCount.size() <= 1) {
 				Assert.fail("There are no more than 1 option available for capacity dropdown");
 			}
 		}
 		WebElement color = pageobjects.ConnectedDeviceDetailsPage.ColorDropDown;
-		
+
 		js.executeScript("arguments[0].setAttribute('style', 'display:block;')", color);
 		if (color.isDisplayed()) {
 			List<WebElement> elementCount = new Select(color).getOptions();
@@ -145,52 +136,55 @@ public class ConnectedDeviceDetailsPageAction extends Environment {
 			}
 		}
 	}
-	
+
 	public static void checkOnlyOneOptionAvailable() throws Exception {
 		// TODO Auto-generated method stub
 		Thread.sleep(5000);
 		WebElement capacity = pageobjects.ConnectedDeviceDetailsPage.CapacityDropDown;
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("arguments[0].setAttribute('style', 'display:block;')", capacity);
-		if (capacity.isDisplayed()) {
-			List<WebElement> elementCount = new Select(capacity).getOptions();
 
-			if (elementCount.size() >= 1) 
-			{
-				Assert.fail("There are more than 1 option available for capacity dropdown");
-			}
-		}
 		WebElement color = pageobjects.ConnectedDeviceDetailsPage.ColorDropDown;
-		
-		js.executeScript("arguments[0].setAttribute('style', 'display:block;')", color);
-		
-		if (color.isDisplayed()) {
-			List<WebElement> elementCount = new Select(color).getOptions();
 
-			if (elementCount.size() >= 1) {
-				Assert.fail("There are more than 1 option available for color dropdown");
-			}
+		js.executeScript("arguments[0].setAttribute('style', 'display:block;')", color);
+
+		if (capacity.isDisplayed()) {
+
+			Assert.fail("Capacity has more than 1 dropdown");
 		}
-	}
+
+		if (color.isDisplayed()) {
+			Assert.fail("There are more than 1 option available for color dropdown");
+
+		}
+		
+		
+		List<org.openqa.selenium.WebElement> capacityLabel = pageobjects.ConnectedDeviceDetailsPage.CapacityLabel;
+		if (capacityLabel.size() > 1) {
+			Assert.fail("There are more than 1 capacity variant displayed as a label");
+		}
 	
+		List<org.openqa.selenium.WebElement> colorLabel = pageobjects.ConnectedDeviceDetailsPage.ColorLabel;
+		if (colorLabel.size() > 1) {
+			Assert.fail("There are more than 1 capacity variant displayed as a label");
+		}
+		
+		
+	
+	}
+
 	public static void checkOnlyOneCapacityAvailable() throws Exception {
 		// TODO Auto-generated method stub
 		Thread.sleep(5000);
-		WebElement capacity = pageobjects.ConnectedDeviceDetailsPage.CapacityDropDown;
-		JavascriptExecutor js = (JavascriptExecutor) driver;
-		js.executeScript("arguments[0].setAttribute('style', 'display:block;')", capacity);
-		if (capacity.isDisplayed()) {
-			List<WebElement> elementCount = new Select(capacity).getOptions();
-
-			if (elementCount.size() >= 1) 
-			{
-				Assert.fail("There are more than 1 option available for capacity dropdown");
-			}
+		List<org.openqa.selenium.WebElement> capacityLabel = pageobjects.ConnectedDeviceDetailsPage.CapacityLabel;
+		if (capacityLabel.size() > 1) {
+			Assert.fail("There are more than 1 capacity variant displayed as a label");
 		}
+		
+		JavascriptExecutor js = (JavascriptExecutor) driver;
 		WebElement color = pageobjects.ConnectedDeviceDetailsPage.ColorDropDown;
-		
 		js.executeScript("arguments[0].setAttribute('style', 'display:block;')", color);
-		
+
 		if (color.isDisplayed()) {
 			List<WebElement> elementCount = new Select(color).getOptions();
 
@@ -199,7 +193,7 @@ public class ConnectedDeviceDetailsPageAction extends Environment {
 			}
 		}
 	}
-	
+
 	public static void checkOnlyOneColourAvailable() throws Exception {
 		// TODO Auto-generated method stub
 		Thread.sleep(5000);
@@ -209,15 +203,14 @@ public class ConnectedDeviceDetailsPageAction extends Environment {
 		if (capacity.isDisplayed()) {
 			List<WebElement> elementCount = new Select(capacity).getOptions();
 
-			if (elementCount.size() >= 1) 
-			{
+			if (elementCount.size() >= 1) {
 				Assert.fail("There are more than 1 option available for capacity dropdown");
 			}
 		}
 		WebElement color = pageobjects.ConnectedDeviceDetailsPage.ColorDropDown;
-		
+
 		js.executeScript("arguments[0].setAttribute('style', 'display:block;')", color);
-		
+
 		if (color.isDisplayed()) {
 			List<WebElement> elementCount = new Select(color).getOptions();
 
@@ -226,8 +219,8 @@ public class ConnectedDeviceDetailsPageAction extends Environment {
 			}
 		}
 	}
-	
-public static void colorSelectOfDeviceDropDown(String color) throws Exception {
+
+	public static void colorSelectOfDeviceDropDown(String color) throws Exception {
 		// TODO Auto-generated method stub
 		Thread.sleep(5000);
 

@@ -5,9 +5,11 @@ Feature: C1924_E11409_TC10_CFA_Displaying_label_in_place_of_only_one_variant_and
     Given I am an CFA user and Lands on shop page
     And navigate to PAYM Phones page
     And I choose PayM <handset>
-    And Navigate to device details page
     Then check if the selected connected device has only 1 variant for capacity and dropdown for colour
+    And select <color> color of the connected device
+    And Click on View all Tariffs
+    
 
     Examples: 
-      | handset |
-      | Iphone7 |
+      | handset | color |
+      | Iphone7 | Black |
