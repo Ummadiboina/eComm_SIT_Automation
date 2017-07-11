@@ -23,8 +23,9 @@ import actionsPerformed.Agent_DealBuilderPageActions;
 import actionsPerformed.Agent_HomePagePageActions;
 import actionsPerformed.Agent_RegisterCustomerActions;
 import actionsPerformed.AgreementPageActions;
+import actionsPerformed.BaseCommsPageActions_vinu;
 import actionsPerformed.BasketPageActions;
-import actionsPerformed.CVOS_LandingPage;
+import actionsPerformed.CVOS_LandingPageActions;
 import actionsPerformed.CVOS_StockAllocationActions;
 import actionsPerformed.CVOS_StockMerchandiseActions;
 import actionsPerformed.CVOS_SupplyChainloggedIn;
@@ -63,7 +64,9 @@ import pageobjects.Agent_DealBuilderPage;
 import pageobjects.Agent_HomePage;
 import pageobjects.Agent_RegisterCustomerPage;
 import pageobjects.AgreementPage;
+import pageobjects.BaseCommsPage;
 import pageobjects.BasketPage;
+import pageobjects.CVOS_PageObjects;
 import pageobjects.ConnectedDeviceDetailsPage;
 import pageobjects.DeliveryPage;
 import pageobjects.FitnessTrackerPage;
@@ -113,7 +116,7 @@ public class E2EOrderPlaced_Steps {
 	@Given("^I am an CFA user and Lands on shop page$")
 	public void i_am_an_CFA_user_and_Lands_on_shop_page() throws Throwable {
 		try {
-			ShopLandingPageAction.GetTitle();			
+			ShopLandingPageAction.GetTitle();
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			System.out.println("unable to get title");
@@ -129,7 +132,7 @@ public class E2EOrderPlaced_Steps {
 			PageFactory.initElements(driver, MouseHoverPage.class);
 			MouseHoverAction.PayMPhonesLandingPage();
 
-			//Autoredirection.redirect();
+			// Autoredirection.redirect();
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			System.out.println("unable to do mousehover to phones");
@@ -138,18 +141,18 @@ public class E2EOrderPlaced_Steps {
 	}
 
 	@And("^Navigate to PayM MBB page$")
-    public void navigate_to_PayM_MBB_page() throws Throwable {
-          try {
-                driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-                PageFactory.initElements(driver, MouseHoverPage.class);
-                MouseHoverAction.PayMMBBPage();
-                Autoredirection.redirect();
-          } catch (Exception e) {
-                // TODO Auto-generated catch block
-                System.out.println("unable to do mousehover to PayGMBB");
-                Assert.fail("unable to do mousehover to Accessories");
-          }
-    }
+	public void navigate_to_PayM_MBB_page() throws Throwable {
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, MouseHoverPage.class);
+			MouseHoverAction.PayMMBBPage();
+			Autoredirection.redirect();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			System.out.println("unable to do mousehover to PayGMBB");
+			Assert.fail("unable to do mousehover to Accessories");
+		}
+	}
 
 	@Given("^Navigate to Accessories$")
 	public void navigate_to_Accessories() throws Throwable {
@@ -157,11 +160,11 @@ public class E2EOrderPlaced_Steps {
 			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 			PageFactory.initElements(driver, MouseHoverPage.class);
 			MouseHoverAction.AccessoriesLandingPage();
-			//Autoredirection.redirect();
+			// Autoredirection.redirect();
 			Thread.sleep(10000);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
-			System.out.println("unable to do mousehover to Accessories");
+			System.out.println(	"unable to do mousehover to Accessories");
 			Assert.fail("unable to do mousehover to Accessories");
 		}
 	}
@@ -200,7 +203,7 @@ public class E2EOrderPlaced_Steps {
 			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 			PageFactory.initElements(driver, MouseHoverPage.class);
 			MouseHoverAction.SmartwatchesLandingPage();
-			//Autoredirection.redirect();
+			// Autoredirection.redirect();
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			System.out.println("unable to do mousehover to SmartWatches");
@@ -320,20 +323,19 @@ public class E2EOrderPlaced_Steps {
 	}
 
 	@And("^I choose MBB PayM ([^\"]*)$")
-    public void i_choose_MBB_PayM(String elementName) throws Throwable {
-          try {
-                driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-                PageFactory.initElements(driver, MobileBroadBandPage.class);
-                MobileBroadBandPageActions.DeviceSelect(elementName);
-          } catch (Exception e) {
-                // TODO Auto-generated catch block
-                System.out.println("Unable to select MBB PayG device");
-                Assert.fail("Unable to select MBB PayG device");
+	public void i_choose_MBB_PayM(String elementName) throws Throwable {
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, MobileBroadBandPage.class);
+			MobileBroadBandPageActions.DeviceSelect(elementName);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			System.out.println("Unable to select MBB PayG device");
+			Assert.fail("Unable to select MBB PayG device");
 
-          }
-    }
+		}
+	}
 
-	
 	@Given("^select any available \"([^\"]*)\" Fitness tracker$")
 	public void select_any_available_Fitness_tracker(String arg1) throws Throwable {
 		try {
@@ -398,7 +400,7 @@ public class E2EOrderPlaced_Steps {
 			PageFactory.initElements(driver, ConnectedDeviceDetailsPage.class);
 			ConnectedDeviceDetailsPageAction.GetTitle();
 			Thread.sleep(2000);
-			//ConnectedDeviceDetailsPageAction.ViewAllTariffs();
+			ConnectedDeviceDetailsPageAction.ViewAllTariffs();
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			System.out.println("Unable to navigate to device details page");
@@ -406,6 +408,22 @@ public class E2EOrderPlaced_Steps {
 
 		}
 	}
+	
+	
+	@And("^Click on View all Tariffs$")
+	public void ClickonViewAllTariffsDeviceDetailspage() throws Throwable {
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, ConnectedDeviceDetailsPage.class);
+		ConnectedDeviceDetailsPageAction.ViewAllTariffs();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			System.out.println("Unable to navigate to device details page");
+			Assert.fail("Unable to navigate to device details page");
+
+		}
+	}
+	
 
 	@Given("^Navigate to device details page and select ([^\"]*)$")
 	public void Navigate_to_device_details_page_and_select_color(String color) throws Throwable {
@@ -519,7 +537,6 @@ public class E2EOrderPlaced_Steps {
 
 	}
 
-
 	@Given("^add FitnessTracker to basket within limit in details page and navigate to basket$")
 	public void add_FitnessTracker_to_basket_within_limit_in_details_page_and_navigate_to_basket() throws Throwable {
 		try {
@@ -564,7 +581,7 @@ public class E2EOrderPlaced_Steps {
 		}
 
 	}
-	
+
 	@And("^Choose all Accesssory$")
 	public void ChooseMoreAccessory() throws Throwable {
 		try {
@@ -574,8 +591,7 @@ public class E2EOrderPlaced_Steps {
 			PAYMandPAYGTariffAndExtrasPageActions.addMoreAccessory();
 			System.out.println("Completed Choose All accessory method");
 			Thread.sleep(2000);
-		} catch (Exception e) 
-		{
+		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			System.out.println("Unable to choose Accesssory");
 			Assert.fail("Unable to choose Accesssory");
@@ -674,7 +690,7 @@ public class E2EOrderPlaced_Steps {
 			PageFactory.initElements(driver, PAYMandPAYGTariffAndExtrasPage.class);
 			PAYMandPAYGTariffAndExtrasPageActions.addToBasketLive();
 			Thread.sleep(3000);
-			//BasketPageActions.ValidateBasketPageContents();
+			BasketPageActions.ValidateBasketPageContents();
 			BasketPageActions.CollectionorDelivery("homeDelivery");
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
@@ -2197,7 +2213,7 @@ public class E2EOrderPlaced_Steps {
 		try {
 			PageFactory.initElements(driver, ReviewPage.class);
 			PageFactory.initElements(driver, OrderSummarySection.class);
-			ReviewPageActions.gettitlepage();			
+			ReviewPageActions.gettitlepage();
 			Thread.sleep(2000);
 			ReviewPageActions.checkOrderContractTextRP();
 			Thread.sleep(2000);
@@ -2270,13 +2286,14 @@ public class E2EOrderPlaced_Steps {
 
 		}
 	}
-/*================================
-	
-	July release
-	
-	================================
-*/
-	
+	/*
+	 * ================================
+	 * 
+	 * July release
+	 * 
+	 * ================================
+	 */
+
 	@And("^click on Add to Basket button$")
 	public void click_on_Add_to_Basket_button() throws Throwable {
 
@@ -2290,9 +2307,9 @@ public class E2EOrderPlaced_Steps {
 		}
 	}
 
-@And("^click on continue shopping button$")
+	@And("^click on continue shopping button$")
 	public void click_on_continue_shopping_button() throws Throwable {
-		
+
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		try {
 			PageFactory.initElements(driver, BasketPage.class);
@@ -2303,7 +2320,7 @@ public class E2EOrderPlaced_Steps {
 		}
 	}
 
-@And("^navigate to PAYM Tablets page$")
+	@And("^navigate to PAYM Tablets page$")
 	public void navigate_to_PAYM_Tablets_page() throws Throwable {
 		try {
 			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
@@ -2318,7 +2335,7 @@ public class E2EOrderPlaced_Steps {
 		}
 	}
 
-@And("^select any available \"([^\"]*)\" Tablet$")
+	@And("^select any available \"([^\"]*)\" Tablet$")
 	public void select_any_available_Tablet(String arg1) throws Throwable {
 		try {
 			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
@@ -2331,7 +2348,7 @@ public class E2EOrderPlaced_Steps {
 		}
 	}
 
-@And("^I choose ([^\"]*) Smartwatch$")
+	@And("^I choose ([^\"]*) Smartwatch$")
 	public void i_choose_smartwatch(String elementName) throws Throwable {
 		try {
 			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
@@ -2345,7 +2362,7 @@ public class E2EOrderPlaced_Steps {
 		}
 	}
 
-@And("^I choose ([^\"]*) FitnessTracker$")
+	@And("^I choose ([^\"]*) FitnessTracker$")
 	public void i_choose_fitnesstracker(String elementName) throws Throwable {
 		try {
 			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
@@ -2372,7 +2389,7 @@ public class E2EOrderPlaced_Steps {
 		}
 	}
 
-@And("^verify the elements$")
+	@And("^verify the elements$")
 	public void verify_the_elements() throws Throwable {
 		try {
 			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
@@ -2385,350 +2402,345 @@ public class E2EOrderPlaced_Steps {
 		}
 	}
 
+	@Given("^add quantity of accessories to basket within ([^\"]*) in details page and navigate to basket$")
+	public void addQuantityAccessories(String Limit) throws Throwable {
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, AccessoryPage.class);
+			PageFactory.initElements(driver, NonConnectedDeviceDetailsPage.class);
+			AccessoryPageActions.UserSpecifiedAccessoryLimit(Limit);
+			// NonConnectedDeviceDetailsPageAction.ClickonBasketIcon();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			System.out.println("Unable to add accessories to basket");
+			Assert.fail("Unable to add accessories to basket");
 
-@Given("^add quantity of accessories to basket within ([^\"]*) in details page and navigate to basket$")
-public void addQuantityAccessories(String Limit) throws Throwable {
-	try {
-		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-		PageFactory.initElements(driver, AccessoryPage.class);
-		PageFactory.initElements(driver, NonConnectedDeviceDetailsPage.class);
-		AccessoryPageActions.UserSpecifiedAccessoryLimit(Limit);
-		// NonConnectedDeviceDetailsPageAction.ClickonBasketIcon();
-	} catch (Exception e) {
-		// TODO Auto-generated catch block
-		System.out.println("Unable to add accessories to basket");
-		Assert.fail("Unable to add accessories to basket");
+		}
 
 	}
 
-}
-
-@And("^add quantity of FitnessTracker to basket within ([^\"]*) in details page and navigate to basket$")
-public void addQuantityFitnessTracker(String Limit) throws Throwable {
-	try {
-		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-		PageFactory.initElements(driver, AccessoryPage.class);
-		PageFactory.initElements(driver, NonConnectedDeviceDetailsPage.class);
-		FitnessTrackerPageActions.UserSpecifiedFitnessTrackerLimit(Limit);
-		// NonConnectedDeviceDetailsPageAction.ClickonBasketIcon();
-	} catch (Exception e) {
-		// TODO Auto-generated catch block
-		System.out.println("Unable to add Fitnesstracker to basket");
-		Assert.fail("Unable to add Fitnesstracker to basket");
+	@And("^add quantity of FitnessTracker to basket within ([^\"]*) in details page and navigate to basket$")
+	public void addQuantityFitnessTracker(String Limit) throws Throwable {
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, AccessoryPage.class);
+			PageFactory.initElements(driver, NonConnectedDeviceDetailsPage.class);
+			FitnessTrackerPageActions.UserSpecifiedFitnessTrackerLimit(Limit);
+			// NonConnectedDeviceDetailsPageAction.ClickonBasketIcon();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			System.out.println("Unable to add Fitnesstracker to basket");
+			Assert.fail("Unable to add Fitnesstracker to basket");
+		}
 	}
-}
 
-@And("^the previously selected standalone non-connected items should be removed from my basket$")
-public void validateEcomm11522() throws Throwable {
-	try {
-		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-		PageFactory.initElements(driver, BasketPage.class);
-		PageFactory.initElements(driver, PAYMandPAYGTariffAndExtrasPage.class);
-		Thread.sleep(3000);
-		//BasketPageActions.ValidateContentEcomm11522();
-	BasketPageActions.verifyNCDRemovedinBasketPageAfterCDSelection();
-	} catch (Exception e) {
-		// TODO Auto-generated catch block
-		System.out.println("Unable to add Fitnesstracker to basket");
-		Assert.fail("Unable to add Fitnesstracker to basket");
+	@And("^the previously selected standalone non-connected items should be removed from my basket$")
+	public void validateEcomm11522() throws Throwable {
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, BasketPage.class);
+			PageFactory.initElements(driver, PAYMandPAYGTariffAndExtrasPage.class);
+			Thread.sleep(3000);
+			// BasketPageActions.ValidateContentEcomm11522();
+			BasketPageActions.verifyNCDRemovedinBasketPageAfterCDSelection();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			System.out.println("Unable to add Fitnesstracker to basket");
+			Assert.fail("Unable to add Fitnesstracker to basket");
+		}
 	}
-}
 
-@And("^Validate Basket content for non Connected$")
-public void validateBasketNonConnected() throws Throwable {
-	try {
-		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-		PageFactory.initElements(driver, BasketPage.class);
-		PageFactory.initElements(driver, PAYMandPAYGTariffAndExtrasPage.class);
-		PAYMandPAYGTariffAndExtrasPageActions.addToBasketLive();
-		Thread.sleep(3000);
-		BasketPageActions.BasketContentsforNonConnected();
-	} catch (Exception e) {
-		// TODO Auto-generated catch block
-		System.out.println("Unable to add Fitnesstracker to basket");
-		Assert.fail("Unable to add Fitnesstracker to basket");
+	@And("^Validate Basket content for non Connected$")
+	public void validateBasketNonConnected() throws Throwable {
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, BasketPage.class);
+			PageFactory.initElements(driver, PAYMandPAYGTariffAndExtrasPage.class);
+			PAYMandPAYGTariffAndExtrasPageActions.addToBasketLive();
+			Thread.sleep(3000);
+			BasketPageActions.BasketContentsforNonConnected();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			System.out.println("Unable to add Fitnesstracker to basket");
+			Assert.fail("Unable to add Fitnesstracker to basket");
+		}
 	}
-}
 
-@Then("^Verify the devices ([^\"]*), ([^\"]*) and ([^\"]*) in basket$")
-public void verify_3_devices_in_basket(String dev1, String dev2, String dev3) {
+	@Then("^Verify the devices ([^\"]*), ([^\"]*) and ([^\"]*) in basket$")
+	public void verify_3_devices_in_basket(String dev1, String dev2, String dev3) {
 
-	try {
-		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-		PageFactory.initElements(driver, BasketPage.class);
-		BasketPageActions.verifyDevicesInBasket(dev1, dev2, dev3);
-	} catch (Exception e) {
-		// TODO Auto-generated catch block
-		e.printStackTrace();
-		System.out.println("Unable to verify the devices in basket");
-		Assert.fail("Unable to verify the devices in basket");
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, BasketPage.class);
+			BasketPageActions.verifyDevicesInBasket(dev1, dev2, dev3);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			System.out.println("Unable to verify the devices in basket");
+			Assert.fail("Unable to verify the devices in basket");
+		}
 	}
-}
 
-@Then("^Verify the devices ([^\"]*) and \"([^\"]*)\" in basket$")
-public void verify_2_devices_in_basket(String dev1, String dev2) {
+	@Then("^Verify the devices ([^\"]*) and \"([^\"]*)\" in basket$")
+	public void verify_2_devices_in_basket(String dev1, String dev2) {
 
-	try {
-		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-		PageFactory.initElements(driver, BasketPage.class);
-		BasketPageActions.verifyDevicesInBasket(dev1, dev2);
-	} catch (Exception e) {
-		// TODO Auto-generated catch block
-		e.printStackTrace();
-		System.out.println("Unable to verify the devices in basket");
-		Assert.fail("Unable to verify the devices in basket");
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, BasketPage.class);
+			BasketPageActions.verifyDevicesInBasket(dev1, dev2);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			System.out.println("Unable to verify the devices in basket");
+			Assert.fail("Unable to verify the devices in basket");
+		}
 	}
-}
-@Then("^Verify the device ([^\"]*) in basket$")
-public void verify_1_device_in_basket(String dev1) {
 
-	try {
-		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-		PageFactory.initElements(driver, BasketPage.class);
-		BasketPageActions.verifyDevicesInBasket(dev1);
-	} catch (Exception e) {
-		// TODO Auto-generated catch block
-		e.printStackTrace();
-		System.out.println("Unable to verify the devices in basket");
-		Assert.fail("Unable to verify the devices in basket");
+	@Then("^Verify the device ([^\"]*) in basket$")
+	public void verify_1_device_in_basket(String dev1) {
+
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, BasketPage.class);
+			BasketPageActions.verifyDevicesInBasket(dev1);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			System.out.println("Unable to verify the devices in basket");
+			Assert.fail("Unable to verify the devices in basket");
+		}
 	}
-}
 
+	/*
+	 * @And("^Verify the devices ([^\"]*), ([^\"]*) and ([^\"]*) in basket$")
+	 * public void verifyDevicesInBasket(String smartwatchname, String
+	 * fitnesstrackername, String tabletname) throws Throwable { try {
+	 * driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+	 * PageFactory.initElements(driver, BasketPage.class);
+	 * BasketPageActions.verifyDevicesInBasket(smartwatchname,
+	 * fitnesstrackername, tabletname); } catch (Exception e) { // TODO
+	 * Auto-generated catch block
+	 * System.out.println("not able to verify if phone tab is selected");
+	 * Assert.fail("not able to verify if phone tab is selected"); } }
+	 */
 
-/*@And("^Verify the devices ([^\"]*), ([^\"]*) and ([^\"]*) in basket$")
-public void verifyDevicesInBasket(String smartwatchname, String fitnesstrackername, String tabletname) throws Throwable {
-	try {
-		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-		PageFactory.initElements(driver, BasketPage.class);
-		BasketPageActions.verifyDevicesInBasket(smartwatchname, fitnesstrackername, tabletname);
-	} catch (Exception e) {
-		// TODO Auto-generated catch block
-		System.out.println("not able to verify if phone tab is selected");
-		Assert.fail("not able to verify if phone tab is selected");
+	@And("^select ([^\"]*) tab$")
+	public void select_tab(String tabname) {
+
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, PAYMSimOPage.class);
+			PAYMSimOPageActions.ElementClick(tabname);
+		} catch (Exception e) {
+			e.printStackTrace();
+			System.out.println("Unable to select tab");
+			Assert.fail("Unable to select tab");
+		}
 	}
-}*/
 
+	@And("^choose ([^\"]*) contract length$")
+	public void choose_contract_length(String contractlength) {
 
-@And("^select ([^\"]*) tab$")
-public void select_tab(String tabname) {
-
-	try {
-		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-		PageFactory.initElements(driver, PAYMSimOPage.class);
-		PAYMSimOPageActions.ElementClick(tabname);
-	} catch (Exception e) {
-		e.printStackTrace();
-		System.out.println("Unable to select tab");
-		Assert.fail("Unable to select tab");
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, PAYMSimOPage.class);
+			PAYMSimOPageActions.SelectRecommendedTariffPhonesTab(contractlength);
+		} catch (Exception e) {
+			e.printStackTrace();
+			System.out.println("Unable to choose contract length");
+			Assert.fail("Unable to choose contract length");
+		}
 	}
-}
 
+	@Then("^check if the selected connected device has more than 1 variant for both colour and capacity$")
+	public void check_if_the_selected_device_has_more_than_1_variant_for_both_colour_and_capacity() {
 
-@And("^choose ([^\"]*) contract length$")
-public void choose_contract_length(String contractlength) {
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, ConnectedDeviceDetailsPage.class);
+			ConnectedDeviceDetailsPageAction.isColorDropDownDisplayed();
+			ConnectedDeviceDetailsPageAction.isCapacityDropDownDisplayed();
 
-	try {
-		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-		PageFactory.initElements(driver, PAYMSimOPage.class);
-		PAYMSimOPageActions.SelectRecommendedTariffPhonesTab(contractlength);
-	} catch (Exception e) {
-		e.printStackTrace();
-		System.out.println("Unable to choose contract length");
-		Assert.fail("Unable to choose contract length");
+			ConnectedDeviceDetailsPageAction.checkIfMoreThanOneOptionAvailable();
+
+		} catch (Exception e) {
+			e.printStackTrace();
+			System.out.println("The selected device does not have more than 1 variant for both colour and capacity");
+			Assert.fail("The selected device does not have more than 1 variant for both colour and capacity");
+		}
 	}
-}
 
+	@Then("^check if the selected connected device has only 1 variant for both colour and capacity$")
+	public void check_if_the_selected_device_has_only_1_variant_for_both_colour_and_capacity() {
 
-@Then("^check if the selected connected device has more than 1 variant for both colour and capacity$")
-public void check_if_the_selected_device_has_more_than_1_variant_for_both_colour_and_capacity() {
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, ConnectedDeviceDetailsPage.class);
+/*			ConnectedDeviceDetailsPageAction.isColorDropDownDisplayed();
+			ConnectedDeviceDetailsPageAction.isCapacityDropDownDisplayed();*/
+			ConnectedDeviceDetailsPageAction.checkOnlyOneOptionAvailable();
 
-	try {
-		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-		PageFactory.initElements(driver, ConnectedDeviceDetailsPage.class);
-		ConnectedDeviceDetailsPageAction.isColorDropDownDisplayed();
-		ConnectedDeviceDetailsPageAction.isCapacityDropDownDisplayed();
-
-ConnectedDeviceDetailsPageAction.checkIfMoreThanOneOptionAvailable();
-		
-	} catch (Exception e) {
-		e.printStackTrace();
-		System.out.println("The selected device does not have more than 1 variant for both colour and capacity");
-		Assert.fail("The selected device does not have more than 1 variant for both colour and capacity");
+		} catch (Exception e) {
+			e.printStackTrace();
+			System.out.println("The selected device does not have more than 1 variant for both colour and capacity");
+			Assert.fail("The selected device does not have more than 1 variant for both colour and capacity");
+		}
 	}
-}
 
-@Then("^check if the selected connected device has only 1 variant for both colour and capacity$")
-public void check_if_the_selected_device_has_only_1_variant_for_both_colour_and_capacity() {
+	@Then("^check if the selected connected device has only 1 variant for capacity and dropdown for colour$")
+	public void capacity_1_and_Colour_dropdown() {
 
-	try {
-		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-		PageFactory.initElements(driver, ConnectedDeviceDetailsPage.class);
-		ConnectedDeviceDetailsPageAction.isColorDropDownDisplayed();
-		ConnectedDeviceDetailsPageAction.isCapacityDropDownDisplayed();
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, ConnectedDeviceDetailsPage.class);
+			ConnectedDeviceDetailsPageAction.isColorDropDownDisplayed();
+			ConnectedDeviceDetailsPageAction.isCapacityDropDownDisplayed();
 
-ConnectedDeviceDetailsPageAction.checkOnlyOneOptionAvailable();
-		
-	} catch (Exception e) {
-		e.printStackTrace();
-		System.out.println("The selected device does not have more than 1 variant for both colour and capacity");
-		Assert.fail("The selected device does not have more than 1 variant for both colour and capacity");
+			ConnectedDeviceDetailsPageAction.checkOnlyOneCapacityAvailable();
+			;
+
+		} catch (Exception e) {
+			e.printStackTrace();
+			System.out.println("The selected device does not have more than 1 variant for both colour and capacity");
+			Assert.fail("The selected device does not have more than 1 variant for both colour and capacity");
+		}
 	}
-}
 
-@Then("^check if the selected connected device has only 1 variant for capacity and dropdown for colour$")
-public void capacity_1_and_Colour_dropdown() {
+	@And("^select ([^\"]*) color of the connected device$")
+	public void select_color_of_the_device(String color) {
 
-	try {
-		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-		PageFactory.initElements(driver, ConnectedDeviceDetailsPage.class);
-		ConnectedDeviceDetailsPageAction.isColorDropDownDisplayed();
-		ConnectedDeviceDetailsPageAction.isCapacityDropDownDisplayed();
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, ConnectedDeviceDetailsPage.class);
+			ConnectedDeviceDetailsPageAction.colorSelectOfDeviceDropDown(color);
 
-ConnectedDeviceDetailsPageAction.checkOnlyOneCapacityAvailable();;
-		
-	} catch (Exception e) {
-		e.printStackTrace();
-		System.out.println("The selected device does not have more than 1 variant for both colour and capacity");
-		Assert.fail("The selected device does not have more than 1 variant for both colour and capacity");
+		} catch (Exception e) {
+			e.printStackTrace();
+			System.out.println("selected color" + color);
+			Assert.fail("not able to select  color" + color);
+		}
 	}
-}
 
-@And("^select ([^\"]*) color of the connected device$")
-public void select_color_of_the_device(String color) {
+	@And("^select ([^\"]*) capacity of the connected device$")
+	public void select_capacity_of_the_device(String capacity) {
 
-	try {
-		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-		PageFactory.initElements(driver, ConnectedDeviceDetailsPage.class);
-		ConnectedDeviceDetailsPageAction.colorSelectOfDeviceDropDown(color);
-		
-	} catch (Exception e) {
-		e.printStackTrace();
-		System.out.println("selected color" + color);
-		Assert.fail("not able to select  color" + color);
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, ConnectedDeviceDetailsPage.class);
+			ConnectedDeviceDetailsPageAction.capacitySelectOfDeviceDropDown(capacity);
+
+		} catch (Exception e) {
+			e.printStackTrace();
+			System.out.println("selected color" + capacity);
+			Assert.fail("not able to select  color" + capacity);
+		}
 	}
-}
 
-@And("^select ([^\"]*) capacity of the connected device$")
-public void select_capacity_of_the_device(String capacity) {
+	@Then("^check if the selected non connected device has more than 1 variant for both colour and capacity$")
+	public void check_if_the_selected_non_connected_device_has_more_than_1_variant_for_both_colour_and_capacity() {
 
-	try {
-		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-		PageFactory.initElements(driver, ConnectedDeviceDetailsPage.class);
-		ConnectedDeviceDetailsPageAction.capacitySelectOfDeviceDropDown(capacity);
-		
-	} catch (Exception e) {
-		e.printStackTrace();
-		System.out.println("selected color" + capacity);
-		Assert.fail("not able to select  color" + capacity);
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, NonConnectedDeviceDetailsPage.class);
+			NonConnectedDeviceDetailsPageAction.isColorDropDownDisplayed();
+			NonConnectedDeviceDetailsPageAction.isCapacityDropDownDisplayed();
+
+			NonConnectedDeviceDetailsPageAction.checkIfMoreThanOneOptionAvailable();
+
+		} catch (Exception e) {
+			e.printStackTrace();
+			System.out.println("The selected device does not have more than 1 variant for both colour and capacity");
+			Assert.fail("The selected device does not have more than 1 variant for both colour and capacity");
+		}
 	}
-}
 
-@Then("^check if the selected non connected device has more than 1 variant for both colour and capacity$")
-public void check_if_the_selected_non_connected_device_has_more_than_1_variant_for_both_colour_and_capacity() {
+	@And("^select ([^\"]*) color of the non connected device$")
+	public void select_color_of_the_non_connected_device(String color) {
 
-	try {
-		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-		PageFactory.initElements(driver, NonConnectedDeviceDetailsPage.class);
-		NonConnectedDeviceDetailsPageAction.isColorDropDownDisplayed();
-		NonConnectedDeviceDetailsPageAction.isCapacityDropDownDisplayed();
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, NonConnectedDeviceDetailsPage.class);
+			NonConnectedDeviceDetailsPageAction.colorSelectOfDeviceDropDown(color);
 
-NonConnectedDeviceDetailsPageAction.checkIfMoreThanOneOptionAvailable();
-		
-	} catch (Exception e) {
-		e.printStackTrace();
-		System.out.println("The selected device does not have more than 1 variant for both colour and capacity");
-		Assert.fail("The selected device does not have more than 1 variant for both colour and capacity");
+		} catch (Exception e) {
+			e.printStackTrace();
+			System.out.println("selected color" + color);
+			Assert.fail("not able to select  color" + color);
+		}
 	}
-}
 
-@And("^select ([^\"]*) color of the non connected device$")
-public void select_color_of_the_non_connected_device(String color) {
+	@And("^select ([^\"]*) capacity of the non connected device$")
+	public void select_capacity_of_the_non_connected_device(String capacity) {
 
-	try {
-		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-		PageFactory.initElements(driver, NonConnectedDeviceDetailsPage.class);
-		NonConnectedDeviceDetailsPageAction.colorSelectOfDeviceDropDown(color);
-		
-	} catch (Exception e) {
-		e.printStackTrace();
-		System.out.println("selected color" + color);
-		Assert.fail("not able to select  color" + color);
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, NonConnectedDeviceDetailsPage.class);
+			NonConnectedDeviceDetailsPageAction.capacitySelectOfDeviceDropDown(capacity);
+
+		} catch (Exception e) {
+			e.printStackTrace();
+			System.out.println("selected color" + capacity);
+			Assert.fail("not able to select  color" + capacity);
+		}
 	}
-}
 
-@And("^select ([^\"]*) capacity of the non connected device$")
-public void select_capacity_of_the_non_connected_device(String capacity) {
-
-	try {
-		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-		PageFactory.initElements(driver, NonConnectedDeviceDetailsPage.class);
-		NonConnectedDeviceDetailsPageAction.capacitySelectOfDeviceDropDown(capacity);
-		
-	} catch (Exception e) {
-		e.printStackTrace();
-		System.out.println("selected color" + capacity);
-		Assert.fail("not able to select  color" + capacity);
+	@And("^I click on Continue Shopping link$")
+	public void continue_shopping() throws Throwable {
+		try {
+			log.debug("Running Test Step: @And(I click on Continue Shopping link)");
+			AccessoryPageActions.continueShopping();
+			log.debug("Pass: Executed continue shopping successfully");
+		} catch (Exception e) {
+			log.debug("Fail: Cannot carry out Continue shopping action" + e.getMessage() + "");
+		}
 	}
-}
 
-@And("^I click on Continue Shopping link$")
-public void continue_shopping() throws Throwable {
-	try {
-		log.debug("Running Test Step: @And(I click on Continue Shopping link)");
-		AccessoryPageActions.continueShopping();
-		log.debug("Pass: Executed continue shopping successfully");
-	} catch (Exception e) {
-		log.debug("Fail: Cannot carry out Continue shopping action" + e.getMessage() + "");
-	}
-}
-
-
-@And("^Verify all three non connected devices got added to the basket section before selecting connected device$")
+	@And("^Verify all three non connected devices got added to the basket section before selecting connected device$")
 	public void verify_non_Connected_device_added_to_basket() throws Throwable {
 		try {
 			log.debug(
 					"Running Test Step: @And(Verify all three non connected devices got added to the basket section before selecting connected device)");
 			AccessoryPageActions.verifyNonConnectedDeviceAddedToBasketBefore();
-			log.debug("Pass: Verified that all non connected devices got added to basket successfully before selecting connected device");
+			log.debug(
+					"Pass: Verified that all non connected devices got added to basket successfully before selecting connected device");
 		} catch (Exception e) {
 			log.debug("Fail: Cannot verify that non connected device added to basket " + e.getMessage() + "");
 		}
 	}
 
-@And("^Verify all three non connected devices are still retained in the basket and not overridden$")
-public void verify_non_Connected_device_ratined_in_basket_after_selecting_connected_device() throws Throwable {
-	try {
-		log.debug(
-				"Running Test Step: @And(Verify all three non connected devices are still retained in the basket and not overridden)");
-		AccessoryPageActions.verifyNonConnectedDeviceRetainedInBasketAfterPhoneSelection();
-		log.debug("Pass: Verified that all non connected devices got added to basket successfully before selecting connected device");
-	} catch (Exception e) {
-		log.debug("Fail: Cannot verify that non connected device added to basket " + e.getMessage() + "");
-	}
-}
-
-@And("^navigate to Like New Phones page$")
-public void navigate_to_LikeNew_Phones_page() throws Throwable {
-	try {
-		log.debug("Running Test Step: @And(navigate to Like New Phones page)");
-		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-		PageFactory.initElements(driver, MouseHoverPage.class);
-		MouseHoverAction.likeNewHomepageNavigation();
-		Autoredirection.redirect();
-		log.debug("Navigated to Like New Phones page successfully");
-	} catch (Exception e) {
-		// TODO Auto-generated catch block
-		System.out.println("unable to do mousehover to like new phones");
-		Assert.fail("unable to do mousehover to like new phones");
-	}
-}
-
-
-@And("^I select to buy a like new phone on Pay Monthly$")
-	public void buy_a_like_new_phone_on_pay_monthly() throws Throwable {
+	@And("^Verify all three non connected devices are still retained in the basket and not overridden$")
+	public void verify_non_Connected_device_ratined_in_basket_after_selecting_connected_device() throws Throwable {
 		try {
 			log.debug(
-					"Running Test Step: @And(I select to buy a like new phone on Pay Monthly)");
+					"Running Test Step: @And(Verify all three non connected devices are still retained in the basket and not overridden)");
+			AccessoryPageActions.verifyNonConnectedDeviceRetainedInBasketAfterPhoneSelection();
+			log.debug(
+					"Pass: Verified that all non connected devices got added to basket successfully before selecting connected device");
+		} catch (Exception e) {
+			log.debug("Fail: Cannot verify that non connected device added to basket " + e.getMessage() + "");
+		}
+	}
+
+	@And("^navigate to Like New Phones page$")
+	public void navigate_to_LikeNew_Phones_page() throws Throwable {
+		try {
+			log.debug("Running Test Step: @And(navigate to Like New Phones page)");
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, MouseHoverPage.class);
+			MouseHoverAction.likeNewHomepageNavigation();
+			Autoredirection.redirect();
+			log.debug("Navigated to Like New Phones page successfully");
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			System.out.println("unable to do mousehover to like new phones");
+			Assert.fail("unable to do mousehover to like new phones");
+		}
+	}
+
+	@And("^I select to buy a like new phone on Pay Monthly$")
+	public void buy_a_like_new_phone_on_pay_monthly() throws Throwable {
+		try {
+			log.debug("Running Test Step: @And(I select to buy a like new phone on Pay Monthly)");
 			scrollToAnElement.scrollToElement(LikeFreePage.Paym);
 			LikeFreePage.Paym.click();
 			Autoredirection.redirect();
@@ -2738,305 +2750,349 @@ public void navigate_to_LikeNew_Phones_page() throws Throwable {
 		}
 	}
 
+	@And("^I choose upgrade PayM ([^\"]*) tablet$")
+	public void Choose_upgradePAYM_Tablet(String tablet) throws Throwable {
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		try {
+			PageFactory.initElements(driver, UpgradeTabletListingPage.class);
+			PageFactory.initElements(driver, TabletPage.class);
+			Thread.sleep(3000);
+			UpgradeCustomerPageActions.upgradePAYMTabletSelect(tablet);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			Assert.fail("Unable to choose upgrade paym tablet Device");
 
-@And("^I choose upgrade PayM ([^\"]*) tablet$")
-public void Choose_upgradePAYM_Tablet(String tablet) throws Throwable {
-	driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-	try {
-		PageFactory.initElements(driver, UpgradeTabletListingPage.class);
-		PageFactory.initElements(driver, TabletPage.class);
+		}
+	}
+
+	@And("^Navigate to upgrade tablet$")
+	public void navigate_to_upgrade_tablet() throws Throwable {
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		try {
+			PageFactory.initElements(driver, MouseHoverPage.class);
+			PageFactory.initElements(driver, UpgradeTabletListingPage.class);
+			MouseHoverAction.UpgradeandUpgradeNow();
+			Thread.sleep(5000);
+			// Autoredirection.redirectUpgrades();
+			UpgradeTabletListingPage.ViewAllTablets.click();
+			Thread.sleep(2000);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			Assert.fail("Unable to navigate to upgrade tablet");
+
+		}
+	}
+
+	////////////////////////////////////////////////////////////////////////////////
+	//////////////////////////// CVOS Pre Order //////////////////////////
+	////////////////////////////////////////////////////////////////////////////////
+
+	@Given("^I am a Supply Chain Admin$")
+	public void i_am_a_Supply_Chain_Admin() throws Throwable {
+		// try {
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		String relativePath = System.getProperty("user.dir");
+		String EnvPropFilePath = relativePath + "\\Configurations\\Properties\\AppConfig.properties";
+		String Newurl_CVOS = Filereadingutility.getPropertyValue(EnvPropFilePath, "CVOS");
+		driver.navigate().to(Newurl_CVOS);
 		Thread.sleep(3000);
-		UpgradeCustomerPageActions.upgradePAYMTabletSelect(tablet);
-	} catch (Exception e) {
-		// TODO Auto-generated catch block
-		e.printStackTrace();
-		Assert.fail("Unable to choose upgrade paym tablet Device");
+		/*
+		 * } catch (Exception e) { // TODO Auto-generated catch block
+		 * System.out.
+		 * println("Unable to Login/validate home page, please see the failure screenshot"
+		 * ); Assert.
+		 * fail("Unable to Login/validate home page, please see the failure screenshot"
+		 * );
+		 * 
+		 * }
+		 */
+	}
+
+	@And("^I Login with Supply Chain Credential ([^\"]*) and ([^\"]*)$")
+	public void i_Login_with_Supply_Chain_Credential(String username, String password) throws Throwable {
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		PageFactory.initElements(driver, CVOS_PageObjects.class);
+		// try {
+		System.out.println("Entering the login Supply Chain creds");
+		CVOS_LandingPageActions.CVOSSupplyChainLogin(username, password);
+		System.out.println("completing the login Supply Chain creds");
+
+		/*
+		 * } catch (Exception e) { // TODO Auto-generated catch block
+		 * System.out.println("Unable to Sign in to CVOS as SupplyChain");
+		 * Assert.fail("Unable to Sign in to CVOS as SupplyChain");
+		 */
+		// }
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		PageFactory.initElements(driver, CVOS_SupplyChainloggedIn.class);
+		try {
+			CVOS_SupplyChainloggedIn.CVOSSupplyChainVal();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			System.out.println("Unable to Validate the CVOS SupplyChain Home Page");
+			Assert.fail("Unable to Validate the CVOS SupplyChain Home Page");
+
+		}
 
 	}
-}
 
-@And("^Navigate to upgrade tablet$")
-public void navigate_to_upgrade_tablet() throws Throwable {
-	driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-	try {
-		PageFactory.initElements(driver, MouseHoverPage.class);
-		PageFactory.initElements(driver, UpgradeTabletListingPage.class);
-		MouseHoverAction.UpgradeandUpgradeNow();
-		Thread.sleep(5000);
-		// Autoredirection.redirectUpgrades();
-		UpgradeTabletListingPage.ViewAllTablets.click();
-		Thread.sleep(2000);
-	} catch (Exception e) {
-		// TODO Auto-generated catch block
-		e.printStackTrace();
-		Assert.fail("Unable to navigate to upgrade tablet");
+	@Then("^I click on  'Stockpot' tab in Supply Chain and search for (\\d+)AMFI(\\d+)N in SkU desciption$")
+	public void i_click_on_Stockpot_tab_in_Supply_Chain_and_search_for_SKU_ID_in_SkU_desciption(String SKUID)
+			throws Throwable {
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		PageFactory.initElements(driver, CVOSstockpotPageActions.class);
+		try {
+			CVOSstockpotPageActions.CVOSSupplyChainAct(SKUID);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			System.out.println("Unable to Enter the SKU ID Page");
+			Assert.fail("Unable to Enter the SKU ID Page");
+
+		}
 
 	}
+
+	@And("^Click on Search button$")
+	public void click_on_Search_button() throws Throwable {
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		PageFactory.initElements(driver, CVOSstockpotPageActions.class);
+		try {
+			CVOSstockpotPageActions.CVOSSupplyChainSearch();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			System.out.println("Unable to Search the stockpots for the SKU");
+			Assert.fail("Unable to Search the stockpots for the SKU");
+
+		}
+
+	}
+
+	@Then("^I should see the uploaded stock for the SKU ID$")
+	public void i_should_see_the_uploaded_stock_for_the_SKU_ID() throws Throwable {
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		PageFactory.initElements(driver, CVOSstockpotPageActions.class);
+		try {
+			CVOSstockpotPageActions.CVOSSupplyChainStockPot();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			System.out.println("Uploaded stockpots not displayed");
+			Assert.fail("Uploaded stockpots not displayed");
+
+		}
+
+	}
+
+	@And("^I click on Online 'Stockpot' and move the delivery date to a past date$")
+	public void i_click_on_Online_Stockpot_and_move_the_delivery_date_to_a_past_date() throws Throwable {
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		PageFactory.initElements(driver, CVOSstockpotPageActions.class);
+		try {
+			CVOSstockpotPageActions.CVOSSupplyChainMoveDelivery();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			System.out.println("The Delivery date is not moved");
+			Assert.fail("The Delivery date is not moved");
+
+		}
+
+	}
+
+	@And("^I click on Stock Merchandise$")
+	public void i_click_on_Stock_Merchandise() throws Throwable {
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		PageFactory.initElements(driver, CVOSstockpotPageActions.class);
+		try {
+			CVOSstockpotPageActions.CVOSSupplyChainStockMerchandise();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			System.out.println("The Stock Merchandise tab is not clicked");
+			Assert.fail("The Stock Merchandise tab is not clicked");
+
+		}
+
+	}
+
+	@Then("^I click on Stock Merchandise and search using Amazon Fire phone (\\d+)GB$")
+	public void i_click_on_Stock_Merchandise_and_search_using_Amazon_Fire_phone_GB(String Search_by_model)
+			throws Throwable {
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		PageFactory.initElements(driver, CVOS_StockMerchandiseActions.class);
+		try {
+			CVOS_StockMerchandiseActions.CVOSSupplyChainStockMerch(Search_by_model);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			System.out.println("The Launch date is not set");
+			Assert.fail("The Launch date is not set");
+
+		}
+
+	}
+
+	@When("^I login as a Trading Admin$")
+	public void i_login_as_a_Trading_Admin() throws Throwable {
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		PageFactory.initElements(driver, CVOS_StockMerchandiseActions.class);
+		try {
+			CVOS_StockMerchandiseActions.CVOSSupplyChainlogout();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			System.out.println("The TradingAdmin is not able to login");
+			Assert.fail("The TradingAdmin is not able to login");
+
+		}
+
+	}
+
+	@And("^I Login with Trading Admin Credentials TradingAdmin and TradingAdmin(\\d+)$")
+	public void i_Login_with_Trading_Admin_Credentials_SupplyChainAdmin_and_SupplyChainAd(String Username1,
+			String Password2) throws Throwable {
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		PageFactory.initElements(driver, CVOS_PageObjects.class);
+		try {
+			CVOS_LandingPageActions.CVOSTradingAdminLogin(Username1, Password2);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			System.out.println("The TradingAdmin is not able to login");
+			Assert.fail("The TradingAdmin is not able to login");
+
+		}
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		PageFactory.initElements(driver, CVOS_TradingAdminloggedIn.class);
+
+		try {
+			CVOS_TradingAdminloggedIn.CVOSTradingStockpot();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			System.out.println("Unable to click stockpot login");
+			Assert.fail("Unable to click stockpot login");
+
+		}
+
+	}
+
+	@Then("^I click on  'Stockpot' tab in Trading admin and search for (\\d+)AMFI(\\d+)N in SkU desciption$")
+	public void i_click_on_Stockpot_tab_in_Trading_admin_and_search_for_SKU_ID_in_SkU_desciption(String SKUID)
+			throws Throwable {
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		PageFactory.initElements(driver, CVOSstockpotPageActions.class);
+
+		try {
+			CVOSstockpotPageActions.CVOSTradingAdminAct(SKUID);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			System.out.println("Unable to Search the SKU ID");
+			Assert.fail("Unable to Searach the SKU ID");
+
+		}
+
+	}
+
+	@And("^when I click on All shops I should be able to allocate to different stockspots using Amazon Fire phone (\\d+)GB$")
+	public void when_I_click_on_All_shops_I_should_be_able_to_allocate_to_different_stockspots_using_Amazon_Fire_phone_GB(
+			String Search_by_model) throws Throwable {
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		PageFactory.initElements(driver, CVOS_StockAllocationActions.class);
+
+		try {
+			CVOS_StockAllocationActions.CVOSSupplyTradeAllocate(Search_by_model);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			System.out.println("Unable to allocate stock");
+			Assert.fail("Unable to allocate stock");
+
+		}
+
+	}
+
+	@And("^I click on 'Stockpot' tab and search using <SKU_ID> to see the stock status then I should see them in Pre Order status$")
+	public void i_click_on_Stockpot_tab_and_search_using_SKU_ID_to_see_the_stock_status_then_I_should_see_them_in_Pre_Order_status(
+			String SKUID) throws Throwable {
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		PageFactory.initElements(driver, CVOSstockpotPageActions.class);
+
+		try {
+			CVOSstockpotPageActions.CVOSTradingAdminPreOrderVerf(SKUID);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			System.out.println("Unable to allocate stock");
+			Assert.fail("Unable to allocate stock");
+
+		}
+
+	}
+
+	////////////////////////////////////////////////////////////////////////////////
+	//////////////////////////// CVOS Delayed Delivery
+	//////////////////////////////////////////////////////////////////////////////// //////////////////////////
+	////////////////////////////////////////////////////////////////////////////////
+
+	@Then("^I should be able to move the Launch date to a past dateAmazon Fire phone (\\d+)GB$")
+	public void i_should_be_able_to_move_the_Launch_date_to_a_past_dateAmazon_Fire_phone_GB(String Search_by_model)
+			throws Throwable {
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		PageFactory.initElements(driver, CVOS_StockMerchandiseActions.class);
+
+		try {
+			CVOS_StockMerchandiseActions.CVOSSupplyChainStockMerchDD(Search_by_model);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			System.out.println("Unable to set launch date for delayed delivery stock");
+			Assert.fail("Unable to set launch date for delayed delivery stock");
+
+		}
+
+	}
+
+	@Then("^I click on 'Stockpot' tab and search using (\\d+)AMFI(\\d+)N to see the stock status then I should see them in Delayed Delivery status$")
+	public void i_click_on_Stockpot_tab_and_search_using_SKU_ID_to_see_the_stock_status_then_I_should_see_them_in_Delayed_Delivery_status()
+			throws Throwable {
+		// Write code here that turns the phrase above into concrete actions
+
+	}
+	////////////////////////////////////////////////////////////////////////////////
+	//////////////////////////// Basecomms offers page
+	//////////////////////////////////////////////////////////////////////////////// //////////////////////////
+	////////////////////////////////////////////////////////////////////////////////
+
+	@Given("^I launch the OldMBBURL$")
+	public void LaunchOldBaseCommsMBBURL() throws Throwable {
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			String relativePath = System.getProperty("user.dir");
+			String EnvPropFilePath = relativePath + "\\Configurations\\Properties\\AppConfig.properties";
+			String Newurl = Filereadingutility.getPropertyValue(EnvPropFilePath, "OldMBBURL");
+			driver.navigate().to(Newurl);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			System.out.println("Unable to Launch MBB Basecomms url");
+			Assert.fail("Unable to Launch MBB Basecomms url");
+		}
+	}
+	
+	@And("^select \"([^\"]*)\" MBBtariff$")
+	public void select_MBBtariff(String arg1) throws Throwable {
+		try {
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		PageFactory.initElements(driver, BaseCommsPage.class);
+		BaseCommsPageActions_vinu.SelectBaseCommTariff("Random");
+			} 
+		catch (Exception e) 
+		{
+			System.out.println("Unable to Select MBB Tariff");
+			Assert.fail("Unable to Select MBB Tariff");
+		}
+	}
+
+	@And("^I land on Basket page$")
+	public void i_land_on_Basket_page() throws Throwable {
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		
+		
+	}
+	
+	
+	
 }
-
-
-////////////////////////////////////////////////////////////////////////////////
-////////////////////////////CVOS  Pre Order   //////////////////////////
-////////////////////////////////////////////////////////////////////////////////
-
-@Given("^I am a Supply Chain Admin$")
-public void i_am_a_Supply_Chain_Admin() throws Throwable {
-//try {
-driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-String relativePath = System.getProperty("user.dir");
-String EnvPropFilePath = relativePath + "\\Configurations\\Properties\\AppConfig.properties";
-String Newurl_CVOS = Filereadingutility.getPropertyValue(EnvPropFilePath, "CVOS");
-driver.navigate().to(Newurl_CVOS);
-Thread.sleep(3000);
-/*} catch (Exception e) {
-// TODO Auto-generated catch block
-System.out.println("Unable to Login/validate home page, please see the failure screenshot");
-Assert.fail("Unable to Login/validate home page, please see the failure screenshot");
-
-}
-*/
-}
-
-@And("^I Login with Supply Chain Credential ([^\"]*) and ([^\"]*)$")
-public void i_Login_with_Supply_Chain_Credential(String username, String password) throws Throwable {
-driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-PageFactory.initElements(driver, CVOS_LandingPage.class);
-//try {
-CVOS_LandingPage.CVOSSupplyChainLogin(username,password);
-/*	} catch (Exception e) {
-// TODO Auto-generated catch block
-System.out.println("Unable to Sign in to CVOS as SupplyChain");
-Assert.fail("Unable to Sign in to CVOS as SupplyChain");
-*/
-//}
-driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-PageFactory.initElements(driver, CVOS_SupplyChainloggedIn.class);
-try {
-CVOS_SupplyChainloggedIn.CVOSSupplyChainVal();
-} catch (Exception e) {
-// TODO Auto-generated catch block
-System.out.println("Unable to Validate the CVOS SupplyChain Home Page");
-Assert.fail("Unable to Validate the CVOS SupplyChain Home Page");
-
-}
-
-}
-
-
-@Then("^I click on  'Stockpot' tab in Supply Chain and search for (\\d+)AMFI(\\d+)N in SkU desciption$")
-public void i_click_on_Stockpot_tab_in_Supply_Chain_and_search_for_SKU_ID_in_SkU_desciption(String SKUID) throws Throwable {
-driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-PageFactory.initElements(driver,CVOSstockpotPageActions.class);
-try {
-CVOSstockpotPageActions.CVOSSupplyChainAct(SKUID);
-} catch (Exception e) {
-// TODO Auto-generated catch block
-System.out.println("Unable to Enter the SKU ID Page");
-Assert.fail("Unable to Enter the SKU ID Page");
-
-}
-
-}
-
-@And("^Click on Search button$")
-public void click_on_Search_button() throws Throwable {
-driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-PageFactory.initElements(driver,CVOSstockpotPageActions.class);
-try {
-CVOSstockpotPageActions.CVOSSupplyChainSearch();
-} catch (Exception e) {
-// TODO Auto-generated catch block
-System.out.println("Unable to Search the stockpots for the SKU");
-Assert.fail("Unable to Search the stockpots for the SKU");
-
-}
-
-}
-
-@Then("^I should see the uploaded stock for the SKU ID$")
-public void i_should_see_the_uploaded_stock_for_the_SKU_ID() throws Throwable {
-driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-PageFactory.initElements(driver,CVOSstockpotPageActions.class);
-try {
-CVOSstockpotPageActions.CVOSSupplyChainStockPot();
-} catch (Exception e) {
-// TODO Auto-generated catch block
-System.out.println("Uploaded stockpots not displayed");
-Assert.fail("Uploaded stockpots not displayed");
-
-}
-
-}
-
-@And("^I click on Online 'Stockpot' and move the delivery date to a past date$")
-public void i_click_on_Online_Stockpot_and_move_the_delivery_date_to_a_past_date() throws Throwable {
-driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-PageFactory.initElements(driver,CVOSstockpotPageActions.class);
-try {
-CVOSstockpotPageActions.CVOSSupplyChainMoveDelivery();
-} catch (Exception e) {
-// TODO Auto-generated catch block
-System.out.println("The Delivery date is not moved");
-Assert.fail("The Delivery date is not moved");
-
-}
-
-}
-
-@And("^I click on Stock Merchandise$")
-public void i_click_on_Stock_Merchandise() throws Throwable {
-driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-PageFactory.initElements(driver,CVOSstockpotPageActions.class);
-try {
-CVOSstockpotPageActions.CVOSSupplyChainStockMerchandise();
-} catch (Exception e) {
-// TODO Auto-generated catch block
-System.out.println("The Stock Merchandise tab is not clicked");
-Assert.fail("The Stock Merchandise tab is not clicked");
-
-}
-
-}
-
-@Then("^I click on Stock Merchandise and search using Amazon Fire phone (\\d+)GB$")
-public void i_click_on_Stock_Merchandise_and_search_using_Amazon_Fire_phone_GB(String Search_by_model) throws Throwable {
-driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-PageFactory.initElements(driver,CVOS_StockMerchandiseActions.class);
-try {
-CVOS_StockMerchandiseActions.CVOSSupplyChainStockMerch(Search_by_model);
-} catch (Exception e) {
-// TODO Auto-generated catch block
-System.out.println("The Launch date is not set");
-Assert.fail("The Launch date is not set");
-
-}
-
-}
-
-@When("^I login as a Trading Admin$")
-public void i_login_as_a_Trading_Admin() throws Throwable {
-driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-PageFactory.initElements(driver,CVOS_StockMerchandiseActions.class);
-try {
-CVOS_StockMerchandiseActions.CVOSSupplyChainlogout();
-} catch (Exception e) {
-// TODO Auto-generated catch block
-System.out.println("The TradingAdmin is not able to login");
-Assert.fail("The TradingAdmin is not able to login");
-
-}
-
-}
-
-
-@And("^I Login with Trading Admin Credentials TradingAdmin and TradingAdmin(\\d+)$")
-public void i_Login_with_Trading_Admin_Credentials_SupplyChainAdmin_and_SupplyChainAd(String Username1 ,String Password2) throws Throwable {
-driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-PageFactory.initElements(driver,CVOS_LandingPage.class);
-try {
-CVOS_LandingPage.CVOSTradingAdminLogin(Username1 ,Password2);
-} catch (Exception e) {
-// TODO Auto-generated catch block
-System.out.println("The TradingAdmin is not able to login");
-Assert.fail("The TradingAdmin is not able to login");
-
-}
-driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-PageFactory.initElements(driver,CVOS_TradingAdminloggedIn.class);
-
-try {
-CVOS_TradingAdminloggedIn.CVOSTradingStockpot();
-} catch (Exception e) {
-// TODO Auto-generated catch block
-System.out.println("Unable to click stockpot login");
-Assert.fail("Unable to click stockpot login");
-
-}
-
-
-}
-
-@Then("^I click on  'Stockpot' tab in Trading admin and search for (\\d+)AMFI(\\d+)N in SkU desciption$")
-public void i_click_on_Stockpot_tab_in_Trading_admin_and_search_for_SKU_ID_in_SkU_desciption(String SKUID) throws Throwable {
-driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-PageFactory.initElements(driver,CVOSstockpotPageActions.class);
-
-try {
-CVOSstockpotPageActions.CVOSTradingAdminAct(SKUID);
-} catch (Exception e) {
-// TODO Auto-generated catch block
-System.out.println("Unable to Search the SKU ID");
-Assert.fail("Unable to Searach the SKU ID");
-
-}
-
-}
-
-
-
-@And("^when I click on All shops I should be able to allocate to different stockspots using Amazon Fire phone (\\d+)GB$")
-public void when_I_click_on_All_shops_I_should_be_able_to_allocate_to_different_stockspots_using_Amazon_Fire_phone_GB(String Search_by_model) throws Throwable {
-driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-PageFactory.initElements(driver,CVOS_StockAllocationActions.class);
-
-try {
-CVOS_StockAllocationActions.CVOSSupplyTradeAllocate(Search_by_model);
-} catch (Exception e) {
-// TODO Auto-generated catch block
-System.out.println("Unable to allocate stock");
-Assert.fail("Unable to allocate stock");
-
-}
-
-}
-
-@And("^I click on 'Stockpot' tab and search using <SKU_ID> to see the stock status then I should see them in Pre Order status$")
-public void i_click_on_Stockpot_tab_and_search_using_SKU_ID_to_see_the_stock_status_then_I_should_see_them_in_Pre_Order_status(String SKUID) throws Throwable {
-driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-PageFactory.initElements(driver,CVOSstockpotPageActions.class);
-
-try {
-CVOSstockpotPageActions.CVOSTradingAdminPreOrderVerf(SKUID);
-} catch (Exception e) {
-// TODO Auto-generated catch block
-System.out.println("Unable to allocate stock");
-Assert.fail("Unable to allocate stock");
-
-}
-
-}
-
-////////////////////////////////////////////////////////////////////////////////
-////////////////////////////CVOS  Delayed Delivery    //////////////////////////
-////////////////////////////////////////////////////////////////////////////////
-
-
-@Then("^I should be able to move the Launch date to a past dateAmazon Fire phone (\\d+)GB$")
-public void i_should_be_able_to_move_the_Launch_date_to_a_past_dateAmazon_Fire_phone_GB(String Search_by_model) throws Throwable {
-driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-PageFactory.initElements(driver,CVOS_StockMerchandiseActions.class);
-
-try {
-CVOS_StockMerchandiseActions.CVOSSupplyChainStockMerchDD(Search_by_model);
-} catch (Exception e) {
-// TODO Auto-generated catch block
-System.out.println("Unable to set launch date for delayed delivery stock");
-Assert.fail("Unable to set launch date for delayed delivery stock");
-
-}
-
-}
-
-@Then("^I click on 'Stockpot' tab and search using (\\d+)AMFI(\\d+)N to see the stock status then I should see them in Delayed Delivery status$")
-public void i_click_on_Stockpot_tab_and_search_using_SKU_ID_to_see_the_stock_status_then_I_should_see_them_in_Delayed_Delivery_status() throws Throwable {
-// Write code here that turns the phrase above into concrete actions
-
-}
-
-
-
-}
-
-
-
 

@@ -6,8 +6,8 @@ Feature: C1924_E11409_TC12_CFU_Displaying_label_in_place_of_only_one_variant_on_
     And Signin using valid <username> and <password> credentials
     And Navigate to upgrade phone
     And I choose upgrade PayM <handset>
-    And Navigate to device details page
     Then check if the selected connected device has only 1 variant for both colour and capacity
+    And Click on View all Tariffs
 
     #Close the browser
     Examples: 

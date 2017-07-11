@@ -1,6 +1,9 @@
 package pageobjects;
 
+import java.util.List;
+
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindAll;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 
@@ -40,5 +43,15 @@ public class ConnectedDeviceDetailsPage {
 
 	@FindBy(how = How.XPATH, using = "")
 	public static WebElement CapacityDropDown;
+	
+	@FindAll({
+		@FindBy(how = How.XPATH, using = "//ul[@class='styled-group device-capacity']/li")
+	})
+		public static List<WebElement> CapacityLabel;
+
+	@FindAll({
+		@FindBy(how = How.XPATH, using = "//ul[@class='styled-group device-color']/li")
+	})
+	public static List<WebElement> ColorLabel;
 
 }
