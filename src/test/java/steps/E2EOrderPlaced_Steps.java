@@ -23,7 +23,7 @@ import actionsPerformed.Agent_DealBuilderPageActions;
 import actionsPerformed.Agent_HomePagePageActions;
 import actionsPerformed.Agent_RegisterCustomerActions;
 import actionsPerformed.AgreementPageActions;
-import actionsPerformed.BaseCommsPageActions_vinu;
+import actionsPerformed.BaseCommPageActions;
 import actionsPerformed.BasketPageActions;
 import actionsPerformed.CVOS_LandingPageActions;
 import actionsPerformed.CVOS_StockAllocationActions;
@@ -64,7 +64,7 @@ import pageobjects.Agent_DealBuilderPage;
 import pageobjects.Agent_HomePage;
 import pageobjects.Agent_RegisterCustomerPage;
 import pageobjects.AgreementPage;
-import pageobjects.BaseCommsPage;
+import pageobjects.BaseCommPage;
 import pageobjects.BasketPage;
 import pageobjects.CVOS_PageObjects;
 import pageobjects.ConnectedDeviceDetailsPage;
@@ -3075,8 +3075,8 @@ public class E2EOrderPlaced_Steps {
 	public void select_MBBtariff(String arg1) throws Throwable {
 		try {
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-		PageFactory.initElements(driver, BaseCommsPage.class);
-		BaseCommsPageActions_vinu.SelectBaseCommTariff("Random");
+		PageFactory.initElements(driver, BaseCommPage.class);
+		BaseCommPageActions.SelectBaseCommTariff("Random");
 			} 
 		catch (Exception e) 
 		{
@@ -3092,6 +3092,101 @@ public class E2EOrderPlaced_Steps {
 		
 	}
 	
+	@And("^I navigate to the Basecomm Page$")
+	public void I_navigate_to_the_Basecomm_Page() throws Throwable {
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		try {
+			String relativePath = System.getProperty("user.dir");
+			String EnvPropFilePath = relativePath + "\\src\\test\\java\\Properties\\AppConfig.properties";
+			String Newurl = Filereadingutility.getPropertyValue(EnvPropFilePath, "BaseCommUrl");
+			driver.navigate().to(Newurl);
+
+		} catch (Exception e) {
+			e.printStackTrace();
+			Assert.fail("Unable to navigate to basecomm page");
+
+		}
+	}
+@Then("^Verify only iPad specific devices are displayed under the iPad section$")
+	public void Verify_only_iPad_specific_devices_are_displayed_under_the_iPad_section() throws Throwable {
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		try {
+			PageFactory.initElements(driver, BaseCommPage.class);
+			BaseCommPageActions.checkIfiPadDevicesArePresent();
+		} catch (Exception e) {
+			e.printStackTrace();
+			Assert.fail("Unable to verify if only iPad specific devices are displayed under the iPad section");
+
+		}
+	}
+
+	@And("^Click on Other Tablets tab$")
+	public void Click_on_Other_Tablets_tab() throws Throwable {
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		try {
+			PageFactory.initElements(driver, BaseCommPage.class);
+			BaseCommPageActions.clickOnOtherTablets();
+		} catch (Exception e) {
+			e.printStackTrace();
+			Assert.fail("Unable to click on Other Tablets tab");
+
+		}
+	}
+
+	@And("^Click on iPad tab$")
+	public void Click_on_iPad_tab() throws Throwable {
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		try {
+			PageFactory.initElements(driver, BaseCommPage.class);
+			BaseCommPageActions.clickOniPadTab();
+		} catch (Exception e) {
+			e.printStackTrace();
+			Assert.fail("Unable to click on iPad tab");
+
+		}
+	}
+
+	@And("^Verify Pay As You Go tab is not displayed$")
+		public void Verify_Pay_As_You_Go_tab_is_not_displayed() throws Throwable {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			try {
+				PageFactory.initElements(driver, BaseCommPage.class);
+				BaseCommPageActions.isPayAsUGoTabDisplayed();
+			} catch (Exception e) {
+				e.printStackTrace();
+				Assert.fail("Unable to verify if Pay As You Go tab is present");
+
+			}
+		}
+
+	@And("^click on the Sort tab and choose required ([^\"]*)$")
+	public void click_on_the_Sort_tab_and_choose_required_sort_option(String Sort) throws Throwable {
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		try {
+			PageFactory.initElements(driver, BaseCommPage.class);
+			BaseCommPageActions.clickOnSortTab();
+			BaseCommPageActions.selectSortOption(Sort);
+		} catch (Exception e) {
+			e.printStackTrace();
+			Assert.fail("Unable to click on the Sort tab and choose required sort option");
+
+		}
+	}
+	
+	
+	@And("^click on the Sort tab and reset sort*)$")
+	public void click_on_the_Sort_tab_and_reset_sort() throws Throwable {
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		try {
+			PageFactory.initElements(driver, BaseCommPage.class);
+			BaseCommPageActions.clickOnSortTab();
+			BaseCommPageActions.clickOnResetSort();
+		} catch (Exception e) {
+			e.printStackTrace();
+			Assert.fail("Unable to click on the Sort tab and reset sort");
+
+		}
+	}
 	
 	
 }
