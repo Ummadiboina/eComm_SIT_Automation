@@ -18,9 +18,9 @@ public class Agent_HomePagePageActions extends Environment{
 	
 	static Logger log = Logger.getLogger("devpinoyLogger");
 	
-	
+	/*
 //this  method used to perform click action on the Agent Home Page	
-	
+	*/
 	public static void ElementClickAction(String elementname) {
 		// TODO Auto-generated method stub
 	
