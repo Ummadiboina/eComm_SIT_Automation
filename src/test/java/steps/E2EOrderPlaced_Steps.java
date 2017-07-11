@@ -2813,7 +2813,7 @@ public class E2EOrderPlaced_Steps {
 	@And("^I Login with Supply Chain Credential ([^\"]*) and ([^\"]*)$")
 	public void i_Login_with_Supply_Chain_Credential(String username, String password) throws Throwable {
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-		PageFactory.initElements(driver, CVOS_PageObjects.class);
+		PageFactory.initElements(driver, CVOS_LandingPageActions.class);
 		// try {
 		System.out.println("Entering the login Supply Chain creds");
 		CVOS_LandingPageActions.CVOSSupplyChainLogin(username, password);
@@ -3159,7 +3159,7 @@ public class E2EOrderPlaced_Steps {
 			}
 		}
 
-	@And("^click on the Sort tab and choose required ([^\"]*)$")
+	@And("^click on the Sort tab and choose required ([^\"])$")
 	public void click_on_the_Sort_tab_and_choose_required_sort_option(String Sort) throws Throwable {
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		try {
@@ -3174,7 +3174,7 @@ public class E2EOrderPlaced_Steps {
 	}
 	
 	
-	@And("^click on the Sort tab and reset sort*)$")
+	@And("^click on the Sort tab and reset sort$")
 	public void click_on_the_Sort_tab_and_reset_sort() throws Throwable {
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		try {
