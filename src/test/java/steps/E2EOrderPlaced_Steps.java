@@ -663,6 +663,24 @@ public class E2EOrderPlaced_Steps {
 		}
 
 	}
+	
+	@And("^click on \"([^\"]*)\" link and select a \"([^\"]*)\" tariff$")
+	public void TariffandExtrasPage_payDeviceFull() throws Throwable {
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, PAYMandPAYGTariffAndExtrasPage.class);
+			PAYMandPAYGTariffAndExtrasPageActions.TariffSelect("fullpaymenttariff1");
+			// PAYMandPAYGTariffAndExtrasPageActions.addToBasketLive();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			System.out.println("Unable to pay tariff in full");
+			Assert.fail("Unable to pay tariff in full");
+
+		}
+
+	}
+	
+	
 
 	@Given("^Select any new Tariff and land on basket page$")
 	public void select_any_new_Tariff_and_land_on_basket_page() throws Throwable {
@@ -3071,6 +3089,37 @@ public class E2EOrderPlaced_Steps {
 		}
 	}
 	
+	@Given("^I launch the OldIpadURL$")
+	public void LaunchOldBaseCommsIpadURL() throws Throwable {
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			String relativePath = System.getProperty("user.dir");
+			String EnvPropFilePath = relativePath + "\\Configurations\\Properties\\AppConfig.properties";
+			String Newurl = Filereadingutility.getPropertyValue(EnvPropFilePath, "OldIpadURL");
+			driver.navigate().to(Newurl);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			System.out.println("Unable to Launch Ipad Basecomms url");
+			Assert.fail("Unable to Launch Ipad Basecomms url");
+		}
+	}
+	
+	
+	@Given("^I launch the OldTabletURL$")
+	public void LaunchOldBaseCommsOldTabletURL() throws Throwable {
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			String relativePath = System.getProperty("user.dir");
+			String EnvPropFilePath = relativePath + "\\Configurations\\Properties\\AppConfig.properties";
+			String Newurl = Filereadingutility.getPropertyValue(EnvPropFilePath, "OldTabletURL");
+			driver.navigate().to(Newurl);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			System.out.println("Unable to Launch Tablet Basecomms url");
+			Assert.fail("Unable to Launch Tablet Basecomms url");
+		}
+	}
+	
 	@And("^select \"([^\"]*)\" MBBtariff$")
 	public void select_MBBtariff(String arg1) throws Throwable {
 		try {
@@ -3119,6 +3168,21 @@ public class E2EOrderPlaced_Steps {
 
 		}
 	}
+
+@Given("^verify that I get redirected to ([^\"]*)$")
+public void VerifyOldBaseCommsURL_Redirection(String NewURL) throws Throwable {
+	driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+	try {
+		PageFactory.initElements(driver, BaseCommPage.class);
+		BaseCommPageActions.CompareURL(NewURL);
+	} catch (Exception e) {
+		e.printStackTrace();
+		Assert.fail("Unable to compare old and new urls");
+
+	}
+}
+
+
 
 	@And("^Click on Other Tablets tab$")
 	public void Click_on_Other_Tablets_tab() throws Throwable {

@@ -67,7 +67,8 @@ public class PAYMandPAYGTariffAndExtrasPage {
 		@FindBy(how=How.XPATH,using=("//*[@class='accessory-button-container']/input[@value='Add']"))
 		})
 	public static List<WebElement> Add_AccessoryContainer;
-	
+
+
 		
 	
 }

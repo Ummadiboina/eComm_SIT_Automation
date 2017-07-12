@@ -1,5 +1,7 @@
 package actionsPerformed;
 
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.List;
 import java.util.logging.Logger;
 
@@ -21,8 +23,8 @@ public class BaseCommPageActions extends Environment {
 
 		}
 
-		
 	}
+
 	public static void checkIfiPadDevicesArePresent() {
 
 		List<WebElement> iPadDevices = pageobjects.BaseCommPage.iPadDevicesName;
@@ -99,13 +101,39 @@ public class BaseCommPageActions extends Environment {
 		}
 
 	}
+
 	public static void clickOnResetSort() {
 		log.debug("clicking on Reset Sort");
 		pageobjects.SortingAndFilter.ResetSort.click();
 	}
-	
-	
-		
+
+	public static void CompareURL(String NewURL) throws MalformedURLException {
+		System.out.println("Comparing URL");
+		// URL is reference , some instance which needs to be initialsed for
+		// comparing urls
+
+		/*
+		 * URL urlone= new URL(NewURL); URL urlRedirected= new
+		 * URL(driver.getCurrentUrl());
+		 */
+		// String Newurl=driver.getCurrentUrl();
+		/*
+		 * System.out.println("The current url is "+urlRedirected);
+		 * log.debug("The current url is "+urlRedirected);
+		 */
+
+		String URL = driver.getCurrentUrl();
+		System.out.println("URL is " + URL);
+		String FeatureURL = NewURL;
+		System.out.println("Feature url to compare is " + FeatureURL);
+		Assert.assertEquals(FeatureURL, URL);
+
+		/*
+		 * 
+		 * if (urlone.equals(urlRedirected)) {
+		 * System.out.println("URLs are same"); Assert.fail("URL are same"); }
+		 * else { System.out.println("URLs are different"); }
+		 */
 	}
 
-
+}

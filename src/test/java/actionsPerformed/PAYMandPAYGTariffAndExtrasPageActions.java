@@ -57,7 +57,13 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 		log.debug("Added a random accessory to basket");
 
 	}
+	public static void PayDeviceFullLink() {
+		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+		pageobjects.PAYMandPAYGTariffAndExtrasPage.addToBasketLive.sendKeys(Keys.ENTER);
+		log.debug("Clicked on Add to Basket in Tariff and Extras page");
 
+	}
+	
 	public static void addToBasketLive() {
 		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 		pageobjects.PAYMandPAYGTariffAndExtrasPage.addToBasketLive.sendKeys(Keys.ENTER);
