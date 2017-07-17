@@ -2552,7 +2552,7 @@ public class E2EOrderPlaced_Steps {
 		}
 	}
 
-	@And("^choose ([^\"]*) contract length$")
+/*	@And("^choose ([^\"]*) contract length$")
 	public void choose_contract_length(String contractlength) {
 
 		try {
@@ -2564,7 +2564,7 @@ public class E2EOrderPlaced_Steps {
 			System.out.println("Unable to choose contract length");
 			Assert.fail("Unable to choose contract length");
 		}
-	}
+	}*/
 
 	@Then("^check if the selected connected device has more than 1 variant for both colour and capacity$")
 	public void check_if_the_selected_device_has_more_than_1_variant_for_both_colour_and_capacity() {
@@ -3163,18 +3163,19 @@ public class E2EOrderPlaced_Steps {
 		}
 	}
 	
-	@Then("^Verify only tablet specific devices are displayed under the Other tablets section$")
+	/*@Then("^Verify only tablet specific devices are displayed under the Other tablets section$")
 	public void Veri() throws Throwable {
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		try {
 			PageFactory.initElements(driver, BaseCommPage.class);
 			BaseCommPageActions.checkIfTabletDevicesArePresent();
+			//Archana to update this code
 		} catch (Exception e) {
 			e.printStackTrace();
 			Assert.fail("Unable to verify if only iPad specific devices are displayed under the iPad section");
 
 		}
-	}
+	}*/
 
 	@Given("^verify that I get redirected to ([^\"]*)$")
 	public void VerifyOldBaseCommsURL_Redirection(String NewURL) throws Throwable {
@@ -3275,4 +3276,184 @@ public class E2EOrderPlaced_Steps {
 		} catch (Exception e) {
 		}
 	}
+	
+	@Given("^Click on \"([^\"]*)\" button for ([^\"]*) and verify \"([^\"]*)\" page is displayed$")
+	public void SelectipadandVerifyTariffandExtras(String device_name) throws Throwable {
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		try {
+			PageFactory.initElements(driver, BaseCommPage.class);
+			BaseCommPageActions.VerifyTabletURL();
+		} catch (Exception e) {
+		}
+	}
+
+	//Click on \"([^\"]*)\" link and verify correct details are displayed
+	@And("^Click on \"([^\"]*)\" link and verify correct details are displayed$")
+	public void Click_on_See_device_details_link_and_verify_correct_details_are_displayed(String device)
+			throws Throwable {
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		try {
+			PageFactory.initElements(driver, BaseCommPage.class);
+		PhonesListingPageAction.checkSeeDeviceDetailsPopUp(device);
+		//	BaseCommPageActions.checkSeeDeviceDetailsPopUp(device);
+		} catch (Exception e) {
+			e.printStackTrace();
+			Assert.fail("Unable to Verify the see device link popup of the basecomm landing page");
+		}
+	} 
+@And("^choose ([^\"]*) contract length$")
+	public void choose_contract_length(String contractlength) {
+
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, PAYMSimOPage.class);
+			PAYMSimOPageActions.SelectTariffPhonesTab(contractlength);
+		} catch (Exception e) {
+			e.printStackTrace();
+			System.out.println("Unable to choose contract length");
+			Assert.fail("Unable to choose contract length");
+		}
+	}
+	@And("^choose ([^\"]*) contract length for MBB$")
+	public void choose_contract_length_for_MBB(String contractlength) {
+
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, PAYMSimOPage.class);
+			PAYMSimOPageActions.SelectTariffMBBTab(contractlength);
+		} catch (Exception e) {
+			e.printStackTrace();
+			System.out.println("Unable to choose contract length");
+			Assert.fail("Unable to choose contract length");
+		}
+	}
+
+
+	@And("^Verify \"Choose a different tariff\" link is displayed$")
+	public void verify_choose_a_diff_tariff_link_displayed() throws Throwable {
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		try {
+			PageFactory.initElements(driver, BaseCommPage.class);
+			PhonesListingPageAction.isChooseADifferentTariffDisplayed();
+		} catch (Exception e) {
+			e.printStackTrace();
+			Assert.fail("Unable to choose a different tarif link");
+
+		}
+	}
+
+	@And("^Verify new image is as per the selected ([^\"]*),([^\"]*)and ([^\"]*) in the Basecomms page$")
+	public void Verify_new_image_is_as_per_the_selected_device_name_capacity_and_color_in_the_Basecomms_page(
+			String devicename) throws Throwable {
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		try {
+			PageFactory.initElements(driver, BaseCommPage.class);
+			PhonesListingPageAction.checkImgSrcBasecommPage(devicename);
+
+		} catch (Exception e) {
+			e.printStackTrace();
+			Assert.fail("Unable to click on the Sort tab and reset sort");
+		}
+	}
+
+	@And("^Verify new image is as per the selected ([^\"]*),([^\"]*)and ([^\"]*) in the Tariffs and Extras Page$")
+	public void Verify_new_image_is_as_per_the_selected_device_name_capacity_and_color_in_the_TE_page(String devicename)
+			throws Throwable {
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		try {
+			PageFactory.initElements(driver, BaseCommPage.class);
+			PhonesListingPageAction.checkImgSrcTEPage(devicename);
+
+		} catch (Exception e) {
+			e.printStackTrace();
+			Assert.fail(
+					"Unable to verify new image is as per the selected device name capacity and color in the TE page");
+		}
+	}
+
+	@And("^click on the \"Choose a different tariff\" link and verify user navigated back to \"Tariff and Extras\" page$")
+	public void click_choose_a_diff_tariff_link_and_check_navigation_TE_page() throws Throwable {
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		try {
+			PageFactory.initElements(driver, BaseCommPage.class);
+			PhonesListingPageAction.clickChooseADifferentTariff();
+			PhonesListingPageAction.checkUserNavigatedTEPage();
+		} catch (Exception e) {
+			e.printStackTrace();
+			Assert.fail("Unable to click on choose a different tarif link");
+
+		}
+	}
+
+	@Then("^click on the \"Back to iPad offers\" link and verify user gets redirected to Basecomms listing page$")
+	public void click_Back_to_iPad_offers_link_and_check_navigation_Basecomm_page() throws Throwable {
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		try {
+			PageFactory.initElements(driver, BaseCommPage.class);
+			PhonesListingPageAction.clickBackToiPadOffers();
+			PhonesListingPageAction.checkUserNavigatedBasecommPage();
+		} catch (Exception e) {
+			e.printStackTrace();
+			Assert.fail("Unable to click on 'Back to iPad Offers' link");
+
+		}
+	}
+
+	@And("^Verify recommended tariff is getting displayed on the header of the tariff tile in the \"Tariffs and Extras\" page$")
+	public void Verify_recommended_tariff_displayed_on_the_header_of_the_tariff_tile() throws Throwable {
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		try {
+			PageFactory.initElements(driver, BaseCommPage.class);
+			PhonesListingPageAction.checkRecommendedTariffIsAtFirstTile();
+
+		} catch (Exception e) {
+			e.printStackTrace();
+			Assert.fail("Unable to Verify recommended tariff displayed on the header of the tariff tile");
+
+		}
+	}
+
+	@Then("^Verify the contents of the basecomm landing page$")
+	public void Verify_the_contents_of_the_basecomm_landing_page() throws Throwable {
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		try {
+			PageFactory.initElements(driver, BaseCommPage.class);
+			PhonesListingPageAction.checkContentsOfBaseCommPage();
+
+		} catch (Exception e) {
+			e.printStackTrace();
+			Assert.fail("Unable to Verify the contents of the basecomm landing page");
+
+		}
+	}
+
+	@And("^Verify only tablet specific devices are displayed under the Other tablets section$")
+	public void Verify_only_tablet_specific_devices_are_displayed_under_the_Other_tablets_section() throws Throwable {
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		try {
+			PageFactory.initElements(driver, BaseCommPage.class);
+			PhonesListingPageAction.checkIfTabletDevicesArePresent();
+
+		} catch (Exception e) {
+			e.printStackTrace();
+			Assert.fail("Unable to Verify the contents of the basecomm landing page");
+
+		}
+	}
+
+	@And("^Verify expected ([^\"]*) and its specific details are present in the device list ([^\"]*),([^\"]*),([^\"]*)$")
+	public void verify_expected_device_and_details_are_in_device_list(String device, String color, String capacity,String stockmessage) throws Throwable {
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		try {
+			PageFactory.initElements(driver, BaseCommPage.class);
+			PhonesListingPageAction.checkExpDevAndDetails(device, color, capacity, stockmessage);
+
+		} catch (Exception e) {
+			e.printStackTrace();
+			Assert.fail("Unable to verify expected device and details are in device list");
+
+		}
+	}
+
+
 }

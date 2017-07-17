@@ -45,4 +45,6 @@ public class SortingAndFilter {
 	@FindBy(how = How.XPATH, using = "//a[@class='reset-link']")
 	public static WebElement ResetSort;
 
+	@FindBy(how = How.XPATH, using = "//button[@value='Done']")
+	public static WebElement Done;	
 }

@@ -8,6 +8,7 @@ import java.util.logging.Logger;
 
 import org.junit.Assert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 
 import helpers.Environment;
@@ -42,16 +43,7 @@ public class BaseCommPageActions extends Environment {
 	
 	public static void checkIfTabletDevicesArePresent() {
 
-		List<WebElement> TabletDevices = pageobjects.BaseCommPage.TabletDevicesName;
-
-		for (int i = 0; i < TabletDevices.size(); i++) {
-			if (TabletDevices.get(i).getText().contains("Tab")) {
-				System.out.println("TabletDevices.get(i).getText()");
-			} else {
-				System.out.println("Devices other than Tablet are also displayed");
-				Assert.fail("Devices other than Tablet are also displayed");
-			}
-		}
+	//Archana to update this code
 	}
 
 	public static void clickOnOtherTablets() {
@@ -155,4 +147,82 @@ public class BaseCommPageActions extends Environment {
 		Assert.assertEquals("tablet",subString);
 	}
 
+	
+	public static void checkSeeDeviceDetailsPopUp(String device) throws InterruptedException {
+        List<WebElement> iPadDevicesName = pageobjects.BaseCommPage.iPadDevicesName;
+
+        WebElement SeeDeviceDetailsLink;
+        WebElement PoundsElement;
+        WebElement PenseElement;
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        String popupdevicenametext = null;
+        String poundselementtext = null;
+        String penseelementtext = null;
+        String c = null, d = null, e = null;
+        int k = 0;
+
+        for (int i = 0; i < iPadDevicesName.size(); i++) {
+
+              if (iPadDevicesName.get(i).getText().equals(device)) {
+                    k = i + 1;
+                    c = "(//a[contains(text(),'See device details')])[" + k + "]";
+                    d = "(//span[@class='headline ng-binding'])[" + k + "]";
+                    e = "(//span[@class='pence ng-binding'])[" + k + "]";
+              }
+
+        }
+        PoundsElement = driver.findElement(By.xpath(d));
+        PenseElement = driver.findElement(By.xpath(e));
+
+        SeeDeviceDetailsLink = driver.findElement(By.xpath(c));
+        js.executeScript("arguments[0].click();", SeeDeviceDetailsLink);
+        log.debug("Clicked on See Device Details Link");
+        Thread.sleep(5000);
+
+        for (String winHandle : driver.getWindowHandles()) {
+              driver.switchTo().window(winHandle);
+              log.debug("Control is in pop up");
+        }
+
+        WebElement PopupdevicenametextElement = driver.findElement(By.xpath("//*[@id='device-details']/div[1]/h3"));
+        if (PopupdevicenametextElement.isDisplayed()) {
+              popupdevicenametext = PopupdevicenametextElement.getText();
+              if (popupdevicenametext.equals(device)) {
+                    log.debug("Device name in pop up is " + popupdevicenametext + "and matches the device selected");
+              }
+        } else {
+              Assert.fail("Device name in pop up is not present");
+        }
+
+        if (PoundsElement.isDisplayed()) {
+              poundselementtext = PoundsElement.getText();
+              if (poundselementtext.equals(PoundsElement.getText())) {
+                    log.debug("Pounds in pop up - " + poundselementtext + ", pounds value displayed for device - "
+                                + PoundsElement.getText() + "and they are the same");
+              }
+        }
+
+        if (PenseElement.isDisplayed()) {
+              penseelementtext = PenseElement.getText();
+              if (penseelementtext.equals(PenseElement.getText())) {
+                    log.debug("Pense in pop up - " + penseelementtext + ", pense value displayed for device - "
+                                + PenseElement.getText() + "and they are the same");
+              }
+        }
+
+        WebElement SpecificationsElement = driver.findElement(By.xpath("//div[@class='accordion-content']"));
+        if (!SpecificationsElement.isDisplayed()) {
+              System.out.println("specifications not displayed");
+        } else
+              System.out.println("specifications displayed");
+
+        WebElement FullSpecificationElement = driver
+                    .findElement(By.xpath("//a[contains(text(),'See full technical specification')]"));
+        if (FullSpecificationElement.isDisplayed()) {
+              FullSpecificationElement.click();
+              System.out.println("Full specification link is present");
+        }
+  }
+
+	
 }

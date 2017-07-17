@@ -120,5 +120,15 @@ public class BasketPage {
 		})
 		public static List<WebElement> DevicesList;
 
-
+	@FindAll({
+		@FindBy(how = How.XPATH, using = ("//div[@class='basket-list']//li[@data-qa-class='basket-item']/section/h3/span"))
+	})
+		public static List<WebElement> MyNonConnDevices;
+	
+	@FindAll({
+		@FindBy(how = How.XPATH, using = ("//div[@class='basket-list']//li[@class='package include-rating']/section/h3/span"))
+	})
+		public static List<WebElement> MyConnDevices;
+	
+	
 }

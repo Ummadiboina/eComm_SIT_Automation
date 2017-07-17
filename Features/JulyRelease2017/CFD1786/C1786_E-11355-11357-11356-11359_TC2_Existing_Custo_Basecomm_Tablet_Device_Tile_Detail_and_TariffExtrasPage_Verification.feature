@@ -35,4 +35,4 @@ Feature: C1786_E-11355-11357-11356-11359_TC2_Existing_Custo_Basecomm_Tablet_Devi
 
     Examples: 
       | username    | password | device_name | default_colour | default_capacity | default_stock_message | colour |
-      | ink_jun9198 | test123  | tablet_abc  | grey           | 16GB             | In Stock              | white  |
+      | ini_jan6238 | test123  | tablet_abc  | grey           | 16GB             | In Stock              | white  |

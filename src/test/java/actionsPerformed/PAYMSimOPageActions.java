@@ -726,4 +726,26 @@ System.out.println("The Promotion of the tariff displayed is unknown");
 }
 
 }
+
+public static void SelectTariffMBBTab(String elementName) throws InterruptedException, AWTException {
+
+    if (elementName.contains("30 Days")) {
+          System.out.println("Selecting a Random Tariff under 30 days tab");
+          log.debug("Selecting a Random Tariff under 30 days tab");
+          pageobjects.PAYMSimOPage.thirtydays.click();
+          Thread.sleep(3000);
+          pageobjects.PAYMSimOPage.BuyNowRandomTariffMBB30Days.sendKeys(Keys.ENTER);
+
+    }
+    if (elementName.contains("12 Months")) {
+          System.out.println("Selecting a Random Tariff under 12 Months tab");
+          log.debug("Selecting a Random Tariff under 12 Months tab");
+          pageobjects.PAYMSimOPage.twelevemonths.click();
+          Thread.sleep(3000);
+          pageobjects.PAYMSimOPage.BuyNowRandomTariffMBB12Months.sendKeys(Keys.ENTER);
+    }
+
+}
+
+
 }

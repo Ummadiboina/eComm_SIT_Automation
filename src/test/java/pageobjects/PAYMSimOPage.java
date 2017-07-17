@@ -190,7 +190,11 @@ public class PAYMSimOPage {
 	//@FindBy(how=How.CSS,using=(".col-xs-12.promotion-ribbon"))
 	//public static WebElement PromotionTariff;
 	
+	@FindBy(how = How.XPATH, using = ("//div[@class='tariffs-container voice-tariffs']/div[1]//div/form/button"))
+	public static WebElement BuyNowRandomTariffMBB30Days;
 	
+	@FindBy(how = How.XPATH, using = ("(//*[@id='callToAction'])[2]"))
+	public static WebElement BuyNowRandomTariffMBB12Months;
 
 	
 }
