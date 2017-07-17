@@ -1,6 +1,7 @@
 package actionsPerformed;
 
 import java.net.MalformedURLException;
+import java.net.URI;
 import java.net.URL;
 import java.util.List;
 import java.util.logging.Logger;
@@ -35,6 +36,20 @@ public class BaseCommPageActions extends Environment {
 			} else {
 				System.out.println("Devices other than iPad are also displayed");
 				Assert.fail("Devices other than iPad are also displayed");
+			}
+		}
+	}
+	
+	public static void checkIfTabletDevicesArePresent() {
+
+		List<WebElement> TabletDevices = pageobjects.BaseCommPage.TabletDevicesName;
+
+		for (int i = 0; i < TabletDevices.size(); i++) {
+			if (TabletDevices.get(i).getText().contains("Tab")) {
+				System.out.println("TabletDevices.get(i).getText()");
+			} else {
+				System.out.println("Devices other than Tablet are also displayed");
+				Assert.fail("Devices other than Tablet are also displayed");
 			}
 		}
 	}
@@ -110,30 +125,34 @@ public class BaseCommPageActions extends Environment {
 	public static void CompareURL(String NewURL) throws MalformedURLException {
 		System.out.println("Comparing URL");
 		// URL is reference , some instance which needs to be initialsed for
-		// comparing urls
-
-		/*
-		 * URL urlone= new URL(NewURL); URL urlRedirected= new
-		 * URL(driver.getCurrentUrl());
-		 */
-		// String Newurl=driver.getCurrentUrl();
-		/*
-		 * System.out.println("The current url is "+urlRedirected);
-		 * log.debug("The current url is "+urlRedirected);
-		 */
-
+	
 		String URL = driver.getCurrentUrl();
 		System.out.println("URL is " + URL);
 		String FeatureURL = NewURL;
 		System.out.println("Feature url to compare is " + FeatureURL);
 		Assert.assertEquals(FeatureURL, URL);
-
-		/*
-		 * 
-		 * if (urlone.equals(urlRedirected)) {
-		 * System.out.println("URLs are same"); Assert.fail("URL are same"); }
-		 * else { System.out.println("URLs are different"); }
-		 */
+	}
+	
+	public static void VerifyIpadURL() throws MalformedURLException {
+		System.out.println("Going to Verify content inside URL");
+		String currenturl=driver.getCurrentUrl();
+		final URI uri = URI.create(currenturl);
+		String queryString = uri.getQuery();
+		//String subString = queryString.substring(queryString.);
+		String subString = queryString.substring(queryString.lastIndexOf('-') + 1);
+		System.out.println("EXTRACTED " + subString);
+		Assert.assertEquals("iPad",subString);
+	}
+	
+	public static void VerifyTabletURL() throws MalformedURLException {
+		System.out.println("Going to Verify content inside URL");
+		String currenturl=driver.getCurrentUrl();
+		final URI uri = URI.create(currenturl);
+		String queryString = uri.getQuery();
+		//String subString = queryString.substring(queryString.);
+		String subString = queryString.substring(queryString.lastIndexOf('-') + 1);
+		System.out.println("EXTRACTED " + subString);
+		Assert.assertEquals("tablet",subString);
 	}
 
 }

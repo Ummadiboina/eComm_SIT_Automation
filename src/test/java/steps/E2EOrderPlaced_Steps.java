@@ -164,7 +164,7 @@ public class E2EOrderPlaced_Steps {
 			Thread.sleep(10000);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
-			System.out.println(	"unable to do mousehover to Accessories");
+			System.out.println("unable to do mousehover to Accessories");
 			Assert.fail("unable to do mousehover to Accessories");
 		}
 	}
@@ -408,14 +408,13 @@ public class E2EOrderPlaced_Steps {
 
 		}
 	}
-	
-	
+
 	@And("^Click on View all Tariffs$")
 	public void ClickonViewAllTariffsDeviceDetailspage() throws Throwable {
 		try {
 			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 			PageFactory.initElements(driver, ConnectedDeviceDetailsPage.class);
-		ConnectedDeviceDetailsPageAction.ViewAllTariffs();
+			ConnectedDeviceDetailsPageAction.ViewAllTariffs();
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			System.out.println("Unable to navigate to device details page");
@@ -423,7 +422,6 @@ public class E2EOrderPlaced_Steps {
 
 		}
 	}
-	
 
 	@Given("^Navigate to device details page and select ([^\"]*)$")
 	public void Navigate_to_device_details_page_and_select_color(String color) throws Throwable {
@@ -663,7 +661,7 @@ public class E2EOrderPlaced_Steps {
 		}
 
 	}
-	
+
 	@And("^click on \"([^\"]*)\" link and select a \"([^\"]*)\" tariff$")
 	public void TariffandExtrasPage_payDeviceFull() throws Throwable {
 		try {
@@ -679,8 +677,6 @@ public class E2EOrderPlaced_Steps {
 		}
 
 	}
-	
-	
 
 	@Given("^Select any new Tariff and land on basket page$")
 	public void select_any_new_Tariff_and_land_on_basket_page() throws Throwable {
@@ -2594,8 +2590,10 @@ public class E2EOrderPlaced_Steps {
 		try {
 			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 			PageFactory.initElements(driver, ConnectedDeviceDetailsPage.class);
-/*			ConnectedDeviceDetailsPageAction.isColorDropDownDisplayed();
-			ConnectedDeviceDetailsPageAction.isCapacityDropDownDisplayed();*/
+			/*
+			 * ConnectedDeviceDetailsPageAction.isColorDropDownDisplayed();
+			 * ConnectedDeviceDetailsPageAction.isCapacityDropDownDisplayed();
+			 */
 			ConnectedDeviceDetailsPageAction.checkOnlyOneOptionAvailable();
 
 		} catch (Exception e) {
@@ -3088,7 +3086,7 @@ public class E2EOrderPlaced_Steps {
 			Assert.fail("Unable to Launch MBB Basecomms url");
 		}
 	}
-	
+
 	@Given("^I launch the OldIpadURL$")
 	public void LaunchOldBaseCommsIpadURL() throws Throwable {
 		try {
@@ -3103,8 +3101,7 @@ public class E2EOrderPlaced_Steps {
 			Assert.fail("Unable to Launch Ipad Basecomms url");
 		}
 	}
-	
-	
+
 	@Given("^I launch the OldTabletURL$")
 	public void LaunchOldBaseCommsOldTabletURL() throws Throwable {
 		try {
@@ -3119,16 +3116,14 @@ public class E2EOrderPlaced_Steps {
 			Assert.fail("Unable to Launch Tablet Basecomms url");
 		}
 	}
-	
+
 	@And("^select \"([^\"]*)\" MBBtariff$")
 	public void select_MBBtariff(String arg1) throws Throwable {
 		try {
-		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-		PageFactory.initElements(driver, BaseCommPage.class);
-		BaseCommPageActions.SelectBaseCommTariff("Random");
-			} 
-		catch (Exception e) 
-		{
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, BaseCommPage.class);
+			BaseCommPageActions.SelectBaseCommTariff("Random");
+		} catch (Exception e) {
 			System.out.println("Unable to Select MBB Tariff");
 			Assert.fail("Unable to Select MBB Tariff");
 		}
@@ -3137,16 +3132,14 @@ public class E2EOrderPlaced_Steps {
 	@And("^I land on Basket page$")
 	public void i_land_on_Basket_page() throws Throwable {
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-		
-		
 	}
-	
+
 	@And("^I navigate to the Basecomm Page$")
 	public void I_navigate_to_the_Basecomm_Page() throws Throwable {
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		try {
 			String relativePath = System.getProperty("user.dir");
-			String EnvPropFilePath = relativePath + "\\src\\test\\java\\Properties\\AppConfig.properties";
+			String EnvPropFilePath = relativePath + "\\Configurations\\Properties\\AppConfig.properties";
 			String Newurl = Filereadingutility.getPropertyValue(EnvPropFilePath, "BaseCommUrl");
 			driver.navigate().to(Newurl);
 
@@ -3156,7 +3149,8 @@ public class E2EOrderPlaced_Steps {
 
 		}
 	}
-@Then("^Verify only iPad specific devices are displayed under the iPad section$")
+
+	@Then("^Verify only iPad specific devices are displayed under the iPad section$")
 	public void Verify_only_iPad_specific_devices_are_displayed_under_the_iPad_section() throws Throwable {
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		try {
@@ -3168,21 +3162,32 @@ public class E2EOrderPlaced_Steps {
 
 		}
 	}
+	
+	@Then("^Verify only tablet specific devices are displayed under the Other tablets section$")
+	public void Veri() throws Throwable {
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		try {
+			PageFactory.initElements(driver, BaseCommPage.class);
+			BaseCommPageActions.checkIfTabletDevicesArePresent();
+		} catch (Exception e) {
+			e.printStackTrace();
+			Assert.fail("Unable to verify if only iPad specific devices are displayed under the iPad section");
 
-@Given("^verify that I get redirected to ([^\"]*)$")
-public void VerifyOldBaseCommsURL_Redirection(String NewURL) throws Throwable {
-	driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-	try {
-		PageFactory.initElements(driver, BaseCommPage.class);
-		BaseCommPageActions.CompareURL(NewURL);
-	} catch (Exception e) {
-		e.printStackTrace();
-		Assert.fail("Unable to compare old and new urls");
-
+		}
 	}
-}
 
+	@Given("^verify that I get redirected to ([^\"]*)$")
+	public void VerifyOldBaseCommsURL_Redirection(String NewURL) throws Throwable {
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		try {
+			PageFactory.initElements(driver, BaseCommPage.class);
+			BaseCommPageActions.CompareURL(NewURL);
+		} catch (Exception e) {
+			e.printStackTrace();
+			Assert.fail("Unable to compare old and new urls");
 
+		}
+	}
 
 	@And("^Click on Other Tablets tab$")
 	public void Click_on_Other_Tablets_tab() throws Throwable {
@@ -3211,17 +3216,17 @@ public void VerifyOldBaseCommsURL_Redirection(String NewURL) throws Throwable {
 	}
 
 	@And("^Verify Pay As You Go tab is not displayed$")
-		public void Verify_Pay_As_You_Go_tab_is_not_displayed() throws Throwable {
-			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-			try {
-				PageFactory.initElements(driver, BaseCommPage.class);
-				BaseCommPageActions.isPayAsUGoTabDisplayed();
-			} catch (Exception e) {
-				e.printStackTrace();
-				Assert.fail("Unable to verify if Pay As You Go tab is present");
+	public void Verify_Pay_As_You_Go_tab_is_not_displayed() throws Throwable {
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		try {
+			PageFactory.initElements(driver, BaseCommPage.class);
+			BaseCommPageActions.isPayAsUGoTabDisplayed();
+		} catch (Exception e) {
+			e.printStackTrace();
+			Assert.fail("Unable to verify if Pay As You Go tab is present");
 
-			}
 		}
+	}
 
 	@And("^click on the Sort tab and choose required ([^\"])$")
 	public void click_on_the_Sort_tab_and_choose_required_sort_option(String Sort) throws Throwable {
@@ -3236,10 +3241,9 @@ public void VerifyOldBaseCommsURL_Redirection(String NewURL) throws Throwable {
 
 		}
 	}
-	
-	
+
 	@And("^click on the Sort tab and reset sort$")
-	public void click_on_the_Sort_tab_and_reset_sort() throws Throwable {
+	public void ClickonSortand_Reset() throws Throwable {
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		try {
 			PageFactory.initElements(driver, BaseCommPage.class);
@@ -3251,7 +3255,24 @@ public void VerifyOldBaseCommsURL_Redirection(String NewURL) throws Throwable {
 
 		}
 	}
-	
-	
-}
 
+	@And("^Verify the contents of the iPad section in the landing page$")
+	public void VerifyContentsofIpadSection() throws Throwable {
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		try {
+			PageFactory.initElements(driver, BaseCommPage.class);
+			BaseCommPageActions.VerifyIpadURL();
+		} catch (Exception e) {
+		}
+	}
+	
+	@And("^Verify the contents of the tablet section in the Other Tablets tab$")
+	public void VerifyContentsofTabletSection() throws Throwable {
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		try {
+			PageFactory.initElements(driver, BaseCommPage.class);
+			BaseCommPageActions.VerifyTabletURL();
+		} catch (Exception e) {
+		}
+	}
+}

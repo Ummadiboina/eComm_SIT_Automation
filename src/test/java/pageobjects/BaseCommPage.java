@@ -35,4 +35,12 @@ public class BaseCommPage {
 	@FindBy(how = How.XPATH, using = ("//*[@id='qa-data']/a[@id='data_qa_Huawei_1']/form/button[1]"))
 	public static WebElement RandomDevice;
 
+
+	@FindAll({
+		@FindBy(how=How.XPATH,using=("//div[@class='module label-xxl desktop-fragments-label-xxl-1']/h2"))
+		})
+	public static List<WebElement> TabletDevicesName;
+	
+	
+
 }
