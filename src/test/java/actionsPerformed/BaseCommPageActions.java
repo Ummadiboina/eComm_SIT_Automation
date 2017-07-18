@@ -17,6 +17,9 @@ import helpers.Environment;
 
 public class BaseCommPageActions extends Environment {
 	static Logger log = Logger.getLogger("devpinoyLogger");
+	static List<String> NormalCost = new ArrayList<>();
+	static List<String> BasecommCost = new ArrayList<>();
+
 
 	public static void SelectBaseCommTariff(String elementName) {
 
@@ -645,5 +648,106 @@ public class BaseCommPageActions extends Environment {
 		Assert.assertNotSame(price2, price1);
 
 	}
+	public static void verifyTariffType(String flow) {
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+
+		WebElement PayInFull = pageobjects.PAYMandPAYGTariffAndExtrasPage.paydevicefulllink;
+
+		List<String> NormalUpfrontCost = new ArrayList<>();
+		List<String> NormalMonthlyCost = new ArrayList<>();
+
+		List<String> BasecommUpfrontCost = new ArrayList<>();
+		List<String> BasecommMonthlyCost = new ArrayList<>();
+
+		if (flow.equals("Normal")) {
+			List<WebElement> UpfrontCostElement = pageobjects.PAYMandPAYGTariffAndExtrasPage.UpfrontCost;
+			List<WebElement> MonthlyCostElement = pageobjects.PAYMandPAYGTariffAndExtrasPage.MonthlyCost;
+			int k = 0;
+
+			if (PayInFull.isDisplayed()) {
+				js.executeScript("arguments[0].click();", PayInFull);
+			} else {
+				System.out.println("No PayInFull");
+			}
+
+			if (UpfrontCostElement.size() != 0) {
+				for (int i = 0; i < UpfrontCostElement.size(); i++) {
+					k = i + 1;
+					NormalUpfrontCost.add(UpfrontCostElement.get(i).getText());
+					System.out.println(
+							"Upfront cost of position :" + k + " in tariffs is" + UpfrontCostElement.get(i).getText());
+				}
+			}
+
+			if (MonthlyCostElement.size() != 0) {
+				for (int i = 0; i < MonthlyCostElement.size(); i++) {
+					k = i + 1;
+					NormalMonthlyCost.add(MonthlyCostElement.get(i).getText());
+					System.out.println(
+							"Monthly cost of position :" + k + " in tariffs is" + MonthlyCostElement.get(i).getText());
+				}
+			}
+			for (int i = 0; i < NormalUpfrontCost.size(); i++) {
+				NormalCost.add(NormalUpfrontCost.get(i).concat(NormalMonthlyCost.get(i)));
+				System.out.println("Normal cost " + NormalCost.get(i));
+			}
+
+		}
+
+		if (flow.equals("Basecomm")) {
+			WebElement ViewAllTariffs = driver.findElement(By.xpath("//div[@class='viewAllTariffs']"));
+			List<WebElement> UpfrontCostElement = pageobjects.PAYMandPAYGTariffAndExtrasPage.UpfrontCost;
+			List<WebElement> MonthlyCostElement = pageobjects.PAYMandPAYGTariffAndExtrasPage.MonthlyCost;
+			int k = 0;
+
+			if (ViewAllTariffs.isDisplayed()) {
+				js.executeScript("arguments[0].click();", ViewAllTariffs);
+			} else {
+				System.out.println("No ViewAllTariffs");
+			}
+			if (PayInFull.isDisplayed()) {
+				js.executeScript("arguments[0].click();", PayInFull);
+			} else {
+				System.out.println("No PayInFull");
+			}
+
+			if (UpfrontCostElement.size() != 0) {
+				for (int i = 0; i < UpfrontCostElement.size(); i++) {
+					k = i + 1;
+					BasecommUpfrontCost.add(UpfrontCostElement.get(i).getText());
+					System.out.println(
+							"Upfront cost of position :" + k + " in tariffs is" + UpfrontCostElement.get(i).getText());
+				}
+			}
+
+			if (MonthlyCostElement.size() != 0) {
+				for (int i = 0; i < MonthlyCostElement.size(); i++) {
+					k = i + 1;
+					BasecommMonthlyCost.add(MonthlyCostElement.get(i).getText());
+					System.out.println(
+							"Monthly cost of position :" + k + " in tariffs is" + MonthlyCostElement.get(i).getText());
+				}
+			}
+			for (int i = 0; i < BasecommUpfrontCost.size(); i++) {
+				BasecommCost.add(BasecommUpfrontCost.get(i).concat(BasecommMonthlyCost.get(i)));
+				System.out.println("Basecomm cost " + BasecommCost.get(i));
+			}
+
+		}
+		if (flow.equals("Check")) {
+			System.out.println("Size  " + NormalCost.size() + '\n' + BasecommCost.size());
+			if (NormalCost.size() != 0 && BasecommCost.size() != 0) {
+
+				for (int z = 0; z < BasecommCost.size(); z++) {
+					if (NormalCost.contains(BasecommCost.get(z))) {
+						System.out.println("Failed - Basecomm tariffs are present in normal flow");
+					} else {
+						System.out.println("Basecomm tariffs are not present in normal tariffs section as expected");
+					}
+				}
+			}
+		}
+	}
+
 
 }
