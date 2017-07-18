@@ -18,11 +18,11 @@ Scenario Outline:
     1."Back to iPad offers" link 
     2. Basecomms offer tariffs
 
-	#Given I am existing user and I click on Signin button 
-	#And Signin using valid <username> and <password> credentials 
-	#And I navigate to the Basecomm Page 
-	#And Verify the contents of the iPad section in the landing page 
-	#Verify URL is iPad specific
+	Given I am existing user and I click on Signin button 
+	And Signin using valid <username> and <password> credentials 
+	And I navigate to the Basecomm Page 
+	And Verify the contents of the iPad section in the landing page 
+	And Verify URL is iPad specific
 	Then Verify only iPad specific devices are displayed under the iPad section 
 	And Verify expected <device_name> and its specific details are present in the device list <default_colour>,<default_capacity>,<default_stock_message> 
 	#Veirfy device price details are also getting displayed in the above step
