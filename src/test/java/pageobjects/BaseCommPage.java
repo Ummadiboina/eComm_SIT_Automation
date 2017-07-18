@@ -19,6 +19,9 @@ public class BaseCommPage {
 			@FindBy(how = How.XPATH, using = ("//div[@class='multi-size-tile clearfix cube']//p[@class='details']")) })
 	public static List<WebElement> TabletDevicesName;
 
+	@FindAll({ @FindBy(how = How.XPATH, using = ("//div[@id='contract-length-tab']//a")) })
+	public static List<WebElement> ContractLengthTabs;
+
 	@FindBy(how = How.XPATH, using = "//a[@tabcanonicalname='tablet']")
 	public static WebElement OtherTablets;
 
@@ -37,7 +40,7 @@ public class BaseCommPage {
 
 	@FindBy(how = How.XPATH, using = ("//*[@id='qa-data']/a[@id='data_qa_Huawei_1']/form/button[1]"))
 	public static WebElement RandomDevice;
-	
+
 	@FindBy(how = How.XPATH, using = ("//a[@href='changeTariff/']"))
 	public static WebElement ChooseADifferentTariff;
 
@@ -61,16 +64,16 @@ public class BaseCommPage {
 
 	@FindAll({ @FindBy(how = How.XPATH, using = "//div[@id='panel']//div") })
 	public static List<WebElement> PanelList;
-	
+
 	@FindBy(how = How.XPATH, using = ("//a[@class='boxclose']"))
 	public static WebElement BoxClose;
-	
+
 	@FindBy(how = How.XPATH, using = ("//a[contains(text(),'See full technical specification')]"))
 	public static WebElement FullSpecificationElement;
-	
+
 	@FindBy(how = How.XPATH, using = ("//div[@class='accordion-content']"))
 	public static WebElement SpecificationsElement;
-	
+
 	@FindBy(how = How.XPATH, using = ("//*[@id='device-details']/div[1]/h3"))
 	public static WebElement PopupdevicenametextElement;
 

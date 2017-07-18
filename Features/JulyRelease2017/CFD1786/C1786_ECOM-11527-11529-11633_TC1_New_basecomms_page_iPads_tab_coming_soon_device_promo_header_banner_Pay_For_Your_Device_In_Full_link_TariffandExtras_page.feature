@@ -18,7 +18,7 @@ Feature: C1786_ECOM-11527-11529-11633_TC1_New_basecomms_page_iPads_tab_coming_so
     #Veirfy device price is not required
     #Verify Buy Now button is not enabled
     And Verify that promotion ribbon is displayed
-    And Click on "See device details" link and verify correct details are displayed    
+    And Click on "See device details" link for <device_name> and verify correct details are displayed 
     And Click on "Buy Now" button for <device_name> and verify "Tariffs and Extras" page is displayed
     And click on "Pay for your device in full" link and select a "random" tariff
     And I Land on the basket page and choose home delivery option

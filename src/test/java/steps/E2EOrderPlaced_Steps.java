@@ -3275,7 +3275,7 @@ public class E2EOrderPlaced_Steps {
 		}
 	}
 
-	@Given("^Click on \"([^\"]*)\" button for ([^\"]*) and verify \"([^\"]*)\" page is displayed$")
+	@And("^Click on \"Buy Now\" button for ([^\"]*) and verify \"Tariffs and Extras\" page is displayed$")
 	public void SelectdeviceAndVerifyTariffandExtras(String device_name) throws Throwable {
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		try {
@@ -3288,7 +3288,7 @@ public class E2EOrderPlaced_Steps {
 		}
 	}
 
-	@And("^Click on \"([^\"]*)\" link and verify correct details are displayed$")
+	@And("^Click on \"See device details\" link for ([^\"]*) and verify correct details are displayed$")
 	public void Click_on_See_device_details_link_and_verify_correct_details_are_displayed(String device)
 			throws Throwable {
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);

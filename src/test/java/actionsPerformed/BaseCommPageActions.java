@@ -69,9 +69,17 @@ public class BaseCommPageActions extends Environment {
 
 	public static void isPayAsUGoTabDisplayed() {
 		log.debug("checking whether Pay As U Go tab is displayed");
-		if (pageobjects.BaseCommPage.PayAsUGo.isDisplayed()) {
-			Assert.fail("Pay As U Go tab is displayed");
+		System.out.println("checking whether Pay As U Go tab is displayed");
+		List<WebElement> ContractLengthTabs = pageobjects.BaseCommPage.ContractLengthTabs;
+		for(WebElement h :ContractLengthTabs) {
+			if(h.getText().equals("Pay As You Go")){
+				Assert.fail("Pay As U Go tab is displayed");
+			}
 		}
+			
+		/*if (pageobjects.BaseCommPage.PayAsUGo.isDisplayed()) {
+			Assert.fail("Pay As U Go tab is displayed");
+		}*/
 	}
 
 	public static void clickOnSortTab() {
@@ -320,51 +328,64 @@ public class BaseCommPageActions extends Environment {
 	}
 
 	public static void checkExpDevAndDetails(String device, String color, String capacity, String stockmessage) {
-
+		System.out.println("passing device" + device);
 		int k = 0;
-		boolean WorksFine2 = false;
+
 		List<WebElement> TabletDevicesName = pageobjects.BaseCommPage.TabletDevicesName;
+		device = trimEnd(device);
+		List<String> Devices = new ArrayList<String>();
+		for (WebElement e : TabletDevicesName) {
+			Devices.add(e.getText());
+		}
 
-		for (int i = 0; i < TabletDevicesName.size(); i++) {
-			if (TabletDevicesName.get(i).getText().equals(device)) {
-				System.out.println("Device name matches");
-				WorksFine2 = true;
-				k = i + 1;
-				String c = "(//select[@class='ng-pristine ng-valid colour-select'])[" + k + "]";
+		if (!Devices.contains(device)) {
+			Assert.fail("Expected device is not present");
+		} else {
+			for (int i = 0; i < TabletDevicesName.size(); i++) {
+				if (TabletDevicesName.get(i).getText().equals(device)) {
+					k = i + 1;
+					String c = "(//select[@class='ng-pristine ng-valid colour-select'])[" + k + "]";
 
-				WebElement colordropdown = driver.findElement(By.xpath(c));
-				JavascriptExecutor js = (JavascriptExecutor) driver;
-				js.executeScript("arguments[0].setAttribute('style', 'display:block;')", colordropdown);
-				if (colordropdown.isDisplayed()) {
-					WebElement firstcolor = new Select(colordropdown).getFirstSelectedOption();
-					if (color.equals(firstcolor.getText())) {
-						System.out.println("Expected color selected :" + firstcolor.getText());
-					} else {
-						Assert.fail("Expected color does not match");
+					WebElement colordropdown = driver.findElement(By.xpath(c));
+					JavascriptExecutor js = (JavascriptExecutor) driver;
+					js.executeScript("arguments[0].setAttribute('style', 'display:block;')", colordropdown);
+					if (colordropdown.isDisplayed()) {
+						WebElement firstcolor = new Select(colordropdown).getFirstSelectedOption();
+						if (color.equals(firstcolor.getText())) {
+							System.out.println("Expected color selected :" + firstcolor.getText());
+						} else {
+							Assert.fail("Expected color does not match");
+						}
 					}
-				}
 
-				String d = "(//select[@class='memory-select ng-pristine ng-valid'])[" + k + "]";
+					String d = "(//select[@class='memory-select ng-pristine ng-valid'])[" + k + "]";
 
-				WebElement capacitydropdown = driver.findElement(By.xpath(d));
-				js.executeScript("arguments[0].setAttribute('style', 'display:block;')", capacitydropdown);
-				if (capacitydropdown.isDisplayed()) {
-					WebElement firstcapacity = new Select(capacitydropdown).getFirstSelectedOption();
-					if (capacity.equals(firstcapacity.getText())) {
-						System.out.println("Expected capacity selected :" + firstcapacity.getText());
-					} else {
-						Assert.fail("Expected capacity does not match");
+					WebElement capacitydropdown = driver.findElement(By.xpath(d));
+					js.executeScript("arguments[0].setAttribute('style', 'display:block;')", capacitydropdown);
+					if (capacitydropdown.isDisplayed()) {
+						WebElement firstcapacity = new Select(capacitydropdown).getFirstSelectedOption();
+						if (capacity.equals(firstcapacity.getText())) {
+							System.out.println("Expected capacity selected :" + firstcapacity.getText());
+						} else {
+							Assert.fail("Expected capacity does not match");
+						}
 					}
-				}
-				String e = "(//p[@class='delivery-information ng-scope'])[" + k + "]";
-				WebElement stockmsg = driver.findElement(By.xpath(e));
-				if (stockmsg.getText().contains(stockmessage)) {
-					System.out.println("Expected stockmsg displayed :" + stockmsg.getText());
+					String e = "(//p[@class='delivery-information ng-scope'])[" + k + "]";
+					WebElement stockmsg = driver.findElement(By.xpath(e));
+					if (stockmsg.getText().contains(stockmessage)) {
+						System.out.println("Expected stockmsg displayed :" + stockmsg.getText());
+					}
+					String f = "(//p[@class='costs ng-binding ng-scope'])[" + k + "]";
+					WebElement price = driver.findElement(By.xpath(f));
+					if(price.getText()!=null) {
+						System.out.println("Price -"+price.getText());
+					}
+					else
+					{
+						Assert.fail("No price details available");
+					}
 				}
 			}
-		}
-		if (WorksFine2 = false) {
-			Assert.fail("Expected device not present");
 		}
 	}
 
@@ -382,11 +403,9 @@ public class BaseCommPageActions extends Environment {
 	}
 
 	public static void checkSeeDeviceDetailsPopUp(String device) throws InterruptedException {
-		
-		System.out.println("Inside checkSeeDeviceDetailsPopUp function");
 		device = trimEnd(device);
-		System.out.println("device name -" + device);
-		List<WebElement> iPadDevicesName = pageobjects.BaseCommPage.iPadDevicesName;
+
+		List<WebElement> TabletDevicesName = pageobjects.BaseCommPage.TabletDevicesName;
 
 		WebElement SeeDeviceDetailsLink;
 		WebElement PoundsElement;
@@ -397,85 +416,102 @@ public class BaseCommPageActions extends Environment {
 		String penseelementtext = null;
 		String c = null, d = null, e = null;
 		int k = 0;
-		boolean WorksFine = false;
-		System.out.println(WorksFine);
-		for (int i = 0; i < iPadDevicesName.size(); i++) {
-			System.out.println(WorksFine);
 
-			if (iPadDevicesName.get(i).getText().equals(device)) {
-				System.out.println("Device name matches");
-				WorksFine = true;
-				k = i + 1;
-				c = "(//a[contains(text(),'See device details')])[" + k + "]";
-				d = "(//span[@class='headline ng-binding'])[" + k + "]";
-				e = "(//span[@class='pence ng-binding'])[" + k + "]";
-				PoundsElement = driver.findElement(By.xpath(d));
-				PenseElement = driver.findElement(By.xpath(e));
+		List<String> Devices = new ArrayList<String>();
+		for (WebElement f : TabletDevicesName) {
+			Devices.add(f.getText());
+		}
+		
+		for(int y=0;y<Devices.size();y++) {
+			System.out.println(Devices.get(y));
+		}
+		System.out.println("passing device"+device);
 
-				SeeDeviceDetailsLink = driver.findElement(By.xpath(c));
-				if (SeeDeviceDetailsLink.isDisplayed()) {
-					js.executeScript("arguments[0].click();", SeeDeviceDetailsLink);
-					log.debug("Clicked on See Device Details Link");
-				} else {
-					Assert.fail("Device Details link not present");
-				}
-				Thread.sleep(5000);
+		if (!Devices.contains(device)) {
+			Assert.fail("Expected device is not present");
+		} else {
 
-				for (String winHandle : driver.getWindowHandles()) {
-					driver.switchTo().window(winHandle);
-					System.out.println("Control is in pop up");
-				}
+			for (int i = 0; i < TabletDevicesName.size(); i++) {
+				if (TabletDevicesName.get(i).getText().equals(device)) {
+					System.out.println("Device name matches");
+					k = i + 1;
+					c = "(//a[contains(text(),'See device details')])[" + k + "]";
+					d = "(//span[@class='headline ng-binding'])[" + k + "]";
+					e = "(//span[@class='pence ng-binding'])[" + k + "]";
+					PoundsElement = driver.findElement(By.xpath(d));
+					PenseElement = driver.findElement(By.xpath(e));
 
-				WebElement PopupdevicenametextElement = pageobjects.BaseCommPage.PopupdevicenametextElement;
-				if (PopupdevicenametextElement.isDisplayed()) {
-					popupdevicenametext = PopupdevicenametextElement.getText();
-					if (popupdevicenametext.equals(device)) {
-						log.debug(
-								"Device name in pop up is " + popupdevicenametext + "and matches the device selected");
+					SeeDeviceDetailsLink = driver.findElement(By.xpath(c));
+					if (SeeDeviceDetailsLink.isDisplayed()) {
+						js.executeScript("arguments[0].click();", SeeDeviceDetailsLink);
+						System.out.println("Clicked on See Device Details Link");
+						log.debug("Clicked on See Device Details Link");
+					} else {
+						Assert.fail("Device Details link not present");
 					}
-				} else {
-					Assert.fail("Device name in pop up is not present");
-				}
+					Thread.sleep(5000);
 
-				if (PoundsElement.isDisplayed()) {
-					poundselementtext = PoundsElement.getText();
-					if (poundselementtext.equals(PoundsElement.getText())) {
-						log.debug("Pounds in pop up - " + poundselementtext + ", pounds value displayed for device - "
-								+ PoundsElement.getText() + "and they are the same");
+					for (String winHandle : driver.getWindowHandles()) {
+						driver.switchTo().window(winHandle);
+						log.debug("Control is in pop up");
+						System.out.println("Control is in pop up");
+					}
+
+					WebElement PopupdevicenametextElement = pageobjects.BaseCommPage.PopupdevicenametextElement;
+					if (PopupdevicenametextElement.isDisplayed()) {
+						popupdevicenametext = PopupdevicenametextElement.getText();
+						if (popupdevicenametext.equals(device)) {
+							log.debug("Device name in pop up is " + popupdevicenametext
+									+ "and matches the device selected");
+							System.out.println("Device name in pop up is " + popupdevicenametext
+									+ "and matches the device selected");
+						}
+					} else {
+						Assert.fail("Device name in pop up is not present");
+					}
+
+					if (PoundsElement.isDisplayed()) {
+						poundselementtext = PoundsElement.getText();
+						if (poundselementtext.equals(PoundsElement.getText())) {
+							log.debug(
+									"Pounds in pop up - " + poundselementtext + ", pounds value displayed for device - "
+											+ PoundsElement.getText() + "and they are the same");
+							System.out.println(
+									"Pounds in pop up - " + poundselementtext + ", pounds value displayed for device - "
+											+ PoundsElement.getText() + "and they are the same");
+						}
+					}
+
+					if (PenseElement.isDisplayed()) {
+						penseelementtext = PenseElement.getText();
+						if (penseelementtext.equals(PenseElement.getText())) {
+							log.debug("Pense in pop up - " + penseelementtext + ", pense value displayed for device - "
+									+ PenseElement.getText() + "and they are the same");
+							System.out.println(
+									"Pounds in pop up - " + poundselementtext + ", pounds value displayed for device - "
+											+ PoundsElement.getText() + "and they are the same");
+						}
+					}
+					WebElement SpecificationsElement = pageobjects.BaseCommPage.SpecificationsElement;
+					if (!SpecificationsElement.isDisplayed()) {
+						System.out.println("specifications not displayed");
+					} else
+						System.out.println("specifications displayed");
+
+					WebElement FullSpecificationElement = pageobjects.BaseCommPage.FullSpecificationElement;
+					if (FullSpecificationElement.isDisplayed()) {
+						FullSpecificationElement.click();
+						System.out.println("Full specification link is present");
+					}
+					if (pageobjects.BaseCommPage.BoxClose.isDisplayed()) {
+						pageobjects.BaseCommPage.BoxClose.click();
+					} else {
+						Assert.fail("Not able to close the pop up");
 					}
 				}
 
-				if (PenseElement.isDisplayed()) {
-					penseelementtext = PenseElement.getText();
-					if (penseelementtext.equals(PenseElement.getText())) {
-						log.debug("Pense in pop up - " + penseelementtext + ", pense value displayed for device - "
-								+ PenseElement.getText() + "and they are the same");
-					}
-				}
-				WebElement SpecificationsElement = pageobjects.BaseCommPage.SpecificationsElement;
-				if (!SpecificationsElement.isDisplayed()) {
-					System.out.println("specifications not displayed");
-				} else
-					System.out.println("specifications displayed");
-
-				WebElement FullSpecificationElement = pageobjects.BaseCommPage.FullSpecificationElement;
-				if (FullSpecificationElement.isDisplayed()) {
-					FullSpecificationElement.click();
-					System.out.println("Full specification link is present");
-				}
-				if (pageobjects.BaseCommPage.BoxClose.isDisplayed()) {
-					pageobjects.BaseCommPage.BoxClose.click();
-				} else {
-					Assert.fail("Not able to close the pop up");
-				}
 			}
-			System.out.println(WorksFine);
 		}
-		System.out.println(WorksFine);
-		if (WorksFine = false) {
-			Assert.fail("Failed");
-		}
-		System.out.println(WorksFine);
 	}
 
 	public static void CompareURL(String NewURL) throws MalformedURLException {
@@ -513,7 +549,7 @@ public class BaseCommPageActions extends Environment {
 
 	public static void BuynowwithDevice(String elementName) throws MalformedURLException {
 		System.out.println("Going to click on the buy now button on device");
-		if (elementName.contains("iPad mini 3")) {
+		if (elementName.contains("Apple iPad mini 3")) {
 			System.out.println("Going to select Ipad mini 3 device");
 
 			pageobjects.BaseCommPage.IpadMini3Buynow.click();
@@ -523,7 +559,7 @@ public class BaseCommPageActions extends Environment {
 			log.debug("Selected iPad mini 3 device");
 
 		}
-		if (elementName.contains("iPad mini 2")) {
+		if (elementName.contains("Apple iPad mini 2")) {
 			System.out.println("Going to select iPad mini 2 device");
 
 			pageobjects.BaseCommPage.IpadMini2Buynow.click();

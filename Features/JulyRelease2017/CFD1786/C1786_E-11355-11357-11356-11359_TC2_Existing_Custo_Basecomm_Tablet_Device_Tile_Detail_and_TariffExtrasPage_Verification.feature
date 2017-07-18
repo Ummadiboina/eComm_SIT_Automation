@@ -28,7 +28,7 @@ Feature: C1786_E-11355-11357-11356-11359_TC2_Existing_Custo_Basecomm_Tablet_Devi
     #Veirfy device price details are also getting displayed in the above step
     And select <color> color of the connected device
     And select <capacity> capacity of the connected device
-    And Click on "See device details" link and verify correct details are displayed
+    And Click on "See device details" link for <device_name> and verify correct details are displayed
     And Click on "Buy Now" button for <device_name> and verify "Tariffs and Extras" page is displayed
     And Verify Pay As You Go tab is not displayed
     And Verify all the details and links are displayed and working as expected in the "Tariffs and Extras" page

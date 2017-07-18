@@ -38,10 +38,10 @@ public class ConnectedDeviceDetailsPage {
 	public static WebElement DevStatusMsg;
 	// have to change the below xpath after getting the environment
 
-	@FindBy(how = How.XPATH, using = "")
+	@FindBy(how = How.XPATH, using = "//select[@class='ng-pristine ng-valid colour-select']")
 	public static WebElement ColorDropDown;
 
-	@FindBy(how = How.XPATH, using = "")
+	@FindBy(how = How.XPATH, using = "//select[@class='memory-select ng-pristine ng-valid']")
 	public static WebElement CapacityDropDown;
 	
 	@FindAll({
