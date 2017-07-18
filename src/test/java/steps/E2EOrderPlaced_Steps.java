@@ -2551,19 +2551,17 @@ public class E2EOrderPlaced_Steps {
 		}
 	}
 
-/*	@And("^choose ([^\"]*) contract length$")
-	public void choose_contract_length(String contractlength) {
-
-		try {
-			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-			PageFactory.initElements(driver, PAYMSimOPage.class);
-			PAYMSimOPageActions.SelectRecommendedTariffPhonesTab(contractlength);
-		} catch (Exception e) {
-			e.printStackTrace();
-			System.out.println("Unable to choose contract length");
-			Assert.fail("Unable to choose contract length");
-		}
-	}*/
+	/*
+	 * @And("^choose ([^\"]*) contract length$") public void
+	 * choose_contract_length(String contractlength) {
+	 * 
+	 * try { driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+	 * PageFactory.initElements(driver, PAYMSimOPage.class);
+	 * PAYMSimOPageActions.SelectRecommendedTariffPhonesTab(contractlength); }
+	 * catch (Exception e) { e.printStackTrace();
+	 * System.out.println("Unable to choose contract length");
+	 * Assert.fail("Unable to choose contract length"); } }
+	 */
 
 	@Then("^check if the selected connected device has more than 1 variant for both colour and capacity$")
 	public void check_if_the_selected_device_has_more_than_1_variant_for_both_colour_and_capacity() {
@@ -3161,20 +3159,19 @@ public class E2EOrderPlaced_Steps {
 
 		}
 	}
-	
-	/*@Then("^Verify only tablet specific devices are displayed under the Other tablets section$")
-	public void Veri() throws Throwable {
-		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-		try {
-			PageFactory.initElements(driver, BaseCommPage.class);
-			BaseCommPageActions.checkIfTabletDevicesArePresent();
-			//Archana to update this code
-		} catch (Exception e) {
-			e.printStackTrace();
-			Assert.fail("Unable to verify if only iPad specific devices are displayed under the iPad section");
 
-		}
-	}*/
+	/*
+	 * @Then("^Verify only tablet specific devices are displayed under the Other tablets section$"
+	 * ) public void Veri() throws Throwable {
+	 * driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS); try {
+	 * PageFactory.initElements(driver, BaseCommPage.class);
+	 * BaseCommPageActions.checkIfTabletDevicesArePresent(); //Archana to update
+	 * this code } catch (Exception e) { e.printStackTrace(); Assert.
+	 * fail("Unable to verify if only iPad specific devices are displayed under the iPad section"
+	 * );
+	 * 
+	 * } }
+	 */
 
 	@Given("^verify that I get redirected to ([^\"]*)$")
 	public void VerifyOldBaseCommsURL_Redirection(String NewURL) throws Throwable {
@@ -3262,26 +3259,22 @@ public class E2EOrderPlaced_Steps {
 		try {
 			PageFactory.initElements(driver, BaseCommPage.class);
 			BaseCommPageActions.VerifyIpadURL();
-		} catch (Exception e) 
-		{
+		} catch (Exception e) {
 			Assert.fail("Unable to verify contents of the iPad section in the landing page");
 		}
 	}
-	
+
 	@And("^Verify the contents of the tablet section in the Other Tablets tab$")
 	public void VerifyContentsofTabletSection() throws Throwable {
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		try {
 			PageFactory.initElements(driver, BaseCommPage.class);
 			BaseCommPageActions.VerifyTabletURL();
-		} catch (Exception e) 
-		{
+		} catch (Exception e) {
 			Assert.fail("Unable to verify contents of the Tablet section in the landing page");
 		}
 	}
-	
 
-	
 	@Given("^Click on \"([^\"]*)\" button for ([^\"]*) and verify \"([^\"]*)\" page is displayed$")
 	public void SelectdeviceAndVerifyTariffandExtras(String device_name) throws Throwable {
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
@@ -3295,22 +3288,20 @@ public class E2EOrderPlaced_Steps {
 		}
 	}
 
-
-	//Click on \"([^\"]*)\" link and verify correct details are displayed
 	@And("^Click on \"([^\"]*)\" link and verify correct details are displayed$")
 	public void Click_on_See_device_details_link_and_verify_correct_details_are_displayed(String device)
 			throws Throwable {
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		try {
 			PageFactory.initElements(driver, BaseCommPage.class);
-		PhonesListingPageAction.checkSeeDeviceDetailsPopUp(device);
-		//	BaseCommPageActions.checkSeeDeviceDetailsPopUp(device);
+			BaseCommPageActions.checkSeeDeviceDetailsPopUp(device);
 		} catch (Exception e) {
 			e.printStackTrace();
 			Assert.fail("Unable to Verify the see device link popup of the basecomm landing page");
 		}
-	} 
-@And("^choose ([^\"]*) contract length$")
+	}
+
+	@And("^choose ([^\"]*) contract length$")
 	public void choose_contract_length(String contractlength) {
 
 		try {
@@ -3323,6 +3314,7 @@ public class E2EOrderPlaced_Steps {
 			Assert.fail("Unable to choose contract length");
 		}
 	}
+
 	@And("^choose ([^\"]*) contract length for MBB$")
 	public void choose_contract_length_for_MBB(String contractlength) {
 
@@ -3337,13 +3329,12 @@ public class E2EOrderPlaced_Steps {
 		}
 	}
 
-
 	@And("^Verify \"Choose a different tariff\" link is displayed$")
 	public void verify_choose_a_diff_tariff_link_displayed() throws Throwable {
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		try {
 			PageFactory.initElements(driver, BaseCommPage.class);
-			PhonesListingPageAction.isChooseADifferentTariffDisplayed();
+			BaseCommPageActions.isChooseADifferentTariffDisplayed();
 		} catch (Exception e) {
 			e.printStackTrace();
 			Assert.fail("Unable to choose a different tarif link");
@@ -3357,7 +3348,7 @@ public class E2EOrderPlaced_Steps {
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		try {
 			PageFactory.initElements(driver, BaseCommPage.class);
-			PhonesListingPageAction.checkImgSrcBasecommPage(devicename);
+			BaseCommPageActions.checkImgSrcBasecommPage(devicename);
 
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -3371,7 +3362,7 @@ public class E2EOrderPlaced_Steps {
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		try {
 			PageFactory.initElements(driver, BaseCommPage.class);
-			PhonesListingPageAction.checkImgSrcTEPage(devicename);
+			BaseCommPageActions.checkImgSrcTEPage(devicename);
 
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -3385,8 +3376,8 @@ public class E2EOrderPlaced_Steps {
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		try {
 			PageFactory.initElements(driver, BaseCommPage.class);
-			PhonesListingPageAction.clickChooseADifferentTariff();
-			PhonesListingPageAction.checkUserNavigatedTEPage();
+			BaseCommPageActions.clickChooseADifferentTariff();
+			BaseCommPageActions.checkUserNavigatedTEPage();
 		} catch (Exception e) {
 			e.printStackTrace();
 			Assert.fail("Unable to click on choose a different tarif link");
@@ -3399,8 +3390,8 @@ public class E2EOrderPlaced_Steps {
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		try {
 			PageFactory.initElements(driver, BaseCommPage.class);
-			PhonesListingPageAction.clickBackToiPadOffers();
-			PhonesListingPageAction.checkUserNavigatedBasecommPage();
+			BaseCommPageActions.clickBackToiPadOffers();
+			BaseCommPageActions.checkUserNavigatedBasecommPage();
 		} catch (Exception e) {
 			e.printStackTrace();
 			Assert.fail("Unable to click on 'Back to iPad Offers' link");
@@ -3413,7 +3404,7 @@ public class E2EOrderPlaced_Steps {
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		try {
 			PageFactory.initElements(driver, BaseCommPage.class);
-			PhonesListingPageAction.checkRecommendedTariffIsAtFirstTile();
+			BaseCommPageActions.checkRecommendedTariffIsAtFirstTile();
 
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -3427,7 +3418,7 @@ public class E2EOrderPlaced_Steps {
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		try {
 			PageFactory.initElements(driver, BaseCommPage.class);
-			PhonesListingPageAction.checkContentsOfBaseCommPage();
+			BaseCommPageActions.checkContentsOfBaseCommPage();
 
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -3441,7 +3432,7 @@ public class E2EOrderPlaced_Steps {
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		try {
 			PageFactory.initElements(driver, BaseCommPage.class);
-			PhonesListingPageAction.checkIfTabletDevicesArePresent();
+			BaseCommPageActions.checkIfTabletDevicesArePresent();
 
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -3451,11 +3442,12 @@ public class E2EOrderPlaced_Steps {
 	}
 
 	@And("^Verify expected ([^\"]*) and its specific details are present in the device list ([^\"]*),([^\"]*),([^\"]*)$")
-	public void verify_expected_device_and_details_are_in_device_list(String device, String color, String capacity,String stockmessage) throws Throwable {
+	public void verify_expected_device_and_details_are_in_device_list(String device, String color, String capacity,
+			String stockmessage) throws Throwable {
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		try {
 			PageFactory.initElements(driver, BaseCommPage.class);
-			PhonesListingPageAction.checkExpDevAndDetails(device, color, capacity, stockmessage);
+			BaseCommPageActions.checkExpDevAndDetails(device, color, capacity, stockmessage);
 
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -3463,10 +3455,9 @@ public class E2EOrderPlaced_Steps {
 
 		}
 	}
-	
+
 	@And("^Verify that promotion ribbon is displayed$")
-	public void verifypromotionribbonDisplay()
-	{
+	public void verifypromotionribbonDisplay() {
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		try {
 			PageFactory.initElements(driver, BaseCommPage.class);
@@ -3477,10 +3468,10 @@ public class E2EOrderPlaced_Steps {
 			Assert.fail("Unable to verify promotion ribbon on the device");
 		}
 	}
-	//Then Verify the price gets updated based on the new colour and capacity
+
+	// Then Verify the price gets updated based on the new colour and capacity
 	@And("^Verify the price gets updated based on the new colour and capacity$")
-	public void verifyPriceDisplaybased_on_Colour_and_capacity()
-	{
+	public void verifyPriceDisplaybased_on_Colour_and_capacity() {
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		try {
 			PageFactory.initElements(driver, BaseCommPage.class);
