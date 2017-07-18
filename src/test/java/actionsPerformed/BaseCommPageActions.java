@@ -10,6 +10,7 @@ import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.Select;
 
 import helpers.Environment;
 
@@ -26,6 +27,8 @@ public class BaseCommPageActions extends Environment {
 		}
 
 	}
+	
+	
 
 	public static void checkIfiPadDevicesArePresent() {
 
@@ -147,6 +150,71 @@ public class BaseCommPageActions extends Environment {
 		Assert.assertEquals("tablet",subString);
 	}
 
+	public static void BuynowwithDevice(String elementName) throws MalformedURLException {
+		System.out.println("Going to click on the buy now button on device");
+		if (elementName.contains("iPad mini 3")) 
+		{
+			System.out.println("Going to select Ipad mini 3 device");
+
+			pageobjects.BaseCommPage.IpadMini3Buynow.click();
+
+			System.out.println("Selected iPad mini 3 device");
+
+			log.debug("Selected iPad mini 3 device");
+			
+		}
+		if (elementName.contains("iPad mini 2")) 
+		{
+			System.out.println("Going to select iPad mini 2 device");
+
+			pageobjects.BaseCommPage.IpadMini2Buynow.click();
+
+			System.out.println("Selected iPad mini 2 device");
+
+			log.debug("Selected iPad mini 2 device");
+			
+		}
+		if (elementName.contains("iPad Air")) 
+		{
+			System.out.println("Going to select iPad Air device");
+
+			pageobjects.BaseCommPage.IpadAirBuynow.click();
+			
+			System.out.println("Selected iPad Air device");
+
+			log.debug("Selected iPad Air device");
+		}
+		if (elementName.contains("Galaxy Tab Active")) 
+		{
+			System.out.println("Going to select Galaxy Tab device");
+
+			pageobjects.BaseCommPage.GalaxyTabActiveBuynow.click();
+			
+			System.out.println("Selected Galaxy Tab device");
+
+			log.debug("Selected Galaxy Tab device");
+		}
+		if (elementName.contains("Xperia Z2 Tablet")) 
+		{
+			System.out.println("Going to select XperiaZ2Tablet device");
+
+			pageobjects.BaseCommPage.XperiaZ2TabletBuynow.click();
+
+			System.out.println("Selected XperiaZ2Tablet device");
+
+			log.debug("Selected XperiaZ2Tablet device");
+		}
+	}
+
+	public static void VerifyPage() throws MalformedURLException {
+		System.out.println("Going to verify page");
+		String title= pageobjects.BaseCommPage.headerofTariffandExtrasPage.getText();
+	//	String title=driver.findElement(By.id("header-primary")).getText();
+		Assert.assertEquals(title, "Tariff and extras");
+		
+	}
+
+
 	
 	public static void checkSeeDeviceDetailsPopUp(String device) throws InterruptedException {
         List<WebElement> iPadDevicesName = pageobjects.BaseCommPage.iPadDevicesName;
@@ -223,6 +291,48 @@ public class BaseCommPageActions extends Environment {
               System.out.println("Full specification link is present");
         }
   }
+
+
+
+	public static void VerifyRibbon() {
+		// TODO Auto-generated method stub
+		System.out.println("Going to Verify promotion ribbon");
+		
+		boolean str1= pageobjects.BaseCommPage.DeviceRibbon!= null;
+		Assert.assertTrue(str1);
+		String str2= pageobjects.BaseCommPage.DeviceRibbon.getText();
+		System.out.println("the promotion text is "+str2);
+		System.out.println("Verified promotion ribbon");
+
+	}
+
+
+
+	public static void VerifyPriceChangeuponCapacity() {
+		// TODO Auto-generated method stub
+		System.out.println("Going to Verify promotion ribbon");
+		//WebElement capacity = driver.findElement(By.xpath("//*[@data-qa-device-model-family='iPad mini 3']/div[1]/div[2]/div[1]/div[2]/div[2]/select[@id='memory']"));
+		WebElement capacity = pageobjects.BaseCommPage.CapacityipadAir2;
+
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].setAttribute('style', 'display:block;')", capacity);
+		if (capacity.isDisplayed()) {
+			List<WebElement> elementCount = new Select(capacity).getOptions();
+			// System.out.println("elementCount"+elementCount);
+			if (elementCount.size() <= 1) {
+				Assert.fail("There are no more than 1 option available for capacity dropdown");
+			}
+		}
+		new Select(capacity).selectByVisibleText("128GB");
+		String price1=pageobjects.BaseCommPage.PriceiPadAir2.getText();
+		System.out.println(price1);
+		System.out.println("Now the second line is ..... ");
+		new Select(capacity).selectByVisibleText("16GB");
+		String price2=pageobjects.BaseCommPage.PriceiPadAir2.getText();
+		System.out.println(price2);
+		Assert.assertNotSame(price2,price1);
+		
+	}
 
 	
 }

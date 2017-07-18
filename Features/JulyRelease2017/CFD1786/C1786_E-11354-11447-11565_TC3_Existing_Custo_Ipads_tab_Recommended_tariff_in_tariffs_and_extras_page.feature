@@ -11,6 +11,8 @@ Feature: C1786_E-11354-11447-11565_TC3_Existing_Custo_Ipads_tab_Recommended_tari
     And Click on "Buy Now" button for <device_name> and verify "Tariffs and Extras" page is displayed
     And Verify recommended tariff is getting displayed on the header of the tariff tile in the "Tariffs and Extras" page
 
+    
     Examples: 
-      | username    | password | device_name | default_colour | default_capacity | default_stock_message | 
-      | ink_jun9198 | test123  | iPad_abc    | grey           | 16GB             | In Stock              | 
+      | username    | password | device_name | default_colour | default_capacity | default_stock_message |
+      | ink_jun9198 | test123  | iPad mini 3 | grey           | 16GB             | In Stock              |
+      

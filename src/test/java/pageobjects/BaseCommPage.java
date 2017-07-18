@@ -96,4 +96,36 @@ public static WebElement BannerDescription;
 public static List<WebElement> PanelList;
 
 
+@FindBy(how = How.XPATH, using = ("//*[@data-qa-device-model-family='iPad mini 3']/div[4]/form/button"))
+public static WebElement IpadMini3Buynow;
+
+@FindBy(how = How.XPATH, using = ("//*[@data-qa-device-model-family='iPad mini 2']/div[4]/form/button"))
+public static WebElement IpadMini2Buynow;
+
+@FindBy(how = How.XPATH, using = ("//*[@data-qa-device-model-family='iPad Air 2']/div[4]/form/button"))
+public static WebElement IpadAirBuynow;
+
+@FindBy(how = How.XPATH, using = ("//*[@data-qa-device-model-family='Galaxy Tab Active']/div[4]/form/button"))
+public static WebElement GalaxyTabActiveBuynow;
+
+@FindBy(how = How.XPATH, using = ("//*[@data-qa-device-model-family='Xperia Z2 Tablet']/div[4]/form/button"))
+public static WebElement XperiaZ2TabletBuynow;
+
+@FindBy(how = How.ID, using=("header-primary"))
+public static WebElement headerofTariffandExtrasPage;
+
+@FindBy(how = How.XPATH, using = ("//*[@data-qa-device-model-family='iPad Air 2']/div[@class='ribbon-wrapper']"))
+public static WebElement DeviceRibbon;
+
+@FindBy(how = How.XPATH, using = ("//*[@data-qa-device-model-family='iPad mini 3']/div[1]/div[2]/div[1]/div[2]/div[2]/select[@id='memory']"))
+public static WebElement CapacityipadMini3;
+
+@FindBy(how = How.XPATH, using = ("//div[@data-qa-device-model-family='iPad mini 3']/div/p[@class='costs ng-binding ng-scope']"))
+public static WebElement PriceiPadmini3;
+
+@FindBy(how = How.XPATH, using = ("//div[@data-qa-device-model-family='iPad Air 2']/div/p[@class='costs ng-binding ng-scope']"))
+public static WebElement PriceiPadAir2;                               
+
+@FindBy(how = How.XPATH, using = ("//*[@data-qa-device-model-family='iPad Air 2']/div[1]/div[2]/div[1]/div[2]/div[2]/select[@id='memory']"))
+public static WebElement CapacityipadAir2;
 }

@@ -205,7 +205,6 @@ public class E2EOrderPlaced_Steps {
 			MouseHoverAction.SmartwatchesLandingPage();
 			// Autoredirection.redirect();
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			System.out.println("unable to do mousehover to SmartWatches");
 			Assert.fail("unable to do mousehover to SmartWatches");
 		}
@@ -3263,7 +3262,9 @@ public class E2EOrderPlaced_Steps {
 		try {
 			PageFactory.initElements(driver, BaseCommPage.class);
 			BaseCommPageActions.VerifyIpadURL();
-		} catch (Exception e) {
+		} catch (Exception e) 
+		{
+			Assert.fail("Unable to verify contents of the iPad section in the landing page");
 		}
 	}
 	
@@ -3273,19 +3274,27 @@ public class E2EOrderPlaced_Steps {
 		try {
 			PageFactory.initElements(driver, BaseCommPage.class);
 			BaseCommPageActions.VerifyTabletURL();
-		} catch (Exception e) {
+		} catch (Exception e) 
+		{
+			Assert.fail("Unable to verify contents of the Tablet section in the landing page");
 		}
 	}
 	
+
+	
 	@Given("^Click on \"([^\"]*)\" button for ([^\"]*) and verify \"([^\"]*)\" page is displayed$")
-	public void SelectipadandVerifyTariffandExtras(String device_name) throws Throwable {
+	public void SelectdeviceAndVerifyTariffandExtras(String device_name) throws Throwable {
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		try {
 			PageFactory.initElements(driver, BaseCommPage.class);
-			BaseCommPageActions.VerifyTabletURL();
+			BaseCommPageActions.BuynowwithDevice(device_name);
+			BaseCommPageActions.VerifyPage();
 		} catch (Exception e) {
+			Assert.fail("Unable to select device and verify tariff and extras page");
+
 		}
 	}
+
 
 	//Click on \"([^\"]*)\" link and verify correct details are displayed
 	@And("^Click on \"([^\"]*)\" link and verify correct details are displayed$")
@@ -3454,6 +3463,32 @@ public class E2EOrderPlaced_Steps {
 
 		}
 	}
+	
+	@And("^Verify that promotion ribbon is displayed$")
+	public void verifypromotionribbonDisplay()
+	{
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		try {
+			PageFactory.initElements(driver, BaseCommPage.class);
+			BaseCommPageActions.VerifyRibbon();
 
+		} catch (Exception e) {
+			e.printStackTrace();
+			Assert.fail("Unable to verify promotion ribbon on the device");
+		}
+	}
+	//Then Verify the price gets updated based on the new colour and capacity
+	@And("^Verify the price gets updated based on the new colour and capacity$")
+	public void verifyPriceDisplaybased_on_Colour_and_capacity()
+	{
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		try {
+			PageFactory.initElements(driver, BaseCommPage.class);
+			BaseCommPageActions.VerifyPriceChangeuponCapacity();
 
+		} catch (Exception e) {
+			e.printStackTrace();
+			Assert.fail("Unable to verify expected device and details are in device list");
+		}
+	}
 }

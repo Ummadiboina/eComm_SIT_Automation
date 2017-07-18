@@ -22,8 +22,9 @@ Feature: C1786_E-11510-11505_TC1_iPads_tab_Device_tile_Colour_and_Capacity_varia
     And Continue to Agreements page and confirm all the agreement checks
     And Continue to Review page and review the order
     Then order confirmation is displayed
-    #Modify the above step to include pdf download
 
+    #Modify the above step to include pdf download
+    #make sure that device is ipad air 2 else validation fails for promotion
     Examples: 
       | username    | password | device_name | default_colour | default_capacity | default_stock_message | color | capacity | user         |
-      | ink_jun9198 | test123  | iPad_abc    | grey           | 16GB             | In Stock              | white | 128GB    | TEST ACCEPTA |
+      | ink_jun9198 | test123  | iPad Air 2  | Space Grey     | 16GB             | In Stock              | white | 128GB    | TEST ACCEPTA |
