@@ -5,12 +5,12 @@ import java.util.LinkedList;
 import java.util.List;
 
 import org.apache.log4j.Logger;
+import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 import org.sikuli.script.Key;
-import org.testng.Assert;
 
 
 import java.util.ArrayList;
@@ -189,11 +189,13 @@ public class PhonesListingPageAction extends Environment {
 
 	public static void clickOnSortTab() {
 		try {
-
 			log.debug("Entering clickOnSortTab function");
+
 			JavascriptExecutor js = (JavascriptExecutor) driver;
 			js.executeScript("arguments[0].click();", pageobjects.BaseCommPage.SortTab);
+
 			Thread.sleep(3000);
+
 			System.out.println("Clicked on the Sort Tab successfully");
 		} catch (Exception e) {
 			System.out.println("Failed: Cannot click on the Sort tab" + e.getMessage());
@@ -290,7 +292,6 @@ public class PhonesListingPageAction extends Environment {
 		}
 
 	}
-	
 
 	public static void clickOnResetSort() {
 		log.debug("Entering clickOnResetSort function");
@@ -311,8 +312,7 @@ public class PhonesListingPageAction extends Environment {
 			System.out.println("Failed: Cannot click on the Reset Sort Option" + e.getMessage());
 		}
 	}
-	
-	
+
 	public static void verifyDeviceGetsDisplayedBasedOnBrandFilterApplied(String FilterOption) {
 		try {
 			log.debug("Entering verifyDeviceGetsDisplayedBasedOnBrandFilterApplied function");
@@ -323,8 +323,8 @@ public class PhonesListingPageAction extends Environment {
 
 			for (int i = 0; i < ListAfterFilter.size(); i++) {
 
-				Assert.assertTrue(ListAfterFilter.get(i).contains(FilterOption),
-						"Assertion Failed: Devices displayed are not as per the filter applied");
+				Assert.assertTrue("Assertion Failed: Devices displayed are not as per the filter applied",
+						ListAfterFilter.get(i).contains(FilterOption));
 
 			}
 
@@ -335,6 +335,7 @@ public class PhonesListingPageAction extends Environment {
 					"Assertion Failed: Devices displayed are not as per the Brand filter applied" + e.getMessage());
 		}
 	}
+
 	public static void verifyDeviceGetsDisplayedBasedOnColourFilterApplied(String FilterOption) {
 		try {
 			log.debug("Entering verifyDeviceGetsDisplayedBasedOnColourFilterApplied function");
@@ -345,8 +346,8 @@ public class PhonesListingPageAction extends Environment {
 
 			for (int i = 0; i < ListAfterFilter.size(); i++) {
 
-				Assert.assertTrue(ListAfterFilter.get(i).contains(FilterOption),
-						"Assertion Failed: Devices displayed are not as per the filter applied");
+				Assert.assertTrue("Assertion Failed: Devices displayed are not as per the filter applied",
+						ListAfterFilter.get(i).contains(FilterOption));
 
 			}
 
@@ -371,8 +372,7 @@ public class PhonesListingPageAction extends Environment {
 			System.out.println("Failed: Cannot click on the FilterTab: " + e.getMessage());
 		}
 	}
-	
-	
+
 	public static void selectFilterOption(String Filter, String Option) {
 		try {
 			log.debug("Entering selectFilterOption function");
@@ -603,6 +603,389 @@ public class PhonesListingPageAction extends Environment {
 
 	}
 
+public static void clickOnViewAllProductsOnOnePage() {
+		try {
+			log.debug("Entering clickOnViewAllProductsOnOnePage function");
+			System.out.println("Entering clickOnViewAllProductsOnOnePage function");
+			if (driver.findElement(By.xpath("//*[@id='o2-page-wrapper']/div[3]/div[4]/a")).isDisplayed()) {
+				WebElement viewAllProductsOnOnePage_link = driver
+						.findElement(By.xpath("//*[@id='o2-page-wrapper']/div[3]/div[4]/a"));
+				scrollToAnElement.scrollToElement(viewAllProductsOnOnePage_link);
+				viewAllProductsOnOnePage_link.click();
+				System.out.println("Clicked on the ViewAllProductsOnOnePagesuccessfully");
+			} else {
+				System.out.println("ViewAllProductsOnOnePage link is not visible in the page");
+				log.debug("ViewAllProductsOnOnePage link is not visible in the page");
+			}
+		} catch (Exception e) {
+			System.out.println("Failed: Cannot click on the Sort tab" + e.getMessage());
+		}
+	}
+
+	public static LinkedList<String> getCurrentSortOrderUsingDeviceName() throws InterruptedException {
+
+		log.debug("Opening function getCurrentSortOrderUsingDeviceName");
+
+		Thread.sleep(10000);
+
+		// boolean NextBtndVisible;
+		// NextBtndVisible = true;
+		LinkedList<String> deviceCurrentOrder = new LinkedList<>();
+		// WebElement NextBtn =
+		// driver.findElement(By.xpath("//*[@id='o2-page-wrapper']/div[3]/div[4]/div/p[3]/a"));
+
+		// while (NextBtndVisible != false) {
+
+		// *****************This xpath is for AWS
+		// environment*******************//
+
+		/*
+		 * List<WebElement> deviceName = driver.findElement(By.xpath(
+		 * "//*[@id='o2-page-wrapper']/div[4]/div[5]/div"))
+		 * .findElements(By.xpath(
+		 * "//div[@class='device-tile my-offer ng-scope tile-one-by-two']/div/p[@class='details']"
+		 * ));
+		 */
+
+		// ********************This xpath is for Production
+		// Environment********************************//
+
+		List<WebElement> deviceName = driver.findElement(By.xpath("//*[@id='o2-page-wrapper']/div[3]/div[3]"))
+				.findElements(By.xpath("//div[@class='device-tile__top']/p[@class='details']"));
+
+		for (WebElement temp : deviceName) {
+
+			String sTemp = temp.getText();
+			deviceCurrentOrder.add(sTemp);
+		}
+
+		/*
+		 * if (NextBtn.isDisplayed()) {
+		 * scrollToAnElement.scrollToElement(NextBtn); NextBtn.click();
+		 * Thread.sleep(5000);
+		 * 
+		 * } else { NextBtndVisible = false; break; }
+		 * 
+		 * }
+		 */
+
+		return deviceCurrentOrder;
+
+	}
+
+	public static LinkedList<String> getCurrentSortOrderUsingDevicePrice() throws InterruptedException {
+
+		log.debug("Opening function getCurrentSortOrderUsingDevicePrice");
+		System.out.println("Opening function getCurrentSortOrderUsingDevicePrice");
+
+		Thread.sleep(10000);
+
+		LinkedList<String> deviceCurrentOrder = new LinkedList<>();
+		// LinkedList<String> devicenamecurrentorder = new LinkedList<>();
+		LinkedList<String> devicepricecurrentorder = new LinkedList<>();
+
+		// *********************************This xpath is for Production
+		// Environment************************************//
+		/*
+		 * List<WebElement> deviceName = driver.findElement(By.xpath(
+		 * "//*[@id='o2-page-wrapper']/div[3]/div[3]")) .findElements(By.xpath(
+		 * "//div[@class='device-tile__top']/p[@class='details']"));
+		 */
+
+		List<WebElement> devicePrice = driver.findElement(By.xpath("//*[@id='o2-page-wrapper']/div[3]/div[3]"))
+				.findElements(By.xpath(
+						"//div[@class='device-tile__bottom ng-scope']/p[@class='costs ng-binding ng-scope']/span[@class='headline ng-binding']"));
+
+		/*
+		 * for (WebElement temp1 : deviceName) {
+		 * 
+		 * String sTemp = temp1.getText(); devicenamecurrentorder.add(sTemp); }
+		 */
+
+		// *********************************This xpath is for Production
+		// Environment************************************//
+
+		for (WebElement temp2 : devicePrice) {
+
+			String sTemp = StringUtils.substringBetween(temp2.getText(), "Â£", ".00");
+			devicepricecurrentorder.add(sTemp);
+
+		}
+		// System.out.println("Device Name List: " + devicenamecurrentorder);
+		System.out.println("Device Price List: " + devicepricecurrentorder);
+
+		// *********************************This xpath is for AWS
+		// Environment************************************//
+
+		/*
+		 * List<WebElement> deviceName = driver.findElement(By.xpath(
+		 * "//*[@id='o2-page-wrapper']/div[4]/div[5]/div"))
+		 * .findElements(By.xpath(
+		 * "//div[@class='device-tile my-offer ng-scope tile-one-by-two']/div/p[@class='details']"
+		 * ));
+		 */
+		/*
+		 * List<WebElement> devicePrice = driver.findElement(By.xpath(
+		 * "//*[@id='o2-page-wrapper']/div[4]/div[5]/div"))
+		 * .findElements(By.xpath(
+		 * "//div[@class='device-tile__bottom ng-scope']/p[@class='costsng-binding ng-scope']/span[@class='headline ng-binding']"
+		 * ));
+		 */
+
+		for (int i = 0; i < devicepricecurrentorder.size(); i++) {
+			deviceCurrentOrder.add(devicepricecurrentorder.get(i));
+		}
+
+		return deviceCurrentOrder;
+
+	}
+
+	public static LinkedList<String> getCurrentSortOrderUsingDeviceColour() throws InterruptedException {
+
+		log.debug("Opening function getCurrentSortOrderUsingDeviceColour");
+		System.out.println("Opening function getCurrentSortOrderUsingDeviceColour");
+
+		Thread.sleep(10000);
+
+		LinkedList<String> deviceCurrentOrder = new LinkedList<>();
+		LinkedList<String> devicenamecurrentorder = new LinkedList<>();
+		LinkedList<String> devicecolourcurrentorder = new LinkedList<>();
+
+		// *********************************This xpath is for Production
+		// Environment************************************//
+		/*
+		 * List<WebElement> deviceName = driver.findElement(By.xpath(
+		 * "//*[@id='o2-page-wrapper']/div[3]/div[3]")) .findElements(By.xpath(
+		 * "//div[@class='device-tile__top']/p[@class='details']"));
+		 * 
+		 * 
+		 * List<WebElement> deviceColour = driver.findElement(By.xpath(
+		 * "//*[@id='o2-page-wrapper']/div[3]/div[3]")) .findElements(By.xpath(
+		 * "//div[@class='device-tile__bottom ng-scope']/p[@class='costs ng-binding ng-scope']/span[@class='headline ng-binding']"
+		 * ));
+		 */
+
+		// *********************************This xpath is for AWS
+		// Environment************************************//
+
+		List<WebElement> deviceName = driver.findElement(By.xpath("//*[@id='o2-page-wrapper']/div[4]/div[5]/div"))
+				.findElements(By.xpath(
+						"//div[@class='device-tile my-offer ng-scope tile-one-by-two']/div/p[@class='details']"));
+
+		List<WebElement> deviceColour = driver.findElement(By.xpath("//*[@id='o2-page-wrapper']/div[4]/div[5]/div"))
+				.findElements(By.xpath(
+						"//div[@class='device-details ng-scope']/div/div/label[@class='selected-colour ng-binding']"));
+
+		for (WebElement temp1 : deviceName) {
+
+			String sTemp1 = temp1.getText();
+			devicenamecurrentorder.add(sTemp1);
+		}
+
+		for (WebElement temp2 : deviceColour) {
+
+			String sTemp2 = temp2.getText();
+			devicecolourcurrentorder.add(sTemp2);
+
+		}
+		System.out.println("Device Name List: " + devicenamecurrentorder);
+		System.out.println("Device Colour List: " + devicecolourcurrentorder);
+
+		for (int i = 0; i < devicenamecurrentorder.size(); i++) {
+			deviceCurrentOrder.add(devicenamecurrentorder.get(i) + devicecolourcurrentorder.get(i));
+		}
+
+		return deviceCurrentOrder;
+
+	}
+
+	public static LinkedList<String> reArrangeListInAcendingBeforeApplyingSort(LinkedList<String> OriginalList)
+			throws InterruptedException {
+
+		LinkedList<String> ListBeforeApplyingSort = OriginalList;
+		// listSortEx(ListBeforeApplyingSort, false);
+
+		Collections.sort(ListBeforeApplyingSort);
+		System.out.println("-List arranged in ascending Order-");
+		System.out.println(ListBeforeApplyingSort);
+		return ListBeforeApplyingSort;
+
+	}
+
+	public static LinkedList<String> reArrangeListInDescendingBeforeApplyingSort(LinkedList<String> OriginalList)
+			throws InterruptedException {
+
+		LinkedList<String> ListBeforeApplyingSort = OriginalList;
+		listSortEx(ListBeforeApplyingSort, true);
+		return ListBeforeApplyingSort;
+
+	}
+
+	public static void verifyDeviceSortedOnBrand(LinkedList<String> ListBeforeApplyingSort,
+			LinkedList<String> ListAfterApplyingSort) {
+
+		try {
+
+			LinkedList<String> TempListBeforeApplyingSort = ListBeforeApplyingSort;
+			LinkedList<String> TempListAfterApplyingSort = ListAfterApplyingSort;
+
+			for (int i = 0; i < TempListBeforeApplyingSort.size(); i++) {
+				Assert.assertTrue("Assert Failed: Device list is not sorted as expected",
+						TempListBeforeApplyingSort.get(i).contains(TempListAfterApplyingSort.get(i)));
+				log.debug("Assertion Success: Devices have been sorted successfully based on Brand");
+			}
+
+			// Check SortedOr NOt?
+
+			/*
+			 * ( Boolean num = checkAscendingOrder(ListAfterApplyingSort);
+			 * System.out.println("boolean value" + num); if (num == true) {
+			 * 
+			 * System.out.println("Products names are Sorted in ascending Order"
+			 * ); } else { System.out.
+			 * println("Products names are not Sorted in ascending Order"); }
+			 */
+
+			System.out.println("Assertion Success: Devices have been sorted successfully based on Brand");
+		} catch (AssertionError e) {
+			log.debug("Assertion Failed: Devices are not sorted based on Brand ");
+			log.debug("Fail" + " - " + e.getMessage());
+		}
+
+	}
+
+	public static void verifyOriginalSortOrderRetainedAfterSortReset(LinkedList<String> ListBeforeApplyingSort,
+			LinkedList<String> ListAfterApplyingSort) {
+
+		try {
+
+			LinkedList<String> TempOriginalList = ListBeforeApplyingSort;
+			LinkedList<String> TempListAfterSortReset = ListAfterApplyingSort;
+
+			for (int i = 0; i < TempOriginalList.size(); i++) {
+				if (TempOriginalList.get(i).equalsIgnoreCase(TempListAfterSortReset.get(i))) {
+					System.out.println(TempOriginalList.get(i) + " matches " + TempListAfterSortReset.get(i));
+				} else {
+					Assert.fail("Devices did not reset to the Original sort order after sort reset");
+				}
+
+			}
+
+			System.out.println(
+					"Assertion Success: Devices got resorted successfully to the Original Order after sort reset");
+		} catch (AssertionError e) {
+			log.debug("Assertion Failed: Devices did not reset to the Original sort order after sort reset ");
+			log.debug("Fail" + " - " + e.getMessage());
+		}
+
+	}
+
+	public static boolean checkAscendingOrder(LinkedList<String> Names) {
+		String previous = ""; // empty string
+
+		for (final String cur : Names) {
+			if (cur.compareTo(previous) < 0) {
+				return false;
+			}
+			previous = cur;
+		}
+		return true;
+	}
+
+	public static void listSortEx(LinkedList<String> list, final Boolean descOrder) {
+		Collections.sort(list, new Comparator<String>() {
+
+			@Override
+			public int compare(String o1, String o2) {
+				if (descOrder) {
+					return o2.compareTo(o1);
+				} else {
+					return o1.compareTo(o2);
+				}
+			}
+		});
+	}
+
+	/*public static void checkSeeDeviceDetailsPopUp(String device) throws InterruptedException {
+		
+		List<WebElement> iPadDevicesName = pageobjects.BaseCommPage.iPadDevicesName;
+
+		WebElement SeeDeviceDetailsLink;
+		WebElement PoundsElement;
+		WebElement PenseElement;
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		String popupdevicenametext = null;
+		String poundselementtext = null;
+		String penseelementtext = null;
+		String c = null, d = null, e = null;
+		int k = 0;
+
+		for (int i = 0; i < iPadDevicesName.size(); i++) {
+
+			if (iPadDevicesName.get(i).getText().equals(device)) {
+				k = i + 1;
+				c = "(//a[contains(text(),'See device details')])[" + k + "]";
+				d = "(//span[@class='headline ng-binding'])[" + k + "]";
+				e = "(//span[@class='pence ng-binding'])[" + k + "]";
+			}
+
+		}
+		PoundsElement = driver.findElement(By.xpath(d));
+		PenseElement = driver.findElement(By.xpath(e));
+
+		SeeDeviceDetailsLink = driver.findElement(By.xpath(c));
+		js.executeScript("arguments[0].click();", SeeDeviceDetailsLink);
+		log.debug("Clicked on See Device Details Link");
+		Thread.sleep(5000);
+
+		for (String winHandle : driver.getWindowHandles()) {
+			driver.switchTo().window(winHandle);
+			log.debug("Control is in pop up");
+		}
+
+		WebElement PopupdevicenametextElement = driver.findElement(By.xpath("//*[@id='device-details']/div[1]/h3"));
+		if (PopupdevicenametextElement.isDisplayed()) {
+			popupdevicenametext = PopupdevicenametextElement.getText();
+			if (popupdevicenametext.equals(device)) {
+				log.debug("Device name in pop up is " + popupdevicenametext + "and matches the device selected");
+			}
+		} else {
+			Assert.fail("Device name in pop up is not present");
+		}
+
+		if (PoundsElement.isDisplayed()) {
+			poundselementtext = PoundsElement.getText();
+			if (poundselementtext.equals(PoundsElement.getText())) {
+				log.debug("Pounds in pop up - " + poundselementtext + ", pounds value displayed for device - "
+						+ PoundsElement.getText() + "and they are the same");
+			}
+		}
+
+		if (PenseElement.isDisplayed()) {
+			penseelementtext = PenseElement.getText();
+			if (penseelementtext.equals(PenseElement.getText())) {
+				log.debug("Pense in pop up - " + penseelementtext + ", pense value displayed for device - "
+						+ PenseElement.getText() + "and they are the same");
+			}
+		}
+
+		WebElement SpecificationsElement = driver.findElement(By.xpath("//div[@class='accordion-content']"));
+		if (!SpecificationsElement.isDisplayed()) {
+			System.out.println("specifications not displayed");
+		} else
+			System.out.println("specifications displayed");
+
+		WebElement FullSpecificationElement = driver
+				.findElement(By.xpath("//a[contains(text(),'See full technical specification')]"));
+		if (FullSpecificationElement.isDisplayed()) {
+			FullSpecificationElement.click();
+			System.out.println("Full specification link is present");
+		}
+	}*/
+	
+	
+	
+	
 	public static void isChooseADifferentTariffDisplayed() {
 		log.debug("checking if the Choose a Different Tariff link is displayed");
 		if (pageobjects.BaseCommPage.ChooseADifferentTariff.isDisplayed()) {
@@ -610,7 +993,6 @@ public class PhonesListingPageAction extends Environment {
 		} else
 			Assert.fail("Choose a different tariff link is not displayed");
 	}
-
 	public static void clickChooseADifferentTariff() {
 		log.debug("clicking on Choose a Different Tariff link");
 		if (pageobjects.BaseCommPage.ChooseADifferentTariff.isDisplayed()) {
@@ -627,6 +1009,14 @@ public class PhonesListingPageAction extends Environment {
 			Assert.fail("not able to click on 'Back To iPad Offers' link");
 	}
 
+	public static void clickBackToTabletOffers() {
+		log.debug("clicking on Back to Tablet Offers link");
+		if (pageobjects.BaseCommPage.BackToTablet.isDisplayed()) {
+			pageobjects.BaseCommPage.BackToTablet.click();
+		} else
+			Assert.fail("not able to click on 'Back To Tablet Offers' link");
+	}
+	
 	public static void checkUserNavigatedTEPage() {
 
 		if (driver.getTitle().contains("Tariffs And Extras")) {
@@ -724,8 +1114,8 @@ public class PhonesListingPageAction extends Environment {
 		WebElement BannerDescription = driver.findElement(By.xpath("//div[@class='default-content-container']"));
 
 		String text1 = "Save on your Airtime Plan";
-		String text2 = "Already on O2 Pay Monthly? Then you’ll be able to save 20% on your Airtime Plan for the whole of your contract. So you can chat, text and tweet, for less.";
-		String text3 = "You can get this discount with any iPad you want, on 2GB and above tariffs. But you won’t be able to use it with any other Airtime Plan discount. See terms.";
+		String text2 = "Already on O2 Pay Monthly? Then youï¿½ll be able to save 20% on your Airtime Plan for the whole of your contract. So you can chat, text and tweet, for less.";
+		String text3 = "You can get this discount with any iPad you want, on 2GB and above tariffs. But you wonï¿½t be able to use it with any other Airtime Plan discount. See terms.";
 		String text4 = "Looking for an Android or Windows tablet? Take a look at our exclusive deals.";
 		String text5 = "New to O2? See our iPad offers.";
 		String BannerDescriptionText = null;
@@ -804,463 +1194,6 @@ public class PhonesListingPageAction extends Environment {
 		}
 	}
 
-	public static void checkSeeDeviceDetailsPopUp(String device) throws InterruptedException {
-		List<WebElement> iPadDevicesName = pageobjects.BaseCommPage.iPadDevicesName;
-
-		WebElement SeeDeviceDetailsLink;
-		WebElement PoundsElement;
-		WebElement PenseElement;
-		JavascriptExecutor js = (JavascriptExecutor) driver;
-		String popupdevicenametext = null;
-		String poundselementtext = null;
-		String penseelementtext = null;
-		String c = null, d = null, e = null;
-		int k = 0;
-
-		for (int i = 0; i < iPadDevicesName.size(); i++) {
-
-			if (iPadDevicesName.get(i).getText().equals(device)) {
-				k = i + 1;
-				c = "(//a[contains(text(),'See device details')])[" + k + "]";
-				d = "(//span[@class='headline ng-binding'])[" + k + "]";
-				e = "(//span[@class='pence ng-binding'])[" + k + "]";
-			}
-
-		}
-		PoundsElement = driver.findElement(By.xpath(d));
-		PenseElement = driver.findElement(By.xpath(e));
-
-		SeeDeviceDetailsLink = driver.findElement(By.xpath(c));
-		js.executeScript("arguments[0].click();", SeeDeviceDetailsLink);
-		log.debug("Clicked on See Device Details Link");
-		Thread.sleep(5000);
-
-		for (String winHandle : driver.getWindowHandles()) {
-			driver.switchTo().window(winHandle);
-			log.debug("Control is in pop up");
-		}
-
-		WebElement PopupdevicenametextElement = driver.findElement(By.xpath("//*[@id='device-details']/div[1]/h3"));
-		if (PopupdevicenametextElement.isDisplayed()) {
-			popupdevicenametext = PopupdevicenametextElement.getText();
-			if (popupdevicenametext.equals(device)) {
-				log.debug("Device name in pop up is " + popupdevicenametext + "and matches the device selected");
-			}
-		} else {
-			Assert.fail("Device name in pop up is not present");
-		}
-
-		if (PoundsElement.isDisplayed()) {
-			poundselementtext = PoundsElement.getText();
-			if (poundselementtext.equals(PoundsElement.getText())) {
-				log.debug("Pounds in pop up - " + poundselementtext + ", pounds value displayed for device - "
-						+ PoundsElement.getText() + "and they are the same");
-			}
-		}
-
-		if (PenseElement.isDisplayed()) {
-			penseelementtext = PenseElement.getText();
-			if (penseelementtext.equals(PenseElement.getText())) {
-				log.debug("Pense in pop up - " + penseelementtext + ", pense value displayed for device - "
-						+ PenseElement.getText() + "and they are the same");
-			}
-		}
-
-		WebElement SpecificationsElement = driver.findElement(By.xpath("//div[@class='accordion-content']"));
-		if (!SpecificationsElement.isDisplayed()) {
-			System.out.println("specifications not displayed");
-		} else
-			System.out.println("specifications displayed");
-
-		WebElement FullSpecificationElement = driver
-				.findElement(By.xpath("//a[contains(text(),'See full technical specification')]"));
-		if (FullSpecificationElement.isDisplayed()) {
-			FullSpecificationElement.click();
-			System.out.println("Full specification link is present");
-		}
-	}
 	
 	
-	/*public static void checkSeeDeviceDetailsPopUp(String device) throws InterruptedException {
-		List<WebElement> iPadDevicesName = pageobjects.BaseCommPage.iPadDevicesName;
-
-		WebElement SeeDeviceDetailsLink;
-		WebElement PoundsElement;
-		WebElement PenseElement;
-		JavascriptExecutor js = (JavascriptExecutor) driver;
-		String popupdevicenametext = null;
-		String poundselementtext = null;
-		String penseelementtext = null;
-		String c = null, d = null, e = null;
-		int k = 0;
-
-		for (int i = 0; i < iPadDevicesName.size(); i++) {
-
-			if (iPadDevicesName.get(i).getText().equals(device)) {
-				k = i + 1;
-				c = "(//a[contains(text(),'See device details')])[" + k + "]";
-				d = "(//span[@class='headline ng-binding'])[" + k + "]";
-				e = "(//span[@class='pence ng-binding'])[" + k + "]";
-			}
-
-		}
-		PoundsElement = driver.findElement(By.xpath(d));
-		PenseElement = driver.findElement(By.xpath(e));
-
-		SeeDeviceDetailsLink = driver.findElement(By.xpath(c));
-		js.executeScript("arguments[0].click();", SeeDeviceDetailsLink);
-		log.debug("Clicked on See Device Details Link");
-		Thread.sleep(5000);
-
-		for (String winHandle : driver.getWindowHandles()) {
-			driver.switchTo().window(winHandle);
-			log.debug("Control is in pop up");
-		}
-
-		WebElement PopupdevicenametextElement = driver.findElement(By.xpath("//*[@id='device-details']/div[1]/h3"));
-		if (PopupdevicenametextElement.isDisplayed()) {
-			popupdevicenametext = PopupdevicenametextElement.getText();
-			if (popupdevicenametext.equals(device)) {
-				log.debug("Device name in pop up is " + popupdevicenametext + "and matches the device selected");
-			}
-		} else {
-			Assert.fail("Device name in pop up is not present");
-		}
-
-		if (PoundsElement.isDisplayed()) {
-			poundselementtext = PoundsElement.getText();
-			if (poundselementtext.equals(PoundsElement.getText())) {
-				log.debug("Pounds in pop up - " + poundselementtext + ", pounds value displayed for device - "
-						+ PoundsElement.getText() + "and they are the same");
-			}
-		}
-
-		if (PenseElement.isDisplayed()) {
-			penseelementtext = PenseElement.getText();
-			if (penseelementtext.equals(PenseElement.getText())) {
-				log.debug("Pense in pop up - " + penseelementtext + ", pense value displayed for device - "
-						+ PenseElement.getText() + "and they are the same");
-			}
-		}
-
-		WebElement SpecificationsElement = driver.findElement(By.xpath("//div[@class='accordion-content']"));
-		if (!SpecificationsElement.isDisplayed()) {
-			System.out.println("specifications not displayed");
-		} else
-			System.out.println("specifications displayed");
-
-		WebElement FullSpecificationElement = driver
-				.findElement(By.xpath("//a[contains(text(),'See full technical specification')]"));
-		if (FullSpecificationElement.isDisplayed()) {
-			FullSpecificationElement.click();
-			System.out.println("Full specification link is present");
-		}
-	}*/
-	public static void clickOnViewAllProductsOnOnePage() {
-		try {
-			log.debug("Entering clickOnViewAllProductsOnOnePage function");
-			System.out.println("Entering clickOnViewAllProductsOnOnePage function");
-			if (driver.findElement(By.xpath("//*[@id='o2-page-wrapper']/div[3]/div[4]/a")).isDisplayed()) {
-				WebElement viewAllProductsOnOnePage_link = driver
-						.findElement(By.xpath("//*[@id='o2-page-wrapper']/div[3]/div[4]/a"));
-				scrollToAnElement.scrollToElement(viewAllProductsOnOnePage_link);
-				viewAllProductsOnOnePage_link.click();
-				System.out.println("Clicked on the ViewAllProductsOnOnePagesuccessfully");
-			} else {
-				System.out.println("ViewAllProductsOnOnePage link is not visible in the page");
-				log.debug("ViewAllProductsOnOnePage link is not visible in the page");
-			}
-		} catch (Exception e) {
-			System.out.println("Failed: Cannot click on the Sort tab" + e.getMessage());
-		}
-	}
-
-
-	
-	public static LinkedList<String> getCurrentSortOrderUsingDeviceName() throws InterruptedException {
-
-		log.debug("Opening function getCurrentSortOrderUsingDeviceName");
-
-		Thread.sleep(10000);
-
-		// boolean NextBtndVisible;
-		// NextBtndVisible = true;
-		LinkedList<String> deviceCurrentOrder = new LinkedList<>();
-		// WebElement NextBtn =
-		// driver.findElement(By.xpath("//*[@id='o2-page-wrapper']/div[3]/div[4]/div/p[3]/a"));
-
-		// while (NextBtndVisible != false) {
-
-		// *****************This xpath is for AWS
-		// environment*******************//
-
-		/*
-		 * List<WebElement> deviceName = driver.findElement(By.xpath(
-		 * "//*[@id='o2-page-wrapper']/div[4]/div[5]/div"))
-		 * .findElements(By.xpath(
-		 * "//div[@class='device-tile my-offer ng-scope tile-one-by-two']/div/p[@class='details']"
-		 * ));
-		 */
-
-		// ********************This xpath is for Production
-		// Environment********************************//
-
-		List<WebElement> deviceName = driver.findElement(By.xpath("//*[@id='o2-page-wrapper']/div[3]/div[3]"))
-				.findElements(By.xpath("//div[@class='device-tile__top']/p[@class='details']"));
-
-		for (WebElement temp : deviceName) {
-
-			String sTemp = temp.getText();
-			deviceCurrentOrder.add(sTemp);
-		}
-
-		/*
-		 * if (NextBtn.isDisplayed()) {
-		 * scrollToAnElement.scrollToElement(NextBtn); NextBtn.click();
-		 * Thread.sleep(5000);
-		 * 
-		 * } else { NextBtndVisible = false; break; }
-		 * 
-		 * }
-		 */
-
-		return deviceCurrentOrder;
-
-	}
-	
-	
-	public static LinkedList<String> getCurrentSortOrderUsingDevicePrice() throws InterruptedException {
-
-		log.debug("Opening function getCurrentSortOrderUsingDevicePrice");
-		System.out.println("Opening function getCurrentSortOrderUsingDevicePrice");
-
-		Thread.sleep(10000);
-
-		LinkedList<String> deviceCurrentOrder = new LinkedList<>();
-		// LinkedList<String> devicenamecurrentorder = new LinkedList<>();
-		LinkedList<String> devicepricecurrentorder = new LinkedList<>();
-
-		// *********************************This xpath is for Production
-		// Environment************************************//
-		/*
-		 * List<WebElement> deviceName = driver.findElement(By.xpath(
-		 * "//*[@id='o2-page-wrapper']/div[3]/div[3]")) .findElements(By.xpath(
-		 * "//div[@class='device-tile__top']/p[@class='details']"));
-		 */
-
-		List<WebElement> devicePrice = driver.findElement(By.xpath("//*[@id='o2-page-wrapper']/div[3]/div[3]"))
-				.findElements(By.xpath(
-						"//div[@class='device-tile__bottom ng-scope']/p[@class='costs ng-binding ng-scope']/span[@class='headline ng-binding']"));
-
-		/*
-		 * for (WebElement temp1 : deviceName) {
-		 * 
-		 * String sTemp = temp1.getText(); devicenamecurrentorder.add(sTemp); }
-		 */
-
-		// *********************************This xpath is for Production
-		// Environment************************************//
-
-		for (WebElement temp2 : devicePrice) {
-
-			String sTemp = StringUtils.substringBetween(temp2.getText(), "", ".00");
-			devicepricecurrentorder.add(sTemp);
-
-		}
-		// System.out.println("Device Name List: " + devicenamecurrentorder);
-		System.out.println("Device Price List: " + devicepricecurrentorder);
-
-		// *********************************This xpath is for AWS
-		// Environment************************************//
-
-		/*
-		 * List<WebElement> deviceName = driver.findElement(By.xpath(
-		 * "//*[@id='o2-page-wrapper']/div[4]/div[5]/div"))
-		 * .findElements(By.xpath(
-		 * "//div[@class='device-tile my-offer ng-scope tile-one-by-two']/div/p[@class='details']"
-		 * ));
-		 */
-		/*
-		 * List<WebElement> devicePrice = driver.findElement(By.xpath(
-		 * "//*[@id='o2-page-wrapper']/div[4]/div[5]/div"))
-		 * .findElements(By.xpath(
-		 * "//div[@class='device-tile__bottom ng-scope']/p[@class='costsng-binding ng-scope']/span[@class='headline ng-binding']"
-		 * ));
-		 */
-
-		for (int i = 0; i < devicepricecurrentorder.size(); i++) {
-			deviceCurrentOrder.add(devicepricecurrentorder.get(i));
-		}
-
-		return deviceCurrentOrder;
-
-	}
-	
-	
-	public static LinkedList<String> getCurrentSortOrderUsingDeviceColour() throws InterruptedException {
-
-		log.debug("Opening function getCurrentSortOrderUsingDeviceColour");
-		System.out.println("Opening function getCurrentSortOrderUsingDeviceColour");
-
-		Thread.sleep(10000);
-
-		LinkedList<String> deviceCurrentOrder = new LinkedList<>();
-		LinkedList<String> devicenamecurrentorder = new LinkedList<>();
-		LinkedList<String> devicecolourcurrentorder = new LinkedList<>();
-
-		// *********************************This xpath is for Production
-		// Environment************************************//
-		/*
-		 * List<WebElement> deviceName = driver.findElement(By.xpath(
-		 * "//*[@id='o2-page-wrapper']/div[3]/div[3]")) .findElements(By.xpath(
-		 * "//div[@class='device-tile__top']/p[@class='details']"));
-		 * 
-		 * 
-		 * List<WebElement> deviceColour = driver.findElement(By.xpath(
-		 * "//*[@id='o2-page-wrapper']/div[3]/div[3]")) .findElements(By.xpath(
-		 * "//div[@class='device-tile__bottom ng-scope']/p[@class='costs ng-binding ng-scope']/span[@class='headline ng-binding']"
-		 * ));
-		 */
-
-		// *********************************This xpath is for AWS
-		// Environment************************************//
-
-		List<WebElement> deviceName = driver.findElement(By.xpath("//*[@id='o2-page-wrapper']/div[4]/div[5]/div"))
-				.findElements(By.xpath(
-						"//div[@class='device-tile my-offer ng-scope tile-one-by-two']/div/p[@class='details']"));
-
-		List<WebElement> deviceColour = driver.findElement(By.xpath("//*[@id='o2-page-wrapper']/div[4]/div[5]/div"))
-				.findElements(By.xpath(
-						"//div[@class='device-details ng-scope']/div/div/label[@class='selected-colour ng-binding']"));
-
-		for (WebElement temp1 : deviceName) {
-
-			String sTemp1 = temp1.getText();
-			devicenamecurrentorder.add(sTemp1);
-		}
-
-		for (WebElement temp2 : deviceColour) {
-
-			String sTemp2 = temp2.getText();
-			devicecolourcurrentorder.add(sTemp2);
-
-		}
-		System.out.println("Device Name List: " + devicenamecurrentorder);
-		System.out.println("Device Colour List: " + devicecolourcurrentorder);
-
-		for (int i = 0; i < devicenamecurrentorder.size(); i++) {
-			deviceCurrentOrder.add(devicenamecurrentorder.get(i) + devicecolourcurrentorder.get(i));
-		}
-
-		return deviceCurrentOrder;
-
-	}
-	
-	public static LinkedList<String> reArrangeListInAcendingBeforeApplyingSort(LinkedList<String> OriginalList)
-			throws InterruptedException {
-
-		LinkedList<String> ListBeforeApplyingSort = OriginalList;
-		// listSortEx(ListBeforeApplyingSort, false);
-
-		Collections.sort(ListBeforeApplyingSort);
-		System.out.println("-List arranged in ascending Order-");
-		System.out.println(ListBeforeApplyingSort);
-		return ListBeforeApplyingSort;
-
-	}
-
-
-	public static LinkedList<String> reArrangeListInDescendingBeforeApplyingSort(LinkedList<String> OriginalList)
-			throws InterruptedException {
-
-		LinkedList<String> ListBeforeApplyingSort = OriginalList;
-		listSortEx(ListBeforeApplyingSort, true);
-		return ListBeforeApplyingSort;
-
-	}
-
-	public static void verifyDeviceSortedOnBrand(LinkedList<String> ListBeforeApplyingSort,
-			LinkedList<String> ListAfterApplyingSort) {
-
-		try {
-
-			LinkedList<String> TempListBeforeApplyingSort = ListBeforeApplyingSort;
-			LinkedList<String> TempListAfterApplyingSort = ListAfterApplyingSort;
-
-			for (int i = 0; i < TempListBeforeApplyingSort.size(); i++) {
-				Assert.assertTrue(TempListBeforeApplyingSort.get(i).contains(TempListAfterApplyingSort.get(i)),
-						"Assert Failed: Device list is not sorted as expected");
-				log.debug("Assertion Success: Devices have been sorted successfully based on Brand");
-			}
-
-			// Check SortedOr NOt?
-
-			/*
-			 * ( Boolean num = checkAscendingOrder(ListAfterApplyingSort);
-			 * System.out.println("boolean value" + num); if (num == true) {
-			 * 
-			 * System.out.println("Products names are Sorted in ascending Order"
-			 * ); } else { System.out.
-			 * println("Products names are not Sorted in ascending Order"); }
-			 */
-
-			System.out.println("Assertion Success: Devices have been sorted successfully based on Brand");
-		} catch (AssertionError e) {
-			log.debug("Assertion Failed: Devices are not sorted based on Brand ");
-			log.debug("Fail" + " - " + e.getMessage());
-		}
-
-	}
-
-	public static void verifyOriginalSortOrderRetainedAfterSortReset(LinkedList<String> ListBeforeApplyingSort,
-			LinkedList<String> ListAfterApplyingSort) {
-
-		try {
-
-			LinkedList<String> TempOriginalList = ListBeforeApplyingSort;
-			LinkedList<String> TempListAfterSortReset = ListAfterApplyingSort;
-
-			for (int i = 0; i < TempOriginalList.size(); i++) {
-				if (TempOriginalList.get(i).equalsIgnoreCase(TempListAfterSortReset.get(i))) {
-					System.out.println(TempOriginalList.get(i) + " matches " + TempListAfterSortReset.get(i));
-				} else {
-					Assert.fail("Devices did not reset to the Original sort order after sort reset");
-				}
-
-			}
-
-			System.out.println(
-					"Assertion Success: Devices got resorted successfully to the Original Order after sort reset");
-		} catch (AssertionError e) {
-			log.debug("Assertion Failed: Devices did not reset to the Original sort order after sort reset ");
-			log.debug("Fail" + " - " + e.getMessage());
-		}
-
-	}
-
-	public static boolean checkAscendingOrder(LinkedList<String> Names) {
-		String previous = ""; // empty string
-
-		for (final String cur : Names) {
-			if (cur.compareTo(previous) < 0) {
-				return false;
-			}
-			previous = cur;
-		}
-		return true;
-	}
-	
-	public static void listSortEx(LinkedList<String> list, final Boolean descOrder) {
-		Collections.sort(list, new Comparator<String>() {
-
-			@Override
-			public int compare(String o1, String o2) {
-				if (descOrder) {
-					return o2.compareTo(o1);
-				} else {
-					return o1.compareTo(o2);
-				}
-			}
-		});
-	}
 }

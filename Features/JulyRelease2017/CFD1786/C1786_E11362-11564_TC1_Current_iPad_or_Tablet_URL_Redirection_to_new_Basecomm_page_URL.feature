@@ -14,5 +14,5 @@ Feature: C1786_E11362-11564_TC1_Current_iPad_or_Tablet_URL_Redirection_to_new_Ba
     And verify that I get redirected to <NewURL>
 
     Examples: 
-      | username           | password  | OldIpadURL                               | OldTabletURL                               | NewURL                                     |
-      | bvt2.cfu@gmail.com | cfubvt123 | https://www.o2.co.uk/shop/my-offers/ipad | https://www.o2.co.uk/shop/my-offers/tablet | www.o2.co.uk/shop/existing-customer-offers |
+      | username             | password | OldIpadURL                               | OldTabletURL                               | NewURL                                     |
+      | 07770001111@o2.co.uk | test123  | https://www.o2.co.uk/shop/my-offers/ipad | https://www.o2.co.uk/shop/my-offers/tablet | www.o2.co.uk/shop/existing-customer-offers |

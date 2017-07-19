@@ -8,16 +8,17 @@ Feature: C1786_E11354-11447-11565_TC1_Existing_Custo_Ipads_Tab_Filter_and_Sort_F
     And I navigate to the Basecomm Page
     And Verify the contents of the iPad section in the landing page
     #Verify URL is iPad specific
-    And Verify the current sort order details
+    And Verify the current sort order details <sort option>
     And click on the Sort tab and choose required <sort option>
-    #click on "Done" button as part of the above step
-    And Verify the devices gets sorted based on the sort option
+    And Verify the devices gets sorted based on the sort option <sort option>
     And click on the Sort tab and reset sort
-    And Verify that original sort order is retained
-    And click on Filter tab and choose required <colour> option
-    #click on "Done" button as part of the above step
-    And Verify the devices gets displayed as per the filter applied
+    And Verify that original sort order is retained <sort option>
+    And click on the Filter tab and choose required <Filter> <Option> option
+    And Verify the devices gets displayed as per the filter applied <Filter> <Option>
 
     Examples: 
-      | username    | password | sort_option | colour |
-      | ink_jun9198 | test123  | MonthlyHtoL | Yellow |
+      | username             | password | sort option      | Filter | Option |
+      | 07770001111@o2.co.uk | test123  | MonthlyLowToHigh | Colour | Yellow |
+  #Filter: Brand,Colour
+  #BrandFilter-Options:Alcatel,Apple,Doro,HTC,Huawei,LG,Moto,OnePlus,Samsung,Sony
+  #ColourFilter-Options:Grey,Black,Yellow,Blue,White,Green,Red

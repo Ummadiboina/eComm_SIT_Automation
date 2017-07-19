@@ -14,5 +14,5 @@ Feature: C11786_E11510-11505_TC5_Non_Basecomm_tariff_basket_page_change_tariff_l
     And click on the "Choose a different tariff" link and verify user navigated back to "Tariff and Extras" page
 
     Examples: 
-      | username    | password | tabletname     |
-      | ink_jun9198 | test123  | basecommtablet |
+      | username             | password | tabletname                |
+      | 07770001111@o2.co.uk | test123  | Samsung Galaxy Tab Active |

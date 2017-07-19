@@ -17,5 +17,7 @@ Feature: C1786_E-11355-11357-11356-11359_TC6_Existing_Custo_Basecomm_Other_Table
     Then click on the "Back to tablet offers" link and verify user gets redirected to Basecomms listing page
 
     Examples: 
-      | username    | password | device_name | default_colour | default_capacity | default_stock_message |
-      | ink_jun9198 | test123  | tablet_abc  | grey           | 16GB             | PreOrder              |
+      Examples:
+
+      | username             | password | device_name               | default_colour | default_capacity | default_stock_message | color |
+      | 07770001111@o2.co.uk | test123  | Samsung Galaxy Tab Active | Titanium Green | 16GB             | Pre Order             | white |

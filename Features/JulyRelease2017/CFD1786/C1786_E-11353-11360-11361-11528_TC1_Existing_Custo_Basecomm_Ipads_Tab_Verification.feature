@@ -9,5 +9,5 @@ Feature: C1786_E-11353-11360-11361-11528_TC1_Existing_Custo_Basecomm_Ipads_Tab_V
     Then Verify only iPad specific devices are displayed under the iPad section
 
     Examples: 
-      | username           | password  |
-      | bvt2.cfu@gmail.com | cfubvt123 |
+      | username             | password |
+      | 07770001111@o2.co.uk | test123  |

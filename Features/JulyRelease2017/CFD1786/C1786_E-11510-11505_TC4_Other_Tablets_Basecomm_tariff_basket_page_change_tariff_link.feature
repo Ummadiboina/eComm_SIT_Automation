@@ -16,5 +16,5 @@ Feature: C1786_E-11510-11505_TC4_Other_Tablets_Basecomm_tariff_basket_page_chang
     And click on the "Choose a different tariff" link and verify user navigated back to "Tariff and Extras" page
 
     Examples: 
-      | username    | password | device_name | default_colour | default_capacity | default_stock_message |
-      | ink_jun9198 | test123  | Tablet_abc  | grey           | 16GB             | In Stock              |
+      | username             | password | device_name               | default_colour | default_capacity | default_stock_message |
+      | 07770001111@o2.co.uk | test123  | Samsung Galaxy Tab Active | Titanium Green | 16GB             | In Stock              |

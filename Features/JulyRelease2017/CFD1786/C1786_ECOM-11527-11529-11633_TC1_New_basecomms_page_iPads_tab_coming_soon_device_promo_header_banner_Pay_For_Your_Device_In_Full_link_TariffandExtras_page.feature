@@ -18,7 +18,7 @@ Feature: C1786_ECOM-11527-11529-11633_TC1_New_basecomms_page_iPads_tab_coming_so
     #Veirfy device price is not required
     #Verify Buy Now button is not enabled
     And Verify that promotion ribbon is displayed
-    And Click on "See device details" link and verify correct details are displayed    
+    And Click on "See device details" link for <device_name> and verify correct details are displayed
     And Click on "Buy Now" button for <device_name> and verify "Tariffs and Extras" page is displayed
     And click on "Pay for your device in full" link and select a "random" tariff
     And I Land on the basket page and choose home delivery option
@@ -31,5 +31,5 @@ Feature: C1786_ECOM-11527-11529-11633_TC1_New_basecomms_page_iPads_tab_coming_so
 
     #Modify the above step to include pdf download
     Examples: 
-      | username    | password | device_name | default_colour | default_capacity | default_stock_message | color | capacity | user         |
-      | ink_jun9198 | test123  | iPad_abc    | grey           | 16GB             | In Stock              | white | 128GB    | TEST ACCEPTA |
+      | username             | password | device_name       | default_colour | default_capacity | default_stock_message | colour |
+      | 07770001111@o2.co.uk | test123  | Apple iPad mini 3 | Space Grey     | 16GB             | In Stock              | white  |
