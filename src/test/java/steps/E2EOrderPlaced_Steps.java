@@ -3026,7 +3026,7 @@ public class E2EOrderPlaced_Steps {
 
 	}
 
-	@And("^I click on 'Stockpot' tab and search using <SKU_ID> to see the stock status then I should see them in Pre Order status$")
+	@Then("^I click on 'Stockpot' tab and search using (\\d+)AMFI(\\d+)N to see the stock status then I should see them in Pre Order status$")
 	public void i_click_on_Stockpot_tab_and_search_using_SKU_ID_to_see_the_stock_status_then_I_should_see_them_in_Pre_Order_status(
 			String SKUID) throws Throwable {
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
@@ -3743,7 +3743,6 @@ public class E2EOrderPlaced_Steps {
 			PageFactory.initElements(driver, BaseCommPage.class);
 			BaseCommPageActions.verifyTariffType("Normal");	
 			BaseCommPageActions.verifyTariffType("Check");
-
 		} catch (Exception e) {
 			e.printStackTrace();
 			Assert.fail("Unable to navigate to iPad landing page");
@@ -3751,5 +3750,19 @@ public class E2EOrderPlaced_Steps {
 		}
 	}
 
+	@And("^Verify that Basecomms is displayed in the offers section$")
+	public void verify_that_Basecomms_is_displayed_in_the_offers_section() throws Throwable {
+		try {
+
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, Agent_DealBuilderPage.class);
+			Agent_DealBuilderPageActions.BasecommsAgentOffersColumnValidation();
+
+		} catch (Exception e) {
+			e.printStackTrace();
+			Assert.fail("Unable to Validate basecomms offer link");
+		}
+	}
+	
 
 }
