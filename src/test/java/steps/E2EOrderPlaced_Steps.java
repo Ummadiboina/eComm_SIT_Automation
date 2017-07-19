@@ -3672,6 +3672,7 @@ public class E2EOrderPlaced_Steps {
 		try {
 
 			PageFactory.initElements(driver, PhonesListingPage.class);
+			PageFactory.initElements(driver, BasketPage.class);
 			PAYMandPAYGTariffAndExtrasPageActions.verifyAllSectionsDisplayedInTariffsAndExtrasPage();
 			PAYMandPAYGTariffAndExtrasPageActions.verifyBasecommTariffAndExtrasPageHeaderDetails();
 			PAYMandPAYGTariffAndExtrasPageActions.verifyBasecommTariffAndExtrasDockHeaderDetails(DeviceName);
