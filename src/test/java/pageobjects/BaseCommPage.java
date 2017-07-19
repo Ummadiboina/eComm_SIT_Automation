@@ -1,8 +1,6 @@
 package pageobjects;
 import java.util.List;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindAll;
 import org.openqa.selenium.support.FindBy;
@@ -41,6 +39,8 @@ public class BaseCommPage {
 		})
 	public static List<WebElement> TabletDevicesName;
 	
+	@FindBy(how = How.XPATH, using = "//h2[contains(text(),'Filter')]")
+	public static WebElement FilterTab;
 //==============
 
 /*
@@ -128,4 +128,5 @@ public static WebElement PriceiPadAir2;
 
 @FindBy(how = How.XPATH, using = ("//*[@data-qa-device-model-family='iPad Air 2']/div[1]/div[2]/div[1]/div[2]/div[2]/select[@id='memory']"))
 public static WebElement CapacityipadAir2;
+
 }

@@ -1,6 +1,7 @@
 package steps;
 
 import java.util.HashMap;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
@@ -84,6 +85,7 @@ import pageobjects.ReviewPage;
 import pageobjects.ShopLandingPage;
 import pageobjects.SimsPage;
 import pageobjects.SmartwatchesPage;
+import pageobjects.SortingAndFilter;
 import pageobjects.TabletPage;
 import pageobjects.UpgradeCustomerPage;
 import pageobjects.UpgradePhonesListingPage;
@@ -94,6 +96,10 @@ public class E2EOrderPlaced_Steps {
 	public WebDriver driver;
 	public List<HashMap<String, String>> datamap;
 	static Logger log = Logger.getLogger("devpinoyLogger");
+
+	LinkedList<String> expectedListBeforeSort = null;
+	LinkedList<String> originalList = null;
+	LinkedList<String> TempList3 = null;
 
 	public E2EOrderPlaced_Steps() {
 		driver = Hooks.driver;
@@ -769,6 +775,7 @@ public class E2EOrderPlaced_Steps {
 			Thread.sleep(3000);
 			// Assert.assertEquals("The condition is ",
 			// driver.findElement(By.xpath("//*[@value='Go to checkout'][1]")));
+			//driver.findElement(By.xpath("//*[@value='Go to checkout'][1]"));
 			BasketPageActions.BasketContentsforNonConnected();
 			BasketPageActions.CollectionorDelivery("homeDelivery");
 		} catch (Exception e) {
@@ -2551,7 +2558,8 @@ public class E2EOrderPlaced_Steps {
 		}
 	}
 
-/*	@And("^choose ([^\"]*) contract length$")
+
+	/*	@And("^choose ([^\"]*) contract length$")
 	public void choose_contract_length(String contractlength) {
 
 		try {
@@ -3161,7 +3169,7 @@ public class E2EOrderPlaced_Steps {
 
 		}
 	}
-	
+
 	/*@Then("^Verify only tablet specific devices are displayed under the Other tablets section$")
 	public void Veri() throws Throwable {
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
@@ -3228,13 +3236,15 @@ public class E2EOrderPlaced_Steps {
 		}
 	}
 
-	@And("^click on the Sort tab and choose required ([^\"])$")
+	@And("^click on the Sort tab and choose required ([^\"]*)$")
 	public void click_on_the_Sort_tab_and_choose_required_sort_option(String Sort) throws Throwable {
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		try {
+
 			PageFactory.initElements(driver, BaseCommPage.class);
-			BaseCommPageActions.clickOnSortTab();
-			BaseCommPageActions.selectSortOption(Sort);
+			PageFactory.initElements(driver, SortingAndFilter.class);
+			PhonesListingPageAction.clickOnSortTab();
+			PhonesListingPageAction.selectSortOption(Sort);
 		} catch (Exception e) {
 			e.printStackTrace();
 			Assert.fail("Unable to click on the Sort tab and choose required sort option");
@@ -3262,26 +3272,22 @@ public class E2EOrderPlaced_Steps {
 		try {
 			PageFactory.initElements(driver, BaseCommPage.class);
 			BaseCommPageActions.VerifyIpadURL();
-		} catch (Exception e) 
-		{
+		} catch (Exception e) {
 			Assert.fail("Unable to verify contents of the iPad section in the landing page");
 		}
 	}
-	
+
 	@And("^Verify the contents of the tablet section in the Other Tablets tab$")
 	public void VerifyContentsofTabletSection() throws Throwable {
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		try {
 			PageFactory.initElements(driver, BaseCommPage.class);
 			BaseCommPageActions.VerifyTabletURL();
-		} catch (Exception e) 
-		{
+		} catch (Exception e) {
 			Assert.fail("Unable to verify contents of the Tablet section in the landing page");
 		}
 	}
-	
 
-	
 	@Given("^Click on \"([^\"]*)\" button for ([^\"]*) and verify \"([^\"]*)\" page is displayed$")
 	public void SelectdeviceAndVerifyTariffandExtras(String device_name) throws Throwable {
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
@@ -3295,22 +3301,22 @@ public class E2EOrderPlaced_Steps {
 		}
 	}
 
-
-	//Click on \"([^\"]*)\" link and verify correct details are displayed
+	// Click on \"([^\"]*)\" link and verify correct details are displayed
 	@And("^Click on \"([^\"]*)\" link and verify correct details are displayed$")
 	public void Click_on_See_device_details_link_and_verify_correct_details_are_displayed(String device)
 			throws Throwable {
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		try {
 			PageFactory.initElements(driver, BaseCommPage.class);
-		PhonesListingPageAction.checkSeeDeviceDetailsPopUp(device);
-		//	BaseCommPageActions.checkSeeDeviceDetailsPopUp(device);
+			PhonesListingPageAction.checkSeeDeviceDetailsPopUp(device);
+			// BaseCommPageActions.checkSeeDeviceDetailsPopUp(device);
 		} catch (Exception e) {
 			e.printStackTrace();
 			Assert.fail("Unable to Verify the see device link popup of the basecomm landing page");
 		}
-	} 
-@And("^choose ([^\"]*) contract length$")
+	}
+
+	@And("^choose ([^\"]*) contract length$")
 	public void choose_contract_length(String contractlength) {
 
 		try {
@@ -3323,6 +3329,7 @@ public class E2EOrderPlaced_Steps {
 			Assert.fail("Unable to choose contract length");
 		}
 	}
+
 	@And("^choose ([^\"]*) contract length for MBB$")
 	public void choose_contract_length_for_MBB(String contractlength) {
 
@@ -3336,7 +3343,6 @@ public class E2EOrderPlaced_Steps {
 			Assert.fail("Unable to choose contract length");
 		}
 	}
-
 
 	@And("^Verify \"Choose a different tariff\" link is displayed$")
 	public void verify_choose_a_diff_tariff_link_displayed() throws Throwable {
@@ -3451,7 +3457,8 @@ public class E2EOrderPlaced_Steps {
 	}
 
 	@And("^Verify expected ([^\"]*) and its specific details are present in the device list ([^\"]*),([^\"]*),([^\"]*)$")
-	public void verify_expected_device_and_details_are_in_device_list(String device, String color, String capacity,String stockmessage) throws Throwable {
+	public void verify_expected_device_and_details_are_in_device_list(String device, String color, String capacity,
+			String stockmessage) throws Throwable {
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		try {
 			PageFactory.initElements(driver, BaseCommPage.class);
@@ -3463,10 +3470,9 @@ public class E2EOrderPlaced_Steps {
 
 		}
 	}
-	
+
 	@And("^Verify that promotion ribbon is displayed$")
-	public void verifypromotionribbonDisplay()
-	{
+	public void verifypromotionribbonDisplay() {
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		try {
 			PageFactory.initElements(driver, BaseCommPage.class);
@@ -3477,10 +3483,10 @@ public class E2EOrderPlaced_Steps {
 			Assert.fail("Unable to verify promotion ribbon on the device");
 		}
 	}
-	//Then Verify the price gets updated based on the new colour and capacity
+
+	// Then Verify the price gets updated based on the new colour and capacity
 	@And("^Verify the price gets updated based on the new colour and capacity$")
-	public void verifyPriceDisplaybased_on_Colour_and_capacity()
-	{
+	public void verifyPriceDisplaybased_on_Colour_and_capacity() {
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		try {
 			PageFactory.initElements(driver, BaseCommPage.class);
@@ -3489,6 +3495,185 @@ public class E2EOrderPlaced_Steps {
 		} catch (Exception e) {
 			e.printStackTrace();
 			Assert.fail("Unable to verify expected device and details are in device list");
+		}
+	}
+	
+	@And("^Verify the current sort order details ([^\"]*)$")
+	public void verify_current_sort_order(String SortOption) throws Throwable {
+
+		try {
+			log.debug("Running Test Step: @And(Verify the current sort order details)");
+
+			if (driver.findElement(By.xpath("//*[@class='page-all']")).isEnabled()) {
+				driver.findElement(By.xpath("//*[@class='page-all']")).click();
+			} else {
+
+				PhonesListingPageAction.clickOnViewAllProductsOnOnePage();
+			}
+
+			if (SortOption.equals("BrandAToZ") || SortOption.equals("BrandZToA")) {
+				originalList = PhonesListingPageAction.getCurrentSortOrderUsingDeviceName();
+				TempList3 = PhonesListingPageAction.getCurrentSortOrderUsingDeviceName();
+			}
+			if (SortOption.equals("MonthlyLowToHigh") || SortOption.equals("MonthlyHighToLow")) {
+				originalList = PhonesListingPageAction.getCurrentSortOrderUsingDevicePrice();
+				TempList3 = PhonesListingPageAction.getCurrentSortOrderUsingDevicePrice();
+			}
+
+			LinkedList<String> TempList1 = originalList;
+			LinkedList<String> TempList2 = null;
+			System.out.println("-Original List:-" + TempList1);
+
+			if (SortOption.equals("BrandAToZ")) {
+				TempList2 = PhonesListingPageAction.reArrangeListInAcendingBeforeApplyingSort(TempList1);
+			}
+			if (SortOption.equals("BrandZToA")) {
+				TempList2 = PhonesListingPageAction.reArrangeListInDescendingBeforeApplyingSort(TempList1);
+			}
+			if (SortOption.equals("MonthlyLowToHigh")) {
+				TempList2 = PhonesListingPageAction.reArrangeListInAcendingBeforeApplyingSort(TempList1);
+			}
+			if (SortOption.equals("MonthlyHighToLow")) {
+				TempList2 = PhonesListingPageAction.reArrangeListInDescendingBeforeApplyingSort(TempList1);
+			}
+
+			expectedListBeforeSort = TempList2;
+			System.out.println("Expected Listed Before Sort: ");
+			System.out.println(TempList2);
+
+			System.out.println("Pass: Successfully read the phone details from the container");
+			log.debug("Pass: Successfully read the phone details from the container");
+
+		} catch (Exception e) {
+			log.debug("Fail: Cannot read the phone details from the container  " + e.getMessage() + "");
+			Assert.fail("Fail: Cannot read the phone details from the container");
+		}
+
+	}
+	
+	@And("^Verify the devices gets sorted based on the sort option ([^\"]*)$")
+	public void verifyDeviceSortedBasedOnSortOption(String SortOption) throws InterruptedException {
+		log.debug("Running Test Step: @And(Verify the devices gets sorted based on the sort option)");
+		try {
+
+			LinkedList<String> ListAfterSort = null;
+			LinkedList<String> ListBeforeSort = expectedListBeforeSort;
+
+			if (SortOption.equals("BrandAToZ") || SortOption.equals("BrandZToA")) {
+				ListAfterSort = PhonesListingPageAction.getCurrentSortOrderUsingDeviceName();
+			}
+
+			if (SortOption.equals("MonthlyLowToHigh") || SortOption.equals("MonthlyHighToLow")) {
+				ListAfterSort = PhonesListingPageAction.getCurrentSortOrderUsingDevicePrice();
+			}
+
+			System.out.println("---------List sent to verification method (BeforeSort)---------------");
+			System.out.println(ListBeforeSort);
+
+			System.out.println("---------List sent to verification method (AfterSort)---------------");
+			System.out.println(ListAfterSort);
+
+			PhonesListingPageAction.verifyDeviceSortedOnBrand(ListBeforeSort, ListAfterSort);
+
+			log.debug("Assert Success: Verified successfully that devices are sorted based on the sort option");
+		} catch (AssertionError e) {
+
+			log.debug("Fail" + " - " + e.getMessage());
+			Assert.fail("Fail: Cannot assert if devices are sorted based on sort option");
+		}
+	}
+
+	@And("^Verify that original sort order is retained ([^\"]*)$")
+	public void verifyOriginalSortOrderRetainedAfterSortReset(String SortOption) throws Throwable {
+		log.debug("Running Test Step: @And(Verify that original sort order is retained)");
+		try {
+
+			LinkedList<String> TempList2 = null;
+			LinkedList<String> TempList = TempList3;
+
+			if (SortOption.equals("BrandAToZ") || SortOption.equals("BrandZToA")) {
+				TempList2 = PhonesListingPageAction.getCurrentSortOrderUsingDeviceName();
+			}
+			if (SortOption.equals("MonthlyLowToHigh") || SortOption.equals("MonthlyHighToLow")) {
+				TempList2 = PhonesListingPageAction.getCurrentSortOrderUsingDevicePrice();
+			}
+			System.out.println("-Original List:--------" + TempList);
+			System.out.println("-List After Sort Reset------" + TempList2);
+
+			PhonesListingPageAction.verifyOriginalSortOrderRetainedAfterSortReset(TempList, TempList2);
+
+			System.out.println("Pass: Successfully Verified that original sort order is retained");
+			log.debug("Pass: Successfully Verified that original sort order is retained");
+
+		} catch (Exception e) {
+			log.debug("Fail: Cannot Verified that original sort order is retained  " + e.getMessage() + "");
+			Assert.fail("Fail: Cannot Verified that original sort order is retained");
+		}
+	}
+	
+	@And("^click on the Filter tab and choose required ([^\"]*) ([^\"]*) option$")
+	public void clickOnFilterTabAndSelectFilterOption(String Filter, String Option) throws Throwable {
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		log.debug("Running Test Step: @And(click on the Filter tab and choose required " + Filter + " " + Option
+				+ " option)");
+		try {
+			PageFactory.initElements(driver, BaseCommPage.class);
+			PageFactory.initElements(driver, SortingAndFilter.class);
+			PhonesListingPageAction.clickOnViewAllProductsOnOnePage();
+			PhonesListingPageAction.clickOnFilterTab();
+			PhonesListingPageAction.selectFilterOption(Filter, Option);
+
+		} catch (Exception e) {
+			e.printStackTrace();
+			Assert.fail("Unable to click on the Filter tab and choose required filter option");
+
+		}
+	}
+
+	@And("^Verify the devices gets displayed as per the filter applied ([^\"]*) ([^\"]*)$")
+	public void verifyDevicesGetsDisplayedAsPerFilter(String Filter, String Option) throws Throwable {
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		log.debug("Running Test Step: @And(Verify the devices gets displayed as per the filter applied)");
+
+		try {
+
+			if (Filter.equals("Brand")) {
+				PhonesListingPageAction.verifyDeviceGetsDisplayedBasedOnBrandFilterApplied(Option);
+			}
+			if (Filter.equals("Colour")) {
+				PhonesListingPageAction.verifyDeviceGetsDisplayedBasedOnColourFilterApplied(Option);
+			}
+
+		} catch (Exception e) {
+			e.printStackTrace();
+			Assert.fail("Unable to verify devices got displayed as per the applied filter option");
+
+		}
+	}
+	
+	@And("^Verify all the details and links are displayed and working as expected in the Tariffs and Extras page ([^\"]*)$")
+	public void VerifyAllDetailsLinksAreDispalyedAndWorkingAsExpectedInTariffsAndExtrasPage(String DeviceName)
+			throws Throwable {
+		log.debug(
+				"Running Test Step: @And(Verify all the details and links are displayed and working as expected in the Tariffs and Extras page");
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+
+		try {
+
+			PageFactory.initElements(driver, PhonesListingPage.class);
+			PAYMandPAYGTariffAndExtrasPageActions.verifyAllSectionsDisplayedInTariffsAndExtrasPage();
+			PAYMandPAYGTariffAndExtrasPageActions.verifyBasecommTariffAndExtrasPageHeaderDetails();
+			PAYMandPAYGTariffAndExtrasPageActions.verifyBasecommTariffAndExtrasDockHeaderDetails(DeviceName);
+			PAYMandPAYGTariffAndExtrasPageActions.verifyAnchoringOfDockHeaderOptions();
+			PAYMandPAYGTariffAndExtrasPageActions.verifyBasecommPromotionalElementsAreDisplayedInTariffsAndExtrasPage();
+			PAYMandPAYGTariffAndExtrasPageActions.verifyViewAllTariffsLinkEnabled();
+			PAYMandPAYGTariffAndExtrasPageActions.verifyPayForYourDeviceInFullLinkEnabled();
+			PAYMandPAYGTariffAndExtrasPageActions.verifyClickAndCollectDeliveryWorks();
+
+		} catch (Exception e) {
+			e.printStackTrace();
+			Assert.fail("Unable to verify if Pay As You Go tab is present");
+
 		}
 	}
 }
