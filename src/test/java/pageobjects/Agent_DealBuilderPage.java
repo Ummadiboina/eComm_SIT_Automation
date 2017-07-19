@@ -85,4 +85,17 @@ public class Agent_DealBuilderPage {
 
 		@FindBy(how=How.XPATH,using="//*[@class='priceSelection']/select")
 		public static WebElement HandsetTariffCombination;
+
+
+		///////////////////////////// Basecomms//////////////////////////////
+
+		// *[@id="buy-4a05eacb-a057-40fc-9ada-8b8c59c43c4e"]/img
+
+		@FindBy(how = How.XPATH, using = "//*[@class='priceSelection']/select")
+		public static WebElement basecommstariff;
+		
+		@FindBy(how = How.XPATH, using = "html/body/div[1]/div/div[2]/div[1]/table/tbody/tr[1]/td[1]/a/img")
+		public static WebElement firstAvailableDevice;
+
+
 }

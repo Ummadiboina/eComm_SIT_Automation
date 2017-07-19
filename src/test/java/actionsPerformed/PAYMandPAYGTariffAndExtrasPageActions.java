@@ -4,10 +4,10 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 import org.apache.log4j.Logger;
+import org.junit.Assert;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
-import org.testng.Assert;
 
 import helpers.Environment;
 
@@ -120,37 +120,14 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 	}
 
 	
-	
-	public static void verifyAllSectionsDisplayedInTariffsAndExtrasPage() {
-		log.debug("Running verifyAllSectionsDisplayedInTariffsAndExtrasPage function");
-
-		try {
-			if (pageobjects.PhonesListingPage.BaseComm_ChosseYourTariff_Section.isDisplayed()) {
-				System.out.println("Choose Your Tariff section is displayed in the Tariffs and Extras Page");
-			}
-
-			if (pageobjects.PhonesListingPage.BaseComm_ChooseYourExtras_Section.isDisplayed()) {
-				System.out.println("Choose Your Extras section is displayed in the Tariffs and Extras Page");
-			}
-			if (pageobjects.PhonesListingPage.BaseComm_YourPackage_Section.isDisplayed()) {
-				System.out.println("Choose Your Package section is displayed in the Tariffs and Extras Page");
-			} else {
-				System.out.println("Expected sections are not displayed in the Tariffs and Extras Page");
-			}
-		} catch (Exception e) {
-			System.out.println("Expected sections are not displayed in the Tariffs and Extras Page. " + e.getMessage());
-			Assert.fail("Expected sections are not displayed in the Tariffs and Extras Page" + e.getMessage());
-
-		}
-	}
 
 	public static void verifyBasecommTariffAndExtrasPageHeaderDetails() {
 		log.debug("Running verifyBasecommTariffAndExtrasPageHeaderDetails function");
 
 		try {
 
-			Assert.assertTrue(pageobjects.PhonesListingPage.HeaderBanner.getText().contains("Tariff and extras"),
-					"Assertion Failed: Header does not contain Tariff and extras");
+			Assert.assertTrue("Assertion Failed: Header does not contain Tariff and extras",
+					pageobjects.PhonesListingPage.HeaderBanner.getText().contains("Tariff and extras"));
 			log.debug("Assertion Success: Header contains label as Tariff and extras");
 			System.out.println("Assertion Success: Header contains label as Tariff and extras");
 
@@ -160,32 +137,32 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 
 		}
 	}
-	
+
 	public static void verifyBasecommTariffAndExtrasDockHeaderDetails(String DeviceName) {
 		log.debug("Running verifyBasecommTariffAndExtrasDockHeaderDetails function");
 
 		try {
 
 			if (DeviceName.contains("Apple")) {
-				Assert.assertTrue(pageobjects.PhonesListingPage.DockHeader_BackToOfferLink.getText()
-						.contains("Back to iPad offers"),
-						"Assertion Failed: Dock header does not contain Back to offers link");
+				Assert.assertTrue("Assertion Failed: Dock header does not contain Back to offers link",
+						pageobjects.PhonesListingPage.DockHeader_BackToOfferLink.getText()
+								.contains("Back to iPad offers"));
 			} else {
-				Assert.assertTrue(pageobjects.PhonesListingPage.DockHeader_BackToOfferLink.getText()
-						.contains("Back to tablet offers"),
-						"Assertion Failed: Dock header does not contain Back to offers link");
+				Assert.assertTrue("Assertion Failed: Dock header does not contain Back to offers link",
+						pageobjects.PhonesListingPage.DockHeader_BackToOfferLink.getText()
+								.contains("Back to tablet offers"));
 			}
 
 			log.debug("Assertion Success: Dock header contains Back to offers link");
 
-			Assert.assertTrue(pageobjects.PhonesListingPage.DockHeader_ChooseYourTariffLink.getText()
-					.contains("Choose your tariff"),
-					"Assertion Failed: Dock header does not contain Choose your tariff link");
+			Assert.assertTrue("Assertion Failed: Dock header does not contain Choose your tariff link",
+					pageobjects.PhonesListingPage.DockHeader_ChooseYourTariffLink.getText()
+							.contains("Choose your tariff"));
 			log.debug("Assertion Success: Header contains Choose your tariff link");
 			System.out.println("Assertion Success: Header contains Choose your tariff link");
 
-			Assert.assertTrue(pageobjects.PhonesListingPage.DockHeader_AccessoriesLink.getText().contains("Accessories"),
-					"Assertion Failed: Dock header does not contain Accessories link");
+			Assert.assertTrue("Assertion Failed: Dock header does not contain Accessories link",
+					pageobjects.PhonesListingPage.DockHeader_AccessoriesLink.getText().contains("Accessories"));
 			log.debug("Assertion Success: Header contains Accessories link");
 			System.out.println("Assertion Success: Header contains Accessories link");
 
@@ -195,8 +172,6 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 
 		}
 	}
-	
-	
 
 	public static void verifyAnchoringOfDockHeaderOptions() throws InterruptedException {
 		log.debug("Running verifyAnchoringOfDockHeaderOptions function");
@@ -204,15 +179,15 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 		try {
 			pageobjects.PhonesListingPage.DockHeader_ChooseYourTariffLink.click();
 			Thread.sleep(1000);
-			Assert.assertTrue(pageobjects.PhonesListingPage.ChooseYourTariffSection.getText().contains("1. Choose your tariff"),
-					"Assertion Failed: Choose your tariff section is not displayed");
+			Assert.assertTrue("Assertion Failed: Choose your tariff section is not displayed",
+					pageobjects.PhonesListingPage.ChooseYourTariffSection.getText().contains("1. Choose your tariff"));
 			log.debug("Assertion Success: Navigated to Choose your tariff section");
 			System.out.println("Assertion Success: Navigated to Choose your tariff section");
 
 			pageobjects.PhonesListingPage.DockHeader_AccessoriesLink.click();
 			Thread.sleep(1000);
-			Assert.assertTrue(pageobjects.PhonesListingPage.AccessoriesSection.getText().contains("Accessories"),
-					"Assertion Failed: Choose your extras section is not displayed");
+			Assert.assertTrue("Assertion Failed: Choose your extras section is not displayed",
+					pageobjects.PhonesListingPage.AccessoriesSection.getText().contains("Accessories"));
 			log.debug("Assertion Success: Navigated to Accessories section");
 			System.out.println("Assertion Success: Navigated to Accessories section");
 
@@ -227,7 +202,7 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 		}
 
 	}
-	
+
 	public static void verifyBasecommPromotionalElementsAreDisplayedInTariffsAndExtrasPage()
 			throws InterruptedException {
 		log.debug("Running verifyBasecommPromotionalElementsAreDisplayedInTariffsAndExtrasPage function");
@@ -254,7 +229,7 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 		}
 
 	}
-	
+
 	public static void verifyViewAllTariffsLinkEnabled() {
 		log.debug("Running verifyViewAllTariffsLinkEnabled function");
 
@@ -270,7 +245,7 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 
 		}
 	}
-	
+
 	public static void verifyPayForYourDeviceInFullLinkEnabled() {
 		log.debug("Running verifyPayForYourDeviceInFullLinkEnabled function");
 
@@ -297,8 +272,32 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 
 		}
 	}
-	
 
+	public static void verifyAllSectionsDisplayedInTariffsAndExtrasPage() {
+		log.debug("Running verifyAllSectionsDisplayedInTariffsAndExtrasPage function");
+
+		try {
+			if (pageobjects.PhonesListingPage.BaseComm_ChosseYourTariff_Section.isDisplayed()) {
+				System.out.println("Choose Your Tariff section is displayed in the Tariffs and Extras Page");
+			}
+
+			if (pageobjects.PhonesListingPage.BaseComm_ChooseYourExtras_Section.isDisplayed()) {
+				System.out.println("Choose Your Extras section is displayed in the Tariffs and Extras Page");
+			}
+			if (pageobjects.PhonesListingPage.BaseComm_YourPackage_Section.isDisplayed()) {
+				System.out.println("Choose Your Package section is displayed in the Tariffs and Extras Page");
+			} else {
+				System.out.println("Expected sections are not displayed in the Tariffs and Extras Page");
+			}
+		} catch (Exception e) {
+			System.out.println("Expected sections are not displayed in the Tariffs and Extras Page. " + e.getMessage());
+			Assert.fail("Expected sections are not displayed in the Tariffs and Extras Page" + e.getMessage());
+
+		}
+	}
+
+	
+	
 	public static void verifyClickAndCollectDeliveryWorks() throws InterruptedException {
 		log.debug("Running verifyClickAndCollectDeliveryWorks function");
 
@@ -323,4 +322,5 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 
 		}
 	}
+
 }

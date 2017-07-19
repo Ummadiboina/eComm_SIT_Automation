@@ -17,6 +17,7 @@ Feature: C1786_E-11355-11357-11356-11359_TC3_Existing_Custo_Basecomm_iPad_Device
     Then Verify the price gets updated based on the new colour and capacity
     And Click on "Buy Now" button for <device_name> and verify "Tariffs and Extras" page is displayed 
     
+
     Examples: 
-      | username    | password | device_name | default_colour | default_capacity | default_stock_message | colour |
-      | ink_jun9198 | test123  | iPad_abc    | grey           | 16GB             | In Stock              | white  |
+      | username             | password | device_name       | default_colour | default_capacity | default_stock_message | colour |
+      | 07770001111@o2.co.uk | test123  | Apple iPad mini 3 | Space Grey     | 16GB             | In Stock              | white  |

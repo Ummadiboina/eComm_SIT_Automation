@@ -80,12 +80,9 @@ public class CVOS_PageObjects extends Environment {
 	@FindBy(how=How.XPATH,using="//*[@id='datePickerBox']/span/button")
 	public static WebElement dateForLaunchDate;
 	
-	
-	
 	@FindBy(how=How.XPATH,using="//*[@id='datePickerBox']/ul/li[1]/div/table/thead/tr[1]/th[3]/button")
 	public static WebElement launchDateToFuture;
-	
-	
+		
 	
 	@FindBy(how=How.XPATH,using="//*[@id='datePickerBox']/ul/li[1]/div/table/thead/tr[1]/th[1]/button")
 	public static WebElement launchDateToPast;

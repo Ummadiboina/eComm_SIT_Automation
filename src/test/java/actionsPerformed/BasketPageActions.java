@@ -329,41 +329,6 @@ public class BasketPageActions extends Environment
 		log.debug("Verifying if the devices selected are in basket");	pageobjects.BasketPage.ContinueShopping.sendKeys(Keys.ENTER);
 		log.debug("Clicked on Continue Shopping in Basket Page");
 	}
-/*
-public static void verifyDevicesInBasket(String dev1, String dev2, String dev3) {
-
-		List<WebElement> MyDevices = driver.findElements((By) pageobjects.BasketPage.DevicesList);
-
-		List<String> DisplayedDevices = new ArrayList<>();
-		List<String> SelectedDevices = new ArrayList<>();
-
-		if (dev1.contains("SamsungGearS2")) {
-			dev1 = "Samsung Gear S2";
-		}
-		if (dev2.contains("FitbitAlta")) {
-			dev2 = "Fitbit Alta";
-		}
-		if (dev3.contains("iPad97")) {
-			dev3 = "Apple iPad 9.7";
-		}
-		
-		SelectedDevices.add(dev1);
-		SelectedDevices.add(dev2);
-		SelectedDevices.add(dev3);
-		
-		 * SelectedDevices.add(dev1.split("(?=[A-Z])").toString());
-		 * SelectedDevices.add(dev2.split("(?=[A-Z])").toString());
-		 * SelectedDevices.add(dev3.split("(?=[A-Z])").toString());
-		 
-
-		for (int i = 0; i < MyDevices.size(); i++) {
-			DisplayedDevices.add(MyDevices.get(i).getText());
-		}
-
-		Assert.assertEquals(DisplayedDevices, SelectedDevices);
-log.debug("Selected devices are in basket");
-	}
-*/
 
 public static void ValidateContentEcomm11522()  throws InterruptedException {
 
@@ -394,71 +359,6 @@ if (fname != false) {
 	log.debug("The Basket Totals are : " + pageobjects.BasketPage.HomeDeliveryText.getText());
 
 }
-/*
-public static void verifyDevicesInBasket(String dev1, String dev2, String dev3) 
-{
-
-	List<WebElement> MyDevices = pageobjects.BasketPage.DevicesList;
-	List<String> DisplayedDevices = new ArrayList<>();
-	List<String> SelectedDevices = new ArrayList<>();
-
-	SelectedDevices.add(dev1);
-	SelectedDevices.add(dev2);
-	SelectedDevices.add(dev3);
-
-	for (int i = 0; i < MyDevices.size(); i++) {
-		DisplayedDevices.add(MyDevices.get(i).getText());
-	}
-
-	Assert.assertEquals(DisplayedDevices, SelectedDevices);
-	log.debug("Selected devices are in basket");
-}
-
-public static void verifyDevicesInBasket(String dev1, String dev2) {
-
-	List<WebElement> MyDevices = pageobjects.BasketPage.DevicesList;
-	List<String> DisplayedDevices = new ArrayList<>();
-	List<String> SelectedDevices = new ArrayList<>();
-
-	SelectedDevices.add(dev1);
-	SelectedDevices.add(dev2);
-
-	for (int i = 0; i < MyDevices.size(); i++) {
-		DisplayedDevices.add(MyDevices.get(i).getText());
-	}
-
-	Assert.assertEquals(DisplayedDevices, SelectedDevices);
-	log.debug("Selected devices are in basket");
-}
-
-public static void verifyDevicesInBasket(String dev1) {
-
-	List<WebElement> MyDevices = pageobjects.BasketPage.DevicesList;
-	List<String> DisplayedDevices = new ArrayList<>();
-	List<String> SelectedDevices = new ArrayList<>();
-
-	SelectedDevices.add(dev1);
-
-	for (int i = 0; i < MyDevices.size(); i++) {
-		DisplayedDevices.add(MyDevices.get(i).getText());
-		//System.out.println(DisplayedDevices.add(MyDevices.get(i).getText()));
-		if(DisplayedDevices==SelectedDevices)
-		{
-			System.out.println("Works ");
-		}
-	}
-
-//	Assert.assertEquals(DisplayedDevices, SelectedDevices);
-	
-	if(DisplayedDevices==SelectedDevices)
-	{
-		System.out.println("Selected devices"+SelectedDevices +"are in basket");
-		log.debug("Selected devices are in basket");
-	}
-
-
-	
-}*/
 
 public static void verifyNCDRemovedinBasketPageAfterCDSelection() throws InterruptedException {
 	log.debug("Opening verifyNCDRemovedinBasketPageAfterCDSelection function");
@@ -506,6 +406,8 @@ public static void verifyNCDRemovedinBasketPageAfterCDSelection() throws Interru
 						+ e.getMessage() + "");
 	}
 }
+
+/*
 
 public static void verifyDevicesInBasket(String dev1, String dev2, String dev3) {
 
@@ -626,7 +528,131 @@ public static void verifyDevicesInBasket(String dev1) {
 		Assert.fail("Selected devices are not in basket");
 	}
 
+}*/
+public static void verifyDevicesInBasket(String dev1, String dev2, String dev3) {
+	log.debug("Verifying the devices in basket");
+	List<WebElement> MyDevices = pageobjects.BasketPage.DevicesList;
+
+	List<WebElement> MyConnDevices = pageobjects.BasketPage.MyConnDevices;
+	List<WebElement> MyNonConnDevices = pageobjects.BasketPage.MyNonConnDevices;
+
+	List<String> DisplayedDevices = new ArrayList<>();
+	List<String> SelectedDevices = new ArrayList<>();
+
+	SelectedDevices.add(dev1);
+	SelectedDevices.add(dev2);
+	SelectedDevices.add(dev3);
+
+	log.debug("1" + SelectedDevices.get(0));
+	log.debug("2" + SelectedDevices.get(1));
+	log.debug("3" + SelectedDevices.get(2));
+
+	System.out.println("Conn size" + MyConnDevices.size());
+	System.out.println("Non Conn size" + MyNonConnDevices.size());
+
+	if (MyNonConnDevices.size() != 0) {
+		for (int i = 0; i < MyNonConnDevices.size(); i++) {
+			DisplayedDevices.add(MyNonConnDevices.get(i).getText());
+			System.out.println("Non Conn added");
+		}
+	}
+	if (MyConnDevices.size() != 0) {
+		for (int i = 0; i < MyConnDevices.size(); i++) {
+			DisplayedDevices.add(MyConnDevices.get(i).getText());
+			System.out.println("Conn dev added");
+		}
+	}
+	if (DisplayedDevices.containsAll(SelectedDevices)) {
+		log.debug("Selected devices are in basket");
+	}
+	else {
+		for(int k=0;k>DisplayedDevices.size();k++) {
+		System.out.println("Devices in basket are : " + '\n'+ DisplayedDevices.get(k) +'\n');
+		log.debug("Devices in basket are : " + '\n'+ DisplayedDevices.get(k) +'\n');
+		}
+		Assert.fail("Selected devices are not in basket");
+	}
 }
 
+public static void verifyDevicesInBasket(String dev1, String dev2) {
+
+	List<WebElement> MyDevices = pageobjects.BasketPage.DevicesList;
+
+	List<WebElement> MyConnDevices = pageobjects.BasketPage.MyConnDevices;
+	List<WebElement> MyNonConnDevices = pageobjects.BasketPage.MyNonConnDevices;
+
+	List<String> DisplayedDevices = new ArrayList<>();
+	List<String> SelectedDevices = new ArrayList<>();
+
+	SelectedDevices.add(dev1);
+	SelectedDevices.add(dev2);
+	System.out.println("1" + SelectedDevices.get(0));
+	System.out.println("2" + SelectedDevices.get(1));
+
+	System.out.println("Conn size" + MyConnDevices.size());
+	System.out.println("Non Conn size" + MyNonConnDevices.size());
+
+	if (MyNonConnDevices.size() != 0) {
+		for (int i = 0; i < MyNonConnDevices.size(); i++) {
+			DisplayedDevices.add(MyNonConnDevices.get(i).getText());
+			System.out.println("Non Conn added");
+		}
+	}
+	if (MyConnDevices.size() != 0) {
+		for (int i = 0; i < MyConnDevices.size(); i++) {
+			DisplayedDevices.add(MyConnDevices.get(i).getText());
+			System.out.println("Conn dev added");
+		}
+	}
+	if (DisplayedDevices.containsAll(SelectedDevices)) {
+		log.debug("Selected devices are in basket");
+		System.out.println("Selected devices are in basket");
+	}
+	else {
+		for(int k=0;k>DisplayedDevices.size();k++) {
+		System.out.println("Devices in basket are : " + '\n'+ DisplayedDevices.get(k) +'\n');
+		log.debug("Devices in basket are : " + '\n'+ DisplayedDevices.get(k) +'\n');
+		}
+		Assert.fail("Selected devices are not in basket");
+	}
+}
+
+public static void verifyDevicesInBasket(String dev1) {
+
+	List<WebElement> MyDevices = pageobjects.BasketPage.DevicesList;
+
+	List<WebElement> MyConnDevices = pageobjects.BasketPage.MyConnDevices;
+	List<WebElement> MyNonConnDevices = pageobjects.BasketPage.MyNonConnDevices;
+
+	List<String> DisplayedDevices = new ArrayList<>();
+	List<String> SelectedDevices = new ArrayList<>();
+
+	SelectedDevices.add(dev1);
+
+	if (MyNonConnDevices.size() != 0) {
+		for (int i = 0; i < MyNonConnDevices.size(); i++) {
+			DisplayedDevices.add(MyNonConnDevices.get(i).getText());
+			System.out.println("Non Conn added");
+		}
+	}
+	if (MyConnDevices.size() != 0) {
+		for (int i = 0; i < MyConnDevices.size(); i++) {
+			DisplayedDevices.add(MyConnDevices.get(i).getText());
+			System.out.println("Conn dev added");
+		}
+	}
+	if (DisplayedDevices.containsAll(SelectedDevices)) {
+		log.debug("Selected device is in basket");
+		System.out.println("Selected device is in basket");
+	}
+	else {
+		for(int k=0;k>DisplayedDevices.size();k++) {
+		System.out.println("Devices in basket are : " + '\n'+ DisplayedDevices.get(k) +'\n');
+		log.debug("Devices in basket are : " + '\n'+ DisplayedDevices.get(k) +'\n');
+		}
+		Assert.fail("Selected devices are not in basket");
+	}
+
+}
 
 }

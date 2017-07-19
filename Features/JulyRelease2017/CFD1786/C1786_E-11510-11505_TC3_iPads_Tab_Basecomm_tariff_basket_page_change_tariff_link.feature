@@ -15,5 +15,5 @@ Feature: C1786_E-11510-11505_TC3_iPads_Tab_Basecomm_tariff_basket_page_change_ta
     And click on the "Choose a different tariff" link and verify user navigated back to "Tariff and Extras" page
 
     Examples: 
-      | username    | password | device_name | default_colour | default_capacity | default_stock_message |
-      | ink_jun9198 | test123  | iPad_abc    | grey           | 16GB             | In Stock              | 
+      | username             | password | device_name | default_colour | default_capacity | default_stock_message | color | capacity | user         |
+      | 07770001111@o2.co.uk | test123  | iPad Air 2  | Space Grey     | 16GB             | In Stock              | white | 128GB    | TEST ACCEPTA |

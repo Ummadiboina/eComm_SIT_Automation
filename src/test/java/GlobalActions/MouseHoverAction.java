@@ -827,6 +827,52 @@ static	Logger log = Logger.getLogger("devpinoyLogger");
                       
             }
 
+      public static void iPadPage() throws Exception {
+  		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+  		boolean Worksfine = false;
+  		while (!Worksfine)
+  			try {
+  				System.out.println("Performing navigations to iPad page");
+  				log.debug("Performing navigations to iPad page");
+  				Point coordinates = pageobjects.MouseHoverPage.MoveMouseOnShopTab.getLocation();
+  				Robot robot = new Robot();
+  				robot.mouseMove(coordinates.getX(), coordinates.getY() + 120);
+  				log.debug("Moving Mouse on the Shop Tab");
+  				Actions action = new Actions(driver);
+  				action.moveToElement(pageobjects.MouseHoverPage.MoveMouseOnTablets).build().perform();
+  				Thread.sleep(2000);
+  				action.moveToElement(pageobjects.MouseHoverPage.MoveMouseOniPad).build().perform();
+  				Thread.sleep(2000);
+  				pageobjects.MouseHoverPage.MoveMouseOniPad.click();
+  				log.debug("Moving Mouse on the iPad tab");
+
+  				// Move mouse pointer away from location
+  				Point coordinates2 = driver.findElement(By.xpath("//*[@id='header-consumer']/div")).getLocation();
+  				Robot robot2 = new Robot();
+  				robot2.mouseMove(coordinates2.getX(), coordinates.getY() + 300);
+  				log.debug("Moved Mouse to somewhere side of page");
+  				Worksfine = true;
+
+  			} catch (ElementNotVisibleException e) {
+  				// check if popup is present, if yes, handle it.
+  				Environment.driver.switchTo().frame("edr_l_first");
+  				System.out.println("********We are switch to the iframe*******");
+  				log.debug("Popup has appeared on the screen, Hence trying to close the survey");
+  				Screenshots.screennewPics();
+  				// Saying no to survey
+  				driver.findElement(By.xpath("//a[@id='no']/span")).click();
+  				log.debug("Closing the popup by saying No to Survey");
+  				System.out.println("*******Saying no to survey*******");
+  				System.out.println("*********Existing the popups present in iframe***************");
+  				log.debug("Exiting the Survey");
+  				Environment.driver.switchTo().defaultContent();
+  				Thread.sleep(3000);
+
+  			}
+
+  	}
+
+
 }
 
 
