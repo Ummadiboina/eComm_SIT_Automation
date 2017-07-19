@@ -3282,7 +3282,7 @@ public class E2EOrderPlaced_Steps {
 			PageFactory.initElements(driver, BaseCommPage.class);
 			BaseCommPageActions.BuynowwithDevice(device_name);
 			BaseCommPageActions.VerifyPage();
-		//	BaseCommPageActions.verifyTariffType(“Basecomm”);
+			BaseCommPageActions.verifyTariffType("Basecomm");
 		} catch (Exception e) {
 			Assert.fail("Unable to select device and verify tariff and extras page");
 
@@ -3512,7 +3512,7 @@ public class E2EOrderPlaced_Steps {
 	}
 	
 	@And("^verify that the Basecomms tariff is not displayed in the Tariff and Extras page$")
-	public void verify_that_the_Basecomms_tariff_is_not_displayed_in_the_Tariff_and_Extras_page(String flow) throws Throwable {
+	public void verify_that_the_Basecomms_tariff_is_not_displayed_in_the_Tariff_and_Extras_page() throws Throwable {
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		try {
 			PageFactory.initElements(driver, PAYMandPAYGTariffAndExtrasPage.class);

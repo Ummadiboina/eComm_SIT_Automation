@@ -5,6 +5,7 @@ import java.net.URI;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.NoSuchElementException;
 
 import org.apache.log4j.Logger;
 import org.junit.Assert;
@@ -19,7 +20,6 @@ public class BaseCommPageActions extends Environment {
 	static Logger log = Logger.getLogger("devpinoyLogger");
 	static List<String> NormalCost = new ArrayList<>();
 	static List<String> BasecommCost = new ArrayList<>();
-
 
 	public static void SelectBaseCommTariff(String elementName) {
 
@@ -74,15 +74,16 @@ public class BaseCommPageActions extends Environment {
 		log.debug("checking whether Pay As U Go tab is displayed");
 		System.out.println("checking whether Pay As U Go tab is displayed");
 		List<WebElement> ContractLengthTabs = pageobjects.BaseCommPage.ContractLengthTabs;
-		for(WebElement h :ContractLengthTabs) {
-			if(h.getText().equals("Pay As You Go")){
+		for (WebElement h : ContractLengthTabs) {
+			if (h.getText().equals("Pay As You Go")) {
 				Assert.fail("Pay As U Go tab is displayed");
 			}
 		}
-			
-		/*if (pageobjects.BaseCommPage.PayAsUGo.isDisplayed()) {
-			Assert.fail("Pay As U Go tab is displayed");
-		}*/
+
+		/*
+		 * if (pageobjects.BaseCommPage.PayAsUGo.isDisplayed()) {
+		 * Assert.fail("Pay As U Go tab is displayed"); }
+		 */
 	}
 
 	public static void clickOnSortTab() {
@@ -380,11 +381,9 @@ public class BaseCommPageActions extends Environment {
 					}
 					String f = "(//p[@class='costs ng-binding ng-scope'])[" + k + "]";
 					WebElement price = driver.findElement(By.xpath(f));
-					if(price.getText()!=null) {
-						System.out.println("Price -"+price.getText());
-					}
-					else
-					{
+					if (price.getText() != null) {
+						System.out.println("Price -" + price.getText());
+					} else {
 						Assert.fail("No price details available");
 					}
 				}
@@ -424,11 +423,11 @@ public class BaseCommPageActions extends Environment {
 		for (WebElement f : TabletDevicesName) {
 			Devices.add(f.getText());
 		}
-		
-		for(int y=0;y<Devices.size();y++) {
+
+		for (int y = 0; y < Devices.size(); y++) {
 			System.out.println(Devices.get(y));
 		}
-		System.out.println("passing device"+device);
+		System.out.println("passing device" + device);
 
 		if (!Devices.contains(device)) {
 			Assert.fail("Expected device is not present");
@@ -491,8 +490,8 @@ public class BaseCommPageActions extends Environment {
 							log.debug("Pense in pop up - " + penseelementtext + ", pense value displayed for device - "
 									+ PenseElement.getText() + "and they are the same");
 							System.out.println(
-									"Pounds in pop up - " + poundselementtext + ", pounds value displayed for device - "
-											+ PoundsElement.getText() + "and they are the same");
+									"Pense in pop up - " + penseelementtext + ", pense value displayed for device - "
+											+ PenseElement.getText() + "and they are the same");
 						}
 					}
 					WebElement SpecificationsElement = pageobjects.BaseCommPage.SpecificationsElement;
@@ -536,7 +535,7 @@ public class BaseCommPageActions extends Environment {
 		// String subString = queryString.substring(queryString.);
 		String subString = queryString.substring(queryString.lastIndexOf('-') + 1);
 		System.out.println("EXTRACTED " + subString);
-		Assert.assertEquals("iPad", subString);
+		Assert.assertEquals("ipad", subString);
 	}
 
 	public static void VerifyTabletURL() throws MalformedURLException {
@@ -648,6 +647,7 @@ public class BaseCommPageActions extends Environment {
 		Assert.assertNotSame(price2, price1);
 
 	}
+
 	public static void verifyTariffType(String flow) {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 
@@ -749,5 +749,84 @@ public class BaseCommPageActions extends Environment {
 		}
 	}
 
+	public static void verifyTariffTypeMBB(String device, String flow) {
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		List<String> NormalUpfrontCost = new ArrayList<>();
+		List<String> NormalMonthlyCost = new ArrayList<>();
 
+		if (flow.equals("Normal")) {
+
+			List<WebElement> UpfrontCostElement = pageobjects.PAYMandPAYGTariffAndExtrasPage.UpfrontCost;
+			List<WebElement> MonthlyCostElement = pageobjects.PAYMandPAYGTariffAndExtrasPage.MonthlyCost;
+			int k = 0;
+			WebElement PayInFull = pageobjects.PAYMandPAYGTariffAndExtrasPage.paydevicefulllink;
+			if (PayInFull.isDisplayed()) {
+				js.executeScript("arguments[0].click();", PayInFull);
+			} else {
+				System.out.println("No PayInFull");
+			}
+			if (UpfrontCostElement.size() != 0) {
+				for (int i = 0; i < UpfrontCostElement.size(); i++) {
+					k = i + 1;
+					NormalUpfrontCost.add(UpfrontCostElement.get(i).getText());
+					System.out.println(
+							"Upfront cost of position :" + k + " in tariffs is" + UpfrontCostElement.get(i).getText());
+				}
+			}
+
+			if (MonthlyCostElement.size() != 0) {
+				for (int i = 0; i < MonthlyCostElement.size(); i++) {
+					k = i + 1;
+					NormalMonthlyCost.add(MonthlyCostElement.get(i).getText());
+					System.out.println(
+							"Monthly cost of position :" + k + " in tariffs is" + MonthlyCostElement.get(i).getText());
+				}
+			}
+			for (int i = 0; i < NormalUpfrontCost.size(); i++) {
+				NormalCost.add(NormalUpfrontCost.get(i).concat(NormalMonthlyCost.get(i)));
+				System.out.println("Normal cost " + NormalCost.get(i));
+			}
+
+		}
+
+		if (flow.equals("Basecomm"))
+
+		{
+			int k = 0;
+			WebElement UpfrontCostMBB = null;
+			WebElement MonthlyCostMBB = null;
+			List<WebElement> MBBDevicesName = pageobjects.BaseCommPage.MBBDevicesName;
+			List<String> Devices = new ArrayList<String>();
+			for (WebElement e : MBBDevicesName) {
+				Devices.add(e.getText());
+			}
+			if (!Devices.contains(device)) {
+				Assert.fail("Expected device is not present");
+			} else {
+				for (int i = 0; i < MBBDevicesName.size(); i++) {
+					if (MBBDevicesName.get(i).getText().equals(device)) {
+						k = i + 1;
+						String c = "(//span[@id='qa-upfront-pound'])[" + k + "]";
+						String d = "(//span[@id='qa-month-pound'])[" + k + "]";
+						UpfrontCostMBB = driver.findElement(By.xpath(c));
+						MonthlyCostMBB = driver.findElement(By.xpath(d));
+					}
+				}
+				BasecommCost.add(UpfrontCostMBB.getText().concat(MonthlyCostMBB.getText()));
+			}
+		}
+		if (flow.equals("Check")) {
+			System.out.println("Size  " + NormalCost.size() + '\n' + BasecommCost.size());
+			if (NormalCost.size() != 0 && BasecommCost.size() != 0) {
+
+				for (int z = 0; z < BasecommCost.size(); z++) {
+					if (NormalCost.contains(BasecommCost.get(z))) {
+						System.out.println("Failed - Basecomm tariffs are present in normal flow");
+					} else {
+						System.out.println("Basecomm tariffs are not present in normal tariffs section as expected");
+					}
+				}
+			}
+		}
+	}
 }
