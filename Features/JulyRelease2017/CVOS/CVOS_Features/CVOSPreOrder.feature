@@ -18,4 +18,4 @@ Feature: To set a device in Pre Order in CVOS
 
     Examples: 
       | Username          | Password          | SKUID    | Search_by_model        | Username1    | Password1     |
-      | SupplyChainAdmin1 | SupplyChainAdmin1 | 1AMFI32N | Amazon Fire phone 32GB | TradingAdmin | TradingAdmin1 |
+      | SupplyChainAdmin2 | SupplyChainAdmin1 | 1AMFI32N | Amazon Fire phone 32GB | TradingAdmin | TradingAdmin1 |
