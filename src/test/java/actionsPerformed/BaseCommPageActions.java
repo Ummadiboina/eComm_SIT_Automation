@@ -164,6 +164,16 @@ public class BaseCommPageActions extends Environment {
 			log.debug("Selected iPad mini 3 device");
 
 		}
+		if (elementName.contains("Apple iPad Pro 9.7 inch")) {
+			System.out.println("Going to select Apple iPad Pro 9.7 inch device");
+
+			pageobjects.BaseCommPage.IpadPro97Buynow.click();
+
+			System.out.println("Selected Apple iPad Pro 9.7 inch device");
+
+			log.debug("Selected Apple iPad Pro 9.7 inch device");
+
+		}
 		if (elementName.contains("Apple iPad mini 2")) {
 			System.out.println("Going to select iPad mini 2 device");
 
@@ -191,6 +201,15 @@ public class BaseCommPageActions extends Environment {
 			System.out.println("Selected Galaxy Tab device");
 
 			log.debug("Selected Galaxy Tab device");
+		}
+		if (elementName.contains("Samsung Galaxy Tab A 2016 10.1")) {
+			System.out.println("Going to Samsung Galaxy Tab A 2016 10.1 device");
+
+			pageobjects.BaseCommPage.GalaxyTabActive2016101Buynow.click();
+
+			System.out.println("Selected Samsung Galaxy Tab A 2016 10.1 device");
+
+			log.debug("Selected Samsung Galaxy Tab A 2016 10.1 device");
 		}
 		if (elementName.contains("Sony Xperia Z2 Tablet")) {
 			System.out.println("Going to select XperiaZ2Tablet device");

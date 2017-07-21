@@ -65,6 +65,9 @@ public class BaseCommPage {
 
 	@FindBy(how = How.XPATH, using = ("//*[@data-qa-device-model-family='iPad mini 3']/div[4]/form/button"))
 	public static WebElement IpadMini3Buynow;
+	
+	@FindBy(how = How.XPATH, using = ("//*[@data-qa-device-model-family='iPad Pro 9.7 inch']/div[4]/form/button"))
+	public static WebElement IpadPro97Buynow;
 
 	@FindBy(how = How.XPATH, using = ("//*[@data-qa-device-model-family='iPad mini 2']/div[4]/form/button"))
 	public static WebElement IpadMini2Buynow;
@@ -74,7 +77,10 @@ public class BaseCommPage {
 
 	@FindBy(how = How.XPATH, using = ("//*[@data-qa-device-model-family='Galaxy Tab Active']/div[4]/form/button"))
 	public static WebElement GalaxyTabActiveBuynow;
-
+	
+	@FindBy(how = How.XPATH, using = ("//*[@data-qa-device-model-family='Galaxy Tab A 2016 10.1']/div[4]/form/button"))
+	public static WebElement GalaxyTabActive2016101Buynow;
+	
 	@FindBy(how = How.XPATH, using = ("//*[@data-qa-device-model-family='Xperia Z2 Tablet']/div[4]/form/button"))
 	public static WebElement XperiaZ2TabletBuynow;
 

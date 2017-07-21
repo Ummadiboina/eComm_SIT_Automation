@@ -1,6 +1,8 @@
 Feature: C1960_E11522_TC1_AFU_verify_Base_Comms_tariff_under_offer_column_order_placement_O2_offer
 
-  Scenario Outline: This scenario ensures that when the Agent in upgrade journey access the 'Tariffs' tab, then the agent should be able to see 'Base Comms' tariff  highlighted or tagged differently along with normal tariffs and should be able to place order
+  Scenario Outline: This scenario ensures that when the Agent in upgrade journey access the 'Tariffs' tab,
+    then the agent should be able to see 'Base Comms' tariff  highlighted or tagged differently along with normal tariffs and should be able to place order
+
     Given I login to Agent shop
     And performs Upgrade for <user>
     And Select valid <Tariffs> from tariffs tab
@@ -13,5 +15,5 @@ Feature: C1960_E11522_TC1_AFU_verify_Base_Comms_tariff_under_offer_column_order_
     Then Order confirmation message should be displayed
 
     Examples: 
-      | user           | Device | Tariffs |
-      | basecomms user | Random | Base    |
+      | user        | Device | Tariffs |
+      | 07801801262 | Random | Base    |

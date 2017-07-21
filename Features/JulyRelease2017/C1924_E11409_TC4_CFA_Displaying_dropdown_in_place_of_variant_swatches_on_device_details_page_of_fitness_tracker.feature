@@ -8,9 +8,9 @@ Feature: C1924_E11409_TC4_CFA_Displaying_dropdown_in_place_of_variant_swatches_o
     And Navigate to device details page
     Then check if the selected non connected device has more than 1 variant for both colour and capacity
     And select <color> color of the non connected device
-    And select <capacity> capacity of the non connected device
+   # And select <capacity> capacity of the non connected device
 
     #Close the browser
     Examples: 
-      | fitnesstrackername | color | capacity |
-      | Fitbit Alta        | Black | 64 GB    |
+      | fitnesstrackername | color          | capacity |
+      | Jawbone UP2        | Light Grey Hex | 64 GB    |

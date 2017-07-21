@@ -11,5 +11,5 @@ Feature: C1924_E11409_TC12_CFU_Displaying_label_in_place_of_only_one_variant_on_
 
     #Close the browser
     Examples: 
-      | handset | username    | password |
-      | Iphone7 | ink_jun9198 | test123  |
+      | handset | username   | password |
+      | Iphone6 | ins_nov746 | test123  |

@@ -12,5 +12,5 @@ Feature:
 
     #Close the browser
     Examples: 
-      | accessoryname | username    | password |
-      | JBL Extreme   | ink_jun9198 | test123  |
+      | accessoryname | username   | password |
+      | JBL Extreme   | ins_nov746 | test123  |

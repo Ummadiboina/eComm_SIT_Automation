@@ -12,7 +12,7 @@ Feature:
     And Navigate to device details page
     Then check if the selected non connected device has more than 1 variant for both colour and capacity
     And select <color> color of the non connected device
-    And select <capacity> capacity of the non connected device
+    #And select <capacity> capacity of the non connected device
     And Navigate to device details page
 
     #Close the browser

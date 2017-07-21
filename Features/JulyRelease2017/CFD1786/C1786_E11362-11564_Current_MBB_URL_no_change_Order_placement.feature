@@ -19,5 +19,5 @@ Feature: C1786_E11362-11564_Current_MBB_URL_no_change_Order_placement
 
     #Modify the above step to include pdf download
     Examples: 
-      | username             | password | OldMBBURL                                            | user         |
-      | 07770001111@o2.co.uk | test123  | https://www.o2.co.uk/shop/my-offers/mobile-broadband | TEST ACCEPTA |
+      | username             | password | OldMBBURL                                                | user         |
+      | 07770001111@o2.co.uk | test123  | https://www.ref.o2.co.uk/shop/my-offers/mobile-broadband | TEST ACCEPTA |

@@ -26,5 +26,5 @@ Feature: C1786_E-11510-11505_TC2_Other_Tablets_Device_tile_Colour_and_Capacity_v
 
     #Modify the above step to include pdf download
     Examples: 
-      | username             | password | device_name               | default_colour | default_capacity | default_stock_message | color | capacity | user         |
-      | 07770001111@o2.co.uk | test123  | Samsung Galaxy Tab Active | Titanium Green            | 16GB             | In Stock              | white | 128GB    | TEST ACCEPTA |
+      | username             | password | device_name                    | default_colour | default_capacity | default_stock_message | color | capacity | user         |
+      | 07770001111@o2.co.uk | test123  | Samsung Galaxy Tab A 2016 10.1 | Black          | 16GB             | In Stock              | Black | 16GB     | TEST ACCEPTA |

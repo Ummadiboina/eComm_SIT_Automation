@@ -6,70 +6,59 @@ import helpers.Environment;
 
 public class TabletPageActions extends Environment {
 
-	
-	public static void validateElements(String Tabname)
-	{
+	public static void validateElements(String Tabname) {
 		System.out.println(" ");
-		
+
 		System.out.println("Tablet_Page_Validation");
-		
-		
-		
-		if(Tabname!=null)
-		{
-			switch (Tabname.toLowerCase())
-			{
+
+		if (Tabname != null) {
+			switch (Tabname.toLowerCase()) {
 			case "filter":
-				if(pageobjects.TabletPage.TabletFilterTab.isDisplayed())
-				 {
-					System.out.println("The Filter Tab is Present on the TabletPage and the Text is :" + pageobjects.TabletPage.TabletFilterTab.getText() );
-				 }else{
-				   System.out.println("The  Filter Tab is not Present on the TabletPage and the Text is :" + pageobjects.TabletPage.TabletFilterTab.getText());
-				 }
+				if (pageobjects.TabletPage.TabletFilterTab.isDisplayed()) {
+					System.out.println("The Filter Tab is Present on the TabletPage and the Text is :"
+							+ pageobjects.TabletPage.TabletFilterTab.getText());
+				} else {
+					System.out.println("The  Filter Tab is not Present on the TabletPage and the Text is :"
+							+ pageobjects.TabletPage.TabletFilterTab.getText());
+				}
 				break;
 			case "sort":
-				if(pageobjects.TabletPage.TabletSortTab.isDisplayed())
-				 {
-					System.out.println("The  Sort Tab is Present on the TabletPage and the Text is :" + pageobjects.TabletPage.TabletSortTab.getText() );
-				 }else{
-				  System.out.println("The   Sort Tab is not Present on the TabletPage and the Text is :" + pageobjects.TabletPage.TabletSortTab.getText());
-				 }
+				if (pageobjects.TabletPage.TabletSortTab.isDisplayed()) {
+					System.out.println("The  Sort Tab is Present on the TabletPage and the Text is :"
+							+ pageobjects.TabletPage.TabletSortTab.getText());
+				} else {
+					System.out.println("The   Sort Tab is not Present on the TabletPage and the Text is :"
+							+ pageobjects.TabletPage.TabletSortTab.getText());
+				}
 				break;
-			
-			
+
 			}
-	
-		
+
+		}
+
 	}
-
-		
-	
- }
-	
-
 
 	public static void ElementClickAction(String elementname) {
 		// TODO Auto-generated method stub
-		WebElement w1=null;
-         System.out.println(" ");
-		
+		WebElement w1 = null;
+		System.out.println(" ");
+
 		System.out.println("Tablet_Page_Action");
-		
-		if(elementname!=null)
-		{
-			switch (elementname.toLowerCase())
-			{
+
+		if (elementname != null) {
+			switch (elementname.toLowerCase()) {
 			case "filter":
-				w1=pageobjects.TabletPage.TabletFilterTab;
+				w1 = pageobjects.TabletPage.TabletFilterTab;
 				break;
 			case "sort":
-				w1=pageobjects.TabletPage.TabletSortTab;		
-				break;	
-			
+				w1 = pageobjects.TabletPage.TabletSortTab;
+				break;
+
 			}
-	
+
+		}
 	}
-}
+
 	public static void DeviceSelect(String elementName) {
 
 		if (elementName.contains("Random Device")) {
@@ -80,22 +69,14 @@ public class TabletPageActions extends Environment {
 			log.debug("Random Tablet is selected");
 		}
 
-		if (elementName.contains("iPad97")) {
+		if (elementName.contains("Apple iPad 9.7")) {
 			System.out.println("iPad is selected");
 
-			pageobjects.TabletPage.iPad.click();
+			pageobjects.TabletPage.iPad97.click();
 
 			log.debug("iPad is selected");
 		}
-		
-		if (elementName.contains("iPad97")) {
-			System.out.println("iPad is selected");
 
-			pageobjects.TabletPage.iPad.click();
-
-			log.debug("iPad is selected");
-		}
-		
 		if (elementName.contains("SamsungGalaxy10")) {
 			System.out.println("SamsungGalaxy10 is selected");
 
@@ -103,8 +84,7 @@ public class TabletPageActions extends Environment {
 
 			log.debug("SamsungGalaxy10 is selected");
 		}
-		
-		
+
 	}
 
 }

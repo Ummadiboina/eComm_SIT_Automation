@@ -79,7 +79,7 @@ public class SmartwatchesPageActions extends Environment {
 		}
 
 		// The following has to be added in deviceSelect function –
-		if (elementName.contains("SamsungGearS2")) {
+		if (elementName.contains("Samsung Gear S2")) {
 			pageobjects.SmartwatchesPage.SamsungGearS2.click();
 			System.out.println("Selected SamsungGearS2");
 			log.debug("Selected SamsungGearS2");

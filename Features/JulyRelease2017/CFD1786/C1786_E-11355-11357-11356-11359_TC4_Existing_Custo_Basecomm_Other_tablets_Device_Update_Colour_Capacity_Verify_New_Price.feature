@@ -14,6 +14,6 @@ Feature: C1786_E-11355-11357-11356-11359_TC4_Existing_Custo_Basecomm_Other_table
     Then Verify the price gets updated based on the new colour and capacity
     And Click on "Buy Now" button for <device_name> and verify "Tariffs and Extras" page is displayed
 
-  Examples: 
-      | username             | password | device_name               | default_colour | default_capacity | default_stock_message | color |
-      | 07770001111@o2.co.uk | test123  | Samsung Galaxy Tab Active | Titanium Green | 16GB             | In Stock              | white |
+    Examples: 
+      | username             | password | device_name                    | default_colour | default_capacity | default_stock_message | color | capacity |
+      | 07770001111@o2.co.uk | test123  | Samsung Galaxy Tab A 2016 10.1 | Black          | 16GB             | In Stock              | Black | 16GB     |

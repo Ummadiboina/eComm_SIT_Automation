@@ -28,6 +28,9 @@ public class UpgradePhonesListingPage {
 
 	@FindBy(how = How.XPATH, using = "//a[contains(@href, '/upgrade/phones/apple/iphone-7/#contractType=paymonthly')]")
 	public static WebElement Iphone7;
+	
+	@FindBy(how = How.XPATH, using = "//a[contains(@href, '/upgrade/phones/apple/iphone-6/#contractType=paymonthly')]")
+	public static WebElement Iphone6;
 
 	@FindBy(how = How.XPATH, using = "//a[contains(@href, '/upgrade/phones/apple/iphone-7-plus/#contractType=paymonthly')]")
 	public static WebElement Iphone7Plus;

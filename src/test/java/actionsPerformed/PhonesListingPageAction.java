@@ -46,6 +46,13 @@ public class PhonesListingPageAction extends Environment {
 			System.out.println("Selected GalaxyS7");
 			log.debug("Selected GalaxyS7");
 		}
+		if (elementName.contains("BlackBerry Classic")) {
+			pageobjects.PhonesListingPage.BlackberryClassic.click();
+			System.out.println("Blackberry Classic");
+			log.debug("Blackberry Classic");
+			
+		}
+		
 		if (elementName.contains("AquarisM45")) {
 			pageobjects.PhonesListingPage.AquarisM45.click();
 			System.out.println("Selected AquarisM45");
@@ -62,6 +69,12 @@ public class PhonesListingPageAction extends Environment {
 			pageobjects.PhonesListingPage.GalaxyS8Plus.click();
 			// Assert.assertEquals(elementName,"Galaxy S7 is not found");
 			log.debug("Selected GalaxyS8Plus");
+
+		}
+		if (elementName.contains("Iphone5S")) {
+			pageobjects.PhonesListingPage.Iphone5S.click();
+			// Assert.assertEquals(elementName,"Galaxy S7 is not found");
+			log.debug("Selected Iphone7");
 
 		}
 

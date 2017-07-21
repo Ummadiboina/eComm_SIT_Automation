@@ -83,7 +83,7 @@ public static void DeviceSelect(String elementName) {
 			log.debug("Random Fitness tracker Device Selected");
 		}
 		
-		if(elementName.contains("FitbitAlta"))
+		if(elementName.contains("Fitbit Alta"))
 		{
 			System.out.println("FitbitAlta Fitness tracker Device Selected");
 
@@ -92,7 +92,7 @@ public static void DeviceSelect(String elementName) {
 			log.debug("FitbitAlta Fitness tracker Device Selected");
 		}
 		
-		if(elementName.contains("FitbitCharge2"))
+		if(elementName.contains("Fitbit Charge 2"))
 		{
 			System.out.println("FitbitCharge2 Fitness tracker Device Selected");
 

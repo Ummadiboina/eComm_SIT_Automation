@@ -31,5 +31,5 @@ Feature: C1786_ECOM-11527-11529-11633_TC1_New_basecomms_page_iPads_tab_coming_so
 
     #Modify the above step to include pdf download
     Examples: 
-      | username             | password | device_name       | default_colour | default_capacity | default_stock_message | colour |
-      | 07770001111@o2.co.uk | test123  | Apple iPad mini 3 | Space Grey     | 16GB             | In Stock              | white  |
+      | username             | password | device_name             | default_colour | default_capacity | default_stock_message | user         |
+      | 07770001111@o2.co.uk | test123  | Apple iPad Pro 9.7 inch | Space Grey     | 32GB             | Out of stock          | TEST ACCEPTA |

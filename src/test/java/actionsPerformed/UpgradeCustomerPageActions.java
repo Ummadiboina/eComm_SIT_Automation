@@ -76,6 +76,12 @@ public class UpgradeCustomerPageActions extends Environment {
 			log.debug("Selected Iphone7");
 
 		}
+		if (elementName.contains("Iphone6")) {
+			pageobjects.UpgradePhonesListingPage.Iphone6.click();
+			// Assert.assertEquals(elementName,"Galaxy S7 is not found");
+			log.debug("Selected Iphone6");
+
+		}
 
 		if (elementName.contains("Iphone7Plus")) {
 			pageobjects.UpgradePhonesListingPage.Iphone7Plus.click();

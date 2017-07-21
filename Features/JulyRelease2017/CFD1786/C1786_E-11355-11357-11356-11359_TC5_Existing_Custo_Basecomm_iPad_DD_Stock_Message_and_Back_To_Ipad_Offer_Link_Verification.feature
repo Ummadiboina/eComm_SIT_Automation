@@ -16,6 +16,5 @@ Feature: C1786_E-11355-11357-11356-11359_TC5_Existing_Custo_Basecomm_iPad_DD_Sto
     Then click on the "Back to iPad offers" link and verify user gets redirected to Basecomms listing page
 
     Examples: 
-    
-      | username             | password | device_name       | default_colour | default_capacity | default_stock_message |
-      | 07770001111@o2.co.uk | test123  | Apple iPad mini 3 | Space Grey     | 16GB             | Home Delivery         |
+      | username             | password | device_name             | default_colour | default_capacity | default_stock_message |
+      | 07770001111@o2.co.uk | test123  | Apple iPad Pro 9.7 inch | Space Grey     | 32GB             | Home Delivery         |

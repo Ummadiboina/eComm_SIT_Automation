@@ -12,10 +12,10 @@ Feature: C1960_ECOM11430_11485_11433_11419_TC1_CFA_iPad_Show_basecomms_tariffs_o
     And Verify new image is as per the selected <device_name>,<capacity>and <color> in the Tariffs and Extras Page
     And Land on the 'Tariffs and extra' page
     And I navigate to iPad landing page
-    And select the same basecomms iPad <iPadName>
+    And select the same basecomms iPad <device_name>
     And Navigate to device details page
     And verify that the Basecomms tariff is not displayed in the Tariff and Extras page
 
     Examples: 
-      | username    | password | device_name | default_colour | default_capacity | default_stock_message | color | capacity | user         |
-      | ink_jun9198 | test123  | Tablet_abc  | grey           | 16GB             | In Stock              | white | 128GB    | TEST ACCEPTA |
+      | username             | password | device_name             | default_colour | default_capacity | default_stock_message | color  | capacity | user         |
+      | 07770001111@o2.co.uk | test123  | Apple iPad Pro 9.7 inch | Space Grey     | 32GB             | Out of stock          | Silver | 128GB    | TEST ACCEPTA |
