@@ -1,4 +1,3 @@
-
 Feature: C1960_E11522_TC4_CFA_iPad_tab_basecomms_tariffs_Basket_Checkout_login_order_placement_O2_offer
 
   Scenario Outline: This scenario ensures that when the customer adds Basecomm tariff for iPad to the basket from my offers page, then the customer should be prompted to login from basket page and should be able to place order
@@ -24,5 +23,5 @@ Feature: C1960_E11522_TC4_CFA_iPad_tab_basecomms_tariffs_Basket_Checkout_login_o
 
     #Modify the above step to include pdf download
     Examples: 
-      | username    | password | device_name | default_colour | default_capacity | default_stock_message | color | capacity | user         |
-      | ink_jun9198 | test123  | iPad_abc    | grey           | 16GB             | In Stock              | white | 128GB    | TEST ACCEPTA |
+      | username             | password | device_name             | default_colour | default_capacity | default_stock_message | color  | capacity | user         |
+      | 07770001111@o2.co.uk | test123  | Apple iPad Pro 9.7 inch | Space Grey     | 32GB             | Out of stock          | Silver | 128GB    | TEST ACCEPTA |

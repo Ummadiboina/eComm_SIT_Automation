@@ -17,9 +17,9 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
-@CucumberOptions(strict = true, features = { "Features//consumerScenarios_Features" }, glue = { "steps" },
+@CucumberOptions(strict = true, features = { "Features//JuneRelease_Features//" }, glue = { "steps" },
 
-		tags = { "@AgentsRegressionPAYM" }, format = { "json:testResult/cucumber.json", "pretty",
+		tags = { }, format = { "json:testResult/cucumber.json", "pretty",
 				"html:testResult/report" }, plugin = { "com.cucumber.listener.ExtentCucumberFormatter" })
 
 /**

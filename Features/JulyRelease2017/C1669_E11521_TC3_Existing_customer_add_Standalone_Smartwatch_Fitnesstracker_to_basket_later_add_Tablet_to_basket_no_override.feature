@@ -22,5 +22,5 @@ Feature: C1669_E11521_TC3_Existing_customer_add_Standalone_Smartwatch_Fitnesstra
     Then Verify the devices <smartwatchname>, <fitnesstrackername> and <tabletname> in basket
 
     Examples: 
-      | username    | password | user         | smartwatchname | fitnesstrackername | tabletname |
-      | ink_jun9198 | test123  | TEST ACCEPTA | SamsungGearS2  | FitbitAlta         | iPad97     |
+      | username   | password | smartwatchname  | fitnesstrackername | tabletname     |
+      | ins_nov746 | test123  | Samsung Gear S2 | Fitbit Alta        | Apple iPad 9.7 |

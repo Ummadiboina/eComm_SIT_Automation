@@ -24,5 +24,5 @@ Feature: C1960_E11522_TC5_CFA_Other_tablets_tab_basecomms_tariffs_Basket_Checkou
 
     #Modify the above step to include pdf download
     Examples: 
-      | username    | password | device_name | default_colour | default_capacity | default_stock_message | color | capacity | user         |
-      | ink_jun9198 | test123  | Tablet_abc  | grey           | 16GB             | In Stock              | white | 128GB    | TEST ACCEPTA |
+      | username             | password | device_name                    | default_colour | default_capacity | default_stock_message | color | capacity | user         |
+      | 07770001111@o2.co.uk | test123  | Samsung Galaxy Tab A 2016 10.1 | Black          | 16GB             | In Stock              | Black | 16GB     | TEST ACCEPTA |

@@ -10,5 +10,5 @@ Feature: C1924_E11409_TC9_CFA_Displaying_label_in_place_of_only_one_variant_on_d
 
     #Close the browser
     Examples: 
-      | handset | 
-      | Iphone7 | 
+      | handset            |
+      | BlackBerry Classic |

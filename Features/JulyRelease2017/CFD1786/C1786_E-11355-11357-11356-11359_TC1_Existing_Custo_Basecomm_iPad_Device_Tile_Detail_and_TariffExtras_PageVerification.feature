@@ -33,5 +33,5 @@ Feature: C1786_E-11355-11357-11356-11359_TC1_Existing_Custo_Basecomm_iPad_Device
     And Verify all the details and links are displayed and working as expected in the Tariffs and Extras page <device_name>
 
     Examples: 
-      | username             | password | device_name       | default_colour | default_capacity | default_stock_message | colour |
-      | 07770001111@o2.co.uk | test123  | Apple iPad mini 3 | Space Grey     | 16GB             | In Stock              | white  |
+      | username             | password | device_name             | default_colour | default_capacity | default_stock_message | color  | capacity |
+      | 07770001111@o2.co.uk | test123  | Apple iPad Pro 9.7 inch | Space Grey     | 32GB             | Out of stock          | Silver | 128GB    |

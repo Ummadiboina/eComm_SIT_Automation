@@ -14,4 +14,4 @@ Feature: C1924_E11409_TC8_CFU_Displaying_dropdown_in_place_of_variant_swatches_o
     #Close the browser
     Examples: 
       | tabletname     | color | capacity | username    | password |
-      | Apple iPad 9.7 | Black | 64 GB    | ink_jun9198 | test123  |
+      | Apple iPad 9.7 | Black | 64 GB    | inq_jan9586 | test123  |

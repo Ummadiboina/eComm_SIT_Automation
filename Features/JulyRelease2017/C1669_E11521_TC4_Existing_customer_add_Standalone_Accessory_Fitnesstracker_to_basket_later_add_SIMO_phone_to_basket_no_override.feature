@@ -19,8 +19,8 @@ Feature: C1669_E11521_TC4_Existing_customer_add_Standalone_Accessory_Fitnesstrac
     And navigate to PAYM SIMO page
     And verify the elements
     And choose <contract> contract length
-    Then Verify the devices <accessoryname>, <fitnesstrackername> and "Your Tariff" in basket
+    Then Verify the devices <accessoryname>, <fitnesstrackername> and <Your_Tariff> in basket
 
     Examples: 
-      | username    | password | user         | accessoryname   | fitnesstrackername | tabletname     | contract  |
-      | ink_jun9198 | test123  | TEST ACCEPTA | Samsung Gear S2 | Fitbit Alta        | Apple iPad 9.7 | 12 Months |
+      | username   | password | user         | accessoryname    | fitnesstrackername | tabletname     | contract  | Your_Tariff |
+      | ins_nov746 | test123  | TEST ACCEPTA | JBL Xtreme Black | Fitbit Alta        | Apple iPad 9.7 | 12 Months | Your Tariff |

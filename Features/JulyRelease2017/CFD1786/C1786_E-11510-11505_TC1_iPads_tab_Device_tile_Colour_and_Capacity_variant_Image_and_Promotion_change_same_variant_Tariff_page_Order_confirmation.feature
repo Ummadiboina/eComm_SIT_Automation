@@ -26,5 +26,5 @@ Feature: C1786_E-11510-11505_TC1_iPads_tab_Device_tile_Colour_and_Capacity_varia
     #Modify the above step to include pdf download
     #make sure that device is ipad air 2 else validation fails for promotion
     Examples: 
-      | username             | password | device_name | default_colour | default_capacity | default_stock_message | color | capacity | user         |
-      | 07770001111@o2.co.uk | test123  | iPad Air 2  | Space Grey     | 16GB             | In Stock              | white | 128GB    | TEST ACCEPTA |
+      | username             | password | device_name             | default_colour | default_capacity | default_stock_message | color  | capacity | user         |
+      | 07770001111@o2.co.uk | test123  | Apple iPad Pro 9.7 inch | Space Grey     | 32GB             | Out of stock          | Silver | 128GB    | TEST ACCEPTA |

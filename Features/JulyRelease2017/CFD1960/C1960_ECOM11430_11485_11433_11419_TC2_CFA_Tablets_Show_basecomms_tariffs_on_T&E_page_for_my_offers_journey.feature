@@ -13,10 +13,10 @@ Feature: C1960_ECOM11430_11485_11433_11419_TC2_CFA_Tablets_Show_basecomms_tariff
     And Verify new image is as per the selected <device_name>,<capacity>and <color> in the Tariffs and Extras Page
     And Land on the 'Tariffs and extra' page
     And navigate to PAYM Tablets page
-    And I choose <tabletname> Tablet
+    And I choose <device_name> Tablet
     And Navigate to device details page
     And verify that the Basecomms tariff is not displayed in the Tariff and Extras page
 
     Examples: 
-      | username    | password | device_name | default_colour | default_capacity | default_stock_message | color | capacity | user         | tabletname |
-      | ink_jun9198 | test123  | Tablet_abc  | grey           | 16GB             | In Stock              | white | 128GB    | TEST ACCEPTA | different  |
+      | username             | password | device_name                    | default_colour | default_capacity | default_stock_message | color | capacity | user         |
+      | 07770001111@o2.co.uk | test123  | Samsung Galaxy Tab A 2016 10.1 | Black          | 16GB             | In Stock              | Black | 16GB     | TEST ACCEPTA |

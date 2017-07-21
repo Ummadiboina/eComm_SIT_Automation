@@ -5,11 +5,11 @@ Feature: C1924_E11409_TC2_CFA_Displaying_dropdown_in_place_of_variant_swatches_o
     Given I am an CFA user and Lands on shop page
     And Navigate to SmartWatches
     And I choose <smartwatchname> Smartwatch
-        And Navigate to device details page
-        Then check if the selected non connected device has more than 1 variant for both colour and capacity
+    And Navigate to device details page
+    Then check if the selected non connected device has more than 1 variant for both colour and capacity
     And select <color> color of the non connected device
-    And select <capacity> capacity of the non connected device
+    #And select <capacity> capacity of the non connected device
 
     Examples: 
-      | smartwatchname  | color | capacity |
-      | Samsung Gear S2 | Black | 64 GB    |
+      | smartwatchname      | color | capacity |
+      | Samsung Galaxy Gear | Black | 64 GB    |

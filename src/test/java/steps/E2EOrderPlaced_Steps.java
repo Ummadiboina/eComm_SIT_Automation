@@ -138,7 +138,7 @@ public class E2EOrderPlaced_Steps {
 			PageFactory.initElements(driver, MouseHoverPage.class);
 			MouseHoverAction.PayMPhonesLandingPage();
 
-			// Autoredirection.redirect();
+			Autoredirection.redirect();
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			System.out.println("unable to do mousehover to phones");
@@ -166,7 +166,7 @@ public class E2EOrderPlaced_Steps {
 			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 			PageFactory.initElements(driver, MouseHoverPage.class);
 			MouseHoverAction.AccessoriesLandingPage();
-			// Autoredirection.redirect();
+			Autoredirection.redirect();
 			Thread.sleep(10000);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
@@ -209,7 +209,7 @@ public class E2EOrderPlaced_Steps {
 			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 			PageFactory.initElements(driver, MouseHoverPage.class);
 			MouseHoverAction.SmartwatchesLandingPage();
-			// Autoredirection.redirect();
+			Autoredirection.redirect();
 		} catch (Exception e) {
 			System.out.println("unable to do mousehover to SmartWatches");
 			Assert.fail("unable to do mousehover to SmartWatches");
@@ -237,7 +237,7 @@ public class E2EOrderPlaced_Steps {
 			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 			PageFactory.initElements(driver, MouseHoverPage.class);
 			MouseHoverAction.SimIpadSimsPage();
-			// Autoredirection.redirectforHTTPconnections();
+			Autoredirection.redirectforHTTPconnections();
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			System.out.println("unable to do mousehover to Sims and Ipad Sims page");
@@ -251,7 +251,7 @@ public class E2EOrderPlaced_Steps {
 			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 			PageFactory.initElements(driver, MouseHoverPage.class);
 			MouseHoverAction.SimTabletsSimsPage();
-			// Autoredirection.redirectforHTTPconnections();
+			Autoredirection.redirectforHTTPconnections();
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			System.out.println("Unable to do mousehover to Sims and Tablet Sims page");
@@ -279,7 +279,7 @@ public class E2EOrderPlaced_Steps {
 			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 			PageFactory.initElements(driver, MouseHoverPage.class);
 			MouseHoverAction.UpgradeandUpgradeNow();
-			// Autoredirection.redirectUpgrades();
+			Autoredirection.redirectUpgrades();
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			System.out.println("Unable to do mousehover to Existing user and Navigates to Signin page");
@@ -2262,7 +2262,7 @@ public class E2EOrderPlaced_Steps {
 		try {
 			PageFactory.initElements(driver, ShopLandingPage.class);
 			ShopLandingPageAction.clickSignIn();
-			// Autoredirection.redirectUpgrades();
+			Autoredirection.redirectUpgrades();
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -2280,7 +2280,7 @@ public class E2EOrderPlaced_Steps {
 			PageFactory.initElements(driver, UpgradePhonesListingPage.class);
 			MouseHoverAction.UpgradeandUpgradeNow();
 			Thread.sleep(5000);
-			// Autoredirection.redirectUpgrades();
+			Autoredirection.redirectUpgrades();
 			UpgradeCustomerPageActions.viewAllPhones();
 			Thread.sleep(2000);
 		} catch (Exception e) {
@@ -2481,8 +2481,8 @@ public class E2EOrderPlaced_Steps {
 			BasketPageActions.BasketContentsforNonConnected();
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
-			System.out.println("Unable to add Fitnesstracker to basket");
-			Assert.fail("Unable to add Fitnesstracker to basket");
+			System.out.println("Unable to validate basket contents");
+			Assert.fail("Unable to validate basket contents");
 		}
 	}
 
@@ -2501,7 +2501,7 @@ public class E2EOrderPlaced_Steps {
 		}
 	}
 
-	@Then("^Verify the devices ([^\"]*) and \"([^\"]*)\" in basket$")
+	@Then("^Verify the devices ([^\"]*) and ([^\"]*) in basket$")
 	public void verify_2_devices_in_basket(String dev1, String dev2) {
 
 		try {
@@ -2651,8 +2651,8 @@ public class E2EOrderPlaced_Steps {
 
 		} catch (Exception e) {
 			e.printStackTrace();
-			System.out.println("selected color" + capacity);
-			Assert.fail("not able to select  color" + capacity);
+			System.out.println("selected capacity" + capacity);
+			Assert.fail("not able to select  capacity" + capacity);
 		}
 	}
 
@@ -2794,7 +2794,7 @@ public class E2EOrderPlaced_Steps {
 			PageFactory.initElements(driver, UpgradeTabletListingPage.class);
 			MouseHoverAction.UpgradeandUpgradeNow();
 			Thread.sleep(5000);
-			// Autoredirection.redirectUpgrades();
+			Autoredirection.redirectUpgrades();
 			UpgradeTabletListingPage.ViewAllTablets.click();
 			Thread.sleep(2000);
 		} catch (Exception e) {
@@ -3132,6 +3132,21 @@ public class E2EOrderPlaced_Steps {
 			Assert.fail("Unable to Select MBB Tariff");
 		}
 	}
+	
+	@And("^select Basecomm MBBDevice ([^\"]*)$")
+	public void select_BaseCommMBBDevice(String arg1) throws Throwable {
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, BaseCommPage.class);
+			PageFactory.initElements(driver, PAYMandPAYGTariffAndExtrasPage.class);
+			BaseCommPageActions.verifyTariffTypeMBB(arg1,"Basecomm");
+		} catch (Exception e) {
+			System.out.println("Unable to Select MBB Tariff");
+			Assert.fail("Unable to Select MBB Tariff");
+		}
+	}
+	
+	
 
 	@And("^I land on Basket page$")
 	public void i_land_on_Basket_page() throws Throwable {
@@ -3410,7 +3425,7 @@ public class E2EOrderPlaced_Steps {
 
 		}
 	}
-	
+
 	@Then("^click on the \"Back to tablet offers\" link and verify user gets redirected to Basecomms listing page$")
 	public void click_Back_to_tablet_offers_link_and_check_navigation_Basecomm_page() throws Throwable {
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
@@ -3462,7 +3477,7 @@ public class E2EOrderPlaced_Steps {
 
 		} catch (Exception e) {
 			e.printStackTrace();
-			Assert.fail("Unable to Verify the contents of the basecomm landing page");
+			Assert.fail("Unable to Verify the contents of other tablets section");
 
 		}
 	}
@@ -3505,7 +3520,7 @@ public class E2EOrderPlaced_Steps {
 
 		} catch (Exception e) {
 			e.printStackTrace();
-			Assert.fail("Unable to verify expected device and details are in device list");
+			Assert.fail("Unable to verify price updates");
 		}
 	}
 
@@ -3705,9 +3720,7 @@ public class E2EOrderPlaced_Steps {
 			Assert.fail("Unable to click on Continue link");
 		}
 	}
-	
-	
-	
+
 	@And("^I navigate to iPad landing page$")
 	public void And_I_navigate_to_iPad_landing_page() throws Throwable {
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
@@ -3722,7 +3735,7 @@ public class E2EOrderPlaced_Steps {
 		}
 	}
 
-@And("^select the same basecomms iPad ([^\"]*)$")
+	@And("^select the same basecomms iPad ([^\"]*)$")
 	public void select_the_same_device(String devicename) throws Throwable {
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		try {
@@ -3736,17 +3749,34 @@ public class E2EOrderPlaced_Steps {
 		}
 	}
 
-	
 	@And("^verify that the Basecomms tariff is not displayed in the Tariff and Extras page$")
-	public void verify_that_the_Basecomms_tariff_is_not_displayed_in_the_Tariff_and_Extras_page(String flow) throws Throwable {
+	public void verify_that_the_Basecomms_tariff_is_not_displayed_in_the_Tariff_and_Extras_page()
+			throws Throwable {
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		try {
 			PageFactory.initElements(driver, BaseCommPage.class);
-			BaseCommPageActions.verifyTariffType("Normal");	
+			BaseCommPageActions.verifyTariffType("Normal");
 			BaseCommPageActions.verifyTariffType("Check");
 		} catch (Exception e) {
 			e.printStackTrace();
-			Assert.fail("Unable to navigate to iPad landing page");
+			Assert.fail("Unable to verify that the Basecomms tariff is not displayed in the Tariff and Extras page");
+
+		}
+	}
+	
+	@And("^verify that the Basecomms tariff for MBB is not displayed in the Tariff and Extras page ([^\"]*)$")
+	public void verify_that_the_Basecomms_tariff_for_MBB_is_not_displayed_in_the_Tariff_and_Extras_page(String arg1)
+			throws Throwable {
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		try {
+			PageFactory.initElements(driver, BaseCommPage.class);
+			PageFactory.initElements(driver, PAYMandPAYGTariffAndExtrasPage.class);
+			BaseCommPageActions.verifyTariffTypeMBB(arg1,"Normal");
+			BaseCommPageActions.verifyTariffTypeMBB(arg1,"Check");
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+			Assert.fail("Unable to verify that the Basecomms tariff for MBB is not displayed in the Tariff and Extras page");
 
 		}
 	}
@@ -3764,6 +3794,5 @@ public class E2EOrderPlaced_Steps {
 			Assert.fail("Unable to Validate basecomms offer link");
 		}
 	}
-	
 
 }

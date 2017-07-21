@@ -13,8 +13,8 @@ public class TabletPage {
 	public static WebElement TabletSortTab;
 
 	// change the values for the below
-	@FindBy(how = How.XPATH, using = "//a[contains(@href, '/shop/iPad")
-	public static WebElement iPad;
+	@FindBy(how = How.XPATH, using = "//a[@href='https://www.o2.co.uk/shop/tablets/apple/ipad/#contractType=paymonthly']")	
+	public static WebElement iPad97;
 
 	@FindBy(how = How.XPATH, using = "//span[contains(text(),'Galaxy Tab A 2016 10.1')]")
 	public static WebElement SamsungGalaxy10;

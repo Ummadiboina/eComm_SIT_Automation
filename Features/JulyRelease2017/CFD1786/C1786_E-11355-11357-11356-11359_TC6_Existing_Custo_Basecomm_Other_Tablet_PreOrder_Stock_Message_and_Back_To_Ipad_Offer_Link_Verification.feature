@@ -19,5 +19,5 @@ Feature: C1786_E-11355-11357-11356-11359_TC6_Existing_Custo_Basecomm_Other_Table
     Examples: 
       Examples:
 
-      | username             | password | device_name               | default_colour | default_capacity | default_stock_message | color |
-      | 07770001111@o2.co.uk | test123  | Samsung Galaxy Tab Active | Titanium Green | 16GB             | Pre Order             | white |
+      | username             | password | device_name                    | default_colour | default_capacity | default_stock_message | color |
+      | 07770001111@o2.co.uk | test123  | Samsung Galaxy Tab A 2016 10.1 | Black          | 16GB             | Pre Order             | Black |

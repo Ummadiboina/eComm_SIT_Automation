@@ -34,5 +34,5 @@ Feature: C1786_E-11355-11357-11356-11359_TC2_Existing_Custo_Basecomm_Tablet_Devi
     And Verify all the details and links are displayed and working as expected in the Tariffs and Extras page <device_name>
 
     Examples: 
-      | username             | password | device_name               | default_colour | default_capacity | default_stock_message | color |
-      | 07770001111@o2.co.uk | test123  | Samsung Galaxy Tab Active | Titanium Green | 16GB             | In Stock              | white |
+      | username             | password | device_name                    | default_colour | default_capacity | default_stock_message | color | capacity |
+      | 07770001111@o2.co.uk | test123  | Samsung Galaxy Tab A 2016 10.1 | Black          | 16GB             | In Stock              | Black | 16GB     |

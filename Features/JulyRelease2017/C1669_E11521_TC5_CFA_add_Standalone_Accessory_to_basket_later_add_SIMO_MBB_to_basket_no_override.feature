@@ -14,8 +14,8 @@ Feature: C1669_E11521_TC5_CFA_add_Standalone_Accessory_to_basket_later_add_SIMO_
     And verify the elements
     And select <tabname> tab
     And choose <contract> contract length
-    Then Verify the devices <accessoryname> and "Your Tariff" in basket
+    Then Verify the devices <accessoryname> and <Your_Tariff> in basket
 
     Examples: 
-      | accessoryname    | tabname | contract |
-      | JBL Xtreme Black | MBB     | 30 Days  |
+      | accessoryname    | tabname | contract | Your_Tariff |
+      | JBL Xtreme Black | MBB     | 30 Days  | Your Tariff |
