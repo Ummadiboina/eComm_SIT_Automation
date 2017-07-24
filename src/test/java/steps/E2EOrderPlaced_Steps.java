@@ -2842,7 +2842,7 @@ public class E2EOrderPlaced_Steps {
 	@And("^I Login with Supply Chain Credential ([^\"]*) and ([^\"]*)$")
 	public void i_Login_with_Supply_Chain_Credential(String username, String password) throws Throwable {
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-		PageFactory.initElements(driver, CVOS_LandingPageActions.class);
+		PageFactory.initElements(driver, CVOS_PageObjects.class);
 		// try {
 		System.out.println("Entering the login Supply Chain creds");
 		CVOS_LandingPageActions.CVOSSupplyChainLogin(username, password);
@@ -2855,7 +2855,7 @@ public class E2EOrderPlaced_Steps {
 		 */
 		// }
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-		PageFactory.initElements(driver, CVOS_SupplyChainloggedIn.class);
+		PageFactory.initElements(driver, CVOS_PageObjects.class);
 		try {
 			CVOS_SupplyChainloggedIn.CVOSSupplyChainVal();
 		} catch (Exception e) {
@@ -2867,11 +2867,11 @@ public class E2EOrderPlaced_Steps {
 
 	}
 
-	@Then("^I click on  'Stockpot' tab in Supply Chain and search for (\\d+)AMFI(\\d+)N in SkU desciption$")
+	@Then("^I click on  'Stockpot' tab in Supply Chain and search for ([^\"]*) in SkU desciption$")
 	public void i_click_on_Stockpot_tab_in_Supply_Chain_and_search_for_SKU_ID_in_SkU_desciption(String SKUID)
 			throws Throwable {
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-		PageFactory.initElements(driver, CVOSstockpotPageActions.class);
+		PageFactory.initElements(driver, CVOS_PageObjects.class);
 		try {
 			CVOSstockpotPageActions.CVOSSupplyChainAct(SKUID);
 		} catch (Exception e) {
@@ -2886,7 +2886,7 @@ public class E2EOrderPlaced_Steps {
 	@And("^Click on Search button$")
 	public void click_on_Search_button() throws Throwable {
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-		PageFactory.initElements(driver, CVOSstockpotPageActions.class);
+		PageFactory.initElements(driver, CVOS_PageObjects.class);
 		try {
 			CVOSstockpotPageActions.CVOSSupplyChainSearch();
 		} catch (Exception e) {
@@ -2901,7 +2901,7 @@ public class E2EOrderPlaced_Steps {
 	@Then("^I should see the uploaded stock for the SKU ID$")
 	public void i_should_see_the_uploaded_stock_for_the_SKU_ID() throws Throwable {
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-		PageFactory.initElements(driver, CVOSstockpotPageActions.class);
+		PageFactory.initElements(driver, CVOS_PageObjects.class);
 		try {
 			CVOSstockpotPageActions.CVOSSupplyChainStockPot();
 		} catch (Exception e) {
@@ -2916,7 +2916,7 @@ public class E2EOrderPlaced_Steps {
 	@And("^I click on Online 'Stockpot' and move the delivery date to a past date$")
 	public void i_click_on_Online_Stockpot_and_move_the_delivery_date_to_a_past_date() throws Throwable {
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-		PageFactory.initElements(driver, CVOSstockpotPageActions.class);
+		PageFactory.initElements(driver, CVOS_PageObjects.class);
 		try {
 			CVOSstockpotPageActions.CVOSSupplyChainMoveDelivery();
 		} catch (Exception e) {
@@ -2931,7 +2931,7 @@ public class E2EOrderPlaced_Steps {
 	@And("^I click on Stock Merchandise$")
 	public void i_click_on_Stock_Merchandise() throws Throwable {
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-		PageFactory.initElements(driver, CVOSstockpotPageActions.class);
+		PageFactory.initElements(driver, CVOS_PageObjects.class);
 		try {
 			CVOSstockpotPageActions.CVOSSupplyChainStockMerchandise();
 		} catch (Exception e) {
@@ -2947,7 +2947,7 @@ public class E2EOrderPlaced_Steps {
 	public void i_click_on_Stock_Merchandise_and_search_using_Amazon_Fire_phone_GB(String Search_by_model)
 			throws Throwable {
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-		PageFactory.initElements(driver, CVOS_StockMerchandiseActions.class);
+		PageFactory.initElements(driver, CVOS_PageObjects.class);
 		try {
 			CVOS_StockMerchandiseActions.CVOSSupplyChainStockMerch(Search_by_model);
 		} catch (Exception e) {
@@ -2962,7 +2962,7 @@ public class E2EOrderPlaced_Steps {
 	@When("^I login as a Trading Admin$")
 	public void i_login_as_a_Trading_Admin() throws Throwable {
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-		PageFactory.initElements(driver, CVOS_StockMerchandiseActions.class);
+		PageFactory.initElements(driver, CVOS_PageObjects.class);
 		try {
 			CVOS_StockMerchandiseActions.CVOSSupplyChainlogout();
 		} catch (Exception e) {
@@ -2988,7 +2988,7 @@ public class E2EOrderPlaced_Steps {
 
 		}
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-		PageFactory.initElements(driver, CVOS_TradingAdminloggedIn.class);
+		PageFactory.initElements(driver, CVOS_PageObjects.class);
 
 		try {
 			CVOS_TradingAdminloggedIn.CVOSTradingStockpot();
@@ -3005,7 +3005,7 @@ public class E2EOrderPlaced_Steps {
 	public void i_click_on_Stockpot_tab_in_Trading_admin_and_search_for_SKU_ID_in_SkU_desciption(String SKUID)
 			throws Throwable {
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-		PageFactory.initElements(driver, CVOSstockpotPageActions.class);
+		PageFactory.initElements(driver, CVOS_PageObjects.class);
 
 		try {
 			CVOSstockpotPageActions.CVOSTradingAdminAct(SKUID);
@@ -3022,7 +3022,7 @@ public class E2EOrderPlaced_Steps {
 	public void when_I_click_on_All_shops_I_should_be_able_to_allocate_to_different_stockspots_using_Amazon_Fire_phone_GB(
 			String Search_by_model) throws Throwable {
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-		PageFactory.initElements(driver, CVOS_StockAllocationActions.class);
+		PageFactory.initElements(driver, CVOS_PageObjects.class);
 
 		try {
 			CVOS_StockAllocationActions.CVOSSupplyTradeAllocate(Search_by_model);
@@ -3039,7 +3039,7 @@ public class E2EOrderPlaced_Steps {
 	public void i_click_on_Stockpot_tab_and_search_using_SKU_ID_to_see_the_stock_status_then_I_should_see_them_in_Pre_Order_status(
 			String SKUID) throws Throwable {
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-		PageFactory.initElements(driver, CVOSstockpotPageActions.class);
+		PageFactory.initElements(driver, CVOS_PageObjects.class);
 
 		try {
 			CVOSstockpotPageActions.CVOSTradingAdminPreOrderVerf(SKUID);
@@ -3061,7 +3061,7 @@ public class E2EOrderPlaced_Steps {
 	public void i_should_be_able_to_move_the_Launch_date_to_a_past_dateAmazon_Fire_phone_GB(String Search_by_model)
 			throws Throwable {
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-		PageFactory.initElements(driver, CVOS_StockMerchandiseActions.class);
+		PageFactory.initElements(driver, CVOS_PageObjects.class);
 
 		try {
 			CVOS_StockMerchandiseActions.CVOSSupplyChainStockMerchDD(Search_by_model);
