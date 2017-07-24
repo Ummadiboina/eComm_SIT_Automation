@@ -75,7 +75,9 @@ public class MouseHoverPage extends Environment {
 
 	// Below is the link on the Smart Tech
 
-	@FindBy(how = How.XPATH, using = "//a[contains(@href, 'https://www.o2.co.uk/shop/smart-tech/')]")
+	// @FindBy(how = How.XPATH, using = "//a[contains(@href,
+	// 'https://www.ref.o2.co.uk/shop/smart-tech/')]")
+	@FindBy(how = How.XPATH, using = ("//*[@id='pn1']/ul/li[10]/a"))
 	public static WebElement MoveMouseOnSmarttechTab;
 
 	// Below is the link on the Smartwatches

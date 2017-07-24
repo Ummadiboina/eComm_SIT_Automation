@@ -47,6 +47,7 @@ public class ConnectedDeviceDetailsPageAction extends Environment {
 	public static void ViewAllTariffs() throws InterruptedException {
 		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 		pageobjects.ConnectedDeviceDetailsPage.ViewOurTariffs.click();
+		Thread.sleep(5000);
 		// driver.findElement(By.id("deviceDetailsSubmit")).click();
 		log.debug("Clicked on ViewOurTariffs");
 

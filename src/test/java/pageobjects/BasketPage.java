@@ -76,7 +76,7 @@ public class BasketPage {
 	public static WebElement DeviceHeadingNonConnected;
 	
 	//
-	@FindBy(how = How.XPATH, using = ("*[@id='accessory-quantitySelectBoxItContainer']"))
+	@FindBy(how = How.XPATH, using = ("//*[@id='accessory-quantitySelectBoxItContainer']"))
 	public static WebElement DeviceQuantityNonConnected;
 	
 	@FindBy(how = How.ID, using = ("storePostcode"))

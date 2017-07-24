@@ -19,8 +19,8 @@ Feature: C1669_E11521_TC3_Existing_customer_add_Standalone_Smartwatch_Fitnesstra
     And Navigate to device details page
     And Land on the 'Tariffs and extra' page
     And I Land on the basket page and choose home delivery option
-    Then Verify the devices <smartwatchname>, <fitnesstrackername> and <tabletname> in basket
+    Then Verify the devices <smartwatchname>, <fitnesstrackername> and <tabletname> in the basket
 
     Examples: 
-      | username   | password | smartwatchname  | fitnesstrackername | tabletname     |
-      | ins_nov746 | test123  | Samsung Gear S2 | Fitbit Alta        | Apple iPad 9.7 |
+      | username   | password | smartwatchname  | fitnesstrackername | tabletname  |
+      | ins_nov746 | test123  | Samsung Gear S2 | Fitbit Alta        | AppleiPad97 |

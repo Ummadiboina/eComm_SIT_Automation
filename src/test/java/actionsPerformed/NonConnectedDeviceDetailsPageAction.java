@@ -73,12 +73,18 @@ public static void AddtoBasket()
 
 	}
 	
-	public static void AddtoBasket() {
-		pageobjects.NonConnectedDeviceDetailsPage.AddtoBasket.click();
+	public static void AddtoBasket() throws InterruptedException {
+		
 		// driver.findElement(By.id("deviceDetailsSubmit")).click();
 		pageobjects.NonConnectedDeviceDetailsPage.AddtoBasket.getText();
 		log.debug("The text of the button is  - " + pageobjects.NonConnectedDeviceDetailsPage.AddtoBasket.getText());
+		System.out.println("The text of the button is  - " + pageobjects.NonConnectedDeviceDetailsPage.AddtoBasket.getText());
+		
+		pageobjects.NonConnectedDeviceDetailsPage.AddtoBasket.click();
+		Thread.sleep(5000);
+		
 		log.debug("Clicked on AddtoBasket");
+		System.out.println("Clicked on AddtoBasket");
 	}
 	
 

@@ -72,13 +72,14 @@ public class FitnessTrackerPageActions extends Environment {
 	}
 		
 }
-public static void DeviceSelect(String elementName) {
+public static void DeviceSelect(String elementName) throws InterruptedException {
 		
 		if(elementName.contains("Random Device"))
 		{
 			System.out.println("Random Fitness tracker Device Selected");
 
 			pageobjects.FitnessTrackerPage.RandomFitnesstracker.click();
+			Thread.sleep(5000);
 			//Assert.assertEquals(elementName,"Galaxy S7 is not found");
 			log.debug("Random Fitness tracker Device Selected");
 		}
@@ -88,6 +89,7 @@ public static void DeviceSelect(String elementName) {
 			System.out.println("FitbitAlta Fitness tracker Device Selected");
 
 			pageobjects.FitnessTrackerPage.FitbitAlta.click();
+			Thread.sleep(5000);
 			//Assert.assertEquals(elementName,"Galaxy S7 is not found");
 			log.debug("FitbitAlta Fitness tracker Device Selected");
 		}
@@ -97,6 +99,7 @@ public static void DeviceSelect(String elementName) {
 			System.out.println("FitbitCharge2 Fitness tracker Device Selected");
 
 			pageobjects.FitnessTrackerPage.FitbitCharge2.click();
+			Thread.sleep(5000);
 			//Assert.assertEquals(elementName,"Galaxy S7 is not found");
 			log.debug("FitbitCharge2 Fitness tracker Device Selected");
 		}
