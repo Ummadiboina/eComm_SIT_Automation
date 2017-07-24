@@ -529,8 +529,10 @@ static	Logger log = Logger.getLogger("devpinoyLogger");
 			  	
 			  System.out.println("Performing Smartwatches navigations");
 			  log.debug("Performing Smartwatches navigations");
+			  
+			  driver.navigate().refresh();
 
-			  Thread.sleep(2000);
+			  Thread.sleep(5000);
 			  Point coordinates = pageobjects.MouseHoverPage.MoveMouseOnShopTab.getLocation();
 	   		  Robot robot = new Robot();
 	   		  robot.mouseMove(coordinates.getX(),coordinates.getY()+120);
@@ -581,6 +583,10 @@ static	Logger log = Logger.getLogger("devpinoyLogger");
 			  	
 			  System.out.println("Performing Fitness tracker navigations");
 			  log.debug("Performing Accessories navigations");
+			  
+			  driver.navigate().refresh();
+			  Thread.sleep(5000);
+			  
 			  Point coordinates = pageobjects.MouseHoverPage.MoveMouseOnShopTab.getLocation();
 	   		  Robot robot = new Robot();
 	   		  robot.mouseMove(coordinates.getX(),coordinates.getY()+120);
@@ -633,6 +639,10 @@ static	Logger log = Logger.getLogger("devpinoyLogger");
 			  	
 			  System.out.println("Performing Accessories navigations");
 			  log.debug("Performing Accessories navigations");
+			  
+			  driver.navigate().refresh();
+			  Thread.sleep(5000);
+			  
 			  Point coordinates = pageobjects.MouseHoverPage.MoveMouseOnShopTab.getLocation();
 	   		  Robot robot = new Robot();
 	   		  robot.mouseMove(coordinates.getX(),coordinates.getY()+120);

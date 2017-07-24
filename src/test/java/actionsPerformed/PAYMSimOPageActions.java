@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.util.List;
 
 import org.apache.log4j.Logger;
+import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.JavascriptExecutor;
@@ -14,7 +15,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.Assert;
+
 
 import helpers.Environment;
 
@@ -170,8 +171,15 @@ public static void Sorting(String elementName) throws InterruptedException {
 
 public static void elementSelected() {
 
-	Assert.assertEquals(true, pageobjects.PAYMSimOPage.simphonetab.isSelected());
-	log.debug("Phone tab is selected by default");
+	//Assert.assertEquals(true, pageobjects.PAYMSimOPage.simphonetab.isSelected());
+	//Assert.assertTrue("Assertion Failed: Sim Phone tab is not selected", pageobjects.PAYMSimOPage.simphonetab.isSelected());
+	if(pageobjects.PAYMSimOPage.simphonetab.isEnabled()){
+		log.debug("Phone tab is selected by default");
+	}
+	else{
+		Assert.fail("Phone tab is not selected");
+	}
+	
 
 }
 

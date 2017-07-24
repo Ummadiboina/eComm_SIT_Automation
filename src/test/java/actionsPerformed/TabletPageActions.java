@@ -1,5 +1,6 @@
 package actionsPerformed;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 
 import helpers.Environment;
@@ -59,28 +60,33 @@ public class TabletPageActions extends Environment {
 		}
 	}
 
-	public static void DeviceSelect(String elementName) {
+	public static void DeviceSelect(String elementName) throws InterruptedException {
 
 		if (elementName.contains("Random Device")) {
 			System.out.println("Random Tablet is selected");
 
 			pageobjects.TabletPage.RandomTablet.click();
+			Thread.sleep(7000);
 
 			log.debug("Random Tablet is selected");
 		}
 
-		if (elementName.contains("Apple iPad 9.7")) {
-			System.out.println("iPad is selected");
+		if (elementName.contains("AppleiPad97")) {
 
+			JavascriptExecutor jse = (JavascriptExecutor) driver;
+			jse.executeScript("window.scrollBy(0,900)", "");
 			pageobjects.TabletPage.iPad97.click();
+			Thread.sleep(10000);
 
 			log.debug("iPad is selected");
+			System.out.println("iPad is selected");
 		}
 
 		if (elementName.contains("SamsungGalaxy10")) {
 			System.out.println("SamsungGalaxy10 is selected");
 
 			pageobjects.TabletPage.SamsungGalaxy10.click();
+			Thread.sleep(7000);
 
 			log.debug("SamsungGalaxy10 is selected");
 		}

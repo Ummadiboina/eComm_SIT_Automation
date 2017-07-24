@@ -196,6 +196,7 @@ public class E2EOrderPlaced_Steps {
 			PageFactory.initElements(driver, MouseHoverPage.class);
 			MouseHoverAction.FitnessLandingPage();
 			Autoredirection.redirect();
+			Thread.sleep(5000);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			System.out.println("unable to do mousehover to Fitness Trackers");
@@ -209,7 +210,8 @@ public class E2EOrderPlaced_Steps {
 			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 			PageFactory.initElements(driver, MouseHoverPage.class);
 			MouseHoverAction.SmartwatchesLandingPage();
-			Autoredirection.redirect();
+			
+			//Autoredirection.redirect();
 		} catch (Exception e) {
 			System.out.println("unable to do mousehover to SmartWatches");
 			Assert.fail("unable to do mousehover to SmartWatches");
@@ -641,6 +643,7 @@ public class E2EOrderPlaced_Steps {
 			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 			PageFactory.initElements(driver, PAYMandPAYGTariffAndExtrasPage.class);
 			PAYMandPAYGTariffAndExtrasPageActions.TariffSelect("Randomtariff");
+			Thread.sleep(3000);
 			// PAYMandPAYGTariffAndExtrasPageActions.addToBasketLive();
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
@@ -2320,7 +2323,10 @@ public class E2EOrderPlaced_Steps {
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		try {
 			PageFactory.initElements(driver, NonConnectedDeviceDetailsPage.class);
+			JavascriptExecutor jse = (JavascriptExecutor) driver;
+			jse.executeScript("window.scrollBy(0,300)", "");
 			NonConnectedDeviceDetailsPageAction.AddtoBasket();
+			Thread.sleep(7000);
 		} catch (Exception e) {
 			e.printStackTrace();
 			Assert.fail("Unable to click on Add to Basket button");
@@ -2346,8 +2352,8 @@ public class E2EOrderPlaced_Steps {
 			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 			PageFactory.initElements(driver, MouseHoverPage.class);
 			MouseHoverAction.PayMTabletsLandingPage();
-
 			Autoredirection.redirect();
+			Thread.sleep(10000);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			System.out.println("unable to do mousehover to tablets");
@@ -2374,10 +2380,11 @@ public class E2EOrderPlaced_Steps {
 			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 			PageFactory.initElements(driver, SmartwatchesPage.class);
 			SmartwatchesPageActions.DeviceSelect(elementName);
+			
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
-			System.out.println("Unable to select MBB PayG device");
-			Assert.fail("Unable to select MBB PayG device");
+			System.out.println("Unable to choose "+elementName+" device");
+			Assert.fail("Unable to choose "+elementName+" device");
 
 		}
 	}
@@ -2402,6 +2409,8 @@ public class E2EOrderPlaced_Steps {
 			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 			PageFactory.initElements(driver, TabletPage.class);
 			TabletPageActions.DeviceSelect(elementName);
+			Thread.sleep(5000);
+			System.out.println("Selected Device "+elementName+" successfully");
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			System.out.println("Unable to select tablet");
@@ -2486,7 +2495,7 @@ public class E2EOrderPlaced_Steps {
 		}
 	}
 
-	@Then("^Verify the devices ([^\"]*), ([^\"]*) and ([^\"]*) in basket$")
+	@Then("^Verify the devices ([^\"]*), ([^\"]*) and ([^\"]*) in the basket$")
 	public void verify_3_devices_in_basket(String dev1, String dev2, String dev3) {
 
 		try {

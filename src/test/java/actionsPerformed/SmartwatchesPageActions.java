@@ -68,21 +68,31 @@ public class SmartwatchesPageActions extends Environment {
 	}
 
 	public static void DeviceSelect(String elementName) throws InterruptedException {
+		try {
 
-		if (elementName.contains("Random Device")) {
-			System.out.println("Going to select Random Device");
+			if (elementName.contains("Random Device")) {
+				System.out.println("Going to select Random Device");
 
-			pageobjects.SmartwatchesPage.RandomSmartWatch.click();
+				pageobjects.SmartwatchesPage.RandomSmartWatch.click();
+				Thread.sleep(15000);
 
-			System.out.println("Clicked Random Device");
+				System.out.println("Clicked Random Device");
 
-		}
+			}
 
-		// The following has to be added in deviceSelect function –
-		if (elementName.contains("Samsung Gear S2")) {
-			pageobjects.SmartwatchesPage.SamsungGearS2.click();
-			System.out.println("Selected SamsungGearS2");
-			log.debug("Selected SamsungGearS2");
+			// The following has to be added in deviceSelect function –
+			else if (elementName.contains("Samsung Gear S2")) {
+				pageobjects.SmartwatchesPage.SamsungGearS2.click();
+				Thread.sleep(15000);
+				System.out.println("Selected SamsungGearS2");
+				log.debug("Selected SamsungGearS2");
+			}
+			
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			System.out.println("Unable to select "+elementName+" device");
+		//	Assert.fail("Unable to select "+elementName+" device");
+
 		}
 	}
 

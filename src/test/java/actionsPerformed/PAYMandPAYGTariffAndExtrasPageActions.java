@@ -11,6 +11,8 @@ import org.openqa.selenium.WebElement;
 
 import helpers.Environment;
 
+
+
 public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 	static Logger log = Logger.getLogger("devpinoyLogger");
 
@@ -65,6 +67,9 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 	
 	public static void addToBasketLive() {
 		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+		
+		JavascriptExecutor jse = (JavascriptExecutor) driver;
+		jse.executeScript("window.scrollBy(0,600)", "");
 		pageobjects.PAYMandPAYGTariffAndExtrasPage.addToBasketLive.sendKeys(Keys.ENTER);
 		log.debug("Clicked on Add to Basket in Tariff and Extras page");
 

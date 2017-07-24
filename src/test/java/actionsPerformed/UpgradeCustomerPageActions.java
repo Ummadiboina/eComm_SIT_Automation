@@ -17,12 +17,12 @@ public class UpgradeCustomerPageActions extends Environment {
 		if (pageobjects.UpgradeCustomerPage.signInButton.isDisplayed()) {
 			pageobjects.UpgradeCustomerPage.signInButton.click();
 			System.out.println("Clicked on Signin button");
-			JavascriptExecutor jse = (JavascriptExecutor) driver;
-			jse.executeScript("window.scrollBy(0,300)", "");
+		//	JavascriptExecutor jse = (JavascriptExecutor) driver;
+		//	jse.executeScript("window.scrollBy(0,300)", "");
 
 		}
 
-		try {
+	/*	try {
 			System.out.println("Going to click on Continue link");
 			pageobjects.UpgradeCustomerPage.Continue.click();
 
@@ -30,7 +30,7 @@ public class UpgradeCustomerPageActions extends Environment {
 			// TODO Auto-generated catch block
 			System.out.println("Continue button is not there, it should be fine");
 
-		}
+		}*/
 
 		Thread.sleep(5000);
 
