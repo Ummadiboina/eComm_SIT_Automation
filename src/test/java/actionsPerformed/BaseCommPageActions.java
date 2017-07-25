@@ -1,5 +1,7 @@
 package actionsPerformed;
 
+import static org.testng.Assert.fail;
+
 import java.net.MalformedURLException;
 import java.net.URI;
 import java.util.ArrayList;
@@ -54,11 +56,19 @@ public class BaseCommPageActions extends Environment {
 	public static void clickOnOtherTablets() {
 		log.debug("clicking on Other Tablets Tab");
 		pageobjects.BaseCommPage.OtherTablets.click();
+		System.out.println("clicking on Other Tablets Tab");
 	}
 
 	public static void clickOniPadTab() {
-		log.debug("clicking on iPad Tab");
-		pageobjects.BaseCommPage.iPad.click();
+		try {
+			log.debug("clicking on iPad Tab");
+			pageobjects.BaseCommPage.iPad.click();
+			Thread.sleep(4000);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			Assert.fail("Unable to click on ipad tab");
+		}
+		
 	}
 
 	public static void isPayAsUGoTabDisplayed() {
@@ -131,24 +141,48 @@ public class BaseCommPageActions extends Environment {
 	}
 
 	public static void VerifyIpadURL() throws MalformedURLException {
+			
 		System.out.println("Going to Verify content inside URL");
 		String currenturl = driver.getCurrentUrl();
+		System.out.println(currenturl);
 		final URI uri = URI.create(currenturl);
 		String queryString = uri.getQuery();
+		System.out.println("got final querystring  "+queryString);
+
 		// String subString = queryString.substring(queryString.);
-		String subString = queryString.substring(queryString.lastIndexOf('-') + 1);
+		String subString = queryString.substring(queryString.lastIndexOf('=') + 1);
 		System.out.println("EXTRACTED " + subString);
-		Assert.assertEquals("iPad", subString);
+		if(subString.equals("ipad"))
+		{
+			System.out.println("url is correct");
+		}
+		else
+		{
+			Assert.fail("url is improper and doesnot have ipad appended in it");
+		}
+		Assert.assertEquals("ipad", subString);
 	}
+	
 
 	public static void VerifyTabletURL() throws MalformedURLException {
 		System.out.println("Going to Verify content inside URL");
 		String currenturl = driver.getCurrentUrl();
+		System.out.println(currenturl);
 		final URI uri = URI.create(currenturl);
 		String queryString = uri.getQuery();
+		System.out.println("got final querystring  "+queryString);
+
 		// String subString = queryString.substring(queryString.);
-		String subString = queryString.substring(queryString.lastIndexOf('-') + 1);
+		String subString = queryString.substring(queryString.lastIndexOf('=') + 1);
 		System.out.println("EXTRACTED " + subString);
+		if(subString.contains("tablet"))
+		{
+			System.out.println("url is correct");
+		}
+		else
+		{
+			Assert.fail("url is improper and doesnot have tablet appended in it");
+		}
 		Assert.assertEquals("tablet", subString);
 	}
 
@@ -579,7 +613,7 @@ public class BaseCommPageActions extends Environment {
 	}
 	
 	
-	public static void checkExpDevAndDetails(String device, String color, String capacity, String stockmessage) {
+	/*public static void checkExpDevAndDetails(String device, String color, String capacity, String stockmessage) {
 
 		int k = 0;
 
@@ -620,6 +654,60 @@ public class BaseCommPageActions extends Environment {
 				}
 			}
 		}
-	}
-	
+	}*/
+	public static void checkExpDevAndDetails(String device, String color, String capacity, String stockmessage) {
+
+        int k = 0;
+
+        List<WebElement> iPadDevicesName = driver
+                    .findElements(By.xpath("//div[@class='multi-size-tile clearfix cube']//p[@class='details']"));
+
+        for (int i = 0; i < iPadDevicesName.size(); i++) {
+
+              if (iPadDevicesName.get(i).getText().equals(device)) {
+                    k = i + 1;
+                    String c = "(//select[@class='ng-pristine ng-valid colour-select'])[" + k + "]";
+
+                    WebElement colordropdown = driver.findElement(By.xpath(c));
+                    JavascriptExecutor js = (JavascriptExecutor) driver;
+                    js.executeScript("arguments[0].setAttribute('style', 'display:block;')", colordropdown);
+                    if (colordropdown.isDisplayed()) {
+                          WebElement firstcolor = new Select(colordropdown).getFirstSelectedOption();
+                          if (color.equals(firstcolor.getText())) {
+                                System.out.println("Expected color selected :" + firstcolor.getText());
+                          }
+                          else
+                          {
+                                Assert.fail("Expected color not selected by default");
+                          }
+                    }
+
+                    String d = "(//select[@class='memory-select ng-pristine ng-valid'])[" + k + "]";
+
+                    WebElement capacitydropdown = driver.findElement(By.xpath(d));
+                    js.executeScript("arguments[0].setAttribute('style', 'display:block;')", capacitydropdown);
+                    if (capacitydropdown.isDisplayed()) {
+                          WebElement firstcapacity = new Select(capacitydropdown).getFirstSelectedOption();
+                          if (capacity.equals(firstcapacity.getText())) {
+                                System.out.println("Expected capacity selected :" + firstcapacity.getText());
+                          }
+                          else
+                          {
+                                Assert.fail("Expected capacity not selected by default");
+                          }
+                    }
+                    String e = "(//p[@class='delivery-information ng-scope'])[" + k + "]";
+                    WebElement stockmsg = driver.findElement(By.xpath(e));
+                    System.out.println(stockmsg.getText());
+                    if (stockmsg.getText().contains(stockmessage)) {
+                          System.out.println("Expected stockmsg displayed :" + stockmsg.getText());
+                    }
+                    else
+                    {
+                          Assert.fail("Expected stockmsg not displayed by default");
+                    }
+              }
+        }
+  }
+
 }

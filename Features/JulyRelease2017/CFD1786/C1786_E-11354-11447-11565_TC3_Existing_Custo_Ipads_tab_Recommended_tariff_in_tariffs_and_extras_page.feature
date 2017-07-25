@@ -1,6 +1,7 @@
 Feature: C1786_E-11354-11447-11565_TC3_Existing_Custo_Ipads_tab_Recommended_tariff_in_tariffs_and_extras_page
 
-  Scenario Outline: This scenario ensures that when the existing customer lands on new basecomm page and selects 'iPads' tab,
+  Scenario Outline: 
+    This scenario ensures that when the existing customer lands on new basecomm page and selects 'iPads' tab, 
     then the customer should be able to see the configured recommended tariff(on the header of the tariff tile) in 'Tariff and Extras' Page
 
     Given I am existing user and I click on Signin button
@@ -12,5 +13,5 @@ Feature: C1786_E-11354-11447-11565_TC3_Existing_Custo_Ipads_tab_Recommended_tari
     And Verify recommended tariff is getting displayed on the header of the tariff tile in the "Tariffs and Extras" page
 
     Examples: 
-      | username             | password | device_name             | default_colour | default_capacity | default_stock_message |
-      | 07770001111@o2.co.uk | test123  | Apple iPad Pro 9.7 inch | Space Grey     | 32GB             | Out of stock          |
+      | username             | password | device_name       | default_colour | default_capacity | default_stock_message |
+      | 07770001111@o2.co.uk | test123  | Apple iPad mini 4 | Silver         | 32GB             | In Stock              |

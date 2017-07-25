@@ -1,17 +1,14 @@
 package GlobalActions;
 
-import java.awt.AWTException;
 import java.awt.Robot;
-import java.io.IOException;
 import java.util.NoSuchElementException;
 import java.util.concurrent.TimeUnit;
 
+import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.ElementNotVisibleException;
 import org.openqa.selenium.Point;
 import org.openqa.selenium.interactions.Actions;
-import org.apache.log4j.Logger;
-
 
 import helpers.Environment;
 
@@ -803,11 +800,17 @@ static	Logger log = Logger.getLogger("devpinoyLogger");
                   log.debug("Moving Mouse on the Shop Tab");
                   Actions action = new Actions(driver);
                   action.moveToElement(pageobjects.MouseHoverPage.MoveMouseOnMobileBroadband).build().perform();
-                  Thread.sleep(2000);
+                  System.out.println("Moved Mouse on the Mobile broadband dropdown");
+
+                  Thread.sleep(4000);
+                  
                   action.moveToElement(pageobjects.MouseHoverPage.MoveMouseOnPayMMBB).build().perform();
                   Thread.sleep(2000);
+                  System.out.println("Building Mousehover on the PAYM MBB option");
+
                   pageobjects.MouseHoverPage.MoveMouseOnPayMMBB.click();
                   log.debug("Moving Mouse on the PAYM MBB tab");
+                  System.out.println("Moving Mouse on the PAYM MBB option");
 
                   //Move mouse pointer away from location
                   Point coordinates2 = driver.findElement(By.xpath("//*[@id='header-consumer']/div")).getLocation();

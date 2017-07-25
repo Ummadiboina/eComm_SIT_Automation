@@ -79,6 +79,17 @@ public class SmartwatchesPageActions extends Environment {
 				System.out.println("Clicked Random Device");
 
 			}
+			
+			if (elementName.contains("Samsung Galaxy Gear")) {
+				System.out.println("Going to select SamsungGalaxyGear");
+
+				pageobjects.SmartwatchesPage.SamsungGearS2.click();
+				Thread.sleep(15000);
+
+				System.out.println("Clicked SamsungGalaxyGear");
+			}
+
+
 
 			// The following has to be added in deviceSelect function –
 			else if (elementName.contains("Samsung Gear S2")) {

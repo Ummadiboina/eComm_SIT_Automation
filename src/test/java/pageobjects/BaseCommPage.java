@@ -38,7 +38,7 @@ public class BaseCommPage {
 
 	@FindBy(how = How.XPATH, using = "//h2[contains(text(),'Filter')]")
 	public static WebElement FilterTab;
-	
+
 	@FindBy(how = How.XPATH, using = ("//a[@href='changeTariff/']"))
 	public static WebElement ChooseADifferentTariff;
 
@@ -65,7 +65,7 @@ public class BaseCommPage {
 
 	@FindBy(how = How.XPATH, using = ("//*[@data-qa-device-model-family='iPad mini 3']/div[4]/form/button"))
 	public static WebElement IpadMini3Buynow;
-	
+
 	@FindBy(how = How.XPATH, using = ("//*[@data-qa-device-model-family='iPad Pro 9.7 inch']/div[4]/form/button"))
 	public static WebElement IpadPro97Buynow;
 
@@ -77,10 +77,10 @@ public class BaseCommPage {
 
 	@FindBy(how = How.XPATH, using = ("//*[@data-qa-device-model-family='Galaxy Tab Active']/div[4]/form/button"))
 	public static WebElement GalaxyTabActiveBuynow;
-	
+
 	@FindBy(how = How.XPATH, using = ("//*[@data-qa-device-model-family='Galaxy Tab A 2016 10.1']/div[4]/form/button"))
 	public static WebElement GalaxyTabActive2016101Buynow;
-	
+
 	@FindBy(how = How.XPATH, using = ("//*[@data-qa-device-model-family='Xperia Z2 Tablet']/div[4]/form/button"))
 	public static WebElement XperiaZ2TabletBuynow;
 
@@ -119,5 +119,8 @@ public class BaseCommPage {
 
 	@FindBy(how = How.XPATH, using = ("//a[@href='/upgrade/store/existing-customer-offers/?deviceCategory=tablet']"))
 	public static WebElement BackToTablet;
+
+	@FindBy(how = How.XPATH, using = ("//*[@data-qa-device-model-family='iPad mini 4']//div/form/button"))
+	public static WebElement iPadMini4BuyNow;
 
 }

@@ -5,6 +5,7 @@ import java.util.concurrent.TimeUnit;
 
 import org.apache.log4j.Logger;
 import org.junit.Assert;
+import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
@@ -23,7 +24,6 @@ public class ConnectedDeviceDetailsPageAction extends Environment {
 		log.debug("Currently in Device details page");
 		log.debug("The Page title is " + Ele1);
 		Thread.sleep(5000);
-
 	}
 
 	public static void colorSelect(String color) {
@@ -138,7 +138,7 @@ public class ConnectedDeviceDetailsPageAction extends Environment {
 		}
 	}
 
-	public static void checkOnlyOneOptionAvailable() throws Exception {
+	/*public static void checkOnlyOneOptionAvailable() throws Exception {
 		// TODO Auto-generated method stub
 		Thread.sleep(5000);
 		WebElement capacity = pageobjects.ConnectedDeviceDetailsPage.CapacityDropDown;
@@ -172,7 +172,33 @@ public class ConnectedDeviceDetailsPageAction extends Environment {
 		
 		
 	
+	}*/
+	
+	public static void checkOnlyOneOptionAvailable() throws Exception {
+		Thread.sleep(2000);
+		List<WebElement> CapacityDropDown = driver.findElements(By.xpath("//select[@id='memory']"));
+		List<WebElement> ColorDropDown = driver.findElements(By.xpath("//select[@id='colour']"));
+
+		if (CapacityDropDown.size() > 0) {
+			Assert.fail("Capacity dropdown is present even when there is only single variant");
+		}
+
+		if (ColorDropDown.size() > 0) {
+			Assert.fail("Colour dropdown is present even when there is only single variant");
+		}
+
+		List<org.openqa.selenium.WebElement> capacityLabel = pageobjects.ConnectedDeviceDetailsPage.CapacityLabel;
+		if (capacityLabel.size() > 1) {
+			Assert.fail("There are more than 1 capacity variant displayed as a label");
+		}
+
+		List<org.openqa.selenium.WebElement> colorLabel = pageobjects.ConnectedDeviceDetailsPage.ColorLabel;
+		if (colorLabel.size() > 1) {
+			Assert.fail("There are more than 1 capacity variant displayed as a label");
+		}
+
 	}
+
 
 	public static void checkOnlyOneCapacityAvailable() throws Exception {
 		// TODO Auto-generated method stub
@@ -248,7 +274,7 @@ public class ConnectedDeviceDetailsPageAction extends Environment {
 		}
 	}
 
-	public static void isCapacityDropDownDisplayed() throws Exception {
+	/*public static void isCapacityDropDownDisplayed() throws Exception {
 		// TODO Auto-generated method stub
 		Thread.sleep(5000);
 		WebElement element = pageobjects.ConnectedDeviceDetailsPage.ColorDropDown;
@@ -264,6 +290,6 @@ public class ConnectedDeviceDetailsPageAction extends Environment {
 		if (!element.isDisplayed()) {
 			Assert.fail("color drop down is not present");
 		}
-	}
+	}*/
 
 }

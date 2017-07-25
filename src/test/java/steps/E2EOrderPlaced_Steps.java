@@ -155,8 +155,8 @@ public class E2EOrderPlaced_Steps {
 			Autoredirection.redirect();
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
-			System.out.println("unable to do mousehover to PayGMBB");
-			Assert.fail("unable to do mousehover to Accessories");
+			System.out.println("unable to do mousehover to PayM MBB");
+			Assert.fail("unable to do mousehover to PayM MBB");
 		}
 	}
 
@@ -2294,7 +2294,8 @@ public class E2EOrderPlaced_Steps {
 		}
 	}
 
-	@Given("^I choose upgrade PayM ([^\"]*)$")
+	@And("^I choose upgrade PayM handset ([^\"]*)$")
+	
 	public void Choose_upgradePAYM_Handset(String handset) throws Throwable {
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		try {
@@ -2585,8 +2586,8 @@ public class E2EOrderPlaced_Steps {
 		try {
 			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 			PageFactory.initElements(driver, ConnectedDeviceDetailsPage.class);
-			ConnectedDeviceDetailsPageAction.isColorDropDownDisplayed();
-			ConnectedDeviceDetailsPageAction.isCapacityDropDownDisplayed();
+			//ConnectedDeviceDetailsPageAction.isColorDropDownDisplayed();
+			//ConnectedDeviceDetailsPageAction.isCapacityDropDownDisplayed();
 
 			ConnectedDeviceDetailsPageAction.checkIfMoreThanOneOptionAvailable();
 
@@ -2622,8 +2623,8 @@ public class E2EOrderPlaced_Steps {
 		try {
 			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 			PageFactory.initElements(driver, ConnectedDeviceDetailsPage.class);
-			ConnectedDeviceDetailsPageAction.isColorDropDownDisplayed();
-			ConnectedDeviceDetailsPageAction.isCapacityDropDownDisplayed();
+			//ConnectedDeviceDetailsPageAction.isColorDropDownDisplayed();
+			//ConnectedDeviceDetailsPageAction.isCapacityDropDownDisplayed();
 
 			ConnectedDeviceDetailsPageAction.checkOnlyOneCapacityAvailable();
 			;
@@ -3223,6 +3224,7 @@ public class E2EOrderPlaced_Steps {
 		try {
 			PageFactory.initElements(driver, BaseCommPage.class);
 			BaseCommPageActions.clickOnOtherTablets();
+			Thread.sleep(4000);
 		} catch (Exception e) {
 			e.printStackTrace();
 			Assert.fail("Unable to click on Other Tablets tab");
@@ -3236,6 +3238,7 @@ public class E2EOrderPlaced_Steps {
 		try {
 			PageFactory.initElements(driver, BaseCommPage.class);
 			BaseCommPageActions.clickOniPadTab();
+			Thread.sleep(4000);
 		} catch (Exception e) {
 			e.printStackTrace();
 			Assert.fail("Unable to click on iPad tab");

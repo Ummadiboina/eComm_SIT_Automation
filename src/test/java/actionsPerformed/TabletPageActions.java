@@ -90,6 +90,18 @@ public class TabletPageActions extends Environment {
 
 			log.debug("SamsungGalaxy10 is selected");
 		}
+		if (elementName.contains("Apple iPad 9.7")) {
+			pageobjects.TabletPage.iPad97.click();
+					Thread.sleep(10000);
+					System.out.println("iPad is selected");
+				}
+
+		if (elementName.contains("Apple iPad Pro 10.5 inch")) {
+
+					pageobjects.TabletPage.AppleiPadPro105inch.click();
+					Thread.sleep(7000);
+					System.out.println("Apple iPad Pro 10.5 inch is selected");
+				}
 
 	}
 

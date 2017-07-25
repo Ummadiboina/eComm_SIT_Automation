@@ -1153,7 +1153,7 @@ public static void clickOnViewAllProductsOnOnePage() {
 			if (strings.get(0).startsWith("Click & Collect")) {
 				System.out.println("static sub navigation is at the correct position");
 			}
-			if (strings.get(stringsize - 1).startsWith("Free delivery working next working day")) {
+			if (strings.get(stringsize - 1).startsWith("Free delivery next working day")) {
 				System.out.println("Footer is at the correct position");
 			}
 			if (strings.get(1).startsWith("Tablet offers" + '\n' + "Especially for you")) {

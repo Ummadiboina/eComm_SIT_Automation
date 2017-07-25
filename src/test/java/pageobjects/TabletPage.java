@@ -24,4 +24,7 @@ public class TabletPage {
 	@FindBy(how = How.XPATH, using = "//*[@data-qa-device-contract-type='nonconnected'][1]")
 	public static WebElement RandomTablet;
 
+	@FindBy(how = How.XPATH, using = ("//a[contains(@href, '/shop/tablets/apple/ipad-pro-10.5-inch/#contractType=paymonthly')]"))	
+	public static WebElement AppleiPadPro105inch;
+
 }
