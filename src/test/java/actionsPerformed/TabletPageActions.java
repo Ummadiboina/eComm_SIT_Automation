@@ -61,36 +61,59 @@ public class TabletPageActions extends Environment {
 	}
 
 	public static void DeviceSelect(String elementName) throws InterruptedException {
+			
+		
+		//try {
+			if (((String) elementName).contains("Random Device")) {
+				System.out.println("Random Tablet is selected");
 
-		if (elementName.contains("Random Device")) {
-			System.out.println("Random Tablet is selected");
+				pageobjects.TabletPage.RandomTablet.click();
+				Thread.sleep(7000);
 
-			pageobjects.TabletPage.RandomTablet.click();
-			Thread.sleep(7000);
+				log.debug("Random Tablet is selected");
+			}
 
-			log.debug("Random Tablet is selected");
-		}
+			else if (((String) elementName).contains("Apple iPad 9.7")) {
 
-		if (elementName.contains("AppleiPad97")) {
+				JavascriptExecutor jse = (JavascriptExecutor) driver;
+				jse.executeScript("window.scrollBy(0,900)", "");
+				pageobjects.TabletPage.iPad97.click();
+				Thread.sleep(10000);
 
-			JavascriptExecutor jse = (JavascriptExecutor) driver;
-			jse.executeScript("window.scrollBy(0,900)", "");
-			pageobjects.TabletPage.iPad97.click();
-			Thread.sleep(10000);
+				log.debug("iPad is selected");
+				System.out.println("iPad is selected");
+			}
 
-			log.debug("iPad is selected");
-			System.out.println("iPad is selected");
-		}
+			else if (((String) elementName).contains("AppleiPadPro129")) {
 
-		if (elementName.contains("SamsungGalaxy10")) {
-			System.out.println("SamsungGalaxy10 is selected");
+				JavascriptExecutor jse = (JavascriptExecutor) driver;
+				jse.executeScript("window.scrollBy(0,1400)", "");
+				Thread.sleep(3000);
+			//	pageobjects.TabletPage.iPadPro129.click();
+				
+				JavascriptExecutor executor = (JavascriptExecutor) driver;
+				executor.executeScript("arguments[0].click();", pageobjects.TabletPage.iPadPro129);
+				Thread.sleep(20000);
 
-			pageobjects.TabletPage.SamsungGalaxy10.click();
-			Thread.sleep(7000);
+				System.out.println("iPad is selected");
+				//log.debug("iPad "+elementName+" has been selected");
+			}
 
-			log.debug("SamsungGalaxy10 is selected");
-		}
+			else if (((String) elementName).contains("SamsungGalaxy10")) {
+				System.out.println("SamsungGalaxy10 is selected");
 
+				pageobjects.TabletPage.SamsungGalaxy10.click();
+				Thread.sleep(7000);
+
+				log.debug("SamsungGalaxy10 is selected");
+			}
+
+	/*	}
+
+		catch (Exception e) {
+			log.debug("Cannot select device " + elementName + "" + e.getMessage());
+			System.out.println("Cannot select device " + elementName + " " + e.getMessage());
+		}*/
 	}
 
 }

@@ -210,8 +210,8 @@ public class E2EOrderPlaced_Steps {
 			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 			PageFactory.initElements(driver, MouseHoverPage.class);
 			MouseHoverAction.SmartwatchesLandingPage();
-			
-			//Autoredirection.redirect();
+
+			Autoredirection.redirect();
 		} catch (Exception e) {
 			System.out.println("unable to do mousehover to SmartWatches");
 			Assert.fail("unable to do mousehover to SmartWatches");
@@ -2353,7 +2353,7 @@ public class E2EOrderPlaced_Steps {
 			PageFactory.initElements(driver, MouseHoverPage.class);
 			MouseHoverAction.PayMTabletsLandingPage();
 			Autoredirection.redirect();
-			Thread.sleep(10000);
+			Thread.sleep(15000);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			System.out.println("unable to do mousehover to tablets");
@@ -2380,11 +2380,11 @@ public class E2EOrderPlaced_Steps {
 			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 			PageFactory.initElements(driver, SmartwatchesPage.class);
 			SmartwatchesPageActions.DeviceSelect(elementName);
-			
+
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
-			System.out.println("Unable to choose "+elementName+" device");
-			Assert.fail("Unable to choose "+elementName+" device");
+			System.out.println("Unable to choose " + elementName + " device");
+			Assert.fail("Unable to choose " + elementName + " device");
 
 		}
 	}
@@ -2405,17 +2405,18 @@ public class E2EOrderPlaced_Steps {
 
 	@And("^I choose ([^\"]*) Tablet$")
 	public void i_choose_Tablet(String elementName) throws Throwable {
+		
 		try {
 			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 			PageFactory.initElements(driver, TabletPage.class);
 			TabletPageActions.DeviceSelect(elementName);
-			Thread.sleep(5000);
-			System.out.println("Selected Device "+elementName+" successfully");
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
+			System.out.println("Selected Device " + elementName + " successfully");
+
+		} catch (Exception e) { // TODO Auto-generated catch block
 			System.out.println("Unable to select tablet");
 			Assert.fail("Unable to select tablet");
 		}
+
 	}
 
 	@And("^verify the elements$")
@@ -3141,21 +3142,19 @@ public class E2EOrderPlaced_Steps {
 			Assert.fail("Unable to Select MBB Tariff");
 		}
 	}
-	
+
 	@And("^select Basecomm MBBDevice ([^\"]*)$")
 	public void select_BaseCommMBBDevice(String arg1) throws Throwable {
 		try {
 			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 			PageFactory.initElements(driver, BaseCommPage.class);
 			PageFactory.initElements(driver, PAYMandPAYGTariffAndExtrasPage.class);
-			BaseCommPageActions.verifyTariffTypeMBB(arg1,"Basecomm");
+			BaseCommPageActions.verifyTariffTypeMBB(arg1, "Basecomm");
 		} catch (Exception e) {
 			System.out.println("Unable to Select MBB Tariff");
 			Assert.fail("Unable to Select MBB Tariff");
 		}
 	}
-	
-	
 
 	@And("^I land on Basket page$")
 	public void i_land_on_Basket_page() throws Throwable {
@@ -3759,8 +3758,7 @@ public class E2EOrderPlaced_Steps {
 	}
 
 	@And("^verify that the Basecomms tariff is not displayed in the Tariff and Extras page$")
-	public void verify_that_the_Basecomms_tariff_is_not_displayed_in_the_Tariff_and_Extras_page()
-			throws Throwable {
+	public void verify_that_the_Basecomms_tariff_is_not_displayed_in_the_Tariff_and_Extras_page() throws Throwable {
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		try {
 			PageFactory.initElements(driver, BaseCommPage.class);
@@ -3772,7 +3770,7 @@ public class E2EOrderPlaced_Steps {
 
 		}
 	}
-	
+
 	@And("^verify that the Basecomms tariff for MBB is not displayed in the Tariff and Extras page ([^\"]*)$")
 	public void verify_that_the_Basecomms_tariff_for_MBB_is_not_displayed_in_the_Tariff_and_Extras_page(String arg1)
 			throws Throwable {
@@ -3780,12 +3778,13 @@ public class E2EOrderPlaced_Steps {
 		try {
 			PageFactory.initElements(driver, BaseCommPage.class);
 			PageFactory.initElements(driver, PAYMandPAYGTariffAndExtrasPage.class);
-			BaseCommPageActions.verifyTariffTypeMBB(arg1,"Normal");
-			BaseCommPageActions.verifyTariffTypeMBB(arg1,"Check");
-			
+			BaseCommPageActions.verifyTariffTypeMBB(arg1, "Normal");
+			BaseCommPageActions.verifyTariffTypeMBB(arg1, "Check");
+
 		} catch (Exception e) {
 			e.printStackTrace();
-			Assert.fail("Unable to verify that the Basecomms tariff for MBB is not displayed in the Tariff and Extras page");
+			Assert.fail(
+					"Unable to verify that the Basecomms tariff for MBB is not displayed in the Tariff and Extras page");
 
 		}
 	}

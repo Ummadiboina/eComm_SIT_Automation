@@ -1,6 +1,6 @@
 Feature: C1669_E11521_TC3_Existing_customer_add_Standalone_Smartwatch_Fitnesstracker_to_basket_later_add_Tablet_to_basket_no_override
 
-  @JulyRelease
+  @JulyRelease1669TC3
   Scenario Outline: 
     Existing customer add Standalone Smartwatch Fitnesstracker to basket later add Tablet to basket no override
 
@@ -22,5 +22,5 @@ Feature: C1669_E11521_TC3_Existing_customer_add_Standalone_Smartwatch_Fitnesstra
     Then Verify the devices <smartwatchname>, <fitnesstrackername> and <tabletname> in the basket
 
     Examples: 
-      | username   | password | smartwatchname  | fitnesstrackername | tabletname  |
-      | ins_nov746 | test123  | Samsung Gear S2 | Fitbit Alta        | AppleiPad97 |
+      | username   | password | smartwatchname  | fitnesstrackername | tabletname      |
+      | ins_nov746 | test123  | Samsung Gear S2 | Fitbit Alta        | AppleiPadPro129 |

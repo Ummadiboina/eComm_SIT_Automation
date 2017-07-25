@@ -15,8 +15,11 @@ public class TabletPage {
 	// change the values for the below
 	// @FindBy(how = How.XPATH, using =
 	// "//a[@href='https://www.o2.co.uk/shop/tablets/apple/ipad/#contractType=paymonthly']")
-	@FindBy(how = How.XPATH, using = ("//a[contains(@href, '/shop/tablets/apple/ipad-9.7/#contractType=paymonthly')]"))	
+	@FindBy(how = How.XPATH, using = "//a[contains(@href, '/shop/tablets/apple/ipad-9.7/#contractType=paymonthly')]")	
 	public static WebElement iPad97;
+	
+	@FindBy(how = How.XPATH, using = "//a[contains(@href, '/shop/tablets/apple/ipad-pro-12.9-inch/#contractType=paymonthly')]")
+	public static WebElement iPadPro129;
 
 	@FindBy(how = How.XPATH, using = "//span[contains(text(),'Galaxy Tab A 2016 10.1')]")
 	public static WebElement SamsungGalaxy10;

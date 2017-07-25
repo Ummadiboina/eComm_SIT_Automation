@@ -1,6 +1,6 @@
 Feature: C1669_E11521_TC4_Existing_customer_add_Standalone_Accessory_Fitnesstracker_to_basket_later_add_SIMO_phone_to_basket_no_override
 
-  @JulyRelease
+  @JulyRelease1669TC4
   Scenario Outline: 
     Existing custo add Standalone Accessory Fitnesstracker to basket later add SIMO phone to basket no override
 
@@ -19,8 +19,8 @@ Feature: C1669_E11521_TC4_Existing_customer_add_Standalone_Accessory_Fitnesstrac
     And navigate to PAYM SIMO page
     And verify the elements
     And choose <contract> contract length
-    Then Verify the devices <accessoryname>, <fitnesstrackername> and <Your_Tariff> in basket
+    Then Verify the devices <accessoryname>, <fitnesstrackername> and <Your_Tariff> in the basket
 
     Examples: 
-      | username   | password | user         | accessoryname    | fitnesstrackername | tabletname     | contract  | Your_Tariff |
-      | ins_nov746 | test123  | TEST ACCEPTA | JBL Xtreme Black | Fitbit Alta        | Apple iPad 9.7 | 12 Months | Your Tariff |
+      | username   | password | user         | accessoryname    | fitnesstrackername | contract | Your_Tariff |
+      | ins_nov746 | test123  | TEST ACCEPTA | JBL Xtreme Black | Fitbit Alta        | 30 days  | Your Tariff |
