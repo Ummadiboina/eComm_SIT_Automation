@@ -3806,5 +3806,23 @@ public class E2EOrderPlaced_Steps {
 			Assert.fail("Unable to Validate basecomms offer link");
 		}
 	}
+	@Then("^check if the selected non connected device has more than (\\d+) variant for colour and single variant for capacity$")
+	public void check_if_the_selected_non_connected_device_has_more_than_variant_for_colour_and_single_variant_for_capacity(int arg1) throws Throwable {
+	    // Write code here that turns the phrase above into concrete actions
+	}
+	
+	@Given("^I choose upgrade PayM Iphone(\\d+)$")
+	public void i_choose_upgrade_PayM_Iphone(int arg1) throws Throwable {
+	    // Write code here that turns the phrase above into concrete actions
+	}
+	
+	@Given("^I choose upgrade PayM tablet Apple iPad Pro (\\d+)\\.(\\d+) inch$")
+	public void i_choose_upgrade_PayM_tablet_Apple_iPad_Pro_inch(int arg1, int arg2) throws Throwable {
+	    // Write code here that turns the phrase above into concrete actions
+	}
 
+	@Then("^check if the selected device has only (\\d+) variant for both colour and capacity$")
+	public void check_if_the_selected_device_has_only_variant_for_both_colour_and_capacity(int arg1) throws Throwable {
+	    // Write code here that turns the phrase above into concrete actions
+	}
 }
