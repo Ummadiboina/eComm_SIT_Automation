@@ -1,433 +1,641 @@
-$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("Features/JulyRelease2017/C1669_E11521_TC4_Existing_customer_add_Standalone_Accessory_Fitnesstracker_to_basket_later_add_SIMO_phone_to_basket_no_override.feature");
+$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("Features/JulyRelease2017/C1669_E11521_TC1_CFA_Add_All_NonConnected_Devices_To_Basket_Followed_By_Adding_A_Phone_Verify_Not_Overridden.feature");
 formatter.feature({
   "line": 1,
-  "name": "C1669_E11521_TC4_Existing_customer_add_Standalone_Accessory_Fitnesstracker_to_basket_later_add_SIMO_phone_to_basket_no_override",
+  "name": "C1669_E11521_TC1_CFA_Add_All_NonConnected_Devices_To_Basket_Followed_By_Adding_A_Phone_Verify_Not_Overridden",
   "description": "",
-  "id": "c1669-e11521-tc4-existing-customer-add-standalone-accessory-fitnesstracker-to-basket-later-add-simo-phone-to-basket-no-override",
+  "id": "c1669-e11521-tc1-cfa-add-all-nonconnected-devices-to-basket-followed-by-adding-a-phone-verify-not-overridden",
   "keyword": "Feature"
 });
 formatter.scenarioOutline({
-  "line": 4,
-  "name": "",
-  "description": "Existing custo add Standalone Accessory Fitnesstracker to basket later add SIMO phone to basket no override",
-  "id": "c1669-e11521-tc4-existing-customer-add-standalone-accessory-fitnesstracker-to-basket-later-add-simo-phone-to-basket-no-override;",
+  "line": 3,
+  "name": "CFA Add all non connected devices (Standalone Smartwatch, Accessory and Fitnesstracker) and One Connected Device and Veiryf Basket not overridden",
+  "description": "",
+  "id": "c1669-e11521-tc1-cfa-add-all-nonconnected-devices-to-basket-followed-by-adding-a-phone-verify-not-overridden;cfa-add-all-non-connected-devices-(standalone-smartwatch,-accessory-and-fitnesstracker)-and-one-connected-device-and-veiryf-basket-not-overridden",
   "type": "scenario_outline",
-  "keyword": "Scenario Outline",
-  "tags": [
-    {
-      "line": 3,
-      "name": "@JulyRelease1669TC4"
-    }
-  ]
+  "keyword": "Scenario Outline"
 });
 formatter.step({
-  "line": 7,
-  "name": "I am existing user and I click on Signin button",
+  "line": 4,
+  "name": "I am an CFA user and Lands on shop page",
   "keyword": "Given "
 });
 formatter.step({
-  "line": 8,
-  "name": "Signin using valid \u003cusername\u003e and \u003cpassword\u003e credentials",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 9,
+  "line": 5,
   "name": "Navigate to Accessories",
   "keyword": "And "
 });
 formatter.step({
+  "line": 6,
+  "name": "select an \"Random\" Accessory",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 7,
+  "name": "add Accessories to basket within limit in details page and navigate to basket",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 8,
+  "name": "I Land on the Non Phone related basket page and choose home delivery option",
+  "keyword": "And "
+});
+formatter.step({
+  "comments": [
+    {
+      "line": 9,
+      "value": "# And I click on Continue Shopping link"
+    }
+  ],
   "line": 10,
-  "name": "Select \u003caccessoryname\u003e from accessories",
+  "name": "click on continue shopping button",
   "keyword": "And "
 });
 formatter.step({
   "line": 11,
-  "name": "click on Add to Basket button",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 12,
-  "name": "Verify the device \u003caccessoryname\u003e in basket",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 13,
-  "name": "click on continue shopping button",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 14,
   "name": "Navigate to Fitness Trackers",
   "keyword": "And "
 });
 formatter.step({
-  "line": 15,
-  "name": "I choose \u003cfitnesstrackername\u003e FitnessTracker",
+  "line": 12,
+  "name": "select any available \"Random\" Fitness tracker",
   "keyword": "And "
 });
 formatter.step({
+  "line": 13,
+  "name": "add FitnessTracker to basket within limit in details page and navigate to basket",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 14,
+  "name": "I Land on the Non Phone related basket page and choose home delivery option",
+  "keyword": "And "
+});
+formatter.step({
+  "comments": [
+    {
+      "line": 15,
+      "value": "# And I click on Continue Shopping link"
+    }
+  ],
   "line": 16,
-  "name": "click on Add to Basket button",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 17,
-  "name": "Verify the device \u003cfitnesstrackername\u003e in basket",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 18,
   "name": "click on continue shopping button",
   "keyword": "And "
 });
 formatter.step({
+  "line": 17,
+  "name": "Navigate to SmartWatches",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 18,
+  "name": "select any available \"Random\" Smartwatch",
+  "keyword": "And "
+});
+formatter.step({
   "line": 19,
-  "name": "navigate to PAYM SIMO page",
+  "name": "add SmartWatch to basket within limit in details page and navigate to basket",
   "keyword": "And "
 });
 formatter.step({
   "line": 20,
-  "name": "verify the elements",
+  "name": "I Land on the Non Phone related basket page and choose home delivery option",
   "keyword": "And "
 });
 formatter.step({
   "line": 21,
-  "name": "choose \u003ccontract\u003e contract length",
+  "name": "Verify all three non connected devices got added to the basket section before selecting connected device",
   "keyword": "And "
 });
 formatter.step({
-  "line": 22,
-  "name": "Verify the devices \u003caccessoryname\u003e, \u003cfitnesstrackername\u003e and \u003cYour_Tariff\u003e in the basket",
+  "comments": [
+    {
+      "line": 22,
+      "value": "#And I click on Continue Shopping link"
+    }
+  ],
+  "line": 23,
+  "name": "click on continue shopping button",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 24,
+  "name": "navigate to PAYM Phones page",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 25,
+  "name": "I choose PayM \u003chandset\u003e",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 26,
+  "name": "Navigate to device details page",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 27,
+  "name": "Land on the \u0027Tariffs and extra\u0027 page",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 28,
+  "name": "I Land on the basket page and choose home delivery option",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 29,
+  "name": "Verify all three non connected devices are still retained in the basket and not overridden",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 30,
+  "name": "click on \"go to checkout\" button",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 31,
+  "name": "input \u003cFirstname\u003e and \u003cSurname\u003e and other valid details in Delivery page and Click on the \u0027Continue button\u0027",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 32,
+  "name": "land on the payment page and input \u003cUsername\u003e and other details and click \u0027Continue on next step\u0027",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 33,
+  "name": "Continue to Agreements page and confirm all the agreement checks",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 34,
+  "name": "Continue to Review page and review the order",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 35,
+  "name": "order confirmation is displayed",
   "keyword": "Then "
 });
 formatter.examples({
-  "line": 24,
+  "line": 37,
   "name": "",
   "description": "",
-  "id": "c1669-e11521-tc4-existing-customer-add-standalone-accessory-fitnesstracker-to-basket-later-add-simo-phone-to-basket-no-override;;",
+  "id": "c1669-e11521-tc1-cfa-add-all-nonconnected-devices-to-basket-followed-by-adding-a-phone-verify-not-overridden;cfa-add-all-non-connected-devices-(standalone-smartwatch,-accessory-and-fitnesstracker)-and-one-connected-device-and-veiryf-basket-not-overridden;",
   "rows": [
     {
       "cells": [
-        "username",
-        "password",
-        "user",
-        "accessoryname",
-        "fitnesstrackername",
-        "tabletname",
-        "contract",
-        "Your_Tariff"
+        "handset",
+        "Firstname",
+        "Surname",
+        "Username"
       ],
-      "line": 25,
-      "id": "c1669-e11521-tc4-existing-customer-add-standalone-accessory-fitnesstracker-to-basket-later-add-simo-phone-to-basket-no-override;;;1"
+      "line": 38,
+      "id": "c1669-e11521-tc1-cfa-add-all-nonconnected-devices-to-basket-followed-by-adding-a-phone-verify-not-overridden;cfa-add-all-non-connected-devices-(standalone-smartwatch,-accessory-and-fitnesstracker)-and-one-connected-device-and-veiryf-basket-not-overridden;;1"
     },
     {
       "cells": [
-        "ins_nov746",
-        "test123",
-        "TEST ACCEPTA",
-        "JBL Xtreme Black",
-        "Fitbit Alta",
-        "Apple iPad 9.7",
-        "30 days",
-        "Your Tariff"
+        "Iphone7",
+        "TEST",
+        "ACCEPTA",
+        "TEST ACCEPTA"
       ],
-      "line": 26,
-      "id": "c1669-e11521-tc4-existing-customer-add-standalone-accessory-fitnesstracker-to-basket-later-add-simo-phone-to-basket-no-override;;;2"
+      "line": 39,
+      "id": "c1669-e11521-tc1-cfa-add-all-nonconnected-devices-to-basket-followed-by-adding-a-phone-verify-not-overridden;cfa-add-all-non-connected-devices-(standalone-smartwatch,-accessory-and-fitnesstracker)-and-one-connected-device-and-veiryf-basket-not-overridden;;2"
     }
   ],
   "keyword": "Examples"
 });
 formatter.before({
-  "duration": 16965036012,
+  "duration": 46136882455,
   "status": "passed"
 });
 formatter.scenario({
-  "line": 26,
-  "name": "",
-  "description": "Existing custo add Standalone Accessory Fitnesstracker to basket later add SIMO phone to basket no override",
-  "id": "c1669-e11521-tc4-existing-customer-add-standalone-accessory-fitnesstracker-to-basket-later-add-simo-phone-to-basket-no-override;;;2",
+  "line": 39,
+  "name": "CFA Add all non connected devices (Standalone Smartwatch, Accessory and Fitnesstracker) and One Connected Device and Veiryf Basket not overridden",
+  "description": "",
+  "id": "c1669-e11521-tc1-cfa-add-all-nonconnected-devices-to-basket-followed-by-adding-a-phone-verify-not-overridden;cfa-add-all-non-connected-devices-(standalone-smartwatch,-accessory-and-fitnesstracker)-and-one-connected-device-and-veiryf-basket-not-overridden;;2",
   "type": "scenario",
-  "keyword": "Scenario Outline",
-  "tags": [
-    {
-      "line": 3,
-      "name": "@JulyRelease1669TC4"
-    }
-  ]
+  "keyword": "Scenario Outline"
 });
 formatter.step({
-  "line": 7,
-  "name": "I am existing user and I click on Signin button",
+  "line": 4,
+  "name": "I am an CFA user and Lands on shop page",
   "keyword": "Given "
 });
 formatter.step({
-  "line": 8,
-  "name": "Signin using valid ins_nov746 and test123 credentials",
-  "matchedColumns": [
-    0,
-    1
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "line": 9,
+  "line": 5,
   "name": "Navigate to Accessories",
   "keyword": "And "
 });
 formatter.step({
-  "line": 10,
-  "name": "Select JBL Xtreme Black from accessories",
-  "matchedColumns": [
-    3
+  "line": 6,
+  "name": "select an \"Random\" Accessory",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 7,
+  "name": "add Accessories to basket within limit in details page and navigate to basket",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 8,
+  "name": "I Land on the Non Phone related basket page and choose home delivery option",
+  "keyword": "And "
+});
+formatter.step({
+  "comments": [
+    {
+      "line": 9,
+      "value": "# And I click on Continue Shopping link"
+    }
   ],
+  "line": 10,
+  "name": "click on continue shopping button",
   "keyword": "And "
 });
 formatter.step({
   "line": 11,
-  "name": "click on Add to Basket button",
+  "name": "Navigate to Fitness Trackers",
   "keyword": "And "
 });
 formatter.step({
   "line": 12,
-  "name": "Verify the device JBL Xtreme Black in basket",
+  "name": "select any available \"Random\" Fitness tracker",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 13,
+  "name": "add FitnessTracker to basket within limit in details page and navigate to basket",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 14,
+  "name": "I Land on the Non Phone related basket page and choose home delivery option",
+  "keyword": "And "
+});
+formatter.step({
+  "comments": [
+    {
+      "line": 15,
+      "value": "# And I click on Continue Shopping link"
+    }
+  ],
+  "line": 16,
+  "name": "click on continue shopping button",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 17,
+  "name": "Navigate to SmartWatches",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 18,
+  "name": "select any available \"Random\" Smartwatch",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 19,
+  "name": "add SmartWatch to basket within limit in details page and navigate to basket",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 20,
+  "name": "I Land on the Non Phone related basket page and choose home delivery option",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 21,
+  "name": "Verify all three non connected devices got added to the basket section before selecting connected device",
+  "keyword": "And "
+});
+formatter.step({
+  "comments": [
+    {
+      "line": 22,
+      "value": "#And I click on Continue Shopping link"
+    }
+  ],
+  "line": 23,
+  "name": "click on continue shopping button",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 24,
+  "name": "navigate to PAYM Phones page",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 25,
+  "name": "I choose PayM Iphone7",
+  "matchedColumns": [
+    0
+  ],
+  "keyword": "And "
+});
+formatter.step({
+  "line": 26,
+  "name": "Navigate to device details page",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 27,
+  "name": "Land on the \u0027Tariffs and extra\u0027 page",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 28,
+  "name": "I Land on the basket page and choose home delivery option",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 29,
+  "name": "Verify all three non connected devices are still retained in the basket and not overridden",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 30,
+  "name": "click on \"go to checkout\" button",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 31,
+  "name": "input TEST and ACCEPTA and other valid details in Delivery page and Click on the \u0027Continue button\u0027",
+  "matchedColumns": [
+    1,
+    2
+  ],
+  "keyword": "And "
+});
+formatter.step({
+  "line": 32,
+  "name": "land on the payment page and input TEST ACCEPTA and other details and click \u0027Continue on next step\u0027",
   "matchedColumns": [
     3
   ],
   "keyword": "And "
 });
 formatter.step({
-  "line": 13,
-  "name": "click on continue shopping button",
+  "line": 33,
+  "name": "Continue to Agreements page and confirm all the agreement checks",
   "keyword": "And "
 });
 formatter.step({
-  "line": 14,
-  "name": "Navigate to Fitness Trackers",
+  "line": 34,
+  "name": "Continue to Review page and review the order",
   "keyword": "And "
 });
 formatter.step({
-  "line": 15,
-  "name": "I choose Fitbit Alta FitnessTracker",
-  "matchedColumns": [
-    4
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "line": 16,
-  "name": "click on Add to Basket button",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 17,
-  "name": "Verify the device Fitbit Alta in basket",
-  "matchedColumns": [
-    4
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "line": 18,
-  "name": "click on continue shopping button",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 19,
-  "name": "navigate to PAYM SIMO page",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 20,
-  "name": "verify the elements",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 21,
-  "name": "choose 30 days contract length",
-  "matchedColumns": [
-    6
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "line": 22,
-  "name": "Verify the devices JBL Xtreme Black, Fitbit Alta and Your Tariff in the basket",
-  "matchedColumns": [
-    3,
-    4,
-    7
-  ],
+  "line": 35,
+  "name": "order confirmation is displayed",
   "keyword": "Then "
 });
 formatter.match({
-  "location": "E2EOrderPlaced_Steps.I_am_existing_user_and_I_click_on_Signin_button()"
+  "location": "E2EOrderPlaced_Steps.i_am_an_CFA_user_and_Lands_on_shop_page()"
 });
 formatter.result({
-  "duration": 7010970727,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "ins_nov746",
-      "offset": 19
-    },
-    {
-      "val": "test123",
-      "offset": 34
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.signin_using_valid_ink_jun_and_test_credentials(String,String)"
-});
-formatter.result({
-  "duration": 12095220689,
+  "duration": 1122884544,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.navigate_to_Accessories()"
 });
 formatter.result({
-  "duration": 20271709946,
+  "duration": 39156261719,
   "status": "passed"
 });
 formatter.match({
   "arguments": [
     {
-      "val": "JBL Xtreme Black",
-      "offset": 7
+      "val": "Random",
+      "offset": 11
     }
   ],
-  "location": "E2EOrderPlaced_Steps.select_accessory(String)"
+  "location": "E2EOrderPlaced_Steps.select_an_Accessory(String)"
 });
 formatter.result({
-  "duration": 5787147437,
+  "duration": 1003546648,
   "status": "passed"
 });
 formatter.match({
-  "location": "E2EOrderPlaced_Steps.click_on_Add_to_Basket_button()"
+  "location": "E2EOrderPlaced_Steps.add_Accessories_to_basket_within_limit_in_details_page_and_navigate_to_basket()"
 });
 formatter.result({
-  "duration": 14378188332,
+  "duration": 55385432020,
   "status": "passed"
 });
 formatter.match({
-  "arguments": [
-    {
-      "val": "JBL Xtreme Black",
-      "offset": 18
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.verify_1_device_in_basket(String)"
+  "location": "E2EOrderPlaced_Steps.NonPhoneRelatedBasketPage()"
 });
 formatter.result({
-  "duration": 20350210273,
+  "duration": 4179317891,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.click_on_continue_shopping_button()"
 });
 formatter.result({
-  "duration": 5141609740,
+  "duration": 5302982421,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.navigate_to_Fitness_Trackers()"
 });
 formatter.result({
-  "duration": 22802316907,
+  "duration": 24567070923,
   "status": "passed"
 });
 formatter.match({
   "arguments": [
     {
-      "val": "Fitbit Alta",
-      "offset": 9
+      "val": "Random",
+      "offset": 22
     }
   ],
-  "location": "E2EOrderPlaced_Steps.i_choose_fitnesstracker(String)"
+  "location": "E2EOrderPlaced_Steps.select_any_available_Fitness_tracker(String)"
 });
 formatter.result({
-  "duration": 5262826155,
+  "duration": 5280718077,
   "status": "passed"
 });
 formatter.match({
-  "location": "E2EOrderPlaced_Steps.click_on_Add_to_Basket_button()"
+  "location": "E2EOrderPlaced_Steps.add_FitnessTracker_to_basket_within_limit_in_details_page_and_navigate_to_basket()"
 });
 formatter.result({
-  "duration": 12253352244,
+  "duration": 8545149599,
   "status": "passed"
 });
 formatter.match({
-  "arguments": [
-    {
-      "val": "Fitbit Alta",
-      "offset": 18
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.verify_1_device_in_basket(String)"
+  "location": "E2EOrderPlaced_Steps.NonPhoneRelatedBasketPage()"
 });
 formatter.result({
-  "duration": 20238067119,
+  "duration": 3838182064,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.click_on_continue_shopping_button()"
 });
 formatter.result({
-  "duration": 5154437277,
+  "duration": 5130830851,
   "status": "passed"
 });
 formatter.match({
-  "location": "E2EOrderPlaced_Steps.navigate_to_PAYM_SIMO_page()"
+  "location": "E2EOrderPlaced_Steps.navigate_to_SmartWatches()"
 });
 formatter.result({
-  "duration": 10931533313,
-  "status": "passed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.verify_the_elements()"
-});
-formatter.result({
-  "duration": 177119640,
+  "duration": 18524928377,
   "status": "passed"
 });
 formatter.match({
   "arguments": [
     {
-      "val": "30 days",
-      "offset": 7
+      "val": "Random",
+      "offset": 22
     }
   ],
-  "location": "E2EOrderPlaced_Steps.choose_contract_length(String)"
+  "location": "E2EOrderPlaced_Steps.select_any_available_Smartwatch(String)"
 });
 formatter.result({
-  "duration": 6603572385,
+  "duration": 15325285448,
+  "status": "passed"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.add_SmartWatch_to_basket_within_limit_in_details_page_and_navigate_to_basket()"
+});
+formatter.result({
+  "duration": 8451957426,
+  "status": "passed"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.NonPhoneRelatedBasketPage()"
+});
+formatter.result({
+  "duration": 4025459288,
+  "status": "passed"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.verify_non_Connected_device_added_to_basket()"
+});
+formatter.result({
+  "duration": 5057794771,
+  "status": "passed"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.click_on_continue_shopping_button()"
+});
+formatter.result({
+  "duration": 5129634820,
+  "status": "passed"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.navigate_to_PAYM_Phones_page()"
+});
+formatter.result({
+  "duration": 12726823238,
   "status": "passed"
 });
 formatter.match({
   "arguments": [
     {
-      "val": "JBL Xtreme Black",
-      "offset": 19
-    },
-    {
-      "val": "Fitbit Alta",
-      "offset": 37
-    },
-    {
-      "val": "Your Tariff",
-      "offset": 53
+      "val": "Iphone7",
+      "offset": 14
     }
   ],
-  "location": "E2EOrderPlaced_Steps.verify_3_devices_in_basket(String,String,String)"
+  "location": "E2EOrderPlaced_Steps.Choose_PAYM_Handset(String)"
 });
 formatter.result({
-  "duration": 40396284329,
-  "error_message": "junit.framework.AssertionFailedError: Selected devices are not in basket\r\n\tat junit.framework.Assert.fail(Assert.java:47)\r\n\tat actionsPerformed.BasketPageActions.verifyDevicesInBasket(BasketPageActions.java:542)\r\n\tat steps.E2EOrderPlaced_Steps.verify_3_devices_in_basket(E2EOrderPlaced_Steps.java:2505)\r\n\tat ✽.Then Verify the devices JBL Xtreme Black, Fitbit Alta and Your Tariff in the basket(Features/JulyRelease2017/C1669_E11521_TC4_Existing_customer_add_Standalone_Accessory_Fitnesstracker_to_basket_later_add_SIMO_phone_to_basket_no_override.feature:22)\r\n",
+  "duration": 1750343218,
+  "status": "passed"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.Navigate_to_device_details_page()"
+});
+formatter.result({
+  "duration": 22682306786,
+  "status": "passed"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.land_on_the_Tariffs_and_extra_page()"
+});
+formatter.result({
+  "duration": 4148168571,
+  "status": "passed"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.i_Land_on_the_basket_page_and_choose_home_delivery_option()"
+});
+formatter.result({
+  "duration": 23706770565,
+  "error_message": "junit.framework.AssertionFailedError: Unable to Land on the basket page and choose home delivery option\r\n\tat junit.framework.Assert.fail(Assert.java:47)\r\n\tat steps.E2EOrderPlaced_Steps.i_Land_on_the_basket_page_and_choose_home_delivery_option(E2EOrderPlaced_Steps.java:720)\r\n\tat ✽.And I Land on the basket page and choose home delivery option(Features/JulyRelease2017/C1669_E11521_TC1_CFA_Add_All_NonConnected_Devices_To_Basket_Followed_By_Adding_A_Phone_Verify_Not_Overridden.feature:28)\r\n",
   "status": "failed"
 });
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.verify_non_Connected_device_ratined_in_basket_after_selecting_connected_device()"
+});
+formatter.result({
+  "status": "skipped"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "go to checkout",
+      "offset": 10
+    }
+  ],
+  "location": "E2EOrderPlaced_Steps.CheckoutFromBasket(String)"
+});
+formatter.result({
+  "status": "skipped"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "TEST",
+      "offset": 6
+    },
+    {
+      "val": "ACCEPTA",
+      "offset": 15
+    }
+  ],
+  "location": "E2EOrderPlaced_Steps.DeliveryPage_Inputs_homeDelivery(String,String)"
+});
+formatter.result({
+  "status": "skipped"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "TEST ACCEPTA",
+      "offset": 35
+    }
+  ],
+  "location": "E2EOrderPlaced_Steps.CreditCheckPaymentPage_HomeDelivery(String)"
+});
+formatter.result({
+  "status": "skipped"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.AgreementsPageConfirmation()"
+});
+formatter.result({
+  "status": "skipped"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.ReviewPageConfirmation()"
+});
+formatter.result({
+  "status": "skipped"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.OrderConfirmationPage()"
+});
+formatter.result({
+  "status": "skipped"
+});
 formatter.after({
-  "duration": 3861021924,
+  "duration": 5524237205,
   "status": "passed"
 });
 });

@@ -15,7 +15,7 @@ import com.github.mkolisnyk.cucumber.reporting.CucumberResultsOverview;
 
 import cucumber.api.CucumberOptions;
 
-@CucumberOptions(strict = true, features = { "Features//JulyRelease2017//C1669_E11521_TC4_Existing_customer_add_Standalone_Accessory_Fitnesstracker_to_basket_later_add_SIMO_phone_to_basket_no_override.feature" }, glue = { "steps" },
+@CucumberOptions(strict = true, features = { "Features//JulyRelease2017//C1669_E11521_TC1_CFA_Add_All_NonConnected_Devices_To_Basket_Followed_By_Adding_A_Phone_Verify_Not_Overridden.feature" }, glue = { "steps" },
 
 		tags = {}, format = { "json:testResult/cucumber.json", "pretty", "html:testResult/report" }, plugin = {
 				"com.cucumber.listener.ExtentCucumberFormatter" })

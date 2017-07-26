@@ -13,6 +13,8 @@ import helpers.Environment;
 
 
 
+
+
 public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 	static Logger log = Logger.getLogger("devpinoyLogger");
 
