@@ -157,6 +157,28 @@ public static void checkIfMoreThanOneOptionAvailable() throws Exception {
 			}
 		}
 	}
+
+public static void checkOnlyOneCapacityAvailable() throws Exception {
+		// TODO Auto-generated method stub
+		Thread.sleep(5000);
+		List<org.openqa.selenium.WebElement> capacityLabel = pageobjects.NonConnectedDeviceDetailsPage.CapacityLabel;
+		System.out.println("capacity label size :" + capacityLabel.size());
+		if (capacityLabel.size() > 1) {
+			Assert.fail("There are more than 1 capacity variant displayed as a label");
+		}
+
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		WebElement color = pageobjects.NonConnectedDeviceDetailsPage.ColorDropDown;
+		js.executeScript("arguments[0].setAttribute('style', 'display:block;')", color);
+
+		if (color.isDisplayed()) {
+			List<WebElement> elementCount = new Select(color).getOptions();
+
+			if (elementCount.size() <= 1) {
+				Assert.fail("There are no more than 1 option available for color dropdown");
+			}
+		}
+	}
 	
 
 	

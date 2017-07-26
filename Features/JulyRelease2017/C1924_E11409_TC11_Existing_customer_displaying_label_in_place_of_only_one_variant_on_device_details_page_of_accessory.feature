@@ -7,7 +7,7 @@ Feature:
     And Signin using valid <username> and <password> credentials
     And Navigate to Accessories
     And Select <accessoryname> from accessories
-    Then check if the selected connected device has only 1 variant for both colour and capacity
+    Then check if the selected device has only 1 variant for both colour and capacity
     And Click on View all Tariffs
 
     #Close the browser
