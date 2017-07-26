@@ -37,7 +37,7 @@ public class AccessoryPage {
 
 	@FindBy(how = How.XPATH, using = " ")
 	public static WebElement ContinueShoppingLink;
-
+	
 	@FindBy(how = How.XPATH, using = "//*[@id='shopApp']/div[4]/div/div/div[1]/div[2]/ul/li[3]/section/h3/span")
 	public static WebElement AccesoryBeforePhoneSelection;
 
@@ -56,11 +56,9 @@ public class AccessoryPage {
 	@FindBy(how = How.XPATH, using = "//*[@id='shopApp']/div[4]/div/div/div[1]/div[2]/ul/li[3]/section/h3/span")
 	public static WebElement SmartWatchAfterPhoneSelection;
 
-@FindBy(how = How.XPATH, using = "//a[contains(@data-qa-device-model-family, 'Ultra Memory Card 80Mbs')]")
+	@FindBy(how = How.XPATH, using = "//a[contains(@data-qa-device-model-family, 'Ultra Memory Card 80Mbs')]")
 	public static WebElement SanDiskUltraMemoryCard80Mbs;
 	
 	@FindBy(how = How.XPATH, using = "//a[contains(., 'View all products on one page')]")
 	public static WebElement ViewAllProductsOnOnePage;
-
-
 }
