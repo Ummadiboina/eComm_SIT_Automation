@@ -62,48 +62,42 @@ public class TabletPageActions extends Environment {
 
 	public static void DeviceSelect(String elementName) throws InterruptedException {
 
-        if (elementName.contains("Random Device")) {
-              System.out.println("Random Tablet is selected");
+		if (elementName.contains("Random Device")) {
+			System.out.println("Random Tablet is selected");
 
-              pageobjects.TabletPage.RandomTablet.click();
-              Thread.sleep(7000);
+			pageobjects.TabletPage.RandomTablet.click();
+			Thread.sleep(7000);
 
-              log.debug("Random Tablet is selected");
-        }
+			log.debug("Random Tablet is selected");
+		}
 
-        if (elementName.contains("Apple iPad 9.7")) {
+		if (elementName.contains("SamsungGalaxy10")) {
+			System.out.println("SamsungGalaxy10 is selected");
 
-              pageobjects.TabletPage.iPad97.click();
-              Thread.sleep(7000);
-              //log.debug("iPad is selected");
-              System.out.println("Apple iPad 9.7 is selected");
-        }
-        
-        if (elementName.contains("Apple iPad Pro 10.5 inch")) {
+			pageobjects.TabletPage.SamsungGalaxy10.click();
+			Thread.sleep(7000);
 
-              pageobjects.TabletPage.AppleiPadPro105inch.click();
-              Thread.sleep(7000);
-              System.out.println("Apple iPad Pro 10.5 inch is selected");
-        }
-        
-        
-        if (elementName.contains("Apple iPad Pro 12.9 inch")) {
+			log.debug("SamsungGalaxy10 is selected");
+		}
+		if (elementName.contains("Apple iPad 9.7")) {
+			pageobjects.TabletPage.iPad97.click();
+			Thread.sleep(10000);
+			System.out.println("iPad is selected");
+		}
 
-              pageobjects.TabletPage.AppleiPadPro129inch.click();
-              Thread.sleep(7000);
-              System.out.println("Apple iPad Pro 12.9 inch is selected");
-        }
-        
-        if (elementName.contains("SamsungGalaxy10")) {
-              System.out.println("SamsungGalaxy10 is selected");
+		if (elementName.contains("Apple iPad Pro 10.5 inch")) {
 
-              pageobjects.TabletPage.SamsungGalaxy10.click();
-              Thread.sleep(7000);
+			pageobjects.TabletPage.AppleiPadPro105inch.click();
+			Thread.sleep(7000);
+			System.out.println("Apple iPad Pro 10.5 inch is selected");
+		}
 
-              log.debug("SamsungGalaxy10 is selected");
-        }
+		if (elementName.contains("Apple iPad Pro 12.9 inch")) {
+			pageobjects.TabletPage.iPadPro129.click();
+			Thread.sleep(10000);
+			System.out.println("iPad is selected");
+		}
 
-  }
-
+	}
 
 }
