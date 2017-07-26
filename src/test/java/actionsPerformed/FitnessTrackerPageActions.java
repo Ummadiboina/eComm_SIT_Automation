@@ -94,6 +94,16 @@ public static void DeviceSelect(String elementName) throws InterruptedException 
 			log.debug("FitbitAlta Fitness tracker Device Selected");
 		}
 		
+		if(elementName.contains("Jawbone UP2"))
+		{
+			System.out.println("Jawbone UP2 Device Selected");
+
+			pageobjects.FitnessTrackerPage.JawboneUP2.click();
+			Thread.sleep(5000);
+			//Assert.assertEquals(elementName,"Galaxy S7 is not found");
+			log.debug("Jawbone UP2 Fitness tracker Device Selected");
+		}
+		
 		if(elementName.contains("Fitbit Charge 2"))
 		{
 			System.out.println("FitbitCharge2 Fitness tracker Device Selected");

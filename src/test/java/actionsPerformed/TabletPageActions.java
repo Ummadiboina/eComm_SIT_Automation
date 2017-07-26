@@ -71,17 +71,29 @@ public class TabletPageActions extends Environment {
 			log.debug("Random Tablet is selected");
 		}
 
-		if (elementName.contains("AppleiPad97")) {
+		if (elementName.contains("Apple iPad 9.7")) {
 
-			JavascriptExecutor jse = (JavascriptExecutor) driver;
-			jse.executeScript("window.scrollBy(0,900)", "");
 			pageobjects.TabletPage.iPad97.click();
-			Thread.sleep(10000);
-
-			log.debug("iPad is selected");
-			System.out.println("iPad is selected");
+			Thread.sleep(7000);
+			//log.debug("iPad is selected");
+			System.out.println("Apple iPad 9.7 is selected");
 		}
+		
+		if (elementName.contains("Apple iPad Pro 10.5 inch")) {
 
+			pageobjects.TabletPage.AppleiPadPro105inch.click();
+			Thread.sleep(7000);
+			System.out.println("Apple iPad Pro 10.5 inch is selected");
+		}
+		
+		
+		if (elementName.contains("Apple iPad Pro 12.9 inch")) {
+
+			pageobjects.TabletPage.AppleiPadPro129inch.click();
+			Thread.sleep(7000);
+			System.out.println("Apple iPad Pro 12.9 inch is selected");
+		}
+		
 		if (elementName.contains("SamsungGalaxy10")) {
 			System.out.println("SamsungGalaxy10 is selected");
 

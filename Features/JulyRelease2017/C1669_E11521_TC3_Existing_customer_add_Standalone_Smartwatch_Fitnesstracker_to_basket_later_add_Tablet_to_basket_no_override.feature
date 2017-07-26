@@ -23,4 +23,4 @@ Feature: C1669_E11521_TC3_Existing_customer_add_Standalone_Smartwatch_Fitnesstra
 
     Examples: 
       | username   | password | smartwatchname  | fitnesstrackername | tabletname  |
-      | ins_nov746 | test123  | Samsung Gear S2 | Fitbit Alta        | AppleiPad97 |
+      | ins_nov746 | test123  | Samsung Gear S2 | Fitbit Alta        | Apple iPad Pro 10.5 inch |

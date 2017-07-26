@@ -94,10 +94,11 @@ public class MouseHoverPage extends Environment {
 	public static WebElement MoveMouseOnMobileBroadband;
 
 	// Below will click on the Pay as you Go Link under MobileBroadband tab
-	@FindBy(how = How.XPATH, using = ("//a[contains(@href, 'https://www.o2.co.uk/shop/mobile-broadband/?contractType=payasyougo')]"))
+	@FindBy(how = How.XPATH, using = ("//a[contains(text(), 'Pay As You Go')]"))
 	public static WebElement MoveMouseOnPayGMBB;
 
-	@FindBy(how = How.XPATH, using = ("//a[contains(@href, 'https://www.o2.co.uk/shop/mobile-broadband/?contractType=paymonthly')]"))
+	//@FindBy(how = How.XPATH, using = ("//a[@href='https://www.o2.co.uk/shop/mobile-broadband/?contractType=paymonthly']"))
+	@FindBy(how = How.XPATH, using = ("//a[contains(text(), 'Pay monthly')]"))
 	public static WebElement MoveMouseOnPayMMBB;
-
+	
 }

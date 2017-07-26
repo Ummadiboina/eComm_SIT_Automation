@@ -1016,10 +1016,7 @@ public static void clickOnViewAllProductsOnOnePage() {
 
 	public static void clickBackToiPadOffers() {
 		log.debug("clicking on Back to iPad Offers link");
-		if (pageobjects.BaseCommPage.BackToiPad.isDisplayed()) {
-			pageobjects.BaseCommPage.BackToiPad.click();
-		} else
-			Assert.fail("not able to click on 'Back To iPad Offers' link");
+		pageobjects.BaseCommPage.BackToiPad.click();
 	}
 
 	public static void clickBackToTabletOffers() {
@@ -1148,14 +1145,10 @@ public static void clickOnViewAllProductsOnOnePage() {
 		int stringsize = strings.size();
 		if (strings.size() != 0) {
 
-			System.out.println("First string is " + strings.get(0));
-			System.out.println("Second string is " + strings.get(1));
-			System.out.println("Last string is " + strings.get(stringsize - 1));
-
 			if (strings.get(0).startsWith("Click & Collect")) {
 				System.out.println("static sub navigation is at the correct position");
 			}
-			if (strings.get(stringsize - 1).startsWith("Free delivery working next working day")) {
+			if (strings.get(stringsize - 1).startsWith("Free delivery next working day")) {
 				System.out.println("Footer is at the correct position");
 			}
 			if (strings.get(1).startsWith("Tablet offers" + '\n' + "Especially for you")) {

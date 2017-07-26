@@ -497,10 +497,11 @@ public class BasketPageActions extends Environment {
 	 */
 	public static void verifyDevicesInBasket(String dev1, String dev2, String dev3) {
 		log.debug("Verifying the devices in basket");
-		List<WebElement> MyDevices = pageobjects.BasketPage.DevicesList;
+		//List<WebElement> MyDevices = pageobjects.BasketPage.DevicesList;
 
 		List<WebElement> MyConnDevices = pageobjects.BasketPage.MyConnDevices;
 		List<WebElement> MyNonConnDevices = pageobjects.BasketPage.MyNonConnDevices;
+		List<WebElement> MyTariffs = pageobjects.BasketPage.MyTariffs;
 
 		List<String> DisplayedDevices = new ArrayList<>();
 		List<String> SelectedDevices = new ArrayList<>();
@@ -515,6 +516,7 @@ public class BasketPageActions extends Environment {
 
 		System.out.println("Conn size" + MyConnDevices.size());
 		System.out.println("Non Conn size" + MyNonConnDevices.size());
+		System.out.println("Tariffs size" + MyTariffs.size());
 
 		if (MyNonConnDevices.size() != 0) {
 			for (int i = 0; i < MyNonConnDevices.size(); i++) {
@@ -526,6 +528,13 @@ public class BasketPageActions extends Environment {
 			for (int i = 0; i < MyConnDevices.size(); i++) {
 				DisplayedDevices.add(MyConnDevices.get(i).getText());
 				System.out.println("Conn dev added");
+			}
+		}
+		
+		if (MyTariffs.size() != 0) {
+			for (int i = 0; i < MyTariffs.size(); i++) {
+				DisplayedDevices.add(MyTariffs.get(i).getText());
+				System.out.println("Tariff added");
 			}
 		}
 		if (DisplayedDevices.containsAll(SelectedDevices)) {
@@ -541,7 +550,7 @@ public class BasketPageActions extends Environment {
 
 	public static void verifyDevicesInBasket(String dev1, String dev2) {
 
-		List<WebElement> MyDevices = pageobjects.BasketPage.DevicesList;
+		//List<WebElement> MyDevices = pageobjects.BasketPage.DevicesList;
 
 		List<WebElement> MyConnDevices = pageobjects.BasketPage.MyConnDevices;
 		List<WebElement> MyNonConnDevices = pageobjects.BasketPage.MyNonConnDevices;

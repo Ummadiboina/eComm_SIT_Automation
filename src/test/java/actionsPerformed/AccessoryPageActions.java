@@ -91,7 +91,9 @@ public class AccessoryPageActions extends Environment{
 	//This Method is used to select Accessory from the accessory listing page 
 	
 	public static void SelectAnyAccessory(String elementName) {
-			
+		JavascriptExecutor executor = (JavascriptExecutor) driver;
+		executor.executeScript("arguments[0].click();", pageobjects.AccessoryPage.ViewAllProductsOnOnePage);
+		
 		if(elementName.contains("Random"))
 		{
 			System.out.println("Selecting Any Accessory");
@@ -130,7 +132,7 @@ public class AccessoryPageActions extends Environment{
 			log.debug("Clip2 Accessory Selected");
 		}
 		
-		if(elementName.contains("JBL Xtreme Black"))
+		if(elementName.contains("JBL Xtreme"))
 
 		{
 			System.out.println("Selecting JBLXtreme Accessory");
@@ -140,6 +142,14 @@ public class AccessoryPageActions extends Environment{
 			log.debug("JBLXtreme Accessory Selected");
 		}
 		
+		if(elementName.contains("SanDisk Ultra MemoryCard"))
+
+		{
+			System.out.println("Selecting SanDiskUltraMemoryCard80Mbs");
+			log.debug("Selected an accessory -  "+pageobjects.AccessoryPage.SanDiskUltraMemoryCard80Mbs.getText());
+			pageobjects.AccessoryPage.SanDiskUltraMemoryCard80Mbs.click();
+			log.debug("SanDiskUltraMemoryCard80Mbs Selected");
+		}
 		}
 	/*Below has been modified as per the new ui layout, new function has been written which is below,
 	so please refer to this only if its necessary else follow "selectAnyAccessoryLimit()" instead of

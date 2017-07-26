@@ -10,7 +10,7 @@ import org.openqa.selenium.support.How;
 public class BaseCommPage {
 
 	@FindAll({
-			@FindBy(how = How.XPATH, using = ("//div[@class='module label-xxl desktop-fragments-label-xxl-1']/h2")) })
+			@FindBy(how = How.XPATH, using = ("//div[@class='multi-size-tile clearfix cube']//p[@class='details']")) })
 	public static List<WebElement> iPadDevicesName;
 
 	@FindBy(how = How.XPATH, using = "//a[@tabcanonicalname='tablet']")
@@ -33,7 +33,7 @@ public class BaseCommPage {
 	public static WebElement RandomDevice;
 
 	@FindAll({
-			@FindBy(how = How.XPATH, using = ("//div[@class='module label-xxl desktop-fragments-label-xxl-1']/h2")) })
+			@FindBy(how = How.XPATH, using = ("//div[@class='multi-size-tile clearfix cube']//p[@class='details']")) })
 	public static List<WebElement> TabletDevicesName;
 
 	@FindBy(how = How.XPATH, using = "//h2[contains(text(),'Filter')]")
@@ -54,7 +54,10 @@ public class BaseCommPage {
 	@FindAll({ @FindBy(how = How.XPATH, using = "//div[@class='tariff-container']") })
 	public static List<WebElement> TariffTile;
 
-	@FindBy(how = How.XPATH, using = ("//a[@href='/upgrade/store/existing-customer-offers/?deviceCategory=ipad']"))
+	/*@FindBy(how = How.XPATH, using = ("//a[@href='/upgrade/store/existing-customer-offers/?deviceCategory=ipad']"))
+	public static WebElement BackToiPad;*/
+	
+	@FindBy(how = How.XPATH, using = "//a[contains(., 'Back to offers')]")
 	public static WebElement BackToiPad;
 
 	@FindBy(how = How.XPATH, using = ("//div[@class='default-content-container']"))
@@ -63,25 +66,28 @@ public class BaseCommPage {
 	@FindAll({ @FindBy(how = How.XPATH, using = "//div[@id='panel']//div") })
 	public static List<WebElement> PanelList;
 
-	@FindBy(how = How.XPATH, using = ("//*[@data-qa-device-model-family='iPad mini 3']/div[4]/form/button"))
+	@FindBy(how = How.XPATH, using = ("//*[@data-qa-device-model-family='iPad mini 3']//div/form/button"))
 	public static WebElement IpadMini3Buynow;
 	
-	@FindBy(how = How.XPATH, using = ("//*[@data-qa-device-model-family='iPad Pro 9.7 inch']/div[4]/form/button"))
+	@FindBy(how = How.XPATH, using = ("//*[@data-qa-device-model-family='iPad Pro 9.7 inch']//div/form/button"))
 	public static WebElement IpadPro97Buynow;
 
-	@FindBy(how = How.XPATH, using = ("//*[@data-qa-device-model-family='iPad mini 2']/div[4]/form/button"))
+	@FindBy(how = How.XPATH, using = ("//*[@data-qa-device-model-family='iPad mini 2']//div/form/button"))
 	public static WebElement IpadMini2Buynow;
 
-	@FindBy(how = How.XPATH, using = ("//*[@data-qa-device-model-family='iPad Air 2']/div[4]/form/button"))
+	@FindBy(how = How.XPATH, using = ("//*[@data-qa-device-model-family='iPad Air 2']//div/form/button"))
 	public static WebElement IpadAirBuynow;
-
-	@FindBy(how = How.XPATH, using = ("//*[@data-qa-device-model-family='Galaxy Tab Active']/div[4]/form/button"))
+	
+	@FindBy(how = How.XPATH, using = ("//*[@data-qa-device-model-family='iPad mini 4']//div/form/button"))
+	public static WebElement iPadMini4BuyNow;
+	
+	@FindBy(how = How.XPATH, using = ("//*[@data-qa-device-model-family='Galaxy Tab Active']//div/form/button"))
 	public static WebElement GalaxyTabActiveBuynow;
 	
-	@FindBy(how = How.XPATH, using = ("//*[@data-qa-device-model-family='Galaxy Tab A 2016 10.1']/div[4]/form/button"))
+	@FindBy(how = How.XPATH, using = ("//*[@data-qa-device-model-family='Galaxy Tab A 2016 10.1']//div/form/button"))
 	public static WebElement GalaxyTabActive2016101Buynow;
 	
-	@FindBy(how = How.XPATH, using = ("//*[@data-qa-device-model-family='Xperia Z2 Tablet']/div[4]/form/button"))
+	@FindBy(how = How.XPATH, using = ("//*[@data-qa-device-model-family='Xperia Z2 Tablet']//div/form/button"))
 	public static WebElement XperiaZ2TabletBuynow;
 
 	@FindBy(how = How.ID, using = ("header-primary"))

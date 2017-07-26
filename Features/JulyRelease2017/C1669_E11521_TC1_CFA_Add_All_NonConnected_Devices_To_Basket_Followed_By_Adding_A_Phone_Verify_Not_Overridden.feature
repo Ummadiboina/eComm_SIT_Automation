@@ -1,5 +1,5 @@
 Feature: C1669_E11521_TC1_CFA_Add_All_NonConnected_Devices_To_Basket_Followed_By_Adding_A_Phone_Verify_Not_Overridden
-
+	
   Scenario Outline: CFA Add all non connected devices (Standalone Smartwatch, Accessory and Fitnesstracker) and One Connected Device and Veiryf Basket not overridden
     Given I am an CFA user and Lands on shop page
     And Navigate to Accessories

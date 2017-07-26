@@ -33,12 +33,14 @@ public class BaseCommPageActions extends Environment {
 	}
 
 	public static void checkIfiPadDevicesArePresent() {
-
+		System.out.println("Inside checkIfiPadDevicesArePresent function");
 		List<WebElement> iPadDevices = pageobjects.BaseCommPage.iPadDevicesName;
 
 		for (int i = 0; i < iPadDevices.size(); i++) {
+			int l = i + 1;
+
 			if (iPadDevices.get(i).getText().contains("iPad")) {
-				System.out.println("iPadDevices.get(i).getText()");
+				System.out.println("position :" + l + "device :" + iPadDevices.get(i).getText() + '\n');
 			} else {
 				System.out.println("Devices other than iPad are also displayed");
 				Assert.fail("Devices other than iPad are also displayed");
@@ -63,8 +65,9 @@ public class BaseCommPageActions extends Environment {
 
 	public static void isPayAsUGoTabDisplayed() {
 		log.debug("checking whether Pay As U Go tab is displayed");
-		if (pageobjects.BaseCommPage.PayAsUGo.isDisplayed()) {
-			Assert.fail("Pay As U Go tab is displayed");
+		List<WebElement> PayAsYouGo = driver.findElements(By.xpath("(//a[@href='?contractType=payasyougo'])"));
+		if(PayAsYouGo.size()>0) {
+		Assert.fail("Pay As U Go tab is displayed");
 		}
 	}
 
@@ -152,85 +155,48 @@ public class BaseCommPageActions extends Environment {
 		Assert.assertEquals("tablet", subString);
 	}
 
-	public static void BuynowwithDevice(String elementName) throws MalformedURLException {
+	public static void BuynowwithDevice(String device) throws MalformedURLException {
 		System.out.println("Going to click on the buy now button on device");
-		if (elementName.contains("Apple iPad mini 3")) {
-			System.out.println("Going to select Ipad mini 3 device");
-
-			pageobjects.BaseCommPage.IpadMini3Buynow.click();
-
-			System.out.println("Selected iPad mini 3 device");
-
-			log.debug("Selected iPad mini 3 device");
-
+		device = trimEnd(device);
+		List<WebElement> TabletDevicesName = pageobjects.BaseCommPage.TabletDevicesName;
+		WebElement BuyNowButton;
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		String c = null;
+		int k = 0;
+		List<String> Devices = new ArrayList<String>();
+		for (WebElement f : TabletDevicesName) {
+			Devices.add(f.getText());
 		}
-		if (elementName.contains("Apple iPad Pro 9.7 inch")) {
-			System.out.println("Going to select Apple iPad Pro 9.7 inch device");
+		System.out.println("passing device" + device);
 
-			pageobjects.BaseCommPage.IpadPro97Buynow.click();
+		if (!Devices.contains(device)) {
+			Assert.fail("Expected device is not present");
+		} else {
 
-			System.out.println("Selected Apple iPad Pro 9.7 inch device");
-
-			log.debug("Selected Apple iPad Pro 9.7 inch device");
-
-		}
-		if (elementName.contains("Apple iPad mini 2")) {
-			System.out.println("Going to select iPad mini 2 device");
-
-			pageobjects.BaseCommPage.IpadMini2Buynow.click();
-
-			System.out.println("Selected iPad mini 2 device");
-
-			log.debug("Selected iPad mini 2 device");
-
-		}
-		if (elementName.contains("Apple iPad Air")) {
-			System.out.println("Going to select iPad Air device");
-
-			pageobjects.BaseCommPage.IpadAirBuynow.click();
-
-			System.out.println("Selected iPad Air device");
-
-			log.debug("Selected iPad Air device");
-		}
-		if (elementName.contains("Samsung Galaxy Tab Active")) {
-			System.out.println("Going to select Galaxy Tab device");
-
-			pageobjects.BaseCommPage.GalaxyTabActiveBuynow.click();
-
-			System.out.println("Selected Galaxy Tab device");
-
-			log.debug("Selected Galaxy Tab device");
-		}
-		if (elementName.contains("Samsung Galaxy Tab A 2016 10.1")) {
-			System.out.println("Going to Samsung Galaxy Tab A 2016 10.1 device");
-
-			pageobjects.BaseCommPage.GalaxyTabActive2016101Buynow.click();
-
-			System.out.println("Selected Samsung Galaxy Tab A 2016 10.1 device");
-
-			log.debug("Selected Samsung Galaxy Tab A 2016 10.1 device");
-		}
-		if (elementName.contains("Sony Xperia Z2 Tablet")) {
-			System.out.println("Going to select XperiaZ2Tablet device");
-
-			pageobjects.BaseCommPage.XperiaZ2TabletBuynow.click();
-
-			System.out.println("Selected XperiaZ2Tablet device");
-
-			log.debug("Selected XperiaZ2Tablet device");
+			for (int i = 0; i < TabletDevicesName.size(); i++) {
+				if (TabletDevicesName.get(i).getText().equals(device)) {
+					System.out.println("Device name matches");
+					k = i + 1;
+					System.out.println("k :" + k);
+					c = "(//button[@id='callToAction'])[" + k + "]";
+					System.out.println("xpath of button is" + c);
+					BuyNowButton = driver.findElement(By.xpath(c));
+					js.executeScript("arguments[0].click();", BuyNowButton);
+				}
+			}
 		}
 	}
 
 	public static void VerifyPage() throws MalformedURLException {
 		System.out.println("Going to verify page");
 		String title = pageobjects.BaseCommPage.headerofTariffandExtrasPage.getText();
+		System.out.println("title is :" + title);
 		// String title=driver.findElement(By.id("header-primary")).getText();
 		Assert.assertEquals(title, "Tariff and extras");
+		System.out.println("Page verified");
 
 	}
 
-	
 	public static void VerifyRibbon() {
 		// TODO Auto-generated method stub
 		System.out.println("Going to Verify promotion ribbon");
@@ -272,6 +238,7 @@ public class BaseCommPageActions extends Environment {
 	}
 
 	public static void verifyTariffType(String flow) {
+		System.out.println("Inside verifyTariffType function ");
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 
 		WebElement PayInFull = pageobjects.PAYMandPAYGTariffAndExtrasPage.paydevicefulllink;
@@ -470,6 +437,7 @@ public class BaseCommPageActions extends Environment {
 
 		List<String> Devices = new ArrayList<String>();
 		for (WebElement f : TabletDevicesName) {
+			System.out.println("adding to Devices list");
 			Devices.add(f.getText());
 		}
 
@@ -577,20 +545,20 @@ public class BaseCommPageActions extends Environment {
 		else
 			return s.substring(0, i);
 	}
-	
-	
-	public static void checkExpDevAndDetails(String device, String color, String capacity, String stockmessage) {
 
+	public static void checkExpDevAndDetails(String device, String color, String capacity, String stockmessage) {
+		System.out.println("Inside checkExpDevAndDetails function");
+		System.out.println(device + color + capacity + stockmessage);
 		int k = 0;
 
-		List<WebElement> iPadDevicesName = driver
-				.findElements(By.xpath("//div[@class='multi-size-tile clearfix cube']//p[@class='details']"));
-
+		List<WebElement> iPadDevicesName = pageobjects.BaseCommPage.iPadDevicesName;
+		JavascriptExecutor jse = (JavascriptExecutor) driver;
+		jse.executeScript("window.scrollBy(0,900)", "");
 		for (int i = 0; i < iPadDevicesName.size(); i++) {
 
 			if (iPadDevicesName.get(i).getText().equals(device)) {
 				k = i + 1;
-				String c = "(//select[@class='ng-pristine ng-valid colour-select'])[" + k + "]";
+				String c = "(//select[@id='colour'])[" + k + "]";
 
 				WebElement colordropdown = driver.findElement(By.xpath(c));
 				JavascriptExecutor js = (JavascriptExecutor) driver;
@@ -599,10 +567,12 @@ public class BaseCommPageActions extends Environment {
 					WebElement firstcolor = new Select(colordropdown).getFirstSelectedOption();
 					if (color.equals(firstcolor.getText())) {
 						System.out.println("Expected color selected :" + firstcolor.getText());
+					} else {
+						Assert.fail("Expected color not selected by default");
 					}
 				}
 
-				String d = "(//select[@class='memory-select ng-pristine ng-valid'])[" + k + "]";
+				String d = "(//select[@id='memory'])[" + k + "]";
 
 				WebElement capacitydropdown = driver.findElement(By.xpath(d));
 				js.executeScript("arguments[0].setAttribute('style', 'display:block;')", capacitydropdown);
@@ -610,6 +580,8 @@ public class BaseCommPageActions extends Environment {
 					WebElement firstcapacity = new Select(capacitydropdown).getFirstSelectedOption();
 					if (capacity.equals(firstcapacity.getText())) {
 						System.out.println("Expected capacity selected :" + firstcapacity.getText());
+					} else {
+						Assert.fail("Expected capacity not selected by default");
 					}
 				}
 				String e = "(//p[@class='delivery-information ng-scope'])[" + k + "]";
@@ -617,9 +589,39 @@ public class BaseCommPageActions extends Environment {
 				System.out.println(stockmsg.getText());
 				if (stockmsg.getText().contains(stockmessage)) {
 					System.out.println("Expected stockmsg displayed :" + stockmsg.getText());
+				} else {
+					Assert.fail("Expected stockmsg not displayed by default");
 				}
 			}
 		}
 	}
-	
+
+	public static void selectNewDevice(String device, String color, String capacity) {
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		int k = 0;
+		List<WebElement> iPadDevicesName = pageobjects.BaseCommPage.iPadDevicesName;
+
+		for (int i = 0; i < iPadDevicesName.size(); i++) {
+			if (iPadDevicesName.get(i).getText().equals(device)) {
+				k = i + 1;
+				String c = "(//select[@id='colour'])[" + k + "]";
+				WebElement colordropdown = driver.findElement(By.xpath(c));
+				js.executeScript("arguments[0].setAttribute('style', 'display:block;')", colordropdown);
+				if (colordropdown.isDisplayed()) {
+					new Select(colordropdown).selectByVisibleText(color);
+				} else {
+					Assert.fail("Color drop down not present or specified color not available");
+				}
+
+				String d = "(//select[@id='memory'])[" + k + "]";
+				WebElement capacitydropdown = driver.findElement(By.xpath(d));
+				js.executeScript("arguments[0].setAttribute('style', 'display:block;')", capacitydropdown);
+				if (capacitydropdown.isDisplayed()) {
+					new Select(capacitydropdown).selectByVisibleText(capacity);
+				} else {
+					Assert.fail("Capacity dropdown not present or specified capacity not available");
+				}
+			}
+		}
+	}
 }

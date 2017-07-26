@@ -155,7 +155,7 @@ public class E2EOrderPlaced_Steps {
 			Autoredirection.redirect();
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
-			System.out.println("unable to do mousehover to PayGMBB");
+			System.out.println("unable to do mousehover to PayMMBB");
 			Assert.fail("unable to do mousehover to Accessories");
 		}
 	}
@@ -211,7 +211,7 @@ public class E2EOrderPlaced_Steps {
 			PageFactory.initElements(driver, MouseHoverPage.class);
 			MouseHoverAction.SmartwatchesLandingPage();
 			
-			//Autoredirection.redirect();
+			Autoredirection.redirect();
 		} catch (Exception e) {
 			System.out.println("unable to do mousehover to SmartWatches");
 			Assert.fail("unable to do mousehover to SmartWatches");
@@ -2294,7 +2294,7 @@ public class E2EOrderPlaced_Steps {
 		}
 	}
 
-	@Given("^I choose upgrade PayM ([^\"]*)$")
+	@And("^I choose upgrade PayM handset([^\"]*)$")
 	public void Choose_upgradePAYM_Handset(String handset) throws Throwable {
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		try {
@@ -2409,10 +2409,9 @@ public class E2EOrderPlaced_Steps {
 			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 			PageFactory.initElements(driver, TabletPage.class);
 			TabletPageActions.DeviceSelect(elementName);
-			Thread.sleep(5000);
-			System.out.println("Selected Device "+elementName+" successfully");
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
+			e.printStackTrace();
 			System.out.println("Unable to select tablet");
 			Assert.fail("Unable to select tablet");
 		}
@@ -2585,8 +2584,8 @@ public class E2EOrderPlaced_Steps {
 		try {
 			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 			PageFactory.initElements(driver, ConnectedDeviceDetailsPage.class);
-			ConnectedDeviceDetailsPageAction.isColorDropDownDisplayed();
-			ConnectedDeviceDetailsPageAction.isCapacityDropDownDisplayed();
+			//ConnectedDeviceDetailsPageAction.isColorDropDownDisplayed();
+			//ConnectedDeviceDetailsPageAction.isCapacityDropDownDisplayed();
 
 			ConnectedDeviceDetailsPageAction.checkIfMoreThanOneOptionAvailable();
 
@@ -2597,16 +2596,12 @@ public class E2EOrderPlaced_Steps {
 		}
 	}
 
-	@Then("^check if the selected connected device has only 1 variant for both colour and capacity$")
+	@Then("^check if the selected device has only 1 variant for both colour and capacity$")
 	public void check_if_the_selected_device_has_only_1_variant_for_both_colour_and_capacity() {
 
 		try {
 			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 			PageFactory.initElements(driver, ConnectedDeviceDetailsPage.class);
-			/*
-			 * ConnectedDeviceDetailsPageAction.isColorDropDownDisplayed();
-			 * ConnectedDeviceDetailsPageAction.isCapacityDropDownDisplayed();
-			 */
 			ConnectedDeviceDetailsPageAction.checkOnlyOneOptionAvailable();
 
 		} catch (Exception e) {
@@ -2622,9 +2617,8 @@ public class E2EOrderPlaced_Steps {
 		try {
 			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 			PageFactory.initElements(driver, ConnectedDeviceDetailsPage.class);
-			ConnectedDeviceDetailsPageAction.isColorDropDownDisplayed();
-			ConnectedDeviceDetailsPageAction.isCapacityDropDownDisplayed();
-
+			//ConnectedDeviceDetailsPageAction.isColorDropDownDisplayed();
+			//ConnectedDeviceDetailsPageAction.isCapacityDropDownDisplayed();
 			ConnectedDeviceDetailsPageAction.checkOnlyOneCapacityAvailable();
 			;
 
@@ -2671,8 +2665,8 @@ public class E2EOrderPlaced_Steps {
 		try {
 			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 			PageFactory.initElements(driver, NonConnectedDeviceDetailsPage.class);
-			NonConnectedDeviceDetailsPageAction.isColorDropDownDisplayed();
-			NonConnectedDeviceDetailsPageAction.isCapacityDropDownDisplayed();
+			//NonConnectedDeviceDetailsPageAction.isColorDropDownDisplayed();
+			//NonConnectedDeviceDetailsPageAction.isCapacityDropDownDisplayed();
 
 			NonConnectedDeviceDetailsPageAction.checkIfMoreThanOneOptionAvailable();
 
@@ -2680,6 +2674,36 @@ public class E2EOrderPlaced_Steps {
 			e.printStackTrace();
 			System.out.println("The selected device does not have more than 1 variant for both colour and capacity");
 			Assert.fail("The selected device does not have more than 1 variant for both colour and capacity");
+		}
+	}
+	
+	@Then("^check if the selected non connected device has more than 1 variant for colour and single variant for capacity$")
+	public void check_if_the_selected_non_connected_device_has_more_than_1_variant_for_colour_and_single_variant_for_capacity() {
+
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, NonConnectedDeviceDetailsPage.class);
+			NonConnectedDeviceDetailsPageAction.checkOnlyOneCapacityAvailable();
+
+		} catch (Exception e) {
+			e.printStackTrace();
+			System.out.println("Failed step :check if the selected non connected device has more than 1 variant for colour and single variant for capacity");
+			Assert.fail("Failed step :check if the selected non connected device has more than 1 variant for colour and single variant for capacity");
+		}
+	}
+	
+	@Then("^check if the selected non connected device has more than 1 variant for capacity and single variant for colour$")
+	public void check_if_the_selected_non_connected_device_has_more_than_1_variant_for_capacity_and_single_variant_for_colour() {
+
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, NonConnectedDeviceDetailsPage.class);
+			NonConnectedDeviceDetailsPageAction.checkOnlyOneColourAvailable();
+
+		} catch (Exception e) {
+			e.printStackTrace();
+			System.out.println("Failed step :check if the selected non connected device has more than 1 variant for capacity and single variant for colour");
+			Assert.fail("Failed step :check if the selected non connected device has more than 1 variant for capacity and single variant for colour");
 		}
 	}
 
@@ -2693,7 +2717,7 @@ public class E2EOrderPlaced_Steps {
 
 		} catch (Exception e) {
 			e.printStackTrace();
-			System.out.println("selected color" + color);
+			System.out.println("not able to select color" + color);
 			Assert.fail("not able to select  color" + color);
 		}
 	}
@@ -2779,7 +2803,7 @@ public class E2EOrderPlaced_Steps {
 		}
 	}
 
-	@And("^I choose upgrade PayM ([^\"]*) tablet$")
+	@And("^I choose upgrade PayM tablet ([^\"]*)$")
 	public void Choose_upgradePAYM_Tablet(String tablet) throws Throwable {
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		try {
@@ -3313,6 +3337,8 @@ public class E2EOrderPlaced_Steps {
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		try {
 			PageFactory.initElements(driver, BaseCommPage.class);
+			PageFactory.initElements(driver, PAYMandPAYGTariffAndExtrasPage.class);
+			
 			BaseCommPageActions.BuynowwithDevice(device_name);
 			BaseCommPageActions.VerifyPage();
 			BaseCommPageActions.verifyTariffType("Basecomm");
@@ -3803,5 +3829,35 @@ public class E2EOrderPlaced_Steps {
 			Assert.fail("Unable to Validate basecomms offer link");
 		}
 	}
+	
+	@Then("^check if the selected device has only 1 variant for both colour and capacity with dropdown$")
+	public void check_if_the_selected_device_has_only_1_variant_for_both_colour_and_capacity_with_dropdown() {
 
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, NonConnectedDeviceDetailsPage.class);
+			NonConnectedDeviceDetailsPageAction.checkOnlyOneColourAndOneCapacityAsDropdownAvailable();
+
+		} catch (Exception e) {
+			e.printStackTrace();
+			System.out.println("Failed : check if the selected device has only 1 variant for both colour and capacity with dropdown");
+			Assert.fail("Failed : check if the selected device has only 1 variant for both colour and capacity with dropdown");
+		}
+	}
+	
+	@And("^Select ([^\"]*), ([^\"]*) of the device ([^\"]*)$")
+	public void select_color_capacity_of_device(String color, String capacity, String device) {
+
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, BaseCommPage.class);
+			BaseCommPageActions.selectNewDevice(device, color, capacity);
+
+		} catch (Exception e) {
+			e.printStackTrace();
+			System.out.println("Failed : Select <color>, <capacity> of the device <device_name>");
+			Assert.fail("Failed : Select <color>, <capacity> of the device <device_name>");
+		}
+	}
+	
 }

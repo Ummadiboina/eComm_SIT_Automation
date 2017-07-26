@@ -1,10 +1,12 @@
 package actionsPerformed;
 
 import java.util.List;
+import java.util.NoSuchElementException;
 import java.util.concurrent.TimeUnit;
 
 import org.apache.log4j.Logger;
 import org.junit.Assert;
+import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
@@ -139,49 +141,39 @@ public class ConnectedDeviceDetailsPageAction extends Environment {
 	}
 
 	public static void checkOnlyOneOptionAvailable() throws Exception {
-		// TODO Auto-generated method stub
-		Thread.sleep(5000);
-		WebElement capacity = pageobjects.ConnectedDeviceDetailsPage.CapacityDropDown;
-		JavascriptExecutor js = (JavascriptExecutor) driver;
-		js.executeScript("arguments[0].setAttribute('style', 'display:block;')", capacity);
+		Thread.sleep(2000);
+		List<WebElement> CapacityDropDown = driver.findElements(By.xpath("//select[@id='memory']"));
+		List<WebElement> ColorDropDown = driver.findElements(By.xpath("//select[@id='colour']"));
 
-		WebElement color = pageobjects.ConnectedDeviceDetailsPage.ColorDropDown;
-
-		js.executeScript("arguments[0].setAttribute('style', 'display:block;')", color);
-
-		if (capacity.isDisplayed()) {
-
-			Assert.fail("Capacity has more than 1 dropdown");
+		if (CapacityDropDown.size() > 0) {
+			Assert.fail("Capacity dropdown is present even when there is only single variant");
 		}
 
-		if (color.isDisplayed()) {
-			Assert.fail("There are more than 1 option available for color dropdown");
-
+		if (ColorDropDown.size() > 0) {
+			Assert.fail("Colour dropdown is present even when there is only single variant");
 		}
-		
-		
+
 		List<org.openqa.selenium.WebElement> capacityLabel = pageobjects.ConnectedDeviceDetailsPage.CapacityLabel;
 		if (capacityLabel.size() > 1) {
 			Assert.fail("There are more than 1 capacity variant displayed as a label");
 		}
-	
+
 		List<org.openqa.selenium.WebElement> colorLabel = pageobjects.ConnectedDeviceDetailsPage.ColorLabel;
 		if (colorLabel.size() > 1) {
 			Assert.fail("There are more than 1 capacity variant displayed as a label");
 		}
-		
-		
-	
+
 	}
 
 	public static void checkOnlyOneCapacityAvailable() throws Exception {
 		// TODO Auto-generated method stub
 		Thread.sleep(5000);
 		List<org.openqa.selenium.WebElement> capacityLabel = pageobjects.ConnectedDeviceDetailsPage.CapacityLabel;
+		System.out.println("capacity label size :" + capacityLabel.size());
 		if (capacityLabel.size() > 1) {
 			Assert.fail("There are more than 1 capacity variant displayed as a label");
 		}
-		
+
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		WebElement color = pageobjects.ConnectedDeviceDetailsPage.ColorDropDown;
 		js.executeScript("arguments[0].setAttribute('style', 'display:block;')", color);

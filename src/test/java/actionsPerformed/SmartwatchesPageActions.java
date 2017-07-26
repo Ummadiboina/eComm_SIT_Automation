@@ -80,6 +80,16 @@ public class SmartwatchesPageActions extends Environment {
 
 			}
 
+			if (elementName.contains("Samsung Galaxy Gear")) {
+				System.out.println("Going to select SamsungGalaxyGear");
+
+				pageobjects.SmartwatchesPage.SamsungGalaxyGear.click();
+				Thread.sleep(15000);
+
+				System.out.println("Clicked SamsungGalaxyGear");
+
+			}
+
 			// The following has to be added in deviceSelect function –
 			else if (elementName.contains("Samsung Gear S2")) {
 				pageobjects.SmartwatchesPage.SamsungGearS2.click();
@@ -87,11 +97,11 @@ public class SmartwatchesPageActions extends Environment {
 				System.out.println("Selected SamsungGearS2");
 				log.debug("Selected SamsungGearS2");
 			}
-			
+
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
-			System.out.println("Unable to select "+elementName+" device");
-		//	Assert.fail("Unable to select "+elementName+" device");
+			System.out.println("Unable to select " + elementName + " device");
+			// Assert.fail("Unable to select "+elementName+" device");
 
 		}
 	}
