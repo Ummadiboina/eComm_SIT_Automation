@@ -10,7 +10,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
-import org.sikuli.script.Key;
 
 
 import java.util.ArrayList;
@@ -24,7 +23,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
-import org.sikuli.script.Key;
 
 import GlobalActions.scrollToAnElement;
 import helpers.Environment;
@@ -1155,7 +1153,7 @@ public static void clickOnViewAllProductsOnOnePage() {
 			if (strings.get(0).startsWith("Click & Collect")) {
 				System.out.println("static sub navigation is at the correct position");
 			}
-			if (strings.get(stringsize - 1).startsWith("Free delivery working next working day")) {
+			if (strings.get(stringsize - 1).startsWith("Free delivery next working day")) {
 				System.out.println("Footer is at the correct position");
 			}
 			if (strings.get(1).startsWith("Tablet offers" + '\n' + "Especially for you")) {

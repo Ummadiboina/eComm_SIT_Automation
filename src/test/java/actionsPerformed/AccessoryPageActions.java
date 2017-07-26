@@ -91,7 +91,10 @@ public class AccessoryPageActions extends Environment{
 	//This Method is used to select Accessory from the accessory listing page 
 	
 	public static void SelectAnyAccessory(String elementName) {
-			
+		
+		JavascriptExecutor executor = (JavascriptExecutor) driver;
+		executor.executeScript("arguments[0].click();", pageobjects.AccessoryPage.ViewAllProductsOnOnePage);
+
 		if(elementName.contains("Random"))
 		{
 			System.out.println("Selecting Any Accessory");

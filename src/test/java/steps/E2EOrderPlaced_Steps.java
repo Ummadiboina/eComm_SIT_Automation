@@ -155,8 +155,8 @@ public class E2EOrderPlaced_Steps {
 			Autoredirection.redirect();
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
-			System.out.println("unable to do mousehover to PayGMBB");
-			Assert.fail("unable to do mousehover to Accessories");
+			System.out.println("unable to do mousehover to PayM MBB");
+			Assert.fail("unable to do mousehover to PayM MBB");
 		}
 	}
 
@@ -2294,7 +2294,7 @@ public class E2EOrderPlaced_Steps {
 		}
 	}
 
-	@Given("^I choose upgrade PayM ([^\"]*)$")
+	@And("^I choose upgrade PayM handset ([^\"]*)$")
 	public void Choose_upgradePAYM_Handset(String handset) throws Throwable {
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		try {
@@ -2586,8 +2586,8 @@ public class E2EOrderPlaced_Steps {
 		try {
 			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 			PageFactory.initElements(driver, ConnectedDeviceDetailsPage.class);
-			ConnectedDeviceDetailsPageAction.isColorDropDownDisplayed();
-			ConnectedDeviceDetailsPageAction.isCapacityDropDownDisplayed();
+			//ConnectedDeviceDetailsPageAction.isColorDropDownDisplayed();
+			//ConnectedDeviceDetailsPageAction.isCapacityDropDownDisplayed();
 
 			ConnectedDeviceDetailsPageAction.checkIfMoreThanOneOptionAvailable();
 
@@ -2598,16 +2598,12 @@ public class E2EOrderPlaced_Steps {
 		}
 	}
 
-	@Then("^check if the selected connected device has only 1 variant for both colour and capacity$")
+/*	@Then("^check if the selected connected device has only 1 variant for both colour and capacity$")
 	public void check_if_the_selected_device_has_only_1_variant_for_both_colour_and_capacity() {
 
 		try {
 			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 			PageFactory.initElements(driver, ConnectedDeviceDetailsPage.class);
-			/*
-			 * ConnectedDeviceDetailsPageAction.isColorDropDownDisplayed();
-			 * ConnectedDeviceDetailsPageAction.isCapacityDropDownDisplayed();
-			 */
 			ConnectedDeviceDetailsPageAction.checkOnlyOneOptionAvailable();
 
 		} catch (Exception e) {
@@ -2615,7 +2611,7 @@ public class E2EOrderPlaced_Steps {
 			System.out.println("The selected device does not have more than 1 variant for both colour and capacity");
 			Assert.fail("The selected device does not have more than 1 variant for both colour and capacity");
 		}
-	}
+	}*/
 
 	@Then("^check if the selected connected device has only 1 variant for capacity and dropdown for colour$")
 	public void capacity_1_and_Colour_dropdown() {
@@ -2623,8 +2619,8 @@ public class E2EOrderPlaced_Steps {
 		try {
 			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 			PageFactory.initElements(driver, ConnectedDeviceDetailsPage.class);
-			ConnectedDeviceDetailsPageAction.isColorDropDownDisplayed();
-			ConnectedDeviceDetailsPageAction.isCapacityDropDownDisplayed();
+			//ConnectedDeviceDetailsPageAction.isColorDropDownDisplayed();
+			//ConnectedDeviceDetailsPageAction.isCapacityDropDownDisplayed();
 
 			ConnectedDeviceDetailsPageAction.checkOnlyOneCapacityAvailable();
 			;
@@ -2780,7 +2776,7 @@ public class E2EOrderPlaced_Steps {
 		}
 	}
 
-	@And("^I choose upgrade PayM ([^\"]*) tablet$")
+	@And("^I choose upgrade PayM tablet ([^\"]*)$")
 	public void Choose_upgradePAYM_Tablet(String tablet) throws Throwable {
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		try {
@@ -2843,7 +2839,7 @@ public class E2EOrderPlaced_Steps {
 	@And("^I Login with Supply Chain Credential ([^\"]*) and ([^\"]*)$")
 	public void i_Login_with_Supply_Chain_Credential(String username, String password) throws Throwable {
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-		PageFactory.initElements(driver, CVOS_LandingPageActions.class);
+		PageFactory.initElements(driver, CVOS_PageObjects.class);
 		// try {
 		System.out.println("Entering the login Supply Chain creds");
 		CVOS_LandingPageActions.CVOSSupplyChainLogin(username, password);
@@ -2856,7 +2852,7 @@ public class E2EOrderPlaced_Steps {
 		 */
 		// }
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-		PageFactory.initElements(driver, CVOS_SupplyChainloggedIn.class);
+		PageFactory.initElements(driver, CVOS_PageObjects.class);
 		try {
 			CVOS_SupplyChainloggedIn.CVOSSupplyChainVal();
 		} catch (Exception e) {
@@ -2868,11 +2864,11 @@ public class E2EOrderPlaced_Steps {
 
 	}
 
-	@Then("^I click on  'Stockpot' tab in Supply Chain and search for (\\d+)AMFI(\\d+)N in SkU desciption$")
+	@Then("^I click on  'Stockpot' tab in Supply Chain and search for ([^\"]*) in SkU desciption$")
 	public void i_click_on_Stockpot_tab_in_Supply_Chain_and_search_for_SKU_ID_in_SkU_desciption(String SKUID)
 			throws Throwable {
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-		PageFactory.initElements(driver, CVOSstockpotPageActions.class);
+		PageFactory.initElements(driver, CVOS_PageObjects.class);
 		try {
 			CVOSstockpotPageActions.CVOSSupplyChainAct(SKUID);
 		} catch (Exception e) {
@@ -2887,7 +2883,7 @@ public class E2EOrderPlaced_Steps {
 	@And("^Click on Search button$")
 	public void click_on_Search_button() throws Throwable {
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-		PageFactory.initElements(driver, CVOSstockpotPageActions.class);
+		PageFactory.initElements(driver, CVOS_PageObjects.class);
 		try {
 			CVOSstockpotPageActions.CVOSSupplyChainSearch();
 		} catch (Exception e) {
@@ -2902,7 +2898,7 @@ public class E2EOrderPlaced_Steps {
 	@Then("^I should see the uploaded stock for the SKU ID$")
 	public void i_should_see_the_uploaded_stock_for_the_SKU_ID() throws Throwable {
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-		PageFactory.initElements(driver, CVOSstockpotPageActions.class);
+		PageFactory.initElements(driver, CVOS_PageObjects.class);
 		try {
 			CVOSstockpotPageActions.CVOSSupplyChainStockPot();
 		} catch (Exception e) {
@@ -2917,7 +2913,7 @@ public class E2EOrderPlaced_Steps {
 	@And("^I click on Online 'Stockpot' and move the delivery date to a past date$")
 	public void i_click_on_Online_Stockpot_and_move_the_delivery_date_to_a_past_date() throws Throwable {
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-		PageFactory.initElements(driver, CVOSstockpotPageActions.class);
+		PageFactory.initElements(driver, CVOS_PageObjects.class);
 		try {
 			CVOSstockpotPageActions.CVOSSupplyChainMoveDelivery();
 		} catch (Exception e) {
@@ -2932,7 +2928,7 @@ public class E2EOrderPlaced_Steps {
 	@And("^I click on Stock Merchandise$")
 	public void i_click_on_Stock_Merchandise() throws Throwable {
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-		PageFactory.initElements(driver, CVOSstockpotPageActions.class);
+		PageFactory.initElements(driver, CVOS_PageObjects.class);
 		try {
 			CVOSstockpotPageActions.CVOSSupplyChainStockMerchandise();
 		} catch (Exception e) {
@@ -2948,7 +2944,7 @@ public class E2EOrderPlaced_Steps {
 	public void i_click_on_Stock_Merchandise_and_search_using_Amazon_Fire_phone_GB(String Search_by_model)
 			throws Throwable {
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-		PageFactory.initElements(driver, CVOS_StockMerchandiseActions.class);
+		PageFactory.initElements(driver, CVOS_PageObjects.class);
 		try {
 			CVOS_StockMerchandiseActions.CVOSSupplyChainStockMerch(Search_by_model);
 		} catch (Exception e) {
@@ -2963,7 +2959,7 @@ public class E2EOrderPlaced_Steps {
 	@When("^I login as a Trading Admin$")
 	public void i_login_as_a_Trading_Admin() throws Throwable {
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-		PageFactory.initElements(driver, CVOS_StockMerchandiseActions.class);
+		PageFactory.initElements(driver, CVOS_PageObjects.class);
 		try {
 			CVOS_StockMerchandiseActions.CVOSSupplyChainlogout();
 		} catch (Exception e) {
@@ -2989,7 +2985,7 @@ public class E2EOrderPlaced_Steps {
 
 		}
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-		PageFactory.initElements(driver, CVOS_TradingAdminloggedIn.class);
+		PageFactory.initElements(driver, CVOS_PageObjects.class);
 
 		try {
 			CVOS_TradingAdminloggedIn.CVOSTradingStockpot();
@@ -3006,7 +3002,7 @@ public class E2EOrderPlaced_Steps {
 	public void i_click_on_Stockpot_tab_in_Trading_admin_and_search_for_SKU_ID_in_SkU_desciption(String SKUID)
 			throws Throwable {
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-		PageFactory.initElements(driver, CVOSstockpotPageActions.class);
+		PageFactory.initElements(driver, CVOS_PageObjects.class);
 
 		try {
 			CVOSstockpotPageActions.CVOSTradingAdminAct(SKUID);
@@ -3023,7 +3019,7 @@ public class E2EOrderPlaced_Steps {
 	public void when_I_click_on_All_shops_I_should_be_able_to_allocate_to_different_stockspots_using_Amazon_Fire_phone_GB(
 			String Search_by_model) throws Throwable {
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-		PageFactory.initElements(driver, CVOS_StockAllocationActions.class);
+		PageFactory.initElements(driver, CVOS_PageObjects.class);
 
 		try {
 			CVOS_StockAllocationActions.CVOSSupplyTradeAllocate(Search_by_model);
@@ -3040,7 +3036,7 @@ public class E2EOrderPlaced_Steps {
 	public void i_click_on_Stockpot_tab_and_search_using_SKU_ID_to_see_the_stock_status_then_I_should_see_them_in_Pre_Order_status(
 			String SKUID) throws Throwable {
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-		PageFactory.initElements(driver, CVOSstockpotPageActions.class);
+		PageFactory.initElements(driver, CVOS_PageObjects.class);
 
 		try {
 			CVOSstockpotPageActions.CVOSTradingAdminPreOrderVerf(SKUID);
@@ -3062,7 +3058,7 @@ public class E2EOrderPlaced_Steps {
 	public void i_should_be_able_to_move_the_Launch_date_to_a_past_dateAmazon_Fire_phone_GB(String Search_by_model)
 			throws Throwable {
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-		PageFactory.initElements(driver, CVOS_StockMerchandiseActions.class);
+		PageFactory.initElements(driver, CVOS_PageObjects.class);
 
 		try {
 			CVOS_StockMerchandiseActions.CVOSSupplyChainStockMerchDD(Search_by_model);
@@ -3222,6 +3218,7 @@ public class E2EOrderPlaced_Steps {
 		try {
 			PageFactory.initElements(driver, BaseCommPage.class);
 			BaseCommPageActions.clickOnOtherTablets();
+			Thread.sleep(4000);
 		} catch (Exception e) {
 			e.printStackTrace();
 			Assert.fail("Unable to click on Other Tablets tab");
@@ -3235,6 +3232,7 @@ public class E2EOrderPlaced_Steps {
 		try {
 			PageFactory.initElements(driver, BaseCommPage.class);
 			BaseCommPageActions.clickOniPadTab();
+			Thread.sleep(4000);
 		} catch (Exception e) {
 			e.printStackTrace();
 			Assert.fail("Unable to click on iPad tab");
@@ -3802,5 +3800,66 @@ public class E2EOrderPlaced_Steps {
 			Assert.fail("Unable to Validate basecomms offer link");
 		}
 	}
+	@Then("^check if the selected non connected device has more than 1 variant for colour and single variant for capacity$")
+    public void check_if_the_selected_non_connected_device_has_more_than_1_variant_for_colour_and_single_variant_for_capacity() {
 
+          try {
+                driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+                PageFactory.initElements(driver, NonConnectedDeviceDetailsPage.class);
+                NonConnectedDeviceDetailsPageAction.checkOnlyOneCapacityAvailable();
+
+          } catch (Exception e) {
+                e.printStackTrace();
+                System.out.println("Failed step :check if the selected non connected device has more than 1 variant for colour and single variant for capacity");
+                Assert.fail("Failed step :check if the selected non connected device has more than 1 variant for colour and single variant for capacity");
+          }
+    }
+
+	
+	
+
+	@Then("^check if the selected device has only 1 variant for both colour and capacity$")
+    public void check_if_the_selected_device_has_only_1_variant_for_both_colour_and_capacity() {
+
+          try {
+                driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+                PageFactory.initElements(driver, ConnectedDeviceDetailsPage.class);
+                ConnectedDeviceDetailsPageAction.checkOnlyOneOptionAvailable();
+
+          } catch (Exception e) {
+                e.printStackTrace();
+                System.out.println("The selected device does not have more than 1 variant for both colour and capacity");
+                Assert.fail("The selected device does not have more than 1 variant for both colour and capacity");
+          }
+    }
+	@Then("^check if the selected device has only 1 variant for both colour and capacity with dropdown$")
+    public void check_if_the_selected_device_has_only_1_variant_for_both_colour_and_capacity_with_dropdown() {
+
+        try {
+              driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+              PageFactory.initElements(driver, NonConnectedDeviceDetailsPage.class);
+              NonConnectedDeviceDetailsPageAction.checkOnlyOneColourAndOneCapacityAsDropdownAvailable();
+
+        } catch (Exception e) {
+              e.printStackTrace();
+              System.out.println("Failed : check if the selected device has only 1 variant for both colour and capacity with dropdown");
+              Assert.fail("Failed : check if the selected device has only 1 variant for both colour and capacity with dropdown");
+        }
+  }
+
+	@And("^Select ([^\"]*), ([^\"]*) of the device ([^\"]*)$")
+    public void select_color_capacity_of_device(String color, String capacity, String device) {
+
+          try {
+                driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+                PageFactory.initElements(driver, BaseCommPage.class);
+                BaseCommPageActions.selectNewDevice(device, color, capacity);
+          } catch (Exception e) {
+  			e.printStackTrace();
+  			System.out.println("Failed : Select <color>, <capacity> of the device <device_name>");
+  			Assert.fail("Failed : Select <color>, <capacity> of the device <device_name>");
+  		}
+    }
+
+	
 }

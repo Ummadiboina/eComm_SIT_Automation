@@ -157,6 +157,57 @@ public static void checkIfMoreThanOneOptionAvailable() throws Exception {
 			}
 		}
 	}
+
+public static void checkOnlyOneCapacityAvailable() throws Exception {
+		// TODO Auto-generated method stub
+		Thread.sleep(5000);
+		List<org.openqa.selenium.WebElement> capacityLabel = pageobjects.NonConnectedDeviceDetailsPage.CapacityLabel;
+		System.out.println("capacity label size :" + capacityLabel.size());
+		if (capacityLabel.size() > 1) {
+			Assert.fail("There are more than 1 capacity variant displayed as a label");
+		}
+
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		WebElement color = pageobjects.NonConnectedDeviceDetailsPage.ColorDropDown;
+		js.executeScript("arguments[0].setAttribute('style', 'display:block;')", color);
+
+		if (color.isDisplayed()) {
+			List<WebElement> elementCount = new Select(color).getOptions();
+
+			if (elementCount.size() <= 1) {
+				Assert.fail("There are no more than 1 option available for color dropdown");
+			}
+		}
+	}
+
+public static void checkOnlyOneColourAndOneCapacityAsDropdownAvailable() throws Exception {
+    Thread.sleep(7000);
+    JavascriptExecutor js = (JavascriptExecutor) driver;
+    
+    System.out.println("check 1");
+    WebElement color = pageobjects.NonConnectedDeviceDetailsPage.ColorDropDownAccessory;
+    js.executeScript("arguments[0].setAttribute('style', 'display:block;')", color);
+    WebElement capacity = pageobjects.NonConnectedDeviceDetailsPage.CapacityDropDown;
+    js.executeScript("arguments[0].setAttribute('style', 'display:block;')", capacity);
+    
+    System.out.println("check 2");
+    List<WebElement> ColorElementCount = new Select(color).getOptions();
+    List<WebElement> CapacityElementCount = new Select(capacity).getOptions();
+
+    System.out.println("color size" +ColorElementCount.size());
+    System.out.println("capacity size" +CapacityElementCount.size());
+
+    if ((ColorElementCount.size() > 1) || (CapacityElementCount.size() > 1)) {
+          Assert.fail("The device has more than one option displayed in a dropdown");
+    } else {
+          System.out.println(
+                      "Selected accessory has single variant for color and capacity and displayed as dropdown as expected");
+          log.debug(
+                      "Selected accessory has single variant for color and capacity and displayed as dropdown as expected");
+    }
+
+}
+
 	
 
 	

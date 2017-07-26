@@ -8,9 +8,8 @@ Feature: C1786_E-11510-11505_TC1_iPads_tab_Device_tile_Colour_and_Capacity_varia
     And I navigate to the Basecomm Page
     And Verify expected <device_name> and its specific details are present in the device list <default_colour>,<default_capacity>,<default_stock_message>
     #Veirfy device price details are also getting displayed in the above step
-    And select <color> color of the connected device
-    And select <capacity> capacity of the connected device
-    And Verify that promotion ribbon is displayed
+     And Select <color>, <capacity> of the device <device_name>
+   And Verify that promotion ribbon is displayed
     And Verify new image is as per the selected <device_name>,<capacity>and <color> in the Basecomms page
     And Click on "Buy Now" button for <device_name> and verify "Tariffs and Extras" page is displayed
     And Verify new image is as per the selected <device_name>,<capacity>and <color> in the Tariffs and Extras Page
