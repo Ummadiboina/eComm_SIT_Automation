@@ -1,26 +1,24 @@
 package testRunner;
 
-import com.cucumber.listener.ExtentCucumberFormatter;
-import com.github.mkolisnyk.cucumber.reporting.CucumberDetailedResults;
-import com.github.mkolisnyk.cucumber.reporting.CucumberResultsOverview;
-
-import cucumber.api.CucumberOptions;
-
-import org.apache.log4j.PropertyConfigurator;
-import org.junit.BeforeClass;
-import org.junit.runner.RunWith;
-import org.openqa.selenium.WebDriver;
-
 import java.io.File;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
-@CucumberOptions(strict = true, features = { "Features//JuneRelease_Features//" }, glue = { "steps" },
+import org.junit.BeforeClass;
+import org.junit.runner.RunWith;
 
-		tags = { }, format = { "json:testResult/cucumber.json", "pretty",
-				"html:testResult/report" }, plugin = { "com.cucumber.listener.ExtentCucumberFormatter" })
+import com.cucumber.listener.ExtentCucumberFormatter;
+import com.github.mkolisnyk.cucumber.reporting.CucumberDetailedResults;
+import com.github.mkolisnyk.cucumber.reporting.CucumberResultsOverview;
+
+import cucumber.api.CucumberOptions;
+
+@CucumberOptions(strict = true, features = { "Features//JulyRelease2017//C1669_E11521_TC1_CFA_Add_All_NonConnected_Devices_To_Basket_Followed_By_Adding_A_Phone_Verify_Not_Overridden.feature" }, glue = { "steps" },
+
+		tags = {}, format = { "json:testResult/cucumber.json", "pretty", "html:testResult/report" }, plugin = {
+				"com.cucumber.listener.ExtentCucumberFormatter" })
 
 /**
  * RunnerTest runs with ExtendedCucumberRunner class and this is the starting

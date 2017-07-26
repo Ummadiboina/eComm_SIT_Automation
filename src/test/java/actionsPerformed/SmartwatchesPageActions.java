@@ -75,7 +75,6 @@ public class SmartwatchesPageActions extends Environment {
 
 				pageobjects.SmartwatchesPage.RandomSmartWatch.click();
 				Thread.sleep(15000);
-
 				System.out.println("Clicked Random Device");
 
 			}

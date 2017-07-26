@@ -127,5 +127,9 @@ public class BasketPage {
 	})
 		public static List<WebElement> MyConnDevices;
 	
+	@FindAll({ @FindBy(how = How.XPATH, using = ("//div[@class='basket-list']//li[@class='package ']/section/h3")) })
+    public static List<WebElement> MyTariffs;
+
+	
 	
 }
