@@ -3833,5 +3833,34 @@ public class E2EOrderPlaced_Steps {
                 Assert.fail("The selected device does not have more than 1 variant for both colour and capacity");
           }
     }
+	@Then("^check if the selected device has only 1 variant for both colour and capacity with dropdown$")
+    public void check_if_the_selected_device_has_only_1_variant_for_both_colour_and_capacity_with_dropdown() {
 
+        try {
+              driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+              PageFactory.initElements(driver, NonConnectedDeviceDetailsPage.class);
+              NonConnectedDeviceDetailsPageAction.checkOnlyOneColourAndOneCapacityAsDropdownAvailable();
+
+        } catch (Exception e) {
+              e.printStackTrace();
+              System.out.println("Failed : check if the selected device has only 1 variant for both colour and capacity with dropdown");
+              Assert.fail("Failed : check if the selected device has only 1 variant for both colour and capacity with dropdown");
+        }
+  }
+
+	@And("^Select ([^\"]*), ([^\"]*) of the device ([^\"]*)$")
+    public void select_color_capacity_of_device(String color, String capacity, String device) {
+
+          try {
+                driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+                PageFactory.initElements(driver, BaseCommPage.class);
+                BaseCommPageActions.selectNewDevice(device, color, capacity);
+          } catch (Exception e) {
+  			e.printStackTrace();
+  			System.out.println("Failed : Select <color>, <capacity> of the device <device_name>");
+  			Assert.fail("Failed : Select <color>, <capacity> of the device <device_name>");
+  		}
+    }
+
+	
 }

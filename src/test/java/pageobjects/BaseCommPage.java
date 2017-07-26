@@ -9,9 +9,9 @@ import org.openqa.selenium.support.How;
 
 public class BaseCommPage {
 
-	@FindAll({
+	/*@FindAll({
 			@FindBy(how = How.XPATH, using = ("//div[@class='module label-xxl desktop-fragments-label-xxl-1']/h2")) })
-	public static List<WebElement> iPadDevicesName;
+	public static List<WebElement> iPadDevicesName;*/
 
 	@FindBy(how = How.XPATH, using = "//a[@tabcanonicalname='tablet']")
 	public static WebElement OtherTablets;
@@ -32,9 +32,9 @@ public class BaseCommPage {
 	@FindBy(how = How.XPATH, using = ("//*[@id='qa-data']/a[@id='data_qa_Huawei_1']/form/button[1]"))
 	public static WebElement RandomDevice;
 
-	@FindAll({
+	/*@FindAll({
 			@FindBy(how = How.XPATH, using = ("//div[@class='module label-xxl desktop-fragments-label-xxl-1']/h2")) })
-	public static List<WebElement> TabletDevicesName;
+	public static List<WebElement> TabletDevicesName;*/
 
 	@FindBy(how = How.XPATH, using = "//h2[contains(text(),'Filter')]")
 	public static WebElement FilterTab;
@@ -122,5 +122,12 @@ public class BaseCommPage {
 
 	@FindBy(how = How.XPATH, using = ("//*[@data-qa-device-model-family='iPad mini 4']//div/form/button"))
 	public static WebElement iPadMini4BuyNow;
+
+	@FindAll({
+			@FindBy(how = How.XPATH, using = ("//div[@class='multi-size-tile clearfix cube']//p[@class='details']")) })
+	public static List<WebElement> TabletDevicesName;
+	@FindAll({
+			@FindBy(how = How.XPATH, using = ("//div[@class='multi-size-tile clearfix cube']//p[@class='details']")) })
+	public static List<WebElement> iPadDevicesName;
 
 }

@@ -9,9 +9,8 @@ Feature: C1786_E-11355-11357-11356-11359_TC4_Existing_Custo_Basecomm_Other_table
     #verify that URL is specific to tablet
     And Verify expected <device_name> and its specific details are present in the device list <default_colour>,<default_capacity>,<default_stock_message>
     #Veirfy device price details are also getting displayed in the above step
-    And select <color> color of the connected device
-    And select <capacity> capacity of the connected device
-    Then Verify the price gets updated based on the new colour and capacity
+        And Select <color>, <capacity> of the device <device_name>
+ Then Verify the price gets updated based on the new colour and capacity
     And Click on "Buy Now" button for <device_name> and verify "Tariffs and Extras" page is displayed
 
     Examples: 

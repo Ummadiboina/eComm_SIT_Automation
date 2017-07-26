@@ -47,10 +47,10 @@ public class CVOS_PageObjects extends Environment {
 	@FindBy(how = How.ID, using = "stockpot-search")
 	public static WebElement searchButton;
 	
-	@FindBy(how=How.XPATH,using="//*[@id='stockpotTable']/div[2]/div/div[10]/div[3]/div[2]/div/div/span/span[1]")
+	@FindBy(how=How.XPATH,using="//span[contains(text(),'1AMFI32')]/preceding::span[contains(text(),'Online')]")
 	public static WebElement onlineStockpot;
 
-	@FindBy(how=How.XPATH,using="//*[@id='stockpotTable']/div[2]/div/div[5]/div[3]")
+	@FindBy(how=How.XPATH,using=" //span[contains(text(),'1AMFI32')]/preceding::span[contains(text(),'All Shops')]")
 	public static WebElement allShopStockpot;
 	
 	@FindBy(how=How.XPATH,using="//*[@id='modelSearchInput']")
@@ -62,7 +62,7 @@ public class CVOS_PageObjects extends Environment {
 	@FindBy(how=How.XPATH,using="//*[@id='stockpots-result-area']/div/div[2]/form/fieldset/div[1]/div[2]/div/ul/li[1]/div/table/thead/tr[1]/th[3]/button")
 	public static WebElement toMoveDate;
 	
-	@FindBy(how=How.XPATH,using="//*[@id='datepicker-00O-7156-17']/button/span")
+	@FindBy(how=How.XPATH,using="//*[@aria-labelledby='datepicker-00O-5835-title']/tbody")
 	public static WebElement deliverySelectDate;
 	
 	@FindBy(how=How.XPATH,using="//*[@id='changeArrivalDate']")

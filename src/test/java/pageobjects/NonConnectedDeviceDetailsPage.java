@@ -33,4 +33,7 @@ public class NonConnectedDeviceDetailsPage {
 	@FindBy(how = How.XPATH, using = "//select[@id='memory']")
 	public static WebElement CapacityDropDown;
 
+	@FindBy(how = How.XPATH, using = "//select[@id='color']")
+	public static WebElement ColorDropDownAccessory;
+
 }
