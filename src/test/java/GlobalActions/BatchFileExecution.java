@@ -16,7 +16,7 @@ public class BatchFileExecution extends Environment  {
 		public static void BatchFileTermination() throws InterruptedException 
 		{
 	System.out.println("executing batch run");
-		     String filePath = "C:/batchfileForSelenium/quitAllProcess.bat";
+		     String filePath = "C:/batchfileForSelenium/QuitAllRemoveTemp.bat";
 	         try {
 	              
 	             Process p = Runtime.getRuntime().exec(filePath);
