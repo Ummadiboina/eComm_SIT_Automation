@@ -1,7 +1,7 @@
 Feature: Reg_AFU_PAYM_Dongle
 
   #launch hooks and get browser
-  @AgentsRegressionPAYM
+  @AgentsRegression
   Scenario Outline: Successful completion of a PAY M dongle Acqusistion Journey
     Given I login to Agent shop
     And performs Acquisition for New user

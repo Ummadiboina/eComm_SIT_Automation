@@ -100,8 +100,9 @@ public class CVOSstockpotPageActions extends Environment {
 		pageobjects.CVOS_PageObjects.toMoveDate.click();
 		log.debug("The Move to next month Option is clicked");
 		System.out.println("The Move to next month Option is clicked");
+		Thread.sleep(5000);
 		
-		WebElement dateWidget= pageobjects.CVOS_PageObjects.deliverySelectDate;
+		/*WebElement dateWidget= pageobjects.CVOS_PageObjects.deliverySelectDate;
 		List<WebElement> columns=dateWidget.findElements(By.tagName("td"));
 		for (WebElement cell: columns){
 			   //Select 13th Date 
@@ -111,9 +112,9 @@ public class CVOSstockpotPageActions extends Environment {
 
 			      break;
 			 }
-		}  
+		}  */
 			   
-		//pageobjects.CVOS_PageObjects.deliverySelectDate.click();
+		pageobjects.CVOS_PageObjects.deliverySelectDate.click();
 		
 		log.debug("The Delivery date is selected");
 		System.out.println("The Delivery date is selected");
