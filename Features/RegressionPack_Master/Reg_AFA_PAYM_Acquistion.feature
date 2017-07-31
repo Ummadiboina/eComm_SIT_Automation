@@ -14,9 +14,11 @@ Feature: Reg_AFA_PAYM_Acquistion
     And perform the credit checks using valid <Firstname> and <Surname> and valid <Username>
     And Register customer with valid <Firstname> and <Surname> and other valid details in delivery page
     And Choose <DeliveryType> delivery address and delivery time
-    And Update Device Plan Link Email Address    
+    When Pay by card for PAYM device
+    Then Order confirmation message should be displayed
+    And Update Device Plan Link Email Address
     Then CCALink Should be generated
-    
+
     Examples: 
       | Device              | Tariffs | Extras | DeliveryType | Firstname | Surname | Username     |
       | S7 edge black 32 GB | Random  | Random | HomeDelivery | Test      | Accepta | Test Accepta |

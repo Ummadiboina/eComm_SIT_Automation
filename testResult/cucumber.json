@@ -1,0 +1,291 @@
+[
+  {
+    "line": 1,
+    "elements": [
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 40841487762,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Hooks.openBrowser()"
+            }
+          }
+        ],
+        "line": 24,
+        "name": "Successful completion of a PAY M Acquistion journey",
+        "description": "",
+        "id": "reg-afa-paym-acquistion;successful-completion-of-a-pay-m-acquistion-journey;;2",
+        "after": [
+          {
+            "result": {
+              "duration": 2430020005,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Hooks.embedScreenshot(Scenario)"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 5873174163,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "I login to Agent shop",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.LoginAgentShop()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 18031972886,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "performs Acquisition for New user",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.performs_Acquisition_for_New_user()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 7388120223,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "Select a valid PayM S7 edge black 32 GB",
+            "match": {
+              "arguments": [
+                {
+                  "val": "S7 edge black 32 GB",
+                  "offset": 20
+                }
+              ],
+              "location": "E2EOrderPlaced_Steps.SelectValid_Device(String)"
+            },
+            "matchedColumns": [
+              0
+            ],
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 8339463523,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "Select valid Random from tariffs tab",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Random",
+                  "offset": 13
+                }
+              ],
+              "location": "E2EOrderPlaced_Steps.SelectTariff(String)"
+            },
+            "matchedColumns": [
+              1
+            ],
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 20057886225,
+              "status": "passed"
+            },
+            "line": 10,
+            "name": "select a valid Handset and Tariff combination",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.select_a_valid_Handset_and_Tariff_combination()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 6343804970,
+              "status": "passed"
+            },
+            "line": 11,
+            "name": "Select valid Random from extras tab",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Random",
+                  "offset": 13
+                }
+              ],
+              "location": "E2EOrderPlaced_Steps.select_valid_Random_from_extras_tab(String)"
+            },
+            "matchedColumns": [
+              2
+            ],
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 15412541570,
+              "status": "passed"
+            },
+            "line": 12,
+            "name": "Validate all the Basket content and checkout",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.validate_all_the_Basket_content_and_checkout()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 9268755564,
+              "status": "passed"
+            },
+            "line": 13,
+            "name": "perform all the advisory checks",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.advisory_checks()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 119426762096,
+              "status": "passed"
+            },
+            "line": 14,
+            "name": "perform the credit checks using valid Test and Accepta and valid Test Accepta",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Test",
+                  "offset": 38
+                },
+                {
+                  "val": "Accepta",
+                  "offset": 47
+                },
+                {
+                  "val": "Test Accepta",
+                  "offset": 65
+                }
+              ],
+              "location": "E2EOrderPlaced_Steps.CreditCheck(String,String,String)"
+            },
+            "matchedColumns": [
+              4,
+              5,
+              6
+            ],
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 29098486896,
+              "status": "passed"
+            },
+            "line": 15,
+            "name": "Register customer with valid Test and Accepta and other valid details in delivery page",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Test",
+                  "offset": 29
+                },
+                {
+                  "val": "Accepta",
+                  "offset": 38
+                }
+              ],
+              "location": "E2EOrderPlaced_Steps.register_customer(String,String)"
+            },
+            "matchedColumns": [
+              4,
+              5
+            ],
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 47410,
+              "status": "passed"
+            },
+            "line": 16,
+            "name": "Choose HomeDelivery delivery address and delivery time",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.HomeDelivery_Address()"
+            },
+            "matchedColumns": [
+              3
+            ],
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 64560173852,
+              "error_message": "junit.framework.AssertionFailedError: Unable to Pay by card , please see the failure screenshot\r\n\tat junit.framework.Assert.fail(Assert.java:47)\r\n\tat steps.E2EOrderPlaced_Steps.pay_by_card_payn_device(E2EOrderPlaced_Steps.java:1636)\r\n\tat ✽.When Pay by card for PAYM device(Features/RegressionPack_Master/Reg_AFA_PAYM_Acquistion.feature:17)\r\n",
+              "status": "failed"
+            },
+            "line": 17,
+            "name": "Pay by card for PAYM device",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.pay_by_card_payn_device()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 18,
+            "name": "Order confirmation message should be displayed",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.order_confirmation_message_should_be_displayed()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 19,
+            "name": "Update Device Plan Link Email Address",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.updatedeviceplan()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 20,
+            "name": "CCALink Should be generated",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.ccaLink()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "line": 4,
+            "name": "@AgentsRegression"
+          }
+        ]
+      }
+    ],
+    "name": "Reg_AFA_PAYM_Acquistion",
+    "description": "",
+    "id": "reg-afa-paym-acquistion",
+    "keyword": "Feature",
+    "uri": "Features/RegressionPack_Master/Reg_AFA_PAYM_Acquistion.feature"
+  }
+]

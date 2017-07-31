@@ -121,11 +121,16 @@ public class Agent_DealBuilderPageActions extends Environment {
 	}
 
 	public static void HandsetTariffCombination() throws InterruptedException {
-		Select dropdown = new Select(pageobjects.Agent_DealBuilderPage.HandsetTariffCombination);
-		dropdown.selectByIndex(2);
-		System.out.println("Selecting combination of handset and talkplan");
-		System.out.println(
-				"Selected combination is" + pageobjects.Agent_DealBuilderPage.HandsetTariffCombination.getText());
+		try {
+			Select dropdown = new Select(pageobjects.Agent_DealBuilderPage.HandsetTariffCombination);
+			dropdown.selectByIndex(2);
+			System.out.println("Selecting combination of handset and talkplan");
+			System.out.println(
+					"Selected combination is" + pageobjects.Agent_DealBuilderPage.HandsetTariffCombination.getText());
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+ System.out.println("handset and tariff dropdown is not displayed, should be fine");
+		}
 	}
 
 	public static void SelectExtras(String Extras) throws InterruptedException {

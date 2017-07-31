@@ -1622,6 +1622,21 @@ public class E2EOrderPlaced_Steps {
 
 		}
 	}
+	
+	@When("^Pay by card for PAYM device$")
+	public void pay_by_card_payn_device() throws Throwable {
+		driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
+		try {
+			PageFactory.initElements(driver, Agent_RegisterCustomerPage.class);
+			Agent_RegisterCustomerActions.PaybyCard();
+			Agent_RegisterCustomerActions.CardDetails_PayM();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			System.out.println("Unable to Pay by card , please see the failure screenshot");
+			Assert.fail("Unable to Pay by card , please see the failure screenshot");
+
+		}
+	}
 
 	/*
 	 * #########################################################################
