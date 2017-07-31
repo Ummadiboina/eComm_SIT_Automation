@@ -1,7 +1,7 @@
 Feature: Reg_AFA_PAYM_Acquistion
 
   #launch hooks and get browser
-  @AgentsRegressionPAYM
+  @AgentsRegression
   Scenario Outline: Successful completion of a PAY M Acquistion journey
     Given I login to Agent shop
     And performs Acquisition for New user

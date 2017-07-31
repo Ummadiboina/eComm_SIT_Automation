@@ -1,7 +1,5 @@
 package actionsPerformed;
 
-import static org.testng.Assert.fail;
-
 import java.net.MalformedURLException;
 import java.net.URI;
 import java.util.ArrayList;
@@ -274,7 +272,7 @@ public class BaseCommPageActions extends Environment {
 
 	public static void VerifyPriceChangeuponCapacity() {
 		// TODO Auto-generated method stub
-		System.out.println("Going to Verify promotion ribbon");
+		System.out.println("Going to Verify whether price changes w.r.t. capacity");
 		// WebElement capacity =
 		// driver.findElement(By.xpath("//*[@data-qa-device-model-family='iPad
 		// mini 3']/div[1]/div[2]/div[1]/div[2]/div[2]/select[@id='memory']"));

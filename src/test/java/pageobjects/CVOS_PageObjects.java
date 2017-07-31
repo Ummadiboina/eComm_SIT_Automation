@@ -59,10 +59,10 @@ public class CVOS_PageObjects extends Environment {
 	@FindBy(how=How.XPATH,using="//*[@id='arrivalDateB']")
 	public static WebElement toMoveDeliverydate;
 	
-	@FindBy(how=How.XPATH,using="//*[@id='stockpots-result-area']/div/div[2]/form/fieldset/div[1]/div[2]/div/ul/li[1]/div/table/thead/tr[1]/th[3]/button")
+	@FindBy(how=How.XPATH,using="//*[@class='stockpot-threshold-border']/following::button[@class='btn btn-default btn-sm pull-right']")
 	public static WebElement toMoveDate;
 	
-	@FindBy(how=How.XPATH,using="//*[@aria-labelledby='datepicker-00O-5835-title']/tbody")
+	@FindBy(how=How.XPATH,using="//*[@class='stockpot-threshold-border']/following::span[contains(text(),'08')][1]")
 	public static WebElement deliverySelectDate;
 	
 	@FindBy(how=How.XPATH,using="//*[@id='changeArrivalDate']")
