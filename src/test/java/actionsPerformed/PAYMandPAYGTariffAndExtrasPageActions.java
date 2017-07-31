@@ -11,10 +11,6 @@ import org.openqa.selenium.WebElement;
 
 import helpers.Environment;
 
-
-
-
-
 public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 	static Logger log = Logger.getLogger("devpinoyLogger");
 
@@ -153,11 +149,11 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 			if (DeviceName.contains("Apple")) {
 				Assert.assertTrue("Assertion Failed: Dock header does not contain Back to offers link",
 						pageobjects.PhonesListingPage.DockHeader_BackToOfferLink.getText()
-								.contains("Back to iPad offers"));
+								.contains("Back to offers"));
 			} else {
 				Assert.assertTrue("Assertion Failed: Dock header does not contain Back to offers link",
 						pageobjects.PhonesListingPage.DockHeader_BackToOfferLink.getText()
-								.contains("Back to tablet offers"));
+								.contains("Back to offers"));
 			}
 
 			log.debug("Assertion Success: Dock header contains Back to offers link");

@@ -183,8 +183,6 @@ public class PAYMSimOPage {
 	public static WebElement months12tab;
 	
 	@FindBy(how=How.XPATH,using=("//a[contains(text(),'30 days')]"))
-	
-	
 	public static WebElement days30tab;
 	
 	//@FindBy(how=How.CSS,using=(".col-xs-12.promotion-ribbon"))

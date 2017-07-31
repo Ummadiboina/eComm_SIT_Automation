@@ -92,7 +92,7 @@ public static void AddtoBasket()
 		// TODO Auto-generated method stub
 		Thread.sleep(5000);
 
-		WebElement element = pageobjects.ConnectedDeviceDetailsPage.ColorDropDown;
+		WebElement element = pageobjects.NonConnectedDeviceDetailsPage.ColorDropDown;
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("arguments[0].setAttribute('style', 'display:block;')", element);
 		if(element.isDisplayed()) {

@@ -53,10 +53,13 @@ public class BaseCommPage {
 
 	@FindAll({ @FindBy(how = How.XPATH, using = "//div[@class='tariff-container']") })
 	public static List<WebElement> TariffTile;
-
+/*
 	@FindBy(how = How.XPATH, using = ("//a[@href='/upgrade/store/existing-customer-offers/?deviceCategory=ipad']"))
-	public static WebElement BackToiPad;
+	public static WebElement BackToiPad;*/
 
+	@FindBy(how = How.XPATH, using = "//a[contains(., 'Back to offers')]")
+	public static WebElement BackToiPad;
+	
 	@FindBy(how = How.XPATH, using = ("//div[@class='default-content-container']"))
 	public static WebElement BannerDescription;
 
@@ -117,7 +120,13 @@ public class BaseCommPage {
 	@FindBy(how = How.XPATH, using = ("//*[@id='device-details']/div[1]/h3"))
 	public static WebElement PopupdevicenametextElement;
 
-	@FindBy(how = How.XPATH, using = ("//a[@href='/upgrade/store/existing-customer-offers/?deviceCategory=tablet']"))
+	/*
+	 * @FindBy(how = How.XPATH, using =
+	 * ("//a[@href='/upgrade/store/existing-customer-offers/?deviceCategory=tablet']"
+	 * )) public static WebElement BackToTablet;
+	 */	
+	
+	@FindBy(how = How.XPATH, using = "//a[contains(., 'Back to offers')]")
 	public static WebElement BackToTablet;
 
 	@FindBy(how = How.XPATH, using = ("//*[@data-qa-device-model-family='iPad mini 4']//div/form/button"))

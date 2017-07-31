@@ -1,4 +1,3 @@
-
 Feature: C1960_ECOM-11420,11429,11431,11443_TC1_AFA_verify_Base_Comms_tariff_under_offer_column_order_placement_O2_offer
 
   @AgentBasecomms

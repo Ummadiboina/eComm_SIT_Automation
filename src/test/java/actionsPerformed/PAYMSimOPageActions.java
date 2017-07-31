@@ -724,21 +724,21 @@ public class PAYMSimOPageActions extends Environment {
 	}
 
 	public static void SelectTariffMBBTab(String elementName) throws InterruptedException, AWTException {
-
+		JavascriptExecutor executor = (JavascriptExecutor) driver;
 		if (elementName.contains("30 Days")) {
 			System.out.println("Selecting a Random Tariff under 30 days tab");
 			log.debug("Selecting a Random Tariff under 30 days tab");
-			pageobjects.PAYMSimOPage.thirtydays.click();
+			pageobjects.PAYMSimOPage.days30tab.click();
 			Thread.sleep(3000);
-			pageobjects.PAYMSimOPage.BuyNowRandomTariffMBB30Days.sendKeys(Keys.ENTER);
-
+			executor.executeScript("arguments[0].click();",pageobjects.PAYMSimOPage.BuyNowRandomTariffMBB30Days );
+			
 		}
 		if (elementName.contains("12 Months")) {
 			System.out.println("Selecting a Random Tariff under 12 Months tab");
 			log.debug("Selecting a Random Tariff under 12 Months tab");
-			pageobjects.PAYMSimOPage.twelevemonths.click();
+			pageobjects.PAYMSimOPage.months12tab.click();
 			Thread.sleep(3000);
-			pageobjects.PAYMSimOPage.BuyNowRandomTariffMBB12Months.sendKeys(Keys.ENTER);
+			executor.executeScript("arguments[0].click();",pageobjects.PAYMSimOPage.BuyNowRandomTariffMBB12Months );
 		}
 
 	}

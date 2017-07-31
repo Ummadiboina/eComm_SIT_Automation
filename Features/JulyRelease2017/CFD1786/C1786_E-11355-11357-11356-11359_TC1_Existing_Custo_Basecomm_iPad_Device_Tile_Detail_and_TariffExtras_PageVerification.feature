@@ -20,6 +20,7 @@ Feature: C1786_E-11355-11357-11356-11359_TC1_Existing_Custo_Basecomm_iPad_Device
     Given I am existing user and I click on Signin button
     And Signin using valid <username> and <password> credentials
     And I navigate to the Basecomm Page
+    And Click on iPad tab
     And Verify the contents of the iPad section in the landing page
     #Verify URL is iPad specific
     Then Verify only iPad specific devices are displayed under the iPad section

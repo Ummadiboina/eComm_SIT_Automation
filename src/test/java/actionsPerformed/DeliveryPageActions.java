@@ -14,16 +14,11 @@ import org.testng.Reporter;
 import GlobalActions.RandomEmailAddressCreation;
 import pageobjects.DeliveryPage;
 
-
-
-
 public class DeliveryPageActions {
 	  
 	public WebDriver driver;
 	public List<HashMap<String, String>> datamap;
 	static Logger log = Logger.getLogger("devpinoyLogger");
-
-  		
 
 		public static void SetDelivery() throws InterruptedException
 		{

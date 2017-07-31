@@ -536,6 +536,9 @@ public class BasketPageActions extends Environment {
 	 */
 
 	public static void verifyDevicesInBasket(String dev1, String dev2, String dev3) {
+		if (!driver.getTitle().equals("O2 | Basket")) {
+			Assert.fail("User is not in basket page");
+		}
 		log.debug("Verifying the devices in basket");
 		// List<WebElement> MyDevices = pageobjects.BasketPage.DevicesList;
 
@@ -561,29 +564,29 @@ public class BasketPageActions extends Environment {
 		if (MyNonConnDevices.size() != 0) {
 			for (int i = 0; i < MyNonConnDevices.size(); i++) {
 				DisplayedDevices.add(MyNonConnDevices.get(i).getText());
-				System.out.println("Non Conn added: "+ MyNonConnDevices.get(i).getText()+ "");
+				System.out.println("Non Conn added: " + MyNonConnDevices.get(i).getText() + "");
 			}
 		}
 		if (MyConnDevices.size() != 0) {
 			for (int i = 0; i < MyConnDevices.size(); i++) {
 				DisplayedDevices.add(MyConnDevices.get(i).getText());
-				System.out.println("Conn dev added: " + MyConnDevices.get(i).getText() +"");
+				System.out.println("Conn dev added: " + MyConnDevices.get(i).getText() + "");
 			}
 		}
 
 		if (MyTariffs.size() != 0) {
 			for (int i = 0; i < MyTariffs.size(); i++) {
 				DisplayedDevices.add(MyTariffs.get(i).getText());
-				System.out.println("Tariff added: " + MyTariffs.get(i).getText() +"");
+				System.out.println("Tariff added: " + MyTariffs.get(i).getText() + "");
 			}
 		}
 		if (DisplayedDevices.containsAll(SelectedDevices)) {
 			log.debug("Selected devices are in basket");
 			System.out.println("Selected devices are in basket");
-			
+
 		} else {
 			for (int k = 0; k > DisplayedDevices.size(); k++) {
-				System.out.println("Devices in basket are : " + '\n' + DisplayedDevices.get(k) + '\n');				
+				System.out.println("Devices in basket are : " + '\n' + DisplayedDevices.get(k) + '\n');
 				log.debug("Devices in basket are : " + '\n' + DisplayedDevices.get(k) + '\n');
 			}
 			Assert.fail("Selected devices are not in basket");
@@ -592,10 +595,13 @@ public class BasketPageActions extends Environment {
 
 	public static void verifyDevicesInBasket(String dev1, String dev2) {
 
-		List<WebElement> MyDevices = pageobjects.BasketPage.DevicesList;
-
+		// List<WebElement> MyDevices = pageobjects.BasketPage.DevicesList;
+		if (!driver.getTitle().equals("O2 | Basket")) {
+			Assert.fail("User is not in basket page");
+		}
 		List<WebElement> MyConnDevices = pageobjects.BasketPage.MyConnDevices;
 		List<WebElement> MyNonConnDevices = pageobjects.BasketPage.MyNonConnDevices;
+		List<WebElement> MyTariffs = pageobjects.BasketPage.MyTariffs;
 
 		List<String> DisplayedDevices = new ArrayList<>();
 		List<String> SelectedDevices = new ArrayList<>();
@@ -620,6 +626,12 @@ public class BasketPageActions extends Environment {
 				System.out.println("Conn dev added");
 			}
 		}
+		if (MyTariffs.size() != 0) {
+			for (int i = 0; i < MyTariffs.size(); i++) {
+				DisplayedDevices.add(MyTariffs.get(i).getText());
+				System.out.println("Tariff added: " + MyTariffs.get(i).getText() + "");
+			}
+		}
 		if (DisplayedDevices.containsAll(SelectedDevices)) {
 			log.debug("Selected devices are in basket");
 			System.out.println("Selected devices are in basket");
@@ -633,11 +645,14 @@ public class BasketPageActions extends Environment {
 	}
 
 	public static void verifyDevicesInBasket(String dev1) {
-
-		List<WebElement> MyDevices = pageobjects.BasketPage.DevicesList;
-
+		System.out.println("Title is" + driver.getTitle());
+		if (!driver.getTitle().equals("O2 | Basket")) {
+			Assert.fail("User is not in basket page");
+		}
+		// List<WebElement> MyDevices = pageobjects.BasketPage.DevicesList;
 		List<WebElement> MyConnDevices = pageobjects.BasketPage.MyConnDevices;
 		List<WebElement> MyNonConnDevices = pageobjects.BasketPage.MyNonConnDevices;
+		List<WebElement> MyTariffs = pageobjects.BasketPage.MyTariffs;
 
 		List<String> DisplayedDevices = new ArrayList<>();
 		List<String> SelectedDevices = new ArrayList<>();
@@ -654,6 +669,12 @@ public class BasketPageActions extends Environment {
 			for (int i = 0; i < MyConnDevices.size(); i++) {
 				DisplayedDevices.add(MyConnDevices.get(i).getText());
 				System.out.println("Conn dev added");
+			}
+		}
+		if (MyTariffs.size() != 0) {
+			for (int i = 0; i < MyTariffs.size(); i++) {
+				DisplayedDevices.add(MyTariffs.get(i).getText());
+				System.out.println("Tariff added: " + MyTariffs.get(i).getText() + "");
 			}
 		}
 		if (DisplayedDevices.containsAll(SelectedDevices)) {

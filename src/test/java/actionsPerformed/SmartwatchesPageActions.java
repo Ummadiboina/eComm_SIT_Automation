@@ -82,7 +82,7 @@ public class SmartwatchesPageActions extends Environment {
 			if (elementName.contains("Samsung Galaxy Gear")) {
 				System.out.println("Going to select SamsungGalaxyGear");
 
-				pageobjects.SmartwatchesPage.SamsungGearS2.click();
+				pageobjects.SmartwatchesPage.SamsungGalaxyGear.click();
 				Thread.sleep(15000);
 
 				System.out.println("Clicked SamsungGalaxyGear");

@@ -1,5 +1,4 @@
-Feature: 
-  C1924_E11409_TC11_Existing_customer_displaying_label_in_place_of_only_one_variant_on_device_details_page_of_accessory
+Feature: C1924_E11409_TC11_Existing_customer_displaying_label_in_place_of_only_one_variant_on_device_details_page_of_accessory
 
   @JulyRelease 
 Scenario Outline: 

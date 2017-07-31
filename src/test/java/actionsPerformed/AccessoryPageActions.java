@@ -143,6 +143,16 @@ public class AccessoryPageActions extends Environment{
 			log.debug("JBLXtreme Accessory Selected");
 		}
 		
+		if(elementName.contains("SanDisk Ultra MemoryCard"))
+
+		{
+			System.out.println("Selecting SanDiskUltraMemoryCard80Mbs Accessory");
+			log.debug("Selecting SanDiskUltraMemoryCard80Mbs Accessory");
+			log.debug("Selected an accessory -  "+pageobjects.AccessoryPage.SanDiskUltraMemoryCard80Mbs.getText());
+			pageobjects.AccessoryPage.SanDiskUltraMemoryCard80Mbs.click();
+			log.debug("SanDiskUltraMemoryCard80Mbs Accessory Selected");
+		}
+		
 		}
 	/*Below has been modified as per the new ui layout, new function has been written which is below,
 	so please refer to this only if its necessary else follow "selectAnyAccessoryLimit()" instead of

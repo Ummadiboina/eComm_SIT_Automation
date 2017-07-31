@@ -11,7 +11,6 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 
-
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
@@ -48,9 +47,9 @@ public class PhonesListingPageAction extends Environment {
 			pageobjects.PhonesListingPage.BlackberryClassic.click();
 			System.out.println("Blackberry Classic");
 			log.debug("Blackberry Classic");
-			
+
 		}
-		
+
 		if (elementName.contains("AquarisM45")) {
 			pageobjects.PhonesListingPage.AquarisM45.click();
 			System.out.println("Selected AquarisM45");
@@ -369,7 +368,7 @@ public class PhonesListingPageAction extends Environment {
 					"Assertion Failed: Devices displayed are not as per the Brand filter applied" + e.getMessage());
 		}
 	}
-	
+
 	public static void clickOnFilterTab() {
 		try {
 			log.debug("Entering clickOnFilterTab function");
@@ -614,7 +613,7 @@ public class PhonesListingPageAction extends Environment {
 
 	}
 
-public static void clickOnViewAllProductsOnOnePage() {
+	public static void clickOnViewAllProductsOnOnePage() {
 		try {
 			log.debug("Entering clickOnViewAllProductsOnOnePage function");
 			System.out.println("Entering clickOnViewAllProductsOnOnePage function");
@@ -917,86 +916,71 @@ public static void clickOnViewAllProductsOnOnePage() {
 		});
 	}
 
-	/*public static void checkSeeDeviceDetailsPopUp(String device) throws InterruptedException {
-		
-		List<WebElement> iPadDevicesName = pageobjects.BaseCommPage.iPadDevicesName;
+	/*
+	 * public static void checkSeeDeviceDetailsPopUp(String device) throws
+	 * InterruptedException {
+	 * 
+	 * List<WebElement> iPadDevicesName =
+	 * pageobjects.BaseCommPage.iPadDevicesName;
+	 * 
+	 * WebElement SeeDeviceDetailsLink; WebElement PoundsElement; WebElement
+	 * PenseElement; JavascriptExecutor js = (JavascriptExecutor) driver; String
+	 * popupdevicenametext = null; String poundselementtext = null; String
+	 * penseelementtext = null; String c = null, d = null, e = null; int k = 0;
+	 * 
+	 * for (int i = 0; i < iPadDevicesName.size(); i++) {
+	 * 
+	 * if (iPadDevicesName.get(i).getText().equals(device)) { k = i + 1; c =
+	 * "(//a[contains(text(),'See device details')])[" + k + "]"; d =
+	 * "(//span[@class='headline ng-binding'])[" + k + "]"; e =
+	 * "(//span[@class='pence ng-binding'])[" + k + "]"; }
+	 * 
+	 * } PoundsElement = driver.findElement(By.xpath(d)); PenseElement =
+	 * driver.findElement(By.xpath(e));
+	 * 
+	 * SeeDeviceDetailsLink = driver.findElement(By.xpath(c));
+	 * js.executeScript("arguments[0].click();", SeeDeviceDetailsLink);
+	 * log.debug("Clicked on See Device Details Link"); Thread.sleep(5000);
+	 * 
+	 * for (String winHandle : driver.getWindowHandles()) {
+	 * driver.switchTo().window(winHandle); log.debug("Control is in pop up"); }
+	 * 
+	 * WebElement PopupdevicenametextElement =
+	 * driver.findElement(By.xpath("//*[@id='device-details']/div[1]/h3")); if
+	 * (PopupdevicenametextElement.isDisplayed()) { popupdevicenametext =
+	 * PopupdevicenametextElement.getText(); if
+	 * (popupdevicenametext.equals(device)) {
+	 * log.debug("Device name in pop up is " + popupdevicenametext +
+	 * "and matches the device selected"); } } else {
+	 * Assert.fail("Device name in pop up is not present"); }
+	 * 
+	 * if (PoundsElement.isDisplayed()) { poundselementtext =
+	 * PoundsElement.getText(); if
+	 * (poundselementtext.equals(PoundsElement.getText())) {
+	 * log.debug("Pounds in pop up - " + poundselementtext +
+	 * ", pounds value displayed for device - " + PoundsElement.getText() +
+	 * "and they are the same"); } }
+	 * 
+	 * if (PenseElement.isDisplayed()) { penseelementtext =
+	 * PenseElement.getText(); if
+	 * (penseelementtext.equals(PenseElement.getText())) {
+	 * log.debug("Pense in pop up - " + penseelementtext +
+	 * ", pense value displayed for device - " + PenseElement.getText() +
+	 * "and they are the same"); } }
+	 * 
+	 * WebElement SpecificationsElement =
+	 * driver.findElement(By.xpath("//div[@class='accordion-content']")); if
+	 * (!SpecificationsElement.isDisplayed()) {
+	 * System.out.println("specifications not displayed"); } else
+	 * System.out.println("specifications displayed");
+	 * 
+	 * WebElement FullSpecificationElement = driver .findElement(By.
+	 * xpath("//a[contains(text(),'See full technical specification')]")); if
+	 * (FullSpecificationElement.isDisplayed()) {
+	 * FullSpecificationElement.click();
+	 * System.out.println("Full specification link is present"); } }
+	 */
 
-		WebElement SeeDeviceDetailsLink;
-		WebElement PoundsElement;
-		WebElement PenseElement;
-		JavascriptExecutor js = (JavascriptExecutor) driver;
-		String popupdevicenametext = null;
-		String poundselementtext = null;
-		String penseelementtext = null;
-		String c = null, d = null, e = null;
-		int k = 0;
-
-		for (int i = 0; i < iPadDevicesName.size(); i++) {
-
-			if (iPadDevicesName.get(i).getText().equals(device)) {
-				k = i + 1;
-				c = "(//a[contains(text(),'See device details')])[" + k + "]";
-				d = "(//span[@class='headline ng-binding'])[" + k + "]";
-				e = "(//span[@class='pence ng-binding'])[" + k + "]";
-			}
-
-		}
-		PoundsElement = driver.findElement(By.xpath(d));
-		PenseElement = driver.findElement(By.xpath(e));
-
-		SeeDeviceDetailsLink = driver.findElement(By.xpath(c));
-		js.executeScript("arguments[0].click();", SeeDeviceDetailsLink);
-		log.debug("Clicked on See Device Details Link");
-		Thread.sleep(5000);
-
-		for (String winHandle : driver.getWindowHandles()) {
-			driver.switchTo().window(winHandle);
-			log.debug("Control is in pop up");
-		}
-
-		WebElement PopupdevicenametextElement = driver.findElement(By.xpath("//*[@id='device-details']/div[1]/h3"));
-		if (PopupdevicenametextElement.isDisplayed()) {
-			popupdevicenametext = PopupdevicenametextElement.getText();
-			if (popupdevicenametext.equals(device)) {
-				log.debug("Device name in pop up is " + popupdevicenametext + "and matches the device selected");
-			}
-		} else {
-			Assert.fail("Device name in pop up is not present");
-		}
-
-		if (PoundsElement.isDisplayed()) {
-			poundselementtext = PoundsElement.getText();
-			if (poundselementtext.equals(PoundsElement.getText())) {
-				log.debug("Pounds in pop up - " + poundselementtext + ", pounds value displayed for device - "
-						+ PoundsElement.getText() + "and they are the same");
-			}
-		}
-
-		if (PenseElement.isDisplayed()) {
-			penseelementtext = PenseElement.getText();
-			if (penseelementtext.equals(PenseElement.getText())) {
-				log.debug("Pense in pop up - " + penseelementtext + ", pense value displayed for device - "
-						+ PenseElement.getText() + "and they are the same");
-			}
-		}
-
-		WebElement SpecificationsElement = driver.findElement(By.xpath("//div[@class='accordion-content']"));
-		if (!SpecificationsElement.isDisplayed()) {
-			System.out.println("specifications not displayed");
-		} else
-			System.out.println("specifications displayed");
-
-		WebElement FullSpecificationElement = driver
-				.findElement(By.xpath("//a[contains(text(),'See full technical specification')]"));
-		if (FullSpecificationElement.isDisplayed()) {
-			FullSpecificationElement.click();
-			System.out.println("Full specification link is present");
-		}
-	}*/
-	
-	
-	
-	
 	public static void isChooseADifferentTariffDisplayed() {
 		log.debug("checking if the Choose a Different Tariff link is displayed");
 		if (pageobjects.BaseCommPage.ChooseADifferentTariff.isDisplayed()) {
@@ -1004,6 +988,7 @@ public static void clickOnViewAllProductsOnOnePage() {
 		} else
 			Assert.fail("Choose a different tariff link is not displayed");
 	}
+
 	public static void clickChooseADifferentTariff() {
 		log.debug("clicking on Choose a Different Tariff link");
 		if (pageobjects.BaseCommPage.ChooseADifferentTariff.isDisplayed()) {
@@ -1027,7 +1012,7 @@ public static void clickOnViewAllProductsOnOnePage() {
 		} else
 			Assert.fail("not able to click on 'Back To Tablet Offers' link");
 	}
-	
+
 	public static void checkUserNavigatedTEPage() {
 
 		if (driver.getTitle().contains("Tariffs And Extras")) {
@@ -1037,8 +1022,9 @@ public static void clickOnViewAllProductsOnOnePage() {
 
 	}
 
-	public static void checkUserNavigatedBasecommPage() {
-
+	public static void checkUserNavigatedBasecommPage() throws Exception {
+		Thread.sleep(3000);
+		System.out.println("Title of the page is" +driver.getTitle());
 		if (driver.getTitle().contains("O2 | MyOffers")) {
 			log.debug("user is navigated back to Basecomm Page");
 		} else
@@ -1115,9 +1101,12 @@ public static void clickOnViewAllProductsOnOnePage() {
 		if (tariffs.size() != 0) {
 			if (tariffs.get(0).getText().startsWith("Our recommended tariff")) {
 				log.debug("'Our recommended tariff' is at the first tile");
+				System.out.println("'Our recommended tariff' is at the first tile");
 			}
-		} else
+		} else {
 			log.debug("Tariff Tile is not present");
+			System.out.println("Tariff Tile is not present");
+		}
 	}
 
 	public static void checkContentsOfBaseCommPage() {
@@ -1205,6 +1194,4 @@ public static void clickOnViewAllProductsOnOnePage() {
 		}
 	}
 
-	
-	
 }

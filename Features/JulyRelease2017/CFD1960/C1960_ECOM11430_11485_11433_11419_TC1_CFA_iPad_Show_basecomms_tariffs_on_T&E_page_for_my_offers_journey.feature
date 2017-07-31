@@ -4,8 +4,7 @@ Feature: C1960_ECOM11430_11485_11433_11419_TC1_CFA_iPad_Show_basecomms_tariffs_o
     Given I navigate to the Basecomm Page
     And Verify expected <device_name> and its specific details are present in the device list <default_colour>,<default_capacity>,<default_stock_message>
     #Veirfy device price details are also getting displayed in the above step
-    And select <color> color of the connected device
-    And select <capacity> capacity of the connected device
+   	And Select <color>, <capacity> of the device <device_name>
     And Verify that promotion ribbon is displayed
     And Verify new image is as per the selected <device_name>,<capacity>and <color> in the Basecomms page
     And Click on "Buy Now" button for <device_name> and verify "Tariffs and Extras" page is displayed

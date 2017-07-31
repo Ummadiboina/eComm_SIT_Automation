@@ -9,7 +9,7 @@ Feature: C1669_E11522_TC2
     And Navigate to Fitness Trackers
     And select any available "Random" Fitness tracker
     And add quantity of FitnessTracker to basket within <limit> in details page and navigate to basket
-    And Validate Basket content for non Connected
+    #And Validate Basket content for non Connected
     And navigate to PAYM Phones page
     And I choose PayM <handset>
     And Navigate to device details page
@@ -26,4 +26,4 @@ Feature: C1669_E11522_TC2
 
     Examples: 
       | handset  | Firstname | Surname | Username     | limit |
-      | GalaxyS8 | TEST      | ACCEPTA | TEST ACCEPTA |     2 |
+      | GalaxyS8 | TEST      | ACCEPTA | TEST ACCEPTA |     6 |

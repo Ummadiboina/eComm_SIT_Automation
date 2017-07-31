@@ -16,12 +16,6 @@ public class TabletPage {
 	@FindBy(how = How.XPATH, using = "//a[contains(@href, '/shop/tablets/apple/ipad-9.7/#contractType=paymonthly')]")
 	public static WebElement iPad97;
 
-	@FindBy(how = How.XPATH, using = "//a[contains(@href, '/shop/tablets/apple/ipad-pro-12.9-inch/#contractType=paymonthly')]")
-	public static WebElement iPadPro129;
-	
-	@FindBy(how = How.XPATH, using = "//a[contains(@href, '/shop/tablets/apple/ipad-pro-10.5-inch/#contractType=paymonthly')]")
-	public static WebElement AppleiPadPro105inch;
-
 	@FindBy(how = How.XPATH, using = "//span[contains(text(),'Galaxy Tab A 2016 10.1')]")
 	public static WebElement SamsungGalaxy10;
 
@@ -30,9 +24,6 @@ public class TabletPage {
 
 	@FindBy(how = How.XPATH, using = ("//a[contains(@href, '/shop/tablets/apple/ipad-pro-10.5-inch/#contractType=paymonthly')]"))	
 	public static WebElement AppleiPadPro105inch;
-
-	@FindBy(how = How.XPATH, using = "//a[contains(@href, '/shop/tablets/apple/ipad-pro-12.9-inch/#contractType=paymonthly')]")
-	public static WebElement iPadPro129;
 
 	@FindBy(how = How.XPATH, using = ("//a[contains(@href, '/shop/tablets/apple/ipad-pro-12.9-inch/#contractType=paymonthly')]"))	
 	public static WebElement AppleiPadPro129inch;

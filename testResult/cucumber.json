@@ -6,7 +6,7 @@
         "before": [
           {
             "result": {
-              "duration": 46136882455,
+              "duration": 78224949693,
               "status": "passed"
             },
             "match": {
@@ -14,14 +14,14 @@
             }
           }
         ],
-        "line": 39,
-        "name": "CFA Add all non connected devices (Standalone Smartwatch, Accessory and Fitnesstracker) and One Connected Device and Veiryf Basket not overridden",
-        "description": "",
-        "id": "c1669-e11521-tc1-cfa-add-all-nonconnected-devices-to-basket-followed-by-adding-a-phone-verify-not-overridden;cfa-add-all-non-connected-devices-(standalone-smartwatch,-accessory-and-fitnesstracker)-and-one-connected-device-and-veiryf-basket-not-overridden;;2",
+        "line": 18,
+        "name": "\"This scenario ensures that when the existing customer lands on new basecomm page, then the customer should be able to see the following changes in basecomm page",
+        "description": "\r\n1.The Header carousel should be displayed on the top of the page\r\n2.Static sub-navigation should be displayed on the top of the page above the header carousel\r\n3.Banner description for Sub-banner should be displayed below the header carousel \r\n4.Footer banner should be displayed below the tariff tiles",
+        "id": "c1786-e-11349-11350-11352-11358-existing-custo-layout-new-basecomm-page-header-carousel-sub-navigation-sub-banner-footer-banner;\"this-scenario-ensures-that-when-the-existing-customer-lands-on-new-basecomm-page,-then-the-customer-should-be-able-to-see-the-following-changes-in-basecomm-page;;2",
         "after": [
           {
             "result": {
-              "duration": 5524237205,
+              "duration": 17817124106,
               "status": "passed"
             },
             "match": {
@@ -34,295 +34,2366 @@
         "steps": [
           {
             "result": {
-              "duration": 1122884544,
+              "duration": 29709622976,
               "status": "passed"
             },
-            "line": 4,
-            "name": "I am an CFA user and Lands on shop page",
+            "line": 11,
+            "name": "I am existing user and I click on Signin button",
             "match": {
-              "location": "E2EOrderPlaced_Steps.i_am_an_CFA_user_and_Lands_on_shop_page()"
+              "location": "E2EOrderPlaced_Steps.I_am_existing_user_and_I_click_on_Signin_button()"
             },
             "keyword": "Given "
           },
           {
             "result": {
-              "duration": 39156261719,
+              "duration": 25510974097,
               "status": "passed"
             },
-            "line": 5,
-            "name": "Navigate to Accessories",
-            "match": {
-              "location": "E2EOrderPlaced_Steps.navigate_to_Accessories()"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 1003546648,
-              "status": "passed"
-            },
-            "line": 6,
-            "name": "select an \"Random\" Accessory",
+            "line": 12,
+            "name": "Signin using valid 07770001111@o2.co.uk and test123 credentials",
             "match": {
               "arguments": [
                 {
-                  "val": "Random",
-                  "offset": 11
+                  "val": "07770001111@o2.co.uk",
+                  "offset": 19
+                },
+                {
+                  "val": "test123",
+                  "offset": 44
                 }
               ],
-              "location": "E2EOrderPlaced_Steps.select_an_Accessory(String)"
+              "location": "E2EOrderPlaced_Steps.signin_using_valid_ink_jun_and_test_credentials(String,String)"
+            },
+            "matchedColumns": [
+              0,
+              1
+            ],
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 14268751235,
+              "status": "passed"
+            },
+            "line": 13,
+            "name": "I navigate to the Basecomm Page",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.I_navigate_to_the_Basecomm_Page()"
             },
             "keyword": "And "
           },
           {
             "result": {
-              "duration": 55385432020,
+              "duration": 12912473714,
+              "status": "passed"
+            },
+            "line": 14,
+            "name": "Verify the contents of the basecomm landing page",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.Verify_the_contents_of_the_basecomm_landing_page()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "line": 3,
+            "name": "@helloTest"
+          }
+        ]
+      }
+    ],
+    "name": "C1786_E-11349-11350-11352-11358_Existing_Custo_Layout_New_Basecomm_Page_header_carousel_Sub_navigation_Sub_Banner_footer_banner",
+    "description": "",
+    "id": "c1786-e-11349-11350-11352-11358-existing-custo-layout-new-basecomm-page-header-carousel-sub-navigation-sub-banner-footer-banner",
+    "keyword": "Feature",
+    "uri": "C1786_E-11349-11350-11352-11358_Existing_Custo_Layout_New_Basecomm_Page_header_carousel_Sub_navigation_Sub_Banner_footer_banner.feature"
+  },
+  {
+    "line": 1,
+    "elements": [
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 24337739865,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Hooks.openBrowser()"
+            }
+          }
+        ],
+        "line": 15,
+        "name": "",
+        "description": "This scenario ensures that when the existing customer lands on new basecomm page, then the customer should be able to see \u0027iPads\u0027 tab with iPad related devices and 1*2 Banner Tile should be displayed for ongoing promotion",
+        "id": "c1786-e-11353-11360-11361-11528-tc1-existing-custo-basecomm-ipads-tab-verification;;;2",
+        "after": [
+          {
+            "result": {
+              "duration": 13462992992,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Hooks.embedScreenshot(Scenario)"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 28656131643,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "I am existing user and I click on Signin button",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.I_am_existing_user_and_I_click_on_Signin_button()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 24175070621,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "Signin using valid 07770001111@o2.co.uk and test123 credentials",
+            "match": {
+              "arguments": [
+                {
+                  "val": "07770001111@o2.co.uk",
+                  "offset": 19
+                },
+                {
+                  "val": "test123",
+                  "offset": 44
+                }
+              ],
+              "location": "E2EOrderPlaced_Steps.signin_using_valid_ink_jun_and_test_credentials(String,String)"
+            },
+            "matchedColumns": [
+              0,
+              1
+            ],
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 24098635927,
               "status": "passed"
             },
             "line": 7,
-            "name": "add Accessories to basket within limit in details page and navigate to basket",
+            "name": "I navigate to the Basecomm Page",
             "match": {
-              "location": "E2EOrderPlaced_Steps.add_Accessories_to_basket_within_limit_in_details_page_and_navigate_to_basket()"
+              "location": "E2EOrderPlaced_Steps.I_navigate_to_the_Basecomm_Page()"
             },
             "keyword": "And "
           },
           {
             "result": {
-              "duration": 4179317891,
+              "duration": 8380506247,
               "status": "passed"
             },
             "line": 8,
-            "name": "I Land on the Non Phone related basket page and choose home delivery option",
+            "name": "Click on iPad tab",
             "match": {
-              "location": "E2EOrderPlaced_Steps.NonPhoneRelatedBasketPage()"
+              "location": "E2EOrderPlaced_Steps.Click_on_iPad_tab()"
             },
             "keyword": "And "
           },
           {
             "result": {
-              "duration": 5302982421,
+              "duration": 5805122283,
               "status": "passed"
+            },
+            "line": 9,
+            "name": "Verify the contents of the iPad section in the landing page",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.VerifyContentsofIpadSection()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 304296987,
+              "status": "passed"
+            },
+            "comments": [
+              {
+                "line": 10,
+                "value": "#Verify URL is iPad specific"
+              }
+            ],
+            "line": 11,
+            "name": "Verify only iPad specific devices are displayed under the iPad section",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.Verify_only_iPad_specific_devices_are_displayed_under_the_iPad_section()"
+            },
+            "keyword": "Then "
+          }
+        ]
+      }
+    ],
+    "name": "C1786_E-11353-11360-11361-11528_TC1_Existing_Custo_Basecomm_Ipads_Tab_Verification",
+    "description": "",
+    "id": "c1786-e-11353-11360-11361-11528-tc1-existing-custo-basecomm-ipads-tab-verification",
+    "keyword": "Feature",
+    "uri": "C1786_E-11353-11360-11361-11528_TC1_Existing_Custo_Basecomm_Ipads_Tab_Verification.feature"
+  },
+  {
+    "line": 1,
+    "elements": [
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 36440030520,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Hooks.openBrowser()"
+            }
+          }
+        ],
+        "line": 16,
+        "name": "This scenario ensures that when the existing customer lands on new basecomm page, then the customer should be able to see \u0027iPads\u0027 tab with iPad related devices and 1*2 Banner Tile should be displayed for ongoing promotion",
+        "description": "",
+        "id": "c1786-e-11353-11360-11361-11528-tc2-existing-custo-basecomms-other-tablets-tab-verification;this-scenario-ensures-that-when-the-existing-customer-lands-on-new-basecomm-page,-then-the-customer-should-be-able-to-see-\u0027ipads\u0027-tab-with-ipad-related-devices-and-1*2-banner-tile-should-be-displayed-for-ongoing-promotion;;2",
+        "after": [
+          {
+            "result": {
+              "duration": 13831559702,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Hooks.embedScreenshot(Scenario)"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 32134527086,
+              "status": "passed"
+            },
+            "line": 4,
+            "name": "I am existing user and I click on Signin button",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.I_am_existing_user_and_I_click_on_Signin_button()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 24245163421,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "Signin using valid 07770001111@o2.co.uk and test123 credentials",
+            "match": {
+              "arguments": [
+                {
+                  "val": "07770001111@o2.co.uk",
+                  "offset": 19
+                },
+                {
+                  "val": "test123",
+                  "offset": 44
+                }
+              ],
+              "location": "E2EOrderPlaced_Steps.signin_using_valid_ink_jun_and_test_credentials(String,String)"
+            },
+            "matchedColumns": [
+              0,
+              1
+            ],
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 16507082255,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "I navigate to the Basecomm Page",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.I_navigate_to_the_Basecomm_Page()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 4311522925,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "Click on Other Tablets tab",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.Click_on_Other_Tablets_tab()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 7482638709,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "Verify the contents of the tablet section in the Other Tablets tab",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.VerifyContentsofTabletSection()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 1037880788,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "Verify only tablet specific devices are displayed under the Other tablets section",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.Verify_only_tablet_specific_devices_are_displayed_under_the_Other_tablets_section()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 8348693789,
+              "status": "passed"
+            },
+            "line": 10,
+            "name": "Click on iPad tab",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.Click_on_iPad_tab()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 2284500154,
+              "status": "passed"
+            },
+            "line": 11,
+            "name": "Verify the contents of the iPad section in the landing page",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.VerifyContentsofIpadSection()"
+            },
+            "keyword": "And "
+          }
+        ]
+      }
+    ],
+    "name": "C1786_E-11353-11360-11361-11528_TC2_Existing_Custo_Basecomms_Other_Tablets_Tab_Verification",
+    "description": "",
+    "id": "c1786-e-11353-11360-11361-11528-tc2-existing-custo-basecomms-other-tablets-tab-verification",
+    "keyword": "Feature",
+    "uri": "C1786_E-11353-11360-11361-11528_TC2_Existing_Custo_Basecomms_Other_Tablets_Tab_Verification.feature"
+  },
+  {
+    "line": 1,
+    "elements": [
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 46328389109,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Hooks.openBrowser()"
+            }
+          }
+        ],
+        "line": 17,
+        "name": "",
+        "description": "This scenario ensures that when the existing customer lands on new basecomm page and selects \u0027iPads\u0027 tab, \nthen the customer should be able to see the configured recommended tariff(on the header of the tariff tile) in \u0027Tariff and Extras\u0027 Page",
+        "id": "c1786-e-11354-11447-11565-tc3-existing-custo-ipads-tab-recommended-tariff-in-tariffs-and-extras-page;;;2",
+        "after": [
+          {
+            "result": {
+              "duration": 13379614772,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Hooks.embedScreenshot(Scenario)"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 46911549680,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "I am existing user and I click on Signin button",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.I_am_existing_user_and_I_click_on_Signin_button()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 26875367614,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "Signin using valid 07770001111@o2.co.uk and test123 credentials",
+            "match": {
+              "arguments": [
+                {
+                  "val": "07770001111@o2.co.uk",
+                  "offset": 19
+                },
+                {
+                  "val": "test123",
+                  "offset": 44
+                }
+              ],
+              "location": "E2EOrderPlaced_Steps.signin_using_valid_ink_jun_and_test_credentials(String,String)"
+            },
+            "matchedColumns": [
+              0,
+              1
+            ],
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 18821461863,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "I navigate to the Basecomm Page",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.I_navigate_to_the_Basecomm_Page()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 1575779625,
+              "status": "passed"
+            },
+            "line": 10,
+            "name": "Verify expected Apple iPad mini 4 and its specific details are present in the device list Silver,32GB,In Stock",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Apple iPad mini 4",
+                  "offset": 16
+                },
+                {
+                  "val": "Silver",
+                  "offset": 90
+                },
+                {
+                  "val": "32GB",
+                  "offset": 97
+                },
+                {
+                  "val": "In Stock",
+                  "offset": 102
+                }
+              ],
+              "location": "E2EOrderPlaced_Steps.verify_expected_device_and_details_are_in_device_list(String,String,String,String)"
+            },
+            "matchedColumns": [
+              2,
+              3,
+              4,
+              5
+            ],
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 77335889320,
+              "error_message": "junit.framework.AssertionFailedError: Unable to select device and verify tariff and extras page\r\n\tat junit.framework.Assert.fail(Assert.java:47)\r\n\tat steps.E2EOrderPlaced_Steps.SelectdeviceAndVerifyTariffandExtras(E2EOrderPlaced_Steps.java:3317)\r\n\tat ✽.And Click on \"Buy Now\" button for Apple iPad mini 4 and verify \"Tariffs and Extras\" page is displayed(C1786_E-11354-11447-11565_TC3_Existing_Custo_Ipads_tab_Recommended_tariff_in_tariffs_and_extras_page.feature:12)\r\n",
+              "status": "failed"
+            },
+            "comments": [
+              {
+                "line": 11,
+                "value": "#Veirfy device price details are also getting displayed in the above step"
+              }
+            ],
+            "line": 12,
+            "name": "Click on \"Buy Now\" button for Apple iPad mini 4 and verify \"Tariffs and Extras\" page is displayed",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Apple iPad mini 4",
+                  "offset": 30
+                }
+              ],
+              "location": "E2EOrderPlaced_Steps.SelectdeviceAndVerifyTariffandExtras(String)"
+            },
+            "matchedColumns": [
+              2
+            ],
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 13,
+            "name": "Verify recommended tariff is getting displayed on the header of the tariff tile in the \"Tariffs and Extras\" page",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.Verify_recommended_tariff_displayed_on_the_header_of_the_tariff_tile()"
+            },
+            "keyword": "And "
+          }
+        ]
+      }
+    ],
+    "name": "C1786_E-11354-11447-11565_TC3_Existing_Custo_Ipads_tab_Recommended_tariff_in_tariffs_and_extras_page",
+    "description": "",
+    "id": "c1786-e-11354-11447-11565-tc3-existing-custo-ipads-tab-recommended-tariff-in-tariffs-and-extras-page",
+    "keyword": "Feature",
+    "uri": "C1786_E-11354-11447-11565_TC3_Existing_Custo_Ipads_tab_Recommended_tariff_in_tariffs_and_extras_page.feature"
+  },
+  {
+    "line": 1,
+    "elements": [
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 34961759295,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Hooks.openBrowser()"
+            }
+          }
+        ],
+        "line": 17,
+        "name": "This scenario ensures that when the existing customer lands on new basecomm page and selects \u0027Other tablets\u0027 tab,",
+        "description": "then the customer should be able to see the configured recommended tariff(on the header of the tariff tile) in \u0027Tariff and Extras\u0027 Page",
+        "id": "c1786-e-11354-11447-11565-tc4-existing-custo-other-tablets-recommended-tariff-in-tariffs-and-extras-page;this-scenario-ensures-that-when-the-existing-customer-lands-on-new-basecomm-page-and-selects-\u0027other-tablets\u0027-tab,;;2",
+        "after": [
+          {
+            "result": {
+              "duration": 17073290643,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Hooks.embedScreenshot(Scenario)"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 39479241620,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "I am existing user and I click on Signin button",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.I_am_existing_user_and_I_click_on_Signin_button()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 23373639519,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "Signin using valid 07770001111@o2.co.uk and test123 credentials",
+            "match": {
+              "arguments": [
+                {
+                  "val": "07770001111@o2.co.uk",
+                  "offset": 19
+                },
+                {
+                  "val": "test123",
+                  "offset": 44
+                }
+              ],
+              "location": "E2EOrderPlaced_Steps.signin_using_valid_ink_jun_and_test_credentials(String,String)"
+            },
+            "matchedColumns": [
+              0,
+              1
+            ],
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 17873162107,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "I navigate to the Basecomm Page",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.I_navigate_to_the_Basecomm_Page()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 4344817872,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "Click on Other Tablets tab",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.Click_on_Other_Tablets_tab()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 7332346069,
+              "error_message": "java.lang.AssertionError: Expected stockmsg not displayed by default\r\n\tat org.junit.Assert.fail(Assert.java:88)\r\n\tat actionsPerformed.BaseCommPageActions.checkExpDevAndDetails(BaseCommPageActions.java:656)\r\n\tat steps.E2EOrderPlaced_Steps.verify_expected_device_and_details_are_in_device_list(E2EOrderPlaced_Steps.java:3497)\r\n\tat ✽.And Verify expected Samsung Galaxy Tab A 2016 10.1 and its specific details are present in the device list Black,16GB,In Stock(C1786_E-11354-11447-11565_TC4_Existing_Custo_Other_tablets_Recommended_tariff_in_tariffs_and_extras_page.feature:10)\r\n",
+              "status": "failed"
+            },
+            "line": 10,
+            "name": "Verify expected Samsung Galaxy Tab A 2016 10.1 and its specific details are present in the device list Black,16GB,In Stock",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Samsung Galaxy Tab A 2016 10.1",
+                  "offset": 16
+                },
+                {
+                  "val": "Black",
+                  "offset": 103
+                },
+                {
+                  "val": "16GB",
+                  "offset": 109
+                },
+                {
+                  "val": "In Stock",
+                  "offset": 114
+                }
+              ],
+              "location": "E2EOrderPlaced_Steps.verify_expected_device_and_details_are_in_device_list(String,String,String,String)"
+            },
+            "matchedColumns": [
+              2,
+              3,
+              4,
+              5
+            ],
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "comments": [
+              {
+                "line": 11,
+                "value": "#Veirfy device price details are also getting displayed in the above step"
+              }
+            ],
+            "line": 12,
+            "name": "Click on \"Buy Now\" button for Samsung Galaxy Tab A 2016 10.1 and verify \"Tariffs and Extras\" page is displayed",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Samsung Galaxy Tab A 2016 10.1",
+                  "offset": 30
+                }
+              ],
+              "location": "E2EOrderPlaced_Steps.SelectdeviceAndVerifyTariffandExtras(String)"
+            },
+            "matchedColumns": [
+              2
+            ],
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 13,
+            "name": "Verify recommended tariff is getting displayed on the header of the tariff tile in the \"Tariffs and Extras\" page",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.Verify_recommended_tariff_displayed_on_the_header_of_the_tariff_tile()"
+            },
+            "keyword": "And "
+          }
+        ]
+      }
+    ],
+    "name": "C1786_E-11354-11447-11565_TC4_Existing_Custo_Other_tablets_Recommended_tariff_in_tariffs_and_extras_page",
+    "description": "",
+    "id": "c1786-e-11354-11447-11565-tc4-existing-custo-other-tablets-recommended-tariff-in-tariffs-and-extras-page",
+    "keyword": "Feature",
+    "uri": "C1786_E-11354-11447-11565_TC4_Existing_Custo_Other_tablets_Recommended_tariff_in_tariffs_and_extras_page.feature"
+  },
+  {
+    "line": 1,
+    "elements": [
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 43636782847,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Hooks.openBrowser()"
+            }
+          }
+        ],
+        "line": 36,
+        "name": "This scenario ensures that when the existing customer lands on new basecomm page and selects iPad tab,then the customer should be able to see the following",
+        "description": "\nIn basecomm device tile:\n1.Device image\n2.Rating\n3.Colour dropdown\n4.Capacity dropdown\n5.Promotional ribbons(Blue ribbons if configured for the tariff)\n6.Pricing\n7.\"\"Buy now\"\" button\n8.See device details\"\" link\n9.Stock message\n\nIn Tariff and extras Page:\n1.\"Back to iPad offers\" link \n2. Basecomms offer tariffs",
+        "id": "c1786-e-11355-11357-11356-11359-tc1-existing-custo-basecomm-ipad-device-tile-detail-and-tariffextras-pageverification;this-scenario-ensures-that-when-the-existing-customer-lands-on-new-basecomm-page-and-selects-ipad-tab,then-the-customer-should-be-able-to-see-the-following;;2",
+        "after": [
+          {
+            "result": {
+              "duration": 17533048633,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Hooks.embedScreenshot(Scenario)"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 46549904907,
+              "status": "passed"
+            },
+            "line": 20,
+            "name": "I am existing user and I click on Signin button",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.I_am_existing_user_and_I_click_on_Signin_button()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 20131891944,
+              "status": "passed"
+            },
+            "line": 21,
+            "name": "Signin using valid 07770001111@o2.co.uk and test123 credentials",
+            "match": {
+              "arguments": [
+                {
+                  "val": "07770001111@o2.co.uk",
+                  "offset": 19
+                },
+                {
+                  "val": "test123",
+                  "offset": 44
+                }
+              ],
+              "location": "E2EOrderPlaced_Steps.signin_using_valid_ink_jun_and_test_credentials(String,String)"
+            },
+            "matchedColumns": [
+              0,
+              1
+            ],
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 33039224194,
+              "status": "passed"
+            },
+            "line": 22,
+            "name": "I navigate to the Basecomm Page",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.I_navigate_to_the_Basecomm_Page()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 8298506116,
+              "status": "passed"
+            },
+            "line": 23,
+            "name": "Click on iPad tab",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.Click_on_iPad_tab()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 4825282218,
+              "status": "passed"
+            },
+            "line": 24,
+            "name": "Verify the contents of the iPad section in the landing page",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.VerifyContentsofIpadSection()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 702990529,
+              "status": "passed"
+            },
+            "comments": [
+              {
+                "line": 25,
+                "value": "#Verify URL is iPad specific"
+              }
+            ],
+            "line": 26,
+            "name": "Verify only iPad specific devices are displayed under the iPad section",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.Verify_only_iPad_specific_devices_are_displayed_under_the_iPad_section()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 1261536975,
+              "status": "passed"
+            },
+            "line": 27,
+            "name": "Verify expected Apple iPad Pro 9.7 inch and its specific details are present in the device list Space Grey,32GB,Out of stock",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Apple iPad Pro 9.7 inch",
+                  "offset": 16
+                },
+                {
+                  "val": "Space Grey",
+                  "offset": 96
+                },
+                {
+                  "val": "32GB",
+                  "offset": 107
+                },
+                {
+                  "val": "Out of stock",
+                  "offset": 112
+                }
+              ],
+              "location": "E2EOrderPlaced_Steps.verify_expected_device_and_details_are_in_device_list(String,String,String,String)"
+            },
+            "matchedColumns": [
+              2,
+              3,
+              4,
+              5
+            ],
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 980718092,
+              "status": "passed"
+            },
+            "line": 28,
+            "name": "Select Silver, 256GB of the device Apple iPad Pro 9.7 inch",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Silver",
+                  "offset": 7
+                },
+                {
+                  "val": "256GB",
+                  "offset": 15
+                },
+                {
+                  "val": "Apple iPad Pro 9.7 inch",
+                  "offset": 35
+                }
+              ],
+              "location": "E2EOrderPlaced_Steps.select_color_capacity_of_device(String,String,String)"
+            },
+            "matchedColumns": [
+              2,
+              6,
+              7
+            ],
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 8101296903,
+              "status": "passed"
+            },
+            "line": 29,
+            "name": "Click on \"See device details\" link for Apple iPad Pro 9.7 inch and verify correct details are displayed",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Apple iPad Pro 9.7 inch",
+                  "offset": 39
+                }
+              ],
+              "location": "E2EOrderPlaced_Steps.Click_on_See_device_details_link_and_verify_correct_details_are_displayed(String)"
+            },
+            "matchedColumns": [
+              2
+            ],
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 56944824808,
+              "error_message": "junit.framework.AssertionFailedError: Unable to select device and verify tariff and extras page\r\n\tat junit.framework.Assert.fail(Assert.java:47)\r\n\tat steps.E2EOrderPlaced_Steps.SelectdeviceAndVerifyTariffandExtras(E2EOrderPlaced_Steps.java:3317)\r\n\tat ✽.And Click on \"Buy Now\" button for Apple iPad Pro 9.7 inch and verify \"Tariffs and Extras\" page is displayed(C1786_E-11355-11357-11356-11359_TC1_Existing_Custo_Basecomm_iPad_Device_Tile_Detail_and_TariffExtras_PageVerification.feature:30)\r\n",
+              "status": "failed"
+            },
+            "line": 30,
+            "name": "Click on \"Buy Now\" button for Apple iPad Pro 9.7 inch and verify \"Tariffs and Extras\" page is displayed",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Apple iPad Pro 9.7 inch",
+                  "offset": 30
+                }
+              ],
+              "location": "E2EOrderPlaced_Steps.SelectdeviceAndVerifyTariffandExtras(String)"
+            },
+            "matchedColumns": [
+              2
+            ],
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 31,
+            "name": "Verify Pay As You Go tab is not displayed",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.Verify_Pay_As_You_Go_tab_is_not_displayed()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 32,
+            "name": "Verify all the details and links are displayed and working as expected in the Tariffs and Extras page Apple iPad Pro 9.7 inch",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Apple iPad Pro 9.7 inch",
+                  "offset": 102
+                }
+              ],
+              "location": "E2EOrderPlaced_Steps.VerifyAllDetailsLinksAreDispalyedAndWorkingAsExpectedInTariffsAndExtrasPage(String)"
+            },
+            "matchedColumns": [
+              2
+            ],
+            "keyword": "And "
+          }
+        ]
+      }
+    ],
+    "name": "C1786_E-11355-11357-11356-11359_TC1_Existing_Custo_Basecomm_iPad_Device_Tile_Detail_and_TariffExtras_PageVerification",
+    "description": "",
+    "id": "c1786-e-11355-11357-11356-11359-tc1-existing-custo-basecomm-ipad-device-tile-detail-and-tariffextras-pageverification",
+    "keyword": "Feature",
+    "uri": "C1786_E-11355-11357-11356-11359_TC1_Existing_Custo_Basecomm_iPad_Device_Tile_Detail_and_TariffExtras_PageVerification.feature"
+  },
+  {
+    "line": 1,
+    "elements": [
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 38885290627,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Hooks.openBrowser()"
+            }
+          }
+        ],
+        "line": 38,
+        "name": "",
+        "description": "This scenario ensures that when the existing customer lands on new basecomm page and selects Other Tablets tab,then the customer should be able to see the following \n\r\nIn basecomm device tile:\r\n  1.Device image\r\n  2.Rating\r\n  3.Colour dropdown\r\n  4.Capacity dropdown\r\n  5.Promotional ribbons(Blue ribbons if configured for the tariff)\r\n  6.Pricing\r\n  7.\"Buy now\" button\r\n  8.\"See device details\" link\r\n  9.Stock message\r\n  \r\n  In Tariff and extras Page:\r\n  1.\"Back to tablet offers\" link \r\n  2. Basecomms offer tariffs",
+        "id": "c1786-e-11355-11357-11356-11359-tc2-existing-custo-basecomm-tablet-device-tile-detail-and-tariffextraspage-verification;;;2",
+        "after": [
+          {
+            "result": {
+              "duration": 13610521671,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Hooks.embedScreenshot(Scenario)"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 35074875410,
+              "status": "passed"
+            },
+            "line": 21,
+            "name": "I am existing user and I click on Signin button",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.I_am_existing_user_and_I_click_on_Signin_button()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 19865475036,
+              "status": "passed"
+            },
+            "line": 22,
+            "name": "Signin using valid 07770001111@o2.co.uk and test123 credentials",
+            "match": {
+              "arguments": [
+                {
+                  "val": "07770001111@o2.co.uk",
+                  "offset": 19
+                },
+                {
+                  "val": "test123",
+                  "offset": 44
+                }
+              ],
+              "location": "E2EOrderPlaced_Steps.signin_using_valid_ink_jun_and_test_credentials(String,String)"
+            },
+            "matchedColumns": [
+              0,
+              1
+            ],
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 21279638980,
+              "status": "passed"
+            },
+            "line": 23,
+            "name": "I navigate to the Basecomm Page",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.I_navigate_to_the_Basecomm_Page()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 4307676028,
+              "status": "passed"
+            },
+            "line": 24,
+            "name": "Click on Other Tablets tab",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.Click_on_Other_Tablets_tab()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 12637753243,
+              "status": "passed"
+            },
+            "line": 25,
+            "name": "Verify the contents of the tablet section in the Other Tablets tab",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.VerifyContentsofTabletSection()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 958979054,
+              "status": "passed"
+            },
+            "comments": [
+              {
+                "line": 26,
+                "value": "#verify that URL is specific to tablet"
+              }
+            ],
+            "line": 27,
+            "name": "Verify only tablet specific devices are displayed under the Other tablets section",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.Verify_only_tablet_specific_devices_are_displayed_under_the_Other_tablets_section()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 977959085,
+              "error_message": "java.lang.AssertionError: Expected stockmsg not displayed by default\r\n\tat org.junit.Assert.fail(Assert.java:88)\r\n\tat actionsPerformed.BaseCommPageActions.checkExpDevAndDetails(BaseCommPageActions.java:656)\r\n\tat steps.E2EOrderPlaced_Steps.verify_expected_device_and_details_are_in_device_list(E2EOrderPlaced_Steps.java:3497)\r\n\tat ✽.And Verify expected Samsung Galaxy Tab A 2016 10.1 and its specific details are present in the device list Black,16GB,In Stock(C1786_E-11355-11357-11356-11359_TC2_Existing_Custo_Basecomm_Tablet_Device_Tile_Detail_and_TariffExtrasPage_Verification.feature:28)\r\n",
+              "status": "failed"
+            },
+            "line": 28,
+            "name": "Verify expected Samsung Galaxy Tab A 2016 10.1 and its specific details are present in the device list Black,16GB,In Stock",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Samsung Galaxy Tab A 2016 10.1",
+                  "offset": 16
+                },
+                {
+                  "val": "Black",
+                  "offset": 103
+                },
+                {
+                  "val": "16GB",
+                  "offset": 109
+                },
+                {
+                  "val": "In Stock",
+                  "offset": 114
+                }
+              ],
+              "location": "E2EOrderPlaced_Steps.verify_expected_device_and_details_are_in_device_list(String,String,String,String)"
+            },
+            "matchedColumns": [
+              2,
+              3,
+              4,
+              5
+            ],
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "comments": [
+              {
+                "line": 29,
+                "value": "#Veirfy device price details are also getting displayed in the above step"
+              }
+            ],
+            "line": 30,
+            "name": "Select Black, 16GB of the device Samsung Galaxy Tab A 2016 10.1",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Black",
+                  "offset": 7
+                },
+                {
+                  "val": "16GB",
+                  "offset": 14
+                },
+                {
+                  "val": "Samsung Galaxy Tab A 2016 10.1",
+                  "offset": 33
+                }
+              ],
+              "location": "E2EOrderPlaced_Steps.select_color_capacity_of_device(String,String,String)"
+            },
+            "matchedColumns": [
+              2,
+              6,
+              7
+            ],
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 31,
+            "name": "Click on \"See device details\" link for Samsung Galaxy Tab A 2016 10.1 and verify correct details are displayed",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Samsung Galaxy Tab A 2016 10.1",
+                  "offset": 39
+                }
+              ],
+              "location": "E2EOrderPlaced_Steps.Click_on_See_device_details_link_and_verify_correct_details_are_displayed(String)"
+            },
+            "matchedColumns": [
+              2
+            ],
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 32,
+            "name": "Click on \"Buy Now\" button for Samsung Galaxy Tab A 2016 10.1 and verify \"Tariffs and Extras\" page is displayed",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Samsung Galaxy Tab A 2016 10.1",
+                  "offset": 30
+                }
+              ],
+              "location": "E2EOrderPlaced_Steps.SelectdeviceAndVerifyTariffandExtras(String)"
+            },
+            "matchedColumns": [
+              2
+            ],
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 33,
+            "name": "Verify Pay As You Go tab is not displayed",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.Verify_Pay_As_You_Go_tab_is_not_displayed()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 34,
+            "name": "Verify all the details and links are displayed and working as expected in the Tariffs and Extras page Samsung Galaxy Tab A 2016 10.1",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Samsung Galaxy Tab A 2016 10.1",
+                  "offset": 102
+                }
+              ],
+              "location": "E2EOrderPlaced_Steps.VerifyAllDetailsLinksAreDispalyedAndWorkingAsExpectedInTariffsAndExtrasPage(String)"
+            },
+            "matchedColumns": [
+              2
+            ],
+            "keyword": "And "
+          }
+        ]
+      }
+    ],
+    "name": "C1786_E-11355-11357-11356-11359_TC2_Existing_Custo_Basecomm_Tablet_Device_Tile_Detail_and_TariffExtrasPage_Verification",
+    "description": "",
+    "id": "c1786-e-11355-11357-11356-11359-tc2-existing-custo-basecomm-tablet-device-tile-detail-and-tariffextraspage-verification",
+    "keyword": "Feature",
+    "uri": "C1786_E-11355-11357-11356-11359_TC2_Existing_Custo_Basecomm_Tablet_Device_Tile_Detail_and_TariffExtrasPage_Verification.feature"
+  },
+  {
+    "line": 1,
+    "elements": [
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 31783863488,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Hooks.openBrowser()"
+            }
+          }
+        ],
+        "line": 21,
+        "name": "",
+        "description": "\nThis scenario ensures that when the existing customer on new basecomm page selects \"iPads\" tab and changes the colour and capacity of a specific device, then the customer should be able to see that the Price gets updated",
+        "id": "c1786-e-11355-11357-11356-11359-tc3-existing-custo-basecomm-ipad-device-update-colour-capacity-verify-new-price;;;2",
+        "after": [
+          {
+            "result": {
+              "duration": 15747424844,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Hooks.embedScreenshot(Scenario)"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 32504546204,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "I am existing user and I click on Signin button",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.I_am_existing_user_and_I_click_on_Signin_button()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 20417938998,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "Signin using valid 07770001111@o2.co.uk and test123 credentials",
+            "match": {
+              "arguments": [
+                {
+                  "val": "07770001111@o2.co.uk",
+                  "offset": 19
+                },
+                {
+                  "val": "test123",
+                  "offset": 44
+                }
+              ],
+              "location": "E2EOrderPlaced_Steps.signin_using_valid_ink_jun_and_test_credentials(String,String)"
+            },
+            "matchedColumns": [
+              0,
+              1
+            ],
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 15464127597,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "I navigate to the Basecomm Page",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.I_navigate_to_the_Basecomm_Page()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 8472991031,
+              "status": "passed"
+            },
+            "line": 10,
+            "name": "Click on iPad tab",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.Click_on_iPad_tab()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 2047083967,
+              "status": "passed"
+            },
+            "line": 11,
+            "name": "Verify the contents of the iPad section in the landing page",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.VerifyContentsofIpadSection()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 489029442,
+              "status": "passed"
+            },
+            "comments": [
+              {
+                "line": 12,
+                "value": "#Verify URL is iPad specific"
+              }
+            ],
+            "line": 13,
+            "name": "Verify expected Apple�iPad Pro 9.7 inch and its specific details are present in the device list Space Grey,32GB,Out of stock",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Apple�iPad Pro 9.7 inch",
+                  "offset": 16
+                },
+                {
+                  "val": "Space Grey",
+                  "offset": 96
+                },
+                {
+                  "val": "32GB",
+                  "offset": 107
+                },
+                {
+                  "val": "Out of stock",
+                  "offset": 112
+                }
+              ],
+              "location": "E2EOrderPlaced_Steps.verify_expected_device_and_details_are_in_device_list(String,String,String,String)"
+            },
+            "matchedColumns": [
+              2,
+              3,
+              4,
+              5
+            ],
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 289904567,
+              "status": "passed"
+            },
+            "comments": [
+              {
+                "line": 14,
+                "value": "#Veirfy device price details are also getting displayed in the above step"
+              }
+            ],
+            "line": 15,
+            "name": "Select Silver, 128GB of the device Apple�iPad Pro 9.7 inch",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Silver",
+                  "offset": 7
+                },
+                {
+                  "val": "128GB",
+                  "offset": 15
+                },
+                {
+                  "val": "Apple�iPad Pro 9.7 inch",
+                  "offset": 35
+                }
+              ],
+              "location": "E2EOrderPlaced_Steps.select_color_capacity_of_device(String,String,String)"
+            },
+            "matchedColumns": [
+              2,
+              6,
+              7
+            ],
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 20061703591,
+              "error_message": "junit.framework.AssertionFailedError: Unable to verify price updates\r\n\tat junit.framework.Assert.fail(Assert.java:47)\r\n\tat steps.E2EOrderPlaced_Steps.verifyPriceDisplaybased_on_Colour_and_capacity(E2EOrderPlaced_Steps.java:3529)\r\n\tat ✽.Then Verify the price gets updated based on the new colour and capacity(C1786_E-11355-11357-11356-11359_TC3_Existing_Custo_Basecomm_iPad_Device_Update_Colour_Capacity_Verify_New_Price.feature:16)\r\n",
+              "status": "failed"
+            },
+            "line": 16,
+            "name": "Verify the price gets updated based on the new colour and capacity",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.verifyPriceDisplaybased_on_Colour_and_capacity()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 17,
+            "name": "Click on \"Buy Now\" button for Apple�iPad Pro 9.7 inch and verify \"Tariffs and Extras\" page is displayed",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Apple�iPad Pro 9.7 inch",
+                  "offset": 30
+                }
+              ],
+              "location": "E2EOrderPlaced_Steps.SelectdeviceAndVerifyTariffandExtras(String)"
+            },
+            "matchedColumns": [
+              2
+            ],
+            "keyword": "And "
+          }
+        ]
+      }
+    ],
+    "name": "C1786_E-11355-11357-11356-11359_TC3_Existing_Custo_Basecomm_iPad_Device_Update_Colour_Capacity_Verify_New_Price",
+    "description": "",
+    "id": "c1786-e-11355-11357-11356-11359-tc3-existing-custo-basecomm-ipad-device-update-colour-capacity-verify-new-price",
+    "keyword": "Feature",
+    "uri": "C1786_E-11355-11357-11356-11359_TC3_Existing_Custo_Basecomm_iPad_Device_Update_Colour_Capacity_Verify_New_Price.feature"
+  },
+  {
+    "line": 1,
+    "elements": [
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 33771310288,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Hooks.openBrowser()"
+            }
+          }
+        ],
+        "line": 18,
+        "name": "This scenario ensures that when the existing customer on new basecomm page selects \"Other Tablets\" tab and changes the colour and capacity of a specific device, then the customer should be able to see that the Price gets updated",
+        "description": "",
+        "id": "c1786-e-11355-11357-11356-11359-tc4-existing-custo-basecomm-other-tablets-device-update-colour-capacity-verify-new-price;this-scenario-ensures-that-when-the-existing-customer-on-new-basecomm-page-selects-\"other-tablets\"-tab-and-changes-the-colour-and-capacity-of-a-specific-device,-then-the-customer-should-be-able-to-see-that-the-price-gets-updated;;2",
+        "after": [
+          {
+            "result": {
+              "duration": 14618253686,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Hooks.embedScreenshot(Scenario)"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 35350981047,
+              "status": "passed"
+            },
+            "line": 4,
+            "name": "I am existing user and I click on Signin button",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.I_am_existing_user_and_I_click_on_Signin_button()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 19808483982,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "Signin using valid 07770001111@o2.co.uk and test123 credentials",
+            "match": {
+              "arguments": [
+                {
+                  "val": "07770001111@o2.co.uk",
+                  "offset": 19
+                },
+                {
+                  "val": "test123",
+                  "offset": 44
+                }
+              ],
+              "location": "E2EOrderPlaced_Steps.signin_using_valid_ink_jun_and_test_credentials(String,String)"
+            },
+            "matchedColumns": [
+              0,
+              1
+            ],
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 17616530898,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "I navigate to the Basecomm Page",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.I_navigate_to_the_Basecomm_Page()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 4305658088,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "Click on Other Tablets tab",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.Click_on_Other_Tablets_tab()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 17376394987,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "Verify the contents of the tablet section in the Other Tablets tab",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.VerifyContentsofTabletSection()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 1243310044,
+              "error_message": "java.lang.AssertionError: Expected stockmsg not displayed by default\r\n\tat org.junit.Assert.fail(Assert.java:88)\r\n\tat actionsPerformed.BaseCommPageActions.checkExpDevAndDetails(BaseCommPageActions.java:656)\r\n\tat steps.E2EOrderPlaced_Steps.verify_expected_device_and_details_are_in_device_list(E2EOrderPlaced_Steps.java:3497)\r\n\tat ✽.And Verify expected Samsung Galaxy Tab A 2016 10.1 and its specific details are present in the device list Black,16GB,In Stock(C1786_E-11355-11357-11356-11359_TC4_Existing_Custo_Basecomm_Other_tablets_Device_Update_Colour_Capacity_Verify_New_Price.feature:10)\r\n",
+              "status": "failed"
             },
             "comments": [
               {
                 "line": 9,
-                "value": "# And I click on Continue Shopping link"
+                "value": "#verify that URL is specific to tablet"
               }
             ],
             "line": 10,
-            "name": "click on continue shopping button",
-            "match": {
-              "location": "E2EOrderPlaced_Steps.click_on_continue_shopping_button()"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 24567070923,
-              "status": "passed"
-            },
-            "line": 11,
-            "name": "Navigate to Fitness Trackers",
-            "match": {
-              "location": "E2EOrderPlaced_Steps.navigate_to_Fitness_Trackers()"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 5280718077,
-              "status": "passed"
-            },
-            "line": 12,
-            "name": "select any available \"Random\" Fitness tracker",
+            "name": "Verify expected Samsung Galaxy Tab A 2016 10.1 and its specific details are present in the device list Black,16GB,In Stock",
             "match": {
               "arguments": [
                 {
-                  "val": "Random",
-                  "offset": 22
+                  "val": "Samsung Galaxy Tab A 2016 10.1",
+                  "offset": 16
+                },
+                {
+                  "val": "Black",
+                  "offset": 103
+                },
+                {
+                  "val": "16GB",
+                  "offset": 109
+                },
+                {
+                  "val": "In Stock",
+                  "offset": 114
                 }
               ],
-              "location": "E2EOrderPlaced_Steps.select_any_available_Fitness_tracker(String)"
+              "location": "E2EOrderPlaced_Steps.verify_expected_device_and_details_are_in_device_list(String,String,String,String)"
             },
+            "matchedColumns": [
+              2,
+              3,
+              4,
+              5
+            ],
             "keyword": "And "
           },
           {
             "result": {
-              "duration": 8545149599,
-              "status": "passed"
+              "status": "skipped"
+            },
+            "comments": [
+              {
+                "line": 11,
+                "value": "#Veirfy device price details are also getting displayed in the above step"
+              }
+            ],
+            "line": 12,
+            "name": "Select Black, 16GB of the device Samsung Galaxy Tab A 2016 10.1",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Black",
+                  "offset": 7
+                },
+                {
+                  "val": "16GB",
+                  "offset": 14
+                },
+                {
+                  "val": "Samsung Galaxy Tab A 2016 10.1",
+                  "offset": 33
+                }
+              ],
+              "location": "E2EOrderPlaced_Steps.select_color_capacity_of_device(String,String,String)"
+            },
+            "matchedColumns": [
+              2,
+              6,
+              7
+            ],
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
             },
             "line": 13,
-            "name": "add FitnessTracker to basket within limit in details page and navigate to basket",
+            "name": "Verify the price gets updated based on the new colour and capacity",
             "match": {
-              "location": "E2EOrderPlaced_Steps.add_FitnessTracker_to_basket_within_limit_in_details_page_and_navigate_to_basket()"
+              "location": "E2EOrderPlaced_Steps.verifyPriceDisplaybased_on_Colour_and_capacity()"
             },
-            "keyword": "And "
+            "keyword": "Then "
           },
           {
             "result": {
-              "duration": 3838182064,
-              "status": "passed"
+              "status": "skipped"
             },
             "line": 14,
-            "name": "I Land on the Non Phone related basket page and choose home delivery option",
+            "name": "Click on \"Buy Now\" button for Samsung Galaxy Tab A 2016 10.1 and verify \"Tariffs and Extras\" page is displayed",
             "match": {
-              "location": "E2EOrderPlaced_Steps.NonPhoneRelatedBasketPage()"
+              "arguments": [
+                {
+                  "val": "Samsung Galaxy Tab A 2016 10.1",
+                  "offset": 30
+                }
+              ],
+              "location": "E2EOrderPlaced_Steps.SelectdeviceAndVerifyTariffandExtras(String)"
+            },
+            "matchedColumns": [
+              2
+            ],
+            "keyword": "And "
+          }
+        ]
+      }
+    ],
+    "name": "C1786_E-11355-11357-11356-11359_TC4_Existing_Custo_Basecomm_Other_tablets_Device_Update_Colour_Capacity_Verify_New_Price",
+    "description": "",
+    "id": "c1786-e-11355-11357-11356-11359-tc4-existing-custo-basecomm-other-tablets-device-update-colour-capacity-verify-new-price",
+    "keyword": "Feature",
+    "uri": "C1786_E-11355-11357-11356-11359_TC4_Existing_Custo_Basecomm_Other_tablets_Device_Update_Colour_Capacity_Verify_New_Price.feature"
+  },
+  {
+    "line": 1,
+    "elements": [
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 44657247845,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Hooks.openBrowser()"
+            }
+          }
+        ],
+        "line": 21,
+        "name": "This scenario ensures that when the existing customer lands on new basecomm page and selects \"iPad\" tab,then the customer should be able to see the following",
+        "description": "\r\n1.Delayed delivery status on device tile\r\n2.Clicking \"Back to iPad offers\" link should take the customer to basecomms listing page",
+        "id": "c1786-e-11355-11357-11356-11359-tc5-existing-custo-basecomm-ipad-dd-stock-message-and-back-to-ipad-offer-link-verification;this-scenario-ensures-that-when-the-existing-customer-lands-on-new-basecomm-page-and-selects-\"ipad\"-tab,then-the-customer-should-be-able-to-see-the-following;;2",
+        "after": [
+          {
+            "result": {
+              "duration": 11367803701,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Hooks.embedScreenshot(Scenario)"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 34872503852,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "I am existing user and I click on Signin button",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.I_am_existing_user_and_I_click_on_Signin_button()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 20630685852,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "Signin using valid 07770001111@o2.co.uk and test123 credentials",
+            "match": {
+              "arguments": [
+                {
+                  "val": "07770001111@o2.co.uk",
+                  "offset": 19
+                },
+                {
+                  "val": "test123",
+                  "offset": 44
+                }
+              ],
+              "location": "E2EOrderPlaced_Steps.signin_using_valid_ink_jun_and_test_credentials(String,String)"
+            },
+            "matchedColumns": [
+              0,
+              1
+            ],
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 16875631624,
+              "status": "passed"
+            },
+            "line": 10,
+            "name": "I navigate to the Basecomm Page",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.I_navigate_to_the_Basecomm_Page()"
             },
             "keyword": "And "
           },
           {
             "result": {
-              "duration": 5130830851,
+              "duration": 8116681307,
               "status": "passed"
+            },
+            "line": 11,
+            "name": "Click on iPad tab",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.Click_on_iPad_tab()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 9565101743,
+              "status": "passed"
+            },
+            "line": 12,
+            "name": "Verify the contents of the iPad section in the landing page",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.VerifyContentsofIpadSection()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 309216202,
+              "status": "passed"
+            },
+            "comments": [
+              {
+                "line": 13,
+                "value": "#Verify URL is iPad specific"
+              }
+            ],
+            "line": 14,
+            "name": "Verify expected Apple�iPad Pro 9.7 inch and its specific details are present in the device list Space Grey,32GB,Home Delivery",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Apple�iPad Pro 9.7 inch",
+                  "offset": 16
+                },
+                {
+                  "val": "Space Grey",
+                  "offset": 96
+                },
+                {
+                  "val": "32GB",
+                  "offset": 107
+                },
+                {
+                  "val": "Home Delivery",
+                  "offset": 112
+                }
+              ],
+              "location": "E2EOrderPlaced_Steps.verify_expected_device_and_details_are_in_device_list(String,String,String,String)"
+            },
+            "matchedColumns": [
+              2,
+              3,
+              4,
+              5
+            ],
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 73868917,
+              "error_message": "java.lang.AssertionError: Expected device is not present\r\n\tat org.junit.Assert.fail(Assert.java:88)\r\n\tat actionsPerformed.BaseCommPageActions.BuynowwithDevice(BaseCommPageActions.java:705)\r\n\tat steps.E2EOrderPlaced_Steps.SelectdeviceAndVerifyTariffandExtras(E2EOrderPlaced_Steps.java:3313)\r\n\tat ✽.And Click on \"Buy Now\" button for Apple�iPad Pro 9.7 inch and verify \"Tariffs and Extras\" page is displayed(C1786_E-11355-11357-11356-11359_TC5_Existing_Custo_Basecomm_iPad_DD_Stock_Message_and_Back_To_Ipad_Offer_Link_Verification.feature:16)\r\n",
+              "status": "failed"
             },
             "comments": [
               {
                 "line": 15,
-                "value": "# And I click on Continue Shopping link"
+                "value": "#Veirfy device price details are also getting displayed in the above step"
               }
             ],
             "line": 16,
-            "name": "click on continue shopping button",
-            "match": {
-              "location": "E2EOrderPlaced_Steps.click_on_continue_shopping_button()"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 18524928377,
-              "status": "passed"
-            },
-            "line": 17,
-            "name": "Navigate to SmartWatches",
-            "match": {
-              "location": "E2EOrderPlaced_Steps.navigate_to_SmartWatches()"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 15325285448,
-              "status": "passed"
-            },
-            "line": 18,
-            "name": "select any available \"Random\" Smartwatch",
+            "name": "Click on \"Buy Now\" button for Apple�iPad Pro 9.7 inch and verify \"Tariffs and Extras\" page is displayed",
             "match": {
               "arguments": [
                 {
-                  "val": "Random",
-                  "offset": 22
+                  "val": "Apple�iPad Pro 9.7 inch",
+                  "offset": 30
                 }
               ],
-              "location": "E2EOrderPlaced_Steps.select_any_available_Smartwatch(String)"
+              "location": "E2EOrderPlaced_Steps.SelectdeviceAndVerifyTariffandExtras(String)"
             },
+            "matchedColumns": [
+              2
+            ],
             "keyword": "And "
           },
           {
             "result": {
-              "duration": 8451957426,
+              "status": "skipped"
+            },
+            "line": 17,
+            "name": "click on the \"Back to iPad offers\" link and verify user gets redirected to Basecomms listing page",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.click_Back_to_iPad_offers_link_and_check_navigation_Basecomm_page()"
+            },
+            "keyword": "Then "
+          }
+        ]
+      }
+    ],
+    "name": "C1786_E-11355-11357-11356-11359_TC5_Existing_Custo_Basecomm_iPad_DD_Stock_Message_and_Back_To_Ipad_Offer_Link_Verification",
+    "description": "",
+    "id": "c1786-e-11355-11357-11356-11359-tc5-existing-custo-basecomm-ipad-dd-stock-message-and-back-to-ipad-offer-link-verification",
+    "keyword": "Feature",
+    "uri": "C1786_E-11355-11357-11356-11359_TC5_Existing_Custo_Basecomm_iPad_DD_Stock_Message_and_Back_To_Ipad_Offer_Link_Verification.feature"
+  },
+  {
+    "line": 1,
+    "elements": [
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 39406603922,
               "status": "passed"
             },
-            "line": 19,
-            "name": "add SmartWatch to basket within limit in details page and navigate to basket",
             "match": {
-              "location": "E2EOrderPlaced_Steps.add_SmartWatch_to_basket_within_limit_in_details_page_and_navigate_to_basket()"
-            },
-            "keyword": "And "
-          },
+              "location": "Hooks.openBrowser()"
+            }
+          }
+        ],
+        "line": 23,
+        "name": "This scenario ensures that when the existing customer lands on new basecomm page and selects \"Other tablets\" tab,then the customer should be able to see the following",
+        "description": "\n1.Pre Order delivery status on device tile\n2.Clicking \"Back to tablet offers\" link should take the customer back to the basecomms listing page, Examples:",
+        "id": "c1786-e-11355-11357-11356-11359-tc6-existing-custo-basecomm-other-tablet-preorder-stock-message-and-back-to-ipad-offer-link-verification;this-scenario-ensures-that-when-the-existing-customer-lands-on-new-basecomm-page-and-selects-\"other-tablets\"-tab,then-the-customer-should-be-able-to-see-the-following;;2",
+        "after": [
           {
             "result": {
-              "duration": 4025459288,
+              "duration": 14294452895,
               "status": "passed"
             },
-            "line": 20,
-            "name": "I Land on the Non Phone related basket page and choose home delivery option",
             "match": {
-              "location": "E2EOrderPlaced_Steps.NonPhoneRelatedBasketPage()"
-            },
-            "keyword": "And "
-          },
+              "location": "Hooks.embedScreenshot(Scenario)"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
           {
             "result": {
-              "duration": 5057794771,
+              "duration": 38810278611,
               "status": "passed"
             },
-            "line": 21,
-            "name": "Verify all three non connected devices got added to the basket section before selecting connected device",
+            "line": 8,
+            "name": "I am existing user and I click on Signin button",
             "match": {
-              "location": "E2EOrderPlaced_Steps.verify_non_Connected_device_added_to_basket()"
+              "location": "E2EOrderPlaced_Steps.I_am_existing_user_and_I_click_on_Signin_button()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 20691911678,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "Signin using valid 07770001111@o2.co.uk and test123 credentials",
+            "match": {
+              "arguments": [
+                {
+                  "val": "07770001111@o2.co.uk",
+                  "offset": 19
+                },
+                {
+                  "val": "test123",
+                  "offset": 44
+                }
+              ],
+              "location": "E2EOrderPlaced_Steps.signin_using_valid_ink_jun_and_test_credentials(String,String)"
+            },
+            "matchedColumns": [
+              0,
+              1
+            ],
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 16583115980,
+              "status": "passed"
+            },
+            "line": 10,
+            "name": "I navigate to the Basecomm Page",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.I_navigate_to_the_Basecomm_Page()"
             },
             "keyword": "And "
           },
           {
             "result": {
-              "duration": 5129634820,
+              "duration": 4245470960,
+              "status": "passed"
+            },
+            "line": 11,
+            "name": "Click on Other Tablets tab",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.Click_on_Other_Tablets_tab()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 5042974830,
+              "status": "passed"
+            },
+            "line": 12,
+            "name": "Verify the contents of the tablet section in the Other Tablets tab",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.VerifyContentsofTabletSection()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 837837895,
+              "error_message": "java.lang.AssertionError: Expected stockmsg not displayed by default\r\n\tat org.junit.Assert.fail(Assert.java:88)\r\n\tat actionsPerformed.BaseCommPageActions.checkExpDevAndDetails(BaseCommPageActions.java:656)\r\n\tat steps.E2EOrderPlaced_Steps.verify_expected_device_and_details_are_in_device_list(E2EOrderPlaced_Steps.java:3497)\r\n\tat ✽.And Verify expected Samsung Galaxy Tab A 2016 10.1 and its specific details are present in the device list Black,16GB,Pre Order(C1786_E-11355-11357-11356-11359_TC6_Existing_Custo_Basecomm_Other_Tablet_PreOrder_Stock_Message_and_Back_To_Ipad_Offer_Link_Verification.feature:14)\r\n",
+              "status": "failed"
+            },
+            "comments": [
+              {
+                "line": 13,
+                "value": "#verify that URL is specific to tablet"
+              }
+            ],
+            "line": 14,
+            "name": "Verify expected Samsung Galaxy Tab A 2016 10.1 and its specific details are present in the device list Black,16GB,Pre Order",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Samsung Galaxy Tab A 2016 10.1",
+                  "offset": 16
+                },
+                {
+                  "val": "Black",
+                  "offset": 103
+                },
+                {
+                  "val": "16GB",
+                  "offset": 109
+                },
+                {
+                  "val": "Pre Order",
+                  "offset": 114
+                }
+              ],
+              "location": "E2EOrderPlaced_Steps.verify_expected_device_and_details_are_in_device_list(String,String,String,String)"
+            },
+            "matchedColumns": [
+              2,
+              3,
+              4,
+              5
+            ],
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "comments": [
+              {
+                "line": 15,
+                "value": "#Veirfy device price details are also getting displayed in the above step"
+              }
+            ],
+            "line": 16,
+            "name": "Click on \"Buy Now\" button for Samsung Galaxy Tab A 2016 10.1 and verify \"Tariffs and Extras\" page is displayed",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Samsung Galaxy Tab A 2016 10.1",
+                  "offset": 30
+                }
+              ],
+              "location": "E2EOrderPlaced_Steps.SelectdeviceAndVerifyTariffandExtras(String)"
+            },
+            "matchedColumns": [
+              2
+            ],
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 17,
+            "name": "click on the \"Back to tablet offers\" link and verify user gets redirected to Basecomms listing page",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.click_Back_to_tablet_offers_link_and_check_navigation_Basecomm_page()"
+            },
+            "keyword": "Then "
+          }
+        ]
+      }
+    ],
+    "name": "C1786_E-11355-11357-11356-11359_TC6_Existing_Custo_Basecomm_Other_Tablet_PreOrder_Stock_Message_and_Back_To_Ipad_Offer_Link_Verification",
+    "description": "",
+    "id": "c1786-e-11355-11357-11356-11359-tc6-existing-custo-basecomm-other-tablet-preorder-stock-message-and-back-to-ipad-offer-link-verification",
+    "keyword": "Feature",
+    "uri": "C1786_E-11355-11357-11356-11359_TC6_Existing_Custo_Basecomm_Other_Tablet_PreOrder_Stock_Message_and_Back_To_Ipad_Offer_Link_Verification.feature"
+  },
+  {
+    "line": 1,
+    "elements": [
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 26234435993,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Hooks.openBrowser()"
+            }
+          }
+        ],
+        "line": 29,
+        "name": "This scenario ensures that when the existing customer lands on new basecomm page selects \"iPads\" tab and Change the Variant of the device,",
+        "description": "then the image and promotion should be changed according to the selected variant and same variant should be selected in \u0027Tariffs\u0027 page",
+        "id": "c1786-e-11510-11505-tc1-ipads-tab-device-tile-colour-and-capacity-variant-image-and-promotion-change-same-variant-tariff-page-order-confirmation;this-scenario-ensures-that-when-the-existing-customer-lands-on-new-basecomm-page-selects-\"ipads\"-tab-and-change-the-variant-of-the-device,;;2",
+        "after": [
+          {
+            "result": {
+              "duration": 18229843073,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Hooks.embedScreenshot(Scenario)"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 42221486424,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "I am existing user and I click on Signin button",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.I_am_existing_user_and_I_click_on_Signin_button()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 19527116554,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "Signin using valid 07770001111@o2.co.uk and test123 credentials",
+            "match": {
+              "arguments": [
+                {
+                  "val": "07770001111@o2.co.uk",
+                  "offset": 19
+                },
+                {
+                  "val": "test123",
+                  "offset": 44
+                }
+              ],
+              "location": "E2EOrderPlaced_Steps.signin_using_valid_ink_jun_and_test_credentials(String,String)"
+            },
+            "matchedColumns": [
+              0,
+              1
+            ],
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 13861503566,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "I navigate to the Basecomm Page",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.I_navigate_to_the_Basecomm_Page()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 271957218,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "Verify expected Apple�iPad Pro 9.7 inch and its specific details are present in the device list Space Grey,32GB,Out of stock",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Apple�iPad Pro 9.7 inch",
+                  "offset": 16
+                },
+                {
+                  "val": "Space Grey",
+                  "offset": 96
+                },
+                {
+                  "val": "32GB",
+                  "offset": 107
+                },
+                {
+                  "val": "Out of stock",
+                  "offset": 112
+                }
+              ],
+              "location": "E2EOrderPlaced_Steps.verify_expected_device_and_details_are_in_device_list(String,String,String,String)"
+            },
+            "matchedColumns": [
+              2,
+              3,
+              4,
+              5
+            ],
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 146994997,
               "status": "passed"
             },
             "comments": [
               {
-                "line": 22,
-                "value": "#And I click on Continue Shopping link"
+                "line": 10,
+                "value": "#Veirfy device price details are also getting displayed in the above step"
               }
             ],
-            "line": 23,
-            "name": "click on continue shopping button",
-            "match": {
-              "location": "E2EOrderPlaced_Steps.click_on_continue_shopping_button()"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 12726823238,
-              "status": "passed"
-            },
-            "line": 24,
-            "name": "navigate to PAYM Phones page",
-            "match": {
-              "location": "E2EOrderPlaced_Steps.navigate_to_PAYM_Phones_page()"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 1750343218,
-              "status": "passed"
-            },
-            "line": 25,
-            "name": "I choose PayM Iphone7",
+            "line": 11,
+            "name": "Select Silver, 128GB of the device Apple�iPad Pro 9.7 inch",
             "match": {
               "arguments": [
                 {
-                  "val": "Iphone7",
-                  "offset": 14
+                  "val": "Silver",
+                  "offset": 7
+                },
+                {
+                  "val": "128GB",
+                  "offset": 15
+                },
+                {
+                  "val": "Apple�iPad Pro 9.7 inch",
+                  "offset": 35
                 }
               ],
-              "location": "E2EOrderPlaced_Steps.Choose_PAYM_Handset(String)"
+              "location": "E2EOrderPlaced_Steps.select_color_capacity_of_device(String,String,String)"
             },
             "matchedColumns": [
-              0
+              2,
+              6,
+              7
             ],
             "keyword": "And "
           },
           {
             "result": {
-              "duration": 22682306786,
-              "status": "passed"
+              "duration": 20066922914,
+              "error_message": "junit.framework.AssertionFailedError: Unable to verify promotion ribbon on the device\r\n\tat junit.framework.Assert.fail(Assert.java:47)\r\n\tat steps.E2EOrderPlaced_Steps.verifypromotionribbonDisplay(E2EOrderPlaced_Steps.java:3515)\r\n\tat ✽.And Verify that promotion ribbon is displayed(C1786_E-11510-11505_TC1_iPads_tab_Device_tile_Colour_and_Capacity_variant_Image_and_Promotion_change_same_variant_Tariff_page_Order_confirmation.feature:12)\r\n",
+              "status": "failed"
             },
-            "line": 26,
-            "name": "Navigate to device details page",
+            "line": 12,
+            "name": "Verify that promotion ribbon is displayed",
             "match": {
-              "location": "E2EOrderPlaced_Steps.Navigate_to_device_details_page()"
+              "location": "E2EOrderPlaced_Steps.verifypromotionribbonDisplay()"
             },
             "keyword": "And "
           },
           {
             "result": {
-              "duration": 4148168571,
-              "status": "passed"
+              "status": "skipped"
             },
-            "line": 27,
+            "line": 13,
+            "name": "Verify new image is as per the selected Apple�iPad Pro 9.7 inch,128GBand Silver in the Basecomms page",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Apple�iPad Pro 9.7 inch",
+                  "offset": 40
+                },
+                {
+                  "val": "128GB",
+                  "offset": 64
+                },
+                {
+                  "val": "Silver",
+                  "offset": 73
+                }
+              ],
+              "location": "E2EOrderPlaced_Steps.Verify_new_image_is_as_per_the_selected_device_name_capacity_and_color_in_the_Basecomms_page(String)"
+            },
+            "matchedColumns": [
+              2,
+              6,
+              7
+            ],
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 14,
+            "name": "Click on \"Buy Now\" button for Apple�iPad Pro 9.7 inch and verify \"Tariffs and Extras\" page is displayed",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Apple�iPad Pro 9.7 inch",
+                  "offset": 30
+                }
+              ],
+              "location": "E2EOrderPlaced_Steps.SelectdeviceAndVerifyTariffandExtras(String)"
+            },
+            "matchedColumns": [
+              2
+            ],
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 15,
+            "name": "Verify new image is as per the selected Apple�iPad Pro 9.7 inch,128GBand Silver in the Tariffs and Extras Page",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Apple�iPad Pro 9.7 inch",
+                  "offset": 40
+                },
+                {
+                  "val": "128GB",
+                  "offset": 64
+                },
+                {
+                  "val": "Silver",
+                  "offset": 73
+                }
+              ],
+              "location": "E2EOrderPlaced_Steps.Verify_new_image_is_as_per_the_selected_device_name_capacity_and_color_in_the_TE_page(String)"
+            },
+            "matchedColumns": [
+              2,
+              6,
+              7
+            ],
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 16,
             "name": "Land on the \u0027Tariffs and extra\u0027 page",
             "match": {
               "location": "E2EOrderPlaced_Steps.land_on_the_Tariffs_and_extra_page()"
@@ -331,11 +2402,9 @@
           },
           {
             "result": {
-              "duration": 23706770565,
-              "error_message": "junit.framework.AssertionFailedError: Unable to Land on the basket page and choose home delivery option\r\n\tat junit.framework.Assert.fail(Assert.java:47)\r\n\tat steps.E2EOrderPlaced_Steps.i_Land_on_the_basket_page_and_choose_home_delivery_option(E2EOrderPlaced_Steps.java:720)\r\n\tat ✽.And I Land on the basket page and choose home delivery option(Features/JulyRelease2017/C1669_E11521_TC1_CFA_Add_All_NonConnected_Devices_To_Basket_Followed_By_Adding_A_Phone_Verify_Not_Overridden.feature:28)\r\n",
-              "status": "failed"
+              "status": "skipped"
             },
-            "line": 28,
+            "line": 17,
             "name": "I Land on the basket page and choose home delivery option",
             "match": {
               "location": "E2EOrderPlaced_Steps.i_Land_on_the_basket_page_and_choose_home_delivery_option()"
@@ -346,18 +2415,7 @@
             "result": {
               "status": "skipped"
             },
-            "line": 29,
-            "name": "Verify all three non connected devices are still retained in the basket and not overridden",
-            "match": {
-              "location": "E2EOrderPlaced_Steps.verify_non_Connected_device_ratined_in_basket_after_selecting_connected_device()"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "status": "skipped"
-            },
-            "line": 30,
+            "line": 18,
             "name": "click on \"go to checkout\" button",
             "match": {
               "arguments": [
@@ -374,33 +2432,19 @@
             "result": {
               "status": "skipped"
             },
-            "line": 31,
-            "name": "input TEST and ACCEPTA and other valid details in Delivery page and Click on the \u0027Continue button\u0027",
+            "line": 19,
+            "name": "Select existing account and begin fast checkout",
             "match": {
-              "arguments": [
-                {
-                  "val": "TEST",
-                  "offset": 6
-                },
-                {
-                  "val": "ACCEPTA",
-                  "offset": 15
-                }
-              ],
-              "location": "E2EOrderPlaced_Steps.DeliveryPage_Inputs_homeDelivery(String,String)"
+              "location": "E2EOrderPlaced_Steps.Select_existing_account_and_begin_fast_checkout()"
             },
-            "matchedColumns": [
-              1,
-              2
-            ],
             "keyword": "And "
           },
           {
             "result": {
               "status": "skipped"
             },
-            "line": 32,
-            "name": "land on the payment page and input TEST ACCEPTA and other details and click \u0027Continue on next step\u0027",
+            "line": 20,
+            "name": "land on the payment page and input TEST ACCEPTA and other details for upgrade and click \u0027Continue on next step\u0027",
             "match": {
               "arguments": [
                 {
@@ -408,10 +2452,10 @@
                   "offset": 35
                 }
               ],
-              "location": "E2EOrderPlaced_Steps.CreditCheckPaymentPage_HomeDelivery(String)"
+              "location": "E2EOrderPlaced_Steps.CreditCheckPaymentPage_Upgrade(String)"
             },
             "matchedColumns": [
-              3
+              8
             ],
             "keyword": "And "
           },
@@ -419,7 +2463,7 @@
             "result": {
               "status": "skipped"
             },
-            "line": 33,
+            "line": 21,
             "name": "Continue to Agreements page and confirm all the agreement checks",
             "match": {
               "location": "E2EOrderPlaced_Steps.AgreementsPageConfirmation()"
@@ -430,7 +2474,7 @@
             "result": {
               "status": "skipped"
             },
-            "line": 34,
+            "line": 22,
             "name": "Continue to Review page and review the order",
             "match": {
               "location": "E2EOrderPlaced_Steps.ReviewPageConfirmation()"
@@ -441,7 +2485,7 @@
             "result": {
               "status": "skipped"
             },
-            "line": 35,
+            "line": 23,
             "name": "order confirmation is displayed",
             "match": {
               "location": "E2EOrderPlaced_Steps.OrderConfirmationPage()"
@@ -451,10 +2495,2302 @@
         ]
       }
     ],
-    "name": "C1669_E11521_TC1_CFA_Add_All_NonConnected_Devices_To_Basket_Followed_By_Adding_A_Phone_Verify_Not_Overridden",
+    "name": "C1786_E-11510-11505_TC1_iPads_tab_Device_tile_Colour_and_Capacity_variant_Image_and_Promotion_change_same_variant_Tariff_page_Order_confirmation",
     "description": "",
-    "id": "c1669-e11521-tc1-cfa-add-all-nonconnected-devices-to-basket-followed-by-adding-a-phone-verify-not-overridden",
+    "id": "c1786-e-11510-11505-tc1-ipads-tab-device-tile-colour-and-capacity-variant-image-and-promotion-change-same-variant-tariff-page-order-confirmation",
     "keyword": "Feature",
-    "uri": "Features/JulyRelease2017/C1669_E11521_TC1_CFA_Add_All_NonConnected_Devices_To_Basket_Followed_By_Adding_A_Phone_Verify_Not_Overridden.feature"
+    "uri": "C1786_E-11510-11505_TC1_iPads_tab_Device_tile_Colour_and_Capacity_variant_Image_and_Promotion_change_same_variant_Tariff_page_Order_confirmation.feature"
+  },
+  {
+    "line": 1,
+    "elements": [
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 31083287621,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Hooks.openBrowser()"
+            }
+          }
+        ],
+        "line": 29,
+        "name": "This scenario ensures that when the existing customer lands on new basecomm page selects \"Other Tablets\" tab and Change the Variant of the device,",
+        "description": "then the image and promotion should be changed according to the selected variant and same variant should be selected in \u0027Tariffs\u0027 page",
+        "id": "c1786-e-11510-11505-tc2-other-tablets-device-tile-colour-and-capacity-variant-image-and-promotion-change-same-variant-tariff-page-order-confirmation;this-scenario-ensures-that-when-the-existing-customer-lands-on-new-basecomm-page-selects-\"other-tablets\"-tab-and-change-the-variant-of-the-device,;;2",
+        "after": [
+          {
+            "result": {
+              "duration": 12817553742,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Hooks.embedScreenshot(Scenario)"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 49222128399,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "I am existing user and I click on Signin button",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.I_am_existing_user_and_I_click_on_Signin_button()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 18725536106,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "Signin using valid 07770001111@o2.co.uk and test123 credentials",
+            "match": {
+              "arguments": [
+                {
+                  "val": "07770001111@o2.co.uk",
+                  "offset": 19
+                },
+                {
+                  "val": "test123",
+                  "offset": 44
+                }
+              ],
+              "location": "E2EOrderPlaced_Steps.signin_using_valid_ink_jun_and_test_credentials(String,String)"
+            },
+            "matchedColumns": [
+              0,
+              1
+            ],
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 12128893346,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "I navigate to the Basecomm Page",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.I_navigate_to_the_Basecomm_Page()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 4268257897,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "Click on Other Tablets tab",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.Click_on_Other_Tablets_tab()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 9439662818,
+              "error_message": "java.lang.AssertionError: Expected stockmsg not displayed by default\r\n\tat org.junit.Assert.fail(Assert.java:88)\r\n\tat actionsPerformed.BaseCommPageActions.checkExpDevAndDetails(BaseCommPageActions.java:656)\r\n\tat steps.E2EOrderPlaced_Steps.verify_expected_device_and_details_are_in_device_list(E2EOrderPlaced_Steps.java:3497)\r\n\tat ✽.And Verify expected Samsung Galaxy Tab A 2016 10.1 and its specific details are present in the device list Black,16GB,In Stock(C1786_E-11510-11505_TC2_Other_Tablets_Device_tile_Colour_and_Capacity_variant_Image_and_Promotion_change_same_variant_Tariff_page_Order_confirmation.feature:10)\r\n",
+              "status": "failed"
+            },
+            "line": 10,
+            "name": "Verify expected Samsung Galaxy Tab A 2016 10.1 and its specific details are present in the device list Black,16GB,In Stock",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Samsung Galaxy Tab A 2016 10.1",
+                  "offset": 16
+                },
+                {
+                  "val": "Black",
+                  "offset": 103
+                },
+                {
+                  "val": "16GB",
+                  "offset": 109
+                },
+                {
+                  "val": "In Stock",
+                  "offset": 114
+                }
+              ],
+              "location": "E2EOrderPlaced_Steps.verify_expected_device_and_details_are_in_device_list(String,String,String,String)"
+            },
+            "matchedColumns": [
+              2,
+              3,
+              4,
+              5
+            ],
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "comments": [
+              {
+                "line": 11,
+                "value": "#Veirfy device price details are also getting displayed in the above step"
+              }
+            ],
+            "line": 12,
+            "name": "Select Black, 16GB of the device Samsung Galaxy Tab A 2016 10.1",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Black",
+                  "offset": 7
+                },
+                {
+                  "val": "16GB",
+                  "offset": 14
+                },
+                {
+                  "val": "Samsung Galaxy Tab A 2016 10.1",
+                  "offset": 33
+                }
+              ],
+              "location": "E2EOrderPlaced_Steps.select_color_capacity_of_device(String,String,String)"
+            },
+            "matchedColumns": [
+              2,
+              6,
+              7
+            ],
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 13,
+            "name": "Verify that promotion ribbon is displayed",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.verifypromotionribbonDisplay()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 14,
+            "name": "Verify new image is as per the selected Samsung Galaxy Tab A 2016 10.1,16GBand Black in the Basecomms page",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Samsung Galaxy Tab A 2016 10.1",
+                  "offset": 40
+                },
+                {
+                  "val": "16GB",
+                  "offset": 71
+                },
+                {
+                  "val": "Black",
+                  "offset": 79
+                }
+              ],
+              "location": "E2EOrderPlaced_Steps.Verify_new_image_is_as_per_the_selected_device_name_capacity_and_color_in_the_Basecomms_page(String)"
+            },
+            "matchedColumns": [
+              2,
+              6,
+              7
+            ],
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 15,
+            "name": "Click on \"Buy Now\" button for Samsung Galaxy Tab A 2016 10.1 and verify \"Tariffs and Extras\" page is displayed",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Samsung Galaxy Tab A 2016 10.1",
+                  "offset": 30
+                }
+              ],
+              "location": "E2EOrderPlaced_Steps.SelectdeviceAndVerifyTariffandExtras(String)"
+            },
+            "matchedColumns": [
+              2
+            ],
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 16,
+            "name": "Verify new image is as per the selected Samsung Galaxy Tab A 2016 10.1,16GBand Black in the Tariffs and Extras Page",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Samsung Galaxy Tab A 2016 10.1",
+                  "offset": 40
+                },
+                {
+                  "val": "16GB",
+                  "offset": 71
+                },
+                {
+                  "val": "Black",
+                  "offset": 79
+                }
+              ],
+              "location": "E2EOrderPlaced_Steps.Verify_new_image_is_as_per_the_selected_device_name_capacity_and_color_in_the_TE_page(String)"
+            },
+            "matchedColumns": [
+              2,
+              6,
+              7
+            ],
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 17,
+            "name": "Land on the \u0027Tariffs and extra\u0027 page",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.land_on_the_Tariffs_and_extra_page()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 18,
+            "name": "I Land on the basket page and choose home delivery option",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.i_Land_on_the_basket_page_and_choose_home_delivery_option()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 19,
+            "name": "click on \"go to checkout\" button",
+            "match": {
+              "arguments": [
+                {
+                  "val": "go to checkout",
+                  "offset": 10
+                }
+              ],
+              "location": "E2EOrderPlaced_Steps.CheckoutFromBasket(String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 20,
+            "name": "Select existing account and begin fast checkout",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.Select_existing_account_and_begin_fast_checkout()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 21,
+            "name": "land on the payment page and input TEST ACCEPTA and other details for upgrade and click \u0027Continue on next step\u0027",
+            "match": {
+              "arguments": [
+                {
+                  "val": "TEST ACCEPTA",
+                  "offset": 35
+                }
+              ],
+              "location": "E2EOrderPlaced_Steps.CreditCheckPaymentPage_Upgrade(String)"
+            },
+            "matchedColumns": [
+              8
+            ],
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 22,
+            "name": "Continue to Agreements page and confirm all the agreement checks",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.AgreementsPageConfirmation()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 23,
+            "name": "Continue to Review page and review the order",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.ReviewPageConfirmation()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 24,
+            "name": "order confirmation is displayed",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.OrderConfirmationPage()"
+            },
+            "keyword": "Then "
+          }
+        ]
+      }
+    ],
+    "name": "C1786_E-11510-11505_TC2_Other_Tablets_Device_tile_Colour_and_Capacity_variant_Image_and_Promotion_change_same_variant_Tariff_page_Order_confirmation",
+    "description": "",
+    "id": "c1786-e-11510-11505-tc2-other-tablets-device-tile-colour-and-capacity-variant-image-and-promotion-change-same-variant-tariff-page-order-confirmation",
+    "keyword": "Feature",
+    "uri": "C1786_E-11510-11505_TC2_Other_Tablets_Device_tile_Colour_and_Capacity_variant_Image_and_Promotion_change_same_variant_Tariff_page_Order_confirmation.feature"
+  },
+  {
+    "line": 1,
+    "elements": [
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 45852945194,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Hooks.openBrowser()"
+            }
+          }
+        ],
+        "line": 19,
+        "name": "This scenario ensures that when the existing customer selects basecomms \"iPad\" tariff lands on basket page and clicks on \"Change tariff\" ,",
+        "description": "then the customer should be redirected to tariffs and extras page with basecomms tariffs",
+        "id": "c1786-e-11510-11505-tc3-ipads-tab-basecomm-tariff-basket-page-change-tariff-link.feature;this-scenario-ensures-that-when-the-existing-customer-selects-basecomms-\"ipad\"-tariff-lands-on-basket-page-and-clicks-on-\"change-tariff\"-,;;2",
+        "after": [
+          {
+            "result": {
+              "duration": 11380298862,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Hooks.embedScreenshot(Scenario)"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 29108272634,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "I am existing user and I click on Signin button",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.I_am_existing_user_and_I_click_on_Signin_button()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 30107979604,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "Signin using valid 07770001111@o2.co.uk and test123 credentials",
+            "match": {
+              "arguments": [
+                {
+                  "val": "07770001111@o2.co.uk",
+                  "offset": 19
+                },
+                {
+                  "val": "test123",
+                  "offset": 44
+                }
+              ],
+              "location": "E2EOrderPlaced_Steps.signin_using_valid_ink_jun_and_test_credentials(String,String)"
+            },
+            "matchedColumns": [
+              0,
+              1
+            ],
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 17408877732,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "I navigate to the Basecomm Page",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.I_navigate_to_the_Basecomm_Page()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 507210012,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "Verify expected Apple�iPad Pro 9.7 inch and its specific details are present in the device list Space Grey,32GB,Out of stock",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Apple�iPad Pro 9.7 inch",
+                  "offset": 16
+                },
+                {
+                  "val": "Space Grey",
+                  "offset": 96
+                },
+                {
+                  "val": "32GB",
+                  "offset": 107
+                },
+                {
+                  "val": "Out of stock",
+                  "offset": 112
+                }
+              ],
+              "location": "E2EOrderPlaced_Steps.verify_expected_device_and_details_are_in_device_list(String,String,String,String)"
+            },
+            "matchedColumns": [
+              2,
+              3,
+              4,
+              5
+            ],
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 87697220,
+              "error_message": "java.lang.AssertionError: Expected device is not present\r\n\tat org.junit.Assert.fail(Assert.java:88)\r\n\tat actionsPerformed.BaseCommPageActions.BuynowwithDevice(BaseCommPageActions.java:705)\r\n\tat steps.E2EOrderPlaced_Steps.SelectdeviceAndVerifyTariffandExtras(E2EOrderPlaced_Steps.java:3313)\r\n\tat ✽.And Click on \"Buy Now\" button for Apple�iPad Pro 9.7 inch and verify \"Tariffs and Extras\" page is displayed(C1786_E-11510-11505_TC3_iPads_Tab_Basecomm_tariff_basket_page_change_tariff_link.feature:11)\r\n",
+              "status": "failed"
+            },
+            "comments": [
+              {
+                "line": 10,
+                "value": "#Veirfy device price details are also getting displayed in the above step"
+              }
+            ],
+            "line": 11,
+            "name": "Click on \"Buy Now\" button for Apple�iPad Pro 9.7 inch and verify \"Tariffs and Extras\" page is displayed",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Apple�iPad Pro 9.7 inch",
+                  "offset": 30
+                }
+              ],
+              "location": "E2EOrderPlaced_Steps.SelectdeviceAndVerifyTariffandExtras(String)"
+            },
+            "matchedColumns": [
+              2
+            ],
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 12,
+            "name": "Land on the \u0027Tariffs and extra\u0027 page",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.land_on_the_Tariffs_and_extra_page()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 13,
+            "name": "I Land on the basket page and choose home delivery option",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.i_Land_on_the_basket_page_and_choose_home_delivery_option()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 14,
+            "name": "Verify \"Choose a different tariff\" link is displayed",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.verify_choose_a_diff_tariff_link_displayed()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 15,
+            "name": "click on the \"Choose a different tariff\" link and verify user navigated back to \"Tariff and Extras\" page",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.click_choose_a_diff_tariff_link_and_check_navigation_TE_page()"
+            },
+            "keyword": "And "
+          }
+        ]
+      }
+    ],
+    "name": "C1786_E-11510-11505_TC3_iPads_Tab_Basecomm_tariff_basket_page_change_tariff_link.feature",
+    "description": "",
+    "id": "c1786-e-11510-11505-tc3-ipads-tab-basecomm-tariff-basket-page-change-tariff-link.feature",
+    "keyword": "Feature",
+    "uri": "C1786_E-11510-11505_TC3_iPads_Tab_Basecomm_tariff_basket_page_change_tariff_link.feature"
+  },
+  {
+    "line": 1,
+    "elements": [
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 50411977899,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Hooks.openBrowser()"
+            }
+          }
+        ],
+        "line": 20,
+        "name": "This scenario ensures that when the existing customer selects basecomms \"Other Tablets\" tariff lands on basket page and clicks on \"Change tariff\" ,",
+        "description": "then the customer should be redirected to tariffs and extras page with basecomms tariffs",
+        "id": "c1786-e-11510-11505-tc4-other-tablets-basecomm-tariff-basket-page-change-tariff-link;this-scenario-ensures-that-when-the-existing-customer-selects-basecomms-\"other-tablets\"-tariff-lands-on-basket-page-and-clicks-on-\"change-tariff\"-,;;2",
+        "after": [
+          {
+            "result": {
+              "duration": 10491009869,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Hooks.embedScreenshot(Scenario)"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 40697264775,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "I am existing user and I click on Signin button",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.I_am_existing_user_and_I_click_on_Signin_button()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 20133681264,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "Signin using valid 07770001111@o2.co.uk and test123 credentials",
+            "match": {
+              "arguments": [
+                {
+                  "val": "07770001111@o2.co.uk",
+                  "offset": 19
+                },
+                {
+                  "val": "test123",
+                  "offset": 44
+                }
+              ],
+              "location": "E2EOrderPlaced_Steps.signin_using_valid_ink_jun_and_test_credentials(String,String)"
+            },
+            "matchedColumns": [
+              0,
+              1
+            ],
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 29684512683,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "I navigate to the Basecomm Page",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.I_navigate_to_the_Basecomm_Page()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 4287574841,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "Click on Other Tablets tab",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.Click_on_Other_Tablets_tab()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 9658221070,
+              "error_message": "java.lang.AssertionError: Expected stockmsg not displayed by default\r\n\tat org.junit.Assert.fail(Assert.java:88)\r\n\tat actionsPerformed.BaseCommPageActions.checkExpDevAndDetails(BaseCommPageActions.java:656)\r\n\tat steps.E2EOrderPlaced_Steps.verify_expected_device_and_details_are_in_device_list(E2EOrderPlaced_Steps.java:3497)\r\n\tat ✽.And Verify expected Samsung Galaxy Tab A 2016 10.1 and its specific details are present in the device list Black,16GB,In Stock(C1786_E-11510-11505_TC4_Other_Tablets_Basecomm_tariff_basket_page_change_tariff_link.feature:10)\r\n",
+              "status": "failed"
+            },
+            "line": 10,
+            "name": "Verify expected Samsung Galaxy Tab A 2016 10.1 and its specific details are present in the device list Black,16GB,In Stock",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Samsung Galaxy Tab A 2016 10.1",
+                  "offset": 16
+                },
+                {
+                  "val": "Black",
+                  "offset": 103
+                },
+                {
+                  "val": "16GB",
+                  "offset": 109
+                },
+                {
+                  "val": "In Stock",
+                  "offset": 114
+                }
+              ],
+              "location": "E2EOrderPlaced_Steps.verify_expected_device_and_details_are_in_device_list(String,String,String,String)"
+            },
+            "matchedColumns": [
+              2,
+              3,
+              4,
+              5
+            ],
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "comments": [
+              {
+                "line": 11,
+                "value": "#Veirfy device price details are also getting displayed in the above step"
+              }
+            ],
+            "line": 12,
+            "name": "Click on \"Buy Now\" button for Samsung Galaxy Tab A 2016 10.1 and verify \"Tariffs and Extras\" page is displayed",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Samsung Galaxy Tab A 2016 10.1",
+                  "offset": 30
+                }
+              ],
+              "location": "E2EOrderPlaced_Steps.SelectdeviceAndVerifyTariffandExtras(String)"
+            },
+            "matchedColumns": [
+              2
+            ],
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 13,
+            "name": "Land on the \u0027Tariffs and extra\u0027 page",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.land_on_the_Tariffs_and_extra_page()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 14,
+            "name": "I Land on the basket page and choose home delivery option",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.i_Land_on_the_basket_page_and_choose_home_delivery_option()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 15,
+            "name": "Verify \"Choose a different tariff\" link is displayed",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.verify_choose_a_diff_tariff_link_displayed()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 16,
+            "name": "click on the \"Choose a different tariff\" link and verify user navigated back to \"Tariff and Extras\" page",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.click_choose_a_diff_tariff_link_and_check_navigation_TE_page()"
+            },
+            "keyword": "And "
+          }
+        ]
+      }
+    ],
+    "name": "C1786_E-11510-11505_TC4_Other_Tablets_Basecomm_tariff_basket_page_change_tariff_link",
+    "description": "",
+    "id": "c1786-e-11510-11505-tc4-other-tablets-basecomm-tariff-basket-page-change-tariff-link",
+    "keyword": "Feature",
+    "uri": "C1786_E-11510-11505_TC4_Other_Tablets_Basecomm_tariff_basket_page_change_tariff_link.feature"
+  },
+  {
+    "line": 1,
+    "elements": [
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 36981943295,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Hooks.openBrowser()"
+            }
+          }
+        ],
+        "line": 22,
+        "name": "This scenario ensures that when the existing customer lands on new basecomm page and selects \u0027iPads\u0027 tab,",
+        "description": "then the customer should be able to see \u0027Sort\u0027 and \u0027Filter\u0027 tab and the customer should be able to do Sort and Filter functionality same as that of listings page",
+        "id": "c1786-e11354-11447-11565-tc1-existing-custo-ipads-tab-filter-and-sort-functionality.feature;this-scenario-ensures-that-when-the-existing-customer-lands-on-new-basecomm-page-and-selects-\u0027ipads\u0027-tab,;;2",
+        "after": [
+          {
+            "result": {
+              "duration": 20001052853,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Hooks.embedScreenshot(Scenario)"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 33952102062,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "I am existing user and I click on Signin button",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.I_am_existing_user_and_I_click_on_Signin_button()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 19773350523,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "Signin using valid 07770001111@o2.co.uk and test123 credentials",
+            "match": {
+              "arguments": [
+                {
+                  "val": "07770001111@o2.co.uk",
+                  "offset": 19
+                },
+                {
+                  "val": "test123",
+                  "offset": 44
+                }
+              ],
+              "location": "E2EOrderPlaced_Steps.signin_using_valid_ink_jun_and_test_credentials(String,String)"
+            },
+            "matchedColumns": [
+              0,
+              1
+            ],
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 16741051806,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "I navigate to the Basecomm Page",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.I_navigate_to_the_Basecomm_Page()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 8404996507,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "Click on iPad tab",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.Click_on_iPad_tab()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 7946324992,
+              "status": "passed"
+            },
+            "line": 10,
+            "name": "Verify the contents of the iPad section in the landing page",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.VerifyContentsofIpadSection()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 20076515029,
+              "error_message": "junit.framework.AssertionFailedError: Fail: Cannot read the phone details from the container\r\n\tat junit.framework.Assert.fail(Assert.java:47)\r\n\tat steps.E2EOrderPlaced_Steps.verify_current_sort_order(E2EOrderPlaced_Steps.java:3581)\r\n\tat ✽.And Verify the current sort order details MonthlyLowToHigh(C1786_E11354-11447-11565_TC1_Existing_Custo_Ipads_Tab_Filter_and_Sort_Functionality.feature:12)\r\n",
+              "status": "failed"
+            },
+            "comments": [
+              {
+                "line": 11,
+                "value": "#Verify URL is iPad specific"
+              }
+            ],
+            "line": 12,
+            "name": "Verify the current sort order details MonthlyLowToHigh",
+            "match": {
+              "arguments": [
+                {
+                  "val": "MonthlyLowToHigh",
+                  "offset": 38
+                }
+              ],
+              "location": "E2EOrderPlaced_Steps.verify_current_sort_order(String)"
+            },
+            "matchedColumns": [
+              2
+            ],
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 13,
+            "name": "click on the Sort tab and choose required MonthlyLowToHigh",
+            "match": {
+              "arguments": [
+                {
+                  "val": "MonthlyLowToHigh",
+                  "offset": 42
+                }
+              ],
+              "location": "E2EOrderPlaced_Steps.click_on_the_Sort_tab_and_choose_required_sort_option(String)"
+            },
+            "matchedColumns": [
+              2
+            ],
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 14,
+            "name": "Verify the devices gets sorted based on the sort option MonthlyLowToHigh",
+            "match": {
+              "arguments": [
+                {
+                  "val": "MonthlyLowToHigh",
+                  "offset": 56
+                }
+              ],
+              "location": "E2EOrderPlaced_Steps.verifyDeviceSortedBasedOnSortOption(String)"
+            },
+            "matchedColumns": [
+              2
+            ],
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 15,
+            "name": "click on the Sort tab and reset sort",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.ClickonSortand_Reset()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 16,
+            "name": "Verify that original sort order is retained MonthlyLowToHigh",
+            "match": {
+              "arguments": [
+                {
+                  "val": "MonthlyLowToHigh",
+                  "offset": 44
+                }
+              ],
+              "location": "E2EOrderPlaced_Steps.verifyOriginalSortOrderRetainedAfterSortReset(String)"
+            },
+            "matchedColumns": [
+              2
+            ],
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 17,
+            "name": "click on the Filter tab and choose required Colour Yellow option",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Colour",
+                  "offset": 44
+                },
+                {
+                  "val": "Yellow",
+                  "offset": 51
+                }
+              ],
+              "location": "E2EOrderPlaced_Steps.clickOnFilterTabAndSelectFilterOption(String,String)"
+            },
+            "matchedColumns": [
+              3,
+              4
+            ],
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 18,
+            "name": "Verify the devices gets displayed as per the filter applied Colour Yellow",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Colour",
+                  "offset": 60
+                },
+                {
+                  "val": "Yellow",
+                  "offset": 67
+                }
+              ],
+              "location": "E2EOrderPlaced_Steps.verifyDevicesGetsDisplayedAsPerFilter(String,String)"
+            },
+            "matchedColumns": [
+              3,
+              4
+            ],
+            "keyword": "And "
+          }
+        ]
+      }
+    ],
+    "name": "C1786_E11354-11447-11565_TC1_Existing_Custo_Ipads_Tab_Filter_and_Sort_Functionality.feature",
+    "description": "",
+    "id": "c1786-e11354-11447-11565-tc1-existing-custo-ipads-tab-filter-and-sort-functionality.feature",
+    "keyword": "Feature",
+    "uri": "C1786_E11354-11447-11565_TC1_Existing_Custo_Ipads_Tab_Filter_and_Sort_Functionality.feature"
+  },
+  {
+    "line": 1,
+    "elements": [
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 36840173992,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Hooks.openBrowser()"
+            }
+          }
+        ],
+        "line": 20,
+        "name": "This scenario ensures that when the existing customer lands on new basecomm page and selects \u0027Other tablets\u0027 tab,",
+        "description": "then the customer should be able to see \u0027Sort\u0027 and \u0027Filter\u0027 tab and the customer should be able to do Sort and Filter functionality same as that of listings page",
+        "id": "c1786-e11354-11447-11565-tc2-existing-custo-other-tablets-filter-and-sort-functionality.feature;this-scenario-ensures-that-when-the-existing-customer-lands-on-new-basecomm-page-and-selects-\u0027other-tablets\u0027-tab,;;2",
+        "after": [
+          {
+            "result": {
+              "duration": 17687035639,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Hooks.embedScreenshot(Scenario)"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 39347375157,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "I am existing user and I click on Signin button",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.I_am_existing_user_and_I_click_on_Signin_button()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 25182900666,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "Signin using valid 07770001111@o2.co.uk and test123 credentials",
+            "match": {
+              "arguments": [
+                {
+                  "val": "07770001111@o2.co.uk",
+                  "offset": 19
+                },
+                {
+                  "val": "test123",
+                  "offset": 44
+                }
+              ],
+              "location": "E2EOrderPlaced_Steps.signin_using_valid_ink_jun_and_test_credentials(String,String)"
+            },
+            "matchedColumns": [
+              0,
+              1
+            ],
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 26623736664,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "I navigate to the Basecomm Page",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.I_navigate_to_the_Basecomm_Page()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 4383724263,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "Click on Other Tablets tab",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.Click_on_Other_Tablets_tab()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 27860003030,
+              "error_message": "junit.framework.AssertionFailedError: Fail: Cannot read the phone details from the container\r\n\tat junit.framework.Assert.fail(Assert.java:47)\r\n\tat steps.E2EOrderPlaced_Steps.verify_current_sort_order(E2EOrderPlaced_Steps.java:3581)\r\n\tat ✽.And Verify the current sort order details MonthlyLowToHigh(C1786_E11354-11447-11565_TC2_Existing_Custo_Other_Tablets_Filter_and_Sort_Functionality.feature:10)\r\n",
+              "status": "failed"
+            },
+            "line": 10,
+            "name": "Verify the current sort order details MonthlyLowToHigh",
+            "match": {
+              "arguments": [
+                {
+                  "val": "MonthlyLowToHigh",
+                  "offset": 38
+                }
+              ],
+              "location": "E2EOrderPlaced_Steps.verify_current_sort_order(String)"
+            },
+            "matchedColumns": [
+              2
+            ],
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 11,
+            "name": "click on the Sort tab and choose required MonthlyLowToHigh",
+            "match": {
+              "arguments": [
+                {
+                  "val": "MonthlyLowToHigh",
+                  "offset": 42
+                }
+              ],
+              "location": "E2EOrderPlaced_Steps.click_on_the_Sort_tab_and_choose_required_sort_option(String)"
+            },
+            "matchedColumns": [
+              2
+            ],
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 12,
+            "name": "Verify the devices gets sorted based on the sort option MonthlyLowToHigh",
+            "match": {
+              "arguments": [
+                {
+                  "val": "MonthlyLowToHigh",
+                  "offset": 56
+                }
+              ],
+              "location": "E2EOrderPlaced_Steps.verifyDeviceSortedBasedOnSortOption(String)"
+            },
+            "matchedColumns": [
+              2
+            ],
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 13,
+            "name": "click on the Sort tab and reset sort",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.ClickonSortand_Reset()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 14,
+            "name": "Verify that original sort order is retained MonthlyLowToHigh",
+            "match": {
+              "arguments": [
+                {
+                  "val": "MonthlyLowToHigh",
+                  "offset": 44
+                }
+              ],
+              "location": "E2EOrderPlaced_Steps.verifyOriginalSortOrderRetainedAfterSortReset(String)"
+            },
+            "matchedColumns": [
+              2
+            ],
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 15,
+            "name": "click on the Filter tab and choose required Brand HTC option",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Brand",
+                  "offset": 44
+                },
+                {
+                  "val": "HTC",
+                  "offset": 50
+                }
+              ],
+              "location": "E2EOrderPlaced_Steps.clickOnFilterTabAndSelectFilterOption(String,String)"
+            },
+            "matchedColumns": [
+              3,
+              4
+            ],
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 16,
+            "name": "Verify the devices gets displayed as per the filter applied Brand HTC",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Brand",
+                  "offset": 60
+                },
+                {
+                  "val": "HTC",
+                  "offset": 66
+                }
+              ],
+              "location": "E2EOrderPlaced_Steps.verifyDevicesGetsDisplayedAsPerFilter(String,String)"
+            },
+            "matchedColumns": [
+              3,
+              4
+            ],
+            "keyword": "And "
+          }
+        ]
+      }
+    ],
+    "name": "C1786_E11354-11447-11565_TC2_Existing_Custo_Other_Tablets_Filter_and_Sort_Functionality.feature",
+    "description": "",
+    "id": "c1786-e11354-11447-11565-tc2-existing-custo-other-tablets-filter-and-sort-functionality.feature",
+    "keyword": "Feature",
+    "uri": "C1786_E11354-11447-11565_TC2_Existing_Custo_Other_Tablets_Filter_and_Sort_Functionality.feature"
+  },
+  {
+    "line": 1,
+    "elements": [
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 37212458779,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Hooks.openBrowser()"
+            }
+          }
+        ],
+        "line": 23,
+        "name": "This scenario ensures that there should not be any change for customer with Current MBB URL and customer should be able to place order",
+        "description": "\r\nCurrent URL:\r\nhttps://www.o2.co.uk/shop/my-offers/mobile-broadband",
+        "id": "c1786-e11362-11564-current-mbb-url-no-change-order-placement;this-scenario-ensures-that-there-should-not-be-any-change-for-customer-with-current-mbb-url-and-customer-should-be-able-to-place-order;;2",
+        "after": [
+          {
+            "result": {
+              "duration": 13801213454,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Hooks.embedScreenshot(Scenario)"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 49251772156,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "I am existing user and I click on Signin button",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.I_am_existing_user_and_I_click_on_Signin_button()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 22491175495,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "Signin using valid 07770001111@o2.co.uk and test123 credentials",
+            "match": {
+              "arguments": [
+                {
+                  "val": "07770001111@o2.co.uk",
+                  "offset": 19
+                },
+                {
+                  "val": "test123",
+                  "offset": 44
+                }
+              ],
+              "location": "E2EOrderPlaced_Steps.signin_using_valid_ink_jun_and_test_credentials(String,String)"
+            },
+            "matchedColumns": [
+              0,
+              1
+            ],
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 14077009783,
+              "status": "passed"
+            },
+            "line": 10,
+            "name": "I launch the OldMBBURL",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.LaunchOldBaseCommsMBBURL()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 36044946409,
+              "status": "passed"
+            },
+            "line": 11,
+            "name": "select \"random\" MBBtariff",
+            "match": {
+              "arguments": [
+                {
+                  "val": "random",
+                  "offset": 8
+                }
+              ],
+              "location": "E2EOrderPlaced_Steps.select_MBBtariff(String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 15233678292,
+              "error_message": "junit.framework.AssertionFailedError: Unable to Land on the basket page and choose home delivery option\r\n\tat junit.framework.Assert.fail(Assert.java:47)\r\n\tat steps.E2EOrderPlaced_Steps.i_Land_on_the_basket_page_and_choose_home_delivery_option(E2EOrderPlaced_Steps.java:720)\r\n\tat ✽.And I Land on the basket page and choose home delivery option(C1786_E11362-11564_Current_MBB_URL_no_change_Order_placement.feature:12)\r\n",
+              "status": "failed"
+            },
+            "line": 12,
+            "name": "I Land on the basket page and choose home delivery option",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.i_Land_on_the_basket_page_and_choose_home_delivery_option()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 13,
+            "name": "click on \"go to checkout\" button",
+            "match": {
+              "arguments": [
+                {
+                  "val": "go to checkout",
+                  "offset": 10
+                }
+              ],
+              "location": "E2EOrderPlaced_Steps.CheckoutFromBasket(String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 14,
+            "name": "Select existing account and begin fast checkout",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.Select_existing_account_and_begin_fast_checkout()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 15,
+            "name": "land on the payment page and input TEST ACCEPTA and other details for upgrade and click \u0027Continue on next step\u0027",
+            "match": {
+              "arguments": [
+                {
+                  "val": "TEST ACCEPTA",
+                  "offset": 35
+                }
+              ],
+              "location": "E2EOrderPlaced_Steps.CreditCheckPaymentPage_Upgrade(String)"
+            },
+            "matchedColumns": [
+              3
+            ],
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 16,
+            "name": "Continue to Agreements page and confirm all the agreement checks",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.AgreementsPageConfirmation()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 17,
+            "name": "Continue to Review page and review the order",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.ReviewPageConfirmation()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 18,
+            "name": "order confirmation is displayed",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.OrderConfirmationPage()"
+            },
+            "keyword": "Then "
+          }
+        ]
+      }
+    ],
+    "name": "C1786_E11362-11564_Current_MBB_URL_no_change_Order_placement",
+    "description": "",
+    "id": "c1786-e11362-11564-current-mbb-url-no-change-order-placement",
+    "keyword": "Feature",
+    "uri": "C1786_E11362-11564_Current_MBB_URL_no_change_Order_placement.feature"
+  },
+  {
+    "line": 1,
+    "elements": [
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 59060161293,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Hooks.openBrowser()"
+            }
+          }
+        ],
+        "line": 18,
+        "name": "This scenario ensures that the existing customer with the current iPad and Tablet Url should be redirected to new basecomms page URL",
+        "description": "\nCurrent URL:\nhttps://www.o2.co.uk/shop/my-offers/ipad\nhttps://www.o2.co.uk/shop/my-offers/tablet",
+        "id": "c1786-e11362-11564-tc1-current-ipad-or-tablet-url-redirection-to-new-basecomm-page-url.feature;this-scenario-ensures-that-the-existing-customer-with-the-current-ipad-and-tablet-url-should-be-redirected-to-new-basecomms-page-url;;2",
+        "after": [
+          {
+            "result": {
+              "duration": 16179120303,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Hooks.embedScreenshot(Scenario)"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 31647019769,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "I am existing user and I click on Signin button",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.I_am_existing_user_and_I_click_on_Signin_button()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 19851200820,
+              "status": "passed"
+            },
+            "line": 10,
+            "name": "Signin using valid 07770001111@o2.co.uk and test123 credentials",
+            "match": {
+              "arguments": [
+                {
+                  "val": "07770001111@o2.co.uk",
+                  "offset": 19
+                },
+                {
+                  "val": "test123",
+                  "offset": 44
+                }
+              ],
+              "location": "E2EOrderPlaced_Steps.signin_using_valid_ink_jun_and_test_credentials(String,String)"
+            },
+            "matchedColumns": [
+              0,
+              1
+            ],
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 17241271932,
+              "status": "passed"
+            },
+            "line": 11,
+            "name": "I launch the OldIpadURL",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.LaunchOldBaseCommsIpadURL()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 48703415,
+              "error_message": "org.junit.ComparisonFailure: expected:\u003c[www.ref.o2.co.uk/shop/existing-customer-offers]\u003e but was:\u003c[https://www.ref.o2.co.uk/shop/my-offers/ipad]\u003e\r\n\tat org.junit.Assert.assertEquals(Assert.java:115)\r\n\tat org.junit.Assert.assertEquals(Assert.java:144)\r\n\tat actionsPerformed.BaseCommPageActions.CompareURL(BaseCommPageActions.java:135)\r\n\tat steps.E2EOrderPlaced_Steps.VerifyOldBaseCommsURL_Redirection(E2EOrderPlaced_Steps.java:3207)\r\n\tat ✽.And verify that I get redirected to www.ref.o2.co.uk/shop/existing-customer-offers(C1786_E11362-11564_TC1_Current_iPad_or_Tablet_URL_Redirection_to_new_Basecomm_page_URL.feature:12)\r\n",
+              "status": "failed"
+            },
+            "line": 12,
+            "name": "verify that I get redirected to www.ref.o2.co.uk/shop/existing-customer-offers",
+            "match": {
+              "arguments": [
+                {
+                  "val": "www.ref.o2.co.uk/shop/existing-customer-offers",
+                  "offset": 32
+                }
+              ],
+              "location": "E2EOrderPlaced_Steps.VerifyOldBaseCommsURL_Redirection(String)"
+            },
+            "matchedColumns": [
+              4
+            ],
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 13,
+            "name": "I launch the OldTabletURL",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.LaunchOldBaseCommsOldTabletURL()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 14,
+            "name": "verify that I get redirected to www.ref.o2.co.uk/shop/existing-customer-offers",
+            "match": {
+              "arguments": [
+                {
+                  "val": "www.ref.o2.co.uk/shop/existing-customer-offers",
+                  "offset": 32
+                }
+              ],
+              "location": "E2EOrderPlaced_Steps.VerifyOldBaseCommsURL_Redirection(String)"
+            },
+            "matchedColumns": [
+              4
+            ],
+            "keyword": "And "
+          }
+        ]
+      }
+    ],
+    "name": "C1786_E11362-11564_TC1_Current_iPad_or_Tablet_URL_Redirection_to_new_Basecomm_page_URL.feature",
+    "description": "",
+    "id": "c1786-e11362-11564-tc1-current-ipad-or-tablet-url-redirection-to-new-basecomm-page-url.feature",
+    "keyword": "Feature",
+    "uri": "C1786_E11362-11564_TC1_Current_iPad_or_Tablet_URL_Redirection_to_new_Basecomm_page_URL.feature"
+  },
+  {
+    "line": 1,
+    "elements": [
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 31600840018,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Hooks.openBrowser()"
+            }
+          }
+        ],
+        "line": 18,
+        "name": "This scenario ensures that when the existing customer selects non-basecomm(Refresh)tariff lands on basket page and clicks on \"Change tariff\" ,",
+        "description": "then the customer should be redirected to tariffs and extras page with Refresh(BAU) tariffs",
+        "id": "c11786-e11510-11505-tc5-non-basecomm-tariff-basket-page-change-tariff-link-bau-tariffs-decommission-flag.feature;this-scenario-ensures-that-when-the-existing-customer-selects-non-basecomm(refresh)tariff-lands-on-basket-page-and-clicks-on-\"change-tariff\"-,;;2",
+        "after": [
+          {
+            "result": {
+              "duration": 16674737600,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Hooks.embedScreenshot(Scenario)"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 40337208306,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "I am existing user and I click on Signin button",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.I_am_existing_user_and_I_click_on_Signin_button()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 25507528169,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "Signin using valid 07770001111@o2.co.uk and test123 credentials",
+            "match": {
+              "arguments": [
+                {
+                  "val": "07770001111@o2.co.uk",
+                  "offset": 19
+                },
+                {
+                  "val": "test123",
+                  "offset": 44
+                }
+              ],
+              "location": "E2EOrderPlaced_Steps.signin_using_valid_ink_jun_and_test_credentials(String,String)"
+            },
+            "matchedColumns": [
+              0,
+              1
+            ],
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 34963099870,
+              "error_message": "junit.framework.AssertionFailedError: unable to do mousehover to tablets\r\n\tat junit.framework.Assert.fail(Assert.java:47)\r\n\tat steps.E2EOrderPlaced_Steps.navigate_to_PAYM_Tablets_page(E2EOrderPlaced_Steps.java:2360)\r\n\tat ✽.And navigate to PAYM Tablets page(C1786_E11510-11505_TC5_Non_Basecomm_tariff_basket_page_change_tariff_link_BAU_tariffs_decommission_flag.feature:8)\r\n",
+              "status": "failed"
+            },
+            "line": 8,
+            "name": "navigate to PAYM Tablets page",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.navigate_to_PAYM_Tablets_page()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 9,
+            "name": "I choose Samsung Galaxy Tab Active Tablet",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Samsung Galaxy Tab Active",
+                  "offset": 9
+                }
+              ],
+              "location": "E2EOrderPlaced_Steps.i_choose_Tablet(String)"
+            },
+            "matchedColumns": [
+              2
+            ],
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 10,
+            "name": "Navigate to device details page",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.Navigate_to_device_details_page()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 11,
+            "name": "Land on the \u0027Tariffs and extra\u0027 page",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.land_on_the_Tariffs_and_extra_page()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 12,
+            "name": "I Land on the basket page and choose home delivery option",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.i_Land_on_the_basket_page_and_choose_home_delivery_option()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 13,
+            "name": "Verify \"Choose a different tariff\" link is displayed",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.verify_choose_a_diff_tariff_link_displayed()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 14,
+            "name": "click on the \"Choose a different tariff\" link and verify user navigated back to \"Tariff and Extras\" page",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.click_choose_a_diff_tariff_link_and_check_navigation_TE_page()"
+            },
+            "keyword": "And "
+          }
+        ]
+      }
+    ],
+    "name": "C11786_E11510-11505_TC5_Non_Basecomm_tariff_basket_page_change_tariff_link_BAU_tariffs_decommission_flag.feature",
+    "description": "",
+    "id": "c11786-e11510-11505-tc5-non-basecomm-tariff-basket-page-change-tariff-link-bau-tariffs-decommission-flag.feature",
+    "keyword": "Feature",
+    "uri": "C1786_E11510-11505_TC5_Non_Basecomm_tariff_basket_page_change_tariff_link_BAU_tariffs_decommission_flag.feature"
+  },
+  {
+    "line": 1,
+    "elements": [
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 41208279924,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Hooks.openBrowser()"
+            }
+          }
+        ],
+        "line": 35,
+        "name": "This scenario ensures that when the customer lands on new basecomm page selects \"iPads\" device ,then the device tile for the \u0027coming soon\u0027 basecomms device should be displayed with the following information:",
+        "description": "\n1.Device image\n2.Device title\n3.Colour\n4.Capacity\n5.\"See device details\" link\n6.Pricing information should NOT be displayed\n7.Buy Now button NOT be displayed",
+        "id": "c1786-ecom-11527-11529-11633-tc1-new-basecomms-page-ipads-tab-coming-soon-device-promo-header-banner-pay-for-your-device-in-full-link-tariffandextras-page;this-scenario-ensures-that-when-the-customer-lands-on-new-basecomm-page-selects-\"ipads\"-device-,then-the-device-tile-for-the-\u0027coming-soon\u0027-basecomms-device-should-be-displayed-with-the-following-information:;;2",
+        "after": [
+          {
+            "result": {
+              "duration": 14755782201,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Hooks.embedScreenshot(Scenario)"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 39469070877,
+              "status": "passed"
+            },
+            "comments": [
+              {
+                "line": 13,
+                "value": "#Pay for your device in full link should be displayed in Tariff and extras page"
+              }
+            ],
+            "line": 14,
+            "name": "I am existing user and I click on Signin button",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.I_am_existing_user_and_I_click_on_Signin_button()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 22277252629,
+              "status": "passed"
+            },
+            "line": 15,
+            "name": "Signin using valid 07770001111@o2.co.uk and test123 credentials",
+            "match": {
+              "arguments": [
+                {
+                  "val": "07770001111@o2.co.uk",
+                  "offset": 19
+                },
+                {
+                  "val": "test123",
+                  "offset": 44
+                }
+              ],
+              "location": "E2EOrderPlaced_Steps.signin_using_valid_ink_jun_and_test_credentials(String,String)"
+            },
+            "matchedColumns": [
+              0,
+              1
+            ],
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 17857435836,
+              "status": "passed"
+            },
+            "line": 16,
+            "name": "I navigate to the Basecomm Page",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.I_navigate_to_the_Basecomm_Page()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 612206236,
+              "status": "passed"
+            },
+            "line": 17,
+            "name": "Verify expected Apple�iPad Pro 9.7 inch and its specific details are present in the device list for coming soon device Space Grey,32GB,Out of stock",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Apple�iPad Pro 9.7 inch",
+                  "offset": 16
+                },
+                {
+                  "val": "for coming soon device Space Grey",
+                  "offset": 96
+                },
+                {
+                  "val": "32GB",
+                  "offset": 130
+                },
+                {
+                  "val": "Out of stock",
+                  "offset": 135
+                }
+              ],
+              "location": "E2EOrderPlaced_Steps.verify_expected_device_and_details_are_in_device_list(String,String,String,String)"
+            },
+            "matchedColumns": [
+              2,
+              3,
+              4,
+              5
+            ],
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 20051143205,
+              "error_message": "junit.framework.AssertionFailedError: Unable to verify promotion ribbon on the device\r\n\tat junit.framework.Assert.fail(Assert.java:47)\r\n\tat steps.E2EOrderPlaced_Steps.verifypromotionribbonDisplay(E2EOrderPlaced_Steps.java:3515)\r\n\tat ✽.And Verify that promotion ribbon is displayed(C1786_ECOM-11527-11529-11633_TC1_New_basecomms_page_iPads_tab_coming_soon_device_promo_header_banner_Pay_For_Your_Device_In_Full_link_TariffandExtras_page.feature:20)\r\n",
+              "status": "failed"
+            },
+            "comments": [
+              {
+                "line": 18,
+                "value": "#Veirfy device price is not required"
+              },
+              {
+                "line": 19,
+                "value": "#Verify Buy Now button is not enabled"
+              }
+            ],
+            "line": 20,
+            "name": "Verify that promotion ribbon is displayed",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.verifypromotionribbonDisplay()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 21,
+            "name": "Click on \"See device details\" link for Apple�iPad Pro 9.7 inch and verify correct details are displayed",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Apple�iPad Pro 9.7 inch",
+                  "offset": 39
+                }
+              ],
+              "location": "E2EOrderPlaced_Steps.Click_on_See_device_details_link_and_verify_correct_details_are_displayed(String)"
+            },
+            "matchedColumns": [
+              2
+            ],
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 22,
+            "name": "Click on \"Buy Now\" button for Apple�iPad Pro 9.7 inch and verify \"Tariffs and Extras\" page is displayed",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Apple�iPad Pro 9.7 inch",
+                  "offset": 30
+                }
+              ],
+              "location": "E2EOrderPlaced_Steps.SelectdeviceAndVerifyTariffandExtras(String)"
+            },
+            "matchedColumns": [
+              2
+            ],
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 23,
+            "name": "click on \"Pay for your device in full\" link and select a \"random\" tariff",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Pay for your device in full",
+                  "offset": 10
+                },
+                {
+                  "val": "random",
+                  "offset": 58
+                }
+              ],
+              "location": "E2EOrderPlaced_Steps.TariffandExtrasPage_payDeviceFull()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 24,
+            "name": "I Land on the basket page and choose home delivery option",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.i_Land_on_the_basket_page_and_choose_home_delivery_option()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 25,
+            "name": "click on \"go to checkout\" button",
+            "match": {
+              "arguments": [
+                {
+                  "val": "go to checkout",
+                  "offset": 10
+                }
+              ],
+              "location": "E2EOrderPlaced_Steps.CheckoutFromBasket(String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 26,
+            "name": "Select existing account and begin fast checkout",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.Select_existing_account_and_begin_fast_checkout()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 27,
+            "name": "land on the payment page and input TEST ACCEPTA and other details for upgrade and click \u0027Continue on next step\u0027",
+            "match": {
+              "arguments": [
+                {
+                  "val": "TEST ACCEPTA",
+                  "offset": 35
+                }
+              ],
+              "location": "E2EOrderPlaced_Steps.CreditCheckPaymentPage_Upgrade(String)"
+            },
+            "matchedColumns": [
+              6
+            ],
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 28,
+            "name": "Continue to Agreements page and confirm all the agreement checks",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.AgreementsPageConfirmation()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 29,
+            "name": "Continue to Review page and review the order",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.ReviewPageConfirmation()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 30,
+            "name": "order confirmation is displayed",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.OrderConfirmationPage()"
+            },
+            "keyword": "Then "
+          }
+        ]
+      }
+    ],
+    "name": "C1786_ECOM-11527-11529-11633_TC1_New_basecomms_page_iPads_tab_coming_soon_device_promo_header_banner_Pay_For_Your_Device_In_Full_link_TariffandExtras_page",
+    "description": "",
+    "id": "c1786-ecom-11527-11529-11633-tc1-new-basecomms-page-ipads-tab-coming-soon-device-promo-header-banner-pay-for-your-device-in-full-link-tariffandextras-page",
+    "keyword": "Feature",
+    "uri": "C1786_ECOM-11527-11529-11633_TC1_New_basecomms_page_iPads_tab_coming_soon_device_promo_header_banner_Pay_For_Your_Device_In_Full_link_TariffandExtras_page.feature"
+  },
+  {
+    "line": 1,
+    "elements": [
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 29593086769,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Hooks.openBrowser()"
+            }
+          }
+        ],
+        "line": 24,
+        "name": "This scenario ensures that when the existing customer lands on new basecomm page selects \"Tablet\" device ,then the device tile for the \u0027coming soon\u0027 basecomms device should be displayed with the following information:",
+        "description": "\n1.Device image\n2.Device title\n3.Colour\n4.Capacity\n5.\"See device details\" link\n6.Pricing information should NOT be displayed\n7.Buy Now button NOT be displayed",
+        "id": "c1786-ecom-11527-11529-11633-tc2-new-basecomms-page-other-tablets-tab-coming-soon-device-promo-header-banner.feature;this-scenario-ensures-that-when-the-existing-customer-lands-on-new-basecomm-page-selects-\"tablet\"-device-,then-the-device-tile-for-the-\u0027coming-soon\u0027-basecomms-device-should-be-displayed-with-the-following-information:;;2",
+        "after": [
+          {
+            "result": {
+              "duration": 14277938488,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Hooks.embedScreenshot(Scenario)"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 53470935578,
+              "status": "passed"
+            },
+            "line": 13,
+            "name": "I am existing user and I click on Signin button",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.I_am_existing_user_and_I_click_on_Signin_button()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 19260733267,
+              "status": "passed"
+            },
+            "line": 14,
+            "name": "Signin using valid 07770001111@o2.co.uk and test123 credentials",
+            "match": {
+              "arguments": [
+                {
+                  "val": "07770001111@o2.co.uk",
+                  "offset": 19
+                },
+                {
+                  "val": "test123",
+                  "offset": 44
+                }
+              ],
+              "location": "E2EOrderPlaced_Steps.signin_using_valid_ink_jun_and_test_credentials(String,String)"
+            },
+            "matchedColumns": [
+              0,
+              1
+            ],
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 13340802165,
+              "status": "passed"
+            },
+            "line": 15,
+            "name": "I navigate to the Basecomm Page",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.I_navigate_to_the_Basecomm_Page()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 246017028,
+              "status": "passed"
+            },
+            "line": 16,
+            "name": "Verify expected Samsung Galaxy Tab A 2016 10.1 and its specific details are present in the device list for coming soon device Black,16GB,In Stock",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Samsung Galaxy Tab A 2016 10.1",
+                  "offset": 16
+                },
+                {
+                  "val": "for coming soon device Black",
+                  "offset": 103
+                },
+                {
+                  "val": "16GB",
+                  "offset": 132
+                },
+                {
+                  "val": "In Stock",
+                  "offset": 137
+                }
+              ],
+              "location": "E2EOrderPlaced_Steps.verify_expected_device_and_details_are_in_device_list(String,String,String,String)"
+            },
+            "matchedColumns": [
+              2,
+              3,
+              4,
+              5
+            ],
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 20029732940,
+              "error_message": "junit.framework.AssertionFailedError: Unable to verify promotion ribbon on the device\r\n\tat junit.framework.Assert.fail(Assert.java:47)\r\n\tat steps.E2EOrderPlaced_Steps.verifypromotionribbonDisplay(E2EOrderPlaced_Steps.java:3515)\r\n\tat ✽.And Verify that promotion ribbon is displayed(C1786_ECOM-11527-11529-11633_TC2_New_basecomms_page_Other_tablets_tab_coming_soon_device_promo_header_banner.feature:19)\r\n",
+              "status": "failed"
+            },
+            "comments": [
+              {
+                "line": 17,
+                "value": "#Veirfy device price is not required"
+              },
+              {
+                "line": 18,
+                "value": "#Verify Buy Now button is not enabled"
+              }
+            ],
+            "line": 19,
+            "name": "Verify that promotion ribbon is displayed",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.verifypromotionribbonDisplay()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 20,
+            "name": "Click on \"See device details\" link for Samsung Galaxy Tab A 2016 10.1 and verify correct details are displayed",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Samsung Galaxy Tab A 2016 10.1",
+                  "offset": 39
+                }
+              ],
+              "location": "E2EOrderPlaced_Steps.Click_on_See_device_details_link_and_verify_correct_details_are_displayed(String)"
+            },
+            "matchedColumns": [
+              2
+            ],
+            "keyword": "And "
+          }
+        ]
+      }
+    ],
+    "name": "C1786_ECOM-11527-11529-11633_TC2_New_basecomms_page_Other_tablets_tab_coming_soon_device_promo_header_banner.feature",
+    "description": "",
+    "id": "c1786-ecom-11527-11529-11633-tc2-new-basecomms-page-other-tablets-tab-coming-soon-device-promo-header-banner.feature",
+    "keyword": "Feature",
+    "uri": "C1786_ECOM-11527-11529-11633_TC2_New_basecomms_page_Other_tablets_tab_coming_soon_device_promo_header_banner.feature"
   }
 ]

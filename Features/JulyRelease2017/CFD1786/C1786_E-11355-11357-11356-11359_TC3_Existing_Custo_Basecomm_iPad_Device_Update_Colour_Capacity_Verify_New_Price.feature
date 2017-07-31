@@ -7,6 +7,7 @@ Feature: C1786_E-11355-11357-11356-11359_TC3_Existing_Custo_Basecomm_iPad_Device
     Given I am existing user and I click on Signin button
     And Signin using valid <username> and <password> credentials
     And I navigate to the Basecomm Page
+    And Click on iPad tab
     And Verify the contents of the iPad section in the landing page
     #Verify URL is iPad specific
     And Verify expected <device_name> and its specific details are present in the device list <default_colour>,<default_capacity>,<default_stock_message>
@@ -17,4 +18,4 @@ Feature: C1786_E-11355-11357-11356-11359_TC3_Existing_Custo_Basecomm_iPad_Device
 
     Examples: 
       | username             | password | device_name             | default_colour | default_capacity | default_stock_message | color  | capacity |
-      | 07770001111@o2.co.uk | test123  | Apple iPad Pro 9.7 inch | Space Grey     | 32GB             | Out of stock          | Silver | 128GB    |
+      | 07770001111@o2.co.uk | test123  | Apple iPad Pro 9.7 inch | Space Grey     | 32GB             | Out of stock          | Silver | 256GB    |
