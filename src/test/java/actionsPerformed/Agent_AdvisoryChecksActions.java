@@ -20,6 +20,7 @@ public class Agent_AdvisoryChecksActions extends Environment{
 	{
 	
 		System.out.println("Going to Click on Advisory checks");	
+		Thread.sleep(4000);
 
 		Agent_AdvisoryPage.AgreeAdvsioryCheckYes.click();
 				log.debug("Clicked on Advisory checks");

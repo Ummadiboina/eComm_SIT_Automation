@@ -6,6 +6,7 @@ import java.util.List;
 
 import org.apache.log4j.Logger;
 import org.junit.Assert;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 
 import org.openqa.selenium.support.ui.Select;
@@ -19,10 +20,10 @@ import pageobjects.DeliveryPage;
 
 public class DeliveryPageActions {
 	  
-	public WebDriver driver;
+	public static WebDriver driver;
 	public List<HashMap<String, String>> datamap;
 	static Logger log = Logger.getLogger("devpinoyLogger");
-
+	static JavascriptExecutor js = (JavascriptExecutor) driver;
   		
 
 		public static void SetDelivery() throws InterruptedException
@@ -79,12 +80,14 @@ public class DeliveryPageActions {
 		}
 		
 		public static void selectExistingAcctAndFastCheckOut() throws InterruptedException {
+			
 			Thread.sleep(2000);
 			pageobjects.DeliveryPage.SelectAcct.click();
 			System.out.println("Existing Account is selected");
 			log.debug("Existing Account is selected");
 
-			pageobjects.DeliveryPage.FastCheckOut.click();
+			js.executeScript("arguments[0].click();", pageobjects.DeliveryPage.FastCheckOut);
+//			pageobjects.DeliveryPage.FastCheckOut.click();
 			System.out.println("FastCheckout button is selected");
 			log.debug("FastCheckout button is selected");
 		}

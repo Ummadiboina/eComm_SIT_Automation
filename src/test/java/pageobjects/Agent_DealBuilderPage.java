@@ -77,7 +77,7 @@ public class Agent_DealBuilderPage {
 		@FindBy(how=How.ID,using="sendBasketEmailAddress")
 		public static WebElement sendBasketEmailAddress;
 		
-		@FindBy(how=How.XPATH,using="//input[@type='submit']")
+		@FindBy(how=How.XPATH,using="//input[@value='Send']")
 		public static WebElement sendBasketPopupSubmit;
 		
 		@FindBy(how=How.XPATH,using="//*[@id='prepayDeviceTable']/tbody/tr/td[4]")
@@ -96,6 +96,12 @@ public class Agent_DealBuilderPage {
 		
 		@FindBy(how = How.XPATH, using = "html/body/div[1]/div/div[2]/div[1]/table/tbody/tr[1]/td[1]/a/img")
 		public static WebElement firstAvailableDevice;
+
+		@FindBy(how = How.XPATH, using = "//input[@type='checkbox']")
+		public static WebElement ChooseBasketToSend;
+
+		@FindBy(how = How.XPATH, using = "//*[@class='emailBasketMessage']")
+		public static WebElement emailConfirmation;
 
 
 }

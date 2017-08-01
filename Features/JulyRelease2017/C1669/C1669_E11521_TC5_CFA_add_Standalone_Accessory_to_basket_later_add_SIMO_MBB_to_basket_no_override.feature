@@ -13,7 +13,7 @@ Feature: C1669_E11521_TC5_CFA_add_Standalone_Accessory_to_basket_later_add_SIMO_
     And navigate to PAYM SIMO page
     And verify the elements
     And select <tabname> tab
-    And choose <contract> contract length
+    And choose <contract> contract length for MBB
     Then Verify the devices <accessoryname> and <Your_Tariff> in basket
 
     Examples: 

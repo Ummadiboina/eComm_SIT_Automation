@@ -1254,6 +1254,7 @@ public class E2EOrderPlaced_Steps {
 			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 			PageFactory.initElements(driver, Agent_DealBuilderPage.class);
 			Agent_DealBuilderPageActions.HandsetTariffCombination();
+			Thread.sleep(4000);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -1344,6 +1345,9 @@ public class E2EOrderPlaced_Steps {
 			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 			PageFactory.initElements(driver, Agent_HomePage.class);
 			Agent_HomePagePageActions.FindUser(msisdn);
+			Thread.sleep(3000);
+			Agent_HomePagePageActions.upgradeUser();
+			Thread.sleep(4000);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			System.out.println("Unable to login for upgrade for user in Agent shop, please see the failure screenshot");
@@ -1382,6 +1386,7 @@ public class E2EOrderPlaced_Steps {
 			driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
 			PageFactory.initElements(driver, Agent_DealBuilderPage.class);
 			Agent_DealBuilderPageActions.SelectPAYMDevice(Device);
+			Thread.sleep(4000);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			System.out.println("Unable to select Valid device, please see the failure screenshot");
@@ -1427,6 +1432,21 @@ public class E2EOrderPlaced_Steps {
 		}
 	}
 
+	@Given("^Verify email is sent successfully$")
+	public void verifyEmailSentConfirmation() throws Throwable {
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, Agent_DealBuilderPage.class);
+			Agent_DealBuilderPageActions.eMailConfirmation();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			System.out.println("Email is not sent");
+			Assert.fail("Email is not sent");
+
+		}
+	}
+
+	
 	/*
 	 * #########################################################################
 	 * #########
@@ -1472,6 +1492,7 @@ public class E2EOrderPlaced_Steps {
 			driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
 			PageFactory.initElements(driver, Agent_DealBuilderPage.class);
 			Agent_DealBuilderPageActions.SelectTariff(Tariff);
+			Thread.sleep(3000);
 			// System.out.println("Selecting a valid tariff");
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
@@ -1521,7 +1542,7 @@ public class E2EOrderPlaced_Steps {
 	@Then("^perform all the advisory checks$")
 	public void advisory_checks() throws Throwable {
 		try {
-			driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
+			driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 			PageFactory.initElements(driver, Agent_AdvisoryPage.class);
 			Agent_AdvisoryChecksActions.AgreeAdvsioryCheck();
 			Thread.sleep(6000);
@@ -1615,6 +1636,21 @@ public class E2EOrderPlaced_Steps {
 			PageFactory.initElements(driver, Agent_RegisterCustomerPage.class);
 			Agent_RegisterCustomerActions.PaybyCard();
 			Agent_RegisterCustomerActions.CardDetails();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			System.out.println("Unable to Pay by card , please see the failure screenshot");
+			Assert.fail("Unable to Pay by card , please see the failure screenshot");
+
+		}
+	}
+	
+	@When("^Pay by card for PAYM device$")
+	public void pay_by_card_payn_device() throws Throwable {
+		driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
+		try {
+			PageFactory.initElements(driver, Agent_RegisterCustomerPage.class);
+			Agent_RegisterCustomerActions.PaybyCard();
+			Agent_RegisterCustomerActions.CardDetails_PayM();
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			System.out.println("Unable to Pay by card , please see the failure screenshot");
@@ -2158,6 +2194,7 @@ public class E2EOrderPlaced_Steps {
 		try {
 			PageFactory.initElements(driver, PaymentPage.class);
 			PageFactory.initElements(driver, DeliveryPage.class);
+			Thread.sleep(5000);
 			DeliveryPageActions.ClickContinue();
 			Thread.sleep(2000);
 			PaymentPageActions.Time_At_Address();
@@ -3310,10 +3347,12 @@ public class E2EOrderPlaced_Steps {
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		try {
 			PageFactory.initElements(driver, BaseCommPage.class);
+			PageFactory.initElements(driver, PAYMandPAYGTariffAndExtrasPage.class);
 			BaseCommPageActions.BuynowwithDevice(device_name);
 			BaseCommPageActions.VerifyPage();
 			BaseCommPageActions.verifyTariffType("Basecomm");
 		} catch (Exception e) {
+			e.printStackTrace();
 			Assert.fail("Unable to select device and verify tariff and extras page");
 
 		}
@@ -3376,26 +3415,27 @@ public class E2EOrderPlaced_Steps {
 	}
 
 	@And("^Verify new image is as per the selected ([^\"]*),([^\"]*)and ([^\"]*) in the Basecomms page$")
-	public void Verify_new_image_is_as_per_the_selected_device_name_capacity_and_color_in_the_Basecomms_page(
-			String devicename) throws Throwable {
+	public void Verify_new_image_is_as_per_the_selected_device_name_capacity_and_color_in_the_Basecomms_page(String devicename, String capacity, String color) throws Throwable {
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		try {
 			PageFactory.initElements(driver, BaseCommPage.class);
-			PhonesListingPageAction.checkImgSrcBasecommPage(devicename);
+			PageFactory.initElements(driver, ConnectedDeviceDetailsPage.class);
+			PhonesListingPageAction.checkImgSrcBasecommPage(devicename,capacity,color);
 
 		} catch (Exception e) {
 			e.printStackTrace();
-			Assert.fail("Unable to click on the Sort tab and reset sort");
+			Assert.fail("Unable to Verify new image");
 		}
 	}
 
 	@And("^Verify new image is as per the selected ([^\"]*),([^\"]*)and ([^\"]*) in the Tariffs and Extras Page$")
-	public void Verify_new_image_is_as_per_the_selected_device_name_capacity_and_color_in_the_TE_page(String devicename)
+	public void Verify_new_image_is_as_per_the_selected_device_name_capacity_and_color_in_the_TE_page(String devicename, String capacity, String color)
 			throws Throwable {
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		try {
 			PageFactory.initElements(driver, BaseCommPage.class);
-			PhonesListingPageAction.checkImgSrcTEPage(devicename);
+			PageFactory.initElements(driver, ConnectedDeviceDetailsPage.class);
+			PhonesListingPageAction.checkImgSrcTEPage(devicename,capacity,color);
 
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -3410,6 +3450,7 @@ public class E2EOrderPlaced_Steps {
 		try {
 			PageFactory.initElements(driver, BaseCommPage.class);
 			PhonesListingPageAction.clickChooseADifferentTariff();
+			Thread.sleep(3000);
 			PhonesListingPageAction.checkUserNavigatedTEPage();
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -3503,12 +3544,12 @@ public class E2EOrderPlaced_Steps {
 		}
 	}
 
-	@And("^Verify that promotion ribbon is displayed$")
-	public void verifypromotionribbonDisplay() {
+	@And("^Verify that promotion ribbon is displayed for ([^\"]*)$")
+	public void verifypromotionribbonDisplay(String device) {
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		try {
 			PageFactory.initElements(driver, BaseCommPage.class);
-			BaseCommPageActions.VerifyRibbon();
+			BaseCommPageActions.VerifyRibbon(device);
 
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -3853,7 +3894,7 @@ public class E2EOrderPlaced_Steps {
           try {
                 driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
                 PageFactory.initElements(driver, BaseCommPage.class);
-                BaseCommPageActions.selectNewDevice(device, color, capacity);
+                BaseCommPageActions.selectNewDevice(color,capacity,device);
           } catch (Exception e) {
   			e.printStackTrace();
   			System.out.println("Failed : Select <color>, <capacity> of the device <device_name>");
