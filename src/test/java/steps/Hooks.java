@@ -93,7 +93,7 @@ public class Hooks extends Environment {
 
 		}
 		Thread.sleep(2000);
-		//driver.quit();
+		driver.quit();
 		
 
 	}

@@ -10,6 +10,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 
 import helpers.Environment;
+import junit.framework.Assert;
 import pageobjects.Agent_DealBuilderPage;
 
 public class Agent_DealBuilderPageActions extends Environment {
@@ -40,11 +41,11 @@ public class Agent_DealBuilderPageActions extends Environment {
 		Thread.sleep(3000);
 
 		if (Device.contains("Random")) {
-			// Agent_DealBuilderPage.SearchTextBox_Tariff.sendKeys("Standard");
+			Thread.sleep(3000);
 			Agent_DealBuilderPage.firstAvailableDevice.click();
 			Thread.sleep(3000);
-			System.out.println("Selected Basecomms device ");
-			log.debug("Selected basecomms device ");
+			System.out.println("Selected device ");
+			log.debug("Selected device ");
 
 		}
 
@@ -82,8 +83,17 @@ public class Agent_DealBuilderPageActions extends Environment {
 		if (Tariff.contains("SimO")) {
 			Agent_DealBuilderPage.SearchTextBox_Tariff.sendKeys("- / Simo");
 			Agent_DealBuilderPage.SelectingFirstAvailableTariff.click();
+			Thread.sleep(3000);
 			System.out.println("Selected Random SimO Tariff ");
 			log.debug("Selected Random SimO Tariff ");
+		}
+		
+		if (Tariff.contains("Refresh")) {
+			Agent_DealBuilderPage.SearchTextBox_Tariff.sendKeys("Refresh");
+			Agent_DealBuilderPage.SelectingFirstAvailableTariff.click();
+			Thread.sleep(3000);
+			System.out.println("Selected Refresh Tariff ");
+			log.debug("Selected Refresh Tariff ");
 		}
 		////////////////////////////// Basecomms
 		////////////////////////////// Tariff//////////////////////////////////////
@@ -229,16 +239,20 @@ public class Agent_DealBuilderPageActions extends Environment {
 				// Switching to Child window
 				driver.switchTo().window(ChildWindow);
 				Thread.sleep(3000);
+				Agent_DealBuilderPage.ChooseBasketToSend.click();
+				Thread.sleep(2000);
 				Agent_DealBuilderPage.sendBasketEmailAddress.sendKeys("vinudeep.malalur@o2.com");
 				Thread.sleep(3000);
 				Agent_DealBuilderPage.sendBasketPopupSubmit.click();
 				Thread.sleep(3000);
+				//eMailConfirmation();
 				// Closing the Child Window.
-				driver.close();
+				//driver.close();
 			}
 		}
+		
 		// Switching to Parent window i.e Main Window.
-		driver.switchTo().window(Mainwindow);
+		//driver.switchTo().window(Mainwindow);
 	}
 
 	public static void ValdiateBasket() throws InterruptedException {
@@ -253,6 +267,15 @@ public class Agent_DealBuilderPageActions extends Environment {
 		Agent_DealBuilderPage.Checkout.click();
 		System.out.println("Clicked on Checkout ");
 		log.debug("Clicked on Checkout ");
+	}
+
+	public static void eMailConfirmation() 
+	{
+		// TODO Auto-generated method stub
+		String text=Agent_DealBuilderPage.emailConfirmation.getText();
+		Assert.assertEquals(text, "Email sent successfully");
+		driver.close();
+		
 	}
 
 }
