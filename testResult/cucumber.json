@@ -6,7 +6,7 @@
         "before": [
           {
             "result": {
-              "duration": 46136882455,
+              "duration": 30372350569,
               "status": "passed"
             },
             "match": {
@@ -14,14 +14,14 @@
             }
           }
         ],
-        "line": 39,
-        "name": "CFA Add all non connected devices (Standalone Smartwatch, Accessory and Fitnesstracker) and One Connected Device and Veiryf Basket not overridden",
+        "line": 24,
+        "name": "Successful completion of a PAY M Acquistion journey",
         "description": "",
-        "id": "c1669-e11521-tc1-cfa-add-all-nonconnected-devices-to-basket-followed-by-adding-a-phone-verify-not-overridden;cfa-add-all-non-connected-devices-(standalone-smartwatch,-accessory-and-fitnesstracker)-and-one-connected-device-and-veiryf-basket-not-overridden;;2",
+        "id": "reg-afa-paym-acquistion;successful-completion-of-a-pay-m-acquistion-journey;;2",
         "after": [
           {
             "result": {
-              "duration": 5524237205,
+              "duration": 15272107077,
               "status": "passed"
             },
             "match": {
@@ -34,271 +34,43 @@
         "steps": [
           {
             "result": {
-              "duration": 1122884544,
+              "duration": 5929012850,
               "status": "passed"
             },
-            "line": 4,
-            "name": "I am an CFA user and Lands on shop page",
+            "line": 6,
+            "name": "I login to Agent shop",
             "match": {
-              "location": "E2EOrderPlaced_Steps.i_am_an_CFA_user_and_Lands_on_shop_page()"
+              "location": "E2EOrderPlaced_Steps.LoginAgentShop()"
             },
             "keyword": "Given "
           },
           {
             "result": {
-              "duration": 39156261719,
-              "status": "passed"
-            },
-            "line": 5,
-            "name": "Navigate to Accessories",
-            "match": {
-              "location": "E2EOrderPlaced_Steps.navigate_to_Accessories()"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 1003546648,
-              "status": "passed"
-            },
-            "line": 6,
-            "name": "select an \"Random\" Accessory",
-            "match": {
-              "arguments": [
-                {
-                  "val": "Random",
-                  "offset": 11
-                }
-              ],
-              "location": "E2EOrderPlaced_Steps.select_an_Accessory(String)"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 55385432020,
+              "duration": 14152130952,
               "status": "passed"
             },
             "line": 7,
-            "name": "add Accessories to basket within limit in details page and navigate to basket",
+            "name": "performs Acquisition for New user",
             "match": {
-              "location": "E2EOrderPlaced_Steps.add_Accessories_to_basket_within_limit_in_details_page_and_navigate_to_basket()"
+              "location": "E2EOrderPlaced_Steps.performs_Acquisition_for_New_user()"
             },
             "keyword": "And "
           },
           {
             "result": {
-              "duration": 4179317891,
+              "duration": 15279560556,
               "status": "passed"
             },
             "line": 8,
-            "name": "I Land on the Non Phone related basket page and choose home delivery option",
-            "match": {
-              "location": "E2EOrderPlaced_Steps.NonPhoneRelatedBasketPage()"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 5302982421,
-              "status": "passed"
-            },
-            "comments": [
-              {
-                "line": 9,
-                "value": "# And I click on Continue Shopping link"
-              }
-            ],
-            "line": 10,
-            "name": "click on continue shopping button",
-            "match": {
-              "location": "E2EOrderPlaced_Steps.click_on_continue_shopping_button()"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 24567070923,
-              "status": "passed"
-            },
-            "line": 11,
-            "name": "Navigate to Fitness Trackers",
-            "match": {
-              "location": "E2EOrderPlaced_Steps.navigate_to_Fitness_Trackers()"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 5280718077,
-              "status": "passed"
-            },
-            "line": 12,
-            "name": "select any available \"Random\" Fitness tracker",
+            "name": "Select a valid PayM S7 edge black 32 GB",
             "match": {
               "arguments": [
                 {
-                  "val": "Random",
-                  "offset": 22
+                  "val": "S7 edge black 32 GB",
+                  "offset": 20
                 }
               ],
-              "location": "E2EOrderPlaced_Steps.select_any_available_Fitness_tracker(String)"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 8545149599,
-              "status": "passed"
-            },
-            "line": 13,
-            "name": "add FitnessTracker to basket within limit in details page and navigate to basket",
-            "match": {
-              "location": "E2EOrderPlaced_Steps.add_FitnessTracker_to_basket_within_limit_in_details_page_and_navigate_to_basket()"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 3838182064,
-              "status": "passed"
-            },
-            "line": 14,
-            "name": "I Land on the Non Phone related basket page and choose home delivery option",
-            "match": {
-              "location": "E2EOrderPlaced_Steps.NonPhoneRelatedBasketPage()"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 5130830851,
-              "status": "passed"
-            },
-            "comments": [
-              {
-                "line": 15,
-                "value": "# And I click on Continue Shopping link"
-              }
-            ],
-            "line": 16,
-            "name": "click on continue shopping button",
-            "match": {
-              "location": "E2EOrderPlaced_Steps.click_on_continue_shopping_button()"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 18524928377,
-              "status": "passed"
-            },
-            "line": 17,
-            "name": "Navigate to SmartWatches",
-            "match": {
-              "location": "E2EOrderPlaced_Steps.navigate_to_SmartWatches()"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 15325285448,
-              "status": "passed"
-            },
-            "line": 18,
-            "name": "select any available \"Random\" Smartwatch",
-            "match": {
-              "arguments": [
-                {
-                  "val": "Random",
-                  "offset": 22
-                }
-              ],
-              "location": "E2EOrderPlaced_Steps.select_any_available_Smartwatch(String)"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 8451957426,
-              "status": "passed"
-            },
-            "line": 19,
-            "name": "add SmartWatch to basket within limit in details page and navigate to basket",
-            "match": {
-              "location": "E2EOrderPlaced_Steps.add_SmartWatch_to_basket_within_limit_in_details_page_and_navigate_to_basket()"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 4025459288,
-              "status": "passed"
-            },
-            "line": 20,
-            "name": "I Land on the Non Phone related basket page and choose home delivery option",
-            "match": {
-              "location": "E2EOrderPlaced_Steps.NonPhoneRelatedBasketPage()"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 5057794771,
-              "status": "passed"
-            },
-            "line": 21,
-            "name": "Verify all three non connected devices got added to the basket section before selecting connected device",
-            "match": {
-              "location": "E2EOrderPlaced_Steps.verify_non_Connected_device_added_to_basket()"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 5129634820,
-              "status": "passed"
-            },
-            "comments": [
-              {
-                "line": 22,
-                "value": "#And I click on Continue Shopping link"
-              }
-            ],
-            "line": 23,
-            "name": "click on continue shopping button",
-            "match": {
-              "location": "E2EOrderPlaced_Steps.click_on_continue_shopping_button()"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 12726823238,
-              "status": "passed"
-            },
-            "line": 24,
-            "name": "navigate to PAYM Phones page",
-            "match": {
-              "location": "E2EOrderPlaced_Steps.navigate_to_PAYM_Phones_page()"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 1750343218,
-              "status": "passed"
-            },
-            "line": 25,
-            "name": "I choose PayM Iphone7",
-            "match": {
-              "arguments": [
-                {
-                  "val": "Iphone7",
-                  "offset": 14
-                }
-              ],
-              "location": "E2EOrderPlaced_Steps.Choose_PAYM_Handset(String)"
+              "location": "E2EOrderPlaced_Steps.SelectValid_Device(String)"
             },
             "matchedColumns": [
               0
@@ -307,91 +79,110 @@
           },
           {
             "result": {
-              "duration": 22682306786,
+              "duration": 11410755798,
               "status": "passed"
             },
-            "line": 26,
-            "name": "Navigate to device details page",
-            "match": {
-              "location": "E2EOrderPlaced_Steps.Navigate_to_device_details_page()"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 4148168571,
-              "status": "passed"
-            },
-            "line": 27,
-            "name": "Land on the \u0027Tariffs and extra\u0027 page",
-            "match": {
-              "location": "E2EOrderPlaced_Steps.land_on_the_Tariffs_and_extra_page()"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 23706770565,
-              "error_message": "junit.framework.AssertionFailedError: Unable to Land on the basket page and choose home delivery option\r\n\tat junit.framework.Assert.fail(Assert.java:47)\r\n\tat steps.E2EOrderPlaced_Steps.i_Land_on_the_basket_page_and_choose_home_delivery_option(E2EOrderPlaced_Steps.java:720)\r\n\tat ✽.And I Land on the basket page and choose home delivery option(Features/JulyRelease2017/C1669_E11521_TC1_CFA_Add_All_NonConnected_Devices_To_Basket_Followed_By_Adding_A_Phone_Verify_Not_Overridden.feature:28)\r\n",
-              "status": "failed"
-            },
-            "line": 28,
-            "name": "I Land on the basket page and choose home delivery option",
-            "match": {
-              "location": "E2EOrderPlaced_Steps.i_Land_on_the_basket_page_and_choose_home_delivery_option()"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "status": "skipped"
-            },
-            "line": 29,
-            "name": "Verify all three non connected devices are still retained in the basket and not overridden",
-            "match": {
-              "location": "E2EOrderPlaced_Steps.verify_non_Connected_device_ratined_in_basket_after_selecting_connected_device()"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "status": "skipped"
-            },
-            "line": 30,
-            "name": "click on \"go to checkout\" button",
+            "line": 9,
+            "name": "Select valid Random from tariffs tab",
             "match": {
               "arguments": [
                 {
-                  "val": "go to checkout",
-                  "offset": 10
+                  "val": "Random",
+                  "offset": 13
                 }
               ],
-              "location": "E2EOrderPlaced_Steps.CheckoutFromBasket(String)"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "status": "skipped"
-            },
-            "line": 31,
-            "name": "input TEST and ACCEPTA and other valid details in Delivery page and Click on the \u0027Continue button\u0027",
-            "match": {
-              "arguments": [
-                {
-                  "val": "TEST",
-                  "offset": 6
-                },
-                {
-                  "val": "ACCEPTA",
-                  "offset": 15
-                }
-              ],
-              "location": "E2EOrderPlaced_Steps.DeliveryPage_Inputs_homeDelivery(String,String)"
+              "location": "E2EOrderPlaced_Steps.SelectTariff(String)"
             },
             "matchedColumns": [
-              1,
+              1
+            ],
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 24622233361,
+              "status": "passed"
+            },
+            "line": 10,
+            "name": "select a valid Handset and Tariff combination",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.select_a_valid_Handset_and_Tariff_combination()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 6375076028,
+              "status": "passed"
+            },
+            "line": 11,
+            "name": "Select valid Random from extras tab",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Random",
+                  "offset": 13
+                }
+              ],
+              "location": "E2EOrderPlaced_Steps.select_valid_Random_from_extras_tab(String)"
+            },
+            "matchedColumns": [
               2
+            ],
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 15264805147,
+              "status": "passed"
+            },
+            "line": 12,
+            "name": "Validate all the Basket content and checkout",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.validate_all_the_Basket_content_and_checkout()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 40107219226,
+              "error_message": "junit.framework.AssertionFailedError: Unable to perform advisory checks , please see the failure screenshot\r\n\tat junit.framework.Assert.fail(Assert.java:47)\r\n\tat steps.E2EOrderPlaced_Steps.advisory_checks(E2EOrderPlaced_Steps.java:1551)\r\n\tat ✽.Then perform all the advisory checks(Reg_AFA_PAYM_Acquistion.feature:13)\r\n",
+              "status": "failed"
+            },
+            "line": 13,
+            "name": "perform all the advisory checks",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.advisory_checks()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 14,
+            "name": "perform the credit checks using valid Test and Accepta and valid Test Accepta",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Test",
+                  "offset": 38
+                },
+                {
+                  "val": "Accepta",
+                  "offset": 47
+                },
+                {
+                  "val": "Test Accepta",
+                  "offset": 65
+                }
+              ],
+              "location": "E2EOrderPlaced_Steps.CreditCheck(String,String,String)"
+            },
+            "matchedColumns": [
+              4,
+              5,
+              6
             ],
             "keyword": "And "
           },
@@ -399,16 +190,35 @@
             "result": {
               "status": "skipped"
             },
-            "line": 32,
-            "name": "land on the payment page and input TEST ACCEPTA and other details and click \u0027Continue on next step\u0027",
+            "line": 15,
+            "name": "Register customer with valid Test and Accepta and other valid details in delivery page",
             "match": {
               "arguments": [
                 {
-                  "val": "TEST ACCEPTA",
-                  "offset": 35
+                  "val": "Test",
+                  "offset": 29
+                },
+                {
+                  "val": "Accepta",
+                  "offset": 38
                 }
               ],
-              "location": "E2EOrderPlaced_Steps.CreditCheckPaymentPage_HomeDelivery(String)"
+              "location": "E2EOrderPlaced_Steps.register_customer(String,String)"
+            },
+            "matchedColumns": [
+              4,
+              5
+            ],
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 16,
+            "name": "Choose HomeDelivery delivery address and delivery time",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.HomeDelivery_Address()"
             },
             "matchedColumns": [
               3
@@ -419,42 +229,1105 @@
             "result": {
               "status": "skipped"
             },
-            "line": 33,
-            "name": "Continue to Agreements page and confirm all the agreement checks",
+            "line": 17,
+            "name": "Pay by card for PAYM device",
             "match": {
-              "location": "E2EOrderPlaced_Steps.AgreementsPageConfirmation()"
+              "location": "E2EOrderPlaced_Steps.pay_by_card_payn_device()"
             },
-            "keyword": "And "
+            "keyword": "When "
           },
           {
             "result": {
               "status": "skipped"
             },
-            "line": 34,
-            "name": "Continue to Review page and review the order",
+            "line": 18,
+            "name": "Order confirmation message should be displayed",
             "match": {
-              "location": "E2EOrderPlaced_Steps.ReviewPageConfirmation()"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "status": "skipped"
-            },
-            "line": 35,
-            "name": "order confirmation is displayed",
-            "match": {
-              "location": "E2EOrderPlaced_Steps.OrderConfirmationPage()"
+              "location": "E2EOrderPlaced_Steps.order_confirmation_message_should_be_displayed()"
             },
             "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "line": 4,
+            "name": "@AgentsRegression"
           }
         ]
       }
     ],
-    "name": "C1669_E11521_TC1_CFA_Add_All_NonConnected_Devices_To_Basket_Followed_By_Adding_A_Phone_Verify_Not_Overridden",
+    "name": "Reg_AFA_PAYM_Acquistion",
     "description": "",
-    "id": "c1669-e11521-tc1-cfa-add-all-nonconnected-devices-to-basket-followed-by-adding-a-phone-verify-not-overridden",
+    "id": "reg-afa-paym-acquistion",
     "keyword": "Feature",
-    "uri": "Features/JulyRelease2017/C1669_E11521_TC1_CFA_Add_All_NonConnected_Devices_To_Basket_Followed_By_Adding_A_Phone_Verify_Not_Overridden.feature"
+    "uri": "Reg_AFA_PAYM_Acquistion.feature"
+  },
+  {
+    "line": 1,
+    "elements": [
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 41726900558,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Hooks.openBrowser()"
+            }
+          }
+        ],
+        "line": 19,
+        "name": "Successful completion of a PAY G handset acquisition Journey without an accessory",
+        "description": "",
+        "id": "reg-afa-payg-withoutanyaccessory;successful-completion-of-a-pay-g-handset-acquisition-journey-without-an-accessory;;2",
+        "after": [
+          {
+            "result": {
+              "duration": 13312014429,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Hooks.embedScreenshot(Scenario)"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 5293154624,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "I login to Agent shop",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.LoginAgentShop()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 10401480079,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "performs Acquisition for New user",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.performs_Acquisition_for_New_user()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 19693060047,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "Select a valid PAYG iPhone 7 Plus 128GB Jet Black",
+            "match": {
+              "arguments": [
+                {
+                  "val": "iPhone 7 Plus 128GB Jet Black",
+                  "offset": 20
+                }
+              ],
+              "location": "E2EOrderPlaced_Steps.select_a_valid_PAYG_S_edge_black_GB(String)"
+            },
+            "matchedColumns": [
+              0
+            ],
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 8488977613,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "Select valid Random from PAYG tariffs tab",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Random",
+                  "offset": 13
+                }
+              ],
+              "location": "E2EOrderPlaced_Steps.select_valid_Months_from_PAYG_tariffs_tab(String)"
+            },
+            "matchedColumns": [
+              1
+            ],
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 15280965427,
+              "status": "passed"
+            },
+            "line": 10,
+            "name": "Validate all the Basket content and checkout",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.validate_all_the_Basket_content_and_checkout()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 9208946605,
+              "status": "passed"
+            },
+            "line": 11,
+            "name": "perform all the advisory checks",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.advisory_checks()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 28118321642,
+              "status": "passed"
+            },
+            "line": 12,
+            "name": "Register customer with valid TEST and ACCEPTA and other valid details in delivery page",
+            "match": {
+              "arguments": [
+                {
+                  "val": "TEST",
+                  "offset": 29
+                },
+                {
+                  "val": "ACCEPTA",
+                  "offset": 38
+                }
+              ],
+              "location": "E2EOrderPlaced_Steps.register_customer(String,String)"
+            },
+            "matchedColumns": [
+              3,
+              4
+            ],
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 87526,
+              "status": "passed"
+            },
+            "line": 13,
+            "name": "Choose HomeDelivery delivery address and delivery time",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.HomeDelivery_Address()"
+            },
+            "matchedColumns": [
+              2
+            ],
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 82569608415,
+              "status": "passed"
+            },
+            "line": 14,
+            "name": "Pay by card",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.pay_by_card()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 40237367399,
+              "error_message": "java.lang.AssertionError: Payment didnt go through, and the text in the screen is Status: Card payment has been unsuccessful.\nTry again\r\n\tat org.testng.Assert.fail(Assert.java:93)\r\n\tat actionsPerformed.Agent_ConfirmationPageActions.confirmation(Agent_ConfirmationPageActions.java:69)\r\n\tat actionsPerformed.Agent_ConfirmationPageActions.Confirmationdetails(Agent_ConfirmationPageActions.java:51)\r\n\tat steps.E2EOrderPlaced_Steps.order_confirmation_message_should_be_displayed(E2EOrderPlaced_Steps.java:1676)\r\n\tat ✽.Then Order confirmation message should be displayed(Reg_AFA_PayG_withoutAnyAccessory.feature:15)\r\n",
+              "status": "failed"
+            },
+            "line": 15,
+            "name": "Order confirmation message should be displayed",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.order_confirmation_message_should_be_displayed()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "line": 4,
+            "name": "@AgentsRegression"
+          }
+        ]
+      }
+    ],
+    "name": "Reg_AFA_PayG_withoutAnyAccessory",
+    "description": "",
+    "id": "reg-afa-payg-withoutanyaccessory",
+    "keyword": "Feature",
+    "uri": "Reg_AFA_PayG_withoutAnyAccessory.feature"
+  },
+  {
+    "line": 1,
+    "elements": [
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 43627495450,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Hooks.openBrowser()"
+            }
+          }
+        ],
+        "line": 19,
+        "name": "Successful completion of a PAY M SIMO acquisition Journey without an accessory",
+        "description": "",
+        "id": "reg-afa-paymsimo-withoutanyaccessory;successful-completion-of-a-pay-m-simo-acquisition-journey-without-an-accessory;;2",
+        "after": [
+          {
+            "result": {
+              "duration": 13006345628,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Hooks.embedScreenshot(Scenario)"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 5955529550,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "I login to Agent shop",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.LoginAgentShop()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 18709220732,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "performs Acquisition for New user",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.performs_Acquisition_for_New_user()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 21409434806,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "Select valid SimO from tariffs tab",
+            "match": {
+              "arguments": [
+                {
+                  "val": "SimO",
+                  "offset": 13
+                }
+              ],
+              "location": "E2EOrderPlaced_Steps.SelectTariff(String)"
+            },
+            "matchedColumns": [
+              0
+            ],
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 15612071037,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "Validate all the Basket content and checkout",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.validate_all_the_Basket_content_and_checkout()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 9276573328,
+              "status": "passed"
+            },
+            "line": 10,
+            "name": "perform all the advisory checks",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.advisory_checks()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 122919408098,
+              "status": "passed"
+            },
+            "line": 11,
+            "name": "perform the credit checks using valid Test and Accepta and valid Test Accepta",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Test",
+                  "offset": 38
+                },
+                {
+                  "val": "Accepta",
+                  "offset": 47
+                },
+                {
+                  "val": "Test Accepta",
+                  "offset": 65
+                }
+              ],
+              "location": "E2EOrderPlaced_Steps.CreditCheck(String,String,String)"
+            },
+            "matchedColumns": [
+              2,
+              3,
+              4
+            ],
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 20347118798,
+              "error_message": "junit.framework.AssertionFailedError: Unable to Register customer , please see the failure screenshot\r\n\tat junit.framework.Assert.fail(Assert.java:47)\r\n\tat steps.E2EOrderPlaced_Steps.register_customer(E2EOrderPlaced_Steps.java:1601)\r\n\tat ✽.And Register customer with valid Test and Accepta and other valid details in delivery page(Reg_AFA_PayMSimO_withoutAnyAccessory.feature:12)\r\n",
+              "status": "failed"
+            },
+            "line": 12,
+            "name": "Register customer with valid Test and Accepta and other valid details in delivery page",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Test",
+                  "offset": 29
+                },
+                {
+                  "val": "Accepta",
+                  "offset": 38
+                }
+              ],
+              "location": "E2EOrderPlaced_Steps.register_customer(String,String)"
+            },
+            "matchedColumns": [
+              2,
+              3
+            ],
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 13,
+            "name": "Choose HomeDelivery delivery address and delivery time",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.HomeDelivery_Address()"
+            },
+            "matchedColumns": [
+              1
+            ],
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 14,
+            "name": "Pay by card",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.pay_by_card()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 15,
+            "name": "Order confirmation message should be displayed",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.order_confirmation_message_should_be_displayed()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "line": 4,
+            "name": "@AgentsRegression"
+          }
+        ]
+      }
+    ],
+    "name": "Reg_AFA_PayMSimO_withoutAnyAccessory",
+    "description": "",
+    "id": "reg-afa-paymsimo-withoutanyaccessory",
+    "keyword": "Feature",
+    "uri": "Reg_AFA_PayMSimO_withoutAnyAccessory.feature"
+  },
+  {
+    "line": 1,
+    "elements": [
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 43512964571,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Hooks.openBrowser()"
+            }
+          }
+        ],
+        "line": 21,
+        "name": "Successful completion of a Tablet Journey",
+        "description": "",
+        "id": "reg-afa-tablet;successful-completion-of-a-tablet-journey;;2",
+        "after": [
+          {
+            "result": {
+              "duration": 14740869448,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Hooks.embedScreenshot(Scenario)"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 6265218870,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "I login to Agent shop",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.LoginAgentShop()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 15074023002,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "performs Acquisition for New user",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.performs_Acquisition_for_New_user()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 7078817476,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "Select a valid PayM tablet",
+            "match": {
+              "arguments": [
+                {
+                  "val": "tablet",
+                  "offset": 20
+                }
+              ],
+              "location": "E2EOrderPlaced_Steps.SelectValid_Device(String)"
+            },
+            "matchedColumns": [
+              0
+            ],
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 11584738239,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "Select valid Random from tariffs tab",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Random",
+                  "offset": 13
+                }
+              ],
+              "location": "E2EOrderPlaced_Steps.SelectTariff(String)"
+            },
+            "matchedColumns": [
+              1
+            ],
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 4325345920,
+              "status": "passed"
+            },
+            "line": 10,
+            "name": "select a valid Handset and Tariff combination",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.select_a_valid_Handset_and_Tariff_combination()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 15277813684,
+              "status": "passed"
+            },
+            "line": 11,
+            "name": "Validate all the Basket content and checkout",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.validate_all_the_Basket_content_and_checkout()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 9159523243,
+              "status": "passed"
+            },
+            "line": 12,
+            "name": "perform all the advisory checks",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.advisory_checks()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 119376614620,
+              "status": "passed"
+            },
+            "line": 13,
+            "name": "perform the credit checks using valid Test and Accepta and valid Test Accepta",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Test",
+                  "offset": 38
+                },
+                {
+                  "val": "Accepta",
+                  "offset": 47
+                },
+                {
+                  "val": "Test Accepta",
+                  "offset": 65
+                }
+              ],
+              "location": "E2EOrderPlaced_Steps.CreditCheck(String,String,String)"
+            },
+            "matchedColumns": [
+              4,
+              5,
+              6
+            ],
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 20398685734,
+              "error_message": "junit.framework.AssertionFailedError: Unable to Register customer , please see the failure screenshot\r\n\tat junit.framework.Assert.fail(Assert.java:47)\r\n\tat steps.E2EOrderPlaced_Steps.register_customer(E2EOrderPlaced_Steps.java:1601)\r\n\tat ✽.And Register customer with valid Test and Accepta and other valid details in delivery page(Reg_AFA_Tablet.feature:14)\r\n",
+              "status": "failed"
+            },
+            "line": 14,
+            "name": "Register customer with valid Test and Accepta and other valid details in delivery page",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Test",
+                  "offset": 29
+                },
+                {
+                  "val": "Accepta",
+                  "offset": 38
+                }
+              ],
+              "location": "E2EOrderPlaced_Steps.register_customer(String,String)"
+            },
+            "matchedColumns": [
+              4,
+              5
+            ],
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 15,
+            "name": "Choose HomeDelivery delivery address and delivery time",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.HomeDelivery_Address()"
+            },
+            "matchedColumns": [
+              3
+            ],
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 16,
+            "name": "Update Device Plan Link Email Address",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.updatedeviceplan()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 17,
+            "name": "CCALink Should be generated",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.ccaLink()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "line": 4,
+            "name": "@AgentsRegression"
+          }
+        ]
+      }
+    ],
+    "name": "Reg_AFA_Tablet",
+    "description": "",
+    "id": "reg-afa-tablet",
+    "keyword": "Feature",
+    "uri": "Reg_AFA_Tablet.feature"
+  },
+  {
+    "line": 1,
+    "elements": [
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 35702524190,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Hooks.openBrowser()"
+            }
+          }
+        ],
+        "line": 21,
+        "name": "Successful completion of a PAY M dongle Acqusistion Journey",
+        "description": "",
+        "id": "reg-afu-paym-dongle;successful-completion-of-a-pay-m-dongle-acqusistion-journey;;2",
+        "after": [
+          {
+            "result": {
+              "duration": 41448799984,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Hooks.embedScreenshot(Scenario)"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 4655915433,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "I login to Agent shop",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.LoginAgentShop()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 18276008868,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "performs Acquisition for New user",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.performs_Acquisition_for_New_user()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 7682280179,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "Select a valid PayM dongle",
+            "match": {
+              "arguments": [
+                {
+                  "val": "dongle",
+                  "offset": 20
+                }
+              ],
+              "location": "E2EOrderPlaced_Steps.SelectValid_Device(String)"
+            },
+            "matchedColumns": [
+              0
+            ],
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 11381653032,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "Select valid Random from tariffs tab",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Random",
+                  "offset": 13
+                }
+              ],
+              "location": "E2EOrderPlaced_Steps.SelectTariff(String)"
+            },
+            "matchedColumns": [
+              1
+            ],
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 4364122729,
+              "status": "passed"
+            },
+            "line": 10,
+            "name": "select a valid Handset and Tariff combination",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.select_a_valid_Handset_and_Tariff_combination()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 15320484180,
+              "status": "passed"
+            },
+            "line": 11,
+            "name": "Validate all the Basket content and checkout",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.validate_all_the_Basket_content_and_checkout()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 9260751807,
+              "status": "passed"
+            },
+            "line": 12,
+            "name": "perform all the advisory checks",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.advisory_checks()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 123081165278,
+              "status": "passed"
+            },
+            "line": 13,
+            "name": "perform the credit checks using valid Test and Accepta and valid Test Accepta",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Test",
+                  "offset": 38
+                },
+                {
+                  "val": "Accepta",
+                  "offset": 47
+                },
+                {
+                  "val": "Test Accepta",
+                  "offset": 65
+                }
+              ],
+              "location": "E2EOrderPlaced_Steps.CreditCheck(String,String,String)"
+            },
+            "matchedColumns": [
+              4,
+              5,
+              6
+            ],
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 20373210025,
+              "error_message": "junit.framework.AssertionFailedError: Unable to Register customer , please see the failure screenshot\r\n\tat junit.framework.Assert.fail(Assert.java:47)\r\n\tat steps.E2EOrderPlaced_Steps.register_customer(E2EOrderPlaced_Steps.java:1601)\r\n\tat ✽.And Register customer with valid Test and Accepta and other valid details in delivery page(Reg_AFU_PAYM_Dongle.feature:14)\r\n",
+              "status": "failed"
+            },
+            "line": 14,
+            "name": "Register customer with valid Test and Accepta and other valid details in delivery page",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Test",
+                  "offset": 29
+                },
+                {
+                  "val": "Accepta",
+                  "offset": 38
+                }
+              ],
+              "location": "E2EOrderPlaced_Steps.register_customer(String,String)"
+            },
+            "matchedColumns": [
+              4,
+              5
+            ],
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 15,
+            "name": "Choose HomeDelivery delivery address and delivery time",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.HomeDelivery_Address()"
+            },
+            "matchedColumns": [
+              3
+            ],
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 16,
+            "name": "Update Device Plan Link Email Address",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.updatedeviceplan()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 17,
+            "name": "CCALink Should be generated",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.ccaLink()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "line": 4,
+            "name": "@AgentsRegression"
+          }
+        ]
+      }
+    ],
+    "name": "Reg_AFU_PAYM_Dongle",
+    "description": "",
+    "id": "reg-afu-paym-dongle",
+    "keyword": "Feature",
+    "uri": "Reg_AFU_PAYM_Dongle.feature"
+  },
+  {
+    "line": 1,
+    "elements": [
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 38279535837,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Hooks.openBrowser()"
+            }
+          }
+        ],
+        "line": 17,
+        "name": "AFU_Saved Basket functionality",
+        "description": "",
+        "id": "reg-afu-savedbasket;afu-saved-basket-functionality;;2",
+        "after": [
+          {
+            "result": {
+              "duration": 13233094838,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Hooks.embedScreenshot(Scenario)"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 7081465540,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "I login to Agent shop",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.LoginAgentShop()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 28644617299,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "performs Upgrade for 07521113738",
+            "match": {
+              "arguments": [
+                {
+                  "val": "07521113738",
+                  "offset": 21
+                }
+              ],
+              "location": "E2EOrderPlaced_Steps.performs_Upgrade(String)"
+            },
+            "matchedColumns": [
+              0
+            ],
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 12381220265,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "Select valid Refresh from tariffs tab",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Refresh",
+                  "offset": 13
+                }
+              ],
+              "location": "E2EOrderPlaced_Steps.SelectTariff(String)"
+            },
+            "matchedColumns": [
+              2
+            ],
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 9603828610,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "Select a valid PayM Random",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Random",
+                  "offset": 20
+                }
+              ],
+              "location": "E2EOrderPlaced_Steps.SelectValid_Device(String)"
+            },
+            "matchedColumns": [
+              1
+            ],
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 24037187971,
+              "status": "passed"
+            },
+            "line": 10,
+            "name": "select a valid Handset and Tariff combination",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.select_a_valid_Handset_and_Tariff_combination()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 27937912937,
+              "error_message": "junit.framework.AssertionFailedError: Unable to email basket, please see the failure screenshot\r\n\tat junit.framework.Assert.fail(Assert.java:47)\r\n\tat steps.E2EOrderPlaced_Steps.choose_to_email_basket_to_save_the_basket(E2EOrderPlaced_Steps.java:1429)\r\n\tat ✽.And choose to email basket to save the basket(Reg_AFU_SavedBasket.feature:12)\r\n",
+              "status": "failed"
+            },
+            "comments": [
+              {
+                "line": 11,
+                "value": "# And Select a valid Accessory \u003cDevice\u003e"
+              }
+            ],
+            "line": 12,
+            "name": "choose to email basket to save the basket",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.choose_to_email_basket_to_save_the_basket()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 13,
+            "name": "Verify email is sent successfully",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.verifyEmailSentConfirmation()"
+            },
+            "keyword": "And "
+          }
+        ],
+        "tags": [
+          {
+            "line": 4,
+            "name": "@AgentsRegression"
+          }
+        ]
+      }
+    ],
+    "name": "Reg_AFU_SavedBasket",
+    "description": "",
+    "id": "reg-afu-savedbasket",
+    "keyword": "Feature",
+    "uri": "Reg_AFU_SavedBasket.feature"
   }
 ]

@@ -579,7 +579,7 @@ static	Logger log = Logger.getLogger("devpinoyLogger");
 	    	{
 			  	
 			  System.out.println("Performing Fitness tracker navigations");
-			  log.debug("Performing Accessories navigations");
+			  log.debug("Performing Fitness navigations");
 			  
 			  driver.navigate().refresh();
 			  Thread.sleep(5000);
@@ -642,9 +642,11 @@ static	Logger log = Logger.getLogger("devpinoyLogger");
 			  
 			  Point coordinates = pageobjects.MouseHoverPage.MoveMouseOnShopTab.getLocation();
 	   		  Robot robot = new Robot();
-	   		  robot.mouseMove(coordinates.getX(),coordinates.getY()+120);
+	   		  robot.mouseMove(coordinates.getX(),coordinates.getY()+110);
 	   		 		  
 	   		  Actions action = new Actions(driver);
+	   		 // action.moveToElement(pageobjects.MouseHoverPage.MoveMouseOnShopTab).build().perform();
+
 	   		  action.moveToElement(pageobjects.MouseHoverPage.MoveMouseOnAccessoriesTab).build().perform();
 	   		  Thread.sleep(2000);
 	   		  action.moveToElement(pageobjects.MouseHoverPage.MoveMouseOnAllAccessories).build().perform();

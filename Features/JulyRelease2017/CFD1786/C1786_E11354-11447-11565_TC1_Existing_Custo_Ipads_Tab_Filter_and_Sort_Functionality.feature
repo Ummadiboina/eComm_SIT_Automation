@@ -6,6 +6,7 @@ Feature: C1786_E11354-11447-11565_TC1_Existing_Custo_Ipads_Tab_Filter_and_Sort_F
     Given I am existing user and I click on Signin button
     And Signin using valid <username> and <password> credentials
     And I navigate to the Basecomm Page
+    And Click on iPad tab
     And Verify the contents of the iPad section in the landing page
     #Verify URL is iPad specific
     And Verify the current sort order details <sort option>

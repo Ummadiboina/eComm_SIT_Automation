@@ -20,5 +20,9 @@ public class SmartwatchesPage{
 		
 		@FindBy(how = How.XPATH, using = "//a[contains(@href, '/shop/smartwatches/samsung/gear-s2/#contractType=nonconnected')]")
 		public static WebElement SamsungGearS2;
+		
+		@FindBy(how = How.XPATH, using = "//a[contains(@href, '/shop/smartwatches/samsung/galaxy-gear/#contractType=nonconnected')]")
+		public static WebElement SamsungGalaxyGear;
+
 
 }

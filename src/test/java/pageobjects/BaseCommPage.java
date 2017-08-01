@@ -42,7 +42,7 @@ public class BaseCommPage {
 	@FindBy(how = How.XPATH, using = ("//a[@href='changeTariff/']"))
 	public static WebElement ChooseADifferentTariff;
 
-	@FindAll({ @FindBy(how = How.XPATH, using = "//div[@class='grid']//img") })
+	@FindAll({ @FindBy(how = How.XPATH, using = "//div[@data-qa-device-brand='apple']/div/img") })
 	public static List<WebElement> ImgSrc;
 
 	@FindAll({ @FindBy(how = How.XPATH, using = "//div[@class='device-title']/div/h2") })
@@ -87,7 +87,7 @@ public class BaseCommPage {
 	@FindBy(how = How.ID, using = ("header-primary"))
 	public static WebElement headerofTariffandExtrasPage;
 
-	@FindBy(how = How.XPATH, using = ("//*[@data-qa-device-model-family='iPad Air 2']/div[@class='ribbon-wrapper']"))
+	@FindBy(how = How.XPATH, using = ("//div[@class='ribbon-wrapper']"))
 	public static WebElement DeviceRibbon;
 
 	@FindBy(how = How.XPATH, using = ("//*[@data-qa-device-model-family='iPad mini 3']/div[1]/div[2]/div[1]/div[2]/div[2]/select[@id='memory']"))
