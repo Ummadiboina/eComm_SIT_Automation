@@ -2173,6 +2173,7 @@ public class E2EOrderPlaced_Steps {
 		try {
 			PageFactory.initElements(driver, PaymentPage.class);
 			PageFactory.initElements(driver, DeliveryPage.class);
+			Thread.sleep(5000);
 			DeliveryPageActions.ClickContinue();
 			Thread.sleep(2000);
 			PaymentPageActions.Time_At_Address();
@@ -3325,10 +3326,12 @@ public class E2EOrderPlaced_Steps {
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		try {
 			PageFactory.initElements(driver, BaseCommPage.class);
+			PageFactory.initElements(driver, PAYMandPAYGTariffAndExtrasPage.class);
 			BaseCommPageActions.BuynowwithDevice(device_name);
 			BaseCommPageActions.VerifyPage();
 			BaseCommPageActions.verifyTariffType("Basecomm");
 		} catch (Exception e) {
+			e.printStackTrace();
 			Assert.fail("Unable to select device and verify tariff and extras page");
 
 		}
@@ -3391,26 +3394,27 @@ public class E2EOrderPlaced_Steps {
 	}
 
 	@And("^Verify new image is as per the selected ([^\"]*),([^\"]*)and ([^\"]*) in the Basecomms page$")
-	public void Verify_new_image_is_as_per_the_selected_device_name_capacity_and_color_in_the_Basecomms_page(
-			String devicename) throws Throwable {
+	public void Verify_new_image_is_as_per_the_selected_device_name_capacity_and_color_in_the_Basecomms_page(String devicename, String capacity, String color) throws Throwable {
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		try {
 			PageFactory.initElements(driver, BaseCommPage.class);
-			PhonesListingPageAction.checkImgSrcBasecommPage(devicename);
+			PageFactory.initElements(driver, ConnectedDeviceDetailsPage.class);
+			PhonesListingPageAction.checkImgSrcBasecommPage(devicename,capacity,color);
 
 		} catch (Exception e) {
 			e.printStackTrace();
-			Assert.fail("Unable to click on the Sort tab and reset sort");
+			Assert.fail("Unable to Verify new image");
 		}
 	}
 
 	@And("^Verify new image is as per the selected ([^\"]*),([^\"]*)and ([^\"]*) in the Tariffs and Extras Page$")
-	public void Verify_new_image_is_as_per_the_selected_device_name_capacity_and_color_in_the_TE_page(String devicename)
+	public void Verify_new_image_is_as_per_the_selected_device_name_capacity_and_color_in_the_TE_page(String devicename, String capacity, String color)
 			throws Throwable {
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		try {
 			PageFactory.initElements(driver, BaseCommPage.class);
-			PhonesListingPageAction.checkImgSrcTEPage(devicename);
+			PageFactory.initElements(driver, ConnectedDeviceDetailsPage.class);
+			PhonesListingPageAction.checkImgSrcTEPage(devicename,capacity,color);
 
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -3425,6 +3429,7 @@ public class E2EOrderPlaced_Steps {
 		try {
 			PageFactory.initElements(driver, BaseCommPage.class);
 			PhonesListingPageAction.clickChooseADifferentTariff();
+			Thread.sleep(3000);
 			PhonesListingPageAction.checkUserNavigatedTEPage();
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -3518,12 +3523,12 @@ public class E2EOrderPlaced_Steps {
 		}
 	}
 
-	@And("^Verify that promotion ribbon is displayed$")
-	public void verifypromotionribbonDisplay() {
+	@And("^Verify that promotion ribbon is displayed for ([^\"]*)$")
+	public void verifypromotionribbonDisplay(String device) {
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		try {
 			PageFactory.initElements(driver, BaseCommPage.class);
-			BaseCommPageActions.VerifyRibbon();
+			BaseCommPageActions.VerifyRibbon(device);
 
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -3868,7 +3873,7 @@ public class E2EOrderPlaced_Steps {
           try {
                 driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
                 PageFactory.initElements(driver, BaseCommPage.class);
-                BaseCommPageActions.selectNewDevice(device, color, capacity);
+                BaseCommPageActions.selectNewDevice(color,capacity,device);
           } catch (Exception e) {
   			e.printStackTrace();
   			System.out.println("Failed : Select <color>, <capacity> of the device <device_name>");

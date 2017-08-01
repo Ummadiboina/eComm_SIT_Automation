@@ -15,7 +15,7 @@ import com.github.mkolisnyk.cucumber.reporting.CucumberResultsOverview;
 
 import cucumber.api.CucumberOptions;
 
-@CucumberOptions(strict = true, features = { "Features//RegressionPack_Master//Reg_AFA_PAYM_Acquistion.feature" }, glue = { "steps" },
+@CucumberOptions(strict = true, features = { "Features//JulyRelease2017//CFD1786" }, glue = { "steps" },
 
 		tags = {}, format = { "json:testResult/cucumber.json", "pretty", "html:testResult/report" }, plugin = {
 				"com.cucumber.listener.ExtentCucumberFormatter" })
@@ -50,7 +50,7 @@ public class RunnerTest {
 
 			// Creates the Detailed Result
 			CucumberDetailedResults results = new CucumberDetailedResults();
-			results.setOutputDirectory("testResult\\cucumber_detailed_result\\");
+			results.setOutputDirectory("testResult\\cucumber_detailed_result_new\\");
 			results.setOutputName("cucumber-results" + timestamp());
 			results.setSourceFile("testResult\\cucumber.json");
 			results.executeDetailedResultsReport(false, false);
