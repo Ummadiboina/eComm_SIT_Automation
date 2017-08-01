@@ -145,10 +145,16 @@ public class BasketPageActions extends Environment {
 	}
 
 	public static void ValidateBasketPageContents() throws InterruptedException {
-
+		boolean fname = false;
 		log.debug("Shop basket pages validations" + driver.getTitle());
+		System.out.println("Shop basket pages validations" + driver.getTitle());
 
-		boolean fname = pageobjects.BasketPage.checkoutbtn.isEnabled();
+		// boolean fname = pageobjects.BasketPage.checkoutbtn.isEnabled();
+		if (pageobjects.BasketPage.checkoutbtn.isDisplayed()) {
+			if (pageobjects.BasketPage.checkoutbtn.isEnabled()) {
+				fname = true;
+			}
+		}
 		System.out.print(fname);
 
 		if (fname != false) {
@@ -173,8 +179,8 @@ public class BasketPageActions extends Environment {
 		System.out.println("The Phone contents are : " + pageobjects.BasketPage.DeviceDetailsDisplay.getText());
 		log.debug("The Basket Totals are : " + pageobjects.BasketPage.totals.getText());
 		System.out.println("The Basket Totals are : " + pageobjects.BasketPage.totals.getText());
-		log.debug("The Basket Totals are : " + pageobjects.BasketPage.HomeDeliveryText.getText());
-		System.out.println("The Basket Totals are : " + pageobjects.BasketPage.HomeDeliveryText.getText());
+		log.debug("The Home Delivery Text is : " + pageobjects.BasketPage.HomeDeliveryText.getText());
+		System.out.println("The Home Delivery Text is : " + pageobjects.BasketPage.HomeDeliveryText.getText());
 	}
 
 	public static void BasketContentsforNonConnected() throws InterruptedException {
@@ -259,11 +265,10 @@ public class BasketPageActions extends Environment {
 	public static void CollectionorDelivery(String elementName) throws InterruptedException {
 
 		if (elementName.contains("homeDelivery")) {
-			System.out.println("HomeDelivery is Selected");
-
 			pageobjects.BasketPage.HomeDeliverySelect.click();
 			// Assert.assertEquals(elementName,"Galaxy S7 is not found");
 			log.debug("HomeDelivery is Selected");
+			System.out.println("HomeDelivery is Selected");
 
 		}
 		if (elementName.contains("clickAndCollect")) {
@@ -404,8 +409,7 @@ public class BasketPageActions extends Environment {
 	 * List<WebElement> MyDevices = pageobjects.BasketPage.DevicesList;
 	 * 
 	 * List<WebElement> MyConnDevices = pageobjects.BasketPage.MyConnDevices;
-	 * List<WebElement> MyNonConnDevices =
-	 * pageobjects.BasketPage.MyNonConnDevices;
+	 * List<WebElement> MyNonConnDevices = pageobjects.BasketPage.MyNonConnDevices;
 	 * 
 	 * List<String> DisplayedDevices = new ArrayList<>(); List<String>
 	 * SelectedDevices = new ArrayList<>();
@@ -413,9 +417,8 @@ public class BasketPageActions extends Environment {
 	 * SelectedDevices.add(dev1); SelectedDevices.add(dev2);
 	 * SelectedDevices.add(dev3);
 	 * 
-	 * System.out.println("1" + SelectedDevices.get(0)); System.out.println("2"
-	 * + SelectedDevices.get(1)); System.out.println("3" +
-	 * SelectedDevices.get(2));
+	 * System.out.println("1" + SelectedDevices.get(0)); System.out.println("2" +
+	 * SelectedDevices.get(1)); System.out.println("3" + SelectedDevices.get(2));
 	 * 
 	 * System.out.println("Conn size" + MyConnDevices.size());
 	 * System.out.println("Non Conn size" + MyNonConnDevices.size());
@@ -423,31 +426,28 @@ public class BasketPageActions extends Environment {
 	 * if (MyNonConnDevices.size() != 0) { for (int i = 0; i <
 	 * MyNonConnDevices.size(); i++) {
 	 * DisplayedDevices.add(MyNonConnDevices.get(i).getText());
-	 * System.out.println("Non Conn added"); } } if (MyConnDevices.size() != 0)
-	 * { for (int i = 0; i < MyConnDevices.size(); i++) {
+	 * System.out.println("Non Conn added"); } } if (MyConnDevices.size() != 0) {
+	 * for (int i = 0; i < MyConnDevices.size(); i++) {
 	 * DisplayedDevices.add(MyConnDevices.get(i).getText());
 	 * System.out.println("Conn dev added"); } } if
 	 * (DisplayedDevices.containsAll(SelectedDevices)) {
 	 * System.out.println("Selected devices are in basket"); } else { for(int
 	 * k=0;k>DisplayedDevices.size();k++) {
-	 * System.out.println("Devices in basket are : " + '\n'+
-	 * DisplayedDevices.get(k) +'\n'); }
-	 * Assert.fail("Selected devices are not in basket"); } }
+	 * System.out.println("Devices in basket are : " + '\n'+ DisplayedDevices.get(k)
+	 * +'\n'); } Assert.fail("Selected devices are not in basket"); } }
 	 * 
 	 * public static void verifyDevicesInBasket(String dev1, String dev2) {
 	 * 
 	 * List<WebElement> MyDevices = pageobjects.BasketPage.DevicesList;
 	 * 
 	 * List<WebElement> MyConnDevices = pageobjects.BasketPage.MyConnDevices;
-	 * List<WebElement> MyNonConnDevices =
-	 * pageobjects.BasketPage.MyNonConnDevices;
+	 * List<WebElement> MyNonConnDevices = pageobjects.BasketPage.MyNonConnDevices;
 	 * 
 	 * List<String> DisplayedDevices = new ArrayList<>(); List<String>
 	 * SelectedDevices = new ArrayList<>();
 	 * 
-	 * SelectedDevices.add(dev1); SelectedDevices.add(dev2);
-	 * System.out.println("1" + SelectedDevices.get(0)); System.out.println("2"
-	 * + SelectedDevices.get(1));
+	 * SelectedDevices.add(dev1); SelectedDevices.add(dev2); System.out.println("1"
+	 * + SelectedDevices.get(0)); System.out.println("2" + SelectedDevices.get(1));
 	 * 
 	 * System.out.println("Conn size" + MyConnDevices.size());
 	 * System.out.println("Non Conn size" + MyNonConnDevices.size());
@@ -455,24 +455,22 @@ public class BasketPageActions extends Environment {
 	 * if (MyNonConnDevices.size() != 0) { for (int i = 0; i <
 	 * MyNonConnDevices.size(); i++) {
 	 * DisplayedDevices.add(MyNonConnDevices.get(i).getText());
-	 * System.out.println("Non Conn added"); } } if (MyConnDevices.size() != 0)
-	 * { for (int i = 0; i < MyConnDevices.size(); i++) {
+	 * System.out.println("Non Conn added"); } } if (MyConnDevices.size() != 0) {
+	 * for (int i = 0; i < MyConnDevices.size(); i++) {
 	 * DisplayedDevices.add(MyConnDevices.get(i).getText());
 	 * System.out.println("Conn dev added"); } } if
 	 * (DisplayedDevices.containsAll(SelectedDevices)) {
 	 * System.out.println("Selected devices are in basket"); } else { for(int
 	 * k=0;k>DisplayedDevices.size();k++) {
-	 * System.out.println("Devices in basket are : " + '\n'+
-	 * DisplayedDevices.get(k) +'\n'); }
-	 * Assert.fail("Selected devices are not in basket"); } }
+	 * System.out.println("Devices in basket are : " + '\n'+ DisplayedDevices.get(k)
+	 * +'\n'); } Assert.fail("Selected devices are not in basket"); } }
 	 * 
 	 * public static void verifyDevicesInBasket(String dev1) {
 	 * 
 	 * List<WebElement> MyDevices = pageobjects.BasketPage.DevicesList;
 	 * 
 	 * List<WebElement> MyConnDevices = pageobjects.BasketPage.MyConnDevices;
-	 * List<WebElement> MyNonConnDevices =
-	 * pageobjects.BasketPage.MyNonConnDevices;
+	 * List<WebElement> MyNonConnDevices = pageobjects.BasketPage.MyNonConnDevices;
 	 * 
 	 * List<String> DisplayedDevices = new ArrayList<>(); List<String>
 	 * SelectedDevices = new ArrayList<>();
@@ -482,16 +480,15 @@ public class BasketPageActions extends Environment {
 	 * if (MyNonConnDevices.size() != 0) { for (int i = 0; i <
 	 * MyNonConnDevices.size(); i++) {
 	 * DisplayedDevices.add(MyNonConnDevices.get(i).getText());
-	 * System.out.println("Non Conn added"); } } if (MyConnDevices.size() != 0)
-	 * { for (int i = 0; i < MyConnDevices.size(); i++) {
+	 * System.out.println("Non Conn added"); } } if (MyConnDevices.size() != 0) {
+	 * for (int i = 0; i < MyConnDevices.size(); i++) {
 	 * DisplayedDevices.add(MyConnDevices.get(i).getText());
 	 * System.out.println("Conn dev added"); } } if
 	 * (DisplayedDevices.containsAll(SelectedDevices)) {
 	 * System.out.println("Selected device is in basket"); } else { for(int
 	 * k=0;k>DisplayedDevices.size();k++) {
-	 * System.out.println("Devices in basket are : " + '\n'+
-	 * DisplayedDevices.get(k) +'\n'); }
-	 * Assert.fail("Selected devices are not in basket"); }
+	 * System.out.println("Devices in basket are : " + '\n'+ DisplayedDevices.get(k)
+	 * +'\n'); } Assert.fail("Selected devices are not in basket"); }
 	 * 
 	 * }
 	 */
@@ -499,12 +496,11 @@ public class BasketPageActions extends Environment {
 	 * public static void verifyDevicesInBasket(String dev1, String dev2, String
 	 * dev3) {
 	 * 
-	 * log.debug("Verifying the devices in basket"); List<WebElement> MyDevices
-	 * = pageobjects.BasketPage.DevicesList;
+	 * log.debug("Verifying the devices in basket"); List<WebElement> MyDevices =
+	 * pageobjects.BasketPage.DevicesList;
 	 * 
 	 * List<WebElement> MyConnDevices = pageobjects.BasketPage.MyConnDevices;
-	 * List<WebElement> MyNonConnDevices =
-	 * pageobjects.BasketPage.MyNonConnDevices;
+	 * List<WebElement> MyNonConnDevices = pageobjects.BasketPage.MyNonConnDevices;
 	 * 
 	 * List<String> DisplayedDevices = new ArrayList<>(); List<String>
 	 * SelectedDevices = new ArrayList<>();
@@ -521,18 +517,17 @@ public class BasketPageActions extends Environment {
 	 * if (MyNonConnDevices.size() != 0) { for (int i = 0; i <
 	 * MyNonConnDevices.size(); i++) {
 	 * DisplayedDevices.add(MyNonConnDevices.get(i).getText());
-	 * System.out.println("Non Conn added: " + MyNonConnDevices.get(i).getText()
-	 * + ""); } } if (MyConnDevices.size() != 0) { for (int i = 0; i <
+	 * System.out.println("Non Conn added: " + MyNonConnDevices.get(i).getText() +
+	 * ""); } } if (MyConnDevices.size() != 0) { for (int i = 0; i <
 	 * MyConnDevices.size(); i++) {
 	 * DisplayedDevices.add(MyConnDevices.get(i).getText());
-	 * System.out.println("Conn dev added: " + MyConnDevices.get(i).getText() +
-	 * ""); } } if (DisplayedDevices.containsAll(SelectedDevices)) {
+	 * System.out.println("Conn dev added: " + MyConnDevices.get(i).getText() + "");
+	 * } } if (DisplayedDevices.containsAll(SelectedDevices)) {
 	 * log.debug("Selected devices are in basket"); } else { for (int k = 0; k <
-	 * DisplayedDevices.size(); k++) {
-	 * System.out.println("Devices in basket are : " + '\n' +
-	 * DisplayedDevices.get(k) + '\n'); log.debug("Devices in basket are : " +
-	 * '\n' + DisplayedDevices.get(k) + '\n'); }
-	 * Assert.fail("Selected devices are not in basket"); } }
+	 * DisplayedDevices.size(); k++) { System.out.println("Devices in basket are : "
+	 * + '\n' + DisplayedDevices.get(k) + '\n');
+	 * log.debug("Devices in basket are : " + '\n' + DisplayedDevices.get(k) +
+	 * '\n'); } Assert.fail("Selected devices are not in basket"); } }
 	 */
 
 	public static void verifyDevicesInBasket(String dev1, String dev2, String dev3) {
@@ -580,10 +575,10 @@ public class BasketPageActions extends Environment {
 		if (DisplayedDevices.containsAll(SelectedDevices)) {
 			log.debug("Selected devices are in basket");
 			System.out.println("Selected devices are in basket");
-			
+
 		} else {
 			for (int k = 0; k > DisplayedDevices.size(); k++) {
-				System.out.println("Devices in basket are : " + '\n' + DisplayedDevices.get(k) + '\n');				
+				System.out.println("Devices in basket are : " + '\n' + DisplayedDevices.get(k) + '\n');
 				log.debug("Devices in basket are : " + '\n' + DisplayedDevices.get(k) + '\n');
 			}
 			Assert.fail("Selected devices are not in basket");

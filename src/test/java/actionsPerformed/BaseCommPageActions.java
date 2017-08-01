@@ -34,11 +34,16 @@ public class BaseCommPageActions extends Environment {
 
 	public static void checkIfiPadDevicesArePresent() {
 
-		List<WebElement> iPadDevices = pageobjects.BaseCommPage.iPadDevicesName;
+		//List<WebElement> iPadDevices = pageobjects.BaseCommPage.iPadDevicesName;
+		List<WebElement> iPadDevices = driver.findElement(By.xpath(
+				  "//*[@id='o2-page-wrapper']/div[4]/div[5]/div"))
+				  .findElements(By.xpath(
+				  "//div/p[@class='details']"
+				  ));
 
 		for (int i = 0; i < iPadDevices.size(); i++) {
 			if (iPadDevices.get(i).getText().contains("iPad")) {
-				System.out.println("iPadDevices.get(i).getText()");
+				System.out.println(""+iPadDevices.get(i).getText()+"");
 			} else {
 				System.out.println("Devices other than iPad are also displayed");
 				Assert.fail("Devices other than iPad are also displayed");
@@ -51,17 +56,18 @@ public class BaseCommPageActions extends Environment {
 		// Archana to update this code
 	}
 
-	public static void clickOnOtherTablets() {
+	public static void clickOnOtherTablets() throws InterruptedException {
 		log.debug("clicking on Other Tablets Tab");
 		pageobjects.BaseCommPage.OtherTablets.click();
 		System.out.println("clicking on Other Tablets Tab");
+		Thread.sleep(20000);
 	}
 
 	public static void clickOniPadTab() {
 		try {
 			log.debug("clicking on iPad Tab");
 			pageobjects.BaseCommPage.iPad.click();
-			Thread.sleep(4000);
+			Thread.sleep(20000);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			Assert.fail("Unable to click on ipad tab");

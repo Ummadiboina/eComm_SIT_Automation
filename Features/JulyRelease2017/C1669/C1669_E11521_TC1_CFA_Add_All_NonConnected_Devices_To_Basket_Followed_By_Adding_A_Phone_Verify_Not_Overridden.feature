@@ -4,22 +4,19 @@ Feature: C1669_E11521_TC1_CFA_Add_All_NonConnected_Devices_To_Basket_Followed_By
     Given I am an CFA user and Lands on shop page
     And Navigate to Accessories
     And select an "Random" Accessory
-    And add Accessories to basket within limit in details page and navigate to basket
+    And add quantity of accessories to basket within <limit> in details page and navigate to basket
     And I Land on the Non Phone related basket page and choose home delivery option
-    # And I click on Continue Shopping link
     And click on continue shopping button
     And Navigate to Fitness Trackers
     And select any available "Random" Fitness tracker
-    And add FitnessTracker to basket within limit in details page and navigate to basket
+    And add quantity of FitnessTracker to basket within <limit> in details page and navigate to basket
     And I Land on the Non Phone related basket page and choose home delivery option
-    # And I click on Continue Shopping link
     And click on continue shopping button
     And Navigate to SmartWatches
     And select any available "Random" Smartwatch
-    And add SmartWatch to basket within limit in details page and navigate to basket
+    And add quantity of SmartWatches to basket within <limit> in details page and navigate to basket
     And I Land on the Non Phone related basket page and choose home delivery option
     And Verify all three non connected devices got added to the basket section before selecting connected device
-    #And I click on Continue Shopping link
     And click on continue shopping button
     And navigate to PAYM Phones page
     And I choose PayM <handset>
@@ -35,5 +32,5 @@ Feature: C1669_E11521_TC1_CFA_Add_All_NonConnected_Devices_To_Basket_Followed_By
     Then order confirmation is displayed
 
     Examples: 
-      | handset | Firstname | Surname | Username     |
-      | Iphone7 | TEST      | ACCEPTA | TEST ACCEPTA |
+      | handset | Firstname | Surname | Username     | limit |
+      | Iphone7 | TEST      | ACCEPTA | TEST ACCEPTA |     1 |

@@ -87,13 +87,13 @@ public class PhonesListingPage {
 	@FindBy(how = How.XPATH, using = ("//*[@id='chooseAccessories']"))
 	public static WebElement AccessoriesSection;
 
-	@FindBy(how = How.XPATH, using = ("//*[@id='tariff-tile']/div[6]"))
+	@FindBy(how = How.XPATH, using = ("//*[@class='viewAllTariffs']"))
 	public static WebElement BaseComm_TariffsAndExtras_ViewAllTariffLink;
 
-	@FindBy(how = How.XPATH, using = ("//*[@id='4a05eacb-a057-40fc-9ada-8b8c59c43c4d:34.99:15.00:']"))
+	@FindBy(how = How.XPATH, using = ("//div[@id='tariff-tile']/div[2]"))
 	public static WebElement BaseComm_RecommendedTariff_Section;
 
-	@FindBy(how = How.XPATH, using = ("//*[@id='4a05eacb-a057-40fc-9ada-8b8c59c43c4d:34.99:15.00:']/div[1]"))
+	@FindBy(how = How.XPATH, using = ("//div[@id='tariff-tile']/div[2]/div[1]"))
 	public static WebElement BaseComm_RecommendedTariff_PromotionLabel;
 
 	@FindBy(how = How.XPATH, using = ("//*[@id='link-pay-for-your-device']"))

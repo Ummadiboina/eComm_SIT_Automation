@@ -38,7 +38,7 @@ public class BrowserHelper {
 		} else if (BrowserType.equalsIgnoreCase("chrome")) {
 			System.setProperty("webdriver.chrome.driver", "Browsers\\ChromeDriver\\chromedriver.exe");
 			// Environment.driver = new ChromeDriver();
-			DesiredCapabilities capabilities  = DesiredCapabilities.chrome();
+			DesiredCapabilities capabilities = DesiredCapabilities.chrome();
 			capabilities.setCapability(CapabilityType.ACCEPT_SSL_CERTS, true);
 			ChromeOptions options = new ChromeOptions();
 			options.addArguments("disable-extensions");
@@ -48,15 +48,25 @@ public class BrowserHelper {
 			Environment.driver = new ChromeDriver(capabilities);
 
 			// WebDriver driver = new ChromeDriver (handlSSLErr);
-		} else {
+		} else if (BrowserType.equalsIgnoreCase("mozilla")) {
 
 			System.setProperty("webdriver.gecko.driver", "Browsers\\GeckoDriver\\geckodriver.exe");
-	//		   ProfilesIni firProfiles = new ProfilesIni();
-//			   FirefoxProfile wbdrverprofile = firProfiles.getProfile("certificateIssue"); 
-			FirefoxProfile profile = new FirefoxProfile();
-			profile.setAcceptUntrustedCertificates(true);
-			profile.setAssumeUntrustedCertificateIssuer(false);
-			Environment.driver = new FirefoxDriver(profile);
+			// ProfilesIni firProfiles = new ProfilesIni();
+			// FirefoxProfile wbdrverprofile = firProfiles.getProfile("certificateIssue");
+			/*
+			 * FirefoxProfile profile = new FirefoxProfile();
+			 * profile.setAcceptUntrustedCertificates(true);
+			 * profile.setAssumeUntrustedCertificateIssuer(false); Environment.driver = new
+			 * FirefoxDriver(profile);
+			 */
+
+			DesiredCapabilities capabilities = DesiredCapabilities.firefox();
+			FirefoxProfile fp = new FirefoxProfile();
+			fp.setAcceptUntrustedCertificates(true);
+			fp.setAssumeUntrustedCertificateIssuer(true);
+			fp.setEnableNativeEvents(false);
+			capabilities.setCapability(FirefoxDriver.PROFILE, fp);
+			Environment.driver = new FirefoxDriver(capabilities);
 
 		}
 
