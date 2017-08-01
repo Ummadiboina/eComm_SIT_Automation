@@ -12,7 +12,7 @@ Feature: Reg_AFA_PayMSimO_withoutAnyAccessory
     And Register customer with valid <Firstname> and <Surname> and other valid details in delivery page
     And Choose <DeliveryType> delivery address and delivery time
     When Pay by card
- 	Then Order confirmation message should be displayed
+    Then Order confirmation message should be displayed
 
     Examples: 
       | Tariff | DeliveryType | Firstname | Surname | Username     |

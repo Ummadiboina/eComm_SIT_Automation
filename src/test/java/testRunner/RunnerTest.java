@@ -15,9 +15,9 @@ import com.github.mkolisnyk.cucumber.reporting.CucumberResultsOverview;
 
 import cucumber.api.CucumberOptions;
 
-@CucumberOptions(strict = true, features = { "Features//JulyRelease2017//C1669_E11521_TC1_CFA_Add_All_NonConnected_Devices_To_Basket_Followed_By_Adding_A_Phone_Verify_Not_Overridden.feature" }, glue = { "steps" },
+@CucumberOptions(strict = true, features = { "Features//RegressionPack_Master" }, glue = { "steps" },
 
-		tags = {}, format = { "json:testResult/cucumber.json", "pretty", "html:testResult/report" }, plugin = {
+		tags = {"@AgentsRegression"}, format = { "json:testResult/cucumber.json", "pretty", "html:testResult/report" }, plugin = {
 				"com.cucumber.listener.ExtentCucumberFormatter" })
 
 /**

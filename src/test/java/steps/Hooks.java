@@ -12,8 +12,6 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebDriverException;
-import org.openqa.selenium.chrome.ChromeDriver;
-
 
 import cucumber.api.Scenario;
 import cucumber.api.java.After;
@@ -21,8 +19,6 @@ import cucumber.api.java.Before;
 import helpers.BrowserHelper;
 import helpers.Environment;
 import helpers.Filereadingutility;
-
-
 
 public class Hooks extends Environment {
 
@@ -35,7 +31,7 @@ public class Hooks extends Environment {
 	 * Delete all cookies at the start of each scenario to avoid shared state
 	 * between tests
 	 */
-	public WebDriver openBrowser() throws MalformedURLException {
+	public WebDriver openBrowser() throws MalformedURLException, InterruptedException {
 		System.out.println("Called openBrowser");
 		log.debug("Called openBrowser");
 
@@ -97,7 +93,8 @@ public class Hooks extends Environment {
 
 		}
 		Thread.sleep(2000);
-		driver.close();
+		driver.quit();
+		
 
 	}
 

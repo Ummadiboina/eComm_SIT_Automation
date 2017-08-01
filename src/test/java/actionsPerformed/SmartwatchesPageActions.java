@@ -1,14 +1,8 @@
 package actionsPerformed;
 
-import static org.testng.Assert.fail;
-
-import java.util.List;
-
-import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 
@@ -79,15 +73,25 @@ public class SmartwatchesPageActions extends Environment {
 
 			}
 			
-			if (elementName.contains("Samsung Galaxy Gear")) {
+		/*	if (elementName.contains("Samsung Galaxy Gear")) {
 				System.out.println("Going to select SamsungGalaxyGear");
 
 				pageobjects.SmartwatchesPage.SamsungGearS2.click();
 				Thread.sleep(15000);
 
 				System.out.println("Clicked SamsungGalaxyGear");
+			}*/
+
+			if (elementName.contains("Samsung Galaxy Gear")) {
+				System.out.println("Going to select SamsungGalaxyGear");
+
+				pageobjects.SmartwatchesPage.SamsungGalaxyGear.click();
+				Thread.sleep(15000);
+
+				System.out.println("Clicked SamsungGalaxyGear");
 			}
 
+			
 
 
 			// The following has to be added in deviceSelect function –
@@ -123,8 +127,7 @@ public class SmartwatchesPageActions extends Environment {
 						.findElement(By.xpath("//select[@class='accessory-option ng-pristine ng-valid']"));
 				JavascriptExecutor js = (JavascriptExecutor) driver;
 				js.executeScript("arguments[0].setAttribute('style', 'display:block;')", element);
-				//new Select(element).selectByValue("4");
-				new Select(element).selectByValue("1");
+				new Select(element).selectByValue("4");
 
 				WebElement DeviceDetailsQuantity = driver.findElement(
 						By.xpath("//div[@on-dimension-select='selectQuantityDimension']/span[@role='combobox']"));

@@ -91,8 +91,8 @@ public static void AddtoBasket()
 	public static void colorSelectOfDeviceDropDown(String color) throws Exception {
 		// TODO Auto-generated method stub
 		Thread.sleep(5000);
-
-		WebElement element = pageobjects.ConnectedDeviceDetailsPage.ColorDropDown;
+		WebElement element = pageobjects.NonConnectedDeviceDetailsPage.ColorDropDown;
+		//WebElement element = pageobjects.ConnectedDeviceDetailsPage.ColorDropDown;
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("arguments[0].setAttribute('style', 'display:block;')", element);
 		if(element.isDisplayed()) {
