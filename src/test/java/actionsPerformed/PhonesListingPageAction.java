@@ -214,7 +214,7 @@ public class PhonesListingPageAction extends Environment {
 
 	public static void selectSortOption(String Sort) throws InterruptedException {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
-		System.out.println("Selecting Sort option" + Sort);
+		System.out.println("Selecting Sort option : " + Sort);
 		if (Sort.equals("MonthlyHighToLow")) {
 
 			js.executeScript("arguments[0].click();", pageobjects.SortingAndFilter.MonthlyHighToLow);
@@ -229,6 +229,7 @@ public class PhonesListingPageAction extends Environment {
 			Thread.sleep(2000);
 			js.executeScript("arguments[0].click();", pageobjects.SortingAndFilter.Done);
 			js.executeScript("arguments[0].click();", pageobjects.SortingAndFilter.Done);
+			Thread.sleep(1000);
 		}
 		if (Sort.equals("UpfrontHighToLow")) {
 
@@ -313,7 +314,7 @@ public class PhonesListingPageAction extends Environment {
 			log.debug("clicking on Reset Sort");
 			js.executeScript("arguments[0].click();", pageobjects.SortingAndFilter.ResetSort);
 			// pageobjects.SortingAndFilter.ResetSort.click();
-			Thread.sleep(3000);
+			Thread.sleep(5000);
 			js.executeScript("arguments[0].click();", pageobjects.SortingAndFilter.Done);
 			js.executeScript("arguments[0].click();", pageobjects.SortingAndFilter.Done);
 			Thread.sleep(5000);
@@ -386,126 +387,133 @@ public class PhonesListingPageAction extends Environment {
 	public static void selectFilterOption(String Filter, String Option) {
 		try {
 			log.debug("Entering selectFilterOption function");
-			System.out.println("Selecting Sort option" + Filter + "With " + Option);
+			System.out.println("Selecting Filter option: " + Filter + " :With: " + Option);
 
 			JavascriptExecutor js = (JavascriptExecutor) driver;
 
 			if (Filter.equals("Brand")) {
 
 				js.executeScript("arguments[0].click();", pageobjects.SortingAndFilter.Brand);
-				Thread.sleep(1000);
+				Thread.sleep(2000);
 
 				if (Option.equals("Alcatel")) {
 
-					pageobjects.SortingAndFilter.Brand_Alcatel.click();
+					js.executeScript("arguments[0].click();", pageobjects.SortingAndFilter.Brand_Alcatel);
+					//pageobjects.SortingAndFilter.Brand_Alcatel.click();
 					Thread.sleep(2000);
 					js.executeScript("arguments[0].click();", pageobjects.SortingAndFilter.Brand);
 					Thread.sleep(1000);
 					js.executeScript("arguments[0].click();", pageobjects.SortingAndFilter.Done);
 					js.executeScript("arguments[0].click();", pageobjects.SortingAndFilter.Done);
 					Thread.sleep(1000);
-					js.executeScript("arguments[0].click();", pageobjects.SortingAndFilter.Done);
+					
 
 				}
 				if (Option.equals("Apple")) {
 
-					pageobjects.SortingAndFilter.Brand_Apple.click();
+					js.executeScript("arguments[0].click();", pageobjects.SortingAndFilter.Brand_Apple);
+					//pageobjects.SortingAndFilter.Brand_Apple.click();
 					Thread.sleep(2000);
 					js.executeScript("arguments[0].click();", pageobjects.SortingAndFilter.Brand);
 					Thread.sleep(1000);
 					js.executeScript("arguments[0].click();", pageobjects.SortingAndFilter.Done);
 					js.executeScript("arguments[0].click();", pageobjects.SortingAndFilter.Done);
 					Thread.sleep(1000);
-					js.executeScript("arguments[0].click();", pageobjects.SortingAndFilter.Done);
+					
 				}
 				if (Option.equals("Doro")) {
 
-					pageobjects.SortingAndFilter.Brand_Doro.click();
+					js.executeScript("arguments[0].click();", pageobjects.SortingAndFilter.Brand_Doro);
+					//pageobjects.SortingAndFilter.Brand_Doro.click();
 					Thread.sleep(2000);
 					js.executeScript("arguments[0].click();", pageobjects.SortingAndFilter.Brand);
 					Thread.sleep(1000);
 					js.executeScript("arguments[0].click();", pageobjects.SortingAndFilter.Done);
 					js.executeScript("arguments[0].click();", pageobjects.SortingAndFilter.Done);
 					Thread.sleep(1000);
-					js.executeScript("arguments[0].click();", pageobjects.SortingAndFilter.Done);
+					
 				}
 				if (Option.equals("HTC")) {
 
-					pageobjects.SortingAndFilter.Brand_HTC.click();
+					js.executeScript("arguments[0].click();", pageobjects.SortingAndFilter.Brand_HTC);
+					//pageobjects.SortingAndFilter.Brand_HTC.click();
 					Thread.sleep(2000);
 					js.executeScript("arguments[0].click();", pageobjects.SortingAndFilter.Brand);
 					Thread.sleep(1000);
 					js.executeScript("arguments[0].click();", pageobjects.SortingAndFilter.Done);
 					js.executeScript("arguments[0].click();", pageobjects.SortingAndFilter.Done);
 					Thread.sleep(1000);
-					js.executeScript("arguments[0].click();", pageobjects.SortingAndFilter.Done);
+					
 				}
 				if (Option.equals("Huawei")) {
 
-					pageobjects.SortingAndFilter.Brand_Huawei.click();
+					js.executeScript("arguments[0].click();", pageobjects.SortingAndFilter.Brand_Huawei);
+					//pageobjects.SortingAndFilter.Brand_Huawei.click();
 					Thread.sleep(2000);
 					js.executeScript("arguments[0].click();", pageobjects.SortingAndFilter.Brand);
 					Thread.sleep(1000);
 					js.executeScript("arguments[0].click();", pageobjects.SortingAndFilter.Done);
 					js.executeScript("arguments[0].click();", pageobjects.SortingAndFilter.Done);
 					Thread.sleep(1000);
-					js.executeScript("arguments[0].click();", pageobjects.SortingAndFilter.Done);
+					
 				}
 				if (Option.equals("LG")) {
 
-					pageobjects.SortingAndFilter.Brand_LG.click();
+					js.executeScript("arguments[0].click();", pageobjects.SortingAndFilter.Brand_LG);
+					//pageobjects.SortingAndFilter.Brand_LG.click();
 					Thread.sleep(2000);
 					js.executeScript("arguments[0].click();", pageobjects.SortingAndFilter.Brand);
 					Thread.sleep(1000);
 					js.executeScript("arguments[0].click();", pageobjects.SortingAndFilter.Done);
 					js.executeScript("arguments[0].click();", pageobjects.SortingAndFilter.Done);
 					Thread.sleep(1000);
-					js.executeScript("arguments[0].click();", pageobjects.SortingAndFilter.Done);
+					
 				}
 				if (Option.equals("Moto")) {
 
-					pageobjects.SortingAndFilter.Brand_Moto.click();
+					js.executeScript("arguments[0].click();", pageobjects.SortingAndFilter.Brand_Moto);
+					//pageobjects.SortingAndFilter.Brand_Moto.click();
 					Thread.sleep(2000);
 					js.executeScript("arguments[0].click();", pageobjects.SortingAndFilter.Brand);
 					Thread.sleep(1000);
 					js.executeScript("arguments[0].click();", pageobjects.SortingAndFilter.Done);
 					js.executeScript("arguments[0].click();", pageobjects.SortingAndFilter.Done);
 					Thread.sleep(1000);
-					js.executeScript("arguments[0].click();", pageobjects.SortingAndFilter.Done);
+					
 				}
 				if (Option.equals("OnePlus")) {
 
-					pageobjects.SortingAndFilter.Brand_OnePlus.click();
+					js.executeScript("arguments[0].click();", pageobjects.SortingAndFilter.Brand_OnePlus);
+					//pageobjects.SortingAndFilter.Brand_OnePlus.click();
 					Thread.sleep(2000);
 					js.executeScript("arguments[0].click();", pageobjects.SortingAndFilter.Brand);
 					Thread.sleep(1000);
 					js.executeScript("arguments[0].click();", pageobjects.SortingAndFilter.Done);
 					js.executeScript("arguments[0].click();", pageobjects.SortingAndFilter.Done);
 					Thread.sleep(1000);
-					js.executeScript("arguments[0].click();", pageobjects.SortingAndFilter.Done);
+					
 				}
 				if (Option.equals("Samsung")) {
 
-					pageobjects.SortingAndFilter.Brand_Samsung.click();
+					js.executeScript("arguments[0].click();", pageobjects.SortingAndFilter.Brand_Samsung);
+					//pageobjects.SortingAndFilter.Brand_Samsung.click();
 					Thread.sleep(2000);
 					js.executeScript("arg" + "uments[0].click();", pageobjects.SortingAndFilter.Brand);
 					Thread.sleep(1000);
 					js.executeScript("arguments[0].click();", pageobjects.SortingAndFilter.Done);
 					js.executeScript("arguments[0].click();", pageobjects.SortingAndFilter.Done);
-					Thread.sleep(1000);
-					js.executeScript("arguments[0].click();", pageobjects.SortingAndFilter.Done);
+					Thread.sleep(1000);					
 				}
 				if (Option.equals("Sony")) {
 
-					pageobjects.SortingAndFilter.Brand_Sony.click();
+					js.executeScript("arguments[0].click();", pageobjects.SortingAndFilter.Brand_Sony);
+					//pageobjects.SortingAndFilter.Brand_Sony.click();
 					Thread.sleep(2000);
 					js.executeScript("arguments[0].click();", pageobjects.SortingAndFilter.Brand);
 					Thread.sleep(1000);
 					js.executeScript("arguments[0].click();", pageobjects.SortingAndFilter.Done);
 					js.executeScript("arguments[0].click();", pageobjects.SortingAndFilter.Done);
 					Thread.sleep(1000);
-					js.executeScript("arguments[0].click();", pageobjects.SortingAndFilter.Done);
-
 				}
 			} else if (Filter.equals("Colour")) {
 
@@ -514,92 +522,88 @@ public class PhonesListingPageAction extends Environment {
 
 				if (Option.equals("Black")) {
 
-					pageobjects.SortingAndFilter.Colour_Black.click();
+					js.executeScript("arguments[0].click();", pageobjects.SortingAndFilter.Colour_Black);
+					//pageobjects.SortingAndFilter.Colour_Black.click();
 					Thread.sleep(2000);
 					js.executeScript("arguments[0].click();", pageobjects.SortingAndFilter.Colour);
 					Thread.sleep(1000);
 					js.executeScript("arguments[0].click();", pageobjects.SortingAndFilter.Done);
 					js.executeScript("arguments[0].click();", pageobjects.SortingAndFilter.Done);
 					Thread.sleep(1000);
-					js.executeScript("arguments[0].click();", pageobjects.SortingAndFilter.Done);
-
 				}
 
 				if (Option.equals("Grey")) {
 
-					pageobjects.SortingAndFilter.Colour_Grey.click();
+					js.executeScript("arguments[0].click();", pageobjects.SortingAndFilter.Colour_Grey);
+					//pageobjects.SortingAndFilter.Colour_Grey.click();
 					Thread.sleep(2000);
 					js.executeScript("arguments[0].click();", pageobjects.SortingAndFilter.Colour);
 					Thread.sleep(1000);
 					js.executeScript("arguments[0].click();", pageobjects.SortingAndFilter.Done);
 					js.executeScript("arguments[0].click();", pageobjects.SortingAndFilter.Done);
 					Thread.sleep(1000);
-					js.executeScript("arguments[0].click();", pageobjects.SortingAndFilter.Done);
-
 				}
 
 				if (Option.equals("Yellow")) {
 
-					pageobjects.SortingAndFilter.Colour_Yellow.click();
+					js.executeScript("arguments[0].click();", pageobjects.SortingAndFilter.Colour_Yellow);
+					//pageobjects.SortingAndFilter.Colour_Yellow.click();
 					Thread.sleep(2000);
 					js.executeScript("arguments[0].click();", pageobjects.SortingAndFilter.Colour);
 					Thread.sleep(1000);
 					js.executeScript("arguments[0].click();", pageobjects.SortingAndFilter.Done);
 					js.executeScript("arguments[0].click();", pageobjects.SortingAndFilter.Done);
 					Thread.sleep(1000);
-					js.executeScript("arguments[0].click();", pageobjects.SortingAndFilter.Done);
-
 				}
 
 				if (Option.equals("Blue")) {
 
-					pageobjects.SortingAndFilter.Colour_Blue.click();
+					js.executeScript("arguments[0].click();", pageobjects.SortingAndFilter.Colour_Blue);
+					//pageobjects.SortingAndFilter.Colour_Blue.click();
 					Thread.sleep(2000);
 					js.executeScript("arguments[0].click();", pageobjects.SortingAndFilter.Colour);
 					Thread.sleep(1000);
 					js.executeScript("arguments[0].click();", pageobjects.SortingAndFilter.Done);
 					js.executeScript("arguments[0].click();", pageobjects.SortingAndFilter.Done);
 					Thread.sleep(1000);
-					js.executeScript("arguments[0].click();", pageobjects.SortingAndFilter.Done);
-
 				}
 
 				if (Option.equals("White")) {
 
-					pageobjects.SortingAndFilter.Colour_White.click();
+					js.executeScript("arguments[0].click();", pageobjects.SortingAndFilter.Colour_White);
+					//pageobjects.SortingAndFilter.Colour_White.click();
 					Thread.sleep(2000);
 					js.executeScript("arguments[0].click();", pageobjects.SortingAndFilter.Colour);
 					Thread.sleep(1000);
 					js.executeScript("arguments[0].click();", pageobjects.SortingAndFilter.Done);
 					js.executeScript("arguments[0].click();", pageobjects.SortingAndFilter.Done);
-					Thread.sleep(1000);
-					js.executeScript("arguments[0].click();", pageobjects.SortingAndFilter.Done);
+					Thread.sleep(1000);					
 
 				}
 
 				if (Option.equals("Green")) {
 
-					pageobjects.SortingAndFilter.Colour_Green.click();
+					js.executeScript("arguments[0].click();", pageobjects.SortingAndFilter.Colour_Green);
+					//pageobjects.SortingAndFilter.Colour_Green.click();
 					Thread.sleep(2000);
 					js.executeScript("arguments[0].click();", pageobjects.SortingAndFilter.Colour);
 					Thread.sleep(1000);
 					js.executeScript("arguments[0].click();", pageobjects.SortingAndFilter.Done);
 					js.executeScript("arguments[0].click();", pageobjects.SortingAndFilter.Done);
-					Thread.sleep(1000);
-					js.executeScript("arguments[0].click();", pageobjects.SortingAndFilter.Done);
+					Thread.sleep(1000);					
 
 				}
 
 				if (Option.equals("Red")) {
 
-					pageobjects.SortingAndFilter.Colour_Red.click();
+					js.executeScript("arguments[0].click();", pageobjects.SortingAndFilter.Colour_Red);
+					//pageobjects.SortingAndFilter.Colour_Red.click();
 					Thread.sleep(2000);
 					js.executeScript("arguments[0].click();", pageobjects.SortingAndFilter.Colour);
 					Thread.sleep(1000);
 					js.executeScript("arguments[0].click();", pageobjects.SortingAndFilter.Done);
 					js.executeScript("arguments[0].click();", pageobjects.SortingAndFilter.Done);
-					Thread.sleep(1000);
-					js.executeScript("arguments[0].click();", pageobjects.SortingAndFilter.Done);
+					Thread.sleep(1000);					
 
 				}
 			}
@@ -649,19 +653,19 @@ public class PhonesListingPageAction extends Environment {
 		// *****************This xpath is for AWS
 		// environment*******************//
 
-		/*
-		 * List<WebElement> deviceName = driver.findElement(By.xpath(
-		 * "//*[@id='o2-page-wrapper']/div[4]/div[5]/div"))
-		 * .findElements(By.xpath(
-		 * "//div[@class='device-tile my-offer ng-scope tile-one-by-two']/div/p[@class='details']"
-		 * ));
-		 */
+		
+		  List<WebElement> deviceName = driver.findElement(By.xpath(
+		  "//*[@id='o2-page-wrapper']/div[4]/div[5]/div"))
+		  .findElements(By.xpath(
+		  "//div[@class='device-tile my-offer ng-scope tile-one-by-two']/div/p[@class='details']"
+		  ));
+		 
 
 		// ********************This xpath is for Production
 		// Environment********************************//
 
-		List<WebElement> deviceName = driver.findElement(By.xpath("//*[@id='o2-page-wrapper']/div[3]/div[3]"))
-				.findElements(By.xpath("//div[@class='device-tile__top']/p[@class='details']"));
+	/*	List<WebElement> deviceName = driver.findElement(By.xpath("//*[@id='o2-page-wrapper']/div[3]/div[3]"))
+				.findElements(By.xpath("//div[@class='device-tile__top']/p[@class='details']"));*/
 
 		for (WebElement temp : deviceName) {
 
@@ -700,7 +704,7 @@ public class PhonesListingPageAction extends Environment {
 		 * List<WebElement> deviceName = driver.findElement(By.xpath(
 		 * "//*[@id='o2-page-wrapper']/div[3]/div[3]")) .findElements(By.xpath(
 		 * "//div[@class='device-tile__top']/p[@class='details']"));
-		 */
+		 
 
 		List<WebElement> devicePrice = driver.findElement(By.xpath("//*[@id='o2-page-wrapper']/div[3]/div[3]"))
 				.findElements(By.xpath(
@@ -714,6 +718,12 @@ public class PhonesListingPageAction extends Environment {
 
 		// *********************************This xpath is for Production
 		// Environment************************************//
+			
+		List<WebElement> devicePrice = driver.findElement(By.xpath(
+				  "//*[@id='o2-page-wrapper']/div[4]/div[5]/div"))
+				  .findElements(By.xpath(
+				  "//div[@class='device-tile__bottom ng-scope']/p[@class='costs ng-binding ng-scope']/span[@class='headline ng-binding']"
+				  ));
 
 		for (WebElement temp2 : devicePrice) {
 
