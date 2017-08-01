@@ -3577,12 +3577,12 @@ public class E2EOrderPlaced_Steps {
 		try {
 			log.debug("Running Test Step: @And(Verify the current sort order details)");
 
-			if (driver.findElement(By.xpath("//*[@class='page-all']")).isEnabled()) {
+		/*	if (driver.findElement(By.xpath("//*[@class='page-all']")).isEnabled()) {
 				driver.findElement(By.xpath("//*[@class='page-all']")).click();
 			} else {
 
 				PhonesListingPageAction.clickOnViewAllProductsOnOnePage();
-			}
+			}*/
 
 			if (SortOption.equals("BrandAToZ") || SortOption.equals("BrandZToA")) {
 				originalList = PhonesListingPageAction.getCurrentSortOrderUsingDeviceName();
@@ -3692,7 +3692,7 @@ public class E2EOrderPlaced_Steps {
 		try {
 			PageFactory.initElements(driver, BaseCommPage.class);
 			PageFactory.initElements(driver, SortingAndFilter.class);
-			PhonesListingPageAction.clickOnViewAllProductsOnOnePage();
+		//	PhonesListingPageAction.clickOnViewAllProductsOnOnePage();
 			PhonesListingPageAction.clickOnFilterTab();
 			PhonesListingPageAction.selectFilterOption(Filter, Option);
 
