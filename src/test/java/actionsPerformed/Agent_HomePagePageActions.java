@@ -7,6 +7,8 @@ import pageobjects.DeliveryPage;
 
 import static org.testng.Assert.assertEquals;
 
+import java.util.concurrent.TimeUnit;
+
 import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.Select;
@@ -48,36 +50,48 @@ public class Agent_HomePagePageActions extends Environment{
 		System.out.println("Entering Valid MPN");
 		Thread.sleep(3000);
 		Agent_HomePage.Search.click();
-		log.debug("Clicking on Search button");
-		System.out.println("Clicking on Search button");
+		log.debug("Clicked on Search button");
+		System.out.println("Clicked on Search button");
 		Thread.sleep(3000);
-		if (Agent_HomePage.notfound.isDisplayed()) {
+		/*if (Agent_HomePage.notfound.isDisplayed()) {
 			System.out.println("MPN entered is wrong, please check back your test case");
 			Assert.fail("MPN entered is wrong, please check back your test case");
-		}
+		}*/
 
-		else if (Agent_HomePage.UpgradeLink.isDisplayed()) {
-			System.out.println("Verifying if Upgrade link is enabled");
-			Agent_HomePage.UpgradeLink.click();
-			log.debug("Clicking on upgrade link");
-			System.out.println("Clicking on upgrade link");
-			Thread.sleep(3000);
-			if (Agent_HomePage.emptyDealButton.isEnabled()) {
-				System.out.println("The Empty Deal button is enabled hence Emptying the basket");
-				Agent_HomePage.emptyDealButton.click();
-				log.debug("Clicking on emptyDealButton button");
-
-			} else {
-				System.out.println("The Empty Deal button is not present hence it should be alright");
-			}
-
-		} else {
-			Assert.fail("There is no Upgrade link available in page");
-			System.out.println("The current message is " + Agent_HomePage.notfound.getText());
-
-		}
+		
 
 	}
+	
+	public static void upgradeUser() throws InterruptedException 
+	{
+		try {
+			driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+			System.out.println("Verifying if Upgrade link is enabled");
+				Agent_HomePage.UpgradeLink.click();
+				log.debug("Clicking on upgrade link");
+				System.out.println("Clicking on upgrade link");
+				Thread.sleep(3000);
+				if (Agent_HomePage.emptyDealButton.isEnabled()) {
+					System.out.println("The Empty Deal button is enabled hence Emptying the basket");
+					Agent_HomePage.emptyDealButton.click();
+					log.debug("Clicking on emptyDealButton button");
+					System.out.println("Clicking on emptyDealButton button");
+
+				} else {
+					System.out.println("The Empty Deal button is not present hence it should be alright");
+				}
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			Assert.fail("There is no Upgrade link available in page");
+			System.out.println("The current message is " + Agent_HomePage.notfound.getText());
+		}
+
+		
+		
+	
+	}
+	
+	
 	
 	
 	public static void NewUser() throws InterruptedException
