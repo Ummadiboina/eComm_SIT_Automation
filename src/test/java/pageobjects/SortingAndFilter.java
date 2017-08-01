@@ -42,7 +42,8 @@ public class SortingAndFilter {
 	@FindBy(how = How.XPATH, using = "(//ul[@class='filter-sort-list']/li/label/div)[12]")
 	public static WebElement BrandZToA;
 	
-	@FindBy(how = How.XPATH, using = "//a[@class='reset-link']")
+	//@FindBy(how = How.XPATH, using = "//a[@class='reset-link']")
+	@FindBy(how = How.XPATH, using = "//*[@id='o2-page-wrapper']/div[4]/div[1]/div[2]/div[2]/div[2]/a")
 	public static WebElement ResetSort;
 
 	@FindBy(how = How.XPATH, using = "//button[@value='Done']")
@@ -123,7 +124,7 @@ public static WebElement Brand_Moto;
 @FindBy(how = How.XPATH, using = "//*[@id='filter-phones-form']/div[3]/ul/li[8]/div/label[1]")
 public static WebElement Brand_OnePlus;
 
-@FindBy(how = How.XPATH, using = "//*[@id='filter-phones-form']/div[3]/ul/li[9]/div/label[1]")
+@FindBy(how = How.XPATH, using = "//*[@id='filter-phones-form']/div[3]/ul/li[3]/div/label[1]")
 public static WebElement Brand_Samsung;
 
 @FindBy(how = How.XPATH, using = "//*[@id='filter-phones-form']/div[3]/ul/li[10]/div/label[1]")
