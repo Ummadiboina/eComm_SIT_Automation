@@ -1254,6 +1254,7 @@ public class E2EOrderPlaced_Steps {
 			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 			PageFactory.initElements(driver, Agent_DealBuilderPage.class);
 			Agent_DealBuilderPageActions.HandsetTariffCombination();
+			Thread.sleep(4000);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -1344,6 +1345,9 @@ public class E2EOrderPlaced_Steps {
 			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 			PageFactory.initElements(driver, Agent_HomePage.class);
 			Agent_HomePagePageActions.FindUser(msisdn);
+			Thread.sleep(3000);
+			Agent_HomePagePageActions.upgradeUser();
+			Thread.sleep(4000);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			System.out.println("Unable to login for upgrade for user in Agent shop, please see the failure screenshot");
@@ -1382,6 +1386,7 @@ public class E2EOrderPlaced_Steps {
 			driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
 			PageFactory.initElements(driver, Agent_DealBuilderPage.class);
 			Agent_DealBuilderPageActions.SelectPAYMDevice(Device);
+			Thread.sleep(4000);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			System.out.println("Unable to select Valid device, please see the failure screenshot");
@@ -1427,6 +1432,21 @@ public class E2EOrderPlaced_Steps {
 		}
 	}
 
+	@Given("^Verify email is sent successfully$")
+	public void verifyEmailSentConfirmation() throws Throwable {
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, Agent_DealBuilderPage.class);
+			Agent_DealBuilderPageActions.eMailConfirmation();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			System.out.println("Email is not sent");
+			Assert.fail("Email is not sent");
+
+		}
+	}
+
+	
 	/*
 	 * #########################################################################
 	 * #########
@@ -1472,6 +1492,7 @@ public class E2EOrderPlaced_Steps {
 			driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
 			PageFactory.initElements(driver, Agent_DealBuilderPage.class);
 			Agent_DealBuilderPageActions.SelectTariff(Tariff);
+			Thread.sleep(3000);
 			// System.out.println("Selecting a valid tariff");
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
@@ -1521,7 +1542,7 @@ public class E2EOrderPlaced_Steps {
 	@Then("^perform all the advisory checks$")
 	public void advisory_checks() throws Throwable {
 		try {
-			driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
+			driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 			PageFactory.initElements(driver, Agent_AdvisoryPage.class);
 			Agent_AdvisoryChecksActions.AgreeAdvsioryCheck();
 			Thread.sleep(6000);
