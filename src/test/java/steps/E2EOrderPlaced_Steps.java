@@ -3582,7 +3582,7 @@ public class E2EOrderPlaced_Steps {
 	}
 
 	// Then Verify the price gets updated based on the new colour and capacity
-	@And("^Verify the price gets updated based on the new colour and capacity$")
+	/*@And("^Verify the price gets updated based on the new colour and capacity$")
 	public void verifyPriceDisplaybased_on_Colour_and_capacity() {
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		try {
@@ -3593,8 +3593,22 @@ public class E2EOrderPlaced_Steps {
 			e.printStackTrace();
 			Assert.fail("Unable to verify price updates");
 		}
-	}
+	}*/
 
+	@And("^Verify the price gets updated based on ([^\"]*), ([^\"]*) for ([^\"]*)$")
+	public void verifyPriceDisplaybased_on_Colour_and_capacity(String Capacity1, String Capacity2, String device) {
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		try {
+			PageFactory.initElements(driver, BaseCommPage.class);
+			PageFactory.initElements(driver, ConnectedDeviceDetailsPage.class);
+			BaseCommPageActions.VerifyPriceChangeuponCapacity(Capacity1, Capacity2, device);
+
+		} catch (Exception e) {
+			e.printStackTrace();
+			Assert.fail("Unable to verify price updates");
+		}
+	}
+	
 	@And("^Verify the current sort order details ([^\"]*)$")
 	public void verify_current_sort_order(String SortOption) throws Throwable {
 

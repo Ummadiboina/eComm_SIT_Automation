@@ -17,7 +17,7 @@ Feature: C1786_ECOM-11527-11529-11633_TC1_New_basecomms_page_iPads_tab_coming_so
     And Verify expected <device_name> and its specific details are present in the device list for coming soon device <default_colour>,<default_capacity>,<default_stock_message>
     #Veirfy device price is not required
     #Verify Buy Now button is not enabled
-    And Verify that promotion ribbon is displayed
+    And Verify that promotion ribbon is displayed for <device_name>
     And Click on "See device details" link for <device_name> and verify correct details are displayed
     And Click on "Buy Now" button for <device_name> and verify "Tariffs and Extras" page is displayed
     And click on "Pay for your device in full" link and select a "random" tariff

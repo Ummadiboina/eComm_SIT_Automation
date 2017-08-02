@@ -13,7 +13,7 @@ Feature: C1786_E-11355-11357-11356-11359_TC3_Existing_Custo_Basecomm_iPad_Device
     And Verify expected <device_name> and its specific details are present in the device list <default_colour>,<default_capacity>,<default_stock_message>
     #Veirfy device price details are also getting displayed in the above step
     And Select <color>, <capacity> of the device <device_name>
-    Then Verify the price gets updated based on the new colour and capacity
+    And Verify the price gets updated based on <oldcapacity>, <newcapacity> for <device_name>
     And Click on "Buy Now" button for <device_name> and verify "Tariffs and Extras" page is displayed
 
     Examples: 
