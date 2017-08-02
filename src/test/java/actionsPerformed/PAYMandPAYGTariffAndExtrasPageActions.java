@@ -9,6 +9,7 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 
+import GlobalActions.scrollToAnElement;
 import helpers.Environment;
 import helpers.setRuntimeProperty;
 
@@ -243,8 +244,10 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 		try {
 			if (pageobjects.PhonesListingPage.BaseComm_PayForYourDeviceInFull_Link.isEnabled()) {
 				System.out.println("Pay For Your device in full Link is enabled in the Tariffs and Extras Page");
-				pageobjects.PhonesListingPage.BaseComm_PayForYourDeviceInFull_Link.click();
-				Thread.sleep(2000);
+				JavascriptExecutor js = (JavascriptExecutor) driver;
+				js.executeScript("arguments[0].click();",
+						pageobjects.PhonesListingPage.BaseComm_PayForYourDeviceInFull_Link);
+				Thread.sleep(5000);
 				if (pageobjects.PhonesListingPage.BaseComm_PayForYourDeviceInFull_Section.isDisplayed()) {
 					System.out.println("Pay for your device in full section is getting displayed successfully");
 				} else {
