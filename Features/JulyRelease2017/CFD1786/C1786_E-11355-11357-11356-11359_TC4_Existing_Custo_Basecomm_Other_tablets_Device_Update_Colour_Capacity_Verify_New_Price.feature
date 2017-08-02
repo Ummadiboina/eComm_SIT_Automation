@@ -15,5 +15,5 @@ This scenario ensures that when the existing customer on new basecomm page selec
 	And Click on "Buy Now" button for <device_name> and verify "Tariffs and Extras" page is displayed 
 	
 	Examples: 
-		| username             | password | device_name                    | default_colour | default_capacity | default_stock_message | color | capacity |
-		| 07770001111@o2.co.uk | test123  | Samsung Galaxy Tab A 2016 10.1 | Black          | 16GB             | In Stock              | Black | 16GB     |
+		| username             | password | device_name                    | default_colour | default_capacity | default_stock_message | color | capacity |oldcapacity|newcapacity|
+		| 07770001111@o2.co.uk | test123  | Samsung Galaxy Tab A 2016 10.1 | Black          | 16GB             | In Stock              | Black | 16GB     |16GB|16GB|
