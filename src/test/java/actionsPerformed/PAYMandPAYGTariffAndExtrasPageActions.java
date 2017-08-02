@@ -11,10 +11,6 @@ import org.openqa.selenium.WebElement;
 
 import helpers.Environment;
 
-
-
-
-
 public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 	static Logger log = Logger.getLogger("devpinoyLogger");
 
@@ -60,20 +56,22 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 		log.debug("Added a random accessory to basket");
 
 	}
+
 	public static void PayDeviceFullLink() {
 		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 		pageobjects.PAYMandPAYGTariffAndExtrasPage.addToBasketLive.sendKeys(Keys.ENTER);
 		log.debug("Clicked on Add to Basket in Tariff and Extras page");
-
 	}
-	
-	public static void addToBasketLive() {
+
+	public static void addToBasketLive() throws InterruptedException {
 		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
-		
+
 		JavascriptExecutor jse = (JavascriptExecutor) driver;
 		jse.executeScript("window.scrollBy(0,600)", "");
 		pageobjects.PAYMandPAYGTariffAndExtrasPage.addToBasketLive.sendKeys(Keys.ENTER);
 		log.debug("Clicked on Add to Basket in Tariff and Extras page");
+		System.out.println("Clicked on Add to Basket in Tariff and Extras page");
+		Thread.sleep(5000);
 
 	}
 
@@ -90,43 +88,29 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 		log.debug("The Accessory which will be added is  - "
 				+ pageobjects.PAYMandPAYGTariffAndExtrasPage.AddRandomAccessory.getText());
 		try {
-			
+
 			WebElement ele0 = pageobjects.PAYMandPAYGTariffAndExtrasPage.AccessoryContainer;
-					
-
-			System.out.println("The element is "+ele0.getText());
-			if (ele0 != null) 
-			{
+			System.out.println("The element is " + ele0.getText());
+			if (ele0 != null) {
 				System.out.println("selecting accessories");
-				
-
 				List<WebElement> DataContainer = pageobjects.PAYMandPAYGTariffAndExtrasPage.Add_AccessoryContainer;
 
-		for (int i = 0; i <= DataContainer.size(); i++) 
-			//for (int i = 0; i <= 5; i++)
-			{
-				
-				System.out.println(DataContainer.get(i).getText());
-				DataContainer.get(i).click();
-				Thread.sleep(3000);
-				System.out.println("Selected accessories");
-				
+				for (int i = 0; i <= DataContainer.size(); i++)
+				// for (int i = 0; i <= 5; i++)
+				{
+					System.out.println(DataContainer.get(i).getText());
+					DataContainer.get(i).click();
+					Thread.sleep(3000);
+					System.out.println("Selected accessories");
+				}
 			}
-			
-			}
-		}
-		catch (Exception e) {
+		} catch (Exception e) {
 			System.out.println("No accessories found");
 			Assert.fail("No accessories found");
-
-		}		
-		
+		}
 		Thread.sleep(2000);
 		log.debug("Added a random accessory to basket");
-
 	}
-
-	
 
 	public static void verifyBasecommTariffAndExtrasPageHeaderDetails() {
 		log.debug("Running verifyBasecommTariffAndExtrasPageHeaderDetails function");
@@ -145,22 +129,14 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 		}
 	}
 
-	public static void verifyBasecommTariffAndExtrasDockHeaderDetails(String DeviceName) {
+	public static void verifyBasecommTariffAndExtrasDockHeaderDetails() {
 		log.debug("Running verifyBasecommTariffAndExtrasDockHeaderDetails function");
 
 		try {
-
-			if (DeviceName.contains("Apple")) {
-				Assert.assertTrue("Assertion Failed: Dock header does not contain Back to offers link",
-						pageobjects.PhonesListingPage.DockHeader_BackToOfferLink.getText()
-								.contains("Back to iPad offers"));
-			} else {
-				Assert.assertTrue("Assertion Failed: Dock header does not contain Back to offers link",
-						pageobjects.PhonesListingPage.DockHeader_BackToOfferLink.getText()
-								.contains("Back to tablet offers"));
-			}
-
+			Assert.assertTrue("Assertion Failed: Dock header does not contain Back to offers link",
+					pageobjects.PhonesListingPage.DockHeader_BackToOfferLink.getText().contains("Back to offers"));
 			log.debug("Assertion Success: Dock header contains Back to offers link");
+			System.out.println("Assertion Success: Dock header contains Back to offers link");
 
 			Assert.assertTrue("Assertion Failed: Dock header does not contain Choose your tariff link",
 					pageobjects.PhonesListingPage.DockHeader_ChooseYourTariffLink.getText()
@@ -176,7 +152,6 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 		} catch (AssertionError e) {
 			System.out.println("Unable to Verify dock header details in the Tariff and Extras Page. " + e.getMessage());
 			Assert.fail("Unable to Verify dock header details in the Tariff and Extras Page." + e.getMessage());
-
 		}
 	}
 
@@ -215,6 +190,11 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 		log.debug("Running verifyBasecommPromotionalElementsAreDisplayedInTariffsAndExtrasPage function");
 
 		try {
+			pageobjects.PhonesListingPage.DockHeader_AccessoriesLink.click();
+			Thread.sleep(1000);
+			pageobjects.PhonesListingPage.DockHeader_ChooseYourTariffLink.click();
+			Thread.sleep(1000);
+
 			if (pageobjects.PhonesListingPage.BaseComm_RecommendedTariff_Section.getAttribute("class")
 					.contains("tariff ng-scope promoted-tariff promoted-at-first no-promotion-exists")) {
 
@@ -260,6 +240,7 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 			if (pageobjects.PhonesListingPage.BaseComm_PayForYourDeviceInFull_Link.isEnabled()) {
 				System.out.println("Pay For Your device in full Link is enabled in the Tariffs and Extras Page");
 				pageobjects.PhonesListingPage.BaseComm_PayForYourDeviceInFull_Link.click();
+				Thread.sleep(2000);
 				if (pageobjects.PhonesListingPage.BaseComm_PayForYourDeviceInFull_Section.isDisplayed()) {
 					System.out.println("Pay for your device in full section is getting displayed successfully");
 				} else {
@@ -276,7 +257,6 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 			Assert.fail(
 					"Pay for your device in full Link and corresponding section is not enabled in the Tariff and Extras Page"
 							+ e.getMessage());
-
 		}
 	}
 
@@ -303,13 +283,10 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 		}
 	}
 
-	
-	
 	public static void verifyClickAndCollectDeliveryWorks() throws InterruptedException {
 		log.debug("Running verifyClickAndCollectDeliveryWorks function");
 
 		try {
-
 			pageobjects.PhonesListingPage.BaseComm_ClickAndCollect_Delivery_Option.click();
 			System.out.println("clickAndCollect is Selected");
 			log.debug("click And Collect is Selected");

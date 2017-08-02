@@ -72,15 +72,15 @@ public class SmartwatchesPageActions extends Environment {
 				System.out.println("Clicked Random Device");
 
 			}
-			
-		/*	if (elementName.contains("Samsung Galaxy Gear")) {
-				System.out.println("Going to select SamsungGalaxyGear");
 
-				pageobjects.SmartwatchesPage.SamsungGearS2.click();
-				Thread.sleep(15000);
-
-				System.out.println("Clicked SamsungGalaxyGear");
-			}*/
+			/*
+			 * if (elementName.contains("Samsung Galaxy Gear")) {
+			 * System.out.println("Going to select SamsungGalaxyGear");
+			 * 
+			 * pageobjects.SmartwatchesPage.SamsungGearS2.click(); Thread.sleep(15000);
+			 * 
+			 * System.out.println("Clicked SamsungGalaxyGear"); }
+			 */
 
 			if (elementName.contains("Samsung Galaxy Gear")) {
 				System.out.println("Going to select SamsungGalaxyGear");
@@ -91,9 +91,6 @@ public class SmartwatchesPageActions extends Environment {
 				System.out.println("Clicked SamsungGalaxyGear");
 			}
 
-			
-
-
 			// The following has to be added in deviceSelect function –
 			else if (elementName.contains("Samsung Gear S2")) {
 				pageobjects.SmartwatchesPage.SamsungGearS2.click();
@@ -101,11 +98,11 @@ public class SmartwatchesPageActions extends Environment {
 				System.out.println("Selected SamsungGearS2");
 				log.debug("Selected SamsungGearS2");
 			}
-			
+
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
-			System.out.println("Unable to select "+elementName+" device");
-		//	Assert.fail("Unable to select "+elementName+" device");
+			System.out.println("Unable to select " + elementName + " device");
+			// Assert.fail("Unable to select "+elementName+" device");
 
 		}
 	}
@@ -140,12 +137,12 @@ public class SmartwatchesPageActions extends Environment {
 
 				/*
 				 * WebElement BasketQuantity =
-				 * driver.findElement(By.id("accessory-quantitySelectBoxIt"));
-				 * String BasketQuantityvalue = BasketQuantity.getText();
+				 * driver.findElement(By.id("accessory-quantitySelectBoxIt")); String
+				 * BasketQuantityvalue = BasketQuantity.getText();
 				 * System.out.println("Basket value is "+BasketQuantityvalue);
-				 * Assert.assertEquals("4", BasketQuantityvalue);
-				 * System.out.println( "Values are correct , Basket quantity = "
-				 * + BasketQuantityvalue + "Device added value = 4");
+				 * Assert.assertEquals("4", BasketQuantityvalue); System.out.println(
+				 * "Values are correct , Basket quantity = " + BasketQuantityvalue +
+				 * "Device added value = 4");
 				 */
 			} else {
 				driver.navigate().back();
@@ -166,6 +163,55 @@ public class SmartwatchesPageActions extends Environment {
 			// Assert.assertEquals(DeviceDetailsQuantityValue,
 			// BasketQuantityvalue);
 			Assert.assertEquals("4", BasketQuantityvalue);
+
+		}
+
+	}
+
+	public static void UserSpecifiedSmartwatchTrackerLimit(String Limit) throws InterruptedException {
+
+		try {
+			// Below will give status like in stock / out of stock etc
+			Thread.sleep(5000);
+
+			String status = driver.findElement(By.className("status-info")).getText();
+			System.out.println(status);
+
+			if (status.contains("In Stock")) {
+				WebElement element = driver
+						.findElement(By.xpath("//select[@class='accessory-option ng-pristine ng-valid']"));
+				JavascriptExecutor js = (JavascriptExecutor) driver;
+				js.executeScript("arguments[0].setAttribute('style', 'display:block;')", element);
+				new Select(element).selectByValue(Limit);
+
+				WebElement DeviceDetailsQuantity = driver.findElement(
+						By.xpath("//div[@on-dimension-select='selectQuantityDimension']/span[@role='combobox']"));
+				String DeviceDetailsQuantityValue = DeviceDetailsQuantity.getText();
+				System.out.println("DeviceDetailsQuantityValue is " + DeviceDetailsQuantityValue);
+
+				driver.findElement(By.id("deviceDetailsSubmit")).click();
+
+				Thread.sleep(7000);
+
+			} else {
+				driver.navigate().back();
+			}
+
+		} catch (Exception e) {
+			WebElement DeviceDetailsQuantity = driver.findElement(
+					By.xpath("//div[@on-dimension-select='selectQuantityDimension']/span[@role='combobox']"));
+			String DeviceDetailsQuantityValue = DeviceDetailsQuantity.getText();
+			System.out.println(DeviceDetailsQuantityValue);
+			// Assert.assertEquals(Limit, DeviceDetailsQuantityValue);
+
+			driver.findElement(By.id("deviceDetailsSubmit")).click();
+
+			Thread.sleep(3000);
+			WebElement BasketQuantity = driver.findElement(By.id("accessory-quantitySelectBoxIt"));
+			String BasketQuantityvalue = BasketQuantity.getText();
+			// Assert.assertEquals(DeviceDetailsQuantityValue,
+			// BasketQuantityvalue);
+			// Assert.assertEquals(Limit, BasketQuantityvalue);
 
 		}
 

@@ -17,7 +17,7 @@ Feature: C1786_E11354-11447-11565_TC2_Existing_Custo_Other_Tablets_Filter_and_So
 
     Examples: 
       | username             | password | sort option      | Filter | Option |
-      | 07770001111@o2.co.uk | test123  | MonthlyLowToHigh | Brand  | HTC    |
+      | 07770001111@o2.co.uk | test123  | MonthlyLowToHigh | Brand  | Samsung|
   #Filter: Brand,Colour
   #BrandFilter-Options:Alcatel,Apple,Doro,HTC,Huawei,LG,Moto,OnePlus,Samsung,Sony
   #ColourFilter-Options:Grey,Black,Yellow,Blue,White,Green,Red

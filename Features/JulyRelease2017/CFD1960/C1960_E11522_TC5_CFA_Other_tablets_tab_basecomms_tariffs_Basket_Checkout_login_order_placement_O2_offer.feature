@@ -7,7 +7,7 @@ Feature: C1960_E11522_TC5_CFA_Other_tablets_tab_basecomms_tariffs_Basket_Checkou
     #Veirfy device price details are also getting displayed in the above step
     And select <color> color of the connected device
     And select <capacity> capacity of the connected device
-    And Verify that promotion ribbon is displayed
+    And Verify that promotion ribbon is displayed for <device_name>
     And Verify new image is as per the selected <device_name>,<capacity>and <color> in the Basecomms page
     And Click on "Buy Now" button for <device_name> and verify "Tariffs and Extras" page is displayed
     And Verify new image is as per the selected <device_name>,<capacity>and <color> in the Tariffs and Extras Page

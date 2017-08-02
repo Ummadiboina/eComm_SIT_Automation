@@ -72,11 +72,9 @@ public class Hooks extends Environment {
 			try {
 
 				/*
-				 * scenario.write("Current Page URL is "
-				 * +driver.getCurrentUrl());
-				 * log.debug("The url where it has failed is "+driver.
-				 * getCurrentUrl()); // byte[] screenshot =
-				 * getScreenshotAs(OutputType.BYTES); byte[] screenshot =
+				 * scenario.write("Current Page URL is " +driver.getCurrentUrl());
+				 * log.debug("The url where it has failed is "+driver. getCurrentUrl()); //
+				 * byte[] screenshot = getScreenshotAs(OutputType.BYTES); byte[] screenshot =
 				 * ((TakesScreenshot)driver).getScreenshotAs(OutputType.BYTES);
 				 * scenario.embed(screenshot, "image/png");
 				 */
@@ -93,8 +91,7 @@ public class Hooks extends Environment {
 
 		}
 		Thread.sleep(2000);
-		driver.quit();
-		
+		driver.close();
 
 	}
 

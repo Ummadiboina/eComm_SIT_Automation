@@ -9,7 +9,7 @@ Scenario Outline:
 	And I navigate to the Basecomm Page 
 	And Verify expected <device_name> and its specific details are present in the device list <default_colour>,<default_capacity>,<default_stock_message> 
 	#Veirfy device price details are also getting displayed in the above step
-	And Verify that promotion ribbon is displayed for <device_name> 
+	And Verify that promotion ribbon is displayed for <device_name>
 	And Select <color>, <capacity> of the device <device_name> 
 	And Verify new image is as per the selected <device_name>,<capacity>and <color> in the Basecomms page 
 	And Click on "Buy Now" button for <device_name> and verify "Tariffs and Extras" page is displayed 

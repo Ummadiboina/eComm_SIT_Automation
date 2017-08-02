@@ -22,7 +22,8 @@ public class BaseCommPage {
 	@FindBy(how = How.XPATH, using = ("(//a[@href='?contractType=payasyougo'])"))
 	public static WebElement PayAsUGo;
 
-	@FindBy(how = How.XPATH, using = "//h2[contains(text(),'Sort')]")
+	//@FindBy(how = How.XPATH, using = "//h2[contains(text(),'Sort')]")
+	@FindBy(how = How.XPATH, using = "//*[@id='o2-page-wrapper']/div[4]/div[1]/div[1]/div[2]/ul/li[2]/a/h2")
 	public static WebElement SortTab;
 
 	@FindAll({
@@ -36,7 +37,8 @@ public class BaseCommPage {
 			@FindBy(how = How.XPATH, using = ("//div[@class='module label-xxl desktop-fragments-label-xxl-1']/h2")) })
 	public static List<WebElement> TabletDevicesName;*/
 
-	@FindBy(how = How.XPATH, using = "//h2[contains(text(),'Filter')]")
+	//@FindBy(how = How.XPATH, using = "//h2[contains(text(),'Filter')]")
+	@FindBy(how = How.XPATH, using = "//*[@id='filter-phones-form']/div[3]")
 	public static WebElement FilterTab;
 
 	@FindBy(how = How.XPATH, using = ("//a[@href='changeTariff/']"))
