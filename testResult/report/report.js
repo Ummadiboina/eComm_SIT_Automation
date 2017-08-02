@@ -1,162 +1,153 @@
-$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("Reg_AFA_PAYM_Acquistion.feature");
+$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("Features/RegressionPack_Master/Reg_CS_PayMSimOnly.feature");
 formatter.feature({
   "line": 1,
-  "name": "Reg_AFA_PAYM_Acquistion",
+  "name": "Reg_CS_PayMSimOnly",
   "description": "",
-  "id": "reg-afa-paym-acquistion",
+  "id": "reg-cs-paymsimonly",
   "keyword": "Feature"
 });
 formatter.scenarioOutline({
-  "comments": [
-    {
-      "line": 3,
-      "value": "#launch hooks and get browser"
-    }
-  ],
-  "line": 5,
-  "name": "Successful completion of a PAY M Acquistion journey",
+  "line": 4,
+  "name": "Sim Only PayM 12Months E2E validation",
   "description": "",
-  "id": "reg-afa-paym-acquistion;successful-completion-of-a-pay-m-acquistion-journey",
+  "id": "reg-cs-paymsimonly;sim-only-paym-12months-e2e-validation",
   "type": "scenario_outline",
   "keyword": "Scenario Outline",
   "tags": [
     {
-      "line": 4,
-      "name": "@AgentsRegression"
+      "line": 3,
+      "name": "@Regression"
     }
   ]
 });
 formatter.step({
-  "line": 6,
-  "name": "I login to Agent shop",
+  "line": 5,
+  "name": "I am an CFA user and Lands on shop page",
   "keyword": "Given "
 });
 formatter.step({
+  "line": 6,
+  "name": "navigate to PAYM SIMO page",
+  "keyword": "And "
+});
+formatter.step({
   "line": 7,
-  "name": "performs Acquisition for New user",
+  "name": "Click on different \u003cContract\u003e  Months Tariff in Tab",
   "keyword": "And "
 });
 formatter.step({
   "line": 8,
-  "name": "Select a valid PayM \u003cDevice\u003e",
+  "name": "Select any Random Tariff in the displayed list of Tariffs under different \u003cContract\u003e tab",
   "keyword": "And "
 });
 formatter.step({
   "line": 9,
-  "name": "Select valid \u003cTariffs\u003e from tariffs tab",
+  "name": "I Land on the Plan included basket page and choose home delivery option",
   "keyword": "And "
 });
 formatter.step({
   "line": 10,
-  "name": "select a valid Handset and Tariff combination",
+  "name": "click on \"go to checkout\" button",
   "keyword": "And "
 });
 formatter.step({
   "line": 11,
-  "name": "Select valid \u003cExtras\u003e from extras tab",
+  "name": "input \u003cFirstname\u003e and \u003cSurname\u003e and other valid details in Delivery page and Click on the \u0027Continue button\u0027",
   "keyword": "And "
 });
 formatter.step({
   "line": 12,
-  "name": "Validate all the Basket content and checkout",
+  "name": "land on the payment page and input \u003cUsername\u003e and other details and click \u0027Continue on next step\u0027",
   "keyword": "And "
 });
 formatter.step({
   "line": 13,
-  "name": "perform all the advisory checks",
-  "keyword": "Then "
+  "name": "Continue to Review page and review the order",
+  "keyword": "And "
 });
 formatter.step({
   "line": 14,
-  "name": "perform the credit checks using valid \u003cFirstname\u003e and \u003cSurname\u003e and valid \u003cUsername\u003e",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 15,
-  "name": "Register customer with valid \u003cFirstname\u003e and \u003cSurname\u003e and other valid details in delivery page",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 16,
-  "name": "Choose \u003cDeliveryType\u003e delivery address and delivery time",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 17,
-  "name": "Update Device Plan Link Email Address",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 18,
-  "name": "CCALink Should be generated",
+  "name": "order confirmation is displayed",
   "keyword": "Then "
 });
 formatter.examples({
-  "line": 20,
+  "line": 16,
   "name": "",
   "description": "",
-  "id": "reg-afa-paym-acquistion;successful-completion-of-a-pay-m-acquistion-journey;",
+  "id": "reg-cs-paymsimonly;sim-only-paym-12months-e2e-validation;",
   "rows": [
     {
       "cells": [
-        "Device",
-        "Tariffs",
-        "Extras",
-        "DeliveryType",
+        "Contract",
         "Firstname",
         "Surname",
         "Username"
       ],
-      "line": 21,
-      "id": "reg-afa-paym-acquistion;successful-completion-of-a-pay-m-acquistion-journey;;1"
+      "line": 17,
+      "id": "reg-cs-paymsimonly;sim-only-paym-12months-e2e-validation;;1"
     },
     {
       "cells": [
-        "S7 edge black 32 GB",
-        "Random",
-        "Random",
-        "HomeDelivery",
-        "Test",
-        "Accepta",
-        "Test Accepta"
+        "12 Months",
+        "TEST",
+        "ACCEPTA",
+        "TEST ACCEPTA"
       ],
-      "line": 22,
-      "id": "reg-afa-paym-acquistion;successful-completion-of-a-pay-m-acquistion-journey;;2"
+      "line": 18,
+      "id": "reg-cs-paymsimonly;sim-only-paym-12months-e2e-validation;;2"
+    },
+    {
+      "cells": [
+        "30 Days",
+        "TEST",
+        "ACCEPTA",
+        "TEST ACCEPTA"
+      ],
+      "line": 19,
+      "id": "reg-cs-paymsimonly;sim-only-paym-12months-e2e-validation;;3"
     }
   ],
   "keyword": "Examples"
 });
 formatter.before({
-  "duration": 42605878961,
+  "duration": 18232216068,
   "status": "passed"
 });
 formatter.scenario({
-  "line": 22,
-  "name": "Successful completion of a PAY M Acquistion journey",
+  "line": 18,
+  "name": "Sim Only PayM 12Months E2E validation",
   "description": "",
-  "id": "reg-afa-paym-acquistion;successful-completion-of-a-pay-m-acquistion-journey;;2",
+  "id": "reg-cs-paymsimonly;sim-only-paym-12months-e2e-validation;;2",
   "type": "scenario",
   "keyword": "Scenario Outline",
   "tags": [
     {
-      "line": 4,
-      "name": "@AgentsRegression"
+      "line": 3,
+      "name": "@Regression"
     }
   ]
 });
 formatter.step({
-  "line": 6,
-  "name": "I login to Agent shop",
+  "line": 5,
+  "name": "I am an CFA user and Lands on shop page",
   "keyword": "Given "
 });
 formatter.step({
+  "line": 6,
+  "name": "navigate to PAYM SIMO page",
+  "keyword": "And "
+});
+formatter.step({
   "line": 7,
-  "name": "performs Acquisition for New user",
+  "name": "Click on different 12 Months  Months Tariff in Tab",
+  "matchedColumns": [
+    0
+  ],
   "keyword": "And "
 });
 formatter.step({
   "line": 8,
-  "name": "Select a valid PayM S7 edge black 32 GB",
+  "name": "Select any Random Tariff in the displayed list of Tariffs under different 12 Months tab",
   "matchedColumns": [
     0
   ],
@@ -164,94 +155,64 @@ formatter.step({
 });
 formatter.step({
   "line": 9,
-  "name": "Select valid Random from tariffs tab",
-  "matchedColumns": [
-    1
-  ],
+  "name": "I Land on the Plan included basket page and choose home delivery option",
   "keyword": "And "
 });
 formatter.step({
   "line": 10,
-  "name": "select a valid Handset and Tariff combination",
+  "name": "click on \"go to checkout\" button",
   "keyword": "And "
 });
 formatter.step({
   "line": 11,
-  "name": "Select valid Random from extras tab",
+  "name": "input TEST and ACCEPTA and other valid details in Delivery page and Click on the \u0027Continue button\u0027",
   "matchedColumns": [
+    1,
     2
   ],
   "keyword": "And "
 });
 formatter.step({
   "line": 12,
-  "name": "Validate all the Basket content and checkout",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 13,
-  "name": "perform all the advisory checks",
-  "keyword": "Then "
-});
-formatter.step({
-  "line": 14,
-  "name": "perform the credit checks using valid Test and Accepta and valid Test Accepta",
-  "matchedColumns": [
-    4,
-    5,
-    6
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "line": 15,
-  "name": "Register customer with valid Test and Accepta and other valid details in delivery page",
-  "matchedColumns": [
-    4,
-    5
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "line": 16,
-  "name": "Choose HomeDelivery delivery address and delivery time",
+  "name": "land on the payment page and input TEST ACCEPTA and other details and click \u0027Continue on next step\u0027",
   "matchedColumns": [
     3
   ],
   "keyword": "And "
 });
 formatter.step({
-  "line": 17,
-  "name": "Update Device Plan Link Email Address",
+  "line": 13,
+  "name": "Continue to Review page and review the order",
   "keyword": "And "
 });
 formatter.step({
-  "line": 18,
-  "name": "CCALink Should be generated",
+  "line": 14,
+  "name": "order confirmation is displayed",
   "keyword": "Then "
 });
 formatter.match({
-  "location": "E2EOrderPlaced_Steps.LoginAgentShop()"
+  "location": "E2EOrderPlaced_Steps.i_am_an_CFA_user_and_Lands_on_shop_page()"
 });
 formatter.result({
-  "duration": 3882302457,
-  "error_message": "junit.framework.AssertionFailedError: Unable to Login/validate home page, please see the failure screenshot\r\n\tat junit.framework.Assert.fail(Assert.java:47)\r\n\tat steps.E2EOrderPlaced_Steps.LoginAgentShop(E2EOrderPlaced_Steps.java:1245)\r\n\tat ✽.Given I login to Agent shop(Reg_AFA_PAYM_Acquistion.feature:6)\r\n",
+  "duration": 428043246,
+  "status": "passed"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.navigate_to_PAYM_SIMO_page()"
+});
+formatter.result({
+  "duration": 6857089941,
+  "error_message": "junit.framework.AssertionFailedError: Unable to do mousehover to PAYM SIMO page\r\n\tat junit.framework.Assert.fail(Assert.java:47)\r\n\tat steps.E2EOrderPlaced_Steps.navigate_to_PAYM_SIMO_page(E2EOrderPlaced_Steps.java:274)\r\n\tat ✽.And navigate to PAYM SIMO page(Features/RegressionPack_Master/Reg_CS_PayMSimOnly.feature:6)\r\n",
   "status": "failed"
 });
 formatter.match({
-  "location": "E2EOrderPlaced_Steps.performs_Acquisition_for_New_user()"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.match({
   "arguments": [
     {
-      "val": "S7 edge black 32 GB",
-      "offset": 20
+      "val": "12 Months ",
+      "offset": 19
     }
   ],
-  "location": "E2EOrderPlaced_Steps.SelectValid_Device(String)"
+  "location": "E2EOrderPlaced_Steps.click_on_different_Months_Tariff_in_Tab(String)"
 });
 formatter.result({
   "status": "skipped"
@@ -259,17 +220,17 @@ formatter.result({
 formatter.match({
   "arguments": [
     {
-      "val": "Random",
-      "offset": 13
+      "val": "12 Months",
+      "offset": 74
     }
   ],
-  "location": "E2EOrderPlaced_Steps.SelectTariff(String)"
+  "location": "E2EOrderPlaced_Steps.select_any_Random_Tariff_in_the_displayed_list_of_Tariffs_under_different_Months_tab(String)"
 });
 formatter.result({
   "status": "skipped"
 });
 formatter.match({
-  "location": "E2EOrderPlaced_Steps.select_a_valid_Handset_and_Tariff_combination()"
+  "location": "E2EOrderPlaced_Steps.i_Land_on_the_Plan_included_basket_page_and_choose_home_delivery_option()"
 });
 formatter.result({
   "status": "skipped"
@@ -277,23 +238,11 @@ formatter.result({
 formatter.match({
   "arguments": [
     {
-      "val": "Random",
-      "offset": 13
+      "val": "go to checkout",
+      "offset": 10
     }
   ],
-  "location": "E2EOrderPlaced_Steps.select_valid_Random_from_extras_tab(String)"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.validate_all_the_Basket_content_and_checkout()"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.advisory_checks()"
+  "location": "E2EOrderPlaced_Steps.CheckoutFromBasket(String)"
 });
 formatter.result({
   "status": "skipped"
@@ -301,19 +250,15 @@ formatter.result({
 formatter.match({
   "arguments": [
     {
-      "val": "Test",
-      "offset": 38
+      "val": "TEST",
+      "offset": 6
     },
     {
-      "val": "Accepta",
-      "offset": 47
-    },
-    {
-      "val": "Test Accepta",
-      "offset": 65
+      "val": "ACCEPTA",
+      "offset": 15
     }
   ],
-  "location": "E2EOrderPlaced_Steps.CreditCheck(String,String,String)"
+  "location": "E2EOrderPlaced_Steps.DeliveryPage_Inputs_homeDelivery(String,String)"
 });
 formatter.result({
   "status": "skipped"
@@ -321,149 +266,214 @@ formatter.result({
 formatter.match({
   "arguments": [
     {
-      "val": "Test",
-      "offset": 29
-    },
-    {
-      "val": "Accepta",
-      "offset": 38
+      "val": "TEST ACCEPTA",
+      "offset": 35
     }
   ],
-  "location": "E2EOrderPlaced_Steps.register_customer(String,String)"
+  "location": "E2EOrderPlaced_Steps.CreditCheckPaymentPage_HomeDelivery(String)"
 });
 formatter.result({
   "status": "skipped"
 });
 formatter.match({
-  "location": "E2EOrderPlaced_Steps.HomeDelivery_Address()"
+  "location": "E2EOrderPlaced_Steps.ReviewPageConfirmation()"
 });
 formatter.result({
   "status": "skipped"
 });
 formatter.match({
-  "location": "E2EOrderPlaced_Steps.updatedeviceplan()"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.ccaLink()"
+  "location": "E2EOrderPlaced_Steps.OrderConfirmationPage()"
 });
 formatter.result({
   "status": "skipped"
 });
 formatter.after({
-  "duration": 11173206567,
+  "duration": 7827661030,
   "status": "passed"
 });
-formatter.uri("Reg_AFA_PayG_withoutAnyAccessory.feature");
-formatter.feature({
-  "line": 1,
-  "name": "Reg_AFA_PayG_withoutAnyAccessory",
-  "description": "",
-  "id": "reg-afa-payg-withoutanyaccessory",
-  "keyword": "Feature"
+formatter.before({
+  "duration": 10574760933,
+  "status": "passed"
 });
-formatter.scenarioOutline({
-  "comments": [
-    {
-      "line": 3,
-      "value": "#launch hooks and get browser"
-    }
-  ],
-  "line": 5,
-  "name": "Successful completion of a PAY G handset acquisition Journey without an accessory",
+formatter.scenario({
+  "line": 19,
+  "name": "Sim Only PayM 12Months E2E validation",
   "description": "",
-  "id": "reg-afa-payg-withoutanyaccessory;successful-completion-of-a-pay-g-handset-acquisition-journey-without-an-accessory",
-  "type": "scenario_outline",
+  "id": "reg-cs-paymsimonly;sim-only-paym-12months-e2e-validation;;3",
+  "type": "scenario",
   "keyword": "Scenario Outline",
   "tags": [
     {
-      "line": 4,
-      "name": "@AgentsRegression"
+      "line": 3,
+      "name": "@Regression"
     }
   ]
 });
 formatter.step({
-  "line": 6,
-  "name": "I login to Agent shop",
+  "line": 5,
+  "name": "I am an CFA user and Lands on shop page",
   "keyword": "Given "
 });
 formatter.step({
+  "line": 6,
+  "name": "navigate to PAYM SIMO page",
+  "keyword": "And "
+});
+formatter.step({
   "line": 7,
-  "name": "performs Acquisition for New user",
+  "name": "Click on different 30 Days  Months Tariff in Tab",
+  "matchedColumns": [
+    0
+  ],
   "keyword": "And "
 });
 formatter.step({
   "line": 8,
-  "name": "Select a valid PAYG \u003cDevice\u003e",
+  "name": "Select any Random Tariff in the displayed list of Tariffs under different 30 Days tab",
+  "matchedColumns": [
+    0
+  ],
   "keyword": "And "
 });
 formatter.step({
   "line": 9,
-  "name": "Select valid \u003cTariffs\u003e from PAYG tariffs tab",
+  "name": "I Land on the Plan included basket page and choose home delivery option",
   "keyword": "And "
 });
 formatter.step({
   "line": 10,
-  "name": "Validate all the Basket content and checkout",
+  "name": "click on \"go to checkout\" button",
   "keyword": "And "
 });
 formatter.step({
   "line": 11,
-  "name": "perform all the advisory checks",
-  "keyword": "Then "
+  "name": "input TEST and ACCEPTA and other valid details in Delivery page and Click on the \u0027Continue button\u0027",
+  "matchedColumns": [
+    1,
+    2
+  ],
+  "keyword": "And "
 });
 formatter.step({
   "line": 12,
-  "name": "Register customer with valid \u003cFirstname\u003e and \u003cSurname\u003e and other valid details in delivery page",
+  "name": "land on the payment page and input TEST ACCEPTA and other details and click \u0027Continue on next step\u0027",
+  "matchedColumns": [
+    3
+  ],
   "keyword": "And "
 });
 formatter.step({
   "line": 13,
-  "name": "Choose \u003cDeliveryType\u003e delivery address and delivery time",
+  "name": "Continue to Review page and review the order",
   "keyword": "And "
 });
 formatter.step({
   "line": 14,
-  "name": "Pay by card",
-  "keyword": "When "
-});
-formatter.step({
-  "line": 15,
-  "name": "Order confirmation message should be displayed",
+  "name": "order confirmation is displayed",
   "keyword": "Then "
 });
-formatter.examples({
-  "line": 17,
-  "name": "",
-  "description": "",
-  "id": "reg-afa-payg-withoutanyaccessory;successful-completion-of-a-pay-g-handset-acquisition-journey-without-an-accessory;",
-  "rows": [
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.i_am_an_CFA_user_and_Lands_on_shop_page()"
+});
+formatter.result({
+  "duration": 28292013,
+  "status": "passed"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.navigate_to_PAYM_SIMO_page()"
+});
+formatter.result({
+  "duration": 15339902795,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
     {
-      "cells": [
-        "Device",
-        "Tariffs",
-        "DeliveryType",
-        "Firstname",
-        "Surname",
-        "Username"
-      ],
-      "line": 18,
-      "id": "reg-afa-payg-withoutanyaccessory;successful-completion-of-a-pay-g-handset-acquisition-journey-without-an-accessory;;1"
-    },
-    {
-      "cells": [
-        "iPhone 7 Plus 128GB Jet Black",
-        "Random",
-        "HomeDelivery",
-        "TEST",
-        "ACCEPTA",
-        "TEST ACCEPTA"
-      ],
-      "line": 19,
-      "id": "reg-afa-payg-withoutanyaccessory;successful-completion-of-a-pay-g-handset-acquisition-journey-without-an-accessory;;2"
+      "val": "30 Days ",
+      "offset": 19
     }
   ],
-  "keyword": "Examples"
+  "location": "E2EOrderPlaced_Steps.click_on_different_Months_Tariff_in_Tab(String)"
+});
+formatter.result({
+  "duration": 159493896,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "30 Days",
+      "offset": 74
+    }
+  ],
+  "location": "E2EOrderPlaced_Steps.select_any_Random_Tariff_in_the_displayed_list_of_Tariffs_under_different_Months_tab(String)"
+});
+formatter.result({
+  "duration": 4651960,
+  "status": "passed"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.i_Land_on_the_Plan_included_basket_page_and_choose_home_delivery_option()"
+});
+formatter.result({
+  "duration": 23096440069,
+  "error_message": "junit.framework.AssertionFailedError: Unable to Land on the Plan included basket page and choose home delivery option\r\n\tat junit.framework.Assert.fail(Assert.java:47)\r\n\tat steps.E2EOrderPlaced_Steps.i_Land_on_the_Plan_included_basket_page_and_choose_home_delivery_option(E2EOrderPlaced_Steps.java:802)\r\n\tat ✽.And I Land on the Plan included basket page and choose home delivery option(Features/RegressionPack_Master/Reg_CS_PayMSimOnly.feature:9)\r\n",
+  "status": "failed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "go to checkout",
+      "offset": 10
+    }
+  ],
+  "location": "E2EOrderPlaced_Steps.CheckoutFromBasket(String)"
+});
+formatter.result({
+  "status": "skipped"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "TEST",
+      "offset": 6
+    },
+    {
+      "val": "ACCEPTA",
+      "offset": 15
+    }
+  ],
+  "location": "E2EOrderPlaced_Steps.DeliveryPage_Inputs_homeDelivery(String,String)"
+});
+formatter.result({
+  "status": "skipped"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "TEST ACCEPTA",
+      "offset": 35
+    }
+  ],
+  "location": "E2EOrderPlaced_Steps.CreditCheckPaymentPage_HomeDelivery(String)"
+});
+formatter.result({
+  "status": "skipped"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.ReviewPageConfirmation()"
+});
+formatter.result({
+  "status": "skipped"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.OrderConfirmationPage()"
+});
+formatter.result({
+  "status": "skipped"
+});
+formatter.after({
+  "duration": 2976405715,
+  "status": "passed"
+});
 });

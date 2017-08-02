@@ -29,15 +29,20 @@ public class PAYMandPAYGTariffAndExtrasPage {
 	//Below is for Selecting Any Tariff
 	@FindBy(how=How.XPATH,using=("(//*[@id='callToAction'])[3]"))
 	public static WebElement RandomTariff2;
+	
+	@FindBy(how=How.XPATH,using=("//*[@id='pay-full-device-tariff-tile']"))
+	public static WebElement PayYourdDeviceInFullContainer;
 
 	//Below is for Selecting Any Tariff
-		@FindBy(how=How.XPATH,using=("(//*[@id='callToAction'])[7]"))
+		@FindBy(how=How.XPATH,using=("(//div[@id='pay-full-device-tariff-tile']/div[@class='tariff ng-scope no-promotion-exists']/div[6]/div/button)[1]"))
 		public static WebElement RandomfullTariff1;
 		
 		
 		//Below is for Selecting Any Tariff
 		@FindBy(how=How.XPATH,using=("(//*[@id='callToAction'])[8]"))
 		public static WebElement RandomfullTariff2;
+		
+		
 		
 //Below is to add an accessory in TandE page
 		@FindBy(how=How.XPATH,using=("(//*[@id='accessoryTile_']/div[5]/input)[1]"))

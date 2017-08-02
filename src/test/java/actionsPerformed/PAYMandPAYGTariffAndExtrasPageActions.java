@@ -11,10 +11,6 @@ import org.openqa.selenium.WebElement;
 
 import helpers.Environment;
 
-
-
-
-
 public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 	static Logger log = Logger.getLogger("devpinoyLogger");
 
@@ -27,7 +23,7 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 
 	}
 
-	public static void TariffSelect(String ElementName) {
+	public static void TariffSelect(String ElementName) throws InterruptedException {
 		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 
 		if (ElementName.contains("Randomtariff")) {
@@ -48,7 +44,14 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 
 			pageobjects.PAYMandPAYGTariffAndExtrasPage.RandomfullTariff1.sendKeys(Keys.ENTER);
 			log.debug("Selected a full payment Tariff");
+
+			JavascriptExecutor jse1 = (JavascriptExecutor) driver;
+			jse1.executeScript("window.scrollBy(0,350)", "");
+
 		}
+
+		Thread.sleep(5000);
+
 	}
 
 	public static void addAccessory() throws InterruptedException {
@@ -60,16 +63,17 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 		log.debug("Added a random accessory to basket");
 
 	}
+
 	public static void PayDeviceFullLink() {
 		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 		pageobjects.PAYMandPAYGTariffAndExtrasPage.addToBasketLive.sendKeys(Keys.ENTER);
 		log.debug("Clicked on Add to Basket in Tariff and Extras page");
 
 	}
-	
+
 	public static void addToBasketLive() {
 		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
-		
+
 		JavascriptExecutor jse = (JavascriptExecutor) driver;
 		jse.executeScript("window.scrollBy(0,600)", "");
 		pageobjects.PAYMandPAYGTariffAndExtrasPage.addToBasketLive.sendKeys(Keys.ENTER);
@@ -90,43 +94,37 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 		log.debug("The Accessory which will be added is  - "
 				+ pageobjects.PAYMandPAYGTariffAndExtrasPage.AddRandomAccessory.getText());
 		try {
-			
-			WebElement ele0 = pageobjects.PAYMandPAYGTariffAndExtrasPage.AccessoryContainer;
-					
 
-			System.out.println("The element is "+ele0.getText());
-			if (ele0 != null) 
-			{
+			WebElement ele0 = pageobjects.PAYMandPAYGTariffAndExtrasPage.AccessoryContainer;
+
+			System.out.println("The element is " + ele0.getText());
+			if (ele0 != null) {
 				System.out.println("selecting accessories");
-				
 
 				List<WebElement> DataContainer = pageobjects.PAYMandPAYGTariffAndExtrasPage.Add_AccessoryContainer;
 
-		for (int i = 0; i <= DataContainer.size(); i++) 
-			//for (int i = 0; i <= 5; i++)
-			{
-				
-				System.out.println(DataContainer.get(i).getText());
-				DataContainer.get(i).click();
-				Thread.sleep(3000);
-				System.out.println("Selected accessories");
-				
+				for (int i = 0; i <= DataContainer.size(); i++)
+				// for (int i = 0; i <= 5; i++)
+				{
+
+					System.out.println(DataContainer.get(i).getText());
+					DataContainer.get(i).click();
+					Thread.sleep(3000);
+					System.out.println("Selected accessories");
+
+				}
+
 			}
-			
-			}
-		}
-		catch (Exception e) {
+		} catch (Exception e) {
 			System.out.println("No accessories found");
 			Assert.fail("No accessories found");
 
-		}		
-		
+		}
+
 		Thread.sleep(2000);
 		log.debug("Added a random accessory to basket");
 
 	}
-
-	
 
 	public static void verifyBasecommTariffAndExtrasPageHeaderDetails() {
 		log.debug("Running verifyBasecommTariffAndExtrasPageHeaderDetails function");
@@ -303,8 +301,6 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 		}
 	}
 
-	
-	
 	public static void verifyClickAndCollectDeliveryWorks() throws InterruptedException {
 		log.debug("Running verifyClickAndCollectDeliveryWorks function");
 

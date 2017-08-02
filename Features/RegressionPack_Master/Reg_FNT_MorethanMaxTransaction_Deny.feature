@@ -7,6 +7,7 @@ Feature: Reg_FNT_MorethanMaxTransaction_Deny
     And I choose PayM <handset>
     And Navigate to device details page
     And Land on the 'Tariffs and extra' page selecting pay device in full
+    And Choose all Accesssory
     And I Land on the basket page and choose to collect from store
     And click on "go to checkout" button
     And input <Firstname> and <Surname> and other valid details in Delivery page for Click and collect and Click on the 'Continue button'
