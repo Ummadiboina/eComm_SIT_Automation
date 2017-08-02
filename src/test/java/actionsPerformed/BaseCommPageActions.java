@@ -705,6 +705,7 @@ public class BaseCommPageActions extends Environment {
 		jse.executeScript("window.scrollBy(0,900)", "");
 		for (int i = 0; i < iPadDevicesName.size(); i++) {
 
+			
 			if (iPadDevicesName.get(i).getText().equals(device)) {
 				k = i + 1;
 				String c = "(//select[@id='colour'])[" + k + "]";
