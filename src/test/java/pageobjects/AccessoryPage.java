@@ -38,23 +38,25 @@ public class AccessoryPage {
 	@FindBy(how = How.XPATH, using = " ")
 	public static WebElement ContinueShoppingLink;
 	
-	@FindBy(how = How.XPATH, using = "//*[@id='shopApp']/div[4]/div/div/div[1]/div[2]/ul/li[3]/section/h3/span")
-	public static WebElement AccesoryBeforePhoneSelection;
-
+	
 	@FindBy(how = How.XPATH, using = "//*[@id='shopApp']/div[4]/div/div/div[1]/div[2]/ul/li[1]/section/h3/span")
 	public static WebElement FitnessTrackerBeforePhoneSelection;
 
 	@FindBy(how = How.XPATH, using = "//*[@id='shopApp']/div[4]/div/div/div[1]/div[2]/ul/li[2]/section/h3/span")
 	public static WebElement SmartWatchBeforePhoneSelection;
-
-	@FindBy(how = How.XPATH, using = "//*[@id='shopApp']/div[4]/div/div/div[1]/div[2]/ul/li[4]/section/h3/span")
-	public static WebElement AccesoryAfterPhoneSelection;
+	
+	@FindBy(how = How.XPATH, using = "//*[@id='shopApp']/div[4]/div/div/div[1]/div[2]/ul/li[3]/section/h3/span")
+	public static WebElement AccesoryBeforePhoneSelection;
+	
 
 	@FindBy(how = How.XPATH, using = "//*[@id='shopApp']/div[4]/div/div/div[1]/div[2]/ul/li[2]/section/h3/span")
 	public static WebElement FitnessTrackerAfterPhoneSelection;
 
 	@FindBy(how = How.XPATH, using = "//*[@id='shopApp']/div[4]/div/div/div[1]/div[2]/ul/li[3]/section/h3/span")
 	public static WebElement SmartWatchAfterPhoneSelection;
+	
+	@FindBy(how = How.XPATH, using = "//*[@id='shopApp']/div[4]/div/div/div[1]/div[2]/ul/li[4]/section/h3/span")
+	public static WebElement AccesoryAfterPhoneSelection;
 
 	@FindBy(how = How.XPATH, using = "//a[contains(@data-qa-device-model-family, 'Ultra Memory Card 80Mbs')]")
 	public static WebElement SanDiskUltraMemoryCard80Mbs;

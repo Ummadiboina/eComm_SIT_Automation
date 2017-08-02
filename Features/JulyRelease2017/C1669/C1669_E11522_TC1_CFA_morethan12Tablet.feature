@@ -1,4 +1,4 @@
-Feature: C1669_E11522_TC1
+Feature: C1669_E11522_TC1_CFA_morethan12Tablet
 
   @C1169_E11522_TC1
   Scenario Outline: E11522_CFA_MoreThan12Accessory_Tablet
@@ -10,7 +10,7 @@ Feature: C1669_E11522_TC1
     And select any available "Random" Fitness tracker
     And add quantity of FitnessTracker to basket within <limit> in details page and navigate to basket
     #And Validate Basket content for non Connected
-    And Verify all three non connected devices got added to the basket section before selecting connected device
+    And Verify all non connected devices got added to the basket section before selecting connected device
     And navigate to PAYM Tablets page
     And I choose <tabletname> Tablet
     And Navigate to device details page
@@ -27,4 +27,4 @@ Feature: C1669_E11522_TC1
 
     Examples: 
       | Firstname | Surname | Username     | limit | tabletname     |
-      | TEST      | ACCEPTA | TEST ACCEPTA |     3 | Apple iPad 9.7 |
+      | TEST      | ACCEPTA | TEST ACCEPTA |     6 | Apple iPad 9.7 |

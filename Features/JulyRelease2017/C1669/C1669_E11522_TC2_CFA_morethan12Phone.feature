@@ -1,4 +1,4 @@
-Feature: C1669_E11522_TC2
+Feature: C1669_E11522_TC2_CFA_morethan12Phone
 
   @C1169_E11522_TC2
   Scenario Outline: E11522_CFA_MoreThan12Accessory_Phone
@@ -9,7 +9,8 @@ Feature: C1669_E11522_TC2
     And Navigate to Fitness Trackers
     And select any available "Random" Fitness tracker
     And add quantity of FitnessTracker to basket within <limit> in details page and navigate to basket
-    And Validate Basket content for non Connected
+    ##  And Validate Basket content for non Connected
+    And Verify all non connected devices got added to the basket section before selecting connected device
     And navigate to PAYM Phones page
     And I choose PayM <handset>
     And Navigate to device details page

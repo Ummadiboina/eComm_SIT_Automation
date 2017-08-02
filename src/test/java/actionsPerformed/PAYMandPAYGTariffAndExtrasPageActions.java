@@ -10,6 +10,7 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 
 import helpers.Environment;
+import helpers.setRuntimeProperty;
 
 public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 	static Logger log = Logger.getLogger("devpinoyLogger");
@@ -103,6 +104,9 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 					Thread.sleep(3000);
 					System.out.println("Selected accessories");
 				}
+				String size = Integer.toString(DataContainer.size());
+				setRuntimeProperty.setProperty("DeviceAccessoryCount", size);
+
 			}
 		} catch (Exception e) {
 			System.out.println("No accessories found");
