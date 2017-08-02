@@ -16,7 +16,7 @@ Feature: C1786_ECOM-11527-11529-11633_TC2_New_basecomms_page_Other_tablets_tab_c
     And Verify expected <device_name> and its specific details are present in the device list for coming soon device <default_colour>,<default_capacity>,<default_stock_message>
     #Veirfy device price is not required
     #Verify Buy Now button is not enabled
-    And Verify that promotion ribbon is displayed
+    And Verify that promotion ribbon is displayed for <device_name>
     And Click on "See device details" link for <device_name> and verify correct details are displayed
 
     Examples: 

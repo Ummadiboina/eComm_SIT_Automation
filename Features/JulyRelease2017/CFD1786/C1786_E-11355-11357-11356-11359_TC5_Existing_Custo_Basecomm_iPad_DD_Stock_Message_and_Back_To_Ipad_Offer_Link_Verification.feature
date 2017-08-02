@@ -19,4 +19,4 @@ This scenario ensures that when the existing customer lands on new basecomm page
 	
 	Examples: 
 		| username             | password | device_name             | default_colour | default_capacity | default_stock_message |
-		| 07770001111@o2.co.uk | test123  | Apple iPad Pro 9.7 inch | Space Grey     | 32GB             | Home Delivery         |
+		| 07770001111@o2.co.uk | test123  | Apple iPad Pro 9.7 inch| Space Grey     | 32GB             | Home Delivery         |
