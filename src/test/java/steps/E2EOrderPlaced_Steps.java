@@ -2778,11 +2778,11 @@ public class E2EOrderPlaced_Steps {
 		}
 	}
 
-	@And("^Verify all three non connected devices got added to the basket section before selecting connected device$")
+	@And("^Verify all non connected devices got added to the basket section before selecting connected device$")
 	public void verify_non_Connected_device_added_to_basket() throws Throwable {
 		try {
 			log.debug(
-					"Running Test Step: @And(Verify all three non connected devices got added to the basket section before selecting connected device)");
+					"Running Test Step: @And(Verify all non connected devices got added to the basket section before selecting connected device)");
 			AccessoryPageActions.verifyNonConnectedDeviceAddedToBasketBefore();
 			log.debug(
 					"Pass: Verified that all non connected devices got added to basket successfully before selecting connected device");
@@ -2791,11 +2791,11 @@ public class E2EOrderPlaced_Steps {
 		}
 	}
 
-	@And("^Verify all three non connected devices are still retained in the basket and not overridden$")
+	@And("^Verify all non connected devices are still retained in the basket and not overridden$")
 	public void verify_non_Connected_device_ratined_in_basket_after_selecting_connected_device() throws Throwable {
 		try {
 			log.debug(
-					"Running Test Step: @And(Verify all three non connected devices are still retained in the basket and not overridden)");
+					"Running Test Step: @And(Verify all non connected devices are still retained in the basket and not overridden)");
 			AccessoryPageActions.verifyNonConnectedDeviceRetainedInBasketAfterPhoneSelection();
 			log.debug(
 					"Pass: Verified that all non connected devices got added to basket successfully before selecting connected device");

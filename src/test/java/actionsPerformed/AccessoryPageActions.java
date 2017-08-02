@@ -4,6 +4,8 @@ import helpers.Environment;
 import helpers.Filereadingutility;
 import helpers.setRuntimeProperty;
 
+import java.util.List;
+
 import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -140,8 +142,9 @@ public class AccessoryPageActions extends Environment {
 	}
 	/*
 	 * Below has been modified as per the new ui layout, new function has been
-	 * written which is below, so please refer to this only if its necessary else
-	 * follow "selectAnyAccessoryLimit()" instead of "selectAnyAccessoryLimit_old"
+	 * written which is below, so please refer to this only if its necessary
+	 * else follow "selectAnyAccessoryLimit()" instead of
+	 * "selectAnyAccessoryLimit_old"
 	 */
 
 	public static void selectAnyAccessoryLimit_old() throws InterruptedException {
@@ -280,6 +283,110 @@ public class AccessoryPageActions extends Environment {
 		}
 	}
 
+	/*
+	 * public static void verifyNonConnectedDeviceAddedToBasketBefore() throws
+	 * InterruptedException {
+	 * log.debug("Opening verifyNonConnectedDeviceAddedToBasketBefore function"
+	 * ); String AccessoryName = ""; String FitnessTrackerName = ""; String
+	 * SmartWatchName = "";
+	 * 
+	 * try { AccessoryName =
+	 * pageobjects.AccessoryPage.AccesoryBeforePhoneSelection.getText();
+	 * FitnessTrackerName =
+	 * pageobjects.AccessoryPage.FitnessTrackerBeforePhoneSelection.getText();
+	 * SmartWatchName =
+	 * pageobjects.AccessoryPage.SmartWatchBeforePhoneSelection.getText();
+	 * 
+	 * setRuntimeProperty.setProperty("Accessory", AccessoryName);
+	 * setRuntimeProperty.setProperty("FitnessTracker", FitnessTrackerName);
+	 * setRuntimeProperty.setProperty("SmartWatch", SmartWatchName);
+	 * 
+	 * log.debug(
+	 * "Successfully verified that Non connected devices are added to the basket before phone selection"
+	 * ); System.out.println(
+	 * "Successfully verified that Non connected devices are added to the basket before phone selection"
+	 * ); }
+	 * 
+	 * catch (Exception e) {
+	 * 
+	 * log.
+	 * debug("Fail: Nonconnected device is not present in the Basket section before phone selection "
+	 * + e.getMessage() + ""); System.out.
+	 * println("Fail: Nonconnected device is not present in the Basket section before phone selection "
+	 * + e.getMessage() + "");
+	 * Assert.fail("Non Connected device is not present in the Basket section");
+	 * } }
+	 * 
+	 * public static void
+	 * verifyNonConnectedDeviceRetainedInBasketAfterPhoneSelection() throws
+	 * InterruptedException { log.
+	 * debug("Opening verifyNonConnectedDeviceRetainedInBasketAfterPhoneSelection function"
+	 * ); System.out.
+	 * println("Opening verifyNonConnectedDeviceRetainedInBasketAfterPhoneSelection function"
+	 * ); String AccessoryName_Before = ""; String FitnessTrackerName_Before =
+	 * ""; String SmartWatchName_Before = "";
+	 * 
+	 * String AccessoryName_After = ""; String FitnessTrackerName_After = "";
+	 * String SmartWatchName_After = "";
+	 * 
+	 * String RunTimeFilePath = System.getProperty("user.dir") +
+	 * "\\Configurations\\Properties\\Run.properties";
+	 * 
+	 * try {
+	 * 
+	 * AccessoryName_Before = (String)
+	 * Filereadingutility.getPropertyValue(RunTimeFilePath, "Accessory");
+	 * FitnessTrackerName_Before = (String)
+	 * Filereadingutility.getPropertyValue(RunTimeFilePath, "FitnessTracker");
+	 * SmartWatchName_Before = (String)
+	 * Filereadingutility.getPropertyValue(RunTimeFilePath, "SmartWatch");
+	 * 
+	 * AccessoryName_After =
+	 * pageobjects.AccessoryPage.AccesoryAfterPhoneSelection.getText();
+	 * FitnessTrackerName_After =
+	 * pageobjects.AccessoryPage.FitnessTrackerAfterPhoneSelection.getText();
+	 * SmartWatchName_After =
+	 * pageobjects.AccessoryPage.SmartWatchAfterPhoneSelection.getText();
+	 * 
+	 * Assert.assertTrue(AccessoryName_Before.contains(AccessoryName_After),
+	 * "Assertion Failed: Accessory is not present in the basket page after phone selection"
+	 * ); log.
+	 * debug("Assertion Passed: Accessory is present in the basket page after phone selection"
+	 * ); System.out.
+	 * println("Assertion Passed: Accessory is present in the basket page after phone selection"
+	 * );
+	 * 
+	 * Assert.
+	 * assertEquals("Assertion Failed: FitnessTracker is not present in the basket after phone selection"
+	 * , FitnessTrackerName_Before.equals(FitnessTrackerName_After)); log.
+	 * debug("Assertion Passed: FitnessTracker is present in the basket page after phone selection"
+	 * ); System.out.
+	 * println("Assertion Passed: FitnessTracker is present in the basket page after phone selection"
+	 * );
+	 * 
+	 * Assert.
+	 * assertEquals("Assertion Failed: SmartWatch is not present in the basket after phone selection"
+	 * , SmartWatchName_Before.equals(SmartWatchName_After)); log.
+	 * debug("Assertion Passed: SmartWatch is present in the basket page after phone selection"
+	 * ); System.out.
+	 * println("Assertion Passed: SmartWatch is present in the basket page after phone selection"
+	 * );
+	 * 
+	 * log.
+	 * debug("successfully verified the basket section after phone selection");
+	 * System.out.
+	 * println("successfully verified the basket section after phone selection"
+	 * ); }
+	 * 
+	 * catch (AssertionError e) {
+	 * 
+	 * log.debug(
+	 * "Assertion failed: Non Connected device is not present in the Basket section after phone selection"
+	 * + e.getMessage() + ""); System.out.println(
+	 * "Assertion failed: Non Connected device is not present in the Basket section after phone selection"
+	 * + e.getMessage() + ""); } }
+	 */
+
 	public static void verifyNonConnectedDeviceAddedToBasketBefore() throws InterruptedException {
 		log.debug("Opening verifyNonConnectedDeviceAddedToBasketBefore function");
 		String AccessoryName = "";
@@ -287,13 +394,36 @@ public class AccessoryPageActions extends Environment {
 		String SmartWatchName = "";
 
 		try {
-			AccessoryName = pageobjects.AccessoryPage.AccesoryBeforePhoneSelection.getText();
-			FitnessTrackerName = pageobjects.AccessoryPage.FitnessTrackerBeforePhoneSelection.getText();
-			SmartWatchName = pageobjects.AccessoryPage.SmartWatchBeforePhoneSelection.getText();
+			List<WebElement> AccessoryBeofrePhoneSelection = driver
+					.findElements(By.xpath("//*[@id='shopApp']/div[4]/div/div/div[1]/div[2]/ul/li[3]/section/h3/span"));
+			if (AccessoryBeofrePhoneSelection.size() > 0) {
 
-			setRuntimeProperty.setProperty("Accessory", AccessoryName);
-			setRuntimeProperty.setProperty("FitnessTracker", FitnessTrackerName);
-			setRuntimeProperty.setProperty("SmartWatch", SmartWatchName);
+				if (pageobjects.AccessoryPage.AccesoryBeforePhoneSelection.isDisplayed()) {
+					AccessoryName = pageobjects.AccessoryPage.AccesoryBeforePhoneSelection.getText();					
+					setRuntimeProperty.setProperty("Accessory", AccessoryName);
+					System.out.println("Accessory is: " + AccessoryName);
+				}
+			}
+
+			List<WebElement> FitnessTrackerBeofrePhoneSelection = driver
+					.findElements(By.xpath("//*[@id='shopApp']/div[4]/div/div/div[1]/div[2]/ul/li[1]/section/h3/span"));
+			if (FitnessTrackerBeofrePhoneSelection.size() > 0) {
+				if (pageobjects.AccessoryPage.FitnessTrackerBeforePhoneSelection.isDisplayed()) {
+					FitnessTrackerName = pageobjects.AccessoryPage.FitnessTrackerBeforePhoneSelection.getText();
+					setRuntimeProperty.setProperty("FitnessTracker", FitnessTrackerName);
+					System.out.println("FitnessTracker is: " + FitnessTrackerName);
+				}
+			}
+
+			List<WebElement> SmartWatchBeofrePhoneSelection = driver
+					.findElements(By.xpath("//*[@id='shopApp']/div[4]/div/div/div[1]/div[2]/ul/li[2]/section/h3/span"));
+			if (SmartWatchBeofrePhoneSelection.size() > 0) {
+				if (pageobjects.AccessoryPage.SmartWatchBeforePhoneSelection.isDisplayed()) {
+					SmartWatchName = pageobjects.AccessoryPage.SmartWatchBeforePhoneSelection.getText();
+					setRuntimeProperty.setProperty("SmartWatch", SmartWatchName);
+					System.out.println("SmartWatch is: " + SmartWatchName);
+				}
+			}
 
 			log.debug(
 					"Successfully verified that Non connected devices are added to the basket before phone selection");
@@ -325,32 +455,67 @@ public class AccessoryPageActions extends Environment {
 		String RunTimeFilePath = System.getProperty("user.dir") + "\\Configurations\\Properties\\Run.properties";
 
 		try {
+			List<WebElement> AccessoryAfterPhoneSelection = driver
+					.findElements(By.xpath("//*[@id='shopApp']/div[4]/div/div/div[1]/div[2]/ul/li[4]/section/h3/span"));
+			if (AccessoryAfterPhoneSelection.size() > 0) {
 
-			AccessoryName_Before = (String) Filereadingutility.getPropertyValue(RunTimeFilePath, "Accessory");
-			FitnessTrackerName_Before = (String) Filereadingutility.getPropertyValue(RunTimeFilePath, "FitnessTracker");
-			SmartWatchName_Before = (String) Filereadingutility.getPropertyValue(RunTimeFilePath, "SmartWatch");
+				if (pageobjects.AccessoryPage.AccesoryAfterPhoneSelection.isDisplayed()) {
+					AccessoryName_Before = (String) Filereadingutility.getPropertyValue(RunTimeFilePath, "Accessory");
+					AccessoryName_After = pageobjects.AccessoryPage.AccesoryAfterPhoneSelection.getText();
+					Assert.assertTrue(AccessoryName_Before.contains(AccessoryName_After),
+							"Assertion Failed: Accessory is not present in the basket page after phone selection");
+					log.debug("Assertion Passed: Accessory is present in the basket page after phone selection");
+					System.out
+							.println("Assertion Passed: Accessory is present in the basket page after phone selection");
+				}
+			}
 
-			AccessoryName_After = pageobjects.AccessoryPage.AccesoryAfterPhoneSelection.getText();
-			FitnessTrackerName_After = pageobjects.AccessoryPage.FitnessTrackerAfterPhoneSelection.getText();
-			SmartWatchName_After = pageobjects.AccessoryPage.SmartWatchAfterPhoneSelection.getText();
+			List<WebElement> FitnessTrackerAfterPhoneSelection = driver
+					.findElements(By.xpath("//*[@id='shopApp']/div[4]/div/div/div[1]/div[2]/ul/li[2]/section/h3/span"));
+			if (FitnessTrackerAfterPhoneSelection.size() > 0) {
 
-			Assert.assertTrue(AccessoryName_Before.contains(AccessoryName_After),
-					"Assertion Failed: Accessory is not present in the basket page after phone selection");
-			log.debug("Assertion Passed: Accessory is present in the basket page after phone selection");
-			System.out.println("Assertion Passed: Accessory is present in the basket page after phone selection");
+				if (pageobjects.AccessoryPage.FitnessTrackerAfterPhoneSelection.isDisplayed()) {
+					FitnessTrackerName_Before = (String) Filereadingutility.getPropertyValue(RunTimeFilePath,
+							"FitnessTracker");
+					FitnessTrackerName_After = pageobjects.AccessoryPage.FitnessTrackerAfterPhoneSelection.getText();
+					/*
+					 * Assert.assertEquals(
+					 * "Assertion Failed: FitnessTracker is not present in the basket after phone selection"
+					 * ,
+					 * FitnessTrackerName_Before.equals(FitnessTrackerName_After
+					 * ));
+					 */
+					Assert.assertTrue(FitnessTrackerName_Before.contains(FitnessTrackerName_After),
+							"Assertion Failed: FitnessTracker is not present in the basket page after phone selection");
+					log.debug("Assertion Passed: FitnessTracker is present in the basket page after phone selection");
+					System.out.println(
+							"Assertion Passed: FitnessTracker is present in the basket page after phone selection");
+				}
+			}
 
-			Assert.assertEquals("Assertion Failed: FitnessTracker is not present in the basket after phone selection",
-					FitnessTrackerName_Before.equals(FitnessTrackerName_After));
-			log.debug("Assertion Passed: FitnessTracker is present in the basket page after phone selection");
-			System.out.println("Assertion Passed: FitnessTracker is present in the basket page after phone selection");
+			List<WebElement> SmartWatchAfterPhoneSelection = driver
+					.findElements(By.xpath("//*[@id='shopApp']/div[4]/div/div/div[1]/div[2]/ul/li[3]/section/h3/span"));
+			if (SmartWatchAfterPhoneSelection.size() > 0) {
 
-			Assert.assertEquals("Assertion Failed: SmartWatch is not present in the basket after phone selection",
-					SmartWatchName_Before.equals(SmartWatchName_After));
-			log.debug("Assertion Passed: SmartWatch is present in the basket page after phone selection");
-			System.out.println("Assertion Passed: SmartWatch is present in the basket page after phone selection");
+				if (pageobjects.AccessoryPage.SmartWatchAfterPhoneSelection.isDisplayed()) {
+					SmartWatchName_Before = (String) Filereadingutility.getPropertyValue(RunTimeFilePath, "SmartWatch");
+					SmartWatchName_After = pageobjects.AccessoryPage.SmartWatchAfterPhoneSelection.getText();
+					/*
+					 * Assert.
+					 * assertEquals("Assertion Failed: SmartWatch is not present in the basket after phone selection"
+					 * , SmartWatchName_Before.equals(SmartWatchName_After));
+					 */
+					Assert.assertTrue(SmartWatchName_Before.contains(SmartWatchName_After),
+							"Assertion Failed: SmartWatch is not present in the basket page after phone selection");
+					log.debug("Assertion Passed: SmartWatch is present in the basket page after phone selection");
+					System.out.println(
+							"Assertion Passed: SmartWatch is present in the basket page after phone selection");
 
-			log.debug("successfully verified the basket section after phone selection");
-			System.out.println("successfully verified the basket section after phone selection");
+					log.debug("successfully verified the basket section after phone selection");
+					System.out.println("successfully verified the basket section after phone selection");
+				}
+			}
+
 		}
 
 		catch (AssertionError e) {
