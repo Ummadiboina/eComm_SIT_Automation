@@ -59,7 +59,6 @@ public class Agent_DealBuilderPageActions extends Environment {
 		}
 	}
 
-
 	public static void SelectTariff(String Tariff) throws InterruptedException {
 
 		Agent_DealBuilderPage.TariffsTab.click();
@@ -87,7 +86,7 @@ public class Agent_DealBuilderPageActions extends Environment {
 			System.out.println("Selected Random SimO Tariff ");
 			log.debug("Selected Random SimO Tariff ");
 		}
-		
+
 		if (Tariff.contains("Refresh")) {
 			Agent_DealBuilderPage.SearchTextBox_Tariff.sendKeys("Refresh");
 			Agent_DealBuilderPage.SelectingFirstAvailableTariff.click();
@@ -113,19 +112,22 @@ public class Agent_DealBuilderPageActions extends Environment {
 
 	public static void BasecommsAgentOffersColumnValidation() throws InterruptedException {
 
-		List<WebElement> menuOuter = driver.findElements(By.xpath("//*[@id='planTable']/tbody").tagName("td"));
-
+		List<WebElement> menuOuter = driver.findElements(By.xpath("//*[@id='planTable']/tbody/tr"));
+		System.out.println(menuOuter.size());
+		int j = 1;
 		for (int i = 0; i < menuOuter.size(); i++) {
+			j = i + 1;
 			if (menuOuter.get(i).getText().trim().contains("Base Comms")) {
-				if (driver.findElement(By.xpath("//*[@id='planTable']/tbody/tr[" + i + "]/td[11]")).getText()
-						.equals("Base Comms"))
+				if (driver.findElement(By.xpath("//*[@id='planTable']/tbody/tr[" + j + "]/td[11]")).getText()
+						.equals("Base Comms")) {
 					System.out.println("Offers contains Base comms");
 
+				} else {
+
+					System.out.println("Offers does not contain Basecomms");
+					log.debug("Offers does not contain Basecomms");
+				}
 			}
-
-			else
-
-				System.out.println("Offers does not contain Basecomms");
 		}
 
 	}
@@ -139,7 +141,7 @@ public class Agent_DealBuilderPageActions extends Environment {
 					"Selected combination is" + pageobjects.Agent_DealBuilderPage.HandsetTariffCombination.getText());
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
- System.out.println("handset and tariff dropdown is not displayed, should be fine");
+			System.out.println("handset and tariff dropdown is not displayed, should be fine");
 		}
 	}
 
@@ -158,6 +160,13 @@ public class Agent_DealBuilderPageActions extends Environment {
 			Thread.sleep(3000);
 			System.out.println("Selected Random extra ");
 			log.debug("Selected Random extra ");
+
+		}
+
+		if (Extras.contains("Base")) {
+
+			System.out.println("No extras for Basecomms devices");
+			log.debug("No extras for Basecomms devices");
 
 		}
 
@@ -245,14 +254,14 @@ public class Agent_DealBuilderPageActions extends Environment {
 				Thread.sleep(3000);
 				Agent_DealBuilderPage.sendBasketPopupSubmit.click();
 				Thread.sleep(3000);
-				//eMailConfirmation();
+				// eMailConfirmation();
 				// Closing the Child Window.
-				//driver.close();
+				// driver.close();
 			}
 		}
-		
+
 		// Switching to Parent window i.e Main Window.
-		//driver.switchTo().window(Mainwindow);
+		// driver.switchTo().window(Mainwindow);
 	}
 
 	public static void ValdiateBasket() throws InterruptedException {
@@ -269,13 +278,12 @@ public class Agent_DealBuilderPageActions extends Environment {
 		log.debug("Clicked on Checkout ");
 	}
 
-	public static void eMailConfirmation() 
-	{
+	public static void eMailConfirmation() {
 		// TODO Auto-generated method stub
-		String text=Agent_DealBuilderPage.emailConfirmation.getText();
+		String text = Agent_DealBuilderPage.emailConfirmation.getText();
 		Assert.assertEquals(text, "Email sent successfully");
 		driver.close();
-		
+
 	}
 
 }

@@ -19,4 +19,4 @@ Feature: C1960_ECOM-11420,11429,11431,11443_TC1_AFA_verify_Base_Comms_tariff_und
 
     Examples: 
       | Device | Tariffs | Extras | DeliveryType | Firstname | Surname | Username     |
-      | Random | Base    | Random | HomeDelivery | Test      | Accepta | Test Accepta |
+      | Random | Base    | Base   | HomeDelivery | Test      | Accepta | Test Accepta |
