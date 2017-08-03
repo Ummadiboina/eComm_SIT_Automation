@@ -189,14 +189,14 @@ public class BaseCommPageActions extends Environment {
 	 * 
 	 * log.debug("Selected iPad mini 3 device");
 	 * 
-	 * } if (elementName.contains("Apple iPad Pro 9.7 inch")) {
-	 * System.out.println("Going to select Apple iPad Pro 9.7 inch device");
+	 * } if (elementName.contains("Appleï¿½iPad Pro 9.7 inch")) {
+	 * System.out.println("Going to select Appleï¿½iPad Pro 9.7 inch device");
 	 * 
 	 * pageobjects.BaseCommPage.IpadPro97Buynow.click();
 	 * 
-	 * System.out.println("Selected Apple iPad Pro 9.7 inch device");
+	 * System.out.println("Selected Appleï¿½iPad Pro 9.7 inch device");
 	 * 
-	 * log.debug("Selected Apple iPad Pro 9.7 inch device");
+	 * log.debug("Selected Appleï¿½iPad Pro 9.7 inch device");
 	 * 
 	 * } if (elementName.contains("Apple iPad mini 2")) {
 	 * System.out.println("Going to select iPad mini 2 device");
@@ -348,7 +348,7 @@ public class BaseCommPageActions extends Environment {
 			if (iPadDevicesName.get(i).getText().equals(device)) {
 				System.out.println("Device matches for verifying price change upon capacity");
 				k = i + 1;
-				c = "(//span[contains(text(),'£')])[" + k + "]";
+				c = "(//span[contains(text(),'ï¿½')])[" + k + "]";
 			}
 		}
 		Thread.sleep(3000);
@@ -708,7 +708,17 @@ public class BaseCommPageActions extends Environment {
 			
 			if (iPadDevicesName.get(i).getText().equals(device)) {
 				k = i + 1;
-				String c = "(//select[@id='colour'])[" + k + "]";
+			
+			
+				String r= "(//div[@class='star-rating'])[" + k +"]";
+				if(driver.findElement(By.xpath(r)).getText().isEmpty()){
+					Assert.fail("No ratings present for this device");
+				}
+				else{
+					System.out.println("Ratings for the device is present");
+				}
+				
+			String c = "(//select[@id='colour'])[" + k + "]";
 
 				WebElement colordropdown = driver.findElement(By.xpath(c));
 				JavascriptExecutor js = (JavascriptExecutor) driver;
@@ -755,6 +765,7 @@ public class BaseCommPageActions extends Environment {
 			if (iPadDevicesName.get(i).getText().equals(device)) {
 				k = i + 1;
 				String c = "(//select[@id='colour'])[" + k + "]";
+				
 				WebElement colordropdown = driver.findElement(By.xpath(c));
 				js.executeScript("arguments[0].setAttribute('style', 'display:block;')", colordropdown);
 				new Select(colordropdown).selectByVisibleText(color);
