@@ -26,5 +26,5 @@ This scenario ensures that when the existing customer lands on new basecomm page
 	
 	#Modify the above step to include pdf download
 	Examples: 
-		| username             | password | device_name                    | default_colour | default_capacity | default_stock_message | color | capacity | user         |
-		| 07770001111@o2.co.uk | test123  | Samsung Galaxy Tab A 2016 10.1 | Black          | 16GB             | In Stock              | Black | 16GB     | TEST ACCEPTA |
+		| username             | password | device_name     | default_colour | default_capacity | default_stock_message | color | capacity | user         |
+		| 07770001111@o2.co.uk | test123  | Alcatel Plus 10 | Silver         | 32GB             | In Stock              | Silver| 32GB     | TEST ACCEPTA |
