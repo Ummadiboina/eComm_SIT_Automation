@@ -17,20 +17,21 @@ public class UpgradeCustomerPageActions extends Environment {
 		if (pageobjects.UpgradeCustomerPage.signInButton.isDisplayed()) {
 			pageobjects.UpgradeCustomerPage.signInButton.click();
 			System.out.println("Clicked on Signin button");
-		//	JavascriptExecutor jse = (JavascriptExecutor) driver;
-		//	jse.executeScript("window.scrollBy(0,300)", "");
+			// JavascriptExecutor jse = (JavascriptExecutor) driver;
+			// jse.executeScript("window.scrollBy(0,300)", "");
 
 		}
 
-	/*	try {
-			System.out.println("Going to click on Continue link");
-			pageobjects.UpgradeCustomerPage.Continue.click();
-
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			System.out.println("Continue button is not there, it should be fine");
-
-		}*/
+		/*
+		 * try { System.out.println("Going to click on Continue link");
+		 * pageobjects.UpgradeCustomerPage.Continue.click();
+		 * 
+		 * } catch (Exception e) { // TODO Auto-generated catch block
+		 * System.out.println("Continue button is not there, it should be fine"
+		 * );
+		 * 
+		 * }
+		 */
 
 		Thread.sleep(5000);
 
@@ -114,6 +115,12 @@ public class UpgradeCustomerPageActions extends Environment {
 			pageobjects.UpgradePhonesListingPage.Oneplus3T.click();
 			// Assert.assertEquals(elementName,"Galaxy S7 is not found");
 			log.debug("Selected Oneplus3T");
+
+		}
+
+		if (elementName.contains("Samsung Galaxy J3 2016 Like New")) {
+			pageobjects.UpgradePhonesListingPage.SamsungGalaxyJ32016LikeNew.click();
+			log.debug("Selected Samsung Galaxy J3 2016 Like New");
 
 		}
 
@@ -260,6 +267,11 @@ public class UpgradeCustomerPageActions extends Environment {
 			pageobjects.UpgradeTabletListingPage.iPad97.click();
 
 			log.debug("Selected Apple iPad 9.7");
+		}
+		if (elementName.contains("Apple iPad Pro 10.5 inch")) {
+			pageobjects.UpgradeTabletListingPage.AppleiPadPro105inch.click();
+
+			log.debug("Selected Apple iPad Pro 10.5 inch");
 		}
 	}
 

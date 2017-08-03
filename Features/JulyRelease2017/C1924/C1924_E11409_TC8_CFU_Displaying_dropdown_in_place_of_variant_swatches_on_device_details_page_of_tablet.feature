@@ -2,7 +2,7 @@ Feature: C1924_E11409_TC8_CFU_Displaying_dropdown_in_place_of_variant_swatches_o
 
   @JulyRelease
   Scenario Outline: 
-    CFU Displaying dropdown in place of variant swatches on device details page of handset
+    CFU Displaying dropdown in place of variant swatches on device details page of tablet
 
     Given I am existing user and I click on Signin button
     And Signin using valid <username> and <password> credentials
