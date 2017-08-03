@@ -696,7 +696,7 @@ public class BaseCommPageActions extends Environment {
 
 		List<WebElement> iPadDevicesName = pageobjects.BaseCommPage.iPadDevicesName;
 		JavascriptExecutor jse = (JavascriptExecutor) driver;
-		jse.executeScript("window.scrollBy(0,900)", "");
+		jse.executeScript("window.scrollBy(0,400)", "");
 		for (int i = 0; i < iPadDevicesName.size(); i++) {
 			if (iPadDevicesName.get(i).getText().equals(device)) {
 
@@ -747,12 +747,17 @@ public class BaseCommPageActions extends Environment {
 		}
 	}
 
-	public static void selectNewDevice(String color, String capacity, String device) {
+	public static void selectNewDevice(String color, String capacity, String device) throws Exception {
+
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		int k = 0;
 		List<WebElement> iPadDevicesName = pageobjects.BaseCommPage.iPadDevicesName;
+		js.executeScript("window.scrollBy(0,400)", "");
+		System.out.println(color + capacity + device);
 
 		for (int i = 0; i < iPadDevicesName.size(); i++) {
+			System.out.println(iPadDevicesName.get(i).getText());
+
 			if (iPadDevicesName.get(i).getText().equals(device)) {
 
 				k = i + 1;
@@ -761,7 +766,7 @@ public class BaseCommPageActions extends Environment {
 				WebElement colordropdown = driver.findElement(By.xpath(c));
 				js.executeScript("arguments[0].setAttribute('style', 'display:block;')", colordropdown);
 				new Select(colordropdown).selectByVisibleText(color);
-
+				Thread.sleep(3000);
 				String d = "(//select[@id='memory'])[" + k + "]";
 				WebElement capacitydropdown = driver.findElement(By.xpath(d));
 				js.executeScript("arguments[0].setAttribute('style', 'display:block;')", capacitydropdown);
@@ -825,7 +830,7 @@ public class BaseCommPageActions extends Environment {
 		WebElement element2 = null;
 		WebElement capacitynameelement = null;
 		String t = null, u = null;
-		int k = 0;
+		int k = 0, z = 0;
 
 		for (int i = 0; i < iPadDevicesName.size(); i++) {
 			System.out.println(iPadDevicesName.get(i).getText());
@@ -866,14 +871,19 @@ public class BaseCommPageActions extends Environment {
 				}
 				System.out.println("Capacity_color" + capacity_color);
 
-				for (int i1 = 0; i1 < images.size(); i1++) {
-					System.out.println("images size :" + images.size());
-					if (images.get(i1).getAttribute("src").contains(capacity_color)) {
-						System.out.println(images.get(i1).getAttribute("src"));
-						System.out.println("Image is as per selected color and capacity");
-					} else {
-						Assert.fail("New image is not as per selected color and capacity");
-					}
+			}
+
+		}
+
+		for (int i = 0; i < iPadDevicesName.size(); i++) {
+			System.out.println(iPadDevicesName.get(i).getText());
+			if (iPadDevicesName.get(i).getText().equals(devicename)) {
+				System.out.println("Device name matches");
+				if (images.get(i).getAttribute("src").contains(capacity_color)) {
+					System.out.println(images.get(z).getAttribute("src"));
+					System.out.println("Image is as per selected color and capacity");
+				} else {
+					Assert.fail("New image is not as per selected color and capacity");
 				}
 			}
 		}
