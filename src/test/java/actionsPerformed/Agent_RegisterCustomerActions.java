@@ -1,20 +1,14 @@
 package actionsPerformed;
 
-import helpers.Environment;
-import pageobjects.Agent_CreditCheckDetailsPage;
-import pageobjects.Agent_DealBuilderPage;
-import pageobjects.Agent_RegisterCustomerPage;
-
-import java.util.Iterator;
-import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
 import org.apache.log4j.Logger;
-import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Reporter;
 
 import GlobalActions.RandomEmailAddressCreation;
+import helpers.Environment;
+import pageobjects.Agent_RegisterCustomerPage;
 
 public class Agent_RegisterCustomerActions extends Environment {
 
@@ -88,6 +82,20 @@ public class Agent_RegisterCustomerActions extends Environment {
 	public static void CardDetails() throws InterruptedException {
 		Thread.sleep(2000);
 		System.out.println("Mipay bit :) ");
+		String PaybyCardCVV2 = Agent_RegisterCustomerPage.PayByCard_2.getText();
+
+		if (PaybyCardCVV2.contains("Card ending with: XXXXXXXXXXXX")) {
+			System.out.print("The text is :"+PaybyCardCVV2);
+			Agent_RegisterCustomerPage.SecurityCode.sendKeys("123");
+			log.debug("Security card is entered as 123");
+			Agent_RegisterCustomerPage.UsethisCard.click();
+			log.debug("The Pay Now button is clicked");
+			System.out.println("completed  Mypay bit");
+			Thread.sleep(6000);
+			
+		}
+
+		else {
 		Agent_RegisterCustomerPage.CardHolderName.sendKeys("TEST ACCEPTA");
 		System.out.println("Card holder name ");
 		Select CardTypeDropDown = new Select(pageobjects.Agent_RegisterCustomerPage.CardType);
@@ -107,7 +115,7 @@ public class Agent_RegisterCustomerActions extends Environment {
 		Thread.sleep(6000);
 	}
 
-	
+	}
 
 	public static void CardDetails_PayM() throws InterruptedException {
 		Thread.sleep(7000);

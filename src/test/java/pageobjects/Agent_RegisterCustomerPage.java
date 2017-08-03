@@ -54,6 +54,11 @@ public class Agent_RegisterCustomerPage {
 		
 		@FindBy(how=How.XPATH,using="//*[@id='packageControls']/table/tbody/tr/td[2]/input")
 		public static WebElement PayByCard;
+		
+		@FindBy(how=How.XPATH,using="//*[@id='lblCardNumber']")
+		public static WebElement PayByCard_2;
+		
+		//*[@id='lblCardNumber']
 	
 		@FindBy(how=How.ID,using="yearsAtCurrentAddress")
 		public static WebElement YearsatAddress;
@@ -91,10 +96,10 @@ public class Agent_RegisterCustomerPage {
 		@FindBy(how=How.ID,using="ddlYr")
 		public static WebElement CardYear;
 			
-		@FindBy(how=How.ID,using="txtSecurityCode")
+		@FindBy(how=How.ID,using="//*[@id='txtCardSecurityCode']")
 		public static WebElement SecurityCode;
 		
-		@FindBy(how=How.ID,using="btnPayNow")
+		@FindBy(how=How.ID,using="//*[@id='btnPayNow']")
 		public static WebElement UsethisCard;
 				
 		@FindBy(how=How.XPATH,using="//*[@id='creditCheckAndAgreementAndStatus']/input[3]")

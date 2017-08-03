@@ -14,7 +14,6 @@ import org.openqa.selenium.support.PageFactory;
 import GlobalActions.Autoredirection;
 import GlobalActions.JuneReleaseValidations;
 import GlobalActions.MouseHoverAction;
-import GlobalActions.scrollToAnElement;
 import actionsPerformed.AccessoryPageActions;
 import actionsPerformed.AdditionalInformationPageActions;
 import actionsPerformed.Agent_AdvisoryChecksActions;
