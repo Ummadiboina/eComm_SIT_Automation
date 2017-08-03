@@ -1,8 +1,6 @@
 Feature: C1924_E11409_TC8_CFU_Displaying_dropdown_in_place_of_variant_swatches_on_device_details_page_of_tablet
 
-  @JulyRelease
-  Scenario Outline: 
-    CFU Displaying dropdown in place of variant swatches on device details page of handset
+  Scenario Outline: CFU Displaying dropdown in place of variant swatches on device details page of tablet
 
     Given I am existing user and I click on Signin button
     And Signin using valid <username> and <password> credentials
@@ -13,7 +11,6 @@ Feature: C1924_E11409_TC8_CFU_Displaying_dropdown_in_place_of_variant_swatches_o
     And select <capacity> capacity of the connected device
     And Navigate to device details page
 
-    #Close the browser
     Examples: 
       | tabletname               | color     | capacity | username    | password |
       | Apple iPad Pro 10.5 inch | Rose Gold | 256GB    | inq_jan9586 | test123  |

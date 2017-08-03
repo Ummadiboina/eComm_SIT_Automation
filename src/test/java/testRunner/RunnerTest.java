@@ -15,9 +15,7 @@ import com.github.mkolisnyk.cucumber.reporting.CucumberResultsOverview;
 
 import cucumber.api.CucumberOptions;
 
-@CucumberOptions(strict = true, features = {
-		"Features//JulyRelease2017//C1669//C1669_E11521_TC2_CFA_Add_All_NonConnected_Devices_To_Basket_Followed_By_Adding_A_Like_New_Phone_Verify_Not_Overridden.feature" }, glue = {
-				"steps" },
+@CucumberOptions(strict = true, features = { "Features//JulyRelease2017//C1924//C1924_E11409_TC12_CFU_Displaying_label_in_place_of_only_one_variant_on_device_details_page_of_tablet.feature" }, glue = { "steps" },
 
 		tags = {}, format = { "json:testResult/cucumber.json", "pretty", "html:testResult/report" }, plugin = {
 				"com.cucumber.listener.ExtentCucumberFormatter" })

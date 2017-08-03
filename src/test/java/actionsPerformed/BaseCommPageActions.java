@@ -20,8 +20,10 @@ public class BaseCommPageActions extends Environment {
 	static List<String> NormalCost = new ArrayList<>();
 	static List<String> BasecommCost = new ArrayList<>();
 
+	
+	
 	public static void SelectBaseCommTariff(String elementName) {
-
+				
 		if (elementName.contains("Random")) {
 			System.out.println("Selected Random Tariff");
 
@@ -707,6 +709,15 @@ public class BaseCommPageActions extends Environment {
 
 			if (iPadDevicesName.get(i).getText().equals(device)) {
 				k = i + 1;
+				
+				String r= "(//div[@class='star-rating'])[" + k +"]";
+				if(driver.findElement(By.xpath(r)).getText().isEmpty()){
+					Assert.fail("No ratings present for this device");
+				}
+				else{
+					System.out.println("Ratings for the device is present");
+				}
+				
 				String c = "(//select[@id='colour'])[" + k + "]";
 
 				WebElement colordropdown = driver.findElement(By.xpath(c));
@@ -749,11 +760,12 @@ public class BaseCommPageActions extends Environment {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		int k = 0;
 		List<WebElement> iPadDevicesName = pageobjects.BaseCommPage.iPadDevicesName;
-
+		
 		for (int i = 0; i < iPadDevicesName.size(); i++) {
 			if (iPadDevicesName.get(i).getText().equals(device)) {
 				k = i + 1;
 				String c = "(//select[@id='colour'])[" + k + "]";
+				
 				WebElement colordropdown = driver.findElement(By.xpath(c));
 				js.executeScript("arguments[0].setAttribute('style', 'display:block;')", colordropdown);
 				new Select(colordropdown).selectByVisibleText(color);

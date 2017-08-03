@@ -116,6 +116,12 @@ public class UpgradeCustomerPageActions extends Environment {
 			log.debug("Selected Oneplus3T");
 
 		}
+		
+		if (elementName.contains("Samsung Galaxy J3 2016 Like New")) {
+			pageobjects.UpgradePhonesListingPage.SamsungGalaxyJ32016LikeNew.click();
+			log.debug("Selected Samsung Galaxy J3 2016 Like New");
+
+		}
 
 	}
 
@@ -261,6 +267,12 @@ public class UpgradeCustomerPageActions extends Environment {
 
 			log.debug("Selected Apple iPad 9.7");
 		}
+		if (elementName.contains("Apple iPad Pro 10.5 inch")) {
+			pageobjects.UpgradeTabletListingPage.AppleiPadPro105inch.click();
+
+			log.debug("Selected Apple iPad Pro 10.5 inch");
+		}
+		
 	}
 
 }

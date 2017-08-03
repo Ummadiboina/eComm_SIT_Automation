@@ -6,7 +6,7 @@
         "before": [
           {
             "result": {
-              "duration": 40174196598,
+              "duration": 85446881338,
               "status": "passed"
             },
             "match": {
@@ -14,14 +14,14 @@
             }
           }
         ],
-        "line": 37,
-        "name": "CFA Add all non connected devices (Standalone Smartwatch, Accessory and Fitnesstracker) and One Connected Device(Like New Phone) and Veiryf Basket not overridden",
-        "description": "",
-        "id": "c1669-e11521-tc2-cfa-add-all-nonconnected-devices-to-basket-followed-by-adding-a-like-new-phone-verify-not-overridden;cfa-add-all-non-connected-devices-(standalone-smartwatch,-accessory-and-fitnesstracker)-and-one-connected-device(like-new-phone)-and-veiryf-basket-not-overridden;;2",
+        "line": 16,
+        "name": "",
+        "description": "CFU Displaying label in place of only one variant on device details page of tablet",
+        "id": "c1924-e11409-tc12-cfu-displaying-label-in-place-of-only-one-variant-on-device-details-page-of-tablet;;;2",
         "after": [
           {
             "result": {
-              "duration": 5562986290,
+              "duration": 1999702727,
               "status": "passed"
             },
             "match": {
@@ -34,207 +34,35 @@
         "steps": [
           {
             "result": {
-              "duration": 468294699,
+              "duration": 27931246710,
               "status": "passed"
             },
-            "line": 4,
-            "name": "I am an CFA user and Lands on shop page",
+            "line": 6,
+            "name": "I am existing user and I click on Signin button",
             "match": {
-              "location": "E2EOrderPlaced_Steps.i_am_an_CFA_user_and_Lands_on_shop_page()"
+              "location": "E2EOrderPlaced_Steps.I_am_existing_user_and_I_click_on_Signin_button()"
             },
             "keyword": "Given "
           },
           {
             "result": {
-              "duration": 18028221841,
+              "duration": 19813604711,
               "status": "passed"
             },
-            "comments": [
-              {
-                "line": 5,
-                "value": "##   And Navigate to Accessories"
-              },
-              {
-                "line": 6,
-                "value": "##   And select an \"Random\" Accessory"
-              },
-              {
-                "line": 7,
-                "value": "##   And add quantity of accessories to basket within \u003climit\u003e in details page and navigate to basket"
-              },
-              {
-                "line": 8,
-                "value": "##   And I Land on the Non Phone related basket page and choose home delivery option"
-              },
-              {
-                "line": 9,
-                "value": "##    And I click on Continue Shopping link"
-              },
-              {
-                "line": 10,
-                "value": "##    And Navigate to Fitness Trackers"
-              },
-              {
-                "line": 11,
-                "value": "##    And select any available \"Random\" Fitness tracker"
-              },
-              {
-                "line": 12,
-                "value": "##   And add quantity of FitnessTracker to basket within \u003climit\u003e in details page and navigate to basket"
-              },
-              {
-                "line": 13,
-                "value": "##   And I Land on the Non Phone related basket page and choose home delivery option"
-              },
-              {
-                "line": 14,
-                "value": "##   And I click on Continue Shopping link"
-              },
-              {
-                "line": 15,
-                "value": "##   And Navigate to SmartWatches"
-              },
-              {
-                "line": 16,
-                "value": "##   And select any available \"Random\" Smartwatch"
-              },
-              {
-                "line": 17,
-                "value": "##   And add quantity of SmartWatches to basket within \u003climit\u003e in details page and navigate to basket"
-              },
-              {
-                "line": 18,
-                "value": "##   And I Land on the Non Phone related basket page and choose home delivery option"
-              },
-              {
-                "line": 19,
-                "value": "##   And Verify all three non connected devices got added to the basket section before selecting connected device"
-              },
-              {
-                "line": 20,
-                "value": "##   And I click on Continue Shopping link"
-              }
-            ],
-            "line": 21,
-            "name": "navigate to Like New Phones page",
-            "match": {
-              "location": "E2EOrderPlaced_Steps.navigate_to_LikeNew_Phones_page()"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 1749604261,
-              "status": "passed"
-            },
-            "line": 22,
-            "name": "I select to buy a like new phone on Pay Monthly",
-            "match": {
-              "location": "E2EOrderPlaced_Steps.buy_a_like_new_phone_on_pay_monthly()"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 20385432842,
-              "error_message": "junit.framework.AssertionFailedError: Unable to choose PayM phone\r\n\tat junit.framework.Assert.fail(Assert.java:47)\r\n\tat steps.E2EOrderPlaced_Steps.Choose_PAYM_Handset(E2EOrderPlaced_Steps.java:319)\r\n\tat ✽.And I choose PayM Iphone7(Features/JulyRelease2017/C1669/C1669_E11521_TC2_CFA_Add_All_NonConnected_Devices_To_Basket_Followed_By_Adding_A_Like_New_Phone_Verify_Not_Overridden.feature:23)\r\n",
-              "status": "failed"
-            },
-            "line": 23,
-            "name": "I choose PayM Iphone7",
+            "line": 7,
+            "name": "Signin using valid ing_apr5953 and test123 credentials",
             "match": {
               "arguments": [
                 {
-                  "val": "Iphone7",
-                  "offset": 14
-                }
-              ],
-              "location": "E2EOrderPlaced_Steps.Choose_PAYM_Handset(String)"
-            },
-            "matchedColumns": [
-              0
-            ],
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "status": "skipped"
-            },
-            "line": 24,
-            "name": "Navigate to device details page",
-            "match": {
-              "location": "E2EOrderPlaced_Steps.Navigate_to_device_details_page()"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "status": "skipped"
-            },
-            "line": 25,
-            "name": "Land on the \u0027Tariffs and extra\u0027 page",
-            "match": {
-              "location": "E2EOrderPlaced_Steps.land_on_the_Tariffs_and_extra_page()"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "status": "skipped"
-            },
-            "line": 26,
-            "name": "I Land on the basket page and choose home delivery option",
-            "match": {
-              "location": "E2EOrderPlaced_Steps.i_Land_on_the_basket_page_and_choose_home_delivery_option()"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "status": "skipped"
-            },
-            "line": 27,
-            "name": "Verify all three non connected devices are still retained in the basket and not overridden",
-            "match": {
-              "location": "E2EOrderPlaced_Steps.verify_non_Connected_device_ratined_in_basket_after_selecting_connected_device()"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "status": "skipped"
-            },
-            "line": 28,
-            "name": "click on \"go to checkout\" button",
-            "match": {
-              "arguments": [
-                {
-                  "val": "go to checkout",
-                  "offset": 10
-                }
-              ],
-              "location": "E2EOrderPlaced_Steps.CheckoutFromBasket(String)"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "status": "skipped"
-            },
-            "line": 29,
-            "name": "input TEST and ACCEPTA and other valid details in Delivery page and Click on the \u0027Continue button\u0027",
-            "match": {
-              "arguments": [
-                {
-                  "val": "TEST",
-                  "offset": 6
+                  "val": "ing_apr5953",
+                  "offset": 19
                 },
                 {
-                  "val": "ACCEPTA",
-                  "offset": 15
+                  "val": "test123",
+                  "offset": 35
                 }
               ],
-              "location": "E2EOrderPlaced_Steps.DeliveryPage_Inputs_homeDelivery(String,String)"
+              "location": "E2EOrderPlaced_Steps.signin_using_valid_ink_jun_and_test_credentials(String,String)"
             },
             "matchedColumns": [
               1,
@@ -244,64 +72,74 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 25135794426,
+              "status": "passed"
             },
-            "line": 30,
-            "name": "land on the payment page and input TEST ACCEPTA and other details and click \u0027Continue on next step\u0027",
+            "line": 8,
+            "name": "Navigate to upgrade phone",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.navigate_to_upgrade_phone()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 87259798781,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "I choose upgrade PayM handset Samsung Galaxy J3 2016 Like New",
             "match": {
               "arguments": [
                 {
-                  "val": "TEST ACCEPTA",
-                  "offset": 35
+                  "val": "Samsung Galaxy J3 2016 Like New",
+                  "offset": 30
                 }
               ],
-              "location": "E2EOrderPlaced_Steps.CreditCheckPaymentPage_HomeDelivery(String)"
+              "location": "E2EOrderPlaced_Steps.Choose_upgradePAYM_Handset(String)"
             },
             "matchedColumns": [
-              3
+              0
             ],
             "keyword": "And "
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 77596145428,
+              "status": "passed"
             },
-            "line": 31,
-            "name": "Continue to Agreements page and confirm all the agreement checks",
+            "line": 10,
+            "name": "check if the selected device has only 1 variant for both colour and capacity",
             "match": {
-              "location": "E2EOrderPlaced_Steps.AgreementsPageConfirmation()"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "status": "skipped"
-            },
-            "line": 32,
-            "name": "Continue to Review page and review the order",
-            "match": {
-              "location": "E2EOrderPlaced_Steps.ReviewPageConfirmation()"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "status": "skipped"
-            },
-            "line": 33,
-            "name": "order confirmation is displayed",
-            "match": {
-              "location": "E2EOrderPlaced_Steps.OrderConfirmationPage()"
+              "location": "E2EOrderPlaced_Steps.check_if_the_selected_device_has_only_1_variant_for_both_colour_and_capacity()"
             },
             "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 20773250219,
+              "status": "passed"
+            },
+            "line": 11,
+            "name": "Click on View all Tariffs",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.ClickonViewAllTariffsDeviceDetailspage()"
+            },
+            "keyword": "And "
+          }
+        ],
+        "tags": [
+          {
+            "line": 3,
+            "name": "@JulyRelease"
           }
         ]
       }
     ],
-    "name": "C1669_E11521_TC2_CFA_Add_All_NonConnected_Devices_To_Basket_Followed_By_Adding_A_Like_New_Phone_Verify_Not_Overridden",
+    "name": "C1924_E11409_TC12_CFU_Displaying_label_in_place_of_only_one_variant_on_device_details_page_of_tablet",
     "description": "",
-    "id": "c1669-e11521-tc2-cfa-add-all-nonconnected-devices-to-basket-followed-by-adding-a-like-new-phone-verify-not-overridden",
+    "id": "c1924-e11409-tc12-cfu-displaying-label-in-place-of-only-one-variant-on-device-details-page-of-tablet",
     "keyword": "Feature",
-    "uri": "Features/JulyRelease2017/C1669/C1669_E11521_TC2_CFA_Add_All_NonConnected_Devices_To_Basket_Followed_By_Adding_A_Like_New_Phone_Verify_Not_Overridden.feature"
+    "uri": "Features/JulyRelease2017/C1924/C1924_E11409_TC12_CFU_Displaying_label_in_place_of_only_one_variant_on_device_details_page_of_tablet.feature"
   }
 ]

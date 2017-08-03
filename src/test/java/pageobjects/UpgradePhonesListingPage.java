@@ -16,6 +16,10 @@ public class UpgradePhonesListingPage {
 	// Below Are list of all the phones in first page of the PayM phones landing
 	// page
 
+	
+	
+	@FindBy(how = How.XPATH, using = "//a[contains(@href, '/upgrade/phones/samsung/galaxy-j3-2016-like-new/#contractType=paymonthly')]")
+	public static WebElement SamsungGalaxyJ32016LikeNew;
 
 	@FindBy(how = How.XPATH, using = "//a[contains(@href, '/upgrade/phones/samsung/galaxy-s7/#contractType=paymonthly')]")
 	public static WebElement GalaxyS7;

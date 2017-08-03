@@ -2862,7 +2862,8 @@ public class E2EOrderPlaced_Steps {
 			MouseHoverAction.UpgradeandUpgradeNow();
 			Thread.sleep(5000);
 			Autoredirection.redirectUpgrades();
-			UpgradeTabletListingPage.ViewAllTablets.click();
+			//UpgradeTabletListingPage.TabletTab.click();
+			//UpgradeTabletListingPage.ViewAllTablets.click();
 			Thread.sleep(2000);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block

@@ -132,4 +132,7 @@ public class BaseCommPage {
 			@FindBy(how = How.XPATH, using = ("//div[@class='multi-size-tile clearfix cube']//p[@class='details']")) })
 	public static List<WebElement> iPadDevicesName;
 
+
+	@FindAll({ @FindBy(how = How.XPATH, using = ("//span[contains(text(),'£')]")) })
+	public static List<WebElement> Prices;
 }
