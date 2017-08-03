@@ -3388,7 +3388,6 @@ public class E2EOrderPlaced_Steps {
 		try {
 			PageFactory.initElements(driver, BaseCommPage.class);
 			BaseCommPageActions.checkSeeDeviceDetailsPopUp(device);
-			// BaseCommPageActions.checkSeeDeviceDetailsPopUp(device);
 		} catch (Exception e) {
 			e.printStackTrace();
 			Assert.fail("Unable to Verify the see device link popup of the basecomm landing page");
@@ -3443,7 +3442,7 @@ public class E2EOrderPlaced_Steps {
 		try {
 			PageFactory.initElements(driver, BaseCommPage.class);
 			PageFactory.initElements(driver, ConnectedDeviceDetailsPage.class);
-			PhonesListingPageAction.checkImgSrcBasecommPage(devicename, capacity, color);
+			BaseCommPageActions.checkImgSrcBasecommPage(devicename, capacity, color);
 
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -3458,7 +3457,7 @@ public class E2EOrderPlaced_Steps {
 		try {
 			PageFactory.initElements(driver, BaseCommPage.class);
 			PageFactory.initElements(driver, ConnectedDeviceDetailsPage.class);
-			PhonesListingPageAction.checkImgSrcTEPage(devicename, capacity, color);
+			BaseCommPageActions.checkImgSrcTEPage(devicename, capacity, color);
 
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -3474,7 +3473,7 @@ public class E2EOrderPlaced_Steps {
 			PageFactory.initElements(driver, BaseCommPage.class);
 			PhonesListingPageAction.clickChooseADifferentTariff();
 			Thread.sleep(3000);
-			PhonesListingPageAction.checkUserNavigatedTEPage();
+			BaseCommPageActions.checkUserNavigatedTEPage();
 		} catch (Exception e) {
 			e.printStackTrace();
 			Assert.fail("Unable to click on choose a different tarif link");
@@ -3488,7 +3487,7 @@ public class E2EOrderPlaced_Steps {
 		try {
 			PageFactory.initElements(driver, BaseCommPage.class);
 			PhonesListingPageAction.clickBackToiPadOffers();
-			PhonesListingPageAction.checkUserNavigatedBasecommPage();
+			BaseCommPageActions.checkUserNavigatedBasecommPage();
 		} catch (Exception e) {
 			e.printStackTrace();
 			Assert.fail("Unable to click on 'Back to iPad Offers' link");
@@ -3502,7 +3501,7 @@ public class E2EOrderPlaced_Steps {
 		try {
 			PageFactory.initElements(driver, BaseCommPage.class);
 			PhonesListingPageAction.clickBackToiPadOffers();
-			PhonesListingPageAction.checkUserNavigatedBasecommPage();
+			BaseCommPageActions.checkUserNavigatedBasecommPage();
 		} catch (Exception e) {
 			e.printStackTrace();
 			Assert.fail("Unable to click on 'Back to iPad Offers' link");
@@ -3515,7 +3514,7 @@ public class E2EOrderPlaced_Steps {
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		try {
 			PageFactory.initElements(driver, BaseCommPage.class);
-			PhonesListingPageAction.checkRecommendedTariffIsAtFirstTile();
+			BaseCommPageActions.checkRecommendedTariffIsAtFirstTile();
 
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -3529,7 +3528,7 @@ public class E2EOrderPlaced_Steps {
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		try {
 			PageFactory.initElements(driver, BaseCommPage.class);
-			PhonesListingPageAction.checkContentsOfBaseCommPage();
+			BaseCommPageActions.checkContentsOfBaseCommPage();
 
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -3543,7 +3542,7 @@ public class E2EOrderPlaced_Steps {
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		try {
 			PageFactory.initElements(driver, BaseCommPage.class);
-			PhonesListingPageAction.checkIfTabletDevicesArePresent();
+			BaseCommPageActions.checkIfTabletDevicesArePresent();
 
 		} catch (Exception e) {
 			e.printStackTrace();

@@ -4,8 +4,7 @@ Feature: C1960_E11522_TC4_CFA_iPad_tab_basecomms_tariffs_Basket_Checkout_login_o
     Given I navigate to the Basecomm Page
     And Verify expected <device_name> and its specific details are present in the device list <default_colour>,<default_capacity>,<default_stock_message>
     #Veirfy device price details are also getting displayed in the above step
-    And select <color> color of the connected device
-    And select <capacity> capacity of the connected device
+    And Select <color>, <capacity> of the device <device_name>
     And Verify that promotion ribbon is displayed for <device_name>
     And Verify new image is as per the selected <device_name>,<capacity>and <color> in the Basecomms page
     And Click on "Buy Now" button for <device_name> and verify "Tariffs and Extras" page is displayed
@@ -24,4 +23,4 @@ Feature: C1960_E11522_TC4_CFA_iPad_tab_basecomms_tariffs_Basket_Checkout_login_o
     #Modify the above step to include pdf download
     Examples: 
       | username             | password | device_name             | default_colour | default_capacity | default_stock_message | color  | capacity | user         |
-      | 07770001111@o2.co.uk | test123  | Apple iPad Pro 9.7 inch | Space Grey     | 32GB             | Out of stock          | Silver | 128GB    | TEST ACCEPTA |
+      | 07770001111@o2.co.uk | test123  | Apple iPad Pro 9.7 inch | Space Grey     | 32GB             | Out of stock          | Silver | 256GB    | TEST ACCEPTA |

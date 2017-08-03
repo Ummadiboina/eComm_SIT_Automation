@@ -165,31 +165,7 @@ public class PhonesListingPageAction extends Environment {
 		}
 	}
 
-	public static void checkIfTabletDevicesArePresent() {
-
-		List<WebElement> OtherTabletDevices = pageobjects.BaseCommPage.TabletDevicesName;
-
-		for (int i = 0; i < OtherTabletDevices.size(); i++) {
-			if (OtherTabletDevices.get(i).getText().contains("iPad")) {
-				System.out.println("Devices specific to iPad are also displayed");
-			} else {
-				int j = i + 1;
-				System.out.println(
-						"Tile position (" + j + ")" + " and the device name is " + OtherTabletDevices.get(i).getText());
-			}
-		}
-	}
-
-	public static void clickOnOtherTablets() {
-		log.debug("clicking on Other Tablets Tab");
-		pageobjects.BaseCommPage.OtherTablets.click();
-	}
-
-	public static void clickOniPadTab() {
-		log.debug("clicking on iPad Tab");
-		pageobjects.BaseCommPage.iPad.click();
-	}
-
+	
 	public static void isPayAsUGoTabDisplayed() {
 		log.debug("checking whether Pay As U Go tab is displayed");
 		if (pageobjects.BaseCommPage.PayAsUGo.isDisplayed()) {
@@ -399,115 +375,114 @@ public class PhonesListingPageAction extends Environment {
 				if (Option.equals("Alcatel")) {
 
 					js.executeScript("arguments[0].click();", pageobjects.SortingAndFilter.Brand_Alcatel);
-					//pageobjects.SortingAndFilter.Brand_Alcatel.click();
+					// pageobjects.SortingAndFilter.Brand_Alcatel.click();
 					Thread.sleep(2000);
 					js.executeScript("arguments[0].click();", pageobjects.SortingAndFilter.Brand);
 					Thread.sleep(1000);
 					js.executeScript("arguments[0].click();", pageobjects.SortingAndFilter.Done);
 					js.executeScript("arguments[0].click();", pageobjects.SortingAndFilter.Done);
 					Thread.sleep(1000);
-					
 
 				}
 				if (Option.equals("Apple")) {
 
 					js.executeScript("arguments[0].click();", pageobjects.SortingAndFilter.Brand_Apple);
-					//pageobjects.SortingAndFilter.Brand_Apple.click();
+					// pageobjects.SortingAndFilter.Brand_Apple.click();
 					Thread.sleep(2000);
 					js.executeScript("arguments[0].click();", pageobjects.SortingAndFilter.Brand);
 					Thread.sleep(1000);
 					js.executeScript("arguments[0].click();", pageobjects.SortingAndFilter.Done);
 					js.executeScript("arguments[0].click();", pageobjects.SortingAndFilter.Done);
 					Thread.sleep(1000);
-					
+
 				}
 				if (Option.equals("Doro")) {
 
 					js.executeScript("arguments[0].click();", pageobjects.SortingAndFilter.Brand_Doro);
-					//pageobjects.SortingAndFilter.Brand_Doro.click();
+					// pageobjects.SortingAndFilter.Brand_Doro.click();
 					Thread.sleep(2000);
 					js.executeScript("arguments[0].click();", pageobjects.SortingAndFilter.Brand);
 					Thread.sleep(1000);
 					js.executeScript("arguments[0].click();", pageobjects.SortingAndFilter.Done);
 					js.executeScript("arguments[0].click();", pageobjects.SortingAndFilter.Done);
 					Thread.sleep(1000);
-					
+
 				}
 				if (Option.equals("HTC")) {
 
 					js.executeScript("arguments[0].click();", pageobjects.SortingAndFilter.Brand_HTC);
-					//pageobjects.SortingAndFilter.Brand_HTC.click();
+					// pageobjects.SortingAndFilter.Brand_HTC.click();
 					Thread.sleep(2000);
 					js.executeScript("arguments[0].click();", pageobjects.SortingAndFilter.Brand);
 					Thread.sleep(1000);
 					js.executeScript("arguments[0].click();", pageobjects.SortingAndFilter.Done);
 					js.executeScript("arguments[0].click();", pageobjects.SortingAndFilter.Done);
 					Thread.sleep(1000);
-					
+
 				}
 				if (Option.equals("Huawei")) {
 
 					js.executeScript("arguments[0].click();", pageobjects.SortingAndFilter.Brand_Huawei);
-					//pageobjects.SortingAndFilter.Brand_Huawei.click();
+					// pageobjects.SortingAndFilter.Brand_Huawei.click();
 					Thread.sleep(2000);
 					js.executeScript("arguments[0].click();", pageobjects.SortingAndFilter.Brand);
 					Thread.sleep(1000);
 					js.executeScript("arguments[0].click();", pageobjects.SortingAndFilter.Done);
 					js.executeScript("arguments[0].click();", pageobjects.SortingAndFilter.Done);
 					Thread.sleep(1000);
-					
+
 				}
 				if (Option.equals("LG")) {
 
 					js.executeScript("arguments[0].click();", pageobjects.SortingAndFilter.Brand_LG);
-					//pageobjects.SortingAndFilter.Brand_LG.click();
+					// pageobjects.SortingAndFilter.Brand_LG.click();
 					Thread.sleep(2000);
 					js.executeScript("arguments[0].click();", pageobjects.SortingAndFilter.Brand);
 					Thread.sleep(1000);
 					js.executeScript("arguments[0].click();", pageobjects.SortingAndFilter.Done);
 					js.executeScript("arguments[0].click();", pageobjects.SortingAndFilter.Done);
 					Thread.sleep(1000);
-					
+
 				}
 				if (Option.equals("Moto")) {
 
 					js.executeScript("arguments[0].click();", pageobjects.SortingAndFilter.Brand_Moto);
-					//pageobjects.SortingAndFilter.Brand_Moto.click();
+					// pageobjects.SortingAndFilter.Brand_Moto.click();
 					Thread.sleep(2000);
 					js.executeScript("arguments[0].click();", pageobjects.SortingAndFilter.Brand);
 					Thread.sleep(1000);
 					js.executeScript("arguments[0].click();", pageobjects.SortingAndFilter.Done);
 					js.executeScript("arguments[0].click();", pageobjects.SortingAndFilter.Done);
 					Thread.sleep(1000);
-					
+
 				}
 				if (Option.equals("OnePlus")) {
 
 					js.executeScript("arguments[0].click();", pageobjects.SortingAndFilter.Brand_OnePlus);
-					//pageobjects.SortingAndFilter.Brand_OnePlus.click();
+					// pageobjects.SortingAndFilter.Brand_OnePlus.click();
 					Thread.sleep(2000);
 					js.executeScript("arguments[0].click();", pageobjects.SortingAndFilter.Brand);
 					Thread.sleep(1000);
 					js.executeScript("arguments[0].click();", pageobjects.SortingAndFilter.Done);
 					js.executeScript("arguments[0].click();", pageobjects.SortingAndFilter.Done);
 					Thread.sleep(1000);
-					
+
 				}
 				if (Option.equals("Samsung")) {
 
 					js.executeScript("arguments[0].click();", pageobjects.SortingAndFilter.Brand_Samsung);
-					//pageobjects.SortingAndFilter.Brand_Samsung.click();
+					// pageobjects.SortingAndFilter.Brand_Samsung.click();
 					Thread.sleep(2000);
 					js.executeScript("arg" + "uments[0].click();", pageobjects.SortingAndFilter.Brand);
 					Thread.sleep(1000);
 					js.executeScript("arguments[0].click();", pageobjects.SortingAndFilter.Done);
 					js.executeScript("arguments[0].click();", pageobjects.SortingAndFilter.Done);
-					Thread.sleep(1000);					
+					Thread.sleep(1000);
 				}
 				if (Option.equals("Sony")) {
 
 					js.executeScript("arguments[0].click();", pageobjects.SortingAndFilter.Brand_Sony);
-					//pageobjects.SortingAndFilter.Brand_Sony.click();
+					// pageobjects.SortingAndFilter.Brand_Sony.click();
 					Thread.sleep(2000);
 					js.executeScript("arguments[0].click();", pageobjects.SortingAndFilter.Brand);
 					Thread.sleep(1000);
@@ -523,7 +498,7 @@ public class PhonesListingPageAction extends Environment {
 				if (Option.equals("Black")) {
 
 					js.executeScript("arguments[0].click();", pageobjects.SortingAndFilter.Colour_Black);
-					//pageobjects.SortingAndFilter.Colour_Black.click();
+					// pageobjects.SortingAndFilter.Colour_Black.click();
 					Thread.sleep(2000);
 					js.executeScript("arguments[0].click();", pageobjects.SortingAndFilter.Colour);
 					Thread.sleep(1000);
@@ -535,7 +510,7 @@ public class PhonesListingPageAction extends Environment {
 				if (Option.equals("Grey")) {
 
 					js.executeScript("arguments[0].click();", pageobjects.SortingAndFilter.Colour_Grey);
-					//pageobjects.SortingAndFilter.Colour_Grey.click();
+					// pageobjects.SortingAndFilter.Colour_Grey.click();
 					Thread.sleep(2000);
 					js.executeScript("arguments[0].click();", pageobjects.SortingAndFilter.Colour);
 					Thread.sleep(1000);
@@ -547,7 +522,7 @@ public class PhonesListingPageAction extends Environment {
 				if (Option.equals("Yellow")) {
 
 					js.executeScript("arguments[0].click();", pageobjects.SortingAndFilter.Colour_Yellow);
-					//pageobjects.SortingAndFilter.Colour_Yellow.click();
+					// pageobjects.SortingAndFilter.Colour_Yellow.click();
 					Thread.sleep(2000);
 					js.executeScript("arguments[0].click();", pageobjects.SortingAndFilter.Colour);
 					Thread.sleep(1000);
@@ -559,7 +534,7 @@ public class PhonesListingPageAction extends Environment {
 				if (Option.equals("Blue")) {
 
 					js.executeScript("arguments[0].click();", pageobjects.SortingAndFilter.Colour_Blue);
-					//pageobjects.SortingAndFilter.Colour_Blue.click();
+					// pageobjects.SortingAndFilter.Colour_Blue.click();
 					Thread.sleep(2000);
 					js.executeScript("arguments[0].click();", pageobjects.SortingAndFilter.Colour);
 					Thread.sleep(1000);
@@ -571,39 +546,39 @@ public class PhonesListingPageAction extends Environment {
 				if (Option.equals("White")) {
 
 					js.executeScript("arguments[0].click();", pageobjects.SortingAndFilter.Colour_White);
-					//pageobjects.SortingAndFilter.Colour_White.click();
+					// pageobjects.SortingAndFilter.Colour_White.click();
 					Thread.sleep(2000);
 					js.executeScript("arguments[0].click();", pageobjects.SortingAndFilter.Colour);
 					Thread.sleep(1000);
 					js.executeScript("arguments[0].click();", pageobjects.SortingAndFilter.Done);
 					js.executeScript("arguments[0].click();", pageobjects.SortingAndFilter.Done);
-					Thread.sleep(1000);					
+					Thread.sleep(1000);
 
 				}
 
 				if (Option.equals("Green")) {
 
 					js.executeScript("arguments[0].click();", pageobjects.SortingAndFilter.Colour_Green);
-					//pageobjects.SortingAndFilter.Colour_Green.click();
+					// pageobjects.SortingAndFilter.Colour_Green.click();
 					Thread.sleep(2000);
 					js.executeScript("arguments[0].click();", pageobjects.SortingAndFilter.Colour);
 					Thread.sleep(1000);
 					js.executeScript("arguments[0].click();", pageobjects.SortingAndFilter.Done);
 					js.executeScript("arguments[0].click();", pageobjects.SortingAndFilter.Done);
-					Thread.sleep(1000);					
+					Thread.sleep(1000);
 
 				}
 
 				if (Option.equals("Red")) {
 
 					js.executeScript("arguments[0].click();", pageobjects.SortingAndFilter.Colour_Red);
-					//pageobjects.SortingAndFilter.Colour_Red.click();
+					// pageobjects.SortingAndFilter.Colour_Red.click();
 					Thread.sleep(2000);
 					js.executeScript("arguments[0].click();", pageobjects.SortingAndFilter.Colour);
 					Thread.sleep(1000);
 					js.executeScript("arguments[0].click();", pageobjects.SortingAndFilter.Done);
 					js.executeScript("arguments[0].click();", pageobjects.SortingAndFilter.Done);
-					Thread.sleep(1000);					
+					Thread.sleep(1000);
 
 				}
 			}
@@ -653,19 +628,18 @@ public class PhonesListingPageAction extends Environment {
 		// *****************This xpath is for AWS
 		// environment*******************//
 
-		
-		  List<WebElement> deviceName = driver.findElement(By.xpath(
-		  "//*[@id='o2-page-wrapper']/div[4]/div[5]/div"))
-		  .findElements(By.xpath(
-		  "//div[@class='device-tile my-offer ng-scope tile-one-by-two']/div/p[@class='details']"
-		  ));
-		 
+		List<WebElement> deviceName = driver.findElement(By.xpath("//*[@id='o2-page-wrapper']/div[4]/div[5]/div"))
+				.findElements(By.xpath(
+						"//div[@class='device-tile my-offer ng-scope tile-one-by-two']/div/p[@class='details']"));
 
 		// ********************This xpath is for Production
 		// Environment********************************//
 
-	/*	List<WebElement> deviceName = driver.findElement(By.xpath("//*[@id='o2-page-wrapper']/div[3]/div[3]"))
-				.findElements(By.xpath("//div[@class='device-tile__top']/p[@class='details']"));*/
+		/*
+		 * List<WebElement> deviceName = driver.findElement(By.xpath(
+		 * "//*[@id='o2-page-wrapper']/div[3]/div[3]")) .findElements(By.xpath(
+		 * "//div[@class='device-tile__top']/p[@class='details']"));
+		 */
 
 		for (WebElement temp : deviceName) {
 
@@ -704,26 +678,24 @@ public class PhonesListingPageAction extends Environment {
 		 * List<WebElement> deviceName = driver.findElement(By.xpath(
 		 * "//*[@id='o2-page-wrapper']/div[3]/div[3]")) .findElements(By.xpath(
 		 * "//div[@class='device-tile__top']/p[@class='details']"));
-		 
-
-		List<WebElement> devicePrice = driver.findElement(By.xpath("//*[@id='o2-page-wrapper']/div[3]/div[3]"))
-				.findElements(By.xpath(
-						"//div[@class='device-tile__bottom ng-scope']/p[@class='costs ng-binding ng-scope']/span[@class='headline ng-binding']"));
-
-		/*
-		 * for (WebElement temp1 : deviceName) {
+		 * 
+		 * 
+		 * List<WebElement> devicePrice = driver.findElement(By.xpath(
+		 * "//*[@id='o2-page-wrapper']/div[3]/div[3]")) .findElements(By.xpath(
+		 * "//div[@class='device-tile__bottom ng-scope']/p[@class='costs ng-binding ng-scope']/span[@class='headline ng-binding']"
+		 * ));
+		 * 
+		 * /* for (WebElement temp1 : deviceName) {
 		 * 
 		 * String sTemp = temp1.getText(); devicenamecurrentorder.add(sTemp); }
 		 */
 
 		// *********************************This xpath is for Production
 		// Environment************************************//
-			
-		List<WebElement> devicePrice = driver.findElement(By.xpath(
-				  "//*[@id='o2-page-wrapper']/div[4]/div[5]/div"))
-				  .findElements(By.xpath(
-				  "//div[@class='device-tile__bottom ng-scope']/p[@class='costs ng-binding ng-scope']/span[@class='headline ng-binding']"
-				  ));
+
+		List<WebElement> devicePrice = driver.findElement(By.xpath("//*[@id='o2-page-wrapper']/div[4]/div[5]/div"))
+				.findElements(By.xpath(
+						"//div[@class='device-tile__bottom ng-scope']/p[@class='costs ng-binding ng-scope']/span[@class='headline ng-binding']"));
 
 		for (WebElement temp2 : devicePrice) {
 
@@ -926,71 +898,6 @@ public class PhonesListingPageAction extends Environment {
 		});
 	}
 
-	/*
-	 * public static void checkSeeDeviceDetailsPopUp(String device) throws
-	 * InterruptedException {
-	 * 
-	 * List<WebElement> iPadDevicesName =
-	 * pageobjects.BaseCommPage.iPadDevicesName;
-	 * 
-	 * WebElement SeeDeviceDetailsLink; WebElement PoundsElement; WebElement
-	 * PenseElement; JavascriptExecutor js = (JavascriptExecutor) driver; String
-	 * popupdevicenametext = null; String poundselementtext = null; String
-	 * penseelementtext = null; String c = null, d = null, e = null; int k = 0;
-	 * 
-	 * for (int i = 0; i < iPadDevicesName.size(); i++) {
-	 * 
-	 * if (iPadDevicesName.get(i).getText().equals(device)) { k = i + 1; c =
-	 * "(//a[contains(text(),'See device details')])[" + k + "]"; d =
-	 * "(//span[@class='headline ng-binding'])[" + k + "]"; e =
-	 * "(//span[@class='pence ng-binding'])[" + k + "]"; }
-	 * 
-	 * } PoundsElement = driver.findElement(By.xpath(d)); PenseElement =
-	 * driver.findElement(By.xpath(e));
-	 * 
-	 * SeeDeviceDetailsLink = driver.findElement(By.xpath(c));
-	 * js.executeScript("arguments[0].click();", SeeDeviceDetailsLink);
-	 * log.debug("Clicked on See Device Details Link"); Thread.sleep(5000);
-	 * 
-	 * for (String winHandle : driver.getWindowHandles()) {
-	 * driver.switchTo().window(winHandle); log.debug("Control is in pop up"); }
-	 * 
-	 * WebElement PopupdevicenametextElement =
-	 * driver.findElement(By.xpath("//*[@id='device-details']/div[1]/h3")); if
-	 * (PopupdevicenametextElement.isDisplayed()) { popupdevicenametext =
-	 * PopupdevicenametextElement.getText(); if
-	 * (popupdevicenametext.equals(device)) {
-	 * log.debug("Device name in pop up is " + popupdevicenametext +
-	 * "and matches the device selected"); } } else {
-	 * Assert.fail("Device name in pop up is not present"); }
-	 * 
-	 * if (PoundsElement.isDisplayed()) { poundselementtext =
-	 * PoundsElement.getText(); if
-	 * (poundselementtext.equals(PoundsElement.getText())) {
-	 * log.debug("Pounds in pop up - " + poundselementtext +
-	 * ", pounds value displayed for device - " + PoundsElement.getText() +
-	 * "and they are the same"); } }
-	 * 
-	 * if (PenseElement.isDisplayed()) { penseelementtext =
-	 * PenseElement.getText(); if
-	 * (penseelementtext.equals(PenseElement.getText())) {
-	 * log.debug("Pense in pop up - " + penseelementtext +
-	 * ", pense value displayed for device - " + PenseElement.getText() +
-	 * "and they are the same"); } }
-	 * 
-	 * WebElement SpecificationsElement =
-	 * driver.findElement(By.xpath("//div[@class='accordion-content']")); if
-	 * (!SpecificationsElement.isDisplayed()) {
-	 * System.out.println("specifications not displayed"); } else
-	 * System.out.println("specifications displayed");
-	 * 
-	 * WebElement FullSpecificationElement = driver .findElement(By.
-	 * xpath("//a[contains(text(),'See full technical specification')]")); if
-	 * (FullSpecificationElement.isDisplayed()) {
-	 * FullSpecificationElement.click();
-	 * System.out.println("Full specification link is present"); } }
-	 */
-
 	public static void isChooseADifferentTariffDisplayed() {
 		log.debug("checking if the Choose a Different Tariff link is displayed");
 		if (pageobjects.BaseCommPage.ChooseADifferentTariff.isDisplayed()) {
@@ -1023,228 +930,44 @@ public class PhonesListingPageAction extends Environment {
 			Assert.fail("not able to click on 'Back To Tablet Offers' link");
 	}
 
-	public static void checkUserNavigatedTEPage() {
-
-		System.out.println("Title of the page is  " + driver.getTitle());
-		if (driver.getTitle().contains("Tariffs And Extras")) {
-			log.debug("user is navigated back to Tariffs And Extras page");
-		} else
-			Assert.fail("User is not at Tariffs And Extras page");
-
-	}
-
-	public static void checkUserNavigatedBasecommPage() {
-
-		if (driver.getTitle().contains("O2 | MyOffers")) {
-			log.debug("user is navigated back to Basecomm Page");
-		} else
-			Assert.fail("User is not at Basecomm page");
-
-	}
-
-	public static void checkImgSrcBasecommPage(String devicename, String capacity, String color) {
-		log.debug("checking whether new image is as per the selected color");
-		String color1 = null, color2 = null, colorname = null, capacity_color = null, capacityname = null;
-		List<WebElement> images = pageobjects.BaseCommPage.ImgSrc;
-		List<WebElement> deviceslist = driver
-				.findElements(By.xpath("//div[@data-qa-device-brand='apple']/div/p[@class='details']"));
-
-		WebElement colornameelement = null;
-		WebElement element1 = null;
-		WebElement element2 = null;
-		WebElement capacitynameelement = null;
-
-		element2 = pageobjects.ConnectedDeviceDetailsPage.CapacityDropDown;
-		JavascriptExecutor js = (JavascriptExecutor) driver;
-		js.executeScript("arguments[0].setAttribute('style', 'display:block;')", element2);
-		if (element2.isDisplayed()) {
-			capacitynameelement = new Select(element2).getFirstSelectedOption();
-		}
-		capacityname = capacitynameelement.getText().toLowerCase();
-		capacity = capacity.toLowerCase();
-		System.out.println("passing capacity : " + capacity);
-		System.out.println("selected capacity : " + capacityname);
-
-		if (!capacity.equalsIgnoreCase(capacityname)) {
-			Assert.fail("capacity displayed is not the selected capacity");
-		}
-
-		element2 = pageobjects.ConnectedDeviceDetailsPage.ColorDropDown;
-		js.executeScript("arguments[0].setAttribute('style', 'display:block;')", element2);
-		if (element2.isDisplayed()) {
-			colornameelement = new Select(element2).getFirstSelectedOption();
-		}
-
-		colorname = colornameelement.getText().toLowerCase();
-		color = color.toLowerCase();
-		if (!color.equalsIgnoreCase(colorname)) {
-			Assert.fail("color displayed is not the selected color");
-		}
-		if (colorname.contains(" ")) {
-			String parts[] = colorname.split(" ");
-			color1 = parts[0] + "_" + parts[1];
-			color2 = parts[0] + "-" + parts[1];
-			capacity_color = capacityname + "_" + color1;
-		} else {
-			capacity_color = capacityname + "_" + colorname;
-		}
-		System.out.println("Capacity_color" + capacity_color);
-
-		for (int i = 0; i < deviceslist.size(); i++) {
-			System.out.println(deviceslist.get(i).getText());
-			if (deviceslist.get(i).getText().contains(devicename)) {
-				System.out.println("device name matches for checking new image");
-				if (images.get(i).getAttribute("src").contains(capacity_color)) {
-					System.out.println(images.get(i).getAttribute("src"));
-					System.out.println("Image is as per selected color and capacity");
-				} else {
-					Assert.fail("New image is not as per selected color and capacity");
-				}
-			}
-		}
-	}
-
-	public static void checkImgSrcTEPage(String devicename, String capacity, String color) {
-		String color1 = null, color2 = null, colorname = null, capacity_color = null, capacityname = null;
-		WebElement image = pageobjects.BaseCommPage.ImgSrcTEpages;
-		WebElement colornameelement = null;
-		WebElement element1 = null;
-		WebElement element2 = null;
-		WebElement capacitynameelement = null;
-
-		element2 = pageobjects.ConnectedDeviceDetailsPage.CapacityDropDown;
-		JavascriptExecutor js = (JavascriptExecutor) driver;
-		js.executeScript("arguments[0].setAttribute('style', 'display:block;')", element2);
-		if (element2.isDisplayed()) {
-			capacitynameelement = new Select(element2).getFirstSelectedOption();
-		}
-
-		capacityname = capacitynameelement.getText().toLowerCase();
-
-		element1 = pageobjects.ConnectedDeviceDetailsPage.ColorDropDown;
-		js.executeScript("arguments[0].setAttribute('style', 'display:block;')", element1);
-		if (element1.isDisplayed()) {
-			colornameelement = new Select(element1).getFirstSelectedOption();
-		}
-
-		colorname = colornameelement.getText().toLowerCase();
-
-		if (colorname.contains(" ")) {
-			String parts[] = colorname.split(" ");
-			color1 = parts[0] + "_" + parts[1];
-			color2 = parts[0] + "-" + parts[1];
-			capacity_color = capacityname + "_" + color1;
-		} else {
-			capacity_color = capacityname + "_" + colorname;
-		}
-		System.out.println("Capacity_color" + capacity_color);
-
-		if (image.getAttribute("title").equals(devicename)) {
-			System.out.println("device name matches to check for new image");
-			if (image.getAttribute("src").contains(capacity_color)) {
-				System.out.println(image.getAttribute("src"));
-				System.out.println("Image is as per selected color");
-			} else {
-				Assert.fail("new image is not as per the selected color and capacity");
-			}
-		}
-	}
-
-	public static void checkRecommendedTariffIsAtFirstTile() {
-
-		List<WebElement> tariffs = pageobjects.BaseCommPage.TariffTile;
-
-		if (tariffs.size() != 0) {
-			if (tariffs.get(0).getText().startsWith("Our recommended tariff")) {
-				log.debug("'Our recommended tariff' is at the first tile");
-			}
-		} else
-			log.debug("Tariff Tile is not present");
-	}
-
-	public static void checkContentsOfBaseCommPage() {
-		List<WebElement> panellist = driver.findElements(By.xpath("//div[@id='panel']//div"));
-		WebElement BannerDescription = driver.findElement(By.xpath("//div[@class='default-content-container']"));
-
-		String text1 = "Save on your Airtime Plan";
-		String text2 = "Already on O2 Pay Monthly? Then you�ll be able to save 20% on your Airtime Plan for the whole of your contract. So you can chat, text and tweet, for less.";
-		String text3 = "You can get this discount with any iPad you want, on 2GB and above tariffs. But you won�t be able to use it with any other Airtime Plan discount. See terms.";
-		String text4 = "Looking for an Android or Windows tablet? Take a look at our exclusive deals.";
-		String text5 = "New to O2? See our iPad offers.";
-		String BannerDescriptionText = null;
-
-		BannerDescriptionText = text1 + '\n' + text2 + '\n' + text3 + '\n' + '\n' + text4 + '\n' + '\n' + text5;
-
-		if (BannerDescription.isDisplayed() && BannerDescription.getText().contains(BannerDescriptionText)) {
-			System.out.println("Banner description text is verified");
-		}
-
-		List<String> strings = new ArrayList<String>();
-		for (WebElement e : panellist) {
-			if (!e.getText().equals("")) {
-				strings.add(e.getText());
-			}
-		}
-		int stringsize = strings.size();
-		if (strings.size() != 0) {
-
-			System.out.println("First string is " + strings.get(0));
-			System.out.println("Second string is " + strings.get(1));
-			System.out.println("Last string is " + strings.get(stringsize - 1));
-
-			if (strings.get(0).startsWith("Click & Collect")) {
-				System.out.println("static sub navigation is at the correct position");
-			}
-			if (strings.get(stringsize - 1).startsWith("Free delivery next working day")) {
-				System.out.println("Footer is at the correct position");
-			}
-			if (strings.get(1).startsWith("Tablet offers" + '\n' + "Especially for you")) {
-				System.out.println("Header carousel is at the correct position");
-			}
-		}
-	}
-
-	public static void checkExpDevAndDetails(String device, String color, String capacity, String stockmessage) {
-
-		int k = 0;
-
-		List<WebElement> iPadDevicesName = driver
-				.findElements(By.xpath("//div[@class='multi-size-tile clearfix cube']//p[@class='details']"));
-
-		for (int i = 0; i < iPadDevicesName.size(); i++) {
-
-			if (iPadDevicesName.get(i).getText().equals(device)) {
-				k = i + 1;
-				String c = "(//select[@class='ng-pristine ng-valid colour-select'])[" + k + "]";
-
-				WebElement colordropdown = driver.findElement(By.xpath(c));
-				JavascriptExecutor js = (JavascriptExecutor) driver;
-				js.executeScript("arguments[0].setAttribute('style', 'display:block;')", colordropdown);
-				if (colordropdown.isDisplayed()) {
-					WebElement firstcolor = new Select(colordropdown).getFirstSelectedOption();
-					if (color.equals(firstcolor.getText())) {
-						System.out.println("Expected color selected :" + firstcolor.getText());
-					}
-				}
-
-				String d = "(//select[@class='memory-select ng-pristine ng-valid'])[" + k + "]";
-
-				WebElement capacitydropdown = driver.findElement(By.xpath(d));
-				js.executeScript("arguments[0].setAttribute('style', 'display:block;')", capacitydropdown);
-				if (capacitydropdown.isDisplayed()) {
-					WebElement firstcapacity = new Select(capacitydropdown).getFirstSelectedOption();
-					if (capacity.equals(firstcapacity.getText())) {
-						System.out.println("Expected capacity selected :" + firstcapacity.getText());
-					}
-				}
-				String e = "(//p[@class='delivery-information ng-scope'])[" + k + "]";
-				WebElement stockmsg = driver.findElement(By.xpath(e));
-				System.out.println(stockmsg.getText());
-				if (stockmsg.getText().contains(stockmessage)) {
-					System.out.println("Expected stockmsg displayed :" + stockmsg.getText());
-				}
-			}
-		}
-	}
-
+	/*
+	 * public static void checkExpDevAndDetails(String device, String color,
+	 * String capacity, String stockmessage) {
+	 * 
+	 * int k = 0;
+	 * 
+	 * List<WebElement> iPadDevicesName = driver .findElements(By.
+	 * xpath("//div[@class='multi-size-tile clearfix cube']//p[@class='details']"
+	 * ));
+	 * 
+	 * for (int i = 0; i < iPadDevicesName.size(); i++) {
+	 * 
+	 * if (iPadDevicesName.get(i).getText().equals(device)) { k = i + 1; String
+	 * c = "(//select[@id='colour'])[" + k + "]";
+	 * 
+	 * WebElement colordropdown = driver.findElement(By.xpath(c));
+	 * JavascriptExecutor js = (JavascriptExecutor) driver;
+	 * js.executeScript("arguments[0].setAttribute('style', 'display:block;')",
+	 * colordropdown); if (colordropdown.isDisplayed()) { WebElement firstcolor
+	 * = new Select(colordropdown).getFirstSelectedOption(); if
+	 * (color.equals(firstcolor.getText())) {
+	 * System.out.println("Expected color selected :" + firstcolor.getText()); }
+	 * }
+	 * 
+	 * String d = "(//select[@id='memory'])[" + k + "]";
+	 * 
+	 * WebElement capacitydropdown = driver.findElement(By.xpath(d));
+	 * js.executeScript("arguments[0].setAttribute('style', 'display:block;')",
+	 * capacitydropdown); if (capacitydropdown.isDisplayed()) { WebElement
+	 * firstcapacity = new Select(capacitydropdown).getFirstSelectedOption(); if
+	 * (capacity.equals(firstcapacity.getText())) {
+	 * System.out.println("Expected capacity selected :" +
+	 * firstcapacity.getText()); } } String e =
+	 * "(//p[@class='delivery-information ng-scope'])[" + k + "]"; WebElement
+	 * stockmsg = driver.findElement(By.xpath(e));
+	 * System.out.println(stockmsg.getText()); if
+	 * (stockmsg.getText().contains(stockmessage)) {
+	 * System.out.println("Expected stockmsg displayed :" + stockmsg.getText());
+	 * } } } }
+	 */
 }

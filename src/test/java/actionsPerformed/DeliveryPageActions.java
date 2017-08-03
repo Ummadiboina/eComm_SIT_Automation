@@ -80,9 +80,10 @@ public class DeliveryPageActions {
 		}
 		
 		public static void selectExistingAcctAndFastCheckOut() throws InterruptedException {
-			
 			Thread.sleep(2000);
-			pageobjects.DeliveryPage.SelectAcct.click();
+			js.executeScript("arguments[0].click();", pageobjects.DeliveryPage.SelectAcct);
+			
+			//pageobjects.DeliveryPage.SelectAcct.click();
 			System.out.println("Existing Account is selected");
 			log.debug("Existing Account is selected");
 
