@@ -134,4 +134,8 @@ public class BaseCommPage {
 
 	@FindAll({ @FindBy(how = How.XPATH, using = ("//span[contains(text(),'£')]")) })
 	public static List<WebElement> Prices;
+	
+	@FindBy(how = How.XPATH, using = "//a[contains(., 'Back to offers')]")
+	public static WebElement BackToOffers;
+	
 }

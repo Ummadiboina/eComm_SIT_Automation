@@ -15,4 +15,4 @@ Feature: C11786_E11510-11505_TC5_Non_Basecomm_tariff_basket_page_change_tariff_l
 
     Examples: 
       | username             | password | tabletname                |
-      | 07770001111@o2.co.uk | test123  | Samsung Galaxy Tab Active |
+      | 07770001111@o2.co.uk | test123  | Apple iPad Pro 10.5 inch |

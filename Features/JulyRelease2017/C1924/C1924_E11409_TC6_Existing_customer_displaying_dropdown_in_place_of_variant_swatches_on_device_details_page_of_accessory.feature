@@ -1,5 +1,4 @@
-Feature: 
-  C1924_E11409_TC6_Existing_customer_displaying_dropdown_in_place_of_variant_swatches_on_device_details_page_of_accessory
+Feature: C1924_E11409_TC6_Existing_customer_displaying_dropdown_in_place_of_variant_swatches_on_device_details_page_of_accessory
 
   @JulyRelease
   Scenario Outline: 
