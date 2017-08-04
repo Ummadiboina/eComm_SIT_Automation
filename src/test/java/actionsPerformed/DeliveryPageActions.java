@@ -6,6 +6,7 @@ import java.util.List;
 
 import org.apache.log4j.Logger;
 import org.junit.Assert;
+import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 
@@ -80,17 +81,29 @@ public class DeliveryPageActions {
 		}
 		
 		public static void selectExistingAcctAndFastCheckOut() throws InterruptedException {
-			Thread.sleep(2000);
-			js.executeScript("arguments[0].click();", pageobjects.DeliveryPage.SelectAcct);
+			Thread.sleep(5000);
 			
-			//pageobjects.DeliveryPage.SelectAcct.click();
+			System.out.println("going to click on Create a new account");
+			//have to change the below as it is not working
+			driver.switchTo().frame("destination_publishing_iframe_telefonicauklimited_0");
+			System.out.println("switched to frame");
+			
+			js.executeScript("arguments[0].click();", pageobjects.DeliveryPage.SelectAcct);
+			//driver.findElement(By.xpath("//a[contains(., 'Create a new account')]")).click();
+			
+			/*System.out.println("Going to click on Begin checkout");
+			driver.findElement(By.xpath("//button[@id='btn-continue-3']"));
+			Thread.sleep(4000);
+			driver.findElement(By.xpath("//button[@id='btn-continue']")).click();*/
+			
+			/*pageobjects.DeliveryPage.SelectAcct.click();
 			System.out.println("Existing Account is selected");
 			log.debug("Existing Account is selected");
-
+*/
 			js.executeScript("arguments[0].click();", pageobjects.DeliveryPage.FastCheckOut);
 //			pageobjects.DeliveryPage.FastCheckOut.click();
 			System.out.println("FastCheckout button is selected");
-			log.debug("FastCheckout button is selected");
+		//	log.debug("FastCheckout button is selected");
 		}
 		
 		public static void checkStockExtMsgDP() {

@@ -2091,7 +2091,7 @@ public class E2EOrderPlaced_Steps {
 		}
 	}
 
-	@Given("Select existing account and begin fast checkout")
+	@And("Select existing account and begin fast checkout")
 	public void Select_existing_account_and_begin_fast_checkout() throws Throwable {
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		try {
@@ -2105,7 +2105,7 @@ public class E2EOrderPlaced_Steps {
 		}
 	}
 
-	@Given("Check stock extended message in Delivery page")
+	@And("Check stock extended message in Delivery page")
 	public void Check_stock_extended_message_in_Delivery_page() throws Throwable {
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		try {
@@ -3565,7 +3565,23 @@ public class E2EOrderPlaced_Steps {
 
 		}
 	}
+		
+	@And("^Verify expected \"coming soon\" ([^\"]*) and its specific details are present in the device list ([^\"]*),([^\"]*),([^\"]*)$")
+	public void verify_expected_device_and_details_are_in_device_list_coming_soon_device(String device, String color, String capacity,
+			String stockmessage) throws Throwable {
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		try {
+			PageFactory.initElements(driver, BaseCommPage.class);
+			BaseCommPageActions.checkExpDevAndDetailsForComingSoonDevice(device, color, capacity, stockmessage);
 
+		} catch (Exception e) {
+			e.printStackTrace();
+			Assert.fail("Unable to verify expected device and details are in device list");
+
+		}
+	}
+	
+	
 	@And("^Verify that promotion ribbon is displayed for ([^\"]*)$")
 	public void verifypromotionribbonDisplay(String device) {
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);

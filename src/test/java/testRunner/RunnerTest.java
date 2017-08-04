@@ -16,7 +16,7 @@ import com.github.mkolisnyk.cucumber.reporting.CucumberResultsOverview;
 import cucumber.api.CucumberOptions;
 
 @CucumberOptions(strict = true, features = {
-		"Features//JulyRelease2017//C1669//C1669_E11521_TC2_CFA_Add_All_NonConnected_Devices_To_Basket_Followed_By_Adding_A_Like_New_Phone_Verify_Not_Overridden.feature" }, glue = {
+		"Features//JulyRelease2017//CFD1786" }, glue = {
 				"steps" },
 
 		tags = {}, format = { "json:testResult/cucumber.json", "pretty", "html:testResult/report" }, plugin = {

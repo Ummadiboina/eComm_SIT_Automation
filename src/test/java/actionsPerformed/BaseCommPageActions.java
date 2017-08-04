@@ -342,7 +342,7 @@ public class BaseCommPageActions extends Environment {
 			if (iPadDevicesName.get(i).getText().equals(device)) {
 				System.out.println("Device matches for verifying price change upon capacity");
 				k = i + 1;
-				c = "(//span[contains(text(),'ï¿½')])[" + k + "]";
+				c = "(//span[contains(text(),'£')])[" + k + "]";
 			}
 		}
 		Thread.sleep(3000);
@@ -570,8 +570,8 @@ public class BaseCommPageActions extends Environment {
 		List<WebElement> TabletDevicesName = pageobjects.BaseCommPage.TabletDevicesName;
 
 		WebElement SeeDeviceDetailsLink;
-		WebElement PoundsElement;
-		WebElement PenseElement;
+		List<WebElement> PoundsElement;
+		List<WebElement> PenseElement;
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		String popupdevicenametext = null;
 		String poundselementtext = null;
@@ -600,8 +600,10 @@ public class BaseCommPageActions extends Environment {
 					c = "(//a[contains(text(),'See device details')])[" + k + "]";
 					d = "(//span[@class='headline ng-binding'])[" + k + "]";
 					e = "(//span[@class='pence ng-binding'])[" + k + "]";
-					PoundsElement = driver.findElement(By.xpath(d));
-					PenseElement = driver.findElement(By.xpath(e));
+					PoundsElement = driver.findElements(By.xpath(d));
+					PenseElement = driver.findElements(By.xpath(e));
+					/*System.out.println("Pounds List size :" + PoundsElement.size());
+					System.out.println("Pense List size :" + PenseElement.size());*/
 
 					SeeDeviceDetailsLink = driver.findElement(By.xpath(c));
 					if (SeeDeviceDetailsLink.isDisplayed()) {
@@ -618,7 +620,7 @@ public class BaseCommPageActions extends Environment {
 						log.debug("Control is in pop up");
 						System.out.println("Control is in pop up");
 					}
-
+					Thread.sleep(3000);
 					WebElement PopupdevicenametextElement = pageobjects.BaseCommPage.PopupdevicenametextElement;
 					if (PopupdevicenametextElement.isDisplayed()) {
 						popupdevicenametext = PopupdevicenametextElement.getText();
@@ -632,26 +634,26 @@ public class BaseCommPageActions extends Environment {
 						Assert.fail("Device name in pop up is not present");
 					}
 
-					if (PoundsElement.isDisplayed()) {
-						poundselementtext = PoundsElement.getText();
-						if (poundselementtext.equals(PoundsElement.getText())) {
+					if (PoundsElement.size() > 0) {
+						poundselementtext = PoundsElement.get(0).getText();
+						if (poundselementtext.equals(PoundsElement.get(0).getText())) {
 							log.debug(
 									"Pounds in pop up - " + poundselementtext + ", pounds value displayed for device - "
-											+ PoundsElement.getText() + "and they are the same");
+											+ PoundsElement.get(0).getText() + "and they are the same");
 							System.out.println(
 									"Pounds in pop up - " + poundselementtext + ", pounds value displayed for device - "
-											+ PoundsElement.getText() + "and they are the same");
+											+ PoundsElement.get(0).getText() + "and they are the same");
 						}
 					}
 
-					if (PenseElement.isDisplayed()) {
-						penseelementtext = PenseElement.getText();
-						if (penseelementtext.equals(PenseElement.getText())) {
+					if (PenseElement.size() > 0) {
+						penseelementtext = PenseElement.get(0).getText();
+						if (penseelementtext.equals(PenseElement.get(0).getText())) {
 							log.debug("Pense in pop up - " + penseelementtext + ", pense value displayed for device - "
-									+ PenseElement.getText() + "and they are the same");
+									+ PenseElement.get(0).getText() + "and they are the same");
 							System.out.println(
 									"Pense in pop up - " + penseelementtext + ", pense value displayed for device - "
-											+ PenseElement.getText() + "and they are the same");
+											+ PenseElement.get(0).getText() + "and they are the same");
 						}
 					}
 					WebElement SpecificationsElement = pageobjects.BaseCommPage.SpecificationsElement;
@@ -735,7 +737,7 @@ public class BaseCommPageActions extends Environment {
 						Assert.fail("Expected capacity not selected by default");
 					}
 				}
-				String e = "(//p[@class='delivery-information ng-scope'])[" + k + "]";
+				String e = "(//div[@class='device-status'])[" + k + "]";
 				WebElement stockmsg = driver.findElement(By.xpath(e));
 				System.out.println(stockmsg.getText());
 				if (stockmsg.getText().contains(stockmessage)) {
@@ -743,6 +745,87 @@ public class BaseCommPageActions extends Environment {
 				} else {
 					Assert.fail("Expected stockmsg not displayed by default");
 				}
+			}
+		}
+	}
+
+	public static void checkExpDevAndDetailsForComingSoonDevice(String device, String color, String capacity,
+			String stockmessage) {
+		System.out.println("Inside checkExpDevAndDetails function");
+		System.out.println(device + color + capacity + stockmessage);
+		int k = 0;
+
+		List<WebElement> iPadDevicesName = pageobjects.BaseCommPage.iPadDevicesName;
+		JavascriptExecutor jse = (JavascriptExecutor) driver;
+		jse.executeScript("window.scrollBy(0,400)", "");
+		for (int i = 0; i < iPadDevicesName.size(); i++) {
+			System.out.println(iPadDevicesName.get(i).getText());
+			if (iPadDevicesName.get(i).getText().equals(device)) {
+
+				k = i + 1;
+				String r = "(//div[@class='star-rating'])[" + k + "]";
+				if (driver.findElement(By.xpath(r)).getText().isEmpty()) {
+					Assert.fail("No ratings present for this device");
+				} else {
+					System.out.println("Ratings for the device is present");
+				}
+
+				String c = "(//select[@id='colour'])[" + k + "]";
+
+				WebElement colordropdown = driver.findElement(By.xpath(c));
+				JavascriptExecutor js = (JavascriptExecutor) driver;
+				js.executeScript("arguments[0].setAttribute('style', 'display:block;')", colordropdown);
+				if (colordropdown.isDisplayed()) {
+					WebElement firstcolor = new Select(colordropdown).getFirstSelectedOption();
+					System.out.println("default color for this device is :" + firstcolor.getText());
+					if (color.equals(firstcolor.getText())) {
+						System.out.println("Expected color selected :" + firstcolor.getText());
+					} else {
+						Assert.fail("Expected color not selected by default");
+					}
+				}
+
+				String d = "(//select[@id='memory'])[" + k + "]";
+
+				WebElement capacitydropdown = driver.findElement(By.xpath(d));
+				js.executeScript("arguments[0].setAttribute('style', 'display:block;')", capacitydropdown);
+				if (capacitydropdown.isDisplayed()) {
+					WebElement firstcapacity = new Select(capacitydropdown).getFirstSelectedOption();
+					if (capacity.equals(firstcapacity.getText())) {
+						System.out.println("Expected capacity selected :" + firstcapacity.getText());
+					} else {
+						Assert.fail("Expected capacity not selected by default");
+					}
+				}
+				String e = "(//div[@class='device-status'])[" + k + "]";
+				WebElement stockmsg = driver.findElement(By.xpath(e));
+				System.out.println(stockmsg.getText());
+				if (stockmsg.getText().contains(stockmessage)) {
+					System.out.println("Expected stockmsg displayed :" + stockmsg.getText());
+				} else {
+					Assert.fail("Expected stockmsg not displayed by default");
+				}
+
+				String f = "//div[@data-qa-device-model-family='comingSoon']//div/form/button[@id='callToAction']";
+				List<WebElement> BuyNowButtonList = driver.findElements(By.xpath(f));
+				if (BuyNowButtonList.size() > 0) {
+					Assert.fail("Buy Now Button present for coming soon device");
+				} else {
+					System.out.println("No buy now button for coming soon device as expected");
+				}
+
+				String g = "//div[@data-qa-device-model-family='comingSoon']//div/p/span[@class='headline ng-binding']";
+				String h = "//div[@data-qa-device-model-family='comingSoon']//div/p/span[@class='pence ng-binding']";
+				List<WebElement> PoundsElement = driver.findElements(By.xpath(g));
+				List<WebElement> PenseElement = driver.findElements(By.xpath(h));
+				System.out.println("Pounds List size :" + PoundsElement.size());
+				System.out.println("Pense List size :" + PenseElement.size());
+				if (PoundsElement.size() > 0 || PenseElement.size() > 0) {
+					Assert.fail("Price details are being displayed for coming soon device");
+				} else {
+					System.out.println("Price details are not displayed for coming soon device as expected");
+				}
+
 			}
 		}
 	}
@@ -790,11 +873,6 @@ public class BaseCommPageActions extends Environment {
 		}
 		System.out.println("passing device" + device);
 
-		/*
-		 * if (!Devices.contains(device)) {
-		 * Assert.fail("Expected device is not present"); } else {
-		 */
-
 		for (int i = 0; i < TabletDevicesName.size(); i++) {
 			if (TabletDevicesName.get(i).getText().equals(device)) {
 				System.out.println("Device name matches");
@@ -807,7 +885,6 @@ public class BaseCommPageActions extends Environment {
 				js.executeScript("arguments[0].click();", BuyNowButton);
 			}
 		}
-		// }
 	}
 
 	public static void isPayAsUGoTabDisplayed() {
@@ -999,10 +1076,11 @@ public class BaseCommPageActions extends Environment {
 
 	}
 
-	public static void checkUserNavigatedBasecommPage() {
-
+	public static void checkUserNavigatedBasecommPage() throws Exception {
+		Thread.sleep(3000);
+		System.out.println("Title of the page is :" + driver.getTitle());
 		if (driver.getTitle().contains("O2 | MyOffers")) {
-			log.debug("user is navigated back to Basecomm Page");
+			System.out.println("user is navigated back to Basecomm Page");
 		} else
 			Assert.fail("User is not at Basecomm page");
 
