@@ -12,9 +12,9 @@ Feature: To set a device in Delayed Delivery in CVOS
     Then I should be able to move the Launch date to a past date<Search_by_model>
     When I login as a Trading Admin
     And I Login with Trading Admin Credentials <TradeUser> and <TradePassword>
-    Then I click on  'Stockpot' tab in Trading admin and search for <SKUID> in SkU desciption
-    And when I click on All shops I should be able to allocate to different stockspots using <Search_by_model>
-    And I click on 'Stockpot' tab and search using <SKUID> to see the stock status then I should see them in Delayed Delivery status
+  #  Then I click on 'Stockpot' tab in Trading admin and search for <SKUID> in SkU desciption
+  #  And when I click on All shops I should be able to allocate to different stockspots using <Search_by_model>
+  #  And I click on 'Stockpot' tab and search using <SKUID> to see the stock status then I should see them in Delayed Delivery status
 
     Examples: 
       | username          | password          | SKUID    | Search_by_model        | TradeUser    | TradePassword |

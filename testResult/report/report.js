@@ -1,36 +1,72 @@
+<<<<<<< HEAD
+$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("CVOS_Features/CVOSDelayedDelivery.feature");
+=======
 $(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("C1786_E-11349-11350-11352-11358_Existing_Custo_Layout_New_Basecomm_Page_header_carousel_Sub_navigation_Sub_Banner_footer_banner.feature");
+>>>>>>> refs/remotes/origin/master
 formatter.feature({
   "line": 1,
+<<<<<<< HEAD
+  "name": "To set a device in Delayed Delivery in CVOS",
+=======
   "name": "C1786_E-11349-11350-11352-11358_Existing_Custo_Layout_New_Basecomm_Page_header_carousel_Sub_navigation_Sub_Banner_footer_banner",
+>>>>>>> refs/remotes/origin/master
   "description": "",
+<<<<<<< HEAD
+  "id": "to-set-a-device-in-delayed-delivery-in-cvos",
+=======
   "id": "c1786-e-11349-11350-11352-11358-existing-custo-layout-new-basecomm-page-header-carousel-sub-navigation-sub-banner-footer-banner",
+>>>>>>> refs/remotes/origin/master
   "keyword": "Feature"
 });
 formatter.scenarioOutline({
   "line": 4,
+<<<<<<< HEAD
+  "name": "Delayed Delivery_CVS",
+  "description": "",
+  "id": "to-set-a-device-in-delayed-delivery-in-cvos;delayed-delivery-cvs",
+=======
   "name": "This scenario ensures that when the existing customer lands on new basecomm page, then the customer should be able to see the following changes in basecomm page",
   "description": "\r\n1.The Header carousel should be displayed on the top of the page\r\n2.Static sub-navigation should be displayed on the top of the page above the header carousel\r\n3.Banner description for Sub-banner should be displayed below the header carousel \r\n4.Footer banner should be displayed below the tariff tiles",
   "id": "c1786-e-11349-11350-11352-11358-existing-custo-layout-new-basecomm-page-header-carousel-sub-navigation-sub-banner-footer-banner;this-scenario-ensures-that-when-the-existing-customer-lands-on-new-basecomm-page,-then-the-customer-should-be-able-to-see-the-following-changes-in-basecomm-page",
+>>>>>>> refs/remotes/origin/master
   "type": "scenario_outline",
   "keyword": "Scenario Outline",
   "tags": [
     {
       "line": 3,
+<<<<<<< HEAD
+      "name": "@tag1"
+=======
       "name": "@helloTest"
+>>>>>>> refs/remotes/origin/master
     }
   ]
 });
 formatter.step({
+<<<<<<< HEAD
+  "line": 5,
+  "name": "I am a Supply Chain Admin",
+=======
   "line": 11,
   "name": "I am existing user and I click on Signin button",
+>>>>>>> refs/remotes/origin/master
   "keyword": "Given "
 });
 formatter.step({
+<<<<<<< HEAD
+  "line": 6,
+  "name": "I Login with Supply Chain Credential \u003cusername\u003e and \u003cpassword\u003e",
+=======
   "line": 12,
   "name": "Signin using valid \u003cusername\u003e and \u003cpassword\u003e credentials",
+>>>>>>> refs/remotes/origin/master
   "keyword": "And "
 });
 formatter.step({
+<<<<<<< HEAD
+  "line": 7,
+  "name": "I click on  \u0027Stockpot\u0027 tab in Supply Chain and search for \u003cSKUID\u003e in SkU desciption",
+=======
   "line": 13,
   "name": "I navigate to the Basecomm Page",
   "keyword": "And "
@@ -38,59 +74,170 @@ formatter.step({
 formatter.step({
   "line": 14,
   "name": "Verify the contents of the basecomm landing page",
+>>>>>>> refs/remotes/origin/master
   "keyword": "Then "
 });
-formatter.examples({
+formatter.step({
+  "line": 8,
+  "name": "Click on Search button",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 9,
+  "name": "I should see the uploaded stock for the SKU ID",
+  "keyword": "Then "
+});
+formatter.step({
+  "line": 10,
+  "name": "I click on Online \u0027Stockpot\u0027 and move the delivery date to a past date",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 11,
+  "name": "I click on Stock Merchandise",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 12,
+  "name": "I should be able to move the Launch date to a past date\u003cSearch_by_model\u003e",
+  "keyword": "Then "
+});
+formatter.step({
+  "line": 13,
+  "name": "I login as a Trading Admin",
+  "keyword": "When "
+});
+formatter.step({
+  "line": 14,
+  "name": "I Login with Trading Admin Credentials \u003cTradeUser\u003e and \u003cTradePassword\u003e",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 15,
+  "name": "I click on  \u0027Stockpot\u0027 tab in Trading admin and search for \u003cSKUID\u003e in SkU desciption",
+  "keyword": "Then "
+});
+formatter.step({
   "line": 16,
+  "name": "when I click on All shops I should be able to allocate to different stockspots using \u003cSearch_by_model\u003e",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 17,
+  "name": "I click on \u0027Stockpot\u0027 tab and search using \u003cSKUID\u003e to see the stock status then I should see them in Delayed Delivery status",
+  "keyword": "And "
+});
+formatter.examples({
+<<<<<<< HEAD
+  "line": 19,
+=======
+  "line": 16,
+>>>>>>> refs/remotes/origin/master
   "name": "",
   "description": "",
+<<<<<<< HEAD
+  "id": "to-set-a-device-in-delayed-delivery-in-cvos;delayed-delivery-cvs;",
+=======
   "id": "c1786-e-11349-11350-11352-11358-existing-custo-layout-new-basecomm-page-header-carousel-sub-navigation-sub-banner-footer-banner;this-scenario-ensures-that-when-the-existing-customer-lands-on-new-basecomm-page,-then-the-customer-should-be-able-to-see-the-following-changes-in-basecomm-page;",
+>>>>>>> refs/remotes/origin/master
   "rows": [
     {
       "cells": [
         "username",
+<<<<<<< HEAD
+        "password",
+        "SKUID",
+        "Search_by_model",
+        "TradeUser",
+        "TradePassword"
+=======
         "password"
+>>>>>>> refs/remotes/origin/master
       ],
+<<<<<<< HEAD
+      "line": 20,
+      "id": "to-set-a-device-in-delayed-delivery-in-cvos;delayed-delivery-cvs;;1"
+=======
       "line": 17,
       "id": "c1786-e-11349-11350-11352-11358-existing-custo-layout-new-basecomm-page-header-carousel-sub-navigation-sub-banner-footer-banner;this-scenario-ensures-that-when-the-existing-customer-lands-on-new-basecomm-page,-then-the-customer-should-be-able-to-see-the-following-changes-in-basecomm-page;;1"
+>>>>>>> refs/remotes/origin/master
     },
     {
       "cells": [
+<<<<<<< HEAD
+        "SupplyChainAdmin1",
+        "SupplyChainAdmin1",
+        "1AMFI32N",
+        "Amazon Fire phone 32GB",
+        "TradingAdmin",
+        "TradingAdmin1"
+=======
         "07770001111@o2.co.uk",
         "test123"
+>>>>>>> refs/remotes/origin/master
       ],
+<<<<<<< HEAD
+      "line": 21,
+      "id": "to-set-a-device-in-delayed-delivery-in-cvos;delayed-delivery-cvs;;2"
+=======
       "line": 18,
       "id": "c1786-e-11349-11350-11352-11358-existing-custo-layout-new-basecomm-page-header-carousel-sub-navigation-sub-banner-footer-banner;this-scenario-ensures-that-when-the-existing-customer-lands-on-new-basecomm-page,-then-the-customer-should-be-able-to-see-the-following-changes-in-basecomm-page;;2"
+>>>>>>> refs/remotes/origin/master
     }
   ],
   "keyword": "Examples"
 });
 formatter.before({
+<<<<<<< HEAD
+  "duration": 116384844891,
+=======
   "duration": 57815591773,
+>>>>>>> refs/remotes/origin/master
   "status": "passed"
 });
 formatter.scenario({
+<<<<<<< HEAD
+  "line": 21,
+  "name": "Delayed Delivery_CVS",
+  "description": "",
+  "id": "to-set-a-device-in-delayed-delivery-in-cvos;delayed-delivery-cvs;;2",
+=======
   "line": 18,
   "name": "This scenario ensures that when the existing customer lands on new basecomm page, then the customer should be able to see the following changes in basecomm page",
   "description": "\r\n1.The Header carousel should be displayed on the top of the page\r\n2.Static sub-navigation should be displayed on the top of the page above the header carousel\r\n3.Banner description for Sub-banner should be displayed below the header carousel \r\n4.Footer banner should be displayed below the tariff tiles",
   "id": "c1786-e-11349-11350-11352-11358-existing-custo-layout-new-basecomm-page-header-carousel-sub-navigation-sub-banner-footer-banner;this-scenario-ensures-that-when-the-existing-customer-lands-on-new-basecomm-page,-then-the-customer-should-be-able-to-see-the-following-changes-in-basecomm-page;;2",
+>>>>>>> refs/remotes/origin/master
   "type": "scenario",
   "keyword": "Scenario Outline",
   "tags": [
     {
       "line": 3,
+<<<<<<< HEAD
+      "name": "@tag1"
+=======
       "name": "@helloTest"
+>>>>>>> refs/remotes/origin/master
     }
   ]
 });
 formatter.step({
+<<<<<<< HEAD
+  "line": 5,
+  "name": "I am a Supply Chain Admin",
+=======
   "line": 11,
   "name": "I am existing user and I click on Signin button",
+>>>>>>> refs/remotes/origin/master
   "keyword": "Given "
 });
 formatter.step({
+<<<<<<< HEAD
+  "line": 6,
+  "name": "I Login with Supply Chain Credential SupplyChainAdmin1 and SupplyChainAdmin1",
+=======
   "line": 12,
   "name": "Signin using valid 07770001111@o2.co.uk and test123 credentials",
+>>>>>>> refs/remotes/origin/master
   "matchedColumns": [
     0,
     1
@@ -98,6 +245,80 @@ formatter.step({
   "keyword": "And "
 });
 formatter.step({
+<<<<<<< HEAD
+  "line": 7,
+  "name": "I click on  \u0027Stockpot\u0027 tab in Supply Chain and search for 1AMFI32N in SkU desciption",
+  "matchedColumns": [
+    2
+  ],
+  "keyword": "Then "
+});
+formatter.step({
+  "line": 8,
+  "name": "Click on Search button",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 9,
+  "name": "I should see the uploaded stock for the SKU ID",
+  "keyword": "Then "
+});
+formatter.step({
+  "line": 10,
+  "name": "I click on Online \u0027Stockpot\u0027 and move the delivery date to a past date",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 11,
+  "name": "I click on Stock Merchandise",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 12,
+  "name": "I should be able to move the Launch date to a past dateAmazon Fire phone 32GB",
+  "matchedColumns": [
+    3
+  ],
+  "keyword": "Then "
+});
+formatter.step({
+  "line": 13,
+  "name": "I login as a Trading Admin",
+  "keyword": "When "
+});
+formatter.step({
+  "line": 14,
+  "name": "I Login with Trading Admin Credentials TradingAdmin and TradingAdmin1",
+  "matchedColumns": [
+    4,
+    5
+  ],
+  "keyword": "And "
+});
+formatter.step({
+  "line": 15,
+  "name": "I click on  \u0027Stockpot\u0027 tab in Trading admin and search for 1AMFI32N in SkU desciption",
+  "matchedColumns": [
+    2
+  ],
+  "keyword": "Then "
+});
+formatter.step({
+  "line": 16,
+  "name": "when I click on All shops I should be able to allocate to different stockspots using Amazon Fire phone 32GB",
+  "matchedColumns": [
+    3
+  ],
+  "keyword": "And "
+});
+formatter.step({
+  "line": 17,
+  "name": "I click on \u0027Stockpot\u0027 tab and search using 1AMFI32N to see the stock status then I should see them in Delayed Delivery status",
+  "matchedColumns": [
+    2
+  ],
+  "keyword": "And "
+=======
   "line": 13,
   "name": "I navigate to the Basecomm Page",
   "keyword": "And "
@@ -106,28 +327,95 @@ formatter.step({
   "line": 14,
   "name": "Verify the contents of the basecomm landing page",
   "keyword": "Then "
+>>>>>>> refs/remotes/origin/master
 });
 formatter.match({
+<<<<<<< HEAD
+  "location": "E2EOrderPlaced_Steps.i_am_a_Supply_Chain_Admin()"
+=======
   "location": "E2EOrderPlaced_Steps.I_am_existing_user_and_I_click_on_Signin_button()"
+>>>>>>> refs/remotes/origin/master
 });
 formatter.result({
+<<<<<<< HEAD
+  "duration": 13065346187,
+=======
   "duration": 25419170639,
+>>>>>>> refs/remotes/origin/master
   "status": "passed"
 });
 formatter.match({
   "arguments": [
     {
+<<<<<<< HEAD
+      "val": "SupplyChainAdmin1",
+      "offset": 37
+    },
+    {
+      "val": "SupplyChainAdmin1",
+      "offset": 59
+=======
       "val": "07770001111@o2.co.uk",
       "offset": 19
     },
     {
       "val": "test123",
       "offset": 44
+>>>>>>> refs/remotes/origin/master
     }
   ],
+<<<<<<< HEAD
+  "location": "E2EOrderPlaced_Steps.i_Login_with_Supply_Chain_Credential(String,String)"
+=======
   "location": "E2EOrderPlaced_Steps.signin_using_valid_ink_jun_and_test_credentials(String,String)"
+>>>>>>> refs/remotes/origin/master
 });
 formatter.result({
+<<<<<<< HEAD
+  "duration": 35204644464,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "1AMFI32N",
+      "offset": 58
+    }
+  ],
+  "location": "E2EOrderPlaced_Steps.i_click_on_Stockpot_tab_in_Supply_Chain_and_search_for_SKU_ID_in_SkU_desciption(String)"
+});
+formatter.result({
+  "duration": 12266375346,
+  "status": "passed"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.click_on_Search_button()"
+});
+formatter.result({
+  "duration": 332651901,
+  "status": "passed"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.i_should_see_the_uploaded_stock_for_the_SKU_ID()"
+});
+formatter.result({
+  "duration": 1917745106,
+  "status": "passed"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.i_click_on_Online_Stockpot_and_move_the_delivery_date_to_a_past_date()"
+});
+formatter.result({
+  "duration": 13434373608,
+  "status": "passed"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.i_click_on_Stock_Merchandise()"
+});
+formatter.result({
+  "duration": 3869687715,
+  "error_message": "junit.framework.AssertionFailedError: The Stock Merchandise tab is not clicked\r\n\tat junit.framework.Assert.fail(Assert.java:47)\r\n\tat steps.E2EOrderPlaced_Steps.i_click_on_Stock_Merchandise(E2EOrderPlaced_Steps.java:2996)\r\n\tat ✽.And I click on Stock Merchandise(CVOS_Features/CVOSDelayedDelivery.feature:11)\r\n",
+=======
   "duration": 18932998636,
   "status": "passed"
 });
@@ -2079,9 +2367,12 @@ formatter.match({
 formatter.result({
   "duration": 27033989773,
   "error_message": "junit.framework.AssertionFailedError: Unable to verify price updates\r\n\tat junit.framework.Assert.fail(Assert.java:47)\r\n\tat steps.E2EOrderPlaced_Steps.verifyPriceDisplaybased_on_Colour_and_capacity(E2EOrderPlaced_Steps.java:3606)\r\n\tat ✽.And Verify the price gets updated based on 128GB, 256GB for Apple iPad Pro 9.7 inch(C1786_E-11355-11357-11356-11359_TC3_Existing_Custo_Basecomm_iPad_Device_Update_Colour_Capacity_Verify_New_Price.feature:16)\r\n",
+>>>>>>> refs/remotes/origin/master
   "status": "failed"
 });
 formatter.match({
+<<<<<<< HEAD
+=======
   "arguments": [
     {
       "val": "Apple iPad Pro 9.7 inch",
@@ -3429,20 +3720,53 @@ formatter.result({
   "status": "passed"
 });
 formatter.match({
+>>>>>>> refs/remotes/origin/master
   "arguments": [
     {
-      "val": "go to checkout",
-      "offset": 10
+      "val": "32",
+      "offset": 73
     }
   ],
-  "location": "E2EOrderPlaced_Steps.CheckoutFromBasket(String)"
+  "location": "E2EOrderPlaced_Steps.i_should_be_able_to_move_the_Launch_date_to_a_past_dateAmazon_Fire_phone_GB(String)"
+});
+formatter.result({
+  "status": "skipped"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.i_login_as_a_Trading_Admin()"
 });
 formatter.result({
   "duration": 19257999946,
   "status": "passed"
 });
 formatter.match({
+<<<<<<< HEAD
+  "arguments": [
+    {
+      "val": "1",
+      "offset": 68
+    }
+  ],
+  "location": "E2EOrderPlaced_Steps.i_Login_with_Trading_Admin_Credentials_SupplyChainAdmin_and_SupplyChainAd(String,String)"
+});
+formatter.result({
+  "status": "skipped"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "1",
+      "offset": 59
+    },
+    {
+      "val": "32",
+      "offset": 64
+    }
+  ],
+  "location": "E2EOrderPlaced_Steps.i_click_on_Stockpot_tab_in_Trading_admin_and_search_for_SKU_ID_in_SkU_desciption(String)"
+=======
   "location": "E2EOrderPlaced_Steps.Select_existing_account_and_begin_fast_checkout()"
+>>>>>>> refs/remotes/origin/master
 });
 formatter.result({
   "duration": 2019632692,
@@ -3452,34 +3776,400 @@ formatter.result({
 formatter.match({
   "arguments": [
     {
-      "val": "TEST ACCEPTA",
-      "offset": 35
+      "val": "32",
+      "offset": 103
     }
   ],
+<<<<<<< HEAD
+  "location": "E2EOrderPlaced_Steps.when_I_click_on_All_shops_I_should_be_able_to_allocate_to_different_stockspots_using_Amazon_Fire_phone_GB(String)"
+=======
   "location": "E2EOrderPlaced_Steps.CreditCheckPaymentPage_Upgrade(String)"
+>>>>>>> refs/remotes/origin/master
 });
 formatter.result({
   "status": "skipped"
 });
 formatter.match({
-  "location": "E2EOrderPlaced_Steps.AgreementsPageConfirmation()"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.ReviewPageConfirmation()"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.OrderConfirmationPage()"
+  "arguments": [
+    {
+      "val": "1",
+      "offset": 43
+    },
+    {
+      "val": "32",
+      "offset": 48
+    }
+  ],
+  "location": "E2EOrderPlaced_Steps.i_click_on_Stockpot_tab_and_search_using_SKU_ID_to_see_the_stock_status_then_I_should_see_them_in_Delayed_Delivery_status()"
 });
 formatter.result({
   "status": "skipped"
 });
 formatter.after({
+<<<<<<< HEAD
+  "duration": 7593771236,
+  "status": "passed"
+});
+formatter.uri("CVOS_Features/CVOSPreOrder.feature");
+formatter.feature({
+  "line": 1,
+  "name": "To set a device in Pre Order in CVOS",
+  "description": "",
+  "id": "to-set-a-device-in-pre-order-in-cvos",
+  "keyword": "Feature"
+});
+formatter.scenarioOutline({
+  "line": 4,
+  "name": "PreOrder_CVS",
+  "description": "",
+  "id": "to-set-a-device-in-pre-order-in-cvos;preorder-cvs",
+  "type": "scenario_outline",
+  "keyword": "Scenario Outline",
+  "tags": [
+    {
+      "line": 3,
+      "name": "@tag1"
+    }
+  ]
+});
+formatter.step({
+  "line": 5,
+  "name": "I am a Supply Chain Admin",
+  "keyword": "Given "
+});
+formatter.step({
+  "line": 6,
+  "name": "I Login with Supply Chain Credential \u003cusername\u003e and \u003cpassword\u003e",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 7,
+  "name": "I click on  \u0027Stockpot\u0027 tab in Supply Chain and search for \u003cSKUID\u003e in SkU desciption",
+  "keyword": "Then "
+});
+formatter.step({
+  "line": 8,
+  "name": "Click on Search button",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 9,
+  "name": "I should see the uploaded stock for the SKU ID",
+  "keyword": "Then "
+});
+formatter.step({
+  "line": 10,
+  "name": "I click on Online \u0027Stockpot\u0027 and move the delivery date to a past date",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 11,
+  "name": "I click on Stock Merchandise",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 12,
+  "name": "I should be able to move the Launch date to a past date\u003cSearch_by_model\u003e",
+  "keyword": "Then "
+});
+formatter.step({
+  "line": 13,
+  "name": "I login as a Trading Admin",
+  "keyword": "When "
+});
+formatter.step({
+  "line": 14,
+  "name": "I Login with Trading Admin Credentials \u003cUsername1\u003e and \u003cPassword1\u003e",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 15,
+  "name": "I click on  \u0027Stockpot\u0027 tab in Trading admin and search for \u003cSKUID\u003e in SkU desciption",
+  "keyword": "Then "
+});
+formatter.step({
+  "line": 16,
+  "name": "when I click on All shops I should be able to allocate to different stockspots using \u003cSearch_by_model\u003e",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 17,
+  "name": "I click on \u0027Stockpot\u0027 tab and search using \u003cSKUID\u003e to see the stock status then I should see them in Pre Order status",
+  "keyword": "And "
+});
+formatter.examples({
+  "line": 19,
+  "name": "",
+  "description": "",
+  "id": "to-set-a-device-in-pre-order-in-cvos;preorder-cvs;",
+  "rows": [
+    {
+      "cells": [
+        "Username",
+        "Password",
+        "SKUID",
+        "Search_by_model",
+        "Username1",
+        "Password1"
+      ],
+      "line": 20,
+      "id": "to-set-a-device-in-pre-order-in-cvos;preorder-cvs;;1"
+    },
+    {
+      "cells": [
+        "SupplyChainAdmin2",
+        "SupplyChainAdmin1",
+        "1AMFI32N",
+        "Amazon Fire phone 32GB",
+        "TradingAdmin",
+        "TradingAdmin1"
+      ],
+      "line": 21,
+      "id": "to-set-a-device-in-pre-order-in-cvos;preorder-cvs;;2"
+    }
+  ],
+  "keyword": "Examples"
+});
+formatter.before({
+  "duration": 65920341708,
+  "status": "passed"
+});
+formatter.scenario({
+  "line": 21,
+  "name": "PreOrder_CVS",
+  "description": "",
+  "id": "to-set-a-device-in-pre-order-in-cvos;preorder-cvs;;2",
+  "type": "scenario",
+  "keyword": "Scenario Outline",
+  "tags": [
+    {
+      "line": 3,
+      "name": "@tag1"
+    }
+  ]
+});
+formatter.step({
+  "line": 5,
+  "name": "I am a Supply Chain Admin",
+  "keyword": "Given "
+});
+formatter.step({
+  "line": 6,
+  "name": "I Login with Supply Chain Credential \u003cusername\u003e and \u003cpassword\u003e",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 7,
+  "name": "I click on  \u0027Stockpot\u0027 tab in Supply Chain and search for 1AMFI32N in SkU desciption",
+  "matchedColumns": [
+    2
+  ],
+  "keyword": "Then "
+});
+formatter.step({
+  "line": 8,
+  "name": "Click on Search button",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 9,
+  "name": "I should see the uploaded stock for the SKU ID",
+  "keyword": "Then "
+});
+formatter.step({
+  "line": 10,
+  "name": "I click on Online \u0027Stockpot\u0027 and move the delivery date to a past date",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 11,
+  "name": "I click on Stock Merchandise",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 12,
+  "name": "I should be able to move the Launch date to a past dateAmazon Fire phone 32GB",
+  "matchedColumns": [
+    3
+  ],
+  "keyword": "Then "
+});
+formatter.step({
+  "line": 13,
+  "name": "I login as a Trading Admin",
+  "keyword": "When "
+});
+formatter.step({
+  "line": 14,
+  "name": "I Login with Trading Admin Credentials TradingAdmin and TradingAdmin1",
+  "matchedColumns": [
+    4,
+    5
+  ],
+  "keyword": "And "
+});
+formatter.step({
+  "line": 15,
+  "name": "I click on  \u0027Stockpot\u0027 tab in Trading admin and search for 1AMFI32N in SkU desciption",
+  "matchedColumns": [
+    2
+  ],
+  "keyword": "Then "
+});
+formatter.step({
+  "line": 16,
+  "name": "when I click on All shops I should be able to allocate to different stockspots using Amazon Fire phone 32GB",
+  "matchedColumns": [
+    3
+  ],
+  "keyword": "And "
+});
+formatter.step({
+  "line": 17,
+  "name": "I click on \u0027Stockpot\u0027 tab and search using 1AMFI32N to see the stock status then I should see them in Pre Order status",
+  "matchedColumns": [
+    2
+  ],
+  "keyword": "And "
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.i_am_a_Supply_Chain_Admin()"
+});
+formatter.result({
+  "duration": 10912444117,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "\u003cusername\u003e",
+      "offset": 37
+    },
+    {
+      "val": "\u003cpassword\u003e",
+      "offset": 52
+    }
+  ],
+  "location": "E2EOrderPlaced_Steps.i_Login_with_Supply_Chain_Credential(String,String)"
+});
+formatter.result({
+  "duration": 36496456214,
+  "error_message": "junit.framework.AssertionFailedError: Unable to Validate the CVOS SupplyChain Home Page\r\n\tat junit.framework.Assert.fail(Assert.java:47)\r\n\tat steps.E2EOrderPlaced_Steps.i_Login_with_Supply_Chain_Credential(E2EOrderPlaced_Steps.java:2920)\r\n\tat ✽.And I Login with Supply Chain Credential \u003cusername\u003e and \u003cpassword\u003e(CVOS_Features/CVOSPreOrder.feature:6)\r\n",
+  "status": "failed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "1AMFI32N",
+      "offset": 58
+    }
+  ],
+  "location": "E2EOrderPlaced_Steps.i_click_on_Stockpot_tab_in_Supply_Chain_and_search_for_SKU_ID_in_SkU_desciption(String)"
+});
+formatter.result({
+  "status": "skipped"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.click_on_Search_button()"
+});
+formatter.result({
+  "status": "skipped"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.i_should_see_the_uploaded_stock_for_the_SKU_ID()"
+});
+formatter.result({
+  "status": "skipped"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.i_click_on_Online_Stockpot_and_move_the_delivery_date_to_a_past_date()"
+});
+formatter.result({
+  "status": "skipped"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.i_click_on_Stock_Merchandise()"
+});
+formatter.result({
+  "status": "skipped"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "32",
+      "offset": 73
+    }
+  ],
+  "location": "E2EOrderPlaced_Steps.i_should_be_able_to_move_the_Launch_date_to_a_past_dateAmazon_Fire_phone_GB(String)"
+});
+formatter.result({
+  "status": "skipped"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.i_login_as_a_Trading_Admin()"
+});
+formatter.result({
+  "status": "skipped"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "1",
+      "offset": 68
+    }
+  ],
+  "location": "E2EOrderPlaced_Steps.i_Login_with_Trading_Admin_Credentials_SupplyChainAdmin_and_SupplyChainAd(String,String)"
+});
+formatter.result({
+  "status": "skipped"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "1",
+      "offset": 59
+    },
+    {
+      "val": "32",
+      "offset": 64
+    }
+  ],
+  "location": "E2EOrderPlaced_Steps.i_click_on_Stockpot_tab_in_Trading_admin_and_search_for_SKU_ID_in_SkU_desciption(String)"
+});
+formatter.result({
+  "status": "skipped"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "32",
+      "offset": 103
+    }
+  ],
+  "location": "E2EOrderPlaced_Steps.when_I_click_on_All_shops_I_should_be_able_to_allocate_to_different_stockspots_using_Amazon_Fire_phone_GB(String)"
+});
+formatter.result({
+  "status": "skipped"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "1",
+      "offset": 43
+    },
+    {
+      "val": "32",
+      "offset": 48
+    }
+  ],
+  "location": "E2EOrderPlaced_Steps.i_click_on_Stockpot_tab_and_search_using_SKU_ID_to_see_the_stock_status_then_I_should_see_them_in_Pre_Order_status(String)"
+});
+formatter.result({
+  "status": "skipped"
+});
+formatter.after({
+  "duration": 2885513694,
+=======
   "duration": 3171596988,
   "status": "passed"
 });
@@ -6632,6 +7322,7 @@ formatter.result({
 });
 formatter.after({
   "duration": 3215199791,
+>>>>>>> refs/remotes/origin/master
   "status": "passed"
 });
 });
