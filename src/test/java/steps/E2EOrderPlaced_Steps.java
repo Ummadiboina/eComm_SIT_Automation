@@ -2989,6 +2989,7 @@ public class E2EOrderPlaced_Steps {
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		PageFactory.initElements(driver, CVOS_PageObjects.class);
 		try {
+			Thread.sleep(3000);
 			CVOSstockpotPageActions.CVOSSupplyChainStockMerchandise();
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
@@ -3030,8 +3031,8 @@ public class E2EOrderPlaced_Steps {
 
 	}
 
-	@And("^I Login with Trading Admin Credentials TradingAdmin and TradingAdmin(\\d+)$")
-	public void i_Login_with_Trading_Admin_Credentials_SupplyChainAdmin_and_SupplyChainAd(String Username1,
+	@And("^I Login with Trading Admin Credentials ([^\"]*) and ([^\"]*)$")
+	public void i_Login_with_Trading_Admin(String Username1,
 			String Password2) throws Throwable {
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		PageFactory.initElements(driver, CVOS_PageObjects.class);
@@ -3057,7 +3058,7 @@ public class E2EOrderPlaced_Steps {
 
 	}
 
-	@Then("^I click on  'Stockpot' tab in Trading admin and search for (\\d+)AMFI(\\d+)N in SkU desciption$")
+	@Then("^I click on 'Stockpot' tab in Trading admin and search for ([^\"]*) in SkU desciption$")
 	public void i_click_on_Stockpot_tab_in_Trading_admin_and_search_for_SKU_ID_in_SkU_desciption(String SKUID)
 			throws Throwable {
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
@@ -3068,7 +3069,7 @@ public class E2EOrderPlaced_Steps {
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			System.out.println("Unable to Search the SKU ID");
-			Assert.fail("Unable to Searach the SKU ID");
+			Assert.fail("Unable to Search the SKU ID");
 
 		}
 
@@ -3112,8 +3113,9 @@ public class E2EOrderPlaced_Steps {
 	//////////////////////////// CVOS Delayed Delivery
 	//////////////////////////////////////////////////////////////////////////////// //////////////////////////
 	////////////////////////////////////////////////////////////////////////////////
+//([^\"]*)
 
-	@Then("^I should be able to move the Launch date to a past dateAmazon Fire phone (\\d+)GB$")
+	@Then("^I should be able to move the Launch date to a past date([^\"]*)$")
 	public void i_should_be_able_to_move_the_Launch_date_to_a_past_dateAmazon_Fire_phone_GB(String Search_by_model)
 			throws Throwable {
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);

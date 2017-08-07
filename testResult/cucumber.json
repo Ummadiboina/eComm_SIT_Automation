@@ -6,7 +6,11 @@
         "before": [
           {
             "result": {
+<<<<<<< HEAD
+              "duration": 116384844891,
+=======
               "duration": 57815591773,
+>>>>>>> refs/remotes/origin/master
               "status": "passed"
             },
             "match": {
@@ -14,14 +18,25 @@
             }
           }
         ],
+<<<<<<< HEAD
+        "line": 21,
+        "name": "Delayed Delivery_CVS",
+        "description": "",
+        "id": "to-set-a-device-in-delayed-delivery-in-cvos;delayed-delivery-cvs;;2",
+=======
         "line": 18,
         "name": "This scenario ensures that when the existing customer lands on new basecomm page, then the customer should be able to see the following changes in basecomm page",
         "description": "\r\n1.The Header carousel should be displayed on the top of the page\r\n2.Static sub-navigation should be displayed on the top of the page above the header carousel\r\n3.Banner description for Sub-banner should be displayed below the header carousel \r\n4.Footer banner should be displayed below the tariff tiles",
         "id": "c1786-e-11349-11350-11352-11358-existing-custo-layout-new-basecomm-page-header-carousel-sub-navigation-sub-banner-footer-banner;this-scenario-ensures-that-when-the-existing-customer-lands-on-new-basecomm-page,-then-the-customer-should-be-able-to-see-the-following-changes-in-basecomm-page;;2",
+>>>>>>> refs/remotes/origin/master
         "after": [
           {
             "result": {
+<<<<<<< HEAD
+              "duration": 7593771236,
+=======
               "duration": 2447449148,
+>>>>>>> refs/remotes/origin/master
               "status": "passed"
             },
             "match": {
@@ -34,18 +49,34 @@
         "steps": [
           {
             "result": {
+<<<<<<< HEAD
+              "duration": 13065346187,
+=======
               "duration": 25419170639,
+>>>>>>> refs/remotes/origin/master
               "status": "passed"
             },
+<<<<<<< HEAD
+            "line": 5,
+            "name": "I am a Supply Chain Admin",
+=======
             "line": 11,
             "name": "I am existing user and I click on Signin button",
+>>>>>>> refs/remotes/origin/master
             "match": {
+<<<<<<< HEAD
+              "location": "E2EOrderPlaced_Steps.i_am_a_Supply_Chain_Admin()"
+=======
               "location": "E2EOrderPlaced_Steps.I_am_existing_user_and_I_click_on_Signin_button()"
+>>>>>>> refs/remotes/origin/master
             },
             "keyword": "Given "
           },
           {
             "result": {
+<<<<<<< HEAD
+              "duration": 35204644464,
+=======
               "duration": 18932998636,
               "status": "passed"
             },
@@ -219,8 +250,13 @@
           {
             "result": {
               "duration": 499802169,
+>>>>>>> refs/remotes/origin/master
               "status": "passed"
             },
+<<<<<<< HEAD
+            "line": 6,
+            "name": "I Login with Supply Chain Credential SupplyChainAdmin1 and SupplyChainAdmin1",
+=======
             "comments": [
               {
                 "line": 10,
@@ -295,9 +331,21 @@
             },
             "line": 6,
             "name": "Signin using valid 07770001111@o2.co.uk and test123 credentials",
+>>>>>>> refs/remotes/origin/master
             "match": {
               "arguments": [
                 {
+<<<<<<< HEAD
+                  "val": "SupplyChainAdmin1",
+                  "offset": 37
+                },
+                {
+                  "val": "SupplyChainAdmin1",
+                  "offset": 59
+                }
+              ],
+              "location": "E2EOrderPlaced_Steps.i_Login_with_Supply_Chain_Credential(String,String)"
+=======
                   "val": "07770001111@o2.co.uk",
                   "offset": 19
                 },
@@ -2882,6 +2930,82 @@
             "name": "Select existing account and begin fast checkout",
             "match": {
               "location": "E2EOrderPlaced_Steps.Select_existing_account_and_begin_fast_checkout()"
+>>>>>>> refs/remotes/origin/master
+            },
+<<<<<<< HEAD
+            "matchedColumns": [
+              0,
+              1
+            ],
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 12266375346,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "I click on  \u0027Stockpot\u0027 tab in Supply Chain and search for 1AMFI32N in SkU desciption",
+            "match": {
+              "arguments": [
+                {
+                  "val": "1AMFI32N",
+                  "offset": 58
+                }
+              ],
+              "location": "E2EOrderPlaced_Steps.i_click_on_Stockpot_tab_in_Supply_Chain_and_search_for_SKU_ID_in_SkU_desciption(String)"
+            },
+            "matchedColumns": [
+              2
+            ],
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 332651901,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "Click on Search button",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.click_on_Search_button()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 1917745106,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "I should see the uploaded stock for the SKU ID",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.i_should_see_the_uploaded_stock_for_the_SKU_ID()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 13434373608,
+              "status": "passed"
+            },
+            "line": 10,
+            "name": "I click on Online \u0027Stockpot\u0027 and move the delivery date to a past date",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.i_click_on_Online_Stockpot_and_move_the_delivery_date_to_a_past_date()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 3869687715,
+              "error_message": "junit.framework.AssertionFailedError: The Stock Merchandise tab is not clicked\r\n\tat junit.framework.Assert.fail(Assert.java:47)\r\n\tat steps.E2EOrderPlaced_Steps.i_click_on_Stock_Merchandise(E2EOrderPlaced_Steps.java:2996)\r\n\tat ✽.And I click on Stock Merchandise(CVOS_Features/CVOSDelayedDelivery.feature:11)\r\n",
+              "status": "failed"
+            },
+            "line": 11,
+            "name": "I click on Stock Merchandise",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.i_click_on_Stock_Merchandise()"
             },
             "keyword": "And "
           },
@@ -2889,16 +3013,103 @@
             "result": {
               "status": "skipped"
             },
-            "line": 22,
-            "name": "land on the payment page and input TEST ACCEPTA and other details for upgrade and click \u0027Continue on next step\u0027",
+            "line": 12,
+            "name": "I should be able to move the Launch date to a past dateAmazon Fire phone 32GB",
             "match": {
               "arguments": [
                 {
-                  "val": "TEST ACCEPTA",
-                  "offset": 35
+                  "val": "32",
+                  "offset": 73
                 }
               ],
+              "location": "E2EOrderPlaced_Steps.i_should_be_able_to_move_the_Launch_date_to_a_past_dateAmazon_Fire_phone_GB(String)"
+            },
+            "matchedColumns": [
+              3
+            ],
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 13,
+            "name": "I login as a Trading Admin",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.i_login_as_a_Trading_Admin()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 14,
+            "name": "I Login with Trading Admin Credentials TradingAdmin and TradingAdmin1",
+            "match": {
+              "arguments": [
+                {
+                  "val": "1",
+                  "offset": 68
+                }
+              ],
+              "location": "E2EOrderPlaced_Steps.i_Login_with_Trading_Admin_Credentials_SupplyChainAdmin_and_SupplyChainAd(String,String)"
+            },
+            "matchedColumns": [
+              4,
+              5
+            ],
+=======
+>>>>>>> refs/remotes/origin/master
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+<<<<<<< HEAD
+            "line": 15,
+            "name": "I click on  \u0027Stockpot\u0027 tab in Trading admin and search for 1AMFI32N in SkU desciption",
+=======
+            "line": 22,
+            "name": "land on the payment page and input TEST ACCEPTA and other details for upgrade and click \u0027Continue on next step\u0027",
+>>>>>>> refs/remotes/origin/master
+            "match": {
+              "arguments": [
+                {
+                  "val": "1",
+                  "offset": 59
+                },
+                {
+                  "val": "32",
+                  "offset": 64
+                }
+              ],
+<<<<<<< HEAD
+              "location": "E2EOrderPlaced_Steps.i_click_on_Stockpot_tab_in_Trading_admin_and_search_for_SKU_ID_in_SkU_desciption(String)"
+            },
+            "matchedColumns": [
+              2
+            ],
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 16,
+            "name": "when I click on All shops I should be able to allocate to different stockspots using Amazon Fire phone 32GB",
+            "match": {
+              "arguments": [
+                {
+                  "val": "32",
+                  "offset": 103
+                }
+              ],
+              "location": "E2EOrderPlaced_Steps.when_I_click_on_All_shops_I_should_be_able_to_allocate_to_different_stockspots_using_Amazon_Fire_phone_GB(String)"
+=======
               "location": "E2EOrderPlaced_Steps.CreditCheckPaymentPage_Upgrade(String)"
+>>>>>>> refs/remotes/origin/master
             },
             "matchedColumns": [
               8
@@ -2909,14 +3120,38 @@
             "result": {
               "status": "skipped"
             },
+<<<<<<< HEAD
+            "line": 17,
+            "name": "I click on \u0027Stockpot\u0027 tab and search using 1AMFI32N to see the stock status then I should see them in Delayed Delivery status",
+=======
             "line": 23,
             "name": "Continue to Agreements page and confirm all the agreement checks",
+>>>>>>> refs/remotes/origin/master
             "match": {
-              "location": "E2EOrderPlaced_Steps.AgreementsPageConfirmation()"
+              "arguments": [
+                {
+                  "val": "1",
+                  "offset": 43
+                },
+                {
+                  "val": "32",
+                  "offset": 48
+                }
+              ],
+              "location": "E2EOrderPlaced_Steps.i_click_on_Stockpot_tab_and_search_using_SKU_ID_to_see_the_stock_status_then_I_should_see_them_in_Delayed_Delivery_status()"
             },
+            "matchedColumns": [
+              2
+            ],
             "keyword": "And "
-          },
+          }
+        ],
+        "tags": [
           {
+<<<<<<< HEAD
+            "line": 3,
+            "name": "@tag1"
+=======
             "result": {
               "status": "skipped"
             },
@@ -2937,14 +3172,293 @@
               "location": "E2EOrderPlaced_Steps.OrderConfirmationPage()"
             },
             "keyword": "Then "
+>>>>>>> refs/remotes/origin/master
           }
         ]
       }
     ],
+<<<<<<< HEAD
+    "name": "To set a device in Delayed Delivery in CVOS",
+=======
     "name": "C1786_E-11510-11505_TC2_Other_Tablets_Device_tile_Colour_and_Capacity_variant_Image_and_Promotion_change_same_variant_Tariff_page_Order_confirmation",
+>>>>>>> refs/remotes/origin/master
     "description": "",
+<<<<<<< HEAD
+    "id": "to-set-a-device-in-delayed-delivery-in-cvos",
+=======
     "id": "c1786-e-11510-11505-tc2-other-tablets-device-tile-colour-and-capacity-variant-image-and-promotion-change-same-variant-tariff-page-order-confirmation",
+>>>>>>> refs/remotes/origin/master
     "keyword": "Feature",
+<<<<<<< HEAD
+    "uri": "CVOS_Features/CVOSDelayedDelivery.feature"
+  },
+  {
+    "line": 1,
+    "elements": [
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 65920341708,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Hooks.openBrowser()"
+            }
+          }
+        ],
+        "line": 21,
+        "name": "PreOrder_CVS",
+        "description": "",
+        "id": "to-set-a-device-in-pre-order-in-cvos;preorder-cvs;;2",
+        "after": [
+          {
+            "result": {
+              "duration": 2885513694,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Hooks.embedScreenshot(Scenario)"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 10912444117,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "I am a Supply Chain Admin",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.i_am_a_Supply_Chain_Admin()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 36496456214,
+              "error_message": "junit.framework.AssertionFailedError: Unable to Validate the CVOS SupplyChain Home Page\r\n\tat junit.framework.Assert.fail(Assert.java:47)\r\n\tat steps.E2EOrderPlaced_Steps.i_Login_with_Supply_Chain_Credential(E2EOrderPlaced_Steps.java:2920)\r\n\tat ✽.And I Login with Supply Chain Credential \u003cusername\u003e and \u003cpassword\u003e(CVOS_Features/CVOSPreOrder.feature:6)\r\n",
+              "status": "failed"
+            },
+            "line": 6,
+            "name": "I Login with Supply Chain Credential \u003cusername\u003e and \u003cpassword\u003e",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\u003cusername\u003e",
+                  "offset": 37
+                },
+                {
+                  "val": "\u003cpassword\u003e",
+                  "offset": 52
+                }
+              ],
+              "location": "E2EOrderPlaced_Steps.i_Login_with_Supply_Chain_Credential(String,String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 7,
+            "name": "I click on  \u0027Stockpot\u0027 tab in Supply Chain and search for 1AMFI32N in SkU desciption",
+            "match": {
+              "arguments": [
+                {
+                  "val": "1AMFI32N",
+                  "offset": 58
+                }
+              ],
+              "location": "E2EOrderPlaced_Steps.i_click_on_Stockpot_tab_in_Supply_Chain_and_search_for_SKU_ID_in_SkU_desciption(String)"
+            },
+            "matchedColumns": [
+              2
+            ],
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 8,
+            "name": "Click on Search button",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.click_on_Search_button()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 9,
+            "name": "I should see the uploaded stock for the SKU ID",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.i_should_see_the_uploaded_stock_for_the_SKU_ID()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 10,
+            "name": "I click on Online \u0027Stockpot\u0027 and move the delivery date to a past date",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.i_click_on_Online_Stockpot_and_move_the_delivery_date_to_a_past_date()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 11,
+            "name": "I click on Stock Merchandise",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.i_click_on_Stock_Merchandise()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 12,
+            "name": "I should be able to move the Launch date to a past dateAmazon Fire phone 32GB",
+            "match": {
+              "arguments": [
+                {
+                  "val": "32",
+                  "offset": 73
+                }
+              ],
+              "location": "E2EOrderPlaced_Steps.i_should_be_able_to_move_the_Launch_date_to_a_past_dateAmazon_Fire_phone_GB(String)"
+            },
+            "matchedColumns": [
+              3
+            ],
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 13,
+            "name": "I login as a Trading Admin",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.i_login_as_a_Trading_Admin()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 14,
+            "name": "I Login with Trading Admin Credentials TradingAdmin and TradingAdmin1",
+            "match": {
+              "arguments": [
+                {
+                  "val": "1",
+                  "offset": 68
+                }
+              ],
+              "location": "E2EOrderPlaced_Steps.i_Login_with_Trading_Admin_Credentials_SupplyChainAdmin_and_SupplyChainAd(String,String)"
+            },
+            "matchedColumns": [
+              4,
+              5
+            ],
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 15,
+            "name": "I click on  \u0027Stockpot\u0027 tab in Trading admin and search for 1AMFI32N in SkU desciption",
+            "match": {
+              "arguments": [
+                {
+                  "val": "1",
+                  "offset": 59
+                },
+                {
+                  "val": "32",
+                  "offset": 64
+                }
+              ],
+              "location": "E2EOrderPlaced_Steps.i_click_on_Stockpot_tab_in_Trading_admin_and_search_for_SKU_ID_in_SkU_desciption(String)"
+            },
+            "matchedColumns": [
+              2
+            ],
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 16,
+            "name": "when I click on All shops I should be able to allocate to different stockspots using Amazon Fire phone 32GB",
+            "match": {
+              "arguments": [
+                {
+                  "val": "32",
+                  "offset": 103
+                }
+              ],
+              "location": "E2EOrderPlaced_Steps.when_I_click_on_All_shops_I_should_be_able_to_allocate_to_different_stockspots_using_Amazon_Fire_phone_GB(String)"
+            },
+            "matchedColumns": [
+              3
+            ],
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 17,
+            "name": "I click on \u0027Stockpot\u0027 tab and search using 1AMFI32N to see the stock status then I should see them in Pre Order status",
+            "match": {
+              "arguments": [
+                {
+                  "val": "1",
+                  "offset": 43
+                },
+                {
+                  "val": "32",
+                  "offset": 48
+                }
+              ],
+              "location": "E2EOrderPlaced_Steps.i_click_on_Stockpot_tab_and_search_using_SKU_ID_to_see_the_stock_status_then_I_should_see_them_in_Pre_Order_status(String)"
+            },
+            "matchedColumns": [
+              2
+            ],
+            "keyword": "And "
+          }
+        ],
+        "tags": [
+          {
+            "line": 3,
+            "name": "@tag1"
+          }
+        ]
+      }
+    ],
+    "name": "To set a device in Pre Order in CVOS",
+    "description": "",
+    "id": "to-set-a-device-in-pre-order-in-cvos",
+    "keyword": "Feature",
+    "uri": "CVOS_Features/CVOSPreOrder.feature"
+=======
     "uri": "C1786_E-11510-11505_TC2_Other_Tablets_Device_tile_Colour_and_Capacity_variant_Image_and_Promotion_change_same_variant_Tariff_page_Order_confirmation.feature"
   },
   {
@@ -4884,5 +5398,6 @@
     "id": "c1786-ecom-11527-11529-11633-tc2-new-basecomms-page-other-tablets-tab-coming-soon-device-promo-header-banner.feature",
     "keyword": "Feature",
     "uri": "C1786_ECOM-11527-11529-11633_TC2_New_basecomms_page_Other_tablets_tab_coming_soon_device_promo_header_banner.feature"
+>>>>>>> refs/remotes/origin/master
   }
 ]

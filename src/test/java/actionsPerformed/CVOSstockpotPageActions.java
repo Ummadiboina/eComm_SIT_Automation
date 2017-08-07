@@ -91,38 +91,32 @@ public class CVOSstockpotPageActions extends Environment {
 		log.debug("The Online Stockpot tab is clicked");
 		System.out.println("The Online Stockpot tab is clicked");
 
-		
+		Thread.sleep(3000);
 
 		pageobjects.CVOS_PageObjects.toMoveDeliverydate.click();
 		log.debug("The Move Delivery Option is clicked");
 		System.out.println("The Move Delivery Option is clicked");
 		
+		Thread.sleep(3000);
 		pageobjects.CVOS_PageObjects.toMoveDate.click();
 		log.debug("The Move to next month Option is clicked");
 		System.out.println("The Move to next month Option is clicked");
-		Thread.sleep(5000);
 		
-		/*WebElement dateWidget= pageobjects.CVOS_PageObjects.deliverySelectDate;
-		List<WebElement> columns=dateWidget.findElements(By.tagName("td"));
-		for (WebElement cell: columns){
-			   //Select 13th Date 
-			   if (cell.getText().equals("28")){
-			      cell.findElement(By.linkText("28")).click();
-					System.out.println("The Delivery date selected is 28");
-
-			      break;
-			 }
-		}  */
+		Thread.sleep(5000);
 			   
 		pageobjects.CVOS_PageObjects.deliverySelectDate.click();
 		
 		log.debug("The Delivery date is selected");
 		System.out.println("The Delivery date is selected");
 		
+		Thread.sleep(5000);
+
 		pageobjects.CVOS_PageObjects.deliveryDateApply.click();
 		log.debug("The Delivery date Apply button is Clicked");
 		System.out.println("The Delivery date Apply button is Clicked");
 		
+		Thread.sleep(5000);
+
 		pageobjects.CVOS_PageObjects.confirmDeliveryDate.click();
 		log.debug("The Confirm button is Clicked");
 		System.out.println("The Confirm button is Clicked");
@@ -133,37 +127,33 @@ public class CVOSstockpotPageActions extends Environment {
 
 	public static void CVOSSupplyChainStockMerchandise() throws InterruptedException {
 
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		Thread.sleep(8000);
 		pageobjects.CVOS_PageObjects.stockMerchandiseTab.click();
 		log.debug("The Stock Merchandise tab is clicked");
-
+		System.out.println("The Stock Merchandise tab is clicked");
 	}
 
 	public static void CVOSTradingAdminAct(String SKUID) throws InterruptedException {
 
-		if (pageobjects.CVOS_PageObjects.skuDescriptionDropDown.isDisplayed()) {
-			System.out.println(
-					"The SKU Dropdown is displayed : " + pageobjects.CVOS_PageObjects.skuDescriptionDropDown.getText());
-			log.debug(
-					"The SKU Dropdown is displayed : " + pageobjects.CVOS_PageObjects.skuDescriptionDropDown.getText());
-		} else
-			System.out.println("The SKU Dropdown is not displayed");
-		log.debug("The SKU Dropdown is not displayed");
-
-		pageobjects.CVOS_PageObjects.skuDescriptionDropDown.click();
-		log.debug("The SKU Dropdown is clicked");
-
-		pageobjects.CVOS_PageObjects.skuIdDropDown.click();
-		log.debug("The SKU ID is selected from the drop down is clicked");
+		Select dropdown = new Select(pageobjects.CVOS_PageObjects.skuDescriptionDropDown);
+		dropdown.selectByValue("SKUID");
+		log.debug("The SKUID is Selected");
+		System.out.println("The SKUID is Selected");
+		
 
 		pageobjects.CVOS_PageObjects.skuInput.sendKeys(SKUID);
 		log.debug("The SKU ID is entered");
-
+		System.out.println("The SKU ID is entered");
+				
 		pageobjects.CVOS_PageObjects.searchButton.click();
 		log.debug("The search button is clicked");
-
+		System.out.println("The search button is clicked");
+				
 		pageobjects.CVOS_PageObjects.deviceLink.click();
-		log.debug("The search button is clicked");
-
+		log.debug("The Device link for all shops is clicked");
+		System.out.println("The search button is clicked");
+		
 	}
 
 	public static void CVOSTradingAdminPreOrderVerf(String SKUID) throws InterruptedException {
