@@ -916,16 +916,16 @@ public class PhonesListingPageAction extends Environment {
 
 	public static void clickBackToiPadOffers() {
 		log.debug("clicking on Back to iPad Offers link");
-		if (pageobjects.BaseCommPage.BackToiPad.isDisplayed()) {
-			pageobjects.BaseCommPage.BackToiPad.click();
+		if (pageobjects.BaseCommPage.BackToOffers.isDisplayed()) {
+			pageobjects.BaseCommPage.BackToOffers.click();
 		} else
 			Assert.fail("not able to click on 'Back To iPad Offers' link");
 	}
 
 	public static void clickBackToTabletOffers() {
 		log.debug("clicking on Back to Tablet Offers link");
-		if (pageobjects.BaseCommPage.BackToTablet.isDisplayed()) {
-			pageobjects.BaseCommPage.BackToTablet.click();
+		if (pageobjects.BaseCommPage.BackToOffers.isDisplayed()) {
+			pageobjects.BaseCommPage.BackToOffers.click();
 		} else
 			Assert.fail("not able to click on 'Back To Tablet Offers' link");
 	}

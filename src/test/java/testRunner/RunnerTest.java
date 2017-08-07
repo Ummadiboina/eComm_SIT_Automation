@@ -16,7 +16,7 @@ import com.github.mkolisnyk.cucumber.reporting.CucumberResultsOverview;
 import cucumber.api.CucumberOptions;
 
 @CucumberOptions(strict = true, features = {
-		"Features//JulyRelease2017//CVOS//" }, glue = {
+		"Features//JulyRelease2017//CFD1786" }, glue = {
 				"steps" },
 
 		tags = {}, format = { "json:testResult/cucumber.json", "pretty", "html:testResult/report" }, plugin = {
