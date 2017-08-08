@@ -721,6 +721,7 @@ public class E2EOrderPlaced_Steps {
 			BasketPageActions.CollectionorDelivery("homeDelivery");
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
+			e.printStackTrace();
 			System.out.println("Unable to Land on the basket page and choose home delivery option");
 			Assert.fail("Unable to Land on the basket page and choose home delivery option");
 
@@ -2784,6 +2785,7 @@ public class E2EOrderPlaced_Steps {
 			log.debug(
 					"Running Test Step: @And(Verify all non connected devices got added to the basket section before selecting connected device)");
 			AccessoryPageActions.verifyNonConnectedDeviceAddedToBasketBefore();
+			AccessoryPageActions.removeItemsFromBasketBasedOnAdditionOfItems();
 			log.debug(
 					"Pass: Verified that all non connected devices got added to basket successfully before selecting connected device");
 		} catch (Exception e) {
@@ -3965,7 +3967,6 @@ public class E2EOrderPlaced_Steps {
 		try {
 			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 			PageFactory.initElements(driver, PAYMandPAYGTariffAndExtrasPage.class);
-			driver.get("https://www.ref.o2.co.uk/shop/tariff/apple/ipad-9.7/?productId=aa256d48-4ec7-415f-ad6c-66388ae1a04f&planId=&contractType=paymonthly");
 			System.out.println("Entering Choose Given accessory method");
 			PAYMandPAYGTariffAndExtrasPageActions.addGivenAccessory();
 			System.out.println("Completed Choose some accessory method");

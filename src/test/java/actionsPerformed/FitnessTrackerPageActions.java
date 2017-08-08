@@ -11,6 +11,7 @@ import helpers.Environment;
 
 public class FitnessTrackerPageActions extends Environment {
 	static Logger log = Logger.getLogger("devpinoyLogger");
+	static int UserSpecifiedFitnessTrackerLimit = 0;
 
 	public static void Elementdisplayvalidation(String Tabname) {
 		System.out.println(" ");
@@ -158,7 +159,7 @@ public class FitnessTrackerPageActions extends Environment {
 		try {
 			// Below will give status like in stock / out of stock etc
 			Thread.sleep(5000);
-
+			UserSpecifiedFitnessTrackerLimit = Integer.parseInt(Limit);
 			String status = driver.findElement(By.className("status-info")).getText();
 			System.out.println(status);
 
