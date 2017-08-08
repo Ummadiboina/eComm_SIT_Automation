@@ -16,4 +16,4 @@ Feature: C1786_E-11510-11505_TC3_iPads_Tab_Basecomm_tariff_basket_page_change_ta
 
     Examples: 
       | username             | password | device_name       | default_colour | default_capacity | default_stock_message | 
-      | 07770001111@o2.co.uk | test123  | Apple iPad mini 4 | Silver| 32GB   | In Stock |
+      | 07770001111@o2.co.uk | test123  | Apple iPad Pro 10.5 inch | Space Grey| 64GB   | In Stock |
