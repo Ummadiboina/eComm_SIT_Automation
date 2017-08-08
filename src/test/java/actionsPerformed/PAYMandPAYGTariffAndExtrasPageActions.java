@@ -314,4 +314,43 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 		}
 	}
 
+	public static void addGivenAccessory() throws InterruptedException {
+		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+		System.out.println("addGivenAccessory() method");
+		log.debug("The Accessory which will be added is  - "
+				+ pageobjects.PAYMandPAYGTariffAndExtrasPage.AddRandomAccessory.getText());
+		try {
+			int loop = 0;
+			WebElement ele0 = pageobjects.PAYMandPAYGTariffAndExtrasPage.AccessoryContainer;
+			System.out.println("The element is " + ele0.getText());
+			if (ele0 != null) {
+				System.out.println("selecting accessories");
+				List<WebElement> DataContainer = pageobjects.PAYMandPAYGTariffAndExtrasPage.Add_AccessoryContainer;
+				System.out.println("DAtacontainer size : " + DataContainer.size());
+
+				if (DataContainer.size() < 6) {
+					loop = DataContainer.size();
+					for (int i = 0; i < loop; i++) {
+						System.out.println(DataContainer.get(i).getText());
+						DataContainer.get(i).click();
+						Thread.sleep(3000);
+						System.out.println("Selected accessories");
+					}
+				} else {
+					for (int i = 0; i < 6; i++) {
+						System.out.println(DataContainer.get(i).getText());
+						DataContainer.get(i).click();
+						Thread.sleep(3000);
+						System.out.println("Selected accessories");
+					}
+				}
+			}
+		} catch (Exception e) {
+			System.out.println("No accessories found");
+			Assert.fail("No accessories found");
+		}
+		Thread.sleep(2000);
+		log.debug("Added a random accessory to basket");
+	}
+
 }

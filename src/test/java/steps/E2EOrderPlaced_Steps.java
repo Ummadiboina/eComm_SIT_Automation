@@ -3959,5 +3959,22 @@ public class E2EOrderPlaced_Steps {
 			Assert.fail("Failed : Select <color>, <capacity> of the device <device_name>");
 		}
 	}
+	@And("^Choose some Accesssory$")
+	public void ChooseGivenAccessory() throws Throwable {
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, PAYMandPAYGTariffAndExtrasPage.class);
+			System.out.println("Entering Choose Given accessory method");
+			PAYMandPAYGTariffAndExtrasPageActions.addGivenAccessory();
+			System.out.println("Completed Choose some accessory method");
+			Thread.sleep(2000);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			System.out.println("Unable to choose some Accesssory");
+			Assert.fail("Unable to choose some Accesssory");
 
+		}
+
+	}
 }

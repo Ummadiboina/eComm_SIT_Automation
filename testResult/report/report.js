@@ -1,72 +1,36 @@
-<<<<<<< HEAD
-$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("CVOS_Features/CVOSDelayedDelivery.feature");
-=======
 $(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("C1786_E-11349-11350-11352-11358_Existing_Custo_Layout_New_Basecomm_Page_header_carousel_Sub_navigation_Sub_Banner_footer_banner.feature");
->>>>>>> refs/remotes/origin/master
 formatter.feature({
   "line": 1,
-<<<<<<< HEAD
-  "name": "To set a device in Delayed Delivery in CVOS",
-=======
   "name": "C1786_E-11349-11350-11352-11358_Existing_Custo_Layout_New_Basecomm_Page_header_carousel_Sub_navigation_Sub_Banner_footer_banner",
->>>>>>> refs/remotes/origin/master
   "description": "",
-<<<<<<< HEAD
-  "id": "to-set-a-device-in-delayed-delivery-in-cvos",
-=======
   "id": "c1786-e-11349-11350-11352-11358-existing-custo-layout-new-basecomm-page-header-carousel-sub-navigation-sub-banner-footer-banner",
->>>>>>> refs/remotes/origin/master
   "keyword": "Feature"
 });
 formatter.scenarioOutline({
   "line": 4,
-<<<<<<< HEAD
-  "name": "Delayed Delivery_CVS",
-  "description": "",
-  "id": "to-set-a-device-in-delayed-delivery-in-cvos;delayed-delivery-cvs",
-=======
   "name": "This scenario ensures that when the existing customer lands on new basecomm page, then the customer should be able to see the following changes in basecomm page",
   "description": "\r\n1.The Header carousel should be displayed on the top of the page\r\n2.Static sub-navigation should be displayed on the top of the page above the header carousel\r\n3.Banner description for Sub-banner should be displayed below the header carousel \r\n4.Footer banner should be displayed below the tariff tiles",
   "id": "c1786-e-11349-11350-11352-11358-existing-custo-layout-new-basecomm-page-header-carousel-sub-navigation-sub-banner-footer-banner;this-scenario-ensures-that-when-the-existing-customer-lands-on-new-basecomm-page,-then-the-customer-should-be-able-to-see-the-following-changes-in-basecomm-page",
->>>>>>> refs/remotes/origin/master
   "type": "scenario_outline",
   "keyword": "Scenario Outline",
   "tags": [
     {
       "line": 3,
-<<<<<<< HEAD
-      "name": "@tag1"
-=======
       "name": "@helloTest"
->>>>>>> refs/remotes/origin/master
     }
   ]
 });
 formatter.step({
-<<<<<<< HEAD
-  "line": 5,
-  "name": "I am a Supply Chain Admin",
-=======
   "line": 11,
   "name": "I am existing user and I click on Signin button",
->>>>>>> refs/remotes/origin/master
   "keyword": "Given "
 });
 formatter.step({
-<<<<<<< HEAD
-  "line": 6,
-  "name": "I Login with Supply Chain Credential \u003cusername\u003e and \u003cpassword\u003e",
-=======
   "line": 12,
   "name": "Signin using valid \u003cusername\u003e and \u003cpassword\u003e credentials",
->>>>>>> refs/remotes/origin/master
   "keyword": "And "
 });
 formatter.step({
-<<<<<<< HEAD
-  "line": 7,
-  "name": "I click on  \u0027Stockpot\u0027 tab in Supply Chain and search for \u003cSKUID\u003e in SkU desciption",
-=======
   "line": 13,
   "name": "I navigate to the Basecomm Page",
   "keyword": "And "
@@ -74,170 +38,59 @@ formatter.step({
 formatter.step({
   "line": 14,
   "name": "Verify the contents of the basecomm landing page",
->>>>>>> refs/remotes/origin/master
   "keyword": "Then "
-});
-formatter.step({
-  "line": 8,
-  "name": "Click on Search button",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 9,
-  "name": "I should see the uploaded stock for the SKU ID",
-  "keyword": "Then "
-});
-formatter.step({
-  "line": 10,
-  "name": "I click on Online \u0027Stockpot\u0027 and move the delivery date to a past date",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 11,
-  "name": "I click on Stock Merchandise",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 12,
-  "name": "I should be able to move the Launch date to a past date\u003cSearch_by_model\u003e",
-  "keyword": "Then "
-});
-formatter.step({
-  "line": 13,
-  "name": "I login as a Trading Admin",
-  "keyword": "When "
-});
-formatter.step({
-  "line": 14,
-  "name": "I Login with Trading Admin Credentials \u003cTradeUser\u003e and \u003cTradePassword\u003e",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 15,
-  "name": "I click on  \u0027Stockpot\u0027 tab in Trading admin and search for \u003cSKUID\u003e in SkU desciption",
-  "keyword": "Then "
-});
-formatter.step({
-  "line": 16,
-  "name": "when I click on All shops I should be able to allocate to different stockspots using \u003cSearch_by_model\u003e",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 17,
-  "name": "I click on \u0027Stockpot\u0027 tab and search using \u003cSKUID\u003e to see the stock status then I should see them in Delayed Delivery status",
-  "keyword": "And "
 });
 formatter.examples({
-<<<<<<< HEAD
-  "line": 19,
-=======
   "line": 16,
->>>>>>> refs/remotes/origin/master
   "name": "",
   "description": "",
-<<<<<<< HEAD
-  "id": "to-set-a-device-in-delayed-delivery-in-cvos;delayed-delivery-cvs;",
-=======
   "id": "c1786-e-11349-11350-11352-11358-existing-custo-layout-new-basecomm-page-header-carousel-sub-navigation-sub-banner-footer-banner;this-scenario-ensures-that-when-the-existing-customer-lands-on-new-basecomm-page,-then-the-customer-should-be-able-to-see-the-following-changes-in-basecomm-page;",
->>>>>>> refs/remotes/origin/master
   "rows": [
     {
       "cells": [
         "username",
-<<<<<<< HEAD
-        "password",
-        "SKUID",
-        "Search_by_model",
-        "TradeUser",
-        "TradePassword"
-=======
         "password"
->>>>>>> refs/remotes/origin/master
       ],
-<<<<<<< HEAD
-      "line": 20,
-      "id": "to-set-a-device-in-delayed-delivery-in-cvos;delayed-delivery-cvs;;1"
-=======
       "line": 17,
       "id": "c1786-e-11349-11350-11352-11358-existing-custo-layout-new-basecomm-page-header-carousel-sub-navigation-sub-banner-footer-banner;this-scenario-ensures-that-when-the-existing-customer-lands-on-new-basecomm-page,-then-the-customer-should-be-able-to-see-the-following-changes-in-basecomm-page;;1"
->>>>>>> refs/remotes/origin/master
     },
     {
       "cells": [
-<<<<<<< HEAD
-        "SupplyChainAdmin1",
-        "SupplyChainAdmin1",
-        "1AMFI32N",
-        "Amazon Fire phone 32GB",
-        "TradingAdmin",
-        "TradingAdmin1"
-=======
         "07770001111@o2.co.uk",
         "test123"
->>>>>>> refs/remotes/origin/master
       ],
-<<<<<<< HEAD
-      "line": 21,
-      "id": "to-set-a-device-in-delayed-delivery-in-cvos;delayed-delivery-cvs;;2"
-=======
       "line": 18,
       "id": "c1786-e-11349-11350-11352-11358-existing-custo-layout-new-basecomm-page-header-carousel-sub-navigation-sub-banner-footer-banner;this-scenario-ensures-that-when-the-existing-customer-lands-on-new-basecomm-page,-then-the-customer-should-be-able-to-see-the-following-changes-in-basecomm-page;;2"
->>>>>>> refs/remotes/origin/master
     }
   ],
   "keyword": "Examples"
 });
 formatter.before({
-<<<<<<< HEAD
-  "duration": 116384844891,
-=======
-  "duration": 57815591773,
->>>>>>> refs/remotes/origin/master
+  "duration": 57238360748,
   "status": "passed"
 });
 formatter.scenario({
-<<<<<<< HEAD
-  "line": 21,
-  "name": "Delayed Delivery_CVS",
-  "description": "",
-  "id": "to-set-a-device-in-delayed-delivery-in-cvos;delayed-delivery-cvs;;2",
-=======
   "line": 18,
   "name": "This scenario ensures that when the existing customer lands on new basecomm page, then the customer should be able to see the following changes in basecomm page",
   "description": "\r\n1.The Header carousel should be displayed on the top of the page\r\n2.Static sub-navigation should be displayed on the top of the page above the header carousel\r\n3.Banner description for Sub-banner should be displayed below the header carousel \r\n4.Footer banner should be displayed below the tariff tiles",
   "id": "c1786-e-11349-11350-11352-11358-existing-custo-layout-new-basecomm-page-header-carousel-sub-navigation-sub-banner-footer-banner;this-scenario-ensures-that-when-the-existing-customer-lands-on-new-basecomm-page,-then-the-customer-should-be-able-to-see-the-following-changes-in-basecomm-page;;2",
->>>>>>> refs/remotes/origin/master
   "type": "scenario",
   "keyword": "Scenario Outline",
   "tags": [
     {
       "line": 3,
-<<<<<<< HEAD
-      "name": "@tag1"
-=======
       "name": "@helloTest"
->>>>>>> refs/remotes/origin/master
     }
   ]
 });
 formatter.step({
-<<<<<<< HEAD
-  "line": 5,
-  "name": "I am a Supply Chain Admin",
-=======
   "line": 11,
   "name": "I am existing user and I click on Signin button",
->>>>>>> refs/remotes/origin/master
   "keyword": "Given "
 });
 formatter.step({
-<<<<<<< HEAD
-  "line": 6,
-  "name": "I Login with Supply Chain Credential SupplyChainAdmin1 and SupplyChainAdmin1",
-=======
   "line": 12,
   "name": "Signin using valid 07770001111@o2.co.uk and test123 credentials",
->>>>>>> refs/remotes/origin/master
   "matchedColumns": [
     0,
     1
@@ -245,80 +98,6 @@ formatter.step({
   "keyword": "And "
 });
 formatter.step({
-<<<<<<< HEAD
-  "line": 7,
-  "name": "I click on  \u0027Stockpot\u0027 tab in Supply Chain and search for 1AMFI32N in SkU desciption",
-  "matchedColumns": [
-    2
-  ],
-  "keyword": "Then "
-});
-formatter.step({
-  "line": 8,
-  "name": "Click on Search button",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 9,
-  "name": "I should see the uploaded stock for the SKU ID",
-  "keyword": "Then "
-});
-formatter.step({
-  "line": 10,
-  "name": "I click on Online \u0027Stockpot\u0027 and move the delivery date to a past date",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 11,
-  "name": "I click on Stock Merchandise",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 12,
-  "name": "I should be able to move the Launch date to a past dateAmazon Fire phone 32GB",
-  "matchedColumns": [
-    3
-  ],
-  "keyword": "Then "
-});
-formatter.step({
-  "line": 13,
-  "name": "I login as a Trading Admin",
-  "keyword": "When "
-});
-formatter.step({
-  "line": 14,
-  "name": "I Login with Trading Admin Credentials TradingAdmin and TradingAdmin1",
-  "matchedColumns": [
-    4,
-    5
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "line": 15,
-  "name": "I click on  \u0027Stockpot\u0027 tab in Trading admin and search for 1AMFI32N in SkU desciption",
-  "matchedColumns": [
-    2
-  ],
-  "keyword": "Then "
-});
-formatter.step({
-  "line": 16,
-  "name": "when I click on All shops I should be able to allocate to different stockspots using Amazon Fire phone 32GB",
-  "matchedColumns": [
-    3
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "line": 17,
-  "name": "I click on \u0027Stockpot\u0027 tab and search using 1AMFI32N to see the stock status then I should see them in Delayed Delivery status",
-  "matchedColumns": [
-    2
-  ],
-  "keyword": "And "
-=======
   "line": 13,
   "name": "I navigate to the Basecomm Page",
   "keyword": "And "
@@ -327,114 +106,47 @@ formatter.step({
   "line": 14,
   "name": "Verify the contents of the basecomm landing page",
   "keyword": "Then "
->>>>>>> refs/remotes/origin/master
 });
 formatter.match({
-<<<<<<< HEAD
-  "location": "E2EOrderPlaced_Steps.i_am_a_Supply_Chain_Admin()"
-=======
   "location": "E2EOrderPlaced_Steps.I_am_existing_user_and_I_click_on_Signin_button()"
->>>>>>> refs/remotes/origin/master
 });
 formatter.result({
-<<<<<<< HEAD
-  "duration": 13065346187,
-=======
-  "duration": 25419170639,
->>>>>>> refs/remotes/origin/master
+  "duration": 26401403356,
   "status": "passed"
 });
 formatter.match({
   "arguments": [
     {
-<<<<<<< HEAD
-      "val": "SupplyChainAdmin1",
-      "offset": 37
-    },
-    {
-      "val": "SupplyChainAdmin1",
-      "offset": 59
-=======
       "val": "07770001111@o2.co.uk",
       "offset": 19
     },
     {
       "val": "test123",
       "offset": 44
->>>>>>> refs/remotes/origin/master
     }
   ],
-<<<<<<< HEAD
-  "location": "E2EOrderPlaced_Steps.i_Login_with_Supply_Chain_Credential(String,String)"
-=======
   "location": "E2EOrderPlaced_Steps.signin_using_valid_ink_jun_and_test_credentials(String,String)"
->>>>>>> refs/remotes/origin/master
 });
 formatter.result({
-<<<<<<< HEAD
-  "duration": 35204644464,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "1AMFI32N",
-      "offset": 58
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.i_click_on_Stockpot_tab_in_Supply_Chain_and_search_for_SKU_ID_in_SkU_desciption(String)"
-});
-formatter.result({
-  "duration": 12266375346,
-  "status": "passed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.click_on_Search_button()"
-});
-formatter.result({
-  "duration": 332651901,
-  "status": "passed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.i_should_see_the_uploaded_stock_for_the_SKU_ID()"
-});
-formatter.result({
-  "duration": 1917745106,
-  "status": "passed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.i_click_on_Online_Stockpot_and_move_the_delivery_date_to_a_past_date()"
-});
-formatter.result({
-  "duration": 13434373608,
-  "status": "passed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.i_click_on_Stock_Merchandise()"
-});
-formatter.result({
-  "duration": 3869687715,
-  "error_message": "junit.framework.AssertionFailedError: The Stock Merchandise tab is not clicked\r\n\tat junit.framework.Assert.fail(Assert.java:47)\r\n\tat steps.E2EOrderPlaced_Steps.i_click_on_Stock_Merchandise(E2EOrderPlaced_Steps.java:2996)\r\n\tat ✽.And I click on Stock Merchandise(CVOS_Features/CVOSDelayedDelivery.feature:11)\r\n",
-=======
-  "duration": 18932998636,
+  "duration": 17524106631,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.I_navigate_to_the_Basecomm_Page()"
 });
 formatter.result({
-  "duration": 12421686171,
+  "duration": 12701003732,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.Verify_the_contents_of_the_basecomm_landing_page()"
 });
 formatter.result({
-  "duration": 15519973146,
+  "duration": 19147534695,
   "status": "passed"
 });
 formatter.after({
-  "duration": 2447449148,
+  "duration": 2000102278,
   "status": "passed"
 });
 formatter.uri("C1786_E-11353-11360-11361-11528_TC1_Existing_Custo_Basecomm_Ipads_Tab_Verification.feature");
@@ -515,7 +227,7 @@ formatter.examples({
   "keyword": "Examples"
 });
 formatter.before({
-  "duration": 25198505544,
+  "duration": 25868636783,
   "status": "passed"
 });
 formatter.scenario({
@@ -570,7 +282,7 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.I_am_existing_user_and_I_click_on_Signin_button()"
 });
 formatter.result({
-  "duration": 26479915375,
+  "duration": 26180810177,
   "status": "passed"
 });
 formatter.match({
@@ -587,39 +299,39 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.signin_using_valid_ink_jun_and_test_credentials(String,String)"
 });
 formatter.result({
-  "duration": 20478904632,
+  "duration": 17459003473,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.I_navigate_to_the_Basecomm_Page()"
 });
 formatter.result({
-  "duration": 13228970458,
+  "duration": 12793342710,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.Click_on_iPad_tab()"
 });
 formatter.result({
-  "duration": 24429511290,
+  "duration": 24545503094,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.VerifyContentsofIpadSection()"
 });
 formatter.result({
-  "duration": 51957713,
+  "duration": 162994833,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.Verify_only_iPad_specific_devices_are_displayed_under_the_iPad_section()"
 });
 formatter.result({
-  "duration": 499802169,
+  "duration": 368557509,
   "status": "passed"
 });
 formatter.after({
-  "duration": 2259650189,
+  "duration": 1999969919,
   "status": "passed"
 });
 formatter.uri("C1786_E-11353-11360-11361-11528_TC2_Existing_Custo_Basecomms_Other_Tablets_Tab_Verification.feature");
@@ -704,7 +416,7 @@ formatter.examples({
   "keyword": "Examples"
 });
 formatter.before({
-  "duration": 26173571051,
+  "duration": 26094186337,
   "status": "passed"
 });
 formatter.scenario({
@@ -763,7 +475,7 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.I_am_existing_user_and_I_click_on_Signin_button()"
 });
 formatter.result({
-  "duration": 26753272528,
+  "duration": 27068535638,
   "status": "passed"
 });
 formatter.match({
@@ -780,53 +492,53 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.signin_using_valid_ink_jun_and_test_credentials(String,String)"
 });
 formatter.result({
-  "duration": 19699576097,
+  "duration": 17600839664,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.I_navigate_to_the_Basecomm_Page()"
 });
 formatter.result({
-  "duration": 12852856198,
+  "duration": 14306858872,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.Click_on_Other_Tablets_tab()"
 });
 formatter.result({
-  "duration": 24234100262,
+  "duration": 29576683840,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.VerifyContentsofTabletSection()"
 });
 formatter.result({
-  "duration": 15597860,
+  "duration": 30393672,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.Verify_only_tablet_specific_devices_are_displayed_under_the_Other_tablets_section()"
 });
 formatter.result({
-  "duration": 390852847,
+  "duration": 2074860899,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.Click_on_iPad_tab()"
 });
 formatter.result({
-  "duration": 24136229476,
+  "duration": 29304824299,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.VerifyContentsofIpadSection()"
 });
 formatter.result({
-  "duration": 87134119,
+  "duration": 28394488,
   "status": "passed"
 });
 formatter.after({
-  "duration": 4168922908,
+  "duration": 1999333252,
   "status": "passed"
 });
 formatter.uri("C1786_E-11354-11447-11565_TC3_Existing_Custo_Ipads_tab_Recommended_tariff_in_tariffs_and_extras_page.feature");
@@ -915,7 +627,7 @@ formatter.examples({
   "keyword": "Examples"
 });
 formatter.before({
-  "duration": 25531029741,
+  "duration": 25935670468,
   "status": "passed"
 });
 formatter.scenario({
@@ -979,7 +691,7 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.I_am_existing_user_and_I_click_on_Signin_button()"
 });
 formatter.result({
-  "duration": 24785014318,
+  "duration": 26930451499,
   "status": "passed"
 });
 formatter.match({
@@ -996,14 +708,14 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.signin_using_valid_ink_jun_and_test_credentials(String,String)"
 });
 formatter.result({
-  "duration": 19314880430,
+  "duration": 17176662464,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.I_navigate_to_the_Basecomm_Page()"
 });
 formatter.result({
-  "duration": 12296334924,
+  "duration": 12910359159,
   "status": "passed"
 });
 formatter.match({
@@ -1028,7 +740,7 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.verify_expected_device_and_details_are_in_device_list(String,String,String,String)"
 });
 formatter.result({
-  "duration": 1816361863,
+  "duration": 720095950,
   "status": "passed"
 });
 formatter.match({
@@ -1041,18 +753,18 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.SelectdeviceAndVerifyTariffandExtras(String)"
 });
 formatter.result({
-  "duration": 40872946840,
-  "status": "passed"
+  "duration": 23878039208,
+  "error_message": "junit.framework.AssertionFailedError: Unable to select device and verify tariff and extras page\r\n\tat junit.framework.Assert.fail(Assert.java:47)\r\n\tat steps.E2EOrderPlaced_Steps.SelectdeviceAndVerifyTariffandExtras(E2EOrderPlaced_Steps.java:3380)\r\n\tat ✽.And Click on \"Buy Now\" button for Apple iPad mini 4 and verify \"Tariffs and Extras\" page is displayed(C1786_E-11354-11447-11565_TC3_Existing_Custo_Ipads_tab_Recommended_tariff_in_tariffs_and_extras_page.feature:12)\r\n",
+  "status": "failed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.Verify_recommended_tariff_displayed_on_the_header_of_the_tariff_tile()"
 });
 formatter.result({
-  "duration": 412359094,
-  "status": "passed"
+  "status": "skipped"
 });
 formatter.after({
-  "duration": 4474319483,
+  "duration": 3666017141,
   "status": "passed"
 });
 formatter.uri("C1786_E-11354-11447-11565_TC4_Existing_Custo_Other_tablets_Recommended_tariff_in_tariffs_and_extras_page.feature");
@@ -1146,7 +858,7 @@ formatter.examples({
   "keyword": "Examples"
 });
 formatter.before({
-  "duration": 25675633236,
+  "duration": 24558896808,
   "status": "passed"
 });
 formatter.scenario({
@@ -1215,7 +927,7 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.I_am_existing_user_and_I_click_on_Signin_button()"
 });
 formatter.result({
-  "duration": 25047195613,
+  "duration": 25346957554,
   "status": "passed"
 });
 formatter.match({
@@ -1232,21 +944,21 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.signin_using_valid_ink_jun_and_test_credentials(String,String)"
 });
 formatter.result({
-  "duration": 19022483724,
+  "duration": 18820361941,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.I_navigate_to_the_Basecomm_Page()"
 });
 formatter.result({
-  "duration": 11938597714,
+  "duration": 12870542183,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.Click_on_Other_Tablets_tab()"
 });
 formatter.result({
-  "duration": 24308764303,
+  "duration": 24593925867,
   "status": "passed"
 });
 formatter.match({
@@ -1271,7 +983,7 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.verify_expected_device_and_details_are_in_device_list(String,String,String,String)"
 });
 formatter.result({
-  "duration": 1497423950,
+  "duration": 2767527093,
   "status": "passed"
 });
 formatter.match({
@@ -1284,18 +996,18 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.SelectdeviceAndVerifyTariffandExtras(String)"
 });
 formatter.result({
-  "duration": 40662434475,
+  "duration": 40102848048,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.Verify_recommended_tariff_displayed_on_the_header_of_the_tariff_tile()"
 });
 formatter.result({
-  "duration": 463450456,
+  "duration": 327948503,
   "status": "passed"
 });
 formatter.after({
-  "duration": 4222367715,
+  "duration": 1999511263,
   "status": "passed"
 });
 formatter.uri("C1786_E-11355-11357-11356-11359_TC1_Existing_Custo_Basecomm_iPad_Device_Tile_Detail_and_TariffExtras_PageVerification.feature");
@@ -1418,7 +1130,7 @@ formatter.examples({
   "keyword": "Examples"
 });
 formatter.before({
-  "duration": 27780956837,
+  "duration": 26115938116,
   "status": "passed"
 });
 formatter.scenario({
@@ -1523,7 +1235,7 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.I_am_existing_user_and_I_click_on_Signin_button()"
 });
 formatter.result({
-  "duration": 25024699856,
+  "duration": 33610710654,
   "status": "passed"
 });
 formatter.match({
@@ -1540,35 +1252,35 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.signin_using_valid_ink_jun_and_test_credentials(String,String)"
 });
 formatter.result({
-  "duration": 19201397628,
+  "duration": 17770223460,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.I_navigate_to_the_Basecomm_Page()"
 });
 formatter.result({
-  "duration": 13309532623,
+  "duration": 13589721176,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.Click_on_iPad_tab()"
 });
 formatter.result({
-  "duration": 24349125721,
+  "duration": 24586163416,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.VerifyContentsofIpadSection()"
 });
 formatter.result({
-  "duration": 41915754,
+  "duration": 111459860,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.Verify_only_iPad_specific_devices_are_displayed_under_the_iPad_section()"
 });
 formatter.result({
-  "duration": 446418586,
+  "duration": 1117868642,
   "status": "passed"
 });
 formatter.match({
@@ -1593,7 +1305,7 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.verify_expected_device_and_details_are_in_device_list(String,String,String,String)"
 });
 formatter.result({
-  "duration": 1651158461,
+  "duration": 2537001700,
   "status": "passed"
 });
 formatter.match({
@@ -1614,7 +1326,7 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.select_color_capacity_of_device(String,String,String)"
 });
 formatter.result({
-  "duration": 4091002618,
+  "duration": 4641960056,
   "status": "passed"
 });
 formatter.match({
@@ -1627,7 +1339,7 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.Click_on_See_device_details_link_and_verify_correct_details_are_displayed(String)"
 });
 formatter.result({
-  "duration": 7180734728,
+  "duration": 10302016808,
   "status": "passed"
 });
 formatter.match({
@@ -1640,14 +1352,14 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.SelectdeviceAndVerifyTariffandExtras(String)"
 });
 formatter.result({
-  "duration": 40460860250,
+  "duration": 43397098866,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.Verify_Pay_As_You_Go_tab_is_not_displayed()"
 });
 formatter.result({
-  "duration": 20029123981,
+  "duration": 20055804780,
   "status": "passed"
 });
 formatter.match({
@@ -1660,12 +1372,11 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.VerifyAllDetailsLinksAreDispalyedAndWorkingAsExpectedInTariffsAndExtrasPage(String)"
 });
 formatter.result({
-  "duration": 5406002667,
-  "error_message": "junit.framework.AssertionFailedError: Unable to verify all the details and links are displayed and working as expected in the Tariffs and Extras page\r\n\tat junit.framework.Assert.fail(Assert.java:47)\r\n\tat steps.E2EOrderPlaced_Steps.VerifyAllDetailsLinksAreDispalyedAndWorkingAsExpectedInTariffsAndExtrasPage(E2EOrderPlaced_Steps.java:3785)\r\n\tat ✽.And Verify all the details and links are displayed and working as expected in the Tariffs and Extras page Apple iPad Pro 9.7 inch(C1786_E-11355-11357-11356-11359_TC1_Existing_Custo_Basecomm_iPad_Device_Tile_Detail_and_TariffExtras_PageVerification.feature:33)\r\n",
-  "status": "failed"
+  "duration": 28288496044,
+  "status": "passed"
 });
 formatter.after({
-  "duration": 5512406022,
+  "duration": 2007714320,
   "status": "passed"
 });
 formatter.uri("C1786_E-11355-11357-11356-11359_TC2_Existing_Custo_Basecomm_Tablet_Device_Tile_Detail_and_TariffExtrasPage_Verification.feature");
@@ -1794,7 +1505,7 @@ formatter.examples({
   "keyword": "Examples"
 });
 formatter.before({
-  "duration": 24220834614,
+  "duration": 26948604465,
   "status": "passed"
 });
 formatter.scenario({
@@ -1905,7 +1616,7 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.I_am_existing_user_and_I_click_on_Signin_button()"
 });
 formatter.result({
-  "duration": 25019972792,
+  "duration": 26683342334,
   "status": "passed"
 });
 formatter.match({
@@ -1922,35 +1633,35 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.signin_using_valid_ink_jun_and_test_credentials(String,String)"
 });
 formatter.result({
-  "duration": 19316041229,
+  "duration": 17971169506,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.I_navigate_to_the_Basecomm_Page()"
 });
 formatter.result({
-  "duration": 11653205783,
+  "duration": 12528507028,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.Click_on_Other_Tablets_tab()"
 });
 formatter.result({
-  "duration": 24312585733,
+  "duration": 24500522003,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.VerifyContentsofTabletSection()"
 });
 formatter.result({
-  "duration": 44895960,
+  "duration": 50751083,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.Verify_only_tablet_specific_devices_are_displayed_under_the_Other_tablets_section()"
 });
 formatter.result({
-  "duration": 905675308,
+  "duration": 2245974561,
   "status": "passed"
 });
 formatter.match({
@@ -1975,7 +1686,7 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.verify_expected_device_and_details_are_in_device_list(String,String,String,String)"
 });
 formatter.result({
-  "duration": 1232865145,
+  "duration": 2307467581,
   "status": "passed"
 });
 formatter.match({
@@ -1996,7 +1707,7 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.select_color_capacity_of_device(String,String,String)"
 });
 formatter.result({
-  "duration": 3874648399,
+  "duration": 5070536945,
   "status": "passed"
 });
 formatter.match({
@@ -2009,7 +1720,7 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.Click_on_See_device_details_link_and_verify_correct_details_are_displayed(String)"
 });
 formatter.result({
-  "duration": 7466778901,
+  "duration": 11458369638,
   "status": "passed"
 });
 formatter.match({
@@ -2022,14 +1733,14 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.SelectdeviceAndVerifyTariffandExtras(String)"
 });
 formatter.result({
-  "duration": 37595886460,
+  "duration": 37842258110,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.Verify_Pay_As_You_Go_tab_is_not_displayed()"
 });
 formatter.result({
-  "duration": 20052924572,
+  "duration": 20122280718,
   "status": "passed"
 });
 formatter.match({
@@ -2042,12 +1753,12 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.VerifyAllDetailsLinksAreDispalyedAndWorkingAsExpectedInTariffsAndExtrasPage(String)"
 });
 formatter.result({
-  "duration": 5228983552,
-  "error_message": "junit.framework.AssertionFailedError: Unable to verify all the details and links are displayed and working as expected in the Tariffs and Extras page\r\n\tat junit.framework.Assert.fail(Assert.java:47)\r\n\tat steps.E2EOrderPlaced_Steps.VerifyAllDetailsLinksAreDispalyedAndWorkingAsExpectedInTariffsAndExtrasPage(E2EOrderPlaced_Steps.java:3785)\r\n\tat ✽.And Verify all the details and links are displayed and working as expected in the Tariffs and Extras page Samsung Galaxy Tab A 2016 10.1(C1786_E-11355-11357-11356-11359_TC2_Existing_Custo_Basecomm_Tablet_Device_Tile_Detail_and_TariffExtrasPage_Verification.feature:33)\r\n",
+  "duration": 5743166714,
+  "error_message": "junit.framework.AssertionFailedError: Unable to verify all the details and links are displayed and working as expected in the Tariffs and Extras page\r\n\tat junit.framework.Assert.fail(Assert.java:47)\r\n\tat steps.E2EOrderPlaced_Steps.VerifyAllDetailsLinksAreDispalyedAndWorkingAsExpectedInTariffsAndExtrasPage(E2EOrderPlaced_Steps.java:3803)\r\n\tat ✽.And Verify all the details and links are displayed and working as expected in the Tariffs and Extras page Samsung Galaxy Tab A 2016 10.1(C1786_E-11355-11357-11356-11359_TC2_Existing_Custo_Basecomm_Tablet_Device_Tile_Detail_and_TariffExtrasPage_Verification.feature:33)\r\n",
   "status": "failed"
 });
 formatter.after({
-  "duration": 5211157881,
+  "duration": 3197587886,
   "status": "passed"
 });
 formatter.uri("C1786_E-11355-11357-11356-11359_TC3_Existing_Custo_Basecomm_iPad_Device_Update_Colour_Capacity_Verify_New_Price.feature");
@@ -2165,7 +1876,7 @@ formatter.examples({
   "keyword": "Examples"
 });
 formatter.before({
-  "duration": 26234194400,
+  "duration": 26468311407,
   "status": "passed"
 });
 formatter.scenario({
@@ -2260,7 +1971,7 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.I_am_existing_user_and_I_click_on_Signin_button()"
 });
 formatter.result({
-  "duration": 25468250424,
+  "duration": 25553270145,
   "status": "passed"
 });
 formatter.match({
@@ -2277,28 +1988,28 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.signin_using_valid_ink_jun_and_test_credentials(String,String)"
 });
 formatter.result({
-  "duration": 18572172928,
+  "duration": 17191430373,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.I_navigate_to_the_Basecomm_Page()"
 });
 formatter.result({
-  "duration": 12119474711,
+  "duration": 12240923694,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.Click_on_iPad_tab()"
 });
 formatter.result({
-  "duration": 24352994928,
+  "duration": 24356323881,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.VerifyContentsofIpadSection()"
 });
 formatter.result({
-  "duration": 31522371,
+  "duration": 47487060,
   "status": "passed"
 });
 formatter.match({
@@ -2323,7 +2034,7 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.verify_expected_device_and_details_are_in_device_list(String,String,String,String)"
 });
 formatter.result({
-  "duration": 966873393,
+  "duration": 2410686163,
   "status": "passed"
 });
 formatter.match({
@@ -2344,7 +2055,7 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.select_color_capacity_of_device(String,String,String)"
 });
 formatter.result({
-  "duration": 3550182189,
+  "duration": 4220695457,
   "status": "passed"
 });
 formatter.match({
@@ -2365,14 +2076,10 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.verifyPriceDisplaybased_on_Colour_and_capacity(String,String,String)"
 });
 formatter.result({
-  "duration": 27033989773,
-  "error_message": "junit.framework.AssertionFailedError: Unable to verify price updates\r\n\tat junit.framework.Assert.fail(Assert.java:47)\r\n\tat steps.E2EOrderPlaced_Steps.verifyPriceDisplaybased_on_Colour_and_capacity(E2EOrderPlaced_Steps.java:3606)\r\n\tat ✽.And Verify the price gets updated based on 128GB, 256GB for Apple iPad Pro 9.7 inch(C1786_E-11355-11357-11356-11359_TC3_Existing_Custo_Basecomm_iPad_Device_Update_Colour_Capacity_Verify_New_Price.feature:16)\r\n",
->>>>>>> refs/remotes/origin/master
-  "status": "failed"
+  "duration": 18903050055,
+  "status": "passed"
 });
 formatter.match({
-<<<<<<< HEAD
-=======
   "arguments": [
     {
       "val": "Apple iPad Pro 9.7 inch",
@@ -2382,10 +2089,11 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.SelectdeviceAndVerifyTariffandExtras(String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 39800269955,
+  "status": "passed"
 });
 formatter.after({
-  "duration": 5260157684,
+  "duration": 1999502770,
   "status": "passed"
 });
 formatter.uri("C1786_E-11355-11357-11356-11359_TC4_Existing_Custo_Basecomm_Other_tablets_Device_Update_Colour_Capacity_Verify_New_Price.feature");
@@ -2503,7 +2211,7 @@ formatter.examples({
   "keyword": "Examples"
 });
 formatter.before({
-  "duration": 23785648865,
+  "duration": 26526601984,
   "status": "passed"
 });
 formatter.scenario({
@@ -2598,7 +2306,7 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.I_am_existing_user_and_I_click_on_Signin_button()"
 });
 formatter.result({
-  "duration": 37904744901,
+  "duration": 27362799196,
   "status": "passed"
 });
 formatter.match({
@@ -2615,28 +2323,28 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.signin_using_valid_ink_jun_and_test_credentials(String,String)"
 });
 formatter.result({
-  "duration": 19050932106,
+  "duration": 17374940103,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.I_navigate_to_the_Basecomm_Page()"
 });
 formatter.result({
-  "duration": 12089396258,
+  "duration": 13985088762,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.Click_on_Other_Tablets_tab()"
 });
 formatter.result({
-  "duration": 24405228331,
+  "duration": 24563144320,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.VerifyContentsofTabletSection()"
 });
 formatter.result({
-  "duration": 28879788,
+  "duration": 201367895,
   "status": "passed"
 });
 formatter.match({
@@ -2661,7 +2369,7 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.verify_expected_device_and_details_are_in_device_list(String,String,String,String)"
 });
 formatter.result({
-  "duration": 1674296196,
+  "duration": 2747611349,
   "status": "passed"
 });
 formatter.match({
@@ -2682,7 +2390,7 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.select_color_capacity_of_device(String,String,String)"
 });
 formatter.result({
-  "duration": 3994331911,
+  "duration": 4916647615,
   "status": "passed"
 });
 formatter.match({
@@ -2703,9 +2411,8 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.verifyPriceDisplaybased_on_Colour_and_capacity(String,String,String)"
 });
 formatter.result({
-  "duration": 27694208825,
-  "error_message": "junit.framework.AssertionFailedError: Unable to verify price updates\r\n\tat junit.framework.Assert.fail(Assert.java:47)\r\n\tat steps.E2EOrderPlaced_Steps.verifyPriceDisplaybased_on_Colour_and_capacity(E2EOrderPlaced_Steps.java:3606)\r\n\tat ✽.And Verify the price gets updated based on 16GB, 16GB for Samsung Galaxy Tab A 2016 10.1(C1786_E-11355-11357-11356-11359_TC4_Existing_Custo_Basecomm_Other_tablets_Device_Update_Colour_Capacity_Verify_New_Price.feature:14)\r\n",
-  "status": "failed"
+  "duration": 19989741490,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -2717,10 +2424,11 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.SelectdeviceAndVerifyTariffandExtras(String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 39068366119,
+  "status": "passed"
 });
 formatter.after({
-  "duration": 3155685925,
+  "duration": 1999966025,
   "status": "passed"
 });
 formatter.uri("C1786_E-11355-11357-11356-11359_TC5_Existing_Custo_Basecomm_iPad_DD_Stock_Message_and_Back_To_Ipad_Offer_Link_Verification.feature");
@@ -2740,16 +2448,16 @@ formatter.scenarioOutline({
   "keyword": "Scenario Outline"
 });
 formatter.step({
-  "line": 9,
-  "name": "I am existing user and I click on Signin button",
-  "keyword": "Given "
-});
-formatter.step({
-  "line": 10,
-  "name": "Signin using valid \u003cusername\u003e and \u003cpassword\u003e credentials",
-  "keyword": "And "
-});
-formatter.step({
+  "comments": [
+    {
+      "line": 9,
+      "value": "#Given I am existing user and I click on Signin button"
+    },
+    {
+      "line": 10,
+      "value": "#And Signin using valid \u003cusername\u003e and \u003cpassword\u003e credentials"
+    }
+  ],
   "line": 11,
   "name": "I navigate to the Basecomm Page",
   "keyword": "And "
@@ -2772,27 +2480,32 @@ formatter.step({
     }
   ],
   "line": 15,
+  "name": "Select \u003ccolor\u003e, \u003ccapacity\u003e of the device \u003cdevice_name\u003e",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 16,
   "name": "Verify expected \u003cdevice_name\u003e and its specific details are present in the device list \u003cdefault_colour\u003e,\u003cdefault_capacity\u003e,\u003cdefault_stock_message\u003e",
   "keyword": "And "
 });
 formatter.step({
   "comments": [
     {
-      "line": 16,
+      "line": 17,
       "value": "#Veirfy device price details are also getting displayed in the above step"
     }
   ],
-  "line": 17,
+  "line": 18,
   "name": "Click on \"Buy Now\" button for \u003cdevice_name\u003e and verify \"Tariffs and Extras\" page is displayed",
   "keyword": "And "
 });
 formatter.step({
-  "line": 18,
+  "line": 19,
   "name": "click on the \"Back to iPad offers\" link and verify user gets redirected to Basecomms listing page",
   "keyword": "Then "
 });
 formatter.examples({
-  "line": 20,
+  "line": 21,
   "name": "",
   "description": "",
   "id": "c1786-e-11355-11357-11356-11359-tc5-existing-custo-basecomm-ipad-dd-stock-message-and-back-to-ipad-offer-link-verification;;",
@@ -2804,32 +2517,36 @@ formatter.examples({
         "device_name",
         "default_colour",
         "default_capacity",
-        "default_stock_message"
+        "default_stock_message",
+        "color",
+        "capacity"
       ],
-      "line": 21,
+      "line": 22,
       "id": "c1786-e-11355-11357-11356-11359-tc5-existing-custo-basecomm-ipad-dd-stock-message-and-back-to-ipad-offer-link-verification;;;1"
     },
     {
       "cells": [
         "07770001111@o2.co.uk",
         "test123",
-        "Apple iPad Pro 9.7 inch",
+        "Apple iPad mini 4",
         "Space Grey",
-        "32GB",
-        "Home Delivery"
+        "128GB",
+        "Home delivery",
+        "Space Grey",
+        "128GB"
       ],
-      "line": 22,
+      "line": 23,
       "id": "c1786-e-11355-11357-11356-11359-tc5-existing-custo-basecomm-ipad-dd-stock-message-and-back-to-ipad-offer-link-verification;;;2"
     }
   ],
   "keyword": "Examples"
 });
 formatter.before({
-  "duration": 23703683125,
+  "duration": 24545184938,
   "status": "passed"
 });
 formatter.scenario({
-  "line": 22,
+  "line": 23,
   "name": "",
   "description": "This scenario ensures that when the existing customer lands on new basecomm page and selects \"iPad\" tab,then the customer should be able to see the following \n\r\n1.Delayed delivery status on device tile\r\n  2.Clicking \"Back to iPad offers\" link should take the customer to basecomms listing page",
   "id": "c1786-e-11355-11357-11356-11359-tc5-existing-custo-basecomm-ipad-dd-stock-message-and-back-to-ipad-offer-link-verification;;;2",
@@ -2837,20 +2554,16 @@ formatter.scenario({
   "keyword": "Scenario Outline"
 });
 formatter.step({
-  "line": 9,
-  "name": "I am existing user and I click on Signin button",
-  "keyword": "Given "
-});
-formatter.step({
-  "line": 10,
-  "name": "Signin using valid 07770001111@o2.co.uk and test123 credentials",
-  "matchedColumns": [
-    0,
-    1
+  "comments": [
+    {
+      "line": 9,
+      "value": "#Given I am existing user and I click on Signin button"
+    },
+    {
+      "line": 10,
+      "value": "#And Signin using valid \u003cusername\u003e and \u003cpassword\u003e credentials"
+    }
   ],
-  "keyword": "And "
-});
-formatter.step({
   "line": 11,
   "name": "I navigate to the Basecomm Page",
   "keyword": "And "
@@ -2873,7 +2586,17 @@ formatter.step({
     }
   ],
   "line": 15,
-  "name": "Verify expected Apple iPad Pro 9.7 inch and its specific details are present in the device list Space Grey,32GB,Home Delivery",
+  "name": "Select Space Grey, 128GB of the device Apple iPad mini 4",
+  "matchedColumns": [
+    2,
+    6,
+    7
+  ],
+  "keyword": "And "
+});
+formatter.step({
+  "line": 16,
+  "name": "Verify expected Apple iPad mini 4 and its specific details are present in the device list Space Grey,128GB,Home delivery",
   "matchedColumns": [
     2,
     3,
@@ -2885,104 +2608,102 @@ formatter.step({
 formatter.step({
   "comments": [
     {
-      "line": 16,
+      "line": 17,
       "value": "#Veirfy device price details are also getting displayed in the above step"
     }
   ],
-  "line": 17,
-  "name": "Click on \"Buy Now\" button for Apple iPad Pro 9.7 inch and verify \"Tariffs and Extras\" page is displayed",
+  "line": 18,
+  "name": "Click on \"Buy Now\" button for Apple iPad mini 4 and verify \"Tariffs and Extras\" page is displayed",
   "matchedColumns": [
     2
   ],
   "keyword": "And "
 });
 formatter.step({
-  "line": 18,
+  "line": 19,
   "name": "click on the \"Back to iPad offers\" link and verify user gets redirected to Basecomms listing page",
   "keyword": "Then "
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.I_am_existing_user_and_I_click_on_Signin_button()"
-});
-formatter.result({
-  "duration": 25305272001,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "07770001111@o2.co.uk",
-      "offset": 19
-    },
-    {
-      "val": "test123",
-      "offset": 44
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.signin_using_valid_ink_jun_and_test_credentials(String,String)"
-});
-formatter.result({
-  "duration": 18919773687,
-  "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.I_navigate_to_the_Basecomm_Page()"
 });
 formatter.result({
-  "duration": 12857876293,
+  "duration": 11963245323,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.Click_on_iPad_tab()"
 });
 formatter.result({
-  "duration": 24491521933,
+  "duration": 24519759319,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.VerifyContentsofIpadSection()"
 });
 formatter.result({
-  "duration": 85130682,
+  "duration": 39161553,
   "status": "passed"
 });
 formatter.match({
   "arguments": [
     {
-      "val": "Apple iPad Pro 9.7 inch",
+      "val": "Space Grey",
+      "offset": 7
+    },
+    {
+      "val": "128GB",
+      "offset": 19
+    },
+    {
+      "val": "Apple iPad mini 4",
+      "offset": 39
+    }
+  ],
+  "location": "E2EOrderPlaced_Steps.select_color_capacity_of_device(String,String,String)"
+});
+formatter.result({
+  "duration": 1387948772,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "Apple iPad mini 4",
       "offset": 16
     },
     {
       "val": "Space Grey",
-      "offset": 96
+      "offset": 90
     },
     {
-      "val": "32GB",
+      "val": "128GB",
+      "offset": 101
+    },
+    {
+      "val": "Home delivery",
       "offset": 107
-    },
-    {
-      "val": "Home Delivery",
-      "offset": 112
     }
   ],
   "location": "E2EOrderPlaced_Steps.verify_expected_device_and_details_are_in_device_list(String,String,String,String)"
 });
 formatter.result({
-  "duration": 1689105209,
-  "error_message": "java.lang.AssertionError: Expected stockmsg not displayed by default\r\n\tat org.junit.Assert.fail(Assert.java:88)\r\n\tat actionsPerformed.BaseCommPageActions.checkExpDevAndDetails(BaseCommPageActions.java:744)\r\n\tat steps.E2EOrderPlaced_Steps.verify_expected_device_and_details_are_in_device_list(E2EOrderPlaced_Steps.java:3560)\r\n\tat ✽.And Verify expected Apple iPad Pro 9.7 inch and its specific details are present in the device list Space Grey,32GB,Home Delivery(C1786_E-11355-11357-11356-11359_TC5_Existing_Custo_Basecomm_iPad_DD_Stock_Message_and_Back_To_Ipad_Offer_Link_Verification.feature:15)\r\n",
-  "status": "failed"
+  "duration": 480838418,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
     {
-      "val": "Apple iPad Pro 9.7 inch",
+      "val": "Apple iPad mini 4",
       "offset": 30
     }
   ],
   "location": "E2EOrderPlaced_Steps.SelectdeviceAndVerifyTariffandExtras(String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 23527011092,
+  "error_message": "junit.framework.AssertionFailedError: Unable to select device and verify tariff and extras page\r\n\tat junit.framework.Assert.fail(Assert.java:47)\r\n\tat steps.E2EOrderPlaced_Steps.SelectdeviceAndVerifyTariffandExtras(E2EOrderPlaced_Steps.java:3380)\r\n\tat ✽.And Click on \"Buy Now\" button for Apple iPad mini 4 and verify \"Tariffs and Extras\" page is displayed(C1786_E-11355-11357-11356-11359_TC5_Existing_Custo_Basecomm_iPad_DD_Stock_Message_and_Back_To_Ipad_Offer_Link_Verification.feature:18)\r\n",
+  "status": "failed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.click_Back_to_iPad_offers_link_and_check_navigation_Basecomm_page()"
@@ -2991,7 +2712,7 @@ formatter.result({
   "status": "skipped"
 });
 formatter.after({
-  "duration": 3238927834,
+  "duration": 3570311864,
   "status": "passed"
 });
 formatter.uri("C1786_E-11355-11357-11356-11359_TC6_Existing_Custo_Basecomm_Other_Tablet_PreOrder_Stock_Message_and_Back_To_Ipad_Offer_Link_Verification.feature");
@@ -3098,7 +2819,7 @@ formatter.examples({
   "keyword": "Examples"
 });
 formatter.before({
-  "duration": 28308548423,
+  "duration": 25675030984,
   "status": "passed"
 });
 formatter.scenario({
@@ -3178,7 +2899,7 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.I_am_existing_user_and_I_click_on_Signin_button()"
 });
 formatter.result({
-  "duration": 26179112089,
+  "duration": 25971466075,
   "status": "passed"
 });
 formatter.match({
@@ -3195,28 +2916,28 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.signin_using_valid_ink_jun_and_test_credentials(String,String)"
 });
 formatter.result({
-  "duration": 20147503720,
+  "duration": 17746851879,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.I_navigate_to_the_Basecomm_Page()"
 });
 formatter.result({
-  "duration": 13020606630,
+  "duration": 12632708393,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.Click_on_Other_Tablets_tab()"
 });
 formatter.result({
-  "duration": 24300541399,
+  "duration": 24359843066,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.VerifyContentsofTabletSection()"
 });
 formatter.result({
-  "duration": 323134832,
+  "duration": 36055370,
   "status": "passed"
 });
 formatter.match({
@@ -3241,8 +2962,8 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.verify_expected_device_and_details_are_in_device_list(String,String,String,String)"
 });
 formatter.result({
-  "duration": 1537457302,
-  "error_message": "java.lang.AssertionError: Expected stockmsg not displayed by default\r\n\tat org.junit.Assert.fail(Assert.java:88)\r\n\tat actionsPerformed.BaseCommPageActions.checkExpDevAndDetails(BaseCommPageActions.java:744)\r\n\tat steps.E2EOrderPlaced_Steps.verify_expected_device_and_details_are_in_device_list(E2EOrderPlaced_Steps.java:3560)\r\n\tat ✽.And Verify expected Samsung Galaxy Tab A 2016 10.1 and its specific details are present in the device list Black,16GB,Pre Order(C1786_E-11355-11357-11356-11359_TC6_Existing_Custo_Basecomm_Other_Tablet_PreOrder_Stock_Message_and_Back_To_Ipad_Offer_Link_Verification.feature:14)\r\n",
+  "duration": 1848254953,
+  "error_message": "java.lang.AssertionError: Expected stockmsg not displayed by default\r\n\tat org.junit.Assert.fail(Assert.java:88)\r\n\tat actionsPerformed.BaseCommPageActions.checkExpDevAndDetails(BaseCommPageActions.java:746)\r\n\tat steps.E2EOrderPlaced_Steps.verify_expected_device_and_details_are_in_device_list(E2EOrderPlaced_Steps.java:3562)\r\n\tat ✽.And Verify expected Samsung Galaxy Tab A 2016 10.1 and its specific details are present in the device list Black,16GB,Pre Order(C1786_E-11355-11357-11356-11359_TC6_Existing_Custo_Basecomm_Other_Tablet_PreOrder_Stock_Message_and_Back_To_Ipad_Offer_Link_Verification.feature:14)\r\n",
   "status": "failed"
 });
 formatter.match({
@@ -3264,7 +2985,7 @@ formatter.result({
   "status": "skipped"
 });
 formatter.after({
-  "duration": 3487818706,
+  "duration": 3213210110,
   "status": "passed"
 });
 formatter.uri("C1786_E-11510-11505_TC1_iPads_tab_Device_tile_Colour_and_Capacity_variant_Image_and_Promotion_change_same_variant_Tariff_page_Order_confirmation.feature");
@@ -3424,7 +3145,7 @@ formatter.examples({
   "keyword": "Examples"
 });
 formatter.before({
-  "duration": 25513258571,
+  "duration": 25113565213,
   "status": "passed"
 });
 formatter.scenario({
@@ -3564,7 +3285,7 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.I_am_existing_user_and_I_click_on_Signin_button()"
 });
 formatter.result({
-  "duration": 27496109205,
+  "duration": 26466163940,
   "status": "passed"
 });
 formatter.match({
@@ -3581,14 +3302,14 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.signin_using_valid_ink_jun_and_test_credentials(String,String)"
 });
 formatter.result({
-  "duration": 19495803788,
+  "duration": 20342355079,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.I_navigate_to_the_Basecomm_Page()"
 });
 formatter.result({
-  "duration": 12546045079,
+  "duration": 12017299712,
   "status": "passed"
 });
 formatter.match({
@@ -3613,7 +3334,7 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.verify_expected_device_and_details_are_in_device_list(String,String,String,String)"
 });
 formatter.result({
-  "duration": 2165175443,
+  "duration": 1011861679,
   "status": "passed"
 });
 formatter.match({
@@ -3626,7 +3347,7 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.verifypromotionribbonDisplay(String)"
 });
 formatter.result({
-  "duration": 504693797,
+  "duration": 498511141,
   "status": "passed"
 });
 formatter.match({
@@ -3647,7 +3368,7 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.select_color_capacity_of_device(String,String,String)"
 });
 formatter.result({
-  "duration": 4542497922,
+  "duration": 481950727,
   "status": "passed"
 });
 formatter.match({
@@ -3668,7 +3389,7 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.Verify_new_image_is_as_per_the_selected_device_name_capacity_and_color_in_the_Basecomms_page(String,String,String)"
 });
 formatter.result({
-  "duration": 1775206997,
+  "duration": 814795442,
   "status": "passed"
 });
 formatter.match({
@@ -3681,8 +3402,9 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.SelectdeviceAndVerifyTariffandExtras(String)"
 });
 formatter.result({
-  "duration": 43103737060,
-  "status": "passed"
+  "duration": 23377200110,
+  "error_message": "junit.framework.AssertionFailedError: Unable to select device and verify tariff and extras page\r\n\tat junit.framework.Assert.fail(Assert.java:47)\r\n\tat steps.E2EOrderPlaced_Steps.SelectdeviceAndVerifyTariffandExtras(E2EOrderPlaced_Steps.java:3380)\r\n\tat ✽.And Click on \"Buy Now\" button for Apple iPad mini 4 and verify \"Tariffs and Extras\" page is displayed(C1786_E-11510-11505_TC1_iPads_tab_Device_tile_Colour_and_Capacity_variant_Image_and_Promotion_change_same_variant_Tariff_page_Order_confirmation.feature:15)\r\n",
+  "status": "failed"
 });
 formatter.match({
   "arguments": [
@@ -3702,475 +3424,70 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.Verify_new_image_is_as_per_the_selected_device_name_capacity_and_color_in_the_TE_page(String,String,String)"
 });
 formatter.result({
-  "duration": 1487426583,
-  "status": "passed"
+  "status": "skipped"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.land_on_the_Tariffs_and_extra_page()"
 });
 formatter.result({
-  "duration": 3720276864,
-  "status": "passed"
+  "status": "skipped"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.i_Land_on_the_basket_page_and_choose_home_delivery_option()"
 });
 formatter.result({
-  "duration": 21413503966,
-  "status": "passed"
-});
-formatter.match({
->>>>>>> refs/remotes/origin/master
-  "arguments": [
-    {
-      "val": "32",
-      "offset": 73
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.i_should_be_able_to_move_the_Launch_date_to_a_past_dateAmazon_Fire_phone_GB(String)"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.i_login_as_a_Trading_Admin()"
-});
-formatter.result({
-  "duration": 19257999946,
-  "status": "passed"
-});
-formatter.match({
-<<<<<<< HEAD
-  "arguments": [
-    {
-      "val": "1",
-      "offset": 68
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.i_Login_with_Trading_Admin_Credentials_SupplyChainAdmin_and_SupplyChainAd(String,String)"
-});
-formatter.result({
   "status": "skipped"
 });
 formatter.match({
   "arguments": [
     {
-      "val": "1",
-      "offset": 59
-    },
-    {
-      "val": "32",
-      "offset": 64
+      "val": "go to checkout",
+      "offset": 10
     }
   ],
-  "location": "E2EOrderPlaced_Steps.i_click_on_Stockpot_tab_in_Trading_admin_and_search_for_SKU_ID_in_SkU_desciption(String)"
-=======
+  "location": "E2EOrderPlaced_Steps.CheckoutFromBasket(String)"
+});
+formatter.result({
+  "status": "skipped"
+});
+formatter.match({
   "location": "E2EOrderPlaced_Steps.Select_existing_account_and_begin_fast_checkout()"
->>>>>>> refs/remotes/origin/master
 });
 formatter.result({
-  "duration": 2019632692,
-  "error_message": "junit.framework.AssertionFailedError: Unable to select existing account\r\n\tat junit.framework.Assert.fail(Assert.java:47)\r\n\tat steps.E2EOrderPlaced_Steps.Select_existing_account_and_begin_fast_checkout(E2EOrderPlaced_Steps.java:2103)\r\n\tat ✽.And Select existing account and begin fast checkout(C1786_E-11510-11505_TC1_iPads_tab_Device_tile_Colour_and_Capacity_variant_Image_and_Promotion_change_same_variant_Tariff_page_Order_confirmation.feature:20)\r\n",
-  "status": "failed"
+  "status": "skipped"
 });
 formatter.match({
   "arguments": [
     {
-      "val": "32",
-      "offset": 103
+      "val": "TEST ACCEPTA",
+      "offset": 35
     }
   ],
-<<<<<<< HEAD
-  "location": "E2EOrderPlaced_Steps.when_I_click_on_All_shops_I_should_be_able_to_allocate_to_different_stockspots_using_Amazon_Fire_phone_GB(String)"
-=======
   "location": "E2EOrderPlaced_Steps.CreditCheckPaymentPage_Upgrade(String)"
->>>>>>> refs/remotes/origin/master
 });
 formatter.result({
   "status": "skipped"
 });
 formatter.match({
-  "arguments": [
-    {
-      "val": "1",
-      "offset": 43
-    },
-    {
-      "val": "32",
-      "offset": 48
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.i_click_on_Stockpot_tab_and_search_using_SKU_ID_to_see_the_stock_status_then_I_should_see_them_in_Delayed_Delivery_status()"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.after({
-<<<<<<< HEAD
-  "duration": 7593771236,
-  "status": "passed"
-});
-formatter.uri("CVOS_Features/CVOSPreOrder.feature");
-formatter.feature({
-  "line": 1,
-  "name": "To set a device in Pre Order in CVOS",
-  "description": "",
-  "id": "to-set-a-device-in-pre-order-in-cvos",
-  "keyword": "Feature"
-});
-formatter.scenarioOutline({
-  "line": 4,
-  "name": "PreOrder_CVS",
-  "description": "",
-  "id": "to-set-a-device-in-pre-order-in-cvos;preorder-cvs",
-  "type": "scenario_outline",
-  "keyword": "Scenario Outline",
-  "tags": [
-    {
-      "line": 3,
-      "name": "@tag1"
-    }
-  ]
-});
-formatter.step({
-  "line": 5,
-  "name": "I am a Supply Chain Admin",
-  "keyword": "Given "
-});
-formatter.step({
-  "line": 6,
-  "name": "I Login with Supply Chain Credential \u003cusername\u003e and \u003cpassword\u003e",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 7,
-  "name": "I click on  \u0027Stockpot\u0027 tab in Supply Chain and search for \u003cSKUID\u003e in SkU desciption",
-  "keyword": "Then "
-});
-formatter.step({
-  "line": 8,
-  "name": "Click on Search button",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 9,
-  "name": "I should see the uploaded stock for the SKU ID",
-  "keyword": "Then "
-});
-formatter.step({
-  "line": 10,
-  "name": "I click on Online \u0027Stockpot\u0027 and move the delivery date to a past date",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 11,
-  "name": "I click on Stock Merchandise",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 12,
-  "name": "I should be able to move the Launch date to a past date\u003cSearch_by_model\u003e",
-  "keyword": "Then "
-});
-formatter.step({
-  "line": 13,
-  "name": "I login as a Trading Admin",
-  "keyword": "When "
-});
-formatter.step({
-  "line": 14,
-  "name": "I Login with Trading Admin Credentials \u003cUsername1\u003e and \u003cPassword1\u003e",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 15,
-  "name": "I click on  \u0027Stockpot\u0027 tab in Trading admin and search for \u003cSKUID\u003e in SkU desciption",
-  "keyword": "Then "
-});
-formatter.step({
-  "line": 16,
-  "name": "when I click on All shops I should be able to allocate to different stockspots using \u003cSearch_by_model\u003e",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 17,
-  "name": "I click on \u0027Stockpot\u0027 tab and search using \u003cSKUID\u003e to see the stock status then I should see them in Pre Order status",
-  "keyword": "And "
-});
-formatter.examples({
-  "line": 19,
-  "name": "",
-  "description": "",
-  "id": "to-set-a-device-in-pre-order-in-cvos;preorder-cvs;",
-  "rows": [
-    {
-      "cells": [
-        "Username",
-        "Password",
-        "SKUID",
-        "Search_by_model",
-        "Username1",
-        "Password1"
-      ],
-      "line": 20,
-      "id": "to-set-a-device-in-pre-order-in-cvos;preorder-cvs;;1"
-    },
-    {
-      "cells": [
-        "SupplyChainAdmin2",
-        "SupplyChainAdmin1",
-        "1AMFI32N",
-        "Amazon Fire phone 32GB",
-        "TradingAdmin",
-        "TradingAdmin1"
-      ],
-      "line": 21,
-      "id": "to-set-a-device-in-pre-order-in-cvos;preorder-cvs;;2"
-    }
-  ],
-  "keyword": "Examples"
-});
-formatter.before({
-  "duration": 65920341708,
-  "status": "passed"
-});
-formatter.scenario({
-  "line": 21,
-  "name": "PreOrder_CVS",
-  "description": "",
-  "id": "to-set-a-device-in-pre-order-in-cvos;preorder-cvs;;2",
-  "type": "scenario",
-  "keyword": "Scenario Outline",
-  "tags": [
-    {
-      "line": 3,
-      "name": "@tag1"
-    }
-  ]
-});
-formatter.step({
-  "line": 5,
-  "name": "I am a Supply Chain Admin",
-  "keyword": "Given "
-});
-formatter.step({
-  "line": 6,
-  "name": "I Login with Supply Chain Credential \u003cusername\u003e and \u003cpassword\u003e",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 7,
-  "name": "I click on  \u0027Stockpot\u0027 tab in Supply Chain and search for 1AMFI32N in SkU desciption",
-  "matchedColumns": [
-    2
-  ],
-  "keyword": "Then "
-});
-formatter.step({
-  "line": 8,
-  "name": "Click on Search button",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 9,
-  "name": "I should see the uploaded stock for the SKU ID",
-  "keyword": "Then "
-});
-formatter.step({
-  "line": 10,
-  "name": "I click on Online \u0027Stockpot\u0027 and move the delivery date to a past date",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 11,
-  "name": "I click on Stock Merchandise",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 12,
-  "name": "I should be able to move the Launch date to a past dateAmazon Fire phone 32GB",
-  "matchedColumns": [
-    3
-  ],
-  "keyword": "Then "
-});
-formatter.step({
-  "line": 13,
-  "name": "I login as a Trading Admin",
-  "keyword": "When "
-});
-formatter.step({
-  "line": 14,
-  "name": "I Login with Trading Admin Credentials TradingAdmin and TradingAdmin1",
-  "matchedColumns": [
-    4,
-    5
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "line": 15,
-  "name": "I click on  \u0027Stockpot\u0027 tab in Trading admin and search for 1AMFI32N in SkU desciption",
-  "matchedColumns": [
-    2
-  ],
-  "keyword": "Then "
-});
-formatter.step({
-  "line": 16,
-  "name": "when I click on All shops I should be able to allocate to different stockspots using Amazon Fire phone 32GB",
-  "matchedColumns": [
-    3
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "line": 17,
-  "name": "I click on \u0027Stockpot\u0027 tab and search using 1AMFI32N to see the stock status then I should see them in Pre Order status",
-  "matchedColumns": [
-    2
-  ],
-  "keyword": "And "
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.i_am_a_Supply_Chain_Admin()"
-});
-formatter.result({
-  "duration": 10912444117,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "\u003cusername\u003e",
-      "offset": 37
-    },
-    {
-      "val": "\u003cpassword\u003e",
-      "offset": 52
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.i_Login_with_Supply_Chain_Credential(String,String)"
-});
-formatter.result({
-  "duration": 36496456214,
-  "error_message": "junit.framework.AssertionFailedError: Unable to Validate the CVOS SupplyChain Home Page\r\n\tat junit.framework.Assert.fail(Assert.java:47)\r\n\tat steps.E2EOrderPlaced_Steps.i_Login_with_Supply_Chain_Credential(E2EOrderPlaced_Steps.java:2920)\r\n\tat ✽.And I Login with Supply Chain Credential \u003cusername\u003e and \u003cpassword\u003e(CVOS_Features/CVOSPreOrder.feature:6)\r\n",
-  "status": "failed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "1AMFI32N",
-      "offset": 58
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.i_click_on_Stockpot_tab_in_Supply_Chain_and_search_for_SKU_ID_in_SkU_desciption(String)"
+  "location": "E2EOrderPlaced_Steps.AgreementsPageConfirmation()"
 });
 formatter.result({
   "status": "skipped"
 });
 formatter.match({
-  "location": "E2EOrderPlaced_Steps.click_on_Search_button()"
+  "location": "E2EOrderPlaced_Steps.ReviewPageConfirmation()"
 });
 formatter.result({
   "status": "skipped"
 });
 formatter.match({
-  "location": "E2EOrderPlaced_Steps.i_should_see_the_uploaded_stock_for_the_SKU_ID()"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.i_click_on_Online_Stockpot_and_move_the_delivery_date_to_a_past_date()"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.i_click_on_Stock_Merchandise()"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "32",
-      "offset": 73
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.i_should_be_able_to_move_the_Launch_date_to_a_past_dateAmazon_Fire_phone_GB(String)"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.i_login_as_a_Trading_Admin()"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "1",
-      "offset": 68
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.i_Login_with_Trading_Admin_Credentials_SupplyChainAdmin_and_SupplyChainAd(String,String)"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "1",
-      "offset": 59
-    },
-    {
-      "val": "32",
-      "offset": 64
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.i_click_on_Stockpot_tab_in_Trading_admin_and_search_for_SKU_ID_in_SkU_desciption(String)"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "32",
-      "offset": 103
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.when_I_click_on_All_shops_I_should_be_able_to_allocate_to_different_stockspots_using_Amazon_Fire_phone_GB(String)"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "1",
-      "offset": 43
-    },
-    {
-      "val": "32",
-      "offset": 48
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.i_click_on_Stockpot_tab_and_search_using_SKU_ID_to_see_the_stock_status_then_I_should_see_them_in_Pre_Order_status(String)"
+  "location": "E2EOrderPlaced_Steps.OrderConfirmationPage()"
 });
 formatter.result({
   "status": "skipped"
 });
 formatter.after({
-  "duration": 2885513694,
-=======
-  "duration": 3171596988,
+  "duration": 3069012342,
   "status": "passed"
 });
 formatter.uri("C1786_E-11510-11505_TC2_Other_Tablets_Device_tile_Colour_and_Capacity_variant_Image_and_Promotion_change_same_variant_Tariff_page_Order_confirmation.feature");
@@ -4331,7 +3648,7 @@ formatter.examples({
   "keyword": "Examples"
 });
 formatter.before({
-  "duration": 25291750482,
+  "duration": 25475242192,
   "status": "passed"
 });
 formatter.scenario({
@@ -4476,7 +3793,7 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.I_am_existing_user_and_I_click_on_Signin_button()"
 });
 formatter.result({
-  "duration": 27035210381,
+  "duration": 28406377426,
   "status": "passed"
 });
 formatter.match({
@@ -4493,21 +3810,21 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.signin_using_valid_ink_jun_and_test_credentials(String,String)"
 });
 formatter.result({
-  "duration": 20446399122,
+  "duration": 17110730826,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.I_navigate_to_the_Basecomm_Page()"
 });
 formatter.result({
-  "duration": 13321534843,
+  "duration": 15074425602,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.Click_on_Other_Tablets_tab()"
 });
 formatter.result({
-  "duration": 24550243767,
+  "duration": 24455525340,
   "status": "passed"
 });
 formatter.match({
@@ -4532,7 +3849,7 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.verify_expected_device_and_details_are_in_device_list(String,String,String,String)"
 });
 formatter.result({
-  "duration": 2055315531,
+  "duration": 3209132824,
   "status": "passed"
 });
 formatter.match({
@@ -4553,7 +3870,7 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.select_color_capacity_of_device(String,String,String)"
 });
 formatter.result({
-  "duration": 3940837204,
+  "duration": 5953078827,
   "status": "passed"
 });
 formatter.match({
@@ -4566,7 +3883,7 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.verifypromotionribbonDisplay(String)"
 });
 formatter.result({
-  "duration": 658644189,
+  "duration": 2472815497,
   "status": "passed"
 });
 formatter.match({
@@ -4587,8 +3904,8 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.Verify_new_image_is_as_per_the_selected_device_name_capacity_and_color_in_the_Basecomms_page(String,String,String)"
 });
 formatter.result({
-  "duration": 953497327,
-  "error_message": "java.lang.AssertionError: New image is not as per selected color and capacity\r\n\tat org.junit.Assert.fail(Assert.java:88)\r\n\tat actionsPerformed.BaseCommPageActions.checkImgSrcBasecommPage(BaseCommPageActions.java:886)\r\n\tat steps.E2EOrderPlaced_Steps.Verify_new_image_is_as_per_the_selected_device_name_capacity_and_color_in_the_Basecomms_page(E2EOrderPlaced_Steps.java:3445)\r\n\tat ✽.And Verify new image is as per the selected Alcatel Plus 10,32GBand Silver in the Basecomms page(C1786_E-11510-11505_TC2_Other_Tablets_Device_tile_Colour_and_Capacity_variant_Image_and_Promotion_change_same_variant_Tariff_page_Order_confirmation.feature:15)\r\n",
+  "duration": 1903563918,
+  "error_message": "java.lang.AssertionError: New image is not as per selected color and capacity\r\n\tat org.junit.Assert.fail(Assert.java:88)\r\n\tat actionsPerformed.BaseCommPageActions.checkImgSrcBasecommPage(BaseCommPageActions.java:963)\r\n\tat steps.E2EOrderPlaced_Steps.Verify_new_image_is_as_per_the_selected_device_name_capacity_and_color_in_the_Basecomms_page(E2EOrderPlaced_Steps.java:3447)\r\n\tat ✽.And Verify new image is as per the selected Alcatel Plus 10,32GBand Silver in the Basecomms page(C1786_E-11510-11505_TC2_Other_Tablets_Device_tile_Colour_and_Capacity_variant_Image_and_Promotion_change_same_variant_Tariff_page_Order_confirmation.feature:15)\r\n",
   "status": "failed"
 });
 formatter.match({
@@ -4684,7 +4001,7 @@ formatter.result({
   "status": "skipped"
 });
 formatter.after({
-  "duration": 3138970443,
+  "duration": 2775631058,
   "status": "passed"
 });
 formatter.uri("C1786_E-11510-11505_TC3_iPads_Tab_Basecomm_tariff_basket_page_change_tariff_link.feature");
@@ -4788,7 +4105,7 @@ formatter.examples({
   "keyword": "Examples"
 });
 formatter.before({
-  "duration": 25152379423,
+  "duration": 26029778946,
   "status": "passed"
 });
 formatter.scenario({
@@ -4867,7 +4184,7 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.I_am_existing_user_and_I_click_on_Signin_button()"
 });
 formatter.result({
-  "duration": 26957847839,
+  "duration": 23636347904,
   "status": "passed"
 });
 formatter.match({
@@ -4882,2447 +4199,4 @@ formatter.match({
     }
   ],
   "location": "E2EOrderPlaced_Steps.signin_using_valid_ink_jun_and_test_credentials(String,String)"
-});
-formatter.result({
-  "duration": 19118364521,
-  "status": "passed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.I_navigate_to_the_Basecomm_Page()"
-});
-formatter.result({
-  "duration": 13818569856,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "Apple iPad mini 4",
-      "offset": 16
-    },
-    {
-      "val": "Silver",
-      "offset": 90
-    },
-    {
-      "val": "32GB",
-      "offset": 97
-    },
-    {
-      "val": "In Stock",
-      "offset": 102
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.verify_expected_device_and_details_are_in_device_list(String,String,String,String)"
-});
-formatter.result({
-  "duration": 1944273942,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "Apple iPad mini 4",
-      "offset": 30
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.SelectdeviceAndVerifyTariffandExtras(String)"
-});
-formatter.result({
-  "duration": 38713429576,
-  "status": "passed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.land_on_the_Tariffs_and_extra_page()"
-});
-formatter.result({
-  "duration": 3358474741,
-  "status": "passed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.i_Land_on_the_basket_page()"
-});
-formatter.result({
-  "duration": 19584266100,
-  "status": "passed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.verify_choose_a_diff_tariff_link_displayed()"
-});
-formatter.result({
-  "duration": 136908259,
-  "status": "passed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.click_choose_a_diff_tariff_link_and_check_navigation_TE_page()"
-});
-formatter.result({
-  "duration": 9976417411,
-  "status": "passed"
-});
-formatter.after({
-  "duration": 2349281439,
-  "status": "passed"
-});
-formatter.uri("C1786_E-11510-11505_TC4_Other_Tablets_Basecomm_tariff_basket_page_change_tariff_link.feature");
-formatter.feature({
-  "line": 1,
-  "name": "C1786_E-11510-11505_TC4_Other_Tablets_Basecomm_tariff_basket_page_change_tariff_link",
-  "description": "",
-  "id": "c1786-e-11510-11505-tc4-other-tablets-basecomm-tariff-basket-page-change-tariff-link",
-  "keyword": "Feature"
-});
-formatter.scenarioOutline({
-  "line": 3,
-  "name": "This scenario ensures that when the existing customer selects basecomms \"Other Tablets\" tariff lands on basket page and clicks on \"Change tariff\" ,",
-  "description": "then the customer should be redirected to tariffs and extras page with basecomms tariffs",
-  "id": "c1786-e-11510-11505-tc4-other-tablets-basecomm-tariff-basket-page-change-tariff-link;this-scenario-ensures-that-when-the-existing-customer-selects-basecomms-\"other-tablets\"-tariff-lands-on-basket-page-and-clicks-on-\"change-tariff\"-,",
-  "type": "scenario_outline",
-  "keyword": "Scenario Outline"
-});
-formatter.step({
-  "comments": [
-    {
-      "line": 6,
-      "value": "#Given I am existing user and I click on Signin button"
-    },
-    {
-      "line": 7,
-      "value": "#And Signin using valid \u003cusername\u003e and \u003cpassword\u003e credentials"
-    }
-  ],
-  "line": 8,
-  "name": "I navigate to the Basecomm Page",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 9,
-  "name": "Click on Other Tablets tab",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 10,
-  "name": "Verify expected \u003cdevice_name\u003e and its specific details are present in the device list \u003cdefault_colour\u003e,\u003cdefault_capacity\u003e,\u003cdefault_stock_message\u003e",
-  "keyword": "And "
-});
-formatter.step({
-  "comments": [
-    {
-      "line": 11,
-      "value": "#Veirfy device price details are also getting displayed in the above step"
-    }
-  ],
-  "line": 12,
-  "name": "Click on \"Buy Now\" button for \u003cdevice_name\u003e and verify \"Tariffs and Extras\" page is displayed",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 13,
-  "name": "Land on the \u0027Tariffs and extra\u0027 page",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 14,
-  "name": "I Land on the basket page and choose home delivery option",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 15,
-  "name": "Verify \"Choose a different tariff\" link is displayed",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 16,
-  "name": "click on the \"Choose a different tariff\" link and verify user navigated back to \"Tariff and Extras\" page",
-  "keyword": "And "
-});
-formatter.examples({
-  "line": 18,
-  "name": "",
-  "description": "",
-  "id": "c1786-e-11510-11505-tc4-other-tablets-basecomm-tariff-basket-page-change-tariff-link;this-scenario-ensures-that-when-the-existing-customer-selects-basecomms-\"other-tablets\"-tariff-lands-on-basket-page-and-clicks-on-\"change-tariff\"-,;",
-  "rows": [
-    {
-      "cells": [
-        "username",
-        "password",
-        "device_name",
-        "default_colour",
-        "default_capacity",
-        "default_stock_message"
-      ],
-      "line": 19,
-      "id": "c1786-e-11510-11505-tc4-other-tablets-basecomm-tariff-basket-page-change-tariff-link;this-scenario-ensures-that-when-the-existing-customer-selects-basecomms-\"other-tablets\"-tariff-lands-on-basket-page-and-clicks-on-\"change-tariff\"-,;;1"
-    },
-    {
-      "cells": [
-        "07770001111@o2.co.uk",
-        "test123",
-        "Samsung Galaxy Tab A 2016 10.1",
-        "Black",
-        "16GB",
-        "In Stock"
-      ],
-      "line": 20,
-      "id": "c1786-e-11510-11505-tc4-other-tablets-basecomm-tariff-basket-page-change-tariff-link;this-scenario-ensures-that-when-the-existing-customer-selects-basecomms-\"other-tablets\"-tariff-lands-on-basket-page-and-clicks-on-\"change-tariff\"-,;;2"
-    }
-  ],
-  "keyword": "Examples"
-});
-formatter.before({
-  "duration": 25783995082,
-  "status": "passed"
-});
-formatter.scenario({
-  "line": 20,
-  "name": "This scenario ensures that when the existing customer selects basecomms \"Other Tablets\" tariff lands on basket page and clicks on \"Change tariff\" ,",
-  "description": "then the customer should be redirected to tariffs and extras page with basecomms tariffs",
-  "id": "c1786-e-11510-11505-tc4-other-tablets-basecomm-tariff-basket-page-change-tariff-link;this-scenario-ensures-that-when-the-existing-customer-selects-basecomms-\"other-tablets\"-tariff-lands-on-basket-page-and-clicks-on-\"change-tariff\"-,;;2",
-  "type": "scenario",
-  "keyword": "Scenario Outline"
-});
-formatter.step({
-  "comments": [
-    {
-      "line": 6,
-      "value": "#Given I am existing user and I click on Signin button"
-    },
-    {
-      "line": 7,
-      "value": "#And Signin using valid \u003cusername\u003e and \u003cpassword\u003e credentials"
-    }
-  ],
-  "line": 8,
-  "name": "I navigate to the Basecomm Page",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 9,
-  "name": "Click on Other Tablets tab",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 10,
-  "name": "Verify expected Samsung Galaxy Tab A 2016 10.1 and its specific details are present in the device list Black,16GB,In Stock",
-  "matchedColumns": [
-    2,
-    3,
-    4,
-    5
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "comments": [
-    {
-      "line": 11,
-      "value": "#Veirfy device price details are also getting displayed in the above step"
-    }
-  ],
-  "line": 12,
-  "name": "Click on \"Buy Now\" button for Samsung Galaxy Tab A 2016 10.1 and verify \"Tariffs and Extras\" page is displayed",
-  "matchedColumns": [
-    2
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "line": 13,
-  "name": "Land on the \u0027Tariffs and extra\u0027 page",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 14,
-  "name": "I Land on the basket page and choose home delivery option",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 15,
-  "name": "Verify \"Choose a different tariff\" link is displayed",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 16,
-  "name": "click on the \"Choose a different tariff\" link and verify user navigated back to \"Tariff and Extras\" page",
-  "keyword": "And "
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.I_navigate_to_the_Basecomm_Page()"
-});
-formatter.result({
-  "duration": 11113651260,
-  "status": "passed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.Click_on_Other_Tablets_tab()"
-});
-formatter.result({
-  "duration": 24748735156,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "Samsung Galaxy Tab A 2016 10.1",
-      "offset": 16
-    },
-    {
-      "val": "Black",
-      "offset": 103
-    },
-    {
-      "val": "16GB",
-      "offset": 109
-    },
-    {
-      "val": "In Stock",
-      "offset": 114
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.verify_expected_device_and_details_are_in_device_list(String,String,String,String)"
-});
-formatter.result({
-  "duration": 2130220934,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "Samsung Galaxy Tab A 2016 10.1",
-      "offset": 30
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.SelectdeviceAndVerifyTariffandExtras(String)"
-});
-formatter.result({
-  "duration": 41302813801,
-  "status": "passed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.land_on_the_Tariffs_and_extra_page()"
-});
-formatter.result({
-  "duration": 3401158107,
-  "status": "passed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.i_Land_on_the_basket_page_and_choose_home_delivery_option()"
-});
-formatter.result({
-  "duration": 18906707285,
-  "status": "passed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.verify_choose_a_diff_tariff_link_displayed()"
-});
-formatter.result({
-  "duration": 85411325,
-  "status": "passed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.click_choose_a_diff_tariff_link_and_check_navigation_TE_page()"
-});
-formatter.result({
-  "duration": 10855644589,
-  "status": "passed"
-});
-formatter.after({
-  "duration": 4257362216,
-  "status": "passed"
-});
-formatter.uri("C1786_E11354-11447-11565_TC1_Existing_Custo_Ipads_Tab_Filter_and_Sort_Functionality.feature");
-formatter.feature({
-  "line": 1,
-  "name": "C1786_E11354-11447-11565_TC1_Existing_Custo_Ipads_Tab_Filter_and_Sort_Functionality.feature",
-  "description": "",
-  "id": "c1786-e11354-11447-11565-tc1-existing-custo-ipads-tab-filter-and-sort-functionality.feature",
-  "keyword": "Feature"
-});
-formatter.scenarioOutline({
-  "line": 3,
-  "name": "This scenario ensures that when the existing customer lands on new basecomm page and selects \u0027iPads\u0027 tab,",
-  "description": "then the customer should be able to see \u0027Sort\u0027 and \u0027Filter\u0027 tab and the customer should be able to do Sort and Filter functionality same as that of listings page",
-  "id": "c1786-e11354-11447-11565-tc1-existing-custo-ipads-tab-filter-and-sort-functionality.feature;this-scenario-ensures-that-when-the-existing-customer-lands-on-new-basecomm-page-and-selects-\u0027ipads\u0027-tab,",
-  "type": "scenario_outline",
-  "keyword": "Scenario Outline"
-});
-formatter.step({
-  "line": 6,
-  "name": "I am existing user and I click on Signin button",
-  "keyword": "Given "
-});
-formatter.step({
-  "line": 7,
-  "name": "Signin using valid \u003cusername\u003e and \u003cpassword\u003e credentials",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 8,
-  "name": "I navigate to the Basecomm Page",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 9,
-  "name": "Click on iPad tab",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 10,
-  "name": "Verify the contents of the iPad section in the landing page",
-  "keyword": "And "
-});
-formatter.step({
-  "comments": [
-    {
-      "line": 11,
-      "value": "#Verify URL is iPad specific"
-    }
-  ],
-  "line": 12,
-  "name": "Verify the current sort order details \u003csort option\u003e",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 13,
-  "name": "click on the Sort tab and choose required \u003csort option\u003e",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 14,
-  "name": "Verify the devices gets sorted based on the sort option \u003csort option\u003e",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 15,
-  "name": "click on the Sort tab and reset sort",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 16,
-  "name": "Verify that original sort order is retained \u003csort option\u003e",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 17,
-  "name": "click on the Filter tab and choose required \u003cFilter\u003e \u003cOption\u003e option",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 18,
-  "name": "Verify the devices gets displayed as per the filter applied \u003cFilter\u003e \u003cOption\u003e",
-  "keyword": "And "
-});
-formatter.examples({
-  "line": 20,
-  "name": "",
-  "description": "",
-  "id": "c1786-e11354-11447-11565-tc1-existing-custo-ipads-tab-filter-and-sort-functionality.feature;this-scenario-ensures-that-when-the-existing-customer-lands-on-new-basecomm-page-and-selects-\u0027ipads\u0027-tab,;",
-  "rows": [
-    {
-      "cells": [
-        "username",
-        "password",
-        "sort option",
-        "Filter",
-        "Option"
-      ],
-      "line": 21,
-      "id": "c1786-e11354-11447-11565-tc1-existing-custo-ipads-tab-filter-and-sort-functionality.feature;this-scenario-ensures-that-when-the-existing-customer-lands-on-new-basecomm-page-and-selects-\u0027ipads\u0027-tab,;;1"
-    },
-    {
-      "cells": [
-        "07770001111@o2.co.uk",
-        "test123",
-        "MonthlyLowToHigh",
-        "Colour",
-        "Yellow"
-      ],
-      "line": 22,
-      "id": "c1786-e11354-11447-11565-tc1-existing-custo-ipads-tab-filter-and-sort-functionality.feature;this-scenario-ensures-that-when-the-existing-customer-lands-on-new-basecomm-page-and-selects-\u0027ipads\u0027-tab,;;2"
-    }
-  ],
-  "keyword": "Examples"
-});
-formatter.before({
-  "duration": 25096759536,
-  "status": "passed"
-});
-formatter.scenario({
-  "line": 22,
-  "name": "This scenario ensures that when the existing customer lands on new basecomm page and selects \u0027iPads\u0027 tab,",
-  "description": "then the customer should be able to see \u0027Sort\u0027 and \u0027Filter\u0027 tab and the customer should be able to do Sort and Filter functionality same as that of listings page",
-  "id": "c1786-e11354-11447-11565-tc1-existing-custo-ipads-tab-filter-and-sort-functionality.feature;this-scenario-ensures-that-when-the-existing-customer-lands-on-new-basecomm-page-and-selects-\u0027ipads\u0027-tab,;;2",
-  "type": "scenario",
-  "keyword": "Scenario Outline"
-});
-formatter.step({
-  "line": 6,
-  "name": "I am existing user and I click on Signin button",
-  "keyword": "Given "
-});
-formatter.step({
-  "line": 7,
-  "name": "Signin using valid 07770001111@o2.co.uk and test123 credentials",
-  "matchedColumns": [
-    0,
-    1
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "line": 8,
-  "name": "I navigate to the Basecomm Page",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 9,
-  "name": "Click on iPad tab",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 10,
-  "name": "Verify the contents of the iPad section in the landing page",
-  "keyword": "And "
-});
-formatter.step({
-  "comments": [
-    {
-      "line": 11,
-      "value": "#Verify URL is iPad specific"
-    }
-  ],
-  "line": 12,
-  "name": "Verify the current sort order details MonthlyLowToHigh",
-  "matchedColumns": [
-    2
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "line": 13,
-  "name": "click on the Sort tab and choose required MonthlyLowToHigh",
-  "matchedColumns": [
-    2
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "line": 14,
-  "name": "Verify the devices gets sorted based on the sort option MonthlyLowToHigh",
-  "matchedColumns": [
-    2
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "line": 15,
-  "name": "click on the Sort tab and reset sort",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 16,
-  "name": "Verify that original sort order is retained MonthlyLowToHigh",
-  "matchedColumns": [
-    2
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "line": 17,
-  "name": "click on the Filter tab and choose required Colour Yellow option",
-  "matchedColumns": [
-    3,
-    4
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "line": 18,
-  "name": "Verify the devices gets displayed as per the filter applied Colour Yellow",
-  "matchedColumns": [
-    3,
-    4
-  ],
-  "keyword": "And "
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.I_am_existing_user_and_I_click_on_Signin_button()"
-});
-formatter.result({
-  "duration": 26283596588,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "07770001111@o2.co.uk",
-      "offset": 19
-    },
-    {
-      "val": "test123",
-      "offset": 44
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.signin_using_valid_ink_jun_and_test_credentials(String,String)"
-});
-formatter.result({
-  "duration": 19541988305,
-  "status": "passed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.I_navigate_to_the_Basecomm_Page()"
-});
-formatter.result({
-  "duration": 12736208453,
-  "status": "passed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.Click_on_iPad_tab()"
-});
-formatter.result({
-  "duration": 24310719255,
-  "status": "passed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.VerifyContentsofIpadSection()"
-});
-formatter.result({
-  "duration": 32627607,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "MonthlyLowToHigh",
-      "offset": 38
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.verify_current_sort_order(String)"
-});
-formatter.result({
-  "duration": 20697642732,
-  "error_message": "junit.framework.AssertionFailedError: Fail: Cannot read the phone details from the container\r\n\tat junit.framework.Assert.fail(Assert.java:47)\r\n\tat steps.E2EOrderPlaced_Steps.verify_current_sort_order(E2EOrderPlaced_Steps.java:3658)\r\n\tat ✽.And Verify the current sort order details MonthlyLowToHigh(C1786_E11354-11447-11565_TC1_Existing_Custo_Ipads_Tab_Filter_and_Sort_Functionality.feature:12)\r\n",
-  "status": "failed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "MonthlyLowToHigh",
-      "offset": 42
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.click_on_the_Sort_tab_and_choose_required_sort_option(String)"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "MonthlyLowToHigh",
-      "offset": 56
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.verifyDeviceSortedBasedOnSortOption(String)"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.ClickonSortand_Reset()"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "MonthlyLowToHigh",
-      "offset": 44
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.verifyOriginalSortOrderRetainedAfterSortReset(String)"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "Colour",
-      "offset": 44
-    },
-    {
-      "val": "Yellow",
-      "offset": 51
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.clickOnFilterTabAndSelectFilterOption(String,String)"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "Colour",
-      "offset": 60
-    },
-    {
-      "val": "Yellow",
-      "offset": 67
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.verifyDevicesGetsDisplayedAsPerFilter(String,String)"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.after({
-  "duration": 5630158293,
-  "status": "passed"
-});
-formatter.uri("C1786_E11354-11447-11565_TC2_Existing_Custo_Other_Tablets_Filter_and_Sort_Functionality.feature");
-formatter.feature({
-  "line": 1,
-  "name": "C1786_E11354-11447-11565_TC2_Existing_Custo_Other_Tablets_Filter_and_Sort_Functionality.feature",
-  "description": "",
-  "id": "c1786-e11354-11447-11565-tc2-existing-custo-other-tablets-filter-and-sort-functionality.feature",
-  "keyword": "Feature"
-});
-formatter.scenarioOutline({
-  "line": 3,
-  "name": "This scenario ensures that when the existing customer lands on new basecomm page and selects \u0027Other tablets\u0027 tab,",
-  "description": "then the customer should be able to see \u0027Sort\u0027 and \u0027Filter\u0027 tab and the customer should be able to do Sort and Filter functionality same as that of listings page",
-  "id": "c1786-e11354-11447-11565-tc2-existing-custo-other-tablets-filter-and-sort-functionality.feature;this-scenario-ensures-that-when-the-existing-customer-lands-on-new-basecomm-page-and-selects-\u0027other-tablets\u0027-tab,",
-  "type": "scenario_outline",
-  "keyword": "Scenario Outline"
-});
-formatter.step({
-  "line": 6,
-  "name": "I am existing user and I click on Signin button",
-  "keyword": "Given "
-});
-formatter.step({
-  "line": 7,
-  "name": "Signin using valid \u003cusername\u003e and \u003cpassword\u003e credentials",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 8,
-  "name": "I navigate to the Basecomm Page",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 9,
-  "name": "Click on Other Tablets tab",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 10,
-  "name": "Verify the current sort order details \u003csort option\u003e",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 11,
-  "name": "click on the Sort tab and choose required \u003csort option\u003e",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 12,
-  "name": "Verify the devices gets sorted based on the sort option \u003csort option\u003e",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 13,
-  "name": "click on the Sort tab and reset sort",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 14,
-  "name": "Verify that original sort order is retained \u003csort option\u003e",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 15,
-  "name": "click on the Filter tab and choose required \u003cFilter\u003e \u003cOption\u003e option",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 16,
-  "name": "Verify the devices gets displayed as per the filter applied \u003cFilter\u003e \u003cOption\u003e",
-  "keyword": "And "
-});
-formatter.examples({
-  "line": 18,
-  "name": "",
-  "description": "",
-  "id": "c1786-e11354-11447-11565-tc2-existing-custo-other-tablets-filter-and-sort-functionality.feature;this-scenario-ensures-that-when-the-existing-customer-lands-on-new-basecomm-page-and-selects-\u0027other-tablets\u0027-tab,;",
-  "rows": [
-    {
-      "cells": [
-        "username",
-        "password",
-        "sort option",
-        "Filter",
-        "Option"
-      ],
-      "line": 19,
-      "id": "c1786-e11354-11447-11565-tc2-existing-custo-other-tablets-filter-and-sort-functionality.feature;this-scenario-ensures-that-when-the-existing-customer-lands-on-new-basecomm-page-and-selects-\u0027other-tablets\u0027-tab,;;1"
-    },
-    {
-      "cells": [
-        "07770001111@o2.co.uk",
-        "test123",
-        "MonthlyLowToHigh",
-        "Brand",
-        "Samsung"
-      ],
-      "line": 20,
-      "id": "c1786-e11354-11447-11565-tc2-existing-custo-other-tablets-filter-and-sort-functionality.feature;this-scenario-ensures-that-when-the-existing-customer-lands-on-new-basecomm-page-and-selects-\u0027other-tablets\u0027-tab,;;2"
-    }
-  ],
-  "keyword": "Examples"
-});
-formatter.before({
-  "duration": 23806505349,
-  "status": "passed"
-});
-formatter.scenario({
-  "line": 20,
-  "name": "This scenario ensures that when the existing customer lands on new basecomm page and selects \u0027Other tablets\u0027 tab,",
-  "description": "then the customer should be able to see \u0027Sort\u0027 and \u0027Filter\u0027 tab and the customer should be able to do Sort and Filter functionality same as that of listings page",
-  "id": "c1786-e11354-11447-11565-tc2-existing-custo-other-tablets-filter-and-sort-functionality.feature;this-scenario-ensures-that-when-the-existing-customer-lands-on-new-basecomm-page-and-selects-\u0027other-tablets\u0027-tab,;;2",
-  "type": "scenario",
-  "keyword": "Scenario Outline"
-});
-formatter.step({
-  "line": 6,
-  "name": "I am existing user and I click on Signin button",
-  "keyword": "Given "
-});
-formatter.step({
-  "line": 7,
-  "name": "Signin using valid 07770001111@o2.co.uk and test123 credentials",
-  "matchedColumns": [
-    0,
-    1
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "line": 8,
-  "name": "I navigate to the Basecomm Page",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 9,
-  "name": "Click on Other Tablets tab",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 10,
-  "name": "Verify the current sort order details MonthlyLowToHigh",
-  "matchedColumns": [
-    2
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "line": 11,
-  "name": "click on the Sort tab and choose required MonthlyLowToHigh",
-  "matchedColumns": [
-    2
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "line": 12,
-  "name": "Verify the devices gets sorted based on the sort option MonthlyLowToHigh",
-  "matchedColumns": [
-    2
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "line": 13,
-  "name": "click on the Sort tab and reset sort",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 14,
-  "name": "Verify that original sort order is retained MonthlyLowToHigh",
-  "matchedColumns": [
-    2
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "line": 15,
-  "name": "click on the Filter tab and choose required Brand Samsung option",
-  "matchedColumns": [
-    3,
-    4
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "line": 16,
-  "name": "Verify the devices gets displayed as per the filter applied Brand Samsung",
-  "matchedColumns": [
-    3,
-    4
-  ],
-  "keyword": "And "
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.I_am_existing_user_and_I_click_on_Signin_button()"
-});
-formatter.result({
-  "duration": 25686200739,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "07770001111@o2.co.uk",
-      "offset": 19
-    },
-    {
-      "val": "test123",
-      "offset": 44
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.signin_using_valid_ink_jun_and_test_credentials(String,String)"
-});
-formatter.result({
-  "duration": 19175334543,
-  "status": "passed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.I_navigate_to_the_Basecomm_Page()"
-});
-formatter.result({
-  "duration": 12485734933,
-  "status": "passed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.Click_on_Other_Tablets_tab()"
-});
-formatter.result({
-  "duration": 24271515449,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "MonthlyLowToHigh",
-      "offset": 38
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.verify_current_sort_order(String)"
-});
-formatter.result({
-  "duration": 20916863200,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "MonthlyLowToHigh",
-      "offset": 42
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.click_on_the_Sort_tab_and_choose_required_sort_option(String)"
-});
-formatter.result({
-  "duration": 7205736108,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "MonthlyLowToHigh",
-      "offset": 56
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.verifyDeviceSortedBasedOnSortOption(String)"
-});
-formatter.result({
-  "duration": 10247685130,
-  "status": "passed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.ClickonSortand_Reset()"
-});
-formatter.result({
-  "duration": 13718091876,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "MonthlyLowToHigh",
-      "offset": 44
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.verifyOriginalSortOrderRetainedAfterSortReset(String)"
-});
-formatter.result({
-  "duration": 10509680271,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "Brand",
-      "offset": 44
-    },
-    {
-      "val": "Samsung",
-      "offset": 50
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.clickOnFilterTabAndSelectFilterOption(String,String)"
-});
-formatter.result({
-  "duration": 9160289478,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "Brand",
-      "offset": 60
-    },
-    {
-      "val": "Samsung",
-      "offset": 66
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.verifyDevicesGetsDisplayedAsPerFilter(String,String)"
-});
-formatter.result({
-  "duration": 10371311461,
-  "status": "passed"
-});
-formatter.after({
-  "duration": 4230506391,
-  "status": "passed"
-});
-formatter.uri("C1786_E11362-11564_Current_MBB_URL_no_change_Order_placement.feature");
-formatter.feature({
-  "line": 1,
-  "name": "C1786_E11362-11564_Current_MBB_URL_no_change_Order_placement",
-  "description": "",
-  "id": "c1786-e11362-11564-current-mbb-url-no-change-order-placement",
-  "keyword": "Feature"
-});
-formatter.scenarioOutline({
-  "line": 3,
-  "name": "This scenario ensures that there should not be any change for customer with Current MBB URL and customer should be able to place order",
-  "description": "\r\nCurrent URL:\r\nhttps://www.o2.co.uk/shop/my-offers/mobile-broadband",
-  "id": "c1786-e11362-11564-current-mbb-url-no-change-order-placement;this-scenario-ensures-that-there-should-not-be-any-change-for-customer-with-current-mbb-url-and-customer-should-be-able-to-place-order",
-  "type": "scenario_outline",
-  "keyword": "Scenario Outline"
-});
-formatter.step({
-  "line": 8,
-  "name": "I am existing user and I click on Signin button",
-  "keyword": "Given "
-});
-formatter.step({
-  "line": 9,
-  "name": "Signin using valid \u003cusername\u003e and \u003cpassword\u003e credentials",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 10,
-  "name": "I launch the OldMBBURL",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 11,
-  "name": "select \"random\" MBBtariff",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 12,
-  "name": "I Land on the basket page and choose home delivery option",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 13,
-  "name": "click on \"go to checkout\" button",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 14,
-  "name": "Select existing account and begin fast checkout",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 15,
-  "name": "land on the payment page and input \u003cuser\u003e and other details for upgrade and click \u0027Continue on next step\u0027",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 16,
-  "name": "Continue to Agreements page and confirm all the agreement checks",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 17,
-  "name": "Continue to Review page and review the order",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 18,
-  "name": "order confirmation is displayed",
-  "keyword": "Then "
-});
-formatter.examples({
-  "comments": [
-    {
-      "line": 20,
-      "value": "#Modify the above step to include pdf download"
-    }
-  ],
-  "line": 21,
-  "name": "",
-  "description": "",
-  "id": "c1786-e11362-11564-current-mbb-url-no-change-order-placement;this-scenario-ensures-that-there-should-not-be-any-change-for-customer-with-current-mbb-url-and-customer-should-be-able-to-place-order;",
-  "rows": [
-    {
-      "cells": [
-        "username",
-        "password",
-        "OldMBBURL",
-        "user"
-      ],
-      "line": 22,
-      "id": "c1786-e11362-11564-current-mbb-url-no-change-order-placement;this-scenario-ensures-that-there-should-not-be-any-change-for-customer-with-current-mbb-url-and-customer-should-be-able-to-place-order;;1"
-    },
-    {
-      "cells": [
-        "07770001111@o2.co.uk",
-        "test123",
-        "https://www.ref.o2.co.uk/shop/my-offers/mobile-broadband",
-        "TEST ACCEPTA"
-      ],
-      "line": 23,
-      "id": "c1786-e11362-11564-current-mbb-url-no-change-order-placement;this-scenario-ensures-that-there-should-not-be-any-change-for-customer-with-current-mbb-url-and-customer-should-be-able-to-place-order;;2"
-    }
-  ],
-  "keyword": "Examples"
-});
-formatter.before({
-  "duration": 25208697203,
-  "status": "passed"
-});
-formatter.scenario({
-  "line": 23,
-  "name": "This scenario ensures that there should not be any change for customer with Current MBB URL and customer should be able to place order",
-  "description": "\r\nCurrent URL:\r\nhttps://www.o2.co.uk/shop/my-offers/mobile-broadband",
-  "id": "c1786-e11362-11564-current-mbb-url-no-change-order-placement;this-scenario-ensures-that-there-should-not-be-any-change-for-customer-with-current-mbb-url-and-customer-should-be-able-to-place-order;;2",
-  "type": "scenario",
-  "keyword": "Scenario Outline"
-});
-formatter.step({
-  "line": 8,
-  "name": "I am existing user and I click on Signin button",
-  "keyword": "Given "
-});
-formatter.step({
-  "line": 9,
-  "name": "Signin using valid 07770001111@o2.co.uk and test123 credentials",
-  "matchedColumns": [
-    0,
-    1
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "line": 10,
-  "name": "I launch the OldMBBURL",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 11,
-  "name": "select \"random\" MBBtariff",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 12,
-  "name": "I Land on the basket page and choose home delivery option",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 13,
-  "name": "click on \"go to checkout\" button",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 14,
-  "name": "Select existing account and begin fast checkout",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 15,
-  "name": "land on the payment page and input TEST ACCEPTA and other details for upgrade and click \u0027Continue on next step\u0027",
-  "matchedColumns": [
-    3
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "line": 16,
-  "name": "Continue to Agreements page and confirm all the agreement checks",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 17,
-  "name": "Continue to Review page and review the order",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 18,
-  "name": "order confirmation is displayed",
-  "keyword": "Then "
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.I_am_existing_user_and_I_click_on_Signin_button()"
-});
-formatter.result({
-  "duration": 26094625154,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "07770001111@o2.co.uk",
-      "offset": 19
-    },
-    {
-      "val": "test123",
-      "offset": 44
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.signin_using_valid_ink_jun_and_test_credentials(String,String)"
-});
-formatter.result({
-  "duration": 21909461701,
-  "status": "passed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.LaunchOldBaseCommsMBBURL()"
-});
-formatter.result({
-  "duration": 13384657799,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "random",
-      "offset": 8
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.select_MBBtariff(String)"
-});
-formatter.result({
-  "duration": 11055520087,
-  "status": "passed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.i_Land_on_the_basket_page_and_choose_home_delivery_option()"
-});
-formatter.result({
-  "duration": 15169620094,
-  "error_message": "junit.framework.AssertionFailedError: Unable to Land on the basket page and choose home delivery option\r\n\tat junit.framework.Assert.fail(Assert.java:47)\r\n\tat steps.E2EOrderPlaced_Steps.i_Land_on_the_basket_page_and_choose_home_delivery_option(E2EOrderPlaced_Steps.java:725)\r\n\tat ✽.And I Land on the basket page and choose home delivery option(C1786_E11362-11564_Current_MBB_URL_no_change_Order_placement.feature:12)\r\n",
-  "status": "failed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "go to checkout",
-      "offset": 10
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.CheckoutFromBasket(String)"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.Select_existing_account_and_begin_fast_checkout()"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "TEST ACCEPTA",
-      "offset": 35
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.CreditCheckPaymentPage_Upgrade(String)"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.AgreementsPageConfirmation()"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.ReviewPageConfirmation()"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.OrderConfirmationPage()"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.after({
-  "duration": 3635690837,
-  "status": "passed"
-});
-formatter.uri("C1786_E11362-11564_TC1_Current_iPad_or_Tablet_URL_Redirection_to_new_Basecomm_page_URL.feature");
-formatter.feature({
-  "line": 1,
-  "name": "C1786_E11362-11564_TC1_Current_iPad_or_Tablet_URL_Redirection_to_new_Basecomm_page_URL.feature",
-  "description": "",
-  "id": "c1786-e11362-11564-tc1-current-ipad-or-tablet-url-redirection-to-new-basecomm-page-url.feature",
-  "keyword": "Feature"
-});
-formatter.scenarioOutline({
-  "line": 3,
-  "name": "This scenario ensures that the existing customer with the current iPad and Tablet Url should be redirected to new basecomms page URL",
-  "description": "\nCurrent URL:\nhttps://www.o2.co.uk/shop/my-offers/ipad\nhttps://www.o2.co.uk/shop/my-offers/tablet",
-  "id": "c1786-e11362-11564-tc1-current-ipad-or-tablet-url-redirection-to-new-basecomm-page-url.feature;this-scenario-ensures-that-the-existing-customer-with-the-current-ipad-and-tablet-url-should-be-redirected-to-new-basecomms-page-url",
-  "type": "scenario_outline",
-  "keyword": "Scenario Outline"
-});
-formatter.step({
-  "line": 9,
-  "name": "I am existing user and I click on Signin button",
-  "keyword": "Given "
-});
-formatter.step({
-  "line": 10,
-  "name": "Signin using valid \u003cusername\u003e and \u003cpassword\u003e credentials",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 11,
-  "name": "I launch the OldIpadURL",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 12,
-  "name": "verify that I get redirected to \u003cNewURL\u003e",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 13,
-  "name": "I launch the OldTabletURL",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 14,
-  "name": "verify that I get redirected to \u003cNewURL\u003e",
-  "keyword": "And "
-});
-formatter.examples({
-  "line": 16,
-  "name": "",
-  "description": "",
-  "id": "c1786-e11362-11564-tc1-current-ipad-or-tablet-url-redirection-to-new-basecomm-page-url.feature;this-scenario-ensures-that-the-existing-customer-with-the-current-ipad-and-tablet-url-should-be-redirected-to-new-basecomms-page-url;",
-  "rows": [
-    {
-      "cells": [
-        "username",
-        "password",
-        "OldIpadURL",
-        "OldTabletURL",
-        "NewURL"
-      ],
-      "line": 17,
-      "id": "c1786-e11362-11564-tc1-current-ipad-or-tablet-url-redirection-to-new-basecomm-page-url.feature;this-scenario-ensures-that-the-existing-customer-with-the-current-ipad-and-tablet-url-should-be-redirected-to-new-basecomms-page-url;;1"
-    },
-    {
-      "cells": [
-        "07770001111@o2.co.uk",
-        "test123",
-        "https://www.o2.co.uk/shop/my-offers/ipad",
-        "https://www.o2.co.uk/shop/my-offers/tablet",
-        "https://www.o2.co.uk/shop/existing-customer-offers#sort\u003dcontent.sorting.featured\u0026page\u003d1"
-      ],
-      "line": 18,
-      "id": "c1786-e11362-11564-tc1-current-ipad-or-tablet-url-redirection-to-new-basecomm-page-url.feature;this-scenario-ensures-that-the-existing-customer-with-the-current-ipad-and-tablet-url-should-be-redirected-to-new-basecomms-page-url;;2"
-    }
-  ],
-  "keyword": "Examples"
-});
-formatter.before({
-  "duration": 27150983280,
-  "status": "passed"
-});
-formatter.scenario({
-  "line": 18,
-  "name": "This scenario ensures that the existing customer with the current iPad and Tablet Url should be redirected to new basecomms page URL",
-  "description": "\nCurrent URL:\nhttps://www.o2.co.uk/shop/my-offers/ipad\nhttps://www.o2.co.uk/shop/my-offers/tablet",
-  "id": "c1786-e11362-11564-tc1-current-ipad-or-tablet-url-redirection-to-new-basecomm-page-url.feature;this-scenario-ensures-that-the-existing-customer-with-the-current-ipad-and-tablet-url-should-be-redirected-to-new-basecomms-page-url;;2",
-  "type": "scenario",
-  "keyword": "Scenario Outline"
-});
-formatter.step({
-  "line": 9,
-  "name": "I am existing user and I click on Signin button",
-  "keyword": "Given "
-});
-formatter.step({
-  "line": 10,
-  "name": "Signin using valid 07770001111@o2.co.uk and test123 credentials",
-  "matchedColumns": [
-    0,
-    1
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "line": 11,
-  "name": "I launch the OldIpadURL",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 12,
-  "name": "verify that I get redirected to https://www.o2.co.uk/shop/existing-customer-offers#sort\u003dcontent.sorting.featured\u0026page\u003d1",
-  "matchedColumns": [
-    4
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "line": 13,
-  "name": "I launch the OldTabletURL",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 14,
-  "name": "verify that I get redirected to https://www.o2.co.uk/shop/existing-customer-offers#sort\u003dcontent.sorting.featured\u0026page\u003d1",
-  "matchedColumns": [
-    4
-  ],
-  "keyword": "And "
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.I_am_existing_user_and_I_click_on_Signin_button()"
-});
-formatter.result({
-  "duration": 26810122578,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "07770001111@o2.co.uk",
-      "offset": 19
-    },
-    {
-      "val": "test123",
-      "offset": 44
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.signin_using_valid_ink_jun_and_test_credentials(String,String)"
-});
-formatter.result({
-  "duration": 19735302111,
-  "status": "passed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.LaunchOldBaseCommsIpadURL()"
-});
-formatter.result({
-  "duration": 14303353147,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "https://www.o2.co.uk/shop/existing-customer-offers#sort\u003dcontent.sorting.featured\u0026page\u003d1",
-      "offset": 32
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.VerifyOldBaseCommsURL_Redirection(String)"
-});
-formatter.result({
-  "duration": 22415421,
-  "status": "passed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.LaunchOldBaseCommsOldTabletURL()"
-});
-formatter.result({
-  "duration": 12425667565,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "https://www.o2.co.uk/shop/existing-customer-offers#sort\u003dcontent.sorting.featured\u0026page\u003d1",
-      "offset": 32
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.VerifyOldBaseCommsURL_Redirection(String)"
-});
-formatter.result({
-  "duration": 143167363,
-  "status": "passed"
-});
-formatter.after({
-  "duration": 2220674296,
-  "status": "passed"
-});
-formatter.uri("C1786_E11510-11505_TC5_Non_Basecomm_tariff_basket_page_change_tariff_link_BAU_tariffs_decommission_flag.feature");
-formatter.feature({
-  "line": 1,
-  "name": "C11786_E11510-11505_TC5_Non_Basecomm_tariff_basket_page_change_tariff_link_BAU_tariffs_decommission_flag.feature",
-  "description": "",
-  "id": "c11786-e11510-11505-tc5-non-basecomm-tariff-basket-page-change-tariff-link-bau-tariffs-decommission-flag.feature",
-  "keyword": "Feature"
-});
-formatter.scenarioOutline({
-  "line": 3,
-  "name": "This scenario ensures that when the existing customer selects non-basecomm(Refresh)tariff lands on basket page and clicks on \"Change tariff\" ,",
-  "description": "then the customer should be redirected to tariffs and extras page with Refresh(BAU) tariffs",
-  "id": "c11786-e11510-11505-tc5-non-basecomm-tariff-basket-page-change-tariff-link-bau-tariffs-decommission-flag.feature;this-scenario-ensures-that-when-the-existing-customer-selects-non-basecomm(refresh)tariff-lands-on-basket-page-and-clicks-on-\"change-tariff\"-,",
-  "type": "scenario_outline",
-  "keyword": "Scenario Outline"
-});
-formatter.step({
-  "line": 6,
-  "name": "I am existing user and I click on Signin button",
-  "keyword": "Given "
-});
-formatter.step({
-  "line": 7,
-  "name": "Signin using valid \u003cusername\u003e and \u003cpassword\u003e credentials",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 8,
-  "name": "navigate to PAYM Tablets page",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 9,
-  "name": "I choose \u003ctabletname\u003e Tablet",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 10,
-  "name": "Navigate to device details page",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 11,
-  "name": "Land on the \u0027Tariffs and extra\u0027 page",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 12,
-  "name": "I Land on the basket page and choose home delivery option",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 13,
-  "name": "Verify \"Choose a different tariff\" link is displayed",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 14,
-  "name": "click on the \"Choose a different tariff\" link and verify user navigated back to \"Tariff and Extras\" page",
-  "keyword": "And "
-});
-formatter.examples({
-  "line": 16,
-  "name": "",
-  "description": "",
-  "id": "c11786-e11510-11505-tc5-non-basecomm-tariff-basket-page-change-tariff-link-bau-tariffs-decommission-flag.feature;this-scenario-ensures-that-when-the-existing-customer-selects-non-basecomm(refresh)tariff-lands-on-basket-page-and-clicks-on-\"change-tariff\"-,;",
-  "rows": [
-    {
-      "cells": [
-        "username",
-        "password",
-        "tabletname"
-      ],
-      "line": 17,
-      "id": "c11786-e11510-11505-tc5-non-basecomm-tariff-basket-page-change-tariff-link-bau-tariffs-decommission-flag.feature;this-scenario-ensures-that-when-the-existing-customer-selects-non-basecomm(refresh)tariff-lands-on-basket-page-and-clicks-on-\"change-tariff\"-,;;1"
-    },
-    {
-      "cells": [
-        "07770001111@o2.co.uk",
-        "test123",
-        "Samsung Galaxy Tab Active"
-      ],
-      "line": 18,
-      "id": "c11786-e11510-11505-tc5-non-basecomm-tariff-basket-page-change-tariff-link-bau-tariffs-decommission-flag.feature;this-scenario-ensures-that-when-the-existing-customer-selects-non-basecomm(refresh)tariff-lands-on-basket-page-and-clicks-on-\"change-tariff\"-,;;2"
-    }
-  ],
-  "keyword": "Examples"
-});
-formatter.before({
-  "duration": 24876275639,
-  "status": "passed"
-});
-formatter.scenario({
-  "line": 18,
-  "name": "This scenario ensures that when the existing customer selects non-basecomm(Refresh)tariff lands on basket page and clicks on \"Change tariff\" ,",
-  "description": "then the customer should be redirected to tariffs and extras page with Refresh(BAU) tariffs",
-  "id": "c11786-e11510-11505-tc5-non-basecomm-tariff-basket-page-change-tariff-link-bau-tariffs-decommission-flag.feature;this-scenario-ensures-that-when-the-existing-customer-selects-non-basecomm(refresh)tariff-lands-on-basket-page-and-clicks-on-\"change-tariff\"-,;;2",
-  "type": "scenario",
-  "keyword": "Scenario Outline"
-});
-formatter.step({
-  "line": 6,
-  "name": "I am existing user and I click on Signin button",
-  "keyword": "Given "
-});
-formatter.step({
-  "line": 7,
-  "name": "Signin using valid 07770001111@o2.co.uk and test123 credentials",
-  "matchedColumns": [
-    0,
-    1
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "line": 8,
-  "name": "navigate to PAYM Tablets page",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 9,
-  "name": "I choose Samsung Galaxy Tab Active Tablet",
-  "matchedColumns": [
-    2
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "line": 10,
-  "name": "Navigate to device details page",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 11,
-  "name": "Land on the \u0027Tariffs and extra\u0027 page",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 12,
-  "name": "I Land on the basket page and choose home delivery option",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 13,
-  "name": "Verify \"Choose a different tariff\" link is displayed",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 14,
-  "name": "click on the \"Choose a different tariff\" link and verify user navigated back to \"Tariff and Extras\" page",
-  "keyword": "And "
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.I_am_existing_user_and_I_click_on_Signin_button()"
-});
-formatter.result({
-  "duration": 26505375765,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "07770001111@o2.co.uk",
-      "offset": 19
-    },
-    {
-      "val": "test123",
-      "offset": 44
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.signin_using_valid_ink_jun_and_test_credentials(String,String)"
-});
-formatter.result({
-  "duration": 19598502501,
-  "status": "passed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.navigate_to_PAYM_Tablets_page()"
-});
-formatter.result({
-  "duration": 20164130726,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "Samsung Galaxy Tab Active",
-      "offset": 9
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.i_choose_Tablet(String)"
-});
-formatter.result({
-  "duration": 25356698,
-  "status": "passed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.Navigate_to_device_details_page()"
-});
-formatter.result({
-  "duration": 22185813925,
-  "error_message": "junit.framework.AssertionFailedError: Unable to navigate to device details page\r\n\tat junit.framework.Assert.fail(Assert.java:47)\r\n\tat steps.E2EOrderPlaced_Steps.Navigate_to_device_details_page(E2EOrderPlaced_Steps.java:419)\r\n\tat ✽.And Navigate to device details page(C1786_E11510-11505_TC5_Non_Basecomm_tariff_basket_page_change_tariff_link_BAU_tariffs_decommission_flag.feature:10)\r\n",
-  "status": "failed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.land_on_the_Tariffs_and_extra_page()"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.i_Land_on_the_basket_page_and_choose_home_delivery_option()"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.verify_choose_a_diff_tariff_link_displayed()"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.click_choose_a_diff_tariff_link_and_check_navigation_TE_page()"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.after({
-  "duration": 5368391065,
-  "status": "passed"
-});
-formatter.uri("C1786_ECOM-11527-11529-11633_TC1_New_basecomms_page_iPads_tab_coming_soon_device_promo_header_banner_Pay_For_Your_Device_In_Full_link_TariffandExtras_page.feature");
-formatter.feature({
-  "line": 1,
-  "name": "C1786_ECOM-11527-11529-11633_TC1_New_basecomms_page_iPads_tab_coming_soon_device_promo_header_banner_Pay_For_Your_Device_In_Full_link_TariffandExtras_page",
-  "description": "",
-  "id": "c1786-ecom-11527-11529-11633-tc1-new-basecomms-page-ipads-tab-coming-soon-device-promo-header-banner-pay-for-your-device-in-full-link-tariffandextras-page",
-  "keyword": "Feature"
-});
-formatter.scenarioOutline({
-  "line": 3,
-  "name": "This scenario ensures that when the customer lands on new basecomm page selects \"iPads\" device ,then the device tile for the \u0027coming soon\u0027 basecomms device should be displayed with the following information:",
-  "description": "\n1.Device image\n2.Device title\n3.Colour\n4.Capacity\n5.\"See device details\" link\n6.Pricing information should NOT be displayed\n7.Buy Now button NOT be displayed",
-  "id": "c1786-ecom-11527-11529-11633-tc1-new-basecomms-page-ipads-tab-coming-soon-device-promo-header-banner-pay-for-your-device-in-full-link-tariffandextras-page;this-scenario-ensures-that-when-the-customer-lands-on-new-basecomm-page-selects-\"ipads\"-device-,then-the-device-tile-for-the-\u0027coming-soon\u0027-basecomms-device-should-be-displayed-with-the-following-information:",
-  "type": "scenario_outline",
-  "keyword": "Scenario Outline"
-});
-formatter.step({
-  "comments": [
-    {
-      "line": 13,
-      "value": "#Pay for your device in full link should be displayed in Tariff and extras page"
-    }
-  ],
-  "line": 14,
-  "name": "I am existing user and I click on Signin button",
-  "keyword": "Given "
-});
-formatter.step({
-  "line": 15,
-  "name": "Signin using valid \u003cusername\u003e and \u003cpassword\u003e credentials",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 16,
-  "name": "I navigate to the Basecomm Page",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 17,
-  "name": "Verify expected \u003cdevice_name\u003e and its specific details are present in the device list for coming soon device \u003cdefault_colour\u003e,\u003cdefault_capacity\u003e,\u003cdefault_stock_message\u003e",
-  "keyword": "And "
-});
-formatter.step({
-  "comments": [
-    {
-      "line": 18,
-      "value": "#Veirfy device price is not required"
-    },
-    {
-      "line": 19,
-      "value": "#Verify Buy Now button is not enabled"
-    }
-  ],
-  "line": 20,
-  "name": "Verify that promotion ribbon is displayed for \u003cdevice_name\u003e",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 21,
-  "name": "Click on \"See device details\" link for \u003cdevice_name\u003e and verify correct details are displayed",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 22,
-  "name": "Click on \"Buy Now\" button for \u003cdevice_name\u003e and verify \"Tariffs and Extras\" page is displayed",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 23,
-  "name": "click on \"Pay for your device in full\" link and select a \"random\" tariff",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 24,
-  "name": "I Land on the basket page and choose home delivery option",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 25,
-  "name": "click on \"go to checkout\" button",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 26,
-  "name": "Select existing account and begin fast checkout",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 27,
-  "name": "land on the payment page and input \u003cuser\u003e and other details for upgrade and click \u0027Continue on next step\u0027",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 28,
-  "name": "Continue to Agreements page and confirm all the agreement checks",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 29,
-  "name": "Continue to Review page and review the order",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 30,
-  "name": "order confirmation is displayed",
-  "keyword": "Then "
-});
-formatter.examples({
-  "comments": [
-    {
-      "line": 32,
-      "value": "#Modify the above step to include pdf download"
-    }
-  ],
-  "line": 33,
-  "name": "",
-  "description": "",
-  "id": "c1786-ecom-11527-11529-11633-tc1-new-basecomms-page-ipads-tab-coming-soon-device-promo-header-banner-pay-for-your-device-in-full-link-tariffandextras-page;this-scenario-ensures-that-when-the-customer-lands-on-new-basecomm-page-selects-\"ipads\"-device-,then-the-device-tile-for-the-\u0027coming-soon\u0027-basecomms-device-should-be-displayed-with-the-following-information:;",
-  "rows": [
-    {
-      "cells": [
-        "username",
-        "password",
-        "device_name",
-        "default_colour",
-        "default_capacity",
-        "default_stock_message",
-        "user"
-      ],
-      "line": 34,
-      "id": "c1786-ecom-11527-11529-11633-tc1-new-basecomms-page-ipads-tab-coming-soon-device-promo-header-banner-pay-for-your-device-in-full-link-tariffandextras-page;this-scenario-ensures-that-when-the-customer-lands-on-new-basecomm-page-selects-\"ipads\"-device-,then-the-device-tile-for-the-\u0027coming-soon\u0027-basecomms-device-should-be-displayed-with-the-following-information:;;1"
-    },
-    {
-      "cells": [
-        "07770001111@o2.co.uk",
-        "test123",
-        "Apple�iPad Pro 9.7 inch",
-        "Space Grey",
-        "32GB",
-        "Out of stock",
-        "TEST ACCEPTA"
-      ],
-      "line": 35,
-      "id": "c1786-ecom-11527-11529-11633-tc1-new-basecomms-page-ipads-tab-coming-soon-device-promo-header-banner-pay-for-your-device-in-full-link-tariffandextras-page;this-scenario-ensures-that-when-the-customer-lands-on-new-basecomm-page-selects-\"ipads\"-device-,then-the-device-tile-for-the-\u0027coming-soon\u0027-basecomms-device-should-be-displayed-with-the-following-information:;;2"
-    }
-  ],
-  "keyword": "Examples"
-});
-formatter.before({
-  "duration": 24502023609,
-  "status": "passed"
-});
-formatter.scenario({
-  "line": 35,
-  "name": "This scenario ensures that when the customer lands on new basecomm page selects \"iPads\" device ,then the device tile for the \u0027coming soon\u0027 basecomms device should be displayed with the following information:",
-  "description": "\n1.Device image\n2.Device title\n3.Colour\n4.Capacity\n5.\"See device details\" link\n6.Pricing information should NOT be displayed\n7.Buy Now button NOT be displayed",
-  "id": "c1786-ecom-11527-11529-11633-tc1-new-basecomms-page-ipads-tab-coming-soon-device-promo-header-banner-pay-for-your-device-in-full-link-tariffandextras-page;this-scenario-ensures-that-when-the-customer-lands-on-new-basecomm-page-selects-\"ipads\"-device-,then-the-device-tile-for-the-\u0027coming-soon\u0027-basecomms-device-should-be-displayed-with-the-following-information:;;2",
-  "type": "scenario",
-  "keyword": "Scenario Outline"
-});
-formatter.step({
-  "comments": [
-    {
-      "line": 13,
-      "value": "#Pay for your device in full link should be displayed in Tariff and extras page"
-    }
-  ],
-  "line": 14,
-  "name": "I am existing user and I click on Signin button",
-  "keyword": "Given "
-});
-formatter.step({
-  "line": 15,
-  "name": "Signin using valid 07770001111@o2.co.uk and test123 credentials",
-  "matchedColumns": [
-    0,
-    1
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "line": 16,
-  "name": "I navigate to the Basecomm Page",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 17,
-  "name": "Verify expected Apple�iPad Pro 9.7 inch and its specific details are present in the device list for coming soon device Space Grey,32GB,Out of stock",
-  "matchedColumns": [
-    2,
-    3,
-    4,
-    5
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "comments": [
-    {
-      "line": 18,
-      "value": "#Veirfy device price is not required"
-    },
-    {
-      "line": 19,
-      "value": "#Verify Buy Now button is not enabled"
-    }
-  ],
-  "line": 20,
-  "name": "Verify that promotion ribbon is displayed for Apple�iPad Pro 9.7 inch",
-  "matchedColumns": [
-    2
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "line": 21,
-  "name": "Click on \"See device details\" link for Apple�iPad Pro 9.7 inch and verify correct details are displayed",
-  "matchedColumns": [
-    2
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "line": 22,
-  "name": "Click on \"Buy Now\" button for Apple�iPad Pro 9.7 inch and verify \"Tariffs and Extras\" page is displayed",
-  "matchedColumns": [
-    2
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "line": 23,
-  "name": "click on \"Pay for your device in full\" link and select a \"random\" tariff",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 24,
-  "name": "I Land on the basket page and choose home delivery option",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 25,
-  "name": "click on \"go to checkout\" button",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 26,
-  "name": "Select existing account and begin fast checkout",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 27,
-  "name": "land on the payment page and input TEST ACCEPTA and other details for upgrade and click \u0027Continue on next step\u0027",
-  "matchedColumns": [
-    6
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "line": 28,
-  "name": "Continue to Agreements page and confirm all the agreement checks",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 29,
-  "name": "Continue to Review page and review the order",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 30,
-  "name": "order confirmation is displayed",
-  "keyword": "Then "
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.I_am_existing_user_and_I_click_on_Signin_button()"
-});
-formatter.result({
-  "duration": 27009533756,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "07770001111@o2.co.uk",
-      "offset": 19
-    },
-    {
-      "val": "test123",
-      "offset": 44
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.signin_using_valid_ink_jun_and_test_credentials(String,String)"
-});
-formatter.result({
-  "duration": 18970893007,
-  "status": "passed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.I_navigate_to_the_Basecomm_Page()"
-});
-formatter.result({
-  "duration": 12996843197,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "Apple�iPad Pro 9.7 inch",
-      "offset": 16
-    },
-    {
-      "val": "for coming soon device Space Grey",
-      "offset": 96
-    },
-    {
-      "val": "32GB",
-      "offset": 130
-    },
-    {
-      "val": "Out of stock",
-      "offset": 135
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.verify_expected_device_and_details_are_in_device_list(String,String,String,String)"
-});
-formatter.result({
-  "duration": 514380793,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "Apple�iPad Pro 9.7 inch",
-      "offset": 46
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.verifypromotionribbonDisplay(String)"
-});
-formatter.result({
-  "duration": 368742135,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "Apple�iPad Pro 9.7 inch",
-      "offset": 39
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.Click_on_See_device_details_link_and_verify_correct_details_are_displayed(String)"
-});
-formatter.result({
-  "duration": 287909588,
-  "error_message": "java.lang.AssertionError: Expected device is not present\r\n\tat org.junit.Assert.fail(Assert.java:88)\r\n\tat actionsPerformed.BaseCommPageActions.checkSeeDeviceDetailsPopUp(BaseCommPageActions.java:593)\r\n\tat steps.E2EOrderPlaced_Steps.Click_on_See_device_details_link_and_verify_correct_details_are_displayed(E2EOrderPlaced_Steps.java:3390)\r\n\tat ✽.And Click on \"See device details\" link for Apple�iPad Pro 9.7 inch and verify correct details are displayed(C1786_ECOM-11527-11529-11633_TC1_New_basecomms_page_iPads_tab_coming_soon_device_promo_header_banner_Pay_For_Your_Device_In_Full_link_TariffandExtras_page.feature:21)\r\n",
-  "status": "failed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "Apple�iPad Pro 9.7 inch",
-      "offset": 30
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.SelectdeviceAndVerifyTariffandExtras(String)"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "Pay for your device in full",
-      "offset": 10
-    },
-    {
-      "val": "random",
-      "offset": 58
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.TariffandExtrasPage_payDeviceFull()"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.i_Land_on_the_basket_page_and_choose_home_delivery_option()"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "go to checkout",
-      "offset": 10
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.CheckoutFromBasket(String)"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.Select_existing_account_and_begin_fast_checkout()"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "TEST ACCEPTA",
-      "offset": 35
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.CreditCheckPaymentPage_Upgrade(String)"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.AgreementsPageConfirmation()"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.ReviewPageConfirmation()"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.OrderConfirmationPage()"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.after({
-  "duration": 3125612781,
-  "status": "passed"
-});
-formatter.uri("C1786_ECOM-11527-11529-11633_TC2_New_basecomms_page_Other_tablets_tab_coming_soon_device_promo_header_banner.feature");
-formatter.feature({
-  "line": 1,
-  "name": "C1786_ECOM-11527-11529-11633_TC2_New_basecomms_page_Other_tablets_tab_coming_soon_device_promo_header_banner.feature",
-  "description": "",
-  "id": "c1786-ecom-11527-11529-11633-tc2-new-basecomms-page-other-tablets-tab-coming-soon-device-promo-header-banner.feature",
-  "keyword": "Feature"
-});
-formatter.scenarioOutline({
-  "line": 3,
-  "name": "",
-  "description": "This scenario ensures that when the existing customer lands on new basecomm page selects \"Tablet\" device ,then the device tile for the \u0027coming soon\u0027 basecomms device should be displayed with the following information:\r\n\r\n1.Device image\n 2.Device title\n 3.Colour\n 4.Capacity\n 5.\"See device details\" link\n 6.Pricing information should NOT be displayed\n 7.Buy Now button NOT be displayed",
-  "id": "c1786-ecom-11527-11529-11633-tc2-new-basecomms-page-other-tablets-tab-coming-soon-device-promo-header-banner.feature;",
-  "type": "scenario_outline",
-  "keyword": "Scenario Outline"
-});
-formatter.step({
-  "line": 14,
-  "name": "I am existing user and I click on Signin button",
-  "keyword": "Given "
-});
-formatter.step({
-  "line": 15,
-  "name": "Signin using valid \u003cusername\u003e and \u003cpassword\u003e credentials",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 16,
-  "name": "I navigate to the Basecomm Page",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 17,
-  "name": "Click on Other Tablets tab",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 18,
-  "name": "Verify expected \u003cdevice_name\u003e and its specific details are present in the device list for coming soon device \u003cdefault_colour\u003e,\u003cdefault_capacity\u003e,\u003cdefault_stock_message\u003e",
-  "keyword": "And "
-});
-formatter.step({
-  "comments": [
-    {
-      "line": 19,
-      "value": "#Veirfy device price is not required"
-    },
-    {
-      "line": 20,
-      "value": "#Verify Buy Now button is not enabled"
-    }
-  ],
-  "line": 21,
-  "name": "Verify that promotion ribbon is displayed for \u003cdevice_name\u003e",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 22,
-  "name": "Click on \"See device details\" link for \u003cdevice_name\u003e and verify correct details are displayed",
-  "keyword": "And "
-});
-formatter.examples({
-  "line": 24,
-  "name": "",
-  "description": "",
-  "id": "c1786-ecom-11527-11529-11633-tc2-new-basecomms-page-other-tablets-tab-coming-soon-device-promo-header-banner.feature;;",
-  "rows": [
-    {
-      "cells": [
-        "username",
-        "password",
-        "device_name",
-        "default_colour",
-        "default_capacity",
-        "default_stock_message"
-      ],
-      "line": 25,
-      "id": "c1786-ecom-11527-11529-11633-tc2-new-basecomms-page-other-tablets-tab-coming-soon-device-promo-header-banner.feature;;;1"
-    },
-    {
-      "cells": [
-        "07770001111@o2.co.uk",
-        "test123",
-        "Samsung Galaxy Tab A 2016 10.1",
-        "Black",
-        "16GB",
-        "In Stock"
-      ],
-      "line": 26,
-      "id": "c1786-ecom-11527-11529-11633-tc2-new-basecomms-page-other-tablets-tab-coming-soon-device-promo-header-banner.feature;;;2"
-    }
-  ],
-  "keyword": "Examples"
-});
-formatter.before({
-  "duration": 27203617653,
-  "status": "passed"
-});
-formatter.scenario({
-  "line": 26,
-  "name": "",
-  "description": "This scenario ensures that when the existing customer lands on new basecomm page selects \"Tablet\" device ,then the device tile for the \u0027coming soon\u0027 basecomms device should be displayed with the following information:\r\n\r\n1.Device image\n 2.Device title\n 3.Colour\n 4.Capacity\n 5.\"See device details\" link\n 6.Pricing information should NOT be displayed\n 7.Buy Now button NOT be displayed",
-  "id": "c1786-ecom-11527-11529-11633-tc2-new-basecomms-page-other-tablets-tab-coming-soon-device-promo-header-banner.feature;;;2",
-  "type": "scenario",
-  "keyword": "Scenario Outline"
-});
-formatter.step({
-  "line": 14,
-  "name": "I am existing user and I click on Signin button",
-  "keyword": "Given "
-});
-formatter.step({
-  "line": 15,
-  "name": "Signin using valid 07770001111@o2.co.uk and test123 credentials",
-  "matchedColumns": [
-    0,
-    1
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "line": 16,
-  "name": "I navigate to the Basecomm Page",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 17,
-  "name": "Click on Other Tablets tab",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 18,
-  "name": "Verify expected Samsung Galaxy Tab A 2016 10.1 and its specific details are present in the device list for coming soon device Black,16GB,In Stock",
-  "matchedColumns": [
-    2,
-    3,
-    4,
-    5
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "comments": [
-    {
-      "line": 19,
-      "value": "#Veirfy device price is not required"
-    },
-    {
-      "line": 20,
-      "value": "#Verify Buy Now button is not enabled"
-    }
-  ],
-  "line": 21,
-  "name": "Verify that promotion ribbon is displayed for Samsung Galaxy Tab A 2016 10.1",
-  "matchedColumns": [
-    2
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "line": 22,
-  "name": "Click on \"See device details\" link for Samsung Galaxy Tab A 2016 10.1 and verify correct details are displayed",
-  "matchedColumns": [
-    2
-  ],
-  "keyword": "And "
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.I_am_existing_user_and_I_click_on_Signin_button()"
-});
-formatter.result({
-  "duration": 26268502685,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "07770001111@o2.co.uk",
-      "offset": 19
-    },
-    {
-      "val": "test123",
-      "offset": 44
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.signin_using_valid_ink_jun_and_test_credentials(String,String)"
-});
-formatter.result({
-  "duration": 19349588978,
-  "status": "passed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.I_navigate_to_the_Basecomm_Page()"
-});
-formatter.result({
-  "duration": 13554598526,
-  "status": "passed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.Click_on_Other_Tablets_tab()"
-});
-formatter.result({
-  "duration": 24356491122,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "Samsung Galaxy Tab A 2016 10.1",
-      "offset": 16
-    },
-    {
-      "val": "for coming soon device Black",
-      "offset": 103
-    },
-    {
-      "val": "16GB",
-      "offset": 132
-    },
-    {
-      "val": "In Stock",
-      "offset": 137
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.verify_expected_device_and_details_are_in_device_list(String,String,String,String)"
-});
-formatter.result({
-  "duration": 838793917,
-  "error_message": "java.lang.AssertionError: Expected color not selected by default\r\n\tat org.junit.Assert.fail(Assert.java:88)\r\n\tat actionsPerformed.BaseCommPageActions.checkExpDevAndDetails(BaseCommPageActions.java:722)\r\n\tat steps.E2EOrderPlaced_Steps.verify_expected_device_and_details_are_in_device_list(E2EOrderPlaced_Steps.java:3560)\r\n\tat ✽.And Verify expected Samsung Galaxy Tab A 2016 10.1 and its specific details are present in the device list for coming soon device Black,16GB,In Stock(C1786_ECOM-11527-11529-11633_TC2_New_basecomms_page_Other_tablets_tab_coming_soon_device_promo_header_banner.feature:18)\r\n",
-  "status": "failed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "Samsung Galaxy Tab A 2016 10.1",
-      "offset": 46
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.verifypromotionribbonDisplay(String)"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "Samsung Galaxy Tab A 2016 10.1",
-      "offset": 39
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.Click_on_See_device_details_link_and_verify_correct_details_are_displayed(String)"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.after({
-  "duration": 3215199791,
->>>>>>> refs/remotes/origin/master
-  "status": "passed"
-});
 });
