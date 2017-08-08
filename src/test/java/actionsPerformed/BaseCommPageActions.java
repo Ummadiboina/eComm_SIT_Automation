@@ -602,8 +602,12 @@ public class BaseCommPageActions extends Environment {
 					e = "(//span[@class='pence ng-binding'])[" + k + "]";
 					PoundsElement = driver.findElements(By.xpath(d));
 					PenseElement = driver.findElements(By.xpath(e));
-					/*System.out.println("Pounds List size :" + PoundsElement.size());
-					System.out.println("Pense List size :" + PenseElement.size());*/
+					/*
+					 * System.out.println("Pounds List size :" +
+					 * PoundsElement.size());
+					 * System.out.println("Pense List size :" +
+					 * PenseElement.size());
+					 */
 
 					SeeDeviceDetailsLink = driver.findElement(By.xpath(c));
 					if (SeeDeviceDetailsLink.isDisplayed()) {
@@ -895,10 +899,72 @@ public class BaseCommPageActions extends Environment {
 		}
 	}
 
+	/*
+	 * public static void checkImgSrcBasecommPage(String devicename, String
+	 * capacity, String color) { System.out.
+	 * println("checking whether new image is as per the selected color");
+	 * JavascriptExecutor js = (JavascriptExecutor) driver; String color1 =
+	 * null, color2 = null, colorname = null, capacity_color = null,
+	 * capacityname = null; List<WebElement> images =
+	 * pageobjects.BaseCommPage.ImgSrc; List<WebElement> iPadDevicesName =
+	 * pageobjects.BaseCommPage.iPadDevicesName;
+	 * 
+	 * WebElement colornameelement = null; WebElement element1 = null;
+	 * WebElement element2 = null; WebElement capacitynameelement = null; String
+	 * t = null, u = null; int k = 0, z = 0;
+	 * 
+	 * for (int i = 0; i < iPadDevicesName.size(); i++) {
+	 * System.out.println(iPadDevicesName.get(i).getText()); if
+	 * (iPadDevicesName.get(i).getText().equals(devicename)) {
+	 * System.out.println("device name matches for checking new image"); k = i +
+	 * 1; String c = "(//select[@id='colour'])[" + k + "]";
+	 * 
+	 * WebElement colordropdown = driver.findElement(By.xpath(c));
+	 * js.executeScript("arguments[0].setAttribute('style', 'display:block;')",
+	 * colordropdown); colornameelement = new
+	 * Select(colordropdown).getFirstSelectedOption(); colorname =
+	 * colornameelement.getText().toLowerCase(); color = color.toLowerCase(); if
+	 * (!color.equalsIgnoreCase(colorname)) {
+	 * Assert.fail("color displayed is not the selected color"); }
+	 * 
+	 * String d = "(//select[@id='memory'])[" + k + "]"; WebElement
+	 * capacitydropdown = driver.findElement(By.xpath(d));
+	 * js.executeScript("arguments[0].setAttribute('style', 'display:block;')",
+	 * capacitydropdown); capacitynameelement = new
+	 * Select(capacitydropdown).getFirstSelectedOption(); capacityname =
+	 * capacitynameelement.getText().toLowerCase(); capacity =
+	 * capacity.toLowerCase(); System.out.println("passing capacity : " +
+	 * capacity); System.out.println("selected capacity : " + capacityname);
+	 * 
+	 * if (!capacity.equalsIgnoreCase(capacityname)) {
+	 * Assert.fail("capacity displayed is not the selected capacity"); }
+	 * 
+	 * if (colorname.contains(" ")) { String parts[] = colorname.split(" ");
+	 * color1 = parts[0] + "_" + parts[1]; color2 = parts[0] + "-" + parts[1];
+	 * capacity_color = capacityname + "_" + color1; } else { capacity_color =
+	 * capacityname + "_" + colorname; } System.out.println("Capacity_color" +
+	 * capacity_color);
+	 * 
+	 * }
+	 * 
+	 * }
+	 * 
+	 * for (int i = 0; i < iPadDevicesName.size(); i++) {
+	 * System.out.println(iPadDevicesName.get(i).getText()); if
+	 * (iPadDevicesName.get(i).getText().equals(devicename)) {
+	 * System.out.println("Device name matches"); if
+	 * (images.get(i).getAttribute("src").contains(capacity_color)) {
+	 * System.out.println(images.get(z).getAttribute("src"));
+	 * System.out.println("Image is as per selected color and capacity"); } else
+	 * { Assert.fail("New image is not as per selected color and capacity"); } }
+	 * } }
+	 */
+
 	public static void checkImgSrcBasecommPage(String devicename, String capacity, String color) {
 		System.out.println("checking whether new image is as per the selected color");
 		JavascriptExecutor js = (JavascriptExecutor) driver;
-		String color1 = null, color2 = null, colorname = null, capacity_color = null, capacityname = null;
+		String color1 = null, color2 = null, colorname = null, capacity_color = null, capacity_color1 = null,
+				capacity_color2 = null, capacityname = null;
 		List<WebElement> images = pageobjects.BaseCommPage.ImgSrc;
 		List<WebElement> iPadDevicesName = pageobjects.BaseCommPage.iPadDevicesName;
 
@@ -942,11 +1008,15 @@ public class BaseCommPageActions extends Environment {
 					String parts[] = colorname.split(" ");
 					color1 = parts[0] + "_" + parts[1];
 					color2 = parts[0] + "-" + parts[1];
-					capacity_color = capacityname + "_" + color1;
+					/*capacity_color1 = capacityname + "_" + color1;
+					capacity_color2 = capacityname + "_" + color2;*/
 				} else {
 					capacity_color = capacityname + "_" + colorname;
 				}
+				/*System.out.println("Capacity_color1" + capacity_color1);
+				System.out.println("Capacity_color2" + capacity_color2);*/
 				System.out.println("Capacity_color" + capacity_color);
+				System.out.println("color name " + colorname);
 
 			}
 
@@ -956,18 +1026,27 @@ public class BaseCommPageActions extends Environment {
 			System.out.println(iPadDevicesName.get(i).getText());
 			if (iPadDevicesName.get(i).getText().equals(devicename)) {
 				System.out.println("Device name matches");
-				if (images.get(i).getAttribute("src").contains(capacity_color)) {
-					System.out.println(images.get(z).getAttribute("src"));
-					System.out.println("Image is as per selected color and capacity");
-				} else {
-					Assert.fail("New image is not as per selected color and capacity");
+				System.out.println("image source is " + images.get(i).getAttribute("src"));
+
+				if (!colorname.contains(" ")) {
+					if (images.get(i).getAttribute("src").contains(capacity_color)
+							|| images.get(i).getAttribute("src").contains(colorname)) {
+						System.out.println("image is as per the selected color/capacity");
+					}
+				}
+				if (colorname.contains(" ")) {
+					if (images.get(i).getAttribute("src").contains(color1)
+							|| images.get(i).getAttribute("src").contains(color2)) {
+						System.out.println("image is as per the selected color/capacity");
+					}
 				}
 			}
 		}
 	}
 
 	public static void checkImgSrcTEPage(String devicename, String capacity, String color) {
-		String color1 = null, color2 = null, colorname = null, capacity_color = null, capacityname = null;
+		String color1 = null, color2 = null, colorname = null, capacity_color = null, capacity_color1 = null,
+				capacity_color2 = null, capacityname = null;
 		WebElement image = pageobjects.BaseCommPage.ImgSrcTEpages;
 		WebElement colornameelement = null;
 		WebElement element1 = null;
@@ -995,21 +1074,36 @@ public class BaseCommPageActions extends Environment {
 			String parts[] = colorname.split(" ");
 			color1 = parts[0] + "_" + parts[1];
 			color2 = parts[0] + "-" + parts[1];
-			capacity_color = capacityname + "_" + color1;
+			capacity_color1 = capacityname + "_" + color1;
+			capacity_color2 = capacityname + "_" + color2;
 		} else {
 			capacity_color = capacityname + "_" + colorname;
 		}
+		System.out.println("Capacity_color1" + capacity_color1);
+		System.out.println("Capacity_color2" + capacity_color2);
 		System.out.println("Capacity_color" + capacity_color);
+		System.out.println("color name " + colorname);
 
 		if (image.getAttribute("title").equals(devicename)) {
 			System.out.println("device name matches to check for new image");
-			if (image.getAttribute("src").contains(capacity_color)) {
-				System.out.println(image.getAttribute("src"));
-				System.out.println("Image is as per selected color");
-			} else {
-				Assert.fail("new image is not as per the selected color and capacity");
+			System.out.println("Device name matches");
+			System.out.println("image source is " + image.getAttribute("src"));
+
+			if (!colorname.contains(" ")) {
+				if (image.getAttribute("src").contains(capacity_color)
+						|| image.getAttribute("src").contains(colorname)) {
+					System.out.println("image is as per the selected color/capacity");
+				}
 			}
+			if (colorname.contains(" ")) {
+				if (image.getAttribute("src").contains(capacity_color1)
+						|| image.getAttribute("src").contains(capacity_color2)) {
+					System.out.println("image is as per the selected color/capacity");
+				}
+			}
+
 		}
+
 	}
 
 	public static void checkRecommendedTariffIsAtFirstTile() {
