@@ -5,6 +5,7 @@ import java.util.concurrent.TimeUnit;
 
 import org.apache.log4j.Logger;
 import org.junit.Assert;
+import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
@@ -327,24 +328,26 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 				System.out.println("selecting accessories");
 				List<WebElement> DataContainer = pageobjects.PAYMandPAYGTariffAndExtrasPage.Add_AccessoryContainer;
 				System.out.println("DAtacontainer size : " + DataContainer.size());
-
-				if (DataContainer.size() < 6) {
+				int u=0;
+			//	if (DataContainer.size() < 6) {
 					loop = DataContainer.size();
 					for (int i = 0; i < loop; i++) {
-						System.out.println(DataContainer.get(i).getText());
-						DataContainer.get(i).click();
+						//System.out.println(driver.findElements(By.xpath("//*[@id='accessoryTile_']")).get(i).getText());
+						Thread.sleep(2000);
+						DataContainer.get(0).click();
 						Thread.sleep(3000);
 						System.out.println("Selected accessories");
 					}
-				} else {
+				} 
+			/*else {
 					for (int i = 0; i < 6; i++) {
 						System.out.println(DataContainer.get(i).getText());
 						DataContainer.get(i).click();
 						Thread.sleep(3000);
 						System.out.println("Selected accessories");
-					}
-				}
-			}
+					}*/
+				
+			
 		} catch (Exception e) {
 			System.out.println("No accessories found");
 			Assert.fail("No accessories found");

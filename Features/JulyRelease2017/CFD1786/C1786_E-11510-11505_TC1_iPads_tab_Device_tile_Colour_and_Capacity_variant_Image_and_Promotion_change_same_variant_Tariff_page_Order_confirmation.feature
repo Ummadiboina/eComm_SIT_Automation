@@ -27,4 +27,4 @@ Scenario Outline:
 	#make sure that device is ipad air 2 else validation fails for promotion
 	Examples: 
 		| username | password | device_name | default_colour | default_capacity | default_stock_message | color  | capacity | user|
-		| 07770001111@o2.co.uk | test123  | Apple iPad 9.7| Space Grey| 32GB|In Stock|Gold|128GB    | TEST ACCEPTA |
+		| 07770001111@o2.co.uk | test123  | Apple iPad 9.7| Space Grey| 32GB|In Stock|Space Grey|128GB    | TEST ACCEPTA |
