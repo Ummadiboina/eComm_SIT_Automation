@@ -1,6 +1,6 @@
 Feature: Reg_CS_OrderingIpadSim
 
-  @RegressionIpad
+  @ConsumerShop
   Scenario Outline: Ipad SimO Only PAYG E2E validation
     Given I am an CFA user and Lands on shop page
     And Navigate to sims and Ipad Sims page

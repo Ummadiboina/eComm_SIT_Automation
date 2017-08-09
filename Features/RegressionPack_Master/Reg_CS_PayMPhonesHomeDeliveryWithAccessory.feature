@@ -1,6 +1,6 @@
 Feature: Reg_CS_PayMPhonesHomeDeliveryWithAccessory 
 
-@1 
+@ConsumerShop
 Scenario Outline: CFA PayM Phones Home delivery E2E journey with Accessory 
 	Given I am an CFA user and Lands on shop page 
 	And navigate to PAYM Phones page 

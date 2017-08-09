@@ -101,7 +101,7 @@ public class CVOS_PageObjects extends Environment {
 	@FindBy(how = How.XPATH, using = "//*[@id='mainNav']/div/ul[2]/li[2]/a")
 	public static WebElement logOut;
 
-	@FindBy(how = How.XPATH, using = "//*[@id='stockpotTable']/div[2]/div/div[1]/div[4]/div[2]/div/div/span/a")
+	@FindBy(how = How.XPATH, using = "//span[contains(text(),'All Shops')]/following::a[1]")
 	public static WebElement deviceLink;
 
 	@FindBy(how = How.XPATH, using = "//*[@id='btnEditStockPot']")
@@ -130,4 +130,10 @@ public class CVOS_PageObjects extends Environment {
 
 	@FindBy(how = How.XPATH, using = "//*[@id='stockpotTable']/div[2]/div/div[1]/div[6]/div[2]/div/span")
 	public static WebElement DDStockStatus;
+
+	@FindBy(how = How.XPATH, using = "//*[@id='btnEditStockPot']")
+	public static WebElement editlink;
+
+	@FindBy(how = How.XPATH, using = "//td/p[contains(text(),'All Shops')]/following::td[6]")
+	public static WebElement allShops;
 }

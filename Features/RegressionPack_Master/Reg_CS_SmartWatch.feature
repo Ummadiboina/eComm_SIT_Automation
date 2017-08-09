@@ -1,6 +1,6 @@
 Feature: Reg_CS_SmartWatch
 
- @Regression
+ @ConsumerShop
   Scenario Outline:  Smart Watches only E2E journey
     Given I am an CFA user and Lands on shop page
     And Navigate to SmartWatches

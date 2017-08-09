@@ -149,10 +149,11 @@ public class CVOSstockpotPageActions extends Environment {
 		pageobjects.CVOS_PageObjects.searchButton.click();
 		log.debug("The search button is clicked");
 		System.out.println("The search button is clicked");
-				
+		
+		Thread.sleep(4000);;
 		pageobjects.CVOS_PageObjects.deviceLink.click();
 		log.debug("The Device link for all shops is clicked");
-		System.out.println("The search button is clicked");
+		System.out.println("The Device link for all shops is clicked");
 		
 	}
 

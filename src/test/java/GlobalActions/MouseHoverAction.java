@@ -165,7 +165,7 @@ static	Logger log = Logger.getLogger("devpinoyLogger");
 		  
 		  Point coordinates = pageobjects.MouseHoverPage.MoveMouseOnShopTab.getLocation();
 		  Robot robot = new Robot();
-		  robot.mouseMove(coordinates.getX(),coordinates.getY()+120);
+		  robot.mouseMove(coordinates.getX(),coordinates.getY()+110);
 			 log.debug("Moving Mouse on the Shop Tab");
 
 		  
@@ -173,12 +173,12 @@ static	Logger log = Logger.getLogger("devpinoyLogger");
 		  action.moveToElement(pageobjects.MouseHoverPage.MoveMouseOnSims).build().perform();
 			 log.debug("Moving Mouse on the Sims in Shop Dropdown");
 
-		  Thread.sleep(1000);
+		  Thread.sleep(3000);
 		  action.moveToElement(pageobjects.MouseHoverPage.MoveMouseOnTabletSims).build().perform();
 			 log.debug("Moving Mouse on the Ipad Sims link");
 		   Screenshots.screennewPics();
 
-		  Thread.sleep(1000);
+		  Thread.sleep(3000);
 		  pageobjects.MouseHoverPage.MoveMouseOnTabletSims.click();
 		  Screenshots.screennewPics();
 		  
@@ -691,9 +691,15 @@ static	Logger log = Logger.getLogger("devpinoyLogger");
 		    	{
 			  System.out.println("Performing navigations to PAYG MBB");
 			  log.debug("Performing navigations to PAYG MBB");
+		  
+			  driver.navigate().refresh();
+			  Thread.sleep(5000);
+			  
 			  Point coordinates = pageobjects.MouseHoverPage.MoveMouseOnShopTab.getLocation();
-			  Robot robot = new Robot();
-			  robot.mouseMove(coordinates.getX(),coordinates.getY()+120);
+	   		  Robot robot = new Robot();
+	   		  robot.mouseMove(coordinates.getX(),coordinates.getY()+110);
+	   		 		  
+	   		  	   		  
 			  log.debug("Moving Mouse on the Shop Tab");
 			  Actions action = new Actions(driver);
 			  action.moveToElement(pageobjects.MouseHoverPage.MoveMouseOnMobileBroadband).build().perform();
