@@ -919,6 +919,7 @@ public class E2EOrderPlaced_Steps {
 			Thread.sleep(75000);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
+			e.printStackTrace();
 			System.out.println("Unable to input details in payment page");
 			Assert.fail("Unable to input details in payment page");
 
@@ -2528,7 +2529,10 @@ public class E2EOrderPlaced_Steps {
 			PageFactory.initElements(driver, PAYMandPAYGTariffAndExtrasPage.class);
 			Thread.sleep(3000);
 			// BasketPageActions.ValidateContentEcomm11522();
-			BasketPageActions.verifyNCDRemovedinBasketPageAfterCDSelection();
+			//BasketPageActions.verifyNCDRemovedinBasketPageAfterCDSelection();
+			//AccessoryPageActions.removeItemsFromBasketBasedOnAdditionOfItems();
+			AccessoryPageActions.check();
+			
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			System.out.println("Unable to add Fitnesstracker to basket");
@@ -2785,7 +2789,7 @@ public class E2EOrderPlaced_Steps {
 			log.debug(
 					"Running Test Step: @And(Verify all non connected devices got added to the basket section before selecting connected device)");
 			AccessoryPageActions.verifyNonConnectedDeviceAddedToBasketBefore();
-			AccessoryPageActions.removeItemsFromBasketBasedOnAdditionOfItems();
+			//AccessoryPageActions.removeItemsFromBasketBasedOnAdditionOfItems();
 			log.debug(
 					"Pass: Verified that all non connected devices got added to basket successfully before selecting connected device");
 		} catch (Exception e) {
@@ -3978,6 +3982,21 @@ public class E2EOrderPlaced_Steps {
 			Assert.fail("Unable to choose some Accesssory");
 
 		}
+	}
+	@And("^I Land on the basket page by clicking on Add to Basket button$")
+	public void i_Land_on_the_basket_page_by_clicking_AddToBasket() throws Throwable {
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, BasketPage.class);
+			PageFactory.initElements(driver, PAYMandPAYGTariffAndExtrasPage.class);
+			PAYMandPAYGTariffAndExtrasPageActions.addToBasketLive();
+			Thread.sleep(3000);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			System.out.println("Unable to Land on the basket page and choose home delivery option");
+			Assert.fail("Unable to Land on the basket page and choose home delivery option");
 
+		}
 	}
 }

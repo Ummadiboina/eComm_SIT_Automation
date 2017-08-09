@@ -18,6 +18,7 @@ public class AccessoryPageActions extends Environment {
 
 	static Logger log = Logger.getLogger("devpinoyLogger");
 	static int UserSpecifiedAccessoryLimit = 0;
+	static int count = 0;
 
 	public static void Elementdisplayvalidation(String Tabname) {
 		System.out.println(" ");
@@ -244,7 +245,7 @@ public class AccessoryPageActions extends Environment {
 						By.xpath("//div[@on-dimension-select='selectQuantityDimension']/span[@role='combobox']"));
 				String DeviceDetailsQuantityValue = DeviceDetailsQuantity.getText();
 				System.out.println("DeviceDetailsQuantityValue is " + DeviceDetailsQuantityValue);
-
+				count = count + Integer.parseInt(Limit);
 				driver.findElement(By.id("deviceDetailsSubmit")).click();
 
 				Thread.sleep(7000);
@@ -527,16 +528,18 @@ public class AccessoryPageActions extends Environment {
 		}
 	}
 
-	public static void removeItemsFromBasketBasedOnAdditionOfItems() {
+/*	public static void removeItemsFromBasketBasedOnAdditionOfItems() {
+		System.out.println("inside Remove items function");
 		int TotalQtyInBasket = 0;
 
 		TotalQtyInBasket = (FitnessTrackerPageActions.UserSpecifiedFitnessTrackerLimit
 				+ AccessoryPageActions.UserSpecifiedAccessoryLimit
 				+ PAYMandPAYGTariffAndExtrasPageActions.SelectedAccessoryCount);
+		System.out.println("Total qty in basket is " + TotalQtyInBasket);
 		if (TotalQtyInBasket > 12) {
 			driver.findElement(By.xpath("(//a[contains(., 'Remove')])[1]")).click();
 		}
-	}
+	}*/
 
 	public static void verifyNonConnectedDeviceRetainedInBasketAfterPhoneSelection() throws InterruptedException {
 		log.debug("Opening verifyNonConnectedDeviceRetainedInBasketAfterPhoneSelection function");
@@ -623,6 +626,31 @@ public class AccessoryPageActions extends Environment {
 			System.out.println(
 					"Assertion failed: Non Connected device is not present in the Basket section after phone selection"
 							+ e.getMessage() + "");
+		}
+	}
+
+	public static void check() {
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		WebElement FirstAccessoryQuantityElement = driver
+				.findElement(By.xpath("(//select[@id='accessory-quantity'])[1]"));
+		js.executeScript("arguments[0].setAttribute('style', 'display:block;')", FirstAccessoryQuantityElement);
+
+		System.out.println("Printing the First Accessory Quantity");
+		WebElement countelement1 = new Select(FirstAccessoryQuantityElement).getFirstSelectedOption();
+		String FirstCount = countelement1.getText();
+		System.out.println("FirstCount IS " + FirstCount);
+
+		WebElement SecondAccessoryQuantityElement = driver
+				.findElement(By.xpath("(//select[@id='accessory-quantity'])[1]"));
+		js.executeScript("arguments[0].setAttribute('style', 'display:block;')", SecondAccessoryQuantityElement);
+
+		System.out.println("Printing the Second Accessory Quantity");
+		WebElement countelement2 = new Select(SecondAccessoryQuantityElement).getFirstSelectedOption();
+		String SecondCount = countelement2.getText();
+		System.out.println("SecondCount is " + SecondCount);
+
+		if ((count - PAYMandPAYGTariffAndExtrasPageActions.AccessoryContainerSize) == (Integer.parseInt(FirstCount) + Integer.parseInt(SecondCount))) {
+			System.out.println("success");
 		}
 	}
 

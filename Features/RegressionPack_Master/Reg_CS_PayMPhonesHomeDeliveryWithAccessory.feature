@@ -19,3 +19,4 @@ Scenario Outline: CFA PayM Phones Home delivery E2E journey with Accessory
 	Examples: 
 		| handset  | Firstname | Surname | Username     |
 		| GalaxyS8 | TEST      | ACCEPTA | TEST ACCEPTA |
+		| GalaxyS7 | TEST      | ACCEPTA | TEST ACCEPTA |

@@ -330,7 +330,8 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 			if (ele0 != null) {
 				System.out.println("selecting accessories");
 				List<WebElement> DataContainer = pageobjects.PAYMandPAYGTariffAndExtrasPage.Add_AccessoryContainer;
-				AccessoryContainerSize = DataContainer.size();
+				int size = DataContainer.size();
+				AccessoryContainerSize = size;
 				System.out.println("DAtacontainer size : " + AccessoryContainerSize);
 				int u = 0;
 				if (AccessoryContainerSize < 6) {

@@ -96,7 +96,7 @@ public class PaymentPageActions extends Environment {
 		  pageobjects.PaymentPage.Stay_Address_months.sendKeys("9");
 		  log.debug("Entered the stayed at months - 9");
 		  
-		  Thread.sleep(3000);
+		  Thread.sleep(5000);
 		  pageobjects.PaymentPage.Confirm_Address_Checkbox.click();
 		  log.debug("Clicked on the Confirm Address checkbox");
 		  
@@ -110,7 +110,7 @@ public class PaymentPageActions extends Environment {
 
 			System.out.println("********We are switch to the iframe*******");
 			  log.debug("Entering the Payments section");
-			  Thread.sleep(2000);
+			  Thread.sleep(5000);
 			PaymentPage.Name_On_Card.sendKeys(Username);
 			log.debug("Entering name of the card as "+Username);
 			
