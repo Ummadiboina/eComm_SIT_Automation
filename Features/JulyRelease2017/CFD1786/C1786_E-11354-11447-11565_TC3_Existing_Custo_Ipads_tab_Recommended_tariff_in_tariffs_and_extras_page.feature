@@ -14,4 +14,4 @@ Feature: C1786_E-11354-11447-11565_TC3_Existing_Custo_Ipads_tab_Recommended_tari
 
     Examples: 
       | username             | password | device_name       | default_colour | default_capacity | default_stock_message |
-      | 07770001111@o2.co.uk | test123  | Apple iPad mini 4 | Silver         | 32GB             | In Stock              |
+      | 07770001111@o2.co.uk | test123  | Apple iPad Pro 10.5 inch|Space Grey | 64GB             | In Stock              |

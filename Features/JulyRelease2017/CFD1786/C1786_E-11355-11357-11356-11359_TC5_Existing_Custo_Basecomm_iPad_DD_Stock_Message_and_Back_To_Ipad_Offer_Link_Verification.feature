@@ -20,4 +20,4 @@ Scenario Outline:
 	
 	Examples: 
 		| username             | password | device_name      |default_colour | default_capacity | default_stock_message |color|capacity|
-		| 07770001111@o2.co.uk | test123  | Apple iPad mini 4| Space Grey|128GB|Home delivery|Space Grey|128GB|
+		| 07770001111@o2.co.uk | test123  |Apple iPad Pro 10.5 inch| Gold|512GB|Home delivery|Gold|512GB|

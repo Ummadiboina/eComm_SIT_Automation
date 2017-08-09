@@ -2,6 +2,7 @@ package actionsPerformed;
 
 import org.apache.log4j.Logger;
 import org.openqa.selenium.JavascriptExecutor;
+import org.testng.Assert;
 
 import helpers.Environment;
 
@@ -21,6 +22,13 @@ public class UpgradeCustomerPageActions extends Environment {
 			// jse.executeScript("window.scrollBy(0,300)", "");
 
 		}
+		Thread.sleep(5000);
+		if(!driver.getTitle().equals("O2 | Accounts | Please verify your email address")){
+			Assert.fail("Login failed");
+		}
+		else {
+			System.out.println("Logged in successfully");
+		}
 
 		/*
 		 * try { System.out.println("Going to click on Continue link");
@@ -32,8 +40,6 @@ public class UpgradeCustomerPageActions extends Environment {
 		 * 
 		 * }
 		 */
-
-		Thread.sleep(5000);
 
 	}
 

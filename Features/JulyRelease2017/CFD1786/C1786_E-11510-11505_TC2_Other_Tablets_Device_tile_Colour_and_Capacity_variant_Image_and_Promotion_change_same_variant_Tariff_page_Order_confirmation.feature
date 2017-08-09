@@ -10,8 +10,8 @@ This scenario ensures that when the existing customer lands on new basecomm page
 	And Click on Other Tablets tab 
 	And Verify expected <device_name> and its specific details are present in the device list <default_colour>,<default_capacity>,<default_stock_message> 
 	#Veirfy device price details are also getting displayed in the above step
-	And Select <color>, <capacity> of the device <device_name> 
 	And Verify that promotion ribbon is displayed for <device_name> 
+	And Select <color>, <capacity> of the device <device_name> 
 	And Verify new image is as per the selected <device_name>,<capacity>and <color> in the Basecomms page 
 	And Click on "Buy Now" button for <device_name> and verify "Tariffs and Extras" page is displayed 
 	And Verify new image is as per the selected <device_name>,<capacity>and <color> in the Tariffs and Extras Page 
@@ -26,5 +26,5 @@ This scenario ensures that when the existing customer lands on new basecomm page
 	
 	#Modify the above step to include pdf download
 	Examples: 
-		| username             | password | device_name     | default_colour | default_capacity | default_stock_message | color | capacity | user         |
-		| 07770001111@o2.co.uk | test123  | Alcatel Plus 10 | Silver         | 32GB             | In Stock              | Silver| 32GB     | TEST ACCEPTA |
+		| username| password | device_name | default_colour | default_capacity | default_stock_message | color | capacity | user |
+		| 07770001111@o2.co.uk | test123  | Sony Xperia Z4 Tablet|Black|32GB| Out of stock| White| 32GB     | TEST ACCEPTA |

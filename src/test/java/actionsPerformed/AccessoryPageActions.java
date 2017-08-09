@@ -4,6 +4,7 @@ import helpers.Environment;
 import helpers.Filereadingutility;
 import helpers.setRuntimeProperty;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.apache.log4j.Logger;
@@ -387,7 +388,7 @@ public class AccessoryPageActions extends Environment {
 	 * + e.getMessage() + ""); } }
 	 */
 
-	public static void verifyNonConnectedDeviceAddedToBasketBefore() throws InterruptedException {
+/*	public static void verifyNonConnectedDeviceAddedToBasketBefore() throws InterruptedException {
 		log.debug("Opening verifyNonConnectedDeviceAddedToBasketBefore function");
 		String AccessoryName = "";
 		String FitnessTrackerName = "";
@@ -439,8 +440,80 @@ public class AccessoryPageActions extends Environment {
 					+ e.getMessage() + "");
 			Assert.fail("Non Connected device is not present in the Basket section");
 		}
-	}
+	}*/
 
+	public static void verifyNonConnectedDeviceAddedToBasketBefore() throws InterruptedException {
+		log.debug("Opening verifyNonConnectedDeviceAddedToBasketBefore function");
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		String AccessoryName = "";
+		String FitnessTrackerName = "";
+		String SmartWatchName = "";
+		int TotalQuantity = 0;
+		List<Integer> count = new ArrayList();
+		String FirstOption = null;
+		List<Integer> FirstOptionList = new ArrayList();
+		try {
+			List<WebElement> AccessoryBeofrePhoneSelection = driver
+					.findElements(By.xpath("//*[@id='shopApp']/div[4]/div/div/div[1]/div[2]/ul/li[3]/section/h3/span"));
+			if (AccessoryBeofrePhoneSelection.size() > 0) {
+
+				if (pageobjects.AccessoryPage.AccesoryBeforePhoneSelection.isDisplayed()) {
+					AccessoryName = pageobjects.AccessoryPage.AccesoryBeforePhoneSelection.getText();
+					setRuntimeProperty.setProperty("Accessory", AccessoryName);
+					System.out.println("Accessory is: " + AccessoryName);
+				}
+			}
+
+			List<WebElement> FitnessTrackerBeofrePhoneSelection = driver
+					.findElements(By.xpath("//*[@id='shopApp']/div[4]/div/div/div[1]/div[2]/ul/li[1]/section/h3/span"));
+			if (FitnessTrackerBeofrePhoneSelection.size() > 0) {
+				if (pageobjects.AccessoryPage.FitnessTrackerBeforePhoneSelection.isDisplayed()) {
+					FitnessTrackerName = pageobjects.AccessoryPage.FitnessTrackerBeforePhoneSelection.getText();
+					setRuntimeProperty.setProperty("FitnessTracker", FitnessTrackerName);
+					System.out.println("FitnessTracker is: " + FitnessTrackerName);
+				}
+			}
+
+			List<WebElement> SmartWatchBeofrePhoneSelection = driver
+					.findElements(By.xpath("//*[@id='shopApp']/div[4]/div/div/div[1]/div[2]/ul/li[2]/section/h3/span"));
+			if (SmartWatchBeofrePhoneSelection.size() > 0) {
+				if (pageobjects.AccessoryPage.SmartWatchBeforePhoneSelection.isDisplayed()) {
+					SmartWatchName = pageobjects.AccessoryPage.SmartWatchBeforePhoneSelection.getText();
+					setRuntimeProperty.setProperty("SmartWatch", SmartWatchName);
+					System.out.println("SmartWatch is: " + SmartWatchName);
+				}
+			}
+
+			List<WebElement> AccessoryQuantityList = driver.findElements(By.id("accessory-quantity"));
+
+			js.executeScript("arguments[0].setAttribute('style', 'display:block;')", AccessoryQuantityList);
+			System.out.println("Size " + AccessoryQuantityList.size());
+			System.out.println("Printing the Accessory Quantity List");
+			for (int i = 0; i < AccessoryQuantityList.size(); i++) {
+				System.out.println(AccessoryQuantityList.get(i).getText());
+			}
+
+			/*
+			 * new Select((WebElement)
+			 * AccessoryQuantityList).getFirstSelectedOption();
+			 * System.out.println("default color for this device is :" +
+			 * firstcolor.getText());
+			 */
+			log.debug(
+					"Successfully verified that Non connected devices are added to the basket before phone selection");
+			System.out.println(
+					"Successfully verified that Non connected devices are added to the basket before phone selection");
+		}
+
+		catch (Exception e) {
+
+			log.debug("Fail: Nonconnected device is not present in the Basket section before phone selection "
+					+ e.getMessage() + "");
+			System.out.println("Fail: Nonconnected device is not present in the Basket section before phone selection "
+					+ e.getMessage() + "");
+			Assert.fail("Non Connected device is not present in the Basket section");
+		}
+	}
 	public static void verifyNonConnectedDeviceRetainedInBasketAfterPhoneSelection() throws InterruptedException {
 		log.debug("Opening verifyNonConnectedDeviceRetainedInBasketAfterPhoneSelection function");
 		System.out.println("Opening verifyNonConnectedDeviceRetainedInBasketAfterPhoneSelection function");
