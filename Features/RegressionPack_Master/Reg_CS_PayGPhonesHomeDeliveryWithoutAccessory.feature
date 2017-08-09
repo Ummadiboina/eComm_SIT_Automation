@@ -1,10 +1,10 @@
 Feature: Reg_CS_PayGPhonesHomeDeliveryWithoutAccessory
 
-  @Regression
+  @ConsumerShop
   Scenario Outline: CFA PayG Phones Home delivery E2E journey
     Given I am an CFA user and Lands on shop page
     And navigate to Pay as you Go Phones page
-    And I choose PayG "handset"
+    And I choose PayG <handset>
     And Navigate to device details page
     And Land on the 'Tariffs and extra' page
     And I Land on the basket page and choose home delivery option

@@ -127,7 +127,8 @@ public static void CVOSSupplyChainStockMerchDD(String Search_by_model) throws In
 	pageobjects.CVOS_PageObjects.applyLaunchDateButton.click();
 	log.debug("The Apply button to set the launch date is selected");
 	System.out.println("The Apply button to set the launch date is selected");
-	Thread.sleep(5000);
+	
+	Thread.sleep(10000);
 	
 	pageobjects.CVOS_PageObjects.checkBoxDevice.click();
 	log.debug("The Check box for Launch date is clicked");

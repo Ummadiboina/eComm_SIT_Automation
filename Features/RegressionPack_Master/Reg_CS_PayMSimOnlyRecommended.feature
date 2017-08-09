@@ -1,6 +1,6 @@
 Feature: Reg_CS_PayMSimOnlyRecommended
 
-  @Regression
+  @ConsumerShop
   Scenario Outline: Sim Only PayM Recommended Tariff selection E2E validation
     Given I am an CFA user and Lands on shop page
     And navigate to PAYM SIMO page

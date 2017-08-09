@@ -21,4 +21,4 @@ Feature: Reg_AFA_PAYM_Acquistion
 
     Examples: 
       | Device              | Tariffs | Extras | DeliveryType | Firstname | Surname | Username     |
-      | S7 edge black 32 GB | Random  | Random | HomeDelivery | Test      | Accepta | Test Accepta |
+      | S7 edge black 32 GB | Random  | Random | HomeDelivery | TEST      | ACCEPTA | TEST ACCEPTA |

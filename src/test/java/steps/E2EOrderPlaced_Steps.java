@@ -241,7 +241,7 @@ public class E2EOrderPlaced_Steps {
 			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 			PageFactory.initElements(driver, MouseHoverPage.class);
 			MouseHoverAction.SimIpadSimsPage();
-			Autoredirection.redirectforHTTPconnections();
+			Autoredirection.redirectforHTTPsconnections();
 			Thread.sleep(10000);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
@@ -256,7 +256,7 @@ public class E2EOrderPlaced_Steps {
 			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 			PageFactory.initElements(driver, MouseHoverPage.class);
 			MouseHoverAction.SimTabletsSimsPage();
-			Autoredirection.redirectforHTTPconnections();
+			Autoredirection.redirectforHTTPsconnections();
 			Thread.sleep(10000);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
@@ -319,13 +319,12 @@ public class E2EOrderPlaced_Steps {
 		}
 	}
 
-	@Given("^I choose PayG \"([^\"]*)\"$")
-	public void Choose_PAYG_Handset(String arg1) throws Throwable {
+	@Given("^I choose PayG ([^\"]*)$")
+	public void Choose_PAYG_Handset(String device) throws Throwable {
 		try {
 			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 			PageFactory.initElements(driver, PhonesListingPage.class);
 			PhonesListingPageAction.PAYGPhoneSelect("Random Device");
-			// PhonesListingPageAction.PAYGPhoneSelect("MotoG5");
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			System.out.println("Unable to choose PayG phone");
@@ -781,9 +780,7 @@ public class E2EOrderPlaced_Steps {
 			PageFactory.initElements(driver, BasketPage.class);
 			PageFactory.initElements(driver, PAYMandPAYGTariffAndExtrasPage.class);
 			Thread.sleep(3000);
-			// Assert.assertEquals("The condition is ",
-			// driver.findElement(By.xpath("//*[@value='Go to checkout'][1]")));
-			// driver.findElement(By.xpath("//*[@value='Go to checkout'][1]"));
+			Autoredirection.redirectforHTTPsconnections();
 			BasketPageActions.BasketContentsforNonConnected();
 			BasketPageActions.CollectionorDelivery("homeDelivery");
 		} catch (Exception e) {

@@ -13,7 +13,7 @@ public class SimsPageActions extends Environment{
 		if(elementname.contains("Random Tariff"))
 
 		{
-			System.out.println("Selecting Any Ipad Sim");
+			System.out.println("Entering method for Selecting Any Ipad Sim");
 			log.debug("Selecting Any Ipad Sim");
 			log.debug("Selected an IpadSim -  "+pageobjects.SimsPage.IpadPromo1.getText());
 			pageobjects.SimsPage.IpadPromo1.click();
