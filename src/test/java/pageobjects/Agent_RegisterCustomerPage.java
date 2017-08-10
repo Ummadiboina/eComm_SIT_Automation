@@ -96,10 +96,10 @@ public class Agent_RegisterCustomerPage {
 		@FindBy(how=How.ID,using="ddlYr")
 		public static WebElement CardYear;
 			
-		@FindBy(how=How.ID,using="//*[@id='txtCardSecurityCode']")
+		@FindBy(how=How.XPATH,using="//span[@class='setItem cvvWrapper']/input")
 		public static WebElement SecurityCode;
 		
-		@FindBy(how=How.ID,using="//*[@id='btnPayNow']")
+		@FindBy(how=How.XPATH,using="//*[@id='btnPayNow']")
 		public static WebElement UsethisCard;
 				
 		@FindBy(how=How.XPATH,using="//*[@id='creditCheckAndAgreementAndStatus']/input[3]")

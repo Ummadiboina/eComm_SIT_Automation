@@ -1,4 +1,3 @@
-
 Feature: C1960_E11522_TC3_Agent_Existing_user_new_acquisition_verify_Base_Comms_tariff_under_offer_column_order_placement_O2_offer
 
   Scenario Outline: This scenario ensures that when the Agent in Existing user journey clicks on the Tariffs tab, then the agent should be able to see Base Comms tariff  highlighted or tagged differently along with normal tariffs and should be able to place order
@@ -19,4 +18,4 @@ Feature: C1960_E11522_TC3_Agent_Existing_user_new_acquisition_verify_Base_Comms_
 
     Examples: 
       | Device | Tariffs | Extras | DeliveryType | Firstname | Surname | Username     |
-      | Random | Base    | Random | HomeDelivery | Test      | Accepta | Test Accepta |
+      | Random | Base    | Base   | HomeDelivery | Test      | Accepta | Test Accepta |

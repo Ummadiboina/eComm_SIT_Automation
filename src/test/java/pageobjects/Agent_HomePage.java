@@ -30,7 +30,18 @@ public class Agent_HomePage {
 		public static WebElement UpgradeLink;		
 		
 		@FindBy(how=How.ID, using = "emptyDealButton")
-		public static WebElement emptyDealButton;		
+		public static WebElement emptyDealButton;	
+		
+		@FindBy(how=How.XPATH,using="//*[@class='sectionHeading']/strong")
+		public static WebElement UpgradeOpsAgent;
+		
+		@FindBy(how=How.XPATH,using="//*[@id='handset']/div[2]/a")
+		public static WebElement AgentHandsetUpgradeOptions;
+
+		@FindBy(how=How.XPATH,using="//*[@id='simo']/div[2]/a")
+		public static WebElement AgentSimoUpgradeOptions;
+		
+		
 		
 		
 		@FindBy(how=How.ID,using="notfound")

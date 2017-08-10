@@ -1343,19 +1343,19 @@ public class E2EOrderPlaced_Steps {
 
 	@Given("^performs Upgrade for ([^\"]*)$")
 	public void performs_Upgrade(String msisdn) throws Throwable {
-		try {
+		//try {
 			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 			PageFactory.initElements(driver, Agent_HomePage.class);
 			Agent_HomePagePageActions.FindUser(msisdn);
 			Thread.sleep(3000);
 			Agent_HomePagePageActions.upgradeUser();
 			Thread.sleep(4000);
-		} catch (Exception e) {
+/*		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			System.out.println("Unable to login for upgrade for user in Agent shop, please see the failure screenshot");
 			Assert.fail("Unable to login for upgrade for user in Agent shop, please see the failure screenshot");
 
-		}
+		}    */
 	}
 
 	@Given("^performs Acquisition for New user$")
@@ -1633,7 +1633,7 @@ public class E2EOrderPlaced_Steps {
 	@When("^Pay by card$")
 	public void pay_by_card() throws Throwable {
 		driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
-		try {
+	try {
 			PageFactory.initElements(driver, Agent_RegisterCustomerPage.class);
 			Agent_RegisterCustomerActions.PaybyCard();
 			Agent_RegisterCustomerActions.CardDetails();
@@ -1642,7 +1642,7 @@ public class E2EOrderPlaced_Steps {
 			System.out.println("Unable to Pay by card , please see the failure screenshot");
 			Assert.fail("Unable to Pay by card , please see the failure screenshot");
 
-		}
+		}   
 	}
 
 	@When("^Pay by card for PAYM device$")
