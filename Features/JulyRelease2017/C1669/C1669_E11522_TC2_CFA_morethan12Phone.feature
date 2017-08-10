@@ -19,7 +19,6 @@ Scenario Outline: E11522_CFA_MoreThan12Accessory_Phone
 	And Land on the 'Tariffs and extra' page 
 	And Choose Accesssory 
 	And I Land on the basket page by clicking on Add to Basket button 
-	And Verify the devices <accessoryname>, <fitnesstrackername> and <handset> in the basket 
 	And the previously selected standalone non-connected items should be removed from my basket 
 	And click on "go to checkout" button 
 	And input <Firstname> and <Surname> and other valid details in Delivery page and Click on the 'Continue button' 
@@ -30,4 +29,4 @@ Scenario Outline: E11522_CFA_MoreThan12Accessory_Phone
 	
 	Examples: 
 		| handset  | Firstname | Surname | Username     | limit1|limit2 |handset|accessoryname|fitnesstrackername|
-		| GalaxyS8 | TEST      | ACCEPTA | TEST ACCEPTA |    3|3 |Samsung Galaxy S8 Plus|JBL Clip 2|Fitbit Alta|
+		| GalaxyS8 | TEST      | ACCEPTA | TEST ACCEPTA |    6|5 |Samsung Galaxy S8 Plus|JBL Clip 2|Fitbit Alta|

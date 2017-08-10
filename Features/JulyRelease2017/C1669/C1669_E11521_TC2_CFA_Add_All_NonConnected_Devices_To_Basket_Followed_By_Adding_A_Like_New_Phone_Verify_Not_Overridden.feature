@@ -3,17 +3,17 @@ Feature: C1669_E11521_TC2_CFA_Add_All_NonConnected_Devices_To_Basket_Followed_By
   Scenario Outline: CFA Add all non connected devices (Standalone Smartwatch, Accessory and Fitnesstracker) and One Connected Device(Like New Phone) and Veiryf Basket not overridden
     Given I am an CFA user and Lands on shop page
     And Navigate to Accessories
-    And select an "Random" Accessory
+    And Select <accessoryname> from accessories 
     And add quantity of accessories to basket within <limit> in details page and navigate to basket
     And I Land on the Non Phone related basket page and choose home delivery option
     And I click on Continue Shopping link
     And Navigate to Fitness Trackers
-    And select any available "Random" Fitness tracker
+    And I choose <fitnesstrackername> FitnessTracker 
     And add quantity of FitnessTracker to basket within <limit> in details page and navigate to basket
     And I Land on the Non Phone related basket page and choose home delivery option
     And I click on Continue Shopping link
     And Navigate to SmartWatches
-    And select any available "Random" Smartwatch
+    And I choose <smartwatchname> Smartwatch 
     And add quantity of SmartWatches to basket within <limit> in details page and navigate to basket
     And I Land on the Non Phone related basket page and choose home delivery option
     And Verify all non connected devices got added to the basket section before selecting connected device
@@ -33,5 +33,5 @@ Feature: C1669_E11521_TC2_CFA_Add_All_NonConnected_Devices_To_Basket_Followed_By
     Then order confirmation is displayed
 
     Examples: 
-      | handset | Firstname | Surname | Username     | limit |
-      | Iphone7 | TEST      | ACCEPTA | TEST ACCEPTA |     1 |
+      | handset | Firstname | Surname | Username     | limit |accessoryname|fitnesstrackername|smartwatchname|
+      | Iphone7 | TEST      | ACCEPTA | TEST ACCEPTA |     1 |JBL Clip 2|Fitbit Alta|Pebble Original|

@@ -25,4 +25,4 @@ Scenario Outline:
 	
 	Examples: 
 		| username   | password | smartwatchname  | fitnesstrackername | tabletname               |
-		| ins_nov746 | test123  | Samsung Gear S2 | Fitbit Alta        | Apple iPad Pro 12.9 inch |
+		| ins_nov746 | test123  | Pebble Original Jet Black| Fitbit Alta        | Apple iPad Pro 12.9 inch |
