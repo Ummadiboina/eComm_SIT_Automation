@@ -16,7 +16,7 @@ import com.github.mkolisnyk.cucumber.reporting.CucumberResultsOverview;
 import cucumber.api.CucumberOptions;
 
 @CucumberOptions(strict = true, features = {
-		"Features//JulyRelease2017//CFD1786" }, glue = {
+		"Features//JulyRelease2017//C1669//C1669_E11522_TC2_CFA_morethan12Phone.feature" }, glue = {
 				"steps" },
 
 		tags = {}, format = { "json:testResult/cucumber.json", "pretty", "html:testResult/report" }, plugin = {

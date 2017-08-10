@@ -62,10 +62,9 @@ public class PhonesListingPageAction extends Environment {
 
 		}
 
-		if (elementName.contains("GalaxyS8Plus")) {
+		if (elementName.contains("Samsung Galaxy S8 Plus")) {
 			pageobjects.PhonesListingPage.GalaxyS8Plus.click();
-			// Assert.assertEquals(elementName,"Galaxy S7 is not found");
-			log.debug("Selected GalaxyS8Plus");
+			log.debug("Selected Samsung Galaxy S8 Plus");
 
 		}
 		if (elementName.contains("Iphone5S")) {

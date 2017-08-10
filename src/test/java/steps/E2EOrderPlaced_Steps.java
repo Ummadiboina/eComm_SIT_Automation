@@ -912,9 +912,9 @@ public class E2EOrderPlaced_Steps {
 			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 			PageFactory.initElements(driver, PaymentPage.class);
 			PaymentPageActions.Set_Bank_details(Username);
-			Thread.sleep(2000);
+			Thread.sleep(10000);
 			PaymentPageActions.Time_At_Address();
-			Thread.sleep(2000);
+			Thread.sleep(10000);
 			PaymentPageActions.Card_Details(Username);
 			Thread.sleep(75000);
 		} catch (Exception e) {
@@ -2498,7 +2498,7 @@ public class E2EOrderPlaced_Steps {
 			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 			PageFactory.initElements(driver, AccessoryPage.class);
 			PageFactory.initElements(driver, NonConnectedDeviceDetailsPage.class);
-			FitnessTrackerPageActions.UserSpecifiedFitnessTrackerLimit(Limit);
+			AccessoryPageActions.UserSpecifiedFitnessTrackerLimit(Limit);
 			// NonConnectedDeviceDetailsPageAction.ClickonBasketIcon();
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
@@ -2534,9 +2534,9 @@ public class E2EOrderPlaced_Steps {
 			AccessoryPageActions.check();
 			
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			System.out.println("Unable to add Fitnesstracker to basket");
-			Assert.fail("Unable to add Fitnesstracker to basket");
+			e.printStackTrace();
+			System.out.println("Failed step : the previously selected standalone non-connected items should be removed from my basket");
+			Assert.fail("Failed step : the previously selected standalone non-connected items should be removed from my basket");
 		}
 	}
 
@@ -2789,14 +2789,26 @@ public class E2EOrderPlaced_Steps {
 			log.debug(
 					"Running Test Step: @And(Verify all non connected devices got added to the basket section before selecting connected device)");
 			AccessoryPageActions.verifyNonConnectedDeviceAddedToBasketBefore();
-			//AccessoryPageActions.removeItemsFromBasketBasedOnAdditionOfItems();
 			log.debug(
 					"Pass: Verified that all non connected devices got added to basket successfully before selecting connected device");
 		} catch (Exception e) {
 			log.debug("Fail: Cannot verify that non connected device added to basket " + e.getMessage() + "");
 		}
 	}
-
+		
+	@And("^calculate the total quantity of devices added to basket$")
+	public void calculate_total_qty_of_devices_added() throws Throwable {
+		try {
+			log.debug(
+					"Running Test Step: calculate the total quantity of devices added to basket");
+			AccessoryPageActions.calculateTotalQtyAddedInBasket();
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+			log.debug("Fail: calculate the total quantity of devices added to basket ");
+			
+		}
+	}
 	@And("^Verify all non connected devices are still retained in the basket and not overridden$")
 	public void verify_non_Connected_device_ratined_in_basket_after_selecting_connected_device() throws Throwable {
 		try {
