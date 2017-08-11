@@ -121,8 +121,13 @@ public class PhonesListingPageAction extends Environment {
 			System.out.println("Selected AppleiPhone7LikeNew");
 
 		}
-
 		
+		if (elementName.contains("Apple iPhone 6s Plus Like New")) {
+			pageobjects.PhonesListingPage.AppleiPhone6sPlusLikeNew.click();
+			log.debug("Selected AppleiPhone6sPlusLikeNew");
+			System.out.println("Selected AppleiPhone6sPlusLikeNew");
+
+		}
 
 	}
 
