@@ -200,6 +200,7 @@ public class E2EOrderPlaced_Steps {
 			Thread.sleep(10000);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
+			e.printStackTrace();
 			System.out.println("unable to do mousehover to Fitness Trackers");
 			Assert.fail("unable to do mousehover to Fitness Trackers");
 		}
@@ -314,6 +315,7 @@ public class E2EOrderPlaced_Steps {
 			PhonesListingPageAction.PAYMPhoneSelect(handset);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
+			e.printStackTrace();
 			System.out.println("Unable to choose PayM phone");
 			Assert.fail("Unable to choose PayM phone");
 		}
@@ -618,6 +620,7 @@ public class E2EOrderPlaced_Steps {
 			UpgradeCustomerPageActions.Login(username, password);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
+			e.printStackTrace();
 			System.out.println("Unable to signin using credentials");
 			Assert.fail("Unable to signin using credentials");
 
@@ -2779,6 +2782,7 @@ public class E2EOrderPlaced_Steps {
 			AccessoryPageActions.continueShopping();
 			log.debug("Pass: Executed continue shopping successfully");
 		} catch (Exception e) {
+			e.printStackTrace();
 			log.debug("Fail: Cannot carry out Continue shopping action" + e.getMessage() + "");
 		}
 	}
