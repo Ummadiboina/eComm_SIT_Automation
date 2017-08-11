@@ -130,6 +130,10 @@ public class BasketPage {
 	@FindAll({ @FindBy(how = How.XPATH, using = ("//div[@class='basket-list']//li[@class='package ']/section/h3")) })
     public static List<WebElement> MyTariffs;
 
+	@FindBy(how = How.XPATH, using = ("//li[@data-qa-type='accessory']/section/h3"))
+	public static WebElement BasketItemName;
 	
+	@FindBy(how = How.XPATH, using = ("(//a[contains(., 'Remove')])[1]"))
+	public static WebElement RemoveButton;
 	
 }

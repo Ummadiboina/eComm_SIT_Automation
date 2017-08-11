@@ -200,6 +200,7 @@ public class E2EOrderPlaced_Steps {
 			Thread.sleep(10000);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
+			e.printStackTrace();
 			System.out.println("unable to do mousehover to Fitness Trackers");
 			Assert.fail("unable to do mousehover to Fitness Trackers");
 		}
@@ -314,6 +315,7 @@ public class E2EOrderPlaced_Steps {
 			PhonesListingPageAction.PAYMPhoneSelect(handset);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
+			e.printStackTrace();
 			System.out.println("Unable to choose PayM phone");
 			Assert.fail("Unable to choose PayM phone");
 		}
@@ -617,6 +619,7 @@ public class E2EOrderPlaced_Steps {
 			UpgradeCustomerPageActions.Login(username, password);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
+			e.printStackTrace();
 			System.out.println("Unable to signin using credentials");
 			Assert.fail("Unable to signin using credentials");
 
@@ -720,6 +723,7 @@ public class E2EOrderPlaced_Steps {
 			BasketPageActions.CollectionorDelivery("homeDelivery");
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
+			e.printStackTrace();
 			System.out.println("Unable to Land on the basket page and choose home delivery option");
 			Assert.fail("Unable to Land on the basket page and choose home delivery option");
 
@@ -908,13 +912,14 @@ public class E2EOrderPlaced_Steps {
 			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 			PageFactory.initElements(driver, PaymentPage.class);
 			PaymentPageActions.Set_Bank_details(Username);
-			Thread.sleep(2000);
+			Thread.sleep(10000);
 			PaymentPageActions.Time_At_Address();
-			Thread.sleep(2000);
+			Thread.sleep(10000);
 			PaymentPageActions.Card_Details(Username);
 			Thread.sleep(75000);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
+			e.printStackTrace();
 			System.out.println("Unable to input details in payment page");
 			Assert.fail("Unable to input details in payment page");
 
@@ -2493,7 +2498,7 @@ public class E2EOrderPlaced_Steps {
 			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 			PageFactory.initElements(driver, AccessoryPage.class);
 			PageFactory.initElements(driver, NonConnectedDeviceDetailsPage.class);
-			FitnessTrackerPageActions.UserSpecifiedFitnessTrackerLimit(Limit);
+			AccessoryPageActions.UserSpecifiedFitnessTrackerLimit(Limit);
 			// NonConnectedDeviceDetailsPageAction.ClickonBasketIcon();
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
@@ -2524,11 +2529,14 @@ public class E2EOrderPlaced_Steps {
 			PageFactory.initElements(driver, PAYMandPAYGTariffAndExtrasPage.class);
 			Thread.sleep(3000);
 			// BasketPageActions.ValidateContentEcomm11522();
-			BasketPageActions.verifyNCDRemovedinBasketPageAfterCDSelection();
+			//BasketPageActions.verifyNCDRemovedinBasketPageAfterCDSelection();
+			//AccessoryPageActions.removeItemsFromBasketBasedOnAdditionOfItems();
+			AccessoryPageActions.check();
+			
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			System.out.println("Unable to add Fitnesstracker to basket");
-			Assert.fail("Unable to add Fitnesstracker to basket");
+			e.printStackTrace();
+			System.out.println("Failed step : the previously selected standalone non-connected items should be removed from my basket");
+			Assert.fail("Failed step : the previously selected standalone non-connected items should be removed from my basket");
 		}
 	}
 
@@ -2771,6 +2779,7 @@ public class E2EOrderPlaced_Steps {
 			AccessoryPageActions.continueShopping();
 			log.debug("Pass: Executed continue shopping successfully");
 		} catch (Exception e) {
+			e.printStackTrace();
 			log.debug("Fail: Cannot carry out Continue shopping action" + e.getMessage() + "");
 		}
 	}
@@ -2787,7 +2796,20 @@ public class E2EOrderPlaced_Steps {
 			log.debug("Fail: Cannot verify that non connected device added to basket " + e.getMessage() + "");
 		}
 	}
-
+		
+	@And("^calculate the total quantity of devices added to basket$")
+	public void calculate_total_qty_of_devices_added() throws Throwable {
+		try {
+			log.debug(
+					"Running Test Step: calculate the total quantity of devices added to basket");
+			AccessoryPageActions.calculateTotalQtyAddedInBasket();
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+			log.debug("Fail: calculate the total quantity of devices added to basket ");
+			
+		}
+	}
 	@And("^Verify all non connected devices are still retained in the basket and not overridden$")
 	public void verify_non_Connected_device_ratined_in_basket_after_selecting_connected_device() throws Throwable {
 		try {
@@ -3962,7 +3984,6 @@ public class E2EOrderPlaced_Steps {
 		try {
 			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 			PageFactory.initElements(driver, PAYMandPAYGTariffAndExtrasPage.class);
-			driver.get("https://www.ref.o2.co.uk/shop/tariff/apple/ipad-9.7/?productId=aa256d48-4ec7-415f-ad6c-66388ae1a04f&planId=&contractType=paymonthly");
 			System.out.println("Entering Choose Given accessory method");
 			PAYMandPAYGTariffAndExtrasPageActions.addGivenAccessory();
 			System.out.println("Completed Choose some accessory method");
@@ -3974,6 +3995,21 @@ public class E2EOrderPlaced_Steps {
 			Assert.fail("Unable to choose some Accesssory");
 
 		}
+	}
+	@And("^I Land on the basket page by clicking on Add to Basket button$")
+	public void i_Land_on_the_basket_page_by_clicking_AddToBasket() throws Throwable {
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, BasketPage.class);
+			PageFactory.initElements(driver, PAYMandPAYGTariffAndExtrasPage.class);
+			PAYMandPAYGTariffAndExtrasPageActions.addToBasketLive();
+			Thread.sleep(3000);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			System.out.println("Unable to Land on the basket page and choose home delivery option");
+			Assert.fail("Unable to Land on the basket page and choose home delivery option");
 
+		}
 	}
 }

@@ -14,7 +14,7 @@ Feature: C1669_E11521_TC4_Existing_customer_add_Standalone_Accessory_Fitnesstrac
     And Navigate to Fitness Trackers
     And I choose <fitnesstrackername> FitnessTracker
     And click on Add to Basket button
-    And Verify the device <fitnesstrackername> in basket
+    And Verify the devices <accessoryname> and <fitnesstrackername> in basket
     And click on continue shopping button
     And navigate to PAYM SIMO page
     And verify the elements
@@ -23,4 +23,4 @@ Feature: C1669_E11521_TC4_Existing_customer_add_Standalone_Accessory_Fitnesstrac
 
     Examples: 
       | username   | password | user         | accessoryname    | fitnesstrackername | contract | Your_Tariff |
-      | ins_nov746 | test123  | TEST ACCEPTA | JBL Xtreme Black | Fitbit Alta        | 30 days  | Your Tariff |
+      | 27fe65687622 | test123  | TEST ACCEPTA | JBL Clip 2 | Fitbit Alta | 30 days  | Your Tariff |

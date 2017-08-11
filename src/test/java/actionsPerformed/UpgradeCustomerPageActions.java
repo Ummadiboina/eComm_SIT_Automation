@@ -23,10 +23,13 @@ public class UpgradeCustomerPageActions extends Environment {
 
 		}
 		Thread.sleep(5000);
-		if(!driver.getTitle().equals("O2 | Accounts | Please verify your email address")){
+		if(!driver.getTitle().contains("O2 | Accounts | Please verify your email address") || !driver.getTitle().contains("O2 | Accounts | Update username")){
+			System.out.println("Title of the page is "+driver.getTitle());
 			Assert.fail("Login failed");
+			
 		}
 		else {
+			
 			System.out.println("Logged in successfully");
 		}
 

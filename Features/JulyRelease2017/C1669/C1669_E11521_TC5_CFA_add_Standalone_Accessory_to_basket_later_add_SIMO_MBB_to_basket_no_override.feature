@@ -18,4 +18,4 @@ Feature: C1669_E11521_TC5_CFA_add_Standalone_Accessory_to_basket_later_add_SIMO_
 
     Examples: 
       | accessoryname    | tabname | contract | Your_Tariff |
-      | JBL Xtreme Black | MBB     | 30 Days  | Your Tariff |
+      | JBL Clip 2 | MBB     | 30 Days  | Your Tariff |
