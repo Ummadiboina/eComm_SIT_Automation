@@ -12,8 +12,8 @@ Feature: C1786_E11354-11447-11565_TC2_Existing_Custo_Other_Tablets_Filter_and_So
     And Verify the devices gets sorted based on the sort option <sort option>
     And click on the Sort tab and reset sort
     And Verify that original sort order is retained <sort option>
-    And click on the Filter tab and choose required <Filter> <Option> option
-    And Verify the devices gets displayed as per the filter applied <Filter> <Option>
+    And click on the Filter tab and choose required <Filter> and option <Option>
+	And Verify the devices gets displayed as per the filter applied <Filter> and option <Option> 
 
     Examples: 
       | username             | password | sort option      | Filter | Option |

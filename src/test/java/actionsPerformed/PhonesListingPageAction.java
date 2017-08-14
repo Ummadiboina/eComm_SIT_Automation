@@ -114,14 +114,14 @@ public class PhonesListingPageAction extends Environment {
 			log.debug("Selected Oneplus3T");
 
 		}
-		
+
 		if (elementName.contains("Apple iPhone 7 Like New")) {
 			pageobjects.PhonesListingPage.AppleiPhone7LikeNew.click();
 			log.debug("Selected AppleiPhone7LikeNew");
 			System.out.println("Selected AppleiPhone7LikeNew");
 
 		}
-		
+
 		if (elementName.contains("Apple iPhone 6s Plus Like New")) {
 			pageobjects.PhonesListingPage.AppleiPhone6sPlusLikeNew.click();
 			log.debug("Selected AppleiPhone6sPlusLikeNew");
@@ -178,7 +178,6 @@ public class PhonesListingPageAction extends Environment {
 		}
 	}
 
-	
 	public static void isPayAsUGoTabDisplayed() {
 		log.debug("checking whether Pay As U Go tab is displayed");
 		if (pageobjects.BaseCommPage.PayAsUGo.isDisplayed()) {
@@ -594,12 +593,39 @@ public class PhonesListingPageAction extends Environment {
 					Thread.sleep(1000);
 
 				}
+			} else if (Filter.equals("Offer")) {
+
+				js.executeScript("arguments[0].click();", pageobjects.SortingAndFilter.Offer);
+				Thread.sleep(2000);
+
+				if (Option.equals("Free JBL headphones")) {
+
+					js.executeScript("arguments[0].click();", pageobjects.SortingAndFilter.Offer_FreeJBLheadphones);
+					// pageobjects.SortingAndFilter.Brand_Alcatel.click();
+					Thread.sleep(2000);
+					js.executeScript("arguments[0].click();", pageobjects.SortingAndFilter.Offer);
+					Thread.sleep(1000);
+					js.executeScript("arguments[0].click();", pageobjects.SortingAndFilter.Done);
+					js.executeScript("arguments[0].click();", pageobjects.SortingAndFilter.Done);
+					Thread.sleep(1000);
+
+				}
+				if (Option.equals("Microsoft Office 365")) {
+
+					js.executeScript("arguments[0].click();", pageobjects.SortingAndFilter.Offer_MicrosoftOffice365);
+					// pageobjects.SortingAndFilter.Brand_Alcatel.click();
+					Thread.sleep(2000);
+					js.executeScript("arguments[0].click();", pageobjects.SortingAndFilter.Offer);
+					Thread.sleep(1000);
+					js.executeScript("arguments[0].click();", pageobjects.SortingAndFilter.Done);
+					js.executeScript("arguments[0].click();", pageobjects.SortingAndFilter.Done);
+					Thread.sleep(1000);
+
+				}
 			}
 		}
 
-		catch (
-
-		Exception e) {
+		catch (Exception e) {
 			System.out.println("Failed: Cannot select a filter option : " + e.getMessage());
 		}
 
@@ -983,4 +1009,71 @@ public class PhonesListingPageAction extends Environment {
 	 * System.out.println("Expected stockmsg displayed :" + stockmsg.getText());
 	 * } } } }
 	 */
+
+	public static void verifyDeviceGetsDisplayedBasedOnOfferFilterApplied(String FilterOption) {
+		try {
+			log.debug("Entering verifyDeviceGetsDisplayedBasedOnOfferFilterApplied function");
+			System.out.println("Entering verifyDeviceGetsDisplayedBasedOnOfferApplied function");
+
+			LinkedList<String> ListAfterFilter = getCurrentSortOrderUsingDeviceOffer(FilterOption);
+			System.out.println(ListAfterFilter);
+
+			for (int i = 0; i < ListAfterFilter.size(); i++) {
+
+				Assert.assertTrue("Assertion Failed: Devices displayed are not as per the filter applied",
+						ListAfterFilter.get(i).contains(FilterOption));
+
+			}
+
+			System.out.println("Assert Success:  Devices displayed are as per the Brand filter applied");
+
+		} catch (Exception e) {
+			System.out.println(
+					"Assertion Failed: Devices displayed are not as per the Brand filter applied" + e.getMessage());
+		}
+	}
+	public static LinkedList<String> getCurrentSortOrderUsingDeviceOffer(String FilterOption)
+			throws InterruptedException {
+
+		log.debug("Opening function getCurrentSortOrderUsingDeviceOffer");
+		System.out.println("Opening function getCurrentSortOrderUsingDeviceOffer");
+
+		Thread.sleep(10000);
+
+		LinkedList<String> deviceCurrentOrder = new LinkedList<>();
+		LinkedList<String> devicenamecurrentorder = new LinkedList<>();
+		LinkedList<String> deviceoffercurrentorder = new LinkedList<>();
+		List<WebElement> deviceOffer = null;
+		List<WebElement> deviceName = driver.findElement(By.xpath("//*[@id='o2-page-wrapper']/div[4]/div[5]/div"))
+				.findElements(By.xpath(
+						"//div[@class='device-tile my-offer ng-scope tile-one-by-two']/div/p[@class='details']"));
+		if (FilterOption.equals("Free JBL headphones")) {
+			deviceOffer = driver
+					.findElements(By.xpath("// div[contains(@data-qa-device-offer, 'Free-JBL-headphones')]"));
+		}
+		if (FilterOption.equals("Microsoft Office 365")) {
+			deviceOffer = driver
+					.findElements(By.xpath("// div[contains(@data-qa-device-offer, 'Microsoft-Office-365')]"));
+		}
+		for (WebElement temp1 : deviceName) {
+
+			String sTemp1 = temp1.getText();
+			devicenamecurrentorder.add(sTemp1);
+		}
+
+		for (WebElement temp2 : deviceOffer) {
+			String sTemp2 = temp2.getAttribute("data-qa-device-offer");
+			sTemp2 = sTemp2.replace('-', ' ');
+			if (sTemp2.contains(FilterOption)) {
+				deviceoffercurrentorder.add(sTemp2);
+			}
+		}
+		System.out.println("Device Name List: " + devicenamecurrentorder);
+		System.out.println("Device Offer List: " + deviceoffercurrentorder);
+
+		for (int i = 0; i < devicenamecurrentorder.size(); i++) {
+			deviceCurrentOrder.add(devicenamecurrentorder.get(i) + deviceoffercurrentorder.get(i));
+		}
+		return deviceCurrentOrder;
+	}
 }
