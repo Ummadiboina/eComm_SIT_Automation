@@ -62,10 +62,9 @@ public class PhonesListingPageAction extends Environment {
 
 		}
 
-		if (elementName.contains("GalaxyS8Plus")) {
+		if (elementName.contains("Samsung Galaxy S8 Plus")) {
 			pageobjects.PhonesListingPage.GalaxyS8Plus.click();
-			// Assert.assertEquals(elementName,"Galaxy S7 is not found");
-			log.debug("Selected GalaxyS8Plus");
+			log.debug("Selected Samsung Galaxy S8 Plus");
 
 		}
 		if (elementName.contains("Iphone5S")) {
@@ -113,6 +112,20 @@ public class PhonesListingPageAction extends Environment {
 			pageobjects.PhonesListingPage.Oneplus3T.click();
 			// Assert.assertEquals(elementName,"Galaxy S7 is not found");
 			log.debug("Selected Oneplus3T");
+
+		}
+		
+		if (elementName.contains("Apple iPhone 7 Like New")) {
+			pageobjects.PhonesListingPage.AppleiPhone7LikeNew.click();
+			log.debug("Selected AppleiPhone7LikeNew");
+			System.out.println("Selected AppleiPhone7LikeNew");
+
+		}
+		
+		if (elementName.contains("Apple iPhone 6s Plus Like New")) {
+			pageobjects.PhonesListingPage.AppleiPhone6sPlusLikeNew.click();
+			log.debug("Selected AppleiPhone6sPlusLikeNew");
+			System.out.println("Selected AppleiPhone6sPlusLikeNew");
 
 		}
 

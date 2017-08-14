@@ -6,6 +6,11 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 
+import actionsPerformed.Apple;
+import actionsPerformed.Like;
+import actionsPerformed.s;
+
+
 @SuppressWarnings("unused")
 public class PhonesListingPage {
 
@@ -52,7 +57,13 @@ public class PhonesListingPage {
 
 	@FindBy(how = How.XPATH, using = "//a[contains(@href, '/shop/phones/sony/xperia-xz-premium/#contractType=paymonthly')]")
 	public static WebElement XperiaZ5Premium;
-
+	
+	@FindBy(how = How.XPATH, using = "//a[contains(@href, '/shop/phones/apple/iphone-7-like-new/#contractType=paymonthly')]")
+	public static WebElement AppleiPhone7LikeNew;
+	
+	@FindBy(how = How.XPATH, using = "//a[contains(@href, '/shop/phones/apple/iphone-6s-plus-like-new/#contractType=paymonthly')]")
+	public static WebElement AppleiPhone6sPlusLikeNew;
+	
 	// Below are for PAYG device
 
 

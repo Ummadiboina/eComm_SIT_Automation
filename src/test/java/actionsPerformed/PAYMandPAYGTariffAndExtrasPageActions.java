@@ -16,6 +16,8 @@ import helpers.setRuntimeProperty;
 
 public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 	static Logger log = Logger.getLogger("devpinoyLogger");
+	static int AccessoryContainerSize = 0;
+	static int SelectedAccessoryCount = 0;
 
 	public static void GetPageName() {
 
@@ -31,6 +33,7 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 
 		if (ElementName.contains("Randomtariff")) {
 			pageobjects.PAYMandPAYGTariffAndExtrasPage.RandomTariff1.sendKeys(Keys.ENTER);
+			System.out.println("Selected a Random Tariff");
 			log.debug("Selected a Random Tariff");
 		}
 
@@ -327,27 +330,32 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 			if (ele0 != null) {
 				System.out.println("selecting accessories");
 				List<WebElement> DataContainer = pageobjects.PAYMandPAYGTariffAndExtrasPage.Add_AccessoryContainer;
-				System.out.println("DAtacontainer size : " + DataContainer.size());
-				int u=0;
-			//	if (DataContainer.size() < 6) {
-					loop = DataContainer.size();
-					for (int i = 0; i < loop; i++) {
-						//System.out.println(driver.findElements(By.xpath("//*[@id='accessoryTile_']")).get(i).getText());
+				int size = DataContainer.size();
+				AccessoryContainerSize = size;
+				System.out.println("DAtacontainer size : " + AccessoryContainerSize);
+				int u = 0;
+				if (AccessoryContainerSize < 6) {
+					System.out.println("Datacontainer size less than 6");
+					SelectedAccessoryCount = AccessoryContainerSize;
+					for (int i = 0; i < AccessoryContainerSize; i++) {
+						// System.out.println(driver.findElements(By.xpath("//*[@id='accessoryTile_']")).get(i).getText());
 						Thread.sleep(2000);
 						DataContainer.get(0).click();
 						Thread.sleep(3000);
 						System.out.println("Selected accessories");
 					}
-				} 
-			/*else {
+				} else if (AccessoryContainerSize > 6) {
+					SelectedAccessoryCount = 6;
+					System.out.println("DAtacontainer size greater than 6");
 					for (int i = 0; i < 6; i++) {
 						System.out.println(DataContainer.get(i).getText());
 						DataContainer.get(i).click();
 						Thread.sleep(3000);
 						System.out.println("Selected accessories");
-					}*/
-				
-			
+					}
+				}
+			}
+
 		} catch (Exception e) {
 			System.out.println("No accessories found");
 			Assert.fail("No accessories found");

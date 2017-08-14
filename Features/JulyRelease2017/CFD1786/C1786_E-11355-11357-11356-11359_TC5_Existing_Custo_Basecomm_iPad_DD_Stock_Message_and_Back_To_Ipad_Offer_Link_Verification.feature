@@ -6,8 +6,8 @@ Scenario Outline:
 	1.Delayed delivery status on device tile
     2.Clicking "Back to iPad offers" link should take the customer to basecomms listing page
 
-	#Given I am existing user and I click on Signin button 
-	#And Signin using valid <username> and <password> credentials 
+	Given I am existing user and I click on Signin button 
+	And Signin using valid <username> and <password> credentials 
 	And I navigate to the Basecomm Page 
 	And Click on iPad tab 
 	And Verify the contents of the iPad section in the landing page 
@@ -20,4 +20,4 @@ Scenario Outline:
 	
 	Examples: 
 		| username             | password | device_name      |default_colour | default_capacity | default_stock_message |color|capacity|
-		| 07770001111@o2.co.uk | test123  |Apple iPad Pro 10.5 inch| Gold|512GB|Home delivery|Gold|512GB|
+		| 07770001111@o2.co.uk | test123  |Apple iPad Pro 12.9 inch| Gold|512GB|Home delivery|Gold|512GB|

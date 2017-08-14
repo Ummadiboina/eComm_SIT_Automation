@@ -90,13 +90,17 @@ public class SmartwatchesPageActions extends Environment {
 
 				System.out.println("Clicked SamsungGalaxyGear");
 			}
-
-			// The following has to be added in deviceSelect function –
 			else if (elementName.contains("Samsung Gear S2")) {
 				pageobjects.SmartwatchesPage.SamsungGearS2.click();
 				Thread.sleep(15000);
 				System.out.println("Selected SamsungGearS2");
 				log.debug("Selected SamsungGearS2");
+			}
+			else if (elementName.contains("Pebble Original")) {
+				pageobjects.SmartwatchesPage.PebbleOriginal.click();
+				Thread.sleep(15000);
+				System.out.println("Selected PebbleOriginal");
+				log.debug("Selected PebbleOriginal");
 			}
 
 		} catch (Exception e) {

@@ -23,7 +23,7 @@ public class PAYMandPAYGTariffAndExtrasPage {
 	public static WebElement SelectPromotedTariff;
 
 	// Below is for Selecting Any Tariff
-	@FindBy(how = How.XPATH, using = ("(//*[@id='callToAction'])[2]"))
+	@FindBy(how = How.XPATH, using = ("(//*[@id='callToAction'])[1]"))
 	public static WebElement RandomTariff1;
 
 	// Below is for Selecting Any Tariff
