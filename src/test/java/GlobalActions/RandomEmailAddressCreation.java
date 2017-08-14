@@ -47,7 +47,7 @@ public static String RandomEmail()
 
     public static String RandomEmail() {
     	
-    	String RandomEmail = "STester" + UUID.randomUUID().toString() + "@gmail.com";
+    	String RandomEmail = "STester11" + UUID.randomUUID().toString() + "@gmail.com";
     			System.out.println("Random Email Address is "+RandomEmail);
 				log.debug("Random Email Address is "+RandomEmail);
 

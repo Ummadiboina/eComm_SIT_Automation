@@ -16,9 +16,9 @@ Feature: Reg_AFA_PAYM_Acquistion
     And Choose <DeliveryType> delivery address and delivery time
     When Pay by card for PAYM device
     Then Order confirmation message should be displayed
-   # And Update Device Plan Link Email Address
-   # Then CCALink Should be generated
 
+    # And Update Device Plan Link Email Address
+    # Then CCALink Should be generated
     Examples: 
       | Device              | Tariffs | Extras | DeliveryType | Firstname | Surname | Username     |
-      | S7 edge black 32 GB | Random  | Random | HomeDelivery | TEST      | ACCEPTA | TEST ACCEPTA |
+      | S7 edge black 32 GB | Random  | Base   | HomeDelivery | TEST      | ACCEPTA | TEST ACCEPTA |
