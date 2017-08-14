@@ -3758,7 +3758,7 @@ public class E2EOrderPlaced_Steps {
 		}
 	}
 
-	@And("^click on the Filter tab and choose required ([^\"]*) ([^\"]*) option$")
+	@And("^click on the Filter tab and choose required ([^\"]*) and option ([^\"]*)$")
 	public void clickOnFilterTabAndSelectFilterOption(String Filter, String Option) throws Throwable {
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		log.debug("Running Test Step: @And(click on the Filter tab and choose required " + Filter + " " + Option
@@ -3777,7 +3777,7 @@ public class E2EOrderPlaced_Steps {
 		}
 	}
 
-	@And("^Verify the devices gets displayed as per the filter applied ([^\"]*) ([^\"]*)$")
+	@And("^Verify the devices gets displayed as per the filter applied ([^\"]*) and option ([^\"]*)$")
 	public void verifyDevicesGetsDisplayedAsPerFilter(String Filter, String Option) throws Throwable {
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		log.debug("Running Test Step: @And(Verify the devices gets displayed as per the filter applied)");
@@ -3790,6 +3790,10 @@ public class E2EOrderPlaced_Steps {
 			if (Filter.equals("Colour")) {
 				PhonesListingPageAction.verifyDeviceGetsDisplayedBasedOnColourFilterApplied(Option);
 			}
+			if (Filter.equals("Offer")) {
+				PhonesListingPageAction.verifyDeviceGetsDisplayedBasedOnOfferFilterApplied(Option);
+			}
+			
 
 		} catch (Exception e) {
 			e.printStackTrace();
