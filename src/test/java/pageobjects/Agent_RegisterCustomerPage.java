@@ -55,6 +55,14 @@ public class Agent_RegisterCustomerPage {
 		@FindBy(how=How.XPATH,using="//*[@id='packageControls']/table/tbody/tr/td[2]/input")
 		public static WebElement PayByCard;
 		
+		@FindBy(how=How.XPATH,using="//div[@class='oneOffPrice']/div[2][@class='price']")
+		public static WebElement ZeroOneOff;
+		
+		
+		@FindBy(how=How.XPATH,using="//*[@id='placeOrderForm']/input[2]")
+		public static WebElement SubmitBtn;
+		
+		
 		@FindBy(how=How.XPATH,using="//*[@id='lblCardNumber']")
 		public static WebElement PayByCard_2;
 		

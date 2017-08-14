@@ -70,13 +70,24 @@ public class Agent_RegisterCustomerActions extends Environment {
 	}
 
 	public static void PaybyCard() throws InterruptedException {
+		String OneOff = Agent_RegisterCustomerPage.ZeroOneOff.getText();
+		System.out.println(OneOff);
+		if(OneOff.contains("£0.00"))
+		{
+			Agent_RegisterCustomerPage.SubmitBtn.click();
+		}	
+		
+		else
+		{
+		
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		Thread.sleep(5000);
-		System.out.println("Now in pay by card ");
+		System.out.println("Pay by card button is enabled ");
 		Agent_RegisterCustomerPage.PayByCard.click();
 		System.out.println("Clicked on pay by card ");
+		
+		}
 		Thread.sleep(2000);
-
 	}
 
 	public static void CardDetails() throws InterruptedException {

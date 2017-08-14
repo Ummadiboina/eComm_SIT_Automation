@@ -16,10 +16,10 @@ import com.github.mkolisnyk.cucumber.reporting.CucumberResultsOverview;
 import cucumber.api.CucumberOptions;
 
 @CucumberOptions(strict = true, features = {
-		"Features//RegressionPack_Master" }, glue = {
+		"Features//RegressionPack_Master//Reg_AFA_Tablet.feature" }, glue = {
 				"steps" },
 
-		tags = {"@ConsumerShop"}, format = { "json:testResult/cucumber.json", "pretty", "html:testResult/report" }, plugin = {
+		tags = {}, format = { "json:testResult/cucumber.json", "pretty", "html:testResult/report" }, plugin = {
 				"com.cucumber.listener.ExtentCucumberFormatter" })
 
 /**
