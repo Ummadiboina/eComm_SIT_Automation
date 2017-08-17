@@ -6,7 +6,7 @@
         "before": [
           {
             "result": {
-              "duration": 72790795679,
+              "duration": 90033525346,
               "status": "passed"
             },
             "match": {
@@ -14,14 +14,14 @@
             }
           }
         ],
-        "line": 33,
-        "name": "E11522_CFA_MoreThan12Accessory_Phone",
-        "description": "",
-        "id": "c1669-e11522-tc2-cfa-morethan12phone;e11522-cfa-morethan12accessory-phone;;2",
+        "line": 17,
+        "name": "",
+        "description": "CFA_Displaying_dropdown_in_place_of_variant_swatches_on_device_details_page_of_fitness_tracker",
+        "id": "c1924-e11409-tc4-cfa-displaying-dropdown-in-place-of-variant-swatches-on-device-details-page-of-fitness-tracker;;;2",
         "after": [
           {
             "result": {
-              "duration": 2438759191,
+              "duration": 3589169415,
               "status": "passed"
             },
             "match": {
@@ -34,10 +34,10 @@
         "steps": [
           {
             "result": {
-              "duration": 228067438,
+              "duration": 310081138,
               "status": "passed"
             },
-            "line": 5,
+            "line": 6,
             "name": "I am an CFA user and Lands on shop page",
             "match": {
               "location": "E2EOrderPlaced_Steps.i_am_an_CFA_user_and_Lands_on_shop_page()"
@@ -46,64 +46,10 @@
           },
           {
             "result": {
-              "duration": 60002103216,
-              "status": "passed"
-            },
-            "line": 6,
-            "name": "Navigate to Accessories",
-            "match": {
-              "location": "E2EOrderPlaced_Steps.navigate_to_Accessories()"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 8126171004,
+              "duration": 54440994973,
               "status": "passed"
             },
             "line": 7,
-            "name": "Select JBL Clip 2 from accessories",
-            "match": {
-              "arguments": [
-                {
-                  "val": "JBL Clip 2",
-                  "offset": 7
-                }
-              ],
-              "location": "E2EOrderPlaced_Steps.select_accessory(String)"
-            },
-            "matchedColumns": [
-              7
-            ],
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 22442925278,
-              "status": "passed"
-            },
-            "line": 8,
-            "name": "add quantity of accessories to basket within 3 in details page and navigate to basket",
-            "match": {
-              "arguments": [
-                {
-                  "val": "3",
-                  "offset": 45
-                }
-              ],
-              "location": "E2EOrderPlaced_Steps.addQuantityAccessories(String)"
-            },
-            "matchedColumns": [
-              4
-            ],
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 69787929106,
-              "status": "passed"
-            },
-            "line": 9,
             "name": "Navigate to Fitness Trackers",
             "match": {
               "location": "E2EOrderPlaced_Steps.navigate_to_Fitness_Trackers()"
@@ -112,129 +58,19 @@
           },
           {
             "result": {
-              "duration": 5271709430,
+              "duration": 5303246330,
               "status": "passed"
             },
-            "line": 10,
-            "name": "I choose Fitbit Alta FitnessTracker",
+            "line": 8,
+            "name": "I choose Jawbone UP2 FitnessTracker",
             "match": {
               "arguments": [
                 {
-                  "val": "Fitbit Alta",
+                  "val": "Jawbone UP2",
                   "offset": 9
                 }
               ],
               "location": "E2EOrderPlaced_Steps.i_choose_fitnesstracker(String)"
-            },
-            "matchedColumns": [
-              8
-            ],
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 16298183123,
-              "status": "passed"
-            },
-            "line": 11,
-            "name": "add quantity of FitnessTracker to basket within 3 in details page and navigate to basket",
-            "match": {
-              "arguments": [
-                {
-                  "val": "3",
-                  "offset": 48
-                }
-              ],
-              "location": "E2EOrderPlaced_Steps.addQuantityFitnessTracker(String)"
-            },
-            "matchedColumns": [
-              5
-            ],
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 94322029831,
-              "status": "passed"
-            },
-            "comments": [
-              {
-                "line": 12,
-                "value": "# And Validate Basket content for non Connected"
-              }
-            ],
-            "line": 13,
-            "name": "Verify the devices JBL Clip 2 and Fitbit Alta in basket",
-            "match": {
-              "arguments": [
-                {
-                  "val": "JBL Clip 2",
-                  "offset": 19
-                },
-                {
-                  "val": "Fitbit Alta",
-                  "offset": 34
-                }
-              ],
-              "location": "E2EOrderPlaced_Steps.verify_2_devices_in_basket(String,String)"
-            },
-            "matchedColumns": [
-              7,
-              8
-            ],
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 185088,
-              "status": "passed"
-            },
-            "line": 14,
-            "name": "calculate the total quantity of devices added to basket",
-            "match": {
-              "location": "E2EOrderPlaced_Steps.calculate_total_qty_of_devices_added()"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 5340706090,
-              "status": "passed"
-            },
-            "line": 15,
-            "name": "click on continue shopping button",
-            "match": {
-              "location": "E2EOrderPlaced_Steps.click_on_continue_shopping_button()"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 11166150507,
-              "error_message": "junit.framework.AssertionFailedError: unable to do mousehover to phones\r\n\tat junit.framework.Assert.fail(Assert.java:47)\r\n\tat steps.E2EOrderPlaced_Steps.navigate_to_PAYM_Phones_page(E2EOrderPlaced_Steps.java:144)\r\n\tat ✽.And navigate to PAYM Phones page(Features/JulyRelease2017/C1669/C1669_E11522_TC2_CFA_morethan12Phone.feature:16)\r\n",
-              "status": "failed"
-            },
-            "line": 16,
-            "name": "navigate to PAYM Phones page",
-            "match": {
-              "location": "E2EOrderPlaced_Steps.navigate_to_PAYM_Phones_page()"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "status": "skipped"
-            },
-            "line": 17,
-            "name": "I choose PayM GalaxyS8",
-            "match": {
-              "arguments": [
-                {
-                  "val": "GalaxyS8",
-                  "offset": 14
-                }
-              ],
-              "location": "E2EOrderPlaced_Steps.Choose_PAYM_Handset(String)"
             },
             "matchedColumns": [
               0
@@ -243,197 +79,62 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 16191121934,
+              "status": "passed"
             },
-            "line": 18,
+            "line": 9,
+            "name": "check if the selected non connected device has more than 1 variant for colour and single variant for capacity",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.check_if_the_selected_non_connected_device_has_more_than_1_variant_for_colour_and_single_variant_for_capacity()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 5605243759,
+              "status": "passed"
+            },
+            "line": 10,
+            "name": "select Black Diamond color of the non connected device",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Black Diamond",
+                  "offset": 7
+                }
+              ],
+              "location": "E2EOrderPlaced_Steps.select_color_of_the_non_connected_device(String)"
+            },
+            "matchedColumns": [
+              1
+            ],
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 12264997170,
+              "status": "passed"
+            },
+            "line": 11,
             "name": "Navigate to device details page",
             "match": {
               "location": "E2EOrderPlaced_Steps.Navigate_to_device_details_page()"
             },
             "keyword": "And "
-          },
-          {
-            "result": {
-              "status": "skipped"
-            },
-            "line": 19,
-            "name": "Land on the \u0027Tariffs and extra\u0027 page",
-            "match": {
-              "location": "E2EOrderPlaced_Steps.land_on_the_Tariffs_and_extra_page()"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "status": "skipped"
-            },
-            "line": 20,
-            "name": "Choose Accesssory",
-            "match": {
-              "location": "E2EOrderPlaced_Steps.ChooseGivenAccessory()"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "status": "skipped"
-            },
-            "line": 21,
-            "name": "I Land on the basket page by clicking on Add to Basket button",
-            "match": {
-              "location": "E2EOrderPlaced_Steps.i_Land_on_the_basket_page_by_clicking_AddToBasket()"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "status": "skipped"
-            },
-            "line": 22,
-            "name": "Verify the devices JBL Clip 2, Fitbit Alta and GalaxyS8 in the basket",
-            "match": {
-              "arguments": [
-                {
-                  "val": "JBL Clip 2",
-                  "offset": 19
-                },
-                {
-                  "val": "Fitbit Alta",
-                  "offset": 31
-                },
-                {
-                  "val": "GalaxyS8",
-                  "offset": 47
-                }
-              ],
-              "location": "E2EOrderPlaced_Steps.verify_3_devices_in_basket(String,String,String)"
-            },
-            "matchedColumns": [
-              0,
-              7,
-              8
-            ],
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "status": "skipped"
-            },
-            "line": 23,
-            "name": "the previously selected standalone non-connected items should be removed from my basket",
-            "match": {
-              "location": "E2EOrderPlaced_Steps.validateEcomm11522()"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "status": "skipped"
-            },
-            "line": 24,
-            "name": "click on \"go to checkout\" button",
-            "match": {
-              "arguments": [
-                {
-                  "val": "go to checkout",
-                  "offset": 10
-                }
-              ],
-              "location": "E2EOrderPlaced_Steps.CheckoutFromBasket(String)"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "status": "skipped"
-            },
-            "line": 25,
-            "name": "input TEST and ACCEPTA and other valid details in Delivery page and Click on the \u0027Continue button\u0027",
-            "match": {
-              "arguments": [
-                {
-                  "val": "TEST",
-                  "offset": 6
-                },
-                {
-                  "val": "ACCEPTA",
-                  "offset": 15
-                }
-              ],
-              "location": "E2EOrderPlaced_Steps.DeliveryPage_Inputs_homeDelivery(String,String)"
-            },
-            "matchedColumns": [
-              1,
-              2
-            ],
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "status": "skipped"
-            },
-            "line": 26,
-            "name": "land on the payment page and input TEST ACCEPTA and other details and click \u0027Continue on next step\u0027",
-            "match": {
-              "arguments": [
-                {
-                  "val": "TEST ACCEPTA",
-                  "offset": 35
-                }
-              ],
-              "location": "E2EOrderPlaced_Steps.CreditCheckPaymentPage_HomeDelivery(String)"
-            },
-            "matchedColumns": [
-              3
-            ],
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "status": "skipped"
-            },
-            "line": 27,
-            "name": "Continue to Agreements page and confirm all the agreement checks",
-            "match": {
-              "location": "E2EOrderPlaced_Steps.AgreementsPageConfirmation()"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "status": "skipped"
-            },
-            "line": 28,
-            "name": "Continue to Review page and review the order",
-            "match": {
-              "location": "E2EOrderPlaced_Steps.ReviewPageConfirmation()"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "status": "skipped"
-            },
-            "line": 29,
-            "name": "order confirmation is displayed",
-            "match": {
-              "location": "E2EOrderPlaced_Steps.OrderConfirmationPage()"
-            },
-            "keyword": "Then "
           }
         ],
         "tags": [
           {
             "line": 3,
-            "name": "@C1169_E11522_TC2"
+            "name": "@JulyRelease"
           }
         ]
       }
     ],
-    "name": "C1669_E11522_TC2_CFA_morethan12Phone",
+    "name": "C1924_E11409_TC4_CFA_Displaying_dropdown_in_place_of_variant_swatches_on_device_details_page_of_fitness_tracker",
     "description": "",
-    "id": "c1669-e11522-tc2-cfa-morethan12phone",
+    "id": "c1924-e11409-tc4-cfa-displaying-dropdown-in-place-of-variant-swatches-on-device-details-page-of-fitness-tracker",
     "keyword": "Feature",
-    "uri": "Features/JulyRelease2017/C1669/C1669_E11522_TC2_CFA_morethan12Phone.feature"
+    "uri": "Features/JulyRelease2017/C1924/C1924_E11409_TC4_CFA_Displaying_dropdown_in_place_of_variant_swatches_on_device_details_page_of_fitness_tracker.feature"
   }
 ]

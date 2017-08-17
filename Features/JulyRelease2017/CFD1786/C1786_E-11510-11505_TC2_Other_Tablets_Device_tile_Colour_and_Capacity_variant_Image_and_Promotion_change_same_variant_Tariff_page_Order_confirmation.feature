@@ -27,4 +27,4 @@ This scenario ensures that when the existing customer lands on new basecomm page
 	#Modify the above step to include pdf download
 	Examples: 
 		| username| password | device_name | default_colour | default_capacity | default_stock_message | color | capacity | user |
-		| 07770001111@o2.co.uk | test123  | Sony Xperia Z4 Tablet|Black|32GB| Out of stock| White| 32GB     | TEST ACCEPTA |
+		| inavl0wx_355207@o2.com | test123  | Sony Xperia Z4 Tablet|Black|32GB| Out of stock| White| 32GB     | TEST ACCEPTA |

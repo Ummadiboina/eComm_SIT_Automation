@@ -14,4 +14,4 @@ This scenario ensures that when the existing customer lands on new basecomm page
 	
 	Examples: 
 		| username             | password |
-		| 07770001111@o2.co.uk | test123  |
+		| inavl0wx_355207@o2.com | test123  |

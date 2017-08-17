@@ -16,4 +16,4 @@ Feature: C1924_E11409_TC8_CFU_Displaying_dropdown_in_place_of_variant_swatches_o
     #Close the browser
     Examples: 
       | tabletname               | color     | capacity | username    | password |
-      | Apple iPad Pro 10.5 inch | Rose Gold | 256GB    | inq_jan9586 | test123  |
+      | Apple iPad Pro 10.5 inch | Rose Gold | 256GB    | inavl0wx_355207@o2.com | test123  |

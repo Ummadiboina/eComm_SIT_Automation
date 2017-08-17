@@ -34,4 +34,4 @@ Feature: C1786_E-11355-11357-11356-11359_TC1_Existing_Custo_Basecomm_iPad_Device
 
     Examples: 
       | username             | password | device_name             | default_colour | default_capacity | default_stock_message | color  | capacity |
-      | 07770001111@o2.co.uk | test123  | Apple iPad Pro 9.7 inch | Space Grey     | 32GB             | Out of stock          | Silver | 256GB    |
+      | inavl0wx_355207@o2.com | test123  | Apple iPad Pro 9.7 inch | Space Grey     | 32GB             | Out of stock          | Silver | 256GB    |

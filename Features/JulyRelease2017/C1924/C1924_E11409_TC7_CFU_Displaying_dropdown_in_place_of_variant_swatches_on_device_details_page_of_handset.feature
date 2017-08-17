@@ -16,4 +16,4 @@ Feature: C1924_E11409_TC7_CFU_Displaying_dropdown_in_place_of_variant_swatches_o
     #Close the browser
     Examples: 
       | handset | color | capacity | username    | password |
-      | Iphone7 | Black | 128GB    | ing_apr5953 | test123  |
+      | Iphone7 | Black | 128GB    | inavl0wx_355207@o2.com | test123  |

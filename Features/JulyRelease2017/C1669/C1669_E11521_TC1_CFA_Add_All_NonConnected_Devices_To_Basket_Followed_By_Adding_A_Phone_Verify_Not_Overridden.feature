@@ -34,4 +34,4 @@ CFA Add all non connected devices (Standalone Smartwatch, Accessory and Fitnesst
 	
 	Examples: 
 		| handset | Firstname | Surname | Username     | limit |accessoryname|fitnesstrackername|smartwatchname|
-		| Iphone7 | TEST      | ACCEPTA | TEST ACCEPTA |     1 |JBL Clip 2|Fitbit Alta|Pebble Original|
+		|Apple iPhone 7| TEST      | ACCEPTA | TEST ACCEPTA |     1 |JBL Clip 2|Fitbit Alta|Pebble Original|

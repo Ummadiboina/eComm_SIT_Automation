@@ -15,4 +15,4 @@ Feature: C1786_E11362-11564_TC1_Current_iPad_or_Tablet_URL_Redirection_to_new_Ba
 
     Examples: 
       | username             | password | OldIpadURL                                   | OldTabletURL                                   | NewURL                                         |
-      | 07770001111@o2.co.uk | test123  | https://www.o2.co.uk/shop/my-offers/ipad | https://www.o2.co.uk/shop/my-offers/tablet |https://www.o2.co.uk/shop/existing-customer-offers#sort=content.sorting.featured&page=1|
+      |inavl0wx_355207@o2.com| test123  | https://www.o2.co.uk/shop/my-offers/ipad | https://www.o2.co.uk/shop/my-offers/tablet |https://www.o2.co.uk/shop/existing-customer-offers#sort=content.sorting.featured&page=1|

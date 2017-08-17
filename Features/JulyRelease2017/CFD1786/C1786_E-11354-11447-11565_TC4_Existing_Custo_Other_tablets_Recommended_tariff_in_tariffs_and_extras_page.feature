@@ -14,4 +14,4 @@ Feature: C1786_E-11354-11447-11565_TC4_Existing_Custo_Other_tablets_Recommended_
 
     Examples: 
       | username             | password | device_name                    | default_colour | default_capacity | default_stock_message |
-      | 07770001111@o2.co.uk | test123  | Samsung Galaxy Tab A 2016 10.1 | Black          | 16GB             | In Stock              |
+      | inavl0wx_355207@o2.com | test123  | Samsung Galaxy Tab A 2016 10.1 | Black          | 16GB             | In Stock              |
