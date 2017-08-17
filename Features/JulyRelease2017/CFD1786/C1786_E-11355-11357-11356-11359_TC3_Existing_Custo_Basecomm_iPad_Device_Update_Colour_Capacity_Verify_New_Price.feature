@@ -18,4 +18,4 @@ Scenario Outline:
 	
 	Examples: 
 		| username             | password | device_name             | default_colour | default_capacity | default_stock_message | color  | capacity |oldcapacity|newcapacity|
-		| 07770001111@o2.co.uk | test123  | Apple iPad Pro 9.7 inch | Space Grey     | 32GB             | Out of stock          | Rose Gold | 32GB    |128GB|256GB|
+		| inavl0wx_355207@o2.com| test123  | Apple iPad Pro 9.7 inch | Space Grey     | 32GB             | Out of stock          | Rose Gold | 32GB    |128GB|256GB|

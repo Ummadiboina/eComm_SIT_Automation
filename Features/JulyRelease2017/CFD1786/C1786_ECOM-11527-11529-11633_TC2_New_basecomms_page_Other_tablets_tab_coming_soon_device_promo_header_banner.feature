@@ -23,4 +23,4 @@ Feature: C1786_ECOM-11527-11529-11633_TC2_New_basecomms_page_Other_tablets_tab_c
  	
  	Examples: 
  		| username             | password | device_name |default_colour| default_capacity | default_stock_message |
- 		| 07770001111@o2.co.uk | test123  | Samsung Galaxy Tab S3 9.7 | Black| 32GB | Coming Soon|
+ 		| inavl0wx_355207@o2.com| test123  | Samsung Galaxy Tab S3 9.7 | Black| 32GB | Coming Soon|

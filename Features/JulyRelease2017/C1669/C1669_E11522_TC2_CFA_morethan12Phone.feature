@@ -28,5 +28,5 @@ Scenario Outline: E11522_CFA_MoreThan12Accessory_Phone
 	Then order confirmation is displayed 
 	
 	Examples: 
-		| handset  | Firstname | Surname | Username     | limit1|limit2 |handset|accessoryname|fitnesstrackername|
-		| GalaxyS8 | TEST      | ACCEPTA | TEST ACCEPTA |    6|5 |Samsung Galaxy S8 Plus|JBL Clip 2|Fitbit Alta|
+		| handset  | Firstname | Surname | Username     | limit1|limit2 |accessoryname|fitnesstrackername|
+		| Samsung Galaxy S8 | TEST      | ACCEPTA | TEST ACCEPTA |    6|5 |JBL Clip 2|Fitbit Alta|

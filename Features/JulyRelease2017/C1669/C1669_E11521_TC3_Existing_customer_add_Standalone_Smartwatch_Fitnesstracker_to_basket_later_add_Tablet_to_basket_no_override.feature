@@ -24,5 +24,5 @@ Scenario Outline:
 	Then Verify the devices <smartwatchname>, <fitnesstrackername> and <tabletname> in the basket 
 	
 	Examples: 
-		| username   | password | smartwatchname  | fitnesstrackername | tabletname               |
-		| 27fe65687622 | test123  | Pebble Original Jet Black| Fitbit Alta        | Apple iPad Pro 12.9 inch |
+		| username   | password | smartwatchname  | fitnesstrackername | tabletname    |
+		| inavl0wx_355207@o2.com | test123  | Pebble Original Jet Black| Fitbit Alta   | Apple iPad 9.7 |

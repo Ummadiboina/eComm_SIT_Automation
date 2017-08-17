@@ -20,7 +20,7 @@ This scenario ensures that when the existing customer lands on new basecomm page
 	
 	Examples: 
 		| username             | password | sort option      | Filter | Option |
-		| 07770001111@o2.co.uk | test123  | MonthlyLowToHigh | Offer | Microsoft Office 365 |
+		| inavl0wx_355207@o2.com| test123  | MonthlyLowToHigh | Offer | Microsoft Office 365 |
 		#Filter: Brand,Colour,Offer
 		#BrandFilter-Options:Alcatel,Apple,Doro,HTC,Huawei,LG,Moto,OnePlus,Samsung,Sony
 		#ColourFilter-Options:Grey,Black,Yellow,Blue,White,Green,Red

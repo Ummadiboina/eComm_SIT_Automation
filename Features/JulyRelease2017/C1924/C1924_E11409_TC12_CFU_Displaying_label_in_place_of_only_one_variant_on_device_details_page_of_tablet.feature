@@ -12,4 +12,4 @@ Feature: C1924_E11409_TC12_CFU_Displaying_label_in_place_of_only_one_variant_on_
     #Close the browser
     Examples: 
       | handset | username   | password |
-      | Samsung Galaxy J3 2016 Like New | ins_nov746 | test123  |
+      | Samsung Galaxy J3 2016 Like New | inavl0wx_355207@o2.com| test123  |

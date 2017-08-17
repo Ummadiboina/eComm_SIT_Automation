@@ -32,4 +32,4 @@ Feature: C1786_ECOM-11527-11529-11633_TC1_New_basecomms_page_iPads_tab_coming_so
     #Modify the above step to include pdf download
     Examples: 
       | username             | password | device_name   | default_colour | default_capacity | default_stock_message | user         |
-      | 07770001111@o2.co.uk | test123  | Apple iPad 9.7| Space Grey | 32GB| Coming Soon | TEST ACCEPTA |
+      | inavl0wx_355207@o2.com | test123  | Apple iPad 9.7| Space Grey | 32GB| Coming Soon | TEST ACCEPTA |

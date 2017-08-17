@@ -15,4 +15,4 @@ Feature: C1786_E-11349-11350-11352-11358_Existing_Custo_Layout_New_Basecomm_Page
 
     Examples: 
       | username             | password |
-      | 07770001111@o2.co.uk | test123  |
+      | inavl0wx_355207@o2.com | test123  |
