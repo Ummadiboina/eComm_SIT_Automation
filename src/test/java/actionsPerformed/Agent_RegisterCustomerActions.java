@@ -44,7 +44,7 @@ public class Agent_RegisterCustomerActions extends Environment {
 		Thread.sleep(2000);
 
 		try {
-			Agent_RegisterCustomerPage.HouseNumber.sendKeys("Flat 15");
+			Agent_RegisterCustomerPage.HouseNumber.sendKeys("Flat 01");
 			Thread.sleep(2000);
 			Agent_RegisterCustomerPage.Postcode.sendKeys("SL1 1EL");
 			log.debug("Entered House Postcode  as SL1 1EL");
@@ -68,6 +68,63 @@ public class Agent_RegisterCustomerActions extends Environment {
 		Thread.sleep(3000);
 		log.debug("Clicked on Register customer");
 	}
+	
+	
+	public static void PayGRegistration(String Firstname, String Surname, String HouseNumber, String PostCode) throws InterruptedException {
+		try {
+			Select dropdown = new Select(pageobjects.Agent_RegisterCustomerPage.Title);
+			dropdown.selectByIndex(1);
+			log.debug("Selected the dropdown Mr");
+			Reporter.log("Selected the dropdown Mr");
+
+			Agent_RegisterCustomerPage.FirstName.sendKeys(Firstname);
+			log.debug("Entered First name");
+			Agent_RegisterCustomerPage.LastName.sendKeys(Surname);
+			log.debug("Entered Last name");
+
+			Agent_RegisterCustomerPage.Email.clear();
+			Agent_RegisterCustomerPage.Email.sendKeys(RandomEmailAddressCreation.RandomEmail());
+			Agent_RegisterCustomerPage.DOB.sendKeys("10-10-1981");
+			log.debug("Entered date of birth");
+			Thread.sleep(2000);
+			Agent_RegisterCustomerPage.ContactNumber.sendKeys("07888594958");
+			log.debug("Entered contact number");
+			Thread.sleep(2000);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.getMessage();
+		}
+
+		Agent_RegisterCustomerPage.intialPassword.sendKeys("SitTester123");
+		Agent_RegisterCustomerPage.confirmPassword.sendKeys("SitTester123");
+		Thread.sleep(2000);
+
+		try {
+			Agent_RegisterCustomerPage.HouseNumber.sendKeys(HouseNumber);
+			Thread.sleep(2000);
+			Agent_RegisterCustomerPage.Postcode.sendKeys(PostCode);
+			log.debug("Entered House Postcode  as SL1 1EL");
+
+			Thread.sleep(2000);
+			pageobjects.Agent_RegisterCustomerPage.FindAddress.click();
+			Thread.sleep(3000);
+			log.debug("Clicked on the Find address button");
+
+			pageobjects.Agent_RegisterCustomerPage.Selectedaddress.click();
+			log.debug("Selected an address");
+		} catch (Exception e) {
+			e.getMessage();
+		}
+
+		Select dropdown2 = new Select(pageobjects.Agent_RegisterCustomerPage.securityQuestion);
+		dropdown2.selectByIndex(2);
+		pageobjects.Agent_RegisterCustomerPage.securityAnswer.sendKeys("Rotary");
+		Thread.sleep(2000);
+		Agent_RegisterCustomerPage.registerCustomer.click();
+		Thread.sleep(3000);
+		log.debug("Clicked on Register customer");
+	}
+
 
 	public static void PaybyCard() throws InterruptedException {
 		String OneOff = Agent_RegisterCustomerPage.ZeroOneOff.getText();

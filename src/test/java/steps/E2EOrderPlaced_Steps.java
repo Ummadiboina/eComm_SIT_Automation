@@ -1596,12 +1596,14 @@ public class E2EOrderPlaced_Steps {
 	 * #########
 	 */
 
-	@Given("^Register customer with valid ([^\"]*) and ([^\"]*) and other valid details in delivery page$")
-	public void register_customer(String Firstname, String Surname) throws Throwable {
+	@Then("^Register customer with valid ([^\"]*), ([^\"]*), ([^\"]*), ([^\"]*) and other valid details in delivery page$")
+
+	//@Given("^Register customer with valid ([^\"]*) and ([^\"]*) and other valid details in delivery page$")
+	public void register_customer(String Firstname, String Surname, String HouseNumber, String PostCode) throws Throwable {
 	//	try {
 			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 			PageFactory.initElements(driver, Agent_RegisterCustomerPage.class);
-			Agent_RegisterCustomerActions.PayGRegistration(Firstname, Surname);
+			Agent_RegisterCustomerActions.PayGRegistration(Firstname, Surname, HouseNumber, PostCode);
 /*		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			System.out.println("Unable to Register customer , please see the failure screenshot");
@@ -1674,6 +1676,21 @@ public class E2EOrderPlaced_Steps {
 	 * #########################################################################
 	 * #########
 	 */
+
+	@When("^submit order button is clicked$")
+	public void submit_order_button_is_clicked() throws Throwable {
+		try {
+			driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, Agent_ConfirmationPage.class);
+			Agent_ConfirmationPageActions.Confirmationdetails();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			System.out.println("Unable to get order confirmation screen , please see the failure screenshot");
+			Assert.fail("Unable to get order confirmation screen , please see the failure screenshot");
+
+		}
+	}
+	
 
 	@Then("^Order confirmation message should be displayed$")
 	public void order_confirmation_message_should_be_displayed() throws Throwable {
