@@ -25,4 +25,4 @@ Scenario Outline:
 	
 	Examples: 
 		| username   | password | smartwatchname  | fitnesstrackername | tabletname    |
-		| inavl0wx_355207@o2.com | test123  | Pebble Original Jet Black| Fitbit Alta   | Apple iPad 9.7 |
+		| inavl0wx_355207@o2.com | test123  | Pebble Original Jet Black| Fitbit Alta   | Apple iPad 9.7 |

@@ -6,6 +6,7 @@ Scenario Outline: E11522_CFA_MoreThan12Accessory_Phone
 	And Navigate to Accessories 
 	And Select <accessoryname> from accessories 
 	And add quantity of accessories to basket within <limit1> in details page and navigate to basket 
+	And click on continue shopping button 
 	And Navigate to Fitness Trackers 
 	And I choose <fitnesstrackername> FitnessTracker 
 	And add quantity of FitnessTracker to basket within <limit2> in details page and navigate to basket 
