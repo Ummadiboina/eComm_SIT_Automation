@@ -36,4 +36,4 @@ CFA Add all non connected devices (Standalone Smartwatch, Accessory and Fitnesst
 	
 	Examples: 
 		| handset | Firstname | Surname | Username     | limit |accessoryname|fitnesstrackername|smartwatchname|
-		| Apple iPhone 6s Plus Like New | TEST      | ACCEPTA | TEST ACCEPTA |     1 |JBL Clip 2|Fitbit Alta|Pebble Original|
+		| Apple iPhone 6s Plus Like New | TEST      | ACCEPTA | TEST ACCEPTA |     1 |JBL Clip 2|Fitbit Alta|Pebble Original Jet Black|

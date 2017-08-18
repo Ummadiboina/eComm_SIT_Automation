@@ -8,6 +8,7 @@ import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.ElementNotVisibleException;
 import org.openqa.selenium.Point;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 
 import helpers.Environment;
@@ -529,7 +530,7 @@ static	Logger log = Logger.getLogger("devpinoyLogger");
 			  
 			  driver.navigate().refresh();
 
-			  Thread.sleep(5000);
+			  Thread.sleep(10000);
 			  Point coordinates = pageobjects.MouseHoverPage.MoveMouseOnShopTab.getLocation();
 	   		  Robot robot = new Robot();
 	   		  robot.mouseMove(coordinates.getX(),coordinates.getY()+120);
