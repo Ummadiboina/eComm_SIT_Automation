@@ -9,11 +9,11 @@ Feature: Reg_AFA_PayMSimO_withoutAnyAccessory
     And Validate all the Basket content and checkout
     Then perform all the advisory checks
     And perform the credit checks using valid <Firstname> and <Surname> and valid <Username>
-    And Register customer with valid <Firstname> and <Surname> and other valid details in delivery page
+    And Register customer with valid <Firstname>, <Surname>, <HouseNumber>, <PostCode> and other valid details in delivery page
     And Choose <DeliveryType> delivery address and delivery time
-    When Pay by card
+    When submit order button is clicked
     Then Order confirmation message should be displayed
 
     Examples: 
-      | Tariff | DeliveryType | Firstname | Surname | Username     |
-      | SimO   | HomeDelivery | TEST      | ACCEPTA | TEST ACCEPTA |
+      | Tariff | DeliveryType | Firstname | Surname | Username     | HouseNumber | PostCode |
+      | SimO   | HomeDelivery | TEST      | ACCEPTA | TEST ACCEPTA | Flat 5      | SL11EL   |

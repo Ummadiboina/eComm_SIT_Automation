@@ -9,11 +9,11 @@ Feature: Reg_AFA_PayG_withoutAnyAccessory
     And Select valid <Tariffs> from PAYG tariffs tab
     And Validate all the Basket content and checkout
     Then perform all the advisory checks
-    And Register customer with valid <Firstname> and <Surname> and other valid details in delivery page
+    And Register customer with valid <Firstname>, <Surname>, <HouseNumber>, <PostCode> and other valid details in delivery page
     And Choose <DeliveryType> delivery address and delivery time
     When Pay by card
     Then Order confirmation message should be displayed
 
     Examples: 
-      | Device                        | Tariffs | DeliveryType | Firstname | Surname | Username     |
-      | iPhone 7 Plus 128GB Jet Black | Random  | HomeDelivery | TEST      | ACCEPTA | TEST ACCEPTA |
+      | Device                        | Tariffs | DeliveryType | Firstname | Surname | Username     | HouseNumber | PostCode |
+      | iPhone 7 Plus 128GB Jet Black | Random  | HomeDelivery | TEST      | ACCEPTA | TEST ACCEPTA | Flat 2      | SL11EL   |
