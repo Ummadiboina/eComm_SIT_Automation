@@ -345,8 +345,8 @@ public class E2EOrderPlaced_Steps {
 			MobileBroadBandPageActions.DeviceSelect(elementName);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
-			System.out.println("Unable to select MBB PayG device");
-			Assert.fail("Unable to select MBB PayG device");
+			System.out.println("Unable to select MBB PayM device");
+			Assert.fail("Unable to select MBB PayM device");
 
 		}
 	}
@@ -1350,19 +1350,23 @@ public class E2EOrderPlaced_Steps {
 
 	@Given("^performs Upgrade for ([^\"]*)$")
 	public void performs_Upgrade(String msisdn) throws Throwable {
-		//try {
-			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-			PageFactory.initElements(driver, Agent_HomePage.class);
-			Agent_HomePagePageActions.FindUser(msisdn);
-			Thread.sleep(3000);
-			Agent_HomePagePageActions.upgradeUser();
-			Thread.sleep(4000);
-/*		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			System.out.println("Unable to login for upgrade for user in Agent shop, please see the failure screenshot");
-			Assert.fail("Unable to login for upgrade for user in Agent shop, please see the failure screenshot");
-
-		}    */
+		// try {
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		PageFactory.initElements(driver, Agent_HomePage.class);
+		Agent_HomePagePageActions.FindUser(msisdn);
+		Thread.sleep(3000);
+		Agent_HomePagePageActions.upgradeUser();
+		Thread.sleep(4000);
+		/*
+		 * } catch (Exception e) { // TODO Auto-generated catch block
+		 * System.out.
+		 * println("Unable to login for upgrade for user in Agent shop, please see the failure screenshot"
+		 * ); Assert.
+		 * fail("Unable to login for upgrade for user in Agent shop, please see the failure screenshot"
+		 * );
+		 * 
+		 * }
+		 */
 	}
 
 	@Given("^performs Acquisition for New user$")
@@ -1559,7 +1563,7 @@ public class E2EOrderPlaced_Steps {
 			System.out.println("Unable to perform advisory checks , please see the failure screenshot");
 			Assert.fail("Unable to perform advisory checks , please see the failure screenshot");
 
-		}  
+		}
 	}
 
 	/*
@@ -1600,16 +1604,20 @@ public class E2EOrderPlaced_Steps {
 
 	@Given("^Register customer with valid ([^\"]*) and ([^\"]*) and other valid details in delivery page$")
 	public void register_customer(String Firstname, String Surname) throws Throwable {
-	//	try {
-			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-			PageFactory.initElements(driver, Agent_RegisterCustomerPage.class);
-			Agent_RegisterCustomerActions.PayGRegistration(Firstname, Surname);
-/*		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			System.out.println("Unable to Register customer , please see the failure screenshot");
-			Assert.fail("Unable to Register customer , please see the failure screenshot");
-
-		}    */
+		// try {
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		PageFactory.initElements(driver, Agent_RegisterCustomerPage.class);
+		Agent_RegisterCustomerActions.PayGRegistration(Firstname, Surname);
+		/*
+		 * } catch (Exception e) { // TODO Auto-generated catch block
+		 * System.out.
+		 * println("Unable to Register customer , please see the failure screenshot"
+		 * ); Assert.
+		 * fail("Unable to Register customer , please see the failure screenshot"
+		 * );
+		 * 
+		 * }
+		 */
 
 	}
 
@@ -1640,7 +1648,7 @@ public class E2EOrderPlaced_Steps {
 	@When("^Pay by card$")
 	public void pay_by_card() throws Throwable {
 		driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
-	try {
+		try {
 			PageFactory.initElements(driver, Agent_RegisterCustomerPage.class);
 			Agent_RegisterCustomerActions.PaybyCard();
 			Agent_RegisterCustomerActions.CardDetails();
@@ -1649,7 +1657,7 @@ public class E2EOrderPlaced_Steps {
 			System.out.println("Unable to Pay by card , please see the failure screenshot");
 			Assert.fail("Unable to Pay by card , please see the failure screenshot");
 
-		}   
+		}
 	}
 
 	@When("^Pay by card for PAYM device$")
@@ -2531,14 +2539,16 @@ public class E2EOrderPlaced_Steps {
 			PageFactory.initElements(driver, PAYMandPAYGTariffAndExtrasPage.class);
 			Thread.sleep(3000);
 			// BasketPageActions.ValidateContentEcomm11522();
-			//BasketPageActions.verifyNCDRemovedinBasketPageAfterCDSelection();
-			//AccessoryPageActions.removeItemsFromBasketBasedOnAdditionOfItems();
+			// BasketPageActions.verifyNCDRemovedinBasketPageAfterCDSelection();
+			// AccessoryPageActions.removeItemsFromBasketBasedOnAdditionOfItems();
 			AccessoryPageActions.check();
-			
+
 		} catch (Exception e) {
 			e.printStackTrace();
-			System.out.println("Failed step : the previously selected standalone non-connected items should be removed from my basket");
-			Assert.fail("Failed step : the previously selected standalone non-connected items should be removed from my basket");
+			System.out.println(
+					"Failed step : the previously selected standalone non-connected items should be removed from my basket");
+			Assert.fail(
+					"Failed step : the previously selected standalone non-connected items should be removed from my basket");
 		}
 	}
 
@@ -2605,13 +2615,14 @@ public class E2EOrderPlaced_Steps {
 	}
 
 	/*
-	 * @And("^Verify the devices ([^\"]*), ([^\"]*) and ([^\"]*) in basket$") public
-	 * void verifyDevicesInBasket(String smartwatchname, String fitnesstrackername,
-	 * String tabletname) throws Throwable { try {
+	 * @And("^Verify the devices ([^\"]*), ([^\"]*) and ([^\"]*) in basket$")
+	 * public void verifyDevicesInBasket(String smartwatchname, String
+	 * fitnesstrackername, String tabletname) throws Throwable { try {
 	 * driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 	 * PageFactory.initElements(driver, BasketPage.class);
-	 * BasketPageActions.verifyDevicesInBasket(smartwatchname, fitnesstrackername,
-	 * tabletname); } catch (Exception e) { // TODO Auto-generated catch block
+	 * BasketPageActions.verifyDevicesInBasket(smartwatchname,
+	 * fitnesstrackername, tabletname); } catch (Exception e) { // TODO
+	 * Auto-generated catch block
 	 * System.out.println("not able to verify if phone tab is selected");
 	 * Assert.fail("not able to verify if phone tab is selected"); } }
 	 */
@@ -2636,8 +2647,8 @@ public class E2EOrderPlaced_Steps {
 	 * 
 	 * try { driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 	 * PageFactory.initElements(driver, PAYMSimOPage.class);
-	 * PAYMSimOPageActions.SelectRecommendedTariffPhonesTab(contractlength); } catch
-	 * (Exception e) { e.printStackTrace();
+	 * PAYMSimOPageActions.SelectRecommendedTariffPhonesTab(contractlength); }
+	 * catch (Exception e) { e.printStackTrace();
 	 * System.out.println("Unable to choose contract length");
 	 * Assert.fail("Unable to choose contract length"); } }
 	 */
@@ -2798,20 +2809,20 @@ public class E2EOrderPlaced_Steps {
 			log.debug("Fail: Cannot verify that non connected device added to basket " + e.getMessage() + "");
 		}
 	}
-		
+
 	@And("^calculate the total quantity of devices added to basket$")
 	public void calculate_total_qty_of_devices_added() throws Throwable {
 		try {
-			log.debug(
-					"Running Test Step: calculate the total quantity of devices added to basket");
+			log.debug("Running Test Step: calculate the total quantity of devices added to basket");
 			AccessoryPageActions.calculateTotalQtyAddedInBasket();
-			
+
 		} catch (Exception e) {
 			e.printStackTrace();
 			log.debug("Fail: calculate the total quantity of devices added to basket ");
-			
+
 		}
 	}
+
 	@And("^Verify all non connected devices are still retained in the basket and not overridden$")
 	public void verify_non_Connected_device_ratined_in_basket_after_selecting_connected_device() throws Throwable {
 		try {
@@ -2845,8 +2856,8 @@ public class E2EOrderPlaced_Steps {
 	public void buy_a_like_new_phone_on_pay_monthly() throws Throwable {
 		try {
 			log.debug("Running Test Step: @And(I select to buy a like new phone on Pay Monthly)");
-			//scrollToAnElement.scrollToElement(LikeFreePage.Paym);
-			//LikeFreePage.Paym.click();
+			// scrollToAnElement.scrollToElement(LikeFreePage.Paym);
+			// LikeFreePage.Paym.click();
 			JavascriptExecutor js = (JavascriptExecutor) driver;
 			js.executeScript("arguments[0].click();", LikeFreePage.Paym);
 			Thread.sleep(10000);
@@ -2883,7 +2894,7 @@ public class E2EOrderPlaced_Steps {
 			MouseHoverAction.UpgradeandUpgradeNow();
 			Thread.sleep(5000);
 			Autoredirection.redirectUpgrades();
-			//UpgradeTabletListingPage.ViewAllTablets.click();
+			// UpgradeTabletListingPage.ViewAllTablets.click();
 			Thread.sleep(2000);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
@@ -2907,7 +2918,8 @@ public class E2EOrderPlaced_Steps {
 		driver.navigate().to(Newurl_CVOS);
 		Thread.sleep(3000);
 		/*
-		 * } catch (Exception e) { // TODO Auto-generated catch block System.out.
+		 * } catch (Exception e) { // TODO Auto-generated catch block
+		 * System.out.
 		 * println("Unable to Login/validate home page, please see the failure screenshot"
 		 * ); Assert.
 		 * fail("Unable to Login/validate home page, please see the failure screenshot"
@@ -3054,8 +3066,7 @@ public class E2EOrderPlaced_Steps {
 	}
 
 	@And("^I Login with Trading Admin Credentials ([^\"]*) and ([^\"]*)$")
-	public void i_Login_with_Trading_Admin(String Username1,
-			String Password2) throws Throwable {
+	public void i_Login_with_Trading_Admin(String Username1, String Password2) throws Throwable {
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		PageFactory.initElements(driver, CVOS_PageObjects.class);
 		try {
@@ -3135,7 +3146,7 @@ public class E2EOrderPlaced_Steps {
 	//////////////////////////// CVOS Delayed Delivery
 	//////////////////////////////////////////////////////////////////////////////// //////////////////////////
 	////////////////////////////////////////////////////////////////////////////////
-//([^\"]*)
+	// ([^\"]*)
 
 	@Then("^I should be able to move the Launch date to a past date([^\"]*)$")
 	public void i_should_be_able_to_move_the_Launch_date_to_a_past_dateAmazon_Fire_phone_GB(String Search_by_model)
@@ -3589,10 +3600,10 @@ public class E2EOrderPlaced_Steps {
 
 		}
 	}
-		
+
 	@And("^Verify expected \"coming soon\" ([^\"]*) and its specific details are present in the device list ([^\"]*),([^\"]*),([^\"]*)$")
-	public void verify_expected_device_and_details_are_in_device_list_coming_soon_device(String device, String color, String capacity,
-			String stockmessage) throws Throwable {
+	public void verify_expected_device_and_details_are_in_device_list_coming_soon_device(String device, String color,
+			String capacity, String stockmessage) throws Throwable {
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		try {
 			PageFactory.initElements(driver, BaseCommPage.class);
@@ -3604,8 +3615,7 @@ public class E2EOrderPlaced_Steps {
 
 		}
 	}
-	
-	
+
 	@And("^Verify that promotion ribbon is displayed for ([^\"]*)$")
 	public void verifypromotionribbonDisplay(String device) {
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
@@ -3620,18 +3630,16 @@ public class E2EOrderPlaced_Steps {
 	}
 
 	// Then Verify the price gets updated based on the new colour and capacity
-	/*@And("^Verify the price gets updated based on the new colour and capacity$")
-	public void verifyPriceDisplaybased_on_Colour_and_capacity() {
-		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-		try {
-			PageFactory.initElements(driver, BaseCommPage.class);
-			BaseCommPageActions.VerifyPriceChangeuponCapacity();
-
-		} catch (Exception e) {
-			e.printStackTrace();
-			Assert.fail("Unable to verify price updates");
-		}
-	}*/
+	/*
+	 * @And("^Verify the price gets updated based on the new colour and capacity$"
+	 * ) public void verifyPriceDisplaybased_on_Colour_and_capacity() {
+	 * driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS); try {
+	 * PageFactory.initElements(driver, BaseCommPage.class);
+	 * BaseCommPageActions.VerifyPriceChangeuponCapacity();
+	 * 
+	 * } catch (Exception e) { e.printStackTrace();
+	 * Assert.fail("Unable to verify price updates"); } }
+	 */
 
 	@And("^Verify the price gets updated based on ([^\"]*), ([^\"]*) for ([^\"]*)$")
 	public void verifyPriceDisplaybased_on_Colour_and_capacity(String Capacity1, String Capacity2, String device) {
@@ -3646,7 +3654,7 @@ public class E2EOrderPlaced_Steps {
 			Assert.fail("Unable to verify price updates");
 		}
 	}
-	
+
 	@And("^Verify the current sort order details ([^\"]*)$")
 	public void verify_current_sort_order(String SortOption) throws Throwable {
 
@@ -3654,8 +3662,11 @@ public class E2EOrderPlaced_Steps {
 			log.debug("Running Test Step: @And(Verify the current sort order details)");
 
 			/*
-			 * if (driver.findElement(By.xpath("//*[@class='page-all']")).isEnabled()) {
-			 * driver.findElement(By.xpath("//*[@class='page-all']")).click(); } else {
+			 * if
+			 * (driver.findElement(By.xpath("//*[@class='page-all']")).isEnabled
+			 * ()) {
+			 * driver.findElement(By.xpath("//*[@class='page-all']")).click(); }
+			 * else {
 			 * 
 			 * PhonesListingPageAction.clickOnViewAllProductsOnOnePage(); }
 			 */
@@ -3795,7 +3806,6 @@ public class E2EOrderPlaced_Steps {
 			if (Filter.equals("Offer")) {
 				PhonesListingPageAction.verifyDeviceGetsDisplayedBasedOnOfferFilterApplied(Option);
 			}
-			
 
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -3867,9 +3877,9 @@ public class E2EOrderPlaced_Steps {
 	public void select_the_same_device(String devicename) throws Throwable {
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		try {
-			PageFactory.initElements(driver, MouseHoverPage.class);
+			PageFactory.initElements(driver, TabletPage.class);
 			TabletPageActions.DeviceSelect(devicename);
-
+			Autoredirection.redirect();
 		} catch (Exception e) {
 			e.printStackTrace();
 			Assert.fail("Unable to navigate to iPad landing page");
@@ -3985,6 +3995,7 @@ public class E2EOrderPlaced_Steps {
 			Assert.fail("Failed : Select <color>, <capacity> of the device <device_name>");
 		}
 	}
+
 	@And("^Choose Accesssory$")
 	public void ChooseGivenAccessory() throws Throwable {
 		try {
@@ -4002,6 +4013,7 @@ public class E2EOrderPlaced_Steps {
 
 		}
 	}
+
 	@And("^I Land on the basket page by clicking on Add to Basket button$")
 	public void i_Land_on_the_basket_page_by_clicking_AddToBasket() throws Throwable {
 		try {
@@ -4016,6 +4028,19 @@ public class E2EOrderPlaced_Steps {
 			System.out.println("Unable to Land on the basket page and choose home delivery option");
 			Assert.fail("Unable to Land on the basket page and choose home delivery option");
 
+		}
+	}
+
+	@And("^Click on 'Continue' button on upgrade page$")
+	public void click_on_continue_link_for_the_upgrade_journey() throws Throwable {
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, UpgradeCustomerPage.class);
+			UpgradeCustomerPageActions.clickOnContinueButton();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			Assert.fail("Unable to click on Continue button");
 		}
 	}
 }

@@ -13,7 +13,7 @@ Feature: C1960_E11522_TC5_CFA_Other_tablets_tab_basecomms_tariffs_Basket_Checkou
     And I Land on the basket page and choose home delivery option
     And click on "go to checkout" button
     And Signin using valid <username> and <password> credentials
-    And Click on 'Continue' link
+    And Click on 'Continue' button on upgrade page
     And Select existing account and begin fast checkout
     And land on the payment page and input <user> and other details for upgrade and click 'Continue on next step'
     And Continue to Agreements page and confirm all the agreement checks

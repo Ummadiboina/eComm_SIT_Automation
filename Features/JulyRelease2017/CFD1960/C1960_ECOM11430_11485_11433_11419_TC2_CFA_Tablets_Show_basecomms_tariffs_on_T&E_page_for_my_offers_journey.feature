@@ -6,11 +6,13 @@ Feature: C1960_ECOM11430_11485_11433_11419_TC2_CFA_Tablets_Show_basecomms_tariff
     And Verify expected <device_name> and its specific details are present in the device list <default_colour>,<default_capacity>,<default_stock_message>
     #Veirfy device price details are also getting displayed in the above step
     And Select <color>, <capacity> of the device <device_name>
-    And Verify that promotion ribbon is displayed for <device_name>
+    #And Verify that promotion ribbon is displayed for <device_name>
     And Verify new image is as per the selected <device_name>,<capacity>and <color> in the Basecomms page
     And Click on "Buy Now" button for <device_name> and verify "Tariffs and Extras" page is displayed
     And Verify new image is as per the selected <device_name>,<capacity>and <color> in the Tariffs and Extras Page
     And Land on the 'Tariffs and extra' page
+    And I Land on the basket page by clicking on Add to Basket button
+    And click on continue shopping button 
     And navigate to PAYM Tablets page
     And I choose <device_name> Tablet
     And Navigate to device details page
