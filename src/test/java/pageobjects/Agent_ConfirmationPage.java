@@ -20,5 +20,10 @@ public class Agent_ConfirmationPage {
 		
 		@FindBy(how=How.ID,using="payDecline")
 		public static WebElement payDecline;
+
+		//@FindBy(how=How.XPATH,using="//input[@name='submit']")
+		
+		@FindBy(how=How.ID,using="placeOrderForm")
+		public static WebElement SubmitOrder;
 					
 }
