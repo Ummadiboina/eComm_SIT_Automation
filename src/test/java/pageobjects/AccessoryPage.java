@@ -63,4 +63,8 @@ public class AccessoryPage {
 	
 	@FindBy(how = How.XPATH, using = "//a[contains(., 'View all products on one page')]")
 	public static WebElement ViewAllProductsOnOnePage;
+	
+	@FindBy(how = How.XPATH, using = "//a[contains(@data-qa-device-model-family, 'S8 Plus Original LED Cover')]")
+	public static WebElement SamsungS8PlusOriginalLEDCover;
+	
 }
