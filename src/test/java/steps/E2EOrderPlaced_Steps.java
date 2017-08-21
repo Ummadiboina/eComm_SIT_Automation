@@ -3897,8 +3897,9 @@ public class E2EOrderPlaced_Steps {
 	public void select_the_same_device(String devicename) throws Throwable {
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		try {
-			PageFactory.initElements(driver, MouseHoverPage.class);
+			PageFactory.initElements(driver, TabletPage.class);
 			TabletPageActions.DeviceSelect(devicename);
+			Autoredirection.redirect();
 
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -4048,6 +4049,18 @@ public class E2EOrderPlaced_Steps {
 			System.out.println("Unable to Land on the basket page and choose home delivery option");
 			Assert.fail("Unable to Land on the basket page and choose home delivery option");
 
+		}
+	}
+	@And("^Click on 'Continue' button on upgrade page$")
+	public void click_on_continue_link_for_the_upgrade_journey() throws Throwable {
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, UpgradeCustomerPage.class);
+			UpgradeCustomerPageActions.clickOnContinueButton();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			Assert.fail("Unable to click on Continue button");
 		}
 	}
 }
