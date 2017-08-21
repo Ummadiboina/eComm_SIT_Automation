@@ -1632,7 +1632,7 @@ public class E2EOrderPlaced_Steps {
 	 */
 	@Then("^Choose HomeDelivery delivery address and delivery time$")
 	public void HomeDelivery_Address() throws Throwable {
-		// driver.findElement(By.xpath("//*[@id='deliveryDateTime']/div/table/tbody/tr[2]/td[2]/a")).click();
+		System.out.println("Choosing available delivery address");
 		// Thread.sleep(5000);
 	}
 
@@ -1685,7 +1685,20 @@ public class E2EOrderPlaced_Steps {
 	 * #########
 	 */
 
-	@Then("^Order confirmation message should be displayed$")
+@When("^submit order button is clicked$")
+	public void submit_order_button_is_clicked() throws Throwable {
+		try {
+			driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, Agent_ConfirmationPage.class);
+			Agent_ConfirmationPageActions.SubmitOrder();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			System.out.println("Unable to get order confirmation screen , please see the failure screenshot");
+			Assert.fail("Unable to get order confirmation screen , please see the failure screenshot");
+
+		}
+	}
+@Then("^Order confirmation message should be displayed$")
 	public void order_confirmation_message_should_be_displayed() throws Throwable {
 		try {
 			driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
