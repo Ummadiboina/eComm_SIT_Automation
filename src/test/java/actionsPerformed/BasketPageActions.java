@@ -139,9 +139,13 @@ public class BasketPageActions extends Environment {
 	}
 
 	// Below is for Clicking on the goto Checkout button
-	public static void gotoCheckout() {
+	public static void gotoCheckout() throws InterruptedException {
+		Thread.sleep(2000);
+		System.out.println("Going to click go to check out button");
 		pageobjects.BasketPage.checkoutbtn.click();
 		log.debug("Clicking on Checkout button");
+		System.out.println("Go to checkout button clicked");
+
 	}
 
 	public static void ValidateBasketPageContents() throws InterruptedException {
