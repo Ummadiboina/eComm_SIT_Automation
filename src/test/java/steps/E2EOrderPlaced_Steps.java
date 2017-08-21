@@ -3894,14 +3894,12 @@ public class E2EOrderPlaced_Steps {
 			PageFactory.initElements(driver, TabletPage.class);
 			TabletPageActions.DeviceSelect(devicename);
 			Autoredirection.redirect();
-
 		} catch (Exception e) {
 			e.printStackTrace();
 			Assert.fail("Unable to navigate to iPad landing page");
 
 		}
 	}
-
 	@And("^verify that the Basecomms tariff is not displayed in the Tariff and Extras page$")
 	public void verify_that_the_Basecomms_tariff_is_not_displayed_in_the_Tariff_and_Extras_page() throws Throwable {
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
