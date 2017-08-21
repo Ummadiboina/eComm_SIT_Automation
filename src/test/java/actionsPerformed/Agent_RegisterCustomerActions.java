@@ -114,6 +114,7 @@ public class Agent_RegisterCustomerActions extends Environment {
 			log.debug("Selected an address");
 		} catch (Exception e) {
 			e.getMessage();
+			System.out.println("Try catch block exception in Agent register cutomer actions page, nothing to worry :)");
 		}
 
 		Select dropdown2 = new Select(pageobjects.Agent_RegisterCustomerPage.securityQuestion);
@@ -121,8 +122,9 @@ public class Agent_RegisterCustomerActions extends Environment {
 		pageobjects.Agent_RegisterCustomerPage.securityAnswer.sendKeys("Rotary");
 		Thread.sleep(2000);
 		Agent_RegisterCustomerPage.registerCustomer.click();
-		Thread.sleep(3000);
+		Thread.sleep(6000);
 		log.debug("Clicked on Register customer");
+		System.out.println("Clicked on Register customer");
 	}
 
 

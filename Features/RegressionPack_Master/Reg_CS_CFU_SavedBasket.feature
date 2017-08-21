@@ -1,6 +1,6 @@
 Feature: Reg_CS_CFU_SavedBasket
-#CFU Saved Basket Feature Validation - This feature is not automated due to presence of Captcha
 
+  #CFU Saved Basket Feature Validation - This feature is not automated due to presence of Captcha
   # @smokeTesthomedelivery
   #Scenario Outline: CFU Saved Basket Feature Validation
   # Given I am an Existing user and Navigates to Signin page
@@ -22,5 +22,5 @@ Feature: Reg_CS_CFU_SavedBasket
     And Verifies the basket page for the upgrade journey
 
     Examples: 
-      | username    | password |
-      | ink_jun9198 | test123  |
+      | username   | password |
+      | ins_nov746 | test123  |

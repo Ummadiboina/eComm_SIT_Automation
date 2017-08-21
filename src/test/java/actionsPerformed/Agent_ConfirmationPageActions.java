@@ -1,6 +1,7 @@
 package actionsPerformed;
 
 import helpers.Environment;
+import helpers.Log;
 import pageobjects.Agent_ConfirmationPage;
 import static org.testng.Assert.fail;
 
@@ -69,6 +70,15 @@ public class Agent_ConfirmationPageActions extends Environment{
 	fail("Payment didnt go through, and the text in the screen is "+message);
 		
 		}
+
+	public static void SubmitOrder() throws Exception{
+		// TODO Auto-generated method stub
+				System.out.println("Entered submit order method");
+		Agent_ConfirmationPage.SubmitOrder.click();
+		System.out.println("Order submitted");
+		Log.debug("Order submitted");
+
+	}
 	}
 	
 	

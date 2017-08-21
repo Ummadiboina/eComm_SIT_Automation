@@ -10,12 +10,14 @@ Feature: Reg_AFU_PAYM_Dongle
     And select a valid Handset and Tariff combination
     And Validate all the Basket content and checkout
     Then perform all the advisory checks
-    And perform the credit checks using valid <Firstname> and <Surname> and valid <Username>
+    And perform the credit checks using valid <Firstname>, <Surname>, <HouseNumber>, <PostCode> and valid <Username>
     And Register customer with valid <Firstname>, <Surname>, <HouseNumber>, <PostCode> and other valid details in delivery page
     And Choose <DeliveryType> delivery address and delivery time
-    And Update Device Plan Link Email Address
-    Then CCALink Should be generated
+    #And Update Device Plan Link Email Address
+    #Then CCALink Should be generated
+    When Pay by card
+    Then Order confirmation message should be displayed
 
     Examples: 
-      | Device | Tariffs | Extras | DeliveryType | Firstname | Surname | Username     |HouseNumber | PostCode |
-      | dongle | Random  | Random | HomeDelivery | Test      | Accepta | Test Accepta | Flat 9      | SL11EL   |
+      | Device | Tariffs | Extras | DeliveryType | Firstname | Surname | HouseNumber | PostCode | Username     |
+      | dongle | Random  | Random | HomeDelivery | Test      | Accepta | Flat 9      | SL11EL   | Test Accepta |
