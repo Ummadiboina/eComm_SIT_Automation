@@ -9,8 +9,8 @@ Scenario Outline:
 	And Navigate to SmartWatches 
 	And I choose <smartwatchname> Smartwatch 
 	And click on Add to Basket button 
-	And click on continue shopping button
 	And Verify the device <smartwatchname> in basket
+	And click on continue shopping button
 	And Navigate to Fitness Trackers 
 	And I choose <fitnesstrackername> FitnessTracker 
 	And click on Add to Basket button 
@@ -25,4 +25,4 @@ Scenario Outline:
 	
 	Examples: 
 		| username   | password | smartwatchname  | fitnesstrackername | tabletname    |
-		| inavl0wx_355207@o2.com | test123  | Pebble Original Jet Black| Fitbit Alta   | Apple iPad 9.7 |
+		| inavl0wx_355207@o2.com | test123  | Pebble Original Jet Black| Fitbit Alta   | Apple iPad 9.7 |

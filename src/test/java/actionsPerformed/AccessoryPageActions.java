@@ -142,11 +142,25 @@ public class AccessoryPageActions extends Environment {
 		{
 			System.out.println("Selecting JBLXtreme Accessory");
 			log.debug("Selecting JBLXtreme Accessory");
-			log.debug("Selected an accessory -  " + pageobjects.AccessoryPage.RandomAccessory.getText());
 			pageobjects.AccessoryPage.JBLXtreme.click();
 			log.debug("JBLXtreme Accessory Selected");
 		}
+		if (elementName.contains("SanDisk Ultra MemoryCard"))
 
+		{
+			System.out.println("Selecting SanDisk Ultra MemoryCard");
+			log.debug("Selecting SanDisk Ultra MemoryCard");
+			pageobjects.AccessoryPage.SanDiskUltraMemoryCard80Mbs.click();
+			log.debug("SanDisk Ultra MemoryCard Selected");
+		}
+		if (elementName.contains("Samsung S8 Plus Original LED Cover"))
+
+		{
+			System.out.println("Selecting Samsung S8 Plus Original LED Cover");
+			log.debug("Selecting Samsung S8 Plus Original LED Cover");
+			pageobjects.AccessoryPage.SamsungS8PlusOriginalLEDCover.click();
+			log.debug("Samsung S8 Plus Original LED Cover Selected");
+		}
 	}
 	/*
 	 * Below has been modified as per the new ui layout, new function has been

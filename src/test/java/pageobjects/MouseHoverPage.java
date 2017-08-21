@@ -13,10 +13,11 @@ public class MouseHoverPage extends Environment {
 	public static WebElement MoveMouseOnShopHeader;
 
 	// Below will click on the Shop Tab
-	//@FindBy(how = How.ID, using = "pn1")
-	@FindBy(how = How.XPATH, using = ("//*[@id='block-o2-theme-personaldesktopmainmenu']/div[4]/ul/li[1]/a"))
+	//@FindBy(how = How.XPATH, using = ("//*[@id='block-o2-theme-personaldesktopmainmenu']/div[4]/ul/li[1]/a"))
+	//@FindBy(how = How.XPATH, using = ("//*[@id='pn1']"))
+	@FindBy(how = How.XPATH, using = ("//div[@class='nav-consumer']/ul/li/a[contains(@href, '/shop')]"))
 	public static WebElement MoveMouseOnShopTab;
-
+	
 	// Below will click on the Phones Link
 	@FindBy(how = How.XPATH, using = ("//a[contains(text(), 'Phones')]"))
 	public static WebElement MoveMouseOnPhones;
@@ -59,7 +60,7 @@ public class MouseHoverPage extends Environment {
 	@FindBy(how = How.XPATH, using = ("//a[contains(text(), 'Upgrades')]"))
 	public static WebElement MouseMoveonUpgrade;
 
-	@FindBy(how = How.XPATH, using = ("//a[contains(text(), 'Upgrade Now')]"))
+	@FindBy(how = How.XPATH, using = ("//a[contains(text(), 'Upgrade now')]"))
 	public static WebElement MouseMoveonUpgradeAndUpgradeNow;
 
 	// Below will click on the Tablets Tab

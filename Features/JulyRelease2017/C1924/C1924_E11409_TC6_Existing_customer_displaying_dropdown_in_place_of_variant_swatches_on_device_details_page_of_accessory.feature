@@ -16,5 +16,5 @@ Feature: C1924_E11409_TC6_Existing_customer_displaying_dropdown_in_place_of_vari
 
     #Close the browser
     Examples: 
-      | accessoryname | color | capacity | username    | password |
-      | JBL Extreme   | Black | 64 GB    | inavl0wx_355207@o2.com | test123  |
+      | accessoryname | color | username    | password |
+      | Samsung S8 Plus Original LED Cover|Silver| inavl0wx_355207@o2.com | test123  |

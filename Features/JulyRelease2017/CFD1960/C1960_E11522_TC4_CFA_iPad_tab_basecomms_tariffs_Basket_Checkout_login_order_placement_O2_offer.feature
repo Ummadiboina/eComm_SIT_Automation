@@ -22,4 +22,4 @@ Feature: C1960_E11522_TC4_CFA_iPad_tab_basecomms_tariffs_Basket_Checkout_login_o
     #Modify the above step to include pdf download
     Examples: 
       | device_name             | default_colour | default_capacity | default_stock_message | color  | capacity | user         |
-      | Apple iPad Pro 9.7 inch | Space Grey     | 32GB             | Out of stock          | Silver | 256GB    | TEST ACCEPTA |
+      | Apple iPad 9.7 | Space Grey     | 32GB             | In Stock| Silver | 128GB    | TEST ACCEPTA |
