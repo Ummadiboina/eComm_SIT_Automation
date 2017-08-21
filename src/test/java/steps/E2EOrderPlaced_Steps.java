@@ -1592,8 +1592,6 @@ public class E2EOrderPlaced_Steps {
 			Assert.fail("Unable to perform credit checks , please see the failure screenshot");
 
 		}
-
-	}
 	/*
 	 * #########################################################################
 	 * #########
@@ -1620,12 +1618,7 @@ public class E2EOrderPlaced_Steps {
 		 * 
 		 * }
 		 */
-	
-	}
-		 
-=======
-	
-	
+
 	}
 
 	/*
