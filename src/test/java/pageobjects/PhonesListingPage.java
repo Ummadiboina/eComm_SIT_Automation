@@ -105,10 +105,10 @@ public class PhonesListingPage {
 	@FindBy(how = How.XPATH, using = ("//*[@id='pay-full-device-tariff-tile']"))
 	public static WebElement BaseComm_PayForYourDeviceInFull_Section;
 
-	@FindBy(how = How.XPATH, using = ("//div[@class='main-container']/div[@class='extras-section section']"))
+	@FindBy(how = How.XPATH, using = ("//div[@class='main-container']/div[@class='choose-tariff-section section']"))
 	public static WebElement BaseComm_ChosseYourTariff_Section;
 
-	@FindBy(how = How.XPATH, using = ("//*[@id='panel']/div[1]/div/div[4]/div[3]/div"))
+	@FindBy(how = How.XPATH, using = ("//div[@class='main-container']/div[@class='extras-section section']"))
 	public static WebElement BaseComm_ChooseYourExtras_Section;
 
 	@FindBy(how = How.XPATH, using = ("//div[@class='main-container']/div[@id='choose-package']"))

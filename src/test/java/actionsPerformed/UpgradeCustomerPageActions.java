@@ -22,15 +22,17 @@ public class UpgradeCustomerPageActions extends Environment {
 		Thread.sleep(10000);
 
 		System.out.println("Title of the page is " + driver.getTitle());
-		/*if ((!driver.getTitle().contains("O2 | Accounts | Please verify your email address")
-				|| !driver.getTitle().contains("O2 | Accounts | Update username"))) {
-
-			Assert.fail("Login failed");
-
-		} else {
-
-			System.out.println("Logged in successfully");
-		}*/
+		/*
+		 * if ((!driver.getTitle().
+		 * contains("O2 | Accounts | Please verify your email address") ||
+		 * !driver.getTitle().contains("O2 | Accounts | Update username"))) {
+		 * 
+		 * Assert.fail("Login failed");
+		 * 
+		 * } else {
+		 * 
+		 * System.out.println("Logged in successfully"); }
+		 */
 		/*
 		 * try { System.out.println("Going to click on Continue link");
 		 * pageobjects.UpgradeCustomerPage.Continue.click();
@@ -282,4 +284,9 @@ public class UpgradeCustomerPageActions extends Environment {
 		}
 	}
 
+	public static void clickOnContinueButton() {
+
+		pageobjects.UpgradeCustomerPage.Continue.click();
+		System.out.println("Clicked on Continue button in Upgrade page");
+	}
 }
