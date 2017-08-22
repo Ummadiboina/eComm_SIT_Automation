@@ -23,4 +23,4 @@ Feature: C1669_E11521_TC4_Existing_customer_add_Standalone_Accessory_Fitnesstrac
 
     Examples: 
       | username   | password | user         | accessoryname    | fitnesstrackername | contract | Your_Tariff |
-      | testp@gmail.com | test123  | TEST ACCEPTA | JBL Clip 2 | Fitbit Alta | 30 days  | Your Tariff |
+      | inavl0wx_355207@o2.com | test123  | TEST ACCEPTA | JBL Clip 2 | Fitbit Alta | 30 days  | Your Tariff |

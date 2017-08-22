@@ -20,4 +20,4 @@ Scenario Outline:
 	
 	Examples: 
 		| username             | password | device_name      |default_colour | default_capacity | default_stock_message |color|capacity|
-		| inavl0wx_355207@o2.com | test123  |Apple iPad 9.7| Silver|32GB|Home delivery|Silver|32GB|
+		| inavl0wx_355207@o2.com | test123  |Apple iPad 9.7| Silver|32GB|Home delivery|Silver|32GB|

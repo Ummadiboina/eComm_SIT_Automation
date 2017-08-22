@@ -12,7 +12,7 @@ Feature: C1960_E11522_TC4_CFA_iPad_tab_basecomms_tariffs_Basket_Checkout_login_o
     And I Land on the basket page and choose home delivery option
     And click on "go to checkout" button
     And Signin using valid <username> and <password> credentials
-    And Click on 'Continue' link
+    And Click on 'Continue' button on upgrade page
     And Select existing account and begin fast checkout
     And land on the payment page and input <user> and other details for upgrade and click 'Continue on next step'
     And Continue to Agreements page and confirm all the agreement checks
@@ -21,5 +21,5 @@ Feature: C1960_E11522_TC4_CFA_iPad_tab_basecomms_tariffs_Basket_Checkout_login_o
 
     #Modify the above step to include pdf download
     Examples: 
-      | device_name             | default_colour | default_capacity | default_stock_message | color  | capacity | user         |
-      | Apple iPad Pro 9.7 inch | Space Grey     | 32GB             | Out of stock          | Silver | 256GB    | TEST ACCEPTA |
+      | device_name             | default_colour | default_capacity | default_stock_message | color  | capacity | user|username|password|
+      | Apple iPad 9.7 | Space Grey     | 32GB   | In Stock| Silver | 128GB    | TEST ACCEPTA |07770001111@o2.co.uk|test123|
