@@ -835,7 +835,7 @@ public class E2EOrderPlaced_Steps {
 		try {
 			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 			PageFactory.initElements(driver, BasketPage.class);
-			Thread.sleep(2000);
+			Thread.sleep(3000);
 			BasketPageActions.gotoCheckout();
 			Thread.sleep(2000);
 		} catch (Exception e) {
@@ -1597,7 +1597,7 @@ public class E2EOrderPlaced_Steps {
 
 		}
 
-	}
+	}	
 	/*
 	 * #########################################################################
 	 * #########
