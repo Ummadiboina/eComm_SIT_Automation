@@ -8,14 +8,8 @@ import java.util.concurrent.TimeUnit;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.FluentWait;
-import org.openqa.selenium.support.ui.Wait;
-
-import com.google.common.base.Function;
 
 import GlobalActions.Autoredirection;
 import GlobalActions.JuneReleaseValidations;
@@ -146,6 +140,7 @@ public class E2EOrderPlaced_Steps {
 			Thread.sleep(10000);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
+            e.printStackTrace();	
 			System.out.println("unable to do mousehover to phones");
 			Assert.fail("unable to do mousehover to phones");
 		}
@@ -221,6 +216,7 @@ public class E2EOrderPlaced_Steps {
 			Autoredirection.redirect();
 			Thread.sleep(10000);
 		} catch (Exception e) {
+			e.printStackTrace();
 			System.out.println("unable to do mousehover to SmartWatches");
 			Assert.fail("unable to do mousehover to SmartWatches");
 		}
@@ -349,8 +345,8 @@ public class E2EOrderPlaced_Steps {
 			MobileBroadBandPageActions.DeviceSelect(elementName);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
-			System.out.println("Unable to select MBB PayG device");
-			Assert.fail("Unable to select MBB PayG device");
+			System.out.println("Unable to select MBB PayM device");
+			Assert.fail("Unable to select MBB PayM device");
 
 		}
 	}
@@ -726,19 +722,8 @@ public class E2EOrderPlaced_Steps {
 			String title = driver.getTitle();
 			if (title.contains("Thanks for waiting")) {
 				System.out.println("Queue page is displayed");
-				/*Wait<WebDriver> wait = new FluentWait<WebDriver>(driver).withTimeout(60, TimeUnit.SECONDS)
-						.pollingEvery(3, TimeUnit.SECONDS).ignoring(NoSuchElementException.class);
-
-				WebElement checkOutButtonValidation = wait.until(new Function<WebDriver, WebElement>() {
-					public WebElement apply(WebDriver driver) {
-
-						//return driver.findElement(By.xpath("//*[@value='Go to checkout'][1]"));
-						
-						return pageobjects.BasketPage.checkoutbtn;
-					}
-
-				});*/
-			} else {
+				} else {
+				System.out.println("Queue page is not displayed");
 				PAYMandPAYGTariffAndExtrasPageActions.addToBasketLive();
 				BasketPageActions.ValidateBasketPageContents();
 				BasketPageActions.CollectionorDelivery("homeDelivery");
@@ -3916,7 +3901,7 @@ public class E2EOrderPlaced_Steps {
 		try {
 			PageFactory.initElements(driver, MouseHoverPage.class);
 			TabletPageActions.DeviceSelect(devicename);
-
+            Autoredirection.redirect();	
 		} catch (Exception e) {
 			e.printStackTrace();
 			Assert.fail("Unable to navigate to iPad landing page");
@@ -4065,6 +4050,19 @@ public class E2EOrderPlaced_Steps {
 			System.out.println("Unable to Land on the basket page and choose home delivery option");
 			Assert.fail("Unable to Land on the basket page and choose home delivery option");
 
+		}
+	}
+
+	@And("^Click on 'Continue' button on upgrade page$")
+	public void click_on_continue_link_for_the_upgrade_journey() throws Throwable {
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, UpgradeCustomerPage.class);
+			UpgradeCustomerPageActions.clickOnContinueButton();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			Assert.fail("Unable to click on Continue button");
 		}
 	}
 }
