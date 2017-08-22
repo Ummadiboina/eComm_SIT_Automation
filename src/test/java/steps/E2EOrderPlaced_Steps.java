@@ -8,8 +8,14 @@ import java.util.concurrent.TimeUnit;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.FluentWait;
+import org.openqa.selenium.support.ui.Wait;
+
+import com.google.common.base.Function;
 
 import GlobalActions.Autoredirection;
 import GlobalActions.JuneReleaseValidations;
@@ -717,10 +723,26 @@ public class E2EOrderPlaced_Steps {
 			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 			PageFactory.initElements(driver, BasketPage.class);
 			PageFactory.initElements(driver, PAYMandPAYGTariffAndExtrasPage.class);
-			PAYMandPAYGTariffAndExtrasPageActions.addToBasketLive();
-			Thread.sleep(3000);
-			BasketPageActions.ValidateBasketPageContents();
-			BasketPageActions.CollectionorDelivery("homeDelivery");
+			String title = driver.getTitle();
+			if (title.contains("Thanks for waiting")) {
+				System.out.println("Queue page is displayed");
+				/*Wait<WebDriver> wait = new FluentWait<WebDriver>(driver).withTimeout(60, TimeUnit.SECONDS)
+						.pollingEvery(3, TimeUnit.SECONDS).ignoring(NoSuchElementException.class);
+
+				WebElement checkOutButtonValidation = wait.until(new Function<WebDriver, WebElement>() {
+					public WebElement apply(WebDriver driver) {
+
+						//return driver.findElement(By.xpath("//*[@value='Go to checkout'][1]"));
+						
+						return pageobjects.BasketPage.checkoutbtn;
+					}
+
+				});*/
+			} else {
+				PAYMandPAYGTariffAndExtrasPageActions.addToBasketLive();
+				BasketPageActions.ValidateBasketPageContents();
+				BasketPageActions.CollectionorDelivery("homeDelivery");
+			}
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -1575,7 +1597,8 @@ public class E2EOrderPlaced_Steps {
 	 */
 
 	@Then("^perform the credit checks using valid ([^\"]*), ([^\"]*), ([^\"]*), ([^\"]*) and valid ([^\"]*)$")
-	public void CreditCheck(String Firstname, String Surname, String HouseNumber, String PostCode, String Username) throws Throwable {
+	public void CreditCheck(String Firstname, String Surname, String HouseNumber, String PostCode, String Username)
+			throws Throwable {
 		try {
 			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 			PageFactory.initElements(driver, Agent_CreditCheckDetailsPage.class);
@@ -1609,19 +1632,15 @@ public class E2EOrderPlaced_Steps {
 	public void register_customer(String Firstname, String Surname, String HouseNumber, String PostCode)
 			throws Throwable {
 		try {
-		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-		PageFactory.initElements(driver, Agent_RegisterCustomerPage.class);
-		Agent_RegisterCustomerActions.PayGRegistration(Firstname, Surname, HouseNumber, PostCode);
-		
-		  } catch (Exception e) { // TODO Auto-generated catch block
-		  System.out.
-		  println("Unable to Register customer , please see the failure screenshot"
-		  ); Assert.
-		  fail("Unable to Register customer , please see the failure screenshot"
-		  );
-		  
-		  }
-		 
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, Agent_RegisterCustomerPage.class);
+			Agent_RegisterCustomerActions.PayGRegistration(Firstname, Surname, HouseNumber, PostCode);
+
+		} catch (Exception e) { // TODO Auto-generated catch block
+			System.out.println("Unable to Register customer , please see the failure screenshot");
+			Assert.fail("Unable to Register customer , please see the failure screenshot");
+
+		}
 
 	}
 
