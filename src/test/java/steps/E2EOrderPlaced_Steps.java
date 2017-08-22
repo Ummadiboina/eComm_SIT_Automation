@@ -726,8 +726,8 @@ public class E2EOrderPlaced_Steps {
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-			System.out.println("Unable to Land on the basket page and choose home delivery option");
-			Assert.fail("Unable to Land on the basket page and choose home delivery option");
+			System.out.println("Issue in Basket page");
+			Assert.fail("Issue in Basket page");
 
 		}
 	}
@@ -1576,13 +1576,15 @@ public class E2EOrderPlaced_Steps {
 	 * #########
 	 */
 
-	@Then("^perform the credit checks using valid ([^\"]*) and ([^\"]*) and valid ([^\"]*)$")
-	public void CreditCheck(String Firstname, String Surname, String Username) throws Throwable {
+	@Then("^perform the credit checks using valid ([^\"]*), ([^\"]*), ([^\"]*), ([^\"]*) and valid ([^\"]*)$")
+	public void CreditCheck(String Firstname, String Surname, String HouseNumber, String PostCode, String Username) throws Throwable {
 		try {
 			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 			PageFactory.initElements(driver, Agent_CreditCheckDetailsPage.class);
-			Agent_CreditCheckPageActions.Creditcheck(Firstname, Surname);
+			Agent_CreditCheckPageActions.Creditcheck(Firstname, Surname, HouseNumber, PostCode);
+			System.out.println("Completed Credit check");
 			Agent_CreditCheckPageActions.BankDetails(Username);
+			System.out.println("Completed Bank details");
 			Thread.sleep(30000);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
@@ -1590,8 +1592,6 @@ public class E2EOrderPlaced_Steps {
 			Assert.fail("Unable to perform credit checks , please see the failure screenshot");
 
 		}
-
-	}
 	/*
 	 * #########################################################################
 	 * #########
@@ -1633,7 +1633,7 @@ public class E2EOrderPlaced_Steps {
 	@Then("^Choose HomeDelivery delivery address and delivery time$")
 	public void HomeDelivery_Address() throws Throwable {
 		System.out.println("Choosing available delivery address");
-		// Thread.sleep(5000);
+		Thread.sleep(5000);
 	}
 
 	/*
@@ -1685,7 +1685,7 @@ public class E2EOrderPlaced_Steps {
 	 * #########
 	 */
 
-@When("^submit order button is clicked$")
+	@When("^submit order button is clicked$")
 	public void submit_order_button_is_clicked() throws Throwable {
 		try {
 			driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
@@ -1698,7 +1698,8 @@ public class E2EOrderPlaced_Steps {
 
 		}
 	}
-@Then("^Order confirmation message should be displayed$")
+
+	@Then("^Order confirmation message should be displayed$")
 	public void order_confirmation_message_should_be_displayed() throws Throwable {
 		try {
 			driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
@@ -3899,7 +3900,6 @@ public class E2EOrderPlaced_Steps {
 
 		}
 	}
-
 	@And("^verify that the Basecomms tariff is not displayed in the Tariff and Extras page$")
 	public void verify_that_the_Basecomms_tariff_is_not_displayed_in_the_Tariff_and_Extras_page() throws Throwable {
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
@@ -4043,7 +4043,6 @@ public class E2EOrderPlaced_Steps {
 
 		}
 	}
-
 	@And("^Click on 'Continue' button on upgrade page$")
 	public void click_on_continue_link_for_the_upgrade_journey() throws Throwable {
 		try {
