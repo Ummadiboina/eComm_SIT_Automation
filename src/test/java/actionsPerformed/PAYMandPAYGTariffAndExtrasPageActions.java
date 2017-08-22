@@ -89,12 +89,12 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 	}
 
 	public static void addMoreAccessory() throws InterruptedException {
-		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		System.out.println("addMoreAccessory() method");
 		log.debug("The Accessory which will be added is  - "
 				+ pageobjects.PAYMandPAYGTariffAndExtrasPage.AddRandomAccessory.getText());
 		try {
-
+			Thread.sleep(4000);
 			WebElement ele0 = pageobjects.PAYMandPAYGTariffAndExtrasPage.AccessoryContainer;
 			System.out.println("The element is " + ele0.getText());
 			if (ele0 != null) {
@@ -102,11 +102,11 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 				List<WebElement> DataContainer = pageobjects.PAYMandPAYGTariffAndExtrasPage.Add_AccessoryContainer;
 
 				for (int i = 0; i <= DataContainer.size(); i++)
-				// for (int i = 0; i <= 5; i++)
+
 				{
 					System.out.println(DataContainer.get(i).getText());
 					DataContainer.get(i).click();
-					Thread.sleep(3000);
+					Thread.sleep(4000);
 					System.out.println("Selected accessories");
 				}
 				String size = Integer.toString(DataContainer.size());

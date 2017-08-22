@@ -607,7 +607,7 @@ public class E2EOrderPlaced_Steps {
 			System.out.println("Entering Choose All accessory method");
 			PAYMandPAYGTariffAndExtrasPageActions.addMoreAccessory();
 			System.out.println("Completed Choose All accessory method");
-			Thread.sleep(2000);
+			Thread.sleep(5000);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			System.out.println("Unable to choose Accesssory");
