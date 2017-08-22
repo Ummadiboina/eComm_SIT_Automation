@@ -139,8 +139,6 @@ public class E2EOrderPlaced_Steps {
 			Autoredirection.redirect();
 			Thread.sleep(10000);
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
 			System.out.println("unable to do mousehover to phones");
 			Assert.fail("unable to do mousehover to phones");
 		}
@@ -723,7 +721,7 @@ public class E2EOrderPlaced_Steps {
 			if (title.contains("Thanks for waiting")) {
 				System.out.println("Queue page is displayed");
 				} else {
- 				System.out.println("Queue page is not displayed");
+				System.out.println("Queue page is not displayed");
 				PAYMandPAYGTariffAndExtrasPageActions.addToBasketLive();
 				BasketPageActions.ValidateBasketPageContents();
 				BasketPageActions.CollectionorDelivery("homeDelivery");
@@ -1581,7 +1579,7 @@ public class E2EOrderPlaced_Steps {
 	 * #########
 	 */
 
-@Then("^perform the credit checks using valid ([^\"]*), ([^\"]*), ([^\"]*), ([^\"]*) and valid ([^\"]*)$")
+	@Then("^perform the credit checks using valid ([^\"]*), ([^\"]*), ([^\"]*), ([^\"]*) and valid ([^\"]*)$")
 	public void CreditCheck(String Firstname, String Surname, String HouseNumber, String PostCode, String Username)
 			throws Throwable {
 		try {
@@ -1611,7 +1609,7 @@ public class E2EOrderPlaced_Steps {
 	 * #########
 	 */
 
-@Then("^Register customer with valid ([^\"]*), ([^\"]*), ([^\"]*), ([^\"]*) and other valid details in delivery page$")
+	@Then("^Register customer with valid ([^\"]*), ([^\"]*), ([^\"]*), ([^\"]*) and other valid details in delivery page$")
 
 	// @Given("^Register customer with valid ([^\"]*) and ([^\"]*) and other
 	// valid details in delivery page$")
@@ -3909,6 +3907,7 @@ public class E2EOrderPlaced_Steps {
 
 		}
 	}
+	
 	@And("^verify that the Basecomms tariff is not displayed in the Tariff and Extras page$")
 	public void verify_that_the_Basecomms_tariff_is_not_displayed_in_the_Tariff_and_Extras_page() throws Throwable {
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
