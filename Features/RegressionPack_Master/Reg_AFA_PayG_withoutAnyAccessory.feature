@@ -1,6 +1,5 @@
 Feature: Reg_AFA_PayG_withoutAnyAccessory
 
-  #launch hooks and get browser
   @AgentsRegression
   Scenario Outline: Successful completion of a PAY G handset acquisition Journey without an accessory
     Given I login to Agent shop
