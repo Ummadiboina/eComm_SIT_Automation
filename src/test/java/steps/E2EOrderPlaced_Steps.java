@@ -139,8 +139,6 @@ public class E2EOrderPlaced_Steps {
 			Autoredirection.redirect();
 			Thread.sleep(10000);
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
 			System.out.println("unable to do mousehover to phones");
 			Assert.fail("unable to do mousehover to phones");
 		}
@@ -603,7 +601,7 @@ public class E2EOrderPlaced_Steps {
 			System.out.println("Entering Choose All accessory method");
 			PAYMandPAYGTariffAndExtrasPageActions.addMoreAccessory();
 			System.out.println("Completed Choose All accessory method");
-			Thread.sleep(2000);
+			Thread.sleep(5000);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			System.out.println("Unable to choose Accesssory");
@@ -719,10 +717,15 @@ public class E2EOrderPlaced_Steps {
 			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 			PageFactory.initElements(driver, BasketPage.class);
 			PageFactory.initElements(driver, PAYMandPAYGTariffAndExtrasPage.class);
-			PAYMandPAYGTariffAndExtrasPageActions.addToBasketLive();
-			Thread.sleep(3000);
-			BasketPageActions.ValidateBasketPageContents();
-			BasketPageActions.CollectionorDelivery("homeDelivery");
+			String title = driver.getTitle();
+			if (title.contains("Thanks for waiting")) {
+				System.out.println("Queue page is displayed");
+				} else {
+				System.out.println("Queue page is not displayed");
+				PAYMandPAYGTariffAndExtrasPageActions.addToBasketLive();
+				BasketPageActions.ValidateBasketPageContents();
+				BasketPageActions.CollectionorDelivery("homeDelivery");
+			}
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -832,7 +835,7 @@ public class E2EOrderPlaced_Steps {
 		try {
 			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 			PageFactory.initElements(driver, BasketPage.class);
-			Thread.sleep(2000);
+			Thread.sleep(3000);
 			BasketPageActions.gotoCheckout();
 			Thread.sleep(2000);
 		} catch (Exception e) {
@@ -1577,7 +1580,8 @@ public class E2EOrderPlaced_Steps {
 	 */
 
 	@Then("^perform the credit checks using valid ([^\"]*), ([^\"]*), ([^\"]*), ([^\"]*) and valid ([^\"]*)$")
-	public void CreditCheck(String Firstname, String Surname, String HouseNumber, String PostCode, String Username) throws Throwable {
+	public void CreditCheck(String Firstname, String Surname, String HouseNumber, String PostCode, String Username)
+			throws Throwable {
 		try {
 			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 			PageFactory.initElements(driver, Agent_CreditCheckDetailsPage.class);
@@ -1592,8 +1596,8 @@ public class E2EOrderPlaced_Steps {
 			Assert.fail("Unable to perform credit checks , please see the failure screenshot");
 
 		}
-	}
 
+	}	
 	/*
 	 * #########################################################################
 	 * #########
@@ -1604,22 +1608,22 @@ public class E2EOrderPlaced_Steps {
 	 * #########
 	 */
 
-	@Given("^Register customer with valid ([^\"]*) and ([^\"]*) and other valid details in delivery page$")
-	public void register_customer(String Firstname, String Surname) throws Throwable {
-		// try {
-		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-		PageFactory.initElements(driver, Agent_RegisterCustomerPage.class);
-		Agent_RegisterCustomerActions.PayGRegistration(Firstname, Surname);
-		/*
-		 * } catch (Exception e) { // TODO Auto-generated catch block
-		 * System.out.
-		 * println("Unable to Register customer , please see the failure screenshot"
-		 * ); Assert.
-		 * fail("Unable to Register customer , please see the failure screenshot"
-		 * );
-		 * 
-		 * }
-		 */
+	@Then("^Register customer with valid ([^\"]*), ([^\"]*), ([^\"]*), ([^\"]*) and other valid details in delivery page$")
+
+	// @Given("^Register customer with valid ([^\"]*) and ([^\"]*) and other
+	// valid details in delivery page$")
+	public void register_customer(String Firstname, String Surname, String HouseNumber, String PostCode)
+			throws Throwable {
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, Agent_RegisterCustomerPage.class);
+			Agent_RegisterCustomerActions.PayGRegistration(Firstname, Surname, HouseNumber, PostCode);
+
+		} catch (Exception e) { // TODO Auto-generated catch block
+			System.out.println("Unable to Register customer , please see the failure screenshot");
+			Assert.fail("Unable to Register customer , please see the failure screenshot");
+
+		}
 
 	}
 
@@ -3902,6 +3906,7 @@ public class E2EOrderPlaced_Steps {
 
 		}
 	}
+	
 	@And("^verify that the Basecomms tariff is not displayed in the Tariff and Extras page$")
 	public void verify_that_the_Basecomms_tariff_is_not_displayed_in_the_Tariff_and_Extras_page() throws Throwable {
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
@@ -4045,6 +4050,7 @@ public class E2EOrderPlaced_Steps {
 
 		}
 	}
+	
 	@And("^Click on 'Continue' button on upgrade page$")
 	public void click_on_continue_link_for_the_upgrade_journey() throws Throwable {
 		try {

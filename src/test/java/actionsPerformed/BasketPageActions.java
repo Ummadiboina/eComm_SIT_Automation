@@ -281,21 +281,26 @@ public class BasketPageActions extends Environment {
 			System.out.println("HomeDelivery is Selected");
 
 		}
-		if (elementName.contains("clickAndCollect")) {
-			System.out.println("clickAndCollect is Selected");
+	if (elementName.contains("clickAndCollect")) {
 			pageobjects.BasketPage.clickAndCollectSelect.click();
 			// Assert.assertEquals(elementName,"Galaxy S7 is not found");
 			log.debug("click And Collect is Selected");
+			System.out.println("clickAndCollect radio button is Selected");
+
 			pageobjects.BasketPage.StorePostcode.sendKeys("G2");
 			log.debug("PostCode Entered for Search");
-			Thread.sleep(2000);
+			System.out.println("PostCode Entered for Search");
+			Thread.sleep(4000);
 			pageobjects.BasketPage.PostcodeSubmit.click();
-			Thread.sleep(2000);
+			Thread.sleep(5000);
 			// Assert.assertEquals(elementName,"Galaxy S7 is not found");
 			log.debug("Postcode Submitted for Search");
+			System.out.println("Postcode Submitted for Search");
+			Thread.sleep(5000);
 			pageobjects.BasketPage.Collectfromthisstore.click();
 			// Assert.assertEquals(elementName,"Galaxy S7 is not found");
 			log.debug("Store Selected for Colletion");
+			System.out.println("Store Selected for Colletion");
 			Thread.sleep(5000);
 
 		}
