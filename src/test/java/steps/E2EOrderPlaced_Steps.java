@@ -506,6 +506,7 @@ public class E2EOrderPlaced_Steps {
 			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 			PageFactory.initElements(driver, PAYMSimOPage.class);
 			PAYMSimOPageActions.SelectTariffPhonesTab(Contract);
+			System.out.println("Completed Selecting Random Tariff");
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			System.out.println("Unable to select Random Tariff ");
@@ -521,6 +522,8 @@ public class E2EOrderPlaced_Steps {
 			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 			PageFactory.initElements(driver, PAYMSimOPage.class);
 			PAYMSimOPageActions.SelectRecommendedTariffPhonesTab(Contract);
+			System.out.println("Completed Selecting Recommended Tariff");
+
 			// PAYMSimOPageActions.SelectPromotionTariff(Contract);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block

@@ -93,18 +93,22 @@ public class MouseHoverAction extends Environment {
 				Robot robot = new Robot();
 				robot.mouseMove(coordinates.getX(), coordinates.getY() + 120);
 				log.debug("Moving Mouse on the Shop Tab");
+				System.out.println("Moving Mouse on the Shop Tab");
 
 				Actions action = new Actions(driver);
 				action.moveToElement(pageobjects.MouseHoverPage.MoveMouseOnSims).build().perform();
 				log.debug("Moving Mouse on the Sims in Shop Dropdown");
+				System.out.println("Moved Mouse on Sims");
 
 				Thread.sleep(1000);
 				action.moveToElement(pageobjects.MouseHoverPage.MoveMouseOnIpadSims).build().perform();
 				log.debug("Moving Mouse on the Ipad Sims link");
+				System.out.println("Moving Mouse on the Ipad Sims link");
 				Screenshots.screennewPics();
 
 				Thread.sleep(1000);
 				pageobjects.MouseHoverPage.MoveMouseOnIpadSims.click();
+				System.out.println("Clicking on ipad sims link");
 				Screenshots.screennewPics();
 
 				log.debug("Trying to take screenshots of page");
@@ -519,15 +523,19 @@ public class MouseHoverAction extends Environment {
 				Thread.sleep(5000);
 
 				Point coordinates = pageobjects.MouseHoverPage.MoveMouseOnShopTab.getLocation();
+				System.out.println("Getting coordinates for shop tab");
 				Robot robot = new Robot();
 				robot.mouseMove(coordinates.getX(), coordinates.getY() + 120);
 
 				Actions action = new Actions(driver);
 				action.moveToElement(pageobjects.MouseHoverPage.MoveMouseOnSmarttechTab).build().perform();
-				Thread.sleep(2000);
+				System.out.println("Moving mouse on SmartTech section");
+				Thread.sleep(3000);
 				action.moveToElement(pageobjects.MouseHoverPage.MoveMouseOnFitnessTrackers).build().perform();
-				Thread.sleep(2000);
+				System.out.println("Moving mouse on SmartTech section -- > Fitness Trackers");
+				Thread.sleep(4000);
 				pageobjects.MouseHoverPage.MoveMouseOnFitnessTrackers.click();
+				System.out.println("Moving mouse on SmartTech section -- > Clicking on Fitness Tracker");
 
 				// Move mouse pointer away from location
 				Point coordinates2 = driver.findElement(By.xpath("//*[@id='header-consumer']/div")).getLocation();
@@ -615,8 +623,9 @@ public class MouseHoverAction extends Environment {
 				System.out.println("Performing navigations to PAYG MBB");
 				log.debug("Performing navigations to PAYG MBB");
 
-				/*driver.navigate().refresh();
-				Thread.sleep(5000);*/
+				/*
+				 * driver.navigate().refresh(); Thread.sleep(5000);
+				 */
 
 				Point coordinates = pageobjects.MouseHoverPage.MoveMouseOnShopTab.getLocation();
 				Robot robot = new Robot();
