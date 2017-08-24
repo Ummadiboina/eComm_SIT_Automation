@@ -145,7 +145,7 @@ public class BasketPageActions extends Environment {
 	}
 
 	// Below is for Clicking on the goto Checkout button
-	public static void gotoCheckout() throws InterruptedException {
+	public static void gotoCheckout() {
 
 		// Below is example of Fluent wait
 
