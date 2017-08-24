@@ -11,7 +11,7 @@ Feature: Reg_AFA_PAYM_Acquistion
     And Select valid <Extras> from extras tab
     And Validate all the Basket content and checkout
     Then perform all the advisory checks
-    And perform the credit checks using valid <Firstname> and <Surname> and valid <Username>
+    And perform the credit checks using valid <Firstname>, <Surname>, <HouseNumber>, <PostCode> and valid <Username>
     And Register customer with valid <Firstname>, <Surname>, <HouseNumber>, <PostCode> and other valid details in delivery page
     And Choose <DeliveryType> delivery address and delivery time
     When Pay by card for PAYM device
