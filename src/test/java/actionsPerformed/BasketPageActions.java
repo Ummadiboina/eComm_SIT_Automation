@@ -145,13 +145,32 @@ public class BasketPageActions extends Environment {
 	}
 
 	// Below is for Clicking on the goto Checkout button
-	public static void gotoCheckout() {
+		public static void gotoCheckout() {
 
-		// Below is example of Fluent wait
+		String title = driver.getTitle();
+		if (title.contains("Thanks for waiting")) {
+			System.out.println("Queue page is displayed");
+			
+					// Below is example of Fluent wait
+		
+		WebDriverWait wait = (WebDriverWait) new FluentWait<WebDriver>(driver).withTimeout(60, TimeUnit.SECONDS)
+				.pollingEvery(3, TimeUnit.SECONDS).ignoring(NoSuchElementException.class);
 
-		pageobjects.BasketPage.checkoutbtn.click();
-		Thread.sleep(5000);
-		log.debug("Clicking on Checkout button");
+		WebElement checkOutButtonValidation = wait.until(new Function<WebDriver, WebElement>() {
+			public WebElement apply(WebDriver driver) {
+				return pageobjects.BasketPage.checkoutbtn;
+			}
+
+		});
+		checkOutButtonValidation.click();
+		}
+		else
+		{
+				System.out.println("Queue page is not displayed");
+				pageobjects.BasketPage.checkoutbtn.click();
+				log.debug("Clicking on Checkout button");
+		}
+		
 	}
 
 	public static void ValidateBasketPageContents() throws InterruptedException {
