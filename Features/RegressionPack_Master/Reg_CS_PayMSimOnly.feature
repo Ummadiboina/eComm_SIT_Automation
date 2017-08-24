@@ -14,6 +14,6 @@ Feature: Reg_CS_PayMSimOnly
     Then order confirmation is displayed
 
     Examples: 
-      | Contract  | Firstname | Surname | Username     |
-      | 12 Months | TEST      | ACCEPTA | TEST ACCEPTA |
-      | 30 Days   | TEST      | ACCEPTA | TEST ACCEPTA |
+      | Contract | Firstname | Surname | Username     |
+      #| 12 Months | TEST      | ACCEPTA | TEST ACCEPTA |
+      | 30 Days  | TEST      | ACCEPTA | TEST ACCEPTA |

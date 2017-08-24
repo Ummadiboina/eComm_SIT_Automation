@@ -17,5 +17,5 @@ Feature: Reg_CS_PayMPhonesHomeDeliveryWithoutAccessory
 
     #Close the browser
     Examples: 
-      | handset  | Firstname | Surname | Username     |
+      | handset | Firstname | Surname | Username     |
       | Iphone7 | TEST      | ACCEPTA | TEST ACCEPTA |
