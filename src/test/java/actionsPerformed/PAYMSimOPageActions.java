@@ -42,7 +42,7 @@ public class PAYMSimOPageActions extends Environment {
 	public static void SelectTariffPhonesTab(String elementName) throws InterruptedException, AWTException {
 		// Assert.assertTrue(driver.getTitle().contains("30 Days");
 
-		if (elementName.contains("30 days")) {
+		if (elementName.contains("30 Days")) {
 			System.out.println("Selecting a Random Tariff under 30 days tab");
 			log.debug("Selecting a Random Tariff under 30 days tab");
 			pageobjects.PAYMSimOPage.thirtydays.click();
@@ -50,12 +50,13 @@ public class PAYMSimOPageActions extends Environment {
 			pageobjects.PAYMSimOPage.BuyNowRandomTariff30Months.click();
 
 		}
-		if (elementName.contains("12Months")) {
+		if (elementName.contains("12 Months")) {
 			System.out.println("Selecting a Random Tariff under 12 Months tab");
 			log.debug("Selecting a Random Tariff under 12 Months tab");
 			pageobjects.PAYMSimOPage.twelevemonths.click();
 			Thread.sleep(3000);
 			pageobjects.PAYMSimOPage.BuyNowRandomTariff12Months.click();
+			System.out.println("Clicked on a Random Tariff");
 		}
 
 	}
