@@ -42,19 +42,23 @@ public class MouseHoverPage extends Environment {
 
 	// Below will click on the Sims
 	//@FindBy(how = How.XPATH, using = ("//*[@id='pn1']/ul/li/a[contains(text(), 'Sims')]"))
-	@FindBy(how = How.XPATH, using = ("//a[contains(text(), 'Sims')]"))
+	@FindBy(how = How.XPATH, using = ("//a[contains(text(), 'Sims')][1]"))
 	public static WebElement MoveMouseOnSims;
 
 	// Below will click on the Sims -- > Ipad
-	@FindBy(how = How.XPATH, using = ("//a[contains(text(), 'iPad Sims')]"))
+	//@FindBy(how = How.XPATH, using = ("//a[contains(text(), 'iPad Sims')][1]"))
+	@FindBy(how = How.XPATH, using = ("//a[contains(@href, 'http://www.o2.co.uk/broadband/ipad-sim')]"))
 	public static WebElement MoveMouseOnIpadSims;
 
 	// Below will click on the Sims -- > Tablet
-	@FindBy(how = How.XPATH, using = ("//a[contains(text(), 'Tablet Sim')]"))
+//	@FindBy(how = How.XPATH, using = ("//a[contains(text(), 'Tablet Sim')]"))	
+	@FindBy(how = How.XPATH, using = ("//a[contains(@href, 'http://www.o2.co.uk/tablet-sims')]"))
 	public static WebElement MoveMouseOnTabletSims;
 
 	// Below will click on the Sims -- > PayM
-	@FindBy(how = How.XPATH, using = ("//a[contains(text(), 'Pay Monthly Sims')]"))
+	//@FindBy(how = How.XPATH, using = ("//a[contains(text(), 'Pay Monthly Sims')]"))
+	
+	@FindBy(how = How.XPATH, using = ("//a[@manual_cm_re='meganav_Shop-_-Sims-_-Pay Monthly sims']"))
 	public static WebElement MoveMouseOnPayMSims;
 
 	@FindBy(how = How.XPATH, using = ("//a[contains(text(), 'Upgrades')]"))
@@ -83,7 +87,8 @@ public class MouseHoverPage extends Environment {
 	// @FindBy(how = How.XPATH, using = "//a[contains(@href,
 	// 'https://www.ref.o2.co.uk/shop/smart-tech/')]")
 	//@FindBy(how = How.XPATH, using = ("//*[@id='pn1']/ul/li[10]/a"))
-	@FindBy(how = How.XPATH, using = ("//a[contains(text(), 'Smart Tech')]"))
+	//@FindBy(how = How.XPATH, using = ("//a[contains(text(), 'Smart Tech')]"))
+	@FindBy(how = How.XPATH, using = ("//a[contains(@href, 'https://www.o2.co.uk/shop/smart-tech/')]"))
 	public static WebElement MoveMouseOnSmarttechTab;
 
 	// Below is the link on the Smartwatches
@@ -92,7 +97,9 @@ public class MouseHoverPage extends Environment {
 
 	// Below is the link on the Fitness
 
-	@FindBy(how = How.XPATH, using = ("//a[contains(text(), 'Fitness Trackers')]"))
+	//@FindBy(how = How.XPATH, using = ("//a[contains(text(), 'Fitness Trackers')]"))
+	
+	@FindBy(how = How.XPATH, using = ("//a[contains(@href, 'https://www.o2.co.uk/shop/fitness-trackers/')]"))
 	public static WebElement MoveMouseOnFitnessTrackers;
 
 	// Below will click on the MobileBroadband Link in Shop Drop down
