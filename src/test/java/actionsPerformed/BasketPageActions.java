@@ -1,36 +1,23 @@
 package actionsPerformed;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.ElementNotVisibleException;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.How;
-import org.openqa.selenium.support.ui.FluentWait;
-import org.openqa.selenium.support.ui.Select;
-import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.Reporter;
-
-import com.google.common.base.Function;
-
-import GlobalActions.RandomEmailAddressCreation;
-import helpers.Environment;
-import helpers.Filereadingutility;
-import junit.framework.Assert;
-import pageobjects.DeliveryPage;
-import pageobjects.BasketPage.*;
-
-import static org.testng.Assert.assertEquals;
-import static org.testng.Assert.fail;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.concurrent.TimeUnit;
 
 import org.apache.log4j.Logger;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.FluentWait;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import com.google.common.base.Function;
+
+import helpers.Environment;
+import helpers.Filereadingutility;
+import junit.framework.Assert;
 
 public class BasketPageActions extends Environment {
 
@@ -145,7 +132,7 @@ public class BasketPageActions extends Environment {
 	}
 
 	// Below is for Clicking on the goto Checkout button
-		public static void gotoCheckout() {
+	public static void gotoCheckout() {
 
 		String title = driver.getTitle();
 		if (title.contains("Thanks for waiting")) {
