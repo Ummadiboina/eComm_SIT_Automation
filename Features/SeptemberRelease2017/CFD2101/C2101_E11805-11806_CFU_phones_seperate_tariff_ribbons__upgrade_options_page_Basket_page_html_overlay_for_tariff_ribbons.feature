@@ -1,4 +1,4 @@
-Feature: CFU_phones_seperate_tariff_ribbons__upgrade_options_page_Basket_page_html_overlay_for_tariff_ribbons 
+Feature: C2101_E11805-11806_CFU_phones_seperate_tariff_ribbons__upgrade_options_page_Basket_page_html_overlay_for_tariff_ribbons 
 
 Scenario Outline: 
 	This scenario ensures that when the customer on upgrade journey selects tariff for a device with ribbons, then the tariff ribbon should be displayed with html overlay on the following pages, 
@@ -8,7 +8,7 @@ Scenario Outline:
 	Given I am existing user and I click on Signin button 
 	And Signin using valid <username> and <password> credentials 
 	And Navigate to upgrade phone 
-	And Select a <handset> device from Recommended devices section 
+	And Select a <handset> device from Recommended devices section
 	And Select a <Tariff> with ribbons in upgrade journey
 	And Verify 'Overlay icon' is displayed on the promotional ribbons in the Upgrade Option page 
 	And Verify that the tariff ribbons are displayed in tariff upsell config of 'Your package' section 
@@ -30,4 +30,4 @@ Scenario Outline:
 	
 	Examples: 
 		|username|password|Tariff|handset|
-		||| |
+		|in07193k_351534@o2.com|test123|Samsung Galaxy S8|

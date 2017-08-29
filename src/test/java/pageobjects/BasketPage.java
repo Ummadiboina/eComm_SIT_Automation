@@ -135,5 +135,16 @@ public class BasketPage {
 	
 	@FindBy(how = How.XPATH, using = ("(//a[contains(., 'Remove')])[1]"))
 	public static WebElement RemoveButton;
+
+	@FindBy(how = How.XPATH, using = ("//div[@class='primary promotion']"))
+	public static WebElement PrimaryPromotion;
 	
+	@FindBy(how = How.XPATH, using = ("//div[@class='promotion secondary']"))
+	public static WebElement SecondaryPromotion;
+	
+	@FindBy(how = How.XPATH, using = ("//div[@class='primary promotion']/a[@alt='ribbon information']"))
+	public static WebElement PrimaryPromotionOverlay;
+	
+	@FindBy(how = How.XPATH, using = ("//div[@class='promotion secondary']/a[@alt='ribbon information']"))
+	public static WebElement SecondaryPromotionOverlay;
 }
