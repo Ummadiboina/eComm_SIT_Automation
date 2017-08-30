@@ -2364,7 +2364,7 @@ public class E2EOrderPlaced_Steps {
 			MouseHoverAction.UpgradeandUpgradeNow();
 			Thread.sleep(5000);
 			Autoredirection.redirectUpgrades();
-			// UpgradeCustomerPageActions.viewAllPhones();
+			UpgradeCustomerPageActions.viewAllPhones();
 			Thread.sleep(2000);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
