@@ -1,4 +1,4 @@
-Feature: Reg_AFU_PAYM_Dongle
+Feature: Reg_AFU_PAYM_Dongle_PayByCard
 
   #launch hooks and get browser
   @AgentsRegression
