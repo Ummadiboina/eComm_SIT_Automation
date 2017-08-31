@@ -2364,7 +2364,7 @@ public class E2EOrderPlaced_Steps {
 			MouseHoverAction.UpgradeandUpgradeNow();
 			Thread.sleep(5000);
 			Autoredirection.redirectUpgrades();
-			UpgradeCustomerPageActions.viewAllPhones();
+			// UpgradeCustomerPageActions.viewAllPhones();
 			Thread.sleep(2000);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
@@ -4084,7 +4084,7 @@ public class E2EOrderPlaced_Steps {
 	}
 
 	@And("^Select a tariff ([^\"]*) with ribbons$")
-	public void select_tariff_with_ribbons_in_upgrade_journey(String RibbonText) throws Throwable {
+	public void select_tariff_with_ribbons(String RibbonText) throws Throwable {
 		try {
 			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 			PageFactory.initElements(driver, UpgradeCustomerPage.class);
@@ -4135,27 +4135,16 @@ public class E2EOrderPlaced_Steps {
 		}
 	}
 
-	@And("^Close the Overlay popup in Tariffs and Extras page$")
-	public void Close_Overlay_popup_TE_page() throws Throwable {
+	@And("^Click on the 'Overlay icon' for ([^\"]*) in the upgrade page and verify pop up gets displayed$")
+	public void Click_Overlay_icon_on_the_promotional_ribbons_in_upgrade_page(String Tariff) throws Throwable {
 		try {
 			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-			PageFactory.initElements(driver, BaseCommPage.class);
-			UpgradeCustomerPageActions.closeOverlayIconTEpage();
+			PageFactory.initElements(driver, UpgradeCustomerPage.class);
+			UpgradeCustomerPageActions.clickOnOverlayIconUpgradePage(Tariff);
 		} catch (Exception e) {
 			e.printStackTrace();
-			Assert.fail("Unable to Close the Overlay popup in Tariffs and extras page");
-		}
-	}
-
-	@And("^Close the Overlay popup in Basket Page$")
-	public void Close_Overlay_popup_Basket_page() throws Throwable {
-		try {
-			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-			PageFactory.initElements(driver, BaseCommPage.class);
-			UpgradeCustomerPageActions.closeOverlayIconBasketpage();
-		} catch (Exception e) {
-			e.printStackTrace();
-			Assert.fail("Unable to Close the Overlay popup in basket page");
+			Assert.fail(
+					"Unable to Click on the 'Overlay icon' for tariff in the Tariff and Extras page and verify pop up gets displayed");
 		}
 	}
 
@@ -4222,15 +4211,42 @@ public class E2EOrderPlaced_Steps {
 		}
 	}
 
-	@And("^Close the Overlay popup in My Package section$")
-	public void Close_Overlay_popup_MyPackage_section() throws Throwable {
+	@And("^Select a tariff ([^\"]*) with ribbons in upgrade journey$")
+	public void select_tariff_with_ribbons_in_upgrade_journey(String Tariff) throws Throwable {
 		try {
 			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-			PageFactory.initElements(driver, BaseCommPage.class);
-			UpgradeCustomerPageActions.closeOverlayIconBasketpage();
+			PageFactory.initElements(driver, UpgradeCustomerPage.class);
+			UpgradeCustomerPageActions.selectTariffWithRibbonAndOverlayUpgradeJourney(Tariff);
 		} catch (Exception e) {
 			e.printStackTrace();
-			Assert.fail("Unable to Close the Overlay popup in My package section");
+			Assert.fail(
+					"Unable to Verify that the tariff ribbons are displayed in tariff upsell config of 'Your package' section");
+		}
+	}
+
+	@And("^Verify whether promotional ribbons are displayed for ([^\"]*) on the Tariff tile in the upgrade journey$")
+	public void Verify_whether_promotional_ribbons_are_displayed_in_the_upgrade_page(String Tariff) throws Throwable {
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, UpgradeCustomerPage.class);
+			UpgradeCustomerPageActions.verifyPromotionalRibbonDisplayedUpgradePage(Tariff);
+		} catch (Exception e) {
+			e.printStackTrace();
+			Assert.fail(
+					"Unable to Verify whether promotional ribbons are displayed for" +Tariff+ "on the Tariff tile in the upgrade journey");
+		}
+	}
+
+	@And("^Verify 'Overlay icon' is displayed on the promotional ribbons for ([^\"]*) in the Upgrade Option page$")
+	public void Verify_whether_overlay_icon_are_displayed_in_the_upgrade_page(String Tariff) throws Throwable {
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, UpgradeCustomerPage.class);
+			UpgradeCustomerPageActions.verifyOverlayIconIsDisplayedUpgradePage(Tariff);
+		} catch (Exception e) {
+			e.printStackTrace();
+			Assert.fail(
+					"Unable to Verify 'Overlay icon' is displayed on the promotional ribbons in the Upgrade Option page");
 		}
 	}
 }

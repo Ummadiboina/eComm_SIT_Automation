@@ -9,7 +9,7 @@ Scenario Outline:
 	And Signin using valid <username> and <password> credentials 
 	And Navigate to upgrade phone 
 	And Select a <handset> device from Recommended devices section
-	And Select a <Tariff> with ribbons in upgrade journey
+	And Select a tariff <tariff> with ribbons in upgrade journey
 	And Verify 'Overlay icon' is displayed on the promotional ribbons in the Upgrade Option page 
 	And Verify that the tariff ribbons are displayed in tariff upsell config of 'Your package' section 
 	And Click on the 'Overlay icon' in tariff upsell config of 'Your package' section and verify pop up gets displayed in the Tariff and Extras Page 

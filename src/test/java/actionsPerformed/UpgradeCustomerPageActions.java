@@ -10,13 +10,15 @@ import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 
 import helpers.Environment;
+import helpers.Filereadingutility;
+import helpers.setRuntimeProperty;
 
 public class UpgradeCustomerPageActions extends Environment {
-	String RunTimeFilePath = System.getProperty("user.dir") + "\\Configurations\\Properties\\Run.properties";
+	static String RunTimeFilePath = System.getProperty("user.dir") + "\\Configurations\\Properties\\Run.properties";
 	static Logger log = Logger.getLogger("devpinoyLogger");
 	static JavascriptExecutor executor = (JavascriptExecutor) driver;
 	static int position = 0;
-	static boolean greenpromotion = false;
+	static int PositionUpgrade = 0;
 
 	public static void Login(String username, String password) throws InterruptedException {
 		pageobjects.UpgradeCustomerPage.username.sendKeys(username);
@@ -88,6 +90,13 @@ public class UpgradeCustomerPageActions extends Environment {
 		}
 
 		if (elementName.contains("Iphone7")) {
+			pageobjects.UpgradePhonesListingPage.Iphone7.click();
+			// Assert.assertEquals(elementName,"Galaxy S7 is not found");
+			log.debug("Selected Iphone7");
+
+		}
+
+		if (elementName.contains("Apple iPhone 7")) {
 			pageobjects.UpgradePhonesListingPage.Iphone7.click();
 			// Assert.assertEquals(elementName,"Galaxy S7 is not found");
 			log.debug("Selected Iphone7");
@@ -297,7 +306,7 @@ public class UpgradeCustomerPageActions extends Environment {
 		System.out.println("Clicked on Continue button in Upgrade page");
 	}
 
-	public static void selectDeviceInRecommendedDevicesSection(String devicename) {
+	public static void selectDeviceInRecommendedDevicesSection(String devicename) throws Exception {
 		System.out.println("Select a device in recommended devices section");
 		List<WebElement> DevicesName = pageobjects.UpgradeCustomerPage.DeviceNameRecommendedSection;
 		WebElement SelectButton;
@@ -321,13 +330,12 @@ public class UpgradeCustomerPageActions extends Environment {
 				js.executeScript("arguments[0].click();", SelectButton);
 			}
 		}
-
+		Thread.sleep(5000);
 	}
 
 	public static void selectTariffWithRibbonAndOverlay(String Tariff) {
-		System.out.println('\n' + "Function - selectTariffWithRibbonAndOverlay");
+		System.out.println('\n' + "To select Tariff With Ribbon And Overlay");
 		List<WebElement> TariffList = driver.findElements(By.xpath("//div[@id='tariff-tile']/div[@id]"));
-		System.out.println("TariffList size is " + TariffList.size());
 		boolean flag = false;
 		String TariffXpath = null;
 		String TextOfTariffTile = null;
@@ -355,8 +363,70 @@ public class UpgradeCustomerPageActions extends Environment {
 		}
 	}
 
+	public static void selectTariffWithRibbonAndOverlayUpgradeJourney(String Tariff) {
+		System.out.println('\n' + "To select Tariff With Ribbon And Overlay in upgrade journey");
+		List<WebElement> TariffList = driver
+				.findElements(By.xpath("//div[contains(@class, 'grid-tile')]/div/button[@id='callToAction']"));
+		String UpfrontPoundXPath = null, UpfrontPenceXPath = null, MonthlyPoundXPath = null, MonthlyPenceXPath = null;
+		String UpfrontPound = null, UpfrontPence = null, MonthlyPound = null, MonthlyPence = null;
+		String UpfrontCost = null, MonthlyCost = null;
+		String TextOfTariffTile = null, SelectBtnXpath = null;
+		boolean flag = false;
+		int j = 0;
+
+		System.out.println("Tariff List size is " + TariffList.size());
+
+		for (int i = 0; i < TariffList.size(); i++) {
+			System.out.println("inside for loop");
+			j = i + 1;
+			UpfrontPoundXPath = "(//*[@id='qa-upfront-pound'])[" + j + "]";
+			UpfrontPenceXPath = "(//*[@id='qa-upfront-pence'])[" + j + "]";
+			MonthlyPoundXPath = "(//*[@id='qa-month-pound'])[" + j + "]";
+			MonthlyPenceXPath = "(//*[@id='qa-month-pence'])[" + j + "]";
+
+			UpfrontPound = driver.findElement(By.xpath(UpfrontPoundXPath)).getText();
+			UpfrontPence = driver.findElement(By.xpath(UpfrontPenceXPath)).getText();
+			MonthlyPound = driver.findElement(By.xpath(MonthlyPoundXPath)).getText();
+			MonthlyPence = driver.findElement(By.xpath(MonthlyPenceXPath)).getText();
+
+			System.out.println("UpfrontPound " + UpfrontPound);
+			System.out.println("UpfrontPence " + UpfrontPence);
+			System.out.println("MonthlyPound " + MonthlyPound);
+			System.out.println("MonthlyPence " + MonthlyPence);
+
+			UpfrontPound = UpfrontPound.replace("£", "");
+			MonthlyPound = MonthlyPound.replace("£", "");
+
+			System.out.println("UpfrontPound " + UpfrontPound);
+			System.out.println("UpfrontPence " + UpfrontPence);
+			System.out.println("MonthlyPound " + MonthlyPound);
+			System.out.println("MonthlyPence " + MonthlyPence);
+
+			UpfrontCost = UpfrontPound + UpfrontPence + "upfront";
+			MonthlyCost = MonthlyPound + MonthlyPence + "amonth";
+
+			TextOfTariffTile = UpfrontCost + MonthlyCost;
+			System.out.println("UpfrontCost is " + UpfrontCost);
+			System.out.println("MonthlyCost is " + MonthlyCost);
+			System.out.println("TextOfTariffTile is " + TextOfTariffTile);
+
+			if (TextOfTariffTile.contains(Tariff)) {
+				PositionUpgrade = j;
+				System.out.println("Provided tariff is present in the list of tariffs");
+				log.debug("Provided tariff is present in the list of tariffs");
+				SelectBtnXpath = "(//button[@id='callToAction'])[" + j + "]";
+				System.out.println("Going to select the given tariff :" + Tariff);
+				driver.findElement(By.xpath(SelectBtnXpath)).click();
+				flag = true;
+			}
+		}
+		if (flag == false) {
+			Assert.fail("Provided tariff is not present in the list of tariffs");
+		}
+	}
+
 	public static void verifyPromotionalRibbonDisplayedTEpage(String Tariff) {
-		System.out.println('\n' + "Function - verifyPromotionalRibbonDisplayedTEpage");
+		System.out.println('\n' + "Verify Promotional Ribbon is displayed in TE page");
 		String BluePromotionXpath = null;
 		String GreenPromotionXpath = null;
 		WebElement GreenPromotion = null;
@@ -364,23 +434,124 @@ public class UpgradeCustomerPageActions extends Environment {
 		List<WebElement> TariffList = driver.findElements(By.xpath("//div[@id='tariff-tile']/div[@id]"));
 		System.out.println("TariffList size is " + TariffList.size());
 
+		String PrimaryPromotionRibbon = (String) Filereadingutility.getPropertyValue(RunTimeFilePath,
+				"PrimaryPromotionRibbon");
+		String SecondaryPromotionRibbon = (String) Filereadingutility.getPropertyValue(RunTimeFilePath,
+				"SecondaryPromotionRibbon");
+
 		BluePromotionXpath = "(//div[@id='tariff-tile']/div[@id]//div[@class='blue-promotion'])[" + position + "]";
-		BluePromotion = driver.findElement(By.xpath(BluePromotionXpath));
-		if (BluePromotion.getText().isEmpty()) {
-			Assert.fail("Promotion text not present for the selected tariff");
-		} else {
-			System.out.println("Promotion text is " + BluePromotion.getText());
+
+		if (PrimaryPromotionRibbon.equals("Y")) {
+			BluePromotion = driver.findElement(By.xpath(BluePromotionXpath));
+			if (BluePromotion.getText().isEmpty()) {
+				Assert.fail("Promotion text not present for the selected tariff");
+			} else {
+				setRuntimeProperty.setProperty("PrimaryPromotionText", BluePromotion.getText());
+				System.out.println("Promotion text is " + BluePromotion.getText());
+			}
+		} else if (PrimaryPromotionRibbon.equals("N")) {
+
+			System.out.println("No Primary ribbon is configured");
+			log.debug("No Primary ribbon is configured");
 		}
-		GreenPromotionXpath = "(//div[@id='tariff-tile']/div[@id]//div[@class='green-promotion'])[" + position + "]";
-		GreenPromotion = driver.findElement(By.xpath(GreenPromotionXpath));
-		if (GreenPromotion.isDisplayed()) {
-			greenpromotion = true;
-			System.out.println("Secondary Promotion text is " + GreenPromotion.getText());
+
+		if (SecondaryPromotionRibbon.equals("Y")) {
+			GreenPromotionXpath = "(//div[@id='tariff-tile']/div[@id]//div[@class='green-promotion'])[" + position
+					+ "]";
+			GreenPromotion = driver.findElement(By.xpath(GreenPromotionXpath));
+			if (GreenPromotion.isDisplayed()) {
+				setRuntimeProperty.setProperty("SecondaryPromotionText", GreenPromotion.getText());
+				System.out.println("Secondary Promotion text is " + GreenPromotion.getText());
+			} else {
+				Assert.fail("Secondary ribbon not present");
+			}
+		} else if (SecondaryPromotionRibbon.equals("N")) {
+
+			System.out.println("No Secondary ribbon is configured");
+			log.debug("No Secondary ribbon is configured");
+		}
+	}
+
+	public static void verifyPromotionalRibbonDisplayedUpgradePage(String Tariff) {
+		System.out.println("To verify Promotional Ribbon Displayed in Upgrade Page");
+
+		String PrimaryPromotionXpath = null, SecondaryPromotionXpath = null;
+		String PrimaryPromotionText = null, SecondaryPromotionText = null;
+		int i = 0;
+
+		String PrimaryPromotionRibbonRecommendedSection = (String) Filereadingutility.getPropertyValue(RunTimeFilePath,
+				"PrimaryPromotionRibbonRecommendedSection");
+		String SecondaryPromotionRibbonRecommendedSection = (String) Filereadingutility
+				.getPropertyValue(RunTimeFilePath, "SecondaryPromotionRibbonRecommendedSection");
+
+		i = PositionUpgrade;
+
+		PrimaryPromotionXpath = "(//div[@class='offer-wrapper'])[" + i + "]";
+		SecondaryPromotionXpath = "(//div[@id='qa-promotion']/div[2])[" + i + "]";
+
+		List<WebElement> PrimaryPromotionList = driver.findElements(By.xpath(PrimaryPromotionXpath));
+		List<WebElement> SecondaryPromotionList = driver.findElements(By.xpath(SecondaryPromotionXpath));
+
+		if (PrimaryPromotionRibbonRecommendedSection.equals("Y")) {
+			if (PrimaryPromotionList.size() > 0) {
+				if (driver.findElement(By.xpath(PrimaryPromotionXpath)).isDisplayed()) {
+					PrimaryPromotionText = driver.findElement(By.xpath(PrimaryPromotionXpath)).getText();
+					setRuntimeProperty.setProperty("PrimaryPromotionTextRecommendedSection", PrimaryPromotionText);
+					System.out.println("PrimaryPromotionText is " + PrimaryPromotionText);
+				}
+			} else {
+				Assert.fail("Primary Promotion Ribbon is not present");
+			}
+		} else if (PrimaryPromotionRibbonRecommendedSection.equals("N")) {
+			if (PrimaryPromotionList.size() == 0) {
+				System.out.println("Primary promotion ribbon in recommended section is not configured");
+			} else {
+				Assert.fail("Primary promotion ribbon is present though it is not configured");
+			}
+		}
+
+		if (SecondaryPromotionRibbonRecommendedSection.equals("Y")) {
+			if (SecondaryPromotionList.size() > 0) {
+				if (driver.findElement(By.xpath(SecondaryPromotionXpath)).isDisplayed()) {
+					SecondaryPromotionText = driver.findElement(By.xpath(SecondaryPromotionXpath)).getText();
+					setRuntimeProperty.setProperty("SecondaryPromotionTextRecommendedSection", SecondaryPromotionText);
+					System.out.println("SecondaryPromotionText is " + SecondaryPromotionText);
+				}
+			} else {
+				Assert.fail("Secondary Promotion Ribbon is not present");
+			}
+		} else if (SecondaryPromotionRibbonRecommendedSection.equals("N")) {
+			if (SecondaryPromotionList.size() == 0) {
+				System.out.println("Secondary promotion ribbon in recommended section is not configured");
+			} else {
+				Assert.fail("Secondary promotion ribbon is present though it is not configured");
+			}
+		}
+	}
+
+	public static void checkIfPromotionalRibbonTextsNotSame() {
+		String PrimaryPromotionTextRecommendedSection = (String) Filereadingutility.getPropertyValue(RunTimeFilePath,
+				"PrimaryPromotionTextRecommendedSection");
+		String SecondaryPromotionTextRecommendedSection = (String) Filereadingutility.getPropertyValue(RunTimeFilePath,
+				"SecondaryPromotionTextRecommendedSection");
+		String PrimaryPromotionText = (String) Filereadingutility.getPropertyValue(RunTimeFilePath,
+				"PrimaryPromotionText");
+		String SecondaryPromotionText = (String) Filereadingutility.getPropertyValue(RunTimeFilePath,
+				"SecondaryPromotionText");
+		if (PrimaryPromotionTextRecommendedSection.equals(PrimaryPromotionText)) {
+			System.out.println("Primary promotion text matches");
+		} else {
+			System.out.println("Primary promotion text does not match");
+		}
+		if (SecondaryPromotionTextRecommendedSection.equals(SecondaryPromotionText)) {
+			System.out.println("Secondary promotion text matches");
+		} else {
+			System.out.println("Secondary promotion text does not match");
 		}
 	}
 
 	public static void verifyOverlayIconIsDisplayedTEpage(String Tariff) {
-		System.out.println('\n' + "Function - verifyOverlayIconIsDisplayedTEpage");
+		System.out.println('\n' + "Verify Overlay Icon Is Displayed in TE page");
 		System.out.println("Tariff for verifying overlay icon is " + Tariff);
 		String TariffTile = null;
 		TariffTile = "(//div[@id='tariff-tile']/div[@id])[" + position + "]";
@@ -393,8 +564,22 @@ public class UpgradeCustomerPageActions extends Environment {
 		}
 	}
 
+	public static void verifyOverlayIconIsDisplayedUpgradePage(String Tariff) {
+		System.out.println('\n' + "Verify Overlay Icon Is Displayed in upgrade page");
+		System.out.println("Tariff for verifying overlay icon is " + Tariff);
+		String TariffTile = null;
+		TariffTile = "(//div[contains(@class, 'grid-tile')])[" + PositionUpgrade + "]";
+		List<WebElement> TariffTileOverlay = driver.findElement(By.xpath(TariffTile))
+				.findElements(By.xpath("//*[@id='qa-promotion']"));
+		if (TariffTileOverlay.size() < 0) {
+			Assert.fail("No overlay is present for the selected tariff in the tariff tile");
+		} else {
+			System.out.println("Overlay is present for the selected tariff in the tariff tile as expected");
+		}
+	}
+
 	public static void clickOnOverlayIconTEpage(String Tariff) throws Exception {
-		System.out.println('\n' + "Function - clickOnOverlayIconTEpage");
+		System.out.println('\n' + "To Click On Overlay Icon TE page");
 		System.out.println("Tariff for verifying overlay icon is " + Tariff);
 
 		String TariffTile = null;
@@ -404,51 +589,147 @@ public class UpgradeCustomerPageActions extends Environment {
 		List<WebElement> SecondaryOverlayIcon = driver.findElement(By.xpath(TariffTile))
 				.findElements(By.xpath("//div[@class='blue-promotion']/div/a[2]"));
 
-		if (PrimaryOverlayIcon.size() > 0) {
-			executor.executeScript("arguments[0].click();", PrimaryOverlayIcon.get(0));
-			System.out.println("Clicked on primary OverlayIcon");
-			log.debug("Clicked on primary OverlayIcon");
+		String PrimaryOverlay = (String) Filereadingutility.getPropertyValue(RunTimeFilePath, "PrimaryOverlay");
+		String SecondaryOverlay = (String) Filereadingutility.getPropertyValue(RunTimeFilePath, "SecondaryOverlay");
 
-			Thread.sleep(5000);
+		if (PrimaryOverlay.equals("Y")) {
+			if (PrimaryOverlayIcon.size() > 0) {
+				executor.executeScript("arguments[0].click();", PrimaryOverlayIcon.get(0));
+				System.out.println("Clicked on primary OverlayIcon");
+				log.debug("Clicked on primary OverlayIcon");
 
-			for (String winHandle : driver.getWindowHandles()) {
-				driver.switchTo().window(winHandle);
-				log.debug("Inside the overlay for the selected tariff");
-				System.out.println("Inside the overlay for the selected tariff");
+				Thread.sleep(5000);
+
+				for (String winHandle : driver.getWindowHandles()) {
+					driver.switchTo().window(winHandle);
+					log.debug("Inside the overlay for the selected tariff");
+					System.out.println("Inside the overlay for the selected tariff");
+				}
+				Thread.sleep(5000);
+				System.out.println("Text inside the primary overlay is :" + '\n'
+						+ driver.findElement(By
+								.xpath("//div[contains(@class, 'overlay-box tariff-tile-info-promo-overlay')]/div/h3"))
+								.getText());
+				closeOverlayIconTEpage();
+			} else {
+				Assert.fail("Primary Overlay Icon not present");
 			}
-			Thread.sleep(5000);
-			System.out.println("Text inside the primary overlay is :" + '\n'
-					+ driver.findElement(
-							By.xpath("//div[contains(@class, 'overlay-box tariff-tile-info-promo-overlay')]/div/h3"))
-							.getText());
-			closeOverlayIconTEpage();
-		} else {
-			Assert.fail("Primary Overlay Icon not present");
+		} else if (PrimaryOverlay.equals("N")) {
+			if (PrimaryOverlayIcon.size() == 0) {
+				System.out.println("No Primary overlay is configured");
+				log.debug("No Primary overlay is configured");
+			} else {
+				Assert.fail("Primary overlay is present though it is not configured");
+			}
 		}
-		if (SecondaryOverlayIcon.size() > 0) {
-			executor.executeScript("arguments[0].click();", SecondaryOverlayIcon.get(0));
-			System.out.println("Clicked on Secondary OverlayIcon");
-			log.debug("Clicked on Secondary OverlayIcon");
 
-			Thread.sleep(5000);
+		if (SecondaryOverlay.equals("Y")) {
+			if (SecondaryOverlayIcon.size() > 0) {
+				executor.executeScript("arguments[0].click();", SecondaryOverlayIcon.get(0));
+				System.out.println("Clicked on Secondary OverlayIcon");
+				log.debug("Clicked on Secondary OverlayIcon");
 
-			for (String winHandle : driver.getWindowHandles()) {
-				driver.switchTo().window(winHandle);
-				log.debug("Inside the overlay for the selected tariff");
-				System.out.println("Inside the overlay for the selected tariff");
+				Thread.sleep(5000);
+
+				for (String winHandle : driver.getWindowHandles()) {
+					driver.switchTo().window(winHandle);
+					log.debug("Inside the overlay for the selected tariff");
+					System.out.println("Inside the overlay for the selected tariff");
+				}
+				System.out.println("Text inside the secondary overlay is :" + '\n'
+						+ driver.findElement(By
+								.xpath("//div[contains(@class, 'overlay-box tariff-tile-info-promo-overlay')]/div/h3"))
+								.getText());
+				closeOverlayIconTEpage();
+			} else {
+				Assert.fail("Secondary Overlay Icon not present");
 			}
-			System.out.println("Text inside the secondary overlay is :" + '\n'
-					+ driver.findElement(
-							By.xpath("//div[contains(@class, 'overlay-box tariff-tile-info-promo-overlay')]/div/h3"))
-							.getText());
-			closeOverlayIconTEpage();
-		} else {
-			System.out.println("Secondary Overlay Icon not present");
+		} else if (SecondaryOverlay.equals("N")) {
+			if (SecondaryOverlayIcon.size() == 0) {
+				System.out.println("No Secondary overlay is configured");
+				log.debug("No Secondary overlay is configured");
+			} else {
+				Assert.fail("Secondary overlay is present though it is not configured");
+			}
+		}
+	}
+
+	public static void clickOnOverlayIconUpgradePage(String Tariff) throws Exception {
+		System.out.println('\n' + "To Click On Overlay Icon in Upgrade page");
+		System.out.println("Tariff for verifying overlay icon is " + Tariff);
+
+		String TariffTile = null;
+		TariffTile = "(//div[contains(@class, 'grid-tile')])[" + PositionUpgrade + "]";
+		List<WebElement> PrimaryOverlayIcon = driver.findElement(By.xpath(TariffTile))
+				.findElements(By.xpath("//div[@id='qa-promotion']/div[1]/a"));
+		List<WebElement> SecondaryOverlayIcon = driver.findElement(By.xpath(TariffTile))
+				.findElements(By.xpath("//div[@id='qa-promotion']/div[2]/a"));
+
+		String PrimaryOverlayRecommendedSection = (String) Filereadingutility.getPropertyValue(RunTimeFilePath,
+				"PrimaryOverlayRecommendedSection");
+		String SecondaryOverlayRecommendedSection = (String) Filereadingutility.getPropertyValue(RunTimeFilePath,
+				"SecondaryOverlayRecommendedSection");
+
+		if (PrimaryOverlayRecommendedSection.equals("Y")) {
+			if (PrimaryOverlayIcon.size() > 0) {
+				executor.executeScript("arguments[0].click();", PrimaryOverlayIcon.get(0));
+				System.out.println("Clicked on primary OverlayIcon");
+				log.debug("Clicked on primary OverlayIcon");
+				Thread.sleep(5000);
+				for (String winHandle : driver.getWindowHandles()) {
+					driver.switchTo().window(winHandle);
+					log.debug("Inside the overlay for the selected tariff");
+					System.out.println("Inside the overlay for the selected tariff");
+				}
+				Thread.sleep(5000);
+				System.out.println("Text inside the primary overlay is :" + '\n'
+						+ driver.findElement(By
+								.xpath("//div[contains(@class, 'overlay-box tariff-tile-info-promo-overlay')]/div/h3"))
+								.getText());
+				closeOverlayIconTEpage();
+			} else {
+				Assert.fail("Primary Overlay Icon not present");
+			}
+		} else if (PrimaryOverlayRecommendedSection.equals("N")) {
+			if (PrimaryOverlayIcon.size() == 0) {
+				System.out.println("No Primary overlay is configured");
+				log.debug("No Primary overlay is configured");
+			} else {
+				Assert.fail("Primary overlay is present though it is not configured");
+			}
+		}
+
+		if (SecondaryOverlayRecommendedSection.equals("Y")) {
+			if (SecondaryOverlayIcon.size() > 0) {
+				executor.executeScript("arguments[0].click();", SecondaryOverlayIcon.get(0));
+				System.out.println("Clicked on Secondary OverlayIcon");
+				log.debug("Clicked on Secondary OverlayIcon");
+				Thread.sleep(5000);
+				for (String winHandle : driver.getWindowHandles()) {
+					driver.switchTo().window(winHandle);
+					log.debug("Inside the overlay for the selected tariff");
+					System.out.println("Inside the overlay for the selected tariff");
+				}
+				System.out.println("Text inside the secondary overlay is :" + '\n'
+						+ driver.findElement(By
+								.xpath("//div[contains(@class, 'overlay-box tariff-tile-info-promo-overlay')]/div/h3"))
+								.getText());
+				closeOverlayIconTEpage();
+			} else {
+				Assert.fail("Secondary Overlay Icon not present");
+			}
+		} else if (SecondaryOverlayRecommendedSection.equals("N")) {
+			if (SecondaryOverlayIcon.size() == 0) {
+				System.out.println("No Secondary overlay is configured");
+				log.debug("No Secondary overlay is configured");
+			} else {
+				Assert.fail("Secondary overlay is present though it is not configured");
+			}
 		}
 	}
 
 	public static void closeOverlayIconTEpage() {
-		System.out.println('\n' + "Function - closeOverlayIconTEpage");
+		System.out.println('\n' + "To close Overlay Icon TE page");
 		List<WebElement> close = driver.findElements(By.xpath(
 				"//div[contains(@class, 'overlay-box tariff-tile-info-promo-overlay')]/div/a[@class='boxclose']"));
 		if (close.size() > 0) {
@@ -460,7 +741,7 @@ public class UpgradeCustomerPageActions extends Environment {
 	}
 
 	public static void closeOverlayIconBasketpage() {
-		System.out.println('\n' + "Function - closeOverlayIconBasketpage");
+		System.out.println('\n' + "To close Overlay Icon Basket page ");
 		List<WebElement> close = driver.findElements(
 				By.xpath("//div[contains(@class, 'overlay-box primary-promo-overlay')]/div/a[@class='boxclose']"));
 		if (close.size() > 0) {
@@ -472,15 +753,28 @@ public class UpgradeCustomerPageActions extends Environment {
 	}
 
 	public static void verifyPromotionalRibbonDisplayedBasketpage() {
-		System.out.println('\n' + "Function - verifyPromotionalRibbonDisplayedBasketpage");
-		if (pageobjects.BasketPage.PrimaryPromotion.isDisplayed()) {
-			System.out.println("Primary Promotion ribbon is present");
-			System.out.println(
-					"Text in Primary promotion ribbon is " + pageobjects.BasketPage.PrimaryPromotion.getText());
-		} else {
-			Assert.fail("Primary Promotion ribbon is not present");
+		System.out.println('\n' + "Verify Promotional Ribbon is Displayed in Basket page");
+
+		String PrimaryPromotionRibbon = (String) Filereadingutility.getPropertyValue(RunTimeFilePath,
+				"PrimaryPromotionRibbon");
+		String SecondaryPromotionRibbon = (String) Filereadingutility.getPropertyValue(RunTimeFilePath,
+				"SecondaryPromotionRibbon");
+
+		if (PrimaryPromotionRibbon.equals("Y")) {
+			if (pageobjects.BasketPage.PrimaryPromotion.isDisplayed()) {
+				System.out.println("Primary Promotion ribbon is present");
+				System.out.println(
+						"Text in Primary promotion ribbon is " + pageobjects.BasketPage.PrimaryPromotion.getText());
+			} else {
+				Assert.fail("Primary Promotion ribbon is not present");
+			}
+		} else if (PrimaryPromotionRibbon.equals("N")) {
+
+			System.out.println("No Primary ribbon is configured");
+			log.debug("No Primary ribbon is configured");
 		}
-		if (greenpromotion == true) {
+
+		if (SecondaryPromotionRibbon.equals("Y")) {
 			if (pageobjects.BasketPage.SecondaryPromotion.isDisplayed()) {
 				System.out.println("Secondary Promotion ribbon is present");
 				System.out.println(
@@ -488,11 +782,15 @@ public class UpgradeCustomerPageActions extends Environment {
 			} else {
 				Assert.fail("Secondary Promotion ribbon is not present");
 			}
+		} else if (SecondaryPromotionRibbon.equals("N")) {
+
+			System.out.println("No Secondary ribbon is configured");
+			log.debug("No Secondary ribbon is configured");
 		}
 	}
 
 	public static void verifyOverlayIconIsDisplayedBasketpage() {
-		System.out.println('\n' + "Function - verifyOverlayIconIsDisplayedBasketpage");
+		System.out.println('\n' + "Verify Overlay Icon Is Displayed in Basket page");
 		if (pageobjects.BasketPage.PrimaryPromotionOverlay.isDisplayed()) {
 			System.out.println("Overlay icon is present in primary promotion");
 		} else {
@@ -501,7 +799,7 @@ public class UpgradeCustomerPageActions extends Environment {
 	}
 
 	public static void clickOnOverlayIconBasketpage() throws Exception {
-		System.out.println('\n' + "Function - clickOnOverlayIconBasketpage");
+		System.out.println('\n' + "To click On Overlay Icon in Basket page");
 
 		List<WebElement> PrimaryPromotionalWrapperList = driver
 				.findElements(By.xpath("//div[@class='data-qa-promotion promotion-wrapper']/div[1]"));
@@ -512,142 +810,191 @@ public class UpgradeCustomerPageActions extends Environment {
 		List<WebElement> SecondaryPromotionOverlayList = driver
 				.findElements(By.xpath("//div[@class='data-qa-promotion promotion-wrapper']/div[2]/a"));
 
-		if (PrimaryPromotionalWrapperList.size() > 0) {
-			if (PrimaryPromotionalWrapperList.get(0).getAttribute("class").contains("primary promotion")) {
+		String PrimaryOverlay = (String) Filereadingutility.getPropertyValue(RunTimeFilePath, "PrimaryOverlay");
+		String SecondaryOverlay = (String) Filereadingutility.getPropertyValue(RunTimeFilePath, "SecondaryOverlay");
+
+		if (PrimaryOverlay.equals("Y")) {
+			if (PrimaryPromotionalWrapperList.size() > 0) {
+				if (PrimaryPromotionalWrapperList.get(0).getAttribute("class").contains("primary promotion")) {
+					if (PrimaryPromotionOverlayList.size() > 0) {
+						executor.executeScript("arguments[0].click();", PrimaryPromotionOverlayList.get(0));
+						System.out.println("Clicked on overlay icon present in primary promotion in basket page");
+						Thread.sleep(5000);
+						for (String winHandle : driver.getWindowHandles()) {
+							driver.switchTo().window(winHandle);
+							log.debug("Inside the overlay for the selected tariff");
+							System.out.println("Inside the overlay for the selected tariff");
+							System.out.println("Text inside overlay is :" + '\n'
+									+ driver.findElement(By
+											.xpath("//div[contains(@class, 'overlay-box primary-promo-overlay')]/div/h3"))
+											.getText());
+						}
+						Thread.sleep(5000);
+						closeOverlayIconBasketpage();
+					}
+				}
+			} else {
+				Assert.fail("Primary Promotion ribbon is not present in basket page");
+			}
+		} else if (PrimaryOverlay.equals("N")) {
+			if (PrimaryPromotionOverlayList.size() == 0) {
+				System.out.println("No Primary overlay is configured");
+				log.debug("No Primary overlay is configured");
+			} else {
+				Assert.fail("Primary overlay is present though it is not configured");
+			}
+		}
+
+		if (SecondaryOverlay.equals("Y")) {
+			if (SecondaryPromotionalWrapperList.size() > 0 && SecondaryPromotionOverlayList.size() > 0) {
+				if (SecondaryPromotionalWrapperList.get(0).getAttribute("class").contains("promotion secondary")) {
+					executor.executeScript("arguments[0].click();", SecondaryPromotionOverlayList.get(0));
+					System.out.println("Clicked on overlay icon present in secondary promotion in Basket page");
+					for (String winHandle : driver.getWindowHandles()) {
+						driver.switchTo().window(winHandle);
+						log.debug("Inside the overlay for the selected tariff");
+						System.out.println("Inside the overlay for the selected tariff");
+						System.out.println("Text inside overlay is :" + '\n'
+								+ driver.findElement(By.xpath("//div[@class='box-header']/h3")).getText());
+					}
+					closeOverlayIconBasketpage();
+				}
+			} else {
+				Assert.fail("Secondary Promotion ribbon is not present in basket page");
+			}
+		} else if (SecondaryOverlay.equals("N")) {
+			if (SecondaryPromotionalWrapperList.size() == 0) {
+				System.out.println("No Secondary overlay is configured");
+				log.debug("No Secondary overlay is configured");
+			} else {
+				Assert.fail("Secondary overlay is present though it is not configured");
+			}
+		}
+	}
+
+	public static void verifyPromotionalRibbonDisplayedMyPackageSection() {
+		System.out.println('\n' + "Verify Promotional Ribbon Displayed in MyPackage Section");
+		List<WebElement> PrimaryPromotionalWrapperList = driver
+				.findElements(By.xpath("//div[@class='data-qa-promotion promotion-wrapper']/div[1]"));
+		List<WebElement> SecondaryPromotionalWrapperList = driver
+				.findElements(By.xpath("//div[@class='data-qa-promotion promotion-wrapper']/div[2]"));
+
+		String PrimaryPromotionRibbon = (String) Filereadingutility.getPropertyValue(RunTimeFilePath,
+				"PrimaryPromotionRibbon");
+		String SecondaryPromotionRibbon = (String) Filereadingutility.getPropertyValue(RunTimeFilePath,
+				"SecondaryPromotionRibbon");
+
+		if (PrimaryPromotionRibbon.equals("Y")) {
+			if (PrimaryPromotionalWrapperList.size() > 0) {
+				if (PrimaryPromotionalWrapperList.get(0).getAttribute("class").contains("primary promotion")) {
+					System.out.println("Primary Promotion ribbon is present in My package section");
+					System.out.println(
+							"Text in Primary promotion ribbon is " + PrimaryPromotionalWrapperList.get(0).getText());
+				}
+			} else {
+				Assert.fail("Primary Promotion ribbon is not present");
+			}
+		} else if (PrimaryPromotionRibbon.equals("N")) {
+			if (PrimaryPromotionalWrapperList.size() == 0) {
+				System.out.println("No primary ribbon is configured");
+				log.debug("No primary ribbon is configured");
+			} else {
+				Assert.fail("Primary ribbon is present though it is not configured");
+			}
+		}
+
+		if (SecondaryPromotionRibbon.equals("Y")) {
+			if (SecondaryPromotionalWrapperList.size() > 0) {
+				if (SecondaryPromotionalWrapperList.get(0).getAttribute("class").contains("promotion secondary")) {
+					System.out.println("Secondary Promotion ribbon is present in My package section");
+					System.out.println("Text in Secondary promotion ribbon is "
+							+ SecondaryPromotionalWrapperList.get(0).getText());
+				}
+			} else {
+				Assert.fail("Secondary Promotion ribbon is not present");
+			}
+		} else if (SecondaryPromotionRibbon.equals("N")) {
+			if (SecondaryPromotionalWrapperList.size() == 0) {
+				System.out.println("No Secondary ribbon is configured");
+				log.debug("No Secondary ribbon is configured");
+			} else {
+				Assert.fail("Secondary ribbon is present though it is not configured");
+			}
+		}
+	}
+
+	public static void clickOnOverlayIconMyPackageSection() throws Exception {
+		System.out.println('\n' + "To click On Overlay Icon in MyPackage Section");
+
+		List<WebElement> PrimaryPromotionalWrapperList = driver
+				.findElements(By.xpath("//div[@class='data-qa-promotion promotion-wrapper']/div[1]"));
+		List<WebElement> SecondaryPromotionalWrapperList = driver
+				.findElements(By.xpath("//div[@class='data-qa-promotion promotion-wrapper']/div[2]"));
+		List<WebElement> PrimaryPromotionOverlayList = driver
+				.findElements(By.xpath("//div[@class='data-qa-promotion promotion-wrapper']/div[1]/a"));
+		List<WebElement> SecondaryPromotionOverlayList = driver
+				.findElements(By.xpath("//div[@class='data-qa-promotion promotion-wrapper']/div[2]/a"));
+
+		String PrimaryOverlay = (String) Filereadingutility.getPropertyValue(RunTimeFilePath, "PrimaryOverlay");
+		String SecondaryOverlay = (String) Filereadingutility.getPropertyValue(RunTimeFilePath, "SecondaryOverlay");
+
+		if (PrimaryOverlay.equals("Y")) {
+			if (PrimaryPromotionalWrapperList.size() > 0) {
 				if (PrimaryPromotionOverlayList.size() > 0) {
 					executor.executeScript("arguments[0].click();", PrimaryPromotionOverlayList.get(0));
-					System.out.println("Clicked on overlay icon present in primary promotion in basket page");
+					System.out.println("Clicked on overlay icon present in primary promotion in My package section");
 					Thread.sleep(5000);
 					for (String winHandle : driver.getWindowHandles()) {
 						driver.switchTo().window(winHandle);
 						log.debug("Inside the overlay for the selected tariff");
 						System.out.println("Inside the overlay for the selected tariff");
 						System.out.println("Text inside overlay is :" + '\n'
-								+ driver.findElement(By.xpath("//div[contains(@class, 'overlay-box primary-promo-overlay')]/div/h3")).getText());
+								+ driver.findElement(
+										By.xpath("//div[contains(@class, 'overlay-box primary-promo-overlay')]/div/h3"))
+										.getText());
 					}
 					Thread.sleep(5000);
 					closeOverlayIconBasketpage();
 				}
-			}
-		} else {
-			Assert.fail("Primary Promotion ribbon is not present in basket page");
-		}
-
-		if (greenpromotion == true) {
-			if (SecondaryPromotionalWrapperList.size() > 0) {
-				if (SecondaryPromotionalWrapperList.get(0).getAttribute("class").contains("promotion secondary")) {
-					if (SecondaryPromotionOverlayList.size() > 0) {
-						executor.executeScript("arguments[0].click();", SecondaryPromotionOverlayList.get(0));
-						System.out.println("Clicked on overlay icon present in secondary promotion in Basket page");
-						for (String winHandle : driver.getWindowHandles()) {
-							driver.switchTo().window(winHandle);
-							log.debug("Inside the overlay for the selected tariff");
-							System.out.println("Inside the overlay for the selected tariff");
-							System.out.println("Text inside overlay is :" + '\n'
-									+ driver.findElement(By.xpath("//div[@class='box-header']/h3")).getText());
-						}
-						closeOverlayIconBasketpage();
-					}
-				} else {
-					Assert.fail("Secondary Promotion ribbon is not present in basket page");
-				}
-			}
-		} else if (greenpromotion == false) {
-			System.out.println("No secondary promotional ribbon is present");
-		}
-
-	}
-
-	public static void verifyPromotionalRibbonDisplayedMyPackageSection() {
-		System.out.println('\n' + "Function - verifyPromotionalRibbonDisplayedMyPackageSection");
-		List<WebElement> PrimaryPromotionalWrapperList = driver
-				.findElements(By.xpath("//div[@class='data-qa-promotion promotion-wrapper']/div[1]"));
-		List<WebElement> SecondaryPromotionalWrapperList = driver
-				.findElements(By.xpath("//div[@class='data-qa-promotion promotion-wrapper']/div[2]"));
-
-		if (PrimaryPromotionalWrapperList.size() > 0) {
-			if (PrimaryPromotionalWrapperList.get(0).getAttribute("class").contains("primary promotion")) {
-				System.out.println("Primary Promotion ribbon is present in My package section");
-				System.out.println(
-						"Text in Primary promotion ribbon is " + PrimaryPromotionalWrapperList.get(0).getText());
 			} else {
 				Assert.fail("Primary Promotion ribbon is not present");
 			}
-		}
-		if (greenpromotion == true) {
-			if (SecondaryPromotionalWrapperList.size() > 0) {
-				if (SecondaryPromotionalWrapperList.get(0).getAttribute("class").contains("promotion secondary")) {
-					System.out.println("Secondary Promotion ribbon is present in My package section");
-					System.out.println("Text in Secondary promotion ribbon is "
-							+ SecondaryPromotionalWrapperList.get(0).getText());
-				} else {
-					Assert.fail("Secondary Promotion ribbon is not present");
-				}
-			}
-		} else if (greenpromotion == false) {
-			System.out.println("No secondary promotional ribbon is present");
-		}
-	}
-
-	public static void clickOnOverlayIconMyPackageSection() throws Exception {
-		System.out.println('\n' + "Function - clickOnOverlayIconMyPackageSection");
-
-		List<WebElement> PrimaryPromotionalWrapperList = driver
-				.findElements(By.xpath("//div[@class='data-qa-promotion promotion-wrapper']/div[1]"));
-		List<WebElement> SecondaryPromotionalWrapperList = driver
-				.findElements(By.xpath("//div[@class='data-qa-promotion promotion-wrapper']/div[2]"));
-		List<WebElement> PrimaryPromotionOverlayList = driver
-				.findElements(By.xpath("//div[@class='data-qa-promotion promotion-wrapper']/div[1]/a"));
-		List<WebElement> SecondaryPromotionOverlayList = driver
-				.findElements(By.xpath("//div[@class='data-qa-promotion promotion-wrapper']/div[2]/a"));
-
-		System.out.println("PrimaryPromotionalWrapperList.size()" + PrimaryPromotionalWrapperList.size());
-		System.out.println("PrimaryPromotionOverlayList.size()" + PrimaryPromotionOverlayList.size());
-
-		if (PrimaryPromotionalWrapperList.size() > 0) {
-			if (PrimaryPromotionOverlayList.size() > 0) {
-				System.out.println("PrimaryPromotionOverlayList.get(0)" + PrimaryPromotionOverlayList.get(0));
-				executor.executeScript("arguments[0].click();", PrimaryPromotionOverlayList.get(0));
-				System.out.println("Clicked on overlay icon present in primary promotion in My package section");
-				Thread.sleep(5000);
-				for (String winHandle : driver.getWindowHandles()) {
-					driver.switchTo().window(winHandle);
-					log.debug("Inside the overlay for the selected tariff");
-					System.out.println("Inside the overlay for the selected tariff");
-					System.out.println("Text inside overlay is :" + '\n'
-							+ driver.findElement(By.xpath("//div[contains(@class, 'overlay-box primary-promo-overlay')]/div/h3")).getText());
-				}
-				Thread.sleep(5000);
-				closeOverlayIconBasketpage();
+		} else if (PrimaryOverlay.equals("N")) {
+			if (PrimaryPromotionOverlayList.size() == 0) {
+				System.out.println("No Primary overlay is configured");
+				log.debug("No Primary overlay is configured");
 			} else {
-				Assert.fail("Primary Promotion ribbon is not present");
+				Assert.fail("Primary overlay is present though it is not configured");
 			}
-		}
-		if (greenpromotion == true) {
-			if (SecondaryPromotionalWrapperList.size() > 0) {
-				if (SecondaryPromotionalWrapperList.get(0).getAttribute("class").contains("promotion secondary")) {
-					if (SecondaryPromotionOverlayList.size() > 0) {
-						executor.executeScript("arguments[0].click();", SecondaryPromotionOverlayList.get(0));
-						System.out.println(
-								"Clicked on overlay icon present in secondary promotion in My package section");
-						Thread.sleep(5000);
-						for (String winHandle : driver.getWindowHandles()) {
-							driver.switchTo().window(winHandle);
-							log.debug("Inside the overlay for the selected tariff");
-							System.out.println("Inside the overlay for the selected tariff");
-							System.out.println("Text inside overlay is :" + '\n'
-									+ driver.findElement(By.xpath("//div[@class='box-header']/h3")).getText());
-						}
-						Thread.sleep(5000);
-						closeOverlayIconBasketpage();
-					}
-				} else {
-					Assert.fail("Secondary Promotion ribbon is not present");
-				}
-			}
-		} else if (greenpromotion == false) {
-			System.out.println("No secondary promotional ribbon is present");
 		}
 
+		if (SecondaryOverlay.equals("Y")) {
+			if (SecondaryPromotionalWrapperList.size() > 0 && SecondaryPromotionOverlayList.size() > 0) {
+				if (SecondaryPromotionalWrapperList.get(0).getAttribute("class").contains("promotion secondary")) {
+					executor.executeScript("arguments[0].click();", SecondaryPromotionOverlayList.get(0));
+					System.out.println("Clicked on overlay icon present in secondary promotion in My package section");
+					Thread.sleep(5000);
+					for (String winHandle : driver.getWindowHandles()) {
+						driver.switchTo().window(winHandle);
+						log.debug("Inside the overlay for the selected tariff");
+						System.out.println("Inside the overlay for the selected tariff");
+						System.out.println("Text inside overlay is :" + '\n'
+								+ driver.findElement(By.xpath("//div[@class='box-header']/h3")).getText());
+					}
+					Thread.sleep(5000);
+					closeOverlayIconBasketpage();
+				}
+			} else {
+				Assert.fail("Secondary Promotion ribbon is not present");
+			}
+		} else if (SecondaryOverlay.equals("N")) {
+			if (SecondaryPromotionOverlayList.size() == 0) {
+				System.out.println("No Secondary overlay is configured");
+				log.debug("No Secondary overlay is configured");
+			} else {
+				Assert.fail("Secondary overlay is present though it is not configured");
+			}
+
+		}
 	}
 }
