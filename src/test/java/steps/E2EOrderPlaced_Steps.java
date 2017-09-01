@@ -723,7 +723,7 @@ public class E2EOrderPlaced_Steps {
 			String title = driver.getTitle();
 			if (title.contains("Thanks for waiting")) {
 				System.out.println("Queue page is displayed");
-				} else {
+			} else {
 				System.out.println("Queue page is not displayed");
 				PAYMandPAYGTariffAndExtrasPageActions.addToBasketLive();
 				BasketPageActions.ValidateBasketPageContents();
@@ -1601,7 +1601,7 @@ public class E2EOrderPlaced_Steps {
 
 		}
 
-	}	
+	}
 	/*
 	 * #########################################################################
 	 * #########
@@ -3910,7 +3910,7 @@ public class E2EOrderPlaced_Steps {
 
 		}
 	}
-	
+
 	@And("^verify that the Basecomms tariff is not displayed in the Tariff and Extras page$")
 	public void verify_that_the_Basecomms_tariff_is_not_displayed_in_the_Tariff_and_Extras_page() throws Throwable {
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
@@ -4054,7 +4054,7 @@ public class E2EOrderPlaced_Steps {
 
 		}
 	}
-	
+
 	@And("^Click on 'Continue' button on upgrade page$")
 	public void click_on_continue_link_for_the_upgrade_journey() throws Throwable {
 		try {
@@ -4065,6 +4065,239 @@ public class E2EOrderPlaced_Steps {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 			Assert.fail("Unable to click on Continue button");
+		}
+	}
+
+	@And("^Select a ([^\"]*) device from Recommended devices section$")
+	public void select_device_from_recommended_devices_section(String devicename) throws Throwable {
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, UpgradeCustomerPage.class);
+			UpgradeCustomerPageActions.selectDeviceInRecommendedDevicesSection(devicename);
+		} catch (Exception e) {
+			e.printStackTrace();
+			Assert.fail("Unable to select a device from Recommended devices section");
+		}
+	}
+
+	@And("^Select a tariff ([^\"]*) with ribbons$")
+	public void select_tariff_with_ribbons(String RibbonText) throws Throwable {
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, UpgradeCustomerPage.class);
+			UpgradeCustomerPageActions.selectTariffWithRibbonAndOverlay(RibbonText);
+		} catch (Exception e) {
+			e.printStackTrace();
+			Assert.fail("Unable to Select a tariff with ribbons");
+		}
+	}
+
+	@And("^Verify whether promotional ribbons are displayed for ([^\"]*) on the Tariff tile in the Tariff and Extras page$")
+	public void Verify_whether_promotional_ribbons_are_displayed_on_the_Tariff_tile_in_the_Tariff_and_Extras_page(
+			String Tariff) throws Throwable {
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, UpgradeCustomerPage.class);
+			UpgradeCustomerPageActions.verifyPromotionalRibbonDisplayedTEpage(Tariff);
+		} catch (Exception e) {
+			e.printStackTrace();
+			Assert.fail(
+					"Unable to Verify whether promotional ribbons are displayed on the Tariff tile in the Tariff and Extras page");
+		}
+	}
+
+	@And("^Verify 'Overlay icon' is displayed on the promotional ribbons for ([^\"]*) in the Tariff and Extras page$")
+	public void Verify_Overlay_icon_is_displayed_on_the_promotional_ribbons(String Tariff) throws Throwable {
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, UpgradeCustomerPage.class);
+			UpgradeCustomerPageActions.verifyOverlayIconIsDisplayedTEpage(Tariff);
+		} catch (Exception e) {
+			e.printStackTrace();
+			Assert.fail(
+					"Unable to Verify whether promotional ribbons are displayed on the Tariff tile in the Tariff and Extras page");
+		}
+	}
+
+	@And("^Click on the 'Overlay icon' for ([^\"]*) in the Tariff and Extras page and verify pop up gets displayed$")
+	public void Click_Overlay_icon_on_the_promotional_ribbons(String Tariff) throws Throwable {
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, UpgradeCustomerPage.class);
+			UpgradeCustomerPageActions.clickOnOverlayIconTEpage(Tariff);
+		} catch (Exception e) {
+			e.printStackTrace();
+			Assert.fail(
+					"Unable to Click on the 'Overlay icon' for tariff in the Tariff and Extras page and verify pop up gets displayed");
+		}
+	}
+
+	@And("^Click on the 'Overlay icon' for ([^\"]*) in the upgrade page and verify pop up gets displayed$")
+	public void Click_Overlay_icon_on_the_promotional_ribbons_in_upgrade_page(String Tariff) throws Throwable {
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, UpgradeCustomerPage.class);
+			UpgradeCustomerPageActions.clickOnOverlayIconUpgradePage(Tariff);
+		} catch (Exception e) {
+			e.printStackTrace();
+			Assert.fail(
+					"Unable to Click on the 'Overlay icon' for tariff in the Tariff and Extras page and verify pop up gets displayed");
+		}
+	}
+
+	@And("^Verify Promotional ribbons are displayed under Tariff section in the Basket page$")
+	public void Verify_whether_promotional_ribbons_are_displayed_in_the_Basket_page() throws Throwable {
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, BasketPage.class);
+			UpgradeCustomerPageActions.verifyPromotionalRibbonDisplayedBasketpage();
+		} catch (Exception e) {
+			e.printStackTrace();
+			Assert.fail("Unable to verify Promotional ribbons are displayed under Tariff section in the Basket page");
+		}
+	}
+
+	@And("^Verify 'Overlay icon' is displayed on the promotional ribbons in the Basket page$")
+	public void Verify_whether_overlay_icon_are_displayed_in_the_Basket_page() throws Throwable {
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, UpgradeCustomerPage.class);
+			UpgradeCustomerPageActions.verifyOverlayIconIsDisplayedBasketpage();
+		} catch (Exception e) {
+			e.printStackTrace();
+			Assert.fail("Unable to Verify 'Overlay icon' is displayed on the promotional ribbons in the Basket page");
+		}
+	}
+
+	@And("^Click on the 'Overlay icon' in the Basket page and verify pop gets displayed$")
+	public void Click_on_overlay_icon_in_the_Basket_page() throws Throwable {
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, UpgradeCustomerPage.class);
+			UpgradeCustomerPageActions.clickOnOverlayIconBasketpage();
+		} catch (Exception e) {
+			e.printStackTrace();
+			Assert.fail("Unable to Click on the 'Overlay icon' in the Basket page and verify pop gets displayed ");
+		}
+	}
+
+	@And("^Verify that the tariff ribbons are displayed in tariff upsell config of 'Your package' section$")
+	public void Verify_that_the_tariff_ribbons_are_displayed_in_Your_package_section() throws Throwable {
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, UpgradeCustomerPage.class);
+			UpgradeCustomerPageActions.verifyPromotionalRibbonDisplayedMyPackageSection();
+		} catch (Exception e) {
+			e.printStackTrace();
+			Assert.fail(
+					"Unable to Verify that the tariff ribbons are displayed in tariff upsell config of 'Your package' section");
+		}
+	}
+
+	@And("^Click on the 'Overlay icon' in tariff upsell config of 'Your package' section and verify pop up gets displayed in the Tariff and Extras Page$")
+	public void Click_on_the_Overlay_icon_in_Your_package_section_and_verify_pop_up_gets_displayed_in_the_Tariff_and_Extras_Page()
+			throws Throwable {
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, UpgradeCustomerPage.class);
+			UpgradeCustomerPageActions.clickOnOverlayIconMyPackageSection();
+		} catch (Exception e) {
+			e.printStackTrace();
+			Assert.fail(
+					"Unable to click on the 'Overlay icon' in tariff upsell config of 'Your package' section and verify pop up gets displayed in the Tariff and Extras Page");
+		}
+	}
+
+	@And("^Click on the 'Overlay icon' in tariff upsell config of 'Your package' section and verify pop up gets displayed in upgrade journey$")
+	public void Click_on_the_Overlay_icon_in_Your_package_section_and_verify_pop_up_gets_displayed_in_the_upgrade_journey()
+			throws Throwable {
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, UpgradeCustomerPage.class);
+			UpgradeCustomerPageActions.clickOnOverlayIconMyPackageSectionUpgrade();
+		} catch (Exception e) {
+			e.printStackTrace();
+			Assert.fail(
+					"Click on the 'Overlay icon' in tariff upsell config of 'Your package' section and verify pop up gets displayed in upgrade journey");
+		}
+	}
+
+	@And("^Select a tariff ([^\"]*) with ribbons in upgrade journey$")
+	public void select_tariff_with_ribbons_in_upgrade_journey(String Tariff) throws Throwable {
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, UpgradeCustomerPage.class);
+			UpgradeCustomerPageActions.selectTariffWithRibbonAndOverlayUpgradeJourney(Tariff);
+		} catch (Exception e) {
+			e.printStackTrace();
+			Assert.fail(
+					"Unable to Verify that the tariff ribbons are displayed in tariff upsell config of 'Your package' section");
+		}
+	}
+
+	@And("^Verify whether promotional ribbons are displayed for ([^\"]*) on the Tariff tile in the upgrade journey$")
+	public void Verify_whether_promotional_ribbons_are_displayed_in_the_upgrade_page(String Tariff) throws Throwable {
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, UpgradeCustomerPage.class);
+			UpgradeCustomerPageActions.verifyPromotionalRibbonDisplayedUpgradePage(Tariff);
+		} catch (Exception e) {
+			e.printStackTrace();
+			Assert.fail("Unable to Verify whether promotional ribbons are displayed for" + Tariff
+					+ "on the Tariff tile in the upgrade journey");
+		}
+	}
+
+	@And("^Verify 'Overlay icon' is displayed on the promotional ribbons for ([^\"]*) in the Upgrade Option page$")
+	public void Verify_whether_overlay_icon_are_displayed_in_the_upgrade_page(String Tariff) throws Throwable {
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, UpgradeCustomerPage.class);
+			UpgradeCustomerPageActions.verifyOverlayIconIsDisplayedUpgradePage(Tariff);
+		} catch (Exception e) {
+			e.printStackTrace();
+			Assert.fail(
+					"Unable to Verify 'Overlay icon' is displayed on the promotional ribbons in the Upgrade Option page");
+		}
+	}
+
+	@And("^Verify Promotional ribbons displayed are not same as the one displayed in Upgrade Journey$")
+	public void Verify_Promotional_ribbons_displayed_are_not_same_as_the_one_displayed_in_Upgrade_Journey()
+			throws Throwable {
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, UpgradeCustomerPage.class);
+			UpgradeCustomerPageActions.checkIfPromotionalRibbonTextsNotSame();
+		} catch (Exception e) {
+			e.printStackTrace();
+			Assert.fail(
+					"Unable to Verify Promotional ribbons displayed are not same as the one displayed in Upgrade Journey");
+		}
+	}
+
+	@And("^Verify that the tariff ribbons are displayed in tariff upsell config of 'Your package' section in upgrade journey$")
+	public void Verify_that_the_tariff_ribbons_are_displayed_in_Your_package_section_in_upgrade_journey()
+			throws Throwable {
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, UpgradeCustomerPage.class);
+			UpgradeCustomerPageActions.verifyPromotionalRibbonDisplayedMyPackageSection();
+		} catch (Exception e) {
+			e.printStackTrace();
+			Assert.fail(
+					"Unable to Verify that the tariff ribbons are displayed in tariff upsell config of 'Your package' section");
+		}
+	}
+	
+	@And("^LogOut from the Upgrade Journey$")
+	public void Logout_from_upgrade_journey() throws Throwable {
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, UpgradeCustomerPage.class);
+			ShopLandingPageAction.clickSignOut();
+		} catch (Exception e) {
+			e.printStackTrace();
+			Assert.fail("LogOut from the Upgrade Journey");
 		}
 	}
 }
