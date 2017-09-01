@@ -4207,7 +4207,21 @@ public class E2EOrderPlaced_Steps {
 		} catch (Exception e) {
 			e.printStackTrace();
 			Assert.fail(
-					"Unable to Verify that the tariff ribbons are displayed in tariff upsell config of 'Your package' section");
+					"Unable to click on the 'Overlay icon' in tariff upsell config of 'Your package' section and verify pop up gets displayed in the Tariff and Extras Page");
+		}
+	}
+
+	@And("^Click on the 'Overlay icon' in tariff upsell config of 'Your package' section and verify pop up gets displayed in upgrade journey$")
+	public void Click_on_the_Overlay_icon_in_Your_package_section_and_verify_pop_up_gets_displayed_in_the_upgrade_journey()
+			throws Throwable {
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, UpgradeCustomerPage.class);
+			UpgradeCustomerPageActions.clickOnOverlayIconMyPackageSectionUpgrade();
+		} catch (Exception e) {
+			e.printStackTrace();
+			Assert.fail(
+					"Click on the 'Overlay icon' in tariff upsell config of 'Your package' section and verify pop up gets displayed in upgrade journey");
 		}
 	}
 
@@ -4232,8 +4246,8 @@ public class E2EOrderPlaced_Steps {
 			UpgradeCustomerPageActions.verifyPromotionalRibbonDisplayedUpgradePage(Tariff);
 		} catch (Exception e) {
 			e.printStackTrace();
-			Assert.fail(
-					"Unable to Verify whether promotional ribbons are displayed for" +Tariff+ "on the Tariff tile in the upgrade journey");
+			Assert.fail("Unable to Verify whether promotional ribbons are displayed for" + Tariff
+					+ "on the Tariff tile in the upgrade journey");
 		}
 	}
 
@@ -4247,6 +4261,34 @@ public class E2EOrderPlaced_Steps {
 			e.printStackTrace();
 			Assert.fail(
 					"Unable to Verify 'Overlay icon' is displayed on the promotional ribbons in the Upgrade Option page");
+		}
+	}
+
+	@And("^Verify Promotional ribbons displayed are not same as the one displayed in Upgrade Journey$")
+	public void Verify_Promotional_ribbons_displayed_are_not_same_as_the_one_displayed_in_Upgrade_Journey()
+			throws Throwable {
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, UpgradeCustomerPage.class);
+			UpgradeCustomerPageActions.checkIfPromotionalRibbonTextsNotSame();
+		} catch (Exception e) {
+			e.printStackTrace();
+			Assert.fail(
+					"Unable to Verify Promotional ribbons displayed are not same as the one displayed in Upgrade Journey");
+		}
+	}
+
+	@And("^Verify that the tariff ribbons are displayed in tariff upsell config of 'Your package' section in upgrade journey$")
+	public void Verify_that_the_tariff_ribbons_are_displayed_in_Your_package_section_in_upgrade_journey()
+			throws Throwable {
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, UpgradeCustomerPage.class);
+			UpgradeCustomerPageActions.verifyPromotionalRibbonDisplayedMyPackageSection();
+		} catch (Exception e) {
+			e.printStackTrace();
+			Assert.fail(
+					"Unable to Verify that the tariff ribbons are displayed in tariff upsell config of 'Your package' section");
 		}
 	}
 }
