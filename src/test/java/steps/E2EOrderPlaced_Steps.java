@@ -4288,4 +4288,16 @@ public class E2EOrderPlaced_Steps {
 					"Unable to Verify that the tariff ribbons are displayed in tariff upsell config of 'Your package' section");
 		}
 	}
+	
+	@And("^LogOut from the Upgrade Journey$")
+	public void Logout_from_upgrade_journey() throws Throwable {
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, UpgradeCustomerPage.class);
+			ShopLandingPageAction.clickSignOut();
+		} catch (Exception e) {
+			e.printStackTrace();
+			Assert.fail("LogOut from the Upgrade Journey");
+		}
+	}
 }
