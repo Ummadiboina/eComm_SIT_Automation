@@ -14,11 +14,12 @@ Feature: Reg_AFA_PAYM_Acquistion
     And perform the credit checks using valid <Firstname>, <Surname>, <HouseNumber>, <PostCode> and valid <Username>
     And Register customer with valid <Firstname>, <Surname>, <HouseNumber>, <PostCode> and other valid details in delivery page
     And Choose <DeliveryType> delivery address and delivery time
-    When Pay by card for PAYM device
-    Then Order confirmation message should be displayed
-
+    #When Pay by card for PAYM device
+    And Update Device Plan Link Email Address
+    #Then Order confirmation message should be displayed
+	Then CCALink Should be generated
     # And Update Device Plan Link Email Address
     # Then CCALink Should be generated
     Examples: 
       | Device              | Tariffs | Extras | DeliveryType | Firstname | Surname | Username     | HouseNumber | PostCode |
-      | S7 edge black 32 GB | Random  | Base   | HomeDelivery | TEST      | ACCEPTA | TEST ACCEPTA | Flat 6      | SL11EL   |
+      | S7 edge black 32 GB | Random  | Base   | HomeDelivery | TEST      | ACCEPTA | TEST ACCEPTA |           14 | SL11UP   |

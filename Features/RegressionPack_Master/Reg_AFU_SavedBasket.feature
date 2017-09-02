@@ -14,4 +14,4 @@ Feature: Reg_AFU_SavedBasket
 
     Examples: 
       | user        | Device | Tariffs |
-      | 07521113738 | Random | Refresh |
+      | 07521125035 | Random | Refresh |

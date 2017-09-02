@@ -15,4 +15,4 @@ Feature: Reg_AFA_PayG_withoutAnyAccessory
 
     Examples: 
       | Device                        | Tariffs | DeliveryType | Firstname | Surname | Username     | HouseNumber | PostCode |
-      | iPhone 7 Plus 128GB Jet Black | Random  | HomeDelivery | TEST      | ACCEPTA | TEST ACCEPTA | Flat 2      | SL11EL   |
+      | iPhone 7 Plus 128GB Jet Black | Random  | HomeDelivery | TEST      | ACCEPTA | TEST ACCEPTA |           2 | SL11UP   |

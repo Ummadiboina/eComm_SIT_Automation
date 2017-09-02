@@ -20,4 +20,4 @@ Feature: Reg_AFA_Tablet
 
     Examples: 
       | Device | Tariffs | Extras | DeliveryType | Firstname | Surname | Username     | HouseNumber | PostCode |
-      | tablet | Random  | Random | HomeDelivery | TEST      | ACCEPTA | TEST ACCEPTA | Flat 8      | SL11EL   |
+      | tablet | Random  | Random | HomeDelivery | TEST      | ACCEPTA | TEST ACCEPTA |           18 | SL11UP   |
