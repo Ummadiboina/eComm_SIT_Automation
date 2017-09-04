@@ -237,6 +237,26 @@ public class Agent_DealBuilderPageActions extends Environment {
 		System.out.println("Clicked on eMail Basket");
 		log.debug("Clicked on eMail Basket");
 		Thread.sleep(3000);
+		
+	}
+
+	public static void ValdiateBasket() throws InterruptedException {
+		Thread.sleep(3000);
+		String str1 = Agent_DealBuilderPage.dealBuilderContent.getText();
+		System.out.println(str1);
+		log.debug(str1);
+	}
+
+	public static void checkout() throws InterruptedException {
+		Thread.sleep(3000);
+		Agent_DealBuilderPage.Checkout.click();
+		System.out.println("Clicked on Checkout ");
+		log.debug("Clicked on Checkout ");
+	}
+
+	public static void eMailConfirmation() throws InterruptedException {
+		// TODO Auto-generated method stub
+		
 		String Mainwindow = driver.getWindowHandle();
 		// getting all the popup windows , hence using getwindowhandles instead
 		// of getwindowhandle
@@ -256,33 +276,19 @@ public class Agent_DealBuilderPageActions extends Environment {
 				Thread.sleep(3000);
 				// eMailConfirmation();
 				// Closing the Child Window.
-				// driver.close();
+				String text = Agent_DealBuilderPage.emailConfirmation.getText();
+				Assert.assertEquals(text, "Email sent successfully");
+				
+				 driver.close();
 			}
 		}
 
 		// Switching to Parent window i.e Main Window.
-		// driver.switchTo().window(Mainwindow);
-	}
-
-	public static void ValdiateBasket() throws InterruptedException {
-		Thread.sleep(3000);
-		String str1 = Agent_DealBuilderPage.dealBuilderContent.getText();
-		System.out.println(str1);
-		log.debug(str1);
-	}
-
-	public static void checkout() throws InterruptedException {
-		Thread.sleep(3000);
-		Agent_DealBuilderPage.Checkout.click();
-		System.out.println("Clicked on Checkout ");
-		log.debug("Clicked on Checkout ");
-	}
-
-	public static void eMailConfirmation() {
-		// TODO Auto-generated method stub
-		String text = Agent_DealBuilderPage.emailConfirmation.getText();
-		Assert.assertEquals(text, "Email sent successfully");
-		driver.close();
+		 driver.switchTo().window(Mainwindow);
+		
+		/*String text = Agent_DealBuilderPage.emailConfirmation.getText();
+		Assert.assertEquals(text, "Email sent successfully");*/
+		//driver.close();
 
 	}
 

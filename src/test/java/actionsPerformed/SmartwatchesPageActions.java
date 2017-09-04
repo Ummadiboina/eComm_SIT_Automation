@@ -73,15 +73,6 @@ public class SmartwatchesPageActions extends Environment {
 
 			}
 
-			/*
-			 * if (elementName.contains("Samsung Galaxy Gear")) {
-			 * System.out.println("Going to select SamsungGalaxyGear");
-			 * 
-			 * pageobjects.SmartwatchesPage.SamsungGearS2.click(); Thread.sleep(15000);
-			 * 
-			 * System.out.println("Clicked SamsungGalaxyGear"); }
-			 */
-
 			if (elementName.contains("Samsung Galaxy Gear")) {
 				System.out.println("Going to select SamsungGalaxyGear");
 
@@ -89,14 +80,12 @@ public class SmartwatchesPageActions extends Environment {
 				Thread.sleep(15000);
 
 				System.out.println("Clicked SamsungGalaxyGear");
-			}
-			else if (elementName.contains("Samsung Gear S2")) {
+			} else if (elementName.contains("Samsung Gear S2")) {
 				pageobjects.SmartwatchesPage.SamsungGearS2.click();
 				Thread.sleep(15000);
 				System.out.println("Selected SamsungGearS2");
 				log.debug("Selected SamsungGearS2");
-			}
-			else if (elementName.contains("Pebble Original Jet Black")) {
+			} else if (elementName.contains("Pebble Original Jet Black")) {
 				pageobjects.SmartwatchesPage.PebbleOriginal.click();
 				Thread.sleep(15000);
 				System.out.println("Selected PebbleOriginal");
@@ -128,7 +117,7 @@ public class SmartwatchesPageActions extends Environment {
 						.findElement(By.xpath("//select[@class='accessory-option ng-pristine ng-valid']"));
 				JavascriptExecutor js = (JavascriptExecutor) driver;
 				js.executeScript("arguments[0].setAttribute('style', 'display:block;')", element);
-				new Select(element).selectByValue("4");
+				new Select(element).selectByValue("1");
 
 				WebElement DeviceDetailsQuantity = driver.findElement(
 						By.xpath("//div[@on-dimension-select='selectQuantityDimension']/span[@role='combobox']"));
@@ -141,12 +130,12 @@ public class SmartwatchesPageActions extends Environment {
 
 				/*
 				 * WebElement BasketQuantity =
-				 * driver.findElement(By.id("accessory-quantitySelectBoxIt")); String
-				 * BasketQuantityvalue = BasketQuantity.getText();
+				 * driver.findElement(By.id("accessory-quantitySelectBoxIt"));
+				 * String BasketQuantityvalue = BasketQuantity.getText();
 				 * System.out.println("Basket value is "+BasketQuantityvalue);
-				 * Assert.assertEquals("4", BasketQuantityvalue); System.out.println(
-				 * "Values are correct , Basket quantity = " + BasketQuantityvalue +
-				 * "Device added value = 4");
+				 * Assert.assertEquals("4", BasketQuantityvalue);
+				 * System.out.println( "Values are correct , Basket quantity = "
+				 * + BasketQuantityvalue + "Device added value = 4");
 				 */
 			} else {
 				driver.navigate().back();

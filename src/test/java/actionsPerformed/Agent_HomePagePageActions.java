@@ -70,6 +70,21 @@ public class Agent_HomePagePageActions extends Environment {
 		Agent_HomePage.UpgradeLink.click();
 		log.debug("Clicking on upgrade link");
 		System.out.println("Clicking on upgrade link");
+
+		try {
+			if (driver.findElement(By.xpath("//*[@id='cca']/div[2]/a[1]")).isDisplayed()) {
+				System.out.println("new overlay is displayed");
+			}
+				else 
+				{
+					System.out.println("new overlay is not displayed");
+				}
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			System.out.println("new overlay is not displayed");
+		}
+
+		
 		Thread.sleep(3000);
 
 		List<WebElement> PayAsYouGo = driver.findElements(By.id("emptyDealButton"));

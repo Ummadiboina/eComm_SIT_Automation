@@ -14,6 +14,7 @@ Feature: Reg_CS_PayMPhonesHomeDeliveryWithoutAccessory
     And Continue to Agreements page and confirm all the agreement checks
     And Continue to Review page and review the order
     Then order confirmation is displayed
+    
 
     #Close the browser
     Examples: 

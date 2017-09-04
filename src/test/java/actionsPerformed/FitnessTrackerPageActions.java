@@ -120,7 +120,7 @@ public class FitnessTrackerPageActions extends Environment {
 						.findElement(By.xpath("//select[@class='accessory-option ng-pristine ng-valid']"));
 				JavascriptExecutor js = (JavascriptExecutor) driver;
 				js.executeScript("arguments[0].setAttribute('style', 'display:block;')", element);
-				new Select(element).selectByValue("3");
+				new Select(element).selectByValue("1");
 
 				WebElement DeviceDetailsQuantity = driver.findElement(
 						By.xpath("//div[@on-dimension-select='selectQuantityDimension']/span[@role='combobox']"));
