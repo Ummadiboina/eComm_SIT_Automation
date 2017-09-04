@@ -73,15 +73,6 @@ public class SmartwatchesPageActions extends Environment {
 
 			}
 
-			/*
-			 * if (elementName.contains("Samsung Galaxy Gear")) {
-			 * System.out.println("Going to select SamsungGalaxyGear");
-			 * 
-			 * pageobjects.SmartwatchesPage.SamsungGearS2.click(); Thread.sleep(15000);
-			 * 
-			 * System.out.println("Clicked SamsungGalaxyGear"); }
-			 */
-
 			if (elementName.contains("Samsung Galaxy Gear")) {
 				System.out.println("Going to select SamsungGalaxyGear");
 
@@ -128,7 +119,7 @@ public class SmartwatchesPageActions extends Environment {
 						.findElement(By.xpath("//select[@class='accessory-option ng-pristine ng-valid']"));
 				JavascriptExecutor js = (JavascriptExecutor) driver;
 				js.executeScript("arguments[0].setAttribute('style', 'display:block;')", element);
-				new Select(element).selectByValue("4");
+				new Select(element).selectByValue("1");
 
 				WebElement DeviceDetailsQuantity = driver.findElement(
 						By.xpath("//div[@on-dimension-select='selectQuantityDimension']/span[@role='combobox']"));

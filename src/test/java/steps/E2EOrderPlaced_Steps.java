@@ -349,7 +349,7 @@ public class E2EOrderPlaced_Steps {
 		}
 	}
 
-	@Given("^select any available \"([^\"]*)\" Fitness tracker$")
+	@Given("^select any available ([^\"]*) Fitness tracker$")
 	public void select_any_available_Fitness_tracker(String arg1) throws Throwable {
 		try {
 			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
@@ -1458,6 +1458,7 @@ public class E2EOrderPlaced_Steps {
 			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 			PageFactory.initElements(driver, Agent_DealBuilderPage.class);
 			Agent_DealBuilderPageActions.eMailConfirmation();
+			System.out.println("Verify email is sent successfully method executed successfully");
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			System.out.println("Email is not sent");

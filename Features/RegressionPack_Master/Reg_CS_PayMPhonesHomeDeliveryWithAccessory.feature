@@ -5,6 +5,7 @@ Scenario Outline: CFA PayM Phones Home delivery E2E journey with Accessory
 	Given I am an CFA user and Lands on shop page 
 	And navigate to PAYM Phones page 
 	And I choose PayM <handset> 
+	#edit the above
 	And Navigate to device details page 
 	And Land on the 'Tariffs and extra' page 
 	And Choose some Accesssory 

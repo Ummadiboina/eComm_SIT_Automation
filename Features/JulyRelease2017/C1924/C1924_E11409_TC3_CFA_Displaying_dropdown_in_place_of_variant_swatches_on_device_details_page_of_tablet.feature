@@ -11,6 +11,8 @@ Feature: C1924_E11409_TC3_CFA_Displaying_dropdown_in_place_of_variant_swatches_o
     And select <color> color of the connected device
     And select <capacity> capacity of the connected device
     And Navigate to device details page
+    And Land on the 'Tariffs and extra' page
+    And I Land on the basket page by clicking on Add to Basket button
 
     Examples: 
       | tabletname               | color     | capacity |

@@ -4,7 +4,7 @@ Feature: Reg_Agent_Delayed Delivery
   Scenario Outline: CFA PayM Delayed Delivery Phones Home delivery E2E journey
     Given I am an CFA user and Lands on shop page
     And navigate to PAYM Phones page
-    And I choose DD PayM <handset>
+    And I search DD PayM <handset>
     And Navigate to device details page
     And Land on the 'Tariffs and extra' page
     And I Land on the basket page and choose home delivery option

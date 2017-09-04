@@ -4,7 +4,7 @@ Feature: Reg_Agent_PreOrder
   Scenario Outline: CFA PayM Pre Order Phones Home delivery E2E journey
     Given I am an CFA user and Lands on shop page
     And navigate to PAYM Phones page
-    And I choose PreOrder PayM <handset>
+    And I search  PreOrder PayM <handset>
     And Navigate to device details page
     And Land on the 'Tariffs and extra' page
     And I Land on the basket page and choose home delivery option
