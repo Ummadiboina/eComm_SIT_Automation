@@ -15,9 +15,8 @@ import com.github.mkolisnyk.cucumber.reporting.CucumberResultsOverview;
 
 import cucumber.api.CucumberOptions;
 
-@CucumberOptions(strict = true, features = {
-		"Features//RegressionPack_Master/Reg_CS_SmartWatch.feature" }, glue = {
-				"steps" },
+@CucumberOptions(strict = true, features = { "Features//RegressionPack_Master/Reg_CS_SmartWatch.feature" }, glue = {
+		"steps" },
 
 		tags = {}, format = { "json:testResult/cucumber.json", "pretty", "html:testResult/report" }, plugin = {
 				"com.cucumber.listener.ExtentCucumberFormatter" })
