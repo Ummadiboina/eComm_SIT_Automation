@@ -1,6 +1,9 @@
 package pageobjects;
 
+import java.util.List;
+
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindAll;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 
@@ -17,10 +20,9 @@ public class UpgradeCustomerPage {
 
 	@FindBy(how = How.CLASS_NAME, using = "simo-link")
 	public static WebElement SimOLink;
-	
+
 	@FindBy(how = How.XPATH, using = "//a[@id='cancel']")
 	public static WebElement Continue;
-	
 
 	//////////////////////// When customer not////////////////////////////
 	//////////////////////// eligible/////////////////////////////////////
@@ -42,5 +44,7 @@ public class UpgradeCustomerPage {
 
 	@FindBy(how = How.XPATH, using = "//*[@id='o2-page-wrapper']")
 	public static WebElement MyO2_Page;
-
+	
+	@FindAll({ @FindBy(how = How.XPATH, using = "//div[@id='qa-recommendedDevicesTile']/a//div/p[@class='details']") })
+	public static List<WebElement> DeviceNameRecommendedSection;
 }
