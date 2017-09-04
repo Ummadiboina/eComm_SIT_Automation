@@ -16,4 +16,4 @@ Feature: Reg_AFA_PayMSimO_withoutAnyAccessory
 
     Examples: 
       | Tariff | DeliveryType | Firstname | Surname | Username     | HouseNumber | PostCode |
-      | SimO   | HomeDelivery | TEST      | ACCEPTA | TEST ACCEPTA | Flat 5      | SL11EL   |
+      | SimO   | HomeDelivery | TEST      | ACCEPTA | TEST ACCEPTA |           6 | SL11UP   |
