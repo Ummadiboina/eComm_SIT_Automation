@@ -1,7 +1,7 @@
 Feature: Reg_CS_SmartWatch
 
- @ConsumerShop
-  Scenario Outline:  Smart Watches only E2E journey
+  @ConsumerShop
+  Scenario Outline: Smart Watches only E2E journey
     Given I am an CFA user and Lands on shop page
     And Navigate to SmartWatches
     And select any available "Random" Smartwatch
@@ -12,7 +12,7 @@ Feature: Reg_CS_SmartWatch
     And land on the Non Credit check payment page and input <Username> and other details and click 'Continue on next step'
     And Continue to Review page and review the order
     Then order confirmation is displayed
-    
-        Examples: 
+
+    Examples: 
       | Firstname | Surname | Username     |
       | TEST      | ACCEPTA | TEST ACCEPTA |
