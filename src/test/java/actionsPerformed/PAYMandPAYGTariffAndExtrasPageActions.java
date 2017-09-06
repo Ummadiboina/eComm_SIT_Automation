@@ -1,5 +1,7 @@
 package actionsPerformed;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
@@ -364,4 +366,62 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 		log.debug("Added a random accessory to basket");
 	}
 
+	public static void verifySortOrderInsurance() {
+		System.out.println("getCurrentSortOrderInsurance");
+		List<Double> AfterSort = new ArrayList<Double>();
+		List<Double> BeforeSort = new ArrayList<Double>();
+		String sTemp = null;
+		double iTemp = 0;
+
+		List<WebElement> InsurancePriceElement = driver
+				.findElements((By) pageobjects.PAYMandPAYGTariffAndExtrasPage.InsurancePriceElement);
+
+		for (WebElement temp : InsurancePriceElement) {
+			sTemp = temp.getText().replace("£", "");
+			iTemp = Double.parseDouble(sTemp);
+			BeforeSort.add(iTemp);
+		}
+
+		System.out.println("before sort");
+		System.out.println(BeforeSort);
+
+		Collections.sort(BeforeSort);
+		for (int i = 0; i < BeforeSort.size(); i++) {
+			AfterSort.add(BeforeSort.get(i));
+			System.out.println("Added " + BeforeSort.get(i) + "in AfterSort");
+		}
+
+		System.out.println("After sort");
+		System.out.println(AfterSort);
+	}
+
+	public static void selectTariffFreeInsurance() {
+		System.out.println("selectTariffFreeInsurance");
+
+	}
+
+	public static void verifyFreeInsuranceAutoSelected() throws Exception {
+		System.out.println("verifyFreeInsuranceAutoSelected");
+
+		WebElement FirstInsurancePrice = driver.findElement(By.xpath("(//div[@id='insuranceContainer']/div[@id])[1]"))
+				.findElement(By.xpath("//div[@id='insuranceContainer']//div/p[@class=' price ']"));
+		if (FirstInsurancePrice.getText().equals("0.00")) {
+			System.out.println("Free insurance is present");
+		}
+		WebElement FirstInsuranceText = driver.findElement(By.xpath("//h4[contains(@class, 'insuranceName')][1]"));
+		if (FirstInsuranceText.getText().equals("Free Insurance")) {
+			System.out.println("Free insurance is present");
+		}
+		WebElement RemovebtnFirstTile = driver.findElement(By.xpath("(//div[@id='insuranceContainer']/div[@id])[1]"))
+				.findElement(By.xpath("//input[@value='Remove'][@type='button']"));
+		if (RemovebtnFirstTile.isSelected()) {
+			System.out.println("First tile is selected");
+		}
+		driver.findElement(By.xpath("(//div[@id='insuranceContainer']/div[@id])[1]"))
+				.findElement(By.xpath("//input[@value='Select'][@type='button']")).click();
+		Thread.sleep(3000);
+		if (FirstInsurancePrice.getText().equals("£6.00") && RemovebtnFirstTile.isSelected()) {
+			System.out.println("Success");
+		}
+	}
 }

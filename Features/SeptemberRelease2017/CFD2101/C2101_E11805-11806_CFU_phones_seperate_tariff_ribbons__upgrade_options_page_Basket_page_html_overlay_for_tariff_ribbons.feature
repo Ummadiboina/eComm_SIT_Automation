@@ -8,9 +8,9 @@ Scenario Outline:
 	Given I am existing user and I click on Signin button 
 	And Signin using valid <username> and <password> credentials 
 	And Navigate to upgrade phone 
-	And Select a <handset> device from Recommended devices section
-	And Select a tariff <tariff> with ribbons in upgrade journey
-	And Verify 'Overlay icon' is displayed on the promotional ribbons in the Upgrade Option page 
+	And Select a <handset> device from Recommended devices section 
+	And Select a tariff <tariff> with ribbons in upgrade journey 
+	And Verify 'Overlay icon' is displayed on the promotional ribbons for <tariff> in the Upgrade Option page 
 	And Verify that the tariff ribbons are displayed in tariff upsell config of 'Your package' section 
 	And Click on the 'Overlay icon' in tariff upsell config of 'Your package' section and verify pop up gets displayed in the Tariff and Extras Page 
 	And I Land on the basket page by clicking on Add to Basket button 
@@ -22,9 +22,9 @@ Scenario Outline:
 	And navigate to PAYM Phones page 
 	And I choose PayM <handset> 
 	And Navigate to device details page 
-	And Select a <Tariff> with ribbons
-	Then Verify Promotional ribbons displayed are not same as the one displayed in Upgrade Journey
-		
+	And Select a tariff <Tariff> with ribbons 
+	Then Verify Promotional ribbons displayed are not same as the one displayed in Upgrade Journey 
+	
 	
 	Examples: 
 		|username|password|Tariff|handset|

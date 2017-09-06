@@ -76,5 +76,7 @@ public class PAYMandPAYGTariffAndExtrasPage {
 
 	@FindAll({ @FindBy(how = How.XPATH, using = "//div[@class='col-xs-6 monthly']//span[@class='pound ng-binding']") })
 	public static List<WebElement> MonthlyCost;
-
+	
+	@FindAll({ @FindBy(how = How.XPATH, using = "//div[@id='insuranceContainer']//div/p[@class=' price ']") })
+	public static List<WebElement> InsurancePriceElement;
 }

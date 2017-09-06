@@ -19,6 +19,7 @@ Scenario Outline:
 	And Verify Promotional ribbons are displayed under Tariff section in the Basket page 
 	And Verify 'Overlay icon' is displayed on the promotional ribbons in the Basket page 
 	And Click on the 'Overlay icon' in the Basket page and verify pop gets displayed 
+	And Click on the 'I need a new Sim' radio button in the 'Your sim card' section in the Upgrade Basket page 
 	And click on "go to checkout" button 
 	And input <Firstname> and <Surname> and other valid details in Delivery page and Click on the 'Continue button' 
 	And land on the payment page and input <Username> and other details and click 'Continue on next step' 

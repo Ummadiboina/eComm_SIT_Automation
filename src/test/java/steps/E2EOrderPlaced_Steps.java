@@ -4303,4 +4303,26 @@ public class E2EOrderPlaced_Steps {
 			Assert.fail("LogOut from the Upgrade Journey");
 		}
 	}
+
+	@And("^verify that the insurance is in a sorted order$")
+	public void verify_Price_Sorted_For_Insurance() throws InterruptedException {
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, PAYMandPAYGTariffAndExtrasPage.class);
+			PAYMandPAYGTariffAndExtrasPageActions.verifySortOrderInsurance();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	@And("^select a ([^\"]*) which has free insurance$")
+	public void select_Tariff_Free_Insurance() throws InterruptedException {
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, PAYMandPAYGTariffAndExtrasPage.class);
+			PAYMandPAYGTariffAndExtrasPageActions.selectTariffFreeInsurance();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
 }

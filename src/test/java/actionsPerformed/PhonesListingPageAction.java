@@ -85,7 +85,7 @@ public class PhonesListingPageAction extends Environment {
 			log.debug("Selected Iphone7");
 
 		}
-		
+
 		if (elementName.contains("Apple iPhone 7")) {
 			pageobjects.PhonesListingPage.AppleIphone7.click();
 			// Assert.assertEquals(elementName,"Galaxy S7 is not found");
@@ -1043,6 +1043,7 @@ public class PhonesListingPageAction extends Environment {
 					"Assertion Failed: Devices displayed are not as per the Brand filter applied" + e.getMessage());
 		}
 	}
+
 	public static LinkedList<String> getCurrentSortOrderUsingDeviceOffer(String FilterOption)
 			throws InterruptedException {
 
@@ -1086,5 +1087,67 @@ public class PhonesListingPageAction extends Environment {
 			deviceCurrentOrder.add(devicenamecurrentorder.get(i) + deviceoffercurrentorder.get(i));
 		}
 		return deviceCurrentOrder;
+	}
+
+	public static LinkedList<String> getCurrentSortOrderForInsurance() throws InterruptedException {
+
+		log.debug("Opening function getCurrentSortOrderForInsurance");
+		System.out.println("Opening function getCurrentSortOrderForInsurance");
+
+		Thread.sleep(10000);
+
+		LinkedList<String> deviceCurrentOrder = new LinkedList<>();
+		LinkedList<String> devicepricecurrentorder = new LinkedList<>();
+
+		List<WebElement> InsurancePrice = driver.findElements(By.xpath(
+						"//div[@id='insuranceContainer']//div/p[@class=' price ']"));
+
+		for (WebElement temp2 : InsurancePrice) {
+
+			String sTemp = StringUtils.substringBetween(temp2.getText(), "£", ".");
+			devicepricecurrentorder.add(sTemp);
+
+		}
+		System.out.println("Device Price List: " + devicepricecurrentorder);
+
+		for (int i = 0; i < devicepricecurrentorder.size(); i++) {
+			deviceCurrentOrder.add(devicepricecurrentorder.get(i));
+		}
+
+		return deviceCurrentOrder;
+
+	}
+	
+	public static LinkedList<String> reArrangeListInAcendingBeforeApplyingSortInsurance(LinkedList<String> OriginalList)
+			throws InterruptedException {
+
+		LinkedList<String> ListBeforeApplyingSort = OriginalList;
+		// listSortEx(ListBeforeApplyingSort, false);
+
+		Collections.sort(ListBeforeApplyingSort);
+		System.out.println("-List arranged in ascending Order-");
+		System.out.println(ListBeforeApplyingSort);
+		return ListBeforeApplyingSort;
+
+	}
+	public static void verifyDeviceSortedInsurance(LinkedList<String> ListBeforeApplyingSort,
+			LinkedList<String> ListAfterApplyingSort) {
+
+		try {
+
+			LinkedList<String> TempListBeforeApplyingSort = ListBeforeApplyingSort;
+			LinkedList<String> TempListAfterApplyingSort = ListAfterApplyingSort;
+
+			for (int i = 0; i < TempListBeforeApplyingSort.size(); i++) {
+				Assert.assertTrue("Assert Failed",
+						TempListBeforeApplyingSort.get(i).contains(TempListAfterApplyingSort.get(i)));
+			}
+
+			System.out.println("Assertion Success");
+		} catch (AssertionError e) {
+			log.debug("Assertion Failed");
+			log.debug("Fail" + " - " + e.getMessage());
+		}
+
 	}
 }
