@@ -22,5 +22,5 @@ Feature: CFU_Recycle_Phones_DD_Confirmation_Page_changes
     Then Verify contents of order confirmation page for Phones containing <Status>
 
     Examples: 
-      | username   | password | handset  | Firstname | Surname | Username     | Action    | Status           |
-      | ins_nov746 | test123  | GalaxyS8 | TEST      | ACCEPTA | TEST ACCEPTA | skip | Delayed Delivery |
+      | username   | password | handset  | Firstname | Surname | Username     | Action | Status           |
+      | ins_nov746 | test123  | GalaxyS8 | TEST      | ACCEPTA | TEST ACCEPTA | skip   | Delayed Delivery |
