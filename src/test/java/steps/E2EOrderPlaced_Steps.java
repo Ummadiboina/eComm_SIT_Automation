@@ -1365,8 +1365,7 @@ public class E2EOrderPlaced_Steps {
 		Agent_HomePagePageActions.upgradeUser();
 		Thread.sleep(4000);
 		/*
-		 * } catch (Exception e) { // TODO Auto-generated catch block
-		 * System.out.
+		 * } catch (Exception e) { // TODO Auto-generated catch block System.out.
 		 * println("Unable to login for upgrade for user in Agent shop, please see the failure screenshot"
 		 * ); Assert.
 		 * fail("Unable to login for upgrade for user in Agent shop, please see the failure screenshot"
@@ -2640,14 +2639,13 @@ public class E2EOrderPlaced_Steps {
 	}
 
 	/*
-	 * @And("^Verify the devices ([^\"]*), ([^\"]*) and ([^\"]*) in basket$")
-	 * public void verifyDevicesInBasket(String smartwatchname, String
-	 * fitnesstrackername, String tabletname) throws Throwable { try {
+	 * @And("^Verify the devices ([^\"]*), ([^\"]*) and ([^\"]*) in basket$") public
+	 * void verifyDevicesInBasket(String smartwatchname, String fitnesstrackername,
+	 * String tabletname) throws Throwable { try {
 	 * driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 	 * PageFactory.initElements(driver, BasketPage.class);
-	 * BasketPageActions.verifyDevicesInBasket(smartwatchname,
-	 * fitnesstrackername, tabletname); } catch (Exception e) { // TODO
-	 * Auto-generated catch block
+	 * BasketPageActions.verifyDevicesInBasket(smartwatchname, fitnesstrackername,
+	 * tabletname); } catch (Exception e) { // TODO Auto-generated catch block
 	 * System.out.println("not able to verify if phone tab is selected");
 	 * Assert.fail("not able to verify if phone tab is selected"); } }
 	 */
@@ -2672,8 +2670,8 @@ public class E2EOrderPlaced_Steps {
 	 * 
 	 * try { driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 	 * PageFactory.initElements(driver, PAYMSimOPage.class);
-	 * PAYMSimOPageActions.SelectRecommendedTariffPhonesTab(contractlength); }
-	 * catch (Exception e) { e.printStackTrace();
+	 * PAYMSimOPageActions.SelectRecommendedTariffPhonesTab(contractlength); } catch
+	 * (Exception e) { e.printStackTrace();
 	 * System.out.println("Unable to choose contract length");
 	 * Assert.fail("Unable to choose contract length"); } }
 	 */
@@ -2943,8 +2941,7 @@ public class E2EOrderPlaced_Steps {
 		driver.navigate().to(Newurl_CVOS);
 		Thread.sleep(3000);
 		/*
-		 * } catch (Exception e) { // TODO Auto-generated catch block
-		 * System.out.
+		 * } catch (Exception e) { // TODO Auto-generated catch block System.out.
 		 * println("Unable to Login/validate home page, please see the failure screenshot"
 		 * ); Assert.
 		 * fail("Unable to Login/validate home page, please see the failure screenshot"
@@ -3656,8 +3653,8 @@ public class E2EOrderPlaced_Steps {
 
 	// Then Verify the price gets updated based on the new colour and capacity
 	/*
-	 * @And("^Verify the price gets updated based on the new colour and capacity$"
-	 * ) public void verifyPriceDisplaybased_on_Colour_and_capacity() {
+	 * @And("^Verify the price gets updated based on the new colour and capacity$" )
+	 * public void verifyPriceDisplaybased_on_Colour_and_capacity() {
 	 * driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS); try {
 	 * PageFactory.initElements(driver, BaseCommPage.class);
 	 * BaseCommPageActions.VerifyPriceChangeuponCapacity();
@@ -3687,11 +3684,8 @@ public class E2EOrderPlaced_Steps {
 			log.debug("Running Test Step: @And(Verify the current sort order details)");
 
 			/*
-			 * if
-			 * (driver.findElement(By.xpath("//*[@class='page-all']")).isEnabled
-			 * ()) {
-			 * driver.findElement(By.xpath("//*[@class='page-all']")).click(); }
-			 * else {
+			 * if (driver.findElement(By.xpath("//*[@class='page-all']")).isEnabled ()) {
+			 * driver.findElement(By.xpath("//*[@class='page-all']")).click(); } else {
 			 * 
 			 * PhonesListingPageAction.clickOnViewAllProductsOnOnePage(); }
 			 */
@@ -4289,7 +4283,7 @@ public class E2EOrderPlaced_Steps {
 					"Unable to Verify that the tariff ribbons are displayed in tariff upsell config of 'Your package' section");
 		}
 	}
-	
+
 	@And("^LogOut from the Upgrade Journey$")
 	public void Logout_from_upgrade_journey() throws Throwable {
 		try {
@@ -4301,4 +4295,39 @@ public class E2EOrderPlaced_Steps {
 			Assert.fail("LogOut from the Upgrade Journey");
 		}
 	}
+
+	/* Order confirmation page validations - September release */
+
+	@Then("^Verify contents of order confirmation page for Accessories containing In Stock$")
+	public void verify_contents_of_order_confirmation_page_for_Accessories_containing_In_Stock() throws Throwable {
+		String ExpectedTimeSlotMessage = "";
+
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, OrderConfirmationPage.class);
+			OrderConfirmationPageActions.TimeslotMessage();
+			ExpectedTimeSlotMessage = "Your order will be delivered for free, via Royal Mail, within three working days.";
+			// Assert.assertTrue("Your error message",
+			// OrderConfirmationPageActions.TimeslotMessage().contains(ExpectedMessage));
+
+			ExpectedTimeSlotMessage = "Your order will be delivered for free, via Royal Mail, within three working days.";
+
+			Assert.assertTrue(
+					"Assertion Failed: Expected Message: " + ExpectedTimeSlotMessage + " is not present in the page",
+					driver.getPageSource().contains(ExpectedTimeSlotMessage));
+
+			System.out.println("Assertion Passed: Expected Mesasge: " + ExpectedTimeSlotMessage
+					+ " is present in the Order Confirmation page");
+		} catch (AssertionError e) {
+
+			System.out.println(
+					"Assertion Failed: Expected Message: " + ExpectedTimeSlotMessage + " is not present in the page");
+
+		}
+	}
+	
+	@Then("^Verify contents of order confirmation page for Phones containing Delayed Delivery$")
+	public void verify_contents_of_order_confirmation_page_for_Phones_containing_Delayed_Delivery() throws Throwable {
+	}
+
 }
