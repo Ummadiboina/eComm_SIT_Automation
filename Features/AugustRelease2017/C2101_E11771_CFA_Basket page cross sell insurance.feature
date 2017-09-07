@@ -6,15 +6,15 @@ Scenario Outline:
 	Given I am an CFA user and Lands on shop page 
 	And navigate to PAYM Phones page 
 	And I choose PayM <handset> 
-	And Navigate to device details page
-	And select a <tariff> which has free insurance
+	And Navigate to device details page 
+	And select a <tariff> which has free insurance 
 	And deselect if any insurance is autoselected 
-	And verify that the insurance is in a sorted order 
+	And verify that the insurance is in a sorted order
 	And I Land on the basket page by clicking on Add to Basket button 
 	And verify that the cheapest insurance is shown to crossell in the basket page 
 	And verify if the 'Add Now' button is displayed for the cheapest insurance shown in basket page 
-	And click on the "Add now" button and verify Insurance gets added successfully
+	And click on the "Add now" button and verify Insurance gets added successfully 
 	
 	Examples: 
-		|username|password|handset|
-		|  |  |
+		|tariff|handset|
+		|  |  

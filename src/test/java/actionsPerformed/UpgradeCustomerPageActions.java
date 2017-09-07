@@ -333,8 +333,10 @@ public class UpgradeCustomerPageActions extends Environment {
 		Thread.sleep(5000);
 	}
 
-	public static void selectTariffWithRibbonAndOverlay(String Tariff) {
+	public static void selectTariff(String Tariff) {
 		log.debug('\n' + "To select Tariff With Ribbon And Overlay");
+		
+	//	executor.executeScript("arguments[0].click();", pageobjects.PAYMandPAYGTariffAndExtrasPage.ViewAllTariffs);
 		List<WebElement> TariffList = driver.findElements(By.xpath("//div[@id='tariff-tile']/div[@id]"));
 		boolean flag = false;
 		String TariffXpath = null;

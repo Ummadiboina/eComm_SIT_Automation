@@ -7,6 +7,14 @@ import org.openqa.selenium.support.How;
 import helpers.Environment;
 
 public class MouseHoverPage extends Environment {
+	
+	//Below will click on the Sims -- > PayGFreesim
+	//@FindBy(how = How.XPATH, using = ("//a[contains(text(), 'Pay Monthly Sims')]"))
+	
+	@FindBy(how = How.XPATH, using = ("//a[@manual_cm_re='meganav_Shop-_-Sims-_-Pay as you go sims']"))
+	public static WebElement MoveMouseOnPayGSims;
+	
+		
 
 	// Below will click on the Header Just to move mouse
 	@FindBy(how = How.ID, using = ("shop-simplicity-header-xxl"))
@@ -119,3 +127,9 @@ public class MouseHoverPage extends Environment {
 	public static WebElement MoveMouseOnPayMMBB;
 	//a[@href='https://www.o2.co.uk/shop/mobile-broadband/?contractType=paymonthly']
 }
+
+
+	
+	
+
+	

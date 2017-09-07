@@ -20,5 +20,9 @@ public class SimsPage {
 		public static WebElement TabletPromo1;
 		
 		////h3[contains(text(),'1GB data – preloaded sim')] -- use it for 1GB sim
+		//Below will click on the Sims -- > iPadsandTablets
 		
+		@FindBy(how = How.XPATH, using = ("//a[@href='#tablets']"))
+		public static WebElement iPadsandTablets;	
 }
+

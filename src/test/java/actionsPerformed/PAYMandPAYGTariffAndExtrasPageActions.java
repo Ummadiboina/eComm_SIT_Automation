@@ -13,6 +13,7 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 
 import GlobalActions.scrollToAnElement;
+import cucumber.api.java.After;
 import helpers.Environment;
 import helpers.setRuntimeProperty;
 
@@ -393,11 +394,14 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 
 		System.out.println("After sort");
 		System.out.println(AfterSort);
-	}
+		for (int i = 0; i < BeforeSort.size(); i++) {
+			if (BeforeSort.get(i).equals(AfterSort.get(i))) {
+				System.out.println("Insurance is sorted correctly in ascending order");
+			} else {
+				Assert.fail("Insurance displayed is not in correct order");
+			}
 
-	public static void selectTariffFreeInsurance() {
-		System.out.println("selectTariffFreeInsurance");
-
+		}
 	}
 
 	public static void verifyFreeInsuranceAutoSelected() throws Exception {
@@ -412,16 +416,30 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 		if (FirstInsuranceText.getText().equals("Free Insurance")) {
 			System.out.println("Free insurance is present");
 		}
-		WebElement RemovebtnFirstTile = driver.findElement(By.xpath("(//div[@id='insuranceContainer']/div[@id])[1]"))
-				.findElement(By.xpath("//input[@value='Remove'][@type='button']"));
-		if (RemovebtnFirstTile.isSelected()) {
-			System.out.println("First tile is selected");
+		List<WebElement> RemovebtnFirstTile = driver
+				.findElement(By.xpath("(//div[@id='insuranceContainer']/div[@id])[1]"))
+				.findElements(By.xpath("//input[@value='Remove'][@type='button']"));
+		if (RemovebtnFirstTile.size() > 0) {
+
+			System.out.println("Remove button is present");
+		} else {
+			System.out.println("Remove button is not present");
 		}
 		driver.findElement(By.xpath("(//div[@id='insuranceContainer']/div[@id])[1]"))
 				.findElement(By.xpath("//input[@value='Select'][@type='button']")).click();
 		Thread.sleep(3000);
-		if (FirstInsurancePrice.getText().equals("£6.00") && RemovebtnFirstTile.isSelected()) {
+		if (FirstInsurancePrice.getText().equals("£6.00") && RemovebtnFirstTile.get(0).isSelected()) {
 			System.out.println("Success");
+		}
+	}
+
+	public static void deselectAutoSelectedInsurance() {
+		System.out.println("deselectAutoSelectedInsurance");
+		WebElement RemovebtnFirstTile = driver.findElement(By.xpath("(//div[@id='insuranceContainer']/div[@id])[1]"))
+				.findElement(By.xpath("//input[@value='Remove'][@type='button']"));
+		if (RemovebtnFirstTile.isSelected()) {
+			System.out.println("First tile is selected");
+			RemovebtnFirstTile.click();
 		}
 	}
 }

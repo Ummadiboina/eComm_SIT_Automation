@@ -6,7 +6,7 @@
         "before": [
           {
             "result": {
-              "duration": 99379766309,
+              "duration": 82142710125,
               "status": "passed"
             },
             "match": {
@@ -14,14 +14,14 @@
             }
           }
         ],
-        "line": 14,
+        "line": 15,
         "name": "August",
         "description": "",
         "id": "august-release;august;;2",
         "after": [
           {
             "result": {
-              "duration": 13170150827,
+              "duration": 3101063704,
               "status": "passed"
             },
             "match": {
@@ -34,7 +34,7 @@
         "steps": [
           {
             "result": {
-              "duration": 244159220,
+              "duration": 337951433,
               "status": "passed"
             },
             "line": 4,
@@ -46,7 +46,7 @@
           },
           {
             "result": {
-              "duration": 85018861922,
+              "duration": 52745520479,
               "status": "passed"
             },
             "line": 5,
@@ -58,15 +58,15 @@
           },
           {
             "result": {
-              "duration": 1718719267,
+              "duration": 2919397118,
               "status": "passed"
             },
             "line": 6,
-            "name": "I choose PayM iPhone7",
+            "name": "I choose PayM Apple iPhone 7",
             "match": {
               "arguments": [
                 {
-                  "val": "iPhone7",
+                  "val": "Apple iPhone 7",
                   "offset": 14
                 }
               ],
@@ -79,9 +79,8 @@
           },
           {
             "result": {
-              "duration": 22526361498,
-              "error_message": "junit.framework.AssertionFailedError: Unable to navigate to device details page\r\n\tat junit.framework.Assert.fail(Assert.java:47)\r\n\tat steps.E2EOrderPlaced_Steps.Navigate_to_device_details_page(E2EOrderPlaced_Steps.java:421)\r\n\tat ✽.And Navigate to device details page(Features/AugustRelease2017/test.feature:7)\r\n",
-              "status": "failed"
+              "duration": 37863741036,
+              "status": "passed"
             },
             "line": 7,
             "name": "Navigate to device details page",
@@ -92,13 +91,24 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 3746560225,
+              "error_message": "junit.framework.AssertionFailedError: Unable to select a tariff\r\n\tat junit.framework.Assert.fail(Assert.java:47)\r\n\tat steps.E2EOrderPlaced_Steps.select_Tariff_Free_Insurance(E2EOrderPlaced_Steps.java:4327)\r\n\tat ✽.And select a 19.99upfront49.00amonth which has free insurance(Features/AugustRelease2017/test.feature:8)\r\n",
+              "status": "failed"
             },
             "line": 8,
-            "name": "Land on the \u0027Tariffs and extra\u0027 page",
+            "name": "select a 19.99upfront49.00amonth which has free insurance",
             "match": {
-              "location": "E2EOrderPlaced_Steps.land_on_the_Tariffs_and_extra_page()"
+              "arguments": [
+                {
+                  "val": "19.99upfront49.00amonth",
+                  "offset": 9
+                }
+              ],
+              "location": "E2EOrderPlaced_Steps.select_Tariff_Free_Insurance(String)"
             },
+            "matchedColumns": [
+              1
+            ],
             "keyword": "And "
           },
           {
@@ -109,6 +119,17 @@
             "name": "verify that the insurance is in a sorted order",
             "match": {
               "location": "E2EOrderPlaced_Steps.verify_Price_Sorted_For_Insurance()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 10,
+            "name": "deselect if any insurance is autoselected",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.deselect_if_any_insurance_is_autoselected()"
             },
             "keyword": "And "
           }

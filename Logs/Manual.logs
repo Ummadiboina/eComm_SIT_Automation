@@ -1,10 +1,29 @@
-08/06/2017 17:53:48 devpinoyLogger Called openBrowser
-08/06/2017 17:53:48 devpinoyLogger The Relative path of the user.dirC:\Users\vMalalu1\git\regression\RegressionV1.0
-08/06/2017 17:53:48 devpinoyLogger The Env prop path is C:\Users\vMalalu1\git\regression\RegressionV1.0\src\test\java\Properties\AppConfig.properties
-08/06/2017 17:53:48 devpinoyLogger The Browser type read from EnvProp file is chrome
-08/06/2017 17:53:48 devpinoyLogger The current url is https://www.o2.co.uk/shop
-08/06/2017 17:54:56 devpinoyLogger Called openBrowser
-08/06/2017 17:54:56 devpinoyLogger The Relative path of the user.dirC:\Users\vMalalu1\git\regression\RegressionV1.0
-08/06/2017 17:54:56 devpinoyLogger The Env prop path is C:\Users\vMalalu1\git\regression\RegressionV1.0\src\test\java\Properties\AppConfig.properties
-08/06/2017 17:54:56 devpinoyLogger The Browser type read from EnvProp file is chrome
-08/06/2017 17:54:56 devpinoyLogger The current url is https://www.o2.co.uk/shop
+07/09/2017 07:44:10 devpinoyLogger Called openBrowser
+07/09/2017 07:44:10 devpinoyLogger The Relative path of the user.dirC:\Users\ravindv1\git\regression7
+07/09/2017 07:44:10 devpinoyLogger The Env prop path is C:\Users\ravindv1\git\regression7\Configurations\Properties\AppConfig.properties
+07/09/2017 07:44:10 devpinoyLogger The Browser type read from EnvProp file is Chrome
+07/09/2017 07:44:10 devpinoyLogger The current url is https://www.o2.co.uk/shop
+07/09/2017 07:44:57 devpinoyLogger Invoked browser
+07/09/2017 07:45:32 devpinoyLogger Invoked URL
+07/09/2017 07:45:32 devpinoyLogger Deleted all Cookies
+07/09/2017 07:45:32 devpinoyLogger Maxismised window
+07/09/2017 07:45:32 devpinoyLogger We are in the Shop Home page
+07/09/2017 07:45:32 devpinoyLogger The Page title is O2 | Shop | Latest Pay & Go, Pay Monthly and Sim Only Deals
+07/09/2017 07:45:32 devpinoyLogger Performing PAYM Phones landing page navigations
+07/09/2017 07:45:33 devpinoyLogger Moving Mouse on the Shop Tab
+07/09/2017 07:45:33 devpinoyLogger Moving Mouse on the Phones dropdown
+07/09/2017 07:45:35 devpinoyLogger Moving Mouse on the Paymonthly link
+07/09/2017 07:45:52 devpinoyLogger Clicking on PayM Phones
+07/09/2017 07:45:52 devpinoyLogger Moved Mouse to somewhere side of page
+07/09/2017 07:45:52 devpinoyLogger The current url is https://www.o2.co.uk/shop/phones/#sort=content.sorting.featured&page=1
+07/09/2017 07:45:52 devpinoyLogger The new url is https://www.ref.o2.co.uk/shop/phones/#sort=content.sorting.featured&page=1
+07/09/2017 07:46:28 devpinoyLogger Selected Iphone7
+07/09/2017 07:46:28 devpinoyLogger Currently in Device details page
+07/09/2017 07:46:28 devpinoyLogger The Page title is Pay Monthly Mobile Phones, Contracts, Offers & Deals | O2
+07/09/2017 07:47:06 devpinoyLogger Clicked on ViewOurTariffs
+07/09/2017 07:47:06 devpinoyLogger 
+To select Tariff With Ribbon And Overlay
+07/09/2017 07:47:06 devpinoyLogger Provided tariff is present in the list of tariffs
+07/09/2017 07:47:06 devpinoyLogger Going to select the given tariff :19.99upfront49.00amonth
+07/09/2017 07:47:09 devpinoyLogger Provided tariff is present in the list of tariffs
+07/09/2017 07:47:09 devpinoyLogger Going to select the given tariff :19.99upfront49.00amonth

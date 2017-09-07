@@ -1,200 +1,194 @@
-$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("Features/JulyRelease2017/C1924/C1924_E11409_TC4_CFA_Displaying_dropdown_in_place_of_variant_swatches_on_device_details_page_of_fitness_tracker.feature");
+$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("Features/AugustRelease2017/test.feature");
 formatter.feature({
   "line": 1,
-  "name": "C1924_E11409_TC4_CFA_Displaying_dropdown_in_place_of_variant_swatches_on_device_details_page_of_fitness_tracker",
+  "name": "August Release",
   "description": "",
-  "id": "c1924-e11409-tc4-cfa-displaying-dropdown-in-place-of-variant-swatches-on-device-details-page-of-fitness-tracker",
+  "id": "august-release",
   "keyword": "Feature"
 });
 formatter.scenarioOutline({
-  "line": 4,
-  "name": "",
-  "description": "CFA_Displaying_dropdown_in_place_of_variant_swatches_on_device_details_page_of_fitness_tracker",
-  "id": "c1924-e11409-tc4-cfa-displaying-dropdown-in-place-of-variant-swatches-on-device-details-page-of-fitness-tracker;",
+  "line": 2,
+  "name": "August",
+  "description": "",
+  "id": "august-release;august",
   "type": "scenario_outline",
-  "keyword": "Scenario Outline",
-  "tags": [
-    {
-      "line": 3,
-      "name": "@JulyRelease"
-    }
-  ]
+  "keyword": "Scenario Outline"
 });
 formatter.step({
-  "line": 6,
+  "line": 4,
   "name": "I am an CFA user and Lands on shop page",
   "keyword": "Given "
 });
 formatter.step({
+  "line": 5,
+  "name": "navigate to PAYM Phones page",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 6,
+  "name": "I choose PayM \u003chandset\u003e",
+  "keyword": "And "
+});
+formatter.step({
   "line": 7,
-  "name": "Navigate to Fitness Trackers",
+  "name": "Navigate to device details page",
   "keyword": "And "
 });
 formatter.step({
   "line": 8,
-  "name": "I choose \u003cfitnesstrackername\u003e FitnessTracker",
+  "name": "select a \u003ctariff\u003e which has free insurance",
   "keyword": "And "
 });
 formatter.step({
   "line": 9,
-  "name": "check if the selected non connected device has more than 1 variant for colour and single variant for capacity",
-  "keyword": "Then "
+  "name": "verify that the insurance is in a sorted order",
+  "keyword": "And "
 });
 formatter.step({
   "line": 10,
-  "name": "select \u003ccolor\u003e color of the non connected device",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 11,
-  "name": "Navigate to device details page",
+  "name": "deselect if any insurance is autoselected",
   "keyword": "And "
 });
 formatter.examples({
-  "comments": [
-    {
-      "line": 12,
-      "value": "# And select \u003ccapacity\u003e capacity of the non connected device"
-    },
-    {
-      "line": 14,
-      "value": "#Close the browser"
-    }
-  ],
-  "line": 15,
+  "line": 13,
   "name": "",
   "description": "",
-  "id": "c1924-e11409-tc4-cfa-displaying-dropdown-in-place-of-variant-swatches-on-device-details-page-of-fitness-tracker;;",
+  "id": "august-release;august;",
   "rows": [
     {
       "cells": [
-        "fitnesstrackername",
-        "color"
+        "handset",
+        "tariff"
       ],
-      "line": 16,
-      "id": "c1924-e11409-tc4-cfa-displaying-dropdown-in-place-of-variant-swatches-on-device-details-page-of-fitness-tracker;;;1"
+      "line": 14,
+      "id": "august-release;august;;1"
     },
     {
       "cells": [
-        "Jawbone UP2",
-        "Black Diamond"
+        "Apple iPhone 7",
+        "19.99upfront49.00amonth"
       ],
-      "line": 17,
-      "id": "c1924-e11409-tc4-cfa-displaying-dropdown-in-place-of-variant-swatches-on-device-details-page-of-fitness-tracker;;;2"
+      "line": 15,
+      "id": "august-release;august;;2"
     }
   ],
   "keyword": "Examples"
 });
 formatter.before({
-  "duration": 90033525346,
+  "duration": 82142710125,
   "status": "passed"
 });
 formatter.scenario({
-  "line": 17,
-  "name": "",
-  "description": "CFA_Displaying_dropdown_in_place_of_variant_swatches_on_device_details_page_of_fitness_tracker",
-  "id": "c1924-e11409-tc4-cfa-displaying-dropdown-in-place-of-variant-swatches-on-device-details-page-of-fitness-tracker;;;2",
+  "line": 15,
+  "name": "August",
+  "description": "",
+  "id": "august-release;august;;2",
   "type": "scenario",
-  "keyword": "Scenario Outline",
-  "tags": [
-    {
-      "line": 3,
-      "name": "@JulyRelease"
-    }
-  ]
+  "keyword": "Scenario Outline"
 });
 formatter.step({
-  "line": 6,
+  "line": 4,
   "name": "I am an CFA user and Lands on shop page",
   "keyword": "Given "
 });
 formatter.step({
-  "line": 7,
-  "name": "Navigate to Fitness Trackers",
+  "line": 5,
+  "name": "navigate to PAYM Phones page",
   "keyword": "And "
 });
 formatter.step({
-  "line": 8,
-  "name": "I choose Jawbone UP2 FitnessTracker",
+  "line": 6,
+  "name": "I choose PayM Apple iPhone 7",
   "matchedColumns": [
     0
   ],
   "keyword": "And "
 });
 formatter.step({
-  "line": 9,
-  "name": "check if the selected non connected device has more than 1 variant for colour and single variant for capacity",
-  "keyword": "Then "
+  "line": 7,
+  "name": "Navigate to device details page",
+  "keyword": "And "
 });
 formatter.step({
-  "line": 10,
-  "name": "select Black Diamond color of the non connected device",
+  "line": 8,
+  "name": "select a 19.99upfront49.00amonth which has free insurance",
   "matchedColumns": [
     1
   ],
   "keyword": "And "
 });
 formatter.step({
-  "line": 11,
-  "name": "Navigate to device details page",
+  "line": 9,
+  "name": "verify that the insurance is in a sorted order",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 10,
+  "name": "deselect if any insurance is autoselected",
   "keyword": "And "
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.i_am_an_CFA_user_and_Lands_on_shop_page()"
 });
 formatter.result({
-  "duration": 310081138,
+  "duration": 337951433,
   "status": "passed"
 });
 formatter.match({
-  "location": "E2EOrderPlaced_Steps.navigate_to_Fitness_Trackers()"
+  "location": "E2EOrderPlaced_Steps.navigate_to_PAYM_Phones_page()"
 });
 formatter.result({
-  "duration": 54440994973,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "Jawbone UP2",
-      "offset": 9
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.i_choose_fitnesstracker(String)"
-});
-formatter.result({
-  "duration": 5303246330,
-  "status": "passed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.check_if_the_selected_non_connected_device_has_more_than_1_variant_for_colour_and_single_variant_for_capacity()"
-});
-formatter.result({
-  "duration": 16191121934,
+  "duration": 52745520479,
   "status": "passed"
 });
 formatter.match({
   "arguments": [
     {
-      "val": "Black Diamond",
-      "offset": 7
+      "val": "Apple iPhone 7",
+      "offset": 14
     }
   ],
-  "location": "E2EOrderPlaced_Steps.select_color_of_the_non_connected_device(String)"
+  "location": "E2EOrderPlaced_Steps.Choose_PAYM_Handset(String)"
 });
 formatter.result({
-  "duration": 5605243759,
+  "duration": 2919397118,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.Navigate_to_device_details_page()"
 });
 formatter.result({
-  "duration": 12264997170,
+  "duration": 37863741036,
   "status": "passed"
 });
+formatter.match({
+  "arguments": [
+    {
+      "val": "19.99upfront49.00amonth",
+      "offset": 9
+    }
+  ],
+  "location": "E2EOrderPlaced_Steps.select_Tariff_Free_Insurance(String)"
+});
+formatter.result({
+  "duration": 3746560225,
+  "error_message": "junit.framework.AssertionFailedError: Unable to select a tariff\r\n\tat junit.framework.Assert.fail(Assert.java:47)\r\n\tat steps.E2EOrderPlaced_Steps.select_Tariff_Free_Insurance(E2EOrderPlaced_Steps.java:4327)\r\n\tat ✽.And select a 19.99upfront49.00amonth which has free insurance(Features/AugustRelease2017/test.feature:8)\r\n",
+  "status": "failed"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.verify_Price_Sorted_For_Insurance()"
+});
+formatter.result({
+  "status": "skipped"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.deselect_if_any_insurance_is_autoselected()"
+});
+formatter.result({
+  "status": "skipped"
+});
 formatter.after({
-  "duration": 3589169415,
+  "duration": 3101063704,
   "status": "passed"
 });
 });

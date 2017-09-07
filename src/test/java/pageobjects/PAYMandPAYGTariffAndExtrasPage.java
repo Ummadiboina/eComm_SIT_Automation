@@ -49,12 +49,14 @@ public class PAYMandPAYGTariffAndExtrasPage {
 	@FindBy(id = "link-pay-for-your-device")
 	public static WebElement paydevicefulllink;
 
-	// Below is for Clicking on the Add to basket option which is at the bottom of
+	// Below is for Clicking on the Add to basket option which is at the bottom
+	// of
 	// the tariff and extras page
 	@FindBy(id = "qa-proceed-to-basket")
 	public static WebElement addToBasketLive;
 
-	// Below is for Clicking on the Add to basket option which is at the top of the
+	// Below is for Clicking on the Add to basket option which is at the top of
+	// the
 	// tariff and extras page
 	@FindBy(id = "qa-proceed-to-basket-dock-header")
 	public static WebElement addToBasketDockHeader;
@@ -76,7 +78,12 @@ public class PAYMandPAYGTariffAndExtrasPage {
 
 	@FindAll({ @FindBy(how = How.XPATH, using = "//div[@class='col-xs-6 monthly']//span[@class='pound ng-binding']") })
 	public static List<WebElement> MonthlyCost;
-	
+
 	@FindAll({ @FindBy(how = How.XPATH, using = "//div[@id='insuranceContainer']//div/p[@class=' price ']") })
 	public static List<WebElement> InsurancePriceElement;
+
+	// Below is for View All Tariffs link
+	@FindBy(how = How.XPATH, using = ("(//div[@class='viewAllTariffs'])"))
+	public static WebElement ViewAllTariffs;
+
 }

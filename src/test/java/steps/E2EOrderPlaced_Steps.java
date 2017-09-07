@@ -4084,11 +4084,12 @@ public class E2EOrderPlaced_Steps {
 	}
 
 	@And("^Select a tariff ([^\"]*) with ribbons$")
-	public void select_tariff_with_ribbons(String RibbonText) throws Throwable {
+	public void select_tariff_with_ribbons(String tariff) throws Throwable {
 		try {
 			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 			PageFactory.initElements(driver, UpgradeCustomerPage.class);
-			UpgradeCustomerPageActions.selectTariffWithRibbonAndOverlay(RibbonText);
+			PageFactory.initElements(driver, PAYMandPAYGTariffAndExtrasPage.class);
+			UpgradeCustomerPageActions.selectTariff(tariff);
 		} catch (Exception e) {
 			e.printStackTrace();
 			Assert.fail("Unable to Select a tariff with ribbons");
@@ -4316,13 +4317,59 @@ public class E2EOrderPlaced_Steps {
 	}
 
 	@And("^select a ([^\"]*) which has free insurance$")
-	public void select_Tariff_Free_Insurance() throws InterruptedException {
+	public void select_Tariff_Free_Insurance(String tariff) throws InterruptedException {
 		try {
 			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 			PageFactory.initElements(driver, PAYMandPAYGTariffAndExtrasPage.class);
-			PAYMandPAYGTariffAndExtrasPageActions.selectTariffFreeInsurance();
+			UpgradeCustomerPageActions.selectTariff(tariff);
 		} catch (Exception e) {
 			e.printStackTrace();
+			Assert.fail("Unable to select a tariff");
+		}
+	}
+
+	// durai
+	@And("^Navigate to FreeSim page$")
+	public void Navigate_to_FreeSim_page() throws Throwable {
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, MouseHoverPage.class);
+			MouseHoverAction.PayGFreesimNavigation();
+			Autoredirection.redirectforHTTPsconnections();
+			Thread.sleep(10000);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			System.out.println("unable to do mousehover to FreeSims page");
+			Assert.fail("unable to do mousehover to FreeSims page");
+		}
+	}
+
+	@And("^I select 'iPads and Tablets' tab$")
+	public void select_iPads_and_Tablets_tab() throws Throwable {
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, SimsPage.class);
+			SimsPageActions.clickOniPadsandTablets();
+			Thread.sleep(3000);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			System.out.println("unable to select iPads and Tablets tab");
+			Assert.fail("unable to select iPads and Tablets tab");
+		}
+	}
+	
+	@And("^deselect if any insurance is autoselected$")
+	public void deselect_if_any_insurance_is_autoselected() throws Throwable {
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, PAYMandPAYGTariffAndExtrasPage.class);
+			PAYMandPAYGTariffAndExtrasPageActions.verifyFreeInsuranceAutoSelected();
+			PAYMandPAYGTariffAndExtrasPageActions.deselectAutoSelectedInsurance();
+			Thread.sleep(3000);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			System.out.println("unable to deselect if any insurance is autoselected");
+			Assert.fail("unable to deselect if any insurance is autoselected");
 		}
 	}
 }

@@ -43,7 +43,9 @@ public class SimsPageActions extends Environment{
 		
 
 	}
-		
+	public static void clickOniPadsandTablets (){
+		pageobjects.SimsPage.iPadsandTablets.click();
+	}	
 	
 }
 
