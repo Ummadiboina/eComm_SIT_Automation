@@ -4521,6 +4521,24 @@ public class E2EOrderPlaced_Steps {
 		// Write code here that turns the phrase above into concrete actions
 	}
 	
+	
+		@Given("^select an insurance$")
+	public void select_an_insurance() throws Throwable {
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, PAYMandPAYGTariffAndExtrasPage.class);
+			Thread.sleep(3000);
+			PAYMandPAYGTariffAndExtrasPageActions.addInsurance();
+			Thread.sleep(2000);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			System.out.println("Unable to choose insurance");
+			Assert.fail("Unable to choose insurance");
+
+		}
+	}
+	
+	
 	@And("^select a ([^\"]*) which has free insurance$")
 	public void select_Tariff_Free_Insurance(String tariff) throws InterruptedException {
 		try {
