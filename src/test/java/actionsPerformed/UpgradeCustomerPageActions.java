@@ -48,11 +48,17 @@ public class UpgradeCustomerPageActions extends Environment {
 		 * pageobjects.UpgradeCustomerPage.Continue.click();
 		 * 
 		 * } catch (Exception e) { // TODO Auto-generated catch block
-		 * System.out.println("Continue button is not there, it should be fine"
-		 * );
+		 * System.out.println("Continue button is not there, it should be fine" );
 		 * 
 		 * }
 		 */
+
+	}
+
+	public static void Signin() throws InterruptedException {
+		pageobjects.UpgradeCustomerPage.Signinlink.click();
+
+		System.out.println("Sign in button clicked");
 
 	}
 
@@ -195,9 +201,8 @@ public class UpgradeCustomerPageActions extends Environment {
 
 		/*
 		 * Assert.assertEquals(pageobjects.UpgradeCustomerPage.
-		 * NotEligible_message.getText(), "You are not eligible to upgrade"); //
-		 * bound to change System.out.println(
-		 * "The error message is displayed as" +
+		 * NotEligible_message.getText(), "You are not eligible to upgrade"); // bound
+		 * to change System.out.println( "The error message is displayed as" +
 		 * pageobjects.UpgradeCustomerPage.NotEligible_message.getText());
 		 */
 	}
@@ -804,8 +809,8 @@ public class UpgradeCustomerPageActions extends Environment {
 							driver.switchTo().window(winHandle);
 							log.debug("Inside the overlay for the selected tariff");
 							log.debug("Text inside overlay is :" + '\n'
-									+ driver.findElement(By
-											.xpath("//div[contains(@class, 'overlay-box primary-promo-overlay')]/div/h3"))
+									+ driver.findElement(By.xpath(
+											"//div[contains(@class, 'overlay-box primary-promo-overlay')]/div/h3"))
 											.getText());
 						}
 						Thread.sleep(5000);
@@ -1072,8 +1077,8 @@ public class UpgradeCustomerPageActions extends Environment {
 						log.debug("Inside the overlay for the selected tariff");
 						Thread.sleep(3000);
 						log.debug("Text inside overlay is :" + '\n'
-								+ driver.findElement(By
-										.xpath("//div[contains(@class, 'overlay-box additional-promo-overlay')]/div/h3"))
+								+ driver.findElement(By.xpath(
+										"//div[contains(@class, 'overlay-box additional-promo-overlay')]/div/h3"))
 										.getText());
 					}
 					Thread.sleep(5000);
@@ -1091,5 +1096,13 @@ public class UpgradeCustomerPageActions extends Environment {
 
 		}
 
+	}
+
+	public static void RecyclesectionDisplayed() throws InterruptedException {
+		// pageobjects.UpgradeCustomerPage.RecycleWidget.click();
+		if (driver.findElement(By.id("newRecycleOptionsTile")).isDisplayed()) {
+			System.out.println("Upgrade and Recycle options is displayed");
+			driver.findElement(By.xpath("//a[@ng-click='selectRecycleDevice();']")).click();
+		}
 	}
 }

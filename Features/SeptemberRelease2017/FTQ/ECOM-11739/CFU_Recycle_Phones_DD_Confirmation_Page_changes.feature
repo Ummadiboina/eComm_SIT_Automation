@@ -6,8 +6,8 @@ Feature: CFU_Recycle_Phones_DD_Confirmation_Page_changes
 
     Given I am an Existing user and Navigates to Signin page
     And Signin using valid <username> and <password> credentials
-    And Navigate to upgrade phone
-    Then Verify that in the recycle value is displayed in the Recycle panel > dropdowns
+    And Navigate to upgrade > upgrade now
+    Then Verify that in the recycle value is displayed in the Recycle panel
     Then Select any one recycle option and click on 'Continue to Upgrade'
     And Select a <handset> device from Recommended devices section
     And Select a tariff <tariff> with ribbons in upgrade journey
@@ -22,5 +22,5 @@ Feature: CFU_Recycle_Phones_DD_Confirmation_Page_changes
     Then Verify contents of order confirmation page for Phones containing <Status>
 
     Examples: 
-      | username   | password | handset  | Firstname | Surname | Username     | Action | Status           |
-      | ins_nov746 | test123  | GalaxyS8 | TEST      | ACCEPTA | TEST ACCEPTA | skip   | Delayed Delivery |
+      | username           | password  | handset  | Firstname | Surname | Username     | Action | Status           |
+      | bvt2.cfu@gmail.com | cfubvt123 | GalaxyS8 | TEST      | ACCEPTA | TEST ACCEPTA | skip   | Delayed Delivery |

@@ -64,9 +64,14 @@ public class MouseHoverPage extends Environment {
 	@FindBy(how = How.XPATH, using = ("//a[contains(text(), 'Upgrades')]"))
 	public static WebElement MouseMoveonUpgrade;
 
-	@FindBy(how = How.XPATH, using = ("//a[contains(text(), 'Upgrade now')]"))
+	/*@FindBy(how = How.XPATH, using = ("//a[contains(text(), 'Upgrade now')]"))
+	public static WebElement MouseMoveonUpgradeAndUpgradeNow;*/
+	
+	////a[@manual_cm_re='meganav_Shop-_-Upgrades-_-Upgrade Now']
+	@FindBy(how = How.XPATH, using = ("//a[@manual_cm_re='meganav_Shop-_-Upgrades-_-Upgrade now']"))
 	public static WebElement MouseMoveonUpgradeAndUpgradeNow;
 
+	
 	// Below will click on the Tablets Tab
 
 	@FindBy(how = How.XPATH, using = ("//a[contains(text(), 'Browse Tablets')]"))

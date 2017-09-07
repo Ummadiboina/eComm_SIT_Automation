@@ -95,4 +95,46 @@ public class OrderConfirmationPageActions extends Environment {
 
 	}
 
+	public static String DelayedDeliveryMessage() {
+		System.out.println("The Delayed Delivery message in this page is as below......");
+		try {
+			List<WebElement> outercontainer = driver.findElements(By.xpath("//*[@id='delivery-section']"));
+
+			List<WebElement> DataContainer = outercontainer.get(0).findElements(By.xpath("//*[@id='delivery-section']"));
+
+			for (int i = 0; i <= DataContainer.size(); i++) {
+				String ExpectedMessage= "Your order will be delivered for free, via Royal Mail, within three working days.";
+				String message=DataContainer.get(i).getText();
+				System.out.println(DataContainer.get(i).getText());
+
+				
+			}
+		} catch (IndexOutOfBoundsException e) {
+
+		}
+		return null;
+
+	}
+	
+	public static String PaccodeinfoMessage() {
+		System.out.println("The pac-code-info in this page is as below......");
+		try {
+			List<WebElement> outercontainer = driver.findElements(By.xpath("//*[@id='pac-code-info']"));
+
+			List<WebElement> DataContainer = outercontainer.get(0).findElements(By.xpath("//*[@id='pac-code-info']"));
+
+			for (int i = 0; i <= DataContainer.size(); i++) {
+				String ExpectedMessage= "Your order will be delivered for free, via Royal Mail, within three working days.";
+				String message=DataContainer.get(i).getText();
+				System.out.println(DataContainer.get(i).getText());
+
+				
+			}
+		} catch (IndexOutOfBoundsException e) {
+
+		}
+		return null;
+
+	}
+
 }

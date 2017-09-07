@@ -689,7 +689,7 @@ public class MouseHoverAction extends Environment {
 				action.moveToElement(pageobjects.MouseHoverPage.MouseMoveonUpgrade).build().perform();
 				System.out.println("Moved mouse on upgrades");
 				Thread.sleep(2000);
-				action.moveToElement(pageobjects.MouseHoverPage.MouseMoveonUpgradeAndUpgradeNow).perform();
+				action.moveToElement(pageobjects.MouseHoverPage.MouseMoveonUpgradeAndUpgradeNow).build().perform();
 				System.out.println("Moved mouse on upgrades -- > upgradenow");
 				Thread.sleep(4000);
 				pageobjects.MouseHoverPage.MouseMoveonUpgradeAndUpgradeNow.click();
