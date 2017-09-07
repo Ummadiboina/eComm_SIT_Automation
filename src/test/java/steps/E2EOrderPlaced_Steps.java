@@ -4598,21 +4598,6 @@ public class E2EOrderPlaced_Steps {
 			System.out.println("Unable to click on the 'Add now' button and verify Insurance gets added successfully");
 			Assert.fail("Unable to click on the 'Add now' button and verify Insurance gets added successfully");
 		}
-	}
-	
-	@Given("^select an insurance$")
-	public void select_an_insurance() throws Throwable {
-		try {
-			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-			PageFactory.initElements(driver, PAYMandPAYGTariffAndExtrasPage.class);
-			Thread.sleep(3000);
-			PAYMandPAYGTariffAndExtrasPageActions.addInsurance();
-			Thread.sleep(2000);
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			System.out.println("Unable to choose insurance");
-			Assert.fail("Unable to choose insurance");
+	}	
 
-		}
-	}
 }
