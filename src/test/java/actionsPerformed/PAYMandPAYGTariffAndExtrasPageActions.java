@@ -1,8 +1,11 @@
 package actionsPerformed;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
+import org.apache.commons.lang3.StringUtils;
 import org.apache.log4j.Logger;
 import org.junit.Assert;
 import org.openqa.selenium.By;
@@ -18,6 +21,8 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 	static Logger log = Logger.getLogger("devpinoyLogger");
 	static int AccessoryContainerSize = 0;
 	static int SelectedAccessoryCount = 0;
+	static String FirstInsurancePrice = null;
+	static JavascriptExecutor js = (JavascriptExecutor) driver;
 
 	public static void GetPageName() {
 
@@ -362,6 +367,133 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 		}
 		Thread.sleep(2000);
 		log.debug("Added a random accessory to basket");
+	}
+
+	public static void verifySortOrderInsurance() throws Exception {
+		System.out.println("getCurrentSortOrderInsurance");
+		Thread.sleep(4000);
+		List<Double> AfterSort = new ArrayList<Double>();
+		List<Double> BeforeSort = new ArrayList<Double>();
+		String sTemp = null;
+		double iTemp = 0;
+
+		List<WebElement> InsurancePriceElement = driver
+				.findElements(By.xpath("//div[@id='insuranceContainer']//div/p[@class=' price ']"));
+		FirstInsurancePrice = InsurancePriceElement.get(0).getText();
+
+		for (WebElement temp : InsurancePriceElement) {
+			sTemp = temp.getText().replace("£", "");
+			iTemp = Double.parseDouble(sTemp);
+			BeforeSort.add(iTemp);
+		}
+
+		System.out.println("before sort");
+		System.out.println(BeforeSort);
+
+		Collections.sort(BeforeSort);
+		for (int i = 0; i < BeforeSort.size(); i++) {
+			AfterSort.add(BeforeSort.get(i));
+		}
+
+		System.out.println("After sort");
+		System.out.println(AfterSort);
+		for (int i = 0; i < BeforeSort.size(); i++) {
+			if (BeforeSort.get(i).equals(AfterSort.get(i))) {
+				System.out.println("Insurance is sorted correctly in ascending order");
+			} else {
+				Assert.fail("Insurance displayed is not in correct order");
+			}
+
+		}
+		System.out.println("FirstInsurancePrice " + FirstInsurancePrice);
+	}
+
+	public static void verifyFreeInsuranceAutoSelected() throws Exception {
+		System.out.println("verifyFreeInsuranceAutoSelected");
+
+		WebElement FirstInsurancePrice = driver.findElement(By.xpath("(//div[@id='insuranceContainer']/div[@id])[1]"))
+				.findElement(By.xpath("//div[@id='insuranceContainer']//div/p[@class=' price ']"));
+		if (FirstInsurancePrice.getText().equals("0.00")) {
+			System.out.println("Free insurance is present");
+		}
+		WebElement FirstInsuranceText = driver.findElement(By.xpath("//h4[contains(@class, 'insuranceName')][1]"));
+		if (FirstInsuranceText.getText().equals("Free Insurance")) {
+			System.out.println("Free insurance is present");
+		}
+		List<WebElement> RemovebtnFirstTile = driver
+				.findElement(By.xpath("(//div[@id='insuranceContainer']/div[@id])[1]"))
+				.findElements(By.xpath("//input[@value='Remove'][@type='button']"));
+		if (RemovebtnFirstTile.size() > 0) {
+
+			System.out.println("Remove button is present");
+		} else {
+			System.out.println("Remove button is not present");
+		}
+		System.out.println("Going to select first insurance");
+
+		driver.findElement(
+				By.xpath("(//div[@id='insuranceContainer']/div[@id])[1]//input[@value='Select'][@type='button']"))
+				.click();
+		System.out.println("Selected first insurance");
+
+		Thread.sleep(3000);
+		System.out.println("First insurance price text is " + FirstInsurancePrice.getText());
+		Thread.sleep(3000);
+
+	}
+
+	public static void deselectAutoSelectedInsurance() throws Exception {
+		System.out.println("deselectAutoSelectedInsurance");
+
+		List<WebElement> RemovebtnFirstTile = driver.findElements(
+				By.xpath("(//div[@id='insuranceContainer']/div[@id])[1]//input[@value='Remove'][@type='button']"));
+		if (RemovebtnFirstTile.size() > 0) {
+			System.out.println("First tile is selected");
+			js.executeScript("arguments[0].click();", RemovebtnFirstTile.get(0));
+			System.out.println("deselected first insurance");
+		} else {
+			System.out.println("No remove button");
+		}
+	}
+
+	public static void verifyCheapestInsurance() throws Exception {
+		String TempCheapInsurance = null, ExpAddInsuranceText = null;
+		TempCheapInsurance = StringUtils.substringBefore(FirstInsurancePrice, ".");
+		ExpAddInsuranceText = "Add for " + TempCheapInsurance + "a month";
+		ExpAddInsuranceText = ExpAddInsuranceText.replace(" ", "");
+
+		String ActualAddInsuranceText = driver.findElement(By.xpath("//input[@class='button secondary']"))
+				.getAttribute("value").replace(" ", "").trim().replace("\n", "");
+		System.out.println("ActualAddInsuranceText " + ActualAddInsuranceText);
+
+		System.out.println("ExpAddInsuranceText" + ExpAddInsuranceText);
+		if (ActualAddInsuranceText.equals(ExpAddInsuranceText)) {
+			System.out.println("cheapeast insurance is displayed in add button");
+		} else {
+			System.out.println("cheapeast insurance is not displayed in add button");
+		}
+	}
+
+	public static void verifyAddNowButtonDisplayed() {
+		List<WebElement> AddInsuranceButton = driver.findElements(By.xpath("//input[@class='button secondary']"));
+		if (AddInsuranceButton.size() > 0) {
+			System.out.println("Add insurance button is present");
+			if (AddInsuranceButton.get(0).getText().equals(FirstInsurancePrice)) {
+				System.out.println("Text inside Add button is " + AddInsuranceButton.get(0).getText());
+			}
+		} else {
+			System.out.println("Add now button is not present");
+		}
+	}
+
+	public static void clickOnAddNow() throws Exception {
+		List<WebElement> AddInsuranceButton = driver.findElements(By.xpath("//input[@class='button secondary']"));
+		if (AddInsuranceButton.size() > 0) {
+			AddInsuranceButton.get(0).click();
+			Thread.sleep(4000);
+		} else {
+			System.out.println("Add now button is not present");
+		}
 	}
 
 }

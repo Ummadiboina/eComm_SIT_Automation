@@ -4100,11 +4100,11 @@ public class E2EOrderPlaced_Steps {
 	}
 
 	@And("^Select a tariff ([^\"]*) with ribbons$")
-	public void select_tariff_with_ribbons(String RibbonText) throws Throwable {
+	public void select_tariff_with_ribbons(String Tariff) throws Throwable {
 		try {
 			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 			PageFactory.initElements(driver, UpgradeCustomerPage.class);
-			UpgradeCustomerPageActions.selectTariffWithRibbonAndOverlay(RibbonText);
+			UpgradeCustomerPageActions.selectTariff(Tariff);
 		} catch (Exception e) {
 			e.printStackTrace();
 			Assert.fail("Unable to Select a tariff with ribbons");
@@ -4476,4 +4476,61 @@ public class E2EOrderPlaced_Steps {
 			e.printStackTrace();
 		}
 	}
+
+	@And("^deselect if any insurance is autoselected$")
+	public void deselect_if_any_insurance_is_autoselected() throws Throwable {
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, PAYMandPAYGTariffAndExtrasPage.class);
+			PAYMandPAYGTariffAndExtrasPageActions.verifyFreeInsuranceAutoSelected();
+			PAYMandPAYGTariffAndExtrasPageActions.deselectAutoSelectedInsurance();
+			Thread.sleep(3000);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			System.out.println("unable to deselect if any insurance is autoselected");
+			Assert.fail("unable to deselect if any insurance is autoselected");
+		}
+	}
+	
+	@And("^verify that the cheapest insurance is shown to crossell in the basket page$")
+	public void cheapest_insurance_displayed_in_crosssell() throws Throwable {
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, PAYMandPAYGTariffAndExtrasPage.class);
+			PAYMandPAYGTariffAndExtrasPageActions.verifyCheapestInsurance();
+			Thread.sleep(3000);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			System.out.println("Unable to verify that the cheapest insurance is shown to crossell in the basket page");
+			Assert.fail("Unable to verify that the cheapest insurance is shown to crossell in the basket page");
+		}
+	}
+	
+	@And("^verify if the 'Add Now' button is displayed for the cheapest insurance shown in basket page$")
+	public void AddNowbutton_For_Cheapest_Insurance() throws Throwable {
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, PAYMandPAYGTariffAndExtrasPage.class);
+			PAYMandPAYGTariffAndExtrasPageActions.verifyAddNowButtonDisplayed();
+			Thread.sleep(3000);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			System.out.println("Unable to verify if the 'Add Now' button is displayed for the cheapest insurance shown in basket page");
+			Assert.fail("Unable to verify if the 'Add Now' button is displayed for the cheapest insurance shown in basket page");
+		}
+	}
+	@And("^click on the 'Add now' button and verify Insurance gets added successfully$")
+	public void click_on_AddNowbutton_For_Cheapest_Insurance() throws Throwable {
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, PAYMandPAYGTariffAndExtrasPage.class);
+			PAYMandPAYGTariffAndExtrasPageActions.clickOnAddNow();
+			Thread.sleep(3000);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			System.out.println("Unable to click on the 'Add now' button and verify Insurance gets added successfully");
+			Assert.fail("Unable to click on the 'Add now' button and verify Insurance gets added successfully");
+		}
+	}
+	
 }
