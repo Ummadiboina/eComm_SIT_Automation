@@ -20,6 +20,7 @@ Feature: CFA_Cover_me_copy_update_on_basket_summary
     download pdf and  verify insurance copy text is displayed on pdf
 
     Given I am an CFA user and Lands on shop page
+    And navigate to PAYM Tablets page
     And I choose <tabletname> Tablet
     And select <color> color of the connected device
     And select <capacity> capacity of the connected device
@@ -27,20 +28,18 @@ Feature: CFA_Cover_me_copy_update_on_basket_summary
     And Click on "Buy Now" button for <tabletname> and verify "Tariffs and Extras" page is displayed
     And I Land on the basket page and choose home delivery option
     And click on "go to checkout" button
-		#verify delivey page
+    Then verify cover me is present in delivery page
     And input <Firstname> and <Surname> and other valid details in Delivery page and Click on the 'Continue button'
-    #verify payment page
+    Then verify cover me is present in  payment page
     And land on the payment page and input <Username> and other details and click 'Continue on next step'
-    #verify agreements page
+    Then verify cover me is present in  agreements page
     And Continue to Agreements page and confirm all the agreement checks
-    #verify review page
+    Then verify cover me is present in  review page
     And Continue to Review page and review the order
     When order confirmation is displayed
-    #verify pdf download 
-    #verify pdf content
-    
-    
-        Examples: 
+    Then verify cover me is present in  pdf download
+    And pdf content
+
+    Examples: 
       | tabletname               | color     | capacity | Status   |
       | Apple iPad Pro 10.5 inch | Rose Gold | 256GB    | In Stock |
-    

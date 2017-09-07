@@ -9,6 +9,8 @@ import org.openqa.selenium.support.How;
 
 public class UpgradeCustomerPage {
 
+	public static final String RecycleWidget = null;
+
 	@FindBy(how = How.ID, using = "username")
 	public static WebElement username;
 
@@ -47,4 +49,10 @@ public class UpgradeCustomerPage {
 	
 	@FindAll({ @FindBy(how = How.XPATH, using = "//div[@id='qa-recommendedDevicesTile']/a//div/p[@class='details']") })
 	public static List<WebElement> DeviceNameRecommendedSection;
+
+	@FindBy(how = How.XPATH, using = "//a[@class='signInLink']")
+	public static WebElement Signinlink;
+	
+	
+	
 }

@@ -285,9 +285,10 @@ public class E2EOrderPlaced_Steps {
 	public void i_am_an_Existing_user_and_Navigates_to_Signin_page() throws Throwable {
 		try {
 			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-			PageFactory.initElements(driver, MouseHoverPage.class);
-			MouseHoverAction.UpgradeandUpgradeNow();
-			Autoredirection.redirectUpgrades();
+			PageFactory.initElements(driver, UpgradeCustomerPage.class);
+			// MouseHoverAction.UpgradeandUpgradeNow();
+			UpgradeCustomerPageActions.Signin();
+			// Autoredirection.redirectUpgrades();
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			System.out.println("Unable to do mousehover to Existing user and Navigates to Signin page");
@@ -2371,6 +2372,23 @@ public class E2EOrderPlaced_Steps {
 		}
 	}
 
+	@Given("^Navigate to upgrade > upgrade now$")
+	public void navigate_to_upgrade_upgrade_now() throws Throwable {
+		// Write code here that turns the phrase above into concrete actions
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		try {
+			PageFactory.initElements(driver, MouseHoverPage.class);
+			PageFactory.initElements(driver, UpgradePhonesListingPage.class);
+			MouseHoverAction.UpgradeandUpgradeNow();
+			Thread.sleep(2000);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			Assert.fail("Unable to navigate to upgrade phones");
+
+		}
+	}
+
 	@And("^I choose upgrade PayM handset ([^\"]*)$")
 	public void Choose_upgradePAYM_Handset(String handset) throws Throwable {
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
@@ -4325,9 +4343,109 @@ public class E2EOrderPlaced_Steps {
 
 		}
 	}
-	
+
 	@Then("^Verify contents of order confirmation page for Phones containing Delayed Delivery$")
 	public void verify_contents_of_order_confirmation_page_for_Phones_containing_Delayed_Delivery() throws Throwable {
+
+		String ExpectedDelayedDeliveryMessage = "";
+		String ExpectedPacCodeInfoMessage = "";
+
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, OrderConfirmationPage.class);
+			OrderConfirmationPageActions.DelayedDeliveryMessage();
+			OrderConfirmationPageActions.PaccodeinfoMessage();
+			ExpectedDelayedDeliveryMessage = "Your Device may take up to 1 week. You'll pay for the phone now, but won't start paying for your contract until your phone is on its way.";
+
+			ExpectedPacCodeInfoMessage = "If you're moving from another operator and want to keep your number then now is a good time to ask them for your PAC code.";
+
+			Assert.assertTrue(
+					"Assertion Failed: Expected Message: " + ExpectedDelayedDeliveryMessage
+							+ " is not present in the page",
+					driver.getPageSource().contains(ExpectedDelayedDeliveryMessage));
+
+			System.out.println("Assertion Passed: Expected Mesasge: " + ExpectedDelayedDeliveryMessage
+					+ " is present in the Order Confirmation page");
+
+			Assert.assertTrue(
+					"Assertion Failed: Expected Message: " + ExpectedPacCodeInfoMessage + " is not present in the page",
+					driver.getPageSource().contains(ExpectedPacCodeInfoMessage));
+
+			System.out.println("Assertion Passed: Expected Mesasge: " + ExpectedPacCodeInfoMessage
+					+ " is present in the Order Confirmation page");
+
+		} catch (AssertionError e) {
+
+			System.out.println("Assertion Failed: Expected Message: " + ExpectedDelayedDeliveryMessage
+					+ " is not present in the page");
+			System.out.println("Assertion Failed: Expected Message: " + ExpectedPacCodeInfoMessage
+					+ " is not present in the page");
+		}
+
+	}
+
+	@Then("^Verify that in the recycle value is displayed in the Recycle panel$")
+	public void verify_that_in_the_recycle_value_is_displayed_in_the_Recycle_panel_dropdowns() throws Throwable {
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, UpgradeCustomerPage.class);
+		} catch (Exception e) {
+			e.printStackTrace();
+			Assert.fail(
+					"Unable to Verify whether promotional ribbons are displayed on the Tariff tile in the Tariff and Extras page");
+		}
+	}
+
+	@Then("^Select any one recycle option and click on 'Continue to Upgrade'$")
+	public void select_any_one_recycle_option_and_click_on_Continue_to_Upgrade() throws Throwable {
+		// Write code here that turns the phrase above into concrete actions
+	}
+
+	@Then("^perform ([^\\\"]*) in OTAC page$")
+	public void perform_skip_in_OTAC_page(String Action) throws Throwable {
+
+	}
+
+	@Then("^Click on the 'Continue button' in delivery page$")
+	public void click_on_the_Continue_button_in_delivery_page() throws Throwable {
+		// Write code here that turns the phrase above into concrete actions
+	}
+
+	@Then("^land on the payment page, input details and click 'Continue on next step'$")
+	public void land_on_the_payment_page_input_details_and_click_Continue_on_next_step() throws Throwable {
+		// Write code here that turns the phrase above into concrete actions
+	}
+
+	// --------------------------------------------------------------------------
+
+	@Then("^verify cover me is present in delivery page$")
+	public void verify_cover_me_is_present_in_delivery_page() throws Throwable {
+		// Write code here that turns the phrase above into concrete actions
+	}
+
+	@Then("^verify cover me is present in  payment page$")
+	public void verify_cover_me_is_present_in_payment_page() throws Throwable {
+		// Write code here that turns the phrase above into concrete actions
+	}
+
+	@Then("^verify cover me is present in  agreements page$")
+	public void verify_cover_me_is_present_in_agreements_page() throws Throwable {
+		// Write code here that turns the phrase above into concrete actions
+	}
+
+	@Then("^verify cover me is present in  review page$")
+	public void verify_cover_me_is_present_in_review_page() throws Throwable {
+		// Write code here that turns the phrase above into concrete actions
+	}
+
+	@Then("^verify cover me is present in  pdf download$")
+	public void verify_cover_me_is_present_in_pdf_download() throws Throwable {
+		// Write code here that turns the phrase above into concrete actions
+	}
+
+	@Then("^pdf content$")
+	public void pdf_content() throws Throwable {
+		// Write code here that turns the phrase above into concrete actions
 	}
 
 }
