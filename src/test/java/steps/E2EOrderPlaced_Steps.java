@@ -4117,13 +4117,13 @@ public class E2EOrderPlaced_Steps {
 			Assert.fail("Unable to select a device from Recommended devices section");
 		}
 	}
-
+	
 	@And("^Select a tariff ([^\"]*) with ribbons$")
-	public void select_tariff_with_ribbons(String RibbonText) throws Throwable {
+	public void select_tariff_with_ribbons(String Tariff) throws Throwable {
 		try {
 			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 			PageFactory.initElements(driver, UpgradeCustomerPage.class);
-			UpgradeCustomerPageActions.selectTariffWithRibbonAndOverlay(RibbonText);
+			UpgradeCustomerPageActions.selectTariff(Tariff);
 		} catch (Exception e) {
 			e.printStackTrace();
 			Assert.fail("Unable to Select a tariff with ribbons");
