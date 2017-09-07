@@ -332,7 +332,7 @@ public class UpgradeCustomerPageActions extends Environment {
 		Thread.sleep(5000);
 	}
 
-	public static void selectTariffWithRibbonAndOverlay(String Tariff) {
+/*	public static void selectTariffWithRibbonAndOverlay(String Tariff) {
 		log.debug('\n' + "To select Tariff With Ribbon And Overlay");
 		List<WebElement> TariffList = driver.findElements(By.xpath("//div[@id='tariff-tile']/div[@id]"));
 		boolean flag = false;
@@ -344,7 +344,7 @@ public class UpgradeCustomerPageActions extends Environment {
 			i = j + 1;
 			TariffXpath = "(//div[@id='tariff-tile']/div[@id]/div/div[@class='price-block'])[" + i + "]";
 			TextOfTariffTile = driver.findElement(By.xpath(TariffXpath)).getText();
-			TextOfTariffTile = TextOfTariffTile.replace("£", "");
+			TextOfTariffTile = TextOfTariffTile.replace("Â£", "");
 			TextOfTariffTile = TextOfTariffTile.replace("\n", "");
 			TextOfTariffTile = TextOfTariffTile.replace(" ", "");
 
@@ -356,6 +356,40 @@ public class UpgradeCustomerPageActions extends Environment {
 				driver.findElement(By.xpath(SelectBtnXpath)).click();
 				flag = true;
 			}
+		}
+		if (flag == false) {
+			Assert.fail("Provided tariff is not present in the list of tariffs");
+		}
+	}*/
+	public static void selectTariff(String Tariff) {
+		System.out.println("selectTariff");
+		// executor.executeScript("arguments[0].click();",
+		// pageobjects.PAYMandPAYGTariffAndExtrasPage.ViewAllTariffs);
+		List<WebElement> TariffList = driver.findElements(By.xpath("//div[@id='tariff-tile']/div[@id]"));
+		boolean flag = false;
+		String TariffXpath = null;
+		String TextOfTariffTile = null;
+		String SelectBtnXpath = null;
+		int i = 0;
+		for (int j = 0; j < TariffList.size(); j++) {
+			i = j + 1;
+			TariffXpath = "(//div[@id='tariff-tile']/div[@id]/div/div[@class='price-block'])[" + i + "]";
+			TextOfTariffTile = driver.findElement(By.xpath(TariffXpath)).getText();
+			TextOfTariffTile = TextOfTariffTile.replace("Â£", "");
+			TextOfTariffTile = TextOfTariffTile.replace("\n", "");
+			TextOfTariffTile = TextOfTariffTile.replace(" ", "");
+			System.out.println("TextOfTariffTile  " + TextOfTariffTile);
+			System.out.println("Tariff  " + Tariff);
+
+			if (TextOfTariffTile.contains(Tariff)) {
+				System.out.println("Given tariff is present in the list of tariffs");
+				position = i;
+				SelectBtnXpath = "(//button[@id='callToAction'])[" + i + "]";
+				driver.findElement(By.xpath(SelectBtnXpath)).click();
+				flag = true;
+				break;
+			}
+
 		}
 		if (flag == false) {
 			Assert.fail("Provided tariff is not present in the list of tariffs");
@@ -393,8 +427,8 @@ public class UpgradeCustomerPageActions extends Environment {
 			log.debug("MonthlyPound " + MonthlyPound);
 			log.debug("MonthlyPence " + MonthlyPence);
 
-			UpfrontPound = UpfrontPound.replace("£", "");
-			MonthlyPound = MonthlyPound.replace("£", "");
+			UpfrontPound = UpfrontPound.replace("Â£", "");
+			MonthlyPound = MonthlyPound.replace("Â£", "");
 
 			log.debug("UpfrontPound " + UpfrontPound);
 			log.debug("UpfrontPence " + UpfrontPence);

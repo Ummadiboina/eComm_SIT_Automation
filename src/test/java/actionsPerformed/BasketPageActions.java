@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.concurrent.TimeUnit;
 
+import org.apache.commons.lang3.StringUtils;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -138,27 +139,25 @@ public class BasketPageActions extends Environment {
 		String title = driver.getTitle();
 		if (title.contains("Thanks for waiting")) {
 			System.out.println("Queue page is displayed");
-			
-					// Below is example of Fluent wait
-		
-		WebDriverWait wait = (WebDriverWait) new FluentWait<WebDriver>(driver).withTimeout(60, TimeUnit.SECONDS)
-				.pollingEvery(3, TimeUnit.SECONDS).ignoring(NoSuchElementException.class);
 
-		WebElement checkOutButtonValidation = wait.until(new Function<WebDriver, WebElement>() {
-			public WebElement apply(WebDriver driver) {
-				return pageobjects.BasketPage.checkoutbtn;
-			}
+			// Below is example of Fluent wait
 
-		});
-		checkOutButtonValidation.click();
+			WebDriverWait wait = (WebDriverWait) new FluentWait<WebDriver>(driver).withTimeout(60, TimeUnit.SECONDS)
+					.pollingEvery(3, TimeUnit.SECONDS).ignoring(NoSuchElementException.class);
+
+			WebElement checkOutButtonValidation = wait.until(new Function<WebDriver, WebElement>() {
+				public WebElement apply(WebDriver driver) {
+					return pageobjects.BasketPage.checkoutbtn;
+				}
+
+			});
+			checkOutButtonValidation.click();
+		} else {
+			System.out.println("Queue page is not displayed");
+			pageobjects.BasketPage.checkoutbtn.click();
+			log.debug("Clicking on Checkout button");
 		}
-		else
-		{
-				System.out.println("Queue page is not displayed");
-				pageobjects.BasketPage.checkoutbtn.click();
-				log.debug("Clicking on Checkout button");
-		}
-		
+
 	}
 
 	public static void ValidateBasketPageContents() throws InterruptedException {
@@ -288,7 +287,7 @@ public class BasketPageActions extends Environment {
 			System.out.println("HomeDelivery is Selected");
 
 		}
-	if (elementName.contains("clickAndCollect")) {
+		if (elementName.contains("clickAndCollect")) {
 			pageobjects.BasketPage.clickAndCollectSelect.click();
 			// Assert.assertEquals(elementName,"Galaxy S7 is not found");
 			log.debug("click And Collect is Selected");
@@ -622,5 +621,6 @@ public class BasketPageActions extends Environment {
 
 	
 	
+
 
 }
