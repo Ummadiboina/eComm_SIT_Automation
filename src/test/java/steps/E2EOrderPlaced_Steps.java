@@ -1366,7 +1366,8 @@ public class E2EOrderPlaced_Steps {
 		Agent_HomePagePageActions.upgradeUser();
 		Thread.sleep(4000);
 		/*
-		 * } catch (Exception e) { // TODO Auto-generated catch block System.out.
+		 * } catch (Exception e) { // TODO Auto-generated catch block
+		 * System.out.
 		 * println("Unable to login for upgrade for user in Agent shop, please see the failure screenshot"
 		 * ); Assert.
 		 * fail("Unable to login for upgrade for user in Agent shop, please see the failure screenshot"
@@ -2657,13 +2658,14 @@ public class E2EOrderPlaced_Steps {
 	}
 
 	/*
-	 * @And("^Verify the devices ([^\"]*), ([^\"]*) and ([^\"]*) in basket$") public
-	 * void verifyDevicesInBasket(String smartwatchname, String fitnesstrackername,
-	 * String tabletname) throws Throwable { try {
+	 * @And("^Verify the devices ([^\"]*), ([^\"]*) and ([^\"]*) in basket$")
+	 * public void verifyDevicesInBasket(String smartwatchname, String
+	 * fitnesstrackername, String tabletname) throws Throwable { try {
 	 * driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 	 * PageFactory.initElements(driver, BasketPage.class);
-	 * BasketPageActions.verifyDevicesInBasket(smartwatchname, fitnesstrackername,
-	 * tabletname); } catch (Exception e) { // TODO Auto-generated catch block
+	 * BasketPageActions.verifyDevicesInBasket(smartwatchname,
+	 * fitnesstrackername, tabletname); } catch (Exception e) { // TODO
+	 * Auto-generated catch block
 	 * System.out.println("not able to verify if phone tab is selected");
 	 * Assert.fail("not able to verify if phone tab is selected"); } }
 	 */
@@ -2688,8 +2690,8 @@ public class E2EOrderPlaced_Steps {
 	 * 
 	 * try { driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 	 * PageFactory.initElements(driver, PAYMSimOPage.class);
-	 * PAYMSimOPageActions.SelectRecommendedTariffPhonesTab(contractlength); } catch
-	 * (Exception e) { e.printStackTrace();
+	 * PAYMSimOPageActions.SelectRecommendedTariffPhonesTab(contractlength); }
+	 * catch (Exception e) { e.printStackTrace();
 	 * System.out.println("Unable to choose contract length");
 	 * Assert.fail("Unable to choose contract length"); } }
 	 */
@@ -2959,7 +2961,8 @@ public class E2EOrderPlaced_Steps {
 		driver.navigate().to(Newurl_CVOS);
 		Thread.sleep(3000);
 		/*
-		 * } catch (Exception e) { // TODO Auto-generated catch block System.out.
+		 * } catch (Exception e) { // TODO Auto-generated catch block
+		 * System.out.
 		 * println("Unable to Login/validate home page, please see the failure screenshot"
 		 * ); Assert.
 		 * fail("Unable to Login/validate home page, please see the failure screenshot"
@@ -3446,8 +3449,27 @@ public class E2EOrderPlaced_Steps {
 			PageFactory.initElements(driver, BaseCommPage.class);
 			PageFactory.initElements(driver, PAYMandPAYGTariffAndExtrasPage.class);
 			BaseCommPageActions.BuynowwithDevice(device_name);
+			System.out.println("Buynow function completed");
 			BaseCommPageActions.VerifyPage();
+			System.out.println("Verify page action completed");
 			BaseCommPageActions.verifyTariffType("Basecomm");
+			System.out.println("Verify Tariff type action completed");
+		} catch (Exception e) {
+			e.printStackTrace();
+			Assert.fail("Unable to select device and verify tariff and extras page");
+
+		}
+	}
+
+	@Given("^Click on \"Buy Now\" button for ([^\"]*)$")
+	public void click_on_button_for_Apple_iPad_Pro_inch(String device_name) throws Throwable {
+		// Write code here that turns the phrase above into concrete actions
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		try {
+			PageFactory.initElements(driver, BaseCommPage.class);
+			PageFactory.initElements(driver, PAYMandPAYGTariffAndExtrasPage.class);
+			BaseCommPageActions.BuynowwithDevice(device_name);
+			System.out.println("Buynow function completed");
 		} catch (Exception e) {
 			e.printStackTrace();
 			Assert.fail("Unable to select device and verify tariff and extras page");
@@ -3671,8 +3693,8 @@ public class E2EOrderPlaced_Steps {
 
 	// Then Verify the price gets updated based on the new colour and capacity
 	/*
-	 * @And("^Verify the price gets updated based on the new colour and capacity$" )
-	 * public void verifyPriceDisplaybased_on_Colour_and_capacity() {
+	 * @And("^Verify the price gets updated based on the new colour and capacity$"
+	 * ) public void verifyPriceDisplaybased_on_Colour_and_capacity() {
 	 * driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS); try {
 	 * PageFactory.initElements(driver, BaseCommPage.class);
 	 * BaseCommPageActions.VerifyPriceChangeuponCapacity();
@@ -3702,8 +3724,11 @@ public class E2EOrderPlaced_Steps {
 			log.debug("Running Test Step: @And(Verify the current sort order details)");
 
 			/*
-			 * if (driver.findElement(By.xpath("//*[@class='page-all']")).isEnabled ()) {
-			 * driver.findElement(By.xpath("//*[@class='page-all']")).click(); } else {
+			 * if
+			 * (driver.findElement(By.xpath("//*[@class='page-all']")).isEnabled
+			 * ()) {
+			 * driver.findElement(By.xpath("//*[@class='page-all']")).click(); }
+			 * else {
 			 * 
 			 * PhonesListingPageAction.clickOnViewAllProductsOnOnePage(); }
 			 */
@@ -4389,16 +4414,24 @@ public class E2EOrderPlaced_Steps {
 		try {
 			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 			PageFactory.initElements(driver, UpgradeCustomerPage.class);
+			UpgradeCustomerPageActions.RecyclesectionDisplayed();
 		} catch (Exception e) {
 			e.printStackTrace();
-			Assert.fail(
-					"Unable to Verify whether promotional ribbons are displayed on the Tariff tile in the Tariff and Extras page");
+			Assert.fail("Unable to Verify recycle section displayed");
 		}
 	}
 
 	@Then("^Select any one recycle option and click on 'Continue to Upgrade'$")
 	public void select_any_one_recycle_option_and_click_on_Continue_to_Upgrade() throws Throwable {
-		// Write code here that turns the phrase above into concrete actions
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, UpgradeCustomerPage.class);
+			UpgradeCustomerPageActions.RecyclesectionDisplayed();
+		} catch (Exception e) {
+			e.printStackTrace();
+			Assert.fail("Unable to Verify recycle section displayed");
+		}
+
 	}
 
 	@Then("^perform ([^\\\"]*) in OTAC page$")
@@ -4418,15 +4451,55 @@ public class E2EOrderPlaced_Steps {
 
 	// --------------------------------------------------------------------------
 
+	@Then("^verify cover me is present in Basket page$")
+	public void verify_cover_me_is_present_in_Basket_page() throws Throwable {
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, BasketPage.class);
+			Thread.sleep(3000);
+			BasketPageActions.InsuranceSectionBasket();
+			Thread.sleep(2000);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			System.out.println("Unable to see insurance in basket page");
+			Assert.fail("Unable to see insurance in basket page");
+
+		}
+	}
+
 	@Then("^verify cover me is present in delivery page$")
 	public void verify_cover_me_is_present_in_delivery_page() throws Throwable {
-		// Write code here that turns the phrase above into concrete actions
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, BasketPage.class);
+			Thread.sleep(3000);
+			System.out.println("Entering insurance in Delivery page");
+
+			BasketPageActions.InsuranceSectionDeliveryPage();
+			Thread.sleep(2000);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			System.out.println("Unable to see insurance in Delivery page");
+			Assert.fail("Unable to see insurance in Delivery page");
+
+		}
 	}
 
 	@Then("^verify cover me is present in  payment page$")
 	public void verify_cover_me_is_present_in_payment_page() throws Throwable {
-		// Write code here that turns the phrase above into concrete actions
-	}
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, PaymentPage.class);
+			Thread.sleep(3000);
+			System.out.println("Entering insurance in payment page");
+			PaymentPageActions.InsuranceSectionPaymentPage();
+			Thread.sleep(2000);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			System.out.println("Unable to see insurance in payment page");
+			Assert.fail("Unable to see insurance in payment page");
+
+		}	}
 
 	@Then("^verify cover me is present in  agreements page$")
 	public void verify_cover_me_is_present_in_agreements_page() throws Throwable {
@@ -4448,4 +4521,19 @@ public class E2EOrderPlaced_Steps {
 		// Write code here that turns the phrase above into concrete actions
 	}
 
+	@Given("^select an insurance$")
+	public void select_an_insurance() throws Throwable {
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, PAYMandPAYGTariffAndExtrasPage.class);
+			Thread.sleep(3000);
+			PAYMandPAYGTariffAndExtrasPageActions.addInsurance();
+			Thread.sleep(2000);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			System.out.println("Unable to choose insurance");
+			Assert.fail("Unable to choose insurance");
+
+		}
+	}
 }

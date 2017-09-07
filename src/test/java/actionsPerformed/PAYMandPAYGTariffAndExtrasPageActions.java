@@ -62,6 +62,17 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 		log.debug("Added a random accessory to basket");
 
 	}
+	
+	public static void addInsurance() throws InterruptedException {
+		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+		System.out.println("Entering add insurance function");
+
+		pageobjects.PAYMandPAYGTariffAndExtrasPage.AddRandomInsurance.click();
+		Thread.sleep(2000);
+		System.out.println("Completed add insurance function");
+		log.debug("Completed add insurance function");
+
+	}
 
 	public static void PayDeviceFullLink() {
 		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);

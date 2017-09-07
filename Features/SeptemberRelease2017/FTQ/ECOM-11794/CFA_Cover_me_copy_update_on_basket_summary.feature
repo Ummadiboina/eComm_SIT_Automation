@@ -25,8 +25,11 @@ Feature: CFA_Cover_me_copy_update_on_basket_summary
     And select <color> color of the connected device
     And select <capacity> capacity of the connected device
     And Navigate to device details page
-    And Click on "Buy Now" button for <tabletname> and verify "Tariffs and Extras" page is displayed
+    And Land on the 'Tariffs and extra' page
+    And select an insurance
+    #And Click on "Buy Now" button for <tabletname>
     And I Land on the basket page and choose home delivery option
+    And verify cover me is present in Basket page
     And click on "go to checkout" button
     Then verify cover me is present in delivery page
     And input <Firstname> and <Surname> and other valid details in Delivery page and Click on the 'Continue button'
@@ -41,5 +44,5 @@ Feature: CFA_Cover_me_copy_update_on_basket_summary
     And pdf content
 
     Examples: 
-      | tabletname               | color     | capacity | Status   |
-      | Apple iPad Pro 10.5 inch | Rose Gold | 256GB    | In Stock |
+      | tabletname               | color     | capacity | Status   | handset  | Firstname | Surname | Username     |
+      | Apple iPad Pro 10.5 inch | Rose Gold | 256GB    | In Stock | GalaxyS8 | TEST      | ACCEPTA | TEST ACCEPTA |
