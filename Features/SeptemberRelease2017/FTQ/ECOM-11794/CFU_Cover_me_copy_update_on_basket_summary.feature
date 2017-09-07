@@ -19,7 +19,6 @@ Feature: CFU_Cover_me_copy_update_on_basket_summary
     continue to next step 
     download pdf and  verify insurance copy text is displayed on pdf
     
-    ng box'
 
     Given I am an Existing user and Navigates to Signin page
     And Signin using valid <username> and <password> credentials

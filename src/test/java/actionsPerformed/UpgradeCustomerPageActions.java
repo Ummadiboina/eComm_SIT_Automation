@@ -1137,6 +1137,13 @@ public class UpgradeCustomerPageActions extends Environment {
 		if (driver.findElement(By.id("newRecycleOptionsTile")).isDisplayed()) {
 			System.out.println("Upgrade and Recycle options is displayed");
 			driver.findElement(By.xpath("//a[@ng-click='selectRecycleDevice();']")).click();
+			System.out.println("Clicked on the choose your device link");
+		}
+		else
+		{
+			Assert.fail("Unable to verify recycle options");
 		}
 	}
+	
+	
 }

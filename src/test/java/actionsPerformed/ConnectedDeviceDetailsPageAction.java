@@ -283,22 +283,5 @@ public class ConnectedDeviceDetailsPageAction extends Environment {
 		}
 	}
 
-	/*public static void isCapacityDropDownDisplayed() throws Exception {
-		// TODO Auto-generated method stub
-		Thread.sleep(5000);
-		WebElement element = pageobjects.ConnectedDeviceDetailsPage.ColorDropDown;
-		if (!element.isDisplayed()) {
-			Assert.fail("capacity drop down is not present");
-		}
-	}
-
-	public static void isColorDropDownDisplayed() throws Exception {
-		// TODO Auto-generated method stub
-		Thread.sleep(5000);
-		WebElement element = pageobjects.ConnectedDeviceDetailsPage.CapacityDropDown;
-		if (!element.isDisplayed()) {
-			Assert.fail("color drop down is not present");
-		}
-	}*/
 
 }

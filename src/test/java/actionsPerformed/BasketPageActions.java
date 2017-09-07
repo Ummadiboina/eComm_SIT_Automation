@@ -570,6 +570,57 @@ public class BasketPageActions extends Environment {
 		}
 
 	}
+	
+	public static void InsuranceSectionBasket() throws InterruptedException {
+		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+		System.out.println("Entering add InsuranceSectionBasket Method");
+
+		//pageobjects.BasketPage.InsuranceSection.sendKeys(Keys.ENTER);
+		
+		if(pageobjects.BasketPage.InsuranceSection.isDisplayed())
+		{
+			System.out.println("Insurance is displayed in Basket page and text is  - "+pageobjects.BasketPage.InsuranceSection.getText());
+
+		}
+
+		
+		Thread.sleep(2000);
+		System.out.println("Completed InsuranceSectionBasket function");
+		log.debug("Completed InsuranceSectionBasket function");
+
+	}
+	
+	public static void InsuranceSectionDeliveryPage() throws InterruptedException {
+		System.out.println("Entering InsuranceSectionDeliveryPage Method");
+		
+		Thread.sleep(3000);
+
+		if(driver.findElement(By.xpath("//tr[@id='basket-insurance']")).isDisplayed())
+		{
+			System.out.println("Insurance is displayed in Delivery page and text is  - "+driver.findElement(By.xpath("//tr[@id='basket-insurance']")).getText());
+
+		}
+		else
+		{
+		System.out.println("Insurance is not displayed");
+		}
+		
+	/*	if(pageobjects.DeliveryPage.InsuranceSection.isDisplayed())
+		{
+			System.out.println("Insurance is displayed in Delivery page and text is  - "+pageobjects.DeliveryPage.InsuranceSection.getText());
+
+		}
+*/
+		
+		Thread.sleep(2000);
+		System.out.println("Completed InsuranceSectionDeliveryPage function");
+		log.debug("Completed InsuranceSectionDeliveryPage function");
+
+	}
+	
+
+	
+	
 
 
 }

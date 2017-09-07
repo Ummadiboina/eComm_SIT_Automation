@@ -3449,8 +3449,27 @@ public class E2EOrderPlaced_Steps {
 			PageFactory.initElements(driver, BaseCommPage.class);
 			PageFactory.initElements(driver, PAYMandPAYGTariffAndExtrasPage.class);
 			BaseCommPageActions.BuynowwithDevice(device_name);
+			System.out.println("Buynow function completed");
 			BaseCommPageActions.VerifyPage();
+			System.out.println("Verify page action completed");
 			BaseCommPageActions.verifyTariffType("Basecomm");
+			System.out.println("Verify Tariff type action completed");
+		} catch (Exception e) {
+			e.printStackTrace();
+			Assert.fail("Unable to select device and verify tariff and extras page");
+
+		}
+	}
+
+	@Given("^Click on \"Buy Now\" button for ([^\"]*)$")
+	public void click_on_button_for_Apple_iPad_Pro_inch(String device_name) throws Throwable {
+		// Write code here that turns the phrase above into concrete actions
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		try {
+			PageFactory.initElements(driver, BaseCommPage.class);
+			PageFactory.initElements(driver, PAYMandPAYGTariffAndExtrasPage.class);
+			BaseCommPageActions.BuynowwithDevice(device_name);
+			System.out.println("Buynow function completed");
 		} catch (Exception e) {
 			e.printStackTrace();
 			Assert.fail("Unable to select device and verify tariff and extras page");
@@ -4098,7 +4117,7 @@ public class E2EOrderPlaced_Steps {
 			Assert.fail("Unable to select a device from Recommended devices section");
 		}
 	}
-
+	
 	@And("^Select a tariff ([^\"]*) with ribbons$")
 	public void select_tariff_with_ribbons(String Tariff) throws Throwable {
 		try {
@@ -4395,16 +4414,24 @@ public class E2EOrderPlaced_Steps {
 		try {
 			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 			PageFactory.initElements(driver, UpgradeCustomerPage.class);
+			UpgradeCustomerPageActions.RecyclesectionDisplayed();
 		} catch (Exception e) {
 			e.printStackTrace();
-			Assert.fail(
-					"Unable to Verify whether promotional ribbons are displayed on the Tariff tile in the Tariff and Extras page");
+			Assert.fail("Unable to Verify recycle section displayed");
 		}
 	}
 
 	@Then("^Select any one recycle option and click on 'Continue to Upgrade'$")
 	public void select_any_one_recycle_option_and_click_on_Continue_to_Upgrade() throws Throwable {
-		// Write code here that turns the phrase above into concrete actions
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, UpgradeCustomerPage.class);
+			UpgradeCustomerPageActions.RecyclesectionDisplayed();
+		} catch (Exception e) {
+			e.printStackTrace();
+			Assert.fail("Unable to Verify recycle section displayed");
+		}
+
 	}
 
 	@Then("^perform ([^\\\"]*) in OTAC page$")
@@ -4424,15 +4451,55 @@ public class E2EOrderPlaced_Steps {
 
 	// --------------------------------------------------------------------------
 
+	@Then("^verify cover me is present in Basket page$")
+	public void verify_cover_me_is_present_in_Basket_page() throws Throwable {
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, BasketPage.class);
+			Thread.sleep(3000);
+			BasketPageActions.InsuranceSectionBasket();
+			Thread.sleep(2000);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			System.out.println("Unable to see insurance in basket page");
+			Assert.fail("Unable to see insurance in basket page");
+
+		}
+	}
+
 	@Then("^verify cover me is present in delivery page$")
 	public void verify_cover_me_is_present_in_delivery_page() throws Throwable {
-		// Write code here that turns the phrase above into concrete actions
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, BasketPage.class);
+			Thread.sleep(3000);
+			System.out.println("Entering insurance in Delivery page");
+
+			BasketPageActions.InsuranceSectionDeliveryPage();
+			Thread.sleep(2000);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			System.out.println("Unable to see insurance in Delivery page");
+			Assert.fail("Unable to see insurance in Delivery page");
+
+		}
 	}
 
 	@Then("^verify cover me is present in  payment page$")
 	public void verify_cover_me_is_present_in_payment_page() throws Throwable {
-		// Write code here that turns the phrase above into concrete actions
-	}
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, PaymentPage.class);
+			Thread.sleep(3000);
+			System.out.println("Entering insurance in payment page");
+			PaymentPageActions.InsuranceSectionPaymentPage();
+			Thread.sleep(2000);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			System.out.println("Unable to see insurance in payment page");
+			Assert.fail("Unable to see insurance in payment page");
+
+		}	}
 
 	@Then("^verify cover me is present in  agreements page$")
 	public void verify_cover_me_is_present_in_agreements_page() throws Throwable {
@@ -4453,6 +4520,103 @@ public class E2EOrderPlaced_Steps {
 	public void pdf_content() throws Throwable {
 		// Write code here that turns the phrase above into concrete actions
 	}
+	
+	
+		@Given("^select an insurance$")
+	public void select_an_insurance() throws Throwable {
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, PAYMandPAYGTariffAndExtrasPage.class);
+			Thread.sleep(3000);
+			PAYMandPAYGTariffAndExtrasPageActions.addInsurance();
+			Thread.sleep(2000);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			System.out.println("Unable to choose insurance");
+			Assert.fail("Unable to choose insurance");
+
+		}
+	}
+	
+	
+	@And("^select a ([^\"]*) which has free insurance$")
+	public void select_Tariff_Free_Insurance(String tariff) throws InterruptedException {
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, PAYMandPAYGTariffAndExtrasPage.class);
+			UpgradeCustomerPageActions.selectTariff(tariff);
+		} catch (Exception e) {
+			e.printStackTrace();
+			Assert.fail("Unable to select a tariff");
+		}
+	}
+
+	@And("^verify that the insurance is in a sorted order$")
+	public void verifyPriceSortedForInsurance() throws InterruptedException {
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, PAYMandPAYGTariffAndExtrasPage.class);
+			PAYMandPAYGTariffAndExtrasPageActions.verifySortOrderInsurance();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	@And("^deselect if any insurance is autoselected$")
+	public void deselect_if_any_insurance_is_autoselected() throws Throwable {
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, PAYMandPAYGTariffAndExtrasPage.class);
+			PAYMandPAYGTariffAndExtrasPageActions.verifyFreeInsuranceAutoSelected();
+			PAYMandPAYGTariffAndExtrasPageActions.deselectAutoSelectedInsurance();
+			Thread.sleep(3000);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			System.out.println("unable to deselect if any insurance is autoselected");
+			Assert.fail("unable to deselect if any insurance is autoselected");
+		}
+	}
+	
+	@And("^verify that the cheapest insurance is shown to crossell in the basket page$")
+	public void cheapest_insurance_displayed_in_crosssell() throws Throwable {
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, PAYMandPAYGTariffAndExtrasPage.class);
+			PAYMandPAYGTariffAndExtrasPageActions.verifyCheapestInsurance();
+			Thread.sleep(3000);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			System.out.println("Unable to verify that the cheapest insurance is shown to crossell in the basket page");
+			Assert.fail("Unable to verify that the cheapest insurance is shown to crossell in the basket page");
+		}
+	}
+	
+	@And("^verify if the 'Add Now' button is displayed for the cheapest insurance shown in basket page$")
+	public void AddNowbutton_For_Cheapest_Insurance() throws Throwable {
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, PAYMandPAYGTariffAndExtrasPage.class);
+			PAYMandPAYGTariffAndExtrasPageActions.verifyAddNowButtonDisplayed();
+			Thread.sleep(3000);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			System.out.println("Unable to verify if the 'Add Now' button is displayed for the cheapest insurance shown in basket page");
+			Assert.fail("Unable to verify if the 'Add Now' button is displayed for the cheapest insurance shown in basket page");
+		}
+	}
+	@And("^click on the 'Add now' button and verify Insurance gets added successfully$")
+	public void click_on_AddNowbutton_For_Cheapest_Insurance() throws Throwable {
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, PAYMandPAYGTariffAndExtrasPage.class);
+			PAYMandPAYGTariffAndExtrasPageActions.clickOnAddNow();
+			Thread.sleep(3000);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			System.out.println("Unable to click on the 'Add now' button and verify Insurance gets added successfully");
+			Assert.fail("Unable to click on the 'Add now' button and verify Insurance gets added successfully");
+		}
+	}	
 
 	@And("^select a ([^\"]*) which has free insurance$")
 	public void select_Tariff_Free_Insurance(String tariff) throws InterruptedException {

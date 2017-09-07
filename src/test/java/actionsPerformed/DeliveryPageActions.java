@@ -9,7 +9,6 @@ import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
-
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Reporter;
 
@@ -45,6 +44,8 @@ public class DeliveryPageActions {
 			}
 		}
 	
+				
+		
 		
 		public static void AboutYou(String Firstname, String Surname)
 		{
@@ -121,7 +122,24 @@ public class DeliveryPageActions {
 			}
 		}
 		
-		
+		public static void InsuranceSectionDeliveryPage() {
+			System.out.println("Entering InsuranceSectionDeliveryPage Method");
+			
+			if(driver.findElement(By.xpath("//tr[@id='basket-insurance']")).isDisplayed())
+			{
+				System.out.println("Insurance is displayed in Delivery page and text is  - "+driver.findElement(By.xpath("//tr[@id='basket-insurance']")).getText());
+
+			}
+			else
+			{
+			System.out.println("Insurance is not displayed");
+			}
+			
+			
+			System.out.println("Completed InsuranceSectionDeliveryPage function");
+			log.debug("Completed InsuranceSectionDeliveryPage function");
+
+		}
 		
 		
 		
