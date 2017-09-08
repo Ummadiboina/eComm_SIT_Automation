@@ -2235,9 +2235,6 @@ public class E2EOrderPlaced_Steps {
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		try {
 			PageFactory.initElements(driver, PaymentPage.class);
-			PageFactory.initElements(driver, DeliveryPage.class);
-			Thread.sleep(5000);
-			DeliveryPageActions.ClickContinue();
 			Thread.sleep(2000);
 			PaymentPageActions.Time_At_Address();
 			Thread.sleep(2000);
@@ -2436,6 +2433,7 @@ public class E2EOrderPlaced_Steps {
 		try {
 			PageFactory.initElements(driver, BasketPage.class);
 			BasketPageActions.continueShopping();
+			Thread.sleep(5000);
 		} catch (Exception e) {
 			e.printStackTrace();
 			Assert.fail("Unable to click on Add to Basket button");
@@ -4312,8 +4310,9 @@ public class E2EOrderPlaced_Steps {
 	public void Logout_from_upgrade_journey() throws Throwable {
 		try {
 			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-			PageFactory.initElements(driver, UpgradeCustomerPage.class);
+			PageFactory.initElements(driver, ShopLandingPage.class);
 			ShopLandingPageAction.clickSignOut();
+			Thread.sleep(10000);
 		} catch (Exception e) {
 			e.printStackTrace();
 			Assert.fail("LogOut from the Upgrade Journey");
@@ -4491,7 +4490,7 @@ public class E2EOrderPlaced_Steps {
 			Assert.fail("unable to deselect if any insurance is autoselected");
 		}
 	}
-	
+
 	@And("^verify that the cheapest insurance is shown to crossell in the basket page$")
 	public void cheapest_insurance_displayed_in_crosssell() throws Throwable {
 		try {
@@ -4505,7 +4504,7 @@ public class E2EOrderPlaced_Steps {
 			Assert.fail("Unable to verify that the cheapest insurance is shown to crossell in the basket page");
 		}
 	}
-	
+
 	@And("^verify if the 'Add Now' button is displayed for the cheapest insurance shown in basket page$")
 	public void AddNowbutton_For_Cheapest_Insurance() throws Throwable {
 		try {
@@ -4515,10 +4514,13 @@ public class E2EOrderPlaced_Steps {
 			Thread.sleep(3000);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
-			System.out.println("Unable to verify if the 'Add Now' button is displayed for the cheapest insurance shown in basket page");
-			Assert.fail("Unable to verify if the 'Add Now' button is displayed for the cheapest insurance shown in basket page");
+			System.out.println(
+					"Unable to verify if the 'Add Now' button is displayed for the cheapest insurance shown in basket page");
+			Assert.fail(
+					"Unable to verify if the 'Add Now' button is displayed for the cheapest insurance shown in basket page");
 		}
 	}
+
 	@And("^click on the 'Add now' button and verify Insurance gets added successfully$")
 	public void click_on_AddNowbutton_For_Cheapest_Insurance() throws Throwable {
 		try {
@@ -4532,5 +4534,31 @@ public class E2EOrderPlaced_Steps {
 			Assert.fail("Unable to click on the 'Add now' button and verify Insurance gets added successfully");
 		}
 	}
+
+	@And("^select continue button in delivery page for existing customer$")
+	public void select_continue_delivery_page() throws Throwable {
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, DeliveryPage.class);
+			DeliveryPageActions.ClickContinue();
+			Thread.sleep(3000);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			System.out.println("Unable to click on the 'Add now' button and verify Insurance gets added successfully");
+			Assert.fail("Unable to click on the 'Add now' button and verify Insurance gets added successfully");
+		}
+	}
 	
+	@And("^close Ready to checkout pop up if displayed$")
+	public void close_popup() throws Throwable {
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, ShopLandingPage.class);
+			ShopLandingPageAction.closePopUpIfDisplayed();
+			Thread.sleep(3000);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			Assert.fail("Unable to close Ready to checkout pop up");
+		}
+	}
 }
