@@ -15,4 +15,7 @@ public class ShopLandingPage {
 	
 	@FindBy(how = How.XPATH, using = "//a[contains(@href, 'o2.co.uk/logout')]")
 	public static WebElement SignOutLink;
+	
+	@FindBy(how = How.XPATH, using = "//a[@class='box-close']")
+	public static WebElement ClosePopUp;
 }
