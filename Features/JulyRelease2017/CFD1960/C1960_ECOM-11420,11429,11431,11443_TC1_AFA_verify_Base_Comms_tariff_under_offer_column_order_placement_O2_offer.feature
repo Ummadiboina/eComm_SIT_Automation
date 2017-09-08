@@ -11,12 +11,12 @@ Feature: C1960_ECOM-11420,11429,11431,11443_TC1_AFA_verify_Base_Comms_tariff_und
     And Select valid <Extras> from extras tab
     And Validate all the Basket content and checkout
     Then perform all the advisory checks
-    And perform the credit checks using valid <Firstname> and <Surname> and valid <Username>
-    And Register customer with valid <Firstname> and <Surname> and other valid details in delivery page
-    And Choose <DeliveryType> delivery address and delivery time
+    And perform the credit checks using valid <Firstname>, <Surname>, <HouseNumber>, <PostCode> and valid <Username> 
+    And Register customer with valid <Firstname>, <Surname>, <HouseNumber>, <PostCode> and other valid details in delivery page 
+    And Choose HomeDelivery delivery address and delivery time 
     When Pay by card
     Then Order confirmation message should be displayed
 
     Examples: 
-      | Device | Tariffs | Extras | DeliveryType | Firstname | Surname | Username     |
-      | Random | Base    | Base   | HomeDelivery | Test      | Accepta | Test Accepta |
+      | Device | Tariffs | Extras | DeliveryType | Firstname | Surname | Username     |HouseNumber | PostCode |
+      | Random | Base    | Base   | HomeDelivery | Test      | Accepta | Test Accepta |    2 | SL11UP   |

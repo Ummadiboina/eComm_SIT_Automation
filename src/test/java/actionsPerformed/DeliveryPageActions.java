@@ -13,11 +13,12 @@ import org.openqa.selenium.support.ui.Select;
 import org.testng.Reporter;
 
 import GlobalActions.RandomEmailAddressCreation;
+import helpers.Environment;
 import pageobjects.DeliveryPage;
 
-public class DeliveryPageActions {
+public class DeliveryPageActions extends Environment{
 	  
-	public static WebDriver driver;
+
 	public List<HashMap<String, String>> datamap;
 	static Logger log = Logger.getLogger("devpinoyLogger");
 	static JavascriptExecutor js = (JavascriptExecutor) driver;
@@ -80,23 +81,10 @@ public class DeliveryPageActions {
 		public static void selectExistingAcctAndFastCheckOut() throws InterruptedException {
 			Thread.sleep(5000);
 			
-			System.out.println("going to click on Create a new account");
-			//have to change the below as it is not working
-			driver.switchTo().frame("destination_publishing_iframe_telefonicauklimited_0");
-			System.out.println("switched to frame");
+			System.out.println("going to click on existing account");
 			
-			js.executeScript("arguments[0].click();", pageobjects.DeliveryPage.SelectAcct);
-			//driver.findElement(By.xpath("//a[contains(., 'Create a new account')]")).click();
-			
-			/*System.out.println("Going to click on Begin checkout");
-			driver.findElement(By.xpath("//button[@id='btn-continue-3']"));
-			Thread.sleep(4000);
-			driver.findElement(By.xpath("//button[@id='btn-continue']")).click();*/
-			
-			/*pageobjects.DeliveryPage.SelectAcct.click();
-			System.out.println("Existing Account is selected");
-			log.debug("Existing Account is selected");
-*/
+			pageobjects.DeliveryPage.SelectAcct.click();
+			Thread.sleep(3000);
 			js.executeScript("arguments[0].click();", pageobjects.DeliveryPage.FastCheckOut);
 //			pageobjects.DeliveryPage.FastCheckOut.click();
 			System.out.println("FastCheckout button is selected");
