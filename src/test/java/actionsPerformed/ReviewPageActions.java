@@ -135,6 +135,26 @@ public class ReviewPageActions extends Environment  {
 		}
 	}
 
+	public static void InsuranceSectionReviewPage() throws InterruptedException {
+		System.out.println("Entering InsuranceSectionReviewPage Method");
 		
+		Thread.sleep(3000);
+
+		if(driver.findElement(By.xpath("//tr[@id='basket-insurance']")).isDisplayed())
+		{
+			System.out.println("Insurance is displayed in Review page and text is  - "+driver.findElement(By.xpath("//tr[@id='basket-insurance']")).getText());
+
+		}
+		else
+		{
+		System.out.println("Insurance is not displayed");
+		}
+		
+	Thread.sleep(2000);
+		System.out.println("Completed InsuranceSectionReviewPage function");
+		log.debug("Completed InsuranceSectionReviewPage function");
+
+	}
+  
 			
 }

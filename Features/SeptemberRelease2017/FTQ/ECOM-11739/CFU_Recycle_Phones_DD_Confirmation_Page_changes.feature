@@ -11,16 +11,17 @@ Feature: CFU_Recycle_Phones_DD_Confirmation_Page_changes
     Then Select any one recycle option and click on 'Continue to Upgrade'
     And Select a <handset> device from Recommended devices section
     And Select a tariff <tariff> with ribbons in upgrade journey
-    And I Land on the basket page by clicking on Add to Basket button
+    #And Select a tariff in upgrade journey
+    And I Land on the basket page for upgrades
     And click on "go to checkout" button
     And perform <Action> in OTAC page
     And Click on the 'Continue button' in delivery page
-    And land on the payment page, input details and click 'Continue on next step'
+    And land on the payment page and input <Username> and other details and click 'Continue on next step'
     And Continue to Agreements page and confirm all the agreement checks
     And Continue to Review page and review the order
     Then order confirmation is displayed
     Then Verify contents of order confirmation page for Phones containing <Status>
 
     Examples: 
-      | username           | password  | handset  | Firstname | Surname | Username     | Action | Status           |
-      | bvt2.cfu@gmail.com | cfubvt123 | GalaxyS8 | TEST      | ACCEPTA | TEST ACCEPTA | skip   | Delayed Delivery |
+      | username           | password  | handset        | tariff                   | Firstname | Surname | Username     | Action | Status           |
+      | bvt2.cfu@gmail.com | cfubvt123 | Apple iPhone 7 | 129.99upfront37.00amonth | TEST      | ACCEPTA | TEST ACCEPTA | skip   | Delayed Delivery |

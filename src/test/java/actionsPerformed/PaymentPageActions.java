@@ -183,7 +183,7 @@ public class PaymentPageActions extends Environment {
 					
 	  }
 	  
-		public static void InsuranceSectionPaymentPage() throws InterruptedException {
+	public static void InsuranceSectionPaymentPage() throws InterruptedException {
 			System.out.println("Entering InsuranceSectionPaymentPage Method");
 			
 			Thread.sleep(3000);

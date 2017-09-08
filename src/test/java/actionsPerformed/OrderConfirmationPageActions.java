@@ -136,5 +136,15 @@ public class OrderConfirmationPageActions extends Environment {
 		return null;
 
 	}
+	
+	public static void downloadPDFcopy() {
+		System.out.println("Entering downloadPDFcopy function");
+		driver.findElement(By.xpath("//a[@href='orderConfirmation.pdf']")).click();
+		System.out.println("Completed downloading order confirmation");
+
+	}
+	
+		
+	
 
 }
