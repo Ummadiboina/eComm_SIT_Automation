@@ -15,9 +15,6 @@ import org.testng.Reporter;
 import GlobalActions.RandomEmailAddressCreation;
 import pageobjects.DeliveryPage;
 
-
-
-
 public class DeliveryPageActions {
 	  
 	public static WebDriver driver;
@@ -43,7 +40,6 @@ public class DeliveryPageActions {
 
 			}
 		}
-	
 				
 		
 		

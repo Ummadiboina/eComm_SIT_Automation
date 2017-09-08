@@ -37,11 +37,10 @@ Feature: CFA_Cover_me_copy_update_on_basket_summary
     And land on the payment page and input <Username> and other details and click 'Continue on next step'
     Then verify cover me is present in  agreements page
     And Continue to Agreements page and confirm all the agreement checks
-    Then verify cover me is present in  review page
+    Then verify cover me is present in review page
     And Continue to Review page and review the order
     When order confirmation is displayed
     Then verify cover me is present in  pdf download
-    And pdf content
 
     Examples: 
       | tabletname               | color     | capacity | Status   | handset  | Firstname | Surname | Username     |
