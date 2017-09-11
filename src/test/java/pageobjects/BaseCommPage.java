@@ -30,7 +30,7 @@ public class BaseCommPage {
 			@FindBy(how = How.XPATH, using = ("//div[@class='basket-list']//li[@data-qa-class='basket-item']/section/h3/span")) })
 	public static List<WebElement> DevicesList;
 
-	@FindBy(how = How.XPATH, using = ("//*[@id='qa-data']/a[@id='data_qa_Huawei_1']/form/button[1]"))
+	@FindBy(how = How.XPATH, using = ("(//*[@id='qa-data']/a[@id='data_qa_Huawei_1']/form/button[1])[3]"))
 	public static WebElement RandomDevice;
 
 	/*@FindAll({
