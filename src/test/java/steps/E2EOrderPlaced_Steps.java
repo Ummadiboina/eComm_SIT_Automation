@@ -4541,7 +4541,6 @@ public class E2EOrderPlaced_Steps {
 			// TODO Auto-generated catch block
 			System.out.println("Unable to see insurance in Agreement page");
 			Assert.fail("Unable to see insurance in Agreement page");
-
 		}
 	}
 
