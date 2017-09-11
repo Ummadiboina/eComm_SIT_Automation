@@ -8,6 +8,7 @@ import org.apache.log4j.Logger;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 
@@ -32,10 +33,11 @@ import helpers.Environment;
 @SuppressWarnings("unused")
 public class PhonesListingPageAction extends Environment {
 	static Logger log = Logger.getLogger("devpinoyLogger");
+	static JavascriptExecutor executor = (JavascriptExecutor) driver;
 
 	public static void PAYMPhoneSelect(String elementName) throws Throwable {
 		// pageobjects.PhonesListingPage.ViewAllPhones.sendKeys(Key.ENTER);
-		JavascriptExecutor executor = (JavascriptExecutor) driver;
+
 		executor.executeScript("arguments[0].click();", pageobjects.PhonesListingPage.ViewAllPhones);
 
 		if (elementName.contains("GalaxyS7")) {
@@ -85,7 +87,7 @@ public class PhonesListingPageAction extends Environment {
 			log.debug("Selected Iphone7");
 
 		}
-		
+
 		if (elementName.contains("Apple iPhone 7")) {
 			pageobjects.PhonesListingPage.AppleIphone7.click();
 			// Assert.assertEquals(elementName,"Galaxy S7 is not found");
@@ -1043,6 +1045,7 @@ public class PhonesListingPageAction extends Environment {
 					"Assertion Failed: Devices displayed are not as per the Brand filter applied" + e.getMessage());
 		}
 	}
+
 	public static LinkedList<String> getCurrentSortOrderUsingDeviceOffer(String FilterOption)
 			throws InterruptedException {
 
@@ -1086,5 +1089,20 @@ public class PhonesListingPageAction extends Environment {
 			deviceCurrentOrder.add(devicenamecurrentorder.get(i) + deviceoffercurrentorder.get(i));
 		}
 		return deviceCurrentOrder;
+	}
+
+	public static void searchForDevice(String devicename) {
+		System.out.println("Going to search for the device " + devicename);
+		if (pageobjects.PhonesListingPage.SearchBox.isDisplayed()) {
+			System.out.println("Search box is displayed");
+			pageobjects.PhonesListingPage.SearchBox.sendKeys(devicename);
+			pageobjects.PhonesListingPage.SearchBox.sendKeys(Keys.ENTER);
+		} else {
+			Assert.fail("No search box is present to search for the device");
+		}
+		if (pageobjects.PhonesListingPage.SearchIcon.isDisplayed()) {
+			System.out.println("Search icon is displayed");
+			executor.executeScript("arguments[0].click();", pageobjects.PhonesListingPage.SearchIcon);
+		}
 	}
 }
