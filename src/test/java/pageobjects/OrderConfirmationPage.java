@@ -26,4 +26,10 @@ public class OrderConfirmationPage {
 	public static WebElement OrderContractMessageOC;
 	
 
+	@FindBy(how = How.XPATH, using = "//*[@id='confirmation']/div/div[1]")
+	public static WebElement FreesimOrderConfirmation;
+	
+	
+	
+	
 }

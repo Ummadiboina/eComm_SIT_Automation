@@ -20,6 +20,13 @@ public class FreeSimDeliveryPageActions extends Environment {
 	static Logger log = Logger.getLogger("devpinoyLogger");
 	private static CharSequence Firstname;
 	private static CharSequence Surname;
+	
+	public static void DeliveryDetailsPostcode() throws InterruptedException{
+		
+		
+		
+		
+	}
 
 	public static void FreeSimAboutYou(String Firstname, String Surname) throws InterruptedException
 

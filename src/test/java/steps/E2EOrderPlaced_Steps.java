@@ -15,6 +15,7 @@ import GlobalActions.Autoredirection;
 import GlobalActions.JuneReleaseValidations;
 import GlobalActions.MouseHoverAction;
 import actionsPerformed.AccessoryPageActions;
+import actionsPerformed.Actions_FreeSimPage;
 import actionsPerformed.AdditionalInformationPageActions;
 import actionsPerformed.Agent_AdvisoryChecksActions;
 import actionsPerformed.Agent_ConfirmationPageActions;
@@ -70,6 +71,7 @@ import pageobjects.CVOS_PageObjects;
 import pageobjects.ConnectedDeviceDetailsPage;
 import pageobjects.DeliveryPage;
 import pageobjects.FitnessTrackerPage;
+import pageobjects.FreeSimPageEnterManually;
 import pageobjects.LikeFreePage;
 import pageobjects.MobileBroadBandPage;
 import pageobjects.MouseHoverPage;
@@ -81,6 +83,7 @@ import pageobjects.PAYMandPAYGTariffAndExtrasPage;
 import pageobjects.PaymentPage;
 import pageobjects.PhonesListingPage;
 import pageobjects.ReviewPage;
+import pageobjects.SendMeMySim;
 import pageobjects.ShopLandingPage;
 import pageobjects.SimsPage;
 import pageobjects.SmartwatchesPage;
@@ -631,6 +634,13 @@ public class E2EOrderPlaced_Steps {
 
 	@Given("^choose to upgrade any Phone in My upgrade page$")
 	public void choose_to_upgrade_any_Phone_in_My_upgrade_page() throws Throwable {
+		PageFactory.initElements(driver, MouseHoverPage.class);
+		PageFactory.initElements(driver, UpgradePhonesListingPage.class);
+		MouseHoverAction.UpgradeandUpgradeNow();
+		Thread.sleep(5000);
+		Autoredirection.redirectUpgrades();
+		//pageobjects.UpgradeCustomerPage.Continue.click();
+		//Autoredirection.redirectUpgrades();
 
 	}
 
@@ -4301,4 +4311,319 @@ public class E2EOrderPlaced_Steps {
 			Assert.fail("LogOut from the Upgrade Journey");
 		}
 	}
+	////////////////////////////////////////////////////////////////////////////////////////
+	/////////////////////////Regression from September Release//////////////////////////////
+	////////////////////////////////////////////////////////////////////////////////////////
+	
+	@Then("^I should see 'Your Sim Card'section$")
+	public void i_should_see_Your_Sim_Card_section() throws Throwable {
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, UpgradeCustomerPage.class);
+			UpgradeCustomerPageActions.DisplayYourSimCardSection();
+		} catch (Exception e) {
+			e.printStackTrace();
+			Assert.fail("The Your Sim section not displayed");
+		}
+		
+	   
+	}
+
+	@And("^no option should be selected$")
+	public void no_option_should_be_selected() throws Throwable {
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, UpgradeCustomerPage.class);
+			UpgradeCustomerPageActions.RadioButtonNotSelectedByDefault();
+		} catch (Exception e) {
+			e.printStackTrace();
+			Assert.fail("Radio button is selected by default");
+		}
+	}
+
+	@And("^verify that Confirm CTA is not displayed$")
+	public void verify_that_Confirm_CTA_is_not_displayed() throws Throwable {
+		
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, UpgradeCustomerPage.class);
+			UpgradeCustomerPageActions.ConfirmButtonNotDisplayed();
+		} catch (Exception e) {
+			e.printStackTrace();
+			Assert.fail("The confirm button is present");
+		}
+	}
+	    
+
+
+	@And("^verify that copy text 'Your Sim Card'section$")
+	public void verify_that_copy_text_Your_Sim_Card_section() throws Throwable {
+	    
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, UpgradeCustomerPage.class);
+			UpgradeCustomerPageActions.YourSimSectionCopyText();
+		} catch (Exception e) {
+			e.printStackTrace();
+			Assert.fail("The valid copytext is not displayed");
+		}
+	}
+		
+		
+
+	@And("^verfiy that two option are displayed$")
+	public void verfiy_that_two_option_are_displayed() throws Throwable {
+
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, UpgradeCustomerPage.class);
+			UpgradeCustomerPageActions.TwoOptionsDisplayed();
+		} catch (Exception e) {
+			e.printStackTrace();
+			Assert.fail("The two options is not displayed");
+		}
+	}
+
+	@And("^verify that 'Sim Swap Form'link is diplayed$")
+	public void verify_that_Sim_Swap_Form_link_is_diplayed() throws Throwable {
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, UpgradeCustomerPage.class);
+			UpgradeCustomerPageActions.SimSwapLinkDisplayed();
+		} catch (Exception e) {
+			e.printStackTrace();
+			Assert.fail("The Sim swap link is not displayed");
+		}
+	}
+
+	@When("^I click on 'Sim Swap Form' I should be opned with a new tab$")
+	public void i_click_on_Sim_Swap_Form_I_should_be_opned_with_a_new_tab() throws Throwable {
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, UpgradeCustomerPage.class);
+			UpgradeCustomerPageActions.ClickOnSimSwapLink();
+		} catch (Exception e) {
+			e.printStackTrace();
+			Assert.fail("Failed to click on the Sim swap form link");
+		}
+	    
+	}
+
+	@And("^Select a 'I need a sim'option$")
+	public void select_a_I_need_a_sim_option() throws Throwable {
+		
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, UpgradeCustomerPage.class);
+			UpgradeCustomerPageActions.ClickIneedAsim();
+		} catch (Exception e) {
+			e.printStackTrace();
+			Assert.fail("The Radio button for I need a sim is not clicked");
+		}
+	   
+	}
+
+	@And("^Verify that 'Confirm CTA' is displayed$")
+	public void verify_that_Confirm_CTA_is_displayed() throws Throwable {
+		
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, UpgradeCustomerPage.class);
+			UpgradeCustomerPageActions.ConfirmCTADisplayed();
+		} catch (Exception e) {
+			e.printStackTrace();
+			Assert.fail("The confirm CTA is not displayed");
+		}
+	   
+	}
+
+	@And("^Click on 'Confirm CTA'$")
+	public void click_on_Confirm_CTA() throws Throwable {
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, UpgradeCustomerPage.class);
+			UpgradeCustomerPageActions.ClickConfirmCTADisplayed();
+		} catch (Exception e) {
+			e.printStackTrace();
+			Assert.fail("The confirm CTA is not clicked");
+		}
+	   
+	}
+
+	@And("^verify that 'Go to checkout' CTA is enabled$")
+	public void verify_that_Go_to_checkout_CTA_is_enabled() throws Throwable {
+		
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, BasketPage.class);
+			BasketPageActions.UpgradeBasketPageYourSim();
+		} catch (Exception e) {
+			e.printStackTrace();
+			Assert.fail("The Checkout is not enabled");
+		}
+	   
+	}
+
+	@And("^Verify that the option selected by the user in 'Your sim card' section in upgrade options page is retained$")
+	public void verify_that_the_option_selected_by_the_user_in_Your_sim_card_section_in_upgrade_options_page_is_retained() throws Throwable {
+	   
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, UpgradeCustomerPage.class);
+			BasketPageActions.UpgradeBasketYourSim();
+		} catch (Exception e) {
+			e.printStackTrace();
+			Assert.fail("The Your sim card section is not present");
+		}
+		
+	}
+
+	@And("^The OTAC page should be displayed$")
+	public void the_OTAC_page_should_be_displayed() throws Throwable {
+		
+		//try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, DeliveryPage.class);
+			DeliveryPageActions.OtacPageDisplayed();
+	/*	} catch (Exception e) {
+			e.printStackTrace();
+			Assert.fail("The OTAC page is not displayed");
+		}
+	    */
+	}
+
+
+	@Then("^I should land on the Delivery page and click on 'Continue'button$")
+	public void i_should_land_on_the_Delivery_page_and_click_on_Continue_button() throws Throwable {
+	    
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, DeliveryPage.class);
+			DeliveryPageActions.UpgradeDeliveryPageDisplayed();
+		} catch (Exception e) {
+			e.printStackTrace();
+			Assert.fail("The Continue Button is not displayed");
+		}
+		
+	}
+
+	@And("^I enter TEST ACCEPTA all the details and click on 'Submit' button$")
+	public void i_enter_all_the_details_and_click_on_Submit_button(String Username) throws Throwable {
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, DeliveryPage.class);
+			PaymentPageActions.Card_Details(Username);
+		} catch (Exception e) {
+			e.printStackTrace();
+			Assert.fail("The Continue Button is not displayed");
+		}
+	}
+	
+	@And("^Select a 'I dont need a new sim'option$")
+	public void select_a_I_dont_need_a_new_sim_option() throws Throwable {
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, UpgradeCustomerPage.class);
+			UpgradeCustomerPageActions.ClickIneedAsim();
+		} catch (Exception e) {
+			e.printStackTrace();
+			Assert.fail("The Continue Button is not displayed");
+		}
+		
+	}
+	
+
+///////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////Anusha Demo Free Sim Enter Manually/////////////////
+///////////////////////////////////////////////////////////////////////////////////////
+
+
+@And("^navigate to PayG SIMO page$")
+public void navigate_to_PayG_SIMO_page() throws Throwable {
+
+//try {
+driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+PageFactory.initElements(driver, MouseHoverPage.class);
+MouseHoverAction.PayGSimoNavigation();
+Autoredirection.redirect();
+Thread.sleep(10000);
+/*
+} catch (Exception e) {
+// TODO Auto-generated catch block
+System.out.println("Unable to do mousehover to PAYG SIMO page");
+Assert.fail("Unable to do mousehover to PAYG SIMO page");
 }
+*/
+
+}
+
+
+
+
+
+
+@And("^I enter details in Delivery Page([^\\\"]*) and ([^\\\"]*)$")
+public void i_enter_details_in_Delivery_PageTEST_and_ACCEPTA(String Firstname,String Surname) throws Throwable {
+
+try {
+driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+PageFactory.initElements(driver, DeliveryPage.class);
+  DeliveryPageActions.SetDelivery();
+  FreeSimDeliveryPageActions.FreeSimAboutYou(Firstname,Surname);
+  FreeSimDeliveryPageActions.ClickSendMeMySim();
+
+
+
+
+}
+
+catch (Exception e)
+{
+// TODO Auto-generated catch block
+System.out.println("Unable to input details in delivery page");
+Assert.fail("Unable to input details in delivery page");
+
+}
+
+}
+
+
+@And("^I click on 'Send me my sim' CTA$")
+public void i_click_on_Send_me_my_sim_CTA() throws Throwable {
+
+driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);                         
+PageFactory.initElements(driver, SendMeMySim.class);
+Actions_FreeSimPage.SendMeMySim();
+}
+
+
+@Then("^Free Sim order confirmation is displayed$")
+public void free_Sim_order_confirmation_is_displayed() throws Throwable {
+
+	
+//	try {
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		PageFactory.initElements(driver, OrderConfirmationPage.class);
+		OrderConfirmationPageActions.gettitlepage();
+		OrderConfirmationPageActions.FreeSimMessage();
+		Thread.sleep(2000);
+	//} 
+/*catch (Exception e) {
+		// TODO Auto-generated catch block
+		System.out.println("Error in order confirmation page , Please review the screenshots for failure");
+		Assert.fail("Error in order confirmation page , Please review the screenshots for failure");
+
+	}    */
+}
+
+}
+
+
+
+	
+	
+	
+	
+	
+	
+	

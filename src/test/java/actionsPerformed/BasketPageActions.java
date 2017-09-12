@@ -18,6 +18,7 @@ import com.google.common.base.Function;
 import helpers.Environment;
 import helpers.Filereadingutility;
 import junit.framework.Assert;
+import pageobjects.UpgradeCustomerPage;
 
 public class BasketPageActions extends Environment {
 
@@ -571,4 +572,44 @@ public class BasketPageActions extends Environment {
 
 	}
 
+	//////////////////////////////Upgrade Basket Page///////////////////////////////////////////////
+	
+	public static void UpgradeBasketPageYourSim() {
+		
+		if(pageobjects.BasketPage.EnabledCheckout.isDisplayed()) {
+			System.out.println("The Checkout button is enabled");
+			log.debug("The checkout button is enabled");
+		}
+		else if(pageobjects.BasketPage.DisabledCheckout.isDisplayed()){
+			System.out.println("The checkout button is not enabled");
+			log.debug("The checkout button is not enabled");
+		}
+
+		
+	}
+	
+	public static void UpgradeBasketYourSim() {
+		
+		JavascriptExecutor jse = (JavascriptExecutor) driver;
+		jse.executeScript("window.scrollBy(0,450)", "");
+	    
+		if (pageobjects.UpgradeCustomerPage.YourSimSection.isDisplayed()) {
+			System.out.println("The Your sim section is displayed");
+		}
+		else {
+			System.out.println("The Your sim section is not displayed");
+		}
+		
+		boolean SelectedY = UpgradeCustomerPage.NeedNewSimRadioButton.isSelected( );
+		if(SelectedY==true) {
+			System.out.println("The I need a sim is preselected");
+		}
+		else{
+			System.out.println("I dont need a sim is pre selected");
+		}
+	
+	
+	
+	
+	}
 }
