@@ -119,7 +119,7 @@ public class ConnectedDeviceDetailsPageAction extends Environment {
 			log.debug("Device is Pre Order Device");
 		} else {
 			System.out.println("Device is not Pre Order Device");
-			// Assert.fail("Device is not Pre Order Device");
+			Assert.fail("Device is not Pre Order Device");
 		}
 	}
 
