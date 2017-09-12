@@ -2,13 +2,18 @@ package actionsPerformed;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.FluentWait;
+import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
+
+import com.google.common.base.Function;
 
 import helpers.Environment;
 import helpers.Filereadingutility;
@@ -1142,27 +1147,28 @@ public class UpgradeCustomerPageActions extends Environment {
 		try {
 			System.out.println("In your Sim Section");
 			System.out.println("Choosing need new sim");
-			WebElement needNewSimRadio=driver.findElement(By.xpath("//input[@id='needNewSim']"));
+			WebElement needNewSimRadio = driver.findElement(By.xpath("//input[@id='needNewSim']"));
 			((JavascriptExecutor) driver).executeScript("arguments[0].click();", needNewSimRadio);
 
-//		driver.findElement(By.xpath("//input[@id='needNewSim']")).click();
+			// driver.findElement(By.xpath("//input[@id='needNewSim']")).click();
 			System.out.println("Selected need new sim radio button");
 			driver.findElement(By.xpath("//*[@id='confirmSim']")).click();
 			System.out.println("Completed your sim  function");
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
-			System.out.println("Unable to click on element "+ e.getStackTrace());		}
+			System.out.println("Unable to click on element " + e.getStackTrace());
+		}
 	}
-	
+
 	public static void addAndGoToBasket() {
 		System.out.println("In addAndGoToBasket Section");
-//		driver.findElement(By.xpath("//*[@id='qa-proceed-to-basket']")).click();
-		WebElement BasketButton=driver.findElement(By.xpath("//*[@id='qa-proceed-to-basket']"));
+		// driver.findElement(By.xpath("//*[@id='qa-proceed-to-basket']")).click();
+		WebElement BasketButton = driver.findElement(By.xpath("//*[@id='qa-proceed-to-basket']"));
 		((JavascriptExecutor) driver).executeScript("arguments[0].click();", BasketButton);
 		System.out.println("Compelted AddandGotoBasket Section");
 
 	}
-	
+
 	public static void Otac(String arg) {
 		System.out.println("In Otac Section page");
 		if (arg.contains("skip")) {
@@ -1170,6 +1176,171 @@ public class UpgradeCustomerPageActions extends Environment {
 			System.out.println("Clicked on skip this step");
 			System.out.println("Selected a Random Tariff");
 		}
+	}
+
+	public static void NotYourDevice() throws InterruptedException {
+		// pageobjects.UpgradeCustomerPage.RecycleWidget.click();
+		Thread.sleep(8000);
+		System.out.println("in not your device function");
+		FluentWait<WebDriver> wait = new FluentWait<WebDriver>(driver);
+		wait.pollingEvery(250, TimeUnit.MILLISECONDS);
+		wait.withTimeout(2, TimeUnit.SECONDS);
+		Function<WebDriver, Boolean> function = new Function<WebDriver, Boolean>() {
+			public Boolean apply(WebDriver arg0) {
+
+				JavascriptExecutor js = (JavascriptExecutor) driver;
+				WebElement notMyDevice = arg0
+						.findElement(By.xpath("//div[@class='recycle-device not-your-device-box']/a"));
+				js.executeScript("arguments[0].click();", notMyDevice);
+
+				if (notMyDevice.isEnabled()) {
+					return true;
+				}
+				return false;
+			}
+		};
+		wait.until(function);
+		Thread.sleep(5000);
+		System.out.println("Clicked on the Not your device link");
+
+	}
+
+	public static void SelectMakeModelandNetwork(String Make, String Model, String Network)
+			throws InterruptedException {
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+
+		if (Make.contains("Apple")) {
+			WebElement Make1 = pageobjects.UpgradeCustomerPage.Make;
+			js.executeScript("arguments[0].setAttribute('style', 'display:block;')", Make1);
+			new Select(Make1).selectByVisibleText("Apple");
+			Thread.sleep(3000);
+			System.out.println("Selected Apple as Make");
+			log.debug("Selected Apple as Make");
+
+			// Validating for models
+			if (Model.contains("Iphone7")) {
+				System.out.println("in selecting model");
+				WebElement Model1 = pageobjects.UpgradeCustomerPage.Model;
+				js.executeScript("arguments[0].setAttribute('style', 'display:block;')", Model1);
+				new Select(Model1).selectByVisibleText("iPhone 7 32GB");
+				Thread.sleep(3000);
+				System.out.println("Selected model completed");
+				// Validating for Network
+				if (Network.contains("Orange")) {
+					System.out.println("in selecting Network");
+					WebElement Network1 = pageobjects.UpgradeCustomerPage.Network;
+					js.executeScript("arguments[0].setAttribute('style', 'display:block;')", Network1);
+					new Select(Network1).selectByVisibleText("Orange");
+					System.out.println("Selected Orange completed");
+				} else if (Network.contains("EE")) {
+					WebElement Network1 = pageobjects.UpgradeCustomerPage.Network;
+					js.executeScript("arguments[0].setAttribute('style', 'display:block;')", Network1);
+					new Select(Network1).selectByVisibleText("EE");
+				}
+
+			}
+			if (Model.contains("Iphone6S")) {
+				WebElement Model1 = pageobjects.UpgradeCustomerPage.Model;
+				js.executeScript("arguments[0].setAttribute('style', 'display:block;')", Model1);
+				new Select(Model1).selectByVisibleText("iPhone 6S 32GB");
+				Thread.sleep(3000);
+
+				// Validating for Network
+				if (Network.contains("Orange")) {
+					WebElement Network1 = pageobjects.UpgradeCustomerPage.Network;
+					js.executeScript("arguments[0].setAttribute('style', 'display:block;')", Network1);
+					new Select(Network1).selectByVisibleText("Orange");
+				} else if (Network.contains("EE")) {
+					WebElement Network1 = pageobjects.UpgradeCustomerPage.Network;
+					js.executeScript("arguments[0].setAttribute('style', 'display:block;')", Network1);
+					new Select(Network1).selectByVisibleText("EE");
+				}
+
+			}
+		}
+
+	}
+
+	public static void updateDeviceButton() throws InterruptedException {
+		System.out.println("Going to click updateDeviceButton button");
+		pageobjects.UpgradeCustomerPage.UpdateDevice.click();
+		Thread.sleep(4000);
+		System.out.println("Completed updateDeviceButton function");
+	}
+
+	public static void refundableOptionSelect() throws InterruptedException {
+		System.out.println("Going to click refundableOptionSelect button");
+		pageobjects.UpgradeCustomerPage.RefundableOptionbyCredit.click();
+		Thread.sleep(4000);
+		System.out.println("Selected refundable by credit option");
+		/*
+		 * pageobjects.UpgradeCustomerPage.ContinuetoUpgrade.click();
+		 * System.out.println("Selected continue to upgrade button");
+		 */ 
+		System.out.println("Completed refundableOptionSelect function");
+
+	}
+
+	
+
+	public static boolean VerifyAccurateQuotedisplay() throws InterruptedException {
+		System.out.println("Going to verify VerifyAccurateQuotedisplay function");
+		pageobjects.UpgradeCustomerPage.GetAccurateQuoteSectionDisplay.getText();
+		System.out.println("Completed verify VerifyAccurateQuotedisplay function");
+		Thread.sleep(4000);
+		return true;
+
+	}
+	
+	public static void getAccurateQuote() throws InterruptedException {
+		System.out.println("Going to enter getAccurateQuote function");
+		Thread.sleep(4000);
+		pageobjects.UpgradeCustomerPage.GetAccurateQuote.click();
+		System.out.println("Clicked on 'yes, get accurate quote' under 'is your damaged section?' ");
+		Thread.sleep(4000);
+	}
+
+	public static void questionnaire() throws InterruptedException {
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+
+		// Set<String> handle= driver.getWindowHandles();//Return a set of
+		// window handle.swi
+		for (String handle : driver.getWindowHandles()) {
+
+			driver.switchTo().window(handle);
+		}
+		Thread.sleep(4000);
+		System.out.println(driver.findElement(By.xpath("//*[@id='redeem-questionnaire']/p[@class='info']")).getText());
+
+		// Select first questionnaire - Is your phone fully functional
+		WebElement Question0 = driver
+				.findElement(By.xpath("//select[@id='question0'][@class='select-questionnaire ng-pristine ng-valid']"));
+		js.executeScript("arguments[0].setAttribute('style', 'display:block;')", Question0);
+		new Select(Question0).selectByValue("0");
+		Thread.sleep(8000);
+
+		// Select Second questionaire - Does your phone have any damage
+		WebElement Question1 = driver
+				.findElement(By.xpath("//select[@id='question1'][@class='select-questionnaire ng-pristine ng-valid']"));
+		js.executeScript("arguments[0].setAttribute('style', 'display:block;')", Question1);
+		new Select(Question1).selectByValue("0");
+
+		// Select Third questionaire - Could your phone be water damaged
+		WebElement Question2 = driver
+				.findElement(By.xpath("//select[@id='question2'][@class='select-questionnaire ng-pristine ng-valid']"));
+		js.executeScript("arguments[0].setAttribute('style', 'display:block;')", Question2);
+		new Select(Question2).selectByValue("0");
+
+		// Select Second questionaire - Remove icloud from device
+		WebElement Question3 = driver
+				.findElement(By.xpath("//select[@id='question3'][@class='select-questionnaire ng-pristine ng-valid']"));
+		js.executeScript("arguments[0].setAttribute('style', 'display:block;')", Question3);
+		new Select(Question3).selectByValue("0");
+
+		driver.findElement(By.id("continue-with-accurate-quote")).click();
+		System.out.println("Completed questionaire");
+
+		Thread.sleep(8000);
 	}
 
 }
