@@ -1,16 +1,16 @@
-$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("Features/RegressionPack_Master/Reg_Consumer_DelayedDelivery.feature");
+$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("Features/RegressionPack_Master/Reg_CS_SmartWatch.feature");
 formatter.feature({
   "line": 1,
-  "name": "Reg_Consumer_DelayedDelivery",
+  "name": "Reg_CS_SmartWatch",
   "description": "",
-  "id": "reg-consumer-delayeddelivery",
+  "id": "reg-cs-smartwatch",
   "keyword": "Feature"
 });
 formatter.scenarioOutline({
   "line": 4,
-  "name": "CFA PayM Delayed Delivery Phones Home delivery E2E journey",
+  "name": "Smart Watches only E2E journey",
   "description": "",
-  "id": "reg-consumer-delayeddelivery;cfa-paym-delayed-delivery-phones-home-delivery-e2e-journey",
+  "id": "reg-cs-smartwatch;smart-watches-only-e2e-journey",
   "type": "scenario_outline",
   "keyword": "Scenario Outline",
   "tags": [
@@ -27,110 +27,85 @@ formatter.step({
 });
 formatter.step({
   "line": 6,
-  "name": "navigate to PAYM Phones page",
+  "name": "Navigate to SmartWatches",
   "keyword": "And "
 });
 formatter.step({
   "line": 7,
-  "name": "I search for a PayM \u003cDD_handset\u003e device",
+  "name": "select any available \"Random\" Smartwatch",
   "keyword": "And "
 });
 formatter.step({
   "line": 8,
-  "name": "check the status \u003cstatus\u003e of the device",
+  "name": "add SmartWatch to basket within limit in details page and navigate to basket",
   "keyword": "And "
 });
 formatter.step({
   "line": 9,
-  "name": "Navigate to device details page",
+  "name": "I Land on the Non Phone related basket page and choose home delivery option",
   "keyword": "And "
 });
 formatter.step({
   "line": 10,
-  "name": "Land on the \u0027Tariffs and extra\u0027 page",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 11,
-  "name": "I Land on the basket page and choose home delivery option",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 12,
   "name": "click on \"go to checkout\" button",
   "keyword": "And "
 });
 formatter.step({
-  "line": 13,
+  "line": 11,
   "name": "input \u003cFirstname\u003e and \u003cSurname\u003e and other valid details in Delivery page and Click on the \u0027Continue button\u0027",
   "keyword": "And "
 });
 formatter.step({
-  "line": 14,
-  "name": "land on the payment page and input \u003cUsername\u003e and other details and click \u0027Continue on next step\u0027",
+  "line": 12,
+  "name": "land on the Non Credit check payment page and input \u003cUsername\u003e and other details and click \u0027Continue on next step\u0027",
   "keyword": "And "
 });
 formatter.step({
-  "line": 15,
-  "name": "Continue to Agreements page and confirm all the agreement checks",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 16,
+  "line": 13,
   "name": "Continue to Review page and review the order",
   "keyword": "And "
 });
 formatter.step({
-  "line": 17,
+  "line": 14,
   "name": "order confirmation is displayed",
   "keyword": "Then "
 });
 formatter.examples({
-  "comments": [
-    {
-      "line": 19,
-      "value": "#Close the browser"
-    }
-  ],
-  "line": 20,
+  "line": 16,
   "name": "",
   "description": "",
-  "id": "reg-consumer-delayeddelivery;cfa-paym-delayed-delivery-phones-home-delivery-e2e-journey;",
+  "id": "reg-cs-smartwatch;smart-watches-only-e2e-journey;",
   "rows": [
     {
       "cells": [
-        "DD_handset",
         "Firstname",
         "Surname",
-        "Username",
-        "status"
+        "Username"
       ],
-      "line": 21,
-      "id": "reg-consumer-delayeddelivery;cfa-paym-delayed-delivery-phones-home-delivery-e2e-journey;;1"
+      "line": 17,
+      "id": "reg-cs-smartwatch;smart-watches-only-e2e-journey;;1"
     },
     {
       "cells": [
-        "Apple iPhone 7",
         "TEST",
         "ACCEPTA",
-        "TEST ACCEPTA",
-        "Delayed Deliverya"
+        "TEST ACCEPTA"
       ],
-      "line": 22,
-      "id": "reg-consumer-delayeddelivery;cfa-paym-delayed-delivery-phones-home-delivery-e2e-journey;;2"
+      "line": 18,
+      "id": "reg-cs-smartwatch;smart-watches-only-e2e-journey;;2"
     }
   ],
   "keyword": "Examples"
 });
 formatter.before({
-  "duration": 24900234830,
+  "duration": 25667026360,
   "status": "passed"
 });
 formatter.scenario({
-  "line": 22,
-  "name": "CFA PayM Delayed Delivery Phones Home delivery E2E journey",
+  "line": 18,
+  "name": "Smart Watches only E2E journey",
   "description": "",
-  "id": "reg-consumer-delayeddelivery;cfa-paym-delayed-delivery-phones-home-delivery-e2e-journey;;2",
+  "id": "reg-cs-smartwatch;smart-watches-only-e2e-journey;;2",
   "type": "scenario",
   "keyword": "Scenario Outline",
   "tags": [
@@ -147,74 +122,53 @@ formatter.step({
 });
 formatter.step({
   "line": 6,
-  "name": "navigate to PAYM Phones page",
+  "name": "Navigate to SmartWatches",
   "keyword": "And "
 });
 formatter.step({
   "line": 7,
-  "name": "I search for a PayM Apple iPhone 7 device",
-  "matchedColumns": [
-    0
-  ],
+  "name": "select any available \"Random\" Smartwatch",
   "keyword": "And "
 });
 formatter.step({
   "line": 8,
-  "name": "check the status Delayed Deliverya of the device",
-  "matchedColumns": [
-    4
-  ],
+  "name": "add SmartWatch to basket within limit in details page and navigate to basket",
   "keyword": "And "
 });
 formatter.step({
   "line": 9,
-  "name": "Navigate to device details page",
+  "name": "I Land on the Non Phone related basket page and choose home delivery option",
   "keyword": "And "
 });
 formatter.step({
   "line": 10,
-  "name": "Land on the \u0027Tariffs and extra\u0027 page",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 11,
-  "name": "I Land on the basket page and choose home delivery option",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 12,
   "name": "click on \"go to checkout\" button",
   "keyword": "And "
 });
 formatter.step({
-  "line": 13,
+  "line": 11,
   "name": "input TEST and ACCEPTA and other valid details in Delivery page and Click on the \u0027Continue button\u0027",
   "matchedColumns": [
-    1,
+    0,
+    1
+  ],
+  "keyword": "And "
+});
+formatter.step({
+  "line": 12,
+  "name": "land on the Non Credit check payment page and input TEST ACCEPTA and other details and click \u0027Continue on next step\u0027",
+  "matchedColumns": [
     2
   ],
   "keyword": "And "
 });
 formatter.step({
-  "line": 14,
-  "name": "land on the payment page and input TEST ACCEPTA and other details and click \u0027Continue on next step\u0027",
-  "matchedColumns": [
-    3
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "line": 15,
-  "name": "Continue to Agreements page and confirm all the agreement checks",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 16,
+  "line": 13,
   "name": "Continue to Review page and review the order",
   "keyword": "And "
 });
 formatter.step({
-  "line": 17,
+  "line": 14,
   "name": "order confirmation is displayed",
   "keyword": "Then "
 });
@@ -222,60 +176,42 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.i_am_an_CFA_user_and_Lands_on_shop_page()"
 });
 formatter.result({
-  "duration": 4617195993,
+  "duration": 368907884,
   "status": "passed"
 });
 formatter.match({
-  "location": "E2EOrderPlaced_Steps.navigate_to_PAYM_Phones_page()"
+  "location": "E2EOrderPlaced_Steps.navigate_to_SmartWatches()"
 });
 formatter.result({
-  "duration": 15318588965,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "Apple iPhone 7",
-      "offset": 20
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.search_for_device(String)"
-});
-formatter.result({
-  "duration": 28318087692,
+  "duration": 68302373613,
   "status": "passed"
 });
 formatter.match({
   "arguments": [
     {
-      "val": "Delayed Deliverya",
-      "offset": 17
+      "val": "Random",
+      "offset": 22
     }
   ],
-  "location": "E2EOrderPlaced_Steps.check_status_of_device(String)"
+  "location": "E2EOrderPlaced_Steps.select_any_available_Smartwatch(String)"
 });
 formatter.result({
-  "duration": 21741522,
-  "error_message": "junit.framework.AssertionFailedError: Please input correct status to check for the device\r\n\tat junit.framework.Assert.fail(Assert.java:47)\r\n\tat steps.E2EOrderPlaced_Steps.check_status_of_device(E2EOrderPlaced_Steps.java:4748)\r\n\tat ✽.And check the status Delayed Deliverya of the device(Features/RegressionPack_Master/Reg_Consumer_DelayedDelivery.feature:8)\r\n",
-  "status": "failed"
+  "duration": 15280879522,
+  "status": "passed"
 });
 formatter.match({
-  "location": "E2EOrderPlaced_Steps.Navigate_to_device_details_page()"
+  "location": "E2EOrderPlaced_Steps.add_SmartWatch_to_basket_within_limit_in_details_page_and_navigate_to_basket()"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 8644535852,
+  "status": "passed"
 });
 formatter.match({
-  "location": "E2EOrderPlaced_Steps.land_on_the_Tariffs_and_extra_page()"
+  "location": "E2EOrderPlaced_Steps.NonPhoneRelatedBasketPage()"
 });
 formatter.result({
-  "status": "skipped"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.i_Land_on_the_basket_page_and_choose_home_delivery_option()"
-});
-formatter.result({
-  "status": "skipped"
+  "duration": 14520850412,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -287,7 +223,8 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.CheckoutFromBasket(String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 24919009775,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -303,40 +240,38 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.DeliveryPage_Inputs_homeDelivery(String,String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 16403201422,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
     {
       "val": "TEST ACCEPTA",
-      "offset": 35
+      "offset": 52
     }
   ],
-  "location": "E2EOrderPlaced_Steps.CreditCheckPaymentPage_HomeDelivery(String)"
+  "location": "E2EOrderPlaced_Steps.NonCreditCheckPaymentPage_HomeDelivery(String)"
 });
 formatter.result({
-  "status": "skipped"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.AgreementsPageConfirmation()"
-});
-formatter.result({
-  "status": "skipped"
+  "duration": 77611028830,
+  "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.ReviewPageConfirmation()"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 5354077917,
+  "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.OrderConfirmationPage()"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 5182283624,
+  "status": "passed"
 });
 formatter.after({
-  "duration": 3622981361,
+  "duration": 3703722403,
   "status": "passed"
 });
 });

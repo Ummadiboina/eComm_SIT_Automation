@@ -5,8 +5,6 @@ Feature: Reg_Consumer_DelayedDelivery
     Given I am an CFA user and Lands on shop page
     And navigate to PAYM Phones page
     And I search for a PayM <DD_handset> device
-    And check the status <status> of the device
-    And Navigate to device details page
     And Land on the 'Tariffs and extra' page
     And I Land on the basket page and choose home delivery option
     And click on "go to checkout" button
@@ -18,5 +16,5 @@ Feature: Reg_Consumer_DelayedDelivery
 
     #Close the browser
     Examples: 
-      | DD_handset     | Firstname | Surname | Username     | status           |
-      | Apple iPhone 7 | TEST      | ACCEPTA | TEST ACCEPTA | Delayed Delivery |
+      | DD_handset | Firstname | Surname | Username     |
+      | Iphone7    | TEST      | ACCEPTA | TEST ACCEPTA |

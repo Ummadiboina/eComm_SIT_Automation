@@ -34,8 +34,7 @@ public class ConnectedDeviceDetailsPage {
 	@FindBy(how = How.ID, using = "deviceBackground")
 	public static WebElement clickanywhere;
 
-	//@FindBy(how = How.XPATH, using = "//p[@class='delivery-information']/span[1]")
-	@FindBy(how = How.XPATH, using = "//div[@class='device-status']")
+	@FindBy(how = How.XPATH, using = "//p[@class='delivery-information']/span[1]")
 	public static WebElement DevStatusMsg;
 	// have to change the below xpath after getting the environment
 	

@@ -6,7 +6,7 @@
         "before": [
           {
             "result": {
-              "duration": 24900234830,
+              "duration": 25667026360,
               "status": "passed"
             },
             "match": {
@@ -14,14 +14,14 @@
             }
           }
         ],
-        "line": 22,
-        "name": "CFA PayM Delayed Delivery Phones Home delivery E2E journey",
+        "line": 18,
+        "name": "Smart Watches only E2E journey",
         "description": "",
-        "id": "reg-consumer-delayeddelivery;cfa-paym-delayed-delivery-phones-home-delivery-e2e-journey;;2",
+        "id": "reg-cs-smartwatch;smart-watches-only-e2e-journey;;2",
         "after": [
           {
             "result": {
-              "duration": 3622981361,
+              "duration": 3703722403,
               "status": "passed"
             },
             "match": {
@@ -34,7 +34,7 @@
         "steps": [
           {
             "result": {
-              "duration": 4617195993,
+              "duration": 368907884,
               "status": "passed"
             },
             "line": 5,
@@ -46,97 +46,64 @@
           },
           {
             "result": {
-              "duration": 15318588965,
+              "duration": 68302373613,
               "status": "passed"
             },
             "line": 6,
-            "name": "navigate to PAYM Phones page",
+            "name": "Navigate to SmartWatches",
             "match": {
-              "location": "E2EOrderPlaced_Steps.navigate_to_PAYM_Phones_page()"
+              "location": "E2EOrderPlaced_Steps.navigate_to_SmartWatches()"
             },
             "keyword": "And "
           },
           {
             "result": {
-              "duration": 28318087692,
+              "duration": 15280879522,
               "status": "passed"
             },
             "line": 7,
-            "name": "I search for a PayM Apple iPhone 7 device",
+            "name": "select any available \"Random\" Smartwatch",
             "match": {
               "arguments": [
                 {
-                  "val": "Apple iPhone 7",
-                  "offset": 20
+                  "val": "Random",
+                  "offset": 22
                 }
               ],
-              "location": "E2EOrderPlaced_Steps.search_for_device(String)"
+              "location": "E2EOrderPlaced_Steps.select_any_available_Smartwatch(String)"
             },
-            "matchedColumns": [
-              0
-            ],
             "keyword": "And "
           },
           {
             "result": {
-              "duration": 21741522,
-              "error_message": "junit.framework.AssertionFailedError: Please input correct status to check for the device\r\n\tat junit.framework.Assert.fail(Assert.java:47)\r\n\tat steps.E2EOrderPlaced_Steps.check_status_of_device(E2EOrderPlaced_Steps.java:4748)\r\n\tat ✽.And check the status Delayed Deliverya of the device(Features/RegressionPack_Master/Reg_Consumer_DelayedDelivery.feature:8)\r\n",
-              "status": "failed"
+              "duration": 8644535852,
+              "status": "passed"
             },
             "line": 8,
-            "name": "check the status Delayed Deliverya of the device",
+            "name": "add SmartWatch to basket within limit in details page and navigate to basket",
             "match": {
-              "arguments": [
-                {
-                  "val": "Delayed Deliverya",
-                  "offset": 17
-                }
-              ],
-              "location": "E2EOrderPlaced_Steps.check_status_of_device(String)"
+              "location": "E2EOrderPlaced_Steps.add_SmartWatch_to_basket_within_limit_in_details_page_and_navigate_to_basket()"
             },
-            "matchedColumns": [
-              4
-            ],
             "keyword": "And "
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 14520850412,
+              "status": "passed"
             },
             "line": 9,
-            "name": "Navigate to device details page",
+            "name": "I Land on the Non Phone related basket page and choose home delivery option",
             "match": {
-              "location": "E2EOrderPlaced_Steps.Navigate_to_device_details_page()"
+              "location": "E2EOrderPlaced_Steps.NonPhoneRelatedBasketPage()"
             },
             "keyword": "And "
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 24919009775,
+              "status": "passed"
             },
             "line": 10,
-            "name": "Land on the \u0027Tariffs and extra\u0027 page",
-            "match": {
-              "location": "E2EOrderPlaced_Steps.land_on_the_Tariffs_and_extra_page()"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "status": "skipped"
-            },
-            "line": 11,
-            "name": "I Land on the basket page and choose home delivery option",
-            "match": {
-              "location": "E2EOrderPlaced_Steps.i_Land_on_the_basket_page_and_choose_home_delivery_option()"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "status": "skipped"
-            },
-            "line": 12,
             "name": "click on \"go to checkout\" button",
             "match": {
               "arguments": [
@@ -151,9 +118,10 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 16403201422,
+              "status": "passed"
             },
-            "line": 13,
+            "line": 11,
             "name": "input TEST and ACCEPTA and other valid details in Delivery page and Click on the \u0027Continue button\u0027",
             "match": {
               "arguments": [
@@ -169,47 +137,38 @@
               "location": "E2EOrderPlaced_Steps.DeliveryPage_Inputs_homeDelivery(String,String)"
             },
             "matchedColumns": [
-              1,
+              0,
+              1
+            ],
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 77611028830,
+              "status": "passed"
+            },
+            "line": 12,
+            "name": "land on the Non Credit check payment page and input TEST ACCEPTA and other details and click \u0027Continue on next step\u0027",
+            "match": {
+              "arguments": [
+                {
+                  "val": "TEST ACCEPTA",
+                  "offset": 52
+                }
+              ],
+              "location": "E2EOrderPlaced_Steps.NonCreditCheckPaymentPage_HomeDelivery(String)"
+            },
+            "matchedColumns": [
               2
             ],
             "keyword": "And "
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 5354077917,
+              "status": "passed"
             },
-            "line": 14,
-            "name": "land on the payment page and input TEST ACCEPTA and other details and click \u0027Continue on next step\u0027",
-            "match": {
-              "arguments": [
-                {
-                  "val": "TEST ACCEPTA",
-                  "offset": 35
-                }
-              ],
-              "location": "E2EOrderPlaced_Steps.CreditCheckPaymentPage_HomeDelivery(String)"
-            },
-            "matchedColumns": [
-              3
-            ],
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "status": "skipped"
-            },
-            "line": 15,
-            "name": "Continue to Agreements page and confirm all the agreement checks",
-            "match": {
-              "location": "E2EOrderPlaced_Steps.AgreementsPageConfirmation()"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "status": "skipped"
-            },
-            "line": 16,
+            "line": 13,
             "name": "Continue to Review page and review the order",
             "match": {
               "location": "E2EOrderPlaced_Steps.ReviewPageConfirmation()"
@@ -218,9 +177,10 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 5182283624,
+              "status": "passed"
             },
-            "line": 17,
+            "line": 14,
             "name": "order confirmation is displayed",
             "match": {
               "location": "E2EOrderPlaced_Steps.OrderConfirmationPage()"
@@ -236,10 +196,10 @@
         ]
       }
     ],
-    "name": "Reg_Consumer_DelayedDelivery",
+    "name": "Reg_CS_SmartWatch",
     "description": "",
-    "id": "reg-consumer-delayeddelivery",
+    "id": "reg-cs-smartwatch",
     "keyword": "Feature",
-    "uri": "Features/RegressionPack_Master/Reg_Consumer_DelayedDelivery.feature"
+    "uri": "Features/RegressionPack_Master/Reg_CS_SmartWatch.feature"
   }
 ]
