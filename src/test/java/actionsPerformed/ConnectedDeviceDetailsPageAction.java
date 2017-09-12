@@ -105,7 +105,7 @@ public class ConnectedDeviceDetailsPageAction extends Environment {
 			log.debug("Device is in stock");
 		} else {
 			System.out.println("Device is not in stock");
-			// Assert.fail("Device is not in stock");
+			Assert.fail("Device is not in stock");
 		}
 	}
 
