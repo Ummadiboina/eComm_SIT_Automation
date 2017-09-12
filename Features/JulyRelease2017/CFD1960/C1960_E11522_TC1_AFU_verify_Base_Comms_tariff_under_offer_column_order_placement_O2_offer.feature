@@ -16,4 +16,4 @@ Feature: C1960_E11522_TC1_AFU_verify_Base_Comms_tariff_under_offer_column_order_
 
     Examples: 
       | user        | Device | Tariffs |
-      | 07521117606 | Random | Base    |
+      | 07521002773 | Random | Base    |

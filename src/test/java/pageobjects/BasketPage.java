@@ -2,6 +2,7 @@ package pageobjects;
 
 import java.util.List;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindAll;
 import org.openqa.selenium.support.FindBy;
@@ -144,4 +145,7 @@ public class BasketPage {
 
 	@FindBy(how = How.XPATH, using = ("//div[@class='promotion secondary']/a[@alt='ribbon information']"))
 	public static WebElement SecondaryPromotionOverlay;
+
+	@FindBy(how = How.XPATH, using = ("//section[@class='device-insurance']"))
+	public static WebElement InsuranceSection;
 }

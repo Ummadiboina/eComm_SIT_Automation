@@ -80,11 +80,15 @@ public class DeliveryPage {
 		@FindBy(how=How.XPATH,using="//*[@id='stock-extended-message-single']")
 		public static WebElement StockExtMessageDDPODP;
 		
-		@FindBy(how=How.XPATH,using="(//div[@class='account'])[1]")
+		@FindBy(how=How.XPATH,using="(//div[@id='account-tiles']/div[@class='account'])[1]")
 		public static WebElement SelectAcct;	
 		
 		@FindBy(how=How.XPATH,using="//button[@id='btn-continue-1']")
 		public static WebElement FastCheckOut;
+
+		@FindBy(how=How.XPATH,using="//tr[@id='basket-insurance']")
+		public static WebElement InsuranceSection;
+		
 		
 		
 		

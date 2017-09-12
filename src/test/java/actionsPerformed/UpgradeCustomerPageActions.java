@@ -6,6 +6,7 @@ import java.util.List;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 
@@ -53,6 +54,14 @@ public class UpgradeCustomerPageActions extends Environment {
 		 * 
 		 * }
 		 */
+
+	}
+
+	public static void Signin() throws InterruptedException {
+		System.out.println("in signin function");
+
+		pageobjects.UpgradeCustomerPage.Signinlink.click();
+		System.out.println("Sign in button clicked");
 
 	}
 
@@ -302,6 +311,7 @@ public class UpgradeCustomerPageActions extends Environment {
 
 	public static void selectDeviceInRecommendedDevicesSection(String devicename) throws Exception {
 		log.debug("Select a device in recommended devices section");
+		System.out.println("Select a device in recommended devices section");
 		List<WebElement> DevicesName = pageobjects.UpgradeCustomerPage.DeviceNameRecommendedSection;
 		WebElement SelectButton;
 		JavascriptExecutor js = (JavascriptExecutor) driver;
@@ -310,16 +320,20 @@ public class UpgradeCustomerPageActions extends Environment {
 		List<String> Devices = new ArrayList<String>();
 		for (WebElement f : DevicesName) {
 			Devices.add(f.getText());
+			System.out.println(Devices.add(f.getText()));
 		}
 		log.debug("passing device" + devicename);
-
+		System.out.println("passing device " + devicename);
 		for (int i = 0; i < DevicesName.size(); i++) {
 			if (DevicesName.get(i).getText().equals(devicename)) {
 				log.debug("Device name matches");
+				System.out.println("Device name matches");
 				k = i + 1;
 				log.debug("k :" + k);
+				System.out.println("k :" + k);
 				c = "(//div[@id='qa-recommendedDevicesTile']/a//div/button)[" + k + "]";
 				log.debug("xpath of button is" + c);
+				System.out.println("xpath of button is" + c);
 				SelectButton = driver.findElement(By.xpath(c));
 				js.executeScript("arguments[0].click();", SelectButton);
 			}
@@ -327,8 +341,10 @@ public class UpgradeCustomerPageActions extends Environment {
 		Thread.sleep(5000);
 	}
 
-	public static void selectTariffWithRibbonAndOverlay(String Tariff) {
-		log.debug('\n' + "To select Tariff With Ribbon And Overlay");
+	public static void selectTariff(String Tariff) {
+		System.out.println("selectTariff");
+		// executor.executeScript("arguments[0].click();",
+		// pageobjects.PAYMandPAYGTariffAndExtrasPage.ViewAllTariffs);
 		List<WebElement> TariffList = driver.findElements(By.xpath("//div[@id='tariff-tile']/div[@id]"));
 		boolean flag = false;
 		String TariffXpath = null;
@@ -339,18 +355,20 @@ public class UpgradeCustomerPageActions extends Environment {
 			i = j + 1;
 			TariffXpath = "(//div[@id='tariff-tile']/div[@id]/div/div[@class='price-block'])[" + i + "]";
 			TextOfTariffTile = driver.findElement(By.xpath(TariffXpath)).getText();
-			TextOfTariffTile = TextOfTariffTile.replace("£", "");
+			TextOfTariffTile = TextOfTariffTile.replace("Â£", "");
 			TextOfTariffTile = TextOfTariffTile.replace("\n", "");
 			TextOfTariffTile = TextOfTariffTile.replace(" ", "");
-
+			System.out.println("TextOfTariffTile  " + TextOfTariffTile);
+			System.out.println("Tariff  " + Tariff);
 			if (TextOfTariffTile.contains(Tariff)) {
+				System.out.println("Given tariff is present in the list of tariffs");
 				position = i;
-				log.debug("Provided tariff is present in the list of tariffs");
 				SelectBtnXpath = "(//button[@id='callToAction'])[" + i + "]";
-				log.debug("Going to select the given tariff :" + Tariff);
 				driver.findElement(By.xpath(SelectBtnXpath)).click();
 				flag = true;
+				break;
 			}
+
 		}
 		if (flag == false) {
 			Assert.fail("Provided tariff is not present in the list of tariffs");
@@ -372,6 +390,7 @@ public class UpgradeCustomerPageActions extends Environment {
 
 		for (int i = 0; i < TariffList.size(); i++) {
 			log.debug("inside for loop");
+			System.out.println("inside for loop");
 			j = i + 1;
 			UpfrontPoundXPath = "(//*[@id='qa-upfront-pound'])[" + j + "]";
 			UpfrontPenceXPath = "(//*[@id='qa-upfront-pence'])[" + j + "]";
@@ -388,8 +407,8 @@ public class UpgradeCustomerPageActions extends Environment {
 			log.debug("MonthlyPound " + MonthlyPound);
 			log.debug("MonthlyPence " + MonthlyPence);
 
-			UpfrontPound = UpfrontPound.replace("£", "");
-			MonthlyPound = MonthlyPound.replace("£", "");
+			UpfrontPound = UpfrontPound.replace("Â£", "");
+			MonthlyPound = MonthlyPound.replace("Â£", "");
 
 			log.debug("UpfrontPound " + UpfrontPound);
 			log.debug("UpfrontPence " + UpfrontPence);
@@ -1092,4 +1111,65 @@ public class UpgradeCustomerPageActions extends Environment {
 		}
 
 	}
+
+	public static void RecyclesectionDisplayed() throws InterruptedException {
+		// pageobjects.UpgradeCustomerPage.RecycleWidget.click();
+		if (driver.findElement(By.id("newRecycleOptionsTile")).isDisplayed()) {
+			System.out.println("Upgrade and Recycle options is displayed");
+			driver.findElement(By.xpath("//a[@ng-click='selectRecycleDevice();']")).click();
+			System.out.println("Clicked on the choose your device link");
+		} else {
+			Assert.fail("Unable to verify recycle options");
+		}
+	}
+
+	public static void SelectRecycleContinueToUpgrade() {
+		// Clicking on Recycle and get up to £54.00 credit
+		System.out.println("in Select recycle an continue to upgrade function");
+		driver.findElement(By.id("recycleCredit")).click();
+		System.out.println("Clicked on Radio button next to Recycle and get up to XXXX credit");
+		driver.findElement(By.xpath("//button[contains(text(),'upgrade now')]")).click();
+		System.out.println("Clicked on upgrade now button");
+	}
+
+	public static void selectTariff() {
+		System.out.println("In Select Tariff function");
+		driver.findElement(By.xpath("//div[contains(@class, 'grid-tile')]/div/button[@id='callToAction'][1]")).click();
+		System.out.println("Completed Select Tariff function");
+	}
+
+	public static void yourSim() {
+		try {
+			System.out.println("In your Sim Section");
+			System.out.println("Choosing need new sim");
+			WebElement needNewSimRadio=driver.findElement(By.xpath("//input[@id='needNewSim']"));
+			((JavascriptExecutor) driver).executeScript("arguments[0].click();", needNewSimRadio);
+
+//		driver.findElement(By.xpath("//input[@id='needNewSim']")).click();
+			System.out.println("Selected need new sim radio button");
+			driver.findElement(By.xpath("//*[@id='confirmSim']")).click();
+			System.out.println("Completed your sim  function");
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			System.out.println("Unable to click on element "+ e.getStackTrace());		}
+	}
+	
+	public static void addAndGoToBasket() {
+		System.out.println("In addAndGoToBasket Section");
+//		driver.findElement(By.xpath("//*[@id='qa-proceed-to-basket']")).click();
+		WebElement BasketButton=driver.findElement(By.xpath("//*[@id='qa-proceed-to-basket']"));
+		((JavascriptExecutor) driver).executeScript("arguments[0].click();", BasketButton);
+		System.out.println("Compelted AddandGotoBasket Section");
+
+	}
+	
+	public static void Otac(String arg) {
+		System.out.println("In Otac Section page");
+		if (arg.contains("skip")) {
+			driver.findElement(By.xpath("//a[@id='skip-this-step']")).click();
+			System.out.println("Clicked on skip this step");
+			System.out.println("Selected a Random Tariff");
+		}
+	}
+
 }
