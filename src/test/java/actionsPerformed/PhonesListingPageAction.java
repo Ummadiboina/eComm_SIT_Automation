@@ -8,6 +8,7 @@ import org.apache.log4j.Logger;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 
@@ -85,7 +86,7 @@ public class PhonesListingPageAction extends Environment {
 			log.debug("Selected Iphone7");
 
 		}
-		
+
 		if (elementName.contains("Apple iPhone 7")) {
 			pageobjects.PhonesListingPage.AppleIphone7.click();
 			// Assert.assertEquals(elementName,"Galaxy S7 is not found");
@@ -698,9 +699,8 @@ public class PhonesListingPageAction extends Environment {
 		}
 
 		/*
-		 * if (NextBtn.isDisplayed()) {
-		 * scrollToAnElement.scrollToElement(NextBtn); NextBtn.click();
-		 * Thread.sleep(5000);
+		 * if (NextBtn.isDisplayed()) { scrollToAnElement.scrollToElement(NextBtn);
+		 * NextBtn.click(); Thread.sleep(5000);
 		 * 
 		 * } else { NextBtndVisible = false; break; }
 		 * 
@@ -761,15 +761,13 @@ public class PhonesListingPageAction extends Environment {
 
 		/*
 		 * List<WebElement> deviceName = driver.findElement(By.xpath(
-		 * "//*[@id='o2-page-wrapper']/div[4]/div[5]/div"))
-		 * .findElements(By.xpath(
+		 * "//*[@id='o2-page-wrapper']/div[4]/div[5]/div")) .findElements(By.xpath(
 		 * "//div[@class='device-tile my-offer ng-scope tile-one-by-two']/div/p[@class='details']"
 		 * ));
 		 */
 		/*
 		 * List<WebElement> devicePrice = driver.findElement(By.xpath(
-		 * "//*[@id='o2-page-wrapper']/div[4]/div[5]/div"))
-		 * .findElements(By.xpath(
+		 * "//*[@id='o2-page-wrapper']/div[4]/div[5]/div")) .findElements(By.xpath(
 		 * "//div[@class='device-tile__bottom ng-scope']/p[@class='costsng-binding ng-scope']/span[@class='headline ng-binding']"
 		 * ));
 		 */
@@ -883,9 +881,8 @@ public class PhonesListingPageAction extends Environment {
 			 * ( Boolean num = checkAscendingOrder(ListAfterApplyingSort);
 			 * System.out.println("boolean value" + num); if (num == true) {
 			 * 
-			 * System.out.println("Products names are Sorted in ascending Order"
-			 * ); } else { System.out.
-			 * println("Products names are not Sorted in ascending Order"); }
+			 * System.out.println("Products names are Sorted in ascending Order" ); } else {
+			 * System.out. println("Products names are not Sorted in ascending Order"); }
 			 */
 
 			System.out.println("Assertion Success: Devices have been sorted successfully based on Brand");
@@ -981,8 +978,8 @@ public class PhonesListingPageAction extends Environment {
 	}
 
 	/*
-	 * public static void checkExpDevAndDetails(String device, String color,
-	 * String capacity, String stockmessage) {
+	 * public static void checkExpDevAndDetails(String device, String color, String
+	 * capacity, String stockmessage) {
 	 * 
 	 * int k = 0;
 	 * 
@@ -992,17 +989,16 @@ public class PhonesListingPageAction extends Environment {
 	 * 
 	 * for (int i = 0; i < iPadDevicesName.size(); i++) {
 	 * 
-	 * if (iPadDevicesName.get(i).getText().equals(device)) { k = i + 1; String
-	 * c = "(//select[@id='colour'])[" + k + "]";
+	 * if (iPadDevicesName.get(i).getText().equals(device)) { k = i + 1; String c =
+	 * "(//select[@id='colour'])[" + k + "]";
 	 * 
 	 * WebElement colordropdown = driver.findElement(By.xpath(c));
 	 * JavascriptExecutor js = (JavascriptExecutor) driver;
 	 * js.executeScript("arguments[0].setAttribute('style', 'display:block;')",
-	 * colordropdown); if (colordropdown.isDisplayed()) { WebElement firstcolor
-	 * = new Select(colordropdown).getFirstSelectedOption(); if
+	 * colordropdown); if (colordropdown.isDisplayed()) { WebElement firstcolor =
+	 * new Select(colordropdown).getFirstSelectedOption(); if
 	 * (color.equals(firstcolor.getText())) {
-	 * System.out.println("Expected color selected :" + firstcolor.getText()); }
-	 * }
+	 * System.out.println("Expected color selected :" + firstcolor.getText()); } }
 	 * 
 	 * String d = "(//select[@id='memory'])[" + k + "]";
 	 * 
@@ -1011,14 +1007,13 @@ public class PhonesListingPageAction extends Environment {
 	 * capacitydropdown); if (capacitydropdown.isDisplayed()) { WebElement
 	 * firstcapacity = new Select(capacitydropdown).getFirstSelectedOption(); if
 	 * (capacity.equals(firstcapacity.getText())) {
-	 * System.out.println("Expected capacity selected :" +
-	 * firstcapacity.getText()); } } String e =
-	 * "(//p[@class='delivery-information ng-scope'])[" + k + "]"; WebElement
-	 * stockmsg = driver.findElement(By.xpath(e));
+	 * System.out.println("Expected capacity selected :" + firstcapacity.getText());
+	 * } } String e = "(//p[@class='delivery-information ng-scope'])[" + k + "]";
+	 * WebElement stockmsg = driver.findElement(By.xpath(e));
 	 * System.out.println(stockmsg.getText()); if
 	 * (stockmsg.getText().contains(stockmessage)) {
-	 * System.out.println("Expected stockmsg displayed :" + stockmsg.getText());
-	 * } } } }
+	 * System.out.println("Expected stockmsg displayed :" + stockmsg.getText()); } }
+	 * } }
 	 */
 
 	public static void verifyDeviceGetsDisplayedBasedOnOfferFilterApplied(String FilterOption) {
@@ -1043,6 +1038,7 @@ public class PhonesListingPageAction extends Environment {
 					"Assertion Failed: Devices displayed are not as per the Brand filter applied" + e.getMessage());
 		}
 	}
+
 	public static LinkedList<String> getCurrentSortOrderUsingDeviceOffer(String FilterOption)
 			throws InterruptedException {
 
@@ -1086,5 +1082,15 @@ public class PhonesListingPageAction extends Environment {
 			deviceCurrentOrder.add(devicenamecurrentorder.get(i) + deviceoffercurrentorder.get(i));
 		}
 		return deviceCurrentOrder;
+	}
+
+	public static void searchForDevice(String devicename) {
+		if (pageobjects.PhonesListingPage.SearchBox.isDisplayed()) {
+			System.out.println("Search box is displayed");
+			pageobjects.PhonesListingPage.SearchBox.sendKeys(devicename);
+			pageobjects.PhonesListingPage.SearchBox.sendKeys(Keys.RETURN);
+		} else {
+			Assert.fail("Search box is not present");
+		}
 	}
 }
