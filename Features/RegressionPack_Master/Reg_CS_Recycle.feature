@@ -4,7 +4,7 @@ Feature: Reg_CS_Recycle
     Given I am an Existing user and Navigates to Signin page
     And Signin using valid <username> and <password> credentials
     And Navigate to upgrade > upgrade now
-   # Then Verify that in the recycle value is displayed in the Recycle panel
+    # Then Verify that in the recycle value is displayed in the Recycle panel
     And Select 'Not your device' option
     And Select <Make>, <Model> and <Network>
     And perform update device
@@ -27,5 +27,5 @@ Feature: Reg_CS_Recycle
     Then order confirmation is displayed
 
     Examples: 
-      | username           | password  | handset        | tariff                   | Firstname | Surname | Username     | Action | Make  | Model   | Network |
+      | username           | password  | handset        | tariff                  | Firstname | Surname | Username     | Action | Make  | Model   | Network |
       | bvt2.cfu@gmail.com | cfubvt123 | Apple iPhone 7 | 19.99upfront45.00amonth | TEST      | ACCEPTA | TEST ACCEPTA | skip   | Apple | Iphone7 | Orange  |
