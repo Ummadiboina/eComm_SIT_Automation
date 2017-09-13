@@ -4755,7 +4755,11 @@ public class E2EOrderPlaced_Steps {
 			Assert.fail("Unable to check status of the device");
 		}
 	}
-
+	
+public void select_NeedSim_action_and_confirm() throws Throwable {
+ 		// Write code here that turns the phrase above into concrete actions
+ 		throw new PendingException();
+		
 	@And("^Navigate to FreeSim page$")
 	public void Navigate_to_FreeSim_page() throws Throwable {
 		try {
