@@ -25,5 +25,7 @@ public class OrderConfirmationPage {
 	@FindBy(how = How.ID, using = "contract-message")
 	public static WebElement OrderContractMessageOC;
 	
+	@FindBy(how = How.ID, using = "order-id")
+	public static WebElement orderid;
 
 }

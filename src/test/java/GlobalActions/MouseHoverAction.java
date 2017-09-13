@@ -267,9 +267,8 @@ public class MouseHoverAction extends Environment {
 	 * log.debug("Performing Like New navigations");
 	 * 
 	 * Point coordinates =
-	 * pageobjects.MouseHoverPage.MoveMouseOnShopTab.getLocation(); Robot robot
-	 * = new Robot();
-	 * robot.mouseMove(coordinates.getX(),coordinates.getY()+120);
+	 * pageobjects.MouseHoverPage.MoveMouseOnShopTab.getLocation(); Robot robot =
+	 * new Robot(); robot.mouseMove(coordinates.getX(),coordinates.getY()+120);
 	 * 
 	 * Actions action = new Actions(driver);
 	 * action.moveToElement(pageobjects.MouseHoverPage.MoveMouseOnPhones).build(
@@ -290,11 +289,11 @@ public class MouseHoverAction extends Environment {
 	 * 
 	 * Worksfine = true;
 	 * 
-	 * } catch(ElementNotVisibleException e) { //check if popup is present, if
-	 * yes, handle it. Environment.driver.switchTo().frame("edr_l_first");
+	 * } catch(ElementNotVisibleException e) { //check if popup is present, if yes,
+	 * handle it. Environment.driver.switchTo().frame("edr_l_first");
 	 * System.out.println("********We are switch to the iframe*******"); log.
-	 * debug("Popup has appeared on the screen, Hence trying to close the survey"
-	 * ); Screenshots.screennewPics(); //Saying no to survey
+	 * debug("Popup has appeared on the screen, Hence trying to close the survey" );
+	 * Screenshots.screennewPics(); //Saying no to survey
 	 * driver.findElement(By.xpath("//a[@id='no']/span")).click();
 	 * log.debug("Closing the popup by saying No to Survey");
 	 * System.out.println("*******Saying no to survey*******"); System.out.
@@ -813,5 +812,61 @@ public class MouseHoverAction extends Environment {
 			}
 
 	}
+	// mousehover action
 
+	// Below will navigate to PAYG FreeSim Page
+
+	public static void PayGFreeSimNavigation() throws Exception {
+		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+		boolean Worksfine = false;
+		while (!Worksfine)
+			try {
+
+				System.out.println("Performing PayGFreeSim Navigations");
+				log.debug("Performing PayGFreeSim Navigations");
+
+				Point coordinates = pageobjects.MouseHoverPage.MoveMouseOnShopTab.getLocation();
+				Robot robot = new Robot();
+				robot.mouseMove(coordinates.getX(), coordinates.getY() + 120);
+				log.debug("Moving mouse on the Shop Tab");
+				System.out.println("Moving Mouse on the Shop Tab");
+
+				Actions action = new Actions(driver);
+				action.moveToElement(pageobjects.MouseHoverPage.MouseOnSims).build().perform();
+				log.debug("Moving mouse on the Sims in Shop Dropdown");
+				Thread.sleep(1000);
+
+				action.moveToElement(pageobjects.MouseHoverPage.MoveMouseOnPayGSims).build().perform();
+				log.debug("Moving mouse on the PayG Sims");
+				System.out.println("Moving mouse on the PayG Sims");
+				Thread.sleep(1000);
+				pageobjects.MouseHoverPage.MoveMouseOnPayGSims.click();
+				log.debug("Clicking on PayG Sims");
+
+				// Move mouse pointer away from location
+				Point coordinates2 = driver.findElement(By.xpath("//*[@id='header-consumer']/div")).getLocation();
+				Robot robot2 = new Robot();
+				robot2.mouseMove(coordinates2.getX(), coordinates.getY() + 300);
+				log.debug("Moved Mouse to somewhere side of page");
+
+				Worksfine = true;
+
+			} catch (NoSuchElementException e) {
+				// check if popup is present, if yes, handle it.
+				Environment.driver.switchTo().frame("edr_l_first");
+				System.out.println("********We are switch to the iframe*******");
+				log.debug("Popup has appeared on the screen, Hence trying to close the survey");
+				Screenshots.screennewPics();
+				// Saying no to survey
+				driver.findElement(By.xpath("//a[@id='no']/span")).click();
+				log.debug("Closing the popup by saying No to Survey");
+				System.out.println("*******Saying no to survey*******");
+				System.out.println("*********Existing the popups present in iframe***************");
+				log.debug("Exiting the Survey");
+				Environment.driver.switchTo().defaultContent();
+				Thread.sleep(3000);
+
+			}
+
+	}
 }
