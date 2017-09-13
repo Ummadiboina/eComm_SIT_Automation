@@ -82,11 +82,10 @@ public class OrderConfirmationPageActions extends Environment {
 			List<WebElement> DataContainer = outercontainer.get(0).findElements(By.xpath("//*[@id='time-slot-info']"));
 
 			for (int i = 0; i <= DataContainer.size(); i++) {
-				String ExpectedMessage= "Your order will be delivered for free, via Royal Mail, within three working days.";
-				String message=DataContainer.get(i).getText();
+				String ExpectedMessage = "Your order will be delivered for free, via Royal Mail, within three working days.";
+				String message = DataContainer.get(i).getText();
 				System.out.println(DataContainer.get(i).getText());
 
-				
 			}
 		} catch (IndexOutOfBoundsException e) {
 
@@ -100,14 +99,14 @@ public class OrderConfirmationPageActions extends Environment {
 		try {
 			List<WebElement> outercontainer = driver.findElements(By.xpath("//*[@id='delivery-section']"));
 
-			List<WebElement> DataContainer = outercontainer.get(0).findElements(By.xpath("//*[@id='delivery-section']"));
+			List<WebElement> DataContainer = outercontainer.get(0)
+					.findElements(By.xpath("//*[@id='delivery-section']"));
 
 			for (int i = 0; i <= DataContainer.size(); i++) {
-				String ExpectedMessage= "Your order will be delivered for free, via Royal Mail, within three working days.";
-				String message=DataContainer.get(i).getText();
+				String ExpectedMessage = "Your order will be delivered for free, via Royal Mail, within three working days.";
+				String message = DataContainer.get(i).getText();
 				System.out.println(DataContainer.get(i).getText());
 
-				
 			}
 		} catch (IndexOutOfBoundsException e) {
 
@@ -115,7 +114,7 @@ public class OrderConfirmationPageActions extends Environment {
 		return null;
 
 	}
-	
+
 	public static String PaccodeinfoMessage() {
 		System.out.println("The pac-code-info in this page is as below......");
 		try {
@@ -124,11 +123,10 @@ public class OrderConfirmationPageActions extends Environment {
 			List<WebElement> DataContainer = outercontainer.get(0).findElements(By.xpath("//*[@id='pac-code-info']"));
 
 			for (int i = 0; i <= DataContainer.size(); i++) {
-				String ExpectedMessage= "Your order will be delivered for free, via Royal Mail, within three working days.";
-				String message=DataContainer.get(i).getText();
+				String ExpectedMessage = "Your order will be delivered for free, via Royal Mail, within three working days.";
+				String message = DataContainer.get(i).getText();
 				System.out.println(DataContainer.get(i).getText());
 
-				
 			}
 		} catch (IndexOutOfBoundsException e) {
 
@@ -136,15 +134,18 @@ public class OrderConfirmationPageActions extends Environment {
 		return null;
 
 	}
-	
+
 	public static void downloadPDFcopy() {
 		System.out.println("Entering downloadPDFcopy function");
 		driver.findElement(By.xpath("//a[@href='orderConfirmation.pdf']")).click();
 		System.out.println("Completed downloading order confirmation");
 
 	}
-	
-		
-	
+
+	public static void Orderid() {
+		System.out.println("Your order has been successfully placed.Order number: ");
+		log.info("Your order has been successfully placed.Order number: ");
+		System.out.println(pageobjects.OrderConfirmationPage.orderid.getText());
+	}
 
 }
