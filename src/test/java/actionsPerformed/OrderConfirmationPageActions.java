@@ -147,5 +147,12 @@ public class OrderConfirmationPageActions extends Environment {
 		log.info("Your order has been successfully placed.Order number: ");
 		System.out.println(pageobjects.OrderConfirmationPage.orderid.getText());
 	}
+	
+	public static void FreeSimMessage() {
+		System.out.println("This is order confirmation page and the message in this page is as below......");
+		log.info("This is order confirmation/information page and the message in this page is as above......");
+
+		System.out.println(pageobjects.OrderConfirmationPage.FreesimOrderConfirmation.getText());
+	}
 
 }

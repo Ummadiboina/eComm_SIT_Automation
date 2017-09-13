@@ -18,6 +18,7 @@ import com.google.common.base.Function;
 import helpers.Environment;
 import helpers.Filereadingutility;
 import helpers.setRuntimeProperty;
+import pageobjects.UpgradeCustomerPage;
 
 public class UpgradeCustomerPageActions extends Environment {
 
@@ -1343,4 +1344,168 @@ public class UpgradeCustomerPageActions extends Environment {
 		Thread.sleep(8000);
 	}
 
+	////////////////////////////////////September Release///////////////////////////////////////////////
+	
+	public static void DisplayYourSimCardSection() throws Exception {
+
+		log.debug('\n' + "Validate Your Sim section is displayed");
+
+		if (pageobjects.UpgradeCustomerPage.YourSimHeading.isDisplayed()) {
+			System.out.println(
+					"The Your sim section is displayed" + pageobjects.UpgradeCustomerPage.YourSimHeading.getText());
+			log.debug("The Your sim section is displayed");
+		}
+
+		else
+			System.out.println("The Your sim section us not diplayed");
+		log.debug("The Your sim section is not displayed");
+
+	}
+	
+	
+	public static void RadioButtonNotSelectedByDefault() throws Exception {
+
+		log.debug('\n' + "Validate Your No option is selected by default");
+
+		boolean actualValue = UpgradeCustomerPage.NeedNewSimRadioButton.isSelected();
+		boolean actualValue1 = UpgradeCustomerPage.DontNeedNewSimRadioButton.isSelected();
+		if ((actualValue && actualValue1) != true) {
+			System.out.println("Radio button is not selected");
+			log.debug("Radio button is not selected by default");
+		} else {
+			System.out.println("Radio button is selected by default");
+		}
+
+	}
+	
+	public static void ConfirmButtonNotDisplayed() throws Exception {
+
+		log.debug('\n' + "Validate Confirm button not displayed");
+
+		String YourSimSectionContainer = UpgradeCustomerPage.YourSimSection.getText();
+		System.out.println(YourSimSectionContainer);
+		boolean ConfimNotDisplayed = YourSimSectionContainer.contains("Confirm");
+		if (ConfimNotDisplayed == false) {
+			System.out.println("Confirm button is not displayed");
+			log.debug("Confirm button is not displayed");
+		} else {
+			System.out.println("Confirm button is displayed");
+			log.debug("Confirm button is displayed");
+		}
+
+	}
+	
+	public static void YourSimSectionCopyText() throws Exception {
+
+		String YouSimCopyText = UpgradeCustomerPage.YourSimSectionCopyText.getText();
+		System.out.println(YouSimCopyText);
+		String ActualCopy = ("You’ll need a nano sim to use your new device." + System.lineSeparator()
+				+ "Your current sim might already be a nano sim. If it is, you can just pop it straight into your new device. It’s the quickest and easiest way to get set up."
+				+ System.lineSeparator()
+				+ "If your current sim isn’t a nano sim, you’ll need a new one. Tick ‘I need a new sim’ and we’ll send you one with your device. Then just fill out the sim swap form when it arrives.");
+		System.out.println(ActualCopy);
+		if (YouSimCopyText.equals(ActualCopy))
+
+		{
+			System.out.println("The valid copytext is displayed" + YouSimCopyText);
+			log.debug("The valid copytext is displayed");
+		} else
+			System.out.println("The valid copytext is not displayed");
+
+	}
+	
+	public static void TwoOptionsDisplayed() throws Exception {
+
+		String OptOne = UpgradeCustomerPage.YourSimOptionsOne.getText();
+		String OptTwo = UpgradeCustomerPage.YourSimOptionsTwo.getText();
+		if (UpgradeCustomerPage.YourSimOptionsOne.isDisplayed()
+				&& UpgradeCustomerPage.YourSimOptionsTwo.isDisplayed()) {
+			System.out.printf("The Two Options are displayed" + '\n', OptOne);
+			System.out.println(OptTwo);
+		}
+
+		else
+			System.out.println("The two options are not displayed");
+
+	}
+	
+	public static void SimSwapLinkDisplayed() throws Exception {
+
+		if (UpgradeCustomerPage.SimSwaplink.isDisplayed()) {
+			System.out.println("The Sim Swap link is displayed");
+			log.debug("The Sim Swap link is displayed");
+		} else {
+			System.out.println("The Sim Swap form link is displayed");
+			log.debug("The Sim Swap form link is displayed");
+		}
+
+	}
+	
+	public static void ClickOnSimSwapLink() throws Exception {
+
+		UpgradeCustomerPage.SimSwaplink.click();
+		Thread.sleep(2000);
+
+		// driver.close();
+		for (String winHandle : driver.getWindowHandles()) {
+			driver.switchTo().window(winHandle);
+		}
+
+		String simswapurl = driver.getCurrentUrl();
+		System.out.println(simswapurl);
+		if (simswapurl.contains("swapmysim")) {
+			System.out.println("The Swap you sim page is displayed");
+
+		} else {
+
+			System.out.println("The Swap my sim page is not displayed");
+		}
+		driver.close();
+		Thread.sleep(2000);
+		for (String winHandle : driver.getWindowHandles()) {
+			driver.switchTo().window(winHandle);
+		}
+		System.out.println(driver.getCurrentUrl());
+
+	}
+	
+	public static void ClickIneedAsim() throws Exception {
+
+		if (UpgradeCustomerPage.IneedAsimRadio.isDisplayed()) {
+			UpgradeCustomerPage.IneedAsimRadio.click();
+			log.debug("The I need a sim radio button is clicked");
+		}
+
+	}
+	
+	
+
+	public static void ConfirmCTADisplayed() throws Exception {
+
+		if (UpgradeCustomerPage.ConfirmCTA.isDisplayed()) {
+			System.out.println("The Confirm CTA is displayed");
+		} else
+			System.out.println("The Confirm CTA is not displayed");
+	}
+
+	public static void ClickConfirmCTADisplayed() throws Exception {
+
+		if (UpgradeCustomerPage.ConfirmCTA.isDisplayed()) {
+			UpgradeCustomerPage.ConfirmCTA.click();
+			log.debug("The Confirm CTA is clicked");
+		}
+		Thread.sleep(3000);
+		JavascriptExecutor jse = (JavascriptExecutor) driver;
+		jse.executeScript("window.scrollBy(0,150)", "");
+	}
+
+	public static void ClickIdontneedAsim() throws Exception {
+
+		if (UpgradeCustomerPage.IdontNeedSimRadio.isDisplayed()) {
+			UpgradeCustomerPage.IdontNeedSimRadio.click();
+			log.debug("The I need a sim radio button is clicked");
+		}
+
+	}
+	
 }

@@ -79,4 +79,45 @@ public class UpgradeCustomerPage {
 	
 	@FindBy(how = How.XPATH, using = "//div[@data-qa-device-damaged='']/h2")
 	public static WebElement GetAccurateQuoteSectionDisplay;
+
+	//////////////////////////// Your Sim
+	//////////////////////////// Section///////////////////////////////////////////////////
+
+	@FindBy(how = How.XPATH, using = "//*[@id='yourSim']")
+	public static WebElement YourSimHeading;
+
+	@FindBy(how = How.XPATH, using = "//*[@id='needNewSim']")
+	public static WebElement NeedNewSimRadioButton;
+
+	@FindBy(how = How.XPATH, using = "//*[@id='noNeedNewSim']")
+	public static WebElement DontNeedNewSimRadioButton;
+
+	@FindBy(how = How.XPATH, using = "//*[@id='sim-section']")
+	public static WebElement YourSimSection;
+
+	@FindBy(how = How.XPATH, using = "//*[@id='sim-section']/div/div[2]/div[1]/div[@class='sim-info-left']")
+	public static WebElement YourSimSectionCopyText;
+
+	@FindBy(how = How.XPATH, using = "//*[@id='sim-section']/div/div[2]/div[2]/form/p[1]")
+	public static WebElement YourSimOptionsOne;
+
+	@FindBy(how = How.XPATH, using = "//*[@id='sim-section']/div/div[2]/div[2]/form/p[2]")
+	public static WebElement YourSimOptionsTwo;
+
+	@FindBy(how = How.XPATH, using = "//*[@id='sim-section']/div/div[2]/div[1]/div[1]/p[3]/a")
+	public static WebElement SimSwaplink;
+
+	@FindBy(how = How.XPATH, using = "//*[@id='sim-section']/div/div[2]/div[2]/form/p[1]/label")
+	public static WebElement IneedAsimRadio;
+
+	@FindBy(how = How.XPATH, using = "//*[@id='sim-section']/div/div[2]/div[2]/form/p[2]/label")
+	public static WebElement IdontNeedSimRadio;
+
+	@FindBy(how = How.XPATH, using = "//*[@id='confirmSim']")
+	public static WebElement ConfirmCTA;
+
+
+
+
+
 }
