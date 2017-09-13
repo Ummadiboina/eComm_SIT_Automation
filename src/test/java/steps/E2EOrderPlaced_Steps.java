@@ -4720,4 +4720,154 @@ public class E2EOrderPlaced_Steps {
 		}
 	}
 
+
+	@And("^I search for a PayM ([^\"]*) device$")
+	public void search_for_device(String devicename) throws Throwable {
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, PhonesListingPage.class);
+			PhonesListingPageAction.searchForDevice(devicename);
+			Thread.sleep(3000);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			Assert.fail("Unable to search device");
+		}
+	}
+
+	@And("^check the status ([^\"]*) of the device$")
+	public void check_status_of_device(String status) throws Throwable {
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, ConnectedDeviceDetailsPage.class);
+			if (status.equals("Pre Order")) {
+				ConnectedDeviceDetailsPageAction.checkDevStatusAsPreOrder();
+				Thread.sleep(3000);
+			}
+			if (status.equals("Delayed Delivery")) {
+				ConnectedDeviceDetailsPageAction.checkDevStatusAsDelayedDelivery();
+				Thread.sleep(3000);
+			}
+			if (status.equals("In Stock")) {
+				ConnectedDeviceDetailsPageAction.checkDevStatusAsInStock();
+				Thread.sleep(3000);
+			}
+			if (!status.equals("Pre Order") || !status.equals("Delayed Delivery") || !status.equals("In Stock")) {
+				Assert.fail("Please input correct status to check for the device");
+			}
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			Assert.fail("Unable to check status of the device");
+		}
+	}
+	
+
+
+	@Then("^Select 'Not your device' option$")
+	public void select_Not_your_device_option() throws Throwable {
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, UpgradeCustomerPage.class);
+			UpgradeCustomerPageActions.NotYourDevice();
+		} catch (Exception e) {
+			e.printStackTrace();
+			Assert.fail("Unable to select not your device");
+		}
+
+	}
+
+	@Then("^Select ([^\"]*), ([^\"]*) and ([^\"]*)$")
+	public void select_Make_Model_and_Network(String Make, String Model, String Network) throws Throwable {
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, UpgradeCustomerPage.class);
+			UpgradeCustomerPageActions.SelectMakeModelandNetwork(Make, Model, Network);
+		} catch (Exception e) {
+			e.printStackTrace();
+			Assert.fail("Unable to select either Make, Model or Network");
+		}
+	}
+
+	@Then("^perform update device$")
+	public void perform_update_device() throws Throwable {
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, UpgradeCustomerPage.class);
+			UpgradeCustomerPageActions.updateDeviceButton();
+		} catch (Exception e) {
+			e.printStackTrace();
+			Assert.fail("Unable to select update device button");
+		}
+	}
+
+	@Then("^Select any one refundable recycle option$")
+	public void select_any_one_refundable_recycle_option() throws Throwable {
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, UpgradeCustomerPage.class);
+			UpgradeCustomerPageActions.refundableOptionSelect();
+		} catch (Exception e) {
+			e.printStackTrace();
+			Assert.fail("Unable to select update device button");
+		}
+	}
+
+	@Then("^Verify 'Yes,get an accurate quote' is displayed$")
+	public void verify_Yes_get_an_accurate_quote_is_displayed() throws Throwable {
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, UpgradeCustomerPage.class);
+			Assert.assertTrue(UpgradeCustomerPageActions.VerifyAccurateQuotedisplay());
+			System.out.println("Assertions pass for verify quote");
+		} catch (Exception e) {
+			e.printStackTrace();
+			Assert.fail("Unable to verify get accurate quote");
+		}
+
+ 	}
+	 
+ 	@Then("^click on 'Yes,get an accurate quote'$")
+	public void click_on_Yes_get_an_accurate_quote() throws Throwable {
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, UpgradeCustomerPage.class);
+			UpgradeCustomerPageActions.getAccurateQuote();
+		} catch (Exception e) {
+			e.printStackTrace();
+			Assert.fail("Unable to click on yes get an accurate quote button");
+		}
+	}
+
+	@Then("^answer the questionnaire and click on 'Accept and continue to upgrade' button$")
+	public void answer_the_questionnaire_and_click_on_Accept_and_continue_to_upgrade_button() throws Throwable {
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, UpgradeCustomerPage.class);
+			UpgradeCustomerPageActions.questionnaire();
+		} catch (Exception e) {
+			e.printStackTrace();
+			Assert.fail("Unable to validate and enter questionaire");
+		}
+	}
+
+	@Then("^choose appropriately in 'Your Sim Card'section$")
+	public void choosingYourSimCardSection() throws Throwable {
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, UpgradeCustomerPage.class);
+			UpgradeCustomerPageActions.yourSim();
+		} catch (Exception e) {
+			e.printStackTrace();
+			Assert.fail("Unable to see your sim card section");
+		}
+
+	}
+
+	@Then("^select <NeedSim> action and confirm$")
+	public void select_NeedSim_action_and_confirm() throws Throwable {
+		// Write code here that turns the phrase above into concrete actions
+		throw new PendingException();
+	}
+
 }
