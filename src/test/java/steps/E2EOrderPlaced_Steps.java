@@ -35,6 +35,7 @@ import actionsPerformed.ConnectedDeviceDetailsPageAction;
 import actionsPerformed.DeliveryPageActions;
 import actionsPerformed.FitnessTrackerPageActions;
 import actionsPerformed.FreeSimDeliveryPageActions;
+import actionsPerformed.FreeSimPageActions;
 import actionsPerformed.MobileBroadBandPageActions;
 import actionsPerformed.NonConnectedDeviceDetailsPageAction;
 import actionsPerformed.OrderConfirmationPageActions;
@@ -70,6 +71,7 @@ import pageobjects.CVOS_PageObjects;
 import pageobjects.ConnectedDeviceDetailsPage;
 import pageobjects.DeliveryPage;
 import pageobjects.FitnessTrackerPage;
+import pageobjects.FreeSimPage;
 import pageobjects.LikeFreePage;
 import pageobjects.MobileBroadBandPage;
 import pageobjects.MouseHoverPage;
@@ -4753,4 +4755,86 @@ public class E2EOrderPlaced_Steps {
 			Assert.fail("Unable to check status of the device");
 		}
 	}
+
+	@And("^Navigate to FreeSim page$")
+	public void Navigate_to_FreeSim_page() throws Throwable {
+		try {
+			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, MouseHoverPage.class);
+			MouseHoverAction.PayGFreeSimNavigation();
+			Autoredirection.redirect();
+			Thread.sleep(10000);
+		} catch (Exception e) {
+			System.out.println("unable to do mousehover to sims");
+			Assert.fail("unable to do mousehover to sims");
+		}
+	}
+
+	@And("^I select 'iPads and Tablets' tab$")
+	public void select_iPads_and_Tablets_tab() throws Throwable {
+		try {
+
+			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, FreeSimPage.class);
+			FreeSimPageActions.iPadsandTabletstab();
+		} catch (Exception e) {
+			System.out.println("unable to do select ipads and tablets tab");
+			Assert.fail("unable to do select ipads and tablets tab");
+		}
+	}
+
+	@And("^I select Steady surfer 'ipad sims'$")
+	public void select_Steady_surfer_ipad_sims() throws Throwable {
+		try {
+
+			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, FreeSimPage.class);
+			FreeSimPageActions.iPadsim();
+			Autoredirection.redirect();
+		} catch (Exception e) {
+			System.out.println("unable to do select steady surfer ipad sim");
+			Assert.fail("unable to do select steady surfer ipad sim");
+		}
+	}
+
+	@Given("^I go to sim page$")
+	public void gotosim() throws Throwable {
+		try {
+			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+			driver.get("https://www.ref.o2.co.uk/shop/sim-cards/pay-as-you-go/");
+		} catch (Exception e) {
+			System.out.println("unable to do land on freesim page");
+			Assert.fail("unable to do land on freesim page");
+		}
+	}
+
+	@And("^I select 'Enter manually' and provide all valid details in the delivery page$")
+	public void Enter_delivery_details() throws Throwable {
+		try {
+			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, FreeSimPage.class);
+
+			FreeSimPageActions.EnterManually();
+
+		} catch (Exception e) {
+			System.out.println("unable to do enter the details");
+			Assert.fail("unable to do enter the details");
+		}
+	}
+
+	@Then("^verify order number is displayed$")
+	public void OrdernumberFreeSim() throws Throwable {
+
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, OrderConfirmationPage.class);
+			OrderConfirmationPageActions.gettitlepage();
+			OrderConfirmationPageActions.Orderid();
+
+		} catch (Exception e) {
+			System.out.println("Order number not generated");
+			Assert.fail("Order number not generated");
+		}
+	}
+
 }
