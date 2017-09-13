@@ -2,6 +2,7 @@ package pageobjects;
 
 import java.util.List;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindAll;
 import org.openqa.selenium.support.FindBy;
@@ -46,13 +47,36 @@ public class UpgradeCustomerPage {
 
 	@FindBy(how = How.XPATH, using = "//*[@id='o2-page-wrapper']")
 	public static WebElement MyO2_Page;
-	
+
 	@FindAll({ @FindBy(how = How.XPATH, using = "//div[@id='qa-recommendedDevicesTile']/a//div/p[@class='details']") })
 	public static List<WebElement> DeviceNameRecommendedSection;
 
 	@FindBy(how = How.XPATH, using = "//a[@href='https://accounts.o2.co.uk/signin']")
 	public static WebElement Signinlink;
+
+	@FindBy(how = How.XPATH, using = "//select[@class='recycle-make ng-pristine ng-valid']")
+	public static WebElement Make;
+
+	@FindBy(how = How.XPATH, using = "//select[@class='recycle-model ng-pristine ng-valid']")
+	public static WebElement Model;
+
+	@FindBy(how = How.XPATH, using = "//select[@class='recycle-network ng-scope ng-pristine ng-valid']")
+	public static WebElement Network;
+
+	@FindBy(how = How.XPATH, using = "//button[contains(text(),'Update device')]")
+	public static WebElement UpdateDevice;
+
+	// driver.findElement(By.id("recycleCredit")).click();
+
+	@FindBy(how = How.ID, using = "recycleCredit")
+	public static WebElement RefundableOptionbyCredit;
+
+	@FindBy(how = How.XPATH, using = "//button[contains(text(),'upgrade now')]")
+	public static WebElement ContinuetoUpgrade;
+
+	@FindBy(how = How.XPATH, using = "//button[contains(text(),'Yes, get an accurate quote')]")
+	public static WebElement GetAccurateQuote;
 	
-	
-	
+	@FindBy(how = How.XPATH, using = "//div[@data-qa-device-damaged='']/h2")
+	public static WebElement GetAccurateQuoteSectionDisplay;
 }
