@@ -1,16 +1,16 @@
-$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("Features/RegressionPack_Master/Reg_CS_SmartWatch.feature");
+$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("Features/RegressionPack_Master/Anusha_Demo/CFA_PayG_SIM.feature");
 formatter.feature({
   "line": 1,
-  "name": "Reg_CS_SmartWatch",
+  "name": "CFA_PayG_SIM",
   "description": "",
-  "id": "reg-cs-smartwatch",
+  "id": "cfa-payg-sim",
   "keyword": "Feature"
 });
 formatter.scenarioOutline({
   "line": 4,
-  "name": "Smart Watches only E2E journey",
+  "name": "Ordering a free sim",
   "description": "",
-  "id": "reg-cs-smartwatch;smart-watches-only-e2e-journey",
+  "id": "cfa-payg-sim;ordering-a-free-sim",
   "type": "scenario_outline",
   "keyword": "Scenario Outline",
   "tags": [
@@ -27,85 +27,64 @@ formatter.step({
 });
 formatter.step({
   "line": 6,
-  "name": "Navigate to SmartWatches",
+  "name": "navigate to PayG SIMO page",
   "keyword": "And "
 });
 formatter.step({
   "line": 7,
-  "name": "select any available \"Random\" Smartwatch",
+  "name": "Land on the \u0027Tariffs and extra\u0027 page",
   "keyword": "And "
 });
 formatter.step({
   "line": 8,
-  "name": "add SmartWatch to basket within limit in details page and navigate to basket",
+  "name": "I enter details in Delivery Page\u003cFirstname\u003e and \u003cSurname\u003e",
   "keyword": "And "
 });
 formatter.step({
-  "line": 9,
-  "name": "I Land on the Non Phone related basket page and choose home delivery option",
-  "keyword": "And "
-});
-formatter.step({
+  "comments": [
+    {
+      "line": 9,
+      "value": "# And I click on \u0027Send me my sim\u0027 CTA"
+    }
+  ],
   "line": 10,
-  "name": "click on \"go to checkout\" button",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 11,
-  "name": "input \u003cFirstname\u003e and \u003cSurname\u003e and other valid details in Delivery page and Click on the \u0027Continue button\u0027",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 12,
-  "name": "land on the Non Credit check payment page and input \u003cUsername\u003e and other details and click \u0027Continue on next step\u0027",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 13,
-  "name": "Continue to Review page and review the order",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 14,
-  "name": "order confirmation is displayed",
+  "name": "Free Sim order confirmation is displayed",
   "keyword": "Then "
 });
 formatter.examples({
-  "line": 16,
+  "line": 12,
   "name": "",
   "description": "",
-  "id": "reg-cs-smartwatch;smart-watches-only-e2e-journey;",
+  "id": "cfa-payg-sim;ordering-a-free-sim;",
   "rows": [
     {
       "cells": [
         "Firstname",
-        "Surname",
-        "Username"
+        "Surname"
       ],
-      "line": 17,
-      "id": "reg-cs-smartwatch;smart-watches-only-e2e-journey;;1"
+      "line": 13,
+      "id": "cfa-payg-sim;ordering-a-free-sim;;1"
     },
     {
       "cells": [
         "TEST",
-        "ACCEPTA",
-        "TEST ACCEPTA"
+        "ACCEPTA"
       ],
-      "line": 18,
-      "id": "reg-cs-smartwatch;smart-watches-only-e2e-journey;;2"
+      "line": 14,
+      "id": "cfa-payg-sim;ordering-a-free-sim;;2"
     }
   ],
   "keyword": "Examples"
 });
 formatter.before({
-  "duration": 25667026360,
+  "duration": 40316991517,
   "status": "passed"
 });
 formatter.scenario({
-  "line": 18,
-  "name": "Smart Watches only E2E journey",
+  "line": 14,
+  "name": "Ordering a free sim",
   "description": "",
-  "id": "reg-cs-smartwatch;smart-watches-only-e2e-journey;;2",
+  "id": "cfa-payg-sim;ordering-a-free-sim;;2",
   "type": "scenario",
   "keyword": "Scenario Outline",
   "tags": [
@@ -122,32 +101,17 @@ formatter.step({
 });
 formatter.step({
   "line": 6,
-  "name": "Navigate to SmartWatches",
+  "name": "navigate to PayG SIMO page",
   "keyword": "And "
 });
 formatter.step({
   "line": 7,
-  "name": "select any available \"Random\" Smartwatch",
+  "name": "Land on the \u0027Tariffs and extra\u0027 page",
   "keyword": "And "
 });
 formatter.step({
   "line": 8,
-  "name": "add SmartWatch to basket within limit in details page and navigate to basket",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 9,
-  "name": "I Land on the Non Phone related basket page and choose home delivery option",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 10,
-  "name": "click on \"go to checkout\" button",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 11,
-  "name": "input TEST and ACCEPTA and other valid details in Delivery page and Click on the \u0027Continue button\u0027",
+  "name": "I enter details in Delivery PageTEST and ACCEPTA",
   "matchedColumns": [
     0,
     1
@@ -155,123 +119,63 @@ formatter.step({
   "keyword": "And "
 });
 formatter.step({
-  "line": 12,
-  "name": "land on the Non Credit check payment page and input TEST ACCEPTA and other details and click \u0027Continue on next step\u0027",
-  "matchedColumns": [
-    2
+  "comments": [
+    {
+      "line": 9,
+      "value": "# And I click on \u0027Send me my sim\u0027 CTA"
+    }
   ],
-  "keyword": "And "
-});
-formatter.step({
-  "line": 13,
-  "name": "Continue to Review page and review the order",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 14,
-  "name": "order confirmation is displayed",
+  "line": 10,
+  "name": "Free Sim order confirmation is displayed",
   "keyword": "Then "
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.i_am_an_CFA_user_and_Lands_on_shop_page()"
 });
 formatter.result({
-  "duration": 368907884,
+  "duration": 569470079,
   "status": "passed"
 });
 formatter.match({
-  "location": "E2EOrderPlaced_Steps.navigate_to_SmartWatches()"
+  "location": "E2EOrderPlaced_Steps.navigate_to_PayG_SIMO_page()"
 });
 formatter.result({
-  "duration": 68302373613,
+  "duration": 28004419258,
   "status": "passed"
 });
 formatter.match({
-  "arguments": [
-    {
-      "val": "Random",
-      "offset": 22
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.select_any_available_Smartwatch(String)"
+  "location": "E2EOrderPlaced_Steps.land_on_the_Tariffs_and_extra_page()"
 });
 formatter.result({
-  "duration": 15280879522,
-  "status": "passed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.add_SmartWatch_to_basket_within_limit_in_details_page_and_navigate_to_basket()"
-});
-formatter.result({
-  "duration": 8644535852,
-  "status": "passed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.NonPhoneRelatedBasketPage()"
-});
-formatter.result({
-  "duration": 14520850412,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "go to checkout",
-      "offset": 10
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.CheckoutFromBasket(String)"
-});
-formatter.result({
-  "duration": 24919009775,
+  "duration": 7182478745,
   "status": "passed"
 });
 formatter.match({
   "arguments": [
     {
       "val": "TEST",
-      "offset": 6
+      "offset": 32
     },
     {
       "val": "ACCEPTA",
-      "offset": 15
+      "offset": 41
     }
   ],
-  "location": "E2EOrderPlaced_Steps.DeliveryPage_Inputs_homeDelivery(String,String)"
+  "location": "E2EOrderPlaced_Steps.i_enter_details_in_Delivery_PageTEST_and_ACCEPTA(String,String)"
 });
 formatter.result({
-  "duration": 16403201422,
+  "duration": 14887476588,
   "status": "passed"
 });
 formatter.match({
-  "arguments": [
-    {
-      "val": "TEST ACCEPTA",
-      "offset": 52
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.NonCreditCheckPaymentPage_HomeDelivery(String)"
+  "location": "E2EOrderPlaced_Steps.free_Sim_order_confirmation_is_displayed()"
 });
 formatter.result({
-  "duration": 77611028830,
-  "status": "passed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.ReviewPageConfirmation()"
-});
-formatter.result({
-  "duration": 5354077917,
-  "status": "passed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.OrderConfirmationPage()"
-});
-formatter.result({
-  "duration": 5182283624,
+  "duration": 2139707068,
   "status": "passed"
 });
 formatter.after({
-  "duration": 3703722403,
+  "duration": 2221129288,
   "status": "passed"
 });
 });

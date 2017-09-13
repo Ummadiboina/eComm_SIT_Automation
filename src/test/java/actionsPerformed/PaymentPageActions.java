@@ -3,10 +3,8 @@ package actionsPerformed;
 import java.awt.AWTException;
 
 import org.apache.log4j.Logger;
-
+import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
-
-
 
 import helpers.Environment;
 import pageobjects.PaymentPage;
@@ -187,6 +185,29 @@ public class PaymentPageActions extends Environment {
 		
 	  }
 	  
-	  //upfront-payment-amount
+	  public static void InsuranceSectionPaymentPage() throws InterruptedException {
+			System.out.println("Entering InsuranceSectionPaymentPage Method");
+			
+			Thread.sleep(3000);
+
+			if(driver.findElement(By.xpath("//tr[@id='basket-insurance']")).isDisplayed())
+			{
+				System.out.println("Insurance is displayed in Payment page and text is  - "+driver.findElement(By.xpath("//tr[@id='basket-insurance']")).getText());
+
+			}
+			else
+			{
+			System.out.println("Insurance is not displayed");
+			}
+			
+		Thread.sleep(2000);
+			System.out.println("Completed InsuranceSectionPaymentPage function");
+			log.debug("Completed InsuranceSectionPaymentPage function");
+
+		}
+	  
+	  
+	  
+	  
 	  
 }

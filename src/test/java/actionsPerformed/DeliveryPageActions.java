@@ -122,7 +122,36 @@ public class DeliveryPageActions {
 		}
 		
 		
+	////////////////////////////////Upgrade Delivery page///////////////////////////////////////
 		
+		public static void OtacPageDisplayed() {
+			String OtacUrl = driver.getCurrentUrl();
+			System.out.println(OtacUrl);
+			if(OtacUrl.contains("otac/issue/")) {
+			System.out.println("The OTAC page is displayed");
+			pageobjects.DeliveryPage.SendOtacCodeBtn.click();
+			DeliveryPage.EnterOtacCode.sendKeys("999999");
+			DeliveryPage.SubmitOtacCode.click();				
+			}
+			else if(OtacUrl.contains("/delivery/")) {
+				System.out.println("The Delivery page is displayed");
+			}
+			
+				
+			
+		}
 		
+		public static void UpgradeDeliveryPageDisplayed() {
 		
-}
+			String DeliveryUrl = driver.getCurrentUrl();
+			if(DeliveryUrl.contains("/delivery/"))
+			{
+				JavascriptExecutor jse = (JavascriptExecutor) driver;
+				jse.executeScript("window.scrollBy(0,450)", "");
+				DeliveryPage.UpgradeContinueBtn.click();
+			}
+			else
+				System.out.println("The delivery page is not displayed");
+			}
+		}
+		

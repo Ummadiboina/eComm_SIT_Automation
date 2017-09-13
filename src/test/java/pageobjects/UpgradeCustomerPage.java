@@ -8,6 +8,8 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 
 public class UpgradeCustomerPage {
+	
+	public static final String RecycleWidget = null;
 
 	@FindBy(how = How.ID, using = "username")
 	public static WebElement username;
@@ -44,54 +46,47 @@ public class UpgradeCustomerPage {
 
 	@FindBy(how = How.XPATH, using = "//*[@id='o2-page-wrapper']")
 	public static WebElement MyO2_Page;
-	
+
 	@FindAll({ @FindBy(how = How.XPATH, using = "//div[@id='qa-recommendedDevicesTile']/a//div/p[@class='details']") })
 	public static List<WebElement> DeviceNameRecommendedSection;
-	
-	////////////////////////////Your Sim Section///////////////////////////////////////////////////
-	
+
+	//////////////////////////// Your Sim
+	//////////////////////////// Section///////////////////////////////////////////////////
+
 	@FindBy(how = How.XPATH, using = "//*[@id='yourSim']")
 	public static WebElement YourSimHeading;
-	
+
 	@FindBy(how = How.XPATH, using = "//*[@id='needNewSim']")
 	public static WebElement NeedNewSimRadioButton;
-	
+
 	@FindBy(how = How.XPATH, using = "//*[@id='noNeedNewSim']")
 	public static WebElement DontNeedNewSimRadioButton;
-	
+
 	@FindBy(how = How.XPATH, using = "//*[@id='sim-section']")
 	public static WebElement YourSimSection;
-	
+
 	@FindBy(how = How.XPATH, using = "//*[@id='sim-section']/div/div[2]/div[1]/div[@class='sim-info-left']")
 	public static WebElement YourSimSectionCopyText;
-	
+
 	@FindBy(how = How.XPATH, using = "//*[@id='sim-section']/div/div[2]/div[2]/form/p[1]")
 	public static WebElement YourSimOptionsOne;
-	
+
 	@FindBy(how = How.XPATH, using = "//*[@id='sim-section']/div/div[2]/div[2]/form/p[2]")
 	public static WebElement YourSimOptionsTwo;
-	
+
 	@FindBy(how = How.XPATH, using = "//*[@id='sim-section']/div/div[2]/div[1]/div[1]/p[3]/a")
 	public static WebElement SimSwaplink;
-	
+
 	@FindBy(how = How.XPATH, using = "//*[@id='sim-section']/div/div[2]/div[2]/form/p[1]/label")
 	public static WebElement IneedAsimRadio;
-	
+
 	@FindBy(how = How.XPATH, using = "//*[@id='sim-section']/div/div[2]/div[2]/form/p[2]/label")
 	public static WebElement IdontNeedSimRadio;
-	
+
 	@FindBy(how = How.XPATH, using = "//*[@id='confirmSim']")
 	public static WebElement ConfirmCTA;
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+	@FindBy(how = How.XPATH, using = "//a[@href='https://accounts.o2.co.uk/signin']")
+	public static WebElement Signinlink;
+
 }

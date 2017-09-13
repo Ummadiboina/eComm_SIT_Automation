@@ -145,15 +145,16 @@ public class BasketPage {
 	@FindBy(how = How.XPATH, using = ("//div[@class='promotion secondary']/a[@alt='ribbon information']"))
 	public static WebElement SecondaryPromotionOverlay;
 	
-	////////////////////////////////////Upgrade Basket Page Objects////////////////////////////////////////
-	
+	@FindBy(how = How.XPATH, using = ("//section[@class='device-insurance']"))
+	public static WebElement InsuranceSection;
+
+	//////////////////////////////////// Upgrade Basket Page
+	//////////////////////////////////// Objects////////////////////////////////////////
+
 	@FindBy(how = How.XPATH, using = ("//*[@class='basket-nav']/div[1]/form[@class='qa-checkout-form ng-pristine ng-valid']/input[@class='button primary disabled']"))
 	public static WebElement DisabledCheckout;
-	
-	
+
 	@FindBy(how = How.XPATH, using = ("//*[@class='basket-nav']/div[1]/form[@class='qa-checkout-form ng-pristine ng-valid']/input[@class='button primary']"))
 	public static WebElement EnabledCheckout;
-	
-	
-	
+
 }

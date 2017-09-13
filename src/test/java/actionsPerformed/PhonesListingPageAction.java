@@ -1,30 +1,17 @@
 package actionsPerformed;
 
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
-
-import org.apache.log4j.Logger;
-import org.junit.Assert;
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.Select;
-
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.LinkedList;
 import java.util.List;
+
 import org.apache.commons.lang.StringUtils;
 import org.apache.log4j.Logger;
+import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.Select;
-
-import GlobalActions.scrollToAnElement;
-import helpers.Environment;
 
 import GlobalActions.scrollToAnElement;
 import helpers.Environment;
@@ -1086,5 +1073,15 @@ public class PhonesListingPageAction extends Environment {
 			deviceCurrentOrder.add(devicenamecurrentorder.get(i) + deviceoffercurrentorder.get(i));
 		}
 		return deviceCurrentOrder;
+	}
+	
+	public static void searchForDevice(String devicename) {
+		if (pageobjects.PhonesListingPage.SearchBox.isDisplayed()) {
+			System.out.println("Search box is displayed");
+			pageobjects.PhonesListingPage.SearchBox.sendKeys(devicename);
+			pageobjects.PhonesListingPage.SearchBox.sendKeys(Keys.RETURN);
+		} else {
+			Assert.fail("Search box is not present");
+		}
 	}
 }

@@ -1,11 +1,7 @@
 package actionsPerformed;
 
 import org.apache.log4j.Logger;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.How;
+import org.openqa.selenium.By;
 
 import helpers.Environment;
 
@@ -69,4 +65,25 @@ public class AgreementPageActions extends Environment {
 		  log.debug("Clicking on the ccaSection");
 
 	  }
+	  
+	  public static void InsuranceSectionAgreementPage() throws InterruptedException {
+			System.out.println("Entering InsuranceSectionAgreementPage Method");
+			
+			Thread.sleep(3000);
+
+			if(driver.findElement(By.xpath("//tr[@id='basket-insurance']")).isDisplayed())
+			{
+				System.out.println("Insurance is displayed in Agreement page and text is  - "+driver.findElement(By.xpath("//tr[@id='basket-insurance']")).getText());
+
+			}
+			else
+			{
+			System.out.println("Insurance is not displayed");
+			}
+			
+		Thread.sleep(2000);
+			System.out.println("Completed InsuranceSectionAgreementPage function");
+			log.debug("Completed InsuranceSectionAgreementPage function");
+		}
+	  
 }

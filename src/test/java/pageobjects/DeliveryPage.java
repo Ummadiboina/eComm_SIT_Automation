@@ -86,6 +86,32 @@ public class DeliveryPage {
 		@FindBy(how=How.XPATH,using="//button[@id='btn-continue-1']")
 		public static WebElement FastCheckOut;
 		
+		/////////////////////////////////Upgrade  OTAC////////////////////////////
+		
+		@FindBy(how=How.XPATH,using="//*[@id='h1-white-bg-l']")
+		public static WebElement OtacPage;
+		
+		@FindBy(how=How.XPATH,using="//*[@id='delivery-section']")
+		public static WebElement DeliveryPage;
+		
+		@FindBy(how=How.XPATH,using="//*[@id='sendOtac']")
+		public static WebElement SendOtacCodeBtn;
+				
+		@FindBy(how=How.XPATH,using="//*[@id='otac']")
+		public static WebElement EnterOtacCode;
+		
+		@FindBy(how=How.XPATH,using="//*[@id='verifyOtac']")
+		public static WebElement SubmitOtacCode;
+		
+		@FindBy(how=How.XPATH,using="//*[@id='btn-continue']")
+		public static WebElement UpgradeContinueBtn;
+		
+		
+		
+		
+		
+		
+				
 		
 		
 }

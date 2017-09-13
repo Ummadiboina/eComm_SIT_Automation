@@ -15,7 +15,7 @@ import com.github.mkolisnyk.cucumber.reporting.CucumberResultsOverview;
 
 import cucumber.api.CucumberOptions;
 
-@CucumberOptions(strict = true, features = { "Features//RegressionPack_Master/Reg_CS_SmartWatch.feature" }, glue = {
+@CucumberOptions(strict = true, features = { "Features//RegressionPack_Master//Anusha_Demo//CFA_PayG_SIM.feature" }, glue = {
 		"steps" },
 
 		tags = {}, format = { "json:testResult/cucumber.json", "pretty", "html:testResult/report" }, plugin = {
