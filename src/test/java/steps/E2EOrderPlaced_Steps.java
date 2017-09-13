@@ -634,7 +634,11 @@ public class E2EOrderPlaced_Steps {
 
 	@Given("^choose to upgrade any Phone in My upgrade page$")
 	public void choose_to_upgrade_any_Phone_in_My_upgrade_page() throws Throwable {
-
+		PageFactory.initElements(driver, MouseHoverPage.class);
+		PageFactory.initElements(driver, UpgradePhonesListingPage.class);
+		MouseHoverAction.UpgradeandUpgradeNow();
+		Thread.sleep(5000);
+		Autoredirection.redirectUpgrades();
 	}
 
 	/*
@@ -4876,7 +4880,7 @@ public class E2EOrderPlaced_Steps {
 		}
 	}
 
-	
+	/*
 	 
 	  @And("^I select 'iPads and Tablets' tab$") public void
 	  select_iPads_and_Tablets_tab() throws Throwable { try {
@@ -4923,7 +4927,7 @@ public class E2EOrderPlaced_Steps {
 	  } catch (Exception e) { System.out.println("Order number not generated");
 	  Assert.fail("Order number not generated"); } }
 	  
-	 
+	*/ 
 
 	//////////////////////////////////////////////////////////////////////////////////////////////////////////
 
