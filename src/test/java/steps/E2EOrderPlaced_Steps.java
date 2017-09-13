@@ -35,7 +35,6 @@ import actionsPerformed.ConnectedDeviceDetailsPageAction;
 import actionsPerformed.DeliveryPageActions;
 import actionsPerformed.FitnessTrackerPageActions;
 import actionsPerformed.FreeSimDeliveryPageActions;
-import actionsPerformed.FreeSimPageActions;
 import actionsPerformed.MobileBroadBandPageActions;
 import actionsPerformed.NonConnectedDeviceDetailsPageAction;
 import actionsPerformed.OrderConfirmationPageActions;
@@ -50,6 +49,7 @@ import actionsPerformed.SimsPageActions;
 import actionsPerformed.SmartwatchesPageActions;
 import actionsPerformed.TabletPageActions;
 import actionsPerformed.UpgradeCustomerPageActions;
+import cucumber.api.PendingException;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
@@ -1368,7 +1368,8 @@ public class E2EOrderPlaced_Steps {
 		Agent_HomePagePageActions.upgradeUser();
 		Thread.sleep(4000);
 		/*
-		 * } catch (Exception e) { // TODO Auto-generated catch block System.out.
+		 * } catch (Exception e) { // TODO Auto-generated catch block
+		 * System.out.
 		 * println("Unable to login for upgrade for user in Agent shop, please see the failure screenshot"
 		 * ); Assert.
 		 * fail("Unable to login for upgrade for user in Agent shop, please see the failure screenshot"
@@ -2657,13 +2658,14 @@ public class E2EOrderPlaced_Steps {
 	}
 
 	/*
-	 * @And("^Verify the devices ([^\"]*), ([^\"]*) and ([^\"]*) in basket$") public
-	 * void verifyDevicesInBasket(String smartwatchname, String fitnesstrackername,
-	 * String tabletname) throws Throwable { try {
+	 * @And("^Verify the devices ([^\"]*), ([^\"]*) and ([^\"]*) in basket$")
+	 * public void verifyDevicesInBasket(String smartwatchname, String
+	 * fitnesstrackername, String tabletname) throws Throwable { try {
 	 * driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 	 * PageFactory.initElements(driver, BasketPage.class);
-	 * BasketPageActions.verifyDevicesInBasket(smartwatchname, fitnesstrackername,
-	 * tabletname); } catch (Exception e) { // TODO Auto-generated catch block
+	 * BasketPageActions.verifyDevicesInBasket(smartwatchname,
+	 * fitnesstrackername, tabletname); } catch (Exception e) { // TODO
+	 * Auto-generated catch block
 	 * System.out.println("not able to verify if phone tab is selected");
 	 * Assert.fail("not able to verify if phone tab is selected"); } }
 	 */
@@ -2688,8 +2690,8 @@ public class E2EOrderPlaced_Steps {
 	 * 
 	 * try { driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 	 * PageFactory.initElements(driver, PAYMSimOPage.class);
-	 * PAYMSimOPageActions.SelectRecommendedTariffPhonesTab(contractlength); } catch
-	 * (Exception e) { e.printStackTrace();
+	 * PAYMSimOPageActions.SelectRecommendedTariffPhonesTab(contractlength); }
+	 * catch (Exception e) { e.printStackTrace();
 	 * System.out.println("Unable to choose contract length");
 	 * Assert.fail("Unable to choose contract length"); } }
 	 */
@@ -2959,7 +2961,8 @@ public class E2EOrderPlaced_Steps {
 		driver.navigate().to(Newurl_CVOS);
 		Thread.sleep(3000);
 		/*
-		 * } catch (Exception e) { // TODO Auto-generated catch block System.out.
+		 * } catch (Exception e) { // TODO Auto-generated catch block
+		 * System.out.
 		 * println("Unable to Login/validate home page, please see the failure screenshot"
 		 * ); Assert.
 		 * fail("Unable to Login/validate home page, please see the failure screenshot"
@@ -3690,8 +3693,8 @@ public class E2EOrderPlaced_Steps {
 
 	// Then Verify the price gets updated based on the new colour and capacity
 	/*
-	 * @And("^Verify the price gets updated based on the new colour and capacity$" )
-	 * public void verifyPriceDisplaybased_on_Colour_and_capacity() {
+	 * @And("^Verify the price gets updated based on the new colour and capacity$"
+	 * ) public void verifyPriceDisplaybased_on_Colour_and_capacity() {
 	 * driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS); try {
 	 * PageFactory.initElements(driver, BaseCommPage.class);
 	 * BaseCommPageActions.VerifyPriceChangeuponCapacity();
@@ -3721,8 +3724,11 @@ public class E2EOrderPlaced_Steps {
 			log.debug("Running Test Step: @And(Verify the current sort order details)");
 
 			/*
-			 * if (driver.findElement(By.xpath("//*[@class='page-all']")).isEnabled ()) {
-			 * driver.findElement(By.xpath("//*[@class='page-all']")).click(); } else {
+			 * if
+			 * (driver.findElement(By.xpath("//*[@class='page-all']")).isEnabled
+			 * ()) {
+			 * driver.findElement(By.xpath("//*[@class='page-all']")).click(); }
+			 * else {
 			 * 
 			 * PhonesListingPageAction.clickOnViewAllProductsOnOnePage(); }
 			 */
@@ -4715,6 +4721,7 @@ public class E2EOrderPlaced_Steps {
 		}
 	}
 
+
 	@And("^I search for a PayM ([^\"]*) device$")
 	public void search_for_device(String devicename) throws Throwable {
 		try {
@@ -4756,11 +4763,115 @@ public class E2EOrderPlaced_Steps {
 		}
 	}
 	
-public void select_NeedSim_action_and_confirm() throws Throwable {
- 		// Write code here that turns the phrase above into concrete actions
- 		throw new PendingException();
-		
-	@And("^Navigate to FreeSim page$")
+
+
+	@Then("^Select 'Not your device' option$")
+	public void select_Not_your_device_option() throws Throwable {
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, UpgradeCustomerPage.class);
+			UpgradeCustomerPageActions.NotYourDevice();
+		} catch (Exception e) {
+			e.printStackTrace();
+			Assert.fail("Unable to select not your device");
+		}
+
+	}
+
+	@Then("^Select ([^\"]*), ([^\"]*) and ([^\"]*)$")
+	public void select_Make_Model_and_Network(String Make, String Model, String Network) throws Throwable {
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, UpgradeCustomerPage.class);
+			UpgradeCustomerPageActions.SelectMakeModelandNetwork(Make, Model, Network);
+		} catch (Exception e) {
+			e.printStackTrace();
+			Assert.fail("Unable to select either Make, Model or Network");
+		}
+	}
+
+	@Then("^perform update device$")
+	public void perform_update_device() throws Throwable {
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, UpgradeCustomerPage.class);
+			UpgradeCustomerPageActions.updateDeviceButton();
+		} catch (Exception e) {
+			e.printStackTrace();
+			Assert.fail("Unable to select update device button");
+		}
+	}
+
+	@Then("^Select any one refundable recycle option$")
+	public void select_any_one_refundable_recycle_option() throws Throwable {
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, UpgradeCustomerPage.class);
+			UpgradeCustomerPageActions.refundableOptionSelect();
+		} catch (Exception e) {
+			e.printStackTrace();
+			Assert.fail("Unable to select update device button");
+		}
+	}
+
+	@Then("^Verify 'Yes,get an accurate quote' is displayed$")
+	public void verify_Yes_get_an_accurate_quote_is_displayed() throws Throwable {
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, UpgradeCustomerPage.class);
+			Assert.assertTrue(UpgradeCustomerPageActions.VerifyAccurateQuotedisplay());
+			System.out.println("Assertions pass for verify quote");
+		} catch (Exception e) {
+			e.printStackTrace();
+			Assert.fail("Unable to verify get accurate quote");
+		}
+
+ 	}
+	 
+ 	@Then("^click on 'Yes,get an accurate quote'$")
+	public void click_on_Yes_get_an_accurate_quote() throws Throwable {
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, UpgradeCustomerPage.class);
+			UpgradeCustomerPageActions.getAccurateQuote();
+		} catch (Exception e) {
+			e.printStackTrace();
+			Assert.fail("Unable to click on yes get an accurate quote button");
+		}
+	}
+
+	@Then("^answer the questionnaire and click on 'Accept and continue to upgrade' button$")
+	public void answer_the_questionnaire_and_click_on_Accept_and_continue_to_upgrade_button() throws Throwable {
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, UpgradeCustomerPage.class);
+			UpgradeCustomerPageActions.questionnaire();
+		} catch (Exception e) {
+			e.printStackTrace();
+			Assert.fail("Unable to validate and enter questionaire");
+		}
+	}
+
+	@Then("^choose appropriately in 'Your Sim Card'section$")
+	public void choosingYourSimCardSection() throws Throwable {
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, UpgradeCustomerPage.class);
+			UpgradeCustomerPageActions.yourSim();
+		} catch (Exception e) {
+			e.printStackTrace();
+			Assert.fail("Unable to see your sim card section");
+		}
+
+	}
+
+	@Then("^select <NeedSim> action and confirm$")
+	public void select_NeedSim_action_and_confirm() throws Throwable {
+		// Write code here that turns the phrase above into concrete actions
+		throw new PendingException();
+	}
+
+		@And("^Navigate to FreeSim page$")
 	public void Navigate_to_FreeSim_page() throws Throwable {
 		try {
 			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
@@ -4840,5 +4951,4 @@ public void select_NeedSim_action_and_confirm() throws Throwable {
 			Assert.fail("Order number not generated");
 		}
 	}
-
 }
