@@ -4720,44 +4720,4 @@ public class E2EOrderPlaced_Steps {
 		}
 	}
 
-	@And("^I search for a PayM ([^\"]*) device$")
-	public void search_for_device(String devicename) throws Throwable {
-		try {
-			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-			PageFactory.initElements(driver, PhonesListingPage.class);
-			PhonesListingPageAction.searchForDevice(devicename);
-			Thread.sleep(3000);
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-			Assert.fail("Unable to search device");
-		}
-	}
-
-	@And("^check the status ([^\"]*) of the device$")
-	public void check_status_of_device(String status) throws Throwable {
-		try {
-			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-			PageFactory.initElements(driver, ConnectedDeviceDetailsPage.class);
-			if (status.equals("Pre Order")) {
-				ConnectedDeviceDetailsPageAction.checkDevStatusAsPreOrder();
-				Thread.sleep(3000);
-			}
-			if (status.equals("Delayed Delivery")) {
-				ConnectedDeviceDetailsPageAction.checkDevStatusAsDelayedDelivery();
-				Thread.sleep(3000);
-			}
-			if (status.equals("In Stock")) {
-				ConnectedDeviceDetailsPageAction.checkDevStatusAsInStock();
-				Thread.sleep(3000);
-			}
-			if (!status.equals("Pre Order") || !status.equals("Delayed Delivery") || !status.equals("In Stock")) {
-				Assert.fail("Please input correct status to check for the device");
-			}
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-			Assert.fail("Unable to check status of the device");
-		}
-	}
 }
