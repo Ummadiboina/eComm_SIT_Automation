@@ -71,7 +71,7 @@ import pageobjects.CVOS_PageObjects;
 import pageobjects.ConnectedDeviceDetailsPage;
 import pageobjects.DeliveryPage;
 import pageobjects.FitnessTrackerPage;
-import pageobjects.FreeSimPage;
+// import pageobjects.FreeSimPage;
 import pageobjects.LikeFreePage;
 import pageobjects.MobileBroadBandPage;
 import pageobjects.MouseHoverPage;
@@ -1368,8 +1368,7 @@ public class E2EOrderPlaced_Steps {
 		Agent_HomePagePageActions.upgradeUser();
 		Thread.sleep(4000);
 		/*
-		 * } catch (Exception e) { // TODO Auto-generated catch block
-		 * System.out.
+		 * } catch (Exception e) { // TODO Auto-generated catch block System.out.
 		 * println("Unable to login for upgrade for user in Agent shop, please see the failure screenshot"
 		 * ); Assert.
 		 * fail("Unable to login for upgrade for user in Agent shop, please see the failure screenshot"
@@ -2658,14 +2657,13 @@ public class E2EOrderPlaced_Steps {
 	}
 
 	/*
-	 * @And("^Verify the devices ([^\"]*), ([^\"]*) and ([^\"]*) in basket$")
-	 * public void verifyDevicesInBasket(String smartwatchname, String
-	 * fitnesstrackername, String tabletname) throws Throwable { try {
+	 * @And("^Verify the devices ([^\"]*), ([^\"]*) and ([^\"]*) in basket$") public
+	 * void verifyDevicesInBasket(String smartwatchname, String fitnesstrackername,
+	 * String tabletname) throws Throwable { try {
 	 * driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 	 * PageFactory.initElements(driver, BasketPage.class);
-	 * BasketPageActions.verifyDevicesInBasket(smartwatchname,
-	 * fitnesstrackername, tabletname); } catch (Exception e) { // TODO
-	 * Auto-generated catch block
+	 * BasketPageActions.verifyDevicesInBasket(smartwatchname, fitnesstrackername,
+	 * tabletname); } catch (Exception e) { // TODO Auto-generated catch block
 	 * System.out.println("not able to verify if phone tab is selected");
 	 * Assert.fail("not able to verify if phone tab is selected"); } }
 	 */
@@ -2690,8 +2688,8 @@ public class E2EOrderPlaced_Steps {
 	 * 
 	 * try { driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 	 * PageFactory.initElements(driver, PAYMSimOPage.class);
-	 * PAYMSimOPageActions.SelectRecommendedTariffPhonesTab(contractlength); }
-	 * catch (Exception e) { e.printStackTrace();
+	 * PAYMSimOPageActions.SelectRecommendedTariffPhonesTab(contractlength); } catch
+	 * (Exception e) { e.printStackTrace();
 	 * System.out.println("Unable to choose contract length");
 	 * Assert.fail("Unable to choose contract length"); } }
 	 */
@@ -2961,8 +2959,7 @@ public class E2EOrderPlaced_Steps {
 		driver.navigate().to(Newurl_CVOS);
 		Thread.sleep(3000);
 		/*
-		 * } catch (Exception e) { // TODO Auto-generated catch block
-		 * System.out.
+		 * } catch (Exception e) { // TODO Auto-generated catch block System.out.
 		 * println("Unable to Login/validate home page, please see the failure screenshot"
 		 * ); Assert.
 		 * fail("Unable to Login/validate home page, please see the failure screenshot"
@@ -3693,8 +3690,8 @@ public class E2EOrderPlaced_Steps {
 
 	// Then Verify the price gets updated based on the new colour and capacity
 	/*
-	 * @And("^Verify the price gets updated based on the new colour and capacity$"
-	 * ) public void verifyPriceDisplaybased_on_Colour_and_capacity() {
+	 * @And("^Verify the price gets updated based on the new colour and capacity$" )
+	 * public void verifyPriceDisplaybased_on_Colour_and_capacity() {
 	 * driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS); try {
 	 * PageFactory.initElements(driver, BaseCommPage.class);
 	 * BaseCommPageActions.VerifyPriceChangeuponCapacity();
@@ -3724,11 +3721,8 @@ public class E2EOrderPlaced_Steps {
 			log.debug("Running Test Step: @And(Verify the current sort order details)");
 
 			/*
-			 * if
-			 * (driver.findElement(By.xpath("//*[@class='page-all']")).isEnabled
-			 * ()) {
-			 * driver.findElement(By.xpath("//*[@class='page-all']")).click(); }
-			 * else {
+			 * if (driver.findElement(By.xpath("//*[@class='page-all']")).isEnabled ()) {
+			 * driver.findElement(By.xpath("//*[@class='page-all']")).click(); } else {
 			 * 
 			 * PhonesListingPageAction.clickOnViewAllProductsOnOnePage(); }
 			 */
@@ -4721,7 +4715,6 @@ public class E2EOrderPlaced_Steps {
 		}
 	}
 
-
 	@And("^I search for a PayM ([^\"]*) device$")
 	public void search_for_device(String devicename) throws Throwable {
 		try {
@@ -4762,8 +4755,6 @@ public class E2EOrderPlaced_Steps {
 			Assert.fail("Unable to check status of the device");
 		}
 	}
-	
-
 
 	@Then("^Select 'Not your device' option$")
 	public void select_Not_your_device_option() throws Throwable {
@@ -4826,9 +4817,9 @@ public class E2EOrderPlaced_Steps {
 			Assert.fail("Unable to verify get accurate quote");
 		}
 
- 	}
-	 
- 	@Then("^click on 'Yes,get an accurate quote'$")
+	}
+
+	@Then("^click on 'Yes,get an accurate quote'$")
 	public void click_on_Yes_get_an_accurate_quote() throws Throwable {
 		try {
 			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
@@ -4871,7 +4862,7 @@ public class E2EOrderPlaced_Steps {
 		throw new PendingException();
 	}
 
-		@And("^Navigate to FreeSim page$")
+	@And("^Navigate to FreeSim page$")
 	public void Navigate_to_FreeSim_page() throws Throwable {
 		try {
 			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
@@ -4885,70 +4876,296 @@ public class E2EOrderPlaced_Steps {
 		}
 	}
 
-	@And("^I select 'iPads and Tablets' tab$")
-	public void select_iPads_and_Tablets_tab() throws Throwable {
-		try {
+	
+	 
+	  @And("^I select 'iPads and Tablets' tab$") public void
+	  select_iPads_and_Tablets_tab() throws Throwable { try {
+	  
+	  driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+	  PageFactory.initElements(driver, FreeSimPage.class);
+	  FreeSimPageActions.iPadsandTabletstab(); } catch (Exception e) {
+	  System.out.println("unable to do select ipads and tablets tab");
+	  Assert.fail("unable to do select ipads and tablets tab"); } }
+	  
+	  @And("^I select Steady surfer 'ipad sims'$") public void
+	  select_Steady_surfer_ipad_sims() throws Throwable { try {
+	  
+	  driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+	  PageFactory.initElements(driver, FreeSimPage.class);
+	  FreeSimPageActions.iPadsim(); Autoredirection.redirect(); } catch (Exception
+	  e) { System.out.println("unable to do select steady surfer ipad sim");
+	  Assert.fail("unable to do select steady surfer ipad sim"); } }
+	  
+	  @Given("^I go to sim page$") public void gotosim() throws Throwable { try {
+	  driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+	  driver.get("https://www.ref.o2.co.uk/shop/sim-cards/pay-as-you-go/"); } catch
+	  (Exception e) { System.out.println("unable to do land on freesim page");
+	  Assert.fail("unable to do land on freesim page"); } }
+	  
+	  @And("^I select 'Enter manually' and provide all valid details in the delivery page$"
+	  ) public void Enter_delivery_details() throws Throwable { try {
+	  driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+	  PageFactory.initElements(driver, FreeSimPage.class);
+	  
+	  FreeSimPageActions.EnterManually();
+	  
+	  } catch (Exception e) { System.out.println("unable to do enter the details");
+	  Assert.fail("unable to do enter the details"); } }
+	  
+	  @Then("^verify order number is displayed$") public void OrdernumberFreeSim()
+	  throws Throwable {
+	  
+	  try { driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+	  PageFactory.initElements(driver, OrderConfirmationPage.class);
+	  OrderConfirmationPageActions.gettitlepage();
+	  OrderConfirmationPageActions.Orderid();
+	  
+	  } catch (Exception e) { System.out.println("Order number not generated");
+	  Assert.fail("Order number not generated"); } }
+	  
+	 
 
-			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-			PageFactory.initElements(driver, FreeSimPage.class);
-			FreeSimPageActions.iPadsandTabletstab();
+	//////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+	////////////////////////////////////////////////////////////////////////////////////////
+	///////////////////////// Regression from September
+	//////////////////////////////////////////////////////////////////////////////////////// Release//////////////////////////////
+	////////////////////////////////////////////////////////////////////////////////////////
+
+	@Then("^I should see 'Your Sim Card'section$")
+	public void i_should_see_Your_Sim_Card_section() throws Throwable {
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, UpgradeCustomerPage.class);
+			UpgradeCustomerPageActions.DisplayYourSimCardSection();
 		} catch (Exception e) {
-			System.out.println("unable to do select ipads and tablets tab");
-			Assert.fail("unable to do select ipads and tablets tab");
+			e.printStackTrace();
+			Assert.fail("The Your Sim section not displayed");
+		}
+
+	}
+
+	@And("^no option should be selected$")
+	public void no_option_should_be_selected() throws Throwable {
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, UpgradeCustomerPage.class);
+			UpgradeCustomerPageActions.RadioButtonNotSelectedByDefault();
+		} catch (Exception e) {
+			e.printStackTrace();
+			Assert.fail("Radio button is selected by default");
 		}
 	}
 
-	@And("^I select Steady surfer 'ipad sims'$")
-	public void select_Steady_surfer_ipad_sims() throws Throwable {
-		try {
-
-			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-			PageFactory.initElements(driver, FreeSimPage.class);
-			FreeSimPageActions.iPadsim();
-			Autoredirection.redirect();
-		} catch (Exception e) {
-			System.out.println("unable to do select steady surfer ipad sim");
-			Assert.fail("unable to do select steady surfer ipad sim");
-		}
-	}
-
-	@Given("^I go to sim page$")
-	public void gotosim() throws Throwable {
-		try {
-			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-			driver.get("https://www.ref.o2.co.uk/shop/sim-cards/pay-as-you-go/");
-		} catch (Exception e) {
-			System.out.println("unable to do land on freesim page");
-			Assert.fail("unable to do land on freesim page");
-		}
-	}
-
-	@And("^I select 'Enter manually' and provide all valid details in the delivery page$")
-	public void Enter_delivery_details() throws Throwable {
-		try {
-			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-			PageFactory.initElements(driver, FreeSimPage.class);
-
-			FreeSimPageActions.EnterManually();
-
-		} catch (Exception e) {
-			System.out.println("unable to do enter the details");
-			Assert.fail("unable to do enter the details");
-		}
-	}
-
-	@Then("^verify order number is displayed$")
-	public void OrdernumberFreeSim() throws Throwable {
+	@And("^verify that Confirm CTA is not displayed$")
+	public void verify_that_Confirm_CTA_is_not_displayed() throws Throwable {
 
 		try {
 			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-			PageFactory.initElements(driver, OrderConfirmationPage.class);
-			OrderConfirmationPageActions.gettitlepage();
-			OrderConfirmationPageActions.Orderid();
-
+			PageFactory.initElements(driver, UpgradeCustomerPage.class);
+			UpgradeCustomerPageActions.ConfirmButtonNotDisplayed();
 		} catch (Exception e) {
-			System.out.println("Order number not generated");
-			Assert.fail("Order number not generated");
+			e.printStackTrace();
+			Assert.fail("The confirm button is present");
 		}
 	}
+
+	@And("^verify that copy text 'Your Sim Card'section$")
+	public void verify_that_copy_text_Your_Sim_Card_section() throws Throwable {
+
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, UpgradeCustomerPage.class);
+			UpgradeCustomerPageActions.YourSimSectionCopyText();
+		} catch (Exception e) {
+			e.printStackTrace();
+			Assert.fail("The valid copytext is not displayed");
+		}
+	}
+
+	@And("^verfiy that two option are displayed$")
+	public void verfiy_that_two_option_are_displayed() throws Throwable {
+
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, UpgradeCustomerPage.class);
+			UpgradeCustomerPageActions.TwoOptionsDisplayed();
+		} catch (Exception e) {
+			e.printStackTrace();
+			Assert.fail("The two options is not displayed");
+		}
+	}
+
+	@And("^verify that 'Sim Swap Form'link is diplayed$")
+	public void verify_that_Sim_Swap_Form_link_is_diplayed() throws Throwable {
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, UpgradeCustomerPage.class);
+			UpgradeCustomerPageActions.SimSwapLinkDisplayed();
+		} catch (Exception e) {
+			e.printStackTrace();
+			Assert.fail("The Sim swap link is not displayed");
+		}
+	}
+
+	@When("^I click on 'Sim Swap Form' I should be opned with a new tab$")
+	public void i_click_on_Sim_Swap_Form_I_should_be_opned_with_a_new_tab() throws Throwable {
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, UpgradeCustomerPage.class);
+			UpgradeCustomerPageActions.ClickOnSimSwapLink();
+		} catch (Exception e) {
+			e.printStackTrace();
+			Assert.fail("Failed to click on the Sim swap form link");
+		}
+
+	}
+
+	@And("^Select a 'I need a sim'option$")
+	public void select_a_I_need_a_sim_option() throws Throwable {
+
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, UpgradeCustomerPage.class);
+			UpgradeCustomerPageActions.ClickIneedAsim();
+		} catch (Exception e) {
+			e.printStackTrace();
+			Assert.fail("The Radio button for I need a sim is not clicked");
+		}
+
+	}
+
+	@And("^Verify that 'Confirm CTA' is displayed$")
+	public void verify_that_Confirm_CTA_is_displayed() throws Throwable {
+
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, UpgradeCustomerPage.class);
+			UpgradeCustomerPageActions.ConfirmCTADisplayed();
+		} catch (Exception e) {
+			e.printStackTrace();
+			Assert.fail("The confirm CTA is not displayed");
+		}
+
+	}
+
+	@And("^Click on 'Confirm CTA'$")
+	public void click_on_Confirm_CTA() throws Throwable {
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, UpgradeCustomerPage.class);
+			UpgradeCustomerPageActions.ClickConfirmCTADisplayed();
+		} catch (Exception e) {
+			e.printStackTrace();
+			Assert.fail("The confirm CTA is not clicked");
+		}
+
+	}
+
+	@And("^verify that 'Go to checkout' CTA is enabled$")
+	public void verify_that_Go_to_checkout_CTA_is_enabled() throws Throwable {
+
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, BasketPage.class);
+			BasketPageActions.UpgradeBasketPageYourSim();
+		} catch (Exception e) {
+			e.printStackTrace();
+			Assert.fail("The Checkout is not enabled");
+		}
+
+	}
+
+	@And("^Verify that the option selected by the user in 'Your sim card' section in upgrade options page is retained$")
+	public void verify_that_the_option_selected_by_the_user_in_Your_sim_card_section_in_upgrade_options_page_is_retained()
+			throws Throwable {
+
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, UpgradeCustomerPage.class);
+			BasketPageActions.UpgradeBasketYourSim();
+		} catch (Exception e) {
+			e.printStackTrace();
+			Assert.fail("The Your sim card section is not present");
+		}
+	}
+	
+	@And("^Select a 'I dont need a new sim'option$")
+	public void select_a_I_dont_need_a_new_sim_option() throws Throwable {
+	   
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, UpgradeCustomerPage.class);
+			UpgradeCustomerPageActions.ClickIneedAsim();
+		} catch (Exception e) {
+			e.printStackTrace();
+			Assert.fail("The Radio button for I need a sim is not clicked");
+		}
+		
+	}
+
+	///////////////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////// Anusha Demo Free Sim Enter
+	/////////////////////////////////////////////////////////////////////////////////////// Manually/////////////////
+	///////////////////////////////////////////////////////////////////////////////////////
+
+	@And("^navigate to PayG SIMO page$")
+	public void navigate_to_PayG_SIMO_page() throws Throwable {
+
+		// try {
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		PageFactory.initElements(driver, MouseHoverPage.class);
+		MouseHoverAction.PayGSimoNavigation();
+		Autoredirection.redirect();
+		Thread.sleep(10000);
+		/*
+		 * } catch (Exception e) { // TODO Auto-generated catch block
+		 * System.out.println("Unable to do mousehover to PAYG SIMO page");
+		 * Assert.fail("Unable to do mousehover to PAYG SIMO page"); }
+		 */
+
+	}
+
+	@And("^I enter details in Delivery Page([^\\\"]*) and ([^\\\"]*)$")
+	public void i_enter_details_in_Delivery_PageTEST_and_ACCEPTA(String Firstname, String Surname) throws Throwable {
+
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, DeliveryPage.class);
+			DeliveryPageActions.SetDelivery();
+			FreeSimDeliveryPageActions.FreeSimAboutYou(Firstname, Surname);
+			FreeSimDeliveryPageActions.ClickSendMeMySim();
+
+		}
+
+		catch (Exception e) {
+			// TODO Auto-generated catch block
+			System.out.println("Unable to input details in delivery page");
+			Assert.fail("Unable to input details in delivery page");
+
+		}
+
+	}
+
+	@Then("^Free Sim order confirmation is displayed$")
+	public void free_Sim_order_confirmation_is_displayed() throws Throwable {
+
+		// try {
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		PageFactory.initElements(driver, OrderConfirmationPage.class);
+		OrderConfirmationPageActions.gettitlepage();
+		OrderConfirmationPageActions.FreeSimMessage();
+		Thread.sleep(2000);
+		// }
+		/*
+		 * catch (Exception e) { // TODO Auto-generated catch block System.out.
+		 * println("Error in order confirmation page , Please review the screenshots for failure"
+		 * ); Assert.
+		 * fail("Error in order confirmation page , Please review the screenshots for failure"
+		 * );
+		 * 
+		 * }
+		 */
+	}
+
 }

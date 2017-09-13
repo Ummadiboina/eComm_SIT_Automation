@@ -5,7 +5,6 @@ import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.concurrent.TimeUnit;
 
-import org.apache.commons.lang3.StringUtils;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -20,6 +19,7 @@ import com.google.common.base.Function;
 import helpers.Environment;
 import helpers.Filereadingutility;
 import junit.framework.Assert;
+import pageobjects.UpgradeCustomerPage;
 
 public class BasketPageActions extends Environment {
 
@@ -570,57 +570,85 @@ public class BasketPageActions extends Environment {
 		}
 
 	}
-	
+
 	public static void InsuranceSectionBasket() throws InterruptedException {
 		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 		System.out.println("Entering add InsuranceSectionBasket Method");
 
-		//pageobjects.BasketPage.InsuranceSection.sendKeys(Keys.ENTER);
-		
-		if(pageobjects.BasketPage.InsuranceSection.isDisplayed())
-		{
-			System.out.println("Insurance is displayed in Basket page and text is  - "+pageobjects.BasketPage.InsuranceSection.getText());
+		// pageobjects.BasketPage.InsuranceSection.sendKeys(Keys.ENTER);
+
+		if (pageobjects.BasketPage.InsuranceSection.isDisplayed()) {
+			System.out.println("Insurance is displayed in Basket page and text is  - "
+					+ pageobjects.BasketPage.InsuranceSection.getText());
 
 		}
 
-		
 		Thread.sleep(2000);
 		System.out.println("Completed InsuranceSectionBasket function");
 		log.debug("Completed InsuranceSectionBasket function");
 
 	}
-	
+
 	public static void InsuranceSectionDeliveryPage() throws InterruptedException {
 		System.out.println("Entering InsuranceSectionDeliveryPage Method");
-		
+
 		Thread.sleep(3000);
 
-		if(driver.findElement(By.xpath("//tr[@id='basket-insurance']")).isDisplayed())
-		{
-			System.out.println("Insurance is displayed in Delivery page and text is  - "+driver.findElement(By.xpath("//tr[@id='basket-insurance']")).getText());
+		if (driver.findElement(By.xpath("//tr[@id='basket-insurance']")).isDisplayed()) {
+			System.out.println("Insurance is displayed in Delivery page and text is  - "
+					+ driver.findElement(By.xpath("//tr[@id='basket-insurance']")).getText());
 
+		} else {
+			System.out.println("Insurance is not displayed");
 		}
-		else
-		{
-		System.out.println("Insurance is not displayed");
-		}
-		
-	/*	if(pageobjects.DeliveryPage.InsuranceSection.isDisplayed())
-		{
-			System.out.println("Insurance is displayed in Delivery page and text is  - "+pageobjects.DeliveryPage.InsuranceSection.getText());
 
-		}
-*/
-		
+		/*
+		 * if(pageobjects.DeliveryPage.InsuranceSection.isDisplayed()) {
+		 * System.out.println("Insurance is displayed in Delivery page and text is  - "
+		 * +pageobjects.DeliveryPage.InsuranceSection.getText());
+		 * 
+		 * }
+		 */
+
 		Thread.sleep(2000);
 		System.out.println("Completed InsuranceSectionDeliveryPage function");
 		log.debug("Completed InsuranceSectionDeliveryPage function");
 
 	}
-	
 
-	
-	
+	////////////////////////////// Upgrade Basket
+	////////////////////////////// Page///////////////////////////////////////////////
 
+	public static void UpgradeBasketPageYourSim() {
+
+		if (pageobjects.BasketPage.EnabledCheckout.isDisplayed()) {
+			System.out.println("The Checkout button is enabled");
+			log.debug("The checkout button is enabled");
+		} else if (pageobjects.BasketPage.DisabledCheckout.isDisplayed()) {
+			System.out.println("The checkout button is not enabled");
+			log.debug("The checkout button is not enabled");
+		}
+
+	}
+
+	public static void UpgradeBasketYourSim() {
+
+		JavascriptExecutor jse = (JavascriptExecutor) driver;
+		jse.executeScript("window.scrollBy(0,450)", "");
+
+		if (pageobjects.UpgradeCustomerPage.YourSimSection.isDisplayed()) {
+			System.out.println("The Your sim section is displayed");
+		} else {
+			System.out.println("The Your sim section is not displayed");
+		}
+
+		boolean SelectedY = UpgradeCustomerPage.NeedNewSimRadioButton.isSelected();
+		if (SelectedY == true) {
+			System.out.println("The I need a sim is preselected");
+		} else {
+			System.out.println("I dont need a sim is pre selected");
+		}
+
+	}
 
 }
