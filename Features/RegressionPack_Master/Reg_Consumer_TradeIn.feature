@@ -1,35 +1,30 @@
 Feature: Reg_Consumer_TradeIn
 
-  Scenario Outline: This scenario ensures that hte customer is able to successully Trade In the device
+  Scenario Outline: This scenario ensures that the customer is able to successully Trade In the device
     Given I am an Existing user and Navigates to Signin page
     And Signin using valid <username> and <password> credentials
-    And choose to upgrade any Phone in My upgrade page
-    And I click on Take offer and 
-    And I select a Phone from the recommended section
-    And I select a tariff from the recommended section
-    Then I should see 'Your Sim Card'section
-    And no option should be selected
-    And verify that Confirm CTA is not displayed
-    And verify that copy text 'Your Sim Card'section
-    And verfiy that two option are displayed
-    And verify that 'Sim Swap Form'link is diplayed
-    When I click on 'Sim Swap Form' I should be opned with a new tab
-    And Select a 'I need a sim'option
-    And Verify that 'Confirm CTA' is displayed
-    And Click on 'Confirm CTA'
-    And I click on 'Add and go to basket' CTA
-    And verify that 'Go to checkout' CTA is enabled
-    And Verify that the option selected by the user in 'Your sim card' section in upgrade options page is retained
+    And Navigate to upgrade > upgrade now
+    And Verify trade in message is displayed under 'Get your latest phone on us today' section
+    And Answer appropriate questionaire in 'your device' section
+    And click on 'upgrade now' button
+    And Select a <handset> device from Recommended devices section
+    And Select a tariff <tariff> with ribbons in upgrade journey
+    #And Select a tariff in upgrade journey
+    Then choose appropriately in 'Your Sim Card'section
+    #And select <NeedSim> action and confirm
+    And I Land on the basket page for upgrades
+    And Verify 'Upgrade on us' displayed in basket page
     And click on "go to checkout" button
-    And The OTAC page should be displayed
-    And I enter the OTAC code and click on Submit button
-    Then I should land on the Delivery page and click on 'Continue'button
-    And I enter all the details and click on 'Submit' button
+    And perform <Action> in OTAC page
+    And Verify 'Upgrade on us' displayed in delivery page
+    And Click on the 'Continue button' in delivery page
+    And Verify 'Upgrade on us' displayed in Payment page
+    And land on the payment page and input <Username> and other details and click 'Continue on next step'
     And Continue to Agreements page and confirm all the agreement checks
-    And Continue to Review page, check order contract text and review the order
-    And Check order contract text in Order Confirmation page
+    And Verify 'Upgrade on us' displayed in review page
+    And Continue to Review page and review the order
     Then order confirmation is displayed
 
     Examples: 
-      | username    | password |
-      | inp_dec2034 | test123  |
+      | username           | password  | handset        | tariff                  | Firstname | Surname | Username     | Action | Make  | Model   | Network |
+      | bvt2.cfu@gmail.com | cfubvt123 | Apple iPhone 7 | 19.99upfront45.00amonth | TEST      | ACCEPTA | TEST ACCEPTA | skip   | Apple | Iphone7 | Orange  |
