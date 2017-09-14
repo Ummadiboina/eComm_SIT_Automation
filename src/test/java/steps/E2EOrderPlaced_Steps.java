@@ -49,6 +49,7 @@ import actionsPerformed.ShopLandingPageAction;
 import actionsPerformed.SimsPageActions;
 import actionsPerformed.SmartwatchesPageActions;
 import actionsPerformed.TabletPageActions;
+import actionsPerformed.UpdateDevicePlanLinkEmailAddressActions;
 import actionsPerformed.UpgradeCustomerPageActions;
 import cucumber.api.PendingException;
 import cucumber.api.java.en.And;
@@ -65,6 +66,7 @@ import pageobjects.Agent_CreditCheckDetailsPage;
 import pageobjects.Agent_DealBuilderPage;
 import pageobjects.Agent_HomePage;
 import pageobjects.Agent_RegisterCustomerPage;
+import pageobjects.Agent_UpdateCCAEmailPage;
 import pageobjects.AgreementPage;
 import pageobjects.BaseCommPage;
 import pageobjects.BasketPage;
@@ -5172,5 +5174,64 @@ public class E2EOrderPlaced_Steps {
 		 * }
 		 */
 	}
+	
+	
+	////////////////////////////////////CCA Agent///////////////////////////////////////////////////////
+	
+	@Given("^select a valid Handset and Tariff combination such that there is monthly$")
+	public void select_a_valid_Handset_and_Tariff_combination_such_that_there_is_monthly() throws Throwable {
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, Agent_DealBuilderPage.class);
+			Agent_DealBuilderPageActions.CCAHandsetTariffCombination() ;
+			Thread.sleep(4000);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			Assert.fail("Unable to select valid CCA tariff and handset combination");
+		}
+	}
+
+	@And("^update the emailid ([^\"]*)$")
+	public void update_the_emailid(String emailid) throws Throwable {
+		
+		//try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, Agent_UpdateCCAEmailPage.class);
+			UpdateDevicePlanLinkEmailAddressActions.EnterCCAEmail(emailid);
+			Thread.sleep(4000);
+	/*	} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			Assert.fail("Unable to enter the CCA email id");
+		}
+	*/    
+	}
+
+	@Then("^Click on 'Generate CCA' button$")
+	public void click_on_Generate_CCA_button() throws Throwable {
+	    
+	}
+
+	@Then("^click on the 'CCA' link$")
+	public void click_on_the_CCA_link() throws Throwable {
+	   
+	}
+
+	@Then("^click on 'Continu'$")
+	public void click_on_Continu() throws Throwable {
+	   ;
+	}
+
+	@Then("^land on Delivery page and click on 'Continue'$")
+	public void land_on_Delivery_page_and_click_on_Continue() throws Throwable {
+	   
+	}
+
+
+	
+	
+	
+	
 
 }
