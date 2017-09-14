@@ -5172,5 +5172,35 @@ public class E2EOrderPlaced_Steps {
 		 * }
 		 */
 	}
+	
+	@Given("^Search for ([^\\\\\\\"]*) device$")
+	public void search_for_Delayed_device(String Status) throws Throwable {
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, Agent_DealBuilderPage.class);
+			Agent_DealBuilderPageActions.SearchDevice(Status);
+			Thread.sleep(4000);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			Assert.fail("Unable to Search device");
+		}
 
+	}
+	
+	/*@Given("^Select valid Random PayM device")
+	public void SelctRandomDe (String Device) throws Throwable {
+		try {
+			driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, Agent_DealBuilderPage.class);
+			Agent_DealBuilderPageActions.SelectPAYMDevice(Device);
+			Thread.sleep(4000);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			System.out.println("Unable to select Valid device, please see the failure screenshot");
+			Assert.fail("Unable to select Valid device, please see the failure screenshot");
+
+		}
+
+	}*/
 }
