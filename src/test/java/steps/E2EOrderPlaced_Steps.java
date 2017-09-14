@@ -4880,7 +4880,7 @@ public class E2EOrderPlaced_Steps {
 		}
 	}
 
-	/*
+	
 	 
 	  @And("^I select 'iPads and Tablets' tab$") public void
 	  select_iPads_and_Tablets_tab() throws Throwable { try {
@@ -4927,7 +4927,7 @@ public class E2EOrderPlaced_Steps {
 	  } catch (Exception e) { System.out.println("Order number not generated");
 	  Assert.fail("Order number not generated"); } }
 	  
-	*/ 
+	
 
 	//////////////////////////////////////////////////////////////////////////////////////////////////////////
 
