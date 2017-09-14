@@ -55,8 +55,7 @@ public class UpgradeCustomerPageActions extends Environment {
 		 * pageobjects.UpgradeCustomerPage.Continue.click();
 		 * 
 		 * } catch (Exception e) { // TODO Auto-generated catch block
-		 * System.out.println("Continue button is not there, it should be fine"
-		 * );
+		 * System.out.println("Continue button is not there, it should be fine" );
 		 * 
 		 * }
 		 */
@@ -210,9 +209,8 @@ public class UpgradeCustomerPageActions extends Environment {
 
 		/*
 		 * Assert.assertEquals(pageobjects.UpgradeCustomerPage.
-		 * NotEligible_message.getText(), "You are not eligible to upgrade"); //
-		 * bound to change System.out.println(
-		 * "The error message is displayed as" +
+		 * NotEligible_message.getText(), "You are not eligible to upgrade"); // bound
+		 * to change System.out.println( "The error message is displayed as" +
 		 * pageobjects.UpgradeCustomerPage.NotEligible_message.getText());
 		 */
 	}
@@ -326,7 +324,7 @@ public class UpgradeCustomerPageActions extends Environment {
 		List<String> Devices = new ArrayList<String>();
 		for (WebElement f : DevicesName) {
 			Devices.add(f.getText());
-			System.out.println(Devices.add(f.getText()));
+			//System.out.println(Devices.add(f.getText()));
 		}
 		log.debug("passing device" + devicename);
 		System.out.println("passing device " + devicename);
@@ -336,10 +334,10 @@ public class UpgradeCustomerPageActions extends Environment {
 				System.out.println("Device name matches");
 				k = i + 1;
 				log.debug("k :" + k);
-				System.out.println("k :" + k);
+				//System.out.println("k :" + k);
 				c = "(//div[@id='qa-recommendedDevicesTile']/a//div/button)[" + k + "]";
 				log.debug("xpath of button is" + c);
-				System.out.println("xpath of button is" + c);
+				//System.out.println("xpath of button is" + c);
 				SelectButton = driver.findElement(By.xpath(c));
 				js.executeScript("arguments[0].click();", SelectButton);
 			}
@@ -829,8 +827,8 @@ public class UpgradeCustomerPageActions extends Environment {
 							driver.switchTo().window(winHandle);
 							log.debug("Inside the overlay for the selected tariff");
 							log.debug("Text inside overlay is :" + '\n'
-									+ driver.findElement(By
-											.xpath("//div[contains(@class, 'overlay-box primary-promo-overlay')]/div/h3"))
+									+ driver.findElement(By.xpath(
+											"//div[contains(@class, 'overlay-box primary-promo-overlay')]/div/h3"))
 											.getText());
 						}
 						Thread.sleep(5000);
@@ -1097,8 +1095,8 @@ public class UpgradeCustomerPageActions extends Environment {
 						log.debug("Inside the overlay for the selected tariff");
 						Thread.sleep(3000);
 						log.debug("Text inside overlay is :" + '\n'
-								+ driver.findElement(By
-										.xpath("//div[contains(@class, 'overlay-box additional-promo-overlay')]/div/h3"))
+								+ driver.findElement(By.xpath(
+										"//div[contains(@class, 'overlay-box additional-promo-overlay')]/div/h3"))
 										.getText());
 					}
 					Thread.sleep(5000);
@@ -1277,12 +1275,10 @@ public class UpgradeCustomerPageActions extends Environment {
 		/*
 		 * pageobjects.UpgradeCustomerPage.ContinuetoUpgrade.click();
 		 * System.out.println("Selected continue to upgrade button");
-		 */ 
+		 */
 		System.out.println("Completed refundableOptionSelect function");
 
 	}
-
-	
 
 	public static boolean VerifyAccurateQuotedisplay() throws InterruptedException {
 		System.out.println("Going to verify VerifyAccurateQuotedisplay function");
@@ -1292,7 +1288,7 @@ public class UpgradeCustomerPageActions extends Environment {
 		return true;
 
 	}
-	
+
 	public static void getAccurateQuote() throws InterruptedException {
 		System.out.println("Going to enter getAccurateQuote function");
 		Thread.sleep(4000);
@@ -1344,8 +1340,9 @@ public class UpgradeCustomerPageActions extends Environment {
 		Thread.sleep(8000);
 	}
 
-	////////////////////////////////////September Release///////////////////////////////////////////////
-	
+	//////////////////////////////////// September
+	//////////////////////////////////// Release///////////////////////////////////////////////
+
 	public static void DisplayYourSimCardSection() throws Exception {
 
 		log.debug('\n' + "Validate Your Sim section is displayed");
@@ -1361,8 +1358,7 @@ public class UpgradeCustomerPageActions extends Environment {
 		log.debug("The Your sim section is not displayed");
 
 	}
-	
-	
+
 	public static void RadioButtonNotSelectedByDefault() throws Exception {
 
 		log.debug('\n' + "Validate Your No option is selected by default");
@@ -1377,7 +1373,7 @@ public class UpgradeCustomerPageActions extends Environment {
 		}
 
 	}
-	
+
 	public static void ConfirmButtonNotDisplayed() throws Exception {
 
 		log.debug('\n' + "Validate Confirm button not displayed");
@@ -1394,7 +1390,7 @@ public class UpgradeCustomerPageActions extends Environment {
 		}
 
 	}
-	
+
 	public static void YourSimSectionCopyText() throws Exception {
 
 		String YouSimCopyText = UpgradeCustomerPage.YourSimSectionCopyText.getText();
@@ -1413,7 +1409,7 @@ public class UpgradeCustomerPageActions extends Environment {
 			System.out.println("The valid copytext is not displayed");
 
 	}
-	
+
 	public static void TwoOptionsDisplayed() throws Exception {
 
 		String OptOne = UpgradeCustomerPage.YourSimOptionsOne.getText();
@@ -1428,7 +1424,7 @@ public class UpgradeCustomerPageActions extends Environment {
 			System.out.println("The two options are not displayed");
 
 	}
-	
+
 	public static void SimSwapLinkDisplayed() throws Exception {
 
 		if (UpgradeCustomerPage.SimSwaplink.isDisplayed()) {
@@ -1440,7 +1436,7 @@ public class UpgradeCustomerPageActions extends Environment {
 		}
 
 	}
-	
+
 	public static void ClickOnSimSwapLink() throws Exception {
 
 		UpgradeCustomerPage.SimSwaplink.click();
@@ -1468,7 +1464,7 @@ public class UpgradeCustomerPageActions extends Environment {
 		System.out.println(driver.getCurrentUrl());
 
 	}
-	
+
 	public static void ClickIneedAsim() throws Exception {
 
 		if (UpgradeCustomerPage.IneedAsimRadio.isDisplayed()) {
@@ -1477,8 +1473,6 @@ public class UpgradeCustomerPageActions extends Environment {
 		}
 
 	}
-	
-	
 
 	public static void ConfirmCTADisplayed() throws Exception {
 
@@ -1507,5 +1501,94 @@ public class UpgradeCustomerPageActions extends Environment {
 		}
 
 	}
-	
+
+	public static void clickTakeOfferAndUpgrade() {
+		System.out.println("Going to click on Take Offer and Upgrade");
+		if (UpgradeCustomerPage.TakeOfferAndUpgrade.size() > 0) {
+			UpgradeCustomerPage.TakeOfferAndUpgrade.get(0).click();
+		} else {
+			System.out.println("Take offer and upgrade button is not present or enabled");
+		}
+	}
+
+	public static void selectTariffFromRecommendedSection() {
+		System.out.println("Going to select tariff from recommended section");
+		executor.executeScript("arguments[0].click();", UpgradeCustomerPage.RandomTariffUpgrade);
+	}
+
+	public static void verifyBuyOutDisplayedInMyPackage() {
+		System.out.println("verifyBuyOutDisplayedInMyPackage");
+		String AcText1 = null, AcText2 = null, AcText3 = null, AcText4 = null, cost1 = null, cost2 = null;
+		String ExText1 = null, ExText2 = null, ExText3 = null, ExText4 = null;
+		AcText1 = UpgradeCustomerPage.BuyoutText1MyPkg.getText();
+		AcText2 = UpgradeCustomerPage.BuyoutText2MyPkg.getText();
+		AcText3 = UpgradeCustomerPage.BuyoutText3MyPkg.getText();
+		AcText4 = UpgradeCustomerPage.BuyoutText4MyPkg.getText();
+		cost1 = UpgradeCustomerPage.BuyoutCost1MyPkg.getText();
+		cost2 = UpgradeCustomerPage.BuyoutCost2MyPkg.getText();
+
+		ExText1 = "Left to pay on your existing device";
+		ExText2 = "The balance still to pay on your current";
+		ExText3 = "Upgrade on us";
+		ExText4 = "We’ll pay off the rest of your Device Plan, and you can keep your current device. If your next airtime bill has already been scheduled, it may still be taken.";
+
+		if (AcText1.equals(ExText1) && (AcText2.equals(ExText2) && (AcText3.equals(ExText3))
+				&& (AcText4.equals(ExText4) && !cost1.isEmpty() && !cost2.isEmpty()))) {
+			System.out.println("Buy out offer text is displayed as expected");
+			System.out.println(AcText1 + "  " + cost1);
+			System.out.println(AcText2);
+			System.out.println(AcText3 + "  " + cost2);
+			System.out.println(AcText4);
+
+		} else {
+			Assert.fail("Buy out text is not as expected");
+		}
+
+	}
+
+	public static void verifyBuyOutDisplayedInBasketPage() {
+		System.out.println("verifyBuyOutDisplayedInBasketPage");
+		String AcText1 = null, AcText2 = null, AcText3 = null, AcText4 = null, cost1 = null, cost2 = null;
+		String ExText1 = null, ExText2 = null, ExText3 = null, ExText4 = null;
+
+		AcText1 = UpgradeCustomerPage.BuyOutText1BasketPage.getText();
+		AcText2 = UpgradeCustomerPage.BuyOutText2BasketPage.getText();
+		AcText3 = UpgradeCustomerPage.BuyOutText3BasketPage.getText();
+		AcText4 = UpgradeCustomerPage.BuyOutText4BasketPage.getText();
+		cost1 = UpgradeCustomerPage.BuyOutCost1BasketPage.getText();
+		cost2 = UpgradeCustomerPage.BuyOutCost2BasketPage.getText();
+
+		ExText1 = "Your Phone Plan balance";
+		ExText2 = "This is the payment amount required for your current CCA account to be settled";
+		ExText3 = "Upgrade on us";
+		ExText4 = "We’ll pay off the rest of your Device Plan, and you can keep your current device. If your next airtime bill has already been scheduled, it may still be taken.";
+
+		System.out.println(AcText1 + "   " + cost1);
+		System.out.println(AcText2);
+		System.out.println(AcText3 + "   " + cost2);
+		System.out.println(AcText4);
+
+		if (AcText1.equals(ExText1)
+				&& (AcText2.equals(ExText2) && (AcText3.equals(ExText3)) && (AcText4.equals(ExText4)))) {
+			System.out.println("Buy out offer text is displayed as expected");
+			System.out.println("Your Phone Plan balance is " + cost1);
+			System.out.println("Upgrade on us for " + cost2);
+		} else {
+			Assert.fail("Buy out text is not as expected");
+		}
+	}
+
+	public static void verifyBuyOutDisplayed() {
+		System.out.println("verify Buy Out is displayed");
+		String BuyoutText = null, BuyoutCost = null, Title = null;
+		BuyoutText = UpgradeCustomerPage.BuyOutTextOTACPage.getText();
+		BuyoutCost = UpgradeCustomerPage.BuyOutCostOTACPage.getText();
+		Title = driver.getTitle();
+
+		if (!BuyoutText.isEmpty()) {
+			System.out.println("Buy out Text displayed in \'" + Title + "\'page is " + BuyoutText);
+
+		}
+
+	}
 }
