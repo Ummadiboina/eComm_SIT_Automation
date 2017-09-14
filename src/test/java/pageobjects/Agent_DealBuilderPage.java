@@ -104,4 +104,9 @@ public class Agent_DealBuilderPage {
 		public static WebElement emailConfirmation;
 
 
+		@FindBy(how=How.XPATH,using="//*[@id='deviceTable_filter']/label/input")
+		public static WebElement DeviceSearchFilter;
+
+		@FindBy(how = How.XPATH, using = "//div[@id='deviceTable_filter']/label/input")
+		public static WebElement SearchDevice;
 }
