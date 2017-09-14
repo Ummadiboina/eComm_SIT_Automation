@@ -331,4 +331,20 @@ public class Agent_DealBuilderPageActions extends Environment {
 	}
 
 
+	public static void CCAHandsetTariffCombination() throws InterruptedException {
+		try {
+			Select dropdown = new Select(pageobjects.Agent_DealBuilderPage.HandsetTariffCombination);
+			dropdown.selectByIndex(1);
+			System.out.println("Selecting combination of handset and talkplan for CCA");
+			System.out.println(
+					"Selected combination is" + pageobjects.Agent_DealBuilderPage.HandsetTariffCombination.getText());
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			System.out.println("handset and CCA tariff dropdown is not displayed");
+		}
+	}
+	
+	
+	
+	
 }
