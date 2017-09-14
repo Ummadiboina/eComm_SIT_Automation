@@ -76,7 +76,7 @@ public class UpgradeCustomerPage {
 
 	@FindBy(how = How.XPATH, using = "//button[contains(text(),'Yes, get an accurate quote')]")
 	public static WebElement GetAccurateQuote;
-	
+
 	@FindBy(how = How.XPATH, using = "//div[@data-qa-device-damaged='']/h2")
 	public static WebElement GetAccurateQuoteSectionDisplay;
 
@@ -116,8 +116,51 @@ public class UpgradeCustomerPage {
 	@FindBy(how = How.XPATH, using = "//*[@id='confirmSim']")
 	public static WebElement ConfirmCTA;
 
+	@FindAll({@FindBy(how = How.XPATH, using = "//div[@class='btn-container']/button[@class='primary']")})
+	public static List<WebElement> TakeOfferAndUpgrade;
 
+	@FindBy(how = How.XPATH, using = "(//button[@id='callToAction'])[1]")
+	public static WebElement RandomTariffUpgrade;
 
+	@FindBy(how = How.ID, using = "qa-immediate-upgrade-fee-message")
+	public static WebElement BuyoutText1MyPkg;
 
+	@FindBy(how = How.ID, using = "qa-basket-upgrade-fee-existing-device")
+	public static WebElement BuyoutText2MyPkg;
+	
+	@FindBy(how = How.ID, using = "qa-basket-upgrade-promotion-discountMessageHeader")
+	public static WebElement BuyoutText3MyPkg;
+	
+	@FindBy(how = How.ID, using = "qa-basket-upgrade-promotion-discountMessage")
+	public static WebElement BuyoutText4MyPkg;
 
+	@FindBy(how = How.XPATH, using = "//section[@id='qa-immediate-upgrade-fee']//p[@class='upfront']")
+	public static WebElement BuyoutCost1MyPkg;
+	
+	@FindBy(how = How.XPATH, using = "//section[@id='qa-upgrade-promotion-discount']//p[@class='upfront']")
+	public static WebElement BuyoutCost2MyPkg;
+	
+	@FindBy(how = How.XPATH, using = "(//section[@class='early-fee']/p[1])[1]")
+	public static WebElement BuyOutText1BasketPage;
+	
+	@FindBy(how = How.XPATH, using = "(//section[@class='early-fee']/p[2])[1]")
+	public static WebElement BuyOutText2BasketPage;
+	
+	@FindBy(how = How.XPATH, using = "(//section[@class='early-fee']/p[1])[2]")
+	public static WebElement BuyOutText3BasketPage;
+	
+	@FindBy(how = How.XPATH, using = "(//section[@class='early-fee']/p[2])[2]")
+	public static WebElement BuyOutText4BasketPage;
+
+	@FindBy(how = How.XPATH, using = "(//section[@class='early-fee']//p[@class='upfront'])[1]")
+	public static WebElement BuyOutCost1BasketPage;
+	
+	@FindBy(how = How.XPATH, using = "(//section[@class='early-fee']//p[@class='upfront'])[2]")
+	public static WebElement BuyOutCost2BasketPage;
+
+	@FindBy(how = How.XPATH, using = "//*[@id='buy-out-discount']/td[2]/p")
+	public static WebElement BuyOutCostOTACPage;
+
+	@FindBy(how = How.ID, using = "buy-out-discount")
+	public static WebElement BuyOutTextOTACPage;
 }
