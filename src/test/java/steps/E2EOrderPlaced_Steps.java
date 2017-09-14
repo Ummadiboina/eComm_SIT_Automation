@@ -5295,4 +5295,19 @@ public class E2EOrderPlaced_Steps {
 
 		}
 	}
+	
+	@Given("^Search for ([^\\\\\\\"]*) device$")
+	public void search_for_Delayed_device(String Status) throws Throwable {
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, Agent_DealBuilderPage.class);
+			Agent_DealBuilderPageActions.SearchDevice(Status);
+			Thread.sleep(4000);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			Assert.fail("Unable to Search device");
+		}
+
+	}
 }
