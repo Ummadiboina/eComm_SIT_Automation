@@ -58,6 +58,8 @@ public class Agent_DealBuilderPageActions extends Environment {
 			Thread.sleep(3000);
 		}
 	}
+	
+	
 
 	public static void SelectTariff(String Tariff) throws InterruptedException {
 
@@ -291,6 +293,43 @@ public class Agent_DealBuilderPageActions extends Environment {
 		//driver.close();
 
 	}
+	
+	public static void SearchDevice(String Status) throws InterruptedException {
+
+		// Reporter.log("Selected the dropdown Mrs");
+		System.out.println("Entering Search device method");
+		System.out.println("The device search criteria is "+Status);
+
+		Thread.sleep(8000);
+		Agent_DealBuilderPage.DevicesTab.click();
+		System.out.println("Clicked on Devices tab");
+		log.debug("Clicked on Devices tab");
+		Thread.sleep(3000);
+		
+		Agent_DealBuilderPage.DeviceSearchFilter.click();
+		System.out.println("Clicked on Device Search field");
+		log.debug("Clicked on Device Search field");
+		Thread.sleep(3000);
+
+		if (Status.contains("Delayed")) {
+			Thread.sleep(3000);
+			Agent_DealBuilderPage.SearchDevice.sendKeys(Status);;
+			Thread.sleep(3000);
+			System.out.println("Sent search as - "+Status);
+			log.debug("Sent search as - "+Status);
+
+		}
+
+		if (Status.contains("Preorder")) {
+			Thread.sleep(3000);
+			Agent_DealBuilderPage.SearchDevice.sendKeys(Status);;
+			Thread.sleep(3000);
+			System.out.println("Sent search as - "+Status);
+			log.debug("Sent search as - "+Status);
+
+		}
+	}
+
 
 	public static void CCAHandsetTariffCombination() throws InterruptedException {
 		try {

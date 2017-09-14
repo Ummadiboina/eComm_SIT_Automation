@@ -28,5 +28,5 @@ Feature: CFU_Tablets_Data_filters_options_tariff_and_extras_page_Order_placement
     Then order confirmation is displayed
 
     Examples: 
-      | username   | password | handset  | Firstname | Surname | Username     | Action |
-      | ins_nov746 | test123  | GalaxyS8 | TEST      | ACCEPTA | TEST ACCEPTA | skip   |
+      | username           | password  | handset  | Firstname | Surname | Username     | Action |
+      | bvt2.cfu@gmail.com | cfubvt123 | GalaxyS8 | TEST      | ACCEPTA | TEST ACCEPTA | skip   |
