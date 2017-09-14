@@ -1,21 +1,27 @@
-Feature: Reg_Agent_PreOrder
+Feature: Reg_Agent_DelayedDelivery
 
-  @ConsumerShop
-  Scenario Outline: CFA PayM Pre Order Phones Home delivery E2E journey
-    Given I am an CFA user and Lands on shop page
-    And navigate to PAYM Phones page
-    And I choose PayM <Preorderhandset>
-    And Navigate to device details page
-    And Land on the 'Tariffs and extra' page
-    And I Land on the basket page and choose home delivery option
-    And click on "go to checkout" button
-    And input <Firstname> and <Surname> and other valid details in Delivery page and Click on the 'Continue button'
-    And land on the payment page and input <Username> and other details and click 'Continue on next step'
-    And Continue to Agreements page and confirm all the agreement checks
-    And Continue to Review page and review the order
-    Then order confirmation is displayed
+  #launch hooks and get browser
+  @AgentsRegression
+  Scenario Outline: Successful completion of a PAY M Acquistion journey
+    Given I login to Agent shop
+    And performs Acquisition for New user
+    And Search for <Status> device
+    And Select a valid PayM <Device>
+    And Select valid <Tariffs> from tariffs tab
+    And select a valid Handset and Tariff combination
+    And Select valid <Extras> from extras tab
+    And Validate all the Basket content and checkout
+    Then perform all the advisory checks
+    And perform the credit checks using valid <Firstname>, <Surname>, <HouseNumber>, <PostCode> and valid <Username>
+    And Register customer with valid <Firstname>, <Surname>, <HouseNumber>, <PostCode> and other valid details in delivery page
+    And Choose <DeliveryType> delivery address and delivery time
+    #When Pay by card for PAYM device
+    And Update Device Plan Link Email Address
+    #Then Order confirmation message should be displayed
+    Then CCALink Should be generated
 
-    #Close the browser
+    # And Update Device Plan Link Email Address
+    # Then CCALink Should be generated
     Examples: 
-      | Preorderhandset | Firstname | Surname | Username     |
-      | GalaxyS7        | TEST      | ACCEPTA | TEST ACCEPTA |
+      | Status  | Device | Tariffs | Extras | DeliveryType | Firstname | Surname | Username     | HouseNumber | PostCode |
+      | preorder | Random | Random  | Base   | HomeDelivery | TEST      | ACCEPTA | TEST ACCEPTA |          14 | SL11UP   |
