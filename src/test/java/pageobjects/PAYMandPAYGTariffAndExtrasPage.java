@@ -80,5 +80,7 @@ public class PAYMandPAYGTariffAndExtrasPage {
 	@FindAll({ @FindBy(how = How.XPATH, using = "//div[@class=' insurance-button-container '][1]")})
 	public static WebElement AddRandomInsurance;
 	
+	@FindAll({ @FindBy(how = How.XPATH, using = "//div[@class='filter-label']")})
+	public static WebElement FilterandSortLabel;
 
 }

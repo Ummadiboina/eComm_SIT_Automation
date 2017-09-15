@@ -5192,16 +5192,16 @@ public class E2EOrderPlaced_Steps {
 		 * }
 		 */
 	}
-	
-	
-	////////////////////////////////////CCA Agent///////////////////////////////////////////////////////
-	
+
+	//////////////////////////////////// CCA
+	//////////////////////////////////// Agent///////////////////////////////////////////////////////
+
 	@Given("^select a valid Handset and Tariff combination such that there is monthly$")
 	public void select_a_valid_Handset_and_Tariff_combination_such_that_there_is_monthly() throws Throwable {
 		try {
 			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 			PageFactory.initElements(driver, Agent_DealBuilderPage.class);
-			Agent_DealBuilderPageActions.CCAHandsetTariffCombination() ;
+			Agent_DealBuilderPageActions.CCAHandsetTariffCombination();
 			Thread.sleep(4000);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
@@ -5212,45 +5212,37 @@ public class E2EOrderPlaced_Steps {
 
 	@And("^update the emailid ([^\"]*)$")
 	public void update_the_emailid(String emailid) throws Throwable {
-		
-		//try {
-			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-			PageFactory.initElements(driver, Agent_UpdateCCAEmailPage.class);
-			UpdateDevicePlanLinkEmailAddressActions.EnterCCAEmail(emailid);
-			Thread.sleep(4000);
-	/*	} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-			Assert.fail("Unable to enter the CCA email id");
-		}
-	*/    
+
+		// try {
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		PageFactory.initElements(driver, Agent_UpdateCCAEmailPage.class);
+		UpdateDevicePlanLinkEmailAddressActions.EnterCCAEmail(emailid);
+		Thread.sleep(4000);
+		/*
+		 * } catch (Exception e) { // TODO Auto-generated catch block
+		 * e.printStackTrace(); Assert.fail("Unable to enter the CCA email id"); }
+		 */
 	}
 
 	@Then("^Click on 'Generate CCA' button$")
 	public void click_on_Generate_CCA_button() throws Throwable {
-	    
+
 	}
 
 	@Then("^click on the 'CCA' link$")
 	public void click_on_the_CCA_link() throws Throwable {
-	   
+
 	}
 
 	@Then("^click on 'Continu'$")
 	public void click_on_Continu() throws Throwable {
-	   ;
+		;
 	}
 
 	@Then("^land on Delivery page and click on 'Continue'$")
 	public void land_on_Delivery_page_and_click_on_Continue() throws Throwable {
-	   
+
 	}
-
-
-	
-	
-	
-	
 
 	@And("^click on View All phones in upgrade page$")
 	public void clickViewAllPhonesUpgrade() throws Throwable {
@@ -5356,7 +5348,7 @@ public class E2EOrderPlaced_Steps {
 
 		}
 	}
-	
+
 	@Given("^Search for ([^\\\\\\\"]*) device$")
 	public void search_for_Delayed_device(String Status) throws Throwable {
 		try {
@@ -5370,5 +5362,120 @@ public class E2EOrderPlaced_Steps {
 			Assert.fail("Unable to Search device");
 		}
 
+	}
+
+	@Then("^I should see data filters buttons next to existing sort drop-down for PAYM/SIMO tariffs$")
+	public void filterandDropDownPosition() throws Throwable {
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, PAYMandPAYGTariffAndExtrasPage.class);
+			PAYMandPAYGTariffAndExtrasPageActions.SortFilterPosition();
+			Thread.sleep(2000);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			System.out.println("Sort filter validation failed");
+			Assert.fail("Sort filter validation failed");
+
+		}
+	}
+
+	@Given("^Verify trade in message is displayed under 'Get your latest phone on us today' section$")
+	public void verify_trade_in_message_is_displayed_under_Get_your_latest_phone_on_us_today_section()
+			throws Throwable {
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, UpgradeCustomerPage.class);
+			UpgradeCustomerPageActions.VerifyTradeinMessage();
+
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			System.out.println("Unable to verify tradein message");
+			Assert.fail("Unable to verify tradein message");
+		}
+	}
+
+	@Given("^Answer appropriate questionaire in 'your device' section$")
+	public void answer_appropriate_questionaire_in_your_device_section() throws Throwable {
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, UpgradeCustomerPage.class);
+			UpgradeCustomerPageActions.AnswerTradeinQuestion();
+
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			System.out.println("Unable to Answer tradein questions");
+			Assert.fail("Unable to Answer tradein questions");
+		}
+	}
+
+	@Given("^click on 'upgrade now' button$")
+	public void click_on_upgrade_now_button() throws Throwable {
+		// Write code here that turns the phrase above into concrete actions
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, UpgradeCustomerPage.class);
+			UpgradeCustomerPageActions.UpgradeNowButton();
+
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			System.out.println("Unable click on 'upgrade now' button");
+			Assert.fail("Unable click on 'upgrade now' button");
+		}
+	}
+
+	@Then("^Verify 'Upgrade on us' displayed in basket page$")
+	public void verify_Upgrade_on_us_displayed_in_basket_page() throws Throwable {
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, UpgradeCustomerPage.class);
+			UpgradeCustomerPageActions.VerifyUpgradeonUs();
+
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			System.out.println("Unable to Verify 'Upgrade on us' displayed in basket page");
+			Assert.fail("Unable to Verify 'Upgrade on us' displayed in basket page");
+		}
+	}
+
+	@Then("^Verify 'Upgrade on us' displayed in delivery page$")
+	public void verify_Upgrade_on_us_displayed_in_delivery_page() throws Throwable {
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, UpgradeCustomerPage.class);
+			UpgradeCustomerPageActions.VerifyUpgradeonUs();
+
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			System.out.println("\"Unable to Verify 'Upgrade on us' displayed in delivery page");
+			Assert.fail("Unable to verify 'Upgrade on us' displayed in delivery page");
+		}
+	}
+
+	@Then("^Verify 'Upgrade on us' displayed in Payment page$")
+	public void verify_Upgrade_on_us_displayed_in_Payment_page() throws Throwable {
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, UpgradeCustomerPage.class);
+			UpgradeCustomerPageActions.VerifyUpgradeonUs();
+
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			System.out.println("Unable toVerify 'Upgrade on us' displayed in Payment page");
+			Assert.fail("Unable to Verify 'Upgrade on us' displayed in Payment page");
+		}
+	}
+
+	@Then("^Verify 'Upgrade on us' displayed in review page$")
+	public void verify_Upgrade_on_us_displayed_in_review_page() throws Throwable {
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, UpgradeCustomerPage.class);
+			UpgradeCustomerPageActions.VerifyUpgradeonUs();
+
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			System.out.println("Unable to Verify 'Upgrade on us' displayed in review page");
+			Assert.fail("Unable to Verify 'Upgrade on us' displayed in review page");
+		}
 	}
 }
