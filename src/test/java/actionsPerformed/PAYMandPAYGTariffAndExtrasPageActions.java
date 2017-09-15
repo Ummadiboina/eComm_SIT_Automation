@@ -13,7 +13,6 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 
-import GlobalActions.scrollToAnElement;
 import helpers.Environment;
 import helpers.setRuntimeProperty;
 
@@ -67,7 +66,7 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 		log.debug("Added a random accessory to basket");
 
 	}
-	
+
 	public static void addInsurance() throws InterruptedException {
 		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 		System.out.println("Entering add insurance function");
@@ -505,6 +504,30 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 		} else {
 			System.out.println("Add now button is not present");
 		}
+	}
+
+	public static void SortFilterPosition() throws InterruptedException {
+		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+		System.out.println("Entering SortFilterPosition method");
+		if (pageobjects.PAYMandPAYGTariffAndExtrasPage.FilterandSortLabel.isDisplayed()) {
+			System.out.println("Filter label is displayed");
+			Thread.sleep(4000);
+			String text1 = pageobjects.PAYMandPAYGTariffAndExtrasPage.FilterandSortLabel.getText();
+			System.out.println(text1);
+			if(text1.contains("Sort tariff")&&text1.contains("Filter"))
+			{
+				System.out.println("Section is containing both Sort tariff and Filter");
+			}
+			else
+			{
+				System.out.println("Section doesnot contains both Sort tariff and Filter");
+				Assert.fail("Section doesnot contains both Sort tariff and Filter");
+			}
+
+		}
+
+		Thread.sleep(2000);
+		System.out.println("Sort filter position validation worked fine");
 	}
 
 }

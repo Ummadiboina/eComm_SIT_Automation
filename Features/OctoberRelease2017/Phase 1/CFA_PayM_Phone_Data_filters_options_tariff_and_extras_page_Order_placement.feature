@@ -11,7 +11,7 @@ Feature: CFA_PayM_Phone_Data_filters_options_tariff_and_extras_page_Order_placem
     And Navigate to device details page
     And Land on the 'Tariffs and extra' page
     ##New functionality starts
-    Then I should see data filters buttons next to existing sort drop-down for PAYM/SIMO tariffs #Verification point - A - More than 2 should be displayed
+    Then I should see data filters buttons next to existing sort drop-down for PAYM/SIMO tariffs
     When I click on respective data filter 
     Then Data filter button should be in 'selected' state
     And I should see appropriate tariffs based on the selected data filter

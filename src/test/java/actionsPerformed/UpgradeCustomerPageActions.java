@@ -1591,4 +1591,25 @@ public class UpgradeCustomerPageActions extends Environment {
 		}
 
 	}
+	
+	public static void VerifyTradeinMessage() {
+		System.out.println("in verify tradein message function");
+		//Write code here
+	}
+	
+	public static void AnswerTradeinQuestion() {
+		System.out.println("in AnswerTradeinQuestion function");
+		//Write code here
+	}
+	
+	public static void UpgradeNowButton() {
+		System.out.println("in UpgradeNowButton function");
+		//Write code here
+	}
+	
+	public static void VerifyUpgradeonUs() {
+		System.out.println("in VerifyUpgradeonUs function");
+		//Write code here
+	}
+	
 }
