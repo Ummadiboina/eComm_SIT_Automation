@@ -11,11 +11,11 @@ Feature: CFA_PayM_Phone_Data_filters_options_tariff_and_extras_page_Order_placem
     And Navigate to device details page
     And Land on the 'Tariffs and extra' page
     ##New functionality starts
-    Then I should see data filters buttons next to existing sort drop-down for PAYM/SIMO tariffs #Verification point - A - More than 2 should be displayed
-    When I click on respective data filter 
+    Then I should see data filters buttons next to existing sort drop-down for PAYM/SIMO tariffs
+    When I click on respective <filtername> data filter
     Then Data filter button should be in 'selected' state
     And I should see appropriate tariffs based on the selected data filter
-    And If I select ANY sort option from the drop-down
+    And If I select ANY sort option <sortoption> from the drop-down
     Then I should see tariffs relevant to selected sort option & filter option
     When I deselect filter button
     Then I should see tariffs based on the selected sort option
@@ -29,6 +29,6 @@ Feature: CFA_PayM_Phone_Data_filters_options_tariff_and_extras_page_Order_placem
     Then order confirmation is displayed
 
     Examples: 
-      | handset  | Firstname | Surname | Username     |
-      | GalaxyS8 | TEST      | ACCEPTA | TEST ACCEPTA |
-      | Iphone8  | TEST      | ACCEPTA | TEST ACCEPTA |
+      | handset  | Firstname | Surname | Username     | filtername |
+      | GalaxyS8 | TEST      | ACCEPTA | TEST ACCEPTA | medium     |
+      | Iphone8  | TEST      | ACCEPTA | TEST ACCEPTA | high       |

@@ -6,14 +6,15 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.lang3.math.NumberUtils;
 import org.apache.log4j.Logger;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.Select;
 
-import GlobalActions.scrollToAnElement;
 import helpers.Environment;
 import helpers.setRuntimeProperty;
 
@@ -23,6 +24,11 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 	static int SelectedAccessoryCount = 0;
 	static String FirstInsurancePrice = null;
 	static JavascriptExecutor js = (JavascriptExecutor) driver;
+	static ArrayList<Integer> datafilterlist = new ArrayList<Integer>();
+	static int HighFilterGreater = 0;
+	static ArrayList<Integer> datalistafter = new ArrayList<Integer>();
+	static ArrayList<Integer> start = new ArrayList<Integer>();
+	static ArrayList<Integer> end = new ArrayList<Integer>();
 
 	public static void GetPageName() {
 
@@ -67,7 +73,7 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 		log.debug("Added a random accessory to basket");
 
 	}
-	
+
 	public static void addInsurance() throws InterruptedException {
 		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 		System.out.println("Entering add insurance function");
@@ -506,5 +512,194 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 			System.out.println("Add now button is not present");
 		}
 	}
+
+	public static void SortFilterPosition() throws InterruptedException {
+		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+		System.out.println("Entering SortFilterPosition method");
+		if (pageobjects.PAYMandPAYGTariffAndExtrasPage.FilterandSortLabel.isDisplayed()) {
+			System.out.println("Filter label is displayed");
+			Thread.sleep(4000);
+			String text1 = pageobjects.PAYMandPAYGTariffAndExtrasPage.FilterandSortLabel.getText();
+			System.out.println(text1);
+			if (text1.contains("Sort tariff") && text1.contains("Filter")) {
+				System.out.println("Section is containing both Sort tariff and Filter");
+			} else {
+				System.out.println("Section doesnot contains both Sort tariff and Filter");
+				Assert.fail("Section doesnot contains both Sort tariff and Filter");
+			}
+
+		}
+
+		Thread.sleep(2000);
+		System.out.println("Sort filter position validation worked fine");
+	}
+
+	public static void selectFilter(String range) {
+		if (range.equals("low")) {
+
+			WebElement lowfilter = driver
+					.findElement(By.xpath("//a[@manual_cm_re='DR346B_low']/button[@class='secondary sortGrpBtn']"));
+			lowfilter.click();
+		}
+		if (range.equals("medium")) {
+
+			WebElement mediumfilter = driver
+					.findElement(By.xpath("//a[@manual_cm_re='DR346B_medium']/button[@class='secondary sortGrpBtn']"));
+			mediumfilter.click();
+		}
+		if (range.equals("high")) {
+
+			WebElement highfilter = driver
+					.findElement(By.xpath("//a[@manual_cm_re='DR346B_high']/button[@class='secondary sortGrpBtn']"));
+			highfilter.click();
+		}
+	}
+
+	public static void getDataListBeforeSelectingFilter() {
+		List<WebElement> DataTextElement = driver.findElements(By.xpath("//div[@id='tariff-tile']//ul/li[1]/h2"));
+		ArrayList<Integer> datalist = new ArrayList<Integer>();
+		String data = null;
+		int a = 0;
+
+		for (int i = 0; i < DataTextElement.size(); i++) {
+			data = DataTextElement.get(i).getText();
+			data = data.replace("GB", "");
+			a = NumberUtils.toInt(data);
+			datalist.add(a);
+		}
+
+		System.out.println('\n');
+		System.out.println("Data list size " + datalist.size() + '\n');
+		System.out.println("----------------------Data List--------------");
+		for (int i = 0; i < datalist.size(); i++) {
+			System.out.println(datalist.get(i));
+
+		}
+		System.out.println("---------------------------------------------");
+	}
+
+	public static void getDataListAfterSelectingFilter() {
+		List<WebElement> DataTextElement = driver.findElements(By.xpath("//div[@id='tariff-tile']//ul/li[1]/h2"));
+
+		String data = null;
+		int a = 0;
+
+		for (int i = 0; i < DataTextElement.size(); i++) {
+			data = DataTextElement.get(i).getText();
+			System.out.println("data " + data);
+			if (data.contains("+")) {
+				System.out.println("qqqqqqqqqqq");
+			}
+			data = data.replace("GB", "");
+			a = NumberUtils.toInt(data);
+			if (a != 0) {
+				datalistafter.add(a);
+			}
+
+		}
+
+		System.out.println('\n');
+		System.out.println("Data list size " + datalistafter.size() + '\n');
+		System.out.println("----------------------Data List--------------");
+		for (int i = 0; i < datalistafter.size(); i++) {
+			System.out.println(datalistafter.get(i));
+
+		}
+		System.out.println("---------------------------------------------");
+	}
+
+	public static void getRange() {
+		String datafiltertext = null;
+
+		String datafilterxpath = "//button[@class='secondary sortGrpBtn btnToggle']";
+
+		WebElement datafilterlistElement = driver.findElement(By.xpath(datafilterxpath));
+		datafiltertext = datafilterlistElement.getText().replace("GB", "").replace(" ", "");
+		System.out.println("datafiltertext " + datafiltertext);
+		if (datafiltertext.contains("-")) {
+			String[] parts = datafiltertext.split("-");
+
+			for (int e = 0; e < parts.length; e++) {
+				// System.out.println("parts " + NumberUtils.toInt(parts[e]));
+				datafilterlist.add(NumberUtils.toInt(parts[e]));
+
+			}
+		} else if (datafiltertext.contains("+")) {
+			System.out.println("string contains +");
+			datafiltertext = datafiltertext.replace("+", "");
+			HighFilterGreater = Integer.parseInt(datafiltertext);
+			System.out.println("HighFilterGreater " + HighFilterGreater);
+		}
+	}
+
+	public static void getValuesToCompare() {
+
+		System.out.println("---------------------------");
+		int j = 0;
+		for (int i = 0; i < datafilterlist.size(); i = i + 2) {
+			j = i + 1;
+
+			start.add(datafilterlist.get(i));
+			end.add(datafilterlist.get(j));
+		}
+		for (int i = 0; i < start.size(); i++) {
+			System.out.println("start " + start.get(i));
+			System.out.println("end " + end.get(i));
+		}
+
+		System.out.println("---------------------------");
+
+	}
+
+	public static void getValuesToCompareWhenGreaterIsSelected() {
+		start.add(HighFilterGreater);
+
+	}
+
+	public static void verifyListWhenGreaterIsSelected() {
+		boolean flag = false;
+		for (int s = 0; s < datalistafter.size(); s++) {
+			if (datalistafter.get(s) < start.get(0)) {
+				flag = false;
+			} else {
+				flag = true;
+			}
+		}
+		if (flag == false) {
+			System.out.println("Failed");
+		} else {
+			System.out.println("Works fine");
+		}
+	}
+
+	public static void verifyList() {
+		System.out.println("verifyList");
+		boolean flag = false;
+		for (int s = 0; s < datalistafter.size(); s++) {
+			if (datalistafter.get(s) < start.get(0) || datalistafter.get(s) > end.get(0)) {
+				flag = false;
+			} else {
+				flag = true;
+			}
+		}
+		if (flag == false) {
+			System.out.println("Failed");
+		} else {
+			System.out.println("Works fine");
+		}
+	}
+	public static void selectTariffSort(String tariffSortDropDown) throws Exception {
+		// TODO Auto-generated method stub
+		Thread.sleep(5000);
+		JavascriptExecutor jse = (JavascriptExecutor) driver;
+		jse.executeScript("window.scrollBy(0,300)", "");
+        WebElement element = pageobjects.PAYMandPAYGTariffAndExtrasPage.TariffSortDropDown;
+		
+		jse.executeScript("arguments[0].setAttribute('style', 'display:block;')", element);
+		if (element.isDisplayed()) {
+			new Select(element).selectByVisibleText(tariffSortDropDown);
+			System.out.println("Sorted" + tariffSortDropDown);
+		}
+		}
 
 }
