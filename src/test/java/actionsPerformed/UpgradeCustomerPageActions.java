@@ -324,7 +324,7 @@ public class UpgradeCustomerPageActions extends Environment {
 		List<String> Devices = new ArrayList<String>();
 		for (WebElement f : DevicesName) {
 			Devices.add(f.getText());
-			//System.out.println(Devices.add(f.getText()));
+			// System.out.println(Devices.add(f.getText()));
 		}
 		log.debug("passing device" + devicename);
 		System.out.println("passing device " + devicename);
@@ -334,10 +334,10 @@ public class UpgradeCustomerPageActions extends Environment {
 				System.out.println("Device name matches");
 				k = i + 1;
 				log.debug("k :" + k);
-				//System.out.println("k :" + k);
+				// System.out.println("k :" + k);
 				c = "(//div[@id='qa-recommendedDevicesTile']/a//div/button)[" + k + "]";
 				log.debug("xpath of button is" + c);
-				//System.out.println("xpath of button is" + c);
+				// System.out.println("xpath of button is" + c);
 				SelectButton = driver.findElement(By.xpath(c));
 				js.executeScript("arguments[0].click();", SelectButton);
 			}
@@ -359,7 +359,7 @@ public class UpgradeCustomerPageActions extends Environment {
 			i = j + 1;
 			TariffXpath = "(//div[@id='tariff-tile']/div[@id]/div/div[@class='price-block'])[" + i + "]";
 			TextOfTariffTile = driver.findElement(By.xpath(TariffXpath)).getText();
-			TextOfTariffTile = TextOfTariffTile.replace("Â£", "");
+			TextOfTariffTile = TextOfTariffTile.replace("£", "");
 			TextOfTariffTile = TextOfTariffTile.replace("\n", "");
 			TextOfTariffTile = TextOfTariffTile.replace(" ", "");
 			System.out.println("TextOfTariffTile  " + TextOfTariffTile);
@@ -1591,25 +1591,42 @@ public class UpgradeCustomerPageActions extends Environment {
 		}
 
 	}
-	
+
 	public static void VerifyTradeinMessage() {
 		System.out.println("in verify tradein message function");
-		//Write code here
+		// Write code here
 	}
-	
+
 	public static void AnswerTradeinQuestion() {
 		System.out.println("in AnswerTradeinQuestion function");
-		//Write code here
+		// Write code here
 	}
-	
+
 	public static void UpgradeNowButton() {
 		System.out.println("in UpgradeNowButton function");
-		//Write code here
+		// Write code here
 	}
-	
+
 	public static void VerifyUpgradeonUs() {
 		System.out.println("in VerifyUpgradeonUs function");
-		//Write code here
+		// Write code here
 	}
-	
+
+	public static void clickOnTabletstab() throws InterruptedException {
+		JavascriptExecutor jse = (JavascriptExecutor) driver;
+		jse.executeScript("window.scrollBy(0,250)", "");
+
+		if (pageobjects.UpgradeCustomerPage.TabletsTab.isDisplayed()) {
+			pageobjects.UpgradeCustomerPage.TabletsTab.click();
+		}
+		Thread.sleep(3000);
+	}
+
+	public static void clickOnViewAllTariffslink() throws InterruptedException {
+
+		Thread.sleep(3000);
+
+		((JavascriptExecutor) driver).executeScript("arguments[0].click();",
+				pageobjects.UpgradeCustomerPage.ViewAllTariffs);
+	}
 }

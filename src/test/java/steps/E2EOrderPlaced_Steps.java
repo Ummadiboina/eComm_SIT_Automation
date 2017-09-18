@@ -49,7 +49,7 @@ import actionsPerformed.ShopLandingPageAction;
 import actionsPerformed.SimsPageActions;
 import actionsPerformed.SmartwatchesPageActions;
 import actionsPerformed.TabletPageActions;
-import actionsPerformed.UpdateDevicePlanLinkEmailAddressActions;
+//import actionsPerformed.UpdateDevicePlanLinkEmailAddressActions;
 import actionsPerformed.UpgradeCustomerPageActions;
 import cucumber.api.PendingException;
 import cucumber.api.java.en.And;
@@ -104,6 +104,7 @@ public class E2EOrderPlaced_Steps {
 	LinkedList<String> expectedListBeforeSort = null;
 	LinkedList<String> originalList = null;
 	LinkedList<String> TempList3 = null;
+	String DataFilterRange = null;
 
 	public E2EOrderPlaced_Steps() {
 		driver = Hooks.driver;
@@ -5216,7 +5217,7 @@ public class E2EOrderPlaced_Steps {
 		// try {
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		PageFactory.initElements(driver, Agent_UpdateCCAEmailPage.class);
-		UpdateDevicePlanLinkEmailAddressActions.EnterCCAEmail(emailid);
+		// UpdateDevicePlanLinkEmailAddressActions.EnterCCAEmail(emailid);
 		Thread.sleep(4000);
 		/*
 		 * } catch (Exception e) { // TODO Auto-generated catch block
@@ -5478,4 +5479,94 @@ public class E2EOrderPlaced_Steps {
 			Assert.fail("Unable to Verify 'Upgrade on us' displayed in review page");
 		}
 	}
+
+	@When("^I click on respective ([^\\\"]*) data filter$")
+	public void clickOnRespectiveDataFilter(String range) throws Throwable {
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, PAYMandPAYGTariffAndExtrasPage.class);
+			DataFilterRange = range;
+			PAYMandPAYGTariffAndExtrasPageActions.clickViewAllTariffs();
+			PAYMandPAYGTariffAndExtrasPageActions.getDataListBeforeSelectingFilter();
+			PAYMandPAYGTariffAndExtrasPageActions.selectFilter(range);
+
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			System.out.println("Unable to click on respective data filter");
+			Assert.fail("Unable to click on respective data filter");
+		}
+	}
+
+	@And("^I should see appropriate tariffs based on the selected data filter$")
+	public void getTariffList() throws Throwable {
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, PAYMandPAYGTariffAndExtrasPage.class);
+
+			if (DataFilterRange.equals("high")) {
+				PAYMandPAYGTariffAndExtrasPageActions.getDataListAfterSelectingFilter();
+				PAYMandPAYGTariffAndExtrasPageActions.getRange();
+				PAYMandPAYGTariffAndExtrasPageActions.getValuesToCompareWhenGreaterIsSelected();
+				PAYMandPAYGTariffAndExtrasPageActions.verifyListWhenGreaterIsSelected();
+			} else if (DataFilterRange.equals("low") || DataFilterRange.equals("medium")) {
+				PAYMandPAYGTariffAndExtrasPageActions.getDataListAfterSelectingFilter();
+				PAYMandPAYGTariffAndExtrasPageActions.getRange();
+				PAYMandPAYGTariffAndExtrasPageActions.getValuesToCompare();
+				PAYMandPAYGTariffAndExtrasPageActions.verifyList();
+			} else {
+				Assert.fail("Please provide data range (low/medium/high)");
+			}
+
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			System.out.println("Unable to click on respective data filter");
+			Assert.fail("Unable to click on respective data filter");
+		}
+	}
+
+	@And("^Click on Tablet section in upgrade options page$")
+	public void click_on_Tablets_tab() throws Throwable {
+		try {
+
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, UpgradeCustomerPage.class);
+			UpgradeCustomerPageActions.clickOnTabletstab();
+
+		} catch (Exception e) {
+			e.printStackTrace();
+			System.out.println("\"Not able to select Tablets tab");
+			Assert.fail("Not able to select Tablets tab");
+		}
+	}
+
+	@And("^If I select ANY sort option ([^\"]*) from the drop-down$")
+	public void select_sort_Tariff_dropdown(String tariffSortDropDown) throws Throwable {
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, PAYMandPAYGTariffAndExtrasPage.class);
+			PAYMandPAYGTariffAndExtrasPageActions.selectTariffSort(tariffSortDropDown);
+
+		} catch (Exception e) {
+			e.printStackTrace();
+			System.out.println("not able select sort option from the dropdown" + tariffSortDropDown);
+			Assert.fail("not able to select sort option from the dropdown" + tariffSortDropDown);
+		}
+	}
+
+	@And("^Click on View all Tariffs link in upgrade options page$")
+	public void click_on_View_all_tariffs() throws Throwable {
+		try {
+
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, UpgradeCustomerPage.class);
+			UpgradeCustomerPageActions.clickOnViewAllTariffslink();
+
+		} catch (Exception e) {
+			e.printStackTrace();
+			System.out.println("\"Not able to select view all tariffs link");
+			Assert.fail("Not able to select view all tariffs link");
+		}
+	}
+
 }
