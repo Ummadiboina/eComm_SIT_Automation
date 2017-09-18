@@ -97,10 +97,11 @@ import pageobjects.UpgradeTabletListingPage;
 
 public class E2EOrderPlaced_Steps {
 
+	private static final String Filteroption = null;
 	public WebDriver driver;
 	public List<HashMap<String, String>> datamap;
 	static Logger log = Logger.getLogger("devpinoyLogger");
-
+	String FilterDataOption = null;
 	LinkedList<String> expectedListBeforeSort = null;
 	LinkedList<String> originalList = null;
 	LinkedList<String> TempList3 = null;
@@ -4922,20 +4923,6 @@ public class E2EOrderPlaced_Steps {
 		}
 	}
 
-	@And("^I select 'Enter manually' and provide all valid details in the delivery page$")
-	public void Enter_delivery_details() throws Throwable {
-		try {
-			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-			PageFactory.initElements(driver, FreeSimPage.class);
-
-			FreeSimPageActions.EnterManually();
-
-		} catch (Exception e) {
-			System.out.println("unable to do enter the details");
-			Assert.fail("unable to do enter the details");
-		}
-	}
-
 	@Then("^verify order number is displayed$")
 	public void OrdernumberFreeSim() throws Throwable {
 
@@ -5489,7 +5476,7 @@ public class E2EOrderPlaced_Steps {
 			PAYMandPAYGTariffAndExtrasPageActions.clickViewAllTariffs();
 			PAYMandPAYGTariffAndExtrasPageActions.getDataListBeforeSelectingFilter();
 			PAYMandPAYGTariffAndExtrasPageActions.selectFilter(range);
-
+			FilterDataOption = range;
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -5566,6 +5553,107 @@ public class E2EOrderPlaced_Steps {
 			e.printStackTrace();
 			System.out.println("\"Not able to select view all tariffs link");
 			Assert.fail("Not able to select view all tariffs link");
+		}
+	}
+	/////////////////////////////////////////////////////////////////////////////////////////////
+	////////////////////////////// CFA_SIMO_Phone_Data_filters_options_Order_placement/////////////////
+	/////////////////////////////////////////////////////////////////////////////////////////////////
+
+	@Then("^I should see data filters buttons for SIMO tariffs$")
+	public void i_should_see_data_filters_buttons_for_SIMO_tariffs() throws Throwable {
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, PAYMandPAYGTariffAndExtrasPage.class);
+			PAYMandPAYGTariffAndExtrasPageActions.VerifyFilterDataTabPresent();
+
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			System.out.println("Unable to View Data Filter option");
+			Assert.fail("Unable to View Data Filter option");
+		}
+
+	}
+
+	/*
+	 * @When("^I click on respective data filter ([^\"]*)$")
+	 * 
+	 * public void i_click_on_respective_data_filtertoGB(String Filteroption) throws
+	 * Throwable { try { driver.manage().timeouts().implicitlyWait(20,
+	 * TimeUnit.SECONDS); PageFactory.initElements(driver,
+	 * PAYMandPAYGTariffAndExtrasPage.class);
+	 * PAYMandPAYGTariffAndExtrasPageActions.FilterDataAllowance(Filteroption);
+	 * FilterDataOption = Filteroption; } catch (Exception e) { // TODO
+	 * Auto-generated catch block
+	 * System.out.println("Unable to Click Data Filter option");
+	 * Assert.fail("Unable to Click Data Filter option"); } }
+	 */
+	@Then("^Data filter button should be in 'selected' state$")
+	public void data_filter_button_should_be_in_selected_state() throws Throwable {
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, PAYMandPAYGTariffAndExtrasPage.class);
+			String Filteroption = FilterDataOption;
+			System.out.println(Filteroption);
+			PAYMandPAYGTariffAndExtrasPageActions.SelectedState(Filteroption);
+
+		} catch (Exception e) {
+			e.printStackTrace();
+			System.out.println("Not able to verify if in Selected State");
+			Assert.fail("Not able to verify if in Selected State");
+		}
+
+	}
+
+	@When("^I deselect filter button$")
+	public void i_deselect_filter_button() throws Throwable {
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, PAYMandPAYGTariffAndExtrasPage.class);
+			PAYMandPAYGTariffAndExtrasPageActions.DeSelectedState();
+		} catch (Exception e) {
+
+		}
+
+	}
+
+	@Then("^I should see default tariff lists$")
+	public void i_should_see_default_tariff_lists() throws Throwable {
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, PAYMandPAYGTariffAndExtrasPage.class);
+
+		} catch (Exception e) {
+		}
+
+	}
+
+	@And("^I select 'Enter manually' and input ([^\"]*), ([^\"]*), ([^\"]*), ([^\"]*), ([^\"]*)$")
+	public void Enter_delivery_details(String Flatnumber, String Housename, String Address1, String Town,
+			String Postcode) throws Throwable {
+		try {
+			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, FreeSimPage.class);
+
+			FreeSimPageActions.EnterManually(Flatnumber, Housename, Address1, Town, Postcode);
+
+			Thread.sleep(2000);
+		} catch (Exception e) {
+			System.out.println("unable to do enter the details");
+			Assert.fail("unable to do enter the details");
+		}
+	}
+
+	@And("^I input ([^\"]*), ([^\"]*), ([^\"]*) in About You Section$")
+	public void Enter_delivery_details(String Firstname, String Lastname, String Contact_number) throws Throwable {
+
+		try {
+			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, FreeSimPage.class);
+			FreeSimPageActions.AboutYouSection(Firstname, Lastname, Contact_number);
+			Thread.sleep(2000);
+		} catch (Exception e) {
+			System.out.println("unable to do enter the details in About you section");
+			Assert.fail("unable to do enter the details About you section");
 		}
 	}
 

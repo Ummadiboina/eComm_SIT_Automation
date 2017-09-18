@@ -1,6 +1,6 @@
 Feature: CFA_PayG_SIM
 
-  @ConsumerShop
+@Regression
   Scenario Outline: Ordering a free sim 
     Given I am an CFA user and Lands on shop page
     And navigate to PayG SIMO page

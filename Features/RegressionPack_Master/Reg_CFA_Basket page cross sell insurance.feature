@@ -1,5 +1,5 @@
 Feature: CFA_Basket page cross sell insurance 
-
+@Regression
 Scenario Outline: 
 	This scenario ensures that when the customer   has selected a PayM phone having one associated tariffs which had free insurance and has selected that  tariff in the tariff and extras page without selecting the free insurance then free insurance is displayed as cross sell on basket page
 

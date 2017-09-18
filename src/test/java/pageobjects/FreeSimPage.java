@@ -25,32 +25,32 @@ public class FreeSimPage {
 	// flat
 
 	@FindBy(how = How.ID, using = "address-flat")
-	public static WebElement flat;
+	public static WebElement Flatnumber;
 
 	// House name
 
 	@FindBy(how = How.ID, using = "address-housename")
-	public static WebElement housename;
+	public static WebElement Housename;
 
 	// Address
 
 	@FindBy(how = How.ID, using = "address-line1")
-	public static WebElement address;
+	public static WebElement Address1;
 
 	// town
 
 	@FindBy(how = How.ID, using = "address-town")
-	public static WebElement town;
+	public static WebElement Town;
 
 	// postcode
 
 	@FindBy(how = How.ID, using = "address-postcode")
-	public static WebElement postcode;
+	public static WebElement Postcode;
 
 	// email
 
 	@FindBy(how = How.ID, using = "email")
-	public static WebElement email;
+	public static WebElement Email_id;
 
 	// title
 
@@ -60,26 +60,26 @@ public class FreeSimPage {
 	// firstname
 
 	@FindBy(how = How.ID, using = "first-name")
-	public static WebElement firstname;
+	public static WebElement Firstname;
 
 	// secondname
 
 	@FindBy(how = How.ID, using = "last-name")
-	public static WebElement secondname;
+	public static WebElement Lastname;
 
 	// contact
 
 	@FindBy(how = How.ID, using = "contact-number")
-	public static WebElement contact;
+	public static WebElement Contact_number;
 
 	// checkbox
 
 	@FindBy(how = How.ID, using = "checkbox-terms-agreement-required")
-	public static WebElement check;
+	public static WebElement Check_box;
 
 	// orderbutton
 
 	@FindBy(how = How.ID, using = "btn-continue")
-	public static WebElement order;
+	public static WebElement Order;
 
 }

@@ -1,5 +1,5 @@
 Feature: Reg_Consumer_TradeIn
-
+@Regression
   Scenario Outline: This scenario ensures that the customer is able to successully Trade In the device
     Given I am an Existing user and Navigates to Signin page
     And Signin using valid <username> and <password> credentials
