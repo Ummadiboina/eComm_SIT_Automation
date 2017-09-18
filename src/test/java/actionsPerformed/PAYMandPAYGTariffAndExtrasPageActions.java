@@ -17,6 +17,7 @@ import org.openqa.selenium.support.ui.Select;
 
 import helpers.Environment;
 import helpers.setRuntimeProperty;
+import pageobjects.PAYMandPAYGTariffAndExtrasPage;
 
 public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 	static Logger log = Logger.getLogger("devpinoyLogger");
@@ -447,16 +448,16 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 			Assert.fail("Free Insurance not autoselected");
 			System.out.println("Remove button is not present");
 		}
-		/*System.out.println("Going to select first insurance");
-
-		driver.findElement(
-				By.xpath("(//div[@id='insuranceContainer']/div[@id])[1]//input[@value='Select'][@type='button']"))
-				.click();
-		System.out.println("Selected first insurance");
-
-		Thread.sleep(3000);
-		System.out.println("First insurance price text is " + FirstInsurancePrice.getText());
-*/		Thread.sleep(3000);
+		/*
+		 * System.out.println("Going to select first insurance");
+		 * 
+		 * driver.findElement( By.xpath(
+		 * "(//div[@id='insuranceContainer']/div[@id])[1]//input[@value='Select'][@type='button']"
+		 * )) .click(); System.out.println("Selected first insurance");
+		 * 
+		 * Thread.sleep(3000); System.out.println("First insurance price text is " +
+		 * FirstInsurancePrice.getText());
+		 */ Thread.sleep(3000);
 
 	}
 
@@ -687,4 +688,98 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 	public static void clickViewAllTariffs() {
 		js.executeScript("arguments[0].click();", pageobjects.PAYMandPAYGTariffAndExtrasPage.ViewAllTariffs);
 	}
+
+	////////////////////////////////////////////////////////////////////////////////////////
+	/////////////// FilterDataAllowance
+	//////////////////////////////////////////////////////////////////////////////////////// ////////////////////////////////////////////////////
+
+	public static void FilterDataAllowance(String Filteroption) throws InterruptedException {
+
+		if (Filteroption.contains("low")) {
+
+			System.out.println("Clicking on 1st Filter Data Allowance");
+			PAYMandPAYGTariffAndExtrasPage.DataTariff_One.click();
+			log.debug("Clicking on 1st  Filter Data Allowance");
+		} else if (Filteroption.contains("medium")) {
+			System.out.println("Clicking on 2nd Filter Data Allowance");
+			PAYMandPAYGTariffAndExtrasPage.DataTariff_Two.click();
+			log.debug("Clicking on 2nd Filter Data Allowance");
+		} else if (Filteroption.contains("high")) {
+			System.out.println("Clicking on 3rd Filter Data Allowance");
+			PAYMandPAYGTariffAndExtrasPage.DataTariff_Three.click();
+			log.debug("Clicking on 3rd Filter Data Allowance");
+		}
+
+		else
+			System.out.println("No filter options displayed");
+
+	}
+
+	public static void VerifyFilterDataTabPresent() throws InterruptedException {
+
+		List<WebElement> DataFilterTab = driver
+				.findElements(By.xpath("//*[@class='choose-tariff-section section']/div[4]"));
+
+		if (DataFilterTab.size() < 0) {
+			System.out.println("The data filter is displyed next to the sort option" + DataFilterTab);
+
+		}
+		Assert.fail("Data filter Tab is not displayed");
+
+	}
+
+	public static void SelectedState(String Filteroption) throws InterruptedException {
+
+	
+		String DatafilterText = pageobjects.PAYMandPAYGTariffAndExtrasPage.DataFilterSelectedXpath.getText();
+		System.out.println("DatafilterText " + DatafilterText);
+
+		if (Filteroption.contains("low")) {
+
+			PAYMandPAYGTariffAndExtrasPage.DataTariff_One.getText();
+			String DataFilterLowText = PAYMandPAYGTariffAndExtrasPage.lowfilter.getText();
+			System.out.println("DataFilterLowText " + DataFilterLowText);
+			if (DataFilterLowText.equals(DatafilterText)) {
+				System.out.println("Data filter option is selected");
+			} else {
+				Assert.fail("Data filter is not selected");
+			}
+		}
+
+		if (Filteroption.contains("medium")) {
+			PAYMandPAYGTariffAndExtrasPage.DataTariff_Two.getText();
+			String DataFilterMediumText = PAYMandPAYGTariffAndExtrasPage.mediumfilter.getText();
+			System.out.println("DataFilterMediumText " + DataFilterMediumText);
+
+			if (DataFilterMediumText.equals(DatafilterText)) {
+				System.out.println("Data filter option is selected");
+			} else {
+				Assert.fail("Data filter is not selected");
+			}
+		}
+
+		else if (Filteroption.contains("high")) {
+			PAYMandPAYGTariffAndExtrasPage.DataTariff_Three.getText();
+			String DataFilterHighText = PAYMandPAYGTariffAndExtrasPage.highfilter.getText();
+			System.out.println("DataFilterHighText " + DataFilterHighText);
+
+			if (DataFilterHighText.equals(DatafilterText)) {
+				System.out.println("Data filter option is selected");
+			} else {
+				Assert.fail("Data filter is not selected");
+			}
+		}
+
+		else
+
+			System.out.println("Data Filter not Selected");
+	}
+
+	public static void DeSelectedState() throws InterruptedException {
+
+		pageobjects.PAYMandPAYGTariffAndExtrasPage.DataFilterSelectedXpath.click();
+		System.out.println("Deselected the selected data filter tab");
+
+	}
+
 }

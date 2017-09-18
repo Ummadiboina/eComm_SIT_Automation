@@ -1,6 +1,6 @@
 Feature: Reg_Consumer_PreOrder
 
-  @ConsumerShop
+@Regression
   Scenario Outline: CFA PayM Pre Order Phones Home delivery E2E journey
     Given I am an CFA user and Lands on shop page
     And navigate to PAYM Phones page
