@@ -444,9 +444,10 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 
 			System.out.println("Remove button is present");
 		} else {
+			Assert.fail("Free Insurance not autoselected");
 			System.out.println("Remove button is not present");
 		}
-		System.out.println("Going to select first insurance");
+		/*System.out.println("Going to select first insurance");
 
 		driver.findElement(
 				By.xpath("(//div[@id='insuranceContainer']/div[@id])[1]//input[@value='Select'][@type='button']"))
@@ -455,7 +456,7 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 
 		Thread.sleep(3000);
 		System.out.println("First insurance price text is " + FirstInsurancePrice.getText());
-		Thread.sleep(3000);
+*/		Thread.sleep(3000);
 
 	}
 
@@ -467,7 +468,7 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 		if (RemovebtnFirstTile.size() > 0) {
 			System.out.println("First tile is selected");
 			js.executeScript("arguments[0].click();", RemovebtnFirstTile.get(0));
-			System.out.println("deselected first insurance");
+			System.out.println("deselected free insurance");
 		} else {
 			System.out.println("No remove button");
 		}
@@ -536,13 +537,13 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 
 	public static void selectFilter(String range) {
 		if (range.equals("low")) {
-			pageobjects.PAYMandPAYGTariffAndExtrasPage.lowfilter.click();
+			js.executeScript("arguments[0].click();", pageobjects.PAYMandPAYGTariffAndExtrasPage.lowfilter);
 		}
 		if (range.equals("medium")) {
-			pageobjects.PAYMandPAYGTariffAndExtrasPage.mediumfilter.click();
+			js.executeScript("arguments[0].click();", pageobjects.PAYMandPAYGTariffAndExtrasPage.mediumfilter);
 		}
 		if (range.equals("high")) {
-			pageobjects.PAYMandPAYGTariffAndExtrasPage.highfilter.click();
+			js.executeScript("arguments[0].click();", pageobjects.PAYMandPAYGTariffAndExtrasPage.highfilter);
 		}
 	}
 
@@ -561,7 +562,7 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 
 		System.out.println('\n');
 		// System.out.println("Data list size " + datalist.size() + '\n');
-		System.out.println("----------------------Data List--------------");
+		System.out.println("----------------------Data List before selecting filter--------------");
 		for (int i = 0; i < datalist.size(); i++) {
 			System.out.println(datalist.get(i));
 
@@ -577,10 +578,6 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 
 		for (int i = 0; i < DataTextElement.size(); i++) {
 			data = DataTextElement.get(i).getText();
-			System.out.println("data " + data);
-			if (data.contains("+")) {
-				System.out.println("qqqqqqqqqqq");
-			}
 			data = data.replace("GB", "");
 			a = NumberUtils.toInt(data);
 			if (a != 0) {
@@ -590,8 +587,7 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 		}
 
 		System.out.println('\n');
-		// System.out.println("Data list size " + datalistafter.size() + '\n');
-		System.out.println("----------------------Data List--------------");
+		System.out.println("----------------------Data List after selecting filter--------------");
 		for (int i = 0; i < datalistafter.size(); i++) {
 			System.out.println(datalistafter.get(i));
 
@@ -688,4 +684,7 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 		}
 	}
 
+	public static void clickViewAllTariffs() {
+		js.executeScript("arguments[0].click();", pageobjects.PAYMandPAYGTariffAndExtrasPage.ViewAllTariffs);
+	}
 }

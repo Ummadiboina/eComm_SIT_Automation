@@ -98,7 +98,10 @@ public class PAYMandPAYGTariffAndExtrasPage {
 	@FindBy(how = How.XPATH, using = ("//a[@manual_cm_re='DR346B_high']/button[@class='secondary sortGrpBtn']"))
 	public static WebElement highfilter;
 	
-	
 	@FindBy(how = How.XPATH, using = ("//button[@class='secondary sortGrpBtn btnToggle']"))
 	public static WebElement DataFilterSelectedXpath;
+	
+	@FindBy(how = How.XPATH, using = ("//div[@class='viewAllTariffs']"))
+	public static WebElement ViewAllTariffs;
+	
 }

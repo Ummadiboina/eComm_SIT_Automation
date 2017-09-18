@@ -359,7 +359,7 @@ public class UpgradeCustomerPageActions extends Environment {
 			i = j + 1;
 			TariffXpath = "(//div[@id='tariff-tile']/div[@id]/div/div[@class='price-block'])[" + i + "]";
 			TextOfTariffTile = driver.findElement(By.xpath(TariffXpath)).getText();
-			TextOfTariffTile = TextOfTariffTile.replace("Â£", "");
+			TextOfTariffTile = TextOfTariffTile.replace("£", "");
 			TextOfTariffTile = TextOfTariffTile.replace("\n", "");
 			TextOfTariffTile = TextOfTariffTile.replace(" ", "");
 			System.out.println("TextOfTariffTile  " + TextOfTariffTile);
