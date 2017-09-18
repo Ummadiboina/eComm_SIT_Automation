@@ -536,27 +536,18 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 
 	public static void selectFilter(String range) {
 		if (range.equals("low")) {
-
-			WebElement lowfilter = driver
-					.findElement(By.xpath("//a[@manual_cm_re='DR346B_low']/button[@class='secondary sortGrpBtn']"));
-			lowfilter.click();
+			pageobjects.PAYMandPAYGTariffAndExtrasPage.lowfilter.click();
 		}
 		if (range.equals("medium")) {
-
-			WebElement mediumfilter = driver
-					.findElement(By.xpath("//a[@manual_cm_re='DR346B_medium']/button[@class='secondary sortGrpBtn']"));
-			mediumfilter.click();
+			pageobjects.PAYMandPAYGTariffAndExtrasPage.mediumfilter.click();
 		}
 		if (range.equals("high")) {
-
-			WebElement highfilter = driver
-					.findElement(By.xpath("//a[@manual_cm_re='DR346B_high']/button[@class='secondary sortGrpBtn']"));
-			highfilter.click();
+			pageobjects.PAYMandPAYGTariffAndExtrasPage.highfilter.click();
 		}
 	}
 
 	public static void getDataListBeforeSelectingFilter() {
-		List<WebElement> DataTextElement = driver.findElements(By.xpath("//div[@id='tariff-tile']//ul/li[1]/h2"));
+		List<WebElement> DataTextElement = pageobjects.PAYMandPAYGTariffAndExtrasPage.DataTextElement;
 		ArrayList<Integer> datalist = new ArrayList<Integer>();
 		String data = null;
 		int a = 0;
@@ -569,7 +560,7 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 		}
 
 		System.out.println('\n');
-		System.out.println("Data list size " + datalist.size() + '\n');
+		// System.out.println("Data list size " + datalist.size() + '\n');
 		System.out.println("----------------------Data List--------------");
 		for (int i = 0; i < datalist.size(); i++) {
 			System.out.println(datalist.get(i));
@@ -579,7 +570,7 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 	}
 
 	public static void getDataListAfterSelectingFilter() {
-		List<WebElement> DataTextElement = driver.findElements(By.xpath("//div[@id='tariff-tile']//ul/li[1]/h2"));
+		List<WebElement> DataTextElement = pageobjects.PAYMandPAYGTariffAndExtrasPage.DataTextElement;
 
 		String data = null;
 		int a = 0;
@@ -599,7 +590,7 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 		}
 
 		System.out.println('\n');
-		System.out.println("Data list size " + datalistafter.size() + '\n');
+		// System.out.println("Data list size " + datalistafter.size() + '\n');
 		System.out.println("----------------------Data List--------------");
 		for (int i = 0; i < datalistafter.size(); i++) {
 			System.out.println(datalistafter.get(i));
@@ -611,24 +602,18 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 	public static void getRange() {
 		String datafiltertext = null;
 
-		String datafilterxpath = "//button[@class='secondary sortGrpBtn btnToggle']";
-
-		WebElement datafilterlistElement = driver.findElement(By.xpath(datafilterxpath));
-		datafiltertext = datafilterlistElement.getText().replace("GB", "").replace(" ", "");
-		System.out.println("datafiltertext " + datafiltertext);
+		datafiltertext = pageobjects.PAYMandPAYGTariffAndExtrasPage.DataFilterSelectedXpath.getText().replace("GB", "")
+				.replace(" ", "");
 		if (datafiltertext.contains("-")) {
 			String[] parts = datafiltertext.split("-");
 
 			for (int e = 0; e < parts.length; e++) {
-				// System.out.println("parts " + NumberUtils.toInt(parts[e]));
 				datafilterlist.add(NumberUtils.toInt(parts[e]));
-
 			}
 		} else if (datafiltertext.contains("+")) {
-			System.out.println("string contains +");
+
 			datafiltertext = datafiltertext.replace("+", "");
 			HighFilterGreater = Integer.parseInt(datafiltertext);
-			System.out.println("HighFilterGreater " + HighFilterGreater);
 		}
 	}
 
@@ -688,18 +673,19 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 			System.out.println("Works fine");
 		}
 	}
+
 	public static void selectTariffSort(String tariffSortDropDown) throws Exception {
 		// TODO Auto-generated method stub
 		Thread.sleep(5000);
 		JavascriptExecutor jse = (JavascriptExecutor) driver;
 		jse.executeScript("window.scrollBy(0,300)", "");
-        WebElement element = pageobjects.PAYMandPAYGTariffAndExtrasPage.TariffSortDropDown;
-		
+		WebElement element = pageobjects.PAYMandPAYGTariffAndExtrasPage.TariffSortDropDown;
+
 		jse.executeScript("arguments[0].setAttribute('style', 'display:block;')", element);
 		if (element.isDisplayed()) {
 			new Select(element).selectByVisibleText(tariffSortDropDown);
 			System.out.println("Sorted" + tariffSortDropDown);
 		}
-		}
+	}
 
 }
