@@ -5198,40 +5198,7 @@ public class E2EOrderPlaced_Steps {
 		}
 	}
 
-	@And("^update the emailid ([^\"]*)$")
-	public void update_the_emailid(String emailid) throws Throwable {
-
-		// try {
-		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-		PageFactory.initElements(driver, Agent_UpdateCCAEmailPage.class);
-		// UpdateDevicePlanLinkEmailAddressActions.EnterCCAEmail(emailid);
-		Thread.sleep(4000);
-		/*
-		 * } catch (Exception e) { // TODO Auto-generated catch block
-		 * e.printStackTrace(); Assert.fail("Unable to enter the CCA email id"); }
-		 */
-	}
-
-	@Then("^Click on 'Generate CCA' button$")
-	public void click_on_Generate_CCA_button() throws Throwable {
-
-	}
-
-	@Then("^click on the 'CCA' link$")
-	public void click_on_the_CCA_link() throws Throwable {
-
-	}
-
-	@Then("^click on 'Continu'$")
-	public void click_on_Continu() throws Throwable {
-		;
-	}
-
-	@Then("^land on Delivery page and click on 'Continue'$")
-	public void land_on_Delivery_page_and_click_on_Continue() throws Throwable {
-
-	}
-
+	
 	@And("^click on View All phones in upgrade page$")
 	public void clickViewAllPhonesUpgrade() throws Throwable {
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
