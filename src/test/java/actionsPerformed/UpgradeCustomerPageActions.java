@@ -61,15 +61,14 @@ public class UpgradeCustomerPageActions extends Environment {
 		 */
 
 	}
-	
+
 	public static void CCALogin(String password1) throws InterruptedException {
-		
-			
-		String CCALoginEmailID = (String) Filereadingutility.getPropertyValue(System.getProperty("user.dir") + "\\Configurations\\Properties\\Run.properties",
-				"emailid");
+
+		String CCALoginEmailID = (String) Filereadingutility.getPropertyValue(
+				System.getProperty("user.dir") + "\\Configurations\\Properties\\Run.properties", "emailid");
 		pageobjects.UpgradeCustomerPage.username.sendKeys(CCALoginEmailID);
-		pageobjects.UpgradeCustomerPage.password.sendKeys(password1);	
-		
+		pageobjects.UpgradeCustomerPage.password.sendKeys(password1);
+
 	}
 
 	public static void Signin() throws InterruptedException {
@@ -1148,7 +1147,9 @@ public class UpgradeCustomerPageActions extends Environment {
 
 	public static void selectTariff() {
 		System.out.println("In Select Tariff function");
-		driver.findElement(By.xpath("//div[contains(@class, 'grid-tile')]/div/button[@id='callToAction'][1]")).click();
+		((JavascriptExecutor) driver).executeScript("arguments[0].click();",
+				driver.findElement(By.xpath("(//button[@id='callToAction'])[2]")));
+
 		System.out.println("Completed Select Tariff function");
 	}
 
