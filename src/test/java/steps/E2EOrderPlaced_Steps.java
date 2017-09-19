@@ -5720,4 +5720,22 @@ public class E2EOrderPlaced_Steps {
 		}
 
 	}
+
+	@And("^land on the payment page and input ([^\\\"]*) and other details and click 'Continue on next step' in upgrade journey$")
+	public void CreditCheckPaymentPage_HomeDelivery_Upgrade(String Username) throws Throwable {
+		// Write code here that turns the phrase above into concrete actions
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, PaymentPage.class);
+			PaymentPageActions.Card_Details(Username);
+			Thread.sleep(75000);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			System.out.println("Unable to input details in payment page");
+			Assert.fail("Unable to input details in payment page");
+
+		}
+	}
+
 }
