@@ -109,4 +109,53 @@ public class Agent_DealBuilderPage {
 
 		@FindBy(how = How.XPATH, using = "//div[@id='deviceTable_filter']/label/input")
 		public static WebElement SearchDevice;
+		
+		/////////////////////////////Trade In////////////////////////
+		
+		@FindBy(how=How.ID,using="tradeInButton")
+		public static WebElement AgentTradeInBtn;
+		
+		@FindBy(how=How.ID,using="select_answers_1")
+		public static WebElement AgentTradeAns1;
+		
+		@FindBy(how=How.ID,using="select_answers_2")
+		public static WebElement AgentTradeAns2;
+		
+		@FindBy(how=How.ID,using="select_answers_3")
+		public static WebElement AgentTradeAns3;
+		
+		@FindBy(how=How.ID,using="select_answers_4")
+		public static WebElement AgentTradeAns4;
+		
+		
+		@FindBy(how=How.ID,using="questions")
+		public static WebElement TradeInQuestions;
+				
+		@FindBy(how = How.XPATH, using = "//*[@id='select_answers_1']/option[@value='Success']")
+		public static WebElement AgentTradeAnsSelect1;
+		
+		@FindBy(how = How.XPATH, using = "//*[@id='select_answers_2']/option[@value='Success']")
+		public static WebElement AgentTradeAnsSelect2;
+		
+		@FindBy(how = How.XPATH, using = "//*[@id='select_answers_3']/option[@value='Success']")
+		public static WebElement AgentTradeAnsSelect3;
+		
+		@FindBy(how = How.XPATH, using = "//*[@id='select_answers_4']/option[@value='Success']")
+		public static WebElement AgentTradeAnsSelect4;
+		
+		@FindBy(how=How.ID,using="okButton")
+		public static WebElement AgentTradeAccept;
+		
+		
+		@FindBy(how=How.XPATH,using="//*[@id='TRADEIN_']/td[1]/p[3]/label")
+		public static WebElement TradeInCheckboxText;
+		
+		@FindBy(how=How.XPATH,using="//*[@id='dealBuilderContent']/div[@class='basketContents']/div[@class='lineItemContainer']/table[@class='lineItemTable discounts']/tbody/tr[@id='TRADEIN_']/td[@class='lineItemDescription']/p[3]/input[@id='tradeInHomeDeliveryCheckbox']")
+		public static WebElement TradeInCheckBox;
+		
+		//input[@name='tradeInHomeDeliveryAllowed']
+		
+		//*[@id='dealBuilderContent']/div[@class='basketContents']/div[@class='lineItemContainer']/table[@class='lineItemTable discounts']/tbody/tr[@id='TRADEIN_']/td[@class='lineItemDescription']/p[3]/input[@id='tradeInHomeDeliveryCheckbox']
+
+
 }

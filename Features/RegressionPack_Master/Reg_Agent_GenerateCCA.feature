@@ -13,19 +13,16 @@ Feature: Reg_Agent_Generate CCA
     Then perform all the advisory checks
     And perform the credit checks using valid <Firstname>, <Surname>, <HouseNumber>, <PostCode> and valid <Username>
     And Register customer with valid <Firstname>, <Surname>, <HouseNumber>, <PostCode> and other valid details in delivery page
-    And update the emailid <emailid>
+    And get the emailid
     And Click on 'Generate CCA' button
     And click on the 'CCA' link
-    And Signin using valid <emailid> and <password1> credentials
-    And click on 'Continu'
-    And land on Delivery page and click on 'Continue'
+    And Signin using CCA valid emailid and <password1> credentials
+    And Click on 'Continue' button on upgrade page
     And land on the payment page and input <user> and other details for upgrade and click 'Continue on next step'
     And Continue to Agreements page and confirm all the agreement checks
     And Continue to Review page, check order contract text and review the order
     Then order confirmation is displayed
 
-    # And Update Device Plan Link Email Address
-    # Then CCALink Should be generated
     Examples: 
-      | Device              | Tariffs | Extras | DeliveryType | Firstname | Surname | Username     | HouseNumber | PostCode | emailid        | password1 |
-      | S7 edge black 32 GB | Refresh | Base   | HomeDelivery | TEST      | ACCEPTA | TEST ACCEPTA | Flat 6      | SL11EL   | tester@tes.com |           |
+      | user        | Device              | Tariffs | DeliveryType | Firstname | Surname | Username     | HouseNumber | PostCode | emailid        | password1    |
+      | 07521117063 | S7 edge black 32 GB | Refresh | HomeDelivery | TEST      | ACCEPTA | TEST ACCEPTA | Flat 6      | SL11EL   | tester@tes.com | SitTester123 |
