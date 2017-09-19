@@ -51,6 +51,7 @@ import actionsPerformed.SimsPageActions;
 import actionsPerformed.SmartwatchesPageActions;
 import actionsPerformed.TabletPageActions;
 import actionsPerformed.UpdateDevicePlanLinkEmailAddressActions;
+//import actionsPerformed.UpdateDevicePlanLinkEmailAddressActions;
 import actionsPerformed.UpgradeCustomerPageActions;
 import cucumber.api.PendingException;
 import cucumber.api.java.en.And;
@@ -98,15 +99,18 @@ import pageobjects.UpgradePhonesListingPage;
 import pageobjects.UpgradeTabletListingPage;
 
 public class E2EOrderPlaced_Steps {
-
+	
+	
+	private static final String Filteroption = null;
 	public WebDriver driver;
 	public List<HashMap<String, String>> datamap;
 	static Logger log = Logger.getLogger("devpinoyLogger");
 
+	String FilterDataOption = null;
 	LinkedList<String> expectedListBeforeSort = null;
 	LinkedList<String> originalList = null;
 	LinkedList<String> TempList3 = null;
-
+	String DataFilterRange = null;
 	public E2EOrderPlaced_Steps() {
 		driver = Hooks.driver;
 		// datamap = DataReader.data();
@@ -4924,19 +4928,6 @@ public class E2EOrderPlaced_Steps {
 		}
 	}
 
-	@And("^I select 'Enter manually' and provide all valid details in the delivery page$")
-	public void Enter_delivery_details() throws Throwable {
-		try {
-			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-			PageFactory.initElements(driver, FreeSimPage.class);
-
-			FreeSimPageActions.EnterManually();
-
-		} catch (Exception e) {
-			System.out.println("unable to do enter the details");
-			Assert.fail("unable to do enter the details");
-		}
-	}
 
 	@Then("^verify order number is displayed$")
 	public void OrdernumberFreeSim() throws Throwable {
@@ -5409,18 +5400,21 @@ public class E2EOrderPlaced_Steps {
 
 	@And("^Clicks on 'Trade In'button$")
 	public void clicks_on_Trade_In_button() throws Throwable {
-		//try {
+		try {
 			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 			PageFactory.initElements(driver, Agent_DealBuilderPage.class);
 			Agent_DealBuilderPageActions.AgentTradeInQuestionair();
 			Thread.sleep(4000);
-	/*	} catch (Exception e) {
+		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 			Assert.fail("Unable to click on Trade in Button");
 		}
-*/
-	}
 
+	}
+////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	
+	
+	
 	
 }
