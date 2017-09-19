@@ -38,6 +38,7 @@ import actionsPerformed.FreeSimDeliveryPageActions;
 import actionsPerformed.FreeSimPageActions;
 import actionsPerformed.MobileBroadBandPageActions;
 import actionsPerformed.NonConnectedDeviceDetailsPageAction;
+import actionsPerformed.O2RefreshDealSummaryActions;
 import actionsPerformed.OrderConfirmationPageActions;
 import actionsPerformed.OrderSummarySectionActions;
 import actionsPerformed.PAYMSimOPageActions;
@@ -49,6 +50,7 @@ import actionsPerformed.ShopLandingPageAction;
 import actionsPerformed.SimsPageActions;
 import actionsPerformed.SmartwatchesPageActions;
 import actionsPerformed.TabletPageActions;
+import actionsPerformed.UpdateDevicePlanLinkEmailAddressActions;
 //import actionsPerformed.UpdateDevicePlanLinkEmailAddressActions;
 import actionsPerformed.UpgradeCustomerPageActions;
 import cucumber.api.PendingException;
@@ -79,6 +81,7 @@ import pageobjects.LikeFreePage;
 import pageobjects.MobileBroadBandPage;
 import pageobjects.MouseHoverPage;
 import pageobjects.NonConnectedDeviceDetailsPage;
+import pageobjects.O2RefreshDealSummaryPage;
 import pageobjects.OrderConfirmationPage;
 import pageobjects.OrderSummarySection;
 import pageobjects.PAYMSimOPage;
@@ -5184,36 +5187,6 @@ public class E2EOrderPlaced_Steps {
 	//////////////////////////////////// CCA
 	//////////////////////////////////// Agent///////////////////////////////////////////////////////
 
-	@Given("^select a valid Handset and Tariff combination such that there is monthly$")
-	public void select_a_valid_Handset_and_Tariff_combination_such_that_there_is_monthly() throws Throwable {
-		try {
-			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-			PageFactory.initElements(driver, Agent_DealBuilderPage.class);
-			Agent_DealBuilderPageActions.CCAHandsetTariffCombination();
-			Thread.sleep(4000);
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-			Assert.fail("Unable to select valid CCA tariff and handset combination");
-		}
-	}
-
-	
-	@And("^click on View All phones in upgrade page$")
-	public void clickViewAllPhonesUpgrade() throws Throwable {
-		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-		try {
-			PageFactory.initElements(driver, UpgradePhonesListingPage.class);
-			UpgradeCustomerPageActions.viewAllPhones();
-			Thread.sleep(2000);
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-			Assert.fail("Unable to click on View All phones");
-
-		}
-	}
-
 	@And("^click on 'Take offer and upgrade'button$")
 	public void clickOnTakeOfferAndUpgradeButton() throws Throwable {
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
@@ -5623,5 +5596,126 @@ public class E2EOrderPlaced_Steps {
 			Assert.fail("unable to do enter the details About you section");
 		}
 	}
+	//////////////////////////////////// CCA
+	//////////////////////////////////// Agent///////////////////////////////////////////////////////
 
+	@Given("^select a valid Handset and Tariff combination such that there is monthly$")
+	public void select_a_valid_Handset_and_Tariff_combination_such_that_there_is_monthly() throws Throwable {
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, Agent_DealBuilderPage.class);
+			Agent_DealBuilderPageActions.CCAHandsetTariffCombination();
+			Thread.sleep(4000);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			Assert.fail("Unable to select valid CCA tariff and handset combination");
+		}
+	}
+
+	@And("^get the emailid$")
+	public void update_the_emailid() throws Throwable {
+
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, Agent_UpdateCCAEmailPage.class);
+			UpdateDevicePlanLinkEmailAddressActions.EnterCCAEmail();
+			Thread.sleep(4000);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			Assert.fail("Unable to enter the CCA email id");
+		}
+
+	}
+
+	@Then("^Click on 'Generate CCA' button$")
+	public void click_on_Generate_CCA_button() throws Throwable {
+
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, O2RefreshDealSummaryPage.class);
+			O2RefreshDealSummaryActions.DealSummarySectionforCCA();
+			O2RefreshDealSummaryActions.ClickGenerateCCABtn();
+
+			Thread.sleep(4000);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			Assert.fail("Unable to enter the CCA email id");
+		}
+	}
+
+	@Then("^click on the 'CCA' link$")
+	public void click_on_the_CCA_link() throws Throwable {
+
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, O2RefreshDealSummaryPage.class);
+			O2RefreshDealSummaryActions.ClickGenerateCCALink();
+			O2RefreshDealSummaryActions.SwitchFocusToNewTab();
+
+			Thread.sleep(4000);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			Assert.fail("Unable to enter the CCA email id");
+		}
+
+	}
+
+	@Then("^Signin using CCA valid emailid and ([^\"]*) credentials$")
+	public void signin_using_CCA_valid_emailid_and_test_credentials(String password1) throws Throwable {
+
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, UpgradeCustomerPage.class);
+			UpgradeCustomerPageActions.CCALogin(password1);
+			UpgradeCustomerPageActions.Signin();
+
+			Thread.sleep(4000);
+
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			Assert.fail("Unable to enter the CCA email id");
+		}
+
+	}
+
+	@And("^click on View All phones in upgrade page$")
+	public void clickViewAllPhonesUpgrade() throws Throwable {
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		try {
+			PageFactory.initElements(driver, UpgradePhonesListingPage.class);
+			UpgradeCustomerPageActions.viewAllPhones();
+			Thread.sleep(2000);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			Assert.fail("Unable to click on View All phones");
+
+		}
+	}
+
+	///////////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////// Agent
+	/////////////////////////////////////////////////////////////////////////////////// Trade////////////////////////////////////
+	/////////////////////////////////// In ////////////////////////////////////
+	///////////////////////////////////////////////////////////////////////////////////
+
+	@And("^Clicks on 'Trade In'button$")
+	public void clicks_on_Trade_In_button() throws Throwable {
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, Agent_DealBuilderPage.class);
+			Agent_DealBuilderPageActions.AgentTradeInQuestionair();
+			Thread.sleep(4000);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			Assert.fail("Unable to click on Trade in Button");
+		}
+
+	}
 }
