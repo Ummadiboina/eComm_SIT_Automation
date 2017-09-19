@@ -371,8 +371,7 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 					SelectedAccessoryCount = 6;
 					System.out.println("DAtacontainer size greater than 6");
 					for (int i = 0; i < 6; i++) {
-						System.out.println(DataContainer.get(i).getText());
-						DataContainer.get(i).click();
+						DataContainer.get(0).click();
 						Thread.sleep(3000);
 						System.out.println("Selected accessories");
 					}

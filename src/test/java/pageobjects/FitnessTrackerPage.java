@@ -20,7 +20,7 @@ public class FitnessTrackerPage
 		@FindBy(how=How.XPATH,using="//a[contains(@href, '/shop/fitness-trackers/fitbit/charge-2/#contractType=nonconnected")
 		public static WebElement FitbitCharge2;
 		
-		@FindBy(how=How.XPATH,using="//*[@data-qa-device-contract-type='nonconnected'][1]")
+		@FindBy(how=How.XPATH,using="(//*[@data-qa-device-contract-type='nonconnected'])[1]")
 		public static WebElement RandomFitnesstracker;
 		
 		@FindBy(how=How.XPATH,using="//a[contains(@href, '/shop/fitness-trackers/jawbone/up2/#contractType=nonconnected')]")
