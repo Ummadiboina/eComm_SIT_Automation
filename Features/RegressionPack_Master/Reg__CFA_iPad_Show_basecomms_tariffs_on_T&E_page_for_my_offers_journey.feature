@@ -1,5 +1,5 @@
 Feature: C1960_ECOM11430_11485_11433_11419_TC1_CFA_iPad_Show_basecomms_tariffs_on_T&E_page_for_my_offers_journey 
-
+@Regression
 Scenario Outline:
 This scenario ensures that when the customer in Acquisition Journey lands on My offers page and clicks on 'iPads' tab, then the customer should be able to see 'iPad' devices associated with Bascom tariffs in device tile and Tariff and extras page 
 	Given I navigate to the Basecomm Page 

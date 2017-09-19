@@ -163,4 +163,10 @@ public class UpgradeCustomerPage {
 
 	@FindBy(how = How.ID, using = "buy-out-discount")
 	public static WebElement BuyOutTextOTACPage;
+	
+	@FindBy(how = How.XPATH, using = "(//a[@id='tab-switch-to-a-tablet'])[1]")
+	public static WebElement TabletsTab;
+	
+	@FindBy(how = How.ID, using = "qa-view-all")
+	public static WebElement ViewAllTariffs;
 }

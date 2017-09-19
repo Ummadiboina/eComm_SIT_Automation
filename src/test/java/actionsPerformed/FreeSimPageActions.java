@@ -8,6 +8,8 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Reporter;
+
+import GlobalActions.RandomEmailAddressCreation;
 import helpers.Environment;
 import pageobjects.FreeSimPage;
 
@@ -38,37 +40,43 @@ public class FreeSimPageActions extends Environment {
 
 	}
 
-	public static void EnterManually() throws InterruptedException {
+	
+
+	public static void EnterManually(String Flatnumber, String Housename, String Address1, String Town, String Postcode)
+			throws InterruptedException {
 
 		System.out.println("Clicking on Enter Manually link");
 		pageobjects.FreeSimPage.EnterManually.click();
 		Thread.sleep(3000);
 		log.debug("Clicking on Enter Manually link");
-		pageobjects.FreeSimPage.flat.sendKeys("26");
-		System.out.println("Enter the flat no : 26");
-		pageobjects.FreeSimPage.housename.sendKeys("100");
-		System.out.println("Enter the housename : 100");
-		pageobjects.FreeSimPage.address.sendKeys("slough");
-		System.out.println("Enter the address 1 : slough");
-		pageobjects.FreeSimPage.town.sendKeys("berks");
-		System.out.println("Enter the town: berks");
-		pageobjects.FreeSimPage.postcode.sendKeys("sl11er");
-		System.out.println("Enter the postcode : s1ller");
-		pageobjects.FreeSimPage.email.sendKeys("arasi@02.com");
-		System.out.println("Enter the mail id");
+		pageobjects.FreeSimPage.Housename.sendKeys(Housename);
+		log.debug("Entered the Housename");
+		pageobjects.FreeSimPage.Address1.sendKeys(Address1);
+		log.debug("Entered the address 1");
+		pageobjects.FreeSimPage.Town.sendKeys(Town);
+		log.debug("Entered the Town");
+		pageobjects.FreeSimPage.Postcode.sendKeys(Postcode);
+		log.debug("Entered the Postcode");
+	}
+
+	public static void AboutYouSection(String Firstname, String Lastname, String Contact_number)
+			throws InterruptedException {
+
+		pageobjects.FreeSimPage.Email_id.sendKeys(RandomEmailAddressCreation.RandomEmail());
+		log.debug("Entered the mail id");
 		Select dropdown = new Select(pageobjects.FreeSimPage.title);
 		dropdown.selectByIndex(2);
-		System.out.println("select the title : Mrs");
-		pageobjects.FreeSimPage.firstname.sendKeys("test");
-		System.out.println("First name : test");
-		pageobjects.FreeSimPage.secondname.sendKeys("accepta");
-		System.out.println("First name : accepta");
-		pageobjects.FreeSimPage.contact.sendKeys("07123456789");
-		System.out.println("Mobile number : 07123456789");
-		pageobjects.FreeSimPage.check.click();
-		System.out.println("TC checkbox");
-		pageobjects.FreeSimPage.order.click();
-		System.out.println("place order button");
+		log.debug("Selected the title");
+		pageobjects.FreeSimPage.Firstname.sendKeys(Firstname);
+		log.debug("Entered the First name");
+		pageobjects.FreeSimPage.Lastname.sendKeys(Lastname);
+		log.debug("Entered the Last name");
+		pageobjects.FreeSimPage.Contact_number.sendKeys(Contact_number);
+		log.debug("Entered the Mobile number");
+		pageobjects.FreeSimPage.Check_box.click();
+		log.debug("Selected the TC checkbox");
+		pageobjects.FreeSimPage.Order.click();
+		log.debug("Clicked on place order button");
 	}
 
 }

@@ -77,8 +77,45 @@ public class PAYMandPAYGTariffAndExtrasPage {
 	@FindAll({ @FindBy(how = How.XPATH, using = "//div[@class='col-xs-6 monthly']//span[@class='pound ng-binding']") })
 	public static List<WebElement> MonthlyCost;
 
-	@FindAll({ @FindBy(how = How.XPATH, using = "//div[@class=' insurance-button-container '][1]")})
+	@FindAll({ @FindBy(how = How.XPATH, using = "//div[@class=' insurance-button-container '][1]") })
 	public static WebElement AddRandomInsurance;
-	
 
+	@FindAll({ @FindBy(how = How.XPATH, using = "//div[@class='filter-label']") })
+	public static WebElement FilterandSortLabel;
+
+	@FindBy(how = How.XPATH, using = "//select[@id='dataFilterSelect']")
+	public static WebElement TariffSortDropDown;
+
+	@FindAll({ @FindBy(how = How.XPATH, using = "//div[@id='tariff-tile']//ul/li[1]/h2") })
+	public static List<WebElement> DataTextElement;
+
+	@FindBy(how = How.XPATH, using = ("//a[@manual_cm_re='DR346B_low']/button[contains(@class,'secondary sortGrpBtn')]"))
+	public static WebElement lowfilter;
+
+	@FindBy(how = How.XPATH, using = ("//a[@manual_cm_re='DR346B_medium']/button[contains(@class,'secondary sortGrpBtn')]"))
+	public static WebElement mediumfilter;
+
+	@FindBy(how = How.XPATH, using = ("//a[@manual_cm_re='DR346B_high']/button[contains(@class,'secondary sortGrpBtn')]"))
+	public static WebElement highfilter;
+
+	@FindBy(how = How.XPATH, using = ("//button[@class='secondary sortGrpBtn btnToggle']"))
+	public static WebElement DataFilterSelectedXpath;
+
+	@FindBy(how = How.XPATH, using = ("//div[@class='viewAllTariffs']"))
+	public static WebElement ViewAllTariffs;
+	
+	@FindBy(how = How.XPATH, using = "//*[@id=\"DR346\"]/a[1]/button")
+	public static WebElement DataTariff_One;
+
+	@FindBy(how = How.XPATH, using = "//*[@id=\"DR346\"]/a[2]/button")
+	public static WebElement DataTariff_Two;
+
+	@FindBy(how = How.XPATH, using = "//*[@id=\"DR346\"]/a[3]/button")
+	public static WebElement DataTariff_Three;
+	
+	@FindBy(how = How.XPATH, using = "//*[@class='choose-tariff-section section']/div[4]/div[2]/a[1]/button[@class='secondary sortGrpBtn btnToggle']")
+	public static WebElement SelectedState;
+	
+	@FindBy(how = How.XPATH, using = "//*[@class='choose-tariff-section section']/div[4]/div[2]/a[1]/button[@class='secondary sortGrpBtn']")
+	public static WebElement DeSelectedState;
 }
