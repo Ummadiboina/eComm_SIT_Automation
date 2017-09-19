@@ -360,27 +360,29 @@ public class E2EOrderPlaced_Steps {
 		}
 	}
 
-	@Given("^select any available ([^\"]*) Fitness tracker$")
+	@Given("^select any available ([^\\\"]*) Fitness tracker$")
 	public void select_any_available_Fitness_tracker(String arg1) throws Throwable {
 		try {
 			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 			PageFactory.initElements(driver, FitnessTrackerPage.class);
-			FitnessTrackerPageActions.DeviceSelect("Random Device");
+			FitnessTrackerPageActions.DeviceSelect(arg1);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
+			e.printStackTrace();
 			System.out.println("Unable to select fitness tracker");
 			Assert.fail("Unable to select fitness tracker");
 		}
 	}
 
-	@Given("^select any available \"([^\"]*)\" Smartwatch$")
+	@Given("^select any available ([^\"]*) Smartwatch$")
 	public void select_any_available_Smartwatch(String arg1) throws Throwable {
 		try {
 			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 			PageFactory.initElements(driver, SmartwatchesPage.class);
-			SmartwatchesPageActions.DeviceSelect("Random Device");
+			SmartwatchesPageActions.DeviceSelect(arg1);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
+			e.printStackTrace();
 			System.out.println("Unable to select Smartwatch");
 			Assert.fail("Unable to select Smartwatch");
 

@@ -12,6 +12,7 @@ Feature: C1786_E11362-11564_Current_MBB_URL_no_change_Order_placement
     #And I Land on the basket page and choose home delivery option
     And click on "go to checkout" button
     And Select existing account and begin fast checkout
+    And select continue button in delivery page for existing customer
     And land on the payment page and input <user> and other details for upgrade and click 'Continue on next step'
     And Continue to Agreements page and confirm all the agreement checks
     And Continue to Review page and review the order

@@ -4,7 +4,7 @@ Feature: Reg_CS_SmartWatch
   Scenario Outline: Smart Watches only E2E journey
     Given I am an CFA user and Lands on shop page
     And Navigate to SmartWatches
-    And select any available "Random" Smartwatch
+    And select any available <Device> Smartwatch
     And add SmartWatch to basket within limit in details page and navigate to basket
     And I Land on the Non Phone related basket page and choose home delivery option
     And click on "go to checkout" button
@@ -14,5 +14,5 @@ Feature: Reg_CS_SmartWatch
     Then order confirmation is displayed
 
     Examples: 
-      | Firstname | Surname | Username     |
-      | TEST      | ACCEPTA | TEST ACCEPTA |
+      | Firstname | Surname | Username     | Device                    |
+      | TEST      | ACCEPTA | TEST ACCEPTA | Pebble Original Jet Black |
