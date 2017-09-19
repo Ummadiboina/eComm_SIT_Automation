@@ -5198,7 +5198,7 @@ public class E2EOrderPlaced_Steps {
 		}
 	}
 
-
+	
 	@And("^click on View All phones in upgrade page$")
 	public void clickViewAllPhonesUpgrade() throws Throwable {
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
@@ -5622,95 +5622,6 @@ public class E2EOrderPlaced_Steps {
 			System.out.println("unable to do enter the details in About you section");
 			Assert.fail("unable to do enter the details About you section");
 		}
-	}
-	
-	@And("^get the emailid$")
-	public void update_the_emailid() throws Throwable {
-
-		try {
-			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-			PageFactory.initElements(driver, Agent_UpdateCCAEmailPage.class);
-			UpdateDevicePlanLinkEmailAddressActions.EnterCCAEmail();
-			Thread.sleep(4000);
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-			Assert.fail("Unable to enter the CCA email id");
-		}
-
-	}
-	
-	@Then("^Click on 'Generate CCA' button$")
-	public void click_on_Generate_CCA_button() throws Throwable {
-
-		try {
-			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-			PageFactory.initElements(driver, O2RefreshDealSummaryPage.class);
-			O2RefreshDealSummaryActions.DealSummarySectionforCCA();
-			O2RefreshDealSummaryActions.ClickGenerateCCABtn();
-
-			Thread.sleep(4000);
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-			Assert.fail("Unable to enter the CCA email id");
-		}
-	}
-@Then("^click on the 'CCA' link$")
-	public void click_on_the_CCA_link() throws Throwable {
-
-		try {
-			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-			PageFactory.initElements(driver, O2RefreshDealSummaryPage.class);
-			O2RefreshDealSummaryActions.ClickGenerateCCALink();
-			O2RefreshDealSummaryActions.SwitchFocusToNewTab();
-
-			Thread.sleep(4000);
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-			Assert.fail("Unable to enter the CCA email id");
-		}
-
-	}
-	
-	@Then("^Signin using CCA valid emailid and ([^\"]*) credentials$")
-	public void signin_using_CCA_valid_emailid_and_test_credentials(String password1) throws Throwable {
-
-	try {
-			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-			PageFactory.initElements(driver, UpgradeCustomerPage.class);
-			UpgradeCustomerPageActions.CCALogin(password1);
-			UpgradeCustomerPageActions.Signin();
-
-		Thread.sleep(4000);
-	
-	} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-			Assert.fail("Unable to enter the CCA email id");
-		}
-
-	}
-
-   ///////////////////////////////////////////////////////////////////////////////////
-	/////////////////////////////////// Agent Trade////////////////////////////////////  
-	///////////////////////////////////     In     ////////////////////////////////////
-	///////////////////////////////////////////////////////////////////////////////////
-
-	@And("^Clicks on 'Trade In'button$")
-	public void clicks_on_Trade_In_button() throws Throwable {
-		try {
-			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-			PageFactory.initElements(driver, Agent_DealBuilderPage.class);
-			Agent_DealBuilderPageActions.AgentTradeInQuestionair();
-			Thread.sleep(4000);
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-			Assert.fail("Unable to click on Trade in Button");
-		}
-
 	}
 
 }
