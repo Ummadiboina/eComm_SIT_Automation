@@ -61,6 +61,16 @@ public class UpgradeCustomerPageActions extends Environment {
 		 */
 
 	}
+	
+	public static void CCALogin(String password1) throws InterruptedException {
+		
+			
+		String CCALoginEmailID = (String) Filereadingutility.getPropertyValue(System.getProperty("user.dir") + "\\Configurations\\Properties\\Run.properties",
+				"emailid");
+		pageobjects.UpgradeCustomerPage.username.sendKeys(CCALoginEmailID);
+		pageobjects.UpgradeCustomerPage.password.sendKeys(password1);	
+		
+	}
 
 	public static void Signin() throws InterruptedException {
 		System.out.println("in signin function");

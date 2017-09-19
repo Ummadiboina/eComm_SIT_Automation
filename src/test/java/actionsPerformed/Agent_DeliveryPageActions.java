@@ -1,13 +1,9 @@
 package actionsPerformed;
 
-import helpers.Environment;
-
-import pageobjects.Agent_DeliveryDetailsPage;
 import org.apache.log4j.Logger;
-import org.openqa.selenium.support.ui.Select;
-import org.testng.Reporter;
 
-import GlobalActions.RandomEmailAddressCreation;
+import helpers.Environment;
+import pageobjects.Agent_DeliveryDetailsPage;
 
 public class Agent_DeliveryPageActions extends Environment{
 	

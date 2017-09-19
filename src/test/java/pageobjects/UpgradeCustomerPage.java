@@ -51,7 +51,7 @@ public class UpgradeCustomerPage {
 	@FindAll({ @FindBy(how = How.XPATH, using = "//div[@id='qa-recommendedDevicesTile']/a//div/p[@class='details']") })
 	public static List<WebElement> DeviceNameRecommendedSection;
 
-	@FindBy(how = How.XPATH, using = "//a[@href='https://accounts.o2.co.uk/signin']")
+	@FindBy(how = How.XPATH, using = "//*[@id='signInButton']")
 	public static WebElement Signinlink;
 
 	@FindBy(how = How.XPATH, using = "//select[@class='recycle-make ng-pristine ng-valid']")

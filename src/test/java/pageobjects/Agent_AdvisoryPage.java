@@ -14,6 +14,8 @@ public class Agent_AdvisoryPage {
 		@FindBy(how=How.XPATH,using="//*[@id='customerDetailsProceedButton']")
 		public static WebElement AgreeAdvsioryCheckYes;
 				
+		////////////////////////////////////Trade In/////////////////////////////////
+	
 		
 		
 }
