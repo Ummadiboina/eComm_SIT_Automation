@@ -114,7 +114,9 @@ public class E2EOrderPlaced_Steps {
 	String DataFilterRange = null;
 	ArrayList<Integer> datalistbefore = new ArrayList<Integer>();
 	ArrayList<Integer> datalistafter = new ArrayList<Integer>();
-	
+	ArrayList<Integer> monthlycostlistafter = new ArrayList<Integer>();
+	ArrayList<Integer> upfrontcostlistafter = new ArrayList<Integer>();
+
 	public E2EOrderPlaced_Steps() {
 		driver = Hooks.driver;
 		// datamap = DataReader.data();
@@ -137,7 +139,7 @@ public class E2EOrderPlaced_Steps {
 	public void i_am_an_CFA_user_and_Lands_on_shop_page() throws Throwable {
 		try {
 			ShopLandingPageAction.GetTitle();
-			
+
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			System.out.println("unable to get title");
@@ -1094,30 +1096,30 @@ public class E2EOrderPlaced_Steps {
 
 		}
 	}
-	
-	@And("^Continue to CCA or Buyout or Trade In Agreements page and confirm all the agreement checks$")
-    public void continue_to_CCA_or_Buyout_or_Trade_In_Agreements_page_and_confirm_all_the_agreement_checks()
-                  throws Throwable {
-           try {
-                  driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-                  PageFactory.initElements(driver, AgreementPage.class);
-                  PageFactory.initElements(driver, ReviewPage.class);
-                  AgreementPageActions.KeyInformation();
-                  Thread.sleep(5000);
-                  AgreementPageActions.secciSection();
-                  Thread.sleep(5000);
-                  AgreementPageActions.PayMMobileAgreement();
-                  Thread.sleep(5000);
-                  AgreementPageActions.TermsDeclarationCheckbox();
-                  Thread.sleep(5000);
-           } catch (Exception e) {
-                  // TODO Auto-generated catch block
-                  System.out.println(
-                               "Agreements page is not displayed or unable to enter some information in thie page, Please review the screenshots for failure");
-                  Assert.fail(
-                               "Agreements page is not displayed or unable to enter some information in thie page, Please review the screenshots for failure");
 
-           }
+	@And("^Continue to CCA or Buyout or Trade In Agreements page and confirm all the agreement checks$")
+	public void continue_to_CCA_or_Buyout_or_Trade_In_Agreements_page_and_confirm_all_the_agreement_checks()
+			throws Throwable {
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, AgreementPage.class);
+			PageFactory.initElements(driver, ReviewPage.class);
+			AgreementPageActions.KeyInformation();
+			Thread.sleep(5000);
+			AgreementPageActions.secciSection();
+			Thread.sleep(5000);
+			AgreementPageActions.PayMMobileAgreement();
+			Thread.sleep(5000);
+			AgreementPageActions.TermsDeclarationCheckbox();
+			Thread.sleep(5000);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			System.out.println(
+					"Agreements page is not displayed or unable to enter some information in thie page, Please review the screenshots for failure");
+			Assert.fail(
+					"Agreements page is not displayed or unable to enter some information in thie page, Please review the screenshots for failure");
+
+		}
 	}
 
 	/*
@@ -5518,19 +5520,45 @@ public class E2EOrderPlaced_Steps {
 		}
 	}
 
-	@And("^I should see appropriate tariffs based on the selected data filter$")
-	public void getTariffList() throws Throwable {
+	@And("^I should see appropriate tariffs based on the selected data filter ([^\"]*)$")
+	public void getTariffList(String SortOption) throws Throwable {
 		try {
 			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 			PageFactory.initElements(driver, PAYMandPAYGTariffAndExtrasPage.class);
 
 			if (DataFilterRange.equals("high")) {
-				datalistafter=PAYMandPAYGTariffAndExtrasPageActions.getDataListAfterSelectingFilter();
+				if (SortOption.equals("Monthly data (High to low)")
+						|| SortOption.equals("Monthly data (Low to High)")) {
+					datalistafter = PAYMandPAYGTariffAndExtrasPageActions.getDataListAfterSelectingFilter();
+				}
+				if (SortOption.equals("Monthly cost (High to low)")
+						|| SortOption.equals("Monthly cost (Low to High)")) {
+					monthlycostlistafter = PAYMandPAYGTariffAndExtrasPageActions
+							.getMonthlyCostListAfterSelectingFilter();
+				}
+				if (SortOption.equals("Upfront cost (High to low)")
+						|| SortOption.equals("Upfront cost (Low to high)")) {
+					upfrontcostlistafter = PAYMandPAYGTariffAndExtrasPageActions
+							.getUpfrontCostListAfterSelectingFilter();
+				}
 				PAYMandPAYGTariffAndExtrasPageActions.getRange();
 				PAYMandPAYGTariffAndExtrasPageActions.getValuesToCompareWhenGreaterIsSelected();
 				PAYMandPAYGTariffAndExtrasPageActions.verifyListWhenGreaterIsSelected();
 			} else if (DataFilterRange.equals("low") || DataFilterRange.equals("medium")) {
-				datalistafter=PAYMandPAYGTariffAndExtrasPageActions.getDataListAfterSelectingFilter();
+				if (SortOption.equals("Monthly data (High to low)")
+						|| SortOption.equals("Monthly data (Low to High)")) {
+					datalistafter = PAYMandPAYGTariffAndExtrasPageActions.getDataListAfterSelectingFilter();
+				}
+				if (SortOption.equals("Monthly cost (High to low)")
+						|| SortOption.equals("Monthly cost (Low to High)")) {
+					monthlycostlistafter = PAYMandPAYGTariffAndExtrasPageActions
+							.getMonthlyCostListAfterSelectingFilter();
+				}
+				if (SortOption.equals("Upfront cost (High to low)")
+						|| SortOption.equals("Upfront cost (Low to high)")) {
+					upfrontcostlistafter = PAYMandPAYGTariffAndExtrasPageActions
+							.getUpfrontCostListAfterSelectingFilter();
+				}
 				PAYMandPAYGTariffAndExtrasPageActions.getRange();
 				PAYMandPAYGTariffAndExtrasPageActions.getValuesToCompare();
 				PAYMandPAYGTariffAndExtrasPageActions.verifyList();
@@ -5612,9 +5640,11 @@ public class E2EOrderPlaced_Steps {
 			System.out.println(ListAfterSort);
 
 			PAYMandPAYGTariffAndExtrasPageActions.verifyTariffSortedAsPerSortOption(ListBeforeSort, ListAfterSort);
-			
-			System.out.println("Assertion Success: Tariffs have been sorted successfully based on Sort Option and Tariff Option");
-			System.out.println("Assertion Success: Tariffs have been sorted successfully based on Sort Option and Tariff Option");
+
+			System.out.println(
+					"Assertion Success: Tariffs have been sorted successfully based on Sort Option and Tariff Option");
+			System.out.println(
+					"Assertion Success: Tariffs have been sorted successfully based on Sort Option and Tariff Option");
 
 		} catch (AssertionError e) {
 
@@ -5947,12 +5977,12 @@ public class E2EOrderPlaced_Steps {
 		}
 	}
 	///////////////////////////////////////////////////////////////////////////////////////////////
-	/////////////////////////////////Agent_BuyOut/////////////////////////////////////////////////
+	///////////////////////////////// Agent_BuyOut/////////////////////////////////////////////////
 	////////////////////////////////////////////////////////////////////////////////////////////////
-	
+
 	@Given("^clicks on 'Buyout' button$")
 	public void clicks_on_Buyout_button() throws Throwable {
-	    // Write code here that turns the phrase above into concrete actions
+		// Write code here that turns the phrase above into concrete actions
 		try {
 			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 			PageFactory.initElements(driver, Agent_DealBuilderPage.class);
