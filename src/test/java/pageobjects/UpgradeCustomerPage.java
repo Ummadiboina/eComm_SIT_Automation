@@ -24,6 +24,11 @@ public class UpgradeCustomerPage {
 	@FindBy(how = How.CLASS_NAME, using = "simo-link")
 	public static WebElement SimOLink;
 
+	@FindBy(how = How.ID, using = "continue")
+	public static WebElement SecurityContinue;
+
+	//*[@id='continue']
+	
 	@FindBy(how = How.XPATH, using = "//a[@id='cancel']")
 	public static WebElement Continue;
 
@@ -169,4 +174,8 @@ public class UpgradeCustomerPage {
 	
 	@FindBy(how = How.ID, using = "qa-view-all")
 	public static WebElement ViewAllTariffs;
+	
+	@FindBy(how = How.ID, using = "otac")
+	public static WebElement SecurityOtac;
+	//*[@id='otac']
 }
