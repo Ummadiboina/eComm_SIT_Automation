@@ -88,6 +88,12 @@ public class PAYMandPAYGTariffAndExtrasPage {
 
 	@FindAll({ @FindBy(how = How.XPATH, using = "//div[@id='tariff-tile']//ul/li[1]/h2") })
 	public static List<WebElement> DataTextElement;
+	
+	@FindAll({ @FindBy(how = How.XPATH, using = "//div[@id='tariff-tile']//div[@class='price-block']/div[@class='col-xs-6 upfront']/h2/span[2]") })
+	public static List<WebElement> UpfrontTextElement;
+	
+	@FindAll({ @FindBy(how = How.XPATH, using = "//div[@id='tariff-tile']//div[@class='price-block']/div[@class='col-xs-6 monthly']/h2/span[2]") })
+	public static List<WebElement> MonthlyCostTextElement;
 
 	@FindBy(how = How.XPATH, using = ("//a[@manual_cm_re='DR346B_low']/button[contains(@class,'secondary sortGrpBtn')]"))
 	public static WebElement lowfilter;

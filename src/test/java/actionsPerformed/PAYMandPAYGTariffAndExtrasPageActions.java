@@ -2,6 +2,8 @@ package actionsPerformed;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
@@ -596,6 +598,56 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 		System.out.println("---------------------------------------------");
 		return datalistafter;
 	}
+	
+	public static ArrayList<Integer> getMonthlyCostListAfterSelectingFilter() {
+		List<WebElement> MonthlyCostTextElement = pageobjects.PAYMandPAYGTariffAndExtrasPage.MonthlyCostTextElement;
+		ArrayList<Integer> MonthlyCostlist = new ArrayList<Integer>();
+		String data = null;
+		int a = 0;
+
+		for (int i = 0; i < MonthlyCostTextElement.size(); i++) {
+			data = MonthlyCostTextElement.get(i).getText();
+			data = StringUtils.substringBetween(data, "£", ".");
+			a = NumberUtils.toInt(data);
+			MonthlyCostlist.add(a);
+		}
+
+		System.out.println('\n');
+		
+		System.out.println("----------------------Monthly Cost List after selecting filter--------------");
+		for (int i = 0; i < MonthlyCostlist.size(); i++) {
+			System.out.println(MonthlyCostlist.get(i));
+
+		}
+		System.out.println("---------------------------------------------");
+		return MonthlyCostlist;
+	}
+	
+	public static ArrayList<Integer> getUpfrontCostListAfterSelectingFilter() {
+		List<WebElement> UpfrontCostTextElement = pageobjects.PAYMandPAYGTariffAndExtrasPage.UpfrontTextElement;
+		ArrayList<Integer> UpfrontCostlist = new ArrayList<Integer>();
+		String data = null;
+		int a = 0;
+
+		for (int i = 0; i < UpfrontCostTextElement.size(); i++) {
+			data = UpfrontCostTextElement.get(i).getText();
+			data = StringUtils.substringBetween(data, "£", ".");
+			a = NumberUtils.toInt(data);
+			UpfrontCostlist.add(a);
+		}
+
+		System.out.println('\n');
+		
+		System.out.println("----------------------Upfront Cost List after selecting filter--------------");
+		for (int i = 0; i < UpfrontCostlist.size(); i++) {
+			System.out.println(UpfrontCostlist.get(i));
+
+		}
+		System.out.println("---------------------------------------------");
+		return UpfrontCostlist;
+	}
+	
+	
 
 	public static void getRange() {
 		String datafiltertext = null;
@@ -785,6 +837,106 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 
 		pageobjects.PAYMandPAYGTariffAndExtrasPage.DataFilterSelectedXpath.click();
 		System.out.println("Deselected the selected data filter tab");
+
+	}
+
+	public static ArrayList<Integer> getCurrentSortOrderUsingMonthlyData() {
+		List<WebElement> DataTextElement = pageobjects.PAYMandPAYGTariffAndExtrasPage.DataTextElement;
+		ArrayList<Integer> tariffListUsingMonthlyData = new ArrayList<Integer>();
+		String data = null;
+		int a = 0;
+
+		for (int i = 0; i < DataTextElement.size(); i++) {
+			data = DataTextElement.get(i).getText();			
+			data = data.replace("GB", "");
+			a = NumberUtils.toInt(data);
+			if (a != 0) {
+				tariffListUsingMonthlyData.add(a);
+			}
+
+		}
+		return tariffListUsingMonthlyData;
+	}
+	
+	public static ArrayList<Integer> getCurrentSortOrderUsingMonthlyCost() {
+		List<WebElement> DataTextElement = pageobjects.PAYMandPAYGTariffAndExtrasPage.MonthlyCostTextElement;
+		ArrayList<Integer> tariffListUsingMonthlyCost = new ArrayList<Integer>();
+		String data = null;
+		int a = 0;
+
+		for (int i = 0; i < DataTextElement.size(); i++) {
+			data = DataTextElement.get(i).getText();
+			data = StringUtils.substringBetween(data, "£", ".");
+			a = NumberUtils.toInt(data);
+			if (a != 0) {
+				tariffListUsingMonthlyCost.add(a);
+			}
+
+		}
+		return tariffListUsingMonthlyCost;
+	}
+	
+	public static ArrayList<Integer> getCurrentSortOrderUsingUpfrontCost() {
+		List<WebElement> DataTextElement = pageobjects.PAYMandPAYGTariffAndExtrasPage.UpfrontTextElement;
+		ArrayList<Integer> tariffListUsingMonthlyUpfront = new ArrayList<Integer>();
+		String data = null;
+		int a = 0;
+
+		for (int i = 0; i < DataTextElement.size(); i++) {
+			data = DataTextElement.get(i).getText();
+			data = StringUtils.substringBetween(data, "£", ".");
+			a = NumberUtils.toInt(data);
+			if (a != 0) {
+				tariffListUsingMonthlyUpfront.add(a);
+			}
+
+		}
+		return tariffListUsingMonthlyUpfront;
+	}
+
+	public static ArrayList<Integer> reArrangeListInAcendingBeforeApplyingSort(ArrayList<Integer> OriginalList)
+			throws InterruptedException {
+
+		ArrayList<Integer> ListBeforeApplyingSort = OriginalList;
+		// listSortEx(ListBeforeApplyingSort, false);
+
+		Collections.sort(ListBeforeApplyingSort);
+		System.out.println("-List arranged in ascending Order-");
+		System.out.println(ListBeforeApplyingSort);
+		return ListBeforeApplyingSort;
+
+	}
+
+	public static ArrayList<Integer> reArrangeListInDescendingBeforeApplyingSort(ArrayList<Integer> OriginalList)
+			throws InterruptedException {
+
+		ArrayList<Integer> ListBeforeApplyingSort = OriginalList;
+		Collections.sort(ListBeforeApplyingSort, Collections.reverseOrder());
+		return ListBeforeApplyingSort;
+
+		//Collections.sort(list);
+		//Collections.reverse(list);
+	}
+	
+	public static void verifyTariffSortedAsPerSortOption(ArrayList<Integer> ListBeforeApplyingSort,
+			ArrayList<Integer> ListAfterApplyingSort) {
+
+		try {
+
+			ArrayList<Integer> TempListBeforeApplyingSort = ListBeforeApplyingSort;
+			ArrayList<Integer> TempListAfterApplyingSort = ListAfterApplyingSort;
+
+			for (int i = 0; i < TempListBeforeApplyingSort.size(); i++) {
+				Assert.assertTrue("Assert Failed: Tariff list is not sorted as expected",
+						TempListBeforeApplyingSort.get(i).equals(TempListAfterApplyingSort.get(i)));
+				log.debug("Assertion Success: Tariffs have been sorted successfully based on Sort Option");
+			}			
+
+			System.out.println("Assertion Success: Tariffs have been sorted successfully based on Sort Option");
+		} catch (AssertionError e) {
+			log.debug("Assertion Failed: Tariifs are not sorted based on Sort Option ");
+			log.debug("Fail" + " - " + e.getMessage());
+		}
 
 	}
 

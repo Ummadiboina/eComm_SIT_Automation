@@ -108,6 +108,8 @@ public class E2EOrderPlaced_Steps {
 	String FilterDataOption = null;
 	LinkedList<String> expectedListBeforeSort = null;
 	LinkedList<String> originalList = null;
+	ArrayList<Integer> originalTariffList = null;
+	ArrayList<Integer> expectedTariffListBeforeSort = null;
 	LinkedList<String> TempList3 = null;
 	String DataFilterRange = null;
 	ArrayList<Integer> datalistbefore = new ArrayList<Integer>();
@@ -1413,7 +1415,8 @@ public class E2EOrderPlaced_Steps {
 		Agent_HomePagePageActions.upgradeUser();
 		Thread.sleep(4000);
 		/*
-		 * } catch (Exception e) { // TODO Auto-generated catch block System.out.
+		 * } catch (Exception e) { // TODO Auto-generated catch block
+		 * System.out.
 		 * println("Unable to login for upgrade for user in Agent shop, please see the failure screenshot"
 		 * ); Assert.
 		 * fail("Unable to login for upgrade for user in Agent shop, please see the failure screenshot"
@@ -2702,13 +2705,14 @@ public class E2EOrderPlaced_Steps {
 	}
 
 	/*
-	 * @And("^Verify the devices ([^\"]*), ([^\"]*) and ([^\"]*) in basket$") public
-	 * void verifyDevicesInBasket(String smartwatchname, String fitnesstrackername,
-	 * String tabletname) throws Throwable { try {
+	 * @And("^Verify the devices ([^\"]*), ([^\"]*) and ([^\"]*) in basket$")
+	 * public void verifyDevicesInBasket(String smartwatchname, String
+	 * fitnesstrackername, String tabletname) throws Throwable { try {
 	 * driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 	 * PageFactory.initElements(driver, BasketPage.class);
-	 * BasketPageActions.verifyDevicesInBasket(smartwatchname, fitnesstrackername,
-	 * tabletname); } catch (Exception e) { // TODO Auto-generated catch block
+	 * BasketPageActions.verifyDevicesInBasket(smartwatchname,
+	 * fitnesstrackername, tabletname); } catch (Exception e) { // TODO
+	 * Auto-generated catch block
 	 * System.out.println("not able to verify if phone tab is selected");
 	 * Assert.fail("not able to verify if phone tab is selected"); } }
 	 */
@@ -2733,8 +2737,8 @@ public class E2EOrderPlaced_Steps {
 	 * 
 	 * try { driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 	 * PageFactory.initElements(driver, PAYMSimOPage.class);
-	 * PAYMSimOPageActions.SelectRecommendedTariffPhonesTab(contractlength); } catch
-	 * (Exception e) { e.printStackTrace();
+	 * PAYMSimOPageActions.SelectRecommendedTariffPhonesTab(contractlength); }
+	 * catch (Exception e) { e.printStackTrace();
 	 * System.out.println("Unable to choose contract length");
 	 * Assert.fail("Unable to choose contract length"); } }
 	 */
@@ -3004,7 +3008,8 @@ public class E2EOrderPlaced_Steps {
 		driver.navigate().to(Newurl_CVOS);
 		Thread.sleep(3000);
 		/*
-		 * } catch (Exception e) { // TODO Auto-generated catch block System.out.
+		 * } catch (Exception e) { // TODO Auto-generated catch block
+		 * System.out.
 		 * println("Unable to Login/validate home page, please see the failure screenshot"
 		 * ); Assert.
 		 * fail("Unable to Login/validate home page, please see the failure screenshot"
@@ -3735,8 +3740,8 @@ public class E2EOrderPlaced_Steps {
 
 	// Then Verify the price gets updated based on the new colour and capacity
 	/*
-	 * @And("^Verify the price gets updated based on the new colour and capacity$" )
-	 * public void verifyPriceDisplaybased_on_Colour_and_capacity() {
+	 * @And("^Verify the price gets updated based on the new colour and capacity$"
+	 * ) public void verifyPriceDisplaybased_on_Colour_and_capacity() {
 	 * driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS); try {
 	 * PageFactory.initElements(driver, BaseCommPage.class);
 	 * BaseCommPageActions.VerifyPriceChangeuponCapacity();
@@ -3766,8 +3771,11 @@ public class E2EOrderPlaced_Steps {
 			log.debug("Running Test Step: @And(Verify the current sort order details)");
 
 			/*
-			 * if (driver.findElement(By.xpath("//*[@class='page-all']")).isEnabled ()) {
-			 * driver.findElement(By.xpath("//*[@class='page-all']")).click(); } else {
+			 * if
+			 * (driver.findElement(By.xpath("//*[@class='page-all']")).isEnabled
+			 * ()) {
+			 * driver.findElement(By.xpath("//*[@class='page-all']")).click(); }
+			 * else {
 			 * 
 			 * PhonesListingPageAction.clickOnViewAllProductsOnOnePage(); }
 			 */
@@ -5325,13 +5333,65 @@ public class E2EOrderPlaced_Steps {
 
 	}
 
-	@Then("^I should see data filters buttons next to existing sort drop-down for PAYM/SIMO tariffs$")
-	public void filterandDropDownPosition() throws Throwable {
+	@Then("^I should see data filters buttons next to existing sort drop-down for PAYM/SIMO tariffs ([^\"]*)$")
+	public void filterandDropDownPosition(String SortOption) throws Throwable {
+
+		log.debug(
+				"Running Test Step: @Then(I should see data filters buttons next to existing sort drop-down for PAYM/SIMO tariffs)");
+
 		try {
+
 			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 			PageFactory.initElements(driver, PAYMandPAYGTariffAndExtrasPage.class);
+
 			PAYMandPAYGTariffAndExtrasPageActions.SortFilterPosition();
 			Thread.sleep(2000);
+			PAYMandPAYGTariffAndExtrasPageActions.clickViewAllTariffs();
+			Thread.sleep(2000);
+
+			ArrayList<Integer> TempList1 = null;
+			ArrayList<Integer> TempList2 = null;
+
+			if (SortOption.equals("Monthly data (High to low)")) {
+				originalTariffList = PAYMandPAYGTariffAndExtrasPageActions.getCurrentSortOrderUsingMonthlyData();
+				TempList1 = originalTariffList;
+				TempList2 = PAYMandPAYGTariffAndExtrasPageActions
+						.reArrangeListInDescendingBeforeApplyingSort(TempList1);
+			}
+			if (SortOption.equals("Monthly data (Low to High)")) {
+				originalTariffList = PAYMandPAYGTariffAndExtrasPageActions.getCurrentSortOrderUsingMonthlyData();
+				TempList1 = originalTariffList;
+				TempList2 = PAYMandPAYGTariffAndExtrasPageActions.reArrangeListInAcendingBeforeApplyingSort(TempList1);
+			}
+			if (SortOption.equals("Monthly cost (High to low)")) {
+				originalTariffList = PAYMandPAYGTariffAndExtrasPageActions.getCurrentSortOrderUsingMonthlyCost();
+				TempList1 = originalTariffList;
+				TempList2 = PAYMandPAYGTariffAndExtrasPageActions
+						.reArrangeListInDescendingBeforeApplyingSort(TempList1);
+			}
+			if (SortOption.equals("Monthly cost (Low to High)")) {
+				originalTariffList = PAYMandPAYGTariffAndExtrasPageActions.getCurrentSortOrderUsingMonthlyCost();
+				TempList1 = originalTariffList;
+				TempList2 = PAYMandPAYGTariffAndExtrasPageActions.reArrangeListInAcendingBeforeApplyingSort(TempList1);
+			}
+			if (SortOption.equals("Upfront cost (High to low)")) {
+				originalTariffList = PAYMandPAYGTariffAndExtrasPageActions.getCurrentSortOrderUsingUpfrontCost();
+				TempList1 = originalTariffList;
+				TempList2 = PAYMandPAYGTariffAndExtrasPageActions
+						.reArrangeListInDescendingBeforeApplyingSort(TempList1);
+			}
+			if (SortOption.equals("Upfront cost (Low to high)")) {
+				originalTariffList = PAYMandPAYGTariffAndExtrasPageActions.getCurrentSortOrderUsingUpfrontCost();
+				TempList1 = originalTariffList;
+				TempList2 = PAYMandPAYGTariffAndExtrasPageActions.reArrangeListInAcendingBeforeApplyingSort(TempList1);
+			}
+
+			expectedTariffListBeforeSort = TempList2;
+
+			System.out.println("--------Orginal Tariff List-----------: " + originalTariffList);
+			System.out.println("--------Expected Tariff List After Applying Sort (without Data Filter) -----------: "
+					+ expectedTariffListBeforeSort);
+
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			System.out.println("Sort filter validation failed");
@@ -5485,6 +5545,124 @@ public class E2EOrderPlaced_Steps {
 		}
 	}
 
+	@And("^I should see tariffs relevant to selected sort option ([^\"]*) & filter option ([^\"]*)$")
+	public void verifyTariffSortedBasedOnSortOptionAndFilter(String SortOption, String FilterName) throws Throwable {
+
+		log.debug("Running Test Step: @And(I should see tariffs relevant to selected sort option and filter option)");
+
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, PAYMandPAYGTariffAndExtrasPage.class);
+
+			ArrayList<Integer> ListAfterSort = null;
+			ArrayList<Integer> ListBeforeSort = null;
+			ArrayList<Integer> TempList1 = null;
+
+			if (SortOption.equals("Monthly data (High to low)")) {
+				TempList1 = datalistafter;
+				ListBeforeSort = PAYMandPAYGTariffAndExtrasPageActions
+						.reArrangeListInDescendingBeforeApplyingSort(TempList1);
+			}
+			if (SortOption.equals("Monthly data (Low to High)")) {
+				TempList1 = datalistafter;
+				ListBeforeSort = PAYMandPAYGTariffAndExtrasPageActions
+						.reArrangeListInAcendingBeforeApplyingSort(TempList1);
+			}
+			if (SortOption.equals("Monthly cost (High to low)")) {
+				TempList1 = monthlycostlistafter;
+				ListBeforeSort = PAYMandPAYGTariffAndExtrasPageActions
+						.reArrangeListInDescendingBeforeApplyingSort(TempList1);
+			}
+			if (SortOption.equals("Monthly cost (Low to High)")) {
+				TempList1 = monthlycostlistafter;
+				ListBeforeSort = PAYMandPAYGTariffAndExtrasPageActions
+						.reArrangeListInAcendingBeforeApplyingSort(TempList1);
+			}
+			if (SortOption.equals("Upfront cost (High to low)")) {
+				TempList1 = upfrontcostlistafter;
+				ListBeforeSort = PAYMandPAYGTariffAndExtrasPageActions
+						.reArrangeListInDescendingBeforeApplyingSort(TempList1);
+			}
+			if (SortOption.equals("Upfront cost (Low to high)")) {
+				TempList1 = upfrontcostlistafter;
+				ListBeforeSort = PAYMandPAYGTariffAndExtrasPageActions
+						.reArrangeListInAcendingBeforeApplyingSort(TempList1);
+			}
+
+			if (SortOption.equals("Monthly data (High to low)") || SortOption.equals("Monthly data (Low to High)")) {
+
+				ListAfterSort = PAYMandPAYGTariffAndExtrasPageActions.getCurrentSortOrderUsingMonthlyData();
+			}
+
+			if (SortOption.equals("Monthly cost (High to low)") || SortOption.equals("Monthly cost (Low to High)")) {
+
+				ListAfterSort = PAYMandPAYGTariffAndExtrasPageActions.getCurrentSortOrderUsingMonthlyCost();
+
+			}
+
+			if (SortOption.equals("Upfront cost (High to low)") || SortOption.equals("Upfront cost (Low to high)")) {
+
+				ListAfterSort = PAYMandPAYGTariffAndExtrasPageActions.getCurrentSortOrderUsingUpfrontCost();
+			}
+
+			System.out.println("---------List sent to verification method (BeforeSort)---------------");
+			System.out.println(ListBeforeSort);
+
+			System.out.println("---------List sent to verification method (AfterSort)---------------");
+			System.out.println(ListAfterSort);
+
+			PAYMandPAYGTariffAndExtrasPageActions.verifyTariffSortedAsPerSortOption(ListBeforeSort, ListAfterSort);
+			
+			System.out.println("Assertion Success: Tariffs have been sorted successfully based on Sort Option and Tariff Option");
+			System.out.println("Assertion Success: Tariffs have been sorted successfully based on Sort Option and Tariff Option");
+
+		} catch (AssertionError e) {
+
+			log.debug("Fail" + " - " + e.getMessage());
+			Assert.fail("Fail: Cannot assert if Tariffs are sorted based on sort option and Filter Option");
+		}
+	}
+
+	@And("^I should see tariffs based on the selected sort option ([^\"]*)$")
+	public void verifyTariffSortedBasedOnSortOption(String SortOption) throws Throwable {
+
+		log.debug("Running Test Step: @And(I should see tariffs based on the selected sort option)");
+
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, PAYMandPAYGTariffAndExtrasPage.class);
+
+			ArrayList<Integer> ListAfterSort = null;
+			ArrayList<Integer> ListBeforeSort = expectedTariffListBeforeSort;
+
+			if (SortOption.equals("Monthly data (High to low)") || SortOption.equals("Monthly data (Low to High)")) {
+				ListAfterSort = PAYMandPAYGTariffAndExtrasPageActions.getCurrentSortOrderUsingMonthlyData();
+			}
+
+			if (SortOption.equals("Monthly cost (High to low)") || SortOption.equals("Monthly cost (Low to High)")) {
+				ListAfterSort = PAYMandPAYGTariffAndExtrasPageActions.getCurrentSortOrderUsingMonthlyCost();
+
+			}
+
+			if (SortOption.equals("Upfront cost (High to low)") || SortOption.equals("Upfront cost (Low to high)")) {
+				ListAfterSort = PAYMandPAYGTariffAndExtrasPageActions.getCurrentSortOrderUsingUpfrontCost();
+			}
+
+			System.out.println("---------List sent to verification method (BeforeSort)---------------");
+			System.out.println(ListBeforeSort);
+
+			System.out.println("---------List sent to verification method (AfterSort)---------------");
+			System.out.println(ListAfterSort);
+
+			PAYMandPAYGTariffAndExtrasPageActions.verifyTariffSortedAsPerSortOption(ListBeforeSort, ListAfterSort);
+
+		} catch (AssertionError e) {
+
+			log.debug("Fail" + " - " + e.getMessage());
+			Assert.fail("Fail: Cannot assert if Tariffs are sorted based on sort option");
+		}
+	}
+
 	@And("^Click on Tablet section in upgrade options page$")
 	public void click_on_Tablets_tab() throws Throwable {
 		try {
@@ -5550,8 +5728,8 @@ public class E2EOrderPlaced_Steps {
 	/*
 	 * @When("^I click on respective data filter ([^\"]*)$")
 	 * 
-	 * public void i_click_on_respective_data_filtertoGB(String Filteroption) throws
-	 * Throwable { try { driver.manage().timeouts().implicitlyWait(20,
+	 * public void i_click_on_respective_data_filtertoGB(String Filteroption)
+	 * throws Throwable { try { driver.manage().timeouts().implicitlyWait(20,
 	 * TimeUnit.SECONDS); PageFactory.initElements(driver,
 	 * PAYMandPAYGTariffAndExtrasPage.class);
 	 * PAYMandPAYGTariffAndExtrasPageActions.FilterDataAllowance(Filteroption);
