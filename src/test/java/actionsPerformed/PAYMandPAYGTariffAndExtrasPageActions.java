@@ -550,7 +550,7 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 		}
 	}
 
-	public static void getDataListBeforeSelectingFilter() {
+	public static ArrayList<Integer> getDataListBeforeSelectingFilter() {
 		List<WebElement> DataTextElement = pageobjects.PAYMandPAYGTariffAndExtrasPage.DataTextElement;
 		ArrayList<Integer> datalist = new ArrayList<Integer>();
 		String data = null;
@@ -571,6 +571,7 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 
 		}
 		System.out.println("---------------------------------------------");
+		return datalist;
 	}	
 
 	public static void getDataListAfterSelectingFilter() {
