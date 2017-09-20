@@ -17,8 +17,8 @@ Feature: Reg_Agent_TradeIn
     And Signin using valid <username> and <password> credentials
     And Click on 'Continue' button on upgrade page
     And Click on the 'Continue button' in delivery page
-    And land on the payment page and input <user> and other details for upgrade and click 'Continue on next step'
-    And Continue to Agreements page and confirm all the agreement checks
+    And land on the payment page and input <Username> and other details and click 'Continue on next step' in upgrade journey
+    And Continue to CCA or Buyout or Trade In Agreements page and confirm all the agreement checks
     And Continue to Review page, check order contract text and review the order
     Then order confirmation is displayed
 

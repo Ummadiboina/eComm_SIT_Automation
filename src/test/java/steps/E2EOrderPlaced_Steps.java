@@ -1092,6 +1092,31 @@ public class E2EOrderPlaced_Steps {
 
 		}
 	}
+	
+	@And("^Continue to CCA or Buyout or Trade In Agreements page and confirm all the agreement checks$")
+    public void continue_to_CCA_or_Buyout_or_Trade_In_Agreements_page_and_confirm_all_the_agreement_checks()
+                  throws Throwable {
+           try {
+                  driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+                  PageFactory.initElements(driver, AgreementPage.class);
+                  PageFactory.initElements(driver, ReviewPage.class);
+                  AgreementPageActions.KeyInformation();
+                  Thread.sleep(5000);
+                  AgreementPageActions.secciSection();
+                  Thread.sleep(5000);
+                  AgreementPageActions.PayMMobileAgreement();
+                  Thread.sleep(5000);
+                  AgreementPageActions.TermsDeclarationCheckbox();
+                  Thread.sleep(5000);
+           } catch (Exception e) {
+                  // TODO Auto-generated catch block
+                  System.out.println(
+                               "Agreements page is not displayed or unable to enter some information in thie page, Please review the screenshots for failure");
+                  Assert.fail(
+                               "Agreements page is not displayed or unable to enter some information in thie page, Please review the screenshots for failure");
+
+           }
+	}
 
 	/*
 	 * #########################################################################
@@ -5742,6 +5767,25 @@ public class E2EOrderPlaced_Steps {
 			Assert.fail("Unable to input details in payment page");
 
 		}
+	}
+	///////////////////////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////Agent_BuyOut/////////////////////////////////////////////////
+	////////////////////////////////////////////////////////////////////////////////////////////////
+	
+	@Given("^clicks on 'Buyout' button$")
+	public void clicks_on_Buyout_button() throws Throwable {
+	    // Write code here that turns the phrase above into concrete actions
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, Agent_DealBuilderPage.class);
+			Agent_DealBuilderPageActions.AgentBuyOut();
+			Thread.sleep(4000);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			Assert.fail("Unable to click on Trade in Button");
+		}
+
 	}
 
 }
