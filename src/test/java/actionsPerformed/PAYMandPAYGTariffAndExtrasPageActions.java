@@ -456,8 +456,7 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 		 * "(//div[@id='insuranceContainer']/div[@id])[1]//input[@value='Select'][@type='button']"
 		 * )) .click(); System.out.println("Selected first insurance");
 		 * 
-		 * Thread.sleep(3000);
-		 * System.out.println("First insurance price text is " +
+		 * Thread.sleep(3000); System.out.println("First insurance price text is " +
 		 * FirstInsurancePrice.getText());
 		 */ Thread.sleep(3000);
 
@@ -572,9 +571,9 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 		}
 		System.out.println("---------------------------------------------");
 		return datalist;
-	}	
+	}
 
-	public static void getDataListAfterSelectingFilter() {
+	public static ArrayList<Integer> getDataListAfterSelectingFilter() {
 		List<WebElement> DataTextElement = pageobjects.PAYMandPAYGTariffAndExtrasPage.DataTextElement;
 
 		String data = null;
@@ -597,6 +596,7 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 
 		}
 		System.out.println("---------------------------------------------");
+		return datalistafter;
 	}
 	
 	public static ArrayList<Integer> getMonthlyCostListAfterSelectingFilter() {
