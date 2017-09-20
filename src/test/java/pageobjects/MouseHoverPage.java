@@ -20,17 +20,15 @@ public class MouseHoverPage extends Environment {
 	public static WebElement MoveMouseOnShopTab;
 
 	// Below will click on the Phones Link
-	@FindBy(how = How.XPATH, using = ("//a[contains(text(), 'Phones')]"))
+	@FindBy(how = How.XPATH, using = ("//a[contains(text(), 'Phones')] | //a[contains(text(), 'phones')]"))
 	public static WebElement MoveMouseOnPhones;
 
-	// @FindBy(how = How.XPATH, using = ("//a[contains(text(), 'Pay Monthly
-	// phones')]"))
-	@FindBy(how = How.XPATH, using = ("//a[contains(text(), 'Pay Monthly')]"))
+	@FindBy(how = How.XPATH, using = ("//a[contains(text(), 'Pay Monthly')] | //a[contains(text(), 'Pay monthly')]"))
 	public static WebElement MoveMouseOnPAYMPhones;
 
 	// @FindBy(how = How.XPATH, using = ("//a[contains(text(), 'Pay As You Go
 	// phones')]"))
-	@FindBy(how = How.XPATH, using = ("//a[contains(text(), 'Pay as you go phones')]"))
+	@FindBy(how = How.XPATH, using = ("//a[contains(text(), 'Pay as you go phones')] | //a[contains(text(), 'Pay As You Go phones')]"))
 	public static WebElement MoveMouseOnPAYGPhones;
 
 	@FindBy(how = How.XPATH, using = ("//a[contains(text(), 'Browse Phones')]"))
@@ -63,7 +61,7 @@ public class MouseHoverPage extends Environment {
 	// @FindBy(how = How.XPATH, using = ("//a[contains(text(), 'Pay Monthly
 	// Sims')]"))
 
-	@FindBy(how = How.XPATH, using = ("//a[@manual_cm_re='meganav_Shop-_-Sims-_-Pay Monthly Sims']"))
+	@FindBy(how = How.XPATH, using = ("//a[contains(text(),'Pay Monthly sims')]|//a[contains(text(),'Pay Monthly Sims')]"))
 	public static WebElement MoveMouseOnPayMSims;
 
 	@FindBy(how = How.XPATH, using = ("//a[contains(text(), 'Upgrades')]"))
@@ -138,10 +136,10 @@ public class MouseHoverPage extends Environment {
 	public static WebElement MouseOnSims;
 
 	// Below will click on the Sims -- > PayG
-	// @FindBy(how = How.XPATH, using = ("//a[contains(text(), 'Pay as you go
-	// sims')]"))
+	
 
-	@FindBy(how = How.XPATH, using = ("//a[@manual_cm_re='meganav_Shop-_-Sims-_-Pay & Go sims']"))
+//	@FindBy(how = How.XPATH, using = ("//a[@manual_cm_re='meganav_Shop-_-Sims-_-Pay & Go sims']"))
+	@FindBy(how = How.XPATH, using = ("//a[contains(text(), 'Pay as you go sims')] | //a[contains(text(), 'Pay As You Go sims')]"))
 	public static WebElement MoveMouseOnPayGSims;
 	
 	//@FindBy(how = How.XPATH, using = ("//a[contains(text(), 'Pay As You Go Sims')]"))

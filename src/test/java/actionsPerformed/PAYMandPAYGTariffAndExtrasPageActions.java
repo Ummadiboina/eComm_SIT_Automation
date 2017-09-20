@@ -547,7 +547,7 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 		}
 	}
 
-	public static void getDataListBeforeSelectingFilter() {
+	public static ArrayList<Integer> getDataListBeforeSelectingFilter() {
 		List<WebElement> DataTextElement = pageobjects.PAYMandPAYGTariffAndExtrasPage.DataTextElement;
 		ArrayList<Integer> datalist = new ArrayList<Integer>();
 		String data = null;
@@ -568,9 +568,10 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 
 		}
 		System.out.println("---------------------------------------------");
+		return datalist;
 	}
 
-	public static void getDataListAfterSelectingFilter() {
+	public static ArrayList<Integer> getDataListAfterSelectingFilter() {
 		List<WebElement> DataTextElement = pageobjects.PAYMandPAYGTariffAndExtrasPage.DataTextElement;
 
 		String data = null;
@@ -593,6 +594,7 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 
 		}
 		System.out.println("---------------------------------------------");
+		return datalistafter;
 	}
 
 	public static void getRange() {
@@ -685,7 +687,13 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 	}
 
 	public static void clickViewAllTariffs() {
-		js.executeScript("arguments[0].click();", pageobjects.PAYMandPAYGTariffAndExtrasPage.ViewAllTariffs);
+		List<WebElement> ViewAllTariffs = pageobjects.PAYMandPAYGTariffAndExtrasPage.ViewAllTariffs;
+		if (ViewAllTariffs.size() > 0) {
+			js.executeScript("arguments[0].click();", ViewAllTariffs.get(0));
+			System.out.println("Clicked on View All Tariffs link in Tariffs and Extras page");
+		} else {
+			System.out.println("View All Tariffs link is not present");
+		}
 	}
 
 	////////////////////////////////////////////////////////////////////////////////////////
@@ -729,7 +737,6 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 
 	public static void SelectedState(String Filteroption) throws InterruptedException {
 
-	
 		String DatafilterText = pageobjects.PAYMandPAYGTariffAndExtrasPage.DataFilterSelectedXpath.getText();
 		System.out.println("DatafilterText " + DatafilterText);
 
