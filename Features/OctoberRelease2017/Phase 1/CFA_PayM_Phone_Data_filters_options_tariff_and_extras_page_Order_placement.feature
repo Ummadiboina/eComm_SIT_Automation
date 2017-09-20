@@ -11,14 +11,14 @@ Feature: CFA_PayM_Phone_Data_filters_options_tariff_and_extras_page_Order_placem
     And Navigate to device details page
     And Land on the 'Tariffs and extra' page
     ##New functionality starts
-    Then I should see data filters buttons next to existing sort drop-down for PAYM/SIMO tariffs
+    Then I should see data filters buttons next to existing sort drop-down for PAYM/SIMO tariffs <sortoption>
     When I click on respective <filtername> data filter
     Then Data filter button should be in 'selected' state
     And I should see appropriate tariffs based on the selected data filter
     And If I select ANY sort option <sortoption> from the drop-down
-    Then I should see tariffs relevant to selected sort option & filter option
+    Then I should see tariffs relevant to selected sort option <sortoption> & filter option <filtername>
     When I deselect filter button
-    Then I should see tariffs based on the selected sort option
+    Then I should see tariffs based on the selected sort option <sortoption>
     ##New functionality ends
     And I Land on the basket page and choose home delivery option
     And click on "go to checkout" button
