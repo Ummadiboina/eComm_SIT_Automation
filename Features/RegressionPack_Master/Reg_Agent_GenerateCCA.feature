@@ -18,7 +18,8 @@ Feature: Reg_Agent_Generate CCA
     And click on the 'CCA' link
     And Signin using CCA valid emailid and <password1> credentials
     And Click on 'Continue' button on upgrade page
-    And land on the payment page and input <user> and other details for upgrade and click 'Continue on next step'
+    And Click on the 'Continue button' in delivery page
+    And land on the payment page and input <Username> and other details and click 'Continue on next step' in upgrade journey
     And Continue to Agreements page and confirm all the agreement checks
     And Continue to Review page, check order contract text and review the order
     Then order confirmation is displayed

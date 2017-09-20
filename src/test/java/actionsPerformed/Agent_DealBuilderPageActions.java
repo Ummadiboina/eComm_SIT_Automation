@@ -355,7 +355,8 @@ public class Agent_DealBuilderPageActions extends Environment {
 			log.debug("The Trade In button is clicked");
 
 			String Mainwindow1 = driver.getWindowHandle();
-			// getting all the popup windows , hence using getwindowhandles instead of
+			// getting all the popup windows , hence using getwindowhandles
+			// instead of
 			// getwindowhandle
 			Set<String> s1 = driver.getWindowHandles();
 			Iterator<String> i1 = s1.iterator();
@@ -411,4 +412,11 @@ public class Agent_DealBuilderPageActions extends Environment {
 
 	}
 
+	public static void AgentBuyOut() throws InterruptedException {
+
+		Agent_DealBuilderPage.AgentBuyOut_Button.isDisplayed();
+		System.out.println("The Buy Out Qustionair is displayed");
+		Agent_DealBuilderPage.AgentBuyOut_Button.click();
+
+	}
 }

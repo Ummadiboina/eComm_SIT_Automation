@@ -112,7 +112,9 @@ public class E2EOrderPlaced_Steps {
 	ArrayList<Integer> expectedTariffListBeforeSort = null;
 	LinkedList<String> TempList3 = null;
 	String DataFilterRange = null;
-
+	ArrayList<Integer> datalistbefore = new ArrayList<Integer>();
+	ArrayList<Integer> datalistafter = new ArrayList<Integer>();
+	
 	public E2EOrderPlaced_Steps() {
 		driver = Hooks.driver;
 		// datamap = DataReader.data();
@@ -135,6 +137,7 @@ public class E2EOrderPlaced_Steps {
 	public void i_am_an_CFA_user_and_Lands_on_shop_page() throws Throwable {
 		try {
 			ShopLandingPageAction.GetTitle();
+			
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			System.out.println("unable to get title");
@@ -152,6 +155,7 @@ public class E2EOrderPlaced_Steps {
 			Autoredirection.redirect();
 			Thread.sleep(10000);
 		} catch (Exception e) {
+			e.printStackTrace();
 			System.out.println("unable to do mousehover to phones");
 			Assert.fail("unable to do mousehover to phones");
 		}
@@ -969,6 +973,7 @@ public class E2EOrderPlaced_Steps {
 			Thread.sleep(75000);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
+			e.printStackTrace();
 			System.out.println("Unable to input details in payment page");
 			Assert.fail("Unable to input details in payment page");
 
@@ -1088,6 +1093,31 @@ public class E2EOrderPlaced_Steps {
 					"Agreements page is not displayed or unable to enter some information in thie page, Please review the screenshots for failure");
 
 		}
+	}
+	
+	@And("^Continue to CCA or Buyout or Trade In Agreements page and confirm all the agreement checks$")
+    public void continue_to_CCA_or_Buyout_or_Trade_In_Agreements_page_and_confirm_all_the_agreement_checks()
+                  throws Throwable {
+           try {
+                  driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+                  PageFactory.initElements(driver, AgreementPage.class);
+                  PageFactory.initElements(driver, ReviewPage.class);
+                  AgreementPageActions.KeyInformation();
+                  Thread.sleep(5000);
+                  AgreementPageActions.secciSection();
+                  Thread.sleep(5000);
+                  AgreementPageActions.PayMMobileAgreement();
+                  Thread.sleep(5000);
+                  AgreementPageActions.TermsDeclarationCheckbox();
+                  Thread.sleep(5000);
+           } catch (Exception e) {
+                  // TODO Auto-generated catch block
+                  System.out.println(
+                               "Agreements page is not displayed or unable to enter some information in thie page, Please review the screenshots for failure");
+                  Assert.fail(
+                               "Agreements page is not displayed or unable to enter some information in thie page, Please review the screenshots for failure");
+
+           }
 	}
 
 	/*
@@ -5477,7 +5507,7 @@ public class E2EOrderPlaced_Steps {
 			PageFactory.initElements(driver, PAYMandPAYGTariffAndExtrasPage.class);
 			DataFilterRange = range;
 			PAYMandPAYGTariffAndExtrasPageActions.clickViewAllTariffs();
-			PAYMandPAYGTariffAndExtrasPageActions.getDataListBeforeSelectingFilter();
+			datalistbefore = PAYMandPAYGTariffAndExtrasPageActions.getDataListBeforeSelectingFilter();
 			PAYMandPAYGTariffAndExtrasPageActions.selectFilter(range);
 			FilterDataOption = range;
 		} catch (Exception e) {
@@ -5495,12 +5525,12 @@ public class E2EOrderPlaced_Steps {
 			PageFactory.initElements(driver, PAYMandPAYGTariffAndExtrasPage.class);
 
 			if (DataFilterRange.equals("high")) {
-				PAYMandPAYGTariffAndExtrasPageActions.getDataListAfterSelectingFilter();
+				datalistafter=PAYMandPAYGTariffAndExtrasPageActions.getDataListAfterSelectingFilter();
 				PAYMandPAYGTariffAndExtrasPageActions.getRange();
 				PAYMandPAYGTariffAndExtrasPageActions.getValuesToCompareWhenGreaterIsSelected();
 				PAYMandPAYGTariffAndExtrasPageActions.verifyListWhenGreaterIsSelected();
 			} else if (DataFilterRange.equals("low") || DataFilterRange.equals("medium")) {
-				PAYMandPAYGTariffAndExtrasPageActions.getDataListAfterSelectingFilter();
+				datalistafter=PAYMandPAYGTariffAndExtrasPageActions.getDataListAfterSelectingFilter();
 				PAYMandPAYGTariffAndExtrasPageActions.getRange();
 				PAYMandPAYGTariffAndExtrasPageActions.getValuesToCompare();
 				PAYMandPAYGTariffAndExtrasPageActions.verifyList();
@@ -5915,6 +5945,25 @@ public class E2EOrderPlaced_Steps {
 			Assert.fail("Unable to input details in payment page");
 
 		}
+	}
+	///////////////////////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////Agent_BuyOut/////////////////////////////////////////////////
+	////////////////////////////////////////////////////////////////////////////////////////////////
+	
+	@Given("^clicks on 'Buyout' button$")
+	public void clicks_on_Buyout_button() throws Throwable {
+	    // Write code here that turns the phrase above into concrete actions
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, Agent_DealBuilderPage.class);
+			Agent_DealBuilderPageActions.AgentBuyOut();
+			Thread.sleep(4000);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			Assert.fail("Unable to click on Trade in Button");
+		}
+
 	}
 
 }

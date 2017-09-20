@@ -316,11 +316,24 @@ public class UpgradeCustomerPageActions extends Environment {
 		}
 	}
 
-	public static void clickOnContinueButton() {
+	public static void clickOnContinueButton() throws Throwable {
+		
+		if(UpgradeCustomerPage.SecurityOtac.isDisplayed()) {
+			System.out.println("The Security checks page is displayed");
+			pageobjects.UpgradeCustomerPage.SecurityOtac.sendKeys("999999");
+			pageobjects.UpgradeCustomerPage.SecurityContinue.click();
+			Thread.sleep(2000);
+			pageobjects.UpgradeCustomerPage.Continue.click();
+			System.out.println("Clicked on Continue button in Upgrade page");	
+			
+		}
+		else
+		{
 
 		pageobjects.UpgradeCustomerPage.Continue.click();
 		System.out.println("Clicked on Continue button in Upgrade page");
 	}
+		}
 
 	public static void selectDeviceInRecommendedDevicesSection(String devicename) throws Exception {
 		log.debug("Select a device in recommended devices section");

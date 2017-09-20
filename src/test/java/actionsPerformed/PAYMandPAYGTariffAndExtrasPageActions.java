@@ -739,7 +739,13 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 	}
 
 	public static void clickViewAllTariffs() {
-		js.executeScript("arguments[0].click();", pageobjects.PAYMandPAYGTariffAndExtrasPage.ViewAllTariffs);
+		List<WebElement> ViewAllTariffs = pageobjects.PAYMandPAYGTariffAndExtrasPage.ViewAllTariffs;
+		if (ViewAllTariffs.size() > 0) {
+			js.executeScript("arguments[0].click();", ViewAllTariffs.get(0));
+			System.out.println("Clicked on View All Tariffs link in Tariffs and Extras page");
+		} else {
+			System.out.println("View All Tariffs link is not present");
+		}
 	}
 
 	////////////////////////////////////////////////////////////////////////////////////////
