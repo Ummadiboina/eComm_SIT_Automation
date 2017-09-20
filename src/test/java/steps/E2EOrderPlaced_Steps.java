@@ -99,7 +99,7 @@ import pageobjects.UpgradeCustomerPage;
 import pageobjects.UpgradePhonesListingPage;
 import pageobjects.UpgradeTabletListingPage;
 
-public class E2EOrderPlaced_Steps extends PAYMandPAYGTariffAndExtrasPageActions{
+public class E2EOrderPlaced_Steps {
 
 	private static final String Filteroption = null;
 	public WebDriver driver;
