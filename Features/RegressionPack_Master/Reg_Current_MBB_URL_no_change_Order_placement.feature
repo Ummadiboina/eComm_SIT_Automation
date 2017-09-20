@@ -1,5 +1,5 @@
 Feature: C1786_E11362-11564_Current_MBB_URL_no_change_Order_placement
-
+@Test2
   Scenario Outline: This scenario ensures that there should not be any change for customer with Current MBB URL and customer should be able to place order
     
     Current URL:

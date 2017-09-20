@@ -1,5 +1,6 @@
 package steps;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
@@ -98,7 +99,7 @@ import pageobjects.UpgradeCustomerPage;
 import pageobjects.UpgradePhonesListingPage;
 import pageobjects.UpgradeTabletListingPage;
 
-public class E2EOrderPlaced_Steps {
+public class E2EOrderPlaced_Steps extends PAYMandPAYGTariffAndExtrasPageActions{
 
 	private static final String Filteroption = null;
 	public WebDriver driver;
@@ -109,7 +110,9 @@ public class E2EOrderPlaced_Steps {
 	LinkedList<String> originalList = null;
 	LinkedList<String> TempList3 = null;
 	String DataFilterRange = null;
-
+	ArrayList<Integer> datalistbefore = new ArrayList<Integer>();
+	ArrayList<Integer> datalistafter = new ArrayList<Integer>();
+	
 	public E2EOrderPlaced_Steps() {
 		driver = Hooks.driver;
 		// datamap = DataReader.data();
@@ -132,6 +135,7 @@ public class E2EOrderPlaced_Steps {
 	public void i_am_an_CFA_user_and_Lands_on_shop_page() throws Throwable {
 		try {
 			ShopLandingPageAction.GetTitle();
+			
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			System.out.println("unable to get title");
@@ -149,6 +153,7 @@ public class E2EOrderPlaced_Steps {
 			Autoredirection.redirect();
 			Thread.sleep(10000);
 		} catch (Exception e) {
+			e.printStackTrace();
 			System.out.println("unable to do mousehover to phones");
 			Assert.fail("unable to do mousehover to phones");
 		}
@@ -966,6 +971,7 @@ public class E2EOrderPlaced_Steps {
 			Thread.sleep(75000);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
+			e.printStackTrace();
 			System.out.println("Unable to input details in payment page");
 			Assert.fail("Unable to input details in payment page");
 
@@ -5416,7 +5422,7 @@ public class E2EOrderPlaced_Steps {
 			PageFactory.initElements(driver, PAYMandPAYGTariffAndExtrasPage.class);
 			DataFilterRange = range;
 			PAYMandPAYGTariffAndExtrasPageActions.clickViewAllTariffs();
-			PAYMandPAYGTariffAndExtrasPageActions.getDataListBeforeSelectingFilter();
+			datalistbefore = PAYMandPAYGTariffAndExtrasPageActions.getDataListBeforeSelectingFilter();
 			PAYMandPAYGTariffAndExtrasPageActions.selectFilter(range);
 			FilterDataOption = range;
 		} catch (Exception e) {
@@ -5434,12 +5440,12 @@ public class E2EOrderPlaced_Steps {
 			PageFactory.initElements(driver, PAYMandPAYGTariffAndExtrasPage.class);
 
 			if (DataFilterRange.equals("high")) {
-				PAYMandPAYGTariffAndExtrasPageActions.getDataListAfterSelectingFilter();
+				datalistafter=PAYMandPAYGTariffAndExtrasPageActions.getDataListAfterSelectingFilter();
 				PAYMandPAYGTariffAndExtrasPageActions.getRange();
 				PAYMandPAYGTariffAndExtrasPageActions.getValuesToCompareWhenGreaterIsSelected();
 				PAYMandPAYGTariffAndExtrasPageActions.verifyListWhenGreaterIsSelected();
 			} else if (DataFilterRange.equals("low") || DataFilterRange.equals("medium")) {
-				PAYMandPAYGTariffAndExtrasPageActions.getDataListAfterSelectingFilter();
+				datalistafter=PAYMandPAYGTariffAndExtrasPageActions.getDataListAfterSelectingFilter();
 				PAYMandPAYGTariffAndExtrasPageActions.getRange();
 				PAYMandPAYGTariffAndExtrasPageActions.getValuesToCompare();
 				PAYMandPAYGTariffAndExtrasPageActions.verifyList();

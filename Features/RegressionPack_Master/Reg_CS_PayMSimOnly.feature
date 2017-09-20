@@ -1,6 +1,6 @@
 Feature: Reg_CS_PayMSimOnly
 
-  @ConsumerShop
+  @SIMO
   Scenario Outline: Sim Only PayM 12Months E2E validation
     Given I am an CFA user and Lands on shop page
     And navigate to PAYM SIMO page

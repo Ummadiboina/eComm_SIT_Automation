@@ -16,7 +16,7 @@ public class TabletPage {
 	@FindBy(how = How.XPATH, using = "//a[contains(@href, '/shop/tablets/apple/ipad-9.7/#contractType=paymonthly')]")
 	public static WebElement iPad97;
 	
-	@FindBy(how = How.XPATH, using = "//a[contains(@href, '/shop/tablets/apple/ipad-9.7/#contractType=paymonthly')]")
+	@FindBy(how = How.XPATH, using = "//a[contains(@href, '/shop/tablets/apple/ipad/#contractType=paymonthly')]")
 	public static WebElement AppleiPad97;
 	
 	@FindBy(how = How.XPATH, using = "//a[contains(@href, '/shop/tablets/apple/ipad-pro-12.9-inch/#contractType=paymonthly')]")
