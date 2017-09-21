@@ -1618,22 +1618,68 @@ public class UpgradeCustomerPageActions extends Environment {
 
 	public static void VerifyTradeinMessage() {
 		System.out.println("in verify tradein message function");
-		// Write code here
+		driver.findElement(By.xpath("//div[@class='ng-scope trade-in-offer']")).getText();
+		String text=driver.findElement(By.xpath("//div[@class='ng-scope trade-in-offer']")).getText();
+		if (text.contains("Trade in"))
+		{
+			System.out.println("Working fine");
+			System.out.println("The Text is "+text);
+		}
+		else
+		{
+			Assert.fail("Trade in not displayed, hence failed");
+		}
+		driver.findElement(By.xpath("//button[contains(text(),'Take this offer and upgrade')]")).click();
+
+		
 	}
 
-	public static void AnswerTradeinQuestion() {
+	public static void AnswerTradeinQuestion() throws InterruptedException {
 		System.out.println("in AnswerTradeinQuestion function");
-		// Write code here
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+
+		WebElement Question0 = driver
+				.findElement(By.xpath("//select[@id='question0']"));
+		js.executeScript("arguments[0].setAttribute('style', 'display:block;')", Question0);
+		new Select(Question0).selectByValue("0");
+		Thread.sleep(8000);
+
+		// Select Second questionaire - Does your phone have any damage
+		WebElement Question1 = driver
+				.findElement(By.xpath("//select[@id='question1']"));
+		js.executeScript("arguments[0].setAttribute('style', 'display:block;')", Question1);
+		new Select(Question1).selectByValue("0");
+
+		// Select Third questionaire - Could your phone be water damaged
+		WebElement Question2 = driver
+				.findElement(By.xpath("//select[@id='question2']"));
+		js.executeScript("arguments[0].setAttribute('style', 'display:block;')", Question2);
+		new Select(Question2).selectByValue("0");
+
+		// Select Second questionaire - Remove icloud from device
+		WebElement Question3 = driver
+				.findElement(By.xpath("//select[@id='question3']"));
+		js.executeScript("arguments[0].setAttribute('style', 'display:block;')", Question3);
+		new Select(Question3).selectByValue("0");
+
+//			driver.findElement(By.id("continue-with-accurate-quote")).click();
+		System.out.println("Completed questionaire");
+
 	}
 
-	public static void UpgradeNowButton() {
+	public static void UpgradeNowButton() throws InterruptedException {
 		System.out.println("in UpgradeNowButton function");
-		// Write code here
+		Thread.sleep(8000);
+
+		driver.findElement(By.xpath("//button[contains(text(),'Upgrade now')]")).click();
+
+		Thread.sleep(8000);
+
 	}
 
 	public static void VerifyUpgradeonUs() {
 		System.out.println("in VerifyUpgradeonUs function");
-		// Write code here
+
 	}
 
 	public static void clickOnTabletstab() throws InterruptedException {
