@@ -41,8 +41,8 @@ Feature: CFA_Cover_me_copy_update_on_basket_summary
     And Continue to Review page and review the order
     When order confirmation is displayed
     Then verify cover me is present in  pdf download
-    #And pdf content
 
+    #And pdf content
     Examples: 
       | tabletname               | color     | capacity | Status   | handset  | Firstname | Surname | Username     |
       | Apple iPad Pro 10.5 inch | Rose Gold | 256GB    | In Stock | GalaxyS8 | TEST      | ACCEPTA | TEST ACCEPTA |
