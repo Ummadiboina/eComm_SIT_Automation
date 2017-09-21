@@ -11,13 +11,13 @@ Feature: CFU_Tablets_Data_filters_options_tariff_and_extras_page_Order_placement
     And Select a <Tablet> device from Recommended devices section
     And Click on View all Tariffs link in upgrade options page
     Then I should see data filters buttons next to existing sort drop-down for PAYM/SIMO tariffs #Verification point - A - More than 2 should be displayed
-    When I click on respective data filter
+    When I click on respective <filtername> data filter
     Then Data filter button should be in 'selected' state
-    And I should see appropriate tariffs based on the selected data filter
-    And If I select ANY sort option from the drop-down
-    Then I should see tariffs relevant to selected sort option & filter option
+    And I should see appropriate tariffs based on the selected data filter <sortoption>
+    And If I select ANY sort option <sortoption> from the drop-down
+    Then I should see tariffs relevant to selected sort option <sortoption> & filter option <filtername>
     When I deselect filter button
-    Then I should see tariffs based on the selected sort option
+    Then I should see tariffs based on the selected sort option <sortoption>
     And I Land on the basket page by clicking on Add to Basket button
     And click on "go to checkout" button
     And perform <Action> in OTAC page
@@ -28,5 +28,6 @@ Feature: CFU_Tablets_Data_filters_options_tariff_and_extras_page_Order_placement
     Then order confirmation is displayed
 
     Examples: 
-      | username           | password  | handset  | Firstname | Surname | Username     | Action |
-      | bvt2.cfu@gmail.com | cfubvt123 | GalaxyS8 | TEST      | ACCEPTA | TEST ACCEPTA | skip   |
+      | handset         | Firstname | Surname | Username     | filtername | sortoption                 | username          | password |
+      | SamsungGalaxy10 | TEST      | ACCEPTA | TEST ACCEPTA | high       | Monthly data (Low to High) | wed1053@gmail.com | test123  |
+   #   | Apple iPhone 7    | TEST      | ACCEPTA | TEST ACCEPTA | high       |

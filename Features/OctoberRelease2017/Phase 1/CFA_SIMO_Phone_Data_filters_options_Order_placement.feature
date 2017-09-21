@@ -8,9 +8,9 @@ Feature: CFA_SIMO_Phone_Data_filters_options_Order_placement
     And navigate to PAYM SIMO page
     And Click on different <Contract>  Months Tariff in Tab
     Then I should see data filters buttons for SIMO tariffs
-    When I click on respective data filter
+    When I click on respective <filtername> data filter
     Then Data filter button should be in 'selected' state
-    And I should see appropriate tariffs based on the selected data filter
+    And I should see appropriate tariffs based on the selected data filter <sortoption>
     #And If I select ANY sort option from the drop-down
     #Then I should see tariffs relevant to selected sort option & filter option
     When I deselect filter button
@@ -24,6 +24,6 @@ Feature: CFA_SIMO_Phone_Data_filters_options_Order_placement
     Then order confirmation is displayed
 
     Examples: 
-      | Contract | Firstname | Surname | Username     |
-      #| 12 Months | TEST      | ACCEPTA | TEST ACCEPTA |
-      | 30 Days  | TEST      | ACCEPTA | TEST ACCEPTA |
+      | handset           | Firstname | Surname | Username     | filtername | sortoption                 |
+      | Samsung Galaxy S8 | TEST      | ACCEPTA | TEST ACCEPTA | high       | Monthly data (Low to High) |
+   #   | Apple iPhone 7    | TEST      | ACCEPTA | TEST ACCEPTA | high       |
