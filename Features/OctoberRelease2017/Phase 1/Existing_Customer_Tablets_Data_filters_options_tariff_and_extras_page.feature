@@ -12,14 +12,15 @@ Feature: Existing_Customer_Tablets_Data_filters_options_tariff_and_extras_page
     And select <capacity> capacity of the connected device
     And Navigate to device details page
     Then I should see data filters buttons next to existing sort drop-down for PAYM/SIMO tariffs #Verification point - A - More than 2 should be displayed
-    When I click on respective data filter
+    When I click on respective <filtername> data filter
     Then Data filter button should be in 'selected' state
-    And I should see appropriate tariffs based on the selected data filter
-    And If I select ANY sort option from the drop-down
-    Then I should see tariffs relevant to selected sort option & filter option
+    And I should see appropriate tariffs based on the selected data filter <sortoption>
+    And If I select ANY sort option <sortoption> from the drop-down
+    Then I should see tariffs relevant to selected sort option <sortoption> & filter option <filtername>
     When I deselect filter button
-    Then I should see tariffs based on the selected sort option
+    Then I should see tariffs based on the selected sort option <sortoption>
 
     Examples: 
-      | tabletname               | color     | capacity | Status           |
-      | Apple iPad Pro 10.5 inch | Rose Gold | 256GB    | Delayed Delivery |
+      | handset         | Firstname | Surname | Username     | filtername | sortoption                 | username      | password |
+      | SamsungGalaxy10 | TEST      | ACCEPTA | TEST ACCEPTA | high       | Monthly data (Low to High) | qa74@user.com | test123  |
+   #   | Apple iPhone 7    | TEST      | ACCEPTA | TEST ACCEPTA | high       |
