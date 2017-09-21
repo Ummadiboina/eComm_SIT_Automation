@@ -11,15 +11,15 @@ Feature: CFU_Tablets_Data_filters_options_tariff_and_extras_page_Order_placement
     And Select a <handset> device from Recommended devices section
     And Click on View all Tariffs link in upgrade options page
     Then I should see data filters buttons next to existing sort drop-down for PAYM/SIMO tariffs #Verification point - A - More than 2 should be displayed
-    When I click on respective data filter
+    When I click on respective <filtername> data filter
     Then Data filter button should be in 'selected' state
-    And I should see appropriate tariffs based on the selected data filter
-    And If I select ANY sort option from the drop-down
-    Then I should see tariffs relevant to selected sort option & filter option
+    And I should see appropriate tariffs based on the selected data filter <sortoption>
+    And If I select ANY sort option <sortoption> from the drop-down
+    Then I should see tariffs relevant to selected sort option <sortoption> & filter option <filtername>
     When I deselect filter button
-    Then I should see tariffs based on the selected sort option
-    
+    Then I should see tariffs based on the selected sort option <sortoption>
 
     Examples: 
-      | username   | password | handset  | Username     | 
-      | ins_nov746 | test123  | GalaxyS8 | TEST ACCEPTA | 
+      | handset           | Firstname | Surname | Username     | filtername | sortoption                 |
+      | Samsung Galaxy S8 | TEST      | ACCEPTA | TEST ACCEPTA | high       | Monthly data (Low to High) |
+   #   | Apple iPhone 7    | TEST      | ACCEPTA | TEST ACCEPTA | high       |
