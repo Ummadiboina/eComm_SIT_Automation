@@ -18,6 +18,7 @@ import com.google.common.base.Function;
 import helpers.Environment;
 import helpers.Filereadingutility;
 import helpers.setRuntimeProperty;
+import pageobjects.LikeFreePage;
 import pageobjects.UpgradeCustomerPage;
 
 public class UpgradeCustomerPageActions extends Environment {
@@ -1604,6 +1605,7 @@ public class UpgradeCustomerPageActions extends Environment {
 
 	public static void verifyBuyOutDisplayed() {
 		System.out.println("verify Buy Out is displayed");
+		@SuppressWarnings("unused")
 		String BuyoutText = null, BuyoutCost = null, Title = null;
 		BuyoutText = UpgradeCustomerPage.BuyOutTextOTACPage.getText();
 		BuyoutCost = UpgradeCustomerPage.BuyOutCostOTACPage.getText();
@@ -1679,12 +1681,22 @@ public class UpgradeCustomerPageActions extends Environment {
 
 	public static void VerifyUpgradeonUs() {
 		System.out.println("in VerifyUpgradeonUs function");
+		
+		((JavascriptExecutor) driver).executeScript("arguments[0].click();",
+				pageobjects.UpgradeCustomerPage.SignoutLink);
 
+		
+		
 	}
 
 	public static void clickOnTabletstab() throws InterruptedException {
-		JavascriptExecutor jse = (JavascriptExecutor) driver;
-		jse.executeScript("window.scrollBy(0,250)", "");
+		
+		/*JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].click();", LikeFreePage.Paym);
+		*/
+		
+		/*((JavascriptExecutor) driver).executeScript("arguments[0].click();",
+				pageobjects.UpgradeCustomerPage.SignoutLink);*/
 
 		if (pageobjects.UpgradeCustomerPage.TabletsTab.isDisplayed()) {
 			pageobjects.UpgradeCustomerPage.TabletsTab.click();
@@ -1692,6 +1704,14 @@ public class UpgradeCustomerPageActions extends Environment {
 		Thread.sleep(3000);
 	}
 
+	public static void verifyUpgradepageDisplay() throws InterruptedException {
+
+		Thread.sleep(3000);
+
+		((JavascriptExecutor) driver).executeScript("arguments[0].click();",
+				pageobjects.UpgradeCustomerPage.ViewAllTariffs);
+	}
+	
 	public static void clickOnViewAllTariffslink() throws InterruptedException {
 
 		Thread.sleep(3000);
@@ -1699,4 +1719,29 @@ public class UpgradeCustomerPageActions extends Environment {
 		((JavascriptExecutor) driver).executeScript("arguments[0].click();",
 				pageobjects.UpgradeCustomerPage.ViewAllTariffs);
 	}
+	
+	public static void Logout() throws InterruptedException {
+
+		Thread.sleep(3000);
+
+		((JavascriptExecutor) driver).executeScript("arguments[0].click();",
+				pageobjects.UpgradeCustomerPage.SignoutLink);
+	}
+	
+	public static void verifyUpgradeShop() throws InterruptedException {
+
+		Thread.sleep(3000);
+
+		String upgradetext=driver.findElement(By.xpath("//h1")).getText();
+		if(upgradetext.contains("upgrade"))
+		{
+			System.out.println("Upgrade page is displayed");
+		}
+		else
+		{
+			System.out.println("Upgrade page is not displayed");
+		}
+	}
+	
+	
 }

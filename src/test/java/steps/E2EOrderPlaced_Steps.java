@@ -659,6 +659,34 @@ public class E2EOrderPlaced_Steps {
 		Thread.sleep(5000);
 		Autoredirection.redirectUpgrades();
 	}
+	
+	@Then("^Verifies the Upgrade page is displayed$")
+	public void verifyUpgradepageDisplay() throws Throwable {
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, UpgradeCustomerPage.class);
+			UpgradeCustomerPageActions.verifyUpgradeShop();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			System.out.println("Unable to verify upgrade pages");
+			Assert.fail("Unable to verify upgrade pages");
+		}
+	}
+	
+	@Then("^Logout from shop$")
+	public void Logput() throws Throwable {
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, UpgradeCustomerPage.class);
+			UpgradeCustomerPageActions.Logout();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			System.out.println("Unable to Logout ");
+			Assert.fail("Unable to Logout");
+		}
+	}
 
 	/*
 	 * #########################################
