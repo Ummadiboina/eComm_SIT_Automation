@@ -21,6 +21,6 @@ Feature: Existing_Customer_Tablets_Data_filters_options_tariff_and_extras_page
     Then I should see tariffs based on the selected sort option <sortoption>
 
     Examples: 
-      | handset         | Firstname | Surname | Username     | filtername | sortoption                 | username      | password |
-      | SamsungGalaxy10 | TEST      | ACCEPTA | TEST ACCEPTA | high       | Monthly data (Low to High) | qa74@user.com | test123  |
+      | handset         | Firstname | Surname | Username     | filtername | sortoption                 | username                      | password |
+      | SamsungGalaxy10 | TEST      | ACCEPTA | TEST ACCEPTA | high       | Monthly data (Low to High) | 27fe76531842@stf.ref.o2.co.uk | test123  |
    #   | Apple iPhone 7    | TEST      | ACCEPTA | TEST ACCEPTA | high       |
