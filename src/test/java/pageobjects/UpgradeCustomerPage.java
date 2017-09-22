@@ -2,7 +2,6 @@ package pageobjects;
 
 import java.util.List;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindAll;
 import org.openqa.selenium.support.FindBy;
@@ -178,4 +177,9 @@ public class UpgradeCustomerPage {
 	@FindBy(how = How.ID, using = "otac")
 	public static WebElement SecurityOtac;
 	//*[@id='otac']
+	
+	@FindBy(how = How.XPATH, using = "//a[@class='signOutLink']")
+	public static WebElement SignoutLink;
+	
+	
 }
