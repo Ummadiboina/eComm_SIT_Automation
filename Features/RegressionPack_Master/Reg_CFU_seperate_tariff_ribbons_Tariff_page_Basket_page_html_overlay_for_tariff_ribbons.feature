@@ -1,5 +1,6 @@
 Feature: CFU_seperate_tariff_ribbons_Tariff_page_Basket_page_html_overlay_for_tariff_ribbons
-@Regression
+
+  @Regression
   Scenario Outline: 
     This scenario ensures that when the customer on upgrade journey selects tariff for a device with ribbons, then the tariff ribbon should be displayed with html overlay on the following pages,
     1.Tariff and Extras page
@@ -22,5 +23,5 @@ Feature: CFU_seperate_tariff_ribbons_Tariff_page_Basket_page_html_overlay_for_ta
     And Click on the 'Overlay icon' in the Basket page and verify pop gets displayed
 
     Examples: 
-      | username     | password | handset | tariff                   |
-      | me@wpd.co.uk | test123  | Iphone7 | 129.99upfront37.00amonth |
+      | username               | password | handset | tariff                   |
+      | gb119519_979816@o2.com | test123  | Iphone7 | 129.99upfront37.00amonth |

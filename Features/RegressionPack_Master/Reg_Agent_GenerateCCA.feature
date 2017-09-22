@@ -26,4 +26,4 @@ Feature: Reg_Agent_Generate CCA
 
     Examples: 
       | user        | Device              | Tariffs | DeliveryType | Firstname | Surname | Username     | HouseNumber | PostCode | emailid        | password1    |
-      | 07521117063 | S7 edge black 32 GB | Refresh | HomeDelivery | TEST      | ACCEPTA | TEST ACCEPTA | Flat 6      | SL11EL   | tester@tes.com | SitTester123 |
+      | 07521124085 | S7 edge black 32 GB | Refresh | HomeDelivery | TEST      | ACCEPTA | TEST ACCEPTA | Flat 6      | SL11EL   | tester@tes.com | SitTester123 |

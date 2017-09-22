@@ -24,4 +24,4 @@ Feature: Reg_Agent_Buyout
 
     Examples: 
       | User        | Device              | Tariffs | username    | DeliveryType | Firstname | Surname | HouseNumber | PostCode | Username     | password |
-      | 07729000198 | S7 edge black 32 GB | Refresh | ins_jan5987 | HomeDelivery | Test      | Accepta | Flat 9      | SL11EL   | Test Accepta | test123  |
+      | 07801427798 | S7 edge black 32 GB | Refresh | ins_jan5987 | HomeDelivery | Test      | Accepta | Flat 9      | SL11EL   | Test Accepta | test123  |

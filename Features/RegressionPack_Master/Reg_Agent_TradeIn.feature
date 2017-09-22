@@ -24,4 +24,4 @@ Feature: Reg_Agent_TradeIn
 
     Examples: 
       | User        | Device              | Tariffs | username                      | user         | DeliveryType | Firstname | Surname | Username     | HouseNumber | PostCode | password |
-      | 07521117063 | S7 edge black 32 GB | Refresh | 13ma88212553@stf.ref.o2.co.uk | TEST ACCEPTA | HomeDelivery | TEST      | ACCEPTA | TEST ACCEPTA | Flat 6      | SL11EL   | test123  |
+      | 07521123534 | S7 edge black 32 GB | Refresh | 13ma88212553@stf.ref.o2.co.uk | TEST ACCEPTA | HomeDelivery | TEST      | ACCEPTA | TEST ACCEPTA | Flat 6      | SL11EL   | test123  |

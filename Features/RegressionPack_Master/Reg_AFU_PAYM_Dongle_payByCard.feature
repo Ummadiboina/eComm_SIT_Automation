@@ -21,4 +21,4 @@ Feature: Reg_AFU_PAYM_Dongle_PayByCard
 
     Examples: 
       | user        | Device | Tariffs | Extras | DeliveryType | Firstname | Surname | HouseNumber | PostCode | Username     |
-      | 07801445636 | dongle | Random  | Random | HomeDelivery | Test      | Accepta |          10 | SL11UP   | Test Accepta |
+      | 07521112763 | dongle | Random  | Random | HomeDelivery | Test      | Accepta |          10 | SL11UP   | Test Accepta |

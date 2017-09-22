@@ -29,5 +29,5 @@ Feature: CFD2064_ECOM11810_11811_ CFU_ordering choice on upgrade options page_Ph
     Then order confirmation is displayed
 
     Examples: 
-      | username             | password | handset           | Username     | Action |
-      | sushiliker@email.com | test123  | Samsung Galaxy S8 | TEST ACCEPTA | skip   |
+      | username                      | password | handset           | Username     | Action |
+      | 27fe54900124@stf.ref.o2.co.uk | test123  | Samsung Galaxy S8 | TEST ACCEPTA | skip   |

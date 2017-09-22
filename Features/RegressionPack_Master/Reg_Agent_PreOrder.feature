@@ -23,5 +23,5 @@ Feature: Reg_Agent_DelayedDelivery
     # And Update Device Plan Link Email Address
     # Then CCALink Should be generated
     Examples: 
-      | Status  | Device | Tariffs | Extras | DeliveryType | Firstname | Surname | Username     | HouseNumber | PostCode |
+      | Status   | Device | Tariffs | Extras | DeliveryType | Firstname | Surname | Username     | HouseNumber | PostCode |
       | preorder | Random | Random  | Base   | HomeDelivery | TEST      | ACCEPTA | TEST ACCEPTA |          14 | SL11UP   |

@@ -15,4 +15,4 @@ Feature: Reg_AFU_PAYM_Dongle_SubmitOrder
 
     Examples: 
       | user        | Device | Tariffs | Extras | DeliveryType | Firstname | Surname | HouseNumber | PostCode | Username     |
-      | 07801007569 | dongle | Random  | Random | HomeDelivery | Test      | Accepta |          12 | SL11UP   | Test Accepta |
+      | 07521124545 | dongle | Random  | Random | HomeDelivery | Test      | Accepta |          12 | SL11UP   | Test Accepta |
