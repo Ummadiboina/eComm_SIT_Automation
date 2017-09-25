@@ -432,7 +432,7 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 
 		WebElement FirstInsurancePrice = driver.findElement(By.xpath("(//div[@id='insuranceContainer']/div[@id])[1]"))
 				.findElement(By.xpath("//div[@id='insuranceContainer']//div/p[@class=' price ']"));
-		if (FirstInsurancePrice.getText().equals("0.00")) {
+		if (FirstInsurancePrice.getText().contains("0.00")) {
 			System.out.println("Free insurance is present");
 		}
 		WebElement FirstInsuranceText = driver.findElement(By.xpath("//h4[contains(@class, 'insuranceName')][1]"));
