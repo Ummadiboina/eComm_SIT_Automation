@@ -6,7 +6,7 @@ Feature: CFA_PayM_Phone_Data_filters_options_tariff_and_extras_page_Order_placem
   Scenario Outline: CFA_PayM_Phone_Data_filters_options_tariff_and_extras_page_Order_placement
     Given I am an CFA user and Lands on shop page
     And navigate to PAYM Phones page
-    And I search for a PayM <handset> device
+    And I choose PayM <handset>
     #select handset with more tariff and less tariff  -- > ask kanban team to set handset with 2 tariff and handset with more than 3 tariff
     And Navigate to device details page
     And Land on the 'Tariffs and extra' page
@@ -15,11 +15,12 @@ Feature: CFA_PayM_Phone_Data_filters_options_tariff_and_extras_page_Order_placem
     When I click on respective <filtername> data filter
     Then Data filter button should be in 'selected' state
     And I should see appropriate tariffs based on the selected data filter <sortoption>
-   
-    ##New functionality ends
-  
+    And If I select ANY sort option <sortoption> from the drop-down
+    Then I should see tariffs relevant to selected sort option <sortoption> & filter option <filtername>
+    When I deselect filter button
+    Then I should see tariffs based on the selected sort option <sortoption>
 
+    ##New functionality ends
     Examples: 
       | handset           | Firstname | Surname | Username     | filtername | sortoption                 |
-      | Samsung Galaxy S8 | TEST      | ACCEPTA | TEST ACCEPTA | medium       | Monthly data (Low to High) |
-   #   | Apple iPhone 7    | TEST      | ACCEPTA | TEST ACCEPTA | high       |
+      | Samsung Galaxy S8 | TEST      | ACCEPTA | TEST ACCEPTA | low        | Monthly data (Low to High) |

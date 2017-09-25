@@ -5424,6 +5424,7 @@ public class E2EOrderPlaced_Steps {
 
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
+			e.printStackTrace();
 			System.out.println("Sort filter validation failed");
 			Assert.fail("Sort filter validation failed");
 
@@ -6022,6 +6023,20 @@ public class E2EOrderPlaced_Steps {
 			Assert.fail("Unable to click on Trade in Button");
 		}
 
+	}
+	@And("^I select ([^\"]*) surfer and ([^\"]*) sim$")
+	public void select_surfer_type_and_simtype(String Surfer_Type, String sim_type) throws Throwable {
+		try {
+
+			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, FreeSimPage.class);
+			FreeSimPageActions.selectSurfertypeAndSimtype(Surfer_Type, sim_type);
+
+			Autoredirection.redirect();
+		} catch (Exception e) {
+			System.out.println("unable to select surfer and sim");
+			Assert.fail("unable to select surfer and sim");
+		}
 	}
 
 }
