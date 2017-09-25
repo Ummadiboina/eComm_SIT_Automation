@@ -432,7 +432,7 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 
 		WebElement FirstInsurancePrice = driver.findElement(By.xpath("(//div[@id='insuranceContainer']/div[@id])[1]"))
 				.findElement(By.xpath("//div[@id='insuranceContainer']//div/p[@class=' price ']"));
-		if (FirstInsurancePrice.getText().equals("0.00")) {
+		if (FirstInsurancePrice.getText().contains("0.00")) {
 			System.out.println("Free insurance is present");
 		}
 		WebElement FirstInsuranceText = driver.findElement(By.xpath("//h4[contains(@class, 'insuranceName')][1]"));
@@ -444,7 +444,7 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 				.findElements(By.xpath("//input[@value='Remove'][@type='button']"));
 		if (RemovebtnFirstTile.size() > 0) {
 
-			System.out.println("Remove button is present");
+			System.out.println("Free Insurance is autoselected");
 		} else {
 			Assert.fail("Free Insurance not autoselected");
 			System.out.println("Remove button is not present");
@@ -478,13 +478,22 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 
 	public static void verifyCheapestInsurance() throws Exception {
 		String TempCheapInsurance = null, ExpAddInsuranceText = null;
-		TempCheapInsurance = StringUtils.substringBefore(FirstInsurancePrice, ".");
-		ExpAddInsuranceText = "Add for " + TempCheapInsurance + "a month";
-		ExpAddInsuranceText = ExpAddInsuranceText.replace(" ", "");
-
-		String ActualAddInsuranceText = driver.findElement(By.xpath("//input[@class='button secondary']"))
-				.getAttribute("value").replace(" ", "").trim().replace("\n", "");
-		System.out.println("ActualAddInsuranceText " + ActualAddInsuranceText);
+		TempCheapInsurance = FirstInsurancePrice;
+		String ActualAddInsuranceText = null;
+		
+		if (TempCheapInsurance.equals("£0.00")) {
+			ExpAddInsuranceText = "Add now";
+			ActualAddInsuranceText = driver.findElement(By.xpath("//input[@class='button secondary']"))
+					.getAttribute("value");
+			System.out.println("ActualAddInsuranceText " + ActualAddInsuranceText);
+		} else {
+			TempCheapInsurance = StringUtils.substringBefore(FirstInsurancePrice, ".");
+			ExpAddInsuranceText = "Add for " + TempCheapInsurance + "a month";
+			ExpAddInsuranceText = ExpAddInsuranceText.replace(" ", "");
+			ActualAddInsuranceText = driver.findElement(By.xpath("//input[@class='button secondary']"))
+					.getAttribute("value").replace(" ", "").trim().replace("\n", "");
+			System.out.println("ActualAddInsuranceText " + ActualAddInsuranceText);
+		}
 
 		System.out.println("ExpAddInsuranceText" + ExpAddInsuranceText);
 		if (ActualAddInsuranceText.equals(ExpAddInsuranceText)) {
@@ -841,7 +850,7 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 
 		if (Filteroption.contains("low")) {
 
-		//	PAYMandPAYGTariffAndExtrasPage.DataTariff_One.getText();
+			// PAYMandPAYGTariffAndExtrasPage.DataTariff_One.getText();
 			String DataFilterLowText = PAYMandPAYGTariffAndExtrasPage.lowfilter.getText();
 			System.out.println("DataFilterLowText " + DataFilterLowText);
 			if (DataFilterLowText.equals(DatafilterText)) {
@@ -852,7 +861,7 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 		}
 
 		if (Filteroption.contains("medium")) {
-	//		PAYMandPAYGTariffAndExtrasPage.DataTariff_Two.getText();
+			// PAYMandPAYGTariffAndExtrasPage.DataTariff_Two.getText();
 			String DataFilterMediumText = PAYMandPAYGTariffAndExtrasPage.mediumfilter.getText();
 			System.out.println("DataFilterMediumText " + DataFilterMediumText);
 
@@ -864,7 +873,7 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 		}
 
 		else if (Filteroption.contains("high")) {
-	//		PAYMandPAYGTariffAndExtrasPage.DataTariff_Three.getText();
+			// PAYMandPAYGTariffAndExtrasPage.DataTariff_Three.getText();
 			String DataFilterHighText = PAYMandPAYGTariffAndExtrasPage.highfilter.getText();
 			System.out.println("DataFilterHighText " + DataFilterHighText);
 
