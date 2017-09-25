@@ -2534,12 +2534,12 @@ public class E2EOrderPlaced_Steps {
 		}
 	}
 
-	@And("^select any available \"([^\"]*)\" Tablet$")
+	@And("^select any available ([^\"]*) Tablet$")
 	public void select_any_available_Tablet(String arg1) throws Throwable {
 		try {
 			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 			PageFactory.initElements(driver, TabletPage.class);
-			TabletPageActions.DeviceSelect("Random Device");
+			TabletPageActions.DeviceSelect(arg1);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			System.out.println("Unable to select tablet");

@@ -550,13 +550,14 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 	}
 
 	public static ArrayList<Integer> getDataListBeforeSelectingFilter() {
-		List<WebElement> DataTextElement = pageobjects.PAYMandPAYGTariffAndExtrasPage.DataTextElement;
+		List<WebElement> DataTextElement = PAYMandPAYGTariffAndExtrasPage.DataTextElement;
 		ArrayList<Integer> datalist = new ArrayList<Integer>();
 		String data = null, tempdata = null;
 		int a = 0;
-
+		System.out.println("size " + DataTextElement.size());
 		for (int i = 0; i < DataTextElement.size(); i++) {
 			data = DataTextElement.get(i).getText();
+			System.out.println("data " + data);
 			if (data.contains("MB")) {
 				tempdata = StringUtils.substringBetween(data, "", "MB");
 				a = NumberUtils.toInt(tempdata);
@@ -564,7 +565,7 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 				datalist.add(a);
 			}
 			if (data.contains("GB")) {
-				tempdata = StringUtils.substringBetween(data, "-", "GB");
+				tempdata = StringUtils.substringBetween(data, "", "GB");
 				System.out.println("tempdata " + tempdata);
 				a = NumberUtils.toInt(tempdata);
 				a = a * 1024;
@@ -586,19 +587,30 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 	}
 
 	public static ArrayList<Integer> getDataListAfterSelectingFilter() {
-		List<WebElement> DataTextElement = pageobjects.PAYMandPAYGTariffAndExtrasPage.DataTextElement;
+		List<WebElement> DataTextElement = PAYMandPAYGTariffAndExtrasPage.DataTextElement;
 
-		String data = null;
+		String data = null, tempdata = null;
 		int a = 0;
 
 		for (int i = 0; i < DataTextElement.size(); i++) {
 			data = DataTextElement.get(i).getText();
-			data = data.replace("GB", "");
-			a = NumberUtils.toInt(data);
-			if (a != 0) {
+			System.out.println("data " + data);
+			if (data.contains("MB")) {
+				tempdata = StringUtils.substringBetween(data, "", "MB");
+				a = NumberUtils.toInt(tempdata);
+				System.out.println("a " + a);
 				datalistafter.add(a);
 			}
-
+			if (data.contains("GB")) {
+				tempdata = StringUtils.substringBetween(data, "", "GB");
+				// System.out.println("tempdata " + tempdata);
+				a = NumberUtils.toInt(tempdata);
+				a = a * 1024;
+				System.out.println("a " + a);
+				if (a != 0) {
+					datalistafter.add(a);
+				}
+			}
 		}
 
 		System.out.println('\n');
@@ -661,19 +673,44 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 
 	public static void getRange() {
 		String datafiltertext = null;
+		String a = null;
+		int part = 0;
+		datafiltertext = PAYMandPAYGTariffAndExtrasPage.DataFilterSelectedXpath.getText();
 
-		datafiltertext = pageobjects.PAYMandPAYGTariffAndExtrasPage.DataFilterSelectedXpath.getText().replace("GB", "")
-				.replace(" ", "");
 		if (datafiltertext.contains("-")) {
 			String[] parts = datafiltertext.split("-");
 
 			for (int e = 0; e < parts.length; e++) {
-				datafilterlist.add(NumberUtils.toInt(parts[e]));
+				if (parts[e].contains("MB")) {
+					a = StringUtils.substringBetween(parts[e], "", "MB");
+					System.out.println("a " + a);
+					part = NumberUtils.toInt(a);
+					System.out.println("part[ " + e + "]" + part);
+				} else if (parts[e].contains("GB")) {
+					a = StringUtils.substringBetween(parts[e], "", "GB");
+					System.out.println("a " + a);
+					part = NumberUtils.toInt(a);
+					part = part * 1024;
+					System.out.println("part[ " + e + "]" + part);
+				}
+				datafilterlist.add(part);
 			}
 		} else if (datafiltertext.contains("+")) {
 
 			datafiltertext = datafiltertext.replace("+", "");
-			HighFilterGreater = Integer.parseInt(datafiltertext);
+			if (datafiltertext.contains("MB")) {
+				a = StringUtils.substringBetween(datafiltertext, "", "MB");
+
+				HighFilterGreater = NumberUtils.toInt(a);
+				System.out.println("HighFilterGreater " + HighFilterGreater);
+
+			} else if (datafiltertext.contains("GB")) {
+				a = StringUtils.substringBetween(datafiltertext, "", "GB");
+
+				HighFilterGreater = NumberUtils.toInt(a);
+				HighFilterGreater = HighFilterGreater * 1024;
+				System.out.println("HighFilterGreater " + HighFilterGreater);
+			}
 		}
 	}
 
@@ -804,7 +841,7 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 
 		if (Filteroption.contains("low")) {
 
-			PAYMandPAYGTariffAndExtrasPage.DataTariff_One.getText();
+		//	PAYMandPAYGTariffAndExtrasPage.DataTariff_One.getText();
 			String DataFilterLowText = PAYMandPAYGTariffAndExtrasPage.lowfilter.getText();
 			System.out.println("DataFilterLowText " + DataFilterLowText);
 			if (DataFilterLowText.equals(DatafilterText)) {
@@ -815,7 +852,7 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 		}
 
 		if (Filteroption.contains("medium")) {
-			PAYMandPAYGTariffAndExtrasPage.DataTariff_Two.getText();
+	//		PAYMandPAYGTariffAndExtrasPage.DataTariff_Two.getText();
 			String DataFilterMediumText = PAYMandPAYGTariffAndExtrasPage.mediumfilter.getText();
 			System.out.println("DataFilterMediumText " + DataFilterMediumText);
 
@@ -827,7 +864,7 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 		}
 
 		else if (Filteroption.contains("high")) {
-			PAYMandPAYGTariffAndExtrasPage.DataTariff_Three.getText();
+	//		PAYMandPAYGTariffAndExtrasPage.DataTariff_Three.getText();
 			String DataFilterHighText = PAYMandPAYGTariffAndExtrasPage.highfilter.getText();
 			System.out.println("DataFilterHighText " + DataFilterHighText);
 
@@ -853,15 +890,27 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 	public static ArrayList<Integer> getCurrentSortOrderUsingMonthlyData() {
 		List<WebElement> DataTextElement = pageobjects.PAYMandPAYGTariffAndExtrasPage.DataTextElement;
 		ArrayList<Integer> tariffListUsingMonthlyData = new ArrayList<Integer>();
-		String data = null;
+		String data = null, tempdata = null;
 		int a = 0;
 
 		for (int i = 0; i < DataTextElement.size(); i++) {
 			data = DataTextElement.get(i).getText();
-			data = data.replace("GB", "");
-			a = NumberUtils.toInt(data);
-			if (a != 0) {
-				tariffListUsingMonthlyData.add(a);
+			System.out.println("data " + data);
+			if (data.contains("MB")) {
+				tempdata = StringUtils.substringBetween(data, "", "MB");
+				a = NumberUtils.toInt(tempdata);
+				System.out.println("a " + a);
+				datalistafter.add(a);
+			}
+			if (data.contains("GB")) {
+				tempdata = StringUtils.substringBetween(data, "", "GB");
+				System.out.println("tempdata " + tempdata);
+				a = NumberUtils.toInt(tempdata);
+				a = a * 1024;
+				System.out.println("a " + a);
+				if (a != 0) {
+					tariffListUsingMonthlyData.add(a);
+				}
 			}
 
 		}
