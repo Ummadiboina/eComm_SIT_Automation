@@ -6,7 +6,7 @@
         "before": [
           {
             "result": {
-              "duration": 25667026360,
+              "duration": 31020379912,
               "status": "passed"
             },
             "match": {
@@ -14,14 +14,14 @@
             }
           }
         ],
-        "line": 18,
-        "name": "Smart Watches only E2E journey",
+        "line": 26,
+        "name": "CFA_PayM_Phone_Data_filters_options_tariff_and_extras_page_Order_placement",
         "description": "",
-        "id": "reg-cs-smartwatch;smart-watches-only-e2e-journey;;2",
+        "id": "cfa-paym-phone-data-filters-options-tariff-and-extras-page-order-placement;cfa-paym-phone-data-filters-options-tariff-and-extras-page-order-placement;;2",
         "after": [
           {
             "result": {
-              "duration": 3703722403,
+              "duration": 2740258557,
               "status": "passed"
             },
             "match": {
@@ -34,10 +34,10 @@
         "steps": [
           {
             "result": {
-              "duration": 368907884,
+              "duration": 166521063,
               "status": "passed"
             },
-            "line": 5,
+            "line": 7,
             "name": "I am an CFA user and Lands on shop page",
             "match": {
               "location": "E2EOrderPlaced_Steps.i_am_an_CFA_user_and_Lands_on_shop_page()"
@@ -46,160 +46,225 @@
           },
           {
             "result": {
-              "duration": 68302373613,
-              "status": "passed"
-            },
-            "line": 6,
-            "name": "Navigate to SmartWatches",
-            "match": {
-              "location": "E2EOrderPlaced_Steps.navigate_to_SmartWatches()"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 15280879522,
-              "status": "passed"
-            },
-            "line": 7,
-            "name": "select any available \"Random\" Smartwatch",
-            "match": {
-              "arguments": [
-                {
-                  "val": "Random",
-                  "offset": 22
-                }
-              ],
-              "location": "E2EOrderPlaced_Steps.select_any_available_Smartwatch(String)"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 8644535852,
+              "duration": 61442284150,
               "status": "passed"
             },
             "line": 8,
-            "name": "add SmartWatch to basket within limit in details page and navigate to basket",
+            "name": "navigate to PAYM Phones page",
             "match": {
-              "location": "E2EOrderPlaced_Steps.add_SmartWatch_to_basket_within_limit_in_details_page_and_navigate_to_basket()"
+              "location": "E2EOrderPlaced_Steps.navigate_to_PAYM_Phones_page()"
             },
             "keyword": "And "
           },
           {
             "result": {
-              "duration": 14520850412,
+              "duration": 922841085,
               "status": "passed"
             },
             "line": 9,
-            "name": "I Land on the Non Phone related basket page and choose home delivery option",
-            "match": {
-              "location": "E2EOrderPlaced_Steps.NonPhoneRelatedBasketPage()"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 24919009775,
-              "status": "passed"
-            },
-            "line": 10,
-            "name": "click on \"go to checkout\" button",
+            "name": "I choose PayM IphoneSE",
             "match": {
               "arguments": [
                 {
-                  "val": "go to checkout",
-                  "offset": 10
+                  "val": "IphoneSE",
+                  "offset": 14
                 }
               ],
-              "location": "E2EOrderPlaced_Steps.CheckoutFromBasket(String)"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 16403201422,
-              "status": "passed"
-            },
-            "line": 11,
-            "name": "input TEST and ACCEPTA and other valid details in Delivery page and Click on the \u0027Continue button\u0027",
-            "match": {
-              "arguments": [
-                {
-                  "val": "TEST",
-                  "offset": 6
-                },
-                {
-                  "val": "ACCEPTA",
-                  "offset": 15
-                }
-              ],
-              "location": "E2EOrderPlaced_Steps.DeliveryPage_Inputs_homeDelivery(String,String)"
+              "location": "E2EOrderPlaced_Steps.Choose_PAYM_Handset(String)"
             },
             "matchedColumns": [
-              0,
-              1
+              0
             ],
             "keyword": "And "
           },
           {
             "result": {
-              "duration": 77611028830,
+              "duration": 43578552280,
+              "status": "passed"
+            },
+            "comments": [
+              {
+                "line": 10,
+                "value": "#select handset with more tariff and less tariff  -- \u003e ask kanban team to set handset with 2 tariff and handset with more than 3 tariff"
+              }
+            ],
+            "line": 11,
+            "name": "Navigate to device details page",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.Navigate_to_device_details_page()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 3265623217,
               "status": "passed"
             },
             "line": 12,
-            "name": "land on the Non Credit check payment page and input TEST ACCEPTA and other details and click \u0027Continue on next step\u0027",
+            "name": "Land on the \u0027Tariffs and extra\u0027 page",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.land_on_the_Tariffs_and_extra_page()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 1452174823,
+              "status": "passed"
+            },
+            "comments": [
+              {
+                "line": 13,
+                "value": "##New functionality starts"
+              },
+              {
+                "line": 14,
+                "value": "#Then I should see data filters buttons next to existing sort drop-down for PAYM/SIMO tariffs \u003csortoption\u003e"
+              }
+            ],
+            "line": 15,
+            "name": "I click on respective low data filter",
             "match": {
               "arguments": [
                 {
-                  "val": "TEST ACCEPTA",
-                  "offset": 52
+                  "val": "low",
+                  "offset": 22
                 }
               ],
-              "location": "E2EOrderPlaced_Steps.NonCreditCheckPaymentPage_HomeDelivery(String)"
+              "location": "E2EOrderPlaced_Steps.clickOnRespectiveDataFilter(String)"
             },
             "matchedColumns": [
-              2
+              4
+            ],
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 105392002,
+              "status": "passed"
+            },
+            "line": 16,
+            "name": "Data filter button should be in \u0027selected\u0027 state",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.data_filter_button_should_be_in_selected_state()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 273704241,
+              "status": "passed"
+            },
+            "line": 17,
+            "name": "I should see appropriate tariffs based on the selected data filter Monthly data (Low to High)",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Monthly data (Low to High)",
+                  "offset": 67
+                }
+              ],
+              "location": "E2EOrderPlaced_Steps.getTariffList(String)"
+            },
+            "matchedColumns": [
+              5
             ],
             "keyword": "And "
           },
           {
             "result": {
-              "duration": 5354077917,
+              "duration": 5328892821,
               "status": "passed"
             },
-            "line": 13,
-            "name": "Continue to Review page and review the order",
+            "line": 18,
+            "name": "If I select ANY sort option Monthly data (Low to High) from the drop-down",
             "match": {
-              "location": "E2EOrderPlaced_Steps.ReviewPageConfirmation()"
+              "arguments": [
+                {
+                  "val": "Monthly data (Low to High)",
+                  "offset": 28
+                }
+              ],
+              "location": "E2EOrderPlaced_Steps.select_sort_Tariff_dropdown(String)"
             },
+            "matchedColumns": [
+              5
+            ],
             "keyword": "And "
           },
           {
             "result": {
-              "duration": 5182283624,
+              "duration": 246129656,
               "status": "passed"
             },
-            "line": 14,
-            "name": "order confirmation is displayed",
+            "line": 19,
+            "name": "I should see tariffs relevant to selected sort option Monthly data (Low to High) \u0026 filter option low",
             "match": {
-              "location": "E2EOrderPlaced_Steps.OrderConfirmationPage()"
+              "arguments": [
+                {
+                  "val": "Monthly data (Low to High)",
+                  "offset": 54
+                },
+                {
+                  "val": "low",
+                  "offset": 97
+                }
+              ],
+              "location": "E2EOrderPlaced_Steps.verifyTariffSortedBasedOnSortOptionAndFilter(String,String)"
             },
+            "matchedColumns": [
+              4,
+              5
+            ],
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 169961369,
+              "status": "passed"
+            },
+            "line": 20,
+            "name": "I deselect filter button",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.i_deselect_filter_button()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 871114569,
+              "error_message": "java.lang.NullPointerException\r\n\tat actionsPerformed.PAYMandPAYGTariffAndExtrasPageActions.verifyTariffSortedAsPerSortOption(PAYMandPAYGTariffAndExtrasPageActions.java:988)\r\n\tat steps.E2EOrderPlaced_Steps.verifyTariffSortedBasedOnSortOption(E2EOrderPlaced_Steps.java:5716)\r\n\tat ✽.Then I should see tariffs based on the selected sort option Monthly data (Low to High)(Features/test2.feature:21)\r\n",
+              "status": "failed"
+            },
+            "line": 21,
+            "name": "I should see tariffs based on the selected sort option Monthly data (Low to High)",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Monthly data (Low to High)",
+                  "offset": 55
+                }
+              ],
+              "location": "E2EOrderPlaced_Steps.verifyTariffSortedBasedOnSortOption(String)"
+            },
+            "matchedColumns": [
+              5
+            ],
             "keyword": "Then "
           }
         ],
         "tags": [
           {
-            "line": 3,
-            "name": "@ConsumerShop"
+            "line": 5,
+            "name": "@OctoberReleasePhase1"
           }
         ]
       }
     ],
-    "name": "Reg_CS_SmartWatch",
-    "description": "",
-    "id": "reg-cs-smartwatch",
+    "name": "CFA_PayM_Phone_Data_filters_options_tariff_and_extras_page_Order_placement",
+    "description": "This scenario ensures that when a customer in acquisition journey selects \u0027Phone\u0027 and navigated to tariff page ,then \r\nthe customer should be able to see  \u0027Data filter\u0027 button next to sort drop-down for PayM tariffs",
+    "id": "cfa-paym-phone-data-filters-options-tariff-and-extras-page-order-placement",
     "keyword": "Feature",
-    "uri": "Features/RegressionPack_Master/Reg_CS_SmartWatch.feature"
+    "uri": "Features/test2.feature"
   }
 ]
