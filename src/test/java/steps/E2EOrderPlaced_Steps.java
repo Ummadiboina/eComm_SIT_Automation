@@ -13,6 +13,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 
 import GlobalActions.Autoredirection;
+import GlobalActions.CommonFunctions;
 import GlobalActions.JuneReleaseValidations;
 import GlobalActions.MouseHoverAction;
 import actionsPerformed.AccessoryPageActions;
@@ -153,8 +154,10 @@ public class E2EOrderPlaced_Steps {
 		try {
 			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 			PageFactory.initElements(driver, MouseHoverPage.class);
+
 			MouseHoverAction.PayMPhonesLandingPage();
 			Autoredirection.redirect();
+			GlobalActions.CommonFunctions.checkTitle("PayM Phones Page");
 			Thread.sleep(10000);
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -171,6 +174,7 @@ public class E2EOrderPlaced_Steps {
 			MouseHoverAction.PayMMBBPage();
 			Autoredirection.redirect();
 			Thread.sleep(10000);
+			GlobalActions.CommonFunctions.checkTitle("PayM MBB Page");
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			System.out.println("unable to do mousehover to PayM MBB");
@@ -186,6 +190,7 @@ public class E2EOrderPlaced_Steps {
 			MouseHoverAction.AccessoriesLandingPage();
 			Autoredirection.redirect();
 			Thread.sleep(10000);
+			GlobalActions.CommonFunctions.checkTitle("Accessories");
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			System.out.println("unable to do mousehover to Accessories");
@@ -201,10 +206,11 @@ public class E2EOrderPlaced_Steps {
 			MouseHoverAction.PayGMBBPage();
 			Autoredirection.redirect();
 			Thread.sleep(10000);
+			GlobalActions.CommonFunctions.checkTitle("PayG MBB Page");
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			System.out.println("unable to do mousehover to PayGMBB");
-			Assert.fail("unable to do mousehover to Accessories");
+			Assert.fail("unable to do mousehover to PayGMBB");
 		}
 	}
 
@@ -216,6 +222,7 @@ public class E2EOrderPlaced_Steps {
 			MouseHoverAction.FitnessLandingPage();
 			Autoredirection.redirect();
 			Thread.sleep(10000);
+			GlobalActions.CommonFunctions.checkTitle("Fitness Trackers");
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -232,6 +239,7 @@ public class E2EOrderPlaced_Steps {
 			MouseHoverAction.SmartwatchesLandingPage();
 			Autoredirection.redirect();
 			Thread.sleep(10000);
+			GlobalActions.CommonFunctions.checkTitle("Smartwatches");
 		} catch (Exception e) {
 			e.printStackTrace();
 			System.out.println("unable to do mousehover to SmartWatches");
@@ -247,6 +255,7 @@ public class E2EOrderPlaced_Steps {
 			MouseHoverAction.PayGPhonesLandingPage();
 			Autoredirection.redirect();
 			Thread.sleep(10000);
+			GlobalActions.CommonFunctions.checkTitle("PayG Phones page");
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			System.out.println("unable to do mousehover to Pay as you Go Phones page");
@@ -293,6 +302,7 @@ public class E2EOrderPlaced_Steps {
 			MouseHoverAction.PayMSimoNavigation();
 			Autoredirection.redirect();
 			Thread.sleep(10000);
+
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			System.out.println("Unable to do mousehover to PAYM SIMO page");
@@ -308,6 +318,7 @@ public class E2EOrderPlaced_Steps {
 			// MouseHoverAction.UpgradeandUpgradeNow();
 			UpgradeCustomerPageActions.Signin();
 			Autoredirection.redirectUpgrades();
+			GlobalActions.CommonFunctions.checkTitle("Sign In Page");
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			System.out.println("Unable to do navigate to signin pagee");
@@ -659,7 +670,7 @@ public class E2EOrderPlaced_Steps {
 		Thread.sleep(5000);
 		Autoredirection.redirectUpgrades();
 	}
-	
+
 	@Then("^Verifies the Upgrade page is displayed$")
 	public void verifyUpgradepageDisplay() throws Throwable {
 		try {
@@ -673,7 +684,7 @@ public class E2EOrderPlaced_Steps {
 			Assert.fail("Unable to verify upgrade pages");
 		}
 	}
-	
+
 	@Then("^Logout from shop$")
 	public void Logput() throws Throwable {
 		try {
@@ -927,11 +938,14 @@ public class E2EOrderPlaced_Steps {
 		try {
 			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 			PageFactory.initElements(driver, DeliveryPage.class);
+			Thread.sleep(5000);
+			CommonFunctions.checkTitle("Delivery Page");
 			DeliveryPageActions.SetDelivery();
 			Thread.sleep(2000);
 			DeliveryPageActions.AboutYou(Firstname, Surname);
 			Thread.sleep(2000);
 			DeliveryPageActions.ClickContinue();
+			Thread.sleep(5000);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			System.out.println("Unable to input details in delivery page");
@@ -945,6 +959,7 @@ public class E2EOrderPlaced_Steps {
 		try {
 			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 			PageFactory.initElements(driver, DeliveryPage.class);
+			CommonFunctions.checkTitle("Delivery Page");
 			DeliveryPageActions.AboutYou(Firstname, Surname);
 			DeliveryPageActions.ClickContinue();
 		} catch (Exception e) {
@@ -974,6 +989,8 @@ public class E2EOrderPlaced_Steps {
 		try {
 			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 			PageFactory.initElements(driver, PaymentPage.class);
+			Thread.sleep(10000);
+			CommonFunctions.checkTitle("Payment Page");
 			PaymentPageActions.Set_Bank_details(Username);
 			Thread.sleep(10000);
 			PaymentPageActions.Time_At_Address();
@@ -995,6 +1012,7 @@ public class E2EOrderPlaced_Steps {
 		try {
 			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 			PageFactory.initElements(driver, PaymentPage.class);
+			CommonFunctions.checkTitle("Payment Page");
 			PaymentPageActions.Set_Bank_details(Username);
 			Thread.sleep(3000);
 			PaymentPageActions.Time_At_Address_CC();
@@ -1104,6 +1122,7 @@ public class E2EOrderPlaced_Steps {
 			PageFactory.initElements(driver, ReviewPage.class);
 			Thread.sleep(10000);
 			AgreementPageActions.gettitlepage();
+			CommonFunctions.checkTitle("Agreement Page");
 			Thread.sleep(3000);
 			AgreementPageActions.Affordability();
 			Thread.sleep(5000);
@@ -1116,7 +1135,7 @@ public class E2EOrderPlaced_Steps {
 			AgreementPageActions.TermsDeclarationCheckbox();
 			Thread.sleep(5000);
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
+			e.printStackTrace();
 			System.out.println(
 					"Agreements page is not displayed or unable to enter some information in thie page, Please review the screenshots for failure");
 			Assert.fail(
@@ -1169,11 +1188,13 @@ public class E2EOrderPlaced_Steps {
 		try {
 			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 			PageFactory.initElements(driver, ReviewPage.class);
+			Thread.sleep(5000);
+			CommonFunctions.checkTitle("Review Page");
 			ReviewPageActions.gettitlepage();
 			ReviewPageActions.TermsCheckBox();
 			ReviewPageActions.PayNow();
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
+			e.printStackTrace();
 			System.out.println(
 					"Unable to Continue to Review page and review the order or unable to enter some information in this page, Please review the screenshots for failure");
 			Assert.fail(
@@ -1188,6 +1209,7 @@ public class E2EOrderPlaced_Steps {
 		// try {
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		PageFactory.initElements(driver, ReviewPage.class);
+		CommonFunctions.checkTitle("Review Page");
 		ReviewPageActions.gettitlepage();
 		ReviewPageActions.TermsCheckBox();
 		ReviewPageActions.checkOrderContractTextRP();
@@ -1211,6 +1233,7 @@ public class E2EOrderPlaced_Steps {
 		try {
 			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 			PageFactory.initElements(driver, ReviewPage.class);
+			CommonFunctions.checkTitle("Review Page");
 			ReviewPageActions.gettitlepage();
 			ReviewPageActions.checktrustev();
 			ReviewPageActions.TermsCheckBox();
@@ -1274,6 +1297,7 @@ public class E2EOrderPlaced_Steps {
 		try {
 			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 			PageFactory.initElements(driver, OrderConfirmationPage.class);
+			CommonFunctions.checkTitle("Confirmation Page");
 			OrderConfirmationPageActions.gettitlepage();
 			OrderConfirmationPageActions.MessageDisplayed();
 		} catch (Exception e) {
@@ -1445,8 +1469,7 @@ public class E2EOrderPlaced_Steps {
 		Agent_HomePagePageActions.upgradeUser();
 		Thread.sleep(4000);
 		/*
-		 * } catch (Exception e) { // TODO Auto-generated catch block
-		 * System.out.
+		 * } catch (Exception e) { // TODO Auto-generated catch block System.out.
 		 * println("Unable to login for upgrade for user in Agent shop, please see the failure screenshot"
 		 * ); Assert.
 		 * fail("Unable to login for upgrade for user in Agent shop, please see the failure screenshot"
@@ -2421,6 +2444,7 @@ public class E2EOrderPlaced_Steps {
 			PageFactory.initElements(driver, ShopLandingPage.class);
 			ShopLandingPageAction.clickSignIn();
 			Autoredirection.redirectUpgrades();
+			GlobalActions.CommonFunctions.checkTitle("Sign In Page");
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -2439,7 +2463,7 @@ public class E2EOrderPlaced_Steps {
 			MouseHoverAction.UpgradeandUpgradeNow();
 			Thread.sleep(5000);
 			Autoredirection.redirectUpgrades();
-			// UpgradeCustomerPageActions.viewAllPhones();
+			UpgradeCustomerPageActions.viewAllPhones();
 			Thread.sleep(2000);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
@@ -2735,14 +2759,13 @@ public class E2EOrderPlaced_Steps {
 	}
 
 	/*
-	 * @And("^Verify the devices ([^\"]*), ([^\"]*) and ([^\"]*) in basket$")
-	 * public void verifyDevicesInBasket(String smartwatchname, String
-	 * fitnesstrackername, String tabletname) throws Throwable { try {
+	 * @And("^Verify the devices ([^\"]*), ([^\"]*) and ([^\"]*) in basket$") public
+	 * void verifyDevicesInBasket(String smartwatchname, String fitnesstrackername,
+	 * String tabletname) throws Throwable { try {
 	 * driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 	 * PageFactory.initElements(driver, BasketPage.class);
-	 * BasketPageActions.verifyDevicesInBasket(smartwatchname,
-	 * fitnesstrackername, tabletname); } catch (Exception e) { // TODO
-	 * Auto-generated catch block
+	 * BasketPageActions.verifyDevicesInBasket(smartwatchname, fitnesstrackername,
+	 * tabletname); } catch (Exception e) { // TODO Auto-generated catch block
 	 * System.out.println("not able to verify if phone tab is selected");
 	 * Assert.fail("not able to verify if phone tab is selected"); } }
 	 */
@@ -2767,8 +2790,8 @@ public class E2EOrderPlaced_Steps {
 	 * 
 	 * try { driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 	 * PageFactory.initElements(driver, PAYMSimOPage.class);
-	 * PAYMSimOPageActions.SelectRecommendedTariffPhonesTab(contractlength); }
-	 * catch (Exception e) { e.printStackTrace();
+	 * PAYMSimOPageActions.SelectRecommendedTariffPhonesTab(contractlength); } catch
+	 * (Exception e) { e.printStackTrace();
 	 * System.out.println("Unable to choose contract length");
 	 * Assert.fail("Unable to choose contract length"); } }
 	 */
@@ -3038,8 +3061,7 @@ public class E2EOrderPlaced_Steps {
 		driver.navigate().to(Newurl_CVOS);
 		Thread.sleep(3000);
 		/*
-		 * } catch (Exception e) { // TODO Auto-generated catch block
-		 * System.out.
+		 * } catch (Exception e) { // TODO Auto-generated catch block System.out.
 		 * println("Unable to Login/validate home page, please see the failure screenshot"
 		 * ); Assert.
 		 * fail("Unable to Login/validate home page, please see the failure screenshot"
@@ -3770,8 +3792,8 @@ public class E2EOrderPlaced_Steps {
 
 	// Then Verify the price gets updated based on the new colour and capacity
 	/*
-	 * @And("^Verify the price gets updated based on the new colour and capacity$"
-	 * ) public void verifyPriceDisplaybased_on_Colour_and_capacity() {
+	 * @And("^Verify the price gets updated based on the new colour and capacity$" )
+	 * public void verifyPriceDisplaybased_on_Colour_and_capacity() {
 	 * driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS); try {
 	 * PageFactory.initElements(driver, BaseCommPage.class);
 	 * BaseCommPageActions.VerifyPriceChangeuponCapacity();
@@ -3801,11 +3823,8 @@ public class E2EOrderPlaced_Steps {
 			log.debug("Running Test Step: @And(Verify the current sort order details)");
 
 			/*
-			 * if
-			 * (driver.findElement(By.xpath("//*[@class='page-all']")).isEnabled
-			 * ()) {
-			 * driver.findElement(By.xpath("//*[@class='page-all']")).click(); }
-			 * else {
+			 * if (driver.findElement(By.xpath("//*[@class='page-all']")).isEnabled ()) {
+			 * driver.findElement(By.xpath("//*[@class='page-all']")).click(); } else {
 			 * 
 			 * PhonesListingPageAction.clickOnViewAllProductsOnOnePage(); }
 			 */
@@ -5788,8 +5807,8 @@ public class E2EOrderPlaced_Steps {
 	/*
 	 * @When("^I click on respective data filter ([^\"]*)$")
 	 * 
-	 * public void i_click_on_respective_data_filtertoGB(String Filteroption)
-	 * throws Throwable { try { driver.manage().timeouts().implicitlyWait(20,
+	 * public void i_click_on_respective_data_filtertoGB(String Filteroption) throws
+	 * Throwable { try { driver.manage().timeouts().implicitlyWait(20,
 	 * TimeUnit.SECONDS); PageFactory.initElements(driver,
 	 * PAYMandPAYGTariffAndExtrasPage.class);
 	 * PAYMandPAYGTariffAndExtrasPageActions.FilterDataAllowance(Filteroption);
@@ -5832,7 +5851,7 @@ public class E2EOrderPlaced_Steps {
 		try {
 			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 			PageFactory.initElements(driver, PAYMandPAYGTariffAndExtrasPage.class);
-
+			PAYMandPAYGTariffAndExtrasPageActions.getDataListBeforeSelectingFilter();
 		} catch (Exception e) {
 		}
 
@@ -6025,6 +6044,7 @@ public class E2EOrderPlaced_Steps {
 		}
 
 	}
+
 	@And("^I select ([^\"]*) surfer and ([^\"]*) sim$")
 	public void select_surfer_type_and_simtype(String Surfer_Type, String sim_type) throws Throwable {
 		try {
