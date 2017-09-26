@@ -1,380 +1,319 @@
-$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("Features/test2.feature");
+$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("Features/RegressionPack_Master/Reg_AFA_PayMSimO_withoutAnyAccessory.feature");
 formatter.feature({
   "line": 1,
-  "name": "CFA_PayM_Phone_Data_filters_options_tariff_and_extras_page_Order_placement",
-  "description": "This scenario ensures that when a customer in acquisition journey selects \u0027Phone\u0027 and navigated to tariff page ,then \r\nthe customer should be able to see  \u0027Data filter\u0027 button next to sort drop-down for PayM tariffs",
-  "id": "cfa-paym-phone-data-filters-options-tariff-and-extras-page-order-placement",
+  "name": "Reg_AFA_PayMSimO_withoutAnyAccessory",
+  "description": "",
+  "id": "reg-afa-paymsimo-withoutanyaccessory",
   "keyword": "Feature"
 });
 formatter.scenarioOutline({
-  "line": 6,
-  "name": "CFA_PayM_Phone_Data_filters_options_tariff_and_extras_page_Order_placement",
+  "comments": [
+    {
+      "line": 3,
+      "value": "#launch hooks and get browser"
+    }
+  ],
+  "line": 5,
+  "name": "Successful completion of a PAY M SIMO acquisition Journey without an accessory",
   "description": "",
-  "id": "cfa-paym-phone-data-filters-options-tariff-and-extras-page-order-placement;cfa-paym-phone-data-filters-options-tariff-and-extras-page-order-placement",
+  "id": "reg-afa-paymsimo-withoutanyaccessory;successful-completion-of-a-pay-m-simo-acquisition-journey-without-an-accessory",
   "type": "scenario_outline",
   "keyword": "Scenario Outline",
   "tags": [
     {
-      "line": 5,
-      "name": "@OctoberReleasePhase1"
+      "line": 4,
+      "name": "@AgentsRegression"
     }
   ]
 });
 formatter.step({
-  "line": 7,
-  "name": "I am an CFA user and Lands on shop page",
+  "line": 6,
+  "name": "I login to Agent shop",
   "keyword": "Given "
 });
 formatter.step({
+  "line": 7,
+  "name": "performs Acquisition for New user",
+  "keyword": "And "
+});
+formatter.step({
   "line": 8,
-  "name": "navigate to PAYM Phones page",
+  "name": "Select valid \u003cTariff\u003e from tariffs tab",
   "keyword": "And "
 });
 formatter.step({
   "line": 9,
-  "name": "I choose PayM \u003chandset\u003e",
+  "name": "Validate all the Basket content and checkout",
   "keyword": "And "
 });
 formatter.step({
-  "comments": [
-    {
-      "line": 10,
-      "value": "#select handset with more tariff and less tariff  -- \u003e ask kanban team to set handset with 2 tariff and handset with more than 3 tariff"
-    }
-  ],
+  "line": 10,
+  "name": "perform all the advisory checks",
+  "keyword": "Then "
+});
+formatter.step({
   "line": 11,
-  "name": "Navigate to device details page",
+  "name": "perform the credit checks using valid \u003cFirstname\u003e, \u003cSurname\u003e, \u003cHouseNumber\u003e, \u003cPostCode\u003e and valid \u003cUsername\u003e",
   "keyword": "And "
 });
 formatter.step({
   "line": 12,
-  "name": "Land on the \u0027Tariffs and extra\u0027 page",
+  "name": "Register customer with valid \u003cFirstname\u003e, \u003cSurname\u003e, \u003cHouseNumber\u003e, \u003cPostCode\u003e and other valid details in delivery page",
   "keyword": "And "
 });
 formatter.step({
-  "comments": [
-    {
-      "line": 13,
-      "value": "##New functionality starts"
-    },
-    {
-      "line": 14,
-      "value": "#Then I should see data filters buttons next to existing sort drop-down for PAYM/SIMO tariffs \u003csortoption\u003e"
-    }
-  ],
+  "line": 13,
+  "name": "Choose \u003cDeliveryType\u003e delivery address and delivery time",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 14,
+  "name": "submit order button is clicked",
+  "keyword": "When "
+});
+formatter.step({
   "line": 15,
-  "name": "I click on respective \u003cfiltername\u003e data filter",
-  "keyword": "When "
-});
-formatter.step({
-  "line": 16,
-  "name": "Data filter button should be in \u0027selected\u0027 state",
-  "keyword": "Then "
-});
-formatter.step({
-  "line": 17,
-  "name": "I should see appropriate tariffs based on the selected data filter \u003csortoption\u003e",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 18,
-  "name": "If I select ANY sort option \u003csortoption\u003e from the drop-down",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 19,
-  "name": "I should see tariffs relevant to selected sort option \u003csortoption\u003e \u0026 filter option \u003cfiltername\u003e",
-  "keyword": "Then "
-});
-formatter.step({
-  "line": 20,
-  "name": "I deselect filter button",
-  "keyword": "When "
-});
-formatter.step({
-  "line": 21,
-  "name": "I should see tariffs based on the selected sort option \u003csortoption\u003e",
+  "name": "Order confirmation message should be displayed",
   "keyword": "Then "
 });
 formatter.examples({
-  "comments": [
-    {
-      "line": 23,
-      "value": "##New functionality ends"
-    }
-  ],
-  "line": 24,
+  "line": 17,
   "name": "",
   "description": "",
-  "id": "cfa-paym-phone-data-filters-options-tariff-and-extras-page-order-placement;cfa-paym-phone-data-filters-options-tariff-and-extras-page-order-placement;",
+  "id": "reg-afa-paymsimo-withoutanyaccessory;successful-completion-of-a-pay-m-simo-acquisition-journey-without-an-accessory;",
   "rows": [
     {
       "cells": [
-        "handset",
+        "Tariff",
+        "DeliveryType",
         "Firstname",
         "Surname",
         "Username",
-        "filtername",
-        "sortoption"
+        "HouseNumber",
+        "PostCode"
       ],
-      "line": 25,
-      "id": "cfa-paym-phone-data-filters-options-tariff-and-extras-page-order-placement;cfa-paym-phone-data-filters-options-tariff-and-extras-page-order-placement;;1"
+      "line": 18,
+      "id": "reg-afa-paymsimo-withoutanyaccessory;successful-completion-of-a-pay-m-simo-acquisition-journey-without-an-accessory;;1"
     },
     {
       "cells": [
-        "IphoneSE",
+        "SimO",
+        "HomeDelivery",
         "TEST",
         "ACCEPTA",
         "TEST ACCEPTA",
-        "low",
-        "Monthly data (Low to High)"
+        "6",
+        "SL11UP"
       ],
-      "line": 26,
-      "id": "cfa-paym-phone-data-filters-options-tariff-and-extras-page-order-placement;cfa-paym-phone-data-filters-options-tariff-and-extras-page-order-placement;;2"
+      "line": 19,
+      "id": "reg-afa-paymsimo-withoutanyaccessory;successful-completion-of-a-pay-m-simo-acquisition-journey-without-an-accessory;;2"
     }
   ],
   "keyword": "Examples"
 });
 formatter.before({
-  "duration": 31020379912,
+  "duration": 27975141315,
   "status": "passed"
 });
 formatter.scenario({
-  "line": 26,
-  "name": "CFA_PayM_Phone_Data_filters_options_tariff_and_extras_page_Order_placement",
+  "line": 19,
+  "name": "Successful completion of a PAY M SIMO acquisition Journey without an accessory",
   "description": "",
-  "id": "cfa-paym-phone-data-filters-options-tariff-and-extras-page-order-placement;cfa-paym-phone-data-filters-options-tariff-and-extras-page-order-placement;;2",
+  "id": "reg-afa-paymsimo-withoutanyaccessory;successful-completion-of-a-pay-m-simo-acquisition-journey-without-an-accessory;;2",
   "type": "scenario",
   "keyword": "Scenario Outline",
   "tags": [
     {
-      "line": 5,
-      "name": "@OctoberReleasePhase1"
+      "line": 4,
+      "name": "@AgentsRegression"
     }
   ]
 });
 formatter.step({
-  "line": 7,
-  "name": "I am an CFA user and Lands on shop page",
+  "line": 6,
+  "name": "I login to Agent shop",
   "keyword": "Given "
 });
 formatter.step({
-  "line": 8,
-  "name": "navigate to PAYM Phones page",
+  "line": 7,
+  "name": "performs Acquisition for New user",
   "keyword": "And "
 });
 formatter.step({
-  "line": 9,
-  "name": "I choose PayM IphoneSE",
+  "line": 8,
+  "name": "Select valid SimO from tariffs tab",
   "matchedColumns": [
     0
   ],
   "keyword": "And "
 });
 formatter.step({
-  "comments": [
-    {
-      "line": 10,
-      "value": "#select handset with more tariff and less tariff  -- \u003e ask kanban team to set handset with 2 tariff and handset with more than 3 tariff"
-    }
-  ],
+  "line": 9,
+  "name": "Validate all the Basket content and checkout",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 10,
+  "name": "perform all the advisory checks",
+  "keyword": "Then "
+});
+formatter.step({
   "line": 11,
-  "name": "Navigate to device details page",
+  "name": "perform the credit checks using valid TEST, ACCEPTA, 6, SL11UP and valid TEST ACCEPTA",
+  "matchedColumns": [
+    2,
+    3,
+    4,
+    5,
+    6
+  ],
   "keyword": "And "
 });
 formatter.step({
   "line": 12,
-  "name": "Land on the \u0027Tariffs and extra\u0027 page",
+  "name": "Register customer with valid TEST, ACCEPTA, 6, SL11UP and other valid details in delivery page",
+  "matchedColumns": [
+    2,
+    3,
+    5,
+    6
+  ],
   "keyword": "And "
 });
 formatter.step({
-  "comments": [
-    {
-      "line": 13,
-      "value": "##New functionality starts"
-    },
-    {
-      "line": 14,
-      "value": "#Then I should see data filters buttons next to existing sort drop-down for PAYM/SIMO tariffs \u003csortoption\u003e"
-    }
+  "line": 13,
+  "name": "Choose HomeDelivery delivery address and delivery time",
+  "matchedColumns": [
+    1
   ],
+  "keyword": "And "
+});
+formatter.step({
+  "line": 14,
+  "name": "submit order button is clicked",
+  "keyword": "When "
+});
+formatter.step({
   "line": 15,
-  "name": "I click on respective low data filter",
-  "matchedColumns": [
-    4
-  ],
-  "keyword": "When "
-});
-formatter.step({
-  "line": 16,
-  "name": "Data filter button should be in \u0027selected\u0027 state",
-  "keyword": "Then "
-});
-formatter.step({
-  "line": 17,
-  "name": "I should see appropriate tariffs based on the selected data filter Monthly data (Low to High)",
-  "matchedColumns": [
-    5
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "line": 18,
-  "name": "If I select ANY sort option Monthly data (Low to High) from the drop-down",
-  "matchedColumns": [
-    5
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "line": 19,
-  "name": "I should see tariffs relevant to selected sort option Monthly data (Low to High) \u0026 filter option low",
-  "matchedColumns": [
-    4,
-    5
-  ],
-  "keyword": "Then "
-});
-formatter.step({
-  "line": 20,
-  "name": "I deselect filter button",
-  "keyword": "When "
-});
-formatter.step({
-  "line": 21,
-  "name": "I should see tariffs based on the selected sort option Monthly data (Low to High)",
-  "matchedColumns": [
-    5
-  ],
+  "name": "Order confirmation message should be displayed",
   "keyword": "Then "
 });
 formatter.match({
-  "location": "E2EOrderPlaced_Steps.i_am_an_CFA_user_and_Lands_on_shop_page()"
+  "location": "E2EOrderPlaced_Steps.LoginAgentShop()"
 });
 formatter.result({
-  "duration": 166521063,
+  "duration": 1625754704,
   "status": "passed"
 });
 formatter.match({
-  "location": "E2EOrderPlaced_Steps.navigate_to_PAYM_Phones_page()"
+  "location": "E2EOrderPlaced_Steps.performs_Acquisition_for_New_user()"
 });
 formatter.result({
-  "duration": 61442284150,
+  "duration": 9316223530,
   "status": "passed"
 });
 formatter.match({
   "arguments": [
     {
-      "val": "IphoneSE",
-      "offset": 14
+      "val": "SimO",
+      "offset": 13
     }
   ],
-  "location": "E2EOrderPlaced_Steps.Choose_PAYM_Handset(String)"
+  "location": "E2EOrderPlaced_Steps.SelectTariff(String)"
 });
 formatter.result({
-  "duration": 922841085,
+  "duration": 11726382108,
   "status": "passed"
 });
 formatter.match({
-  "location": "E2EOrderPlaced_Steps.Navigate_to_device_details_page()"
+  "location": "E2EOrderPlaced_Steps.validate_all_the_Basket_content_and_checkout()"
 });
 formatter.result({
-  "duration": 43578552280,
+  "duration": 15232092729,
   "status": "passed"
 });
 formatter.match({
-  "location": "E2EOrderPlaced_Steps.land_on_the_Tariffs_and_extra_page()"
+  "location": "E2EOrderPlaced_Steps.advisory_checks()"
 });
 formatter.result({
-  "duration": 3265623217,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "low",
-      "offset": 22
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.clickOnRespectiveDataFilter(String)"
-});
-formatter.result({
-  "duration": 1452174823,
-  "status": "passed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.data_filter_button_should_be_in_selected_state()"
-});
-formatter.result({
-  "duration": 105392002,
+  "duration": 13163776909,
   "status": "passed"
 });
 formatter.match({
   "arguments": [
     {
-      "val": "Monthly data (Low to High)",
-      "offset": 67
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.getTariffList(String)"
-});
-formatter.result({
-  "duration": 273704241,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "Monthly data (Low to High)",
-      "offset": 28
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.select_sort_Tariff_dropdown(String)"
-});
-formatter.result({
-  "duration": 5328892821,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "Monthly data (Low to High)",
-      "offset": 54
+      "val": "TEST",
+      "offset": 38
     },
     {
-      "val": "low",
-      "offset": 97
+      "val": "ACCEPTA",
+      "offset": 44
+    },
+    {
+      "val": "6",
+      "offset": 53
+    },
+    {
+      "val": "SL11UP",
+      "offset": 56
+    },
+    {
+      "val": "TEST ACCEPTA",
+      "offset": 73
     }
   ],
-  "location": "E2EOrderPlaced_Steps.verifyTariffSortedBasedOnSortOptionAndFilter(String,String)"
+  "location": "E2EOrderPlaced_Steps.CreditCheck(String,String,String,String,String)"
 });
 formatter.result({
-  "duration": 246129656,
-  "status": "passed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.i_deselect_filter_button()"
-});
-formatter.result({
-  "duration": 169961369,
+  "duration": 109994402274,
   "status": "passed"
 });
 formatter.match({
   "arguments": [
     {
-      "val": "Monthly data (Low to High)",
-      "offset": 55
+      "val": "TEST",
+      "offset": 29
+    },
+    {
+      "val": "ACCEPTA",
+      "offset": 35
+    },
+    {
+      "val": "6",
+      "offset": 44
+    },
+    {
+      "val": "SL11UP",
+      "offset": 47
     }
   ],
-  "location": "E2EOrderPlaced_Steps.verifyTariffSortedBasedOnSortOption(String)"
+  "location": "E2EOrderPlaced_Steps.register_customer(String,String,String,String)"
 });
 formatter.result({
-  "duration": 871114569,
-  "error_message": "java.lang.NullPointerException\r\n\tat actionsPerformed.PAYMandPAYGTariffAndExtrasPageActions.verifyTariffSortedAsPerSortOption(PAYMandPAYGTariffAndExtrasPageActions.java:988)\r\n\tat steps.E2EOrderPlaced_Steps.verifyTariffSortedBasedOnSortOption(E2EOrderPlaced_Steps.java:5716)\r\n\tat ✽.Then I should see tariffs based on the selected sort option Monthly data (Low to High)(Features/test2.feature:21)\r\n",
+  "duration": 20368493268,
+  "error_message": "junit.framework.AssertionFailedError: Unable to Register customer , please see the failure screenshot\r\n\tat junit.framework.Assert.fail(Assert.java:47)\r\n\tat steps.E2EOrderPlaced_Steps.register_customer(E2EOrderPlaced_Steps.java:1709)\r\n\tat ✽.And Register customer with valid TEST, ACCEPTA, 6, SL11UP and other valid details in delivery page(Features/RegressionPack_Master/Reg_AFA_PayMSimO_withoutAnyAccessory.feature:12)\r\n",
   "status": "failed"
 });
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.HomeDelivery_Address()"
+});
+formatter.result({
+  "status": "skipped"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.submit_order_button_is_clicked()"
+});
+formatter.result({
+  "status": "skipped"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.order_confirmation_message_should_be_displayed()"
+});
+formatter.result({
+  "status": "skipped"
+});
 formatter.after({
-  "duration": 2740258557,
+  "duration": 4432386329,
   "status": "passed"
 });
 });
