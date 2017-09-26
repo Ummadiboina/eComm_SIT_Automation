@@ -24,6 +24,6 @@ Feature: CFA_SIMO_Phone_Data_filters_options_Order_placement
     Then order confirmation is displayed
 
     Examples: 
-      | handset           | Firstname | Surname | Username     | filtername | sortoption                 |
-      | Samsung Galaxy S8 | TEST      | ACCEPTA | TEST ACCEPTA | high       | Monthly data (Low to High) |
+      | handset           | Firstname | Surname | Username     | filtername | sortoption                 | Contract |
+      | Samsung Galaxy S8 | TEST      | ACCEPTA | TEST ACCEPTA | high       | Monthly data (Low to High) | 30 Days  |
    #   | Apple iPhone 7    | TEST      | ACCEPTA | TEST ACCEPTA | high       |
