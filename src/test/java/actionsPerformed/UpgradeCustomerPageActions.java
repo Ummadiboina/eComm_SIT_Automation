@@ -6,6 +6,7 @@ import java.util.concurrent.TimeUnit;
 
 import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Dimension;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -75,7 +76,7 @@ public class UpgradeCustomerPageActions extends Environment {
 	public static void Signin() throws InterruptedException {
 		System.out.println("in signin function");
 
-		pageobjects.UpgradeCustomerPage.Signinlink.click();
+		pageobjects.UpgradeCustomerPage.Signinlink2.click();
 		System.out.println("Sign in button clicked");
 
 	}

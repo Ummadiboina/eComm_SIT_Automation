@@ -1,277 +1,319 @@
-$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("Features/RegressionPack_Master/Reg_CS_SmartWatch.feature");
+$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("Features/RegressionPack_Master/Reg_AFA_PayMSimO_withoutAnyAccessory.feature");
 formatter.feature({
   "line": 1,
-  "name": "Reg_CS_SmartWatch",
+  "name": "Reg_AFA_PayMSimO_withoutAnyAccessory",
   "description": "",
-  "id": "reg-cs-smartwatch",
+  "id": "reg-afa-paymsimo-withoutanyaccessory",
   "keyword": "Feature"
 });
 formatter.scenarioOutline({
-  "line": 4,
-  "name": "Smart Watches only E2E journey",
+  "comments": [
+    {
+      "line": 3,
+      "value": "#launch hooks and get browser"
+    }
+  ],
+  "line": 5,
+  "name": "Successful completion of a PAY M SIMO acquisition Journey without an accessory",
   "description": "",
-  "id": "reg-cs-smartwatch;smart-watches-only-e2e-journey",
+  "id": "reg-afa-paymsimo-withoutanyaccessory;successful-completion-of-a-pay-m-simo-acquisition-journey-without-an-accessory",
   "type": "scenario_outline",
   "keyword": "Scenario Outline",
   "tags": [
     {
-      "line": 3,
-      "name": "@ConsumerShop"
+      "line": 4,
+      "name": "@AgentsRegression"
     }
   ]
 });
 formatter.step({
-  "line": 5,
-  "name": "I am an CFA user and Lands on shop page",
+  "line": 6,
+  "name": "I login to Agent shop",
   "keyword": "Given "
 });
 formatter.step({
-  "line": 6,
-  "name": "Navigate to SmartWatches",
-  "keyword": "And "
-});
-formatter.step({
   "line": 7,
-  "name": "select any available \"Random\" Smartwatch",
+  "name": "performs Acquisition for New user",
   "keyword": "And "
 });
 formatter.step({
   "line": 8,
-  "name": "add SmartWatch to basket within limit in details page and navigate to basket",
+  "name": "Select valid \u003cTariff\u003e from tariffs tab",
   "keyword": "And "
 });
 formatter.step({
   "line": 9,
-  "name": "I Land on the Non Phone related basket page and choose home delivery option",
+  "name": "Validate all the Basket content and checkout",
   "keyword": "And "
 });
 formatter.step({
   "line": 10,
-  "name": "click on \"go to checkout\" button",
-  "keyword": "And "
+  "name": "perform all the advisory checks",
+  "keyword": "Then "
 });
 formatter.step({
   "line": 11,
-  "name": "input \u003cFirstname\u003e and \u003cSurname\u003e and other valid details in Delivery page and Click on the \u0027Continue button\u0027",
+  "name": "perform the credit checks using valid \u003cFirstname\u003e, \u003cSurname\u003e, \u003cHouseNumber\u003e, \u003cPostCode\u003e and valid \u003cUsername\u003e",
   "keyword": "And "
 });
 formatter.step({
   "line": 12,
-  "name": "land on the Non Credit check payment page and input \u003cUsername\u003e and other details and click \u0027Continue on next step\u0027",
+  "name": "Register customer with valid \u003cFirstname\u003e, \u003cSurname\u003e, \u003cHouseNumber\u003e, \u003cPostCode\u003e and other valid details in delivery page",
   "keyword": "And "
 });
 formatter.step({
   "line": 13,
-  "name": "Continue to Review page and review the order",
+  "name": "Choose \u003cDeliveryType\u003e delivery address and delivery time",
   "keyword": "And "
 });
 formatter.step({
   "line": 14,
-  "name": "order confirmation is displayed",
+  "name": "submit order button is clicked",
+  "keyword": "When "
+});
+formatter.step({
+  "line": 15,
+  "name": "Order confirmation message should be displayed",
   "keyword": "Then "
 });
 formatter.examples({
-  "line": 16,
+  "line": 17,
   "name": "",
   "description": "",
-  "id": "reg-cs-smartwatch;smart-watches-only-e2e-journey;",
+  "id": "reg-afa-paymsimo-withoutanyaccessory;successful-completion-of-a-pay-m-simo-acquisition-journey-without-an-accessory;",
   "rows": [
     {
       "cells": [
+        "Tariff",
+        "DeliveryType",
         "Firstname",
         "Surname",
-        "Username"
+        "Username",
+        "HouseNumber",
+        "PostCode"
       ],
-      "line": 17,
-      "id": "reg-cs-smartwatch;smart-watches-only-e2e-journey;;1"
+      "line": 18,
+      "id": "reg-afa-paymsimo-withoutanyaccessory;successful-completion-of-a-pay-m-simo-acquisition-journey-without-an-accessory;;1"
     },
     {
       "cells": [
+        "SimO",
+        "HomeDelivery",
         "TEST",
         "ACCEPTA",
-        "TEST ACCEPTA"
+        "TEST ACCEPTA",
+        "6",
+        "SL11UP"
       ],
-      "line": 18,
-      "id": "reg-cs-smartwatch;smart-watches-only-e2e-journey;;2"
+      "line": 19,
+      "id": "reg-afa-paymsimo-withoutanyaccessory;successful-completion-of-a-pay-m-simo-acquisition-journey-without-an-accessory;;2"
     }
   ],
   "keyword": "Examples"
 });
 formatter.before({
-  "duration": 25667026360,
+  "duration": 27975141315,
   "status": "passed"
 });
 formatter.scenario({
-  "line": 18,
-  "name": "Smart Watches only E2E journey",
+  "line": 19,
+  "name": "Successful completion of a PAY M SIMO acquisition Journey without an accessory",
   "description": "",
-  "id": "reg-cs-smartwatch;smart-watches-only-e2e-journey;;2",
+  "id": "reg-afa-paymsimo-withoutanyaccessory;successful-completion-of-a-pay-m-simo-acquisition-journey-without-an-accessory;;2",
   "type": "scenario",
   "keyword": "Scenario Outline",
   "tags": [
     {
-      "line": 3,
-      "name": "@ConsumerShop"
+      "line": 4,
+      "name": "@AgentsRegression"
     }
   ]
 });
 formatter.step({
-  "line": 5,
-  "name": "I am an CFA user and Lands on shop page",
+  "line": 6,
+  "name": "I login to Agent shop",
   "keyword": "Given "
 });
 formatter.step({
-  "line": 6,
-  "name": "Navigate to SmartWatches",
-  "keyword": "And "
-});
-formatter.step({
   "line": 7,
-  "name": "select any available \"Random\" Smartwatch",
+  "name": "performs Acquisition for New user",
   "keyword": "And "
 });
 formatter.step({
   "line": 8,
-  "name": "add SmartWatch to basket within limit in details page and navigate to basket",
+  "name": "Select valid SimO from tariffs tab",
+  "matchedColumns": [
+    0
+  ],
   "keyword": "And "
 });
 formatter.step({
   "line": 9,
-  "name": "I Land on the Non Phone related basket page and choose home delivery option",
+  "name": "Validate all the Basket content and checkout",
   "keyword": "And "
 });
 formatter.step({
   "line": 10,
-  "name": "click on \"go to checkout\" button",
-  "keyword": "And "
+  "name": "perform all the advisory checks",
+  "keyword": "Then "
 });
 formatter.step({
   "line": 11,
-  "name": "input TEST and ACCEPTA and other valid details in Delivery page and Click on the \u0027Continue button\u0027",
+  "name": "perform the credit checks using valid TEST, ACCEPTA, 6, SL11UP and valid TEST ACCEPTA",
   "matchedColumns": [
-    0,
-    1
+    2,
+    3,
+    4,
+    5,
+    6
   ],
   "keyword": "And "
 });
 formatter.step({
   "line": 12,
-  "name": "land on the Non Credit check payment page and input TEST ACCEPTA and other details and click \u0027Continue on next step\u0027",
+  "name": "Register customer with valid TEST, ACCEPTA, 6, SL11UP and other valid details in delivery page",
   "matchedColumns": [
-    2
+    2,
+    3,
+    5,
+    6
   ],
   "keyword": "And "
 });
 formatter.step({
   "line": 13,
-  "name": "Continue to Review page and review the order",
+  "name": "Choose HomeDelivery delivery address and delivery time",
+  "matchedColumns": [
+    1
+  ],
   "keyword": "And "
 });
 formatter.step({
   "line": 14,
-  "name": "order confirmation is displayed",
+  "name": "submit order button is clicked",
+  "keyword": "When "
+});
+formatter.step({
+  "line": 15,
+  "name": "Order confirmation message should be displayed",
   "keyword": "Then "
 });
 formatter.match({
-  "location": "E2EOrderPlaced_Steps.i_am_an_CFA_user_and_Lands_on_shop_page()"
+  "location": "E2EOrderPlaced_Steps.LoginAgentShop()"
 });
 formatter.result({
-  "duration": 368907884,
+  "duration": 1625754704,
   "status": "passed"
 });
 formatter.match({
-  "location": "E2EOrderPlaced_Steps.navigate_to_SmartWatches()"
+  "location": "E2EOrderPlaced_Steps.performs_Acquisition_for_New_user()"
 });
 formatter.result({
-  "duration": 68302373613,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "Random",
-      "offset": 22
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.select_any_available_Smartwatch(String)"
-});
-formatter.result({
-  "duration": 15280879522,
-  "status": "passed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.add_SmartWatch_to_basket_within_limit_in_details_page_and_navigate_to_basket()"
-});
-formatter.result({
-  "duration": 8644535852,
-  "status": "passed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.NonPhoneRelatedBasketPage()"
-});
-formatter.result({
-  "duration": 14520850412,
+  "duration": 9316223530,
   "status": "passed"
 });
 formatter.match({
   "arguments": [
     {
-      "val": "go to checkout",
-      "offset": 10
+      "val": "SimO",
+      "offset": 13
     }
   ],
-  "location": "E2EOrderPlaced_Steps.CheckoutFromBasket(String)"
+  "location": "E2EOrderPlaced_Steps.SelectTariff(String)"
 });
 formatter.result({
-  "duration": 24919009775,
+  "duration": 11726382108,
+  "status": "passed"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.validate_all_the_Basket_content_and_checkout()"
+});
+formatter.result({
+  "duration": 15232092729,
+  "status": "passed"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.advisory_checks()"
+});
+formatter.result({
+  "duration": 13163776909,
   "status": "passed"
 });
 formatter.match({
   "arguments": [
     {
       "val": "TEST",
-      "offset": 6
+      "offset": 38
     },
     {
       "val": "ACCEPTA",
-      "offset": 15
+      "offset": 44
+    },
+    {
+      "val": "6",
+      "offset": 53
+    },
+    {
+      "val": "SL11UP",
+      "offset": 56
+    },
+    {
+      "val": "TEST ACCEPTA",
+      "offset": 73
     }
   ],
-  "location": "E2EOrderPlaced_Steps.DeliveryPage_Inputs_homeDelivery(String,String)"
+  "location": "E2EOrderPlaced_Steps.CreditCheck(String,String,String,String,String)"
 });
 formatter.result({
-  "duration": 16403201422,
+  "duration": 109994402274,
   "status": "passed"
 });
 formatter.match({
   "arguments": [
     {
-      "val": "TEST ACCEPTA",
-      "offset": 52
+      "val": "TEST",
+      "offset": 29
+    },
+    {
+      "val": "ACCEPTA",
+      "offset": 35
+    },
+    {
+      "val": "6",
+      "offset": 44
+    },
+    {
+      "val": "SL11UP",
+      "offset": 47
     }
   ],
-  "location": "E2EOrderPlaced_Steps.NonCreditCheckPaymentPage_HomeDelivery(String)"
+  "location": "E2EOrderPlaced_Steps.register_customer(String,String,String,String)"
 });
 formatter.result({
-  "duration": 77611028830,
-  "status": "passed"
+  "duration": 20368493268,
+  "error_message": "junit.framework.AssertionFailedError: Unable to Register customer , please see the failure screenshot\r\n\tat junit.framework.Assert.fail(Assert.java:47)\r\n\tat steps.E2EOrderPlaced_Steps.register_customer(E2EOrderPlaced_Steps.java:1709)\r\n\tat ✽.And Register customer with valid TEST, ACCEPTA, 6, SL11UP and other valid details in delivery page(Features/RegressionPack_Master/Reg_AFA_PayMSimO_withoutAnyAccessory.feature:12)\r\n",
+  "status": "failed"
 });
 formatter.match({
-  "location": "E2EOrderPlaced_Steps.ReviewPageConfirmation()"
+  "location": "E2EOrderPlaced_Steps.HomeDelivery_Address()"
 });
 formatter.result({
-  "duration": 5354077917,
-  "status": "passed"
+  "status": "skipped"
 });
 formatter.match({
-  "location": "E2EOrderPlaced_Steps.OrderConfirmationPage()"
+  "location": "E2EOrderPlaced_Steps.submit_order_button_is_clicked()"
 });
 formatter.result({
-  "duration": 5182283624,
-  "status": "passed"
+  "status": "skipped"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.order_confirmation_message_should_be_displayed()"
+});
+formatter.result({
+  "status": "skipped"
 });
 formatter.after({
-  "duration": 3703722403,
+  "duration": 4432386329,
   "status": "passed"
 });
 });

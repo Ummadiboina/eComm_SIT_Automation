@@ -1,9 +1,9 @@
-Feature: To set a device in Pre Order in CVOS
+Feature: CVOSPreOrder
 
   @tag1
   Scenario Outline: PreOrder_CVS
     Given I am a Supply Chain Admin
-    And I Login with Supply Chain Credential <username> and <password>
+    And I Login with Supply Chain Credential <username> and <Password>
     Then I click on  'Stockpot' tab in Supply Chain and search for <SKUID> in SkU desciption
     And Click on Search button
     Then I should see the uploaded stock for the SKU ID
