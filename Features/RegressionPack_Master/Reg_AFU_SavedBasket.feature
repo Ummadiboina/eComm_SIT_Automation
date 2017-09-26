@@ -5,8 +5,8 @@ Feature: Reg_AFU_SavedBasket
   Scenario Outline: AFU_Saved Basket functionality
     Given I login to Agent shop
     And performs Upgrade for <user>
+   And Select a valid PayM <Device>
     And Select valid <Tariffs> from tariffs tab
-    And Select a valid PayM <Device>
     And select a valid Handset and Tariff combination
     # And Select a valid Accessory <Device>
     And choose to email basket to save the basket
@@ -14,4 +14,4 @@ Feature: Reg_AFU_SavedBasket
 
     Examples: 
       | user        | Device | Tariffs |
-      | 07521122805 | Random | Refresh |
+      | 07521118904 | dongle | Refresh |

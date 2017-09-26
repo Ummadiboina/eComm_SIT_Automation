@@ -615,15 +615,18 @@ public class UpgradeCustomerPageActions extends Environment {
 	}
 
 	public static void clickOnOverlayIconTEpage(String Tariff) throws Exception {
+		System.out.println("In Click on Overlay TE function");
 		log.debug('\n' + "To Click On Overlay Icon TE page");
 		log.debug("Tariff for verifying overlay icon is " + Tariff);
 
 		String TariffTile = null;
 		TariffTile = "(//div[@id='tariff-tile']/div[@id])[" + position + "]";
 		List<WebElement> PrimaryOverlayIcon = driver.findElement(By.xpath(TariffTile))
-				.findElements(By.xpath("//div[@class='blue-promotion']/div/a[1]"));
+				//.findElements(By.xpath("//div[@class='blue-promotion']/div/a[2]"));
+				.findElements(By.xpath("//div[@class='blue-promotion']/div"));
 		List<WebElement> SecondaryOverlayIcon = driver.findElement(By.xpath(TariffTile))
-				.findElements(By.xpath("//div[@class='blue-promotion']/div/a[2]"));
+				//.findElements(By.xpath("//div[@class='blue-promotion']/div/a[2]"));
+		.findElements(By.xpath("//div[@class='blue-promotion']/div"));
 
 		String PrimaryOverlay = (String) Filereadingutility.getPropertyValue(RunTimeFilePath, "PrimaryOverlay");
 		String SecondaryOverlay = (String) Filereadingutility.getPropertyValue(RunTimeFilePath, "SecondaryOverlay");
@@ -640,10 +643,10 @@ public class UpgradeCustomerPageActions extends Environment {
 					log.debug("Inside the overlay for the selected tariff");
 				}
 				Thread.sleep(5000);
-				log.debug("Text inside the primary overlay is :" + '\n'
+				/*log.debug("Text inside the primary overlay is :" + '\n'
 						+ driver.findElement(By
 								.xpath("//div[contains(@class, 'overlay-box tariff-tile-info-promo-overlay')]/div/h3"))
-								.getText());
+								.getText());*/
 				closeOverlayIconTEpage();
 			} else {
 				Assert.fail("Primary Overlay Icon not present");
@@ -667,10 +670,10 @@ public class UpgradeCustomerPageActions extends Environment {
 					driver.switchTo().window(winHandle);
 					log.debug("Inside the overlay for the selected tariff");
 				}
-				log.debug("Text inside the secondary overlay is :" + '\n'
+				/*log.debug("Text inside the secondary overlay is :" + '\n'
 						+ driver.findElement(By
 								.xpath("//div[contains(@class, 'overlay-box tariff-tile-info-promo-overlay')]/div/h3"))
-								.getText());
+								.getText());*/
 				closeOverlayIconTEpage();
 			} else {
 				Assert.fail("Secondary Overlay Icon not present");
@@ -682,6 +685,7 @@ public class UpgradeCustomerPageActions extends Environment {
 				Assert.fail("Secondary overlay is present though it is not configured");
 			}
 		}
+		System.out.println("Completed Click on Overlay TE function");
 	}
 
 	public static void clickOnOverlayIconUpgradePage(String Tariff) throws Exception {
@@ -710,10 +714,10 @@ public class UpgradeCustomerPageActions extends Environment {
 					log.debug("Inside the overlay for the selected tariff");
 				}
 				Thread.sleep(5000);
-				log.debug("Text inside the primary overlay is :" + '\n'
+				/*log.debug("Text inside the primary overlay is :" + '\n'
 						+ driver.findElement(By
 								.xpath("//div[contains(@class, 'overlay-box tariff-tile-info-promo-overlay')]/div/h3"))
-								.getText());
+								.getText());*/
 				closeOverlayIconTEpage();
 			} else {
 				Assert.fail("Primary Overlay Icon not present");
@@ -736,10 +740,10 @@ public class UpgradeCustomerPageActions extends Environment {
 					log.debug("Inside the overlay for the selected tariff");
 
 				}
-				log.debug("Text inside the secondary overlay is :" + '\n'
+				/*log.debug("Text inside the secondary overlay is :" + '\n'
 						+ driver.findElement(By
 								.xpath("//div[contains(@class, 'overlay-box tariff-tile-info-promo-overlay')]/div/h3"))
-								.getText());
+								.getText());*/
 				closeOverlayIconTEpage();
 			} else {
 				Assert.fail("Secondary Overlay Icon not present");
