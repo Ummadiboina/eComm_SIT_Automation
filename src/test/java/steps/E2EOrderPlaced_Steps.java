@@ -4214,6 +4214,7 @@ public class E2EOrderPlaced_Steps {
 			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 			PageFactory.initElements(driver, UpgradeCustomerPage.class);
 			UpgradeCustomerPageActions.verifyPromotionalRibbonDisplayedTEpage(Tariff);
+			System.out.println("Completed verify ");
 		} catch (Exception e) {
 			e.printStackTrace();
 			Assert.fail(
