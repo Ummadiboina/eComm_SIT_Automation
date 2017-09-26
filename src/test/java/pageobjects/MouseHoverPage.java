@@ -136,15 +136,15 @@ public class MouseHoverPage extends Environment {
 	public static WebElement MouseOnSims;
 
 	// Below will click on the Sims -- > PayG
-	
 
-//	@FindBy(how = How.XPATH, using = ("//a[@manual_cm_re='meganav_Shop-_-Sims-_-Pay & Go sims']"))
+	// @FindBy(how = How.XPATH, using =
+	// ("//a[@manual_cm_re='meganav_Shop-_-Sims-_-Pay & Go sims']"))
 	@FindBy(how = How.XPATH, using = ("//a[contains(text(), 'Pay as you go sims')] | //a[contains(text(), 'Pay As You Go sims')]"))
 	public static WebElement MoveMouseOnPayGSims;
-	
-	//@FindBy(how = How.XPATH, using = ("//a[contains(text(), 'Pay As You Go Sims')]"))
-			@FindBy(how = How.XPATH, using = ("//a[@manual_cm_re='meganav_Shop-_-Sims-_-Pay as you go sims']"))
-			public static WebElement MoveMouseOnPayGSimo;
-	
-	
+
+	// @FindBy(how = How.XPATH, using = ("//a[contains(text(), 'Pay As You Go
+	// sims')]"))
+	@FindBy(how = How.XPATH, using = ("//a[@manual_cm_re='meganav_Shop-_-Sims-_-Pay as you go sims'] | //a[@manual_cm_re='meganav_Shop-_-Sims-_-Pay & Go sims']"))
+	public static WebElement MoveMouseOnPayGSimo;
+
 }
