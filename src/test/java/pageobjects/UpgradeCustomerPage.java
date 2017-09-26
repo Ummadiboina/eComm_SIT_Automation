@@ -56,7 +56,13 @@ public class UpgradeCustomerPage {
 	public static List<WebElement> DeviceNameRecommendedSection;
 
 	@FindBy(how = How.XPATH, using = "//*[@id='signInButton']")
-	public static WebElement Signinlink;
+	public static WebElement Signinlink1;
+	
+	@FindBy(how = How.XPATH, using = "//*[@class='signInLink signInLinkInDesktop']")
+	public static WebElement Signinlink2;
+	
+	@FindBy(how = How.XPATH, using = "//*[@id='header-tool-signin']")
+	public static WebElement HeaderSignin;
 
 	@FindBy(how = How.XPATH, using = "//select[@class='recycle-make ng-pristine ng-valid']")
 	public static WebElement Make;

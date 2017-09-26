@@ -93,7 +93,7 @@ public class PhonesListingPageAction extends Environment {
 			log.debug("Selected Iphone7");
 
 		}
-		if (elementName.contains("Iphone7Plus")) {
+		if (elementName.contains("Apple iPhone 7 Plus")) {
 			pageobjects.PhonesListingPage.Iphone7Plus.click();
 			// Assert.assertEquals(elementName,"Galaxy S7 is not found");
 			log.debug("Selected Iphone7Plus");
