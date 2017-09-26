@@ -499,7 +499,7 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 		if (ActualAddInsuranceText.equals(ExpAddInsuranceText)) {
 			System.out.println("cheapeast insurance is displayed in add button");
 		} else {
-			System.out.println("cheapeast insurance is not displayed in add button");
+			Assert.fail("cheapeast insurance is not displayed in add button");
 		}
 	}
 
@@ -521,7 +521,7 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 			AddInsuranceButton.get(0).click();
 			Thread.sleep(4000);
 		} else {
-			System.out.println("Add now button is not present");
+			Assert.fail("Add now button is not present");
 		}
 	}
 

@@ -888,10 +888,10 @@ public class MouseHoverAction extends Environment {
                         log.debug("Moving mouse on the Sims in Shop Dropdown");
                         Thread.sleep(2000);
 
-                         action.moveToElement(pageobjects.MouseHoverPage.MoveMouseOnPayGSimo).build().perform();
+                         action.moveToElement(pageobjects.MouseHoverPage.MoveMouseOnPayGSims).build().perform();
                         log.debug("Moving mouse on the PayG Sims");
                         Thread.sleep(2000);
-                        pageobjects.MouseHoverPage.MoveMouseOnPayGSimo.click();
+                        pageobjects.MouseHoverPage.MoveMouseOnPayGSims.click();
                         log.debug("Clicking on Pay G Sims");
                         // Move mouse pointer away from location
                         Thread.sleep(2000);
