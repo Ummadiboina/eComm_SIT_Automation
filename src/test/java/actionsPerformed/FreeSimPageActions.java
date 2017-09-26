@@ -78,5 +78,82 @@ public class FreeSimPageActions extends Environment {
 		pageobjects.FreeSimPage.Order.click();
 		log.debug("Clicked on place order button");
 	}
+	public static void selectSurfertypeAndSimtype(String SurferType, String SimType) throws InterruptedException {
+		JavascriptExecutor jse = (JavascriptExecutor) driver;
+		jse.executeScript("window.scrollBy(0,450)", "");
+
+		if (SurferType.equals("Light surfer") && SimType.equals("iPad")) {
+			Thread.sleep(1000);
+			jse.executeScript("arguments[0].click();", pageobjects.FreeSimPage.LightSurfer);
+			log.debug("Clicking on light surfer tab");
+			Thread.sleep(3000);
+			jse.executeScript("arguments[0].click();", pageobjects.FreeSimPage.LightSurferiPadSim);
+			log.debug("Clicking on light surfer tab");
+		}
+		if (SurferType.equals("Light surfer") && SimType.equals("Tablet")) {
+			Thread.sleep(1000);
+			jse.executeScript("arguments[0].click();", pageobjects.FreeSimPage.LightSurfer);
+			log.debug("Clicking on light surfer tab");
+			Thread.sleep(3000);
+			jse.executeScript("arguments[0].click();", pageobjects.FreeSimPage.LightSurferTabletSim);
+			log.debug("Clicking on light surfer tab");
+		}
+		if (SurferType.equals("Light surfer") && SimType.equals("Dongle")) {
+			Thread.sleep(1000);
+			jse.executeScript("arguments[0].click();", pageobjects.FreeSimPage.LightSurfer);
+			log.debug("Clicking on light surfer tab");
+			Thread.sleep(3000);
+			jse.executeScript("arguments[0].click();", pageobjects.FreeSimPage.LightSurferDongleSim);
+			log.debug("Clicking on light surfer tab");
+		}
+		if (SurferType.equals("Steady surfer") && SimType.equals("iPad")) {
+			Thread.sleep(1000);
+			jse.executeScript("arguments[0].click();", pageobjects.FreeSimPage.SteadySurfer);
+			log.debug("Clicking on light surfer tab");
+			Thread.sleep(3000);
+			jse.executeScript("arguments[0].click();", pageobjects.FreeSimPage.SteadySurferiPadSim);
+			log.debug("Clicking on light surfer tab");
+		}
+		if (SurferType.equals("Steady surfer") && SimType.equals("Tablet")) {
+			Thread.sleep(1000);
+			jse.executeScript("arguments[0].click();", pageobjects.FreeSimPage.SteadySurfer);
+			log.debug("Clicking on light surfer tab");
+			Thread.sleep(3000);
+			jse.executeScript("arguments[0].click();", pageobjects.FreeSimPage.SteadySurferTabletSim);
+			log.debug("Clicking on light surfer tab");
+		}
+		if (SurferType.equals("Steady surfer") && SimType.equals("Dongle")) {
+			Thread.sleep(1000);
+			jse.executeScript("arguments[0].click();", pageobjects.FreeSimPage.SteadySurfer);
+			log.debug("Clicking on light surfer tab");
+			Thread.sleep(3000);
+			jse.executeScript("arguments[0].click();", pageobjects.FreeSimPage.SteadySurferDongleSim);
+			log.debug("Clicking on light surfer tab");
+		}
+		if (SurferType.equals("Ultimate surfer") && SimType.equals("iPad")) {
+			Thread.sleep(1000);
+			jse.executeScript("arguments[0].click();", pageobjects.FreeSimPage.UltimateSurfer);
+			log.debug("Clicking on light surfer tab");
+			Thread.sleep(3000);
+			jse.executeScript("arguments[0].click();", pageobjects.FreeSimPage.UltimateSurferiPadSim);
+			log.debug("Clicking on light surfer tab");
+		}
+		if (SurferType.equals("Ultimate surfer") && SimType.equals("Tablet")) {
+			Thread.sleep(1000);
+			jse.executeScript("arguments[0].click();", pageobjects.FreeSimPage.UltimateSurfer);
+			log.debug("Clicking on light surfer tab");
+			Thread.sleep(3000);
+			jse.executeScript("arguments[0].click();", pageobjects.FreeSimPage.UltimateSurferTabletSim);
+			log.debug("Clicking on light surfer tab");
+		}
+		if (SurferType.equals("Ultimate surfer") && SimType.equals("Dongle")) {
+			Thread.sleep(1000);
+			jse.executeScript("arguments[0].click();", pageobjects.FreeSimPage.UltimateSurfer);
+			log.debug("Clicking on light surfer tab");
+			Thread.sleep(3000);
+			jse.executeScript("arguments[0].click();", pageobjects.FreeSimPage.UltimateSurferDongleSim);
+			log.debug("Clicking on light surfer tab");
+		}
+	}
 
 }

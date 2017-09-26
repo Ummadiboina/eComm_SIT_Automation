@@ -81,5 +81,49 @@ public class FreeSimPage {
 
 	@FindBy(how = How.ID, using = "btn-continue")
 	public static WebElement Order;
+	@FindBy(how = How.XPATH, using = "(//a[@title='iPad sims'])[1]")
+	public static WebElement iPadsim;
+
+	@FindBy(how = How.XPATH, using = "(//a[@title='Tablet sims'])[1]")
+	public static WebElement Tabletsim;
+
+	@FindBy(how = How.XPATH, using = "(//a[@title='Dongle sims'])[1]")
+	public static WebElement Donglesim;
+
+	@FindBy(how = How.XPATH, using = "(//a[@href='#lightsurfer'])[2]")
+	public static WebElement LightSurfer;
+
+	@FindBy(how = How.XPATH, using = "(//a[@href='#steadysurfer'])[2]")
+	public static WebElement SteadySurfer;
+
+	@FindBy(how = How.XPATH, using = "(//a[@href='#ultimatesurfer'])[2]")
+	public static WebElement UltimateSurfer;
+
+	@FindBy(how = How.XPATH, using = "(//a[@title='iPad sims'])[2]")
+	public static WebElement LightSurferiPadSim;
+
+	@FindBy(how = How.XPATH, using = "(//a[@title='Tablet sims'])[2]")
+	public static WebElement LightSurferTabletSim;
+
+	@FindBy(how = How.XPATH, using = "(//a[@title='Dongle sims'])[2]")
+	public static WebElement LightSurferDongleSim;
+
+	@FindBy(how = How.XPATH, using = "(//a[@title='iPad sims'])[1]")
+	public static WebElement SteadySurferiPadSim;
+
+	@FindBy(how = How.XPATH, using = "(//a[@title='Tablet sims'])[1]")
+	public static WebElement SteadySurferTabletSim;
+
+	@FindBy(how = How.XPATH, using = "(//a[@title='Dongle sims'])[1]")
+	public static WebElement SteadySurferDongleSim;
+
+	@FindBy(how = How.XPATH, using = "(//a[@title='iPad sims'])[3]")
+	public static WebElement UltimateSurferiPadSim;
+
+	@FindBy(how = How.XPATH, using = "(//a[@title='Tablet sims'])[3]")
+	public static WebElement UltimateSurferTabletSim;
+
+	@FindBy(how = How.XPATH, using = "(//a[@title='Dongle sims'])[3]")
+	public static WebElement UltimateSurferDongleSim;
 
 }
