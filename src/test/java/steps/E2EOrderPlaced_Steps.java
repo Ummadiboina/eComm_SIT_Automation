@@ -4492,7 +4492,7 @@ public class E2EOrderPlaced_Steps {
 			PageFactory.initElements(driver, OrderConfirmationPage.class);
 			OrderConfirmationPageActions.DelayedDeliveryMessage();
 			OrderConfirmationPageActions.PaccodeinfoMessage();
-			ExpectedDelayedDeliveryMessage = "Your Device may take up to 1 week. You'll pay for the phone now, but won't start paying for your contract until your phone is on its way.";
+			ExpectedDelayedDeliveryMessage = " may take up to 1 week. You'll pay for the phone now, but won't start paying for your contract until your phone is on its way.";
 
 			ExpectedPacCodeInfoMessage = "If you're moving from another operator and want to keep your number then now is a good time to ask them for your PAC code.";
 
