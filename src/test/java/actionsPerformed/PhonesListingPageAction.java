@@ -92,8 +92,8 @@ public class PhonesListingPageAction extends Environment {
 			// Assert.assertEquals(elementName,"Galaxy S7 is not found");
 			log.debug("Selected Iphone7");
 
-		}
-		if (elementName.contains("Apple iPhone 7 Plus")) {
+		}                         
+		if (elementName.contains("AppleiPhone7Plus")) {
 			pageobjects.PhonesListingPage.Iphone7Plus.click();
 			// Assert.assertEquals(elementName,"Galaxy S7 is not found");
 			log.debug("Selected Iphone7Plus");
