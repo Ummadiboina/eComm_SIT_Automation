@@ -1,5 +1,6 @@
 Feature: Reg_Consumer_Buyout
-@Regression
+
+  @Regression
   Scenario Outline: This scenario ensures that the customer is able to successully Buyout the device
     Given I am an Existing user and Navigates to Signin page
     And Signin using valid <username> and <password> credentials
@@ -23,6 +24,7 @@ Feature: Reg_Consumer_Buyout
     And Continue to Agreements page and confirm all the agreement checks
     And Continue to Review page and review the order
     Then order confirmation is displayed
+
     Examples: 
-      | username                     | password | handset        | Action |
-      | ins_jan5987@stf.ref.o2.co.uk | test123  | Apple iPhone 7 | skip   |
+      | username    | password | handset        | Action |
+      | ink_aug6361 | test123  | Apple iPhone 7 | skip   |
