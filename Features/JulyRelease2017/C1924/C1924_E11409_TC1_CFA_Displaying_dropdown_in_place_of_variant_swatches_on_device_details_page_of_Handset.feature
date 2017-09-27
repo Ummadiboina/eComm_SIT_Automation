@@ -12,5 +12,5 @@ Feature: C1924_E11409_TC1_CFA_Displaying_dropdown_in_place_of_variant_swatches_o
 
     #Close the browser
     Examples: 
-      | handset | color | capacity |
-      |Apple iPhone 7| Black | 128GB    |
+      | handset        | color | capacity |
+      | Apple iPhone 7 | Black | 128GB    |
