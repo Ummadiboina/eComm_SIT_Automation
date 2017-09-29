@@ -142,7 +142,7 @@ public class Agent_RegisterCustomerActions extends Environment {
 	public static void PaybyCard() throws InterruptedException, IOException {
 		String OneOff = Agent_RegisterCustomerPage.ZeroOneOff.getText();
 		System.out.println(OneOff);
-		if (OneOff.contains("£0.00")) {
+		if (OneOff.contains("ï¿½0.00")) {
 			Agent_RegisterCustomerPage.SubmitBtn.click();
 		}
 
@@ -199,14 +199,40 @@ public class Agent_RegisterCustomerActions extends Environment {
 
 	}
 
-	public static void CardDetails_PayM() throws InterruptedException, IOException {
+	public static void CardDetails_PayM() throws InterruptedException {
 		Thread.sleep(7000);
 
 		System.out.println("Going to validate pay by card page displayed from mipay");
 		Agent_RegisterCustomerPage.SecurityCode.sendKeys("123");
 		Thread.sleep(2000);
 		Agent_RegisterCustomerPage.UsethisCard.click();
-		Screenshots.captureScreenshot();
+
+	}
+
+	public static void RegisterCustomer(String Password, String Confirm_Password, String Security_Answer)
+			throws InterruptedException {
+		Thread.sleep(2000);
+
+		Agent_RegisterCustomerPage.Password.sendKeys(Password);
+		log.debug("Entered Password");
+
+		Agent_RegisterCustomerPage.Confirm_Password.sendKeys(Confirm_Password);
+		log.debug("Entered Password");
+
+		Select dropdown2 = new Select(pageobjects.Agent_RegisterCustomerPage.securityQuestion);
+		dropdown2.selectByIndex(1);
+		log.debug("Selected the security question");
+
+		Agent_RegisterCustomerPage.Security_Answer.sendKeys(Security_Answer);
+		log.debug("Entered Security Answer");
+
+		Agent_RegisterCustomerPage.Check_box.click();
+		log.debug("Selected the TC checkbox");
+
+		Agent_RegisterCustomerPage.registerCustomer.click();
+		Thread.sleep(6000);
+		log.debug("Clicked on Register customer");
+		System.out.println("Clicked on Register customer");
 
 	}
 
