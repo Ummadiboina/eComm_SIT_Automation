@@ -26,7 +26,7 @@ public static void QuantityValidationsBasket() throws InterruptedException, IOEx
 	Assert.assertEquals("4", BasketQuantityvalue);
 	System.out.println(
 			"Values are correct , Basket quantity = " + BasketQuantityvalue + "Device added value = 4");
-	Screenshots.screennewPics();
+	Screenshots.captureScreenshot();
 
 	}
 
@@ -35,7 +35,7 @@ public static void QuantityValidationsDelivery() throws IOException, Interrupted
 	WebElement BasketQuantity = driver.findElement(By.className("basket-nonconnected"));
 	String BasketQuantityvalue = BasketQuantity.getText();
 	System.out.println("Your order contents is "+BasketQuantityvalue);
-	Screenshots.screennewPics();
+	Screenshots.captureScreenshot();
 	
 	if(BasketQuantityvalue.contains("Quantity: 4"))
 	{
@@ -87,14 +87,14 @@ public static void QuantityValidationsBasket_Grouped() throws Exception{
 		System.out.println("Not Working fine");
 		Assert.fail("Quantity Values are not correct");
 	}	
-	Screenshots.screennewPics();
+	Screenshots.captureScreenshot();
 }
 
 public static void QuantityValidationsDelivery_Grouped() throws IOException, InterruptedException {
 	WebElement BasketQuantity = driver.findElement(By.className("basket-nonconnected"));
 	String BasketQuantityvalue = BasketQuantity.getText();
 	System.out.println("Your order contents is "+BasketQuantityvalue);
-	Screenshots.screennewPics();
+	Screenshots.captureScreenshot();
 	
 	if(BasketQuantityvalue.contains("Quantity: 4"))
 	{
@@ -141,7 +141,7 @@ public static void updatedQuantityValidationsDelivery() throws IOException, Inte
 	WebElement BasketQuantity = driver.findElement(By.className("basket-nonconnected"));
 	String BasketQuantityvalue = BasketQuantity.getText();
 	System.out.println("Your order contents is "+BasketQuantityvalue);
-	Screenshots.screennewPics();
+	Screenshots.captureScreenshot();
 	
 	if(BasketQuantityvalue.contains("Quantity: 2"))
 	{
