@@ -1,20 +1,19 @@
 package actionsPerformed;
 
-import helpers.Environment;
-import helpers.Filereadingutility;
-import helpers.setRuntimeProperty;
-
-import java.util.ArrayList;
+import java.io.IOException;
 import java.util.List;
 
 import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
+
+import GlobalActions.Screenshots;
+import helpers.Environment;
+import helpers.Filereadingutility;
+import helpers.setRuntimeProperty;
 
 public class AccessoryPageActions extends Environment {
 
@@ -25,7 +24,7 @@ public class AccessoryPageActions extends Environment {
 	static JavascriptExecutor js = (JavascriptExecutor) driver;
 	static int totalcount = 0;
 
-	public static void Elementdisplayvalidation(String Tabname) {
+	public static void Elementdisplayvalidation(String Tabname) throws IOException, InterruptedException {
 		System.out.println(" ");
 
 		System.out.println("Accessory_Page_Validation");
@@ -40,12 +39,14 @@ public class AccessoryPageActions extends Environment {
 							+ pageobjects.AccessoryPage.AccessoryFilterTab.getText());
 					log.debug("The Filter Tab is Present on the AccesoryPage and the Text is :"
 							+ pageobjects.AccessoryPage.AccessoryFilterTab.getText());
+					Screenshots.captureScreenshot();
 
 				} else {
 					System.out.println("The  Filter Tab is not Present on the AccessoryPage and the Text is :"
 							+ pageobjects.AccessoryPage.AccessoryFilterTab.getText());
 					log.debug("The  Filter Tab is not Present on the AccessoryPage and the Text is :"
 							+ pageobjects.AccessoryPage.AccessoryFilterTab.getText());
+					Screenshots.captureScreenshot();
 
 				}
 
@@ -56,11 +57,13 @@ public class AccessoryPageActions extends Environment {
 							+ pageobjects.AccessoryPage.AccessorySortTab.getText());
 					log.debug("The Sort Tab is Present on the AccessoryPage and the Text is :"
 							+ pageobjects.AccessoryPage.AccessorySortTab.getText());
+					Screenshots.captureScreenshot();
 				} else {
 					System.out.println("The  Sort Tab is not Present on the AccessoryPage and the Text is :"
 							+ pageobjects.AccessoryPage.AccessorySortTab.getText());
 					log.debug("The  Sort Tab is not Present on the AccessoryPage and the Text is :"
 							+ pageobjects.AccessoryPage.AccessorySortTab.getText());
+					Screenshots.captureScreenshot();
 				}
 				break;
 
@@ -72,7 +75,7 @@ public class AccessoryPageActions extends Environment {
 
 	// this method used to perform click action on the Accessory Page
 
-	public static void ElementClickAction(String elementname) {
+	public static void ElementClickAction(String elementname) throws IOException, InterruptedException {
 		// TODO Auto-generated method stub
 		System.out.println(" ");
 
@@ -89,13 +92,13 @@ public class AccessoryPageActions extends Environment {
 				break;
 
 			}
-
+			Screenshots.captureScreenshot();
 		}
 	}
 
 	// This Method is used to select Accessory from the accessory listing page
 
-	public static void SelectAnyAccessory(String elementName) {
+	public static void SelectAnyAccessory(String elementName) throws IOException, InterruptedException {
 
 		JavascriptExecutor executor = (JavascriptExecutor) driver;
 		executor.executeScript("arguments[0].click();", pageobjects.AccessoryPage.ViewAllProductsOnOnePage);
@@ -161,15 +164,15 @@ public class AccessoryPageActions extends Environment {
 			pageobjects.AccessoryPage.SamsungS8PlusOriginalLEDCover.click();
 			log.debug("Samsung S8 Plus Original LED Cover Selected");
 		}
+		Screenshots.captureScreenshot();
 	}
 	/*
 	 * Below has been modified as per the new ui layout, new function has been
-	 * written which is below, so please refer to this only if its necessary
-	 * else follow "selectAnyAccessoryLimit()" instead of
-	 * "selectAnyAccessoryLimit_old"
+	 * written which is below, so please refer to this only if its necessary else
+	 * follow "selectAnyAccessoryLimit()" instead of "selectAnyAccessoryLimit_old"
 	 */
 
-	public static void selectAnyAccessoryLimit_old() throws InterruptedException {
+	public static void selectAnyAccessoryLimit_old() throws InterruptedException, IOException {
 		// TODO Auto-generated method stub
 
 		try {
@@ -181,6 +184,7 @@ public class AccessoryPageActions extends Environment {
 				pageobjects.NonConnectedDeviceDetailsPage.AddtoBasket.click();
 				// System.out.println("Value of i is "+i );
 			}
+			Screenshots.captureScreenshot();
 
 		} catch (org.openqa.selenium.StaleElementReferenceException ex) {
 			log.debug("Exception in finding value");
@@ -192,11 +196,12 @@ public class AccessoryPageActions extends Environment {
 				pageobjects.NonConnectedDeviceDetailsPage.AddtoBasket.click();
 				Thread.sleep(2000);
 			}
+			Screenshots.captureScreenshot();
 		}
 
 	}
 
-	public static void selectAnyAccessoryLimit() throws InterruptedException {
+	public static void selectAnyAccessoryLimit() throws InterruptedException, IOException {
 
 		try {
 			// Below will give status like in stock / out of stock etc
@@ -224,6 +229,7 @@ public class AccessoryPageActions extends Environment {
 			} else {
 				driver.navigate().back();
 			}
+			Screenshots.captureScreenshot();
 
 		} catch (Exception e) {
 			WebElement DeviceDetailsQuantity = driver.findElement(
@@ -241,10 +247,12 @@ public class AccessoryPageActions extends Environment {
 			// BasketQuantityvalue);
 			Assert.assertEquals("2", BasketQuantityvalue);
 
+			Screenshots.captureScreenshot();
+
 		}
 	}
 
-	public static void UserSpecifiedAccessoryLimit(String Limit) throws InterruptedException {
+	public static void UserSpecifiedAccessoryLimit(String Limit) throws InterruptedException, IOException {
 
 		try {
 			// Below will give status like in stock / out of stock etc
@@ -272,6 +280,7 @@ public class AccessoryPageActions extends Environment {
 			} else {
 				driver.navigate().back();
 			}
+			Screenshots.captureScreenshot();
 
 		} catch (Exception e) {
 			WebElement DeviceDetailsQuantity = driver.findElement(
@@ -289,27 +298,31 @@ public class AccessoryPageActions extends Environment {
 			// BasketQuantityvalue);
 			// Assert.assertEquals(Limit, BasketQuantityvalue);
 
+			Screenshots.captureScreenshot();
+
 		}
 	}
 
-	public static void continueShopping() throws InterruptedException {
+	public static void continueShopping() throws InterruptedException, IOException {
 		log.debug("Opening continueShopping function");
 		try {
 
 			pageobjects.AccessoryPage.ContinueShoppingLink.click();
 			log.debug("Clicked on the Continue Shopping link successfully");
+			Screenshots.captureScreenshot();
 		}
 
 		catch (Exception e) {
 			log.debug("Failed to click on the Continue Shppoing link " + e.getMessage() + "");
+			Screenshots.captureScreenshot();
 		}
 	}
 
 	/*
 	 * public static void verifyNonConnectedDeviceAddedToBasketBefore() throws
 	 * InterruptedException {
-	 * log.debug("Opening verifyNonConnectedDeviceAddedToBasketBefore function"
-	 * ); String AccessoryName = ""; String FitnessTrackerName = ""; String
+	 * log.debug("Opening verifyNonConnectedDeviceAddedToBasketBefore function" );
+	 * String AccessoryName = ""; String FitnessTrackerName = ""; String
 	 * SmartWatchName = "";
 	 * 
 	 * try { AccessoryName =
@@ -336,8 +349,7 @@ public class AccessoryPageActions extends Environment {
 	 * + e.getMessage() + ""); System.out.
 	 * println("Fail: Nonconnected device is not present in the Basket section before phone selection "
 	 * + e.getMessage() + "");
-	 * Assert.fail("Non Connected device is not present in the Basket section");
-	 * } }
+	 * Assert.fail("Non Connected device is not present in the Basket section"); } }
 	 * 
 	 * public static void
 	 * verifyNonConnectedDeviceRetainedInBasketAfterPhoneSelection() throws
@@ -345,11 +357,11 @@ public class AccessoryPageActions extends Environment {
 	 * debug("Opening verifyNonConnectedDeviceRetainedInBasketAfterPhoneSelection function"
 	 * ); System.out.
 	 * println("Opening verifyNonConnectedDeviceRetainedInBasketAfterPhoneSelection function"
-	 * ); String AccessoryName_Before = ""; String FitnessTrackerName_Before =
-	 * ""; String SmartWatchName_Before = "";
+	 * ); String AccessoryName_Before = ""; String FitnessTrackerName_Before = "";
+	 * String SmartWatchName_Before = "";
 	 * 
-	 * String AccessoryName_After = ""; String FitnessTrackerName_After = "";
-	 * String SmartWatchName_After = "";
+	 * String AccessoryName_After = ""; String FitnessTrackerName_After = ""; String
+	 * SmartWatchName_After = "";
 	 * 
 	 * String RunTimeFilePath = System.getProperty("user.dir") +
 	 * "\\Configurations\\Properties\\Run.properties";
@@ -394,11 +406,9 @@ public class AccessoryPageActions extends Environment {
 	 * println("Assertion Passed: SmartWatch is present in the basket page after phone selection"
 	 * );
 	 * 
-	 * log.
-	 * debug("successfully verified the basket section after phone selection");
+	 * log. debug("successfully verified the basket section after phone selection");
 	 * System.out.
-	 * println("successfully verified the basket section after phone selection"
-	 * ); }
+	 * println("successfully verified the basket section after phone selection" ); }
 	 * 
 	 * catch (AssertionError e) {
 	 * 
@@ -412,8 +422,8 @@ public class AccessoryPageActions extends Environment {
 	/*
 	 * public static void verifyNonConnectedDeviceAddedToBasketBefore() throws
 	 * InterruptedException {
-	 * log.debug("Opening verifyNonConnectedDeviceAddedToBasketBefore function"
-	 * ); String AccessoryName = ""; String FitnessTrackerName = ""; String
+	 * log.debug("Opening verifyNonConnectedDeviceAddedToBasketBefore function" );
+	 * String AccessoryName = ""; String FitnessTrackerName = ""; String
 	 * SmartWatchName = "";
 	 * 
 	 * try { List<WebElement> AccessoryBeofrePhoneSelection = driver
@@ -421,8 +431,8 @@ public class AccessoryPageActions extends Environment {
 	 * "//*[@id='shopApp']/div[4]/div/div/div[1]/div[2]/ul/li[3]/section/h3/span"
 	 * )); if (AccessoryBeofrePhoneSelection.size() > 0) {
 	 * 
-	 * if (pageobjects.AccessoryPage.AccesoryBeforePhoneSelection.isDisplayed())
-	 * { AccessoryName =
+	 * if (pageobjects.AccessoryPage.AccesoryBeforePhoneSelection.isDisplayed()) {
+	 * AccessoryName =
 	 * pageobjects.AccessoryPage.AccesoryBeforePhoneSelection.getText();
 	 * setRuntimeProperty.setProperty("Accessory", AccessoryName);
 	 * System.out.println("Accessory is: " + AccessoryName); } }
@@ -431,8 +441,8 @@ public class AccessoryPageActions extends Environment {
 	 * .findElements(By.xpath(
 	 * "//*[@id='shopApp']/div[4]/div/div/div[1]/div[2]/ul/li[1]/section/h3/span"
 	 * )); if (FitnessTrackerBeofrePhoneSelection.size() > 0) { if
-	 * (pageobjects.AccessoryPage.FitnessTrackerBeforePhoneSelection.isDisplayed
-	 * ()) { FitnessTrackerName =
+	 * (pageobjects.AccessoryPage.FitnessTrackerBeforePhoneSelection.isDisplayed ())
+	 * { FitnessTrackerName =
 	 * pageobjects.AccessoryPage.FitnessTrackerBeforePhoneSelection.getText();
 	 * setRuntimeProperty.setProperty("FitnessTracker", FitnessTrackerName);
 	 * System.out.println("FitnessTracker is: " + FitnessTrackerName); } }
@@ -441,8 +451,8 @@ public class AccessoryPageActions extends Environment {
 	 * .findElements(By.xpath(
 	 * "//*[@id='shopApp']/div[4]/div/div/div[1]/div[2]/ul/li[2]/section/h3/span"
 	 * )); if (SmartWatchBeofrePhoneSelection.size() > 0) { if
-	 * (pageobjects.AccessoryPage.SmartWatchBeforePhoneSelection.isDisplayed())
-	 * { SmartWatchName =
+	 * (pageobjects.AccessoryPage.SmartWatchBeforePhoneSelection.isDisplayed()) {
+	 * SmartWatchName =
 	 * pageobjects.AccessoryPage.SmartWatchBeforePhoneSelection.getText();
 	 * setRuntimeProperty.setProperty("SmartWatch", SmartWatchName);
 	 * System.out.println("SmartWatch is: " + SmartWatchName); } }
@@ -460,11 +470,10 @@ public class AccessoryPageActions extends Environment {
 	 * + e.getMessage() + ""); System.out.
 	 * println("Fail: Nonconnected device is not present in the Basket section before phone selection "
 	 * + e.getMessage() + "");
-	 * Assert.fail("Non Connected device is not present in the Basket section");
-	 * } }
+	 * Assert.fail("Non Connected device is not present in the Basket section"); } }
 	 */
 
-	public static void verifyNonConnectedDeviceAddedToBasketBefore() throws InterruptedException {
+	public static void verifyNonConnectedDeviceAddedToBasketBefore() throws InterruptedException, IOException {
 		log.debug("Opening verifyNonConnectedDeviceAddedToBasketBefore function");
 		String AccessoryName = "";
 		String FitnessTrackerName = "";
@@ -507,6 +516,7 @@ public class AccessoryPageActions extends Environment {
 					"Successfully verified that Non connected devices are added to the basket before phone selection");
 			System.out.println(
 					"Successfully verified that Non connected devices are added to the basket before phone selection");
+			Screenshots.captureScreenshot();
 		}
 
 		catch (Exception e) {
@@ -516,13 +526,13 @@ public class AccessoryPageActions extends Environment {
 			System.out.println("Fail: Nonconnected device is not present in the Basket section before phone selection "
 					+ e.getMessage() + "");
 			Assert.fail("Non Connected device is not present in the Basket section");
+			Screenshots.captureScreenshot();
 		}
 	}
 
 	/*
 	 * public static void removeItemsFromBasketBasedOnAdditionOfItems() {
-	 * System.out.println("inside Remove items function"); int TotalQtyInBasket
-	 * = 0;
+	 * System.out.println("inside Remove items function"); int TotalQtyInBasket = 0;
 	 * 
 	 * TotalQtyInBasket =
 	 * (FitnessTrackerPageActions.UserSpecifiedFitnessTrackerLimit +
@@ -530,15 +540,17 @@ public class AccessoryPageActions extends Environment {
 	 * PAYMandPAYGTariffAndExtrasPageActions.SelectedAccessoryCount);
 	 * System.out.println("Total qty in basket is " + TotalQtyInBasket); if
 	 * (TotalQtyInBasket > 12) {
-	 * driver.findElement(By.xpath("(//a[contains(., 'Remove')])[1]")).click();
-	 * } }
+	 * driver.findElement(By.xpath("(//a[contains(., 'Remove')])[1]")).click(); } }
 	 */
 
-	public static void calculateTotalQtyAddedInBasket() {
+	public static void calculateTotalQtyAddedInBasket() throws IOException, InterruptedException {
 		count = UserSpecifiedFitnessTrackerLimit + UserSpecifiedAccessoryLimit;
 		System.out.println("Total Qty added for Fitness Tracker and Accessory is :" + count);
+		Screenshots.captureScreenshot();
 	}
-	public static void verifyNonConnectedDeviceRetainedInBasketAfterPhoneSelection() throws InterruptedException {
+
+	public static void verifyNonConnectedDeviceRetainedInBasketAfterPhoneSelection()
+			throws InterruptedException, IOException {
 		log.debug("Opening verifyNonConnectedDeviceRetainedInBasketAfterPhoneSelection function");
 		System.out.println("Opening verifyNonConnectedDeviceRetainedInBasketAfterPhoneSelection function");
 		String AccessoryName_Before = "";
@@ -578,9 +590,7 @@ public class AccessoryPageActions extends Environment {
 					/*
 					 * Assert.assertEquals(
 					 * "Assertion Failed: FitnessTracker is not present in the basket after phone selection"
-					 * ,
-					 * FitnessTrackerName_Before.equals(FitnessTrackerName_After
-					 * ));
+					 * , FitnessTrackerName_Before.equals(FitnessTrackerName_After ));
 					 */
 					Assert.assertTrue(FitnessTrackerName_Before.contains(FitnessTrackerName_After),
 							"Assertion Failed: FitnessTracker is not present in the basket page after phone selection");
@@ -612,6 +622,7 @@ public class AccessoryPageActions extends Environment {
 					System.out.println("successfully verified the basket section after phone selection");
 				}
 			}
+			Screenshots.captureScreenshot();
 
 		}
 
@@ -623,10 +634,11 @@ public class AccessoryPageActions extends Environment {
 			System.out.println(
 					"Assertion failed: Non Connected device is not present in the Basket section after phone selection"
 							+ e.getMessage() + "");
+			Screenshots.captureScreenshot();
 		}
 	}
 
-	public static void getTotalQtyInBasket() {
+	public static void getTotalQtyInBasket() throws IOException, InterruptedException {
 
 		int loop = 0;
 		String XpathQty = null;
@@ -646,6 +658,7 @@ public class AccessoryPageActions extends Environment {
 
 		}
 		System.out.println("Total Qty in Basket now is" + totalcount);
+		Screenshots.captureScreenshot();
 
 	}
 
@@ -680,25 +693,27 @@ public class AccessoryPageActions extends Environment {
 			if (checkoutbtnsize != 0) {
 				Assert.fail("Checkout button is present even when the total qty in basket is greater than 6");
 			} else {
-				System.out.println("Checkout button is not present since the total count is greater than 6 ->as expected");
+				System.out.println(
+						"Checkout button is not present since the total count is greater than 6 ->as expected");
 			}
 			clickOnRemoveButton();
 			Thread.sleep(15000);
 			clickOnRemoveButton();
-		}
-		else {
+		} else {
 			System.out.println("Total Qty is less than 6 so we will be able to proceed to checkout");
 		}
+		Screenshots.captureScreenshot();
 
 	}
 
-	public static void clickOnRemoveButton() {
+	public static void clickOnRemoveButton() throws IOException, InterruptedException {
 
 		pageobjects.BasketPage.RemoveButton.click();
 		System.out.println("Clicked on Remove button");
+		Screenshots.captureScreenshot();
 	}
 
-	public static void UserSpecifiedFitnessTrackerLimit(String Limit) throws InterruptedException {
+	public static void UserSpecifiedFitnessTrackerLimit(String Limit) throws InterruptedException, IOException {
 		// TODO Auto-generated method stub
 		try {
 			// Below will give status like in stock / out of stock etc
@@ -726,6 +741,7 @@ public class AccessoryPageActions extends Environment {
 			} else {
 				driver.navigate().back();
 			}
+			Screenshots.captureScreenshot();
 
 		} catch (Exception e) {
 			WebElement DeviceDetailsQuantity = driver.findElement(
@@ -741,6 +757,7 @@ public class AccessoryPageActions extends Environment {
 			String BasketQuantityvalue = BasketQuantity.getText();
 
 			Assert.assertEquals(Limit, BasketQuantityvalue);
+			Screenshots.captureScreenshot();
 
 		}
 

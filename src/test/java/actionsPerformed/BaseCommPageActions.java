@@ -1,5 +1,6 @@
 package actionsPerformed;
 
+import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URI;
 import java.util.ArrayList;
@@ -12,6 +13,7 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 
+import GlobalActions.Screenshots;
 import helpers.Environment;
 
 public class BaseCommPageActions extends Environment {
@@ -20,7 +22,7 @@ public class BaseCommPageActions extends Environment {
 	static List<String> NormalCost = new ArrayList<>();
 	static List<String> BasecommCost = new ArrayList<>();
 
-	public static void SelectBaseCommTariff(String elementName) {
+	public static void SelectBaseCommTariff(String elementName) throws IOException, InterruptedException {
 
 		if (elementName.contains("Random")) {
 			System.out.println("Selected Random Tariff");
@@ -28,9 +30,10 @@ public class BaseCommPageActions extends Environment {
 			pageobjects.BaseCommPage.RandomDevice.click();
 			log.debug("Selected Random Device");
 		}
+		Screenshots.captureScreenshot();
 	}
 
-	public static void checkIfiPadDevicesArePresent() {
+	public static void checkIfiPadDevicesArePresent() throws IOException, InterruptedException {
 
 		// List<WebElement> iPadDevices =
 		// pageobjects.BaseCommPage.iPadDevicesName;
@@ -45,33 +48,38 @@ public class BaseCommPageActions extends Environment {
 				Assert.fail("Devices other than iPad are also displayed");
 			}
 		}
+		Screenshots.captureScreenshot();
 	}
 
-	public static void clickOnOtherTablets() throws InterruptedException {
+	public static void clickOnOtherTablets() throws InterruptedException, IOException {
 		log.debug("clicking on Other Tablets Tab");
 		pageobjects.BaseCommPage.OtherTablets.click();
 		System.out.println("clicking on Other Tablets Tab");
 		Thread.sleep(20000);
+		Screenshots.captureScreenshot();
 	}
 
-	public static void clickOniPadTab() {
+	public static void clickOniPadTab() throws IOException, InterruptedException {
 		try {
 			log.debug("clicking on iPad Tab");
 			pageobjects.BaseCommPage.iPad.click();
 			Thread.sleep(20000);
+			Screenshots.captureScreenshot();
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			Assert.fail("Unable to click on ipad tab");
+			Screenshots.captureScreenshot();
 		}
 
 	}
 
-	public static void clickOnSortTab() {
+	public static void clickOnSortTab() throws IOException, InterruptedException {
 		log.debug("clicking on Sort Tab");
 		pageobjects.BaseCommPage.SortTab.click();
+		Screenshots.captureScreenshot();
 	}
 
-	public static void selectSortOption(String Sort) {
+	public static void selectSortOption(String Sort) throws IOException, InterruptedException {
 		log.debug("Selecting Sort option" + Sort);
 		if (Sort.equals("MonthlyHighToLow")) {
 			pageobjects.SortingAndFilter.MonthlyHighToLow.click();
@@ -109,15 +117,17 @@ public class BaseCommPageActions extends Environment {
 		if (Sort.equals("BrandZToA")) {
 			pageobjects.SortingAndFilter.BrandZToA.click();
 		}
+		Screenshots.captureScreenshot();
 
 	}
 
-	public static void clickOnResetSort() {
+	public static void clickOnResetSort() throws IOException, InterruptedException {
 		log.debug("clicking on Reset Sort");
 		pageobjects.SortingAndFilter.ResetSort.click();
+		Screenshots.captureScreenshot();
 	}
 
-	public static void CompareURL(String NewURL) throws MalformedURLException {
+	public static void CompareURL(String NewURL) throws IOException, InterruptedException {
 		System.out.println("Comparing URL");
 		// URL is reference , some instance which needs to be initialsed for
 
@@ -126,9 +136,10 @@ public class BaseCommPageActions extends Environment {
 		String FeatureURL = NewURL;
 		System.out.println("Feature url to compare is " + FeatureURL);
 		Assert.assertEquals(FeatureURL, URL);
+		Screenshots.captureScreenshot();
 	}
 
-	public static void VerifyIpadURL() throws MalformedURLException {
+	public static void VerifyIpadURL() throws IOException, InterruptedException {
 
 		System.out.println("Going to Verify content inside URL");
 		String currenturl = driver.getCurrentUrl();
@@ -146,9 +157,10 @@ public class BaseCommPageActions extends Environment {
 			Assert.fail("url is improper and doesnot have ipad appended in it");
 		}
 		Assert.assertEquals("ipad", subString);
+		Screenshots.captureScreenshot();
 	}
 
-	public static void VerifyTabletURL() throws MalformedURLException {
+	public static void VerifyTabletURL() throws IOException, InterruptedException {
 		System.out.println("Going to Verify content inside URL");
 		String currenturl = driver.getCurrentUrl();
 		System.out.println(currenturl);
@@ -165,6 +177,7 @@ public class BaseCommPageActions extends Environment {
 			Assert.fail("url is improper and doesnot have tablet appended in it");
 		}
 		Assert.assertEquals("tablet", subString);
+		Screenshots.captureScreenshot();
 	}
 
 	/*
@@ -241,10 +254,11 @@ public class BaseCommPageActions extends Environment {
 
 		Assert.assertEquals(title, "Tariff and extras");
 		System.out.println("End of Verify Page function");
+		Screenshots.captureScreenshot();
 
 	}
 
-	public static void VerifyRibbon(String device) {
+	public static void VerifyRibbon(String device) throws IOException, InterruptedException {
 		// TODO Auto-generated method stub
 		System.out.println("Going to Verify promotion ribbon");
 		int k = 0;
@@ -271,31 +285,31 @@ public class BaseCommPageActions extends Environment {
 				System.out.println("Device is not matched");
 			}
 		}
+		Screenshots.captureScreenshot();
 	}
 
 	/*
-	 * public static void VerifyPriceChangeuponCapacity() { // TODO
-	 * Auto-generated method stub System.out.
+	 * public static void VerifyPriceChangeuponCapacity() { // TODO Auto-generated
+	 * method stub System.out.
 	 * println("Going to Verify whether price changes w.r.t. capacity"); //
 	 * WebElement capacity = //
-	 * driver.findElement(By.xpath("//*[@data-qa-device-model-family='iPad //
-	 * mini 3']/div[1]/div[2]/div[1]/div[2]/div[2]/select[@id='memory']"));
-	 * WebElement capacity = pageobjects.BaseCommPage.CapacityipadAir2;
+	 * driver.findElement(By.xpath("//*[@data-qa-device-model-family='iPad // mini
+	 * 3']/div[1]/div[2]/div[1]/div[2]/div[2]/select[@id='memory']")); WebElement
+	 * capacity = pageobjects.BaseCommPage.CapacityipadAir2;
 	 * 
 	 * JavascriptExecutor js = (JavascriptExecutor) driver;
 	 * js.executeScript("arguments[0].setAttribute('style', 'display:block;')",
-	 * capacity); if (capacity.isDisplayed()) { List<WebElement> elementCount =
-	 * new Select(capacity).getOptions(); //
-	 * System.out.println("elementCount"+elementCount); if (elementCount.size()
-	 * <= 1) { Assert.
-	 * fail("There are no more than 1 option available for capacity dropdown");
-	 * } } new Select(capacity).selectByVisibleText("128GB"); String price1 =
-	 * pageobjects.BaseCommPage.PriceiPadAir2.getText();
-	 * System.out.println(price1);
+	 * capacity); if (capacity.isDisplayed()) { List<WebElement> elementCount = new
+	 * Select(capacity).getOptions(); //
+	 * System.out.println("elementCount"+elementCount); if (elementCount.size() <=
+	 * 1) { Assert.
+	 * fail("There are no more than 1 option available for capacity dropdown"); } }
+	 * new Select(capacity).selectByVisibleText("128GB"); String price1 =
+	 * pageobjects.BaseCommPage.PriceiPadAir2.getText(); System.out.println(price1);
 	 * System.out.println("Now the second line is ..... "); new
 	 * Select(capacity).selectByVisibleText("16GB"); String price2 =
-	 * pageobjects.BaseCommPage.PriceiPadAir2.getText();
-	 * System.out.println(price2); Assert.assertNotSame(price2, price1);
+	 * pageobjects.BaseCommPage.PriceiPadAir2.getText(); System.out.println(price2);
+	 * Assert.assertNotSame(price2, price1);
 	 * 
 	 * }
 	 */
@@ -365,9 +379,10 @@ public class BaseCommPageActions extends Environment {
 		System.out.println("Price after changing the capacity is" + price2);
 		Thread.sleep(3000);
 		Assert.assertNotSame(price2, price1);
+		Screenshots.captureScreenshot();
 	}
 
-	public static void verifyTariffType(String flow) {
+	public static void verifyTariffType(String flow) throws IOException, InterruptedException {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 
 		List<WebElement> PayInFull = driver.findElements(By.id("link-pay-for-your-device"));
@@ -416,7 +431,7 @@ public class BaseCommPageActions extends Environment {
 				NormalCost.add(NormalUpfrontCost.get(i).concat(NormalMonthlyCost.get(i)));
 				System.out.println("Normal cost " + NormalCost.get(i));
 			}
-
+			Screenshots.captureScreenshot();
 		}
 
 		if (flow.equals("Basecomm")) {
@@ -458,6 +473,7 @@ public class BaseCommPageActions extends Environment {
 				BasecommCost.add(BasecommUpfrontCost.get(i).concat(BasecommMonthlyCost.get(i)));
 				System.out.println("Basecomm cost " + BasecommCost.get(i));
 			}
+			Screenshots.captureScreenshot();
 
 		}
 		if (flow.equals("Check")) {
@@ -472,10 +488,11 @@ public class BaseCommPageActions extends Environment {
 					}
 				}
 			}
+			Screenshots.captureScreenshot();
 		}
 	}
 
-	public static void verifyTariffTypeMBB(String device, String flow) {
+	public static void verifyTariffTypeMBB(String device, String flow) throws IOException, InterruptedException {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		List<String> NormalUpfrontCost = new ArrayList<>();
 		List<String> NormalMonthlyCost = new ArrayList<>();
@@ -520,7 +537,7 @@ public class BaseCommPageActions extends Environment {
 				NormalCost.add(NormalUpfrontCost.get(i).concat(NormalMonthlyCost.get(i)));
 				System.out.println("Normal cost " + NormalCost.get(i));
 			}
-
+			Screenshots.captureScreenshot();
 		}
 
 		if (flow.equals("Basecomm"))
@@ -548,6 +565,7 @@ public class BaseCommPageActions extends Environment {
 				}
 				BasecommCost.add(UpfrontCostMBB.getText().concat(MonthlyCostMBB.getText()));
 			}
+			Screenshots.captureScreenshot();
 		}
 		if (flow.equals("Check")) {
 			System.out.println("Size  " + NormalCost.size() + '\n' + BasecommCost.size());
@@ -561,10 +579,11 @@ public class BaseCommPageActions extends Environment {
 					}
 				}
 			}
+			Screenshots.captureScreenshot();
 		}
 	}
 
-	public static void checkSeeDeviceDetailsPopUp(String device) throws InterruptedException {
+	public static void checkSeeDeviceDetailsPopUp(String device) throws InterruptedException, IOException {
 		device = trimEnd(device);
 
 		List<WebElement> TabletDevicesName = pageobjects.BaseCommPage.TabletDevicesName;
@@ -603,10 +622,8 @@ public class BaseCommPageActions extends Environment {
 					PoundsElement = driver.findElements(By.xpath(d));
 					PenseElement = driver.findElements(By.xpath(e));
 					/*
-					 * System.out.println("Pounds List size :" +
-					 * PoundsElement.size());
-					 * System.out.println("Pense List size :" +
-					 * PenseElement.size());
+					 * System.out.println("Pounds List size :" + PoundsElement.size());
+					 * System.out.println("Pense List size :" + PenseElement.size());
 					 */
 
 					SeeDeviceDetailsLink = driver.findElement(By.xpath(c));
@@ -680,6 +697,7 @@ public class BaseCommPageActions extends Environment {
 
 			}
 		}
+		Screenshots.captureScreenshot();
 	}
 
 	public static String trimEnd(String s) {
@@ -695,7 +713,8 @@ public class BaseCommPageActions extends Environment {
 			return s.substring(0, i);
 	}
 
-	public static void checkExpDevAndDetails(String device, String color, String capacity, String stockmessage) {
+	public static void checkExpDevAndDetails(String device, String color, String capacity, String stockmessage)
+			throws IOException, InterruptedException {
 		System.out.println("Inside checkExpDevAndDetails function");
 		System.out.println(device + color + capacity + stockmessage);
 		int k = 0;
@@ -751,10 +770,11 @@ public class BaseCommPageActions extends Environment {
 				}
 			}
 		}
+		Screenshots.captureScreenshot();
 	}
 
 	public static void checkExpDevAndDetailsForComingSoonDevice(String device, String color, String capacity,
-			String stockmessage) {
+			String stockmessage) throws IOException, InterruptedException {
 		System.out.println("Inside checkExpDevAndDetails function");
 		System.out.println(device + color + capacity + stockmessage);
 		int k = 0;
@@ -832,6 +852,7 @@ public class BaseCommPageActions extends Environment {
 
 			}
 		}
+		Screenshots.captureScreenshot();
 	}
 
 	public static void selectNewDevice(String color, String capacity, String device) throws Exception {
@@ -861,6 +882,7 @@ public class BaseCommPageActions extends Environment {
 
 			}
 		}
+		Screenshots.captureScreenshot();
 	}
 
 	public static void BuynowwithDevice(String device) throws MalformedURLException, Exception {
@@ -889,35 +911,36 @@ public class BaseCommPageActions extends Environment {
 				js.executeScript("arguments[0].click();", BuyNowButton);
 			}
 		}
+		Screenshots.captureScreenshot();
 	}
 
-	public static void isPayAsUGoTabDisplayed() {
+	public static void isPayAsUGoTabDisplayed() throws IOException, InterruptedException {
 		log.debug("checking whether Pay As U Go tab is displayed");
 		List<WebElement> PayAsYouGo = driver.findElements(By.xpath("(//a[@href='?contractType=payasyougo'])"));
 		if (PayAsYouGo.size() > 0) {
 			Assert.fail("Pay As U Go tab is displayed");
 		}
+		Screenshots.captureScreenshot();
 	}
 
 	/*
 	 * public static void checkImgSrcBasecommPage(String devicename, String
 	 * capacity, String color) { System.out.
 	 * println("checking whether new image is as per the selected color");
-	 * JavascriptExecutor js = (JavascriptExecutor) driver; String color1 =
-	 * null, color2 = null, colorname = null, capacity_color = null,
-	 * capacityname = null; List<WebElement> images =
-	 * pageobjects.BaseCommPage.ImgSrc; List<WebElement> iPadDevicesName =
-	 * pageobjects.BaseCommPage.iPadDevicesName;
+	 * JavascriptExecutor js = (JavascriptExecutor) driver; String color1 = null,
+	 * color2 = null, colorname = null, capacity_color = null, capacityname = null;
+	 * List<WebElement> images = pageobjects.BaseCommPage.ImgSrc; List<WebElement>
+	 * iPadDevicesName = pageobjects.BaseCommPage.iPadDevicesName;
 	 * 
-	 * WebElement colornameelement = null; WebElement element1 = null;
-	 * WebElement element2 = null; WebElement capacitynameelement = null; String
-	 * t = null, u = null; int k = 0, z = 0;
+	 * WebElement colornameelement = null; WebElement element1 = null; WebElement
+	 * element2 = null; WebElement capacitynameelement = null; String t = null, u =
+	 * null; int k = 0, z = 0;
 	 * 
 	 * for (int i = 0; i < iPadDevicesName.size(); i++) {
 	 * System.out.println(iPadDevicesName.get(i).getText()); if
 	 * (iPadDevicesName.get(i).getText().equals(devicename)) {
-	 * System.out.println("device name matches for checking new image"); k = i +
-	 * 1; String c = "(//select[@id='colour'])[" + k + "]";
+	 * System.out.println("device name matches for checking new image"); k = i + 1;
+	 * String c = "(//select[@id='colour'])[" + k + "]";
 	 * 
 	 * WebElement colordropdown = driver.findElement(By.xpath(c));
 	 * js.executeScript("arguments[0].setAttribute('style', 'display:block;')",
@@ -927,20 +950,20 @@ public class BaseCommPageActions extends Environment {
 	 * (!color.equalsIgnoreCase(colorname)) {
 	 * Assert.fail("color displayed is not the selected color"); }
 	 * 
-	 * String d = "(//select[@id='memory'])[" + k + "]"; WebElement
-	 * capacitydropdown = driver.findElement(By.xpath(d));
+	 * String d = "(//select[@id='memory'])[" + k + "]"; WebElement capacitydropdown
+	 * = driver.findElement(By.xpath(d));
 	 * js.executeScript("arguments[0].setAttribute('style', 'display:block;')",
 	 * capacitydropdown); capacitynameelement = new
 	 * Select(capacitydropdown).getFirstSelectedOption(); capacityname =
 	 * capacitynameelement.getText().toLowerCase(); capacity =
-	 * capacity.toLowerCase(); System.out.println("passing capacity : " +
-	 * capacity); System.out.println("selected capacity : " + capacityname);
+	 * capacity.toLowerCase(); System.out.println("passing capacity : " + capacity);
+	 * System.out.println("selected capacity : " + capacityname);
 	 * 
 	 * if (!capacity.equalsIgnoreCase(capacityname)) {
 	 * Assert.fail("capacity displayed is not the selected capacity"); }
 	 * 
-	 * if (colorname.contains(" ")) { String parts[] = colorname.split(" ");
-	 * color1 = parts[0] + "_" + parts[1]; color2 = parts[0] + "-" + parts[1];
+	 * if (colorname.contains(" ")) { String parts[] = colorname.split(" "); color1
+	 * = parts[0] + "_" + parts[1]; color2 = parts[0] + "-" + parts[1];
 	 * capacity_color = capacityname + "_" + color1; } else { capacity_color =
 	 * capacityname + "_" + colorname; } System.out.println("Capacity_color" +
 	 * capacity_color);
@@ -955,12 +978,12 @@ public class BaseCommPageActions extends Environment {
 	 * System.out.println("Device name matches"); if
 	 * (images.get(i).getAttribute("src").contains(capacity_color)) {
 	 * System.out.println(images.get(z).getAttribute("src"));
-	 * System.out.println("Image is as per selected color and capacity"); } else
-	 * { Assert.fail("New image is not as per selected color and capacity"); } }
-	 * } }
+	 * System.out.println("Image is as per selected color and capacity"); } else {
+	 * Assert.fail("New image is not as per selected color and capacity"); } } } }
 	 */
 
-	public static void checkImgSrcBasecommPage(String devicename, String capacity, String color) {
+	public static void checkImgSrcBasecommPage(String devicename, String capacity, String color)
+			throws IOException, InterruptedException {
 		System.out.println("checking whether new image is as per the selected color");
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		String color1 = null, color2 = null, colorname = null, capacity_color = null, capacity_color1 = null,
@@ -1008,13 +1031,17 @@ public class BaseCommPageActions extends Environment {
 					String parts[] = colorname.split(" ");
 					color1 = parts[0] + "_" + parts[1];
 					color2 = parts[0] + "-" + parts[1];
-					/*capacity_color1 = capacityname + "_" + color1;
-					capacity_color2 = capacityname + "_" + color2;*/
+					/*
+					 * capacity_color1 = capacityname + "_" + color1; capacity_color2 = capacityname
+					 * + "_" + color2;
+					 */
 				} else {
 					capacity_color = capacityname + "_" + colorname;
 				}
-				/*System.out.println("Capacity_color1" + capacity_color1);
-				System.out.println("Capacity_color2" + capacity_color2);*/
+				/*
+				 * System.out.println("Capacity_color1" + capacity_color1);
+				 * System.out.println("Capacity_color2" + capacity_color2);
+				 */
 				System.out.println("Capacity_color" + capacity_color);
 				System.out.println("color name " + colorname);
 
@@ -1042,9 +1069,11 @@ public class BaseCommPageActions extends Environment {
 				}
 			}
 		}
+		Screenshots.captureScreenshot();
 	}
 
-	public static void checkImgSrcTEPage(String devicename, String capacity, String color) {
+	public static void checkImgSrcTEPage(String devicename, String capacity, String color)
+			throws IOException, InterruptedException {
 		String color1 = null, color2 = null, colorname = null, capacity_color = null, capacity_color1 = null,
 				capacity_color2 = null, capacityname = null;
 		WebElement image = pageobjects.BaseCommPage.ImgSrcTEpages;
@@ -1103,10 +1132,11 @@ public class BaseCommPageActions extends Environment {
 			}
 
 		}
+		Screenshots.captureScreenshot();
 
 	}
 
-	public static void checkRecommendedTariffIsAtFirstTile() {
+	public static void checkRecommendedTariffIsAtFirstTile() throws IOException, InterruptedException {
 
 		List<WebElement> tariffs = pageobjects.BaseCommPage.TariffTile;
 
@@ -1114,11 +1144,13 @@ public class BaseCommPageActions extends Environment {
 			if (tariffs.get(0).getText().startsWith("Our recommended tariff")) {
 				log.debug("'Our recommended tariff' is at the first tile");
 			}
-		} else
+		} else {
 			log.debug("Tariff Tile is not present");
+		}
+		Screenshots.captureScreenshot();
 	}
 
-	public static void checkContentsOfBaseCommPage() {
+	public static void checkContentsOfBaseCommPage() throws IOException, InterruptedException {
 		List<WebElement> panellist = driver.findElements(By.xpath("//div[@id='panel']//div"));
 		WebElement BannerDescription = driver.findElement(By.xpath("//div[@class='default-content-container']"));
 
@@ -1158,15 +1190,18 @@ public class BaseCommPageActions extends Environment {
 				System.out.println("Header carousel is at the correct position");
 			}
 		}
+		Screenshots.captureScreenshot();
 	}
 
-	public static void checkUserNavigatedTEPage() {
+	public static void checkUserNavigatedTEPage() throws IOException, InterruptedException {
 
 		System.out.println("Title of the page is  " + driver.getTitle());
 		if (driver.getTitle().contains("Tariffs And Extras")) {
 			log.debug("user is navigated back to Tariffs And Extras page");
-		} else
+		} else {
 			Assert.fail("User is not at Tariffs And Extras page");
+		}
+		Screenshots.captureScreenshot();
 
 	}
 
@@ -1175,12 +1210,13 @@ public class BaseCommPageActions extends Environment {
 		System.out.println("Title of the page is :" + driver.getTitle());
 		if (driver.getTitle().contains("O2 | MyOffers")) {
 			System.out.println("user is navigated back to Basecomm Page");
-		} else
+		} else {
 			Assert.fail("User is not at Basecomm page");
-
+		}
+		Screenshots.captureScreenshot();
 	}
 
-	public static void checkIfTabletDevicesArePresent() {
+	public static void checkIfTabletDevicesArePresent() throws IOException, InterruptedException {
 
 		List<WebElement> OtherTabletDevices = pageobjects.BaseCommPage.TabletDevicesName;
 
@@ -1193,6 +1229,7 @@ public class BaseCommPageActions extends Environment {
 						"Tile position (" + j + ")" + " and the device name is " + OtherTabletDevices.get(i).getText());
 			}
 		}
+		Screenshots.captureScreenshot();
 	}
 
 }

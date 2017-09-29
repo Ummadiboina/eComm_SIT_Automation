@@ -60,6 +60,7 @@ public class MouseHoverAction extends Environment {
 				log.debug("Moved Mouse to somewhere side of page");
 
 				Worksfine = true;
+				Screenshots.captureScreenshot();
 
 			} catch (ElementNotVisibleException e) {
 				// check if popup is present, if yes, handle it.
@@ -387,6 +388,7 @@ public class MouseHoverAction extends Environment {
 				log.debug("Moved Mouse to somewhere side of page");
 
 				Worksfine = true;
+				Screenshots.captureScreenshot();
 
 			} catch (ElementNotVisibleException e) {
 				// check if popup is present, if yes, handle it.
@@ -402,6 +404,7 @@ public class MouseHoverAction extends Environment {
 				log.debug("Exiting the Survey");
 				Environment.driver.switchTo().defaultContent();
 				Thread.sleep(3000);
+				Screenshots.captureScreenshot();
 
 			}
 
@@ -439,6 +442,7 @@ public class MouseHoverAction extends Environment {
 				log.debug("Moved Mouse to somewhere side of page");
 
 				Worksfine = true;
+				Screenshots.captureScreenshot();
 
 			} catch (NoSuchElementException e) {
 				// check if popup is present, if yes, handle it.
@@ -454,6 +458,7 @@ public class MouseHoverAction extends Environment {
 				log.debug("Exiting the Survey");
 				Environment.driver.switchTo().defaultContent();
 				Thread.sleep(3000);
+				Screenshots.captureScreenshot();
 
 			}
 
@@ -490,6 +495,7 @@ public class MouseHoverAction extends Environment {
 				log.debug("Moved Mouse to somewhere side of page");
 
 				Worksfine = true;
+				Screenshots.captureScreenshot();
 
 			} catch (NoSuchElementException e) {
 				// check if popup is present, if yes, handle it.
@@ -544,6 +550,7 @@ public class MouseHoverAction extends Environment {
 				log.debug("Moved Mouse to somewhere side of page");
 
 				Worksfine = true;
+				Screenshots.captureScreenshot();
 
 			} catch (NoSuchElementException e) {
 				// check if popup is present, if yes, handle it.
@@ -596,6 +603,7 @@ public class MouseHoverAction extends Environment {
 				log.debug("Moved Mouse to somewhere side of page");
 
 				Worksfine = true;
+				Screenshots.captureScreenshot();
 
 			} catch (NoSuchElementException e) {
 				// check if popup is present, if yes, handle it.
@@ -646,6 +654,7 @@ public class MouseHoverAction extends Environment {
 				robot2.mouseMove(coordinates2.getX(), coordinates.getY() + 300);
 				log.debug("Moved Mouse to somewhere side of page");
 				Worksfine = true;
+				Screenshots.captureScreenshot();
 
 			} catch (ElementNotVisibleException e) {
 				// check if popup is present, if yes, handle it.
@@ -702,6 +711,7 @@ public class MouseHoverAction extends Environment {
 				log.debug("Moved Mouse to somewhere side of page");
 
 				Worksfine = true;
+				Screenshots.captureScreenshot();
 
 			} catch (ElementNotVisibleException e) {
 				// check if popup is present, if yes, handle it.
@@ -712,6 +722,7 @@ public class MouseHoverAction extends Environment {
 				System.out.println("*******Saying no to survey*******");
 				System.out.println("*********Existing the popups present in iframe***************");
 				Environment.driver.switchTo().defaultContent();
+				Screenshots.captureScreenshot();
 
 			}
 
@@ -749,6 +760,7 @@ public class MouseHoverAction extends Environment {
 				robot2.mouseMove(coordinates2.getX(), coordinates.getY() + 300);
 				log.debug("Moved Mouse to somewhere side of page");
 				Worksfine = true;
+				Screenshots.captureScreenshot();
 
 			} catch (ElementNotVisibleException e) {
 				// check if popup is present, if yes, handle it.
@@ -764,6 +776,7 @@ public class MouseHoverAction extends Environment {
 				log.debug("Exiting the Survey");
 				Environment.driver.switchTo().defaultContent();
 				Thread.sleep(3000);
+				Screenshots.captureScreenshot();
 
 			}
 
@@ -794,6 +807,7 @@ public class MouseHoverAction extends Environment {
 				robot2.mouseMove(coordinates2.getX(), coordinates.getY() + 300);
 				log.debug("Moved Mouse to somewhere side of page");
 				Worksfine = true;
+				Screenshots.captureScreenshot();
 
 			} catch (ElementNotVisibleException e) {
 				// check if popup is present, if yes, handle it.
@@ -809,6 +823,7 @@ public class MouseHoverAction extends Environment {
 				log.debug("Exiting the Survey");
 				Environment.driver.switchTo().defaultContent();
 				Thread.sleep(3000);
+				Screenshots.captureScreenshot();
 
 			}
 
@@ -851,6 +866,7 @@ public class MouseHoverAction extends Environment {
 				log.debug("Moved Mouse to somewhere side of page");
 
 				Worksfine = true;
+				Screenshots.captureScreenshot();
 
 			} catch (NoSuchElementException e) {
 				// check if popup is present, if yes, handle it.
@@ -866,6 +882,7 @@ public class MouseHoverAction extends Environment {
 				log.debug("Exiting the Survey");
 				Environment.driver.switchTo().defaultContent();
 				Thread.sleep(3000);
+				Screenshots.captureScreenshot();
 
 			}
 
@@ -902,6 +919,7 @@ public class MouseHoverAction extends Environment {
 				log.debug("Moved Mouse to somewhere side of page");
 
 				Worksfine = true;
+				Screenshots.captureScreenshot();
 			} catch (NoSuchElementException e) {
 				// check if popup is present, if yes, handle it.
 				Environment.driver.switchTo().frame("edr_l_first");

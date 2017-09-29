@@ -1,5 +1,6 @@
 package actionsPerformed;
 
+import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
@@ -10,6 +11,7 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 
+import GlobalActions.Screenshots;
 import helpers.Environment;
 
 //This page will have details on the individual device
@@ -17,16 +19,17 @@ import helpers.Environment;
 public class ConnectedDeviceDetailsPageAction extends Environment {
 	static Logger log = Logger.getLogger("devpinoyLogger");
 
-	public static void GetTitle() throws InterruptedException {
+	public static void GetTitle() throws InterruptedException, IOException {
 		System.out.println("Currently in Device details page");
 		String Ele1 = driver.getTitle();
 		System.out.println("The Page title is " + Ele1);
 		log.debug("Currently in Device details page");
 		log.debug("The Page title is " + Ele1);
 		Thread.sleep(5000);
+		Screenshots.captureScreenshot();
 	}
 
-	public static void colorSelect(String color) {
+	public static void colorSelect(String color) throws IOException, InterruptedException {
 		JavascriptExecutor executor = (JavascriptExecutor) driver;
 		if (color.contains("pink")) {
 			executor.executeScript("arguments[0].click();", pageobjects.ConnectedDeviceDetailsPage.Pink);
@@ -42,9 +45,10 @@ public class ConnectedDeviceDetailsPageAction extends Environment {
 		if (color.contains("black")) {
 			executor.executeScript("arguments[0].click();", pageobjects.ConnectedDeviceDetailsPage.Black);
 		}
+		Screenshots.captureScreenshot();
 	}
 
-	public static void ViewAllTariffs() throws InterruptedException {
+	public static void ViewAllTariffs() throws InterruptedException, IOException {
 		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 
 		JavascriptExecutor jse = (JavascriptExecutor) driver;
@@ -58,15 +62,17 @@ public class ConnectedDeviceDetailsPageAction extends Environment {
 		Thread.sleep(5000);
 		// driver.findElement(By.id("deviceDetailsSubmit")).click();
 		log.debug("Clicked on ViewOurTariffs");
+		Screenshots.captureScreenshot();
 
 	}
 
-	public static void clickAnywhere() {
+	public static void clickAnywhere() throws IOException, InterruptedException {
 		// TODO Auto-generated method stub
 		pageobjects.ConnectedDeviceDetailsPage.clickanywhere.click();
+		Screenshots.captureScreenshot();
 	}
 
-	public static void colorSelectOfDevice(String color) {
+	public static void colorSelectOfDevice(String color) throws IOException, InterruptedException {
 		// TODO Auto-generated method stub
 		JavascriptExecutor executor = (JavascriptExecutor) driver;
 
@@ -85,8 +91,8 @@ public class ConnectedDeviceDetailsPageAction extends Environment {
 			executor.executeScript("arguments[0].click();", pageobjects.ConnectedDeviceDetailsPage.Black);
 		}
 		System.out.println("Selecting" + color);
+		Screenshots.captureScreenshot();
 	}
-
 
 	public static void checkIfMoreThanOneOptionAvailable() throws Exception {
 		// TODO Auto-generated method stub
@@ -111,6 +117,7 @@ public class ConnectedDeviceDetailsPageAction extends Environment {
 				Assert.fail("There are no more than 1 option available for color dropdown");
 			}
 		}
+		Screenshots.captureScreenshot();
 	}
 
 	/*
@@ -173,6 +180,7 @@ public class ConnectedDeviceDetailsPageAction extends Environment {
 		if (colorLabel.size() > 1) {
 			Assert.fail("There are more than 1 capacity variant displayed as a label");
 		}
+		Screenshots.captureScreenshot();
 
 	}
 
@@ -195,6 +203,7 @@ public class ConnectedDeviceDetailsPageAction extends Environment {
 				Assert.fail("There are no more than 1 option available for color dropdown");
 			}
 		}
+		Screenshots.captureScreenshot();
 	}
 
 	public static void checkOnlyOneColourAvailable() throws Exception {
@@ -221,6 +230,7 @@ public class ConnectedDeviceDetailsPageAction extends Environment {
 				Assert.fail("There are more than 1 option available for color dropdown");
 			}
 		}
+		Screenshots.captureScreenshot();
 	}
 
 	public static void colorSelectOfDeviceDropDown(String color) throws Exception {
@@ -234,6 +244,7 @@ public class ConnectedDeviceDetailsPageAction extends Environment {
 			new Select(element).selectByVisibleText(color);
 			System.out.println("Selected" + color);
 		}
+		Screenshots.captureScreenshot();
 
 	}
 
@@ -248,9 +259,10 @@ public class ConnectedDeviceDetailsPageAction extends Environment {
 			new Select(element).selectByVisibleText(capacity);
 			System.out.println("Selected" + capacity);
 		}
+		Screenshots.captureScreenshot();
 	}
 
-	public static void checkDevStatusAsPreOrder() {
+	public static void checkDevStatusAsPreOrder() throws IOException, InterruptedException {
 		// TODO Auto-generated method stub
 		// Have to change the below text
 		System.out.println("checkDevStatusAsPreOrder");
@@ -262,9 +274,10 @@ public class ConnectedDeviceDetailsPageAction extends Environment {
 			System.out.println("Device is not Pre Order Device");
 			Assert.fail("Device is not Pre Order Device");
 		}
+		Screenshots.captureScreenshot();
 	}
 
-	public static void checkDevStatusAsDelayedDelivery() {
+	public static void checkDevStatusAsDelayedDelivery() throws IOException, InterruptedException {
 		// TODO Auto-generated method stub
 		if (pageobjects.ConnectedDeviceDetailsPage.DevStatusMsg.getText().contains("Home delivery")) {
 			System.out.println("Device is Delayed Delivery Device");
@@ -273,9 +286,10 @@ public class ConnectedDeviceDetailsPageAction extends Environment {
 			System.out.println("Device is not Delayed Delivery Device");
 			Assert.fail("Device is not Delayed Delivery Device");
 		}
+		Screenshots.captureScreenshot();
 	}
 
-	public static void checkDevStatusAsInStock() {
+	public static void checkDevStatusAsInStock() throws IOException, InterruptedException {
 		// TODO Auto-generated method stub
 		if (pageobjects.ConnectedDeviceDetailsPage.DevStatusMsg.getText().contains("In Stock")) {
 			System.out.println("Device is in stock");
@@ -284,6 +298,7 @@ public class ConnectedDeviceDetailsPageAction extends Environment {
 			System.out.println("Device is not in stock");
 			Assert.fail("Device is not in stock");
 		}
+		Screenshots.captureScreenshot();
 	}
 
 }

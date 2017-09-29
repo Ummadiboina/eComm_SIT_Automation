@@ -1,14 +1,17 @@
 package actionsPerformed;
 
+import java.io.IOException;
+
 import org.apache.log4j.Logger;
 
+import GlobalActions.Screenshots;
 import helpers.Environment;
 
 public class CVOS_StockAllocationActions extends Environment {
 
 	static Logger log = Logger.getLogger("devpinoyLogger");
 
-	public static void CVOSSupplyTradeAllocate(String Search_by_model) throws InterruptedException {
+	public static void CVOSSupplyTradeAllocate(String Search_by_model) throws InterruptedException, IOException {
 
 		Thread.sleep(4000);
 		pageobjects.CVOS_PageObjects.editlink.click();
@@ -55,6 +58,7 @@ public class CVOS_StockAllocationActions extends Environment {
 		pageobjects.CVOS_PageObjects.stockpotTab.click();
 		log.debug("The Stockpot Tab is Clicked to confirm allocation");
 		System.out.println("The Stockpot Tab is Clicked to confirm allocation");
+		Screenshots.captureScreenshot();
 
 	}
 

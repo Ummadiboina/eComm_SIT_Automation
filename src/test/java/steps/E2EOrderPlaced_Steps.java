@@ -1,5 +1,6 @@
 package steps;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.LinkedList;
@@ -3870,7 +3871,7 @@ public class E2EOrderPlaced_Steps {
 	}
 
 	@And("^Verify the devices gets sorted based on the sort option ([^\"]*)$")
-	public void verifyDeviceSortedBasedOnSortOption(String SortOption) throws InterruptedException {
+	public void verifyDeviceSortedBasedOnSortOption(String SortOption) throws InterruptedException, IOException {
 		log.debug("Running Test Step: @And(Verify the devices gets sorted based on the sort option)");
 		try {
 

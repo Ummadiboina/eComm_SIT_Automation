@@ -1,5 +1,6 @@
 package actionsPerformed;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.NoSuchElementException;
@@ -16,6 +17,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.google.common.base.Function;
 
+import GlobalActions.Screenshots;
 import helpers.Environment;
 import helpers.Filereadingutility;
 import junit.framework.Assert;
@@ -25,7 +27,7 @@ public class BasketPageActions extends Environment {
 
 	static Logger log = Logger.getLogger("devpinoyLogger");
 
-	public static void validatelabel() throws InterruptedException {
+	public static void validatelabel() throws InterruptedException, IOException {
 		System.out.println(" ");
 		System.out.println("Verifying Shop basket pages");
 		log.debug("Verifying Shop basket pages");
@@ -59,10 +61,11 @@ public class BasketPageActions extends Environment {
 					+ pageobjects.BasketPage.tariffRemovebtn.getText());
 
 		}
+		Screenshots.captureScreenshot();
 
 	}
 
-	public static void labelvaluedisplay() throws InterruptedException {
+	public static void labelvaluedisplay() throws InterruptedException, IOException {
 
 		System.out.println("The upfront cost display :"
 				+ pageobjects.BasketPage.upfrontcost.getAttribute("data-qa-upfront-total"));
@@ -76,10 +79,11 @@ public class BasketPageActions extends Environment {
 				+ pageobjects.BasketPage.monthlycost.getAttribute("data-qa-monthly-total"));
 		log.debug("The monthly cost display :"
 				+ pageobjects.BasketPage.monthlycost.getAttribute("data-qa-monthly-total"));
+		Screenshots.captureScreenshot();
 
 	}
 
-	public static void ValidateBasketPage() throws InterruptedException {
+	public static void ValidateBasketPage() throws InterruptedException, IOException {
 
 		log.debug("Shop basket pages validations");
 
@@ -98,12 +102,13 @@ public class BasketPageActions extends Environment {
 
 		}
 		Thread.sleep(5000);
+		Screenshots.captureScreenshot();
 
 	}
 
 	// Below is for checking the order contract text
 
-	public static void checkOrderContractTextBP() {
+	public static void checkOrderContractTextBP() throws IOException, InterruptedException {
 		String ActOrderContractMsg = pageobjects.BasketPage.OrderContractMessageBP.getText();
 		String ExpOrderContractMsg = "Your contract will not start until the order is on its way.";
 		System.out.println("Act Del MSg" + ActOrderContractMsg);
@@ -115,9 +120,10 @@ public class BasketPageActions extends Environment {
 			Assert.fail("Order Contract Text does not match");
 
 		}
+		Screenshots.captureScreenshot();
 	}
 
-	public static void checkOrderContractTextDDPOBP() {
+	public static void checkOrderContractTextDDPOBP() throws IOException, InterruptedException {
 		String ActOrderContractMsg = pageobjects.BasketPage.OrderContractMessageDDPOBP1.getText() + '\n'
 				+ pageobjects.BasketPage.OrderContractMessageDDPOBP2.getText();
 		String ExpOrderContractMsg = "We will deliver the rest of your order as soon as possible." + '\n'
@@ -131,10 +137,11 @@ public class BasketPageActions extends Environment {
 			Assert.fail("Order Contract Text for DD phone does not match");
 
 		}
+		Screenshots.captureScreenshot();
 	}
 
 	// Below is for Clicking on the goto Checkout button
-	public static void gotoCheckout() {
+	public static void gotoCheckout() throws IOException, InterruptedException {
 
 		String title = driver.getTitle();
 		if (title.contains("Thanks for waiting")) {
@@ -157,10 +164,11 @@ public class BasketPageActions extends Environment {
 			pageobjects.BasketPage.checkoutbtn.click();
 			log.debug("Clicking on Checkout button");
 		}
+		Screenshots.captureScreenshot();
 
 	}
 
-	public static void ValidateBasketPageContents() throws InterruptedException {
+	public static void ValidateBasketPageContents() throws InterruptedException, IOException {
 		boolean fname = false;
 		log.debug("Shop basket pages validations" + driver.getTitle());
 		System.out.println("Shop basket pages validations" + driver.getTitle());
@@ -197,17 +205,20 @@ public class BasketPageActions extends Environment {
 		System.out.println("The Basket Totals are : " + pageobjects.BasketPage.totals.getText());
 		log.debug("The Home Delivery Text is : " + pageobjects.BasketPage.HomeDeliveryText.getText());
 		System.out.println("The Home Delivery Text is : " + pageobjects.BasketPage.HomeDeliveryText.getText());
+		Screenshots.captureScreenshot();
 	}
 
-	public static void BasketContentsforNonConnected() throws InterruptedException {
+	public static void BasketContentsforNonConnected() throws InterruptedException, IOException {
 
 		try {
 			Assert.assertEquals("Your basket", pageobjects.BasketPage.BasketHeaderXXL.getText());
 			log.debug("Shop basket pages validations" + driver.getTitle());
 			log.debug("BasketHeaderXXL header is " + pageobjects.BasketPage.BasketHeaderXXL.getText());
+			Screenshots.captureScreenshot();
 
 		} catch (Exception e) {
 			Assert.fail("Unable to find BasketHeaderXXL element in Reference shop Basket page");
+			Screenshots.captureScreenshot();
 		}
 
 		if (pageobjects.BasketPage.BasketErrorText.getText().contains("out of stock"))
@@ -238,10 +249,11 @@ public class BasketPageActions extends Environment {
 
 		log.debug("The Basket Totals are : " + pageobjects.BasketPage.totals.getText());
 		System.out.println("The Basket Totals are : " + pageobjects.BasketPage.totals.getText());
+		Screenshots.captureScreenshot();
 
 	}
 
-	public static void PlanOnlyPageContents() throws InterruptedException {
+	public static void PlanOnlyPageContents() throws InterruptedException, IOException {
 
 		log.debug("Shop basket pages validations" + driver.getTitle());
 
@@ -267,24 +279,26 @@ public class BasketPageActions extends Environment {
 		log.debug("The Basket Totals are : " + pageobjects.BasketPage.totals.getText());
 
 		log.debug("The Basket Totals are : " + pageobjects.BasketPage.HomeDeliveryText.getText());
-
+		Screenshots.captureScreenshot();
 	}
 
-	public static void PromoCode(String PromoCode) {
+	public static void PromoCode(String PromoCode) throws IOException, InterruptedException {
 		log.debug("Clicking promocode");
 		pageobjects.BasketPage.GotaPromoCode.click();
 		pageobjects.BasketPage.voucherCode.sendKeys(PromoCode);
 		pageobjects.BasketPage.applyVoucher.click();
+		Screenshots.captureScreenshot();
 
 	}
 
-	public static void CollectionorDelivery(String elementName) throws InterruptedException {
+	public static void CollectionorDelivery(String elementName) throws InterruptedException, IOException {
 
 		if (elementName.contains("homeDelivery")) {
 			pageobjects.BasketPage.HomeDeliverySelect.click();
 			// Assert.assertEquals(elementName,"Galaxy S7 is not found");
 			log.debug("HomeDelivery is Selected");
 			System.out.println("HomeDelivery is Selected");
+			Screenshots.captureScreenshot();
 
 		}
 		if (elementName.contains("clickAndCollect")) {
@@ -308,12 +322,13 @@ public class BasketPageActions extends Environment {
 			log.debug("Store Selected for Colletion");
 			System.out.println("Store Selected for Colletion");
 			Thread.sleep(5000);
+			Screenshots.captureScreenshot();
 
 		}
 
 	}
 
-	public static void JuneReleaseBasketContent() throws InterruptedException {
+	public static void JuneReleaseBasketContent() throws InterruptedException, IOException {
 
 		try {
 			Assert.assertEquals("Your basket", pageobjects.BasketPage.BasketHeaderXXL.getText());
@@ -323,9 +338,10 @@ public class BasketPageActions extends Environment {
 		} catch (Exception e) {
 			Assert.fail("Unable to find BasketHeaderXXL element in Reference shop Basket page");
 		}
+		Screenshots.captureScreenshot();
 	}
 
-	public static void ValidatePromoCode() {
+	public static void ValidatePromoCode() throws IOException, InterruptedException {
 		log.debug("Clicking promocode");
 		/*
 		 * pageobjects.BasketPage.GotaPromoCode.click();
@@ -338,10 +354,11 @@ public class BasketPageActions extends Environment {
 		} else {
 			Assert.fail("Expected message is not displayed for invalid promo code");
 		}
+		Screenshots.captureScreenshot();
 
 	}
 
-	public static void continueShopping() throws InterruptedException {
+	public static void continueShopping() throws InterruptedException, IOException {
 		log.debug("Verifying if the devices selected are in basket");
 		JavascriptExecutor jse = (JavascriptExecutor) driver;
 		jse.executeScript("window.scrollBy(0,600)", "");
@@ -350,9 +367,10 @@ public class BasketPageActions extends Environment {
 		log.debug("Clicked on Continue Shopping in Basket Page");
 
 		Thread.sleep(5000);
+		Screenshots.captureScreenshot();
 	}
 
-	public static void ValidateContentEcomm11522() throws InterruptedException {
+	public static void ValidateContentEcomm11522() throws InterruptedException, IOException {
 
 		boolean fname = pageobjects.BasketPage.checkoutbtn.isEnabled();
 		if (fname != false) {
@@ -373,10 +391,11 @@ public class BasketPageActions extends Environment {
 		log.debug("The Basket Totals are : " + pageobjects.BasketPage.totals.getText());
 
 		log.debug("The Basket Totals are : " + pageobjects.BasketPage.HomeDeliveryText.getText());
+		Screenshots.captureScreenshot();
 
 	}
 
-	public static void verifyNCDRemovedinBasketPageAfterCDSelection() throws InterruptedException {
+	public static void verifyNCDRemovedinBasketPageAfterCDSelection() throws InterruptedException, IOException {
 		log.debug("Opening verifyNCDRemovedinBasketPageAfterCDSelection function");
 
 		String AccessoryName_Before = "";
@@ -412,6 +431,7 @@ public class BasketPageActions extends Environment {
 			log.debug("Assertion Passed:Previous SmartWatch is present in the basket page after phone selection");
 
 			log.debug("successfully verified the basket section after phone selection");
+			Screenshots.captureScreenshot();
 		}
 
 		catch (AssertionError e) {
@@ -419,10 +439,12 @@ public class BasketPageActions extends Environment {
 			log.debug(
 					"Assertion failed: Previously selected Non Connected device is present in the Basket section after phone selection"
 							+ e.getMessage() + "");
+			Screenshots.captureScreenshot();
 		}
 	}
 
-	public static void verifyDevicesInBasket(String dev1, String dev2, String dev3) {
+	public static void verifyDevicesInBasket(String dev1, String dev2, String dev3)
+			throws IOException, InterruptedException {
 		log.debug("Verifying the devices in basket");
 		// List<WebElement> MyDevices = pageobjects.BasketPage.DevicesList;
 
@@ -475,9 +497,10 @@ public class BasketPageActions extends Environment {
 			}
 			Assert.fail("Selected devices are not in basket");
 		}
+		Screenshots.captureScreenshot();
 	}
 
-	public static void verifyDevicesInBasket(String dev1, String dev2) {
+	public static void verifyDevicesInBasket(String dev1, String dev2) throws IOException, InterruptedException {
 
 		// List<WebElement> MyDevices = pageobjects.BasketPage.DevicesList;
 
@@ -525,9 +548,10 @@ public class BasketPageActions extends Environment {
 			}
 			Assert.fail("Selected devices are not in basket");
 		}
+		Screenshots.captureScreenshot();
 	}
 
-	public static void verifyDevicesInBasket(String dev1) {
+	public static void verifyDevicesInBasket(String dev1) throws IOException, InterruptedException {
 
 		// List<WebElement> MyDevices = pageobjects.BasketPage.DevicesList;
 
@@ -568,10 +592,11 @@ public class BasketPageActions extends Environment {
 			}
 			Assert.fail("Selected devices are not in basket");
 		}
+		Screenshots.captureScreenshot();
 
 	}
 
-	public static void InsuranceSectionBasket() throws InterruptedException {
+	public static void InsuranceSectionBasket() throws InterruptedException, IOException {
 		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 		System.out.println("Entering add InsuranceSectionBasket Method");
 
@@ -586,10 +611,11 @@ public class BasketPageActions extends Environment {
 		Thread.sleep(2000);
 		System.out.println("Completed InsuranceSectionBasket function");
 		log.debug("Completed InsuranceSectionBasket function");
+		Screenshots.captureScreenshot();
 
 	}
 
-	public static void InsuranceSectionDeliveryPage() throws InterruptedException {
+	public static void InsuranceSectionDeliveryPage() throws InterruptedException, IOException {
 		System.out.println("Entering InsuranceSectionDeliveryPage Method");
 
 		Thread.sleep(3000);
@@ -613,13 +639,14 @@ public class BasketPageActions extends Environment {
 		Thread.sleep(2000);
 		System.out.println("Completed InsuranceSectionDeliveryPage function");
 		log.debug("Completed InsuranceSectionDeliveryPage function");
+		Screenshots.captureScreenshot();
 
 	}
 
 	////////////////////////////// Upgrade Basket
 	////////////////////////////// Page///////////////////////////////////////////////
 
-	public static void UpgradeBasketPageYourSim() {
+	public static void UpgradeBasketPageYourSim() throws IOException, InterruptedException {
 
 		if (pageobjects.BasketPage.EnabledCheckout.isDisplayed()) {
 			System.out.println("The Checkout button is enabled");
@@ -628,10 +655,11 @@ public class BasketPageActions extends Environment {
 			System.out.println("The checkout button is not enabled");
 			log.debug("The checkout button is not enabled");
 		}
+		Screenshots.captureScreenshot();
 
 	}
 
-	public static void UpgradeBasketYourSim() {
+	public static void UpgradeBasketYourSim() throws IOException, InterruptedException {
 
 		JavascriptExecutor jse = (JavascriptExecutor) driver;
 		jse.executeScript("window.scrollBy(0,450)", "");
@@ -648,6 +676,7 @@ public class BasketPageActions extends Environment {
 		} else {
 			System.out.println("I dont need a sim is pre selected");
 		}
+		Screenshots.captureScreenshot();
 
 	}
 
