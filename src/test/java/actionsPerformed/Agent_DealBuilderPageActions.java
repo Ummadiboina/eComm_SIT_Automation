@@ -419,4 +419,54 @@ public class Agent_DealBuilderPageActions extends Environment {
 		Agent_DealBuilderPage.AgentBuyOut_Button.click();
 
 	}
+
+	public static void selectStore() throws InterruptedException {
+
+		// Selecting an Extra
+		Agent_DealBuilderPage.CheckStore.click();
+		System.out.println("Clicked on Check store stock Tab");
+		log.debug("Clicked on Check store stock Tab");
+		Thread.sleep(3000);
+
+		String Mainwindow = driver.getWindowHandle();
+		// getting all the popup windows , hence using getwindowhandles instead of
+		// getwindowhandle
+		Set<String> s1 = driver.getWindowHandles();
+		Iterator<String> i1 = s1.iterator();
+		while (i1.hasNext()) {
+			String ChildWindow = i1.next();
+			if (!Mainwindow.equalsIgnoreCase(ChildWindow)) {
+				// Switching to Child window
+				driver.switchTo().window(ChildWindow);
+				Thread.sleep(3000);
+				Agent_DealBuilderPage.Postcode.sendKeys("G2");
+
+				Agent_DealBuilderPage.searchStore.click();
+
+				JavascriptExecutor jse = (JavascriptExecutor) driver;
+				jse.executeScript("window.scrollBy(0,200)", "");
+				JavascriptExecutor executor = (JavascriptExecutor) driver;
+				executor.executeScript("arguments[0].click();", Agent_DealBuilderPage.selectStore);
+
+			}
+		}
+		// Switching to Parent window i.e Main Window.
+		driver.switchTo().window(Mainwindow);
+		System.out.println("Selected store is" + pageobjects.Agent_DealBuilderPage.Storedetails.getText());
+
+	}
+
+	public static void HandsetTariffCombinationforPhones() throws InterruptedException {
+		try {
+			Select dropdown = new Select(pageobjects.Agent_DealBuilderPage.HandsetTariffCombination);
+			dropdown.selectByIndex(3);
+			System.out.println("Selecting combination of handset and talkplan");
+			System.out.println(
+					"Selected combination is" + pageobjects.Agent_DealBuilderPage.HandsetTariffCombination.getText());
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			System.out.println("handset and tariff dropdown is not displayed, should be fine");
+		}
+	}
+
 }
