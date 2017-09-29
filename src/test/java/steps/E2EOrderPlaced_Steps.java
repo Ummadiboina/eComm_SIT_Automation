@@ -157,8 +157,9 @@ public class E2EOrderPlaced_Steps {
 
 			MouseHoverAction.PayMPhonesLandingPage();
 			Autoredirection.redirect();
-			GlobalActions.CommonFunctions.checkTitle("PayM Phones Page");
 			Thread.sleep(10000);
+			GlobalActions.CommonFunctions.checkTitle("PayM Phones Page");
+
 		} catch (Exception e) {
 			e.printStackTrace();
 			System.out.println("unable to do mousehover to phones");
@@ -6057,6 +6058,49 @@ public class E2EOrderPlaced_Steps {
 		} catch (Exception e) {
 			System.out.println("unable to select surfer and sim");
 			Assert.fail("unable to select surfer and sim");
+		}
+	}
+
+	@And("^select a valid store for Click and Collect")
+	public void select_Store_for_click_and_Collect() throws Throwable {
+		try {
+
+			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, Agent_DealBuilderPage.class);
+			Agent_DealBuilderPageActions.selectStore();
+
+		} catch (Exception e) {
+			System.out.println("unable to select store");
+			Assert.fail("unable to select store");
+		}
+	}
+
+	@And("^Register customer with valid ([^\"]*), ([^\"]*), ([^\"]*) in delivery page$")
+	public void Register_Customer_Phones(String Password, String confirmPassword, String SecurityAnswer)
+			throws Throwable {
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, Agent_RegisterCustomerPage.class);
+			Agent_RegisterCustomerActions.RegisterCustomer(Password, confirmPassword, SecurityAnswer);
+			Thread.sleep(4000);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			Assert.fail("Unable to Register customer");
+		}
+	}
+
+	@Given("^select a valid Handset and Tariff combination for Phones$")
+	public void select_a_valid_Handset_and_Tariff_combination_for_Phones() throws Throwable {
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, Agent_DealBuilderPage.class);
+			Agent_DealBuilderPageActions.HandsetTariffCombinationforPhones();
+			Thread.sleep(4000);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			Assert.fail("Unable to select valid tariff and handset combination");
 		}
 	}
 
