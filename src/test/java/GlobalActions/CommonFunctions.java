@@ -1,11 +1,13 @@
 package GlobalActions;
 
+import java.io.IOException;
+
 import org.junit.Assert;
 
 import helpers.Environment;
 
 public class CommonFunctions extends Environment {
-	public static void checkTitle(String pagename) throws Exception {
+	public static void checkTitle(String pagename) throws IOException, InterruptedException {
 		Thread.sleep(15000);
 		if (pagename.equalsIgnoreCase("Delivery Page")) {
 			if (driver.getTitle().equalsIgnoreCase("O2 | Delivery")) {
@@ -128,5 +130,6 @@ public class CommonFunctions extends Environment {
 
 			}
 		}
+		Screenshots.captureScreenshot();
 	}
 }
