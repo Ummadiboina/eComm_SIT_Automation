@@ -1,13 +1,11 @@
 package GlobalActions;
 
-import org.apache.log4j.Logger;
-import org.openqa.selenium.By;
+import java.io.IOException;
+import java.util.UUID;
 
-import org.openqa.selenium.WebElement;
+import org.apache.log4j.Logger;
 
 import helpers.Environment;
-
-import java.util.UUID;
 
 
 
@@ -45,13 +43,15 @@ public static String RandomEmail()
 
 
 
-    public static String RandomEmail() {
+    public static String RandomEmail() throws IOException, InterruptedException {
     	
     	String RandomEmail = "STester11" + UUID.randomUUID().toString() + "@gmail.com";
     			System.out.println("Random Email Address is "+RandomEmail);
 				log.debug("Random Email Address is "+RandomEmail);
+				
 
           return RandomEmail;
+          
     }
     
     

@@ -1,32 +1,20 @@
 package actionsPerformed;
 
-import java.util.ArrayList;
+import java.io.IOException;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.LinkedList;
 import java.util.List;
 
+import org.apache.commons.lang.StringUtils;
 import org.apache.log4j.Logger;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.Select;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.LinkedList;
-import java.util.List;
-import org.apache.commons.lang.StringUtils;
-import org.apache.log4j.Logger;
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.Select;
-
-import GlobalActions.scrollToAnElement;
-import helpers.Environment;
-
+import GlobalActions.Screenshots;
 import GlobalActions.scrollToAnElement;
 import helpers.Environment;
 
@@ -92,7 +80,7 @@ public class PhonesListingPageAction extends Environment {
 			// Assert.assertEquals(elementName,"Galaxy S7 is not found");
 			log.debug("Selected Iphone7");
 
-		}                         
+		}
 		if (elementName.contains("AppleiPhone7Plus")) {
 			pageobjects.PhonesListingPage.Iphone7Plus.click();
 			// Assert.assertEquals(elementName,"Galaxy S7 is not found");
@@ -140,11 +128,11 @@ public class PhonesListingPageAction extends Environment {
 			System.out.println("Selected AppleiPhone6sPlusLikeNew");
 
 		}
-
+		Screenshots.captureScreenshot();
 	}
 
 	// Below is for PAYG phones
-	public static void PAYGPhoneSelect(String elementName) {
+	public static void PAYGPhoneSelect(String elementName) throws IOException, InterruptedException {
 
 		if (elementName.contains("Random Device")) {
 			System.out.println("Selected Random Device");
@@ -163,19 +151,20 @@ public class PhonesListingPageAction extends Environment {
 			log.debug("Selected MotoG5");
 
 		}
-
+		Screenshots.captureScreenshot();
 	}
 
-	public static void SelectBaseCommTariff(String elementName) {
+	public static void SelectBaseCommTariff(String elementName) throws IOException, InterruptedException {
 
 		if (elementName.contains("Random")) {
 			System.out.println("Selected Random Tariff");
 			pageobjects.BaseCommPage.RandomDevice.click();
 			log.debug("Selected Random Device");
 		}
+		Screenshots.captureScreenshot();
 	}
 
-	public static void checkIfiPadDevicesArePresent() {
+	public static void checkIfiPadDevicesArePresent() throws IOException, InterruptedException {
 
 		List<WebElement> iPadDevices = pageobjects.BaseCommPage.iPadDevicesName;
 
@@ -188,16 +177,18 @@ public class PhonesListingPageAction extends Environment {
 				System.out.println("Devices other than iPad are also displayed");
 			}
 		}
+		Screenshots.captureScreenshot();
 	}
 
-	public static void isPayAsUGoTabDisplayed() {
+	public static void isPayAsUGoTabDisplayed() throws IOException, InterruptedException {
 		log.debug("checking whether Pay As U Go tab is displayed");
 		if (pageobjects.BaseCommPage.PayAsUGo.isDisplayed()) {
 			Assert.fail("Pay As U Go tab is displayed");
 		}
+		Screenshots.captureScreenshot();
 	}
 
-	public static void clickOnSortTab() {
+	public static void clickOnSortTab() throws IOException, InterruptedException {
 		try {
 			log.debug("Entering clickOnSortTab function");
 
@@ -207,12 +198,14 @@ public class PhonesListingPageAction extends Environment {
 			Thread.sleep(3000);
 
 			System.out.println("Clicked on the Sort Tab successfully");
+			Screenshots.captureScreenshot();
 		} catch (Exception e) {
 			System.out.println("Failed: Cannot click on the Sort tab" + e.getMessage());
+			Screenshots.captureScreenshot();
 		}
 	}
 
-	public static void selectSortOption(String Sort) throws InterruptedException {
+	public static void selectSortOption(String Sort) throws InterruptedException, IOException {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		System.out.println("Selecting Sort option : " + Sort);
 		if (Sort.equals("MonthlyHighToLow")) {
@@ -301,10 +294,10 @@ public class PhonesListingPageAction extends Environment {
 			js.executeScript("arguments[0].click();", pageobjects.SortingAndFilter.Done);
 
 		}
-
+		Screenshots.captureScreenshot();
 	}
 
-	public static void clickOnResetSort() {
+	public static void clickOnResetSort() throws IOException, InterruptedException {
 		log.debug("Entering clickOnResetSort function");
 		System.out.println("Entering clickOnResetSort function");
 
@@ -319,12 +312,15 @@ public class PhonesListingPageAction extends Environment {
 			js.executeScript("arguments[0].click();", pageobjects.SortingAndFilter.Done);
 			Thread.sleep(5000);
 			System.out.println("Clicked on the Reset Sort Option successfully");
+			Screenshots.captureScreenshot();
 		} catch (Exception e) {
 			System.out.println("Failed: Cannot click on the Reset Sort Option" + e.getMessage());
+			Screenshots.captureScreenshot();
 		}
 	}
 
-	public static void verifyDeviceGetsDisplayedBasedOnBrandFilterApplied(String FilterOption) {
+	public static void verifyDeviceGetsDisplayedBasedOnBrandFilterApplied(String FilterOption)
+			throws IOException, InterruptedException {
 		try {
 			log.debug("Entering verifyDeviceGetsDisplayedBasedOnBrandFilterApplied function");
 			System.out.println("Entering verifyDeviceGetsDisplayedBasedOnBrandFilterApplied function");
@@ -340,14 +336,17 @@ public class PhonesListingPageAction extends Environment {
 			}
 
 			System.out.println("Assert Success:  Devices displayed are as per the Brand filter applied");
+			Screenshots.captureScreenshot();
 
 		} catch (Exception e) {
 			System.out.println(
 					"Assertion Failed: Devices displayed are not as per the Brand filter applied" + e.getMessage());
+			Screenshots.captureScreenshot();
 		}
 	}
 
-	public static void verifyDeviceGetsDisplayedBasedOnColourFilterApplied(String FilterOption) {
+	public static void verifyDeviceGetsDisplayedBasedOnColourFilterApplied(String FilterOption)
+			throws IOException, InterruptedException {
 		try {
 			log.debug("Entering verifyDeviceGetsDisplayedBasedOnColourFilterApplied function");
 			System.out.println("Entering verifyDeviceGetsDisplayedBasedOnColourFilterApplied function");
@@ -363,14 +362,16 @@ public class PhonesListingPageAction extends Environment {
 			}
 
 			System.out.println("Assert Success:  Devices displayed are as per the Brand filter applied");
+			Screenshots.captureScreenshot();
 
 		} catch (Exception e) {
 			System.out.println(
 					"Assertion Failed: Devices displayed are not as per the Brand filter applied" + e.getMessage());
+			Screenshots.captureScreenshot();
 		}
 	}
 
-	public static void clickOnFilterTab() {
+	public static void clickOnFilterTab() throws IOException, InterruptedException {
 		try {
 			log.debug("Entering clickOnFilterTab function");
 
@@ -379,12 +380,14 @@ public class PhonesListingPageAction extends Environment {
 			Thread.sleep(2000);
 
 			System.out.println("Clicked on the FilterTab successfully");
+			Screenshots.captureScreenshot();
 		} catch (Exception e) {
 			System.out.println("Failed: Cannot click on the FilterTab: " + e.getMessage());
+			Screenshots.captureScreenshot();
 		}
 	}
 
-	public static void selectFilterOption(String Filter, String Option) {
+	public static void selectFilterOption(String Filter, String Option) throws IOException, InterruptedException {
 		try {
 			log.debug("Entering selectFilterOption function");
 			System.out.println("Selecting Filter option: " + Filter + " :With: " + Option);
@@ -635,15 +638,17 @@ public class PhonesListingPageAction extends Environment {
 
 				}
 			}
+			Screenshots.captureScreenshot();
 		}
 
 		catch (Exception e) {
 			System.out.println("Failed: Cannot select a filter option : " + e.getMessage());
+			Screenshots.captureScreenshot();
 		}
 
 	}
 
-	public static void clickOnViewAllProductsOnOnePage() {
+	public static void clickOnViewAllProductsOnOnePage() throws IOException, InterruptedException {
 		try {
 			log.debug("Entering clickOnViewAllProductsOnOnePage function");
 			System.out.println("Entering clickOnViewAllProductsOnOnePage function");
@@ -657,12 +662,14 @@ public class PhonesListingPageAction extends Environment {
 				System.out.println("ViewAllProductsOnOnePage link is not visible in the page");
 				log.debug("ViewAllProductsOnOnePage link is not visible in the page");
 			}
+			Screenshots.captureScreenshot();
 		} catch (Exception e) {
 			System.out.println("Failed: Cannot click on the Sort tab" + e.getMessage());
+			Screenshots.captureScreenshot();
 		}
 	}
 
-	public static LinkedList<String> getCurrentSortOrderUsingDeviceName() throws InterruptedException {
+	public static LinkedList<String> getCurrentSortOrderUsingDeviceName() throws InterruptedException, IOException {
 
 		log.debug("Opening function getCurrentSortOrderUsingDeviceName");
 
@@ -706,12 +713,12 @@ public class PhonesListingPageAction extends Environment {
 		 * 
 		 * }
 		 */
-
+		Screenshots.captureScreenshot();
 		return deviceCurrentOrder;
 
 	}
 
-	public static LinkedList<String> getCurrentSortOrderUsingDevicePrice() throws InterruptedException {
+	public static LinkedList<String> getCurrentSortOrderUsingDevicePrice() throws InterruptedException, IOException {
 
 		log.debug("Opening function getCurrentSortOrderUsingDevicePrice");
 		System.out.println("Opening function getCurrentSortOrderUsingDevicePrice");
@@ -775,12 +782,12 @@ public class PhonesListingPageAction extends Environment {
 		for (int i = 0; i < devicepricecurrentorder.size(); i++) {
 			deviceCurrentOrder.add(devicepricecurrentorder.get(i));
 		}
-
+		Screenshots.captureScreenshot();
 		return deviceCurrentOrder;
 
 	}
 
-	public static LinkedList<String> getCurrentSortOrderUsingDeviceColour() throws InterruptedException {
+	public static LinkedList<String> getCurrentSortOrderUsingDeviceColour() throws InterruptedException, IOException {
 
 		log.debug("Opening function getCurrentSortOrderUsingDeviceColour");
 		System.out.println("Opening function getCurrentSortOrderUsingDeviceColour");
@@ -834,7 +841,7 @@ public class PhonesListingPageAction extends Environment {
 		for (int i = 0; i < devicenamecurrentorder.size(); i++) {
 			deviceCurrentOrder.add(devicenamecurrentorder.get(i) + devicecolourcurrentorder.get(i));
 		}
-
+		Screenshots.captureScreenshot();
 		return deviceCurrentOrder;
 
 	}
@@ -862,7 +869,7 @@ public class PhonesListingPageAction extends Environment {
 	}
 
 	public static void verifyDeviceSortedOnBrand(LinkedList<String> ListBeforeApplyingSort,
-			LinkedList<String> ListAfterApplyingSort) {
+			LinkedList<String> ListAfterApplyingSort) throws IOException, InterruptedException {
 
 		try {
 
@@ -886,15 +893,17 @@ public class PhonesListingPageAction extends Environment {
 			 */
 
 			System.out.println("Assertion Success: Devices have been sorted successfully based on Brand");
+			Screenshots.captureScreenshot();
 		} catch (AssertionError e) {
 			log.debug("Assertion Failed: Devices are not sorted based on Brand ");
 			log.debug("Fail" + " - " + e.getMessage());
+			Screenshots.captureScreenshot();
 		}
 
 	}
 
 	public static void verifyOriginalSortOrderRetainedAfterSortReset(LinkedList<String> ListBeforeApplyingSort,
-			LinkedList<String> ListAfterApplyingSort) {
+			LinkedList<String> ListAfterApplyingSort) throws IOException, InterruptedException {
 
 		try {
 
@@ -912,9 +921,11 @@ public class PhonesListingPageAction extends Environment {
 
 			System.out.println(
 					"Assertion Success: Devices got resorted successfully to the Original Order after sort reset");
+			Screenshots.captureScreenshot();
 		} catch (AssertionError e) {
 			log.debug("Assertion Failed: Devices did not reset to the Original sort order after sort reset ");
 			log.debug("Fail" + " - " + e.getMessage());
+			Screenshots.captureScreenshot();
 		}
 
 	}
@@ -945,36 +956,44 @@ public class PhonesListingPageAction extends Environment {
 		});
 	}
 
-	public static void isChooseADifferentTariffDisplayed() {
+	public static void isChooseADifferentTariffDisplayed() throws IOException, InterruptedException {
 		log.debug("checking if the Choose a Different Tariff link is displayed");
 		if (pageobjects.BaseCommPage.ChooseADifferentTariff.isDisplayed()) {
 			log.debug("Choose a different tariff link is displayed");
-		} else
+		} else {
 			Assert.fail("Choose a different tariff link is not displayed");
+		}
+		Screenshots.captureScreenshot();
 	}
 
-	public static void clickChooseADifferentTariff() {
+	public static void clickChooseADifferentTariff() throws IOException, InterruptedException {
 		log.debug("clicking on Choose a Different Tariff link");
 		if (pageobjects.BaseCommPage.ChooseADifferentTariff.isDisplayed()) {
 			pageobjects.BaseCommPage.ChooseADifferentTariff.click();
-		} else
+		} else {
 			Assert.fail("not able to click on 'choose different tariff link'");
+		}
+		Screenshots.captureScreenshot();
 	}
 
-	public static void clickBackToiPadOffers() {
+	public static void clickBackToiPadOffers() throws IOException, InterruptedException {
 		log.debug("clicking on Back to iPad Offers link");
 		if (pageobjects.BaseCommPage.BackToOffers.isDisplayed()) {
 			pageobjects.BaseCommPage.BackToOffers.click();
-		} else
+		} else {
 			Assert.fail("not able to click on 'Back To iPad Offers' link");
+		}
+		Screenshots.captureScreenshot();
 	}
 
-	public static void clickBackToTabletOffers() {
+	public static void clickBackToTabletOffers() throws IOException, InterruptedException {
 		log.debug("clicking on Back to Tablet Offers link");
 		if (pageobjects.BaseCommPage.BackToOffers.isDisplayed()) {
 			pageobjects.BaseCommPage.BackToOffers.click();
-		} else
+		} else {
 			Assert.fail("not able to click on 'Back To Tablet Offers' link");
+		}
+		Screenshots.captureScreenshot();
 	}
 
 	/*
@@ -1016,7 +1035,8 @@ public class PhonesListingPageAction extends Environment {
 	 * } }
 	 */
 
-	public static void verifyDeviceGetsDisplayedBasedOnOfferFilterApplied(String FilterOption) {
+	public static void verifyDeviceGetsDisplayedBasedOnOfferFilterApplied(String FilterOption)
+			throws IOException, InterruptedException {
 		try {
 			log.debug("Entering verifyDeviceGetsDisplayedBasedOnOfferFilterApplied function");
 			System.out.println("Entering verifyDeviceGetsDisplayedBasedOnOfferApplied function");
@@ -1032,15 +1052,17 @@ public class PhonesListingPageAction extends Environment {
 			}
 
 			System.out.println("Assert Success:  Devices displayed are as per the Brand filter applied");
+			Screenshots.captureScreenshot();
 
 		} catch (Exception e) {
 			System.out.println(
 					"Assertion Failed: Devices displayed are not as per the Brand filter applied" + e.getMessage());
+			Screenshots.captureScreenshot();
 		}
 	}
 
 	public static LinkedList<String> getCurrentSortOrderUsingDeviceOffer(String FilterOption)
-			throws InterruptedException {
+			throws InterruptedException, IOException {
 
 		log.debug("Opening function getCurrentSortOrderUsingDeviceOffer");
 		System.out.println("Opening function getCurrentSortOrderUsingDeviceOffer");
@@ -1081,10 +1103,11 @@ public class PhonesListingPageAction extends Environment {
 		for (int i = 0; i < devicenamecurrentorder.size(); i++) {
 			deviceCurrentOrder.add(devicenamecurrentorder.get(i) + deviceoffercurrentorder.get(i));
 		}
+		Screenshots.captureScreenshot();
 		return deviceCurrentOrder;
 	}
 
-	public static void searchForDevice(String devicename) {
+	public static void searchForDevice(String devicename) throws IOException, InterruptedException {
 		if (pageobjects.PhonesListingPage.SearchBox.isDisplayed()) {
 			System.out.println("Search box is displayed");
 			pageobjects.PhonesListingPage.SearchBox.sendKeys(devicename);
@@ -1092,5 +1115,6 @@ public class PhonesListingPageAction extends Environment {
 		} else {
 			Assert.fail("Search box is not present");
 		}
+		Screenshots.captureScreenshot();
 	}
 }

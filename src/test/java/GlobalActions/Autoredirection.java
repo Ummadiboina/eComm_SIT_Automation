@@ -1,5 +1,7 @@
 package GlobalActions;
 
+import java.io.IOException;
+
 import org.apache.log4j.Logger;
 
 import helpers.Environment;
@@ -10,7 +12,7 @@ public class Autoredirection extends Environment {
 
 	static Logger log = Logger.getLogger("devpinoyLogger");
 
-	public static void redirect() throws InterruptedException {
+	public static void redirect() throws InterruptedException, IOException {
 		String newUrl = null;
 		String url = driver.getCurrentUrl();
 		System.out.println("The current url is " + url);
@@ -42,9 +44,10 @@ public class Autoredirection extends Environment {
 
 			System.out.println("Auto Redirection is not required, URL already pointed to Ref");
 		}
+		Screenshots.captureScreenshot();
 	}
 
-	public static void redirectUpgrades() throws InterruptedException {
+	public static void redirectUpgrades() throws InterruptedException, IOException {
 
 		String url = driver.getCurrentUrl();
 		System.out.println("The current url is " + url);
@@ -73,9 +76,10 @@ public class Autoredirection extends Environment {
 
 			System.out.println("Auto Redirection is not required, URL already pointed to Ref");
 		}
+		Screenshots.captureScreenshot();
 	}
 
-	public static void redirectforHTTPconnections() throws InterruptedException {
+	public static void redirectforHTTPconnections() throws InterruptedException, IOException {
 
 		String url = driver.getCurrentUrl();
 		System.out.println("The current url is " + url);
@@ -91,22 +95,21 @@ public class Autoredirection extends Environment {
 
 		String refurl = ".ref."; // put newurl name here
 		if (!url.contains("ref.o2.co.uk")) {
-		String newUrl = url.substring(0, preo2inurl - numofChars) + refurl + url.substring(11, length);
-		System.out.println("The new url is " + newUrl);
-		log.debug("The new url is " + newUrl);
+			String newUrl = url.substring(0, preo2inurl - numofChars) + refurl + url.substring(11, length);
+			System.out.println("The new url is " + newUrl);
+			log.debug("The new url is " + newUrl);
 
-		driver.get(newUrl);
-		Thread.sleep(2000);
-		System.out.println("Did Auto Redirection Successfully");
-		}
-		else {
+			driver.get(newUrl);
+			Thread.sleep(2000);
+			System.out.println("Did Auto Redirection Successfully");
+		} else {
 
 			System.out.println("Auto Redirection is not required, URL already pointed to Ref");
 		}
-
+		Screenshots.captureScreenshot();
 	}
-	
-	public static void redirectforHTTPsconnections() throws InterruptedException {
+
+	public static void redirectforHTTPsconnections() throws InterruptedException, IOException {
 
 		String url = driver.getCurrentUrl();
 		System.out.println("The current url is " + url);
@@ -121,22 +124,22 @@ public class Autoredirection extends Environment {
 		// System.out.println("the index of o is "+preo2inurl);
 
 		String refurl = ".ref."; // put newurl name here
-		
+
 		if (!url.contains("ref.o2.co.uk")) {
 
-		String newUrl = url.substring(0, preo2inurl - numofChars) + refurl + url.substring(12, length);
-		System.out.println("The new url is " + newUrl);
-		log.debug("The new url is " + newUrl);
+			String newUrl = url.substring(0, preo2inurl - numofChars) + refurl + url.substring(12, length);
+			System.out.println("The new url is " + newUrl);
+			log.debug("The new url is " + newUrl);
 
-		driver.get(newUrl);
-		Thread.sleep(2000);
-		System.out.println("Did Auto Redirection Successfully");
-		}
-		else {
+			driver.get(newUrl);
+			Thread.sleep(2000);
+			System.out.println("Did Auto Redirection Successfully");
+		} else {
 
 			System.out.println("Auto Redirection is not required, URL already pointed to Ref");
 		}
-		
+		Screenshots.captureScreenshot();
+
 	}
 
 }

@@ -1,5 +1,6 @@
 package actionsPerformed;
 
+import java.io.IOException;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
@@ -8,10 +9,9 @@ import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
+import GlobalActions.Screenshots;
 import helpers.Environment;
 import junit.framework.Assert;
 import pageobjects.Agent_DealBuilderPage;
@@ -22,10 +22,11 @@ public class Agent_DealBuilderPageActions extends Environment {
 
 	// this method used to perform click action on the Agent Home Page
 
-	public static void ValidateAgentHomepage() {
+	public static void ValidateAgentHomepage() throws IOException, InterruptedException {
 
 		System.out.println("Agent Home page Validation" + driver.getTitle());
 		log.debug("Agent Home Page validation" + driver.getTitle());
+		Screenshots.captureScreenshot();
 
 		// Assert.assertEquals("Agent Home Page",
 		// pageobjects.Agent_HomePage.sectionHeading.getText());
@@ -34,7 +35,7 @@ public class Agent_DealBuilderPageActions extends Environment {
 		// pageobjects.BasketPage.BasketHeaderXXL.getText());
 	}
 
-	public static void SelectPAYMDevice(String Device) throws InterruptedException {
+	public static void SelectPAYMDevice(String Device) throws InterruptedException, IOException {
 
 		// Reporter.log("Selected the dropdown Mrs");
 
@@ -60,9 +61,10 @@ public class Agent_DealBuilderPageActions extends Environment {
 			Agent_DealBuilderPage.SelectInStockPAYMDevice.click();
 			Thread.sleep(3000);
 		}
+		Screenshots.captureScreenshot();
 	}
 
-	public static void SelectTariff(String Tariff) throws InterruptedException {
+	public static void SelectTariff(String Tariff) throws InterruptedException, IOException {
 
 		Agent_DealBuilderPage.TariffsTab.click();
 		Thread.sleep(5000);
@@ -108,12 +110,13 @@ public class Agent_DealBuilderPageActions extends Environment {
 			System.out.println("Selected Random Basecomms Tariff ");
 			log.debug("Selected Random Basecomms Tariff ");
 		}
+		Screenshots.captureScreenshot();
 
 	}
 	/////////////////////////////////// Basecomms Agent Offers column
 	/////////////////////////////////// validation//////////////////////////////////
 
-	public static void BasecommsAgentOffersColumnValidation() throws InterruptedException {
+	public static void BasecommsAgentOffersColumnValidation() throws InterruptedException, IOException {
 
 		List<WebElement> menuOuter = driver.findElements(By.xpath("//*[@id='planTable']/tbody/tr"));
 		System.out.println(menuOuter.size());
@@ -132,23 +135,25 @@ public class Agent_DealBuilderPageActions extends Environment {
 				}
 			}
 		}
-
+		Screenshots.captureScreenshot();
 	}
 
-	public static void HandsetTariffCombination() throws InterruptedException {
+	public static void HandsetTariffCombination() throws InterruptedException, IOException {
 		try {
 			Select dropdown = new Select(pageobjects.Agent_DealBuilderPage.HandsetTariffCombination);
 			dropdown.selectByIndex(2);
 			System.out.println("Selecting combination of handset and talkplan");
 			System.out.println(
 					"Selected combination is" + pageobjects.Agent_DealBuilderPage.HandsetTariffCombination.getText());
+			Screenshots.captureScreenshot();
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			System.out.println("handset and tariff dropdown is not displayed, should be fine");
+			Screenshots.captureScreenshot();
 		}
 	}
 
-	public static void SelectExtras(String Extras) throws InterruptedException {
+	public static void SelectExtras(String Extras) throws InterruptedException, IOException {
 
 		// Selecting an Extra
 		Agent_DealBuilderPage.ExtrasTab.click();
@@ -172,10 +177,11 @@ public class Agent_DealBuilderPageActions extends Environment {
 			log.debug("No extras for Basecomms devices");
 
 		}
+		Screenshots.captureScreenshot();
 
 	}
 
-	public static void SelectPayGDevice(String Device) throws InterruptedException {
+	public static void SelectPayGDevice(String Device) throws InterruptedException, IOException {
 
 		Agent_DealBuilderPage.prepayDevicesTab.click();
 
@@ -193,9 +199,10 @@ public class Agent_DealBuilderPageActions extends Environment {
 			log.debug("Clicked on SearchTextBox to enter" + Device);
 			Thread.sleep(3000);
 		}
+		Screenshots.captureScreenshot();
 	}
 
-	public static void SelectAccessoryDevice(String Device) throws InterruptedException {
+	public static void SelectAccessoryDevice(String Device) throws InterruptedException, IOException {
 
 		Agent_DealBuilderPage.AccessoriesTab.click();
 
@@ -213,9 +220,10 @@ public class Agent_DealBuilderPageActions extends Environment {
 			log.debug("Clicked on + symbol next to " + Device);
 			Thread.sleep(3000);
 		}
+		Screenshots.captureScreenshot();
 	}
 
-	public static void SelectPayGTariff(String Tariff) throws InterruptedException {
+	public static void SelectPayGTariff(String Tariff) throws InterruptedException, IOException {
 
 		Thread.sleep(3000);
 		Agent_DealBuilderPage.prepayPlansTab.click();
@@ -231,33 +239,37 @@ public class Agent_DealBuilderPageActions extends Environment {
 			log.debug("Selected Random Tariff ");
 
 		}
+		Screenshots.captureScreenshot();
 	}
 
-	public static void eMailBasket() throws InterruptedException {
+	public static void eMailBasket() throws InterruptedException, IOException {
 
 		// Selecting an eMail Link
 		Agent_DealBuilderPage.eMailBasket.click();
 		System.out.println("Clicked on eMail Basket");
 		log.debug("Clicked on eMail Basket");
 		Thread.sleep(3000);
+		Screenshots.captureScreenshot();
 
 	}
 
-	public static void ValdiateBasket() throws InterruptedException {
+	public static void ValdiateBasket() throws InterruptedException, IOException {
 		Thread.sleep(3000);
 		String str1 = Agent_DealBuilderPage.dealBuilderContent.getText();
 		System.out.println(str1);
 		log.debug(str1);
+		Screenshots.captureScreenshot();
 	}
 
-	public static void checkout() throws InterruptedException {
+	public static void checkout() throws InterruptedException, IOException {
 		Thread.sleep(3000);
 		Agent_DealBuilderPage.Checkout.click();
 		System.out.println("Clicked on Checkout ");
 		log.debug("Clicked on Checkout ");
+		Screenshots.captureScreenshot();
 	}
 
-	public static void eMailConfirmation() throws InterruptedException {
+	public static void eMailConfirmation() throws InterruptedException, IOException {
 		// TODO Auto-generated method stub
 
 		String Mainwindow = driver.getWindowHandle();
@@ -281,6 +293,7 @@ public class Agent_DealBuilderPageActions extends Environment {
 				// Closing the Child Window.
 				String text = Agent_DealBuilderPage.emailConfirmation.getText();
 				Assert.assertEquals(text, "Email sent successfully");
+				Screenshots.captureScreenshot();
 
 				driver.close();
 			}
@@ -288,6 +301,7 @@ public class Agent_DealBuilderPageActions extends Environment {
 
 		// Switching to Parent window i.e Main Window.
 		driver.switchTo().window(Mainwindow);
+		Screenshots.captureScreenshot();
 
 		/*
 		 * String text = Agent_DealBuilderPage.emailConfirmation.getText();
@@ -297,7 +311,7 @@ public class Agent_DealBuilderPageActions extends Environment {
 
 	}
 
-	public static void SearchDevice(String Status) throws InterruptedException {
+	public static void SearchDevice(String Status) throws InterruptedException, IOException {
 
 		// Reporter.log("Selected the dropdown Mrs");
 		System.out.println("Entering Search device method");
@@ -333,22 +347,25 @@ public class Agent_DealBuilderPageActions extends Environment {
 			log.debug("Sent search as - " + Status);
 
 		}
+		Screenshots.captureScreenshot();
 	}
 
-	public static void CCAHandsetTariffCombination() throws InterruptedException {
+	public static void CCAHandsetTariffCombination() throws InterruptedException, IOException {
 		try {
 			Select dropdown = new Select(pageobjects.Agent_DealBuilderPage.HandsetTariffCombination);
 			dropdown.selectByIndex(1);
 			System.out.println("Selecting combination of handset and talkplan for CCA");
 			System.out.println(
 					"Selected combination is" + pageobjects.Agent_DealBuilderPage.HandsetTariffCombination.getText());
+			Screenshots.captureScreenshot();
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			System.out.println("handset and CCA tariff dropdown is not displayed");
+			Screenshots.captureScreenshot();
 		}
 	}
 
-	public static void AgentTradeInQuestionair() throws InterruptedException {
+	public static void AgentTradeInQuestionair() throws InterruptedException, IOException {
 		if (Agent_DealBuilderPage.AgentTradeInBtn.isDisplayed()) {
 			System.out.println("The trade in button is displayed");
 			Agent_DealBuilderPage.AgentTradeInBtn.click();
@@ -383,6 +400,7 @@ public class Agent_DealBuilderPageActions extends Environment {
 					Thread.sleep(2000);
 
 					pageobjects.Agent_DealBuilderPage.AgentTradeAccept.click();
+					Screenshots.captureScreenshot();
 
 				}
 			}
@@ -392,6 +410,7 @@ public class Agent_DealBuilderPageActions extends Environment {
 
 			JavascriptExecutor executor = (JavascriptExecutor) driver;
 			executor.executeScript("arguments[0].click();", Agent_DealBuilderPage.TradeInCheckBox);
+			Screenshots.captureScreenshot();
 
 			// Agent_DealBuilderPage.TradeInCheckboxText.click();
 
@@ -399,24 +418,27 @@ public class Agent_DealBuilderPageActions extends Environment {
 
 		} else
 			System.out.println("The Trade in Button is not displayed");
+		Screenshots.captureScreenshot();
 
 	}
 
-	public static void AgentTradeInQuestionairAns() throws InterruptedException {
+	public static void AgentTradeInQuestionairAns() throws InterruptedException, IOException {
 
 		if (Agent_DealBuilderPage.TradeInQuestions.isDisplayed()) {
 			System.out.println("The trade in Qustionair is displayed");
 			Agent_DealBuilderPage.AgentTradeAns1.click();
 			Agent_DealBuilderPage.AgentTradeAnsSelect1.click();
 		}
+		Screenshots.captureScreenshot();
 
 	}
 
-	public static void AgentBuyOut() throws InterruptedException {
+	public static void AgentBuyOut() throws InterruptedException, IOException {
 
 		Agent_DealBuilderPage.AgentBuyOut_Button.isDisplayed();
 		System.out.println("The Buy Out Qustionair is displayed");
 		Agent_DealBuilderPage.AgentBuyOut_Button.click();
+		Screenshots.captureScreenshot();
 
 	}
 
