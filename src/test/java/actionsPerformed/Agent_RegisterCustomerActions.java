@@ -130,7 +130,7 @@ public class Agent_RegisterCustomerActions extends Environment {
 	public static void PaybyCard() throws InterruptedException {
 		String OneOff = Agent_RegisterCustomerPage.ZeroOneOff.getText();
 		System.out.println(OneOff);
-		if (OneOff.contains("ï¿½0.00")) {
+		if (OneOff.contains("£0.00")) {
 			Agent_RegisterCustomerPage.SubmitBtn.click();
 		}
 
