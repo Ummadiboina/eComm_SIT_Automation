@@ -207,9 +207,5 @@ public class Agent_RegisterCustomerActions extends Environment {
 		Thread.sleep(2000);
 		Agent_RegisterCustomerPage.UsethisCard.click();
 		Screenshots.captureScreenshot();
-
 	}
-	
-	
-
 }
