@@ -8,6 +8,7 @@ import helpers.Environment;
 
 public class CommonFunctions extends Environment {
 	public static void checkTitle(String pagename) throws IOException, InterruptedException {
+		Thread.sleep(15000);
 		if (pagename.equalsIgnoreCase("Delivery Page")) {
 			if (driver.getTitle().equalsIgnoreCase("O2 | Delivery")) {
 				System.out.println("We are in Delivery page");
