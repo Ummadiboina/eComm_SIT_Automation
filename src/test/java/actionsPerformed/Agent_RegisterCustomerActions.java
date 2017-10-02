@@ -1,6 +1,5 @@
 package actionsPerformed;
 
-import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
 import org.apache.log4j.Logger;
@@ -8,7 +7,6 @@ import org.openqa.selenium.support.ui.Select;
 import org.testng.Reporter;
 
 import GlobalActions.RandomEmailAddressCreation;
-import GlobalActions.Screenshots;
 import helpers.Environment;
 import pageobjects.Agent_RegisterCustomerPage;
 
@@ -16,7 +14,7 @@ public class Agent_RegisterCustomerActions extends Environment {
 
 	static Logger log = Logger.getLogger("devpinoyLogger");
 
-	public static void PayGRegistration(String Firstname, String Surname) throws InterruptedException, IOException {
+	public static void PayGRegistration(String Firstname, String Surname) throws InterruptedException {
 		try {
 			Select dropdown = new Select(pageobjects.Agent_RegisterCustomerPage.Title);
 			dropdown.selectByIndex(1);
@@ -36,11 +34,9 @@ public class Agent_RegisterCustomerActions extends Environment {
 			Agent_RegisterCustomerPage.ContactNumber.sendKeys("07888594958");
 			log.debug("Entered contact number");
 			Thread.sleep(2000);
-			Screenshots.captureScreenshot();
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.getMessage();
-			Screenshots.captureScreenshot();
 		}
 
 		Agent_RegisterCustomerPage.intialPassword.sendKeys("SitTester123");
@@ -60,10 +56,8 @@ public class Agent_RegisterCustomerActions extends Environment {
 
 			pageobjects.Agent_RegisterCustomerPage.Selectedaddress.click();
 			log.debug("Selected an address");
-			Screenshots.captureScreenshot();
 		} catch (Exception e) {
 			e.getMessage();
-			Screenshots.captureScreenshot();
 		}
 
 		Select dropdown2 = new Select(pageobjects.Agent_RegisterCustomerPage.securityQuestion);
@@ -73,11 +67,10 @@ public class Agent_RegisterCustomerActions extends Environment {
 		Agent_RegisterCustomerPage.registerCustomer.click();
 		Thread.sleep(3000);
 		log.debug("Clicked on Register customer");
-		Screenshots.captureScreenshot();
 	}
 
 	public static void PayGRegistration(String Firstname, String Surname, String HouseNumber, String PostCode)
-			throws InterruptedException, IOException {
+			throws InterruptedException {
 		try {
 			Select dropdown = new Select(pageobjects.Agent_RegisterCustomerPage.Title);
 			dropdown.selectByIndex(1);
@@ -97,11 +90,9 @@ public class Agent_RegisterCustomerActions extends Environment {
 			Agent_RegisterCustomerPage.ContactNumber.sendKeys("07888594958");
 			log.debug("Entered contact number");
 			Thread.sleep(2000);
-			Screenshots.captureScreenshot();
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.getMessage();
-			Screenshots.captureScreenshot();
 		}
 
 		Agent_RegisterCustomerPage.intialPassword.sendKeys("SitTester123");
@@ -121,11 +112,9 @@ public class Agent_RegisterCustomerActions extends Environment {
 
 			pageobjects.Agent_RegisterCustomerPage.Selectedaddress.click();
 			log.debug("Selected an address");
-			Screenshots.captureScreenshot();
 		} catch (Exception e) {
 			e.getMessage();
 			System.out.println("Try catch block exception in Agent register cutomer actions page, nothing to worry :)");
-			Screenshots.captureScreenshot();
 		}
 
 		Select dropdown2 = new Select(pageobjects.Agent_RegisterCustomerPage.securityQuestion);
@@ -136,10 +125,9 @@ public class Agent_RegisterCustomerActions extends Environment {
 		Thread.sleep(6000);
 		log.debug("Clicked on Register customer");
 		System.out.println("Clicked on Register customer");
-		Screenshots.captureScreenshot();
 	}
 
-	public static void PaybyCard() throws InterruptedException, IOException {
+	public static void PaybyCard() throws InterruptedException {
 		String OneOff = Agent_RegisterCustomerPage.ZeroOneOff.getText();
 		System.out.println(OneOff);
 		if (OneOff.contains("�0.00")) {
@@ -156,10 +144,9 @@ public class Agent_RegisterCustomerActions extends Environment {
 
 		}
 		Thread.sleep(2000);
-		Screenshots.captureScreenshot();
 	}
 
-	public static void CardDetails() throws InterruptedException, IOException {
+	public static void CardDetails() throws InterruptedException {
 		Thread.sleep(2000);
 		System.out.println("Mipay bit :) ");
 		String PaybyCardCVV2 = Agent_RegisterCustomerPage.PayByCard_2.getText();
@@ -172,7 +159,6 @@ public class Agent_RegisterCustomerActions extends Environment {
 			log.debug("The Pay Now button is clicked");
 			System.out.println("completed  Mypay bit");
 			Thread.sleep(6000);
-			Screenshots.captureScreenshot();
 
 		}
 
@@ -191,7 +177,6 @@ public class Agent_RegisterCustomerActions extends Environment {
 			Thread.sleep(2000);
 			Agent_RegisterCustomerPage.SecurityCode.sendKeys("123");
 			Thread.sleep(2000);
-			Screenshots.captureScreenshot();
 			Agent_RegisterCustomerPage.UsethisCard.click();
 			System.out.println("completed  Mypay bit");
 			Thread.sleep(6000);
