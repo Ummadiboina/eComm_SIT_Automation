@@ -5,15 +5,16 @@ Feature: CFU_Tablet_ColourDropdownsWithColourNamesBesideTheColourMultipleColour
     And Signin using valid <username> and <password> credentials
     And Navigate to upgrade > upgrade now
     And click on Tablets tab
-    And I choose upgrade PayM Tablet <handset>
-    And Navigate to device details page
-    And click on the colour dropdown
-    And verify the name of the colur is next to the colour tile in <UpgradeTabletColour>
+    And Click on View all Tablets link
+    And select any available <Device> Tablet
     And select <color> color of the connected device
+    And verify the name of the colur is next to the colour tile in <UpgradeTabletColour>
+    And Navigate to device details page
+    And select <color> color of the connected device
+    And verify the name of the colur is next to the colour tile in <UpgradeTariffTabletColour>
     And Select a tariff <tariff>
     And I Land on the basket page by clicking on Add to Basket button
 
-
-    Examples:
-      | username               | password | handset  | tariff                 | UpgradeTabletColour | color |
-      | gb119519_979816@o2.com | test123  | GalaxyS8 | 9.99upfront60.00amonth |                     | White |
+    Examples: 
+      | username               | password | handset  | tariff                 | UpgradeTabletColour | color |UpgradeTariffTabletColour|
+      | gb119519_979816@o2.com | test123  | GalaxyS8 | 9.99upfront60.00amonth |                     | White |													|
