@@ -12,4 +12,4 @@ Feature: PayG FreeSim_ShowMarketingMessageOnTariffAndExtrasPagePackageSummary
 
     Examples: 
       | Firstname | Surname |TileName|DeliverSummary|
-      | TEST      | ACCEPTA |
+      | TEST      | ACCEPTA |        |              |
