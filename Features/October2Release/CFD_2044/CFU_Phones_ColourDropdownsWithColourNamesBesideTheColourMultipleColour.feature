@@ -6,16 +6,16 @@ Feature: CFU_Phones_ColourDropdownsWithColourNamesBesideTheColourMultipleColour
     And Navigate to upgrade phone
     And I choose upgrade PayM handset <handset>
     And Navigate to device details page
-    And click on the colour dropdown
-    And verify the name of the colur is next to the colour tile in <UpgradePhoneColour>
-    And select a colour
+    And click on the color dropdown
+    And verify the name of the color is next to the color tile in <UpgradePhoneColour>
+    And select <color> color of the connected device
     And Select a tariff <tariff>
-    And click on the colour dropdown
-    And verify the name of the colur is next to the colour tile in <UpgradeTariffColour>
-    And select a colour    
+    And click on the color dropdown
+    And verify the name of the color is next to the color tile in <UpgradeTariffColour>
+    And select <color> color of the connected device
     And I Land on the basket page by clicking on Add to Basket button
 
 
     Examples: 
       | username               | password | handset  | tariff                 | UpgradePhoneColour |UpgradeTariffColour|
-      | gb119519_979816@o2.com | test123  | GalaxyS8 | 9.99upfront60.00amonth |                    |
+      | gb119519_979816@o2.com | test123  | GalaxyS8 | 9.99upfront60.00amonth |                    |                   |

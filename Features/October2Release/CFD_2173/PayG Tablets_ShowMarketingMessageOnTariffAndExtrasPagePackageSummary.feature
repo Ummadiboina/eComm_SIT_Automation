@@ -10,17 +10,17 @@ Scenario Outline: PayG Tablets_ShowMarketingMessageOnTariffAndExtrasPagePackageS
     And Verify the copytext of marketing message in <TileName>
     And Verify the copytext of marketing message in <SectionName> 
     And I Land on the basket page and choose home delivery option
-    And Verify the copytext of marketing message in <BasketSectionName> 
+    And Verify the copytext of marketing message in <BasketSectionName>
     And click on "go to checkout" button
-    And Verify the copytext of marketing message in <DeliverySectionName> 
+    #And Verify the copytext of marketing message in <DeliverySectionName>
     And input <Firstname> and <Surname> and other valid details in Delivery page and Click on the 'Continue button'
-    And Verify the copytext of marketing message in <PaymentSectionName> 
+    #And Verify the copytext of marketing message in <PaymentSectionName>
     And land on the Non Credit check payment page and input <Username> and other details and click 'Continue on next step'
-    And Verify the copytext of marketing message in <AgreementSectionName> 
+    #And Verify the copytext of marketing message in <AgreementSectionName>
     And Continue to Review page and review the order
-    And Verify the copytext of marketing message in <ReviewSectionName> 
+    #And Verify the copytext of marketing message in <ReviewSectionName>
     Then order confirmation is displayed
 
     Examples: 
       | Firstname | Surname | Username     |tariff|TileName|SectionName|BasketSectionName|DeliverySectionName|PaymentSectionName|AgreementSectionName|ReviewSectionName|
-      | TEST      | ACCEPTA | TEST ACCEPTA |      | 
+      | TEST      | ACCEPTA | TEST ACCEPTA |      |        |           |                 |                   |                  |                    |                 |

@@ -9,11 +9,11 @@ Given I am existing user and I click on Signin button
     And Navigate to device details page
     And click on the colour dropdown
     And verify the name of the colur is next to the colour tile in <CFAPhoneColour>
-    And select a colour
+    And select <color> color of the connected device
     And Land on the 'Tariffs and extra' page
     And click on the colour dropdown
     And verify the name of the colur is next to the colour tile in <CFATariffColour>
-    And select a colour
+    And select <color> color of the connected device
     And I Land on the basket page and choose home delivery option
     And click on "go to checkout" button
     And Select existing account and begin fast checkout

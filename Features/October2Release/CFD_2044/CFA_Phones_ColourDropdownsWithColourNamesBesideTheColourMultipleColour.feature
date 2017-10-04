@@ -5,13 +5,14 @@ Feature: CFA_Phones_ColourDropdownsWithColourNamesBesideTheColourMultipleColour
     And navigate to PAYM Phones page
     And I choose PayM <handset>
     And Navigate to device details page
-    And click on the colour dropdown
-    And verify the name of the colur is next to the colour tile in <CFAPhoneColour>
-    And select a colour
+    And click on the color dropdown
+    And verify the name of the color is next to the colour tile in <CFAPhoneColour>
+   # And select a color
+    And select <color> color of the connected device
     And Land on the 'Tariffs and extra' page
-    And click on the colour dropdown
+    And click on the color dropdown
     And verify the name of the colur is next to the colour tile in <CFATariffColour>
-    And select a colour
+    And select <color> color of the connected device
     And I Land on the basket page and choose home delivery option
     And click on "go to checkout" button
     And input <Firstname> and <Surname> and other valid details in Delivery page and Click on the 'Continue button'

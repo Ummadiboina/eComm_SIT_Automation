@@ -9,8 +9,8 @@ Current URL:
     And Signin using valid <username> and <password> credentials
     And I launch the OldMBBURL
     And click on the colour dropdown
-    And verify the name of the colur is next to the colour tile in <MBBLandingPage> 
-    And select a colour
+    And verify the name of the colur is next to the colour tile in <MBBLandingPage>
+    And select <color> color of the connected device
     And select "random" MBBtariff
     #And I Land on the basket page and choose home delivery option
     And click on "go to checkout" button
