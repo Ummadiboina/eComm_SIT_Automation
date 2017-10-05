@@ -15,10 +15,10 @@ import com.github.mkolisnyk.cucumber.reporting.CucumberResultsOverview;
 
 import cucumber.api.CucumberOptions;
 
-@CucumberOptions(strict = true, features = { "Features//RegressionPack_Master//Reg_AFA_PayMSimO_withoutAnyAccessory.feature" }, glue = {
+@CucumberOptions(strict = true, features = { "Features//AppiumDemo//" }, glue = {
 		"steps" },
 
-		tags = {}, format = { "json:testResult/cucumber.json", "pretty", "html:testResult/report" }, plugin = {
+		tags = {"@Appium"}, format = { "json:testResult/cucumber.json", "pretty", "html:testResult/report" }, plugin = {
 				"com.cucumber.listener.ExtentCucumberFormatter" })
 
 /**

@@ -3,9 +3,15 @@ package steps;
 import java.io.File;
 import java.io.IOException;
 import java.net.MalformedURLException;
+import java.net.URL;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.concurrent.TimeUnit;
 
+import io.appium.java_client.MobileElement;
+import io.appium.java_client.android.AndroidDriver;
+import io.appium.java_client.android.AndroidElement;
+import io.appium.java_client.remote.MobileCapabilityType;
 import org.apache.commons.io.FileUtils;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.OutputType;
@@ -19,18 +25,16 @@ import cucumber.api.java.Before;
 import helpers.BrowserHelper;
 import helpers.Environment;
 import helpers.Filereadingutility;
+import org.openqa.selenium.remote.DesiredCapabilities;
 
 public class Hooks extends Environment {
 
 	static Logger log = Logger.getLogger("devpinoyLogger");
-
+	//private static WebDriver driver;
 	// protected static WebDriver driver;
 
-	@Before
-	/**
-	 * Delete all cookies at the start of each scenario to avoid shared state
-	 * between tests
-	 */
+	@Before("@Web")
+
 	public WebDriver openBrowser() throws MalformedURLException, InterruptedException {
 		System.out.println("Called openBrowser");
 		log.debug("Called openBrowser");
@@ -58,8 +62,18 @@ public class Hooks extends Environment {
 
 		driver.manage().window().maximize();
 		log.debug("Maxismised window");
-
 		return null;
+	}
+
+	@Before("@Appium")
+	public void setupAppium() throws MalformedURLException, InterruptedException {
+		System.out.println("Opening Mobile browser");
+		DesiredCapabilities capabilities = new DesiredCapabilities();
+		capabilities.setCapability(MobileCapabilityType.DEVICE_NAME, "Android Device");
+		capabilities.setCapability(MobileCapabilityType.BROWSER_NAME,"Chrome");
+		driver = new AndroidDriver<MobileElement>(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
+		driver.get("https://www.o2.co.uk/shop");
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 	}
 
 	@After
@@ -72,7 +86,7 @@ public class Hooks extends Environment {
 			try {
 
 				/*
-				 * scenario.write("Current Page URL is " +driver.getCurrentUrl());
+                 * scenario.write("Current Page URL is " +driver.getCurrentUrl());
 				 * log.debug("The url where it has failed is "+driver. getCurrentUrl()); //
 				 * byte[] screenshot = getScreenshotAs(OutputType.BYTES); byte[] screenshot =
 				 * ((TakesScreenshot)driver).getScreenshotAs(OutputType.BYTES);
@@ -91,8 +105,8 @@ public class Hooks extends Environment {
 
 		}
 		Thread.sleep(2000);
-		//driver.close();
-		//driver.quit();
+		driver.close();
+		driver.quit();
 
 	}
 
