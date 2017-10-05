@@ -6104,5 +6104,58 @@ public class E2EOrderPlaced_Steps {
 			Assert.fail("Unable to select valid tariff and handset combination");
 		}
 	}
+	@Given("^I am an CFA user and Lands on Mobile shop page$")
+	public void i_am_an_CFA_user_and_Lands_on_Mobile_shop_page() throws Throwable {
+		String title = driver.getTitle();
+		System.out.println(title);
+	}
+
+	@And("^navigate to PayG SIMO page in Mobile$")
+	public void navigate_to_PayG_SIMO_page_in_Mobile() throws Throwable {
+		driver.findElement(By.xpath("//div[@class='mobile-nav-toggle is-mobile']/a")).click();
+
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		PageFactory.initElements(driver, MouseHoverPage.class);
+		//Edit the below
+		MouseHoverAction.MobilePayGSimLandingPage();
+		Autoredirection.redirect();
+	}
+
+	@And("^Tap on iPads and Tabets Tab$")
+	public void tap_on_iPads_and_Tabets_Tab() throws Throwable {
+		// Write code here that turns the phrase above into concrete actions
+
+	}
+
+	@And("^Tap on iPad Sims > Pick a Sim$")
+	public void tap_on_iPad_Sims_Pick_a_Sim() throws Throwable {
+		// Write code here that turns the phrase above into concrete actions
+
+	}
+
+	@And("^Verify user is navigated to Delivery details page$")
+	public void verify_user_is_navigated_to_Delivery_details_page() throws Throwable {
+		// Write code here that turns the phrase above into concrete actions
+
+	}
+
+	@And("^Enter (\\d+), SL(\\d+)UP and Add the Address details$")
+	public void enter_SL_UP_and_Add_the_Address_details(int arg1, int arg2) throws Throwable {
+		// Write code here that turns the phrase above into concrete actions
+
+	}
+
+	@And("^Enter RANDOM, ACCEPTA, <Surname> and ACCEPTA$")
+	public void enter_RANDOM_ACCEPTA_Surname_and_ACCEPTA() throws Throwable {
+		// Write code here that turns the phrase above into concrete actions
+
+	}
+
+	@And("^Tap on Send me my sim button$")
+	public void tap_on_Send_me_my_sim_button() throws Throwable {
+		// Write code here that turns the phrase above into concrete actions
+
+	}
+
 
 }
