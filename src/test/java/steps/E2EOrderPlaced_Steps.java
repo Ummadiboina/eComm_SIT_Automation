@@ -6104,5 +6104,23 @@ public class E2EOrderPlaced_Steps {
 			Assert.fail("Unable to select valid tariff and handset combination");
 		}
 	}
+	
+	/////////////////////////////////////////Dinesh Steps///////////////////////////////////////////////////////////////
+	
+	@And("^navigate to Pay as you Go Tablets page$")
+	public void navigate_to_Pay_as_you_Go_Tablets_page() throws Throwable {
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, MouseHoverPage.class);
+			MouseHoverAction.PayAsYouGoTabletsLandingPage();
+			Autoredirection.redirect();
+			Thread.sleep(10000);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			System.out.println("unable to do mousehover to Pay as you Go Tablets");
+			Assert.fail("unable to do mousehover to Pay as you Go Tablets");
+		}
+
+	}
 
 }
