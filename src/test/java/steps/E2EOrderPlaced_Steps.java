@@ -169,6 +169,21 @@ public class E2EOrderPlaced_Steps {
 		}
 	}
 
+	
+	@And("^navigate to Pay as you Go Tablets page$")
+	public void navigate_to_Pay_as_you_Go_Tablets_page() throws Throwable {
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, MouseHoverPage.class);
+			MouseHoverAction.PayAsYouGoTabletsLandingPage();
+			Autoredirection.redirect();
+			Thread.sleep(10000);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			System.out.println("unable to do mousehover to Pay as you Go Tablets");
+			Assert.fail("unable to do mousehover to Pay as you Go Tablets");
+		}
+	}
 	@Given("^Navigate to Accessories$")
 	public void navigate_to_Accessories() throws Throwable {
 		try {
@@ -1615,6 +1630,92 @@ public class E2EOrderPlaced_Steps {
 			// TODO Auto-generated catch block
 			System.out.println("Unable to perform credit checks , please see the failure screenshot");
 			Assert.fail("Unable to perform credit checks , please see the failure screenshot");
+
+		}
+
+	}
+	
+	/*
+	 * #########################################################################
+	 * #########
+	 */
+	/* ######## Additional Card Details ######### */
+	/*
+	 * #########################################################################
+	 * #########
+	 */
+
+	@And("^input additional card details ([^\\\"]*)$")
+	public void input_additional_card_details(String Username)
+			throws Throwable {
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, Agent_CreditCheckDetailsPage.class);
+			Agent_CreditCheckPageActions.AdditionalCardDetails();
+			System.out.println("Additional Card Details Clicked");
+			Agent_CreditCheckPageActions.AdditionalBankDetails(Username);
+			System.out.println("Completed addtional Bank details");
+			Thread.sleep(30000);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			System.out.println("Unable to add additional card details, please see the failure screenshot");
+			Assert.fail("Unable to add additional card details, please see the failure screenshot");
+
+		}
+
+	}
+	
+	/*
+	 * #########################################################################
+	 * #########
+	 */
+	/* ######## Driving License Details ######### */
+	/*
+	 * #########################################################################
+	 * #########
+	 */
+
+	@And("^input Driving license details ([^\\\"]*) and ([^\\\"]*)$")
+	public void input_Driving_license_details(String License_Postcode, String License_Number)
+			throws Throwable {
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, Agent_CreditCheckDetailsPage.class);
+			Agent_CreditCheckPageActions.DrivingLicenseDetails(License_Postcode, License_Number);
+			System.out.println("Completed License details");
+			Thread.sleep(30000);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			System.out.println("Unable to add License details, please see the failure screenshot");
+			Assert.fail("Unable to add License details, please see the failure screenshot");
+
+		}
+
+	}
+	
+	/*
+	 * #########################################################################
+	 * #########
+	 */
+	/* ######## Passport Details ######### */
+	/*
+	 * #########################################################################
+	 * #########
+	 */
+
+	@And("^input Passport details ([^\\\\\\\"]*), ([^\\\\\\\"]*), ([^\\\\\\\"]*), ([^\\\\\\\"]*), ([^\\\\\\\"]*), ([^\\\\\\\"]*), ([^\\\\\\\"]*)$")
+	public void input_Passport_details(String Country, String Passport_Number1, String Passport_Number2, String Passport_Number3, String Passport_Gender, String Passport_Expirydate, String Passport_Checkdigit )
+			throws Throwable {
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, Agent_CreditCheckDetailsPage.class);
+			Agent_CreditCheckPageActions.PassportDetails(Country, Passport_Number1,Passport_Number2,Passport_Number3,Passport_Gender, Passport_Expirydate,Passport_Checkdigit );
+			System.out.println("Completed Passport details");
+			Thread.sleep(30000);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			System.out.println("Unable to add Passport details, please see the failure screenshot");
+			Assert.fail("Unable to add Passport details, please see the failure screenshot");
 
 		}
 

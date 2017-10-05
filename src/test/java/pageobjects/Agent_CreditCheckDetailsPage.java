@@ -96,5 +96,60 @@ public class Agent_CreditCheckDetailsPage {
 	@FindBy(how=How.XPATH,using="//*[@id='creditCheckAndAgreementAndStatus']/input[3]")
 	public static WebElement PerformCreditCheck;
 			
+	@FindBy(how=How.XPATH,using="//*[@id='additionalCardDetailsCheckbox']")
+	public static WebElement AdditionalCardDetailstickbox;
+	
+	@FindBy(how=How.ID,using="additionalCaptureCardDetails")
+	public static WebElement AdditionalCaptureCardDetails;
 		
+	@FindBy(how=How.XPATH,using="//*[@id='licenceDetailsCheckbox']")
+	public static WebElement LicenseDetailstickbox;
+	
+	@FindBy(how=How.XPATH,using="//*[@id='licencePostCode']")
+	public static WebElement LicensePostcode;
+	
+	@FindBy(how=How.XPATH,using="//*[@id='licenceNumberSeg1']")
+	public static WebElement LicenceNumberSeg1;
+	
+	@FindBy(how=How.XPATH,using="//*[@id='licenceNumberSeg2']")
+	public static WebElement LicenceNumberSeg2;
+	
+	@FindBy(how=How.XPATH,using="//*[@id='licenceNumberSeg3']")
+	public static WebElement LicenceNumberSeg3;
+	
+	@FindBy(how=How.XPATH,using="//*[@id='licenceNumberSeg4']")
+	public static WebElement LicenceNumberSeg4;
+	
+	@FindBy(how=How.XPATH,using="//*[@id='passportDetailsCheckbox']")
+	public static WebElement PassportDetailstickbox;
+	
+	@FindBy(how=How.XPATH,using="//*[@id='passportIssueCountry']")
+	public static WebElement CountryofIssue;
+	
+	@FindBy(how=How.XPATH,using="//*[@id='passportNumberSeg1']")
+	public static WebElement PassportNumberSeg1;
+	
+	@FindBy(how=How.XPATH,using="//*[@id='passportNumberSeg2']")
+	public static WebElement PassportNumberSeg2;
+	
+	@FindBy(how=How.XPATH,using="//*[@id='passportNumberSeg3']")
+	public static WebElement PassportNumberSeg3;
+	
+	@FindBy(how=How.XPATH,using="//*[@id='passportNumberSeg4']")
+	public static WebElement PassportNumberSeg4;
+	
+	@FindBy(how=How.XPATH,using="//*[@id='passportNumberSeg5']")
+	public static WebElement PassportNumberSeg5;
+	
+	@FindBy(how=How.XPATH,using="//*[@id='passportNumberSeg6']")
+	public static WebElement PassportNumberSeg6;
+	
+	@FindBy(how=How.XPATH,using="//*[@id='passportNumberSeg7']")
+	public static WebElement PassportNumberSeg7;
+	
+	
+	
+	
+	
+	
 }
