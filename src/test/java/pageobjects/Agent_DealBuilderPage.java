@@ -167,4 +167,12 @@ public class Agent_DealBuilderPage {
 	@FindBy(how = How.ID, using = "chosen-store-details")
 	public static WebElement Storedetails;
 
+//check the device weather added into the Deal Builder
+	@FindBy(how = How.XPATH, using = "//table[@class='lineItemTable device']//th")
+	public static WebElement deviceAdded_DealBuilder;
+
+	//check the Tariff weather added into the Deal Builder
+	@FindBy(how = How.XPATH, using = "//table[@class='lineItemTable device']//th")
+	public static WebElement tariffAdded_DealBuilder;
+	
 }
