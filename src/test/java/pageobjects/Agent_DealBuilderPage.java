@@ -152,8 +152,22 @@ public class Agent_DealBuilderPage {
 
 	@FindBy(how = How.XPATH, using = "//*[@id='buyOutButton']")
 	public static WebElement AgentBuyOut_Button;
-	
-	//check the device weather added into the Deal Builder
+	@FindBy(how = How.ID, using = "checkStoreStock")
+	public static WebElement CheckStore;
+
+	@FindBy(how = How.ID, using = "postcode")
+	public static WebElement Postcode;
+
+	@FindBy(how = How.ID, using = "findStores")
+	public static WebElement searchStore;
+
+	@FindBy(how = How.XPATH, using = "(//*[@class='selectStore'])[1]")
+	public static WebElement selectStore;
+
+	@FindBy(how = How.ID, using = "chosen-store-details")
+	public static WebElement Storedetails;
+
+//check the device weather added into the Deal Builder
 	@FindBy(how = How.XPATH, using = "//table[@class='lineItemTable device']//th")
 	public static WebElement deviceAdded_DealBuilder;
 
