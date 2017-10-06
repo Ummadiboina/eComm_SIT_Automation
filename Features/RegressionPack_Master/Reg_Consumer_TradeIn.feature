@@ -28,4 +28,4 @@ Feature: Reg_Consumer_TradeIn
 
     Examples: 
       | username     | password | handset        | tariff                  | Firstname | Surname | Username     | Action | Make  | Model   | Network |
-      | 13ma88212553 | test123  | Apple iPhone 7 | 19.99upfront45.00amonth | TEST      | ACCEPTA | TEST ACCEPTA | skip   | Apple | Iphone7 | Orange  |
+      | 13ma88212553 | test123  | Galaxy S8 | 19.99upfront45.00amonth | TEST      | ACCEPTA | TEST ACCEPTA | skip   | Apple | Iphone7 | Orange  |

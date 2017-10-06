@@ -1607,7 +1607,6 @@ public class E2EOrderPlaced_Steps {
 			// TODO Auto-generated catch block
 			System.out.println("Unable to select accessory basket, please see the failure screenshot");
 			Assert.fail("Unable to select accessory basket, please see the failure screenshot");
-
 		}
 	}
 
@@ -1635,7 +1634,7 @@ public class E2EOrderPlaced_Steps {
 	/* ######## Validate Basket contents ######### */
 	/*
 	 * #########################################################################
-	 * #########
+3
 	 */
 
 	@Given("^Validate all the Basket content and checkout$")
@@ -1643,7 +1642,7 @@ public class E2EOrderPlaced_Steps {
 		try {
 			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 			PageFactory.initElements(driver, Agent_DealBuilderPage.class);
-			Agent_DealBuilderPageActions.ValdiateBasket();
+			//Agent_DealBuilderPageActions.ValdiateBasket();
 			Thread.sleep(2000);
 			Agent_DealBuilderPageActions.checkout();
 			Thread.sleep(7000);
@@ -6061,6 +6060,133 @@ public class E2EOrderPlaced_Steps {
 			Assert.fail("unable to select surfer and sim");
 		}
 	}
+	
+	@And("^Select a PAYG ([^\"]*) device in stock$")		 
+	public void  Select_a_PAYG_Device_InStock(String device) throws Throwable{
+		try {
+			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, PayG_DevicesPage.class);
+			PayG_DevicesPage.payGdeviceTab.click();
+			Thread.sleep(1000);
+			List<WebElement>  stockSize = driver.findElements(By.xpath("//*[@id='prepayDeviceTable']/tbody/tr/td[4]"));
+			for(int i =1; i<stockSize.size() ;i++){
+				String stockStatus = driver.findElement(By.xpath("//*[@id='prepayDeviceTable']/tbody/tr["+i+"]/td[4]")).getText();
+				if(stockStatus.contains("In stock")){
+					System.out.println("Selecting Device from " + stockStatus);
+					driver.findElement(By.xpath("//*[@id='prepayDeviceTable']/tbody/tr["+i+"]/td[1]//img")).click();
+					Thread.sleep(5000);
+					String str = driver.findElement(By.xpath("//*[@id='prepayDeviceTable']/tbody/tr[99]/td[3]/a")).getText();
+					System.out.println("Device Model :  " + str);
+					break;
+				}				
+				System.out.println("Successfylly Selected Device from P&G");
+			}			
+			
+		} catch (Exception e) {
+			System.out.println("Failed to select the device fom P&G ");
+			Assert.fail("Failed to select the device fom P&G ");
+		}
+	}
+	
+	
+	
+	@And("^Select valid ([^\"]*) from PAYG tariffs tab less than 50 GBP$")		 
+	public void  Select_valid_Tariffs_from_PAYG_tariffs_tab_LessThan50GBP(int device) throws Throwable{
+		try {
+			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, Agent_DealBuilderPage.class);
+			Agent_DealBuilderPage.prepayPlansTab.click();
+			Thread.sleep(1000);
+			driver.findElement(By.xpath(".//*[@id='prepayPlanTable']/tbody/tr/td[1]//img")).click();
+			Thread.sleep(5000);
+			System.out.println("Successfylly Selected Tariff from P&G Tariffs");				
+	
+		} catch (Exception e) {
+			System.out.println("Failed to Select Tariff from P&G Tariffs ");
+			Assert.fail("Failed to Select Tariff from P&G Tariffs ");
+		}
+	}
+	
+	
+	@And("^Confirm Device and Tariff are added in Deal Builder$")		 
+	public void  Confirm_Device_and_Tariff_are_added_in_DealBuilder()throws Throwable{
+		try {
+			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, Agent_DealBuilderPage.class);
+			Agent_DealBuilderPage.deviceAdded_DealBuilder.isDisplayed();
+			Agent_DealBuilderPage.tariffAdded_DealBuilder.isDisplayed();
+			Thread.sleep(1000);
+			System.out.println("Successfylly added Device & Tariff into Deal Builer");		
+	
+		} catch (Exception e) {
+			System.out.println("Failed to add Device & Tariff into Deal Builer ");
+			Assert.fail("Failed to add Device & Tariff into Deal Builer");
+		}
+	}
+	
+	@And("^Select a valid store using ([^\"]*) for Click and Collect$")		 
+	public void  Select_a_valid_store_using_postCodefor_Click_and_Collect(String postcode)throws Throwable{
+		try {
+			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, checkStoreStockForPayG.class);
+			checkStoreStockForPayG.checkStoreStockBtn.click();
+			CommonUtilities.switchToWindow(driver);
+			checkStoreStockForPayG.postcodeTxt.sendKeys(postcode);
+			CommonUtilities.driverWait(driver,3000);
+			checkStoreStockForPayG.findStoreSearchBtn.click();
+			CommonUtilities.driverWait(driver,8000);
+			((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", checkStoreStockForPayG.selectStoreAddress);
+			//scrollToAnElement.scrollToElement(checkStoreStockForPayG.selectStoreAddress);	
+			CommonUtilities.driverWait(driver,3000);
+			System.out.println("before selectiong the store");
+			checkStoreStockForPayG.selectStoreAddress.click();
+			System.out.println("after selectiong the store");
+			CommonUtilities.driverWait(driver,3000);
+			System.out.println("before navigation back");
+			CommonUtilities.switchToWindow(driver);
+			System.out.println("Successfylly selected store");
+		} catch (Exception e) {
+			System.out.println("Failed to select store"+ e.getMessage());
+			Assert.fail("Failed to select store");
+		}
+	}
+	
+	
+	@And("^perform the credit checks using valid details like ([^\"]*), ([^\"]*), ([^\"]*), ([^\"]*), ([^\"]*), ([^\"]*), ([^\"]*), ([^\"]*), ([^\"]*), ([^\"]*), ([^\"]*), ([^\"]*) and ([^\"]*)$")		 
+	public void  perform_the_credit_checks_using_validDetails(String title, String First_name, String Last_name, String Email, String Date_of_birth, String Contact_Number, String House_name_or_number, String Post_code, String Year, String Months, String Account_name, String Sort_code, String Account_number)throws Throwable{
+		try {
+			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+			PageFactory.initElements(driver, personalDetailsPage.class);
+			CommonUtilities.selectValueFromDropDown(driver, personalDetailsPage.title_personalInfo, null, title, null);
+			CommonUtilities.setDataForTextField(driver, personalDetailsPage.firstName_personalInfo, First_name);
+			CommonUtilities.setDataForTextField(driver, personalDetailsPage.firstName_personalInfo, Last_name);
+			CommonUtilities.setDataForTextField(driver, personalDetailsPage.firstName_personalInfo, Email);
+			CommonUtilities.setDataForTextField(driver, personalDetailsPage.firstName_personalInfo, Date_of_birth);
+			CommonUtilities.setDataForTextField(driver, personalDetailsPage.firstName_personalInfo, Contact_Number);
+			CommonUtilities.setDataForTextField(driver, personalDetailsPage.firstName_personalInfo, House_name_or_number);
+			CommonUtilities.setDataForTextField(driver, personalDetailsPage.firstName_personalInfo, Post_code);
+			CommonUtilities.clickWebElement(driver, personalDetailsPage.selectFirstAddress);
+			CommonUtilities.driverWait(driver, 3000);
+			CommonUtilities.setDataForTextField(driver, personalDetailsPage.year_personalInfo, Year);
+			CommonUtilities.setDataForTextField(driver, personalDetailsPage.month_personalInfo, Months);
+			CommonUtilities.setDataForTextField(driver, personalDetailsPage.accountNameTxt, Account_name);
+			CommonUtilities.setDataForTextField(driver, personalDetailsPage.sortCodeTxt, Sort_code);
+			CommonUtilities.setDataForTextField(driver, personalDetailsPage.accountNumbr, Account_number);
+			CommonUtilities.clickWebElement(driver, personalDetailsPage.agreeToCreditCheck);
+			
+			
+			
+			CommonUtilities.clickWebElement(driver, personalDetailsPage.performCreditCheckBtn);
+			
+			
+			
+			
+		} catch (Exception e) {
+			System.out.println("Failed to select store"+ e.getMessage());
+			Assert.fail("Failed to select store");
+		}
+	}
+	
 
 	@And("^select a valid store for Click and Collect")
 	public void select_Store_for_click_and_Collect() throws Throwable {
