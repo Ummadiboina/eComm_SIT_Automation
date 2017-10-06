@@ -1,5 +1,6 @@
 package steps;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.LinkedList;
@@ -10,14 +11,12 @@ import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 
 import GlobalActions.Autoredirection;
-import GlobalActions.CommonUtilities;
+import GlobalActions.CommonFunctions;
 import GlobalActions.JuneReleaseValidations;
 import GlobalActions.MouseHoverAction;
-import GlobalActions.scrollToAnElement;
 import actionsPerformed.AccessoryPageActions;
 import actionsPerformed.AdditionalInformationPageActions;
 import actionsPerformed.Agent_AdvisoryChecksActions;
@@ -90,7 +89,6 @@ import pageobjects.OrderConfirmationPage;
 import pageobjects.OrderSummarySection;
 import pageobjects.PAYMSimOPage;
 import pageobjects.PAYMandPAYGTariffAndExtrasPage;
-import pageobjects.PayG_DevicesPage;
 import pageobjects.PaymentPage;
 import pageobjects.PhonesListingPage;
 import pageobjects.ReviewPage;
@@ -102,8 +100,6 @@ import pageobjects.TabletPage;
 import pageobjects.UpgradeCustomerPage;
 import pageobjects.UpgradePhonesListingPage;
 import pageobjects.UpgradeTabletListingPage;
-import pageobjects.checkStoreStockForPayG;
-import pageobjects.personalDetailsPage;
 
 public class E2EOrderPlaced_Steps {
 
