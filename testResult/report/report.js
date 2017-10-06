@@ -1,9 +1,9 @@
-$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("Features/RegressionPack_Master/Reg_AFA_PayMSimO_withoutAnyAccessory.feature");
+$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("Features/RegressionPack_Master/Reg_FNT_AFA_PayG_Phones_less_than_50_GBP_ClickAndCollect.feature");
 formatter.feature({
   "line": 1,
-  "name": "Reg_AFA_PayMSimO_withoutAnyAccessory",
+  "name": "Reg_FNT_AFA_PayG_Phones_less_than_50_GBP_ClickAndCollect",
   "description": "",
-  "id": "reg-afa-paymsimo-withoutanyaccessory",
+  "id": "reg-fnt-afa-payg-phones-less-than-50-gbp-clickandcollect",
   "keyword": "Feature"
 });
 formatter.scenarioOutline({
@@ -14,15 +14,15 @@ formatter.scenarioOutline({
     }
   ],
   "line": 5,
-  "name": "Successful completion of a PAY M SIMO acquisition Journey without an accessory",
+  "name": "This test scenario ensures that PaynGo order via the web for payment less than 50 GBP where Click and Collect Now",
   "description": "",
-  "id": "reg-afa-paymsimo-withoutanyaccessory;successful-completion-of-a-pay-m-simo-acquisition-journey-without-an-accessory",
+  "id": "reg-fnt-afa-payg-phones-less-than-50-gbp-clickandcollect;this-test-scenario-ensures-that-payngo-order-via-the-web-for-payment-less-than-50-gbp-where-click-and-collect-now",
   "type": "scenario_outline",
   "keyword": "Scenario Outline",
   "tags": [
     {
       "line": 4,
-      "name": "@AgentsRegression"
+      "name": "@FNTRegression"
     }
   ]
 });
@@ -38,94 +38,97 @@ formatter.step({
 });
 formatter.step({
   "line": 8,
-  "name": "Select valid \u003cTariff\u003e from tariffs tab",
+  "name": "Select a PAYG \u003cDevice\u003e device in stock",
   "keyword": "And "
 });
 formatter.step({
   "line": 9,
-  "name": "Validate all the Basket content and checkout",
+  "name": "Select valid \u003cTariffs\u003e from PAYG tariffs tab less than 50 GBP",
   "keyword": "And "
 });
 formatter.step({
   "line": 10,
-  "name": "perform all the advisory checks",
-  "keyword": "Then "
+  "name": "Confirm Device and Tariff are added in Deal Builder",
+  "keyword": "And "
 });
 formatter.step({
   "line": 11,
-  "name": "perform the credit checks using valid \u003cFirstname\u003e, \u003cSurname\u003e, \u003cHouseNumber\u003e, \u003cPostCode\u003e and valid \u003cUsername\u003e",
+  "name": "Select a valid store using \u003cPostCode\u003e for Click and Collect",
   "keyword": "And "
 });
 formatter.step({
   "line": 12,
-  "name": "Register customer with valid \u003cFirstname\u003e, \u003cSurname\u003e, \u003cHouseNumber\u003e, \u003cPostCode\u003e and other valid details in delivery page",
+  "name": "Validate all the Basket content and checkout",
   "keyword": "And "
 });
 formatter.step({
   "line": 13,
-  "name": "Choose \u003cDeliveryType\u003e delivery address and delivery time",
-  "keyword": "And "
+  "name": "perform all the advisory checks",
+  "keyword": "Then "
 });
 formatter.step({
   "line": 14,
-  "name": "submit order button is clicked",
-  "keyword": "When "
+  "name": "Register customer with valid \u003cFirstname\u003e, \u003cSurname\u003e, \u003cHouseNumber\u003e, \u003cPostCode\u003e and other valid details in delivery page",
+  "keyword": "And "
 });
 formatter.step({
   "line": 15,
+  "name": "Pay by card for PAYM device",
+  "keyword": "When "
+});
+formatter.step({
+  "line": 16,
   "name": "Order confirmation message should be displayed",
   "keyword": "Then "
 });
 formatter.examples({
-  "line": 17,
+  "line": 18,
   "name": "",
   "description": "",
-  "id": "reg-afa-paymsimo-withoutanyaccessory;successful-completion-of-a-pay-m-simo-acquisition-journey-without-an-accessory;",
+  "id": "reg-fnt-afa-payg-phones-less-than-50-gbp-clickandcollect;this-test-scenario-ensures-that-payngo-order-via-the-web-for-payment-less-than-50-gbp-where-click-and-collect-now;",
   "rows": [
     {
       "cells": [
-        "Tariff",
-        "DeliveryType",
+        "Device",
+        "Tariffs",
         "Firstname",
         "Surname",
-        "Username",
         "HouseNumber",
         "PostCode"
       ],
-      "line": 18,
-      "id": "reg-afa-paymsimo-withoutanyaccessory;successful-completion-of-a-pay-m-simo-acquisition-journey-without-an-accessory;;1"
+      "line": 19,
+      "id": "reg-fnt-afa-payg-phones-less-than-50-gbp-clickandcollect;this-test-scenario-ensures-that-payngo-order-via-the-web-for-payment-less-than-50-gbp-where-click-and-collect-now;;1"
     },
     {
       "cells": [
-        "SimO",
-        "HomeDelivery",
+        "In stock",
+        "50",
         "TEST",
         "ACCEPTA",
-        "TEST ACCEPTA",
-        "6",
-        "SL11UP"
+        "",
+        "g2"
       ],
-      "line": 19,
-      "id": "reg-afa-paymsimo-withoutanyaccessory;successful-completion-of-a-pay-m-simo-acquisition-journey-without-an-accessory;;2"
+      "line": 20,
+      "id": "reg-fnt-afa-payg-phones-less-than-50-gbp-clickandcollect;this-test-scenario-ensures-that-payngo-order-via-the-web-for-payment-less-than-50-gbp-where-click-and-collect-now;;2"
     }
   ],
   "keyword": "Examples"
 });
 formatter.before({
-  "duration": 27975141315,
+  "duration": 43079035886,
   "status": "passed"
 });
 formatter.scenario({
-  "line": 19,
-  "name": "Successful completion of a PAY M SIMO acquisition Journey without an accessory",
+  "line": 20,
+  "name": "This test scenario ensures that PaynGo order via the web for payment less than 50 GBP where Click and Collect Now",
   "description": "",
-  "id": "reg-afa-paymsimo-withoutanyaccessory;successful-completion-of-a-pay-m-simo-acquisition-journey-without-an-accessory;;2",
+  "id": "reg-fnt-afa-payg-phones-less-than-50-gbp-clickandcollect;this-test-scenario-ensures-that-payngo-order-via-the-web-for-payment-less-than-50-gbp-where-click-and-collect-now;;2",
   "type": "scenario",
   "keyword": "Scenario Outline",
   "tags": [
     {
       "line": 4,
-      "name": "@AgentsRegression"
+      "name": "@FNTRegression"
     }
   ]
 });
@@ -141,7 +144,7 @@ formatter.step({
 });
 formatter.step({
   "line": 8,
-  "name": "Select valid SimO from tariffs tab",
+  "name": "Select a PAYG In stock device in stock",
   "matchedColumns": [
     0
   ],
@@ -149,52 +152,53 @@ formatter.step({
 });
 formatter.step({
   "line": 9,
-  "name": "Validate all the Basket content and checkout",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 10,
-  "name": "perform all the advisory checks",
-  "keyword": "Then "
-});
-formatter.step({
-  "line": 11,
-  "name": "perform the credit checks using valid TEST, ACCEPTA, 6, SL11UP and valid TEST ACCEPTA",
-  "matchedColumns": [
-    2,
-    3,
-    4,
-    5,
-    6
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "line": 12,
-  "name": "Register customer with valid TEST, ACCEPTA, 6, SL11UP and other valid details in delivery page",
-  "matchedColumns": [
-    2,
-    3,
-    5,
-    6
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "line": 13,
-  "name": "Choose HomeDelivery delivery address and delivery time",
+  "name": "Select valid 50 from PAYG tariffs tab less than 50 GBP",
   "matchedColumns": [
     1
   ],
   "keyword": "And "
 });
 formatter.step({
+  "line": 10,
+  "name": "Confirm Device and Tariff are added in Deal Builder",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 11,
+  "name": "Select a valid store using g2 for Click and Collect",
+  "matchedColumns": [
+    5
+  ],
+  "keyword": "And "
+});
+formatter.step({
+  "line": 12,
+  "name": "Validate all the Basket content and checkout",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 13,
+  "name": "perform all the advisory checks",
+  "keyword": "Then "
+});
+formatter.step({
   "line": 14,
-  "name": "submit order button is clicked",
-  "keyword": "When "
+  "name": "Register customer with valid TEST, ACCEPTA, , g2 and other valid details in delivery page",
+  "matchedColumns": [
+    2,
+    3,
+    4,
+    5
+  ],
+  "keyword": "And "
 });
 formatter.step({
   "line": 15,
+  "name": "Pay by card for PAYM device",
+  "keyword": "When "
+});
+formatter.step({
+  "line": 16,
   "name": "Order confirmation message should be displayed",
   "keyword": "Then "
 });
@@ -202,71 +206,73 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.LoginAgentShop()"
 });
 formatter.result({
-  "duration": 1625754704,
+  "duration": 1497761403,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.performs_Acquisition_for_New_user()"
 });
 formatter.result({
-  "duration": 9316223530,
+  "duration": 21698731401,
   "status": "passed"
 });
 formatter.match({
   "arguments": [
     {
-      "val": "SimO",
+      "val": "In stock",
+      "offset": 14
+    }
+  ],
+  "location": "E2EOrderPlaced_Steps.Select_a_PAYG_Device_InStock(String)"
+});
+formatter.result({
+  "duration": 7630340447,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "50",
       "offset": 13
     }
   ],
-  "location": "E2EOrderPlaced_Steps.SelectTariff(String)"
+  "location": "E2EOrderPlaced_Steps.Select_valid_Tariffs_from_PAYG_tariffs_tab_LessThan50GBP(int)"
 });
 formatter.result({
-  "duration": 11726382108,
+  "duration": 6533100796,
   "status": "passed"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.Confirm_Device_and_Tariff_are_added_in_DealBuilder()"
+});
+formatter.result({
+  "duration": 1292225067,
+  "error_message": "junit.framework.AssertionFailedError: Failed to add Device \u0026 Tariff into Deal Builer\r\n\tat junit.framework.Assert.fail(Assert.java:47)\r\n\tat steps.E2EOrderPlaced_Steps.Confirm_Device_and_Tariff_are_added_in_DealBuilder(E2EOrderPlaced_Steps.java:6105)\r\n\tat ✽.And Confirm Device and Tariff are added in Deal Builder(Features/RegressionPack_Master/Reg_FNT_AFA_PayG_Phones_less_than_50_GBP_ClickAndCollect.feature:10)\r\n",
+  "status": "failed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "g2",
+      "offset": 27
+    }
+  ],
+  "location": "E2EOrderPlaced_Steps.Select_a_valid_store_using_postCodefor_Click_and_Collect(String)"
+});
+formatter.result({
+  "status": "skipped"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.validate_all_the_Basket_content_and_checkout()"
 });
 formatter.result({
-  "duration": 15232092729,
-  "status": "passed"
+  "status": "skipped"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.advisory_checks()"
 });
 formatter.result({
-  "duration": 13163776909,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "TEST",
-      "offset": 38
-    },
-    {
-      "val": "ACCEPTA",
-      "offset": 44
-    },
-    {
-      "val": "6",
-      "offset": 53
-    },
-    {
-      "val": "SL11UP",
-      "offset": 56
-    },
-    {
-      "val": "TEST ACCEPTA",
-      "offset": 73
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.CreditCheck(String,String,String,String,String)"
-});
-formatter.result({
-  "duration": 109994402274,
-  "status": "passed"
+  "status": "skipped"
 });
 formatter.match({
   "arguments": [
@@ -279,29 +285,21 @@ formatter.match({
       "offset": 35
     },
     {
-      "val": "6",
+      "val": "",
       "offset": 44
     },
     {
-      "val": "SL11UP",
-      "offset": 47
+      "val": "g2",
+      "offset": 46
     }
   ],
   "location": "E2EOrderPlaced_Steps.register_customer(String,String,String,String)"
 });
 formatter.result({
-  "duration": 20368493268,
-  "error_message": "junit.framework.AssertionFailedError: Unable to Register customer , please see the failure screenshot\r\n\tat junit.framework.Assert.fail(Assert.java:47)\r\n\tat steps.E2EOrderPlaced_Steps.register_customer(E2EOrderPlaced_Steps.java:1709)\r\n\tat ✽.And Register customer with valid TEST, ACCEPTA, 6, SL11UP and other valid details in delivery page(Features/RegressionPack_Master/Reg_AFA_PayMSimO_withoutAnyAccessory.feature:12)\r\n",
-  "status": "failed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.HomeDelivery_Address()"
-});
-formatter.result({
   "status": "skipped"
 });
 formatter.match({
-  "location": "E2EOrderPlaced_Steps.submit_order_button_is_clicked()"
+  "location": "E2EOrderPlaced_Steps.pay_by_card_payn_device()"
 });
 formatter.result({
   "status": "skipped"
@@ -313,7 +311,7 @@ formatter.result({
   "status": "skipped"
 });
 formatter.after({
-  "duration": 4432386329,
+  "duration": 14296781681,
   "status": "passed"
 });
 });

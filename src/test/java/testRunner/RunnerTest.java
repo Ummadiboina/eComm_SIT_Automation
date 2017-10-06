@@ -15,7 +15,7 @@ import com.github.mkolisnyk.cucumber.reporting.CucumberResultsOverview;
 
 import cucumber.api.CucumberOptions;
 
-@CucumberOptions(strict = true, features = { "Features//RegressionPack_Master//Reg_AFA_PayMSimO_withoutAnyAccessory.feature" }, glue = {
+@CucumberOptions(strict = true, features = { "Features//RegressionPack_Master//Reg_FNT_AFA_PayG_Phones_less_than_50_GBP_ClickAndCollect.feature" }, glue = {
 		"steps" },
 
 		tags = {}, format = { "json:testResult/cucumber.json", "pretty", "html:testResult/report" }, plugin = {
@@ -48,7 +48,6 @@ public class RunnerTest {
 	@AfterSuite
 	public static void tearDown() throws Exception {
 		try {
-
 			// Creates the Detailed Result
 			CucumberDetailedResults results = new CucumberDetailedResults();
 			results.setOutputDirectory("testResult\\cucumber_detailed_result\\");

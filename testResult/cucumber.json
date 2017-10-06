@@ -6,7 +6,7 @@
         "before": [
           {
             "result": {
-              "duration": 27975141315,
+              "duration": 43079035886,
               "status": "passed"
             },
             "match": {
@@ -14,14 +14,14 @@
             }
           }
         ],
-        "line": 19,
-        "name": "Successful completion of a PAY M SIMO acquisition Journey without an accessory",
+        "line": 20,
+        "name": "This test scenario ensures that PaynGo order via the web for payment less than 50 GBP where Click and Collect Now",
         "description": "",
-        "id": "reg-afa-paymsimo-withoutanyaccessory;successful-completion-of-a-pay-m-simo-acquisition-journey-without-an-accessory;;2",
+        "id": "reg-fnt-afa-payg-phones-less-than-50-gbp-clickandcollect;this-test-scenario-ensures-that-payngo-order-via-the-web-for-payment-less-than-50-gbp-where-click-and-collect-now;;2",
         "after": [
           {
             "result": {
-              "duration": 4432386329,
+              "duration": 14296781681,
               "status": "passed"
             },
             "match": {
@@ -34,7 +34,7 @@
         "steps": [
           {
             "result": {
-              "duration": 1625754704,
+              "duration": 1497761403,
               "status": "passed"
             },
             "line": 6,
@@ -46,7 +46,7 @@
           },
           {
             "result": {
-              "duration": 9316223530,
+              "duration": 21698731401,
               "status": "passed"
             },
             "line": 7,
@@ -58,19 +58,19 @@
           },
           {
             "result": {
-              "duration": 11726382108,
+              "duration": 7630340447,
               "status": "passed"
             },
             "line": 8,
-            "name": "Select valid SimO from tariffs tab",
+            "name": "Select a PAYG In stock device in stock",
             "match": {
               "arguments": [
                 {
-                  "val": "SimO",
-                  "offset": 13
+                  "val": "In stock",
+                  "offset": 14
                 }
               ],
-              "location": "E2EOrderPlaced_Steps.SelectTariff(String)"
+              "location": "E2EOrderPlaced_Steps.Select_a_PAYG_Device_InStock(String)"
             },
             "matchedColumns": [
               0
@@ -79,10 +79,63 @@
           },
           {
             "result": {
-              "duration": 15232092729,
+              "duration": 6533100796,
               "status": "passed"
             },
             "line": 9,
+            "name": "Select valid 50 from PAYG tariffs tab less than 50 GBP",
+            "match": {
+              "arguments": [
+                {
+                  "val": "50",
+                  "offset": 13
+                }
+              ],
+              "location": "E2EOrderPlaced_Steps.Select_valid_Tariffs_from_PAYG_tariffs_tab_LessThan50GBP(int)"
+            },
+            "matchedColumns": [
+              1
+            ],
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 1292225067,
+              "error_message": "junit.framework.AssertionFailedError: Failed to add Device \u0026 Tariff into Deal Builer\r\n\tat junit.framework.Assert.fail(Assert.java:47)\r\n\tat steps.E2EOrderPlaced_Steps.Confirm_Device_and_Tariff_are_added_in_DealBuilder(E2EOrderPlaced_Steps.java:6105)\r\n\tat ✽.And Confirm Device and Tariff are added in Deal Builder(Features/RegressionPack_Master/Reg_FNT_AFA_PayG_Phones_less_than_50_GBP_ClickAndCollect.feature:10)\r\n",
+              "status": "failed"
+            },
+            "line": 10,
+            "name": "Confirm Device and Tariff are added in Deal Builder",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.Confirm_Device_and_Tariff_are_added_in_DealBuilder()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 11,
+            "name": "Select a valid store using g2 for Click and Collect",
+            "match": {
+              "arguments": [
+                {
+                  "val": "g2",
+                  "offset": 27
+                }
+              ],
+              "location": "E2EOrderPlaced_Steps.Select_a_valid_store_using_postCodefor_Click_and_Collect(String)"
+            },
+            "matchedColumns": [
+              5
+            ],
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 12,
             "name": "Validate all the Basket content and checkout",
             "match": {
               "location": "E2EOrderPlaced_Steps.validate_all_the_Basket_content_and_checkout()"
@@ -91,10 +144,9 @@
           },
           {
             "result": {
-              "duration": 13163776909,
-              "status": "passed"
+              "status": "skipped"
             },
-            "line": 10,
+            "line": 13,
             "name": "perform all the advisory checks",
             "match": {
               "location": "E2EOrderPlaced_Steps.advisory_checks()"
@@ -103,53 +155,10 @@
           },
           {
             "result": {
-              "duration": 109994402274,
-              "status": "passed"
+              "status": "skipped"
             },
-            "line": 11,
-            "name": "perform the credit checks using valid TEST, ACCEPTA, 6, SL11UP and valid TEST ACCEPTA",
-            "match": {
-              "arguments": [
-                {
-                  "val": "TEST",
-                  "offset": 38
-                },
-                {
-                  "val": "ACCEPTA",
-                  "offset": 44
-                },
-                {
-                  "val": "6",
-                  "offset": 53
-                },
-                {
-                  "val": "SL11UP",
-                  "offset": 56
-                },
-                {
-                  "val": "TEST ACCEPTA",
-                  "offset": 73
-                }
-              ],
-              "location": "E2EOrderPlaced_Steps.CreditCheck(String,String,String,String,String)"
-            },
-            "matchedColumns": [
-              2,
-              3,
-              4,
-              5,
-              6
-            ],
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 20368493268,
-              "error_message": "junit.framework.AssertionFailedError: Unable to Register customer , please see the failure screenshot\r\n\tat junit.framework.Assert.fail(Assert.java:47)\r\n\tat steps.E2EOrderPlaced_Steps.register_customer(E2EOrderPlaced_Steps.java:1709)\r\n\tat ✽.And Register customer with valid TEST, ACCEPTA, 6, SL11UP and other valid details in delivery page(Features/RegressionPack_Master/Reg_AFA_PayMSimO_withoutAnyAccessory.feature:12)\r\n",
-              "status": "failed"
-            },
-            "line": 12,
-            "name": "Register customer with valid TEST, ACCEPTA, 6, SL11UP and other valid details in delivery page",
+            "line": 14,
+            "name": "Register customer with valid TEST, ACCEPTA, , g2 and other valid details in delivery page",
             "match": {
               "arguments": [
                 {
@@ -161,12 +170,12 @@
                   "offset": 35
                 },
                 {
-                  "val": "6",
+                  "val": "",
                   "offset": 44
                 },
                 {
-                  "val": "SL11UP",
-                  "offset": 47
+                  "val": "g2",
+                  "offset": 46
                 }
               ],
               "location": "E2EOrderPlaced_Steps.register_customer(String,String,String,String)"
@@ -174,8 +183,8 @@
             "matchedColumns": [
               2,
               3,
-              5,
-              6
+              4,
+              5
             ],
             "keyword": "And "
           },
@@ -183,24 +192,10 @@
             "result": {
               "status": "skipped"
             },
-            "line": 13,
-            "name": "Choose HomeDelivery delivery address and delivery time",
+            "line": 15,
+            "name": "Pay by card for PAYM device",
             "match": {
-              "location": "E2EOrderPlaced_Steps.HomeDelivery_Address()"
-            },
-            "matchedColumns": [
-              1
-            ],
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "status": "skipped"
-            },
-            "line": 14,
-            "name": "submit order button is clicked",
-            "match": {
-              "location": "E2EOrderPlaced_Steps.submit_order_button_is_clicked()"
+              "location": "E2EOrderPlaced_Steps.pay_by_card_payn_device()"
             },
             "keyword": "When "
           },
@@ -208,7 +203,7 @@
             "result": {
               "status": "skipped"
             },
-            "line": 15,
+            "line": 16,
             "name": "Order confirmation message should be displayed",
             "match": {
               "location": "E2EOrderPlaced_Steps.order_confirmation_message_should_be_displayed()"
@@ -219,15 +214,15 @@
         "tags": [
           {
             "line": 4,
-            "name": "@AgentsRegression"
+            "name": "@FNTRegression"
           }
         ]
       }
     ],
-    "name": "Reg_AFA_PayMSimO_withoutAnyAccessory",
+    "name": "Reg_FNT_AFA_PayG_Phones_less_than_50_GBP_ClickAndCollect",
     "description": "",
-    "id": "reg-afa-paymsimo-withoutanyaccessory",
+    "id": "reg-fnt-afa-payg-phones-less-than-50-gbp-clickandcollect",
     "keyword": "Feature",
-    "uri": "Features/RegressionPack_Master/Reg_AFA_PayMSimO_withoutAnyAccessory.feature"
+    "uri": "Features/RegressionPack_Master/Reg_FNT_AFA_PayG_Phones_less_than_50_GBP_ClickAndCollect.feature"
   }
 ]

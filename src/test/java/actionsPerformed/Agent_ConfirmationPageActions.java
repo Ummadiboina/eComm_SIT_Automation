@@ -14,8 +14,7 @@ public class Agent_ConfirmationPageActions extends Environment{
 	
 	
 	public static void Confirmationdetails() throws Exception
-	{
-				
+	{				
 		driver.getTitle();
 		// final String confirmation = confirmation();
 		
