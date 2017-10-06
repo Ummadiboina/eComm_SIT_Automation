@@ -23,5 +23,5 @@ Feature: CFU_seperate_tariff_ribbons_Tariff_page_Basket_page_html_overlay_for_ta
     And Click on the 'Overlay icon' in the Basket page and verify pop gets displayed
 
     Examples: 
-      | username               | password | handset | tariff                   |
-      | gb119519_979816@o2.com | test123  | Iphone7 | 129.99upfront37.00amonth |
+      | username               | password | handset  | tariff                 |
+      | gb119519_979816@o2.com | test123  | GalaxyS8 | 9.99upfront60.00amonth |

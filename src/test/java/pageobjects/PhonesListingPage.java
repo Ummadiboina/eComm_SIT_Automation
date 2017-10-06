@@ -35,7 +35,7 @@ public class PhonesListingPage {
 
 	@FindBy(how = How.XPATH, using = "//a[contains(@href, '/shop/phones/apple/iphone-7/#contractType=paymonthly')]")
 	public static WebElement AppleIphone7;
-	
+	                                                        
 	@FindBy(how = How.XPATH, using = "//a[contains(@href, '/shop/phones/apple/iphone-7-plus/#contractType=paymonthly')]")
 	public static WebElement Iphone7Plus;
 

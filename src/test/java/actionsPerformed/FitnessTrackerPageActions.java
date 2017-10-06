@@ -1,5 +1,7 @@
 package actionsPerformed;
 
+import java.io.IOException;
+
 import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -7,13 +9,13 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 
+import GlobalActions.Screenshots;
 import helpers.Environment;
 
 public class FitnessTrackerPageActions extends Environment {
 	static Logger log = Logger.getLogger("devpinoyLogger");
-	
 
-	public static void Elementdisplayvalidation(String Tabname) {
+	public static void Elementdisplayvalidation(String Tabname) throws IOException, InterruptedException {
 		System.out.println(" ");
 
 		System.out.println("FitnessTracker_Page_Validation");
@@ -42,10 +44,11 @@ public class FitnessTrackerPageActions extends Environment {
 			}
 
 		}
+		Screenshots.captureScreenshot();
 
 	}
 
-	public static void ElementClickAction(String elementname) {
+	public static void ElementClickAction(String elementname) throws IOException, InterruptedException {
 		// TODO Auto-generated method stub
 		System.out.println(" ");
 
@@ -63,10 +66,11 @@ public class FitnessTrackerPageActions extends Environment {
 			}
 
 		}
+		Screenshots.captureScreenshot();
 
 	}
 
-	public static void DeviceSelect(String elementName) throws InterruptedException {
+	public static void DeviceSelect(String elementName) throws InterruptedException, IOException {
 
 		if (elementName.contains("Random Device")) {
 			System.out.println("Random Fitness tracker Device Selected");
@@ -103,10 +107,11 @@ public class FitnessTrackerPageActions extends Environment {
 			// Assert.assertEquals(elementName,"Galaxy S7 is not found");
 			log.debug("Jawbone UP2 Fitness tracker Device Selected");
 		}
+		Screenshots.captureScreenshot();
 
 	}
 
-	public static void AddtoBasketFitnessTracker() throws InterruptedException {
+	public static void AddtoBasketFitnessTracker() throws InterruptedException, IOException {
 		// TODO Auto-generated method stub
 		try {
 			// Below will give status like in stock / out of stock etc
@@ -130,10 +135,13 @@ public class FitnessTrackerPageActions extends Environment {
 				driver.findElement(By.id("deviceDetailsSubmit")).click();
 
 				Thread.sleep(3000);
+				Screenshots.captureScreenshot();
 
 			} else {
 				driver.navigate().back();
+				Screenshots.captureScreenshot();
 			}
+			Screenshots.captureScreenshot();
 
 		} catch (Exception e) {
 			WebElement DeviceDetailsQuantity = driver.findElement(
@@ -149,10 +157,10 @@ public class FitnessTrackerPageActions extends Environment {
 			String BasketQuantityvalue = BasketQuantity.getText();
 
 			Assert.assertEquals("3", BasketQuantityvalue);
+			Screenshots.captureScreenshot();
 
 		}
 
 	}
-
 
 }

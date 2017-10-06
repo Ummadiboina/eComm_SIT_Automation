@@ -1,15 +1,17 @@
 package actionsPerformed;
 
+import java.io.IOException;
+
 import org.apache.log4j.Logger;
 
+import GlobalActions.Screenshots;
 import junit.framework.Assert;
 
 public class OrderSummarySectionActions {
 
 	static Logger log = Logger.getLogger("devpinoyLogger");
-	
-	
-	public static void checkStockExtMessage(String product) {
+
+	public static void checkStockExtMessage(String product) throws IOException, InterruptedException {
 
 		String ExpStockExtMsg = null;
 
@@ -30,15 +32,17 @@ public class OrderSummarySectionActions {
 		} else {
 			Assert.fail("Stock Extended Message does not match");
 		}
+		Screenshots.captureScreenshot();
 	}
 
-	public static void checkStockExtMessageDelText() {
+	public static void checkStockExtMessageDelText() throws IOException, InterruptedException {
 		String ExpStockExtMsgDelText = "We will deliver the rest of your order as soon as possible.";
 		if (pageobjects.OrderSummarySection.StockExtMessageDelText.getText().matches(ExpStockExtMsgDelText)) {
 			System.out.println("Delivery Text in Order Summary is present");
 		} else {
 			Assert.fail("Delivery Text in Order Summary is not present");
 		}
+		Screenshots.captureScreenshot();
 	}
-	
+
 }

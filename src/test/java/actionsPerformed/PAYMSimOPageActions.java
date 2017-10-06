@@ -2,7 +2,6 @@ package actionsPerformed;
 
 import java.awt.AWTException;
 import java.io.IOException;
-
 import java.util.List;
 
 import org.apache.log4j.Logger;
@@ -16,6 +15,7 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import GlobalActions.Screenshots;
 import helpers.Environment;
 
 public class PAYMSimOPageActions extends Environment {
@@ -24,7 +24,8 @@ public class PAYMSimOPageActions extends Environment {
 	// Below will Select the element under Phones Tab under 12 months and 30
 	// days contract
 
-	public static void ValidateContractLengths(String elementName) throws InterruptedException, AWTException {
+	public static void ValidateContractLengths(String elementName)
+			throws InterruptedException, AWTException, IOException {
 		// Assert.assertTrue(driver.getTitle().contains("30 Days");
 
 		if (elementName.contains("30 Days")) {
@@ -37,9 +38,11 @@ public class PAYMSimOPageActions extends Environment {
 			System.out.println("The Contract length is " + pageobjects.PAYMSimOPage.twelevemonths.getText());
 			log.debug("The Contract length is " + pageobjects.PAYMSimOPage.twelevemonths.getText());
 		}
+		Screenshots.captureScreenshot();
 	}
 
-	public static void SelectTariffPhonesTab(String elementName) throws InterruptedException, AWTException {
+	public static void SelectTariffPhonesTab(String elementName)
+			throws InterruptedException, AWTException, IOException {
 		// Assert.assertTrue(driver.getTitle().contains("30 Days");
 
 		if (elementName.contains("30 Days")) {
@@ -58,10 +61,12 @@ public class PAYMSimOPageActions extends Environment {
 			pageobjects.PAYMSimOPage.BuyNowRandomTariff12Months.click();
 			System.out.println("Clicked on a Random Tariff");
 		}
+		Screenshots.captureScreenshot();
 
 	}
 
-	public static void SelectRecommendedTariffPhonesTab(String elementName) throws InterruptedException, AWTException {
+	public static void SelectRecommendedTariffPhonesTab(String elementName)
+			throws InterruptedException, AWTException, IOException {
 		// Assert.assertTrue(driver.getTitle().contains("30 Days");
 
 		if (elementName.contains("30 Days")) {
@@ -80,10 +85,10 @@ public class PAYMSimOPageActions extends Environment {
 			pageobjects.PAYMSimOPage.BuyNowPromotedTariff.click();
 			log.debug("Selected a Recommended Tariff under 12 Months tab");
 		}
-
+		Screenshots.captureScreenshot();
 	}
 
-	public static void Elementverify(String elementName) throws InterruptedException {
+	public static void Elementverify(String elementName) throws InterruptedException, IOException {
 
 		if (elementName.contains("12 Months")) {
 			if (driver.findElements(By.xpath("//*[@id='id-12-months']/p/a")).size() != 0) {
@@ -101,10 +106,10 @@ public class PAYMSimOPageActions extends Environment {
 				System.out.println("30 days Contract length is not available");
 			}
 		}
-
+		Screenshots.captureScreenshot();
 	}
 
-	public static void DisplayContent(String ElementName) {
+	public static void DisplayContent(String ElementName) throws IOException, InterruptedException {
 		if (ElementName.equalsIgnoreCase("paymheader")) {
 			System.out.println("Pay monthly sims banner header - as per today is displayed :"
 					+ pageobjects.SimFreeExtrasPage.Tariffvaladity.getText());
@@ -114,13 +119,13 @@ public class PAYMSimOPageActions extends Environment {
 					+ pageobjects.SimFreeExtrasPage.Tariffvaladity.getText());
 
 		}
-
+		Screenshots.captureScreenshot();
 	}
 
 	////////// ************Below were done for Jan
 	////////// Release********************/////////////////
 
-	public static void Sorting(String elementName) throws InterruptedException {
+	public static void Sorting(String elementName) throws InterruptedException, IOException {
 		List<WebElement> list = driver.findElements(By.xpath("//span[@class='pound'"));
 		System.out.println(list);
 
@@ -145,10 +150,10 @@ public class PAYMSimOPageActions extends Environment {
 			}
 
 		}
-
+		Screenshots.captureScreenshot();
 	}
 
-	public static void elementSelected() {
+	public static void elementSelected() throws IOException, InterruptedException {
 
 		// Assert.assertEquals(true,
 		// pageobjects.PAYMSimOPage.simphonetab.isSelected());
@@ -159,10 +164,10 @@ public class PAYMSimOPageActions extends Environment {
 		} else {
 			Assert.fail("Phone tab is not selected");
 		}
-
+		Screenshots.captureScreenshot();
 	}
 
-	public static void ElementColour(String elementName, String colouractual) throws InterruptedException {
+	public static void ElementColour(String elementName, String colouractual) throws InterruptedException, IOException {
 
 		String blueexpected = "rgba(3, 43, 90, 1)";
 		String greenexpected = "rgba(0, 204, 204, 1)";
@@ -188,10 +193,10 @@ public class PAYMSimOPageActions extends Environment {
 				System.out.println("Secondary Promotion Element is NOT in Green colour as expected");
 			}
 		}
-
+		Screenshots.captureScreenshot();
 	}
 
-	public static void charlengthcheck(String elementName, int elengthvalue) throws InterruptedException {
+	public static void charlengthcheck(String elementName, int elengthvalue) throws InterruptedException, IOException {
 
 		if (elementName.contains("promotionprimary")) {
 			Actions action = new Actions(driver);
@@ -219,7 +224,7 @@ public class PAYMSimOPageActions extends Environment {
 						"Secondary Promotion Element characters is NOT within or equal to the expected length");
 			}
 		}
-
+		Screenshots.captureScreenshot();
 	}
 
 	public static boolean ElementEnable() {
@@ -233,17 +238,17 @@ public class PAYMSimOPageActions extends Environment {
 
 	}
 
-	public static void ElementClick(String elementName) throws InterruptedException {
+	public static void ElementClick(String elementName) throws InterruptedException, IOException {
 		if (elementName.equalsIgnoreCase("PhoneTab"))
 			pageobjects.PAYMSimOPage.PhoneTab.sendKeys(Keys.ENTER);
 
 		if (elementName.equalsIgnoreCase("MBB")) {
 			pageobjects.PAYMSimOPage.simmbbtab.sendKeys(Keys.ENTER);
 		}
-
+		Screenshots.captureScreenshot();
 	}
 
-	public static void ElementClick2(String elementName) throws InterruptedException {
+	public static void ElementClick2(String elementName) throws InterruptedException, IOException {
 
 		if (pageobjects.PAYMSimOPage.months12tab.getText().equalsIgnoreCase("12 months")) {
 			System.out.println(
@@ -352,8 +357,7 @@ public class PAYMSimOPageActions extends Environment {
 			System.out.println("Why choose an O2 Pay Monthly sim? - section is not displayed ");
 
 		/*
-		 * boolean tile =
-		 * pageobjects.PAYMSimOPage.PromotionTariff.isDisplayed();
+		 * boolean tile = pageobjects.PAYMSimOPage.PromotionTariff.isDisplayed();
 		 * 
 		 * if (tile = true) { System.out.
 		 * println("Most popular/Recommended tariff tile is displayed"); }
@@ -432,11 +436,9 @@ public class PAYMSimOPageActions extends Environment {
 				System.out.println("Priority copytext is not displayed");
 
 			/*
-			 * boolean whyo2_3
-			 * =pageobjects.PAYMSimOPage.whyo2guru.isDisplayed();
+			 * boolean whyo2_3 =pageobjects.PAYMSimOPage.whyo2guru.isDisplayed();
 			 * 
-			 * if (whyo2_3 = true) {
-			 * System.out.println("Guru image is displayed"); } else
+			 * if (whyo2_3 = true) { System.out.println("Guru image is displayed"); } else
 			 * System.out.println("Guru image is not displayed");
 			 */
 
@@ -463,6 +465,7 @@ public class PAYMSimOPageActions extends Environment {
 				System.out.println("My O2 copytext is not displayed");
 
 		}
+		Screenshots.captureScreenshot();
 
 	}
 
@@ -484,7 +487,7 @@ public class PAYMSimOPageActions extends Environment {
 		} catch (IndexOutOfBoundsException e) {
 
 		}
-
+		Screenshots.captureScreenshot();
 	}
 
 	public static void VerifyCostDisplayed() throws IOException, InterruptedException, IndexOutOfBoundsException {
@@ -503,11 +506,11 @@ public class PAYMSimOPageActions extends Environment {
 		} catch (IndexOutOfBoundsException e) {
 
 		}
-
+		Screenshots.captureScreenshot();
 	}
 	/*
-	 * ======================================================== Added for
-	 * Validating the Buynow CTA - 13/03/2017
+	 * ======================================================== Added for Validating
+	 * the Buynow CTA - 13/03/2017
 	 * ========================================================
 	 */
 
@@ -533,7 +536,7 @@ public class PAYMSimOPageActions extends Environment {
 				System.out.println(link);
 			}
 		}
-
+		Screenshots.captureScreenshot();
 	}
 
 	public static void BuyNowButtonValidation() throws IOException, InterruptedException {
@@ -563,7 +566,7 @@ public class PAYMSimOPageActions extends Environment {
 				links = driver.findElements(By.cssSelector("input[onclick*='simo.buyNowSubmitHandler']"));
 			}
 		}
-
+		Screenshots.captureScreenshot();
 	}
 
 	public static void CheckboxValidation() throws IOException, InterruptedException {
@@ -571,17 +574,18 @@ public class PAYMSimOPageActions extends Environment {
 		pageobjects.PAYMSimOPage.CheckboxPresence.click();
 		System.out.println("Clicking on one of the checkbox");
 		pageobjects.PAYMSimOPage.CheckboxPresence.click();
-
+		Screenshots.captureScreenshot();
 	}
 
 	//// added 14/03/2017 - for cfd1222 - ecomm10206/206/202/203
-	public static void VerifyPreferredTariffDisplay(String elementName1) throws InterruptedException {
+	public static void VerifyPreferredTariffDisplay(String elementName1) throws InterruptedException, IOException {
 
 		if (pageobjects.PAYMSimOPage.simmbbtab.getText().contains("Mobile broadband"))
 			System.out.println("Mobile broadband tab is displayed");
 
-		else
+		else {
 			System.out.println("Mobile broadband is not displayed");
+		}
 
 		if (pageobjects.PAYMSimOPage.whychoosesimolink.getText().contains("Why choose an O2 Pay Monthly sim?")) {
 			System.out.println("Why choose an O2 Pay Monthly sim? - link is displayed");
@@ -593,12 +597,13 @@ public class PAYMSimOPageActions extends Environment {
 			pageobjects.PAYMSimOPage.whychoosesimolink.click();
 		}
 
-		else
+		else {
 			System.out.println("Why choose an O2 Pay Monthly sim?-link is not displayed");
-
+		}
+		Screenshots.captureScreenshot();
 	}
 
-	public static void LengthPromotionTariff(String arg1) throws InterruptedException {
+	public static void LengthPromotionTariff(String arg1) throws InterruptedException, IOException {
 
 		WebDriverWait wait = new WebDriverWait(driver, 40);
 		wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector(".col-xs-12.promotion-ribbon")));// instead
@@ -625,6 +630,7 @@ public class PAYMSimOPageActions extends Environment {
 		// Below is to determine the number of characters in the section
 		Dimension PromotionDisplayed2 = driver.findElement(By.cssSelector(".col-xs-12.promotion-ribbon")).getSize();
 		System.out.println("The size is " + PromotionDisplayed2);
+		Screenshots.captureScreenshot();
 
 	}
 
@@ -657,7 +663,7 @@ public class PAYMSimOPageActions extends Environment {
 	 * }
 	 * 
 	 */
-	public static void TariffTilePosition() throws InterruptedException {
+	public static void TariffTilePosition() throws InterruptedException, IOException {
 		WebDriverWait wait = new WebDriverWait(driver, 40);
 		wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector(".col-xs-12.promotion-ribbon")));// instead
 																											// of
@@ -684,9 +690,10 @@ public class PAYMSimOPageActions extends Environment {
 			}
 
 		}
+		Screenshots.captureScreenshot();
 	}
 
-	public static void DisplayPromotionTariff(String elementName) throws InterruptedException {
+	public static void DisplayPromotionTariff(String elementName) throws InterruptedException, IOException {
 
 		WebDriverWait wait = new WebDriverWait(driver, 40);
 		wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector(".col-xs-12.promotion-ribbon")));// instead
@@ -721,28 +728,28 @@ public class PAYMSimOPageActions extends Environment {
 		} else {
 			System.out.println("The Promotion of the tariff displayed is unknown");
 		}
+		Screenshots.captureScreenshot();
 
 	}
 
-	public static void SelectTariffMBBTab(String elementName) throws InterruptedException, AWTException {
+	public static void SelectTariffMBBTab(String elementName) throws InterruptedException, AWTException, IOException {
 		JavascriptExecutor executor = (JavascriptExecutor) driver;
 		if (elementName.contains("30 Days")) {
 			System.out.println("Selecting a Random Tariff under 30 days tab");
 			log.debug("Selecting a Random Tariff under 30 days tab");
 			pageobjects.PAYMSimOPage.days30tab.click();
 			Thread.sleep(3000);
-			executor.executeScript("arguments[0].click();",pageobjects.PAYMSimOPage.BuyNowRandomTariffMBB30Days );
-			
+			executor.executeScript("arguments[0].click();", pageobjects.PAYMSimOPage.BuyNowRandomTariffMBB30Days);
+
 		}
 		if (elementName.contains("12 Months")) {
 			System.out.println("Selecting a Random Tariff under 12 Months tab");
 			log.debug("Selecting a Random Tariff under 12 Months tab");
 			pageobjects.PAYMSimOPage.months12tab.click();
 			Thread.sleep(3000);
-			executor.executeScript("arguments[0].click();",pageobjects.PAYMSimOPage.BuyNowRandomTariffMBB12Months );
+			executor.executeScript("arguments[0].click();", pageobjects.PAYMSimOPage.BuyNowRandomTariffMBB12Months);
 		}
-
+		Screenshots.captureScreenshot();
 	}
-
 
 }
