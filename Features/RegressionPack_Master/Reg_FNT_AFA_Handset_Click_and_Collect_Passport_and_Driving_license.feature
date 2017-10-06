@@ -15,7 +15,7 @@ Feature: Reg_FNT_AFA_Handset_Click_and_Collect_Passport_and_Driving_license
     And Register customer with valid <Firstname>, <Surname>, <HouseNumber>, <PostCode> and other valid details in delivery page
     And input additional card details Driving license <License_postcode> and <License_Number>
     And input additional card details passport details <country>, <Passport_number>
-    And Register customer with valid <Password>, <Confirm_Password>, <Security_Question>, <Security_Answer> in delivery page
+    And Register customer with valid <Firstname>, <Surname>, <HouseNumber>, <PostCode> and other valid details in delivery page
     When Pay by card for PAYM device
     Then Order confirmation message should be displayed
     
