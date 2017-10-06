@@ -1,22 +1,18 @@
 package actionsPerformed;
 
-import helpers.Environment;
-import junit.framework.Assert;
-import pageobjects.Agent_HomePage;
-import pageobjects.DeliveryPage;
-
-import static org.testng.Assert.assertEquals;
-
+import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.Select;
 import org.testng.Reporter;
 
-import GlobalActions.RandomEmailAddressCreation;
+import GlobalActions.Screenshots;
+import helpers.Environment;
+import junit.framework.Assert;
+import pageobjects.Agent_HomePage;
 
 public class Agent_HomePagePageActions extends Environment {
 
@@ -25,7 +21,7 @@ public class Agent_HomePagePageActions extends Environment {
 	/*
 	 * //this method used to perform click action on the Agent Home Page
 	 */
-	public static void ElementClickAction(String elementname) {
+	public static void ElementClickAction(String elementname) throws IOException, InterruptedException {
 		// TODO Auto-generated method stub
 
 		System.out.println("Agent_Home_Page_Action");
@@ -39,11 +35,12 @@ public class Agent_HomePagePageActions extends Environment {
 			}
 
 		}
+		Screenshots.captureScreenshot();
 	}
 
 	// This method will take care of Entering msisdn as per cucumber file and
 	// also for logging in
-	public static void FindUser(String msisdn) throws InterruptedException {
+	public static void FindUser(String msisdn) throws InterruptedException, IOException {
 
 		driver.manage().deleteAllCookies();
 		Agent_HomePage.MPN.sendKeys(msisdn);
@@ -57,13 +54,12 @@ public class Agent_HomePagePageActions extends Environment {
 		/*
 		 * if (Agent_HomePage.notfound.isDisplayed()) { System.out.
 		 * println("MPN entered is wrong, please check back your test case");
-		 * Assert.fail("MPN entered is wrong, please check back your test case"
-		 * ); }
+		 * Assert.fail("MPN entered is wrong, please check back your test case" ); }
 		 */
-
+		Screenshots.captureScreenshot();
 	}
 
-	public static void upgradeUser() throws InterruptedException {
+	public static void upgradeUser() throws InterruptedException, IOException {
 		// try {
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		System.out.println("Verifying if Upgrade link is enabled");
@@ -74,17 +70,16 @@ public class Agent_HomePagePageActions extends Environment {
 		try {
 			if (driver.findElement(By.xpath("//*[@id='cca']/div[2]/a[1]")).isDisplayed()) {
 				System.out.println("new overlay is displayed");
+			} else {
+				System.out.println("new overlay is not displayed");
 			}
-				else 
-				{
-					System.out.println("new overlay is not displayed");
-				}
+			Screenshots.captureScreenshot();
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			System.out.println("new overlay is not displayed");
+			Screenshots.captureScreenshot();
 		}
 
-		
 		Thread.sleep(3000);
 
 		List<WebElement> PayAsYouGo = driver.findElements(By.id("emptyDealButton"));
@@ -119,10 +114,11 @@ public class Agent_HomePagePageActions extends Environment {
 		 * System.out.println("The current message is " +
 		 * Agent_HomePage.notfound.getText()); }
 		 */
+		Screenshots.captureScreenshot();
 
 	}
 
-	public static void NewUser() throws InterruptedException {
+	public static void NewUser() throws InterruptedException, IOException {
 		driver.manage().deleteAllCookies();
 
 		try {
@@ -132,8 +128,10 @@ public class Agent_HomePagePageActions extends Environment {
 			log.debug("Performing new user new connection");
 			System.out.println("Performing new user new connection");
 			Reporter.log("Performing new user new connection");
+			Screenshots.captureScreenshot();
 		} catch (Exception e) {
 			Assert.fail();
+			Screenshots.captureScreenshot();
 		}
 		if (Agent_HomePage.emptyDealButton.isEnabled()) {
 			System.out.println("The Empty Deal button is enabled hence Emptying the basket");
@@ -144,16 +142,18 @@ public class Agent_HomePagePageActions extends Environment {
 			log.debug("The Empty Deal button is not present hence it should be alright");
 
 		}
+		Screenshots.captureScreenshot();
 
 	}
 
-	public static void ValidateAgentHomepage() {
+	public static void ValidateAgentHomepage() throws IOException, InterruptedException {
 
 		System.out.println("Agent Home page Validation" + driver.getTitle());
 		log.debug("Agent Home Page validation" + driver.getTitle());
 
 		// Assert.assertEquals("Your basket",
 		// pageobjects.BasketPage.BasketHeaderXXL.getText());
+		Screenshots.captureScreenshot();
 	}
 
 }

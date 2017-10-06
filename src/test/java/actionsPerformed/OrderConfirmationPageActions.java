@@ -1,21 +1,19 @@
 package actionsPerformed;
 
+import java.io.IOException;
 import java.util.List;
-import java.util.concurrent.TimeUnit;
 
 import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.PageFactory;
-import org.testng.Assert;
 
+import GlobalActions.Screenshots;
 import helpers.Environment;
-import pageobjects.OrderConfirmationPage;
 
 public class OrderConfirmationPageActions extends Environment {
 	static Logger log = Logger.getLogger("devpinoyLogger");
 
-	public static void OrderConfirmationPageSections() {
+	public static void OrderConfirmationPageSections() throws IOException, InterruptedException {
 		log.debug("Below are order confirmation page details");
 		log.debug("The details are " + pageobjects.OrderConfirmationPage.OrderconfirmationMessage.getText());
 		log.debug("...................................");
@@ -27,17 +25,18 @@ public class OrderConfirmationPageActions extends Environment {
 		System.out.println(pageobjects.OrderConfirmationPage.deliverySection.getText());
 		System.out.println("...................................");
 		System.out.println(pageobjects.OrderConfirmationPage.imsMessage.getText());
-
+		Screenshots.captureScreenshot();
 	}
 
-	public static void gettitlepage() {
+	public static void gettitlepage() throws IOException, InterruptedException {
 
 		System.out.println(driver.getTitle());
 		log.info("The Page Title is " + driver.getTitle());
+		Screenshots.captureScreenshot();
 
 	}
 
-	public static void MessageDisplayed() {
+	public static void MessageDisplayed() throws IOException, InterruptedException {
 		System.out.println("This is order confirmation page and the message in this page is as below......");
 		log.info("This is order confirmation/information page and the message in this page is as above......");
 
@@ -52,12 +51,13 @@ public class OrderConfirmationPageActions extends Environment {
 				System.out.println(DataContainer.get(i).getText());
 				log.info(DataContainer.get(i).getText());
 			}
+			Screenshots.captureScreenshot();
 		} catch (IndexOutOfBoundsException e) {
-
+			Screenshots.captureScreenshot();
 		}
 	}
 
-	public static void VolteMessageDisplayed() {
+	public static void VolteMessageDisplayed() throws IOException, InterruptedException {
 		System.out.println("The Volte message in this page is as below......");
 		try {
 			List<WebElement> outercontainer = driver.findElements(By.xpath("//*[@id='imsMessage']"));
@@ -68,8 +68,9 @@ public class OrderConfirmationPageActions extends Environment {
 
 				System.out.println(DataContainer.get(i).getText());
 			}
+			Screenshots.captureScreenshot();
 		} catch (IndexOutOfBoundsException e) {
-
+			Screenshots.captureScreenshot();
 		}
 
 	}
@@ -147,7 +148,7 @@ public class OrderConfirmationPageActions extends Environment {
 		log.info("Your order has been successfully placed.Order number: ");
 		System.out.println(pageobjects.OrderConfirmationPage.orderid.getText());
 	}
-	
+
 	public static void FreeSimMessage() {
 		System.out.println("This is order confirmation page and the message in this page is as below......");
 		log.info("This is order confirmation/information page and the message in this page is as above......");

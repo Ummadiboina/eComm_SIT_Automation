@@ -1,15 +1,18 @@
 package actionsPerformed;
 
+import java.io.IOException;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 
+import GlobalActions.Screenshots;
 import helpers.Environment;
 
 public class SmartwatchesPageActions extends Environment {
-	public static void Elementdisplayvalidation(String Tabname) {
+	public static void Elementdisplayvalidation(String Tabname) throws IOException, InterruptedException {
 		System.out.println(" ");
 
 		System.out.println("Smartwatches_Page_Validation");
@@ -38,10 +41,11 @@ public class SmartwatchesPageActions extends Environment {
 			}
 
 		}
+		Screenshots.captureScreenshot();
 
 	}
 
-	public static void ElementClickAction(String elementname) {
+	public static void ElementClickAction(String elementname) throws IOException, InterruptedException {
 		// TODO Auto-generated method stub
 		System.out.println(" ");
 
@@ -59,9 +63,10 @@ public class SmartwatchesPageActions extends Environment {
 			}
 
 		}
+		Screenshots.captureScreenshot();
 	}
 
-	public static void DeviceSelect(String elementName) throws InterruptedException {
+	public static void DeviceSelect(String elementName) throws InterruptedException, IOException {
 		try {
 
 			if (elementName.contains("Random Device")) {
@@ -91,19 +96,22 @@ public class SmartwatchesPageActions extends Environment {
 				System.out.println("Selected PebbleOriginal");
 				log.debug("Selected PebbleOriginal");
 			}
+			Screenshots.captureScreenshot();
 
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			System.out.println("Unable to select " + elementName + " device");
 			// Assert.fail("Unable to select "+elementName+" device");
+			Screenshots.captureScreenshot();
 
 		}
 	}
 
 	/**
 	 * @throws InterruptedException
+	 * @throws IOException
 	 */
-	public static void AddtoBasketSmartwatchTracker() throws InterruptedException {
+	public static void AddtoBasketSmartwatchTracker() throws InterruptedException, IOException {
 
 		try {
 			// Below will give status like in stock / out of stock etc
@@ -130,17 +138,17 @@ public class SmartwatchesPageActions extends Environment {
 
 				/*
 				 * WebElement BasketQuantity =
-				 * driver.findElement(By.id("accessory-quantitySelectBoxIt"));
-				 * String BasketQuantityvalue = BasketQuantity.getText();
+				 * driver.findElement(By.id("accessory-quantitySelectBoxIt")); String
+				 * BasketQuantityvalue = BasketQuantity.getText();
 				 * System.out.println("Basket value is "+BasketQuantityvalue);
-				 * Assert.assertEquals("4", BasketQuantityvalue);
-				 * System.out.println( "Values are correct , Basket quantity = "
-				 * + BasketQuantityvalue + "Device added value = 4");
+				 * Assert.assertEquals("4", BasketQuantityvalue); System.out.println(
+				 * "Values are correct , Basket quantity = " + BasketQuantityvalue +
+				 * "Device added value = 4");
 				 */
 			} else {
 				driver.navigate().back();
 			}
-
+			Screenshots.captureScreenshot();
 		} catch (Exception e) {
 			WebElement DeviceDetailsQuantity = driver.findElement(
 					By.xpath("//div[@on-dimension-select='selectQuantityDimension']/span[@role='combobox']"));
@@ -156,12 +164,12 @@ public class SmartwatchesPageActions extends Environment {
 			// Assert.assertEquals(DeviceDetailsQuantityValue,
 			// BasketQuantityvalue);
 			Assert.assertEquals("4", BasketQuantityvalue);
-
+			Screenshots.captureScreenshot();
 		}
 
 	}
 
-	public static void UserSpecifiedSmartwatchTrackerLimit(String Limit) throws InterruptedException {
+	public static void UserSpecifiedSmartwatchTrackerLimit(String Limit) throws InterruptedException, IOException {
 
 		try {
 			// Below will give status like in stock / out of stock etc
@@ -189,6 +197,7 @@ public class SmartwatchesPageActions extends Environment {
 			} else {
 				driver.navigate().back();
 			}
+			Screenshots.captureScreenshot();
 
 		} catch (Exception e) {
 			WebElement DeviceDetailsQuantity = driver.findElement(
@@ -205,7 +214,7 @@ public class SmartwatchesPageActions extends Environment {
 			// Assert.assertEquals(DeviceDetailsQuantityValue,
 			// BasketQuantityvalue);
 			// Assert.assertEquals(Limit, BasketQuantityvalue);
-
+			Screenshots.captureScreenshot();
 		}
 
 	}

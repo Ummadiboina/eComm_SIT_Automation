@@ -1,6 +1,6 @@
 package actionsPerformed;
 
-
+import java.io.IOException;
 import java.util.List;
 
 import org.apache.log4j.Logger;
@@ -10,8 +10,8 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 
+import GlobalActions.Screenshots;
 import helpers.Environment;
-
 
 //This page will have details on the individual device
 
@@ -19,45 +19,44 @@ public class NonConnectedDeviceDetailsPageAction extends Environment {
 	static Logger log = Logger.getLogger("devpinoyLogger");
 	static JavascriptExecutor executor = (JavascriptExecutor) driver;
 
-	public static void GetTitle() throws InterruptedException
-	{
+	public static void GetTitle() throws InterruptedException, IOException {
 		System.out.println("Currently in Device details page");
-		String Ele1= driver.getTitle();
-		System.out.println("The Page title is "+Ele1);
+		String Ele1 = driver.getTitle();
+		System.out.println("The Page title is " + Ele1);
 		log.debug("Currently in Device details page");
-		log.debug("The Page title is "+Ele1);
+		log.debug("The Page title is " + Ele1);
 		Thread.sleep(5000);
+		Screenshots.captureScreenshot();
 
 	}
-	
+
 	/*
+	 * 
+	 * public static void AddtoBasket() {
+	 * pageobjects.NonConnectedDeviceDetailsPage.AddtoBasket.click();
+	 * //driver.findElement(By.id("deviceDetailsSubmit")).click();
+	 * pageobjects.NonConnectedDeviceDetailsPage.AddtoBasket.getText();
+	 * log.debug("The text of the button is  - "+pageobjects.
+	 * NonConnectedDeviceDetailsPage.AddtoBasket.getText());
+	 * log.debug("Clicked on AddtoBasket"); }
+	 */
 
-public static void AddtoBasket()
-{
-	pageobjects.NonConnectedDeviceDetailsPage.AddtoBasket.click();
-	//driver.findElement(By.id("deviceDetailsSubmit")).click();
-	pageobjects.NonConnectedDeviceDetailsPage.AddtoBasket.getText();
-	log.debug("The text of the button is  - "+pageobjects.NonConnectedDeviceDetailsPage.AddtoBasket.getText());
-	log.debug("Clicked on AddtoBasket");
-}	
-*/
+	// This method is used to select any 6 Valid accessory
 
-
-
-//This method is used to select any 6 Valid accessory
-	
-	public static void ClickonBasketIcon() {
+	public static void ClickonBasketIcon() throws IOException, InterruptedException {
 		// TODO Auto-generated method stub
-		
+
 		System.out.println("Clicking on basket icon");
-		
+
 		pageobjects.AccessoryPage.Basket.click();
-		log.debug("Clicked on basket icon");	
+		log.debug("Clicked on basket icon");
+		Screenshots.captureScreenshot();
 	}
-	
-	public static void clickCloseBtn() {
+
+	public static void clickCloseBtn() throws IOException, InterruptedException {
 		System.out.println("Closing small pop up");
 		executor.executeScript("arguments[0].click();", pageobjects.NonConnectedDeviceDetailsPage.CloseBtn);
+		Screenshots.captureScreenshot();
 
 	}
 
@@ -70,38 +69,41 @@ public static void AddtoBasket()
 		js.executeScript("arguments[0].setAttribute('style', 'display:block;')", element);
 		new Select(element).selectByVisibleText(color);
 		System.out.println("Selected" + color);
+		Screenshots.captureScreenshot();
 
 	}
-	
-	public static void AddtoBasket() throws InterruptedException {
-		
+
+	public static void AddtoBasket() throws InterruptedException, IOException {
+
 		// driver.findElement(By.id("deviceDetailsSubmit")).click();
 		pageobjects.NonConnectedDeviceDetailsPage.AddtoBasket.getText();
 		log.debug("The text of the button is  - " + pageobjects.NonConnectedDeviceDetailsPage.AddtoBasket.getText());
-		System.out.println("The text of the button is  - " + pageobjects.NonConnectedDeviceDetailsPage.AddtoBasket.getText());
-		
+		System.out.println(
+				"The text of the button is  - " + pageobjects.NonConnectedDeviceDetailsPage.AddtoBasket.getText());
+
 		pageobjects.NonConnectedDeviceDetailsPage.AddtoBasket.click();
 		Thread.sleep(5000);
-		
+
 		log.debug("Clicked on AddtoBasket");
 		System.out.println("Clicked on AddtoBasket");
+		Screenshots.captureScreenshot();
 	}
-	
 
 	public static void colorSelectOfDeviceDropDown(String color) throws Exception {
 		// TODO Auto-generated method stub
 		Thread.sleep(5000);
 		WebElement element = pageobjects.NonConnectedDeviceDetailsPage.ColorDropDown;
-		//WebElement element = pageobjects.ConnectedDeviceDetailsPage.ColorDropDown;
+		// WebElement element = pageobjects.ConnectedDeviceDetailsPage.ColorDropDown;
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("arguments[0].setAttribute('style', 'display:block;')", element);
-		if(element.isDisplayed()) {
+		if (element.isDisplayed()) {
 			new Select(element).selectByVisibleText(color);
 			System.out.println("Selected" + color);
 		}
-		
+		Screenshots.captureScreenshot();
 
 	}
+
 	public static void capacitySelectOfDeviceDropDown(String capacity) throws Exception {
 		// TODO Auto-generated method stub
 		Thread.sleep(5000);
@@ -109,31 +111,34 @@ public static void AddtoBasket()
 		WebElement element = pageobjects.ConnectedDeviceDetailsPage.CapacityDropDown;
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("arguments[0].setAttribute('style', 'display:block;')", element);
-		if(element.isDisplayed()) {
-		new Select(element).selectByVisibleText(capacity);
-		System.out.println("Selected" + capacity);
+		if (element.isDisplayed()) {
+			new Select(element).selectByVisibleText(capacity);
+			System.out.println("Selected" + capacity);
 		}
+		Screenshots.captureScreenshot();
 	}
-	
+
 	public static void isCapacityDropDownDisplayed() throws Exception {
 		// TODO Auto-generated method stub
 		Thread.sleep(5000);
 		WebElement element = pageobjects.ConnectedDeviceDetailsPage.ColorDropDown;
-		if(!element.isDisplayed()) {
-		Assert.fail("capacity drop down is not present");	
+		if (!element.isDisplayed()) {
+			Assert.fail("capacity drop down is not present");
 		}
+		Screenshots.captureScreenshot();
 	}
-	
+
 	public static void isColorDropDownDisplayed() throws Exception {
 		// TODO Auto-generated method stub
 		Thread.sleep(5000);
 		WebElement element = pageobjects.ConnectedDeviceDetailsPage.CapacityDropDown;
-		if(!element.isDisplayed()) {
-		Assert.fail("color drop down is not present");	
+		if (!element.isDisplayed()) {
+			Assert.fail("color drop down is not present");
 		}
+		Screenshots.captureScreenshot();
 	}
 
-public static void checkIfMoreThanOneOptionAvailable() throws Exception {
+	public static void checkIfMoreThanOneOptionAvailable() throws Exception {
 		// TODO Auto-generated method stub
 		Thread.sleep(5000);
 		WebElement capacity = pageobjects.NonConnectedDeviceDetailsPage.CapacityDropDown;
@@ -147,7 +152,7 @@ public static void checkIfMoreThanOneOptionAvailable() throws Exception {
 			}
 		}
 		WebElement color = pageobjects.NonConnectedDeviceDetailsPage.ColorDropDown;
-		
+
 		js.executeScript("arguments[0].setAttribute('style', 'display:block;')", color);
 		if (color.isDisplayed()) {
 			List<WebElement> elementCount = new Select(color).getOptions();
@@ -156,9 +161,10 @@ public static void checkIfMoreThanOneOptionAvailable() throws Exception {
 				Assert.fail("There are no more than 1 option available for color dropdown");
 			}
 		}
+		Screenshots.captureScreenshot();
 	}
 
-public static void checkOnlyOneCapacityAvailable() throws Exception {
+	public static void checkOnlyOneCapacityAvailable() throws Exception {
 		// TODO Auto-generated method stub
 		Thread.sleep(5000);
 		List<org.openqa.selenium.WebElement> capacityLabel = pageobjects.NonConnectedDeviceDetailsPage.CapacityLabel;
@@ -178,42 +184,35 @@ public static void checkOnlyOneCapacityAvailable() throws Exception {
 				Assert.fail("There are no more than 1 option available for color dropdown");
 			}
 		}
+		Screenshots.captureScreenshot();
 	}
 
-public static void checkOnlyOneColourAndOneCapacityAsDropdownAvailable() throws Exception {
-    Thread.sleep(7000);
-    JavascriptExecutor js = (JavascriptExecutor) driver;
-    
-    System.out.println("check 1");
-    WebElement color = pageobjects.NonConnectedDeviceDetailsPage.ColorDropDownAccessory;
-    js.executeScript("arguments[0].setAttribute('style', 'display:block;')", color);
-    WebElement capacity = pageobjects.NonConnectedDeviceDetailsPage.CapacityDropDown;
-    js.executeScript("arguments[0].setAttribute('style', 'display:block;')", capacity);
-    
-    System.out.println("check 2");
-    List<WebElement> ColorElementCount = new Select(color).getOptions();
-    List<WebElement> CapacityElementCount = new Select(capacity).getOptions();
+	public static void checkOnlyOneColourAndOneCapacityAsDropdownAvailable() throws Exception {
+		Thread.sleep(7000);
+		JavascriptExecutor js = (JavascriptExecutor) driver;
 
-    System.out.println("color size" +ColorElementCount.size());
-    System.out.println("capacity size" +CapacityElementCount.size());
+		System.out.println("check 1");
+		WebElement color = pageobjects.NonConnectedDeviceDetailsPage.ColorDropDownAccessory;
+		js.executeScript("arguments[0].setAttribute('style', 'display:block;')", color);
+		WebElement capacity = pageobjects.NonConnectedDeviceDetailsPage.CapacityDropDown;
+		js.executeScript("arguments[0].setAttribute('style', 'display:block;')", capacity);
 
-    if ((ColorElementCount.size() > 1) || (CapacityElementCount.size() > 1)) {
-          Assert.fail("The device has more than one option displayed in a dropdown");
-    } else {
-          System.out.println(
-                      "Selected accessory has single variant for color and capacity and displayed as dropdown as expected");
-          log.debug(
-                      "Selected accessory has single variant for color and capacity and displayed as dropdown as expected");
-    }
+		System.out.println("check 2");
+		List<WebElement> ColorElementCount = new Select(color).getOptions();
+		List<WebElement> CapacityElementCount = new Select(capacity).getOptions();
+
+		System.out.println("color size" + ColorElementCount.size());
+		System.out.println("capacity size" + CapacityElementCount.size());
+
+		if ((ColorElementCount.size() > 1) || (CapacityElementCount.size() > 1)) {
+			Assert.fail("The device has more than one option displayed in a dropdown");
+		} else {
+			System.out.println(
+					"Selected accessory has single variant for color and capacity and displayed as dropdown as expected");
+			log.debug(
+					"Selected accessory has single variant for color and capacity and displayed as dropdown as expected");
+		}
+		Screenshots.captureScreenshot();
+	}
 
 }
-
-	
-
-	
-	
-}
-
-
-
-

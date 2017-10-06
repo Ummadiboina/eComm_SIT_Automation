@@ -7,6 +7,7 @@ Feature: CFA_Phones_Delayed_delivery_Home_delivery_Confirmation_Page_formatting_
     Given I am an CFA user and Lands on shop page
     And navigate to PAYM Phones page
     And I choose PayM <handset> #provide handset which is already set as delayed delivery
+    And select <color> color of the connected device
     And Navigate to device details page
     And Land on the 'Tariffs and extra' page
     And I Land on the basket page and choose home delivery option
@@ -21,5 +22,5 @@ Feature: CFA_Phones_Delayed_delivery_Home_delivery_Confirmation_Page_formatting_
     #Step 12 and Step 13 of ALM clubbed together
     #Close the browser
     Examples: 
-      | handset             | Firstname | Surname | Username     | Status           |
-      | Apple iPhone 7 Plus | TEST      | ACCEPTA | TEST ACCEPTA | Delayed Delivery |
+      | handset          | Firstname | Surname | Username     | Status           | color |
+      | AppleiPhone7Plus | TEST      | ACCEPTA | TEST ACCEPTA | Delayed Delivery | Black |

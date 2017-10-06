@@ -1,7 +1,10 @@
 package actionsPerformed;
 
+import java.io.IOException;
+
 import org.apache.log4j.Logger;
 
+import GlobalActions.Screenshots;
 import helpers.Environment;
 import pageobjects.Agent_UpdateCCAEmailPage;
 
@@ -9,7 +12,7 @@ public class AgentCCAEmailAddress extends Environment {
 
 	static Logger log = Logger.getLogger("devpinoyLogger");
 
-	public static void CFACCAEmailUpdate(String emailid) throws InterruptedException {
+	public static void CFACCAEmailUpdate(String emailid) throws InterruptedException, IOException {
 
 		log.debug("Entering the CCA email for Acquisition customers");
 
@@ -24,6 +27,7 @@ public class AgentCCAEmailAddress extends Environment {
 			System.out.println("The Yes button to proceed with CCA is displayed");
 			Agent_UpdateCCAEmailPage.ProceedwitheMailYes.click();
 		}
+		Screenshots.captureScreenshot();
 
 	}
 

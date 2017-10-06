@@ -1,13 +1,15 @@
 package actionsPerformed;
 
-import org.openqa.selenium.JavascriptExecutor;
+import java.io.IOException;
+
 import org.openqa.selenium.WebElement;
 
+import GlobalActions.Screenshots;
 import helpers.Environment;
 
 public class TabletPageActions extends Environment {
 
-	public static void validateElements(String Tabname) {
+	public static void validateElements(String Tabname) throws IOException, InterruptedException {
 		System.out.println(" ");
 
 		System.out.println("Tablet_Page_Validation");
@@ -36,10 +38,11 @@ public class TabletPageActions extends Environment {
 			}
 
 		}
+		Screenshots.captureScreenshot();
 
 	}
 
-	public static void ElementClickAction(String elementname) {
+	public static void ElementClickAction(String elementname) throws IOException, InterruptedException {
 		// TODO Auto-generated method stub
 		WebElement w1 = null;
 		System.out.println(" ");
@@ -58,9 +61,10 @@ public class TabletPageActions extends Environment {
 			}
 
 		}
+		Screenshots.captureScreenshot();
 	}
 
-	public static void DeviceSelect(String elementName) throws InterruptedException {
+	public static void DeviceSelect(String elementName) throws InterruptedException, IOException {
 
 		if (elementName.contains("Random Device")) {
 			System.out.println("Random Tablet is selected");
@@ -80,7 +84,7 @@ public class TabletPageActions extends Environment {
 			log.debug("SamsungGalaxy10 is selected");
 		}
 		if (elementName.contains("Apple iPad 9.7")) {
-			pageobjects.TabletPage.AppleiPad97.click();
+			pageobjects.TabletPage.iPad97.click();
 			Thread.sleep(10000);
 			System.out.println("iPad is selected");
 		}
@@ -108,12 +112,13 @@ public class TabletPageActions extends Environment {
 			Thread.sleep(10000);
 			System.out.println("Apple iPad Pro 9.7 inch is selected");
 		}
-		
+
 		if (elementName.contains("Samsung Galaxy Tab A 2016 10.1")) {
 			pageobjects.TabletPage.SamsungGalaxyTabA201610point1.click();
 			Thread.sleep(10000);
 			System.out.println("Samsung Galaxy Tab A 2016 10.1 is selected");
 		}
+		Screenshots.captureScreenshot();
 	}
 
 }

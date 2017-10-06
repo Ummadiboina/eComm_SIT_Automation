@@ -1,24 +1,23 @@
 package actionsPerformed;
 
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
 
 import org.apache.log4j.Logger;
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.Select;
-import org.testng.Reporter;
 
 import GlobalActions.RandomEmailAddressCreation;
+import GlobalActions.Screenshots;
 import helpers.Environment;
-import pageobjects.FreeSimPage;
 
 public class FreeSimPageActions extends Environment {
 
 	public List<HashMap<String, String>> datamap;
 	static Logger log = Logger.getLogger("devpinoyLogger");
 
-	public static void iPadsandTabletstab() throws InterruptedException {
+	public static void iPadsandTabletstab() throws InterruptedException, IOException {
 		JavascriptExecutor jse = (JavascriptExecutor) driver;
 		jse.executeScript("window.scrollBy(0,150)", "");
 
@@ -26,10 +25,11 @@ public class FreeSimPageActions extends Environment {
 		Thread.sleep(3000);
 		pageobjects.FreeSimPage.iPadsandTabletstab.click();
 		log.debug("Clicking on iPadsandTablets tab");
+		Screenshots.captureScreenshot();
 
 	}
 
-	public static void iPadsim() throws InterruptedException {
+	public static void iPadsim() throws InterruptedException, IOException {
 		JavascriptExecutor jse = (JavascriptExecutor) driver;
 		jse.executeScript("window.scrollBy(0,450)", "");
 
@@ -37,13 +37,12 @@ public class FreeSimPageActions extends Environment {
 		Thread.sleep(1000);
 		jse.executeScript("arguments[0].click();", pageobjects.FreeSimPage.SteadyiPadsim);
 		log.debug("Clicking on iPadsandTablets tab");
+		Screenshots.captureScreenshot();
 
 	}
 
-	
-
 	public static void EnterManually(String Flatnumber, String Housename, String Address1, String Town, String Postcode)
-			throws InterruptedException {
+			throws InterruptedException, IOException {
 
 		System.out.println("Clicking on Enter Manually link");
 		pageobjects.FreeSimPage.EnterManually.click();
@@ -57,10 +56,11 @@ public class FreeSimPageActions extends Environment {
 		log.debug("Entered the Town");
 		pageobjects.FreeSimPage.Postcode.sendKeys(Postcode);
 		log.debug("Entered the Postcode");
+		Screenshots.captureScreenshot();
 	}
 
 	public static void AboutYouSection(String Firstname, String Lastname, String Contact_number)
-			throws InterruptedException {
+			throws InterruptedException, IOException {
 
 		pageobjects.FreeSimPage.Email_id.sendKeys(RandomEmailAddressCreation.RandomEmail());
 		log.debug("Entered the mail id");
@@ -77,8 +77,11 @@ public class FreeSimPageActions extends Environment {
 		log.debug("Selected the TC checkbox");
 		pageobjects.FreeSimPage.Order.click();
 		log.debug("Clicked on place order button");
+		Screenshots.captureScreenshot();
 	}
-	public static void selectSurfertypeAndSimtype(String SurferType, String SimType) throws InterruptedException {
+
+	public static void selectSurfertypeAndSimtype(String SurferType, String SimType)
+			throws InterruptedException, IOException {
 		JavascriptExecutor jse = (JavascriptExecutor) driver;
 		jse.executeScript("window.scrollBy(0,450)", "");
 
@@ -154,6 +157,7 @@ public class FreeSimPageActions extends Environment {
 			jse.executeScript("arguments[0].click();", pageobjects.FreeSimPage.UltimateSurferDongleSim);
 			log.debug("Clicking on light surfer tab");
 		}
+		Screenshots.captureScreenshot();
 	}
 
 }
