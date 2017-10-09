@@ -14,7 +14,7 @@ import java.util.Date;
 @ExtendedCucumberOptions
 		(
 				jsonReport = "testResult/cucumber.json",
-				//retryCount = 0,
+				retryCount = 0,
 				detailedReport = true,
 				detailedAggregatedReport = true,
 				overviewReport = false,
@@ -46,10 +46,10 @@ import java.util.Date;
 
 //@RunWith(CucumberRunner.class)
 public class RunnerTest extends ExtendedTestNGRunner  {
-	@BeforeClass
+/*	@BeforeClass
 	public static void setUp() {
 
-	/*	ExtentCucumberFormatter.initiateExtentCucumberFormatter(new File("Telefonica_Execution_Report.html"), true);
+	*//*	ExtentCucumberFormatter.initiateExtentCucumberFormatter(new File("Telefonica_Execution_Report.html"), true);
 		ExtentCucumberFormatter.loadConfig(new File("src/test/resources/extent-config.xml"));
 
 		ExtentCucumberFormatter.addSystemInfo("Browser Name", "Chrome");
@@ -60,14 +60,14 @@ public class RunnerTest extends ExtendedTestNGRunner  {
 		systemInfo.put("Cucumber version", "v1.2.3");
 		systemInfo.put("Environment", "QA");
 		ExtentCucumberFormatter.addSystemInfo(systemInfo);
-*/
+*//*
 	}
 
 	@AfterSuite
 	public static void tearDown() throws Exception {
 		try {
 
-		/*	// Creates the Detailed Result
+		*//*	// Creates the Detailed Result
 			CucumberDetailedResults results = new CucumberDetailedResults();
 			results.setOutputDirectory("testResult\\cucumber_detailed_result\\");
 			results.setOutputName("cucumber-results" + timestamp());
@@ -78,7 +78,7 @@ public class RunnerTest extends ExtendedTestNGRunner  {
 			result.setOutputDirectory("testResult\\cucumber_result_overview\\");
 			result.setOutputName("cucumber-results" + timestamp());
 			result.setSourceFile("testResult\\cucumber.json");
-			result.executeFeaturesOverviewReport();*/
+			result.executeFeaturesOverviewReport();*//*
 		} catch (Exception e) {
 			throw e;
 		}
@@ -86,5 +86,5 @@ public class RunnerTest extends ExtendedTestNGRunner  {
 
 	public static String timestamp() {
 		return new SimpleDateFormat("yyyy-MM-dd HH-mm-ss").format(new Date());
-	}
+	}*/
 }
