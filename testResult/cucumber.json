@@ -6,7 +6,7 @@
         "before": [
           {
             "result": {
-              "duration": 21606523408,
+              "duration": 37330311448,
               "status": "passed"
             },
             "match": {
@@ -21,7 +21,7 @@
         "after": [
           {
             "result": {
-              "duration": 3749088072,
+              "duration": 3557909463,
               "status": "passed"
             },
             "match": {
@@ -34,7 +34,7 @@
         "steps": [
           {
             "result": {
-              "duration": 544820250,
+              "duration": 345275655,
               "status": "passed"
             },
             "line": 8,
@@ -46,8 +46,8 @@
           },
           {
             "result": {
-              "duration": 15208943629,
-              "error_message": "junit.framework.AssertionFailedError: unable to do mousehover to Accessories\r\n\tat junit.framework.Assert.fail(Assert.java:57)\r\n\tat steps.E2EOrderPlaced_Steps.navigate_to_Accessories(E2EOrderPlaced_Steps.java:161)\r\n\tat ✽.And Navigate to Accessories(CFA_Accessories_Confirmation_Page_changes.feature:9)\r\n",
+              "duration": 13368931441,
+              "error_message": "junit.framework.AssertionFailedError: unable to do mousehover to Accessories\r\n\tat junit.framework.Assert.fail(Assert.java:47)\r\n\tat steps.E2EOrderPlaced_Steps.navigate_to_Accessories(E2EOrderPlaced_Steps.java:161)\r\n\tat ✽.And Navigate to Accessories(CFA_Accessories_Confirmation_Page_changes.feature:9)\r\n",
               "status": "failed"
             },
             "line": 9,
