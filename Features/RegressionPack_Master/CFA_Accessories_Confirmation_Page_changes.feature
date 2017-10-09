@@ -1,5 +1,6 @@
 Feature: CFA_Accessories_Confirmation_Page_changes
 
+  @Web
   Scenario Outline: 
     This scenario ensures that when the customer selects a accessory and tries to place an order,
     then the customer should be able to see the changes in Confirmation page
