@@ -979,4 +979,53 @@ public class MouseHoverAction extends Environment {
 			}
 
 	}
+
+	public static void PayasyouGoTablets() throws Exception {
+		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+		boolean Worksfine = false;
+		while (!Worksfine) {
+			try {
+				System.out.println("Performing Pay as you go Tablets navigations");
+				log.debug("Performing Pay as you go Tablets navigations");
+
+				Actions action = new Actions(driver);
+				action.moveToElement(pageobjects.MouseHoverPage.MoveMouseOnShopTab).build().perform();
+
+				//Actions action = new Actions(driver);
+				action.moveToElement(pageobjects.MouseHoverPage.MoveMouseOnTablets).build().perform();
+				log.debug("Moving Mouse on the Tablets dropdown");
+
+				Thread.sleep(1000);
+				action.moveToElement(pageobjects.MouseHoverPage.MoveMouseonPayGTablets).build().perform();
+				log.debug("Moving Mouse on the PAYG Tablets link");
+				Screenshots.captureScreenshot();
+
+				Thread.sleep(1000);
+				pageobjects.MouseHoverPage.MoveMouseonPayGTablets.click();
+				Screenshots.captureScreenshot();
+
+				log.debug("Clicking on PayM Phones");
+
+
+				Worksfine = true;
+				Screenshots.captureScreenshot();
+
+			} catch (ElementNotVisibleException e) {
+				// check if popup is present, if yes, handle it.
+				Environment.driver.switchTo().frame("edr_l_first");
+				System.out.println("********We are switch to the iframe*******");
+				log.debug("Popup has appeared on the screen, Hence trying to close the survey");
+				Screenshots.captureScreenshot();
+				// Saying no to survey
+				driver.findElement(By.xpath("//a[@id='no']/span")).click();
+				log.debug("Closing the popup by saying No to Survey");
+				System.out.println("*******Saying no to survey*******");
+				System.out.println("*********Existing the popups present in iframe***************");
+				log.debug("Exiting the Survey");
+				Environment.driver.switchTo().defaultContent();
+				Thread.sleep(2000);
+
+			}
+		}
+	}
 }
