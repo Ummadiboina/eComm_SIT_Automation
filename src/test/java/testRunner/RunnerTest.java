@@ -14,7 +14,7 @@ import java.util.Date;
 @ExtendedCucumberOptions
 		(
 				jsonReport = "testResult/cucumber.json",
-				retryCount = 0,
+				//retryCount = 0,
 				detailedReport = true,
 				detailedAggregatedReport = true,
 				overviewReport = false,
