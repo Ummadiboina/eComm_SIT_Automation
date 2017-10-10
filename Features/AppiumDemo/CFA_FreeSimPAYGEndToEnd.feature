@@ -8,6 +8,8 @@ Feature: CFA_PayG_IpadandTablet_SIM_Mobile
     And Tap on iPad Sims > Pick a Sim
     And Verify user is navigated to Delivery details page
     And Enter <HouseNumber>, <Postcode> and Add the Address details
+    |Housenumber|Password
+    |           | |
     And Enter <emailAddress>, <FirstName>, <Surname> and <contactNumber>
     And Tap on Send me my sim button
     Then Free Sim order confirmation is displayed

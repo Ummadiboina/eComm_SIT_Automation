@@ -3,6 +3,7 @@ package testRunner;
 import com.github.mkolisnyk.cucumber.runner.ExtendedCucumberOptions;
 import com.github.mkolisnyk.cucumber.runner.ExtendedTestNGRunner;
 import cucumber.api.CucumberOptions;
+import cucumber.api.testng.AbstractTestNGCucumberTests;
 import org.junit.BeforeClass;
 
 import java.text.SimpleDateFormat;
@@ -39,13 +40,13 @@ import java.util.Date;
 @CucumberOptions(plugin = { "html:testResult/cucumber-html-report",
 		"json:testResult/cucumber.json", "pretty:testResult/cucumber-pretty.txt",
 		"usage:testResult/cucumber-usage.json", "junit:testResult/cucumber-results.xml" },
-		features = { "Features//RegressionPack_Master//" },
+		features = { "Features//RegressionPack_Master//Reg_CS_Free_Sim.feature" },
 		glue = { "steps" },
 		tags = {"@Web"})
 
 
 //@RunWith(CucumberRunner.class)
-public class RunnerTest extends ExtendedTestNGRunner  {
+public class RunnerTest extends AbstractTestNGCucumberTests {
 /*	@BeforeClass
 	public static void setUp() {
 

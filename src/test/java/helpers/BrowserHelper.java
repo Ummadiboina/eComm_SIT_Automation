@@ -36,7 +36,7 @@ public class BrowserHelper {
 			Environment.driver.navigate().refresh();
 
 		} else if (BrowserType.equalsIgnoreCase("chrome")) {
-			System.setProperty("webdriver.chrome.driver", "Browsers\\ChromeDriver\\chromedriver.exe");
+			System.setProperty("webdriver.chrome.driver", "Browsers/ChromeDriver/chromedriver.exe");
 			// Environment.driver = new ChromeDriver();
 			DesiredCapabilities capabilities = DesiredCapabilities.chrome();
 			capabilities.setCapability(CapabilityType.ACCEPT_SSL_CERTS, true);
@@ -50,7 +50,7 @@ public class BrowserHelper {
 			// WebDriver driver = new ChromeDriver (handlSSLErr);
 		} else if (BrowserType.equalsIgnoreCase("mozilla")) {
 
-			System.setProperty("webdriver.gecko.driver", "Browsers\\GeckoDriver\\geckodriver.exe");
+			System.setProperty("webdriver.gecko.driver", "Browsers/GeckoDriver/geckodriver.exe");
 			// ProfilesIni firProfiles = new ProfilesIni();
 			// FirefoxProfile wbdrverprofile = firProfiles.getProfile("certificateIssue");
 			/*

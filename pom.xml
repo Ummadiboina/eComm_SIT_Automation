@@ -42,11 +42,7 @@
 		</dependency>
 
 
-		<dependency>
-			<groupId>com.sikulix</groupId>
-			<artifactId>sikulixapi</artifactId>
-			<version>1.1.1-SNAPSHOT</version>
-		</dependency>
+
 
 		<dependency>
 			<groupId>log4j</groupId>
@@ -149,15 +145,19 @@
 			<artifactId>poi-ooxml</artifactId>
 			<version>3.9</version>
 		</dependency>
+
+		<dependency>
+			<groupId>com.github.mkolisnyk</groupId>
+			<artifactId>cucumber-runner</artifactId>
+			<version>1.2</version>
+		</dependency>
+<!--
 		<dependency>
 			<groupId>com.github.mkolisnyk</groupId>
 			<artifactId>cucumber-reports</artifactId>
 			<version>1.0.7</version>
-			<scope>pom</scope>
-		</dependency>
-
-
-
+			<scope>test</scope>
+		</dependency>-->
 		<dependency>
 			<groupId>com.vimalselvam</groupId>
 			<artifactId>cucumber-extentsreport</artifactId>

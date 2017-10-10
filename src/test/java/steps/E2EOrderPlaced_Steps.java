@@ -6202,7 +6202,7 @@ public class E2EOrderPlaced_Steps {
     }
 
     @And("^Enter (\\d+), SL(\\d+)UP and Add the Address details$")
-    public void enter_SL_UP_and_Add_the_Address_details(int arg1, int arg2) throws Throwable {
+    public void enter_SL_UP_and_Add_the_Address_details(DataTable value) throws Throwable {
         // Write code here that turns the phrase above into concrete actions
 
     }
@@ -6270,7 +6270,6 @@ public class E2EOrderPlaced_Steps {
         List<List<String>> data=table.raw();
         System.out.println("The Value is : "+data.get(0).get(0).toString());
         System.out.println("The Value is: "+data.get(1).get(0).toString());
-
         //Create an ArrayList
        *//* List<dataValue> dataFromFeatureFile=new ArrayList<dataValue>();
         //Store all values

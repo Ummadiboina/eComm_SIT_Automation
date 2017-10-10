@@ -42,7 +42,7 @@ public class Hooks extends Environment {
 		String relativePath = System.getProperty("user.dir");
 		log.debug("The Relative path of the user.dir" + relativePath);
 
-		String EnvPropFilePath = relativePath + "\\Configurations\\Properties\\AppConfig.properties";
+		String EnvPropFilePath = relativePath + "/Configurations/Properties/AppConfig.properties";
 		log.debug("The Env prop path is " + EnvPropFilePath);
 
 		String BrowserType = Filereadingutility.getPropertyValue(EnvPropFilePath, "Browser_Type");
