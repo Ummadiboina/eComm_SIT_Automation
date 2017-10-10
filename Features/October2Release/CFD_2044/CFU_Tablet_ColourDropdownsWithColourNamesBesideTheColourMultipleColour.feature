@@ -10,8 +10,6 @@ Feature: CFU_Tablet_ColourDropdownsWithColourNamesBesideTheColourMultipleColour
     And select <color> color of the connected device
     And verify the name of the colur is next to the colour tile in <UpgradeTabletColour>
     And Navigate to device details page
-    And select <color> color of the connected device
-    And verify the name of the colur is next to the colour tile in <UpgradeTariffTabletColour>
     And Select a tariff <tariff>
     And I Land on the basket page by clicking on Add to Basket button
 

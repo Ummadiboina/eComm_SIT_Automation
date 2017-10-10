@@ -7,10 +7,10 @@ Feature: PayG Phones_ShowMarketingMessageOnTariffAndExtrasPagePackageSummary
     And I choose PayG <handset>
     And Navigate to device details page
     And Select a tariff <tariff>
-    And Verify the copytext of marketing message in <TileName>
-    And Verify the copytext of marketing message in <SectionName> 
+    And Verify the copytext of marketing message in "Tariff and Extras"
+    And Verify the copytext of marketing message in "Your Package"
     And I Land on the basket page and choose home delivery option
-    And Verify the copytext of marketing message in <BasketSectionName> 
+    And Verify the copytext of marketing message in "Your Basket"
     And click on "go to checkout" button
    # And Verify the copytext of marketing message in <DeliverySectionName>
     And input <Firstname> and <Surname> and other valid details in Delivery page and Click on the 'Continue button'

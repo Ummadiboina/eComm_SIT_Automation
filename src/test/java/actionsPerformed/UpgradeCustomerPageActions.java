@@ -398,7 +398,7 @@ public class UpgradeCustomerPageActions extends Environment {
 			i = j + 1;
 			TariffXpath = "(//div[@id='tariff-tile']/div[@id]/div/div[@class='price-block'])[" + i + "]";
 			TextOfTariffTile = driver.findElement(By.xpath(TariffXpath)).getText();
-			TextOfTariffTile = TextOfTariffTile.replace("£", "");
+			TextOfTariffTile = TextOfTariffTile.replace("ï¿½", "");
 			TextOfTariffTile = TextOfTariffTile.replace("\n", "");
 			TextOfTariffTile = TextOfTariffTile.replace(" ", "");
 			System.out.println("TextOfTariffTile  " + TextOfTariffTile);
@@ -1200,7 +1200,7 @@ public class UpgradeCustomerPageActions extends Environment {
 	}
 
 	public static void SelectRecycleContinueToUpgrade() throws IOException, InterruptedException {
-		// Clicking on Recycle and get up to £54.00 credit
+		// Clicking on Recycle and get up to ï¿½54.00 credit
 		System.out.println("in Select recycle an continue to upgrade function");
 		driver.findElement(By.id("recycleCredit")).click();
 		System.out.println("Clicked on Radio button next to Recycle and get up to XXXX credit");
@@ -1481,10 +1481,10 @@ public class UpgradeCustomerPageActions extends Environment {
 
 		String YouSimCopyText = UpgradeCustomerPage.YourSimSectionCopyText.getText();
 		System.out.println(YouSimCopyText);
-		String ActualCopy = ("You’ll need a nano sim to use your new device." + System.lineSeparator()
-				+ "Your current sim might already be a nano sim. If it is, you can just pop it straight into your new device. It’s the quickest and easiest way to get set up."
+		String ActualCopy = ("Youï¿½ll need a nano sim to use your new device." + System.lineSeparator()
+				+ "Your current sim might already be a nano sim. If it is, you can just pop it straight into your new device. Itï¿½s the quickest and easiest way to get set up."
 				+ System.lineSeparator()
-				+ "If your current sim isn’t a nano sim, you’ll need a new one. Tick ‘I need a new sim’ and we’ll send you one with your device. Then just fill out the sim swap form when it arrives.");
+				+ "If your current sim isnï¿½t a nano sim, youï¿½ll need a new one. Tick ï¿½I need a new simï¿½ and weï¿½ll send you one with your device. Then just fill out the sim swap form when it arrives.");
 		System.out.println(ActualCopy);
 		if (YouSimCopyText.equals(ActualCopy))
 
@@ -1628,7 +1628,7 @@ public class UpgradeCustomerPageActions extends Environment {
 		ExText1 = "Left to pay on your existing device";
 		ExText2 = "The balance still to pay on your current";
 		ExText3 = "Upgrade on us";
-		ExText4 = "We’ll pay off the rest of your Device Plan, and you can keep your current device. If your next airtime bill has already been scheduled, it may still be taken.";
+		ExText4 = "Weï¿½ll pay off the rest of your Device Plan, and you can keep your current device. If your next airtime bill has already been scheduled, it may still be taken.";
 
 		if (AcText1.equals(ExText1) && (AcText2.equals(ExText2) && (AcText3.equals(ExText3))
 				&& (AcText4.equals(ExText4) && !cost1.isEmpty() && !cost2.isEmpty()))) {
@@ -1660,7 +1660,7 @@ public class UpgradeCustomerPageActions extends Environment {
 		ExText1 = "Your Phone Plan balance";
 		ExText2 = "This is the payment amount required for your current CCA account to be settled";
 		ExText3 = "Upgrade on us";
-		ExText4 = "We’ll pay off the rest of your Device Plan, and you can keep your current device. If your next airtime bill has already been scheduled, it may still be taken.";
+		ExText4 = "Weï¿½ll pay off the rest of your Device Plan, and you can keep your current device. If your next airtime bill has already been scheduled, it may still be taken.";
 
 		System.out.println(AcText1 + "   " + cost1);
 		System.out.println(AcText2);
@@ -1819,4 +1819,51 @@ public class UpgradeCustomerPageActions extends Environment {
 		Screenshots.captureScreenshot();
 	}
 
+	public static void clickOnViewAllTablets() throws InterruptedException, IOException {
+
+		Thread.sleep(3000);
+
+		((JavascriptExecutor) driver).executeScript("arguments[0].click();",
+				pageobjects.UpgradeCustomerPage.ViewAllTablets);
+		Screenshots.captureScreenshot();
+	}
+
+	public static void VerifyMarketingMessage(String section) throws Exception
+	{
+		if (section.contains("Tariff and Extras"))
+		{
+			Assert.assertEquals("Sample Text",pageobjects.UpgradeCustomerPage.ViewAllTablets.getText());
+			Screenshots.captureScreenshot();
+		}
+		else if(section.contains("Your Package"))
+		{
+			Assert.assertEquals("Sample Text",pageobjects.UpgradeCustomerPage.ViewAllTablets.getText());
+			Screenshots.captureScreenshot();
+		}
+		else if(section.contains("Your Basket"))
+		{
+			Assert.assertEquals("Sample Text",pageobjects.UpgradeCustomerPage.ViewAllTablets.getText());
+			Screenshots.captureScreenshot();
+		}
+		else if(section.contains("Delivery Page"))
+		{
+			Assert.assertEquals("Sample Text",pageobjects.UpgradeCustomerPage.ViewAllTablets.getText());
+			Screenshots.captureScreenshot();
+		}
+		else if(section.contains("Payment Page"))
+		{
+			Assert.assertEquals("Sample Text",pageobjects.UpgradeCustomerPage.ViewAllTablets.getText());
+			Screenshots.captureScreenshot();
+		}
+		else if(section.contains("Order Summary"))
+		{
+			Assert.assertEquals("Sample Text",pageobjects.UpgradeCustomerPage.ViewAllTablets.getText());
+			Screenshots.captureScreenshot();
+		}
+		else if(section.contains("Order Confirmation"))
+		{
+			Assert.assertEquals("Sample Text",pageobjects.UpgradeCustomerPage.ViewAllTablets.getText());
+			Screenshots.captureScreenshot();
+		}
+	}
 }

@@ -1,9 +1,7 @@
 package GlobalActions;
 
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.junit.Assert;
+import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 
@@ -127,6 +125,25 @@ public class CommonUtilities{
 
 		}
 
+	public static void VerifyText(WebDriver driver, String verify) throws InterruptedException{
+		try{
+			WebElement ele = driver.findElement(By.xpath("//*[contains()='"+verify+"']"));
+			if( ele.isDisplayed())
+			{
+				System.out.println("Element present");
+			}
+			else
+			{
+				System.out.println("Element not present");
+			}
+			//Assert.assertTrue("");
+
+		}catch (Exception e) {
+			// TODO: handle exception
+			System.out.println("Failed to identify Element : " + e.getStackTrace());
+		}
+
+	}
 
 
 }
