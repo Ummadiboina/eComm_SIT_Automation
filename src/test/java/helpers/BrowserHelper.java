@@ -50,7 +50,7 @@ public class BrowserHelper {
 			// WebDriver driver = new ChromeDriver (handlSSLErr);
 		} else if (BrowserType.equalsIgnoreCase("mozilla")) {
 
-			System.setProperty("webdriver.gecko.driver", "Browsers\\GeckoDriver\\geckodriver.exe");
+			System.setProperty("webdriver.gecko.driver", "Browsers/GeckoDriver/geckodriver.exe");
 			// ProfilesIni firProfiles = new ProfilesIni();
 			// FirefoxProfile wbdrverprofile = firProfiles.getProfile("certificateIssue");
 			/*

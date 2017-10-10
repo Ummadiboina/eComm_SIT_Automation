@@ -3,6 +3,7 @@ package testRunner;
 import com.github.mkolisnyk.cucumber.runner.ExtendedCucumberOptions;
 import com.github.mkolisnyk.cucumber.runner.ExtendedTestNGRunner;
 import cucumber.api.CucumberOptions;
+import cucumber.api.testng.AbstractTestNGCucumberTests;
 import org.junit.BeforeClass;
 
 import java.text.SimpleDateFormat;
@@ -14,7 +15,7 @@ import java.util.Date;
 @ExtendedCucumberOptions
 		(
 				jsonReport = "testResult/cucumber.json",
-				//retryCount = 0,
+				retryCount = 0,
 				detailedReport = true,
 				detailedAggregatedReport = true,
 				overviewReport = false,
@@ -45,7 +46,7 @@ import java.util.Date;
 
 
 //@RunWith(CucumberRunner.class)
-public class RunnerTest extends ExtendedTestNGRunner  {
+public class RunnerTest extends AbstractTestNGCucumberTests {
 /*	@BeforeClass
 	public static void setUp() {
 

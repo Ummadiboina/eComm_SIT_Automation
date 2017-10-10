@@ -145,12 +145,19 @@
 			<artifactId>poi-ooxml</artifactId>
 			<version>3.9</version>
 		</dependency>
+
+		<dependency>
+			<groupId>com.github.mkolisnyk</groupId>
+			<artifactId>cucumber-runner</artifactId>
+			<version>1.2</version>
+		</dependency>
+<!--
 		<dependency>
 			<groupId>com.github.mkolisnyk</groupId>
 			<artifactId>cucumber-reports</artifactId>
 			<version>1.0.7</version>
 			<scope>test</scope>
-		</dependency>
+		</dependency>-->
 		<dependency>
 			<groupId>com.vimalselvam</groupId>
 			<artifactId>cucumber-extentsreport</artifactId>

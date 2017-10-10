@@ -2,8 +2,12 @@
 
 <suite name="Suite1" verbose="1" >
     <test name="Regression1">
-        <classes>
+        <packages>
+            <package name="testRunner" />
+        </packages>
+
+        <!--<classes>
             <class name="testRunner.RunnerTest"/>
-        </classes>
+        </classes>-->
     </test>
 </suite>
