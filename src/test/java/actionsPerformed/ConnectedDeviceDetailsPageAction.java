@@ -17,7 +17,7 @@ import helpers.Environment;
 //This page will have details on the individual device
 
 public class ConnectedDeviceDetailsPageAction extends Environment {
-	static Logger log = Logger.getLogger("devpinoyLogger");
+	final static Logger log = Logger.getLogger("ConnectedDeviceDetailsPageAction");
 
 	public static void GetTitle() throws InterruptedException, IOException {
 		System.out.println("Currently in Device details page");

@@ -10,7 +10,8 @@ import pageobjects.Agent_AdvisoryPage;
 
 public class Agent_AdvisoryChecksActions extends Environment {
 
-	static Logger log = Logger.getLogger("devpinoyLogger");
+	final static Logger log = Logger.getLogger("Agent_AdvisoryChecksActions");
+
 
 	// this method used to perform click action on the Agent Home Page
 

@@ -11,7 +11,7 @@ import helpers.Environment;
 import pageobjects.PaymentPage;
 
 public class AdditionalInformationPageActions extends Environment {
-	static Logger log = Logger.getLogger("devpinoyLogger");
+	final static Logger log = Logger.getLogger("AdditionalInformationPageActions");
 
 	public static void gettitlepage() throws IOException, InterruptedException {
 

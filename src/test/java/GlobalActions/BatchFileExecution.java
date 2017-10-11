@@ -11,7 +11,7 @@ import helpers.Environment;
 
 public class BatchFileExecution extends Environment  {
 
-	static Logger log = Logger.getLogger("devpinoyLogger");
+	final static Logger log = Logger.getLogger("BatchFileExecution");
 
 		public static void BatchFileTermination() throws InterruptedException 
 		{

@@ -17,7 +17,7 @@ import pageobjects.Agent_CreditCheckDetailsPage;
 
 public class Agent_CreditCheckPageActions extends Environment {
 
-	static Logger log = Logger.getLogger("devpinoyLogger");
+	final static Logger log = Logger.getLogger("Agent_CreditCheckPageActions");
 
 	public static void Creditcheck(String Firstname, String Surname) throws InterruptedException, IOException {
 		Select dropdown = new Select(pageobjects.Agent_CreditCheckDetailsPage.Title);

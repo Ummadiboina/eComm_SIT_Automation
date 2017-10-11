@@ -2,12 +2,15 @@ package actionsPerformed;
 
 import java.io.IOException;
 
+import org.apache.log4j.Logger;
 import org.openqa.selenium.WebElement;
 
 import GlobalActions.Screenshots;
 import helpers.Environment;
 
 public class TabletPageActions extends Environment {
+
+	final static Logger log = Logger.getLogger("TabletPageActions");
 
 	public static void validateElements(String Tabname) throws IOException, InterruptedException {
 		System.out.println(" ");
@@ -96,11 +99,11 @@ public class TabletPageActions extends Environment {
 			System.out.println("Apple iPad Pro 10.5 inch is selected");
 		}
 
-		if (elementName.contains("Apple iPad 9.7")) {
+		if (elementName.contains("Appleï¿½iPad 9.7")) {
 
 			pageobjects.TabletPage.AppleiPad97.click();
 			Thread.sleep(7000);
-			System.out.println("Apple iPad 9.7 is selected");
+			System.out.println("Appleï¿½iPad 9.7 is selected");
 		}
 		if (elementName.contains("Apple iPad Pro 12.9 inch")) {
 			pageobjects.TabletPage.iPadPro129.click();

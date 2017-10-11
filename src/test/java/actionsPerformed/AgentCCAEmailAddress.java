@@ -10,7 +10,7 @@ import pageobjects.Agent_UpdateCCAEmailPage;
 
 public class AgentCCAEmailAddress extends Environment {
 
-	static Logger log = Logger.getLogger("devpinoyLogger");
+	final static Logger log = Logger.getLogger("AgentCCAEmailAddress");
 
 	public static void CFACCAEmailUpdate(String emailid) throws InterruptedException, IOException {
 

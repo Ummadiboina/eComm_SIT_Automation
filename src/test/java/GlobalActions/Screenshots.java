@@ -8,6 +8,7 @@ import java.util.Date;
 import java.util.Properties;
 
 import org.apache.commons.io.FileUtils;
+import org.apache.log4j.Logger;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 
@@ -17,6 +18,8 @@ import helpers.Filereadingutility;
 public class Screenshots extends Environment {
 
 	public static Properties CONFIG;
+	final static Logger log = Logger.getLogger("Screenshots");
+
 
 	public static void captureScreenshot() throws IOException, InterruptedException {
 

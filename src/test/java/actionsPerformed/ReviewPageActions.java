@@ -10,7 +10,7 @@ import GlobalActions.Screenshots;
 import helpers.Environment;
 
 public class ReviewPageActions extends Environment {
-	static Logger log = Logger.getLogger("devpinoyLogger");
+	final static Logger log = Logger.getLogger("ReviewPageActions");
 
 	public static void gettitlepage() throws IOException, InterruptedException {
 
@@ -95,7 +95,7 @@ public class ReviewPageActions extends Environment {
 	public static void checkStockExtMsgRP() throws IOException, InterruptedException {
 		// TODO Auto-generated method stub
 		String ActualStockExtMsg = pageobjects.ReviewPage.StockExtMessageDDPORP.getText();
-		String ExpStockExtMsg = "You'll pay for your phone now. We’ll send you an email or text to let you know when it will be delivered";
+		String ExpStockExtMsg = "You'll pay for your phone now. Weï¿½ll send you an email or text to let you know when it will be delivered";
 		System.out.println("Act Del MSg" + ActualStockExtMsg);
 		System.out.println("Exp Del MSg" + ExpStockExtMsg);
 

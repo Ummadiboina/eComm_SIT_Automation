@@ -8,7 +8,7 @@ import GlobalActions.Screenshots;
 import helpers.Environment;
 
 public class LikefreeHomepageAction extends Environment {
-	static Logger log = Logger.getLogger("devpinoyLogger");
+	final static Logger log = Logger.getLogger("LikefreeHomepageAction");
 
 	public static void ElementClick(String elementName) throws IOException, InterruptedException {
 

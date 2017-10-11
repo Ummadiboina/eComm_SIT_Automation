@@ -9,7 +9,7 @@ import helpers.Environment;
 
 public class MobileBroadBandPageActions extends Environment {
 
-	static Logger log = Logger.getLogger("devpinoyLogger");
+	final static Logger log = Logger.getLogger("MobileBroadBandPageActions");
 
 	public static void DeviceSelect(String elementName) throws IOException, InterruptedException {
 

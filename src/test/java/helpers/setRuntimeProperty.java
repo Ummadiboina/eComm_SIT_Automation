@@ -9,7 +9,7 @@ import org.apache.log4j.Logger;
 public class setRuntimeProperty {
 
 	public static Properties RUNTIME;
-	static Logger log = Logger.getLogger("devpinoyLogger");
+	final static Logger log = Logger.getLogger("setRuntimeProperty");
 
 	public static void setProperty(String object, String data) {
 		log.debug("updating runtime properties");

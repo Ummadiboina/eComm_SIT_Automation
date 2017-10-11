@@ -17,7 +17,7 @@ import GlobalActions.Screenshots;
 import helpers.Environment;
 
 public class BaseCommPageActions extends Environment {
-	static Logger log = Logger.getLogger("devpinoyLogger");
+	final static Logger log = Logger.getLogger("BaseCommPageActions");
 
 	static List<String> NormalCost = new ArrayList<>();
 	static List<String> BasecommCost = new ArrayList<>();

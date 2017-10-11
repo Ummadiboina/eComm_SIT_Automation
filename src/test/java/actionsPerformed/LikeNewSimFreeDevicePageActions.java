@@ -11,7 +11,7 @@ import helpers.Environment;
 //import Environment.Environment;
 
 public class LikeNewSimFreeDevicePageActions extends Environment {
-	static Logger log = Logger.getLogger("devpinoyLogger");
+	final static Logger log = Logger.getLogger("LikeNewSimFreeDevicePageActions");
 
 	public static void validatetile() throws IOException, InterruptedException {
 		System.out.println(" ");

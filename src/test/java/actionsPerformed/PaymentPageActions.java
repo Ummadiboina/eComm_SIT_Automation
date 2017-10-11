@@ -13,7 +13,7 @@ import pageobjects.PaymentPage;
 
 public class PaymentPageActions extends Environment {
 
-	static Logger log = Logger.getLogger("devpinoyLogger");
+	final static Logger log = Logger.getLogger("PaymentPageActions");
 
 	public static void Set_Bank_details(String Username) throws IOException, InterruptedException {
 		pageobjects.PaymentPage.Name_On_Account.sendKeys(Username);

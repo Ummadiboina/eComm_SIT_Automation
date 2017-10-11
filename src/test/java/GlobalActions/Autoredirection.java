@@ -10,7 +10,7 @@ import helpers.Environment;
 
 public class Autoredirection extends Environment {
 
-	static Logger log = Logger.getLogger("devpinoyLogger");
+	final static Logger log = Logger.getLogger("Autoredirection");
 
 	public static void redirect() throws InterruptedException, IOException {
 		String newUrl = null;

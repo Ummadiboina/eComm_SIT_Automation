@@ -29,7 +29,7 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 
 public class Hooks extends Environment {
 
-	static Logger log = Logger.getLogger("devpinoyLogger");
+	final static Logger log = Logger.getLogger("Hooks");
 	//private static WebDriver driver;
 	// protected static WebDriver driver;
 
@@ -105,8 +105,8 @@ public class Hooks extends Environment {
 
 		}
 		Thread.sleep(2000);
-		/*driver.close();
-		driver.quit();*/
+		driver.close();
+		driver.quit();
 
 	}
 

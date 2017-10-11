@@ -9,7 +9,7 @@ import helpers.Environment;
 
 public class SimsPageActions extends Environment {
 
-	static Logger log = Logger.getLogger("devpinoyLogger");
+	final static Logger log = Logger.getLogger("SimsPageActions");
 
 	public static void SelectRandomIpadSim(String elementname) throws InterruptedException, IOException {
 		if (elementname.contains("Random Tariff"))

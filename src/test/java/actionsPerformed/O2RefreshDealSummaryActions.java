@@ -11,7 +11,7 @@ import pageobjects.O2RefreshDealSummaryPage;
 
 public class O2RefreshDealSummaryActions extends Environment {
 
-	static Logger log = Logger.getLogger("devpinoyLogger");
+	final static Logger log = Logger.getLogger("O2RefreshDealSummaryActions");
 
 	public static void DealSummarySectionforCCA() throws IOException, InterruptedException {
 		if (O2RefreshDealSummaryPage.DealSummarySection.isDisplayed()) {

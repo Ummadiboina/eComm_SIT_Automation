@@ -17,7 +17,8 @@ import helpers.setRuntimeProperty;
 
 public class AccessoryPageActions extends Environment {
 
-	static Logger log = Logger.getLogger("devpinoyLogger");
+	final static Logger log = Logger.getLogger("AccessoryPageActions");
+
 	static int UserSpecifiedAccessoryLimit = 0;
 	static int count = 0;
 	static int UserSpecifiedFitnessTrackerLimit = 0;

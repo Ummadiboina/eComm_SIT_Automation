@@ -10,7 +10,7 @@ import pageobjects.Agent_DeliveryDetailsPage;
 
 public class Agent_DeliveryPageActions extends Environment {
 
-	static Logger log = Logger.getLogger("devpinoyLogger");
+	final static Logger log = Logger.getLogger("Agent_DeliveryPageActions");
 
 	/*
 	 * //this method used to perform click action on the Agent Home Page

@@ -6,6 +6,7 @@ import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
 import org.apache.log4j.Logger;
+import org.apache.log4j.PropertyConfigurator;
 import org.openqa.selenium.By;
 import org.openqa.selenium.ElementNotVisibleException;
 import org.openqa.selenium.Point;
@@ -15,12 +16,8 @@ import org.openqa.selenium.interactions.Actions;
 import helpers.Environment;
 
 public class MouseHoverAction extends Environment {
-	static Logger log = Logger.getLogger("devpinoyLogger");
 
-	/*
-	 * ############## All the Below are for the CFA customer journey
-	 * ###################
-	 */
+	final static Logger log = Logger.getLogger("MouseHoverAction");
 
 	// Below will navigate to PayM Phones Page
 

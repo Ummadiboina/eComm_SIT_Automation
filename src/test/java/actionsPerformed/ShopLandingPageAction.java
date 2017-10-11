@@ -13,7 +13,7 @@ import helpers.Environment;
 import pageobjects.ShopLandingPage;
 
 public class ShopLandingPageAction extends Environment {
-	static Logger log = Logger.getLogger("devpinoyLogger");
+	final static Logger log = Logger.getLogger("ShopLandingPageAction");
 
 	public static void GetTitle() throws IOException, InterruptedException {
 		System.out.println("Currently in Shop Home page");

@@ -9,7 +9,7 @@ import helpers.Environment;
 
 public class CVOS_StockAllocationActions extends Environment {
 
-	static Logger log = Logger.getLogger("devpinoyLogger");
+	final static Logger log = Logger.getLogger("CVOS_StockAllocationActions");
 
 	public static void CVOSSupplyTradeAllocate(String Search_by_model) throws InterruptedException, IOException {
 
