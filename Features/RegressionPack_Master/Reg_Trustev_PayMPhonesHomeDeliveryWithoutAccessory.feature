@@ -2,7 +2,7 @@ Feature: Reg_Trustev_PayMPhonesHomeDeliveryWithoutAccessory
 
   #launch hooks and get browser
 
-  @Trustev_Regression
+  @Web @Trustev_Regression
   Scenario Outline: Trustev PayM Phones Home delivery E2E journey without accessory
 
     Given I am an CFA user and Lands on shop page
@@ -21,4 +21,4 @@ Feature: Reg_Trustev_PayMPhonesHomeDeliveryWithoutAccessory
     #Close the browser
     Examples: 
       | handset  | Firstname | Surname | Username     |
-      | GalaxyS7 | TEST      | ACCEPTA | TEST ACCEPTA |laxyS7 | TEST      | ACCEPTA | TEST ACCEPTA |
+      | GalaxyS7 | TEST      | ACCEPTA | TEST ACCEPTA |
