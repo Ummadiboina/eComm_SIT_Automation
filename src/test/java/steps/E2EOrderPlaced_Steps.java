@@ -5,6 +5,7 @@ import java.util.*;
 import java.util.concurrent.TimeUnit;
 
 import GlobalActions.*;
+import actionsPerformed.*;
 import com.lowagie.text.Section;
 import cucumber.api.DataTable;
 import org.apache.log4j.Logger;
@@ -14,45 +15,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 
-import actionsPerformed.AccessoryPageActions;
-import actionsPerformed.AdditionalInformationPageActions;
-import actionsPerformed.Agent_AdvisoryChecksActions;
-import actionsPerformed.Agent_ConfirmationPageActions;
-import actionsPerformed.Agent_CreditCheckPageActions;
-import actionsPerformed.Agent_DealBuilderPageActions;
-import actionsPerformed.Agent_HomePagePageActions;
-import actionsPerformed.Agent_RegisterCustomerActions;
-import actionsPerformed.AgreementPageActions;
-import actionsPerformed.BaseCommPageActions;
-import actionsPerformed.BasketPageActions;
-import actionsPerformed.CVOS_LandingPageActions;
-import actionsPerformed.CVOS_StockAllocationActions;
-import actionsPerformed.CVOS_StockMerchandiseActions;
-import actionsPerformed.CVOS_SupplyChainloggedIn;
-import actionsPerformed.CVOS_TradingAdminloggedIn;
-import actionsPerformed.CVOSstockpotPageActions;
-import actionsPerformed.ConnectedDeviceDetailsPageAction;
-import actionsPerformed.DeliveryPageActions;
-import actionsPerformed.FitnessTrackerPageActions;
-import actionsPerformed.FreeSimDeliveryPageActions;
-import actionsPerformed.FreeSimPageActions;
-import actionsPerformed.MobileBroadBandPageActions;
-import actionsPerformed.NonConnectedDeviceDetailsPageAction;
-import actionsPerformed.O2RefreshDealSummaryActions;
-import actionsPerformed.OrderConfirmationPageActions;
-import actionsPerformed.OrderSummarySectionActions;
-import actionsPerformed.PAYMSimOPageActions;
-import actionsPerformed.PAYMandPAYGTariffAndExtrasPageActions;
-import actionsPerformed.PaymentPageActions;
-import actionsPerformed.PhonesListingPageAction;
-import actionsPerformed.ReviewPageActions;
-import actionsPerformed.ShopLandingPageAction;
-import actionsPerformed.SimsPageActions;
-import actionsPerformed.SmartwatchesPageActions;
-import actionsPerformed.TabletPageActions;
-import actionsPerformed.UpdateDevicePlanLinkEmailAddressActions;
 //import actionsPerformed.UpdateDevicePlanLinkEmailAddressActions;
-import actionsPerformed.UpgradeCustomerPageActions;
 import cucumber.api.PendingException;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
@@ -6354,4 +6317,59 @@ public class E2EOrderPlaced_Steps {
             verify = value2;
         }
     }
+
+
+
+//////////////////////////////////////////////////CFD-2044//////////////////////////////////////////
+
+    @And("^click on the color dropdown$")
+    public void click_on_the_color_dropdown() throws Throwable {
+
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, ConnectedDeviceDetailsPage.class);
+            ConnectedDeviceDetailsPageAction.UpdatedColordropdown();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.out.println("The color dropdown is not present");
+            Assert.fail("not able to click on the colour dropdown");
+        }
+
+    }
+
+
+    @And("^select ([^\"]*) link$")
+    public void select_link(String LikeNewLink) throws Throwable {    // Write code here that turns the phrase above into concrete actions
+
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, SimFreeDevicePage.class);
+            SimFreeLandingActions.LikeNewOptions(LikeNewLink);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.out.println("Unable to select the sim free link");
+            Assert.fail("Unable to select the sim free link");
+        }
+
+
+    }
+
+    @And("^verify the name of the color is next to the colour tile in ([^\"]*)$")
+    public void verify_the_name_of_the_color_is_next_to_the_colour_tile_in(String LikeNewLink) throws Throwable {
+
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, SimFreeDevicePage.class);
+            SimFreeLandingActions.LikeNewOptions(LikeNewLink);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.out.println("Unable to select the sim free link");
+            Assert.fail("Unable to select the sim free link");
+        }
+    }
+
 }
+

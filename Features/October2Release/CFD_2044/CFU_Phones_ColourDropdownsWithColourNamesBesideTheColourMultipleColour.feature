@@ -17,4 +17,4 @@ Feature: CFU_Phones_ColourDropdownsWithColourNamesBesideTheColourMultipleColour
 
     Examples:
       | username               | password | handset  | tariff                 | UpgradePhoneColour | UpgradeTariffColour |
-      | gb119519_979816@o2.com | test123  | GalaxyS8 | 9.99upfront60.00amonth |                    |                     |
+      | gb119519_979816@o2.com | test123  | GalaxyS8 | 9.99upfront60.00amonth |Black               |Black                |

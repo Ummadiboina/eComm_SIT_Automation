@@ -15,4 +15,4 @@ Feature: CFU_Tablet_ColourDropdownsWithColourNamesBesideTheColourMultipleColour
 
     Examples: 
       | username               | password | handset  | tariff                 | UpgradeTabletColour | color |UpgradeTariffTabletColour|
-      | gb119519_979816@o2.com | test123  | GalaxyS8 | 9.99upfront60.00amonth |                     | White |													|
+      | gb119519_979816@o2.com | test123  | GalaxyS8 | 9.99upfront60.00amonth | Silver              |Silver |Silver                   |
