@@ -24,4 +24,4 @@ Current URL:
     #Modify the above step to include pdf download
     Examples: 
       | username   | password | OldMBBURL                                                | user         |MBBLandingPage|
-      | in_jul1136 | test123  | https://www.ref.o2.co.uk/shop/my-offers/mobile-broadband | TEST ACCEPTA |							 |
+      | in_jul1136 | test123  | https://www.ref.o2.co.uk/shop/my-offers/mobile-broadband | TEST ACCEPTA |              |

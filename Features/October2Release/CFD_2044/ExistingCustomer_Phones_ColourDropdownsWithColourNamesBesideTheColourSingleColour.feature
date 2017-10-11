@@ -27,5 +27,6 @@ Given I am existing user and I click on Signin button
     Examples: 
     
     |username|password|handset|CFAPhoneColour|CFATariffColour|user|
-    
-    
+    |        |test123 |       |              |               |TEST ACCEPTA|
+
+
