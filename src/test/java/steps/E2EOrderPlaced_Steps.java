@@ -1,10 +1,7 @@
 package steps;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.*;
 import java.util.concurrent.TimeUnit;
 
 import GlobalActions.*;
@@ -62,7 +59,7 @@ import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import helpers.Filereadingutility;
-import junit.framework.Assert;
+import org.testng.Assert;
 import pageobjects.*;
 
 public class E2EOrderPlaced_Steps {
@@ -82,10 +79,12 @@ public class E2EOrderPlaced_Steps {
     ArrayList<Integer> datalistafter = new ArrayList<Integer>();
     ArrayList<Integer> monthlycostlistafter = new ArrayList<Integer>();
     ArrayList<Integer> upfrontcostlistafter = new ArrayList<Integer>();
+    final static Logger logger = Logger.getLogger(E2EOrderPlaced_Steps.class);
 
     public E2EOrderPlaced_Steps() {
         driver = Hooks.driver;
         // datamap = DataReader.data();
+
     }
 
      /** ############## All the Below are for the Navigation Journeys*/
@@ -897,6 +896,8 @@ public class E2EOrderPlaced_Steps {
         }
     }
 
+
+
     @And("^input ([^\"]*) and ([^\"]*) and other valid details in Delivery page for Click and collect and Click on the 'Continue button'$")
     public void DeliveryPage_Inputs_ClickandCollect(String Firstname, String Surname) throws Throwable {
         try {
@@ -912,6 +913,59 @@ public class E2EOrderPlaced_Steps {
 
         }
     }
+
+
+    @And("^input the below details in Delivery page$")
+    public void inputDetailsDeliveryPage(DataTable userData) throws Throwable {
+       try {
+           driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+           PageFactory.initElements(driver, DeliveryPage.class);
+           DeliveryPageActions.SetDelivery_Datatable(userData);
+           Thread.sleep(5000);
+           DeliveryPageActions.AboutYou_Datatable(userData);
+           Thread.sleep(2000);
+           DeliveryPageActions.ClickContinue();
+           Thread.sleep(5000);
+       }
+       catch (Exception e)
+       {
+           System.out.println("Unable to input details in delivery page");
+           Assert.fail("Unable to input details in delivery page");
+       }
+    }
+
+
+    @And("^Click on the 'Continue button'$")
+    public void clickOnTheContinueButton() throws Throwable {
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, DeliveryPage.class);
+            DeliveryPageActions.ClickContinue();
+            Thread.sleep(5000);
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            System.out.println("Unable to input details in delivery page");
+            Assert.fail("Unable to input details in delivery page");
+
+        }
+    }
+
+
+    //////////*****below are Dummy functions just for verifications ***********////////////
+
+    @Given("^I am on delivery page$")
+    public void Deliverypagelaunch() throws Throwable {
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+        String relativePath = System.getProperty("user.dir");
+        String EnvPropFilePath = relativePath + "/Configurations/Properties/AppConfig.properties";
+        String Newurl = Filereadingutility.getPropertyValue(EnvPropFilePath, "Dummyurl");
+        driver.navigate().to(Newurl);
+        driver.findElement(By.id("qa-proceed-to-basket-dock-header")).click();
+        driver.findElement(By.xpath("//*[@id='shopApp']/div[4]/div/div/div[1]/div[1]/div/form/input")).click();
+    }
+
+
+
 
 	/*
 	 * #########################################################################
@@ -1219,9 +1273,9 @@ public class E2EOrderPlaced_Steps {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, OrderConfirmationPage.class);
 
-            Assert.assertTrue(
-                    "Assertion Failed: Expected Message: " + ExpOrderContractMsg + " is not present in the page",
-                    driver.getPageSource().contains(ExpOrderContractMsg));
+            Assert.assertTrue(driver.getPageSource().contains(ExpOrderContractMsg),
+                    "Assertion Failed: Expected Message: " + ExpOrderContractMsg + " is not present in the page"
+                    );
 
             System.out.println("Assertion Passed: Expected Mesasge: " + ExpOrderContractMsg
                     + " is present in the Order Confirmation page");
@@ -4408,9 +4462,9 @@ public class E2EOrderPlaced_Steps {
 
             ExpectedTimeSlotMessage = "Your order will be delivered for free, via Royal Mail, within three working days.";
 
-            Assert.assertTrue(
-                    "Assertion Failed: Expected Message: " + ExpectedTimeSlotMessage + " is not present in the page",
-                    driver.getPageSource().contains(ExpectedTimeSlotMessage));
+            Assert.assertTrue(driver.getPageSource().contains(ExpectedTimeSlotMessage),
+                    "Assertion Failed: Expected Message: " + ExpectedTimeSlotMessage + " is not present in the page"
+                    );
 
             System.out.println("Assertion Passed: Expected Mesasge: " + ExpectedTimeSlotMessage
                     + " is present in the Order Confirmation page");
@@ -4437,17 +4491,18 @@ public class E2EOrderPlaced_Steps {
 
             ExpectedPacCodeInfoMessage = "If you're moving from another operator and want to keep your number then now is a good time to ask them for your PAC code.";
 
-            Assert.assertTrue(
+
+            Assert.assertTrue( driver.getPageSource().contains(ExpectedDelayedDeliveryMessage),
                     "Assertion Failed: Expected Message: " + ExpectedDelayedDeliveryMessage
-                            + " is not present in the page",
-                    driver.getPageSource().contains(ExpectedDelayedDeliveryMessage));
+                            + " is not present in the page"
+                   );
 
             System.out.println("Assertion Passed: Expected Mesasge: " + ExpectedDelayedDeliveryMessage
                     + " is present in the Order Confirmation page");
 
-            Assert.assertTrue(
-                    "Assertion Failed: Expected Message: " + ExpectedPacCodeInfoMessage + " is not present in the page",
-                    driver.getPageSource().contains(ExpectedPacCodeInfoMessage));
+            Assert.assertTrue(driver.getPageSource().contains(ExpectedPacCodeInfoMessage),
+                    "Assertion Failed: Expected Message: " + ExpectedPacCodeInfoMessage + " is not present in the page"
+                    );
 
             System.out.println("Assertion Passed: Expected Mesasge: " + ExpectedPacCodeInfoMessage
                     + " is present in the Order Confirmation page");
@@ -6261,6 +6316,10 @@ public class E2EOrderPlaced_Steps {
             Assert.fail("Unable to Click on view all tablets link");
         }
     }
+
+
+
+
 
 
 

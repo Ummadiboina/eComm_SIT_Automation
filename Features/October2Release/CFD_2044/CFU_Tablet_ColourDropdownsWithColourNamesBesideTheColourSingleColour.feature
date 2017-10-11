@@ -4,7 +4,7 @@ Feature: CFU_Tablet_ColourDropdownsWithColourNamesBesideTheColourSingleColour
     Given I am existing user and I click on Signin button
     And Signin using valid <username> and <password> credentials
     And Navigate to upgrade > upgrade now
-    And click on Tablets tab
+    And Click on Tablet section in upgrade options page
     And I choose upgrade PayM Tablet <handset>
     And Navigate to device details page
     And verify the no dropdown is displayed when only one variant available

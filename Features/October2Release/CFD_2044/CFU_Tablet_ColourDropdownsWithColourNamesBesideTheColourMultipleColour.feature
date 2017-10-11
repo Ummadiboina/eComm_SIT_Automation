@@ -4,7 +4,7 @@ Feature: CFU_Tablet_ColourDropdownsWithColourNamesBesideTheColourMultipleColour
     Given I am existing user and I click on Signin button
     And Signin using valid <username> and <password> credentials
     And Navigate to upgrade > upgrade now
-    And click on Tablets tab
+    And Click on Tablet section in upgrade options page
     And Click on View all Tablets link
     And select any available <Device> Tablet
     And select <color> color of the connected device

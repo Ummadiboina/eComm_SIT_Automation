@@ -1,0 +1,196 @@
+[
+  {
+    "line": 1,
+    "elements": [
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 52180926442,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Hooks.openBrowser()"
+            }
+          }
+        ],
+        "line": 15,
+        "name": "Light surfer iPad Sim entering delivery details manually",
+        "description": "",
+        "id": "reg-cs-free-sim;light-surfer-ipad-sim-entering-delivery-details-manually;;2",
+        "after": [
+          {
+            "result": {
+              "duration": 2879740051,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Hooks.embedScreenshot(Scenario)"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 713732412,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "I am an CFA user and Lands on shop page",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.i_am_an_CFA_user_and_Lands_on_shop_page()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 13568765397,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "Navigate to FreeSim page",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.Navigate_to_FreeSim_page()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 6447166631,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "I select \u0027iPads and Tablets\u0027 tab",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.select_iPads_and_Tablets_tab()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 25897572895,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "I select Light surfer surfer and iPad sim",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Light surfer",
+                  "offset": 9
+                },
+                {
+                  "val": "iPad",
+                  "offset": 33
+                }
+              ],
+              "location": "E2EOrderPlaced_Steps.select_surfer_type_and_simtype(String,String)"
+            },
+            "matchedColumns": [
+              0,
+              1
+            ],
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 5907810261,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "I select \u0027Enter manually\u0027 and input 26, 100, slough, Berks, Sl11er",
+            "match": {
+              "arguments": [
+                {
+                  "val": "26",
+                  "offset": 36
+                },
+                {
+                  "val": "100",
+                  "offset": 40
+                },
+                {
+                  "val": "slough",
+                  "offset": 45
+                },
+                {
+                  "val": "Berks",
+                  "offset": 53
+                },
+                {
+                  "val": "Sl11er",
+                  "offset": 60
+                }
+              ],
+              "location": "E2EOrderPlaced_Steps.Enter_delivery_details(String,String,String,String,String)"
+            },
+            "matchedColumns": [
+              2,
+              3,
+              4,
+              5,
+              6
+            ],
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 12832600459,
+              "status": "passed"
+            },
+            "line": 10,
+            "name": "I input Test, Accepta, 07123456789 in About You Section",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Test",
+                  "offset": 8
+                },
+                {
+                  "val": "Accepta",
+                  "offset": 14
+                },
+                {
+                  "val": "07123456789",
+                  "offset": 23
+                }
+              ],
+              "location": "E2EOrderPlaced_Steps.Enter_delivery_details(String,String,String)"
+            },
+            "matchedColumns": [
+              7,
+              8,
+              9
+            ],
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 397553253,
+              "status": "passed"
+            },
+            "line": 11,
+            "name": "verify order number is displayed",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.OrdernumberFreeSim()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "line": 3,
+            "name": "@Web"
+          }
+        ]
+      }
+    ],
+    "name": "Reg_CS_Free_Sim",
+    "description": "",
+    "id": "reg-cs-free-sim",
+    "keyword": "Feature",
+    "uri": "Features/RegressionPack_Master/Reg_CS_Free_Sim.feature"
+  }
+]
