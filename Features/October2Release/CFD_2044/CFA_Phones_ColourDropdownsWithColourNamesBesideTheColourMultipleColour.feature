@@ -36,6 +36,6 @@ Feature: CFA_Phones_ColourDropdownsWithColourNamesBesideTheColourMultipleColour
     Then order confirmation is displayed
 
     #Close the browser
-    Examples: 
+    Examples:
       | handset | Firstname | Surname | Username     |CFAPhoneColour|CFATariffColour|
       | Iphone7 | TEST      | ACCEPTA | TEST ACCEPTA |Gold          |Gold           |
