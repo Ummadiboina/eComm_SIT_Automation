@@ -8,8 +8,8 @@ Current URL:
     Given I am existing user and I click on Signin button
     And Signin using valid <username> and <password> credentials
     And I launch the OldMBBURL
-    And click on the colour dropdown
-    And verify the name of the colur is next to the colour tile in <MBBLandingPage>
+    And click on the color dropdown
+    And verify the name of the color is next to the colour tile in <MBBLandingPage>
     And select <color> color of the connected device
     And select "random" MBBtariff
     #And I Land on the basket page and choose home delivery option
@@ -24,4 +24,4 @@ Current URL:
     #Modify the above step to include pdf download
     Examples: 
       | username   | password | OldMBBURL                                                | user         |MBBLandingPage|
-      | in_jul1136 | test123  | https://www.ref.o2.co.uk/shop/my-offers/mobile-broadband | TEST ACCEPTA |							 |
+      | in_jul1136 | test123  | https://www.ref.o2.co.uk/shop/my-offers/mobile-broadband | TEST ACCEPTA |              |

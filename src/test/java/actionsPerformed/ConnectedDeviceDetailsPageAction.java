@@ -301,4 +301,25 @@ public class ConnectedDeviceDetailsPageAction extends Environment {
 		Screenshots.captureScreenshot();
 	}
 
+
+
+
+	public static void UpdatedColordropdown() throws IOException, InterruptedException {
+		// TODO Auto-generated method stub
+		if (pageobjects.ConnectedDeviceDetailsPage.UpdatedColorLabel.isDisplayed()) {
+			System.out.println("The color dropdown is displayed");
+			pageobjects.ConnectedDeviceDetailsPage.ColorDropDown.click();
+			log.debug("The colour dropdown is clicked");
+		} else {
+			System.out.println("colour drop down is not displayed");
+			Assert.fail("The colour dropdown is not displayed");
+		}
+		Screenshots.captureScreenshot();
+	}
+
+
+	//*[@id='colourSelectBoxItText']
+
 }
+
+
