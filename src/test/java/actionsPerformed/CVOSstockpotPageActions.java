@@ -11,7 +11,7 @@ import helpers.Environment;
 
 public class CVOSstockpotPageActions extends Environment {
 
-	static Logger log = Logger.getLogger("devpinoyLogger");
+	final static Logger log = Logger.getLogger("CVOSstockpotPageActions");
 
 	public static void CVOSSupplyChainAct(String SKUID) throws InterruptedException, IOException {
 

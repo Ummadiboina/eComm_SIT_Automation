@@ -9,7 +9,7 @@ import helpers.Environment;
 
 public class CVOS_TradingAdminloggedIn extends Environment {
 
-	static Logger log = Logger.getLogger("devpinoyLogger");
+	final static Logger log = Logger.getLogger("CVOS_TradingAdminloggedIn");
 
 	public static void CVOSTradingVal() throws InterruptedException, IOException {
 		if (pageobjects.CVOS_PageObjects.stockpotTab.isDisplayed()) {

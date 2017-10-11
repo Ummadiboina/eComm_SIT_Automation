@@ -7,12 +7,11 @@ import org.openqa.selenium.By;
 
 import GlobalActions.Screenshots;
 import helpers.Environment;
-import helpers.Log;
 import pageobjects.Agent_ConfirmationPage;
 
 public class Agent_ConfirmationPageActions extends Environment {
 
-	static Logger log = Logger.getLogger("devpinoyLogger");
+	final static Logger log = Logger.getLogger("Agent_ConfirmationPageActions");
 
 	public static void Confirmationdetails() throws Exception {
 
@@ -72,7 +71,7 @@ public class Agent_ConfirmationPageActions extends Environment {
 		System.out.println("Entered submit order method");
 		Agent_ConfirmationPage.SubmitOrder.click();
 		System.out.println("Order submitted");
-		Log.debug("Order submitted");
+		log.debug("Order submitted");
 		Screenshots.captureScreenshot();
 
 	}

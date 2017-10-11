@@ -19,7 +19,7 @@ import GlobalActions.Screenshots;
 import helpers.Environment;
 
 public class PAYMSimOPageActions extends Environment {
-	static Logger log = Logger.getLogger("devpinoyLogger");
+	final static Logger log = Logger.getLogger("PAYMSimOPageActions");
 
 	// Below will Select the element under Phones Tab under 12 months and 30
 	// days contract

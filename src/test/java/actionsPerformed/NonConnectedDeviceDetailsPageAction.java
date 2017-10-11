@@ -16,7 +16,7 @@ import helpers.Environment;
 //This page will have details on the individual device
 
 public class NonConnectedDeviceDetailsPageAction extends Environment {
-	static Logger log = Logger.getLogger("devpinoyLogger");
+	final static Logger log = Logger.getLogger("NonConnectedDeviceDetailsPageAction");
 	static JavascriptExecutor executor = (JavascriptExecutor) driver;
 
 	public static void GetTitle() throws InterruptedException, IOException {

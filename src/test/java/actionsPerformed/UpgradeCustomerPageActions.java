@@ -25,7 +25,7 @@ import pageobjects.UpgradeCustomerPage;
 public class UpgradeCustomerPageActions extends Environment {
 
 	static String RunTimeFilePath = System.getProperty("user.dir") + "\\Configurations\\Properties\\Run.properties";
-	static Logger log = Logger.getLogger("devpinoyLogger");
+	final static Logger log = Logger.getLogger("UpgradeCustomerPageActions");
 	static JavascriptExecutor executor = (JavascriptExecutor) driver;
 	static int position = 0;
 	static int PositionUpgrade = 0;

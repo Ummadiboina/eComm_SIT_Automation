@@ -20,7 +20,7 @@ import helpers.Environment;
 
 @SuppressWarnings("unused")
 public class PhonesListingPageAction extends Environment {
-	static Logger log = Logger.getLogger("devpinoyLogger");
+	final static Logger log = Logger.getLogger("PhonesListingPageAction");
 
 	public static void PAYMPhoneSelect(String elementName) throws Throwable {
 		// pageobjects.PhonesListingPage.ViewAllPhones.sendKeys(Key.ENTER);

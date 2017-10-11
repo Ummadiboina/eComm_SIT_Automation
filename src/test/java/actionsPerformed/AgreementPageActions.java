@@ -9,7 +9,7 @@ import GlobalActions.Screenshots;
 import helpers.Environment;
 
 public class AgreementPageActions extends Environment {
-	static Logger log = Logger.getLogger("devpinoyLogger");
+	final static Logger log = Logger.getLogger("AgreementPageActions");
 
 	public static void gettitlepage() throws IOException, InterruptedException {
 

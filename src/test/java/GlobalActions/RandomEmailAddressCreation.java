@@ -11,7 +11,7 @@ import helpers.Environment;
 
 public class RandomEmailAddressCreation extends Environment {
 
-	static Logger log = Logger.getLogger("devpinoyLogger");
+	final static Logger log = Logger.getLogger("RandomEmailAddressCreation");
 
 /*
 public static String RandomEmail()

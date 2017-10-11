@@ -30,7 +30,6 @@ public class E2EOrderPlaced_Steps {
     private static final String Filteroption = null;
     public WebDriver driver;
     public List<HashMap<String, String>> datamap;
-    static Logger log = Logger.getLogger("devpinoyLogger");
     String FilterDataOption = null;
     LinkedList<String> expectedListBeforeSort = null;
     LinkedList<String> originalList = null;
@@ -42,7 +41,7 @@ public class E2EOrderPlaced_Steps {
     ArrayList<Integer> datalistafter = new ArrayList<Integer>();
     ArrayList<Integer> monthlycostlistafter = new ArrayList<Integer>();
     ArrayList<Integer> upfrontcostlistafter = new ArrayList<Integer>();
-    final static Logger logger = Logger.getLogger(E2EOrderPlaced_Steps.class);
+    final static Logger log = Logger.getLogger("E2EOrderPlaced_Steps");
 
     public E2EOrderPlaced_Steps() {
         driver = Hooks.driver;

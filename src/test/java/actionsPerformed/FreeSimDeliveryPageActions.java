@@ -18,7 +18,7 @@ public class FreeSimDeliveryPageActions extends Environment {
 
 	public WebDriver driver;
 	public List<HashMap<String, String>> datamap;
-	static Logger log = Logger.getLogger("devpinoyLogger");
+	final static Logger log = Logger.getLogger("FreeSimDeliveryPageActions");
 	private static CharSequence Firstname;
 	private static CharSequence Surname;
 

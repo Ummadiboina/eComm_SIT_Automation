@@ -13,7 +13,7 @@ import GlobalActions.Screenshots;
 import helpers.Environment;
 
 public class FitnessTrackerPageActions extends Environment {
-	static Logger log = Logger.getLogger("devpinoyLogger");
+	final static Logger log = Logger.getLogger("FitnessTrackerPageActions");
 
 	public static void Elementdisplayvalidation(String Tabname) throws IOException, InterruptedException {
 		System.out.println(" ");

@@ -9,7 +9,7 @@ import helpers.Environment;
 
 public class CVOS_LandingPageActions extends Environment {
 
-	static Logger log = Logger.getLogger("devpinoyLogger");
+	final static Logger log = Logger.getLogger("CVOS_LandingPageActions");
 
 	public static void CVOSSupplyChainLogin(String username, String password) throws InterruptedException, IOException {
 		pageobjects.CVOS_PageObjects.Username.sendKeys(username);

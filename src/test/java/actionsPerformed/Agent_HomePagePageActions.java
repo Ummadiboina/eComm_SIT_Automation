@@ -16,7 +16,7 @@ import pageobjects.Agent_HomePage;
 
 public class Agent_HomePagePageActions extends Environment {
 
-	static Logger log = Logger.getLogger("devpinoyLogger");
+	final static Logger log = Logger.getLogger("Agent_HomePagePageActions");
 
 	/*
 	 * //this method used to perform click action on the Agent Home Page

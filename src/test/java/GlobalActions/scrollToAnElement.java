@@ -8,8 +8,8 @@ import org.openqa.selenium.WebElement;
 import helpers.Environment;
 
 public class scrollToAnElement extends Environment {
-	
-	static	Logger log = Logger.getLogger("devpinoyLogger");
+
+	final static Logger log = Logger.getLogger("scrollToAnElement");
 	
 	public static void scrollToElement(WebElement data){
 		log.debug("Opening scrollToElement function");

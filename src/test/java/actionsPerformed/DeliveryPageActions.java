@@ -23,8 +23,7 @@ import static pageobjects.FreeSimPage.Firstname;
 public class DeliveryPageActions extends Environment {
 
     public List<HashMap<String, String>> datamap;
-    //static Logger log = Logger.getLogger("devpinoyLogger");
-    static Logger log = Logger.getLogger(DeliveryPageActions.class);
+    final static Logger log = Logger.getLogger("DeliveryPageActions");
     static JavascriptExecutor js = (JavascriptExecutor) driver;
 
     public static void SetDelivery() throws InterruptedException, IOException {

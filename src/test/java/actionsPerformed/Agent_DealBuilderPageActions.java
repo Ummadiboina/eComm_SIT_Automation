@@ -18,7 +18,7 @@ import pageobjects.Agent_DealBuilderPage;
 
 public class Agent_DealBuilderPageActions extends Environment {
 
-	static Logger log = Logger.getLogger("devpinoyLogger");
+	final static Logger log = Logger.getLogger("Agent_DealBuilderPageActions");
 
 	// this method used to perform click action on the Agent Home Page
 

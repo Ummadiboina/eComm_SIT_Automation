@@ -22,7 +22,7 @@ import helpers.setRuntimeProperty;
 import pageobjects.PAYMandPAYGTariffAndExtrasPage;
 
 public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
-	static Logger log = Logger.getLogger("devpinoyLogger");
+	final static Logger log = Logger.getLogger("PAYMandPAYGTariffAndExtrasPageActions");
 	static int AccessoryContainerSize = 0;
 	static int SelectedAccessoryCount = 0;
 	static String FirstInsurancePrice = null;
@@ -417,7 +417,7 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 		FirstInsurancePrice = InsurancePriceElement.get(0).getText();
 
 		for (WebElement temp : InsurancePriceElement) {
-			sTemp = temp.getText().replace("£", "");
+			sTemp = temp.getText().replace("ï¿½", "");
 			iTemp = Double.parseDouble(sTemp);
 			BeforeSort.add(iTemp);
 		}
@@ -500,7 +500,7 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 		TempCheapInsurance = FirstInsurancePrice;
 		String ActualAddInsuranceText = null;
 
-		if (TempCheapInsurance.equals("£0.00")) {
+		if (TempCheapInsurance.equals("ï¿½0.00")) {
 			ExpAddInsuranceText = "Add now";
 			ActualAddInsuranceText = driver.findElement(By.xpath("//input[@class='button secondary']"))
 					.getAttribute("value");
@@ -666,7 +666,7 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 
 		for (int i = 0; i < MonthlyCostTextElement.size(); i++) {
 			data = MonthlyCostTextElement.get(i).getText();
-			data = StringUtils.substringBetween(data, "£", ".");
+			data = StringUtils.substringBetween(data, "ï¿½", ".");
 			a = NumberUtils.toInt(data);
 			MonthlyCostlist.add(a);
 		}
@@ -691,7 +691,7 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 
 		for (int i = 0; i < UpfrontCostTextElement.size(); i++) {
 			data = UpfrontCostTextElement.get(i).getText();
-			data = StringUtils.substringBetween(data, "£", ".");
+			data = StringUtils.substringBetween(data, "ï¿½", ".");
 			a = NumberUtils.toInt(data);
 			UpfrontCostlist.add(a);
 		}
@@ -976,7 +976,7 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 
 		for (int i = 0; i < DataTextElement.size(); i++) {
 			data = DataTextElement.get(i).getText();
-			data = StringUtils.substringBetween(data, "£", ".");
+			data = StringUtils.substringBetween(data, "ï¿½", ".");
 			a = NumberUtils.toInt(data);
 			if (a != 0) {
 				tariffListUsingMonthlyCost.add(a);
@@ -995,7 +995,7 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 
 		for (int i = 0; i < DataTextElement.size(); i++) {
 			data = DataTextElement.get(i).getText();
-			data = StringUtils.substringBetween(data, "£", ".");
+			data = StringUtils.substringBetween(data, "ï¿½", ".");
 			a = NumberUtils.toInt(data);
 			if (a != 0) {
 				tariffListUsingMonthlyUpfront.add(a);

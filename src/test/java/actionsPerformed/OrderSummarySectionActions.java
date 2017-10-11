@@ -2,14 +2,15 @@ package actionsPerformed;
 
 import java.io.IOException;
 
+import helpers.Environment;
 import org.apache.log4j.Logger;
 
 import GlobalActions.Screenshots;
 import junit.framework.Assert;
 
-public class OrderSummarySectionActions {
+public class OrderSummarySectionActions extends Environment {
 
-	static Logger log = Logger.getLogger("devpinoyLogger");
+	final static Logger log = Logger.getLogger("Agent_AdvisoryChecksActions");
 
 	public static void checkStockExtMessage(String product) throws IOException, InterruptedException {
 

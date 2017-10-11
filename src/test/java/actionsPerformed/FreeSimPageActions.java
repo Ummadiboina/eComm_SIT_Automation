@@ -15,7 +15,7 @@ import helpers.Environment;
 public class FreeSimPageActions extends Environment {
 
 	public List<HashMap<String, String>> datamap;
-	static Logger log = Logger.getLogger("devpinoyLogger");
+	final static Logger log = Logger.getLogger("FreeSimPageActions");
 
 	public static void iPadsandTabletstab() throws InterruptedException, IOException {
 		JavascriptExecutor jse = (JavascriptExecutor) driver;

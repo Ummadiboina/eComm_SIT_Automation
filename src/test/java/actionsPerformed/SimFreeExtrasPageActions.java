@@ -2,12 +2,15 @@ package actionsPerformed;
 
 import java.io.IOException;
 
+import org.apache.log4j.Logger;
 import org.openqa.selenium.Keys;
 
 import GlobalActions.Screenshots;
 import helpers.Environment;
 
 public class SimFreeExtrasPageActions extends Environment {
+
+	final static Logger log = Logger.getLogger("SimFreeExtrasPageActions");
 
 	public static void validateElements() throws IOException, InterruptedException {
 		System.out.println(" ");

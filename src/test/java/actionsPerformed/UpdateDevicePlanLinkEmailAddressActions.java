@@ -5,9 +5,12 @@ import java.io.IOException;
 import GlobalActions.Screenshots;
 import helpers.Environment;
 import helpers.setRuntimeProperty;
+import org.apache.log4j.Logger;
 import pageobjects.Agent_UpdateCCAEmailPage;
 
 public class UpdateDevicePlanLinkEmailAddressActions extends Environment {
+
+	final static Logger log = Logger.getLogger("UpdateDevicePlanLinkEmailAddressActions");
 
 	public static void EnterCCAEmail() throws InterruptedException, IOException {
 		if (Agent_UpdateCCAEmailPage.CCAEmailID.isDisplayed()) {

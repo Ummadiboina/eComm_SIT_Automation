@@ -9,7 +9,7 @@ import helpers.Environment;
 
 public class CVOS_SupplyChainloggedIn extends Environment {
 
-	static Logger log = Logger.getLogger("devpinoyLogger");
+	final static Logger log = Logger.getLogger("CVOS_SupplyChainloggedIn");
 
 	public static void CVOSSupplyChainVal() throws InterruptedException, IOException {
 		if (pageobjects.CVOS_PageObjects.stockpotTab.isDisplayed()) {

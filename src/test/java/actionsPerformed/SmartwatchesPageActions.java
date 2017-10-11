@@ -2,6 +2,7 @@ package actionsPerformed;
 
 import java.io.IOException;
 
+import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
@@ -12,6 +13,9 @@ import GlobalActions.Screenshots;
 import helpers.Environment;
 
 public class SmartwatchesPageActions extends Environment {
+
+	final static Logger log = Logger.getLogger("SmartwatchesPageActions");
+
 	public static void Elementdisplayvalidation(String Tabname) throws IOException, InterruptedException {
 		System.out.println(" ");
 

@@ -25,7 +25,7 @@ import pageobjects.UpgradeCustomerPage;
 
 public class BasketPageActions extends Environment {
 
-	static Logger log = Logger.getLogger("devpinoyLogger");
+	final static Logger log = Logger.getLogger("BasketPageActions");
 
 	public static void validatelabel() throws InterruptedException, IOException {
 		System.out.println(" ");
