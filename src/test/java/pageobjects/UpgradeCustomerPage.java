@@ -174,7 +174,7 @@ public class UpgradeCustomerPage {
 	@FindBy(how = How.ID, using = "buy-out-discount")
 	public static WebElement BuyOutTextOTACPage;
 	
-	@FindBy(how = How.XPATH, using = "(//a[@id='tab-switch-to-a-tablet'])[1]")
+	@FindBy(how = How.XPATH, using = "//a[@id='tab-switch-to-a-tablet'][1]")
 	public static WebElement TabletsTab;
 	
 	@FindBy(how = How.ID, using = "qa-view-all")
@@ -190,4 +190,17 @@ public class UpgradeCustomerPage {
 	//Clicking on View all Tablets
 	@FindBy(how = How.XPATH, using = "//a[@href='/upgrade/tablets/']")
 	public static WebElement ViewAllTablets;
+
+	//Clicking on random Table
+	@FindBy(how = How.XPATH, using = "//*[@id='qa-recommendedDevicesTile']/a/div[2]/button")
+	public static WebElement RandomTabletClick;
+
+	@FindBy(how = How.XPATH, using = "//span[contains(text(),'Galaxy Tab A 2016 10.1')]")
+	public static WebElement GalaxyTab10;
+
+	@FindBy(how = How.XPATH, using = "//span[contains(text(),'iPad Pro 9.7 inch')]")
+	public static WebElement AppleipadPro;
+
 }
+
+

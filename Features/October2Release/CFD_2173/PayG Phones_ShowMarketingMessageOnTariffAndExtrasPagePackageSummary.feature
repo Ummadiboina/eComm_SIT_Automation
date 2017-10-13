@@ -21,6 +21,6 @@ Feature: PayG Phones_ShowMarketingMessageOnTariffAndExtrasPagePackageSummary
     #And Verify the copytext of marketing message in <ReviewSectionName>
     Then order confirmation is displayed
 
-    Examples: 
-      | Firstname | Surname | Username     |tariff|TileName|SectionName|BasketSectionName|DeliverySectionName|PaymentSectionName|AgreementSectionName|ReviewSectionName|
-      | TEST      | ACCEPTA | TEST ACCEPTA |      | 
+    Examples:
+      | handset | Firstname | Surname | Username     | tariff |
+      |         | TEST      | ACCEPTA | TEST ACCEPTA |        |

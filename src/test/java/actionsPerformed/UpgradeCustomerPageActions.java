@@ -1761,20 +1761,9 @@ public class UpgradeCustomerPageActions extends Environment {
 	}
 
 	public static void clickOnTabletstab() throws InterruptedException, IOException {
-
-		/*
-		 * JavascriptExecutor js = (JavascriptExecutor) driver;
-		 * js.executeScript("arguments[0].click();", LikeFreePage.Paym);
-		 */
-
-		/*
-		 * ((JavascriptExecutor) driver).executeScript("arguments[0].click();",
-		 * pageobjects.UpgradeCustomerPage.SignoutLink);
-		 */
-
-		if (pageobjects.UpgradeCustomerPage.TabletsTab.isDisplayed()) {
-			pageobjects.UpgradeCustomerPage.TabletsTab.click();
-		}
+		log.debug("In tablets clicking function");
+			((JavascriptExecutor) driver).executeScript("arguments[0].click();",
+				pageobjects.UpgradeCustomerPage.TabletsTab);
 		Thread.sleep(3000);
 		Screenshots.captureScreenshot();
 	}
@@ -1865,5 +1854,29 @@ public class UpgradeCustomerPageActions extends Environment {
 			Assert.assertEquals("Sample Text",pageobjects.UpgradeCustomerPage.ViewAllTablets.getText());
 			Screenshots.captureScreenshot();
 		}
+	}
+
+    public static void upgradeTablet(String handset) throws IOException, InterruptedException {
+		JavascriptExecutor executor = (JavascriptExecutor) driver;
+		executor.executeScript("arguments[0].click();", pageobjects.PhonesListingPage.ViewAllPhones);
+
+		if (handset.contains("Random")) {
+			pageobjects.UpgradeCustomerPage.RandomTabletClick.click();
+			// Assert.assertEquals(elementName,"Galaxy S7 is not found");
+			log.debug("Selected Random Device");
+		}
+		if (handset.contains("Samsung Galaxy Tab")) {
+			pageobjects.UpgradeCustomerPage.GalaxyTab10.click();
+			System.out.println("Seelcted Samsung galaxy tab");
+			log.debug("Seelcted Samsung galaxy tab");
+		}
+
+		if (handset.contains("Apple ipad pro 9.7")) {
+			pageobjects.UpgradeCustomerPage.AppleipadPro.click();
+			System.out.println("Seelcted ipad pro tablet");
+			log.debug("Seelcted ipad pro tablet");
+		}
+		Screenshots.captureScreenshot();
+
 	}
 }
