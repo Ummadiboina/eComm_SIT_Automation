@@ -2401,7 +2401,7 @@ public class E2EOrderPlaced_Steps {
         try {
             PageFactory.initElements(driver, ShopLandingPage.class);
             ShopLandingPageAction.clickSignIn();
-            Autoredirection.redirectUpgrades();
+           // Autoredirection.redirectUpgrades();
             GlobalActions.CommonFunctions.checkTitle("Sign In Page");
         } catch (Exception e) {
             // TODO Auto-generated catch block
@@ -6271,6 +6271,20 @@ public class E2EOrderPlaced_Steps {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, UpgradeCustomerPage.class);
             UpgradeCustomerPageActions.VerifyMarketingMessage(section);
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+            System.out.println("Unable to Click on view all tablets link");
+            Assert.fail("Unable to Click on view all tablets link");
+        }
+    }
+
+    @And("^I choose upgrade PayM Tablet ([^\"]*)$")
+    public void iChooseUpgradePayMTabletHandset(String Handset) throws Throwable {
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, UpgradeCustomerPage.class);
+            UpgradeCustomerPageActions.upgradeTablet(Handset);
         } catch (Exception e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
