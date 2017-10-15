@@ -1,7 +1,7 @@
 Feature: CFA_Phones_SSCcheckoutpagesMarkMandatoryFieldsWithAsterisk
 
   CFA PayM phones SSC checkout validation
-
+@Web
   Scenario Outline: CFA_Phones_SSCcheckoutpagesMarkMandatoryFieldsWithAsterisk
     Given I am an CFA user and Lands on shop page
     And navigate to PAYM Phones page
