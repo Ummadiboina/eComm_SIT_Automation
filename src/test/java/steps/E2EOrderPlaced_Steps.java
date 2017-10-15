@@ -2416,6 +2416,7 @@ public class E2EOrderPlaced_Steps {
     public void navigate_to_upgrade_phone() throws Throwable {
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         try {
+
             PageFactory.initElements(driver, MouseHoverPage.class);
             PageFactory.initElements(driver, UpgradePhonesListingPage.class);
             MouseHoverAction.UpgradeandUpgradeNow();
