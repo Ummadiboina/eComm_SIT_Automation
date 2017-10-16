@@ -1,5 +1,6 @@
 Feature: CFA_Phones_Delayed_delivery_Home_delivery_Confirmation_Page_formatting_box
 
+  @Web
   Scenario Outline: 
     This scenario ensures that when the customer selects a delayed delivery Phone and opts for home delivery, 
     then the customer should be able to see the changes in 'Confirmation Page formatting box'

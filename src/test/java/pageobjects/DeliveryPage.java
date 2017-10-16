@@ -89,7 +89,35 @@ public class DeliveryPage {
 		@FindBy(how=How.XPATH,using="//tr[@id='basket-insurance']")
 		public static WebElement InsuranceSection;
 		
-		
-		
-		
+		//Below if for text headings
+
+	@FindBy(how = How.XPATH, using = "//span[contains(text(),'iPad Pro 9.7 inch')]")
+	public static WebElement HouseNumberText;
+
+	@FindBy(how = How.XPATH, using = "//span[contains(text(),'iPad Pro 9.7 inch')]")
+	public static WebElement PostcodeText;
+
+	@FindBy(how = How.XPATH, using = "//span[contains(text(),'iPad Pro 9.7 inch')]")
+	public static WebElement emailAddressText;
+
+	@FindBy(how = How.XPATH, using = "//span[contains(text(),'iPad Pro 9.7 inch')]")
+	public static WebElement titleText;
+
+	@FindBy(how = How.XPATH, using = "//span[contains(text(),'iPad Pro 9.7 inch')]")
+	public static WebElement nameText;
+
+	@FindBy(how = How.XPATH, using = "//span[contains(text(),'iPad Pro 9.7 inch')]")
+	public static WebElement ContactNumberText;
+
+	@FindBy(how = How.XPATH, using = "//span[contains(text(),'iPad Pro 9.7 inch')]")
+	public static WebElement PasswordText;
+
+	@FindBy(how = How.XPATH, using = "//span[contains(text(),'iPad Pro 9.7 inch')]")
+	public static WebElement SecurityAnswerText;
+
+	@FindBy(how = How.XPATH, using = "//span[contains(text(),'iPad Pro 9.7 inch')]")
+	public static WebElement DateofBirthText;
+
+
+
 }

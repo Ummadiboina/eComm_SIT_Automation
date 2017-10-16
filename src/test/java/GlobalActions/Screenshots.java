@@ -14,6 +14,7 @@ import org.openqa.selenium.TakesScreenshot;
 
 import helpers.Environment;
 import helpers.Filereadingutility;
+import org.openqa.selenium.WebDriver;
 
 public class Screenshots extends Environment {
 
@@ -54,5 +55,6 @@ public class Screenshots extends Environment {
 	public static String timestamp() {
 		return new SimpleDateFormat("yyyy-MM-dd HH-mm-ss").format(new Date());
 	}
-
 }
+
+
