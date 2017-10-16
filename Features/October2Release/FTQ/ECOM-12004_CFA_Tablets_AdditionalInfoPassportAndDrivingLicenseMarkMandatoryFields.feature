@@ -14,8 +14,8 @@ Feature: CFA_Tablets_Additional info driving license validation
       | HouseNumber           | 5            |
       | Post Code             | BS7 0NP      |
       | Title                 | Mr           |
-      | FirstName             | Test         |
-      | Surname               | Accepta      |
+      | FirstName             | TEST         |
+      | Surname               | ADDINFOD     |
       | Contact Number        | 078228377333 |
       | Password              | TesterSit123 |
       | Security Question     | Random       |
@@ -27,21 +27,22 @@ Feature: CFA_Tablets_Additional info driving license validation
     #Below is payment page
     And verify copy text ‘You'll need to give details for all fields marked with an asterisk(*).’ is displayed
     And verify asterisk is displayed against mandatory fields of "Payments page"
-
-    And land on the payment page and input <Username> and other details and click 'Continue on next step'
+    #And land on the payment page and input <Username> and other details and click 'Continue on next step'
     Then Additional information page should be displayed
     And verify copy text ‘You'll need to give details for all fields marked with an asterisk(*).’ is displayed
     And verify asterisk is displayed against mandatory fields of "Passport page"
     And Enter valid details for passport
-    And Click on the 'Continue button'
-    And verify copy text ‘You'll need to give details for all fields marked with an asterisk(*).’ is displayed
+      | CountryCode | pn1        | pn2 | pn3     | pn4 | pn5     | pn6            | pn7 |
+      | GBR         | 9342354167 | GBR | 9905116 | M   | 2011097 | <<<<<<<<<<<<<< | 08  |
     And verify asterisk is displayed against mandatory fields of "Driving Licence page"
     And Enter valid details for Driving licence
+      | DLinfo1 | DLinfo2 | DLinfo3 | DLinfo4 | PostCode |
+      | HOWES   | 905110  | MD9     | 33      | SL14DX   |
     And Click on the 'Continue button'
     And Continue to Agreements page and confirm all the agreement checks
     And Continue to Review page and review the order
     Then order confirmation is displayed
 
     Examples:
-      | Firstname | Surname  | Username      | handset  | Username2    | field            |
-      | TEST      | ADDINFOI | TEST ADDINFOI | GalaxyS7 | TEST ACCEPTA | Passport/Licence |
+      | tabletname |
+      | TEST       |

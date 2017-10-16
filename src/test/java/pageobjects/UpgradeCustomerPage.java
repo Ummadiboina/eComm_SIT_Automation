@@ -201,6 +201,10 @@ public class UpgradeCustomerPage {
 	@FindBy(how = How.XPATH, using = "//span[contains(text(),'iPad Pro 9.7 inch')]")
 	public static WebElement AppleipadPro;
 
+
+
+
+
 }
 
 

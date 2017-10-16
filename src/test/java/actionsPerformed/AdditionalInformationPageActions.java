@@ -2,9 +2,12 @@ package actionsPerformed;
 
 import java.awt.AWTException;
 import java.io.IOException;
+import java.util.Map;
 
 import org.apache.log4j.Logger;
+import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
+import cucumber.api.DataTable;
 
 import GlobalActions.Screenshots;
 import helpers.Environment;
@@ -78,5 +81,55 @@ public class AdditionalInformationPageActions extends Environment {
 		Screenshots.captureScreenshot();
 
 	}
+
+	public static void passportInfo() throws IOException, InterruptedException {
+
+		System.out.println("Below are the sections displayed");
+		pageobjects.AdditionalInformationPage.passportInfo.getText();
+		log.debug("Passport info section is displayed");
+		System.out.println("Driving license section is displayed ");
+		pageobjects.AdditionalInformationPage.drivingLicence.getText();
+		log.debug("Driving license section is displayed ");
+		System.out.println("Additional card section ");
+		pageobjects.AdditionalInformationPage.additionalCard.getText();
+		log.debug("Additional card section is displayed");
+
+		Screenshots.captureScreenshot();
+	}
+
+	public static void enterDrivingLicenceDetails(DataTable uservalue) throws IOException, InterruptedException {
+
+		for (Map<String, String> user : uservalue.asMaps(String.class, String.class))
+		{
+
+            pageobjects.AdditionalInformationPage.DrivingLicenceNumberText1.sendKeys(user.get("DLinfo1"));
+            pageobjects.AdditionalInformationPage.DrivingLicenceNumberText2.sendKeys(user.get("DLinfo2"));
+            pageobjects.AdditionalInformationPage.DrivingLicenceNumberText3.sendKeys(user.get("DLinfo3"));
+            pageobjects.AdditionalInformationPage.DrivingLicenceNumberText4.sendKeys(user.get("DLinfo4"));
+            pageobjects.AdditionalInformationPage.PostCode.sendKeys(user.get("PostCode"));
+
+		}
+
+		Screenshots.captureScreenshot();
+	}
+
+    public static void enterPassportNumber(DataTable uservalue) throws IOException, InterruptedException {
+
+        for (Map<String, String> user : uservalue.asMaps(String.class, String.class))
+        {
+
+            pageobjects.AdditionalInformationPage.CountryCode.sendKeys(user.get("CountryCode"));
+            pageobjects.AdditionalInformationPage.Passportnumber1.sendKeys(user.get("DLinfo1"));
+            pageobjects.AdditionalInformationPage.Passportnumber2.sendKeys(user.get("DLinfo1"));
+            pageobjects.AdditionalInformationPage.Passportnumber3.sendKeys(user.get("DLinfo1"));
+            pageobjects.AdditionalInformationPage.Passportnumber4.sendKeys(user.get("DLinfo1"));
+            pageobjects.AdditionalInformationPage.Passportnumber5.sendKeys(user.get("DLinfo1"));
+            pageobjects.AdditionalInformationPage.Passportnumber6.sendKeys(user.get("DLinfo1"));
+            pageobjects.AdditionalInformationPage.Passportnumber7.sendKeys(user.get("DLinfo1"));
+
+        }
+
+        Screenshots.captureScreenshot();
+    }
 
 }

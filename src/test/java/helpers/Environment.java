@@ -10,7 +10,7 @@ public class Environment {
 	public static Logger log;
 
 	public Environment() {
-		PropertyConfigurator.configure("Log4j.properties");
+		PropertyConfigurator.configure("src/Log4j.properties");
 
 	}
 }

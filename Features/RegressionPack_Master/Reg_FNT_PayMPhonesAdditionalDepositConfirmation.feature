@@ -1,6 +1,6 @@
 Feature: Reg_FNT_PayMPhonesAdditionalDepositConfirmation
 
-  @FNTRegression
+  @Web @FNTRegression
   Scenario Outline: FNT CFA PayM phones Additional information and Order confirmed
     Given I am an CFA user and Lands on shop page
     And navigate to PAYM Phones page

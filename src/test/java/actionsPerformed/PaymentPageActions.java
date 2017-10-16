@@ -5,6 +5,7 @@ import java.io.IOException;
 
 import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 
 import GlobalActions.Screenshots;
@@ -14,6 +15,29 @@ import pageobjects.PaymentPage;
 public class PaymentPageActions extends Environment {
 
 	final static Logger log = Logger.getLogger("PaymentPageActions");
+	static JavascriptExecutor executor = (JavascriptExecutor) driver;
+
+	public static void Set_Bank_details() throws IOException, InterruptedException {
+		pageobjects.PaymentPage.Name_On_Account.sendKeys("Test Accepta");
+		log.debug("Entered name is Test Accepta" );
+
+		pageobjects.PaymentPage.Account_Number.sendKeys("10207136");
+		log.debug("Entered Account number - 10207136");
+
+		pageobjects.PaymentPage.Sort_Code1.sendKeys("20");
+		log.debug("Entered sort code - 20");
+
+		pageobjects.PaymentPage.Sort_Code2.sendKeys("15");
+		log.debug("Entered sort code - 15");
+
+		pageobjects.PaymentPage.Sort_Code3.sendKeys("96");
+		log.debug("Entered sort code - 96");
+
+		pageobjects.PaymentPage.Accept_Terms_Checkbox.click();
+		log.debug("Clicked on the Accept Terms checkbox");
+		Screenshots.captureScreenshot();
+
+	}
 
 	public static void Set_Bank_details(String Username) throws IOException, InterruptedException {
 		pageobjects.PaymentPage.Name_On_Account.sendKeys(Username);
@@ -68,7 +92,9 @@ public class PaymentPageActions extends Environment {
 		pageobjects.PaymentPage.Stay_Address_months.sendKeys("9");
 		log.debug("Entered the stayed at months - 9");
 
-		pageobjects.PaymentPage.Confirm_Address_Checkbox.click();
+		executor.executeScript("arguments[0].click();", pageobjects.PaymentPage.Confirm_Address_Checkbox);
+
+//		pageobjects.PaymentPage.Confirm_Address_Checkbox.click();
 		log.debug("Clicked on the Confirm Address checkbox");
 		Screenshots.captureScreenshot();
 	}
@@ -133,6 +159,42 @@ public class PaymentPageActions extends Environment {
 		Screenshots.captureScreenshot();
 
 	}
+
+	public static void Card_Details() throws InterruptedException, AWTException, IOException {
+
+		driver.switchTo().frame("payment-iframe"); // switching the frame by ID
+
+		System.out.println("********We are switch to the iframe*******");
+		log.debug("Entering the Payments section");
+		Thread.sleep(5000);
+		PaymentPage.Name_On_Card.sendKeys("Test Accepta");
+		log.debug("Entering name of the card as Test Accepta");
+
+		Thread.sleep(2000);
+		PaymentPage.Card_Number.sendKeys("4539791001730106");
+		log.debug("Entered Card number as 4539xxxxxxxxxx06");
+		Thread.sleep(2000);
+		PaymentPage.Expiry_Month.sendKeys("01");
+		log.debug("Entered Expiry Month");
+		Thread.sleep(2000);
+		PaymentPage.Expiry_Year.sendKeys("2020");
+		log.debug("Entered Expiry Year");
+		Thread.sleep(2000);
+		PaymentPage.CVV_Security_Code.sendKeys("123");
+		log.debug("Entered CVV security code");
+		Thread.sleep(2000);
+		PaymentPage.Continue_Next_Step.sendKeys(Keys.ENTER);
+		log.debug("Clicking on continue to next step");
+		Thread.sleep(2000);
+		System.out.println("*********We are done***************");
+		log.debug("Exiting the Payments section");
+		driver.switchTo().defaultContent();
+		// System.out.println(driver.getTitle());
+		Screenshots.captureScreenshot();
+
+	}
+
+
 
 	public static void Card_Details_hv() throws InterruptedException, AWTException, IOException {
 		driver.switchTo().frame("payment-iframe"); // switching the frame by ID

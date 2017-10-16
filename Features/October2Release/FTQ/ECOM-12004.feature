@@ -1,7 +1,7 @@
 Feature: CFA_Phones_SSCcheckoutpagesMarkMandatoryFieldsWithAsterisk
 
   CFA PayM phones SSC checkout validation
-
+@Web
   Scenario Outline: CFA_Phones_SSCcheckoutpagesMarkMandatoryFieldsWithAsterisk
     Given I am an CFA user and Lands on shop page
     And navigate to PAYM Phones page
@@ -31,11 +31,11 @@ Feature: CFA_Phones_SSCcheckoutpagesMarkMandatoryFieldsWithAsterisk
     #Below is payment page
     And verify copy text ‘You'll need to give details for all fields marked with an asterisk(*).’ is displayed
     And verify asterisk is displayed against mandatory fields of "Payments page"
-    And land on the payment page and input <Username> and other details and click 'Continue on next step'
+   # And land on the payment page and input <Username> and other details and click 'Continue on next step'
     And Continue to Agreements page and confirm all the agreement checks
     And Continue to Review page, click on ‘change delivery’
     And verify copy text ‘You'll need to give details for all fields marked with an asterisk(*).’ is displayed
-    And verify asterisk is displayed against mandatory fields of "Review Delivery page"
+    #And verify asterisk is displayed against mandatory fields of "Review Delivery page"
     And Click on the 'Continue button'
     And Continue to Review page and review the order
     Then order confirmation is displayed

@@ -49,7 +49,9 @@ public class E2EOrderPlaced_Steps {
 
     }
 
-     /** ############## All the Below are for the Navigation Journeys*/
+    /**
+     * ############## All the Below are for the Navigation Journeys
+     */
 
 
     @Given("^I am an CFA user and Lands on shop page$")
@@ -681,7 +683,9 @@ public class E2EOrderPlaced_Steps {
     }
 
 
-	 /** ############## All the Below are for the Basket Page Validations*/
+    /**
+     * ############## All the Below are for the Basket Page Validations
+     */
 
     @Given("^I Land on the basket page and choose home delivery option$")
     public void i_Land_on_the_basket_page_and_choose_home_delivery_option() throws Throwable {
@@ -825,7 +829,7 @@ public class E2EOrderPlaced_Steps {
     }
 
 	/*
-	 * #########################################################################
+     * #########################################################################
 	 * #########
 	 */
 	/*
@@ -859,7 +863,6 @@ public class E2EOrderPlaced_Steps {
     }
 
 
-
     @And("^input ([^\"]*) and ([^\"]*) and other valid details in Delivery page for Click and collect and Click on the 'Continue button'$")
     public void DeliveryPage_Inputs_ClickandCollect(String Firstname, String Surname) throws Throwable {
         try {
@@ -879,21 +882,19 @@ public class E2EOrderPlaced_Steps {
 
     @And("^input the below details in Delivery page$")
     public void inputDetailsDeliveryPage(DataTable userData) throws Throwable {
-       try {
-           driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-           PageFactory.initElements(driver, DeliveryPage.class);
-           DeliveryPageActions.SetDelivery_Datatable(userData);
-           Thread.sleep(5000);
-           DeliveryPageActions.AboutYou_Datatable(userData);
-           Thread.sleep(2000);
-           DeliveryPageActions.ClickContinue();
-           Thread.sleep(5000);
-       }
-       catch (Exception e)
-       {
-           System.out.println("Unable to input details in delivery page");
-           Assert.fail("Unable to input details in delivery page");
-       }
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, DeliveryPage.class);
+            DeliveryPageActions.SetDelivery_Datatable(userData);
+            Thread.sleep(5000);
+            DeliveryPageActions.AboutYou_Datatable(userData);
+            Thread.sleep(2000);
+            DeliveryPageActions.ClickContinue();
+            Thread.sleep(5000);
+        } catch (Exception e) {
+            System.out.println("Unable to input details in delivery page");
+            Assert.fail("Unable to input details in delivery page");
+        }
     }
 
 
@@ -1062,8 +1063,7 @@ public class E2EOrderPlaced_Steps {
             Assert.fail("unable to add details in Additional information page");
 
         }
-        // AdditionalInformationPageActions.ClickOn();
-        // Thread.sleep(10000);
+
 
     }
 
@@ -1173,17 +1173,7 @@ public class E2EOrderPlaced_Steps {
         ReviewPageActions.TermsCheckBox();
         ReviewPageActions.checkOrderContractTextRP();
         ReviewPageActions.PayNow();
-		/*
-		 * } catch (Exception e) { // TODO Auto-generated catch block
-		 * System.out.println(
-		 * "Unable to Continue to Review page and review the order or unable to enter some information in this page, Please review the screenshots for failure"
-		 * ); //Assert.fail( //
-		 * "Unable to Continue to Review page and review the order or unable to enter some information in this page, Please review the screenshots for failure"
-		 * );
-		 *
-		 *
-		 * }
-		 */
+
     }
 
     @Given("^Continue to Review page and review the order for Trustev details$")
@@ -1237,7 +1227,7 @@ public class E2EOrderPlaced_Steps {
 
             Assert.assertTrue(driver.getPageSource().contains(ExpOrderContractMsg),
                     "Assertion Failed: Expected Message: " + ExpOrderContractMsg + " is not present in the page"
-                    );
+            );
 
             System.out.println("Assertion Passed: Expected Mesasge: " + ExpOrderContractMsg
                     + " is present in the Order Confirmation page");
@@ -2401,7 +2391,7 @@ public class E2EOrderPlaced_Steps {
         try {
             PageFactory.initElements(driver, ShopLandingPage.class);
             ShopLandingPageAction.clickSignIn();
-           // Autoredirection.redirectUpgrades();
+            // Autoredirection.redirectUpgrades();
             GlobalActions.CommonFunctions.checkTitle("Sign In Page");
         } catch (Exception e) {
             // TODO Auto-generated catch block
@@ -2416,6 +2406,7 @@ public class E2EOrderPlaced_Steps {
     public void navigate_to_upgrade_phone() throws Throwable {
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         try {
+
             PageFactory.initElements(driver, MouseHoverPage.class);
             PageFactory.initElements(driver, UpgradePhonesListingPage.class);
             MouseHoverAction.UpgradeandUpgradeNow();
@@ -2772,22 +2763,7 @@ public class E2EOrderPlaced_Steps {
         }
     }
 
-	/*
-	 * @Then("^check if the selected connected device has only 1 variant for both colour and capacity$"
-	 * ) public void
-	 * check_if_the_selected_device_has_only_1_variant_for_both_colour_and_capacity(
-	 * ) {
-	 *
-	 * try { driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-	 * PageFactory.initElements(driver, ConnectedDeviceDetailsPage.class);
-	 * ConnectedDeviceDetailsPageAction.checkOnlyOneOptionAvailable();
-	 *
-	 * } catch (Exception e) { e.printStackTrace(); System.out.
-	 * println("The selected device does not have more than 1 variant for both colour and capacity"
-	 * ); Assert.
-	 * fail("The selected device does not have more than 1 variant for both colour and capacity"
-	 * ); } }
-	 */
+
 
     @Then("^check if the selected connected device has only 1 variant for capacity and dropdown for colour$")
     public void capacity_1_and_Colour_dropdown() {
@@ -4426,7 +4402,7 @@ public class E2EOrderPlaced_Steps {
 
             Assert.assertTrue(driver.getPageSource().contains(ExpectedTimeSlotMessage),
                     "Assertion Failed: Expected Message: " + ExpectedTimeSlotMessage + " is not present in the page"
-                    );
+            );
 
             System.out.println("Assertion Passed: Expected Mesasge: " + ExpectedTimeSlotMessage
                     + " is present in the Order Confirmation page");
@@ -4454,17 +4430,17 @@ public class E2EOrderPlaced_Steps {
             ExpectedPacCodeInfoMessage = "If you're moving from another operator and want to keep your number then now is a good time to ask them for your PAC code.";
 
 
-            Assert.assertTrue( driver.getPageSource().contains(ExpectedDelayedDeliveryMessage),
+            Assert.assertTrue(driver.getPageSource().contains(ExpectedDelayedDeliveryMessage),
                     "Assertion Failed: Expected Message: " + ExpectedDelayedDeliveryMessage
                             + " is not present in the page"
-                   );
+            );
 
             System.out.println("Assertion Passed: Expected Mesasge: " + ExpectedDelayedDeliveryMessage
                     + " is present in the Order Confirmation page");
 
             Assert.assertTrue(driver.getPageSource().contains(ExpectedPacCodeInfoMessage),
                     "Assertion Failed: Expected Message: " + ExpectedPacCodeInfoMessage + " is not present in the page"
-                    );
+            );
 
             System.out.println("Assertion Passed: Expected Mesasge: " + ExpectedPacCodeInfoMessage
                     + " is present in the Order Confirmation page");
@@ -6296,43 +6272,6 @@ public class E2EOrderPlaced_Steps {
 
 
 
-
-
-
-    /*@And("^Verify the copytext of marketing message in Section$")
-    public void verifyTheCopytextOfMarketingMessageInSection(DataTable table) throws Throwable {
-        // Write code here that turns the phrase above into concrete actions
-        List<List<String>> data=table.raw();
-        System.out.println("The Value is : "+data.get(0).get(0).toString());
-        System.out.println("The Value is: "+data.get(1).get(0).toString());
-        //Create an ArrayList
-       *//* List<dataValue> dataFromFeatureFile=new ArrayList<dataValue>();
-        //Store all values
-        dataFromFeatureFile= table.asList(dataValue.class);
-        for (dataValue value:dataFromFeatureFile )
-        {
-            System.out.println("The Value of first row is "+value.section);
-            System.out.println("The Value of first row is "+value.verify);
-        }*//*
-
-    }
-*/
-
-    // Below is Nested Class
-
-    public class dataValue
-    {
-        public String section;
-        public String verify;
-
-        public dataValue(String value1, String value2) {
-            section = value1;
-            verify = value2;
-        }
-    }
-
-
-
 //////////////////////////////////////////////////CFD-2044//////////////////////////////////////////
 
     @And("^click on the color dropdown$")
@@ -6384,5 +6323,61 @@ public class E2EOrderPlaced_Steps {
         }
     }
 
+
+    @And("^verify asterisk is displayed against mandatory fields of \"([^\"]*)\"$")
+    public void verifyAsteriskIsDisplayedAgainstMandatoryFieldsOf(String Field) throws Throwable {
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, UpgradeCustomerPage.class);
+            verificationsActions.verifyAsteriskMandatory(Field);
+
+        } catch(Exception e) {
+            e.printStackTrace();
+            System.out.println("Unable to select the sim free link");
+            Assert.fail("Unable to select the sim free link");
+
+        }
+    }
+
+    @And("^Enter valid details for Driving licence$")
+    public void enterValidDetailsForDrivingLicence(DataTable userData) throws Throwable {
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, AdditionalInformationPage.class);
+            AdditionalInformationPageActions.enterDrivingLicenceDetails(userData);
+            Thread.sleep(5000);
+
+        } catch (Exception e) {
+            System.out.println("Unable to enter valid details in Addiitional information Driving licence page");
+            Assert.fail("Unable to enter valid details in Addiitional information Driving licence page");
+        }
+    }
+
+    @And("^Enter valid details for passport$")
+    public void enterValidDetailsForPassport(DataTable userData) throws Throwable {
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, AdditionalInformationPage.class);
+            AdditionalInformationPageActions.enterPassportNumber(userData);
+            Thread.sleep(5000);
+
+        } catch (Exception e) {
+            System.out.println("Unable to enter valid details in Addiitional information Driving licence page");
+            Assert.fail("Unable to enter valid details in Addiitional information Driving licence page");
+        }
+    }
+
+
+    // Below is Nested Class
+
+    public class dataValue {
+        public String section;
+        public String verify;
+
+        public dataValue(String value1, String value2) {
+            section = value1;
+            verify = value2;
+        }
+    }
 }
 
