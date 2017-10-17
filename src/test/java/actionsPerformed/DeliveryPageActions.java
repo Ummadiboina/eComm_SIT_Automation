@@ -6,10 +6,10 @@ import java.util.List;
 
 import cucumber.api.DataTable;
 import org.apache.log4j.Logger;
-import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.support.ui.Select;
+import org.testng.Assert;
 import org.testng.Reporter;
 
 import GlobalActions.RandomEmailAddressCreation;
