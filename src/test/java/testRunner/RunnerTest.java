@@ -4,7 +4,7 @@ import com.github.mkolisnyk.cucumber.runner.ExtendedCucumberOptions;
 import com.github.mkolisnyk.cucumber.runner.ExtendedTestNGRunner;
 import cucumber.api.CucumberOptions;
 import cucumber.api.testng.AbstractTestNGCucumberTests;
-import org.junit.BeforeClass;
+
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -18,8 +18,8 @@ import java.util.Date;
 				retryCount = 0,
 				detailedReport = true,
 				detailedAggregatedReport = true,
-				overviewReport = false,
-				//coverageReport = true,
+				overviewReport = true,
+				coverageReport = true,
 
 				jsonUsageReport = "testResult/cucumber-usage.json",
 				usageReport = true,
@@ -28,7 +28,7 @@ import java.util.Date;
 				includeCoverageTags = {"@passed" },
 				outputFolder = "testResult/cucumber_detailed_result/DATE(yyyy-MM-dd HH-mm-ss)"
 
-				//		outputFolder = "${user.dir}/DATE(yyyy-MM-dd HH:mm:ss.S)"
+				//outputFolder = "${user.dir}/DATE(yyyy-MM-dd HH:mm:ss.S)"
 				//reportPrefix = "results-${user}"
 		)
 
@@ -40,12 +40,12 @@ import java.util.Date;
 @CucumberOptions(plugin = { "html:testResult/cucumber-html-report",
 		"json:testResult/cucumber.json", "pretty:testResult/cucumber-pretty.txt",
 		"usage:testResult/cucumber-usage.json", "junit:testResult/cucumber-results.xml" },
-		features = { "Features//RegressionPack_Master//Reg_CS_Free_Sim.feature" },
+		features = { "Features//RegressionPack_Master//CFA_Accessories_Confirmation_Page_changes.feature" },
 		glue = { "steps" },
 		tags = {"@Web"})
 
 
 //@RunWith(CucumberRunner.class)
-public class RunnerTest extends AbstractTestNGCucumberTests {
+public class RunnerTest extends ExtendedTestNGRunner {
 
 }
