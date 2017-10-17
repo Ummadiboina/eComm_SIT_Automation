@@ -107,5 +107,7 @@ public class PaymentPage {
     @FindBy(how = How.XPATH, using = "//span[contains(text(),'iPad Pro 9.7 inch')]")
     public static WebElement CVVSecurityCodeText;
 
+    @FindBy(how = How.XPATH, using = "//*[@id='address-heading]/p/text()")
+    public static WebElement HomeAddress;
 
 }

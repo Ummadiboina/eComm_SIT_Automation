@@ -31,8 +31,8 @@ Feature: ExistingCustomer_Repeat_Order_error_page_copy_changes
     And land on the payment page and input <Username> and other details and click 'Continue on next step'
     And Continue to Agreements page and confirm all the agreement checks
     And Continue to Review page and review the order
-    And verify error screen is displayed with <message>
+    And verify error screen is displayed with message "Order in Progress"
 
     Examples:
-      | username | password | tariff | device | message           |
-      |          |          |        |        | Order in progress |
+      | username           | password  | handset  | Action | Username     |
+      | bvt2.cfu@gmail.com | cfubvt123 | GalaxyS7 | skip   | TEST ACCEPTA |

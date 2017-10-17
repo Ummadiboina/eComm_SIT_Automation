@@ -6330,7 +6330,6 @@ public class E2EOrderPlaced_Steps {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, UpgradeCustomerPage.class);
             verificationsActions.verifyAsteriskMandatory(Field);
-
         } catch(Exception e) {
             e.printStackTrace();
             System.out.println("Unable to select the sim free link");
@@ -6364,6 +6363,38 @@ public class E2EOrderPlaced_Steps {
         } catch (Exception e) {
             System.out.println("Unable to enter valid details in Addiitional information Driving licence page");
             Assert.fail("Unable to enter valid details in Addiitional information Driving licence page");
+        }
+    }
+
+    @And("^land on the payment page and verify copy text message below home address$")
+    public void VerifyCopyTextinPaymentPage() throws Throwable {
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, PaymentPage.class);
+            CommonFunctions.checkTitle("Payment Page");
+            PaymentPageActions.verifyCopyTextHomeAddress();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            log.debug("Unable to verify Text payment page");
+            Assert.fail("Unable to verify Text in payment page");
+
+        }
+    }
+
+    @And("^verify error screen is displayed with message \"([^\"]*)\"$")
+    public void verifyErrorScreenIsDisplayedWith(String arg1) throws Throwable {
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, verificationsPage.class);
+            CommonFunctions.checkTitle("O2 Error");
+            verificationsActions.VerifyErrorScreen(arg1);
+
+        } catch (Exception e) {
+            log.debug(e.getMessage());
+            log.debug("Unable to Verify Error screen after payment page");
+            Assert.fail("Unable to Verify Error screen after payment page");
+
         }
     }
 

@@ -20,7 +20,7 @@ Feature: CFU_Phones_Otac and SSC checkout
     And perform <Action> in OTAC page
     #Add a function above
     And verify copy text ‘You'll need to give details for all fields marked with an asterisk(*).’ is displayed
-    And verify asterisk is displayed against mandatory fields of "CFU Delivery page"
+    #And verify asterisk is displayed against mandatory fields of "CFU Delivery page"
  #delivery page
     And Click on the 'Continue button' in delivery page
     And verify copy text ‘You'll need to give details for all fields marked with an asterisk(*).’ is displayed
@@ -31,6 +31,7 @@ Feature: CFU_Phones_Otac and SSC checkout
     Then order confirmation is displayed
 
       #Close the browser
+    #Make sure use single msisdn customer for the beloW
     Examples:
       | username               | password | handset        | tariff                   | Firstname | Surname | Username     | Action    | field     |
       | in04572q_141562@o2.com | test123  | Apple iPhone 7 | 129.99upfront37.00amonth | TEST      | ACCEPTA | TEST ACCEPTA | enterCode | OTAC page |

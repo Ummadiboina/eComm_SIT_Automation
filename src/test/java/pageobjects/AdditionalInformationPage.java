@@ -64,7 +64,6 @@ public class AdditionalInformationPage {
 	@FindBy(how=How.XPATH,using="//legend[contains(text(),'Passport')]")
 	public static WebElement PassportNumberText;
 
-
 	@FindBy(how=How.ID,using="country-code")
 	public static WebElement CountryCode;
 
@@ -89,5 +88,7 @@ public class AdditionalInformationPage {
 	@FindBy(how=How.ID,using="passport-number7")
 	public static WebElement Passportnumber7;
 
+	@FindBy(how=How.XPATH,using="//label[@for='otac']")
+	public static WebElement EnterOtacCodeText;
 
 }
