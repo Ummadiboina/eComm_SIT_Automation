@@ -1,5 +1,6 @@
 Feature: CFA_Tablets_Additional info driving license validation
 
+ @Web
   Scenario Outline: CFA_Tablets_Additional info driving license validation
     Given I am an CFA user and Lands on shop page
     And navigate to PAYM Tablets page

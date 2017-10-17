@@ -12,7 +12,7 @@ Feature: CFA_Phones_ColourDropdownsWithColourNamesBesideTheColourMultipleColour
     And select <color> color of the connected device
     And Land on the 'Tariffs and extra' page
     And click on the color dropdown
-    And verify the name of the colur is next to the colour tile in <CFATariffColour>
+    And verify the name of the color is next to the colour tile in <CFATariffColour>
     And select <color> color of the connected device
     And I Land on the basket page and choose home delivery option
     And click on "go to checkout" button

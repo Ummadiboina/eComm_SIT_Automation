@@ -128,5 +128,14 @@ public class CommonFunctions extends Environment {
 
 			}
 		}
+		if (pagename.equalsIgnoreCase("O2 Error")) {
+			if (driver.getTitle().equalsIgnoreCase("O2 | Error")) {
+				System.out.println("We are in 'O2 Error' Page");
+			} else {
+				System.out.println("We are in " + driver.getTitle());
+				Assert.fail("Not able to land on O2 | Error Page");
+
+			}
+		}
 	}
 }
