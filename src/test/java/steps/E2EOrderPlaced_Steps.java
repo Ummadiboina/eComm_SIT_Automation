@@ -832,12 +832,12 @@ public class E2EOrderPlaced_Steps {
      * #########################################################################
 	 * #########
 	 */
-	/*
-	 * ############## All the Below are for the Delivery Page Validations
+    /*
+     * ############## All the Below are for the Delivery Page Validations
 	 * #############
 	 */
-	/*
-	 * #########################################################################
+    /*
+     * #########################################################################
 	 * #########
 	 */
 
@@ -2762,7 +2762,6 @@ public class E2EOrderPlaced_Steps {
             Assert.fail("The selected device does not have more than 1 variant for both colour and capacity");
         }
     }
-
 
 
     @Then("^check if the selected connected device has only 1 variant for capacity and dropdown for colour$")
@@ -5736,19 +5735,6 @@ public class E2EOrderPlaced_Steps {
 
     }
 
-    /*
-	 * @When("^I click on respective data filter ([^\"]*)$")
-	 *
-	 * public void i_click_on_respective_data_filtertoGB(String Filteroption) throws
-	 * Throwable { try { driver.manage().timeouts().implicitlyWait(20,
-	 * TimeUnit.SECONDS); PageFactory.initElements(driver,
-	 * PAYMandPAYGTariffAndExtrasPage.class);
-	 * PAYMandPAYGTariffAndExtrasPageActions.FilterDataAllowance(Filteroption);
-	 * FilterDataOption = Filteroption; } catch (Exception e) { // TODO
-	 * Auto-generated catch block
-	 * System.out.println("Unable to Click Data Filter option");
-	 * Assert.fail("Unable to Click Data Filter option"); } }
-	 */
     @Then("^Data filter button should be in 'selected' state$")
     public void data_filter_button_should_be_in_selected_state() throws Throwable {
         try {
@@ -5763,7 +5749,6 @@ public class E2EOrderPlaced_Steps {
             System.out.println("Not able to verify if in Selected State");
             Assert.fail("Not able to verify if in Selected State");
         }
-
     }
 
     @When("^I deselect filter button$")
@@ -6270,8 +6255,6 @@ public class E2EOrderPlaced_Steps {
     }
 
 
-
-
 //////////////////////////////////////////////////CFD-2044//////////////////////////////////////////
 
     @And("^click on the color dropdown$")
@@ -6330,7 +6313,7 @@ public class E2EOrderPlaced_Steps {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, UpgradeCustomerPage.class);
             verificationsActions.verifyAsteriskMandatory(Field);
-        } catch(Exception e) {
+        } catch (Exception e) {
             e.printStackTrace();
             System.out.println("Unable to select the sim free link");
             Assert.fail("Unable to select the sim free link");
@@ -6398,6 +6381,86 @@ public class E2EOrderPlaced_Steps {
         }
     }
 
+
+    @Then("^Copy text should be displayed with message for referral$")
+    public void copy_text_should_be_displayed_with_message_for_referral() {
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+
+            String dispalyText = driver.findElement(By.xpath("//*[contains(text(),'Not ')]"));
+            if (dispalyText.contains("Not ")) {
+                System.out.println("Successfully Validate the reference : " + dispalyText);
+            }
+            {
+                System.out.println("Unable to find the reference Displayed Message");
+            }
+        } catch (Exception e) {
+            log.debug(e.getMessage());
+            log.debug("Failed to Copy text should be displayed with message for referral");
+            Assert.fail("Failed to Copy text should be displayed with message for referral");
+        }
+    }
+
+
+    @And("^verify copy text You will need to give details for all fields marked with an asterisk is displayed$")
+    public void verify_copy_text_allFields_narked_with_asterisk() {
+        try {
+            /*driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            List<WebElement> element = driver.findElements(By.xpath("//*[contains(text(),*)]"));
+            for (int i = 1; i <= element.size(); i++) {
+                String valueContains = driver.findElement(By.xpath("(//*[contains(text(),*)])[" + i + "]")).getText();
+                if (valueContains.contains("*")) {
+                    System.out.println("Mandatary Field is + " + valueContains);
+                } else {
+                    System.err.println("There is no mandatary fields available in the Page");
+                }*/
+
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, UpgradeCustomerPage.class);
+            verificationsActions.VerifyheaderAsterisk();
+            log.debug("verify copy text ‘You'll need to give details for all fields marked with an asterisk * is displayed$");
+            }
+
+         catch (Exception e) {
+            log.debug(e.getMessage());
+            log.debug("verify copy text ‘You'll need to give details for all fields marked with an asterisk * is not displayed$");
+            Assert.fail("verify copy text ‘You'll need to give details for all fields marked with an asterisk * is not displayed$");
+
+        }
+    }
+
+    @And("^Select a pay as you go bundle$")
+    public void selectAPayAsYouGoBundle() throws Throwable {
+        try {
+            log.debug("in selecting pay as you go bundle");
+            driver.findElement(By.xpath("//*[@id='callToAction'][1]")).click();
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+
+        }
+
+    }
+
+    @And("^Continue to Review page, click on ‘change delivery’$")
+    public void continueToReviewPageClickOnChangeDelivery() throws Throwable {
+        try {
+            System.out.println("in change delivery method");
+        }
+        catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+
+    }
+
+    @And("^Click on Send button in OTAC page$")
+    public void clickOnSendButtonInOTACPage() throws Throwable {
+        try {
+            driver.findElement(By.id("sendOtac")).click();
+            log.debug("Clicked on Send code button");
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+    }
 
     // Below is Nested Class
 

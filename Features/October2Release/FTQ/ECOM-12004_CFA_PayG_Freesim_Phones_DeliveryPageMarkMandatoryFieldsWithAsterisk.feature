@@ -4,7 +4,7 @@ Feature: CFA_PAYG_sims_Asterisk validation
     Given I am an CFA user and Lands on shop page
     And navigate to PayG SIMO page
     And Select a pay as you go bundle
-    And verify copy text ‘You'll need to give details for all fields marked with an asterisk(*).’ is displayed
+    And verify copy text You will need to give details for all fields marked with an asterisk is displayed
     And verify asterisk is displayed against mandatory fields of "PAYG Free sim Delivery page"
     #Add url redirection step above
     And I enter details in Delivery Page<Firstname> and <Surname>
@@ -12,5 +12,5 @@ Feature: CFA_PAYG_sims_Asterisk validation
 
       #Close the browser
     Examples:
-      | handset | Firstname | Surname | Username | field         |
-      |         |           |         |          | Delivery page |
+      | Firstname | Surname |
+      | TEST      | ACCEPTA |

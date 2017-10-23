@@ -1250,7 +1250,7 @@ public class UpgradeCustomerPageActions extends Environment {
             System.out.println("Clicked on skip this step");
             System.out.println("Selected a Random Tariff");
         }
-        if (arg.contains("Enter OTAC")) {
+        if (arg.contains("enterCode")) {
             driver.findElement(By.xpath("//a[@id='skip-this-step']")).click();
             System.out.println("Clicked on skip this step");
             System.out.println("Selected a Random Tariff");

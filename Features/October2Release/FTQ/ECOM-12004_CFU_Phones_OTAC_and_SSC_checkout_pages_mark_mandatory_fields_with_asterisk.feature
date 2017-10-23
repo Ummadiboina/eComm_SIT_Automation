@@ -15,15 +15,15 @@ Feature: CFU_Phones_Otac and SSC checkout
     And I Land on the basket page by clicking on Add to Basket button
     And click on "go to checkout" button
     And Click on Send button in OTAC page
-    And verify copy text ‘You'll need to give details for all fields marked with an asterisk(*).’ is displayed
+    And verify copy text You will need to give details for all fields marked with an asterisk is displayed
     And verify asterisk is displayed against mandatory fields of "OTAC page"
     And perform <Action> in OTAC page
     #Add a function above
-    And verify copy text ‘You'll need to give details for all fields marked with an asterisk(*).’ is displayed
+    And verify copy text You will need to give details for all fields marked with an asterisk is displayed
     #And verify asterisk is displayed against mandatory fields of "CFU Delivery page"
  #delivery page
     And Click on the 'Continue button' in delivery page
-    And verify copy text ‘You'll need to give details for all fields marked with an asterisk(*).’ is displayed
+    And verify copy text You will need to give details for all fields marked with an asterisk is displayed
     And verify asterisk is displayed against mandatory fields of "CFU Payments page"
     And land on the payment page and input <Username> and other details and click 'Continue on next step'
     And Continue to Agreements page and confirm all the agreement checks
