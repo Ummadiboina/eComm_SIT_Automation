@@ -1,6 +1,6 @@
 Feature: CFA_Tablets_Additional info driving license validation
 
- @Web
+  @Web
   Scenario Outline: CFA_Tablets_Additional info driving license validation
     Given I am an CFA user and Lands on shop page
     And navigate to PAYM Tablets page
@@ -9,7 +9,7 @@ Feature: CFA_Tablets_Additional info driving license validation
     And Land on the 'Tariffs and extra' page
     And I Land on the basket page and choose home delivery option
     And click on "go to checkout" button
-    And verify copy text ‘You'll need to give details for all fields marked with an asterisk(*).’ is displayed
+    And verify copy text You will need to give details for all fields marked with an asterisk is displayed
     And verify asterisk is displayed against mandatory fields of "Delivery page"
     And input the below details in Delivery page
       | HouseNumber           | 5            |
@@ -25,12 +25,12 @@ Feature: CFA_Tablets_Additional info driving license validation
       | Date of Birth - Month | 10           |
       | Date of Birth - Year  | 1990         |
     And Click on the 'Continue button'
-    #Below is payment page
-    And verify copy text ‘You'll need to give details for all fields marked with an asterisk(*).’ is displayed
+     #Below is payment page
+    And verify copy text You will need to give details for all fields marked with an asterisk is displayed
     And verify asterisk is displayed against mandatory fields of "Payments page"
-    #And land on the payment page and input <Username> and other details and click 'Continue on next step'
+     #And land on the payment page and input <Username> and other details and click 'Continue on next step'
     Then Additional information page should be displayed
-    And verify copy text ‘You'll need to give details for all fields marked with an asterisk(*).’ is displayed
+    And verify copy text You will need to give details for all fields marked with an asterisk is displayed
     And verify asterisk is displayed against mandatory fields of "Passport page"
     And Enter valid details for passport
       | CountryCode | pn1        | pn2 | pn3     | pn4 | pn5     | pn6            | pn7 |

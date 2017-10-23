@@ -16,5 +16,5 @@ Feature: AFA_update_copy_for_Refer_with_Simo_response
     Then Copy text should be displayed with message for referral
 
     Examples:
-      | Device              | Tariffs | Extras | DeliveryType | Firstname | Surname | Username    | HouseNumber | PostCode |
-      | S7 edge black 32 GB | Random  | Base   | HomeDelivery | TEST      | REFERA  | TEST REFERA | 14          | SL11UP   |
+      | Tariff | DeliveryType | Firstname | Surname | Username    | HouseNumber | PostCode |
+      |        | HomeDelivery | TEST      | REFERA  | TEST REFERA | 14          | SL11UP   |

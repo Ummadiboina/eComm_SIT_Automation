@@ -93,7 +93,7 @@ public class Hooks extends Environment {
 				 * scenario.embed(screenshot, "image/png");
 				 */
 
-				File screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+			//	File screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
 
 				File scr = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
 				File dest = new File("ScreenshotsForFailures\\ScreenshotsForFailures_" + timestamp() + ".jpeg");
@@ -105,8 +105,8 @@ public class Hooks extends Environment {
 
 		}
 		Thread.sleep(2000);
-		driver.close();
-		driver.quit();
+		//driver.close();
+		//driver.quit();
 
 	}
 

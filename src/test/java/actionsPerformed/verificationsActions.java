@@ -321,4 +321,20 @@ public class verificationsActions extends Environment {
         Screenshots.captureScreenshot();
     }
 
+    public static void VerifyheaderAsterisk() throws Exception {
+
+        String ExpectedText = "";
+        String ActualText = "";
+
+            PageFactory.initElements(driver, verificationsPage.class);
+            //Verifying Asterisk is present below Delivery header
+            ExpectedText = "You'll need to give details for all fields marked with an asterisk (*)";
+            ActualText = pageobjects.verificationsPage.AsteriskText.getText();
+            Assert.assertTrue(ActualText.contains(ExpectedText),
+                    "Assertion Failed: Expected Message: " + ExpectedText + " is not present in the page");
+
+        Screenshots.captureScreenshot();
     }
+
+
+}
