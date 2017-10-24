@@ -1,6 +1,6 @@
 Feature: Reg_Consumer_Buyout
 
-  @Regression
+  @Regression @Web
   Scenario Outline: This scenario ensures that the customer is able to successully Buyout the device
     Given I am an Existing user and Navigates to Signin page
     And Signin using valid <username> and <password> credentials

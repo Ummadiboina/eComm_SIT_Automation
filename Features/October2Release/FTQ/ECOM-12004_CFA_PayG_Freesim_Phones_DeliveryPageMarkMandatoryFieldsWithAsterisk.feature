@@ -1,5 +1,6 @@
 Feature: CFA_PAYG_sims_Asterisk validation
 
+  @Web
   Scenario Outline: CFA_PAYG_sims_Asterisk validation
     Given I am an CFA user and Lands on shop page
     And navigate to PayG SIMO page

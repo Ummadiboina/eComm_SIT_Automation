@@ -1,7 +1,7 @@
 Feature: Reg_FNT_AFA_Handset_Click_and_Collect_Passport_and_Driving_license
 
   #launch hooks and get browser
-  @FNTRegression
+  @FNTRegression @Web
   Scenario Outline: This test scenario ensures that a CC order is successful which accepts additional information like Passport details Driver License details and additional card details but is finally in Referred status
     Given I login to Agent shop
     And performs Acquisition for New user

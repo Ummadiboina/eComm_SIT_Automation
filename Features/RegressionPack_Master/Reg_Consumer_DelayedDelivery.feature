@@ -1,6 +1,6 @@
 Feature: Reg_Consumer_DelayedDelivery
 
- @Regression
+ @Regression @Web
   Scenario Outline: CFA PayM Delayed Delivery Phones Home delivery E2E journey
     Given I am an CFA user and Lands on shop page
     And navigate to PAYM Phones page

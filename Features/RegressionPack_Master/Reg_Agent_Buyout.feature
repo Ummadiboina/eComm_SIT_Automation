@@ -1,7 +1,7 @@
 Feature: Reg_Agent_Buyout
 
   #launch hooks and get browser
-  @AgentsRegression
+  @AgentsRegression @Web
   Scenario Outline: Successful completion of a BuyOut Journey
     Given I login to Agent shop
     #And performs Acquisition for New user

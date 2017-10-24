@@ -941,36 +941,21 @@ public class MouseHoverAction extends Environment {
 		while (!Worksfine)
 			try {
 
-				System.out.println("Performing PayGFreeSim Navigations");
 				log.debug("Performing PayGFreeSim Navigations");
-
-
-				Actions action = new Actions(driver);
-				action.moveToElement(pageobjects.MouseHoverPage.MouseOnSims).build().perform();
-				log.debug("Moving mouse on the Sims in Shop Dropdown");
-				Thread.sleep(1000);
-
-				action.moveToElement(pageobjects.MouseHoverPage.MoveMouseOnPayGSims).build().perform();
-				log.debug("Moving mouse on the PayG Sims");
-				System.out.println("Moving mouse on the PayG Sims");
-				Thread.sleep(1000);
-				pageobjects.MouseHoverPage.MoveMouseOnPayGSims.click();
+				driver.findElement(By.xpath("//div[@class='mobile-nav-toggle is-mobile']/a")).click();
+				driver.findElement(By.id("pn1")).click();
+				driver.findElement(By.xpath("//a[@href='https://www.o2.co.uk/shop/sim-cards'][@manual_cm_re='meganav_Shop-_-Sims-_-na']")).click();
 				log.debug("Clicking on PayG Sims");
+				Worksfine=true;
 
 
-
-			} catch (NoSuchElementException e) {
+			} catch (Exception e) {
 				// check if popup is present, if yes, handle it.
-				Environment.driver.switchTo().frame("edr_l_first");
-				System.out.println("********We are switch to the iframe*******");
-				log.debug("Popup has appeared on the screen, Hence trying to close the survey");
-				// Saying no to survey
-				driver.findElement(By.xpath("//a[@id='no']/span")).click();
-				log.debug("Closing the popup by saying No to Survey");
-				System.out.println("*******Saying no to survey*******");
-				System.out.println("*********Existing the popups present in iframe***************");
-				log.debug("Exiting the Survey");
-				Environment.driver.switchTo().defaultContent();
+				log.debug("Exception caught");
+
+				driver.findElement(By.xpath("//*[@id='no']/span")).click();
+				log.debug("Completed Exception caught");
+
 				Thread.sleep(3000);
 
 			}

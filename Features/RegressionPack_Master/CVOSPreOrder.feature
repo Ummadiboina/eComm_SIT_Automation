@@ -1,6 +1,6 @@
 Feature: CVOSPreOrder
 
-  @tag1
+  @Web
   Scenario Outline: PreOrder_CVS
     Given I am a Supply Chain Admin
     And I Login with Supply Chain Credential <username> and <Password>

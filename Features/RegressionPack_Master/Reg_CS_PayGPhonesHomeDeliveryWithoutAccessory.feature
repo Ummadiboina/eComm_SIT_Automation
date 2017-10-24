@@ -1,6 +1,6 @@
 Feature: Reg_CS_PayGPhonesHomeDeliveryWithoutAccessory
 
-  @ConsumerShop
+  @ConsumerShop @Web
   Scenario Outline: CFA PayG Phones Home delivery E2E journey
     Given I am an CFA user and Lands on shop page
     And navigate to Pay as you Go Phones page

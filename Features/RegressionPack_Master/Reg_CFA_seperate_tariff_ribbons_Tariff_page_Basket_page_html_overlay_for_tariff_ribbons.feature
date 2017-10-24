@@ -1,6 +1,6 @@
 Feature: CFA_seperate_tariff_ribbons_Tariff_page_Basket_page_html_overlay_for_tariff_ribbons
 
-  @Regression
+  @Regression @Web
   Scenario Outline: 
     This scenario ensures that when the customer on Acquisition journey selects tariff for a device with ribbons, then the tariff ribbon should be displayed with html overlay on the following pages,
     1.Tariff and Extras page

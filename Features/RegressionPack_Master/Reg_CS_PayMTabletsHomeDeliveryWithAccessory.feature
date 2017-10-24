@@ -1,6 +1,6 @@
 Feature: Reg_CS_PayMTabletsHomeDeliveryWithAccessory
 
-  @ConsumerShop
+  @ConsumerShop @Web
   Scenario Outline: PayM Tablets Home delivery E2E journey with Accessory
     Given I am an CFA user and Lands on shop page
     And navigate to PAYM Tablets page

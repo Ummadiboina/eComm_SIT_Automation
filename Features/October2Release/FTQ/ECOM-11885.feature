@@ -2,6 +2,7 @@ Feature: ExistingCustomer_Repeat_Order_error_page_copy_changes
 
   This scenario ensures that when the Upgrade customer has already placed an order which is in undispatched state, then the customer should be displayed with the following customized error page while placing new upgrade order
 
+  @Web
   Scenario Outline: ExistingCustomer_Repeat_Order_error_page_copy_changes
 
     Given I am existing user and I click on Signin button

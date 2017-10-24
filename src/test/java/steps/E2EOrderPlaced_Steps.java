@@ -6152,13 +6152,19 @@ public class E2EOrderPlaced_Steps {
 
     @And("^navigate to PayG SIMO page in Mobile$")
     public void navigate_to_PayG_SIMO_page_in_Mobile() throws Throwable {
-        driver.findElement(By.xpath("//div[@class='mobile-nav-toggle is-mobile']/a")).click();
-
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        PageFactory.initElements(driver, MouseHoverPage.class);
+        try {
+            MouseHoverAction.MobilePayGSimLandingPage();
+        }
+catch(Exception e)
+{
+    driver.findElement(By.xpath("//*[@id='no']/span")).click();
+}
+
+        /*PageFactory.initElements(driver, MouseHoverPage.class);
         //Edit the below
         MouseHoverAction.MobilePayGSimLandingPage();
-        Autoredirection.redirect();
+        //Autoredirection.redirect();*/
     }
 
     @And("^Tap on iPads and Tabets Tab$")

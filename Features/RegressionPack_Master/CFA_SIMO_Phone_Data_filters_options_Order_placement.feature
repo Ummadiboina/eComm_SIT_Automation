@@ -2,7 +2,7 @@ Feature: CFA_SIMO_Phone_Data_filters_options_Order_placement
   This scenario ensures that when a customer in acquisition journey selects 'SIMO' 
   tariff for phones ,then the customer should be able to see  'Data filter' button
 
-  @OctoberReleasePhase1
+  @OctoberReleasePhase1 @Web
   Scenario Outline: CFA_SIMO_Phone_Data_filters_options_Order_placement
     Given I am an CFA user and Lands on shop page
     And navigate to PAYM SIMO page

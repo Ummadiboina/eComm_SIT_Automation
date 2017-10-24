@@ -1,6 +1,6 @@
 Feature: Reg_CS_AccessoriesOnly
 
-  @ConsumerShop
+  @ConsumerShop @Web
   Scenario Outline: Accessories only E2E journey
     Given I am an CFA user and Lands on shop page
     And Navigate to Accessories
