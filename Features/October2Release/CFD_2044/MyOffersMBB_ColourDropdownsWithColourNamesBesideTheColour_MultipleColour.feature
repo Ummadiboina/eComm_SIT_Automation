@@ -1,6 +1,7 @@
 Feature: MyOffersMBB_ColourDropdownsWithColourNamesBesideTheColour_MultipleColour
 
-Scenario Outline: MyOffersMBB ColourDropdownsWithColourNamesBesideTheColour MultipleColour
+    @Web
+    Scenario Outline: MyOffersMBB ColourDropdownsWithColourNamesBesideTheColour MultipleColour
 
 Current URL:
     https://www.o2.co.uk/shop/my-offers/mobile-broadband

@@ -1,5 +1,6 @@
 Feature: ExistingCustomer_Phones_ColourDropdownsWithColourNamesBesideTheColourSingleColour
 
+    @Web
 Scenario Outline: ExistingCustomer Phones_ColourDropdownsWithColourNamesBesideTheColourSingleColour
 
 Given I am existing user and I click on Signin button 

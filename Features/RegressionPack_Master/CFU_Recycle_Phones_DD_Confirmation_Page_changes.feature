@@ -1,5 +1,6 @@
 Feature: CFU_Recycle_Phones_DD_Confirmation_Page_changes
 
+  @Web
   Scenario Outline: 
     This scenario ensures that when the customer in Upgrade journey selects delayed delivery phone, 
     then the customer should be able to see the changes in 'Confirmation Page formatting box'

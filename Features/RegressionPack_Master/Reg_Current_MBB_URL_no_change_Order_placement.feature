@@ -1,12 +1,8 @@
 Feature: Reg_Current_MBB_URL_no_change_Order_placement
 
-  @Test2
+  @Web
   Scenario Outline: This scenario ensures that there should not be any change for customer with Current MBB URL and customer should be able to place order
-    
-    Current URL:
-    https://www.o2.co.uk/shop/my-offers/mobile-broadband
-
-    Given I am existing user and I click on Signin button
+   Given I am existing user and I click on Signin button
     And Signin using valid <username> and <password> credentials
     And I launch the OldMBBURL
     And select "random" MBBtariff
@@ -21,5 +17,5 @@ Feature: Reg_Current_MBB_URL_no_change_Order_placement
 
     #Modify the above step to include pdf download
     Examples: 
-      | username   | password | OldMBBURL                                                | user         |
-      | in_jul1136 | test123  | https://www.ref.o2.co.uk/shop/my-offers/mobile-broadband | TEST ACCEPTA |
+      | username   | password | user         |
+      | in_jul1136 | test123  | TEST ACCEPTA |

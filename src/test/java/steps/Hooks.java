@@ -65,7 +65,7 @@ public class Hooks extends Environment {
 		return null;
 	}
 
-	@Before("@Appium")
+	@Before("@Mobile")
 	public void setupAppium() throws MalformedURLException, InterruptedException {
 		System.out.println("Opening Mobile browser");
 		DesiredCapabilities capabilities = new DesiredCapabilities();

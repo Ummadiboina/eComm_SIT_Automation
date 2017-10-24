@@ -2,7 +2,7 @@ Feature: CFA_MBB_Data filters
   This scenario ensures that when a customer in acquisition journey selects 'MBB' and navigates to tariff page ,
   then the customer should be able to see  'Data filter' button next to sort drop-down for PayM tariffs
 
-  @OctoberReleasePhase1
+  @Web @OctoberReleasePhase1
   Scenario Outline: CFA_MBB_Data filters
     Given I am an CFA user and Lands on shop page
     And Navigate to PayM MBB page

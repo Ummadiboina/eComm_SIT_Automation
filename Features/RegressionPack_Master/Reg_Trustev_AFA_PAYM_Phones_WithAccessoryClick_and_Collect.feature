@@ -1,13 +1,13 @@
 Feature: Reg_Trustev_AFA_PAYM_Phones_WithAccessoryClick_and_Collect
 
   #launch hooks and get browser
-  @AgentsRegression
+  @AgentsRegression @Web
   Scenario Outline: Trustev PayM Phones Click and collect E2E journey with Accessory in Agent shop
     Given I login to Agent shop
     And performs Acquisition for New user
     And Select a valid PayM <Device>
     And Select valid <Tariffs> from tariffs tab
-    And Select <Accessory> from Accessories tab
+    #And Select <Accessory> from Accessories tab
     And select a valid Handset and Tariff combination
     And select a valid store for Click and Collect
     And Validate all the Basket content and checkout

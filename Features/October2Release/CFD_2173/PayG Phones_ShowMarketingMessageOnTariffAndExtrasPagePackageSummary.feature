@@ -1,6 +1,6 @@
 Feature: PayG Phones_ShowMarketingMessageOnTariffAndExtrasPagePackageSummary
 
-  @ConsumerShop
+  @Web
   Scenario Outline: PayG Phones_ShowMarketingMessageOnTariffAndExtrasPagePackageSummary International discounts
     Given I am an CFA user and Lands on shop page
     And navigate to Pay as you Go Phones page

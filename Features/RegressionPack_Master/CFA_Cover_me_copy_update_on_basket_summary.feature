@@ -1,5 +1,6 @@
 Feature: CFA_Cover_me_copy_update_on_basket_summary
 
+  @Web
   Scenario Outline: 
     This scenario ensures that when the customer on acquisition journey selects insurance, 
     then the customer should be able to see 'Insurance' copy text in the SSC checkout Your order section instead of 'Cover Me'

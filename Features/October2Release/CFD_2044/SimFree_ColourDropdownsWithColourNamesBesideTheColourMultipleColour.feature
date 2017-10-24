@@ -1,5 +1,6 @@
 Feature: SimFree_ColourDropdownsWithColourNamesBesideTheColour_MultipleColour
 
+  @Web
   Scenario Outline: SimFree ColourDropdownsWithColourNamesBesideTheColourMultipleColour
     Given I am an CFA user and Lands on shop page
     And navigate to Like New Phones page

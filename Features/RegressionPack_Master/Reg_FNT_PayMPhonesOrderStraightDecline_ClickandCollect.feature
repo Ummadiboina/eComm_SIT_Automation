@@ -1,6 +1,6 @@
 Feature: Reg_FNT_PayMPhonesOrderStraightDecline_ClickandCollect
 
-  @FNTRegression
+  @FNTRegression @Web
   Scenario Outline: FNT CFA PayM phones Straight Order Declined
     Given I am an CFA user and Lands on shop page
     And navigate to PAYM Phones page

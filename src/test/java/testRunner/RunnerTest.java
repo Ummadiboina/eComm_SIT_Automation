@@ -40,7 +40,7 @@ import java.util.Date;
 @CucumberOptions(plugin = { "html:testResult/cucumber-html-report",
 		"json:testResult/cucumber.json", "pretty:testResult/cucumber-pretty.txt",
 		"usage:testResult/cucumber-usage.json", "junit:testResult/cucumber-results.xml" },
-		features = { "Features//RegressionPack_Master//CFA_Accessories_Confirmation_Page_changes.feature" },
+		features = { "Features//RegressionPack_Master//", "Features//October2Release//" },
 		glue = { "steps" },
 		tags = {"@Web"})
 

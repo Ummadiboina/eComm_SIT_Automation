@@ -1,5 +1,6 @@
 Feature: CFD2064_ECOM11810_11811_ CFU_ordering choice on upgrade options page_Phone_option_not selected
 
+  @Web
   Scenario Outline: This test ensures that customer is given a choice not to take a sim when the customer is on a phones upgrade journey
     Given I am existing user and I click on Signin button
     And Signin using valid <username> and <password> credentials

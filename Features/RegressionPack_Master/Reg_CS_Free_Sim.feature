@@ -1,4 +1,4 @@
-Feature: Reg_CS_Free_Sim_Tablet
+Feature: Reg_CS_Free_Sim
 
   @Web
   Scenario Outline: Light surfer iPad Sim entering delivery details manually

@@ -1,5 +1,6 @@
 Feature: CFU_Phones_ColourDropdownsWithColourNamesBesideTheColourMultipleColour
 
+  @Web
   Scenario Outline: CFU_Phones_ColourDropdownsWithColourNamesBesideTheColourMultipleColour Multiple Colours
     Given I am existing user and I click on Signin button
     And Signin using valid <username> and <password> credentials
