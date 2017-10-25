@@ -26,7 +26,7 @@ import java.util.Date;
 				toPDF = true,
 				excludeCoverageTags = {"@flaky" },
 				includeCoverageTags = {"@passed" },
-				outputFolder = "testResult/cucumber_detailed_result/DATE(yyyy-MM-dd HH-mm-ss)"
+				outputFolder = "testResult/cucumber_detailed_result/DATE(yyyy-MM-dd HH)"
 
 				//outputFolder = "${user.dir}/DATE(yyyy-MM-dd HH:mm:ss.S)"
 				//reportPrefix = "results-${user}"
