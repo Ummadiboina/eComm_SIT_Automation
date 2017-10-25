@@ -5,11 +5,10 @@ Feature: SimFree_ColourDropdownsWithColourNamesBesideTheColour_MultipleColour
     Given I am an CFA user and Lands on shop page
     And navigate to Like New Phones page
     And select <LikeNewPhoneOption> link
-    And click on the color dropdown
-    And verify the name of the colour is next to the color tile in <LikeNewDevicePage>
+    And click on the color dropdown for like new
+    And verify the name of the colour is next to the colour tile in CFAPhoneColour
     And select <color> color of the connected device
     And Click on <LikeNewTariffOption> tariff tile
-    And verify the name of the colour is next to the color tile in <extraspage>
     And I Land on the basket page and choose home delivery option
     And click on "go to checkout" button
     And input <Firstname> and <Surname> and other valid details in Delivery page and Click on the 'Continue button'
@@ -20,6 +19,6 @@ Feature: SimFree_ColourDropdownsWithColourNamesBesideTheColour_MultipleColour
     
     Examples:
     
-    |Firstname|Surname|Username|LikeNewDevicePage|
-    |         |       |        |                 |
+    |Firstname|Surname|Username       |LikeNewTariffOption|LikeNewPhoneOption|color|
+    | TEST    |ACCEPTA|TEST ACCEPTA   |                   |SimFree           |Gold |
     
