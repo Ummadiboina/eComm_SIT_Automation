@@ -1,18 +1,18 @@
 Feature: CFA_Phones_ColourDropdownsWithColourNamesBesideTheColourMultipleColour
 
-  @Web
+  @Web @oct2release
   Scenario Outline: CFA_Phones_ColourDropdownsWithColourNamesBesideTheColourMultipleColour
     Given I am an CFA user and Lands on shop page
     And navigate to PAYM Phones page
     And I choose PayM <handset>
     And Navigate to device details page
     And click on the color dropdown
-    And verify the name of the color is next to the colour tile in <CFAPhoneColour>
+    And verify the name of the colour is next to the colour tile in <CFAPhoneColour>
    # And select a color
     And select <color> color of the connected device
     And Land on the 'Tariffs and extra' page
     And click on the color dropdown
-    And verify the name of the color is next to the colour tile in <CFATariffColour>
+    And verify the name of the colour is next to the colour tile in <CFATariffColour>
     And select <color> color of the connected device
     And I Land on the basket page and choose home delivery option
     And click on "go to checkout" button
@@ -37,5 +37,5 @@ Feature: CFA_Phones_ColourDropdownsWithColourNamesBesideTheColourMultipleColour
 
     #Close the browser
     Examples:
-      | handset | Firstname | Surname | Username     |CFAPhoneColour|CFATariffColour|
-      | Iphone7 | TEST      | ACCEPTA | TEST ACCEPTA |Gold          |Gold           |
+      | handset | Username     | CFAPhoneColour | CFATariffColour |
+      | Iphone7 | TEST ACCEPTA | Gold           | Gold            |

@@ -14,6 +14,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 
 import helpers.Environment;
+import org.testng.Assert;
+import sun.font.TrueTypeFont;
 
 public class MouseHoverAction extends Environment {
 
@@ -943,9 +945,19 @@ public class MouseHoverAction extends Environment {
 
 				log.debug("Performing PayGFreeSim Navigations");
 				driver.findElement(By.xpath("//div[@class='mobile-nav-toggle is-mobile']/a")).click();
+				log.debug("Clicked on --- icon at the end of the screen");
 				driver.findElement(By.id("pn1")).click();
+				log.debug("Clicked on shop tab");
 				driver.findElement(By.xpath("//a[@href='https://www.o2.co.uk/shop/sim-cards'][@manual_cm_re='meganav_Shop-_-Sims-_-na']")).click();
+				log.debug("Clicked on sims link");
+				driver.findElement(By.xpath("//a[@href='https://www.o2.co.uk/shop/sim-cards/pay-as-you-go/'][@manual_cm_re='meganav_Shop-_-Sims-_-Pay & Go sims']")).click();
 				log.debug("Clicking on PayG Sims");
+				String ExpectedText="Pay As You Go sims";
+				String ActualText=driver.findElement(By.xpath("//div[@class='info']/h1")).getText();
+				Assert.assertTrue(ActualText.contains(ExpectedText),
+						"Assertion Failed: Expected Message: " + ExpectedText + " is not present in the page");
+				log.debug("Assertion Worked");
+
 				Worksfine=true;
 
 
