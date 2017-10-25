@@ -1,6 +1,6 @@
 Feature: C1669_E11522_TC1_CFA_morethan12Tablet 
 
-@Regression @Web
+@Web
 Scenario Outline: E11522_CFA_MoreThan12Accessory_Tablet 
 	Given I am an CFA user and Lands on shop page 
 	And Navigate to Accessories 

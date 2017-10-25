@@ -17,6 +17,6 @@ Feature: Reg_AFA_verify_Base_Comms_tariff_under_offer_column_order_placement_O2_
     When Pay by card
     Then Order confirmation message should be displayed
 
-    Examples: 
-      | Device | Tariffs | Extras | DeliveryType | Firstname | Surname | Username     | HouseNumber | PostCode |
-      | Random | Base    | Base   | HomeDelivery | Test      | Accepta | Test Accepta |           2 | SL11UP   |
+    Examples:
+      | Device | Tariffs | Extras | Firstname | Surname | Username     | HouseNumber | PostCode |
+      | Random | Base    | Base   | Test      | Accepta | Test Accepta | 2           | SL11UP   |

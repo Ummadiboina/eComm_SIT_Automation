@@ -1,7 +1,7 @@
 Feature: C1960_ECOM11430_11485_11433_11419_TC1_CFA_iPad_Show_basecomms_tariffs_on_T&E_page_for_my_offers_journey
 
-  Scenario Outline: 
-    This scenario ensures that when the customer in Acquisition Journey lands on My offers page and clicks on 'iPads' tab, then the customer should be able to see 'iPad' devices associated with Bascom tariffs in device tile and Tariff and extras page
+  @Web
+  Scenario Outline:  This scenario ensures that when the customer in Acquisition Journey lands on My offers page and clicks on 'iPads' tab, then the customer should be able to see 'iPad' devices associated with Bascom tariffs in device tile and Tariff and extras page
 
     Given I navigate to the Basecomm Page
     And Verify expected <device_name> and its specific details are present in the device list <default_colour>,<default_capacity>,<default_stock_message>
@@ -21,6 +21,6 @@ Feature: C1960_ECOM11430_11485_11433_11419_TC1_CFA_iPad_Show_basecomms_tariffs_o
     And Navigate to device details page
     And verify that the Basecomms tariff is not displayed in the Tariff and Extras page
 
-    Examples: 
-      | username             | password | device_name    | default_colour | default_capacity | default_stock_message | color  | capacity | user         |
-      | 07770001111@o2.co.uk | test123  | Apple iPad 9.7 | Space Grey     | 32GB             | In Stock              | Silver | 128GB    | TEST ACCEPTA |
+    Examples:
+      | device_name    | default_colour | default_capacity | default_stock_message | color  | capacity |
+      | Apple iPad 9.7 | Space Grey     | 32GB             | In Stock              | Silver | 128GB    |
