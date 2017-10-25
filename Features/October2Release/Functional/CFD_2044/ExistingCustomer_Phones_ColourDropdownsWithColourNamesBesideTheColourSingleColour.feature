@@ -6,14 +6,14 @@ Scenario Outline: ExistingCustomer Phones_ColourDropdownsWithColourNamesBesideTh
 Given I am existing user and I click on Signin button 
 	And Signin using valid <username> and <password> credentials 
 	And navigate to PAYM Phones page
+    And click on the color dropdown
+    And verify the name of the colour is next to the colour tile in CFAPhoneColour
+    And select <color> color of the connected device
     And I choose PayM <handset>
     And Navigate to device details page
-    And click on the color dropdown
-    And verify the name of the colour is next to the colour tile in <CFAPhoneColour>
-    And select <color> color of the connected device
     And Land on the 'Tariffs and extra' page
     And click on the color dropdown
-    And verify the name of the colour is next to the colour tile in <CFATariffColour>
+    And verify the name of the colour is next to the colour tile in CFAPhoneColour
     And select <color> color of the connected device
     And I Land on the basket page and choose home delivery option
     And click on "go to checkout" button
@@ -27,7 +27,7 @@ Given I am existing user and I click on Signin button
     
     Examples: 
     
-    |username|password|handset|CFAPhoneColour|CFATariffColour|user|
-    |        |test123 |       |              |               |TEST ACCEPTA|
+    |username              |password|handset|user        |color |
+    |test@usokmujnytfer.com|test123 |Apple8 |TEST ACCEPTA|Gold  |
 
 
