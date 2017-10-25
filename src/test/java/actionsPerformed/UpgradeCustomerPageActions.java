@@ -1855,6 +1855,12 @@ public class UpgradeCustomerPageActions extends Environment {
             log.debug("Seelcted Samsung galaxy tab");
         }
 
+        if (handset.contains("GalaxyTabA")) {
+            pageobjects.UpgradeCustomerPage.GalaxyTabA.click();
+            System.out.println("Seelcted Samsung galaxy tab A");
+            log.debug("Selcted Samsung galaxy tab A");
+        }
+
         if (handset.contains("Apple ipad pro 9.7")) {
             pageobjects.UpgradeCustomerPage.AppleipadPro.click();
             System.out.println("Seelcted ipad pro tablet");

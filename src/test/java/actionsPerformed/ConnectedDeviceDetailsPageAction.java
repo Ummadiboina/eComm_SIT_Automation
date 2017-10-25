@@ -8,6 +8,7 @@ import org.apache.log4j.Logger;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.SearchContext;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 
@@ -244,6 +245,8 @@ public class ConnectedDeviceDetailsPageAction extends Environment {
 			new Select(element).selectByVisibleText(color);
 			System.out.println("Selected" + color);
 		}
+
+
 		Screenshots.captureScreenshot();
 
 	}
@@ -308,7 +311,7 @@ public class ConnectedDeviceDetailsPageAction extends Environment {
 		// TODO Auto-generated method stub
 		if (pageobjects.ConnectedDeviceDetailsPage.UpdatedColorLabel.isDisplayed()) {
 			System.out.println("The color dropdown is displayed");
-			pageobjects.ConnectedDeviceDetailsPage.ColorDropDown.click();
+			pageobjects.ConnectedDeviceDetailsPage.UpdatedColorLabel.click();
 			log.debug("The colour dropdown is clicked");
 		} else {
 			System.out.println("colour drop down is not displayed");
@@ -317,6 +320,21 @@ public class ConnectedDeviceDetailsPageAction extends Environment {
 		Screenshots.captureScreenshot();
 	}
 
+	public static void UpdatedColordropdownText()throws IOException, InterruptedException {
+
+		if(pageobjects.ConnectedDeviceDetailsPage.Colourdropdownbox.isDisplayed()) {
+			WebElement colourDropdown=driver.findElement(By.xpath("//*[@id='colourSelectBoxItOptions']"));
+			List<WebElement> elementColor = colourDropdown.findElements(By.xpath("//*[@class='selectboxit-option-label']"));
+			for(int i=0;i<elementColor.size();i++) {
+				System.out.println(elementColor.get(i).getText());
+			}
+		}
+		else{
+			System.out.println("The colour labels are not displayed");
+			log.debug("The colour labels are not displayed");
+		}
+
+	}
 
 	//*[@id='colourSelectBoxItText']
 

@@ -56,6 +56,14 @@ public static List<WebElement> ColorLabel;
 @FindAll({ @FindBy(how = How.XPATH, using = "//*[@id='colourSelectBoxItText']") })
 public static WebElement UpdatedColorLabel;
 
+@FindAll({ @FindBy(how = How.XPATH, using = "//*[@id='colourSelectBoxIt']") })
+public static WebElement Colourdropdownbox;
+
+@FindAll({ @FindBy(how = How.XPATH, using = "//*[@id='colour']/option") })
+public static WebElement ColourText;
+
+
+
 //*[@id='colourSelectBoxItText']
 
 }
