@@ -13,7 +13,6 @@ Feature: PayG Tablets_ShowMarketingMessageOnTariffAndExtrasPagePackageSummary
     And I Land on the basket page and choose home delivery option
     And Verify the copytext of marketing message in "Your Basket"
     And click on "go to checkout" button
-      #And Verify the copytext of marketing message in <DeliverySectionName>
     And input <Firstname> and <Surname> and other valid details in Delivery page and Click on the 'Continue button'
       #And Verify the copytext of marketing message in <PaymentSectionName>
     And land on the Non Credit check payment page and input <Username> and other details and click 'Continue on next step'
