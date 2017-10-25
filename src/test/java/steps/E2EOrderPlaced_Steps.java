@@ -6452,6 +6452,54 @@ catch(Exception e)
         }
     }
 
+    //Enahanced coour dropdown
+
+    @And("^verify the name of the colour is next to the colour tile in CFAPhoneColour$")
+    public void verify_the_name_of_the_colour_is_next_to_the_colour_tile_in_CFAPhoneColour() throws Throwable {
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, ConnectedDeviceDetailsPage.class);
+            ConnectedDeviceDetailsPageAction.UpdatedColordropdownText();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.out.println("The color text is not present");
+            Assert.fail("The color text is not present");
+        }
+    }
+
+    @And("^click on the color dropdown for like new$")
+    public void click_on_the_color_dropdown_for_like_new() throws Throwable {
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, SimFreeDevicePage.class);
+            LikeNewSimFreeDevicePageActions.LikeNewColorDropDownOptions();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.out.println("The color text is not present");
+            Assert.fail("The color text is not present");
+        }
+    }
+
+
+    @And("^Click on ([^\"]*) tariff tile$")
+    public void click_on_LikeNewTariffOption_tariff_tile(String TariffType) throws Throwable {
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, SimFreeDevicePage.class);
+            LikeNewSimFreeDevicePageActions.LikeNewColorTariffSelect(TariffType);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.out.println("The color text is not present");
+            Assert.fail("The color text is not present");
+        }
+    }
+
+
+
+
     // Below is Nested Class
 
     public class dataValue {
