@@ -9,7 +9,7 @@ Feature: CFU_Tablet_ColourDropdownsWithColourNamesBesideTheColourSingleColour
     And I choose upgrade PayM Tablet <handset>
     And Navigate to device details page
     Then check if the selected device has only 1 variant for both colour and capacity
-    And Select a tariff <tariff>
+    And Land on the 'Tariffs and extra' page
     And I Land on the basket page by clicking on Add to Basket button
 
     Examples:

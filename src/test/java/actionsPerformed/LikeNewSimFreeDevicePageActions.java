@@ -1,12 +1,16 @@
 package actionsPerformed;
 
 import java.io.IOException;
+import java.util.List;
 
 import org.apache.log4j.Logger;
+import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 
 import GlobalActions.Screenshots;
 import helpers.Environment;
+import org.openqa.selenium.WebElement;
+import pageobjects.SimFreeDevicePage;
 
 //import Environment.Environment;
 
@@ -81,4 +85,35 @@ public class LikeNewSimFreeDevicePageActions extends Environment {
 		Screenshots.captureScreenshot();
 	}
 
-}
+	public static void LikeNewColorDropDownOptions() throws IOException, InterruptedException {
+
+		if (SimFreeDevicePage.LikeNewColourDropdown.isDisplayed()) {
+
+			WebElement colourDropdown = driver.findElement(By.xpath("//*[@id='colourSelectBoxItOptions']"));
+			List<WebElement> elementColor = colourDropdown.findElements(By.xpath("//*[@class='selectboxit-option-label']"));
+			for (int i = 0; i < elementColor.size(); i++) {
+				System.out.println(elementColor.get(i).getText());
+			}
+			System.out.println("The colours labels are displayed");
+			log.debug("The colours labels are displayed");
+		} else
+			System.out.println("The colour labels are not displayed");
+
+	}
+
+	public static void LikeNewColorTariffSelect(String TariffType) throws IOException, InterruptedException {
+
+		if(TariffType.contains("DeviceOnly")) {
+			SimFreeDevicePage.Device_only_sim_free_Select.click();
+			log.debug("Device only is clicked");
+
+		}
+		else
+			System.out.println("The Device only button not displayed");
+
+
+		}
+
+	}
+
+
