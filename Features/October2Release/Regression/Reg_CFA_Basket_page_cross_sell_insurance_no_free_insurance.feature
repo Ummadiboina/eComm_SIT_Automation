@@ -1,6 +1,6 @@
 Feature: CFA_Basket_page_cross_sell_insurance_no_free_insurance
 
-  @Regression @Web
+  @Web
   Scenario Outline: 
     This scenario ensures that when the customer has selected a PayM phone having no free insurance and selecting cheapest insurance in basket page
 

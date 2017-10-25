@@ -1,7 +1,7 @@
 Feature: Reg_FNT_AFA_PayG_Phones_less_than_50_GBP_ClickAndCollect
 
   #launch hooks and get browser
-  @FNTRegression
+  @Web
   Scenario Outline: This test scenario ensures that PaynGo order via the web for payment less than 50 GBP where Click and Collect Now
     Given I login to Agent shop
     And performs Acquisition for New user

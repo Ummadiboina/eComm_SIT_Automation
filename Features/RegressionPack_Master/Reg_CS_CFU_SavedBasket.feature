@@ -1,6 +1,6 @@
 Feature: Reg_CS_CFU_SavedBasket
 
-  #@ConsumerShop
+  @Web
   Scenario Outline: CFU to Verify is user can upgrade phone to refresh Tariff
     Given I am an Existing user and Navigates to Signin page
     And Signin using valid <username> and <password> credentials

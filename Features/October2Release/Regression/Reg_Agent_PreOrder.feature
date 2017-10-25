@@ -1,7 +1,7 @@
 Feature: Reg_Agent_DelayedDelivery
 
   #launch hooks and get browser
-  @AgentsRegression @Web
+  @Web
   Scenario Outline: Successful completion of a PAY M Acquistion journey
     Given I login to Agent shop
     And performs Acquisition for New user

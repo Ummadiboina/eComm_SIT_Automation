@@ -19,5 +19,5 @@ Feature: Reg_AFA_Tablet
     Then Order confirmation message should be displayed
 
     Examples: 
-      | Device | Tariffs | Extras | DeliveryType | Firstname | Surname | Username     | HouseNumber | PostCode |
-      | tablet | Random  | Random | HomeDelivery | TEST      | ACCEPTA | TEST ACCEPTA |           18 | SL11UP   |
+      | Device | Tariffs |  DeliveryType | Firstname | Surname | Username     | HouseNumber | PostCode |
+      | tablet | Random  |  HomeDelivery | TEST      | ACCEPTA | TEST ACCEPTA |           18 | SL11UP   |
