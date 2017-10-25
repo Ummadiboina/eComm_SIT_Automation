@@ -6297,22 +6297,6 @@ catch(Exception e)
 
     }
 
-    @And("^verify the name of the color is next to the colour tile in ([^\"]*)$")
-    public void verify_the_name_of_the_color_is_next_to_the_colour_tile_in(String LikeNewLink) throws Throwable {
-
-        try {
-            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-            PageFactory.initElements(driver, SimFreeDevicePage.class);
-            SimFreeLandingActions.LikeNewOptions(LikeNewLink);
-
-        } catch (Exception e) {
-            e.printStackTrace();
-            System.out.println("Unable to select the sim free link");
-            Assert.fail("Unable to select the sim free link");
-        }
-    }
-
-
     @And("^verify asterisk is displayed against mandatory fields of \"([^\"]*)\"$")
     public void verifyAsteriskIsDisplayedAgainstMandatoryFieldsOf(String Field) throws Throwable {
         try {
