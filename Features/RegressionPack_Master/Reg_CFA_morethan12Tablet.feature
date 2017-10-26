@@ -29,5 +29,5 @@ Scenario Outline: E11522_CFA_MoreThan12Accessory_Tablet
 	Then order confirmation is displayed 
 	
 	Examples: 
-		| Firstname | Surname | Username     | limit1 | tabletname|limit2|accessoryname|fitnesstrackername|
-		| TEST      | ACCEPTA | TEST ACCEPTA | 6 | Apple iPad Pro 10.5 inch|6|JBL Clip 2|Fitbit Alta|
+		| Firstname | Surname | Username     | limit1 | tabletname              |limit2|accessoryname|fitnesstrackername|
+		| TEST      | ACCEPTA | TEST ACCEPTA | 6      | Apple iPad Pro 10.5 inch|6     |JBL Clip 2   |Fitbit Alta       |
