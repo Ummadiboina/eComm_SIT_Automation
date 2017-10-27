@@ -7,10 +7,7 @@ import java.util.concurrent.TimeUnit;
 
 import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
-import org.openqa.selenium.By;
-import org.openqa.selenium.ElementNotVisibleException;
-import org.openqa.selenium.Point;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 
 import helpers.Environment;
@@ -794,10 +791,15 @@ public class MouseHoverAction extends Environment {
 				log.debug("Moving Mouse on the Shop Tab");
 				Actions action = new Actions(driver);
 				action.moveToElement(pageobjects.MouseHoverPage.MoveMouseOnTablets).build().perform();
-				Thread.sleep(2000);
+				System.out.println("Hovered over tablets option");
+				Thread.sleep(4000);
 				action.moveToElement(pageobjects.MouseHoverPage.MoveMouseOniPad).build().perform();
+				System.out.println("Hovered over ipad option");
 				Thread.sleep(2000);
-				pageobjects.MouseHoverPage.MoveMouseOniPad.click();
+				WebElement element = pageobjects.MouseHoverPage.MoveMouseOniPad;
+				JavascriptExecutor executor = (JavascriptExecutor)driver;
+				executor.executeScript("arguments[0].click();", element);
+				//pageobjects.MouseHoverPage.MoveMouseOniPad.click();
 				log.debug("Moving Mouse on the iPad tab");
 
 				// Move mouse pointer away from location
