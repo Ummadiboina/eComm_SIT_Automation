@@ -2,7 +2,7 @@ Feature: CFU_Tablets_Data_filters_options_tariff_and_extras_page_Order_placement
   This scenario ensures that when a customer in upgrade journey selects 'Tablet' and navigated to tariff page ,
   then the customer should be able to see  'Data filter' button next to sort drop-down for PayM tariffs
 
-  @OctoberReleasePhase1 @Web
+  @Web
   Scenario Outline: CFU_Tablets_Data_filters_options_tariff_and_extras_page_Order_placement
     Given I am an Existing user and Navigates to Signin page
     And Signin using valid <username> and <password> credentials
@@ -27,7 +27,7 @@ Feature: CFU_Tablets_Data_filters_options_tariff_and_extras_page_Order_placement
     And Continue to Review page and review the order
     Then order confirmation is displayed
 
-    Examples: 
-      | handset         | Firstname | Surname | Username     | filtername | sortoption                 | username    | password |
-      | SamsungGalaxy10 | TEST      | ACCEPTA | TEST ACCEPTA | high       | Monthly data (Low to High) | ini_feb3331 | test123  |
+    Examples:
+      | Tablet        | Action | Surname | Username     | filtername | sortoption                 | username    | password |
+      | Random Device | skip   | ACCEPTA | TEST ACCEPTA | high       | Monthly data (Low to High) | ini_feb3331 | test123  |
    #   | Apple iPhone 7    | TEST      | ACCEPTA | TEST ACCEPTA | high       |

@@ -1,6 +1,6 @@
 Feature: Reg_FNT_DifferentStoreAddressthanBillingAddres
 
-  @FNTRegression @Web
+  @Web
   Scenario Outline: FNT PayM Different store address than billing address
     Given I am an CFA user and Lands on shop page
     And navigate to PAYM Phones page

@@ -1,11 +1,11 @@
 Feature: ExistingCustomer_Phones_ColourDropdownsWithColourNamesBesideTheColourSingleColour
 
-    @Web
-Scenario Outline: ExistingCustomer Phones_ColourDropdownsWithColourNamesBesideTheColourSingleColour
+  @Web
+  Scenario Outline: ExistingCustomer Phones_ColourDropdownsWithColourNamesBesideTheColourSingleColour
 
-Given I am existing user and I click on Signin button 
-	And Signin using valid <username> and <password> credentials 
-	And navigate to PAYM Phones page
+    Given I am existing user and I click on Signin button
+    And Signin using valid <username> and <password> credentials
+    And navigate to PAYM Phones page
     And click on the color dropdown
     And verify the name of the colour is next to the colour tile in CFAPhoneColour
     And select <color> color of the connected device
@@ -23,11 +23,11 @@ Given I am existing user and I click on Signin button
     And Continue to Agreements page and confirm all the agreement checks
     And Continue to Review page and review the order
     Then order confirmation is displayed
-    
-    
-    Examples: 
-    
-    |username              |password|handset|user        |color |
-    |test@usokmujnytfer.com|test123 |Apple8 |TEST ACCEPTA|Gold  |
+
+
+    Examples:
+
+      | username               | password | handset | user         | color |
+      | test@usokmujnytfer.com | test123  | Apple8  | TEST ACCEPTA | Gold  |
 
 

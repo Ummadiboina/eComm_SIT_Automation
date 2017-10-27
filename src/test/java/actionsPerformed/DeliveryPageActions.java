@@ -137,10 +137,24 @@ public class DeliveryPageActions extends Environment {
         System.out.println("Clicked on the Find address button");
         //log.debug("Clicked on the Find address button");
         Thread.sleep(5000);
+
         if (pageobjects.DeliveryPage.SelectAddress1.isDisplayed()) {
+            log.debug("in select address 1");
+
             pageobjects.DeliveryPage.SelectAddress1.click();
-          //  log.debug("Selected an address");
-            System.out.println("Selected an address");
+            log.debug("Selected an address");
+                  }
+        //*[@id="delivery-address-selector"]
+                  else if (pageobjects.DeliveryPage.SelectAddressDropdown.isDisplayed())
+        {
+            log.debug("in select addressdropdown");
+            Select dropdown = new Select(pageobjects.DeliveryPage.SelectAddressDropdown);
+            dropdown.selectByIndex(1);
+            //{"officeOrflat":"","houseNumberName":"5","address1":"KEATS COURT","address2":"HORFIELD","townOrCity":"BRISTOL AVON","postCode":"BS7 0NP"}
+           /* dropdown.getFirstSelectedOption().click();
+            driver.findElement(By.xpath("//*[@id='delivery-address-selector']/option[2]")).click();
+           */
+            log.debug("Selected an address");
 
         }
         //Screenshots.captureScreenshot();

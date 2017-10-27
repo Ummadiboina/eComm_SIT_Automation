@@ -1,6 +1,6 @@
 Feature: Reg_CS_SmartWatch
 
-  @ConsumerShop @Web
+  @Web
   Scenario Outline: Smart Watches only E2E journey
     Given I am an CFA user and Lands on shop page
     And Navigate to SmartWatches
@@ -13,6 +13,6 @@ Feature: Reg_CS_SmartWatch
     And Continue to Review page and review the order
     Then order confirmation is displayed
 
-    Examples: 
+    Examples:
       | Firstname | Surname | Username     | Device                    |
       | TEST      | ACCEPTA | TEST ACCEPTA | Pebble Original Jet Black |

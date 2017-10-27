@@ -1,7 +1,7 @@
 Feature: Reg_AFA_PayMSimO_withoutAnyAccessory
 
   #launch hooks and get browser
-  @AgentsRegression @Web
+  @Web
   Scenario Outline: Successful completion of a PAY M SIMO acquisition Journey without an accessory
     Given I login to Agent shop
     And performs Acquisition for New user

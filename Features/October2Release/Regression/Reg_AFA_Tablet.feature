@@ -1,7 +1,7 @@
 Feature: Reg_AFA_Tablet
 
   #launch hooks and get browser
-  @AgentsRegression @Web
+  @Web
   Scenario Outline: Successful completion of a Tablet Journey
     Given I login to Agent shop
     And performs Acquisition for New user

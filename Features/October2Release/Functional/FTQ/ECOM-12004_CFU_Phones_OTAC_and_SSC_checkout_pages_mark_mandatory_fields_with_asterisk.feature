@@ -1,4 +1,5 @@
 Feature: CFU_Phones_Otac and SSC checkout
+
   @Web
   Scenario Outline: CFU_Phones_Otac and SSC checkout
     Given I am an Existing user and Navigates to Signin page

@@ -1,6 +1,6 @@
 Feature: Reg_CS_FitnessTrackers
 
-  @ConsumerShop @Web
+  @Web
   Scenario Outline: Fitness Trackers only E2E journey
     Given I am an CFA user and Lands on shop page
     And Navigate to Fitness Trackers
@@ -13,6 +13,6 @@ Feature: Reg_CS_FitnessTrackers
     And Continue to Review page and review the order
     Then order confirmation is displayed
 
-    Examples: 
+    Examples:
       | Device      | Firstname | Surname | Username     |
       | Fitbit Alta | TEST      | ACCEPTA | TEST ACCEPTA |

@@ -1,6 +1,6 @@
 Feature: Reg_CS_CFA_MBBPayG
 
- @ConsumerShop @Web
+  @Web
   Scenario Outline: PAYG MBB only E2E journey
     Given I am an CFA user and Lands on shop page
     And Navigate to PayG MBB page
@@ -13,8 +13,8 @@ Feature: Reg_CS_CFA_MBBPayG
     And land on the Non Credit check payment page and input <Username> and other details and click 'Continue on next step'
     And Continue to Review page and review the order
     Then order confirmation is displayed
-    
-    
-    Examples: 
+
+
+    Examples:
       | Firstname | Surname | Username     |
       | TEST      | ACCEPTA | TEST ACCEPTA |

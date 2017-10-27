@@ -1,6 +1,6 @@
 Feature: CFA_Phones_ColourDropdownsWithColourNamesBesideTheColourMultipleColour
 
-  @Web @oct2release
+  @Web
   Scenario Outline: CFA_Phones_ColourDropdownsWithColourNamesBesideTheColourMultipleColour
     Given I am an CFA user and Lands on shop page
     And navigate to PAYM Phones page

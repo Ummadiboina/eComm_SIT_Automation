@@ -1,6 +1,6 @@
 Feature: Reg_VOLTE_PayMPhonesHomeDeliveryWithAccessory
 
-@Volte_Regression @Web
+  @Web
   Scenario Outline: CFA PayM Phones Home delivery E2E journey with Accessory
     Given I am an CFA user and Lands on shop page
     And navigate to PAYM Phones page
@@ -16,6 +16,6 @@ Feature: Reg_VOLTE_PayMPhonesHomeDeliveryWithAccessory
     And Continue to Review page and review the order
     Then order confirmation is displayed with Volte message
 
-    Examples: 
+    Examples:
       | handset | Firstname | Surname | Username     |
       | Iphone7 | TEST      | ACCEPTA | TEST ACCEPTA |

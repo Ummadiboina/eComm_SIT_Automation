@@ -20,7 +20,7 @@ Feature: CFA_MBB_Data filters
     Then I should see tariffs based on the selected sort option <sortoption>
 
     ##New functionality ends
-    Examples: 
-      | handset           | Firstname | Surname | Username     | filtername | sortoption                 |
-      | Samsung Galaxy S8 | TEST      | ACCEPTA | TEST ACCEPTA | high       | Monthly data (Low to High) |
+    Examples:
+      | Device_Name   | Firstname | Surname | Username     | filtername | sortoption                 |
+      | Random Device | TEST      | ACCEPTA | TEST ACCEPTA | high       | Monthly data (Low to High) |
    #   | Apple iPhone 7    | TEST      | ACCEPTA | TEST ACCEPTA | high       |

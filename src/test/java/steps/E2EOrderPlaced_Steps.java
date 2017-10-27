@@ -931,15 +931,15 @@ public class E2EOrderPlaced_Steps {
 
 
 	/*
-	 * #########################################################################
+     * #########################################################################
 	 * #########
 	 */
-	/*
-	 * ############## All the Below are for the Payment Page Validations
+    /*
+     * ############## All the Below are for the Payment Page Validations
 	 * ##############
 	 */
-	/*
-	 * #########################################################################
+    /*
+     * #########################################################################
 	 * #########
 	 */
 
@@ -2391,7 +2391,7 @@ public class E2EOrderPlaced_Steps {
         try {
             PageFactory.initElements(driver, ShopLandingPage.class);
             ShopLandingPageAction.clickSignIn();
-            // Autoredirection.redirectUpgrades();
+            Autoredirection.redirectUpgrades();
             GlobalActions.CommonFunctions.checkTitle("Sign In Page");
         } catch (Exception e) {
             // TODO Auto-generated catch block
@@ -6155,11 +6155,10 @@ public class E2EOrderPlaced_Steps {
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         try {
             MouseHoverAction.MobilePayGSimLandingPage();
+        } catch (Exception e) {
+            e.printStackTrace();
+            driver.findElement(By.xpath("//*[@id='no']/span")).click();
         }
-catch(Exception e)
-{
-    driver.findElement(By.xpath("//*[@id='no']/span")).click();
-}
 
         /*PageFactory.initElements(driver, MouseHoverPage.class);
         //Edit the below
@@ -6167,22 +6166,38 @@ catch(Exception e)
         //Autoredirection.redirect();*/
     }
 
-    @And("^Tap on iPads and Tabets Tab$")
+    @And("^Tap on iPads and Tablets Tab$")
     public void tap_on_iPads_and_Tabets_Tab() throws Throwable {
-        // Write code here that turns the phrase above into concrete actions
+        try {
+            driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, FreeSimPage.class);
+            FreeSimPageActions.Mobile_iPadsandTabletstab();
+        } catch (Exception e) {
+            driver.findElement(By.xpath("//*[@id='no']/span")).click();
+        }
 
     }
 
-    @And("^Tap on iPad Sims > Pick a Sim$")
-    public void tap_on_iPad_Sims_Pick_a_Sim() throws Throwable {
-        // Write code here that turns the phrase above into concrete actions
+    @And("^Pick a Sim ([^\"]*) and ([^\"]*)$")
+    public void tap_on_iPad_Sims_Pick_a_Sim(String SurferType, String SimType) throws Throwable {
+        try {
+            driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, FreeSimPage.class);
+            FreeSimPageActions.selectSurfertypeAndSimtype(SurferType, SimType);
+        } catch (Exception e) {
+            Assert.fail("unable to pick sim");
+        }
 
     }
 
     @And("^Verify user is navigated to Delivery details page$")
     public void verify_user_is_navigated_to_Delivery_details_page() throws Throwable {
-        // Write code here that turns the phrase above into concrete actions
-
+        try {
+            String title = driver.getTitle();
+            System.out.println(title);
+        } catch (Exception e) {
+            Assert.fail("unable to verify delivery details page");
+        }
     }
 
     @And("^Enter (\\d+), SL(\\d+)UP and Add the Address details$")
@@ -6409,9 +6424,7 @@ catch(Exception e)
             PageFactory.initElements(driver, UpgradeCustomerPage.class);
             verificationsActions.VerifyheaderAsterisk();
             log.debug("verify copy text ‘You'll need to give details for all fields marked with an asterisk * is displayed$");
-            }
-
-         catch (Exception e) {
+        } catch (Exception e) {
             log.debug(e.getMessage());
             log.debug("verify copy text ‘You'll need to give details for all fields marked with an asterisk * is not displayed$");
             Assert.fail("verify copy text ‘You'll need to give details for all fields marked with an asterisk * is not displayed$");
@@ -6435,8 +6448,7 @@ catch(Exception e)
     public void continueToReviewPageClickOnChangeDelivery() throws Throwable {
         try {
             System.out.println("in change delivery method");
-        }
-        catch (Exception e) {
+        } catch (Exception e) {
             System.out.println(e.getMessage());
         }
 
@@ -6497,8 +6509,34 @@ catch(Exception e)
         }
     }
 
+    @And("^input additional card details Driving license ([^\"]*) and ([^\"]*)$")
+    public void AFADrivingLicenseLicense(String License_postcode, String License_Number) throws Throwable {
+        // Write code here that turns the phrase above into concrete actions
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, SimFreeDevicePage.class);
 
 
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.out.println("unable to enter additional card details in driving licence");
+            Assert.fail("unable to enter additional card details in driving licence");
+        }
+    }
+
+    @And("^input additional card details passport details ([^\"]*) and ([^\"]*)$")
+    public void PassportDetailsCountryPassport_number(String country, String Passport_number) throws Throwable {
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, SimFreeDevicePage.class);
+
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.out.println("unable to enter additional  details in passport field");
+            Assert.fail("unable to enter additional  details in passport field");
+        }
+    }
 
     // Below is Nested Class
 

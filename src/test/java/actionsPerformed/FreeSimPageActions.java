@@ -29,6 +29,15 @@ public class FreeSimPageActions extends Environment {
 
 	}
 
+	public static void Mobile_iPadsandTabletstab() throws InterruptedException, IOException {
+		System.out.println("Clicking on iPadsandTabletstab");
+		Thread.sleep(3000);
+		pageobjects.FreeSimPage.iPadsandTabletstab.click();
+		log.debug("Clicking on iPadsandTablets tab");
+		Screenshots.captureScreenshot();
+
+	}
+
 	public static void iPadsim() throws InterruptedException, IOException {
 		JavascriptExecutor jse = (JavascriptExecutor) driver;
 		jse.executeScript("window.scrollBy(0,450)", "");

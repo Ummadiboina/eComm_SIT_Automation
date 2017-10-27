@@ -1,6 +1,6 @@
 Feature: Reg_CS_AccessoriesOnly
 
-  @ConsumerShop @Web
+  @Web
   Scenario Outline: Accessories only E2E journey
     Given I am an CFA user and Lands on shop page
     And Navigate to Accessories
@@ -13,6 +13,6 @@ Feature: Reg_CS_AccessoriesOnly
     And Continue to Review page and review the order
     Then order confirmation is displayed
 
-    Examples: 
+    Examples:
       | Firstname | Surname | Username     |
       | TEST      | ACCEPTA | TEST ACCEPTA |
