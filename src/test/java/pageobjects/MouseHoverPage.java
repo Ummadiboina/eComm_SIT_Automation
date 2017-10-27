@@ -34,11 +34,11 @@ public class MouseHoverPage extends Environment {
 	@FindBy(how = How.XPATH, using = ("//a[contains(text(), 'Browse Phones')]"))
 	public static WebElement MoveMouseOnBrowsePhones;
 
-	@FindBy(how = How.XPATH, using = ("//a[contains(text(), 'iPad')]"))
+	@FindBy(how = How.XPATH, using = ("//a[contains(@manual_cm_re, 'meganav_Shop-_-Tablets-_-iPad')]"))
 	public static WebElement MoveMouseOniPad;
 
 	// Below will click on the Phone -- > Like New
-	@FindBy(how = How.XPATH, using = ("//a[contains(text(), 'Like New')]"))
+	@FindBy(how = How.XPATH, using = ("//a[contains(@text(), 'Like New')]"))
 	public static WebElement MoveMouseOnLikeNew;
 
 	// Below will click on the Sims

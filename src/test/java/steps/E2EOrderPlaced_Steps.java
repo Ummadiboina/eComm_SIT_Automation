@@ -3968,8 +3968,8 @@ public class E2EOrderPlaced_Steps {
     public void select_the_same_device(String devicename) throws Throwable {
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         try {
-            PageFactory.initElements(driver, TabletPage.class);
-            TabletPageActions.DeviceSelect(devicename);
+            PageFactory.initElements(driver, iPadPage.class);
+            iPadPageAction.validateiPadElements(devicename);
             Autoredirection.redirect();
         } catch (Exception e) {
             e.printStackTrace();
