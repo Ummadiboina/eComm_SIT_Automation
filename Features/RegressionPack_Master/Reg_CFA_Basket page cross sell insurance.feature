@@ -17,5 +17,5 @@ Feature: CFA_Basket page cross sell insurance
     And click on the 'Add now' button and verify Insurance gets added successfully
 
     Examples: 
-      | handset                | tariff                 |
-      | Samsung Galaxy S8 Plus | 9.99upfront68.00amonth |
+      | handset  | tariff                 |
+      | Apple8   | 9.99upfront68.00amonth |

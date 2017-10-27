@@ -18,5 +18,5 @@ Feature: Reg_Consumer_DelayedDelivery
 
     #Close the browser
     Examples: 
-      | DD_handset     | Firstname | Surname | Username     | status           |
-      | Apple iPhone 7 | TEST      | ACCEPTA | TEST ACCEPTA | Delayed Delivery |
+      | DD_handset         | Firstname | Surname | Username     | status           |
+      | BlackBerry Classic | TEST      | ACCEPTA | TEST ACCEPTA | Delayed Delivery |

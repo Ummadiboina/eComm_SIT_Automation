@@ -5,6 +5,8 @@ Feature: Reg_Consumer_PreOrder
     Given I am an CFA user and Lands on shop page
     And navigate to PAYM Phones page
     And I search for a PayM <handset> device
+    And click on the color dropdown
+    And select <color> color of the connected device
     And check the status <status> of the device
     And Navigate to device details page
     And Land on the 'Tariffs and extra' page
@@ -18,5 +20,5 @@ Feature: Reg_Consumer_PreOrder
 
     #Close the browser
     Examples: 
-      | handset        | Firstname | Surname | Username     | status    |
-      | Apple iPhone 7 | TEST      | ACCEPTA | TEST ACCEPTA | Pre Order |
+      | handset        | Firstname | Surname | Username     | status    |color|
+      | Apple iPhone 7 | TEST      | ACCEPTA | TEST ACCEPTA | Pre Order |Pink |
