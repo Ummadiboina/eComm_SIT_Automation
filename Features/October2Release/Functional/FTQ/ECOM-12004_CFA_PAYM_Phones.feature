@@ -1,6 +1,5 @@
 Feature: CFA_Phones_SSCcheckoutpagesMarkMandatoryFieldsWithAsterisk
 
-  CFA PayM phones SSC checkout validation
 
   @Web
   Scenario Outline: CFA_Phones_SSCcheckoutpagesMarkMandatoryFieldsWithAsterisk

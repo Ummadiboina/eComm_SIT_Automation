@@ -1,10 +1,10 @@
 Feature: CFA_seperate_tariff_ribbons_Tariff_page_Basket_page_html_overlay_for_tariff_ribbons
 
   @Web
-  Scenario Outline: 
-    This scenario ensures that when the customer on Acquisition journey selects tariff for a device with ribbons, then the tariff ribbon should be displayed with html overlay on the following pages,
-    1.Tariff and Extras page
-    2.Basket page
+  Scenario Outline:
+  This scenario ensures that when the customer on Acquisition journey selects tariff for a device with ribbons, then the tariff ribbon should be displayed with html overlay on the following pages,
+  1.Tariff and Extras page
+  2.Basket page
 
     Given I am an CFA user and Lands on shop page
     And navigate to PAYM Phones page
@@ -27,6 +27,6 @@ Feature: CFA_seperate_tariff_ribbons_Tariff_page_Basket_page_html_overlay_for_ta
     And Continue to Review page and review the order
     Then order confirmation is displayed
 
-    Examples: 
-      | handset  | tariff                 | Firstname | Surname |
-      | GalaxyS8 | 9.99upfront65.00amonth | TEST      | ACCEPTA |
+    Examples:
+      | handset  | tariff                 | Firstname | Surname | Username     |
+      | GalaxyS8 | 9.99upfront65.00amonth | TEST      | ACCEPTA | TEST ACCEPTA |

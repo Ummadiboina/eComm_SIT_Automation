@@ -1,6 +1,6 @@
 Feature: Reg_CS_PayMTabletsHomeDeliveryWithAccessory
 
-  @ConsumerShop @Web
+  @Web
   Scenario Outline: PayM Tablets Home delivery E2E journey with Accessory
     Given I am an CFA user and Lands on shop page
     And navigate to PAYM Tablets page
@@ -16,6 +16,6 @@ Feature: Reg_CS_PayMTabletsHomeDeliveryWithAccessory
     And Continue to Review page and review the order for Trustev details
     Then order confirmation is displayed
 
-    Examples: 
+    Examples:
       | Device         | Firstname | Surname | Username     |
       | Apple iPad 9.7 | TEST      | ACCEPTA | TEST ACCEPTA |

@@ -1,6 +1,6 @@
 Feature: Reg_CS_PayGPhonesHomeDeliveryWithoutAccessory
 
-  @ConsumerShop @Web
+  @Web
   Scenario Outline: CFA PayG Phones Home delivery E2E journey
     Given I am an CFA user and Lands on shop page
     And navigate to Pay as you Go Phones page
@@ -14,6 +14,6 @@ Feature: Reg_CS_PayGPhonesHomeDeliveryWithoutAccessory
     And Continue to Review page and review the order
     Then order confirmation is displayed
 
-    Examples: 
-      | Firstname | Surname | Username     |
-      | TEST      | ACCEPTA | TEST ACCEPTA |
+    Examples:
+      | handset       | Firstname | Surname | Username     |
+      | Random Device | TEST      | ACCEPTA | TEST ACCEPTA |

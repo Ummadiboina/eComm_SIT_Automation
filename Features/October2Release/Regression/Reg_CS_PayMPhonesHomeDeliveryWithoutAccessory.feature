@@ -1,6 +1,6 @@
 Feature: Reg_CS_PayMPhonesHomeDeliveryWithoutAccessory
 
-  @ConsumerShop @Web
+  @Web
   Scenario Outline: CFA PayM Phones Home delivery E2E journey without accessory
     Given I am an CFA user and Lands on shop page
     And navigate to PAYM Phones page
@@ -14,9 +14,9 @@ Feature: Reg_CS_PayMPhonesHomeDeliveryWithoutAccessory
     And Continue to Agreements page and confirm all the agreement checks
     And Continue to Review page and review the order
     Then order confirmation is displayed
-    
+
 
     #Close the browser
-    Examples: 
+    Examples:
       | handset | Firstname | Surname | Username     |
       | Iphone7 | TEST      | ACCEPTA | TEST ACCEPTA |

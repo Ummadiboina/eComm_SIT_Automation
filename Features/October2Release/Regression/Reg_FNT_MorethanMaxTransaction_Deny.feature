@@ -1,6 +1,6 @@
 Feature: Reg_FNT_MorethanMaxTransaction_Deny
 
-  @FNTRegression @Web
+  @Web
   Scenario Outline: FNT CFA PayM Phones Click and collect scenario for More than Max Transaction
     Given I am an CFA user and Lands on shop page
     And navigate to PAYM Phones page
@@ -14,6 +14,6 @@ Feature: Reg_FNT_MorethanMaxTransaction_Deny
     And land on the payment page and input <Username> and other details for Click and collect order and click 'Continue on next step'
     Then Order Decline page should be displayed
 
-    Examples: 
+    Examples:
       | handset  | Firstname | Surname | Username  |
       | GalaxyS8 | TEST      | NINE    | TEST NINE |

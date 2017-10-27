@@ -1,6 +1,6 @@
 Feature: Reg_FNT_PayMPhonesAdditionalDepositConfirmation
 
-  @Web @FNTRegression
+  @Web
   Scenario Outline: FNT CFA PayM phones Additional information and Order confirmed
     Given I am an CFA user and Lands on shop page
     And navigate to PAYM Phones page
@@ -17,6 +17,6 @@ Feature: Reg_FNT_PayMPhonesAdditionalDepositConfirmation
     And Continue to Review page and review the order
     Then order confirmation is displayed
 
-    Examples: 
+    Examples:
       | Firstname | Surname  | Username      | handset  | Username2    |
       | TEST      | ADDINFOI | TEST ADDINFOI | GalaxyS7 | TEST ACCEPTA |

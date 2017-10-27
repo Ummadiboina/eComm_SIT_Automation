@@ -1,7 +1,7 @@
 Feature: Reg_FNT_AFA_Handset_Click_and_Collect_Passport_and_Driving_license
 
   #launch hooks and get browser
-  @FNTRegression @Web
+  @Web
   Scenario Outline: This test scenario ensures that a CC order is successful which accepts additional information like Passport details Driver License details and additional card details but is finally in Referred status
     Given I login to Agent shop
     And performs Acquisition for New user
@@ -14,11 +14,11 @@ Feature: Reg_FNT_AFA_Handset_Click_and_Collect_Passport_and_Driving_license
     And perform the credit checks using valid <Firstname>, <Surname>, <HouseNumber>, <PostCode> and valid <Username>
     And Register customer with valid <Firstname>, <Surname>, <HouseNumber>, <PostCode> and other valid details in delivery page
     And input additional card details Driving license <License_postcode> and <License_Number>
-    And input additional card details passport details <country>, <Passport_number>
+    And input additional card details passport details <country> and <Passport_number>
     And Register customer with valid <Firstname>, <Surname>, <HouseNumber>, <PostCode> and other valid details in delivery page
     When Pay by card for PAYM device
     Then Order confirmation message should be displayed
-    
-    Examples: 
-      | Device              | Tariffs | Extras | DeliveryType | Firstname | Surname | Username     | HouseNumber | PostCode |
-      | S7 edge black 32 GB | Random  | Base   | HomeDelivery | TEST      | ACCEPTA | TEST ACCEPTA |           14 | SL11UP   |
+
+    Examples:
+      | Device              | Tariffs | License_postcode | License_Number | country | Passport_number | Firstname | Surname | Username     | HouseNumber | PostCode |
+      | S7 edge black 32 GB | Random  | sl11el           | 122SS23ERT     | IND     | G02DSRE£        | TEST      | ACCEPTA | TEST ACCEPTA | 14          | SL11UP   |

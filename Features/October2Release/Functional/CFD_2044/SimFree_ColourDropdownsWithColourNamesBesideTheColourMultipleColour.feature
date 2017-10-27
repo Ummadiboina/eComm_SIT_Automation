@@ -16,9 +16,9 @@ Feature: SimFree_ColourDropdownsWithColourNamesBesideTheColour_MultipleColour
     And Continue to Review page and review the order
     Then order confirmation is displayed
 
-    
+
     Examples:
-    
-    |Firstname|Surname|Username       |LikeNewTariffOption|LikeNewPhoneOption|color|
-    | TEST    |ACCEPTA|TEST ACCEPTA   |                   |SimFree           |Gold |
+
+      | Firstname | Surname | Username     | LikeNewTariffOption | LikeNewPhoneOption | color |
+      | TEST      | ACCEPTA | TEST ACCEPTA | DeviceOnly          | SimFree            | Gold  |
     

@@ -1,8 +1,8 @@
 Feature: Existing_Customer_Tablets_Data_filters_options_tariff_and_extras_page
-  This scenario ensures that when a customer in Existing customer journey selects 'Tablet' and navigated to tariff page ,then the customer 
+  This scenario ensures that when a customer in Existing customer journey selects 'Tablet' and navigated to tariff page ,then the customer
   should be able to see  'Data filter' button next to sort drop-down for PayM tariffs
 
-  @OctoberReleasePhase1 @Web
+  @Web
   Scenario Outline: Existing_Customer_Tablets_Data_filters_options_tariff_and_extras_page
     Given I am an Existing user and Navigates to Signin page
     And Signin using valid <username> and <password> credentials
@@ -20,7 +20,7 @@ Feature: Existing_Customer_Tablets_Data_filters_options_tariff_and_extras_page
     When I deselect filter button
     Then I should see tariffs based on the selected sort option <sortoption>
 
-    Examples: 
-      | handset         | Firstname | Surname | Username     | filtername | sortoption                 | username                      | password |
-      | SamsungGalaxy10 | TEST      | ACCEPTA | TEST ACCEPTA | high       | Monthly data (Low to High) | 27fe76531842@stf.ref.o2.co.uk | test123  |
+    Examples:
+      | tabletname                   | color | capacity | filtername | sortoption                 | username                      | password |
+      | SamsungRandom DeviceGalaxy10 | Black | 32GB     | high       | Monthly data (Low to High) | 27fe76531842@stf.ref.o2.co.uk | test123  |
    #   | Apple iPhone 7    | TEST      | ACCEPTA | TEST ACCEPTA | high       |

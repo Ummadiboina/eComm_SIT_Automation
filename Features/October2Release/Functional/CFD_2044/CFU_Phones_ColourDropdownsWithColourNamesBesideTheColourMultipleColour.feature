@@ -1,4 +1,4 @@
-\Feature: CFU_Phones_ColourDropdownsWithColourNamesBesideTheColourMultipleColour
+Feature: CFU_Phones_ColourDropdownsWithColourNamesBesideTheColourMultipleColour
 
   @Web
   Scenario Outline: CFU_Phones_ColourDropdownsWithColourNamesBesideTheColourMultipleColour Multiple Colours

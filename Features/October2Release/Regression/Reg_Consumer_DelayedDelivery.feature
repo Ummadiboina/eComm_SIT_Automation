@@ -1,6 +1,6 @@
 Feature: Reg_Consumer_DelayedDelivery
 
- @Regression @Web
+  @Web
   Scenario Outline: CFA PayM Delayed Delivery Phones Home delivery E2E journey
     Given I am an CFA user and Lands on shop page
     And navigate to PAYM Phones page
@@ -16,7 +16,7 @@ Feature: Reg_Consumer_DelayedDelivery
     And Continue to Review page and review the order
     Then order confirmation is displayed
 
-    #Close the browser
-    Examples: 
+     #Close the browser
+    Examples:
       | DD_handset     | Firstname | Surname | Username     | status           |
       | Apple iPhone 7 | TEST      | ACCEPTA | TEST ACCEPTA | Delayed Delivery |

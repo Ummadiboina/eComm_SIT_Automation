@@ -1,6 +1,6 @@
 Feature: Reg_CS_PayMSimOnlyRecommended
 
-  @SIMO @Web
+  @Web
   Scenario Outline: Sim Only PayM Recommended Tariff selection E2E validation
     Given I am an CFA user and Lands on shop page
     And navigate to PAYM SIMO page
@@ -13,6 +13,6 @@ Feature: Reg_CS_PayMSimOnlyRecommended
     And Continue to Review page and review the order
     Then order confirmation is displayed
 
-    Examples: 
+    Examples:
       | Contract  | Firstname | Surname | Username     |
       | 12 Months | TEST      | ACCEPTA | TEST ACCEPTA |

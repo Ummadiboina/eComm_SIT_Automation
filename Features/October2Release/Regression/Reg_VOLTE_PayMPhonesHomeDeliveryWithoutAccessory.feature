@@ -1,7 +1,7 @@
 Feature: Reg_VOLTE_PayMPhonesHomeDeliveryWithoutAccessory
 
   #launch hooks and get browser
-  @Volte_Regression @Web
+  @Web
   Scenario Outline: Volte PayM Phones Home delivery E2E journey without accessory
     Given I am an CFA user and Lands on shop page
     And navigate to PAYM Phones page

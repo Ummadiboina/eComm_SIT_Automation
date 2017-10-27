@@ -2,6 +2,7 @@ Feature: AFA_update_copy_for_Refer_with_Simo_response
 
   This scenario ensures that when the Agent in acquisition selects 'SIMO' tariff and proceed till order placement, then the agent should be displayed with updated copy of 'Refer with Simo' response
 
+  @Web
   Scenario Outline: AFA_update_copy_for_Refer_with_Simo_response
 
     Given I login to Agent shop

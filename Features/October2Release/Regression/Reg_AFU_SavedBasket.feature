@@ -1,7 +1,7 @@
 Feature: Reg_AFU_SavedBasket
 
   #launch hooks and get browser
-  @AgentsRegression @Web
+  @Web
   Scenario Outline: AFU_Saved Basket functionality
     Given I login to Agent shop
     And performs Upgrade for <user>
