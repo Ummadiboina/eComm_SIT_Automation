@@ -8,6 +8,8 @@ import cucumber.api.DataTable;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.Reporter;
@@ -69,10 +71,54 @@ public class DeliveryPageActions extends Environment {
 
     public static void ClickContinue() throws InterruptedException, IOException {
         Thread.sleep(3000);
-        pageobjects.DeliveryPage.Continue.click();
-        log.debug("Clicking on the continue link");
-        System.out.println("Continuing to next page");
-        Screenshots.captureScreenshot();
+        log.debug("in click continue function");
+
+        Boolean isPresent = driver.findElements(By.xpath("//*[@id='checkbox-terms-agreement-required']")).size() > 0;
+        if (isPresent) {
+            log.debug("checkbox is present, so going to click on that");
+            Thread.sleep(3000);
+            js.executeScript("arguments[0].click();",driver.findElement(By.xpath("//*[@id='checkbox-terms-agreement-required']")));
+            log.debug("checkbox Selected");
+            pageobjects.DeliveryPage.Continue.click();
+            log.debug("Clicking on the continue link");
+            Thread.sleep(4000);
+            Screenshots.captureScreenshot();
+        } else {
+            pageobjects.DeliveryPage.Continue.click();
+            log.debug("Clicking on the continue link");
+            Screenshots.captureScreenshot();
+        }
+
+
+    }
+
+    public static void MobileClickContinue() throws InterruptedException, IOException {
+        Thread.sleep(3000);
+        log.debug("in click continue function");
+
+        Boolean isPresent = driver.findElements(By.xpath("//*[@id='checkbox-terms-agreement-required']")).size() > 0;
+        if (isPresent) {
+            log.debug("checkbox is present, so going to click on that");
+            Thread.sleep(3000);
+            js.executeScript("arguments[0].click();",driver.findElement(By.xpath("//*[@id='checkbox-terms-agreement-required']")));
+            log.debug("checkbox Selected");
+
+            //driver.findElement(By.xpath("//*[@id='checkbox-terms-agreement-required']")).sendKeys(Keys.ENTER);
+
+            //*[@id="btn-continue"]
+
+            log.debug("going to click on the continue link");
+
+            js.executeScript("arguments[0].click();",pageobjects.DeliveryPage.SendMeMySim2);
+            log.debug("Clicking on the continue link");
+            Thread.sleep(4000);
+            Screenshots.captureScreenshot();
+        } else {
+            pageobjects.DeliveryPage.Continue.click();
+            log.debug("Clicking on the continue link");
+            Screenshots.captureScreenshot();
+        }
+
 
     }
 
@@ -91,7 +137,6 @@ public class DeliveryPageActions extends Environment {
     }
 
     public static void checkStockExtMsgDP() throws IOException, InterruptedException {
-        // TODO Auto-generated method stub
         String ActualStockExtMsg = pageobjects.DeliveryPage.StockExtMessageDDPODP.getText();
         String ExpStockExtMsg = "You'll pay for your phone now. We�ll send you an email or text to let you know when it will be delivered";
         System.out.println("Act Del MSg" + ActualStockExtMsg);
@@ -125,14 +170,14 @@ public class DeliveryPageActions extends Environment {
     public static void SetDelivery_Datatable(DataTable Table) throws InterruptedException, IOException {
         List<List<String>> values = Table.raw();
         for (int i = 0; i < values.size(); i++) {
-            System.out.println("The Details passed for delivery page are as below \n "+values.get(i).toString());
+            System.out.println("The Details passed for delivery page are as below \n " + values.get(i).toString());
         }
         pageobjects.DeliveryPage.Housenumber.sendKeys(values.get(0).get(1).toString());
         System.out.println("Entered House number");
         log.debug("Entered House number");
         pageobjects.DeliveryPage.Postcode.sendKeys(values.get(1).get(1).toString());
-        System.out.println("Entered Post code");
-        //log.debug("Entered Post code");
+        log.debug("Entered Post code");
+        Thread.sleep(3000);
         pageobjects.DeliveryPage.Find_Address.click();
         System.out.println("Clicked on the Find address button");
         //log.debug("Clicked on the Find address button");
@@ -143,22 +188,18 @@ public class DeliveryPageActions extends Environment {
 
             pageobjects.DeliveryPage.SelectAddress1.click();
             log.debug("Selected an address");
-                  }
+        }
         //*[@id="delivery-address-selector"]
-                  else if (pageobjects.DeliveryPage.SelectAddressDropdown.isDisplayed())
-        {
+        else if (pageobjects.DeliveryPage.SelectAddressDropdown.isDisplayed()) {
             log.debug("in select addressdropdown");
             Select dropdown = new Select(pageobjects.DeliveryPage.SelectAddressDropdown);
             dropdown.selectByIndex(1);
-            //{"officeOrflat":"","houseNumberName":"5","address1":"KEATS COURT","address2":"HORFIELD","townOrCity":"BRISTOL AVON","postCode":"BS7 0NP"}
-           /* dropdown.getFirstSelectedOption().click();
-            driver.findElement(By.xpath("//*[@id='delivery-address-selector']/option[2]")).click();
-           */
             log.debug("Selected an address");
 
         }
         //Screenshots.captureScreenshot();
     }
+
     public static void AboutYou_Datatable(DataTable Table) throws IOException, InterruptedException {
         List<List<String>> values = Table.raw();
         log.debug("Entering an Random email id");
@@ -172,43 +213,76 @@ public class DeliveryPageActions extends Environment {
         Select dropdown = new Select(pageobjects.DeliveryPage.Title);
         dropdown.selectByValue(values.get(2).get(1).toString());
         log.debug("Selected the title dropdown ");
-        System.out.println("Selected the title dropdown "+values.get(2).get(1).toString());
+        System.out.println("Selected the title dropdown " + values.get(2).get(1).toString());
 
         Thread.sleep(3000);
         DeliveryPage.First_Name.sendKeys(values.get(3).get(1).toString());
-        log.debug("Entered first name as " +values.get(3).get(1).toString());
-        System.out.println("Entered first name as " +values.get(3).get(1).toString());
+        log.debug("Entered first name as " + values.get(3).get(1).toString());
+        System.out.println("Entered first name as " + values.get(3).get(1).toString());
 
         Thread.sleep(3000);
         DeliveryPage.Last_Name.sendKeys(values.get(4).get(1).toString());
-        log.debug("Entered last name as " +values.get(4).get(1).toString());
-        System.out.println("Entered last name as " +values.get(4).get(1).toString());
+        log.debug("Entered last name as " + values.get(4).get(1).toString());
+        System.out.println("Entered last name as " + values.get(4).get(1).toString());
 
         Thread.sleep(3000);
         DeliveryPage.Contact_Number.sendKeys(values.get(5).get(1).toString());
-        System.out.println("Entered contact number as " +values.get(5).get(1).toString());
+        System.out.println("Entered contact number as " + values.get(5).get(1).toString());
 
         Thread.sleep(3000);
         DeliveryPage.Password.sendKeys(values.get(6).get(1).toString());
-        System.out.println("Entered password as " +values.get(6).get(1).toString());
+        System.out.println("Entered password as " + values.get(6).get(1).toString());
 
         Thread.sleep(3000);
         DeliveryPage.security_answer.sendKeys(values.get(7).get(1).toString());
-        System.out.println("Entered Security Answer as " +values.get(7).get(1).toString());
+        System.out.println("Entered Security Answer as " + values.get(7).get(1).toString());
 
         Thread.sleep(3000);
         DeliveryPage.date.sendKeys(values.get(8).get(1).toString());
-        System.out.println("Entered Date of Birth - Date as " +values.get(8).get(1).toString());
+        System.out.println("Entered Date of Birth - Date as " + values.get(8).get(1).toString());
 
         Thread.sleep(3000);
         DeliveryPage.Month.sendKeys(values.get(9).get(1).toString());
-        System.out.println("Entered Date of Birth - Month as " +values.get(9).get(1).toString());
+        System.out.println("Entered Date of Birth - Month as " + values.get(9).get(1).toString());
 
         Thread.sleep(3000);
         DeliveryPage.year.sendKeys(values.get(10).get(1).toString());
-        System.out.println("Entered Date of Birth - Year as " +values.get(10).get(1).toString());
+        System.out.println("Entered Date of Birth - Year as " + values.get(10).get(1).toString());
         log.debug("Entered all the other relavant details");
         System.out.println("Entered all the other Relevant details");
+        Screenshots.captureScreenshot();
+
+    }
+
+    public static void AboutYou_Datatable_FreeSim(DataTable Table) throws IOException, InterruptedException {
+        List<List<String>> values = Table.raw();
+        log.debug("Entering an Random email id");
+        System.out.println("Entering an Random email id");
+        DeliveryPage.Email_Address.sendKeys(RandomEmailAddressCreation.RandomEmail());
+        Thread.sleep(3000);
+        System.out.println("Setting the About you options");
+        log.debug("Setting the About you options");
+
+        Thread.sleep(3000);
+        Select dropdown = new Select(pageobjects.DeliveryPage.Title);
+        dropdown.selectByValue(values.get(2).get(1).toString());
+        log.debug("Selected the title dropdown ");
+        System.out.println("Selected the title dropdown " + values.get(2).get(1).toString());
+
+        Thread.sleep(3000);
+        DeliveryPage.First_Name.sendKeys(values.get(3).get(1).toString());
+        log.debug("Entered first name as " + values.get(3).get(1).toString());
+        System.out.println("Entered first name as " + values.get(3).get(1).toString());
+
+        Thread.sleep(3000);
+        DeliveryPage.Last_Name.sendKeys(values.get(4).get(1).toString());
+        log.debug("Entered last name as " + values.get(4).get(1).toString());
+        System.out.println("Entered last name as " + values.get(4).get(1).toString());
+
+        Thread.sleep(3000);
+        DeliveryPage.Contact_Number.sendKeys(values.get(5).get(1).toString());
+        System.out.println("Entered contact number as " + values.get(5).get(1).toString());
+
         Screenshots.captureScreenshot();
 
     }
