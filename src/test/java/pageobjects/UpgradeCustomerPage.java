@@ -188,7 +188,7 @@ public class UpgradeCustomerPage {
 	public static WebElement SignoutLink;
 
 	//Clicking on View all Tablets
-	@FindBy(how = How.XPATH, using = "//a[@href='/upgrade/tablets/']")
+	@FindBy(how = How.XPATH, using = "//a[@href='#tablets']")
 	public static WebElement ViewAllTablets;
 
 	//Clicking on random Table
