@@ -897,6 +897,22 @@ public class E2EOrderPlaced_Steps {
         }
     }
 
+    @And("^input the below details in Free Sim Delivery page$")
+    public void Freesim_inputDetailsDeliveryPage(DataTable userData) throws Throwable {
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, DeliveryPage.class);
+            DeliveryPageActions.SetDelivery_Datatable(userData);
+            Thread.sleep(5000);
+            DeliveryPageActions.AboutYou_Datatable_FreeSim(userData);
+            Thread.sleep(2000);
+            DeliveryPageActions.MobileClickContinue();
+            Thread.sleep(5000);
+        } catch (Exception e) {
+            System.out.println("Unable to input details in delivery page");
+            Assert.fail("Unable to input details in delivery page");
+        }
+    }
 
     @And("^Click on the 'Continue button'$")
     public void clickOnTheContinueButton() throws Throwable {
@@ -6214,8 +6230,13 @@ public class E2EOrderPlaced_Steps {
 
     @And("^Tap on Send me my sim button$")
     public void tap_on_Send_me_my_sim_button() throws Throwable {
-        // Write code here that turns the phrase above into concrete actions
-
+      /*  try {
+            driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, FreeSimPage.class);
+            FreeSimPageActions.selectSurfertypeAndSimtype(SurferType, SimType);
+        } catch (Exception e) {
+            Assert.fail("unable to pick sim");
+        }*/
     }
 
 
