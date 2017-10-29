@@ -18,5 +18,5 @@ Scenario Outline: CFA PayM Phones Home delivery E2E journey with Accessory
 	Then order confirmation is displayed 
 	
 	Examples: 
-		| handset  | Firstname | Surname | Username     |
-		| GalaxyS8 | TEST      | ACCEPTA | TEST ACCEPTA |
+		| handset| Firstname | Surname | Username     |
+		| Apple8 | TEST      | ACCEPTA | TEST ACCEPTA |

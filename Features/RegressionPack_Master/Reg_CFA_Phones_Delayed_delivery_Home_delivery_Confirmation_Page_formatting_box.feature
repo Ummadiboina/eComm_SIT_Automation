@@ -23,5 +23,5 @@ Feature: CFA_Phones_Delayed_delivery_Home_delivery_Confirmation_Page_formatting_
     #Step 12 and Step 13 of ALM clubbed together
     #Close the browser
     Examples: 
-      | handset          | Firstname | Surname | Username     | Status           | color |
-      | AppleiPhone7Plus | TEST      | ACCEPTA | TEST ACCEPTA | Delayed Delivery | Black |
+      | handset            | Firstname | Surname | Username     | Status           | color |
+      | BlackBerry Classic | TEST      | ACCEPTA | TEST ACCEPTA | Delayed Delivery | Black |
