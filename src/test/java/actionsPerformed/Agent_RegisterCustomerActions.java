@@ -3,6 +3,8 @@ package actionsPerformed;
 import java.util.concurrent.TimeUnit;
 
 import org.apache.log4j.Logger;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Reporter;
 
@@ -121,7 +123,11 @@ public class Agent_RegisterCustomerActions extends Environment {
 		dropdown2.selectByIndex(2);
 		pageobjects.Agent_RegisterCustomerPage.securityAnswer.sendKeys("Rotary");
 		Thread.sleep(2000);
-		Agent_RegisterCustomerPage.registerCustomer.click();
+		//Agent_RegisterCustomerPage.registerCustomer.click();
+		WebElement element = pageobjects.Agent_RegisterCustomerPage.registerCustomer;
+		JavascriptExecutor executor = (JavascriptExecutor)driver;
+		executor.executeScript("arguments[0].click();", element);
+
 		Thread.sleep(6000);
 		log.debug("Clicked on Register customer");
 		System.out.println("Clicked on Register customer");
