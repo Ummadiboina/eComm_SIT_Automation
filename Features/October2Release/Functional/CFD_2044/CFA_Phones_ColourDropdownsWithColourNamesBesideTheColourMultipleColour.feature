@@ -22,14 +22,13 @@ Feature: CFA_Phones_ColourDropdownsWithColourNamesBesideTheColourMultipleColour
       | Title                 | Mr           |
       | FirstName             | Test         |
       | Surname               | Accepta      |
-      | Contact Number        | 078228377333 |
+      | Contact Number        | 07123456789  |
       | Password              | TesterSit123 |
       | Security Question     | Random       |
       | Security Answer       | Sit Testers  |
-      | Date of Birth - Date  | 22           |
-      | Date of Birth - Month | 10           |
-      | Date of Birth - Year  | 1990         |
-    And Click on the 'Continue button'
+      | Date of Birth - Date  | 12           |
+      | Date of Birth - Month | 12           |
+      | Date of Birth - Year  | 1980         |
     And land on the payment page and input <Username> and other details and click 'Continue on next step'
     And Continue to Agreements page and confirm all the agreement checks
     And Continue to Review page and review the order
@@ -38,4 +37,4 @@ Feature: CFA_Phones_ColourDropdownsWithColourNamesBesideTheColourMultipleColour
     #Close the browser
     Examples:
       | handset | Username    | color         | CFATariffColour |
-      | Apple8 | TEST ACCEPTA | Gold           | Gold            |
+      | Apple8 | TEST ACCEPTA | Gold           | Gold           |

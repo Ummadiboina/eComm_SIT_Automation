@@ -199,7 +199,6 @@ public class DeliveryPageActions extends Environment {
         }
         //Screenshots.captureScreenshot();
     }
-
     public static void AboutYou_Datatable(DataTable Table) throws IOException, InterruptedException {
         List<List<String>> values = Table.raw();
         log.debug("Entering an Random email id");
@@ -238,16 +237,16 @@ public class DeliveryPageActions extends Environment {
         System.out.println("Entered Security Answer as " + values.get(7).get(1).toString());
 
         Thread.sleep(3000);
-        DeliveryPage.date.sendKeys(values.get(8).get(1).toString());
-        System.out.println("Entered Date of Birth - Date as " + values.get(8).get(1).toString());
+        DeliveryPage.date.sendKeys(values.get(9).get(1).toString());
+        System.out.println("Entered Date of Birth - Date as " + values.get(9).get(1).toString());
 
         Thread.sleep(3000);
-        DeliveryPage.Month.sendKeys(values.get(9).get(1).toString());
-        System.out.println("Entered Date of Birth - Month as " + values.get(9).get(1).toString());
+        DeliveryPage.Month.sendKeys(values.get(10).get(1).toString());
+        System.out.println("Entered Date of Birth - Month as " + values.get(10).get(1).toString());
 
         Thread.sleep(3000);
-        DeliveryPage.year.sendKeys(values.get(10).get(1).toString());
-        System.out.println("Entered Date of Birth - Year as " + values.get(10).get(1).toString());
+        DeliveryPage.year.sendKeys(values.get(11).get(1).toString());
+        System.out.println("Entered Date of Birth - Year as " + values.get(11).get(1).toString());
         log.debug("Entered all the other relavant details");
         System.out.println("Entered all the other Relevant details");
         Screenshots.captureScreenshot();

@@ -184,6 +184,7 @@ public class UpgradeCustomerPageActions extends Environment {
         Thread.sleep(3000);
         if (pageobjects.UpgradePhonesListingPage.ViewAllPhones.isDisplayed()) {
             executor.executeScript("arguments[0].click();", pageobjects.UpgradePhonesListingPage.ViewAllPhones);
+            Thread.sleep(3000);
         }
         Screenshots.captureScreenshot();
     }

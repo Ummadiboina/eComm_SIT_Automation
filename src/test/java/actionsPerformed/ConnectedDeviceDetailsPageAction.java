@@ -311,7 +311,7 @@ public class ConnectedDeviceDetailsPageAction extends Environment {
 		// TODO Auto-generated method stub
 		if (pageobjects.ConnectedDeviceDetailsPage.UpdatedColorLabel.isDisplayed()) {
 			System.out.println("The color dropdown is displayed");
-			pageobjects.ConnectedDeviceDetailsPage.UpdatedColorLabel.click();
+			pageobjects.ConnectedDeviceDetailsPage.colorselectBoxArow.click();
 			log.debug("The colour dropdown is clicked");
 		} else {
 			System.out.println("colour drop down is not displayed");
@@ -324,6 +324,7 @@ public class ConnectedDeviceDetailsPageAction extends Environment {
 
 		if(pageobjects.ConnectedDeviceDetailsPage.Colourdropdownbox.isDisplayed()) {
 			WebElement colourDropdown=driver.findElement(By.xpath("//*[@id='colourSelectBoxItOptions']"));
+			//a[@class='selectboxit-option-anchor']//span[@class='selectboxit-option-label']
 			List<WebElement> elementColor = colourDropdown.findElements(By.xpath("//*[@class='selectboxit-option-label']"));
 			for(int i=0;i<elementColor.size();i++) {
 				System.out.println(elementColor.get(i).getText());

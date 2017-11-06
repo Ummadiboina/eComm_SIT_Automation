@@ -26,7 +26,7 @@ import java.util.Date;
 				toPDF = true,
 				excludeCoverageTags = {"@flaky" },
 				includeCoverageTags = {"@passed" },
-				outputFolder = "testResult/cucumber_detailed_result/DATE(yyyy-MM-dd HH)"
+				outputFolder = "testResult/cucumber_detailed_result/DATE(yyyy-MM-dd HH-mm-ss)"
 
 				//outputFolder = "${user.dir}/DATE(yyyy-MM-dd HH:mm:ss.S)"
 				//reportPrefix = "results-${user}"
@@ -40,7 +40,7 @@ import java.util.Date;
 @CucumberOptions(plugin = { "html:testResult/cucumber-html-report",
 		"json:testResult/cucumber.json", "pretty:testResult/cucumber-pretty.txt",
 		"usage:testResult/cucumber-usage.json", "junit:testResult/cucumber-results.xml" },
-		features = { "Features//October2Release//" },
+		features = { "Features//October2Release//Functional//CFD_2044" },
 		glue = { "steps" },
 		tags = {"@Web"})
 
