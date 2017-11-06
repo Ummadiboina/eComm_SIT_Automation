@@ -1680,23 +1680,23 @@ public class E2EOrderPlaced_Steps {
 	 * #########
 	 */
 
-    @Then("^Register customer with valid ([^\"]*), ([^\"]*), ([^\"]*), ([^\"]*) and other valid details in delivery page$")
+    @Then("^Register the customer with valid ([^\"]*), ([^\"]*), ([^\"]*), ([^\"]*) and other valid details in delivery page$")
 
     // @Given("^Register customer with valid ([^\"]*) and ([^\"]*) and other
     // valid details in delivery page$")
-    public void register_customer(String Firstname, String Surname, String HouseNumber, String PostCode)
+    public void register_the_customer(String Firstname, String Surname, String HouseNumber, String PostCode)
             throws Throwable {
-        try {
+     //   try {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, Agent_RegisterCustomerPage.class);
             Agent_RegisterCustomerActions.PayGRegistration(Firstname, Surname, HouseNumber, PostCode);
-
+/*
         } catch (Exception e) { // TODO Auto-generated catch block
             System.out.println("Unable to Register customer , please see the failure screenshot");
             Assert.fail("Unable to Register customer , please see the failure screenshot");
 
         }
-
+*/
     }
 
     /*
