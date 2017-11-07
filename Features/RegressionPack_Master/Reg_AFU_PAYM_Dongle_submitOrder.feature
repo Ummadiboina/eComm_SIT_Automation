@@ -10,7 +10,7 @@ Feature: Reg_AFU_PAYM_Dongle_SubmitOrder
     And Select valid <Tariffs> from tariffs tab
     And select a valid Handset and Tariff combination
     And Validate all the Basket content and checkout
-    When submit order button is clicked
+    When Pay by card
     Then Order confirmation message should be displayed
 
     Examples: 

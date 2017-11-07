@@ -84,7 +84,10 @@ public class DeliveryPageActions extends Environment {
             Thread.sleep(4000);
             Screenshots.captureScreenshot();
         } else {
-            pageobjects.DeliveryPage.Continue.click();
+            WebElement element = pageobjects.DeliveryPage.Continue;
+            JavascriptExecutor executor = (JavascriptExecutor)driver;
+            executor.executeScript("arguments[0].click();", element);
+            //pageobjects.DeliveryPage.Continue.click();
             log.debug("Clicking on the continue link");
             Screenshots.captureScreenshot();
         }
