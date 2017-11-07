@@ -64,7 +64,7 @@ public class MouseHoverPage extends Environment {
 	@FindBy(how = How.XPATH, using = ("//a[contains(text(),'Pay Monthly sims')]|//a[contains(text(),'Pay Monthly Sims')]"))
 	public static WebElement MoveMouseOnPayMSims;
 
-	@FindBy(how = How.XPATH, using = ("//a[contains(text(), 'Upgrades')]"))
+	@FindBy(how = How.XPATH, using = ("(//a[normalize-space()='Upgrades'])[1]"))
 	public static WebElement MouseMoveonUpgrade;
 
 	/*
@@ -73,7 +73,7 @@ public class MouseHoverPage extends Environment {
 	 */
 
 	//// a[@manual_cm_re='meganav_Shop-_-Upgrades-_-Upgrade Now']
-	@FindBy(how = How.XPATH, using = ("//a[@manual_cm_re='meganav_Shop-_-Upgrades-_-Upgrade now']"))
+	@FindBy(how = How.XPATH, using = ("(//a[normalize-space()='Upgrade now'])[1]"))
 	public static WebElement MouseMoveonUpgradeAndUpgradeNow;
 
 	// Below will click on the Tablets Tab
