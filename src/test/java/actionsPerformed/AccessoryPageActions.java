@@ -239,7 +239,11 @@ public class AccessoryPageActions extends Environment {
 			System.out.println(DeviceDetailsQuantityValue);
 			Assert.assertEquals("2", DeviceDetailsQuantityValue);
 
-			driver.findElement(By.id("deviceDetailsSubmit")).click();
+			WebElement element = driver.findElement(By.id("deviceDetailsSubmit"));
+			JavascriptExecutor executor = (JavascriptExecutor)driver;
+			executor.executeScript("arguments[0].click();", element);
+
+			//driver.findElement(By.id("deviceDetailsSubmit")).click();
 
 			Thread.sleep(3000);
 			WebElement BasketQuantity = driver.findElement(By.id("accessory-quantitySelectBoxIt"));

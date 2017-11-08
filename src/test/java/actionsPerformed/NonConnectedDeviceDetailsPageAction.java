@@ -47,8 +47,12 @@ public class NonConnectedDeviceDetailsPageAction extends Environment {
 		// TODO Auto-generated method stub
 
 		System.out.println("Clicking on basket icon");
+		WebElement element = pageobjects.AccessoryPage.Basket;
+		JavascriptExecutor executor = (JavascriptExecutor)driver;
+		executor.executeScript("arguments[0].click();", element);
 
-		pageobjects.AccessoryPage.Basket.click();
+
+		//pageobjects.AccessoryPage.Basket.click();
 		log.debug("Clicked on basket icon");
 		Screenshots.captureScreenshot();
 	}
