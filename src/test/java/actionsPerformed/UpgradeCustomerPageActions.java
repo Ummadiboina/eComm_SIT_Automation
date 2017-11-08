@@ -337,7 +337,7 @@ public class UpgradeCustomerPageActions extends Environment {
 
             pageobjects.UpgradeCustomerPage.Continue.click();
             System.out.println("Clicked on Continue button in Upgrade page");
-            Assert.fail("The continue button is not present");
+
         }
 
         else  {

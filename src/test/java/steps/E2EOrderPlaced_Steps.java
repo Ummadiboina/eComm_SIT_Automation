@@ -496,18 +496,20 @@ public class E2EOrderPlaced_Steps {
 
     @Given("^add Accessories to basket within limit in details page and navigate to basket$")
     public void add_Accessories_to_basket_within_limit_in_details_page_and_navigate_to_basket() throws Throwable {
-        try {
+     //   try {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, AccessoryPage.class);
             PageFactory.initElements(driver, NonConnectedDeviceDetailsPage.class);
             AccessoryPageActions.selectAnyAccessoryLimit();
-            // NonConnectedDeviceDetailsPageAction.ClickonBasketIcon();
+            NonConnectedDeviceDetailsPageAction.ClickonBasketIcon();
+            /*
         } catch (Exception e) {
             // TODO Auto-generated catch block
             System.out.println("Unable to add accessories to basket");
             Assert.fail("Unable to add accessories to basket");
 
         }
+        */
 
     }
 

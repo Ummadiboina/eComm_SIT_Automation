@@ -32,7 +32,7 @@ public class AccessoryPage {
 
 	// Below is for clicking on the Basket icon in Accessories page
 
-	@FindBy(how = How.ID, using = "basketIcon")
+	@FindBy(how = How.XPATH, using = "//*[@id='deviceDetailsSubmit']")
 	public static WebElement Basket;
 
 	@FindBy(how = How.XPATH, using = " ")

@@ -161,7 +161,11 @@ public class BasketPageActions extends Environment {
 			checkOutButtonValidation.click();
 		} else {
 			System.out.println("Queue page is not displayed");
-			pageobjects.BasketPage.checkoutbtn.click();
+			WebElement element = pageobjects.BasketPage.checkoutbtn;
+			JavascriptExecutor executor = (JavascriptExecutor)driver;
+			executor.executeScript("arguments[0].click();", element);
+
+			//pageobjects.BasketPage.checkoutbtn.click();
 			log.debug("Clicking on Checkout button");
 		}
 		Screenshots.captureScreenshot();

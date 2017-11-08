@@ -400,9 +400,11 @@ public class Agent_DealBuilderPageActions extends Environment {
 					Thread.sleep(2000);
 
 					pageobjects.Agent_DealBuilderPage.AgentTradeAccept.click();
-					Screenshots.captureScreenshot();
+
+
 
 				}
+				//Screenshots.captureScreenshot();
 			}
 			// Switching to Parent window i.e Main Window.
 			driver.switchTo().window(Mainwindow1);
