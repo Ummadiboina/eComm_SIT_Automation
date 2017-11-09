@@ -6,11 +6,14 @@ Feature: AFU_Tablet_Promotions_section_in_deal_builder_MULTIPLE_promotions_Order
     Given I login to Agent shop
     And performs Upgrade for <user>
     And Select a valid PayM <Device>
-    And Select valid <Tariffs> from tariffs tab with multiple promotion
+    And Select valid <Tariff> from tariffs tab
+    #The tariff selected should have a Multiple promotion
     And Verify that the 'Promotions' section is displayed with all the applied promotions description in the deal builder
-    And Verify that for more than 1 promotions returned, display 'Promotions' one after another separated by a line
+    And Verify that for more than 1 promotions returned
+    And Verify that the promotion returned is displayed in a single line
     And Validate all the Basket content and checkout
-    And Verify that for more than 1 promotions returned, display 'Promotions' one after another separated by a line
+    And Verify that for more than 1 promotions returned
+    And Verify that the promotion returned is displayed in a single line
     And Verify that the 'Promotions' section is displayed with all the applied promotions description in the order summary
     And Validate all the Basket content and checkout
     Then perform all the advisory checks
