@@ -6,7 +6,7 @@ Feature: CFU_SIMO_Targeted_bolton_promotions_upgrade_options_page
 
     Given I am existing user and I click on Signin button
     And Signin using valid <username> and <password> credentials
-    And Click on "No thanks, I'll keep my device" and continue to Upgrade
+    And Navigate to upgrade phone
     And Verify that the targeted promotion section is displayed just below the 'recycle options' section
     And Verify that the heading of the panel is 'A package just for you:'
     And Verify that the promotion description is displayed just after the statement

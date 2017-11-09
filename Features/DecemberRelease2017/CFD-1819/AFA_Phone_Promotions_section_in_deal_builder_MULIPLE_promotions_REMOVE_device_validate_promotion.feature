@@ -6,9 +6,11 @@ Feature: AFA_Phone_Promotions_section_in_deal_builder_MULIPLE_promotions_REMOVE_
     Given I login to Agent shop
     And performs Acquisition for New user
     And Select a valid PayM <Device>
-    And Select valid <Tariffs> from tariffs tab with multiple promotion
+    And Select valid <Tariff> from tariffs tab
+    #The tariff selected should have a Multiple promotion
     And verify that the 'Promotions' section is displayed with all the applied promotions description in the deal builder
     Then Remove the device or tariff from the deal builder
+    Then the 'Promotions' should be removed and the 'Promotion section' should be empty
 
     Examples:
       | Device              | Tariffs |

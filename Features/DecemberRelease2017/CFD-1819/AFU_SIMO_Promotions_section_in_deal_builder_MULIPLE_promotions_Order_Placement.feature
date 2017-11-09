@@ -5,12 +5,15 @@ Feature: AFU_SIMO_Promotions_section_in_deal_builder_MULIPLE_promotions_Order_Pl
   Scenario Outline: AFU_SIMO_Promotions_section_in_deal_builder_MULIPLE_promotions_Order_Placement
     Given I login to Agent shop
     And performs Upgrade for <user>
-    And Select valid SIMO <Tariff> from tariffs tab with multiple promotions
+    And Select valid <Tariff> from tariffs tab
+    #The tariff selected should have a Multiple promotion
     And verify that the 'Promotions' section is displayed with all the applied promotions description in the deal builder
-    And Verify that for more than 1 promotions returned, display 'Promotions' one after another separated by a line
+    And Verify that for more than 1 promotions returned
+    And Verify that the promotion returned is displayed in a single line
     And Validate all the Basket content and checkout
     And Verify that the 'Promotions' section is displayed with all the applied promotions description in the order summary
-    And Verify that for more than 1 promotions returned, display 'Promotions' one after another separated by a line
+    And Verify that for more than 1 promotions returned
+    And Verify that the promotion returned is displayed in a single line
     Then perform all the advisory checks
     And perform the credit checks using valid <Firstname>, <Surname>, <HouseNumber>, <PostCode> and valid <Username>
     And Register customer with valid <Firstname>, <Surname>, <HouseNumber>, <PostCode> and other valid details in delivery page

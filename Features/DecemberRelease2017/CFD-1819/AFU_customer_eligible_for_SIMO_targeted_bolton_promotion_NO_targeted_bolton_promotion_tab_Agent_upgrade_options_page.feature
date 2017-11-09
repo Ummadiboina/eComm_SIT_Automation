@@ -5,7 +5,10 @@ Feature: AFU_customer_eligible_for_SIMO_targeted_bolton_promotion_NO_targeted_bo
   Scenario Outline: AFU_SIMO_Promotions_section_in_deal_builder_MULIPLE_promotions_Order_Placement
     Given I login to Agent shop
     And performs Upgrade for <user>
-    And Verify that the customer is presented with the targeted promotion tab at the end of the tabs and also Verify the following are displayed in targeted promotion tab
+    And Select valid <Tariff> from tariffs tab
+    #The tariff selected should be SIMO targeted bolt-on promotion
+    And Verify that the customer is presented with the targeted promotion tab at the end of the tabs
+    And Verify the promotions bolt on are displayed in targeted promotion tab
     And Click on 'Select' Button in targeted promotion tab
     And Validate all the Basket content and checkout
     Then perform all the advisory checks

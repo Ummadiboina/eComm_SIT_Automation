@@ -6,7 +6,8 @@ Feature: AFA_Tablet_Refresh_tariff_CCA_Promotions_section_in_deal_builder_SINGLE
     Given I login to Agent shop
     And performs Acquisition for New user
     And Select a valid PayM <Device>
-    And Select a Refresh <Tariff> with single promotion
+    And Select valid <Tariff> from tariffs tab
+    #The tariff selected should have a Single promotion
     And verify that the 'Promotions' section is displayed with all the applied promotions description in the deal builder
     And verify that the promotion returned is displayed in a single line
     And Select the tariff option in the deal builder 'Dropdown' for generating CCA

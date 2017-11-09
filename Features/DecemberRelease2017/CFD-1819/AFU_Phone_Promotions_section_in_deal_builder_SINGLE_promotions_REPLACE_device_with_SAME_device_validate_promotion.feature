@@ -7,13 +7,14 @@ Feature: AFU_Phone_Promotions_section_in_deal_builder_SINGLE_promotions_REPLACE_
     Given I login to Agent shop
     And performs Upgrade for <user>
     And Select a valid PayM <Device>
-    And Select valid <Tariffs> from tariffs tab with single promotion
+    And Select valid <Tariff1> from tariffs tab
+    #The tariff selected should have a Single promotion
     And select a valid Handset and Tariff combination
     And Verify that the 'Promotions' section is displayed with all the applied promotions description in the deal builder
     And Verify that the promotion returned is displayed in a single line
-    When Replace the device or tariff from the deal builder with same device
+    And Select valid <Tariff> from tariffs tab
     Then the 'Promotions' should be retained in the deal builder
 
     Examples:
-      | user        | Device | Tariffs |
-      |             |        | Single  |
+      | user        | Device | Tariff1 | Tariff |
+      |             |        | Single  |        |
