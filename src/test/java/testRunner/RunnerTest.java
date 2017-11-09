@@ -40,7 +40,7 @@ import java.util.Date;
 @CucumberOptions(plugin = { "html:testResult/cucumber-html-report",
 		"json:testResult/cucumber.json", "pretty:testResult/cucumber-pretty.txt",
 		"usage:testResult/cucumber-usage.json", "junit:testResult/cucumber-results.xml" },
-		features = { "Features//October2Release//Functional//CFD_2044" },
+		features = { "Features//October2Release//Regression//Reg_Trustev_PayMPhonesHomeDeliveryWithoutAccessory" },
 		glue = { "steps" },
 		tags = {"@Web"})
 
