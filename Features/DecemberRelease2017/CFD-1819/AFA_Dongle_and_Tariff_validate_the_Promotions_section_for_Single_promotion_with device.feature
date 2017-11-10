@@ -9,8 +9,8 @@ Feature: AFA_Dongle_and_Tariff_validate_the_Promotions_section_for_Single_promot
     And Select valid <Tariff> from tariffs tab
     #The tariff selected should have a single promotion
     And select a valid Handset and Tariff combination
-    And Verify that the 'Promotions' section is displayed with all the applied promotions description in the deal builder
-    And Verify that the promotion returned is displayed in a single line
+    And the 'Promotions' section is displayed with all the applied promotions description in the deal builder
+    And the promotion returned is displayed in a single line
 
     Examples:
     | Device | Tariffs |

@@ -8,13 +8,13 @@ Feature: AFU_Tablet_Promotions_section_in_deal_builder_MULTIPLE_promotions_Order
     And Select a valid PayM <Device>
     And Select valid <Tariff> from tariffs tab
     #The tariff selected should have a Multiple promotion
-    And Verify that the 'Promotions' section is displayed with all the applied promotions description in the deal builder
-    And Verify that for more than 1 promotions returned
-    And Verify that the promotion returned is displayed in a single line
+    And the 'Promotions' section is displayed with all the applied promotions description in the deal builder
+    And for more than one promotions returned
+    And the promotion returned is displayed in a single line
     And Validate all the Basket content and checkout
-    And Verify that for more than 1 promotions returned
-    And Verify that the promotion returned is displayed in a single line
-    And Verify that the 'Promotions' section is displayed with all the applied promotions description in the order summary
+    And for more than 1 promotions returned
+    And the promotion returned is displayed in a single line
+    And the 'Promotions' section is displayed with all the applied promotions description in the order summary
     And Validate all the Basket content and checkout
     Then perform all the advisory checks
     #  And perform the credit checks using valid <Firstname>, <Surname>, <HouseNumber>, <PostCode> and valid <Username>

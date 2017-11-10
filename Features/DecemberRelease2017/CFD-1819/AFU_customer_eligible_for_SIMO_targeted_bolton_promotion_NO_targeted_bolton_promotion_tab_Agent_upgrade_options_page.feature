@@ -7,8 +7,8 @@ Feature: AFU_customer_eligible_for_SIMO_targeted_bolton_promotion_NO_targeted_bo
     And performs Upgrade for <user>
     And Select valid <Tariff> from tariffs tab
     #The tariff selected should be SIMO targeted bolt-on promotion
-    And Verify that the customer is presented with the targeted promotion tab at the end of the tabs
-    And Verify the promotions bolt on are displayed in targeted promotion tab
+    And the customer is presented with the targeted promotion tab at the end of the tabs
+    And the promotions bolt on are displayed in targeted promotion tab
     And Click on 'Select' Button in targeted promotion tab
     And Validate all the Basket content and checkout
     Then perform all the advisory checks
