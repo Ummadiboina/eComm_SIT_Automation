@@ -9,9 +9,9 @@ Feature: AFA_Phone_Promotions_section_in_deal_builder_MULTIPLE_promotions_REPLAC
     And Select a valid PayM <Device1>
     And Select valid <Tariff> from tariffs tab
     #The tariff selected should have a Multiple promotion
-    And Verify that the 'Promotions' section is displayed with all the applied promotions description in the deal builder
-    And Verify that for more than one promotion is returned
-    And Verify that the promotion returned is displayed in a single line
+    And the 'Promotions' section is displayed with all the applied promotions description in the deal builder
+    And more than one promotion is returned
+    And the promotion returned is displayed in a single line
     Then Replace the device <Device2> from the deal builder with different device and the 'Promotions' should be removed from the deal builder
 
     Examples:

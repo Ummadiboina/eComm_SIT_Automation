@@ -10,8 +10,8 @@ Feature: AFU_Phone_Promotions_section_in_deal_builder_SINGLE_promotions_REPLACE_
     And Select valid <Tariff1> from tariffs tab
     #The tariff selected should have a Single promotion
     And select a valid Handset and Tariff combination
-    And Verify that the 'Promotions' section is displayed with all the applied promotions description in the deal builder
-    And Verify that the promotion returned is displayed in a single line
+    And the 'Promotions' section is displayed with all the applied promotions description in the deal builder
+    And the promotion returned is displayed in a single line
     And Select valid <Tariff> from tariffs tab
     Then the 'Promotions' should be retained in the deal builder
 

@@ -9,10 +9,10 @@ Feature: AFU_customer_eligible_for_Standard_or_CCA_targeted_bolton_promotion_tab
     And performs Upgrade for <user>
     And Select valid <Tariff> from tariffs tab
     #The tariff selected should be SIMO targeted bolt-on promotion
-    And Verify that the customer is presented with the targeted promotion tab at the end of the tabs
+    And the customer is presented with the targeted promotion tab at the end of the tabs
     And Click on 'Select' Button in targeted promotion tab
     And Click on 'Copy to Basket' CTA
-    And validate all the Basket content and checkout
+    And Validate all the Basket content and checkout
     When submit order button is clicked
     Then Order confirmation message should be displayed
 

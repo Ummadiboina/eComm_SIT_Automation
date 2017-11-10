@@ -8,9 +8,9 @@ Feature: AFA_SIMO_Promotions_section_in_deal_builder_SINGLE_promotions_EMPTY_bas
     And performs Acquisition for New user
     And Select valid <Tariff> from tariffs tab
     #The tariff selected should have a single promotion
-    And Verify that the 'Promotions' section is displayed with all the applied promotions description in the deal builder
-    And Verify that the promotion returned is displayed in a single line
-    When Click on 'Empty basket' CTA then the  'Promotions' should be removed from the basket
+    And the 'Promotions' section is displayed with all the applied promotions description in the deal builder
+    And the promotion returned is displayed in a single line
+    Then Click on 'Empty basket' CTA the 'Promotions' should be removed from the basket
 
     Examples:
       | Tariff |

@@ -5,7 +5,7 @@ Feature: AFU_customer_NOT_eligible_for_targeted_bolton_promotion_tab_Agent_upgra
   Scenario Outline: AFU_customer_NOT_eligible_for_targeted_bolton_promotion_tab_Agent_upgrade_options_page
     Given I login to Agent shop
     And performs Upgrade for <user>
-    And verify that the customer is not presented with the targeted promotion tab at the end of the tabs
+    And the customer is not presented with the targeted promotion tab at the end of the tabs
 
     Examples:
     | user |
