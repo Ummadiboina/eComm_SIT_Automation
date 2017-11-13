@@ -633,8 +633,9 @@ public class E2EOrderPlaced_Steps {
         try {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, PAYMandPAYGTariffAndExtrasPage.class);
-            PAYMandPAYGTariffAndExtrasPageActions.TariffSelect("Randomtariff");
             Thread.sleep(3000);
+            PAYMandPAYGTariffAndExtrasPageActions.TariffSelect("Randomtariff");
+            Thread.sleep(6000);
             // PAYMandPAYGTariffAndExtrasPageActions.addToBasketLive();
         } catch (Exception e) {
             // TODO Auto-generated catch block
@@ -1164,7 +1165,7 @@ public class E2EOrderPlaced_Steps {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, ReviewPage.class);
             Thread.sleep(5000);
-            CommonFunctions.checkTitle("Review Page");
+           // CommonFunctions.checkTitle("Review Page");
             ReviewPageActions.gettitlepage();
             ReviewPageActions.TermsCheckBox();
             ReviewPageActions.PayNow();
@@ -6488,8 +6489,8 @@ public class E2EOrderPlaced_Steps {
 
     //Enahanced coour dropdown
 
-    @And("^verify the name of the colour is next to the colour tile in CFAPhoneColour$")
-    public void verify_the_name_of_the_colour_is_next_to_the_colour_tile_in_CFAPhoneColour() throws Throwable {
+    @And("^verify the name of the colour is next to the colour tile in CFAPhoneColour([^\"]*)$")
+    public void verify_the_name_of_the_colour_is_next_to_the_colour_tile_in_CFAPhoneColour(String color) throws Throwable {
         try {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, ConnectedDeviceDetailsPage.class);

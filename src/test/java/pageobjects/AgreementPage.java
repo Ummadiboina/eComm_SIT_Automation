@@ -30,8 +30,8 @@ public class AgreementPage {
 	  @FindBy(how=How.XPATH,using="//*[@id='terms-declaration']") 
 		public static WebElement TermsDeclarationCheckbox;
 	 ////*[@id='ccaSection']/div[1]/div/button
-	 
-	  @FindBy(how=How.XPATH,using="//*[@id='ccaSection']/div[1]/div/button") 
+	 //
+	  @FindBy(how=How.XPATH,using="(//span[normalize-space()='Accept, agree and continue'])[2]")
 			public static WebElement ccaSection;
 	  
 	  
