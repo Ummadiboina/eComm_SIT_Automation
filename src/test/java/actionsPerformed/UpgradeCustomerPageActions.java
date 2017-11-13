@@ -1572,6 +1572,10 @@ public class UpgradeCustomerPageActions extends Environment {
         Screenshots.captureScreenshot();
     }
 
+
+
+
+
     public static void ConfirmCTADisplayed() throws Exception {
 
         if (UpgradeCustomerPage.ConfirmCTA.isDisplayed()) {
@@ -1597,7 +1601,10 @@ public class UpgradeCustomerPageActions extends Environment {
     public static void ClickIdontneedAsim() throws Exception {
 
         if (UpgradeCustomerPage.IdontNeedSimRadio.isDisplayed()) {
-            UpgradeCustomerPage.IdontNeedSimRadio.click();
+            WebElement element = pageobjects.UpgradeCustomerPage.IdontNeedSimRadio;
+            JavascriptExecutor executor = (JavascriptExecutor)driver;
+            executor.executeScript("arguments[0].click();", element);
+            //UpgradeCustomerPage.IdontNeedSimRadio.click();
             log.debug("The I need a sim radio button is clicked");
         }
         Screenshots.captureScreenshot();

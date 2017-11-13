@@ -5099,6 +5099,18 @@ public class E2EOrderPlaced_Steps {
 
     }
 
+    @Given("^Select a 'I dont need a sim'option$")
+    public void select_a_I_dont_need_a_sim_option() throws Throwable {
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, UpgradeCustomerPage.class);
+            UpgradeCustomerPageActions.ClickIdontneedAsim();
+        } catch (Exception e) {
+            e.printStackTrace();
+            Assert.fail("The Radio button for I need a sim is not clicked");
+        }
+    }
+
     @And("^Verify that 'Confirm CTA' is displayed$")
     public void verify_that_Confirm_CTA_is_displayed() throws Throwable {
 
