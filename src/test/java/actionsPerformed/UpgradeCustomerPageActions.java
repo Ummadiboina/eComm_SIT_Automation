@@ -333,7 +333,15 @@ public class UpgradeCustomerPageActions extends Environment {
 
     public static void clickOnContinueButton() throws Throwable {
 
-        if (UpgradeCustomerPage.SecurityOtac.isDisplayed()) {
+        List<WebElement> MissingElement = driver.findElements(By.xpath("//*[@class='rounded-button']"));
+        if (MissingElement.size() > 0) {
+
+            pageobjects.UpgradeCustomerPage.Continue.click();
+            System.out.println("Clicked on Continue button in Upgrade page");
+
+        }
+
+        else  {
             System.out.println("The Security checks page is displayed");
             pageobjects.UpgradeCustomerPage.SecurityOtac.sendKeys("999999");
             pageobjects.UpgradeCustomerPage.SecurityContinue.click();
@@ -341,10 +349,7 @@ public class UpgradeCustomerPageActions extends Environment {
             pageobjects.UpgradeCustomerPage.Continue.click();
             System.out.println("Clicked on Continue button in Upgrade page");
 
-        } else {
 
-            pageobjects.UpgradeCustomerPage.Continue.click();
-            System.out.println("Clicked on Continue button in Upgrade page");
         }
         Screenshots.captureScreenshot();
     }
@@ -1256,6 +1261,8 @@ public class UpgradeCustomerPageActions extends Environment {
             System.out.println("Clicked on skip this step");
             System.out.println("Selected a Random Tariff");
         }
+        else
+            System.out.println("The Delivery page is displayed");
         Screenshots.captureScreenshot();
     }
 

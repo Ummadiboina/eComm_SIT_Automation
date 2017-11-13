@@ -8,6 +8,8 @@ import org.openqa.selenium.By;
 
 import GlobalActions.Screenshots;
 import helpers.Environment;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebElement;
 
 public class ReviewPageActions extends Environment {
 	final static Logger log = Logger.getLogger("ReviewPageActions");
@@ -21,14 +23,21 @@ public class ReviewPageActions extends Environment {
 
 	public static void TermsCheckBox() throws IOException, InterruptedException {
 		System.out.println("Clicking on the checkbox");
-		pageobjects.ReviewPage.TermsCheckBox.click();
+		WebElement element = pageobjects.ReviewPage.TermsCheckBox;
+		JavascriptExecutor executor = (JavascriptExecutor)driver;
+		executor.executeScript("arguments[0].click();", element);
+
+		//pageobjects.ReviewPage.TermsCheckBox.click();
 		log.debug("Clicked the Checkbox in Terms");
 		Screenshots.captureScreenshot();
 	}
 
 	public static void PayNow() throws InterruptedException, IOException {
 		System.out.println("Clicking on Pay now");
-		pageobjects.ReviewPage.PayNow.click();
+		WebElement element = pageobjects.ReviewPage.PayNow;
+		JavascriptExecutor executor = (JavascriptExecutor)driver;
+		executor.executeScript("arguments[0].click();", element);
+		//pageobjects.ReviewPage.PayNow.click();
 		System.out.println("Completing on Review page");
 		log.debug("Clicked the Paynow button");
 		Thread.sleep(5000L);

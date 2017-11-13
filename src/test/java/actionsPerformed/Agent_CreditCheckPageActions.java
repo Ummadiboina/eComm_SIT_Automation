@@ -7,6 +7,8 @@ import java.util.concurrent.TimeUnit;
 
 import org.apache.log4j.Logger;
 import org.junit.Assert;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Reporter;
 
@@ -156,8 +158,12 @@ public class Agent_CreditCheckPageActions extends Environment {
 
 				Thread.sleep(2000);
 
-				Agent_CreditCheckDetailsPage.UsethisCard.click();
+				//Agent_CreditCheckDetailsPage.UsethisCard.click();
 				Screenshots.captureScreenshot();
+				WebElement element = pageobjects.Agent_CreditCheckDetailsPage.UsethisCard;
+				JavascriptExecutor executor = (JavascriptExecutor)driver;
+				executor.executeScript("arguments[0].click();", element);
+
 
 				// Need to add steps here
 

@@ -496,18 +496,20 @@ public class E2EOrderPlaced_Steps {
 
     @Given("^add Accessories to basket within limit in details page and navigate to basket$")
     public void add_Accessories_to_basket_within_limit_in_details_page_and_navigate_to_basket() throws Throwable {
-        try {
+     //   try {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, AccessoryPage.class);
             PageFactory.initElements(driver, NonConnectedDeviceDetailsPage.class);
             AccessoryPageActions.selectAnyAccessoryLimit();
-            // NonConnectedDeviceDetailsPageAction.ClickonBasketIcon();
+            NonConnectedDeviceDetailsPageAction.ClickonBasketIcon();
+            /*
         } catch (Exception e) {
             // TODO Auto-generated catch block
             System.out.println("Unable to add accessories to basket");
             Assert.fail("Unable to add accessories to basket");
 
         }
+        */
 
     }
 
@@ -1366,7 +1368,10 @@ public class E2EOrderPlaced_Steps {
         driver.findElement(By.xpath("//*[@id='updateEmailAddressProceedButton']")).click();
         System.out.println("Updated Device Plan Link Email Address");
         Thread.sleep(3000);
-        driver.findElement(By.xpath("//*[@id='secciYesButton']")).click();
+        WebElement element = driver.findElement(By.xpath("//*[@id='secciYesButton']"));
+        JavascriptExecutor executor = (JavascriptExecutor)driver;
+        executor.executeScript("arguments[0].click();", element);
+        //driver.findElement(By.xpath("//*[@id='secciYesButton']")).click();
         System.out.println("Clicked on the O2 Refresh Deal Summary YES button");
 
     }
@@ -1655,7 +1660,7 @@ public class E2EOrderPlaced_Steps {
     @Then("^perform the credit checks using valid ([^\"]*), ([^\"]*), ([^\"]*), ([^\"]*) and valid ([^\"]*)$")
     public void CreditCheck(String Firstname, String Surname, String HouseNumber, String PostCode, String Username)
             throws Throwable {
-        try {
+       // try {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, Agent_CreditCheckDetailsPage.class);
             Agent_CreditCheckPageActions.Creditcheck(Firstname, Surname, HouseNumber, PostCode);
@@ -1663,13 +1668,14 @@ public class E2EOrderPlaced_Steps {
             Agent_CreditCheckPageActions.BankDetails(Username);
             System.out.println("Completed Bank details");
             Thread.sleep(30000);
+         /*
         } catch (Exception e) {
             // TODO Auto-generated catch block
             System.out.println("Unable to perform credit checks , please see the failure screenshot");
             Assert.fail("Unable to perform credit checks , please see the failure screenshot");
 
         }
-
+*/
     }
 	/*
 	 * #########################################################################
@@ -4143,6 +4149,7 @@ public class E2EOrderPlaced_Steps {
         try {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, UpgradeCustomerPage.class);
+            Thread.sleep(6000);
             UpgradeCustomerPageActions.clickOnContinueButton();
         } catch (Exception e) {
             // TODO Auto-generated catch block

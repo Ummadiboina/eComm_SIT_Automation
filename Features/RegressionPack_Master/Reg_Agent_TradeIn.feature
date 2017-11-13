@@ -16,6 +16,7 @@ Feature: Reg_Agent_TradeIn
     And click on the 'CCA' link
     And Signin using valid <username> and <password> credentials
     And Click on 'Continue' button on upgrade page
+    And perform <Action> in OTAC page
     And Click on the 'Continue button' in delivery page
     And land on the payment page and input <Username> and other details and click 'Continue on next step' in upgrade journey
     And Continue to CCA or Buyout or Trade In Agreements page and confirm all the agreement checks
@@ -23,5 +24,5 @@ Feature: Reg_Agent_TradeIn
     Then order confirmation is displayed
 
     Examples: 
-      | User        | Device              | Tariffs | username                      | user         | DeliveryType | Firstname | Surname | Username     | HouseNumber | PostCode | password |
-      | 07521123534 | S7 edge black 32 GB | Refresh | 13ma88212553@stf.ref.o2.co.uk | TEST ACCEPTA | HomeDelivery | TEST      | ACCEPTA | TEST ACCEPTA | Flat 6      | SL11EL   | test123  |
+      | User        | Device              | Tariffs | username               | user         | DeliveryType | Firstname | Surname | Username     | HouseNumber | PostCode | password |Action|
+      | 07521000553 | S7 edge black 32 GB | Refresh | in04962f_909382@o2.com | TEST ACCEPTA | HomeDelivery | TEST      | ACCEPTA | TEST ACCEPTA | Flat 6      | SL11EL   | test123  |skip  |

@@ -22,4 +22,4 @@ Feature: Reg_AFA_PAYM_Acquistion
     # Then CCALink Should be generated
     Examples: 
       | Device              | Tariffs | Extras | DeliveryType | Firstname | Surname | Username     | HouseNumber | PostCode |
-      | S7 edge black 32 GB | Random  | Base   | HomeDelivery | TEST      | ACCEPTA | TEST ACCEPTA |          14 | SL11UP   |
+      | S7 edge black 32 GB | Standard| Base   | HomeDelivery | TEST      | ACCEPTA | TEST ACCEPTA |          14 | SL11UP   |
