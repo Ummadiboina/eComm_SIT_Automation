@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
+import java.util.concurrent.TimeUnit;
 
 import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
@@ -482,14 +483,60 @@ public class Agent_DealBuilderPageActions extends Environment {
 
 	public static void HandsetTariffCombinationforPhones() throws InterruptedException {
 		try {
-			Select dropdown = new Select(pageobjects.Agent_DealBuilderPage.HandsetTariffCombination);
-			dropdown.selectByIndex(3);
-			System.out.println("Selecting combination of handset and talkplan");
-			System.out.println(
-					"Selected combination is" + pageobjects.Agent_DealBuilderPage.HandsetTariffCombination.getText());
+			if(Agent_DealBuilderPage.deviceAdded_DealBuilder.isDisplayed()){
+				System.out.println(" Device is added into the builder ");
+				log.debug(" Device is added into the builder ");
+				if(Agent_DealBuilderPage.promotions_DealBuilder.isDisplayed()){
+					System.out.println(" Promotions is added into the builder ");
+					log.debug(" Promotions is added into the builder ");
+				}else{
+					System.out.println("Failed to added the Promotions into the builder ");
+					log.debug("Failed to added the Promotions into the builder ");
+			}
+			}
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			System.out.println("handset and tariff dropdown is not displayed, should be fine");
+		}
+	}
+	//select remove the device
+
+	public static void verifyPromotionsDisplayed() throws Exception {
+		try {
+			if(Agent_DealBuilderPage.deviceAdded_DealBuilder.isDisplayed()){
+				System.out.println(" Device is added into the builder ");
+				log.debug(" Device is added into the builder ");
+				if(Agent_DealBuilderPage.promotions_DealBuilder.isDisplayed()){
+					System.out.println(" Promotions is added into the builder ");
+					log.debug(" Promotions is added into the builder ");
+					Agent_DealBuilderPage.removeDevice_DealBuilder.click();
+					driver.manage().timeouts().implicitlyWait(1, TimeUnit.MINUTES);
+					System.out.println(" Remove the Device from the builder ");
+					log.debug(" Remove the Device from the builder ");
+					Thread.sleep(5000);
+					Agent_DealBuilderPage.deviceTab.click();
+					Thread.sleep(2000);
+					Agent_DealBuilderPage.selectDevive2_formInstock.click();
+					driver.manage().timeouts().implicitlyWait(1,TimeUnit.MINUTES);
+					System.out.println(" added the device2 into the builder ");
+					log.debug(" added the device2 into the builder ");
+					Thread.sleep(5000);
+					if(!Agent_DealBuilderPage.promotions_DealBuilder.isDisplayed()){
+						System.out.println(" Successfylly validated the Promotions are not displayed when add the deviece into the deail builder ");
+						log.debug(" Successfylly validated the Promotions are not displayed when added the add into the deail builder ");
+					}else{
+						System.out.println(" Failed to validated the Promotions are not displayed when add the deviece into the deail builder ");
+						log.debug(" Failed to validated the Promotions are not displayed when added the add into the deail builder ");
+					}
+				}else{
+					System.out.println("Failed to added the Promotions into the builder ");
+					log.debug("Failed to added the Promotions into the builder ");
+				}
+			}
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			System.out.println(" Failed to validate the Promotions ");
+			log.debug(" Failed to validate the Promotions ");
 		}
 	}
 

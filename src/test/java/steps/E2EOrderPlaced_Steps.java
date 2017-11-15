@@ -635,8 +635,9 @@ public class E2EOrderPlaced_Steps {
         try {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, PAYMandPAYGTariffAndExtrasPage.class);
-            PAYMandPAYGTariffAndExtrasPageActions.TariffSelect("Randomtariff");
             Thread.sleep(3000);
+            PAYMandPAYGTariffAndExtrasPageActions.TariffSelect("Randomtariff");
+            Thread.sleep(6000);
             // PAYMandPAYGTariffAndExtrasPageActions.addToBasketLive();
         } catch (Exception e) {
             // TODO Auto-generated catch block
@@ -1166,7 +1167,7 @@ public class E2EOrderPlaced_Steps {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, ReviewPage.class);
             Thread.sleep(5000);
-            CommonFunctions.checkTitle("Review Page");
+           // CommonFunctions.checkTitle("Review Page");
             ReviewPageActions.gettitlepage();
             ReviewPageActions.TermsCheckBox();
             ReviewPageActions.PayNow();
@@ -1595,6 +1596,23 @@ public class E2EOrderPlaced_Steps {
 
     }
 
+    //And the 'Promotions' section is displayed with all the applied promotions description in the deal builder
+
+    @Then("^Replace the device (.*) from the deal builder with different device and the 'Promotions' should be removed from the deal builder$")
+    public void replaceDeveiceThenPromotionShouldNotAvailable(String Promotionss) throws Exception {
+        try {
+            driver.manage().timeouts().implicitlyWait(2, TimeUnit.MINUTES);
+            Agent_DealBuilderPageActions.verifyPromotionsDisplayed();
+            Thread.sleep(3000);
+            // System.out.println("Selecting a valid tariff");
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            System.out.println("Unable to select valid tariff, please see the failure screenshot");
+            Assert.fail("Unable to select valid tariff, please see the failure screenshot");
+
+        }
+
+    }
 	/*
 	 * #########################################################################
 	 * #########
@@ -6507,8 +6525,8 @@ public class E2EOrderPlaced_Steps {
 
     //Enahanced coour dropdown
 
-    @And("^verify the name of the colour is next to the colour tile in CFAPhoneColour$")
-    public void verify_the_name_of_the_colour_is_next_to_the_colour_tile_in_CFAPhoneColour() throws Throwable {
+    @And("^verify the name of the colour is next to the colour tile in CFAPhoneColour([^\"]*)$")
+    public void verify_the_name_of_the_colour_is_next_to_the_colour_tile_in_CFAPhoneColour(String color) throws Throwable {
         try {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, ConnectedDeviceDetailsPage.class);

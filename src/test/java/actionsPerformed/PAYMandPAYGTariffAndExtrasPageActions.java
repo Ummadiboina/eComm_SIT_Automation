@@ -44,10 +44,10 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 	}
 
 	public static void TariffSelect(String ElementName) throws IOException, InterruptedException {
-		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
-
-		if (ElementName.contains("Randomtariff")) {
+		driver.manage().timeouts().implicitlyWait(120, TimeUnit.SECONDS);
+		if (ElementName.equalsIgnoreCase("Randomtariff")) {
 			pageobjects.PAYMandPAYGTariffAndExtrasPage.RandomTariff1.sendKeys(Keys.ENTER);
+			//pageobjects.PAYMandPAYGTariffAndExtrasPage.RandomTariff1.click();
 			System.out.println("Selected a Random Tariff");
 			log.debug("Selected a Random Tariff");
 		}
