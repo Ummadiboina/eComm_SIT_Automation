@@ -99,6 +99,7 @@ public class Agent_DealBuilderPageActions extends Environment {
 			System.out.println("Selected Refresh Tariff ");
 			log.debug("Selected Refresh Tariff ");
 		}
+
 		////////////////////////////// Basecomms
 		////////////////////////////// Tariff//////////////////////////////////////
 
@@ -113,6 +114,11 @@ public class Agent_DealBuilderPageActions extends Environment {
 		Screenshots.captureScreenshot();
 
 	}
+
+
+	/////////////////////////////////////////////////////////////////////////////////////////////
+	///////////////////////////////////////////////////////////////////////////////////
+
 	/////////////////////////////////// Basecomms Agent Offers column
 	/////////////////////////////////// validation//////////////////////////////////
 
@@ -152,7 +158,6 @@ public class Agent_DealBuilderPageActions extends Environment {
 			Screenshots.captureScreenshot();
 		}
 	}
-
 	public static void SelectExtras(String Extras) throws InterruptedException, IOException {
 
 		// Selecting an Extra
@@ -491,6 +496,17 @@ public class Agent_DealBuilderPageActions extends Environment {
 			// TODO Auto-generated catch block
 			System.out.println("handset and tariff dropdown is not displayed, should be fine");
 		}
+	}
+	/////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////    EMPTY_basket_validate_promotion      //////////////////////
+
+	public static void Emptyabove()throws IOException, InterruptedException {
+
+		Thread.sleep(3000);
+		Agent_DealBuilderPage.Emptyabove.click();
+		System.out.println("Clicked on Empty Above ");
+		log.debug("Clicked on Empty Above ");
+		Screenshots.captureScreenshot();
 	}
 
 }

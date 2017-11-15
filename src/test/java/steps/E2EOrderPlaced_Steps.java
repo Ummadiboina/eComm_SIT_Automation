@@ -1214,6 +1214,17 @@ public class E2EOrderPlaced_Steps {
 
         }
     }
+/*
+* ######################################################
+* CFU_Targeted_promotions_upgrade_options_page_Basket_page_SSC_and_PDF_changes
+* ##########################################################
+*
+ */
+@And("^click on 'Change delivery date and time' link$")
+public void click_on_Change_delivery_date_and_time_link() throws Throwable {
+    // Write code here that turns the phrase above into concrete actions
+    throw new PendingException();
+}
 
 	/*
 	 * #########################################################################
@@ -1594,8 +1605,26 @@ public class E2EOrderPlaced_Steps {
         }
 
     }
+    /*
+* #########################################################################
+* #######EMPTY_basket_validate_promotion##################################
+*/
 
-	/*
+    @Then("^Click on 'Empty above' CTA the 'Promotions' should be removed from the basket$")
+    public void click_on_Empty_above_CTA_the_Promotions_should_be_removed_from_the_basket() throws Throwable {
+        try {
+            driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, Agent_DealBuilderPage.class);
+            Agent_DealBuilderPageActions.Emptyabove();
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            System.out.println("Unable to click on Empty above, please see the failure screenshot");
+            Assert.fail("Unable to get order confirmation screen , please see the failure screenshot");
+
+        }
+    }
+
+    /*
 	 * #########################################################################
 	 * #########
 	 */
@@ -3788,7 +3817,7 @@ public class E2EOrderPlaced_Steps {
                 originalList = PhonesListingPageAction.getCurrentSortOrderUsingDeviceName();
                 TempList3 = PhonesListingPageAction.getCurrentSortOrderUsingDeviceName();
             }
-            if (SortOption.equals("MonthlyLowToHigh") || SortOption.equals("MonthlyHighToLow")) {
+            if ( SortOption.equals("MonthlyLowToHigh") || SortOption.equals("MonthlyHighToLow")) {
                 originalList = PhonesListingPageAction.getCurrentSortOrderUsingDevicePrice();
                 TempList3 = PhonesListingPageAction.getCurrentSortOrderUsingDevicePrice();
             }

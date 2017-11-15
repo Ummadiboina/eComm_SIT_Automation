@@ -78,6 +78,9 @@ public class Agent_DealBuilderPage {
 	@FindBy(how = How.XPATH, using = "//*[@class='priceSelection']/select")
 	public static WebElement HandsetTariffCombination;
 
+	@FindBy(how = How.XPATH, using = "//*[@id=\"emptyDealButton\"]")
+	public static WebElement Emptyabove;
+
 	///////////////////////////// Basecomms//////////////////////////////
 
 	// *[@id="buy-4a05eacb-a057-40fc-9ada-8b8c59c43c4e"]/img
@@ -174,5 +177,5 @@ public class Agent_DealBuilderPage {
 	//check the Tariff weather added into the Deal Builder
 	@FindBy(how = How.XPATH, using = "//table[@class='lineItemTable device']//th")
 	public static WebElement tariffAdded_DealBuilder;
-	
+
 }
