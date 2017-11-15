@@ -174,5 +174,24 @@ public class Agent_DealBuilderPage {
 	//check the Tariff weather added into the Deal Builder
 	@FindBy(how = How.XPATH, using = "//table[@class='lineItemTable device']//th")
 	public static WebElement tariffAdded_DealBuilder;
+
+/* venkata ********************
+   ***********************************************/
+
+	//deviceTab
+	@FindBy(how = How.XPATH, using = "//a[@id='devicesTab']")
+	public static WebElement deviceTab;
+
+	//remove the added device from deal builder
+	@FindBy(how = How.XPATH, using = "//table[@class='lineItemTable device']//a[@class='removeItem']")
+	public static WebElement removeDevice_DealBuilder;
+
+	//check check weather the promotions are displayed in Deal builder or not
+	@FindBy(how = How.XPATH, using = "//table[@class='lineItemTable Promotions']")
+	public static WebElement promotions_DealBuilder;
+
+	//select the second device from stock
+	@FindBy(how = How.XPATH, using = "//table[@id='deviceTable']//th[normalize-space(.)='Stock']//..//..//../tbody//tr[2]/td[1]/a")
+	public static WebElement selectDevive2_formInstock;
 	
 }

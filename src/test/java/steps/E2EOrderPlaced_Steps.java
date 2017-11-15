@@ -1596,6 +1596,23 @@ public class E2EOrderPlaced_Steps {
 
     }
 
+    //And the 'Promotions' section is displayed with all the applied promotions description in the deal builder
+
+    @Then("^Replace the device (.*) from the deal builder with different device and the 'Promotions' should be removed from the deal builder$")
+    public void replaceDeveiceThenPromotionShouldNotAvailable(String Promotionss) throws Exception {
+        try {
+            driver.manage().timeouts().implicitlyWait(2, TimeUnit.MINUTES);
+            Agent_DealBuilderPageActions.verifyPromotionsDisplayed();
+            Thread.sleep(3000);
+            // System.out.println("Selecting a valid tariff");
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            System.out.println("Unable to select valid tariff, please see the failure screenshot");
+            Assert.fail("Unable to select valid tariff, please see the failure screenshot");
+
+        }
+
+    }
 	/*
 	 * #########################################################################
 	 * #########
