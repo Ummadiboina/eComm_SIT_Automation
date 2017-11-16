@@ -10,7 +10,9 @@ Feature: CFA_PayG Tablets_Shop_do_NOT_show _CIP_page
     And Select a tariff <tariff>
     And I Land on the basket page and choose home delivery option
     And click on "go to checkout" button
+    And the customer lands on delivery page
     And Click on browser back arrow and land on Basket page
+    #Checkout In Progress page should not be displayed
     And click on "go to checkout" button
     And input <Firstname> and <Surname> and other valid details in Delivery page and Click on the 'Continue button'
     And land on the Non Credit check payment page and input <Username> and other details and click 'Continue on next step'
