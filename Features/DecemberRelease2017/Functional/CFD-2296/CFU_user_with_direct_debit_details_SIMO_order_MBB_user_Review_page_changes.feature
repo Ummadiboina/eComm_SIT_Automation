@@ -10,9 +10,10 @@ Feature: CFU_user_with_direct_debit_details_SIMO_order_MBB_user_Review_page_chan
   Then Verify that in the recycle value is displayed in the Recycle panel
   And I Click on 'Pick a sim only tariff' link
   And Click on 'Mobile Broadband' tab
-  And Click on 'Select' CTA to buy a tariff
+  And Select any Random Tariff in the displayed list of Tariffs under different <Contract> tab
+  #And Click on 'Select' CTA to buy a tariff
   #And only SIM delivery is required for the customer
-  And the customer is landed on Review page
+  And the customer is landed on the New Review and confirm page
   And the Header navigation is not displayed
   And the Progress bar is not displayed at the top
   And the Order summary and the assurance messages is not displayed on the right
@@ -43,7 +44,7 @@ Feature: CFU_user_with_direct_debit_details_SIMO_order_MBB_user_Review_page_chan
   And Click on 'Place your order' CTA
 
 Examples:
-| username | password |
-
+| username | password |Contract|
+|          |          |        |
 
 

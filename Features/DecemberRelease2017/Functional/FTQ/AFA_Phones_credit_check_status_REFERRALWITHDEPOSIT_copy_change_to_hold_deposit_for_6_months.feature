@@ -13,10 +13,11 @@ Feature: AFA_Phones_credit_check_status_REFERRALWITHDEPOSIT_copy_change_to_hold_
     Then perform all the advisory checks
     And perform the credit checks using valid <Firstname>, <Surname>, <HouseNumber>, <PostCode> and valid <Username>
     And Register the customer with valid <Firstname>, <Surname>, <HouseNumber>, <PostCode> and other valid details in delivery page
-    And upon entering Valid details with valid new <Username2> and card number
     #The credit check status should be REFERRALWITHDEPOSIT
     When Pay by card for PAYM device
     Then Order confirmation message should be displayed
+    And Verify if six months is displayed instead of three months
 
     Examples:
-      | Device | Tariffs | Extras | Firstname | Surname | Username     | HouseNumber | PostCode | Username2 |
+      | Device | Tariffs | Extras | Firstname | Surname | Username     | HouseNumber | PostCode |
+      |        |         |        |TEST       |REFERA   |TEST REFERA   |     14      | SL11UP   |
