@@ -9,13 +9,12 @@ Feature: CFA_Phones_Shop_do_not_show_Checkout_In_Progress_page
     And Land on the 'Tariffs and extra' page
     And I Land on the basket page and choose home delivery option
     And click on "go to checkout" button
-    And the customer lands on delivery page
     And enter the shop url
     And navigate to PAYM Phones page
     And I choose PayM <handset2>
     And Navigate to device details page
     And Land on the 'Tariffs and extra' page
-    And verify I land on basket page
+    And I Land on the basket page and choose home delivery option
 
 
     Examples:

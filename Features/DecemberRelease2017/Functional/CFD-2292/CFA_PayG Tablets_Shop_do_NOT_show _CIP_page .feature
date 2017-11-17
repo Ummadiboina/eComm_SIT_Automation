@@ -10,7 +10,7 @@ Feature: CFA_PayG Tablets_Shop_do_NOT_show _CIP_page
     And Select a tariff <tariff>
     And I Land on the basket page and choose home delivery option
     And click on "go to checkout" button
-    And the customer lands on delivery page
+    #And the customer lands on delivery page
     And Click on browser back arrow and land on Basket page
     #Checkout In Progress page should not be displayed
     And click on "go to checkout" button
