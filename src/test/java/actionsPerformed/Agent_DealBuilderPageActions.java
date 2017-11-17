@@ -331,7 +331,6 @@ public class Agent_DealBuilderPageActions extends Environment {
 		if (Status.contains("Delayed")) {
 			Thread.sleep(3000);
 			Agent_DealBuilderPage.SearchDevice.sendKeys(Status);
-			;
 			Thread.sleep(3000);
 			System.out.println("Sent search as - " + Status);
 			log.debug("Sent search as - " + Status);
@@ -341,7 +340,6 @@ public class Agent_DealBuilderPageActions extends Environment {
 		if (Status.contains("Preorder")) {
 			Thread.sleep(3000);
 			Agent_DealBuilderPage.SearchDevice.sendKeys(Status);
-			;
 			Thread.sleep(3000);
 			System.out.println("Sent search as - " + Status);
 			log.debug("Sent search as - " + Status);
@@ -579,5 +577,15 @@ public class Agent_DealBuilderPageActions extends Environment {
 			log.debug(" Failed to display's  the targeted Promotions Description " + e.getStackTrace());
 		}
 	}
+	  /////////////////////////////////////////////////////////////////////////////////////
+      /////////////////////////    EMPTY_basket_validate_promotion      //////////////////////
 
+	public static void Emptyabove()throws IOException, InterruptedException {
+
+		Thread.sleep(3000);
+		Agent_DealBuilderPage.Emptyabove.click();
+		System.out.println("Clicked on Empty Above ");
+		log.debug("Clicked on Empty Above ");
+		Screenshots.captureScreenshot();
+	}
 }

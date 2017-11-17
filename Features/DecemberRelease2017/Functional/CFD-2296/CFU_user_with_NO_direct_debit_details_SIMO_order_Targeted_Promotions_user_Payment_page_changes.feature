@@ -14,12 +14,16 @@ Feature: CFU_user_with_NO_direct_debit_details_SIMO_order_Targeted_Promotions_us
     And checkbox for 'iPhone' for data allowance is displayed just on the right-hand side below select 'CTA'
     And the 'Contract length: 12 months/30 days' is displayed just below the promotion description
     And Click on  'Select' button in the tile of targeted promotion
+    And customer lands on payments page
     And the 'Promotions' is displayed in your order section
     And the existing address of the customer is set as delivery address
     And Select the Home address
     And Enter the card details and click on 'Continue'
+    And customer lands on review page
     And Click on 'I agree to the terms and condition' checkbox
+    And verify 'Terms and conditions' link is present
     And Click on 'Place your order' CTA
+    Then Order confirmation message should be displayed
 
     Examples:
       | username | password |

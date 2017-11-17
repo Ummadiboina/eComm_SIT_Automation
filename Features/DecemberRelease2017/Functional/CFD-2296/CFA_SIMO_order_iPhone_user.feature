@@ -1,11 +1,9 @@
 Feature: CFA_SIMO_order_iPhone_user
-  This scenario ensures that the customer in upgrade journey lands on upgrade option page, then the customer should be presented with targeted promotion section and the changes should be reflected in the following pages,
-
+  This scenario ensures that the customer in Acquisition journey lands on SIMO page and selects "I'll be using an iPhone" checkbox, then the customer should be able to place an Order for iPhone SIMO
   @Web
   Scenario Outline: CFA_SIMO_order_iPhone_user
     Given I am an CFA user and Lands on shop page
     And navigate to PAYM SIMO page
-    And the 'Phone' tab is opened by default
     And the Check box with "I'll be using an iPhone" copy text is displayed below 'Select' CTA in the horizontal tariff tile
     And Click on "I'll be using an iPhone" checkbox and Click on 'Select' CTA to buy a tariff
     And click on "go to checkout" button

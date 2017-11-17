@@ -11,7 +11,7 @@ Feature: AFU_Phones_checkout_in_progress_page_is_NOT_shown
     Given I am an Existing user and Navigates to Signin page
     And Signin using valid <username> and <password> credentials
     And Navigate to upgrade > upgrade now
-    And 'Checkout In Progress' page is displayed
+    And 'Checkout In Progress' page is not displayed
 
     Examples:
       | user | username | password |
