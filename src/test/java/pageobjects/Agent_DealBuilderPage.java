@@ -178,6 +178,14 @@ public class Agent_DealBuilderPage {
 /* venkata ********************
    ***********************************************/
 
+	//target promotions tab
+	@FindBy(how = How.XPATH, using = "//a[@id='targetedPromotionsTab']")
+	public static WebElement targetPromtionsTab;
+
+	//target promotions tab
+	@FindBy(how = How.XPATH, using = "//*[normalize-space(.)='Promotion Description']")
+	public static WebElement promotionDescription;
+
 	//deviceTab
 	@FindBy(how = How.XPATH, using = "//a[@id='devicesTab']")
 	public static WebElement deviceTab;
