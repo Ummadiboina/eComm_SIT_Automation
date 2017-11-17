@@ -17,4 +17,4 @@ Feature: CFU_SIMO_Targeted_bolton_promotions_upgrade_options_page
 
     Examples:
   | username                        | password |
-  |                                 | test123  |
+  |    gb119519_979816@o2.com       | test123  |

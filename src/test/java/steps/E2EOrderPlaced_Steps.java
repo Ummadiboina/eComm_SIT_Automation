@@ -1612,6 +1612,36 @@ public class E2EOrderPlaced_Steps {
          }
      }
 
+
+
+    //venkat
+    @Given("^the customer is presented with the targeted promotion tab at the end of the tabs$")
+    public void the_customer_is_presented_with_the_targeted_promotion_tab_at_the_end_of_the_tabs() throws Exception {
+        try{
+            driver.manage().timeouts().implicitlyWait(2, TimeUnit.MINUTES);
+            Agent_DealBuilderPageActions.verifyTargetedPromotionsTab();
+            Thread.sleep(3000);
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            System.out.println("Failed to verify the Target Promotions Tab, please see the screen shoot");
+            Assert.fail("Failed to verify the Target Promotions Tab, please see the screen shoot");
+        }
+    }
+
+    //venkat
+    @Given("^the promotions bolt on are displayed in targeted promotion tab$")
+    public void the_promotions_bolt_on_are_displayed_in_targeted_promotion_tab() throws Exception {
+        try{
+            driver.manage().timeouts().implicitlyWait(2, TimeUnit.MINUTES);
+            Agent_DealBuilderPageActions.verifyPromotionsDescriotnDisplayed();
+            Thread.sleep(3000);
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            System.out.println("Failed to verify the targe promotions description, please see the screen shoot" + e.getStackTrace());
+            Assert.fail("Failed to verify the targe promotions description, please see the screen shoot" + e.getStackTrace());
+        }
+    }
+
     //And the 'Promotions' section is displayed with all the applied promotions description in the deal builder
 
     @Then("^Replace the device (.*) from the deal builder with different device and the 'Promotions' should be removed from the deal builder$")
@@ -1627,7 +1657,6 @@ public class E2EOrderPlaced_Steps {
             Assert.fail("Unable to select valid tariff, please see the failure screenshot");
 
         }
-
     }
 	/*
 	 * #########################################################################
