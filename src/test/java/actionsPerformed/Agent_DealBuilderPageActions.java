@@ -66,7 +66,6 @@ public class Agent_DealBuilderPageActions extends Environment {
 	}
 
 	public static void SelectTariff(String Tariff) throws InterruptedException, IOException {
-
 		Agent_DealBuilderPage.TariffsTab.click();
 		Thread.sleep(5000);
 		if (Tariff.contains("Random")) {
@@ -533,8 +532,49 @@ public class Agent_DealBuilderPageActions extends Environment {
 			}
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
-			System.out.println(" Failed to validate the Promotions ");
-			log.debug(" Failed to validate the Promotions ");
+			System.out.println(" Failed to validate the Promotions " + e.getStackTrace());
+			log.debug(" Failed to validate the Promotions " + e.getStackTrace());
+		}
+	}
+
+	//verify the targeted promitons tab
+
+	public static void verifyTargetedPromotionsTab() throws Exception {
+		try {
+			int sizeofElements = driver.findElements(By.xpath("//*[normalize-space(.)='Promotion Description']")).size();
+			if(sizeofElements > 0) {
+				Agent_DealBuilderPage.targetPromtionsTab.click();
+				Thread.sleep(4000);
+				System.out.println(" Verified the targeted Promotions Tab Displayed at End ");
+				log.debug(" Verified the targeted Promotions Tab Displayed at End ");
+			}
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			System.out.println(" Failed to Displays the targetedPromotions tab at the end " + e.getStackTrace());
+			log.debug(" Failed to Displays the targetedPromotions tab at the end " +e.getStackTrace());
+		}
+	}
+
+//verify the targeted promitons tab
+
+	public static void verifyPromotionsDescriotnDisplayed() throws Exception {
+		try {
+				Thread.sleep(1000);
+				System.out.println(" Verified the targeted Promotions Tab Displayed at End ");
+				log.debug(" Verified the targeted Promotions Tab Displayed at End ");
+				String targetedDescri="";
+				targetedDescri = Agent_DealBuilderPage.promotionDescription.getText();
+				if(targetedDescri.length()>1){
+					System.out.println("The promotions bolt on are displayed in targeted promotion tab");
+					log.debug("The promotions bolt on are displayed in targeted promotion tab");
+				}else {
+					System.out.println("The promotions bolt on are not displayed in targeted promotion tab");
+					log.debug("The promotions bolt on are not displayed in targeted promotion tab");
+				}
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			System.out.println(" Failed to display's  the targeted Promotions Description " + e.getStackTrace());
+			log.debug(" Failed to display's  the targeted Promotions Description " + e.getStackTrace());
 		}
 	}
 	  /////////////////////////////////////////////////////////////////////////////////////
