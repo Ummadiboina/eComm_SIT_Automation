@@ -531,7 +531,6 @@ public class Agent_DealBuilderPageActions extends Environment {
 				}
 			}
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			System.out.println(" Failed to validate the Promotions " + e.getStackTrace());
 			log.debug(" Failed to validate the Promotions " + e.getStackTrace());
 		}
@@ -549,7 +548,6 @@ public class Agent_DealBuilderPageActions extends Environment {
 				log.debug(" Verified the targeted Promotions Tab Displayed at End ");
 			}
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			System.out.println(" Failed to Displays the targetedPromotions tab at the end " + e.getStackTrace());
 			log.debug(" Failed to Displays the targetedPromotions tab at the end " +e.getStackTrace());
 		}
