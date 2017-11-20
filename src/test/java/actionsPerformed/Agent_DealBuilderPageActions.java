@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
+import junit.framework.AssertionFailedError;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -588,4 +589,39 @@ public class Agent_DealBuilderPageActions extends Environment {
 		log.debug("Clicked on Empty Above ");
 		Screenshots.captureScreenshot();
 	}
+	//////////////////////Standard_or_CCA_targeted_bolton_promotion_tab_Agent_upgrade_options_page_Order_placement//////
+
+	public static void SelectPromotion() throws InterruptedException, IOException {
+
+		Agent_DealBuilderPage.SelectPromotion.click();
+		System.out.println("Clicked on Select Button");
+		log.debug("Clicked on Select Button");
+		Thread.sleep(3000);
+		Screenshots.captureScreenshot();
+
+	}
+	public static void Copytobasket() throws InterruptedException, IOException {
+
+		Agent_DealBuilderPage.Copytobasket.click();
+		System.out.println("Clicked on copy toBasket");
+		log.debug("Clicked on copy to Basket");
+		Thread.sleep(3000);
+		Screenshots.captureScreenshot();
+
+	}
+	///////////////////NOT_eligible_for_targeted_bolton_promotion_tab_Agent_upgrade_options_page////////////
+	////////////////////////////////////////////////////////////////////////////////////////////
+	public static void PromotionNotDisplayed() throws InterruptedException, IOException {
+		log.debug('\n' + "Validate Promotion Tab  not displayed");
+		//String PromotionTab = Agent_DealBuilderPage.targetPromtionsTab.getText();
+		List<WebElement> PromotionsTab = (List<WebElement>) Agent_DealBuilderPage.targetPromtionsTab;
+		if (PromotionsTab.size() > 0) {
+			System.out.println("The promtions tab is displayed which is not right");
+			Assert.fail("The promtions tab is displayed which is not right");
+		}
+		else
+		System.out.println("The Promotions Tab is not displayed");
+		Screenshots.captureScreenshot();
+	}
+
 }

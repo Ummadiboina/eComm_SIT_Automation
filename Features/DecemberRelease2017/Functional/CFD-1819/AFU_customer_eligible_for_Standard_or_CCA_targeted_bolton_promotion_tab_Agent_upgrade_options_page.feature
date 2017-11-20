@@ -17,4 +17,5 @@ Feature: AFU_customer_eligible_for_Standard_or_CCA_targeted_bolton_promotion_tab
     Then Order confirmation message should be displayed
 
     Examples:
-    | user | Button |
+    | user        | Tariff |
+    | 07521118904 | SimO   |

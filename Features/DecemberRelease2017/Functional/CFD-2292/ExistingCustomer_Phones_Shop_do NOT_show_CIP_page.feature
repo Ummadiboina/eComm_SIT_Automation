@@ -12,7 +12,7 @@ Feature: ExistingCustomer_Phones_Shop_do NOT_show_CIP_page
     And Land on the 'Tariffs and extra' page
     And I Land on the basket page by clicking on Add to Basket button
     And click on "go to checkout" button
-    And the customer lands on delivery page
+   #And the customer lands on delivery page
     And Click on browser back arrow and land on Basket page
     #Checkout In Progress page should not be displayed
 

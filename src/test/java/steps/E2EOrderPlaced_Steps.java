@@ -25,6 +25,8 @@ import helpers.Filereadingutility;
 import org.testng.Assert;
 import pageobjects.*;
 
+import static actionsPerformed.Agent_DealBuilderPageActions.*;
+
 public class E2EOrderPlaced_Steps {
 
     private static final String Filteroption = null;
@@ -1146,6 +1148,55 @@ public class E2EOrderPlaced_Steps {
 
         }
     }
+    /*
+    ######################################################################
+     CFU_Targeted_promotions_upgrade_options_page_Basket_page_SSC_and_PDF_changes
+     ###################################
+     */
+    @And("^click on 'Change delivery date and time' link$")
+    public void click_on_Change_delivery_date_and_time_link() throws Throwable {
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, DeliveryPage.class);
+            DeliveryPageActions.ClickContinue();
+            Thread.sleep(5000);
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            System.out.println("Unable to click on Change delivery date and time link");
+            Assert.fail("Unable to click on Change delivery date and time link");
+
+        }
+    }
+    /*
+       ######################################################################
+        NO_direct_debit_details_SIMO_order_Targeted_Promotions_user_Payment_page_changes
+        ###################################
+        */
+    @And("^customer lands on review page$")
+    public void customer_lands_on_review_page() throws Throwable {
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, DeliveryPage.class);
+            DeliveryPageActions.Review();
+            Thread.sleep(5000);
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            System.out.println("unable to get title");
+            Assert.fail("unable to get title");
+        }
+    }
+    @Then("^Click on 'I agree to the terms and condition' checkbox$")
+    public void click_on_I_agree_to_the_terms_and_condition_checkbox() throws Throwable {
+        try {
+            driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, Agent_DealBuilderPage.class);
+            Emptyabove();
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            System.out.println("Unable to click on I agree to the terms and condition, please see the failure screenshot");
+            Assert.fail("Unable to click on I agree to the terms and condition, please see the failure screenshot");
+        }
+    }
 
 	/*
 	 * #########################################################################
@@ -1341,7 +1392,7 @@ public class E2EOrderPlaced_Steps {
         try {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, Agent_DealBuilderPage.class);
-            Agent_DealBuilderPageActions.HandsetTariffCombination();
+            HandsetTariffCombination();
             Thread.sleep(4000);
         } catch (Exception e) {
             // TODO Auto-generated catch block
@@ -1355,7 +1406,7 @@ public class E2EOrderPlaced_Steps {
         try {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, Agent_DealBuilderPage.class);
-            Agent_DealBuilderPageActions.SelectExtras(Extras);
+            SelectExtras(Extras);
         } catch (Exception e) {
             // TODO Auto-generated catch block
             Assert.fail("Unable to select extras");
@@ -1479,7 +1530,7 @@ public class E2EOrderPlaced_Steps {
         try {
             driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
             PageFactory.initElements(driver, Agent_DealBuilderPage.class);
-            Agent_DealBuilderPageActions.SelectPAYMDevice(Device);
+            SelectPAYMDevice(Device);
             Thread.sleep(4000);
         } catch (Exception e) {
             // TODO Auto-generated catch block
@@ -1495,7 +1546,7 @@ public class E2EOrderPlaced_Steps {
         try {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, Agent_DealBuilderPage.class);
-            Agent_DealBuilderPageActions.SelectPayGDevice(Device);
+            SelectPayGDevice(Device);
         } catch (Exception e) {
             // TODO Auto-generated catch block
             System.out.println("Unable to select Valid PAYG device, please see the failure screenshot");
@@ -1517,7 +1568,7 @@ public class E2EOrderPlaced_Steps {
         try {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, Agent_DealBuilderPage.class);
-            Agent_DealBuilderPageActions.eMailBasket();
+            eMailBasket();
         } catch (Exception e) {
             // TODO Auto-generated catch block
             System.out.println("Unable to email basket, please see the failure screenshot");
@@ -1531,7 +1582,7 @@ public class E2EOrderPlaced_Steps {
         try {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, Agent_DealBuilderPage.class);
-            Agent_DealBuilderPageActions.eMailConfirmation();
+            eMailConfirmation();
             System.out.println("Verify email is sent successfully method executed successfully");
         } catch (Exception e) {
             // TODO Auto-generated catch block
@@ -1556,7 +1607,7 @@ public class E2EOrderPlaced_Steps {
         try {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, Agent_DealBuilderPage.class);
-            Agent_DealBuilderPageActions.SelectPayGTariff(Tariff);
+            SelectPayGTariff(Tariff);
         } catch (Exception e) {
             // TODO Auto-generated catch block
             System.out.println("Unable to select valid payg tariff, please see the failure screenshot");
@@ -1571,7 +1622,7 @@ public class E2EOrderPlaced_Steps {
         try {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, Agent_DealBuilderPage.class);
-            Agent_DealBuilderPageActions.SelectAccessoryDevice(Device);
+            SelectAccessoryDevice(Device);
         } catch (Exception e) {
             // TODO Auto-generated catch block
             System.out.println("Unable to select accessory basket, please see the failure screenshot");
@@ -1595,6 +1646,21 @@ public class E2EOrderPlaced_Steps {
         }
 
     }
+    /*
+    #############################NOT_eligible_for_targeted_bolton_promotion_tab_Agent_upgrade_options_page############
+    ####################################################################################################
+    */
+    @Given("^the customer is not presented with the targeted promotion tab at the end of the tabs$")
+    public void the_customer_is_not_presented_with_the_targeted_promotion_tab_at_the_end_of_the_tabs() throws Throwable {
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, Agent_DealBuilderPage.class);
+            Agent_DealBuilderPageActions.PromotionNotDisplayed();
+        } catch (Exception e) {
+            e.printStackTrace();
+            Assert.fail("Unable to verify the Promotions Tab is not displayed");
+        }
+    }
      /*
      * #########################################################################
      * #######EMPTY_basket_validate_promotion##################################
@@ -1604,7 +1670,7 @@ public class E2EOrderPlaced_Steps {
          try {
              driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
              PageFactory.initElements(driver, Agent_DealBuilderPage.class);
-             Agent_DealBuilderPageActions.Emptyabove();
+             Emptyabove();
          } catch (Exception e) {
              // TODO Auto-generated catch block
              System.out.println("Unable to click on Empty above, please see the failure screenshot");
@@ -1619,7 +1685,7 @@ public class E2EOrderPlaced_Steps {
     public void the_customer_is_presented_with_the_targeted_promotion_tab_at_the_end_of_the_tabs() throws Exception {
         try{
             driver.manage().timeouts().implicitlyWait(2, TimeUnit.MINUTES);
-            Agent_DealBuilderPageActions.verifyTargetedPromotionsTab();
+            verifyTargetedPromotionsTab();
             Thread.sleep(3000);
         } catch (Exception e) {
             // TODO Auto-generated catch block
@@ -1633,7 +1699,7 @@ public class E2EOrderPlaced_Steps {
     public void the_promotions_bolt_on_are_displayed_in_targeted_promotion_tab() throws Exception {
         try{
             driver.manage().timeouts().implicitlyWait(2, TimeUnit.MINUTES);
-            Agent_DealBuilderPageActions.verifyPromotionsDescriotnDisplayed();
+            verifyPromotionsDescriotnDisplayed();
             Thread.sleep(3000);
         } catch (Exception e) {
             // TODO Auto-generated catch block
@@ -1648,7 +1714,7 @@ public class E2EOrderPlaced_Steps {
     public void replaceDeveiceThenPromotionShouldNotAvailable(String Promotionss) throws Exception {
         try {
             driver.manage().timeouts().implicitlyWait(2, TimeUnit.MINUTES);
-            Agent_DealBuilderPageActions.verifyPromotionsDisplayed();
+            verifyPromotionsDisplayed();
             Thread.sleep(3000);
             // System.out.println("Selecting a valid tariff");
         } catch (Exception e) {
@@ -1658,6 +1724,38 @@ public class E2EOrderPlaced_Steps {
 
         }
     }
+
+    /*
+    #############################################################################
+    CCA_targeted_bolton_promotion_tab_Agent_upgrade_options_page_Order_placement
+    */
+    @And("^Click on 'Select' Button in targeted promotion tab$")
+    public void click_on_Select_Button_in_targeted_promotion_tab() throws Throwable {
+        try {
+            driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, Agent_DealBuilderPage.class);
+            SelectPromotion();
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            System.out.println("Unable to select button in targeted promotion tab , please see the failure screenshot");
+            Assert.fail("Unable to get select button in targeted promotion tab , please see the failure screenshot");
+
+        }
+    }
+    @And("^Click on 'Copy to Basket' CTA$")
+    public void click_on_Copy_to_Basket_CTA() throws Throwable {
+        try {
+            driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, Agent_DealBuilderPage.class);
+            Copytobasket();
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            System.out.println("Unable to click on Copy to basket CTA , please see the failure screenshot");
+            Assert.fail("Unable to click on Copy to basket CTA , please see the failure screenshot");
+
+        }
+    }
+
 	/*
 	 * #########################################################################
 	 * #########
@@ -1675,7 +1773,7 @@ public class E2EOrderPlaced_Steps {
             PageFactory.initElements(driver, Agent_DealBuilderPage.class);
             //Agent_DealBuilderPageActions.ValdiateBasket();
             Thread.sleep(2000);
-            Agent_DealBuilderPageActions.checkout();
+            checkout();
             Thread.sleep(7000);
         } catch (Exception e) {
             // TODO Auto-generated catch block
@@ -4101,7 +4199,7 @@ public class E2EOrderPlaced_Steps {
 
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, Agent_DealBuilderPage.class);
-            Agent_DealBuilderPageActions.BasecommsAgentOffersColumnValidation();
+            BasecommsAgentOffersColumnValidation();
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -5403,7 +5501,7 @@ public class E2EOrderPlaced_Steps {
         try {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, Agent_DealBuilderPage.class);
-            Agent_DealBuilderPageActions.SearchDevice(Status);
+            SearchDevice(Status);
             Thread.sleep(4000);
         } catch (Exception e) {
             // TODO Auto-generated catch block
@@ -5910,7 +6008,7 @@ public class E2EOrderPlaced_Steps {
         try {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, Agent_DealBuilderPage.class);
-            Agent_DealBuilderPageActions.CCAHandsetTariffCombination();
+            CCAHandsetTariffCombination();
             Thread.sleep(4000);
         } catch (Exception e) {
             // TODO Auto-generated catch block
@@ -6003,7 +6101,29 @@ public class E2EOrderPlaced_Steps {
 
         }
     }
-
+    ///////////////////////////////IPhone/Other radio button is defaulted to iPhone
+    @Then("^the IPhone/Other radio button is defaulted to iPhone$")
+    public void the_IPhone_Other_radio_button_is_defaulted_to_iPhone() throws Throwable {
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, UpgradeCustomerPage.class);
+            UpgradeCustomerPageActions.iPhoneRadio();
+        } catch (Exception e) {
+            e.printStackTrace();
+            Assert.fail("The radio button is not defaulted to iPhone");
+        }
+    }
+    @Then("^copy text SIM delivery required or not is displayed$")
+    public void copy_text_SIM_delivery_required_or_not_is_displayed() throws Throwable {
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, UpgradeCustomerPage.class);
+            UpgradeCustomerPageActions.YourSimSectionCopyText();
+        } catch (Exception e) {
+            e.printStackTrace();
+            Assert.fail("The valid copytext is not displayed");
+        }
+    }
     ///////////////////////////////////////////////////////////////////////////////////
     /////////////////////////////////// Agent
     /////////////////////////////////////////////////////////////////////////////////// Trade////////////////////////////////////
@@ -6015,7 +6135,7 @@ public class E2EOrderPlaced_Steps {
         try {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, Agent_DealBuilderPage.class);
-            Agent_DealBuilderPageActions.AgentTradeInQuestionair();
+            AgentTradeInQuestionair();
             Thread.sleep(4000);
         } catch (Exception e) {
             // TODO Auto-generated catch block
@@ -6051,7 +6171,7 @@ public class E2EOrderPlaced_Steps {
         try {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, Agent_DealBuilderPage.class);
-            Agent_DealBuilderPageActions.AgentBuyOut();
+            AgentBuyOut();
             Thread.sleep(4000);
         } catch (Exception e) {
             // TODO Auto-generated catch block
@@ -6206,7 +6326,7 @@ public class E2EOrderPlaced_Steps {
 
             driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
             PageFactory.initElements(driver, Agent_DealBuilderPage.class);
-            Agent_DealBuilderPageActions.selectStore();
+            selectStore();
 
         } catch (Exception e) {
             System.out.println("unable to select store");
@@ -6234,7 +6354,7 @@ public class E2EOrderPlaced_Steps {
         try {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, Agent_DealBuilderPage.class);
-            Agent_DealBuilderPageActions.HandsetTariffCombinationforPhones();
+            HandsetTariffCombinationforPhones();
             Thread.sleep(4000);
         } catch (Exception e) {
             // TODO Auto-generated catch block
