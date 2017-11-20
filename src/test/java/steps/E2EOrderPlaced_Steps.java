@@ -6762,6 +6762,90 @@ public class E2EOrderPlaced_Steps {
         }
     }
 
+    @And("^'Checkout In Progress' page is not displayed$")
+    public void checkoutInProgressPageIsNotDisplayed() throws Throwable {
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, BasketPage.class);
+            Thread.sleep(3000);
+            BasketPageActions.CheckoutNotDisplayed();
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.out.println("Unable to validate basket contents");
+            Assert.fail("Unable to validate basket contents");
+        }
+    }
+
+    @And("^the greet \"([^\"]*)\" bar is displayed as the header$")
+    public void theGreetBarIsDisplayedAsTheHeader(String customerName) throws Throwable {      try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, UpgradeCustomerPage.class);
+            UpgradeCustomerPageActions.greetingValidation(customerName);
+
+        } catch (Exception e) {
+
+            System.out.println("Unable to do validate the customer greeting");
+            Assert.fail("Unable to do validate the customer greeting");
+        }
+    }
+
+    @And("^MSISDN is displayed as label only$")
+    public void msisdnIsDisplayedAsLabelOnly() throws Throwable {
+       try{
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+        PageFactory.initElements(driver, UpgradeCustomerPage.class);
+        UpgradeCustomerPageActions.msisdnDisplay();
+
+    } catch (Exception e) {
+
+        System.out.println("Unable to do validate if msisdn is displayed as label only");
+        Assert.fail("Unable to do validate if msisdn is displayed as label only");
+    }
+    }
+
+    @And("^the 'About you' section is not displayed$")
+    public void theAboutYouSectionIsNotDisplayed() throws Throwable {
+        try{
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, UpgradeCustomerPage.class);
+            UpgradeCustomerPageActions.aboutYou();
+
+        } catch (Exception e) {
+
+            System.out.println("Unable to do validate about you");
+            Assert.fail("Unable to do validate about you");
+        }
+    }
+
+    @And("^the first section is \"([^\"]*)\" section$")
+    public void theFirstSectionIsSection() throws Throwable {
+        try{
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, UpgradeCustomerPage.class);
+            UpgradeCustomerPageActions.reviewTariff();
+
+        } catch (Exception e) {
+
+            System.out.println("Unable to do validate about you");
+            Assert.fail("Unable to do validate about you");
+        }
+    }
+
+    @And("^the title \"([^\"]*)\" is displayed in first tariff tile$")
+    public void theTitleIsDisplayedInFirstTariffTile() throws Throwable {
+        try{
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, UpgradeCustomerPage.class);
+            UpgradeCustomerPageActions.contentReviewTariff();
+
+        } catch (Exception e) {
+
+            System.out.println("Unable to do validate about you");
+            Assert.fail("Unable to do validate about you");
+        }
+    }
+
+
     // Below is Nested Class
 
     public class dataValue {
