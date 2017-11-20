@@ -7,11 +7,7 @@ import java.util.NoSuchElementException;
 import java.util.concurrent.TimeUnit;
 
 import org.apache.log4j.Logger;
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -20,7 +16,8 @@ import com.google.common.base.Function;
 import GlobalActions.Screenshots;
 import helpers.Environment;
 import helpers.Filereadingutility;
-import junit.framework.Assert;
+import org.testng.Assert;
+import pageobjects.BasketPage;
 import pageobjects.UpgradeCustomerPage;
 
 public class BasketPageActions extends Environment {
@@ -422,8 +419,8 @@ public class BasketPageActions extends Environment {
 			FitnessTrackerName_After = pageobjects.AccessoryPage.FitnessTrackerAfterPhoneSelection.getText();
 			SmartWatchName_After = pageobjects.AccessoryPage.SmartWatchAfterPhoneSelection.getText();
 
-			Assert.assertFalse("Assertion Failed: Accessory is not present in the basket page after phone selection",
-					AccessoryName_Before.contains(AccessoryName_After));
+			Assert.assertFalse(AccessoryName_Before.contains(AccessoryName_After),
+					"Assertion Failed: Accessory is not present in the basket page after phone selection");
 			log.debug("Assertion Passed: Previous Accessory is present in the basket page after phone selection");
 
 			Assert.assertEquals("Assertion Failed: FitnessTracker is not present in the basket after phone selection",
@@ -680,6 +677,29 @@ public class BasketPageActions extends Environment {
 		} else {
 			System.out.println("I dont need a sim is pre selected");
 		}
+		Screenshots.captureScreenshot();
+
+	}
+
+	public static void CheckoutNotDisplayed() throws InterruptedException, IOException {
+
+		log.debug("Verifying if checkout page is displayed or not");
+		String ActualText = BasketPage.checkoutinProgress.getText();
+
+		System.out.println(ActualText);
+
+		String Expected = "You order is in progress";
+
+
+		if(ActualText.contains(Expected))
+		{
+			Assert.fail("Order in progress page is displayed");
+		}
+		else
+		{
+			System.out.println("Order in progress is not displayed");
+		}
+		Thread.sleep(5000);
 		Screenshots.captureScreenshot();
 
 	}
