@@ -39,7 +39,7 @@ Feature: CFU_user_with_direct_debit_details_SIMO_order_non_iPhone_user_Review_pa
     And Select 'I’ll keep my current sim' option
     And refresh the page
     #Others radio option should be selected
-    And Click on 'Not sure what SIM you have?' link
+    And Click on 'Not sure what SIM you have' link
     And copy text is displayed as same as upgrade options and basket page.
     And the delivery section is not displayed
      #Since no delivery is required

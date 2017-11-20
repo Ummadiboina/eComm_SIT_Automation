@@ -17,7 +17,7 @@ Feature: CFU_user_with_direct_debit_details_SIMO_order_INSTANT_Promotions_user_R
     And the Header navigation is not displayed
     And the Progress bar is not displayed at the top
     And the Order summary and the assurance messages is not displayed on the right
-    And the greet customer bar is displayed as the header
+    And the greet "customer" bar is displayed as the header
     And MSISDN is displayed as label only
     #The MSISDN should not be displayed as drop down
     And the 'About you' section is not displayed
@@ -38,4 +38,6 @@ Feature: CFU_user_with_direct_debit_details_SIMO_order_INSTANT_Promotions_user_R
     And the INSTANT promotions applicable for the SIMO Upgrade order is displayed on the new Review Page below selected tariff tile
     And Click on 'Choose a different tariff' link
 
-Examples:
+    Examples:
+      | username           | password  |
+      | bvt2.cfu@gmail.com | cfubvt123 |

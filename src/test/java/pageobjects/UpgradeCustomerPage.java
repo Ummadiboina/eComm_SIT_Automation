@@ -204,9 +204,29 @@ public class UpgradeCustomerPage {
 	@FindBy(how = How.XPATH, using = "//span[contains(text(),'Samsung Galaxy Tab A 2016 7.0')]")
 	public static WebElement GalaxyTabA;
 
+	@FindBy(how = How.XPATH, using = "//div[@class='module-body-content']//h1/following-sibling::p")
+	public static WebElement Greetings;
 
 
+	//Pass the xpath so that give label reference instead of button in xpath
+	@FindBy(how = How.XPATH, using = "")
+	public static WebElement msisdnDisplayed;
 
+    @FindBy(how = How.ID, using = "about-you-section")
+    public static WebElement aboutYou;
+
+//Give xpath with position so that review tariff is at first section like 1. Review your tariff
+    @FindBy(how = How.ID, using = "")
+    public static WebElement reviewTariff;
+
+    @FindBy(how = How.ID, using = "")
+    public static WebElement moveFromTariff;
+
+    @FindBy(how = How.ID, using = "")
+    public static WebElement toThisTariff;
+
+    @FindBy(how = How.ID, using = "")
+    public static WebElement clickonNotsureSimType;
 }
 
 

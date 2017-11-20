@@ -156,6 +156,8 @@ public class BasketPage {
 
 	@FindBy(how = How.XPATH, using = ("//*[@class='basket-nav']/div[1]/form[@class='qa-checkout-form ng-pristine ng-valid']/input[@class='button primary']"))
 	public static WebElement EnabledCheckout;
-	
+
+	@FindBy(how = How.XPATH, using = "//h1[@class='staticPage']")
+	public static WebElement checkoutinProgress;
 }
 	

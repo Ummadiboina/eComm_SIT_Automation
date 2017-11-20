@@ -47,7 +47,7 @@ public class UpgradeCustomerPageActions extends Environment {
 
         System.out.println("Title of the page is " + driver.getTitle());
         /*
-		 * if ((!driver.getTitle().
+         * if ((!driver.getTitle().
 		 * contains("O2 | Accounts | Please verify your email address") ||
 		 * !driver.getTitle().contains("O2 | Accounts | Update username"))) {
 		 * 
@@ -339,9 +339,7 @@ public class UpgradeCustomerPageActions extends Environment {
             pageobjects.UpgradeCustomerPage.Continue.click();
             System.out.println("Clicked on Continue button in Upgrade page");
 
-        }
-
-        else  {
+        } else {
             System.out.println("The Security checks page is displayed");
             pageobjects.UpgradeCustomerPage.SecurityOtac.sendKeys("999999");
             pageobjects.UpgradeCustomerPage.SecurityContinue.click();
@@ -1260,8 +1258,7 @@ public class UpgradeCustomerPageActions extends Environment {
             driver.findElement(By.xpath("//a[@id='skip-this-step']")).click();
             System.out.println("Clicked on skip this step");
             System.out.println("Selected a Random Tariff");
-        }
-        else
+        } else
             System.out.println("The Delivery page is displayed");
         Screenshots.captureScreenshot();
     }
@@ -1573,9 +1570,6 @@ public class UpgradeCustomerPageActions extends Environment {
     }
 
 
-
-
-
     public static void ConfirmCTADisplayed() throws Exception {
 
         if (UpgradeCustomerPage.ConfirmCTA.isDisplayed()) {
@@ -1602,7 +1596,7 @@ public class UpgradeCustomerPageActions extends Environment {
 
         if (UpgradeCustomerPage.IdontNeedSimRadio.isDisplayed()) {
             WebElement element = pageobjects.UpgradeCustomerPage.IdontNeedSimRadio;
-            JavascriptExecutor executor = (JavascriptExecutor)driver;
+            JavascriptExecutor executor = (JavascriptExecutor) driver;
             executor.executeScript("arguments[0].click();", element);
             //UpgradeCustomerPage.IdontNeedSimRadio.click();
             log.debug("The I need a sim radio button is clicked");
@@ -1885,5 +1879,75 @@ public class UpgradeCustomerPageActions extends Environment {
 
     }
 
+    public static void greetingValidation(String customerName) throws InterruptedException, IOException {
+        System.out.println("Trying to verify greetings");
 
+        String Actual_greeting = pageobjects.UpgradeCustomerPage.Greetings.getText();
+        String Expected_greeting = "Hello " +customerName;
+        if (Actual_greeting.contains(Expected_greeting)) {
+            log.debug("Greeting is as expected");
+        } else {
+            Assert.fail("Greeting is not as expected");
+        }
+
+        Screenshots.captureScreenshot();
+    }
+
+    public static void msisdnDisplay() throws InterruptedException, IOException {
+        System.out.println("Trying to verify greetings");
+
+        if(pageobjects.UpgradeCustomerPage.msisdnDisplayed.isDisplayed())
+        {
+
+        }
+        else
+        {
+            Assert.fail("MSISDN is not displayed as label");
+        }
+        Screenshots.captureScreenshot();
+    }
+
+    public static void aboutYou() throws InterruptedException, IOException {
+        System.out.println("Trying to verify about you is dispayed or not");
+        if (pageobjects.UpgradeCustomerPage.aboutYou.isDisplayed()) {
+            Assert.fail("About You is displayed");
+        } else {
+            System.out.println("About you is not displayed");
+        }
+        Screenshots.captureScreenshot();
+    }
+
+    public static void reviewTariff() throws InterruptedException, IOException {
+        System.out.println("Trying to verify first section is review tariff");
+
+//Give function with position so that review tariff is at first section like 1. Review your tariff
+
+        pageobjects.UpgradeCustomerPage.reviewTariff.getSize();
+
+        Screenshots.captureScreenshot();
+    }
+
+    public static void contentDisplayedFirstTariff() throws InterruptedException, IOException {
+        System.out.println("Trying to verify first section is review tariff");
+        //Below tariff validations should be in such a way that this should be first tile text
+        pageobjects.UpgradeCustomerPage.moveFromTariff.getText();
+
+        Screenshots.captureScreenshot();
+    }
+
+    public static void contentDisplayedSecondTariff() throws InterruptedException, IOException {
+        System.out.println("Trying to verify first section is review tariff");
+        //Below tariff validations should be in such a way that this should be second tile text
+        pageobjects.UpgradeCustomerPage.toThisTariff.getText();
+
+        Screenshots.captureScreenshot();
+    }
+
+    public static void clickonnoSurelink() throws InterruptedException, IOException {
+        System.out.println("Trying to verify first section is review tariff");
+        //Below tariff validations should be in such a way that this should be second tile text
+        pageobjects.UpgradeCustomerPage.clickonNotsureSimType.click();
+
+        Screenshots.captureScreenshot();
+    }
 }
