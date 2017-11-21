@@ -6716,14 +6716,57 @@ public class E2EOrderPlaced_Steps {
         try{
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, UpgradeCustomerPage.class);
-            UpgradeCustomerPageActions.contentReviewTariff();
+            UpgradeCustomerPageActions.contentDisplayedFirstTariff();
 
         } catch (Exception e) {
 
-            System.out.println("Unable to do validate about you");
-            Assert.fail("Unable to do validate about you");
+            System.out.println("unable to verify that text is displayed in First tile");
+            Assert.fail("unable to verify that text is displayed in First tile");
         }
     }
+
+    @And("^title \"([^\"]*)\" is displayed in second tariff tile$")
+    public void titleIsDisplayedInSecondTariffTile(String arg0) throws Throwable {
+        try{
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, UpgradeCustomerPage.class);
+            UpgradeCustomerPageActions.contentDisplayedSecondTariff();
+
+        } catch (Exception e) {
+
+            log.debug("unable to verify that text is displayed in second tile");
+            Assert.fail("unable to verify that text is displayed in second tile");
+        }
+    }
+
+    @And("^refresh the page$")
+    public void refreshThePage() throws Throwable {
+        try{
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            driver.navigate().refresh();
+
+        } catch (Exception e) {
+
+            log.debug("Unable refresh browser");
+            Assert.fail("Unable to refresh browser");
+        }
+    }
+
+    @And("^Click on 'Not sure what SIM you have' link$")
+    public void clickOnNotSureWhatSIMYouHaveLink() throws Throwable {
+        try{
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, UpgradeCustomerPage.class);
+            UpgradeCustomerPageActions.clickonnoSurelink();
+
+        } catch (Exception e) {
+
+            log.debug("unable to click on not sure what sim radio button");
+            Assert.fail("unable to click on not sure what sim radio button");
+        }
+    }
+
+
 
 
     // Below is Nested Class
