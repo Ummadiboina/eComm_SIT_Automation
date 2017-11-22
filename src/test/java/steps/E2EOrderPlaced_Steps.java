@@ -1594,22 +1594,23 @@ public class E2EOrderPlaced_Steps {
         }
 
     }
-     /*
-     * #########################################################################
-     * #######EMPTY_basket_validate_promotion##################################
-     */
-     @Then("^Click on 'Empty basket' CTA the 'Promotions' should be removed from the basket$")
-     public void click_on_Empty_basket_CTA_the_Promotions_should_be_removed_from_the_basket() throws Throwable {
-         try {
-             driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
-             PageFactory.initElements(driver, Agent_DealBuilderPage.class);
-             Agent_DealBuilderPageActions.Emptyabove();
-         } catch (Exception e) {
-             // TODO Auto-generated catch block
-             System.out.println("Unable to click on Empty above, please see the failure screenshot");
-             Assert.fail("Unable to click on Empty above , please see the failure screenshot");
-         }
-     }
+    
+    /*
+    * #########################################################################
+    * #######EMPTY_basket_validate_promotion##################################
+    */
+    @Then("^Click on 'Empty basket' CTA the 'Promotions' should be removed from the basket$")
+    public void click_on_Empty_basket_CTA_the_Promotions_should_be_removed_from_the_basket() throws Throwable {
+        try {
+            driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, Agent_DealBuilderPage.class);
+            Agent_DealBuilderPageActions.Emptyabove();
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            System.out.println("Unable to click on Empty above, please see the failure screenshot");
+            Assert.fail("Unable to click on Empty above , please see the failure screenshot");
+        }
+    }
 
 
 
@@ -1657,6 +1658,7 @@ public class E2EOrderPlaced_Steps {
 
         }
     }
+    
 	/*
 	 * #########################################################################
 	 * #########
