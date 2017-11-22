@@ -8,7 +8,7 @@ Feature: CFU_Targeted_promotions_Basket_page_apply_instant_Bolton_Promotions
     And Signin using valid <username> and <password> credentials
     And the targeted promotion section is displayed just below the 'recycle options' section
     And the heading of the panel is 'A package just for you:'
-    And the promotion description is displayed just after the below statement
+    And the promotion description is displayed
     And SIMO and tariff combination is presented in the targeted promotion section
     And click on 'Select' CTA in the tariff tile of targeted promotion
     And the title 'Device' is displayed above the selected device for Your Order section

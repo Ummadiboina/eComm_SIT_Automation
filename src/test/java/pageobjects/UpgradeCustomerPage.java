@@ -227,6 +227,20 @@ public class UpgradeCustomerPage {
 
     @FindBy(how = How.ID, using = "")
     public static WebElement clickonNotsureSimType;
+
+//////////////////////////////////////////////Promotions//////////////////////////////////////////////////////////////////////////
+
+    @FindBy(how = How.ID, using = "NEEDS TO BE ADDED")
+	public static WebElement PromotionsHeader;
+
+	@FindBy(how = How.ID, using = "NEEDS TO BE ADDED")
+	public static WebElement PromotionsBody;
+
+
+	@FindBy(how = How.XPATH, using= "//*[@type='checkbox']")
+	public static WebElement CheckBoxNotDisplayed;
+
+
 }
 
 

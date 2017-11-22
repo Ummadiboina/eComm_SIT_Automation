@@ -9,9 +9,9 @@ Feature: CFU_SIMO_Targeted_bolton_promotions_upgrade_options_page
     And Navigate to upgrade phone
     And the targeted promotion section is displayed just below the 'recycle options' section
     And the heading of the panel is 'A package just for you:'
-    And the promotion description is displayed just after the statement
+    And the promotion description is displayed
     And only SIMO targeted bolt-on is presented in the targeted promotion section
-    And a checkbox for 'iPhone' for data allowance is displayed just on the right-hand side below select 'CTA'
+    And a checkbox for 'iPhone' for data allowance is NOT displayed just on the right-hand side below select 'CTA'
     And the 'Contract length: 12 months/30 days' is displayed just below the promotion description
     And Click on 'Select' button in the tile of targeted promotion and Consumer should be landed on Basket Page
 
