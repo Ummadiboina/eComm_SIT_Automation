@@ -1907,14 +1907,14 @@ public class E2EOrderPlaced_Steps {
     @Then("^perform the credit checks using valid ([^\"]*), ([^\"]*), ([^\"]*), ([^\"]*) and valid ([^\"]*)$")
     public void CreditCheck(String Firstname, String Surname, String HouseNumber, String PostCode, String Username)
             throws Throwable {
-        // try {
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        PageFactory.initElements(driver, Agent_CreditCheckDetailsPage.class);
-        Agent_CreditCheckPageActions.Creditcheck(Firstname, Surname, HouseNumber, PostCode);
-        System.out.println("Completed Credit check");
-        Agent_CreditCheckPageActions.BankDetails(Username);
-        System.out.println("Completed Bank details");
-        Thread.sleep(30000);
+       // try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, Agent_CreditCheckDetailsPage.class);
+            Agent_CreditCheckPageActions.Creditcheck(Firstname, Surname, HouseNumber, PostCode);
+            System.out.println("Completed Credit check");
+            Agent_CreditCheckPageActions.BankDetails(Username);
+            System.out.println("Completed Bank details");
+            Thread.sleep(30000);
          /*
         } catch (Exception e) {
             // TODO Auto-generated catch block
@@ -1924,6 +1924,7 @@ public class E2EOrderPlaced_Steps {
         }
 */
     }
+    
 	/*
 	 * #########################################################################
 	 * #########
