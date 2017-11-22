@@ -287,5 +287,26 @@ public class DeliveryPageActions extends Environment {
 
         Screenshots.captureScreenshot();
 
+    }    
+    
+     public static void verifyPromotionsDisplay_yourORder() {
+        try{
+
+           String promotionTxt  =  DeliveryPage.promotions_yourOrder.getText();
+           if(promotionTxt.contains("romotion")){
+               String promotionValue  =  DeliveryPage.promotionVAlue_yourOrdre.getText();
+               System.out.println(" We are able to see the Promotions in YourOder  &  displayed Values is :: " + promotionValue);
+               log.debug(" We are able to see the Promotions in YourOder  &  displayed Values is :: " + promotionValue);
+           }else{
+               System.out.println("Failed to  able to see the Promotions in YourOder ");
+               log.debug("Failed to  able to see the Promotions in YourOder ");
+           }
+
+        }catch (Exception e){
+            System.out.println("Failed to  able to see the Promotions in YourOder & reason is :: "+ e.getStackTrace());
+            log.debug("Failed to  able to see the Promotions in YourOder & reason is :: "+ e.getStackTrace());
+        }
+
     }
+    
 }

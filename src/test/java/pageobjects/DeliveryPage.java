@@ -122,6 +122,18 @@ public class DeliveryPage {
 
     @FindBy(how = How.XPATH, using = "//span[contains(text(),'iPad Pro 9.7 inch')]")
     public static WebElement DateofBirthText;
+    
+    
+    
+    // venkat
+    //verify the promotios are displayed on the Selected order
+    @FindBy(how = How.XPATH, using = "//*[normalize-space(.)='Promotions']")
+    public static WebElement promotions_yourOrder;
+
+    //verify the promotios are displayed on the Selected order
+    @FindBy(how = How.XPATH, using = "//*[normalize-space(.)='Promotions']/following-sibling::p")
+    public static WebElement promotionVAlue_yourOrdre;
+
 
 
 }
