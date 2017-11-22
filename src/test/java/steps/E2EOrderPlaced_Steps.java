@@ -1843,72 +1843,8 @@ public class E2EOrderPlaced_Steps {
         }
 
     }
-    
-    /*
-    * #########################################################################
-    * #######EMPTY_basket_validate_promotion##################################
-    */
-    @Then("^Click on 'Empty basket' CTA the 'Promotions' should be removed from the basket$")
-    public void click_on_Empty_basket_CTA_the_Promotions_should_be_removed_from_the_basket() throws Throwable {
-        try {
-            driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
-            PageFactory.initElements(driver, Agent_DealBuilderPage.class);
-            Agent_DealBuilderPageActions.Emptyabove();
-        } catch (Exception e) {
-            // TODO Auto-generated catch block
-            System.out.println("Unable to click on Empty above, please see the failure screenshot");
-            Assert.fail("Unable to click on Empty above , please see the failure screenshot");
-        }
-    }
-
-
-
-    //venkat
-    @Given("^the customer is presented with the targeted promotion tab at the end of the tabs$")
-    public void the_customer_is_presented_with_the_targeted_promotion_tab_at_the_end_of_the_tabs() throws Exception {
-        try{
-            driver.manage().timeouts().implicitlyWait(2, TimeUnit.MINUTES);
-            Agent_DealBuilderPageActions.verifyTargetedPromotionsTab();
-            Thread.sleep(3000);
-        } catch (Exception e) {
-            // TODO Auto-generated catch block
-            System.out.println("Failed to verify the Target Promotions Tab, please see the screen shoot");
-            Assert.fail("Failed to verify the Target Promotions Tab, please see the screen shoot");
-        }
-    }
-
-    //venkat
-    @Given("^the promotions bolt on are displayed in targeted promotion tab$")
-    public void the_promotions_bolt_on_are_displayed_in_targeted_promotion_tab() throws Exception {
-        try{
-            driver.manage().timeouts().implicitlyWait(2, TimeUnit.MINUTES);
-            Agent_DealBuilderPageActions.verifyPromotionsDescriotnDisplayed();
-            Thread.sleep(3000);
-        } catch (Exception e) {
-            // TODO Auto-generated catch block
-            System.out.println("Failed to verify the targe promotions description, please see the screen shoot" + e.getStackTrace());
-            Assert.fail("Failed to verify the targe promotions description, please see the screen shoot" + e.getStackTrace());
-        }
-    }
-
-    //And the 'Promotions' section is displayed with all the applied promotions description in the deal builder
-
-    @Then("^Replace the device (.*) from the deal builder with different device and the 'Promotions' should be removed from the deal builder$")
-    public void replaceDeveiceThenPromotionShouldNotAvailable(String Promotionss) throws Exception {
-        try {
-            driver.manage().timeouts().implicitlyWait(2, TimeUnit.MINUTES);
-            Agent_DealBuilderPageActions.verifyPromotionsDisplayed();
-            Thread.sleep(3000);
-            // System.out.println("Selecting a valid tariff");
-        } catch (Exception e) {
-            // TODO Auto-generated catch block
-            System.out.println("Unable to select valid tariff, please see the failure screenshot");
-            Assert.fail("Unable to select valid tariff, please see the failure screenshot");
-
-        }
-    }
-    
-	/*
+ 
+ 	/*
 	 * #########################################################################
 	 * #########
 	 */
