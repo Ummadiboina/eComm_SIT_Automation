@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b3431a87-97b1-4ffe-b872-0e6a8e54231a" name="Default" comment="Anusha_Nov15112017_v3">
+    <list default="true" id="b3431a87-97b1-4ffe-b872-0e6a8e54231a" name="Default" comment="Force push due to venkatas conflicts">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Features/DecemberRelease2017/Functional/FTQ/CFA_Phones_credit_check_status_REFERRAL_copy_change_to_hold_deposit_for_6_months.feature" afterPath="$PROJECT_DIR$/Features/DecemberRelease2017/Functional/FTQ/CFA_Phones_credit_check_status_REFERRAL_copy_change_to_hold_deposit_for_6_months.feature" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -149,7 +150,6 @@
       <list>
         <option value="$PROJECT_DIR$/Features/DecemberRelease2017/Functional/FTQ/AFA_Phones_credit_check_status_REFERRALWITHDEPOSIT_copy_change_to_hold_deposit_for_6_months.feature" />
         <option value="$PROJECT_DIR$/Features/DecemberRelease2017/Functional/FTQ/AFA_update_copy_for_Refer_with_Simo_response.feature" />
-        <option value="$PROJECT_DIR$/Features/DecemberRelease2017/Functional/FTQ/CFA_Phones_credit_check_status_REFERRAL_copy_change_to_hold_deposit_for_6_months.feature" />
         <option value="$PROJECT_DIR$/Features/DecemberRelease2017/Functional/CFD-1819/AFA_SIMO_Promotions_section_in_deal_builder_SINGLE_promotions_EMPTY_basket_validate_promotion.feature" />
         <option value="$PROJECT_DIR$/src/test/java/pageobjects/Agent_DealBuilderPage.java" />
         <option value="$PROJECT_DIR$/Features/DecemberRelease2017/Functional/CFD-2296/CFA_SIMO_order_iPhone_user.feature" />
@@ -175,6 +175,7 @@
         <option value="$PROJECT_DIR$/Features/DecemberRelease2017/Functional/CFD-2296/CFU_user_with_direct_debit_details_SIMO_order_Tablets_user_Review_page_changes.feature" />
         <option value="$PROJECT_DIR$/src/test/java/actionsPerformed/UpgradeCustomerPageActions.java" />
         <option value="$PROJECT_DIR$/src/test/java/steps/E2EOrderPlaced_Steps.java" />
+        <option value="$PROJECT_DIR$/Features/DecemberRelease2017/Functional/FTQ/CFA_Phones_credit_check_status_REFERRAL_copy_change_to_hold_deposit_for_6_months.feature" />
       </list>
     </option>
   </component>
@@ -437,7 +438,14 @@
       <option name="project" value="LOCAL" />
       <updated>1511355817536</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Force push due to venkatas conflicts">
+      <created>1511355861740</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1511355861740</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -514,7 +522,8 @@
     <MESSAGE value="Anusha_Nov15112017_v2" />
     <MESSAGE value="Anusha_Nov16112017" />
     <MESSAGE value="Anusha_Nov15112017_v3" />
-    <option name="LAST_COMMIT_MESSAGE" value="Anusha_Nov15112017_v3" />
+    <MESSAGE value="Force push due to venkatas conflicts" />
+    <option name="LAST_COMMIT_MESSAGE" value="Force push due to venkatas conflicts" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

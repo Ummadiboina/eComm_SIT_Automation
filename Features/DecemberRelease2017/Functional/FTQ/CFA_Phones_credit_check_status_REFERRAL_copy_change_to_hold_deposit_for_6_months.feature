@@ -17,7 +17,7 @@ Feature: CFA_Phones_credit_check_status_REFERRAL_copy_change_to_hold_deposit_for
     And Continue to Agreements page and confirm all the agreement checks
     And Continue to Review page and review the order
     Then order confirmation is displayed
-    # The credit check status should be REFERRAL
+    # The credit check status should be REFERRALL
 
     Examples:
       | handset | Firstname | Surname |
