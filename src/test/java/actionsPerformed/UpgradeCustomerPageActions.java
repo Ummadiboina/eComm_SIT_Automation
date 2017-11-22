@@ -1921,18 +1921,50 @@ public class UpgradeCustomerPageActions extends Environment {
     public static void reviewTariff() throws InterruptedException, IOException {
         System.out.println("Trying to verify first section is review tariff");
 
+//Give function with position so that review tariff is at first section like 1. Review your tariff
 
         pageobjects.UpgradeCustomerPage.reviewTariff.getSize();
 
         Screenshots.captureScreenshot();
     }
 
-    public static void contentReviewTariff() throws InterruptedException, IOException {
+    public static void contentDisplayedFirstTariff() throws InterruptedException, IOException {
         System.out.println("Trying to verify first section is review tariff");
+        //Below tariff validations should be in such a way that this should be first tile text
+        pageobjects.UpgradeCustomerPage.moveFromTariff.getText();
 
+        Screenshots.captureScreenshot();
+    }
 
-        pageobjects.UpgradeCustomerPage.reviewTariff.getText();
+    public static void contentDisplayedSecondTariff() throws InterruptedException, IOException {
+        System.out.println("Trying to verify first section is review tariff");
+        //Below tariff validations should be in such a way that this should be second tile text
+        pageobjects.UpgradeCustomerPage.toThisTariff.getText();
 
+        Screenshots.captureScreenshot();
+    }
+
+    public static void clickonnoSurelink() throws InterruptedException, IOException {
+        System.out.println("Trying to verify first section is review tariff");
+        //Below tariff validations should be in such a way that this should be second tile text
+        pageobjects.UpgradeCustomerPage.clickonNotsureSimType.click();
+
+        Screenshots.captureScreenshot();
+    }
+
+    public static void nonDisplayDeliverySection() throws InterruptedException, IOException {
+        System.out.println("Trying to verify delivery section is present or not");
+        //Below get the delivery section size
+        int deliverySection  = driver.findElements(By.xpath("")).size();
+        if(deliverySection >= 0)
+        {
+            Assert.fail("Delivery section present");
+        }
+        else
+        {
+            log.debug("No delivery section is present, thus fine");
+        }
+        pageobjects.UpgradeCustomerPage.clickonNotsureSimType.click();
         Screenshots.captureScreenshot();
     }
 

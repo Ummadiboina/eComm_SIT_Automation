@@ -215,26 +215,18 @@ public class UpgradeCustomerPage {
     @FindBy(how = How.ID, using = "about-you-section")
     public static WebElement aboutYou;
 
-//Give xpath with position so that review tariff is at first place
+//Give xpath with position so that review tariff is at first section like 1. Review your tariff
     @FindBy(how = How.ID, using = "")
     public static WebElement reviewTariff;
 
-    ////////////////////////////////////////////////////////Promotions/////////////////////////////////////////////
+    @FindBy(how = How.ID, using = "")
+    public static WebElement moveFromTariff;
 
-	@FindBy(how = How.ID, using = "NEEDS TO BE ADDED")
-	public static WebElement PromotionsHeader;
+    @FindBy(how = How.ID, using = "")
+    public static WebElement toThisTariff;
 
-	@FindBy(how = How.ID, using = "NEEDS TO BE ADDED")
-	public static WebElement PromotionsBody;
-
-
-	@FindBy(how = How.XPATH, using= "//*[@type='checkbox']")
-	public static WebElement CheckBoxNotDisplayed;
-
-
-
-
-
+    @FindBy(how = How.ID, using = "")
+    public static WebElement clickonNotsureSimType;
 }
 
 

@@ -1,7 +1,10 @@
 package steps;
 
+import java.awt.*;
+import java.awt.event.KeyEvent;
 import java.io.IOException;
 import java.util.*;
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 import GlobalActions.*;
@@ -496,12 +499,12 @@ public class E2EOrderPlaced_Steps {
 
     @Given("^add Accessories to basket within limit in details page and navigate to basket$")
     public void add_Accessories_to_basket_within_limit_in_details_page_and_navigate_to_basket() throws Throwable {
-     //   try {
-            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-            PageFactory.initElements(driver, AccessoryPage.class);
-            PageFactory.initElements(driver, NonConnectedDeviceDetailsPage.class);
-            AccessoryPageActions.selectAnyAccessoryLimit();
-            NonConnectedDeviceDetailsPageAction.ClickonBasketIcon();
+        //   try {
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+        PageFactory.initElements(driver, AccessoryPage.class);
+        PageFactory.initElements(driver, NonConnectedDeviceDetailsPage.class);
+        AccessoryPageActions.selectAnyAccessoryLimit();
+        NonConnectedDeviceDetailsPageAction.ClickonBasketIcon();
             /*
         } catch (Exception e) {
             // TODO Auto-generated catch block
@@ -918,7 +921,7 @@ public class E2EOrderPlaced_Steps {
     }
 
     @And("^Click on the 'Continue button'$")
-    public void clickOnTheContinueButton() throws Throwable {
+    public void clickOnTheContinueButton() throws Exception {
         try {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, DeliveryPage.class);
@@ -928,9 +931,255 @@ public class E2EOrderPlaced_Steps {
             // TODO Auto-generated catch block
             System.out.println("Unable to input details in delivery page");
             Assert.fail("Unable to input details in delivery page");
+        }
+    }
+
+
+    @And("^verify I land on basket page$")
+    public void verify_I_land_on_basket_page() throws Exception {
+        try {
+            driver.manage().timeouts().implicitlyWait(120, TimeUnit.SECONDS);
+            if (driver.findElements(By.xpath("(//div[@class='main-container']//*[contains(text(),' basket')])[1]")).size() > 0) {
+                String str =  driver.findElement(By.xpath("(//div[@class='main-container']//*[contains(text(),' basket')])[1]")).getText();
+                System.out.println("the customer lands on Basket page as : " + str);
+                log.debug("the customer lands on Basket pageas : " + str);
+                Thread.sleep(5000);
+            }else{
+                System.out.println("Failed to customer lands on Basket page ");
+                log.debug("Failed to customer lands on Basket page ");
+            }
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            System.out.println("Unable to input details in Basket page");
+            Assert.fail("Unable to input details in Basket page");
 
         }
     }
+
+    @And("^Click on browser back arrow and land on Basket page$")
+    public void click_browser_back_arrow_and_land_Basket_page() throws Exception {
+        try {
+            driver.manage().timeouts().implicitlyWait(120, TimeUnit.SECONDS);
+            driver.navigate().back();
+            System.out.println("we are Navigate back to the busket page");
+            log.debug("we are Navigate back to the busket page");
+            Thread.sleep(5000);
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            System.out.println("Failed to navigate back to the Browser");
+            Assert.fail("Failed to navigate back to the Browser");
+
+        }
+    }
+
+
+    @And("^enter the shop url$")
+    public void enter_shop_url() throws Exception {
+        try {
+            driver.manage().timeouts().implicitlyWait(120, TimeUnit.SECONDS);
+            driver.navigate().to("https://www.ref.o2.co.uk/shop/");
+            Thread.sleep(2000);
+            Robot robot = new Robot();
+            robot.keyPress(KeyEvent.VK_ENTER);
+            robot.keyRelease(KeyEvent.VK_ENTER);
+            System.out.println("Entered the shop URL is :" + driver.getCurrentUrl());
+            log.debug("Entered the shop URL is :" + driver.getCurrentUrl());
+            Thread.sleep(5000);
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            System.out.println("Failed to Enter the Shop URL ");
+            Assert.fail("Failed to Enter the Shop URL ");
+        }
+    }
+
+
+    @And("^the customer lands on delivery page$")
+    public void customer_lands_on_delivery_page() throws Exception {
+        try {
+            driver.manage().timeouts().implicitlyWait(120, TimeUnit.SECONDS);
+            if (driver.findElements(By.xpath("//div[@id='delivery-section']//*[normalize-space()='Delivery']")).size() > 0) {
+                String str =  driver.findElement(By.xpath("//div[@id='delivery-section']//*[normalize-space()='Delivery']")).getText();
+                System.out.println("the customer lands on delivery page");
+                log.debug("the customer lands on delivery page");
+                Thread.sleep(5000);
+            }else{
+                System.out.println("Failed to customer lands on delivery page ");
+                log.debug("Failed to customer lands on delivery page ");
+            }
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            System.out.println("Failed to customer lands on delivery page ");
+            Assert.fail("Failed to customer lands on delivery page ");
+        }
+    }
+
+
+    //And Click on Other radio button
+    @And("^Click on Other radio button$")
+    public void click_on_Other_radio_button() throws Exception {
+        try {
+            driver.manage().timeouts().implicitlyWait(120, TimeUnit.SECONDS);
+            if (driver.findElements(By.xpath("(//*[normalize-space()='Other']/preceding-sibling::input)[1]")).size() > 0) {
+                String str =  driver.findElement(By.xpath("//div[@id='delivery-section']//*[normalize-space()='Other']")).getText();
+                driver.findElement(By.xpath("(//*[normalize-space()='Other']/preceding-sibling::input)[1]")).click();
+                System.out.println("Click on Other radio button as :: " + str);
+                log.debug("Click on Other radio button as :: " + str);
+                Thread.sleep(5000);
+            }else{
+                System.out.println("Failed to Click the Other radio button ");
+                log.debug("Failed to Click the Other radio button ");
+            }
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            System.out.println("Failed to Click the Other radio button " + e.getStackTrace());
+            Assert.fail("Failed to Click the Other radio button " + e.getStackTrace());
+        }
+    }
+
+
+    //And Click on 'Place your order' CTA
+    @And("^And Click on 'Place your order' CTA$")
+    public void click_on_Place_your_order_CTA() throws Exception {
+        try {
+            driver.manage().timeouts().implicitlyWait(120, TimeUnit.SECONDS);
+            if (driver.findElements(By.xpath("//*[contains(text(),'lace your order')]")).size() > 0) {
+                String btnValue =  driver.findElement(By.xpath("//*[contains(text(),'lace your order')]")).getText();
+                driver.findElement(By.xpath("//*[contains(text(),'lace your order')]")).click();
+                System.out.println("Click on Other radio button as :: " + btnValue);
+                log.debug("Click on Other radio button as :: " + btnValue);
+                Thread.sleep(5000);
+            }else{
+                System.out.println("Click on 'Place your order' CTA");
+                log.debug("Click on 'Place your order' CTA");
+            }
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            System.out.println("Click on 'Place your order' CTA" + e.getStackTrace());
+            Assert.fail("Click on 'Place your order' CTA" + e.getStackTrace());
+        }
+    }
+
+
+    @And("^the Check box with (.*)I'll be using an iPhone(.*) copy text is displayed below 'Select' CTA in the horizontal tariff tile$")
+    public void  checkbox_with_will_be_using_iPhone_belowSelectBtn() throws Throwable {
+        try {
+            driver.manage().timeouts().implicitlyWait(120, TimeUnit.SECONDS);
+            List<WebElement> noOfselExists = driver.findElements(By.xpath("//button[contains(text(),'elect')]"));
+            for(int i =1; i<noOfselExists.size(); i++){
+                int countExists = driver.findElements(By.xpath("(//span[contains(text(),'ll be using an iPhone')])["+i+"]")).size();
+                if(countExists > 0){
+                    String checkBoxTxt = driver.findElement(By.xpath("(//span[contains(text(),'ll be using an iPhone')])["+i+"]")).getText();
+                    driver.findElement(By.xpath("(//span[contains(text(),'ll be using an iPhone')])["+i+"]/preceding-sibling::input")).click();
+                    System.out.println("We clicked the CheckBox below the  Select Button as :: " + checkBoxTxt);
+                    log.debug("We clicked the CheckBox below the  Select Button as :: " + checkBoxTxt);
+                    break;
+                }
+            }
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            System.out.println("Failed to clicked the CheckBox below the  Select Button");
+            Assert.fail("Failed to clicked the CheckBox below the  Select Button");
+        }
+    }
+
+
+    @And("^Click on 'Select' button in the tile of targeted promotion and Consumer should be landed on Basket Page$")
+    public void click_Select_button_in_tile_targeted_promotion_and_Consumer_should_landed_Basket_Page() throws Throwable {
+        try {
+            driver.manage().timeouts().implicitlyWait(120, TimeUnit.SECONDS);
+            List<WebElement> noOfselExists = driver.findElements(By.xpath("//button[contains(text(),'elect')]"));
+            for(int i =1; i<noOfselExists.size(); i++){
+                int countExists = driver.findElements(By.xpath("(//button[contains(text(),'elect')])["+i+"]")).size();
+                if(countExists > 0){
+                    driver.findElement(By.xpath("(//button[contains(text(),'elect')])["+i+"]")).click();
+                    System.out.println("We clicked the Select Button");
+                    log.debug("We clicked the Select Button");
+                    break;
+                }
+            }
+            Thread.sleep(3000);
+            String busketPg = driver.findElement(By.xpath("//h1[text()='Your basket']")).getText();
+            System.out.println("Successfully landing into the Busket page");
+            log.debug("Successfully landing into the Busket page");
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            System.out.println("Failed to landing into the Busket page");
+            Assert.fail("Failed to landing into the Busket page");
+        }
+    }
+
+    //And Click on "I'll be using an iPhone" checkbox and Click on 'Select' CTA to buy a tariff
+    @And("^Click on (.*)I'll be using an iPhone(.*) checkbox and Click on 'Select' CTA to buy a tariff$")
+    public void  click_on_I_will_using_iPhone_checkbox_and_Click_on_Select_CTA_to_buy_tariff() throws Throwable {
+        try {
+            E2EOrderPlaced_Steps e2eOrder = new E2EOrderPlaced_Steps();
+            e2eOrder.checkbox_with_will_be_using_iPhone_belowSelectBtn();
+            e2eOrder.click_Select_button_in_tile_targeted_promotion_and_Consumer_should_landed_Basket_Page();
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            System.out.println("Failed to  Click on I'll be using an iPhone checkbox and Click on 'Select' CTA to buy a tariff");
+            Assert.fail("Failed to  Click on I'll be using an iPhone checkbox and Click on 'Select' CTA to buy a tariff");
+        }
+    }
+
+
+    //the targeted promotion section is displayed just below the 'recycle options' section
+    @And("^the targeted promotion section is displayed just below the 'recycle options' section$")
+    public void targeted_promotion_section_displayed_just_below_recycle_options_section() throws Exception {
+        try {
+            driver.manage().timeouts().implicitlyWait(120, TimeUnit.SECONDS);
+            int sizeof = (int) driver.findElements(By.xpath("//*[contains(text(),'kage just for you')]")).size();
+            if(sizeof>0){
+                String val = driver.findElement(By.xpath("//*[contains(text(),'kage just for you')]")).getText();
+                System.out.println("we are valideted the the A package just for you next to Upgrade and recycle options as :: " + val);
+                log.debug("we are valideted the the A package just for you next to Upgrade and recycle options as :: " + val);
+            }else{
+                System.out.println("Failed to find the targeted promotion section is displayed just below the 'recycle options' section");
+                log.debug("Failed to find the the targeted promotion section is displayed just below the 'recycle options' section");
+            }
+            Thread.sleep(2000);
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            System.out.println("Failed to find the the targeted promotion section is displayed just below the 'recycle options' section " +e.getStackTrace());
+            Assert.fail("Failed to find the the targeted promotion section is displayed just below the 'recycle options' section " +e.getStackTrace());
+
+        }
+    }
+
+    //And verify 'Terms and conditions' link is present
+    @And("^verify 'Terms and conditions' link is present$")
+    public void verify_Terms_and_conditions_link_is_present() throws Exception {
+        try {
+            driver.manage().timeouts().implicitlyWait(120, TimeUnit.SECONDS);
+            Thread.sleep(2000);
+            if (driver.findElements(By.xpath("//a[normalize-space()='terms and conditions']")).size() > 0){
+                String termAndConditTxt = driver.findElement(By.xpath("//a[normalize-space()='terms and conditions']")).getText();
+                System.out.println(" verify 'Terms and conditions' link is present " + termAndConditTxt);
+                log.debug(" verify 'Terms and conditions' link is present " + termAndConditTxt);
+            }
+            Thread.sleep(2000);
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            System.out.println("Failed toerify 'Terms and conditions' link is present");
+            Assert.fail("Failed toerify 'Terms and conditions' link is present");
+        }
+    }
+
+
+    //And the 'Promotions' section is displayed with all applied promotions description in the Your Order section
+    @And("^the 'Promotions' section is displayed with all applied promotions description in the Your Order section$")
+    public void Promotions_section_displayed_with_all__applied_promotions_description_Your_order_section() throws Exception {
+        try {
+            driver.manage().timeouts().implicitlyWait(120, TimeUnit.SECONDS);
+            DeliveryPageActions.verifyPromotionsDisplay_yourORder();
+            Thread.sleep(2000);
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            System.out.println("Unable to input details in delivery page");
+            Assert.fail("Unable to input details in delivery page");
+        }
+    }
+
 
 
     //////////*****below are Dummy functions just for verifications ***********////////////
@@ -1167,7 +1416,6 @@ public class E2EOrderPlaced_Steps {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, ReviewPage.class);
             Thread.sleep(5000);
-           // CommonFunctions.checkTitle("Review Page");
             ReviewPageActions.gettitlepage();
             ReviewPageActions.TermsCheckBox();
             ReviewPageActions.PayNow();
@@ -1595,69 +1843,8 @@ public class E2EOrderPlaced_Steps {
         }
 
     }
-     /*
-     * #########################################################################
-     * #######EMPTY_basket_validate_promotion##################################
-     */
-     @Then("^Click on 'Empty basket' CTA the 'Promotions' should be removed from the basket$")
-     public void click_on_Empty_basket_CTA_the_Promotions_should_be_removed_from_the_basket() throws Throwable {
-         try {
-             driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
-             PageFactory.initElements(driver, Agent_DealBuilderPage.class);
-             Agent_DealBuilderPageActions.Emptyabove();
-         } catch (Exception e) {
-             // TODO Auto-generated catch block
-             System.out.println("Unable to click on Empty above, please see the failure screenshot");
-             Assert.fail("Unable to click on Empty above , please see the failure screenshot");
-         }
-     }
+    
 
-
-
-    //venkat
-    @Given("^the customer is presented with the targeted promotion tab at the end of the tabs$")
-    public void the_customer_is_presented_with_the_targeted_promotion_tab_at_the_end_of_the_tabs() throws Exception {
-        try{
-            driver.manage().timeouts().implicitlyWait(2, TimeUnit.MINUTES);
-            Agent_DealBuilderPageActions.verifyTargetedPromotionsTab();
-            Thread.sleep(3000);
-        } catch (Exception e) {
-            // TODO Auto-generated catch block
-            System.out.println("Failed to verify the Target Promotions Tab, please see the screen shoot");
-            Assert.fail("Failed to verify the Target Promotions Tab, please see the screen shoot");
-        }
-    }
-
-    //venkat
-    @Given("^the promotions bolt on are displayed in targeted promotion tab$")
-    public void the_promotions_bolt_on_are_displayed_in_targeted_promotion_tab() throws Exception {
-        try{
-            driver.manage().timeouts().implicitlyWait(2, TimeUnit.MINUTES);
-            Agent_DealBuilderPageActions.verifyPromotionsDescriotnDisplayed();
-            Thread.sleep(3000);
-        } catch (Exception e) {
-            // TODO Auto-generated catch block
-            System.out.println("Failed to verify the targe promotions description, please see the screen shoot" + e.getStackTrace());
-            Assert.fail("Failed to verify the targe promotions description, please see the screen shoot" + e.getStackTrace());
-        }
-    }
-
-    //And the 'Promotions' section is displayed with all the applied promotions description in the deal builder
-
-    @Then("^Replace the device (.*) from the deal builder with different device and the 'Promotions' should be removed from the deal builder$")
-    public void replaceDeveiceThenPromotionShouldNotAvailable(String Promotionss) throws Exception {
-        try {
-            driver.manage().timeouts().implicitlyWait(2, TimeUnit.MINUTES);
-            Agent_DealBuilderPageActions.verifyPromotionsDisplayed();
-            Thread.sleep(3000);
-            // System.out.println("Selecting a valid tariff");
-        } catch (Exception e) {
-            // TODO Auto-generated catch block
-            System.out.println("Unable to select valid tariff, please see the failure screenshot");
-            Assert.fail("Unable to select valid tariff, please see the failure screenshot");
-
-        }
-    }
 	/*
 	 * #########################################################################
 	 * #########
@@ -1665,7 +1852,6 @@ public class E2EOrderPlaced_Steps {
 	/* ######## Validate Basket contents ######### */
 	/*
 	 * #########################################################################
-3
 	 */
 
     @Given("^Validate all the Basket content and checkout$")
@@ -1739,6 +1925,7 @@ public class E2EOrderPlaced_Steps {
         }
 */
     }
+    
 	/*
 	 * #########################################################################
 	 * #########
@@ -1755,10 +1942,10 @@ public class E2EOrderPlaced_Steps {
     // valid details in delivery page$")
     public void register_the_customer(String Firstname, String Surname, String HouseNumber, String PostCode)
             throws Throwable {
-     //   try {
-            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-            PageFactory.initElements(driver, Agent_RegisterCustomerPage.class);
-            Agent_RegisterCustomerActions.PayGRegistration(Firstname, Surname, HouseNumber, PostCode);
+        //   try {
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+        PageFactory.initElements(driver, Agent_RegisterCustomerPage.class);
+        Agent_RegisterCustomerActions.PayGRegistration(Firstname, Surname, HouseNumber, PostCode);
 /*
         } catch (Exception e) { // TODO Auto-generated catch block
             System.out.println("Unable to Register customer , please see the failure screenshot");
@@ -6716,12 +6903,165 @@ public class E2EOrderPlaced_Steps {
         try{
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, UpgradeCustomerPage.class);
-            UpgradeCustomerPageActions.contentReviewTariff();
+            UpgradeCustomerPageActions.contentDisplayedFirstTariff();
 
         } catch (Exception e) {
 
-            System.out.println("Unable to do validate about you");
-            Assert.fail("Unable to do validate about you");
+            System.out.println("unable to verify that text is displayed in First tile");
+            Assert.fail("unable to verify that text is displayed in First tile");
+        }
+    }
+
+    @And("^title \"([^\"]*)\" is displayed in second tariff tile$")
+    public void titleIsDisplayedInSecondTariffTile(String arg0) throws Throwable {
+        try{
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, UpgradeCustomerPage.class);
+            UpgradeCustomerPageActions.contentDisplayedSecondTariff();
+
+        } catch (Exception e) {
+
+            log.debug("unable to verify that text is displayed in second tile");
+            Assert.fail("unable to verify that text is displayed in second tile");
+        }
+    }
+
+    @And("^refresh the page$")
+    public void refreshThePage() throws Throwable {
+        try{
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            driver.navigate().refresh();
+
+        } catch (Exception e) {
+
+            log.debug("Unable refresh browser");
+            Assert.fail("Unable to refresh browser");
+        }
+    }
+
+    @And("^Click on 'Not sure what SIM you have' link$")
+    public void clickOnNotSureWhatSIMYouHaveLink() throws Throwable {
+        try{
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, UpgradeCustomerPage.class);
+            UpgradeCustomerPageActions.clickonnoSurelink();
+
+        } catch (Exception e) {
+
+            log.debug("unable to click on not sure what sim radio button");
+            Assert.fail("unable to click on not sure what sim radio button");
+        }
+    }
+
+    @And("^the delivery section is not displayed$")
+    public void theDeliverySectionIsNotDisplayed() throws Throwable {
+        try{
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, UpgradeCustomerPage.class);
+            UpgradeCustomerPageActions.nonDisplayDeliverySection();
+
+        } catch (Exception e) {
+
+            log.debug("unable to click on not sure what sim radio button");
+            Assert.fail("unable to click on not sure what sim radio button");
+        }
+    }
+
+    @And("^the customer is displayed with sample copy text$")
+    public void theCustomerIsDisplayedWithSampleCopyText() throws Throwable {
+        try{
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, UpgradeCustomerPage.class);
+            UpgradeCustomerPageActions.nonDisplayDeliverySection();
+        } catch (Exception e) {
+            log.debug("unable to click on not sure what sim radio button");
+            Assert.fail("unable to click on not sure what sim radio button");
+        }
+    }
+
+   
+    /*
+    * #########################################################################
+    * #######  EMPTY_basket_validate_promotion ##################################
+    */
+    @Then("^Click on 'Empty basket' CTA the 'Promotions' should be removed from the basket$")
+    public void click_on_Empty_basket_CTA_the_Promotions_should_be_removed_from_the_basket() throws Throwable {
+        try {
+            driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, Agent_DealBuilderPage.class);
+            Agent_DealBuilderPageActions.Emptyabove();
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            System.out.println("Unable to click on Empty above, please see the failure screenshot");
+            Assert.fail("Unable to click on Empty above , please see the failure screenshot");
+        }
+    }
+
+    //venkat
+    @Given("^the customer is presented with the targeted promotion tab at the end of the tabs$")
+    public void the_customer_is_presented_with_the_targeted_promotion_tab_at_the_end_of_the_tabs() throws Exception {
+        try{
+            driver.manage().timeouts().implicitlyWait(2, TimeUnit.MINUTES);
+            Agent_DealBuilderPageActions.verifyTargetedPromotionsTab();
+            Thread.sleep(3000);
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            System.out.println("Failed to verify the Target Promotions Tab, please see the screen shoot");
+            Assert.fail("Failed to verify the Target Promotions Tab, please see the screen shoot");
+        }
+    }
+
+    //venkat
+    @Given("^the promotions bolt on are displayed in targeted promotion tab$")
+    public void the_promotions_bolt_on_are_displayed_in_targeted_promotion_tab() throws Exception {
+        try{
+            driver.manage().timeouts().implicitlyWait(2, TimeUnit.MINUTES);
+            Agent_DealBuilderPageActions.verifyPromotionsDescriotnDisplayed();
+            Thread.sleep(3000);
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            System.out.println("Failed to verify the targe promotions description, please see the screen shoot" + e.getStackTrace());
+            Assert.fail("Failed to verify the targe promotions description, please see the screen shoot" + e.getStackTrace());
+        }
+    }
+
+    //And the 'Promotions' section is displayed with all the applied promotions description in the deal builder
+
+    @Then("^Replace the device (.*) from the deal builder with different device and the 'Promotions' should be removed from the deal builder$")
+    public void replaceDeveiceThenPromotionShouldNotAvailable(String Promotionss) throws Exception {
+        try {
+            driver.manage().timeouts().implicitlyWait(2, TimeUnit.MINUTES);
+            Agent_DealBuilderPageActions.verifyPromotionsDisplayed();
+            Thread.sleep(3000);
+            // System.out.println("Selecting a valid tariff");
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            System.out.println("Unable to select valid tariff, please see the failure screenshot");
+            Assert.fail("Unable to select valid tariff, please see the failure screenshot");
+
+        }
+    }
+
+    //Then agent should be displayed with updated copy of 'Refer with Simo' response
+    @Then("^agent should be displayed with updated copy of 'Refer with Simo' response$")
+    public void agent_should_displayed_with_updated_copy_of_Refer_with_Sim0_response() throws Exception {
+        try {
+            driver.manage().timeouts().implicitlyWait(120, TimeUnit.SECONDS);
+            if (driver.findElements(By.xpath("//*[contains(text(),'2.co.uk')]")).size() > 0) {
+            String str =  driver.findElement(By.xpath("(//*[contains(text(),'2.co.uk')])[1]")).getText();
+            System.out.println("Agent should be displayed with updated copy of 'Refer with Simo' response as :" + str);
+            log.debug("Agent should be displayed with updated copy of 'Refer with Simo' response as :" + str);
+            Thread.sleep(3000);
+        }
+        else{
+            System.out.println("Failed to Agent should be displayed with updated copy of 'Refer with Simo' response ");
+            log.debug("Failed to Agent should be displayed with updated copy of 'Refer with Simo' response ");
+        }
+        } 
+        catch (Exception e) {
+        // TODO Auto-generated catch block
+        System.out.println("Failed to Agent should be displayed with updated copy of 'Refer with Simo' response @ " + e.getStackTrace());
+        Assert.fail("Failed to Agent should be displayed with updated copy of 'Refer with Simo' response @ " + e.getStackTrace());
         }
     }
 
@@ -6791,4 +7131,3 @@ public class E2EOrderPlaced_Steps {
     }
 
 }
-
