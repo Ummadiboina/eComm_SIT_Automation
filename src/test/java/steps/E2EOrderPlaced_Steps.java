@@ -6766,7 +6766,31 @@ public class E2EOrderPlaced_Steps {
         }
     }
 
+    @And("^the delivery section is not displayed$")
+    public void theDeliverySectionIsNotDisplayed() throws Throwable {
+        try{
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, UpgradeCustomerPage.class);
+            UpgradeCustomerPageActions.nonDisplayDeliverySection();
 
+        } catch (Exception e) {
+
+            log.debug("unable to click on not sure what sim radio button");
+            Assert.fail("unable to click on not sure what sim radio button");
+        }
+    }
+
+    @And("^the customer is displayed with sample copy text$")
+    public void theCustomerIsDisplayedWithSampleCopyText() throws Throwable {
+        try{
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, UpgradeCustomerPage.class);
+            UpgradeCustomerPageActions.nonDisplayDeliverySection();
+        } catch (Exception e) {
+            log.debug("unable to click on not sure what sim radio button");
+            Assert.fail("unable to click on not sure what sim radio button");
+        }
+    }
 
 
     // Below is Nested Class
