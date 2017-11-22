@@ -12,7 +12,6 @@
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="eCommAutomationSit" target="1.8" />
-      <module name="regression_octphase2" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
