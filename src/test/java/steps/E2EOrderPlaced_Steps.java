@@ -1676,6 +1676,7 @@ public class E2EOrderPlaced_Steps {
         }
 */
     }
+    
 	/*
 	 * #########################################################################
 	 * #########
@@ -6729,6 +6730,26 @@ public class E2EOrderPlaced_Steps {
         }
     }
 
+//Then agent should be displayed with updated copy of 'Refer with Simo' response
+@Then("^agent should be displayed with updated copy of 'Refer with Simo' response$")
+public void agent_should_displayed_with_updated_copy_of_Refer_with_Sim0_response() throws Exception {
+    try {
+        driver.manage().timeouts().implicitlyWait(120, TimeUnit.SECONDS);
+        if (driver.findElements(By.xpath("//*[contains(text(),'2.co.uk')]")).size() > 0) {
+            String str =  driver.findElement(By.xpath("(//*[contains(text(),'2.co.uk')])[1]")).getText();
+            System.out.println("Agent should be displayed with updated copy of 'Refer with Simo' response as :" + str);
+            log.debug("Agent should be displayed with updated copy of 'Refer with Simo' response as :" + str);
+            Thread.sleep(3000);
+        }else{
+            System.out.println("Failed to Agent should be displayed with updated copy of 'Refer with Simo' response ");
+            log.debug("Failed to Agent should be displayed with updated copy of 'Refer with Simo' response ");
+        }
+    } catch (Exception e) {
+        // TODO Auto-generated catch block
+        System.out.println("Failed to Agent should be displayed with updated copy of 'Refer with Simo' response @ " + e.getStackTrace());
+        Assert.fail("Failed to Agent should be displayed with updated copy of 'Refer with Simo' response @ " + e.getStackTrace());
+    }
+}
 
     // Below is Nested Class
 
