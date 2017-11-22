@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 import GlobalActions.CommonUtilities;
+import junit.framework.AssertionFailedError;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -1934,4 +1935,61 @@ public class UpgradeCustomerPageActions extends Environment {
 
         Screenshots.captureScreenshot();
     }
+
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////Promotions/////////////////////////////////////////////////////////////////////
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    public static void HeadingMessagePanel() throws InterruptedException, IOException{
+
+        log.debug("Validating the Heading message for promotions");
+
+        WebElement HeaderPromo = pageobjects.UpgradeCustomerPage.PromotionsHeader;
+        JavascriptExecutor executor = (JavascriptExecutor)driver;
+        executor.executeScript("arguments[0].click();", HeaderPromo);
+        String HeaderText = HeaderPromo.getText();
+        if(HeaderText.contains("This is a deal we think you’ll like")) {
+            log.debug("The Promotions Tile is displayed correctly");
+            System.out.println(HeaderText);
+        }
+        else {
+            System.out.println("The Promotions title is incorrect");
+            Assert.fail("The copy text is not correct");
+        }
+
+    }
+
+    public static void BodyMessagePanel() throws InterruptedException, IOException{
+        WebElement BodyPromo = pageobjects.UpgradeCustomerPage.PromotionsBody;
+        JavascriptExecutor executor = (JavascriptExecutor)driver;
+        executor.executeScript("arguments[0].click();", BodyPromo);
+        String BodyText = BodyPromo.getText();
+        if(BodyText.contains("‘Your offer is:")) {
+            log.debug("‘Your offer is:");
+            System.out.println(BodyText);
+        }
+        else {
+            System.out.println("The Body Message is incorrect");
+            Assert.fail("The Body Message is incorrect");
+        }
+
+    }
+
+    public static void SimoPromotionsCheckboxNotDisplayed() throws InterruptedException, IOException{
+
+        WebElement element = pageobjects.UpgradeCustomerPage.CheckBoxNotDisplayed;
+        JavascriptExecutor executor = (JavascriptExecutor)driver;
+        executor.executeScript("arguments[0].click();", element);
+        log.debug("Verifying that the checkboxes are not displayed");
+        if(element.isDisplayed()){
+            System.out.println("The checkboxes for simo are dipsplayed which is not right");
+            Assert.fail("The checkboxes for simo are dipsplayed which is not right\"");
+        }
+        else
+            log.debug("The checkboxes for simo are not displayed");
+
+    }
+
+
+
 }

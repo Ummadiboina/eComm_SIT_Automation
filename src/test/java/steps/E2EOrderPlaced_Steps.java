@@ -6737,5 +6737,58 @@ public class E2EOrderPlaced_Steps {
             verify = value2;
         }
     }
+
+    ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    ////////////////////////////////////////////////////PROMOTIONS/////////////////////////////////////////////////////
+    ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    @And("^the heading of the panel is 'A package just for you:'$")
+    public void the_heading_of_the_panel_is_A_package_just_for_you() throws Throwable {
+        try{
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, UpgradeCustomerPage.class);
+            UpgradeCustomerPageActions.HeadingMessagePanel();
+
+        } catch (Exception e) {
+
+            System.out.println("The Heading message is not expected one");
+            Assert.fail("The Heading message is not expected one");
+        }
+
+    }
+
+    @And("^the promotion description is displayed$")
+    public void the_promotion_description_is_displayed() throws Throwable {
+
+        try{
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, UpgradeCustomerPage.class);
+            UpgradeCustomerPageActions.BodyMessagePanel();
+
+        } catch (Exception e) {
+
+            System.out.println("The Body message is not expected one");
+            Assert.fail("The Body message is not expected one");
+        }
+
+    }
+
+    @Given("^a checkbox for 'iPhone' for data allowance is NOT displayed just on the right-hand side below select 'CTA'$")
+    public void a_checkbox_for_iPhone_for_data_allowance_is_displayed_just_on_the_right_hand_side_below_select_CTA() throws Throwable {
+
+        try{
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, UpgradeCustomerPage.class);
+            UpgradeCustomerPageActions.SimoPromotionsCheckboxNotDisplayed();
+
+        } catch (Exception e) {
+
+            System.out.println("The Body message is not expected one");
+            Assert.fail("The Body message is not expected one");
+        }
+
+
+    }
+
 }
 
