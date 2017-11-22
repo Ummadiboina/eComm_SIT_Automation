@@ -1416,7 +1416,6 @@ public class E2EOrderPlaced_Steps {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, ReviewPage.class);
             Thread.sleep(5000);
-            // CommonFunctions.checkTitle("Review Page");
             ReviewPageActions.gettitlepage();
             ReviewPageActions.TermsCheckBox();
             ReviewPageActions.PayNow();
