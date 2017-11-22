@@ -6996,6 +6996,37 @@ public class E2EOrderPlaced_Steps {
             Assert.fail("Unable to click on Empty above , please see the failure screenshot");
         }
     }
+    /*
+  * ##################################################################################
+  *  Standard_or_CCA_targeted_bolton_promotion_tab_Agent_upgrade_options_page_Order_placement
+  * #####################################################################################
+  */
+    @And("^Click on 'Select' Button in targeted promotion tab$")
+    public void click_on_Select_Button_in_targeted_promotion_tab() throws Throwable {
+        try {
+            driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, Agent_DealBuilderPage.class);
+            Agent_DealBuilderPageActions.SelectPromotion();
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            System.out.println("Unable to select button in targeted promotion tab , please see the failure screenshot");
+            Assert.fail("Unable to get select button in targeted promotion tab , please see the failure screenshot");
+
+        }
+    }
+    @And("^Click on 'Copy to Basket' CTA$")
+    public void click_on_Copy_to_Basket_CTA() throws Throwable {
+        try {
+            driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, Agent_DealBuilderPage.class);
+            Agent_DealBuilderPageActions.Copytobasket();
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            System.out.println("Unable to click on Copy to basket CTA , please see the failure screenshot");
+            Assert.fail("Unable to click on Copy to basket CTA , please see the failure screenshot");
+
+        }
+    }
 
     //venkat
     @Given("^the customer is presented with the targeted promotion tab at the end of the tabs$")

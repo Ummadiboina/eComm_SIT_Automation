@@ -81,6 +81,12 @@ public class Agent_DealBuilderPage {
 	@FindBy(how = How.XPATH, using = "//*[@id=\"emptyDealButton\"]")
 	public static WebElement Emptyabove;
 
+	@FindBy(how = How.XPATH, using = "//*[@id='buy-09c627bc-5e88-4d5d-a46d-4ad2e0b3dc22']/img ")
+	public static WebElement SelectPromotion;
+
+	@FindBy(how = How.XPATH, using = "//*[@id=\"saveToBasketButton\"]")
+	public static WebElement Copytobasket;
+
 
 	///////////////////////////// Basecomms//////////////////////////////
 
