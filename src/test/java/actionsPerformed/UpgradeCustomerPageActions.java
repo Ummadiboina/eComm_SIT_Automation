@@ -1950,4 +1950,20 @@ public class UpgradeCustomerPageActions extends Environment {
 
         Screenshots.captureScreenshot();
     }
+
+    public static void nonDisplayDeliverySection() throws InterruptedException, IOException {
+        System.out.println("Trying to verify delivery section is present or not");
+        //Below get the delivery section size
+        int deliverySection  = driver.findElements(By.xpath("")).size();
+        if(deliverySection >= 0)
+        {
+            Assert.fail("Delivery section present");
+        }
+        else
+        {
+            log.debug("No delivery section is present, thus fine");
+        }
+        pageobjects.UpgradeCustomerPage.clickonNotsureSimType.click();
+        Screenshots.captureScreenshot();
+    }
 }

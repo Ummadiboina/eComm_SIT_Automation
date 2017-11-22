@@ -16,7 +16,7 @@ Feature: CFU_user_with_direct_debit_details_SIMO_order_Tablets_user_Review_page_
     And the Header navigation is not displayed
     And the Progress bar is not displayed at the top
     And the Order summary and the assurance messages is not displayed on the right
-    And the greet customer bar is displayed as the header
+    And the greet "customer" bar is displayed as the header
     And MSISDN is displayed as label only
     #The MSISDN should not be displayed as drop down
     And the 'About you' section is not displayed
