@@ -53,8 +53,11 @@ public static List<WebElement> CapacityLabel;
 @FindAll({ @FindBy(how = How.XPATH, using = "//ul[@class='styled-group device-color']/label/span") })
 public static List<WebElement> ColorLabel;
 
-@FindAll({ @FindBy(how = How.XPATH, using = "//*[@id='colourSelectBoxItText']") })
+@FindAll({ @FindBy(how = How.XPATH, using = "//span[@class='selectboxit-colour-name']") })
 public static WebElement UpdatedColorLabel;
+
+	@FindAll({ @FindBy(how = How.ID, using = "colourSelectBoxItArrowContainer") })
+	public static WebElement colorselectBoxArow;
 
 @FindAll({ @FindBy(how = How.XPATH, using = "//*[@id='colourSelectBoxIt']") })
 public static WebElement Colourdropdownbox;

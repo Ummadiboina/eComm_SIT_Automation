@@ -7,7 +7,7 @@ Given I am an CFA user and Lands on shop page
 And navigate to PAYM Phones page 
 And I choose PayM <handset>
 And Navigate to device details page
-And Land on the 'Tariffs and extra' page 
+And Land on the 'Tariffs and extra' page
 And verify that the insurance is in a sorted order
 And verify that the free insurance is auto selected
 

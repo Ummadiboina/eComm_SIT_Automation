@@ -78,6 +78,10 @@ public class Agent_DealBuilderPage {
 	@FindBy(how = How.XPATH, using = "//*[@class='priceSelection']/select")
 	public static WebElement HandsetTariffCombination;
 
+	@FindBy(how = How.XPATH, using = "//*[@id=\"emptyDealButton\"]")
+	public static WebElement Emptyabove;
+
+
 	///////////////////////////// Basecomms//////////////////////////////
 
 	// *[@id="buy-4a05eacb-a057-40fc-9ada-8b8c59c43c4e"]/img
@@ -174,5 +178,32 @@ public class Agent_DealBuilderPage {
 	//check the Tariff weather added into the Deal Builder
 	@FindBy(how = How.XPATH, using = "//table[@class='lineItemTable device']//th")
 	public static WebElement tariffAdded_DealBuilder;
+
+/* venkata ********************
+   ***********************************************/
+
+	//target promotions tab
+	@FindBy(how = How.XPATH, using = "//a[@id='targetedPromotionsTab']")
+	public static WebElement targetPromtionsTab;
+
+	//target promotions tab
+	@FindBy(how = How.XPATH, using = "//*[normalize-space(.)='Promotion Description']")
+	public static WebElement promotionDescription;
+
+	//deviceTab
+	@FindBy(how = How.XPATH, using = "//a[@id='devicesTab']")
+	public static WebElement deviceTab;
+
+	//remove the added device from deal builder
+	@FindBy(how = How.XPATH, using = "//table[@class='lineItemTable device']//a[@class='removeItem']")
+	public static WebElement removeDevice_DealBuilder;
+
+	//check check weather the promotions are displayed in Deal builder or not
+	@FindBy(how = How.XPATH, using = "//table[@class='lineItemTable Promotions']")
+	public static WebElement promotions_DealBuilder;
+
+	//select the second device from stock
+	@FindBy(how = How.XPATH, using = "//table[@id='deviceTable']//th[normalize-space(.)='Stock']//..//..//../tbody//tr[2]/td[1]/a")
+	public static WebElement selectDevive2_formInstock;
 	
 }

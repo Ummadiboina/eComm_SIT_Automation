@@ -1843,6 +1843,7 @@ public class E2EOrderPlaced_Steps {
         }
 
     }
+    
 
 	/*
 	 * #########################################################################
@@ -6827,6 +6828,157 @@ public class E2EOrderPlaced_Steps {
             Assert.fail("unable to enter additional  details in passport field");
         }
     }
+
+    @And("^'Checkout In Progress' page is not displayed$")
+    public void checkoutInProgressPageIsNotDisplayed() throws Throwable {
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, BasketPage.class);
+            Thread.sleep(3000);
+            BasketPageActions.CheckoutNotDisplayed();
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.out.println("Unable to validate basket contents");
+            Assert.fail("Unable to validate basket contents");
+        }
+    }
+
+    @And("^the greet \"([^\"]*)\" bar is displayed as the header$")
+    public void theGreetBarIsDisplayedAsTheHeader(String customerName) throws Throwable {      try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, UpgradeCustomerPage.class);
+            UpgradeCustomerPageActions.greetingValidation(customerName);
+
+        } catch (Exception e) {
+
+            System.out.println("Unable to do validate the customer greeting");
+            Assert.fail("Unable to do validate the customer greeting");
+        }
+    }
+
+    @And("^MSISDN is displayed as label only$")
+    public void msisdnIsDisplayedAsLabelOnly() throws Throwable {
+       try{
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+        PageFactory.initElements(driver, UpgradeCustomerPage.class);
+        UpgradeCustomerPageActions.msisdnDisplay();
+
+    } catch (Exception e) {
+
+        System.out.println("Unable to do validate if msisdn is displayed as label only");
+        Assert.fail("Unable to do validate if msisdn is displayed as label only");
+    }
+    }
+
+    @And("^the 'About you' section is not displayed$")
+    public void theAboutYouSectionIsNotDisplayed() throws Throwable {
+        try{
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, UpgradeCustomerPage.class);
+            UpgradeCustomerPageActions.aboutYou();
+
+        } catch (Exception e) {
+
+            System.out.println("Unable to do validate about you");
+            Assert.fail("Unable to do validate about you");
+        }
+    }
+
+    @And("^the first section is \"([^\"]*)\" section$")
+    public void theFirstSectionIsSection() throws Throwable {
+        try{
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, UpgradeCustomerPage.class);
+            UpgradeCustomerPageActions.reviewTariff();
+
+        } catch (Exception e) {
+
+            System.out.println("Unable to do validate about you");
+            Assert.fail("Unable to do validate about you");
+        }
+    }
+
+    @And("^the title \"([^\"]*)\" is displayed in first tariff tile$")
+    public void theTitleIsDisplayedInFirstTariffTile() throws Throwable {
+        try{
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, UpgradeCustomerPage.class);
+            UpgradeCustomerPageActions.contentDisplayedFirstTariff();
+
+        } catch (Exception e) {
+
+            System.out.println("unable to verify that text is displayed in First tile");
+            Assert.fail("unable to verify that text is displayed in First tile");
+        }
+    }
+
+    @And("^title \"([^\"]*)\" is displayed in second tariff tile$")
+    public void titleIsDisplayedInSecondTariffTile(String arg0) throws Throwable {
+        try{
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, UpgradeCustomerPage.class);
+            UpgradeCustomerPageActions.contentDisplayedSecondTariff();
+
+        } catch (Exception e) {
+
+            log.debug("unable to verify that text is displayed in second tile");
+            Assert.fail("unable to verify that text is displayed in second tile");
+        }
+    }
+
+    @And("^refresh the page$")
+    public void refreshThePage() throws Throwable {
+        try{
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            driver.navigate().refresh();
+
+        } catch (Exception e) {
+
+            log.debug("Unable refresh browser");
+            Assert.fail("Unable to refresh browser");
+        }
+    }
+
+    @And("^Click on 'Not sure what SIM you have' link$")
+    public void clickOnNotSureWhatSIMYouHaveLink() throws Throwable {
+        try{
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, UpgradeCustomerPage.class);
+            UpgradeCustomerPageActions.clickonnoSurelink();
+
+        } catch (Exception e) {
+
+            log.debug("unable to click on not sure what sim radio button");
+            Assert.fail("unable to click on not sure what sim radio button");
+        }
+    }
+
+    @And("^the delivery section is not displayed$")
+    public void theDeliverySectionIsNotDisplayed() throws Throwable {
+        try{
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, UpgradeCustomerPage.class);
+            UpgradeCustomerPageActions.nonDisplayDeliverySection();
+
+        } catch (Exception e) {
+
+            log.debug("unable to click on not sure what sim radio button");
+            Assert.fail("unable to click on not sure what sim radio button");
+        }
+    }
+
+    @And("^the customer is displayed with sample copy text$")
+    public void theCustomerIsDisplayedWithSampleCopyText() throws Throwable {
+        try{
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, UpgradeCustomerPage.class);
+            UpgradeCustomerPageActions.nonDisplayDeliverySection();
+        } catch (Exception e) {
+            log.debug("unable to click on not sure what sim radio button");
+            Assert.fail("unable to click on not sure what sim radio button");
+        }
+    }
+
 
     // Below is Nested Class
 
