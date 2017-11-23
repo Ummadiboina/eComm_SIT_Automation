@@ -159,7 +159,7 @@ public class BasketPageActions extends Environment {
 		} else {
 			System.out.println("Queue page is not displayed");
 			WebElement element = pageobjects.BasketPage.checkoutbtn;
-			JavascriptExecutor executor = (JavascriptExecutor)driver;
+			JavascriptExecutor executor = (JavascriptExecutor) driver;
 			executor.executeScript("arguments[0].click();", element);
 
 			//pageobjects.BasketPage.checkoutbtn.click();
@@ -433,9 +433,7 @@ public class BasketPageActions extends Environment {
 
 			log.debug("successfully verified the basket section after phone selection");
 			Screenshots.captureScreenshot();
-		}
-
-		catch (AssertionError e) {
+		} catch (AssertionError e) {
 
 			log.debug(
 					"Assertion failed: Previously selected Non Connected device is present in the Basket section after phone selection"
@@ -691,12 +689,9 @@ public class BasketPageActions extends Environment {
 		String Expected = "You order is in progress";
 
 
-		if(ActualText.contains(Expected))
-		{
+		if (ActualText.contains(Expected)) {
 			Assert.fail("Order in progress page is displayed");
-		}
-		else
-		{
+		} else {
 			System.out.println("Order in progress is not displayed");
 		}
 		Thread.sleep(5000);
@@ -704,4 +699,23 @@ public class BasketPageActions extends Environment {
 
 	}
 
+	public static void DeviceInYourOrderBasket() throws InterruptedException, IOException {
+
+		WebElement element = pageobjects.BasketPage.DeviceTitleYourOrderBasket;
+		JavascriptExecutor executor = (JavascriptExecutor) driver;
+		executor.executeScript("arguments[0].click();", element);
+		log.debug("Verifying that the checkboxes are not displayed");
+		String DeviceText = element.getText();
+		if (DeviceText.contains("Device")) {
+			System.out.println("The title Device is displayed in the Your Order section");
+			log.debug("The title Device is displayed in the Your Order section");
+
+		} else {
+			log.debug("The title Device is NOT displayed in the Your Order section");
+			Assert.fail("The title Device is displayed in the Your Order section");
+
+		}
+
+
+	}
 }
