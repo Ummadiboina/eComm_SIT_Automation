@@ -159,5 +159,11 @@ public class BasketPage {
 
 	@FindBy(how = How.XPATH, using = "//h1[@class='staticPage']")
 	public static WebElement checkoutinProgress;
+
+	/////////////////////////////////////Promotions/////////////////////////////////////////////////////////////////
+
+	@FindBy(how = How.XPATH, using = "//*[@class='basket-list']/ul[@class='orders']/li[@class='package include-rating']/h3[@class='section-parent-header']")
+	public static WebElement DeviceTitleYourOrderBasket;
+
 }
 	

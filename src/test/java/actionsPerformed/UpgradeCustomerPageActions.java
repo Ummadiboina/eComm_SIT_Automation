@@ -2022,6 +2022,32 @@ public class UpgradeCustomerPageActions extends Environment {
 
     }
 
+    public static void ContractLengthDisplayed() throws InterruptedException, IOException{
+
+        WebElement elementCL = pageobjects.UpgradeCustomerPage.ContractLenghtPromotions;
+        JavascriptExecutor executor = (JavascriptExecutor)driver;
+        executor.executeScript("arguments[0].click();", elementCL);
+        log.debug("Verifying that the checkboxes are not displayed");
+        String ContractLengthText = elementCL.getText();
+        if(ContractLengthText.contains("12 months")){
+            System.out.println("The contract lenght 12 months is displayed");
+            log.debug("12 months contract length is displayed");
+                    }
+        else if (ContractLengthText.contains("30 days")){
+            System.out.println("The contract lenght 30 days is displayed");
+            log.debug("30 days contract length is displayed");
+        }
+        else
+        {
+            log.debug("The contract lenght is not displayed");
+            Assert.fail("The contract lenght is not displayed which is not correct");
+        }
+
+
+
+    }
+
+
 
 
 }

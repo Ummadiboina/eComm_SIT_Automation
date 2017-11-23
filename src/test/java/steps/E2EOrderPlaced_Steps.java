@@ -7144,7 +7144,7 @@ public class E2EOrderPlaced_Steps {
 
     }
 
-    @Given("^a checkbox for 'iPhone' for data allowance is NOT displayed just on the right-hand side below select 'CTA'$")
+    @And("^a checkbox for 'iPhone' for data allowance is NOT displayed just on the right-hand side below select 'CTA'$")
     public void a_checkbox_for_iPhone_for_data_allowance_is_displayed_just_on_the_right_hand_side_below_select_CTA() throws Throwable {
 
         try{
@@ -7159,6 +7159,36 @@ public class E2EOrderPlaced_Steps {
         }
 
 
+    }
+
+    @And("^the ContractLength is displayed just below the promotion description$")
+    public void the_ContractLength_is_displayed_just_below_the_promotion_description() throws Throwable {
+        try{
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, UpgradeCustomerPage.class);
+            UpgradeCustomerPageActions.ContractLengthDisplayed();
+
+        } catch (Exception e) {
+
+            System.out.println("The contract Length is not displayed");
+            Assert.fail("The contract Length is not displayed");
+        }
+
+    }
+
+    @And("^the title 'Device' is displayed above the selected device for Your Order section$")
+    public void the_title_Device_is_displayed_above_the_selected_device_for_Your_Order_section() throws Throwable {
+
+        try{
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, BasketPage.class);
+            BasketPageActions.DeviceInYourOrderBasket();
+
+        } catch (Exception e) {
+
+            System.out.println("The contract Length is not displayed");
+            Assert.fail("The contract Length is not displayed");
+        }
     }
 
 }

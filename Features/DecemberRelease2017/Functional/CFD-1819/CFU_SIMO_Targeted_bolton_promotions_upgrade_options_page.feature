@@ -12,9 +12,9 @@ Feature: CFU_SIMO_Targeted_bolton_promotions_upgrade_options_page
     And the promotion description is displayed
     And only SIMO targeted bolt-on is presented in the targeted promotion section
     And a checkbox for 'iPhone' for data allowance is NOT displayed just on the right-hand side below select 'CTA'
-    And the 'Contract length: 12 months/30 days' is displayed just below the promotion description
+    And the ContractLength is displayed just below the promotion description
     And Click on 'Select' button in the tile of targeted promotion and Consumer should be landed on Basket Page
 
     Examples:
-  | username                        | password |
-  |    gb119519_979816@o2.com       | test123  |
+  | username                        | password |ContractLength|
+  |    gb119519_979816@o2.com       | test123  | 12 Months    |

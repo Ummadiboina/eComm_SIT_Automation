@@ -240,6 +240,10 @@ public class UpgradeCustomerPage {
 	@FindBy(how = How.XPATH, using= "//*[@type='checkbox']")
 	public static WebElement CheckBoxNotDisplayed;
 
+	@FindBy(how = How.XPATH, using= "NEEDS TO BE ADDED")
+	public static WebElement ContractLenghtPromotions;
+
+
 
 }
 
