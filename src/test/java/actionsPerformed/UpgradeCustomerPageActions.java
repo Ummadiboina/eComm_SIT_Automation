@@ -2047,7 +2047,25 @@ public class UpgradeCustomerPageActions extends Environment {
 
     }
 
+    public static void DifferentTariffLink() throws InterruptedException, IOException {
+        System.out.println("Trying to verify review tariff");
+        pageobjects.UpgradeCustomerPage.DifferentTariff.click();
 
+        Screenshots.captureScreenshot();
+    }
+    public static void TermsAndCondition() throws InterruptedException, IOException {
+        Thread.sleep(3000);
 
+        ((JavascriptExecutor) driver).executeScript("arguments[0].click();",
+                pageobjects.UpgradeCustomerPage.TermsAndCondition);
+        Screenshots.captureScreenshot();
+    }
+
+    public static void MobileBroadbandTab() throws InterruptedException, IOException {
+        System.out.println("click Mobile Broadband link");
+        pageobjects.UpgradeCustomerPage.MobileBroadbandTab.click();
+
+        Screenshots.captureScreenshot();
+    }
 
 }

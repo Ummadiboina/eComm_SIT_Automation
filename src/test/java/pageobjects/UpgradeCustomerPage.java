@@ -243,8 +243,14 @@ public class UpgradeCustomerPage {
 	@FindBy(how = How.XPATH, using= "NEEDS TO BE ADDED")
 	public static WebElement ContractLenghtPromotions;
 
+	@FindBy(how = How.XPATH, using= "qa-view-all")
+	public static WebElement DifferentTariff;
 
+	@FindBy(how = How.XPATH, using= "//*[@id=\"termsLink\"]")
+	public static WebElement TermsAndCondition;
 
+	@FindBy(how = How.XPATH, using= "//*[@id=\"termsLink\"]")
+	public static WebElement MobileBroadbandTab;
 }
 
 

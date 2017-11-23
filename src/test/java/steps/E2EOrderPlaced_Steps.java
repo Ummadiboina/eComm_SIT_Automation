@@ -6978,8 +6978,35 @@ public class E2EOrderPlaced_Steps {
             Assert.fail("unable to click on not sure what sim radio button");
         }
     }
+    /////CFU_user_with_direct_debit_details_SIMO_order_INSTANT_Promotions_user_Review_page_changes////
+    @Then("^Click on 'Choose a different tariff' link$")
+    public void click_on_Choose_a_different_tariff_link() throws Throwable {
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, UpgradeCustomerPage.class);
+            UpgradeCustomerPageActions.DifferentTariffLink();
 
-   
+        } catch (Exception e) {
+
+            log.debug("unable to click on choose a different tariff link");
+            Assert.fail("unable to click on choose a different tariff link");
+        }
+    }
+    //And Click on 'I agree to the terms and condition' checkbox
+    @Then("^Click on 'I agree to the terms and condition' checkbox$")
+    public void click_on_I_agree_to_the_terms_and_condition_checkbox() throws Throwable {
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+        try {
+            PageFactory.initElements(driver, UpgradeCustomerPage.class);
+            UpgradeCustomerPageActions.TermsAndCondition();
+            Autoredirection.redirect();
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            System.out.println("Unable to click on 'I agree to the terms and condition 'checkbox , please see the failure screenshot");
+            Assert.fail("Unable to click on  'I agree to the terms and condition' checkbox  , please see the failure screenshot");
+        }
+    }
+
     /*
     * #########################################################################
     * #######  EMPTY_basket_validate_promotion ##################################
@@ -7190,5 +7217,17 @@ public class E2EOrderPlaced_Steps {
             Assert.fail("The contract Length is not displayed");
         }
     }
+    @And("^Click on 'Mobile Broadband' tab$")
+    public void Click_on_Mobile_Broadband_tab() throws Throwable {
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver,  UpgradeCustomerPage.class);
+            UpgradeCustomerPageActions.MobileBroadbandTab();
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            System.out.println("Unable to click on Mobile Broadband tab");
+            Assert.fail("Unable to click on Mobile Broadband tab");
 
+        }
+    }
 }
