@@ -1,5 +1,6 @@
 Feature: CFA_Phones_credit_check_status_REFERRAL_copy_change_to_hold_deposit_for_6_months
-  This scenario ensures that when the customer in acquisition journey is not met with a certain credit criteria, then the customer should be displayed with a copy to pay the deposit and hold the same for 6 months (Previously it  was 3 months)
+  This scenario ensures that when the customer in acquisition journey is not met with a
+  certain credit criteria, then the customer shouldl (Previously it  was 3 months)
 
   @Web
   Scenario Outline: CFA_Phones_credit_check_status_REFERRAL_copy_change_to_hold_deposit_for_6_months

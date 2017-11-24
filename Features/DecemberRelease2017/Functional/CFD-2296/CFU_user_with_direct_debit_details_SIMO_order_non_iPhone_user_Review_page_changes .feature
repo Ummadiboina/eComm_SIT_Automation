@@ -1,5 +1,6 @@
 Feature: CFU_user_with_direct_debit_details_SIMO_order_non_iPhone_user_Review_page_changes
-  This scenario ensures that the customer with direct debits is in upgrade journey and tries to place an SIMO order, then Delivery page should not be displayed in checkout and customer should be landed on review page to place an Order
+  This scenario ensures that the customer with direct debits is in upgrade journey and tries to place an SIMO order,
+  then Delivery page should not be displayed in checkout and customer should be landed on review page to place an Order
 
   @Web
   Scenario Outline:CFU_user_with_direct_debit_details_SIMO_order_non_iPhone_user_Review_page_changes

@@ -6972,7 +6972,7 @@ public class E2EOrderPlaced_Steps {
         try{
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, UpgradeCustomerPage.class);
-            UpgradeCustomerPageActions.nonDisplayDeliverySection();
+            UpgradeCustomerPageActions.copyTextAdditionalDepositPage();
         } catch (Exception e) {
             log.debug("unable to click on not sure what sim radio button");
             Assert.fail("unable to click on not sure what sim radio button");

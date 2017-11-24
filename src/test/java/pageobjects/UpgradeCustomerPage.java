@@ -240,7 +240,8 @@ public class UpgradeCustomerPage {
 	@FindBy(how = How.XPATH, using= "//*[@type='checkbox']")
 	public static WebElement CheckBoxNotDisplayed;
 
-
+    @FindBy(how = How.XPATH, using= "")
+    public static WebElement copyTextAdditonalDeposit;
 }
 
 

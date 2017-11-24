@@ -2023,5 +2023,21 @@ public class UpgradeCustomerPageActions extends Environment {
     }
 
 
+    public static void copyTextAdditionalDepositPage() throws InterruptedException, IOException{
+
+        log.debug("in copy text additional deposit verification page");
+        String actualText = pageobjects.UpgradeCustomerPage.copyTextAdditonalDeposit.getText();
+        String expectedText =  "If you make all your payments for 6 months this will be automatically refunded";
+        if(actualText.contains(expectedText))
+        {
+            log.debug("copy Text is displayed and its as expected");
+        }
+        else
+        {
+            Assert.fail("Not correct, the text donot match");
+        }
+
+    }
+
 
 }
