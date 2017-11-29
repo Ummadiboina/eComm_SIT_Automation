@@ -2,7 +2,7 @@ Feature: C1960_E11522_TC1_AFU_verify_Base_Comms_tariff_under_offer_column_order_
 
   @Web
   Scenario Outline: This scenario ensures that when the Agent in upgrade journey access the 'Tariffs' tab,
-    then the agent should be able to see 'Base Comms' tariff  highlighted or tagged differently along with normal tariffs and should be able to place order
+  then the agent should be able to see 'Base Comms' tariff  highlighted or tagged differently along with normal tariffs and should be able to place order
 
     Given I login to Agent shop
     And performs Upgrade for <user>
@@ -15,6 +15,6 @@ Feature: C1960_E11522_TC1_AFU_verify_Base_Comms_tariff_under_offer_column_order_
     When Pay by card
     Then Order confirmation message should be displayed
 
-    Examples: 
+    Examples:
       | user        | Device | Tariffs |
-      | 07521008974 | Random | Base    |
+      | 07521121496 | Random | Base    |

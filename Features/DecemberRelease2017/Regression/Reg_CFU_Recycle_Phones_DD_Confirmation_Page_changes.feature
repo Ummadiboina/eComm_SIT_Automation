@@ -11,7 +11,7 @@ Feature: CFU_Recycle_Phones_DD_Confirmation_Page_changes
     Then Verify that in the recycle value is displayed in the Recycle panel
     Then Select any one recycle option and click on 'Continue to Upgrade'
     And Select a <handset> device from Recommended devices section
-    And Select a tariff <tariff> with ribbons in upgrade journey
+    And Select ribboned tariff <tariff> in upgrade journey
     #And Select a tariff in upgrade journey
     And I Land on the basket page for upgrades
     And click on "go to checkout" button

@@ -12,7 +12,7 @@ Feature: Reg_AFA_verify_Base_Comms_tariff_under_offer_column_order_placement_O2_
     And Validate all the Basket content and checkout
     Then perform all the advisory checks
     And perform the credit checks using valid <Firstname>, <Surname>, <HouseNumber>, <PostCode> and valid <Username>
-    And Register customer with valid <Firstname>, <Surname>, <HouseNumber>, <PostCode> and other valid details in delivery page
+    And Register the customer with valid <Firstname>, <Surname>, <HouseNumber>, <PostCode> and other valid details in delivery page
     And Choose HomeDelivery delivery address and delivery time
     When Pay by card
     Then Order confirmation message should be displayed

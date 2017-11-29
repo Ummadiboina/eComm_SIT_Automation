@@ -13,12 +13,12 @@
     And SIMO or handset make/model and tariff combination is presented in the targeted promotion section
     And click on 'Select' CTA in the tariff tile of targeted promotion
     And the title 'Device' is displayed above the selected device for Your Order section
-    And 'What’s my Device Plan?' is displayed below device description
+    And "What’s my Device Plan?" is displayed below device description
     And verify whether 'sim' and 'collection' is in lower case
     And there is no space on either side of the slash
     And at the end of the total in note copy ‘doesn’t’ is displayed instead of ‘does not’
     And the 'Promotions' section is displayed with all applied promotions description in the Your Order section
-    And for more than one promotions returned,
+    And for more than one promotions returned
     And 'Promotions' is displayed one after another separated by a line
     And verify the customer is presented with a note just under the Airtime plan
     And Select a 'I dont need a sim'option

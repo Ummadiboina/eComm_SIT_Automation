@@ -11,7 +11,7 @@ Feature: AFA_update_copy_for_Refer_with_Simo_response
     And Validate all the Basket content and checkout
     Then perform all the advisory checks
     And perform the credit checks using valid <Firstname>, <Surname>, <HouseNumber>, <PostCode> and valid <Username>
-    And Register customer with valid <Firstname>, <Surname>, <HouseNumber>, <PostCode> and other valid details in delivery page
+    And Register the customer with valid <Firstname>, <Surname>, <HouseNumber>, <PostCode> and other valid details in delivery page
     And Choose <DeliveryType> delivery address and delivery time
     When submit order button is clicked
     Then Copy text should be displayed with message for referral

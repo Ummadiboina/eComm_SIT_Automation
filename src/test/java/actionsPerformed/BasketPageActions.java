@@ -163,7 +163,8 @@ public class BasketPageActions extends Environment {
 			executor.executeScript("arguments[0].click();", element);
 
 			//pageobjects.BasketPage.checkoutbtn.click();
-			log.debug("Clicking on Checkout button");
+			log.debug("Clicked on Checkout button");
+			Thread.sleep(4000);
 		}
 		Screenshots.captureScreenshot();
 

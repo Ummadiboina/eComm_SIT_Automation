@@ -17,19 +17,19 @@ public class AdditionalInformationPage {
 	  public static WebElement additionalCard;
 	  
 	  @FindBy(how=How.ID,using="txtCardHolderName") 
-	  public static WebElement Name_On_Card;
+	  public static WebElement CardHolderName;
 	  
 	  @FindBy(how=How.ID,using="txtCardNumber") 
-	  public static WebElement Card_Number;
+	  public static WebElement CardNumber;
 	  
 	  @FindBy(how=How.ID,using="txtMonth") 
-	  public static WebElement Expiry_Month;
+	  public static WebElement CardMonth;
 	  
 	  @FindBy(how=How.ID,using="txtYr") 
-	  public static WebElement Expiry_Year;
+	  public static WebElement CardYear;
 	  
 	  @FindBy(how=How.ID,using="txtSecurityCode")
-	  public static WebElement CVV_Security_Code;
+	  public static WebElement SecurityCode;
 	  
 	  @FindBy(how=How.ID,using="btnPayNow") 
 	  public static WebElement Continue_Next_Step;

@@ -35,21 +35,40 @@ public class PaymentPage {
 
     @FindBy(how = How.ID, using = "confirm-address")
     public static WebElement Confirm_Address_Checkbox;
+/*
 
     @FindBy(how = How.ID, using = "txtCardHolderName")
-    public static WebElement Name_On_Card;
+    public static WebElement CardHolderName;
 
     @FindBy(how = How.ID, using = "txtCardNumber")
-    public static WebElement Card_Number;
+    public static WebElement CardNumber;
 
     @FindBy(how = How.ID, using = "txtMonth")
-    public static WebElement Expiry_Month;
+    public static WebElement CardMonth;
 
     @FindBy(how = How.ID, using = "txtYr")
-    public static WebElement Expiry_Year;
+    public static WebElement CardYear;
 
     @FindBy(how = How.ID, using = "txtSecurityCode")
-    public static WebElement CVV_Security_Code;
+    public static WebElement SecurityCode;
+*/
+@FindBy(how = How.XPATH, using = "//*[@id='CardHolderName' or @id='CardHolderName']")
+public static WebElement CardHolderName;
+
+    @FindBy(how = How.XPATH, using = "//*[@id='ddlCardType' or @id='CardType']")
+    public static WebElement CardType;
+
+    @FindBy(how = How.XPATH, using = "//*[@id='txtCardNumber' or @id='CardNumber']")
+    public static WebElement CardNumber;
+
+    @FindBy(how = How.XPATH, using = "//*[@id='ddlMonth' or @id='Month']")
+    public static WebElement CardMonth;
+
+    @FindBy(how = How.XPATH, using = "//*[@id='ddlYear' or @id='Year']")
+    public static WebElement CardYear;
+
+    @FindBy(how = How.XPATH, using = "//*[@id='txtSecurityCode' or @id='CardCvv']")
+    public static WebElement SecurityCode;
 
     @FindBy(how = How.ID, using = "btnPayNow")
     public static WebElement Continue_Next_Step;

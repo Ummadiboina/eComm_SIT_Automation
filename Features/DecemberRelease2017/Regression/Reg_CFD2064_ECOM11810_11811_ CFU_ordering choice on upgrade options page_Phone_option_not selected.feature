@@ -7,7 +7,7 @@ Feature: CFD2064_ECOM11810_11811_ CFU_ordering choice on upgrade options page_Ph
     #And Navigate to upgrade phone
     And choose to upgrade any Phone in My upgrade page
     And Select a <handset> device from Recommended devices section
-    And Select a tariff in upgrade journey
+    And Select a tariff <tariff>
     Then I should see 'Your Sim Card'section
     And no option should be selected
     And verify that Confirm CTA is not displayed
@@ -29,6 +29,6 @@ Feature: CFD2064_ECOM11810_11811_ CFU_ordering choice on upgrade options page_Ph
     And Continue to Review page and review the order
     Then order confirmation is displayed
 
-    Examples: 
-      | username                      | password | handset           | Username     | Action |
-      | 27fe54900124@stf.ref.o2.co.uk | test123  | Samsung Galaxy S8 | TEST ACCEPTA | skip   |
+    Examples:
+      | username                      | password | handset           | Username     | Action | tariff                   |
+      | 27fe54900124@stf.ref.o2.co.uk | test123  | Samsung Galaxy S8 | TEST ACCEPTA | skip   | 129.99upfront37.00amonth |

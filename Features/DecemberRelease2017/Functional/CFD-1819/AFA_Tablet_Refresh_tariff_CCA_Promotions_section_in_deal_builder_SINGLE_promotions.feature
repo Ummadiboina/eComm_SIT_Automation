@@ -17,7 +17,7 @@ Feature: AFA_Tablet_Refresh_tariff_CCA_Promotions_section_in_deal_builder_SINGLE
     And the promotion returned is displayed in a single line
     Then perform all the advisory checks
     And perform the credit checks using valid <Firstname>, <Surname>, <HouseNumber>, <PostCode> and valid <Username>
-    And Register customer with valid <Firstname>, <Surname>, <HouseNumber>, <PostCode> and other valid details in delivery page
+    And Register the customer with valid <Firstname>, <Surname>, <HouseNumber>, <PostCode> and other valid details in delivery page
     And get the emailid
     And Click on 'Generate CCA' button
     And click on the 'CCA' link

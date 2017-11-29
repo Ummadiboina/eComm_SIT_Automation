@@ -6,7 +6,7 @@ Feature: AFA_Dongle_and_Tariff_validate_the_Promotions_section_for_Single_promot
     Given I login to Agent shop
     And performs Acquisition for New user
     And Select a valid PayM <Device>
-    And Select valid <Tariff> from tariffs tab
+    And Select valid <Tariffs> from tariffs tab
     #The tariff selected should have a single promotion
     And select a valid Handset and Tariff combination
     And the 'Promotions' section is displayed with all the applied promotions description in the deal builder
@@ -14,5 +14,5 @@ Feature: AFA_Dongle_and_Tariff_validate_the_Promotions_section_for_Single_promot
 
     Examples:
     | Device | Tariffs |
-    | Dongle | Single  |
+    | dongle | Random  |
 

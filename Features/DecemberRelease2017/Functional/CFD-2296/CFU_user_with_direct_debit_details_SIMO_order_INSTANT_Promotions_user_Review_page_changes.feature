@@ -38,6 +38,7 @@ Feature: CFU_user_with_direct_debit_details_SIMO_order_INSTANT_Promotions_user_R
     And the INSTANT promotions applicable for the SIMO Upgrade order is displayed on the new Review Page below selected tariff tile
     And Click on 'Choose a different tariff' link
 
+
     Examples:
       | username           | password  |
       | bvt2.cfu@gmail.com | cfubvt123 |

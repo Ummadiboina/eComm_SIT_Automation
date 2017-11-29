@@ -223,7 +223,7 @@ public class AccessoryPageActions extends Environment {
 				String DeviceDetailsQuantityValue = DeviceDetailsQuantity.getText();
 				System.out.println("DeviceDetailsQuantityValue is " + DeviceDetailsQuantityValue);
 
-				driver.findElement(By.id("deviceDetailsSubmit")).click();
+				//driver.findElement(By.id("deviceDetailsSubmit")).click();
 
 				Thread.sleep(7000);
 

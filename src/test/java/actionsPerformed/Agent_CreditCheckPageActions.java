@@ -7,6 +7,7 @@ import java.util.concurrent.TimeUnit;
 
 import org.apache.log4j.Logger;
 import org.junit.Assert;
+import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
@@ -122,11 +123,15 @@ public class Agent_CreditCheckPageActions extends Environment {
 
 		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
 		Agent_CreditCheckDetailsPage.AccountName.sendKeys(Username);
+		log.debug("Entered Account name");
 		Agent_CreditCheckDetailsPage.SortCode.sendKeys("201596");
+		log.debug("Entered Sort code");
 		Agent_CreditCheckDetailsPage.AccountNumber.sendKeys("10207136");
+		log.debug("Entered Account Number");
 		Agent_CreditCheckDetailsPage.CardCapture.click();
-		Thread.sleep(7000);
+		log.debug("Clicked on card capture");
 
+		Thread.sleep(5000);
 		String Mainwindow = driver.getWindowHandle();
 		// getting all the popup windows , hence using getwindowhandles instead of
 		// getwindowhandle
@@ -139,23 +144,25 @@ public class Agent_CreditCheckPageActions extends Environment {
 				driver.switchTo().window(ChildWindow);
 				Thread.sleep(3000);
 				Agent_CreditCheckDetailsPage.CardHolderName.sendKeys(Username);
+				log.debug("Entered card holder name");
 
 				Select CardTypeDropDown = new Select(pageobjects.Agent_CreditCheckDetailsPage.CardType);
 				CardTypeDropDown.selectByIndex(3);
-
+				log.debug("Entered Card type");
 				Agent_CreditCheckDetailsPage.CardNumber.sendKeys("4539791001730106");
-
+				log.debug("Entered card number");
 				Thread.sleep(2000);
 				Select CardMonthDropdown = new Select(pageobjects.Agent_CreditCheckDetailsPage.CardMonth);
+				log.debug("Entered card month");
 				CardMonthDropdown.selectByIndex(2);
 				Thread.sleep(2000);
 				Select CardYearDropdown = new Select(pageobjects.Agent_CreditCheckDetailsPage.CardYear);
 				CardYearDropdown.selectByIndex(3);
-
+				log.debug("Entered card year");
 				Thread.sleep(2000);
 
 				Agent_CreditCheckDetailsPage.SecurityCode.sendKeys("123");
-
+				log.debug("Entered security code");
 				Thread.sleep(2000);
 
 				//Agent_CreditCheckDetailsPage.UsethisCard.click();
@@ -163,7 +170,7 @@ public class Agent_CreditCheckPageActions extends Environment {
 				WebElement element = pageobjects.Agent_CreditCheckDetailsPage.UsethisCard;
 				JavascriptExecutor executor = (JavascriptExecutor)driver;
 				executor.executeScript("arguments[0].click();", element);
-
+				log.debug("Clicked on use this card");
 
 				// Need to add steps here
 
@@ -178,9 +185,18 @@ public class Agent_CreditCheckPageActions extends Environment {
 		// Switching to Parent window i.e Main Window.
 		driver.switchTo().window(Mainwindow);
 
-		Agent_CreditCheckDetailsPage.AgreeCreditCheck.click();
-		Thread.sleep(2000);
-		Agent_CreditCheckDetailsPage.PerformCreditCheck.click();
+
+//*[@id="cardCaptureError"]/ul/li[4]/label[1]
+		int success = driver.findElements(By.xpath("//*[@id = 'cardCaptureStatus' and @class ='success']")).size();
+		if (success > 0) {
+			Agent_CreditCheckDetailsPage.AgreeCreditCheck.click();
+			Thread.sleep(2000);
+			Agent_CreditCheckDetailsPage.PerformCreditCheck.click();
+		}
+		else
+		{
+			log.debug("Error is present in card capture screen, unable to capture card details, need to check once manually");
+		}
 		Screenshots.captureScreenshot();
 	}
 }

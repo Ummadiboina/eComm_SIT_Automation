@@ -27,7 +27,7 @@ public class AndroidCapability extends Environment {
 
         AppiumServerJava appiumServer = new AppiumServerJava();
 
-        int port = 4723;
+        int port = 4731;
         if (!appiumServer.checkIfServerIsRunnning(port)) {
             appiumServer.startServer();
             System.out.println("Appium server started");
@@ -54,7 +54,7 @@ public class AndroidCapability extends Environment {
         capabilities.setCapability(MobileCapabilityType.DEVICE_NAME, "Android Device");
         //capabilities.setCapability("app", file.getAbsoluteFile());
         capabilities.setCapability("app", file.getAbsoluteFile());
-        driver = new AndroidDriver<MobileElement>(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
+        driver = new AndroidDriver<MobileElement>(new URL("http://127.0.0.1:4731/wd/hub"), capabilities);
     }
 
     public void startMobileWeb() throws Exception {
@@ -63,7 +63,7 @@ public class AndroidCapability extends Environment {
 
         AppiumServerJava appiumServer = new AppiumServerJava();
 
-        int port = 4723;
+        int port = 4731;
         if (!appiumServer.checkIfServerIsRunnning(port)) {
             appiumServer.startServer();
             System.out.println("Appium server started");
@@ -77,7 +77,7 @@ public class AndroidCapability extends Environment {
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability(MobileCapabilityType.DEVICE_NAME, "Android Device");
         capabilities.setCapability(MobileCapabilityType.BROWSER_NAME, "Chrome");
-        driver = new AndroidDriver<MobileElement>(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
+        driver = new AndroidDriver<MobileElement>(new URL("http://127.0.0.1:4731/wd/hub"), capabilities);
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
         String relativePath = System.getProperty("user.dir");
         String EnvPropFilePath = relativePath + "/Configurations/Properties/AppConfig.properties";
@@ -97,15 +97,12 @@ public class AndroidCapability extends Environment {
     }
 
     public void stopAppiumServer() throws Exception {
-        // AppiumServerJava_cmdLine serverStart = new AppiumServerJava_cmdLine();
-
-       /* System.out.println("Going to stop appium server");
-        serverStart.stopServer();*/
         AppiumServerJava appiumServer = new AppiumServerJava();
+        System.out.println("Going to stop appium server");
 
-        int port = 4723;
+        int port = 4731;
         if (appiumServer.checkIfServerIsRunnning(port)) {
-            System.out.println("Going to stop appium server");
+            System.out.println("Returned - "+appiumServer.checkIfServerIsRunnning(port));
             appiumServer.stopServer();
             System.out.println("Appium server was running , hence stopped on port - " + port);
             log.debug("Stopped Appium Server.waiting for some 10 seconds ..");
@@ -113,8 +110,6 @@ public class AndroidCapability extends Environment {
             System.out.println("Appium Server was not running on port -  " + port);
             log.debug("Appium Server was not running on port");
         }
-
-
         Thread.sleep(10000);
     }
 }

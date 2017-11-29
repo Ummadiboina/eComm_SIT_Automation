@@ -22,6 +22,6 @@ Feature: Reg_Agent_Buyout
     And Continue to Review page, check order contract text and review the order
     Then order confirmation is displayed
 
-    Examples: 
+    Examples:
       | User        | Device              | Tariffs | username               | DeliveryType | Firstname | Surname | HouseNumber | PostCode | Username     | password |
-      | 07521121347 | S7 edge black 32 GB | Refresh | in06541m_926168@o2.com | HomeDelivery | Test      | Accepta | Flat 9      | SL11EL   | Test Accepta | test123  |
+      | 07521120048 | S7 edge black 32 GB | Refresh | in06541m_926168@o2.com | HomeDelivery | Test      | Accepta | Flat 9      | SL11EL   | Test Accepta | test123  |

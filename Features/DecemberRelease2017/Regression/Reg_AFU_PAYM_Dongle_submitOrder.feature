@@ -14,5 +14,5 @@ Feature: Reg_AFU_PAYM_Dongle_SubmitOrder
     Then Order confirmation message should be displayed
 
     Examples: 
-      | user        | Device | Tariffs | Extras | DeliveryType | Firstname | Surname | HouseNumber | PostCode | Username     |
-      | 07521009401 | dongle | Random  | Random | HomeDelivery | Test      | Accepta |          12 | SL11UP   | Test Accepta |
+      | user        | Device | Tariffs |
+      | 07521129999 | dongle | Random  |

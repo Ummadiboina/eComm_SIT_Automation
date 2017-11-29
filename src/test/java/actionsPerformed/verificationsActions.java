@@ -120,20 +120,20 @@ public class verificationsActions extends Environment {
             Assert.assertTrue(ActualText.contains("*"),
                     "Assertion Failed: Expected Message: " + ExpectedText + " is not present in the page");
 
-            PaymentPage.Name_On_Card.sendKeys("Test Accepta");
+            PaymentPage.CardHolderName.sendKeys("Test Accepta");
             log.debug("Entering name of the card as Test Accepta");
 
             Thread.sleep(2000);
-            PaymentPage.Card_Number.sendKeys("4539791001730106");
+            PaymentPage.CardNumber.sendKeys("4539791001730106");
             log.debug("Entered Card number as 4539xxxxxxxxxx06");
             Thread.sleep(2000);
-            PaymentPage.Expiry_Month.sendKeys("01");
+            PaymentPage.CardMonth.sendKeys("01");
             log.debug("Entered Expiry Month");
             Thread.sleep(2000);
-            PaymentPage.Expiry_Year.sendKeys("2020");
+            PaymentPage.CardYear.sendKeys("2020");
             log.debug("Entered Expiry Year");
             Thread.sleep(2000);
-            PaymentPage.CVV_Security_Code.sendKeys("123");
+            PaymentPage.SecurityCode.sendKeys("123");
             log.debug("Entered CVV security code");
             Thread.sleep(2000);
             PaymentPage.Continue_Next_Step.sendKeys(Keys.ENTER);
@@ -266,20 +266,20 @@ public class verificationsActions extends Environment {
             Assert.assertTrue(ActualText.contains("*"),
                     "Assertion Failed: Expected Message: " + ExpectedText + " is not present in the page");
 
-            PaymentPage.Name_On_Card.sendKeys("Test Accepta");
+            PaymentPage.CardHolderName.sendKeys("Test Accepta");
             log.debug("Entering name of the card as Test Accepta");
 
             Thread.sleep(2000);
-            PaymentPage.Card_Number.sendKeys("4539791001730106");
+            PaymentPage.CardNumber.sendKeys("4539791001730106");
             log.debug("Entered Card number as 4539xxxxxxxxxx06");
             Thread.sleep(2000);
-            PaymentPage.Expiry_Month.sendKeys("01");
+            PaymentPage.CardMonth.sendKeys("01");
             log.debug("Entered Expiry Month");
             Thread.sleep(2000);
-            PaymentPage.Expiry_Year.sendKeys("2020");
+            PaymentPage.CardYear.sendKeys("2020");
             log.debug("Entered Expiry Year");
             Thread.sleep(2000);
-            PaymentPage.CVV_Security_Code.sendKeys("123");
+            PaymentPage.SecurityCode.sendKeys("123");
             log.debug("Entered CVV security code");
             Thread.sleep(2000);
             PaymentPage.Continue_Next_Step.sendKeys(Keys.ENTER);

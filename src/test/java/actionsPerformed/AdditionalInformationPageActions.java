@@ -46,20 +46,20 @@ public class AdditionalInformationPageActions extends Environment {
 		System.out.println("********We are switch to the iframe*******");
 		log.debug("Entering the Payments section");
 		Thread.sleep(2000);
-		PaymentPage.Name_On_Card.sendKeys(Username2);
+		PaymentPage.CardHolderName.sendKeys(Username2);
 		log.debug("Entering name of the card as " + Username2);
 
 		Thread.sleep(2000);
-		PaymentPage.Card_Number.sendKeys("4539791001730106");
+		PaymentPage.CardNumber.sendKeys("4539791001730106");
 		log.debug("Entered Card number as 4539xxxxxxxxxx06");
 		Thread.sleep(2000);
-		PaymentPage.Expiry_Month.sendKeys("01");
+		PaymentPage.CardMonth.sendKeys("01");
 		log.debug("Entered Expiry Month");
 		Thread.sleep(2000);
-		PaymentPage.Expiry_Year.sendKeys("2020");
+		PaymentPage.CardYear.sendKeys("2020");
 		log.debug("Entered Expiry Year");
 		Thread.sleep(2000);
-		PaymentPage.CVV_Security_Code.sendKeys("123");
+		PaymentPage.SecurityCode.sendKeys("123");
 		log.debug("Entered CVV security code");
 		Thread.sleep(2000);
 		PaymentPage.Continue_Next_Step.sendKeys(Keys.ENTER);

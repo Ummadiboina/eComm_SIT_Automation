@@ -9,7 +9,7 @@ Feature: Reg_Consumer_TradeIn
     And Answer appropriate questionaire in 'your device' section
     And click on 'upgrade now' button
     And Select a <handset> device from Recommended devices section
-    And Select a tariff <tariff> with ribbons in upgrade journey
+    And Select ribboned tariff <tariff> in upgrade journey
     #And Select a tariff in upgrade journey
     Then choose appropriately in 'Your Sim Card'section
     #And select <NeedSim> action and confirm

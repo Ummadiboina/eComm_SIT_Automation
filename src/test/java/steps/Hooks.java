@@ -99,9 +99,8 @@ public class Hooks extends Environment {
 		capability.stopAppiumServer();
 		Thread.sleep(5000);
 		log.debug("Stopped Appium server");
-		//driver.close();
-		// andDriver.closeApp();
-		driver.quit();
+	//	driver.close();
+	//	driver.quit();
 
 	}
 

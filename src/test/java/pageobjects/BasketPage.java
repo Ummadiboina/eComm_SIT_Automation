@@ -27,7 +27,10 @@ public class BasketPage {
 	@FindBy(how = How.XPATH, using = "(//a[contains(text(),'Remove')])[2]")
 	public static WebElement tariffRemovebtn;
 
-	@FindBy(how = How.XPATH, using = "//*[@class='basket-nav']/div[@class='proceed-checkout']")
+	/*@FindBy(how = How.XPATH, using = "/*//*[@class='basket-nav']/div[@class='proceed-checkout']")
+	public static WebElement checkoutbtn;
+*/
+	@FindBy(how = How.XPATH, using = "//*[@class='basket-nav']/div[@class='proceed-checkout']/form//input[@name='securecheckout']")
 	public static WebElement checkoutbtn;
 
 	@FindBy(how = How.XPATH, using = "//*[@id='shopApp']/div[3]/div/div/div[1]/div[2]/ul/li[5]/section[2]/div/div/p[1]")

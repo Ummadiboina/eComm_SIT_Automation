@@ -9,7 +9,7 @@ Feature: CFU_user_with_direct_debit_details_SIMO_order_Tablets_user_Review_page_
     And Navigate to upgrade phone
     Then Verify that in the recycle value is displayed in the Recycle panel
     And Click on 'Pick a sim only tariff link'
-    And Click on <Tablets> tab
+    And Click on <Tablets> tabx
     And Click on 'Select' CTA to buy a tariff
     And copy text SIM delivery required or not is displayed
     And the customer is landed on Review page
@@ -33,8 +33,8 @@ Feature: CFU_user_with_direct_debit_details_SIMO_order_Tablets_user_Review_page_
     And copy text SIM delivery required or not is displayed
     And the Default state is no SIM delivery selected and Place Order button is disabled
     And Select 'I’ll keep my current sim' option
-    And Click on 'Not sure what SIM you have?' link
-    And copy text is displayed as same as upgrade options and basket page.
+    And Click on 'Not sure what SIM you have' link
+    And copy text is displayed as same as upgrade options and basket page
     And the delivery section is not displayed
      #Since no delivery is required
     And the third section header is displayed as "Review payment details"

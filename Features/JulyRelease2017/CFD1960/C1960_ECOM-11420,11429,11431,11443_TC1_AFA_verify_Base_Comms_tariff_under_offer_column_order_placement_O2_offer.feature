@@ -12,7 +12,7 @@ Feature: C1960_ECOM-11420,11429,11431,11443_TC1_AFA_verify_Base_Comms_tariff_und
     And Validate all the Basket content and checkout
     Then perform all the advisory checks
     And perform the credit checks using valid <Firstname>, <Surname>, <HouseNumber>, <PostCode> and valid <Username> 
-    And Register customer with valid <Firstname>, <Surname>, <HouseNumber>, <PostCode> and other valid details in delivery page 
+    And Register the customer with valid <Firstname>, <Surname>, <HouseNumber>, <PostCode> and other valid details in delivery page
     And Choose HomeDelivery delivery address and delivery time 
     When Pay by card
     Then Order confirmation message should be displayed

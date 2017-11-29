@@ -626,11 +626,6 @@ public class MouseHoverAction extends Environment {
 			try {
 				System.out.println("Performing navigations to PAYG MBB");
 				log.debug("Performing navigations to PAYG MBB");
-
-				/*
-				 * driver.navigate().refresh(); Thread.sleep(5000);
-				 */
-
 				Point coordinates = pageobjects.MouseHoverPage.MoveMouseOnShopTab.getLocation();
 				Robot robot = new Robot();
 				robot.mouseMove(coordinates.getX(), coordinates.getY() + 110);

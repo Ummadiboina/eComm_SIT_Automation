@@ -20,5 +20,5 @@ Feature: CFA_PayG Tablets_Shop_do_NOT_show _CIP_page
     Then order confirmation is displayed
 
     Examples:
-      | handset       | Firstname | Surname | Username     |
-      | Random Device | TEST      | ACCEPTA | TEST ACCEPTA |
+      | Device        | Firstname | Surname | Username     | tariff                   |
+      | Random Device | TEST      | ACCEPTA | TEST ACCEPTA | 129.99upfront37.00amonth |

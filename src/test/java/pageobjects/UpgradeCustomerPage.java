@@ -58,7 +58,7 @@ public class UpgradeCustomerPage {
 	@FindBy(how = How.XPATH, using = "//*[@id='signInButton']")
 	public static WebElement Signinlink1;
 	
-	@FindBy(how = How.XPATH, using = "//*[@class='signInLink signInLinkInDesktop']")
+	@FindBy(how = How.XPATH, using = "//*[@class='signInLink signInLinkInDesktop' or @class='signInLink']")
 	public static WebElement Signinlink2;
 	
 	@FindBy(how = How.XPATH, using = "//*[@id='header-tool-signin']")
@@ -242,6 +242,10 @@ public class UpgradeCustomerPage {
 
     @FindBy(how = How.XPATH, using= "")
     public static WebElement copyTextAdditonalDeposit;
+
+	@FindBy(how = How.XPATH, using = "//a[@href='/upgrade/sim-cards/sim-only-deals/']")
+	public static WebElement SIMOLink;
+
 }
 
 

@@ -9,7 +9,6 @@ import java.util.concurrent.TimeUnit;
 
 import GlobalActions.*;
 import actionsPerformed.*;
-import com.lowagie.text.Section;
 import cucumber.api.DataTable;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
@@ -18,7 +17,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 
-//import actionsPerformed.UpdateDevicePlanLinkEmailAddressActions;
+
 import cucumber.api.PendingException;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
@@ -1624,10 +1623,6 @@ public class E2EOrderPlaced_Steps {
 
     }
 
-    @Then("^Register customer with valid email address and password$")
-    public void register_customer_with_valid_email_address_and_password() throws Throwable {
-
-    }
 
     @Then("^CCALink Should be generated$")
     public void ccaLink() throws Throwable {
@@ -1938,21 +1933,18 @@ public class E2EOrderPlaced_Steps {
 
     @Then("^Register the customer with valid ([^\"]*), ([^\"]*), ([^\"]*), ([^\"]*) and other valid details in delivery page$")
 
-    // @Given("^Register customer with valid ([^\"]*) and ([^\"]*) and other
-    // valid details in delivery page$")
     public void register_the_customer(String Firstname, String Surname, String HouseNumber, String PostCode)
             throws Throwable {
-        //   try {
+           try {
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         PageFactory.initElements(driver, Agent_RegisterCustomerPage.class);
         Agent_RegisterCustomerActions.PayGRegistration(Firstname, Surname, HouseNumber, PostCode);
-/*
+
         } catch (Exception e) { // TODO Auto-generated catch block
             System.out.println("Unable to Register customer , please see the failure screenshot");
             Assert.fail("Unable to Register customer , please see the failure screenshot");
 
         }
-*/
     }
 
     /*
@@ -3005,17 +2997,7 @@ public class E2EOrderPlaced_Steps {
         }
     }
 
-	/*
-	 * @And("^choose ([^\"]*) contract length$") public void
-	 * choose_contract_length(String contractlength) {
-	 *
-	 * try { driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-	 * PageFactory.initElements(driver, PAYMSimOPage.class);
-	 * PAYMSimOPageActions.SelectRecommendedTariffPhonesTab(contractlength); } catch
-	 * (Exception e) { e.printStackTrace();
-	 * System.out.println("Unable to choose contract length");
-	 * Assert.fail("Unable to choose contract length"); } }
-	 */
+
 
     @Then("^check if the selected connected device has more than 1 variant for both colour and capacity$")
     public void check_if_the_selected_device_has_more_than_1_variant_for_both_colour_and_capacity() {
@@ -4563,7 +4545,7 @@ public class E2EOrderPlaced_Steps {
         }
     }
 
-    @And("^Select a tariff ([^\"]*) with ribbons in upgrade journey$")
+    @And("^Select ribboned tariff ([^\"]*) in upgrade journey$")
     public void select_tariff_with_ribbons_in_upgrade_journey(String Tariff) throws Throwable {
         try {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
@@ -7056,7 +7038,6 @@ public class E2EOrderPlaced_Steps {
         }
     }
 
-    //And the 'Promotions' section is displayed with all the applied promotions description in the deal builder
 
     @Then("^Replace the device (.*) from the deal builder with different device and the 'Promotions' should be removed from the deal builder$")
     public void replaceDeveiceThenPromotionShouldNotAvailable(String Promotionss) throws Exception {
@@ -7097,17 +7078,6 @@ public class E2EOrderPlaced_Steps {
     }
 
 
-    // Below is Nested Class
-
-    public class dataValue {
-        public String section;
-        public String verify;
-
-        public dataValue(String value1, String value2) {
-            section = value1;
-            verify = value2;
-        }
-    }
 
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     ////////////////////////////////////////////////////PROMOTIONS/////////////////////////////////////////////////////
@@ -7158,7 +7128,493 @@ public class E2EOrderPlaced_Steps {
             Assert.fail("The Body message is not expected one");
         }
 
+    }
+
+
+    @And("^the 'Promotions' section is displayed with all the applied promotions description in the deal builder$")
+    public void thePromotionsSectionDisplay() throws Throwable {
+        System.out.println("In promotions method");
 
     }
 
+    @And("^the promotion returned is displayed in a single line$")
+    public void thePromotionReturnedIsDisplayedInASingleLine() throws Throwable {
+
+    }
+
+    @Then("^Remove the device or tariff from the deal builder$")
+    public void removeTheDeviceOrTariffFromTheDealBuilder() throws Throwable {
+        // Write code here that turns the phrase above into concrete actions
+        throw new PendingException();
+    }
+
+    @Then("^the 'Promotions' should be removed and the 'Promotion section' should be empty$")
+    public void thePromotionsShouldBeRemovedAndThePromotionSectionShouldBeEmpty() throws Throwable {
+        // Write code here that turns the phrase above into concrete actions
+        throw new PendingException();
+    }
+
+    @And("^more than one promotion is returned$")
+    public void moreThanOnePromotionIsReturned() throws Throwable {
+        // Write code here that turns the phrase above into concrete actions
+        throw new PendingException();
+    }
+
+    @And("^the 'Promotions' section is displayed with all the applied promotions description in the order summary$")
+    public void thePromotionsSectionIsDisplayedWithAllTheAppliedPromotionsDescriptionInTheOrderSummary() throws Throwable {
+        // Write code here that turns the phrase above into concrete actions
+        throw new PendingException();
+    }
+
+    @And("^the customer is not presented with the targeted promotion tab at the end of the tabs$")
+    public void theCustomerIsNotPresentedWithTheTargetedPromotionTabAtTheEndOfTheTabs() throws Throwable {
+        // Write code here that turns the phrase above into concrete actions
+        throw new PendingException();
+    }
+
+    @Then("^the 'Promotions' should be retained in the deal builder$")
+    public void thePromotionsShouldBeRetainedInTheDealBuilder() throws Throwable {
+        // Write code here that turns the phrase above into concrete actions
+        throw new PendingException();
+    }
+
+    @And("^for more than (\\d+) promotions returned$")
+    public void forMoreThanPromotionsReturned(int arg0) throws Throwable {
+        // Write code here that turns the phrase above into concrete actions
+        throw new PendingException();
+    }
+
+    @And("^only SIMO targeted bolt-on is presented in the targeted promotion section$")
+    public void onlySIMOTargetedBoltOnIsPresentedInTheTargetedPromotionSection() throws Throwable {
+        // Write code here that turns the phrase above into concrete actions
+        throw new PendingException();
+    }
+
+    @And("^the 'Contract length: (\\d+) months/(\\d+) days' is displayed just below the promotion description$")
+    public void theContractLengthMonthsDaysIsDisplayedJustBelowThePromotionDescription(int arg0, int arg1) throws Throwable {
+        // Write code here that turns the phrase above into concrete actions
+        throw new PendingException();
+    }
+
+    @And("^SIMO and tariff combination is presented in the targeted promotion section$")
+    public void simoAndTariffCombinationIsPresentedInTheTargetedPromotionSection() throws Throwable {
+        // Write code here that turns the phrase above into concrete actions
+        throw new PendingException();
+    }
+
+    @And("^click on 'Select' CTA in the tariff tile of targeted promotion$")
+    public void clickOnSelectCTAInTheTariffTileOfTargetedPromotion() throws Throwable {
+        // Write code here that turns the phrase above into concrete actions
+        throw new PendingException();
+    }
+
+    @And("^the title 'Device' is displayed above the selected device for Your Order section$")
+    public void theTitleDeviceIsDisplayedAboveTheSelectedDeviceForYourOrderSection() throws Throwable {
+        // Write code here that turns the phrase above into concrete actions
+        throw new PendingException();
+    }
+
+    @And("^more than one promotions is returned$")
+    public void moreThanOnePromotionsIsReturned() throws Throwable {
+        // Write code here that turns the phrase above into concrete actions
+        throw new PendingException();
+    }
+
+    @And("^the customer is displayed with a note just under the Airtime plan$")
+    public void theCustomerIsDisplayedWithANoteJustUnderTheAirtimePlan() throws Throwable {
+        // Write code here that turns the phrase above into concrete actions
+        throw new PendingException();
+    }
+
+    @And("^the basket contents and apply instant bolt-on promotion if applicable$")
+    public void theBasketContentsAndApplyInstantBoltOnPromotionIfApplicable() throws Throwable {
+        // Write code here that turns the phrase above into concrete actions
+        throw new PendingException();
+    }
+
+    @And("^SIMO or handset make/model and tariff combination is presented in the targeted promotion section$")
+    public void simoOrHandsetMakeModelAndTariffCombinationIsPresentedInTheTargetedPromotionSection() throws Throwable {
+        // Write code here that turns the phrase above into concrete actions
+        throw new PendingException();
+    }
+
+    @And("^verify whether 'sim' and 'collection' is in lower case$")
+    public void verifyWhetherSimAndCollectionIsInLowerCase() throws Throwable {
+        // Write code here that turns the phrase above into concrete actions
+        throw new PendingException();
+    }
+
+    @And("^there is no space on either side of the slash$")
+    public void thereIsNoSpaceOnEitherSideOfTheSlash() throws Throwable {
+        // Write code here that turns the phrase above into concrete actions
+        throw new PendingException();
+    }
+
+    @And("^at the end of the total in note copy ‘doesn’t’ is displayed instead of ‘does not’$")
+    public void atTheEndOfTheTotalInNoteCopyDoesnTIsDisplayedInsteadOfDoesNot() throws Throwable {
+        // Write code here that turns the phrase above into concrete actions
+        throw new PendingException();
+    }
+
+    @And("^for more than one promotions returned$")
+    public void forMoreThanOnePromotionsReturned() throws Throwable {
+        // Write code here that turns the phrase above into concrete actions
+        throw new PendingException();
+    }
+
+    @And("^'Promotions' is displayed one after another separated by a line$")
+    public void promotionsIsDisplayedOneAfterAnotherSeparatedByALine() throws Throwable {
+        // Write code here that turns the phrase above into concrete actions
+        throw new PendingException();
+    }
+
+    @And("^verify the customer is presented with a note just under the Airtime plan$")
+    public void verifyTheCustomerIsPresentedWithANoteJustUnderTheAirtimePlan() throws Throwable {
+        // Write code here that turns the phrase above into concrete actions
+        throw new PendingException();
+    }
+
+    @And("^a note 'Discount applied to bill' is displayed underneath each Promotion$")
+    public void aNoteDiscountAppliedToBillIsDisplayedUnderneathEachPromotion() throws Throwable {
+        // Write code here that turns the phrase above into concrete actions
+        throw new PendingException();
+    }
+
+    @And("^click on 'Change delivery date and time' link$")
+    public void clickOnChangeDeliveryDateAndTimeLink() throws Throwable {
+        // Write code here that turns the phrase above into concrete actions
+        throw new PendingException();
+    }
+
+    @And("^I close the browser$")
+    public void iCloseTheBrowser() throws Throwable {
+        // Write code here that turns the phrase above into concrete actions
+        throw new PendingException();
+    }
+
+    @And("^'Checkout In Progress' page is displayed$")
+    public void checkoutInProgressPageIsDisplayed() throws Throwable {
+        // Write code here that turns the phrase above into concrete actions
+        throw new PendingException();
+    }
+
+    @And("^customer lands on review page$")
+    public void customerLandsOnReviewPage() throws Throwable {
+        // Write code here that turns the phrase above into concrete actions
+        throw new PendingException();
+    }
+
+    @And("^Click on 'Pick a sim only tariff link'$")
+    public void clickOnPickASimOnlyTariffLink() throws Throwable {
+        try {
+                driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+                PageFactory.initElements(driver, UpgradeCustomerPage.class);
+                UpgradeCustomerPageActions.SIMOLinkIsDisplayed();
+            } catch (Exception e) {
+                e.printStackTrace();
+                Assert.fail("Unable to click on Click on 'Pick a sim only tariff link', please see the failure screenshot");
+            }
+        }
+
+
+    @And("^the Progress bar is not displayed at the top$")
+    public void theProgressBarIsNotDisplayedAtTheTop() throws Throwable {
+        // Write code here that turns the phrase above into concrete actions
+        throw new PendingException();
+    }
+
+    @And("^only SIM delivery is required for the customer$")
+    public void onlySIMDeliveryIsRequiredForTheCustomer() throws Throwable {
+        // Write code here that turns the phrase above into concrete actions
+        throw new PendingException();
+    }
+
+    @And("^the Header navigation is not displayed$")
+    public void theHeaderNavigationIsNotDisplayed() throws Throwable {
+        // Write code here that turns the phrase above into concrete actions
+        throw new PendingException();
+    }
+
+    @And("^the existing address of the customer is set as delivery address$")
+    public void theExistingAddressOfTheCustomerIsSetAsDeliveryAddress() throws Throwable {
+        // Write code here that turns the phrase above into concrete actions
+        throw new PendingException();
+    }
+
+    @And("^Verify if six months is displayed instead of three months$")
+    public void verifyIfSixMonthsIsDisplayedInsteadOfThreeMonths() throws Throwable {
+        // Write code here that turns the phrase above into concrete actions
+        throw new PendingException();
+    }
+
+    @And("^\"([^\"]*)\" is displayed below device description$")
+    public void isDisplayedBelowDeviceDescription(String arg0) throws Throwable {
+        // Write code here that turns the phrase above into concrete actions
+        throw new PendingException();
+    }
+
+    @And("^the Check box with \"([^\"]*)\" copy text is not displayed below 'Select' CTA in the horizontal tariff tile$")
+    public void theCheckBoxWithCopyTextIsNotDisplayedBelowSelectCTAInTheHorizontalTariffTile(String arg0) throws Throwable {
+        // Write code here that turns the phrase above into concrete actions
+        throw new PendingException();
+    }
+
+    @And("^Click on 'Select' CTA to buy a tariff$")
+    public void Click_on_Select_CTA_to_buy_SIMO_Tariff()
+
+            throws Throwable {
+
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, PAYMSimOPage.class);
+            PAYMSimOPageActions.SelectCTAtoBuySIMOtariff();
+        } catch (Exception e) {
+            e.printStackTrace();
+            Assert.fail("Unable to click on Click on 'Pick a sim only tariff link', please see the failure screenshot");
+        }
+    }
+
+
+    @And("^the customer is landed on Review page$")
+    public void theCustomerIsLandedOnReviewPage() throws Throwable {
+        // Write code here that turns the phrase above into concrete actions
+        throw new PendingException();
+    }
+
+    @And("^the Order summary and the assurance messages is not displayed on the right$")
+    public void theOrderSummaryAndTheAssuranceMessagesIsNotDisplayedOnTheRight() throws Throwable {
+        // Write code here that turns the phrase above into concrete actions
+        throw new PendingException();
+    }
+
+    @And("^the Included section and Learn more link are same as  applicable to both (\\d+)st tile and second tile$")
+    public void theIncludedSectionAndLearnMoreLinkAreSameAsApplicableToBothStTileAndSecondTile(int arg0) throws Throwable {
+        // Write code here that turns the phrase above into concrete actions
+        throw new PendingException();
+    }
+
+    @And("^the Promotion ribbons is displayed only for 'To this tariff'$")
+    public void thePromotionRibbonsIsDisplayedOnlyForToThisTariff() throws Throwable {
+        // Write code here that turns the phrase above into concrete actions
+        throw new PendingException();
+    }
+
+    @And("^Click on 'Learn more' link$")
+    public void clickOnLearnMoreLink() throws Throwable {
+        // Write code here that turns the phrase above into concrete actions
+        throw new PendingException();
+    }
+
+    @And("^'Choose a different tariff' link is displayed below 'To this tariff' tile$")
+    public void chooseADifferentTariffLinkIsDisplayedBelowToThisTariffTile() throws Throwable {
+        // Write code here that turns the phrase above into concrete actions
+        throw new PendingException();
+    }
+
+    @And("^the second section is \"([^\"]*)\" section$")
+    public void theSecondSectionIsSection(String arg0) throws Throwable {
+        // Write code here that turns the phrase above into concrete actions
+        throw new PendingException();
+    }
+
+    @And("^the INSTANT promotions applicable for the SIMO Upgrade order is displayed on the new Review Page below selected tariff tile$")
+    public void theINSTANTPromotionsApplicableForTheSIMOUpgradeOrderIsDisplayedOnTheNewReviewPageBelowSelectedTariffTile() throws Throwable {
+        // Write code here that turns the phrase above into concrete actions
+        throw new PendingException();
+    }
+
+    @And("^Click on 'Choose a different tariff' link$")
+    public void clickOnChooseADifferentTariffLink() throws Throwable {
+        // Write code here that turns the phrase above into concrete actions
+        throw new PendingException();
+    }
+
+    @And("^I Click on 'Pick a sim only tariff' link$")
+    public void iClickOnPickASimOnlyTariffLink() throws Throwable {
+        // Write code here that turns the phrase above into concrete actions
+        throw new PendingException();
+    }
+
+    @And("^Click on 'Mobile Broadband' tab$")
+    public void clickOnMobileBroadbandTab() throws Throwable {
+        // Write code here that turns the phrase above into concrete actions
+        throw new PendingException();
+    }
+
+    @And("^the customer is landed on the New Review and confirm page$")
+    public void theCustomerIsLandedOnTheNewReviewAndConfirmPage() throws Throwable {
+        // Write code here that turns the phrase above into concrete actions
+        throw new PendingException();
+    }
+
+    @And("^the greet customer bar is displayed as the header$")
+    public void theGreetCustomerBarIsDisplayedAsTheHeader() throws Throwable {
+        // Write code here that turns the phrase above into concrete actions
+        throw new PendingException();
+    }
+
+    @And("^the MSISDN is displayed as label only$")
+    public void theMSISDNIsDisplayedAsLabelOnly() throws Throwable {
+        // Write code here that turns the phrase above into concrete actions
+        throw new PendingException();
+    }
+
+    @And("^the copy text title is displayed in first tariff tile$")
+    public void theCopyTextTitleIsDisplayedInFirstTariffTile() throws Throwable {
+        // Write code here that turns the phrase above into concrete actions
+        throw new PendingException();
+    }
+
+    @And("^the copy text title is displayed in second tariff tile$")
+    public void theCopyTextTitleIsDisplayedInSecondTariffTile() throws Throwable {
+        // Write code here that turns the phrase above into concrete actions
+        throw new PendingException();
+    }
+
+    @And("^the Included section and Learn more link are same as  applicable to both first tile and second tile$")
+    public void theIncludedSectionAndLearnMoreLinkAreSameAsApplicableToBothFirstTileAndSecondTile() throws Throwable {
+        // Write code here that turns the phrase above into concrete actions
+        throw new PendingException();
+    }
+
+    @And("^the Promotion ribbons and included section to be fetched from Product service are displayed only for 'To this tariff'$")
+    public void thePromotionRibbonsAndIncludedSectionToBeFetchedFromProductServiceAreDisplayedOnlyForToThisTariff() throws Throwable {
+        // Write code here that turns the phrase above into concrete actions
+        throw new PendingException();
+    }
+
+    @And("^'Choose a different tariff' link is displayed$")
+    public void chooseADifferentTariffLinkIsDisplayed() throws Throwable {
+        // Write code here that turns the phrase above into concrete actions
+        throw new PendingException();
+    }
+
+    @And("^the question for voice tariff  copy text is not displayed below 'Your sim' section$")
+    public void theQuestionForVoiceTariffCopyTextIsNotDisplayedBelowYourSimSection() throws Throwable {
+        // Write code here that turns the phrase above into concrete actions
+        throw new PendingException();
+    }
+
+    @And("^the IPhone/Other radio button is defaulted to iPhone$")
+    public void theIPhoneOtherRadioButtonIsDefaultedToIPhone() throws Throwable {
+        // Write code here that turns the phrase above into concrete actions
+        throw new PendingException();
+    }
+
+    @And("^copy text SIM delivery required or not is displayed$")
+    public void copyTextSIMDeliveryRequiredOrNotIsDisplayed() throws Throwable {
+        // Write code here that turns the phrase above into concrete actions
+        throw new PendingException();
+    }
+
+    @And("^the Default state is no SIM delivery selected and Place Order button is disabled$")
+    public void theDefaultStateIsNoSIMDeliverySelectedAndPlaceOrderButtonIsDisabled() throws Throwable {
+        // Write code here that turns the phrase above into concrete actions
+        throw new PendingException();
+    }
+
+    @And("^the third section header is displayed as \"([^\"]*)\"$")
+    public void theThirdSectionHeaderIsDisplayedAs(String arg0) throws Throwable {
+        // Write code here that turns the phrase above into concrete actions
+        throw new PendingException();
+    }
+
+    @And("^the copy text is displayed below the direct debit details$")
+    public void theCopyTextIsDisplayedBelowTheDirectDebitDetails() throws Throwable {
+        // Write code here that turns the phrase above into concrete actions
+        throw new PendingException();
+    }
+
+    @And("^the 'Upfront payment details' section is removed$")
+    public void theUpfrontPaymentDetailsSectionIsRemoved() throws Throwable {
+        // Write code here that turns the phrase above into concrete actions
+        throw new PendingException();
+    }
+
+    @And("^Click on 'I agree to the terms and condition' checkbox$")
+    public void clickOnIAgreeToTheTermsAndConditionCheckbox() throws Throwable {
+        // Write code here that turns the phrase above into concrete actions
+        throw new PendingException();
+    }
+
+    @And("^Click on 'Place your order' CTA$")
+    public void clickOnPlaceYourOrderCTA() throws Throwable {
+        // Write code here that turns the phrase above into concrete actions
+        throw new PendingException();
+    }
+
+    @And("^the question for voice tariff  copy text is displayed below 'Your sim' section$")
+    public void theQuestionForVoiceTariffCopyTextIsDisplayedBelowYourSimSection() throws Throwable {
+        // Write code here that turns the phrase above into concrete actions
+        throw new PendingException();
+    }
+
+    @And("^Select 'I’ll keep my current sim' option$")
+    public void selectILlKeepMyCurrentSimOption() throws Throwable {
+        // Write code here that turns the phrase above into concrete actions
+        throw new PendingException();
+    }
+
+
+
+    @And("^verify the copy text is displayed below the direct debit details$")
+    public void verifyTheCopyTextIsDisplayedBelowTheDirectDebitDetails() throws Throwable {
+        // Write code here that turns the phrase above into concrete actions
+        throw new PendingException();
+    }
+
+    @And("^Click on <Tablets> tabx$")
+    public void clickOnTabletsTabx() throws Throwable {
+        // Write code here that turns the phrase above into concrete actions
+        throw new PendingException();
+    }
+
+
+    @And("^checkbox for 'iPhone' for data allowance is displayed just on the right-hand side below select 'CTA'$")
+    public void checkboxForIPhoneForDataAllowanceIsDisplayedJustOnTheRightHandSideBelowSelectCTA() throws Throwable {
+        // Write code here that turns the phrase above into concrete actions
+        throw new PendingException();
+    }
+
+    @And("^Click on  'Select' button in the tile of targeted promotion$")
+    public void clickOnSelectButtonInTheTileOfTargetedPromotion() throws Throwable {
+        // Write code here that turns the phrase above into concrete actions
+        throw new PendingException();
+    }
+
+    @And("^customer lands on payments page$")
+    public void customerLandsOnPaymentsPage() throws Throwable {
+        // Write code here that turns the phrase above into concrete actions
+        throw new PendingException();
+    }
+
+    @And("^the 'Promotions' is displayed in your order section$")
+    public void thePromotionsIsDisplayedInYourOrderSection() throws Throwable {
+        // Write code here that turns the phrase above into concrete actions
+        throw new PendingException();
+    }
+
+    @And("^Select the Home address$")
+    public void selectTheHomeAddress() throws Throwable {
+        // Write code here that turns the phrase above into concrete actions
+        throw new PendingException();
+    }
+
+    @And("^Enter the card details and click on 'Continue'$")
+    public void enterTheCardDetailsAndClickOnContinue() throws Throwable {
+        // Write code here that turns the phrase above into concrete actions
+        throw new PendingException();
+    }
+
+
+    @And("^copy text is displayed as same as upgrade options and basket page$")
+    public void copyTextIsDisplayedAsSameAsUpgradeOptionsAndBasketPage() throws Throwable {
+        // Write code here that turns the phrase above into concrete actions
+        throw new PendingException();
+    }
+
+    @Then("^log out of consumer shop$")
+    public void logOutOfConsumerShop() throws Throwable {
+
+    }
 }

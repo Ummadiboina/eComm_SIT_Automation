@@ -19,7 +19,6 @@ Feature: CFU_Tablets_Data_filters_options_tariff_and_extras_page_Order_placement
     When I deselect filter button
     Then I should see tariffs based on the selected sort option <sortoption>
 
-    Examples: 
-      | username    | password | handset           | Firstname | Surname | Username     | filtername | sortoption                 |
-      | ini_feb3331 | test123  | Samsung Galaxy S8 | TEST      | ACCEPTA | TEST ACCEPTA | high       | Monthly data (Low to High) |
-   #   | Apple iPhone 7    | TEST      | ACCEPTA | TEST ACCEPTA | high       |
+    Examples:
+      | username                         | password | handset           | filtername | sortoption                 |
+      | testaccepta9343@stf.ref.o2.co.uk | test123  | Samsung Galaxy S8 | high       | Monthly data (Low to High) |

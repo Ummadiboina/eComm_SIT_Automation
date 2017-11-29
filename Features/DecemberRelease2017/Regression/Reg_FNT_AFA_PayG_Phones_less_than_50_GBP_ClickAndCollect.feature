@@ -11,7 +11,7 @@ Feature: Reg_FNT_AFA_PayG_Phones_less_than_50_GBP_ClickAndCollect
     And Select a valid store using <PostCode> for Click and Collect
     And Validate all the Basket content and checkout
     Then perform all the advisory checks
-    And Register customer with valid <Firstname>, <Surname>, <HouseNumber>, <PostCode> and other valid details in delivery page
+    And Register the customer with valid <Firstname>, <Surname>, <HouseNumber>, <PostCode> and other valid details in delivery page
     When Pay by card for PAYM device
     Then Order confirmation message should be displayed
 

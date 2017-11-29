@@ -9,7 +9,7 @@ Feature: Reg_AFA_PayG_withoutAnyAccessory
     And Select valid <Tariffs> from PAYG tariffs tab
     And Validate all the Basket content and checkout
     Then perform all the advisory checks
-    And Register customer with valid <Firstname>, <Surname>, <HouseNumber>, <PostCode> and other valid details in delivery page
+    And Register the customer with valid <Firstname>, <Surname>, <HouseNumber>, <PostCode> and other valid details in delivery page
     And Choose <DeliveryType> delivery address and delivery time
     When Pay by card
     Then Order confirmation message should be displayed

@@ -11,7 +11,7 @@ Feature: CFU_seperate_tariff_ribbons_Tariff_page_Basket_page_html_overlay_for_ta
     And Navigate to upgrade phone
     And I choose upgrade PayM handset <handset>
     And Navigate to device details page
-    And Select a tariff <tariff> with ribbons
+    And Select a tariff <tariff>
     And Verify whether promotional ribbons are displayed for <tariff> on the Tariff tile in the Tariff and Extras page
     And Verify 'Overlay icon' is displayed on the promotional ribbons for <tariff> in the Tariff and Extras page
     And Click on the 'Overlay icon' for <tariff> in the Tariff and Extras page and verify pop up gets displayed

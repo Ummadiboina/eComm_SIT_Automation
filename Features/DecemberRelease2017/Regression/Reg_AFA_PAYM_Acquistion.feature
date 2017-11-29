@@ -12,7 +12,7 @@ Feature: Reg_AFA_PAYM_Acquistion
     And Validate all the Basket content and checkout
     Then perform all the advisory checks
     And perform the credit checks using valid <Firstname>, <Surname>, <HouseNumber>, <PostCode> and valid <Username>
-    And Register customer with valid <Firstname>, <Surname>, <HouseNumber>, <PostCode> and other valid details in delivery page
+    And Register customer with valid <Password>, <confirmPassword>, <SecurityAnswer>  in delivery page
     And Choose <DeliveryType> delivery address and delivery time
     #When Pay by card for PAYM device
     When Pay by card for PAYM device
@@ -20,6 +20,6 @@ Feature: Reg_AFA_PAYM_Acquistion
 
     # And Update Device Plan Link Email Address
     # Then CCALink Should be generated
-    Examples: 
-      | Device              | Tariffs | Extras | DeliveryType | Firstname | Surname | Username     | HouseNumber | PostCode |
-      | S7 edge black 32 GB | Random  | Base   | HomeDelivery | TEST      | ACCEPTA | TEST ACCEPTA |          14 | SL11UP   |
+    Examples:
+      | Device              | Tariffs | Extras | DeliveryType | Firstname | Surname | Username     | HouseNumber | PostCode | Password | confirmPassword | SecurityAnswer |
+      | S7 edge black 32 GB | Random  | Base   | HomeDelivery | TEST      | ACCEPTA | TEST ACCEPTA | 14          | SL11UP   | test1234 | test1234        | vinudeep       |

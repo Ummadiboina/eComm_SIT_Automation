@@ -22,6 +22,7 @@ Feature: Reg_Agent_TradeIn
     And Continue to Review page, check order contract text and review the order
     Then order confirmation is displayed
 
+
     Examples: 
       | User        | Device              | Tariffs | username                      | user         | DeliveryType | Firstname | Surname | Username     | HouseNumber | PostCode | password |
-      | 07521123534 | S7 edge black 32 GB | Refresh | 13ma88212553@stf.ref.o2.co.uk | TEST ACCEPTA | HomeDelivery | TEST      | ACCEPTA | TEST ACCEPTA | Flat 6      | SL11EL   | test123  |
+      | 07801057560 | S7 edge black 32 GB | Refresh | 23oc84050507@stf.ref.o2.co.uk | TEST ACCEPTA | HomeDelivery | TEST      | ACCEPTA | TEST ACCEPTA | Flat 6      | SL11EL   | test123  |

@@ -16,7 +16,7 @@ Feature: AFU_SIMO_Promotions_section_in_deal_builder_MULIPLE_promotions_Order_Pl
     And the promotion returned is displayed in a single line
     Then perform all the advisory checks
     And perform the credit checks using valid <Firstname>, <Surname>, <HouseNumber>, <PostCode> and valid <Username>
-    And Register customer with valid <Firstname>, <Surname>, <HouseNumber>, <PostCode> and other valid details in delivery page
+    And Register the customer with valid <Firstname>, <Surname>, <HouseNumber>, <PostCode> and other valid details in delivery page
     And Choose <DeliveryType> delivery address and delivery time
     When submit order button is clicked
     Then Order confirmation message should be displayed

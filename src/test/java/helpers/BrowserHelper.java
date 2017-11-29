@@ -1,16 +1,18 @@
+/*
+ * Added by Vinudeep for Mobile Automation Testing
+ */
+
 package helpers;
 
-import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxProfile;
-import org.openqa.selenium.firefox.internal.ProfilesIni;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
-import GlobalActions.FirefoxProfileCreation;
+import java.util.concurrent.TimeUnit;
 
 public class BrowserHelper {
 
@@ -36,7 +38,7 @@ public class BrowserHelper {
 			Environment.driver.navigate().refresh();
 
 		} else if (BrowserType.equalsIgnoreCase("chrome")) {
-			System.setProperty("webdriver.chrome.driver", "C:\\Users\\varghes1\\git\\regression\\Browsers\\ChromeDriver\\chromedriver.exe");
+			System.setProperty("webdriver.chrome.driver", "Browsers/ChromeDriver/chromedriver.exe");
 			// Environment.driver = new ChromeDriver();
 			DesiredCapabilities capabilities = DesiredCapabilities.chrome();
 			capabilities.setCapability(CapabilityType.ACCEPT_SSL_CERTS, true);

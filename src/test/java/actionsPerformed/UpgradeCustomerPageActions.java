@@ -83,8 +83,9 @@ public class UpgradeCustomerPageActions extends Environment {
 
     public static void Signin() throws InterruptedException, IOException {
         System.out.println("in signin function");
-
-        pageobjects.UpgradeCustomerPage.Signinlink2.click();
+        JavascriptExecutor jse = (JavascriptExecutor) driver;
+        jse.executeScript("arguments[0].click()",pageobjects.UpgradeCustomerPage.Signinlink2);
+        //pageobjects.UpgradeCustomerPage.Signinlink2.click();
         System.out.println("Sign in button clicked");
         Screenshots.captureScreenshot();
 
@@ -2037,6 +2038,14 @@ public class UpgradeCustomerPageActions extends Environment {
             Assert.fail("Not correct, the text donot match");
         }
 
+    }
+    public static void SIMOLinkIsDisplayed() throws Exception {
+
+        if (UpgradeCustomerPage.SIMOLink.isDisplayed()) {
+            UpgradeCustomerPage.SIMOLink.click();
+            log.debug("Pick a sim only tariff link is clicked");
+        }
+        Screenshots.captureScreenshot();
     }
 
 
