@@ -13,4 +13,4 @@ And verify that the free insurance is auto selected
 
 Examples:
 |handset|
-|iPhone7|
+|samsungs8|
