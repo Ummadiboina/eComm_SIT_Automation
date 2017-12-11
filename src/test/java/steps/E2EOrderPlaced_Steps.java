@@ -239,7 +239,7 @@ public class E2EOrderPlaced_Steps {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, MouseHoverPage.class);
             MouseHoverAction.PayMSimoNavigation();
-            Autoredirection.redirect();
+            //Autoredirection.redirect();
             Thread.sleep(10000);
 
         } catch (Exception e) {
@@ -7563,10 +7563,19 @@ public class E2EOrderPlaced_Steps {
         throw new PendingException();
     }
 
-    @And("^Click on <Tablets> tabx$")
+    @And("^Click on Tablets tabx$")
     public void clickOnTabletsTabx() throws Throwable {
-        // Write code here that turns the phrase above into concrete actions
-        throw new PendingException();
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, PAYMSimOPage.class);
+            PAYMSimOPageActions.ClickonTabletsTabSimo();
+            // PAYMSimOPageActions.SelectTariffPhonesTab(Contract);
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            System.out.println("Unable to click on Tablets tab");
+            Assert.fail("Unable to click on Tablets tab");
+
+        }
     }
 
 

@@ -757,4 +757,15 @@ public class PAYMSimOPageActions extends Environment {
 		Screenshots.captureScreenshot();
 	}
 
+
+	///////////////////////////Upgrade Simo Page/////////////////////////////////////////////
+
+	public static void ClickonTabletsTabSimo() throws IOException, InterruptedException {
+
+		WebElement element = pageobjects.PAYMSimOPage.TabletsTabSimo;
+		JavascriptExecutor executor = (JavascriptExecutor)driver;
+		executor.executeScript("arguments[0].click();", element);
+
+	}
+
 }

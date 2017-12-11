@@ -18,7 +18,9 @@ public class CommonFunctions extends Environment {
 		}
 
 		if (pagename.equalsIgnoreCase("PayM Phones Page")) {
-			if (driver.getTitle().equalsIgnoreCase("Pay Monthly Mobile Phones, Contracts, Offers & Deals | O2")) {
+			String Title_Phones=driver.getTitle();
+			System.out.println("The displayed title"+Title_Phones);
+			if (Title_Phones.equalsIgnoreCase("O2 | Shop Phones")) {
 				System.out.println("We are in 'PayM Phones' Page");
 			} else {
 				System.out.println("We are in " + driver.getTitle());
