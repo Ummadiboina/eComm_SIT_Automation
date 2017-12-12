@@ -199,6 +199,9 @@ public class PAYMSimOPage {
 	@FindBy(how = How.XPATH, using = ("(//*[@id='callToAction'])[1]"))
 	public static WebElement SelectSIMOTariff;
 
+	@FindBy(how = How.XPATH, using = ("//*[@id='tablet']"))
+	public static WebElement TabletsTabSimo;
+
 
 }
 

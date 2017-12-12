@@ -19,3 +19,4 @@ Feature: CFA_Phones_Shop_do_not_show_Checkout_In_Progress_page
 
     Examples:
     | handset | handset2 |
+    |Iphone7  |Iphone7    |
