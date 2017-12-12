@@ -6,11 +6,11 @@ Feature: CFU_user_with_direct_debit_details_SIMO_order_Tablets_user_Review_page_
   Scenario Outline: CFU_user_with_direct_debit_details_SIMO_order_Tablets_user_Review_page_changes
     Given I am an Existing user and Navigates to Signin page
     And Signin using valid <username> and <password> credentials
-    And Navigate to upgrade phone
+    And Navigate to upgrade > upgrade now
     Then Verify that in the recycle value is displayed in the Recycle panel
     And Click on 'Pick a sim only tariff link'
-    And Click on <Tablets> tabx
-    And Click on 'Select' CTA to buy a tariff
+    And Click on Tablets tabx
+    And Select any Random Tariff in the displayed list of Tariffs under different <Contract> tab
     And copy text SIM delivery required or not is displayed
     And the customer is landed on Review page
     And the Header navigation is not displayed
@@ -45,4 +45,5 @@ Feature: CFU_user_with_direct_debit_details_SIMO_order_Tablets_user_Review_page_
     And Click on 'Place your order' CTA
 
     Examples:
-    | username | password |
+    | username     | password |Contract |
+    |nov1202@o2.com|test123   |12 Months|

@@ -243,7 +243,7 @@ public class UpgradeCustomerPage {
     @FindBy(how = How.XPATH, using= "")
     public static WebElement copyTextAdditonalDeposit;
 
-	@FindBy(how = How.XPATH, using = "//a[@href='/upgrade/sim-cards/sim-only-deals/']")
+	@FindBy(how = How.XPATH, using = "//*[@href='/upgrade/sim-cards/sim-only-deals']")
 	public static WebElement SIMOLink;
 
 }
