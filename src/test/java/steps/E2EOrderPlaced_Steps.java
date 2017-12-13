@@ -6825,31 +6825,17 @@ public class E2EOrderPlaced_Steps {
         }
     }
 
-    @And("^the greet \"([^\"]*)\" bar is displayed as the header$")
-    public void theGreetBarIsDisplayedAsTheHeader(String customerName) throws Throwable {      try {
-            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-            PageFactory.initElements(driver, UpgradeCustomerPage.class);
-            UpgradeCustomerPageActions.greetingValidation(customerName);
-
-        } catch (Exception e) {
-
-            System.out.println("Unable to do validate the customer greeting");
-            Assert.fail("Unable to do validate the customer greeting");
-        }
-    }
 
     @And("^MSISDN is displayed as label only$")
     public void msisdnIsDisplayedAsLabelOnly() throws Throwable {
-       try{
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        PageFactory.initElements(driver, UpgradeCustomerPage.class);
-        UpgradeCustomerPageActions.msisdnDisplay();
-
-    } catch (Exception e) {
-
-        System.out.println("Unable to do validate if msisdn is displayed as label only");
-        Assert.fail("Unable to do validate if msisdn is displayed as label only");
-    }
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, ReviewAndConfirmPage.class);
+            ReviewAndConfirmPageActions.MsisdnLabel() ;
+        } catch (Exception e) {
+            e.printStackTrace();
+            Assert.fail("The MSISDN is not displayed as a label");
+        }
     }
 
     @And("^the 'About you' section is not displayed$")
@@ -7319,8 +7305,14 @@ public class E2EOrderPlaced_Steps {
 
     @And("^the Progress bar is not displayed at the top$")
     public void theProgressBarIsNotDisplayedAtTheTop() throws Throwable {
-        // Write code here that turns the phrase above into concrete actions
-        throw new PendingException();
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, ReviewAndConfirmPage.class);
+            ReviewAndConfirmPageActions.ProgressBarNotDisplayed() ;
+        } catch (Exception e) {
+            e.printStackTrace();
+            Assert.fail("The Progress bar is not displayed which is correct");
+        }
     }
 
     @And("^only SIM delivery is required for the customer$")
@@ -7331,8 +7323,14 @@ public class E2EOrderPlaced_Steps {
 
     @And("^the Header navigation is not displayed$")
     public void theHeaderNavigationIsNotDisplayed() throws Throwable {
-        // Write code here that turns the phrase above into concrete actions
-        throw new PendingException();
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, ReviewAndConfirmPage.class);
+            ReviewAndConfirmPageActions.PrimaryNavNotDisplayed() ;
+        } catch (Exception e) {
+            e.printStackTrace();
+            Assert.fail("The Primary header is displayed which is not correct");
+        }
     }
 
     @And("^the existing address of the customer is set as delivery address$")
@@ -7383,8 +7381,14 @@ public class E2EOrderPlaced_Steps {
 
     @And("^the Order summary and the assurance messages is not displayed on the right$")
     public void theOrderSummaryAndTheAssuranceMessagesIsNotDisplayedOnTheRight() throws Throwable {
-        // Write code here that turns the phrase above into concrete actions
-        throw new PendingException();
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, ReviewAndConfirmPage.class);
+            ReviewAndConfirmPageActions.OrderSummaryNotDisplayed() ;
+        } catch (Exception e) {
+            e.printStackTrace();
+            Assert.fail("The Order Summary is not displayed which is correct");
+        }
     }
 
     @And("^the Included section and Learn more link are same as  applicable to both (\\d+)st tile and second tile$")
@@ -7503,8 +7507,14 @@ public class E2EOrderPlaced_Steps {
 
     @And("^copy text SIM delivery required or not is displayed$")
     public void copyTextSIMDeliveryRequiredOrNotIsDisplayed() throws Throwable {
-        // Write code here that turns the phrase above into concrete actions
-        throw new PendingException();
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, ReviewAndConfirmPage.class);
+            ReviewAndConfirmPageActions.ReviewConfirmPageHeader() ;
+        } catch (Exception e) {
+            e.printStackTrace();
+            Assert.fail("Review and confirm copy text not displayed");
+        }
     }
 
     @And("^the Default state is no SIM delivery selected and Place Order button is disabled$")
