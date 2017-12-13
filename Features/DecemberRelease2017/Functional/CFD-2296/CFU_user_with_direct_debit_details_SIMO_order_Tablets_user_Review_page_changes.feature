@@ -10,13 +10,12 @@ Feature: CFU_user_with_direct_debit_details_SIMO_order_Tablets_user_Review_page_
     Then Verify that in the recycle value is displayed in the Recycle panel
     And Click on 'Pick a sim only tariff link'
     And Click on Tablets tabx
-    And Select any Random Tariff in the displayed list of Tariffs under different <Contract> tab
+    And Click on 'Select' CTA to buy a tariff
     And copy text SIM delivery required or not is displayed
-    And the customer is landed on Review page
     And the Header navigation is not displayed
     And the Progress bar is not displayed at the top
     And the Order summary and the assurance messages is not displayed on the right
-    And the greet "customer" bar is displayed as the header
+    #And the greet "customer" bar is displayed as the header
     And MSISDN is displayed as label only
     #The MSISDN should not be displayed as drop down
     And the 'About you' section is not displayed
@@ -45,5 +44,5 @@ Feature: CFU_user_with_direct_debit_details_SIMO_order_Tablets_user_Review_page_
     And Click on 'Place your order' CTA
 
     Examples:
-    | username     | password |Contract |
-    |nov1202@o2.com|test123   |12 Months|
+    | username                    | password |Contract |
+    |bvt2.cfu@gmail.com           |cfubvt123 |12 Months|
