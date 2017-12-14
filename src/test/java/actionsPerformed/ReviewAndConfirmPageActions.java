@@ -79,7 +79,22 @@ public class ReviewAndConfirmPageActions extends Environment {
             Assert.fail("The MSISDN is not displayed as a label");
     }
 
+    public static void AboutYouNotDisplayed()throws Throwable {
+
+        List<WebElement> AbtULabel = driver.findElements(By.xpath("//*[@class='default-content-container about-you-title']"));
+        List<WebElement> AbtUSection = driver.findElements(By.xpath("//*[@class='form-element-container error-section']"));
+        if ((AbtULabel.size() > 0)&& (AbtUSection.size() > 0)) {
+            Assert.fail("The About you section is displayed which is not correct");
+        }
+
+
+        else
+            log.debug("The About you section is not displayed");
     }
+    }
+
+
+
 
 
 

@@ -256,7 +256,7 @@ public class E2EOrderPlaced_Steps {
             PageFactory.initElements(driver, UpgradeCustomerPage.class);
             // MouseHoverAction.UpgradeandUpgradeNow();
             UpgradeCustomerPageActions.Signin();
-            Autoredirection.redirectUpgrades();
+            //Autoredirection.redirectUpgrades();
             GlobalActions.CommonFunctions.checkTitle("Sign In Page");
         } catch (Exception e) {
             // TODO Auto-generated catch block
@@ -831,6 +831,27 @@ public class E2EOrderPlaced_Steps {
     @Given("^Verifies the basket page for the upgrade journey$")
     public void verifies_the_basket_page_for_the_upgrade_journey() throws Throwable {
 
+    }
+
+    @And("^^enter a ([^\"]*) and ([^\"]*) and ten digit home number$")
+    public void enter_a_digit_home_number(String Firstname, String Surname  ) throws Throwable {
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, DeliveryPage.class);
+            Thread.sleep(5000);
+            CommonFunctions.checkTitle("Delivery Page");
+            DeliveryPageActions.SetDelivery();
+            Thread.sleep(2000);
+            DeliveryPageActions.AboutYouTen(Firstname, Surname);
+            Thread.sleep(2000);
+            DeliveryPageActions.ClickContinue();
+            Thread.sleep(5000);
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            System.out.println("Unable to input details in delivery page");
+            Assert.fail("Unable to input details in delivery page");
+
+        }
     }
 
 	/*
@@ -1903,7 +1924,7 @@ public class E2EOrderPlaced_Steps {
     @Then("^perform the credit checks using valid ([^\"]*), ([^\"]*), ([^\"]*), ([^\"]*) and valid ([^\"]*)$")
     public void CreditCheck(String Firstname, String Surname, String HouseNumber, String PostCode, String Username)
             throws Throwable {
-       // try {
+       try {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, Agent_CreditCheckDetailsPage.class);
             Agent_CreditCheckPageActions.Creditcheck(Firstname, Surname, HouseNumber, PostCode);
@@ -1911,14 +1932,14 @@ public class E2EOrderPlaced_Steps {
             Agent_CreditCheckPageActions.BankDetails(Username);
             System.out.println("Completed Bank details");
             Thread.sleep(30000);
-         /*
+
         } catch (Exception e) {
             // TODO Auto-generated catch block
             System.out.println("Unable to perform credit checks , please see the failure screenshot");
             Assert.fail("Unable to perform credit checks , please see the failure screenshot");
 
         }
-*/
+
     }
     
 	/*
@@ -1931,7 +1952,28 @@ public class E2EOrderPlaced_Steps {
 	 * #########
 	 */
 
-    @Then("^Register the customer with valid ([^\"]*), ([^\"]*), ([^\"]*), ([^\"]*) and other valid details in delivery page$")
+    @Then("^enter ten digit contact number perform the credit checks using valid ([^\"]*), ([^\"]*), ([^\"]*), ([^\"]*) and valid ([^\"]*)$")
+    public void enter_ten_digit_contact_number_perform_the_credit_checks(String Firstname, String Surname, String HouseNumber, String PostCode, String Username ) throws Throwable {
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, Agent_CreditCheckDetailsPage.class);
+            Agent_CreditCheckPageActions.CreditcheckAndTenDigitContact(Firstname, Surname, HouseNumber, PostCode);
+            System.out.println("Completed Credit check");
+            Agent_CreditCheckPageActions.BankDetails(Username);
+            System.out.println("Completed Bank details");
+            Thread.sleep(30000);
+
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            System.out.println("Unable to perform credit checks , please see the failure screenshot");
+            Assert.fail("Unable to perform credit checks , please see the failure screenshot");
+
+        }
+
+    }
+
+
+	@Then("^Register the customer with valid ([^\"]*), ([^\"]*), ([^\"]*), ([^\"]*) and other valid details in delivery page$")
 
     public void register_the_customer(String Firstname, String Surname, String HouseNumber, String PostCode)
             throws Throwable {
@@ -6840,15 +6882,13 @@ public class E2EOrderPlaced_Steps {
 
     @And("^the 'About you' section is not displayed$")
     public void theAboutYouSectionIsNotDisplayed() throws Throwable {
-        try{
+        try {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-            PageFactory.initElements(driver, UpgradeCustomerPage.class);
-            UpgradeCustomerPageActions.aboutYou();
-
+            PageFactory.initElements(driver, ReviewAndConfirmPage.class);
+            ReviewAndConfirmPageActions.AboutYouNotDisplayed() ;
         } catch (Exception e) {
-
-            System.out.println("Unable to do validate about you");
-            Assert.fail("Unable to do validate about you");
+            e.printStackTrace();
+            Assert.fail("The About you section is displayed which is not correct");
         }
     }
 

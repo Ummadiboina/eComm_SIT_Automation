@@ -39,6 +39,11 @@ public class DeliveryPage {
     @FindBy(how = How.ID, using = "contact-number")
     public static WebElement Contact_Number;
 
+    @FindBy(how = How.XPATH, using = "//*[@id='contact-number-error']")
+    public static WebElement Contact_Error;
+
+
+
     @FindBy(how = How.ID, using = "password")
     public static WebElement Password;
 

@@ -17,6 +17,7 @@ import GlobalActions.RandomEmailAddressCreation;
 import GlobalActions.Screenshots;
 import helpers.Environment;
 import pageobjects.Agent_CreditCheckDetailsPage;
+import pageobjects.DeliveryPage;
 
 public class Agent_CreditCheckPageActions extends Environment {
 
@@ -90,6 +91,62 @@ public class Agent_CreditCheckPageActions extends Environment {
 		log.debug("Entered date of birth");
 		Thread.sleep(2000);
 		Agent_CreditCheckDetailsPage.ContactNumber.sendKeys("07888594958");
+		log.debug("Entered contact number");
+		Thread.sleep(2000);
+		try {
+			Agent_CreditCheckDetailsPage.HouseNumber.sendKeys(HouseNumber);
+			Thread.sleep(2000);
+			Agent_CreditCheckDetailsPage.Postcode.sendKeys(PostCode);
+			log.debug("Entered House Postcode  as -" + PostCode);
+			Thread.sleep(2000);
+
+			pageobjects.Agent_CreditCheckDetailsPage.FindAddress.click();
+			log.debug("Clicked on the Find address button");
+			pageobjects.Agent_CreditCheckDetailsPage.Selectedaddress.click();
+			log.debug("Selected an address");
+			Screenshots.captureScreenshot();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			Assert.fail("Unable to select Post code address");
+			Screenshots.captureScreenshot();
+		}
+
+		Agent_CreditCheckDetailsPage.YearsatAddress.sendKeys("09");
+		log.debug("Entered Number of Years at address");
+
+		Agent_CreditCheckDetailsPage.monthsatAddress.sendKeys("05");
+		log.debug("Entered Number of Months at address");
+		Screenshots.captureScreenshot();
+
+	}
+
+	public static void CreditcheckAndTenDigitContact(String Firstname, String Surname, String HouseNumber, String PostCode)
+			throws InterruptedException, IOException {
+		Select dropdown = new Select(pageobjects.Agent_CreditCheckDetailsPage.Title);
+		dropdown.selectByIndex(1);
+		log.debug("Selected the dropdown Mr");
+		Reporter.log("Selected the dropdown Mr");
+
+		Agent_CreditCheckDetailsPage.FirstName.sendKeys(Firstname);
+		log.debug("Entered First name");
+		Agent_CreditCheckDetailsPage.LastName.sendKeys(Surname);
+		log.debug("Entered Last name");
+
+		Agent_CreditCheckDetailsPage.Email.sendKeys(RandomEmailAddressCreation.RandomEmail());
+
+		log.debug("Entered email address");
+		Agent_CreditCheckDetailsPage.DOB.sendKeys("10-10-1981");
+		log.debug("Entered date of birth");
+		Thread.sleep(2000);
+		Agent_CreditCheckDetailsPage.ContactNumber.sendKeys("7890987890");
+		if(Agent_CreditCheckDetailsPage.Contact_errorAgent.isDisplayed()){
+			System.out.println("Not accepting mobile number without 0 in the begining");
+		}
+		else{
+			org.testng.Assert.fail("Mobile number without 0 accepted");
+		}
+		Agent_CreditCheckDetailsPage.ContactNumber.clear();
+		Agent_CreditCheckDetailsPage.ContactNumber.sendKeys("1234567890");
 		log.debug("Entered contact number");
 		Thread.sleep(2000);
 		try {
