@@ -1885,15 +1885,6 @@ public class UpgradeCustomerPageActions extends Environment {
 
 
 
-    public static void aboutYou() throws InterruptedException, IOException {
-        System.out.println("Trying to verify about you is dispayed or not");
-        if (pageobjects.UpgradeCustomerPage.aboutYou.isDisplayed()) {
-            Assert.fail("About You is displayed");
-        } else {
-            System.out.println("About you is not displayed");
-        }
-        Screenshots.captureScreenshot();
-    }
 
     public static void reviewTariff() throws InterruptedException, IOException {
         System.out.println("Trying to verify first section is review tariff");

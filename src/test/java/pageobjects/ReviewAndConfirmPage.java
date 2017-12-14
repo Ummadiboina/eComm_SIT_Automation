@@ -24,6 +24,14 @@ public class ReviewAndConfirmPage extends Environment {
     @FindBy(how = How.XPATH, using = "//*[@class='msdin-selector']/p[2]")
     public static WebElement MSISDNLabel;
 
+    @FindBy(how = How.XPATH, using = "//*[@class='default-content-container about-you-title']")
+    public static WebElement AboutYouLabel;
+
+    @FindBy(how = How.XPATH, using = "//*[@class='form-element-container error-section']")
+    public static WebElement AboutYouSection;
+
+
+
 
 
 
