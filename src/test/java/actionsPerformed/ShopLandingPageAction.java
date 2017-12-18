@@ -50,4 +50,29 @@ public class ShopLandingPageAction extends Environment {
 		}
 		Screenshots.captureScreenshot();
 	}
-}
+
+	public static void CookiesPopUpDisplayed() throws IOException, InterruptedException {
+		List<WebElement> Cookies = driver.findElements(By.xpath("//*[@class='heading']"));
+		if (Cookies.size() > 0) {
+			System.out.println("Cookies pop up is displayed and the cookie is dropped in the page");
+			log.debug("Cookies pop up is displayed and the cookie is dropped in the page");
+			/*
+			log.debug("Clicking on the cookie pop up");
+			WebElement element = ShopLandingPage.CookieClose;
+			JavascriptExecutor executor = (JavascriptExecutor)driver;
+			executor.executeScript("arguments[0].click();", element);
+			log.debug("Clicking on the cookie pop up");
+			//ShopLandingPage.CookiePopUp.click();
+			*/
+		} else {
+			System.out.println("The cookie pop is not displayed");
+
+		}
+		Screenshots.captureScreenshot();
+
+	}
+
+	}
+
+
+

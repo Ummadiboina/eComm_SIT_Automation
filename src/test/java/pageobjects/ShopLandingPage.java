@@ -18,4 +18,12 @@ public class ShopLandingPage {
 	
 	@FindBy(how = How.XPATH, using = "//a[@class='box-close']")
 	public static WebElement ClosePopUp;
+
+	@FindBy(how = How.XPATH, using = "//*[@class='heading']")
+	public static WebElement CookiePopUp;
+
+	@FindBy(how = How.XPATH, using = "//*[@class='close-icon']")
+	public static WebElement CookieClose;
+
+
 }
