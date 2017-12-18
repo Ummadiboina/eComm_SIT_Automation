@@ -69,6 +69,32 @@ public class E2EOrderPlaced_Steps {
 
     }
 
+
+    @And("^a cookies pop up should be displayed$")
+    public void a_cookies_pop_up_should_be_displayed() throws Throwable {
+       // try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, MouseHoverPage.class);
+            ShopLandingPageAction.CookiesPopUpDisplayed();
+/*
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            System.out.println("unable to see the cookie pop up");
+            Assert.fail("unable to see the cookie pop up");
+        }
+        */
+    }
+
+    @And("^Delete all cookies$")
+    public void Delete_all_cookies() throws Throwable {
+        driver.manage().deleteAllCookies();
+        }
+    @And("^launch the shop phones page$")
+    public void launch_the_shop_phones_page() throws Throwable {
+        driver.get("www.ref.o2.co.uk/shop/phones");
+    }
+
+
     @And("^navigate to PAYM Phones page$")
     public void navigate_to_PAYM_Phones_page() throws Throwable {
         try {
