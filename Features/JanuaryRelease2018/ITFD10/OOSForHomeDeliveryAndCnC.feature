@@ -9,10 +9,12 @@ Feature: OOSForHomeDeliveryandCnC
     And navigate to PAYM Phones page
     And I choose PayM <handset>
     And Navigate to device details page
-    Then the 'OOS' messages should be displayed in the delivery section with no radio buttons
+    And the Delivery section should show 'OOS message'
     And Land on the 'Tariffs and extra' page
     And I Land on the basket page and choose home delivery option
-    Then the error message should be displayed
+    TAnd verify whether the updated error message is displayed on top of the page
+    And the Delivery section should show 'OOS message'
+
 
 
     Examples:
