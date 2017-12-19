@@ -13,6 +13,7 @@ Feature: OOSForHomeDeliveryButAvailableForCnC
     And the click and collect option should be displayed in the delivery section
     And Land on the 'Tariffs and extra' page
     And I Land on the basket page and choose home delivery option
+    Then verify the 'OOS message' is displayed in the upgrades basket page
     Then the error message should be displayed
 
 
