@@ -9,10 +9,10 @@ Feature: Existing_OOSForHomeDeliveryandCnC
   And navigate to PAYM Phones page
   And I choose PayM <handset>
   And Navigate to device details page
-  And the Delivery section should show the click and collect option without a radio button and the 'OOS message'
+  And the Delivery section should show 'OOS message'
   And Land on the 'Tariffs and extra' page
   And I Land on the basket page and choose home delivery option
-  And the Delivery section should show the click and collect option without a radio button and the 'OOS message'
+  And the Delivery section should show 'OOS message'
 
 
   Examples:
