@@ -8,8 +8,8 @@ Feature: FreeSimNoAddress
     And I select 'iPads and Tablets' tab
     And I select <Surfer_Type> surfer and <sim_type> sim
     And I select 'Enter manually' and input <Flatnumber>, <Housename>, <Address1>, <Town>, <Postcode>
-    And I input <Firstname>, <Lastname>, <Contact_number> in About You Section
-    Then verify order number is displayed
+    And enter a house number and an <Postcode>
+    Then the respective <error> message should be displayed
 
     Examples:
       | Surfer_Type  | sim_type | Flatnumber | Housename | Address1 | Town  | Postcode  | Firstname | Lastname | Contact_number |
