@@ -43,5 +43,5 @@ Feature: CFU_MbbSimo30days
 
     Examples:
     Examples:
-      |Contract|GiftBlock |username|password|filtername|sortoption                  |
-      |30 Days |Configured|        |         |high      | Monthly data (Low to High)|
+      |Contract|GiftBlock |username|password|filtername|sortoption                  |GiftBlock|
+      |30 Days |Configured|        |         |high      | Monthly data (Low to High)|         |

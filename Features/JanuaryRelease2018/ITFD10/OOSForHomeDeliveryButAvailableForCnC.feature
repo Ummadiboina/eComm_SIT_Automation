@@ -10,11 +10,11 @@ Feature: OOSForHomeDeliveryButAvailableForCnC
     And I choose PayM <handset>
     And Navigate to device details page
     Then the 'OOS' messages should be displayed in the delivery section with no radio buttons
-    And the click and collect option should be displayed in the delivery section
+    And the Delivery section should show the click and collect option without a radio button and the 'OOS message'
     And Land on the 'Tariffs and extra' page
     And I Land on the basket page and choose home delivery option
     Then verify the 'OOS message' is displayed in the upgrades basket page
-    Then the error message should be displayed
+    And the Delivery section should show the click and collect option without a radio button and the 'OOS message'
 
 
     Examples:
