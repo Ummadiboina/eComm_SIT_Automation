@@ -18,8 +18,8 @@ public class PAYMSimOPage {
 	public static  WebElement shoptablet;		
 	
 	@FindBy(how=How.XPATH,using=("//*[@id='id-12-months']/p/a"))
-	public static WebElement twelevemonths;	
-	
+	public static WebElement twelevemonths;
+
 	@FindBy(how=How.XPATH,using=("//*[@id='id-30-days']/p/a"))
 	public static WebElement thirtydays;
 	
@@ -35,6 +35,7 @@ public class PAYMSimOPage {
 	public static WebElement BuyNowRandomTariff12Months;
 	
 	//@FindBy(how=How.XPATH,using=("(//button[@id='callToAction'])[1]"))
+
 	@FindBy(how=How.XPATH,using=("//*[@id='e1292536-6b96-4c88-ba56-17a694c2140b']/div[5]/div"))
 	public static WebElement BuyNowRandomTariff30Months;
 	

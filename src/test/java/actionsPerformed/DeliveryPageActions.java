@@ -69,6 +69,39 @@ import static pageobjects.FreeSimPage.Firstname;
 
         }
 
+        public static void AboutYouTen(String Firstname, String Surname) throws IOException, InterruptedException {
+            log.debug("Entering an Random email id");
+            DeliveryPage.Email_Address.sendKeys(RandomEmailAddressCreation.RandomEmail());
+            System.out.println("Setting the About you options");
+            log.debug("Setting the About you options");
+            Select dropdown = new Select(pageobjects.DeliveryPage.Title);
+            dropdown.selectByIndex(2);
+            log.debug("Selected the dropdown Mrs");
+            Reporter.log("Selected the dropdown Mrs");
+            DeliveryPage.First_Name.sendKeys(Firstname);
+            // DeliveryPage.First_Name.sendKeys(map.get(0).get("FirstName"));
+            DeliveryPage.Last_Name.sendKeys(Surname);
+            log.debug("Entered first name and last name as " + Firstname + " " + Surname);
+            DeliveryPage.Contact_Number.sendKeys("7890987678");
+            if(DeliveryPage.Contact_Error.isDisplayed()){
+                System.out.println("Not accepting mobile number without 0 in the begining");
+            }
+            else{
+                Assert.fail("Mobile number without 0 accepted");
+            }
+            DeliveryPage.Contact_Number.clear();
+            DeliveryPage.Contact_Number.sendKeys("1234567890");
+            DeliveryPage.Password.sendKeys("NTTDATA123");
+            DeliveryPage.security_answer.sendKeys("SitTester");
+            DeliveryPage.date.sendKeys("25");
+            DeliveryPage.Month.sendKeys("01");
+            DeliveryPage.year.sendKeys("1957");
+            log.debug("Entered all the other relavant details");
+            Screenshots.captureScreenshot();
+
+        }
+
+
         public static void ClickContinue() throws InterruptedException, IOException {
             Thread.sleep(3000);
             log.debug("in click continue function");

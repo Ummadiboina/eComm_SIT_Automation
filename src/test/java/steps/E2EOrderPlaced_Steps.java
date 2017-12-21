@@ -69,6 +69,32 @@ public class E2EOrderPlaced_Steps {
 
     }
 
+
+    @And("^a cookies pop up should be displayed$")
+    public void a_cookies_pop_up_should_be_displayed() throws Throwable {
+       // try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, MouseHoverPage.class);
+            ShopLandingPageAction.CookiesPopUpDisplayed();
+/*
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            System.out.println("unable to see the cookie pop up");
+            Assert.fail("unable to see the cookie pop up");
+        }
+        */
+    }
+
+    @And("^Delete all cookies$")
+    public void Delete_all_cookies() throws Throwable {
+        driver.manage().deleteAllCookies();
+        }
+    @And("^launch the shop phones page$")
+    public void launch_the_shop_phones_page() throws Throwable {
+        driver.get("www.ref.o2.co.uk/shop/phones");
+    }
+
+
     @And("^navigate to PAYM Phones page$")
     public void navigate_to_PAYM_Phones_page() throws Throwable {
         try {
@@ -256,7 +282,7 @@ public class E2EOrderPlaced_Steps {
             PageFactory.initElements(driver, UpgradeCustomerPage.class);
             // MouseHoverAction.UpgradeandUpgradeNow();
             UpgradeCustomerPageActions.Signin();
-            Autoredirection.redirectUpgrades();
+            //Autoredirection.redirectUpgrades();
             GlobalActions.CommonFunctions.checkTitle("Sign In Page");
         } catch (Exception e) {
             // TODO Auto-generated catch block
@@ -831,6 +857,27 @@ public class E2EOrderPlaced_Steps {
     @Given("^Verifies the basket page for the upgrade journey$")
     public void verifies_the_basket_page_for_the_upgrade_journey() throws Throwable {
 
+    }
+
+    @And("^^enter a ([^\"]*) and ([^\"]*) and ten digit home number$")
+    public void enter_a_digit_home_number(String Firstname, String Surname  ) throws Throwable {
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, DeliveryPage.class);
+            Thread.sleep(5000);
+            CommonFunctions.checkTitle("Delivery Page");
+            DeliveryPageActions.SetDelivery();
+            Thread.sleep(2000);
+            DeliveryPageActions.AboutYouTen(Firstname, Surname);
+            Thread.sleep(2000);
+            DeliveryPageActions.ClickContinue();
+            Thread.sleep(5000);
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            System.out.println("Unable to input details in delivery page");
+            Assert.fail("Unable to input details in delivery page");
+
+        }
     }
 
 	/*
@@ -1903,7 +1950,7 @@ public class E2EOrderPlaced_Steps {
     @Then("^perform the credit checks using valid ([^\"]*), ([^\"]*), ([^\"]*), ([^\"]*) and valid ([^\"]*)$")
     public void CreditCheck(String Firstname, String Surname, String HouseNumber, String PostCode, String Username)
             throws Throwable {
-       // try {
+       try {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, Agent_CreditCheckDetailsPage.class);
             Agent_CreditCheckPageActions.Creditcheck(Firstname, Surname, HouseNumber, PostCode);
@@ -1911,14 +1958,14 @@ public class E2EOrderPlaced_Steps {
             Agent_CreditCheckPageActions.BankDetails(Username);
             System.out.println("Completed Bank details");
             Thread.sleep(30000);
-         /*
+
         } catch (Exception e) {
             // TODO Auto-generated catch block
             System.out.println("Unable to perform credit checks , please see the failure screenshot");
             Assert.fail("Unable to perform credit checks , please see the failure screenshot");
 
         }
-*/
+
     }
     
 	/*
@@ -1931,7 +1978,28 @@ public class E2EOrderPlaced_Steps {
 	 * #########
 	 */
 
-    @Then("^Register the customer with valid ([^\"]*), ([^\"]*), ([^\"]*), ([^\"]*) and other valid details in delivery page$")
+    @Then("^enter ten digit contact number perform the credit checks using valid ([^\"]*), ([^\"]*), ([^\"]*), ([^\"]*) and valid ([^\"]*)$")
+    public void enter_ten_digit_contact_number_perform_the_credit_checks(String Firstname, String Surname, String HouseNumber, String PostCode, String Username ) throws Throwable {
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, Agent_CreditCheckDetailsPage.class);
+            Agent_CreditCheckPageActions.CreditcheckAndTenDigitContact(Firstname, Surname, HouseNumber, PostCode);
+            System.out.println("Completed Credit check");
+            Agent_CreditCheckPageActions.BankDetails(Username);
+            System.out.println("Completed Bank details");
+            Thread.sleep(30000);
+
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            System.out.println("Unable to perform credit checks , please see the failure screenshot");
+            Assert.fail("Unable to perform credit checks , please see the failure screenshot");
+
+        }
+
+    }
+
+
+	@Then("^Register the customer with valid ([^\"]*), ([^\"]*), ([^\"]*), ([^\"]*) and other valid details in delivery page$")
 
     public void register_the_customer(String Firstname, String Surname, String HouseNumber, String PostCode)
             throws Throwable {
@@ -6825,44 +6893,28 @@ public class E2EOrderPlaced_Steps {
         }
     }
 
-    @And("^the greet \"([^\"]*)\" bar is displayed as the header$")
-    public void theGreetBarIsDisplayedAsTheHeader(String customerName) throws Throwable {      try {
-            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-            PageFactory.initElements(driver, UpgradeCustomerPage.class);
-            UpgradeCustomerPageActions.greetingValidation(customerName);
-
-        } catch (Exception e) {
-
-            System.out.println("Unable to do validate the customer greeting");
-            Assert.fail("Unable to do validate the customer greeting");
-        }
-    }
 
     @And("^MSISDN is displayed as label only$")
     public void msisdnIsDisplayedAsLabelOnly() throws Throwable {
-       try{
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        PageFactory.initElements(driver, UpgradeCustomerPage.class);
-        UpgradeCustomerPageActions.msisdnDisplay();
-
-    } catch (Exception e) {
-
-        System.out.println("Unable to do validate if msisdn is displayed as label only");
-        Assert.fail("Unable to do validate if msisdn is displayed as label only");
-    }
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, ReviewAndConfirmPage.class);
+            ReviewAndConfirmPageActions.MsisdnLabel() ;
+        } catch (Exception e) {
+            e.printStackTrace();
+            Assert.fail("The MSISDN is not displayed as a label");
+        }
     }
 
     @And("^the 'About you' section is not displayed$")
     public void theAboutYouSectionIsNotDisplayed() throws Throwable {
-        try{
+        try {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-            PageFactory.initElements(driver, UpgradeCustomerPage.class);
-            UpgradeCustomerPageActions.aboutYou();
-
+            PageFactory.initElements(driver, ReviewAndConfirmPage.class);
+            ReviewAndConfirmPageActions.AboutYouNotDisplayed() ;
         } catch (Exception e) {
-
-            System.out.println("Unable to do validate about you");
-            Assert.fail("Unable to do validate about you");
+            e.printStackTrace();
+            Assert.fail("The About you section is displayed which is not correct");
         }
     }
 
@@ -7319,8 +7371,14 @@ public class E2EOrderPlaced_Steps {
 
     @And("^the Progress bar is not displayed at the top$")
     public void theProgressBarIsNotDisplayedAtTheTop() throws Throwable {
-        // Write code here that turns the phrase above into concrete actions
-        throw new PendingException();
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, ReviewAndConfirmPage.class);
+            ReviewAndConfirmPageActions.ProgressBarNotDisplayed() ;
+        } catch (Exception e) {
+            e.printStackTrace();
+            Assert.fail("The Progress bar is not displayed which is correct");
+        }
     }
 
     @And("^only SIM delivery is required for the customer$")
@@ -7331,8 +7389,14 @@ public class E2EOrderPlaced_Steps {
 
     @And("^the Header navigation is not displayed$")
     public void theHeaderNavigationIsNotDisplayed() throws Throwable {
-        // Write code here that turns the phrase above into concrete actions
-        throw new PendingException();
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, ReviewAndConfirmPage.class);
+            ReviewAndConfirmPageActions.PrimaryNavNotDisplayed() ;
+        } catch (Exception e) {
+            e.printStackTrace();
+            Assert.fail("The Primary header is displayed which is not correct");
+        }
     }
 
     @And("^the existing address of the customer is set as delivery address$")
@@ -7383,8 +7447,14 @@ public class E2EOrderPlaced_Steps {
 
     @And("^the Order summary and the assurance messages is not displayed on the right$")
     public void theOrderSummaryAndTheAssuranceMessagesIsNotDisplayedOnTheRight() throws Throwable {
-        // Write code here that turns the phrase above into concrete actions
-        throw new PendingException();
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, ReviewAndConfirmPage.class);
+            ReviewAndConfirmPageActions.OrderSummaryNotDisplayed() ;
+        } catch (Exception e) {
+            e.printStackTrace();
+            Assert.fail("The Order Summary is not displayed which is correct");
+        }
     }
 
     @And("^the Included section and Learn more link are same as  applicable to both (\\d+)st tile and second tile$")
@@ -7503,8 +7573,14 @@ public class E2EOrderPlaced_Steps {
 
     @And("^copy text SIM delivery required or not is displayed$")
     public void copyTextSIMDeliveryRequiredOrNotIsDisplayed() throws Throwable {
-        // Write code here that turns the phrase above into concrete actions
-        throw new PendingException();
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, ReviewAndConfirmPage.class);
+            ReviewAndConfirmPageActions.ReviewConfirmPageHeader() ;
+        } catch (Exception e) {
+            e.printStackTrace();
+            Assert.fail("Review and confirm copy text not displayed");
+        }
     }
 
     @And("^the Default state is no SIM delivery selected and Place Order button is disabled$")

@@ -1881,43 +1881,10 @@ public class UpgradeCustomerPageActions extends Environment {
 
     }
 
-    public static void greetingValidation(String customerName) throws InterruptedException, IOException {
-        System.out.println("Trying to verify greetings");
 
-        String Actual_greeting = pageobjects.UpgradeCustomerPage.Greetings.getText();
-        String Expected_greeting = "Hello " +customerName;
-        if (Actual_greeting.contains(Expected_greeting)) {
-            log.debug("Greeting is as expected");
-        } else {
-            Assert.fail("Greeting is not as expected");
-        }
 
-        Screenshots.captureScreenshot();
-    }
 
-    public static void msisdnDisplay() throws InterruptedException, IOException {
-        System.out.println("Trying to verify greetings");
 
-        if(pageobjects.UpgradeCustomerPage.msisdnDisplayed.isDisplayed())
-        {
-
-        }
-        else
-        {
-            Assert.fail("MSISDN is not displayed as label");
-        }
-        Screenshots.captureScreenshot();
-    }
-
-    public static void aboutYou() throws InterruptedException, IOException {
-        System.out.println("Trying to verify about you is dispayed or not");
-        if (pageobjects.UpgradeCustomerPage.aboutYou.isDisplayed()) {
-            Assert.fail("About You is displayed");
-        } else {
-            System.out.println("About you is not displayed");
-        }
-        Screenshots.captureScreenshot();
-    }
 
     public static void reviewTariff() throws InterruptedException, IOException {
         System.out.println("Trying to verify first section is review tariff");
