@@ -208,12 +208,8 @@ public class UpgradeCustomerPage {
 	public static WebElement Greetings;
 
 
-	//Pass the xpath so that give label reference instead of button in xpath
-	@FindBy(how = How.XPATH, using = "")
-	public static WebElement msisdnDisplayed;
 
-    @FindBy(how = How.ID, using = "about-you-section")
-    public static WebElement aboutYou;
+
 
 //Give xpath with position so that review tariff is at first section like 1. Review your tariff
     @FindBy(how = How.ID, using = "")

@@ -31,6 +31,9 @@ public class Agent_CreditCheckDetailsPage {
     @FindBy(how = How.ID, using = "ccConfirmPswd")
     public static WebElement confirmPassword;
 
+    @FindBy(how = How.XPATH, using = "//*[@for='ccContactNumber'][2]")
+    public static WebElement Contact_errorAgent;
+
     @FindBy(how = How.XPATH, using = "//input[@name='houseNum']")
     public static WebElement HouseNumber;
 

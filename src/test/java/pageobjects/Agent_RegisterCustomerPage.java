@@ -24,6 +24,10 @@ public class Agent_RegisterCustomerPage {
     @FindBy(how = How.ID, using = "regContactNumber")
     public static WebElement ContactNumber;
 
+    @FindBy(how = How.XPATH, using = "//*[@for='ccContactNumber'][2]")
+    public static WebElement ContactNumber_error;
+
+
     @FindBy(how = How.ID, using = "regPassword")
     public static WebElement intialPassword;
 
