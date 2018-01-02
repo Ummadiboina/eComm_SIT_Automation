@@ -7709,42 +7709,23 @@ public class E2EOrderPlaced_Steps {
 
     @And("^I click on 'Sim only Tariff' tab$")
     public void i_click_on_simOnlyTariff_tab() throws Exception {
-        WebElement simOnlyTarirr = driver.findElement(By.xpath("//a[@id='tab-keep-your-phone']//span[contains(text(),'Sim only tariff')]"));
         try {
-            driver.manage().timeouts().implicitlyWait(2, TimeUnit.MINUTES);
-            if(simOnlyTarirr.isDisplayed()){
-                simOnlyTarirr.click();
-                System.out.println(" clicked on Sim only Tariff tab");
-                log.debug(" Clicked on Sim only Tariff tab");
-            }else{
-                System.out.println("Failed to click on Sim only Tariff tab");
-                Assert.fail("Failed to click on Sim only Tariff tab");
-        }
+           SimsPageActions.clickOn_simOnlyTariffTab();
         }
         catch (Exception e) {
             // TODO Auto-generated catch block
-            System.out.println("Failed to click on Sim only Tariff tab" + e.getStackTrace());
-            Assert.fail("Failed to click on Sim only Tariff tab");
+            System.out.println(e.getStackTrace());
         }
     }
 
     @And("^verify that the url has simo at the end$")
     public void verify_that_the_url_has_simo_at_end() throws Exception {
         try {
-            driver.manage().timeouts().implicitlyWait(2, TimeUnit.MINUTES);
-            String currentUrl = driver.getCurrentUrl();
-            if(currentUrl.endsWith("simo")){
-                 System.out.println(" verifyed that the url has simo at the end");
-                log.debug(" verifyed that the url has simo at the end");
-            }else{
-                System.out.println(" Failed to  verify that the url has simo at the end");
-                Assert.fail(" Failed to  verify that the url has simo at the end");
-            }
+            SimsPageActions.verifyThatURL_has_simo_at_end();
         }
         catch (Exception e) {
             // TODO Auto-generated catch block
-            System.out.println(" Failed to  verify that the url has simo at the end" + e.getStackTrace());
-            Assert.fail(" Failed to  verify that the url has simo at the end");
+            System.out.println(e.getStackTrace());
         }
     }
 
@@ -7752,21 +7733,11 @@ public class E2EOrderPlaced_Steps {
     @Then("^the 'Phones' button should be selected by default$")
     public void phones_button_should_be_selected_by_default() throws Exception {
         try {
-            driver.manage().timeouts().implicitlyWait(2, TimeUnit.MINUTES);
-             if(driver.findElements(By.xpath("//div/input[@class='secondary phones-btn active']")).size() > 0) {
-                 if (driver.findElement(By.xpath("//div/input[@class='secondary phones-btn active']")).isDisplayed()) {
-                     System.out.println(" The 'Phones' button is selected by default");
-                     log.debug(" The 'Phones' button is selected by default");
-                 } else {
-                     System.out.println(" Failed to The 'Phones' button is selected by default");
-                     Assert.fail(" Failed to  The 'Phones' button is selected by default");
-                 }
-             }
+            SimsPageActions.phonesButtonShouldSelectedByDefault();
         }
         catch (Exception e) {
             // TODO Auto-generated catch block
-            System.out.println(" Failed to The 'Phones' button is selected by default" + e.getStackTrace());
-            Assert.fail(" Failed to The 'Phones' button is selected by default");
+            System.out.println(e.getStackTrace());
         }
     }
 
@@ -7774,182 +7745,126 @@ public class E2EOrderPlaced_Steps {
     @And("^all the tariffs under twelve months should be displayed$")
     public void all_the_tariffs_under_twelve_months_should_be_displayed() throws Exception {
         try {
-            driver.manage().timeouts().implicitlyWait(2, TimeUnit.MINUTES);
-            if(driver.findElements(By.xpath("//li[@id='id-12-months' and @class=' active ']")).size() > 0) {
-                if (driver.findElement(By.xpath("//li[@id='id-12-months' and @class=' active ']")).isDisplayed()) {
-                   List<WebElement>  lstOfDataPlans =  driver.findElements(By.xpath("(//h2[contains(text(),'GB')]"));
-                   for(int i=1; i<lstOfDataPlans.size(); i++){
-                       if(driver.findElement(By.xpath("(//h2[contains(text(),'GB')])["+i+"]")).isDisplayed()){
-                           String str = driver.findElement(By.xpath("(//h2[contains(text(),'GB')])["+i+"]")).getText();
-                           System.out.println(" the tariffs under twelve months is : " + str);
-                           log.debug(" the tariffs under twelve months is : " + str);
-                       }
-                   }
-                } else {
-                    System.out.println("Failed to display's the tariffs under twelve months");
-                    Assert.fail("Failed to display's the tariffs under twelve months");
-                }
-            }
+            SimsPageActions.allTariffsUnderTwelveMonthsShouldDisplayed();
         }
         catch (Exception e) {
             // TODO Auto-generated catch block
-            System.out.println("Failed to display's the tariffs under twelve months" + e.getStackTrace());
-            Assert.fail("Failed to display's the tariffs under twelve months");
+            System.out.println(e.getStackTrace());
         }
     }
-
 
 
     @And("^the 'sorting dropdown' is displayed just below the toggle buttons sections$")
     public void sorting_dropdown_is_displayed_just_below_the_toggle_buttons_sections() throws Exception {
         try {
-            driver.manage().timeouts().implicitlyWait(2, TimeUnit.MINUTES);
-            if(driver.findElements(By.xpath("//div[@class='tab-buttons-container']/following-sibling::div//span[@id='dataFilterSelectSelectBoxIt']")).size() > 0) {
-                if (driver.findElement(By.xpath("//div[@class='tab-buttons-container']/following-sibling::div//span[@id='dataFilterSelectSelectBoxIt']")).isDisplayed()) {
-                    System.out.println("the 'sorting dropdown' is displayed just below the toggle buttons sections");
-                    log.debug("the 'sorting dropdown' is displayed just below the toggle buttons sections");
-                } else {
-                    System.out.println(" Failed to the 'sorting dropdown' is displayed just below the toggle buttons sections");
-                    Assert.fail(" Failed to  the 'sorting dropdown' is displayed just below the toggle buttons sections");
-                }
-            }
+            SimsPageActions.sortingDropdownIsDisplayedJstBelowToggleButtonsSections();
         }
         catch (Exception e) {
             // TODO Auto-generated catch block
-            System.out.println(" Failed to the 'sorting dropdown' is displayed just below the toggle buttons sections" + e.getStackTrace());
-            Assert.fail(" Failed to the 'sorting dropdown' is displayed just below the toggle buttons sections");
+            System.out.println(e.getStackTrace());
         }
     }
-
-
 
     @Then("^'OOS message' should be displayed in the upgrade options page$")
     public void OOS_message_should_be_displayed_in_upgrade_options_page() throws Exception {
         try {
-            driver.manage().timeouts().implicitlyWait(2, TimeUnit.MINUTES);
-            if(driver.findElements(By.xpath("//*[contains(text(),'Out of stock')]")).size() > 0) {
-                if (driver.findElement(By.xpath("//*[contains(text(),'Out of stock')]")).isDisplayed()) {
-                    System.out.println(" The Out of stock message is Displayed in the Upgrade Options page");
-                    log.debug(" The Out of stock message is Displayed in the Upgrade Options page");
-                }
-            }else {
-                    System.out.println(" Failed to displayed  OOS message in the Upgrade Page");
-                    Assert.fail(" Failed to displayed  OOS message in the Upgrade Page");
-                }
+            UpgradeCustomerPageActions.OOS_MsgShouldDisplayed_inUpgradeOptionsPage();
         }
         catch (Exception e) {
             // TODO Auto-generated catch block
-            System.out.println(" Failed to displayed  OOS message in the Upgrade Page" + e.getStackTrace());
-            Assert.fail(" Failed to displayed  OOS message in the Upgrade Page");
+            System.out.println(e.getStackTrace());
         }
     }
 
     @Then("^verify the 'OOS message' is displayed in the upgrades basket page$")
     public void verify_OOS_message_is_displayed_in_the_upgrades_basket_page() throws Exception {
         try {
-            driver.manage().timeouts().implicitlyWait(2, TimeUnit.MINUTES);
-            if(driver.findElements(By.xpath("//*[contains(text(),'You can't continue with checking out if there are any out of stock items in your basket,')]")).size() > 0) {
-                if (driver.findElement(By.xpath("(//*[contains(text(),'You can't continue with checking out if there are any out of stock items in your basket,')])[1]")).isDisplayed()) {
-                    System.out.println(" The 'OOS message' is displayed in the upgrades basket page is Verified");
-                    log.debug(" The 'OOS message' is displayed in the upgrades basket page is Verified");
-                }
-            }else {
-                System.out.println(" Failed to Displayed The 'OOS message' in the upgrades basket page");
-                Assert.fail(" Failed to Displayed The 'OOS message' in the upgrades basket page");
-            }
+        UpgradeCustomerPageActions.verifyOOS_MessageIsDisplayedInUpgradesBasketPage();
         }
         catch (Exception e) {
-            // TODO Auto-generated catch block
-            System.out.println(" Failed to Displayed The 'OOS message' in the upgrades basket page" + e.getStackTrace());
-            Assert.fail(" Failed to Displayed The 'OOS message' in the upgrades basket page");
+        // TODO Auto-generated catch block
+        System.out.println(e.getStackTrace());
         }
     }
 
     @And("^if <GiftBlock> is configured then display the banner$")
     public void if_GiftBlock_is_configured_then_display_banner() throws Exception {
         try {
-            driver.manage().timeouts().implicitlyWait(2, TimeUnit.MINUTES);
-            if (driver.findElements(By.xpath("//div[@class='button-tabs']//a")).size() > 0) {
-                String giftbock = driver.findElement(By.xpath("//div[@class='button-tabs']//a")).getText();
-                System.out.println(" Configured Gift block/banner is displayed ::: " + giftbock);
-                log.debug(" Configured Gift block/banner is displayed ::: " + giftbock );
-            }else {
-                System.out.println(" Configured Gift block/banner is not displayed");
-                log.debug(" Configured Gift block/banner is not displayed");
-            }
+           SimsPageActions.ifGiftBlockIsConfiguredThenDisplayBanner();
         }
         catch (Exception e) {
             // TODO Auto-generated catch block
-            System.out.println(" Configured Gift block/banner is not displayed");
-            log.debug(" Configured Gift block/banner is not displayed");
+            System.out.println(e.getStackTrace());
         }
     }
 
-       @And("^the Delivery section should show 'OOS message'$")
+    @And("^the Delivery section should show 'OOS message'$")
     public void delivery_section_should_show_OOS_message() throws Exception {
         try {
-            driver.manage().timeouts().implicitlyWait(2, TimeUnit.MINUTES);
-            if(driver.findElements(By.xpath("//*[contains(text(),'Out of stock')]")).size() > 0) {
-                if (driver.findElement(By.xpath("//*[contains(text(),'Out of stock')]")).isDisplayed()) {
-                    System.out.println(" The Out of stock message is Displayed in the Delivery section");
-                    log.debug(" The Out of stock message is Displayed in the Delivery section");
-                }
-            }else {
-                System.out.println(" Failed to displayed  OOS message in the  Delivery section");
-                Assert.fail(" Failed to displayed  OOS message in the  Delivery section");
-            }
+            DeliveryPageActions.deliverySectionShouldShowOOS_message();
         }
         catch (Exception e) {
             // TODO Auto-generated catch block
-            System.out.println(" Failed to displayed  OOS message in the  Delivery section" + e.getStackTrace());
-            Assert.fail(" Failed to displayed  OOS message in the  Delivery section");
+            System.out.println(e.getStackTrace());
         }
     }
+
 
     @And("^the Delivery section should show the click and collect option without a radio button and the 'OOS message'$")
     public void delivery_section_should_show_the_click_anf_collect_option_without_radio_button_and_OOS_meg() throws Exception {
         try {
-            driver.manage().timeouts().implicitlyWait(2, TimeUnit.MINUTES);
-            if(driver.findElements(By.xpath("//*[contains(text(),'Out of stock')]")).size() > 0) {
-                if (driver.findElement(By.xpath("//*[contains(text(),'Out of stock')]")).isDisplayed()) {
-                    System.out.println(" The Out of stock message is Displayed in the Delivery section");
-                    log.debug(" The Out of stock message is Displayed in the Delivery section");
-                }
-            }else {
-                System.out.println(" Failed to displayed  OOS message in the  Delivery section");
-                Assert.fail(" Failed to displayed  OOS message in the  Delivery section");
-            }
+            DeliveryPageActions.deliverySectionShouldShowClick_anf_collect_option_without_radio_button_and_OOS_msg();
         }
         catch (Exception e) {
             // TODO Auto-generated catch block
-            System.out.println(" Failed to displayed  OOS message in the  Delivery section" + e.getStackTrace());
-            Assert.fail(" Failed to displayed  OOS message in the  Delivery section");
+            System.out.println(e.getStackTrace());
         }
     }
-
-
-
 
     // jan release - durai
     @And("^click on the 'Tablets' button$")
     public void click_on_the_Tablets_button() throws Exception {
         try {
-            driver.manage().timeouts().implicitlyWait(2, TimeUnit.MINUTES);
-            if (driver.findElements(By.xpath("//input[@value='Tablets']")).size() > 0) {
-                if (driver.findElement(By.xpath("//input[@value='Tablets']")).isDisplayed()) {
-                    driver.findElement(By.xpath("//input[@value='Tablets']")).click();
-                    System.out.println(" Clicked on the 'Tablets' button");
-                    log.debug(" Clicked on the 'Tablets' button");
-                } else {
-                    System.out.println(" Failed to click on the 'Tablets' button");
-                    Assert.fail(" Failed to click on the 'Tablets' button");
-                }
-            }
+           SimsPageActions.clickonTabletsButton();
         }
         catch (Exception e) {
             // TODO Auto-generated catch block
-            System.out.println(" Failed to click on the 'Tablets' button" + e.getStackTrace());
-            Assert.fail(" Failed to click on the 'Tablets' button");
+            System.out.println(e.getStackTrace());
+        }
+    }
+
+
+    @And("^Click on 'Use a different delivery address'link$")
+    public void click_on_Use_different_delivery_address_link() throws Exception {
+        try {
+            DeliveryPageActions.click_on_Use_different_DeliveryAddress_link();
+        }
+        catch (Exception e) {
+            // TODO Auto-generated catch block
+            System.out.println(e.getStackTrace());
+        }
+    }
+
+    @And("^enter a ([^\"]*) and an ([^\"]*)$")
+    public void enter_houseNum_and_PostCode(String houseNum, String pcode) throws Exception {
+        try {
+            DeliveryPageActions.enterHounseNumAndPostalCode( houseNum, pcode);
+        }
+        catch (Exception e) {
+            // TODO Auto-generated catch block
+            System.out.println(e.getStackTrace());
+        }
+    }
+
+
+    @Then("^the respective ([^\"]*) message should be displayed$")
+    public void respective_Error_messageShould_Be_Displayed(String postalCodeMsg) throws Exception {
+        try {
+            DeliveryPageActions.enteredInvalidPostcode(postalCodeMsg);
+        }
+        catch (Exception e) {
+            // TODO Auto-generated catch block
+            System.out.println(e.getStackTrace());
         }
     }
 
@@ -7959,64 +7874,33 @@ public class E2EOrderPlaced_Steps {
     @And("^click on the 'MBB' button$")
     public void click_on_MBB_button() throws Exception {
         try {
-            driver.manage().timeouts().implicitlyWait(2, TimeUnit.MINUTES);
-            if (driver.findElements(By.xpath("//input[@value='Mobile broadband']")).size() > 0) {
-                driver.findElement(By.xpath("//input[@value='Mobile broadband']")).click();
-                System.out.println(" Clicked on the 'MBB' button");
-                log.debug(" Clicked on the 'MBB' button");
-            } else {
-                System.out.println(" Failed to  Clicked on the 'MBB' button");
-                Assert.fail(" Failed to  Clicked on the 'MBB' button");
-            }
+            SimsPageActions.clickOnMBB_Button();
         }
         catch (Exception e) {
             // TODO Auto-generated catch block
-            System.out.println(" Failed to  Clicked on the 'MBB' button" + e.getStackTrace());
-            Assert.fail(" Failed to  Clicked on the 'MBB' button");
+            System.out.println(e.getStackTrace());
         }
     }
 
-    @And("^ And verify that 'Why choose an O2 Pay Monthly sim?' is not displayed in upgrade options page$")
+    @And("^verify that 'Why choose an O2 Pay Monthly sim?' is not displayed in upgrade options page$")
     public void  Why_choose_an_O2_may_Monthly_sim_is_not_displayed_in_upgrade_options_page() throws Exception {
         try {
-            driver.manage().timeouts().implicitlyWait(2, TimeUnit.MINUTES);
-                if (!driver.findElement(By.xpath("//*[contains(text(),'hy choose an O2 Pay Monthly sim?')]")).isDisplayed()) {
-                    System.out.println(" text 'Why choose an O2 Pay Monthly sim?' is Displayed ");
-                    log.debug(" text 'Why choose an O2 Pay Monthly sim?' is Displayed ");
-                } else {
-                    System.out.println("  'Why choose an O2 Pay Monthly sim?' is Displayed ");
-                    Assert.fail("  'Why choose an O2 Pay Monthly sim?' is Displayed ");
-                }
+            UpgradeCustomerPageActions.whyChooseAn_O2_may_Monthly_sim_is_not_displayed();
         }
         catch (Exception e) {
             // TODO Auto-generated catch block
-            System.out.println("  'Why choose an O2 Pay Monthly sim?' is Displayed " + e.getStackTrace());
-            Assert.fail("  'Why choose an O2 Pay Monthly sim?' is Displayed ");
+            System.out.println(e.getStackTrace());
         }
     }
 
-    @And("^And the data filters is displayed$")
+    @And("^the data filters is displayed$")
     public  void data_filters_is_displayed() throws Exception {
         try {
-            driver.manage().timeouts().implicitlyWait(2, TimeUnit.MINUTES);
-            if (driver.findElements(By.xpath("//div[@class='filter-options']/button")).size() > 0) {
-                List<WebElement> filtes = driver.findElements(By.xpath("//div[@class='filter-options']/button"));
-                for(int i=1;i<=filtes.size();i++) {
-                    if (driver.findElement(By.xpath("(//div[@class='filter-options']/button)["+i+"]")).isDisplayed()) {
-                        String fltr = driver.findElement(By.xpath("(//div[@class='filter-options']/button)["+i+"]")).getText();
-                        System.out.println(" the data filters is displayed" + fltr);
-                        log.debug("the data filters is displayed" + fltr);
-                    }
-                  }
-                }else {
-                System.out.println(" Failed to displayed the Data Filter ");
-                Assert.fail(" Failed to displayed the Data Filter ");
-            }
+            UpgradeCustomerPageActions.data_filtersIsDdisplayed();
         }
         catch (Exception e) {
             // TODO Auto-generated catch block
-            System.out.println(" Failed to displayed the Data Filter " + e.getStackTrace());
-            Assert.fail(" Failed to displayed the Data Filter ");
+            System.out.println(e.getStackTrace());
         }
     }
 
@@ -8024,45 +7908,22 @@ public class E2EOrderPlaced_Steps {
     @And("^the two contract length should be displayed$")
     public void two_contract_length_should_displayed() throws Exception {
         try {
-            driver.manage().timeouts().implicitlyWait(2, TimeUnit.MINUTES);
-            if (driver.findElements(By.xpath("//div[@class='button-tabs']//a")).size() > 0) {
-                List<WebElement> contractLength = driver.findElements(By.xpath("//div[@class='button-tabs']//a"));
-                for(int i=1;i<=contractLength.size();i++) {
-                    if (driver.findElement(By.xpath("(//div[@class='button-tabs']//a)["+i+"]")).isDisplayed()) {
-                        String contrctLent = driver.findElement(By.xpath("(//div[@class='button-tabs']//a)["+i+"]")).getText();
-                        System.out.println(" the data filters is displayed" + contrctLent);
-                        log.debug("the data filters is displayed" + contrctLent);
-                    }
-                }
-            }else {
-                System.out.println(" Failed to displayed the Data Filter ");
-                Assert.fail(" Failed to displayed the Data Filter ");
-            }
+            UpgradeCustomerPageActions.twoContractLengthShouldDisplayed();
         }
         catch (Exception e) {
             // TODO Auto-generated catch block
-            System.out.println(" Failed to displayed the Data Filter " + e.getStackTrace());
-            Assert.fail(" Failed to displayed the Data Filter ");
+            System.out.println(e.getStackTrace());
         }
     }
 
     @And("^click on 'Change delivery' link$")
     public void  click_on_Change_delivery_link() throws Exception {
         try {
-            driver.manage().timeouts().implicitlyWait(2, TimeUnit.MINUTES);
-            if (driver.findElement(By.xpath("//*[normalize-space(text())='Change delivery']")).isDisplayed()) {
-                driver.findElement(By.xpath("//*[normalize-space(text())='Change delivery']")).click();
-                System.out.println(" Clicked on the'Change delivery' link");
-                log.debug(" Clicked on the'Change delivery' link");
-            } else {
-                System.out.println(" Failed to displayed the 'Change delivery' link ");
-                Assert.fail(" Failed to displayed the 'Change delivery' link ");
-            }
+           DeliveryPageActions.clickOnChange_delivery_link();
         }
         catch (Exception e) {
             // TODO Auto-generated catch block
-            System.out.println(" Failed to displayed the 'Change delivery' link " + e.getStackTrace());
-            Assert.fail(" Failed to displayed the 'Change delivery' link ");
+            System.out.println(e.getStackTrace());
         }
     }
 

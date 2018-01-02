@@ -13,11 +13,11 @@ Feature: CFU_CommercialAddress_CheckoutPayment_ECOMC180
     And perform <Action> in OTAC page
     And Click on the 'Continue button' in delivery page
     And Click on 'Use a different delivery address'link
-    And enter a house number and an <Postcode>
+    And enter a <houseNumber> and an <PostCode>
     Then the respective <error> message should be displayed
 
     Examples:
 
     Examples:
-      | username               | password | handset        | tariff                   | Postcode  |error     |
-      | in04572q_141562@o2.com | test123  | Apple iPhone 7 | 129.99upfront37.00amonth | Commercial|Commercial|
+      | username               | password | handset        | tariff                   | PostCode  |error     |houseNumber|
+      | in04572q_141562@o2.com | test123  | Apple iPhone 7 | 129.99upfront37.00amonth | Commercial|Commercial|Commercial  |
