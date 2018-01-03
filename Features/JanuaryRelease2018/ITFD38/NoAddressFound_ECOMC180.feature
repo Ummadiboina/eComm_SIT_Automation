@@ -13,9 +13,9 @@ Feature: NoAddressFound_ECOM180
     And I Land on the basket page and choose home delivery option
     And click on "go to checkout" button
     #In this scenario postcode to be invalid
-    And enter a house number and an <Postcode>
+    And enter a <houseNumber> and an <PostCode>
     Then the respective <error> message should be displayed
 
     Examples:
-    |handset|Postcode |error    |
-    |       | Invalid | Invalid |
+    |handset|PostCode |error    |houseNumber |
+    |       | Invalid | Invalid | Invalid    |
