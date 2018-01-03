@@ -242,6 +242,8 @@ public class UpgradeCustomerPage {
 	@FindBy(how = How.XPATH, using = "//*[@href='/upgrade/sim-cards/sim-only-deals']")
 	public static WebElement SIMOLink;
 
-}
+	@FindBy(how = How.XPATH, using = "//select[@id='dataFilterSelect']")
+	public static WebElement dataFilter;
 
+}
 
