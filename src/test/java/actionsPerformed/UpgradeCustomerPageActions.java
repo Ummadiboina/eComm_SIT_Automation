@@ -391,7 +391,7 @@ public class UpgradeCustomerPageActions extends Environment {
         System.out.println("selectTariff");
         // executor.executeScript("arguments[0].click();",
         // pageobjects.PAYMandPAYGTariffAndExtrasPage.ViewAllTariffs);
-        List<WebElement> TariffList = driver.findElements(By.xpath("//div[@id='tariff-tile']/div[@id]"));
+        List<WebElement> TariffList = driver.findElements(By.xpath("//*[@class='tariff-grids tiles row']/li[@class='liTariffPlan col-sm-6 col-md-4 col-lg-3 ng-scope']"));
         boolean flag = false;
         String TariffXpath = null;
         String TextOfTariffTile = null;
@@ -399,7 +399,7 @@ public class UpgradeCustomerPageActions extends Environment {
         int i = 0;
         for (int j = 0; j < TariffList.size(); j++) {
             i = j + 1;
-            TariffXpath = "(//div[@id='tariff-tile']/div[@id]/div/div[@class='price-block'])[" + i + "]";
+            TariffXpath = "(//*[@class='price-block'])[" + i + "]";
             TextOfTariffTile = driver.findElement(By.xpath(TariffXpath)).getText();
             TextOfTariffTile = TextOfTariffTile.replace("�", "");
             TextOfTariffTile = TextOfTariffTile.replace("\n", "");

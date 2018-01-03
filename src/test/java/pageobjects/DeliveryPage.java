@@ -140,6 +140,16 @@ public class DeliveryPage {
     @FindBy(how = How.XPATH, using = "//*[normalize-space(.)='Promotions']/following-sibling::p")
     public static WebElement promotionVAlue_yourOrdre;
 
+    @FindBy(how = How.XPATH, using = "//*[@id='different-delivery-address']")
+    public static WebElement DeliveryPageUseDiffAddressLink;
+
+
+
+
+
+
+
+
 
     //postal code error
     @FindBy(how = How.ID, using = "postcode-error")
