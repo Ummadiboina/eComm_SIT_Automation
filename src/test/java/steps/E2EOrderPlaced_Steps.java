@@ -283,7 +283,7 @@ public class E2EOrderPlaced_Steps {
             PageFactory.initElements(driver, UpgradeCustomerPage.class);
             // MouseHoverAction.UpgradeandUpgradeNow();
             UpgradeCustomerPageActions.Signin();
-            //Autoredirection.redirectUpgrades();
+            Autoredirection.redirectUpgrades();
             GlobalActions.CommonFunctions.checkTitle("Sign In Page");
         } catch (Exception e) {
             // TODO Auto-generated catch block
@@ -8066,6 +8066,41 @@ public class E2EOrderPlaced_Steps {
         }
     }
 
+
+    //////////////////////////////////////Postcode copy changes/////////////////////////////////////////////
+
+    @And("^Click on 'Use a different delivery address'link$")
+    public void click_on_Use_a_different_delivery_address_link() throws Throwable {
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, DeliveryPage.class);
+            DeliveryPageActions.ClickOnUseDifferentAddress();
+            System.out.println("Clicked on Use a different address link");
+        } catch (Exception e) {
+            e.printStackTrace();
+            Assert.fail("Unable to click on Use a different address link");
+        }
+
+    }
+
+    @And("^enter a house number and an ([^\"]*)$")
+    public void enter_a_house_number_and_an(String Postcode) throws Throwable {
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, DeliveryPage.class);
+            DeliveryPageActions.EnterPostcode(Postcode);
+            System.out.println("Entered a commercial postcode");
+        } catch (Exception e) {
+            e.printStackTrace();
+            Assert.fail("Unable to enter a commercial postcode");
+        }
+
+    }
+
+    @Then("^the respective ([^\"]*) message should be displayed$")
+    public void the_respective_error_message_should_be_displayed() throws Throwable {
+
+    }
 
 
 

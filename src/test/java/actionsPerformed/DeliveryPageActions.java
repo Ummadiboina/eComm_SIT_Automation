@@ -326,7 +326,7 @@ import static pageobjects.FreeSimPage.Firstname;
             try{
 
                 String promotionTxt  =  DeliveryPage.promotions_yourOrder.getText();
-                if(promotionTxt.contains("romotion")){
+                if(promotionTxt.contains("promotion")){
                     String promotionValue  =  DeliveryPage.promotionVAlue_yourOrdre.getText();
                     System.out.println(" We are able to see the Promotions in YourOder  &  displayed Values is :: " + promotionValue);
                     log.debug(" We are able to see the Promotions in YourOder  &  displayed Values is :: " + promotionValue);
@@ -341,5 +341,51 @@ import static pageobjects.FreeSimPage.Firstname;
             }
 
         }
+
+
+        public static void ClickOnUseDifferentAddress(){
+
+            List<WebElement> DiffAddressLink = driver.findElements(By.xpath("//*[@id='different-delivery-address']"));
+            if (DiffAddressLink.size() > 0) {
+                WebElement element = pageobjects.DeliveryPage.DeliveryPageUseDiffAddressLink;
+                JavascriptExecutor executor = (JavascriptExecutor)driver;
+                executor.executeScript("arguments[0].click();", element);
+
+            }
+            else
+                Assert.fail("Unable to click on the Use a different address link");
+
+        }
+
+
+        public static void EnterPostcode(String Postcode){
+
+            if (Postcode.contains("Commercial")) {
+                log.debug("Entering the commercial address");
+                pageobjects.DeliveryPage.Housenumber.sendKeys("12");
+                log.debug("Entered House number");
+
+                pageobjects.DeliveryPage.Postcode.sendKeys("OX26 4WD");
+                log.debug("Entered Commercial Post code");
+                pageobjects.DeliveryPage.Find_Address.click();
+                log.debug("Clicked on the Find address button");
+            }
+            if (Postcode.contains("Commercial")) {
+                log.debug("Entering an Invalid address");
+                pageobjects.DeliveryPage.Housenumber.sendKeys("12");
+                log.debug("Entered House number");
+
+                pageobjects.DeliveryPage.Postcode.sendKeys("O6 4WD");
+                log.debug("Entered Invalid Post code");
+                pageobjects.DeliveryPage.Find_Address.click();
+                log.debug("Clicked on the Find address button");
+            }
+
+            else
+            {
+                log.debug("Unable to Enter Commercial or Invalid Address");
+            }
+        }
+
 
     }
