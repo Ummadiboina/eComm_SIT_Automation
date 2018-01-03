@@ -17,5 +17,7 @@ Feature: CFU_NoAddressFound_CheckoutPayment_ECOM180
     Then the respective <error> message should be displayed
 
     Examples:
-      | username               | password | handset        | tariff                   | PostCode|error  |houseNumber|
-      | in04572q_141562@o2.com | test123  | Apple iPhone 7 | 129.99upfront37.00amonth | Invalid |Invalid| Invalid  |
+
+    Examples:
+      | username               | password | handset        | tariff                   | PostCode|error  |Action|houseNumber|
+      | in04572q_141562@o2.com | test123  | Apple iPhone 7 | 129.99upfront37.00amonth | Invalid |Invalid|skip  | Invalid|
