@@ -9,9 +9,9 @@ Feature: FreeSim_CommercialAddress
     And I select 'iPads and Tablets' tab
     And I select <Surfer_Type> surfer and <sim_type> sim
     And I select 'Enter manually' and input <Flatnumber>, <Housename>, <Address1>, <Town>, <Postcode>
-    And enter a house number and an <Postcode>
+    And enter a <houseNumber> and an <PostCode>
     Then the respective <error> message should be displayed
 
     Examples:
-      | Surfer_Type  | sim_type | Flatnumber | Housename | Address1 | Town  | Postcode | Firstname | Lastname | Contact_number |
-      | Light surfer | iPad     |         26 |       100 | slough   | Berks | SL1 1LN  | Test      | Accepta  |    07123456789 |
+      | Surfer_Type  | sim_type | Flatnumber | Housename | Address1 | Town  | PostCode | Firstname | Lastname | Contact_number | houseNumber|
+      | Light surfer | iPad     |         26 |       100 | slough   | Berks | SL1 1LN  | Test      | Accepta  |    07123456789 |       103     |
