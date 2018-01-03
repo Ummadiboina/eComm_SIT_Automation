@@ -19,5 +19,5 @@ Feature: CFU_NoAddressFound_CheckoutPayment_ECOM180
     Examples:
 
     Examples:
-      | username               | password | handset        | tariff                   | Postcode|error  |
-      | in04572q_141562@o2.com | test123  | Apple iPhone 7 | 129.99upfront37.00amonth | Invalid |Invalid|
+      | username               | password | handset        | tariff                   | Postcode|error  |Action|
+      | in04572q_141562@o2.com | test123  | Apple iPhone 7 | 129.99upfront37.00amonth | Invalid |Invalid|skip  |
