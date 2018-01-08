@@ -1,4 +1,4 @@
-Feature: CFU_MbbSimo30days
+eature: CFU_MbbSimo30days
   This scenario ensures that an upgrade customer is able to select a 12 months tablets tariff under the simo tab in upgrade options page
   @Web
   Scenario Outline: CFU_MbbSimo30days
@@ -6,7 +6,7 @@ Feature: CFU_MbbSimo30days
     And Signin using valid <username> and <password> credentials
     And Navigate to upgrade > upgrade now
     And I click on 'Sim only Tariff' tab
-    And verify that the url has simo at the endChrome
+    And verify that the url has simo at the end
     Then the 'Phones' button should be selected by default
     And click on the 'MBB' button
     And the two contract lenght should be displayed
@@ -36,7 +36,7 @@ Feature: CFU_MbbSimo30days
     Then 'Checkout In Progress' page is displayed
     Then click on 'Finish checking out with your order' link
     And copy text SIM delivery required or not is displayed
-    And Select 'Iâ€™ll keep my current sim' option
+    And Select 'I’ll keep my current sim' option
     And Click on 'I agree to the terms and condition' checkbox
     And Click on 'Place your order' CTA
 
@@ -47,4 +47,4 @@ Feature: CFU_MbbSimo30days
     Examples:
     Examples:
       |Contract|GiftBlock |username|password|filterSort|Tariffsortoption            |GiftBlock|sort|
-      |30 Days |Configured|    me@paper.com     |test123         |high      | Monthly data (Low to High)|  dfd       |    |
+      |30 Days |Configured|        |         |high      | Monthly data (Low to High)|  dfd       |    |
