@@ -7994,6 +7994,90 @@ public class E2EOrderPlaced_Steps {
         }
     }
 
+        @And("^verify that the upfront sort options is not present in the 'sorting dropdown'$")
+        public void verifyThatTheUpfrontSortOptionsIsNotPresentInTheSortingDropdown () throws
+        Throwable {
 
+            throw new PendingException();
+        }
+
+        @And("^Click on 'cookie policy' link$")
+        public void clickOnCookiePolicyLink () throws Throwable {
+            try {
+                driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+                PageFactory.initElements(driver, ShopLandingPage.class);
+                ShopLandingPageAction.cookiePolicySelect();
+            } catch (Exception e) {
+                // TODO Auto-generated catch block
+                System.out.println("Unable to Click on 'cookie policy' link");
+                Assert.fail("Unable to Click on 'cookie policy' link");
+
+            }
+        }
+
+        @Then("^the 'cookie policy' page should be opened$")
+        public void theCookiePolicyPageShouldBeOpened () throws Throwable {
+            try {
+                driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+                PageFactory.initElements(driver, ShopLandingPage.class);
+                ShopLandingPageAction.cookiePolicyValidate();
+            } catch (Exception e) {
+                // TODO Auto-generated catch block
+                System.out.println("Unable to find 'cookie policy' page");
+                Assert.fail("Unable to find 'cookie policy' page");
+
+            }
+        }
+
+        @And("^click on 'manage cookies' link$")
+        public void clickOnManageCookiesLink () throws Throwable {
+            try {
+                driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+                PageFactory.initElements(driver, ShopLandingPage.class);
+                ShopLandingPageAction.clickManageCookies();
+            } catch (Exception e) {
+                // TODO Auto-generated catch block
+                System.out.println("Unable to Click on 'cookie policy' link");
+                Assert.fail("Unable to Click on 'cookie policy' link");
+
+            }
+        }
+
+        @Then("^the 'manage cookies' page should be opened$")
+        public void theManageCookiesPageShouldBeOpened () throws Throwable {
+            try {
+                driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+                PageFactory.initElements(driver, ShopLandingPage.class);
+                ShopLandingPageAction.manageCookieyValidate();
+            } catch (Exception e) {
+                System.out.println("Unable to find 'manage cookies' page");
+                Assert.fail("Unable to find 'manage cookies' page");
+
+            }
+        }
+
+        @And("^click on 'close icon'$")
+        public void clickOnCloseIcon () throws Throwable {
+            try {
+                driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+                PageFactory.initElements(driver, ShopLandingPage.class);
+                ShopLandingPageAction.closeCookie();
+            } catch (Exception e) {
+                System.out.println("Unable to click on close icon");
+                Assert.fail("Unable to click on close icon");
+            }
+        }
+
+        @And("^The Shop home page should be displayed without the cookies$")
+        public void theShopHomePageShouldBeDisplayedWithoutTheCookies () throws Throwable {
+            try {
+                driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+                PageFactory.initElements(driver, ShopLandingPage.class);
+                ShopLandingPageAction.CookiepopupValidation();
+            } catch (Exception e) {
+                System.out.println("Unable to validate cookie section");
+                Assert.fail("Unable to validate cookie section");
+            }
+        }
 
 }
