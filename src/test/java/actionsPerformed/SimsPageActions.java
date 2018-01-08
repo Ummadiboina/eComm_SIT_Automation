@@ -196,7 +196,7 @@ public class SimsPageActions extends Environment {
 	}
 
 
-	public static void ifGiftBlockIsConfiguredThenDisplayBanner() throws Exception {
+	public static void ifGiftBlockIsConfiguredThenDisplayBanner(String giftbox) throws Exception {
 		try {
 			driver.manage().timeouts().implicitlyWait(2, TimeUnit.MINUTES);
 			if (driver.findElements(By.xpath("//div[@class='button-tabs']//a")).size() > 0) {

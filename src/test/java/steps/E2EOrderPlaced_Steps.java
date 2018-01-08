@@ -7787,10 +7787,10 @@ public class E2EOrderPlaced_Steps {
         }
     }
 
-    @And("^if <GiftBlock> is configured then display the banner$")
-    public void if_GiftBlock_is_configured_then_display_banner() throws Exception {
+    @And("^if ([^\"]*) is configured then display the banner$")
+    public void if_GiftBlock_is_configured_then_display_banner(String giftbox) throws Exception {
         try {
-           SimsPageActions.ifGiftBlockIsConfiguredThenDisplayBanner();
+           SimsPageActions.ifGiftBlockIsConfiguredThenDisplayBanner(giftbox);
         }
         catch (Exception e) {
             // TODO Auto-generated catch block
@@ -7834,6 +7834,7 @@ public class E2EOrderPlaced_Steps {
     }
 
 
+    /*
     @And("^Click on 'Use a different delivery address'link$")
     public void click_on_Use_different_delivery_address_link() throws Exception {
         try {
@@ -7843,7 +7844,7 @@ public class E2EOrderPlaced_Steps {
             // TODO Auto-generated catch block
             System.out.println(e.getStackTrace());
         }
-    }
+    }*/
 
     @And("^enter a ([^\"]*) and an ([^\"]*)$")
     public void enter_houseNum_and_PostCode(String houseNum, String pcode) throws Exception {
@@ -7882,7 +7883,7 @@ public class E2EOrderPlaced_Steps {
         }
     }
 
-    @And("^verify that 'Why choose an O2 Pay Monthly sim?' is not displayed in upgrade options page$")
+    @And("^verify that 'Why choose an O2 Pay Monthly sim' is not displayed in upgrade options page$")
     public void  Why_choose_an_O2_may_Monthly_sim_is_not_displayed_in_upgrade_options_page() throws Exception {
         try {
             UpgradeCustomerPageActions.whyChooseAn_O2_may_Monthly_sim_is_not_displayed();
@@ -7905,7 +7906,7 @@ public class E2EOrderPlaced_Steps {
     }
 
 
-    @And("^the two contract length should be displayed$")
+    @And("^the two contract lenght should be displayed$")
     public void two_contract_length_should_displayed() throws Exception {
         try {
             UpgradeCustomerPageActions.twoContractLengthShouldDisplayed();
@@ -7920,6 +7921,18 @@ public class E2EOrderPlaced_Steps {
     public void  click_on_Change_delivery_link() throws Exception {
         try {
            DeliveryPageActions.clickOnChange_delivery_link();
+        }
+        catch (Exception e) {
+            // TODO Auto-generated catch block
+            System.out.println(e.getStackTrace());
+        }
+    }
+
+
+    @And("^verify that the upfront sort options is not present in the 'sorting dropdown'$")
+    public void  verify_that_upfront_sort_options() throws Exception {
+        try {
+          UpgradeCustomerPageActions.upfront_sort_options_is_not_present_in_sortingDropdown();
         }
         catch (Exception e) {
             // TODO Auto-generated catch block
@@ -7958,9 +7971,27 @@ public class E2EOrderPlaced_Steps {
 
     }
 
-    @Then("^the respective ([^\"]*) message should be displayed$")
-    public void the_respective_error_message_should_be_displayed() throws Throwable {
+    @Then("^click on 'Finish checking out with your order' link$")
+    public void finish_checking_out_with_your_order_link() throws Throwable {
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            driver.findElement(By.xpath("//*[contains(text(),'inish checking out with your order')]")).click();
+            System.out.println("Finish checking out with your order Link is Clicked");
+        } catch (Exception e) {
+            System.out.println(" Failed to clik the Finish checking out with your order Link(" + e.getStackTrace() +")");
+            Assert.fail(" Failed to clik the Finish checking out with your order Link");
+        }
+    }
 
+
+    @Then("^if Timer is configured then it should be displayed$")
+    public void Timer_configured_then_it_should_be_displayed() throws Throwable {
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+        } catch (Exception e) {
+            /*System.out.println(" Failed to clik the Finish checking out with your order Link(" + e.getStackTrace() +")");
+            Assert.fail(" Failed to clik the Finish checking out with your order Link");*/
+        }
     }
 
 

@@ -12,7 +12,7 @@ Feature: CFU_TabletsSimo12months
     And the two contract lenght should be displayed
     And all the tariffs under twelve months should be displayed
     And if <GiftBlock> is configured then display the banner
-    And verify that 'Why choose an O2 Pay Monthly sim?' is not displayed in upgrade options page
+    And verify that 'Why choose an O2 Pay Monthly sim' is not displayed in upgrade options page
     And the data filters is displayed
     When I click on respective <filterSort> data filter
     Then Data filter button should be in 'selected' state
@@ -30,5 +30,5 @@ Feature: CFU_TabletsSimo12months
 
     Examples:
     Examples:
-      |Contract  |GiftBlock |username|password|filtername|sortoption                 |
-      |12 Months |Configured|        |         |high      | Monthly data (Low to High)|
+      |Contract  |GiftBlock |username         |password|filtername|sortoption                 |GiftBlock|
+      |12 Months |Configured|testaccepta6128  |test12  |high      | Monthly data (Low to High)| hjkdkd |

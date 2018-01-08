@@ -2121,6 +2121,35 @@ public class UpgradeCustomerPageActions extends Environment {
         }
     }
 
+    public static void upfront_sort_options_is_not_present_in_sortingDropdown() throws Exception {
+        try {
+            driver.manage().timeouts().implicitlyWait(2, TimeUnit.MINUTES);
+            if (UpgradeCustomerPage.dataFilter.isDisplayed()) {
+                UpgradeCustomerPage.dataFilter.click();
+
+                List<WebElement> lst = driver.findElements(By.xpath("//select[@id='dataFilterSelect']//option"));
+                Select sel = new Select(UpgradeCustomerPage.dataFilter);
+
+                for (int i = 1; i <= lst.size(); i++) {
+                    String str = driver.findElement(By.xpath("(//select[@id='dataFilterSelect']//option)[" + i + "]"));
+
+                    if (str.contains("Upfront cost")) {
+                        System.out.println(" Upfront Cost is availabe ");
+                        Assert.fail(" Upfront Cost is availabe ");
+                        break;
+                    }
+                }
+                }else{
+                    System.out.println(" verify that the upfront sort options is not present in the 'sorting dropdown'");
+                }
+        }
+        catch (Exception e) {
+            // TODO Auto-generated catch block
+                System.out.println(" FAILED ::::: Upfront Cost is availabe ");
+                Assert.fail(" FAILED ::::: Upfront Cost is availabe ");
+        }
+    }
+
 
 
 
