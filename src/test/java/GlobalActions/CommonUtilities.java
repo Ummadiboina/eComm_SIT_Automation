@@ -5,10 +5,36 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 
+import java.util.List;
+
+import static helpers.Environment.driver;
+
 public class CommonUtilities{
 
 	// switch to window
 	public static void switchToWindow(WebDriver driver) {
+		try {
+			String mainWindowHandle = driver.getWindowHandle ();
+			//Switch to child window and close it
+			for (String childWindowHandle : driver.getWindowHandles ()) {
+				//If window handle is not main window handle then close it
+				if (!childWindowHandle.equals (mainWindowHandle)) {
+					driver.switchTo ().window (childWindowHandle);
+					// Close child windows
+					// driver.close();
+				} else {
+					//switch back to main window
+					driver.switchTo ().window (mainWindowHandle);
+					System.out.println ();
+				}
+			}
+		} catch (Exception e){
+			System.out.println ("Failed to switch to window :: " + e.getStackTrace ());
+
+		}
+	}
+
+	public static void switchToMainWindow(WebDriver driver) {
 		try {
 			String mainWindowHandle = driver.getWindowHandle ();
 			//Switch to child window and close it
@@ -101,7 +127,18 @@ public class CommonUtilities{
 			System.out.println ("Failed to Click WebElement : " + e.getStackTrace ());
 		}
 	}
+	public static void clickWebElement(WebElement locater) throws InterruptedException {
+		try {
+			//locater.isDisplayed();
+			JavascriptExecutor executor = (JavascriptExecutor) driver;
+			executor.executeScript ("arguments[0].click();", locater);
+			driverWait (driver, 3000);
 
+		} catch (Exception e){
+			// TODO: handle exception
+			System.out.println ("Failed to Click WebElement : " + e.getStackTrace ());
+		}
+	}
 
 	// scroll to web element for viewing
 	public static void scrollToElement(WebDriver driver, WebElement locater) throws InterruptedException {
@@ -148,6 +185,33 @@ public class CommonUtilities{
 		}
 	}
 
+	public static void VerifyElementExists(WebElement locator){
+		try {
+
+					if (locator.isDisplayed ()) {
+				System.out.println ("Element present");
+			} else
+				System.out.println ("Element not present");
+		} catch (Exception e){
+			System.out.println ("Failed to identify/verify the Element : " + e.getStackTrace ());
+		}
+	}
+	public static void VerifyElementExist_withoutAssert(List<WebElement> locator){
+		try {
+			Thread.sleep(3000);
+			int sizeElement = locator.size();
+			if(sizeElement>0)
+			{
+				System.out.println("Expected popup/screen is displayed");
+			}
+			else
+			{
+				System.out.println("Expected popup/screen is not displayed");
+			}
+		} catch (Exception e){
+			System.out.println ("Failed to identify/verify the Element : " + e.getStackTrace ());
+		}
+	}
 	//get the text value from the application
 	public static void getText(WebDriver driver, WebElement locater){
 		try {

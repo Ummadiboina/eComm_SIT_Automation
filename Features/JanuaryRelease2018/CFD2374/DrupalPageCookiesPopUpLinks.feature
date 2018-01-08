@@ -14,4 +14,4 @@ Feature: DrupalPageCookiesPopUp
     And Delete all cookies
     And launch the shop phones page
     And click on 'close icon'
-    The Shop home page should be displayed without the cookies
+    And The Shop home page should be displayed without the cookies
