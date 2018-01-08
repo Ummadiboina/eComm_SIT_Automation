@@ -71,10 +71,10 @@ public class E2EOrderPlaced_Steps {
 
     @And("^a cookies pop up should be displayed$")
     public void a_cookies_pop_up_should_be_displayed() throws Throwable {
-       // try {
-            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-            PageFactory.initElements(driver, MouseHoverPage.class);
-            ShopLandingPageAction.CookiesPopUpDisplayed();
+        // try {
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+        PageFactory.initElements(driver, MouseHoverPage.class);
+        ShopLandingPageAction.CookiesPopUpDisplayed();
 /*
         } catch (Exception e) {
             // TODO Auto-generated catch block
@@ -87,7 +87,8 @@ public class E2EOrderPlaced_Steps {
     @And("^Delete all cookies$")
     public void Delete_all_cookies() throws Throwable {
         driver.manage().deleteAllCookies();
-        }
+    }
+
     @And("^launch the shop phones page$")
     public void launch_the_shop_phones_page() throws Throwable {
         driver.get("www.ref.o2.co.uk/shop/phones");
@@ -859,7 +860,7 @@ public class E2EOrderPlaced_Steps {
     }
 
     @And("^^enter a ([^\"]*) and ([^\"]*) and ten digit home number$")
-    public void enter_a_digit_home_number(String Firstname, String Surname  ) throws Throwable {
+    public void enter_a_digit_home_number(String Firstname, String Surname) throws Throwable {
         try {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, DeliveryPage.class);
@@ -985,11 +986,11 @@ public class E2EOrderPlaced_Steps {
         try {
             driver.manage().timeouts().implicitlyWait(120, TimeUnit.SECONDS);
             if (driver.findElements(By.xpath("(//div[@class='main-container']//*[contains(text(),' basket')])[1]")).size() > 0) {
-                String str =  driver.findElement(By.xpath("(//div[@class='main-container']//*[contains(text(),' basket')])[1]")).getText();
+                String str = driver.findElement(By.xpath("(//div[@class='main-container']//*[contains(text(),' basket')])[1]")).getText();
                 System.out.println("the customer lands on Basket page as : " + str);
                 log.debug("the customer lands on Basket pageas : " + str);
                 Thread.sleep(5000);
-            }else{
+            } else {
                 System.out.println("Failed to customer lands on Basket page ");
                 log.debug("Failed to customer lands on Basket page ");
             }
@@ -1043,11 +1044,11 @@ public class E2EOrderPlaced_Steps {
         try {
             driver.manage().timeouts().implicitlyWait(120, TimeUnit.SECONDS);
             if (driver.findElements(By.xpath("//div[@id='delivery-section']//*[normalize-space()='Delivery']")).size() > 0) {
-                String str =  driver.findElement(By.xpath("//div[@id='delivery-section']//*[normalize-space()='Delivery']")).getText();
+                String str = driver.findElement(By.xpath("//div[@id='delivery-section']//*[normalize-space()='Delivery']")).getText();
                 System.out.println("the customer lands on delivery page");
                 log.debug("the customer lands on delivery page");
                 Thread.sleep(5000);
-            }else{
+            } else {
                 System.out.println("Failed to customer lands on delivery page ");
                 log.debug("Failed to customer lands on delivery page ");
             }
@@ -1065,12 +1066,12 @@ public class E2EOrderPlaced_Steps {
         try {
             driver.manage().timeouts().implicitlyWait(120, TimeUnit.SECONDS);
             if (driver.findElements(By.xpath("(//*[normalize-space()='Other']/preceding-sibling::input)[1]")).size() > 0) {
-                String str =  driver.findElement(By.xpath("//div[@id='delivery-section']//*[normalize-space()='Other']")).getText();
+                String str = driver.findElement(By.xpath("//div[@id='delivery-section']//*[normalize-space()='Other']")).getText();
                 driver.findElement(By.xpath("(//*[normalize-space()='Other']/preceding-sibling::input)[1]")).click();
                 System.out.println("Click on Other radio button as :: " + str);
                 log.debug("Click on Other radio button as :: " + str);
                 Thread.sleep(5000);
-            }else{
+            } else {
                 System.out.println("Failed to Click the Other radio button ");
                 log.debug("Failed to Click the Other radio button ");
             }
@@ -1088,12 +1089,12 @@ public class E2EOrderPlaced_Steps {
         try {
             driver.manage().timeouts().implicitlyWait(120, TimeUnit.SECONDS);
             if (driver.findElements(By.xpath("//*[contains(text(),'lace your order')]")).size() > 0) {
-                String btnValue =  driver.findElement(By.xpath("//*[contains(text(),'lace your order')]")).getText();
+                String btnValue = driver.findElement(By.xpath("//*[contains(text(),'lace your order')]")).getText();
                 driver.findElement(By.xpath("//*[contains(text(),'lace your order')]")).click();
                 System.out.println("Click on Other radio button as :: " + btnValue);
                 log.debug("Click on Other radio button as :: " + btnValue);
                 Thread.sleep(5000);
-            }else{
+            } else {
                 System.out.println("Click on 'Place your order' CTA");
                 log.debug("Click on 'Place your order' CTA");
             }
@@ -1106,15 +1107,15 @@ public class E2EOrderPlaced_Steps {
 
 
     @And("^the Check box with (.*)I'll be using an iPhone(.*) copy text is displayed below 'Select' CTA in the horizontal tariff tile$")
-    public void  checkbox_with_will_be_using_iPhone_belowSelectBtn() throws Throwable {
+    public void checkbox_with_will_be_using_iPhone_belowSelectBtn() throws Throwable {
         try {
             driver.manage().timeouts().implicitlyWait(120, TimeUnit.SECONDS);
             List<WebElement> noOfselExists = driver.findElements(By.xpath("//button[contains(text(),'elect')]"));
-            for(int i =1; i<noOfselExists.size(); i++){
-                int countExists = driver.findElements(By.xpath("(//span[contains(text(),'ll be using an iPhone')])["+i+"]")).size();
-                if(countExists > 0){
-                    String checkBoxTxt = driver.findElement(By.xpath("(//span[contains(text(),'ll be using an iPhone')])["+i+"]")).getText();
-                    driver.findElement(By.xpath("(//span[contains(text(),'ll be using an iPhone')])["+i+"]/preceding-sibling::input")).click();
+            for (int i = 1; i < noOfselExists.size(); i++) {
+                int countExists = driver.findElements(By.xpath("(//span[contains(text(),'ll be using an iPhone')])[" + i + "]")).size();
+                if (countExists > 0) {
+                    String checkBoxTxt = driver.findElement(By.xpath("(//span[contains(text(),'ll be using an iPhone')])[" + i + "]")).getText();
+                    driver.findElement(By.xpath("(//span[contains(text(),'ll be using an iPhone')])[" + i + "]/preceding-sibling::input")).click();
                     System.out.println("We clicked the CheckBox below the  Select Button as :: " + checkBoxTxt);
                     log.debug("We clicked the CheckBox below the  Select Button as :: " + checkBoxTxt);
                     break;
@@ -1133,10 +1134,10 @@ public class E2EOrderPlaced_Steps {
         try {
             driver.manage().timeouts().implicitlyWait(120, TimeUnit.SECONDS);
             List<WebElement> noOfselExists = driver.findElements(By.xpath("//button[contains(text(),'elect')]"));
-            for(int i =1; i<noOfselExists.size(); i++){
-                int countExists = driver.findElements(By.xpath("(//button[contains(text(),'elect')])["+i+"]")).size();
-                if(countExists > 0){
-                    driver.findElement(By.xpath("(//button[contains(text(),'elect')])["+i+"]")).click();
+            for (int i = 1; i < noOfselExists.size(); i++) {
+                int countExists = driver.findElements(By.xpath("(//button[contains(text(),'elect')])[" + i + "]")).size();
+                if (countExists > 0) {
+                    driver.findElement(By.xpath("(//button[contains(text(),'elect')])[" + i + "]")).click();
                     System.out.println("We clicked the Select Button");
                     log.debug("We clicked the Select Button");
                     break;
@@ -1155,7 +1156,7 @@ public class E2EOrderPlaced_Steps {
 
     //And Click on "I'll be using an iPhone" checkbox and Click on 'Select' CTA to buy a tariff
     @And("^Click on (.*)I'll be using an iPhone(.*) checkbox and Click on 'Select' CTA to buy a tariff$")
-    public void  click_on_I_will_using_iPhone_checkbox_and_Click_on_Select_CTA_to_buy_tariff() throws Throwable {
+    public void click_on_I_will_using_iPhone_checkbox_and_Click_on_Select_CTA_to_buy_tariff() throws Throwable {
         try {
             E2EOrderPlaced_Steps e2eOrder = new E2EOrderPlaced_Steps();
             e2eOrder.checkbox_with_will_be_using_iPhone_belowSelectBtn();
@@ -1174,19 +1175,19 @@ public class E2EOrderPlaced_Steps {
         try {
             driver.manage().timeouts().implicitlyWait(120, TimeUnit.SECONDS);
             int sizeof = (int) driver.findElements(By.xpath("//*[contains(text(),'kage just for you')]")).size();
-            if(sizeof>0){
+            if (sizeof > 0) {
                 String val = driver.findElement(By.xpath("//*[contains(text(),'kage just for you')]")).getText();
                 System.out.println("we are valideted the the A package just for you next to Upgrade and recycle options as :: " + val);
                 log.debug("we are valideted the the A package just for you next to Upgrade and recycle options as :: " + val);
-            }else{
+            } else {
                 System.out.println("Failed to find the targeted promotion section is displayed just below the 'recycle options' section");
                 log.debug("Failed to find the the targeted promotion section is displayed just below the 'recycle options' section");
             }
             Thread.sleep(2000);
         } catch (Exception e) {
             // TODO Auto-generated catch block
-            System.out.println("Failed to find the the targeted promotion section is displayed just below the 'recycle options' section " +e.getStackTrace());
-            Assert.fail("Failed to find the the targeted promotion section is displayed just below the 'recycle options' section " +e.getStackTrace());
+            System.out.println("Failed to find the the targeted promotion section is displayed just below the 'recycle options' section " + e.getStackTrace());
+            Assert.fail("Failed to find the the targeted promotion section is displayed just below the 'recycle options' section " + e.getStackTrace());
 
         }
     }
@@ -1197,7 +1198,7 @@ public class E2EOrderPlaced_Steps {
         try {
             driver.manage().timeouts().implicitlyWait(120, TimeUnit.SECONDS);
             Thread.sleep(2000);
-            if (driver.findElements(By.xpath("//a[normalize-space()='terms and conditions']")).size() > 0){
+            if (driver.findElements(By.xpath("//a[normalize-space()='terms and conditions']")).size() > 0) {
                 String termAndConditTxt = driver.findElement(By.xpath("//a[normalize-space()='terms and conditions']")).getText();
                 System.out.println(" verify 'Terms and conditions' link is present " + termAndConditTxt);
                 log.debug(" verify 'Terms and conditions' link is present " + termAndConditTxt);
@@ -1224,7 +1225,6 @@ public class E2EOrderPlaced_Steps {
             Assert.fail("Unable to input details in delivery page");
         }
     }
-
 
 
     //////////*****below are Dummy functions just for verifications ***********////////////
@@ -1662,7 +1662,7 @@ public class E2EOrderPlaced_Steps {
         System.out.println("Updated Device Plan Link Email Address");
         Thread.sleep(3000);
         WebElement element = driver.findElement(By.xpath("//*[@id='secciYesButton']"));
-        JavascriptExecutor executor = (JavascriptExecutor)driver;
+        JavascriptExecutor executor = (JavascriptExecutor) driver;
         executor.executeScript("arguments[0].click();", element);
         //driver.findElement(By.xpath("//*[@id='secciYesButton']")).click();
         System.out.println("Clicked on the O2 Refresh Deal Summary YES button");
@@ -1949,7 +1949,7 @@ public class E2EOrderPlaced_Steps {
     @Then("^perform the credit checks using valid ([^\"]*), ([^\"]*), ([^\"]*), ([^\"]*) and valid ([^\"]*)$")
     public void CreditCheck(String Firstname, String Surname, String HouseNumber, String PostCode, String Username)
             throws Throwable {
-       try {
+        try {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, Agent_CreditCheckDetailsPage.class);
             Agent_CreditCheckPageActions.Creditcheck(Firstname, Surname, HouseNumber, PostCode);
@@ -1978,7 +1978,7 @@ public class E2EOrderPlaced_Steps {
 	 */
 
     @Then("^enter ten digit contact number perform the credit checks using valid ([^\"]*), ([^\"]*), ([^\"]*), ([^\"]*) and valid ([^\"]*)$")
-    public void enter_ten_digit_contact_number_perform_the_credit_checks(String Firstname, String Surname, String HouseNumber, String PostCode, String Username ) throws Throwable {
+    public void enter_ten_digit_contact_number_perform_the_credit_checks(String Firstname, String Surname, String HouseNumber, String PostCode, String Username) throws Throwable {
         try {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, Agent_CreditCheckDetailsPage.class);
@@ -1998,14 +1998,14 @@ public class E2EOrderPlaced_Steps {
     }
 
 
-	@Then("^Register the customer with valid ([^\"]*), ([^\"]*), ([^\"]*), ([^\"]*) and other valid details in delivery page$")
+    @Then("^Register the customer with valid ([^\"]*), ([^\"]*), ([^\"]*), ([^\"]*) and other valid details in delivery page$")
 
     public void register_the_customer(String Firstname, String Surname, String HouseNumber, String PostCode)
             throws Throwable {
-           try {
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        PageFactory.initElements(driver, Agent_RegisterCustomerPage.class);
-        Agent_RegisterCustomerActions.PayGRegistration(Firstname, Surname, HouseNumber, PostCode);
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, Agent_RegisterCustomerPage.class);
+            Agent_RegisterCustomerActions.PayGRegistration(Firstname, Surname, HouseNumber, PostCode);
 
         } catch (Exception e) { // TODO Auto-generated catch block
             System.out.println("Unable to Register customer , please see the failure screenshot");
@@ -3063,7 +3063,6 @@ public class E2EOrderPlaced_Steps {
             Assert.fail("Unable to select tab");
         }
     }
-
 
 
     @Then("^check if the selected connected device has more than 1 variant for both colour and capacity$")
@@ -6898,7 +6897,7 @@ public class E2EOrderPlaced_Steps {
         try {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, ReviewAndConfirmPage.class);
-            ReviewAndConfirmPageActions.MsisdnLabel() ;
+            ReviewAndConfirmPageActions.MsisdnLabel();
         } catch (Exception e) {
             e.printStackTrace();
             Assert.fail("The MSISDN is not displayed as a label");
@@ -6910,7 +6909,7 @@ public class E2EOrderPlaced_Steps {
         try {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, ReviewAndConfirmPage.class);
-            ReviewAndConfirmPageActions.AboutYouNotDisplayed() ;
+            ReviewAndConfirmPageActions.AboutYouNotDisplayed();
         } catch (Exception e) {
             e.printStackTrace();
             Assert.fail("The About you section is displayed which is not correct");
@@ -6919,7 +6918,7 @@ public class E2EOrderPlaced_Steps {
 
     @And("^the first section is \"([^\"]*)\" section$")
     public void theFirstSectionIsSection() throws Throwable {
-        try{
+        try {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, UpgradeCustomerPage.class);
             UpgradeCustomerPageActions.reviewTariff();
@@ -6933,7 +6932,7 @@ public class E2EOrderPlaced_Steps {
 
     @And("^the title \"([^\"]*)\" is displayed in first tariff tile$")
     public void theTitleIsDisplayedInFirstTariffTile() throws Throwable {
-        try{
+        try {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, UpgradeCustomerPage.class);
             UpgradeCustomerPageActions.contentDisplayedFirstTariff();
@@ -6947,7 +6946,7 @@ public class E2EOrderPlaced_Steps {
 
     @And("^title \"([^\"]*)\" is displayed in second tariff tile$")
     public void titleIsDisplayedInSecondTariffTile(String arg0) throws Throwable {
-        try{
+        try {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, UpgradeCustomerPage.class);
             UpgradeCustomerPageActions.contentDisplayedSecondTariff();
@@ -6961,7 +6960,7 @@ public class E2EOrderPlaced_Steps {
 
     @And("^refresh the page$")
     public void refreshThePage() throws Throwable {
-        try{
+        try {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             driver.navigate().refresh();
 
@@ -6974,7 +6973,7 @@ public class E2EOrderPlaced_Steps {
 
     @And("^Click on 'Not sure what SIM you have' link$")
     public void clickOnNotSureWhatSIMYouHaveLink() throws Throwable {
-        try{
+        try {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, UpgradeCustomerPage.class);
             UpgradeCustomerPageActions.clickonnoSurelink();
@@ -6988,7 +6987,7 @@ public class E2EOrderPlaced_Steps {
 
     @And("^the delivery section is not displayed$")
     public void theDeliverySectionIsNotDisplayed() throws Throwable {
-        try{
+        try {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, UpgradeCustomerPage.class);
             UpgradeCustomerPageActions.nonDisplayDeliverySection();
@@ -7002,7 +7001,7 @@ public class E2EOrderPlaced_Steps {
 
     @And("^the customer is displayed with sample copy text$")
     public void theCustomerIsDisplayedWithSampleCopyText() throws Throwable {
-        try{
+        try {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, UpgradeCustomerPage.class);
             UpgradeCustomerPageActions.copyTextAdditionalDepositPage();
@@ -7012,7 +7011,7 @@ public class E2EOrderPlaced_Steps {
         }
     }
 
-   
+
     /*
     * #########################################################################
     * #######  EMPTY_basket_validate_promotion ##################################
@@ -7029,6 +7028,7 @@ public class E2EOrderPlaced_Steps {
             Assert.fail("Unable to click on Empty above , please see the failure screenshot");
         }
     }
+
     /*
   * ##################################################################################
   *  Standard_or_CCA_targeted_bolton_promotion_tab_Agent_upgrade_options_page_Order_placement
@@ -7047,6 +7047,7 @@ public class E2EOrderPlaced_Steps {
 
         }
     }
+
     @And("^Click on 'Copy to Basket' CTA$")
     public void click_on_Copy_to_Basket_CTA() throws Throwable {
         try {
@@ -7064,7 +7065,7 @@ public class E2EOrderPlaced_Steps {
     //venkat
     @Given("^the customer is presented with the targeted promotion tab at the end of the tabs$")
     public void the_customer_is_presented_with_the_targeted_promotion_tab_at_the_end_of_the_tabs() throws Exception {
-        try{
+        try {
             driver.manage().timeouts().implicitlyWait(2, TimeUnit.MINUTES);
             Agent_DealBuilderPageActions.verifyTargetedPromotionsTab();
             Thread.sleep(3000);
@@ -7078,7 +7079,7 @@ public class E2EOrderPlaced_Steps {
     //venkat
     @Given("^the promotions bolt on are displayed in targeted promotion tab$")
     public void the_promotions_bolt_on_are_displayed_in_targeted_promotion_tab() throws Exception {
-        try{
+        try {
             driver.manage().timeouts().implicitlyWait(2, TimeUnit.MINUTES);
             Agent_DealBuilderPageActions.verifyPromotionsDescriotnDisplayed();
             Thread.sleep(3000);
@@ -7111,23 +7112,20 @@ public class E2EOrderPlaced_Steps {
         try {
             driver.manage().timeouts().implicitlyWait(120, TimeUnit.SECONDS);
             if (driver.findElements(By.xpath("//*[contains(text(),'2.co.uk')]")).size() > 0) {
-            String str =  driver.findElement(By.xpath("(//*[contains(text(),'2.co.uk')])[1]")).getText();
-            System.out.println("Agent should be displayed with updated copy of 'Refer with Simo' response as :" + str);
-            log.debug("Agent should be displayed with updated copy of 'Refer with Simo' response as :" + str);
-            Thread.sleep(3000);
-        }
-        else{
-            System.out.println("Failed to Agent should be displayed with updated copy of 'Refer with Simo' response ");
-            log.debug("Failed to Agent should be displayed with updated copy of 'Refer with Simo' response ");
-        }
-        } 
-        catch (Exception e) {
-        // TODO Auto-generated catch block
-        System.out.println("Failed to Agent should be displayed with updated copy of 'Refer with Simo' response @ " + e.getStackTrace());
-        Assert.fail("Failed to Agent should be displayed with updated copy of 'Refer with Simo' response @ " + e.getStackTrace());
+                String str = driver.findElement(By.xpath("(//*[contains(text(),'2.co.uk')])[1]")).getText();
+                System.out.println("Agent should be displayed with updated copy of 'Refer with Simo' response as :" + str);
+                log.debug("Agent should be displayed with updated copy of 'Refer with Simo' response as :" + str);
+                Thread.sleep(3000);
+            } else {
+                System.out.println("Failed to Agent should be displayed with updated copy of 'Refer with Simo' response ");
+                log.debug("Failed to Agent should be displayed with updated copy of 'Refer with Simo' response ");
+            }
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            System.out.println("Failed to Agent should be displayed with updated copy of 'Refer with Simo' response @ " + e.getStackTrace());
+            Assert.fail("Failed to Agent should be displayed with updated copy of 'Refer with Simo' response @ " + e.getStackTrace());
         }
     }
-
 
 
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -7136,7 +7134,7 @@ public class E2EOrderPlaced_Steps {
 
     @And("^the heading of the panel is 'A package just for you:'$")
     public void the_heading_of_the_panel_is_A_package_just_for_you() throws Throwable {
-        try{
+        try {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, UpgradeCustomerPage.class);
             UpgradeCustomerPageActions.HeadingMessagePanel();
@@ -7152,7 +7150,7 @@ public class E2EOrderPlaced_Steps {
     @And("^the promotion description is displayed$")
     public void the_promotion_description_is_displayed() throws Throwable {
 
-        try{
+        try {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, UpgradeCustomerPage.class);
             UpgradeCustomerPageActions.BodyMessagePanel();
@@ -7168,7 +7166,7 @@ public class E2EOrderPlaced_Steps {
     @Given("^a checkbox for 'iPhone' for data allowance is NOT displayed just on the right-hand side below select 'CTA'$")
     public void a_checkbox_for_iPhone_for_data_allowance_is_displayed_just_on_the_right_hand_side_below_select_CTA() throws Throwable {
 
-        try{
+        try {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, UpgradeCustomerPage.class);
             UpgradeCustomerPageActions.SimoPromotionsCheckboxNotDisplayed();
@@ -7358,14 +7356,14 @@ public class E2EOrderPlaced_Steps {
     @And("^Click on 'Pick a sim only tariff link'$")
     public void clickOnPickASimOnlyTariffLink() throws Throwable {
         try {
-                driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-                PageFactory.initElements(driver, UpgradeCustomerPage.class);
-                UpgradeCustomerPageActions.SIMOLinkIsDisplayed();
-            } catch (Exception e) {
-                e.printStackTrace();
-                Assert.fail("Unable to click on Click on 'Pick a sim only tariff link', please see the failure screenshot");
-            }
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, UpgradeCustomerPage.class);
+            UpgradeCustomerPageActions.SIMOLinkIsDisplayed();
+        } catch (Exception e) {
+            e.printStackTrace();
+            Assert.fail("Unable to click on Click on 'Pick a sim only tariff link', please see the failure screenshot");
         }
+    }
 
 
     @And("^the Progress bar is not displayed at the top$")
@@ -7373,7 +7371,7 @@ public class E2EOrderPlaced_Steps {
         try {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, ReviewAndConfirmPage.class);
-            ReviewAndConfirmPageActions.ProgressBarNotDisplayed() ;
+            ReviewAndConfirmPageActions.ProgressBarNotDisplayed();
         } catch (Exception e) {
             e.printStackTrace();
             Assert.fail("The Progress bar is not displayed which is correct");
@@ -7391,7 +7389,7 @@ public class E2EOrderPlaced_Steps {
         try {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, ReviewAndConfirmPage.class);
-            ReviewAndConfirmPageActions.PrimaryNavNotDisplayed() ;
+            ReviewAndConfirmPageActions.PrimaryNavNotDisplayed();
         } catch (Exception e) {
             e.printStackTrace();
             Assert.fail("The Primary header is displayed which is not correct");
@@ -7449,7 +7447,7 @@ public class E2EOrderPlaced_Steps {
         try {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, ReviewAndConfirmPage.class);
-            ReviewAndConfirmPageActions.OrderSummaryNotDisplayed() ;
+            ReviewAndConfirmPageActions.OrderSummaryNotDisplayed();
         } catch (Exception e) {
             e.printStackTrace();
             Assert.fail("The Order Summary is not displayed which is correct");
@@ -7575,7 +7573,7 @@ public class E2EOrderPlaced_Steps {
         try {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, ReviewAndConfirmPage.class);
-            ReviewAndConfirmPageActions.ReviewConfirmPageHeader() ;
+            ReviewAndConfirmPageActions.ReviewConfirmPageHeader();
         } catch (Exception e) {
             e.printStackTrace();
             Assert.fail("Review and confirm copy text not displayed");
@@ -7629,7 +7627,6 @@ public class E2EOrderPlaced_Steps {
         // Write code here that turns the phrase above into concrete actions
         throw new PendingException();
     }
-
 
 
     @And("^verify the copy text is displayed below the direct debit details$")
@@ -7702,88 +7699,361 @@ public class E2EOrderPlaced_Steps {
 
     }
 
+
+    // Jan Release Venkat
+
+    @And("^I click on 'Sim only Tariff' tab$")
+    public void i_click_on_simOnlyTariff_tab() throws Exception {
+        try {
+            SimsPageActions.clickOn_simOnlyTariffTab();
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            System.out.println(e.getStackTrace());
+        }
+    }
+
+    @And("^verify that the url has simo at the end$")
+    public void verify_that_the_url_has_simo_at_end() throws Exception {
+        try {
+            SimsPageActions.verifyThatURL_has_simo_at_end();
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            System.out.println(e.getStackTrace());
+        }
+    }
+
+
+    @Then("^the 'Phones' button should be selected by default$")
+    public void phones_button_should_be_selected_by_default() throws Exception {
+        try {
+            SimsPageActions.phonesButtonShouldSelectedByDefault();
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            System.out.println(e.getStackTrace());
+        }
+    }
+
+
+    @And("^all the tariffs under twelve months should be displayed$")
+    public void all_the_tariffs_under_twelve_months_should_be_displayed() throws Exception {
+        try {
+            SimsPageActions.allTariffsUnderTwelveMonthsShouldDisplayed();
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            System.out.println(e.getStackTrace());
+        }
+    }
+
+
+    @And("^the 'sorting dropdown' is displayed just below the toggle buttons sections$")
+    public void sorting_dropdown_is_displayed_just_below_the_toggle_buttons_sections() throws Exception {
+        try {
+            SimsPageActions.sortingDropdownIsDisplayedJstBelowToggleButtonsSections();
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            System.out.println(e.getStackTrace());
+        }
+    }
+
+    @Then("^'OOS message' should be displayed in the upgrade options page$")
+    public void OOS_message_should_be_displayed_in_upgrade_options_page() throws Exception {
+        try {
+            UpgradeCustomerPageActions.OOS_MsgShouldDisplayed_inUpgradeOptionsPage();
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            System.out.println(e.getStackTrace());
+        }
+    }
+
+    @Then("^verify the 'OOS message' is displayed in the upgrades basket page$")
+    public void verify_OOS_message_is_displayed_in_the_upgrades_basket_page() throws Exception {
+        try {
+            UpgradeCustomerPageActions.verifyOOS_MessageIsDisplayedInUpgradesBasketPage();
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            System.out.println(e.getStackTrace());
+        }
+    }
+
+    @And("^if ([^\"]*) is configured then display the banner$")
+    public void if_GiftBlock_is_configured_then_display_banner(String giftbox) throws Exception {
+        try {
+            SimsPageActions.ifGiftBlockIsConfiguredThenDisplayBanner(giftbox);
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            System.out.println(e.getStackTrace());
+        }
+    }
+
+    @And("^the Delivery section should show 'OOS message'$")
+    public void delivery_section_should_show_OOS_message() throws Exception {
+        try {
+            DeliveryPageActions.deliverySectionShouldShowOOS_message();
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            System.out.println(e.getStackTrace());
+        }
+    }
+
+
+    @And("^the Delivery section should show the click and collect option without a radio button and the 'OOS message'$")
+    public void delivery_section_should_show_the_click_anf_collect_option_without_radio_button_and_OOS_meg() throws Exception {
+        try {
+            DeliveryPageActions.deliverySectionShouldShowClick_anf_collect_option_without_radio_button_and_OOS_msg();
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            System.out.println(e.getStackTrace());
+        }
+    }
+
+    // jan release - durai
+    @And("^click on the 'Tablets' button$")
+    public void click_on_the_Tablets_button() throws Exception {
+        try {
+            SimsPageActions.clickonTabletsButton();
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            System.out.println(e.getStackTrace());
+        }
+    }
+
+
+    /*
+    @And("^Click on 'Use a different delivery address'link$")
+    public void click_on_Use_different_delivery_address_link() throws Exception {
+        try {
+            DeliveryPageActions.click_on_Use_different_DeliveryAddress_link();
+        }
+        catch (Exception e) {
+            // TODO Auto-generated catch block
+            System.out.println(e.getStackTrace());
+        }
+    }*/
+
+    @And("^enter a ([^\"]*) and an ([^\"]*)$")
+    public void enter_houseNum_and_PostCode(String houseNum, String pcode) throws Exception {
+        try {
+            DeliveryPageActions.enterHounseNumAndPostalCode(houseNum, pcode);
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            System.out.println(e.getStackTrace());
+        }
+    }
+
+
+    @Then("^the respective ([^\"]*) message should be displayed$")
+    public void respective_Error_messageShould_Be_Displayed(String postalCodeMsg) throws Exception {
+        try {
+            DeliveryPageActions.enteredInvalidPostcode(postalCodeMsg);
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            System.out.println(e.getStackTrace());
+        }
+    }
+
+
+    // jan release Anusha
+
+    @And("^click on the 'MBB' button$")
+    public void click_on_MBB_button() throws Exception {
+        try {
+            SimsPageActions.clickOnMBB_Button();
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            System.out.println(e.getStackTrace());
+        }
+    }
+
+    @And("^verify that 'Why choose an O2 Pay Monthly sim' is not displayed in upgrade options page$")
+    public void Why_choose_an_O2_may_Monthly_sim_is_not_displayed_in_upgrade_options_page() throws Exception {
+        try {
+            UpgradeCustomerPageActions.whyChooseAn_O2_may_Monthly_sim_is_not_displayed();
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            System.out.println(e.getStackTrace());
+        }
+    }
+
+    @And("^the data filters is displayed$")
+    public void data_filters_is_displayed() throws Exception {
+        try {
+            UpgradeCustomerPageActions.data_filtersIsDdisplayed();
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            System.out.println(e.getStackTrace());
+        }
+    }
+
+
+    @And("^the two contract lenght should be displayed$")
+    public void two_contract_length_should_displayed() throws Exception {
+        try {
+            UpgradeCustomerPageActions.twoContractLengthShouldDisplayed();
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            System.out.println(e.getStackTrace());
+        }
+    }
+
+    @And("^click on 'Change delivery' link$")
+    public void click_on_Change_delivery_link() throws Exception {
+        try {
+            DeliveryPageActions.clickOnChange_delivery_link();
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            System.out.println(e.getStackTrace());
+        }
+    }
+
+
     @And("^verify that the upfront sort options is not present in the 'sorting dropdown'$")
-    public void verifyThatTheUpfrontSortOptionsIsNotPresentInTheSortingDropdown() throws Throwable {
-// TODO Auto-generated catch block
-       throw new PendingException();
-    }
-
-    @And("^Click on 'cookie policy' link$")
-    public void clickOnCookiePolicyLink() throws Throwable {
+    public void verify_that_upfront_sort_options() throws Exception {
         try {
-            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-            PageFactory.initElements(driver, ShopLandingPage.class);
-            ShopLandingPageAction.cookiePolicySelect();
+            UpgradeCustomerPageActions.upfront_sort_options_is_not_present_in_sortingDropdown();
         } catch (Exception e) {
             // TODO Auto-generated catch block
-            System.out.println("Unable to Click on 'cookie policy' link");
-            Assert.fail("Unable to Click on 'cookie policy' link");
-
+            System.out.println(e.getStackTrace());
         }
     }
 
-    @Then("^the 'cookie policy' page should be opened$")
-    public void theCookiePolicyPageShouldBeOpened() throws Throwable {
+
+    //////////////////////////////////////Postcode copy changes/////////////////////////////////////////////
+
+    @And("^Click on 'Use a different delivery address'link$")
+    public void click_on_Use_a_different_delivery_address_link() throws Throwable {
         try {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-            PageFactory.initElements(driver, ShopLandingPage.class);
-            ShopLandingPageAction.cookiePolicyValidate();
+            PageFactory.initElements(driver, DeliveryPage.class);
+            DeliveryPageActions.ClickOnUseDifferentAddress();
+            System.out.println("Clicked on Use a different address link");
         } catch (Exception e) {
-            // TODO Auto-generated catch block
-            System.out.println("Unable to find 'cookie policy' page");
-            Assert.fail("Unable to find 'cookie policy' page");
-
+            e.printStackTrace();
+            Assert.fail("Unable to click on Use a different address link");
         }
+
     }
 
-    @And("^click on 'manage cookies' link$")
-    public void clickOnManageCookiesLink() throws Throwable {
+    @And("^enter a house number and an ([^\"]*)$")
+    public void enter_a_house_number_and_an(String Postcode) throws Throwable {
         try {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-            PageFactory.initElements(driver, ShopLandingPage.class);
-            ShopLandingPageAction.clickManageCookies();
+            PageFactory.initElements(driver, DeliveryPage.class);
+            DeliveryPageActions.EnterPostcode(Postcode);
+            System.out.println("Entered a commercial postcode");
         } catch (Exception e) {
-            // TODO Auto-generated catch block
-            System.out.println("Unable to Click on 'cookie policy' link");
-            Assert.fail("Unable to Click on 'cookie policy' link");
-
+            e.printStackTrace();
+            Assert.fail("Unable to enter a commercial postcode");
         }
+
     }
 
-    @Then("^the 'manage cookies' page should be opened$")
-    public void theManageCookiesPageShouldBeOpened() throws Throwable {
+    @Then("^click on 'Finish checking out with your order' link$")
+    public void finish_checking_out_with_your_order_link() throws Throwable {
         try {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-            PageFactory.initElements(driver, ShopLandingPage.class);
-            ShopLandingPageAction.manageCookieyValidate();
+            driver.findElement(By.xpath("//*[contains(text(),'inish checking out with your order')]")).click();
+            System.out.println("Finish checking out with your order Link is Clicked");
         } catch (Exception e) {
-            System.out.println("Unable to find 'manage cookies' page");
-            Assert.fail("Unable to find 'manage cookies' page");
-
+            System.out.println(" Failed to clik the Finish checking out with your order Link(" + e.getStackTrace() + ")");
+            Assert.fail(" Failed to clik the Finish checking out with your order Link");
         }
     }
 
-    @And("^click on 'close icon'$")
-    public void clickOnCloseIcon() throws Throwable {
+
+    @Then("^if Timer is configured then it should be displayed$")
+    public void Timer_configured_then_it_should_be_displayed() throws Throwable {
         try {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-            PageFactory.initElements(driver, ShopLandingPage.class);
-            ShopLandingPageAction.closeCookie();
         } catch (Exception e) {
-            System.out.println("Unable to click on close icon");
-            Assert.fail("Unable to click on close icon");
+            /*System.out.println(" Failed to clik the Finish checking out with your order Link(" + e.getStackTrace() +")");
+            Assert.fail(" Failed to clik the Finish checking out with your order Link");*/
         }
     }
 
-    @And("^The Shop home page should be displayed without the cookies$")
-    public void theShopHomePageShouldBeDisplayedWithoutTheCookies() throws Throwable {
-        try {
-            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-            PageFactory.initElements(driver, ShopLandingPage.class);
-            ShopLandingPageAction.CookiepopupValidation();
-        } catch (Exception e) {
-            System.out.println("Unable to validate cookie section");
-            Assert.fail("Unable to validate cookie section");
+
+        @And("^verify that the upfront sort options is not present in the 'sorting dropdown'$")
+        public void verifyThatTheUpfrontSortOptionsIsNotPresentInTheSortingDropdown () throws
+        Throwable {
+
+            throw new PendingException();
         }
-    }
+
+        @And("^Click on 'cookie policy' link$")
+        public void clickOnCookiePolicyLink () throws Throwable {
+            try {
+                driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+                PageFactory.initElements(driver, ShopLandingPage.class);
+                ShopLandingPageAction.cookiePolicySelect();
+            } catch (Exception e) {
+                // TODO Auto-generated catch block
+                System.out.println("Unable to Click on 'cookie policy' link");
+                Assert.fail("Unable to Click on 'cookie policy' link");
+
+            }
+        }
+
+        @Then("^the 'cookie policy' page should be opened$")
+        public void theCookiePolicyPageShouldBeOpened () throws Throwable {
+            try {
+                driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+                PageFactory.initElements(driver, ShopLandingPage.class);
+                ShopLandingPageAction.cookiePolicyValidate();
+            } catch (Exception e) {
+                // TODO Auto-generated catch block
+                System.out.println("Unable to find 'cookie policy' page");
+                Assert.fail("Unable to find 'cookie policy' page");
+
+            }
+        }
+
+        @And("^click on 'manage cookies' link$")
+        public void clickOnManageCookiesLink () throws Throwable {
+            try {
+                driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+                PageFactory.initElements(driver, ShopLandingPage.class);
+                ShopLandingPageAction.clickManageCookies();
+            } catch (Exception e) {
+                // TODO Auto-generated catch block
+                System.out.println("Unable to Click on 'cookie policy' link");
+                Assert.fail("Unable to Click on 'cookie policy' link");
+
+            }
+        }
+
+        @Then("^the 'manage cookies' page should be opened$")
+        public void theManageCookiesPageShouldBeOpened () throws Throwable {
+            try {
+                driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+                PageFactory.initElements(driver, ShopLandingPage.class);
+                ShopLandingPageAction.manageCookieyValidate();
+            } catch (Exception e) {
+                System.out.println("Unable to find 'manage cookies' page");
+                Assert.fail("Unable to find 'manage cookies' page");
+
+            }
+        }
+
+        @And("^click on 'close icon'$")
+        public void clickOnCloseIcon () throws Throwable {
+            try {
+                driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+                PageFactory.initElements(driver, ShopLandingPage.class);
+                ShopLandingPageAction.closeCookie();
+            } catch (Exception e) {
+                System.out.println("Unable to click on close icon");
+                Assert.fail("Unable to click on close icon");
+            }
+        }
+
+        @And("^The Shop home page should be displayed without the cookies$")
+        public void theShopHomePageShouldBeDisplayedWithoutTheCookies () throws Throwable {
+            try {
+                driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+                PageFactory.initElements(driver, ShopLandingPage.class);
+                ShopLandingPageAction.CookiepopupValidation();
+            } catch (Exception e) {
+                System.out.println("Unable to validate cookie section");
+                Assert.fail("Unable to validate cookie section");
+            }
+        }
 }
