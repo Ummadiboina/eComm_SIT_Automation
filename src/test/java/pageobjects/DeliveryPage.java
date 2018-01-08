@@ -6,6 +6,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 
 
+
 public class DeliveryPage {
 
     @FindBy(how = How.ID, using = "housenumber")
@@ -139,6 +140,23 @@ public class DeliveryPage {
     @FindBy(how = How.XPATH, using = "//*[normalize-space(.)='Promotions']/following-sibling::p")
     public static WebElement promotionVAlue_yourOrdre;
 
+    @FindBy(how = How.XPATH, using = "//*[@id='different-delivery-address']")
+    public static WebElement DeliveryPageUseDiffAddressLink;
 
+
+
+
+
+
+
+
+
+    //postal code error
+    @FindBy(how = How.ID, using = "postcode-error")
+    public static WebElement postalCodeErrorMsg;
+
+    //house number invalid error
+    @FindBy(how = How.ID, using = "housenumber-error")
+    public static WebElement houseNumErrorMsg;
 
 }

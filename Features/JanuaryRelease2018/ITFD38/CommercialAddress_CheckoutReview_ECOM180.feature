@@ -15,11 +15,11 @@ Feature: CommercialAddress_CheckoutReview_ECOMC180
     And land on the payment page and input <Username> and other details and click 'Continue on next step'
     And Continue to Agreements page and confirm all the agreement checks
     And click on 'Change delivery' link
-    And enter a house number and an <Postcode>
+    And enter a <houseNumber> and an <PostCode>
     Then the respective <error> message should be displayed
 
     Examples:
 
-    |handset|Firstname|Surname|Username|Postcode  |error  |
-    |       |         |       |        |Invalid   |Invalid|
+    |handset|Firstname|Surname|Username|PostCode  |error  |houseNumber|
+    |       |         |       |        |Invalid   |Invalid|  invalid  |
 

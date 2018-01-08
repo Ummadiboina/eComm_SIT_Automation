@@ -12,7 +12,7 @@ Feature: CFU_PhonesSimo30day
     And all the tariffs under twelve months should be displayed
     And if Timer is configured then it should be displayed
     And if <GiftBlock> is configured then display the banner
-    And verify that 'Why choose an O2 Pay Monthly sim?' is not displayed in upgrade options page
+    And verify that 'Why choose an O2 Pay Monthly sim' is not displayed in upgrade options page
     And the data filters is displayed
     When I click on respective <filterSort> data filter
     Then Data filter button should be in 'selected' state
@@ -29,6 +29,6 @@ Feature: CFU_PhonesSimo30day
     And copy text SIM delivery required or not is displayed
 
     Examples:
-    |Contract|GiftBlock |username|password|filtername|sortoption                 |sort|
-    |12 Days |Configured|       |         |high      | Monthly data (Low to High)|    |
+    |Contract|GiftBlock |username|password|filtername|sortoption                 |sort|GiftBlock|
+    |12 Days |Configured|       |         |high      | Monthly data (Low to High)|    | dfdf  |
 

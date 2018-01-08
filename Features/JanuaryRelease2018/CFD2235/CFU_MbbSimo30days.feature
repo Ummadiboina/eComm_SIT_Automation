@@ -8,11 +8,11 @@ Feature: CFU_MbbSimo30days
     And I click on 'Sim only Tariff' tab
     And verify that the url has simo at the end
     Then the 'Phones' button should be selected by default
-    And click on the "MBB" button
+    And click on the 'MBB' button
     And the two contract lenght should be displayed
     And all the tariffs under twelve months should be displayed
     And if <GiftBlock> is configured then display the banner
-    And verify that 'Why choose an O2 Pay Monthly sim?' is not displayed in upgrade options page
+    And verify that 'Why choose an O2 Pay Monthly sim' is not displayed in upgrade options page
     And the data filters is displayed
     When I click on respective <filterSort> data filter
     Then Data filter button should be in 'selected' state
@@ -47,4 +47,4 @@ Feature: CFU_MbbSimo30days
     Examples:
     Examples:
       |Contract|GiftBlock |username|password|filterSort|Tariffsortoption            |GiftBlock|sort|
-      |30 Days |Configured|        |         |high      | Monthly data (Low to High)|         |    |
+      |30 Days |Configured|        |         |high      | Monthly data (Low to High)|  dfd       |    |

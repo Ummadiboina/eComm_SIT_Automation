@@ -3,6 +3,7 @@ package actionsPerformed;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 import cucumber.api.DataTable;
 import org.apache.log4j.Logger;
@@ -326,7 +327,7 @@ import static pageobjects.FreeSimPage.Firstname;
             try{
 
                 String promotionTxt  =  DeliveryPage.promotions_yourOrder.getText();
-                if(promotionTxt.contains("romotion")){
+                if(promotionTxt.contains("promotion")){
                     String promotionValue  =  DeliveryPage.promotionVAlue_yourOrdre.getText();
                     System.out.println(" We are able to see the Promotions in YourOder  &  displayed Values is :: " + promotionValue);
                     log.debug(" We are able to see the Promotions in YourOder  &  displayed Values is :: " + promotionValue);
@@ -341,5 +342,171 @@ import static pageobjects.FreeSimPage.Firstname;
             }
 
         }
+        
+        
+        public static void click_on_Use_different_DeliveryAddress_link() {
+            try{
+                driver.manage().timeouts().implicitlyWait(2, TimeUnit.MINUTES);
+                if(driver.findElements(By.xpath("//*[contains(text(),'Use a different delivery address')]")).size() > 0){
+                    driver.findElement(By.xpath("//*[contains(text(),'Use a different delivery address')]")).click();
+                    System.out.println(" Clicked on 'Use a different delivery address'link");
+                    log.debug(" Clicked on 'Use a different delivery address'link");
+                }else{
+                    System.out.println(" Failed to Click on 'Use a different delivery address'link");
+                    log.debug(" Failed to Click on 'Use a different delivery address'link");
+                }
+
+            }catch (Exception e){
+                System.out.println(" Failed to Click on 'Use a different delivery address'link"+ e.getStackTrace());
+                log.debug(" Failed to Click on 'Use a different delivery address'link"+ e.getStackTrace());
+            }
+
+        }
+
+
+        public static void enterHounseNumAndPostalCode(String houseNum , String postCode) {
+            try{
+                driver.manage().timeouts().implicitlyWait(2, TimeUnit.MINUTES);
+                if(DeliveryPage.Housenumber.isDisplayed()){
+                    DeliveryPage.Housenumber.sendKeys(houseNum);
+                    DeliveryPage.Housenumber.sendKeys(Keys.TAB );
+                    DeliveryPage.Postcode.sendKeys(postCode);
+                    DeliveryPage.Postcode.sendKeys(Keys.TAB );
+                    System.out.println(" Entered the houseNumber and postcCode");
+                    log.debug(" Entered the houseNumber and postcCode");
+                }else{
+                    System.out.println(" Failed to  Entered the houseNumber and postcCode");
+                    log.debug(" Failed to  Entered the houseNumber and postcCode");
+                }
+            }catch (Exception e){
+                System.out.println(" Failed to  Entered the houseNumber and postcCode"+ e.getStackTrace());
+                log.debug(" Failed to  Entered the houseNumber and postcCode"+ e.getStackTrace());
+            }
+
+        }
+
+        public static void enteredInvalidPostcode(String postCode) {
+            try{
+                driver.manage().timeouts().implicitlyWait(2, TimeUnit.MINUTES);
+                   if(DeliveryPage.postalCodeErrorMsg.isDisplayed()) {
+                    String invalidMsg = DeliveryPage.postalCodeErrorMsg.getText();
+                    if (invalidMsg.contains(postCode)) {
+                        System.out.println(" Entered ivalid PostCod & displayed error message as ::  (" + invalidMsg + ")");
+                        log.debug(" Entered ivalid PostCod & displayed error message as ::  (" + invalidMsg + ")");
+                    } else {
+                        System.out.println(" Failed to  Display the Respective Error message, When we enter the invalid PostCode ");
+                        log.debug(" Failed to  Display the Respective Error message, When we enter the invalid PostCode ");
+                    }
+                }
+            }catch (Exception e){
+                System.out.println(" Failed to  Display the Respective Error message, When we enter the invalid PostCode "+ e.getStackTrace());
+                log.debug(" Failed to  Display the Respective Error message, When we enter the invalid PostCode "+ e.getStackTrace());
+            }
+        }
+
+        public static void  clickOnChange_delivery_link() throws Exception {
+            try {
+                driver.manage().timeouts().implicitlyWait(2, TimeUnit.MINUTES);
+                if (driver.findElement(By.xpath("//*[normalize-space(text())='Change delivery']")).isDisplayed()) {
+                    driver.findElement(By.xpath("//*[normalize-space(text())='Change delivery']")).click();
+                    System.out.println(" Clicked on the'Change delivery' link");
+                    log.debug(" Clicked on the'Change delivery' link");
+                } else {
+                    System.out.println(" Failed to displayed the 'Change delivery' link ");
+                    Assert.fail(" Failed to displayed the 'Change delivery' link ");
+                }
+            }
+            catch (Exception e) {
+                // TODO Auto-generated catch block
+                System.out.println(" Failed to displayed the 'Change delivery' link " + e.getStackTrace());
+                Assert.fail(" Failed to displayed the 'Change delivery' link ");
+            }
+        }
+
+        public static void deliverySectionShouldShowOOS_message() throws Exception {
+            try {
+                driver.manage().timeouts().implicitlyWait(2, TimeUnit.MINUTES);
+                if(driver.findElements(By.xpath("//*[contains(text(),'Out of stock')]")).size() > 0) {
+                    if (driver.findElement(By.xpath("//*[contains(text(),'Out of stock')]")).isDisplayed()) {
+                        System.out.println(" The Out of stock message is Displayed in the Delivery section");
+                        log.debug(" The Out of stock message is Displayed in the Delivery section");
+                    }
+                }else {
+                    System.out.println(" Failed to displayed  OOS message in the  Delivery section");
+                    Assert.fail(" Failed to displayed  OOS message in the  Delivery section");
+                }
+            }
+            catch (Exception e) {
+                // TODO Auto-generated catch block
+                System.out.println(" Failed to displayed  OOS message in the  Delivery section" + e.getStackTrace());
+                Assert.fail(" Failed to displayed  OOS message in the  Delivery section");
+            }
+        }
+
+
+        public static void deliverySectionShouldShowClick_anf_collect_option_without_radio_button_and_OOS_msg() throws Exception {
+            try {
+                driver.manage().timeouts().implicitlyWait(2, TimeUnit.MINUTES);
+                if(driver.findElements(By.xpath("//*[contains(text(),'Out of stock')]")).size() > 0) {
+                    if (driver.findElement(By.xpath("//*[contains(text(),'Out of stock')]")).isDisplayed()) {
+                        System.out.println(" The Out of stock message is Displayed in the Delivery section");
+                        log.debug(" The Out of stock message is Displayed in the Delivery section");
+                    }
+                }else {
+                    System.out.println(" Failed to displayed  OOS message in the  Delivery section");
+                    Assert.fail(" Failed to displayed  OOS message in the  Delivery section");
+                }
+            }
+            catch (Exception e) {
+                // TODO Auto-generated catch block
+                System.out.println(" Failed to displayed  OOS message in the  Delivery section" + e.getStackTrace());
+                Assert.fail(" Failed to displayed  OOS message in the  Delivery section");
+            }
+        }
+
+
+        public static void ClickOnUseDifferentAddress(){
+            List<WebElement> DiffAddressLink = driver.findElements(By.xpath("//*[@id='different-delivery-address']"));
+            if (DiffAddressLink.size() > 0) {
+                WebElement element = pageobjects.DeliveryPage.DeliveryPageUseDiffAddressLink;
+                JavascriptExecutor executor = (JavascriptExecutor)driver;
+                executor.executeScript("arguments[0].click();", element);
+
+            }
+            else
+                Assert.fail("Unable to click on the Use a different address link");
+
+        }
+
+
+        public static void EnterPostcode(String Postcode){
+
+            if (Postcode.contains("Commercial")) {
+                log.debug("Entering the commercial address");
+                pageobjects.DeliveryPage.Housenumber.sendKeys("12");
+                log.debug("Entered House number");
+
+                pageobjects.DeliveryPage.Postcode.sendKeys("OX26 4WD");
+                log.debug("Entered Commercial Post code");
+                pageobjects.DeliveryPage.Find_Address.click();
+                log.debug("Clicked on the Find address button");
+            }
+            if (Postcode.contains("Commercial")) {
+                log.debug("Entering an Invalid address");
+                pageobjects.DeliveryPage.Housenumber.sendKeys("12");
+                log.debug("Entered House number");
+
+                pageobjects.DeliveryPage.Postcode.sendKeys("O6 4WD");
+                log.debug("Entered Invalid Post code");
+                pageobjects.DeliveryPage.Find_Address.click();
+                log.debug("Clicked on the Find address button");
+            }
+
+            else
+            {
+                log.debug("Unable to Enter Commercial or Invalid Address");
+            }
+        }
+
 
     }

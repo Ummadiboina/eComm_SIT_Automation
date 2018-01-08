@@ -5,19 +5,20 @@ Feature: CFU_CommercialAddress_CheckoutPayment_ECOMC180
 
     Given I am an Existing user and Navigates to Signin page
     And Signin using valid <username> and <password> credentials
+    And Click on 'Continue' button on upgrade page
     And Navigate to upgrade > upgrade now
     And Select a <handset> device from Recommended devices section
-    And Select a tariff <tariff> with ribbons in upgrade journey
+    And Land on the 'Tariffs and extra' page
+    And Select a 'I need a sim'option
+    And Click on 'Confirm CTA'
     And I Land on the basket page for upgrades
     And click on "go to checkout" button
-    And perform <Action> in OTAC page
-    And Click on the 'Continue button' in delivery page
+   # And perform <Action> in OTAC page
     And Click on 'Use a different delivery address'link
-    And enter a house number and an <Postcode>
+    And enter a <houseNumber> and an <PostCode>
     Then the respective <error> message should be displayed
 
-    Examples:
 
     Examples:
-      | username               | password | handset        | tariff                   | Postcode  |error     |
-      | in04572q_141562@o2.com | test123  | Apple iPhone 7 | 129.99upfront37.00amonth | Commercial|Commercial|
+      | username    | password | handset        | tariff                  | PostCode  |error     |Action     | houseNumber|
+      | ina_jan2015 | test123  | Apple iPhone 7 | 29.99upfront69.00amonth | Commercial|Commercial|enterCode  |commercial|

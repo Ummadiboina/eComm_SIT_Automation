@@ -391,7 +391,7 @@ public class UpgradeCustomerPageActions extends Environment {
         System.out.println("selectTariff");
         // executor.executeScript("arguments[0].click();",
         // pageobjects.PAYMandPAYGTariffAndExtrasPage.ViewAllTariffs);
-        List<WebElement> TariffList = driver.findElements(By.xpath("//div[@id='tariff-tile']/div[@id]"));
+        List<WebElement> TariffList = driver.findElements(By.xpath("//*[@class='tariff-grids tiles row']/li[@class='liTariffPlan col-sm-6 col-md-4 col-lg-3 ng-scope']"));
         boolean flag = false;
         String TariffXpath = null;
         String TextOfTariffTile = null;
@@ -399,7 +399,7 @@ public class UpgradeCustomerPageActions extends Environment {
         int i = 0;
         for (int j = 0; j < TariffList.size(); j++) {
             i = j + 1;
-            TariffXpath = "(//div[@id='tariff-tile']/div[@id]/div/div[@class='price-block'])[" + i + "]";
+            TariffXpath = "(//*[@class='price-block'])[" + i + "]";
             TextOfTariffTile = driver.findElement(By.xpath(TariffXpath)).getText();
             TextOfTariffTile = TextOfTariffTile.replace("�", "");
             TextOfTariffTile = TextOfTariffTile.replace("\n", "");
@@ -2014,6 +2014,143 @@ public class UpgradeCustomerPageActions extends Environment {
         }
         Screenshots.captureScreenshot();
     }
+
+    public static void data_filtersIsDdisplayed() throws Exception {
+        try {
+            driver.manage().timeouts().implicitlyWait(2, TimeUnit.MINUTES);
+            if (driver.findElements(By.xpath("//div[@class='filter-options']/button")).size() > 0) {
+                List<WebElement> filtes = driver.findElements(By.xpath("//div[@class='filter-options']/button"));
+                for(int i=1;i<=filtes.size();i++) {
+                    if (driver.findElement(By.xpath("(//div[@class='filter-options']/button)["+i+"]")).isDisplayed()) {
+                        String fltr = driver.findElement(By.xpath("(//div[@class='filter-options']/button)["+i+"]")).getText();
+                        System.out.println(" the data filters is displayed" + fltr);
+                        log.debug("the data filters is displayed" + fltr);
+                    }
+                }
+            }else {
+                System.out.println(" Failed to displayed the Data Filter ");
+                Assert.fail(" Failed to displayed the Data Filter ");
+            }
+        }
+        catch (Exception e) {
+            // TODO Auto-generated catch block
+            System.out.println(" Failed to displayed the Data Filter " + e.getStackTrace());
+            Assert.fail(" Failed to displayed the Data Filter ");
+        }
+    }
+
+    public static void twoContractLengthShouldDisplayed() throws Exception {
+        try {
+            driver.manage().timeouts().implicitlyWait(2, TimeUnit.MINUTES);
+            if (driver.findElements(By.xpath("//div[@class='button-tabs']//a")).size() > 0) {
+                List<WebElement> contractLength = driver.findElements(By.xpath("//div[@class='button-tabs']//a"));
+                for(int i=1;i<=contractLength.size();i++) {
+                    if (driver.findElement(By.xpath("(//div[@class='button-tabs']//a)["+i+"]")).isDisplayed()) {
+                        String contrctLent = driver.findElement(By.xpath("(//div[@class='button-tabs']//a)["+i+"]")).getText();
+                        System.out.println(" the data filters is displayed" + contrctLent);
+                        log.debug("the data filters is displayed" + contrctLent);
+                    }
+                }
+            }else {
+                System.out.println(" Failed to displayed the Data Filter ");
+                Assert.fail(" Failed to displayed the Data Filter ");
+            }
+        }
+        catch (Exception e) {
+            // TODO Auto-generated catch block
+            System.out.println(" Failed to displayed the Data Filter " + e.getStackTrace());
+            Assert.fail(" Failed to displayed the Data Filter ");
+        }
+    }
+
+    public static void  whyChooseAn_O2_may_Monthly_sim_is_not_displayed() throws Exception {
+        try {
+            driver.manage().timeouts().implicitlyWait(2, TimeUnit.MINUTES);
+            if (!driver.findElement(By.xpath("//*[contains(text(),'hy choose an O2 Pay Monthly sim?')]")).isDisplayed()) {
+                System.out.println(" text 'Why choose an O2 Pay Monthly sim?' is Displayed ");
+                log.debug(" text 'Why choose an O2 Pay Monthly sim?' is Displayed ");
+            } else {
+                System.out.println("  'Why choose an O2 Pay Monthly sim?' is Displayed ");
+                Assert.fail("  'Why choose an O2 Pay Monthly sim?' is Displayed ");
+            }
+        }
+        catch (Exception e) {
+            // TODO Auto-generated catch block
+            System.out.println("  'Why choose an O2 Pay Monthly sim?' is Displayed " + e.getStackTrace());
+            Assert.fail("  'Why choose an O2 Pay Monthly sim?' is Displayed ");
+        }
+    }
+
+    public static void OOS_MsgShouldDisplayed_inUpgradeOptionsPage() throws Exception {
+        try {
+            driver.manage().timeouts().implicitlyWait(2, TimeUnit.MINUTES);
+            if(driver.findElements(By.xpath("//*[contains(text(),'Out of stock')]")).size() > 0) {
+                if (driver.findElement(By.xpath("//*[contains(text(),'Out of stock')]")).isDisplayed()) {
+                    System.out.println(" The Out of stock message is Displayed in the Upgrade Options page");
+                    log.debug(" The Out of stock message is Displayed in the Upgrade Options page");
+                }
+            }else {
+                System.out.println(" Failed to displayed  OOS message in the Upgrade Page");
+                Assert.fail(" Failed to displayed  OOS message in the Upgrade Page");
+            }
+        }
+        catch (Exception e) {
+            // TODO Auto-generated catch block
+            System.out.println(" Failed to displayed  OOS message in the Upgrade Page" + e.getStackTrace());
+            Assert.fail(" Failed to displayed  OOS message in the Upgrade Page");
+        }
+    }
+
+    public static void verifyOOS_MessageIsDisplayedInUpgradesBasketPage() throws Exception {
+        try {
+            driver.manage().timeouts().implicitlyWait(2, TimeUnit.MINUTES);
+            if(driver.findElements(By.xpath("//*[contains(text(),'You can't continue with checking out if there are any out of stock items in your basket,')]")).size() > 0) {
+                if (driver.findElement(By.xpath("(//*[contains(text(),'You can't continue with checking out if there are any out of stock items in your basket,')])[1]")).isDisplayed()) {
+                    System.out.println(" The 'OOS message' is displayed in the upgrades basket page is Verified");
+                    log.debug(" The 'OOS message' is displayed in the upgrades basket page is Verified");
+                }
+            }else {
+                System.out.println(" Failed to Displayed The 'OOS message' in the upgrades basket page");
+                Assert.fail(" Failed to Displayed The 'OOS message' in the upgrades basket page");
+            }
+        }
+        catch (Exception e) {
+            // TODO Auto-generated catch block
+            System.out.println(" Failed to Displayed The 'OOS message' in the upgrades basket page" + e.getStackTrace());
+            Assert.fail(" Failed to Displayed The 'OOS message' in the upgrades basket page");
+        }
+    }
+
+    public static void upfront_sort_options_is_not_present_in_sortingDropdown() throws Exception {
+        try {
+            driver.manage().timeouts().implicitlyWait(2, TimeUnit.MINUTES);
+            if (UpgradeCustomerPage.dataFilter.isDisplayed()) {
+                UpgradeCustomerPage.dataFilter.click();
+
+                List<WebElement> lst = driver.findElements(By.xpath("//select[@id='dataFilterSelect']//option"));
+                Select sel = new Select(UpgradeCustomerPage.dataFilter);
+
+                for (int i = 1; i <= lst.size(); i++) {
+                    String str = driver.findElement(By.xpath("(//select[@id='dataFilterSelect']//option)[" + i + "]"));
+
+                    if (str.contains("Upfront cost")) {
+                        System.out.println(" Upfront Cost is availabe ");
+                        Assert.fail(" Upfront Cost is availabe ");
+                        break;
+                    }
+                }
+                }else{
+                    System.out.println(" verify that the upfront sort options is not present in the 'sorting dropdown'");
+                }
+        }
+        catch (Exception e) {
+            // TODO Auto-generated catch block
+                System.out.println(" FAILED ::::: Upfront Cost is availabe ");
+                Assert.fail(" FAILED ::::: Upfront Cost is availabe ");
+        }
+    }
+
+
 
 
 }
