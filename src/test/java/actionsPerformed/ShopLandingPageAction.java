@@ -1,6 +1,7 @@
 package actionsPerformed;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 import org.apache.log4j.Logger;
@@ -8,12 +9,14 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 
+import GlobalActions.CommonUtilities;
 import GlobalActions.Screenshots;
 import helpers.Environment;
 import pageobjects.ShopLandingPage;
 
 public class ShopLandingPageAction extends Environment {
 	final static Logger log = Logger.getLogger("ShopLandingPageAction");
+	static JavascriptExecutor js = (JavascriptExecutor)driver;
 
 	public static void GetTitle() throws IOException, InterruptedException {
 		System.out.println("Currently in Shop Home page");
@@ -71,6 +74,87 @@ public class ShopLandingPageAction extends Environment {
 		Screenshots.captureScreenshot();
 
 	}
+/*Below added by vinu */
+
+	public static void cookiePolicySelect() throws IOException, InterruptedException {
+	//Below will click on the cookie policy
+		CommonUtilities.clickWebElement(ShopLandingPage.CookiesPolicyClick);
+		Screenshots.captureScreenshot();
+
+	}
+
+	public static void cookiePolicyValidate() throws IOException, InterruptedException {
+		System.out.println(driver.getTitle());
+		String oldTab = driver.getWindowHandle();
+		ArrayList<String> newTab = new ArrayList(driver.getWindowHandles());
+		newTab.remove(oldTab);
+		//Change focus to newTab
+		driver.switchTo().window(newTab.get(0));
+		System.out.println("The new tab title is "+driver.getTitle());
+		System.out.println(driver.getCurrentUrl());
+		String url = driver.getCurrentUrl();
+		System.out.println("url contains cookies - > "+url.contains("cookie"));
+		Thread.sleep(5000);
+		driver.close();
+		driver.switchTo().window(oldTab);
+		System.out.println(driver.getCurrentUrl());
+		Screenshots.captureScreenshot();
+
+	}
+	public static void clickManageCookies() throws IOException, InterruptedException {
+		//Below will click on the cookie policy
+		CommonUtilities.clickWebElement(ShopLandingPage.ManageCookiesClick);
+		Screenshots.captureScreenshot();
+
+	}
+
+	public static void manageCookieyValidate() throws IOException, InterruptedException {
+		System.out.println(driver.getTitle());
+		String oldTab = driver.getWindowHandle();
+		ArrayList<String> newTab = new ArrayList(driver.getWindowHandles());
+		newTab.remove(oldTab);
+		//Change focus to newTab
+		driver.switchTo().window(newTab.get(0));
+		System.out.println("The new tab title is "+driver.getTitle());
+		System.out.println(driver.getCurrentUrl());
+		String url = driver.getCurrentUrl();
+		System.out.println("url contains cookies - > "+url.contains("managing"));
+		Thread.sleep(5000);
+		driver.close();
+		driver.switchTo().window(oldTab);
+		System.out.println(driver.getCurrentUrl());
+		Screenshots.captureScreenshot();
+
+	}
+
+	public static void closeCookie() throws IOException, InterruptedException {
+		//Below will click on the cookie policy
+		CommonUtilities.clickWebElement(ShopLandingPage.CookieClose);
+		Thread.sleep(5000);
+		int test = driver.findElements(By.xpath("//p[contains(text(),'Cookies on O2')]")).size();
+		System.out.println(test);
+		if(test>0)
+		{
+			System.out.println("cookies popup is present");
+		}
+		else
+		{
+			System.out.println("Cookies popup is not present");
+		}
+
+
+		Screenshots.captureScreenshot();
+
+	}
+
+	public static void CookiepopupValidation() throws IOException, InterruptedException {
+		//Below will click on the cookie policy
+		CommonUtilities.VerifyElementExist_withoutAssert(ShopLandingPage.CookieSection);
+		log.debug("Cookie section validation is completed");
+		Screenshots.captureScreenshot();
+
+	}
+
 
 	}
 
