@@ -1,8 +1,11 @@
 package pageobjects;
 
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindAll;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
+
+import java.util.List;
 
 public class ShopLandingPage {
 
@@ -22,8 +25,18 @@ public class ShopLandingPage {
 	@FindBy(how = How.XPATH, using = "//*[@class='heading']")
 	public static WebElement CookiePopUp;
 
-	@FindBy(how = How.XPATH, using = "//*[@class='close-icon']")
+/*	@FindBy(how = How.XPATH, using = "/*//*[@class='close-icon']")
+	public static WebElement CookieClose;*/
+
+	@FindBy(how = How.XPATH, using = "//a[contains(text(),'cookie policy')]")
+	public static WebElement CookiesPolicyClick;
+
+	@FindBy(how = How.XPATH, using = "//a[contains(text(),'manage cookies')]")
+	public static WebElement ManageCookiesClick;
+
+	@FindBy(how = How.XPATH, using = "//div[@component-name='cookieDialog']/div/a[@class='close-icon']")
 	public static WebElement CookieClose;
 
-
+	@FindAll({ @FindBy(how = How.XPATH, using = "//p[contains(text(),'Cookies on O2')]")})
+	public static List<WebElement> CookieSection;
 }
