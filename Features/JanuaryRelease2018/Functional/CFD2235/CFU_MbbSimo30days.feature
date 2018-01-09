@@ -1,4 +1,4 @@
-eature: CFU_MbbSimo30days
+Feature: CFU_MbbSimo30days
   This scenario ensures that an upgrade customer is able to select a 12 months tablets tariff under the simo tab in upgrade options page
   @Web
   Scenario Outline: CFU_MbbSimo30days
