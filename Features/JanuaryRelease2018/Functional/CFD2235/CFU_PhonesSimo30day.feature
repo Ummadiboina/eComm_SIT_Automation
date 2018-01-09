@@ -1,0 +1,1 @@
+Feature: CFU_PhonesSimo30day
