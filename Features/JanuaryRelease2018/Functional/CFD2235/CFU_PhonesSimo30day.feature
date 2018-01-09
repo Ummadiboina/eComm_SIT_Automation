@@ -1,5 +1,4 @@
-
-	  Feature: CFU_PhonesSimo30day
+Feature: CFU_PhonesSimo30day
   This scenario ensures that an upgrade customer is able to select a 30 day tariff under the simo tab in upgrade options page
   @Web
   Scenario Outline: CFU_PhonesSimo30day
