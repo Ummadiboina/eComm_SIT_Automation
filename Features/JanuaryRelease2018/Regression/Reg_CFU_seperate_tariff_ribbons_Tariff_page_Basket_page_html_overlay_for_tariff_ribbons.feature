@@ -24,4 +24,4 @@ Feature: CFU_seperate_tariff_ribbons_Tariff_page_Basket_page_html_overlay_for_ta
 
     Examples: 
       | username               | password | handset  | tariff                 |
-      | gb119519_979816@o2.com | test123  | GalaxyS8 | 9.99upfront60.00amonth |
+      | ins_feb571@stf.ref.o2.co.uk | test123  | GalaxyS8 | 9.99upfront60.00amonth |

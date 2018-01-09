@@ -31,4 +31,4 @@ Feature: CFD2064_ECOM11810_11811_ CFU_ordering choice on upgrade options page_Ph
 
     Examples:
       | username                      | password | handset           | Username     | Action | tariff                   |
-      | 27fe54900124@stf.ref.o2.co.uk | test123  | Samsung Galaxy S8 | TEST ACCEPTA | skip   | 129.99upfront37.00amonth |
+      | inq_jan5753@stf.ref.o2.co.uk | test123  | Samsung Galaxy S8 | TEST ACCEPTA | skip   | 129.99upfront37.00amonth |

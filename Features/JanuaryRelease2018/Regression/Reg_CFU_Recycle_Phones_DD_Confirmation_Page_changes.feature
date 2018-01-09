@@ -25,4 +25,4 @@ Feature: CFU_Recycle_Phones_DD_Confirmation_Page_changes
 
     Examples: 
       | username               | password | handset        | tariff                   | Firstname | Surname | Username     | Action | Status           |
-      | in04572q_141562@o2.com | test123  | Apple iPhone 7 | 129.99upfront37.00amonth | TEST      | ACCEPTA | TEST ACCEPTA | skip   | Delayed Delivery |
+      | ins_feb571@stf.ref.o2.co.uk | test123  | Apple iPhone 7 | 129.99upfront37.00amonth | TEST      | ACCEPTA | TEST ACCEPTA | skip   | Delayed Delivery |

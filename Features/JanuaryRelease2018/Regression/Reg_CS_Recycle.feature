@@ -29,4 +29,4 @@ Feature: Reg_CS_Recycle
 
     Examples: 
       | username               | password | handset        | tariff                  | Firstname | Surname | Username     | Action | Make  | Model   | Network |
-      | in056936_248217@o2.com | test123  | Apple iPhone 7 | 19.99upfront45.00amonth | TEST      | ACCEPTA | TEST ACCEPTA | skip   | Apple | Iphone7 | Orange  |
+      | ins_feb571@stf.ref.o2.co.uk | test123  | Apple iPhone 7 | 19.99upfront45.00amonth | TEST      | ACCEPTA | TEST ACCEPTA | skip   | Apple | Iphone7 | Orange  |

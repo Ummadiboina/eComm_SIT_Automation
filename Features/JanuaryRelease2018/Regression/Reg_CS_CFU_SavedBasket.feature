@@ -10,4 +10,4 @@ Feature: Reg_CS_CFU_SavedBasket
 
     Examples: 
       | username                      | password |
-      | 27fe12340510@stf.ref.o2.co.uk | test123  |
+      | inq_jan5753@stf.ref.o2.co.uk | test123  |

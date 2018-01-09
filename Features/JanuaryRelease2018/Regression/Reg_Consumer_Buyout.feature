@@ -27,4 +27,4 @@ Feature: Reg_Consumer_Buyout
 
     Examples:
       | username    | password | handset        | Action |
-      | ink_aug6361 | test123  | Apple iPhone 7 | skip   |
+      | 0987@098.com | test123  | Apple iPhone 7 | skip   |
