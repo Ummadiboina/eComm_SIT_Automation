@@ -1781,7 +1781,7 @@ public class E2EOrderPlaced_Steps {
 
     }
 
-    @Given("^Select a valid PAYG ([^\"]*)")
+    @Given("^Select a valid PAYG ([^\"]*)$")
     public void select_a_valid_PAYG_S_edge_black_GB(String Device) throws Throwable {
         try {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
@@ -7994,12 +7994,12 @@ public class E2EOrderPlaced_Steps {
         }
     }
 
-        @And("^verify that the upfront sort options is not present in the 'sorting dropdown'$")
+        /*@And("^verify that the upfront sort options is not present in the 'sorting dropdown'$")
         public void verifyThatTheUpfrontSortOptionsIsNotPresentInTheSortingDropdown () throws
         Throwable {
 
             throw new PendingException();
-        }
+        }*/
 
         @And("^Click on 'cookie policy' link$")
         public void clickOnCookiePolicyLink () throws Throwable {
