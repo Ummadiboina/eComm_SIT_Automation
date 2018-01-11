@@ -6,10 +6,10 @@ Feature: Reg_AFA_PAYM_Acquistion
     Given I login to Agent shop
     And performs Acquisition for New user
     And Select a valid PayM <Device>
-    And Select valid <Tariffs> from tariffs tab
+    And Select valid <Tariffs> from tariffs
     And select a valid Handset and Tariff combination
     And Select valid <Extras> from extras tab
-    And Validate all the Basket content and checkout
+    And Validate all the Basket content and checkouttab
     Then perform all the advisory checks
     And perform the credit checks using valid <Firstname>, <Surname>, <HouseNumber>, <PostCode> and valid <Username>
     And Register customer with valid <Password>, <confirmPassword>, <SecurityAnswer>  in delivery page
