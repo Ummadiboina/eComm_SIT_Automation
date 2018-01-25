@@ -7,7 +7,7 @@ Feature: Reg_AFA_PayG_withoutAnyAccessory
     And performs Acquisition for New user
     And Select a valid PAYG <Device>
     And Select valid <Tariffs> from PAYG tariffs tab
-    And Validate all the Basket content and checkout
+    And Validate all the Basket content and
     Then perform all the advisory checks
     And Register the customer with valid <Firstname>, <Surname>, <HouseNumber>, <PostCode> and other valid details in delivery page
     And Choose <DeliveryType> delivery address and delivery time
@@ -16,4 +16,4 @@ Feature: Reg_AFA_PayG_withoutAnyAccessory
 
     Examples:
       | Device                        | Tariffs | DeliveryType | Firstname | Surname | HouseNumber | PostCode |
-      | iPhone 7 Plus 128GB Jet Black | Random  | HomeDelivery | TESTER    | ACCEPTA | 4           | SL11UP   |
+      | iPhone 7 Plus 128GB Jet Black | Random  | HomeDelivery | TESTER    | ACCEPTA | 4           | SL11ER   |
