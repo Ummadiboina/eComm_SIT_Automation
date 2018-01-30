@@ -14,9 +14,11 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 
 import java.util.concurrent.TimeUnit;
 
-public class BrowserHelper {
+import static helpers.Environment.driver;
 
-	public static void Invoke_browser(String BrowserType) {
+public class BrowserHelper extends Environment{
+
+	public static void Invoke_browser(String BrowserType) throws InterruptedException {
 		if (BrowserType.equalsIgnoreCase("ie")) {
 
 			String OSArchitecture = System.getProperty("os.arch");
@@ -33,12 +35,12 @@ public class BrowserHelper {
 			DesiredCapabilities capability = DesiredCapabilities.internetExplorer();
 			capability.setCapability(InternetExplorerDriver.INTRODUCE_FLAKINESS_BY_IGNORING_SECURITY_DOMAINS, true);
 			capability.setCapability("useLegacyInternalServer", true);
-			Environment.driver = new InternetExplorerDriver(capability);
-			Environment.driver.manage().deleteAllCookies();
-			Environment.driver.navigate().refresh();
+			driver = new InternetExplorerDriver(capability);
+			driver.manage().deleteAllCookies();
+			driver.manage().window().maximize();
 
 		} else if (BrowserType.equalsIgnoreCase("chrome")) {
-			System.setProperty("webdriver.chrome.driver", "Browsers/ChromeDriver/chromedriver.exe");
+			System.setProperty("webdriver.chrome.driver", "Browsers/ChromeDriver/chromedriver_62_64.exe");
 			// Environment.driver = new ChromeDriver();
 			DesiredCapabilities capabilities = DesiredCapabilities.chrome();
 			capabilities.setCapability(CapabilityType.ACCEPT_SSL_CERTS, true);
@@ -47,33 +49,27 @@ public class BrowserHelper {
 			options.addArguments("--start-maximized");
 			capabilities.setCapability(ChromeOptions.CAPABILITY, options);
 
-			Environment.driver = new ChromeDriver(capabilities);
+			driver = new ChromeDriver(capabilities);
+			System.out.println("Launched driver");
+			Thread.sleep(3000);
+			driver.manage().window().maximize();
 
-			// WebDriver driver = new ChromeDriver (handlSSLErr);
 		} else if (BrowserType.equalsIgnoreCase("mozilla")) {
 
 			System.setProperty("webdriver.gecko.driver", "Browsers/GeckoDriver/geckodriver.exe");
-			// ProfilesIni firProfiles = new ProfilesIni();
-			// FirefoxProfile wbdrverprofile = firProfiles.getProfile("certificateIssue");
-			/*
-			 * FirefoxProfile profile = new FirefoxProfile();
-			 * profile.setAcceptUntrustedCertificates(true);
-			 * profile.setAssumeUntrustedCertificateIssuer(false); Environment.driver = new
-			 * FirefoxDriver(profile);
-			 */
-
 			DesiredCapabilities capabilities = DesiredCapabilities.firefox();
 			FirefoxProfile fp = new FirefoxProfile();
 			fp.setAcceptUntrustedCertificates(true);
 			fp.setAssumeUntrustedCertificateIssuer(true);
 			fp.setEnableNativeEvents(false);
 			capabilities.setCapability(FirefoxDriver.PROFILE, fp);
-			Environment.driver = new FirefoxDriver(capabilities);
+			driver = new FirefoxDriver(capabilities);
+			driver.manage().window().maximize();
 
 		}
 
-		Environment.driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-		Environment.driver.manage().window().maximize();
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+
 	}
 
 }

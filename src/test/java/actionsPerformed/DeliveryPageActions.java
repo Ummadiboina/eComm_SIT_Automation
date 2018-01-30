@@ -65,6 +65,7 @@ import static pageobjects.FreeSimPage.Firstname;
             DeliveryPage.date.sendKeys("25");
             DeliveryPage.Month.sendKeys("01");
             DeliveryPage.year.sendKeys("1957");
+            DeliveryPage.year.sendKeys(Keys.TAB);
             log.debug("Entered all the other relavant details");
             Screenshots.captureScreenshot();
 

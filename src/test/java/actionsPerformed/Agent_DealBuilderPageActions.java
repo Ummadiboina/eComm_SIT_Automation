@@ -141,7 +141,7 @@ public class Agent_DealBuilderPageActions extends Environment {
 	public static void HandsetTariffCombination() throws InterruptedException, IOException {
 		try {
 			Select dropdown = new Select(pageobjects.Agent_DealBuilderPage.HandsetTariffCombination);
-			dropdown.selectByIndex(2);
+			dropdown.selectByIndex(3);
 			System.out.println("Selecting combination of handset and talkplan");
 			System.out.println(
 					"Selected combination is" + pageobjects.Agent_DealBuilderPage.HandsetTariffCombination.getText());
