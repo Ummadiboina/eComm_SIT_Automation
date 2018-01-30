@@ -26,4 +26,4 @@ Feature: AFU_eComm_Promotions_and_added_Bolton_Incompatible_error_message_Remove
 
     Examples:
       | user        | Device | Tariffs |ErrorMsg                      |Button|
-      | 07521121498 | Random | Base    | incompatible with each other |Bolton1|
+      | 07521121498 | Random | Base    | incompatible with each other |Bolton2|
