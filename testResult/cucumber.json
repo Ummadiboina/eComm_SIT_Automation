@@ -1,0 +1,1124 @@
+[
+  {
+    "line": 1,
+    "elements": [
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 71168842041,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Hooks.openBrowser()"
+            }
+          }
+        ],
+        "line": 30,
+        "name": "AFU_Incompatible_Boltons_error_Remove_and_reapply_removed_bolton_Order_Placement",
+        "description": "",
+        "id": "afu-incompatible-boltons-error-remove-and-reapply-removed-bolton-order-placement;afu-incompatible-boltons-error-remove-and-reapply-removed-bolton-order-placement;;2",
+        "after": [
+          {
+            "result": {
+              "duration": 18252619789,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Hooks.embedScreenshot(Scenario)"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 9937408296,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "I login to Agent shop",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.LoginAgentShop()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 112925221580,
+              "error_message": "org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {\"method\":\"xpath\",\"selector\":\"//*[@class\u003d\u0027sectionHeading\u0027]/strong\"}\n  (Session info: chrome\u003d58.0.3029.110)\n  (Driver info: chromedriver\u003d2.30.477700 (0057494ad8732195794a7b32078424f92a5fce41),platform\u003dWindows NT 6.1.7601 SP1 x86) (WARNING: The server did not provide any stacktrace information)\nCommand duration or timeout: 0 milliseconds\nFor documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html\nBuild info: version: \u00273.6.0\u0027, revision: \u00276fbf3ec767\u0027, time: \u00272017-09-27T15:28:36.4Z\u0027\nSystem info: host: \u0027LASST266393\u0027, ip: \u002710.172.54.187\u0027, os.name: \u0027Windows 7\u0027, os.arch: \u0027x86\u0027, os.version: \u00276.1\u0027, java.version: \u00271.8.0_121\u0027\nDriver info: org.openqa.selenium.chrome.ChromeDriver\nCapabilities [{applicationCacheEnabled\u003dfalse, rotatable\u003dfalse, mobileEmulationEnabled\u003dfalse, networkConnectionEnabled\u003dfalse, chrome\u003d{chromedriverVersion\u003d2.30.477700 (0057494ad8732195794a7b32078424f92a5fce41), userDataDir\u003dC:\\Users\\subbaiv1\\AppData\\Local\\Temp\\scoped_dir3636_15888}, takesHeapSnapshot\u003dtrue, pageLoadStrategy\u003dnormal, unhandledPromptBehavior\u003d, databaseEnabled\u003dfalse, handlesAlerts\u003dtrue, hasTouchScreen\u003dfalse, version\u003d58.0.3029.110, platform\u003dXP, browserConnectionEnabled\u003dfalse, nativeEvents\u003dtrue, acceptSslCerts\u003dtrue, locationContextEnabled\u003dtrue, webStorageEnabled\u003dtrue, browserName\u003dchrome, takesScreenshot\u003dtrue, javascriptEnabled\u003dtrue, platformName\u003dXP, cssSelectorsEnabled\u003dtrue, unexpectedAlertBehaviour\u003d}]\nSession ID: 52d09c837881d3291a1e221da24e1000\n*** Element info: {Using\u003dxpath, value\u003d//*[@class\u003d\u0027sectionHeading\u0027]/strong}\r\n\tat sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)\r\n\tat sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)\r\n\tat sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)\r\n\tat java.lang.reflect.Constructor.newInstance(Constructor.java:423)\r\n\tat org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:214)\r\n\tat org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:166)\r\n\tat org.openqa.selenium.remote.http.JsonHttpResponseCodec.reconstructValue(JsonHttpResponseCodec.java:40)\r\n\tat org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:82)\r\n\tat org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:45)\r\n\tat org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:164)\r\n\tat org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:586)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:356)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:458)\r\n\tat org.openqa.selenium.By$ByXPath.findElement(By.java:361)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:348)\r\n\tat org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)\r\n\tat org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)\r\n\tat com.sun.proxy.$Proxy23.getText(Unknown Source)\r\n\tat actionsPerformed.Agent_HomePagePageActions.upgradeUser(Agent_HomePagePageActions.java:102)\r\n\tat steps.E2EOrderPlaced_Steps.performs_Upgrade(E2EOrderPlaced_Steps.java:1731)\r\n\tat ✽.And performs Upgrade for 07521121496(ITFD149/AFU_Incompatible_Boltons_error_Remove_and_reapply_removed_bolton_Order_Placement.feature:7)\r\n",
+              "status": "failed"
+            },
+            "line": 7,
+            "name": "performs Upgrade for 07521121496",
+            "match": {
+              "arguments": [
+                {
+                  "val": "07521121496",
+                  "offset": 21
+                }
+              ],
+              "location": "E2EOrderPlaced_Steps.performs_Upgrade(String)"
+            },
+            "matchedColumns": [
+              0
+            ],
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 8,
+            "name": "Select a valid PayM Random",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Random",
+                  "offset": 20
+                }
+              ],
+              "location": "E2EOrderPlaced_Steps.SelectValid_Device(String)"
+            },
+            "matchedColumns": [
+              1
+            ],
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 9,
+            "name": "Select valid Base from tariffs tab",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Base",
+                  "offset": 13
+                }
+              ],
+              "location": "E2EOrderPlaced_Steps.SelectTariff(String)"
+            },
+            "matchedColumns": [
+              2
+            ],
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 10,
+            "name": "Click on \u0027Extras\u0027 tab",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.click_on_Extras_tab()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "comments": [
+              {
+                "line": 11,
+                "value": "#(Bolton1 for reference)"
+              }
+            ],
+            "line": 12,
+            "name": "Select a Bolton",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.select_Bolton()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 13,
+            "name": "Verify that the deal has already some offers Bolton \u003cBolton2\u003e promotions applied",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\u003cBolton2\u003e",
+                  "offset": 52
+                }
+              ],
+              "location": "E2EOrderPlaced_Steps.verify_that_the_deal_has_already_some_offers_Bolton_promotions(String)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "comments": [
+              {
+                "line": 14,
+                "value": "#   since both Bolton1 and Bolton2 cannot be sold together"
+              }
+            ],
+            "line": 15,
+            "name": "Verify that the error incompatible with each other is displayed in the deal about the conflict",
+            "match": {
+              "arguments": [
+                {
+                  "val": "incompatible with each other",
+                  "offset": 22
+                }
+              ],
+              "location": "E2EOrderPlaced_Steps.verify_ErrorMsg_is_displayed_in_the_deal_about_conflict(String)"
+            },
+            "matchedColumns": [
+              3
+            ],
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 16,
+            "name": "Verify that the incompatible boltons Bolton1 and the Offers Bolton Promotion is highlighted",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.verify_that_the_incompatible_boltons_Bolton1_and_the_Offers_Bolton()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 17,
+            "name": "Verify that the \u0027Checkout\u0027 CTA is not enabled",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.verify_that_the_Checkout_CTA_is_not_enabled()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "comments": [
+              {
+                "line": 18,
+                "value": "#Since Bolton1 is better for customer"
+              }
+            ],
+            "line": 19,
+            "name": "To remove the Bolton2 applied by Promotion, Click on \u0027Remove\u0027 button in front of Bolton2",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.remove_Bolton_applied_by_Promotion_Click_Remove_button_in_front_Bolton()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 20,
+            "name": "Verify that the \u0027Checkout\u0027 CTA is enabled",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.verify_that_the_Checkout_CTA_is_enabled()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 21,
+            "name": "Verify that the removed promotions is displayed as separate \u0027Promotions removed\u0027 list",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.verify_that_removed_promotions_displayed_separate_Promotions_removed_list()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 22,
+            "name": "Click on \u0027re-apply\u0027 button shown in front of the promotion under \u0027Promotions removed\u0027 list",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.click_on_Reapply_button_shown_front_of_the_promotion_under_Promotions_removed_list()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 23,
+            "name": "Verify that the error incompatible with each other is displayed in the deal about the conflict",
+            "match": {
+              "arguments": [
+                {
+                  "val": "incompatible with each other",
+                  "offset": 22
+                }
+              ],
+              "location": "E2EOrderPlaced_Steps.verify_ErrorMsg_is_displayed_in_the_deal_about_conflict(String)"
+            },
+            "matchedColumns": [
+              3
+            ],
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 24,
+            "name": "Click on \u0027Remove\u0027 button in front of Bolton",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Bolton",
+                  "offset": 37
+                }
+              ],
+              "location": "E2EOrderPlaced_Steps.click_on_Remove_button_in_front_Button(String)"
+            },
+            "matchedColumns": [
+              4
+            ],
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 25,
+            "name": "Verify that the \u0027Checkout\u0027 CTA is enabled",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.verify_that_the_Checkout_CTA_is_enabled()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 26,
+            "name": "Click on \u0027Checkout\u0027 CTA and Proceed till Order placement",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.click_on_Checkout_CTA_and_Proceed_till_Order_placement()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "line": 4,
+            "name": "@Web"
+          }
+        ]
+      }
+    ],
+    "name": "AFU_Incompatible_Boltons_error_Remove_and_reapply_removed_bolton_Order_Placement",
+    "description": "\r\nThis scenario ensures that when the Retention Agent in Upgrade selects a \u0027Phone\u0027 and tariff eligible for Promotion and adds another Bolton, then the customer should be displayed with error message",
+    "id": "afu-incompatible-boltons-error-remove-and-reapply-removed-bolton-order-placement",
+    "keyword": "Feature",
+    "uri": "ITFD149/AFU_Incompatible_Boltons_error_Remove_and_reapply_removed_bolton_Order_Placement.feature"
+  },
+  {
+    "line": 1,
+    "elements": [
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 60047064835,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Hooks.openBrowser()"
+            }
+          }
+        ],
+        "line": 30,
+        "name": "AFU_eComm_Promotions_and_added_Bolton_Incompatible_error_message_Remove_and_reapply_removed_bolton_Order_Placement",
+        "description": "",
+        "id": "afu-ecomm-promotions-and-added-bolton-incompatible-error-message-remove-and-reapply-removed-bolton-order-placement;afu-ecomm-promotions-and-added-bolton-incompatible-error-message-remove-and-reapply-removed-bolton-order-placement;;2",
+        "after": [
+          {
+            "result": {
+              "duration": 17510051052,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Hooks.embedScreenshot(Scenario)"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 6013180294,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "I login to Agent shop",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.LoginAgentShop()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 110075155267,
+              "error_message": "org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {\"method\":\"xpath\",\"selector\":\"//*[@class\u003d\u0027sectionHeading\u0027]/strong\"}\n  (Session info: chrome\u003d58.0.3029.110)\n  (Driver info: chromedriver\u003d2.30.477700 (0057494ad8732195794a7b32078424f92a5fce41),platform\u003dWindows NT 6.1.7601 SP1 x86) (WARNING: The server did not provide any stacktrace information)\nCommand duration or timeout: 0 milliseconds\nFor documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html\nBuild info: version: \u00273.6.0\u0027, revision: \u00276fbf3ec767\u0027, time: \u00272017-09-27T15:28:36.4Z\u0027\nSystem info: host: \u0027LASST266393\u0027, ip: \u002710.172.54.187\u0027, os.name: \u0027Windows 7\u0027, os.arch: \u0027x86\u0027, os.version: \u00276.1\u0027, java.version: \u00271.8.0_121\u0027\nDriver info: org.openqa.selenium.chrome.ChromeDriver\nCapabilities [{applicationCacheEnabled\u003dfalse, rotatable\u003dfalse, mobileEmulationEnabled\u003dfalse, networkConnectionEnabled\u003dfalse, chrome\u003d{chromedriverVersion\u003d2.30.477700 (0057494ad8732195794a7b32078424f92a5fce41), userDataDir\u003dC:\\Users\\subbaiv1\\AppData\\Local\\Temp\\scoped_dir2260_29089}, takesHeapSnapshot\u003dtrue, pageLoadStrategy\u003dnormal, unhandledPromptBehavior\u003d, databaseEnabled\u003dfalse, handlesAlerts\u003dtrue, hasTouchScreen\u003dfalse, version\u003d58.0.3029.110, platform\u003dXP, browserConnectionEnabled\u003dfalse, nativeEvents\u003dtrue, acceptSslCerts\u003dtrue, locationContextEnabled\u003dtrue, webStorageEnabled\u003dtrue, browserName\u003dchrome, takesScreenshot\u003dtrue, javascriptEnabled\u003dtrue, platformName\u003dXP, cssSelectorsEnabled\u003dtrue, unexpectedAlertBehaviour\u003d}]\nSession ID: bc2ec8a3c7d3a8ac961cf3eccea43fc8\n*** Element info: {Using\u003dxpath, value\u003d//*[@class\u003d\u0027sectionHeading\u0027]/strong}\r\n\tat sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)\r\n\tat sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)\r\n\tat sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)\r\n\tat java.lang.reflect.Constructor.newInstance(Constructor.java:423)\r\n\tat org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:214)\r\n\tat org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:166)\r\n\tat org.openqa.selenium.remote.http.JsonHttpResponseCodec.reconstructValue(JsonHttpResponseCodec.java:40)\r\n\tat org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:82)\r\n\tat org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:45)\r\n\tat org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:164)\r\n\tat org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:586)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:356)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:458)\r\n\tat org.openqa.selenium.By$ByXPath.findElement(By.java:361)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:348)\r\n\tat org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)\r\n\tat org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)\r\n\tat com.sun.proxy.$Proxy23.getText(Unknown Source)\r\n\tat actionsPerformed.Agent_HomePagePageActions.upgradeUser(Agent_HomePagePageActions.java:102)\r\n\tat steps.E2EOrderPlaced_Steps.performs_Upgrade(E2EOrderPlaced_Steps.java:1731)\r\n\tat ✽.And performs Upgrade for 07521121496(ITFD149/AFU_eComm_Promotions_and_added_Bolton_Incompatible_error_message_Remove_and_reapply_removed_bolton_Order_Placement.feature:6)\r\n",
+              "status": "failed"
+            },
+            "line": 6,
+            "name": "performs Upgrade for 07521121496",
+            "match": {
+              "arguments": [
+                {
+                  "val": "07521121496",
+                  "offset": 21
+                }
+              ],
+              "location": "E2EOrderPlaced_Steps.performs_Upgrade(String)"
+            },
+            "matchedColumns": [
+              0
+            ],
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 7,
+            "name": "Select a valid PayM Random",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Random",
+                  "offset": 20
+                }
+              ],
+              "location": "E2EOrderPlaced_Steps.SelectValid_Device(String)"
+            },
+            "matchedColumns": [
+              1
+            ],
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 8,
+            "name": "Select valid Base from tariffs tab",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Base",
+                  "offset": 13
+                }
+              ],
+              "location": "E2EOrderPlaced_Steps.SelectTariff(String)"
+            },
+            "matchedColumns": [
+              2
+            ],
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 9,
+            "name": "Click on \u0027Extras\u0027 tab",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.click_on_Extras_tab()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "comments": [
+              {
+                "line": 10,
+                "value": "#(Bolton1 for reference)"
+              }
+            ],
+            "line": 11,
+            "name": "Select a Bolton",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.select_Bolton()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 12,
+            "name": "Verify that the deal has already some offers Bolton \u003cBolton\u003e promotions applied",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\u003cBolton\u003e",
+                  "offset": 52
+                }
+              ],
+              "location": "E2EOrderPlaced_Steps.verify_that_the_deal_has_already_some_offers_Bolton_promotions(String)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "comments": [
+              {
+                "line": 13,
+                "value": "#   since both Bolton1 and Bolton2 cannot be sold together"
+              }
+            ],
+            "line": 14,
+            "name": "Verify that the error incompatible with each other is displayed in the deal about the conflict",
+            "match": {
+              "arguments": [
+                {
+                  "val": "incompatible with each other",
+                  "offset": 22
+                }
+              ],
+              "location": "E2EOrderPlaced_Steps.verify_ErrorMsg_is_displayed_in_the_deal_about_conflict(String)"
+            },
+            "matchedColumns": [
+              3
+            ],
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "comments": [
+              {
+                "line": 15,
+                "value": "#which added Bolton2"
+              }
+            ],
+            "line": 16,
+            "name": "Verify that the incompatible boltons Bolton1 and the Offers Bolton Promotion is highlighted",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.verify_that_the_incompatible_boltons_Bolton1_and_the_Offers_Bolton()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 17,
+            "name": "Verify that the \u0027Checkout\u0027 CTA is not enabled",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.verify_that_the_Checkout_CTA_is_not_enabled()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "comments": [
+              {
+                "line": 18,
+                "value": "#Since Bolton1 is better for customer"
+              }
+            ],
+            "line": 19,
+            "name": "To remove the Bolton2 applied by Promotion, Click on \u0027Remove\u0027 button in front of Bolton2",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.remove_Bolton_applied_by_Promotion_Click_Remove_button_in_front_Bolton()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 20,
+            "name": "Verify that the \u0027Checkout\u0027 CTA is enabled",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.verify_that_the_Checkout_CTA_is_enabled()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 21,
+            "name": "Verify that the removed promotions is displayed as separate \u0027Promotions removed\u0027 list",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.verify_that_removed_promotions_displayed_separate_Promotions_removed_list()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 22,
+            "name": "Click on \u0027re-apply\u0027 button shown in front of the promotion under \u0027Promotions removed\u0027 list",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.click_on_Reapply_button_shown_front_of_the_promotion_under_Promotions_removed_list()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 23,
+            "name": "Verify that the error incompatible with each other is displayed in the deal about the conflict",
+            "match": {
+              "arguments": [
+                {
+                  "val": "incompatible with each other",
+                  "offset": 22
+                }
+              ],
+              "location": "E2EOrderPlaced_Steps.verify_ErrorMsg_is_displayed_in_the_deal_about_conflict(String)"
+            },
+            "matchedColumns": [
+              3
+            ],
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 24,
+            "name": "Click on \u0027Remove\u0027 button in front of Bolton",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Bolton",
+                  "offset": 37
+                }
+              ],
+              "location": "E2EOrderPlaced_Steps.click_on_Remove_button_in_front_Button(String)"
+            },
+            "matchedColumns": [
+              4
+            ],
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 25,
+            "name": "Verify that the \u0027Checkout\u0027 CTA is enabled",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.verify_that_the_Checkout_CTA_is_enabled()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 26,
+            "name": "Click on \u0027Checkout\u0027 CTA and Proceed till Order placement",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.click_on_Checkout_CTA_and_Proceed_till_Order_placement()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "line": 3,
+            "name": "@Web"
+          }
+        ]
+      }
+    ],
+    "name": "AFU_eComm_Promotions_and_added_Bolton_Incompatible_error_message_Remove_and_reapply_removed_bolton_Order_Placement",
+    "description": "This scenario ensures that when the Retention Agent in Upgrade selects a \u0027Phone\u0027 and tariff eligible for eComm Promotion and adds another Bolton, then the customer should be displayed with error message",
+    "id": "afu-ecomm-promotions-and-added-bolton-incompatible-error-message-remove-and-reapply-removed-bolton-order-placement",
+    "keyword": "Feature",
+    "uri": "ITFD149/AFU_eComm_Promotions_and_added_Bolton_Incompatible_error_message_Remove_and_reapply_removed_bolton_Order_Placement.feature"
+  },
+  {
+    "line": 1,
+    "elements": [
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 57079683498,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Hooks.openBrowser()"
+            }
+          }
+        ],
+        "line": 25,
+        "name": "CFU_Buyout_with_Recycle_Order_placement",
+        "description": "",
+        "id": "cfu-buyout-with-recycle-order-placement;cfu-buyout-with-recycle-order-placement;;2",
+        "after": [
+          {
+            "result": {
+              "duration": 17221771898,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Hooks.embedScreenshot(Scenario)"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 39141167356,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "I am an Existing user and Navigates to Signin page",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.i_am_an_Existing_user_and_Navigates_to_Signin_page()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 26512064140,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "Signin using valid testaccepta6560@stf.ref.o2.co.uk and test123 credentials",
+            "match": {
+              "arguments": [
+                {
+                  "val": "testaccepta6560@stf.ref.o2.co.uk",
+                  "offset": 19
+                },
+                {
+                  "val": "test123",
+                  "offset": 56
+                }
+              ],
+              "location": "E2EOrderPlaced_Steps.signin_using_valid_ink_jun_and_test_credentials(String,String)"
+            },
+            "matchedColumns": [
+              0,
+              1
+            ],
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 38216803202,
+              "error_message": "java.lang.AssertionError: Unable to navigate to upgrade phones\r\n\tat org.testng.Assert.fail(Assert.java:94)\r\n\tat steps.E2EOrderPlaced_Steps.navigate_to_upgrade_upgrade_now(E2EOrderPlaced_Steps.java:2770)\r\n\tat ✽.And Navigate to upgrade \u003e upgrade now(ITFD165/CFU_Buyout_with_Recycle_Order_placement.feature:7)\r\n",
+              "status": "failed"
+            },
+            "line": 7,
+            "name": "Navigate to upgrade \u003e upgrade now",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.navigate_to_upgrade_upgrade_now()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 8,
+            "name": "Verify that the buyout offer section is displayed with \u0027Take offer and Upgrade\u0027 CTA under \u0027Your Options\u0027 heading",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.verify_that_the_buyout_offer_section_is_displayed()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 9,
+            "name": "Verify that \u0027£XXX.XX left to pay on your current Device Plan\u0027 panel is displayed below the buyout offer panel and below to that upgrade and recycle options is displayed",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.verify_that_XXXXX_left_to_pay_on_your_current()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 10,
+            "name": "Click on \u0027Take Offer and Upgrade\u0027 button",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.click_on_Take_Offer_and_Upgrade_button()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 11,
+            "name": "Verify that the same recycle section is displayed as it is displayed to the non-buyout and non-trade-in users",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.verify_that_same_recycle_section_is_displayed()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 12,
+            "name": "Verify that the customer is able to do recycle and buyout together",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.verify_that_the_customer_is_able_to_drecycle()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 13,
+            "name": "Click on any one of the recycle option then Click on  \u0027Yes get an accurate quote\u0027",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.click_on_any_one_of_the_recycle_option_then_Click_on_Yes_get_an_accurate_quote()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 14,
+            "name": "Answer the Questions in the questionnaire",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.answerthe_Questions_in_the_questionnaire()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 15,
+            "name": "Click on \u0027Accept and continue to upgrade\u0027",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.click_on_accept_and_continue_to_upgrade()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 16,
+            "name": "Select a Device from the recommended section",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.select_a_Device_from_the_recommended_section()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 17,
+            "name": "Select a Tariff",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.select_a_Tariff()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 18,
+            "name": "Verify that in \u0027Your package\u0027 summary Buyout is displayed with Recycle",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.verify_that_in_Your_package_summarr_Buyout_is_displayed_with_Recycle()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 19,
+            "name": "Click on \u0027Add and Go to Basket\u0027 button",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.click_on_Add_and_Go_to_Basket_button()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 20,
+            "name": "Verify that in \u0027Your package\u0027 summary Buyout is displayed with Recycle",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.verify_that_in_Your_package_summarr_Buyout_is_displayed_with_Recycle()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 21,
+            "name": "Click on \u0027Go to checkout\u0027 and proceed till order confirmation",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.click_on_Goto_checkout_and_proceed_till_order_confirmation()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "line": 3,
+            "name": "@Web"
+          }
+        ]
+      }
+    ],
+    "name": "CFU_Buyout_with_Recycle_Order_placement",
+    "description": "This scenario ensures that when  a customer in an upgrade journey has opted for Buyout ,then the Buyout is displayed with Recycle in  \u0027Your package\u0027 summary",
+    "id": "cfu-buyout-with-recycle-order-placement",
+    "keyword": "Feature",
+    "uri": "ITFD165/CFU_Buyout_with_Recycle_Order_placement.feature"
+  },
+  {
+    "line": 1,
+    "elements": [
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 44088820597,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Hooks.openBrowser()"
+            }
+          }
+        ],
+        "line": 21,
+        "name": "CFU_Buyout_without_Recycle_Order_placement",
+        "description": "",
+        "id": "cfu-buyout-without-recycle-order-placement;cfu-buyout-without-recycle-order-placement;;2",
+        "after": [
+          {
+            "result": {
+              "duration": 17645654864,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Hooks.embedScreenshot(Scenario)"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 47295734224,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "I am an Existing user and Navigates to Signin page",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.i_am_an_Existing_user_and_Navigates_to_Signin_page()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 23745691292,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "Signin using valid hgyu@poiu.com and test123 credentials",
+            "match": {
+              "arguments": [
+                {
+                  "val": "hgyu@poiu.com",
+                  "offset": 19
+                },
+                {
+                  "val": "test123",
+                  "offset": 37
+                }
+              ],
+              "location": "E2EOrderPlaced_Steps.signin_using_valid_ink_jun_and_test_credentials(String,String)"
+            },
+            "matchedColumns": [
+              0,
+              1
+            ],
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 37118753928,
+              "error_message": "java.lang.AssertionError: Unable to navigate to upgrade phones\r\n\tat org.testng.Assert.fail(Assert.java:94)\r\n\tat steps.E2EOrderPlaced_Steps.navigate_to_upgrade_upgrade_now(E2EOrderPlaced_Steps.java:2770)\r\n\tat ✽.And Navigate to upgrade \u003e upgrade now(ITFD165/CFU_Buyout_without_Recycle_Order_placement.feature:7)\r\n",
+              "status": "failed"
+            },
+            "line": 7,
+            "name": "Navigate to upgrade \u003e upgrade now",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.navigate_to_upgrade_upgrade_now()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 8,
+            "name": "Verify that the buyout offer section is displayed with \u0027Take offer and Upgrade\u0027 CTA under \u0027Your Options\u0027 heading",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.verify_that_the_buyout_offer_section_is_displayed()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 9,
+            "name": "Verify that \u0027£XXX.XX left to pay on your current Device Plan\u0027 panel is displayed below the buyout offer panel and below to that upgrade and recycle options is displayed",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.verify_that_XXXXX_left_to_pay_on_your_current()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 10,
+            "name": "Click on \u0027Take Offer and Upgrade\u0027 button",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.click_on_Take_Offer_and_Upgrade_button()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 11,
+            "name": "Verify that the same recycle section is displayed as it is displayed to the non-buyout and non-trade-in users",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.verify_that_same_recycle_section_is_displayed()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 12,
+            "name": "Click on \u0027No thanks, I\u0027ll keep my device\u0027 button",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.click_on_No_thanks_I_will_keep_my_device_button()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 13,
+            "name": "Select a Device from the recommended section",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.select_a_Device_from_the_recommended_section()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 14,
+            "name": "Select a Tariff",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.select_a_Tariff()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 15,
+            "name": "Verify that in \u0027Your package\u0027 summary Buyout is displayed without Recycle",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.verify_in_Your_package_summary_Buyout_is_displayed_without_Recycle()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 16,
+            "name": "Click on \u0027Add and Go to Basket\u0027 button",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.click_on_Add_and_Go_to_Basket_button()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 17,
+            "name": "Click on \u0027Go to checkout\u0027 and proceed till order confirmation",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.click_on_Goto_checkout_and_proceed_till_order_confirmation()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "line": 3,
+            "name": "@Web"
+          }
+        ]
+      }
+    ],
+    "name": "CFU_Buyout_without_Recycle_Order_placement",
+    "description": "This scenario ensures that when  a customer in an upgrade journey has opted for Buyout ,then the Buyout is displayed without Recycle in  \u0027Your package\u0027 summary and Order should be placed successfully",
+    "id": "cfu-buyout-without-recycle-order-placement",
+    "keyword": "Feature",
+    "uri": "ITFD165/CFU_Buyout_without_Recycle_Order_placement.feature"
+  }
+]

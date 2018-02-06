@@ -9,10 +9,11 @@ Feature: AFU_eComm_Promotions_and_added_Bolton_Incompatible_error_message_Remove
     And Click on 'Extras' tab
     #(Bolton1 for reference)
     And Select a Bolton
-    Then Verify that the deal has already some offers Bolton(Bolton2) promotions applied
+    Then Verify that the deal has already some offers Bolton <Bolton> promotions applied
     #   since both Bolton1 and Bolton2 cannot be sold together
     And Verify that the error <ErrorMsg> is displayed in the deal about the conflict
-    And Verify that the incompatible boltons 'Bolton1 and the Offers Bolton Promotion(which added Bolton2)' is highlighted
+    #which added Bolton2
+    And Verify that the incompatible boltons Bolton1 and the Offers Bolton Promotion is highlighted
     And Verify that the 'Checkout' CTA is not enabled
     #Since Bolton1 is better for customer
     And To remove the Bolton2 applied by Promotion, Click on 'Remove' button in front of Bolton2
@@ -26,4 +27,4 @@ Feature: AFU_eComm_Promotions_and_added_Bolton_Incompatible_error_message_Remove
 
     Examples:
       | user        | Device | Tariffs |ErrorMsg                      |Button|
-      | 07521121496 | Random | Base    | incompatible with each other |Bolton1|
+      | 07521121496 | Random | Base    | incompatible with each other |Bolton|
