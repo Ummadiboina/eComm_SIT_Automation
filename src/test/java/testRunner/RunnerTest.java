@@ -40,7 +40,7 @@ import java.util.List;
 @CucumberOptions(plugin = { "html:testResult/cucumber-html-report",
 		"json:testResult/cucumber.json", "pretty:testResult/cucumber-pretty.txt",
 		"usage:testResult/cucumber-usage.json", "junit:testResult/cucumber-results.xml" },
-		features = { "Features//JanuaryRelease2018//Regression//" },
+		features = { "Features//FebruaryRelease2018//Functional//" },
 		glue = { "steps" },
 		tags = {})
 

@@ -10,7 +10,7 @@ Feature: CFU_Buyout_with_Recycle_Order_placement
     And Click on 'Take Offer and Upgrade' button
     And Verify that the same recycle section is displayed as it is displayed to the non-buyout and non-trade-in users
     And Verify that the customer is able to do recycle and buyout together
-    When Click on any one of the recycle option then Click on  "Yes, get an accurate quote"
+    When Click on any one of the recycle option then Click on  'Yes get an accurate quote'
     And Answer the Questions in the questionnaire
     Then Click on 'Accept and continue to upgrade'
     And Select a Device from the recommended section
@@ -20,7 +20,6 @@ Feature: CFU_Buyout_with_Recycle_Order_placement
     And Verify that in 'Your package' summary Buyout is displayed with Recycle
     Then Click on 'Go to checkout' and proceed till order confirmation
 
-
     Examples:
-      |username      |password|  |
-      | 0987@098.com | test123|  |
+      |username                           |password|  |
+      | testaccepta6560@stf.ref.o2.co.uk  | test123|  |

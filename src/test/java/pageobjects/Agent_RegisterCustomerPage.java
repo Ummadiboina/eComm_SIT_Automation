@@ -64,7 +64,8 @@ public class Agent_RegisterCustomerPage {
     @FindBy(how = How.XPATH, using = "//*[@id='placeOrderForm']/input[2]")
     public static WebElement SubmitBtn;
 
-    @FindBy(how = How.XPATH, using = "//*[@id='lblCardNumber' or @id='CardNumber']")
+    //@FindBy(how = How.XPATH, using = "//*[@id='lblCardNumber' or @id='CardNumber']")
+    @FindBy(how = How.XPATH, using = "//label[contains(text(),'Card ending with:')]")
     public static WebElement PayByCard_2;
 
     // *[@id='lblCardNumber']
@@ -109,7 +110,7 @@ public class Agent_RegisterCustomerPage {
 	public static WebElement SecurityCode;
 */
 
-    @FindBy(how = How.XPATH, using = "//*[@id='CardHolderName' or @id='CardHolderName']")
+    @FindBy(how = How.XPATH, using = "//input[@id='CardHolderName']")
     public static WebElement CardHolderName;
 
     @FindBy(how = How.XPATH, using = "//*[@id='ddlCardType' or @id='CardType']")

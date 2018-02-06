@@ -72,10 +72,13 @@ public class Agent_CreditCheckPageActions extends Environment {
 
 	}
 
-	public static void Creditcheck(String Firstname, String Surname, String HouseNumber, String PostCode)
-			throws InterruptedException, IOException {
-		Select dropdown = new Select(pageobjects.Agent_CreditCheckDetailsPage.Title);
-		dropdown.selectByIndex(1);
+	public static void Creditcheck(String Firstname, String Surname, String HouseNumber, String PostCode) throws InterruptedException, IOException {
+		//Select dropdown = new Select(pageobjects.Agent_CreditCheckDetailsPage.Title);
+		WebElement ele = driver.findElement(By.xpath("//*[@id='regTitle'] or //[@id='ccTitle']"));
+		Select sel = new Select(ele);
+		sel.selectByVisibleText("Mr");
+		System.out.println("Select a Gender");
+		//dropdown.selectByIndex(1);
 		log.debug("Selected the dropdown Mr");
 		Reporter.log("Selected the dropdown Mr");
 
