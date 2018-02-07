@@ -40,11 +40,11 @@ import java.util.List;
 @CucumberOptions(plugin = { "html:testResult/cucumber-html-report",
 		"json:testResult/cucumber.json", "pretty:testResult/cucumber-pretty.txt",
 		"usage:testResult/cucumber-usage.json", "junit:testResult/cucumber-results.xml" },
-		features = { "Features//FebruaryRelease2018//Regression//Reg_AFA_PAYM_Acquistion.feature" },
+		features = { "Features//FebruaryRelease2018//Functional//" },
 		glue = { "steps" },
 		tags = {})
 
 
 public class RunnerTest extends ExtendedTestNGRunner {
 
-	}
+}
