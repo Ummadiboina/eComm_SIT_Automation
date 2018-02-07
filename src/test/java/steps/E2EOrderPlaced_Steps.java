@@ -1958,7 +1958,7 @@ public class E2EOrderPlaced_Steps {
             System.out.println("Completed Credit check");
             Agent_CreditCheckPageActions.BankDetails(Username);
             System.out.println("Completed Bank details");
-            Thread.sleep(30000);
+            Thread.sleep(5000);
 
         } catch (Exception e) {
             // TODO Auto-generated catch block

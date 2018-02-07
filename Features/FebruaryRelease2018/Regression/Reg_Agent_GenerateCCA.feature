@@ -24,6 +24,6 @@ Feature: Reg_Agent_Generate CCA
     And Continue to Review page, check order contract text and review the order
     Then order confirmation is displayed
 
-    Examples: 
-      | user        | Device              | Tariffs | DeliveryType | Firstname | Surname | Username     | HouseNumber | PostCode | emailid        | password1    |
-      | 07521124085 | S7 edge black 32 GB | Refresh | HomeDelivery | TEST      | ACCEPTA | TEST ACCEPTA | Flat 6      | SL11EL   | tester@tes.com | SitTester123 |
+    Examples:
+      | user        | Device                   | Tariffs | DeliveryType | Firstname | Surname | Username     | HouseNumber | PostCode | emailid        | password1    |
+      | 07521000051 | Galaxy S7 Edge 32GB Pink | Refresh | HomeDelivery | TEST      | ACCEPTA | TEST ACCEPTA | Flat 6      | SL11EL   | tester@tes.com | SitTester123 |

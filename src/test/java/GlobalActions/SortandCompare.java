@@ -27,7 +27,7 @@ public class SortandCompare {
 	public static void main(String[] args) throws IOException, InterruptedException 
 	{
 
-		System.setProperty("webdriver.chrome.driver", "C:\\Selenium\\chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", "C:\\Users\\subbaiv1\\regression2\\Browsers\\ChromeDriver\\chromedriver.exe");
 		WebDriver driver = new ChromeDriver();
 		driver.get("https://www.o2.co.uk/shop/tariff/apple/iphone-7-plus/?productId=01190b51-c8cc-40cb-a135-53461ac9206f&contractType=paymonthly#tariff");
 		driver.manage().window().maximize();

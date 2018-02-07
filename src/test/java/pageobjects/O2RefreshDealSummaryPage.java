@@ -11,8 +11,10 @@ public class O2RefreshDealSummaryPage extends Environment {
 	@FindBy(how=How.XPATH,using="//*[@id='secci']/h2")
 	public static WebElement DealSummarySection;
 	
-	@FindBy(how=How.XPATH,using="//*[@id='secciYesButton']")
+	@FindBy(how=How.XPATH,using="(//*[@id='secciYesButton' or @id='updateEmailAddressProceedButton'])[1]")
 	public static WebElement SummariseTheDealYes;
+	@FindBy(how=How.XPATH,using="(//*[@id='secciYesButton' or @id='updateEmailAddressProceedButton'])[2]")
+	public static WebElement SummariseTheDealYes2;
 	
 	@FindBy(how=How.XPATH,using="//*[@id='generateCcaForm']/input[1]")
 	public static WebElement GenerateCCABtn;

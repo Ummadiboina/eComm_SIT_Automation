@@ -28,5 +28,5 @@ Feature: CFA_seperate_tariff_ribbons_Tariff_page_Basket_page_html_overlay_for_ta
     Then order confirmation is displayed
 
     Examples:
-      | handset  | tariff                 | Firstname | Surname | Username     |
-      | GalaxyS8 | 9.99upfront65.00amonth | TEST      | ACCEPTA | TEST ACCEPTA |
+      | handset | tariff                 | Firstname | Surname | Username     |
+      | Sony    | 9.99upfront65.00amonth | TEST      | ACCEPTA | TEST ACCEPTA |

@@ -1,10 +1,10 @@
 Feature: CFU_seperate_tariff_ribbons_Tariff_page_Basket_page_html_overlay_for_tariff_ribbons
 
   @Web
-  Scenario Outline: 
-    This scenario ensures that when the customer on upgrade journey selects tariff for a device with ribbons, then the tariff ribbon should be displayed with html overlay on the following pages,
-    1.Tariff and Extras page
-    2.Basket page
+  Scenario Outline:
+  This scenario ensures that when the customer on upgrade journey selects tariff for a device with ribbons, then the tariff ribbon should be displayed with html overlay on the following pages,
+  1.Tariff and Extras page
+  2.Basket page
 
     Given I am existing user and I click on Signin button
     And Signin using valid <username> and <password> credentials
@@ -22,6 +22,6 @@ Feature: CFU_seperate_tariff_ribbons_Tariff_page_Basket_page_html_overlay_for_ta
     And Verify 'Overlay icon' is displayed on the promotional ribbons in the Basket page
     And Click on the 'Overlay icon' in the Basket page and verify pop gets displayed
 
-    Examples: 
-      | username               | password | handset  | tariff                 |
-      | gb119519_979816@o2.com | test123  | GalaxyS8 | 9.99upfront60.00amonth |
+    Examples:
+      | username        | password | handset        | tariff                 |
+      | qa1230@dec3.com | test123  | Galaxy S8 Plus | 9.99upfront60.00amonth |

@@ -14,4 +14,4 @@ Feature: Reg_AFU_SavedBasket
 
     Examples:
       | user        | Device | Tariffs |
-      | 07521120140 | dongle | Refresh |
+      | 07521124085 | dongle | Refresh |

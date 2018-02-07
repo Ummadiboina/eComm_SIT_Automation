@@ -398,7 +398,7 @@ public class UpgradeCustomerPageActions extends Environment {
         String SelectBtnXpath = null;
         int i = 0;
         for (int j = 0; j < TariffList.size(); j++) {
-            i = j + 1;
+            i = j ++;
             TariffXpath = "(//*[@class='price-block'])[" + i + "]";
             TextOfTariffTile = driver.findElement(By.xpath(TariffXpath)).getText();
             TextOfTariffTile = TextOfTariffTile.replace("�", "");
