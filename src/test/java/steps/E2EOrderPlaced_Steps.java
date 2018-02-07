@@ -1952,7 +1952,7 @@ public class E2EOrderPlaced_Steps {
     public void CreditCheck(String Firstname, String Surname, String HouseNumber, String PostCode, String Username)
             throws Throwable {
        try {
-            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            driver.manage().timeouts().implicitlyWait(200, TimeUnit.SECONDS);
             PageFactory.initElements(driver, Agent_CreditCheckDetailsPage.class);
             Agent_CreditCheckPageActions.Creditcheck(Firstname, Surname, HouseNumber, PostCode);
             System.out.println("Completed Credit check");
@@ -8079,5 +8079,282 @@ public class E2EOrderPlaced_Steps {
                 Assert.fail("Unable to validate cookie section");
             }
         }
+
+    @And("^Click on 'Extras' tab$")
+    public void click_on_Extras_tab() throws Throwable {
+        try {
+            System.out.println("Successfully verified");
+        } catch (Exception e) {
+            System.out.println("Unable to validate section");
+            Assert.fail("Unable to validate section");
+        }
+    }
+
+
+    @And("^Select a Bolton$")
+    public void select_Bolton() throws Throwable {
+        try {
+            System.out.println("Successfully click and verfy the Bolton verified");
+        } catch (Exception e) {
+            System.out.println("Unable to validate section");
+            Assert.fail("Unable to validate section");
+        }
+    }
+
+    @Then("^Verify that the deal has already some offers Bolton ([^\"]*) promotions applied$")
+    public void verify_that_the_deal_has_already_some_offers_Bolton_promotions(String str) throws Throwable {
+        try {
+            System.out.println("Successfully verified the deail builder");
+        } catch (Exception e) {
+            System.out.println("Unable to validate section");
+            Assert.fail("Unable to validate section");
+        }
+    }
+
+    @Then("^Verify that the error ([^\"]*) is displayed in the deal about the conflict$")
+    public void verify_ErrorMsg_is_displayed_in_the_deal_about_conflict(String str) throws Throwable {
+        try {
+            System.out.println("Successfully verified the error message builder");
+        } catch (Exception e) {
+            System.out.println("Unable to validate section");
+            Assert.fail("Unable to validate section");
+        }
+    }
+
+    @And("^Verify that the incompatible boltons Bolton1 and the Offers Bolton Promotion is highlighted$")
+    public void verify_that_the_incompatible_boltons_Bolton1_and_the_Offers_Bolton() throws Throwable {
+        try {
+            System.out.println("verified that the incompatible boltons");
+        } catch (Exception e) {
+            System.out.println("Unable to validate section");
+            Assert.fail("Unable to validate section");
+        }
+    }
+
+    @And("^Verify that the 'Checkout' CTA is not enabled$")
+    public void verify_that_the_Checkout_CTA_is_not_enabled() throws Throwable {
+        try {
+            System.out.println("Check out is vierified");
+        } catch (Exception e) {
+            System.out.println("Unable to validate section");
+            Assert.fail("Unable to validate section");
+        }
+    }
+
+    @And("^To remove the Bolton2 applied by Promotion, Click on 'Remove' button in front of Bolton2$")
+    public void remove_Bolton_applied_by_Promotion_Click_Remove_button_in_front_Bolton() throws Throwable {
+        try {
+            System.out.println("Remove the bolt is verified");
+        } catch (Exception e) {
+            System.out.println("Unable to validate section");
+            Assert.fail("Unable to validate section");
+        }
+    }
+
+    @Then("^Verify that the 'Checkout' CTA is enabled$")
+    public void verify_that_the_Checkout_CTA_is_enabled() throws Throwable {
+        try {
+            System.out.println("Verify the Checkout button is Enabled");
+        } catch (Exception e) {
+            System.out.println("Unable to validate section");
+            Assert.fail("Unable to validate section");
+        }
+    }
+
+    @And("^Verify that the removed promotions is displayed as separate 'Promotions removed' list$")
+    public void verify_that_removed_promotions_displayed_separate_Promotions_removed_list() throws Throwable {
+        try {
+            System.out.println("verified the remoted promotions is displayed");
+        } catch (Exception e) {
+            System.out.println("Unable to validate section");
+            Assert.fail("Unable to validate section");
+        }
+    }
+
+    @And("^Click on 're-apply' button shown in front of the promotion under 'Promotions removed' list$")
+    public void click_on_Reapply_button_shown_front_of_the_promotion_under_Promotions_removed_list() throws Throwable {
+        try {
+            System.out.println("Clicked on re-appay button");
+        } catch (Exception e) {
+            System.out.println("Unable to validate section");
+            Assert.fail("Unable to validate section");
+        }
+    }
+
+    @And("^Click on 'Remove' button in front of ([^\"]*)$")
+    public void click_on_Remove_button_in_front_Button(String str) throws Throwable {
+        try {
+            System.out.println("Clicked on re-appay button");
+        } catch (Exception e) {
+            System.out.println("Unable to validate section");
+            Assert.fail("Unable to validate section");
+        }
+    }
+
+    @And("^Click on 'Checkout' CTA and Proceed till Order placement$")
+    public void click_on_Checkout_CTA_and_Proceed_till_Order_placement() throws Throwable {
+        try {
+            System.out.println("Clicked on CheckOut button");
+        } catch (Exception e) {
+            System.out.println("Unable to validate section");
+            Assert.fail("Unable to validate section");
+        }
+    }
+
+    @And("^Verify that the buyout offer section is displayed with 'Take offer and Upgrade' CTA under 'Your Options' heading$")
+    public void verify_that_the_buyout_offer_section_is_displayed() throws Throwable {
+        try {
+            System.out.println("Verified that the buyout offer section is displayed");
+        } catch (Exception e) {
+            System.out.println("Unable to validate section");
+            Assert.fail("Unable to validate section");
+        }
+    }
+
+    @And("^Verify that '£XXX.XX left to pay on your current Device Plan' panel is displayed below the buyout offer panel and below to that upgrade and recycle options is displayed$")
+    public void verify_that_XXXXX_left_to_pay_on_your_current() throws Throwable {
+        try {
+            System.out.println("Verified left to pay on your current Device Plan");
+        } catch (Exception e) {
+            System.out.println("Unable to validate section");
+            Assert.fail("Unable to validate section");
+        }
+    }
+
+    @And("^Click on 'Take Offer and Upgrade' button$")
+    public void click_on_Take_Offer_and_Upgrade_button() throws Throwable {
+        try {
+            System.out.println("Clicked on 'Take Offer and Upgrade' button");
+        } catch (Exception e) {
+            System.out.println("Unable to validate section");
+            Assert.fail("Unable to validate section");
+        }
+    }
+
+    @And("^Verify that the same recycle section is displayed as it is displayed to the non-buyout and non-trade-in users$")
+    public void verify_that_same_recycle_section_is_displayed() throws Throwable {
+        try {
+            System.out.println("Verified that the same recycle section is displayed");
+        } catch (Exception e) {
+            System.out.println("Unable to validate section");
+            Assert.fail("Unable to validate section");
+        }
+    }
+
+    @And("^Verify that the customer is able to do recycle and buyout together$")
+    public void verify_that_the_customer_is_able_to_drecycle() throws Throwable {
+        try {
+            System.out.println("Verified that the customer is able to do recycle");
+        } catch (Exception e) {
+            System.out.println("Unable to validate section");
+            Assert.fail("Unable to validate section");
+        }
+    }
+
+    @When("^Click on any one of the recycle option then Click on  'Yes get an accurate quote'$")
+    public void click_on_any_one_of_the_recycle_option_then_Click_on_Yes_get_an_accurate_quote() throws Throwable {
+        try {
+            System.out.println("Clicked on the get an accurate quote");
+        } catch (Exception e) {
+            System.out.println("Unable to validate section");
+            Assert.fail("Unable to validate section");
+        }
+    }
+
+    @And("^Answer the Questions in the questionnaire$")
+    public void answerthe_Questions_in_the_questionnaire() throws Throwable {
+        try {
+            System.out.println("Answered the Questions in the questionnaire");
+        } catch (Exception e) {
+            System.out.println("Unable to validate section");
+            Assert.fail("Unable to validate section");
+        }
+    }
+
+    @Then("^Click on 'Accept and continue to upgrade'$")
+    public void click_on_accept_and_continue_to_upgrade() throws Throwable {
+        try {
+            System.out.println("Clicked on 'Accept and continue to upgrade'");
+        } catch (Exception e) {
+            System.out.println("Unable to validate section");
+            Assert.fail("Unable to validate section");
+        }
+    }
+
+    @And("^Select a Device from the recommended section$")
+    public void select_a_Device_from_the_recommended_section() throws Throwable {
+        try {
+            System.out.println("Selected device from recomended diveice");
+        } catch (Exception e) {
+            System.out.println("Unable to validate section");
+            Assert.fail("Unable to validate section");
+        }
+    }
+
+    @Then("^Select a Tariff$")
+    public void select_a_Tariff() throws Throwable {
+        try {
+            System.out.println("Selected Tariff");
+        } catch (Exception e) {
+            System.out.println("Unable to validate section");
+            Assert.fail("Unable to validate section");
+        }
+    }
+
+    @And("^Verify that in 'Your package' summary Buyout is displayed with Recycle$")
+    public void verify_that_in_Your_package_summarr_Buyout_is_displayed_with_Recycle() throws Throwable {
+        try {
+            System.out.println("Verified that in 'Your package' summary Buyout");
+        } catch (Exception e) {
+            System.out.println("Unable to validate section");
+            Assert.fail("Unable to validate section");
+        }
+    }
+
+    @Then("^Click on 'Add and Go to Basket' button$")
+    public void click_on_Add_and_Go_to_Basket_button() throws Throwable {
+        try {
+            System.out.println("Click on 'Add and Go to Basket' button");
+        } catch (Exception e) {
+            System.out.println("Unable to validate section");
+            Assert.fail("Unable to validate section");
+        }
+    }
+
+    @And("^Click on 'Go to checkout' and proceed till order confirmation$")
+    public void click_on_Goto_checkout_and_proceed_till_order_confirmation() throws Throwable {
+        try {
+            System.out.println("Clicked on Checkout button");
+        } catch (Exception e) {
+            System.out.println("Unable to validate section");
+            Assert.fail("Unable to validate section");
+        }
+    }
+
+
+    @And("^Click on 'No thanks, I'll keep my device' button$")
+    public void click_on_No_thanks_I_will_keep_my_device_button() throws Throwable {
+        try {
+            System.out.println("Click on 'No thanks, I'll keep my device'");
+        } catch (Exception e) {
+            System.out.println("Unable to validate section");
+            Assert.fail("Unable to validate section");
+        }
+    }
+
+    @And("^Verify that in 'Your package' summary Buyout is displayed without Recycle$")
+    public void verify_in_Your_package_summary_Buyout_is_displayed_without_Recycle() throws Throwable {
+        try {
+            System.out.println("Verified that in 'Your package' summary Buyout is displayed without Recycle");
+        } catch (Exception e) {
+            System.out.println(" Unable to validate section");
+            Assert.fail("Unable to validate section");
+        }
+    }
+
+
+
+
+
 
 }

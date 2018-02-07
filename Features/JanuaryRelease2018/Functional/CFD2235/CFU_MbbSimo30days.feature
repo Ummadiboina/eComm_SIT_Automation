@@ -36,15 +36,10 @@ Feature: CFU_MbbSimo30days
     Then 'Checkout In Progress' page is displayed
     Then click on 'Finish checking out with your order' link
     And copy text SIM delivery required or not is displayed
-    And Select 'I�ll keep my current sim' option
+    And Select 'I’ll keep my current sim' option
     And Click on 'I agree to the terms and condition' checkbox
     And Click on 'Place your order' CTA
 
-
-
-
-
     Examples:
-    Examples:
-      |Contract|GiftBlock |username|password|filterSort|Tariffsortoption            |GiftBlock|sort|
-      |30 Days |Configured|        |         |high      | Monthly data (Low to High)|  dfd       |    |
+      |Contract|GiftBlock |username         |password|filterSort |Tariffsortoption            |GiftBlock|sortoption|
+      |30 Days |Configured| ahgt12@gmail.com| test123 |high      | Monthly data (Low to High) |  dfd     |Monthly data (High to low|

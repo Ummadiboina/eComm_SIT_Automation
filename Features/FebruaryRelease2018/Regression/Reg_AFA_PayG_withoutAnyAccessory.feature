@@ -15,5 +15,5 @@ Feature: Reg_AFA_PayG_withoutAnyAccessory
     Then Order confirmation message should be displayed
 
     Examples:
-      | Device                        | Tariffs | DeliveryType | Firstname | Surname | HouseNumber | PostCode |
+      | Device                      | Tariffs | DeliveryType | Firstname | Surname | HouseNumber | PostCode |
       | iPhone 7 Plus 128GB Jet Black | Random  | HomeDelivery | TESTER    | ACCEPTA | 4           | SL11UP   |

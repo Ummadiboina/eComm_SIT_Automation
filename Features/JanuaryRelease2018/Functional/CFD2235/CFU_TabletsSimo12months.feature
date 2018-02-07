@@ -29,6 +29,5 @@ Feature: CFU_TabletsSimo12months
     And copy text SIM delivery required or not is displayed
 
     Examples:
-    Examples:
-      |Contract  |GiftBlock |username         |password|filtername|sortoption                 |GiftBlock|
-      |12 Months |Configured|testaccepta6128  |test12  |high      | Monthly data (Low to High)| hjkdkd |
+      |Contract  |GiftBlock |username                    |password|filtername|sortoption                 |GiftBlock|
+      |12 Months |Configured|ins_nov6053@stf.ref.o2.co.uk|test123 |high      | Monthly data (Low to High)| hjkdkd |

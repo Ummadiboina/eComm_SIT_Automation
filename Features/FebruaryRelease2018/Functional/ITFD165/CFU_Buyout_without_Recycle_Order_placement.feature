@@ -18,4 +18,4 @@ Feature: CFU_Buyout_without_Recycle_Order_placement
 
     Examples:
       |username      |password|  |
-      | 0987@098.com | test123|  |
+      | hgyu@poiu.com| test123|  |

@@ -22,4 +22,8 @@ public class iPadPage {
     public static WebElement IPad9point7;
 
 
+    @FindBy(how = How.XPATH, using = "//span[normalize-space()='Apple iPad Pro 9.7 inch']")
+    public static WebElement IPad9point71;
+
+
 }

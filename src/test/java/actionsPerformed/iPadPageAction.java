@@ -46,7 +46,7 @@ public class iPadPageAction extends Environment {
         }
 
         if (elementName.contains("Apple iPad 9.7")) {
-            WebElement element = pageobjects.iPadPage.IPad9point7;
+            WebElement element = pageobjects.iPadPage.IPad9point71;
             JavascriptExecutor executor = (JavascriptExecutor)driver;
             executor.executeScript("arguments[0].click();", element);
            // pageobjects.iPadPage.IPad9point7.click();
