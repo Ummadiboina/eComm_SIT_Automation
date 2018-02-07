@@ -1,9 +1,9 @@
 Feature: CFU_Recycle_Phones_DD_Confirmation_Page_changes
 
   @Web
-  Scenario Outline: 
-    This scenario ensures that when the customer in Upgrade journey selects delayed delivery phone, 
-    then the customer should be able to see the changes in 'Confirmation Page formatting box'
+  Scenario Outline:
+  This scenario ensures that when the customer in Upgrade journey selects delayed delivery phone,
+  then the customer should be able to see the changes in 'Confirmation Page formatting box'
 
     Given I am an Existing user and Navigates to Signin page
     And Signin using valid <username> and <password> credentials
@@ -23,6 +23,6 @@ Feature: CFU_Recycle_Phones_DD_Confirmation_Page_changes
     Then order confirmation is displayed
     Then Verify contents of order confirmation page for Phones containing <Status>
 
-    Examples: 
-      | username               | password | handset        | tariff                   | Firstname | Surname | Username     | Action | Status           |
-      | in04572q_141562@o2.com | test123  | Apple iPhone 7 | 129.99upfront37.00amonth | TEST      | ACCEPTA | TEST ACCEPTA | skip   | Delayed Delivery |
+    Examples:
+      | username    | password | handset        | tariff                   | Firstname | Surname | Username     | Action | Status           |
+      | ini_jan6238 | test123  | Apple iPhone 7 | 129.99upfront37.00amonth | TEST      | ACCEPTA | TEST ACCEPTA | skip   | Delayed Delivery |

@@ -19,6 +19,6 @@ Feature: Reg_AFU_PAYM_Dongle_PayByCard
     When Pay by card
     Then Order confirmation message should be displayed
 
-    Examples: 
+    Examples:
       | user        | Device | Tariffs |
-      | 07521130300 | dongle | Random  |
+      | 07521000301 | dongle | Random  |

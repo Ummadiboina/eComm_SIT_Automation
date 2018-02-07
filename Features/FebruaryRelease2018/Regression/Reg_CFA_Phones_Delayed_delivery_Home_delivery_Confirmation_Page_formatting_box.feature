@@ -1,9 +1,9 @@
 Feature: CFA_Phones_Delayed_delivery_Home_delivery_Confirmation_Page_formatting_box
 
   @Web
-  Scenario Outline: 
-    This scenario ensures that when the customer selects a delayed delivery Phone and opts for home delivery, 
-    then the customer should be able to see the changes in 'Confirmation Page formatting box'
+  Scenario Outline:
+  This scenario ensures that when the customer selects a delayed delivery Phone and opts for home delivery,
+  then the customer should be able to see the changes in 'Confirmation Page formatting box'
 
     Given I am an CFA user and Lands on shop page
     And navigate to PAYM Phones page
@@ -22,6 +22,6 @@ Feature: CFA_Phones_Delayed_delivery_Home_delivery_Confirmation_Page_formatting_
 
     #Step 12 and Step 13 of ALM clubbed together
     #Close the browser
-    Examples: 
-      | handset          | Firstname | Surname | Username     | Status           | color |
-      | AppleiPhone7Plus | TEST      | ACCEPTA | TEST ACCEPTA | Delayed Delivery | Black |
+    Examples:
+      | handset       | Firstname | Surname | Username     | Status           | color |
+      | iPhone 7 Plus | TEST      | ACCEPTA | TEST ACCEPTA | Delayed Delivery | Black |

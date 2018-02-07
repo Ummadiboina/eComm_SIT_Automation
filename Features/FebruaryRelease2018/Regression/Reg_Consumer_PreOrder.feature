@@ -19,4 +19,4 @@ Feature: Reg_Consumer_PreOrder
       #Close the browser
     Examples:
       | handset        | Firstname | Surname | Username     | status    |
-      | Apple iPhone 7 | TEST      | ACCEPTA | TEST ACCEPTA | Pre Order |
+      | Apple iPhone 8 | TEST      | ACCEPTA | TEST ACCEPTA | Pre Order |
