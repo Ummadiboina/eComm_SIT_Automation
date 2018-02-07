@@ -21,6 +21,5 @@ Feature: Existing_Customer_Tablets_Data_filters_options_tariff_and_extras_page
     Then I should see tariffs based on the selected sort option <sortoption>
 
     Examples:
-      | tabletname                   | color | capacity | filtername | sortoption                 | username                      | password |
-      | SamsungRandom DeviceGalaxy10 | Black | 32GB     | high       | Monthly data (Low to High) | 27fe76531842@stf.ref.o2.co.uk | test123  |
-   #   | Apple iPhone 7    | TEST      | ACCEPTA | TEST ACCEPTA | high       |
+      | tabletname    | color | capacity | filtername | sortoption                 | username                      | password |
+      | Random Device | Black | 32GB     | high       | Monthly data (Low to High) | 27fe76531842@stf.ref.o2.co.uk | test123  |

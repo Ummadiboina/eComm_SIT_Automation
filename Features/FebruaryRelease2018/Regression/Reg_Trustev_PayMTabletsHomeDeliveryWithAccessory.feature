@@ -16,6 +16,6 @@ Feature: Reg_Trustev_PayMTabletsHomeDeliveryWithAccessory
     And Continue to Review page and review the order for Trustev details
     Then order confirmation is displayed
 
-    Examples: �
-      | Device                   | Firstname | Surname | Username     |
-      | Apple iPad Pro 10.5 inch | TEST      | ACCEPTA | TEST ACCEPTA |
+    Examples:
+      | Device        | Firstname | Surname | Username     |
+      | Random Device | TEST      | ACCEPTA | TEST ACCEPTA |

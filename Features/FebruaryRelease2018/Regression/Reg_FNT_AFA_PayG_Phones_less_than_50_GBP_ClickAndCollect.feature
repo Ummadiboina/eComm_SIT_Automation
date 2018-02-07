@@ -15,6 +15,6 @@ Feature: Reg_FNT_AFA_PayG_Phones_less_than_50_GBP_ClickAndCollect
     When Pay by card for PAYM device
     Then Order confirmation message should be displayed
 
-    Examples: 
-      | Device  | Tariffs | Firstname | Surname | HouseNumber | PostCode |
-      | In stock| 50  | TEST      | ACCEPTA |             |     g2     |
+    Examples:
+      | Device   | Tariffs | Firstname | Surname | HouseNumber | PostCode |
+      | In stock | 50      | TEST      | ACCEPTA | 10          | g2       |

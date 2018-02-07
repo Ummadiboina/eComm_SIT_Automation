@@ -20,5 +20,5 @@ Feature: Reg_FNT_AFA_Handset_Click_and_Collect_Passport_and_Driving_license
     Then Order confirmation message should be displayed
 
     Examples:
-      | Device              | Tariffs | License_postcode | License_Number | country | Passport_number | Firstname | Surname | Username     | HouseNumber | PostCode |
-      | S7 edge black 32 GB | Random  | sl11el           | 122SS23ERT     | IND     | G02DSRE£        | TEST      | ACCEPTA | TEST ACCEPTA | 14          | SL11UP   |
+      | Device | Tariffs | License_postcode | License_Number | country | Passport_number | Firstname | Surname | Username     | HouseNumber | PostCode |
+      | S8     | Random  | sl11el           | 122SS23ERT     | IND     | G02DSRE£        | TEST      | ACCEPTA | TEST ACCEPTA | 14          | SL11UP   |

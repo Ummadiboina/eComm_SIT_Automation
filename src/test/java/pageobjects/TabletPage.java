@@ -31,7 +31,7 @@ public class TabletPage {
 	@FindBy(how = How.XPATH, using = "//span[contains(text(),'Galaxy Tab A 2016 10.1')]")
 	public static WebElement SamsungGalaxy10;
 
-	@FindBy(how = How.XPATH, using = "(//*[@data-qa-subtypegroup='tablets'])[3]")
+	@FindBy(how = How.XPATH, using = "//*[@data-qa-device-condition='new'][1]")
 	public static WebElement RandomTablet;
 
 	/*

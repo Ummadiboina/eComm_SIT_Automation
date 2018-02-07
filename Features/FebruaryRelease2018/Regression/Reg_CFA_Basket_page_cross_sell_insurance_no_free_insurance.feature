@@ -17,4 +17,4 @@ Feature: CFA_Basket_page_cross_sell_insurance_no_free_insurance
 
     Examples: 
       | handset        |
-      | Apple iPhone 7 |
+      | Apple8 |
