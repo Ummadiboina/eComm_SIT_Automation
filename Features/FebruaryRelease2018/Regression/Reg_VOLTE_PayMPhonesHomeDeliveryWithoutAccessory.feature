@@ -16,6 +16,6 @@ Feature: Reg_VOLTE_PayMPhonesHomeDeliveryWithoutAccessory
     And Continue to Review page and review the order
     Then order confirmation is displayed with Volte message
 
-    Examples: 
+    Examples:
       | handset | Firstname | Surname | Username     |
-      | Iphone7 | TEST      | ACCEPTA | TEST ACCEPTA |
+      | Apple8  | TEST      | ACCEPTA | TEST ACCEPTA |

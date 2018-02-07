@@ -47,4 +47,4 @@ import java.util.List;
 
 public class RunnerTest extends ExtendedTestNGRunner {
 
-	}
+}
