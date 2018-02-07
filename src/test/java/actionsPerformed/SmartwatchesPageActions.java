@@ -94,7 +94,7 @@ public class SmartwatchesPageActions extends Environment {
 				Thread.sleep(15000);
 				System.out.println("Selected SamsungGearS2");
 				log.debug("Selected SamsungGearS2");
-			} else if (elementName.contains("Pebble Original Jet Black")) {
+			} else if (elementName.contains("Pebble Original")) {
 				pageobjects.SmartwatchesPage.PebbleOriginal.click();
 				Thread.sleep(15000);
 				System.out.println("Selected PebbleOriginal");

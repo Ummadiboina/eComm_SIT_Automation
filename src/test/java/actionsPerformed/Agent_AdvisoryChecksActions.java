@@ -29,7 +29,7 @@ public class Agent_AdvisoryChecksActions extends Environment {
 		log.debug("Clicked on Advisory checks");
 		System.out.println("Clicked on Advisory checks");
 		Thread.sleep(3000);
-		Screenshots.captureScreenshot();
+		//Screenshots.captureScreenshot();
 	}
 
 }

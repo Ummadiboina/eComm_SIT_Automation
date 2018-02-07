@@ -37,5 +37,5 @@ Feature: CFA_Phones_ColourDropdownsWithColourNamesBesideTheColourMultipleColour
 
     #Close the browser
     Examples:
-      | handset | Username    | color         | CFATariffColour |
-      | Apple8 | TEST ACCEPTA | Gold           | Gold            |
+      | handset | Username     | color | CFATariffColour |
+      | Apple8  | TEST ACCEPTA | Gold  | Gold            |

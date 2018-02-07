@@ -19,4 +19,4 @@ Feature: Reg_FNT_DifferentStoreAddressthanBillingAddres
 
     Examples: 
       | handset  | Firstname | Surname | Username     |
-      | GalaxyS7 | TEST      | ACCEPTA | TEST ACCEPTA |
+      | GalaxyS8 | TEST      | ACCEPTA | TEST ACCEPTA |

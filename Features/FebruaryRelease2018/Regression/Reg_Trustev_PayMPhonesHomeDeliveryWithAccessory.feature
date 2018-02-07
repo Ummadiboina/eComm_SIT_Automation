@@ -18,4 +18,4 @@ Feature: Reg_Trustev_PayMPhonesHomeDeliveryWithAccessory
 
     Examples: 
       | handset  | Firstname | Surname | Username     |
-      | GalaxyS7 | TEST      | ACCEPTA | TEST ACCEPTA |
+      | GalaxyS8 | TEST      | ACCEPTA | TEST ACCEPTA |

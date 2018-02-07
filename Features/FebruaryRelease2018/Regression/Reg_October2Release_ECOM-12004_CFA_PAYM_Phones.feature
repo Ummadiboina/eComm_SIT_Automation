@@ -42,5 +42,5 @@ Feature: CFA_Phones_SSCcheckoutpagesMarkMandatoryFieldsWithAsterisk
 
         #Close the browser
     Examples:
-      | handset        |
-      | Apple iPhone 7 |
+      | handset  |
+      | GalaxyS8 |

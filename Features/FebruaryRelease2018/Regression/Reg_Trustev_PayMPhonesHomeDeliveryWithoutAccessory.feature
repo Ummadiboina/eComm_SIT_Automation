@@ -20,5 +20,5 @@ Feature: Reg_Trustev_PayMPhonesHomeDeliveryWithoutAccessory
 
     #Close the browser
     Examples:
-      | handset  | Firstname | Surname | Username     |
-      | GalaxyS7 | TEST      | ACCEPTA | TEST ACCEPTA |
+      | handset | Firstname | Surname | Username     |
+      | Apple8  | TEST      | ACCEPTA | TEST ACCEPTA |

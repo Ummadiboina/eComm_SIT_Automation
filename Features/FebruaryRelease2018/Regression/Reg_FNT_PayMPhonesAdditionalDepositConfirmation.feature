@@ -19,4 +19,4 @@ Feature: Reg_FNT_PayMPhonesAdditionalDepositConfirmation
 
     Examples:
       | Firstname | Surname  | Username      | handset  | Username2    |
-      | TEST      | ADDINFOI | TEST ADDINFOI | GalaxyS7 | TEST ACCEPTA |
+      | TEST      | ADDINFOI | TEST ADDINFOI | GalaxyS8 | TEST ACCEPTA |

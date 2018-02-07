@@ -14,5 +14,5 @@ Feature: Reg_CS_FitnessTrackers
     Then order confirmation is displayed
 
     Examples:
-      | Device      | Firstname | Surname | Username     |
-      | Fitbit Alta | TEST      | ACCEPTA | TEST ACCEPTA |
+      | Device        | Firstname | Surname | Username     |
+      | Random Device | TEST      | ACCEPTA | TEST ACCEPTA |

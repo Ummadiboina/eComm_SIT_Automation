@@ -17,5 +17,5 @@ Feature: Reg_CS_PayMTabletsHomeDeliveryWithAccessory
     Then order confirmation is displayed
 
     Examples:
-      | Device         | Firstname | Surname | Username     |
-      | Apple iPad 9.7 | TEST      | ACCEPTA | TEST ACCEPTA |
+      | Device        | Firstname | Surname | Username     |
+      | Random Device | TEST      | ACCEPTA | TEST ACCEPTA |

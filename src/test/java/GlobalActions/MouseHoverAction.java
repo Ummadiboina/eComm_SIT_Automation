@@ -366,25 +366,35 @@ public class MouseHoverAction extends Environment {
 			try {
 				System.out.println("Performing navigations to PAYM Tablets");
 				log.debug("Performing navigations to PAYM Tablets");
-				Point coordinates = pageobjects.MouseHoverPage.MoveMouseOnShopTab.getLocation();
-				Robot robot = new Robot();
-				robot.mouseMove(coordinates.getX(), coordinates.getY() + 120);
+				/*Point coordinates = pageobjects.MouseHoverPage.MoveMouseOnShopTab.getLocation();
+				Robot robot = new Robot();*/
+				//robot.mouseMove(coordinates.getX(), coordinates.getY() + 120);
 				log.debug("Moving Mouse on the Shop Tab");
 				Actions action = new Actions(driver);
+				action.moveToElement(pageobjects.MouseHoverPage.MoveMouseOnShopTab).build().perform();
+				log.debug("Moving Mouse on the Tablets dropdown");
+
 				action.moveToElement(pageobjects.MouseHoverPage.MoveMouseOnTablets).build().perform();
 				Thread.sleep(2000);
+				log.debug("Moving Mouse on the Tablets dropdown");
+
+
 				action.moveToElement(pageobjects.MouseHoverPage.MoveMouseOnBrowseTablets).build().perform();
 				Thread.sleep(2000);
+				log.debug("Moving Mouse on the Browse Tablets dropdown");
+
 				pageobjects.MouseHoverPage.MoveMouseOnBrowseTablets.click();
 
 				// Move mouse pointer away from location
 				Point coordinates2 = driver.findElement(By.xpath("//*[@id='header-consumer']/div")).getLocation();
 				Robot robot2 = new Robot();
-				robot2.mouseMove(coordinates2.getX(), coordinates.getY() + 300);
+				robot2.mouseMove(coordinates2.getX(), coordinates2.getY() + 300);
 				log.debug("Moved Mouse to somewhere side of page");
 
 				Worksfine = true;
 				Screenshots.captureScreenshot();
+
+
 
 			} catch (ElementNotVisibleException e) {
 				// check if popup is present, if yes, handle it.

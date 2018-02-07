@@ -15,4 +15,4 @@ Feature: Reg_FNT_PayMPhonesOrderStraightDecline_ClickandCollect
 
     Examples:
       | handset  | Firstname | Surname  | Username      |
-      | GalaxyS7 | TEST      | DECLINEA | TEST DECLINEA |
+      | GalaxyS8 | TEST      | DECLINEA | TEST DECLINEA |

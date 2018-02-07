@@ -74,7 +74,11 @@ public class Agent_CreditCheckPageActions extends Environment {
 
 	public static void Creditcheck(String Firstname, String Surname, String HouseNumber, String PostCode) throws InterruptedException, IOException {
 		//Select dropdown = new Select(pageobjects.Agent_CreditCheckDetailsPage.Title);
-		WebElement ele = driver.findElement(By.xpath("//*[@id='regTitle'] or //[@id='ccTitle']"));
+		JavascriptExecutor executor = (JavascriptExecutor)driver;
+		//executor.executeScript("arguments[0].click();", element);
+
+		System.out.println("\n in Credit check function -  Agent credit check actions");
+		WebElement ele = driver.findElement(By.xpath("//*[@id='regTitle' or @id='ccTitle'][1]"));
 		Select sel = new Select(ele);
 		sel.selectByVisibleText("Mr");
 		System.out.println("Select a Gender");

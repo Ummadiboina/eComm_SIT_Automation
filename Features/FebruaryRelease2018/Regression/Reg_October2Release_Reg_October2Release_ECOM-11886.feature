@@ -20,5 +20,5 @@ Feature: CFA_Phones_CustomersMovedToNewAddressPaymentPageHomeAddressCopyUpdate
 
 
     Examples:
-      | handset          | Firstname | Surname | Username     |
-      | AppleiPhone7Plus | TEST      | ACCEPTA | TEST ACCEPTA |
+      | handset  | Firstname | Surname | Username     |
+      | GalaxyS8 | TEST      | ACCEPTA | TEST ACCEPTA |

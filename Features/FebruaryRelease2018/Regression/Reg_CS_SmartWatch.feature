@@ -14,5 +14,5 @@ Feature: Reg_CS_SmartWatch
     Then order confirmation is displayed
 
     Examples:
-      | Firstname | Surname | Username     | Device                    |
-      | TEST      | ACCEPTA | TEST ACCEPTA | Pebble Original Jet Black |
+      | Firstname | Surname | Username     | Device          |
+      | TEST      | ACCEPTA | TEST ACCEPTA | Pebble Original |

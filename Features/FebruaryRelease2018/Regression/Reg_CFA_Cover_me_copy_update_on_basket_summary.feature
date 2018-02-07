@@ -1,24 +1,24 @@
 Feature: CFA_Cover_me_copy_update_on_basket_summary
 
   @Web
-  Scenario Outline: 
-    This scenario ensures that when the customer on acquisition journey selects insurance, 
-    then the customer should be able to see 'Insurance' copy text in the SSC checkout Your order section instead of 'Cover Me'
-    
-    select tablet
-    and view tariff
-    select insurance
-    go to basket
-    go to checkout
-    verify insurance copy text is displayed on delivery page
-    continue to payment page
-    verify insurance copy text is displayed on payment page
-    continue to next step
-    verify insurance copy text is displayed on the agreement page
-    continue to next step
-    verify insurance copy text is displayed on your order section
-    continue to next step 
-    download pdf and  verify insurance copy text is displayed on pdf
+  Scenario Outline:
+  This scenario ensures that when the customer on acquisition journey selects insurance,
+  then the customer should be able to see 'Insurance' copy text in the SSC checkout Your order section instead of 'Cover Me'
+
+  select tablet
+  and view tariff
+  select insurance
+  go to basket
+  go to checkout
+  verify insurance copy text is displayed on delivery page
+  continue to payment page
+  verify insurance copy text is displayed on payment page
+  continue to next step
+  verify insurance copy text is displayed on the agreement page
+  continue to next step
+  verify insurance copy text is displayed on your order section
+  continue to next step
+  download pdf and  verify insurance copy text is displayed on pdf
 
     Given I am an CFA user and Lands on shop page
     And navigate to PAYM Tablets page
@@ -44,6 +44,6 @@ Feature: CFA_Cover_me_copy_update_on_basket_summary
     Then verify cover me is present in  pdf download
 
     #And pdf content
-    Examples: 
-      | tabletname               | color     | capacity | Status   | handset  | Firstname | Surname | Username     |
-      | Apple iPad Pro 10.5 inch | Rose Gold | 256GB    | In Stock | GalaxyS8 | TEST      | ACCEPTA | TEST ACCEPTA |
+    Examples:
+      | tabletname    | color     | capacity | Status   | handset  | Firstname | Surname | Username     |
+      | Random Device | Rose Gold | 256GB    | In Stock | GalaxyS8 | TEST      | ACCEPTA | TEST ACCEPTA |
