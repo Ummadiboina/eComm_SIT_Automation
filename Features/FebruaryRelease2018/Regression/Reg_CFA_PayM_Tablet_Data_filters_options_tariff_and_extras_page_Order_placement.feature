@@ -1,5 +1,5 @@
 Feature: CFA_PayM_Phone_Data_filters_options_tariff_and_extras_page_Order_placement
-  This scenario ensures that when a customer in acquisition journey selects 'Phone' and navigated to tariff page ,then 
+  This scenario ensures that when a customer in acquisition journey selects 'Phone' and navigated to tariff page ,then
   the customer should be able to see  'Data filter' button next to sort drop-down for PayM tariffs
 
   @Web
@@ -28,7 +28,7 @@ Feature: CFA_PayM_Phone_Data_filters_options_tariff_and_extras_page_Order_placem
     And Continue to Review page and review the order
     Then order confirmation is displayed
 
-    Examples: 
-      | handset           | Firstname | Surname | Username     | filtername | sortoption                 |
-      | Samsung Galaxy S8 | TEST      | ACCEPTA | TEST ACCEPTA | high       | Monthly data (Low to High) |
+    Examples:
+      | handset        | Firstname | Surname | Username     | filtername | sortoption                 |
+      | Galaxy S8 Plus | TEST      | ACCEPTA | TEST ACCEPTA | high       | Monthly data (Low to High) |
    #   | Apple iPhone 7    | TEST      | ACCEPTA | TEST ACCEPTA | high       |

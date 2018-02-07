@@ -18,6 +18,6 @@ Feature: Reg_AFA_Tablet
     When Pay by card for PAYM device
     Then Order confirmation message should be displayed
 
-    Examples: 
-      | Device | Tariffs |  DeliveryType | Firstname | Surname | Username     | HouseNumber | PostCode |
-      | tablet | Random  |  HomeDelivery | TEST      | ACCEPTA | TEST ACCEPTA |           18 | SL11UP   |
+    Examples:
+      | Device | Tariffs | DeliveryType | Firstname | Surname | Username     | HouseNumber | PostCode |
+      | tablet | Random  | HomeDelivery | TEST      | ACCEPTA | TEST ACCEPTA | 18          | SL11UP   |
