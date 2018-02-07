@@ -1,4 +1,4 @@
-Feature: CFU_Tablet_Delivery_page_more_than_one_address_select_one_compress_others
+Feature:CFU_Tablet_Delivery_page_more_than_one_address_select_one_compress_others
   This scenario ensures that when the customer on upgrade journey selects 'Tablet' proceeds till Delivery page and enters the postcode, then all the other addresses in the drop down should be compressed on selecting one of the address
 
   @Web
@@ -22,6 +22,6 @@ Feature: CFU_Tablet_Delivery_page_more_than_one_address_select_one_compress_othe
     And Click on 'Place your order' CTA
 
     Examples:
-      | username                         | password | Tablet        | tariff                 | houseNumber | Postcode | Username     |
-      | inavlwx_nov8565@stf.ref.o2.co.uk | test123  | Random Device | 9.99upfront60.00amonth | 111         | SL11Er   | Test Accepta |
+      | username                       | password | Tablet        | tariff                 | houseNumber | Postcode | Username     |
+      |  27fe76531842@stf.ref.o2.co.uk | test123  | Random Device | 9.99upfront60.00amonth | 111         | SL11Er   | Test Accepta |
 

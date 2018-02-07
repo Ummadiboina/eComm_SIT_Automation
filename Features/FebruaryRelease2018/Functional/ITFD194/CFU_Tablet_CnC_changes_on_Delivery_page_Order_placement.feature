@@ -1,4 +1,5 @@
 Feature: CFU_Tablet_CnC_changes_on_Delivery_page_Order_placement
+
   This scenario ensures that when the customer on upgrade journey selects 'Tablet' proceeds till Delivery page, then the customer should be displayed with 'Go to click and collect’ under the Home delivery tab and should be able to place order with Click and collect
   @Web
   Scenario Outline: CFU_Tablet_CnC_changes_on_Delivery_page_Order_placement
@@ -17,6 +18,8 @@ Feature: CFU_Tablet_CnC_changes_on_Delivery_page_Order_placement
     And Continue to Review page and review the order
     Then order confirmation is displayed
 
-    Examples:
-    | username                       | password | Tablet         | Tariff                 | Username     | Firstname | Surname |
-    |  27fe76531842@stf.ref.o2.co.uk | test123  |  Random Device | 9.99upfront60.00amonth | TEST ACCEPTA | Test      | Accepta |
+
+      Examples:
+      | username                       | password | Tablet        | tariff                 | houseNumber | Postcode | Username     |
+      |  int_aug3340@stf.ref.o2.co.uk  | test123  | Random Device | 9.99upfront60.00amonth | 111         | SL11Er   | Test Accepta |
+
