@@ -40,7 +40,7 @@ public class BrowserHelper extends Environment{
 			driver.manage().window().maximize();
 
 		} else if (BrowserType.equalsIgnoreCase("chrome")) {
-			System.setProperty("webdriver.chrome.driver", "Browsers/ChromeDriver/chromedriver_62_64.exe");
+			System.setProperty("webdriver.chrome.driver", "Browsers/ChromeDriver/chromedriver.exe");
 			// Environment.driver = new ChromeDriver();
 			DesiredCapabilities capabilities = DesiredCapabilities.chrome();
 			capabilities.setCapability(CapabilityType.ACCEPT_SSL_CERTS, true);
