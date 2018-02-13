@@ -23,7 +23,7 @@ public class MobileBroadBandPage {
 		@FindBy(how=How.XPATH,using="//a[contains(@href, '/shop/mobile-broadband/huawei/4g-dongle-with-wifi/#contractType=payasyougo')]")
 		public static WebElement Huawei4GDongleWithWifi;
 		
-		@FindBy(how=How.XPATH,using="//*[@data-qa-subtypegroup='mobile-broadband'][1]")
+		@FindBy(how=How.XPATH,using="(//img[@class='device-image'])[1]")
 		public static WebElement RandomPayGDeviceSelect;
 
 		

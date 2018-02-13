@@ -81,7 +81,7 @@ public class PAYMandPAYGTariffAndExtrasPage {
 	@FindAll({ @FindBy(how = How.XPATH, using = "//div[@class=' insurance-button-container '][1]") })
 	public static WebElement AddRandomInsurance;
 
-	@FindAll({ @FindBy(how = How.XPATH, using = "//div[@class='filter-label']") })
+	@FindAll({ @FindBy(how = How.XPATH, using = "(//div[@class='filter-label'])[1]//span") })
 	public static WebElement FilterandSortLabel;
 
 	@FindBy(how = How.XPATH, using = "//select[@id='dataFilterSelect']")
@@ -120,7 +120,7 @@ public class PAYMandPAYGTariffAndExtrasPage {
 	@FindBy(how = How.XPATH, using = "//div[@class='filter-options']/button[contains(@class,'active')]")
 	public static WebElement DataFilterSelectedXpath;
 
-	@FindAll({ @FindBy(how = How.XPATH, using = ("//div[@class='viewAllTariffs']")) })
+	@FindAll({ @FindBy(how = How.XPATH, using = ("(//div[@class='viewAllTariffs'])[1]")) })
 	public static List<WebElement> ViewAllTariffs;
 
 	@FindBy(how = How.XPATH, using = "//*[@id=\"DR346\"]/a[1]/button")

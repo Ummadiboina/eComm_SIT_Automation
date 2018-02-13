@@ -3127,7 +3127,7 @@ public class E2EOrderPlaced_Steps {
         try {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, ConnectedDeviceDetailsPage.class);
-            ConnectedDeviceDetailsPageAction.capacitySelectOfDeviceDropDown(capacity);
+            //ConnectedDeviceDetailsPageAction.capacitySelectOfDeviceDropDown(capacity);
 
         } catch (Exception e) {
             e.printStackTrace();

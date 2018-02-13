@@ -2,6 +2,7 @@ package actionsPerformed;
 
 import java.io.IOException;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
@@ -14,6 +15,8 @@ import GlobalActions.Screenshots;
 import helpers.Environment;
 import helpers.Filereadingutility;
 import helpers.setRuntimeProperty;
+
+import javax.security.sasl.SaslServer;
 
 public class AccessoryPageActions extends Environment {
 
@@ -212,17 +215,22 @@ public class AccessoryPageActions extends Environment {
 			// Below will give status like in stock / out of stock etc
 			Thread.sleep(5000);
 
-			String status = driver.findElement(By.xpath("(//span[@class='delivery-message'])[1]")).getText();
+
+			driver.findElement(By.xpath("(//div[@class='device-tile__top']//img)[1]")).click();
+			driver.manage().timeouts().implicitlyWait(02, TimeUnit.MINUTES);
+			Thread.sleep(5000);
+			String status = driver.findElement(By.xpath("//p[@class='delivery-information']//span[1]")).getText();
 			System.out.println(status);
 
 			if (status.contains("In Stock")) {
-				WebElement element = driver.findElement(By.id("accessory-quantitySelectBoxItArrowContainer"));
+				//driver.findElement(By.xpath("//label[normalize-space(.)='Quantity:']/parent::div//span[@role='combobox']/span/span[1]")).click();
 		/*		JavascriptExecutor js = (JavascriptExecutor) driver;
 				js.executeScript("arguments[0].setAttribute('style', 'display:yellow;')", element);
 				new Select(element).selectByValue("2");*/
-				element.click();
-				driver.findElement(By.xpath("(//*[@data-val='2'])[1]")).click();
-
+				//element.click();
+				Thread.sleep(2000);
+				//driver.findElement(By.xpath("(//*[@data-val='2'])[1]")).click();
+				System.out.println("The mode of the quality is : " + status);
 				/*WebElement DeviceDetailsQuantity = driver.findElement(
 						By.xpath("//div[@on-dimension-select='selectQuantityDimension']/span[@role='combobox']"));
 				String DeviceDetailsQuantityValue = DeviceDetailsQuantity.getText();
@@ -238,7 +246,7 @@ public class AccessoryPageActions extends Environment {
 			Screenshots.captureScreenshot();
 
 		} catch (Exception e) {
-			WebElement DeviceDetailsQuantity = driver.findElement(
+		/*	WebElement DeviceDetailsQuantity = driver.findElement(
 					By.xpath("//div[@on-dimension-select='selectQuantityDimension']/span[@role='combobox']"));
 			String DeviceDetailsQuantityValue = DeviceDetailsQuantity.getText();
 			System.out.println(DeviceDetailsQuantityValue);
@@ -255,8 +263,9 @@ public class AccessoryPageActions extends Environment {
 			String BasketQuantityvalue = BasketQuantity.getText();
 			// Assert.assertEquals(DeviceDetailsQuantityValue,
 			// BasketQuantityvalue);
-			Assert.assertEquals("2", BasketQuantityvalue);
-
+			Assert.assertEquals("2", BasketQuantityvalue);*/
+			System.out.println("Getting Error  as : " + e.getStackTrace());
+			e.printStackTrace();
 			Screenshots.captureScreenshot();
 
 		}
@@ -268,7 +277,7 @@ public class AccessoryPageActions extends Environment {
 			// Below will give status like in stock / out of stock etc
 			Thread.sleep(5000);
 			UserSpecifiedAccessoryLimit = Integer.parseInt(Limit);
-			String status = driver.findElement(By.className("status-info")).getText();
+			String status = driver.findElement(By.xpath("//span[@class='status-info ng-binding confirm']")).getText();
 			System.out.println(status);
 
 			if (status.contains("In Stock")) {
