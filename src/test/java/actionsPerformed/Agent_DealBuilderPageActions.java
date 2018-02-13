@@ -141,8 +141,13 @@ public class Agent_DealBuilderPageActions extends Environment {
 	public static void HandsetTariffCombination() throws InterruptedException, IOException {
 		try {
 			Select dropdown = new Select(pageobjects.Agent_DealBuilderPage.HandsetTariffCombination);
-			dropdown.selectByIndex(3);
+			Thread.sleep(3000);
+			Agent_DealBuilderPage.HandsetTariffCombination.click();
+			Thread.sleep(3000);
+			Agent_DealBuilderPage.Copytobasket_opt3.click();
+			//dropdown.selectByIndex(3);
 			System.out.println("Selecting combination of handset and talkplan");
+			Thread.sleep(9000);
 			System.out.println(
 					"Selected combination is" + pageobjects.Agent_DealBuilderPage.HandsetTariffCombination.getText());
 			Screenshots.captureScreenshot();

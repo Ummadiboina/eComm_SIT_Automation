@@ -85,7 +85,7 @@ public class MouseHoverPage extends Environment {
 	public static WebElement MoveMouseOnTablets;
 
 	// Below is the link on the Accessory
-	@FindBy(how = How.XPATH, using = ("//a[contains(text(), 'Accessories')]"))
+	@FindBy(how = How.XPATH, using = ("(//a[contains(text(), 'Accessories')])[1]"))
 	public static WebElement MoveMouseOnAccessoriesTab;
 
 	@FindBy(how = How.XPATH, using = ("//a[contains(text(), 'All accessories')]"))

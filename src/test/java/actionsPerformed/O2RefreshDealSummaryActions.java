@@ -3,6 +3,7 @@ package actionsPerformed;
 import java.io.IOException;
 
 import org.apache.log4j.Logger;
+import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 
 import GlobalActions.Screenshots;
@@ -14,11 +15,15 @@ public class O2RefreshDealSummaryActions extends Environment {
 	final static Logger log = Logger.getLogger("O2RefreshDealSummaryActions");
 
 	public static void DealSummarySectionforCCA() throws IOException, InterruptedException {
-		if (O2RefreshDealSummaryPage.DealSummarySection.isDisplayed()) {
+		if (driver.findElements(By.xpath("(//*[@id='secciYesButton' or @id='updateEmailAddressProceedButton'])[1]")).size() > 0) {
 			System.out.println("The Deal summary section is displayed");
 			O2RefreshDealSummaryPage.SummariseTheDealYes.click();
 			log.debug("The Yes button in the deal summary is clicked");
 		}
+		if(driver.findElements(By.xpath("(//*[@id='secciYesButton' or @id='updateEmailAddressProceedButton'])[2]")).size() > 0){
+				O2RefreshDealSummaryPage.SummariseTheDealYes2.click();
+				log.debug("The Yes2 button in the deal summary is clicked");
+			}
 
 		else {
 			System.out.println("The Deal summary is not present");

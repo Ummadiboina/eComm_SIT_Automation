@@ -23,6 +23,6 @@ Feature: Reg_Agent_TradeIn
     Then order confirmation is displayed
 
 
-    Examples: 
-      | User        | Device              | Tariffs | username                      | user         | DeliveryType | Firstname | Surname | Username     | HouseNumber | PostCode | password |
-      | 07801057560 | S7 edge black 32 GB | Refresh | 23oc84050507@stf.ref.o2.co.uk | TEST ACCEPTA | HomeDelivery | TEST      | ACCEPTA | TEST ACCEPTA | Flat 6      | SL11EL   | test123  |
+    Examples:
+      | User        | Device                   | Tariffs | username                      | user         | DeliveryType | Firstname | Surname | Username     | HouseNumber | PostCode | password |
+      | 07521000506 | Galaxy S7 Edge 32GB Pink | Refresh | 23oc84050507@stf.ref.o2.co.uk | TEST ACCEPTA | HomeDelivery | TEST      | ACCEPTA | TEST ACCEPTA | Flat 6      | SL11EL   | test123  |

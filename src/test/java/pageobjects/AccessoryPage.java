@@ -27,7 +27,7 @@ public class AccessoryPage {
 	@FindBy(how = How.XPATH, using = "//a[contains(@data-qa-device-model-family, 'Xtreme')]")
 	public static WebElement JBLXtreme;
 
-	@FindBy(how = How.XPATH, using = "(//*[@data-qa-subtypegroup='accessories'][1])")
+	@FindBy(how = How.XPATH, using = "(//div[@component-name='productTile'])[1]//a")
 	public static WebElement RandomAccessory;
 
 	// Below is for clicking on the Basket icon in Accessories page

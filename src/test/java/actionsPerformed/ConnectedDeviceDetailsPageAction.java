@@ -10,10 +10,12 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.SearchContext;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 
 import GlobalActions.Screenshots;
 import helpers.Environment;
+import pageobjects.ConnectedDeviceDetailsPage;
 
 //This page will have details on the individual device
 
@@ -238,15 +240,17 @@ public class ConnectedDeviceDetailsPageAction extends Environment {
 		// TODO Auto-generated method stub
 		Thread.sleep(5000);
 
-		WebElement element = pageobjects.ConnectedDeviceDetailsPage.ColorDropDown;
-		JavascriptExecutor js = (JavascriptExecutor) driver;
-		js.executeScript("arguments[0].setAttribute('style', 'display:block;')", element);
-		if (element.isDisplayed()) {
+		 ConnectedDeviceDetailsPage.ColorDropDown.click();
+		 WebElement ele = driver.findElement(By.xpath("(//span[@class='selectboxit-option-icon-container']/following-sibling::span[normalize-space()='"+color+"'])[1]"));
+		Actions act = new Actions(driver);
+		act.moveToElement(ele).click().build().perform();
+		// ele.click();
+		/*JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].setAttribute('style', 'display:block;')", element);*/
+		/*if (element.isDisplayed()) {
 			new Select(element).selectByVisibleText(color);
 			System.out.println("Selected" + color);
-		}
-
-
+		}*/
 		Screenshots.captureScreenshot();
 
 	}
@@ -258,10 +262,16 @@ public class ConnectedDeviceDetailsPageAction extends Environment {
 		WebElement element = pageobjects.ConnectedDeviceDetailsPage.CapacityDropDown;
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("arguments[0].setAttribute('style', 'display:block;')", element);
-		if (element.isDisplayed()) {
-			new Select(element).selectByVisibleText(capacity);
+		WebElement capacitySel = driver.findElement(By.xpath("//*[@id='memorySelectBoxItArrowContainer']"));
+		/*Actions act = new Actions(driver);
+		act.moveToElement(capacitySel).click().build().perform();*/
+		Select sel = new Select(capacitySel);
+		sel.selectByValue("64gb");
+
+		/*if (capacitySel.isDisplayed()) {
+			capacitySel.click();
 			System.out.println("Selected" + capacity);
-		}
+		}*/
 		Screenshots.captureScreenshot();
 	}
 

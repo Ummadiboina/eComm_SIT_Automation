@@ -20,4 +20,4 @@ Feature: CFA_Basket page cross sell insurance
 
     Examples:
       | handset | tariff                 |
-      | Apple8  | 9.99upfront68.00amonth |
+      | Apple8  | 9.99upfront44.00amonth |

@@ -102,9 +102,13 @@ public class AccessoryPageActions extends Environment {
 	public static void SelectAnyAccessory(String elementName) throws IOException, InterruptedException {
 
 		JavascriptExecutor executor = (JavascriptExecutor) driver;
+
+		Thread.sleep(1000	);
+		executor.executeScript("arguments[0].scrollIntoView(true);",pageobjects.AccessoryPage.ViewAllProductsOnOnePage);
+		Thread.sleep(2000	);
 		executor.executeScript("arguments[0].click();", pageobjects.AccessoryPage.ViewAllProductsOnOnePage);
 
-		if (elementName.contains("Random")) {
+		/*if (elementName.contains("Random")) {
 			System.out.println("Selecting Any Accessory");
 			log.debug("Selecting Any Accessory");
 			log.debug("Selected an accessory -  " + pageobjects.AccessoryPage.RandomAccessory.getText());
@@ -164,7 +168,7 @@ public class AccessoryPageActions extends Environment {
 			log.debug("Selecting Samsung S8 Plus Original LED Cover");
 			pageobjects.AccessoryPage.SamsungS8PlusOriginalLEDCover.click();
 			log.debug("Samsung S8 Plus Original LED Cover Selected");
-		}
+		}*/
 		Screenshots.captureScreenshot();
 	}
 	/*
@@ -208,22 +212,23 @@ public class AccessoryPageActions extends Environment {
 			// Below will give status like in stock / out of stock etc
 			Thread.sleep(5000);
 
-			String status = driver.findElement(By.className("status-info")).getText();
+			String status = driver.findElement(By.xpath("(//span[@class='delivery-message'])[1]")).getText();
 			System.out.println(status);
 
 			if (status.contains("In Stock")) {
-				WebElement element = driver
-						.findElement(By.xpath("//select[@class='accessory-option ng-pristine ng-valid']"));
-				JavascriptExecutor js = (JavascriptExecutor) driver;
-				js.executeScript("arguments[0].setAttribute('style', 'display:block;')", element);
-				new Select(element).selectByValue("2");
+				WebElement element = driver.findElement(By.id("accessory-quantitySelectBoxItArrowContainer"));
+		/*		JavascriptExecutor js = (JavascriptExecutor) driver;
+				js.executeScript("arguments[0].setAttribute('style', 'display:yellow;')", element);
+				new Select(element).selectByValue("2");*/
+				element.click();
+				driver.findElement(By.xpath("(//*[@data-val='2'])[1]")).click();
 
-				WebElement DeviceDetailsQuantity = driver.findElement(
+				/*WebElement DeviceDetailsQuantity = driver.findElement(
 						By.xpath("//div[@on-dimension-select='selectQuantityDimension']/span[@role='combobox']"));
 				String DeviceDetailsQuantityValue = DeviceDetailsQuantity.getText();
 				System.out.println("DeviceDetailsQuantityValue is " + DeviceDetailsQuantityValue);
 
-				//driver.findElement(By.id("deviceDetailsSubmit")).click();
+				//driver.findElement(By.id("deviceDetailsSubmit")).click();*/
 
 				Thread.sleep(7000);
 

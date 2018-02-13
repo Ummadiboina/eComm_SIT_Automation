@@ -16,7 +16,7 @@ Feature: CFA_SIMO_Phone_Data_filters_options_Order_placement
     When I deselect filter button
     Then I should see default tariff lists
     And Select any Random Tariff in the displayed list of Tariffs under different <Contract> tab
-    And I Land on the Plan included basket page and choose home delivery option
+    And I Land on the Plan included basket page  and choose home delivery option
     And click on "go to checkout" button
     And input <Firstname> and <Surname> and other valid details in Delivery page and Click on the 'Continue button'
     And land on the payment page and input <Username> and other details and click 'Continue on next step'

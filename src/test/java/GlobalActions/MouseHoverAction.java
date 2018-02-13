@@ -594,13 +594,13 @@ public class MouseHoverAction extends Environment {
 				robot.mouseMove(coordinates.getX(), coordinates.getY() + 110);
 
 				Actions action = new Actions(driver);
-				// action.moveToElement(pageobjects.MouseHoverPage.MoveMouseOnShopTab).build().perform();
-
-				action.moveToElement(pageobjects.MouseHoverPage.MoveMouseOnAccessoriesTab).build().perform();
+				action.moveToElement(pageobjects.MouseHoverPage.MoveMouseOnShopTab).perform();
 				Thread.sleep(2000);
-				action.moveToElement(pageobjects.MouseHoverPage.MoveMouseOnAllAccessories).build().perform();
+				action.moveToElement(pageobjects.MouseHoverPage.MoveMouseOnAccessoriesTab).perform();
 				Thread.sleep(2000);
-				pageobjects.MouseHoverPage.MoveMouseOnAllAccessories.click();
+				action.moveToElement(pageobjects.MouseHoverPage.MoveMouseOnAllAccessories).click().build().perform();
+				Thread.sleep(2000);
+				//pageobjects.MouseHoverPage.MoveMouseOnAllAccessories.click();
 
 				// Move mouse pointer away from location
 				Point coordinates2 = driver.findElement(By.xpath("//*[@id='header-consumer']/div")).getLocation();
