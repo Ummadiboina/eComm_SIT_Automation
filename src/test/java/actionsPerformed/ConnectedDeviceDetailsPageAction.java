@@ -261,12 +261,14 @@ public class ConnectedDeviceDetailsPageAction extends Environment {
 
 		WebElement element = pageobjects.ConnectedDeviceDetailsPage.CapacityDropDown;
 		JavascriptExecutor js = (JavascriptExecutor) driver;
-		js.executeScript("arguments[0].setAttribute('style', 'display:block;')", element);
-		WebElement capacitySel = driver.findElement(By.xpath("//*[@id='memorySelectBoxItArrowContainer']"));
-		/*Actions act = new Actions(driver);
-		act.moveToElement(capacitySel).click().build().perform();*/
+		js.executeScript("documents", element);
+		/*WebElement capacitySel = driver.findElement(By.xpath("/*//*[@id='memorySelectBoxItArrowContainer']"));
+		*//*Actions act = new Actions(driver);
+		act.moveToElement(capacitySel).click().build().perform();*//*
 		Select sel = new Select(capacitySel);
-		sel.selectByValue("64gb");
+		sel.selectByValue("64gb");*/
+
+
 
 		/*if (capacitySel.isDisplayed()) {
 			capacitySel.click();

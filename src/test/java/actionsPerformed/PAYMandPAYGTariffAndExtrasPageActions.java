@@ -555,7 +555,7 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 			Thread.sleep(4000);
 			String text1 = pageobjects.PAYMandPAYGTariffAndExtrasPage.FilterandSortLabel.getText();
 			System.out.println(text1);
-			if (text1.contains("Sort tariff") && text1.contains("Filter")) {
+			if (text1.contains("data ") && text1.contains("Filter")) {
 				System.out.println("Section is containing both Sort tariff and Filter");
 			} else {
 				System.out.println("Section doesnot contains both Sort tariff and Filter");
