@@ -60,6 +60,7 @@ public class E2EOrderPlaced_Steps {
     @Given("^I am an CFA user and Lands on shop page$")
     public void i_am_an_CFA_user_and_Lands_on_shop_page() throws Throwable {
         try {
+            ShopLandingPageAction.GetTitle_ref();
             ShopLandingPageAction.GetTitle();
 
         } catch (Exception e) {
