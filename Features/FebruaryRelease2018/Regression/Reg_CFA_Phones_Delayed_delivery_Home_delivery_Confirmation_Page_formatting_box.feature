@@ -7,7 +7,7 @@ Feature: CFA_Phones_Delayed_delivery_Home_delivery_Confirmation_Page_formatting_
 
     Given I am an CFA user and Lands on shop page
     And navigate to PAYM Phones page
-    And I choose PayM <handset> #provide handset which is already set as delayed delivery
+    And I choose PayM <handset>
     And select <color> color of the connected device
     And Navigate to device details page
     And Land on the 'Tariffs and extra' page

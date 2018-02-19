@@ -56,6 +56,8 @@ public class BrowserHelper extends Environment{
 
 		} else if (BrowserType.equalsIgnoreCase("mozilla")) {
 
+			FirefoxProfile profile = new FirefoxProfile();
+			profile.setAssumeUntrustedCertificateIssuer(false);
 			System.setProperty("webdriver.gecko.driver", "Browsers/GeckoDriver/geckodriver.exe");
 			DesiredCapabilities capabilities = DesiredCapabilities.firefox();
 			FirefoxProfile fp = new FirefoxProfile();

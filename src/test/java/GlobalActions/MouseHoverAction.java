@@ -21,46 +21,55 @@ public class MouseHoverAction extends Environment {
 	// Below will navigate to PayM Phones Page
 
 	public static void PayMPhonesLandingPage() throws Exception {
-		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
-		boolean Worksfine = false;
-		while (!Worksfine) {
+		driver.manage().timeouts().implicitlyWait(150, TimeUnit.SECONDS);
+		/*boolean Worksfine = false;
+		while (!Worksfine) {*/
 			try {
 				System.out.println("Performing PAYM Phones landing page navigations");
 				log.debug("Performing PAYM Phones landing page navigations");
-
+				Thread.sleep(3000);
 				Point coordinates = pageobjects.MouseHoverPage.MoveMouseOnShopTab.getLocation();
 				Robot robot = new Robot();
 				robot.mouseMove(coordinates.getX(), coordinates.getY() + 120);
-				log.debug("Moving Mouse on the Shop Tab");
-
+				log.debug("Moving Mouse onThread.sleep(2000); the Shop Tab");
 				Actions action = new Actions(driver);
-				action.moveToElement(pageobjects.MouseHoverPage.MoveMouseOnPhones).build().perform();
+				action.moveToElement(pageobjects.MouseHoverPage.MoveMouseOnShopTab).perform();
+				System.out.println("Mouse over on the Shop Header ");
+				Thread.sleep(2000);
+				Actions action1 = new Actions(driver);
+				action1.moveToElement(pageobjects.MouseHoverPage.MoveMouseOnPhones).perform();
+				System.out.println("Mouse over Shop---> Phones ");
 				log.debug("Moving Mouse on the Phones dropdown");
-
-				Thread.sleep(1000);
-				action.moveToElement(pageobjects.MouseHoverPage.MoveMouseOnPAYMPhones).build().perform();
+				Thread.sleep(2000);
+				/*Actions action2 = new Actions(driver);
+				action2.moveToElement(pageobjects.MouseHoverPage.MoveMouseOnPAYMPhones).click().build().perform();*/
+				pageobjects.MouseHoverPage.MoveMouseOnPAYMPhones.click();
+				System.out.println("Mouse over Shop---> Phones--> Pay monthly phones ");
+				Thread.sleep(5000);
+				//action.moveToElement(pageobjects.MouseHoverPage.MoveMouseOnPAYMPhones).build().perform();
 				log.debug("Moving Mouse on the Paymonthly link");
 				Screenshots.captureScreenshot();
 
 				Thread.sleep(1000);
-				pageobjects.MouseHoverPage.MoveMouseOnPAYMPhones.click();
+				//pageobjects.MouseHoverPage.MoveMouseOnPAYMPhones.click();
 				Screenshots.captureScreenshot();
 
 				log.debug("Clicking on PayM Phones");
 
 				// Move mouse pointer away from location
 				Point coordinates2 = driver.findElement(By.xpath("//*[@id='header-consumer']/div")).getLocation();
-
+/*
 				Robot robot2 = new Robot();
 				robot2.mouseMove(coordinates2.getX(), coordinates.getY() + 300);
 				log.debug("Moved Mouse to somewhere side of page");
-
-				Worksfine = true;
-				Screenshots.captureScreenshot();
+					*/
+				/*Worksfine = true;
+				Screenshots.captureScreenshot();*/
 
 			} catch (ElementNotVisibleException e) {
+				System.out.println("Failed to mouse over, &  Error as : " + e.getStackTrace());
 				// check if popup is present, if yes, handle it.
-				Environment.driver.switchTo().frame("edr_l_first");
+				/*Environment.driver.switchTo().frame("edr_l_first");
 				System.out.println("********We are switch to the iframe*******");
 				log.debug("Popup has appeared on the screen, Hence trying to close the survey");
 				Screenshots.captureScreenshot();
@@ -70,11 +79,9 @@ public class MouseHoverAction extends Environment {
 				System.out.println("*******Saying no to survey*******");
 				System.out.println("*********Existing the popups present in iframe***************");
 				log.debug("Exiting the Survey");
-				Environment.driver.switchTo().defaultContent();
+				Environment.driver.switchTo().defaultContent();*/
 				Thread.sleep(2000);
-
 			}
-		}
 	}
 
 	// Below will navigate to PayG Phones Page
@@ -577,21 +584,19 @@ public class MouseHoverAction extends Environment {
 
 	// Below will navigate to ACCESSORIES Page
 	public static void AccessoriesLandingPage() throws Exception {
-
 		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
-		boolean Worksfine = false;
-		while (!Worksfine)
+		/*boolean Worksfine = false;
+		while (!Worksfine)*/
 			try {
-
 				System.out.println("Performing Accessories navigations");
 				log.debug("Performing Accessories navigations");
-
 				driver.navigate().refresh();
 				Thread.sleep(5000);
-
+				driver.manage().timeouts().implicitlyWait(1,TimeUnit.MINUTES);
+/*
 				Point coordinates = pageobjects.MouseHoverPage.MoveMouseOnShopTab.getLocation();
 				Robot robot = new Robot();
-				robot.mouseMove(coordinates.getX(), coordinates.getY() + 110);
+				robot.mouseMove(coordinates.getX(), coordinates.getY() + 110);*/
 
 				Actions action = new Actions(driver);
 				action.moveToElement(pageobjects.MouseHoverPage.MoveMouseOnShopTab).perform();
@@ -601,19 +606,18 @@ public class MouseHoverAction extends Environment {
 				action.moveToElement(pageobjects.MouseHoverPage.MoveMouseOnAllAccessories).click().build().perform();
 				Thread.sleep(2000);
 				//pageobjects.MouseHoverPage.MoveMouseOnAllAccessories.click();
-
-				// Move mouse pointer away from location
+				/*// Move mouse pointer away from location
 				Point coordinates2 = driver.findElement(By.xpath("//*[@id='header-consumer']/div")).getLocation();
 				Robot robot2 = new Robot();
 				robot2.mouseMove(coordinates2.getX(), coordinates.getY() + 300);
 				log.debug("Moved Mouse to somewhere side of page");
-
-				Worksfine = true;
+				Worksfine = true;*/
+				//Worksfine = false;
 				Screenshots.captureScreenshot();
 
 			} catch (NoSuchElementException e) {
 				// check if popup is present, if yes, handle it.
-				Environment.driver.switchTo().frame("edr_l_first");
+				/*Environment.driver.switchTo().frame("edr_l_first");
 				System.out.println("********We are switch to the iframe*******");
 				log.debug("Popup has appeared on the screen, Hence trying to close the survey");
 				Screenshots.captureScreenshot();
@@ -623,7 +627,9 @@ public class MouseHoverAction extends Environment {
 				System.out.println("*******Saying no to survey*******");
 				System.out.println("*********Existing the popups present in iframe***************");
 				log.debug("Exiting the Survey");
-				Environment.driver.switchTo().defaultContent();
+				Environment.driver.switchTo().defaultContent();*/
+				log.debug(" The Accessories are no available please try again");
+				System.out.println(" The Accessories are no available please try again");
 				Thread.sleep(3000);
 			}
 	}

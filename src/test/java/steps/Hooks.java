@@ -75,7 +75,6 @@ public class Hooks extends Environment {
 		System.out.println("Opening Mobile App");
 		capability.startApp();
 	}
-
 	@After
 	public void embedScreenshot(Scenario scenario) throws Exception {
 
@@ -99,8 +98,8 @@ public class Hooks extends Environment {
 		capability.stopAppiumServer();
 		Thread.sleep(5000);
 		log.debug("Stopped Appium server");
-		driver.close();
-		driver.quit();
+		//driver.close();
+		//driver.quit();
 
 	}
 

@@ -20,10 +20,10 @@ public class MouseHoverPage extends Environment {
 	public static WebElement MoveMouseOnShopTab;
 
 	// Below will click on the Phones Link
-	@FindBy(how = How.XPATH, using = ("//a[contains(text(), 'Phones')] | //a[contains(text(), 'phones')]"))
+	@FindBy(how = How.XPATH, using = ("//li[@class='has-submenu']//a[normalize-space()='Phones']"))
 	public static WebElement MoveMouseOnPhones;
 
-	@FindBy(how = How.XPATH, using = ("//a[contains(text(), 'Pay Monthly')] | //a[contains(text(), 'Pay monthly')]"))
+	@FindBy(how = How.XPATH, using = ("//li/a[normalize-space()='Pay Monthly phones']"))
 	public static WebElement MoveMouseOnPAYMPhones;
 
 	// @FindBy(how = How.XPATH, using = ("//a[contains(text(), 'Pay As You Go
@@ -85,10 +85,10 @@ public class MouseHoverPage extends Environment {
 	public static WebElement MoveMouseOnTablets;
 
 	// Below is the link on the Accessory
-	@FindBy(how = How.XPATH, using = ("(//a[contains(text(), 'Accessories')])[1]"))
+	@FindBy(how = How.XPATH, using = ("(//a[normalize-space(.)='Accessories'])[1]"))
 	public static WebElement MoveMouseOnAccessoriesTab;
 
-	@FindBy(how = How.XPATH, using = ("//a[contains(text(), 'All accessories')]"))
+	@FindBy(how = How.XPATH, using = ("//a[normalize-space(.)='All accessories']"))
 	public static WebElement MoveMouseOnAllAccessories;
 
 	// Below is the link on the Smart Tech
