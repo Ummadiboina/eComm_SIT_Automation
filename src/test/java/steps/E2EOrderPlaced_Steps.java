@@ -99,7 +99,7 @@ public class E2EOrderPlaced_Steps {
     @And("^navigate to PAYM Phones page$")
     public void navigate_to_PAYM_Phones_page() throws Throwable {
         try {
-            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            driver.manage().timeouts().implicitlyWait(120, TimeUnit.SECONDS);
             PageFactory.initElements(driver, MouseHoverPage.class);
 
             MouseHoverAction.PayMPhonesLandingPage();
@@ -154,7 +154,7 @@ public class E2EOrderPlaced_Steps {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, MouseHoverPage.class);
             MouseHoverAction.AccessoriesLandingPage();
-            Autoredirection.redirect();
+           // Autoredirection.redirect();
             Thread.sleep(10000);
            //GlobalActions.//CommonFunctionscheckTitle("Accessories");
         } catch (Exception e) {
@@ -297,7 +297,7 @@ public class E2EOrderPlaced_Steps {
     @And("^I choose PayM ([^\"]*)$")
     public void Choose_PAYM_Handset(String handset) throws Throwable {
         try {
-            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            driver.manage().timeouts().implicitlyWait(120, TimeUnit.SECONDS);
             PageFactory.initElements(driver, PhonesListingPage.class);
             PhonesListingPageAction.PAYMPhoneSelect(handset);
         } catch (Exception e) {

@@ -30,5 +30,5 @@ Feature: CFA_PayM_Phone_Data_filters_options_tariff_and_extras_page_Order_placem
 
     Examples: 
       | handset           | Firstname | Surname | Username     | filtername | sortoption                 |
-      | Samsung Galaxy S8 | TEST      | ACCEPTA | TEST ACCEPTA | high       | Monthly data (Low to High) |
+      | Samsung Galaxy S8 | TEST      | ACCEPTA | TEST ACCEPTA | high       | Monthly data (High to low) |
    #   | Apple iPhone 7    | TEST      | ACCEPTA | TEST ACCEPTA | high       |

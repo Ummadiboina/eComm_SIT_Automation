@@ -120,7 +120,7 @@ public class PhonesListingPage {
 	@FindBy(how = How.XPATH, using = ("//*[@id='deliveryOption_storeCollection']"))
 	public static WebElement BaseComm_ClickAndCollect_Delivery_Option;
 	
-	@FindBy(how = How.XPATH, using = ("//*[@id='search']"))
+	@FindBy(how = How.XPATH, using = ("//input[@name='search']"))
 	public static WebElement SearchBox;
 	
 }

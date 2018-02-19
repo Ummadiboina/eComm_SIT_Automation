@@ -548,14 +548,19 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 	}
 
 	public static void SortFilterPosition() throws InterruptedException, IOException {
-		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(150, TimeUnit.SECONDS);
 		System.out.println("Entering SortFilterPosition method");
+
+		/*//scroll the webElement
+		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", pageobjects.PAYMandPAYGTariffAndExtrasPage.FilterandSortLabel);
+		Thread.sleep(500);*/
+
 		if (pageobjects.PAYMandPAYGTariffAndExtrasPage.FilterandSortLabel.isDisplayed()) {
 			System.out.println("Filter label is displayed");
 			Thread.sleep(4000);
 			String text1 = pageobjects.PAYMandPAYGTariffAndExtrasPage.FilterandSortLabel.getText();
-			System.out.println(text1);
-			if (text1.contains("data ") && text1.contains("Filter")) {
+			System.out.println("Validating Tariff is : " +text1);
+			if (text1.contains("Sort")) {
 				System.out.println("Section is containing both Sort tariff and Filter");
 			} else {
 				System.out.println("Section doesnot contains both Sort tariff and Filter");

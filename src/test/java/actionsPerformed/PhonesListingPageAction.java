@@ -5,6 +5,7 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 import org.apache.commons.lang.StringUtils;
 import org.apache.log4j.Logger;
@@ -23,11 +24,28 @@ public class PhonesListingPageAction extends Environment {
 	final static Logger log = Logger.getLogger("PhonesListingPageAction");
 
 	public static void PAYMPhoneSelect(String elementName) throws Throwable {
-		// pageobjects.PhonesListingPage.ViewAllPhones.sendKeys(Key.ENTER);
-		JavascriptExecutor executor = (JavascriptExecutor) driver;
-		executor.executeScript("arguments[0].click();", pageobjects.PhonesListingPage.ViewAllPhones);
 
-		if (elementName.contains("GalaxyS7")) {
+		// pageobjects.PhonesListingPage.ViewAllPhones.sendKeys(Key.ENTER);
+
+		/*if(driver.findElements(By.xpath("(//a[contains(., 'View all products on one page')])[1]")).size() > 0)
+		{
+			driver.findElement(By.xpath("(//a[contains(., 'View all products on one page')])[1]")).click();
+			System.out.println(" Clicked on View all products on one page(1) ");
+		}*/
+
+		JavascriptExecutor js = ((JavascriptExecutor) driver);
+		js.executeScript("arguments[0].scrollIntoView(true);",driver.findElement(By.xpath("(//a[contains(., 'View all products on one page')])[2]")));
+
+		if(driver.findElements(By.xpath("(//a[contains(., 'View all products on one page')])[2]")).size() > 0) {
+			driver.findElement(By.xpath("(//a[contains(., 'View all products on one page')])[2]")).click();
+			System.out.println(" Clicked on View all products on one page(2) ");
+		}
+		driver.manage().timeouts().implicitlyWait(120, TimeUnit.SECONDS);
+		driver.findElement(By.xpath("//div[@class='fieldandsubmitbar']/input[1]")).sendKeys(elementName);
+		/*JavascriptExecutor executor = (JavascriptExecutor) driver;
+		executor.executeScript("arguments[0].click();", pageobjects.PhonesListingPage.ViewAllPhones);*/
+		Thread.sleep(2000);
+		/*if (elementName.contains("GalaxyS7")) {
 			pageobjects.PhonesListingPage.GalaxyS7.click();
 			System.out.println("Selected GalaxyS7");
 			log.debug("Selected GalaxyS7");
@@ -135,7 +153,10 @@ public class PhonesListingPageAction extends Environment {
 			log.debug("Selected AppleiPhone6sPlusLikeNew");
 			System.out.println("Selected AppleiPhone6sPlusLikeNew");
 
-		}
+		}*/
+
+		driver.findElement(By.xpath("(//div[@class='device-tile-wrapper']//a[@class='device-tile']//div[@class='device-tile__top'])[1]")).click();
+
 		Screenshots.captureScreenshot();
 	}
 
