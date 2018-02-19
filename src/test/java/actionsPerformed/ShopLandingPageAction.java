@@ -3,6 +3,7 @@ package actionsPerformed;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
@@ -12,12 +13,32 @@ import org.openqa.selenium.WebElement;
 import GlobalActions.CommonUtilities;
 import GlobalActions.Screenshots;
 import helpers.Environment;
+import org.openqa.selenium.interactions.Actions;
 import pageobjects.ShopLandingPage;
 
 public class ShopLandingPageAction extends Environment {
 	final static Logger log = Logger.getLogger("ShopLandingPageAction");
 	static JavascriptExecutor js = (JavascriptExecutor)driver;
 
+	public static void GetTitle_ref() throws IOException, InterruptedException {
+		//later on need to comment the code
+		try {
+			driver.manage().timeouts().implicitlyWait(5, TimeUnit.MINUTES);
+
+			WebElement ele = driver.findElement(By.xpath("//li[@name='Shop']/a"));
+	S		Actions act = new Actions(driver);
+			act.moveToElement(ele).build().perform();
+			Thread.sleep(1000);
+			driver.findElement(By.xpath("//a[@data-parent='Shop' and text()='Pay Monthly sims']")).click();
+			Thread.sleep(3000);
+			System.out.println(" Current URL is : " + driver.getCurrentUrl());
+			driver.manage().timeouts().implicitlyWait(5, TimeUnit.MINUTES);
+			Screenshots.captureScreenshot();
+
+		} catch (Exception e) {
+		System.out.println("While navigating the with new updated ref Env , getting error as :: " + e.getMessage());
+		}
+	}
 	public static void GetTitle() throws IOException, InterruptedException {
 		System.out.println("Currently in Shop Home page");
 		String Ele1 = driver.getTitle();
