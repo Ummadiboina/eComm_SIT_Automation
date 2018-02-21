@@ -1,5 +1,6 @@
 package actionsPerformed;
 
+import java.awt.*;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -10,10 +11,9 @@ import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.math.NumberUtils;
 import org.apache.log4j.Logger;
 import org.junit.Assert;
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
+import org.openqa.selenium.Point;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 
 import GlobalActions.Screenshots;
@@ -46,8 +46,8 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 	public static void TariffSelect(String ElementName) throws IOException, InterruptedException {
 		driver.manage().timeouts().implicitlyWait(120, TimeUnit.SECONDS);
 		if (ElementName.equalsIgnoreCase("Randomtariff")) {
-			pageobjects.PAYMandPAYGTariffAndExtrasPage.RandomTariff1.sendKeys(Keys.ENTER);
-			//pageobjects.PAYMandPAYGTariffAndExtrasPage.RandomTariff1.click();
+			//pageobjects.PAYMandPAYGTariffAndExtrasPage.RandomTariff1.sendKeys(Keys.ENTER);
+			pageobjects.PAYMandPAYGTariffAndExtrasPage.RandomTariff1.click();
 			System.out.println("Selected a Random Tariff");
 			log.debug("Selected a Random Tariff");
 		}
@@ -99,12 +99,20 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 		Screenshots.captureScreenshot();
 	}
 
-	public static void addToBasketLive() throws InterruptedException, IOException {
+	public static void addToBasketLive() throws InterruptedException, IOException, AWTException {
 		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
-
-		JavascriptExecutor jse = (JavascriptExecutor) driver;
-		jse.executeScript("window.scrollBy(0,600)", "");
-		pageobjects.PAYMandPAYGTariffAndExtrasPage.addToBasketLive.sendKeys(Keys.ENTER);
+//		driver.findElement(By.xpath("(//*[normalize-space()='Select'])[2]")).click();
+	/*	JavascriptExecutor jse = (JavascriptExecutor) driver;
+		jse.executeScript("window.scrollBy(0,600)", "");*/
+		Point coordinates = PAYMandPAYGTariffAndExtrasPage.addToBasketLive.getLocation();
+		Robot robot = new Robot();
+		robot.mouseMove(coordinates.getX(), coordinates.getY() + 120);
+		log.debug("Moving Mouse the Drooapal - Shop Tab");
+		Actions action = new Actions(driver);
+		action.moveToElement(pageobjects.PAYMandPAYGTariffAndExtrasPage.addToBasketLive).perform();
+		System.out.println("Mouse over on the Droopal-Shop Header ");
+		Thread.sleep(2000);
+		pageobjects.PAYMandPAYGTariffAndExtrasPage.addToBasketLive.click();
 		log.debug("Clicked on Add to Basket in Tariff and Extras page");
 		System.out.println("Clicked on Add to Basket in Tariff and Extras page");
 		Thread.sleep(50000);

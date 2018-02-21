@@ -60,7 +60,10 @@ public class E2EOrderPlaced_Steps {
     @Given("^I am an CFA user and Lands on shop page$")
     public void i_am_an_CFA_user_and_Lands_on_shop_page() throws Throwable {
         try {
-            ShopLandingPageAction.GetTitle_ref();
+            PageFactory.initElements(driver, MouseHoverPage.class);
+
+            MouseHoverAction.ByPassDroopalPage();
+            //ShopLandingPageAction.GetTitle_ref();
             ShopLandingPageAction.GetTitle();
 
         } catch (Exception e) {
@@ -70,6 +73,7 @@ public class E2EOrderPlaced_Steps {
         }
 
     }
+
 
 
     @And("^a cookies pop up should be displayed$")
@@ -155,7 +159,7 @@ public class E2EOrderPlaced_Steps {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, MouseHoverPage.class);
             MouseHoverAction.AccessoriesLandingPage();
-           // Autoredirection.redirect();
+            Autoredirection.redirect();
             Thread.sleep(10000);
            //GlobalActions.//CommonFunctionscheckTitle("Accessories");
         } catch (Exception e) {
@@ -4465,7 +4469,7 @@ public class E2EOrderPlaced_Steps {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, UpgradeCustomerPage.class);
             //UpgradeCustomerPageActions.selectDeviceInRecommendedDevicesSection(devicename);
-            driver.findElement(By.xpath("//span[normalize-space()='iPhone 8']")).click();
+            driver.findElement(By.xpath("(//span[normalize-space()='Apple'])[1]")).click();
         } catch (Exception e) {
             e.printStackTrace();
             Assert.fail("Unable to select a device from Recommended devices section");

@@ -44,7 +44,7 @@ public class MouseHoverPage extends Environment {
 	// Below will click on the Sims
 	// @FindBy(how = How.XPATH, using = ("//*[@id='pn1']/ul/li/a[contains(text(),
 	// 'Sims')]"))
-	@FindBy(how = How.XPATH, using = ("//a[contains(text(), 'Sims')][1]"))
+	@FindBy(how = How.XPATH, using = ("//li[@class='has-submenu']//a[normalize-space()='Sims']"))
 	public static WebElement MoveMouseOnSims;
 
 	// Below will click on the Sims -- > Ipad
@@ -151,5 +151,16 @@ public class MouseHoverPage extends Environment {
 	@FindBy(how = How.XPATH, using = ("//a[@manual_cm_re='meganav_Shop-_-Tablets-_-Pay and Go']"))
 	public static WebElement MoveMouseonPayGTablets;
 	//a[@manual_cm_re='meganav_Shop-_-Tablets-_-Pay and Go']
+
+
+	//Below will click on the Shop link in the droopal page
+	@FindBy(how = How.XPATH, using = ("//li[@name='Shop']"))
+	public static WebElement MoveMouseonShopDroopal;
+
+	//Below will click on the Pay Monthly Sims link in the droopal page
+	@FindBy(how = How.XPATH, using = ("//a[@data-parent='Shop' and text()='Pay Monthly sims']"))
+	public static WebElement MoveMouseonPayMSimsDroopal;
+
+
 
 }

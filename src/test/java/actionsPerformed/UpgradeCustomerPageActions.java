@@ -391,7 +391,7 @@ public class UpgradeCustomerPageActions extends Environment {
         System.out.println("selectTariff");
         // executor.executeScript("arguments[0].click();",
         // pageobjects.PAYMandPAYGTariffAndExtrasPage.ViewAllTariffs);
-        List<WebElement> TariffList = driver.findElements(By.xpath("//*[@class='tariff-grids tiles row']/li[@class='liTariffPlan col-sm-6 col-md-4 col-lg-3 ng-scope']"));
+/*        List<WebElement> TariffList = driver.findElements(By.xpath("//*[@class='tariff-grids tiles row']/li[@class='liTariffPlan col-sm-6 col-md-4 col-lg-3 ng-scope']"));
         boolean flag = false;
         String TariffXpath = null;
         String TextOfTariffTile = null;
@@ -418,7 +418,11 @@ public class UpgradeCustomerPageActions extends Environment {
         }
         if (flag == false) {
             Assert.fail("Provided tariff is not present in the list of tariffs");
-        }
+        }*/
+        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+        JavascriptExecutor executor = (JavascriptExecutor)driver;
+        executor.executeScript("arguments[0].click();", driver.findElement(By.xpath("(//button[@type='button']//*[normalize-space()='Select'])[1]")));
+
         Screenshots.captureScreenshot();
     }
 
@@ -426,7 +430,7 @@ public class UpgradeCustomerPageActions extends Environment {
             throws IOException, InterruptedException {
         log.debug('\n' + "To select Tariff With Ribbon And Overlay in upgrade journey");
         List<WebElement> TariffList = driver
-                .findElements(By.xpath("//div[contains(@class, 'grid-tile')]/div/button[@id='callToAction']"));
+                .findElements(By.xpath("(//div[contains(@class, 'grid-tile')]/div/button[@id='callToAction'])[1]"));
         String UpfrontPoundXPath = null, UpfrontPenceXPath = null, MonthlyPoundXPath = null, MonthlyPenceXPath = null;
         String UpfrontPound = null, UpfrontPence = null, MonthlyPound = null, MonthlyPence = null;
         String UpfrontCost = null, MonthlyCost = null;
@@ -481,7 +485,8 @@ public class UpgradeCustomerPageActions extends Environment {
             }
         }
         if (flag == false) {
-            Assert.fail("Provided tariff is not present in the list of tariffs");
+            driver.findElement(By.xpath("(//div[contains(@class, 'grid-tile')]/div/button[@id='callToAction'])[1]"));
+           // Assert.fail("Provided tariff is not present in the list of tariffs");
         }
         Screenshots.captureScreenshot();
     }
