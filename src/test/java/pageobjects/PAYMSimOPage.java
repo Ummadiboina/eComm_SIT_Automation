@@ -27,7 +27,7 @@ public class PAYMSimOPage {
 	public static WebElement BuyNowPromotedTariff;*/
 	
 	//@FindBy(how=How.XPATH,using=("//div[@name='P12M']/div[8]/div"))
-	@FindBy(how=How.XPATH,using=("//div[@id='70d12cd4-49b2-467f-8740-0bb468ee92ad']/div[@class='col-xs-12 col-sm-5 info-container buy-now']/div[@class='btn-wrapper']"))
+	@FindBy(how=How.XPATH,using=("(//button[@type='button' and normalize-space()='Select'])[1]"))
 	public static WebElement BuyNowPromotedTariff;
 	
 	//@FindBy(how=How.XPATH,using=("(//button[@id='callToAction'])[10]"))
