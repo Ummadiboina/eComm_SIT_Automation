@@ -5,23 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list id="9d0aef85-48ac-4e71-b67a-fff455014d99" name="New changelist" comment="New changelist" />
-    <list default="true" id="b3431a87-97b1-4ffe-b872-0e6a8e54231a" name="Default" comment="Merged venkat14Jan2018_v1 into master">
+    <list default="true" id="b3431a87-97b1-4ffe-b872-0e6a8e54231a" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/Features/FebruaryRelease2018/Regression/Feb_AFU_eComm_Promotions_and_added_Bolton_Incompatible_error_message_Remove_and_reapply_removed_bolton_Order_Placement.feature" afterPath="$PROJECT_DIR$/Features/FebruaryRelease2018/Regression/Feb_AFU_eComm_Promotions_and_added_Bolton_Incompatible_error_message_Remove_and_reapply_removed_bolton_Order_Placement.feature" />
-      <change beforePath="$PROJECT_DIR$/Features/FebruaryRelease2018/Regression/Feb_CFU_Tablet_CnC_changes_on_Delivery_page_Order_placement.feature" afterPath="$PROJECT_DIR$/Features/FebruaryRelease2018/Regression/Feb_CFU_Tablet_CnC_changes_on_Delivery_page_Order_placement.feature" />
-      <change beforePath="$PROJECT_DIR$/Features/FebruaryRelease2018/Regression/Feb_CFU_Tablet_Delivery_page_more_than_one_address_select_one_compress_others.feature" afterPath="$PROJECT_DIR$/Features/FebruaryRelease2018/Regression/Feb_CFU_Tablet_Delivery_page_more_than_one_address_select_one_compress_others.feature" />
-      <change beforePath="$PROJECT_DIR$/Features/FebruaryRelease2018/Regression/Reg_CFA_Basket page cross sell insurance.feature" afterPath="$PROJECT_DIR$/Features/FebruaryRelease2018/Regression/Reg_CFA_Basket page cross sell insurance.feature" />
-      <change beforePath="$PROJECT_DIR$/Features/FebruaryRelease2018/Regression/Reg_CS_Recycle.feature" afterPath="$PROJECT_DIR$/Features/FebruaryRelease2018/Regression/Reg_CS_Recycle.feature" />
-      <change beforePath="$PROJECT_DIR$/debug.log" afterPath="$PROJECT_DIR$/debug.log" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/GlobalActions/MouseHoverAction.java" afterPath="$PROJECT_DIR$/src/test/java/GlobalActions/MouseHoverAction.java" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/actionsPerformed/PAYMandPAYGTariffAndExtrasPageActions.java" afterPath="$PROJECT_DIR$/src/test/java/actionsPerformed/PAYMandPAYGTariffAndExtrasPageActions.java" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/actionsPerformed/PhonesListingPageAction.java" afterPath="$PROJECT_DIR$/src/test/java/actionsPerformed/PhonesListingPageAction.java" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/actionsPerformed/ShopLandingPageAction.java" afterPath="$PROJECT_DIR$/src/test/java/actionsPerformed/ShopLandingPageAction.java" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/actionsPerformed/UpgradeCustomerPageActions.java" afterPath="$PROJECT_DIR$/src/test/java/actionsPerformed/UpgradeCustomerPageActions.java" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pageobjects/MouseHoverPage.java" afterPath="$PROJECT_DIR$/src/test/java/pageobjects/MouseHoverPage.java" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pageobjects/PAYMSimOPage.java" afterPath="$PROJECT_DIR$/src/test/java/pageobjects/PAYMSimOPage.java" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pageobjects/PAYMandPAYGTariffAndExtrasPage.java" afterPath="$PROJECT_DIR$/src/test/java/pageobjects/PAYMandPAYGTariffAndExtrasPage.java" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/steps/E2EOrderPlaced_Steps.java" afterPath="$PROJECT_DIR$/src/test/java/steps/E2EOrderPlaced_Steps.java" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -88,6 +73,7 @@
       <dir>C:\Users\subbaiv1\regression2</dir>
       <dir>C:\Users\subbaiv1\IdeaProjects\regression\Features\FebruaryRelease2018\Functional</dir>
       <dir>C:\Users\subbaiv1\IdeaProjects\regression\Features\FebruaryRelease2018\Regression</dir>
+      <dir>C:\Users\subbaiv1\IdeaProjects\regression</dir>
     </dirStrings>
   </component>
   <component name="Git.Settings">
@@ -110,7 +96,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="venkat_19Feb2018_v1" />
+        <entry key="$PROJECT_DIR$" value="venakat_21Feb2018_v1" />
       </map>
     </option>
     <option name="SIGN_OFF_COMMIT" value="true" />
@@ -908,7 +894,14 @@
       <option name="project" value="LOCAL" />
       <updated>1519057814635</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="Merged venkat21Feb2018_v1 into master">
+      <created>1519209174735</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1519209174735</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1092,7 +1085,8 @@
     <MESSAGE value="Merged venkta23012018_v1 into master" />
     <MESSAGE value="Merged venkta23012018_v1 into master&#10;&#10;Signed-off-by: subbaiv1 &lt;hhhh&gt;" />
     <MESSAGE value="Merged venkat14Jan2018_v1 into master" />
-    <option name="LAST_COMMIT_MESSAGE" value="Merged venkat14Jan2018_v1 into master" />
+    <MESSAGE value="Merged venkat21Feb2018_v1 into master" />
+    <option name="LAST_COMMIT_MESSAGE" value="Merged venkat21Feb2018_v1 into master" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
