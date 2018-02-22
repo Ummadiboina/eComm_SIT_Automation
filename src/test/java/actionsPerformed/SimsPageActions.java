@@ -9,6 +9,7 @@ import org.apache.log4j.Logger;
 import GlobalActions.Screenshots;
 import helpers.Environment;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 
@@ -89,11 +90,12 @@ public class SimsPageActions extends Environment {
 	}
 
 	public static void clickOn_simOnlyTariffTab() throws Exception {
-		WebElement simOnlyTarirr = driver.findElement(By.xpath("//a[@id='tab-keep-your-phone']//span[contains(text(),'Sim only tariff')]"));
+		WebElement simOnlyTarirr = driver.findElement(By.xpath("//a[@id='tab-keep-your-phone']"));
 		try {
-			driver.manage().timeouts().implicitlyWait(2, TimeUnit.MINUTES);
-			if(simOnlyTarirr.isDisplayed()){
-				simOnlyTarirr.click();
+			driver.manage().timeouts().implicitlyWait(20,TimeUnit.SECONDS);
+			if(driver.findElements(By.xpath("//a[@id='tab-keep-your-phone']")).size() >=1){
+				((JavascriptExecutor) driver).executeScript("arguments[0].click();", simOnlyTarirr);
+				//simOnlyTarirr.click();
 				System.out.println(" clicked on Sim only Tariff tab");
 				log.debug(" Clicked on Sim only Tariff tab");
 			}else{
@@ -112,7 +114,8 @@ public class SimsPageActions extends Environment {
 		try {
 			driver.manage().timeouts().implicitlyWait(2, TimeUnit.MINUTES);
 			String currentUrl = driver.getCurrentUrl();
-			if(currentUrl.endsWith("simo")){
+			System.out.println("Current URL is :  " + currentUrl );
+			if(currentUrl.contains("simo")){
 				System.out.println(" verifyed that the url has simo at the end");
 				log.debug(" verifyed that the url has simo at the end");
 			}else{

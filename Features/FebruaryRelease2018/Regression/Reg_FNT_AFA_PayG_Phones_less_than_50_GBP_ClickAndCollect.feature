@@ -17,4 +17,4 @@ Feature: Reg_FNT_AFA_PayG_Phones_less_than_50_GBP_ClickAndCollect
 
     Examples:
       | Device   | Tariffs | Firstname | Surname | HouseNumber | PostCode |
-      | In stock | 50      | TEST      | ACCEPTA | 10          | g2       |
+      | In stock | 50      | TEST      | ACCEPTA | 4           | sl11er   |

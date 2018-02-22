@@ -23,4 +23,4 @@ Feature: ConsumerToAcceptTenDigitsPhoneNumber
     #Close the browser
 Examples:
 | handset | Firstname | Surname | Username     | Status           | color |
-| Iphone7 | TEST      | ACCEPTA | TEST ACCEPTA | Delayed Delivery | Black |
+| Random  | TEST      | ACCEPTA | TEST ACCEPTA | Delayed Delivery | Black |

@@ -45,6 +45,11 @@ public class Agent_DealBuilderPageActions extends Environment {
 		log.debug("Clicked on Devices tab");
 		Thread.sleep(3000);
 
+
+
+
+
+
 		if (Device.contains("Random")) {
 			Thread.sleep(3000);
 			Agent_DealBuilderPage.firstAvailableDevice.click();

@@ -89,7 +89,7 @@ public class BasketPage {
 	@FindBy(how = How.ID, using = ("store-postcode-submit"))
 	public static WebElement PostcodeSubmit;
 
-	@FindBy(how = How.XPATH, using = ("//*[@id='444']/div[4]/p/a"))
+	@FindBy(how = How.XPATH, using = ("(//a[normalize-space()='Collect from this store'])[1]"))
 	public static WebElement Collectfromthisstore;
 
 	@FindBy(how = How.XPATH, using = ("//div[@class='basket-header-xxl']"))
