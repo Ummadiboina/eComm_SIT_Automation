@@ -62,7 +62,7 @@ public class E2EOrderPlaced_Steps {
         try {
             PageFactory.initElements(driver, MouseHoverPage.class);
 
-            MouseHoverAction.ByPassDroopalPage();
+             MouseHoverAction.ByPassDroopalPage();
             //ShopLandingPageAction.GetTitle_ref();
             ShopLandingPageAction.GetTitle();
 
@@ -97,7 +97,7 @@ public class E2EOrderPlaced_Steps {
         }
     @And("^launch the shop phones page$")
     public void launch_the_shop_phones_page() throws Throwable {
-        driver.get("www.ref.o2.co.uk/shop/phones");
+        driver.get("https://www.ref.o2.co.uk/shop/phones");
     }
 
 
@@ -5867,8 +5867,7 @@ public class E2EOrderPlaced_Steps {
                 PAYMandPAYGTariffAndExtrasPageActions.getValuesToCompareWhenGreaterIsSelected();
                 PAYMandPAYGTariffAndExtrasPageActions.verifyListWhenGreaterIsSelected();
             } else if (DataFilterRange.equals("low") || DataFilterRange.equals("medium")) {
-                if (SortOption.equals("Monthly data (High to low)")
-                        || SortOption.equals("Monthly data (Low to High)")) {
+                if (SortOption.equals("Monthly data (High to low)") || SortOption.equals("Monthly data (Low to High)")) {
                     datalistafter = PAYMandPAYGTariffAndExtrasPageActions.getDataListAfterSelectingFilter();
                 }
                 if (SortOption.equals("Monthly cost (High to low)")

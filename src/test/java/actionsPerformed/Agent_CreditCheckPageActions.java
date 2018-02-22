@@ -141,8 +141,8 @@ public class Agent_CreditCheckPageActions extends Environment {
 		Agent_CreditCheckDetailsPage.DOB.sendKeys("10-10-1981");
 		log.debug("Entered date of birth");
 		Thread.sleep(2000);
-		Agent_CreditCheckDetailsPage.ContactNumber.sendKeys("7890987890");
-		if(Agent_CreditCheckDetailsPage.Contact_errorAgent.isDisplayed()){
+		Agent_CreditCheckDetailsPage.ContactNumber.sendKeys("07123456789");
+		/*if(Agent_CreditCheckDetailsPage.Contact_errorAgent.isDisplayed()){
 			System.out.println("Not accepting mobile number without 0 in the begining");
 		}
 		else{
@@ -150,7 +150,7 @@ public class Agent_CreditCheckPageActions extends Environment {
 		}
 		Agent_CreditCheckDetailsPage.ContactNumber.clear();
 		Agent_CreditCheckDetailsPage.ContactNumber.sendKeys("1234567890");
-		log.debug("Entered contact number");
+		log.debug("Entered contact number")*/;
 		Thread.sleep(2000);
 		try {
 			Agent_CreditCheckDetailsPage.HouseNumber.sendKeys(HouseNumber);

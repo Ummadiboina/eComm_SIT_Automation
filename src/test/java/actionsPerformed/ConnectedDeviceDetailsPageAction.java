@@ -240,19 +240,24 @@ public class ConnectedDeviceDetailsPageAction extends Environment {
 		// TODO Auto-generated method stub
 		Thread.sleep(5000);
 
-		 ConnectedDeviceDetailsPage.ColorDropDown.click();
-		 WebElement ele = driver.findElement(By.xpath("(//span[@class='selectboxit-option-icon-container']/following-sibling::span[normalize-space()='"+color+"'])[1]"));
-		Actions act = new Actions(driver);
-		act.moveToElement(ele).click().build().perform();
-		// ele.click();
+		 //ConnectedDeviceDetailsPage.ColorDropDown.click();
+		int eleAvailable =  driver.findElements(By.xpath("//span/i[@id='colourSelectBoxItArrow']")).size();
+		System.out.println(" The Color Drop down is availale :  " + eleAvailable);
+		 if(eleAvailable >= 1) {
+			 WebElement ele = driver.findElement(By.xpath("(//span[@class='selectboxit-option-icon-container']/following-sibling::span[normalize-space()='" + color + "'])[1]"));
+			 Actions act = new Actions(driver);
+			 act.moveToElement(ele).click().build().perform();
+		 }else{
+			 System.out.println(" The only one color is Available from Color Drop down is availale :" + driver.findElement(By.xpath("(//select//option[@selected='selected'])[1]")).getText());
+			 // ele.click();
 		/*JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("arguments[0].setAttribute('style', 'display:block;')", element);*/
 		/*if (element.isDisplayed()) {
 			new Select(element).selectByVisibleText(color);
 			System.out.println("Selected" + color);
 		}*/
-		Screenshots.captureScreenshot();
-
+			 Screenshots.captureScreenshot();
+		 }
 	}
 
 	public static void capacitySelectOfDeviceDropDown(String capacity) throws Exception {

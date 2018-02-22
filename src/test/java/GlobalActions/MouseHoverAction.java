@@ -694,6 +694,7 @@ public class MouseHoverAction extends Environment {
 
 				System.out.println("Performing Upgrade -- > upgrade now navigations");
 				log.debug("Performing PAYG MBB navigations");
+				Thread.sleep(3000);
 				Point coordinates = pageobjects.MouseHoverPage.MoveMouseOnShopTab.getLocation();
 				Robot robot = new Robot();
 				robot.mouseMove(coordinates.getX(), coordinates.getY() + 120);

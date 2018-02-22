@@ -72,9 +72,11 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 	public static void addAccessory() throws InterruptedException, IOException {
 		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 		log.debug("The Accessory which will be added is  - "
-				+ pageobjects.PAYMandPAYGTariffAndExtrasPage.AddRandomAccessory.getText());
-		pageobjects.PAYMandPAYGTariffAndExtrasPage.AddRandomAccessory.sendKeys(Keys.ENTER);
-		Thread.sleep(2000);
+				+ pageobjects.PAYMandPAYGTariffAndExtrasPage.AddRandomAccessoryName.getText());
+		Thread.sleep(3000);
+		//pageobjects.PAYMandPAYGTariffAndExtrasPage.AddRandomAccessory.sendKeys(Keys.ENTER);
+		((JavascriptExecutor) driver).executeScript("arguments[0].click();", pageobjects.PAYMandPAYGTariffAndExtrasPage.AddRandomAccessory);
+		Thread.sleep(3000);
 		log.debug("Added a random accessory to basket");
 		Screenshots.captureScreenshot();
 
@@ -141,7 +143,7 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 				System.out.println("selecting accessories");
 				List<WebElement> DataContainer = pageobjects.PAYMandPAYGTariffAndExtrasPage.Add_AccessoryContainer;
 
-				for (int i = 0; i <= DataContainer.size(); i++)
+				for (int i = 0; i < DataContainer.size(); i++)
 
 				{
 					System.out.println(DataContainer.get(i).getText());

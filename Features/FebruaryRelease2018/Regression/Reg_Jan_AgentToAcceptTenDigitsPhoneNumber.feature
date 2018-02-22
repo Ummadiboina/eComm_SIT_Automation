@@ -1,5 +1,6 @@
 Feature: AgentToAcceptTenDigitsPhoneNumber
   This scenario ensures that the Agent shop accepts 10 digit home number
+
   @Web
   Scenario Outline: AgentToAcceptTenDigitsPhoneNumber
     Given I login to Agent shop
@@ -20,5 +21,5 @@ Feature: AgentToAcceptTenDigitsPhoneNumber
     # And Update Device Plan Link Email Address
     # Then CCALink Should be generated
     Examples:
-      | Device              | Tariffs | Extras | DeliveryType | Firstname | Surname | Username     | HouseNumber | PostCode |
-      | S7 edge black 32 GB | Standard| Base   | HomeDelivery | TEST      | ACCEPTA | TEST ACCEPTA |          14 | SL11UP   |
+      | Device              | Tariffs  | Extras | DeliveryType | Firstname | Surname | Username     | HouseNumber | PostCode |
+      | Galaxy S7 32gb Pink | Standard | Base   | HomeDelivery | TEST      | ACCEPTA | TEST ACCEPTA | 14          | SL11UP   |
