@@ -22,6 +22,6 @@ Feature:CFU_Tablet_Delivery_page_more_than_one_address_select_one_compress_other
     And Click on 'Place your order' CTA
 
     Examples:
-      | username    | password | Tablet        | tariff                 | houseNumber | Postcode | Username     |
-      | cfvgtbnhyju | test123  | Random Device | 9.99upfront60.00amonth | 111         | SL11Er   | Test Accepta |
+      | username           | password | Tablet        | tariff                 | houseNumber | Postcode | Username     |
+      | 6172test2@test.com | test123  | Random Device | 9.99upfront60.00amonth | 111         | SL11Er   | Test Accepta |
 

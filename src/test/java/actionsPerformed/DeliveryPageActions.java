@@ -29,26 +29,34 @@ import static pageobjects.FreeSimPage.Firstname;
         final static Logger log = Logger.getLogger("DeliveryPageActions");
         static JavascriptExecutor js = (JavascriptExecutor) driver;
 
-        public static void SetDelivery() throws InterruptedException, IOException {
-            pageobjects.DeliveryPage.Housenumber.sendKeys("12");
-            log.debug("Entered House number");
+        public static void SetDelivery() {
 
-            pageobjects.DeliveryPage.Postcode.sendKeys("B15 2LG");
-            log.debug("Entered Post code");
-            pageobjects.DeliveryPage.Find_Address.click();
-            log.debug("Clicked on the Find address button");
-            Thread.sleep(5000);
-            if (pageobjects.DeliveryPage.SelectAddress1.isDisplayed()) {
-                pageobjects.DeliveryPage.SelectAddress1.click();
-                log.debug("Selected an address");
+            try {
+                DeliveryPage.Housenumber.sendKeys("12");
+                log.debug("Entered House number");
+                pageobjects.DeliveryPage.Postcode.sendKeys("B15 2LG");
+                log.debug("Entered Post code");
+                pageobjects.DeliveryPage.Find_Address.click();
+                log.debug("Clicked on the Find address button");
+                Thread.sleep(5000);
+                if (pageobjects.DeliveryPage.SelectAddress1.isDisplayed()) {
+                    pageobjects.DeliveryPage.SelectAddress1.click();
+                    log.debug("Selected an address");
+                }
+                Screenshots.captureScreenshot();
 
+            } catch (Exception e) {
+                e.printStackTrace();
             }
-            Screenshots.captureScreenshot();
         }
 
-        public static void AboutYou(String Firstname, String Surname) throws IOException, InterruptedException {
-            log.debug("Entering an Random email id");
-            DeliveryPage.Email_Address.sendKeys(RandomEmailAddressCreation.RandomEmail());
+        public static void AboutYou(String Firstname, String Surname) {
+            try {
+             driver.manage().timeouts().implicitlyWait(30,TimeUnit.SECONDS);
+           // Thread.sleep(3000);
+            String str = RandomEmailAddressCreation.RandomEmail();
+            log.debug("Entering an Random email id is " + str);
+            DeliveryPage.Email_Address.sendKeys(str);
             System.out.println("Setting the About you options");
             log.debug("Setting the About you options");
             Select dropdown = new Select(pageobjects.DeliveryPage.Title);
@@ -68,6 +76,10 @@ import static pageobjects.FreeSimPage.Firstname;
             DeliveryPage.year.sendKeys(Keys.TAB);
             log.debug("Entered all the other relavant details");
             Screenshots.captureScreenshot();
+            } catch (Exception e) {
+                System.out.println("Failed to proceed on Delivey page : " + e.getMessage());
+                e.printStackTrace();
+            }
 
         }
 
@@ -205,7 +217,7 @@ import static pageobjects.FreeSimPage.Firstname;
             Screenshots.captureScreenshot();
         }
 
-        public static void SetDelivery_Datatable(DataTable Table) throws InterruptedException, IOException {
+        public static void SetDelivery_Datatable(DataTable Table) throws InterruptedException {
             List<List<String>> values = Table.raw();
             for (int i = 0; i < values.size(); i++) {
                 System.out.println("The Details passed for delivery page are as below \n " + values.get(i).toString());
@@ -405,7 +417,7 @@ import static pageobjects.FreeSimPage.Firstname;
             }
         }
 
-        public static void  clickOnChange_delivery_link() throws Exception {
+        public static void  clickOnChange_delivery_link() {
             try {
                 driver.manage().timeouts().implicitlyWait(2, TimeUnit.MINUTES);
                 if (driver.findElement(By.xpath("//*[normalize-space(text())='Change delivery']")).isDisplayed()) {
@@ -424,7 +436,7 @@ import static pageobjects.FreeSimPage.Firstname;
             }
         }
 
-        public static void deliverySectionShouldShowOOS_message() throws Exception {
+        public static void deliverySectionShouldShowOOS_message() {
             try {
                 driver.manage().timeouts().implicitlyWait(2, TimeUnit.MINUTES);
                 if(driver.findElements(By.xpath("//*[contains(text(),'Out of stock')]")).size() > 0) {
@@ -445,7 +457,7 @@ import static pageobjects.FreeSimPage.Firstname;
         }
 
 
-        public static void deliverySectionShouldShowClick_anf_collect_option_without_radio_button_and_OOS_msg() throws Exception {
+        public static void deliverySectionShouldShowClick_anf_collect_option_without_radio_button_and_OOS_msg() {
             try {
                 driver.manage().timeouts().implicitlyWait(2, TimeUnit.MINUTES);
                 if(driver.findElements(By.xpath("//*[contains(text(),'Out of stock')]")).size() > 0) {

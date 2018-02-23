@@ -26,5 +26,5 @@ Feature: Reg_Consumer_Buyout
     Then order confirmation is displayed
 
     Examples:
-      | username           | password | handset  | Action |
-      | vinodcog@gmail.com | test123  | iPhone 8 | skip   |
+      | username          | password | handset  | Action |
+      | sit3159@gmail.com | test123  | iPhone 8 | skip   |

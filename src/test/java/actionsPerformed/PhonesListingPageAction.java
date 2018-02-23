@@ -157,8 +157,23 @@ public class PhonesListingPageAction extends Environment {
 
 		Thread.sleep(3000);
 
-		WebElement element = driver.findElement(By.xpath("(//img[@class='device-image'])[1]"));
-		((JavascriptExecutor) driver).executeScript("arguments[0].click();", element);
+		WebElement requestedDevice = driver.findElement(By.xpath("//img[@class='device-image']/..//*[normalize-space()='"+elementName+"']"));
+		if(driver.findElements(By.xpath("//img[@class='device-image']/..//*[normalize-space()='"+elementName+"']")).size() >= 1){
+			((JavascriptExecutor) driver).executeScript("arguments[0].click();", requestedDevice);
+			System.out.println("Selected Device from Phones as Required is : " + elementName);
+			log.debug("Selected Device from Phones as Required is : " + elementName);
+			Thread.sleep(3000);
+		}else{
+
+			WebElement element = driver.findElement(By.xpath("(//img[@class='device-image'])[1]"));
+			((JavascriptExecutor) driver).executeScript("arguments[0].click();", element);
+			String defaultSelDevice = driver.findElement(By.xpath("((//img[@class='device-image'])[1]/..//span[@class='ng-binding'])[2]")).getText();
+			System.out.println(" As Required Device is not Availabe, We have picked default device from availabe  :: " + defaultSelDevice);
+			log.debug(" As Required Device is not Availabe, We have picked default device from availabe  :: " + defaultSelDevice);
+			Thread.sleep(3000);
+		}
+
+
 
 		Screenshots.captureScreenshot();
 	}
@@ -878,8 +893,7 @@ public class PhonesListingPageAction extends Environment {
 
 	}
 
-	public static LinkedList<String> reArrangeListInAcendingBeforeApplyingSort(LinkedList<String> OriginalList)
-			throws InterruptedException {
+	public static LinkedList<String> reArrangeListInAcendingBeforeApplyingSort(LinkedList<String> OriginalList) {
 
 		LinkedList<String> ListBeforeApplyingSort = OriginalList;
 		// listSortEx(ListBeforeApplyingSort, false);
@@ -891,8 +905,7 @@ public class PhonesListingPageAction extends Environment {
 
 	}
 
-	public static LinkedList<String> reArrangeListInDescendingBeforeApplyingSort(LinkedList<String> OriginalList)
-			throws InterruptedException {
+	public static LinkedList<String> reArrangeListInDescendingBeforeApplyingSort(LinkedList<String> OriginalList) {
 
 		LinkedList<String> ListBeforeApplyingSort = OriginalList;
 		listSortEx(ListBeforeApplyingSort, true);

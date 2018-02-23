@@ -42,5 +42,5 @@ Feature: CFU_MbbSimo30days
     And Click on 'Place your order' CTA
 
     Examples:
-      | Contract | GiftBlock  | username                   | password | filterSort | Tariffsortoption           | GiftBlock | sortoption                |
-      | 30 Days  | Configured | q31020046@stf.ref.o2.co.uk | test123  | high       | Monthly data (Low to High) | dfd       | Monthly data (High to low |
+      | Contract | GiftBlock  | username              | password | filterSort | Tariffsortoption           | GiftBlock | sortoption                |
+      | 30 Days  | Configured | teadsdst@usaddser.com | test123  | high       | Monthly data (Low to High) | dfd       | Monthly data (High to low |

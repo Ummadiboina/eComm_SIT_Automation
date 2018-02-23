@@ -24,5 +24,5 @@ Feature: CFU_Recycle_Phones_DD_Confirmation_Page_changes
     Then Verify contents of order confirmation page for Phones containing <Status>
 
     Examples:
-      | username    | password | handset        | tariff                   | Firstname | Surname | Username     | Action | Status           |
-      | ini_jan6238 | test123  | Apple iPhone 7 | 129.99upfront37.00amonth | TEST      | ACCEPTA | TEST ACCEPTA | skip   | Delayed Delivery |
+      | username             | password | handset        | tariff                   | Firstname | Surname | Username     | Action | Status           |
+      | lucky@rediffmail.com | test123  | Apple iPhone 7 | 129.99upfront37.00amonth | TEST      | ACCEPTA | TEST ACCEPTA | skip   | Delayed Delivery |

@@ -47,7 +47,8 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 		driver.manage().timeouts().implicitlyWait(120, TimeUnit.SECONDS);
 		if (ElementName.equalsIgnoreCase("Randomtariff")) {
 			//pageobjects.PAYMandPAYGTariffAndExtrasPage.RandomTariff1.sendKeys(Keys.ENTER);
-			pageobjects.PAYMandPAYGTariffAndExtrasPage.RandomTariff1.click();
+			((JavascriptExecutor) driver).executeScript("arguments[0].click();", pageobjects.PAYMandPAYGTariffAndExtrasPage.RandomTariff1);
+			//pageobjects.PAYMandPAYGTariffAndExtrasPage.RandomTariff1.click();
 			System.out.println("Selected a Random Tariff");
 			log.debug("Selected a Random Tariff");
 		}
@@ -103,9 +104,12 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 
 	public static void addToBasketLive() throws InterruptedException, IOException, AWTException {
 		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
-//		driver.findElement(By.xpath("(//*[normalize-space()='Select'])[2]")).click();
+
+		WebElement selectDevice = driver.findElement(By.xpath("(//*[normalize-space()='Select'])[2]"));
+		((JavascriptExecutor) driver).executeScript("arguments[0].click();", selectDevice);
 	/*	JavascriptExecutor jse = (JavascriptExecutor) driver;
 		jse.executeScript("window.scrollBy(0,600)", "");*/
+		Thread.sleep(50000);
 		Point coordinates = PAYMandPAYGTariffAndExtrasPage.addToBasketLive.getLocation();
 		Robot robot = new Robot();
 		robot.mouseMove(coordinates.getX(), coordinates.getY() + 120);
@@ -796,11 +800,7 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 	public static void verifyListWhenGreaterIsSelected() throws IOException, InterruptedException {
 		boolean flag = false;
 		for (int s = 0; s < datalistafter.size(); s++) {
-			if (datalistafter.get(s) < start.get(0)) {
-				flag = false;
-			} else {
-				flag = true;
-			}
+			flag = datalistafter.get(s) >= start.get(0);
 		}
 		if (flag == false) {
 			System.out.println("Failed");
@@ -814,11 +814,7 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 		System.out.println("verifyList");
 		boolean flag = false;
 		for (int s = 0; s < datalistafter.size(); s++) {
-			if (datalistafter.get(s) < start.get(0) || datalistafter.get(s) > end.get(0)) {
-				flag = false;
-			} else {
-				flag = true;
-			}
+			flag = datalistafter.get(s) >= start.get(0) && datalistafter.get(s) <= end.get(0);
 		}
 		if (flag == false) {
 			System.out.println("Failed");
@@ -1035,8 +1031,7 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 
 	}
 
-	public static ArrayList<Integer> reArrangeListInDescendingBeforeApplyingSort(ArrayList<Integer> OriginalList)
-			throws InterruptedException {
+	public static ArrayList<Integer> reArrangeListInDescendingBeforeApplyingSort(ArrayList<Integer> OriginalList) {
 
 		ArrayList<Integer> ListBeforeApplyingSort = OriginalList;
 		Collections.sort(ListBeforeApplyingSort, Collections.reverseOrder());

@@ -28,6 +28,6 @@ Feature: CFU_Tablets_Data_filters_options_tariff_and_extras_page_Order_placement
     Then order confirmation is displayed
 
     Examples:
-      | Tablet        | Action | Surname | Username     | filtername | sortoption                 | username    | password |
-      | Random Device | skip   | ACCEPTA | TEST ACCEPTA | high       | Monthly data (Low to High) | ini_feb3331 | test123  |
+      | Tablet        | Action | Surname | Username     | filtername | sortoption                 | username               | password |
+      | Random Device | skip   | ACCEPTA | TEST ACCEPTA | high       | Monthly data (Low to High) | inavgmsa_285990@o2.com | test123  |
    #   | Apple iPhone 7    | TEST      | ACCEPTA | TEST ACCEPTA | high       |
