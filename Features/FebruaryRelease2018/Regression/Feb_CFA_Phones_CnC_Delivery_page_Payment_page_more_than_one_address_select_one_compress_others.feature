@@ -18,5 +18,5 @@ Feature: CFA_Phones_CnC_Delivery_page_Payment_page_more_than_one_address_select_
     Then order confirmation is displayed with Volte message
 
     Examples:
-      | handset | Firstname | Surname | Username     |
-      | Apple8  | TEST      | ACCEPTA | TEST ACCEPTA |
+      | handset        | Firstname | Surname | Username     |
+      | Apple iPhone 6 | TEST      | ACCEPTA | TEST ACCEPTA |

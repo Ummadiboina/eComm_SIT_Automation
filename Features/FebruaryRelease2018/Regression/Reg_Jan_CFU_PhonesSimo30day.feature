@@ -30,5 +30,5 @@ Feature: CFU_PhonesSimo30day
     And copy text SIM delivery required or not is displayed
 
     Examples:
-      | Contract | GiftBlock  | username         | password | filtername | sortoption                 | GiftBlock |
-      | 12 Days  | Configured | ahgt12@gmail.com | test123  | high       | Monthly data (Low to High) | dfdf      |
+      | Contract | GiftBlock  | username               | password | filtername | sortoption                 | GiftBlock |
+      | 12 Days  | Configured | in01808o_894013@o2.com | test123  | high       | Monthly data (Low to High) | dfdf      |

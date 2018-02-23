@@ -2,7 +2,7 @@ Feature: Reg_Current_MBB_URL_no_change_Order_placement
 
   @Web
   Scenario Outline: This scenario ensures that there should not be any change for customer with Current MBB URL and customer should be able to place order
-   Given I am existing user and I click on Signin button
+    Given I am existing user and I click on Signin button
     And Signin using valid <username> and <password> credentials
     And I launch the OldMBBURL
     And select "random" MBBtariff
@@ -16,6 +16,6 @@ Feature: Reg_Current_MBB_URL_no_change_Order_placement
     Then order confirmation is displayed
 
     #Modify the above step to include pdf download
-    Examples: 
-      | username   | password | user         |
-      | in_jul1136 | test123  | TEST ACCEPTA |
+    Examples:
+      | username                         | password | user         |
+      | testaccepta5754@stf.ref.o2.co.uk | test123  | TEST ACCEPTA |

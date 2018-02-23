@@ -62,7 +62,7 @@ public class ConnectedDeviceDetailsPageAction extends Environment {
 		JavascriptExecutor executor = (JavascriptExecutor) driver;
 		executor.executeScript("arguments[0].click();", pageobjects.ConnectedDeviceDetailsPage.ViewOurTariffs);
 
-		Thread.sleep(5000);
+		Thread.sleep(3000);
 		// driver.findElement(By.id("deviceDetailsSubmit")).click();
 		log.debug("Clicked on ViewOurTariffs");
 		Screenshots.captureScreenshot();
@@ -337,7 +337,7 @@ public class ConnectedDeviceDetailsPageAction extends Environment {
 		Screenshots.captureScreenshot();
 	}
 
-	public static void UpdatedColordropdownText()throws IOException, InterruptedException {
+	public static void UpdatedColordropdownText() {
 
 		if(pageobjects.ConnectedDeviceDetailsPage.Colourdropdownbox.isDisplayed()) {
 			WebElement colourDropdown=driver.findElement(By.xpath("//*[@id='colourSelectBoxItOptions']"));
