@@ -6,36 +6,7 @@
   <component name="ChangeListManager">
     <list id="9d0aef85-48ac-4e71-b67a-fff455014d99" name="New changelist" comment="New changelist" />
     <list default="true" id="b3431a87-97b1-4ffe-b872-0e6a8e54231a" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/Features/TestDataValidation.feature" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/test/java/actionsPerformed/ReadData.java" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/Features/C2101_E11770_CFU_Tariff page_ sort insurance and one associated tariff having free  insurance.feature" afterPath="$PROJECT_DIR$/Features/C2101_E11770_CFU_Tariff page_ sort insurance and one associated tariff having free  insurance.feature" />
-      <change beforePath="$PROJECT_DIR$/Features/FebruaryRelease2018/Regression/Feb_AFU_eComm_Promotions_and_added_Bolton_Incompatible_error_message_Remove_and_reapply_removed_bolton_Order_Placement.feature" afterPath="$PROJECT_DIR$/Features/FebruaryRelease2018/Regression/Feb_AFU_eComm_Promotions_and_added_Bolton_Incompatible_error_message_Remove_and_reapply_removed_bolton_Order_Placement.feature" />
-      <change beforePath="$PROJECT_DIR$/Features/FebruaryRelease2018/Regression/Feb_CFA_Phones_CnC_Delivery_page_Payment_page_more_than_one_address_select_one_compress_others.feature" afterPath="$PROJECT_DIR$/Features/FebruaryRelease2018/Regression/Feb_CFA_Phones_CnC_Delivery_page_Payment_page_more_than_one_address_select_one_compress_others.feature" />
-      <change beforePath="$PROJECT_DIR$/Features/FebruaryRelease2018/Regression/Feb_CFU_Buyout_with_Recycle_Order_placement.feature" afterPath="$PROJECT_DIR$/Features/FebruaryRelease2018/Regression/Feb_CFU_Buyout_with_Recycle_Order_placement.feature" />
-      <change beforePath="$PROJECT_DIR$/Features/FebruaryRelease2018/Regression/Feb_CFU_Tablet_CnC_changes_on_Delivery_page_Order_placement.feature" afterPath="$PROJECT_DIR$/Features/FebruaryRelease2018/Regression/Feb_CFU_Tablet_CnC_changes_on_Delivery_page_Order_placement.feature" />
-      <change beforePath="$PROJECT_DIR$/Features/FebruaryRelease2018/Regression/Feb_CFU_Tablet_Delivery_page_more_than_one_address_select_one_compress_others.feature" afterPath="$PROJECT_DIR$/Features/FebruaryRelease2018/Regression/Feb_CFU_Tablet_Delivery_page_more_than_one_address_select_one_compress_others.feature" />
-      <change beforePath="$PROJECT_DIR$/Features/FebruaryRelease2018/Regression/Reg_AFU_PAYM_Dongle_payByCard.feature" afterPath="$PROJECT_DIR$/Features/FebruaryRelease2018/Regression/Reg_AFU_PAYM_Dongle_payByCard.feature" />
-      <change beforePath="$PROJECT_DIR$/Features/FebruaryRelease2018/Regression/Reg_AFU_PAYM_Dongle_submitOrder.feature" afterPath="$PROJECT_DIR$/Features/FebruaryRelease2018/Regression/Reg_AFU_PAYM_Dongle_submitOrder.feature" />
-      <change beforePath="$PROJECT_DIR$/Features/FebruaryRelease2018/Regression/Reg_AFU_SavedBasket.feature" afterPath="$PROJECT_DIR$/Features/FebruaryRelease2018/Regression/Reg_AFU_SavedBasket.feature" />
-      <change beforePath="$PROJECT_DIR$/Features/FebruaryRelease2018/Regression/Reg_AFU_verify_Base_Comms_tariff_under_offer_column_order_placement_O2_offer.feature" afterPath="$PROJECT_DIR$/Features/FebruaryRelease2018/Regression/Reg_AFU_verify_Base_Comms_tariff_under_offer_column_order_placement_O2_offer.feature" />
-      <change beforePath="$PROJECT_DIR$/Features/FebruaryRelease2018/Regression/Reg_Agent_Buyout.feature" afterPath="$PROJECT_DIR$/Features/FebruaryRelease2018/Regression/Reg_Agent_Buyout.feature" />
-      <change beforePath="$PROJECT_DIR$/Features/FebruaryRelease2018/Regression/Reg_CFU_Recycle_Phones_DD_Confirmation_Page_changes.feature" afterPath="$PROJECT_DIR$/Features/FebruaryRelease2018/Regression/Reg_CFU_Recycle_Phones_DD_Confirmation_Page_changes.feature" />
-      <change beforePath="$PROJECT_DIR$/Features/FebruaryRelease2018/Regression/Reg_CFU_Tablets_Data_filters_options_tariff_and_extras_page_Order_placement.feature" afterPath="$PROJECT_DIR$/Features/FebruaryRelease2018/Regression/Reg_CFU_Tablets_Data_filters_options_tariff_and_extras_page_Order_placement.feature" />
-      <change beforePath="$PROJECT_DIR$/Features/FebruaryRelease2018/Regression/Reg_CFU_seperate_tariff_ribbons_Tariff_page_Basket_page_html_overlay_for_tariff_ribbons.feature" afterPath="$PROJECT_DIR$/Features/FebruaryRelease2018/Regression/Reg_CFU_seperate_tariff_ribbons_Tariff_page_Basket_page_html_overlay_for_tariff_ribbons.feature" />
-      <change beforePath="$PROJECT_DIR$/Features/FebruaryRelease2018/Regression/Reg_CS_CFU_SavedBasket.feature" afterPath="$PROJECT_DIR$/Features/FebruaryRelease2018/Regression/Reg_CS_CFU_SavedBasket.feature" />
-      <change beforePath="$PROJECT_DIR$/Features/FebruaryRelease2018/Regression/Reg_Consumer_Buyout.feature" afterPath="$PROJECT_DIR$/Features/FebruaryRelease2018/Regression/Reg_Consumer_Buyout.feature" />
-      <change beforePath="$PROJECT_DIR$/Features/FebruaryRelease2018/Regression/Reg_Consumer_TradeIn.feature" afterPath="$PROJECT_DIR$/Features/FebruaryRelease2018/Regression/Reg_Consumer_TradeIn.feature" />
-      <change beforePath="$PROJECT_DIR$/Features/FebruaryRelease2018/Regression/Reg_Current_MBB_URL_no_change_Order_placement.feature" afterPath="$PROJECT_DIR$/Features/FebruaryRelease2018/Regression/Reg_Current_MBB_URL_no_change_Order_placement.feature" />
-      <change beforePath="$PROJECT_DIR$/Features/FebruaryRelease2018/Regression/Reg_Jan_CFU_MbbSimo30days.feature" afterPath="$PROJECT_DIR$/Features/FebruaryRelease2018/Regression/Reg_Jan_CFU_MbbSimo30days.feature" />
-      <change beforePath="$PROJECT_DIR$/Features/FebruaryRelease2018/Regression/Reg_Jan_CFU_PhonesSimo30day.feature" afterPath="$PROJECT_DIR$/Features/FebruaryRelease2018/Regression/Reg_Jan_CFU_PhonesSimo30day.feature" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/actionsPerformed/ConnectedDeviceDetailsPageAction.java" afterPath="$PROJECT_DIR$/src/test/java/actionsPerformed/ConnectedDeviceDetailsPageAction.java" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/actionsPerformed/DeliveryPageActions" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/actionsPerformed/DeliveryPageActions.java" afterPath="$PROJECT_DIR$/src/test/java/actionsPerformed/DeliveryPageActions.java" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/actionsPerformed/PAYMandPAYGTariffAndExtrasPageActions.java" afterPath="$PROJECT_DIR$/src/test/java/actionsPerformed/PAYMandPAYGTariffAndExtrasPageActions.java" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/actionsPerformed/PhonesListingPageAction.java" afterPath="$PROJECT_DIR$/src/test/java/actionsPerformed/PhonesListingPageAction.java" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pageobjects/MouseHoverPage.java" afterPath="$PROJECT_DIR$/src/test/java/pageobjects/MouseHoverPage.java" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/steps/E2EOrderPlaced_Steps.java" afterPath="$PROJECT_DIR$/src/test/java/steps/E2EOrderPlaced_Steps.java" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -133,7 +104,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="venakat_21Feb2018_v2" />
+        <entry key="$PROJECT_DIR$" value="venkat_22Feb2018_v1" />
       </map>
     </option>
     <option name="SIGN_OFF_COMMIT" value="true" />
@@ -987,7 +958,14 @@
       <option name="project" value="LOCAL" />
       <updated>1519406308682</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="Merged venkat_23Feb2018_v1 into master">
+      <created>1519406454267</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1519406454267</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1042,7 +1020,7 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.36535433" sideWeight="0.27232796" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.0" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.11181103" sideWeight="0.72767204" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.37480316" sideWeight="0.72767204" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.105511814" sideWeight="0.45827234" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3023622" sideWeight="0.47657394" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1119,7 +1097,6 @@
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_CODE_CLEANUP_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="Anusha_Nov15112017" />
     <MESSAGE value="Anusha_Nov15112017_V1" />
     <MESSAGE value="Anusha_Nov15112017_v2" />
     <MESSAGE value="Anusha_Nov16112017" />
@@ -1144,7 +1121,8 @@
     <MESSAGE value="Merged venkat21Feb2018_v1 into master" />
     <MESSAGE value="Merged venkat22Feb2018_v1 into master" />
     <MESSAGE value="Merged venkat_22Feb2018_v1 into master" />
-    <option name="LAST_COMMIT_MESSAGE" value="Merged venkat_22Feb2018_v1 into master" />
+    <MESSAGE value="Merged venkat_23Feb2018_v1 into master" />
+    <option name="LAST_COMMIT_MESSAGE" value="Merged venkat_23Feb2018_v1 into master" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1175,7 +1153,7 @@
         </line-breakpoint>
         <line-breakpoint type="java-method">
           <url>file://$PROJECT_DIR$/src/test/java/steps/E2EOrderPlaced_Steps.java</url>
-          <line>5085</line>
+          <line>5066</line>
           <properties class="steps.E2EOrderPlaced_Steps" method="search_for_device">
             <option name="EMULATED" value="true" />
           </properties>
@@ -1183,7 +1161,7 @@
         </line-breakpoint>
         <line-breakpoint type="java-method">
           <url>file://$PROJECT_DIR$/src/test/java/steps/E2EOrderPlaced_Steps.java</url>
-          <line>5828</line>
+          <line>5807</line>
           <properties class="steps.E2EOrderPlaced_Steps" method="clickOnRespectiveDataFilter">
             <option name="EMULATED" value="true" />
           </properties>
