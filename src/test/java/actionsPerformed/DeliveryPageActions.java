@@ -380,24 +380,24 @@ public class DeliveryPageActions extends Environment {
     }
 
     public static void enterHouseNumAndPostalCode_DeliverySection(String houseNum , String postCode) {
-        try {
+        try{
             driver.manage().timeouts().implicitlyWait(2, TimeUnit.MINUTES);
 
-            if (DeliveryPage.Housenumber.isDisplayed()) {
+            if(DeliveryPage.Housenumber.isDisplayed()){
                 DeliveryPage.Housenumber.sendKeys(houseNum);
-                DeliveryPage.Housenumber.sendKeys(Keys.TAB);
+                DeliveryPage.Housenumber.sendKeys(Keys.TAB );
                 DeliveryPage.Postcode.sendKeys(postCode);
                 DeliveryPage.Find_Address.click();
                 Thread.sleep(5000);
                 System.out.println(" Entered the houseNumber and postcCode");
                 log.debug(" Entered the houseNumber and postcCode");
-            } else {
+            }else{
                 System.out.println(" Failed to  Entered the houseNumber and postcCode");
                 log.debug(" Failed to  Entered the houseNumber and postcCode");
             }
-        } catch (Exception e) {
-            System.out.println(" Failed to  Entered the houseNumber and postcCode" + e.getStackTrace());
-            log.debug(" Failed to  Entered the houseNumber and postcCode" + e.getStackTrace());
+        }catch (Exception e){
+            System.out.println(" Failed to  Entered the houseNumber and postcCode"+ e.getStackTrace());
+            log.debug(" Failed to  Entered the houseNumber and postcCode"+ e.getStackTrace());
         }
     }
 
