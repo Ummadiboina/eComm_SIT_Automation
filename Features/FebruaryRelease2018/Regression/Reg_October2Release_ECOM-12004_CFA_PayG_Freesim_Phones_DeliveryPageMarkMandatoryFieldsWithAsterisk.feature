@@ -1,4 +1,4 @@
-Feature: CFA_PAYG_sims_Asterisk validation
+Feature: Reg_October2Release_ECOM-12004_CFA_PayG_Freesim_Phones_DeliveryPageMarkMandatoryFieldsWithAsterisk.feature
 
   @Web
   Scenario Outline: CFA_PAYG_sims_Asterisk validation

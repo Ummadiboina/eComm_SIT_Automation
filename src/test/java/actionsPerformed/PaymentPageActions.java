@@ -94,9 +94,9 @@ public class PaymentPageActions extends Environment {
         pageobjects.PaymentPage.Stay_Address_months.sendKeys("9");
         log.debug("Entered the stayed at months - 9");
 
-        executor.executeScript("arguments[0].click();", pageobjects.PaymentPage.Confirm_Address_Checkbox);
+        //executor.executeScript("arguments[0].click();", pageobjects.PaymentPage.Confirm_Address_Checkbox);
 
-//		pageobjects.PaymentPage.Confirm_Address_Checkbox.click();
+		pageobjects.PaymentPage.Confirm_Address_Checkbox.click();
         log.debug("Clicked on the Confirm Address checkbox");
         Screenshots.captureScreenshot();
     }

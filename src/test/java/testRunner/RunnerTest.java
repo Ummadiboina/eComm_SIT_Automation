@@ -19,30 +19,30 @@ import java.util.List;
 
 
 @ExtendedCucumberOptions
-		(
-				jsonReport = "testResult/cucumber.json",
-				retryCount = 0,
-				detailedReport = true,
-				detailedAggregatedReport = true,
-				overviewReport = true,
-				coverageReport = true,
+        (
+                jsonReport = "testResult/cucumber.json",
+                retryCount = 0,
+                detailedReport = true,
+                detailedAggregatedReport = true,
+                overviewReport = true,
+                coverageReport = true,
 
-				jsonUsageReport = "testResult/cucumber-usage.json",
-				usageReport = true,
-				toPDF = true,
-				excludeCoverageTags = {"@flaky" },
-				includeCoverageTags = {"@passed" },
-				outputFolder = "testResult/cucumber_detailed_result/DATE(yyyy-MM-dd HH)"
+                jsonUsageReport = "testResult/cucumber-usage.json",
+                usageReport = true,
+                toPDF = true,
+                excludeCoverageTags = {"@flaky"},
+                includeCoverageTags = {"@passed"},
+                outputFolder = "testResult/cucumber_detailed_result/DATE(yyyy-MM-dd HH)"
 
-		)
+        )
 
 
-@CucumberOptions(plugin = { "html:testResult/cucumber-html-report",
-		"json:testResult/cucumber.json", "pretty:testResult/cucumber-pretty.txt",
-		"usage:testResult/cucumber-usage.json", "junit:testResult/cucumber-results.xml" },
-		features = { "Features//FebruaryRelease2018//Regression//" },
-		glue = { "steps" },
-		tags = {})
+@CucumberOptions(plugin = {"html:testResult/cucumber-html-report",
+        "json:testResult/cucumber.json", "pretty:testResult/cucumber-pretty.txt",
+        "usage:testResult/cucumber-usage.json", "junit:testResult/cucumber-results.xml"},
+        features = {"Features//FebruaryRelease2018//Regression//Reg_October2Release_PayG Tablets_ShowMarketingMessageOnTariffAndExtrasPagePackageSummary.feature"},
+        glue = {"steps"},
+        tags = {})
 
 
 public class RunnerTest extends ExtendedTestNGRunner {

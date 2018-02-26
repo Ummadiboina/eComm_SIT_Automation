@@ -1,4 +1,4 @@
-Feature: CFA_Phones_CustomersMovedToNewAddressPaymentPageHomeAddressCopyUpdate
+Feature: Reg_October2Release_Reg_October2Release_ECOM-11886.feature
 
   This scenario ensures that when the customer in acquisition journey who have moved address recently selects 'PayM Phone', then the customer should be prompted with updated copy of 'Home Address' to ensure that their address is up to date
 
@@ -20,5 +20,5 @@ Feature: CFA_Phones_CustomersMovedToNewAddressPaymentPageHomeAddressCopyUpdate
 
 
     Examples:
-      | handset  | Firstname | Surname | Username     |
-      | GalaxyS8 | TEST      | ACCEPTA | TEST ACCEPTA |
+      | handset           | Firstname | Surname | Username     |
+      | Samsung Galaxy S8 | TEST      | ACCEPTA | TEST ACCEPTA |

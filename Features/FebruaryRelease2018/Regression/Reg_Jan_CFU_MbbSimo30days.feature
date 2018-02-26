@@ -1,5 +1,7 @@
-Feature: CFU_MbbSimo30days
+Feature: Reg_Jan_CFU_MbbSimo30days.feature
+
   This scenario ensures that an upgrade customer is able to select a 12 months tablets tariff under the simo tab in upgrade options page
+
   @Web
   Scenario Outline: CFU_MbbSimo30days
     Given I am an Existing user and Navigates to Signin page
@@ -41,5 +43,5 @@ Feature: CFU_MbbSimo30days
     And Click on 'Place your order' CTA
 
     Examples:
-      |Contract|GiftBlock |username         |password|filterSort |Tariffsortoption            |GiftBlock|sortoption|
-      |30 Days |Configured| ahgt12@gmail.com| test123 |high      | Monthly data (Low to High) |  dfd     |Monthly data (High to low|
+      | Contract | GiftBlock  | username         | password | filterSort | Tariffsortoption           | GiftBlock | sortoption                |
+      | 30 Days  | Configured | ahgt12@gmail.com | test123  | high       | Monthly data (Low to High) | dfd       | Monthly data (High to low |

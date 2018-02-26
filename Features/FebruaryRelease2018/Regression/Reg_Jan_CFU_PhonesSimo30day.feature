@@ -1,5 +1,7 @@
-Feature: CFU_PhonesSimo30day
+Feature: Reg_Jan_CFU_PhonesSimo30day.feature
+
   This scenario ensures that an upgrade customer is able to select a 30 day tariff under the simo tab in upgrade options page
+
   @Web
   Scenario Outline: CFU_PhonesSimo30day
     Given I am an Existing user and Navigates to Signin page
@@ -29,5 +31,5 @@ Feature: CFU_PhonesSimo30day
     And copy text SIM delivery required or not is displayed
 
     Examples:
-    |Contract|GiftBlock |username           |password|filtername|sortoption                 |sort|GiftBlock|
-    |12 Days |Configured| ahgt12@gmail.com  | test123|high      | Monthly data (Low to High)|    | dfdf  |
+      | Contract | GiftBlock  | username         | password | filtername | sortoption                 | sort | GiftBlock |
+      | 12 Days  | Configured | ahgt12@gmail.com | test123  | high       | Monthly data (Low to High) |      | dfdf      |

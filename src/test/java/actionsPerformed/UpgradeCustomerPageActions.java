@@ -391,7 +391,7 @@ public class UpgradeCustomerPageActions extends Environment {
         System.out.println("selectTariff");
         // executor.executeScript("arguments[0].click();",
         // pageobjects.PAYMandPAYGTariffAndExtrasPage.ViewAllTariffs);
-        List<WebElement> TariffList = driver.findElements(By.xpath("//*[@class='tariff-grids tiles row']/li[@class='liTariffPlan col-sm-6 col-md-4 col-lg-3 ng-scope']"));
+        List<WebElement> TariffList = driver.findElements(By.xpath("//*[@class='tst-BigBundlesSection tariff-grids row tariffs-container']/li[@class='col-sm-6 col-md-4 col-lg-3 tariff ng-scope']"));
         boolean flag = false;
         String TariffXpath = null;
         String TextOfTariffTile = null;

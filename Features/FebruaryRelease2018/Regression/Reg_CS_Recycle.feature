@@ -1,4 +1,4 @@
-Feature: Reg_CS_Recycle
+Feature: Reg_CS_Recycle.feature
 
   @Web
   Scenario Outline: This scenario ensures that the customer is able to recycle and upgrade

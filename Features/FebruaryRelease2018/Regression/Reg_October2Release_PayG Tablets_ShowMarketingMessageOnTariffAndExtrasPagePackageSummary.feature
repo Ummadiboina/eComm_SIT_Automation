@@ -1,4 +1,4 @@
-Feature: PayG Tablets_ShowMarketingMessageOnTariffAndExtrasPagePackageSummary
+Feature: Reg_October2Release_PayG Tablets_ShowMarketingMessageOnTariffAndExtrasPagePackageSummary.feature
 
   @Web
   Scenario Outline: PayG Tablets_ShowMarketingMessageOnTariffAndExtrasPagePackageSummary
@@ -22,5 +22,5 @@ Feature: PayG Tablets_ShowMarketingMessageOnTariffAndExtrasPagePackageSummary
     Then order confirmation is displayed
 
     Examples:
-      | Device        | Firstname | Surname | Username     | tariff                 |
-      | Random Device | TEST      | ACCEPTA | TEST ACCEPTA | 9.99upfront60.00amonth |
+      | Device        | Firstname | Surname | Username     | tariff                             |
+      | Random Device | TEST      | ACCEPTA | TEST ACCEPTA | Device with 1GB preloaded data sim |

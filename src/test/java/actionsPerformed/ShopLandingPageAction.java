@@ -26,10 +26,11 @@ public class ShopLandingPageAction extends Environment {
 			driver.manage().timeouts().implicitlyWait(5, TimeUnit.MINUTES);
 
 			WebElement ele = driver.findElement(By.xpath("//li[@name='Shop']/a"));
-	S		Actions act = new Actions(driver);
+			Actions act = new Actions(driver);
 			act.moveToElement(ele).build().perform();
 			Thread.sleep(1000);
 			driver.findElement(By.xpath("//a[@data-parent='Shop' and text()='Pay Monthly sims']")).click();
+			System.out.println("clicked on pay monthly sims link");
 			Thread.sleep(3000);
 			System.out.println(" Current URL is : " + driver.getCurrentUrl());
 			driver.manage().timeouts().implicitlyWait(5, TimeUnit.MINUTES);
@@ -118,7 +119,7 @@ public class ShopLandingPageAction extends Environment {
 		Thread.sleep(5000);
 		driver.close();
 		driver.switchTo().window(oldTab);
-		System.out.println(driver.getCurrentUrl());
+		System.out.println("The current URL is: "+driver.getCurrentUrl());
 		Screenshots.captureScreenshot();
 
 	}

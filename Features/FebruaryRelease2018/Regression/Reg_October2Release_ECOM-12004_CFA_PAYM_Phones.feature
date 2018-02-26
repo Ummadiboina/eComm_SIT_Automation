@@ -1,5 +1,4 @@
-Feature: CFA_Phones_SSCcheckoutpagesMarkMandatoryFieldsWithAsterisk
-
+Feature: Reg_October2Release_ECOM-12004_CFA_PAYM_Phones.feature
 
   @Web
   Scenario Outline: CFA_Phones_SSCcheckoutpagesMarkMandatoryFieldsWithAsterisk
@@ -22,12 +21,11 @@ Feature: CFA_Phones_SSCcheckoutpagesMarkMandatoryFieldsWithAsterisk
       | Surname               | Accepta      |
       | Contact Number        | 078228377333 |
       | Password              | TesterSit123 |
-      | Security Question     | Random       |
       | Security Answer       | Sit Testers  |
       | Date of Birth - Date  | 22           |
       | Date of Birth - Month | 10           |
       | Date of Birth - Year  | 1990         |
-    And Click on the 'Continue button'
+   # And Click on the 'Continue button'
       #Below is payment page
     And verify copy text You will need to give details for all fields marked with an asterisk is displayed
     And verify asterisk is displayed against mandatory fields of "Payments page"
@@ -42,5 +40,5 @@ Feature: CFA_Phones_SSCcheckoutpagesMarkMandatoryFieldsWithAsterisk
 
         #Close the browser
     Examples:
-      | handset  |
-      | GalaxyS8 |
+      | handset           |
+      | Samsung Galaxy S8 |
