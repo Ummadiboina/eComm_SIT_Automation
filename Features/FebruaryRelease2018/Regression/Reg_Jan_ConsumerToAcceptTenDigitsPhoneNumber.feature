@@ -1,7 +1,5 @@
-Feature: Reg_Jan_ConsumerToAcceptTenDigitsPhoneNumber.feature
-
+Feature: ConsumerToAcceptTenDigitsPhoneNumber
   This scenario ensures that the consumer shop accepts 10 digit home number
-
   @Web
   Scenario Outline: ConsumerToAcceptTenDigitsPhoneNumber
 
@@ -25,4 +23,4 @@ Feature: Reg_Jan_ConsumerToAcceptTenDigitsPhoneNumber.feature
       #Close the browser
     Examples:
       | handset | Firstname | Surname | Username     | Status           | color |
-      | Iphone7 | TEST      | ACCEPTA | TEST ACCEPTA | Delayed Delivery | Black |
+      | Random  | TEST      | ACCEPTA | TEST ACCEPTA | Delayed Delivery | Black |
