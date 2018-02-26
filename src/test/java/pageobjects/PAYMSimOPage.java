@@ -25,18 +25,24 @@ public class PAYMSimOPage {
 	
 	/*@FindBy(how=How.XPATH,using=("//div[@class='tariff P12M  promoted-tariff  ']/div[8]"))
 	public static WebElement BuyNowPromotedTariff;*/
+
+
+	@FindBy(how=How.XPATH,using=("//*[@class='tariff P12M  promoted-tariff  ']/div[@class='col-xs-12 col-sm-5 info-container buy-now']/div[@class='btn-wrapper']/form/button"))
+	public static WebElement BuyNowPromotedTariff12Months;
+
+
+	@FindBy(how=How.XPATH,using=("//*[@class='tariff P30D  promoted-tariff   no-promotion-exists ']/div[@class='col-xs-12 col-sm-5 info-container buy-now']/div[@class='btn-wrapper']/form/button"))
+	public static WebElement BuyNowPromotedTariff30Days;
 	
-	//@FindBy(how=How.XPATH,using=("//div[@name='P12M']/div[8]/div"))
-	@FindBy(how=How.XPATH,using=("(//button[@type='button' and normalize-space()='Select'])[1]"))
-	public static WebElement BuyNowPromotedTariff;
-	
-	//@FindBy(how=How.XPATH,using=("(//button[@id='callToAction'])[10]"))
-	@FindBy(how=How.XPATH,using=("//*[@id='b94d8ec0-bc4e-4a8a-85c9-4c8587de11c9']/div[8]/div"))
+
+
+
+	@FindBy(how=How.XPATH,using=("(//*[@id='callToAction'])[1]"))
 	public static WebElement BuyNowRandomTariff12Months;
 	
 	//@FindBy(how=How.XPATH,using=("(//button[@id='callToAction'])[1]"))
 
-	@FindBy(how=How.XPATH,using=("//*[@id='e1292536-6b96-4c88-ba56-17a694c2140b']/div[5]/div"))
+	@FindBy(how=How.XPATH,using=("(//*[@id='callToAction'])[1]"))
 	public static WebElement BuyNowRandomTariff30Months;
 	
 	
@@ -205,4 +211,3 @@ public class PAYMSimOPage {
 
 
 }
-
