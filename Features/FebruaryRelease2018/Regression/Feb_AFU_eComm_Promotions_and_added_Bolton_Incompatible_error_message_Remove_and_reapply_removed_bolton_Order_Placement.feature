@@ -1,5 +1,6 @@
 Feature: AFU_eComm_Promotions_and_added_Bolton_Incompatible_error_message_Remove_and_reapply_removed_bolton_Order_Placement
   This scenario ensures that when the Retention Agent in Upgrade selects a 'Phone' and tariff eligible for eComm Promotion and adds another Bolton, then the customer should be displayed with error message
+
   @Web
   Scenario Outline: AFU_eComm_Promotions_and_added_Bolton_Incompatible_error_message_Remove_and_reapply_removed_bolton_Order_Placement
     Given I login to Agent shop
@@ -26,5 +27,5 @@ Feature: AFU_eComm_Promotions_and_added_Bolton_Incompatible_error_message_Remove
     Then Click on 'Checkout' CTA and Proceed till Order placement
 
     Examples:
-      | user        | Device | Tariffs |ErrorMsg                      |Button|
-      | 07521121496 | Random | Base    | incompatible with each other |Bolton|
+      | user        | Device | Tariffs | ErrorMsg                     | Button |
+      | 07521101029 | Random | Refresh | incompatible with each other | Bolton |

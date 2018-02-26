@@ -27,6 +27,6 @@ Feature: Reg_CS_Recycle.feature
     And Continue to Review page and review the order
     Then order confirmation is displayed
 
-    Examples: 
-      | username               | password | handset        | tariff                  | Firstname | Surname | Username     | Action | Make  | Model   | Network |
-      | in056936_248217@o2.com | test123  | Apple iPhone 7 | 19.99upfront45.00amonth | TEST      | ACCEPTA | TEST ACCEPTA | skip   | Apple | Iphone7 | Orange  |
+    Examples:
+      | username                   | password | handset        | tariff                  | Firstname | Surname | Username     | Action | Make  | Model   | Network |
+      | kllklsdklsklklklk@sdsd.com | test123  | Apple iPhone 7 | 19.99upfront45.00amonth | TEST      | ACCEPTA | TEST ACCEPTA | skip   | Apple | Iphone7 | Orange  |

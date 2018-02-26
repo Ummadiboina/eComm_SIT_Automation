@@ -1,5 +1,6 @@
 Feature: CFU_Buyout_with_Recycle_Order_placement
   This scenario ensures that when  a customer in an upgrade journey has opted for Buyout ,then the Buyout is displayed with Recycle in  'Your package' summary
+
   @Web
   Scenario Outline: CFU_Buyout_with_Recycle_Order_placement
     Given I am an Existing user and Navigates to Signin page
@@ -21,5 +22,5 @@ Feature: CFU_Buyout_with_Recycle_Order_placement
     Then Click on 'Go to checkout' and proceed till order confirmation
 
     Examples:
-      |username                           |password|  |
-      | testaccepta6560@stf.ref.o2.co.uk  | test123|  |
+      | username                   | password |
+      | q31020046@stf.ref.o2.co.uk | test123  |

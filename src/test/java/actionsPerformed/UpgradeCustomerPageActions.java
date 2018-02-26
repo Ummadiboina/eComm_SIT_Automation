@@ -51,20 +51,20 @@ public class UpgradeCustomerPageActions extends Environment {
          * if ((!driver.getTitle().
 		 * contains("O2 | Accounts | Please verify your email address") ||
 		 * !driver.getTitle().contains("O2 | Accounts | Update username"))) {
-		 *
+		 * 
 		 * Assert.fail("Login failed");
-		 *
+		 * 
 		 * } else {
-		 *
+		 * 
 		 * System.out.println("Logged in successfully"); }
 		 */
 		/*
 		 * try { System.out.println("Going to click on Continue link");
 		 * pageobjects.UpgradeCustomerPage.Continue.click();
-		 *
+		 * 
 		 * } catch (Exception e) { // TODO Auto-generated catch block
 		 * System.out.println("Continue button is not there, it should be fine" );
-		 *
+		 * 
 		 * }
 		 */
         Screenshots.captureScreenshot();
@@ -486,7 +486,7 @@ public class UpgradeCustomerPageActions extends Environment {
         }
         if (flag == false) {
             driver.findElement(By.xpath("(//div[contains(@class, 'grid-tile')]/div/button[@id='callToAction'])[1]"));
-            // Assert.fail("Provided tariff is not present in the list of tariffs");
+           // Assert.fail("Provided tariff is not present in the list of tariffs");
         }
         Screenshots.captureScreenshot();
     }
@@ -2144,14 +2144,14 @@ public class UpgradeCustomerPageActions extends Environment {
                         break;
                     }
                 }
-            }else{
-                System.out.println(" verify that the upfront sort options is not present in the 'sorting dropdown'");
-            }
+                }else{
+                    System.out.println(" verify that the upfront sort options is not present in the 'sorting dropdown'");
+                }
         }
         catch (Exception e) {
             // TODO Auto-generated catch block
-            System.out.println(" FAILED ::::: Upfront Cost is availabe ");
-            Assert.fail(" FAILED ::::: Upfront Cost is availabe ");
+                System.out.println(" FAILED ::::: Upfront Cost is availabe ");
+                Assert.fail(" FAILED ::::: Upfront Cost is availabe ");
         }
     }
 

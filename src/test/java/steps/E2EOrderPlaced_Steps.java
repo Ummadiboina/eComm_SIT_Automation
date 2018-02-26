@@ -62,7 +62,7 @@ public class E2EOrderPlaced_Steps {
         try {
             PageFactory.initElements(driver, MouseHoverPage.class);
 
-            MouseHoverAction.ByPassDroopalPage();
+             MouseHoverAction.ByPassDroopalPage();
             //ShopLandingPageAction.GetTitle_ref();
             ShopLandingPageAction.GetTitle();
 
@@ -78,10 +78,10 @@ public class E2EOrderPlaced_Steps {
 
     @And("^a cookies pop up should be displayed$")
     public void a_cookies_pop_up_should_be_displayed() throws Throwable {
-        // try {
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        PageFactory.initElements(driver, MouseHoverPage.class);
-        ShopLandingPageAction.CookiesPopUpDisplayed();
+       // try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, MouseHoverPage.class);
+            ShopLandingPageAction.CookiesPopUpDisplayed();
 /*
         } catch (Exception e) {
             // TODO Auto-generated catch block
@@ -95,7 +95,7 @@ public class E2EOrderPlaced_Steps {
     public void Delete_all_cookies() {
         driver.manage().deleteAllCookies();
         System.out.println("Successfully deleted all the cookies");
-    }
+        }
     @And("^launch the shop phones page$")
     public void launch_the_shop_phones_page() {
         driver.get("https://www.ref.o2.co.uk/shop/phones");
@@ -112,7 +112,7 @@ public class E2EOrderPlaced_Steps {
             MouseHoverAction.PayMPhonesLandingPage();
             Autoredirection.redirect();
             Thread.sleep(10000);
-            //GlobalActions.//CommonFunctionscheckTitle("PayM Phones Page");
+           //GlobalActions.//CommonFunctionscheckTitle("PayM Phones Page");
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -130,7 +130,7 @@ public class E2EOrderPlaced_Steps {
             MouseHoverAction.PayasyouGoTablets();
             Autoredirection.redirect();
             Thread.sleep(10000);
-            //GlobalActions.//CommonFunctionscheckTitle("PayM Phones Page");
+           //GlobalActions.//CommonFunctionscheckTitle("PayM Phones Page");
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -147,7 +147,7 @@ public class E2EOrderPlaced_Steps {
             MouseHoverAction.PayMMBBPage();
             Autoredirection.redirect();
             Thread.sleep(10000);
-            //GlobalActions.//CommonFunctionscheckTitle("PayM MBB Page");
+           //GlobalActions.//CommonFunctionscheckTitle("PayM MBB Page");
         } catch (Exception e) {
             // TODO Auto-generated catch block
             System.out.println("unable to do mousehover to PayM MBB");
@@ -163,7 +163,7 @@ public class E2EOrderPlaced_Steps {
             MouseHoverAction.AccessoriesLandingPage();
             //Autoredirection.redirect();
             Thread.sleep(10000);
-            //GlobalActions.//CommonFunctionscheckTitle("Accessories");
+           //GlobalActions.//CommonFunctionscheckTitle("Accessories");
         } catch (Exception e) {
             // TODO Auto-generated catch block
             System.out.println("unable to do mousehover to Accessories");
@@ -179,7 +179,7 @@ public class E2EOrderPlaced_Steps {
             MouseHoverAction.PayGMBBPage();
             Autoredirection.redirect();
             Thread.sleep(10000);
-            //GlobalActions.//CommonFunctionscheckTitle("PayG MBB Page");
+           //GlobalActions.//CommonFunctionscheckTitle("PayG MBB Page");
         } catch (Exception e) {
             // TODO Auto-generated catch block
             System.out.println("unable to do mousehover to PayGMBB");
@@ -195,7 +195,7 @@ public class E2EOrderPlaced_Steps {
             MouseHoverAction.FitnessLandingPage();
             Autoredirection.redirect();
             Thread.sleep(10000);
-            //GlobalActions.//CommonFunctionscheckTitle("Fitness Trackers");
+           //GlobalActions.//CommonFunctionscheckTitle("Fitness Trackers");
         } catch (Exception e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
@@ -212,7 +212,7 @@ public class E2EOrderPlaced_Steps {
             MouseHoverAction.SmartwatchesLandingPage();
             Autoredirection.redirect();
             Thread.sleep(10000);
-            //GlobalActions.//CommonFunctionscheckTitle("Smartwatches");
+           //GlobalActions.//CommonFunctionscheckTitle("Smartwatches");
         } catch (Exception e) {
             e.printStackTrace();
             System.out.println("unable to do mousehover to SmartWatches");
@@ -228,7 +228,7 @@ public class E2EOrderPlaced_Steps {
             MouseHoverAction.PayGPhonesLandingPage();
             Autoredirection.redirect();
             Thread.sleep(10000);
-            //GlobalActions.//CommonFunctionscheckTitle("PayG Phones page");
+           //GlobalActions.//CommonFunctionscheckTitle("PayG Phones page");
         } catch (Exception e) {
             // TODO Auto-generated catch block
             System.out.println("unable to do mousehover to Pay as you Go Phones page");
@@ -291,7 +291,7 @@ public class E2EOrderPlaced_Steps {
             // MouseHoverAction.UpgradeandUpgradeNow();
             UpgradeCustomerPageActions.Signin();
             Autoredirection.redirectUpgrades();
-            //GlobalActions.//CommonFunctionscheckTitle("Sign In Page");
+           //GlobalActions.//CommonFunctionscheckTitle("Sign In Page");
         } catch (Exception e) {
             // TODO Auto-generated catch block
             System.out.println("Unable to do navigate to signin pagee");
@@ -736,7 +736,7 @@ public class E2EOrderPlaced_Steps {
             } else {
                 System.out.println("Queue page is not displayed");
                 PAYMandPAYGTariffAndExtrasPageActions.addToBasketLive();
-                // BasketPageActions.ValidateBasketPageContents();
+               // BasketPageActions.ValidateBasketPageContents();
                 BasketPageActions.CollectionorDelivery("homeDelivery");
             }
         } catch (Exception e) {
@@ -1891,7 +1891,7 @@ public class E2EOrderPlaced_Steps {
         }
 
     }
-
+    
 
 	/*
 	 * #########################################################################
@@ -1955,7 +1955,7 @@ public class E2EOrderPlaced_Steps {
 
     @Then("^perform the credit checks using valid ([^\"]*), ([^\"]*), ([^\"]*), ([^\"]*) and valid ([^\"]*)$")
     public void CreditCheck(String Firstname, String Surname, String HouseNumber, String PostCode, String Username) {
-        try {
+       try {
             driver.manage().timeouts().implicitlyWait(200, TimeUnit.SECONDS);
             PageFactory.initElements(driver, Agent_CreditCheckDetailsPage.class);
             Agent_CreditCheckPageActions.Creditcheck(Firstname, Surname, HouseNumber, PostCode);
@@ -1972,7 +1972,7 @@ public class E2EOrderPlaced_Steps {
         }
 
     }
-
+    
 	/*
 	 * #########################################################################
 	 * #########
@@ -2004,13 +2004,13 @@ public class E2EOrderPlaced_Steps {
     }
 
 
-    @Then("^Register the customer with valid ([^\"]*), ([^\"]*), ([^\"]*), ([^\"]*) and other valid details in delivery page$")
+	@Then("^Register the customer with valid ([^\"]*), ([^\"]*), ([^\"]*), ([^\"]*) and other valid details in delivery page$")
 
     public void register_the_customer(String Firstname, String Surname, String HouseNumber, String PostCode) {
-        try {
-            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-            PageFactory.initElements(driver, Agent_RegisterCustomerPage.class);
-            Agent_RegisterCustomerActions.PayGRegistration(Firstname, Surname, HouseNumber, PostCode);
+           try {
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+        PageFactory.initElements(driver, Agent_RegisterCustomerPage.class);
+        Agent_RegisterCustomerActions.PayGRegistration(Firstname, Surname, HouseNumber, PostCode);
 
         } catch (Exception e) { // TODO Auto-generated catch block
             System.out.println("Unable to Register customer , please see the failure screenshot");
@@ -2726,10 +2726,10 @@ public class E2EOrderPlaced_Steps {
         try {
             PageFactory.initElements(driver, ShopLandingPage.class);
             PageFactory.initElements(driver, MouseHoverPage.class);
-            // MouseHoverAction.ByPassDroopalPage();
+           // MouseHoverAction.ByPassDroopalPage();
             ShopLandingPageAction.clickSignIn();
             Autoredirection.redirectUpgrades();
-            //GlobalActions.//CommonFunctionscheckTitle("Sign In Page");
+           //GlobalActions.//CommonFunctionscheckTitle("Sign In Page");
         } catch (Exception e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
@@ -7002,7 +7002,7 @@ public class E2EOrderPlaced_Steps {
         }
     }
 
-
+   
     /*
     * #########################################################################
     * #######  EMPTY_basket_validate_promotion ##################################
@@ -7101,20 +7101,20 @@ public class E2EOrderPlaced_Steps {
         try {
             driver.manage().timeouts().implicitlyWait(120, TimeUnit.SECONDS);
             if (driver.findElements(By.xpath("//*[contains(text(),'2.co.uk')]")).size() > 0) {
-                String str =  driver.findElement(By.xpath("(//*[contains(text(),'2.co.uk')])[1]")).getText();
-                System.out.println("Agent should be displayed with updated copy of 'Refer with Simo' response as :" + str);
-                log.debug("Agent should be displayed with updated copy of 'Refer with Simo' response as :" + str);
-                Thread.sleep(3000);
-            }
-            else{
-                System.out.println("Failed to Agent should be displayed with updated copy of 'Refer with Simo' response ");
-                log.debug("Failed to Agent should be displayed with updated copy of 'Refer with Simo' response ");
-            }
+            String str =  driver.findElement(By.xpath("(//*[contains(text(),'2.co.uk')])[1]")).getText();
+            System.out.println("Agent should be displayed with updated copy of 'Refer with Simo' response as :" + str);
+            log.debug("Agent should be displayed with updated copy of 'Refer with Simo' response as :" + str);
+            Thread.sleep(3000);
         }
+        else{
+            System.out.println("Failed to Agent should be displayed with updated copy of 'Refer with Simo' response ");
+            log.debug("Failed to Agent should be displayed with updated copy of 'Refer with Simo' response ");
+        }
+        } 
         catch (Exception e) {
-            // TODO Auto-generated catch block
-            System.out.println("Failed to Agent should be displayed with updated copy of 'Refer with Simo' response @ " + e.getStackTrace());
-            Assert.fail("Failed to Agent should be displayed with updated copy of 'Refer with Simo' response @ " + e.getStackTrace());
+        // TODO Auto-generated catch block
+        System.out.println("Failed to Agent should be displayed with updated copy of 'Refer with Simo' response @ " + e.getStackTrace());
+        Assert.fail("Failed to Agent should be displayed with updated copy of 'Refer with Simo' response @ " + e.getStackTrace());
         }
     }
 
@@ -7348,14 +7348,14 @@ public class E2EOrderPlaced_Steps {
     @And("^Click on 'Pick a sim only tariff link'$")
     public void clickOnPickASimOnlyTariffLink() {
         try {
-            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-            PageFactory.initElements(driver, UpgradeCustomerPage.class);
-            UpgradeCustomerPageActions.SIMOLinkIsDisplayed();
-        } catch (Exception e) {
-            e.printStackTrace();
-            Assert.fail("Unable to click on Click on 'Pick a sim only tariff link', please see the failure screenshot");
+                driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+                PageFactory.initElements(driver, UpgradeCustomerPage.class);
+                UpgradeCustomerPageActions.SIMOLinkIsDisplayed();
+            } catch (Exception e) {
+                e.printStackTrace();
+                Assert.fail("Unable to click on Click on 'Pick a sim only tariff link', please see the failure screenshot");
+            }
         }
-    }
 
 
     @And("^the Progress bar is not displayed at the top$")
@@ -7698,7 +7698,7 @@ public class E2EOrderPlaced_Steps {
     @And("^I click on 'Sim only Tariff' tab$")
     public void i_click_on_simOnlyTariff_tab() {
         try {
-            SimsPageActions.clickOn_simOnlyTariffTab();
+           SimsPageActions.clickOn_simOnlyTariffTab();
         }
         catch (Exception e) {
             // TODO Auto-generated catch block
@@ -7767,18 +7767,18 @@ public class E2EOrderPlaced_Steps {
     @Then("^verify the 'OOS message' is displayed in the upgrades basket page$")
     public void verify_OOS_message_is_displayed_in_the_upgrades_basket_page() {
         try {
-            UpgradeCustomerPageActions.verifyOOS_MessageIsDisplayedInUpgradesBasketPage();
+        UpgradeCustomerPageActions.verifyOOS_MessageIsDisplayedInUpgradesBasketPage();
         }
         catch (Exception e) {
-            // TODO Auto-generated catch block
-            System.out.println(e.getStackTrace());
+        // TODO Auto-generated catch block
+        System.out.println(e.getStackTrace());
         }
     }
 
     @And("^if ([^\"]*) is configured then display the banner$")
     public void if_GiftBlock_is_configured_then_display_banner(String giftbox) {
         try {
-            SimsPageActions.ifGiftBlockIsConfiguredThenDisplayBanner(giftbox);
+           SimsPageActions.ifGiftBlockIsConfiguredThenDisplayBanner(giftbox);
         }
         catch (Exception e) {
             // TODO Auto-generated catch block
@@ -7813,7 +7813,7 @@ public class E2EOrderPlaced_Steps {
     @And("^click on the 'Tablets' button$")
     public void click_on_the_Tablets_button() {
         try {
-            SimsPageActions.clickonTabletsButton();
+           SimsPageActions.clickonTabletsButton();
         }
         catch (Exception e) {
             // TODO Auto-generated catch block
@@ -7930,7 +7930,7 @@ public class E2EOrderPlaced_Steps {
     @And("^click on 'Change delivery' link$")
     public void  click_on_Change_delivery_link() {
         try {
-            DeliveryPageActions.clickOnChange_delivery_link();
+           DeliveryPageActions.clickOnChange_delivery_link();
         }
         catch (Exception e) {
             // TODO Auto-generated catch block
@@ -7942,7 +7942,7 @@ public class E2EOrderPlaced_Steps {
     @And("^verify that the upfront sort options is not present in the 'sorting dropdown'$")
     public void  verify_that_upfront_sort_options() {
         try {
-            UpgradeCustomerPageActions.upfront_sort_options_is_not_present_in_sortingDropdown();
+          UpgradeCustomerPageActions.upfront_sort_options_is_not_present_in_sortingDropdown();
         }
         catch (Exception e) {
             // TODO Auto-generated catch block
@@ -8011,84 +8011,84 @@ public class E2EOrderPlaced_Steps {
             throw new PendingException();
         }*/
 
-    @And("^Click on 'cookie policy' link$")
-    public void clickOnCookiePolicyLink () {
-        try {
-            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-            PageFactory.initElements(driver, ShopLandingPage.class);
-            ShopLandingPageAction.cookiePolicySelect();
-        } catch (Exception e) {
-            // TODO Auto-generated catch block
-            System.out.println("Unable to Click on 'cookie policy' link");
-            Assert.fail("Unable to Click on 'cookie policy' link");
+        @And("^Click on 'cookie policy' link$")
+        public void clickOnCookiePolicyLink () {
+            try {
+                driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+                PageFactory.initElements(driver, ShopLandingPage.class);
+                ShopLandingPageAction.cookiePolicySelect();
+            } catch (Exception e) {
+                // TODO Auto-generated catch block
+                System.out.println("Unable to Click on 'cookie policy' link");
+                Assert.fail("Unable to Click on 'cookie policy' link");
 
+            }
         }
-    }
 
-    @Then("^the 'cookie policy' page should be opened$")
-    public void theCookiePolicyPageShouldBeOpened () {
-        try {
-            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-            PageFactory.initElements(driver, ShopLandingPage.class);
-            ShopLandingPageAction.cookiePolicyValidate();
-        } catch (Exception e) {
-            // TODO Auto-generated catch block
-            System.out.println("Unable to find 'cookie policy' page");
-            Assert.fail("Unable to find 'cookie policy' page");
+        @Then("^the 'cookie policy' page should be opened$")
+        public void theCookiePolicyPageShouldBeOpened () {
+            try {
+                driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+                PageFactory.initElements(driver, ShopLandingPage.class);
+                ShopLandingPageAction.cookiePolicyValidate();
+            } catch (Exception e) {
+                // TODO Auto-generated catch block
+                System.out.println("Unable to find 'cookie policy' page");
+                Assert.fail("Unable to find 'cookie policy' page");
 
+            }
         }
-    }
 
-    @And("^click on 'manage cookies' link$")
-    public void clickOnManageCookiesLink () {
-        try {
-            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-            PageFactory.initElements(driver, ShopLandingPage.class);
-            ShopLandingPageAction.clickManageCookies();
-        } catch (Exception e) {
-            // TODO Auto-generated catch block
-            System.out.println("Unable to Click on 'cookie policy' link");
-            Assert.fail("Unable to Click on 'cookie policy' link");
+        @And("^click on 'manage cookies' link$")
+        public void clickOnManageCookiesLink () {
+            try {
+                driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+                PageFactory.initElements(driver, ShopLandingPage.class);
+                ShopLandingPageAction.clickManageCookies();
+            } catch (Exception e) {
+                // TODO Auto-generated catch block
+                System.out.println("Unable to Click on 'cookie policy' link");
+                Assert.fail("Unable to Click on 'cookie policy' link");
 
+            }
         }
-    }
 
-    @Then("^the 'manage cookies' page should be opened$")
-    public void theManageCookiesPageShouldBeOpened () {
-        try {
-            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-            PageFactory.initElements(driver, ShopLandingPage.class);
-            ShopLandingPageAction.manageCookieyValidate();
-        } catch (Exception e) {
-            System.out.println("Unable to find 'manage cookies' page");
-            Assert.fail("Unable to find 'manage cookies' page");
+        @Then("^the 'manage cookies' page should be opened$")
+        public void theManageCookiesPageShouldBeOpened () {
+            try {
+                driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+                PageFactory.initElements(driver, ShopLandingPage.class);
+                ShopLandingPageAction.manageCookieyValidate();
+            } catch (Exception e) {
+                System.out.println("Unable to find 'manage cookies' page");
+                Assert.fail("Unable to find 'manage cookies' page");
 
+            }
         }
-    }
 
-    @And("^click on 'close icon'$")
-    public void clickOnCloseIcon () {
-        try {
-            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-            PageFactory.initElements(driver, ShopLandingPage.class);
-            ShopLandingPageAction.closeCookie();
-        } catch (Exception e) {
-            System.out.println("Unable to click on close icon");
-            Assert.fail("Unable to click on close icon");
+        @And("^click on 'close icon'$")
+        public void clickOnCloseIcon () {
+            try {
+                driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+                PageFactory.initElements(driver, ShopLandingPage.class);
+                ShopLandingPageAction.closeCookie();
+            } catch (Exception e) {
+                System.out.println("Unable to click on close icon");
+                Assert.fail("Unable to click on close icon");
+            }
         }
-    }
 
-    @And("^The Shop home page should be displayed without the cookies$")
-    public void theShopHomePageShouldBeDisplayedWithoutTheCookies () {
-        try {
-            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-            PageFactory.initElements(driver, ShopLandingPage.class);
-            ShopLandingPageAction.CookiepopupValidation();
-        } catch (Exception e) {
-            System.out.println("Unable to validate cookie section");
-            Assert.fail("Unable to validate cookie section");
+        @And("^The Shop home page should be displayed without the cookies$")
+        public void theShopHomePageShouldBeDisplayedWithoutTheCookies () {
+            try {
+                driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+                PageFactory.initElements(driver, ShopLandingPage.class);
+                ShopLandingPageAction.CookiepopupValidation();
+            } catch (Exception e) {
+                System.out.println("Unable to validate cookie section");
+                Assert.fail("Unable to validate cookie section");
+            }
         }
-    }
 
     @And("^Click on 'Extras' tab$")
     public void click_on_Extras_tab() {
@@ -8363,6 +8363,15 @@ public class E2EOrderPlaced_Steps {
     }
 
 
-
+    @Given("^Read the data from exel with the location ([^\"]*)$")
+    public void readTestDataFromExel(String exelLocation) {
+        try {
+            System.out.println("Reading the data From Exel sheet: for validating the Test data :");
+            ReadData.readingDataFromExel(exelLocation);
+        } catch (Exception e) {
+            System.out.println("Unable to validate section");
+            Assert.fail("Unable to validate section");
+        }
+    }
 
 }
