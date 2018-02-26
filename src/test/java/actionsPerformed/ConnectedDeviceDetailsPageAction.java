@@ -20,6 +20,7 @@ import pageobjects.ConnectedDeviceDetailsPage;
 //This page will have details on the individual device
 
 public class ConnectedDeviceDetailsPageAction extends Environment {
+
     final static Logger log = Logger.getLogger("ConnectedDeviceDetailsPageAction");
 
     public static void GetTitle() throws InterruptedException, IOException {

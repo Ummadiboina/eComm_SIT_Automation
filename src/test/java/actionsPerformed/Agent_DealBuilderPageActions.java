@@ -19,6 +19,7 @@ import pageobjects.Agent_DealBuilderPage;
 
 public class Agent_DealBuilderPageActions extends Environment {
 
+
     final static Logger log = Logger.getLogger("Agent_DealBuilderPageActions");
 
     // this method used to perform click action on the Agent Home Page
@@ -138,12 +139,11 @@ public class Agent_DealBuilderPageActions extends Environment {
 
     public static void HandsetTariffCombination() throws InterruptedException, IOException {
         try {
-            System.out.println("Tariff Name: "+driver.findElement(By.xpath("//*[@id='planTable']/tbody/tr[1]/td[6]")).getText());
+            System.out.println("Tariff Name: " + driver.findElement(By.xpath("//*[@id='planTable']/tbody/tr[1]/td[6]")).getText());
             if (driver.findElement(By.xpath("//*[@id='planTable']/tbody/tr[1]/td[6]")).getText()
-                    .equals("Standard")){
+                    .equals("Standard")) {
                 System.out.println("Selected Tariff is a Standard Tariff hence Handset Tariff combination is not required");
-            }
-            else{
+            } else {
                 Select dropdown = new Select(pageobjects.Agent_DealBuilderPage.HandsetTariffCombination);
                 Thread.sleep(3000);
                 Agent_DealBuilderPage.HandsetTariffCombination.click();

@@ -22,6 +22,7 @@ import helpers.setRuntimeProperty;
 import pageobjects.PAYMandPAYGTariffAndExtrasPage;
 
 public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
+
     final static Logger log = Logger.getLogger("PAYMandPAYGTariffAndExtrasPageActions");
     static int AccessoryContainerSize = 0;
     static int SelectedAccessoryCount = 0;

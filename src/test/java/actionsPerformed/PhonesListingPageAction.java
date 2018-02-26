@@ -155,6 +155,7 @@ public class PhonesListingPageAction extends Environment {
 
 		}*/
 
+
 		driver.findElement(By.xpath("(//div[@style='display: block;']/div[@class='tile comparable ']/div[@class='device-tile-wrapper']/a[@class='device-tile ']/div[@class='device-tile__top'])[1]")).click();
 		Screenshots.captureScreenshot();
 	}

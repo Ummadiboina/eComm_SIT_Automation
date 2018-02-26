@@ -20,9 +20,12 @@ public class ShopLandingPageAction extends Environment {
 	final static Logger log = Logger.getLogger("ShopLandingPageAction");
 	static JavascriptExecutor js = (JavascriptExecutor)driver;
 
+
+
 	public static void GetTitle_ref() throws IOException, InterruptedException {
 		//later on need to comment the code
 		try {
+
 			driver.manage().timeouts().implicitlyWait(5, TimeUnit.MINUTES);
 
 			WebElement ele = driver.findElement(By.xpath("//li[@name='Shop']/a"));

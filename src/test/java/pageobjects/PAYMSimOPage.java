@@ -36,6 +36,7 @@ public class PAYMSimOPage {
 	
 
 
+
 	@FindBy(how=How.XPATH,using=("(//*[@id='callToAction'])[1]"))
 	public static WebElement BuyNowRandomTariff12Months;
 	

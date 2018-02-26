@@ -43,5 +43,5 @@ Feature: Reg_Jan_CFU_MbbSimo30days.feature
     And Click on 'Place your order' CTA
 
     Examples:
-      | Contract | GiftBlock  | username         | password | filterSort | Tariffsortoption           | GiftBlock | sortoption                |
-      | 30 Days  | Configured | ahgt12@gmail.com | test123  | high       | Monthly data (Low to High) | dfd       | Monthly data (High to low |
+      | Contract | GiftBlock  | username              | password | filterSort | Tariffsortoption           | GiftBlock | sortoption                |
+      | 30 Days  | Configured | teadsdst@usaddser.com | test123  | high       | Monthly data (Low to High) | dfd       | Monthly data (High to low |

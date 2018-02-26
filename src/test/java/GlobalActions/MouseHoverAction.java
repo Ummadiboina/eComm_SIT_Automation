@@ -87,7 +87,7 @@ public class MouseHoverAction extends Environment {
 				log.debug("Clicking on PayM Phones");
 
 				// Move mouse pointer away from location
-				//Point coordinates2 = driver.findElement(By.xpath("//*[@id='header-consumer']/div")).getLocation();
+				Point coordinates2 = driver.findElement(By.xpath("//*[@id='header-consumer']/div")).getLocation();
 /*
 				Robot robot2 = new Robot();
 				robot2.mouseMove(coordinates2.getX(), coordinates.getY() + 300);
