@@ -399,6 +399,7 @@ import static pageobjects.FreeSimPage.Firstname;
                 System.out.println(" Failed to  Entered the houseNumber and postcCode"+ e.getStackTrace());
                 log.debug(" Failed to  Entered the houseNumber and postcCode"+ e.getStackTrace());
             }
+            }
             
              public static void enteredCommercialAddress_AddressLookUp(String postCode) {
             try{
