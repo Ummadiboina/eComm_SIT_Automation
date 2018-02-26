@@ -19,7 +19,6 @@ import pageobjects.Agent_DealBuilderPage;
 
 public class Agent_DealBuilderPageActions extends Environment {
 
-
     final static Logger log = Logger.getLogger("Agent_DealBuilderPageActions");
 
     // this method used to perform click action on the Agent Home Page
@@ -46,6 +45,11 @@ public class Agent_DealBuilderPageActions extends Environment {
         log.debug("Clicked on Devices tab");
         Thread.sleep(3000);
 
+
+
+
+
+
         if (Device.contains("Random")) {
             Thread.sleep(3000);
             Agent_DealBuilderPage.firstAvailableDevice.click();
@@ -53,7 +57,9 @@ public class Agent_DealBuilderPageActions extends Environment {
             System.out.println("Selected device ");
             log.debug("Selected device ");
 
-        } else {
+        }
+
+        else {
 
             Agent_DealBuilderPage.SearchTextBox_PayMDevice.sendKeys(Device);
             System.out.println("Clicked on SearchTextBox to enter" + Device);
@@ -260,7 +266,6 @@ public class Agent_DealBuilderPageActions extends Environment {
         Screenshots.captureScreenshot();
     }
 
-
     public static void SelectPayGTariff(String Tariff) throws InterruptedException, IOException {
 
         Thread.sleep(3000);
@@ -342,7 +347,7 @@ public class Agent_DealBuilderPageActions extends Environment {
         Screenshots.captureScreenshot();
 
 		/*
-         * String text = Agent_DealBuilderPage.emailConfirmation.getText();
+		 * String text = Agent_DealBuilderPage.emailConfirmation.getText();
 		 * Assert.assertEquals(text, "Email sent successfully");
 		 */
         // driver.close();
@@ -438,6 +443,7 @@ public class Agent_DealBuilderPageActions extends Environment {
                     pageobjects.Agent_DealBuilderPage.AgentTradeAccept.click();
 
 
+
                 }
                 //Screenshots.captureScreenshot();
             }
@@ -517,13 +523,13 @@ public class Agent_DealBuilderPageActions extends Environment {
 
     public static void HandsetTariffCombinationforPhones() throws InterruptedException {
         try {
-            if (Agent_DealBuilderPage.deviceAdded_DealBuilder.isDisplayed()) {
+            if(Agent_DealBuilderPage.deviceAdded_DealBuilder.isDisplayed()){
                 System.out.println(" Device is added into the builder ");
                 log.debug(" Device is added into the builder ");
-                if (Agent_DealBuilderPage.promotions_DealBuilder.isDisplayed()) {
+                if(Agent_DealBuilderPage.promotions_DealBuilder.isDisplayed()){
                     System.out.println(" Promotions is added into the builder ");
                     log.debug(" Promotions is added into the builder ");
-                } else {
+                }else{
                     System.out.println("Failed to added the Promotions into the builder ");
                     log.debug("Failed to added the Promotions into the builder ");
                 }
@@ -537,10 +543,10 @@ public class Agent_DealBuilderPageActions extends Environment {
 
     public static void verifyPromotionsDisplayed() throws Exception {
         try {
-            if (Agent_DealBuilderPage.deviceAdded_DealBuilder.isDisplayed()) {
+            if(Agent_DealBuilderPage.deviceAdded_DealBuilder.isDisplayed()){
                 System.out.println(" Device is added into the builder ");
                 log.debug(" Device is added into the builder ");
-                if (Agent_DealBuilderPage.promotions_DealBuilder.isDisplayed()) {
+                if(Agent_DealBuilderPage.promotions_DealBuilder.isDisplayed()){
                     System.out.println(" Promotions is added into the builder ");
                     log.debug(" Promotions is added into the builder ");
                     Agent_DealBuilderPage.removeDevice_DealBuilder.click();
@@ -551,18 +557,18 @@ public class Agent_DealBuilderPageActions extends Environment {
                     Agent_DealBuilderPage.deviceTab.click();
                     Thread.sleep(2000);
                     Agent_DealBuilderPage.selectDevive2_formInstock.click();
-                    driver.manage().timeouts().implicitlyWait(1, TimeUnit.MINUTES);
+                    driver.manage().timeouts().implicitlyWait(1,TimeUnit.MINUTES);
                     System.out.println(" added the device2 into the builder ");
                     log.debug(" added the device2 into the builder ");
                     Thread.sleep(5000);
-                    if (!Agent_DealBuilderPage.promotions_DealBuilder.isDisplayed()) {
+                    if(!Agent_DealBuilderPage.promotions_DealBuilder.isDisplayed()){
                         System.out.println(" Successfylly validated the Promotions are not displayed when add the deviece into the deail builder ");
                         log.debug(" Successfylly validated the Promotions are not displayed when added the add into the deail builder ");
-                    } else {
+                    }else{
                         System.out.println(" Failed to validated the Promotions are not displayed when add the deviece into the deail builder ");
                         log.debug(" Failed to validated the Promotions are not displayed when added the add into the deail builder ");
                     }
-                } else {
+                }else{
                     System.out.println("Failed to added the Promotions into the builder ");
                     log.debug("Failed to added the Promotions into the builder ");
                 }
@@ -578,7 +584,7 @@ public class Agent_DealBuilderPageActions extends Environment {
     public static void verifyTargetedPromotionsTab() throws Exception {
         try {
             int sizeofElements = driver.findElements(By.xpath("//*[normalize-space(.)='Promotion Description']")).size();
-            if (sizeofElements > 0) {
+            if(sizeofElements > 0) {
                 Agent_DealBuilderPage.targetPromtionsTab.click();
                 Thread.sleep(4000);
                 System.out.println(" Verified the targeted Promotions Tab Displayed at End ");
@@ -586,7 +592,7 @@ public class Agent_DealBuilderPageActions extends Environment {
             }
         } catch (Exception e) {
             System.out.println(" Failed to Displays the targetedPromotions tab at the end " + e.getStackTrace());
-            log.debug(" Failed to Displays the targetedPromotions tab at the end " + e.getStackTrace());
+            log.debug(" Failed to Displays the targetedPromotions tab at the end " +e.getStackTrace());
         }
     }
 
@@ -597,12 +603,12 @@ public class Agent_DealBuilderPageActions extends Environment {
             Thread.sleep(1000);
             System.out.println(" Verified the targeted Promotions Tab Displayed at End ");
             log.debug(" Verified the targeted Promotions Tab Displayed at End ");
-            String targetedDescri = "";
+            String targetedDescri="";
             targetedDescri = Agent_DealBuilderPage.promotionDescription.getText();
-            if (targetedDescri.length() > 1) {
+            if(targetedDescri.length()>1){
                 System.out.println("The promotions bolt on are displayed in targeted promotion tab");
                 log.debug("The promotions bolt on are displayed in targeted promotion tab");
-            } else {
+            }else {
                 System.out.println("The promotions bolt on are not displayed in targeted promotion tab");
                 log.debug("The promotions bolt on are not displayed in targeted promotion tab");
             }
@@ -615,7 +621,7 @@ public class Agent_DealBuilderPageActions extends Environment {
     /////////////////////////////////////////////////////////////////////////////////////
     /////////////////////////    EMPTY_basket_validate_promotion      //////////////////////
 
-    public static void Emptyabove() throws IOException, InterruptedException {
+    public static void Emptyabove()throws IOException, InterruptedException {
 
         Thread.sleep(3000);
         Agent_DealBuilderPage.Emptyabove.click();
@@ -634,7 +640,6 @@ public class Agent_DealBuilderPageActions extends Environment {
         Screenshots.captureScreenshot();
 
     }
-
     public static void Copytobasket() throws InterruptedException, IOException {
 
         Agent_DealBuilderPage.Copytobasket.click();

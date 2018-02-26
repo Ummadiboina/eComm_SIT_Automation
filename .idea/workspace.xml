@@ -6,7 +6,9 @@
   <component name="ChangeListManager">
     <list id="9d0aef85-48ac-4e71-b67a-fff455014d99" name="New changelist" comment="New changelist" />
     <list default="true" id="b3431a87-97b1-4ffe-b872-0e6a8e54231a" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Features/FebruaryRelease2018/Regression/Reg_Jan_ConsumerToAcceptTenDigitsPhoneNumber.feature" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/actionsPerformed/Agent_DealBuilderPageActions.java" afterPath="$PROJECT_DIR$/src/test/java/actionsPerformed/Agent_DealBuilderPageActions.java" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -27,8 +29,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>selenium</find>
-      <find>d</find>
       <find>driver</find>
       <find>driver.</find>
       <find>we</find>
@@ -57,6 +57,8 @@
       <find>// Move mouse pointer away from location</find>
       <find>//Point coordinates2 = driver.findElement(By.xpath(&quot;//*[@id='header-consumer']/div&quot;)).getLocation();</find>
       <find>ValidateAgentHomepage</find>
+      <find>SelectAccessoryDevice</find>
+      <find>HandsetTariffCombination</find>
     </findStrings>
     <dirStrings>
       <dir>C:\Users\subbaiv1\regression2\Features\JanuaryRelease2018\CFD2235</dir>
@@ -155,7 +157,6 @@
         <option value="$PROJECT_DIR$/Features/FebruaryRelease2018/Regression/Reg_Existing_Customer_Tablets_Data_filters_options_tariff_and_extras_page.feature" />
         <option value="$PROJECT_DIR$/Features/FebruaryRelease2018/Regression/Reg_Jan_CFU_MbbSimo30days.feature" />
         <option value="$PROJECT_DIR$/src/test/java/GlobalActions/MouseHoverAction.java" />
-        <option value="$PROJECT_DIR$/src/test/java/actionsPerformed/Agent_DealBuilderPageActions.java" />
         <option value="$PROJECT_DIR$/src/test/java/actionsPerformed/ConnectedDeviceDetailsPageAction.java" />
         <option value="$PROJECT_DIR$/src/test/java/testRunner/RunnerTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/actionsPerformed/PAYMandPAYGTariffAndExtrasPageActions.java" />
@@ -167,6 +168,7 @@
         <option value="$PROJECT_DIR$/src/test/java/pageobjects/PAYMSimOPage.java" />
         <option value="$PROJECT_DIR$/Features/FebruaryRelease2018/Regression/Reg_Jan_CFU_PhonesSimo30day.feature" />
         <option value="$PROJECT_DIR$/Features/FebruaryRelease2018/Regression/Reg_Jan_ConsumerToAcceptTenDigitsPhoneNumber.feature" />
+        <option value="$PROJECT_DIR$/src/test/java/actionsPerformed/Agent_DealBuilderPageActions.java" />
       </list>
     </option>
   </component>
@@ -247,13 +249,6 @@
             <path>
               <item name="regression" type="b2602c69:ProjectViewProjectNode" />
               <item name="regression" type="462c0819:PsiDirectoryNode" />
-              <item name="Features" type="462c0819:PsiDirectoryNode" />
-              <item name="FebruaryRelease2018" type="462c0819:PsiDirectoryNode" />
-              <item name="Regression" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="regression" type="b2602c69:ProjectViewProjectNode" />
-              <item name="regression" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -268,6 +263,14 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="regression" type="b2602c69:ProjectViewProjectNode" />
+              <item name="regression" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="actionsPerformed" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="regression" type="b2602c69:ProjectViewProjectNode" />
@@ -967,7 +970,14 @@
       <option name="project" value="LOCAL" />
       <updated>1519644030794</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="sharmi 26/02 changes">
+      <created>1519644217165</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1519644217165</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1238,12 +1248,6 @@
           <option name="timeStamp" value="28" />
         </line-breakpoint>
         <line-breakpoint type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/actionsPerformed/Agent_DealBuilderPageActions.java</url>
-          <line>146</line>
-          <properties />
-          <option name="timeStamp" value="52" />
-        </line-breakpoint>
-        <line-breakpoint type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/actionsPerformed/O2RefreshDealSummaryActions.java</url>
           <line>19</line>
           <properties />
@@ -1289,7 +1293,7 @@
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="97" />
+      <option name="time" value="98" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1558,28 +1562,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/actionsPerformed/Agent_DealBuilderPageActions.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1230">
-          <caret line="26" column="44" lean-forward="false" selection-start-line="26" selection-start-column="23" selection-end-line="26" selection-end-column="44" />
-          <folding>
-            <element signature="method#BasecommsAgentOffersColumnValidation#0;class#Agent_DealBuilderPageActions#0" expanded="false" />
-            <element signature="method#SelectExtras#0;class#Agent_DealBuilderPageActions#0" expanded="false" />
-            <element signature="method#SelectPayGDevice#0;class#Agent_DealBuilderPageActions#0" expanded="false" />
-            <element signature="method#SelectPayGTariff#0;class#Agent_DealBuilderPageActions#0" expanded="false" />
-            <element signature="method#eMailBasket#0;class#Agent_DealBuilderPageActions#0" expanded="false" />
-            <element signature="method#ValdiateBasket#0;class#Agent_DealBuilderPageActions#0" expanded="false" />
-            <element signature="method#checkout#0;class#Agent_DealBuilderPageActions#0" expanded="false" />
-            <element signature="method#SearchDevice#0;class#Agent_DealBuilderPageActions#0" expanded="false" />
-            <element signature="method#CCAHandsetTariffCombination#0;class#Agent_DealBuilderPageActions#0" expanded="false" />
-            <element signature="method#AgentTradeInQuestionair#0;class#Agent_DealBuilderPageActions#0" expanded="false" />
-            <element signature="method#AgentTradeInQuestionairAns#0;class#Agent_DealBuilderPageActions#0" expanded="false" />
-            <element signature="method#AgentBuyOut#0;class#Agent_DealBuilderPageActions#0" expanded="false" />
-            <element signature="method#selectStore#0;class#Agent_DealBuilderPageActions#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/actionsPerformed/ConnectedDeviceDetailsPageAction.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-2108">
@@ -1688,6 +1670,16 @@
         <state relative-caret-position="425">
           <caret line="25" column="81" lean-forward="false" selection-start-line="25" selection-start-column="81" selection-end-line="25" selection-end-column="81" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/actionsPerformed/Agent_DealBuilderPageActions.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="474">
+          <caret line="651" column="1" lean-forward="false" selection-start-line="651" selection-start-column="1" selection-end-line="651" selection-end-column="1" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
