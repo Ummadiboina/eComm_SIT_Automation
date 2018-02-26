@@ -3,7 +3,7 @@ package actionsPerformed;
 import java.awt.AWTException;
 import java.io.IOException;
 import java.util.List;
-
+import org.openqa.selenium.Keys;
 import org.apache.log4j.Logger;
 import org.junit.Assert;
 import org.openqa.selenium.By;
@@ -48,17 +48,21 @@ public class PAYMSimOPageActions extends Environment {
 		if (elementName.contains("30 Days")) {
 			System.out.println("Selecting a Random Tariff under 30 days tab");
 			log.debug("Selecting a Random Tariff under 30 days tab");
-			pageobjects.PAYMSimOPage.thirtydays.click();
-			Thread.sleep(3000);
-			pageobjects.PAYMSimOPage.BuyNowRandomTariff30Months.click();
+			pageobjects.PAYMSimOPage.thirtydays.sendKeys(Keys.ENTER);
+			Thread.sleep(10000);
+			JavascriptExecutor executor = (JavascriptExecutor)driver;
+			executor.executeScript("arguments[0].click();",pageobjects.PAYMSimOPage.BuyNowRandomTariff30Months);
 			Thread.sleep(5000);
+			System.out.println("Clicked on a Random Tariff");
 		}
 		if (elementName.contains("12 Months")) {
 			System.out.println("Selecting a Random Tariff under 12 Months tab");
 			log.debug("Selecting a Random Tariff under 12 Months tab");
-			pageobjects.PAYMSimOPage.twelevemonths.click();
-			Thread.sleep(3000);
-			pageobjects.PAYMSimOPage.BuyNowRandomTariff12Months.click();
+			pageobjects.PAYMSimOPage.twelevemonths.sendKeys(Keys.ENTER);
+			Thread.sleep(10000);
+			JavascriptExecutor executor = (JavascriptExecutor)driver;
+			executor.executeScript("arguments[0].click();",pageobjects.PAYMSimOPage.BuyNowRandomTariff12Months);
+			Thread.sleep(5000);
 			System.out.println("Clicked on a Random Tariff");
 		}
 		Screenshots.captureScreenshot();

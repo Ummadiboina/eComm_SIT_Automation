@@ -100,7 +100,7 @@ formatter.examples({
   "keyword": "Examples"
 });
 formatter.before({
-  "duration": 10974348129,
+  "duration": 11234433634,
   "status": "passed"
 });
 formatter.scenario({
@@ -184,16 +184,15 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.i_am_an_CFA_user_and_Lands_on_shop_page()"
 });
 formatter.result({
-  "duration": 635853680,
+  "duration": 853534280,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.navigate_to_PAYM_SIMO_page()"
 });
 formatter.result({
-  "duration": 12339332723,
-  "error_message": "java.lang.AssertionError: Unable to do mousehover to PAYM SIMO page\r\n\tat org.testng.Assert.fail(Assert.java:94)\r\n\tat steps.E2EOrderPlaced_Steps.navigate_to_PAYM_SIMO_page(E2EOrderPlaced_Steps.java:282)\r\n\tat ✽.And navigate to PAYM SIMO page(Features/FebruaryRelease2018/Regression/Reg_CS_PayMSimOnly.feature:6)\r\n",
-  "status": "failed"
+  "duration": 26402014205,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -205,7 +204,8 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.click_on_different_Months_Tariff_in_Tab(String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 521180828,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -217,13 +217,15 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.select_any_Random_Tariff_in_the_displayed_list_of_Tariffs_under_different_Months_tab(String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 18403954297,
+  "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.i_Land_on_the_Plan_included_basket_page_and_choose_home_delivery_option()"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 3744538018,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -235,7 +237,8 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.CheckoutFromBasket(String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 11485818603,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -251,7 +254,8 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.DeliveryPage_Inputs_homeDelivery(String,String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 56927796199,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -263,22 +267,25 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.CreditCheckPaymentPage_HomeDelivery(String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 130699003967,
+  "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.ReviewPageConfirmation()"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 15431849754,
+  "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.OrderConfirmationPage()"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 822745729,
+  "status": "passed"
 });
 formatter.after({
-  "duration": 20313441135,
+  "duration": 20204141745,
   "status": "passed"
 });
 });
