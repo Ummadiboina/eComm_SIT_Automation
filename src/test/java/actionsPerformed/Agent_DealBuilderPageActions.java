@@ -143,25 +143,31 @@ public class Agent_DealBuilderPageActions extends Environment {
 		Screenshots.captureScreenshot();
 	}
 
-	public static void HandsetTariffCombination() throws InterruptedException, IOException {
-		try {
-			Select dropdown = new Select(pageobjects.Agent_DealBuilderPage.HandsetTariffCombination);
-			Thread.sleep(3000);
-			Agent_DealBuilderPage.HandsetTariffCombination.click();
-			Thread.sleep(3000);
-			Agent_DealBuilderPage.Copytobasket_opt3.click();
-			//dropdown.selectByIndex(3);
-			System.out.println("Selecting combination of handset and talkplan");
-			Thread.sleep(9000);
-			System.out.println(
-					"Selected combination is" + pageobjects.Agent_DealBuilderPage.HandsetTariffCombination.getText());
-			Screenshots.captureScreenshot();
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			System.out.println("handset and tariff dropdown is not displayed, should be fine");
-			Screenshots.captureScreenshot();
-		}
-	}
+	 public static void HandsetTariffCombination() throws InterruptedException, IOException {
+        try {
+            System.out.println("Tariff Name: " + driver.findElement(By.xpath("//*[@id='planTable']/tbody/tr[1]/td[6]")).getText());
+            if (driver.findElement(By.xpath("//*[@id='planTable']/tbody/tr[1]/td[6]")).getText()
+                    .equals("Standard")) {
+                System.out.println("Selected Tariff is a Standard Tariff hence Handset Tariff combination is not required");
+            } else {
+                Select dropdown = new Select(pageobjects.Agent_DealBuilderPage.HandsetTariffCombination);
+                Thread.sleep(3000);
+                Agent_DealBuilderPage.HandsetTariffCombination.click();
+                Thread.sleep(3000);
+                Agent_DealBuilderPage.Copytobasket_opt3.click();
+                //dropdown.selectByIndex(3);
+                System.out.println("Selecting combination of handset and talkplan");
+                Thread.sleep(9000);
+                System.out.println(
+                        "Selected combination is" + pageobjects.Agent_DealBuilderPage.HandsetTariffCombination.getText());
+            }
+            Screenshots.captureScreenshot();
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            System.out.println("handset and tariff dropdown is not displayed, should be fine");
+            Screenshots.captureScreenshot();
+        }
+    }
 
 	public static void SelectExtras(String Extras) throws InterruptedException, IOException {
 
@@ -214,24 +220,51 @@ public class Agent_DealBuilderPageActions extends Environment {
 
 	public static void SelectAccessoryDevice(String Device) throws InterruptedException, IOException {
 
-		Agent_DealBuilderPage.AccessoriesTab.click();
+        Agent_DealBuilderPage.AccessoriesTab.click();
 
-		if (Device.contains("iPhone 7 Evo Elite Brushed Black")) {
-			System.out.println("searched iPhone 7 Evo Elite Brushed Black");
+        if (Device.contains("iPhone 7 Evo Elite Brushed Black")) {
+            System.out.println("searched iPhone 7 Evo Elite Brushed Black");
 
-			// pageobjects.Agent_DealBuilderPage.prepayDeviceTableFilter.click();
-			Agent_DealBuilderPage.SearchTextBox_Accessories.sendKeys(Device);
+            // pageobjects.Agent_DealBuilderPage.prepayDeviceTableFilter.click();
+            Agent_DealBuilderPage.SearchTextBox_Accessories.sendKeys(Device);
+            log.debug("searching iPhone 7 Evo Elite Brushed Black");
+            Thread.sleep(3000);
 
-			log.debug("searched iPhone 7 Evo Elite Brushed Black");
+            List<WebElement> menuOuter = driver.findElements(By.xpath("//*[@id='accessoryTable']/tbody/tr"));
+            System.out.println("The size of the table is :" + menuOuter.size());
 
-			Thread.sleep(6000);
-			Agent_DealBuilderPage.SelectSeachedaccessory.click();
-			System.out.println("Clicked on + symbol next to " + Device);
-			log.debug("Clicked on + symbol next to " + Device);
-			Thread.sleep(3000);
-		}
-		Screenshots.captureScreenshot();
-	}
+            if (menuOuter.get(0).getText().contains("No matching records for given search criteria")) {
+                driver.findElement(By.xpath("//*[@id='accessoryTable_filter']/label/a")).click();
+                log.debug("Cannot find iPhone 7 Evo Elite Brushed Black. Clearing the search and selecting random In Stock Accessory");
+                Thread.sleep(6000);
+
+                System.out.println("searching In Stock Accessory");
+                Agent_DealBuilderPage.SearchTextBox_Accessories.sendKeys("In Stock");
+                log.debug("searched In Stock Accessory");
+                Thread.sleep(6000);
+                Agent_DealBuilderPage.SelectSeachedaccessory.click();
+                log.debug("Selected a random In stock accessory");
+                Thread.sleep(3000);
+
+            } else {
+
+                Agent_DealBuilderPage.SelectSeachedaccessory.click();
+                System.out.println("Found Clicked on + symbol next to " + Device);
+                log.debug("Clicked on + symbol next to " + Device);
+            }
+            Thread.sleep(3000);
+
+        } else {
+            System.out.println("searching In Stock Accessory");
+            Agent_DealBuilderPage.SearchTextBox_Accessories.sendKeys("In Stock");
+            log.debug("searched In Stock Accessory");
+            Thread.sleep(6000);
+            Agent_DealBuilderPage.SelectSeachedaccessory.click();
+            log.debug("Selected a random In stock accessory");
+            Thread.sleep(3000);
+        }
+        Screenshots.captureScreenshot();
+    }
 
 	public static void SelectPayGTariff(String Tariff) throws InterruptedException, IOException {
 
