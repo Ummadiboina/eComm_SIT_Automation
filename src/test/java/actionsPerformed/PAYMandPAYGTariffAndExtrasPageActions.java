@@ -1,5 +1,6 @@
 package actionsPerformed;
 
+import java.awt.*;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -10,10 +11,9 @@ import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.math.NumberUtils;
 import org.apache.log4j.Logger;
 import org.junit.Assert;
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
+import org.openqa.selenium.Point;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 
 import GlobalActions.Screenshots;
@@ -22,7 +22,6 @@ import helpers.setRuntimeProperty;
 import pageobjects.PAYMandPAYGTariffAndExtrasPage;
 
 public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
-
     final static Logger log = Logger.getLogger("PAYMandPAYGTariffAndExtrasPageActions");
     static int AccessoryContainerSize = 0;
     static int SelectedAccessoryCount = 0;
@@ -80,7 +79,6 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
         Screenshots.captureScreenshot();
 
     }
-
     public static void addInsurance() throws InterruptedException, IOException {
         driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
         System.out.println("Entering add insurance function");
@@ -134,7 +132,7 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
                 System.out.println("selecting accessories");
                 List<WebElement> DataContainer = pageobjects.PAYMandPAYGTariffAndExtrasPage.Add_AccessoryContainer;
 
-                for (int i = 0; i <= DataContainer.size(); i++)
+                for (int i = 0; i < DataContainer.size(); i++)
 
                 {
                     System.out.println(DataContainer.get(i).getText());
@@ -467,17 +465,16 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
             Assert.fail("Free Insurance not autoselected");
             System.out.println("Remove button is not present");
         }
-        /*
+		/*
 		 * System.out.println("Going to select first insurance");
-		 * 
+		 *
 		 * driver.findElement( By.xpath(
 		 * "(//div[@id='insuranceContainer']/div[@id])[1]//input[@value='Select'][@type='button']"
 		 * )) .click(); System.out.println("Selected first insurance");
-		 * 
+		 *
 		 * Thread.sleep(3000); System.out.println("First insurance price text is " +
 		 * FirstInsurancePrice.getText());
-		 */
-        Thread.sleep(3000);
+		 */ Thread.sleep(3000);
         Screenshots.captureScreenshot();
 
     }
@@ -561,7 +558,7 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
             System.out.println("Filter label is displayed");
             Thread.sleep(4000);
             String text1 = pageobjects.PAYMandPAYGTariffAndExtrasPage.FilterandSortLabel.getText();
-            System.out.println("Validating Tariff is : " + text1);
+            System.out.println("Validating Tariff is : " +text1);
             if (text1.contains("Sort")) {
                 System.out.println("Section is containing both Sort tariff and Filter");
             } else {
@@ -577,13 +574,13 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
     }
 
     public static void selectFilter(String range) throws IOException, InterruptedException {
-        if (range.contains("low")) {
+        if (range.equals("low")) {
             js.executeScript("arguments[0].click();", pageobjects.PAYMandPAYGTariffAndExtrasPage.lowfilter);
         }
-        if (range.contains("medium")) {
+        if (range.equals("medium")) {
             js.executeScript("arguments[0].click();", pageobjects.PAYMandPAYGTariffAndExtrasPage.mediumfilter);
         }
-        if (range.contains("high")) {
+        if (range.equals("high")) {
             js.executeScript("arguments[0].click();", pageobjects.PAYMandPAYGTariffAndExtrasPage.highfilter);
         }
         Screenshots.captureScreenshot();
@@ -788,11 +785,7 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
     public static void verifyListWhenGreaterIsSelected() throws IOException, InterruptedException {
         boolean flag = false;
         for (int s = 0; s < datalistafter.size(); s++) {
-            if (datalistafter.get(s) < start.get(0)) {
-                flag = false;
-            } else {
-                flag = true;
-            }
+            flag = datalistafter.get(s) >= start.get(0);
         }
         if (flag == false) {
             System.out.println("Failed");
@@ -806,11 +799,7 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
         System.out.println("verifyList");
         boolean flag = false;
         for (int s = 0; s < datalistafter.size(); s++) {
-            if (datalistafter.get(s) < start.get(0) || datalistafter.get(s) > end.get(0)) {
-                flag = false;
-            } else {
-                flag = true;
-            }
+            flag = datalistafter.get(s) >= start.get(0) && datalistafter.get(s) <= end.get(0);
         }
         if (flag == false) {
             System.out.println("Failed");
@@ -839,7 +828,7 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
         List<WebElement> ViewAllTariffs = pageobjects.PAYMandPAYGTariffAndExtrasPage.ViewAllTariffs;
         if (ViewAllTariffs.size() > 0) {
             js.executeScript("arguments[0].click();", ViewAllTariffs.get(0));
-            System.out.println("Clicked on View All Tariffs link in Tariffs and Extras page to get original list");
+            System.out.println("Clicked on View All Tariffs link in Tariffs and Extras page");
         } else {
             System.out.println("View All Tariffs link is not present");
         }
@@ -865,7 +854,9 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
             System.out.println("Clicking on 3rd Filter Data Allowance");
             PAYMandPAYGTariffAndExtrasPage.DataTariff_Three.click();
             log.debug("Clicking on 3rd Filter Data Allowance");
-        } else {
+        }
+
+        else {
             System.out.println("No filter options displayed");
         }
         Screenshots.captureScreenshot();
@@ -913,7 +904,9 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
             } else {
                 Assert.fail("Data filter is not selected");
             }
-        } else if (Filteroption.contains("high")) {
+        }
+
+        else if (Filteroption.contains("high")) {
             // PAYMandPAYGTariffAndExtrasPage.DataTariff_Three.getText();
             String DataFilterHighText = PAYMandPAYGTariffAndExtrasPage.highfilter.getText();
             System.out.println("DataFilterHighText " + DataFilterHighText);
@@ -923,7 +916,9 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
             } else {
                 Assert.fail("Data filter is not selected");
             }
-        } else {
+        }
+
+        else {
 
             System.out.println("Data Filter not Selected");
         }
@@ -1032,8 +1027,7 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 
     }
 
-    public static ArrayList<Integer> reArrangeListInDescendingBeforeApplyingSort(ArrayList<Integer> OriginalList)
-            throws InterruptedException {
+    public static ArrayList<Integer> reArrangeListInDescendingBeforeApplyingSort(ArrayList<Integer> OriginalList) {
 
         ArrayList<Integer> ListBeforeApplyingSort = OriginalList;
         Collections.sort(ListBeforeApplyingSort, Collections.reverseOrder());

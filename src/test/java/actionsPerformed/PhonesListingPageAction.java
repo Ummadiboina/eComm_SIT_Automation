@@ -155,8 +155,26 @@ public class PhonesListingPageAction extends Environment {
 
 		}*/
 
+		Thread.sleep(3000);
 
-		driver.findElement(By.xpath("(//div[@style='display: block;']/div[@class='tile comparable ']/div[@class='device-tile-wrapper']/a[@class='device-tile ']/div[@class='device-tile__top'])[1]")).click();
+		WebElement requestedDevice = driver.findElement(By.xpath("//img[@class='device-image']/..//*[normalize-space()='"+elementName+"']"));
+		if(driver.findElements(By.xpath("//img[@class='device-image']/..//*[normalize-space()='"+elementName+"']")).size() >= 1){
+			((JavascriptExecutor) driver).executeScript("arguments[0].click();", requestedDevice);
+			System.out.println("Selected Device from Phones as Required is : " + elementName);
+			log.debug("Selected Device from Phones as Required is : " + elementName);
+			Thread.sleep(3000);
+		}else{
+
+			WebElement element = driver.findElement(By.xpath("(//img[@class='device-image'])[1]"));
+			((JavascriptExecutor) driver).executeScript("arguments[0].click();", element);
+			String defaultSelDevice = driver.findElement(By.xpath("((//img[@class='device-image'])[1]/..//span[@class='ng-binding'])[2]")).getText();
+			System.out.println(" As Required Device is not Availabe, We have picked default device from availabe  :: " + defaultSelDevice);
+			log.debug(" As Required Device is not Availabe, We have picked default device from availabe  :: " + defaultSelDevice);
+			Thread.sleep(3000);
+		}
+
+
+
 		Screenshots.captureScreenshot();
 	}
 
@@ -737,9 +755,9 @@ public class PhonesListingPageAction extends Environment {
 		/*
 		 * if (NextBtn.isDisplayed()) { scrollToAnElement.scrollToElement(NextBtn);
 		 * NextBtn.click(); Thread.sleep(5000);
-		 * 
+		 *
 		 * } else { NextBtndVisible = false; break; }
-		 * 
+		 *
 		 * }
 		 */
 		Screenshots.captureScreenshot();
@@ -764,15 +782,15 @@ public class PhonesListingPageAction extends Environment {
 		 * List<WebElement> deviceName = driver.findElement(By.xpath(
 		 * "//*[@id='o2-page-wrapper']/div[3]/div[3]")) .findElements(By.xpath(
 		 * "//div[@class='device-tile__top']/p[@class='details']"));
-		 * 
-		 * 
+		 *
+		 *
 		 * List<WebElement> devicePrice = driver.findElement(By.xpath(
 		 * "//*[@id='o2-page-wrapper']/div[3]/div[3]")) .findElements(By.xpath(
 		 * "//div[@class='device-tile__bottom ng-scope']/p[@class='costs ng-binding ng-scope']/span[@class='headline ng-binding']"
 		 * ));
-		 * 
+		 *
 		 * /* for (WebElement temp1 : deviceName) {
-		 * 
+		 *
 		 * String sTemp = temp1.getText(); devicenamecurrentorder.add(sTemp); }
 		 */
 
@@ -833,8 +851,8 @@ public class PhonesListingPageAction extends Environment {
 		 * List<WebElement> deviceName = driver.findElement(By.xpath(
 		 * "//*[@id='o2-page-wrapper']/div[3]/div[3]")) .findElements(By.xpath(
 		 * "//div[@class='device-tile__top']/p[@class='details']"));
-		 * 
-		 * 
+		 *
+		 *
 		 * List<WebElement> deviceColour = driver.findElement(By.xpath(
 		 * "//*[@id='o2-page-wrapper']/div[3]/div[3]")) .findElements(By.xpath(
 		 * "//div[@class='device-tile__bottom ng-scope']/p[@class='costs ng-binding ng-scope']/span[@class='headline ng-binding']"
@@ -875,8 +893,7 @@ public class PhonesListingPageAction extends Environment {
 
 	}
 
-	public static LinkedList<String> reArrangeListInAcendingBeforeApplyingSort(LinkedList<String> OriginalList)
-			throws InterruptedException {
+	public static LinkedList<String> reArrangeListInAcendingBeforeApplyingSort(LinkedList<String> OriginalList) {
 
 		LinkedList<String> ListBeforeApplyingSort = OriginalList;
 		// listSortEx(ListBeforeApplyingSort, false);
@@ -888,8 +905,7 @@ public class PhonesListingPageAction extends Environment {
 
 	}
 
-	public static LinkedList<String> reArrangeListInDescendingBeforeApplyingSort(LinkedList<String> OriginalList)
-			throws InterruptedException {
+	public static LinkedList<String> reArrangeListInDescendingBeforeApplyingSort(LinkedList<String> OriginalList) {
 
 		LinkedList<String> ListBeforeApplyingSort = OriginalList;
 		listSortEx(ListBeforeApplyingSort, true);
@@ -898,7 +914,7 @@ public class PhonesListingPageAction extends Environment {
 	}
 
 	public static void verifyDeviceSortedOnBrand(LinkedList<String> ListBeforeApplyingSort,
-			LinkedList<String> ListAfterApplyingSort) throws IOException, InterruptedException {
+												 LinkedList<String> ListAfterApplyingSort) throws IOException, InterruptedException {
 
 		try {
 
@@ -932,7 +948,7 @@ public class PhonesListingPageAction extends Environment {
 	}
 
 	public static void verifyOriginalSortOrderRetainedAfterSortReset(LinkedList<String> ListBeforeApplyingSort,
-			LinkedList<String> ListAfterApplyingSort) throws IOException, InterruptedException {
+																	 LinkedList<String> ListAfterApplyingSort) throws IOException, InterruptedException {
 
 		try {
 

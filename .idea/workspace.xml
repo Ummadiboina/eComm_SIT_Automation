@@ -7,6 +7,9 @@
     <list id="9d0aef85-48ac-4e71-b67a-fff455014d99" name="New changelist" comment="New changelist" />
     <list default="true" id="b3431a87-97b1-4ffe-b872-0e6a8e54231a" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/actionsPerformed/DeliveryPageActions.java" afterPath="$PROJECT_DIR$/src/test/java/actionsPerformed/DeliveryPageActions.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/actionsPerformed/PAYMandPAYGTariffAndExtrasPageActions.java" afterPath="$PROJECT_DIR$/src/test/java/actionsPerformed/PAYMandPAYGTariffAndExtrasPageActions.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/actionsPerformed/PhonesListingPageAction.java" afterPath="$PROJECT_DIR$/src/test/java/actionsPerformed/PhonesListingPageAction.java" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -24,14 +27,12 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Agent_DealBuilderPageActions.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/test/java/actionsPerformed/Agent_DealBuilderPageActions.java">
+      <file leaf-file-name="PhonesListingPageAction.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/test/java/actionsPerformed/PhonesListingPageAction.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="483">
-              <caret line="651" column="1" lean-forward="false" selection-start-line="651" selection-start-column="1" selection-end-line="651" selection-end-column="1" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="143">
+              <caret line="1144" column="35" lean-forward="false" selection-start-line="1144" selection-start-column="35" selection-end-line="1144" selection-end-column="35" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -40,10 +41,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>driver</find>
-      <find>driver.</find>
-      <find>we</find>
-      <find>web</find>
       <find>webd</find>
       <find>webdr</find>
       <find>webdri</find>
@@ -70,6 +67,10 @@
       <find>ValidateAgentHomepage</find>
       <find>SelectAccessoryDevice</find>
       <find>HandsetTariffCombination</find>
+      <find>capacitySelectOfDeviceDropDown</find>
+      <find>AboutYou_Datatable</find>
+      <find>AboutYou</find>
+      <find>getCurrentSortOrderUsingMonthlyData</find>
     </findStrings>
     <dirStrings>
       <dir>C:\Users\subbaiv1\regression2\Features\JanuaryRelease2018\CFD2235</dir>
@@ -152,7 +153,6 @@
         <option value="$PROJECT_DIR$/Features/FebruaryRelease2018/Regression/Reg_CS_PayMSimOnlyRecommended.feature" />
         <option value="$PROJECT_DIR$/src/test/java/actionsPerformed/PAYMSimOPageActions.java" />
         <option value="$PROJECT_DIR$/src/test/java/pageobjects/SmartwatchesPage.java" />
-        <option value="$PROJECT_DIR$/src/test/java/actionsPerformed/DeliveryPageActions.java" />
         <option value="$PROJECT_DIR$/Features/FebruaryRelease2018/Regression/Reg_October2Release_CFA_Phones_ColourDropdownsWithColourNamesBesideTheColourMultipleColour.feature" />
         <option value="$PROJECT_DIR$/Features/FebruaryRelease2018/Regression/Reg_October2Release_ECOM-12004_CFA_PayG_Freesim_Phones_DeliveryPageMarkMandatoryFieldsWithAsterisk.feature" />
         <option value="$PROJECT_DIR$/Features/FebruaryRelease2018/Regression/Reg_October2Release_Reg_October2Release_ECOM-11886.feature" />
@@ -170,8 +170,6 @@
         <option value="$PROJECT_DIR$/src/test/java/GlobalActions/MouseHoverAction.java" />
         <option value="$PROJECT_DIR$/src/test/java/actionsPerformed/ConnectedDeviceDetailsPageAction.java" />
         <option value="$PROJECT_DIR$/src/test/java/testRunner/RunnerTest.java" />
-        <option value="$PROJECT_DIR$/src/test/java/actionsPerformed/PAYMandPAYGTariffAndExtrasPageActions.java" />
-        <option value="$PROJECT_DIR$/src/test/java/actionsPerformed/PhonesListingPageAction.java" />
         <option value="$PROJECT_DIR$/src/test/java/actionsPerformed/ShopLandingPageAction.java" />
         <option value="$PROJECT_DIR$/src/test/java/actionsPerformed/UpgradeCustomerPageActions.java" />
         <option value="$PROJECT_DIR$/src/test/java/pageobjects/BasketPage.java" />
@@ -180,6 +178,9 @@
         <option value="$PROJECT_DIR$/Features/FebruaryRelease2018/Regression/Reg_Jan_CFU_PhonesSimo30day.feature" />
         <option value="$PROJECT_DIR$/Features/FebruaryRelease2018/Regression/Reg_Jan_ConsumerToAcceptTenDigitsPhoneNumber.feature" />
         <option value="$PROJECT_DIR$/src/test/java/actionsPerformed/Agent_DealBuilderPageActions.java" />
+        <option value="$PROJECT_DIR$/src/test/java/actionsPerformed/DeliveryPageActions.java" />
+        <option value="$PROJECT_DIR$/src/test/java/actionsPerformed/PAYMandPAYGTariffAndExtrasPageActions.java" />
+        <option value="$PROJECT_DIR$/src/test/java/actionsPerformed/PhonesListingPageAction.java" />
       </list>
     </option>
   </component>
@@ -256,6 +257,13 @@
               <item name="regression" type="462c0819:PsiDirectoryNode" />
               <item name="Features" type="462c0819:PsiDirectoryNode" />
               <item name="FebruaryRelease2018" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="regression" type="b2602c69:ProjectViewProjectNode" />
+              <item name="regression" type="462c0819:PsiDirectoryNode" />
+              <item name="Features" type="462c0819:PsiDirectoryNode" />
+              <item name="FebruaryRelease2018" type="462c0819:PsiDirectoryNode" />
+              <item name="Regression" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="regression" type="b2602c69:ProjectViewProjectNode" />
@@ -995,7 +1003,14 @@
       <option name="project" value="LOCAL" />
       <updated>1519646883355</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="sharmi 26/02 changes">
+      <created>1519647226480</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1519647226480</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1054,7 +1069,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3137255" sideWeight="0.4795764" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25869894" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17170954" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24876848" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1227,7 +1242,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/test/java/actionsPerformed/PAYMandPAYGTariffAndExtrasPageActions.java</url>
-          <line>551</line>
+          <line>548</line>
           <properties class="actionsPerformed.PAYMandPAYGTariffAndExtrasPageActions" method="SortFilterPosition">
             <option name="EMULATED" value="true" />
           </properties>
@@ -1331,6 +1346,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-57">
           <caret line="140" column="23" lean-forward="false" selection-start-line="140" selection-start-column="23" selection-end-line="140" selection-end-column="23" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1468,6 +1484,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="113">
           <caret line="139" column="57" lean-forward="false" selection-start-line="139" selection-start-column="57" selection-end-line="139" selection-end-column="57" />
+          <folding>
+            <element signature="e#5644#5645#0" expanded="false" />
+            <element signature="e#5675#5676#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1491,6 +1511,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1941">
           <caret line="33" column="23" lean-forward="false" selection-start-line="33" selection-start-column="23" selection-end-line="33" selection-end-column="23" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1580,43 +1601,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/actionsPerformed/ConnectedDeviceDetailsPageAction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2108">
-          <caret line="125" column="5" lean-forward="true" selection-start-line="125" selection-start-column="5" selection-end-line="125" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/actionsPerformed/DeliveryPageActions" />
     <entry file="file://$PROJECT_DIR$/Features/FebruaryRelease2018/Regression/Reg_October2Release_CFA_Phones_ColourDropdownsWithColourNamesBesideTheColourMultipleColour.feature">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="107" lean-forward="false" selection-start-line="0" selection-start-column="9" selection-end-line="0" selection-end-column="107" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/actionsPerformed/DeliveryPageActions.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="259" column="0" lean-forward="true" selection-start-line="259" selection-start-column="0" selection-end-line="259" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/actionsPerformed/PAYMandPAYGTariffAndExtrasPageActions.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="1020" column="4" lean-forward="false" selection-start-line="1020" selection-start-column="4" selection-end-line="1020" selection-end-column="4" />
-          <folding>
-            <element signature="e#1202#1211#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/actionsPerformed/PhonesListingPageAction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="157" column="8" lean-forward="false" selection-start-line="157" selection-start-column="8" selection-end-line="157" selection-end-column="8" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1693,11 +1682,58 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/actionsPerformed/Agent_DealBuilderPageActions.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="483">
-          <caret line="651" column="1" lean-forward="false" selection-start-line="651" selection-start-column="1" selection-end-line="651" selection-end-column="1" />
+        <state relative-caret-position="432">
+          <caret line="648" column="40" lean-forward="true" selection-start-line="648" selection-start-column="40" selection-end-line="648" selection-end-column="40" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/actionsPerformed/ConnectedDeviceDetailsPageAction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="364" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/actionsPerformed/DeliveryPageActions.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="382" column="13" lean-forward="true" selection-start-line="382" selection-start-column="13" selection-end-line="382" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/actionsPerformed/PAYMandPAYGTariffAndExtrasPageActions.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="457">
+          <caret line="1063" column="1" lean-forward="false" selection-start-line="1063" selection-start-column="1" selection-end-line="1063" selection-end-column="1" />
+          <folding>
+            <element signature="e#1073#1082#0" expanded="true" />
+            <element signature="e#1183#1192#0" expanded="true" />
+            <element signature="e#1247#1256#0" expanded="true" />
+            <element signature="e#1309#1318#0" expanded="true" />
+            <element signature="e#21120#21128#0" expanded="true" />
+            <element signature="e#21179#21187#0" expanded="true" />
+            <element signature="e#29552#29561#0" expanded="true" />
+            <element signature="e#32671#32680#0" expanded="true" />
+            <element signature="e#33729#33738#0" expanded="true" />
+            <element signature="e#43856#43865#0" expanded="true" />
+            <element signature="e#45582#45591#0" expanded="true" />
+            <element signature="e#46350#46359#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/actionsPerformed/PhonesListingPageAction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="143">
+          <caret line="1144" column="35" lean-forward="false" selection-start-line="1144" selection-start-column="35" selection-end-line="1144" selection-end-column="35" />
+          <folding />
         </state>
       </provider>
     </entry>
