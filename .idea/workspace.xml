@@ -7,6 +7,13 @@
     <list id="9d0aef85-48ac-4e71-b67a-fff455014d99" name="New changelist" comment="New changelist" />
     <list default="true" id="b3431a87-97b1-4ffe-b872-0e6a8e54231a" name="Default" comment="sharmi 26/02 changes">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/actionsPerformed/Agent_DealBuilderPageActions.java" afterPath="$PROJECT_DIR$/src/test/java/actionsPerformed/Agent_DealBuilderPageActions.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/actionsPerformed/DeliveryPageActions.java" afterPath="$PROJECT_DIR$/src/test/java/actionsPerformed/DeliveryPageActions.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/actionsPerformed/PAYMandPAYGTariffAndExtrasPageActions.java" afterPath="$PROJECT_DIR$/src/test/java/actionsPerformed/PAYMandPAYGTariffAndExtrasPageActions.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/actionsPerformed/ShopLandingPageAction.java" afterPath="$PROJECT_DIR$/src/test/java/actionsPerformed/ShopLandingPageAction.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/actionsPerformed/UpgradeCustomerPageActions.java" afterPath="$PROJECT_DIR$/src/test/java/actionsPerformed/UpgradeCustomerPageActions.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/pageobjects/MouseHoverPage.java" afterPath="$PROJECT_DIR$/src/test/java/pageobjects/MouseHoverPage.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/steps/E2EOrderPlaced_Steps.java" afterPath="$PROJECT_DIR$/src/test/java/steps/E2EOrderPlaced_Steps.java" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -23,7 +30,25 @@
     <favorites_list name="regression" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file leaf-file-name="E2EOrderPlaced_Steps.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/test/java/steps/E2EOrderPlaced_Steps.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="419">
+              <caret line="8375" column="0" lean-forward="true" selection-start-line="8375" selection-start-column="0" selection-end-line="8375" selection-end-column="0" />
+              <folding>
+                <element signature="e#1333#1342#0" expanded="true" />
+                <element signature="e#1398#1407#0" expanded="true" />
+                <element signature="e#1470#1479#0" expanded="true" />
+                <element signature="e#1542#1551#0" expanded="true" />
+                <element signature="e#157098#157099#0" expanded="true" />
+                <element signature="e#157177#157178#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
@@ -158,16 +183,16 @@
         <option value="$PROJECT_DIR$/src/test/java/GlobalActions/MouseHoverAction.java" />
         <option value="$PROJECT_DIR$/src/test/java/actionsPerformed/ConnectedDeviceDetailsPageAction.java" />
         <option value="$PROJECT_DIR$/src/test/java/testRunner/RunnerTest.java" />
-        <option value="$PROJECT_DIR$/src/test/java/actionsPerformed/ShopLandingPageAction.java" />
         <option value="$PROJECT_DIR$/src/test/java/pageobjects/PAYMSimOPage.java" />
         <option value="$PROJECT_DIR$/Features/FebruaryRelease2018/Regression/Reg_Jan_CFU_PhonesSimo30day.feature" />
         <option value="$PROJECT_DIR$/Features/FebruaryRelease2018/Regression/Reg_Jan_ConsumerToAcceptTenDigitsPhoneNumber.feature" />
-        <option value="$PROJECT_DIR$/src/test/java/actionsPerformed/Agent_DealBuilderPageActions.java" />
-        <option value="$PROJECT_DIR$/src/test/java/actionsPerformed/PAYMandPAYGTariffAndExtrasPageActions.java" />
         <option value="$PROJECT_DIR$/src/test/java/actionsPerformed/PhonesListingPageAction.java" />
-        <option value="$PROJECT_DIR$/src/test/java/actionsPerformed/DeliveryPageActions.java" />
-        <option value="$PROJECT_DIR$/src/test/java/actionsPerformed/UpgradeCustomerPageActions.java" />
         <option value="$PROJECT_DIR$/src/test/java/pageobjects/BasketPage.java" />
+        <option value="$PROJECT_DIR$/src/test/java/actionsPerformed/UpgradeCustomerPageActions.java" />
+        <option value="$PROJECT_DIR$/src/test/java/actionsPerformed/Agent_DealBuilderPageActions.java" />
+        <option value="$PROJECT_DIR$/src/test/java/actionsPerformed/DeliveryPageActions.java" />
+        <option value="$PROJECT_DIR$/src/test/java/actionsPerformed/PAYMandPAYGTariffAndExtrasPageActions.java" />
+        <option value="$PROJECT_DIR$/src/test/java/actionsPerformed/ShopLandingPageAction.java" />
         <option value="$PROJECT_DIR$/src/test/java/pageobjects/MouseHoverPage.java" />
         <option value="$PROJECT_DIR$/src/test/java/steps/E2EOrderPlaced_Steps.java" />
       </list>
@@ -235,24 +260,6 @@
               <item name="regression" type="462c0819:PsiDirectoryNode" />
               <item name="Configurations" type="462c0819:PsiDirectoryNode" />
               <item name="Properties" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="regression" type="b2602c69:ProjectViewProjectNode" />
-              <item name="regression" type="462c0819:PsiDirectoryNode" />
-              <item name="Features" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="regression" type="b2602c69:ProjectViewProjectNode" />
-              <item name="regression" type="462c0819:PsiDirectoryNode" />
-              <item name="Features" type="462c0819:PsiDirectoryNode" />
-              <item name="FebruaryRelease2018" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="regression" type="b2602c69:ProjectViewProjectNode" />
-              <item name="regression" type="462c0819:PsiDirectoryNode" />
-              <item name="Features" type="462c0819:PsiDirectoryNode" />
-              <item name="FebruaryRelease2018" type="462c0819:PsiDirectoryNode" />
-              <item name="Regression" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="regression" type="b2602c69:ProjectViewProjectNode" />
@@ -1020,7 +1027,14 @@
       <option name="project" value="LOCAL" />
       <updated>1519665397770</updated>
     </task>
-    <option name="localTasksCounter" value="40" />
+    <task id="LOCAL-00040" summary="sharmi 26/02 changes">
+      <created>1519666250507</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1519666250507</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1075,11 +1089,11 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.27287582" sideWeight="0.53630865" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.0" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5392157" sideWeight="0.83812404" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.6094771" sideWeight="0.46369138" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12091503" sideWeight="0.46369138" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3137255" sideWeight="0.4795764" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22163388" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33736762" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24876848" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1251,14 +1265,6 @@
           <option name="timeStamp" value="76" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/test/java/actionsPerformed/PAYMandPAYGTariffAndExtrasPageActions.java</url>
-          <line>548</line>
-          <properties class="actionsPerformed.PAYMandPAYGTariffAndExtrasPageActions" method="SortFilterPosition">
-            <option name="EMULATED" value="true" />
-          </properties>
-          <option name="timeStamp" value="90" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/test/java/actionsPerformed/PhonesListingPageAction.java</url>
           <line>25</line>
           <properties class="actionsPerformed.PhonesListingPageAction" method="PAYMPhoneSelect">
@@ -1339,13 +1345,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Features/FebruaryRelease2018/Regression/Reg_VOLTE_PayMPhonesClickAndCollect.feature">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="52" lean-forward="true" selection-start-line="14" selection-start-column="52" selection-end-line="14" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/actionsPerformed/BasketPageActions.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-57">
@@ -1601,14 +1600,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/actionsPerformed/ShopLandingPageAction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="27" column="12" lean-forward="false" selection-start-line="27" selection-start-column="12" selection-end-line="27" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Features/FebruaryRelease2018/Regression/Reg_Existing_Customer_Tablets_Data_filters_options_tariff_and_extras_page.feature">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
@@ -1649,11 +1640,77 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/actionsPerformed/PhonesListingPageAction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="143">
+          <caret line="1144" column="35" lean-forward="false" selection-start-line="1144" selection-start-column="35" selection-end-line="1144" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/pageobjects/BasketPage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="466">
+          <caret line="164" column="1" lean-forward="false" selection-start-line="164" selection-start-column="1" selection-end-line="164" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/pageobjects/PAYMSimOPage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="214" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Features/FebruaryRelease2018/Regression/Reg_Jan_FreeSim_InvalidPostCode_EnteredManually.feature">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="37" lean-forward="false" selection-start-line="16" selection-start-column="37" selection-end-line="16" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/actionsPerformed/UpgradeCustomerPageActions.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="453">
+          <caret line="2161" column="0" lean-forward="true" selection-start-line="2161" selection-start-column="0" selection-end-line="2161" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#14433#14441#0" expanded="true" />
+            <element signature="e#62545#62556#0" expanded="true" />
+            <element signature="e#81756#81783#1" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/actionsPerformed/Agent_DealBuilderPageActions.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="453">
+          <caret line="652" column="0" lean-forward="true" selection-start-line="652" selection-start-column="0" selection-end-line="652" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/actionsPerformed/DeliveryPageActions.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="453">
+          <caret line="567" column="0" lean-forward="true" selection-start-line="567" selection-start-column="0" selection-end-line="567" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/actionsPerformed/PAYMandPAYGTariffAndExtrasPageActions.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="457">
-          <caret line="1063" column="1" lean-forward="false" selection-start-line="1063" selection-start-column="1" selection-end-line="1063" selection-end-column="1" />
+        <state relative-caret-position="453">
+          <caret line="1064" column="0" lean-forward="true" selection-start-line="1064" selection-start-column="0" selection-end-line="1064" selection-end-column="0" />
           <folding>
+            <element signature="imports" expanded="true" />
             <element signature="e#1073#1082#0" expanded="true" />
             <element signature="e#1183#1192#0" expanded="true" />
             <element signature="e#1247#1256#0" expanded="true" />
@@ -1670,73 +1727,35 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/actionsPerformed/PhonesListingPageAction.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/actionsPerformed/ShopLandingPageAction.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="143">
-          <caret line="1144" column="35" lean-forward="false" selection-start-line="1144" selection-start-column="35" selection-end-line="1144" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/actionsPerformed/Agent_DealBuilderPageActions.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="26" column="0" lean-forward="true" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/actionsPerformed/DeliveryPageActions.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="457">
-          <caret line="566" column="1" lean-forward="false" selection-start-line="566" selection-start-column="1" selection-end-line="566" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/actionsPerformed/UpgradeCustomerPageActions.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="483">
-          <caret line="2160" column="1" lean-forward="false" selection-start-line="2160" selection-start-column="1" selection-end-line="2160" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/pageobjects/BasketPage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="466">
-          <caret line="164" column="1" lean-forward="false" selection-start-line="164" selection-start-column="1" selection-end-line="164" selection-end-column="1" />
-          <folding />
+        <state relative-caret-position="453">
+          <caret line="192" column="0" lean-forward="false" selection-start-line="192" selection-start-column="0" selection-end-line="192" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/pageobjects/MouseHoverPage.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="483">
-          <caret line="165" column="1" lean-forward="false" selection-start-line="165" selection-start-column="1" selection-end-line="165" selection-end-column="1" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/pageobjects/PAYMSimOPage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="214" selection-end-column="0" />
+        <state relative-caret-position="453">
+          <caret line="166" column="0" lean-forward="true" selection-start-line="166" selection-start-column="0" selection-end-line="166" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/steps/E2EOrderPlaced_Steps.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="8282" column="0" lean-forward="true" selection-start-line="8282" selection-start-column="0" selection-end-line="8282" selection-end-column="0" />
+        <state relative-caret-position="419">
+          <caret line="8375" column="0" lean-forward="true" selection-start-line="8375" selection-start-column="0" selection-end-line="8375" selection-end-column="0" />
           <folding>
             <element signature="e#1333#1342#0" expanded="true" />
             <element signature="e#1398#1407#0" expanded="true" />
             <element signature="e#1470#1479#0" expanded="true" />
             <element signature="e#1542#1551#0" expanded="true" />
+            <element signature="e#157098#157099#0" expanded="true" />
+            <element signature="e#157177#157178#0" expanded="true" />
           </folding>
         </state>
       </provider>

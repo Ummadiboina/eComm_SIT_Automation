@@ -1,48 +1,53 @@
 package actionsPerformed;
 
+import java.awt.*;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 import org.apache.log4j.Logger;
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 
 import GlobalActions.CommonUtilities;
 import GlobalActions.Screenshots;
 import helpers.Environment;
+import org.openqa.selenium.Point;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import pageobjects.ShopLandingPage;
 
 public class ShopLandingPageAction extends Environment {
 	final static Logger log = Logger.getLogger("ShopLandingPageAction");
 	static JavascriptExecutor js = (JavascriptExecutor)driver;
 
-
-
 	public static void GetTitle_ref() throws IOException, InterruptedException {
 		//later on need to comment the code
 		try {
-
-			driver.manage().timeouts().implicitlyWait(5, TimeUnit.MINUTES);
-
-			WebElement ele = driver.findElement(By.xpath("//li[@name='Shop']/a"));
+			//driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			Thread.sleep(10000);
+			WebElement ele1111 = driver.findElement(By.xpath("//ul[@class='linksDesktop']/li[@name='Shop']"));
 			Actions act = new Actions(driver);
-			act.moveToElement(ele).build().perform();
-			Thread.sleep(1000);
-			driver.findElement(By.xpath("//a[@data-parent='Shop' and text()='Pay Monthly sims']")).click();
-			System.out.println("clicked on pay monthly sims link");
+			//new WebDriverWait(driver, 60).until(ExpectedConditions.visibilityOf(ele));
+			act.moveToElement(ele1111).build().perform();
+			//driver.findElement(By.xpath("//ul[@class='linksDesktop']/li[@name='Shop']")).click();
+			Thread.sleep(3000);
+			Actions act1 = new Actions(driver);
+			WebElement ele2 = driver.findElement(By.xpath("//a[@data-parent='Shop' and text()='Pay Monthly sims']"));
+			//act1.moveToElement(ele2).build().perform();
+			ele2.click();
 			Thread.sleep(3000);
 			System.out.println(" Current URL is : " + driver.getCurrentUrl());
-			driver.manage().timeouts().implicitlyWait(5, TimeUnit.MINUTES);
+			driver.manage().timeouts().implicitlyWait(1, TimeUnit.MINUTES);
 			Screenshots.captureScreenshot();
 
 		} catch (Exception e) {
-		System.out.println("While navigating the with new updated ref Env , getting error as :: " + e.getMessage());
+			System.out.println("While navigating the with new updated ref Env , getting error as :: " + e.getMessage());
 		}
 	}
+
+
 	public static void GetTitle() throws IOException, InterruptedException {
 		System.out.println("Currently in Shop Home page");
 		String Ele1 = driver.getTitle();
@@ -102,7 +107,7 @@ public class ShopLandingPageAction extends Environment {
 /*Below added by vinu */
 
 	public static void cookiePolicySelect() throws IOException, InterruptedException {
-	//Below will click on the cookie policy
+		//Below will click on the cookie policy
 		CommonUtilities.clickWebElement(ShopLandingPage.CookiesPolicyClick);
 		Screenshots.captureScreenshot();
 
@@ -122,7 +127,7 @@ public class ShopLandingPageAction extends Environment {
 		Thread.sleep(5000);
 		driver.close();
 		driver.switchTo().window(oldTab);
-		System.out.println("The current URL is: "+driver.getCurrentUrl());
+		System.out.println(driver.getCurrentUrl());
 		Screenshots.captureScreenshot();
 
 	}
@@ -181,7 +186,7 @@ public class ShopLandingPageAction extends Environment {
 	}
 
 
-	}
+}
 
 
 

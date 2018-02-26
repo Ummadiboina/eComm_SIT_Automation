@@ -51,20 +51,20 @@ public class UpgradeCustomerPageActions extends Environment {
          * if ((!driver.getTitle().
 		 * contains("O2 | Accounts | Please verify your email address") ||
 		 * !driver.getTitle().contains("O2 | Accounts | Update username"))) {
-		 * 
+		 *
 		 * Assert.fail("Login failed");
-		 * 
+		 *
 		 * } else {
-		 * 
+		 *
 		 * System.out.println("Logged in successfully"); }
 		 */
 		/*
 		 * try { System.out.println("Going to click on Continue link");
 		 * pageobjects.UpgradeCustomerPage.Continue.click();
-		 * 
+		 *
 		 * } catch (Exception e) { // TODO Auto-generated catch block
 		 * System.out.println("Continue button is not there, it should be fine" );
-		 * 
+		 *
 		 * }
 		 */
         Screenshots.captureScreenshot();

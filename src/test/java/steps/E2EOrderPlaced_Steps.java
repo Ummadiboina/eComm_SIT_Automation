@@ -8362,4 +8362,16 @@ public class E2EOrderPlaced_Steps {
         }
     }
 
+
+    @Given("^Read the data from exel with the location ([^\"]*)$")
+    public void readTestDataFromExel(String exelLocation) {
+        try {
+            System.out.println("Reading the data From Exel sheet: for validating the Test data :");
+            ReadData.readingDataFromExel(exelLocation);
+        } catch (Exception e) {
+            System.out.println("Unable to validate section");
+            Assert.fail("Unable to validate section");
+        }
+    }
+
 }
