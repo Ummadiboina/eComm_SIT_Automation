@@ -89,9 +89,7 @@ public class BasketPage {
 	@FindBy(how = How.ID, using = ("store-postcode-submit"))
 	public static WebElement PostcodeSubmit;
 
-
-	//@FindBy(how = How.XPATH, using = ("//*[@id='444']/div[4]/p/a"))
-	@FindBy(how = How.XPATH, using = ("//*[@id='769']/div[4]/p/a"))
+	@FindBy(how = How.XPATH, using = ("(//a[normalize-space()='Collect from this store'])[1]"))
 	public static WebElement Collectfromthisstore;
 
 	@FindBy(how = How.XPATH, using = ("//div[@class='basket-header-xxl']"))
@@ -155,7 +153,7 @@ public class BasketPage {
 	public static WebElement InsuranceSection;
 
 	/////////////////Upgrade Your sim////////////////////////////////////////
-	
+
 	@FindBy(how = How.XPATH, using = ("//*[@class='basket-nav']/div[1]/form[@class='qa-checkout-form ng-pristine ng-valid']/input[@class='button primary disabled']"))
 	public static WebElement DisabledCheckout;
 
@@ -165,4 +163,3 @@ public class BasketPage {
 	@FindBy(how = How.XPATH, using = "//h1[@class='staticPage']")
 	public static WebElement checkoutinProgress;
 }
-	

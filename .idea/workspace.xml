@@ -7,7 +7,10 @@
     <list id="9d0aef85-48ac-4e71-b67a-fff455014d99" name="New changelist" comment="New changelist" />
     <list default="true" id="b3431a87-97b1-4ffe-b872-0e6a8e54231a" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/actionsPerformed/DeliveryPageActions.java" afterPath="$PROJECT_DIR$/src/test/java/actionsPerformed/DeliveryPageActions.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/actionsPerformed/UpgradeCustomerPageActions.java" afterPath="$PROJECT_DIR$/src/test/java/actionsPerformed/UpgradeCustomerPageActions.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/pageobjects/BasketPage.java" afterPath="$PROJECT_DIR$/src/test/java/pageobjects/BasketPage.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/pageobjects/MouseHoverPage.java" afterPath="$PROJECT_DIR$/src/test/java/pageobjects/MouseHoverPage.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/steps/E2EOrderPlaced_Steps.java" afterPath="$PROJECT_DIR$/src/test/java/steps/E2EOrderPlaced_Steps.java" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -28,7 +31,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>webd</find>
       <find>webdr</find>
       <find>webdri</find>
       <find>webdriv</find>
@@ -58,6 +60,7 @@
       <find>AboutYou_Datatable</find>
       <find>getCurrentSortOrderUsingMonthlyData</find>
       <find>AboutYou</find>
+      <find>enter_houseNum_and_PostCode</find>
     </findStrings>
     <dirStrings>
       <dir>C:\Users\subbaiv1\regression2\Features\JanuaryRelease2018\CFD2235</dir>
@@ -147,7 +150,6 @@
         <option value="$PROJECT_DIR$/Features/FebruaryRelease2018/Regression/Reg_CS_Recycle.feature" />
         <option value="$PROJECT_DIR$/src/test/java/pageobjects/BaseCommPage.java" />
         <option value="$PROJECT_DIR$/src/test/java/pageobjects/TabletPage.java" />
-        <option value="$PROJECT_DIR$/src/test/java/steps/E2EOrderPlaced_Steps.java" />
         <option value="$PROJECT_DIR$/src/test/java/pageobjects/ConnectedDeviceDetailsPage.java" />
         <option value="$PROJECT_DIR$/Features/FebruaryRelease2018/Regression/Reg_October2Release_ECOM-12004_CFA_PAYM_Phones.feature" />
         <option value="$PROJECT_DIR$/Features/FebruaryRelease2018/Regression/Reg_October2Release_PayG Tablets_ShowMarketingMessageOnTariffAndExtrasPagePackageSummary.feature" />
@@ -158,9 +160,6 @@
         <option value="$PROJECT_DIR$/src/test/java/actionsPerformed/ConnectedDeviceDetailsPageAction.java" />
         <option value="$PROJECT_DIR$/src/test/java/testRunner/RunnerTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/actionsPerformed/ShopLandingPageAction.java" />
-        <option value="$PROJECT_DIR$/src/test/java/actionsPerformed/UpgradeCustomerPageActions.java" />
-        <option value="$PROJECT_DIR$/src/test/java/pageobjects/BasketPage.java" />
-        <option value="$PROJECT_DIR$/src/test/java/pageobjects/MouseHoverPage.java" />
         <option value="$PROJECT_DIR$/src/test/java/pageobjects/PAYMSimOPage.java" />
         <option value="$PROJECT_DIR$/Features/FebruaryRelease2018/Regression/Reg_Jan_CFU_PhonesSimo30day.feature" />
         <option value="$PROJECT_DIR$/Features/FebruaryRelease2018/Regression/Reg_Jan_ConsumerToAcceptTenDigitsPhoneNumber.feature" />
@@ -168,6 +167,10 @@
         <option value="$PROJECT_DIR$/src/test/java/actionsPerformed/PAYMandPAYGTariffAndExtrasPageActions.java" />
         <option value="$PROJECT_DIR$/src/test/java/actionsPerformed/PhonesListingPageAction.java" />
         <option value="$PROJECT_DIR$/src/test/java/actionsPerformed/DeliveryPageActions.java" />
+        <option value="$PROJECT_DIR$/src/test/java/actionsPerformed/UpgradeCustomerPageActions.java" />
+        <option value="$PROJECT_DIR$/src/test/java/pageobjects/BasketPage.java" />
+        <option value="$PROJECT_DIR$/src/test/java/pageobjects/MouseHoverPage.java" />
+        <option value="$PROJECT_DIR$/src/test/java/steps/E2EOrderPlaced_Steps.java" />
       </list>
     </option>
   </component>
@@ -276,7 +279,7 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="actionsPerformed" type="462c0819:PsiDirectoryNode" />
+              <item name="steps" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="regression" type="b2602c69:ProjectViewProjectNode" />
@@ -1004,7 +1007,14 @@
       <option name="project" value="LOCAL" />
       <updated>1519656882318</updated>
     </task>
-    <option name="localTasksCounter" value="38" />
+    <task id="LOCAL-00038" summary="sharmi 26/02 changes">
+      <created>1519658541962</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1519658541962</updated>
+    </task>
+    <option name="localTasksCounter" value="39" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1220,7 +1230,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/test/java/steps/E2EOrderPlaced_Steps.java</url>
-          <line>5085</line>
+          <line>5070</line>
           <properties class="steps.E2EOrderPlaced_Steps" method="search_for_device">
             <option name="EMULATED" value="true" />
           </properties>
@@ -1228,7 +1238,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/test/java/steps/E2EOrderPlaced_Steps.java</url>
-          <line>5828</line>
+          <line>5811</line>
           <properties class="steps.E2EOrderPlaced_Steps" method="clickOnRespectiveDataFilter">
             <option name="EMULATED" value="true" />
           </properties>
@@ -1287,20 +1297,14 @@
           <option name="timeStamp" value="58" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/actionsPerformed/UpgradeCustomerPageActions.java</url>
-          <line>396</line>
-          <properties />
-          <option name="timeStamp" value="62" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/steps/E2EOrderPlaced_Steps.java</url>
-          <line>2493</line>
+          <line>2491</line>
           <properties />
           <option name="timeStamp" value="72" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/steps/E2EOrderPlaced_Steps.java</url>
-          <line>2881</line>
+          <line>2878</line>
           <properties />
           <option name="timeStamp" value="79" />
         </line-breakpoint>
@@ -1312,7 +1316,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/steps/E2EOrderPlaced_Steps.java</url>
-          <line>308</line>
+          <line>307</line>
           <properties />
           <option name="timeStamp" value="95" />
         </line-breakpoint>
@@ -1384,6 +1388,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1062">
           <caret line="87" column="12" lean-forward="false" selection-start-line="87" selection-start-column="12" selection-end-line="87" selection-end-column="12" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1567,19 +1572,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/steps/E2EOrderPlaced_Steps.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="246">
-          <caret line="112" column="46" lean-forward="false" selection-start-line="112" selection-start-column="46" selection-end-line="112" selection-end-column="46" />
-          <folding>
-            <element signature="e#1333#1342#0" expanded="true" />
-            <element signature="e#1398#1407#0" expanded="true" />
-            <element signature="e#1470#1479#0" expanded="true" />
-            <element signature="e#1542#1551#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/GlobalActions/MouseHoverAction.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-365">
@@ -1607,37 +1599,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
           <caret line="27" column="12" lean-forward="false" selection-start-line="27" selection-start-column="12" selection-end-line="27" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/actionsPerformed/UpgradeCustomerPageActions.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
-          <caret line="393" column="8" lean-forward="false" selection-start-line="393" selection-start-column="8" selection-end-line="393" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/pageobjects/BasketPage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="92" column="0" lean-forward="false" selection-start-line="92" selection-start-column="0" selection-end-line="92" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/pageobjects/MouseHoverPage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="401">
-          <caret line="171" column="0" lean-forward="false" selection-start-line="171" selection-start-column="0" selection-end-line="171" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/pageobjects/PAYMSimOPage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="25">
-          <caret line="39" column="0" lean-forward="false" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1724,6 +1685,53 @@
         <state relative-caret-position="457">
           <caret line="566" column="1" lean-forward="false" selection-start-line="566" selection-start-column="1" selection-end-line="566" selection-end-column="1" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/actionsPerformed/UpgradeCustomerPageActions.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="483">
+          <caret line="2160" column="1" lean-forward="false" selection-start-line="2160" selection-start-column="1" selection-end-line="2160" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/pageobjects/BasketPage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="466">
+          <caret line="164" column="1" lean-forward="false" selection-start-line="164" selection-start-column="1" selection-end-line="164" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/pageobjects/MouseHoverPage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="483">
+          <caret line="165" column="1" lean-forward="false" selection-start-line="165" selection-start-column="1" selection-end-line="165" selection-end-column="1" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/pageobjects/PAYMSimOPage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="214" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/steps/E2EOrderPlaced_Steps.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="8282" column="0" lean-forward="true" selection-start-line="8282" selection-start-column="0" selection-end-line="8282" selection-end-column="0" />
+          <folding>
+            <element signature="e#1333#1342#0" expanded="true" />
+            <element signature="e#1398#1407#0" expanded="true" />
+            <element signature="e#1470#1479#0" expanded="true" />
+            <element signature="e#1542#1551#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
