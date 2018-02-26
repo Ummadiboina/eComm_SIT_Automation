@@ -5,14 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list id="9d0aef85-48ac-4e71-b67a-fff455014d99" name="New changelist" comment="New changelist" />
-    <list default="true" id="b3431a87-97b1-4ffe-b872-0e6a8e54231a" name="Default" comment="sharmi 26/02 changes">
+    <list default="true" id="b3431a87-97b1-4ffe-b872-0e6a8e54231a" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/actionsPerformed/Agent_DealBuilderPageActions.java" afterPath="$PROJECT_DIR$/src/test/java/actionsPerformed/Agent_DealBuilderPageActions.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/actionsPerformed/DeliveryPageActions.java" afterPath="$PROJECT_DIR$/src/test/java/actionsPerformed/DeliveryPageActions.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/actionsPerformed/PAYMandPAYGTariffAndExtrasPageActions.java" afterPath="$PROJECT_DIR$/src/test/java/actionsPerformed/PAYMandPAYGTariffAndExtrasPageActions.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/actionsPerformed/ShopLandingPageAction.java" afterPath="$PROJECT_DIR$/src/test/java/actionsPerformed/ShopLandingPageAction.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/actionsPerformed/UpgradeCustomerPageActions.java" afterPath="$PROJECT_DIR$/src/test/java/actionsPerformed/UpgradeCustomerPageActions.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/pageobjects/MouseHoverPage.java" afterPath="$PROJECT_DIR$/src/test/java/pageobjects/MouseHoverPage.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/steps/E2EOrderPlaced_Steps.java" afterPath="$PROJECT_DIR$/src/test/java/steps/E2EOrderPlaced_Steps.java" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
@@ -34,8 +28,8 @@
       <file leaf-file-name="E2EOrderPlaced_Steps.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/steps/E2EOrderPlaced_Steps.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="419">
-              <caret line="8375" column="0" lean-forward="true" selection-start-line="8375" selection-start-column="0" selection-end-line="8375" selection-end-column="0" />
+            <state relative-caret-position="320">
+              <caret line="8365" column="0" lean-forward="false" selection-start-line="8365" selection-start-column="0" selection-end-line="8365" selection-end-column="0" />
               <folding>
                 <element signature="e#1333#1342#0" expanded="true" />
                 <element signature="e#1398#1407#0" expanded="true" />
@@ -1034,7 +1028,14 @@
       <option name="project" value="LOCAL" />
       <updated>1519666250507</updated>
     </task>
-    <option name="localTasksCounter" value="41" />
+    <task id="LOCAL-00041" summary="sharmi 26/02 changes">
+      <created>1519667058881</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1519667058881</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1093,7 +1094,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3137255" sideWeight="0.4795764" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33736762" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33736762" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24876848" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1747,8 +1748,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/steps/E2EOrderPlaced_Steps.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="419">
-          <caret line="8375" column="0" lean-forward="true" selection-start-line="8375" selection-start-column="0" selection-end-line="8375" selection-end-column="0" />
+        <state relative-caret-position="320">
+          <caret line="8365" column="0" lean-forward="false" selection-start-line="8365" selection-start-column="0" selection-end-line="8365" selection-end-column="0" />
           <folding>
             <element signature="e#1333#1342#0" expanded="true" />
             <element signature="e#1398#1407#0" expanded="true" />
