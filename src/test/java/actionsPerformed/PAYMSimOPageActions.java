@@ -50,8 +50,7 @@ public class PAYMSimOPageActions extends Environment {
 			log.debug("Selecting a Random Tariff under 30 days tab");
 			pageobjects.PAYMSimOPage.thirtydays.click();
 			Thread.sleep(3000);
-			JavascriptExecutor executor = (JavascriptExecutor)driver;
-			executor.executeScript("arguments[0].click();",pageobjects.PAYMSimOPage.BuyNowRandomTariff30Months);
+			pageobjects.PAYMSimOPage.BuyNowRandomTariff30Months.click();
 			Thread.sleep(5000);
 		}
 		if (elementName.contains("12 Months")) {
@@ -59,8 +58,7 @@ public class PAYMSimOPageActions extends Environment {
 			log.debug("Selecting a Random Tariff under 12 Months tab");
 			pageobjects.PAYMSimOPage.twelevemonths.click();
 			Thread.sleep(3000);
-			JavascriptExecutor executor = (JavascriptExecutor)driver;
-			executor.executeScript("arguments[0].click();",pageobjects.PAYMSimOPage.BuyNowRandomTariff12Months);
+			pageobjects.PAYMSimOPage.BuyNowRandomTariff12Months.click();
 			System.out.println("Clicked on a Random Tariff");
 		}
 		Screenshots.captureScreenshot();

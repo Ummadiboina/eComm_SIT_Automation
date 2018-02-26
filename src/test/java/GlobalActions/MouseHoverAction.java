@@ -476,10 +476,10 @@ public class MouseHoverAction extends Environment {
 				pageobjects.MouseHoverPage.MoveMouseOnPayMSims.click();
 				log.debug("Clicking on Pay M Sims");
 				// Move mouse pointer away from location
-				Point coordinates2 = driver.findElement(By.xpath("//*[@id='header-consumer']/div")).getLocation();
+			/*	Point coordinates2 = driver.findElement(By.xpath("//*[@id='header-consumer']/div")).getLocation();
 				Robot robot2 = new Robot();
 				robot2.mouseMove(coordinates2.getX(), coordinates.getY() + 300);
-				log.debug("Moved Mouse to somewhere side of page");
+				log.debug("Moved Mouse to somewhere side of page");*/
 
 				Worksfine = true;
 				Screenshots.captureScreenshot();
@@ -1071,44 +1071,4 @@ public class MouseHoverAction extends Environment {
 			}
 		}
 	}
-
-
-	public static void ByPassDroopalPage() throws Exception {
-		driver.manage().timeouts().implicitlyWait(150, TimeUnit.SECONDS);
-		try{
-			//if(driver.findElements(By.xpath("//li[@name='Shop']")).size() > 0){
-				System.out.println("Performing workaround to navigate away from Droopal pages");
-				log.debug("Performing workaround to navigate away from Droopal pages");
-				Thread.sleep(5000);
-				Point coordinates = pageobjects.MouseHoverPage.MoveMouseonShopDroopal.getLocation();
-				Robot robot = new Robot();
-				robot.mouseMove(coordinates.getX(), coordinates.getY() + 120);
-				log.debug("Moving Mouse the Drooapal - Shop Tab");
-				Actions action = new Actions(driver);
-				action.moveToElement(pageobjects.MouseHoverPage.MoveMouseonShopDroopal).perform();
-				System.out.println("Mouse over on the Droopal-Shop Header ");
-				Thread.sleep(2000);
-				//pageobjects.MouseHoverPage.MoveMouseonShopDroopal.click();
-				//Thread.sleep(5000);
-				Actions action1 = new Actions(driver);
-				action1.moveToElement(pageobjects.MouseHoverPage.MoveMouseonPayMSimsDroopal).perform();
-				System.out.println("Mouse over on the Droopal-PayMonthlySimsLink");
-				Thread.sleep(2000);
-				pageobjects.MouseHoverPage.MoveMouseonPayMSimsDroopal.click();
-				Thread.sleep(5000);
-				System.out.println("Clicked on the Droopal-PayMonthlySimsLink");
-			/*}else
-			{
-				System.out.println("Droopal pages page is seems not visisble");
-			}*/
-		}
-		catch (ElementNotVisibleException e) {
-			System.out.println("Unable to perform workaround to navigate away from Droopal pages");
-			Thread.sleep(2000);
-		}
-	}
-
-
-
-
 }

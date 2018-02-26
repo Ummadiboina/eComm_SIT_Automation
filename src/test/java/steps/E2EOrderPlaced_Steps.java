@@ -62,7 +62,7 @@ public class E2EOrderPlaced_Steps {
         try {
             PageFactory.initElements(driver, MouseHoverPage.class);
 
-             MouseHoverAction.ByPassDroopalPage();
+            // MouseHoverAction.ByPassDroopalPage();
             //ShopLandingPageAction.GetTitle_ref();
             ShopLandingPageAction.GetTitle();
 
