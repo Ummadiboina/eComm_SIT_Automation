@@ -4,6 +4,9 @@ import java.io.IOException;
 
 import org.apache.log4j.Logger;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import java.util.concurrent.TimeUnit;
 
 import GlobalActions.Screenshots;
 import helpers.Environment;
@@ -70,6 +73,15 @@ public class TabletPageActions extends Environment {
 	public static void DeviceSelect(String elementName) throws InterruptedException, IOException {
 
 		if (elementName.contains("Random Device")) {
+
+			JavascriptExecutor js = ((JavascriptExecutor) driver);
+			js.executeScript("arguments[0].scrollIntoView(true);",driver.findElement(By.xpath("(//a[contains(., 'View all products on one page')])[2]")));
+
+			if(driver.findElements(By.xpath("(//a[contains(., 'View all products on one page')])[2]")).size() > 0) {
+				driver.findElement(By.xpath("(//a[contains(., 'View all products on one page')])[2]")).click();
+				System.out.println(" Clicked on View all products on one page(2) ");
+			}
+			driver.manage().timeouts().implicitlyWait(120, TimeUnit.SECONDS);
 			System.out.println("Random Tablet is selected");
 
 			pageobjects.TabletPage.RandomTablet.click();

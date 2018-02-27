@@ -1,16 +1,16 @@
-$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("Features/FebruaryRelease2018/Regression/Reg_CS_PayMSimOnly.feature");
+$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("Features/FebruaryRelease2018/Regression/Reg_Trustev_AFA_PAYM_Tablet_WithAccessoryClick_and_Collect.feature");
 formatter.feature({
   "line": 1,
-  "name": "Reg_CS_PayMSimOnly",
+  "name": "Reg_Trustev_AFA_PAYM_Tablet_WithAccessoryClick_and_Collect",
   "description": "",
-  "id": "reg-cs-paymsimonly",
+  "id": "reg-trustev-afa-paym-tablet-withaccessoryclick-and-collect",
   "keyword": "Feature"
 });
 formatter.scenarioOutline({
   "line": 4,
-  "name": "Sim Only PayM 12Months E2E validation",
+  "name": "Trustev PayM Tablets Click and Collect E2E journey with Accessory in Agent shop",
   "description": "",
-  "id": "reg-cs-paymsimonly;sim-only-paym-12months-e2e-validation",
+  "id": "reg-trustev-afa-paym-tablet-withaccessoryclick-and-collect;trustev-paym-tablets-click-and-collect-e2e-journey-with-accessory-in-agent-shop",
   "type": "scenario_outline",
   "keyword": "Scenario Outline",
   "tags": [
@@ -22,92 +22,121 @@ formatter.scenarioOutline({
 });
 formatter.step({
   "line": 5,
-  "name": "I am an CFA user and Lands on shop page",
+  "name": "I login to Agent shop",
   "keyword": "Given "
 });
 formatter.step({
   "line": 6,
-  "name": "navigate to PAYM SIMO page",
+  "name": "performs Acquisition for New user",
   "keyword": "And "
 });
 formatter.step({
   "line": 7,
-  "name": "Click on different \u003cContract\u003e  Months Tariff in Tab",
+  "name": "Select a valid PayM \u003cDevice\u003e",
   "keyword": "And "
 });
 formatter.step({
   "line": 8,
-  "name": "Select any Random Tariff in the displayed list of Tariffs under different \u003cContract\u003e tab",
+  "name": "Select valid \u003cTariffs\u003e from tariffs tab",
   "keyword": "And "
 });
 formatter.step({
   "line": 9,
-  "name": "I Land on the Plan included basket page and choose home delivery option",
+  "name": "Select a valid Accessory \u003cAccessory\u003e",
   "keyword": "And "
 });
 formatter.step({
   "line": 10,
-  "name": "click on \"go to checkout\" button",
+  "name": "select a valid Handset and Tariff combination",
   "keyword": "And "
 });
 formatter.step({
   "line": 11,
-  "name": "input \u003cFirstname\u003e and \u003cSurname\u003e and other valid details in Delivery page and Click on the \u0027Continue button\u0027",
+  "name": "select a valid store for Click and Collect",
   "keyword": "And "
 });
 formatter.step({
   "line": 12,
-  "name": "land on the payment page and input \u003cUsername\u003e and other details and click \u0027Continue on next step\u0027",
+  "name": "Validate all the Basket content and checkout",
   "keyword": "And "
 });
 formatter.step({
   "line": 13,
-  "name": "Continue to Review page and review the order",
-  "keyword": "And "
+  "name": "perform all the advisory checks",
+  "keyword": "Then "
 });
 formatter.step({
   "line": 14,
-  "name": "order confirmation is displayed",
+  "name": "perform the credit checks using valid \u003cFirstname\u003e, \u003cSurname\u003e, \u003cHouseNumber\u003e, \u003cPostCode\u003e and valid \u003cUsername\u003e",
+  "keyword": "Then "
+});
+formatter.step({
+  "line": 15,
+  "name": "Register customer with valid \u003cPassword\u003e, \u003cConfirm_Password\u003e, \u003cSecurity_Answer\u003e in delivery page",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 16,
+  "name": "Pay by card for PAYM device",
+  "keyword": "When "
+});
+formatter.step({
+  "line": 17,
+  "name": "Order confirmation message should be displayed",
   "keyword": "Then "
 });
 formatter.examples({
-  "line": 16,
+  "line": 19,
   "name": "",
   "description": "",
-  "id": "reg-cs-paymsimonly;sim-only-paym-12months-e2e-validation;",
+  "id": "reg-trustev-afa-paym-tablet-withaccessoryclick-and-collect;trustev-paym-tablets-click-and-collect-e2e-journey-with-accessory-in-agent-shop;",
   "rows": [
     {
       "cells": [
-        "Contract",
+        "Device",
+        "Tariffs",
+        "Accessory",
         "Firstname",
         "Surname",
-        "Username"
+        "HouseNumber",
+        "PostCode",
+        "Username",
+        "Password",
+        "Confirm_Password",
+        "Security_Answer"
       ],
-      "line": 17,
-      "id": "reg-cs-paymsimonly;sim-only-paym-12months-e2e-validation;;1"
+      "line": 20,
+      "id": "reg-trustev-afa-paym-tablet-withaccessoryclick-and-collect;trustev-paym-tablets-click-and-collect-e2e-journey-with-accessory-in-agent-shop;;1"
     },
     {
       "cells": [
-        "30 Days",
+        "tablet",
+        "Random",
+        "iPhone 7 Evo Elite Brushed Black",
         "TEST",
         "ACCEPTA",
-        "TEST ACCEPTA"
+        "32",
+        "SL11ER",
+        "TEST ACCEPTA",
+        "test123",
+        "test123",
+        "Anything"
       ],
-      "line": 18,
-      "id": "reg-cs-paymsimonly;sim-only-paym-12months-e2e-validation;;2"
+      "line": 21,
+      "id": "reg-trustev-afa-paym-tablet-withaccessoryclick-and-collect;trustev-paym-tablets-click-and-collect-e2e-journey-with-accessory-in-agent-shop;;2"
     }
   ],
   "keyword": "Examples"
 });
 formatter.before({
-  "duration": 11234433634,
+  "duration": 32158495167,
   "status": "passed"
 });
 formatter.scenario({
-  "line": 18,
-  "name": "Sim Only PayM 12Months E2E validation",
+  "line": 21,
+  "name": "Trustev PayM Tablets Click and Collect E2E journey with Accessory in Agent shop",
   "description": "",
-  "id": "reg-cs-paymsimonly;sim-only-paym-12months-e2e-validation;;2",
+  "id": "reg-trustev-afa-paym-tablet-withaccessoryclick-and-collect;trustev-paym-tablets-click-and-collect-e2e-journey-with-accessory-in-agent-shop;;2",
   "type": "scenario",
   "keyword": "Scenario Outline",
   "tags": [
@@ -119,17 +148,17 @@ formatter.scenario({
 });
 formatter.step({
   "line": 5,
-  "name": "I am an CFA user and Lands on shop page",
+  "name": "I login to Agent shop",
   "keyword": "Given "
 });
 formatter.step({
   "line": 6,
-  "name": "navigate to PAYM SIMO page",
+  "name": "performs Acquisition for New user",
   "keyword": "And "
 });
 formatter.step({
   "line": 7,
-  "name": "Click on different 30 Days  Months Tariff in Tab",
+  "name": "Select a valid PayM tablet",
   "matchedColumns": [
     0
   ],
@@ -137,155 +166,219 @@ formatter.step({
 });
 formatter.step({
   "line": 8,
-  "name": "Select any Random Tariff in the displayed list of Tariffs under different 30 Days tab",
+  "name": "Select valid Random from tariffs tab",
   "matchedColumns": [
-    0
+    1
   ],
   "keyword": "And "
 });
 formatter.step({
   "line": 9,
-  "name": "I Land on the Plan included basket page and choose home delivery option",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 10,
-  "name": "click on \"go to checkout\" button",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 11,
-  "name": "input TEST and ACCEPTA and other valid details in Delivery page and Click on the \u0027Continue button\u0027",
+  "name": "Select a valid Accessory iPhone 7 Evo Elite Brushed Black",
   "matchedColumns": [
-    1,
     2
   ],
   "keyword": "And "
 });
 formatter.step({
+  "line": 10,
+  "name": "select a valid Handset and Tariff combination",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 11,
+  "name": "select a valid store for Click and Collect",
+  "keyword": "And "
+});
+formatter.step({
   "line": 12,
-  "name": "land on the payment page and input TEST ACCEPTA and other details and click \u0027Continue on next step\u0027",
-  "matchedColumns": [
-    3
-  ],
+  "name": "Validate all the Basket content and checkout",
   "keyword": "And "
 });
 formatter.step({
   "line": 13,
-  "name": "Continue to Review page and review the order",
-  "keyword": "And "
+  "name": "perform all the advisory checks",
+  "keyword": "Then "
 });
 formatter.step({
   "line": 14,
-  "name": "order confirmation is displayed",
+  "name": "perform the credit checks using valid TEST, ACCEPTA, 32, SL11ER and valid TEST ACCEPTA",
+  "matchedColumns": [
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "keyword": "Then "
+});
+formatter.step({
+  "line": 15,
+  "name": "Register customer with valid test123, test123, Anything in delivery page",
+  "matchedColumns": [
+    8,
+    9,
+    10
+  ],
+  "keyword": "And "
+});
+formatter.step({
+  "line": 16,
+  "name": "Pay by card for PAYM device",
+  "keyword": "When "
+});
+formatter.step({
+  "line": 17,
+  "name": "Order confirmation message should be displayed",
   "keyword": "Then "
 });
 formatter.match({
-  "location": "E2EOrderPlaced_Steps.i_am_an_CFA_user_and_Lands_on_shop_page()"
+  "location": "E2EOrderPlaced_Steps.LoginAgentShop()"
 });
 formatter.result({
-  "duration": 853534280,
+  "duration": 1788242672,
   "status": "passed"
 });
 formatter.match({
-  "location": "E2EOrderPlaced_Steps.navigate_to_PAYM_SIMO_page()"
+  "location": "E2EOrderPlaced_Steps.performs_Acquisition_for_New_user()"
 });
 formatter.result({
-  "duration": 26402014205,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "30 Days ",
-      "offset": 19
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.click_on_different_Months_Tariff_in_Tab(String)"
-});
-formatter.result({
-  "duration": 521180828,
+  "duration": 7651406300,
   "status": "passed"
 });
 formatter.match({
   "arguments": [
     {
-      "val": "30 Days",
-      "offset": 74
+      "val": "tablet",
+      "offset": 20
     }
   ],
-  "location": "E2EOrderPlaced_Steps.select_any_Random_Tariff_in_the_displayed_list_of_Tariffs_under_different_Months_tab(String)"
+  "location": "E2EOrderPlaced_Steps.SelectValid_Device(String)"
 });
 formatter.result({
-  "duration": 18403954297,
-  "status": "passed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.i_Land_on_the_Plan_included_basket_page_and_choose_home_delivery_option()"
-});
-formatter.result({
-  "duration": 3744538018,
+  "duration": 11594501840,
   "status": "passed"
 });
 formatter.match({
   "arguments": [
     {
-      "val": "go to checkout",
-      "offset": 10
+      "val": "Random",
+      "offset": 13
     }
   ],
-  "location": "E2EOrderPlaced_Steps.CheckoutFromBasket(String)"
+  "location": "E2EOrderPlaced_Steps.SelectTariff(String)"
 });
 formatter.result({
-  "duration": 11485818603,
+  "duration": 11696248692,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "iPhone 7 Evo Elite Brushed Black",
+      "offset": 25
+    }
+  ],
+  "location": "E2EOrderPlaced_Steps.Select_Accessory(String)"
+});
+formatter.result({
+  "duration": 24989350940,
+  "status": "passed"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.select_a_valid_Handset_and_Tariff_combination()"
+});
+formatter.result({
+  "duration": 19890309512,
+  "status": "passed"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.select_Store_for_click_and_Collect()"
+});
+formatter.result({
+  "duration": 7627109891,
+  "status": "passed"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.validate_all_the_Basket_content_and_checkout()"
+});
+formatter.result({
+  "duration": 12475933043,
+  "status": "passed"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.advisory_checks()"
+});
+formatter.result({
+  "duration": 13128548190,
   "status": "passed"
 });
 formatter.match({
   "arguments": [
     {
       "val": "TEST",
-      "offset": 6
+      "offset": 38
     },
     {
       "val": "ACCEPTA",
-      "offset": 15
+      "offset": 44
+    },
+    {
+      "val": "32",
+      "offset": 53
+    },
+    {
+      "val": "SL11ER",
+      "offset": 57
+    },
+    {
+      "val": "TEST ACCEPTA",
+      "offset": 74
     }
   ],
-  "location": "E2EOrderPlaced_Steps.DeliveryPage_Inputs_homeDelivery(String,String)"
+  "location": "E2EOrderPlaced_Steps.CreditCheck(String,String,String,String,String)"
 });
 formatter.result({
-  "duration": 56927796199,
+  "duration": 42808313987,
   "status": "passed"
 });
 formatter.match({
   "arguments": [
     {
-      "val": "TEST ACCEPTA",
-      "offset": 35
+      "val": "test123",
+      "offset": 29
+    },
+    {
+      "val": "test123",
+      "offset": 38
+    },
+    {
+      "val": "Anything",
+      "offset": 47
     }
   ],
-  "location": "E2EOrderPlaced_Steps.CreditCheckPaymentPage_HomeDelivery(String)"
+  "location": "E2EOrderPlaced_Steps.Register_Customer_Phones(String,String,String)"
 });
 formatter.result({
-  "duration": 130699003967,
+  "duration": 36492746925,
   "status": "passed"
 });
 formatter.match({
-  "location": "E2EOrderPlaced_Steps.ReviewPageConfirmation()"
+  "location": "E2EOrderPlaced_Steps.pay_by_card_payn_device()"
 });
 formatter.result({
-  "duration": 15431849754,
+  "duration": 22731340045,
   "status": "passed"
 });
 formatter.match({
-  "location": "E2EOrderPlaced_Steps.OrderConfirmationPage()"
+  "location": "E2EOrderPlaced_Steps.order_confirmation_message_should_be_displayed()"
 });
 formatter.result({
-  "duration": 822745729,
+  "duration": 484857170,
   "status": "passed"
 });
 formatter.after({
-  "duration": 20204141745,
+  "duration": 20039941031,
   "status": "passed"
 });
 });

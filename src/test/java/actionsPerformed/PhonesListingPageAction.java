@@ -42,9 +42,10 @@ public class PhonesListingPageAction extends Environment {
 		}
 		driver.manage().timeouts().implicitlyWait(120, TimeUnit.SECONDS);
 		driver.findElement(By.xpath("//div[@class='fieldandsubmitbar']/input[1]")).sendKeys(elementName);
+		driver.findElement(By.xpath("//div[@class='fieldandsubmitbar']/input[1]")).sendKeys(Keys.TAB);
 		/*JavascriptExecutor executor = (JavascriptExecutor) driver;
 		executor.executeScript("arguments[0].click();", pageobjects.PhonesListingPage.ViewAllPhones);*/
-		Thread.sleep(2000);
+		Thread.sleep(5000);
 		/*if (elementName.contains("GalaxyS7")) {
 			pageobjects.PhonesListingPage.GalaxyS7.click();
 			System.out.println("Selected GalaxyS7");
