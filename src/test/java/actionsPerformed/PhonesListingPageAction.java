@@ -35,14 +35,16 @@ public class PhonesListingPageAction extends Environment {
 
 		JavascriptExecutor js = ((JavascriptExecutor) driver);
 		js.executeScript("arguments[0].scrollIntoView(true);",driver.findElement(By.xpath("(//a[contains(., 'View all products on one page')])[2]")));
-
+		Thread.sleep(5000);
 		if(driver.findElements(By.xpath("(//a[contains(., 'View all products on one page')])[2]")).size() > 0) {
 			driver.findElement(By.xpath("(//a[contains(., 'View all products on one page')])[2]")).click();
 			System.out.println(" Clicked on View all products on one page(2) ");
 		}
 		driver.manage().timeouts().implicitlyWait(120, TimeUnit.SECONDS);
+		Thread.sleep(3000);
 		driver.findElement(By.xpath("//div[@class='fieldandsubmitbar']/input[1]")).sendKeys(elementName);
-		driver.findElement(By.xpath("//div[@class='fieldandsubmitbar']/input[1]")).sendKeys(Keys.TAB);
+
+
 		/*JavascriptExecutor executor = (JavascriptExecutor) driver;
 		executor.executeScript("arguments[0].click();", pageobjects.PhonesListingPage.ViewAllPhones);*/
 		Thread.sleep(5000);

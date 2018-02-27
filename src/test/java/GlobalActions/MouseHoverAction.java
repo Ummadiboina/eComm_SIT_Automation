@@ -85,11 +85,11 @@ public class MouseHoverAction extends Environment {
 
 			// Move mouse pointer away from location
 			Point coordinates2 = driver.findElement(By.xpath("//*[@id='header-consumer']/div")).getLocation();
-/*
+
 				Robot robot2 = new Robot();
 				robot2.mouseMove(coordinates2.getX(), coordinates.getY() + 300);
 				log.debug("Moved Mouse to somewhere side of page");
-					*/
+
 				/*Worksfine = true;
 				Screenshots.captureScreenshot();*/
 
