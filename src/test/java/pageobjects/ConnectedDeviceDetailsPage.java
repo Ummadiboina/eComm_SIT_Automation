@@ -44,7 +44,7 @@ public class ConnectedDeviceDetailsPage {
     @FindBy(how = How.XPATH, using = "//span/i[@id='colourSelectBoxItArrow']")
     public static WebElement ColorDropDown;
 
-    @FindBy(how = How.XPATH, using = "//i[@id='memorySelectBoxItArrow']")
+    @FindBy(how = How.XPATH, using = "//span/i[@id='memorySelectBoxItArrow']")
     public static WebElement CapacityDropDown;
 
     @FindAll({@FindBy(how = How.XPATH, using = "//ul[@class='styled-group device-capacity']/label/span")})

@@ -1,4 +1,4 @@
-Feature: CFA_Phones_ColourDropdownsWithColourNamesBesideTheColourMultipleColour
+Feature: Reg_October2Release_Reg_October2Release_CFA_Phones_ColourDropdownsWithColourNamesBesideTheColourMultipleColour.feature
 
   @Web
   Scenario Outline: CFA_Phones_ColourDropdownsWithColourNamesBesideTheColourMultipleColour

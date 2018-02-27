@@ -12,7 +12,7 @@ Feature: Reg_CS_PayMSimOnlyRecommended
     And land on the payment page and input <Username> and other details and click 'Continue on next step'
     And Continue to Review page and review the order
     Then order confirmation is displayed
-
+    #30 Days
     Examples:
       | Contract  | Firstname | Surname | Username     |
       | 12 Months | TEST      | ACCEPTA | TEST ACCEPTA |

@@ -14,5 +14,5 @@ Feature: Reg_FNT_PayMPhonesOrderStraightDecline_ClickandCollect
     Then Order Decline page should be displayed
 
     Examples:
-      | handset  | Firstname | Surname  | Username      |
-      | GalaxyS8 | TEST      | DECLINEA | TEST DECLINEA |
+      | handset           | Firstname | Surname  | Username      |
+      | Samsung Galaxy S8 | TEST      | DECLINEA | TEST DECLINEA |

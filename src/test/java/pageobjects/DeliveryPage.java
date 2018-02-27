@@ -149,14 +149,21 @@ public class DeliveryPage {
 
 
 
-
+    //Commercial Address error-Address LookUp
+    @FindBy(how = How.ID, using = "no-residential-address-match-error")
+    public static WebElement commercialAddressErrorMsgAdressLookUp;
 
     //postal code error
     @FindBy(how = How.ID, using = "postcode-error")
-    public static WebElement postalCodeErrorMsg;
+    public static WebElement postalCodeErrorMsgAdressLookUp;
 
     //house number invalid error
     @FindBy(how = How.ID, using = "housenumber-error")
     public static WebElement houseNumErrorMsg;
+
+    //postal code error
+    @FindBy(how = How.ID, using = "address-postcode-error")
+    public static WebElement postalCodeErrorMsgEnterManualSection;
+
 
 }

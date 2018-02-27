@@ -37,12 +37,12 @@ public class PAYMSimOPage {
 
 
 
-	@FindBy(how=How.XPATH,using=("(//*[@id='callToAction'])[1]"))
+	@FindBy(how=How.XPATH,using=("(//*[@name='P12M']//*[@id='callToAction'])[1]"))
 	public static WebElement BuyNowRandomTariff12Months;
 	
 	//@FindBy(how=How.XPATH,using=("(//button[@id='callToAction'])[1]"))
 
-	@FindBy(how=How.XPATH,using=("(//*[@id='callToAction'])[1]"))
+	@FindBy(how=How.XPATH,using=("(//*[@name='P30D']//*[@id='callToAction'])[1]"))
 	public static WebElement BuyNowRandomTariff30Months;
 	
 	

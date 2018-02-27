@@ -1,4 +1,4 @@
-Feature: CFA_Phones_ColourDropdownsWithColourNamesBesideTheColourMultipleColour
+Feature: Reg_October2Release_CFA_Phones_ColourDropdownsWithColourNamesBesideTheColourMultipleColour.feature
 
   @Web
   Scenario Outline: CFA_Phones_ColourDropdownsWithColourNamesBesideTheColourMultipleColour
@@ -24,18 +24,15 @@ Feature: CFA_Phones_ColourDropdownsWithColourNamesBesideTheColourMultipleColour
       | Surname               | Accepta      |
       | Contact Number        | 07123456789  |
       | Password              | TesterSit123 |
-      | Security Question     | Random       |
       | Security Answer       | Sit Testers  |
-      | Date of Birth - Date  | 22           |
-      | Date of Birth - Month | 10           |
-      | Date of Birth - Year  | 1990         |
-   # And Click on the 'Continue button'
+      | Date of Birth - Date  | 25           |
+      | Date of Birth - Month | 01           |
+      | Date of Birth - Year  | 1957         |
     And land on the payment page and input <Username> and other details and click 'Continue on next step'
     And Continue to Agreements page and confirm all the agreement checks
     And Continue to Review page and review the order
     Then order confirmation is displayed
 
-    #Close the browser
     Examples:
-      | handset | Username     | color | CFATariffColour |
-      | Apple8  | TEST ACCEPTA | Gold  | Gold            |
+      | handset        | Username     | color |
+      | Apple iPhone 8 | TEST ACCEPTA | Gold  |

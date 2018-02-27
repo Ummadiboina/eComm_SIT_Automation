@@ -27,7 +27,10 @@ public class BaseCommPageActions extends Environment {
 		if (elementName.contains("Random")) {
 			System.out.println("Selected Random Tariff");
 
-			pageobjects.BaseCommPage.RandomDevice.click();
+			//pageobjects.BaseCommPage.RandomDevice.click();
+			JavascriptExecutor executor = (JavascriptExecutor)driver;
+			executor.executeScript("arguments[0].click();",pageobjects.BaseCommPage.RandomDevice);
+
 			log.debug("Selected Random Device");
 		}
 		Screenshots.captureScreenshot();
@@ -245,7 +248,7 @@ public class BaseCommPageActions extends Environment {
 	 * log.debug("Selected XperiaZ2Tablet device"); } }
 	 */
 
-	public static void VerifyPage() throws MalformedURLException, Exception {
+	public static void VerifyPage() throws Exception {
 		System.out.println("Going to verify page");
 		Thread.sleep(3000);
 		String title = pageobjects.BaseCommPage.headerofTariffandExtrasPage.getText();
@@ -886,7 +889,7 @@ public class BaseCommPageActions extends Environment {
 		Screenshots.captureScreenshot();
 	}
 
-	public static void BuynowwithDevice(String device) throws MalformedURLException, Exception {
+	public static void BuynowwithDevice(String device) throws Exception {
 		System.out.println("Going to click on the buy now button on device");
 		device = trimEnd(device);
 		List<WebElement> TabletDevicesName = pageobjects.BaseCommPage.TabletDevicesName;

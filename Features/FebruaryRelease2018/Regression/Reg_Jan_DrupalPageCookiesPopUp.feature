@@ -1,5 +1,6 @@
-Feature: DrupalPageCookiesPopUp
+Feature: Reg_Jan_DrupalPageCookiesPopUp.feature
   This scenario ensures that when the pop up is displayed then the links in the pop up should launch the respective pages
+
   @Web
   Scenario: DrupalPageCookiesPopUp
 

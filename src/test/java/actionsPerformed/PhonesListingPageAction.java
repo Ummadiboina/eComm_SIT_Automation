@@ -42,9 +42,10 @@ public class PhonesListingPageAction extends Environment {
 		}
 		driver.manage().timeouts().implicitlyWait(120, TimeUnit.SECONDS);
 		driver.findElement(By.xpath("//div[@class='fieldandsubmitbar']/input[1]")).sendKeys(elementName);
+		driver.findElement(By.xpath("//div[@class='fieldandsubmitbar']/input[1]")).sendKeys(Keys.TAB);
 		/*JavascriptExecutor executor = (JavascriptExecutor) driver;
 		executor.executeScript("arguments[0].click();", pageobjects.PhonesListingPage.ViewAllPhones);*/
-		Thread.sleep(2000);
+		Thread.sleep(5000);
 		/*if (elementName.contains("GalaxyS7")) {
 			pageobjects.PhonesListingPage.GalaxyS7.click();
 			System.out.println("Selected GalaxyS7");
@@ -755,9 +756,9 @@ public class PhonesListingPageAction extends Environment {
 		/*
 		 * if (NextBtn.isDisplayed()) { scrollToAnElement.scrollToElement(NextBtn);
 		 * NextBtn.click(); Thread.sleep(5000);
-		 * 
+		 *
 		 * } else { NextBtndVisible = false; break; }
-		 * 
+		 *
 		 * }
 		 */
 		Screenshots.captureScreenshot();
@@ -782,15 +783,15 @@ public class PhonesListingPageAction extends Environment {
 		 * List<WebElement> deviceName = driver.findElement(By.xpath(
 		 * "//*[@id='o2-page-wrapper']/div[3]/div[3]")) .findElements(By.xpath(
 		 * "//div[@class='device-tile__top']/p[@class='details']"));
-		 * 
-		 * 
+		 *
+		 *
 		 * List<WebElement> devicePrice = driver.findElement(By.xpath(
 		 * "//*[@id='o2-page-wrapper']/div[3]/div[3]")) .findElements(By.xpath(
 		 * "//div[@class='device-tile__bottom ng-scope']/p[@class='costs ng-binding ng-scope']/span[@class='headline ng-binding']"
 		 * ));
-		 * 
+		 *
 		 * /* for (WebElement temp1 : deviceName) {
-		 * 
+		 *
 		 * String sTemp = temp1.getText(); devicenamecurrentorder.add(sTemp); }
 		 */
 
@@ -851,8 +852,8 @@ public class PhonesListingPageAction extends Environment {
 		 * List<WebElement> deviceName = driver.findElement(By.xpath(
 		 * "//*[@id='o2-page-wrapper']/div[3]/div[3]")) .findElements(By.xpath(
 		 * "//div[@class='device-tile__top']/p[@class='details']"));
-		 * 
-		 * 
+		 *
+		 *
 		 * List<WebElement> deviceColour = driver.findElement(By.xpath(
 		 * "//*[@id='o2-page-wrapper']/div[3]/div[3]")) .findElements(By.xpath(
 		 * "//div[@class='device-tile__bottom ng-scope']/p[@class='costs ng-binding ng-scope']/span[@class='headline ng-binding']"
@@ -914,7 +915,7 @@ public class PhonesListingPageAction extends Environment {
 	}
 
 	public static void verifyDeviceSortedOnBrand(LinkedList<String> ListBeforeApplyingSort,
-			LinkedList<String> ListAfterApplyingSort) throws IOException, InterruptedException {
+												 LinkedList<String> ListAfterApplyingSort) throws IOException, InterruptedException {
 
 		try {
 
@@ -948,7 +949,7 @@ public class PhonesListingPageAction extends Environment {
 	}
 
 	public static void verifyOriginalSortOrderRetainedAfterSortReset(LinkedList<String> ListBeforeApplyingSort,
-			LinkedList<String> ListAfterApplyingSort) throws IOException, InterruptedException {
+																	 LinkedList<String> ListAfterApplyingSort) throws IOException, InterruptedException {
 
 		try {
 

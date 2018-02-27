@@ -15,5 +15,4 @@ Feature: Reg_CS_PayMSimOnly
 
     Examples:
       | Contract | Firstname | Surname | Username     |
-      #| 12 Months | TEST      | ACCEPTA | TEST ACCEPTA |
       | 30 Days  | TEST      | ACCEPTA | TEST ACCEPTA |

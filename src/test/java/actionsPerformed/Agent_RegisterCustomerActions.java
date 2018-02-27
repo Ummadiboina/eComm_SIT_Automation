@@ -205,14 +205,15 @@ public class Agent_RegisterCustomerActions extends Environment {
 
 	public static void RegisterCustomer(String Password, String Confirm_Password, String Security_Answer)
 			throws InterruptedException {
-		Thread.sleep(2000);
+
+		Thread.sleep(5000);
 
 		Agent_RegisterCustomerPage.Password.sendKeys(Password);
 		log.debug("Entered Password");
-
+		Thread.sleep(2000);
 		Agent_RegisterCustomerPage.Confirm_Password.sendKeys(Confirm_Password);
-		log.debug("Entered Password");
-
+		log.debug("Entered Confirm Password");
+		Thread.sleep(2000);
 		Select dropdown2 = new Select(pageobjects.Agent_RegisterCustomerPage.securityQuestion);
 		dropdown2.selectByIndex(1);
 		log.debug("Selected the security question");
