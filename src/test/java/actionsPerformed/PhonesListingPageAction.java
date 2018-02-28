@@ -33,21 +33,20 @@ public class PhonesListingPageAction extends Environment {
 			System.out.println(" Clicked on View all products on one page(1) ");
 		}*/
 
-		JavascriptExecutor js = ((JavascriptExecutor) driver);
-		js.executeScript("arguments[0].scrollIntoView(true);",driver.findElement(By.xpath("(//a[contains(., 'View all products on one page')])[2]")));
-		Thread.sleep(5000);
-		if(driver.findElements(By.xpath("(//a[contains(., 'View all products on one page')])[2]")).size() > 0) {
-			driver.findElement(By.xpath("(//a[contains(., 'View all products on one page')])[2]")).click();
+//		JavascriptExecutor js = ((JavascriptExecutor) driver);
+//		js.executeScript("arguments[0].scrollIntoView(true);",driver.findElement(By.xpath("(//a[contains(., 'View all products on one page')])[2]")));
+
+		/*if(driver.findElements(By.xpath("(//a[contains(., 'View all products on one page')])[2]")).size() > 0) {
+			WebElement element = driver.findElement(By.xpath("(//a[contains(., 'View all products on one page')])[2]"));
+			((JavascriptExecutor) driver).executeScript("arguments[0].click();", element);
+
 			System.out.println(" Clicked on View all products on one page(2) ");
-		}
-		driver.manage().timeouts().implicitlyWait(120, TimeUnit.SECONDS);
-		Thread.sleep(3000);
-		driver.findElement(By.xpath("//div[@class='fieldandsubmitbar']/input[1]")).sendKeys(elementName);
-
-
+		}*/
+		/*driver.manage().timeouts().implicitlyWait(120, TimeUnit.SECONDS);
+		driver.findElement(By.xpath("//div[@class='fieldandsubmitbar']/input[1]")).sendKeys(elementName);*/
 		/*JavascriptExecutor executor = (JavascriptExecutor) driver;
 		executor.executeScript("arguments[0].click();", pageobjects.PhonesListingPage.ViewAllPhones);*/
-		Thread.sleep(5000);
+		Thread.sleep(2000);
 		/*if (elementName.contains("GalaxyS7")) {
 			pageobjects.PhonesListingPage.GalaxyS7.click();
 			System.out.println("Selected GalaxyS7");
@@ -71,7 +70,7 @@ public class PhonesListingPageAction extends Environment {
 			log.debug("Selected GalaxyS8");
 
 		}
-		if (elementName.contains("SamsungÂ Galaxy S8")) {
+		if (elementName.contains("Samsung Galaxy S8")) {
 			pageobjects.PhonesListingPage.GalaxyS8.click();
 			// Assert.assertEquals(elementName,"Galaxy S7 is not found");
 			log.debug("Selected GalaxyS8");
@@ -158,15 +157,15 @@ public class PhonesListingPageAction extends Environment {
 
 		}*/
 
-		Thread.sleep(3000);
+		driver.manage().timeouts().implicitlyWait(30,TimeUnit.SECONDS);
 
-		WebElement requestedDevice = driver.findElement(By.xpath("//img[@class='device-image']/..//*[normalize-space()='"+elementName+"']"));
-		if(driver.findElements(By.xpath("//img[@class='device-image']/..//*[normalize-space()='"+elementName+"']")).size() >= 1){
+		WebElement requestedDevice = driver.findElement(By.xpath("//img[@class='device-image']/..//*[normalize-space()='" + elementName + "']"));
+		if (driver.findElements(By.xpath("//img[@class='device-image']/..//*[normalize-space()='" + elementName + "']")).size() >= 1) {
 			((JavascriptExecutor) driver).executeScript("arguments[0].click();", requestedDevice);
 			System.out.println("Selected Device from Phones as Required is : " + elementName);
 			log.debug("Selected Device from Phones as Required is : " + elementName);
 			Thread.sleep(3000);
-		}else{
+		} else {
 
 			WebElement element = driver.findElement(By.xpath("(//img[@class='device-image'])[1]"));
 			((JavascriptExecutor) driver).executeScript("arguments[0].click();", element);
@@ -174,11 +173,9 @@ public class PhonesListingPageAction extends Environment {
 			System.out.println(" As Required Device is not Availabe, We have picked default device from availabe  :: " + defaultSelDevice);
 			log.debug(" As Required Device is not Availabe, We have picked default device from availabe  :: " + defaultSelDevice);
 			Thread.sleep(3000);
+
+			Screenshots.captureScreenshot();
 		}
-
-
-
-		Screenshots.captureScreenshot();
 	}
 
 	// Below is for PAYG phones
@@ -758,9 +755,9 @@ public class PhonesListingPageAction extends Environment {
 		/*
 		 * if (NextBtn.isDisplayed()) { scrollToAnElement.scrollToElement(NextBtn);
 		 * NextBtn.click(); Thread.sleep(5000);
-		 *
+		 * 
 		 * } else { NextBtndVisible = false; break; }
-		 *
+		 * 
 		 * }
 		 */
 		Screenshots.captureScreenshot();
@@ -785,15 +782,15 @@ public class PhonesListingPageAction extends Environment {
 		 * List<WebElement> deviceName = driver.findElement(By.xpath(
 		 * "//*[@id='o2-page-wrapper']/div[3]/div[3]")) .findElements(By.xpath(
 		 * "//div[@class='device-tile__top']/p[@class='details']"));
-		 *
-		 *
+		 * 
+		 * 
 		 * List<WebElement> devicePrice = driver.findElement(By.xpath(
 		 * "//*[@id='o2-page-wrapper']/div[3]/div[3]")) .findElements(By.xpath(
 		 * "//div[@class='device-tile__bottom ng-scope']/p[@class='costs ng-binding ng-scope']/span[@class='headline ng-binding']"
 		 * ));
-		 *
+		 * 
 		 * /* for (WebElement temp1 : deviceName) {
-		 *
+		 * 
 		 * String sTemp = temp1.getText(); devicenamecurrentorder.add(sTemp); }
 		 */
 
@@ -806,7 +803,7 @@ public class PhonesListingPageAction extends Environment {
 
 		for (WebElement temp2 : devicePrice) {
 
-			String sTemp = StringUtils.substringBetween(temp2.getText(), "Â£", ".");
+			String sTemp = StringUtils.substringBetween(temp2.getText(), "£", ".");
 			devicepricecurrentorder.add(sTemp);
 
 		}
@@ -854,8 +851,8 @@ public class PhonesListingPageAction extends Environment {
 		 * List<WebElement> deviceName = driver.findElement(By.xpath(
 		 * "//*[@id='o2-page-wrapper']/div[3]/div[3]")) .findElements(By.xpath(
 		 * "//div[@class='device-tile__top']/p[@class='details']"));
-		 *
-		 *
+		 * 
+		 * 
 		 * List<WebElement> deviceColour = driver.findElement(By.xpath(
 		 * "//*[@id='o2-page-wrapper']/div[3]/div[3]")) .findElements(By.xpath(
 		 * "//div[@class='device-tile__bottom ng-scope']/p[@class='costs ng-binding ng-scope']/span[@class='headline ng-binding']"
@@ -917,7 +914,7 @@ public class PhonesListingPageAction extends Environment {
 	}
 
 	public static void verifyDeviceSortedOnBrand(LinkedList<String> ListBeforeApplyingSort,
-												 LinkedList<String> ListAfterApplyingSort) throws IOException, InterruptedException {
+			LinkedList<String> ListAfterApplyingSort) throws IOException, InterruptedException {
 
 		try {
 
@@ -951,7 +948,7 @@ public class PhonesListingPageAction extends Environment {
 	}
 
 	public static void verifyOriginalSortOrderRetainedAfterSortReset(LinkedList<String> ListBeforeApplyingSort,
-																	 LinkedList<String> ListAfterApplyingSort) throws IOException, InterruptedException {
+			LinkedList<String> ListAfterApplyingSort) throws IOException, InterruptedException {
 
 		try {
 
