@@ -15,7 +15,10 @@ public class verificationsPage {
 	@FindBy(how = How.XPATH, using = "//*[@id='error-404-header-error-xxl']/div/div/div/ul/li")
 	public static WebElement BodyContentText;
 
-	@FindBy(how = How.XPATH, using = "//*[@id='delivery-section']/div[1]/div/div/div/p")
+	@FindBy(how = How.XPATH, using = "(//*[@class='form-element input-microcopy  '])[1]")
 	public static WebElement AsteriskText;
+
+	@FindBy(how = How.XPATH, using = "(//*[@class='form-element input-microcopy'])[1]")
+	public static WebElement AsteriskText_PAYGSim_Journey;
 
 }

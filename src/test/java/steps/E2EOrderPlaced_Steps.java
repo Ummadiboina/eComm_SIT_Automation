@@ -4461,6 +4461,7 @@ public class E2EOrderPlaced_Steps {
             PageFactory.initElements(driver, UpgradeCustomerPage.class);
             //UpgradeCustomerPageActions.selectDeviceInRecommendedDevicesSection(devicename);
             driver.findElement(By.xpath("(//span[normalize-space()='Apple'])[1]")).click();
+            Thread.sleep(5000);
         } catch (Exception e) {
             e.printStackTrace();
             Assert.fail("Unable to select a device from Recommended devices section");
@@ -4621,7 +4622,7 @@ public class E2EOrderPlaced_Steps {
         }
     }
 
-    @And("^Select a tariff in upgrade journey$")
+    @And("^Select tariff in upgrade journey$")
     public void select_tariff_in_upgrade_journey() {
         try {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
@@ -6766,12 +6767,32 @@ public class E2EOrderPlaced_Steps {
     public void selectAPayAsYouGoBundle() {
         try {
             log.debug("in selecting pay as you go bundle");
-            driver.findElement(By.xpath("//*[@id='callToAction'][1]")).click();
+            //driver.findElement(By.xpath("//*[@id='callToAction'][1]")).click();
+
+            JavascriptExecutor executor = (JavascriptExecutor)driver;
+            executor.executeScript("arguments[0].click();", driver.findElement(By.xpath("//*[@id='callToAction'][1]")));
+            Thread.sleep(5000);
         } catch (Exception e) {
             System.out.println(e.getMessage());
 
         }
 
+    }
+
+    @And("^verify copy text You will need to give details for all fields marked with an asterisk is displayed in PAYG Sim Journey$")
+    public void verify_copy_text_allFields_narked_with_asterisk_PAYG_sim_journey() {
+        try {
+
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, UpgradeCustomerPage.class);
+            verificationsActions.VerifyheaderAsterisk_PAYG_Sim_Journey();
+            log.debug("verify copy text ‘You'll need to give details for all fields marked with an asterisk * is displayed$");
+        } catch (Exception e) {
+            log.debug(e.getMessage());
+            log.debug("verify copy text ‘You'll need to give details for all fields marked with an asterisk * is not displayed$");
+            Assert.fail("verify copy text ‘You'll need to give details for all fields marked with an asterisk * is not displayed$");
+
+        }
     }
 
     @And("^Continue to Review page, click on ‘change delivery’$")
