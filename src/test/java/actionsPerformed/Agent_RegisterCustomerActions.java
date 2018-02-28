@@ -1,6 +1,5 @@
 package actionsPerformed;
 
-import java.sql.Time;
 import java.util.concurrent.TimeUnit;
 
 import org.apache.log4j.Logger;
@@ -73,9 +72,9 @@ public class Agent_RegisterCustomerActions extends Environment {
         log.debug("Clicked on Register customer");
     }
 
-    public static void PayGRegistration(String Firstname, String Surname, String HouseNumber, String PostCode) {
+    public static void PayGRegistration(String Firstname, String Surname, String HouseNumber, String PostCode)
+            throws InterruptedException {
         try {
-            driver.manage().timeouts().implicitlyWait(30,TimeUnit.SECONDS);
             Select dropdown = new Select(pageobjects.Agent_RegisterCustomerPage.Title);
             dropdown.selectByIndex(1);
             log.debug("Selected the dropdown Mr");
@@ -91,16 +90,19 @@ public class Agent_RegisterCustomerActions extends Environment {
             Agent_RegisterCustomerPage.DOB.sendKeys("10-10-1981");
             log.debug("Entered date of birth");
             Thread.sleep(2000);
-           // Agent_RegisterCustomerPage.ContactNumber.sendKeys("07888594958");
-            //Thread.sleep(2000);
+            Agent_RegisterCustomerPage.ContactNumber.sendKeys("07888594958");
             log.debug("Entered contact number");
-            driver.manage().timeouts().implicitlyWait(30,TimeUnit.SECONDS);
-            log.debug("Entered Password and confirm passworkd");
-           // driver.manage().timeouts().implicitlyWait(30,TimeUnit.SECONDS);
-            Agent_RegisterCustomerPage.intialPassword.sendKeys("Tester123");
-            Agent_RegisterCustomerPage.confirmPassword.sendKeys("Tester123");
             Thread.sleep(2000);
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            e.getMessage();
+        }
 
+        Agent_RegisterCustomerPage.intialPassword.sendKeys("SitTester123");
+        Agent_RegisterCustomerPage.confirmPassword.sendKeys("SitTester123");
+        Thread.sleep(2000);
+
+        try {
             Agent_RegisterCustomerPage.HouseNumber.sendKeys(HouseNumber);
             Thread.sleep(2000);
             Agent_RegisterCustomerPage.Postcode.sendKeys(PostCode);
@@ -113,25 +115,26 @@ public class Agent_RegisterCustomerActions extends Environment {
 
             pageobjects.Agent_RegisterCustomerPage.Selectedaddress.click();
             log.debug("Selected an address");
-
-            Select dropdown2 = new Select(pageobjects.Agent_RegisterCustomerPage.securityQuestion);
-            dropdown2.selectByIndex(2);
-            pageobjects.Agent_RegisterCustomerPage.securityAnswer.sendKeys("Rotary");
-            Thread.sleep(2000);
-           // Agent_RegisterCustomerPage.registerCustomer.click();
-            driver.findElement(By.id("marketingRequired")).click();
-            WebElement element = pageobjects.Agent_RegisterCustomerPage.registerCustomer;
-            JavascriptExecutor executor = (JavascriptExecutor) driver;
-            executor.executeScript("arguments[0].click();", element);
-
-            Thread.sleep(6000);
-            log.debug("Clicked on Register customer");
-            System.out.println("Clicked on Register customer");
         } catch (Exception e) {
-            System.out.println(" Un able to proceed with the paymnents");
+            e.getMessage();
+            System.out.println("Try catch block exception in Agent register cutomer actions page, nothing to worry :)");
         }
+
+        Select dropdown2 = new Select(pageobjects.Agent_RegisterCustomerPage.securityQuestion);
+        dropdown2.selectByIndex(2);
+        pageobjects.Agent_RegisterCustomerPage.securityAnswer.sendKeys("Rotary");
+        Thread.sleep(2000);
+        //Agent_RegisterCustomerPage.registerCustomer.click();
+        WebElement element = pageobjects.Agent_RegisterCustomerPage.registerCustomer;
+        JavascriptExecutor executor = (JavascriptExecutor)driver;
+        executor.executeScript("arguments[0].click();", element);
+
+        Thread.sleep(6000);
+        log.debug("Clicked on Register customer");
+        System.out.println("Clicked on Register customer");
     }
-    public static void PaybyCard() throws Exception {
+
+    public static void PaybyCard() throws InterruptedException {
         String OneOff = Agent_RegisterCustomerPage.ZeroOneOff.getText();
         System.out.println(OneOff);
         if (OneOff.contains("�0.00")) {
@@ -191,41 +194,26 @@ public class Agent_RegisterCustomerActions extends Environment {
     }
 
     public static void CardDetails_PayM() throws InterruptedException {
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        Thread.sleep(3000);
-        System.out.println("Going to validate pay by card page displayed from mipay");
-
-        //Agent_RegisterCustomerPage.UsethisCard.click();
-        //Agent_RegisterCustomerPage.SecurityCode.sendKeys("123");
-        //Agent_RegisterCustomerPage.UsethisCard.click();
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        Thread.sleep(2000);
-        if(driver.findElements(By.xpath("//*[@id='updateEmailAddressProceedButton']")).size() >=1 ){
-            driver.findElement(By.xpath("//*[@id='updateEmailAddressProceedButton']")).click();
-        }
-
-        if(driver.findElements(By.xpath("//input[@id='secciYesButton']")).size() >=1 ){
-            driver.findElement(By.xpath("//input[@id='secciYesButton']")).click();
-        }
         Thread.sleep(7000);
-        if(driver.findElements(By.xpath("//input[@class='generateCca']")).size() >=1 ){
-            driver.findElement(By.xpath("//input[@class='generateCca']")).click();
-        }
+
+        System.out.println("Going to validate pay by card page displayed from mipay");
+        Agent_RegisterCustomerPage.SecurityCode.sendKeys("123");
+        Thread.sleep(2000);
+        Agent_RegisterCustomerPage.UsethisCard.click();
 
     }
 
     public static void RegisterCustomer(String Password, String Confirm_Password, String Security_Answer)
             throws InterruptedException {
 
-        driver.manage().timeouts().implicitlyWait(30,TimeUnit.SECONDS	);
-        log.debug("Landing on the Advisary check's");
-        Thread.sleep(2000);
+        Thread.sleep(5000);
+
         Agent_RegisterCustomerPage.Password.sendKeys(Password);
         log.debug("Entered Password");
-
+        Thread.sleep(2000);
         Agent_RegisterCustomerPage.Confirm_Password.sendKeys(Confirm_Password);
-        log.debug("Entered Password");
-
+        log.debug("Entered Confirm Password");
+        Thread.sleep(2000);
         Select dropdown2 = new Select(pageobjects.Agent_RegisterCustomerPage.securityQuestion);
         dropdown2.selectByIndex(1);
         log.debug("Selected the security question");
