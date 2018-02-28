@@ -35,8 +35,10 @@ import static pageobjects.FreeSimPage.Firstname;
             try {
                 DeliveryPage.Housenumber.sendKeys("12");
                 log.debug("Entered House number");
+                Thread.sleep(2000);
                 pageobjects.DeliveryPage.Postcode.sendKeys("B15 2LG");
                 log.debug("Entered Post code");
+                Thread.sleep(2000);
                 pageobjects.DeliveryPage.Find_Address.click();
                 log.debug("Clicked on the Find address button");
                 Thread.sleep(5000);
@@ -44,6 +46,7 @@ import static pageobjects.FreeSimPage.Firstname;
                     pageobjects.DeliveryPage.SelectAddress1.click();
                     log.debug("Selected an address");
                 }
+                Thread.sleep(3000);
                 Screenshots.captureScreenshot();
 
             } catch (Exception e) {

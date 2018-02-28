@@ -27,33 +27,34 @@ public class PaymentPage {
     @FindBy(how = How.ID, using = "accept-terms")
     public static WebElement Accept_Terms_Checkbox;
 
-    @FindBy(how = How.ID, using = "years")
+    //@FindBy(how = How.ID, using = "years")
+    @FindBy(how = How.XPATH, using = "//*[@id='input-address-time']//*[@id='years']")
     public static WebElement Stay_Address_Years;
 
-    @FindBy(how = How.ID, using = "months")
+    @FindBy(how = How.XPATH, using = "//*[@id='input-address-time']//*[@id='months']")
     public static WebElement Stay_Address_months;
 
     @FindBy(how = How.ID, using = "confirm-address")
     public static WebElement Confirm_Address_Checkbox;
-/*
+    /*
 
-    @FindBy(how = How.ID, using = "txtCardHolderName")
+        @FindBy(how = How.ID, using = "txtCardHolderName")
+        public static WebElement CardHolderName;
+
+        @FindBy(how = How.ID, using = "txtCardNumber")
+        public static WebElement CardNumber;
+
+        @FindBy(how = How.ID, using = "txtMonth")
+        public static WebElement CardMonth;
+
+        @FindBy(how = How.ID, using = "txtYr")
+        public static WebElement CardYear;
+
+        @FindBy(how = How.ID, using = "txtSecurityCode")
+        public static WebElement SecurityCode;
+    */
+    @FindBy(how = How.XPATH, using = "//*[@id='CardHolderName' or @id='CardHolderName']")
     public static WebElement CardHolderName;
-
-    @FindBy(how = How.ID, using = "txtCardNumber")
-    public static WebElement CardNumber;
-
-    @FindBy(how = How.ID, using = "txtMonth")
-    public static WebElement CardMonth;
-
-    @FindBy(how = How.ID, using = "txtYr")
-    public static WebElement CardYear;
-
-    @FindBy(how = How.ID, using = "txtSecurityCode")
-    public static WebElement SecurityCode;
-*/
-@FindBy(how = How.XPATH, using = "//*[@id='CardHolderName' or @id='CardHolderName']")
-public static WebElement CardHolderName;
 
     @FindBy(how = How.XPATH, using = "//*[@id='ddlCardType' or @id='CardType']")
     public static WebElement CardType;
@@ -102,16 +103,16 @@ public static WebElement CardHolderName;
     @FindBy(how = How.ID, using = ("basket-total"))
     public static WebElement BasketTotal;
 
-    @FindBy(how = How.XPATH, using = "//span[contains(text(),'iPad Pro 9.7 inch')]")
+    @FindBy(how = How.XPATH, using = "//*[@id='payment-page']//*[@id='bank-details-form']//*[@id='input-accountNumber']/div/label")
     public static WebElement AccountnumberText;
 
-    @FindBy(how = How.XPATH, using = "//span[contains(text(),'iPad Pro 9.7 inch')]")
+    @FindBy(how = How.XPATH, using = "//*[@id='payment-page']//*[@id='bank-details-form']//*[@id='input-accountName']/div/label")
     public static WebElement NameonAccountText;
 
-    @FindBy(how = How.XPATH, using = "//span[contains(text(),'iPad Pro 9.7 inch')]")
+    @FindBy(how = How.XPATH, using = "//*[@id='payment-page']//*[@id='time-at-address-form']//*[@id='time-at-address-label']/p")
     public static WebElement TimeAtAddressText;
 
-    @FindBy(how = How.XPATH, using = "//span[contains(text(),'iPad Pro 9.7 inch')]")
+    @FindBy(how = How.XPATH, using = "//*[@id='payment-page']//*[@id='bank-details-form']//*[@class='form-element input-microcopy-treble   form-spacing ']/fieldset/legend")
     public static WebElement SortcodeText;
 
     @FindBy(how = How.XPATH, using = "//span[contains(text(),'iPad Pro 9.7 inch')]")
@@ -126,7 +127,7 @@ public static WebElement CardHolderName;
     @FindBy(how = How.XPATH, using = "//span[contains(text(),'iPad Pro 9.7 inch')]")
     public static WebElement CVVSecurityCodeText;
 
-    @FindBy(how = How.XPATH, using = "//*[@id='address-heading]/p/text()")
+    @FindBy(how = How.XPATH, using = "//*[@id='address-heading']/p")
     public static WebElement HomeAddress;
 
 }
