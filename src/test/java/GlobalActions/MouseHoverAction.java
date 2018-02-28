@@ -1038,7 +1038,7 @@ public class MouseHoverAction extends Environment {
 	public static void ByPassDroopalPage() throws Exception {
 		driver.manage().timeouts().implicitlyWait(150, TimeUnit.SECONDS);
 		try{
-			//if(driver.findElements(By.xpath("//li[@name='Shop']")).size() > 0){
+			if(driver.findElements(By.xpath("//li[@name='Shop']")).size() > 0){
 				System.out.println("Performing workaround to navigate away from Droopal pages");
 				log.debug("Performing workaround to navigate away from Droopal pages");
 				Thread.sleep(5000);
@@ -1059,10 +1059,10 @@ public class MouseHoverAction extends Environment {
 				pageobjects.MouseHoverPage.MoveMouseonPayMSimsDroopal.click();
 				Thread.sleep(5000);
 				System.out.println("Clicked on the Droopal-PayMonthlySimsLink");
-			/*}else
+			}else
 			{
-				System.out.println("Droopal pages page is seems not visisble");
-			}*/
+				System.out.println("Droopal pages page seems not visisble");
+			}
 		}
 		catch (ElementNotVisibleException e) {
 			System.out.println("Unable to perform workaround to navigate away from Droopal pages");

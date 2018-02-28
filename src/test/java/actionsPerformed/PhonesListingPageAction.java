@@ -33,15 +33,17 @@ public class PhonesListingPageAction extends Environment {
 			System.out.println(" Clicked on View all products on one page(1) ");
 		}*/
 
-		JavascriptExecutor js = ((JavascriptExecutor) driver);
-		js.executeScript("arguments[0].scrollIntoView(true);",driver.findElement(By.xpath("(//a[contains(., 'View all products on one page')])[2]")));
+//		JavascriptExecutor js = ((JavascriptExecutor) driver);
+//		js.executeScript("arguments[0].scrollIntoView(true);",driver.findElement(By.xpath("(//a[contains(., 'View all products on one page')])[2]")));
 
-		if(driver.findElements(By.xpath("(//a[contains(., 'View all products on one page')])[2]")).size() > 0) {
-			driver.findElement(By.xpath("(//a[contains(., 'View all products on one page')])[2]")).click();
+		/*if(driver.findElements(By.xpath("(//a[contains(., 'View all products on one page')])[2]")).size() > 0) {
+			WebElement element = driver.findElement(By.xpath("(//a[contains(., 'View all products on one page')])[2]"));
+			((JavascriptExecutor) driver).executeScript("arguments[0].click();", element);
+
 			System.out.println(" Clicked on View all products on one page(2) ");
-		}
-		driver.manage().timeouts().implicitlyWait(120, TimeUnit.SECONDS);
-		driver.findElement(By.xpath("//div[@class='fieldandsubmitbar']/input[1]")).sendKeys(elementName);
+		}*/
+		/*driver.manage().timeouts().implicitlyWait(120, TimeUnit.SECONDS);
+		driver.findElement(By.xpath("//div[@class='fieldandsubmitbar']/input[1]")).sendKeys(elementName);*/
 		/*JavascriptExecutor executor = (JavascriptExecutor) driver;
 		executor.executeScript("arguments[0].click();", pageobjects.PhonesListingPage.ViewAllPhones);*/
 		Thread.sleep(2000);
@@ -155,15 +157,15 @@ public class PhonesListingPageAction extends Environment {
 
 		}*/
 
-		Thread.sleep(3000);
+		driver.manage().timeouts().implicitlyWait(30,TimeUnit.SECONDS);
 
-		WebElement requestedDevice = driver.findElement(By.xpath("//img[@class='device-image']/..//*[normalize-space()='"+elementName+"']"));
-		if(driver.findElements(By.xpath("//img[@class='device-image']/..//*[normalize-space()='"+elementName+"']")).size() >= 1){
+		WebElement requestedDevice = driver.findElement(By.xpath("//img[@class='device-image']/..//*[normalize-space()='" + elementName + "']"));
+		if (driver.findElements(By.xpath("//img[@class='device-image']/..//*[normalize-space()='" + elementName + "']")).size() >= 1) {
 			((JavascriptExecutor) driver).executeScript("arguments[0].click();", requestedDevice);
 			System.out.println("Selected Device from Phones as Required is : " + elementName);
 			log.debug("Selected Device from Phones as Required is : " + elementName);
 			Thread.sleep(3000);
-		}else{
+		} else {
 
 			WebElement element = driver.findElement(By.xpath("(//img[@class='device-image'])[1]"));
 			((JavascriptExecutor) driver).executeScript("arguments[0].click();", element);
@@ -171,11 +173,9 @@ public class PhonesListingPageAction extends Environment {
 			System.out.println(" As Required Device is not Availabe, We have picked default device from availabe  :: " + defaultSelDevice);
 			log.debug(" As Required Device is not Availabe, We have picked default device from availabe  :: " + defaultSelDevice);
 			Thread.sleep(3000);
+
+			Screenshots.captureScreenshot();
 		}
-
-
-
-		Screenshots.captureScreenshot();
 	}
 
 	// Below is for PAYG phones

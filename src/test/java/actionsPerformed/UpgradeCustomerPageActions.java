@@ -73,7 +73,7 @@ public class UpgradeCustomerPageActions extends Environment {
 
     public static void CCALogin(String password1) throws InterruptedException, IOException {
 
-        String CCALoginEmailID = (String) Filereadingutility.getPropertyValue(
+        String CCALoginEmailID = Filereadingutility.getPropertyValue(
                 System.getProperty("user.dir") + "\\Configurations\\Properties\\Run.properties", "emailid");
         pageobjects.UpgradeCustomerPage.username.sendKeys(CCALoginEmailID);
         pageobjects.UpgradeCustomerPage.password.sendKeys(password1);
@@ -500,9 +500,9 @@ public class UpgradeCustomerPageActions extends Environment {
         List<WebElement> TariffList = driver.findElements(By.xpath("//div[@id='tariff-tile']/div[@id]"));
         log.debug("TariffList size is " + TariffList.size());
 
-        String PrimaryPromotionRibbon = (String) Filereadingutility.getPropertyValue(RunTimeFilePath,
+        String PrimaryPromotionRibbon = Filereadingutility.getPropertyValue(RunTimeFilePath,
                 "PrimaryPromotionRibbon");
-        String SecondaryPromotionRibbon = (String) Filereadingutility.getPropertyValue(RunTimeFilePath,
+        String SecondaryPromotionRibbon = Filereadingutility.getPropertyValue(RunTimeFilePath,
                 "SecondaryPromotionRibbon");
 
         BluePromotionXpath = "(//div[@id='tariff-tile']/div[@id]//div[@class='blue-promotion'])[" + position + "]";
@@ -543,9 +543,9 @@ public class UpgradeCustomerPageActions extends Environment {
         String PrimaryPromotionText = null, SecondaryPromotionText = null;
         int i = 0;
 
-        String PrimaryPromotionRibbonRecommendedSection = (String) Filereadingutility.getPropertyValue(RunTimeFilePath,
+        String PrimaryPromotionRibbonRecommendedSection = Filereadingutility.getPropertyValue(RunTimeFilePath,
                 "PrimaryPromotionRibbonRecommendedSection");
-        String SecondaryPromotionRibbonRecommendedSection = (String) Filereadingutility
+        String SecondaryPromotionRibbonRecommendedSection = Filereadingutility
                 .getPropertyValue(RunTimeFilePath, "SecondaryPromotionRibbonRecommendedSection");
 
         i = PositionUpgrade;
@@ -595,13 +595,13 @@ public class UpgradeCustomerPageActions extends Environment {
     }
 
     public static void checkIfPromotionalRibbonTextsNotSame() throws IOException, InterruptedException {
-        String PrimaryPromotionTextRecommendedSection = (String) Filereadingutility.getPropertyValue(RunTimeFilePath,
+        String PrimaryPromotionTextRecommendedSection = Filereadingutility.getPropertyValue(RunTimeFilePath,
                 "PrimaryPromotionTextRecommendedSection");
-        String SecondaryPromotionTextRecommendedSection = (String) Filereadingutility.getPropertyValue(RunTimeFilePath,
+        String SecondaryPromotionTextRecommendedSection = Filereadingutility.getPropertyValue(RunTimeFilePath,
                 "SecondaryPromotionTextRecommendedSection");
-        String PrimaryPromotionText = (String) Filereadingutility.getPropertyValue(RunTimeFilePath,
+        String PrimaryPromotionText = Filereadingutility.getPropertyValue(RunTimeFilePath,
                 "PrimaryPromotionText");
-        String SecondaryPromotionText = (String) Filereadingutility.getPropertyValue(RunTimeFilePath,
+        String SecondaryPromotionText = Filereadingutility.getPropertyValue(RunTimeFilePath,
                 "SecondaryPromotionText");
         if (PrimaryPromotionTextRecommendedSection.equals(PrimaryPromotionText)) {
             log.debug("Primary promotion text matches");
@@ -660,8 +660,8 @@ public class UpgradeCustomerPageActions extends Environment {
                 // .findElements(By.xpath("//div[@class='blue-promotion']/div/a[2]"));
                 .findElements(By.xpath("//div[@class='blue-promotion']/div"));
 
-        String PrimaryOverlay = (String) Filereadingutility.getPropertyValue(RunTimeFilePath, "PrimaryOverlay");
-        String SecondaryOverlay = (String) Filereadingutility.getPropertyValue(RunTimeFilePath, "SecondaryOverlay");
+        String PrimaryOverlay = Filereadingutility.getPropertyValue(RunTimeFilePath, "PrimaryOverlay");
+        String SecondaryOverlay = Filereadingutility.getPropertyValue(RunTimeFilePath, "SecondaryOverlay");
 
         if (PrimaryOverlay.equals("Y")) {
             if (PrimaryOverlayIcon.size() > 0) {
@@ -736,9 +736,9 @@ public class UpgradeCustomerPageActions extends Environment {
         List<WebElement> SecondaryOverlayIcon = driver.findElement(By.xpath(TariffTile))
                 .findElements(By.xpath("//div[@id='qa-promotion']/div[2]/a"));
 
-        String PrimaryOverlayRecommendedSection = (String) Filereadingutility.getPropertyValue(RunTimeFilePath,
+        String PrimaryOverlayRecommendedSection = Filereadingutility.getPropertyValue(RunTimeFilePath,
                 "PrimaryOverlayRecommendedSection");
-        String SecondaryOverlayRecommendedSection = (String) Filereadingutility.getPropertyValue(RunTimeFilePath,
+        String SecondaryOverlayRecommendedSection = Filereadingutility.getPropertyValue(RunTimeFilePath,
                 "SecondaryOverlayRecommendedSection");
 
         if (PrimaryOverlayRecommendedSection.equals("Y")) {
@@ -835,9 +835,9 @@ public class UpgradeCustomerPageActions extends Environment {
     public static void verifyPromotionalRibbonDisplayedBasketpage() throws IOException, InterruptedException {
         log.debug('\n' + "Verify Promotional Ribbon is Displayed in Basket page");
 
-        String PrimaryPromotionRibbon = (String) Filereadingutility.getPropertyValue(RunTimeFilePath,
+        String PrimaryPromotionRibbon = Filereadingutility.getPropertyValue(RunTimeFilePath,
                 "PrimaryPromotionRibbon");
-        String SecondaryPromotionRibbon = (String) Filereadingutility.getPropertyValue(RunTimeFilePath,
+        String SecondaryPromotionRibbon = Filereadingutility.getPropertyValue(RunTimeFilePath,
                 "SecondaryPromotionRibbon");
 
         if (PrimaryPromotionRibbon.equals("Y")) {
@@ -887,8 +887,8 @@ public class UpgradeCustomerPageActions extends Environment {
         List<WebElement> SecondaryPromotionOverlayList = driver
                 .findElements(By.xpath("//div[@class='data-qa-promotion promotion-wrapper']/div[2]/a"));
 
-        String PrimaryOverlay = (String) Filereadingutility.getPropertyValue(RunTimeFilePath, "PrimaryOverlay");
-        String SecondaryOverlay = (String) Filereadingutility.getPropertyValue(RunTimeFilePath, "SecondaryOverlay");
+        String PrimaryOverlay = Filereadingutility.getPropertyValue(RunTimeFilePath, "PrimaryOverlay");
+        String SecondaryOverlay = Filereadingutility.getPropertyValue(RunTimeFilePath, "SecondaryOverlay");
 
         if (PrimaryOverlay.equals("Y")) {
             if (PrimaryPromotionalWrapperList.size() > 0) {
@@ -953,9 +953,9 @@ public class UpgradeCustomerPageActions extends Environment {
         List<WebElement> SecondaryPromotionalWrapperList = driver
                 .findElements(By.xpath("//div[@class='data-qa-promotion promotion-wrapper']/div[2]"));
 
-        String PrimaryPromotionRibbon = (String) Filereadingutility.getPropertyValue(RunTimeFilePath,
+        String PrimaryPromotionRibbon = Filereadingutility.getPropertyValue(RunTimeFilePath,
                 "PrimaryPromotionRibbon");
-        String SecondaryPromotionRibbon = (String) Filereadingutility.getPropertyValue(RunTimeFilePath,
+        String SecondaryPromotionRibbon = Filereadingutility.getPropertyValue(RunTimeFilePath,
                 "SecondaryPromotionRibbon");
 
         if (PrimaryPromotionRibbon.equals("Y")) {
@@ -1003,9 +1003,9 @@ public class UpgradeCustomerPageActions extends Environment {
         List<WebElement> SecondaryPromotionalWrapperList = driver
                 .findElements(By.xpath("//div[@class='data-qa-promotion promotion-wrapper']/div[2]"));
 
-        String PrimaryPromotionRibbonRecommendedSection = (String) Filereadingutility.getPropertyValue(RunTimeFilePath,
+        String PrimaryPromotionRibbonRecommendedSection = Filereadingutility.getPropertyValue(RunTimeFilePath,
                 "PrimaryPromotionRibbonRecommendedSection");
-        String SecondaryPromotionRibbonRecommendedSection = (String) Filereadingutility
+        String SecondaryPromotionRibbonRecommendedSection = Filereadingutility
                 .getPropertyValue(RunTimeFilePath, "SecondaryPromotionRibbonRecommendedSection");
 
         if (PrimaryPromotionRibbonRecommendedSection.equals("Y")) {
@@ -1057,8 +1057,8 @@ public class UpgradeCustomerPageActions extends Environment {
         List<WebElement> SecondaryPromotionOverlayList = driver
                 .findElements(By.xpath("//div[@class='data-qa-promotion promotion-wrapper']/div[2]/a"));
 
-        String PrimaryOverlay = (String) Filereadingutility.getPropertyValue(RunTimeFilePath, "PrimaryOverlay");
-        String SecondaryOverlay = (String) Filereadingutility.getPropertyValue(RunTimeFilePath, "SecondaryOverlay");
+        String PrimaryOverlay = Filereadingutility.getPropertyValue(RunTimeFilePath, "PrimaryOverlay");
+        String SecondaryOverlay = Filereadingutility.getPropertyValue(RunTimeFilePath, "SecondaryOverlay");
 
         if (PrimaryOverlay.equals("Y")) {
             if (PrimaryPromotionalWrapperList.size() > 0) {
@@ -1130,9 +1130,9 @@ public class UpgradeCustomerPageActions extends Environment {
         List<WebElement> SecondaryPromotionOverlayList = driver
                 .findElements(By.xpath("//div[@class='data-qa-promotion promotion-wrapper']/div[2]/a"));
 
-        String PrimaryOverlayRecommendedSection = (String) Filereadingutility.getPropertyValue(RunTimeFilePath,
+        String PrimaryOverlayRecommendedSection = Filereadingutility.getPropertyValue(RunTimeFilePath,
                 "PrimaryOverlayRecommendedSection");
-        String SecondaryOverlayRecommendedSection = (String) Filereadingutility.getPropertyValue(RunTimeFilePath,
+        String SecondaryOverlayRecommendedSection = Filereadingutility.getPropertyValue(RunTimeFilePath,
                 "SecondaryOverlayRecommendedSection");
 
         if (PrimaryOverlayRecommendedSection.equals("Y")) {
@@ -1285,10 +1285,7 @@ public class UpgradeCustomerPageActions extends Environment {
                         .findElement(By.xpath("//div[@class='recycle-device not-your-device-box']/a"));
                 js.executeScript("arguments[0].click();", notMyDevice);
 
-                if (notMyDevice.isEnabled()) {
-                    return true;
-                }
-                return false;
+                return notMyDevice.isEnabled();
             }
         };
         wait.until(function);
@@ -1793,8 +1790,9 @@ public class UpgradeCustomerPageActions extends Environment {
 
     public static void clickOnViewAllTariffslink() throws InterruptedException, IOException {
 
-        Thread.sleep(3000);
-
+       // Thread.sleep(3000);
+        driver.manage().timeouts().implicitlyWait(30,TimeUnit.SECONDS);
+        System.out.println("we are : clickOnViewAllTariffslink ");
         ((JavascriptExecutor) driver).executeScript("arguments[0].click();",
                 pageobjects.UpgradeCustomerPage.ViewAllTariffs);
         Screenshots.captureScreenshot();
@@ -1945,7 +1943,7 @@ public class UpgradeCustomerPageActions extends Environment {
     /////////////////////////////////////Promotions/////////////////////////////////////////////////////////////////////
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-    public static void HeadingMessagePanel() throws InterruptedException, IOException{
+    public static void HeadingMessagePanel() {
 
         log.debug("Validating the Heading message for promotions");
 
@@ -1964,7 +1962,7 @@ public class UpgradeCustomerPageActions extends Environment {
 
     }
 
-    public static void BodyMessagePanel() throws InterruptedException, IOException{
+    public static void BodyMessagePanel() {
         WebElement BodyPromo = pageobjects.UpgradeCustomerPage.PromotionsBody;
         JavascriptExecutor executor = (JavascriptExecutor)driver;
         executor.executeScript("arguments[0].click();", BodyPromo);
@@ -1980,7 +1978,7 @@ public class UpgradeCustomerPageActions extends Environment {
 
     }
 
-    public static void SimoPromotionsCheckboxNotDisplayed() throws InterruptedException, IOException{
+    public static void SimoPromotionsCheckboxNotDisplayed() {
 
         WebElement element = pageobjects.UpgradeCustomerPage.CheckBoxNotDisplayed;
         JavascriptExecutor executor = (JavascriptExecutor)driver;
@@ -1996,7 +1994,7 @@ public class UpgradeCustomerPageActions extends Environment {
     }
 
 
-    public static void copyTextAdditionalDepositPage() throws InterruptedException, IOException{
+    public static void copyTextAdditionalDepositPage() {
 
         log.debug("in copy text additional deposit verification page");
         String actualText = pageobjects.UpgradeCustomerPage.copyTextAdditonalDeposit.getText();
@@ -2020,7 +2018,7 @@ public class UpgradeCustomerPageActions extends Environment {
         Screenshots.captureScreenshot();
     }
 
-    public static void data_filtersIsDdisplayed() throws Exception {
+    public static void data_filtersIsDdisplayed() {
         try {
             driver.manage().timeouts().implicitlyWait(2, TimeUnit.MINUTES);
             if (driver.findElements(By.xpath("//div[@class='filter-options']/button")).size() > 0) {
@@ -2044,7 +2042,7 @@ public class UpgradeCustomerPageActions extends Environment {
         }
     }
 
-    public static void twoContractLengthShouldDisplayed() throws Exception {
+    public static void twoContractLengthShouldDisplayed() {
         try {
             driver.manage().timeouts().implicitlyWait(2, TimeUnit.MINUTES);
             if (driver.findElements(By.xpath("//div[@class='button-tabs']//a")).size() > 0) {
@@ -2068,7 +2066,7 @@ public class UpgradeCustomerPageActions extends Environment {
         }
     }
 
-    public static void  whyChooseAn_O2_may_Monthly_sim_is_not_displayed() throws Exception {
+    public static void  whyChooseAn_O2_may_Monthly_sim_is_not_displayed() {
         try {
             driver.manage().timeouts().implicitlyWait(2, TimeUnit.MINUTES);
             if (!driver.findElement(By.xpath("//*[contains(text(),'hy choose an O2 Pay Monthly sim?')]")).isDisplayed()) {
@@ -2086,7 +2084,7 @@ public class UpgradeCustomerPageActions extends Environment {
         }
     }
 
-    public static void OOS_MsgShouldDisplayed_inUpgradeOptionsPage() throws Exception {
+    public static void OOS_MsgShouldDisplayed_inUpgradeOptionsPage() {
         try {
             driver.manage().timeouts().implicitlyWait(2, TimeUnit.MINUTES);
             if(driver.findElements(By.xpath("//*[contains(text(),'Out of stock')]")).size() > 0) {
@@ -2106,7 +2104,7 @@ public class UpgradeCustomerPageActions extends Environment {
         }
     }
 
-    public static void verifyOOS_MessageIsDisplayedInUpgradesBasketPage() throws Exception {
+    public static void verifyOOS_MessageIsDisplayedInUpgradesBasketPage() {
         try {
             driver.manage().timeouts().implicitlyWait(2, TimeUnit.MINUTES);
             if(driver.findElements(By.xpath("//*[contains(text(),'You can't continue with checking out if there are any out of stock items in your basket,')]")).size() > 0) {
@@ -2126,7 +2124,7 @@ public class UpgradeCustomerPageActions extends Environment {
         }
     }
 
-    public static void upfront_sort_options_is_not_present_in_sortingDropdown() throws Exception {
+    public static void upfront_sort_options_is_not_present_in_sortingDropdown() {
         try {
             driver.manage().timeouts().implicitlyWait(2, TimeUnit.MINUTES);
             if (UpgradeCustomerPage.dataFilter.isDisplayed()) {

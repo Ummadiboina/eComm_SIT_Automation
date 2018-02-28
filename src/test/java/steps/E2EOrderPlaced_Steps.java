@@ -62,7 +62,7 @@ public class E2EOrderPlaced_Steps {
         try {
             PageFactory.initElements(driver, MouseHoverPage.class);
 
-             MouseHoverAction.ByPassDroopalPage();
+            // MouseHoverAction.ByPassDroopalPage();
             //ShopLandingPageAction.GetTitle_ref();
             ShopLandingPageAction.GetTitle();
 
@@ -670,7 +670,7 @@ public class E2EOrderPlaced_Steps {
             Thread.sleep(3000);
             PAYMandPAYGTariffAndExtrasPageActions.TariffSelect("Randomtariff");
             Thread.sleep(6000);
-            // PAYMandPAYGTariffAndExtrasPageActions.addToBasketLive();
+            PAYMandPAYGTariffAndExtrasPageActions.addToBasketLive();
         } catch (Exception e) {
             // TODO Auto-generated catch block
             System.out.println("Unable to Land on Tariff and extras page");
@@ -733,8 +733,8 @@ public class E2EOrderPlaced_Steps {
                 System.out.println("Queue page is displayed");
             } else {
                 System.out.println("Queue page is not displayed");
-                PAYMandPAYGTariffAndExtrasPageActions.addToBasketLive();
-               // BasketPageActions.ValidateBasketPageContents();
+                //PAYMandPAYGTariffAndExtrasPageActions.addToBasketLive();
+                BasketPageActions.ValidateBasketPageContents();
                 BasketPageActions.CollectionorDelivery("homeDelivery");
             }
         } catch (Exception e) {
@@ -925,7 +925,7 @@ public class E2EOrderPlaced_Steps {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, DeliveryPage.class);
             //CommonFunctionscheckTitle("Delivery Page");
-            //DeliveryPageActions.SetDelivery();
+            DeliveryPageActions.SetDelivery();
             DeliveryPageActions.AboutYou(Firstname, Surname);
             DeliveryPageActions.ClickContinue();
         } catch (Exception e) {
@@ -1161,7 +1161,7 @@ public class E2EOrderPlaced_Steps {
 
     //And Click on "I'll be using an iPhone" checkbox and Click on 'Select' CTA to buy a tariff
     @And("^Click on (.*)I'll be using an iPhone(.*) checkbox and Click on 'Select' CTA to buy a tariff$")
-    public void  click_on_I_will_using_iPhone_checkbox_and_Click_on_Select_CTA_to_buy_tariff() throws Throwable {
+    public void  click_on_I_will_using_iPhone_checkbox_and_Click_on_Select_CTA_to_buy_tariff() {
         try {
             E2EOrderPlaced_Steps e2eOrder = new E2EOrderPlaced_Steps();
             e2eOrder.checkbox_with_will_be_using_iPhone_belowSelectBtn();
@@ -2061,8 +2061,8 @@ public class E2EOrderPlaced_Steps {
         driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
         try {
             PageFactory.initElements(driver, Agent_RegisterCustomerPage.class);
-            Agent_RegisterCustomerActions.PaybyCard();
             Agent_RegisterCustomerActions.CardDetails_PayM();
+            Agent_RegisterCustomerActions.PaybyCard();
         } catch (Exception e) {
             // TODO Auto-generated catch block
             System.out.println("Unable to Pay by card , please see the failure screenshot");
@@ -4270,6 +4270,7 @@ public class E2EOrderPlaced_Steps {
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         try {
             PageFactory.initElements(driver, MouseHoverPage.class);
+            MouseHoverAction.ByPassDroopalPage();
             MouseHoverAction.iPadPage();
 
         } catch (Exception e) {
@@ -6030,6 +6031,8 @@ public class E2EOrderPlaced_Steps {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, UpgradeCustomerPage.class);
             UpgradeCustomerPageActions.clickOnViewAllTariffslink();
+            Thread.sleep(3000);
+            PAYMandPAYGTariffAndExtrasPageActions.TariffSelect("Randomtariff");
 
         } catch (Exception e) {
             e.printStackTrace();

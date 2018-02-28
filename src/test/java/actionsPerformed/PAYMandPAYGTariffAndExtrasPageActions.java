@@ -46,6 +46,7 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 	public static void TariffSelect(String ElementName) throws IOException, InterruptedException {
 		driver.manage().timeouts().implicitlyWait(120, TimeUnit.SECONDS);
 		if (ElementName.equalsIgnoreCase("Randomtariff")) {
+			Thread.sleep(2000);
 			//pageobjects.PAYMandPAYGTariffAndExtrasPage.RandomTariff1.sendKeys(Keys.ENTER);
 			((JavascriptExecutor) driver).executeScript("arguments[0].click();", pageobjects.PAYMandPAYGTariffAndExtrasPage.RandomTariff1);
 			//pageobjects.PAYMandPAYGTariffAndExtrasPage.RandomTariff1.click();
@@ -67,6 +68,7 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 			pageobjects.PAYMandPAYGTariffAndExtrasPage.RandomfullTariff1.sendKeys(Keys.ENTER);
 			log.debug("Selected a full payment Tariff");
 		}
+
 		Screenshots.captureScreenshot();
 	}
 
@@ -103,13 +105,15 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 	}
 
 	public static void addToBasketLive() throws InterruptedException, IOException, AWTException {
-		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 
-		WebElement selectDevice = driver.findElement(By.xpath("(//*[normalize-space()='Select'])[2]"));
-		((JavascriptExecutor) driver).executeScript("arguments[0].click();", selectDevice);
+
+		driver.manage().timeouts().implicitlyWait(35, TimeUnit.SECONDS);
+
+		/*WebElement selectDevice = driver.findElement(By.xpath("(//*[normalize-space()='Select'])[2]"));
+		((JavascriptExecutor) driver).executeScript("arguments[0].click();", selectDevice);*/
 	/*	JavascriptExecutor jse = (JavascriptExecutor) driver;
 		jse.executeScript("window.scrollBy(0,600)", "");*/
-		Thread.sleep(50000);
+		Thread.sleep(1000);
 		Point coordinates = PAYMandPAYGTariffAndExtrasPage.addToBasketLive.getLocation();
 		Robot robot = new Robot();
 		robot.mouseMove(coordinates.getX(), coordinates.getY() + 120);

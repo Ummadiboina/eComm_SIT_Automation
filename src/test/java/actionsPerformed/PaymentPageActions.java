@@ -2,6 +2,7 @@ package actionsPerformed;
 
 import java.awt.AWTException;
 import java.io.IOException;
+import java.util.concurrent.TimeUnit;
 
 import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
@@ -102,19 +103,21 @@ public class PaymentPageActions extends Environment {
     }
 
     public static void Time_At_Address_CC() throws InterruptedException, IOException {
-        pageobjects.PaymentPage.housenumber.sendKeys("41");
-        log.debug("Entered the House Number - 41");
+        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+        if(pageobjects.PaymentPage.housenumber.isEnabled()) {
+            pageobjects.PaymentPage.housenumber.sendKeys("41");
+            log.debug("Entered the House Number - 41");
 
-        pageobjects.PaymentPage.postcode.sendKeys("WA27JQ");
-        log.debug("Entered the Postcode - WA27JQ");
+            pageobjects.PaymentPage.postcode.sendKeys("WA27JQ");
+            log.debug("Entered the Postcode - WA27JQ");
 
-        pageobjects.PaymentPage.postcodesubmit.click();
-        log.debug("Clicked on Find address");
+            pageobjects.PaymentPage.postcodesubmit.click();
+            log.debug("Clicked on Find address");
 
-        pageobjects.PaymentPage.Selectaddress.click();
-        log.debug("Home Address Selected");
-        Thread.sleep(3000);
-
+            pageobjects.PaymentPage.Selectaddress.click();
+            log.debug("Home Address Selected");
+            Thread.sleep(3000);
+        }
         pageobjects.PaymentPage.Stay_Address_Years.sendKeys("9");
         log.debug("Entered the stayed at address - 9");
 
@@ -128,7 +131,7 @@ public class PaymentPageActions extends Environment {
 
     }
 
-    public static void Card_Details(String Username) throws InterruptedException, AWTException, IOException {
+    public static void Card_Details(String Username) throws InterruptedException, IOException {
 
         driver.switchTo().frame("payment-iframe"); // switching the frame by ID
 
@@ -162,7 +165,7 @@ public class PaymentPageActions extends Environment {
 
     }
 
-    public static void Card_Details() throws InterruptedException, AWTException, IOException {
+    public static void Card_Details() throws InterruptedException, IOException {
 
         driver.switchTo().frame("payment-iframe"); // switching the frame by ID
 
@@ -197,7 +200,7 @@ public class PaymentPageActions extends Environment {
     }
 
 
-    public static void Card_Details_hv() throws InterruptedException, AWTException, IOException {
+    public static void Card_Details_hv() throws InterruptedException, IOException {
         driver.switchTo().frame("payment-iframe"); // switching the frame by ID
 
         System.out.println("********We are switch to the iframe*******");

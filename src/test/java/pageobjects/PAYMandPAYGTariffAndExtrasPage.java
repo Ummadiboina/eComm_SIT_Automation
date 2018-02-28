@@ -56,7 +56,7 @@ public class PAYMandPAYGTariffAndExtrasPage {
 
 	// Below is for Clicking on the Add to basket option which is at the bottom of
 	// the tariff and extras page
-	@FindBy(how = How.XPATH, using = ("(//input[@value='Go to basket'])[1]"))
+	@FindBy(how = How.XPATH, using = ("(//input[@value='Go to basket' and @type='button'])[1]"))
 	public static WebElement addToBasketLive;
 
 	// Below is for Clicking on the Add to basket option which is at the top of the

@@ -28,10 +28,10 @@ public class Agent_RegisterCustomerPage {
     public static WebElement ContactNumber_error;
 
 
-    @FindBy(how = How.ID, using = "regPassword")
+    @FindBy(how = How.XPATH, using = "//input[@id='regPassword']")
     public static WebElement intialPassword;
 
-    @FindBy(how = How.ID, using = "regConfirmPswd")
+    @FindBy(how = How.XPATH, using = "//input[@id='regConfirmPswd']")
     public static WebElement confirmPassword;
 
     @FindBy(how = How.XPATH, using = "//input[@name='houseNum']")
