@@ -28,83 +28,93 @@ import java.util.concurrent.TimeUnit;
 
 public class Hooks extends Environment {
 
-	final static Logger log = Logger.getLogger("Hooks");
-	AndroidCapability capability = new AndroidCapability();
+    final static Logger log = Logger.getLogger("Hooks");
+    AndroidCapability capability = new AndroidCapability();
 
-	@Before("@Web")
 
-	public WebDriver openBrowser() throws MalformedURLException, InterruptedException {
-		System.out.println("Called openBrowser");
-		log.debug("Called openBrowser");
 
-		String relativePath = System.getProperty("user.dir");
-		log.debug("The Relative path of the user.dir" + relativePath);
+    @Before("@Web")
 
-		String EnvPropFilePath = relativePath + "/Configurations/Properties/AppConfig.properties";
-		log.debug("The Env prop path is " + EnvPropFilePath);
+    public WebDriver openBrowser(Scenario scenario) throws InterruptedException {
 
-		String BrowserType = Filereadingutility.getPropertyValue(EnvPropFilePath, "Browser_Type");
-		log.debug("The Browser type read from EnvProp file is " + BrowserType);
+        String rawFeatureName = scenario.getId().split(";")[0].replace("-", " ");
+        String featureName = rawFeatureName.substring(0, 1).toUpperCase() + rawFeatureName.substring(1);
+        System.out.println("Running feature file : " + featureName);
+        log.debug("Running feature file : " + featureName);
 
-		String Currenturl = Filereadingutility.getPropertyValue(EnvPropFilePath, "url");
-		log.debug("The current url is " + Currenturl);
 
-		BrowserHelper.Invoke_browser(BrowserType);
-		log.debug("Invoked browser");
+        System.out.println("Called openBrowser");
+        log.debug("Called openBrowser");
 
-		driver.get(Currenturl);
-		log.debug("Invoked URL");
+        String relativePath = System.getProperty("user.dir");
+        log.debug("The Relative path of the user.dir" + relativePath);
 
-		driver.manage().deleteAllCookies();
-		log.debug("Deleted all Cookies");
+        String EnvPropFilePath = relativePath + "/Configurations/Properties/AppConfig.properties";
+        log.debug("The Env prop path is " + EnvPropFilePath);
 
-		driver.manage().window().maximize();
-		log.debug("Maxismised window");
-		return null;
-	}
+        String BrowserType = Filereadingutility.getPropertyValue(EnvPropFilePath, "Browser_Type");
+        log.debug("The Browser type read from EnvProp file is " + BrowserType);
 
-	@Before("@MobileWeb")
-	public void setupWeb() throws Exception {
-		System.out.println("Opening Mobile browser");
-		capability.startMobileWeb();
-		System.out.println("Initiating Test case");
-	}
+        String Currenturl = Filereadingutility.getPropertyValue(EnvPropFilePath, "url");
+        log.debug("The current url is " + Currenturl);
 
-	@Before("@MobileApp")
-	public void setupApp() throws Exception {
-		System.out.println("Opening Mobile App");
-		capability.startApp();
-	}
-	@After
-	public void embedScreenshot(Scenario scenario) throws Exception {
+        BrowserHelper.Invoke_browser(BrowserType);
+        log.debug("Invoked browser");
 
-		if (scenario.isFailed()) {
-			try {
+        driver.get(Currenturl);
+        log.debug("Invoked URL");
 
-				File scr = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-				File dest = new File("ScreenshotsForFailures\\ScreenshotsForFailures_" + timestamp() + ".jpeg");
-				FileUtils.copyFile(scr, dest);
+        driver.manage().deleteAllCookies();
+        log.debug("Deleted all Cookies");
 
-			} catch (WebDriverException somePlatformsDontSupportScreenshots) {
-				System.err.println(somePlatformsDontSupportScreenshots.getMessage());
-			}
+        driver.manage().window().maximize();
+        log.debug("Maxismised window");
+        return null;
+    }
 
-		}
-		Thread.sleep(2000);
-		//capability.stopAppiumServer();
-		/*AppiumServerJava appiumServer = new AppiumServerJava();
+    @Before("@MobileWeb")
+    public void setupWeb() throws Exception {
+        System.out.println("Opening Mobile browser");
+        capability.startMobileWeb();
+        System.out.println("Initiating Test case");
+    }
+
+    @Before("@MobileApp")
+    public void setupApp() throws Exception {
+        System.out.println("Opening Mobile App");
+        capability.startApp();
+    }
+
+    @After
+    public void embedScreenshot(Scenario scenario) throws Exception {
+
+        if (scenario.isFailed()) {
+            try {
+
+                File scr = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+                File dest = new File("ScreenshotsForFailures\\ScreenshotsForFailures_" + timestamp() + ".jpeg");
+                FileUtils.copyFile(scr, dest);
+
+            } catch (WebDriverException somePlatformsDontSupportScreenshots) {
+                System.err.println(somePlatformsDontSupportScreenshots.getMessage());
+            }
+
+        }
+        Thread.sleep(2000);
+        //capability.stopAppiumServer();
+        /*AppiumServerJava appiumServer = new AppiumServerJava();
 		appiumServer.stopServer();*/
 
-		capability.stopAppiumServer();
-		Thread.sleep(5000);
-		log.debug("Stopped Appium server");
-		//driver.close();
-		//driver.quit();
+        capability.stopAppiumServer();
+        Thread.sleep(5000);
+        log.debug("Stopped Appium server");
+        driver.close();
+        driver.quit();
 
-	}
+    }
 
-	private String timestamp() {
-		return new SimpleDateFormat("yyyy-MM-dd HH-mm-ss").format(new Date());
-	}
+    private String timestamp() {
+        return new SimpleDateFormat("yyyy-MM-dd HH-mm-ss").format(new Date());
+    }
 
 }

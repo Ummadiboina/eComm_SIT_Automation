@@ -5,6 +5,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
+import GlobalActions.scrollToAnElement;
 import cucumber.api.DataTable;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
@@ -34,8 +35,10 @@ import static pageobjects.FreeSimPage.Firstname;
             try {
                 DeliveryPage.Housenumber.sendKeys("12");
                 log.debug("Entered House number");
+                Thread.sleep(2000);
                 pageobjects.DeliveryPage.Postcode.sendKeys("B15 2LG");
                 log.debug("Entered Post code");
+                Thread.sleep(2000);
                 pageobjects.DeliveryPage.Find_Address.click();
                 log.debug("Clicked on the Find address button");
                 Thread.sleep(5000);
@@ -43,6 +46,7 @@ import static pageobjects.FreeSimPage.Firstname;
                     pageobjects.DeliveryPage.SelectAddress1.click();
                     log.debug("Selected an address");
                 }
+                Thread.sleep(3000);
                 Screenshots.captureScreenshot();
 
             } catch (Exception e) {
@@ -249,7 +253,7 @@ import static pageobjects.FreeSimPage.Firstname;
             }
             //Screenshots.captureScreenshot();
         }
-        public static void AboutYou_Datatable(DataTable Table) throws IOException, InterruptedException {
+         public static void AboutYou_Datatable(DataTable Table) throws IOException, InterruptedException {
             List<List<String>> values = Table.raw();
             log.debug("Entering an Random email id");
             System.out.println("Entering an Random email id");
@@ -287,18 +291,20 @@ import static pageobjects.FreeSimPage.Firstname;
             System.out.println("Entered Security Answer as " + values.get(7).get(1).toString());
 
             Thread.sleep(3000);
-            DeliveryPage.date.sendKeys(values.get(9).get(1).toString());
-            System.out.println("Entered Date of Birth - Date as " + values.get(9).get(1).toString());
+            DeliveryPage.date.sendKeys(values.get(8).get(1).toString());
+            System.out.println("Entered Date of Birth - Date as " + values.get(8).get(1).toString());
 
             Thread.sleep(3000);
-            DeliveryPage.Month.sendKeys(values.get(10).get(1).toString());
-            System.out.println("Entered Date of Birth - Month as " + values.get(10).get(1).toString());
+            DeliveryPage.Month.sendKeys(values.get(9).get(1).toString());
+            System.out.println("Entered Date of Birth - Month as " + values.get(9).get(1).toString());
 
             Thread.sleep(3000);
-            DeliveryPage.year.sendKeys(values.get(11).get(1).toString());
-            System.out.println("Entered Date of Birth - Year as " + values.get(11).get(1).toString());
+            DeliveryPage.year.sendKeys(values.get(10).get(1).toString());
+            System.out.println("Entered Date of Birth - Year as " + values.get(10).get(1).toString());
             log.debug("Entered all the other relavant details");
             System.out.println("Entered all the other Relevant details");
+
+            DeliveryPage.year.sendKeys(Keys.TAB);
             Screenshots.captureScreenshot();
 
         }
@@ -376,15 +382,16 @@ import static pageobjects.FreeSimPage.Firstname;
 
         }
 
-
-        public static void enterHounseNumAndPostalCode(String houseNum , String postCode) {
+        public static void enterHouseNumAndPostalCode_DeliverySection(String houseNum , String postCode) {
             try{
                 driver.manage().timeouts().implicitlyWait(2, TimeUnit.MINUTES);
+
                 if(DeliveryPage.Housenumber.isDisplayed()){
                     DeliveryPage.Housenumber.sendKeys(houseNum);
                     DeliveryPage.Housenumber.sendKeys(Keys.TAB );
                     DeliveryPage.Postcode.sendKeys(postCode);
-                    DeliveryPage.Postcode.sendKeys(Keys.TAB );
+                    DeliveryPage.Find_Address.click();
+                    Thread.sleep(5000);
                     System.out.println(" Entered the houseNumber and postcCode");
                     log.debug(" Entered the houseNumber and postcCode");
                 }else{
@@ -395,17 +402,36 @@ import static pageobjects.FreeSimPage.Firstname;
                 System.out.println(" Failed to  Entered the houseNumber and postcCode"+ e.getStackTrace());
                 log.debug(" Failed to  Entered the houseNumber and postcCode"+ e.getStackTrace());
             }
-
-        }
-
-        public static void enteredInvalidPostcode(String postCode) {
+            }
+            
+             public static void enteredCommercialAddress_AddressLookUp(String postCode) {
             try{
                 driver.manage().timeouts().implicitlyWait(2, TimeUnit.MINUTES);
-                   if(DeliveryPage.postalCodeErrorMsg.isDisplayed()) {
-                    String invalidMsg = DeliveryPage.postalCodeErrorMsg.getText();
+                if(DeliveryPage.commercialAddressErrorMsgAdressLookUp.isDisplayed()) {
+                    String invalidMsg = DeliveryPage.commercialAddressErrorMsgAdressLookUp.getText();
                     if (invalidMsg.contains(postCode)) {
-                        System.out.println(" Entered ivalid PostCod & displayed error message as ::  (" + invalidMsg + ")");
-                        log.debug(" Entered ivalid PostCod & displayed error message as ::  (" + invalidMsg + ")");
+                        System.out.println(" Entered commercial address during address lookup & displayed error message as ::  (" + invalidMsg + ")");
+                        log.debug(" Entered commercial address during address lookup & displayed error message as ::  (" + invalidMsg + ")");
+                    } else {
+                        System.out.println(" Failed to  Display the Respective Error message, When we entered commercial address during address lookup ");
+                        log.debug(" Failed to  Display the Respective Error message, When we entered commercial address during address lookup ");
+                    }
+                }
+            }catch (Exception e){
+                System.out.println(" Failed to  Display the Respective Error message, When we entered commercial address during address lookup "+ e.getStackTrace());
+                log.debug(" Failed to  Display the Respective Error message, When we entered commercial address during address lookup "+ e.getStackTrace());
+            }
+        }
+
+
+       public static void enteredInvalidPostcodeAdressLookUp(String postCode) {
+            try{
+                driver.manage().timeouts().implicitlyWait(2, TimeUnit.MINUTES);
+                   if(DeliveryPage.postalCodeErrorMsgAdressLookUp.isDisplayed()) {
+                    String invalidMsg = DeliveryPage.postalCodeErrorMsgAdressLookUp.getText();
+                    if (invalidMsg.contains(postCode)) {
+                        System.out.println(" Entered invalid PostCode & displayed error message as ::  (" + invalidMsg + ")");
+                        log.debug(" Entered ivnalid PostCode & displayed error message as ::  (" + invalidMsg + ")");
                     } else {
                         System.out.println(" Failed to  Display the Respective Error message, When we enter the invalid PostCode ");
                         log.debug(" Failed to  Display the Respective Error message, When we enter the invalid PostCode ");
@@ -414,6 +440,25 @@ import static pageobjects.FreeSimPage.Firstname;
             }catch (Exception e){
                 System.out.println(" Failed to  Display the Respective Error message, When we enter the invalid PostCode "+ e.getStackTrace());
                 log.debug(" Failed to  Display the Respective Error message, When we enter the invalid PostCode "+ e.getStackTrace());
+            }
+        }
+
+        public static void enteredInvalidPostcodeEnterManualSection(String postCode) {
+            try{
+                driver.manage().timeouts().implicitlyWait(2, TimeUnit.MINUTES);
+                if(DeliveryPage.postalCodeErrorMsgEnterManualSection.isDisplayed()) {
+                    String invalidMsg = DeliveryPage.postalCodeErrorMsgEnterManualSection.getText();
+                    if (invalidMsg.contains(postCode)) {
+                        System.out.println(" Entered invalid PostCode in Enter manually section & displayed error message as ::  (" + invalidMsg + ")");
+                        log.debug(" Entered ivnalid PostCode in Enter manually section & displayed error message as ::  (" + invalidMsg + ")");
+                    } else {
+                        System.out.println(" Failed to  Display the Respective Error message, When we enter the invalid PostCode in Enter manually section ");
+                        log.debug(" Failed to  Display the Respective Error message, When we enter the invalid PostCode in Enter manually section ");
+                    }
+                }
+            }catch (Exception e){
+                System.out.println(" Failed to  Display the Respective Error message, When we enter the invalid PostCode in Enter manually section "+ e.getStackTrace());
+                log.debug(" Failed to  Display the Respective Error message, When we enter the invalid PostCode in Enter manually section "+ e.getStackTrace());
             }
         }
 
@@ -439,8 +484,8 @@ import static pageobjects.FreeSimPage.Firstname;
         public static void deliverySectionShouldShowOOS_message() {
             try {
                 driver.manage().timeouts().implicitlyWait(2, TimeUnit.MINUTES);
-                if(driver.findElements(By.xpath("//*[contains(text(),'Out of stock')]")).size() > 0) {
-                    if (driver.findElement(By.xpath("//*[contains(text(),'Out of stock')]")).isDisplayed()) {
+                if(driver.findElements(By.xpath("//li[@class='delivery']//*[contains(text(),'out of stock')]")).size() > 0) {
+                    if (driver.findElement(By.xpath("//li[@class='delivery']//*[contains(text(),'out of stock')]")).isDisplayed()) {
                         System.out.println(" The Out of stock message is Displayed in the Delivery section");
                         log.debug(" The Out of stock message is Displayed in the Delivery section");
                     }
@@ -456,7 +501,7 @@ import static pageobjects.FreeSimPage.Firstname;
             }
         }
 
-
+        
         public static void deliverySectionShouldShowClick_anf_collect_option_without_radio_button_and_OOS_msg() {
             try {
                 driver.manage().timeouts().implicitlyWait(2, TimeUnit.MINUTES);

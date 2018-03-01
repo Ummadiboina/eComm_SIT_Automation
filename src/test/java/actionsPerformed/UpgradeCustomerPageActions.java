@@ -16,7 +16,7 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
-
+import org.apache.commons.lang.StringUtils;
 import com.google.common.base.Function;
 
 import GlobalActions.Screenshots;
@@ -1199,7 +1199,12 @@ public class UpgradeCustomerPageActions extends Environment {
         // pageobjects.UpgradeCustomerPage.RecycleWidget.click();
         if (driver.findElement(By.xpath("//*[@id='newRecycleOptionsTile']")).isDisplayed()) {
             System.out.println("Upgrade and Recycle options is displayed");
-            driver.findElement(By.xpath("//*[@ng-click='selectRecycleDevice();']")).click();
+           // driver.findElement(By.xpath("//*[@id='newRecycleOptionsTile']//*[@ng-click='selectRecycleDevice();']/span")).click();
+            JavascriptExecutor executor = (JavascriptExecutor)driver;
+            executor.executeScript("arguments[0].click();",driver.findElement( By.xpath("//div[@class='recycle-device not-your-device-box']/a/span")));
+
+
+          //  driver.findElement( By.xpath("//div[@class='recycle-device not-your-device-box']/a/span")).click();
             System.out.println("Clicked on the choose your device link");
         } else {
             Assert.fail("Unable to verify recycle options");
@@ -1212,7 +1217,11 @@ public class UpgradeCustomerPageActions extends Environment {
         System.out.println("in Select recycle an continue to upgrade function");
         driver.findElement(By.id("recycleCredit")).click();
         System.out.println("Clicked on Radio button next to Recycle and get up to XXXX credit");
-        driver.findElement(By.xpath("//button[contains(text(),'upgrade now')]")).click();
+        //driver.findElement(By.xpath("//button[contains(text(),'upgrade now')]")).click();
+        JavascriptExecutor executor = (JavascriptExecutor)driver;
+        executor.executeScript("arguments[0].click();",driver.findElement(By.xpath("//button[contains(text(),'upgrade now')]")));
+        Thread.sleep(3000);
+
         System.out.println("Clicked on upgrade now button");
         Screenshots.captureScreenshot();
     }
@@ -1639,10 +1648,10 @@ public class UpgradeCustomerPageActions extends Environment {
         ExText1 = "Left to pay on your existing device";
         ExText2 = "The balance still to pay on your current";
         ExText3 = "Upgrade on us";
-        ExText4 = "We�ll pay off the rest of your Device Plan, and you can keep your current device. If your next airtime bill has already been scheduled, it may still be taken.";
-
-        if (AcText1.equals(ExText1) && (AcText2.equals(ExText2) && (AcText3.equals(ExText3))
-                && (AcText4.equals(ExText4) && !cost1.isEmpty() && !cost2.isEmpty()))) {
+        ExText4 = "We'll pay off the rest of your Device Plan, and you can keep your current device. If your next airtime bill has already been scheduled, it may still be taken.";
+//!cost2.isEmpty()
+        if (AcText1.contains(ExText1) && (AcText2.contains(ExText2) && (AcText3.contains(ExText3))
+                && (AcText4.contains(ExText4) && StringUtils.isNotBlank(cost1) && StringUtils.isNotBlank(cost2)))) {
             System.out.println("Buy out offer text is displayed as expected");
             System.out.println(AcText1 + "  " + cost1);
             System.out.println(AcText2);
@@ -1650,7 +1659,13 @@ public class UpgradeCustomerPageActions extends Environment {
             System.out.println(AcText4);
 
         } else {
+            System.out.println("Buy out offer text displayed is not as expected");
+            System.out.println(AcText1 + "  " + cost1);
+            System.out.println(AcText2);
+            System.out.println(AcText3 + "  " + cost2);
+            System.out.println(AcText4);
             Assert.fail("Buy out text is not as expected");
+
         }
         Screenshots.captureScreenshot();
 

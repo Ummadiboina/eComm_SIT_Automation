@@ -24,7 +24,7 @@ public class PAYMandPAYGTariffAndExtrasPage {
 
 	// Below is for Selecting Any Tariff
 
-	@FindBy(how = How.XPATH, using = ("(//*[@id='callToAction'])[1]"))
+	@FindBy(how = How.XPATH, using = ("(//*[@id='callToAction'])[2]"))
 	public static WebElement RandomTariff1;
 
 	// Below is for Selecting Any Tariff
@@ -58,6 +58,9 @@ public class PAYMandPAYGTariffAndExtrasPage {
 	// the tariff and extras page
 	@FindBy(how = How.XPATH, using = ("(//input[@value='Go to basket' and @type='button'])[1]"))
 	public static WebElement addToBasketLive;
+
+	@FindBy(how = How.XPATH, using = ("(//input[@value='Add and go to basket'])[1]"))
+	public static WebElement addToBasketBuyOutJourney;
 
 	// Below is for Clicking on the Add to basket option which is at the top of the
 	// tariff and extras page

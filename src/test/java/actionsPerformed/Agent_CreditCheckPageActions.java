@@ -150,8 +150,8 @@ public class Agent_CreditCheckPageActions extends Environment {
 		}
 		Agent_CreditCheckDetailsPage.ContactNumber.clear();
 		Agent_CreditCheckDetailsPage.ContactNumber.sendKeys("1234567890");
-		log.debug("Entered contact number")*/;
-		Thread.sleep(2000);
+		log.debug("Entered contact number")*/
+        Thread.sleep(2000);
 		try {
 			Agent_CreditCheckDetailsPage.HouseNumber.sendKeys(HouseNumber);
 			Thread.sleep(2000);

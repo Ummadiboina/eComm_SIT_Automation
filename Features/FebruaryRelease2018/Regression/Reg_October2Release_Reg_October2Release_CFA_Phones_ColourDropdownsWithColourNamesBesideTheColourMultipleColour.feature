@@ -1,4 +1,4 @@
-Feature: CFA_Phones_ColourDropdownsWithColourNamesBesideTheColourMultipleColour
+Feature: Reg_October2Release_Reg_October2Release_CFA_Phones_ColourDropdownsWithColourNamesBesideTheColourMultipleColour.feature
 
   @Web
   Scenario Outline: CFA_Phones_ColourDropdownsWithColourNamesBesideTheColourMultipleColour
@@ -24,7 +24,6 @@ Feature: CFA_Phones_ColourDropdownsWithColourNamesBesideTheColourMultipleColour
       | Surname               | Accepta      |
       | Contact Number        | 07123456789  |
       | Password              | TesterSit123 |
-      | Security Question     | Random       |
       | Security Answer       | Sit Testers  |
       | Date of Birth - Date  | 22           |
       | Date of Birth - Month | 10           |
@@ -37,5 +36,5 @@ Feature: CFA_Phones_ColourDropdownsWithColourNamesBesideTheColourMultipleColour
 
     #Close the browser
     Examples:
-      | handset | Username    | color         | CFATariffColour |
-      | Apple8 | TEST ACCEPTA | Gold           | Gold            |
+      | handset        | Username     | color | CFATariffColour |
+      | Apple iPhone 8 | TEST ACCEPTA | Gold  | Gold            |

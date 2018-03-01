@@ -70,7 +70,7 @@ public class PhonesListingPageAction extends Environment {
 			log.debug("Selected GalaxyS8");
 
 		}
-		if (elementName.contains("SamsungÂ Galaxy S8")) {
+		if (elementName.contains("Samsung Galaxy S8")) {
 			pageobjects.PhonesListingPage.GalaxyS8.click();
 			// Assert.assertEquals(elementName,"Galaxy S7 is not found");
 			log.debug("Selected GalaxyS8");
@@ -803,7 +803,7 @@ public class PhonesListingPageAction extends Environment {
 
 		for (WebElement temp2 : devicePrice) {
 
-			String sTemp = StringUtils.substringBetween(temp2.getText(), "Â£", ".");
+			String sTemp = StringUtils.substringBetween(temp2.getText(), "£", ".");
 			devicepricecurrentorder.add(sTemp);
 
 		}

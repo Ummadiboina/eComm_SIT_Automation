@@ -11,8 +11,10 @@ import org.openqa.selenium.support.ui.Select;
 import GlobalActions.RandomEmailAddressCreation;
 import GlobalActions.Screenshots;
 import helpers.Environment;
+import org.openqa.selenium.Keys;
 
 public class FreeSimPageActions extends Environment {
+
 
 	public List<HashMap<String, String>> datamap;
 	final static Logger log = Logger.getLogger("FreeSimPageActions");
@@ -50,7 +52,7 @@ public class FreeSimPageActions extends Environment {
 
 	}
 
-	public static void EnterManually(String Flatnumber, String Housename, String Address1, String Town, String Postcode)
+	public static void EnterManually (String Flatnumber, String Housename, String Address1, String Town, String Postcode)
 			throws InterruptedException, IOException {
 
 		System.out.println("Clicking on Enter Manually link");
@@ -64,6 +66,8 @@ public class FreeSimPageActions extends Environment {
 		pageobjects.FreeSimPage.Town.sendKeys(Town);
 		log.debug("Entered the Town");
 		pageobjects.FreeSimPage.Postcode.sendKeys(Postcode);
+		pageobjects.FreeSimPage.Postcode.sendKeys(Keys.TAB );
+		Thread.sleep(3000);
 		log.debug("Entered the Postcode");
 		Screenshots.captureScreenshot();
 	}
@@ -102,7 +106,7 @@ public class FreeSimPageActions extends Environment {
 			jse.executeScript("arguments[0].click();", pageobjects.FreeSimPage.LightSurferiPadSim);
 			log.debug("Clicking on light surfer tab");
 		}
-		if (SurferType.equals("Light surfer") && SimType.equals("Tablet")) {
+		else if (SurferType.equals("Light surfer") && SimType.equals("Tablet")) {
 			Thread.sleep(1000);
 			jse.executeScript("arguments[0].click();", pageobjects.FreeSimPage.LightSurfer);
 			log.debug("Clicking on light surfer tab");
@@ -110,7 +114,7 @@ public class FreeSimPageActions extends Environment {
 			jse.executeScript("arguments[0].click();", pageobjects.FreeSimPage.LightSurferTabletSim);
 			log.debug("Clicking on light surfer tab");
 		}
-		if (SurferType.equals("Light surfer") && SimType.equals("Dongle")) {
+		else if (SurferType.equals("Light surfer") && SimType.equals("Dongle")) {
 			Thread.sleep(1000);
 			jse.executeScript("arguments[0].click();", pageobjects.FreeSimPage.LightSurfer);
 			log.debug("Clicking on light surfer tab");
@@ -118,7 +122,7 @@ public class FreeSimPageActions extends Environment {
 			jse.executeScript("arguments[0].click();", pageobjects.FreeSimPage.LightSurferDongleSim);
 			log.debug("Clicking on light surfer tab");
 		}
-		if (SurferType.equals("Steady surfer") && SimType.equals("iPad")) {
+		else if (SurferType.equals("Steady surfer") && SimType.equals("iPad")) {
 			Thread.sleep(1000);
 			jse.executeScript("arguments[0].click();", pageobjects.FreeSimPage.SteadySurfer);
 			log.debug("Clicking on light surfer tab");
@@ -126,7 +130,7 @@ public class FreeSimPageActions extends Environment {
 			jse.executeScript("arguments[0].click();", pageobjects.FreeSimPage.SteadySurferiPadSim);
 			log.debug("Clicking on light surfer tab");
 		}
-		if (SurferType.equals("Steady surfer") && SimType.equals("Tablet")) {
+		else if (SurferType.equals("Steady surfer") && SimType.equals("Tablet")) {
 			Thread.sleep(1000);
 			jse.executeScript("arguments[0].click();", pageobjects.FreeSimPage.SteadySurfer);
 			log.debug("Clicking on light surfer tab");
@@ -134,7 +138,7 @@ public class FreeSimPageActions extends Environment {
 			jse.executeScript("arguments[0].click();", pageobjects.FreeSimPage.SteadySurferTabletSim);
 			log.debug("Clicking on light surfer tab");
 		}
-		if (SurferType.equals("Steady surfer") && SimType.equals("Dongle")) {
+		else if (SurferType.equals("Steady surfer") && SimType.equals("Dongle")) {
 			Thread.sleep(1000);
 			jse.executeScript("arguments[0].click();", pageobjects.FreeSimPage.SteadySurfer);
 			log.debug("Clicking on light surfer tab");
@@ -142,7 +146,7 @@ public class FreeSimPageActions extends Environment {
 			jse.executeScript("arguments[0].click();", pageobjects.FreeSimPage.SteadySurferDongleSim);
 			log.debug("Clicking on light surfer tab");
 		}
-		if (SurferType.equals("Ultimate surfer") && SimType.equals("iPad")) {
+		else if (SurferType.equals("Ultimate surfer") && SimType.equals("iPad")) {
 			Thread.sleep(1000);
 			jse.executeScript("arguments[0].click();", pageobjects.FreeSimPage.UltimateSurfer);
 			log.debug("Clicking on light surfer tab");
@@ -150,7 +154,7 @@ public class FreeSimPageActions extends Environment {
 			jse.executeScript("arguments[0].click();", pageobjects.FreeSimPage.UltimateSurferiPadSim);
 			log.debug("Clicking on light surfer tab");
 		}
-		if (SurferType.equals("Ultimate surfer") && SimType.equals("Tablet")) {
+		else if (SurferType.equals("Ultimate surfer") && SimType.equals("Tablet")) {
 			Thread.sleep(1000);
 			jse.executeScript("arguments[0].click();", pageobjects.FreeSimPage.UltimateSurfer);
 			log.debug("Clicking on light surfer tab");
@@ -158,7 +162,7 @@ public class FreeSimPageActions extends Environment {
 			jse.executeScript("arguments[0].click();", pageobjects.FreeSimPage.UltimateSurferTabletSim);
 			log.debug("Clicking on light surfer tab");
 		}
-		if (SurferType.equals("Ultimate surfer") && SimType.equals("Dongle")) {
+		else if (SurferType.equals("Ultimate surfer") && SimType.equals("Dongle")) {
 			Thread.sleep(1000);
 			jse.executeScript("arguments[0].click();", pageobjects.FreeSimPage.UltimateSurfer);
 			log.debug("Clicking on light surfer tab");

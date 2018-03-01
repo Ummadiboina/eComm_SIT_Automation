@@ -6,8 +6,8 @@ Feature: C1960_E11522_TC1_AFU_verify_Base_Comms_tariff_under_offer_column_order_
 
     Given I login to Agent shop
     And performs Upgrade for <user>
-    And Select valid <Tariffs> from tariffs tab
     And Select a valid PayM <Device>
+    And Select valid <Tariffs> from tariffs tab
     And Verify that Basecomms is displayed in the offers section
     And select a valid Handset and Tariff combination
     And Validate all the Basket content and checkout

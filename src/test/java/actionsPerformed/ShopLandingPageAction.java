@@ -22,7 +22,7 @@ public class ShopLandingPageAction extends Environment {
 	final static Logger log = Logger.getLogger("ShopLandingPageAction");
 	static JavascriptExecutor js = (JavascriptExecutor)driver;
 
-	public static void GetTitle_ref() throws IOException, InterruptedException {
+	public static void GetTitle_ref() {
 		//later on need to comment the code
 		try {
 			//driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
@@ -43,7 +43,7 @@ public class ShopLandingPageAction extends Environment {
 			Screenshots.captureScreenshot();
 
 		} catch (Exception e) {
-		System.out.println("While navigating the with new updated ref Env , getting error as :: " + e.getMessage());
+			System.out.println("While navigating the with new updated ref Env , getting error as :: " + e.getMessage());
 		}
 	}
 
@@ -107,7 +107,7 @@ public class ShopLandingPageAction extends Environment {
 /*Below added by vinu */
 
 	public static void cookiePolicySelect() throws IOException, InterruptedException {
-	//Below will click on the cookie policy
+		//Below will click on the cookie policy
 		CommonUtilities.clickWebElement(ShopLandingPage.CookiesPolicyClick);
 		Screenshots.captureScreenshot();
 
@@ -186,7 +186,7 @@ public class ShopLandingPageAction extends Environment {
 	}
 
 
-	}
+}
 
 
 

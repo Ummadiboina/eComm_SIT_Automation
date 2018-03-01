@@ -102,31 +102,31 @@ public class DeliveryPage {
 
     //Below if for text headings
 
-    @FindBy(how = How.XPATH, using = "//span[contains(text(),'iPad Pro 9.7 inch')]")
+    @FindBy(how = How.XPATH, using = "//*[@id='delivery-page']//*[@id='deliveryForm']//*[@id='input-housenumber']/div/label")
     public static WebElement HouseNumberText;
 
-    @FindBy(how = How.XPATH, using = "//span[contains(text(),'iPad Pro 9.7 inch')]")
+    @FindBy(how = How.XPATH, using = "//*[@id='delivery-page']//*[@id='deliveryForm']//*[@id='input-postcode']/div/label")
     public static WebElement PostcodeText;
 
-    @FindBy(how = How.XPATH, using = "//span[contains(text(),'iPad Pro 9.7 inch')]")
+    @FindBy(how = How.XPATH, using = "//*[@id='delivery-page']//*[@id='aboutYouForm']//*[@id='input-email']/div/label")
     public static WebElement emailAddressText;
 
-    @FindBy(how = How.XPATH, using = "//span[contains(text(),'iPad Pro 9.7 inch')]")
+    @FindBy(how = How.XPATH, using = "//*[@id='delivery-page']//*[@id='aboutYouForm']//*[@class='form-element selector']/div/label")
     public static WebElement titleText;
 
-    @FindBy(how = How.XPATH, using = "//span[contains(text(),'iPad Pro 9.7 inch')]")
+    @FindBy(how = How.XPATH, using = "//*[@id='delivery-page']//*[@id='aboutYouForm']//*[@id='input-name']/fieldset/legend")
     public static WebElement nameText;
 
-    @FindBy(how = How.XPATH, using = "//span[contains(text(),'iPad Pro 9.7 inch')]")
+    @FindBy(how = How.XPATH, using = "//*[@id='delivery-page']//*[@id='aboutYouForm']//*[@id='input-contact-number']/div/label")
     public static WebElement ContactNumberText;
 
-    @FindBy(how = How.XPATH, using = "//span[contains(text(),'iPad Pro 9.7 inch')]")
+    @FindBy(how = How.XPATH, using = "//*[@id='delivery-page']//*[@id='aboutYouForm']//*[@id='input-password']/label")
     public static WebElement PasswordText;
 
-    @FindBy(how = How.XPATH, using = "//span[contains(text(),'iPad Pro 9.7 inch')]")
+    @FindBy(how = How.XPATH, using = "//*[@id='delivery-page']//*[@id='aboutYouForm']//*[@id='input-security-answer']/div/label")
     public static WebElement SecurityAnswerText;
 
-    @FindBy(how = How.XPATH, using = "//span[contains(text(),'iPad Pro 9.7 inch')]")
+    @FindBy(how = How.XPATH, using = "//*[@id='delivery-page']//*[@id='aboutYouForm']//*[@class='form-element input-microcopy-treble  ']/fieldset/legend")
     public static WebElement DateofBirthText;
     
     
@@ -149,14 +149,21 @@ public class DeliveryPage {
 
 
 
-
+    //Commercial Address error-Address LookUp
+    @FindBy(how = How.ID, using = "no-residential-address-match-error")
+    public static WebElement commercialAddressErrorMsgAdressLookUp;
 
     //postal code error
     @FindBy(how = How.ID, using = "postcode-error")
-    public static WebElement postalCodeErrorMsg;
+    public static WebElement postalCodeErrorMsgAdressLookUp;
 
     //house number invalid error
     @FindBy(how = How.ID, using = "housenumber-error")
     public static WebElement houseNumErrorMsg;
+
+    //postal code error
+    @FindBy(how = How.ID, using = "address-postcode-error")
+    public static WebElement postalCodeErrorMsgEnterManualSection;
+
 
 }

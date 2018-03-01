@@ -94,10 +94,12 @@ public class E2EOrderPlaced_Steps {
     @And("^Delete all cookies$")
     public void Delete_all_cookies() {
         driver.manage().deleteAllCookies();
+        System.out.println("Successfully deleted all the cookies");
         }
     @And("^launch the shop phones page$")
     public void launch_the_shop_phones_page() {
         driver.get("https://www.ref.o2.co.uk/shop/phones");
+        System.out.println("Successfully launched URL: https://www.ref.o2.co.uk/shop/phones");
     }
 
 
@@ -159,7 +161,7 @@ public class E2EOrderPlaced_Steps {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, MouseHoverPage.class);
             MouseHoverAction.AccessoriesLandingPage();
-            Autoredirection.redirect();
+            //Autoredirection.redirect();
             Thread.sleep(10000);
            //GlobalActions.//CommonFunctionscheckTitle("Accessories");
         } catch (Exception e) {
@@ -271,7 +273,7 @@ public class E2EOrderPlaced_Steps {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, MouseHoverPage.class);
             MouseHoverAction.PayMSimoNavigation();
-            //Autoredirection.redirect();
+            Autoredirection.redirect();
             Thread.sleep(10000);
 
         } catch (Exception e) {
@@ -2723,6 +2725,8 @@ public class E2EOrderPlaced_Steps {
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         try {
             PageFactory.initElements(driver, ShopLandingPage.class);
+            PageFactory.initElements(driver, MouseHoverPage.class);
+           // MouseHoverAction.ByPassDroopalPage();
             ShopLandingPageAction.clickSignIn();
             Autoredirection.redirectUpgrades();
            //GlobalActions.//CommonFunctionscheckTitle("Sign In Page");
@@ -3126,7 +3130,7 @@ public class E2EOrderPlaced_Steps {
         try {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, ConnectedDeviceDetailsPage.class);
-            //ConnectedDeviceDetailsPageAction.capacitySelectOfDeviceDropDown(capacity);
+            ConnectedDeviceDetailsPageAction.capacitySelectOfDeviceDropDown(capacity);
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -3576,6 +3580,7 @@ public class E2EOrderPlaced_Steps {
             String EnvPropFilePath = relativePath + "\\Configurations\\Properties\\AppConfig.properties";
             String Newurl = Filereadingutility.getPropertyValue(EnvPropFilePath, "OldMBBURL");
             driver.navigate().to(Newurl);
+            System.out.println("Launched URL: " + Newurl);
         } catch (Exception e) {
             // TODO Auto-generated catch block
             System.out.println("Unable to Launch MBB Basecomms url");
@@ -4436,6 +4441,22 @@ public class E2EOrderPlaced_Steps {
         }
     }
 
+    @And("^I Land on the basket page by clicking on Add to Basket button in the BuyOut Journey$")
+    public void i_Land_on_the_basket_page_by_clicking_AddToBasket_BuyOut_Journey() {
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, BasketPage.class);
+            PageFactory.initElements(driver, PAYMandPAYGTariffAndExtrasPage.class);
+            PAYMandPAYGTariffAndExtrasPageActions.addToBasket_BoyOut_Journey();
+            Thread.sleep(3000);
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+            System.out.println("Unable to Land on the basket page and choose home delivery option");
+            Assert.fail("Unable to Land on the basket page and choose home delivery option");
+        }
+    }
+
     @And("^Click on 'Continue' button on upgrade page$")
     public void click_on_continue_link_for_the_upgrade_journey() throws Throwable {
         try {
@@ -4456,7 +4477,10 @@ public class E2EOrderPlaced_Steps {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, UpgradeCustomerPage.class);
             //UpgradeCustomerPageActions.selectDeviceInRecommendedDevicesSection(devicename);
-            driver.findElement(By.xpath("(//span[normalize-space()='Apple'])[1]")).click();
+           // driver.findElement(By.xpath("(//span[normalize-space()='Apple'])[1]")).click();
+            JavascriptExecutor executor = (JavascriptExecutor) driver;
+            executor.executeScript("arguments[0].click();", driver.findElement(By.xpath("(//span[normalize-space()='Apple'])[1]")));
+            Thread.sleep(7000);
         } catch (Exception e) {
             e.printStackTrace();
             Assert.fail("Unable to select a device from Recommended devices section");
@@ -4617,7 +4641,7 @@ public class E2EOrderPlaced_Steps {
         }
     }
 
-    @And("^Select a tariff in upgrade journey$")
+    @And("^Select tariff in upgrade journey$")
     public void select_tariff_in_upgrade_journey() {
         try {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
@@ -5538,7 +5562,8 @@ public class E2EOrderPlaced_Steps {
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         try {
             PageFactory.initElements(driver, UpgradePhonesListingPage.class);
-            UpgradeCustomerPageActions.clickTakeOfferAndUpgrade();
+            //UpgradeCustomerPageActions.clickTakeOfferAndUpgrade();
+            driver.findElement(By.xpath("//button[contains(text(),'Continue to upgrade')]")).click();
             Thread.sleep(2000);
         } catch (Exception e) {
             // TODO Auto-generated catch block
@@ -5652,40 +5677,40 @@ public class E2EOrderPlaced_Steps {
             PAYMandPAYGTariffAndExtrasPageActions.SortFilterPosition();
             Thread.sleep(2000);
             PAYMandPAYGTariffAndExtrasPageActions.clickViewAllTariffs();
-            Thread.sleep(2000);
+            Thread.sleep(5000);
 
             ArrayList<Integer> TempList1 = null;
             ArrayList<Integer> TempList2 = null;
 
-            if (SortOption.equals("Monthly data (High to low)")) {
+            if (SortOption.contains("Monthly data (High to low)")) {
                 originalTariffList = PAYMandPAYGTariffAndExtrasPageActions.getCurrentSortOrderUsingMonthlyData();
                 TempList1 = originalTariffList;
                 TempList2 = PAYMandPAYGTariffAndExtrasPageActions
                         .reArrangeListInDescendingBeforeApplyingSort(TempList1);
             }
-            if (SortOption.equals("Monthly data (Low to High)")) {
+            if (SortOption.contains("Monthly data (Low to High)")) {
                 originalTariffList = PAYMandPAYGTariffAndExtrasPageActions.getCurrentSortOrderUsingMonthlyData();
                 TempList1 = originalTariffList;
                 TempList2 = PAYMandPAYGTariffAndExtrasPageActions.reArrangeListInAcendingBeforeApplyingSort(TempList1);
             }
-            if (SortOption.equals("Monthly cost (High to low)")) {
+            if (SortOption.contains("Monthly cost (High to low)")) {
                 originalTariffList = PAYMandPAYGTariffAndExtrasPageActions.getCurrentSortOrderUsingMonthlyCost();
                 TempList1 = originalTariffList;
                 TempList2 = PAYMandPAYGTariffAndExtrasPageActions
                         .reArrangeListInDescendingBeforeApplyingSort(TempList1);
             }
-            if (SortOption.equals("Monthly cost (Low to High)")) {
+            if (SortOption.contains("Monthly cost (Low to High)")) {
                 originalTariffList = PAYMandPAYGTariffAndExtrasPageActions.getCurrentSortOrderUsingMonthlyCost();
                 TempList1 = originalTariffList;
                 TempList2 = PAYMandPAYGTariffAndExtrasPageActions.reArrangeListInAcendingBeforeApplyingSort(TempList1);
             }
-            if (SortOption.equals("Upfront cost (High to low)")) {
+            if (SortOption.contains("Upfront cost (High to low)")) {
                 originalTariffList = PAYMandPAYGTariffAndExtrasPageActions.getCurrentSortOrderUsingUpfrontCost();
                 TempList1 = originalTariffList;
                 TempList2 = PAYMandPAYGTariffAndExtrasPageActions
                         .reArrangeListInDescendingBeforeApplyingSort(TempList1);
             }
-            if (SortOption.equals("Upfront cost (Low to high)")) {
+            if (SortOption.contains("Upfront cost (Low to high)")) {
                 originalTariffList = PAYMandPAYGTariffAndExtrasPageActions.getCurrentSortOrderUsingUpfrontCost();
                 TempList1 = originalTariffList;
                 TempList2 = PAYMandPAYGTariffAndExtrasPageActions.reArrangeListInAcendingBeforeApplyingSort(TempList1);
@@ -5829,35 +5854,35 @@ public class E2EOrderPlaced_Steps {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, PAYMandPAYGTariffAndExtrasPage.class);
 
-            if (DataFilterRange.equals("high")) {
-                if (SortOption.equals("Monthly data (High to low)")
-                        || SortOption.equals("Monthly data (Low to High)")) {
+            if (DataFilterRange.contains("high")) {
+                if (SortOption.contains("Monthly data (High to low)")
+                        || SortOption.contains("Monthly data (Low to High)")) {
                     datalistafter = PAYMandPAYGTariffAndExtrasPageActions.getDataListAfterSelectingFilter();
                 }
-                if (SortOption.equals("Monthly cost (High to low)")
-                        || SortOption.equals("Monthly cost (Low to High)")) {
+                if (SortOption.contains("Monthly cost (High to low)")
+                        || SortOption.contains("Monthly cost (Low to High)")) {
                     monthlycostlistafter = PAYMandPAYGTariffAndExtrasPageActions
                             .getMonthlyCostListAfterSelectingFilter();
                 }
-                if (SortOption.equals("Upfront cost (High to low)")
-                        || SortOption.equals("Upfront cost (Low to high)")) {
+                if (SortOption.contains("Upfront cost (High to low)")
+                        || SortOption.contains("Upfront cost (Low to high)")) {
                     upfrontcostlistafter = PAYMandPAYGTariffAndExtrasPageActions
                             .getUpfrontCostListAfterSelectingFilter();
                 }
                 PAYMandPAYGTariffAndExtrasPageActions.getRange();
                 PAYMandPAYGTariffAndExtrasPageActions.getValuesToCompareWhenGreaterIsSelected();
                 PAYMandPAYGTariffAndExtrasPageActions.verifyListWhenGreaterIsSelected();
-            } else if (DataFilterRange.equals("low") || DataFilterRange.equals("medium")) {
-                if (SortOption.equals("Monthly data (High to low)") || SortOption.equals("Monthly data (Low to High)")) {
+            } else if (DataFilterRange.contains("low") || DataFilterRange.contains("medium")) {
+                if (SortOption.contains("Monthly data (High to low)") || SortOption.contains("Monthly data (Low to High)")) {
                     datalistafter = PAYMandPAYGTariffAndExtrasPageActions.getDataListAfterSelectingFilter();
                 }
-                if (SortOption.equals("Monthly cost (High to low)")
-                        || SortOption.equals("Monthly cost (Low to High)")) {
+                if (SortOption.contains("Monthly cost (High to low)")
+                        || SortOption.contains("Monthly cost (Low to High)")) {
                     monthlycostlistafter = PAYMandPAYGTariffAndExtrasPageActions
                             .getMonthlyCostListAfterSelectingFilter();
                 }
-                if (SortOption.equals("Upfront cost (High to low)")
-                        || SortOption.equals("Upfront cost (Low to high)")) {
+                if (SortOption.contains("Upfront cost (High to low)")
+                        || SortOption.contains("Upfront cost (Low to high)")) {
                     upfrontcostlistafter = PAYMandPAYGTariffAndExtrasPageActions
                             .getUpfrontCostListAfterSelectingFilter();
                 }
@@ -5888,49 +5913,49 @@ public class E2EOrderPlaced_Steps {
             ArrayList<Integer> ListBeforeSort = null;
             ArrayList<Integer> TempList1 = null;
 
-            if (SortOption.equals("Monthly data (High to low)")) {
+            if (SortOption.contains("Monthly data (High to low)")) {
                 TempList1 = datalistafter;
                 ListBeforeSort = PAYMandPAYGTariffAndExtrasPageActions
                         .reArrangeListInDescendingBeforeApplyingSort(TempList1);
             }
-            if (SortOption.equals("Monthly data (Low to High)")) {
+            if (SortOption.contains("Monthly data (Low to High)")) {
                 TempList1 = datalistafter;
                 ListBeforeSort = PAYMandPAYGTariffAndExtrasPageActions
                         .reArrangeListInAcendingBeforeApplyingSort(TempList1);
             }
-            if (SortOption.equals("Monthly cost (High to low)")) {
+            if (SortOption.contains("Monthly cost (High to low)")) {
                 TempList1 = monthlycostlistafter;
                 ListBeforeSort = PAYMandPAYGTariffAndExtrasPageActions
                         .reArrangeListInDescendingBeforeApplyingSort(TempList1);
             }
-            if (SortOption.equals("Monthly cost (Low to High)")) {
+            if (SortOption.contains("Monthly cost (Low to High)")) {
                 TempList1 = monthlycostlistafter;
                 ListBeforeSort = PAYMandPAYGTariffAndExtrasPageActions
                         .reArrangeListInAcendingBeforeApplyingSort(TempList1);
             }
-            if (SortOption.equals("Upfront cost (High to low)")) {
+            if (SortOption.contains("Upfront cost (High to low)")) {
                 TempList1 = upfrontcostlistafter;
                 ListBeforeSort = PAYMandPAYGTariffAndExtrasPageActions
                         .reArrangeListInDescendingBeforeApplyingSort(TempList1);
             }
-            if (SortOption.equals("Upfront cost (Low to high)")) {
+            if (SortOption.contains("Upfront cost (Low to high)")) {
                 TempList1 = upfrontcostlistafter;
                 ListBeforeSort = PAYMandPAYGTariffAndExtrasPageActions
                         .reArrangeListInAcendingBeforeApplyingSort(TempList1);
             }
 
-            if (SortOption.equals("Monthly data (High to low)") || SortOption.equals("Monthly data (Low to High)")) {
+            if (SortOption.contains("Monthly data (High to low)") || SortOption.contains("Monthly data (Low to High)")) {
 
                 ListAfterSort = PAYMandPAYGTariffAndExtrasPageActions.getCurrentSortOrderUsingMonthlyData();
             }
 
-            if (SortOption.equals("Monthly cost (High to low)") || SortOption.equals("Monthly cost (Low to High)")) {
+            if (SortOption.contains("Monthly cost (High to low)") || SortOption.contains("Monthly cost (Low to High)")) {
 
                 ListAfterSort = PAYMandPAYGTariffAndExtrasPageActions.getCurrentSortOrderUsingMonthlyCost();
 
             }
 
-            if (SortOption.equals("Upfront cost (High to low)") || SortOption.equals("Upfront cost (Low to high)")) {
+            if (SortOption.contains("Upfront cost (High to low)") || SortOption.contains("Upfront cost (Low to high)")) {
 
                 ListAfterSort = PAYMandPAYGTariffAndExtrasPageActions.getCurrentSortOrderUsingUpfrontCost();
             }
@@ -5967,16 +5992,16 @@ public class E2EOrderPlaced_Steps {
             ArrayList<Integer> ListAfterSort = null;
             ArrayList<Integer> ListBeforeSort = expectedTariffListBeforeSort;
 
-            if (SortOption.equals("Monthly data (High to low)") || SortOption.equals("Monthly data (Low to High)")) {
+            if (SortOption.contains("Monthly data (High to low)") || SortOption.contains("Monthly data (Low to High)")) {
                 ListAfterSort = PAYMandPAYGTariffAndExtrasPageActions.getCurrentSortOrderUsingMonthlyData();
             }
 
-            if (SortOption.equals("Monthly cost (High to low)") || SortOption.equals("Monthly cost (Low to High)")) {
+            if (SortOption.contains("Monthly cost (High to low)") || SortOption.contains("Monthly cost (Low to High)")) {
                 ListAfterSort = PAYMandPAYGTariffAndExtrasPageActions.getCurrentSortOrderUsingMonthlyCost();
 
             }
 
-            if (SortOption.equals("Upfront cost (High to low)") || SortOption.equals("Upfront cost (Low to high)")) {
+            if (SortOption.contains("Upfront cost (High to low)") || SortOption.contains("Upfront cost (Low to high)")) {
                 ListAfterSort = PAYMandPAYGTariffAndExtrasPageActions.getCurrentSortOrderUsingUpfrontCost();
             }
 
@@ -6764,12 +6789,32 @@ public class E2EOrderPlaced_Steps {
     public void selectAPayAsYouGoBundle() {
         try {
             log.debug("in selecting pay as you go bundle");
-            driver.findElement(By.xpath("//*[@id='callToAction'][1]")).click();
+            //driver.findElement(By.xpath("//*[@id='callToAction'][1]")).click();
+
+            JavascriptExecutor executor = (JavascriptExecutor)driver;
+            executor.executeScript("arguments[0].click();", driver.findElement(By.xpath("//*[@id='callToAction'][1]")));
+            Thread.sleep(5000);
         } catch (Exception e) {
             System.out.println(e.getMessage());
 
         }
 
+    }
+
+    @And("^verify copy text You will need to give details for all fields marked with an asterisk is displayed in PAYG Sim Journey$")
+    public void verify_copy_text_allFields_narked_with_asterisk_PAYG_sim_journey() {
+        try {
+
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, UpgradeCustomerPage.class);
+            verificationsActions.VerifyheaderAsterisk_PAYG_Sim_Journey();
+            log.debug("verify copy text ‘You'll need to give details for all fields marked with an asterisk * is displayed$");
+        } catch (Exception e) {
+            log.debug(e.getMessage());
+            log.debug("verify copy text ‘You'll need to give details for all fields marked with an asterisk * is not displayed$");
+            Assert.fail("verify copy text ‘You'll need to give details for all fields marked with an asterisk * is not displayed$");
+
+        }
     }
 
     @And("^Continue to Review page, click on ‘change delivery’$")
@@ -7832,24 +7877,46 @@ public class E2EOrderPlaced_Steps {
         }
     }*/
 
-    @And("^enter a ([^\"]*) and an ([^\"]*)$")
+    @And("^enter a ([^\"]*) and an ([^\"]*) in Delivery section$")
     public void enter_houseNum_and_PostCode(String houseNum, String pcode) {
         try {
-            DeliveryPageActions.enterHounseNumAndPostalCode( houseNum, pcode);
-        }
-        catch (Exception e) {
+            PageFactory.initElements(driver, DeliveryPage.class);
+            DeliveryPageActions.enterHouseNumAndPostalCode_DeliverySection(houseNum, pcode);
+        } catch (Exception e) {
             // TODO Auto-generated catch block
             System.out.println(e.getStackTrace());
         }
     }
 
 
-    @Then("^the respective ([^\"]*) message should be displayed$")
-    public void respective_Error_messageShould_Be_Displayed(String postalCodeMsg) {
+    @Then("^the respective ([^\"]*) message should be displayed in address look up section$")
+    public void respective_Error_messageShould_Be_Displayed_address_lookup(String postalCodeMsg) {
         try {
-            DeliveryPageActions.enteredInvalidPostcode(postalCodeMsg);
+            PageFactory.initElements(driver, DeliveryPage.class);
+            DeliveryPageActions.enteredInvalidPostcodeAdressLookUp(postalCodeMsg);
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            System.out.println(e.getStackTrace());
         }
-        catch (Exception e) {
+    }
+
+    @Then("^respective ([^\"]*) message displayed in address look up section for using commercial address$")
+    public void errorMessageDisplayedForUsingCommercialAddress_AddressLookup(String postalCodeMsg) {
+        try {
+            PageFactory.initElements(driver, DeliveryPage.class);
+            DeliveryPageActions.enteredCommercialAddress_AddressLookUp(postalCodeMsg);
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            System.out.println(e.getStackTrace());
+        }
+    }
+
+    @Then("^the respective ([^\"]*) message should be displayed in enter manually section$")
+    public void respective_Error_messageShould_Be_Displayed_Enter_Manually_section(String postalCodeMsg) {
+        try {
+            PageFactory.initElements(driver, DeliveryPage.class);
+            DeliveryPageActions.enteredInvalidPostcodeEnterManualSection(postalCodeMsg);
+        } catch (Exception e) {
             // TODO Auto-generated catch block
             System.out.println(e.getStackTrace());
         }

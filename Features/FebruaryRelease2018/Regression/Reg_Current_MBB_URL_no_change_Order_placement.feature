@@ -1,4 +1,4 @@
-Feature: Reg_Current_MBB_URL_no_change_Order_placement
+Feature: Reg_Current_MBB_URL_no_change_Order_placement.feature
 
   @Web
   Scenario Outline: This scenario ensures that there should not be any change for customer with Current MBB URL and customer should be able to place order
@@ -17,5 +17,5 @@ Feature: Reg_Current_MBB_URL_no_change_Order_placement
 
     #Modify the above step to include pdf download
     Examples:
-      | username                         | password | user         |
-      | testaccepta5754@stf.ref.o2.co.uk | test123  | TEST ACCEPTA |
+      | username             | password | user         |
+      | 07770001111@o2.co.uk | test123  | TEST ACCEPTA |

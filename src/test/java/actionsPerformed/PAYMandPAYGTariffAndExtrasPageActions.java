@@ -44,41 +44,41 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 	}
 
 	public static void TariffSelect(String ElementName) throws IOException, InterruptedException {
-		driver.manage().timeouts().implicitlyWait(120, TimeUnit.SECONDS);
-		if (ElementName.equalsIgnoreCase("Randomtariff")) {
-			pageobjects.PAYMandPAYGTariffAndExtrasPage.RandomTariff1.sendKeys(Keys.ENTER);
-			//pageobjects.PAYMandPAYGTariffAndExtrasPage.RandomTariff1.click();
-			System.out.println("Selected a Random Tariff");
-			log.debug("Selected a Random Tariff");
-		}
+        driver.manage().timeouts().implicitlyWait(120, TimeUnit.SECONDS);
+        if (ElementName.equalsIgnoreCase("Randomtariff")) {
+            pageobjects.PAYMandPAYGTariffAndExtrasPage.RandomTariff1.sendKeys(Keys.ENTER);
+            //pageobjects.PAYMandPAYGTariffAndExtrasPage.RandomTariff1.click();
+            System.out.println("Selected a Random Tariff");
+            log.debug("Selected a Random Tariff");
+        }
 
-		if (ElementName.contains("SelectPromotedTariff")) {
-			pageobjects.PAYMandPAYGTariffAndExtrasPage.SelectPromotedTariff.sendKeys(Keys.ENTER);
-			log.debug("Selected a Promoted Tariff");
-		}
-		if (ElementName.contains("fullpaymenttariff1")) {
+        if (ElementName.contains("SelectPromotedTariff")) {
+            pageobjects.PAYMandPAYGTariffAndExtrasPage.SelectPromotedTariff.sendKeys(Keys.ENTER);
+            log.debug("Selected a Promoted Tariff");
+        }
+        if (ElementName.contains("fullpaymenttariff1")) {
 
-			JavascriptExecutor jse = (JavascriptExecutor) driver;
-			jse.executeScript("window.scrollBy(0,350)", "");
-			pageobjects.PAYMandPAYGTariffAndExtrasPage.paydevicefulllink.click();
-			log.debug("Expanded the Full payment Tariff Section");
+            JavascriptExecutor jse = (JavascriptExecutor) driver;
+            jse.executeScript("window.scrollBy(0,350)", "");
+            pageobjects.PAYMandPAYGTariffAndExtrasPage.paydevicefulllink.click();
+            log.debug("Expanded the Full payment Tariff Section");
 
-			pageobjects.PAYMandPAYGTariffAndExtrasPage.RandomfullTariff1.sendKeys(Keys.ENTER);
-			log.debug("Selected a full payment Tariff");
-		}
-		Screenshots.captureScreenshot();
-	}
+            pageobjects.PAYMandPAYGTariffAndExtrasPage.RandomfullTariff1.sendKeys(Keys.ENTER);
+            log.debug("Selected a full payment Tariff");
+        }
+        Screenshots.captureScreenshot();
+    }
 
-	public static void addAccessory() throws InterruptedException, IOException {
-		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
-		log.debug("The Accessory which will be added is  - "
-				+ pageobjects.PAYMandPAYGTariffAndExtrasPage.AddRandomAccessory.getText());
-		pageobjects.PAYMandPAYGTariffAndExtrasPage.AddRandomAccessory.sendKeys(Keys.ENTER);
-		Thread.sleep(2000);
-		log.debug("Added a random accessory to basket");
-		Screenshots.captureScreenshot();
+	 public static void addAccessory() throws InterruptedException, IOException {
+        driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+        log.debug("The Accessory which will be added is  - "
+                + pageobjects.PAYMandPAYGTariffAndExtrasPage.AddRandomAccessory.getText());
+        pageobjects.PAYMandPAYGTariffAndExtrasPage.AddRandomAccessory.sendKeys(Keys.ENTER);
+        Thread.sleep(2000);
+        log.debug("Added a random accessory to basket");
+        Screenshots.captureScreenshot();
 
-	}
+    }
 	public static void addInsurance() throws InterruptedException, IOException {
 		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 		System.out.println("Entering add insurance function");
@@ -99,17 +99,17 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 	}
 
 	public static void addToBasketLive() throws InterruptedException, IOException {
-		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 
-		JavascriptExecutor jse = (JavascriptExecutor) driver;
-		jse.executeScript("window.scrollBy(0,600)", "");
-		pageobjects.PAYMandPAYGTariffAndExtrasPage.addToBasketLive.sendKeys(Keys.ENTER);
-		log.debug("Clicked on Add to Basket in Tariff and Extras page");
-		System.out.println("Clicked on Add to Basket in Tariff and Extras page");
-		Thread.sleep(50000);
-		Screenshots.captureScreenshot();
+        JavascriptExecutor jse = (JavascriptExecutor) driver;
+        jse.executeScript("window.scrollBy(0,600)", "");
+        pageobjects.PAYMandPAYGTariffAndExtrasPage.addToBasketLive.sendKeys(Keys.ENTER);
+        log.debug("Clicked on Add to Basket in Tariff and Extras page");
+        System.out.println("Clicked on Add to Basket in Tariff and Extras page");
+        Thread.sleep(50000);
+        Screenshots.captureScreenshot();
 
-	}
+    }
 
 	public static void addToBasket_BoyOut_Journey() throws InterruptedException, IOException {
 		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
@@ -480,11 +480,11 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 		}
 		/*
 		 * System.out.println("Going to select first insurance");
-		 *
+		 * 
 		 * driver.findElement( By.xpath(
 		 * "(//div[@id='insuranceContainer']/div[@id])[1]//input[@value='Select'][@type='button']"
 		 * )) .click(); System.out.println("Selected first insurance");
-		 *
+		 * 
 		 * Thread.sleep(3000); System.out.println("First insurance price text is " +
 		 * FirstInsurancePrice.getText());
 		 */ Thread.sleep(3000);
@@ -947,46 +947,46 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 	}
 
 	public static ArrayList<Integer> getCurrentSortOrderUsingMonthlyData() throws IOException, InterruptedException {
-		System.out.println("Executing getCurrentSortOrderUsingMonthlyData ()");
+        System.out.println("Executing getCurrentSortOrderUsingMonthlyData ()");
 
-		List<WebElement> DataTextElement = pageobjects.PAYMandPAYGTariffAndExtrasPage.DataTextElement;
-		ArrayList<Integer> tariffListUsingMonthlyData = new ArrayList<Integer>();
-		String data = null, tempdata = null;
-		int a = 0;
-		System.out.println("size " + DataTextElement.size());
-		for (int i = 0; i < DataTextElement.size(); i++) {
-			data = DataTextElement.get(i).getText();
-			System.out.println("data " + data);
-			if (data.contains("MB")) {
-				tempdata = StringUtils.substringBetween(data, "", "MB");
-				a = NumberUtils.toInt(tempdata);
-				System.out.println("a " + a);
-				tariffListUsingMonthlyData.add(a);
-			}
-			if (data.contains("GB")) {
-				tempdata = StringUtils.substringBetween(data, "", "GB");
-				System.out.println("tempdata " + tempdata);
-				a = NumberUtils.toInt(tempdata);
-				a = a * 1024;
-				System.out.println("a " + a);
-				if (a != 0) {
-					tariffListUsingMonthlyData.add(a);
-				}
-			}
+        List<WebElement> DataTextElement = pageobjects.PAYMandPAYGTariffAndExtrasPage.DataTextElement;
+        ArrayList<Integer> tariffListUsingMonthlyData = new ArrayList<Integer>();
+        String data = null, tempdata = null;
+        int a = 0;
+        System.out.println("size " + DataTextElement.size());
+        for (int i = 0; i < DataTextElement.size(); i++) {
+            data = DataTextElement.get(i).getText();
+            System.out.println("data " + data);
+            if (data.contains("MB")) {
+                tempdata = StringUtils.substringBetween(data, "", "MB");
+                a = NumberUtils.toInt(tempdata);
+                System.out.println("a " + a);
+                tariffListUsingMonthlyData.add(a);
+            }
+            if (data.contains("GB")) {
+                tempdata = StringUtils.substringBetween(data, "", "GB");
+                System.out.println("tempdata " + tempdata);
+                a = NumberUtils.toInt(tempdata);
+                a = a * 1024;
+                System.out.println("a " + a);
+                if (a != 0) {
+                    tariffListUsingMonthlyData.add(a);
+                }
+            }
 
-		}
+        }
 
-		System.out.println('\n');
+        System.out.println('\n');
 
-		System.out.println("----------------------Original List--------------");
-		for (int i = 0; i < tariffListUsingMonthlyData.size(); i++) {
-			System.out.println(tariffListUsingMonthlyData.get(i));
+        System.out.println("----------------------Original List--------------");
+        for (int i = 0; i < tariffListUsingMonthlyData.size(); i++) {
+            System.out.println(tariffListUsingMonthlyData.get(i));
 
-		}
-		System.out.println("---------------------------------------------");
-		Screenshots.captureScreenshot();
-		return tariffListUsingMonthlyData;
-	}
+        }
+        System.out.println("---------------------------------------------");
+        Screenshots.captureScreenshot();
+        return tariffListUsingMonthlyData;
+    }
 
 	public static ArrayList<Integer> getCurrentSortOrderUsingMonthlyCost() throws IOException, InterruptedException {
 		List<WebElement> DataTextElement = pageobjects.PAYMandPAYGTariffAndExtrasPage.MonthlyCostTextElement;
@@ -1051,7 +1051,7 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 	}
 
 	public static void verifyTariffSortedAsPerSortOption(ArrayList<Integer> ListBeforeApplyingSort,
-														 ArrayList<Integer> ListAfterApplyingSort) throws IOException, InterruptedException {
+			ArrayList<Integer> ListAfterApplyingSort) throws IOException, InterruptedException {
 
 		try {
 
