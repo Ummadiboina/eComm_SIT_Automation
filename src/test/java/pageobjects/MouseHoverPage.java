@@ -148,7 +148,7 @@ public class MouseHoverPage extends Environment {
 	public static WebElement MoveMouseOnPayGSimo;
 
 	//Below will click on the PAYG Tablets link
-	@FindBy(how = How.XPATH, using = ("//a[@manual_cm_re='meganav_Shop-_-Tablets-_-Pay and Go']"))
+	@FindBy(how = How.XPATH, using = ("//li/a[normalize-space()='Pay As You Go']"))
 	public static WebElement MoveMouseonPayGTablets;
 	//a[@manual_cm_re='meganav_Shop-_-Tablets-_-Pay and Go']
 

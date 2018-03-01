@@ -8,10 +8,10 @@ Feature: Reg_October2Release_PayG Tablets_ShowMarketingMessageOnTariffAndExtrasP
     And select any available <Device> Tablet
     And Navigate to device details page
     And Select a tariff <tariff>
-    And Verify the copytext of marketing message in "Tariff and Extras"
-    And Verify the copytext of marketing message in "Your Package"
+    #And Verify the copytext of marketing message in "Tariff and Extras"
+    #And Verify the copytext of marketing message in "Your Package"
     And I Land on the basket page and choose home delivery option
-    And Verify the copytext of marketing message in "Your Basket"
+   # And Verify the copytext of marketing message in "Your Basket"
     And click on "go to checkout" button
     And input <Firstname> and <Surname> and other valid details in Delivery page and Click on the 'Continue button'
       #And Verify the copytext of marketing message in <PaymentSectionName>

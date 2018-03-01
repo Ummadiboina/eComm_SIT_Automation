@@ -6,12 +6,12 @@ Feature: Reg_Trustev_AFA_PAYM_Tablet_WithAccessoryClick_and_Collect
     And performs Acquisition for New user
     And Select a valid PayM <Device>
     And Select valid <Tariffs> from tariffs tab
-    And Select a valid Accessory <Accessory>
     And select a valid Handset and Tariff combination
+    And Select a valid Accessory <Accessory>
     And select a valid store for Click and Collect
     And Validate all the Basket content and checkout
     Then perform all the advisory checks
-    Then perform the credit checks using valid <Firstname>, <Surname>, <HouseNumber>, <PostCode> and valid <Username>
+    And perform the credit checks using valid <Firstname>, <Surname>, <HouseNumber>, <PostCode> and valid <Username>
     And Register customer with valid <Password>, <Confirm_Password>, <Security_Answer> in delivery page
     When Pay by card for PAYM device
     Then Order confirmation message should be displayed

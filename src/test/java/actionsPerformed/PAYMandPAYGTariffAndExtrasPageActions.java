@@ -111,6 +111,19 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 
     }
 
+	public static void addToBasket_BoyOut_Journey() throws InterruptedException, IOException {
+		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+
+		JavascriptExecutor jse = (JavascriptExecutor) driver;
+		jse.executeScript("window.scrollBy(0,600)", "");
+		pageobjects.PAYMandPAYGTariffAndExtrasPage.addToBasketBuyOutJourney.sendKeys(Keys.ENTER);
+		log.debug("Clicked on Add to Basket in Tariff and Extras page");
+		System.out.println("Clicked on Add to Basket in Tariff and Extras page");
+		Thread.sleep(50000);
+		Screenshots.captureScreenshot();
+
+	}
+
 	public static void addToBasketDockHeader() throws IOException, InterruptedException {
 		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 		pageobjects.PAYMandPAYGTariffAndExtrasPage.addToBasketDockHeader.sendKeys(Keys.ENTER);

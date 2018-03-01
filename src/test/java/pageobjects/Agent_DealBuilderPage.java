@@ -57,8 +57,8 @@ public class Agent_DealBuilderPage {
 	@FindBy(how = How.XPATH, using = "//table[@id='prepayDeviceTable']/tbody/tr/td/a/img")
 	public static WebElement SelectInStockPAYGDevice;
 
-	@FindBy(how = How.XPATH, using = "//table[@id='accessoryTable']/tbody/tr/td/a/img")
-	public static WebElement SelectSeachedaccessory;
+	@FindBy(how = How.XPATH, using = "(//table[@id='accessoryTable']/tbody/tr/td/a/img)[1]")
+	public static WebElement SelectSearchedaccessory;
 
 	@FindBy(how = How.XPATH, using = "//*[@id='dataAllowances']/table/tbody/tr/td[1]/a")
 	public static WebElement SelectingAvailableDataAllowance;
