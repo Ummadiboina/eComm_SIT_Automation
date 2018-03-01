@@ -19,7 +19,7 @@ public class MouseHoverAction extends Environment {
 
 	public static void ByPassDroopalPage() throws Exception {
 		driver.manage().timeouts().implicitlyWait(150, TimeUnit.SECONDS);
-		try{
+		try {
 			System.out.println("Performing workaround to navigate away from Droopal pages");
 			log.debug("Performing workaround to navigate away from Droopal pages");
 			Thread.sleep(5000);
@@ -40,8 +40,7 @@ public class MouseHoverAction extends Environment {
 			pageobjects.MouseHoverPage.MoveMouseonPayMSimsDroopal.click();
 			Thread.sleep(5000);
 			System.out.println("Clicked on the Droopal-PayMonthlySimsLink");
-		}
-		catch (ElementNotVisibleException e) {
+		} catch (ElementNotVisibleException e) {
 			System.out.println("Unable to perform workaround to navigate away from Droopal pages");
 			Thread.sleep(2000);
 		}
@@ -49,8 +48,8 @@ public class MouseHoverAction extends Environment {
 
 	public static void PayMPhonesLandingPage() throws Exception {
 		driver.manage().timeouts().implicitlyWait(150, TimeUnit.SECONDS);
-		/*boolean Worksfine = false;
-		while (!Worksfine) {*/
+        /*boolean Worksfine = false;
+        while (!Worksfine) {*/
 		try {
 			System.out.println("Performing PAYM Phones landing page navigations");
 			log.debug("Performing PAYM Phones landing page navigations");
@@ -429,7 +428,6 @@ public class MouseHoverAction extends Environment {
 				Screenshots.captureScreenshot();
 
 
-
 			} catch (ElementNotVisibleException e) {
 				// check if popup is present, if yes, handle it.
 				Environment.driver.switchTo().frame("edr_l_first");
@@ -619,7 +617,7 @@ public class MouseHoverAction extends Environment {
 			log.debug("Performing Accessories navigations");
 			driver.navigate().refresh();
 			Thread.sleep(5000);
-			driver.manage().timeouts().implicitlyWait(1,TimeUnit.MINUTES);
+			driver.manage().timeouts().implicitlyWait(1, TimeUnit.MINUTES);
 /*
 				Point coordinates = pageobjects.MouseHoverPage.MoveMouseOnShopTab.getLocation();
 				Robot robot = new Robot();
@@ -836,7 +834,7 @@ public class MouseHoverAction extends Environment {
 				System.out.println("Hovered over ipad option");
 				Thread.sleep(2000);
 				WebElement element = pageobjects.MouseHoverPage.MoveMouseOniPad;
-				JavascriptExecutor executor = (JavascriptExecutor)driver;
+				JavascriptExecutor executor = (JavascriptExecutor) driver;
 				executor.executeScript("arguments[0].click();", element);
 				//pageobjects.MouseHoverPage.MoveMouseOniPad.click();
 				log.debug("Moving Mouse on the iPad tab");
@@ -986,6 +984,7 @@ public class MouseHoverAction extends Environment {
 			}
 
 	}
+
 	public static void MobilePayGSimLandingPage() throws Exception {
 		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 		boolean Worksfine = false;
@@ -1001,13 +1000,13 @@ public class MouseHoverAction extends Environment {
 				log.debug("Clicked on sims link");
 				driver.findElement(By.xpath("//a[@href='https://www.o2.co.uk/shop/sim-cards/pay-as-you-go/'][@manual_cm_re='meganav_Shop-_-Sims-_-Pay & Go sims']")).click();
 				log.debug("Clicking on PayG Sims");
-				String ExpectedText="Pay As You Go sims";
-				String ActualText=driver.findElement(By.xpath("//div[@class='info']/h1")).getText();
+				String ExpectedText = "Pay As You Go sims";
+				String ActualText = driver.findElement(By.xpath("//div[@class='info']/h1")).getText();
 				Assert.assertTrue(ActualText.contains(ExpectedText),
 						"Assertion Failed: Expected Message: " + ExpectedText + " is not present in the page");
 				log.debug("Assertion Worked");
 
-				Worksfine=true;
+				Worksfine = true;
 
 
 			} catch (Exception e) {
@@ -1025,50 +1024,62 @@ public class MouseHoverAction extends Environment {
 
 	public static void PayasyouGoTablets() throws Exception {
 		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
-		boolean Worksfine = false;
-		while (!Worksfine) {
-			try {
-				System.out.println("Performing Pay as you go Tablets navigations");
-				log.debug("Performing Pay as you go Tablets navigations");
 
-				Actions action = new Actions(driver);
-				action.moveToElement(pageobjects.MouseHoverPage.MoveMouseOnShopTab).build().perform();
+		try {
+			System.out.println("Performing Pay as you go Tablets navigations");
+			log.debug("Performing Pay as you go Tablets navigations");
 
-				//Actions action = new Actions(driver);
-				action.moveToElement(pageobjects.MouseHoverPage.MoveMouseOnTablets).build().perform();
-				log.debug("Moving Mouse on the Tablets dropdown");
+			Thread.sleep(3000);
+			Point coordinates = pageobjects.MouseHoverPage.MoveMouseOnShopTab.getLocation();
+			Robot robot = new Robot();
+			robot.mouseMove(coordinates.getX(), coordinates.getY() + 120);
+			log.debug("Moving Mouse onThread.sleep(2000); the Shop Tab");
 
-				Thread.sleep(1000);
-				action.moveToElement(pageobjects.MouseHoverPage.MoveMouseonPayGTablets).build().perform();
+			Actions action = new Actions(driver);
+			action.moveToElement(pageobjects.MouseHoverPage.MoveMouseOnShopTab).perform();
+			System.out.println("Mouse over on the Shop Header ");
+			Thread.sleep(2000);
+
+			Actions action1 = new Actions(driver);
+			action1.moveToElement(pageobjects.MouseHoverPage.MoveMouseOnTablets).perform();
+			System.out.println("Mouse over Shop---> Tablets ");
+			log.debug("Moving Mouse on the Tablets dropdown");
+			Thread.sleep(2000);
+
+			/*	action.moveToElement(pageobjects.MouseHoverPage.MoveMouseonPayGTablets).build().perform();
 				log.debug("Moving Mouse on the PAYG Tablets link");
-				Screenshots.captureScreenshot();
+				Screenshots.captureScreenshot();*/
 
-				Thread.sleep(1000);
-				pageobjects.MouseHoverPage.MoveMouseonPayGTablets.click();
-				Screenshots.captureScreenshot();
+			pageobjects.MouseHoverPage.MoveMouseonPayGTablets.click();
+			System.out.println("Mouse over Shop---> Tablets--> Pay as you go Tablets ");
+			Screenshots.captureScreenshot();
+			Thread.sleep(5000);
 
-				log.debug("Clicking on PayM Phones");
+			log.debug("Clicking on Pay as you go Tablets");
+
+			Point coordinates2 = driver.findElement(By.xpath("//*[@id='header-consumer']/div")).getLocation();
+
+			Robot robot2 = new Robot();
+			robot2.mouseMove(coordinates2.getX(), coordinates.getY() + 300);
+			log.debug("Moved Mouse to somewhere side of page");
 
 
-				Worksfine = true;
-				Screenshots.captureScreenshot();
+		} catch (ElementNotVisibleException e) {
+			// check if popup is present, if yes, handle it.
+			Environment.driver.switchTo().frame("edr_l_first");
+			System.out.println("********We are switch to the iframe*******");
+			log.debug("Popup has appeared on the screen, Hence trying to close the survey");
+			Screenshots.captureScreenshot();
+			// Saying no to survey
+			driver.findElement(By.xpath("//a[@id='no']/span")).click();
+			log.debug("Closing the popup by saying No to Survey");
+			System.out.println("*******Saying no to survey*******");
+			System.out.println("*********Existing the popups present in iframe***************");
+			log.debug("Exiting the Survey");
+			Environment.driver.switchTo().defaultContent();
+			Thread.sleep(2000);
 
-			} catch (ElementNotVisibleException e) {
-				// check if popup is present, if yes, handle it.
-				Environment.driver.switchTo().frame("edr_l_first");
-				System.out.println("********We are switch to the iframe*******");
-				log.debug("Popup has appeared on the screen, Hence trying to close the survey");
-				Screenshots.captureScreenshot();
-				// Saying no to survey
-				driver.findElement(By.xpath("//a[@id='no']/span")).click();
-				log.debug("Closing the popup by saying No to Survey");
-				System.out.println("*******Saying no to survey*******");
-				System.out.println("*********Existing the popups present in iframe***************");
-				log.debug("Exiting the Survey");
-				Environment.driver.switchTo().defaultContent();
-				Thread.sleep(2000);
-
-			}
 		}
+
 	}
 }

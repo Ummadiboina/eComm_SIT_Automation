@@ -118,6 +118,7 @@ public class PaymentPageActions extends Environment {
             log.debug("Home Address Selected");
             Thread.sleep(3000);
         }
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         pageobjects.PaymentPage.Stay_Address_Years.sendKeys("9");
         log.debug("Entered the stayed at address - 9");
 
