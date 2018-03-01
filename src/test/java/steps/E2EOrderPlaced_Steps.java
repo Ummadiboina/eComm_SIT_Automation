@@ -45,6 +45,7 @@ public class E2EOrderPlaced_Steps {
     ArrayList<Integer> monthlycostlistafter = new ArrayList<Integer>();
     ArrayList<Integer> upfrontcostlistafter = new ArrayList<Integer>();
     final static Logger log = Logger.getLogger("E2EOrderPlaced_Steps");
+    static int BuyOutValue = 0;
 
     public E2EOrderPlaced_Steps() {
         driver = Hooks.driver;
@@ -1270,6 +1271,7 @@ public class E2EOrderPlaced_Steps {
         try {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, PaymentPage.class);
+
             Thread.sleep(10000);
             //CommonFunctionscheckTitle("Payment Page");
             PaymentPageActions.Set_Bank_details(Username);
@@ -2767,7 +2769,7 @@ public class E2EOrderPlaced_Steps {
             PageFactory.initElements(driver, MouseHoverPage.class);
             PageFactory.initElements(driver, UpgradePhonesListingPage.class);
             MouseHoverAction.UpgradeandUpgradeNow();
-            Thread.sleep(2000);
+            Thread.sleep(5000);
         } catch (Exception e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
@@ -5561,7 +5563,7 @@ public class E2EOrderPlaced_Steps {
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         try {
             PageFactory.initElements(driver, UpgradePhonesListingPage.class);
-            //UpgradeCustomerPageActions.clickTakeOfferAndUpgrade();
+           // UpgradeCustomerPageActions.clickTakeOfferAndUpgrade();
             driver.findElement(By.xpath("//button[contains(text(),'Continue to upgrade')]")).click();
             Thread.sleep(2000);
         } catch (Exception e) {
@@ -5591,8 +5593,10 @@ public class E2EOrderPlaced_Steps {
     public void verifyBuyOutOfferInMyPackage() {
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         try {
+            int tmpBuyOutValue=0;
             PageFactory.initElements(driver, UpgradePhonesListingPage.class);
-            UpgradeCustomerPageActions.verifyBuyOutDisplayedInMyPackage();
+            tmpBuyOutValue=UpgradeCustomerPageActions.verifyBuyOutDisplayedInMyPackage();
+            BuyOutValue=tmpBuyOutValue;
             Thread.sleep(2000);
         } catch (Exception e) {
             // TODO Auto-generated catch block
@@ -5606,8 +5610,12 @@ public class E2EOrderPlaced_Steps {
     public void verifyBuyOutOfferInBasketPage() {
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         try {
+
             PageFactory.initElements(driver, UpgradePhonesListingPage.class);
-            UpgradeCustomerPageActions.verifyBuyOutDisplayedInBasketPage();
+            PageFactory.initElements(driver, UpgradeCustomerPage.class);
+            int BouOutValueFromMyPackageSection = BuyOutValue;
+
+            UpgradeCustomerPageActions.verifyBuyOutDisplayedInBasketPage(BouOutValueFromMyPackageSection);
             Thread.sleep(2000);
         } catch (Exception e) {
             // TODO Auto-generated catch block
@@ -5617,26 +5625,32 @@ public class E2EOrderPlaced_Steps {
         }
     }
 
-    @And("^verify if buyout offer is displayed in OTAC page$")
-    public void verifyBuyOutOfferInOTACPage() {
+    @And("^verify if buyout offer is displayed under Order Summary section in ([^\"]*) page$")
+    public void verifyBuyOutOfferInOTACPage(String pageName) {
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         try {
+
             PageFactory.initElements(driver, UpgradePhonesListingPage.class);
-            UpgradeCustomerPageActions.verifyBuyOutDisplayed();
+            PageFactory.initElements(driver, UpgradeCustomerPage.class);
+            int BouOutValueFromMyPackageSection = BuyOutValue;
+
+            UpgradeCustomerPageActions.verifyBuyOutDisplayed_OrderSummarySection(BouOutValueFromMyPackageSection, pageName);
             Thread.sleep(2000);
         } catch (Exception e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
-            Assert.fail("Unable to verify if the buyout offer is displayed in OTAC");
-
+            Assert.fail("Unable to verify if the buyout offer is displayed in "+pageName+" page");
         }
     }
 
-    @And("^verify if buyout offer is displayed in ordersummary sections$")
+    /*@And("^verify if buyout offer is displayed in ordersummary sections$")
     public void verifyBuyOutOfferInOSSection() {
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         try {
             PageFactory.initElements(driver, UpgradePhonesListingPage.class);
+            PageFactory.initElements(driver, UpgradeCustomerPage.class);
+            int BouOutValueFromMyPackageSection = BuyOutValue;
+
             UpgradeCustomerPageActions.verifyBuyOutDisplayed();
             Thread.sleep(2000);
         } catch (Exception e) {
@@ -5645,7 +5659,7 @@ public class E2EOrderPlaced_Steps {
             Assert.fail("Unable to verify if the buyout offer is displayed in My Package section");
 
         }
-    }
+    }*/
 
     @Given("^Search for ([^\\\\\\\"]*) device$")
     public void search_for_Delayed_device(String Status) {

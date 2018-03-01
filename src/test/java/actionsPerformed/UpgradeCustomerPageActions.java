@@ -6,7 +6,9 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 import GlobalActions.CommonUtilities;
+import GlobalActions.scrollToAnElement;
 import junit.framework.AssertionFailedError;
+import org.apache.commons.lang3.math.NumberUtils;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -58,8 +60,8 @@ public class UpgradeCustomerPageActions extends Environment {
 		 * 
 		 * System.out.println("Logged in successfully"); }
 		 */
-		/*
-		 * try { System.out.println("Going to click on Continue link");
+        /*
+         * try { System.out.println("Going to click on Continue link");
 		 * pageobjects.UpgradeCustomerPage.Continue.click();
 		 * 
 		 * } catch (Exception e) { // TODO Auto-generated catch block
@@ -84,7 +86,7 @@ public class UpgradeCustomerPageActions extends Environment {
     public static void Signin() throws InterruptedException, IOException {
         System.out.println("in signin function");
         JavascriptExecutor jse = (JavascriptExecutor) driver;
-        jse.executeScript("arguments[0].click()",pageobjects.UpgradeCustomerPage.Signinlink2);
+        jse.executeScript("arguments[0].click()", pageobjects.UpgradeCustomerPage.Signinlink2);
         //pageobjects.UpgradeCustomerPage.Signinlink2.click();
         System.out.println("Sign in button clicked");
         Screenshots.captureScreenshot();
@@ -420,7 +422,7 @@ public class UpgradeCustomerPageActions extends Environment {
             Assert.fail("Provided tariff is not present in the list of tariffs");
         }*/
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-        JavascriptExecutor executor = (JavascriptExecutor)driver;
+        JavascriptExecutor executor = (JavascriptExecutor) driver;
         executor.executeScript("arguments[0].click();", driver.findElement(By.xpath("(//button[@type='button']//*[normalize-space()='Select'])[1]")));
 
         Screenshots.captureScreenshot();
@@ -486,7 +488,7 @@ public class UpgradeCustomerPageActions extends Environment {
         }
         if (flag == false) {
             driver.findElement(By.xpath("(//div[contains(@class, 'grid-tile')]/div/button[@id='callToAction'])[1]"));
-           // Assert.fail("Provided tariff is not present in the list of tariffs");
+            // Assert.fail("Provided tariff is not present in the list of tariffs");
         }
         Screenshots.captureScreenshot();
     }
@@ -1199,12 +1201,12 @@ public class UpgradeCustomerPageActions extends Environment {
         // pageobjects.UpgradeCustomerPage.RecycleWidget.click();
         if (driver.findElement(By.xpath("//*[@id='newRecycleOptionsTile']")).isDisplayed()) {
             System.out.println("Upgrade and Recycle options is displayed");
-           // driver.findElement(By.xpath("//*[@id='newRecycleOptionsTile']//*[@ng-click='selectRecycleDevice();']/span")).click();
-            JavascriptExecutor executor = (JavascriptExecutor)driver;
-            executor.executeScript("arguments[0].click();",driver.findElement( By.xpath("//div[@class='recycle-device not-your-device-box']/a/span")));
+            // driver.findElement(By.xpath("//*[@id='newRecycleOptionsTile']//*[@ng-click='selectRecycleDevice();']/span")).click();
+            JavascriptExecutor executor = (JavascriptExecutor) driver;
+            executor.executeScript("arguments[0].click();", driver.findElement(By.xpath("//div[@class='recycle-device not-your-device-box']/a/span")));
 
 
-          //  driver.findElement( By.xpath("//div[@class='recycle-device not-your-device-box']/a/span")).click();
+            //  driver.findElement( By.xpath("//div[@class='recycle-device not-your-device-box']/a/span")).click();
             System.out.println("Clicked on the choose your device link");
         } else {
             Assert.fail("Unable to verify recycle options");
@@ -1218,8 +1220,8 @@ public class UpgradeCustomerPageActions extends Environment {
         driver.findElement(By.id("recycleCredit")).click();
         System.out.println("Clicked on Radio button next to Recycle and get up to XXXX credit");
         //driver.findElement(By.xpath("//button[contains(text(),'upgrade now')]")).click();
-        JavascriptExecutor executor = (JavascriptExecutor)driver;
-        executor.executeScript("arguments[0].click();",driver.findElement(By.xpath("//button[contains(text(),'upgrade now')]")));
+        JavascriptExecutor executor = (JavascriptExecutor) driver;
+        executor.executeScript("arguments[0].click();", driver.findElement(By.xpath("//button[contains(text(),'upgrade now')]")));
         Thread.sleep(3000);
 
         System.out.println("Clicked on upgrade now button");
@@ -1634,90 +1636,134 @@ public class UpgradeCustomerPageActions extends Environment {
         Screenshots.captureScreenshot();
     }
 
-    public static void verifyBuyOutDisplayedInMyPackage() throws IOException, InterruptedException {
+    public static int verifyBuyOutDisplayedInMyPackage() throws IOException, InterruptedException {
         System.out.println("verifyBuyOutDisplayedInMyPackage");
-        String AcText1 = null, AcText2 = null, AcText3 = null, AcText4 = null, cost1 = null, cost2 = null;
-        String ExText1 = null, ExText2 = null, ExText3 = null, ExText4 = null;
-        AcText1 = UpgradeCustomerPage.BuyoutText1MyPkg.getText();
-        AcText2 = UpgradeCustomerPage.BuyoutText2MyPkg.getText();
-        AcText3 = UpgradeCustomerPage.BuyoutText3MyPkg.getText();
-        AcText4 = UpgradeCustomerPage.BuyoutText4MyPkg.getText();
-        cost1 = UpgradeCustomerPage.BuyoutCost1MyPkg.getText();
-        cost2 = UpgradeCustomerPage.BuyoutCost2MyPkg.getText();
 
-        ExText1 = "Left to pay on your existing device";
-        ExText2 = "The balance still to pay on your current";
-        ExText3 = "Upgrade on us";
-        ExText4 = "We'll pay off the rest of your Device Plan, and you can keep your current device. If your next airtime bill has already been scheduled, it may still be taken.";
-//!cost2.isEmpty()
-        if (AcText1.contains(ExText1) && (AcText2.contains(ExText2) && (AcText3.contains(ExText3))
-                && (AcText4.contains(ExText4) && StringUtils.isNotBlank(cost1) && StringUtils.isNotBlank(cost2)))) {
-            System.out.println("Buy out offer text is displayed as expected");
-            System.out.println(AcText1 + "  " + cost1);
-            System.out.println(AcText2);
-            System.out.println(AcText3 + "  " + cost2);
-            System.out.println(AcText4);
+        String AcText = null, Actcost1 = null, Actcost2 = null, tmpcost1 = null, tmpcost2 = null;
+        int a = 0;
+        int b = 0;
+
+        AcText = UpgradeCustomerPage.BuyoutTextMyPkg.getText();
+        Actcost1 = UpgradeCustomerPage.BuyoutCost1MyPkg.getText();
+        Actcost2 = UpgradeCustomerPage.BuyoutCost2MyPkg.getText();
+        System.out.println("Left to Pay Value: " + Actcost1);
+        System.out.println("Buy out Amount: " + Actcost2);
+
+
+        tmpcost1 = org.apache.commons.lang3.StringUtils.substringBetween(Actcost1, "£", ".");
+        a = NumberUtils.toInt(tmpcost1);
+        tmpcost2 = org.apache.commons.lang3.StringUtils.substringBetween(Actcost2, "£", ".");
+        b = NumberUtils.toInt(tmpcost2);
+
+        if (AcText.contains("Upgrade on us")) {
+            System.out.println("Buy out offer text is displayed as expected: " + AcText);
+        } else {
+            System.out.println("Buy out offer text is not displayed as expected: " + AcText);
+            Assert.fail("Buy out offer text is not displayed as expected");
+        }
+        if (a == b) {
+            System.out.println("Buy out values are matching: " + ", Left To Pay: " + a + ", Buy Out Amount: " + b);
+        } else {
+            System.out.println("Buy out values are not matching: " + ", Left To Pay: " + a + ", Buy Out Amount: " + b);
+            Assert.fail("Buy out values are not matching");
+        }
+        if (Actcost2.contains("-")) {
+            System.out.println("Buy Out Amount contains negative value: " + Actcost2);
 
         } else {
-            System.out.println("Buy out offer text displayed is not as expected");
-            System.out.println(AcText1 + "  " + cost1);
-            System.out.println(AcText2);
-            System.out.println(AcText3 + "  " + cost2);
-            System.out.println(AcText4);
-            Assert.fail("Buy out text is not as expected");
-
+            System.out.println("Buy Out Amount does not contain negative value: " + Actcost2);
+            Assert.fail("Buy Out Amount does not contain negative value");
         }
         Screenshots.captureScreenshot();
-
+        return a;
     }
 
-    public static void verifyBuyOutDisplayedInBasketPage() throws IOException, InterruptedException {
+    public static void verifyBuyOutDisplayedInBasketPage(int BouOutValueFromMyPackageSection) throws IOException, InterruptedException {
         System.out.println("verifyBuyOutDisplayedInBasketPage");
-        String AcText1 = null, AcText2 = null, AcText3 = null, AcText4 = null, cost1 = null, cost2 = null;
-        String ExText1 = null, ExText2 = null, ExText3 = null, ExText4 = null;
+        String AcText = null, Actcost1 = null, Actcost2 = null, tmpcost1 = null, tmpcost2 = null;
+        int a = 0;
+        int b = 0;
+        int BouOutValue_FromMyPackageSection = BouOutValueFromMyPackageSection;
 
-        AcText1 = UpgradeCustomerPage.BuyOutText1BasketPage.getText();
-        AcText2 = UpgradeCustomerPage.BuyOutText2BasketPage.getText();
-        AcText3 = UpgradeCustomerPage.BuyOutText3BasketPage.getText();
-        AcText4 = UpgradeCustomerPage.BuyOutText4BasketPage.getText();
-        cost1 = UpgradeCustomerPage.BuyOutCost1BasketPage.getText();
-        cost2 = UpgradeCustomerPage.BuyOutCost2BasketPage.getText();
+        scrollToAnElement.scrollToElement(UpgradeCustomerPage.BuyOutTextBasketPage);
 
-        ExText1 = "Your Phone Plan balance";
-        ExText2 = "This is the payment amount required for your current CCA account to be settled";
-        ExText3 = "Upgrade on us";
-        ExText4 = "We�ll pay off the rest of your Device Plan, and you can keep your current device. If your next airtime bill has already been scheduled, it may still be taken.";
+        AcText = UpgradeCustomerPage.BuyOutTextBasketPage.getText();
+        Actcost1 = UpgradeCustomerPage.BuyOutCost1BasketPage.getText();
+        Actcost2 = UpgradeCustomerPage.BuyOutCost2BasketPage.getText();
 
-        System.out.println(AcText1 + "   " + cost1);
-        System.out.println(AcText2);
-        System.out.println(AcText3 + "   " + cost2);
-        System.out.println(AcText4);
+        System.out.println("Left to Pay Value: " + Actcost1);
+        System.out.println("Buy out Amount: " + Actcost2);
 
-        if (AcText1.equals(ExText1)
-                && (AcText2.equals(ExText2) && (AcText3.equals(ExText3)) && (AcText4.equals(ExText4)))) {
-            System.out.println("Buy out offer text is displayed as expected");
-            System.out.println("Your Phone Plan balance is " + cost1);
-            System.out.println("Upgrade on us for " + cost2);
+        tmpcost1 = org.apache.commons.lang3.StringUtils.substringBetween(Actcost1, "£", ".");
+        a = NumberUtils.toInt(tmpcost1);
+        tmpcost2 = org.apache.commons.lang3.StringUtils.substringBetween(Actcost2, "£", ".");
+        b = NumberUtils.toInt(tmpcost2);
+
+        if (AcText.contains("Upgrade on us")) {
+            System.out.println("Buy out offer text is displayed as expected: " + AcText);
         } else {
-            Assert.fail("Buy out text is not as expected");
+            System.out.println("Buy out offer text is not displayed as expected: " + AcText);
+            Assert.fail("Buy out offer text is not displayed as expected");
         }
+        if (a == b) {
+            System.out.println("Buy out values are matching: " + ", Left To Pay: " + a + ", Buy Out Amount: " + b);
+        } else {
+            System.out.println("Buy out values are not matching: " + ", Left To Pay: " + a + ", Buy Out Amount: " + b);
+            Assert.fail("Buy out values are not matching");
+        }
+        if (Actcost2.contains("-")) {
+            System.out.println("Buy Out Amount contains negative value: " + Actcost2);
+
+        } else {
+            System.out.println("Buy Out Amount does not contain negative value: " + Actcost2);
+            Assert.fail("Buy Out Amount does not contain negative value");
+        }
+        if (b == BouOutValue_FromMyPackageSection) {
+            System.out.println("Buy out value from Basket Page is matching with the BoyOut value from MyPackage Section: " + ", Boy Out Value from My Package Section: " + BouOutValue_FromMyPackageSection + ", Buy Out Amount from Basket Page: " + b);
+        } else {
+            System.out.println("Buy out value from Basket Page is not matching with the BoyOut value from MyPackage Section: " + ", Boy Out Value from My Package Section: " + BouOutValue_FromMyPackageSection + ", Buy Out Amount from Basket Page: " + b);
+            Assert.fail("Buy out values from MyPackage Section and Basket Page are not matching");
+        }
+
         Screenshots.captureScreenshot();
     }
 
-    public static void verifyBuyOutDisplayed() throws IOException, InterruptedException {
+    public static void verifyBuyOutDisplayed_OrderSummarySection(int BouOutValueFromMyPackageSection, String pageName) throws IOException, InterruptedException {
         System.out.println("verify Buy Out is displayed");
         @SuppressWarnings("unused")
-        String BuyoutText = null, BuyoutCost = null, Title = null;
-        BuyoutText = UpgradeCustomerPage.BuyOutTextOTACPage.getText();
-        BuyoutCost = UpgradeCustomerPage.BuyOutCostOTACPage.getText();
+        String AcText = null, Actcost1 = null, tmpcost1 = null, Title = null;
+        int a = 0;
+        int BouOutValue_FromMyPackageSection = BouOutValueFromMyPackageSection;
+
+        AcText = UpgradeCustomerPage.BuyOutText_OrderSummarySection.getText();
+        Actcost1 = UpgradeCustomerPage.BuyOutCost_OrderSummarySection.getText();
         Title = driver.getTitle();
 
-        if (!BuyoutText.isEmpty()) {
-            System.out.println("Buy out Text displayed in \'" + Title + "\'page is " + BuyoutText);
+        System.out.println("Buy out Amount: " + Actcost1);
 
+        tmpcost1 = org.apache.commons.lang3.StringUtils.substringBetween(Actcost1, "£", ".");
+        a = NumberUtils.toInt(tmpcost1);
+
+        if (AcText.contains("Upgrade on us")) {
+            System.out.println("Buy out offer text is displayed as expected: " + AcText);
+        } else {
+            System.out.println("Buy out offer text is not displayed as expected: " + AcText);
+            Assert.fail("Buy out offer text is not displayed as expected");
+        }
+        if (Actcost1.contains("-")) {
+            System.out.println("Buy Out Amount contains negative value: " + Actcost1);
+
+        } else {
+            System.out.println("Buy Out Amount does not contain negative value: " + Actcost1);
+            Assert.fail("Buy Out Amount does not contain negative value");
+        }
+        if (a == BouOutValue_FromMyPackageSection) {
+            System.out.println("Buy out value from "+pageName+" Page is matching with the BoyOut value from MyPackage Section: " + ", Boy Out Value from My Package Section: " + BouOutValue_FromMyPackageSection + ", Buy Out Amount from "+pageName+" Page: " + a);
+        } else {
+            System.out.println("Buy out value from "+pageName+" Page is not matching with the BoyOut value from MyPackage Section: " + ", Boy Out Value from My Package Section: " + BouOutValue_FromMyPackageSection + ", Buy Out Amount from "+pageName+" Page: " + a);
+            Assert.fail("Buy out values from MyPackage Section and "+pageName+" Page are not matching");
         }
         Screenshots.captureScreenshot();
-
     }
 
     public static void VerifyTradeinMessage() throws IOException, InterruptedException {
@@ -1899,10 +1945,6 @@ public class UpgradeCustomerPageActions extends Environment {
     }
 
 
-
-
-
-
     public static void reviewTariff() throws InterruptedException, IOException {
         System.out.println("Trying to verify first section is review tariff");
 
@@ -1940,13 +1982,10 @@ public class UpgradeCustomerPageActions extends Environment {
     public static void nonDisplayDeliverySection() throws InterruptedException, IOException {
         System.out.println("Trying to verify delivery section is present or not");
         //Below get the delivery section size
-        int deliverySection  = driver.findElements(By.xpath("")).size();
-        if(deliverySection >= 0)
-        {
+        int deliverySection = driver.findElements(By.xpath("")).size();
+        if (deliverySection >= 0) {
             Assert.fail("Delivery section present");
-        }
-        else
-        {
+        } else {
             log.debug("No delivery section is present, thus fine");
         }
         pageobjects.UpgradeCustomerPage.clickonNotsureSimType.click();
@@ -1957,72 +1996,67 @@ public class UpgradeCustomerPageActions extends Environment {
     /////////////////////////////////////Promotions/////////////////////////////////////////////////////////////////////
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-    public static void HeadingMessagePanel() throws InterruptedException, IOException{
+    public static void HeadingMessagePanel() throws InterruptedException, IOException {
 
         log.debug("Validating the Heading message for promotions");
 
         WebElement HeaderPromo = pageobjects.UpgradeCustomerPage.PromotionsHeader;
-        JavascriptExecutor executor = (JavascriptExecutor)driver;
+        JavascriptExecutor executor = (JavascriptExecutor) driver;
         executor.executeScript("arguments[0].click();", HeaderPromo);
         String HeaderText = HeaderPromo.getText();
-        if(HeaderText.contains("This is a deal we think you’ll like")) {
+        if (HeaderText.contains("This is a deal we think you’ll like")) {
             log.debug("The Promotions Tile is displayed correctly");
             System.out.println(HeaderText);
-        }
-        else {
+        } else {
             System.out.println("The Promotions title is incorrect");
             Assert.fail("The copy text is not correct");
         }
 
     }
 
-    public static void BodyMessagePanel() throws InterruptedException, IOException{
+    public static void BodyMessagePanel() throws InterruptedException, IOException {
         WebElement BodyPromo = pageobjects.UpgradeCustomerPage.PromotionsBody;
-        JavascriptExecutor executor = (JavascriptExecutor)driver;
+        JavascriptExecutor executor = (JavascriptExecutor) driver;
         executor.executeScript("arguments[0].click();", BodyPromo);
         String BodyText = BodyPromo.getText();
-        if(BodyText.contains("‘Your offer is:")) {
+        if (BodyText.contains("‘Your offer is:")) {
             log.debug("‘Your offer is:");
             System.out.println(BodyText);
-        }
-        else {
+        } else {
             System.out.println("The Body Message is incorrect");
             Assert.fail("The Body Message is incorrect");
         }
 
     }
 
-    public static void SimoPromotionsCheckboxNotDisplayed() throws InterruptedException, IOException{
+    public static void SimoPromotionsCheckboxNotDisplayed() throws InterruptedException, IOException {
 
         WebElement element = pageobjects.UpgradeCustomerPage.CheckBoxNotDisplayed;
-        JavascriptExecutor executor = (JavascriptExecutor)driver;
+        JavascriptExecutor executor = (JavascriptExecutor) driver;
         executor.executeScript("arguments[0].click();", element);
         log.debug("Verifying that the checkboxes are not displayed");
-        if(element.isDisplayed()){
+        if (element.isDisplayed()) {
             System.out.println("The checkboxes for simo are dipsplayed which is not right");
             Assert.fail("The checkboxes for simo are dipsplayed which is not right\"");
-        }
-        else
+        } else
             log.debug("The checkboxes for simo are not displayed");
 
     }
 
 
-    public static void copyTextAdditionalDepositPage() throws InterruptedException, IOException{
+    public static void copyTextAdditionalDepositPage() throws InterruptedException, IOException {
 
         log.debug("in copy text additional deposit verification page");
         String actualText = pageobjects.UpgradeCustomerPage.copyTextAdditonalDeposit.getText();
-        String expectedText =  "If you make all your payments for 6 months this will be automatically refunded";
-        if(actualText.contains(expectedText))
-        {
+        String expectedText = "If you make all your payments for 6 months this will be automatically refunded";
+        if (actualText.contains(expectedText)) {
             log.debug("copy Text is displayed and its as expected");
-        }
-        else
-        {
+        } else {
             Assert.fail("Not correct, the text donot match");
         }
 
     }
+
     public static void SIMOLinkIsDisplayed() throws Exception {
 
         if (UpgradeCustomerPage.SIMOLink.isDisplayed()) {
@@ -2037,19 +2071,18 @@ public class UpgradeCustomerPageActions extends Environment {
             driver.manage().timeouts().implicitlyWait(2, TimeUnit.MINUTES);
             if (driver.findElements(By.xpath("//div[@class='filter-options']/button")).size() > 0) {
                 List<WebElement> filtes = driver.findElements(By.xpath("//div[@class='filter-options']/button"));
-                for(int i=1;i<=filtes.size();i++) {
-                    if (driver.findElement(By.xpath("(//div[@class='filter-options']/button)["+i+"]")).isDisplayed()) {
-                        String fltr = driver.findElement(By.xpath("(//div[@class='filter-options']/button)["+i+"]")).getText();
+                for (int i = 1; i <= filtes.size(); i++) {
+                    if (driver.findElement(By.xpath("(//div[@class='filter-options']/button)[" + i + "]")).isDisplayed()) {
+                        String fltr = driver.findElement(By.xpath("(//div[@class='filter-options']/button)[" + i + "]")).getText();
                         System.out.println(" the data filters is displayed" + fltr);
                         log.debug("the data filters is displayed" + fltr);
                     }
                 }
-            }else {
+            } else {
                 System.out.println(" Failed to displayed the Data Filter ");
                 Assert.fail(" Failed to displayed the Data Filter ");
             }
-        }
-        catch (Exception e) {
+        } catch (Exception e) {
             // TODO Auto-generated catch block
             System.out.println(" Failed to displayed the Data Filter " + e.getStackTrace());
             Assert.fail(" Failed to displayed the Data Filter ");
@@ -2061,26 +2094,25 @@ public class UpgradeCustomerPageActions extends Environment {
             driver.manage().timeouts().implicitlyWait(2, TimeUnit.MINUTES);
             if (driver.findElements(By.xpath("//div[@class='button-tabs']//a")).size() > 0) {
                 List<WebElement> contractLength = driver.findElements(By.xpath("//div[@class='button-tabs']//a"));
-                for(int i=1;i<=contractLength.size();i++) {
-                    if (driver.findElement(By.xpath("(//div[@class='button-tabs']//a)["+i+"]")).isDisplayed()) {
-                        String contrctLent = driver.findElement(By.xpath("(//div[@class='button-tabs']//a)["+i+"]")).getText();
+                for (int i = 1; i <= contractLength.size(); i++) {
+                    if (driver.findElement(By.xpath("(//div[@class='button-tabs']//a)[" + i + "]")).isDisplayed()) {
+                        String contrctLent = driver.findElement(By.xpath("(//div[@class='button-tabs']//a)[" + i + "]")).getText();
                         System.out.println(" the data filters is displayed" + contrctLent);
                         log.debug("the data filters is displayed" + contrctLent);
                     }
                 }
-            }else {
+            } else {
                 System.out.println(" Failed to displayed the Data Filter ");
                 Assert.fail(" Failed to displayed the Data Filter ");
             }
-        }
-        catch (Exception e) {
+        } catch (Exception e) {
             // TODO Auto-generated catch block
             System.out.println(" Failed to displayed the Data Filter " + e.getStackTrace());
             Assert.fail(" Failed to displayed the Data Filter ");
         }
     }
 
-    public static void  whyChooseAn_O2_may_Monthly_sim_is_not_displayed() throws Exception {
+    public static void whyChooseAn_O2_may_Monthly_sim_is_not_displayed() throws Exception {
         try {
             driver.manage().timeouts().implicitlyWait(2, TimeUnit.MINUTES);
             if (!driver.findElement(By.xpath("//*[contains(text(),'hy choose an O2 Pay Monthly sim?')]")).isDisplayed()) {
@@ -2090,8 +2122,7 @@ public class UpgradeCustomerPageActions extends Environment {
                 System.out.println("  'Why choose an O2 Pay Monthly sim?' is Displayed ");
                 Assert.fail("  'Why choose an O2 Pay Monthly sim?' is Displayed ");
             }
-        }
-        catch (Exception e) {
+        } catch (Exception e) {
             // TODO Auto-generated catch block
             System.out.println("  'Why choose an O2 Pay Monthly sim?' is Displayed " + e.getStackTrace());
             Assert.fail("  'Why choose an O2 Pay Monthly sim?' is Displayed ");
@@ -2101,17 +2132,16 @@ public class UpgradeCustomerPageActions extends Environment {
     public static void OOS_MsgShouldDisplayed_inUpgradeOptionsPage() throws Exception {
         try {
             driver.manage().timeouts().implicitlyWait(2, TimeUnit.MINUTES);
-            if(driver.findElements(By.xpath("//*[contains(text(),'Out of stock')]")).size() > 0) {
+            if (driver.findElements(By.xpath("//*[contains(text(),'Out of stock')]")).size() > 0) {
                 if (driver.findElement(By.xpath("//*[contains(text(),'Out of stock')]")).isDisplayed()) {
                     System.out.println(" The Out of stock message is Displayed in the Upgrade Options page");
                     log.debug(" The Out of stock message is Displayed in the Upgrade Options page");
                 }
-            }else {
+            } else {
                 System.out.println(" Failed to displayed  OOS message in the Upgrade Page");
                 Assert.fail(" Failed to displayed  OOS message in the Upgrade Page");
             }
-        }
-        catch (Exception e) {
+        } catch (Exception e) {
             // TODO Auto-generated catch block
             System.out.println(" Failed to displayed  OOS message in the Upgrade Page" + e.getStackTrace());
             Assert.fail(" Failed to displayed  OOS message in the Upgrade Page");
@@ -2121,17 +2151,16 @@ public class UpgradeCustomerPageActions extends Environment {
     public static void verifyOOS_MessageIsDisplayedInUpgradesBasketPage() throws Exception {
         try {
             driver.manage().timeouts().implicitlyWait(2, TimeUnit.MINUTES);
-            if(driver.findElements(By.xpath("//*[contains(text(),'You can't continue with checking out if there are any out of stock items in your basket,')]")).size() > 0) {
+            if (driver.findElements(By.xpath("//*[contains(text(),'You can't continue with checking out if there are any out of stock items in your basket,')]")).size() > 0) {
                 if (driver.findElement(By.xpath("(//*[contains(text(),'You can't continue with checking out if there are any out of stock items in your basket,')])[1]")).isDisplayed()) {
                     System.out.println(" The 'OOS message' is displayed in the upgrades basket page is Verified");
                     log.debug(" The 'OOS message' is displayed in the upgrades basket page is Verified");
                 }
-            }else {
+            } else {
                 System.out.println(" Failed to Displayed The 'OOS message' in the upgrades basket page");
                 Assert.fail(" Failed to Displayed The 'OOS message' in the upgrades basket page");
             }
-        }
-        catch (Exception e) {
+        } catch (Exception e) {
             // TODO Auto-generated catch block
             System.out.println(" Failed to Displayed The 'OOS message' in the upgrades basket page" + e.getStackTrace());
             Assert.fail(" Failed to Displayed The 'OOS message' in the upgrades basket page");
@@ -2156,18 +2185,15 @@ public class UpgradeCustomerPageActions extends Environment {
                         break;
                     }
                 }
-                }else{
-                    System.out.println(" verify that the upfront sort options is not present in the 'sorting dropdown'");
-                }
-        }
-        catch (Exception e) {
+            } else {
+                System.out.println(" verify that the upfront sort options is not present in the 'sorting dropdown'");
+            }
+        } catch (Exception e) {
             // TODO Auto-generated catch block
-                System.out.println(" FAILED ::::: Upfront Cost is availabe ");
-                Assert.fail(" FAILED ::::: Upfront Cost is availabe ");
+            System.out.println(" FAILED ::::: Upfront Cost is availabe ");
+            Assert.fail(" FAILED ::::: Upfront Cost is availabe ");
         }
     }
-
-
 
 
 }

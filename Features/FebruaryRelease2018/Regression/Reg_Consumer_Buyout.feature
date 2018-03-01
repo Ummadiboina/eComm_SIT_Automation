@@ -11,17 +11,19 @@ Feature: Reg_Consumer_Buyout.feature
     And Select a 'I need a sim'option
     And Verify that 'Confirm CTA' is displayed
     And Click on 'Confirm CTA'
-   # And verify if the buyout offer is displayed in My Package section
+    And verify if the buyout offer is displayed in My Package section
     And I Land on the basket page by clicking on Add to Basket button in the BuyOut Journey
-   # And verify if the buyout offer is displayed in Basket page
+    And verify if the buyout offer is displayed in Basket page
     And click on "go to checkout" button
-    And verify if buyout offer is displayed in OTAC page
+    And verify if buyout offer is displayed under Order Summary section in <OTAC> page
     And perform <Action> in OTAC page
-    And verify if buyout offer is displayed in ordersummary sections
+    And verify if buyout offer is displayed under Order Summary section in <Delivery> page
     Then Click on the 'Continue button' in delivery page
-    And verify if buyout offer is displayed in ordersummary sections
-    And land on the payment page and input <Username> and other details and click 'Continue on next step'
+    And verify if buyout offer is displayed under Order Summary section in <Payment> page
+    And land on the payment page and input <Username> and other details and click 'Continue on next step' in upgrade journey
+    And verify if buyout offer is displayed under Order Summary section in <Agreement> page
     And Continue to Agreements page and confirm all the agreement checks
+    And verify if buyout offer is displayed under Order Summary section in <Review> page
     And Continue to Review page and review the order
     Then order confirmation is displayed
 

@@ -132,15 +132,18 @@ public class UpgradeCustomerPage {
 	@FindBy(how = How.XPATH, using = "(//button[@id='callToAction'])[1]")
 	public static WebElement RandomTariffUpgrade;
 
+	@FindBy(how = How.ID, using = "qa-basket-upgrade-promotion-discountMessageHeader")
+	public static WebElement BuyoutTextMyPkg;
+
 	@FindBy(how = How.ID, using = "qa-immediate-upgrade-fee-message")
 	public static WebElement BuyoutText1MyPkg;
 
 	@FindBy(how = How.ID, using = "qa-basket-upgrade-fee-existing-device")
 	public static WebElement BuyoutText2MyPkg;
-	
+
 	@FindBy(how = How.ID, using = "qa-basket-upgrade-promotion-discountMessageHeader")
 	public static WebElement BuyoutText3MyPkg;
-	
+
 	@FindBy(how = How.ID, using = "qa-basket-upgrade-promotion-discountMessage")
 	public static WebElement BuyoutText4MyPkg;
 
@@ -149,7 +152,10 @@ public class UpgradeCustomerPage {
 	
 	@FindBy(how = How.XPATH, using = "//section[@id='qa-upgrade-promotion-discount']//p[@class='upfront']")
 	public static WebElement BuyoutCost2MyPkg;
-	
+
+	@FindBy(how = How.XPATH, using = "(//section[@class='early-fee']/p[1])[2]")
+	public static WebElement BuyOutTextBasketPage;
+
 	@FindBy(how = How.XPATH, using = "(//section[@class='early-fee']/p[1])[1]")
 	public static WebElement BuyOutText1BasketPage;
 	
@@ -169,10 +175,10 @@ public class UpgradeCustomerPage {
 	public static WebElement BuyOutCost2BasketPage;
 
 	@FindBy(how = How.XPATH, using = "//*[@id='buy-out-discount']/td[2]/p")
-	public static WebElement BuyOutCostOTACPage;
+	public static WebElement BuyOutCost_OrderSummarySection;
 
-	@FindBy(how = How.ID, using = "buy-out-discount")
-	public static WebElement BuyOutTextOTACPage;
+	@FindBy(how = How.XPATH, using = "//*[@id='buy-out-discount']/td[1]")
+	public static WebElement BuyOutText_OrderSummarySection;
 	
 	@FindBy(how = How.XPATH, using = "//a[@id='tab-switch-to-a-tablet'][1]")
 	public static WebElement TabletsTab;
