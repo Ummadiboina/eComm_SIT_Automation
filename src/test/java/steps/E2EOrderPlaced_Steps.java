@@ -4440,6 +4440,22 @@ public class E2EOrderPlaced_Steps {
         }
     }
 
+    @And("^I Land on the basket page by clicking on Add to Basket button in the BuyOut Journey$")
+    public void i_Land_on_the_basket_page_by_clicking_AddToBasket_BuyOut_Journey() {
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, BasketPage.class);
+            PageFactory.initElements(driver, PAYMandPAYGTariffAndExtrasPage.class);
+            PAYMandPAYGTariffAndExtrasPageActions.addToBasket_BoyOut_Journey();
+            Thread.sleep(3000);
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+            System.out.println("Unable to Land on the basket page and choose home delivery option");
+            Assert.fail("Unable to Land on the basket page and choose home delivery option");
+        }
+    }
+
     @And("^Click on 'Continue' button on upgrade page$")
     public void click_on_continue_link_for_the_upgrade_journey() throws Throwable {
         try {
@@ -4460,8 +4476,10 @@ public class E2EOrderPlaced_Steps {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, UpgradeCustomerPage.class);
             //UpgradeCustomerPageActions.selectDeviceInRecommendedDevicesSection(devicename);
-            driver.findElement(By.xpath("(//span[normalize-space()='Apple'])[1]")).click();
-            Thread.sleep(5000);
+           // driver.findElement(By.xpath("(//span[normalize-space()='Apple'])[1]")).click();
+            JavascriptExecutor executor = (JavascriptExecutor) driver;
+            executor.executeScript("arguments[0].click();", driver.findElement(By.xpath("(//span[normalize-space()='Apple'])[1]")));
+            Thread.sleep(7000);
         } catch (Exception e) {
             e.printStackTrace();
             Assert.fail("Unable to select a device from Recommended devices section");
@@ -5543,7 +5561,8 @@ public class E2EOrderPlaced_Steps {
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         try {
             PageFactory.initElements(driver, UpgradePhonesListingPage.class);
-            UpgradeCustomerPageActions.clickTakeOfferAndUpgrade();
+            //UpgradeCustomerPageActions.clickTakeOfferAndUpgrade();
+            driver.findElement(By.xpath("//button[contains(text(),'Continue to upgrade')]")).click();
             Thread.sleep(2000);
         } catch (Exception e) {
             // TODO Auto-generated catch block

@@ -10,7 +10,8 @@ Feature: CFA_MBB_Data filters
     And Navigate to device details page
     And Land on the 'Tariffs and extra' page
     ##New functionality starts
-    Then I should see data filters buttons next to existing sort drop-down for PAYM/SIMO tariffs #Verification point - A - More than 2 should be displayed
+    Then I should see data filters buttons next to existing sort drop-down for PAYM/SIMO tariffs <sortoption>
+    #Verification point - A - More than 2 should be displayed
     When I click on respective <filtername> data filter
     Then Data filter button should be in 'selected' state
     And I should see appropriate tariffs based on the selected data filter <sortoption>
@@ -23,4 +24,4 @@ Feature: CFA_MBB_Data filters
     Examples:
       | Device_Name   | Firstname | Surname | Username     | filtername | sortoption                 |
       | Random Device | TEST      | ACCEPTA | TEST ACCEPTA | high       | Monthly data (Low to High) |
-   #   | Apple iPhone 7    | TEST      | ACCEPTA | TEST ACCEPTA | high       |
+   #  | Apple iPhone 7    | TEST      | ACCEPTA | TEST ACCEPTA | high       |

@@ -1,4 +1,4 @@
-Feature: CFU_Recycle_Phones_DD_Confirmation_Page_changes
+Feature: Reg_CFU_Recycle_Phones_DD_Confirmation_Page_changes.feature
 
   @Web
   Scenario Outline:
@@ -9,7 +9,11 @@ Feature: CFU_Recycle_Phones_DD_Confirmation_Page_changes
     And Signin using valid <username> and <password> credentials
     And Navigate to upgrade > upgrade now
     Then Verify that in the recycle value is displayed in the Recycle panel
+    And Select <Make>, <Model> and <Network>
+    And perform update device
     Then Select any one recycle option and click on 'Continue to Upgrade'
+    And click on 'Yes,get an accurate quote'
+    And answer the questionnaire and click on 'Accept and continue to upgrade' button
     And Select a <handset> device from Recommended devices section
     And Select ribboned tariff <tariff> in upgrade journey
     #And Select a tariff in upgrade journey
@@ -24,5 +28,5 @@ Feature: CFU_Recycle_Phones_DD_Confirmation_Page_changes
     Then Verify contents of order confirmation page for Phones containing <Status>
 
     Examples:
-      | username             | password | handset        | tariff                   | Firstname | Surname | Username     | Action | Status           |
-      | lucky@rediffmail.com | test123  | Apple iPhone 7 | 129.99upfront37.00amonth | TEST      | ACCEPTA | TEST ACCEPTA | skip   | Delayed Delivery |
+      | username   | password | handset        | tariff                 | Firstname | Surname | Username     | Action | Status           | Make  | Model   | Network |
+      | ins_feb571 | test123  | Apple iPhone 7 | 9.99upfront84.00amonth | TEST      | ACCEPTA | TEST ACCEPTA | skip   | Delayed Delivery | Apple | Iphone7 | Orange  |

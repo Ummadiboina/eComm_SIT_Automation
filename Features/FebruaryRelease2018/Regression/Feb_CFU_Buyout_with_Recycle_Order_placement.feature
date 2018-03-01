@@ -22,5 +22,5 @@ Feature: CFU_Buyout_with_Recycle_Order_placement
     Then Click on 'Go to checkout' and proceed till order confirmation
 
     Examples:
-      | username                   | password |
-      | q31020046@stf.ref.o2.co.uk | test123  |
+      | username    | password |
+      | inl_feb2115 | test123  |

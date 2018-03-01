@@ -59,6 +59,9 @@ public class PAYMandPAYGTariffAndExtrasPage {
 	@FindBy(how = How.XPATH, using = ("(//input[@value='Go to basket'])[1]"))
 	public static WebElement addToBasketLive;
 
+	@FindBy(how = How.XPATH, using = ("(//input[@value='Add and go to basket'])[1]"))
+	public static WebElement addToBasketBuyOutJourney;
+
 	// Below is for Clicking on the Add to basket option which is at the top of the
 	// tariff and extras page
 	@FindBy(id = "qa-proceed-to-basket-dock-header")
