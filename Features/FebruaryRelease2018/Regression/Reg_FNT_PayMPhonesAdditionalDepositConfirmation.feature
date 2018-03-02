@@ -18,5 +18,5 @@ Feature: Reg_FNT_PayMPhonesAdditionalDepositConfirmation
     Then order confirmation is displayed
 
     Examples:
-      | Firstname | Surname  | Username      | handset  | Username2    |
-      | TEST      | ADDINFOI | TEST ADDINFOI | GalaxyS8 | TEST ACCEPTA |
+      | Firstname | Surname  | Username      | handset           | Username2    |
+      | TEST      | ADDINFOI | TEST ADDINFOI | Samsung Galaxy S8 | TEST ACCEPTA |

@@ -15,5 +15,5 @@ Feature: Reg_FNT_MorethanMaxTransaction_Deny
     Then Order Decline page should be displayed
 
     Examples:
-      | handset  | Firstname | Surname | Username  |
-      | GalaxyS8 | TEST      | NINE    | TEST NINE |
+      | handset           | Firstname | Surname | Username  |
+      | Samsung Galaxy S8 | TEST      | NINE    | TEST NINE |
