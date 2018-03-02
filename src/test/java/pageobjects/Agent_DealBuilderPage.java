@@ -186,7 +186,7 @@ public class Agent_DealBuilderPage {
 	public static WebElement deviceAdded_DealBuilder;
 
 	//check the Tariff weather added into the Deal Builder
-	@FindBy(how = How.XPATH, using = "//table[@class='lineItemTable device']//th")
+	@FindBy(how = How.XPATH, using = "//table[@class='lineItemTable tariff']//th")
 	public static WebElement tariffAdded_DealBuilder;
 
 /* venkata ********************

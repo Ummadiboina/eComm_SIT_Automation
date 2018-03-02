@@ -5,11 +5,11 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 
 public class Agent_ConfirmationPage {
-	
-		@FindBy(how=How.ID,using="sharedBasketContents")
+
+		@FindBy(how=How.XPATH,using="//div[@id='sharedBasketContents']/div[@class='basketContents']")
 		public static WebElement sharedBasketContents;
 
-		@FindBy(how=How.ID,using="orderContent")
+		@FindBy(how=How.XPATH,using="//*[@id='orderContent']/p")
 		public static WebElement orderContent;
 
 		@FindBy(how=How.ID,using="orderContentRefer")

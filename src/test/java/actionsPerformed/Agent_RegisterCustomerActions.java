@@ -106,7 +106,7 @@ public class Agent_RegisterCustomerActions extends Environment {
 			Agent_RegisterCustomerPage.HouseNumber.sendKeys(HouseNumber);
 			Thread.sleep(2000);
 			Agent_RegisterCustomerPage.Postcode.sendKeys(PostCode);
-			log.debug("Entered House Postcode  as SL1 1EL");
+			log.debug("Entered House Postcode  as: "+PostCode);
 
 			Thread.sleep(2000);
 			pageobjects.Agent_RegisterCustomerPage.FindAddress.click();
@@ -137,7 +137,7 @@ public class Agent_RegisterCustomerActions extends Environment {
 	public static void PaybyCard() throws InterruptedException {
 		String OneOff = Agent_RegisterCustomerPage.ZeroOneOff.getText();
 		System.out.println(OneOff);
-		if (OneOff.contains("�0.00")) {
+		if (OneOff.contains("£0.00")) {
 			Agent_RegisterCustomerPage.SubmitBtn.click();
 		}
 
@@ -196,6 +196,18 @@ public class Agent_RegisterCustomerActions extends Environment {
 	public static void CardDetails_PayM() throws InterruptedException {
 		Thread.sleep(7000);
 
+		Agent_RegisterCustomerPage.CardHolderName.sendKeys("TEST ACCEPTA");
+		System.out.println("Card holder name ");
+		Select CardTypeDropDown = new Select(pageobjects.Agent_RegisterCustomerPage.CardType);
+		CardTypeDropDown.selectByIndex(3);
+		Agent_RegisterCustomerPage.CardNumber.sendKeys("4539791001730106");
+		Thread.sleep(2000);
+		Select CardMonthDropdown = new Select(pageobjects.Agent_RegisterCustomerPage.CardMonth);
+		CardMonthDropdown.selectByIndex(2);
+		Thread.sleep(2000);
+		Select CardYearDropdown = new Select(pageobjects.Agent_RegisterCustomerPage.CardYear);
+		CardYearDropdown.selectByIndex(3);
+		Thread.sleep(2000);
 		System.out.println("Going to validate pay by card page displayed from mipay");
 		Agent_RegisterCustomerPage.SecurityCode.sendKeys("123");
 		Thread.sleep(2000);
