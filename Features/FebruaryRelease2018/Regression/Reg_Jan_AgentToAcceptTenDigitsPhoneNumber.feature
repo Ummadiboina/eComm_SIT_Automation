@@ -1,4 +1,5 @@
 Feature: Reg_Jan_AgentToAcceptTenDigitsPhoneNumber
+
   This scenario ensures that the Agent shop accepts 10 digit home number
 
   @Web

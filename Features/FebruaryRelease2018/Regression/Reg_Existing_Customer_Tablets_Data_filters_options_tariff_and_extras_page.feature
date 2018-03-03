@@ -1,4 +1,5 @@
 Feature: Reg_Existing_Customer_Tablets_Data_filters_options_tariff_and_extras_page.feature
+
   This scenario ensures that when a customer in Existing customer journey selects 'Tablet' and navigated to tariff page ,then the customer
   should be able to see  'Data filter' button next to sort drop-down for PayM tariffs
 

@@ -1,4 +1,4 @@
-Feature: CFA_Basket_page_cross_sell_insurance_no_free_insurance
+Feature: Reg_CFA_Basket_page_cross_sell_insurance_no_free_insurance
 
   @Web
   Scenario Outline:

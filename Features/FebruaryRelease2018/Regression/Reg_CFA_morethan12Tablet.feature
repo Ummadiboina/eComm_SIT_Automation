@@ -1,4 +1,4 @@
-Feature: C1669_E11522_TC1_CFA_morethan12Tablet
+Feature: Reg_CFA_morethan12Tablet
 
   @Web
   Scenario Outline: E11522_CFA_MoreThan12Accessory_Tablet

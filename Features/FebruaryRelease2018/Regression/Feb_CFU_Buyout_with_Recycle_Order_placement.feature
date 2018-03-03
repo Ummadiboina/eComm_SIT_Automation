@@ -1,4 +1,4 @@
-Feature: CFU_Buyout_with_Recycle_Order_placement
+Feature: Feb_CFU_Buyout_with_Recycle_Order_placement
   This scenario ensures that when  a customer in an upgrade journey has opted for Buyout ,then the Buyout is displayed with Recycle in  'Your package' summary
 
   @Web
