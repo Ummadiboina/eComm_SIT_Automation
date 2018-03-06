@@ -4,6 +4,7 @@ Feature: Reg_Existing_Customer_Tablets_Data_filters_options_tariff_and_extras_pa
   should be able to see  'Data filter' button next to sort drop-down for PayM tariffs
 
   @Web
+
   Scenario Outline: Existing_Customer_Tablets_Data_filters_options_tariff_and_extras_page
     Given I am an Existing user and Navigates to Signin page
     And Signin using valid <username> and <password> credentials

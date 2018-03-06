@@ -2,8 +2,9 @@ Feature: Reg_Trustev_AFA_PAYM_Phones_WithAccessoryClick_and_Collect
 
   #launch hooks and get browser
 
-  @AgentsRegression
+  #@AgentsRegression
   @Web
+
   Scenario Outline: Trustev PayM Phones Click and collect E2E journey with Accessory in Agent shop
 
     Given I login to Agent shop

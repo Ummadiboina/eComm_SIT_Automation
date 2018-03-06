@@ -211,6 +211,20 @@ public class Agent_DealBuilderPageActions extends Environment {
             log.debug("Clicked on SearchTextBox to enter" + Device);
             Thread.sleep(3000);
         }
+        else if (Device.contains("iPhone 6s 32GB Gold")) {
+            System.out.println("searched iPhone 6s 32GB Gold");
+
+            // pageobjects.Agent_DealBuilderPage.prepayDeviceTableFilter.click();
+            Agent_DealBuilderPage.SearchTextBox_PrepayDevice.sendKeys(Device);
+
+            log.debug("searched iPhone 6s 32GB Gold");
+
+            Thread.sleep(6000);
+            Agent_DealBuilderPage.SelectInStockPAYGDevice.click();
+            System.out.println("Clicked on SearchTextBox to enter" + Device);
+            log.debug("Clicked on SearchTextBox to enter" + Device);
+            Thread.sleep(3000);
+        }
         Screenshots.captureScreenshot();
     }
 
