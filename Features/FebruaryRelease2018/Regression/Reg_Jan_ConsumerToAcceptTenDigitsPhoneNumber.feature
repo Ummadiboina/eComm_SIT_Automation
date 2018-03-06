@@ -20,7 +20,7 @@ Feature: Reg_Jan_ConsumerToAcceptTenDigitsPhoneNumber.feature
     And Continue to Agreements page and confirm all the agreement checks
     And Continue to Review page and review the order
     When order confirmation is displayed
-    Then Verify contents of order confirmation page for Phones containing <Status>
+    #Then Verify contents of order confirmation page for Phones containing <Status>
 
       #Step 12 and Step 13 of ALM clubbed together
       #Close the browser
