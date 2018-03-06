@@ -1,32 +1,25 @@
 package actionsPerformed;
 
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.concurrent.TimeUnit;
-
-import GlobalActions.CommonUtilities;
-import junit.framework.AssertionFailedError;
+import GlobalActions.Screenshots;
+import com.google.common.base.Function;
+import helpers.Environment;
+import helpers.Filereadingutility;
+import helpers.setRuntimeProperty;
+import org.apache.commons.lang.StringUtils;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
-import org.apache.commons.lang.StringUtils;
-import com.google.common.base.Function;
+import pageobjects.UpgradeCustomerPage;
 
-import GlobalActions.Screenshots;
-import helpers.Environment;
-import helpers.Filereadingutility;
-import helpers.setRuntimeProperty;
-import pageobjects.*;
-
-import static actionsPerformed.PaymentPageActions.Set_Bank_details;
-import static actionsPerformed.PaymentPageActions.Time_At_Address;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 public class UpgradeCustomerPageActions extends Environment {
 
@@ -49,24 +42,24 @@ public class UpgradeCustomerPageActions extends Environment {
         System.out.println("Title of the page is " + driver.getTitle());
         /*
          * if ((!driver.getTitle().
-		 * contains("O2 | Accounts | Please verify your email address") ||
-		 * !driver.getTitle().contains("O2 | Accounts | Update username"))) {
-		 * 
-		 * Assert.fail("Login failed");
-		 * 
-		 * } else {
-		 * 
-		 * System.out.println("Logged in successfully"); }
-		 */
-		/*
-		 * try { System.out.println("Going to click on Continue link");
-		 * pageobjects.UpgradeCustomerPage.Continue.click();
-		 * 
-		 * } catch (Exception e) { // TODO Auto-generated catch block
-		 * System.out.println("Continue button is not there, it should be fine" );
-		 * 
-		 * }
-		 */
+         * contains("O2 | Accounts | Please verify your email address") ||
+         * !driver.getTitle().contains("O2 | Accounts | Update username"))) {
+         *
+         * Assert.fail("Login failed");
+         *
+         * } else {
+         *
+         * System.out.println("Logged in successfully"); }
+         */
+        /*
+         * try { System.out.println("Going to click on Continue link");
+         * pageobjects.UpgradeCustomerPage.Continue.click();
+         *
+         * } catch (Exception e) { // TODO Auto-generated catch block
+         * System.out.println("Continue button is not there, it should be fine" );
+         *
+         * }
+         */
         Screenshots.captureScreenshot();
 
     }
@@ -84,7 +77,7 @@ public class UpgradeCustomerPageActions extends Environment {
     public static void Signin() throws InterruptedException, IOException {
         System.out.println("in signin function");
         JavascriptExecutor jse = (JavascriptExecutor) driver;
-        jse.executeScript("arguments[0].click()",pageobjects.UpgradeCustomerPage.Signinlink2);
+        jse.executeScript("arguments[0].click()", pageobjects.UpgradeCustomerPage.Signinlink2);
         //pageobjects.UpgradeCustomerPage.Signinlink2.click();
         System.out.println("Sign in button clicked");
         Screenshots.captureScreenshot();
@@ -232,12 +225,12 @@ public class UpgradeCustomerPageActions extends Environment {
 
         System.out.println(pageobjects.UpgradeCustomerPage.NotEligible_message.getText());
 
-		/*
-		 * Assert.assertEquals(pageobjects.UpgradeCustomerPage.
-		 * NotEligible_message.getText(), "You are not eligible to upgrade"); // bound
-		 * to change System.out.println( "The error message is displayed as" +
-		 * pageobjects.UpgradeCustomerPage.NotEligible_message.getText());
-		 */
+        /*
+         * Assert.assertEquals(pageobjects.UpgradeCustomerPage.
+         * NotEligible_message.getText(), "You are not eligible to upgrade"); // bound
+         * to change System.out.println( "The error message is displayed as" +
+         * pageobjects.UpgradeCustomerPage.NotEligible_message.getText());
+         */
         Screenshots.captureScreenshot();
     }
 
@@ -420,7 +413,7 @@ public class UpgradeCustomerPageActions extends Environment {
             Assert.fail("Provided tariff is not present in the list of tariffs");
         }*/
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-        JavascriptExecutor executor = (JavascriptExecutor)driver;
+        JavascriptExecutor executor = (JavascriptExecutor) driver;
         executor.executeScript("arguments[0].click();", driver.findElement(By.xpath("(//button[@type='button']//*[normalize-space()='Select'])[1]")));
 
         Screenshots.captureScreenshot();
@@ -486,7 +479,7 @@ public class UpgradeCustomerPageActions extends Environment {
         }
         if (flag == false) {
             driver.findElement(By.xpath("(//div[contains(@class, 'grid-tile')]/div/button[@id='callToAction'])[1]"));
-           // Assert.fail("Provided tariff is not present in the list of tariffs");
+            // Assert.fail("Provided tariff is not present in the list of tariffs");
         }
         Screenshots.captureScreenshot();
     }
@@ -675,12 +668,12 @@ public class UpgradeCustomerPageActions extends Environment {
                     log.debug("Inside the overlay for the selected tariff");
                 }
                 Thread.sleep(5000);
-				/*
-				 * log.debug("Text inside the primary overlay is :" + '\n' +
-				 * driver.findElement(By
-				 * .xpath("//div[contains(@class, 'overlay-box tariff-tile-info-promo-overlay')]/div/h3"
-				 * )) .getText());
-				 */
+                /*
+                 * log.debug("Text inside the primary overlay is :" + '\n' +
+                 * driver.findElement(By
+                 * .xpath("//div[contains(@class, 'overlay-box tariff-tile-info-promo-overlay')]/div/h3"
+                 * )) .getText());
+                 */
                 closeOverlayIconTEpage();
             } else {
                 Assert.fail("Primary Overlay Icon not present");
@@ -704,12 +697,12 @@ public class UpgradeCustomerPageActions extends Environment {
                     driver.switchTo().window(winHandle);
                     log.debug("Inside the overlay for the selected tariff");
                 }
-				/*
-				 * log.debug("Text inside the secondary overlay is :" + '\n' +
-				 * driver.findElement(By
-				 * .xpath("//div[contains(@class, 'overlay-box tariff-tile-info-promo-overlay')]/div/h3"
-				 * )) .getText());
-				 */
+                /*
+                 * log.debug("Text inside the secondary overlay is :" + '\n' +
+                 * driver.findElement(By
+                 * .xpath("//div[contains(@class, 'overlay-box tariff-tile-info-promo-overlay')]/div/h3"
+                 * )) .getText());
+                 */
                 closeOverlayIconTEpage();
             } else {
                 Assert.fail("Secondary Overlay Icon not present");
@@ -751,12 +744,12 @@ public class UpgradeCustomerPageActions extends Environment {
                     log.debug("Inside the overlay for the selected tariff");
                 }
                 Thread.sleep(5000);
-				/*
-				 * log.debug("Text inside the primary overlay is :" + '\n' +
-				 * driver.findElement(By
-				 * .xpath("//div[contains(@class, 'overlay-box tariff-tile-info-promo-overlay')]/div/h3"
-				 * )) .getText());
-				 */
+                /*
+                 * log.debug("Text inside the primary overlay is :" + '\n' +
+                 * driver.findElement(By
+                 * .xpath("//div[contains(@class, 'overlay-box tariff-tile-info-promo-overlay')]/div/h3"
+                 * )) .getText());
+                 */
                 closeOverlayIconTEpage();
             } else {
                 Assert.fail("Primary Overlay Icon not present");
@@ -779,12 +772,12 @@ public class UpgradeCustomerPageActions extends Environment {
                     log.debug("Inside the overlay for the selected tariff");
 
                 }
-				/*
-				 * log.debug("Text inside the secondary overlay is :" + '\n' +
-				 * driver.findElement(By
-				 * .xpath("//div[contains(@class, 'overlay-box tariff-tile-info-promo-overlay')]/div/h3"
-				 * )) .getText());
-				 */
+                /*
+                 * log.debug("Text inside the secondary overlay is :" + '\n' +
+                 * driver.findElement(By
+                 * .xpath("//div[contains(@class, 'overlay-box tariff-tile-info-promo-overlay')]/div/h3"
+                 * )) .getText());
+                 */
                 closeOverlayIconTEpage();
             } else {
                 Assert.fail("Secondary Overlay Icon not present");
@@ -1199,12 +1192,12 @@ public class UpgradeCustomerPageActions extends Environment {
         // pageobjects.UpgradeCustomerPage.RecycleWidget.click();
         if (driver.findElement(By.xpath("//*[@id='newRecycleOptionsTile']")).isDisplayed()) {
             System.out.println("Upgrade and Recycle options is displayed");
-           // driver.findElement(By.xpath("//*[@id='newRecycleOptionsTile']//*[@ng-click='selectRecycleDevice();']/span")).click();
-            JavascriptExecutor executor = (JavascriptExecutor)driver;
-            executor.executeScript("arguments[0].click();",driver.findElement( By.xpath("//div[@class='recycle-device not-your-device-box']/a/span")));
+            // driver.findElement(By.xpath("//*[@id='newRecycleOptionsTile']//*[@ng-click='selectRecycleDevice();']/span")).click();
+            JavascriptExecutor executor = (JavascriptExecutor) driver;
+            executor.executeScript("arguments[0].click();", driver.findElement(By.xpath("//div[@class='recycle-device not-your-device-box']/a/span")));
 
 
-          //  driver.findElement( By.xpath("//div[@class='recycle-device not-your-device-box']/a/span")).click();
+            //  driver.findElement( By.xpath("//div[@class='recycle-device not-your-device-box']/a/span")).click();
             System.out.println("Clicked on the choose your device link");
         } else {
             Assert.fail("Unable to verify recycle options");
@@ -1218,8 +1211,8 @@ public class UpgradeCustomerPageActions extends Environment {
         driver.findElement(By.id("recycleCredit")).click();
         System.out.println("Clicked on Radio button next to Recycle and get up to XXXX credit");
         //driver.findElement(By.xpath("//button[contains(text(),'upgrade now')]")).click();
-        JavascriptExecutor executor = (JavascriptExecutor)driver;
-        executor.executeScript("arguments[0].click();",driver.findElement(By.xpath("//button[contains(text(),'upgrade now')]")));
+        JavascriptExecutor executor = (JavascriptExecutor) driver;
+        executor.executeScript("arguments[0].click();", driver.findElement(By.xpath("//button[contains(text(),'upgrade now')]")));
         Thread.sleep(3000);
 
         System.out.println("Clicked on upgrade now button");
@@ -1271,9 +1264,13 @@ public class UpgradeCustomerPageActions extends Environment {
             System.out.println("Selected a Random Tariff");
         }
         if (arg.contains("enterCode")) {
-            driver.findElement(By.xpath("//a[@id='skip-this-step']")).click();
-            System.out.println("Clicked on skip this step");
-            System.out.println("Selected a Random Tariff");
+            ((JavascriptExecutor) driver).executeScript("arguments[0].click();", driver.findElement(By.id("sendOtac-label")));
+            Thread.sleep(4000);
+            driver.findElement(By.id("otac")).sendKeys("999999");
+            ((JavascriptExecutor) driver).executeScript("arguments[0].click();", driver.findElement(By.xpath("//span[text()='Submit']")));
+
+            System.out.println(" We have enter the code");
+            System.out.println(" We have enter the code");
         } else
             System.out.println("The Delivery page is displayed");
         Screenshots.captureScreenshot();
@@ -1373,10 +1370,10 @@ public class UpgradeCustomerPageActions extends Environment {
         pageobjects.UpgradeCustomerPage.RefundableOptionbyCredit.click();
         Thread.sleep(4000);
         System.out.println("Selected refundable by credit option");
-		/*
-		 * pageobjects.UpgradeCustomerPage.ContinuetoUpgrade.click();
-		 * System.out.println("Selected continue to upgrade button");
-		 */
+        /*
+         * pageobjects.UpgradeCustomerPage.ContinuetoUpgrade.click();
+         * System.out.println("Selected continue to upgrade button");
+         */
         System.out.println("Completed refundableOptionSelect function");
         Screenshots.captureScreenshot();
 
@@ -1899,10 +1896,6 @@ public class UpgradeCustomerPageActions extends Environment {
     }
 
 
-
-
-
-
     public static void reviewTariff() throws InterruptedException, IOException {
         System.out.println("Trying to verify first section is review tariff");
 
@@ -1940,13 +1933,10 @@ public class UpgradeCustomerPageActions extends Environment {
     public static void nonDisplayDeliverySection() throws InterruptedException, IOException {
         System.out.println("Trying to verify delivery section is present or not");
         //Below get the delivery section size
-        int deliverySection  = driver.findElements(By.xpath("")).size();
-        if(deliverySection >= 0)
-        {
+        int deliverySection = driver.findElements(By.xpath("")).size();
+        if (deliverySection >= 0) {
             Assert.fail("Delivery section present");
-        }
-        else
-        {
+        } else {
             log.debug("No delivery section is present, thus fine");
         }
         pageobjects.UpgradeCustomerPage.clickonNotsureSimType.click();
@@ -1957,72 +1947,67 @@ public class UpgradeCustomerPageActions extends Environment {
     /////////////////////////////////////Promotions/////////////////////////////////////////////////////////////////////
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-    public static void HeadingMessagePanel() throws InterruptedException, IOException{
+    public static void HeadingMessagePanel() {
 
         log.debug("Validating the Heading message for promotions");
 
         WebElement HeaderPromo = pageobjects.UpgradeCustomerPage.PromotionsHeader;
-        JavascriptExecutor executor = (JavascriptExecutor)driver;
+        JavascriptExecutor executor = (JavascriptExecutor) driver;
         executor.executeScript("arguments[0].click();", HeaderPromo);
         String HeaderText = HeaderPromo.getText();
-        if(HeaderText.contains("This is a deal we think you’ll like")) {
+        if (HeaderText.contains("This is a deal we think you’ll like")) {
             log.debug("The Promotions Tile is displayed correctly");
             System.out.println(HeaderText);
-        }
-        else {
+        } else {
             System.out.println("The Promotions title is incorrect");
             Assert.fail("The copy text is not correct");
         }
 
     }
 
-    public static void BodyMessagePanel() throws InterruptedException, IOException{
+    public static void BodyMessagePanel() {
         WebElement BodyPromo = pageobjects.UpgradeCustomerPage.PromotionsBody;
-        JavascriptExecutor executor = (JavascriptExecutor)driver;
+        JavascriptExecutor executor = (JavascriptExecutor) driver;
         executor.executeScript("arguments[0].click();", BodyPromo);
         String BodyText = BodyPromo.getText();
-        if(BodyText.contains("‘Your offer is:")) {
+        if (BodyText.contains("‘Your offer is:")) {
             log.debug("‘Your offer is:");
             System.out.println(BodyText);
-        }
-        else {
+        } else {
             System.out.println("The Body Message is incorrect");
             Assert.fail("The Body Message is incorrect");
         }
 
     }
 
-    public static void SimoPromotionsCheckboxNotDisplayed() throws InterruptedException, IOException{
+    public static void SimoPromotionsCheckboxNotDisplayed() {
 
         WebElement element = pageobjects.UpgradeCustomerPage.CheckBoxNotDisplayed;
-        JavascriptExecutor executor = (JavascriptExecutor)driver;
+        JavascriptExecutor executor = (JavascriptExecutor) driver;
         executor.executeScript("arguments[0].click();", element);
         log.debug("Verifying that the checkboxes are not displayed");
-        if(element.isDisplayed()){
+        if (element.isDisplayed()) {
             System.out.println("The checkboxes for simo are dipsplayed which is not right");
             Assert.fail("The checkboxes for simo are dipsplayed which is not right\"");
-        }
-        else
+        } else
             log.debug("The checkboxes for simo are not displayed");
 
     }
 
 
-    public static void copyTextAdditionalDepositPage() throws InterruptedException, IOException{
+    public static void copyTextAdditionalDepositPage() {
 
         log.debug("in copy text additional deposit verification page");
         String actualText = pageobjects.UpgradeCustomerPage.copyTextAdditonalDeposit.getText();
-        String expectedText =  "If you make all your payments for 6 months this will be automatically refunded";
-        if(actualText.contains(expectedText))
-        {
+        String expectedText = "If you make all your payments for 6 months this will be automatically refunded";
+        if (actualText.contains(expectedText)) {
             log.debug("copy Text is displayed and its as expected");
-        }
-        else
-        {
+        } else {
             Assert.fail("Not correct, the text donot match");
         }
 
     }
+
     public static void SIMOLinkIsDisplayed() throws Exception {
 
         if (UpgradeCustomerPage.SIMOLink.isDisplayed()) {
@@ -2032,55 +2017,53 @@ public class UpgradeCustomerPageActions extends Environment {
         Screenshots.captureScreenshot();
     }
 
-    public static void data_filtersIsDdisplayed() throws Exception {
+    public static void data_filtersIsDdisplayed() {
         try {
             driver.manage().timeouts().implicitlyWait(2, TimeUnit.MINUTES);
             if (driver.findElements(By.xpath("//div[@class='filter-options']/button")).size() > 0) {
                 List<WebElement> filtes = driver.findElements(By.xpath("//div[@class='filter-options']/button"));
-                for(int i=1;i<=filtes.size();i++) {
-                    if (driver.findElement(By.xpath("(//div[@class='filter-options']/button)["+i+"]")).isDisplayed()) {
-                        String fltr = driver.findElement(By.xpath("(//div[@class='filter-options']/button)["+i+"]")).getText();
+                for (int i = 1; i <= filtes.size(); i++) {
+                    if (driver.findElement(By.xpath("(//div[@class='filter-options']/button)[" + i + "]")).isDisplayed()) {
+                        String fltr = driver.findElement(By.xpath("(//div[@class='filter-options']/button)[" + i + "]")).getText();
                         System.out.println(" the data filters is displayed" + fltr);
                         log.debug("the data filters is displayed" + fltr);
                     }
                 }
-            }else {
+            } else {
                 System.out.println(" Failed to displayed the Data Filter ");
                 Assert.fail(" Failed to displayed the Data Filter ");
             }
-        }
-        catch (Exception e) {
+        } catch (Exception e) {
             // TODO Auto-generated catch block
             System.out.println(" Failed to displayed the Data Filter " + e.getStackTrace());
             Assert.fail(" Failed to displayed the Data Filter ");
         }
     }
 
-    public static void twoContractLengthShouldDisplayed() throws Exception {
+    public static void twoContractLengthShouldDisplayed() {
         try {
             driver.manage().timeouts().implicitlyWait(2, TimeUnit.MINUTES);
             if (driver.findElements(By.xpath("//div[@class='button-tabs']//a")).size() > 0) {
                 List<WebElement> contractLength = driver.findElements(By.xpath("//div[@class='button-tabs']//a"));
-                for(int i=1;i<=contractLength.size();i++) {
-                    if (driver.findElement(By.xpath("(//div[@class='button-tabs']//a)["+i+"]")).isDisplayed()) {
-                        String contrctLent = driver.findElement(By.xpath("(//div[@class='button-tabs']//a)["+i+"]")).getText();
+                for (int i = 1; i <= contractLength.size(); i++) {
+                    if (driver.findElement(By.xpath("(//div[@class='button-tabs']//a)[" + i + "]")).isDisplayed()) {
+                        String contrctLent = driver.findElement(By.xpath("(//div[@class='button-tabs']//a)[" + i + "]")).getText();
                         System.out.println(" the data filters is displayed" + contrctLent);
                         log.debug("the data filters is displayed" + contrctLent);
                     }
                 }
-            }else {
+            } else {
                 System.out.println(" Failed to displayed the Data Filter ");
                 Assert.fail(" Failed to displayed the Data Filter ");
             }
-        }
-        catch (Exception e) {
+        } catch (Exception e) {
             // TODO Auto-generated catch block
             System.out.println(" Failed to displayed the Data Filter " + e.getStackTrace());
             Assert.fail(" Failed to displayed the Data Filter ");
         }
     }
 
-    public static void  whyChooseAn_O2_may_Monthly_sim_is_not_displayed() throws Exception {
+    public static void whyChooseAn_O2_may_Monthly_sim_is_not_displayed() {
         try {
             driver.manage().timeouts().implicitlyWait(2, TimeUnit.MINUTES);
             if (!driver.findElement(By.xpath("//*[contains(text(),'hy choose an O2 Pay Monthly sim?')]")).isDisplayed()) {
@@ -2090,55 +2073,52 @@ public class UpgradeCustomerPageActions extends Environment {
                 System.out.println("  'Why choose an O2 Pay Monthly sim?' is Displayed ");
                 Assert.fail("  'Why choose an O2 Pay Monthly sim?' is Displayed ");
             }
-        }
-        catch (Exception e) {
+        } catch (Exception e) {
             // TODO Auto-generated catch block
             System.out.println("  'Why choose an O2 Pay Monthly sim?' is Displayed " + e.getStackTrace());
             Assert.fail("  'Why choose an O2 Pay Monthly sim?' is Displayed ");
         }
     }
 
-    public static void OOS_MsgShouldDisplayed_inUpgradeOptionsPage() throws Exception {
+    public static void OOS_MsgShouldDisplayed_inUpgradeOptionsPage() {
         try {
             driver.manage().timeouts().implicitlyWait(2, TimeUnit.MINUTES);
-            if(driver.findElements(By.xpath("//*[contains(text(),'Out of stock')]")).size() > 0) {
+            if (driver.findElements(By.xpath("//*[contains(text(),'Out of stock')]")).size() > 0) {
                 if (driver.findElement(By.xpath("//*[contains(text(),'Out of stock')]")).isDisplayed()) {
                     System.out.println(" The Out of stock message is Displayed in the Upgrade Options page");
                     log.debug(" The Out of stock message is Displayed in the Upgrade Options page");
                 }
-            }else {
+            } else {
                 System.out.println(" Failed to displayed  OOS message in the Upgrade Page");
                 Assert.fail(" Failed to displayed  OOS message in the Upgrade Page");
             }
-        }
-        catch (Exception e) {
+        } catch (Exception e) {
             // TODO Auto-generated catch block
             System.out.println(" Failed to displayed  OOS message in the Upgrade Page" + e.getStackTrace());
             Assert.fail(" Failed to displayed  OOS message in the Upgrade Page");
         }
     }
 
-    public static void verifyOOS_MessageIsDisplayedInUpgradesBasketPage() throws Exception {
+    public static void verifyOOS_MessageIsDisplayedInUpgradesBasketPage() {
         try {
             driver.manage().timeouts().implicitlyWait(2, TimeUnit.MINUTES);
-            if(driver.findElements(By.xpath("//*[contains(text(),'You can't continue with checking out if there are any out of stock items in your basket,')]")).size() > 0) {
+            if (driver.findElements(By.xpath("//*[contains(text(),'You can't continue with checking out if there are any out of stock items in your basket,')]")).size() > 0) {
                 if (driver.findElement(By.xpath("(//*[contains(text(),'You can't continue with checking out if there are any out of stock items in your basket,')])[1]")).isDisplayed()) {
                     System.out.println(" The 'OOS message' is displayed in the upgrades basket page is Verified");
                     log.debug(" The 'OOS message' is displayed in the upgrades basket page is Verified");
                 }
-            }else {
+            } else {
                 System.out.println(" Failed to Displayed The 'OOS message' in the upgrades basket page");
                 Assert.fail(" Failed to Displayed The 'OOS message' in the upgrades basket page");
             }
-        }
-        catch (Exception e) {
+        } catch (Exception e) {
             // TODO Auto-generated catch block
             System.out.println(" Failed to Displayed The 'OOS message' in the upgrades basket page" + e.getStackTrace());
             Assert.fail(" Failed to Displayed The 'OOS message' in the upgrades basket page");
         }
     }
 
-    public static void upfront_sort_options_is_not_present_in_sortingDropdown() throws Exception {
+    public static void upfront_sort_options_is_not_present_in_sortingDropdown() {
         try {
             driver.manage().timeouts().implicitlyWait(2, TimeUnit.MINUTES);
             if (UpgradeCustomerPage.dataFilter.isDisplayed()) {
@@ -2156,18 +2136,15 @@ public class UpgradeCustomerPageActions extends Environment {
                         break;
                     }
                 }
-                }else{
-                    System.out.println(" verify that the upfront sort options is not present in the 'sorting dropdown'");
-                }
-        }
-        catch (Exception e) {
+            } else {
+                System.out.println(" verify that the upfront sort options is not present in the 'sorting dropdown'");
+            }
+        } catch (Exception e) {
             // TODO Auto-generated catch block
-                System.out.println(" FAILED ::::: Upfront Cost is availabe ");
-                Assert.fail(" FAILED ::::: Upfront Cost is availabe ");
+            System.out.println(" FAILED ::::: Upfront Cost is availabe ");
+            Assert.fail(" FAILED ::::: Upfront Cost is availabe ");
         }
     }
-
-
 
 
 }

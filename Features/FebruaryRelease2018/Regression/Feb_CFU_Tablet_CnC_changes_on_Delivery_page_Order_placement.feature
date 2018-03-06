@@ -13,14 +13,14 @@ Feature: CFU_Tablet_CnC_changes_on_Delivery_page_Order_placement
     And I Land on the basket page by clicking on Add to Basket button
     And click on "go to checkout" button
     And perform <Action> in OTAC page
-    And input <Firstname> and <Surname> and other valid details in Delivery page for Click and collect and Click on the 'Continue button'
-    And land on the payment page and input <Username> and other details for Click and collect order and click 'Continue on next step'
+    And Enter details in Delivery page for Click and collect and Click on the 'Continue button'
+    And Enter cardDetails in payment page input <username> and click 'Continue on next step'
     And Continue to Agreements page and confirm all the agreement checks
     And Continue to Review page and review the order
     Then order confirmation is displayed
 
 
     Examples:
-      | username           | password | Tablet        | tariff                 | houseNumber | Postcode | Username     | Action | Firstname | Surname |
-      | 6172test2@test.com | test123  | Random Device | 9.99upfront60.00amonth | 111         | SL11Er   | Test Accepta | skip   | Test      | Accepta |
+      | username               | password | Tablet        | tariff                 | houseNumber | Postcode | Username     | Action | Firstname | Surname |
+      | in00533s_069647@o2.com | test123  | Random Device | 9.99upfront60.00amonth | 111         | SL11Er   | Test Accepta | skip   | Test      | Accepta |
 

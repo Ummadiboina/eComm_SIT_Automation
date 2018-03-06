@@ -91,8 +91,7 @@ public class BasketPageActions extends Environment {
 			log.debug("Go To Checkout is Present and the Text is :" + pageobjects.BasketPage.checkoutbtn.getText());
 
 			pageobjects.BasketPage.checkoutbtn.sendKeys(Keys.ENTER);
-			;
-		} else {
+        } else {
 			System.out.println(
 					"Go To Checkout is Absent and the Text is :" + pageobjects.BasketPage.checkoutbtn.getText());
 			log.debug("Go To Checkout is Absent and the Text is :" + pageobjects.BasketPage.checkoutbtn.getText());
@@ -157,6 +156,11 @@ public class BasketPageActions extends Environment {
 			});
 			checkOutButtonValidation.click();
 		} else {
+
+			if(!pageobjects.BasketPage.checkoutbtn.isEnabled()){
+				driver.findElement(By.xpath("//input[@id='noNeedNewSim']")).click();
+				Thread.sleep(2000);
+			}
 			System.out.println("Queue page is not displayed");
 			WebElement element = pageobjects.BasketPage.checkoutbtn;
 			JavascriptExecutor executor = (JavascriptExecutor)driver;
@@ -412,9 +416,9 @@ public class BasketPageActions extends Environment {
 
 		try {
 
-			AccessoryName_Before = (String) Filereadingutility.getPropertyValue(RunTimeFilePath, "Accessory");
-			FitnessTrackerName_Before = (String) Filereadingutility.getPropertyValue(RunTimeFilePath, "FitnessTracker");
-			SmartWatchName_Before = (String) Filereadingutility.getPropertyValue(RunTimeFilePath, "SmartWatch");
+			AccessoryName_Before = Filereadingutility.getPropertyValue(RunTimeFilePath, "Accessory");
+			FitnessTrackerName_Before = Filereadingutility.getPropertyValue(RunTimeFilePath, "FitnessTracker");
+			SmartWatchName_Before = Filereadingutility.getPropertyValue(RunTimeFilePath, "SmartWatch");
 
 			AccessoryName_After = pageobjects.AccessoryPage.AccesoryAfterPhoneSelection.getText();
 			FitnessTrackerName_After = pageobjects.AccessoryPage.FitnessTrackerAfterPhoneSelection.getText();

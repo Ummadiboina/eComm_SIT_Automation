@@ -119,12 +119,14 @@ public class Agent_DealBuilderPageActions extends Environment {
         List<WebElement> menuOuter = driver.findElements(By.xpath("//*[@id='planTable']/tbody/tr"));
         System.out.println(menuOuter.size());
         int j = 1;
-        for (int i = 0; i < menuOuter.size(); i++) {
+        for (int i = 0; i < menuOuter.size()-1; i++) {
             j = i + 1;
             if (menuOuter.get(i).getText().trim().contains("Base Comms")) {
                 if (driver.findElement(By.xpath("//*[@id='planTable']/tbody/tr[" + j + "]/td[11]")).getText()
                         .equals("Base Comms")) {
                     System.out.println("Offers contains Base comms");
+                    driver.findElement(By.xpath("//*[@id='planTable']/tbody/tr")).click();
+                    break;
 
                 } else {
 
@@ -139,6 +141,34 @@ public class Agent_DealBuilderPageActions extends Environment {
     public static void HandsetTariffCombination() throws InterruptedException, IOException {
         try {
             System.out.println("Tariff Name: " + driver.findElement(By.xpath("//*[@id='planTable']/tbody/tr[1]/td[6]")).getText());
+            if (driver.findElement(By.xpath("//*[@id='planTable']/tbody/tr[1]/td[6]")).getText().equals("Standard")) {
+                System.out.println("Selected Tariff is a Standard Tariff hence Handset Tariff combination is not required");
+            } else {
+
+                /*List<WebElement> menuOuter = driver.findElements(By.xpath("//*[@class='priceSelection']/select/option"));
+                System.out.println("The size of the table is :" + menuOuter.size());
+
+                for (int i = 0; i < menuOuter.size(); i++) {
+                    System.out.println("Option " + i + " is: " + menuOuter.get(i).getText());
+                }*/
+
+               /* driver.findElement(By.xpath("(//*[@class='priceSelection']/select/option)[" + menuOuter.size() + "]")).click();
+                System.out.println("Selected Option : " + driver.findElement(By.xpath("(//*[@class='priceSelection']/select/option)[" + menuOuter.size() + "]")).getText());
+
+                System.out.println("Selected combination of handset and talk plan");
+                Thread.sleep(9000);*/
+            }
+            Screenshots.captureScreenshot();
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            System.out.println("handset and tariff dropdown is not displayed, should be fine");
+            Screenshots.captureScreenshot();
+        }
+    }
+
+    public static void HandsetTariffCombination_new() throws InterruptedException, IOException {
+        try {
+            System.out.println("Tariff Name: " + driver.findElement(By.xpath("//*[@id='planTable']/tbody/tr[1]/td[6]")).getText());
             if (driver.findElement(By.xpath("//*[@id='planTable']/tbody/tr[1]/td[6]")).getText()
                     .equals("Standard")) {
                 System.out.println("Selected Tariff is a Standard Tariff hence Handset Tariff combination is not required");
@@ -151,8 +181,15 @@ public class Agent_DealBuilderPageActions extends Environment {
                     System.out.println("Option " + i + " is: " + menuOuter.get(i).getText());
                 }
 
-                driver.findElement(By.xpath("(//*[@class='priceSelection']/select/option)[" + menuOuter.size() + "]")).click();
-                System.out.println("Selected Option : " + driver.findElement(By.xpath("(//*[@class='priceSelection']/select/option)[" + menuOuter.size() + "]")).getText());
+                //driver.findElement(By.xpath("(//*[@class='priceSelection']/select/option)[" + menuOuter.size() + "]")).click();
+                //System.out.println("Selected Option : " + driver.findElement(By.xpath("(//*[@class='priceSelection']/select/option)[" + menuOuter.size() + "]")).getText());
+
+
+                driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
+                driver.findElement(By.xpath("(//*[@class='priceSelection']/select/option[3])")).click();
+                System.out.println("Selected Option : "+driver.findElement(By.xpath("(//*[@class='priceSelection']/select/option[3])")).getText());
+
+
 
                 System.out.println("Selected combination of handset and talk plan");
                 Thread.sleep(9000);
@@ -473,11 +510,17 @@ public class Agent_DealBuilderPageActions extends Environment {
 
     public static void AgentBuyOut() throws InterruptedException, IOException {
 
-        Agent_DealBuilderPage.AgentBuyOut_Button.isDisplayed();
-        System.out.println("The Buy Out Qustionair is displayed");
-        Agent_DealBuilderPage.AgentBuyOut_Button.click();
-        Screenshots.captureScreenshot();
+        if(Agent_DealBuilderPage.AgentBuyOut_Button.isDisplayed()) {
+            System.out.println("The Buy Out Qustionair is displayed");
+            Agent_DealBuilderPage.AgentBuyOut_Button.click();
+            Screenshots.captureScreenshot();
+        }
 
+        if(Agent_DealBuilderPage.Checkout.isDisplayed()) {
+            System.out.println("Deal Builder is displayed");
+            Agent_DealBuilderPage.Checkout.click();
+            Screenshots.captureScreenshot();
+        }
     }
 
     public static void selectStore() throws InterruptedException {
@@ -516,7 +559,7 @@ public class Agent_DealBuilderPageActions extends Environment {
 
     }
 
-    public static void HandsetTariffCombinationforPhones() throws InterruptedException {
+    public static void HandsetTariffCombinationforPhones() {
         try {
             if (Agent_DealBuilderPage.deviceAdded_DealBuilder.isDisplayed()) {
                 System.out.println(" Device is added into the builder ");
@@ -536,7 +579,7 @@ public class Agent_DealBuilderPageActions extends Environment {
     }
     //select remove the device
 
-    public static void verifyPromotionsDisplayed() throws Exception {
+    public static void verifyPromotionsDisplayed() {
         try {
             if (Agent_DealBuilderPage.deviceAdded_DealBuilder.isDisplayed()) {
                 System.out.println(" Device is added into the builder ");
@@ -576,7 +619,7 @@ public class Agent_DealBuilderPageActions extends Environment {
 
     //verify the targeted promitons tab
 
-    public static void verifyTargetedPromotionsTab() throws Exception {
+    public static void verifyTargetedPromotionsTab() {
         try {
             int sizeofElements = driver.findElements(By.xpath("//*[normalize-space(.)='Promotion Description']")).size();
             if (sizeofElements > 0) {
@@ -593,7 +636,7 @@ public class Agent_DealBuilderPageActions extends Environment {
 
 //verify the targeted promitons tab
 
-    public static void verifyPromotionsDescriotnDisplayed() throws Exception {
+    public static void verifyPromotionsDescriotnDisplayed() {
         try {
             Thread.sleep(1000);
             System.out.println(" Verified the targeted Promotions Tab Displayed at End ");

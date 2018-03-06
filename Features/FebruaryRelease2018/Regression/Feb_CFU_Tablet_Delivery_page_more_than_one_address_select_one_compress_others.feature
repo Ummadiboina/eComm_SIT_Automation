@@ -12,17 +12,17 @@ Feature:CFU_Tablet_Delivery_page_more_than_one_address_select_one_compress_other
     And Land on the 'Tariffs and extra' page
     And I Land on the basket page by clicking on Add to Basket button
     And click on "go to checkout" button
-    # And perform <Action> in OTAC page
+    And perform <Action> in OTAC page
     And Click on 'Use a different delivery address'link
     #And enter a <houseNumber> and an <PostCode>
-    And enter a <houseNumber> and an <PostCode> in Delivery section
-    And land on the payment page and input <Username> and other details and click 'Continue on next step'
+    #And enter a <houseNumber> and an <PostCode> in Delivery section
+    And land on the payment page and input <Username> and other details and click 'Continue' on next step for otac
     And Continue to Agreements page and confirm all the agreement checks
     And Continue to Review page and review the order
     And Click on 'I agree to the terms and condition' checkbox
     And Click on 'Place your order' CTA
 
     Examples:
-      | username   | password | Tablet        | tariff                 | houseNumber | PostCode | Username     |
-      | ash@o2.com | test123  | Random Device | 9.99upfront60.00amonth | 111         | SL11Er   | Test Accepta |
+      | username                     | password | Tablet        | tariff                 | houseNumber | PostCode | Username     | Action    |
+      | inq_jan3955@stf.ref.o2.co.uk | test123  | Random Device | 9.99upfront60.00amonth | 111         | SL11Er   | Test Accepta | enterCode |
 

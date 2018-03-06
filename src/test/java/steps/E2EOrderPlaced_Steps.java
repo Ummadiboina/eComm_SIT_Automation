@@ -927,9 +927,26 @@ public class E2EOrderPlaced_Steps {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, DeliveryPage.class);
             //CommonFunctionscheckTitle("Delivery Page");
-            //DeliveryPageActions.SetDelivery();
+            DeliveryPageActions.SetDelivery();
             DeliveryPageActions.AboutYou(Firstname, Surname);
             DeliveryPageActions.ClickContinue();
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            System.out.println("Unable to input details in delivery page");
+            Assert.fail("Unable to input details in delivery page");
+
+        }
+    }
+
+
+
+    @And("^Enter details in Delivery page for Click and collect and Click on the 'Continue button'$")
+    public void DeliveryPage_enter_Inputs_ClickandCollect(String Firstname, String Surname) {
+        try {
+            driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, DeliveryPage.class);
+            DeliveryPageActions.ClickContinue();
+
         } catch (Exception e) {
             // TODO Auto-generated catch block
             System.out.println("Unable to input details in delivery page");
@@ -1163,7 +1180,7 @@ public class E2EOrderPlaced_Steps {
 
     //And Click on "I'll be using an iPhone" checkbox and Click on 'Select' CTA to buy a tariff
     @And("^Click on (.*)I'll be using an iPhone(.*) checkbox and Click on 'Select' CTA to buy a tariff$")
-    public void  click_on_I_will_using_iPhone_checkbox_and_Click_on_Select_CTA_to_buy_tariff() throws Throwable {
+    public void  click_on_I_will_using_iPhone_checkbox_and_Click_on_Select_CTA_to_buy_tariff() {
         try {
             E2EOrderPlaced_Steps e2eOrder = new E2EOrderPlaced_Steps();
             e2eOrder.checkbox_with_will_be_using_iPhone_belowSelectBtn();
@@ -1287,6 +1304,23 @@ public class E2EOrderPlaced_Steps {
         }
     }
 
+    @And("^land on the payment page and input ([^\"]*) and other details and click 'Continue' on next step for otac$")
+    public void CreditCheckPaymentPage_HomeDel(String Username) {
+        // Write code here that turns the phrase above into concrete actions
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, PaymentPage.class);
+            PaymentPageActions.Card_Details(Username);
+            Thread.sleep(75000);
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+            System.out.println("Unable to input details in payment page");
+            Assert.fail("Unable to input details in payment page");
+
+        }
+    }
+
     @And("^land on the payment page and input ([^\"]*) and other details for Click and collect order and click 'Continue on next step'$")
     public void CreditCheckPaymentPage_ClickAndCollect(String Username) {
         // Write code here that turns the phrase above into concrete actions
@@ -1300,6 +1334,28 @@ public class E2EOrderPlaced_Steps {
             Thread.sleep(3000);
             PaymentPageActions.Card_Details(Username);
             Thread.sleep(75000);
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+            System.out.println("Unable to input details in payment page");
+            Assert.fail("Unable to input details in payment page");
+
+        }
+    }
+
+    @And("^Enter cardDetails in payment page input ([^\"]*) and click 'Continue on next step'$")
+    public void CreditCheckPaymentPg_ClickAndCollect(String Username) {
+        // Write code here that turns the phrase above into concrete actions
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, PaymentPage.class);
+            //CommonFunctionscheckTitle("Payment Page");
+           // PaymentPageActions.Set_Bank_details(Username);
+            //Thread.sleep(3000);
+            //PaymentPageActions.Time_At_Address_CC();
+            Thread.sleep(3000);
+            PaymentPageActions.Card_Details(Username);
+            Thread.sleep(5000);
         } catch (Exception e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
@@ -1642,6 +1698,21 @@ public class E2EOrderPlaced_Steps {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, Agent_DealBuilderPage.class);
             Agent_DealBuilderPageActions.HandsetTariffCombination();
+            Thread.sleep(4000);
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+            Assert.fail("Unable to select valid tariff and handset combination");
+        }
+    }
+
+    @Given("^select a valid Handset and Tariff combination_new$")
+    public void select_a_valid_Handset_and_Tariff_combination_new() {
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, Agent_DealBuilderPage.class);
+            driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
+            Agent_DealBuilderPageActions.HandsetTariffCombination_new();
             Thread.sleep(4000);
         } catch (Exception e) {
             // TODO Auto-generated catch block
@@ -3115,7 +3186,7 @@ public class E2EOrderPlaced_Steps {
         try {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, ConnectedDeviceDetailsPage.class);
-            ConnectedDeviceDetailsPageAction.colorSelectOfDeviceDropDown(color);
+           // ConnectedDeviceDetailsPageAction.colorSelectOfDeviceDropDown(color);
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -3130,7 +3201,7 @@ public class E2EOrderPlaced_Steps {
         try {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, ConnectedDeviceDetailsPage.class);
-            ConnectedDeviceDetailsPageAction.capacitySelectOfDeviceDropDown(capacity);
+            //ConnectedDeviceDetailsPageAction.capacitySelectOfDeviceDropDown(capacity);
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -6152,7 +6223,7 @@ public class E2EOrderPlaced_Steps {
     //////////////////////////////////// CCA
     //////////////////////////////////// Agent///////////////////////////////////////////////////////
 
-    @Given("^select a valid Handset and Tariff combination such that there is monthly$")
+    @Given("^select a valid Handset and Ta riff combination such that there is monthly$")
     public void select_a_valid_Handset_and_Tariff_combination_such_that_there_is_monthly() {
         try {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
@@ -7875,7 +7946,7 @@ public class E2EOrderPlaced_Steps {
     }*/
 
     @And("^enter a ([^\"]*) and an ([^\"]*) in Delivery section$")
-    public void enter_houseNum_and_PostCode(String houseNum, String pcode) throws Exception {
+    public void enter_houseNum_and_PostCode(String houseNum, String pcode) {
         try {
             PageFactory.initElements(driver, DeliveryPage.class);
             DeliveryPageActions.enterHouseNumAndPostalCode_DeliverySection(houseNum, pcode);
@@ -7887,7 +7958,7 @@ public class E2EOrderPlaced_Steps {
 
 
     @Then("^the respective ([^\"]*) message should be displayed in address look up section$")
-    public void respective_Error_messageShould_Be_Displayed_address_lookup(String postalCodeMsg) throws Exception {
+    public void respective_Error_messageShould_Be_Displayed_address_lookup(String postalCodeMsg) {
         try {
             PageFactory.initElements(driver, DeliveryPage.class);
             DeliveryPageActions.enteredInvalidPostcodeAdressLookUp(postalCodeMsg);
@@ -7898,7 +7969,7 @@ public class E2EOrderPlaced_Steps {
     }
 
     @Then("^respective ([^\"]*) message displayed in address look up section for using commercial address$")
-    public void errorMessageDisplayedForUsingCommercialAddress_AddressLookup(String postalCodeMsg) throws Exception {
+    public void errorMessageDisplayedForUsingCommercialAddress_AddressLookup(String postalCodeMsg) {
         try {
             PageFactory.initElements(driver, DeliveryPage.class);
             DeliveryPageActions.enteredCommercialAddress_AddressLookUp(postalCodeMsg);
@@ -7909,7 +7980,7 @@ public class E2EOrderPlaced_Steps {
     }
 
     @Then("^the respective ([^\"]*) message should be displayed in enter manually section$")
-    public void respective_Error_messageShould_Be_Displayed_Enter_Manually_section(String postalCodeMsg) throws Exception {
+    public void respective_Error_messageShould_Be_Displayed_Enter_Manually_section(String postalCodeMsg) {
         try {
             PageFactory.initElements(driver, DeliveryPage.class);
             DeliveryPageActions.enteredInvalidPostcodeEnterManualSection(postalCodeMsg);

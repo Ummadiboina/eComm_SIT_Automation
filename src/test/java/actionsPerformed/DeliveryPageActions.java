@@ -33,15 +33,18 @@ import static pageobjects.FreeSimPage.Firstname;
         public static void SetDelivery() {
 
             try {
-                DeliveryPage.Housenumber.sendKeys("12");
-                log.debug("Entered House number");
-                Thread.sleep(2000);
-                pageobjects.DeliveryPage.Postcode.sendKeys("B15 2LG");
-                log.debug("Entered Post code");
-                Thread.sleep(2000);
-                pageobjects.DeliveryPage.Find_Address.click();
-                log.debug("Clicked on the Find address button");
-                Thread.sleep(5000);
+
+                if(DeliveryPage.Housenumber.isDisplayed()) {
+                    DeliveryPage.Housenumber.sendKeys("12");
+                    log.debug("Entered House number");
+                    Thread.sleep(2000);
+                    pageobjects.DeliveryPage.Postcode.sendKeys("B15 2LG");
+                    log.debug("Entered Post code");
+                    Thread.sleep(2000);
+                    pageobjects.DeliveryPage.Find_Address.click();
+                    log.debug("Clicked on the Find address button");
+                    Thread.sleep(5000);
+                }
                 if (pageobjects.DeliveryPage.SelectAddress1.isDisplayed()) {
                     pageobjects.DeliveryPage.SelectAddress1.click();
                     log.debug("Selected an address");
@@ -124,8 +127,7 @@ import static pageobjects.FreeSimPage.Firstname;
             Thread.sleep(3000);
             log.debug("in click continue function");
 
-            Boolean isPresent = driver.findElements(By.xpath("//*[@id='checkbox-terms-agreement-required']")).size() > 0;
-            if (isPresent) {
+            if (driver.findElements(By.xpath("//*[@id='checkbox-terms-agreement-required']")).size() > 0){
                 log.debug("checkbox is present, so going to click on that");
                 Thread.sleep(3000);
                 js.executeScript("arguments[0].click();",driver.findElement(By.xpath("//*[@id='checkbox-terms-agreement-required']")));
@@ -481,7 +483,7 @@ import static pageobjects.FreeSimPage.Firstname;
             }
         }
 
-        public static void deliverySectionShouldShowOOS_message() throws Exception {
+        public static void deliverySectionShouldShowOOS_message() {
             try {
                 driver.manage().timeouts().implicitlyWait(2, TimeUnit.MINUTES);
                 if(driver.findElements(By.xpath("//li[@class='delivery']//*[contains(text(),'out of stock')]")).size() > 0) {
@@ -502,7 +504,7 @@ import static pageobjects.FreeSimPage.Firstname;
         }
 
         
-        public static void deliverySectionShouldShowClick_anf_collect_option_without_radio_button_and_OOS_msg() throws Exception {
+        public static void deliverySectionShouldShowClick_anf_collect_option_without_radio_button_and_OOS_msg() {
             try {
                 driver.manage().timeouts().implicitlyWait(2, TimeUnit.MINUTES);
                 if(driver.findElements(By.xpath("//*[contains(text(),'Out of stock')]")).size() > 0) {
@@ -523,17 +525,26 @@ import static pageobjects.FreeSimPage.Firstname;
         }
 
 
-        public static void ClickOnUseDifferentAddress(){
-            List<WebElement> DiffAddressLink = driver.findElements(By.xpath("//*[@id='different-delivery-address']"));
-            if (DiffAddressLink.size() > 0) {
-                WebElement element = pageobjects.DeliveryPage.DeliveryPageUseDiffAddressLink;
-                JavascriptExecutor executor = (JavascriptExecutor)driver;
-                executor.executeScript("arguments[0].click();", element);
-
+        public static void ClickOnUseDifferentAddress() throws InterruptedException {
+            WebElement DiffAddressLink = driver.findElement(By.xpath("//*[@id='different-delivery-address']"));
+            ((JavascriptExecutor) driver).executeScript("arguments[0].click();", DiffAddressLink);
+            Thread.sleep(2000);
+            driver.findElement(By.id("housenumber")).sendKeys("4");
+            driver.findElement(By.id("postcode")).sendKeys("sl11er");
+            ((JavascriptExecutor) driver).executeScript("arguments[0].click();", driver.findElement(By.xpath("//span[normalize-space(.)='Find address']")));
+            Thread.sleep(6000);
+            if(driver.findElements(By.xpath("(//*[@id='delivery-address-selection']//div/p)[2]")).size() >= 1) {
+                ((JavascriptExecutor) driver).executeScript("arguments[0].click();", driver.findElement(By.xpath("(//*[@id='delivery-address-selection']//div/p)[2]")));
+                System.out.println("Successfully picked the addres ");
+            }else{
+                System.out.println("Fialed to picked the addres ");
             }
-            else
-                Assert.fail("Unable to click on the Use a different address link");
 
+
+            Thread.sleep(4000);
+            ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", driver.findElement(By.xpath("//span[normalize-space(.)='Continue']")));
+
+            ((JavascriptExecutor) driver).executeScript("arguments[0].click();", driver.findElement(By.xpath("//span[normalize-space(.)='Continue']")));
         }
 
 
