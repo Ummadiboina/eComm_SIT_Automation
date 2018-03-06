@@ -1,4 +1,4 @@
-Feature: CFA_Accessories_Confirmation_Page_changes
+Feature: Reg_CFA_Accessories_Confirmation_Page_changes
 
   @Web
   Scenario Outline: CFA Accessories confirmation page changes

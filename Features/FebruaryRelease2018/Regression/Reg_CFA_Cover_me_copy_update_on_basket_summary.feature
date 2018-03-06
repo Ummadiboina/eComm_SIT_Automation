@@ -1,4 +1,4 @@
-Feature: CFA_Cover_me_copy_update_on_basket_summary
+Feature: Reg_CFA_Cover_me_copy_update_on_basket_summary
 
   @Web
   Scenario Outline:

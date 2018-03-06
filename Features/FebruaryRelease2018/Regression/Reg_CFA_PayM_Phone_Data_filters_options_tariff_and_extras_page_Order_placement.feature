@@ -1,4 +1,5 @@
-Feature: CFA_PayM_Phone_Data_filters_options_tariff_and_extras_page_Order_placement
+Feature: Reg_CFA_PayM_Phone_Data_filters_options_tariff_and_extras_page_Order_placement
+
   This scenario ensures that when a customer in acquisition journey selects 'Phone' and navigated to tariff page ,then 
   the customer should be able to see  'Data filter' button next to sort drop-down for PayM tariffs
 

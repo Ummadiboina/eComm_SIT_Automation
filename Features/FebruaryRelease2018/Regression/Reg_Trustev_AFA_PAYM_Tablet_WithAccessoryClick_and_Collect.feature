@@ -1,6 +1,7 @@
 Feature: Reg_Trustev_AFA_PAYM_Tablet_WithAccessoryClick_and_Collect
 
   @Web
+
   Scenario Outline: Trustev PayM Tablets Click and Collect E2E journey with Accessory in Agent shop
     Given I login to Agent shop
     And performs Acquisition for New user

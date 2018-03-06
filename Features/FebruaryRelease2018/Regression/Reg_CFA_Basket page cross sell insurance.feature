@@ -1,4 +1,4 @@
-Feature: CFA_Basket page cross sell insurance
+Feature: Reg_CFA_Basket page cross sell insurance
 
   @Web
   Scenario Outline: CFA_Basket page cross sell insurance

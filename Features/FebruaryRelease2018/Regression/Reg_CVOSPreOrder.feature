@@ -1,4 +1,4 @@
-Feature: CVOSPreOrder
+Feature: Reg_CVOSPreOrder
 
   @Web
   Scenario Outline: PreOrder_CVS

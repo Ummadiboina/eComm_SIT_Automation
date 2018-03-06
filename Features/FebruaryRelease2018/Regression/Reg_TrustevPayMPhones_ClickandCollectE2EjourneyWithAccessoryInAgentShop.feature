@@ -2,6 +2,7 @@ Feature: Reg_TrustevPayMPhones_ClickandCollectE2EjourneyWithAccessoryInAgentShop
 
   #launch hooks and get browser
   @Web
+
   Scenario Outline: Trustev PayM Phones Click and collect E2E journey with Accessory in Agent shop
     Given I login to Agent shop
     And performs Acquisition for New user

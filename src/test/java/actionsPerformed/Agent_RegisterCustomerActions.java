@@ -153,7 +153,7 @@ public class Agent_RegisterCustomerActions extends Environment {
 		Thread.sleep(2000);
 	}
 
-	public static void CardDetails() throws InterruptedException {
+	public static void CardDetails_PayM() throws InterruptedException {
 		Thread.sleep(2000);
 		System.out.println("Mipay bit : ");
 		//driver.findElements(By.xpath("//label[contains(text(),'Card ending with:')]")).size();
@@ -193,7 +193,7 @@ public class Agent_RegisterCustomerActions extends Environment {
 
 	}
 
-	public static void CardDetails_PayM() throws InterruptedException {
+	public static void CardDetails() throws InterruptedException {
 		Thread.sleep(7000);
 
 		Agent_RegisterCustomerPage.CardHolderName.sendKeys("TEST ACCEPTA");

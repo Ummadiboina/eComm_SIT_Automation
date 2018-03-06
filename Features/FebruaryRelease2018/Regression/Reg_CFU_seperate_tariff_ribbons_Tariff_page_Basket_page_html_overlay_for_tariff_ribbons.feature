@@ -1,4 +1,4 @@
-Feature: CFU_seperate_tariff_ribbons_Tariff_page_Basket_page_html_overlay_for_tariff_ribbons
+Feature: Reg_CFU_seperate_tariff_ribbons_Tariff_page_Basket_page_html_overlay_for_tariff_ribbons
 
   @Web
   Scenario Outline:
