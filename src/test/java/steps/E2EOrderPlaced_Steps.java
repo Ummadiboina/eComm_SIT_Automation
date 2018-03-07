@@ -1301,6 +1301,8 @@ public class E2EOrderPlaced_Steps {
         }
     }
     
+    
+    
     @And("^Enter cardDetails in payment page input ([^\"]*) and click 'Continue on next step'$")
     public void CreditCheckPaymentPg_ClickAndCollect(String Username) {
         // Write code here that turns the phrase above into concrete actions
