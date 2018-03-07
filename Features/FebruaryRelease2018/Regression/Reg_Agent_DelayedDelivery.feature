@@ -8,7 +8,8 @@ Feature: Reg_Agent_DelayedDelivery
     And Search for <Status> device
     And Select a valid PayM <Device>
     And Select valid <Tariffs> from tariffs tab
-    And select a valid Handset and Tariff combination
+    #And select a valid Handset and Tariff combination
+    And select a valid Handset and Tariff combination_new
     And Select valid <Extras> from extras tab
     And Validate all the Basket content and checkout
     Then perform all the advisory checks

@@ -525,14 +525,20 @@ import static pageobjects.FreeSimPage.Firstname;
 
         public static void ClickOnUseDifferentAddress(){
             List<WebElement> DiffAddressLink = driver.findElements(By.xpath("//*[@id='different-delivery-address']"));
-            if (DiffAddressLink.size() > 0) {
+            if(driver.findElement(By.xpath("//*[@id='different-delivery-address']")).isEnabled()){
+            if (DiffAddressLink.size() >= 1) {
                 WebElement element = pageobjects.DeliveryPage.DeliveryPageUseDiffAddressLink;
                 JavascriptExecutor executor = (JavascriptExecutor)driver;
                 executor.executeScript("arguments[0].click();", element);
 
             }
+            }
             else
-                Assert.fail("Unable to click on the Use a different address link");
+            {
+                System.out.println("Different delivery address link is not enabled");
+                driver.findElement(By.id("noNeedNewSim")).click();
+            }
+
 
         }
 

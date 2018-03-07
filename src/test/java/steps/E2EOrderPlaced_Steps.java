@@ -847,12 +847,20 @@ public class E2EOrderPlaced_Steps {
     @And("^click on \"([^\"]*)\" button$")
     public void CheckoutFromBasket(String arg1) {
         try {
-            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-            PageFactory.initElements(driver, BasketPage.class);
-            Thread.sleep(3000);
-            System.out.println("We are in yourbasket page");
-            BasketPageActions.gotoCheckout();
-            Thread.sleep(2000);
+            if(!driver.findElement(By.xpath("//*[@value='Go to checkout']")).isEnabled()) {
+                driver.findElement(By.id("noNeedNewSim")).click();
+                Thread.sleep(2000);
+            }
+                driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+                PageFactory.initElements(driver, BasketPage.class);
+                Thread.sleep(3000);
+                System.out.println("We are in yourbasket page");
+                BasketPageActions.gotoCheckout();
+                Thread.sleep(2000);
+
+
+             System.out.println("Succefully Checkout button is clicked");
+
         } catch (Exception e) {
             // TODO Auto-generated catch block
             System.out.println("Unable to click on Go to Checkout button");
@@ -1651,6 +1659,21 @@ public class E2EOrderPlaced_Steps {
         }
     }
 
+    @Given("^Select a valid Handset and Tariff combination_new$")
+    public void select_a_valid_Handset_and_Tariff_combination_new() {
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, Agent_DealBuilderPage.class);
+            driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
+            Agent_DealBuilderPageActions.HandsetTariffCombination_new();
+            Thread.sleep(4000);
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+            Assert.fail("Unable to select valid tariff and handset combination");
+        }
+    }
+
     @Given("^Select valid ([^\"]*) from extras tab$")
     public void select_valid_Random_from_extras_tab(String Extras) {
         try {
@@ -2011,6 +2034,8 @@ public class E2EOrderPlaced_Steps {
         try {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, Agent_RegisterCustomerPage.class);
+
+            driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
             Agent_RegisterCustomerActions.PayGRegistration(Firstname, Surname, HouseNumber, PostCode);
 
         } catch (Exception e) { // TODO Auto-generated catch block
@@ -2835,6 +2860,8 @@ public class E2EOrderPlaced_Steps {
         try {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, MouseHoverPage.class);
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+
             MouseHoverAction.PayMTabletsLandingPage();
             Autoredirection.redirect();
             Thread.sleep(15000);

@@ -166,6 +166,7 @@ public class Agent_DealBuilderPage {
 
 	@FindBy(how = How.XPATH, using = "//*[@id='buyOutButton']")
 	public static WebElement AgentBuyOut_Button;
+
 	@FindBy(how = How.ID, using = "checkStoreStock")
 	public static WebElement CheckStore;
 

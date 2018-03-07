@@ -165,6 +165,36 @@ public class Agent_DealBuilderPageActions extends Environment {
         }
     }
 
+    public static void HandsetTariffCombination_new() throws InterruptedException, IOException {
+        try {
+            System.out.println("Tariff Name: " + driver.findElement(By.xpath("//*[@id='planTable']/tbody/tr[1]/td[6]")).getText());
+            if (driver.findElement(By.xpath("//*[@id='planTable']/tbody/tr[1]/td[6]")).getText()
+                    .equals("Standard")) {
+                System.out.println("Selected Tariff is a Standard Tariff hence Handset Tariff combination is not required");
+            } else {
+
+                List<WebElement> menuOuter = driver.findElements(By.xpath("//*[@class='priceSelection']/select/option"));
+                System.out.println("The size of the table is :" + menuOuter.size());
+
+                for (int i = 0; i < menuOuter.size(); i++) {
+                    System.out.println("Option " + i + " is: " + menuOuter.get(i).getText());
+                }
+
+                driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
+                driver.findElement(By.xpath("(//*[@class='priceSelection']/select/option[3])")).click();
+                System.out.println("Selected Option : " + driver.findElement(By.xpath("(//*[@class='priceSelection']/select/option[3])")).getText());
+
+                System.out.println("Selected combination of handset and talk plan");
+                Thread.sleep(9000);
+            }
+            Screenshots.captureScreenshot();
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            System.out.println("handset and tariff dropdown is not displayed, should be fine");
+            Screenshots.captureScreenshot();
+        }
+    }
+
     public static void SelectExtras(String Extras) throws InterruptedException, IOException {
 
         // Selecting an Extra
