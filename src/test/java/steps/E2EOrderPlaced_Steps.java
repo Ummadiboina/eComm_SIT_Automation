@@ -1180,7 +1180,7 @@ public class E2EOrderPlaced_Steps {
 
     //And Click on "I'll be using an iPhone" checkbox and Click on 'Select' CTA to buy a tariff
     @And("^Click on (.*)I'll be using an iPhone(.*) checkbox and Click on 'Select' CTA to buy a tariff$")
-    public void  click_on_I_will_using_iPhone_checkbox_and_Click_on_Select_CTA_to_buy_tariff() {
+    public void click_on_I_will_using_iPhone_checkbox_and_Click_on_Select_CTA_to_buy_tariff() {
         try {
             E2EOrderPlaced_Steps e2eOrder = new E2EOrderPlaced_Steps();
             e2eOrder.checkbox_with_will_be_using_iPhone_belowSelectBtn();
@@ -1191,7 +1191,6 @@ public class E2EOrderPlaced_Steps {
             Assert.fail("Failed to  Click on I'll be using an iPhone checkbox and Click on 'Select' CTA to buy a tariff");
         }
     }
-
 
     //the targeted promotion section is displayed just below the 'recycle options' section
     @And("^the targeted promotion section is displayed just below the 'recycle options' section$")
@@ -1962,7 +1961,7 @@ public class E2EOrderPlaced_Steps {
         }
 
     }
-    
+
 
 	/*
 	 * #########################################################################
@@ -2043,7 +2042,7 @@ public class E2EOrderPlaced_Steps {
         }
 
     }
-    
+
 	/*
 	 * #########################################################################
 	 * #########
@@ -7113,7 +7112,7 @@ public class E2EOrderPlaced_Steps {
         }
     }
 
-   
+
     /*
     * #########################################################################
     * #######  EMPTY_basket_validate_promotion ##################################
@@ -7221,7 +7220,7 @@ public class E2EOrderPlaced_Steps {
             System.out.println("Failed to Agent should be displayed with updated copy of 'Refer with Simo' response ");
             log.debug("Failed to Agent should be displayed with updated copy of 'Refer with Simo' response ");
         }
-        } 
+        }
         catch (Exception e) {
         // TODO Auto-generated catch block
         System.out.println("Failed to Agent should be displayed with updated copy of 'Refer with Simo' response @ " + e.getStackTrace());

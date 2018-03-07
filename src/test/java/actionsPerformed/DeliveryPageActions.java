@@ -104,23 +104,36 @@ import static pageobjects.FreeSimPage.Firstname;
             DeliveryPage.Last_Name.sendKeys(Surname);
             log.debug("Entered first name and last name as " + Firstname + " " + Surname);
             DeliveryPage.Contact_Number.sendKeys("7890987678");
-            if(DeliveryPage.Contact_Error.isDisplayed()){
-                System.out.println("Not accepting mobile number without 0 in the begining");
-            }
-            else{
-                Assert.fail("Mobile number without 0 accepted");
+
+            List<WebElement> menuOuter = driver.findElements(By.xpath("//*[@id='contact-number-error']"));
+            if (menuOuter.size() > 0) {
+                if (DeliveryPage.Contact_Error.isDisplayed()) {
+                    System.out.println("Not accepting mobile number without 0 in the begining");
+                }
+            } else {
+                System.out.println("Mobile number without 0 is getting accepted");
             }
             DeliveryPage.Contact_Number.clear();
             DeliveryPage.Contact_Number.sendKeys("1234567890");
+            List<WebElement> menuOuter1 = driver.findElements(By.xpath("//*[@id='contact-number-error']"));
+            if (menuOuter1.size() > 0) {
+                if (DeliveryPage.Contact_Error.isDisplayed()) {
+                    System.out.println("Not accepting landline number without 0 in the begining");
+                }
+            } else {
+                System.out.println("Landline number without 0 is getting accepted");
+            }
             DeliveryPage.Password.sendKeys("NTTDATA123");
             DeliveryPage.security_answer.sendKeys("SitTester");
             DeliveryPage.date.sendKeys("25");
             DeliveryPage.Month.sendKeys("01");
             DeliveryPage.year.sendKeys("1957");
+            DeliveryPage.year.sendKeys(Keys.TAB);
             log.debug("Entered all the other relavant details");
             Screenshots.captureScreenshot();
 
         }
+
 
 
         public static void ClickContinue() throws InterruptedException, IOException {

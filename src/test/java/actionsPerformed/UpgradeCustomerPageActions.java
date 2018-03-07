@@ -1,25 +1,34 @@
 package actionsPerformed;
 
-import GlobalActions.Screenshots;
-import com.google.common.base.Function;
-import helpers.Environment;
-import helpers.Filereadingutility;
-import helpers.setRuntimeProperty;
-import org.apache.commons.lang.StringUtils;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.concurrent.TimeUnit;
+
+import GlobalActions.CommonUtilities;
+import GlobalActions.scrollToAnElement;
+import junit.framework.AssertionFailedError;
+import org.apache.commons.lang3.math.NumberUtils;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
-import pageobjects.UpgradeCustomerPage;
+import org.apache.commons.lang.StringUtils;
+import com.google.common.base.Function;
 
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.concurrent.TimeUnit;
+import GlobalActions.Screenshots;
+import helpers.Environment;
+import helpers.Filereadingutility;
+import helpers.setRuntimeProperty;
+import pageobjects.*;
+
+import static actionsPerformed.PaymentPageActions.Set_Bank_details;
+import static actionsPerformed.PaymentPageActions.Time_At_Address;
 
 public class UpgradeCustomerPageActions extends Environment {
 
@@ -1264,13 +1273,9 @@ public class UpgradeCustomerPageActions extends Environment {
             System.out.println("Selected a Random Tariff");
         }
         if (arg.contains("enterCode")) {
-            ((JavascriptExecutor) driver).executeScript("arguments[0].click();", driver.findElement(By.id("sendOtac-label")));
-            Thread.sleep(4000);
-            driver.findElement(By.id("otac")).sendKeys("999999");
-            ((JavascriptExecutor) driver).executeScript("arguments[0].click();", driver.findElement(By.xpath("//span[text()='Submit']")));
-
-            System.out.println(" We have enter the code");
-            System.out.println(" We have enter the code");
+            driver.findElement(By.xpath("//a[@id='skip-this-step']")).click();
+            System.out.println("Clicked on skip this step");
+            System.out.println("Selected a Random Tariff");
         } else
             System.out.println("The Delivery page is displayed");
         Screenshots.captureScreenshot();
@@ -1631,90 +1636,134 @@ public class UpgradeCustomerPageActions extends Environment {
         Screenshots.captureScreenshot();
     }
 
-    public static void verifyBuyOutDisplayedInMyPackage() throws IOException, InterruptedException {
+    public static int verifyBuyOutDisplayedInMyPackage() throws IOException, InterruptedException {
         System.out.println("verifyBuyOutDisplayedInMyPackage");
-        String AcText1 = null, AcText2 = null, AcText3 = null, AcText4 = null, cost1 = null, cost2 = null;
-        String ExText1 = null, ExText2 = null, ExText3 = null, ExText4 = null;
-        AcText1 = UpgradeCustomerPage.BuyoutText1MyPkg.getText();
-        AcText2 = UpgradeCustomerPage.BuyoutText2MyPkg.getText();
-        AcText3 = UpgradeCustomerPage.BuyoutText3MyPkg.getText();
-        AcText4 = UpgradeCustomerPage.BuyoutText4MyPkg.getText();
-        cost1 = UpgradeCustomerPage.BuyoutCost1MyPkg.getText();
-        cost2 = UpgradeCustomerPage.BuyoutCost2MyPkg.getText();
 
-        ExText1 = "Left to pay on your existing device";
-        ExText2 = "The balance still to pay on your current";
-        ExText3 = "Upgrade on us";
-        ExText4 = "We'll pay off the rest of your Device Plan, and you can keep your current device. If your next airtime bill has already been scheduled, it may still be taken.";
-//!cost2.isEmpty()
-        if (AcText1.contains(ExText1) && (AcText2.contains(ExText2) && (AcText3.contains(ExText3))
-                && (AcText4.contains(ExText4) && StringUtils.isNotBlank(cost1) && StringUtils.isNotBlank(cost2)))) {
-            System.out.println("Buy out offer text is displayed as expected");
-            System.out.println(AcText1 + "  " + cost1);
-            System.out.println(AcText2);
-            System.out.println(AcText3 + "  " + cost2);
-            System.out.println(AcText4);
+        String AcText = null, Actcost1 = null, Actcost2 = null, tmpcost1 = null, tmpcost2 = null;
+        int a = 0;
+        int b = 0;
+
+        AcText = UpgradeCustomerPage.BuyoutTextMyPkg.getText();
+        Actcost1 = UpgradeCustomerPage.BuyoutCost1MyPkg.getText();
+        Actcost2 = UpgradeCustomerPage.BuyoutCost2MyPkg.getText();
+        System.out.println("Left to Pay Value: " + Actcost1);
+        System.out.println("Buy out Amount: " + Actcost2);
+
+
+        tmpcost1 = org.apache.commons.lang3.StringUtils.substringBetween(Actcost1, "£", ".");
+        a = NumberUtils.toInt(tmpcost1);
+        tmpcost2 = org.apache.commons.lang3.StringUtils.substringBetween(Actcost2, "£", ".");
+        b = NumberUtils.toInt(tmpcost2);
+
+        if (AcText.contains("Upgrade on us")) {
+            System.out.println("Buy out offer text is displayed as expected: " + AcText);
+        } else {
+            System.out.println("Buy out offer text is not displayed as expected: " + AcText);
+            Assert.fail("Buy out offer text is not displayed as expected");
+        }
+        if (a == b) {
+            System.out.println("Buy out values are matching: " + ", Left To Pay: " + a + ", Buy Out Amount: " + b);
+        } else {
+            System.out.println("Buy out values are not matching: " + ", Left To Pay: " + a + ", Buy Out Amount: " + b);
+            Assert.fail("Buy out values are not matching");
+        }
+        if (Actcost2.contains("-")) {
+            System.out.println("Buy Out Amount contains negative value: " + Actcost2);
 
         } else {
-            System.out.println("Buy out offer text displayed is not as expected");
-            System.out.println(AcText1 + "  " + cost1);
-            System.out.println(AcText2);
-            System.out.println(AcText3 + "  " + cost2);
-            System.out.println(AcText4);
-            Assert.fail("Buy out text is not as expected");
-
+            System.out.println("Buy Out Amount does not contain negative value: " + Actcost2);
+            Assert.fail("Buy Out Amount does not contain negative value");
         }
         Screenshots.captureScreenshot();
-
+        return a;
     }
 
-    public static void verifyBuyOutDisplayedInBasketPage() throws IOException, InterruptedException {
+    public static void verifyBuyOutDisplayedInBasketPage(int BouOutValueFromMyPackageSection) throws IOException, InterruptedException {
         System.out.println("verifyBuyOutDisplayedInBasketPage");
-        String AcText1 = null, AcText2 = null, AcText3 = null, AcText4 = null, cost1 = null, cost2 = null;
-        String ExText1 = null, ExText2 = null, ExText3 = null, ExText4 = null;
+        String AcText = null, Actcost1 = null, Actcost2 = null, tmpcost1 = null, tmpcost2 = null;
+        int a = 0;
+        int b = 0;
+        int BouOutValue_FromMyPackageSection = BouOutValueFromMyPackageSection;
 
-        AcText1 = UpgradeCustomerPage.BuyOutText1BasketPage.getText();
-        AcText2 = UpgradeCustomerPage.BuyOutText2BasketPage.getText();
-        AcText3 = UpgradeCustomerPage.BuyOutText3BasketPage.getText();
-        AcText4 = UpgradeCustomerPage.BuyOutText4BasketPage.getText();
-        cost1 = UpgradeCustomerPage.BuyOutCost1BasketPage.getText();
-        cost2 = UpgradeCustomerPage.BuyOutCost2BasketPage.getText();
+        scrollToAnElement.scrollToElement(UpgradeCustomerPage.BuyOutTextBasketPage);
 
-        ExText1 = "Your Phone Plan balance";
-        ExText2 = "This is the payment amount required for your current CCA account to be settled";
-        ExText3 = "Upgrade on us";
-        ExText4 = "We�ll pay off the rest of your Device Plan, and you can keep your current device. If your next airtime bill has already been scheduled, it may still be taken.";
+        AcText = UpgradeCustomerPage.BuyOutTextBasketPage.getText();
+        Actcost1 = UpgradeCustomerPage.BuyOutCost1BasketPage.getText();
+        Actcost2 = UpgradeCustomerPage.BuyOutCost2BasketPage.getText();
 
-        System.out.println(AcText1 + "   " + cost1);
-        System.out.println(AcText2);
-        System.out.println(AcText3 + "   " + cost2);
-        System.out.println(AcText4);
+        System.out.println("Left to Pay Value: " + Actcost1);
+        System.out.println("Buy out Amount: " + Actcost2);
 
-        if (AcText1.equals(ExText1)
-                && (AcText2.equals(ExText2) && (AcText3.equals(ExText3)) && (AcText4.equals(ExText4)))) {
-            System.out.println("Buy out offer text is displayed as expected");
-            System.out.println("Your Phone Plan balance is " + cost1);
-            System.out.println("Upgrade on us for " + cost2);
+        tmpcost1 = org.apache.commons.lang3.StringUtils.substringBetween(Actcost1, "£", ".");
+        a = NumberUtils.toInt(tmpcost1);
+        tmpcost2 = org.apache.commons.lang3.StringUtils.substringBetween(Actcost2, "£", ".");
+        b = NumberUtils.toInt(tmpcost2);
+
+        if (AcText.contains("Upgrade on us")) {
+            System.out.println("Buy out offer text is displayed as expected: " + AcText);
         } else {
-            Assert.fail("Buy out text is not as expected");
+            System.out.println("Buy out offer text is not displayed as expected: " + AcText);
+            Assert.fail("Buy out offer text is not displayed as expected");
         }
+        if (a == b) {
+            System.out.println("Buy out values are matching: " + ", Left To Pay: " + a + ", Buy Out Amount: " + b);
+        } else {
+            System.out.println("Buy out values are not matching: " + ", Left To Pay: " + a + ", Buy Out Amount: " + b);
+            Assert.fail("Buy out values are not matching");
+        }
+        if (Actcost2.contains("-")) {
+            System.out.println("Buy Out Amount contains negative value: " + Actcost2);
+
+        } else {
+            System.out.println("Buy Out Amount does not contain negative value: " + Actcost2);
+            Assert.fail("Buy Out Amount does not contain negative value");
+        }
+        if (b == BouOutValue_FromMyPackageSection) {
+            System.out.println("Buy out value from Basket Page is matching with the BoyOut value from MyPackage Section: " + ", Boy Out Value from My Package Section: " + BouOutValue_FromMyPackageSection + ", Buy Out Amount from Basket Page: " + b);
+        } else {
+            System.out.println("Buy out value from Basket Page is not matching with the BoyOut value from MyPackage Section: " + ", Boy Out Value from My Package Section: " + BouOutValue_FromMyPackageSection + ", Buy Out Amount from Basket Page: " + b);
+            Assert.fail("Buy out values from MyPackage Section and Basket Page are not matching");
+        }
+
         Screenshots.captureScreenshot();
     }
 
-    public static void verifyBuyOutDisplayed() throws IOException, InterruptedException {
+    public static void verifyBuyOutDisplayed_OrderSummarySection(int BouOutValueFromMyPackageSection, String pageName) throws IOException, InterruptedException {
         System.out.println("verify Buy Out is displayed");
         @SuppressWarnings("unused")
-        String BuyoutText = null, BuyoutCost = null, Title = null;
-        BuyoutText = UpgradeCustomerPage.BuyOutTextOTACPage.getText();
-        BuyoutCost = UpgradeCustomerPage.BuyOutCostOTACPage.getText();
+        String AcText = null, Actcost1 = null, tmpcost1 = null, Title = null;
+        int a = 0;
+        int BouOutValue_FromMyPackageSection = BouOutValueFromMyPackageSection;
+
+        AcText = UpgradeCustomerPage.BuyOutText_OrderSummarySection.getText();
+        Actcost1 = UpgradeCustomerPage.BuyOutCost_OrderSummarySection.getText();
         Title = driver.getTitle();
 
-        if (!BuyoutText.isEmpty()) {
-            System.out.println("Buy out Text displayed in \'" + Title + "\'page is " + BuyoutText);
+        System.out.println("Buy out Amount: " + Actcost1);
 
+        tmpcost1 = org.apache.commons.lang3.StringUtils.substringBetween(Actcost1, "£", ".");
+        a = NumberUtils.toInt(tmpcost1);
+
+        if (AcText.contains("Upgrade on us")) {
+            System.out.println("Buy out offer text is displayed as expected: " + AcText);
+        } else {
+            System.out.println("Buy out offer text is not displayed as expected: " + AcText);
+            Assert.fail("Buy out offer text is not displayed as expected");
+        }
+        if (Actcost1.contains("-")) {
+            System.out.println("Buy Out Amount contains negative value: " + Actcost1);
+
+        } else {
+            System.out.println("Buy Out Amount does not contain negative value: " + Actcost1);
+            Assert.fail("Buy Out Amount does not contain negative value");
+        }
+        if (a == BouOutValue_FromMyPackageSection) {
+            System.out.println("Buy out value from "+pageName+" Page is matching with the BoyOut value from MyPackage Section: " + ", Boy Out Value from My Package Section: " + BouOutValue_FromMyPackageSection + ", Buy Out Amount from "+pageName+" Page: " + a);
+        } else {
+            System.out.println("Buy out value from "+pageName+" Page is not matching with the BoyOut value from MyPackage Section: " + ", Boy Out Value from My Package Section: " + BouOutValue_FromMyPackageSection + ", Buy Out Amount from "+pageName+" Page: " + a);
+            Assert.fail("Buy out values from MyPackage Section and "+pageName+" Page are not matching");
         }
         Screenshots.captureScreenshot();
-
     }
 
     public static void VerifyTradeinMessage() throws IOException, InterruptedException {
