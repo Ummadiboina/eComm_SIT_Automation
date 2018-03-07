@@ -51,24 +51,24 @@ public class UpgradeCustomerPageActions extends Environment {
         System.out.println("Title of the page is " + driver.getTitle());
         /*
          * if ((!driver.getTitle().
-         * contains("O2 | Accounts | Please verify your email address") ||
-         * !driver.getTitle().contains("O2 | Accounts | Update username"))) {
-         *
-         * Assert.fail("Login failed");
-         *
-         * } else {
-         *
-         * System.out.println("Logged in successfully"); }
-         */
+		 * contains("O2 | Accounts | Please verify your email address") ||
+		 * !driver.getTitle().contains("O2 | Accounts | Update username"))) {
+		 * 
+		 * Assert.fail("Login failed");
+		 * 
+		 * } else {
+		 * 
+		 * System.out.println("Logged in successfully"); }
+		 */
         /*
          * try { System.out.println("Going to click on Continue link");
-         * pageobjects.UpgradeCustomerPage.Continue.click();
-         *
-         * } catch (Exception e) { // TODO Auto-generated catch block
-         * System.out.println("Continue button is not there, it should be fine" );
-         *
-         * }
-         */
+		 * pageobjects.UpgradeCustomerPage.Continue.click();
+		 * 
+		 * } catch (Exception e) { // TODO Auto-generated catch block
+		 * System.out.println("Continue button is not there, it should be fine" );
+		 * 
+		 * }
+		 */
         Screenshots.captureScreenshot();
 
     }
@@ -234,12 +234,12 @@ public class UpgradeCustomerPageActions extends Environment {
 
         System.out.println(pageobjects.UpgradeCustomerPage.NotEligible_message.getText());
 
-        /*
-         * Assert.assertEquals(pageobjects.UpgradeCustomerPage.
-         * NotEligible_message.getText(), "You are not eligible to upgrade"); // bound
-         * to change System.out.println( "The error message is displayed as" +
-         * pageobjects.UpgradeCustomerPage.NotEligible_message.getText());
-         */
+		/*
+		 * Assert.assertEquals(pageobjects.UpgradeCustomerPage.
+		 * NotEligible_message.getText(), "You are not eligible to upgrade"); // bound
+		 * to change System.out.println( "The error message is displayed as" +
+		 * pageobjects.UpgradeCustomerPage.NotEligible_message.getText());
+		 */
         Screenshots.captureScreenshot();
     }
 
@@ -677,12 +677,12 @@ public class UpgradeCustomerPageActions extends Environment {
                     log.debug("Inside the overlay for the selected tariff");
                 }
                 Thread.sleep(5000);
-                /*
-                 * log.debug("Text inside the primary overlay is :" + '\n' +
-                 * driver.findElement(By
-                 * .xpath("//div[contains(@class, 'overlay-box tariff-tile-info-promo-overlay')]/div/h3"
-                 * )) .getText());
-                 */
+				/*
+				 * log.debug("Text inside the primary overlay is :" + '\n' +
+				 * driver.findElement(By
+				 * .xpath("//div[contains(@class, 'overlay-box tariff-tile-info-promo-overlay')]/div/h3"
+				 * )) .getText());
+				 */
                 closeOverlayIconTEpage();
             } else {
                 Assert.fail("Primary Overlay Icon not present");
@@ -706,12 +706,12 @@ public class UpgradeCustomerPageActions extends Environment {
                     driver.switchTo().window(winHandle);
                     log.debug("Inside the overlay for the selected tariff");
                 }
-                /*
-                 * log.debug("Text inside the secondary overlay is :" + '\n' +
-                 * driver.findElement(By
-                 * .xpath("//div[contains(@class, 'overlay-box tariff-tile-info-promo-overlay')]/div/h3"
-                 * )) .getText());
-                 */
+				/*
+				 * log.debug("Text inside the secondary overlay is :" + '\n' +
+				 * driver.findElement(By
+				 * .xpath("//div[contains(@class, 'overlay-box tariff-tile-info-promo-overlay')]/div/h3"
+				 * )) .getText());
+				 */
                 closeOverlayIconTEpage();
             } else {
                 Assert.fail("Secondary Overlay Icon not present");
@@ -753,12 +753,12 @@ public class UpgradeCustomerPageActions extends Environment {
                     log.debug("Inside the overlay for the selected tariff");
                 }
                 Thread.sleep(5000);
-                /*
-                 * log.debug("Text inside the primary overlay is :" + '\n' +
-                 * driver.findElement(By
-                 * .xpath("//div[contains(@class, 'overlay-box tariff-tile-info-promo-overlay')]/div/h3"
-                 * )) .getText());
-                 */
+				/*
+				 * log.debug("Text inside the primary overlay is :" + '\n' +
+				 * driver.findElement(By
+				 * .xpath("//div[contains(@class, 'overlay-box tariff-tile-info-promo-overlay')]/div/h3"
+				 * )) .getText());
+				 */
                 closeOverlayIconTEpage();
             } else {
                 Assert.fail("Primary Overlay Icon not present");
@@ -781,12 +781,12 @@ public class UpgradeCustomerPageActions extends Environment {
                     log.debug("Inside the overlay for the selected tariff");
 
                 }
-                /*
-                 * log.debug("Text inside the secondary overlay is :" + '\n' +
-                 * driver.findElement(By
-                 * .xpath("//div[contains(@class, 'overlay-box tariff-tile-info-promo-overlay')]/div/h3"
-                 * )) .getText());
-                 */
+				/*
+				 * log.debug("Text inside the secondary overlay is :" + '\n' +
+				 * driver.findElement(By
+				 * .xpath("//div[contains(@class, 'overlay-box tariff-tile-info-promo-overlay')]/div/h3"
+				 * )) .getText());
+				 */
                 closeOverlayIconTEpage();
             } else {
                 Assert.fail("Secondary Overlay Icon not present");
@@ -1375,10 +1375,10 @@ public class UpgradeCustomerPageActions extends Environment {
         pageobjects.UpgradeCustomerPage.RefundableOptionbyCredit.click();
         Thread.sleep(4000);
         System.out.println("Selected refundable by credit option");
-        /*
-         * pageobjects.UpgradeCustomerPage.ContinuetoUpgrade.click();
-         * System.out.println("Selected continue to upgrade button");
-         */
+		/*
+		 * pageobjects.UpgradeCustomerPage.ContinuetoUpgrade.click();
+		 * System.out.println("Selected continue to upgrade button");
+		 */
         System.out.println("Completed refundableOptionSelect function");
         Screenshots.captureScreenshot();
 
@@ -1996,7 +1996,7 @@ public class UpgradeCustomerPageActions extends Environment {
     /////////////////////////////////////Promotions/////////////////////////////////////////////////////////////////////
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-    public static void HeadingMessagePanel() {
+    public static void HeadingMessagePanel() throws InterruptedException, IOException {
 
         log.debug("Validating the Heading message for promotions");
 
@@ -2014,7 +2014,7 @@ public class UpgradeCustomerPageActions extends Environment {
 
     }
 
-    public static void BodyMessagePanel() {
+    public static void BodyMessagePanel() throws InterruptedException, IOException {
         WebElement BodyPromo = pageobjects.UpgradeCustomerPage.PromotionsBody;
         JavascriptExecutor executor = (JavascriptExecutor) driver;
         executor.executeScript("arguments[0].click();", BodyPromo);
@@ -2029,7 +2029,7 @@ public class UpgradeCustomerPageActions extends Environment {
 
     }
 
-    public static void SimoPromotionsCheckboxNotDisplayed() {
+    public static void SimoPromotionsCheckboxNotDisplayed() throws InterruptedException, IOException {
 
         WebElement element = pageobjects.UpgradeCustomerPage.CheckBoxNotDisplayed;
         JavascriptExecutor executor = (JavascriptExecutor) driver;
@@ -2044,7 +2044,7 @@ public class UpgradeCustomerPageActions extends Environment {
     }
 
 
-    public static void copyTextAdditionalDepositPage() {
+    public static void copyTextAdditionalDepositPage() throws InterruptedException, IOException {
 
         log.debug("in copy text additional deposit verification page");
         String actualText = pageobjects.UpgradeCustomerPage.copyTextAdditonalDeposit.getText();
@@ -2066,7 +2066,7 @@ public class UpgradeCustomerPageActions extends Environment {
         Screenshots.captureScreenshot();
     }
 
-    public static void data_filtersIsDdisplayed() {
+    public static void data_filtersIsDdisplayed() throws Exception {
         try {
             driver.manage().timeouts().implicitlyWait(2, TimeUnit.MINUTES);
             if (driver.findElements(By.xpath("//div[@class='filter-options']/button")).size() > 0) {
@@ -2089,7 +2089,7 @@ public class UpgradeCustomerPageActions extends Environment {
         }
     }
 
-    public static void twoContractLengthShouldDisplayed() {
+    public static void twoContractLengthShouldDisplayed() throws Exception {
         try {
             driver.manage().timeouts().implicitlyWait(2, TimeUnit.MINUTES);
             if (driver.findElements(By.xpath("//div[@class='button-tabs']//a")).size() > 0) {
@@ -2112,7 +2112,7 @@ public class UpgradeCustomerPageActions extends Environment {
         }
     }
 
-    public static void whyChooseAn_O2_may_Monthly_sim_is_not_displayed() {
+    public static void whyChooseAn_O2_may_Monthly_sim_is_not_displayed() throws Exception {
         try {
             driver.manage().timeouts().implicitlyWait(2, TimeUnit.MINUTES);
             if (!driver.findElement(By.xpath("//*[contains(text(),'hy choose an O2 Pay Monthly sim?')]")).isDisplayed()) {
@@ -2129,7 +2129,7 @@ public class UpgradeCustomerPageActions extends Environment {
         }
     }
 
-    public static void OOS_MsgShouldDisplayed_inUpgradeOptionsPage() {
+    public static void OOS_MsgShouldDisplayed_inUpgradeOptionsPage() throws Exception {
         try {
             driver.manage().timeouts().implicitlyWait(2, TimeUnit.MINUTES);
             if (driver.findElements(By.xpath("//*[contains(text(),'Out of stock')]")).size() > 0) {
@@ -2148,7 +2148,7 @@ public class UpgradeCustomerPageActions extends Environment {
         }
     }
 
-    public static void verifyOOS_MessageIsDisplayedInUpgradesBasketPage() {
+    public static void verifyOOS_MessageIsDisplayedInUpgradesBasketPage() throws Exception {
         try {
             driver.manage().timeouts().implicitlyWait(2, TimeUnit.MINUTES);
             if (driver.findElements(By.xpath("//*[contains(text(),'You can't continue with checking out if there are any out of stock items in your basket,')]")).size() > 0) {
@@ -2167,7 +2167,7 @@ public class UpgradeCustomerPageActions extends Environment {
         }
     }
 
-    public static void upfront_sort_options_is_not_present_in_sortingDropdown() {
+    public static void upfront_sort_options_is_not_present_in_sortingDropdown() throws Exception {
         try {
             driver.manage().timeouts().implicitlyWait(2, TimeUnit.MINUTES);
             if (UpgradeCustomerPage.dataFilter.isDisplayed()) {
