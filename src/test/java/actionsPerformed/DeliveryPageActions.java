@@ -26,38 +26,41 @@ import static pageobjects.FreeSimPage.Firstname;
 
 public class DeliveryPageActions extends Environment {
 
-    public List<HashMap<String, String>> datamap;
-    final static Logger log = Logger.getLogger("DeliveryPageActions");
-    static JavascriptExecutor js = (JavascriptExecutor) driver;
+        public List<HashMap<String, String>> datamap;
+        final static Logger log = Logger.getLogger("DeliveryPageActions");
+        static JavascriptExecutor js = (JavascriptExecutor) driver;
 
-    public static void SetDelivery() {
+        public static void SetDelivery() {
 
-        try {
-            DeliveryPage.Housenumber.sendKeys("12");
-            log.debug("Entered House number");
-            Thread.sleep(2000);
-            pageobjects.DeliveryPage.Postcode.sendKeys("B15 2LG");
-            log.debug("Entered Post code");
-            Thread.sleep(2000);
-            pageobjects.DeliveryPage.Find_Address.click();
-            log.debug("Clicked on the Find address button");
-            Thread.sleep(5000);
-            if (pageobjects.DeliveryPage.SelectAddress1.isDisplayed()) {
-                pageobjects.DeliveryPage.SelectAddress1.click();
-                log.debug("Selected an address");
+            try {
+
+                if(DeliveryPage.Housenumber.isDisplayed()) {
+                    DeliveryPage.Housenumber.sendKeys("12");
+                    log.debug("Entered House number");
+                    Thread.sleep(2000);
+                    pageobjects.DeliveryPage.Postcode.sendKeys("B15 2LG");
+                    log.debug("Entered Post code");
+                    Thread.sleep(2000);
+                    pageobjects.DeliveryPage.Find_Address.click();
+                    log.debug("Clicked on the Find address button");
+                    Thread.sleep(5000);
+                }
+                if (pageobjects.DeliveryPage.SelectAddress1.isDisplayed()) {
+                    pageobjects.DeliveryPage.SelectAddress1.click();
+                    log.debug("Selected an address");
+                }
+                Thread.sleep(3000);
+                Screenshots.captureScreenshot();
+
+            } catch (Exception e) {
+                e.printStackTrace();
             }
-            Thread.sleep(3000);
-            Screenshots.captureScreenshot();
-
-        } catch (Exception e) {
-            e.printStackTrace();
         }
-    }
 
     public static void AboutYou(String Firstname, String Surname) {
-        try {
-            driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-            // Thread.sleep(3000);
+            try {
+             driver.manage().timeouts().implicitlyWait(30,TimeUnit.SECONDS);
+           // Thread.sleep(3000);
             String str = RandomEmailAddressCreation.RandomEmail();
             log.debug("Entering an Random email id is " + str);
             DeliveryPage.Email_Address.sendKeys(str);
@@ -80,9 +83,11 @@ public class DeliveryPageActions extends Environment {
             DeliveryPage.year.sendKeys(Keys.TAB);
             log.debug("Entered all the other relavant details");
             Screenshots.captureScreenshot();
-        } catch (Exception e) {
-            System.out.println("Failed to proceed on Delivey page : " + e.getMessage());
-            e.printStackTrace();
+            } catch (Exception e) {
+                System.out.println("Failed to proceed on Delivey page : " + e.getMessage());
+                e.printStackTrace();
+            }
+
         }
 
     }
@@ -132,61 +137,60 @@ public class DeliveryPageActions extends Environment {
     }
 
 
-    public static void ClickContinue() throws InterruptedException, IOException {
-        Thread.sleep(3000);
-        log.debug("in click continue function");
-
-        Boolean isPresent = driver.findElements(By.xpath("//*[@id='checkbox-terms-agreement-required']")).size() > 0;
-        if (isPresent) {
-            log.debug("checkbox is present, so going to click on that");
+   public static void ClickContinue() throws InterruptedException, IOException {
             Thread.sleep(3000);
-            js.executeScript("arguments[0].click();", driver.findElement(By.xpath("//*[@id='checkbox-terms-agreement-required']")));
-            log.debug("checkbox Selected");
-            pageobjects.DeliveryPage.Continue.click();
-            log.debug("Clicking on the continue link");
-            Thread.sleep(4000);
-            Screenshots.captureScreenshot();
-        } else {
-            WebElement element = pageobjects.DeliveryPage.Continue;
-            JavascriptExecutor executor = (JavascriptExecutor) driver;
-            executor.executeScript("arguments[0].click();", element);
-            //pageobjects.DeliveryPage.Continue.click();
-            log.debug("Clicking on the continue link");
-            Screenshots.captureScreenshot();
+            log.debug("in click continue function");
+
+            if (driver.findElements(By.xpath("//*[@id='checkbox-terms-agreement-required']")).size() > 0){
+                log.debug("checkbox is present, so going to click on that");
+                Thread.sleep(3000);
+                js.executeScript("arguments[0].click();",driver.findElement(By.xpath("//*[@id='checkbox-terms-agreement-required']")));
+                log.debug("checkbox Selected");
+                pageobjects.DeliveryPage.Continue.click();
+                log.debug("Clicking on the continue link");
+                Thread.sleep(4000);
+                Screenshots.captureScreenshot();
+            } else {
+                WebElement element = pageobjects.DeliveryPage.Continue;
+                JavascriptExecutor executor = (JavascriptExecutor)driver;
+                executor.executeScript("arguments[0].click();", element);
+                //pageobjects.DeliveryPage.Continue.click();
+                log.debug("Clicking on the continue link");
+                Screenshots.captureScreenshot();
+            }
+
+
         }
-
-
-    }
-
-    public static void MobileClickContinue() throws InterruptedException, IOException {
-        Thread.sleep(3000);
-        log.debug("in click continue function");
-
-        Boolean isPresent = driver.findElements(By.xpath("//*[@id='checkbox-terms-agreement-required']")).size() > 0;
-        if (isPresent) {
-            log.debug("checkbox is present, so going to click on that");
+        
+   public static void MobileClickContinue() throws InterruptedException, IOException {
             Thread.sleep(3000);
-            js.executeScript("arguments[0].click();", driver.findElement(By.xpath("//*[@id='checkbox-terms-agreement-required']")));
-            log.debug("checkbox Selected");
+            log.debug("in click continue function");
 
-            //driver.findElement(By.xpath("//*[@id='checkbox-terms-agreement-required']")).sendKeys(Keys.ENTER);
+            Boolean isPresent = driver.findElements(By.xpath("//*[@id='checkbox-terms-agreement-required']")).size() > 0;
+            if (isPresent) {
+                log.debug("checkbox is present, so going to click on that");
+                Thread.sleep(3000);
+                js.executeScript("arguments[0].click();",driver.findElement(By.xpath("//*[@id='checkbox-terms-agreement-required']")));
+                log.debug("checkbox Selected");
 
-            //*[@id="btn-continue"]
+                //driver.findElement(By.xpath("//*[@id='checkbox-terms-agreement-required']")).sendKeys(Keys.ENTER);
 
-            log.debug("going to click on the continue link");
+                //*[@id="btn-continue"]
 
-            js.executeScript("arguments[0].click();", pageobjects.DeliveryPage.SendMeMySim2);
-            log.debug("Clicking on the continue link");
-            Thread.sleep(4000);
-            Screenshots.captureScreenshot();
-        } else {
-            pageobjects.DeliveryPage.Continue.click();
-            log.debug("Clicking on the continue link");
-            Screenshots.captureScreenshot();
+                log.debug("going to click on the continue link");
+
+                js.executeScript("arguments[0].click();",pageobjects.DeliveryPage.SendMeMySim2);
+                log.debug("Clicking on the continue link");
+                Thread.sleep(4000);
+                Screenshots.captureScreenshot();
+            } else {
+                pageobjects.DeliveryPage.Continue.click();
+                log.debug("Clicking on the continue link");
+                Screenshots.captureScreenshot();
+            }
+
+
         }
-
-
-    }
 
     public static void selectExistingAcctAndFastCheckOut() throws InterruptedException, IOException {
         Thread.sleep(5000);
