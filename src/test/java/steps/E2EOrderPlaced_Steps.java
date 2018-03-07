@@ -1177,7 +1177,7 @@ public class E2EOrderPlaced_Steps {
 
     //And Click on "I'll be using an iPhone" checkbox and Click on 'Select' CTA to buy a tariff
     @And("^Click on (.*)I'll be using an iPhone(.*) checkbox and Click on 'Select' CTA to buy a tariff$")
-    public void click_on_I_will_using_iPhone_checkbox_and_Click_on_Select_CTA_to_buy_tariff() throws Throwable {
+    public void click_on_I_will_using_iPhone_checkbox_and_Click_on_Select_CTA_to_buy_tariff() {
         try {
             E2EOrderPlaced_Steps e2eOrder = new E2EOrderPlaced_Steps();
             e2eOrder.checkbox_with_will_be_using_iPhone_belowSelectBtn();
@@ -1343,42 +1343,44 @@ public class E2EOrderPlaced_Steps {
     
       @And("^land on the payment page and input ([^\"]*) and other details and click 'Continue' on next step for otac$")
     public void CreditCheckPaymentPage_HomeDel(String Username) {
-        // Write code here that turns the phrase above into concrete actions
-        try {
-            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-            PageFactory.initElements(driver, PaymentPage.class);
-            PaymentPageActions.Card_Details(Username);
-            Thread.sleep(75000);
-        } catch (Exception e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-            System.out.println("Unable to input details in payment page");
-            Assert.fail("Unable to input details in payment page");
+          // Write code here that turns the phrase above into concrete actions
+          try {
+              driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+              PageFactory.initElements(driver, PaymentPage.class);
+              PaymentPageActions.Card_Details(Username);
+              Thread.sleep(75000);
+          } catch (Exception e) {
+              // TODO Auto-generated catch block
+              e.printStackTrace();
+              System.out.println("Unable to input details in payment page");
+              Assert.fail("Unable to input details in payment page");
 
-        }
+          }
+      }
     
 
     @And("^land on the payment page and input ([^\"]*) and other details for Click and collect order and click 'Continue on next step'$")
-    public void CreditCheckPaymentPage_ClickAndCollect(String Username) {
-        // Write code here that turns the phrase above into concrete actions
-        try {
-            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-            PageFactory.initElements(driver, PaymentPage.class);
-            //CommonFunctionscheckTitle("Payment Page");
-            PaymentPageActions.Set_Bank_details(Username);
-            Thread.sleep(3000);
-            PaymentPageActions.Time_At_Address_CC();
-            Thread.sleep(3000);
-            PaymentPageActions.Card_Details(Username);
-            Thread.sleep(75000);
-        } catch (Exception e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-            System.out.println("Unable to input details in payment page");
-            Assert.fail("Unable to input details in payment page");
+    public void CreditCheckPaymentPage_ClickAndCollect(String Username){
+              // Write code here that turns the phrase above into concrete actions
+              try {
+                  driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+                  PageFactory.initElements(driver, PaymentPage.class);
+                  //CommonFunctionscheckTitle("Payment Page");
+                  PaymentPageActions.Set_Bank_details(Username);
+                  Thread.sleep(3000);
+                  PaymentPageActions.Time_At_Address_CC();
+                  Thread.sleep(3000);
+                  PaymentPageActions.Card_Details(Username);
+                  Thread.sleep(75000);
+              } catch (Exception e) {
+                  // TODO Auto-generated catch block
+                  e.printStackTrace();
+                  System.out.println("Unable to input details in payment page");
+                  Assert.fail("Unable to input details in payment page");
 
-        }
-    }
+              }
+          }
+
 
     @Given("^land on the Non Credit check payment page and input ([^\"]*) and other details and click 'Continue on next step'$")
     public void NonCreditCheckPaymentPage_HomeDelivery(String Username) {
@@ -7944,7 +7946,7 @@ public class E2EOrderPlaced_Steps {
     }*/
 
     @And("^enter a ([^\"]*) and an ([^\"]*) in Delivery section$")
-    public void enter_houseNum_and_PostCode(String houseNum, String pcode) throws Exception {
+    public void enter_houseNum_and_PostCode(String houseNum, String pcode) {
         try {
             PageFactory.initElements(driver, DeliveryPage.class);
             DeliveryPageActions.enterHouseNumAndPostalCode_DeliverySection(houseNum, pcode);
@@ -7956,7 +7958,7 @@ public class E2EOrderPlaced_Steps {
 
 
     @Then("^the respective ([^\"]*) message should be displayed in address look up section$")
-    public void respective_Error_messageShould_Be_Displayed_address_lookup(String postalCodeMsg) throws Exception {
+    public void respective_Error_messageShould_Be_Displayed_address_lookup(String postalCodeMsg) {
         try {
             PageFactory.initElements(driver, DeliveryPage.class);
             DeliveryPageActions.enteredInvalidPostcodeAdressLookUp(postalCodeMsg);
@@ -7967,7 +7969,7 @@ public class E2EOrderPlaced_Steps {
     }
 
     @Then("^respective ([^\"]*) message displayed in address look up section for using commercial address$")
-    public void errorMessageDisplayedForUsingCommercialAddress_AddressLookup(String postalCodeMsg) throws Exception {
+    public void errorMessageDisplayedForUsingCommercialAddress_AddressLookup(String postalCodeMsg) {
         try {
             PageFactory.initElements(driver, DeliveryPage.class);
             DeliveryPageActions.enteredCommercialAddress_AddressLookUp(postalCodeMsg);
@@ -7978,7 +7980,7 @@ public class E2EOrderPlaced_Steps {
     }
 
     @Then("^the respective ([^\"]*) message should be displayed in enter manually section$")
-    public void respective_Error_messageShould_Be_Displayed_Enter_Manually_section(String postalCodeMsg) throws Exception {
+    public void respective_Error_messageShould_Be_Displayed_Enter_Manually_section(String postalCodeMsg) {
         try {
             PageFactory.initElements(driver, DeliveryPage.class);
             DeliveryPageActions.enteredInvalidPostcodeEnterManualSection(postalCodeMsg);
