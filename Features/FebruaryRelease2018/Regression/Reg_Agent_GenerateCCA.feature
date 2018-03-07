@@ -1,4 +1,4 @@
-Feature: Reg_Agent_Generate CCA
+Feature: Reg_Agent_GenerateCCA
 
   #launch hooks and get browser
   @Web

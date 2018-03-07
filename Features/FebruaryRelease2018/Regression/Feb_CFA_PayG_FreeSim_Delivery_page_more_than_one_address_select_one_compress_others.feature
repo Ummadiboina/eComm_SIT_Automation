@@ -1,4 +1,4 @@
-Feature: CFA_PayG_FreeSim_Delivery_page_more_than_one_address_select_one_compress_others
+Feature: Feb_CFA_PayG_FreeSim_Delivery_page_more_than_one_address_select_one_compress_others
   This scenario ensures that when the customer on acquisition journey selects 'Freesim' for Phones  and enters the postcode in Delivery page, then all the other addresses in the drop down should be compressed on selecting one of the address
 
   @Web

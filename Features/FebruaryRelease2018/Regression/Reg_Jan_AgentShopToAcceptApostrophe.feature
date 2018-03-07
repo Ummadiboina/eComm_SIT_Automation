@@ -1,4 +1,5 @@
-Feature: AgentShopToAcceptApostrophe
+Feature: Reg_Jan_AgentShopToAcceptApostrophe
+
   This scenario ensures that the Agent shop accepts Apostrophe in First Name and Last Name fields
 
   @Web

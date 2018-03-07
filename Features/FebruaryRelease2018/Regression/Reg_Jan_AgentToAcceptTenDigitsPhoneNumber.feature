@@ -1,4 +1,5 @@
-Feature: AgentToAcceptTenDigitsPhoneNumber
+Feature: Reg_Jan_AgentToAcceptTenDigitsPhoneNumber
+
   This scenario ensures that the Agent shop accepts 10 digit home number
 
   @Web
@@ -14,7 +15,6 @@ Feature: AgentToAcceptTenDigitsPhoneNumber
     And enter ten digit contact number perform the credit checks using valid <Firstname>, <Surname>, <HouseNumber>, <PostCode> and valid <Username>
     And Register the customer with valid <Firstname>, <Surname>, <HouseNumber>, <PostCode> and other valid details in delivery page
     And Choose <DeliveryType> delivery address and delivery time
-    #When Pay by card for PAYM device
     When Pay by card for PAYM device
     Then Order confirmation message should be displayed
 

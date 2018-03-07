@@ -1,4 +1,4 @@
-Feature: CFU_Tablet_CnC_changes_on_Delivery_page_Order_placement
+Feature: Feb_CFU_Tablet_CnC_changes_on_Delivery_page_Order_placement
 
   This scenario ensures that when the customer on upgrade journey selects 'Tablet' proceeds till Delivery page, then the customer should be displayed with 'Go to click and collect’ under the Home delivery tab and should be able to place order with Click and collect
 

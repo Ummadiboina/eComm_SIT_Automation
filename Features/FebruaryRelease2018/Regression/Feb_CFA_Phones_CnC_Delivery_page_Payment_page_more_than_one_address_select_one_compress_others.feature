@@ -1,4 +1,4 @@
-Feature: CFA_Phones_CnC_Delivery_page_Payment_page_more_than_one_address_select_one_compress_others
+Feature: Feb_CFA_Phones_CnC_Delivery_page_Payment_page_more_than_one_address_select_one_compress_others
   This scenario ensures that when the customer on acquisition journey selects 'Phones' with click and collect enters the postcode in payment page, then all the other addresses in the drop down should be compressed on selecting one of the address
 
   @Web

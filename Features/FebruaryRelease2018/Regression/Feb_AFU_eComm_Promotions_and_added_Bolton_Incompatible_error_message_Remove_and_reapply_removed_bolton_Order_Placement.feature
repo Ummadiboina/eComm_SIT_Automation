@@ -1,4 +1,4 @@
-Feature: AFU_eComm_Promotions_and_added_Bolton_Incompatible_error_message_Remove_and_reapply_removed_bolton_Order_Placement
+Feature: Feb_AFU_eComm_Promotions_and_added_Bolton_Incompatible_error_message_Remove_and_reapply_removed_bolton_Order_Placement
   This scenario ensures that when the Retention Agent in Upgrade selects a 'Phone' and tariff eligible for eComm Promotion and adds another Bolton, then the customer should be displayed with error message
 
   @Web

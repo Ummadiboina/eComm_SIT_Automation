@@ -1,4 +1,4 @@
-Feature: CFA_Phones_Delayed_delivery_Home_delivery_Confirmation_Page_formatting_box
+Feature: Reg_CFA_Phones_Delayed_delivery_Home_delivery_Confirmation_Page_formatting_box
 
   @Web
   Scenario Outline:

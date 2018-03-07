@@ -17,6 +17,6 @@ Feature: Reg_FNT_DifferentStoreAddressthanBillingAddres
     And Continue to Review page and review the order
     Then order confirmation is displayed
 
-    Examples: 
-      | handset  | Firstname | Surname | Username     |
-      | GalaxyS8 | TEST      | ACCEPTA | TEST ACCEPTA |
+    Examples:
+      | handset           | Firstname | Surname | Username     |
+      | Samsung Galaxy S8 | TEST      | ACCEPTA | TEST ACCEPTA |

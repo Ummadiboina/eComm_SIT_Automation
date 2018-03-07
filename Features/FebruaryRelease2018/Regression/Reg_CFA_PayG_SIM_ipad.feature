@@ -1,4 +1,4 @@
-Feature: CFA_PayG_SIM
+Feature: Reg_CFA_PayG_SIM_ipad
 
 @Web
   Scenario Outline: Ordering a free sim 

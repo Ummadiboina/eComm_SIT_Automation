@@ -1,4 +1,4 @@
-Feature:CFU_Tablet_Delivery_page_more_than_one_address_select_one_compress_others
+Feature: Feb_CFU_Tablet_Delivery_page_more_than_one_address_select_one_compress_others
   This scenario ensures that when the customer on upgrade journey selects 'Tablet' proceeds till Delivery page and enters the postcode, then all the other addresses in the drop down should be compressed on selecting one of the address
 
   @Web
