@@ -17,4 +17,4 @@ Feature: Reg_AFU_verify_Base_Comms_tariff_under_offer_column_order_placement_O2_
 
     Examples:
       | user        | Device | Tariffs |
-      | 07521119232 | Random | Base    |
+      | 07521124369 | Random | Refresh |

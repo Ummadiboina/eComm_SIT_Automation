@@ -23,5 +23,5 @@ Feature: Reg_Agent_Buyout
     Then order confirmation is displayed
 
     Examples:
-      | User        | Device                   | Tariffs | username      | DeliveryType | Firstname | Surname | HouseNumber | PostCode | Username     | password |
-      | 07801427798 | Galaxy S7 Edge 32GB Pink | Refresh | erto@1234.com | HomeDelivery | Test      | Accepta | Flat 9      | SL11EL   | Test Accepta | test123  |
+      | User        | Device              | Tariffs | username      | DeliveryType | Firstname | Surname | HouseNumber | PostCode | Username     | password |
+      | 07801427798 | iPhone 6s 32GB Gold | Refresh | erto@1234.com | HomeDelivery | Test      | Accepta | Flat 9      | SL11EL   | Test Accepta | test123  |
