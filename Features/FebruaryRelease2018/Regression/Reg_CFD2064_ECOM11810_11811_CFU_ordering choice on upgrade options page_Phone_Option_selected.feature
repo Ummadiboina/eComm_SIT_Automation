@@ -1,4 +1,4 @@
-Feature: CFD2064_ECOM11810_11811_ CFU_ordering choice on upgrade options page_Phone_Option selected
+Feature: Reg_CFD2064_ECOM11810_11811_CFU_ordering choice on upgrade options page_Phone_Option selected
 
   @Web
   Scenario Outline: This test ensures that customer is given a choice to take a sim when the customer is on a phones upgrade journey

@@ -1,4 +1,5 @@
-Feature: CFU_Tablets_Data_filters_options_tariff_and_extras_page_Order_placement
+Feature: Reg_CFU_Phones_Data_filters_options_tariff_and_extras_page
+
   This scenario ensures that when a customer in upgrade journey selects 'Tablet' and navigated to tariff page ,
   then the customer should be able to see  'Data filter' button next to sort drop-down for PayM tariffs
 

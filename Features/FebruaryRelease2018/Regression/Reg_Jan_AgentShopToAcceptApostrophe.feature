@@ -1,4 +1,5 @@
 Feature: Reg_Jan_AgentShopToAcceptApostrophe
+
   This scenario ensures that the Agent shop accepts Apostrophe in First Name and Last Name fields
 
   @Web
@@ -22,5 +23,5 @@ Feature: Reg_Jan_AgentShopToAcceptApostrophe
       # And Update Device Plan Link Email Address
       # Then CCALink Should be generated
     Examples:
-      | Device                   | Tariffs  | Extras | DeliveryType | Firstname | Surname | Username     | HouseNumber | PostCode |
-      | Galaxy S8 64GB Rose Pink | Standard | Base   | HomeDelivery | TEST      | ACCEPTA | TEST ACCEPTA | 14          | SL11UP   |
+      | Device                   | Tariffs  | Extras | DeliveryType | Firstname | Surname  | Username     | HouseNumber | PostCode |
+      | Galaxy S8 64GB Rose Pink | Standard | Base   | HomeDelivery | TEST'     | ACCEPTA' | TEST ACCEPTA | 14          | SL11UP   |

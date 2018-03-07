@@ -928,7 +928,7 @@ public class E2EOrderPlaced_Steps {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, DeliveryPage.class);
             //CommonFunctionscheckTitle("Delivery Page");
-            //DeliveryPageActions.SetDelivery();
+            DeliveryPageActions.SetDelivery();
             DeliveryPageActions.AboutYou(Firstname, Surname);
             DeliveryPageActions.ClickContinue();
         } catch (Exception e) {
@@ -938,7 +938,20 @@ public class E2EOrderPlaced_Steps {
 
         }
     }
+    @And("^Enter details in Delivery page for Click and collect and Click on the 'Continue button'$")
+    public void DeliveryPage_enter_Inputs_ClickandCollect(String Firstname, String Surname) {
+        try {
+            driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, DeliveryPage.class);
+            DeliveryPageActions.ClickContinue();
 
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            System.out.println("Unable to input details in delivery page");
+            Assert.fail("Unable to input details in delivery page");
+
+        }
+    }
 
     @And("^input the below details in Delivery page$")
     public void inputDetailsDeliveryPage(DataTable userData) {
@@ -1287,6 +1300,61 @@ public class E2EOrderPlaced_Steps {
 
         }
     }
+    
+    @And("^Enter cardDetails in payment page input ([^\"]*) and click 'Continue on next step'$")
+    public void CreditCheckPaymentPg_ClickAndCollect(String Username) {
+        // Write code here that turns the phrase above into concrete actions
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, PaymentPage.class);
+            //CommonFunctionscheckTitle("Payment Page");
+           // PaymentPageActions.Set_Bank_details(Username);
+            //Thread.sleep(3000);
+            //PaymentPageActions.Time_At_Address_CC();
+            Thread.sleep(3000);
+            PaymentPageActions.Card_Details(Username);
+            Thread.sleep(5000);
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+            System.out.println("Unable to input details in payment page");
+            Assert.fail("Unable to input details in payment page");
+
+        }
+    }
+
+    @Given("^select a valid Handset and Tariff combination_new$")
+    public void select_a_valid_Handset_and_Tariff_combination_new() {
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, Agent_DealBuilderPage.class);
+            driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
+            Agent_DealBuilderPageActions.HandsetTariffCombination_new();
+            Thread.sleep(4000);
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+            Assert.fail("Unable to select valid tariff and handset combination");
+        }
+    }
+
+    
+      @And("^land on the payment page and input ([^\"]*) and other details and click 'Continue' on next step for otac$")
+    public void CreditCheckPaymentPage_HomeDel(String Username) {
+        // Write code here that turns the phrase above into concrete actions
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, PaymentPage.class);
+            PaymentPageActions.Card_Details(Username);
+            Thread.sleep(75000);
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+            System.out.println("Unable to input details in payment page");
+            Assert.fail("Unable to input details in payment page");
+
+        }
+    
 
     @And("^land on the payment page and input ([^\"]*) and other details for Click and collect order and click 'Continue on next step'$")
     public void CreditCheckPaymentPage_ClickAndCollect(String Username) {

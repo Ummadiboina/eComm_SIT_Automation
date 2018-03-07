@@ -14,7 +14,6 @@ Feature: Reg_AFA_PAYM_Acquistion
     And perform the credit checks using valid <Firstname>, <Surname>, <HouseNumber>, <PostCode> and valid <Username>
     And Register customer with valid <Password>, <confirmPassword>, <SecurityAnswer>  in delivery page
     And Choose <DeliveryType> delivery address and delivery time
-    #When Pay by card for PAYM device
     When Pay by card for PAYM device
     Then Order confirmation message should be displayed
 

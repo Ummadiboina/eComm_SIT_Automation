@@ -1,4 +1,4 @@
-Feature: CVOSDelayedDelivery
+Feature: Reg_CVOSDelayedDelivery
 
   @Web
   Scenario Outline: Delayed Delivery_CVS
