@@ -64,7 +64,7 @@ public class DeliveryPage {
     public static WebElement year;
 
 
-    @FindBy(how = How.ID, using = "btn-continue")
+    @FindBy(how = How.XPATH, using = "//button[@id='btn-continue']")
     public static WebElement Continue;
 
     @FindBy(how = How.ID, using = "deliver-to-store-tab")

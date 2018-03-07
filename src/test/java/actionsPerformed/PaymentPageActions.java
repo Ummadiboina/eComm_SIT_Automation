@@ -103,7 +103,9 @@ public class PaymentPageActions extends Environment {
     }
 
     public static void Time_At_Address_CC() throws InterruptedException, IOException {
-        pageobjects.PaymentPage.housenumber.sendKeys("41");
+
+
+        /*pageobjects.PaymentPage.housenumber.sendKeys("41");
         log.debug("Entered the House Number - 41");
 
         pageobjects.PaymentPage.postcode.sendKeys("WA27JQ");
@@ -115,7 +117,7 @@ public class PaymentPageActions extends Environment {
         pageobjects.PaymentPage.Selectaddress.click();
         log.debug("Home Address Selected");
         Thread.sleep(3000);
-
+*/
         pageobjects.PaymentPage.Stay_Address_Years.sendKeys("9");
         log.debug("Entered the stayed at address - 9");
 
@@ -129,7 +131,11 @@ public class PaymentPageActions extends Environment {
 
     }
 
-    public static void Card_Details(String Username) throws InterruptedException, AWTException, IOException {
+    public static void Card_Details(String Username) throws InterruptedException, IOException {
+
+        if(driver.findElement(By.xpath(" (//button[@name='select-address-btn'])[2]")).isEnabled()){
+            driver.findElement(By.xpath(" (//button[@name='select-address-btn'])[2]")).click();
+        }
 
         driver.switchTo().frame("payment-iframe"); // switching the frame by ID
 
@@ -163,7 +169,7 @@ public class PaymentPageActions extends Environment {
 
     }
 
-    public static void Card_Details() throws InterruptedException, AWTException, IOException {
+    public static void Card_Details() throws InterruptedException, IOException {
 
         driver.switchTo().frame("payment-iframe"); // switching the frame by ID
 
@@ -198,7 +204,7 @@ public class PaymentPageActions extends Environment {
     }
 
 
-    public static void Card_Details_hv() throws InterruptedException, AWTException, IOException {
+    public static void Card_Details_hv() throws InterruptedException, IOException {
         driver.switchTo().frame("payment-iframe"); // switching the frame by ID
 
         System.out.println("********We are switch to the iframe*******");

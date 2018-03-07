@@ -36,7 +36,8 @@ public class PaymentPage {
 
     @FindBy(how = How.ID, using = "confirm-address")
     public static WebElement Confirm_Address_Checkbox;
-    /*
+
+/*
 
         @FindBy(how = How.ID, using = "txtCardHolderName")
         public static WebElement CardHolderName;
@@ -52,7 +53,8 @@ public class PaymentPage {
 
         @FindBy(how = How.ID, using = "txtSecurityCode")
         public static WebElement SecurityCode;
-    */
+*/
+
     @FindBy(how = How.XPATH, using = "//*[@id='CardHolderName' or @id='CardHolderName']")
     public static WebElement CardHolderName;
 

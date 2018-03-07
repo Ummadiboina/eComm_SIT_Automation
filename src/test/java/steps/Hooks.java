@@ -35,7 +35,7 @@ public class Hooks extends Environment {
 
     @Before("@Web")
 
-    public WebDriver openBrowser(Scenario scenario) throws MalformedURLException, InterruptedException {
+    public WebDriver openBrowser(Scenario scenario) throws InterruptedException {
 
         String rawFeatureName = scenario.getId().split(";")[0].replace("-", " ");
         String featureName = rawFeatureName.substring(0, 1).toUpperCase() + rawFeatureName.substring(1);
@@ -108,8 +108,8 @@ public class Hooks extends Environment {
         capability.stopAppiumServer();
         Thread.sleep(5000);
         log.debug("Stopped Appium server");
-        driver.close();
-        driver.quit();
+        //driver.close();
+        //driver.quit();
 
     }
 
