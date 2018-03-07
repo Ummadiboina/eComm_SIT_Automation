@@ -90,7 +90,7 @@ public class DeliveryPageActions extends Environment {
 
         }
 
-    }
+
 
     public static void AboutYouTen(String Firstname, String Surname) throws IOException, InterruptedException {
         log.debug("Entering an Random email id");
@@ -497,7 +497,7 @@ public class DeliveryPageActions extends Environment {
         }
     }
 
-    public static void deliverySectionShouldShowOOS_message() throws Exception {
+    public static void deliverySectionShouldShowOOS_message() {
         try {
             driver.manage().timeouts().implicitlyWait(2, TimeUnit.MINUTES);
             if (driver.findElements(By.xpath("//li[@class='delivery']//*[contains(text(),'out of stock')]")).size() > 0) {
@@ -517,7 +517,7 @@ public class DeliveryPageActions extends Environment {
     }
 
 
-    public static void deliverySectionShouldShowClick_anf_collect_option_without_radio_button_and_OOS_msg() throws Exception {
+    public static void deliverySectionShouldShowClick_anf_collect_option_without_radio_button_and_OOS_msg() {
         try {
             driver.manage().timeouts().implicitlyWait(2, TimeUnit.MINUTES);
             if (driver.findElements(By.xpath("//*[contains(text(),'Out of stock')]")).size() > 0) {
