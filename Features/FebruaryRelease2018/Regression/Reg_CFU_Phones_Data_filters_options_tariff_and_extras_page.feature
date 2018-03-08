@@ -11,7 +11,8 @@ Feature: Reg_CFU_Phones_Data_filters_options_tariff_and_extras_page
     Then Select any one recycle option and click on 'Continue to Upgrade'
     And Select a <handset> device from Recommended devices section
     And Click on View all Tariffs link in upgrade options page
-    Then I should see data filters buttons next to existing sort drop-down for PAYM/SIMO tariffs #Verification point - A - More than 2 should be displayed
+    Then I should see data filters buttons next to existing sort drop-down for PAYM/SIMO tariffs <sortoption>
+    #Verification point - A - More than 2 should be displayed
     When I click on respective <filtername> data filter
     Then Data filter button should be in 'selected' state
     And I should see appropriate tariffs based on the selected data filter <sortoption>
