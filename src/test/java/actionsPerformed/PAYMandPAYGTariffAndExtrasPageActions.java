@@ -101,10 +101,7 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 	public static void addToBasketLive() throws InterruptedException, IOException {
         driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 
-        if(PAYMandPAYGTariffAndExtrasPage.RandomfullTariff1.isEnabled()){
-        ((JavascriptExecutor) driver).executeScript("arguments[0].click();", PAYMandPAYGTariffAndExtrasPage.RandomfullTariff1);
-		}
-		System.out.println("Click on the Add To Basket");
+       	System.out.println("Click on the Add To Basket");
         JavascriptExecutor jse = (JavascriptExecutor) driver;
         jse.executeScript("window.scrollBy(0,600)", "");
         pageobjects.PAYMandPAYGTariffAndExtrasPage.addToBasketLive.sendKeys(Keys.ENTER);

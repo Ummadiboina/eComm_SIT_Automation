@@ -133,9 +133,9 @@ public class PaymentPageActions extends Environment {
 
     public static void Card_Details(String Username) throws InterruptedException, IOException {
 
-        if(driver.findElement(By.xpath(" (//button[@name='select-address-btn'])[2]")).isEnabled()){
+       /* if(driver.findElement(By.xpath(" (//button[@name='select-address-btn'])[2]")).isEnabled()){
             driver.findElement(By.xpath(" (//button[@name='select-address-btn'])[2]")).click();
-        }
+        }*/
 
         driver.switchTo().frame("payment-iframe"); // switching the frame by ID
 
