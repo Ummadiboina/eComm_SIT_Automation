@@ -905,7 +905,7 @@ public class E2EOrderPlaced_Steps {
         try {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, DeliveryPage.class);
-            Thread.sleep(5000);
+            Thread.sleep(3000);
             //CommonFunctionscheckTitle("Delivery Page");
             DeliveryPageActions.SetDelivery();
             Thread.sleep(2000);
