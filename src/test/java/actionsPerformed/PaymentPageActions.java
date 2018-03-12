@@ -42,6 +42,8 @@ public class PaymentPageActions extends Environment {
     }
 
     public static void Set_Bank_details(String Username) throws IOException, InterruptedException {
+
+
         pageobjects.PaymentPage.Name_On_Account.sendKeys(Username);
         log.debug("Entered name is " + Username);
 
@@ -133,9 +135,9 @@ public class PaymentPageActions extends Environment {
 
     public static void Card_Details(String Username) throws InterruptedException, IOException {
 
-       /* if(driver.findElement(By.xpath(" (//button[@name='select-address-btn'])[2]")).isEnabled()){
-            driver.findElement(By.xpath(" (//button[@name='select-address-btn'])[2]")).click();
-        }*/
+        if(driver.findElements(By.xpath("(//button[@name='select-address-btn'])[2]")).size() > 0){
+            driver.findElement(By.xpath("(//button[@name='select-address-btn'])[2]")).click();
+        }
 
         driver.switchTo().frame("payment-iframe"); // switching the frame by ID
 
@@ -159,6 +161,7 @@ public class PaymentPageActions extends Environment {
         log.debug("Entered CVV security code");
         Thread.sleep(2000);
         PaymentPage.Continue_Next_Step.sendKeys(Keys.ENTER);
+
         log.debug("Clicking on continue to next step");
         Thread.sleep(2000);
         System.out.println("*********We are done***************");
