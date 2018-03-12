@@ -101,13 +101,15 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 	public static void addToBasketLive() throws InterruptedException, IOException {
         driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 
-        if(PAYMandPAYGTariffAndExtrasPage.RandomfullTariff1.isEnabled()){
+        /*if(PAYMandPAYGTariffAndExtrasPage.RandomfullTariff1.isEnabled()){
         ((JavascriptExecutor) driver).executeScript("arguments[0].click();", PAYMandPAYGTariffAndExtrasPage.RandomfullTariff1);
-		}
+		}*/
 		System.out.println("Click on the Add To Basket");
         JavascriptExecutor jse = (JavascriptExecutor) driver;
         jse.executeScript("window.scrollBy(0,600)", "");
-        pageobjects.PAYMandPAYGTariffAndExtrasPage.addToBasketLive.sendKeys(Keys.ENTER);
+
+		((JavascriptExecutor) driver).executeScript("arguments[0].click();", pageobjects.PAYMandPAYGTariffAndExtrasPage.addToBasketLive);
+       // pageobjects.PAYMandPAYGTariffAndExtrasPage.addToBasketLive.sendKeys(Keys.ENTER);
         log.debug("Clicked on Add to Basket in Tariff and Extras page");
         System.out.println("Clicked on Add to Basket in Tariff and Extras page");
         Thread.sleep(50000);
@@ -900,7 +902,6 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 		System.out.println("DatafilterText " + DatafilterText);
 
 		if (Filteroption.contains("low")) {
-
 			// PAYMandPAYGTariffAndExtrasPage.DataTariff_One.getText();
 			String DataFilterLowText = PAYMandPAYGTariffAndExtrasPage.lowfilter.getText();
 			System.out.println("DataFilterLowText " + DataFilterLowText);

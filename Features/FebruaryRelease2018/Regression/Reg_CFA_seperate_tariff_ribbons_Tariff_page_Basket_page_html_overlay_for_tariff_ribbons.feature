@@ -29,4 +29,4 @@ Feature: Reg_CFA_seperate_tariff_ribbons_Tariff_page_Basket_page_html_overlay_fo
 
     Examples:
       | handset | tariff                 | Firstname | Surname | Username     |
-      | Sony    | 9.99upfront65.00amonth | TEST      | ACCEPTA | TEST ACCEPTA |
+      | Sony    | 9.99upfront35.00amonth | TEST      | ACCEPTA | TEST ACCEPTA |
