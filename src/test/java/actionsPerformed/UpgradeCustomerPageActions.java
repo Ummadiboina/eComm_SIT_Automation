@@ -2202,8 +2202,8 @@ public class UpgradeCustomerPageActions extends Environment {
                 for (int i = 1; i <= contractLength.size(); i++) {
                     if (driver.findElement(By.xpath("(//div[@class='button-tabs']//a)[" + i + "]")).isDisplayed()) {
                         String contrctLent = driver.findElement(By.xpath("(//div[@class='button-tabs']//a)[" + i + "]")).getText();
-                        System.out.println(" the data filters is displayed" + contrctLent);
-                        log.debug("the data filters is displayed" + contrctLent);
+                        System.out.println(" the data filters is displayed: " + contrctLent);
+                        log.debug("the data filters is displayed: " + contrctLent);
                     }
                 }
             } else {

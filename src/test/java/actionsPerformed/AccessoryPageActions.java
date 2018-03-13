@@ -111,7 +111,7 @@ public class AccessoryPageActions extends Environment {
 		Thread.sleep(2000	);
 		executor.executeScript("arguments[0].click();", pageobjects.AccessoryPage.ViewAllProductsOnOnePage);
 
-		/*if (elementName.contains("Random")) {
+		if (elementName.contains("Random")) {
 			System.out.println("Selecting Any Accessory");
 			log.debug("Selecting Any Accessory");
 			log.debug("Selected an accessory -  " + pageobjects.AccessoryPage.RandomAccessory.getText());
@@ -121,11 +121,11 @@ public class AccessoryPageActions extends Environment {
 		if (elementName.contains("HarmanKardonOnxyxStudio3"))
 
 		{
-			System.out.println("Selecting HarmanKardonOnxyxStudio3 Accessory");
-			log.debug("Selecting HarmanKardonOnxyxStudio3 Accessory");
-			log.debug("Selected an accessory -  " + pageobjects.AccessoryPage.RandomAccessory.getText());
-			pageobjects.AccessoryPage.HarmanKardonOnxyxStudio3.click();
-			log.debug("HarmanKardonOnxyxStudio3 Accessory Selected");
+			System.out.println("Selecting HarmanKardonOnxyxStudio2 Accessory");
+			log.debug("Selecting HarmanKardonOnxyxStudio2 Accessory");
+			log.debug("Selected an accessory -  " + pageobjects.AccessoryPage.HarmanKardonOnxyxStudio2.getText());
+			pageobjects.AccessoryPage.HarmanKardonOnxyxStudio2.click();
+			log.debug("HarmanKardonOnxyxStudio2 Accessory Selected");
 		}
 
 		if (elementName.contains("PencilforiPadPro"))
@@ -133,19 +133,19 @@ public class AccessoryPageActions extends Environment {
 		{
 			System.out.println("Selecting PencilforiPadPro Accessory");
 			log.debug("Selecting PencilforiPadPro Accessory");
-			log.debug("Selected an accessory -  " + pageobjects.AccessoryPage.RandomAccessory.getText());
+			log.debug("Selected an accessory -  " + pageobjects.AccessoryPage.PencilforiPadPro.getText());
 			pageobjects.AccessoryPage.PencilforiPadPro.click();
 			log.debug("PencilforiPadPro Accessory Selected");
 		}
 
-		if (elementName.contains("JBL Clip 2"))
+		if (elementName.contains("JBL Flip 4 Black"))
 
 		{
-			System.out.println("Selecting Clip2 Accessory");
-			log.debug("Selecting Clip2 Accessory");
-			log.debug("Selected an accessory -  " + pageobjects.AccessoryPage.RandomAccessory.getText());
-			pageobjects.AccessoryPage.Clip2.click();
-			log.debug("Clip2 Accessory Selected");
+			System.out.println("Selecting JBL Clip4 Accessory");
+			log.debug("Selecting JBL Clip4 Accessory");
+			log.debug("Selected an accessory -  " + pageobjects.AccessoryPage.Clip4.getText());
+			pageobjects.AccessoryPage.Clip4.click();
+			log.debug("JBL Clip4 Accessory Selected");
 		}
 
 		if (elementName.contains("JBL Xtreme Black"))
@@ -171,7 +171,7 @@ public class AccessoryPageActions extends Environment {
 			log.debug("Selecting Samsung S8 Plus Original LED Cover");
 			pageobjects.AccessoryPage.SamsungS8PlusOriginalLEDCover.click();
 			log.debug("Samsung S8 Plus Original LED Cover Selected");
-		}*/
+		}
 		Screenshots.captureScreenshot();
 	}
 	/*
@@ -588,7 +588,7 @@ public class AccessoryPageActions extends Environment {
 			if (AccessoryAfterPhoneSelection.size() > 0) {
 
 				if (pageobjects.AccessoryPage.AccesoryAfterPhoneSelection.isDisplayed()) {
-					AccessoryName_Before = (String) Filereadingutility.getPropertyValue(RunTimeFilePath, "Accessory");
+					AccessoryName_Before = Filereadingutility.getPropertyValue(RunTimeFilePath, "Accessory");
 					AccessoryName_After = pageobjects.AccessoryPage.AccesoryAfterPhoneSelection.getText();
 					Assert.assertTrue(AccessoryName_Before.contains(AccessoryName_After),
 							"Assertion Failed: Accessory is not present in the basket page after phone selection");
@@ -603,7 +603,7 @@ public class AccessoryPageActions extends Environment {
 			if (FitnessTrackerAfterPhoneSelection.size() > 0) {
 
 				if (pageobjects.AccessoryPage.FitnessTrackerAfterPhoneSelection.isDisplayed()) {
-					FitnessTrackerName_Before = (String) Filereadingutility.getPropertyValue(RunTimeFilePath,
+					FitnessTrackerName_Before = Filereadingutility.getPropertyValue(RunTimeFilePath,
 							"FitnessTracker");
 					FitnessTrackerName_After = pageobjects.AccessoryPage.FitnessTrackerAfterPhoneSelection.getText();
 					/*
@@ -624,7 +624,7 @@ public class AccessoryPageActions extends Environment {
 			if (SmartWatchAfterPhoneSelection.size() > 0) {
 
 				if (pageobjects.AccessoryPage.SmartWatchAfterPhoneSelection.isDisplayed()) {
-					SmartWatchName_Before = (String) Filereadingutility.getPropertyValue(RunTimeFilePath, "SmartWatch");
+					SmartWatchName_Before = Filereadingutility.getPropertyValue(RunTimeFilePath, "SmartWatch");
 					SmartWatchName_After = pageobjects.AccessoryPage.SmartWatchAfterPhoneSelection.getText();
 					/*
 					 * Assert.

@@ -523,20 +523,20 @@ public class BasketPageActions extends Environment {
 		System.out.println("1" + SelectedDevices.get(0));
 		System.out.println("2" + SelectedDevices.get(1));
 
-		System.out.println("Conn size" + MyConnDevices.size());
-		System.out.println("Non Conn size" + MyNonConnDevices.size());
-		System.out.println("Tariffs size" + MyTariffs.size());
+		System.out.println("Conn size: " + MyConnDevices.size());
+		System.out.println("Non Conn size: " + MyNonConnDevices.size());
+		System.out.println("Tariffs size: " + MyTariffs.size());
 
 		if (MyNonConnDevices.size() != 0) {
 			for (int i = 0; i < MyNonConnDevices.size(); i++) {
 				DisplayedDevices.add(MyNonConnDevices.get(i).getText());
-				System.out.println("Non Conn added" + MyNonConnDevices.get(i).getText());
+				System.out.println("Non Conn added: " + MyNonConnDevices.get(i).getText());
 			}
 		}
 		if (MyConnDevices.size() != 0) {
 			for (int i = 0; i < MyConnDevices.size(); i++) {
 				DisplayedDevices.add(MyConnDevices.get(i).getText());
-				System.out.println("Conn dev added" + MyConnDevices.get(i).getText());
+				System.out.println("Conn dev added: " + MyConnDevices.get(i).getText());
 			}
 		}
 		if (MyTariffs.size() != 0) {
@@ -574,13 +574,13 @@ public class BasketPageActions extends Environment {
 		if (MyNonConnDevices.size() != 0) {
 			for (int i = 0; i < MyNonConnDevices.size(); i++) {
 				DisplayedDevices.add(MyNonConnDevices.get(i).getText());
-				System.out.println("Non Conn added" + MyNonConnDevices.get(i).getText());
+				System.out.println("Non Conn added: " + MyNonConnDevices.get(i).getText());
 			}
 		}
 		if (MyConnDevices.size() != 0) {
 			for (int i = 0; i < MyConnDevices.size(); i++) {
 				DisplayedDevices.add(MyConnDevices.get(i).getText());
-				System.out.println("Conn dev added" + MyConnDevices.get(i).getText());
+				System.out.println("Conn dev added: " + MyConnDevices.get(i).getText());
 			}
 		}
 		if (MyTariffs.size() != 0) {

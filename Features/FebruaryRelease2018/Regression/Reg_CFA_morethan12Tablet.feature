@@ -1,7 +1,8 @@
 Feature: Reg_CFA_morethan12Tablet
 
   @Web
-  Scenario Outline: E11522_CFA_MoreThan12Accessory_Tablet
+  Scenario Outline: E11522_CFA_MoreThan12Accessory_Tablet: Removing previously selected standalone non-connected items from my basket if the amount exceeds 12 when more non-connected items are added in a device led journey
+
     Given I am an CFA user and Lands on shop page
     And Navigate to Accessories
     And Select <accessoryname> from accessories
@@ -29,5 +30,5 @@ Feature: Reg_CFA_morethan12Tablet
     Then order confirmation is displayed
 
     Examples:
-      | Firstname | Surname | Username     | limit1 | tabletname    | limit2 | accessoryname | fitnesstrackername |
-      | TEST      | ACCEPTA | TEST ACCEPTA | 6      | Random Device | 6      | JBL Clip 2    | Fitbit Alta        |
+      | Firstname | Surname | Username     | limit1 | tabletname    | limit2 | accessoryname    | fitnesstrackername |
+      | TEST      | ACCEPTA | TEST ACCEPTA | 6      | Random Device | 6      | JBL Flip 4 Black | Fitbit Ionic       |
