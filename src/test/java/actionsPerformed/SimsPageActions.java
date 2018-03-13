@@ -48,7 +48,7 @@ public class SimsPageActions extends Environment {
 		Screenshots.captureScreenshot();
 	}
 
-	public static void clickonTabletsButton() {
+	public static void clickonTabletsButton() throws Exception {
 		try {
 			driver.manage().timeouts().implicitlyWait(2, TimeUnit.MINUTES);
 			if (driver.findElements(By.xpath("//input[@value='Tablets']")).size() > 0) {
@@ -70,7 +70,7 @@ public class SimsPageActions extends Environment {
 	}
 
 
-	public static void clickOnMBB_Button() {
+	public static void clickOnMBB_Button() throws Exception {
 		try {
 			driver.manage().timeouts().implicitlyWait(2, TimeUnit.MINUTES);
 			if (driver.findElements(By.xpath("//input[@value='Mobile broadband']")).size() > 0) {
@@ -89,7 +89,7 @@ public class SimsPageActions extends Environment {
 		}
 	}
 
-	public static void clickOn_simOnlyTariffTab() {
+	public static void clickOn_simOnlyTariffTab() throws Exception {
 		WebElement simOnlyTarirr = driver.findElement(By.xpath("//a[@id='tab-keep-your-phone']"));
 		try {
 			driver.manage().timeouts().implicitlyWait(20,TimeUnit.SECONDS);
@@ -110,9 +110,10 @@ public class SimsPageActions extends Environment {
 		}
 	}
 
-	public static void verifyThatURL_has_simo_at_end() {
+	public static void verifyThatURL_has_simo_at_end() throws Exception {
 		try {
 			driver.manage().timeouts().implicitlyWait(2, TimeUnit.MINUTES);
+			Thread.sleep(5000);
 			String currentUrl = driver.getCurrentUrl();
 			System.out.println("Current URL is :  " + currentUrl );
 			if(currentUrl.contains("simo")){
@@ -131,7 +132,7 @@ public class SimsPageActions extends Environment {
 	}
 
 
-	public static void phonesButtonShouldSelectedByDefault() {
+	public static void phonesButtonShouldSelectedByDefault() throws Exception {
 		try {
 			driver.manage().timeouts().implicitlyWait(2, TimeUnit.MINUTES);
 			if(driver.findElements(By.xpath("//div/input[@class='secondary phones-btn active']")).size() > 0) {
@@ -151,25 +152,24 @@ public class SimsPageActions extends Environment {
 		}
 	}
 
-	public static void allTariffsUnderTwelveMonthsShouldDisplayed() {
+	public static void allTariffsUnderTwelveMonthsShouldDisplayed() throws Exception {
 		try {
 			driver.manage().timeouts().implicitlyWait(2, TimeUnit.MINUTES);
-			//if(driver.findElements(By.xpath("//li[@id='id-12-months' and @class=' active ']")).size() > 0) {
-			if (driver.findElement(By.xpath("//li[@id='id-12-months' and @class=' active ']")).isDisplayed()) {
-				/*List<WebElement> lstOfDataPlans = driver.findElements(By.xpath("(//h2[contains(text(),'GB')]"));
-				for (int i = 1; i < lstOfDataPlans.size(); i++) {
-					if (driver.findElement(By.xpath("(//h2[contains(text(),'GB')])[" + i + "]")).isDisplayed()) {
-						String str = driver.findElement(By.xpath("(//h2[contains(text(),'GB')])[" + i + "]")).getText();
-						System.out.println(" the tariffs under twelve months is : " + str);
-						log.debug(" the tariffs under twelve months is : " + str);
+			if(driver.findElements(By.xpath("//li[@id='id-12-months' and @class=' active ']")).size() > 0) {
+			//	if (driver.findElement(By.xpath("//li[@id='id-12-months' and @class=' active ']")).isDisplayed()) {
+					List<WebElement> lstOfDataPlans =  driver.findElements(By.xpath("//*[@name='P12M']/div/ul/li[1]/h2"));
+					for(int i=0; i<lstOfDataPlans.size(); i++){
+						//if(driver.findElement(By.xpath("(//h2[contains(text(),'GB')])["+i+"]")).isDisplayed()){
+							String str = lstOfDataPlans.get(i).getText();
+							System.out.println(i+": the tariffs under twelve months is : " + str);
+							log.debug(" the tariffs under twelve months is : " + str);
+						//}
 					}
-				}*/
-				System.out.println(" all tariffes are displayed on under the 12 months");
-				log.info("all tariffes are displayed on under the 12 months");
-			} else {
-				System.out.println("Failed to display's the tariffs under twelve months");
-				Assert.fail("Failed to display's the tariffs under twelve months");
-			}
+				} else {
+					System.out.println("Failed to display's the tariffs under twelve months");
+					Assert.fail("Failed to display's the tariffs under twelve months");
+				}
+			//}
 		}
 		catch (Exception e) {
 			// TODO Auto-generated catch block
@@ -179,7 +179,7 @@ public class SimsPageActions extends Environment {
 	}
 
 
-	public static void sortingDropdownIsDisplayedJstBelowToggleButtonsSections() {
+	public static void sortingDropdownIsDisplayedJstBelowToggleButtonsSections() throws Exception {
 		try {
 			driver.manage().timeouts().implicitlyWait(2, TimeUnit.MINUTES);
 			if(driver.findElements(By.xpath("//div[@class='tab-buttons-container']/following-sibling::div//span[@id='dataFilterSelectSelectBoxIt']")).size() > 0) {
@@ -200,7 +200,7 @@ public class SimsPageActions extends Environment {
 	}
 
 
-	public static void ifGiftBlockIsConfiguredThenDisplayBanner(String giftbox) {
+	public static void ifGiftBlockIsConfiguredThenDisplayBanner(String giftbox) throws Exception {
 		try {
 			driver.manage().timeouts().implicitlyWait(2, TimeUnit.MINUTES);
 			if (driver.findElements(By.xpath("//div[@class='button-tabs']//a")).size() > 0) {
