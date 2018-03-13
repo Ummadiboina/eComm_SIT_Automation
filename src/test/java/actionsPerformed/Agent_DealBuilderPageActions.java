@@ -145,18 +145,18 @@ public class Agent_DealBuilderPageActions extends Environment {
                 System.out.println("Selected Tariff is a Standard Tariff hence Handset Tariff combination is not required");
             } else {
 
-                /*List<WebElement> menuOuter = driver.findElements(By.xpath("//*[@class='priceSelection']/select/option"));
+                List<WebElement> menuOuter = driver.findElements(By.xpath("//*[@class='priceSelection']/select/option"));
                 System.out.println("The size of the table is :" + menuOuter.size());
 
                 for (int i = 0; i < menuOuter.size(); i++) {
                     System.out.println("Option " + i + " is: " + menuOuter.get(i).getText());
-                }*/
+                }
 
-               /* driver.findElement(By.xpath("(//*[@class='priceSelection']/select/option)[" + menuOuter.size() + "]")).click();
+                driver.findElement(By.xpath("(//*[@class='priceSelection']/select/option)[" + menuOuter.size() + "]")).click();
                 System.out.println("Selected Option : " + driver.findElement(By.xpath("(//*[@class='priceSelection']/select/option)[" + menuOuter.size() + "]")).getText());
 
                 System.out.println("Selected combination of handset and talk plan");
-                Thread.sleep(9000);*/
+                Thread.sleep(9000);
             }
             Screenshots.captureScreenshot();
         } catch (Exception e) {

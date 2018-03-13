@@ -1281,7 +1281,7 @@ public class E2EOrderPlaced_Steps {
     public void CreditCheckPaymentPage_HomeDelivery(String Username) {
         // Write code here that turns the phrase above into concrete actions
         try {
-            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
             PageFactory.initElements(driver, PaymentPage.class);
 
             Thread.sleep(10000);
@@ -1300,7 +1300,26 @@ public class E2EOrderPlaced_Steps {
 
         }
     }
-    
+
+
+    @And("^land on the payment page and input ([^\"]*) and other details and click 'Continue on next step' for DD confirmation$")
+    public void CreditCheckPaymentPage_HomeDelivery_forDD(String Username) {
+        // Write code here that turns the phrase above into concrete actions
+        try {
+            driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, PaymentPage.class);
+
+            Thread.sleep(10000);
+            PaymentPageActions.Card_Details(Username);
+            Thread.sleep(75000);
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+            System.out.println("Unable to input details in payment page");
+            Assert.fail("Unable to input details in payment page");
+
+        }
+    }
     
     
     @And("^Enter cardDetails in payment page input ([^\"]*) and click 'Continue on next step'$")
@@ -1714,7 +1733,7 @@ public class E2EOrderPlaced_Steps {
         try {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, Agent_DealBuilderPage.class);
-            Agent_DealBuilderPageActions.HandsetTariffCombination();
+            Agent_DealBuilderPageActions.HandsetTariffCombination_new();
             Thread.sleep(4000);
         } catch (Exception e) {
             // TODO Auto-generated catch block
@@ -4571,8 +4590,7 @@ public class E2EOrderPlaced_Steps {
     }
 
     @And("^Verify whether promotional ribbons are displayed for ([^\"]*) on the Tariff tile in the Tariff and Extras page$")
-    public void Verify_whether_promotional_ribbons_are_displayed_on_the_Tariff_tile_in_the_Tariff_and_Extras_page(
-            String Tariff) {
+    public void Verify_whether_promotional_ribbons_are_displayed_on_the_Tariff_tile_in_the_Tariff_and_Extras_page(String Tariff) {
         try {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, UpgradeCustomerPage.class);
@@ -6670,7 +6688,7 @@ public class E2EOrderPlaced_Steps {
     @And("^Select a tariff ([^\"]*)$")
     public void selectATariffTariff(String Tariff) {
         try {
-            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
             PageFactory.initElements(driver, UpgradeCustomerPage.class);
             UpgradeCustomerPageActions.selectTariff(Tariff);
         } catch (Exception e) {
