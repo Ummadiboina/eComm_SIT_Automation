@@ -70,7 +70,7 @@ public class PhonesListingPageAction extends Environment {
 			log.debug("Selected GalaxyS8");
 
 		}
-		if (elementName.contains("Samsung Galaxy S8")) {
+		if (elementName.contains("Samsungï¿½Galaxy S8")) {
 			pageobjects.PhonesListingPage.GalaxyS8.click();
 			// Assert.assertEquals(elementName,"Galaxy S7 is not found");
 			log.debug("Selected GalaxyS8");
@@ -182,16 +182,15 @@ public class PhonesListingPageAction extends Environment {
 	public static void PAYGPhoneSelect(String elementName) throws IOException, InterruptedException {
 
 		if (elementName.contains("Random Device")) {
-			System.out.println("Selected Random Device");
-
+			System.out.println("Selecting Random Device");
 			pageobjects.PhonesListingPage.RandomDevice.click();
-			// Assert.assertEquals(elementName,"Galaxy S7 is not found");
 			log.debug("Selected Random Device");
+			Thread.sleep(3000);
 
 		}
 
 		if (elementName.contains("MotoG5")) {
-			System.out.println("Selected MotoG5");
+			System.out.println("Selecting MotoG5");
 
 			pageobjects.PhonesListingPage.MotoG5.click();
 			// Assert.assertEquals(elementName,"Galaxy S7 is not found");
@@ -803,7 +802,7 @@ public class PhonesListingPageAction extends Environment {
 
 		for (WebElement temp2 : devicePrice) {
 
-			String sTemp = StringUtils.substringBetween(temp2.getText(), "£", ".");
+			String sTemp = StringUtils.substringBetween(temp2.getText(), "ï¿½", ".");
 			devicepricecurrentorder.add(sTemp);
 
 		}

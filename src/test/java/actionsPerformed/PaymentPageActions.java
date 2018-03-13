@@ -3,6 +3,7 @@ package actionsPerformed;
 import java.awt.AWTException;
 import java.io.IOException;
 
+import GlobalActions.scrollToAnElement;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -20,21 +21,24 @@ public class PaymentPageActions extends Environment {
 
 
     public static void Set_Bank_details() throws IOException, InterruptedException {
+
+        scrollToAnElement.scrollToElement(PaymentPage.Name_On_Account);
+        Thread.sleep(2000);
         pageobjects.PaymentPage.Name_On_Account.sendKeys("Test Accepta");
         log.debug("Entered name is Test Accepta");
-
+        Thread.sleep(2000);
         pageobjects.PaymentPage.Account_Number.sendKeys("10207136");
         log.debug("Entered Account number - 10207136");
-
+        Thread.sleep(2000);
         pageobjects.PaymentPage.Sort_Code1.sendKeys("20");
         log.debug("Entered sort code - 20");
-
+        Thread.sleep(2000);
         pageobjects.PaymentPage.Sort_Code2.sendKeys("15");
         log.debug("Entered sort code - 15");
-
+        Thread.sleep(2000);
         pageobjects.PaymentPage.Sort_Code3.sendKeys("96");
         log.debug("Entered sort code - 96");
-
+        Thread.sleep(2000);
         pageobjects.PaymentPage.Accept_Terms_Checkbox.click();
         log.debug("Clicked on the Accept Terms checkbox");
         Screenshots.captureScreenshot();
@@ -42,21 +46,24 @@ public class PaymentPageActions extends Environment {
     }
 
     public static void Set_Bank_details(String Username) throws IOException, InterruptedException {
+
+        scrollToAnElement.scrollToElement(PaymentPage.Name_On_Account);
+        Thread.sleep(2000);
         pageobjects.PaymentPage.Name_On_Account.sendKeys(Username);
         log.debug("Entered name is " + Username);
-
+        Thread.sleep(2000);
         pageobjects.PaymentPage.Account_Number.sendKeys("10207136");
         log.debug("Entered Account number - 10207136");
-
+        Thread.sleep(2000);
         pageobjects.PaymentPage.Sort_Code1.sendKeys("20");
         log.debug("Entered sort code - 20");
-
+        Thread.sleep(2000);
         pageobjects.PaymentPage.Sort_Code2.sendKeys("15");
         log.debug("Entered sort code - 15");
-
+        Thread.sleep(2000);
         pageobjects.PaymentPage.Sort_Code3.sendKeys("96");
         log.debug("Entered sort code - 96");
-
+        Thread.sleep(2000);
         pageobjects.PaymentPage.Accept_Terms_Checkbox.click();
         log.debug("Clicked on the Accept Terms checkbox");
         Screenshots.captureScreenshot();
@@ -65,21 +72,23 @@ public class PaymentPageActions extends Environment {
 
     public static void Set_Bank_details_hv() throws IOException, InterruptedException {
 
+        scrollToAnElement.scrollToElement(PaymentPage.Name_On_Account);
+        Thread.sleep(2000);
         pageobjects.PaymentPage.Name_On_Account.sendKeys("Test Nine");
         log.debug("Entered name is Test Nine");
-
+        Thread.sleep(2000);
         pageobjects.PaymentPage.Account_Number.sendKeys("10207136");
         log.debug("Entered Account number - 10207136");
-
+        Thread.sleep(2000);
         pageobjects.PaymentPage.Sort_Code1.sendKeys("20");
         log.debug("Entered sort code - 20");
-
+        Thread.sleep(2000);
         pageobjects.PaymentPage.Sort_Code2.sendKeys("15");
         log.debug("Entered sort code - 15");
-
+        Thread.sleep(2000);
         pageobjects.PaymentPage.Sort_Code3.sendKeys("96");
         log.debug("Entered sort code - 96");
-
+        Thread.sleep(2000);
         pageobjects.PaymentPage.Accept_Terms_Checkbox.click();
         log.debug("Clicked on the Accept Terms checkbox");
         Screenshots.captureScreenshot();
@@ -97,7 +106,7 @@ public class PaymentPageActions extends Environment {
 
         //executor.executeScript("arguments[0].click();", pageobjects.PaymentPage.Confirm_Address_Checkbox);
 
-		pageobjects.PaymentPage.Confirm_Address_Checkbox.click();
+        pageobjects.PaymentPage.Confirm_Address_Checkbox.click();
         log.debug("Clicked on the Confirm Address checkbox");
         Screenshots.captureScreenshot();
     }
@@ -120,7 +129,7 @@ public class PaymentPageActions extends Environment {
 */
         pageobjects.PaymentPage.Stay_Address_Years.sendKeys("9");
         log.debug("Entered the stayed at address - 9");
-
+        Thread.sleep(2000);
         pageobjects.PaymentPage.Stay_Address_months.sendKeys("9");
         log.debug("Entered the stayed at months - 9");
 
@@ -142,6 +151,8 @@ public class PaymentPageActions extends Environment {
         System.out.println("********We are switch to the iframe*******");
         log.debug("Entering the Payments section");
         Thread.sleep(5000);
+        scrollToAnElement.scrollToElement(PaymentPage.CardHolderName);
+        Thread.sleep(2000);
         PaymentPage.CardHolderName.sendKeys(Username);
         log.debug("Entering name of the card as " + Username);
 
@@ -176,6 +187,8 @@ public class PaymentPageActions extends Environment {
         System.out.println("********We are switch to the iframe*******");
         log.debug("Entering the Payments section");
         Thread.sleep(5000);
+        scrollToAnElement.scrollToElement(PaymentPage.CardHolderName);
+        Thread.sleep(2000);
         PaymentPage.CardHolderName.sendKeys("Test Accepta");
         log.debug("Entering name of the card as Test Accepta");
 
@@ -209,6 +222,8 @@ public class PaymentPageActions extends Environment {
 
         System.out.println("********We are switch to the iframe*******");
         log.debug("Entering the Payments section");
+        Thread.sleep(2000);
+        scrollToAnElement.scrollToElement(PaymentPage.CardHolderName);
         Thread.sleep(2000);
         PaymentPage.CardHolderName.sendKeys("Test Nine");
         log.debug("Entering name of the card as Test Nine");
@@ -276,11 +291,10 @@ public class PaymentPageActions extends Environment {
         ExpectedText = "If you have moved recently, you will need to ensure that your billing address is set to your new address in order to proceed.";
         ActualText = pageobjects.PaymentPage.HomeAddress.getText();
 
-        if(ActualText.contains(ExpectedText)){
+        if (ActualText.contains(ExpectedText)) {
             System.out.println("Verification Success: Copy text message is getting displayed below home address");
             log.debug("Verification Success: Copy text message is getting displayed below home address");
-        }
-        else{
+        } else {
             System.out.println("Verification Failed: Copy text message is not getting displayed below home address");
             log.debug("Verification Failed: Copy text message is not getting displayed below home address");
         }

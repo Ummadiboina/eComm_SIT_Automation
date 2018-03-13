@@ -11,7 +11,7 @@ Feature: Reg_CFU_Tablets_Data_filters_options_tariff_and_extras_page_Order_place
     And Select a <Tablet> device from Recommended devices section
     And Click on View all Tariffs link in upgrade options page
     Then I should see data filters buttons next to existing sort drop-down for PAYM/SIMO tariffs <sortoption>
-    #Verification point - A - More than 2 should be displayed
+      #Verification point - A - More than 2 should be displayed
     When I click on respective <filtername> data filter
     Then Data filter button should be in 'selected' state
     And I should see appropriate tariffs based on the selected data filter <sortoption>
@@ -19,16 +19,17 @@ Feature: Reg_CFU_Tablets_Data_filters_options_tariff_and_extras_page_Order_place
     Then I should see tariffs relevant to selected sort option <sortoption> & filter option <filtername>
     When I deselect filter button
     Then I should see tariffs based on the selected sort option <sortoption>
+    And Land on the 'Tariffs and extra' page
     And I Land on the basket page by clicking on Add to Basket button
     And click on "go to checkout" button
     And perform <Action> in OTAC page
     And Click on the 'Continue button' in delivery page
-    And land on the payment page and input <Username> and other details and click 'Continue on next step'
+    And land on the payment page and input <Username> and other details and click 'Continue' on next step for otac
     And Continue to Agreements page and confirm all the agreement checks
     And Continue to Review page and review the order
     Then order confirmation is displayed
 
     Examples:
-      | Tablet        | Action | Surname | Username     | filtername | sortoption                 | username               | password |
-      | Random Device | skip   | ACCEPTA | TEST ACCEPTA | high       | Monthly data (Low to High) | inavgmsa_285990@o2.com | test123  |
+      | Tablet        | Action | Surname | Username     | filtername | sortoption                 | username                      | password |
+      | Random Device | skip   | ACCEPTA | TEST ACCEPTA | low        | Monthly data (Low to High) | acce40660822@stf.ref.o2.co.uk | test123  |
    #   | Apple iPhone 7    | TEST      | ACCEPTA | TEST ACCEPTA | high       |

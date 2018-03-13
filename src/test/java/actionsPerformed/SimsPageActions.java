@@ -113,6 +113,7 @@ public class SimsPageActions extends Environment {
 	public static void verifyThatURL_has_simo_at_end() throws Exception {
 		try {
 			driver.manage().timeouts().implicitlyWait(2, TimeUnit.MINUTES);
+			Thread.sleep(5000);
 			String currentUrl = driver.getCurrentUrl();
 			System.out.println("Current URL is :  " + currentUrl );
 			if(currentUrl.contains("simo")){
@@ -155,20 +156,20 @@ public class SimsPageActions extends Environment {
 		try {
 			driver.manage().timeouts().implicitlyWait(2, TimeUnit.MINUTES);
 			if(driver.findElements(By.xpath("//li[@id='id-12-months' and @class=' active ']")).size() > 0) {
-				if (driver.findElement(By.xpath("//li[@id='id-12-months' and @class=' active ']")).isDisplayed()) {
-					List<WebElement> lstOfDataPlans =  driver.findElements(By.xpath("(//h2[contains(text(),'GB')]"));
-					for(int i=1; i<lstOfDataPlans.size(); i++){
-						if(driver.findElement(By.xpath("(//h2[contains(text(),'GB')])["+i+"]")).isDisplayed()){
-							String str = driver.findElement(By.xpath("(//h2[contains(text(),'GB')])["+i+"]")).getText();
-							System.out.println(" the tariffs under twelve months is : " + str);
+			//	if (driver.findElement(By.xpath("//li[@id='id-12-months' and @class=' active ']")).isDisplayed()) {
+					List<WebElement> lstOfDataPlans =  driver.findElements(By.xpath("//*[@name='P12M']/div/ul/li[1]/h2"));
+					for(int i=0; i<lstOfDataPlans.size(); i++){
+						//if(driver.findElement(By.xpath("(//h2[contains(text(),'GB')])["+i+"]")).isDisplayed()){
+							String str = lstOfDataPlans.get(i).getText();
+							System.out.println(i+": the tariffs under twelve months is : " + str);
 							log.debug(" the tariffs under twelve months is : " + str);
-						}
+						//}
 					}
 				} else {
 					System.out.println("Failed to display's the tariffs under twelve months");
 					Assert.fail("Failed to display's the tariffs under twelve months");
 				}
-			}
+			//}
 		}
 		catch (Exception e) {
 			// TODO Auto-generated catch block

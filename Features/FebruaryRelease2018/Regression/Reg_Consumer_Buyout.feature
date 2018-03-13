@@ -29,4 +29,4 @@ Feature: Reg_Consumer_Buyout.feature
 
     Examples:
       | username                      | password | handset        | Action | Username     |
-      | 23oc53483544@stf.ref.o2.co.uk | test123  | Apple iPhone 8 | skip   | TEST ACCEPTA |
+      | 23oc94394491@stf.ref.o2.co.uk | test123  | Apple iPhone 8 | skip   | TEST ACCEPTA |

@@ -228,7 +228,7 @@ public class E2EOrderPlaced_Steps {
             PageFactory.initElements(driver, MouseHoverPage.class);
             MouseHoverAction.PayGPhonesLandingPage();
             Autoredirection.redirect();
-            Thread.sleep(10000);
+            Thread.sleep(7000);
             //GlobalActions.//CommonFunctionscheckTitle("PayG Phones page");
         } catch (Exception e) {
             // TODO Auto-generated catch block

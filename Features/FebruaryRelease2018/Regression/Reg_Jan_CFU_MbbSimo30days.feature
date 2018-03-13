@@ -13,12 +13,12 @@ Feature: Reg_Jan_CFU_MbbSimo30days.feature
     And click on the 'MBB' button
     And the two contract lenght should be displayed
     And all the tariffs under twelve months should be displayed
-    And if <GiftBlock> is configured then display the banner
-    And verify that 'Why choose an O2 Pay Monthly sim' is not displayed in upgrade options page
+    #And if <GiftBlock> is configured then display the banner
+    #And verify that 'Why choose an O2 Pay Monthly sim' is not displayed in upgrade options page
     And the data filters is displayed
-    When I click on respective <filterSort> data filter
+    When I click on respective <filtername> data filter
     Then Data filter button should be in 'selected' state
-    And I should see appropriate tariffs based on the selected data filter <Tariffsortoption>
+    And I should see appropriate tariffs based on the selected data filter <sortoption>
     And the 'sorting dropdown' is displayed just below the toggle buttons sections
     And verify that the upfront sort options is not present in the 'sorting dropdown'
     Then I should see data filters buttons next to existing sort drop-down for PAYM/SIMO tariffs <sortoption>
@@ -43,5 +43,5 @@ Feature: Reg_Jan_CFU_MbbSimo30days.feature
     And Click on 'Place your order' CTA
 
     Examples:
-      | Contract | GiftBlock  | username              | password | filterSort | Tariffsortoption           | GiftBlock | sortoption                |
-      | 30 Days  | Configured | teadsdst@usaddser.com | test123  | high       | Monthly data (Low to High) | dfd       | Monthly data (High to low |
+      | Contract | GiftBlock  | username              | password | filtername | Tariffsortoption           | GiftBlock | sortoption                 |
+      | 30 Days  | Configured | teadsdst@usaddser.com | test123  | low        | Monthly data (Low to High) | dfd       | Monthly data (High to low) |
