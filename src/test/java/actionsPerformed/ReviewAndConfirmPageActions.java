@@ -30,8 +30,8 @@ public class ReviewAndConfirmPageActions extends Environment {
         String HeaderText= ReviewAndConfirmPage.RevConfHeading.getText();
 
         if(HeaderText.contains("Review & confirm")) {
-            log.debug("The Review and confirmation page for simo is displaye");
-            System.out.println("The Review and confirmation page for simo is displaye");
+            log.debug("The Review and confirmation page for simo is displayed");
+            System.out.println("The Review and confirmation page for simo is displayed");
         }
         else
             Assert.fail("The Review and confirmation page is not displayed for upgrade simo");

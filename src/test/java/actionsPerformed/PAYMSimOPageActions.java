@@ -31,12 +31,18 @@ public class PAYMSimOPageActions extends Environment {
 		if (elementName.contains("30 Days")) {
 			System.out.println("The Contract length is " + pageobjects.PAYMSimOPage.thirtydays.getText());
 			log.debug("The Contract length is " + pageobjects.PAYMSimOPage.thirtydays.getText());
+			pageobjects.PAYMSimOPage.thirtydays.sendKeys(Keys.ENTER);
+			Thread.sleep(10000);
+			log.debug("Clicked on 30 Days contract tab");
 
 		}
 		if (elementName.contains("12 Months")) {
 
 			System.out.println("The Contract length is " + pageobjects.PAYMSimOPage.twelevemonths.getText());
 			log.debug("The Contract length is " + pageobjects.PAYMSimOPage.twelevemonths.getText());
+			pageobjects.PAYMSimOPage.twelevemonths.sendKeys(Keys.ENTER);
+			Thread.sleep(10000);
+			log.debug("Clicked on 12 Months contract tab");
 		}
 		Screenshots.captureScreenshot();
 	}
@@ -766,6 +772,7 @@ public class PAYMSimOPageActions extends Environment {
 		WebElement element = pageobjects.PAYMSimOPage.SelectSIMOTariff;
 		JavascriptExecutor executor = (JavascriptExecutor)driver;
 		executor.executeScript("arguments[0].click();", element);
+		Thread.sleep(10000);
 		//pageobjects.PAYMSimOPage.SelectSIMOTariff.click();
 		Screenshots.captureScreenshot();
 	}
@@ -780,5 +787,30 @@ public class PAYMSimOPageActions extends Environment {
 		executor.executeScript("arguments[0].click();", element);
 
 	}
+
+	public static void selectIWillKeepMyCurrentSIM() throws IOException, InterruptedException {
+
+		WebElement element = pageobjects.PAYMSimOPage.IWillKeepMyCurrentSIM;
+		JavascriptExecutor executor = (JavascriptExecutor)driver;
+		executor.executeScript("arguments[0].click();", element);
+
+	}
+
+	public static void clickOnTermsAndConditionsCheckboxInReviewPage() throws IOException, InterruptedException {
+
+		WebElement element = pageobjects.PAYMSimOPage.TermsAndConditionsCheckbox_ReviewPage;
+		JavascriptExecutor executor = (JavascriptExecutor)driver;
+		executor.executeScript("arguments[0].click();", element);
+		Thread.sleep(2000);
+	}
+
+	public static void clickOnPlaceYourOrderButton() throws IOException, InterruptedException {
+
+		WebElement element = pageobjects.PAYMSimOPage.PlaceYourOrder;
+		JavascriptExecutor executor = (JavascriptExecutor)driver;
+		executor.executeScript("arguments[0].click();", element);
+		Thread.sleep(2000);
+	}
+
 
 }

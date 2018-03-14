@@ -35,6 +35,7 @@ public class UpgradeCustomerPageActions extends Environment {
     static String RunTimeFilePath = System.getProperty("user.dir") + "\\Configurations\\Properties\\Run.properties";
     final static Logger log = Logger.getLogger("UpgradeCustomerPageActions");
     static JavascriptExecutor executor = (JavascriptExecutor) driver;
+    static ArrayList<Integer> datalistafter = new ArrayList<Integer>();
     static int position = 0;
     static int PositionUpgrade = 0;
 
@@ -237,7 +238,7 @@ public class UpgradeCustomerPageActions extends Environment {
         System.out.println(pageobjects.UpgradeCustomerPage.NotEligible_message.getText());
 
 		/*
-		 * Assert.assertEquals(pageobjects.UpgradeCustomerPage.
+         * Assert.assertEquals(pageobjects.UpgradeCustomerPage.
 		 * NotEligible_message.getText(), "You are not eligible to upgrade"); // bound
 		 * to change System.out.println( "The error message is displayed as" +
 		 * pageobjects.UpgradeCustomerPage.NotEligible_message.getText());
@@ -482,8 +483,8 @@ public class UpgradeCustomerPageActions extends Environment {
             log.debug("MonthlyPound " + MonthlyPound);
             log.debug("MonthlyPence " + MonthlyPence);
 
-            UpfrontCost = UpfrontPound + UpfrontPence + "upfront";
-            MonthlyCost = MonthlyPound + MonthlyPence + "amonth";
+            UpfrontCost = UpfrontPound + UpfrontPence + " upfront";
+            MonthlyCost = MonthlyPound + MonthlyPence + " a month";
 
             TextOfTariffTile = UpfrontCost + MonthlyCost;
             log.debug("UpfrontCost is " + UpfrontCost);
@@ -500,7 +501,7 @@ public class UpgradeCustomerPageActions extends Environment {
             }
         }
         if (flag == false) {
-            driver.findElement(By.xpath("(//div[contains(@class, 'grid-tile')]/div/button[@id='callToAction'])[1]"));
+            driver.findElement(By.xpath("(//div[contains(@class, 'grid-tile')]/div/button[@id='callToAction'])[1]")).click();
             // Assert.fail("Provided tariff is not present in the list of tariffs");
         }
         Screenshots.captureScreenshot();
@@ -1340,11 +1341,10 @@ public class UpgradeCustomerPageActions extends Environment {
             System.out.println("Choosing need new sim");
             WebElement needNewSimRadio = driver.findElement(By.xpath("//input[@id='needNewSim']"));
             ((JavascriptExecutor) driver).executeScript("arguments[0].click();", needNewSimRadio);
-
-            // driver.findElement(By.xpath("//input[@id='needNewSim']")).click();
             System.out.println("Selected need new sim radio button");
             driver.findElement(By.xpath("//*[@id='confirmSim']")).click();
             System.out.println("Completed your sim  function");
+            Thread.sleep(3000);
         } catch (Exception e) {
             // TODO Auto-generated catch block
             System.out.println("Unable to click on element " + e.getStackTrace());
@@ -1369,22 +1369,42 @@ public class UpgradeCustomerPageActions extends Environment {
         // driver.findElement(By.xpath("//*[@id='qa-proceed-to-basket']")).click();
         WebElement BasketButton = driver.findElement(By.xpath("//*[@id='qa-proceed-to-basket']"));
         ((JavascriptExecutor) driver).executeScript("arguments[0].click();", BasketButton);
-        System.out.println("Compelted AddandGotoBasket Section");
+        System.out.println("Completed AddandGotoBasket Section");
+        Thread.sleep(3000);
         Screenshots.captureScreenshot();
 
     }
 
     public static void Otac(String arg) throws IOException, InterruptedException {
-        System.out.println("In Otac Section page");
+        System.out.println("In OTAC page");
         if (arg.contains("skip")) {
-            driver.findElement(By.xpath("//a[@id='skip-this-step']")).click();
-            System.out.println("Clicked on skip this step");
-            System.out.println("Selected a Random Tariff");
+            log.debug("Skipping OTAC entry to verify account");
+
+            WebElement element = UpgradeCustomerPage.skipThisStep_OTAC;
+            JavascriptExecutor executor = (JavascriptExecutor)driver;
+            executor.executeScript("arguments[0].click();", element);
+            Thread.sleep(2000);
+
+            log.debug("Clicked on skip this step");
+            log.debug("Skipped OTAC entry step to verify account");
         }
         if (arg.contains("enterCode")) {
-            driver.findElement(By.xpath("//a[@id='skip-this-step']")).click();
-            System.out.println("Clicked on skip this step");
-            System.out.println("Selected a Random Tariff");
+            log.debug("Entering OTAC to verify account");
+
+            WebElement element = UpgradeCustomerPage.sendCode_OTAC;
+            JavascriptExecutor executor = (JavascriptExecutor)driver;
+            executor.executeScript("arguments[0].click();", element);
+            Thread.sleep(4000);
+            log.debug("Clicked on Send Code button");
+
+            pageobjects.UpgradeCustomerPage.enterCode_OTAC.sendKeys("999999");
+            Thread.sleep(2000);
+            log.debug("Entered OTAC code 999999 successfully");
+
+            WebElement element1 = UpgradeCustomerPage. submitCode_OTAC;
+            executor.executeScript("arguments[0].click();", element1);
+            Thread.sleep(5000);
+
         } else
             System.out.println("The Delivery page is displayed");
         Screenshots.captureScreenshot();
@@ -1746,7 +1766,7 @@ public class UpgradeCustomerPageActions extends Environment {
     }
 
     public static int verifyBuyOutDisplayedInMyPackage() throws IOException, InterruptedException {
-        System.out.println("verifyBuyOutDisplayedInMyPackage");
+        log.debug("verifyBuyOutDisplayedInMyPackage");
 
         String AcText = null, Actcost1 = null, Actcost2 = null, tmpcost1 = null, tmpcost2 = null;
         int a = 0;
@@ -1755,8 +1775,8 @@ public class UpgradeCustomerPageActions extends Environment {
         AcText = UpgradeCustomerPage.BuyoutTextMyPkg.getText();
         Actcost1 = UpgradeCustomerPage.BuyoutCost1MyPkg.getText();
         Actcost2 = UpgradeCustomerPage.BuyoutCost2MyPkg.getText();
-        System.out.println("Left to Pay Value: " + Actcost1);
-        System.out.println("Buy out Amount: " + Actcost2);
+        log.debug("Left to Pay Value: " + Actcost1);
+        log.debug("Buy out Amount: " + Actcost2);
 
 
         tmpcost1 = org.apache.commons.lang3.StringUtils.substringBetween(Actcost1, "£", ".");
@@ -1765,30 +1785,72 @@ public class UpgradeCustomerPageActions extends Environment {
         b = NumberUtils.toInt(tmpcost2);
 
         if (AcText.contains("Upgrade on us")) {
-            System.out.println("Buy out offer text is displayed as expected: " + AcText);
+            log.debug("Buy out offer text is displayed as expected: " + AcText);
         } else {
-            System.out.println("Buy out offer text is not displayed as expected: " + AcText);
+            log.debug("Buy out offer text is not displayed as expected: " + AcText);
             Assert.fail("Buy out offer text is not displayed as expected");
         }
         if (a == b) {
-            System.out.println("Buy out values are matching: " + ", Left To Pay: " + a + ", Buy Out Amount: " + b);
+            log.debug("Buy out values are matching: " + ", Left To Pay: " + a + ", Buy Out Amount: " + b);
         } else {
-            System.out.println("Buy out values are not matching: " + ", Left To Pay: " + a + ", Buy Out Amount: " + b);
+            log.debug("Buy out values are not matching: " + ", Left To Pay: " + a + ", Buy Out Amount: " + b);
             Assert.fail("Buy out values are not matching");
         }
         if (Actcost2.contains("-")) {
-            System.out.println("Buy Out Amount contains negative value: " + Actcost2);
+            log.debug("Buy Out Amount contains negative value: " + Actcost2);
 
         } else {
-            System.out.println("Buy Out Amount does not contain negative value: " + Actcost2);
+            log.debug("Buy Out Amount does not contain negative value: " + Actcost2);
             Assert.fail("Buy Out Amount does not contain negative value");
         }
         Screenshots.captureScreenshot();
         return a;
     }
 
+    public static int verifyTradeInDisplayedInMyPackage() throws IOException, InterruptedException {
+        log.debug("verifyTradeInDisplayedInMyPackage");
+
+        String AcText = null, Actcost1 = null, Actcost2 = null, tmpcost1 = null, tmpcost2 = null;
+        int a = 0;
+        int b = 0;
+
+        AcText = UpgradeCustomerPage.TradeInTextMyPkg.getText();
+        Actcost1 = UpgradeCustomerPage.TradeInCost1MyPkg.getText();
+        Actcost2 = UpgradeCustomerPage.TradeInCost2MyPkg.getText();
+        log.debug("Left to Pay Value: " + Actcost1);
+        log.debug("TradeIn Amount: " + Actcost2);
+
+
+        tmpcost1 = org.apache.commons.lang3.StringUtils.substringBetween(Actcost1, "£", ".");
+        a = NumberUtils.toInt(tmpcost1);
+        tmpcost2 = org.apache.commons.lang3.StringUtils.substringBetween(Actcost2, "£", ".");
+        b = NumberUtils.toInt(tmpcost2);
+
+        if (AcText.contains("Upgrade on us")) {
+            log.debug("TradeIn offer text is displayed as expected: " + AcText);
+        } else {
+            log.debug("TradeIn offer text is not displayed as expected: " + AcText);
+            Assert.fail("TradeIn offer text is not displayed as expected");
+        }
+        if (a == b) {
+            log.debug("TradeIn values are matching: " + ", Left To Pay: " + a + ", TradeIn Amount: " + b);
+        } else {
+            log.debug("TradeIn values are not matching: " + ", Left To Pay: " + a + ", TradeIn Amount: " + b);
+            Assert.fail("TradeIn values are not matching");
+        }
+        if (Actcost2.contains("-")) {
+            log.debug("TradeIn Amount contains negative value: " + Actcost2);
+
+        } else {
+            log.debug("TradeIn Amount does not contain negative value: " + Actcost2);
+            Assert.fail("TradeIn Amount does not contain negative value");
+        }
+        Screenshots.captureScreenshot();
+        return a;
+    }
+
     public static void verifyBuyOutDisplayedInBasketPage(int BouOutValueFromMyPackageSection) throws IOException, InterruptedException {
-        System.out.println("verifyBuyOutDisplayedInBasketPage");
+        log.debug("verifyBuyOutDisplayedInBasketPage");
         String AcText = null, Actcost1 = null, Actcost2 = null, tmpcost1 = null, tmpcost2 = null;
         int a = 0;
         int b = 0;
@@ -1800,8 +1862,8 @@ public class UpgradeCustomerPageActions extends Environment {
         Actcost1 = UpgradeCustomerPage.BuyOutCost1BasketPage.getText();
         Actcost2 = UpgradeCustomerPage.BuyOutCost2BasketPage.getText();
 
-        System.out.println("Left to Pay Value: " + Actcost1);
-        System.out.println("Buy out Amount: " + Actcost2);
+        log.debug("Left to Pay Value: " + Actcost1);
+        log.debug("Buy out Amount: " + Actcost2);
 
         tmpcost1 = org.apache.commons.lang3.StringUtils.substringBetween(Actcost1, "£", ".");
         a = NumberUtils.toInt(tmpcost1);
@@ -1809,37 +1871,87 @@ public class UpgradeCustomerPageActions extends Environment {
         b = NumberUtils.toInt(tmpcost2);
 
         if (AcText.contains("Upgrade on us")) {
-            System.out.println("Buy out offer text is displayed as expected: " + AcText);
+            log.debug("Buy out offer text is displayed as expected: " + AcText);
         } else {
-            System.out.println("Buy out offer text is not displayed as expected: " + AcText);
+            log.debug("Buy out offer text is not displayed as expected: " + AcText);
             Assert.fail("Buy out offer text is not displayed as expected");
         }
         if (a == b) {
-            System.out.println("Buy out values are matching: " + ", Left To Pay: " + a + ", Buy Out Amount: " + b);
+            log.debug("Buy out values are matching: " + ", Left To Pay: " + a + ", Buy Out Amount: " + b);
         } else {
-            System.out.println("Buy out values are not matching: " + ", Left To Pay: " + a + ", Buy Out Amount: " + b);
+            log.debug("Buy out values are not matching: " + ", Left To Pay: " + a + ", Buy Out Amount: " + b);
             Assert.fail("Buy out values are not matching");
         }
         if (Actcost2.contains("-")) {
-            System.out.println("Buy Out Amount contains negative value: " + Actcost2);
+            log.debug("Buy Out Amount contains negative value: " + Actcost2);
 
         } else {
-            System.out.println("Buy Out Amount does not contain negative value: " + Actcost2);
+            log.debug("Buy Out Amount does not contain negative value: " + Actcost2);
             Assert.fail("Buy Out Amount does not contain negative value");
         }
         if (b == BouOutValue_FromMyPackageSection) {
-            System.out.println("Buy out value from Basket Page is matching with the BoyOut value from MyPackage Section: " + ", Boy Out Value from My Package Section: " + BouOutValue_FromMyPackageSection + ", Buy Out Amount from Basket Page: " + b);
+            log.debug("Buy out value from Basket Page is matching with the BoyOut value from MyPackage Section: " + ", Boy Out Value from My Package Section: " + BouOutValue_FromMyPackageSection + ", Buy Out Amount from Basket Page: " + b);
         } else {
-            System.out.println("Buy out value from Basket Page is not matching with the BoyOut value from MyPackage Section: " + ", Boy Out Value from My Package Section: " + BouOutValue_FromMyPackageSection + ", Buy Out Amount from Basket Page: " + b);
+            log.debug("Buy out value from Basket Page is not matching with the BoyOut value from MyPackage Section: " + ", Boy Out Value from My Package Section: " + BouOutValue_FromMyPackageSection + ", Buy Out Amount from Basket Page: " + b);
             Assert.fail("Buy out values from MyPackage Section and Basket Page are not matching");
         }
 
         Screenshots.captureScreenshot();
     }
 
+    public static void verifyTradeInDisplayedInBasketPage(int TradeInValueFromMyPackageSection) throws IOException, InterruptedException {
+        log.debug("verifyTradeInDisplayedInBasketPage");
+        String AcText = null, Actcost1 = null, Actcost2 = null, tmpcost1 = null, tmpcost2 = null;
+        int a = 0;
+        int b = 0;
+        int TradeInValue_FromMyPackageSection = TradeInValueFromMyPackageSection;
+
+        scrollToAnElement.scrollToElement(UpgradeCustomerPage.TradeInTextBasketPage);
+
+        AcText = UpgradeCustomerPage.TradeInTextBasketPage.getText();
+        Actcost1 = UpgradeCustomerPage.TradeInCost1BasketPage.getText();
+        Actcost2 = UpgradeCustomerPage.TradeInCost2BasketPage.getText();
+
+        log.debug("Left to Pay Value: " + Actcost1);
+        log.debug("TradeIn Amount: " + Actcost2);
+
+        tmpcost1 = org.apache.commons.lang3.StringUtils.substringBetween(Actcost1, "£", ".");
+        a = NumberUtils.toInt(tmpcost1);
+        tmpcost2 = org.apache.commons.lang3.StringUtils.substringBetween(Actcost2, "£", ".");
+        b = NumberUtils.toInt(tmpcost2);
+
+        if (AcText.contains("Upgrade on us")) {
+            log.debug("TradeIn offer text is displayed as expected: " + AcText);
+        } else {
+            log.debug("TradeIn offer text is not displayed as expected: " + AcText);
+            Assert.fail("TradeIn offer text is not displayed as expected");
+        }
+        if (a == b) {
+            log.debug("TradeIn values are matching: " + ", Left To Pay: " + a + ", TradeIn Amount: " + b);
+        } else {
+            log.debug("TradeIn values are not matching: " + ", Left To Pay: " + a + ", TradeIn Amount: " + b);
+            Assert.fail("TradeIn values are not matching");
+        }
+        if (Actcost2.contains("-")) {
+            log.debug("TradeIn Amount contains negative value: " + Actcost2);
+
+        } else {
+            log.debug("TradeIn Amount does not contain negative value: " + Actcost2);
+            Assert.fail("TradeIn Amount does not contain negative value");
+        }
+        if (b == TradeInValue_FromMyPackageSection) {
+            log.debug("TradeIn value from Basket Page is matching with the TradeIn value from MyPackage Section: " + ", TradeIn Value from My Package Section: " + TradeInValue_FromMyPackageSection + ", TradeIn Amount from Basket Page: " + b);
+        } else {
+            log.debug("TradeIn value from Basket Page is not matching with the TradeIn value from MyPackage Section: " + ", TradeIn Value from My Package Section: " + TradeInValue_FromMyPackageSection + ", TradeIn Amount from Basket Page: " + b);
+            Assert.fail("TradeIn values from MyPackage Section and Basket Page are not matching");
+        }
+
+        Screenshots.captureScreenshot();
+    }
+
     public static void verifyBuyOutDisplayed_OrderSummarySection(int BouOutValueFromMyPackageSection, String pageName) throws IOException, InterruptedException {
-        System.out.println("verify Buy Out is displayed");
-        @SuppressWarnings("unused")
+        log.debug("verify Buy Out is displayed");
+
         String AcText = null, Actcost1 = null, tmpcost1 = null, Title = null;
         int a = 0;
         int BouOutValue_FromMyPackageSection = BouOutValueFromMyPackageSection;
@@ -1848,50 +1960,91 @@ public class UpgradeCustomerPageActions extends Environment {
         Actcost1 = UpgradeCustomerPage.BuyOutCost_OrderSummarySection.getText();
         Title = driver.getTitle();
 
-        System.out.println("Buy out Amount: " + Actcost1);
+        log.debug("Buy out Amount: " + Actcost1);
 
         tmpcost1 = org.apache.commons.lang3.StringUtils.substringBetween(Actcost1, "£", ".");
         a = NumberUtils.toInt(tmpcost1);
 
         if (AcText.contains("Upgrade on us")) {
-            System.out.println("Buy out offer text is displayed as expected: " + AcText);
+            log.debug("Buy out offer text is displayed as expected: " + AcText);
         } else {
-            System.out.println("Buy out offer text is not displayed as expected: " + AcText);
+            log.debug("Buy out offer text is not displayed as expected: " + AcText);
             Assert.fail("Buy out offer text is not displayed as expected");
         }
         if (Actcost1.contains("-")) {
-            System.out.println("Buy Out Amount contains negative value: " + Actcost1);
+            log.debug("Buy Out Amount contains negative value: " + Actcost1);
 
         } else {
-            System.out.println("Buy Out Amount does not contain negative value: " + Actcost1);
+            log.debug("Buy Out Amount does not contain negative value: " + Actcost1);
             Assert.fail("Buy Out Amount does not contain negative value");
         }
         if (a == BouOutValue_FromMyPackageSection) {
-            System.out.println("Buy out value from "+pageName+" Page is matching with the BoyOut value from MyPackage Section: " + ", Boy Out Value from My Package Section: " + BouOutValue_FromMyPackageSection + ", Buy Out Amount from "+pageName+" Page: " + a);
+            log.debug("Buy out value from " + pageName + " Page is matching with the BoyOut value from MyPackage Section: " + ", Boy Out Value from My Package Section: " + BouOutValue_FromMyPackageSection + ", Buy Out Amount from " + pageName + " Page: " + a);
         } else {
-            System.out.println("Buy out value from "+pageName+" Page is not matching with the BoyOut value from MyPackage Section: " + ", Boy Out Value from My Package Section: " + BouOutValue_FromMyPackageSection + ", Buy Out Amount from "+pageName+" Page: " + a);
-            Assert.fail("Buy out values from MyPackage Section and "+pageName+" Page are not matching");
+            log.debug("Buy out value from " + pageName + " Page is not matching with the BoyOut value from MyPackage Section: " + ", Boy Out Value from My Package Section: " + BouOutValue_FromMyPackageSection + ", Buy Out Amount from " + pageName + " Page: " + a);
+            Assert.fail("Buy out values from MyPackage Section and " + pageName + " Page are not matching");
+        }
+        Screenshots.captureScreenshot();
+    }
+
+    public static void verifyTradeInDisplayed_OrderSummarySection(int TradeInValueFromMyPackageSection, String pageName) throws IOException, InterruptedException {
+        log.debug("verify TradeIn is displayed");
+
+        String AcText = null, Actcost1 = null, tmpcost1 = null, Title = null;
+        int a = 0;
+        int TradeInValue_FromMyPackageSection = TradeInValueFromMyPackageSection;
+
+        AcText = UpgradeCustomerPage.TradeInText_OrderSummarySection.getText();
+        Actcost1 = UpgradeCustomerPage.TradeInCost_OrderSummarySection.getText();
+        Title = driver.getTitle();
+
+        log.debug("TradeIn Amount: " + Actcost1);
+
+        tmpcost1 = org.apache.commons.lang3.StringUtils.substringBetween(Actcost1, "£", ".");
+        a = NumberUtils.toInt(tmpcost1);
+
+        if (AcText.contains("Upgrade on us")) {
+            log.debug("TradeIn offer text is displayed as expected: " + AcText);
+        } else {
+            log.debug("TradeIn offer text is not displayed as expected: " + AcText);
+            Assert.fail("TradeIn offer text is not displayed as expected");
+        }
+        if (Actcost1.contains("-")) {
+            log.debug("TradeIn Amount contains negative value: " + Actcost1);
+
+        } else {
+            log.debug("TradeIn Amount does not contain negative value: " + Actcost1);
+            Assert.fail("TradeIn Amount does not contain negative value");
+        }
+        if (a == TradeInValue_FromMyPackageSection) {
+            log.debug("TradeIn value from " + pageName + " Page is matching with the TradeIn value from MyPackage Section: " + ", TradeIn Value from My Package Section: " + TradeInValue_FromMyPackageSection + ", TradeIn Amount from " + pageName + " Page: " + a);
+        } else {
+            log.debug("TradeIn value from " + pageName + " Page is not matching with the TradeIn value from MyPackage Section: " + ", TradeIn Value from My Package Section: " + TradeInValue_FromMyPackageSection + ", TradeIn Amount from " + pageName + " Page: " + a);
+            Assert.fail("TradeIn values from MyPackage Section and " + pageName + " Page are not matching");
         }
         Screenshots.captureScreenshot();
     }
 
     public static void VerifyTradeinMessage() throws IOException, InterruptedException {
-        System.out.println("in verify tradein message function");
+        log.debug("in verify tradein message function");
         driver.findElement(By.xpath("//div[@class='ng-scope trade-in-offer']")).getText();
         String text = driver.findElement(By.xpath("//div[@class='ng-scope trade-in-offer']")).getText();
         if (text.contains("Trade in")) {
-            System.out.println("Working fine");
-            System.out.println("The Text is " + text);
+            log.debug("Working fine");
+            log.debug("The Text is: " + text);
         } else {
             Assert.fail("Trade in not displayed, hence failed");
         }
-        driver.findElement(By.xpath("//button[contains(text(),'Take this offer and upgrade')]")).click();
-        Screenshots.captureScreenshot();
+       // driver.findElement(By.xpath("//button[contains(text(),'Take this offer and upgrade')]")).click();
+       // JavascriptExecutor js = (JavascriptExecutor) driver;
+        ((JavascriptExecutor) driver).executeScript("arguments[0].click();",
+                driver.findElement(By.xpath("//button[contains(text(),'Take this offer and upgrade')]")));
 
+        Screenshots.captureScreenshot();
     }
 
     public static void AnswerTradeinQuestion() throws InterruptedException, IOException {
-        System.out.println("in AnswerTradeinQuestion function");
+        log.debug("in AnswerTradeinQuestion function");
         JavascriptExecutor js = (JavascriptExecutor) driver;
 
         WebElement Question0 = driver.findElement(By.xpath("//select[@id='question0']"));
@@ -1915,16 +2068,18 @@ public class UpgradeCustomerPageActions extends Environment {
         new Select(Question3).selectByValue("0");
 
         // driver.findElement(By.id("continue-with-accurate-quote")).click();
-        System.out.println("Completed questionaire");
+        log.debug("Completed questionaire");
         Screenshots.captureScreenshot();
 
     }
 
     public static void UpgradeNowButton() throws InterruptedException, IOException {
-        System.out.println("in UpgradeNowButton function");
+        log.debug("in UpgradeNowButton function");
         Thread.sleep(8000);
 
-        driver.findElement(By.xpath("//button[contains(text(),'Upgrade now')]")).click();
+        //driver.findElement(By.xpath("//button[contains(text(),'Upgrade now')]")).click();
+        ((JavascriptExecutor) driver).executeScript("arguments[0].click();",
+                driver.findElement(By.xpath("//button[contains(text(),'Upgrade now')]")));
 
         Thread.sleep(8000);
         Screenshots.captureScreenshot();
@@ -1932,7 +2087,7 @@ public class UpgradeCustomerPageActions extends Environment {
     }
 
     public static void VerifyUpgradeonUs() throws IOException, InterruptedException {
-        System.out.println("in VerifyUpgradeonUs function");
+        log.debug("in VerifyUpgradeonUs function");
 
         ((JavascriptExecutor) driver).executeScript("arguments[0].click();",
                 pageobjects.UpgradeCustomerPage.SignoutLink);
@@ -1981,9 +2136,9 @@ public class UpgradeCustomerPageActions extends Environment {
 
         String upgradetext = driver.findElement(By.xpath("//h1")).getText();
         if (upgradetext.contains("upgrade")) {
-            System.out.println("Upgrade page is displayed");
+            log.debug("Upgrade page is displayed");
         } else {
-            System.out.println("Upgrade page is not displayed");
+            log.debug("Upgrade page is not displayed");
         }
         Screenshots.captureScreenshot();
     }
@@ -2033,19 +2188,19 @@ public class UpgradeCustomerPageActions extends Environment {
         }
         if (handset.contains("Samsung Galaxy Tab")) {
             pageobjects.UpgradeCustomerPage.GalaxyTab10.click();
-            System.out.println("Seelcted Samsung galaxy tab");
+            log.debug("Seelcted Samsung galaxy tab");
             log.debug("Seelcted Samsung galaxy tab");
         }
 
         if (handset.contains("GalaxyTabA")) {
             pageobjects.UpgradeCustomerPage.GalaxyTabA.click();
-            System.out.println("Seelcted Samsung galaxy tab A");
+            log.debug("Seelcted Samsung galaxy tab A");
             log.debug("Selcted Samsung galaxy tab A");
         }
 
         if (handset.contains("Apple ipad pro 9.7")) {
             pageobjects.UpgradeCustomerPage.AppleipadPro.click();
-            System.out.println("Seelcted ipad pro tablet");
+            log.debug("Seelcted ipad pro tablet");
             log.debug("Seelcted ipad pro tablet");
         }
         Screenshots.captureScreenshot();
@@ -2303,5 +2458,369 @@ public class UpgradeCustomerPageActions extends Environment {
         }
     }
 
+    public static ArrayList<Integer> getDataListAfterSelectingFilter_UpgradeSIMO_MBBTablet() throws IOException, InterruptedException {
 
+        List<WebElement> DataTextElement=null;
+
+        if (driver.findElements(By.xpath("//li[@id='id-12-months' and @class=' active ']")).size() > 0) {
+            DataTextElement = pageobjects.UpgradeCustomerPage.DataTextElement_12Months;
+        } else if (driver.findElements(By.xpath("//li[@id='id-30-days' and @class=' active ']")).size() > 0) {
+            DataTextElement = pageobjects.UpgradeCustomerPage.DataTextElement_30Days;
+        }
+        String data = null, tempdata = null;
+        int a = 0;
+
+        for (int i = 0; i < DataTextElement.size(); i++) {
+            data = DataTextElement.get(i).getText();
+            System.out.println("data " + data);
+            if (data.contains("MB")) {
+                tempdata = org.apache.commons.lang3.StringUtils.substringBetween(data, "", "MB");
+                a = NumberUtils.toInt(tempdata);
+                System.out.println("a " + a);
+                datalistafter.add(a);
+            }
+            if (data.contains("GB")) {
+                tempdata = org.apache.commons.lang3.StringUtils.substringBetween(data, "", "GB");
+                // System.out.println("tempdata " + tempdata);
+                a = NumberUtils.toInt(tempdata);
+                a = a * 1024;
+                System.out.println("a " + a);
+                if (a != 0) {
+                    datalistafter.add(a);
+                }
+            }
+        }
+
+        System.out.println('\n');
+        System.out.println("----------------------Data List after selecting filter--------------");
+        for (int i = 0; i < datalistafter.size(); i++) {
+            System.out.println(datalistafter.get(i));
+
+        }
+        System.out.println("---------------------------------------------");
+        Screenshots.captureScreenshot();
+        return datalistafter;
+    }
+
+    public static ArrayList<Integer> getDataListAfterSelectingFilter_UpgradeSIMO_Phone() throws IOException, InterruptedException {
+
+        List<WebElement> DataTextElement = pageobjects.UpgradeCustomerPage.DataTextElement_Phones;
+
+        String data = null, tempdata = null;
+        int a = 0;
+
+        for (int i = 0; i < DataTextElement.size(); i++) {
+            data = DataTextElement.get(i).getText();
+            System.out.println("data " + data);
+            if (data.contains("MB")) {
+                tempdata = org.apache.commons.lang3.StringUtils.substringBetween(data, "", "MB");
+                a = NumberUtils.toInt(tempdata);
+                System.out.println("a " + a);
+                datalistafter.add(a);
+            }
+            if (data.contains("GB")) {
+                tempdata = org.apache.commons.lang3.StringUtils.substringBetween(data, "", "GB");
+                // System.out.println("tempdata " + tempdata);
+                a = NumberUtils.toInt(tempdata);
+                a = a * 1024;
+                System.out.println("a " + a);
+                if (a != 0) {
+                    datalistafter.add(a);
+                }
+            }
+        }
+
+        System.out.println('\n');
+        System.out.println("----------------------Data List after selecting filter--------------");
+        for (int i = 0; i < datalistafter.size(); i++) {
+            System.out.println(datalistafter.get(i));
+
+        }
+        System.out.println("---------------------------------------------");
+        Screenshots.captureScreenshot();
+        return datalistafter;
+    }
+
+    public static ArrayList<Integer> getMonthlyCostListAfterSelectingFilter_UpgradeSIMO_MBBTablet() throws IOException, InterruptedException {
+        List<WebElement> MonthlyCostTextElement = null;
+
+        if (driver.findElements(By.xpath("//li[@id='id-12-months' and @class=' active ']")).size() > 0) {
+            MonthlyCostTextElement = pageobjects.UpgradeCustomerPage.MonthlyTextElement_12Months;
+        } else if (driver.findElements(By.xpath("//li[@id='id-30-days' and @class=' active ']")).size() > 0) {
+            MonthlyCostTextElement = pageobjects.UpgradeCustomerPage.MonthlyTextElement_30Days;
+        }
+
+         ArrayList<Integer> MonthlyCostlist = new ArrayList<Integer>();
+        String data = null;
+        int a = 0;
+
+        for (int i = 0; i < MonthlyCostTextElement.size(); i++) {
+            data = MonthlyCostTextElement.get(i).getText();
+            data = org.apache.commons.lang3.StringUtils.substringBetween(data, "�", ".");
+            a = NumberUtils.toInt(data);
+            MonthlyCostlist.add(a);
+        }
+
+        System.out.println('\n');
+
+        System.out.println("----------------------Monthly Cost List after selecting filter--------------");
+        for (int i = 0; i < MonthlyCostlist.size(); i++) {
+            System.out.println(MonthlyCostlist.get(i));
+
+        }
+        System.out.println("---------------------------------------------");
+        Screenshots.captureScreenshot();
+        return MonthlyCostlist;
+    }
+
+    public static ArrayList<Integer> getMonthlyCostListAfterSelectingFilter_UpgradeSIMO_Phone() throws IOException, InterruptedException {
+
+        List<WebElement> MonthlyCostTextElement = pageobjects.UpgradeCustomerPage.MonthlyTextElement_Phones;
+
+        ArrayList<Integer> MonthlyCostlist = new ArrayList<Integer>();
+        String data = null;
+        int a = 0;
+
+        for (int i = 0; i < MonthlyCostTextElement.size(); i++) {
+            data = MonthlyCostTextElement.get(i).getText();
+            data = org.apache.commons.lang3.StringUtils.substringBetween(data, "�", ".");
+            a = NumberUtils.toInt(data);
+            MonthlyCostlist.add(a);
+        }
+
+        System.out.println('\n');
+
+        System.out.println("----------------------Monthly Cost List after selecting filter--------------");
+        for (int i = 0; i < MonthlyCostlist.size(); i++) {
+            System.out.println(MonthlyCostlist.get(i));
+
+        }
+        System.out.println("---------------------------------------------");
+        Screenshots.captureScreenshot();
+        return MonthlyCostlist;
+    }
+
+    public static ArrayList<Integer> getDataListBeforeSelectingFilter_UpgradeSIMO_MBBTablet() throws IOException, InterruptedException {
+        List<WebElement> DataTextElement = null;
+
+        if (driver.findElements(By.xpath("//li[@id='id-12-months' and @class=' active ']")).size() > 0) {
+            DataTextElement = pageobjects.UpgradeCustomerPage.DataTextElement_12Months;
+        } else if (driver.findElements(By.xpath("//li[@id='id-30-days' and @class=' active ']")).size() > 0) {
+            DataTextElement = pageobjects.UpgradeCustomerPage.DataTextElement_30Days;
+        }
+
+        ArrayList<Integer> datalist = new ArrayList<Integer>();
+        String data = null, tempdata = null;
+        int a = 0;
+        System.out.println("size " + DataTextElement.size());
+        for (int i = 0; i < DataTextElement.size(); i++) {
+            data = DataTextElement.get(i).getText();
+            System.out.println("data " + data);
+            if (data.contains("MB")) {
+                tempdata = org.apache.commons.lang3.StringUtils.substringBetween(data, "", "MB");
+                a = NumberUtils.toInt(tempdata);
+                System.out.println("a " + a);
+                datalist.add(a);
+            }
+            if (data.contains("GB")) {
+                tempdata = org.apache.commons.lang3.StringUtils.substringBetween(data, "", "GB");
+                System.out.println("tempdata " + tempdata);
+                a = NumberUtils.toInt(tempdata);
+                a = a * 1024;
+                System.out.println("a " + a);
+                datalist.add(a);
+            }
+
+        }
+
+        System.out.println('\n');
+
+        System.out.println("----------------------Data List before selecting filter--------------");
+        for (int i = 0; i < datalist.size(); i++) {
+            System.out.println(datalist.get(i));
+
+        }
+        System.out.println("---------------------------------------------");
+        Screenshots.captureScreenshot();
+        return datalist;
+    }
+
+    public static ArrayList<Integer> getDataListBeforeSelectingFilter_UpgradeSIMO_Phone() throws IOException, InterruptedException {
+
+        List<WebElement> DataTextElement = pageobjects.UpgradeCustomerPage.DataTextElement_Phones;
+
+        ArrayList<Integer> datalist = new ArrayList<Integer>();
+        String data = null, tempdata = null;
+        int a = 0;
+        System.out.println("size " + DataTextElement.size());
+        for (int i = 0; i < DataTextElement.size(); i++) {
+            data = DataTextElement.get(i).getText();
+            System.out.println("data " + data);
+            if (data.contains("MB")) {
+                tempdata = org.apache.commons.lang3.StringUtils.substringBetween(data, "", "MB");
+                a = NumberUtils.toInt(tempdata);
+                System.out.println("a " + a);
+                datalist.add(a);
+            }
+            if (data.contains("GB")) {
+                tempdata = org.apache.commons.lang3.StringUtils.substringBetween(data, "", "GB");
+                System.out.println("tempdata " + tempdata);
+                a = NumberUtils.toInt(tempdata);
+                a = a * 1024;
+                System.out.println("a " + a);
+                datalist.add(a);
+            }
+
+        }
+
+        System.out.println('\n');
+
+        System.out.println("----------------------Data List before selecting filter--------------");
+        for (int i = 0; i < datalist.size(); i++) {
+            System.out.println(datalist.get(i));
+
+        }
+        System.out.println("---------------------------------------------");
+        Screenshots.captureScreenshot();
+        return datalist;
+    }
+
+    public static ArrayList<Integer> getCurrentSortOrderUsingMonthlyData_UpgradeSIMO_MBBTablet() throws IOException, InterruptedException {
+        System.out.println("Executing getCurrentSortOrderUsingMonthlyData_UpgradeSIMO_MBBTablet ()");
+
+        List<WebElement> DataTextElement = null;
+
+        if (driver.findElements(By.xpath("//li[@id='id-12-months' and @class=' active ']")).size() > 0) {
+            DataTextElement = pageobjects.UpgradeCustomerPage.DataTextElement_12Months;
+        } else if (driver.findElements(By.xpath("//li[@id='id-30-days' and @class=' active ']")).size() > 0) {
+            DataTextElement = pageobjects.UpgradeCustomerPage.DataTextElement_30Days;
+        }
+
+        ArrayList<Integer> tariffListUsingMonthlyData = new ArrayList<Integer>();
+        String data = null, tempdata = null;
+        int a = 0;
+        System.out.println("size " + DataTextElement.size());
+        for (int i = 0; i < DataTextElement.size(); i++) {
+            data = DataTextElement.get(i).getText();
+            System.out.println("data " + data);
+            if (data.contains("MB")) {
+                tempdata = org.apache.commons.lang3.StringUtils.substringBetween(data, "", "MB");
+                a = NumberUtils.toInt(tempdata);
+                System.out.println("a " + a);
+                tariffListUsingMonthlyData.add(a);
+            }
+            if (data.contains("GB")) {
+                tempdata = org.apache.commons.lang3.StringUtils.substringBetween(data, "", "GB");
+                System.out.println("tempdata " + tempdata);
+                a = NumberUtils.toInt(tempdata);
+                a = a * 1024;
+                System.out.println("a " + a);
+                if (a != 0) {
+                    tariffListUsingMonthlyData.add(a);
+                }
+            }
+
+        }
+
+        System.out.println('\n');
+
+        System.out.println("----------------------Original List--------------");
+        for (int i = 0; i < tariffListUsingMonthlyData.size(); i++) {
+            System.out.println(tariffListUsingMonthlyData.get(i));
+
+        }
+        System.out.println("---------------------------------------------");
+        Screenshots.captureScreenshot();
+        return tariffListUsingMonthlyData;
+    }
+
+    public static ArrayList<Integer> getCurrentSortOrderUsingMonthlyCost_UpgradeSIMO_MBBTablet() throws IOException, InterruptedException {
+
+        List<WebElement> DataTextElement = null;
+
+        if (driver.findElements(By.xpath("//li[@id='id-12-months' and @class=' active ']")).size() > 0) {
+            DataTextElement = pageobjects.UpgradeCustomerPage.MonthlyTextElement_12Months;
+        } else if (driver.findElements(By.xpath("//li[@id='id-30-days' and @class=' active ']")).size() > 0) {
+            DataTextElement = pageobjects.UpgradeCustomerPage.MonthlyTextElement_30Days;
+        }
+
+        ArrayList<Integer> tariffListUsingMonthlyCost = new ArrayList<Integer>();
+        String data = null;
+        int a = 0;
+
+        for (int i = 0; i < DataTextElement.size(); i++) {
+            data = DataTextElement.get(i).getText();
+            data = org.apache.commons.lang3.StringUtils.substringBetween(data, "£", ".");
+            a = NumberUtils.toInt(data);
+            if (a != 0) {
+                tariffListUsingMonthlyCost.add(a);
+            }
+
+        }
+        Screenshots.captureScreenshot();
+        return tariffListUsingMonthlyCost;
+    }
+
+    public static ArrayList<Integer> getCurrentSortOrderUsingMonthlyData_UpgradeSIMO_Phone() throws IOException, InterruptedException {
+        System.out.println("Executing getCurrentSortOrderUsingMonthlyData_UpgradeSIMO_Phone ()");
+
+        List<WebElement> DataTextElement = pageobjects.UpgradeCustomerPage.DataTextElement_Phones;
+
+        ArrayList<Integer> tariffListUsingMonthlyData = new ArrayList<Integer>();
+        String data = null, tempdata = null;
+        int a = 0;
+        System.out.println("size " + DataTextElement.size());
+        for (int i = 0; i < DataTextElement.size(); i++) {
+            data = DataTextElement.get(i).getText();
+            System.out.println("data " + data);
+            if (data.contains("MB")) {
+                tempdata = org.apache.commons.lang3.StringUtils.substringBetween(data, "", "MB");
+                a = NumberUtils.toInt(tempdata);
+                System.out.println("a " + a);
+                tariffListUsingMonthlyData.add(a);
+            }
+            if (data.contains("GB")) {
+                tempdata = org.apache.commons.lang3.StringUtils.substringBetween(data, "", "GB");
+                System.out.println("tempdata " + tempdata);
+                a = NumberUtils.toInt(tempdata);
+                a = a * 1024;
+                System.out.println("a " + a);
+                if (a != 0) {
+                    tariffListUsingMonthlyData.add(a);
+                }
+            }
+
+        }
+
+        System.out.println('\n');
+
+        System.out.println("----------------------Original List--------------");
+        for (int i = 0; i < tariffListUsingMonthlyData.size(); i++) {
+            System.out.println(tariffListUsingMonthlyData.get(i));
+
+        }
+        System.out.println("---------------------------------------------");
+        Screenshots.captureScreenshot();
+        return tariffListUsingMonthlyData;
+    }
+
+    public static ArrayList<Integer> getCurrentSortOrderUsingMonthlyCost_UpgradeSIMO_Phone() throws IOException, InterruptedException {
+
+        List<WebElement> DataTextElement = pageobjects.UpgradeCustomerPage.MonthlyTextElement_Phones;
+        ArrayList<Integer> tariffListUsingMonthlyCost = new ArrayList<Integer>();
+        String data = null;
+        int a = 0;
+
+        for (int i = 0; i < DataTextElement.size(); i++) {
+            data = DataTextElement.get(i).getText();
+            data = org.apache.commons.lang3.StringUtils.substringBetween(data, "£", ".");
+            a = NumberUtils.toInt(data);
+            if (a != 0) {
+                tariffListUsingMonthlyCost.add(a);
+            }
+
+        }
+        Screenshots.captureScreenshot();
+        return tariffListUsingMonthlyCost;
+    }
 }
