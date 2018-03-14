@@ -15,7 +15,7 @@ Feature: Reg_Jan_CFU_PhonesSimo30day
     And if <GiftBlock> is configured then display the banner
     And verify that 'Why choose an O2 Pay Monthly sim' is not displayed in upgrade options page
     And the data filters is displayed
-    When I click on respective <filterSort> data filter
+    When I click on respective <filtername> data filter
     Then Data filter button should be in 'selected' state
     And I should see appropriate tariffs based on the selected data filter <Tariffsortoption>
     And the 'sorting dropdown' is displayed just below the toggle buttons sections

@@ -21,7 +21,7 @@ Feature: Reg_CFU_Recycle_Phones_DD_Confirmation_Page_changes.feature
     And click on "go to checkout" button
     And perform <Action> in OTAC page
     And Click on the 'Continue button' in delivery page
-    And land on the payment page and input <Username> and other details and click 'Continue on next step'
+    And land on the payment page and input <Username> and other details and click 'Continue on next step' for DD confirmation
     And Continue to Agreements page and confirm all the agreement checks
     And Continue to Review page and review the order
     Then order confirmation is displayed
