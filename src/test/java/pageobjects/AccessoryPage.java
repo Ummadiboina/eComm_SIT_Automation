@@ -12,19 +12,23 @@ public class AccessoryPage {
 	@FindBy(how = How.XPATH, using = "//h2[contains(text(),'Sort')]")
 	public static WebElement AccessorySortTab;
 
-	@FindBy(how = How.XPATH, using = "//a[contains(@data-qa-device-model-family, 'AirPods')]")
+	//@FindBy(how = How.XPATH, using = "//a[contains(@data-qa-device-model-family, 'AirPods')]")
+	@FindBy(how = How.XPATH, using = "//a[contains(@href, '/shop/accessories/apple/airpods#contractType=nonconnected')]")
 	public static WebElement AppleAirpods;
 
-	@FindBy(how = How.XPATH, using = "//a[contains(@data-qa-device-model-family, 'Onyx Studio 3 Bluetooth Speaker')]")
-	public static WebElement HarmanKardonOnxyxStudio3;
+	//@FindBy(how = How.XPATH, using = "//a[contains(@data-qa-device-model-family, 'Onyx Studio 3 Bluetooth Speaker')]")
+	@FindBy(how = How.XPATH, using = "//a[contains(@href, '/shop/accessories/harman-kardon/aura-studio-2#contractType=nonconnected')]")
+	public static WebElement HarmanKardonOnxyxStudio2;
 
 	@FindBy(how = How.XPATH, using = "//a[contains(@data-qa-device-model-family, 'Pencil for iPad Pro')]")
 	public static WebElement PencilforiPadPro;
 
-	@FindBy(how = How.XPATH, using = "//a[contains(@data-qa-device-model-family, 'Clip 2')]")
-	public static WebElement Clip2;
+	//@FindBy(how = How.XPATH, using = "//a[contains(@data-qa-device-model-family, 'Clip 2')]")
+	@FindBy(how = How.XPATH, using = "//a[contains(@href, '/shop/accessories/jbl/flip-4#contractType=nonconnected')]")
+	public static WebElement Clip4;
 
-	@FindBy(how = How.XPATH, using = "//a[contains(@data-qa-device-model-family, 'Xtreme')]")
+	//@FindBy(how = How.XPATH, using = "//a[contains(@data-qa-device-model-family, 'Xtreme')]")
+	@FindBy(how = How.XPATH, using = "//a[contains(@href, '/shop/accessories/jbl/xtreme#contractType=nonconnected')]")
 	public static WebElement JBLXtreme;
 
 	@FindBy(how = How.XPATH, using = "(//div[@component-name='productTile'])[1]//a")

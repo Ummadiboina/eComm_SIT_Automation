@@ -141,7 +141,9 @@ public class DeliveryPageActions extends Environment {
             Thread.sleep(3000);
             log.debug("in click continue function");
 
-            if (driver.findElements(By.xpath("//*[@id='checkbox-terms-agreement-required']")).size() > 0){
+           // if (driver.findElements(By.xpath("//*[@id='checkbox-terms-agreement-required']")).size() > 0){
+       Boolean isPresent = driver.findElements(By.xpath("//*[@id='checkbox-terms-agreement-required']")).size() > 0;
+       if (isPresent) {
                 log.debug("checkbox is present, so going to click on that");
                 Thread.sleep(3000);
                 js.executeScript("arguments[0].click();",driver.findElement(By.xpath("//*[@id='checkbox-terms-agreement-required']")));

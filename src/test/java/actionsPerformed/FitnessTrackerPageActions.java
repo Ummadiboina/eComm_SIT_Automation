@@ -107,6 +107,14 @@ public class FitnessTrackerPageActions extends Environment {
 			// Assert.assertEquals(elementName,"Galaxy S7 is not found");
 			log.debug("Jawbone UP2 Fitness tracker Device Selected");
 		}
+
+		if (elementName.contains("Fitbit Ionic")) {
+			System.out.println("Fitbit Ionic Device Selected");
+
+			pageobjects.FitnessTrackerPage.FitbitIonic.click();
+			Thread.sleep(5000);
+			log.debug("Fitbit Ionic Fitness tracker Device Selected");
+		}
 		Screenshots.captureScreenshot();
 
 	}

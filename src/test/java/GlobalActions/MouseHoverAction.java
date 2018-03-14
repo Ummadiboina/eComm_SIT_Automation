@@ -241,8 +241,9 @@ public class MouseHoverAction extends Environment {
                 Thread.sleep(2000);
 
                 Actions action1 = new Actions(driver);
-                action1.moveToElement(pageobjects.MouseHoverPage.MoveMouseOnPhones).build().perform();
+                action1.moveToElement(pageobjects.MouseHoverPage.MoveMouseOnPhones).perform();
                 log.debug("Moving Mouse on the Phones dropdown");
+                Thread.sleep(2000);
 
                 pageobjects.MouseHoverPage.MoveMouseOnPAYGPhones.click();
                 Thread.sleep(5000);
@@ -258,7 +259,7 @@ public class MouseHoverAction extends Environment {
 
             } catch (ElementNotVisibleException e) {
                 // check if popup is present, if yes, handle it.
-                Environment.driver.switchTo().frame("edr_l_first");
+              /*  Environment.driver.switchTo().frame("edr_l_first");
                 System.out.println("********We are switch to the iframe*******");
                 log.debug("Popup has appeared on the screen, Hence trying to close the survey");
                 Screenshots.captureScreenshot();
@@ -268,7 +269,7 @@ public class MouseHoverAction extends Environment {
                 System.out.println("*******Saying no to survey*******");
                 System.out.println("*********Existing the popups present in iframe***************");
                 log.debug("Exiting the Survey");
-                Environment.driver.switchTo().defaultContent();
+                Environment.driver.switchTo().defaultContent();*/
                 Thread.sleep(3000);
 
             }
@@ -899,7 +900,7 @@ public class MouseHoverAction extends Environment {
                 action1.moveToElement(pageobjects.MouseHoverPage.MouseOnSims).perform();
                 System.out.println("Moving mouse on the Sims in Shop Dropdown");
                 log.debug("Moving mouse on the Sims in Shop Dropdown");
-                Thread.sleep(1000);
+                Thread.sleep(2000);
 
                 pageobjects.MouseHoverPage.MoveMouseOnPayGSims.click();
                 System.out.println("Clicked on PayG Sims");
