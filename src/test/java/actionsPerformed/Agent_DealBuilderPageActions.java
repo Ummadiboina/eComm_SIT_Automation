@@ -345,9 +345,9 @@ public class Agent_DealBuilderPageActions extends Environment {
 
     public static void ValdiateBasket() throws InterruptedException, IOException {
         Thread.sleep(3000);
-        String str1 = Agent_DealBuilderPage.dealBuilderContent.getText();
-        System.out.println(str1);
-        log.debug(str1);
+        //String str1 = Agent_DealBuilderPage.dealBuilderContent.getText();
+        System.out.println("Validated Basket page");
+        log.debug("Validated Basket page");
         Screenshots.captureScreenshot();
     }
 

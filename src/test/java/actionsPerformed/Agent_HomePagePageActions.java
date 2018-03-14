@@ -73,6 +73,12 @@ public class Agent_HomePagePageActions extends Environment {
 			} else {
 				System.out.println("new overlay is not displayed");
 			}
+			Thread.sleep(5000);
+
+			if (driver.findElements(By.id("abandonCheckout")).size() > 0) {
+				driver.findElement(By.id("abandonCheckout")).click();
+				System.out.println("This agent was in progress so we are abanded and proceed with newly");
+			}
 			Screenshots.captureScreenshot();
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
