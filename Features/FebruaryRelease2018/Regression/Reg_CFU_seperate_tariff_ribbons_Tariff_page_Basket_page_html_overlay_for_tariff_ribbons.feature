@@ -23,5 +23,5 @@ Feature: Reg_CFU_seperate_tariff_ribbons_Tariff_page_Basket_page_html_overlay_fo
     And Click on the 'Overlay icon' in the Basket page and verify pop gets displayed
 
     Examples:
-      | username               | password | handset        | tariff                 |
-      | in00533s_069647@o2.com | test123  | Galaxy S8 Plus | 9.99upfront60.00amonth |
+      | username               | password | handset | tariff                 |
+      | in00533s_069647@o2.com | test123  | Galaxy  | 9.99upfront84.00amonth |

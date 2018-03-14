@@ -7,8 +7,11 @@ import org.openqa.selenium.support.How;
 @SuppressWarnings("unused")
 public class PhonesListingPage {
 
-	@FindBy(how = How.XPATH, using = "//a[contains(., 'View all products on one page')]")
+	@FindBy(how = How.XPATH, using = "(//a[contains(., 'View all products on one page')])[2]")
 	public static WebElement ViewAllPhones;
+
+	@FindBy(how = How.XPATH, using = "(//img[@class='device-image'])[1]")
+	public static WebElement choosedefaultDevice;
 
 	// Below Are list of all the phones in first page of the PayM phones landing
 	// page
@@ -121,7 +124,7 @@ public class PhonesListingPage {
 	@FindBy(how = How.XPATH, using = ("//*[@id='deliveryOption_storeCollection']"))
 	public static WebElement BaseComm_ClickAndCollect_Delivery_Option;
 	
-	@FindBy(how = How.XPATH, using = ("//input[@name='search']"))
+	@FindBy(how = How.XPATH, using = ("//input[@name='search' or @id='search']"))
 	public static WebElement SearchBox;
 	
 }

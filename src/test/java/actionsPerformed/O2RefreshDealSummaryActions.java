@@ -16,14 +16,14 @@ public class O2RefreshDealSummaryActions extends Environment {
 
 	public static void DealSummarySectionforCCA() throws IOException, InterruptedException {
 
-		if (!O2RefreshDealSummaryPage.SummariseTheDealYes2.isEnabled() ) {
+		if (driver.findElements(By.xpath("(//*[@id='secciYesButton' or @id='updateEmailAddressProceedButton'])[1]")).size() > 0){
 			System.out.println("The Deal summary section is displayed");
 			O2RefreshDealSummaryPage.SummariseTheDealYes.click();
 			log.debug("The Yes button in the deal summary is clicked");
 		}
 
 		Thread.sleep(2000);
-		if(O2RefreshDealSummaryPage.SummariseTheDealYes2.isEnabled()){
+		if(driver.findElements(By.xpath("(//*[@id='secciYesButton' or @id='updateEmailAddressProceedButton'])[2]")).size() > 0){
 			//((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", O2RefreshDealSummaryPage.SummariseTheDealYes2);
 				O2RefreshDealSummaryPage.SummariseTheDealYes2.click();
 				log.debug("The Yes2 button in the deal summary is clicked");

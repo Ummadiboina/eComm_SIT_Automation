@@ -106,9 +106,11 @@ public class UpgradeCustomerPageActions extends Environment {
         // Below is to view all phones in the same page
         if (pageobjects.PhonesListingPage.ViewAllPhones.isDisplayed()) {
             executor.executeScript("arguments[0].click();", pageobjects.PhonesListingPage.ViewAllPhones);
+            Thread.sleep(3000);
         }
-
-        if (elementName.contains("GalaxyS7")) {
+        executor.executeScript("arguments[0].click();", pageobjects.PhonesListingPage.choosedefaultDevice);
+       // Thread.sleep(3000);
+        /*if (elementName.contains("GalaxyS7")) {
             pageobjects.UpgradePhonesListingPage.GalaxyS7.click();
             System.out.println("Selected GalaxyS7");
             log.debug("Selected GalaxyS7");
@@ -179,7 +181,7 @@ public class UpgradeCustomerPageActions extends Environment {
             pageobjects.UpgradePhonesListingPage.SamsungGalaxyJ32016LikeNew.click();
             log.debug("Selected Samsung Galaxy J3 2016 Like New");
 
-        }
+        }*/
         Screenshots.captureScreenshot();
 
     }
@@ -394,7 +396,8 @@ public class UpgradeCustomerPageActions extends Environment {
         Thread.sleep(5000);
 
         //driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-        WebElement selectBtnEle = driver.findElement(By.xpath("(//button[@type='button']//*[normalize-space()='Select'])[2]"));
+        //WebElement selectBtnEle = driver.findElement(By.xpath("(//button[@type='button']//*[normalize-space()='Select'])[2]"));
+        WebElement selectBtnEle = driver.findElement(By.xpath("//button[text()='Select' and @id='callToAction'][1]"));
        if(selectBtnEle.isDisplayed()){
            ((JavascriptExecutor) driver).executeScript("arguments[0].click();", selectBtnEle);
            System.out.println("Tariff has selected");
@@ -516,7 +519,6 @@ public class UpgradeCustomerPageActions extends Environment {
         }
 
         WebElement blueRibben = driver.findElement(By.xpath("(//div[@class='blue-promotion']//span[@class='promotion-text ng-binding'])[2]"));
-        WebElement greenRibben = driver.findElement(By.xpath("(//div[@class='green-promotion']//span[@class='promotion-text ng-binding'])[2]"));
 
         if(blueRibben.isEnabled()){
             System.out.println("Blue ribben is displaayed on the Tariff tile in the Tariff and Extras page: @ " + blueRibben.getText());
@@ -524,7 +526,9 @@ public class UpgradeCustomerPageActions extends Environment {
             System.out.println("Blue Ribben's are not Displayed on the Tariff tile in the Tariff and Extras page");
         }
 
-        if(greenRibben.isEnabled()){
+        if(driver.findElements(By.xpath("(//div[@class='green-promotion']//span[@class='promotion-text ng-binding'])[2]")).size() >= 1){
+            WebElement greenRibben = driver.findElement(By.xpath("(//div[@class='green-promotion']//span[@class='promotion-text ng-binding'])[2]"));
+
             System.out.println("Green ribben is displaayed  on the Tariff tile in the Tariff and Extras page: @ " + greenRibben.getText());
         }else{
             System.out.println("Green Ribben's are not Displayed on the Tariff tile in the Tariff and Extras page");
@@ -709,12 +713,12 @@ public class UpgradeCustomerPageActions extends Environment {
             System.out.println("Clicked on the Overlay Icon");
             log.debug("Clicked on the Overlay Icon");
         Thread.sleep(3000);
-        List<WebElement> ele = driver.findElements(By.xpath("(//h3[contains(text(),'Sony Xperia')]/following-sibling::a/../following-sibling::div)[1]/p"));
+        /*List<WebElement> ele = driver.findElements(By.xpath("(//h3[contains(text(),'Sony Xperia')]/following-sibling::a/../following-sibling::div)[1]/p"));
         for(int i=1;i<ele.size();i++){
           String str = driver.findElement(By.xpath("(//h3[contains(text(),'Sony Xperia')]/following-sibling::a/../following-sibling::div)[1]/p["+i+"]")).getText();
           System.out.println(str);
           log.debug(str);
-      }
+      }*/
         }else{
             System.out.println("Failed to Click on Overlay TE function");
             log.debug("Failed to Click on Overlay TE function");
@@ -908,7 +912,6 @@ public class UpgradeCustomerPageActions extends Environment {
         log.debug('\n' + "Verify Promotional Ribbon is Displayed in Basket page");
 
         WebElement primaryPramotion = driver.findElement(By.xpath("//div[@class='primary promotion']"));
-        WebElement secendaryPromo = driver.findElement(By.xpath("//div[@class='promotion secondary']"));
 
         if(primaryPramotion.isDisplayed()){
             System.out.println("Pramotions are displayed in the Basket page :: @ " +primaryPramotion.getText());
@@ -919,7 +922,8 @@ public class UpgradeCustomerPageActions extends Environment {
             Assert.fail("Failed to Pramotions are displayed in the Basket page");
         }
 
-        if(secendaryPromo.isDisplayed()){
+        if( driver.findElements(By.xpath("//div[@class='promotion secondary']")).size() >= 1){
+            WebElement secendaryPromo = driver.findElement(By.xpath("//div[@class='promotion secondary']"));
             System.out.println("Pramotions are displayed in the Basket page for secondarary ::: " + secendaryPromo.getText());
             log.info("Pramotions are displayed in the Basket page for secondarary" + secendaryPromo.getText());
         }else{
@@ -1948,7 +1952,6 @@ public class UpgradeCustomerPageActions extends Environment {
     public static void verifyUpgradepageDisplay() throws InterruptedException, IOException {
 
         Thread.sleep(3000);
-
         ((JavascriptExecutor) driver).executeScript("arguments[0].click();",
                 pageobjects.UpgradeCustomerPage.ViewAllTariffs);
         Screenshots.captureScreenshot();
