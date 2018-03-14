@@ -833,9 +833,10 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 		jse.executeScript("arguments[0].setAttribute('style', 'display:block;')", element);
 		if (element.isDisplayed()) {
 			new Select(element).selectByVisibleText(tariffSortDropDown);
-			System.out.println("Sorted" + tariffSortDropDown);
+			System.out.println("Sorted: " + tariffSortDropDown);
 		}
 		Screenshots.captureScreenshot();
+		Thread.sleep(5000);
 	}
 
 	public static void clickViewAllTariffs() throws IOException, InterruptedException {
@@ -920,7 +921,7 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 			}
 		}
 
-		else if (Filteroption.contains("high")) {
+		if (Filteroption.contains("high")) {
 			// PAYMandPAYGTariffAndExtrasPage.DataTariff_Three.getText();
 			String DataFilterHighText = PAYMandPAYGTariffAndExtrasPage.highfilter.getText();
 			System.out.println("DataFilterHighText " + DataFilterHighText);
@@ -942,6 +943,7 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 	public static void DeSelectedState() throws InterruptedException, IOException {
 
 		pageobjects.PAYMandPAYGTariffAndExtrasPage.DataFilterSelectedXpath.click();
+		Thread.sleep(5000);
 		System.out.println("Deselected the selected data filter tab");
 		Screenshots.captureScreenshot();
 
@@ -997,7 +999,7 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 
 		for (int i = 0; i < DataTextElement.size(); i++) {
 			data = DataTextElement.get(i).getText();
-			data = StringUtils.substringBetween(data, "�", ".");
+			data = StringUtils.substringBetween(data, "£", ".");
 			a = NumberUtils.toInt(data);
 			if (a != 0) {
 				tariffListUsingMonthlyCost.add(a);

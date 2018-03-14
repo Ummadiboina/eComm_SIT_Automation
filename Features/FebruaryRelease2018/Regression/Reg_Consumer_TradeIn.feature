@@ -10,22 +10,24 @@ Feature: Reg_Consumer_TradeIn
     And click on 'upgrade now' button
     And Select a <handset> device from Recommended devices section
     And Select ribboned tariff <tariff> in upgrade journey
-    #And Select a tariff in upgrade journey
     Then choose appropriately in 'Your Sim Card'section
-    #And select <NeedSim> action and confirm
+    And verify if the tradein offer is displayed in My Package section
     And I Land on the basket page for upgrades
-    And Verify 'Upgrade on us' displayed in basket page
+    And verify if the trade in offer is displayed in Basket page
     And click on "go to checkout" button
-    And perform <Action> in OTAC page
-    And Verify 'Upgrade on us' displayed in delivery page
+    And verify if trade in offer is displayed under Order Summary section in <OTAC> page
+    And Enter code <Action> in OTAC page to verify account in TadeIn journey
+    And verify if trade in offer is displayed under Order Summary section in <Delivery> page
     And Click on the 'Continue button' in delivery page
-    And Verify 'Upgrade on us' displayed in Payment page
-    And land on the payment page and input <Username> and other details and click 'Continue on next step'
+    And verify if trade in offer is displayed under Order Summary section in <Payment> page
+    #And land on the payment page and input <Username> and other details and click 'Continue on next step'
+    And land on the payment page and input <Username> and other details and click 'Continue on next step' in upgrade journey
+    And verify if buyout offer is displayed under Order Summary section in <Agreement> page
     And Continue to Agreements page and confirm all the agreement checks
-    And Verify 'Upgrade on us' displayed in review page
+    And verify if buyout offer is displayed under Order Summary section in <Review> page
     And Continue to Review page and review the order
     Then order confirmation is displayed
 
     Examples:
-      | username         | password | handset  | tariff                  | Firstname | Surname | Username     | Action | Make  | Model   | Network |
-      | test123@te.so.is | test123  | iPhone X | 19.99upfront45.00amonth | TEST      | ACCEPTA | TEST ACCEPTA | skip   | Apple | Iphone7 | Orange  |
+      | username                      | password | handset  | tariff                  | Username     | Action    |
+      | 23oc13687587@stf.ref.o2.co.uk | test123  | iPhone X | 19.99upfront45.00amonth | TEST ACCEPTA | enterCode |

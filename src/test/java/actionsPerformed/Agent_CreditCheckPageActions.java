@@ -252,6 +252,8 @@ public class Agent_CreditCheckPageActions extends Environment {
 			Agent_CreditCheckDetailsPage.AgreeCreditCheck.click();
 			Thread.sleep(2000);
 			Agent_CreditCheckDetailsPage.PerformCreditCheck.click();
+
+			Thread.sleep(20000);
 		}
 		else
 		{

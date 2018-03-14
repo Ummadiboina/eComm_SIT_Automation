@@ -46,6 +46,7 @@ public class E2EOrderPlaced_Steps {
     ArrayList<Integer> upfrontcostlistafter = new ArrayList<Integer>();
     final static Logger log = Logger.getLogger("E2EOrderPlaced_Steps");
     static int BuyOutValue = 0;
+    static int TradeInValue = 0;
 
     public E2EOrderPlaced_Steps() {
         driver = Hooks.driver;
@@ -487,7 +488,6 @@ public class E2EOrderPlaced_Steps {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, PAYMSimOPage.class);
             PAYMSimOPageActions.ValidateContractLengths(Contract);
-            // PAYMSimOPageActions.SelectTariffPhonesTab(Contract);
         } catch (Exception e) {
             // TODO Auto-generated catch block
             System.out.println("Unable to click on different tariff");
@@ -1028,13 +1028,13 @@ public class E2EOrderPlaced_Steps {
         try {
             driver.manage().timeouts().implicitlyWait(120, TimeUnit.SECONDS);
             driver.navigate().back();
-            System.out.println("we are Navigate back to the busket page");
-            log.debug("we are Navigate back to the busket page");
+            System.out.println("we have navigated back to the basket page");
+            log.debug("we have navigated back to the basket page");
             Thread.sleep(5000);
         } catch (Exception e) {
             // TODO Auto-generated catch block
-            System.out.println("Failed to navigate back to the Browser");
-            Assert.fail("Failed to navigate back to the Browser");
+            System.out.println("Failed to navigate back to the basket page");
+            Assert.fail("Failed to navigate back to the basket page");
 
         }
     }
@@ -1087,7 +1087,7 @@ public class E2EOrderPlaced_Steps {
         try {
             driver.manage().timeouts().implicitlyWait(120, TimeUnit.SECONDS);
             if (driver.findElements(By.xpath("(//*[normalize-space()='Other']/preceding-sibling::input)[1]")).size() > 0) {
-                String str = driver.findElement(By.xpath("//div[@id='delivery-section']//*[normalize-space()='Other']")).getText();
+                String str = driver.findElement(By.xpath("//div[@class='your-sim section']//*[normalize-space()='Other']")).getText();
                 driver.findElement(By.xpath("(//*[normalize-space()='Other']/preceding-sibling::input)[1]")).click();
                 System.out.println("Click on Other radio button as :: " + str);
                 log.debug("Click on Other radio button as :: " + str);
@@ -4897,7 +4897,18 @@ public class E2EOrderPlaced_Steps {
             e.printStackTrace();
             Assert.fail("Unable to perform action in OTAC Page");
         }
+    }
 
+    @And("^Enter code ([^\\\"]*) in OTAC page to verify account in TadeIn journey$")
+    public void EnterVericationCode_in_OTAC_page(String Action) {
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, UpgradeCustomerPage.class);
+            UpgradeCustomerPageActions.Otac(Action);
+        } catch (Exception e) {
+            e.printStackTrace();
+            Assert.fail("Unable to perform action in OTAC Page");
+        }
     }
 
     @Then("^Click on the 'Continue button' in delivery page$")
@@ -5675,6 +5686,22 @@ public class E2EOrderPlaced_Steps {
 
         }
     }
+    @And("^verify if the tradein offer is displayed in My Package section$")
+    public void verifyTradeInOfferInMyPackage() {
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+        try {
+            int tmpTradeInValue = 0;
+            PageFactory.initElements(driver, UpgradePhonesListingPage.class);
+            tmpTradeInValue = UpgradeCustomerPageActions.verifyTradeInDisplayedInMyPackage();
+            TradeInValue = tmpTradeInValue;
+            Thread.sleep(2000);
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+            Assert.fail("Unable to verify if the tradein offer is displayed in My Package section");
+
+        }
+    }
 
     @And("^verify if the buyout offer is displayed in Basket page$")
     public void verifyBuyOutOfferInBasketPage() {
@@ -5690,7 +5717,25 @@ public class E2EOrderPlaced_Steps {
         } catch (Exception e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
-            Assert.fail("Unable to verify if the buyout offer is displayed in My Package section");
+            Assert.fail("Unable to verify if the buyout offer is displayed in Basket page");
+
+        }
+    }
+
+    @And("^verify if the trade in offer is displayed in Basket page$")
+    public void verifyTradeInOfferInBasketPage() {
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+        try {
+            PageFactory.initElements(driver, UpgradePhonesListingPage.class);
+            PageFactory.initElements(driver, UpgradeCustomerPage.class);
+            int TradeInFromMyPackageSection = TradeInValue;
+
+            UpgradeCustomerPageActions.verifyTradeInDisplayedInBasketPage(TradeInFromMyPackageSection);
+            Thread.sleep(2000);
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+            Assert.fail("Unable to verify if the trade in offer is displayed in My Package section");
 
         }
     }
@@ -5705,6 +5750,23 @@ public class E2EOrderPlaced_Steps {
             int BouOutValueFromMyPackageSection = BuyOutValue;
 
             UpgradeCustomerPageActions.verifyBuyOutDisplayed_OrderSummarySection(BouOutValueFromMyPackageSection, pageName);
+            Thread.sleep(2000);
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+            Assert.fail("Unable to verify if the buyout offer is displayed in " + pageName + " page");
+        }
+    }
+
+    @And("^verify if trade in offer is displayed under Order Summary section in ([^\"]*) page$")
+    public void verifyTradeInOfferInOTACPage(String pageName) {
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+        try {
+            PageFactory.initElements(driver, UpgradePhonesListingPage.class);
+            PageFactory.initElements(driver, UpgradeCustomerPage.class);
+            int TradeInValueFromMyPackageSection = TradeInValue;
+
+            UpgradeCustomerPageActions.verifyTradeInDisplayed_OrderSummarySection(TradeInValueFromMyPackageSection, pageName);
             Thread.sleep(2000);
         } catch (Exception e) {
             // TODO Auto-generated catch block
@@ -5931,6 +5993,44 @@ public class E2EOrderPlaced_Steps {
         }
     }
 
+    @When("^I click on respective ([^\\\"]*) data filter in Upgrade SIMO MBB/Tablet journey$")
+    public void clickOnRespectiveDataFilter_UpgreadeSIMO_MBBTablet(String range) {
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, PAYMandPAYGTariffAndExtrasPage.class);
+            PageFactory.initElements(driver, UpgradeCustomerPage.class);
+            DataFilterRange = range;
+            PAYMandPAYGTariffAndExtrasPageActions.clickViewAllTariffs();
+            datalistbefore = UpgradeCustomerPageActions.getDataListBeforeSelectingFilter_UpgradeSIMO_MBBTablet();
+            PAYMandPAYGTariffAndExtrasPageActions.selectFilter(range);
+            FilterDataOption = range;
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+            System.out.println("Unable to click on respective data filter");
+            Assert.fail("Unable to click on respective data filter");
+        }
+    }
+
+    @When("^I click on respective ([^\\\"]*) data filter in Upgrade SIMO Phone journey$")
+    public void clickOnRespectiveDataFilter_UpgreadeSIMO_Phone(String range) {
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, PAYMandPAYGTariffAndExtrasPage.class);
+            PageFactory.initElements(driver, UpgradeCustomerPage.class);
+            DataFilterRange = range;
+            PAYMandPAYGTariffAndExtrasPageActions.clickViewAllTariffs();
+            datalistbefore = UpgradeCustomerPageActions.getDataListBeforeSelectingFilter_UpgradeSIMO_Phone();
+            PAYMandPAYGTariffAndExtrasPageActions.selectFilter(range);
+            FilterDataOption = range;
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+            System.out.println("Unable to click on respective data filter");
+            Assert.fail("Unable to click on respective data filter");
+        }
+    }
+
     @And("^I should see appropriate tariffs based on the selected data filter ([^\"]*)$")
     public void getTariffList(String SortOption) {
         try {
@@ -5983,6 +6083,89 @@ public class E2EOrderPlaced_Steps {
         }
     }
 
+    @And("^I should see appropriate tariffs based on selected data filter in the Upgrade SIMO MBB/Tablet journey ([^\"]*)$")
+    public void getTariffList_UpgradeSIMO_MBBTablet(String SortOption) {
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, PAYMandPAYGTariffAndExtrasPage.class);
+            PageFactory.initElements(driver, UpgradeCustomerPage.class);
+
+            if (DataFilterRange.contains("high")) {
+                if (SortOption.contains("Monthly data (High to low)")
+                        || SortOption.contains("Monthly data (Low to High)")) {
+                    datalistafter = UpgradeCustomerPageActions.getDataListAfterSelectingFilter_UpgradeSIMO_MBBTablet();
+                }
+                if (SortOption.contains("Monthly cost (High to low)")
+                        || SortOption.contains("Monthly cost (Low to High)")) {
+                    monthlycostlistafter = UpgradeCustomerPageActions.getMonthlyCostListAfterSelectingFilter_UpgradeSIMO_MBBTablet();
+                }
+                PAYMandPAYGTariffAndExtrasPageActions.getRange();
+                PAYMandPAYGTariffAndExtrasPageActions.getValuesToCompareWhenGreaterIsSelected();
+                PAYMandPAYGTariffAndExtrasPageActions.verifyListWhenGreaterIsSelected();
+            } else if (DataFilterRange.contains("low") || DataFilterRange.contains("medium")) {
+                if (SortOption.contains("Monthly data (High to low)") || SortOption.contains("Monthly data (Low to High)")) {
+                    datalistafter = UpgradeCustomerPageActions.getDataListAfterSelectingFilter_UpgradeSIMO_MBBTablet();
+                }
+                if (SortOption.contains("Monthly cost (High to low)")
+                        || SortOption.contains("Monthly cost (Low to High)")) {
+                    monthlycostlistafter = UpgradeCustomerPageActions.getMonthlyCostListAfterSelectingFilter_UpgradeSIMO_MBBTablet();
+                }
+                PAYMandPAYGTariffAndExtrasPageActions.getRange();
+                PAYMandPAYGTariffAndExtrasPageActions.getValuesToCompare();
+                PAYMandPAYGTariffAndExtrasPageActions.verifyList();
+            } else {
+                Assert.fail("Please provide data range (low/medium/high)");
+            }
+
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            System.out.println("Unable to click on respective data filter");
+            Assert.fail("Unable to click on respective data filter");
+        }
+    }
+
+
+    @And("^I should see appropriate tariffs based on selected data filter in Upgrade Phone journey ([^\"]*)$")
+    public void getTariffList_UpgradeSIMO_Phone(String SortOption) {
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, PAYMandPAYGTariffAndExtrasPage.class);
+            PageFactory.initElements(driver, UpgradeCustomerPage.class);
+
+            if (DataFilterRange.contains("high")) {
+                if (SortOption.contains("Monthly data (High to low)")
+                        || SortOption.contains("Monthly data (Low to High)")) {
+                    datalistafter = UpgradeCustomerPageActions.getDataListAfterSelectingFilter_UpgradeSIMO_Phone();
+                }
+                if (SortOption.contains("Monthly cost (High to low)")
+                        || SortOption.contains("Monthly cost (Low to High)")) {
+                    monthlycostlistafter = UpgradeCustomerPageActions.getMonthlyCostListAfterSelectingFilter_UpgradeSIMO_Phone();
+                }
+                PAYMandPAYGTariffAndExtrasPageActions.getRange();
+                PAYMandPAYGTariffAndExtrasPageActions.getValuesToCompareWhenGreaterIsSelected();
+                PAYMandPAYGTariffAndExtrasPageActions.verifyListWhenGreaterIsSelected();
+            } else if (DataFilterRange.contains("low") || DataFilterRange.contains("medium")) {
+                if (SortOption.contains("Monthly data (High to low)") || SortOption.contains("Monthly data (Low to High)")) {
+                    datalistafter = UpgradeCustomerPageActions.getDataListAfterSelectingFilter_UpgradeSIMO_Phone();
+                }
+                if (SortOption.contains("Monthly cost (High to low)")
+                        || SortOption.contains("Monthly cost (Low to High)")) {
+                    monthlycostlistafter = UpgradeCustomerPageActions.getMonthlyCostListAfterSelectingFilter_UpgradeSIMO_Phone();
+                }
+                PAYMandPAYGTariffAndExtrasPageActions.getRange();
+                PAYMandPAYGTariffAndExtrasPageActions.getValuesToCompare();
+                PAYMandPAYGTariffAndExtrasPageActions.verifyList();
+            } else {
+                Assert.fail("Please provide data range (low/medium/high)");
+            }
+
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            System.out.println("Unable to click on respective data filter");
+            Assert.fail("Unable to click on respective data filter");
+        }
+    }
+
     @And("^I should see tariffs relevant to selected sort option ([^\"]*) & filter option ([^\"]*)$")
     public void verifyTariffSortedBasedOnSortOptionAndFilter(String SortOption, String FilterName) throws Throwable {
 
@@ -5991,6 +6174,7 @@ public class E2EOrderPlaced_Steps {
         try {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, PAYMandPAYGTariffAndExtrasPage.class);
+            PageFactory.initElements(driver, UpgradeCustomerPage.class);
 
             ArrayList<Integer> ListAfterSort = null;
             ArrayList<Integer> ListBeforeSort = null;
@@ -6063,6 +6247,82 @@ public class E2EOrderPlaced_Steps {
         }
     }
 
+    @And("^I should see tariffs relevant to the selected sort option ([^\"]*) & filter option ([^\"]*) in Upgrade SIMO MBB/Tablet journey$")
+    public void verifyTariffSortedBasedOnSortOptionAndFilter_UpgradeSIMO_MBBTablet(String SortOption, String FilterName) throws Throwable {
+
+        log.debug("Running Test Step: @And(I should see tariffs relevant to the selected sort option and filter option in Upgrade SIMO MBB/Tablet journey)");
+
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, PAYMandPAYGTariffAndExtrasPage.class);
+            PageFactory.initElements(driver, UpgradeCustomerPage.class);
+
+            ArrayList<Integer> ListAfterSort = null;
+            ArrayList<Integer> ListBeforeSort = null;
+            ArrayList<Integer> TempList1 = null;
+
+            if (SortOption.contains("Monthly data (High to low)")) {
+                TempList1 = datalistafter;
+                ListBeforeSort = PAYMandPAYGTariffAndExtrasPageActions
+                        .reArrangeListInDescendingBeforeApplyingSort(TempList1);
+            }
+            if (SortOption.contains("Monthly data (Low to High)")) {
+                TempList1 = datalistafter;
+                ListBeforeSort = PAYMandPAYGTariffAndExtrasPageActions
+                        .reArrangeListInAcendingBeforeApplyingSort(TempList1);
+            }
+            if (SortOption.contains("Monthly cost (High to low)")) {
+                TempList1 = monthlycostlistafter;
+                ListBeforeSort = PAYMandPAYGTariffAndExtrasPageActions
+                        .reArrangeListInDescendingBeforeApplyingSort(TempList1);
+            }
+            if (SortOption.contains("Monthly cost (Low to High)")) {
+                TempList1 = monthlycostlistafter;
+                ListBeforeSort = PAYMandPAYGTariffAndExtrasPageActions
+                        .reArrangeListInAcendingBeforeApplyingSort(TempList1);
+            }
+            if (SortOption.contains("Upfront cost (High to low)")) {
+                TempList1 = upfrontcostlistafter;
+                ListBeforeSort = PAYMandPAYGTariffAndExtrasPageActions
+                        .reArrangeListInDescendingBeforeApplyingSort(TempList1);
+            }
+            if (SortOption.contains("Upfront cost (Low to high)")) {
+                TempList1 = upfrontcostlistafter;
+                ListBeforeSort = PAYMandPAYGTariffAndExtrasPageActions
+                        .reArrangeListInAcendingBeforeApplyingSort(TempList1);
+            }
+
+            if (SortOption.contains("Monthly data (High to low)") || SortOption.contains("Monthly data (Low to High)")) {
+
+                ListAfterSort = UpgradeCustomerPageActions.getCurrentSortOrderUsingMonthlyData_UpgradeSIMO_MBBTablet();
+            }
+
+            if (SortOption.contains("Monthly cost (High to low)") || SortOption.contains("Monthly cost (Low to High)")) {
+
+                ListAfterSort = UpgradeCustomerPageActions.getCurrentSortOrderUsingMonthlyCost_UpgradeSIMO_Phone();
+
+            }
+
+            System.out.println("---------List sent to verification method (BeforeSort)---------------");
+            System.out.println(ListBeforeSort);
+
+            System.out.println("---------List sent to verification method (AfterSort)---------------");
+            System.out.println(ListAfterSort);
+
+            PAYMandPAYGTariffAndExtrasPageActions.verifyTariffSortedAsPerSortOption(ListBeforeSort, ListAfterSort);
+
+            System.out.println(
+                    "Assertion Success: Tariffs have been sorted successfully based on Sort Option and Tariff Option");
+            System.out.println(
+                    "Assertion Success: Tariffs have been sorted successfully based on Sort Option and Tariff Option");
+
+        } catch (AssertionError e) {
+
+            log.debug("Fail" + " - " + e.getMessage());
+            Assert.fail("Fail: Cannot assert if Tariffs are sorted based on sort option and Filter Option");
+        }
+    }
+
     @And("^I should see tariffs based on the selected sort option ([^\"]*)$")
     public void verifyTariffSortedBasedOnSortOption(String SortOption) throws Throwable {
 
@@ -6088,6 +6348,76 @@ public class E2EOrderPlaced_Steps {
                 ListAfterSort = PAYMandPAYGTariffAndExtrasPageActions.getCurrentSortOrderUsingUpfrontCost();
             }
 
+            System.out.println("---------List sent to verification method (BeforeSort)---------------");
+            System.out.println(ListBeforeSort);
+
+            System.out.println("---------List sent to verification method (AfterSort)---------------");
+            System.out.println(ListAfterSort);
+
+            PAYMandPAYGTariffAndExtrasPageActions.verifyTariffSortedAsPerSortOption(ListBeforeSort, ListAfterSort);
+
+        } catch (AssertionError e) {
+
+            log.debug("Fail" + " - " + e.getMessage());
+            Assert.fail("Fail: Cannot assert if Tariffs are sorted based on sort option");
+        }
+    }
+
+    @And("^I should see appropriate tariffs based on the selected sort option in the Upgrade SIMO MBB/Tablet journey ([^\"]*)$")
+    public void verifyTariffSortedBasedOnSortOption_UpgradeSIMO_MBBTablet(String SortOption) throws Throwable {
+
+        log.debug("Running Test Step: @And(I should see appropriate tariffs based on the selected sort option in Upgrade SIMO MBB/Tablet journey)");
+
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, PAYMandPAYGTariffAndExtrasPage.class);
+
+            ArrayList<Integer> ListAfterSort = null;
+            ArrayList<Integer> ListBeforeSort = expectedTariffListBeforeSort;
+
+            if (SortOption.contains("Monthly data (High to low)") || SortOption.contains("Monthly data (Low to High)")) {
+                ListAfterSort = UpgradeCustomerPageActions.getCurrentSortOrderUsingMonthlyData_UpgradeSIMO_MBBTablet();
+            }
+
+            if (SortOption.contains("Monthly cost (High to low)") || SortOption.contains("Monthly cost (Low to High)")) {
+                ListAfterSort = UpgradeCustomerPageActions.getCurrentSortOrderUsingMonthlyCost_UpgradeSIMO_MBBTablet();
+
+            }
+            System.out.println("---------List sent to verification method (BeforeSort)---------------");
+            System.out.println(ListBeforeSort);
+
+            System.out.println("---------List sent to verification method (AfterSort)---------------");
+            System.out.println(ListAfterSort);
+
+            PAYMandPAYGTariffAndExtrasPageActions.verifyTariffSortedAsPerSortOption(ListBeforeSort, ListAfterSort);
+
+        } catch (AssertionError e) {
+
+            log.debug("Fail" + " - " + e.getMessage());
+            Assert.fail("Fail: Cannot assert if Tariffs are sorted based on sort option");
+        }
+    }
+
+    @And("^I should see appropriate tariffs based on the selected sort option in the Upgrade SIMO Phone journey ([^\"]*)$")
+    public void verifyTariffSortedBasedOnSortOption_UpgradeSIMO_Phone(String SortOption) throws Throwable {
+
+        log.debug("Running Test Step: @And(I should see tariffs based on the selected sort option in Upgrade SIMO Phone journey)");
+
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, PAYMandPAYGTariffAndExtrasPage.class);
+
+            ArrayList<Integer> ListAfterSort = null;
+            ArrayList<Integer> ListBeforeSort = expectedTariffListBeforeSort;
+
+            if (SortOption.contains("Monthly data (High to low)") || SortOption.contains("Monthly data (Low to High)")) {
+                ListAfterSort = UpgradeCustomerPageActions.getCurrentSortOrderUsingMonthlyData_UpgradeSIMO_Phone();
+            }
+
+            if (SortOption.contains("Monthly cost (High to low)") || SortOption.contains("Monthly cost (Low to High)")) {
+                ListAfterSort = UpgradeCustomerPageActions.getCurrentSortOrderUsingMonthlyCost_UpgradeSIMO_Phone();
+
+            }
             System.out.println("---------List sent to verification method (BeforeSort)---------------");
             System.out.println(ListBeforeSort);
 
@@ -7537,13 +7867,12 @@ public class E2EOrderPlaced_Steps {
 
     @And("^Click on 'Select' CTA to buy a tariff$")
     public void Click_on_Select_CTA_to_buy_SIMO_Tariff()
-
     {
-
         try {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, PAYMSimOPage.class);
             PAYMSimOPageActions.SelectCTAtoBuySIMOtariff();
+            log.debug("Selected tariff in SIMO journey");
         } catch (Exception e) {
             e.printStackTrace();
             Assert.fail("Unable to click on Click on 'Pick a sim only tariff link', please see the failure screenshot");
@@ -7719,16 +8048,32 @@ public class E2EOrderPlaced_Steps {
         throw new PendingException();
     }
 
-    @And("^Click on 'I agree to the terms and condition' checkbox$")
+    @And("^Click on 'I agree to the terms and condition' checkbox in SIMO review page$")
     public void clickOnIAgreeToTheTermsAndConditionCheckbox() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new PendingException();
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, PAYMSimOPage.class);
+            PAYMSimOPageActions.clickOnTermsAndConditionsCheckboxInReviewPage();
+            Thread.sleep(2000);
+            log.debug("Clicked on Terms and Conditions Checkbox in Review Page");
+        } catch (Exception e) {
+            e.printStackTrace();
+            Assert.fail("Unable to Click on Terms and Conditions Checkbox in Review Page");
+        }
     }
 
     @And("^Click on 'Place your order' CTA$")
     public void clickOnPlaceYourOrderCTA() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new PendingException();
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, PAYMSimOPage.class);
+            PAYMSimOPageActions.clickOnPlaceYourOrderButton();
+            Thread.sleep(2000);
+            log.debug("Clicked on Place Your Order button in review Page");
+        } catch (Exception e) {
+            e.printStackTrace();
+            Assert.fail("Unable to Click on Place Your Order button in review Page");
+        }
     }
 
     @And("^the question for voice tariff  copy text is displayed below 'Your sim' section$")
@@ -7739,8 +8084,16 @@ public class E2EOrderPlaced_Steps {
 
     @And("^Select 'I’ll keep my current sim' option$")
     public void selectILlKeepMyCurrentSimOption() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new PendingException();
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, PAYMSimOPage.class);
+            PAYMSimOPageActions.selectIWillKeepMyCurrentSIM();
+            Thread.sleep(2000);
+            log.debug("Clicked on button 'I will keep my current sim'");
+        } catch (Exception e) {
+            e.printStackTrace();
+            Assert.fail("Unable to click on button 'I will keep my current sim'");
+        }
     }
 
 
@@ -7852,6 +8205,7 @@ public class E2EOrderPlaced_Steps {
     @And("^all the tariffs under twelve months should be displayed$")
     public void all_the_tariffs_under_twelve_months_should_be_displayed() {
         try {
+            PageFactory.initElements(driver, UpgradeCustomerPage.class);
             SimsPageActions.allTariffsUnderTwelveMonthsShouldDisplayed();
         } catch (Exception e) {
             // TODO Auto-generated catch block
@@ -7862,6 +8216,8 @@ public class E2EOrderPlaced_Steps {
 
     @And("^the 'sorting dropdown' is displayed just below the toggle buttons sections$")
     public void sorting_dropdown_is_displayed_just_below_the_toggle_buttons_sections() {
+
+        log.debug("Running Step: the 'sorting dropdown' is displayed just below the toggle buttons sections");
         try {
             SimsPageActions.sortingDropdownIsDisplayedJstBelowToggleButtonsSections();
         } catch (Exception e) {
@@ -8047,7 +8403,9 @@ public class E2EOrderPlaced_Steps {
 
     @And("^verify that the upfront sort options is not present in the 'sorting dropdown'$")
     public void verify_that_upfront_sort_options() {
+        log.debug("Running Step: verify that the upfront sort options is not present in the 'sorting dropdown'");
         try {
+            PageFactory.initElements(driver, UpgradeCustomerPage.class);
             UpgradeCustomerPageActions.upfront_sort_options_is_not_present_in_sortingDropdown();
         } catch (Exception e) {
             // TODO Auto-generated catch block
@@ -8476,6 +8834,118 @@ public class E2EOrderPlaced_Steps {
         } catch (Exception e) {
             System.out.println("Unable to validate section");
             Assert.fail("Unable to validate section");
+        }
+    }
+
+    @Then("^I should see data filters buttons next to existing sort drop-down in Upgrade SIMO MBB/Tablet journey ([^\"]*)$")
+    public void filterandDropDownPosition_UpgradeSIMO_MBBTabletJourney(String SortOption) {
+
+        log.debug(
+                "Running Step: @Then(I should see data filters buttons next to existing sort drop-down in Upgrade SIMO MBB/Tablet journey)");
+
+        try {
+
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, PAYMandPAYGTariffAndExtrasPage.class);
+            PageFactory.initElements(driver, UpgradeCustomerPage.class);
+
+            PAYMandPAYGTariffAndExtrasPageActions.SortFilterPosition();
+            Thread.sleep(2000);
+
+            ArrayList<Integer> TempList1 = null;
+            ArrayList<Integer> TempList2 = null;
+
+            if (SortOption.contains("Monthly data (High to low)")) {
+                originalTariffList = UpgradeCustomerPageActions.getCurrentSortOrderUsingMonthlyData_UpgradeSIMO_MBBTablet();
+                TempList1 = originalTariffList;
+                TempList2 = PAYMandPAYGTariffAndExtrasPageActions
+                        .reArrangeListInDescendingBeforeApplyingSort(TempList1);
+            }
+            if (SortOption.contains("Monthly data (Low to High)")) {
+                originalTariffList = UpgradeCustomerPageActions.getCurrentSortOrderUsingMonthlyData_UpgradeSIMO_MBBTablet();
+                TempList1 = originalTariffList;
+                TempList2 = PAYMandPAYGTariffAndExtrasPageActions.reArrangeListInAcendingBeforeApplyingSort(TempList1);
+            }
+            if (SortOption.contains("Monthly cost (High to low)")) {
+                originalTariffList = UpgradeCustomerPageActions.getCurrentSortOrderUsingMonthlyCost_UpgradeSIMO_MBBTablet();
+                TempList1 = originalTariffList;
+                TempList2 = PAYMandPAYGTariffAndExtrasPageActions
+                        .reArrangeListInDescendingBeforeApplyingSort(TempList1);
+            }
+            if (SortOption.contains("Monthly cost (Low to High)")) {
+                originalTariffList = UpgradeCustomerPageActions.getCurrentSortOrderUsingMonthlyCost_UpgradeSIMO_MBBTablet();
+                TempList1 = originalTariffList;
+                TempList2 = PAYMandPAYGTariffAndExtrasPageActions.reArrangeListInAcendingBeforeApplyingSort(TempList1);
+            }
+
+            expectedTariffListBeforeSort = TempList2;
+
+            System.out.println("--------Orginal Tariff List-----------: " + originalTariffList);
+            System.out.println("--------Expected Tariff List After Applying Sort (without Data Filter) -----------: "
+                    + expectedTariffListBeforeSort);
+
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+            System.out.println("Sort filter validation failed");
+            Assert.fail("Sort filter validation failed");
+
+        }
+    }
+
+    @Then("^I should see data filters buttons next to existing sort drop-down in Upgrade SIMO Phone journey ([^\"]*)$")
+    public void filterandDropDownPosition_UpgradeSIMO_PhoneJourney(String SortOption) {
+
+        log.debug(
+                "Running Step: @Then(I should see data filters buttons next to existing sort drop-down in Upgrade SIMO Phone journey)");
+
+        try {
+
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, PAYMandPAYGTariffAndExtrasPage.class);
+            PageFactory.initElements(driver, UpgradeCustomerPage.class);
+
+            PAYMandPAYGTariffAndExtrasPageActions.SortFilterPosition();
+            Thread.sleep(2000);
+
+            ArrayList<Integer> TempList1 = null;
+            ArrayList<Integer> TempList2 = null;
+
+            if (SortOption.contains("Monthly data (High to low)")) {
+                originalTariffList = UpgradeCustomerPageActions.getCurrentSortOrderUsingMonthlyData_UpgradeSIMO_Phone();
+                TempList1 = originalTariffList;
+                TempList2 = PAYMandPAYGTariffAndExtrasPageActions
+                        .reArrangeListInDescendingBeforeApplyingSort(TempList1);
+            }
+            if (SortOption.contains("Monthly data (Low to High)")) {
+                originalTariffList = UpgradeCustomerPageActions.getCurrentSortOrderUsingMonthlyData_UpgradeSIMO_Phone();
+                TempList1 = originalTariffList;
+                TempList2 = PAYMandPAYGTariffAndExtrasPageActions.reArrangeListInAcendingBeforeApplyingSort(TempList1);
+            }
+            if (SortOption.contains("Monthly cost (High to low)")) {
+                originalTariffList = UpgradeCustomerPageActions.getCurrentSortOrderUsingMonthlyCost_UpgradeSIMO_Phone();
+                TempList1 = originalTariffList;
+                TempList2 = PAYMandPAYGTariffAndExtrasPageActions
+                        .reArrangeListInDescendingBeforeApplyingSort(TempList1);
+            }
+            if (SortOption.contains("Monthly cost (Low to High)")) {
+                originalTariffList = UpgradeCustomerPageActions.getCurrentSortOrderUsingMonthlyCost_UpgradeSIMO_Phone();
+                TempList1 = originalTariffList;
+                TempList2 = PAYMandPAYGTariffAndExtrasPageActions.reArrangeListInAcendingBeforeApplyingSort(TempList1);
+            }
+
+            expectedTariffListBeforeSort = TempList2;
+
+            System.out.println("--------Orginal Tariff List-----------: " + originalTariffList);
+            System.out.println("--------Expected Tariff List After Applying Sort (without Data Filter) -----------: "
+                    + expectedTariffListBeforeSort);
+
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+            System.out.println("Sort filter validation failed");
+            Assert.fail("Sort filter validation failed");
+
         }
     }
 
