@@ -68,15 +68,17 @@ public class Agent_HomePagePageActions extends Environment {
 		System.out.println("Clicking on upgrade link");
 
 		try {
-			List<WebElement> ele = driver.findElements(By.xpath("//*[@id='cca']/div[2]/a[1]"));
-			if(ele.size()>0) {
-				if (driver.findElement(By.xpath("//*[@id='cca']/div[2]/a[1]")).isDisplayed()) {
-					System.out.println("new overlay is displayed");
-				}
-			}else {
-					System.out.println("new overlay is not displayed");
-				}
+			if (driver.findElement(By.xpath("//*[@id='cca']/div[2]/a[1]")).isDisplayed()) {
+				System.out.println("new overlay is displayed");
+			} else {
+				System.out.println("new overlay is not displayed");
+			}
+			Thread.sleep(5000);
 
+			if (driver.findElements(By.id("abandonCheckout")).size() > 0) {
+				driver.findElement(By.id("abandonCheckout")).click();
+				System.out.println("This agent was in progress so we are abanded and proceed with newly");
+			}
 			Screenshots.captureScreenshot();
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
