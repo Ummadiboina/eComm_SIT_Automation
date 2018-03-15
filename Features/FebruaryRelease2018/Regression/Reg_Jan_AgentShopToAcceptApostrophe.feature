@@ -16,12 +16,11 @@ Feature: Reg_Jan_AgentShopToAcceptApostrophe
     And perform the credit checks using valid <Firstname>, <Surname>, <HouseNumber>, <PostCode> and valid <Username>
     And Register the customer with valid <Firstname>, <Surname>, <HouseNumber>, <PostCode> and other valid details in delivery page
     And Choose <DeliveryType> delivery address and delivery time
-      #When Pay by card for PAYM device
     When Pay by card for PAYM device
     Then Order confirmation message should be displayed
 
       # And Update Device Plan Link Email Address
       # Then CCALink Should be generated
     Examples:
-      | Device                   | Tariffs  | Extras | DeliveryType | Firstname | Surname  | Username     | HouseNumber | PostCode |
-      | Galaxy S8 64GB Rose Pink | Standard | Base   | HomeDelivery | TEST'     | ACCEPTA' | TEST ACCEPTA | 14          | SL11UP   |
+      | Device                   | Tariffs  | Extras | DeliveryType | Firstname | Surname     | Username     | HouseNumber | PostCode |
+      | Galaxy S8 64GB Rose Pink | Standard | Base   | HomeDelivery | TEST'One  | ACCEPTA'Two | TEST ACCEPTA | 14          | SL11UP   |

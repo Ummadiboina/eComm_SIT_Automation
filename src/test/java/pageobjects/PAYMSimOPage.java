@@ -209,5 +209,17 @@ public class PAYMSimOPage {
 	@FindBy(how = How.XPATH, using = ("//*[@id='tablet']"))
 	public static WebElement TabletsTabSimo;
 
+	@FindBy(how = How.XPATH, using = ("//button[@id='currentSim']"))
+	public static WebElement IWillKeepMyCurrentSIM;
+
+	@FindBy(how = How.XPATH, using = ("//button[@id='newSim']"))
+	public static WebElement INeedNewSIM;
+
+	@FindBy(how = How.XPATH, using = ("//*[@id='simonly-upgrade-terms-label']/input"))
+	public static WebElement TermsAndConditionsCheckbox_ReviewPage;
+
+	@FindBy(how = How.XPATH, using = ("//button/span[contains(text(),'Place your order')]"))
+	public static WebElement PlaceYourOrder;
+
 
 }

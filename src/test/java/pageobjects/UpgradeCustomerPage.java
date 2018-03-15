@@ -135,6 +135,9 @@ public class UpgradeCustomerPage {
 	@FindBy(how = How.ID, using = "qa-basket-upgrade-promotion-discountMessageHeader")
 	public static WebElement BuyoutTextMyPkg;
 
+	@FindBy(how = How.ID, using = "qa-basket-upgrade-promotion-discountMessageHeader")
+	public static WebElement TradeInTextMyPkg;
+
 	@FindBy(how = How.ID, using = "qa-immediate-upgrade-fee-message")
 	public static WebElement BuyoutText1MyPkg;
 
@@ -149,12 +152,21 @@ public class UpgradeCustomerPage {
 
 	@FindBy(how = How.XPATH, using = "//section[@id='qa-immediate-upgrade-fee']//p[@class='upfront']")
 	public static WebElement BuyoutCost1MyPkg;
+
+	@FindBy(how = How.XPATH, using = "//section[@id='qa-immediate-upgrade-fee']//p[@class='upfront']")
+	public static WebElement TradeInCost1MyPkg;
 	
 	@FindBy(how = How.XPATH, using = "//section[@id='qa-upgrade-promotion-discount']//p[@class='upfront']")
 	public static WebElement BuyoutCost2MyPkg;
 
+	@FindBy(how = How.XPATH, using = "//section[@id='qa-upgrade-promotion-discount']//p[@class='upfront']")
+	public static WebElement TradeInCost2MyPkg;
+
 	@FindBy(how = How.XPATH, using = "(//section[@class='early-fee']/p[1])[2]")
 	public static WebElement BuyOutTextBasketPage;
+
+	@FindBy(how = How.XPATH, using = "(//section[@class='early-fee']/p[1])[2]")
+	public static WebElement TradeInTextBasketPage;
 
 	@FindBy(how = How.XPATH, using = "(//section[@class='early-fee']/p[1])[1]")
 	public static WebElement BuyOutText1BasketPage;
@@ -170,15 +182,39 @@ public class UpgradeCustomerPage {
 
 	@FindBy(how = How.XPATH, using = "(//section[@class='early-fee']//p[@class='upfront'])[1]")
 	public static WebElement BuyOutCost1BasketPage;
+
+	@FindBy(how = How.XPATH, using = "(//section[@class='early-fee']//p[@class='upfront'])[1]")
+	public static WebElement TradeInCost1BasketPage;
 	
 	@FindBy(how = How.XPATH, using = "(//section[@class='early-fee']//p[@class='upfront'])[2]")
 	public static WebElement BuyOutCost2BasketPage;
 
+	@FindBy(how = How.XPATH, using = "(//section[@class='early-fee']//p[@class='upfront'])[2]")
+	public static WebElement TradeInCost2BasketPage;
+
 	@FindBy(how = How.XPATH, using = "//*[@id='buy-out-discount']/td[2]/p")
 	public static WebElement BuyOutCost_OrderSummarySection;
 
+	@FindBy(how = How.XPATH, using = "//*[@id='trade-in-waiver-discount']/td[2]/p")
+	public static WebElement TradeInCost_OrderSummarySection;
+
 	@FindBy(how = How.XPATH, using = "//*[@id='buy-out-discount']/td[1]")
 	public static WebElement BuyOutText_OrderSummarySection;
+
+	@FindBy(how = How.XPATH, using = "//*[@id='trade-in-waiver-discount']/td[1]")
+	public static WebElement TradeInText_OrderSummarySection;
+
+	@FindBy(how = How.XPATH, using = "//a[@id='skip-this-step']")
+	public static WebElement skipThisStep_OTAC;
+
+	@FindBy(how = How.XPATH, using = "//a[@id='skip-this-step']")
+	public static WebElement sendCode_OTAC;
+
+	@FindBy(how = How.XPATH, using = "//input[@id='otac']")
+	public static WebElement enterCode_OTAC;
+
+	@FindBy(how = How.XPATH, using = "//button[@id='verifyOtac']")
+	public static WebElement submitCode_OTAC;
 	
 	@FindBy(how = How.XPATH, using = "//a[@id='tab-switch-to-a-tablet'][1]")
 	public static WebElement TabletsTab;
@@ -250,6 +286,24 @@ public class UpgradeCustomerPage {
 
 	@FindBy(how = How.XPATH, using = "//select[@id='dataFilterSelect']")
 	public static WebElement dataFilter;
+
+	@FindAll({ @FindBy(how = How.XPATH, using = "//div[@class='tariffs-container data-tariffs']/div[@name='P12M']/div/ul/li[1]/h2") })
+	public static List<WebElement> DataTextElement_12Months;
+
+	@FindAll({ @FindBy(how = How.XPATH, using = "//div[@class='tariffs-container data-tariffs']/div[@name='P30D']/div/ul/li[1]/h2") })
+	public static List<WebElement> DataTextElement_30Days;
+
+	@FindAll({ @FindBy(how = How.XPATH, using = "//div[@class='tariffs-container voice-tariffs']/div/div/ul/li[1]/h2") })
+	public static List<WebElement> DataTextElement_Phones;
+
+	@FindAll({ @FindBy(how = How.XPATH, using = "//div[@class='tariffs-container data-tariffs']/div[@name='P12M']/div/ul/li[1]/h2") })
+	public static List<WebElement> MonthlyTextElement_12Months;
+
+	@FindAll({ @FindBy(how = How.XPATH, using = "//div[@class='tariffs-container data-tariffs']/div[@name='P30D']/div/ul/li[1]/h2") })
+	public static List<WebElement> MonthlyTextElement_30Days;
+
+	@FindAll({ @FindBy(how = How.XPATH, using = "//div[@class='tariffs-container voice-tariffs']//div[@class='price-block']/h2/span[1]") })
+	public static List<WebElement> MonthlyTextElement_Phones;
 
 }
 
