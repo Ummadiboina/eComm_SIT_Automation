@@ -156,7 +156,6 @@ public class BasketPageActions extends Environment {
 			});
 			checkOutButtonValidation.click();
 		} else {
-
 			if(!pageobjects.BasketPage.checkoutbtn.isEnabled()){
 				driver.findElement(By.xpath("//input[@id='noNeedNewSim']")).click();
 				Thread.sleep(2000);
@@ -299,6 +298,8 @@ public class BasketPageActions extends Environment {
 
 	public static void CollectionorDelivery(String elementName) throws InterruptedException, IOException {
 
+
+		if(!BasketPage.checkoutbtn.isDisplayed()){
 		if (elementName.contains("homeDelivery")) {
 			pageobjects.BasketPage.HomeDeliverySelect.click();
 			// Assert.assertEquals(elementName,"Galaxy S7 is not found");
@@ -329,7 +330,7 @@ public class BasketPageActions extends Environment {
 			System.out.println("Store Selected for Colletion");
 			Thread.sleep(5000);
 			Screenshots.captureScreenshot();
-
+		}
 		}
 
 	}

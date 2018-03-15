@@ -292,8 +292,9 @@ public class ConnectedDeviceDetailsPageAction extends Environment {
         // TODO Auto-generated method stub
         // Have to change the below text
         System.out.println("checkDevStatusAsPreOrder");
-        System.out.println("Stock status is " + pageobjects.ConnectedDeviceDetailsPage.DevStatusMsg.getText());
-        if (pageobjects.ConnectedDeviceDetailsPage.DevStatusMsg.getText().contains("Pre")) {
+        String preoder = pageobjects.ConnectedDeviceDetailsPage.DevStatusMsg.getText();
+        System.out.println("Stock status is " + preoder);
+        if (preoder.contains("Pre") || preoder.contains("Order by midnight")) {
             System.out.println("Device is Pre Order Device");
             log.debug("Device is Pre Order Device");
         } else {
@@ -305,7 +306,8 @@ public class ConnectedDeviceDetailsPageAction extends Environment {
 
     public static void checkDevStatusAsDelayedDelivery() throws IOException, InterruptedException {
         // TODO Auto-generated method stub
-        if (pageobjects.ConnectedDeviceDetailsPage.DevStatusMsg.getText().contains("Home delivery")) {
+        String deliveryMg = pageobjects.ConnectedDeviceDetailsPage.DevStatusMsg.getText();
+        if (deliveryMg.contains("Home delivery")) {
             System.out.println("Device is Delayed Delivery Device");
             log.debug("Device is Delayed Delivery Device");
         } else {
@@ -341,7 +343,7 @@ public class ConnectedDeviceDetailsPageAction extends Environment {
         Screenshots.captureScreenshot();
     }
 
-    public static void UpdatedColordropdownText() throws IOException, InterruptedException {
+    public static void UpdatedColordropdownText() {
 
         if (pageobjects.ConnectedDeviceDetailsPage.Colourdropdownbox.isDisplayed()) {
             WebElement colourDropdown = driver.findElement(By.xpath("//*[@id='colourSelectBoxItOptions']"));

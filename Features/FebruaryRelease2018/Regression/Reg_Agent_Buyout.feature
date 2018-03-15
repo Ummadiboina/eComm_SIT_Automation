@@ -10,18 +10,18 @@ Feature: Reg_Agent_Buyout
     And Select valid <Tariffs> from tariffs tab
     And select a valid Handset and Tariff combination
     And clicks on 'Buyout' button
-    And Validate all the Basket content and checkout
+    #And Validate all the Basket content and checkout
     Then perform all the advisory checks
     And Click on 'Generate CCA' button
     And click on the 'CCA' link
     And Signin using valid <username> and <password> credentials
-    And Click on 'Continue' button on upgrade page
-    And Click on the 'Continue button' in delivery page
-    And land on the payment page and input <Username> and other details and click 'Continue on next step' in upgrade journey
-    And Continue to CCA or Buyout or Trade In Agreements page and confirm all the agreement checks
-    And Continue to Review page, check order contract text and review the order
-    Then order confirmation is displayed
+    #And Click on 'Continue' button on upgrade page
+    #And Click on the 'Continue button' in delivery page
+    #And land on the payment page and input <Username> and other details and click 'Continue on next step' in upgrade journey
+    #And Continue to CCA or Buyout or Trade In Agreements page and confirm all the agreement checks
+    #And Continue to Review page, check order contract text and review the order
+    #Then order confirmation is displayed
 
     Examples:
-      | User        | Device              | Tariffs | username      | DeliveryType | Firstname | Surname | HouseNumber | PostCode | Username     | password |
-      | 07801427798 | iPhone 6s 32GB Gold | Refresh | erto@1234.com | HomeDelivery | Test      | Accepta | Flat 9      | SL11EL   | Test Accepta | test123  |
+      | User         | Device              | Tariffs | username      | DeliveryType | Firstname | Surname | HouseNumber | PostCode | Username     | password |
+      | 447801058566 | iPhone 6s 32GB Gold | Refresh | erto@1234.com | HomeDelivery | Test      | Accepta | Flat 9      | SL11EL   | Test Accepta | test123  |
