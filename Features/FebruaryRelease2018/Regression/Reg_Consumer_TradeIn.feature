@@ -20,7 +20,6 @@ Feature: Reg_Consumer_TradeIn
     And verify if trade in offer is displayed under Order Summary section in <Delivery> page
     And Click on the 'Continue button' in delivery page
     And verify if trade in offer is displayed under Order Summary section in <Payment> page
-    #And land on the payment page and input <Username> and other details and click 'Continue on next step'
     And land on the payment page and input <Username> and other details and click 'Continue on next step' in upgrade journey
     And verify if buyout offer is displayed under Order Summary section in <Agreement> page
     And Continue to Agreements page and confirm all the agreement checks
