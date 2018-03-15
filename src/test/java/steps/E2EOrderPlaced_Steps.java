@@ -1733,7 +1733,7 @@ public class E2EOrderPlaced_Steps {
         try {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, Agent_DealBuilderPage.class);
-            Agent_DealBuilderPageActions.HandsetTariffCombination_new();
+            Agent_DealBuilderPageActions.HandsetTariffCombination();
             Thread.sleep(4000);
         } catch (Exception e) {
             // TODO Auto-generated catch block
@@ -5585,7 +5585,8 @@ public class E2EOrderPlaced_Steps {
         try {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, UpgradeCustomerPage.class);
-            UpgradeCustomerPageActions.ClickIneedAsim();
+            //UpgradeCustomerPageActions.ClickIneedAsim();
+            UpgradeCustomerPageActions.ClickIdontneedAsim();
         } catch (Exception e) {
             e.printStackTrace();
             Assert.fail("The Radio button for I need a sim is not clicked");
@@ -7317,8 +7318,8 @@ public class E2EOrderPlaced_Steps {
         // Write code here that turns the phrase above into concrete actions
         try {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-            PageFactory.initElements(driver, SimFreeDevicePage.class);
-
+            PageFactory.initElements(driver, Agent_RegisterCustomerPage.class);
+            Agent_RegisterCustomerActions.provideDrivingLicence();
 
         } catch (Exception e) {
             e.printStackTrace();

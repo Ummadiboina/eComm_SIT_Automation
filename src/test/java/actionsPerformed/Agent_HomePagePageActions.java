@@ -67,6 +67,16 @@ public class Agent_HomePagePageActions extends Environment {
 		log.debug("Clicking on upgrade link");
 		System.out.println("Clicking on upgrade link");
 
+		if(driver.findElements(By.xpath("//a[@id='abandonCheckout']")).size()>0)
+		{
+			driver.findElement(By.xpath("//a[@id='abandonCheckout']")).click();
+			driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
+			String TradeInUpgradeOptions = driver.findElement(By.className("tradeInMessage")).getText();
+			log.debug("Displaying Trade-in Upgrade Options Message");
+			System.out.println(TradeInUpgradeOptions);
+
+		}
+
 		try {
 			if (driver.findElement(By.xpath("//*[@id='cca']/div[2]/a[1]")).isDisplayed()) {
 				System.out.println("new overlay is displayed");
