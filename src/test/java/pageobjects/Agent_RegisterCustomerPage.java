@@ -147,4 +147,75 @@ public class Agent_RegisterCustomerPage {
     @FindBy(how = How.ID, using = "marketingRequired")
     public static WebElement Check_box;
 
+
+
+
+
+    //driving lisences
+
+    @FindBy(how = How.ID, using = "additionalCardDetailsCheckbox")
+    public static WebElement additionalCardDetailsCheckbox;
+
+    @FindBy(how = How.ID, using = "additionalCaptureCardDetails")
+    public static WebElement additionalCaptureCardDetails;
+
+
+
+    @FindBy(how = How.ID, using = "CardHolderName")
+    public static WebElement CardHolderName1;
+
+/*
+    @FindBy(how = How.ID, using = "additionalCaptureCardDetails")
+    public static WebElement additionalCaptureCardDetails;*/
+
+
+    @FindBy(how = How.ID, using = "licenceDetailsCheckbox")
+    public static WebElement licenceDetailsCheckbox;
+
+    @FindBy(how = How.ID, using = "licencePostCode")
+    public static WebElement licencePostCode;
+
+    @FindBy(how = How.ID, using = "licenceNumberSeg1")
+    public static WebElement licenceNumberSeg1;
+
+    @FindBy(how = How.ID, using = "licenceNumberSeg2")
+    public static WebElement licenceNumberSeg2;
+
+    @FindBy(how = How.ID, using = "licenceNumberSeg3")
+    public static WebElement licenceNumberSeg3;
+
+    @FindBy(how = How.ID, using = "licenceNumberSeg4")
+    public static WebElement licenceNumberSeg4;
+
+    @FindBy(how = How.ID, using = "passportDetailsCheckbox")
+    public static WebElement passportDetailsCheckbox;
+
+    @FindBy(how = How.ID, using = "passportIssueCountry")
+    public static WebElement passportIssueCountry;
+
+    @FindBy(how = How.ID, using = "passportNumberSeg1")
+    public static WebElement passportNumberSeg1;
+
+    @FindBy(how = How.ID, using = "passportNumberSeg2")
+    public static WebElement passportNumberSeg2;
+
+    @FindBy(how = How.ID, using = "passportNumberSeg3")
+    public static WebElement passportNumberSeg3;
+
+
+    @FindBy(how = How.ID, using = "passportNumberSeg4")
+    public static WebElement passportNumberSeg4;
+
+    @FindBy(how = How.ID, using = "passportNumberSeg5")
+    public static WebElement passportNumberSeg5;
+
+    @FindBy(how = How.ID, using = "passportNumberSeg6")
+    public static WebElement passportNumberSeg6;
+
+    @FindBy(how = How.ID, using = "passportNumberSeg7")
+    public static WebElement passportNumberSeg7;
+
+    @FindBy(how = How.XPATH, using = "//input[@class='performCreditCheckBtn']")
+    public static WebElement performCredidCheckBtn;
+
 }

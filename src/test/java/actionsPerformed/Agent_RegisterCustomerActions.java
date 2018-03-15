@@ -1,5 +1,6 @@
 package actionsPerformed;
 
+import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
 import org.apache.log4j.Logger;
@@ -106,7 +107,7 @@ public class Agent_RegisterCustomerActions extends Environment {
 			Agent_RegisterCustomerPage.HouseNumber.sendKeys(HouseNumber);
 			Thread.sleep(2000);
 			Agent_RegisterCustomerPage.Postcode.sendKeys(PostCode);
-			log.debug("Entered House Postcode  as: "+PostCode);
+			log.debug("Entered House Postcode  as: " + PostCode);
 
 			Thread.sleep(2000);
 			pageobjects.Agent_RegisterCustomerPage.FindAddress.click();
@@ -126,7 +127,7 @@ public class Agent_RegisterCustomerActions extends Environment {
 		Thread.sleep(2000);
 		//Agent_RegisterCustomerPage.registerCustomer.click();
 		WebElement element = pageobjects.Agent_RegisterCustomerPage.registerCustomer;
-		JavascriptExecutor executor = (JavascriptExecutor)driver;
+		JavascriptExecutor executor = (JavascriptExecutor) driver;
 		executor.executeScript("arguments[0].click();", element);
 
 		Thread.sleep(6000);
@@ -139,9 +140,7 @@ public class Agent_RegisterCustomerActions extends Environment {
 		System.out.println(OneOff);
 		if (OneOff.contains("£0.00")) {
 			Agent_RegisterCustomerPage.SubmitBtn.click();
-		}
-
-		else {
+		} else {
 
 			driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 			Thread.sleep(5000);
@@ -157,10 +156,10 @@ public class Agent_RegisterCustomerActions extends Environment {
 		Thread.sleep(2000);
 		System.out.println("Mipay bit : ");
 		//driver.findElements(By.xpath("//label[contains(text(),'Card ending with:')]")).size();
-		if(driver.findElements(By.xpath("//label[contains(text(),'Card ending with:')]")).size() > 0){
-		String PaybyCardCVV2 = Agent_RegisterCustomerPage.PayByCard_2.getText();
-		Thread.sleep(2000);
-		//if (PaybyCardCVV2.contains("Card ending with:")) {
+		if (driver.findElements(By.xpath("//label[contains(text(),'Card ending with:')]")).size() > 0) {
+			String PaybyCardCVV2 = Agent_RegisterCustomerPage.PayByCard_2.getText();
+			Thread.sleep(2000);
+			//if (PaybyCardCVV2.contains("Card ending with:")) {
 			System.out.print("The text is :" + PaybyCardCVV2);
 			Agent_RegisterCustomerPage.SecurityCode.sendKeys("123");
 			log.debug("Security card is entered as 123");
@@ -168,10 +167,8 @@ public class Agent_RegisterCustomerActions extends Environment {
 			log.debug("The Pay Now button is clicked");
 			System.out.println("completed  Mypay bit");
 			Thread.sleep(6000);
-		//}
-		}
-
-		else {
+			//}
+		} else {
 			Agent_RegisterCustomerPage.CardHolderName.sendKeys("TEST ACCEPTA");
 			System.out.println("Card holder name ");
 			Select CardTypeDropDown = new Select(pageobjects.Agent_RegisterCustomerPage.CardType);
@@ -242,5 +239,102 @@ public class Agent_RegisterCustomerActions extends Environment {
 		System.out.println("Clicked on Register customer");
 
 	}
+
+	public static void provideDrivingLicence() throws InterruptedException {
+
+		if (driver.findElements(By.id("additionalCardDetailsCheckbox")).size() > 0) {
+			((JavascriptExecutor) driver).executeScript("arguments[0].click();", Agent_RegisterCustomerPage.additionalCardDetailsCheckbox);
+			Thread.sleep(5000);
+			((JavascriptExecutor) driver).executeScript("arguments[0].click();", Agent_RegisterCustomerPage.additionalCaptureCardDetails);
+			Thread.sleep(15000);
+
+			try {
+				String mainWindowHandle = driver.getWindowHandle ();
+				Set<String> openWindowSize = driver.getWindowHandles ();
+				System.out.println(openWindowSize.size() + " windows are opend");
+				//Switch to child window and close it
+				for (String childWindowHandle : driver.getWindowHandles ()) {
+					//If window handle is not main window handle then close it
+					if (!childWindowHandle.equals (mainWindowHandle)) {
+						driver.switchTo ().window (childWindowHandle);
+						// Close child windows
+						// driver.close();
+					} else {
+						//switch back to main window
+						driver.switchTo ().window (mainWindowHandle);
+						System.out.println ();
+					}
+				}
+			} catch (Exception e){
+				System.out.println ("Failed to switch to window :: " + e.getStackTrace ());
+
+			}
+
+			Agent_RegisterCustomerPage.CardHolderName.sendKeys("TEST ACCEPTA");
+			System.out.println("Card holder name ");
+			Select CardTypeDropDown = new Select(pageobjects.Agent_RegisterCustomerPage.CardType);
+			CardTypeDropDown.selectByIndex(3);
+			Agent_RegisterCustomerPage.CardNumber.sendKeys("4539791001730106");
+			Thread.sleep(2000);
+			Select CardMonthDropdown = new Select(pageobjects.Agent_RegisterCustomerPage.CardMonth);
+			CardMonthDropdown.selectByIndex(2);
+			Thread.sleep(2000);
+			Select CardYearDropdown = new Select(pageobjects.Agent_RegisterCustomerPage.CardYear);
+			CardYearDropdown.selectByIndex(3);
+			Thread.sleep(2000);
+			Agent_RegisterCustomerPage.SecurityCode.sendKeys("123");
+			Thread.sleep(2000);
+			Agent_RegisterCustomerPage.UsethisCard.click();
+			System.out.println("completed  Mypay bit");
+			Thread.sleep(6000);
+
+			try {
+				String mainWindowHandle = driver.getWindowHandle ();
+				Set<String> openWindowSize = driver.getWindowHandles ();
+				System.out.println(openWindowSize.size() + " windows are opend");
+				//Switch to child window and close it
+				for (String childWindowHandle : driver.getWindowHandles ()) {
+					//If window handle is not main window handle then close it
+					if (!childWindowHandle.equals (mainWindowHandle)) {
+						driver.switchTo ().window (childWindowHandle);
+						// Close child windows
+						// driver.close();
+					} else {
+						//switch back to main window
+						driver.switchTo ().window (mainWindowHandle);
+						System.out.println ();
+					}
+				}
+			} catch (Exception e){
+				System.out.println ("Failed to switch to window :: " + e.getStackTrace ());
+
+			}
+
+			((JavascriptExecutor) driver).executeScript("arguments[0].click();", Agent_RegisterCustomerPage.licenceDetailsCheckbox);
+			Agent_RegisterCustomerPage.licencePostCode.sendKeys("SL14Dx");
+			Agent_RegisterCustomerPage.licenceNumberSeg1.sendKeys("HOMES");
+			Agent_RegisterCustomerPage.licenceNumberSeg2.sendKeys("901550");
+			Agent_RegisterCustomerPage.licenceNumberSeg3.sendKeys("NDB");
+			Agent_RegisterCustomerPage.licenceNumberSeg4.sendKeys("23");
+			Thread.sleep(3000);
+
+			((JavascriptExecutor) driver).executeScript("arguments[0].click();", Agent_RegisterCustomerPage.passportDetailsCheckbox);
+			Thread.sleep(3000);
+			Agent_RegisterCustomerPage.passportIssueCountry.sendKeys("RTY");
+			Agent_RegisterCustomerPage.passportNumberSeg1.sendKeys("9865632131");
+			Agent_RegisterCustomerPage.passportNumberSeg2.sendKeys("RTY");
+			Agent_RegisterCustomerPage.passportNumberSeg3.sendKeys("9912301");
+			Agent_RegisterCustomerPage.passportNumberSeg4.sendKeys("M");
+			Agent_RegisterCustomerPage.passportNumberSeg5.sendKeys("2011089");
+			Agent_RegisterCustomerPage.passportNumberSeg6.sendKeys("12345678965441");
+			Agent_RegisterCustomerPage.passportNumberSeg7.sendKeys("09");
+			Thread.sleep(1000);
+			((JavascriptExecutor) driver).executeScript("arguments[0].click();", Agent_RegisterCustomerPage.performCredidCheckBtn);
+	System.out.println("Filled the driving lisences and passport details and clicked on the perfrom credit check button");
+
+		}
+	}
+
+
 
 }
