@@ -398,7 +398,7 @@ public class UpgradeCustomerPageActions extends Environment {
 
         //driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
         //WebElement selectBtnEle = driver.findElement(By.xpath("(//button[@type='button']//*[normalize-space()='Select'])[2]"));
-        WebElement selectBtnEle = driver.findElement(By.xpath("//button[text()='Select' and @id='callToAction'][1]"));
+        WebElement selectBtnEle = driver.findElement(By.xpath("//button[text()='Select' or @id='callToAction'][1]"));
        if(selectBtnEle.isDisplayed()){
            ((JavascriptExecutor) driver).executeScript("arguments[0].click();", selectBtnEle);
            System.out.println("Tariff has selected");

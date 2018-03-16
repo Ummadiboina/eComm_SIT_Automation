@@ -27,4 +27,4 @@ Feature: Reg_CFU_Phones_Data_filters_options_tariff_and_extras_page
 
     Examples:
       | username      | password | handset           | filtername | sortoption                 | Make  | Model   | Network |
-      | hsty@gail.com | test123  | Samsung Galaxy S8 | medium     | Monthly data (Low to High) | Apple | Iphone7 | Orange  |
+      | me@paper.com  | test123  | Samsung Galaxy S8 | medium     | Monthly data (Low to High) | Apple | Iphone7 | Orange  |

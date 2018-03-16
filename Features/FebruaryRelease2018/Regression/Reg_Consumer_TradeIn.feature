@@ -28,5 +28,5 @@ Feature: Reg_Consumer_TradeIn
     Then order confirmation is displayed
 
     Examples:
-      | username                      | password | handset  | tariff                  | Username     | Action    |
-      | 23oc13687587@stf.ref.o2.co.uk | test123  | iPhone X | 19.99upfront45.00amonth | TEST ACCEPTA | enterCode |
+      | username                    | password | handset  | tariff                  | Username     | Action    |
+      | in04962f_909382@o2.com      | test123  | iPhone X | 19.99upfront45.00amonth | TEST ACCEPTA | enterCode |
