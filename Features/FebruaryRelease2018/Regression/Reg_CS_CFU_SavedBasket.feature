@@ -9,5 +9,5 @@ Feature: Reg_CS_CFU_SavedBasket
     And Verifies the basket page for the upgrade journey
 
     Examples:
-      | username         | password |
-      | test123@te.so.is | test123  |
+      | username                   | password |
+      | int_mar33@stf.ref.o2.co.uk | test123  |

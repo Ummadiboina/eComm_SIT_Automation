@@ -28,5 +28,5 @@ Feature: Reg_CFU_Recycle_Phones_DD_Confirmation_Page_changes.feature
     Then Verify contents of order confirmation page for Phones containing <Status>
 
     Examples:
-      | username   | password | handset        | tariff                 | Firstname | Surname | Username     | Action | Status           | Make  | Model   | Network |
-      | ins_feb571 | test123  | Apple iPhone 7 | 9.99upfront84.00amonth | TEST      | ACCEPTA | TEST ACCEPTA | skip   | Delayed Delivery | Apple | Iphone7 | Orange  |
+      | username                     | password | handset        | tariff                 | Firstname | Surname | Username     | Action | Status           | Make  | Model   | Network |
+      | ink_aug5715@stf.ref.o2.co.uk | test123  | Apple iPhone 7 | 9.99upfront84.00amonth | TEST      | ACCEPTA | TEST ACCEPTA | skip   | Delayed Delivery | Apple | Iphone7 | Orange  |

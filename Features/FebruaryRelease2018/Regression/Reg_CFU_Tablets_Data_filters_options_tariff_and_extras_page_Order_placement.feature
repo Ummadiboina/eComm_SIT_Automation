@@ -31,5 +31,5 @@ Feature: Reg_CFU_Tablets_Data_filters_options_tariff_and_extras_page_Order_place
 
     Examples:
       | Tablet        | Action | Surname | Username     | filtername | sortoption                 | username                      | password |
-      | Random Device | skip   | ACCEPTA | TEST ACCEPTA | low        | Monthly data (Low to High) | acce40660822@stf.ref.o2.co.uk | test123  |
+      | Random Device | skip   | ACCEPTA | TEST ACCEPTA | low        | Monthly data (Low to High) | identityref01@mailinator.com  | test123  |
    #   | Apple iPhone 7    | TEST      | ACCEPTA | TEST ACCEPTA | high       |

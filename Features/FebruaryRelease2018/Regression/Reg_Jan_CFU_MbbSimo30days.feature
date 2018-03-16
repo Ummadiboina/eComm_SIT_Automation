@@ -33,5 +33,5 @@ Feature: Reg_Jan_CFU_MbbSimo30days.feature
     Then order confirmation is displayed
 
     Examples:
-      | Contract | username        | password | filtername | sortoption                 |
-      | 30 Days  | qa1230@dec3.com | test123  | low        | Monthly data (High to low) |
+      | Contract | username                               | password | filtername | sortoption                 |
+      | 30 Days  | govindmigrationtwocca@stf.ref.o2.co.uk | test123  | low        | Monthly data (High to low) |

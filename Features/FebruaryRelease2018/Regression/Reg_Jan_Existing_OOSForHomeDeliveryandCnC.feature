@@ -20,5 +20,5 @@ Feature: Reg_Jan_Existing_OOSForHomeDeliveryandCnC.feature
 
 
     Examples:
-      | handset   | color      | username             | password |
-      | OnePlus 5 | Slate Grey | lucky@rediffmail.com | test123  |
+      | handset   | color      | username                      | password |
+      | OnePlus 5 | Slate Grey | 01ma92047305@stf.ref.o2.co.uk | test123  |

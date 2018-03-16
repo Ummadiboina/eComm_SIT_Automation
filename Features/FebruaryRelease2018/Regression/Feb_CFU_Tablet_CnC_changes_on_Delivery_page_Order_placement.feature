@@ -21,6 +21,6 @@ Feature: Feb_CFU_Tablet_CnC_changes_on_Delivery_page_Order_placement
 
 
     Examples:
-      | username               | password | Tablet        | tariff                 | houseNumber | Postcode | Username     | Action | Firstname | Surname |
-      | in00533s_069647@o2.com | test123  | Random Device | 9.99upfront60.00amonth | 111         | SL11Er   | Test Accepta | skip   | Test      | Accepta |
+      | username      | password | Tablet        | tariff                 | houseNumber | Postcode | Username     | Action | Firstname | Surname |
+      | hsty@gail.com | test123  | Random Device | 9.99upfront60.00amonth | 111         | SL11Er   | Test Accepta | skip   | Test      | Accepta |
 

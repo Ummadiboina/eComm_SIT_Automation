@@ -30,5 +30,5 @@ Feature: Reg_CFD2064_ECOM11810_11811_CFU_ordering choice on upgrade options page
     Then order confirmation is displayed
 
     Examples:
-      | username                      | password | handset           | Username     | Action | tariff                   |
-      | 27fe54900124@stf.ref.o2.co.uk | test123  | Samsung Galaxy S8 | TEST ACCEPTA | skip   | 129.99upfront37.00amonth |
+      | username            | password | handset           | Username     | Action | tariff                   |
+      | 6172test2@test.com  | test123  | Samsung Galaxy S8 | TEST ACCEPTA | skip   | 129.99upfront37.00amonth |
