@@ -1890,7 +1890,46 @@ public class E2EOrderPlaced_Steps {
             Assert.fail("Unable to select Valid PAYG device, please see the failure screenshot");
         }
     }
+/*
+April2018
+ */
+    @And("^verify 'Email Basket' link is displayed next to the Search CTA in deal builder section$")
+    public void verify_Email_Basket_link_is_displayed_next_to_the_Search_CTA_in_deal_builder_section() throws Throwable {
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+        try {
+            PageFactory.initElements(driver, Agent_DealBuilderPage.class);
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            System.out.println("Unable to validate Quantity , please see the failure screenshot");
+            Assert.fail("Unable to validate Quantity , please see the failure screenshot");
 
+        }
+    }
+    @And("^click on '\\+' accordion at the top of deal builder$")
+    public void click_on_accordion_at_the_top_of_deal_builder() throws Throwable {
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+        try {
+            PageFactory.initElements(driver, Agent_DealBuilderPage.class);
+            Agent_DealBuilderPageActions.CCAHandsetTariffCombination();
+            Autoredirection.redirect();
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            System.out.println("Unable to click on '+'accordion , please see the failure screenshot");
+            Assert.fail("Unable to click on '+'accordion , please see the failure screenshot");
+        }
+    }
+    @And("^verify user switched to Email Basket pop up window$")
+    public void verify_user_switched_to_Email_Basket_pop_up_window() throws Throwable {
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+        try {
+            PageFactory.initElements(driver, Agent_DealBuilderPage.class);
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            System.out.println("Unable to validate Quantity , please see the failure screenshot");
+            Assert.fail("Unable to validate Quantity , please see the failure screenshot");
+
+        }
+    }
     /*
 	 * #########################################################################
 	 * #########

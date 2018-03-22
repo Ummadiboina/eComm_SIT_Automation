@@ -31,7 +31,7 @@ Feature: AFA_Multiple_Basket_CnC_Email_basket_Get_Basket_Link
     And verify 'Copy to Clipboard' CTA is displayed next to the basket link for the fourth deal
     And click on 'Copy to Clipboard' CTA for the first deal and Verify that the link is copied in the new browser page
     And verify customer lands on O2 basket page with the selected basket contents of first deal
-    And validate all the Basket content and checkout
+    And Validate all the Basket content and checkout
     Then perform all the advisory checks
     And perform the credit checks using valid <Firstname>, <Surname>, <HouseNumber>, <PostCode> and valid <Username>
     And Register the customer with valid <Firstname>, <Surname>, <HouseNumber>, <PostCode> and other valid details in delivery page

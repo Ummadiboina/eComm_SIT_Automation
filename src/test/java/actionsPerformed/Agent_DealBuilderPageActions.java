@@ -702,4 +702,11 @@ public class Agent_DealBuilderPageActions extends Environment {
         Screenshots.captureScreenshot();
 
     }
+    public static void ClickPlusaccordion() throws InterruptedException, IOException {
+        Agent_DealBuilderPage.PlusButton.click();
+        System.out.println("Clicked on Plus button");
+        log.debug("Clicked on Plus Button");
+        Thread.sleep(3000);
+        Screenshots.captureScreenshot();
+    }
 }
