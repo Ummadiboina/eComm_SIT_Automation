@@ -7,7 +7,7 @@ Scenario Outline: AFU_Multiple_Basket_Tablet_and_Phone_CnC_Email_basket_Get_Bask
   And verify 'Email Basket' link is displayed next to the Search CTA in deal builder section
   And Select a valid PayM <Device1>
   And Select valid <Tariffs1> from tariffs tab
-  And Click on '+' accordion at the top of deal builder
+  And click on '+' accordion at the top of deal builder
   And Select a valid PayM <Device2>
   And Select valid <Tariffs2> from tariffs tab
   And Select a valid store using <PostCode> for Click and Collect
@@ -28,7 +28,8 @@ Scenario Outline: AFU_Multiple_Basket_Tablet_and_Phone_CnC_Email_basket_Get_Bask
   Then Click on 'Go to checkout' and proceed till order confirmation
 
   Examples:
-  | user | Device1 | Device2| Tariffs1 | Tariffs2 | PostCode |
+  | user       | Device1                               | Device2                                    | Tariffs1 | Tariffs2 | PostCode |
+  |07801427798 | Apple iPhone 7 Plus 32GB Rose Gold    | Samsung Galaxy S8 Plus 64GB Midnight Black | Refresh  |  Refresh | SL11ER   |
 
 
 
