@@ -15,10 +15,10 @@ Feature: Reg_Agent_PreOrder
     And perform the credit checks using valid <Firstname>, <Surname>, <HouseNumber>, <PostCode> and valid <Username>
     And Register the customer with valid <Firstname>, <Surname>, <HouseNumber>, <PostCode> and other valid details in delivery page
     And Choose <DeliveryType> delivery address and delivery time
-    #When Pay by card for PAYM device
-    And Update Device Plan Link Email Address
-    #Then Order confirmation message should be displayed
-    Then CCALink Should be generated
+    When Pay by card for PAYM device
+    #And Update Device Plan Link Email Address
+    Then Order confirmation message should be displayed
+    #Then CCALink Should be generated
 
     # And Update Device Plan Link Email Address
     # Then CCALink Should be generated

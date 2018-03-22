@@ -2035,6 +2035,22 @@ public class E2EOrderPlaced_Steps {
         }
     }
 
+
+    @Then("^perform all the advisory checks_new$")
+    public void advisory_checks_new() {
+        try {
+            driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, Agent_AdvisoryPage.class);
+            Agent_AdvisoryChecksActions.AgreeAdvsioryCheck_new();
+            Thread.sleep(6000);
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            System.out.println("Unable to perform advisory checks , please see the failure screenshot");
+            Assert.fail("Unable to perform advisory checks , please see the failure screenshot");
+
+        }
+    }
+
 	/*
 	 * #########################################################################
 	 * #########
@@ -2096,13 +2112,30 @@ public class E2EOrderPlaced_Steps {
     }
 
 
+    @Then("^Register the customer with valid ([^\"]*), ([^\"]*), ([^\"]*), ([^\"]*) and other valid details in delivery page_new$")
+
+    public void register_the_customer_new(String Firstname, String Surname, String HouseNumber, String PostCode) {
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, Agent_RegisterCustomerPage.class);
+            Agent_RegisterCustomerActions.PayGRegistration_new(Firstname, Surname, HouseNumber, PostCode);
+
+        } catch (Exception e) { // TODO Auto-generated catch block
+            System.out.println("Unable to Register customer , please see the failure screenshot");
+            Assert.fail("Unable to Register customer , please see the failure screenshot");
+
+        }
+    }
+
+
+
     @Then("^Register the customer with valid ([^\"]*), ([^\"]*), ([^\"]*), ([^\"]*) and other valid details in delivery page$")
 
     public void register_the_customer(String Firstname, String Surname, String HouseNumber, String PostCode) {
         try {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, Agent_RegisterCustomerPage.class);
-            Agent_RegisterCustomerActions.PayGRegistration(Firstname, Surname, HouseNumber, PostCode);
+            Agent_RegisterCustomerActions.PayGRegistration_new(Firstname, Surname, HouseNumber, PostCode);
 
         } catch (Exception e) { // TODO Auto-generated catch block
             System.out.println("Unable to Register customer , please see the failure screenshot");
