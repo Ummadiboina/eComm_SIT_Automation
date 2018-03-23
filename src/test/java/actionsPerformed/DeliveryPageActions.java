@@ -137,13 +137,12 @@ public class DeliveryPageActions extends Environment {
     }
 
 
-   public static void ClickContinue() throws InterruptedException, IOException {
-            Thread.sleep(3000);
-            log.debug("in click continue function");
-
-           // if (driver.findElements(By.xpath("//*[@id='checkbox-terms-agreement-required']")).size() > 0){
-       Boolean isPresent = driver.findElements(By.xpath("//*[@id='checkbox-terms-agreement-required']")).size() > 0;
-       if (isPresent) {
+    public static void ClickContinue() throws InterruptedException, IOException {
+        Thread.sleep(3000);
+        log.debug("in click continue function");
+        int count = driver.findElements(By.xpath("//*[@id='checkbox-terms-agreement-required']")).size();
+        //Boolean isPresent = driver.findElement(By.xpath("//*[@id='checkbox-terms-agreement-required']")).isEnabled();
+        if (count >= 1) {
                 log.debug("checkbox is present, so going to click on that");
                 Thread.sleep(3000);
                 js.executeScript("arguments[0].click();",driver.findElement(By.xpath("//*[@id='checkbox-terms-agreement-required']")));

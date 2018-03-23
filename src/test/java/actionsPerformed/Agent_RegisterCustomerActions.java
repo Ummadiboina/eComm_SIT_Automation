@@ -235,6 +235,7 @@ public class Agent_RegisterCustomerActions extends Environment {
 		}
 	}
 
+
 	public static void RegisterCustomer(String Password, String Confirm_Password, String Security_Answer)
 			throws InterruptedException {
 
