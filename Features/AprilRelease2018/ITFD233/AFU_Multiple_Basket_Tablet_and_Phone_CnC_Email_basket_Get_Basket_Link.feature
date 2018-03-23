@@ -7,7 +7,7 @@ Scenario Outline: AFU_Multiple_Basket_Tablet_and_Phone_CnC_Email_basket_Get_Bask
   And verify 'Email Basket' link is displayed next to the Search CTA in deal builder section
   And Select a valid PayM <Device1>
   And Select valid <Tariffs1> from tariffs tab
-  And click on '+' accordion at the top of deal builder
+  And click on 'Plus' accordion at the top of deal builder
   And Select a valid PayM <Device2>
   And Select valid <Tariffs2> from tariffs tab
   And Select a valid store using <PostCode> for Click and Collect
