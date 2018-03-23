@@ -134,7 +134,7 @@ public class Agent_RegisterCustomerActions extends Environment {
 			log.debug("Selected an address");
 		} catch (Exception e) {
 			e.getMessage();
-			System.out.println("Try catch block exception in Agent register cutomer actions page, nothing to worry :)");
+			log.debug("Try catch block exception in Agent register cutomer actions page, nothing to worry :)");
 		}
 
 		Select dropdown2 = new Select(pageobjects.Agent_RegisterCustomerPage.securityQuestion);
@@ -148,21 +148,21 @@ public class Agent_RegisterCustomerActions extends Environment {
 
 		Thread.sleep(6000);
 		log.debug("Clicked on Register customer");
-		System.out.println("Clicked on Register customer");
+		log.debug("Clicked on Register customer");
 	}
 
 	public static void PaybyCard() throws InterruptedException {
 		String OneOff = Agent_RegisterCustomerPage.ZeroOneOff.getText();
-		System.out.println(OneOff);
-		if (OneOff.contains("Â£0.00")) {
+		log.debug(OneOff);
+		if (OneOff.contains("£0.00")) {
 			Agent_RegisterCustomerPage.SubmitBtn.click();
 		} else {
 
 			driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 			Thread.sleep(5000);
-			System.out.println("Pay by card button is enabled ");
+			log.debug("Pay by card button is enabled ");
 			Agent_RegisterCustomerPage.PayByCard.click();
-			System.out.println("Clicked on pay by card ");
+			log.debug("Clicked on pay by card ");
 
 		}
 		Thread.sleep(2000);
@@ -170,7 +170,7 @@ public class Agent_RegisterCustomerActions extends Environment {
 
 	public static void CardDetails_PayM() throws InterruptedException {
 		Thread.sleep(2000);
-		System.out.println("Mipay bit : ");
+		log.debug("Mipay bit : ");
 		//driver.findElements(By.xpath("//label[contains(text(),'Card ending with:')]")).size();
 		if (driver.findElements(By.xpath("//label[contains(text(),'Card ending with:')]")).size() > 0) {
 			String PaybyCardCVV2 = Agent_RegisterCustomerPage.PayByCard_2.getText();
@@ -181,12 +181,12 @@ public class Agent_RegisterCustomerActions extends Environment {
 			log.debug("Security card is entered as 123");
 			Agent_RegisterCustomerPage.UsethisCard.click();
 			log.debug("The Pay Now button is clicked");
-			System.out.println("completed  Mypay bit");
+			log.debug("completed  Mypay bit");
 			Thread.sleep(6000);
 			//}
 		} else {
 			Agent_RegisterCustomerPage.CardHolderName.sendKeys("TEST ACCEPTA");
-			System.out.println("Card holder name ");
+			log.debug("Card holder name ");
 			Select CardTypeDropDown = new Select(pageobjects.Agent_RegisterCustomerPage.CardType);
 			CardTypeDropDown.selectByIndex(3);
 			Agent_RegisterCustomerPage.CardNumber.sendKeys("4539791001730106");
@@ -200,7 +200,7 @@ public class Agent_RegisterCustomerActions extends Environment {
 			Agent_RegisterCustomerPage.SecurityCode.sendKeys("123");
 			Thread.sleep(2000);
 			Agent_RegisterCustomerPage.UsethisCard.click();
-			System.out.println("completed  Mypay bit");
+			log.debug("completed  Mypay bit");
 			Thread.sleep(6000);
 		}
 
@@ -234,12 +234,12 @@ public class Agent_RegisterCustomerActions extends Environment {
 			Agent_RegisterCustomerPage.UsethisCard.click();
 		}
 	}
-
+	
 
 	public static void RegisterCustomer(String Password, String Confirm_Password, String Security_Answer)
 			throws InterruptedException {
 
-		Thread.sleep(5000);
+		Thread.sleep(15000);
 
 		Agent_RegisterCustomerPage.Password.sendKeys(Password);
 		log.debug("Entered Password");
@@ -260,7 +260,7 @@ public class Agent_RegisterCustomerActions extends Environment {
 		Agent_RegisterCustomerPage.registerCustomer.click();
 		Thread.sleep(6000);
 		log.debug("Clicked on Register customer");
-		System.out.println("Clicked on Register customer");
+		log.debug("Clicked on Register customer");
 
 	}
 
@@ -275,7 +275,7 @@ public class Agent_RegisterCustomerActions extends Environment {
 			try {
 				String mainWindowHandle = driver.getWindowHandle ();
 				Set<String> openWindowSize = driver.getWindowHandles ();
-				System.out.println(openWindowSize.size() + " windows are opend");
+				log.debug(openWindowSize.size() + " windows are opend");
 				//Switch to child window and close it
 				for (String childWindowHandle : driver.getWindowHandles ()) {
 					//If window handle is not main window handle then close it
@@ -286,16 +286,16 @@ public class Agent_RegisterCustomerActions extends Environment {
 					} else {
 						//switch back to main window
 						driver.switchTo ().window (mainWindowHandle);
-						System.out.println ();
+						log.debug ("Switched window");
 					}
 				}
 			} catch (Exception e){
-				System.out.println ("Failed to switch to window :: " + e.getStackTrace ());
+				log.debug ("Failed to switch to window :: " + e.getStackTrace ());
 
 			}
 
 			Agent_RegisterCustomerPage.CardHolderName.sendKeys("TEST ACCEPTA");
-			System.out.println("Card holder name ");
+			log.debug("Card holder name ");
 			Select CardTypeDropDown = new Select(pageobjects.Agent_RegisterCustomerPage.CardType);
 			CardTypeDropDown.selectByIndex(3);
 			Agent_RegisterCustomerPage.CardNumber.sendKeys("4539791001730106");
@@ -309,13 +309,13 @@ public class Agent_RegisterCustomerActions extends Environment {
 			Agent_RegisterCustomerPage.SecurityCode.sendKeys("123");
 			Thread.sleep(2000);
 			Agent_RegisterCustomerPage.UsethisCard.click();
-			System.out.println("completed  Mypay bit");
+			log.debug("completed  Mypay bit");
 			Thread.sleep(6000);
 
 			try {
 				String mainWindowHandle = driver.getWindowHandle ();
 				Set<String> openWindowSize = driver.getWindowHandles ();
-				System.out.println(openWindowSize.size() + " windows are opend");
+				log.debug(openWindowSize.size() + " windows are opend");
 				//Switch to child window and close it
 				for (String childWindowHandle : driver.getWindowHandles ()) {
 					//If window handle is not main window handle then close it
@@ -326,11 +326,11 @@ public class Agent_RegisterCustomerActions extends Environment {
 					} else {
 						//switch back to main window
 						driver.switchTo ().window (mainWindowHandle);
-						System.out.println ();
+						log.debug ("Switched window");
 					}
 				}
 			} catch (Exception e){
-				System.out.println ("Failed to switch to window :: " + e.getStackTrace ());
+				log.debug ("Failed to switch to window :: " + e.getStackTrace ());
 
 			}
 
@@ -354,7 +354,7 @@ public class Agent_RegisterCustomerActions extends Environment {
 			Agent_RegisterCustomerPage.passportNumberSeg7.sendKeys("09");
 			Thread.sleep(1000);
 			((JavascriptExecutor) driver).executeScript("arguments[0].click();", Agent_RegisterCustomerPage.performCredidCheckBtn);
-	System.out.println("Filled the driving lisences and passport details and clicked on the perfrom credit check button");
+			log.debug("Filled the driving lisences and passport details and clicked on the perfrom credit check button");
 
 		}
 	}
