@@ -215,5 +215,18 @@ public class Agent_DealBuilderPage {
 	//select the second device from stock
 	@FindBy(how = How.XPATH, using = "//table[@id='deviceTable']//th[normalize-space(.)='Stock']//..//..//../tbody//tr[2]/td[1]/a")
 	public static WebElement selectDevive2_formInstock;
-	
+
+	//selecting smartTech device Tab
+	@FindBy(how = How.ID, using = "smartTechDevicesTab")
+	public static WebElement SmartTechDevicesTab;
+
+	@FindBy(how = How.XPATH, using = "//*[@id='smartTechDeviceTable_filter']/label/input")
+	public static WebElement SearchTextBox_SmartTechDevice;
+
+	@FindBy(how = How.XPATH, using = "(//table[@id='smartTechDeviceTable']/tbody/tr/td/a/img)[1]")
+	public static WebElement SelectSearchedSmartTechDevice;
+
+
+
+
 }

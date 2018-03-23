@@ -70,6 +70,28 @@ public class PaymentPageActions extends Environment {
 
     }
 
+
+    public static void enterPotalCodeAddress()  {
+
+        pageobjects.PaymentPage.housenumber.sendKeys("41");
+        log.debug("Entered the House Number - 41");
+
+        pageobjects.PaymentPage.postcode.sendKeys("WA27JQ");
+        log.debug("Entered the Postcode - WA27JQ");
+
+        pageobjects.PaymentPage.postcodesubmit.click();
+        log.debug("Clicked on Find address");
+
+        pageobjects.PaymentPage.Selectaddress.click();
+        log.debug("Home Address Selected");
+        try {
+            Thread.sleep(3000);
+            driver.findElement(By.xpath("//*[@id='btn-continue-label']")).click();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+
     public static void Set_Bank_details_hv() throws IOException, InterruptedException {
 
         scrollToAnElement.scrollToElement(PaymentPage.Name_On_Account);

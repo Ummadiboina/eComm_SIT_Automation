@@ -5,20 +5,21 @@ Feature: AFA_Multiple_Basket_CnC_Email_basket_Get_Basket_Link
   Scenario Outline: AFA_Multiple_Basket_CnC_Email_basket_Get_Basket_Link
     Given I login to Agent shop
     And performs Acquisition for New user
-    And verify 'Email Basket' link is displayed next to the Search CTA in deal builder section
+    #And verify 'Email Basket' link is displayed next to the Search CTA in deal builder section
     And Select a valid PayM <Device1>
     And Select valid <Tariffs1> from tariffs tab
     And select a valid Handset and Tariff combination
-    And click on '+' accordion at the top of deal builder
+    And Click on 'Plus' accordion at the top of deal builder
     And Select a valid PayM <Device2>
     And Select valid <Tariffs2> from tariffs tab
     And select a valid Handset and Tariff combination
     And Select a valid store using <PostCode> for Click and Collect
-    And click on '+' accordion at the top of deal builder
+    And Click on 'Plus' accordion at the top of deal builder
     And Select a valid PAYG <Device3>
     And Select valid <Tariffs3> from PAYG tariffs tab
-    And click on '+' accordion at the top of deal builder
+    And Click on 'Plus' accordion at the top of deal builder
     And select <Device4> Fitness tracker
+    And get the list of Selected devices
     And click on 'Email Basket' link
     And verify that the 'Get basket link' CTA is displayed next to the deal in the pop up
     And click on 'Get Basket link' CTA of the first deal
@@ -27,7 +28,7 @@ Feature: AFA_Multiple_Basket_CnC_Email_basket_Get_Basket_Link
     And verify 'Copy to Clipboard' CTA is displayed next to the basket link for the second deal
     And click on 'Get Basket link' CTA of the third deal
     And verify 'Copy to Clipboard' CTA is displayed next to the basket link for the third deal
-    And click on 'Get Basket link' CTA of the fourth deal
+    And click on 'Get Basket link' CTA of the fourth d+' accordion at the top of deal buildereal
     And verify 'Copy to Clipboard' CTA is displayed next to the basket link for the fourth deal
     And click on 'Copy to Clipboard' CTA for the first deal and Verify that the link is copied in the new browser page
     And verify customer lands on O2 basket page with the selected basket contents of first deal
@@ -40,8 +41,8 @@ Feature: AFA_Multiple_Basket_CnC_Email_basket_Get_Basket_Link
     Then Order confirmation message should be displayed
 
     Examples:
-      | Device1       | Tariffs1 | Device2 |  Tariffs2 |  Device3 |  Tariffs3 |  Device4  | Firstname | Surname | Username     | HouseNumber | PostCode | DeliveryType |
-      |               |          |         |           |          |           |           |           |         |              |           |            | HomeDelivery |
+      | Device1           | Tariffs1 | Device2 |  Tariffs2 |  Device3 |  Tariffs3 |  Device4  | Firstname | Surname | Username     | HouseNumber | PostCode | DeliveryType |
+      | Samsung Galaxy S9 Plus |  Refresh | Apple iPhone 7 Plus | Refresh | iPhone 7 Plus 128GB Jet Black | Standard | Fitbit Flex 2 | TEST |ACCEPTA| TEST ACCEPTA|  11  | SL11UP| HomeDelivery |
 
 
 
