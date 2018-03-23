@@ -1,14 +1,14 @@
 package actionsPerformed;
 
 import java.io.IOException;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 import java.util.concurrent.TimeUnit;
 
+import GlobalActions.CommonActions;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 
@@ -921,16 +921,6 @@ public class Agent_DealBuilderPageActions extends Environment {
         }
     }
 
-
-
-
-
-
-
-
-
 }
 
-    
-    
-}
+
