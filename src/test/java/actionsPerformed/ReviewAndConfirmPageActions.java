@@ -31,7 +31,7 @@ public class ReviewAndConfirmPageActions extends Environment {
 
         if(HeaderText.contains("Review & confirm")) {
             log.debug("The Review and confirmation page for simo is displayed");
-            System.out.println("The Review and confirmation page for simo is displayed");
+            log.debug("The Review and confirmation page for simo is displayed");
         }
         else
             Assert.fail("The Review and confirmation page is not displayed for upgrade simo");
@@ -45,7 +45,7 @@ public class ReviewAndConfirmPageActions extends Environment {
             Assert.fail("The Primary header is displayed which is not correct");
         }
         else
-            System.out.println("The Primary header is not displayed which is correct");
+            log.debug("The Primary header is not displayed which is correct");
     }
 
     public static void ProgressBarNotDisplayed()throws Throwable {
@@ -55,7 +55,7 @@ public class ReviewAndConfirmPageActions extends Environment {
             Assert.fail("The Progress bar is displayed which is not correct");
         }
         else
-            System.out.println("The Progress bar is not displayed which is correct");
+            log.debug("The Progress bar is not displayed which is correct");
     }
 
     public static void OrderSummaryNotDisplayed() throws Throwable {
@@ -65,7 +65,7 @@ public class ReviewAndConfirmPageActions extends Environment {
             Assert.fail("The Order Summary is displayed which is not correct");
         }
         else
-            System.out.println("The Order Summary is not displayed which is correct");
+            log.debug("The Order Summary is not displayed which is correct");
     }
 
     public static void MsisdnLabel() throws Throwable {
@@ -91,7 +91,7 @@ public class ReviewAndConfirmPageActions extends Environment {
         else
             log.debug("The About you section is not displayed");
     }
-    }
+}
 
 
 

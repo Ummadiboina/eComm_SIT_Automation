@@ -15,28 +15,28 @@ public class AgreementPageActions extends Environment {
 
 	public static void gettitlepage() throws IOException, InterruptedException {
 
-		System.out.println("Now Entering Agreement Page...");
-		System.out.println(driver.getTitle());
+		log.debug("Now Entering Agreement Page...");
+		log.debug(driver.getTitle());
 		log.debug("Entered Agreements page");
 		Screenshots.captureScreenshot();
 	}
 
 	public static void Affordability() throws IOException, InterruptedException {
 
-		System.out.println("Selecting 'I agree that with my current financial commitments...'checkbox");
+		log.debug("Selecting 'I agree that with my current financial commitments...'checkbox");
 		pageobjects.AgreementPage.affordabilityCheck1.click();
 		log.debug("Selecting affordability Checks # 1");
-		System.out.println("Selecting ' I agree there are no future changes to my ...'checkbox");
+		log.debug("Selecting ' I agree there are no future changes to my ...'checkbox");
 		pageobjects.AgreementPage.affordabilityCheck2.click();
 		log.debug("Selecting affordability Checks # 2");
-		System.out.println("Clicking on the affordabilityButton ");
+		log.debug("Clicking on the affordabilityButton ");
 		pageobjects.AgreementPage.affordabilityButton.click();
 		log.debug("Selecting affordability button");
 		Screenshots.captureScreenshot();
 	}
 
 	public static void KeyInformation() throws IOException, InterruptedException {
-		System.out.println("Verifying Key Information");
+		log.debug("Verifying Key Information");
 		WebElement element = pageobjects.AgreementPage.keyInfoSection;
 		JavascriptExecutor executor = (JavascriptExecutor)driver;
 		executor.executeScript("arguments[0].click();", element);
@@ -46,7 +46,7 @@ public class AgreementPageActions extends Environment {
 	}
 
 	public static void secciSection() throws IOException, InterruptedException {
-		System.out.println("Verifying Key Information");
+		log.debug("Verifying Key Information");
 		WebElement element = pageobjects.AgreementPage.secciSection;
 		JavascriptExecutor executor = (JavascriptExecutor)driver;
 		executor.executeScript("arguments[0].click();", element);
@@ -56,7 +56,7 @@ public class AgreementPageActions extends Environment {
 	}
 
 	public static void PayMMobileAgreement() throws IOException, InterruptedException {
-		System.out.println("Verifying Mobile Agreement section");
+		log.debug("Verifying Mobile Agreement section");
 		WebElement element = pageobjects.AgreementPage.PayMMobileAgreement;
 		JavascriptExecutor executor = (JavascriptExecutor)driver;
 		executor.executeScript("arguments[0].click();", element);
@@ -66,7 +66,7 @@ public class AgreementPageActions extends Environment {
 	}
 
 	public static void TermsDeclarationCheckbox() throws IOException, InterruptedException {
-		System.out.println("Verifying Consumner Credit Agreement");
+		log.debug("Verifying Consumner Credit Agreement");
 		WebElement element = pageobjects.AgreementPage.TermsDeclarationCheckbox;
 		JavascriptExecutor executor = (JavascriptExecutor)driver;
 		executor.executeScript("arguments[0].click();", element);
@@ -82,20 +82,20 @@ public class AgreementPageActions extends Environment {
 	}
 
 	public static void InsuranceSectionAgreementPage() throws InterruptedException, IOException {
-		System.out.println("Entering InsuranceSectionAgreementPage Method");
+		log.debug("Entering InsuranceSectionAgreementPage Method");
 
 		Thread.sleep(3000);
 
 		if (driver.findElement(By.xpath("//tr[@id='basket-insurance']")).isDisplayed()) {
-			System.out.println("Insurance is displayed in Agreement page and text is  - "
+			log.debug("Insurance is displayed in Agreement page and text is  - "
 					+ driver.findElement(By.xpath("//tr[@id='basket-insurance']")).getText());
 
 		} else {
-			System.out.println("Insurance is not displayed");
+			log.debug("Insurance is not displayed");
 		}
 
 		Thread.sleep(2000);
-		System.out.println("Completed InsuranceSectionAgreementPage function");
+		log.debug("Completed InsuranceSectionAgreementPage function");
 		log.debug("Completed InsuranceSectionAgreementPage function");
 		Screenshots.captureScreenshot();
 	}

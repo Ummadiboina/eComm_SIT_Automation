@@ -23,7 +23,7 @@ public class FreeSimPageActions extends Environment {
 		JavascriptExecutor jse = (JavascriptExecutor) driver;
 		jse.executeScript("window.scrollBy(0,150)", "");
 
-		System.out.println("Clicking on iPadsandTabletstab");
+		log.debug("Clicking on iPadsandTabletstab");
 		Thread.sleep(3000);
 		pageobjects.FreeSimPage.iPadsandTabletstab.click();
 		log.debug("Clicking on iPadsandTablets tab");
@@ -32,7 +32,7 @@ public class FreeSimPageActions extends Environment {
 	}
 
 	public static void Mobile_iPadsandTabletstab() throws InterruptedException, IOException {
-		System.out.println("Clicking on iPadsandTabletstab");
+		log.debug("Clicking on iPadsandTabletstab");
 		Thread.sleep(3000);
 		pageobjects.FreeSimPage.iPadsandTabletstab.click();
 		log.debug("Clicking on iPadsandTablets tab");
@@ -44,7 +44,7 @@ public class FreeSimPageActions extends Environment {
 		JavascriptExecutor jse = (JavascriptExecutor) driver;
 		jse.executeScript("window.scrollBy(0,450)", "");
 
-		System.out.println("Clicking on Steady surfer ipad sim");
+		log.debug("Clicking on Steady surfer ipad sim");
 		Thread.sleep(1000);
 		jse.executeScript("arguments[0].click();", pageobjects.FreeSimPage.SteadyiPadsim);
 		log.debug("Clicking on iPadsandTablets tab");
@@ -55,7 +55,7 @@ public class FreeSimPageActions extends Environment {
 	public static void EnterManually (String Flatnumber, String Housename, String Address1, String Town, String Postcode)
 			throws InterruptedException, IOException {
 
-		System.out.println("Clicking on Enter Manually link");
+		log.debug("Clicking on Enter Manually link");
 		pageobjects.FreeSimPage.EnterManually.click();
 		Thread.sleep(3000);
 		log.debug("Clicking on Enter Manually link");

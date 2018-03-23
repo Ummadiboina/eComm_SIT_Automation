@@ -14,19 +14,20 @@ Feature: Reg_Consumer_TradeIn
     And verify if the tradein offer is displayed in My Package section
     And I Land on the basket page for upgrades
     And verify if the trade in offer is displayed in Basket page
+    And I select a Click and Collect store for Trade In
     And click on "go to checkout" button
     And verify if trade in offer is displayed under Order Summary section in <OTAC> page
     And Enter code <Action> in OTAC page to verify account in TadeIn journey
     And verify if trade in offer is displayed under Order Summary section in <Delivery> page
-    And Click on the 'Continue button' in delivery page
+    And I select check box to bring the trade in device and Continue to delivery page
     And verify if trade in offer is displayed under Order Summary section in <Payment> page
     And land on the payment page and input <Username> and other details and click 'Continue on next step' in upgrade journey
-    And verify if buyout offer is displayed under Order Summary section in <Agreement> page
+    And verify if trade in offer is displayed under Order Summary section in <Agreement> page
     And Continue to Agreements page and confirm all the agreement checks
-    And verify if buyout offer is displayed under Order Summary section in <Review> page
+    And verify if trade in offer is displayed under Order Summary section in <Review> page
     And Continue to Review page and review the order
     Then order confirmation is displayed
 
     Examples:
-      | username                    | password | handset  | tariff                  | Username     | Action    |
-      | in04962f_909382@o2.com      | test123  | iPhone X | 19.99upfront45.00amonth | TEST ACCEPTA | enterCode |
+      | username                      | password | handset  | tariff                  | Username     | Action    |
+      | 23oc44430255@stf.ref.o2.co.uk | test123  | iPhone X | 19.99upfront45.00amonth | TEST ACCEPTA | enterCode |

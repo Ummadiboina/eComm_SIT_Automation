@@ -18,18 +18,18 @@ public class LikeNewSimFreeDevicePageActions extends Environment {
 	final static Logger log = Logger.getLogger("LikeNewSimFreeDevicePageActions");
 
 	public static void validatetile() throws IOException, InterruptedException {
-		System.out.println(" ");
-		System.out.println("SIM_FREE_PHONE_PAGE_VALIDATION");
+		log.debug(" ");
+		log.debug("SIM_FREE_PHONE_PAGE_VALIDATION");
 		log.debug("Performing Sim Free Phones page validation");
 
 		if (pageobjects.SimFreeDevicePage.Device_only_sim_free_Tile.getText().contains("Device only - sim free")) {
-			System.out.println("The Element Tile is Present and the Text is :"
+			log.debug("The Element Tile is Present and the Text is :"
 					+ pageobjects.SimFreeDevicePage.Device_only_sim_free_Tile.getText());
 			log.debug("The Element Tile is Present and the Text is :"
 					+ pageobjects.SimFreeDevicePage.Device_only_sim_free_Tile.getText());
 
 		} else {
-			System.out.println("The  Element Tile is Absent and the Text is :"
+			log.debug("The  Element Tile is Absent and the Text is :"
 					+ pageobjects.SimFreeDevicePage.Device_only_sim_free_Tile.getText());
 			log.debug("The  Element Tile is Absent and the Text is :"
 					+ pageobjects.SimFreeDevicePage.Device_only_sim_free_Tile.getText());
@@ -37,13 +37,13 @@ public class LikeNewSimFreeDevicePageActions extends Environment {
 		}
 
 		if (pageobjects.SimFreeDevicePage.PayM_sim_free_Tile.getText().contains("Add a Pay Monthly sim")) {
-			System.out.println("The Element Tile is Present and the Text is :"
+			log.debug("The Element Tile is Present and the Text is :"
 					+ pageobjects.SimFreeDevicePage.PayM_sim_free_Tile.getText());
 			log.debug("The Element Tile is Present and the Text is :"
 					+ pageobjects.SimFreeDevicePage.PayM_sim_free_Tile.getText());
 
 		} else {
-			System.out.println("The  Element Tile is Absent and the Text is :"
+			log.debug("The  Element Tile is Absent and the Text is :"
 					+ pageobjects.SimFreeDevicePage.PayM_sim_free_Tile.getText());
 			log.debug("The  Element Tile is Absent and the Text is :"
 					+ pageobjects.SimFreeDevicePage.PayM_sim_free_Tile.getText());
@@ -51,12 +51,12 @@ public class LikeNewSimFreeDevicePageActions extends Environment {
 		}
 
 		if (pageobjects.SimFreeDevicePage.PayG_sim_free_Tile.getText().contains("Add a Pay As You Go Sim")) {
-			System.out.println("The Element Tile is Present and the Text is :"
+			log.debug("The Element Tile is Present and the Text is :"
 					+ pageobjects.SimFreeDevicePage.PayG_sim_free_Tile.getText());
 			log.debug("The Element Tile is Present and the Text is :"
 					+ pageobjects.SimFreeDevicePage.PayG_sim_free_Tile.getText());
 		} else {
-			System.out.println("The  Element Tile is Absent and the Text is :"
+			log.debug("The  Element Tile is Absent and the Text is :"
 					+ pageobjects.SimFreeDevicePage.PayG_sim_free_Tile.getText());
 			log.debug("The  Element Tile is Absent and the Text is :"
 					+ pageobjects.SimFreeDevicePage.PayG_sim_free_Tile.getText());
@@ -69,18 +69,15 @@ public class LikeNewSimFreeDevicePageActions extends Environment {
 
 		if (elementName.contains("Device_only_sim_free_Select")) {
 			pageobjects.SimFreeDevicePage.Device_only_sim_free_Select.sendKeys(Keys.ENTER);
-			;
-			log.debug("Selecting a Sim Free Device");
+            log.debug("Selecting a Sim Free Device");
 		}
 		if (elementName.contains("PayM_sim_free_Select")) {
 			pageobjects.SimFreeDevicePage.PayM_sim_free_Select.sendKeys(Keys.ENTER);
-			;
-			log.debug("Selecting a Pay Monthly Sim Free Device");
+            log.debug("Selecting a Pay Monthly Sim Free Device");
 		}
 		if (elementName.contains("PayM_sim_free_Select")) {
 			pageobjects.SimFreeDevicePage.PayM_sim_free_Select.sendKeys(Keys.ENTER);
-			;
-			log.debug("Selecting a Pay as you Go sim with Sim Free Device");
+            log.debug("Selecting a Pay as you Go sim with Sim Free Device");
 		}
 		Screenshots.captureScreenshot();
 	}
@@ -92,12 +89,12 @@ public class LikeNewSimFreeDevicePageActions extends Environment {
 			WebElement colourDropdown = driver.findElement(By.xpath("//*[@id='colourSelectBoxItOptions']"));
 			List<WebElement> elementColor = colourDropdown.findElements(By.xpath("//*[@class='selectboxit-option-label']"));
 			for (int i = 0; i < elementColor.size(); i++) {
-				System.out.println(elementColor.get(i).getText());
+				log.debug(elementColor.get(i).getText());
 			}
-			System.out.println("The colours labels are displayed");
+			log.debug("The colours labels are displayed");
 			log.debug("The colours labels are displayed");
 		} else
-			System.out.println("The colour labels are not displayed");
+			log.debug("The colour labels are not displayed");
 
 	}
 
@@ -109,11 +106,11 @@ public class LikeNewSimFreeDevicePageActions extends Environment {
 
 		}
 		else
-			System.out.println("The Device only button not displayed");
+			log.debug("The Device only button not displayed");
 
-
-		}
 
 	}
+
+}
 
 

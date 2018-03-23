@@ -30,7 +30,7 @@ public class PhonesListingPageAction extends Environment {
 		/*if(driver.findElements(By.xpath("(//a[contains(., 'View all products on one page')])[1]")).size() > 0)
 		{
 			driver.findElement(By.xpath("(//a[contains(., 'View all products on one page')])[1]")).click();
-			System.out.println(" Clicked on View all products on one page(1) ");
+			log.debug(" Clicked on View all products on one page(1) ");
 		}*/
 
 //		JavascriptExecutor js = ((JavascriptExecutor) driver);
@@ -40,7 +40,7 @@ public class PhonesListingPageAction extends Environment {
 			WebElement element = driver.findElement(By.xpath("(//a[contains(., 'View all products on one page')])[2]"));
 			((JavascriptExecutor) driver).executeScript("arguments[0].click();", element);
 
-			System.out.println(" Clicked on View all products on one page(2) ");
+			log.debug(" Clicked on View all products on one page(2) ");
 		}*/
 		/*driver.manage().timeouts().implicitlyWait(120, TimeUnit.SECONDS);
 		driver.findElement(By.xpath("//div[@class='fieldandsubmitbar']/input[1]")).sendKeys(elementName);*/
@@ -49,19 +49,19 @@ public class PhonesListingPageAction extends Environment {
 		Thread.sleep(2000);
 		/*if (elementName.contains("GalaxyS7")) {
 			pageobjects.PhonesListingPage.GalaxyS7.click();
-			System.out.println("Selected GalaxyS7");
+			log.debug("Selected GalaxyS7");
 			log.debug("Selected GalaxyS7");
 		}
 		if (elementName.contains("BlackBerry Classic")) {
 			pageobjects.PhonesListingPage.BlackberryClassic.click();
-			System.out.println("Blackberry Classic");
+			log.debug("Blackberry Classic");
 			log.debug("Blackberry Classic");
 
 		}
 
 		if (elementName.contains("AquarisM45")) {
 			pageobjects.PhonesListingPage.AquarisM45.click();
-			System.out.println("Selected AquarisM45");
+			log.debug("Selected AquarisM45");
 			log.debug("Selected AquarisM45");
 		}
 		if (elementName.contains("GalaxyS8")) {
@@ -70,7 +70,7 @@ public class PhonesListingPageAction extends Environment {
 			log.debug("Selected GalaxyS8");
 
 		}
-		if (elementName.contains("Samsung�Galaxy S8")) {
+		if (elementName.contains("Samsung Galaxy S8")) {
 			pageobjects.PhonesListingPage.GalaxyS8.click();
 			// Assert.assertEquals(elementName,"Galaxy S7 is not found");
 			log.debug("Selected GalaxyS8");
@@ -146,14 +146,14 @@ public class PhonesListingPageAction extends Environment {
 		if (elementName.contains("Apple iPhone 7 Like New")) {
 			pageobjects.PhonesListingPage.AppleiPhone7LikeNew.click();
 			log.debug("Selected AppleiPhone7LikeNew");
-			System.out.println("Selected AppleiPhone7LikeNew");
+			log.debug("Selected AppleiPhone7LikeNew");
 
 		}
 
 		if (elementName.contains("Apple iPhone 6s Plus Like New")) {
 			pageobjects.PhonesListingPage.AppleiPhone6sPlusLikeNew.click();
 			log.debug("Selected AppleiPhone6sPlusLikeNew");
-			System.out.println("Selected AppleiPhone6sPlusLikeNew");
+			log.debug("Selected AppleiPhone6sPlusLikeNew");
 
 		}*/
 
@@ -166,7 +166,7 @@ public class PhonesListingPageAction extends Environment {
 		WebElement requestedDevice = driver.findElement(By.xpath("(//img[@class='device-image']/..//*[contains(text(),'"+elementName+"')])[1]"));
 		if (driver.findElements(By.xpath("(//img[@class='device-image']/..//*[contains(text(),'\"+elementName+\"')])[1]")).size() >= 1) {
 			((JavascriptExecutor) driver).executeScript("arguments[0].click();", requestedDevice);
-			System.out.println("Selected Device from Phones as Required is : " + elementName);
+			log.debug("Selected Device from Phones as Required is : " + elementName);
 			log.debug("Selected Device from Phones as Required is : " + elementName);
 			Thread.sleep(3000);
 		} else {
@@ -174,7 +174,7 @@ public class PhonesListingPageAction extends Environment {
 			WebElement element = driver.findElement(By.xpath("(//img[@class='device-image'])[1]"));
 			((JavascriptExecutor) driver).executeScript("arguments[0].click();", element);
 			String defaultSelDevice = driver.findElement(By.xpath("((//img[@class='device-image'])[1]/..//span[@class='ng-binding'])[2]")).getText();
-			System.out.println(" As Required Device is not Availabe, We have picked default device from availabe  :: " + defaultSelDevice);
+			log.debug(" As Required Device is not Availabe, We have picked default device from availabe  :: " + defaultSelDevice);
 			log.debug(" As Required Device is not Availabe, We have picked default device from availabe  :: " + defaultSelDevice);
 			Thread.sleep(3000);
 
@@ -185,7 +185,7 @@ public class PhonesListingPageAction extends Environment {
 	public static void PAYGPhoneSelect(String elementName) throws IOException, InterruptedException {
 
 		if (elementName.contains("Random Device")) {
-			System.out.println("Selecting Random Device");
+			log.debug("Selecting Random Device");
 			pageobjects.PhonesListingPage.RandomDevice.click();
 			log.debug("Selected Random Device");
 			Thread.sleep(3000);
@@ -193,7 +193,7 @@ public class PhonesListingPageAction extends Environment {
 		}
 
 		if (elementName.contains("MotoG5")) {
-			System.out.println("Selecting MotoG5");
+			log.debug("Selecting MotoG5");
 
 			pageobjects.PhonesListingPage.MotoG5.click();
 			// Assert.assertEquals(elementName,"Galaxy S7 is not found");
@@ -206,7 +206,7 @@ public class PhonesListingPageAction extends Environment {
 	public static void SelectBaseCommTariff(String elementName) throws IOException, InterruptedException {
 
 		if (elementName.contains("Random")) {
-			System.out.println("Selected Random Tariff");
+			log.debug("Selected Random Tariff");
 			pageobjects.BaseCommPage.RandomDevice.click();
 			log.debug("Selected Random Device");
 		}
@@ -220,10 +220,10 @@ public class PhonesListingPageAction extends Environment {
 		for (int i = 0; i < iPadDevices.size(); i++) {
 			if (iPadDevices.get(i).getText().contains("iPad")) {
 				int j = i + 1;
-				System.out.println(
+				log.debug(
 						"Tile position (" + j + ")" + " and the device name is " + iPadDevices.get(i).getText());
 			} else {
-				System.out.println("Devices other than iPad are also displayed");
+				log.debug("Devices other than iPad are also displayed");
 			}
 		}
 		Screenshots.captureScreenshot();
@@ -246,17 +246,17 @@ public class PhonesListingPageAction extends Environment {
 
 			Thread.sleep(3000);
 
-			System.out.println("Clicked on the Sort Tab successfully");
+			log.debug("Clicked on the Sort Tab successfully");
 			Screenshots.captureScreenshot();
 		} catch (Exception e) {
-			System.out.println("Failed: Cannot click on the Sort tab" + e.getMessage());
+			log.debug("Failed: Cannot click on the Sort tab" + e.getMessage());
 			Screenshots.captureScreenshot();
 		}
 	}
 
 	public static void selectSortOption(String Sort) throws InterruptedException, IOException {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
-		System.out.println("Selecting Sort option : " + Sort);
+		log.debug("Selecting Sort option : " + Sort);
 		if (Sort.equals("MonthlyHighToLow")) {
 
 			js.executeScript("arguments[0].click();", pageobjects.SortingAndFilter.MonthlyHighToLow);
@@ -348,7 +348,7 @@ public class PhonesListingPageAction extends Environment {
 
 	public static void clickOnResetSort() throws IOException, InterruptedException {
 		log.debug("Entering clickOnResetSort function");
-		System.out.println("Entering clickOnResetSort function");
+		log.debug("Entering clickOnResetSort function");
 
 		try {
 
@@ -360,10 +360,10 @@ public class PhonesListingPageAction extends Environment {
 			js.executeScript("arguments[0].click();", pageobjects.SortingAndFilter.Done);
 			js.executeScript("arguments[0].click();", pageobjects.SortingAndFilter.Done);
 			Thread.sleep(5000);
-			System.out.println("Clicked on the Reset Sort Option successfully");
+			log.debug("Clicked on the Reset Sort Option successfully");
 			Screenshots.captureScreenshot();
 		} catch (Exception e) {
-			System.out.println("Failed: Cannot click on the Reset Sort Option" + e.getMessage());
+			log.debug("Failed: Cannot click on the Reset Sort Option" + e.getMessage());
 			Screenshots.captureScreenshot();
 		}
 	}
@@ -372,10 +372,10 @@ public class PhonesListingPageAction extends Environment {
 			throws IOException, InterruptedException {
 		try {
 			log.debug("Entering verifyDeviceGetsDisplayedBasedOnBrandFilterApplied function");
-			System.out.println("Entering verifyDeviceGetsDisplayedBasedOnBrandFilterApplied function");
+			log.debug("Entering verifyDeviceGetsDisplayedBasedOnBrandFilterApplied function");
 
 			LinkedList<String> ListAfterFilter = getCurrentSortOrderUsingDeviceName();
-			System.out.println(ListAfterFilter);
+			log.debug(ListAfterFilter);
 
 			for (int i = 0; i < ListAfterFilter.size(); i++) {
 
@@ -384,11 +384,11 @@ public class PhonesListingPageAction extends Environment {
 
 			}
 
-			System.out.println("Assert Success:  Devices displayed are as per the Brand filter applied");
+			log.debug("Assert Success:  Devices displayed are as per the Brand filter applied");
 			Screenshots.captureScreenshot();
 
 		} catch (Exception e) {
-			System.out.println(
+			log.debug(
 					"Assertion Failed: Devices displayed are not as per the Brand filter applied" + e.getMessage());
 			Screenshots.captureScreenshot();
 		}
@@ -398,10 +398,10 @@ public class PhonesListingPageAction extends Environment {
 			throws IOException, InterruptedException {
 		try {
 			log.debug("Entering verifyDeviceGetsDisplayedBasedOnColourFilterApplied function");
-			System.out.println("Entering verifyDeviceGetsDisplayedBasedOnColourFilterApplied function");
+			log.debug("Entering verifyDeviceGetsDisplayedBasedOnColourFilterApplied function");
 
 			LinkedList<String> ListAfterFilter = getCurrentSortOrderUsingDeviceColour();
-			System.out.println(ListAfterFilter);
+			log.debug(ListAfterFilter);
 
 			for (int i = 0; i < ListAfterFilter.size(); i++) {
 
@@ -410,11 +410,11 @@ public class PhonesListingPageAction extends Environment {
 
 			}
 
-			System.out.println("Assert Success:  Devices displayed are as per the Brand filter applied");
+			log.debug("Assert Success:  Devices displayed are as per the Brand filter applied");
 			Screenshots.captureScreenshot();
 
 		} catch (Exception e) {
-			System.out.println(
+			log.debug(
 					"Assertion Failed: Devices displayed are not as per the Brand filter applied" + e.getMessage());
 			Screenshots.captureScreenshot();
 		}
@@ -428,10 +428,10 @@ public class PhonesListingPageAction extends Environment {
 			js.executeScript("arguments[0].click();", pageobjects.BaseCommPage.FilterTab);
 			Thread.sleep(2000);
 
-			System.out.println("Clicked on the FilterTab successfully");
+			log.debug("Clicked on the FilterTab successfully");
 			Screenshots.captureScreenshot();
 		} catch (Exception e) {
-			System.out.println("Failed: Cannot click on the FilterTab: " + e.getMessage());
+			log.debug("Failed: Cannot click on the FilterTab: " + e.getMessage());
 			Screenshots.captureScreenshot();
 		}
 	}
@@ -439,7 +439,7 @@ public class PhonesListingPageAction extends Environment {
 	public static void selectFilterOption(String Filter, String Option) throws IOException, InterruptedException {
 		try {
 			log.debug("Entering selectFilterOption function");
-			System.out.println("Selecting Filter option: " + Filter + " :With: " + Option);
+			log.debug("Selecting Filter option: " + Filter + " :With: " + Option);
 
 			JavascriptExecutor js = (JavascriptExecutor) driver;
 
@@ -691,7 +691,7 @@ public class PhonesListingPageAction extends Environment {
 		}
 
 		catch (Exception e) {
-			System.out.println("Failed: Cannot select a filter option : " + e.getMessage());
+			log.debug("Failed: Cannot select a filter option : " + e.getMessage());
 			Screenshots.captureScreenshot();
 		}
 
@@ -700,20 +700,20 @@ public class PhonesListingPageAction extends Environment {
 	public static void clickOnViewAllProductsOnOnePage() throws IOException, InterruptedException {
 		try {
 			log.debug("Entering clickOnViewAllProductsOnOnePage function");
-			System.out.println("Entering clickOnViewAllProductsOnOnePage function");
+			log.debug("Entering clickOnViewAllProductsOnOnePage function");
 			if (driver.findElement(By.xpath("//*[@id='o2-page-wrapper']/div[3]/div[4]/a")).isDisplayed()) {
 				WebElement viewAllProductsOnOnePage_link = driver
 						.findElement(By.xpath("//*[@id='o2-page-wrapper']/div[3]/div[4]/a"));
 				scrollToAnElement.scrollToElement(viewAllProductsOnOnePage_link);
 				viewAllProductsOnOnePage_link.click();
-				System.out.println("Clicked on the ViewAllProductsOnOnePagesuccessfully");
+				log.debug("Clicked on the ViewAllProductsOnOnePagesuccessfully");
 			} else {
-				System.out.println("ViewAllProductsOnOnePage link is not visible in the page");
+				log.debug("ViewAllProductsOnOnePage link is not visible in the page");
 				log.debug("ViewAllProductsOnOnePage link is not visible in the page");
 			}
 			Screenshots.captureScreenshot();
 		} catch (Exception e) {
-			System.out.println("Failed: Cannot click on the Sort tab" + e.getMessage());
+			log.debug("Failed: Cannot click on the Sort tab" + e.getMessage());
 			Screenshots.captureScreenshot();
 		}
 	}
@@ -757,9 +757,9 @@ public class PhonesListingPageAction extends Environment {
 		/*
 		 * if (NextBtn.isDisplayed()) { scrollToAnElement.scrollToElement(NextBtn);
 		 * NextBtn.click(); Thread.sleep(5000);
-		 * 
+		 *
 		 * } else { NextBtndVisible = false; break; }
-		 * 
+		 *
 		 * }
 		 */
 		Screenshots.captureScreenshot();
@@ -770,7 +770,7 @@ public class PhonesListingPageAction extends Environment {
 	public static LinkedList<String> getCurrentSortOrderUsingDevicePrice() throws InterruptedException, IOException {
 
 		log.debug("Opening function getCurrentSortOrderUsingDevicePrice");
-		System.out.println("Opening function getCurrentSortOrderUsingDevicePrice");
+		log.debug("Opening function getCurrentSortOrderUsingDevicePrice");
 
 		Thread.sleep(10000);
 
@@ -784,15 +784,15 @@ public class PhonesListingPageAction extends Environment {
 		 * List<WebElement> deviceName = driver.findElement(By.xpath(
 		 * "//*[@id='o2-page-wrapper']/div[3]/div[3]")) .findElements(By.xpath(
 		 * "//div[@class='device-tile__top']/p[@class='details']"));
-		 * 
-		 * 
+		 *
+		 *
 		 * List<WebElement> devicePrice = driver.findElement(By.xpath(
 		 * "//*[@id='o2-page-wrapper']/div[3]/div[3]")) .findElements(By.xpath(
 		 * "//div[@class='device-tile__bottom ng-scope']/p[@class='costs ng-binding ng-scope']/span[@class='headline ng-binding']"
 		 * ));
-		 * 
+		 *
 		 * /* for (WebElement temp1 : deviceName) {
-		 * 
+		 *
 		 * String sTemp = temp1.getText(); devicenamecurrentorder.add(sTemp); }
 		 */
 
@@ -805,12 +805,12 @@ public class PhonesListingPageAction extends Environment {
 
 		for (WebElement temp2 : devicePrice) {
 
-			String sTemp = StringUtils.substringBetween(temp2.getText(), "�", ".");
+			String sTemp = StringUtils.substringBetween(temp2.getText(), "£", ".");
 			devicepricecurrentorder.add(sTemp);
 
 		}
-		// System.out.println("Device Name List: " + devicenamecurrentorder);
-		System.out.println("Device Price List: " + devicepricecurrentorder);
+		// log.debug("Device Name List: " + devicenamecurrentorder);
+		log.debug("Device Price List: " + devicepricecurrentorder);
 
 		// *********************************This xpath is for AWS
 		// Environment************************************//
@@ -839,7 +839,7 @@ public class PhonesListingPageAction extends Environment {
 	public static LinkedList<String> getCurrentSortOrderUsingDeviceColour() throws InterruptedException, IOException {
 
 		log.debug("Opening function getCurrentSortOrderUsingDeviceColour");
-		System.out.println("Opening function getCurrentSortOrderUsingDeviceColour");
+		log.debug("Opening function getCurrentSortOrderUsingDeviceColour");
 
 		Thread.sleep(10000);
 
@@ -853,8 +853,8 @@ public class PhonesListingPageAction extends Environment {
 		 * List<WebElement> deviceName = driver.findElement(By.xpath(
 		 * "//*[@id='o2-page-wrapper']/div[3]/div[3]")) .findElements(By.xpath(
 		 * "//div[@class='device-tile__top']/p[@class='details']"));
-		 * 
-		 * 
+		 *
+		 *
 		 * List<WebElement> deviceColour = driver.findElement(By.xpath(
 		 * "//*[@id='o2-page-wrapper']/div[3]/div[3]")) .findElements(By.xpath(
 		 * "//div[@class='device-tile__bottom ng-scope']/p[@class='costs ng-binding ng-scope']/span[@class='headline ng-binding']"
@@ -884,8 +884,8 @@ public class PhonesListingPageAction extends Environment {
 			devicecolourcurrentorder.add(sTemp2);
 
 		}
-		System.out.println("Device Name List: " + devicenamecurrentorder);
-		System.out.println("Device Colour List: " + devicecolourcurrentorder);
+		log.debug("Device Name List: " + devicenamecurrentorder);
+		log.debug("Device Colour List: " + devicecolourcurrentorder);
 
 		for (int i = 0; i < devicenamecurrentorder.size(); i++) {
 			deviceCurrentOrder.add(devicenamecurrentorder.get(i) + devicecolourcurrentorder.get(i));
@@ -901,8 +901,8 @@ public class PhonesListingPageAction extends Environment {
 		// listSortEx(ListBeforeApplyingSort, false);
 
 		Collections.sort(ListBeforeApplyingSort);
-		System.out.println("-List arranged in ascending Order-");
-		System.out.println(ListBeforeApplyingSort);
+		log.debug("-List arranged in ascending Order-");
+		log.debug(ListBeforeApplyingSort);
 		return ListBeforeApplyingSort;
 
 	}
@@ -916,7 +916,7 @@ public class PhonesListingPageAction extends Environment {
 	}
 
 	public static void verifyDeviceSortedOnBrand(LinkedList<String> ListBeforeApplyingSort,
-			LinkedList<String> ListAfterApplyingSort) throws IOException, InterruptedException {
+												 LinkedList<String> ListAfterApplyingSort) throws IOException, InterruptedException {
 
 		try {
 
@@ -933,13 +933,13 @@ public class PhonesListingPageAction extends Environment {
 
 			/*
 			 * ( Boolean num = checkAscendingOrder(ListAfterApplyingSort);
-			 * System.out.println("boolean value" + num); if (num == true) {
-			 * 
-			 * System.out.println("Products names are Sorted in ascending Order" ); } else {
+			 * log.debug("boolean value" + num); if (num == true) {
+			 *
+			 * log.debug("Products names are Sorted in ascending Order" ); } else {
 			 * System.out. println("Products names are not Sorted in ascending Order"); }
 			 */
 
-			System.out.println("Assertion Success: Devices have been sorted successfully based on Brand");
+			log.debug("Assertion Success: Devices have been sorted successfully based on Brand");
 			Screenshots.captureScreenshot();
 		} catch (AssertionError e) {
 			log.debug("Assertion Failed: Devices are not sorted based on Brand ");
@@ -950,7 +950,7 @@ public class PhonesListingPageAction extends Environment {
 	}
 
 	public static void verifyOriginalSortOrderRetainedAfterSortReset(LinkedList<String> ListBeforeApplyingSort,
-			LinkedList<String> ListAfterApplyingSort) throws IOException, InterruptedException {
+																	 LinkedList<String> ListAfterApplyingSort) throws IOException, InterruptedException {
 
 		try {
 
@@ -959,14 +959,14 @@ public class PhonesListingPageAction extends Environment {
 
 			for (int i = 0; i < TempOriginalList.size(); i++) {
 				if (TempOriginalList.get(i).equalsIgnoreCase(TempListAfterSortReset.get(i))) {
-					System.out.println(TempOriginalList.get(i) + " matches " + TempListAfterSortReset.get(i));
+					log.debug(TempOriginalList.get(i) + " matches " + TempListAfterSortReset.get(i));
 				} else {
 					Assert.fail("Devices did not reset to the Original sort order after sort reset");
 				}
 
 			}
 
-			System.out.println(
+			log.debug(
 					"Assertion Success: Devices got resorted successfully to the Original Order after sort reset");
 			Screenshots.captureScreenshot();
 		} catch (AssertionError e) {
@@ -1046,39 +1046,39 @@ public class PhonesListingPageAction extends Environment {
 	/*
 	 * public static void checkExpDevAndDetails(String device, String color, String
 	 * capacity, String stockmessage) {
-	 * 
+	 *
 	 * int k = 0;
-	 * 
+	 *
 	 * List<WebElement> iPadDevicesName = driver .findElements(By.
 	 * xpath("//div[@class='multi-size-tile clearfix cube']//p[@class='details']"
 	 * ));
-	 * 
+	 *
 	 * for (int i = 0; i < iPadDevicesName.size(); i++) {
-	 * 
+	 *
 	 * if (iPadDevicesName.get(i).getText().equals(device)) { k = i + 1; String c =
 	 * "(//select[@id='colour'])[" + k + "]";
-	 * 
+	 *
 	 * WebElement colordropdown = driver.findElement(By.xpath(c));
 	 * JavascriptExecutor js = (JavascriptExecutor) driver;
 	 * js.executeScript("arguments[0].setAttribute('style', 'display:block;')",
 	 * colordropdown); if (colordropdown.isDisplayed()) { WebElement firstcolor =
 	 * new Select(colordropdown).getFirstSelectedOption(); if
 	 * (color.equals(firstcolor.getText())) {
-	 * System.out.println("Expected color selected :" + firstcolor.getText()); } }
-	 * 
+	 * log.debug("Expected color selected :" + firstcolor.getText()); } }
+	 *
 	 * String d = "(//select[@id='memory'])[" + k + "]";
-	 * 
+	 *
 	 * WebElement capacitydropdown = driver.findElement(By.xpath(d));
 	 * js.executeScript("arguments[0].setAttribute('style', 'display:block;')",
 	 * capacitydropdown); if (capacitydropdown.isDisplayed()) { WebElement
 	 * firstcapacity = new Select(capacitydropdown).getFirstSelectedOption(); if
 	 * (capacity.equals(firstcapacity.getText())) {
-	 * System.out.println("Expected capacity selected :" + firstcapacity.getText());
+	 * log.debug("Expected capacity selected :" + firstcapacity.getText());
 	 * } } String e = "(//p[@class='delivery-information ng-scope'])[" + k + "]";
 	 * WebElement stockmsg = driver.findElement(By.xpath(e));
-	 * System.out.println(stockmsg.getText()); if
+	 * log.debug(stockmsg.getText()); if
 	 * (stockmsg.getText().contains(stockmessage)) {
-	 * System.out.println("Expected stockmsg displayed :" + stockmsg.getText()); } }
+	 * log.debug("Expected stockmsg displayed :" + stockmsg.getText()); } }
 	 * } }
 	 */
 
@@ -1086,10 +1086,10 @@ public class PhonesListingPageAction extends Environment {
 			throws IOException, InterruptedException {
 		try {
 			log.debug("Entering verifyDeviceGetsDisplayedBasedOnOfferFilterApplied function");
-			System.out.println("Entering verifyDeviceGetsDisplayedBasedOnOfferApplied function");
+			log.debug("Entering verifyDeviceGetsDisplayedBasedOnOfferApplied function");
 
 			LinkedList<String> ListAfterFilter = getCurrentSortOrderUsingDeviceOffer(FilterOption);
-			System.out.println(ListAfterFilter);
+			log.debug(ListAfterFilter);
 
 			for (int i = 0; i < ListAfterFilter.size(); i++) {
 
@@ -1098,11 +1098,11 @@ public class PhonesListingPageAction extends Environment {
 
 			}
 
-			System.out.println("Assert Success:  Devices displayed are as per the Brand filter applied");
+			log.debug("Assert Success:  Devices displayed are as per the Brand filter applied");
 			Screenshots.captureScreenshot();
 
 		} catch (Exception e) {
-			System.out.println(
+			log.debug(
 					"Assertion Failed: Devices displayed are not as per the Brand filter applied" + e.getMessage());
 			Screenshots.captureScreenshot();
 		}
@@ -1112,7 +1112,7 @@ public class PhonesListingPageAction extends Environment {
 			throws InterruptedException, IOException {
 
 		log.debug("Opening function getCurrentSortOrderUsingDeviceOffer");
-		System.out.println("Opening function getCurrentSortOrderUsingDeviceOffer");
+		log.debug("Opening function getCurrentSortOrderUsingDeviceOffer");
 
 		Thread.sleep(10000);
 
@@ -1144,8 +1144,8 @@ public class PhonesListingPageAction extends Environment {
 				deviceoffercurrentorder.add(sTemp2);
 			}
 		}
-		System.out.println("Device Name List: " + devicenamecurrentorder);
-		System.out.println("Device Offer List: " + deviceoffercurrentorder);
+		log.debug("Device Name List: " + devicenamecurrentorder);
+		log.debug("Device Offer List: " + deviceoffercurrentorder);
 
 		for (int i = 0; i < devicenamecurrentorder.size(); i++) {
 			deviceCurrentOrder.add(devicenamecurrentorder.get(i) + deviceoffercurrentorder.get(i));
@@ -1156,7 +1156,7 @@ public class PhonesListingPageAction extends Environment {
 
 	public static void searchForDevice(String devicename) throws IOException, InterruptedException {
 		if (pageobjects.PhonesListingPage.SearchBox.isDisplayed()) {
-			System.out.println("Search box is displayed");
+			log.debug("Search box is displayed");
 			pageobjects.PhonesListingPage.SearchBox.sendKeys(devicename);
 			pageobjects.PhonesListingPage.SearchBox.sendKeys(Keys.RETURN);
 		} else {

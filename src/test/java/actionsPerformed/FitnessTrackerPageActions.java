@@ -16,30 +16,30 @@ public class FitnessTrackerPageActions extends Environment {
 	final static Logger log = Logger.getLogger("FitnessTrackerPageActions");
 
 	public static void Elementdisplayvalidation(String Tabname) throws IOException, InterruptedException {
-		System.out.println(" ");
+		log.debug(" ");
 
-		System.out.println("FitnessTracker_Page_Validation");
+		log.debug("FitnessTracker_Page_Validation");
 
 		if (Tabname != null) {
 			switch (Tabname.toLowerCase()) {
-			case "filter":
-				if (pageobjects.FitnessTrackerPage.FitnessFilterTab.isDisplayed()) {
-					System.out.println("The Filter Tab is Present on the FitnessPage and the Text is :"
-							+ pageobjects.FitnessTrackerPage.FitnessFilterTab.getText());
-				} else {
-					System.out.println("The  Filter Tab is not Present on the FitnessPage and the Text is :"
-							+ pageobjects.FitnessTrackerPage.FitnessFilterTab.getText());
-				}
-				break;
-			case "sort":
-				if (pageobjects.FitnessTrackerPage.FitnessSortTab.isDisplayed()) {
-					System.out.println("The Sort Tab is Present on the FitnessPage and the Text is :"
-							+ pageobjects.FitnessTrackerPage.FitnessSortTab.getText());
-				} else {
-					System.out.println("The  Sort  Tab is not Present on the FitnessPage and the Text is :"
-							+ pageobjects.FitnessTrackerPage.FitnessSortTab.getText());
-				}
-				break;
+				case "filter":
+					if (pageobjects.FitnessTrackerPage.FitnessFilterTab.isDisplayed()) {
+						log.debug("The Filter Tab is Present on the FitnessPage and the Text is :"
+								+ pageobjects.FitnessTrackerPage.FitnessFilterTab.getText());
+					} else {
+						log.debug("The  Filter Tab is not Present on the FitnessPage and the Text is :"
+								+ pageobjects.FitnessTrackerPage.FitnessFilterTab.getText());
+					}
+					break;
+				case "sort":
+					if (pageobjects.FitnessTrackerPage.FitnessSortTab.isDisplayed()) {
+						log.debug("The Sort Tab is Present on the FitnessPage and the Text is :"
+								+ pageobjects.FitnessTrackerPage.FitnessSortTab.getText());
+					} else {
+						log.debug("The  Sort  Tab is not Present on the FitnessPage and the Text is :"
+								+ pageobjects.FitnessTrackerPage.FitnessSortTab.getText());
+					}
+					break;
 
 			}
 
@@ -50,18 +50,18 @@ public class FitnessTrackerPageActions extends Environment {
 
 	public static void ElementClickAction(String elementname) throws IOException, InterruptedException {
 		// TODO Auto-generated method stub
-		System.out.println(" ");
+		log.debug(" ");
 
-		System.out.println("Fitness_Tracker_Page_Action");
+		log.debug("Fitness_Tracker_Page_Action");
 
 		if (elementname != null) {
 			switch (elementname.toLowerCase()) {
-			case "filter":
-				pageobjects.FitnessTrackerPage.FitnessFilterTab.click();
-				break;
-			case "sort":
-				pageobjects.FitnessTrackerPage.FitnessSortTab.click();
-				break;
+				case "filter":
+					pageobjects.FitnessTrackerPage.FitnessFilterTab.click();
+					break;
+				case "sort":
+					pageobjects.FitnessTrackerPage.FitnessSortTab.click();
+					break;
 
 			}
 
@@ -72,17 +72,22 @@ public class FitnessTrackerPageActions extends Environment {
 
 	public static void DeviceSelect(String elementName) throws InterruptedException, IOException {
 
-		if (elementName.contains("Random Device")) {
-			System.out.println("Random Fitness tracker Device Selected");
+		Thread.sleep(5000);
 
-			pageobjects.FitnessTrackerPage.RandomFitnesstracker.click();
+		if (elementName.contains("Random Device")) {
+			log.debug("Random Fitness tracker Device Selected");
+
+			//pageobjects.FitnessTrackerPage.RandomFitnesstracker.click();
+			WebElement element = pageobjects.FitnessTrackerPage.RandomFitnesstracker;
+			JavascriptExecutor executor = (JavascriptExecutor)driver;
+			executor.executeScript("arguments[0].click();", element);
 			Thread.sleep(5000);
 			// Assert.assertEquals(elementName,"Galaxy S7 is not found");
 			log.debug("Random Fitness tracker Device Selected");
 		}
 
 		if (elementName.contains("Fitbit Alta")) {
-			System.out.println("FitbitAlta Fitness tracker Device Selected");
+			log.debug("FitbitAlta Fitness tracker Device Selected");
 
 			pageobjects.FitnessTrackerPage.FitbitAlta.click();
 			Thread.sleep(5000);
@@ -91,7 +96,7 @@ public class FitnessTrackerPageActions extends Environment {
 		}
 
 		if (elementName.contains("Fitbit Charge 2")) {
-			System.out.println("FitbitCharge2 Fitness tracker Device Selected");
+			log.debug("FitbitCharge2 Fitness tracker Device Selected");
 
 			pageobjects.FitnessTrackerPage.FitbitCharge2.click();
 			Thread.sleep(5000);
@@ -100,7 +105,7 @@ public class FitnessTrackerPageActions extends Environment {
 		}
 
 		if (elementName.contains("Jawbone UP2")) {
-			System.out.println("Jawbone UP2 Device Selected");
+			log.debug("Jawbone UP2 Device Selected");
 
 			pageobjects.FitnessTrackerPage.JawboneUP2.click();
 			Thread.sleep(5000);
@@ -109,9 +114,12 @@ public class FitnessTrackerPageActions extends Environment {
 		}
 
 		if (elementName.contains("Fitbit Ionic")) {
-			System.out.println("Fitbit Ionic Device Selected");
+			log.debug("Selecting Fitbit Ionic Device");
 
-			pageobjects.FitnessTrackerPage.FitbitIonic.click();
+		//	pageobjects.FitnessTrackerPage.FitbitIonic.click();
+			WebElement element = pageobjects.FitnessTrackerPage.FitbitIonic;
+			JavascriptExecutor executor = (JavascriptExecutor)driver;
+			executor.executeScript("arguments[0].click();", element);
 			Thread.sleep(5000);
 			log.debug("Fitbit Ionic Fitness tracker Device Selected");
 		}
@@ -126,7 +134,7 @@ public class FitnessTrackerPageActions extends Environment {
 			Thread.sleep(5000);
 
 			String status = driver.findElement(By.className("status-info")).getText();
-			System.out.println(status);
+			log.debug(status);
 
 			if (status.contains("In Stock")) {
 				WebElement element = driver
@@ -138,7 +146,7 @@ public class FitnessTrackerPageActions extends Environment {
 				WebElement DeviceDetailsQuantity = driver.findElement(
 						By.xpath("//div[@on-dimension-select='selectQuantityDimension']/span[@role='combobox']"));
 				String DeviceDetailsQuantityValue = DeviceDetailsQuantity.getText();
-				System.out.println("DeviceDetailsQuantityValue is " + DeviceDetailsQuantityValue);
+				log.debug("DeviceDetailsQuantityValue is " + DeviceDetailsQuantityValue);
 
 				driver.findElement(By.id("deviceDetailsSubmit")).click();
 
@@ -155,7 +163,7 @@ public class FitnessTrackerPageActions extends Environment {
 			WebElement DeviceDetailsQuantity = driver.findElement(
 					By.xpath("//div[@on-dimension-select='selectQuantityDimension']/span[@role='combobox']"));
 			String DeviceDetailsQuantityValue = DeviceDetailsQuantity.getText();
-			System.out.println(DeviceDetailsQuantityValue);
+			log.debug(DeviceDetailsQuantityValue);
 			Assert.assertEquals("3", DeviceDetailsQuantityValue);
 
 			driver.findElement(By.id("deviceDetailsSubmit")).click();

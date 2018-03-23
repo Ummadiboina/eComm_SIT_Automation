@@ -1,363 +1,235 @@
-package actionsPerformed;
+package pageobjects;
 
-import java.util.Set;
-import java.util.concurrent.TimeUnit;
-
-import org.apache.log4j.Logger;
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.Select;
-import org.testng.Reporter;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.How;
 
-import GlobalActions.RandomEmailAddressCreation;
-import helpers.Environment;
-import pageobjects.Agent_RegisterCustomerPage;
+public class Agent_DealBuilderPage {
 
-public class Agent_RegisterCustomerActions extends Environment {
+    @FindBy(how = How.ID, using = "plansTab")
+    public static WebElement TariffsTab;
 
-	final static Logger log = Logger.getLogger("Agent_RegisterCustomerActions");
+    @FindBy(how = How.ID, using = "devicesTab")
+    public static WebElement DevicesTab;
 
-	public static void PayGRegistration(String Firstname, String Surname) throws InterruptedException {
-		try {
-			Select dropdown = new Select(pageobjects.Agent_RegisterCustomerPage.Title);
-			dropdown.selectByIndex(1);
-			log.debug("Selected the dropdown Mr");
-			Reporter.log("Selected the dropdown Mr");
+    @FindBy(how = How.ID, using = "extrasTab")
+    public static WebElement ExtrasTab;
 
-			Agent_RegisterCustomerPage.FirstName.sendKeys(Firstname);
-			log.debug("Entered First name");
-			Agent_RegisterCustomerPage.LastName.sendKeys(Surname);
-			log.debug("Entered Last name");
+    @FindBy(how = How.ID, using = "accessoriesTab")
+    public static WebElement AccessoriesTab;
 
-			Agent_RegisterCustomerPage.Email.clear();
-			Agent_RegisterCustomerPage.Email.sendKeys(RandomEmailAddressCreation.RandomEmail());
-			Agent_RegisterCustomerPage.DOB.sendKeys("10-10-1981");
-			log.debug("Entered date of birth");
-			Thread.sleep(2000);
-			Agent_RegisterCustomerPage.ContactNumber.sendKeys("07888594958");
-			log.debug("Entered contact number");
-			Thread.sleep(2000);
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.getMessage();
-		}
+    @FindBy(how = How.ID, using = "prepayDevicesTab")
+    public static WebElement prepayDevicesTab;
 
-		Agent_RegisterCustomerPage.intialPassword.sendKeys("SitTester123");
-		Agent_RegisterCustomerPage.confirmPassword.sendKeys("SitTester123");
-		Thread.sleep(2000);
+    @FindBy(how = How.ID, using = "prepayPlansTab")
+    public static WebElement prepayPlansTab;
 
-		try {
-			Agent_RegisterCustomerPage.HouseNumber.sendKeys("Flat 01");
-			Thread.sleep(2000);
-			Agent_RegisterCustomerPage.Postcode.sendKeys("SL1 1EL");
-			log.debug("Entered House Postcode  as SL1 1EL");
+    @FindBy(how = How.XPATH, using = ".//*[@id='prepayPlanTable']//th[contains(text(),'Cost')]")
+    public static WebElement payG_TariffCost_SortOption;
 
-			Thread.sleep(2000);
-			pageobjects.Agent_RegisterCustomerPage.FindAddress.click();
-			Thread.sleep(3000);
-			log.debug("Clicked on the Find address button");
+    @FindBy(how = How.ID, using = "checkStoreStock")
+    public static WebElement StoreCheck;
 
-			pageobjects.Agent_RegisterCustomerPage.Selectedaddress.click();
-			log.debug("Selected an address");
-		} catch (Exception e) {
-			e.getMessage();
-		}
+    @FindBy(how = How.ID, using = "startCheckoutFromPrivateBasketButton")
+    public static WebElement Checkout;
 
-		Select dropdown2 = new Select(pageobjects.Agent_RegisterCustomerPage.securityQuestion);
-		dropdown2.selectByIndex(2);
-		pageobjects.Agent_RegisterCustomerPage.securityAnswer.sendKeys("Rotary");
-		Thread.sleep(2000);
-		Agent_RegisterCustomerPage.registerCustomer.click();
-		Thread.sleep(3000);
-		log.debug("Clicked on Register customer");
-	}
+    @FindBy(how = How.ID, using = "dealBuilderContent")
+    public static WebElement dealBuilderContent;
 
+    @FindBy(how = How.XPATH, using = "//*[@id='deviceTable_filter']/label/input")
+    public static WebElement SearchTextBox_PayMDevice;
 
-	public static void PayGRegistration_new(String Firstname, String Surname, String houseNumber, String postCode) throws InterruptedException {
+    @FindBy(how = How.XPATH, using = "//*[@id='planTable_filter']/label/input")
+    public static WebElement SearchTextBox_Tariff;
 
-		Thread.sleep(2000);
-		Agent_RegisterCustomerPage.intialPassword.sendKeys("SitTester123");
-		Agent_RegisterCustomerPage.confirmPassword.sendKeys("SitTester123");
-		Thread.sleep(2000);
-		Select dropdown2 = new Select(pageobjects.Agent_RegisterCustomerPage.securityQuestion);
-		dropdown2.selectByIndex(2);
-		pageobjects.Agent_RegisterCustomerPage.securityAnswer.sendKeys("Rotary");
-		Thread.sleep(2000);
-		Agent_RegisterCustomerPage.registerCustomer.click();
-		Thread.sleep(3000);
-		log.debug("Clicked on Register customer");
-	}
+    @FindBy(how = How.XPATH, using = "//*[@id='accessoryTable_filter']/label/input")
+    public static WebElement SearchTextBox_Accessories;
 
-	public static void PayGRegistration(String Firstname, String Surname, String HouseNumber, String PostCode)
-			throws InterruptedException {
-		try {
-			Select dropdown = new Select(pageobjects.Agent_RegisterCustomerPage.Title);
-			dropdown.selectByIndex(1);
-			log.debug("Selected the dropdown Mr");
-			Reporter.log("Selected the dropdown Mr");
-			Thread.sleep(5000);
-			Agent_RegisterCustomerPage.FirstName.sendKeys(Firstname);
-			log.debug("Entered First name");
-			Agent_RegisterCustomerPage.LastName.sendKeys(Surname);
-			log.debug("Entered Last name");
+    @FindBy(how = How.XPATH, using = "//*[@id='prepayDeviceTable_filter']/label/input")
+    public static WebElement SearchTextBox_PrepayDevice;
 
-			Agent_RegisterCustomerPage.Email.clear();
-			Agent_RegisterCustomerPage.Email.sendKeys(RandomEmailAddressCreation.RandomEmail());
-			Agent_RegisterCustomerPage.DOB.sendKeys("10-10-1981");
-			log.debug("Entered date of birth");
-			Thread.sleep(2000);
-			Agent_RegisterCustomerPage.ContactNumber.sendKeys("07888594958");
-			log.debug("Entered contact number");
-			Thread.sleep(2000);
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.getMessage();
-		}
+    @FindBy(how = How.XPATH, using = "//table[@id='deviceTable']/tbody/tr/td/a/img")
+    public static WebElement SelectInStockPAYMDevice;
 
-		Agent_RegisterCustomerPage.intialPassword.sendKeys("SitTester123");
-		Agent_RegisterCustomerPage.confirmPassword.sendKeys("SitTester123");
-		Thread.sleep(2000);
+    @FindBy(how = How.XPATH, using = "//*[@id='planTable']/tbody/tr[1]/td[1]")
+    public static WebElement SelectingFirstAvailableTariff;
 
-		try {
-			Agent_RegisterCustomerPage.HouseNumber.sendKeys(HouseNumber);
-			Thread.sleep(2000);
-			Agent_RegisterCustomerPage.Postcode.sendKeys(PostCode);
-			log.debug("Entered House Postcode  as: " + PostCode);
+    @FindBy(how = How.XPATH, using = "//*[@id='prepayPlanTable']/tbody/tr[1]/td[1]")
+    public static WebElement SelectingFirstAvailablePrePayTariff;
 
-			Thread.sleep(2000);
-			pageobjects.Agent_RegisterCustomerPage.FindAddress.click();
-			Thread.sleep(3000);
-			log.debug("Clicked on the Find address button");
+    @FindBy(how = How.XPATH, using = "//table[@id='prepayDeviceTable']/tbody/tr/td/a/img")
+    public static WebElement SelectInStockPAYGDevice;
 
-			pageobjects.Agent_RegisterCustomerPage.Selectedaddress.click();
-			log.debug("Selected an address");
-		} catch (Exception e) {
-			e.getMessage();
-			log.debug("Try catch block exception in Agent register cutomer actions page, nothing to worry :)");
-		}
+    @FindBy(how = How.XPATH, using = "(//table[@id='accessoryTable']/tbody/tr/td/a/img)[1]")
+    public static WebElement SelectSearchedaccessory;
 
-		Select dropdown2 = new Select(pageobjects.Agent_RegisterCustomerPage.securityQuestion);
-		dropdown2.selectByIndex(2);
-		pageobjects.Agent_RegisterCustomerPage.securityAnswer.sendKeys("Rotary");
-		Thread.sleep(2000);
-		//Agent_RegisterCustomerPage.registerCustomer.click();
-		WebElement element = pageobjects.Agent_RegisterCustomerPage.registerCustomer;
-		JavascriptExecutor executor = (JavascriptExecutor) driver;
-		executor.executeScript("arguments[0].click();", element);
+    @FindBy(how = How.XPATH, using = "//*[@id='dataAllowances']/table/tbody/tr/td[1]/a")
+    public static WebElement SelectingAvailableDataAllowance;
 
-		Thread.sleep(6000);
-		log.debug("Clicked on Register customer");
-		log.debug("Clicked on Register customer");
-	}
+    @FindBy(how = How.XPATH, using = "//a[contains(text(),'Email Basket')]")
+    public static WebElement eMailBasket;
 
-	public static void PaybyCard() throws InterruptedException {
-		String OneOff = Agent_RegisterCustomerPage.ZeroOneOff.getText();
-		log.debug(OneOff);
-		if (OneOff.contains("£0.00")) {
-			Agent_RegisterCustomerPage.SubmitBtn.click();
-		} else {
+    @FindBy(how = How.ID, using = "sendBasketEmailAddress")
+    public static WebElement sendBasketEmailAddress;
 
-			driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-			Thread.sleep(5000);
-			log.debug("Pay by card button is enabled ");
-			Agent_RegisterCustomerPage.PayByCard.click();
-			log.debug("Clicked on pay by card ");
+    @FindBy(how = How.XPATH, using = "//input[@value='Send']")
+    public static WebElement sendBasketPopupSubmit;
 
-		}
-		Thread.sleep(2000);
-	}
+    @FindBy(how = How.XPATH, using = "//*[@id='prepayDeviceTable']/tbody/tr/td[4]")
+    public static WebElement Instock;
 
-	public static void CardDetails_PayM() throws InterruptedException {
-		Thread.sleep(2000);
-		log.debug("Mipay bit : ");
-		//driver.findElements(By.xpath("//label[contains(text(),'Card ending with:')]")).size();
-		if (driver.findElements(By.xpath("//label[contains(text(),'Card ending with:')]")).size() > 0) {
-			String PaybyCardCVV2 = Agent_RegisterCustomerPage.PayByCard_2.getText();
-			Thread.sleep(2000);
-			//if (PaybyCardCVV2.contains("Card ending with:")) {
-			System.out.print("The text is :" + PaybyCardCVV2);
-			Agent_RegisterCustomerPage.SecurityCode.sendKeys("123");
-			log.debug("Security card is entered as 123");
-			Agent_RegisterCustomerPage.UsethisCard.click();
-			log.debug("The Pay Now button is clicked");
-			log.debug("completed  Mypay bit");
-			Thread.sleep(6000);
-			//}
-		} else {
-			Agent_RegisterCustomerPage.CardHolderName.sendKeys("TEST ACCEPTA");
-			log.debug("Card holder name ");
-			Select CardTypeDropDown = new Select(pageobjects.Agent_RegisterCustomerPage.CardType);
-			CardTypeDropDown.selectByIndex(3);
-			Agent_RegisterCustomerPage.CardNumber.sendKeys("4539791001730106");
-			Thread.sleep(2000);
-			Select CardMonthDropdown = new Select(pageobjects.Agent_RegisterCustomerPage.CardMonth);
-			CardMonthDropdown.selectByIndex(2);
-			Thread.sleep(2000);
-			Select CardYearDropdown = new Select(pageobjects.Agent_RegisterCustomerPage.CardYear);
-			CardYearDropdown.selectByIndex(3);
-			Thread.sleep(2000);
-			Agent_RegisterCustomerPage.SecurityCode.sendKeys("123");
-			Thread.sleep(2000);
-			Agent_RegisterCustomerPage.UsethisCard.click();
-			log.debug("completed  Mypay bit");
-			Thread.sleep(6000);
-		}
+    @FindBy(how = How.XPATH, using = "//*[@class='priceSelection']/select")
+    public static WebElement HandsetTariffCombination;
 
-	}
+    @FindBy(how = How.XPATH, using = "//*[@id=\"emptyDealButton\"]")
+    public static WebElement Emptyabove;
 
-	public static void CardDetails() throws InterruptedException {
-		Thread.sleep(7000);
+    @FindBy(how = How.XPATH, using = "//*[@id='buy-09c627bc-5e88-4d5d-a46d-4ad2e0b3dc22']/img ")
+    public static WebElement SelectPromotion;
 
-		if (driver.findElements(By.xpath("CardHolderName")).size() >= 1) {
-			Agent_RegisterCustomerPage.CardHolderName.sendKeys("TEST ACCEPTA");
-			System.out.println("Card holder name ");
-			Select CardTypeDropDown = new Select(pageobjects.Agent_RegisterCustomerPage.CardType);
-			CardTypeDropDown.selectByIndex(3);
-			Agent_RegisterCustomerPage.CardNumber.sendKeys("4539791001730106");
-			Thread.sleep(2000);
-			Select CardMonthDropdown = new Select(pageobjects.Agent_RegisterCustomerPage.CardMonth);
-			CardMonthDropdown.selectByIndex(2);
-			Thread.sleep(2000);
-			Select CardYearDropdown = new Select(pageobjects.Agent_RegisterCustomerPage.CardYear);
-			CardYearDropdown.selectByIndex(3);
-			Thread.sleep(8000);
-			System.out.println("Going to validate pay by card page displayed from mipay");
-			Agent_RegisterCustomerPage.SecurityCode.sendKeys("123");
-			Thread.sleep(2000);
-			Agent_RegisterCustomerPage.UsethisCard.click();
-		} else {
-			Thread.sleep(8000);
-			System.out.println("Going to validate pay by card page displayed from mipay");
-			Agent_RegisterCustomerPage.SecurityCode.sendKeys("123");
-			Thread.sleep(2000);
-			Agent_RegisterCustomerPage.UsethisCard.click();
-		}
-	}
-	
+    @FindBy(how = How.XPATH, using = "//*[@id=\"saveToBasketButton\"]")
+    public static WebElement Copytobasket;
 
-	public static void RegisterCustomer(String Password, String Confirm_Password, String Security_Answer)
-			throws InterruptedException {
+    @FindBy(how = How.XPATH, using = "//*[@class='priceSelection']/select/option[4]")
+    public static WebElement Copytobasket_opt3;
 
-		Thread.sleep(15000);
+    @FindBy(how = How.XPATH, using = "//*[@id=\"packageTabs\"]/li[2]/a")
+    public static WebElement PlusButton;
 
-		Agent_RegisterCustomerPage.Password.sendKeys(Password);
-		log.debug("Entered Password");
-		Thread.sleep(2000);
-		Agent_RegisterCustomerPage.Confirm_Password.sendKeys(Confirm_Password);
-		log.debug("Entered Confirm Password");
-		Thread.sleep(2000);
-		Select dropdown2 = new Select(pageobjects.Agent_RegisterCustomerPage.securityQuestion);
-		dropdown2.selectByIndex(1);
-		log.debug("Selected the security question");
+    ///////////////////////////// Basecomms//////////////////////////////
 
-		Agent_RegisterCustomerPage.Security_Answer.sendKeys(Security_Answer);
-		log.debug("Entered Security Answer");
+    // *[@id="buy-4a05eacb-a057-40fc-9ada-8b8c59c43c4e"]/img
 
-		Agent_RegisterCustomerPage.Check_box.click();
-		log.debug("Selected the TC checkbox");
+    @FindBy(how = How.XPATH, using = "//*[@class='priceSelection']/select")
+    public static WebElement basecommstariff;
 
-		Agent_RegisterCustomerPage.registerCustomer.click();
-		Thread.sleep(6000);
-		log.debug("Clicked on Register customer");
-		log.debug("Clicked on Register customer");
+    @FindBy(how = How.XPATH, using = "html/body/div[1]/div/div[2]/div[1]/table/tbody/tr[1]/td[1]/a/img")
+    public static WebElement firstAvailableDevice;
 
-	}
+    @FindBy(how = How.XPATH, using = "//input[@type='checkbox']")
+    public static WebElement ChooseBasketToSend;
 
-	public static void provideDrivingLicence() throws InterruptedException {
+    @FindBy(how = How.XPATH, using = "//*[@class='emailBasketMessage']")
+    public static WebElement emailConfirmation;
 
-		if (driver.findElements(By.id("additionalCardDetailsCheckbox")).size() > 0) {
-			((JavascriptExecutor) driver).executeScript("arguments[0].click();", Agent_RegisterCustomerPage.additionalCardDetailsCheckbox);
-			Thread.sleep(5000);
-			((JavascriptExecutor) driver).executeScript("arguments[0].click();", Agent_RegisterCustomerPage.additionalCaptureCardDetails);
-			Thread.sleep(15000);
+    @FindBy(how = How.XPATH, using = "//*[@id='deviceTable_filter']/label/input")
+    public static WebElement DeviceSearchFilter;
 
-			try {
-				String mainWindowHandle = driver.getWindowHandle ();
-				Set<String> openWindowSize = driver.getWindowHandles ();
-				log.debug(openWindowSize.size() + " windows are opend");
-				//Switch to child window and close it
-				for (String childWindowHandle : driver.getWindowHandles ()) {
-					//If window handle is not main window handle then close it
-					if (!childWindowHandle.equals (mainWindowHandle)) {
-						driver.switchTo ().window (childWindowHandle);
-						// Close child windows
-						// driver.close();
-					} else {
-						//switch back to main window
-						driver.switchTo ().window (mainWindowHandle);
-						log.debug ("Switched window");
-					}
-				}
-			} catch (Exception e){
-				log.debug ("Failed to switch to window :: " + e.getStackTrace ());
+    @FindBy(how = How.XPATH, using = "//div[@id='deviceTable_filter']/label/input")
+    public static WebElement SearchDevice;
 
-			}
+    ///////////////////////////// Trade In////////////////////////
 
-			Agent_RegisterCustomerPage.CardHolderName.sendKeys("TEST ACCEPTA");
-			log.debug("Card holder name ");
-			Select CardTypeDropDown = new Select(pageobjects.Agent_RegisterCustomerPage.CardType);
-			CardTypeDropDown.selectByIndex(3);
-			Agent_RegisterCustomerPage.CardNumber.sendKeys("4539791001730106");
-			Thread.sleep(2000);
-			Select CardMonthDropdown = new Select(pageobjects.Agent_RegisterCustomerPage.CardMonth);
-			CardMonthDropdown.selectByIndex(2);
-			Thread.sleep(2000);
-			Select CardYearDropdown = new Select(pageobjects.Agent_RegisterCustomerPage.CardYear);
-			CardYearDropdown.selectByIndex(3);
-			Thread.sleep(2000);
-			Agent_RegisterCustomerPage.SecurityCode.sendKeys("123");
-			Thread.sleep(2000);
-			Agent_RegisterCustomerPage.UsethisCard.click();
-			log.debug("completed  Mypay bit");
-			Thread.sleep(6000);
+    @FindBy(how = How.ID, using = "tradeInButton")
+    public static WebElement AgentTradeInBtn;
 
-			try {
-				String mainWindowHandle = driver.getWindowHandle ();
-				Set<String> openWindowSize = driver.getWindowHandles ();
-				log.debug(openWindowSize.size() + " windows are opend");
-				//Switch to child window and close it
-				for (String childWindowHandle : driver.getWindowHandles ()) {
-					//If window handle is not main window handle then close it
-					if (!childWindowHandle.equals (mainWindowHandle)) {
-						driver.switchTo ().window (childWindowHandle);
-						// Close child windows
-						// driver.close();
-					} else {
-						//switch back to main window
-						driver.switchTo ().window (mainWindowHandle);
-						log.debug ("Switched window");
-					}
-				}
-			} catch (Exception e){
-				log.debug ("Failed to switch to window :: " + e.getStackTrace ());
+    @FindBy(how = How.ID, using = "select_answers_1")
+    public static WebElement AgentTradeAns1;
 
-			}
+    @FindBy(how = How.ID, using = "select_answers_2")
+    public static WebElement AgentTradeAns2;
 
-			((JavascriptExecutor) driver).executeScript("arguments[0].click();", Agent_RegisterCustomerPage.licenceDetailsCheckbox);
-			Agent_RegisterCustomerPage.licencePostCode.sendKeys("SL14Dx");
-			Agent_RegisterCustomerPage.licenceNumberSeg1.sendKeys("HOMES");
-			Agent_RegisterCustomerPage.licenceNumberSeg2.sendKeys("901550");
-			Agent_RegisterCustomerPage.licenceNumberSeg3.sendKeys("NDB");
-			Agent_RegisterCustomerPage.licenceNumberSeg4.sendKeys("23");
-			Thread.sleep(3000);
+    @FindBy(how = How.ID, using = "select_answers_3")
+    public static WebElement AgentTradeAns3;
 
-			((JavascriptExecutor) driver).executeScript("arguments[0].click();", Agent_RegisterCustomerPage.passportDetailsCheckbox);
-			Thread.sleep(3000);
-			Agent_RegisterCustomerPage.passportIssueCountry.sendKeys("RTY");
-			Agent_RegisterCustomerPage.passportNumberSeg1.sendKeys("9865632131");
-			Agent_RegisterCustomerPage.passportNumberSeg2.sendKeys("RTY");
-			Agent_RegisterCustomerPage.passportNumberSeg3.sendKeys("9912301");
-			Agent_RegisterCustomerPage.passportNumberSeg4.sendKeys("M");
-			Agent_RegisterCustomerPage.passportNumberSeg5.sendKeys("2011089");
-			Agent_RegisterCustomerPage.passportNumberSeg6.sendKeys("12345678965441");
-			Agent_RegisterCustomerPage.passportNumberSeg7.sendKeys("09");
-			Thread.sleep(1000);
-			((JavascriptExecutor) driver).executeScript("arguments[0].click();", Agent_RegisterCustomerPage.performCredidCheckBtn);
-			log.debug("Filled the driving lisences and passport details and clicked on the perfrom credit check button");
+    @FindBy(how = How.ID, using = "select_answers_4")
+    public static WebElement AgentTradeAns4;
 
-		}
-	}
+    @FindBy(how = How.ID, using = "questions")
+    public static WebElement TradeInQuestions;
+
+    @FindBy(how = How.XPATH, using = "//*[@id='select_answers_1']/option[@value='Success']")
+    public static WebElement AgentTradeAnsSelect1;
+
+    @FindBy(how = How.XPATH, using = "//*[@id='select_answers_2']/option[@value='Success']")
+    public static WebElement AgentTradeAnsSelect2;
+
+    @FindBy(how = How.XPATH, using = "//*[@id='select_answers_3']/option[@value='Success']")
+    public static WebElement AgentTradeAnsSelect3;
+
+    @FindBy(how = How.XPATH, using = "//*[@id='select_answers_4']/option[@value='Success']")
+    public static WebElement AgentTradeAnsSelect4;
+
+    @FindBy(how = How.ID, using = "okButton")
+    public static WebElement AgentTradeAccept;
+
+    @FindBy(how = How.XPATH, using = "//*[@id='TRADEIN_']/td[1]/p[3]/label")
+    public static WebElement TradeInCheckboxText;
+
+    @FindBy(how = How.XPATH, using = "//*[@id='dealBuilderContent']/div[@class='basketContents']/div[@class='lineItemContainer']/table[@class='lineItemTable discounts']/tbody/tr[@id='TRADEIN_']/td[@class='lineItemDescription']/p[3]/input[@id='tradeInHomeDeliveryCheckbox']")
+    public static WebElement TradeInCheckBox;
+
+    // input[@name='tradeInHomeDeliveryAllowed']
+
+    // *[@id='dealBuilderContent']/div[@class='basketContents']/div[@class='lineItemContainer']/table[@class='lineItemTable
+    // discounts']/tbody/tr[@id='TRADEIN_']/td[@class='lineItemDescription']/p[3]/input[@id='tradeInHomeDeliveryCheckbox']
+
+    ///////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////// Agent_BuyOut///////////////////////////////
+    //////////////////////////////////////////////////////////////////////////////
+
+    @FindBy(how = How.XPATH, using = "//*[@id='buyOutButton']")
+    public static WebElement AgentBuyOut_Button;
+    @FindBy(how = How.ID, using = "checkStoreStock")
+    public static WebElement CheckStore;
+
+    @FindBy(how = How.ID, using = "postcode")
+    public static WebElement Postcode;
+
+    @FindBy(how = How.ID, using = "findStores")
+    public static WebElement searchStore;
+
+    @FindBy(how = How.XPATH, using = "(//*[@class='selectStore'])[1]")
+    public static WebElement selectStore;
+
+    @FindBy(how = How.ID, using = "chosen-store-details")
+    public static WebElement Storedetails;
+
+    //check the device weather added into the Deal Builder
+    @FindBy(how = How.XPATH, using = "//table[@class='lineItemTable device']//th")
+    public static WebElement deviceAdded_DealBuilder;
+
+    //check the Tariff weather added into the Deal Builder
+    @FindBy(how = How.XPATH, using = "//table[@class='lineItemTable tariff']//th")
+    public static WebElement tariffAdded_DealBuilder;
+
+/* venkata ********************
+   ***********************************************/
+
+    //target promotions tab
+    @FindBy(how = How.XPATH, using = "//a[@id='targetedPromotionsTab']")
+    public static WebElement targetPromtionsTab;
+
+    //target promotions tab
+    @FindBy(how = How.XPATH, using = "//*[normalize-space(.)='Promotion Description']")
+    public static WebElement promotionDescription;
+
+    //deviceTab
+    @FindBy(how = How.XPATH, using = "//a[@id='devicesTab']")
+    public static WebElement deviceTab;
+
+    //remove the added device from deal builder
+    @FindBy(how = How.XPATH, using = "//table[@class='lineItemTable device']//a[@class='removeItem']")
+    public static WebElement removeDevice_DealBuilder;
+
+    //check check weather the promotions are displayed in Deal builder or not
+    @FindBy(how = How.XPATH, using = "//table[@class='lineItemTable Promotions']")
+    public static WebElement promotions_DealBuilder;
+
+    //select the second device from stock
+    @FindBy(how = How.XPATH, using = "//table[@id='deviceTable']//th[normalize-space(.)='Stock']//..//..//../tbody//tr[2]/td[1]/a")
+    public static WebElement selectDevive2_formInstock;
+
+    //selecting smartTech device Tab
+    @FindBy(how = How.ID, using = "smartTechDevicesTab")
+    public static WebElement SmartTechDevicesTab;
+
+    @FindBy(how = How.XPATH, using = "//*[@id='smartTechDeviceTable_filter']/label/input")
+    public static WebElement SearchTextBox_SmartTechDevice;
+
+    @FindBy(how = How.XPATH, using = "(//table[@id='smartTechDeviceTable']/tbody/tr/td/a/img)[1]")
+    public static WebElement SelectSearchedSmartTechDevice;
+
 
 
 

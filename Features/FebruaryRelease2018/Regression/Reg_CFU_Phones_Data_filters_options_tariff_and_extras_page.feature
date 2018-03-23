@@ -10,8 +10,8 @@ Feature: Reg_CFU_Phones_Data_filters_options_tariff_and_extras_page
     And Signin using valid <username> and <password> credentials
     And Navigate to upgrade > upgrade now
     Then Verify that in the recycle value is displayed in the Recycle panel
-    And Select <Make>, <Model> and <Network>
-    And perform update device
+    #And Select <Make>, <Model> and <Network>
+    #And perform update device
     Then Select any one recycle option and click on 'Continue to Upgrade'
     And Select a <handset> device from Recommended devices section
     And Click on View all Tariffs link in upgrade options page
@@ -26,5 +26,5 @@ Feature: Reg_CFU_Phones_Data_filters_options_tariff_and_extras_page
     Then I should see tariffs based on the selected sort option <sortoption>
 
     Examples:
-      | username      | password | handset           | filtername | sortoption                 | Make  | Model   | Network |
-      | me@paper.com  | test123  | Samsung Galaxy S8 | medium     | Monthly data (Low to High) | Apple | Iphone7 | Orange  |
+      | username    | password | handset           | filtername | sortoption                 | Make  | Model   | Network |
+      | ini_jan6238 | test123  | Samsung Galaxy S8 | medium     | Monthly data (Low to High) | Apple | Iphone7 | Orange  |

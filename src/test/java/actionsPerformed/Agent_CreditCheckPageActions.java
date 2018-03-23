@@ -77,7 +77,7 @@ public class Agent_CreditCheckPageActions extends Environment {
 		/*WebElement ele = driver.findElement(By.xpath("/*//*[@id='regTitle'] or //[@id='ccTitle']"));
 		Select sel = new Select(ele);*/
 		//sel.selectByVisibleText("Mr");
-		//System.out.println("Select a Gender");
+		//log.debug("Select a Gender");
 		dropdown.selectByIndex(1);
 		log.debug("Selected the dropdown Mr");
 		Reporter.log("Selected the dropdown Mr");
@@ -143,7 +143,7 @@ public class Agent_CreditCheckPageActions extends Environment {
 		Thread.sleep(2000);
 		Agent_CreditCheckDetailsPage.ContactNumber.sendKeys("07123456789");
 		/*if(Agent_CreditCheckDetailsPage.Contact_errorAgent.isDisplayed()){
-			System.out.println("Not accepting mobile number without 0 in the begining");
+			log.debug("Not accepting mobile number without 0 in the begining");
 		}
 		else{
 			org.testng.Assert.fail("Mobile number without 0 accepted");
@@ -151,7 +151,7 @@ public class Agent_CreditCheckPageActions extends Environment {
 		Agent_CreditCheckDetailsPage.ContactNumber.clear();
 		Agent_CreditCheckDetailsPage.ContactNumber.sendKeys("1234567890");
 		log.debug("Entered contact number")*/
-        Thread.sleep(2000);
+		Thread.sleep(2000);
 		try {
 			Agent_CreditCheckDetailsPage.HouseNumber.sendKeys(HouseNumber);
 			Thread.sleep(2000);

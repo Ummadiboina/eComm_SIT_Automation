@@ -20,7 +20,7 @@ public class Agent_AdvisoryChecksActions extends Environment {
 
 	public static void AgreeAdvsioryCheck() throws InterruptedException {
 
-		System.out.println("Going to Click on Advisory checks");
+		log.debug("Going to Click on Advisory checks");
 		Thread.sleep(4000);
 
 		//Agent_AdvisoryPage.AgreeAdvsioryCheckYes.click();
@@ -28,7 +28,7 @@ public class Agent_AdvisoryChecksActions extends Environment {
 		JavascriptExecutor executor = (JavascriptExecutor) driver;
 		executor.executeScript("arguments[0].click();", element);
 		log.debug("Clicked on Advisory checks");
-		System.out.println("Clicked on Advisory checks");
+		log.debug("Clicked on Advisory checks");
 		Thread.sleep(3000);
 		//Screenshots.captureScreenshot();
 	}

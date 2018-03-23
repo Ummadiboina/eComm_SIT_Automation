@@ -29,7 +29,7 @@ public class OrderSummarySectionActions extends Environment {
 		String ActStockExtMsg = pageobjects.OrderSummarySection.StockExtMessage.getText();
 
 		if (ActStockExtMsg.matches(ExpStockExtMsg)) {
-			System.out.println("ActStockExtMsg contains ExpStockExtMsg");
+			log.debug("ActStockExtMsg contains ExpStockExtMsg");
 		} else {
 			Assert.fail("Stock Extended Message does not match");
 		}
@@ -39,7 +39,7 @@ public class OrderSummarySectionActions extends Environment {
 	public static void checkStockExtMessageDelText() throws IOException, InterruptedException {
 		String ExpStockExtMsgDelText = "We will deliver the rest of your order as soon as possible.";
 		if (pageobjects.OrderSummarySection.StockExtMessageDelText.getText().matches(ExpStockExtMsgDelText)) {
-			System.out.println("Delivery Text in Order Summary is present");
+			log.debug("Delivery Text in Order Summary is present");
 		} else {
 			Assert.fail("Delivery Text in Order Summary is not present");
 		}

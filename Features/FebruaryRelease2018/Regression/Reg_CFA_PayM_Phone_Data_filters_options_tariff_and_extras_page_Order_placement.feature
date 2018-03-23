@@ -32,4 +32,4 @@ Feature: Reg_CFA_PayM_Phone_Data_filters_options_tariff_and_extras_page_Order_pl
     Examples:
       | handset           | Firstname | Surname | Username     | filtername | sortoption                 |
       | Samsung Galaxy S8 | TEST      | ACCEPTA | TEST ACCEPTA | low        | Monthly data (High to low) |
-   #   | Apple iPhone 7    | TEST      | ACCEPTA | TEST ACCEPTA | high       |
+
