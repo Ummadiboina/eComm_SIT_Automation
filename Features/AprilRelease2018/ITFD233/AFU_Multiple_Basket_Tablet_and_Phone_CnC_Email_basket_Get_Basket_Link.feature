@@ -4,7 +4,7 @@ Feature: AFU_Multiple_Basket_Tablet_and_Phone_CnC_Email_basket_Get_Basket_Link
 Scenario Outline: AFU_Multiple_Basket_Tablet_and_Phone_CnC_Email_basket_Get_Basket_Link
   Given I login to Agent shop
   And performs Upgrade for <user>
-  #And verify 'Email Basket' link is displayed next to the Search CTA in deal builder section
+  And verify 'Email Basket' link is displayed next to the Search CTA in deal builder section
   And Select a valid PayM <Device1>
   And Select valid <Tariffs1> from tariffs tab
   And Click on 'Plus' accordion at the top of deal builder
@@ -13,7 +13,7 @@ Scenario Outline: AFU_Multiple_Basket_Tablet_and_Phone_CnC_Email_basket_Get_Bask
   And Select a valid store using <PostCode> for Click and Collect
   And get the list of Selected devices
   And click on 'Email Basket' link
-  #And verify user switched to Email Basket pop up window
+  And verify user switched to Email Basket pop up window
   And verify 'Get basket link' is displayed next to selected device in the Email Basket pop up window
   And click on 'Get Basket link' CTA
   And verify Basket link and 'Copy to Clipboard' CTA are enabled
