@@ -1503,7 +1503,7 @@ public class E2EOrderPlaced_Steps {
      * ###################
      */
 
-    @Given("^Continue to Agreements page and confirm all the agreement checks$")
+    /*@Given("^Continue to Agreements page and confirm all the agreement checks$")
     public void AgreementsPageConfirmation() {
         try {
             // Write code here that turns the phrase above into concrete actions
@@ -1532,7 +1532,7 @@ public class E2EOrderPlaced_Steps {
                     "Agreements page is not displayed or unable to enter some information in thie page, Please review the screenshots for failure");
 
         }
-    }
+    }*/
 
     @And("^Continue to CCA or Buyout or Trade In Agreements page and confirm all the agreement checks$")
     public void continue_to_CCA_or_Buyout_or_Trade_In_Agreements_page_and_confirm_all_the_agreement_checks() {
@@ -1931,7 +1931,7 @@ public class E2EOrderPlaced_Steps {
 April2018
  */
     @And("^verify 'Email Basket' link is displayed next to the Search CTA in deal builder section$")
-    public void verify_Email_Basket_link_is_displayed_next_to_the_Search_CTA_in_deal_builder_section() throws Throwable {
+    public void verify_Email_Basket_link_is_displayed_next_to_the_Search_CTA_in_deal_builder_section() {
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         try {
             PageFactory.initElements(driver, Agent_DealBuilderPage.class);
@@ -1943,7 +1943,7 @@ April2018
         }
     }
     @And("^click on '\\+' accordion at the top of deal builder$")
-    public void click_on_accordion_at_the_top_of_deal_builder() throws Throwable {
+    public void click_on_accordion_at_the_top_of_deal_builder() {
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         try {
             PageFactory.initElements(driver, Agent_DealBuilderPage.class);
@@ -1956,7 +1956,7 @@ April2018
         }
     }
     @And("^verify user switched to Email Basket pop up window$")
-    public void verify_user_switched_to_Email_Basket_pop_up_window() throws Throwable {
+    public void verify_user_switched_to_Email_Basket_pop_up_window() {
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         try {
             PageFactory.initElements(driver, Agent_DealBuilderPage.class);
@@ -9118,7 +9118,7 @@ April2018
         } catch (Exception e) {
             // TODO Auto-generated catch block
             System.out.println("Unable to get list of selected devices");
-            junit.framework.Assert.fail("Unable to get list of selected devices, please see the failure screenshot");
+            Assert.fail("Unable to get list of selected devices, please see the failure screenshot");
         }
     }
 
@@ -9134,14 +9134,18 @@ April2018
     }
 //venkat april release
 
-    @And("^verify 'Copy to Clipboard' CTA is displayed next to the basket link for the first deal$")
-    public void verify_CopyToClipboard_And_ClikOnLink() throws InterruptedException {
-
-        driver.findElement(By.xpath("//a[@class='addPackage']/img")).click();
-
-        Thread.sleep(5000);
-
-
+    @And("^verify Basket link and 'Copy to Clipboard' CTA are enabled Click on 'Copy to Clipboard' button$")
+    public void verify_CopyToClipboard_And_ClikOnLink() {
+        try {
+            driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, Agent_DealBuilderPage.class);
+            Agent_DealBuilderPageActions.verifyDevive_and_CopyClipboard_Btn();
+            Thread.sleep(5000);
+        } catch (InterruptedException e) {
+            System.out.println("Failed to verify Basket link and 'Copy to Clipboard' CTA are enabled Click on 'Copy to Clipboard' button");
+            Assert.fail("Failed to verify Basket link and 'Copy to Clipboard' CTA are enabled Click on 'Copy to Clipboard' button");
+            e.printStackTrace();
+        }
     }
 
 
