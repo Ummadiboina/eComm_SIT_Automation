@@ -16,7 +16,7 @@ public class AgentCCAEmailAddress extends Environment {
 
 		log.debug("Entering the CCA email for Acquisition customers");
 
-		System.out.println("Going to update the CFA CCA email");
+		log.debug("Going to update the CFA CCA email");
 		Thread.sleep(4000);
 		Agent_UpdateCCAEmailPage.CCAEmailID.clear();
 		Agent_UpdateCCAEmailPage.CCAEmailID.sendKeys(emailid);
@@ -24,7 +24,7 @@ public class AgentCCAEmailAddress extends Environment {
 		Thread.sleep(3000);
 
 		if (Agent_UpdateCCAEmailPage.ProceedwitheMailYes.isDisplayed()) {
-			System.out.println("The Yes button to proceed with CCA is displayed");
+			log.debug("The Yes button to proceed with CCA is displayed");
 			Agent_UpdateCCAEmailPage.ProceedwitheMailYes.click();
 		}
 		Screenshots.captureScreenshot();

@@ -22,5 +22,5 @@ Feature: Reg_Jan_AgentShopToAcceptApostrophe
       # And Update Device Plan Link Email Address
       # Then CCALink Should be generated
     Examples:
-      | Device                   | Tariffs  | Extras | DeliveryType | Firstname | Surname     | Username     | HouseNumber | PostCode |
-      | Galaxy S8 64GB Rose Pink | Standard | Base   | HomeDelivery | TEST'One  | ACCEPTA'Two | TEST ACCEPTA | 14          | SL11UP   |
+      | Device                             | Tariffs  | Extras | DeliveryType | Firstname | Surname     | Username     | HouseNumber | PostCode |
+      | Galaxy S8 Plus 64GB Midnight Black | Standard | Base   | HomeDelivery | TEST'One  | ACCEPTA'Two | TEST ACCEPTA | 14          | SL11UP   |

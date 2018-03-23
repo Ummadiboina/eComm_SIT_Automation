@@ -38,20 +38,20 @@ public class ShopLandingPageAction extends Environment {
 			//act1.moveToElement(ele2).build().perform();
 			ele2.click();
 			Thread.sleep(3000);
-			System.out.println(" Current URL is : " + driver.getCurrentUrl());
+			log.debug(" Current URL is : " + driver.getCurrentUrl());
 			driver.manage().timeouts().implicitlyWait(1, TimeUnit.MINUTES);
 			Screenshots.captureScreenshot();
 
 		} catch (Exception e) {
-			System.out.println("While navigating the with new updated ref Env , getting error as :: " + e.getMessage());
+			log.debug("While navigating the with new updated ref Env , getting error as :: " + e.getMessage());
 		}
 	}
 
 
 	public static void GetTitle() throws IOException, InterruptedException {
-		System.out.println("Currently in Shop Home page");
+		log.debug("Currently in Shop Home page");
 		String Ele1 = driver.getTitle();
-		System.out.println("The Page title is " + Ele1);
+		log.debug("The Page title is " + Ele1);
 		log.debug("We are in the Shop Home page");
 		log.debug("The Page title is " + Ele1);
 		Screenshots.captureScreenshot();
@@ -59,7 +59,7 @@ public class ShopLandingPageAction extends Environment {
 	}
 
 	public static void clickSignIn() throws IOException, InterruptedException {
-		System.out.println("Clicking on Sign in button");
+		log.debug("Clicking on Sign in button");
 		JavascriptExecutor executor = (JavascriptExecutor) driver;
 		executor.executeScript("arguments[0].click();", ShopLandingPage.SignInLink);
 		Screenshots.captureScreenshot();
@@ -76,10 +76,10 @@ public class ShopLandingPageAction extends Environment {
 	public static void closePopUpIfDisplayed() throws IOException, InterruptedException {
 		List<WebElement> PopUpClose = driver.findElements((By) pageobjects.ShopLandingPage.ClosePopUp);
 		if (PopUpClose.size() > 0) {
-			System.out.println("Pop up is displayed - hence closing it");
+			log.debug("Pop up is displayed - hence closing it");
 			PopUpClose.get(0).click();
 		} else {
-			System.out.println("Pop up is not displayed");
+			log.debug("Pop up is not displayed");
 		}
 		Screenshots.captureScreenshot();
 	}
@@ -87,7 +87,7 @@ public class ShopLandingPageAction extends Environment {
 	public static void CookiesPopUpDisplayed() throws IOException, InterruptedException {
 		List<WebElement> Cookies = driver.findElements(By.xpath("//*[@class='heading']"));
 		if (Cookies.size() > 0) {
-			System.out.println("Cookies pop up is displayed and the cookie is dropped in the page");
+			log.debug("Cookies pop up is displayed and the cookie is dropped in the page");
 			log.debug("Cookies pop up is displayed and the cookie is dropped in the page");
 			/*
 			log.debug("Clicking on the cookie pop up");
@@ -98,7 +98,7 @@ public class ShopLandingPageAction extends Environment {
 			//ShopLandingPage.CookiePopUp.click();
 			*/
 		} else {
-			System.out.println("The cookie pop is not displayed");
+			log.debug("The cookie pop is not displayed");
 
 		}
 		Screenshots.captureScreenshot();
@@ -114,20 +114,20 @@ public class ShopLandingPageAction extends Environment {
 	}
 
 	public static void cookiePolicyValidate() throws IOException, InterruptedException {
-		System.out.println(driver.getTitle());
+		log.debug(driver.getTitle());
 		String oldTab = driver.getWindowHandle();
 		ArrayList<String> newTab = new ArrayList(driver.getWindowHandles());
 		newTab.remove(oldTab);
 		//Change focus to newTab
 		driver.switchTo().window(newTab.get(0));
-		System.out.println("The new tab title is "+driver.getTitle());
-		System.out.println(driver.getCurrentUrl());
+		log.debug("The new tab title is "+driver.getTitle());
+		log.debug(driver.getCurrentUrl());
 		String url = driver.getCurrentUrl();
-		System.out.println("url contains cookies - > "+url.contains("cookie"));
+		log.debug("url contains cookies - > "+url.contains("cookie"));
 		Thread.sleep(5000);
 		driver.close();
 		driver.switchTo().window(oldTab);
-		System.out.println(driver.getCurrentUrl());
+		log.debug(driver.getCurrentUrl());
 		Screenshots.captureScreenshot();
 
 	}
@@ -139,20 +139,20 @@ public class ShopLandingPageAction extends Environment {
 	}
 
 	public static void manageCookieyValidate() throws IOException, InterruptedException {
-		System.out.println(driver.getTitle());
+		log.debug(driver.getTitle());
 		String oldTab = driver.getWindowHandle();
 		ArrayList<String> newTab = new ArrayList(driver.getWindowHandles());
 		newTab.remove(oldTab);
 		//Change focus to newTab
 		driver.switchTo().window(newTab.get(0));
-		System.out.println("The new tab title is "+driver.getTitle());
-		System.out.println(driver.getCurrentUrl());
+		log.debug("The new tab title is "+driver.getTitle());
+		log.debug(driver.getCurrentUrl());
 		String url = driver.getCurrentUrl();
-		System.out.println("url contains cookies - > "+url.contains("managing"));
+		log.debug("url contains cookies - > "+url.contains("managing"));
 		Thread.sleep(5000);
 		driver.close();
 		driver.switchTo().window(oldTab);
-		System.out.println(driver.getCurrentUrl());
+		log.debug(driver.getCurrentUrl());
 		Screenshots.captureScreenshot();
 
 	}
@@ -162,14 +162,14 @@ public class ShopLandingPageAction extends Environment {
 		CommonUtilities.clickWebElement(ShopLandingPage.CookieClose);
 		Thread.sleep(5000);
 		int test = driver.findElements(By.xpath("//p[contains(text(),'Cookies on O2')]")).size();
-		System.out.println(test);
+		log.debug(test);
 		if(test>0)
 		{
-			System.out.println("cookies popup is present");
+			log.debug("cookies popup is present");
 		}
 		else
 		{
-			System.out.println("Cookies popup is not present");
+			log.debug("Cookies popup is not present");
 		}
 
 

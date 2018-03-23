@@ -16,13 +16,13 @@ public class ReviewPageActions extends Environment {
 
 	public static void gettitlepage() throws IOException, InterruptedException {
 
-		System.out.println(driver.getTitle());
+		log.debug(driver.getTitle());
 		Screenshots.captureScreenshot();
 
 	}
 
 	public static void TermsCheckBox() throws IOException, InterruptedException {
-		System.out.println("Clicking on the checkbox");
+		log.debug("Clicking on the checkbox");
 		WebElement element = pageobjects.ReviewPage.TermsCheckBox;
 		JavascriptExecutor executor = (JavascriptExecutor)driver;
 		executor.executeScript("arguments[0].click();", element);
@@ -33,12 +33,12 @@ public class ReviewPageActions extends Environment {
 	}
 
 	public static void PayNow() throws InterruptedException, IOException {
-		System.out.println("Clicking on Pay now");
+		log.debug("Clicking on Pay now");
 		WebElement element = pageobjects.ReviewPage.PayNow;
 		JavascriptExecutor executor = (JavascriptExecutor)driver;
 		executor.executeScript("arguments[0].click();", element);
 		//pageobjects.ReviewPage.PayNow.click();
-		System.out.println("Completing on Review page");
+		log.debug("Completing on Review page");
 		log.debug("Clicked the Paynow button");
 		Thread.sleep(5000L);
 		Screenshots.captureScreenshot();
@@ -50,9 +50,9 @@ public class ReviewPageActions extends Environment {
 		String Trustev = "trustev";
 
 		if (containsIgnoreCase(Source, Trustev)) {
-			System.out.println("Trustev is enabled");
+			log.debug("Trustev is enabled");
 		} else {
-			System.out.println("Trustev is NOT enabled");
+			log.debug("Trustev is NOT enabled");
 		}
 		Screenshots.captureScreenshot();
 	}
@@ -84,17 +84,17 @@ public class ReviewPageActions extends Environment {
 			Assert.assertTrue("Assertion Failed: Order Contract Text in Review Page does not match",
 					ExpOrderContractMsg.equals(ActOrderContractMsg));
 
-			System.out.println("Assertion Passed: ActOrderContractMsg matches ExpOrderContractMsg in Review Page");
+			log.debug("Assertion Passed: ActOrderContractMsg matches ExpOrderContractMsg in Review Page");
 
 			Assert.assertTrue("Assertion Failed: Order Contract Text in the Order Summary Section does not match",
 					ExpOrderContractMsgOrderSummary.equals(ActOrderContractMsgOrderSummary));
 
-			System.out.println(
+			log.debug(
 					"Assertion Passed: ActOrderContractMsgOrderSummary matches ExpOrderContractMsgOrderSummary in the Order Summary Section");
 			Screenshots.captureScreenshot();
 
 		} catch (AssertionError e) {
-			System.out.println("ActOrderContractMsg: " + ActOrderContractMsg
+			log.debug("ActOrderContractMsg: " + ActOrderContractMsg
 					+ " does not match the ExpOrderContractMsg: " + ExpOrderContractMsg + " in Review Page");
 			Screenshots.captureScreenshot();
 
@@ -104,12 +104,12 @@ public class ReviewPageActions extends Environment {
 	public static void checkStockExtMsgRP() throws IOException, InterruptedException {
 		// TODO Auto-generated method stub
 		String ActualStockExtMsg = pageobjects.ReviewPage.StockExtMessageDDPORP.getText();
-		String ExpStockExtMsg = "You'll pay for your phone now. We�ll send you an email or text to let you know when it will be delivered";
-		System.out.println("Act Del MSg" + ActualStockExtMsg);
-		System.out.println("Exp Del MSg" + ExpStockExtMsg);
+		String ExpStockExtMsg = "You'll pay for your phone now. We'll send you an email or text to let you know when it will be delivered";
+		log.debug("Act Del MSg" + ActualStockExtMsg);
+		log.debug("Exp Del MSg" + ExpStockExtMsg);
 
 		if (ActualStockExtMsg.matches(ExpStockExtMsg)) {
-			System.out.println("ActualStockExtMsg matches ExpStockExtMsg");
+			log.debug("ActualStockExtMsg matches ExpStockExtMsg");
 		} else {
 			Assert.fail("Stock extended message for stock limited DD/Pre order phone does not match");
 
@@ -128,7 +128,7 @@ public class ReviewPageActions extends Environment {
 		}
 
 		if (ActualStockExtMsg.matches(ExpStockExtMsg)) {
-			System.out.println("ActualStockExtMsg in Review Page matches ExpStockExtMsg");
+			log.debug("ActualStockExtMsg in Review Page matches ExpStockExtMsg");
 		} else {
 			Assert.fail("Stock extended message in Review Page is not present");
 
@@ -139,7 +139,7 @@ public class ReviewPageActions extends Environment {
 	public static void checkDelTextRP() throws IOException, InterruptedException {
 		String ExpStockExtMsgDelText = "We will deliver the rest of your order as soon as possible.";
 		if (pageobjects.ReviewPage.DeliveryTextRP.getText().matches(ExpStockExtMsgDelText)) {
-			System.out.println("Delivery Text in Review Page is present");
+			log.debug("Delivery Text in Review Page is present");
 		} else {
 			Assert.fail("Delivery Text in Review Page is not present");
 		}
@@ -147,20 +147,20 @@ public class ReviewPageActions extends Environment {
 	}
 
 	public static void InsuranceSectionReviewPage() throws InterruptedException, IOException {
-		System.out.println("Entering InsuranceSectionReviewPage Method");
+		log.debug("Entering InsuranceSectionReviewPage Method");
 
 		Thread.sleep(3000);
 
 		if (driver.findElement(By.xpath("//tr[@id='basket-insurance']")).isDisplayed()) {
-			System.out.println("Insurance is displayed in Review page and text is  - "
+			log.debug("Insurance is displayed in Review page and text is  - "
 					+ driver.findElement(By.xpath("//tr[@id='basket-insurance']")).getText());
 
 		} else {
-			System.out.println("Insurance is not displayed");
+			log.debug("Insurance is not displayed");
 		}
 
 		Thread.sleep(2000);
-		System.out.println("Completed InsuranceSectionReviewPage function");
+		log.debug("Completed InsuranceSectionReviewPage function");
 		log.debug("Completed InsuranceSectionReviewPage function");
 		Screenshots.captureScreenshot();
 	}

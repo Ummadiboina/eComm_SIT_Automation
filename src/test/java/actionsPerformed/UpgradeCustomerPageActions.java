@@ -45,11 +45,11 @@ public class UpgradeCustomerPageActions extends Environment {
         Thread.sleep(5000);
         if (pageobjects.UpgradeCustomerPage.signInButton.isDisplayed()) {
             pageobjects.UpgradeCustomerPage.signInButton.click();
-            System.out.println("Clicked on Signin button");
+            log.debug("Clicked on Signin button");
         }
         Thread.sleep(10000);
 
-        System.out.println("Title of the page is " + driver.getTitle());
+        log.debug("Title of the page is " + driver.getTitle());
         /*
          * if ((!driver.getTitle().
 		 * contains("O2 | Accounts | Please verify your email address") ||
@@ -59,14 +59,14 @@ public class UpgradeCustomerPageActions extends Environment {
 		 *
 		 * } else {
 		 *
-		 * System.out.println("Logged in successfully"); }
+		 * log.debug("Logged in successfully"); }
 		 */
         /*
-         * try { System.out.println("Going to click on Continue link");
+         * try { log.debug("Going to click on Continue link");
 		 * pageobjects.UpgradeCustomerPage.Continue.click();
 		 *
 		 * } catch (Exception e) { // TODO Auto-generated catch block
-		 * System.out.println("Continue button is not there, it should be fine" );
+		 * log.debug("Continue button is not there, it should be fine" );
 		 *
 		 * }
 		 */
@@ -85,11 +85,11 @@ public class UpgradeCustomerPageActions extends Environment {
     }
 
     public static void Signin() throws InterruptedException, IOException {
-        System.out.println("in signin function");
+        log.debug("in signin function");
         JavascriptExecutor jse = (JavascriptExecutor) driver;
         jse.executeScript("arguments[0].click()", pageobjects.UpgradeCustomerPage.Signinlink2);
         //pageobjects.UpgradeCustomerPage.Signinlink2.click();
-        System.out.println("Sign in button clicked");
+        log.debug("Sign in button clicked");
         Screenshots.captureScreenshot();
 
     }
@@ -110,10 +110,10 @@ public class UpgradeCustomerPageActions extends Environment {
             Thread.sleep(3000);
         }
         executor.executeScript("arguments[0].click();", pageobjects.PhonesListingPage.choosedefaultDevice);
-       // Thread.sleep(3000);
+        // Thread.sleep(3000);
         /*if (elementName.contains("GalaxyS7")) {
             pageobjects.UpgradePhonesListingPage.GalaxyS7.click();
-            System.out.println("Selected GalaxyS7");
+            log.debug("Selected GalaxyS7");
             log.debug("Selected GalaxyS7");
         }
 
@@ -204,43 +204,43 @@ public class UpgradeCustomerPageActions extends Environment {
         jse.executeScript("window.scrollBy(0,150)", "");
 
         if (pageobjects.UpgradeCustomerPage.Promomodule_iPadsims.isDisplayed()) {
-            System.out.println("The iPad sims promo module is displayed and the text is : "
+            log.debug("The iPad sims promo module is displayed and the text is : "
                     + pageobjects.UpgradeCustomerPage.Promomodule_iPadsims.getText());
 
         } else
 
-            System.out.println("iPad Sims promo module is not displayed");
+            log.debug("iPad Sims promo module is not displayed");
 
         if (pageobjects.UpgradeCustomerPage.Promomodule_Tabletsims.isDisplayed()) {
-            System.out.println("The Tablet sims promo module is displayed and the text is : "
+            log.debug("The Tablet sims promo module is displayed and the text is : "
                     + pageobjects.UpgradeCustomerPage.Promomodule_Tabletsims.getText());
 
         } else
 
-            System.out.println("Tablet Sims promo module is not displayed");
+            log.debug("Tablet Sims promo module is not displayed");
 
         if (pageobjects.UpgradeCustomerPage.Promomodule_Donglesims.isDisplayed()) {
-            System.out.println("The Dongle sims promo module is displayed and the text is : "
+            log.debug("The Dongle sims promo module is displayed and the text is : "
                     + pageobjects.UpgradeCustomerPage.Promomodule_Donglesims.getText());
 
         } else
 
-            System.out.println("Dongle Sims promo module is not displayed");
+            log.debug("Dongle Sims promo module is not displayed");
 
         if (pageobjects.UpgradeCustomerPage.GoToMyO2_CTA.isDisplayed()) {
-            System.out.println("The Go To My O2 CTA is displayed and the text is : "
+            log.debug("The Go To My O2 CTA is displayed and the text is : "
                     + pageobjects.UpgradeCustomerPage.GoToMyO2_CTA.getText());
 
         } else
 
-            System.out.println("Go To My O2 CTA is not displayed");
+            log.debug("Go To My O2 CTA is not displayed");
 
-        System.out.println(pageobjects.UpgradeCustomerPage.NotEligible_message.getText());
+        log.debug(pageobjects.UpgradeCustomerPage.NotEligible_message.getText());
 
 		/*
          * Assert.assertEquals(pageobjects.UpgradeCustomerPage.
 		 * NotEligible_message.getText(), "You are not eligible to upgrade"); // bound
-		 * to change System.out.println( "The error message is displayed as" +
+		 * to change log.debug( "The error message is displayed as" +
 		 * pageobjects.UpgradeCustomerPage.NotEligible_message.getText());
 		 */
         Screenshots.captureScreenshot();
@@ -249,15 +249,15 @@ public class UpgradeCustomerPageActions extends Environment {
     public static void UpgradeUpsellPromoModule_MyO2Action() throws InterruptedException, IOException {
 
         if (pageobjects.UpgradeCustomerPage.GoToMyO2_CTA.isDisplayed()) {
-            System.out.println("The Go To My O2 CTA is displayed and the text is : "
+            log.debug("The Go To My O2 CTA is displayed and the text is : "
                     + pageobjects.UpgradeCustomerPage.GoToMyO2_CTA.getText());
             pageobjects.UpgradeCustomerPage.GoToMyO2_CTA.click();
 
             if (pageobjects.UpgradeCustomerPage.MyO2_Page.isDisplayed()) {
 
-                System.out.println("My O2 Page is displayed");
+                log.debug("My O2 Page is displayed");
             } else
-                System.out.println("My O2 page is not displayed");
+                log.debug("My O2 page is not displayed");
         }
         Screenshots.captureScreenshot();
 
@@ -269,13 +269,13 @@ public class UpgradeCustomerPageActions extends Environment {
         jse.executeScript("window.scrollBy(0,300)", "");
 
         if (pageobjects.UpgradeCustomerPage.Promomodule_iPadsims.isDisplayed()) {
-            System.out.println("The  is displayed and the text is : "
+            log.debug("The  is displayed and the text is : "
                     + pageobjects.UpgradeCustomerPage.Promomodule_iPadsims.getText());
             pageobjects.UpgradeCustomerPage.Promomodule_iPadsims.click();
 
         } else {
 
-            System.out.println("The iPad sims promo module is not displayed");
+            log.debug("The iPad sims promo module is not displayed");
         }
         Screenshots.captureScreenshot();
 
@@ -287,13 +287,13 @@ public class UpgradeCustomerPageActions extends Environment {
         jse.executeScript("window.scrollBy(0,300)", "");
 
         if (pageobjects.UpgradeCustomerPage.Promomodule_Tabletsims.isDisplayed()) {
-            System.out.println("The  is displayed and the text is : "
+            log.debug("The  is displayed and the text is : "
                     + pageobjects.UpgradeCustomerPage.Promomodule_Tabletsims.getText());
             pageobjects.UpgradeCustomerPage.Promomodule_Tabletsims.click();
 
         } else {
 
-            System.out.println("The Tablets sims promo module is not displayed");
+            log.debug("The Tablets sims promo module is not displayed");
         }
         Screenshots.captureScreenshot();
 
@@ -305,13 +305,13 @@ public class UpgradeCustomerPageActions extends Environment {
         jse.executeScript("window.scrollBy(0,300)", "");
 
         if (pageobjects.UpgradeCustomerPage.Promomodule_Donglesims.isDisplayed()) {
-            System.out.println("The  is displayed and the text is : "
+            log.debug("The  is displayed and the text is : "
                     + pageobjects.UpgradeCustomerPage.Promomodule_Donglesims.getText());
             pageobjects.UpgradeCustomerPage.Promomodule_Donglesims.click();
 
         } else {
 
-            System.out.println("The Dongle sims promo module is not displayed");
+            log.debug("The Dongle sims promo module is not displayed");
         }
         Screenshots.captureScreenshot();
 
@@ -344,15 +344,15 @@ public class UpgradeCustomerPageActions extends Environment {
         if (MissingElement.size() > 0) {
 
             pageobjects.UpgradeCustomerPage.Continue.click();
-            System.out.println("Clicked on Continue button in Upgrade page");
+            log.debug("Clicked on Continue button in Upgrade page");
 
         } else {
-            System.out.println("The Security checks page is displayed");
+            log.debug("The Security checks page is displayed");
             pageobjects.UpgradeCustomerPage.SecurityOtac.sendKeys("999999");
             pageobjects.UpgradeCustomerPage.SecurityContinue.click();
             Thread.sleep(2000);
             pageobjects.UpgradeCustomerPage.Continue.click();
-            System.out.println("Clicked on Continue button in Upgrade page");
+            log.debug("Clicked on Continue button in Upgrade page");
 
 
         }
@@ -361,7 +361,7 @@ public class UpgradeCustomerPageActions extends Environment {
 
     public static void selectDeviceInRecommendedDevicesSection(String devicename) throws Exception {
         log.debug("Select a device in recommended devices section");
-        System.out.println("Select a device in recommended devices section");
+        log.debug("Select a device in recommended devices section");
         List<WebElement> DevicesName = pageobjects.UpgradeCustomerPage.DeviceNameRecommendedSection;
         WebElement SelectButton;
         JavascriptExecutor js = (JavascriptExecutor) driver;
@@ -370,20 +370,20 @@ public class UpgradeCustomerPageActions extends Environment {
         List<String> Devices = new ArrayList<String>();
         for (WebElement f : DevicesName) {
             Devices.add(f.getText());
-            // System.out.println(Devices.add(f.getText()));
+            // log.debug(Devices.add(f.getText()));
         }
         log.debug("passing device" + devicename);
-        System.out.println("passing device " + devicename);
+        log.debug("passing device " + devicename);
         for (int i = 0; i < DevicesName.size(); i++) {
             if (DevicesName.get(i).getText().equals(devicename)) {
                 log.debug("Device name matches");
-                System.out.println("Device name matches");
+                log.debug("Device name matches");
                 k = i + 1;
                 log.debug("k :" + k);
-                // System.out.println("k :" + k);
+                // log.debug("k :" + k);
                 c = "(//div[@id='qa-recommendedDevicesTile']/a//div/button)[" + k + "]";
                 log.debug("xpath of button is" + c);
-                // System.out.println("xpath of button is" + c);
+                // log.debug("xpath of button is" + c);
                 SelectButton = driver.findElement(By.xpath(c));
                 js.executeScript("arguments[0].click();", SelectButton);
             }
@@ -393,20 +393,20 @@ public class UpgradeCustomerPageActions extends Environment {
     }
 
     public static void selectTariff(String Tariff) throws IOException, InterruptedException {
-        System.out.println("selectTariff");
+        log.debug("selectTariff");
         Thread.sleep(5000);
 
         //driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
         //WebElement selectBtnEle = driver.findElement(By.xpath("(//button[@type='button']//*[normalize-space()='Select'])[2]"));
         WebElement selectBtnEle = driver.findElement(By.xpath("//button[text()='Select' or @id='callToAction'][1]"));
-       if(selectBtnEle.isDisplayed()){
-           ((JavascriptExecutor) driver).executeScript("arguments[0].click();", selectBtnEle);
-           System.out.println("Tariff has selected");
-           log.info("Tariff has selected");
-       }else{
-           System.out.println("Failed to select the Tariff in the Extras&Tariff page");
-           Assert.fail("Failed to select the Tariff in the Extras&Tariff page");
-       }
+        if(selectBtnEle.isDisplayed()){
+            ((JavascriptExecutor) driver).executeScript("arguments[0].click();", selectBtnEle);
+            log.debug("Tariff has selected");
+            log.info("Tariff has selected");
+        }else{
+            log.debug("Failed to select the Tariff in the Extras&Tariff page");
+            Assert.fail("Failed to select the Tariff in the Extras&Tariff page");
+        }
         // executor.executeScript("arguments[0].click();",
         // pageobjects.PAYMandPAYGTariffAndExtrasPage.ViewAllTariffs);
 /*        List<WebElement> TariffList = driver.findElements(By.xpath("//*[@class='tariff-grids tiles row']/li[@class='liTariffPlan col-sm-6 col-md-4 col-lg-3 ng-scope']"));
@@ -419,13 +419,13 @@ public class UpgradeCustomerPageActions extends Environment {
             i = j ++;
             TariffXpath = "(//*[@class='price-block'])[" + i + "]";
             TextOfTariffTile = driver.findElement(By.xpath(TariffXpath)).getText();
-            TextOfTariffTile = TextOfTariffTile.replace("�", "");
+            TextOfTariffTile = TextOfTariffTile.replace("£", "");
             TextOfTariffTile = TextOfTariffTile.replace("\n", "");
             TextOfTariffTile = TextOfTariffTile.replace(" ", "");
-            System.out.println("TextOfTariffTile  " + TextOfTariffTile);
-            System.out.println("Tariff  " + Tariff);
+            log.debug("TextOfTariffTile  " + TextOfTariffTile);
+            log.debug("Tariff  " + Tariff);
             if (TextOfTariffTile.contains(Tariff)) {
-                System.out.println("Given tariff is present in the list of tariffs");
+                log.debug("Given tariff is present in the list of tariffs");
                 position = i;
                 SelectBtnXpath = "(//button[@id='callToAction'])[" + i + "]";
                 driver.findElement(By.xpath(SelectBtnXpath)).click();
@@ -458,7 +458,7 @@ public class UpgradeCustomerPageActions extends Environment {
 
         for (int i = 0; i < TariffList.size(); i++) {
             log.debug("inside for loop");
-            System.out.println("inside for loop");
+            log.debug("inside for loop");
             j = i + 1;
             UpfrontPoundXPath = "(//*[@id='qa-upfront-pound'])[" + j + "]";
             UpfrontPenceXPath = "(//*[@id='qa-upfront-pence'])[" + j + "]";
@@ -512,27 +512,27 @@ public class UpgradeCustomerPageActions extends Environment {
         WebElement selectBtnEle = driver.findElement(By.xpath("(//button[@type='button']//*[normalize-space()='Select'])[2]"));
         if(selectBtnEle.isDisplayed()){
             ((JavascriptExecutor) driver).executeScript("arguments[0].click();", selectBtnEle);
-            System.out.println("Tariff has selected");
+            log.debug("Tariff has selected");
             log.info("Tariff has selected");
         }else{
-            System.out.println("Failed to select the Tariff in the Extras&Tariff page");
+            log.debug("Failed to select the Tariff in the Extras&Tariff page");
             Assert.fail("Failed to select the Tariff in the Extras&Tariff page");
         }
 
         WebElement blueRibben = driver.findElement(By.xpath("(//div[@class='blue-promotion']//span[@class='promotion-text ng-binding'])[2]"));
 
         if(blueRibben.isEnabled()){
-            System.out.println("Blue ribben is displaayed on the Tariff tile in the Tariff and Extras page: @ " + blueRibben.getText());
+            log.debug("Blue ribben is displaayed on the Tariff tile in the Tariff and Extras page: @ " + blueRibben.getText());
         }else{
-            System.out.println("Blue Ribben's are not Displayed on the Tariff tile in the Tariff and Extras page");
+            log.debug("Blue Ribben's are not Displayed on the Tariff tile in the Tariff and Extras page");
         }
 
         if(driver.findElements(By.xpath("(//div[@class='green-promotion']//span[@class='promotion-text ng-binding'])[2]")).size() >= 1){
             WebElement greenRibben = driver.findElement(By.xpath("(//div[@class='green-promotion']//span[@class='promotion-text ng-binding'])[2]"));
 
-            System.out.println("Green ribben is displaayed  on the Tariff tile in the Tariff and Extras page: @ " + greenRibben.getText());
+            log.debug("Green ribben is displaayed  on the Tariff tile in the Tariff and Extras page: @ " + greenRibben.getText());
         }else{
-            System.out.println("Green Ribben's are not Displayed on the Tariff tile in the Tariff and Extras page");
+            log.debug("Green Ribben's are not Displayed on the Tariff tile in the Tariff and Extras page");
         }
 
         /*log.debug('\n' + "Verify Promotional Ribbon is displayed in TE page");
@@ -666,11 +666,11 @@ public class UpgradeCustomerPageActions extends Environment {
         WebElement overlayIcon = driver.findElement(By.xpath("(//div[@class='blue-promotion']//span[@class='promotion-text ng-binding'])[2]/following-sibling::a"));
 
         if (overlayIcon.isEnabled()) {
-            System.out.println("Overlay is present for the selected tariff in the tariff tile as expected in the Tariff and Extras page");
+            log.debug("Overlay is present for the selected tariff in the tariff tile as expected in the Tariff and Extras page");
             log.debug("Overlay is present for the selected tariff in the tariff tile as expected in the Tariff and Extras page");
         } else {
             log.debug("No overlay is present for the selected tariff in the tariff tile, in the Tariff and Extras page");
-            System.out.println("No overlay is present for the selected tariff in the tariff tile in the Tariff and Extras page");
+            log.debug("No overlay is present for the selected tariff in the tariff tile in the Tariff and Extras page");
         }
 /*
 
@@ -703,7 +703,7 @@ public class UpgradeCustomerPageActions extends Environment {
     }
 
     public static void clickOnOverlayIconTEpage(String Tariff) throws Exception {
-        System.out.println("In Click on Overlay TE function");
+        log.debug("In Click on Overlay TE function");
         log.debug('\n' + "To Click On Overlay Icon TE page");
         log.debug("Tariff for verifying overlay icon is " + Tariff);
 
@@ -711,17 +711,17 @@ public class UpgradeCustomerPageActions extends Environment {
 
         if (overlayIcon.isEnabled()) {
             ((JavascriptExecutor) driver).executeScript("arguments[0].click();", overlayIcon);
-            System.out.println("Clicked on the Overlay Icon");
             log.debug("Clicked on the Overlay Icon");
-        Thread.sleep(3000);
+            log.debug("Clicked on the Overlay Icon");
+            Thread.sleep(3000);
         /*List<WebElement> ele = driver.findElements(By.xpath("(//h3[contains(text(),'Sony Xperia')]/following-sibling::a/../following-sibling::div)[1]/p"));
         for(int i=1;i<ele.size();i++){
           String str = driver.findElement(By.xpath("(//h3[contains(text(),'Sony Xperia')]/following-sibling::a/../following-sibling::div)[1]/p["+i+"]")).getText();
-          System.out.println(str);
+          log.debug(str);
           log.debug(str);
       }*/
         }else{
-            System.out.println("Failed to Click on Overlay TE function");
+            log.debug("Failed to Click on Overlay TE function");
             log.debug("Failed to Click on Overlay TE function");
         }
         WebElement eleofClose = driver.findElement(By.xpath("(//h3[contains(text(),'Sony Xperia')]/following-sibling::a/../following-sibling::div)[1]//..//a[@class='boxclose']"));
@@ -798,7 +798,7 @@ public class UpgradeCustomerPageActions extends Environment {
                 Assert.fail("Secondary overlay is present though it is not configured");
             }
         }*/
-        System.out.println("Completed Click on Overlay TE function");
+        log.debug("Completed Click on Overlay TE function");
         Screenshots.captureScreenshot();
     }
 
@@ -915,20 +915,20 @@ public class UpgradeCustomerPageActions extends Environment {
         WebElement primaryPramotion = driver.findElement(By.xpath("//div[@class='primary promotion']"));
 
         if(primaryPramotion.isDisplayed()){
-            System.out.println("Pramotions are displayed in the Basket page :: @ " +primaryPramotion.getText());
+            log.debug("Pramotions are displayed in the Basket page :: @ " +primaryPramotion.getText());
             log.info("Pramotions are displayed in the Basket page :: @ " +primaryPramotion.getText());
         }else{
-            System.out.println(" Failed t Pramotions are displayed in the Basket page");
+            log.debug(" Failed t Pramotions are displayed in the Basket page");
             log.info("Failed to Pramotions are displayed in the Basket page");
             Assert.fail("Failed to Pramotions are displayed in the Basket page");
         }
 
         if( driver.findElements(By.xpath("//div[@class='promotion secondary']")).size() >= 1){
             WebElement secendaryPromo = driver.findElement(By.xpath("//div[@class='promotion secondary']"));
-            System.out.println("Pramotions are displayed in the Basket page for secondarary ::: " + secendaryPromo.getText());
+            log.debug("Pramotions are displayed in the Basket page for secondarary ::: " + secendaryPromo.getText());
             log.info("Pramotions are displayed in the Basket page for secondarary" + secendaryPromo.getText());
         }else{
-            System.out.println(" Failed t Pramotions are displayed in the Basket page for secondarary");
+            log.debug(" Failed t Pramotions are displayed in the Basket page for secondarary");
             log.info("Failed to Pramotions are displayed in the Basket pagef or secondarary");
         }
 
@@ -1146,7 +1146,7 @@ public class UpgradeCustomerPageActions extends Environment {
 
     public static void clickOnOverlayIconMyPackageSection() throws Exception {
         log.debug('\n' + "To click On Overlay Icon in MyPackage Section");
-        System.out.println("Successfully we are clicking the Overylay Icon");
+        log.debug("Successfully we are clicking the Overylay Icon");
 
        /* List<WebElement> PrimaryPromotionalWrapperList = driver
                 .findElements(By.xpath("//div[@class='data-qa-promotion promotion-wrapper']/div[1]"));
@@ -1298,14 +1298,14 @@ public class UpgradeCustomerPageActions extends Environment {
     public static void RecyclesectionDisplayed() throws InterruptedException, IOException {
         // pageobjects.UpgradeCustomerPage.RecycleWidget.click();
         if (driver.findElement(By.xpath("//*[@id='newRecycleOptionsTile']")).isDisplayed()) {
-            System.out.println("Upgrade and Recycle options is displayed");
+            log.debug("Upgrade and Recycle options is displayed");
             // driver.findElement(By.xpath("//*[@id='newRecycleOptionsTile']//*[@ng-click='selectRecycleDevice();']/span")).click();
             JavascriptExecutor executor = (JavascriptExecutor) driver;
             executor.executeScript("arguments[0].click();", driver.findElement(By.xpath("//div[@class='recycle-device not-your-device-box']/a/span")));
 
 
             //  driver.findElement( By.xpath("//div[@class='recycle-device not-your-device-box']/a/span")).click();
-            System.out.println("Clicked on the choose your device link");
+            log.debug("Clicked on the choose your device link");
         } else {
             Assert.fail("Unable to verify recycle options");
         }
@@ -1313,47 +1313,47 @@ public class UpgradeCustomerPageActions extends Environment {
     }
 
     public static void SelectRecycleContinueToUpgrade() throws IOException, InterruptedException {
-        // Clicking on Recycle and get up to �54.00 credit
-        System.out.println("in Select recycle an continue to upgrade function");
+        // Clicking on Recycle and get up to £54.00 credit
+        log.debug("in Select recycle an continue to upgrade function");
         driver.findElement(By.id("recycleCredit")).click();
-        System.out.println("Clicked on Radio button next to Recycle and get up to XXXX credit");
+        log.debug("Clicked on Radio button next to Recycle and get up to XXXX credit");
         //driver.findElement(By.xpath("//button[contains(text(),'upgrade now')]")).click();
         JavascriptExecutor executor = (JavascriptExecutor) driver;
         executor.executeScript("arguments[0].click();", driver.findElement(By.xpath("//button[contains(text(),'upgrade now')]")));
         Thread.sleep(3000);
 
-        System.out.println("Clicked on upgrade now button");
+        log.debug("Clicked on upgrade now button");
         Screenshots.captureScreenshot();
     }
 
     public static void selectTariff() throws IOException, InterruptedException {
-        System.out.println("In Select Tariff function");
+        log.debug("In Select Tariff function");
         ((JavascriptExecutor) driver).executeScript("arguments[0].click();",
                 driver.findElement(By.xpath("(//button[@id='callToAction'])[2]")));
 
-        System.out.println("Completed Select Tariff function");
+        log.debug("Completed Select Tariff function");
         Screenshots.captureScreenshot();
     }
 
     public static void yourSim() throws IOException, InterruptedException {
         try {
-            System.out.println("In your Sim Section");
-            System.out.println("Choosing need new sim");
+            log.debug("In your Sim Section");
+            log.debug("Choosing need new sim");
             WebElement needNewSimRadio = driver.findElement(By.xpath("//input[@id='needNewSim']"));
             ((JavascriptExecutor) driver).executeScript("arguments[0].click();", needNewSimRadio);
-            System.out.println("Selected need new sim radio button");
+            log.debug("Selected need new sim radio button");
             driver.findElement(By.xpath("//*[@id='confirmSim']")).click();
-            System.out.println("Completed your sim  function");
+            log.debug("Completed your sim  function");
             Thread.sleep(3000);
         } catch (Exception e) {
             // TODO Auto-generated catch block
-            System.out.println("Unable to click on element " + e.getStackTrace());
+            log.debug("Unable to click on element " + e.getStackTrace());
         }
         Screenshots.captureScreenshot();
     }
 
     public static void addAndGoToBasket() throws IOException, InterruptedException {
-        System.out.println("In addAndGoToBasket Section");
+        log.debug("In addAndGoToBasket Section");
 
         WebElement simNotRequire = driver.findElement(By.xpath("//input[@id='noNeedNewSim']"));
         WebElement clickonCofirmSim = driver.findElement(By.xpath("//button[@id='confirmSim']"));
@@ -1369,14 +1369,14 @@ public class UpgradeCustomerPageActions extends Environment {
         // driver.findElement(By.xpath("//*[@id='qa-proceed-to-basket']")).click();
         WebElement BasketButton = driver.findElement(By.xpath("//*[@id='qa-proceed-to-basket']"));
         ((JavascriptExecutor) driver).executeScript("arguments[0].click();", BasketButton);
-        System.out.println("Completed AddandGotoBasket Section");
+        log.debug("Completed AddandGotoBasket Section");
         Thread.sleep(3000);
         Screenshots.captureScreenshot();
 
     }
 
     public static void Otac(String arg) throws IOException, InterruptedException {
-        System.out.println("In OTAC page");
+        log.debug("In OTAC page");
         if (arg.contains("skip")) {
             log.debug("Skipping OTAC entry to verify account");
 
@@ -1406,14 +1406,14 @@ public class UpgradeCustomerPageActions extends Environment {
             Thread.sleep(5000);
 
         } else
-            System.out.println("The Delivery page is displayed");
+            log.debug("The Delivery page is displayed");
         Screenshots.captureScreenshot();
     }
 
     public static void NotYourDevice() throws InterruptedException, IOException {
         // pageobjects.UpgradeCustomerPage.RecycleWidget.click();
         Thread.sleep(8000);
-        System.out.println("in not your device function");
+        log.debug("in not your device function");
         FluentWait<WebDriver> wait = new FluentWait<WebDriver>(driver);
         wait.pollingEvery(250, TimeUnit.MILLISECONDS);
         wait.withTimeout(2, TimeUnit.SECONDS);
@@ -1430,7 +1430,7 @@ public class UpgradeCustomerPageActions extends Environment {
         };
         wait.until(function);
         Thread.sleep(5000);
-        System.out.println("Clicked on the Not your device link");
+        log.debug("Clicked on the Not your device link");
         Screenshots.captureScreenshot();
 
     }
@@ -1444,24 +1444,24 @@ public class UpgradeCustomerPageActions extends Environment {
             js.executeScript("arguments[0].setAttribute('style', 'display:block;')", Make1);
             new Select(Make1).selectByVisibleText("Apple");
             Thread.sleep(3000);
-            System.out.println("Selected Apple as Make");
+            log.debug("Selected Apple as Make");
             log.debug("Selected Apple as Make");
 
             // Validating for models
             if (Model.contains("Iphone7")) {
-                System.out.println("in selecting model");
+                log.debug("in selecting model");
                 WebElement Model1 = pageobjects.UpgradeCustomerPage.Model;
                 js.executeScript("arguments[0].setAttribute('style', 'display:block;')", Model1);
                 new Select(Model1).selectByVisibleText("iPhone 7 32GB");
                 Thread.sleep(3000);
-                System.out.println("Selected model completed");
+                log.debug("Selected model completed");
                 // Validating for Network
                 if (Network.contains("Orange")) {
-                    System.out.println("in selecting Network");
+                    log.debug("in selecting Network");
                     WebElement Network1 = pageobjects.UpgradeCustomerPage.Network;
                     js.executeScript("arguments[0].setAttribute('style', 'display:block;')", Network1);
                     new Select(Network1).selectByVisibleText("Orange");
-                    System.out.println("Selected Orange completed");
+                    log.debug("Selected Orange completed");
                 } else if (Network.contains("EE")) {
                     WebElement Network1 = pageobjects.UpgradeCustomerPage.Network;
                     js.executeScript("arguments[0].setAttribute('style', 'display:block;')", Network1);
@@ -1492,31 +1492,31 @@ public class UpgradeCustomerPageActions extends Environment {
     }
 
     public static void updateDeviceButton() throws InterruptedException, IOException {
-        System.out.println("Going to click updateDeviceButton button");
+        log.debug("Going to click updateDeviceButton button");
         pageobjects.UpgradeCustomerPage.UpdateDevice.click();
         Thread.sleep(4000);
-        System.out.println("Completed updateDeviceButton function");
+        log.debug("Completed updateDeviceButton function");
         Screenshots.captureScreenshot();
     }
 
     public static void refundableOptionSelect() throws InterruptedException, IOException {
-        System.out.println("Going to click refundableOptionSelect button");
+        log.debug("Going to click refundableOptionSelect button");
         pageobjects.UpgradeCustomerPage.RefundableOptionbyCredit.click();
         Thread.sleep(4000);
-        System.out.println("Selected refundable by credit option");
+        log.debug("Selected refundable by credit option");
 		/*
 		 * pageobjects.UpgradeCustomerPage.ContinuetoUpgrade.click();
-		 * System.out.println("Selected continue to upgrade button");
+		 * log.debug("Selected continue to upgrade button");
 		 */
-        System.out.println("Completed refundableOptionSelect function");
+        log.debug("Completed refundableOptionSelect function");
         Screenshots.captureScreenshot();
 
     }
 
     public static boolean VerifyAccurateQuotedisplay() throws InterruptedException, IOException {
-        System.out.println("Going to verify VerifyAccurateQuotedisplay function");
+        log.debug("Going to verify VerifyAccurateQuotedisplay function");
         pageobjects.UpgradeCustomerPage.GetAccurateQuoteSectionDisplay.getText();
-        System.out.println("Completed verify VerifyAccurateQuotedisplay function");
+        log.debug("Completed verify VerifyAccurateQuotedisplay function");
         Thread.sleep(4000);
         Screenshots.captureScreenshot();
         return true;
@@ -1524,10 +1524,10 @@ public class UpgradeCustomerPageActions extends Environment {
     }
 
     public static void getAccurateQuote() throws InterruptedException, IOException {
-        System.out.println("Going to enter getAccurateQuote function");
+        log.debug("Going to enter getAccurateQuote function");
         Thread.sleep(4000);
         pageobjects.UpgradeCustomerPage.GetAccurateQuote.click();
-        System.out.println("Clicked on 'yes, get accurate quote' under 'is your damaged section?' ");
+        log.debug("Clicked on 'yes, get accurate quote' under 'is your damaged section?' ");
         Thread.sleep(4000);
         Screenshots.captureScreenshot();
     }
@@ -1542,7 +1542,7 @@ public class UpgradeCustomerPageActions extends Environment {
             driver.switchTo().window(handle);
         }
         Thread.sleep(4000);
-        System.out.println(driver.findElement(By.xpath("//*[@id='redeem-questionnaire']/p[@class='info']")).getText());
+        log.debug(driver.findElement(By.xpath("//*[@id='redeem-questionnaire']/p[@class='info']")).getText());
 
         // Select first questionnaire - Is your phone fully functional
         WebElement Question0 = driver
@@ -1570,7 +1570,7 @@ public class UpgradeCustomerPageActions extends Environment {
         new Select(Question3).selectByValue("0");
 
         driver.findElement(By.id("continue-with-accurate-quote")).click();
-        System.out.println("Completed questionaire");
+        log.debug("Completed questionaire");
 
         Thread.sleep(8000);
         Screenshots.captureScreenshot();
@@ -1584,11 +1584,11 @@ public class UpgradeCustomerPageActions extends Environment {
         log.debug('\n' + "Validate Your Sim section is displayed");
 
         if (pageobjects.UpgradeCustomerPage.YourSimHeading.isDisplayed()) {
-            System.out.println(
+            log.debug(
                     "The Your sim section is displayed" + pageobjects.UpgradeCustomerPage.YourSimHeading.getText());
             log.debug("The Your sim section is displayed");
         } else
-            System.out.println("The Your sim section us not diplayed");
+            log.debug("The Your sim section us not diplayed");
         log.debug("The Your sim section is not displayed");
         Screenshots.captureScreenshot();
 
@@ -1601,10 +1601,10 @@ public class UpgradeCustomerPageActions extends Environment {
         boolean actualValue = UpgradeCustomerPage.NeedNewSimRadioButton.isSelected();
         boolean actualValue1 = UpgradeCustomerPage.DontNeedNewSimRadioButton.isSelected();
         if ((actualValue && actualValue1) != true) {
-            System.out.println("Radio button is not selected");
+            log.debug("Radio button is not selected");
             log.debug("Radio button is not selected by default");
         } else {
-            System.out.println("Radio button is selected by default");
+            log.debug("Radio button is selected by default");
         }
         Screenshots.captureScreenshot();
     }
@@ -1614,13 +1614,13 @@ public class UpgradeCustomerPageActions extends Environment {
         log.debug('\n' + "Validate Confirm button not displayed");
 
         String YourSimSectionContainer = UpgradeCustomerPage.YourSimSection.getText();
-        System.out.println(YourSimSectionContainer);
+        log.debug(YourSimSectionContainer);
         boolean ConfimNotDisplayed = YourSimSectionContainer.contains("Confirm");
         if (ConfimNotDisplayed == false) {
-            System.out.println("Confirm button is not displayed");
+            log.debug("Confirm button is not displayed");
             log.debug("Confirm button is not displayed");
         } else {
-            System.out.println("Confirm button is displayed");
+            log.debug("Confirm button is displayed");
             log.debug("Confirm button is displayed");
         }
         Screenshots.captureScreenshot();
@@ -1629,19 +1629,19 @@ public class UpgradeCustomerPageActions extends Environment {
     public static void YourSimSectionCopyText() throws Exception {
 
         String YouSimCopyText = UpgradeCustomerPage.YourSimSectionCopyText.getText();
-        System.out.println(YouSimCopyText);
-        String ActualCopy = ("You�ll need a nano sim to use your new device." + System.lineSeparator()
-                + "Your current sim might already be a nano sim. If it is, you can just pop it straight into your new device. It�s the quickest and easiest way to get set up."
+        log.debug(YouSimCopyText);
+        String ActualCopy = ("You'll need a nano sim to use your new device." + System.lineSeparator()
+                + "Your current sim might already be a nano sim. If it is, you can just pop it straight into your new device. It's the quickest and easiest way to get set up."
                 + System.lineSeparator()
-                + "If your current sim isn�t a nano sim, you�ll need a new one. Tick �I need a new sim� and we�ll send you one with your device. Then just fill out the sim swap form when it arrives.");
-        System.out.println(ActualCopy);
+                + "If your current sim isn't a nano sim, you'll need a new one. Tick 'I need a new sim' and we'll send you one with your device. Then just fill out the sim swap form when it arrives.");
+        log.debug(ActualCopy);
         if (YouSimCopyText.equals(ActualCopy))
 
         {
-            System.out.println("The valid copytext is displayed" + YouSimCopyText);
+            log.debug("The valid copytext is displayed" + YouSimCopyText);
             log.debug("The valid copytext is displayed");
         } else {
-            System.out.println("The valid copytext is not displayed");
+            log.debug("The valid copytext is not displayed");
         }
         Screenshots.captureScreenshot();
 
@@ -1654,9 +1654,9 @@ public class UpgradeCustomerPageActions extends Environment {
         if (UpgradeCustomerPage.YourSimOptionsOne.isDisplayed()
                 && UpgradeCustomerPage.YourSimOptionsTwo.isDisplayed()) {
             System.out.printf("The Two Options are displayed" + '\n', OptOne);
-            System.out.println(OptTwo);
+            log.debug(OptTwo);
         } else {
-            System.out.println("The two options are not displayed");
+            log.debug("The two options are not displayed");
         }
         Screenshots.captureScreenshot();
 
@@ -1665,10 +1665,10 @@ public class UpgradeCustomerPageActions extends Environment {
     public static void SimSwapLinkDisplayed() throws Exception {
 
         if (UpgradeCustomerPage.SimSwaplink.isDisplayed()) {
-            System.out.println("The Sim Swap link is displayed");
+            log.debug("The Sim Swap link is displayed");
             log.debug("The Sim Swap link is displayed");
         } else {
-            System.out.println("The Sim Swap form link is displayed");
+            log.debug("The Sim Swap form link is displayed");
             log.debug("The Sim Swap form link is displayed");
         }
         Screenshots.captureScreenshot();
@@ -1686,20 +1686,20 @@ public class UpgradeCustomerPageActions extends Environment {
         }
 
         String simswapurl = driver.getCurrentUrl();
-        System.out.println(simswapurl);
+        log.debug(simswapurl);
         if (simswapurl.contains("swapmysim")) {
-            System.out.println("The Swap you sim page is displayed");
+            log.debug("The Swap you sim page is displayed");
 
         } else {
 
-            System.out.println("The Swap my sim page is not displayed");
+            log.debug("The Swap my sim page is not displayed");
         }
         driver.close();
         Thread.sleep(2000);
         for (String winHandle : driver.getWindowHandles()) {
             driver.switchTo().window(winHandle);
         }
-        System.out.println(driver.getCurrentUrl());
+        log.debug(driver.getCurrentUrl());
         Screenshots.captureScreenshot();
 
     }
@@ -1717,9 +1717,9 @@ public class UpgradeCustomerPageActions extends Environment {
     public static void ConfirmCTADisplayed() throws Exception {
 
         if (UpgradeCustomerPage.ConfirmCTA.isDisplayed()) {
-            System.out.println("The Confirm CTA is displayed");
+            log.debug("The Confirm CTA is displayed");
         } else {
-            System.out.println("The Confirm CTA is not displayed");
+            log.debug("The Confirm CTA is not displayed");
         }
         Screenshots.captureScreenshot();
     }
@@ -1750,17 +1750,17 @@ public class UpgradeCustomerPageActions extends Environment {
     }
 
     public static void clickTakeOfferAndUpgrade() throws IOException, InterruptedException {
-        System.out.println("Going to click on Take Offer and Upgrade");
+        log.debug("Going to click on Take Offer and Upgrade");
         if (UpgradeCustomerPage.TakeOfferAndUpgrade.size() > 0) {
             UpgradeCustomerPage.TakeOfferAndUpgrade.get(0).click();
         } else {
-            System.out.println("Take offer and upgrade button is not present or enabled");
+            log.debug("Take offer and upgrade button is not present or enabled");
         }
         Screenshots.captureScreenshot();
     }
 
     public static void selectTariffFromRecommendedSection() throws IOException, InterruptedException {
-        System.out.println("Going to select tariff from recommended section");
+        log.debug("Going to select tariff from recommended section");
         executor.executeScript("arguments[0].click();", UpgradeCustomerPage.RandomTariffUpgrade);
         Screenshots.captureScreenshot();
     }
@@ -2035,8 +2035,8 @@ public class UpgradeCustomerPageActions extends Environment {
         } else {
             Assert.fail("Trade in not displayed, hence failed");
         }
-       // driver.findElement(By.xpath("//button[contains(text(),'Take this offer and upgrade')]")).click();
-       // JavascriptExecutor js = (JavascriptExecutor) driver;
+        // driver.findElement(By.xpath("//button[contains(text(),'Take this offer and upgrade')]")).click();
+        // JavascriptExecutor js = (JavascriptExecutor) driver;
         ((JavascriptExecutor) driver).executeScript("arguments[0].click();",
                 driver.findElement(By.xpath("//button[contains(text(),'Take this offer and upgrade')]")));
 
@@ -2209,7 +2209,7 @@ public class UpgradeCustomerPageActions extends Environment {
 
 
     public static void reviewTariff() throws InterruptedException, IOException {
-        System.out.println("Trying to verify first section is review tariff");
+        log.debug("Trying to verify first section is review tariff");
 
 //Give function with position so that review tariff is at first section like 1. Review your tariff
 
@@ -2219,7 +2219,7 @@ public class UpgradeCustomerPageActions extends Environment {
     }
 
     public static void contentDisplayedFirstTariff() throws InterruptedException, IOException {
-        System.out.println("Trying to verify first section is review tariff");
+        log.debug("Trying to verify first section is review tariff");
         //Below tariff validations should be in such a way that this should be first tile text
         pageobjects.UpgradeCustomerPage.moveFromTariff.getText();
 
@@ -2227,7 +2227,7 @@ public class UpgradeCustomerPageActions extends Environment {
     }
 
     public static void contentDisplayedSecondTariff() throws InterruptedException, IOException {
-        System.out.println("Trying to verify first section is review tariff");
+        log.debug("Trying to verify first section is review tariff");
         //Below tariff validations should be in such a way that this should be second tile text
         pageobjects.UpgradeCustomerPage.toThisTariff.getText();
 
@@ -2235,7 +2235,7 @@ public class UpgradeCustomerPageActions extends Environment {
     }
 
     public static void clickonnoSurelink() throws InterruptedException, IOException {
-        System.out.println("Trying to verify first section is review tariff");
+        log.debug("Trying to verify first section is review tariff");
         //Below tariff validations should be in such a way that this should be second tile text
         pageobjects.UpgradeCustomerPage.clickonNotsureSimType.click();
 
@@ -2243,7 +2243,7 @@ public class UpgradeCustomerPageActions extends Environment {
     }
 
     public static void nonDisplayDeliverySection() throws InterruptedException, IOException {
-        System.out.println("Trying to verify delivery section is present or not");
+        log.debug("Trying to verify delivery section is present or not");
         //Below get the delivery section size
         int deliverySection = driver.findElements(By.xpath("")).size();
         if (deliverySection >= 0) {
@@ -2269,9 +2269,9 @@ public class UpgradeCustomerPageActions extends Environment {
         String HeaderText = HeaderPromo.getText();
         if (HeaderText.contains("This is a deal we think you’ll like")) {
             log.debug("The Promotions Tile is displayed correctly");
-            System.out.println(HeaderText);
+            log.debug(HeaderText);
         } else {
-            System.out.println("The Promotions title is incorrect");
+            log.debug("The Promotions title is incorrect");
             Assert.fail("The copy text is not correct");
         }
 
@@ -2284,9 +2284,9 @@ public class UpgradeCustomerPageActions extends Environment {
         String BodyText = BodyPromo.getText();
         if (BodyText.contains("‘Your offer is:")) {
             log.debug("‘Your offer is:");
-            System.out.println(BodyText);
+            log.debug(BodyText);
         } else {
-            System.out.println("The Body Message is incorrect");
+            log.debug("The Body Message is incorrect");
             Assert.fail("The Body Message is incorrect");
         }
 
@@ -2299,7 +2299,7 @@ public class UpgradeCustomerPageActions extends Environment {
         executor.executeScript("arguments[0].click();", element);
         log.debug("Verifying that the checkboxes are not displayed");
         if (element.isDisplayed()) {
-            System.out.println("The checkboxes for simo are dipsplayed which is not right");
+            log.debug("The checkboxes for simo are dipsplayed which is not right");
             Assert.fail("The checkboxes for simo are dipsplayed which is not right\"");
         } else
             log.debug("The checkboxes for simo are not displayed");
@@ -2337,17 +2337,17 @@ public class UpgradeCustomerPageActions extends Environment {
                 for (int i = 1; i <= filtes.size(); i++) {
                     if (driver.findElement(By.xpath("(//div[@class='filter-options']/button)[" + i + "]")).isDisplayed()) {
                         String fltr = driver.findElement(By.xpath("(//div[@class='filter-options']/button)[" + i + "]")).getText();
-                        System.out.println(" the data filters is displayed" + fltr);
+                        log.debug(" the data filters is displayed" + fltr);
                         log.debug("the data filters is displayed" + fltr);
                     }
                 }
             } else {
-                System.out.println(" Failed to displayed the Data Filter ");
+                log.debug(" Failed to displayed the Data Filter ");
                 Assert.fail(" Failed to displayed the Data Filter ");
             }
         } catch (Exception e) {
             // TODO Auto-generated catch block
-            System.out.println(" Failed to displayed the Data Filter " + e.getStackTrace());
+            log.debug(" Failed to displayed the Data Filter " + e.getStackTrace());
             Assert.fail(" Failed to displayed the Data Filter ");
         }
     }
@@ -2360,17 +2360,17 @@ public class UpgradeCustomerPageActions extends Environment {
                 for (int i = 1; i <= contractLength.size(); i++) {
                     if (driver.findElement(By.xpath("(//div[@class='button-tabs']//a)[" + i + "]")).isDisplayed()) {
                         String contrctLent = driver.findElement(By.xpath("(//div[@class='button-tabs']//a)[" + i + "]")).getText();
-                        System.out.println(" the data filters is displayed: " + contrctLent);
+                        log.debug(" the data filters is displayed: " + contrctLent);
                         log.debug("the data filters is displayed: " + contrctLent);
                     }
                 }
             } else {
-                System.out.println(" Failed to displayed the Data Filter ");
+                log.debug(" Failed to displayed the Data Filter ");
                 Assert.fail(" Failed to displayed the Data Filter ");
             }
         } catch (Exception e) {
             // TODO Auto-generated catch block
-            System.out.println(" Failed to displayed the Data Filter " + e.getStackTrace());
+            log.debug(" Failed to displayed the Data Filter " + e.getStackTrace());
             Assert.fail(" Failed to displayed the Data Filter ");
         }
     }
@@ -2379,15 +2379,15 @@ public class UpgradeCustomerPageActions extends Environment {
         try {
             driver.manage().timeouts().implicitlyWait(2, TimeUnit.MINUTES);
             if (driver.findElements(By.xpath("//*[contains(text(),'hy choose an O2 Pay Monthly sim?')]")).size() <= 0) {
-                System.out.println(" text 'Why choose an O2 Pay Monthly sim?' is Displayed ");
+                log.debug(" text 'Why choose an O2 Pay Monthly sim?' is Displayed ");
                 log.debug(" text 'Why choose an O2 Pay Monthly sim?' is Displayed ");
             } else {
-                System.out.println("  'Why choose an O2 Pay Monthly sim?' is Displayed ");
+                log.debug("  'Why choose an O2 Pay Monthly sim?' is Displayed ");
                 Assert.fail("  'Why choose an O2 Pay Monthly sim?' is Displayed ");
             }
         } catch (Exception e) {
             // TODO Auto-generated catch block
-            System.out.println("  'Why choose an O2 Pay Monthly sim?' is Displayed " + e.getStackTrace());
+            log.debug("  'Why choose an O2 Pay Monthly sim?' is Displayed " + e.getStackTrace());
             Assert.fail("  'Why choose an O2 Pay Monthly sim?' is Displayed ");
         }
     }
@@ -2397,16 +2397,16 @@ public class UpgradeCustomerPageActions extends Environment {
             driver.manage().timeouts().implicitlyWait(2, TimeUnit.MINUTES);
             if (driver.findElements(By.xpath("//*[contains(text(),'Out of stock')]")).size() > 0) {
                 if (driver.findElement(By.xpath("//*[contains(text(),'Out of stock')]")).isDisplayed()) {
-                    System.out.println(" The Out of stock message is Displayed in the Upgrade Options page");
+                    log.debug(" The Out of stock message is Displayed in the Upgrade Options page");
                     log.debug(" The Out of stock message is Displayed in the Upgrade Options page");
                 }
             } else {
-                System.out.println(" Failed to displayed  OOS message in the Upgrade Page");
+                log.debug(" Failed to displayed  OOS message in the Upgrade Page");
                 Assert.fail(" Failed to displayed  OOS message in the Upgrade Page");
             }
         } catch (Exception e) {
             // TODO Auto-generated catch block
-            System.out.println(" Failed to displayed  OOS message in the Upgrade Page" + e.getStackTrace());
+            log.debug(" Failed to displayed  OOS message in the Upgrade Page" + e.getStackTrace());
             Assert.fail(" Failed to displayed  OOS message in the Upgrade Page");
         }
     }
@@ -2416,16 +2416,16 @@ public class UpgradeCustomerPageActions extends Environment {
             driver.manage().timeouts().implicitlyWait(2, TimeUnit.MINUTES);
             if (driver.findElements(By.xpath("//*[contains(text(),'You can't continue with checking out if there are any out of stock items in your basket,')]")).size() > 0) {
                 if (driver.findElement(By.xpath("(//*[contains(text(),'You can't continue with checking out if there are any out of stock items in your basket,')])[1]")).isDisplayed()) {
-                    System.out.println(" The 'OOS message' is displayed in the upgrades basket page is Verified");
+                    log.debug(" The 'OOS message' is displayed in the upgrades basket page is Verified");
                     log.debug(" The 'OOS message' is displayed in the upgrades basket page is Verified");
                 }
             } else {
-                System.out.println(" Failed to Displayed The 'OOS message' in the upgrades basket page");
+                log.debug(" Failed to Displayed The 'OOS message' in the upgrades basket page");
                 Assert.fail(" Failed to Displayed The 'OOS message' in the upgrades basket page");
             }
         } catch (Exception e) {
             // TODO Auto-generated catch block
-            System.out.println(" Failed to Displayed The 'OOS message' in the upgrades basket page" + e.getStackTrace());
+            log.debug(" Failed to Displayed The 'OOS message' in the upgrades basket page" + e.getStackTrace());
             Assert.fail(" Failed to Displayed The 'OOS message' in the upgrades basket page");
         }
     }
@@ -2443,17 +2443,17 @@ public class UpgradeCustomerPageActions extends Environment {
                     String str = driver.findElement(By.xpath("(//select[@id='dataFilterSelect']//option)[" + i + "]"));
 
                     if (str.contains("Upfront cost")) {
-                        System.out.println(" Upfront Cost is availabe ");
+                        log.debug(" Upfront Cost is availabe ");
                         Assert.fail(" Upfront Cost is availabe ");
                         break;
                     }
                 }
             } else {
-                System.out.println(" verify that the upfront sort options is not present in the 'sorting dropdown'");
+                log.debug(" verify that the upfront sort options is not present in the 'sorting dropdown'");
             }
         } catch (Exception e) {
             // TODO Auto-generated catch block
-            System.out.println(" FAILED ::::: Upfront Cost is availabe ");
+            log.debug(" FAILED ::::: Upfront Cost is availabe ");
             Assert.fail(" FAILED ::::: Upfront Cost is availabe ");
         }
     }
@@ -2472,32 +2472,32 @@ public class UpgradeCustomerPageActions extends Environment {
 
         for (int i = 0; i < DataTextElement.size(); i++) {
             data = DataTextElement.get(i).getText();
-            System.out.println("data " + data);
+            log.debug("data " + data);
             if (data.contains("MB")) {
                 tempdata = org.apache.commons.lang3.StringUtils.substringBetween(data, "", "MB");
                 a = NumberUtils.toInt(tempdata);
-                System.out.println("a " + a);
+                log.debug("a " + a);
                 datalistafter.add(a);
             }
             if (data.contains("GB")) {
                 tempdata = org.apache.commons.lang3.StringUtils.substringBetween(data, "", "GB");
-                // System.out.println("tempdata " + tempdata);
+                // log.debug("tempdata " + tempdata);
                 a = NumberUtils.toInt(tempdata);
                 a = a * 1024;
-                System.out.println("a " + a);
+                log.debug("a " + a);
                 if (a != 0) {
                     datalistafter.add(a);
                 }
             }
         }
 
-        System.out.println('\n');
-        System.out.println("----------------------Data List after selecting filter--------------");
+        log.debug('\n');
+        log.debug("----------------------Data List after selecting filter--------------");
         for (int i = 0; i < datalistafter.size(); i++) {
-            System.out.println(datalistafter.get(i));
+            log.debug(datalistafter.get(i));
 
         }
-        System.out.println("---------------------------------------------");
+        log.debug("---------------------------------------------");
         Screenshots.captureScreenshot();
         return datalistafter;
     }
@@ -2511,32 +2511,32 @@ public class UpgradeCustomerPageActions extends Environment {
 
         for (int i = 0; i < DataTextElement.size(); i++) {
             data = DataTextElement.get(i).getText();
-            System.out.println("data " + data);
+            log.debug("data " + data);
             if (data.contains("MB")) {
                 tempdata = org.apache.commons.lang3.StringUtils.substringBetween(data, "", "MB");
                 a = NumberUtils.toInt(tempdata);
-                System.out.println("a " + a);
+                log.debug("a " + a);
                 datalistafter.add(a);
             }
             if (data.contains("GB")) {
                 tempdata = org.apache.commons.lang3.StringUtils.substringBetween(data, "", "GB");
-                // System.out.println("tempdata " + tempdata);
+                // log.debug("tempdata " + tempdata);
                 a = NumberUtils.toInt(tempdata);
                 a = a * 1024;
-                System.out.println("a " + a);
+                log.debug("a " + a);
                 if (a != 0) {
                     datalistafter.add(a);
                 }
             }
         }
 
-        System.out.println('\n');
-        System.out.println("----------------------Data List after selecting filter--------------");
+        log.debug('\n');
+        log.debug("----------------------Data List after selecting filter--------------");
         for (int i = 0; i < datalistafter.size(); i++) {
-            System.out.println(datalistafter.get(i));
+            log.debug(datalistafter.get(i));
 
         }
-        System.out.println("---------------------------------------------");
+        log.debug("---------------------------------------------");
         Screenshots.captureScreenshot();
         return datalistafter;
     }
@@ -2550,25 +2550,25 @@ public class UpgradeCustomerPageActions extends Environment {
             MonthlyCostTextElement = pageobjects.UpgradeCustomerPage.MonthlyTextElement_30Days;
         }
 
-         ArrayList<Integer> MonthlyCostlist = new ArrayList<Integer>();
+        ArrayList<Integer> MonthlyCostlist = new ArrayList<Integer>();
         String data = null;
         int a = 0;
 
         for (int i = 0; i < MonthlyCostTextElement.size(); i++) {
             data = MonthlyCostTextElement.get(i).getText();
-            data = org.apache.commons.lang3.StringUtils.substringBetween(data, "�", ".");
+            data = org.apache.commons.lang3.StringUtils.substringBetween(data, "£", ".");
             a = NumberUtils.toInt(data);
             MonthlyCostlist.add(a);
         }
 
-        System.out.println('\n');
+        log.debug('\n');
 
-        System.out.println("----------------------Monthly Cost List after selecting filter--------------");
+        log.debug("----------------------Monthly Cost List after selecting filter--------------");
         for (int i = 0; i < MonthlyCostlist.size(); i++) {
-            System.out.println(MonthlyCostlist.get(i));
+            log.debug(MonthlyCostlist.get(i));
 
         }
-        System.out.println("---------------------------------------------");
+        log.debug("---------------------------------------------");
         Screenshots.captureScreenshot();
         return MonthlyCostlist;
     }
@@ -2583,19 +2583,19 @@ public class UpgradeCustomerPageActions extends Environment {
 
         for (int i = 0; i < MonthlyCostTextElement.size(); i++) {
             data = MonthlyCostTextElement.get(i).getText();
-            data = org.apache.commons.lang3.StringUtils.substringBetween(data, "�", ".");
+            data = org.apache.commons.lang3.StringUtils.substringBetween(data, "£", ".");
             a = NumberUtils.toInt(data);
             MonthlyCostlist.add(a);
         }
 
-        System.out.println('\n');
+        log.debug('\n');
 
-        System.out.println("----------------------Monthly Cost List after selecting filter--------------");
+        log.debug("----------------------Monthly Cost List after selecting filter--------------");
         for (int i = 0; i < MonthlyCostlist.size(); i++) {
-            System.out.println(MonthlyCostlist.get(i));
+            log.debug(MonthlyCostlist.get(i));
 
         }
-        System.out.println("---------------------------------------------");
+        log.debug("---------------------------------------------");
         Screenshots.captureScreenshot();
         return MonthlyCostlist;
     }
@@ -2612,35 +2612,35 @@ public class UpgradeCustomerPageActions extends Environment {
         ArrayList<Integer> datalist = new ArrayList<Integer>();
         String data = null, tempdata = null;
         int a = 0;
-        System.out.println("size " + DataTextElement.size());
+        log.debug("size " + DataTextElement.size());
         for (int i = 0; i < DataTextElement.size(); i++) {
             data = DataTextElement.get(i).getText();
-            System.out.println("data " + data);
+            log.debug("data " + data);
             if (data.contains("MB")) {
                 tempdata = org.apache.commons.lang3.StringUtils.substringBetween(data, "", "MB");
                 a = NumberUtils.toInt(tempdata);
-                System.out.println("a " + a);
+                log.debug("a " + a);
                 datalist.add(a);
             }
             if (data.contains("GB")) {
                 tempdata = org.apache.commons.lang3.StringUtils.substringBetween(data, "", "GB");
-                System.out.println("tempdata " + tempdata);
+                log.debug("tempdata " + tempdata);
                 a = NumberUtils.toInt(tempdata);
                 a = a * 1024;
-                System.out.println("a " + a);
+                log.debug("a " + a);
                 datalist.add(a);
             }
 
         }
 
-        System.out.println('\n');
+        log.debug('\n');
 
-        System.out.println("----------------------Data List before selecting filter--------------");
+        log.debug("----------------------Data List before selecting filter--------------");
         for (int i = 0; i < datalist.size(); i++) {
-            System.out.println(datalist.get(i));
+            log.debug(datalist.get(i));
 
         }
-        System.out.println("---------------------------------------------");
+        log.debug("---------------------------------------------");
         Screenshots.captureScreenshot();
         return datalist;
     }
@@ -2652,41 +2652,41 @@ public class UpgradeCustomerPageActions extends Environment {
         ArrayList<Integer> datalist = new ArrayList<Integer>();
         String data = null, tempdata = null;
         int a = 0;
-        System.out.println("size " + DataTextElement.size());
+        log.debug("size " + DataTextElement.size());
         for (int i = 0; i < DataTextElement.size(); i++) {
             data = DataTextElement.get(i).getText();
-            System.out.println("data " + data);
+            log.debug("data " + data);
             if (data.contains("MB")) {
                 tempdata = org.apache.commons.lang3.StringUtils.substringBetween(data, "", "MB");
                 a = NumberUtils.toInt(tempdata);
-                System.out.println("a " + a);
+                log.debug("a " + a);
                 datalist.add(a);
             }
             if (data.contains("GB")) {
                 tempdata = org.apache.commons.lang3.StringUtils.substringBetween(data, "", "GB");
-                System.out.println("tempdata " + tempdata);
+                log.debug("tempdata " + tempdata);
                 a = NumberUtils.toInt(tempdata);
                 a = a * 1024;
-                System.out.println("a " + a);
+                log.debug("a " + a);
                 datalist.add(a);
             }
 
         }
 
-        System.out.println('\n');
+        log.debug('\n');
 
-        System.out.println("----------------------Data List before selecting filter--------------");
+        log.debug("----------------------Data List before selecting filter--------------");
         for (int i = 0; i < datalist.size(); i++) {
-            System.out.println(datalist.get(i));
+            log.debug(datalist.get(i));
 
         }
-        System.out.println("---------------------------------------------");
+        log.debug("---------------------------------------------");
         Screenshots.captureScreenshot();
         return datalist;
     }
 
     public static ArrayList<Integer> getCurrentSortOrderUsingMonthlyData_UpgradeSIMO_MBBTablet() throws IOException, InterruptedException {
-        System.out.println("Executing getCurrentSortOrderUsingMonthlyData_UpgradeSIMO_MBBTablet ()");
+        log.debug("Executing getCurrentSortOrderUsingMonthlyData_UpgradeSIMO_MBBTablet ()");
 
         List<WebElement> DataTextElement = null;
 
@@ -2699,22 +2699,22 @@ public class UpgradeCustomerPageActions extends Environment {
         ArrayList<Integer> tariffListUsingMonthlyData = new ArrayList<Integer>();
         String data = null, tempdata = null;
         int a = 0;
-        System.out.println("size " + DataTextElement.size());
+        log.debug("size " + DataTextElement.size());
         for (int i = 0; i < DataTextElement.size(); i++) {
             data = DataTextElement.get(i).getText();
-            System.out.println("data " + data);
+            log.debug("data " + data);
             if (data.contains("MB")) {
                 tempdata = org.apache.commons.lang3.StringUtils.substringBetween(data, "", "MB");
                 a = NumberUtils.toInt(tempdata);
-                System.out.println("a " + a);
+                log.debug("a " + a);
                 tariffListUsingMonthlyData.add(a);
             }
             if (data.contains("GB")) {
                 tempdata = org.apache.commons.lang3.StringUtils.substringBetween(data, "", "GB");
-                System.out.println("tempdata " + tempdata);
+                log.debug("tempdata " + tempdata);
                 a = NumberUtils.toInt(tempdata);
                 a = a * 1024;
-                System.out.println("a " + a);
+                log.debug("a " + a);
                 if (a != 0) {
                     tariffListUsingMonthlyData.add(a);
                 }
@@ -2722,14 +2722,14 @@ public class UpgradeCustomerPageActions extends Environment {
 
         }
 
-        System.out.println('\n');
+        log.debug('\n');
 
-        System.out.println("----------------------Original List--------------");
+        log.debug("----------------------Original List--------------");
         for (int i = 0; i < tariffListUsingMonthlyData.size(); i++) {
-            System.out.println(tariffListUsingMonthlyData.get(i));
+            log.debug(tariffListUsingMonthlyData.get(i));
 
         }
-        System.out.println("---------------------------------------------");
+        log.debug("---------------------------------------------");
         Screenshots.captureScreenshot();
         return tariffListUsingMonthlyData;
     }
@@ -2762,29 +2762,29 @@ public class UpgradeCustomerPageActions extends Environment {
     }
 
     public static ArrayList<Integer> getCurrentSortOrderUsingMonthlyData_UpgradeSIMO_Phone() throws IOException, InterruptedException {
-        System.out.println("Executing getCurrentSortOrderUsingMonthlyData_UpgradeSIMO_Phone ()");
+        log.debug("Executing getCurrentSortOrderUsingMonthlyData_UpgradeSIMO_Phone ()");
 
         List<WebElement> DataTextElement = pageobjects.UpgradeCustomerPage.DataTextElement_Phones;
 
         ArrayList<Integer> tariffListUsingMonthlyData = new ArrayList<Integer>();
         String data = null, tempdata = null;
         int a = 0;
-        System.out.println("size " + DataTextElement.size());
+        log.debug("size " + DataTextElement.size());
         for (int i = 0; i < DataTextElement.size(); i++) {
             data = DataTextElement.get(i).getText();
-            System.out.println("data " + data);
+            log.debug("data " + data);
             if (data.contains("MB")) {
                 tempdata = org.apache.commons.lang3.StringUtils.substringBetween(data, "", "MB");
                 a = NumberUtils.toInt(tempdata);
-                System.out.println("a " + a);
+                log.debug("a " + a);
                 tariffListUsingMonthlyData.add(a);
             }
             if (data.contains("GB")) {
                 tempdata = org.apache.commons.lang3.StringUtils.substringBetween(data, "", "GB");
-                System.out.println("tempdata " + tempdata);
+                log.debug("tempdata " + tempdata);
                 a = NumberUtils.toInt(tempdata);
                 a = a * 1024;
-                System.out.println("a " + a);
+                log.debug("a " + a);
                 if (a != 0) {
                     tariffListUsingMonthlyData.add(a);
                 }
@@ -2792,14 +2792,14 @@ public class UpgradeCustomerPageActions extends Environment {
 
         }
 
-        System.out.println('\n');
+        log.debug('\n');
 
-        System.out.println("----------------------Original List--------------");
+        log.debug("----------------------Original List--------------");
         for (int i = 0; i < tariffListUsingMonthlyData.size(); i++) {
-            System.out.println(tariffListUsingMonthlyData.get(i));
+            log.debug(tariffListUsingMonthlyData.get(i));
 
         }
-        System.out.println("---------------------------------------------");
+        log.debug("---------------------------------------------");
         Screenshots.captureScreenshot();
         return tariffListUsingMonthlyData;
     }

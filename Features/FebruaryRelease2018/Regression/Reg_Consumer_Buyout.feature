@@ -28,5 +28,5 @@ Feature: Reg_Consumer_Buyout.feature
     Then order confirmation is displayed
 
     Examples:
-      | username       | password | handset        | Action | Username     |
-      | 0987@098.com   | test123  | Apple iPhone 8 | skip   | TEST ACCEPTA |
+      | username                      | password | handset        | Action | Username     |
+      | 23oc40681896@stf.ref.o2.co.uk | test123  | Apple iPhone 8 | skip   | TEST ACCEPTA |

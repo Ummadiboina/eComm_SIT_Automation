@@ -16,7 +16,7 @@ public class Agent_DeliveryPageActions extends Environment {
 	 * //this method used to perform click action on the Agent Home Page
 	 * 
 	 * public static void ElementClickAction(String elementname) { // TODO
-	 * Auto-generated method stub System.out.println("Agent_Home_Page_Action");
+	 * Auto-generated method stub log.debug("Agent_Home_Page_Action");
 	 * log.debug("Agent Delivery page validation");
 	 * 
 	 * if(elementname!=null) { switch (elementname.toLowerCase()) { case
@@ -30,7 +30,7 @@ public class Agent_DeliveryPageActions extends Environment {
 	 */
 	/*************************
 	 * Vinu Edited below
-	 * 
+	 *
 	 * @throws InterruptedException
 	 * @throws IOException
 	 ***********************/

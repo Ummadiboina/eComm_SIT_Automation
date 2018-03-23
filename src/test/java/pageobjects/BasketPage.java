@@ -70,6 +70,9 @@ public class BasketPage {
 	@FindBy(how = How.ID, using = ("clickAndCollect"))
 	public static WebElement clickAndCollectSelect;
 
+	@FindBy(how = How.ID, using = ("checkStoreStock"))
+	public static WebElement checkSoteSotck_TradeIn;
+
 	// specific to accessories
 
 	// orders

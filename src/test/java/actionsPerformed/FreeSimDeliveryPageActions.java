@@ -28,7 +28,7 @@ public class FreeSimDeliveryPageActions extends Environment {
 
 		log.debug("Entering an Random email id");
 		DeliveryPage.Email_Address.sendKeys(RandomEmailAddressCreation.RandomEmail());
-		System.out.println("Setting the About you options");
+		log.debug("Setting the About you options");
 		log.debug("Setting the About you options");
 		Select dropdown = new Select(pageobjects.DeliveryPage.Title);
 		dropdown.selectByIndex(2);
@@ -44,7 +44,7 @@ public class FreeSimDeliveryPageActions extends Environment {
 
 	public static void ClickSendMeMySim() throws InterruptedException, IOException {
 
-		System.out.println("Clicking on Send me  my Free Sim page");
+		log.debug("Clicking on Send me  my Free Sim page");
 		Thread.sleep(3000);
 		pageobjects.DeliveryPage.FreeSimTC.click();
 		pageobjects.DeliveryPage.SendMeMySim.click();

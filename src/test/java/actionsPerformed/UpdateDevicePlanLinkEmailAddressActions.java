@@ -17,13 +17,13 @@ public class UpdateDevicePlanLinkEmailAddressActions extends Environment {
 			Agent_UpdateCCAEmailPage.CCAEmailID.click();
 			Thread.sleep(3000);
 			String CCAemailID = Agent_UpdateCCAEmailPage.CCAEmailID.getAttribute("value");
-			System.out.println("The CCA email id is " + CCAemailID);
+			log.debug("The CCA email id is " + CCAemailID);
 			Agent_UpdateCCAEmailPage.ProceedwitheMailYes.click();
 			setRuntimeProperty.setProperty("emailid", Agent_UpdateCCAEmailPage.CCAEmailID.getAttribute("value"));
 		}
 
 		else {
-			System.out.println("The Text box to enter CCA email id is not displayed");
+			log.debug("The Text box to enter CCA email id is not displayed");
 		}
 		Screenshots.captureScreenshot();
 	}

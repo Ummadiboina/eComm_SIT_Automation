@@ -24,14 +24,14 @@ public class Agent_HomePagePageActions extends Environment {
 	public static void ElementClickAction(String elementname) throws IOException, InterruptedException {
 		// TODO Auto-generated method stub
 
-		System.out.println("Agent_Home_Page_Action");
+		log.debug("Agent_Home_Page_Action");
 		log.debug("Agent Home Page validation");
 
 		if (elementname != null) {
 			switch (elementname.toLowerCase()) {
-			case "NewCustomer":
-				pageobjects.Agent_HomePage.NewCustomer.click();
-				break;
+				case "NewCustomer":
+					pageobjects.Agent_HomePage.NewCustomer.click();
+					break;
 			}
 
 		}
@@ -45,11 +45,11 @@ public class Agent_HomePagePageActions extends Environment {
 		driver.manage().deleteAllCookies();
 		Agent_HomePage.MPN.sendKeys(msisdn);
 		log.debug("Entering Valid MPN");
-		System.out.println("Entering Valid MPN");
+		log.debug("Entering Valid MPN");
 		Thread.sleep(3000);
 		Agent_HomePage.Search.click();
 		log.debug("Clicked on Search button");
-		System.out.println("Clicked on Search button");
+		log.debug("Clicked on Search button");
 		Thread.sleep(3000);
 		/*
 		 * if (Agent_HomePage.notfound.isDisplayed()) { System.out.
@@ -62,10 +62,10 @@ public class Agent_HomePagePageActions extends Environment {
 	public static void upgradeUser() throws InterruptedException, IOException {
 		// try {
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-		System.out.println("Verifying if Upgrade link is enabled");
+		log.debug("Verifying if Upgrade link is enabled");
 		Agent_HomePage.UpgradeLink.click();
 		log.debug("Clicking on upgrade link");
-		System.out.println("Clicking on upgrade link");
+		log.debug("Clicking on upgrade link");
 
 		if(driver.findElements(By.xpath("//a[@id='abandonCheckout']")).size()>0)
 		{
@@ -74,27 +74,27 @@ public class Agent_HomePagePageActions extends Environment {
 			if(driver.findElements(By.className("tradeInMessage")).size()>0) {
 				String TradeInUpgradeOptions = driver.findElement(By.className("tradeInMessage")).getText();
 				log.debug("Displaying Trade-in Upgrade Options Message");
-				System.out.println(TradeInUpgradeOptions);
+				log.debug(TradeInUpgradeOptions);
 			}
 
 		}
 
 		try {
 			if (driver.findElement(By.xpath("//*[@id='cca']/div[2]/a[1]")).isDisplayed()) {
-				System.out.println("new overlay is displayed");
+				log.debug("new overlay is displayed");
 			} else {
-				System.out.println("new overlay is not displayed");
+				log.debug("new overlay is not displayed");
 			}
 			Thread.sleep(5000);
 
 			if (driver.findElements(By.id("abandonCheckout")).size() > 0) {
 				driver.findElement(By.id("abandonCheckout")).click();
-				System.out.println("This agent was in progress so we are abanded and proceed with newly");
+				log.debug("This agent was in progress so we are abanded and proceed with newly");
 			}
 			Screenshots.captureScreenshot();
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
-			System.out.println("new overlay is not displayed");
+			log.debug("new overlay is not displayed");
 			Screenshots.captureScreenshot();
 		}
 
@@ -104,32 +104,32 @@ public class Agent_HomePagePageActions extends Environment {
 		if (PayAsYouGo.size() > 0) {
 
 			if (Agent_HomePage.emptyDealButton.isDisplayed()) {
-				System.out.println("The Upgrade options need not be selected");
+				log.debug("The Upgrade options need not be selected");
 				if (Agent_HomePage.emptyDealButton.isEnabled()) {
-					System.out.println("The Empty Deal button is enabled hence Emptying the basket");
+					log.debug("The Empty Deal button is enabled hence Emptying the basket");
 					Agent_HomePage.emptyDealButton.click();
 					log.debug("Clicking on emptyDealButton button");
-					System.out.println("Clicking on emptyDealButton button");
+					log.debug("Clicking on emptyDealButton button");
 				} else {
 					System.out.print("Deal builder is not enables which is ok  ");
 				}
 			}
 		} else {
 
-			System.out.println("Need to choose an upgrade option");
+			log.debug("Need to choose an upgrade option");
 			String UpgradeOptionsAgent = Agent_HomePage.UpgradeOpsAgent.getText();
-			System.out.println(UpgradeOptionsAgent);
+			log.debug(UpgradeOptionsAgent);
 			if (UpgradeOptionsAgent.contains("Upgrade Options for MSISDN"))
-				if (Agent_HomePage.AgentSimoUpgradeOptions.isDisplayed())
-					Agent_HomePage.AgentSimoUpgradeOptions.click();
-				else
-					Agent_HomePage.AgentHandsetUpgradeOptions.click();
+				if (Agent_HomePage.AgentSimoUpgradeOptions.isDisplayed()){
+					Agent_HomePage.AgentSimoUpgradeOptions.click();}
+				else{
+					Agent_HomePage.AgentHandsetUpgradeOptions.click();}
 
 		}
 		/*
 		 * } catch (Exception e) { // TODO Auto-generated catch block
 		 * Assert.fail("There is no Upgrade link available in page");
-		 * System.out.println("The current message is " +
+		 * log.debug("The current message is " +
 		 * Agent_HomePage.notfound.getText()); }
 		 */
 		Screenshots.captureScreenshot();
@@ -144,7 +144,6 @@ public class Agent_HomePagePageActions extends Environment {
 			pageobjects.Agent_HomePage.NewCustomer.click();
 			Thread.sleep(3000);
 			log.debug("Performing new user new connection");
-			System.out.println("Performing new user new connection");
 			Reporter.log("Performing new user new connection");
 			Screenshots.captureScreenshot();
 		} catch (Exception e) {
@@ -152,13 +151,11 @@ public class Agent_HomePagePageActions extends Environment {
 			Screenshots.captureScreenshot();
 		}
 		if (Agent_HomePage.emptyDealButton.isEnabled()) {
-			System.out.println("The Empty Deal button is enabled hence Emptying the basket");
+			log.debug("The Empty Deal button is enabled hence Emptying the basket");
 			Agent_HomePage.emptyDealButton.click();
 			log.debug("Clicking on emptyDealButton button");
 		} else {
-			System.out.println("The Empty Deal button is not present hence it should be alright");
 			log.debug("The Empty Deal button is not present hence it should be alright");
-
 		}
 		Screenshots.captureScreenshot();
 
@@ -166,7 +163,7 @@ public class Agent_HomePagePageActions extends Environment {
 
 	public static void ValidateAgentHomepage() throws IOException, InterruptedException {
 
-		System.out.println("Agent Home page Validation" + driver.getTitle());
+		log.debug("Agent Home page Validation" + driver.getTitle());
 		log.debug("Agent Home Page validation" + driver.getTitle());
 
 		// Assert.assertEquals("Your basket",
