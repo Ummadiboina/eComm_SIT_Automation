@@ -91,9 +91,8 @@ public class Agent_DealBuilderPage {
     public static WebElement Copytobasket;
 
     @FindBy(how = How.XPATH, using = "//*[@class='priceSelection']/select/option[4]")
-    public static WebElement Copytobasket_opt3;    
-
-    ///////////////////////////// Basecomms//////////////////////////////
+    public static WebElement Copytobasket_opt3;
+///////////////////////////// Basecomms//////////////////////////////
 
     // *[@id="buy-4a05eacb-a057-40fc-9ada-8b8c59c43c4e"]/img
 
