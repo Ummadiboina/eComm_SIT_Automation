@@ -17,6 +17,11 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 
+import GlobalActions.Autoredirection;
+import GlobalActions.CommonUtilities;
+import GlobalActions.JuneReleaseValidations;
+import GlobalActions.MouseHoverAction;
+
 
 import cucumber.api.PendingException;
 import cucumber.api.java.en.And;
@@ -47,6 +52,7 @@ public class E2EOrderPlaced_Steps {
     final static Logger log = Logger.getLogger("E2EOrderPlaced_Steps");
     static int BuyOutValue = 0;
     static int TradeInValue = 0;
+    public static Hashtable selectedElements = new Hashtable();
 
     public E2EOrderPlaced_Steps() {
         driver = Hooks.driver;
@@ -1493,8 +1499,23 @@ public class E2EOrderPlaced_Steps {
             Assert.fail("unable to add details in Additional information page");
 
         }
+    }
 
+    @And("^land on the payment page and input and other details and click 'Continue' on next step for otac$")
+    public void CreditCheckPaymentPage() {
+        // Write code here that turns the phrase above into concrete actions
+        try {
+            driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, PaymentPage.class);
+            PaymentPageActions.enterPotalCodeAddress();
+            Thread.sleep(7000);
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+            System.out.println("Unable to input details in payment page");
+            Assert.fail("Unable to input details in payment page");
 
+        }
     }
 
 	/*
@@ -1569,6 +1590,25 @@ public class E2EOrderPlaced_Steps {
 	 * #########################################################################
 	 * #########
 	 */
+
+
+    @And("^Continue to Agreements page and confirm all the agreement checks$")
+    public void EnterValidCardDetails(String Username2) {
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, AdditionalInformationPage.class);
+            Thread.sleep(2000);
+            AdditionalInformationPageActions.AdditionalCardDetails(Username2);
+            Thread.sleep(4000);
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            System.out.println("unable to add details in Additional information page");
+            Assert.fail("unable to add details in Additional information page");
+
+        }
+    }
+
+
 
     @And("^Continue to Review page and review the order$")
     public void ReviewPageConfirmation() {
@@ -1907,7 +1947,46 @@ public class E2EOrderPlaced_Steps {
             Assert.fail("Unable to select Valid PAYG device, please see the failure screenshot");
         }
     }
+    /*
+    April2018
+     */
+    @And("^verify 'Email Basket' link is displayed next to the Search CTA in deal builder section$")
+    public void verify_Email_Basket_link_is_displayed_next_to_the_Search_CTA_in_deal_builder_section() throws Throwable {
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+        try {
+            PageFactory.initElements(driver, Agent_DealBuilderPage.class);
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            System.out.println("Unable to validate Quantity , please see the failure screenshot");
+            Assert.fail("Unable to validate Quantity , please see the failure screenshot");
 
+        }
+    }
+    @And("^click on '\\+' accordion at the top of deal builder$")
+    public void click_on_accordion_at_the_top_of_deal_builder() throws Throwable {
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+        try {
+            PageFactory.initElements(driver, Agent_DealBuilderPage.class);
+            Agent_DealBuilderPageActions.CCAHandsetTariffCombination();
+            Autoredirection.redirect();
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            System.out.println("Unable to click on '+'accordion , please see the failure screenshot");
+            Assert.fail("Unable to click on '+'accordion , please see the failure screenshot");
+        }
+    }
+    @And("^verify user switched to Email Basket pop up window$")
+    public void verify_user_switched_to_Email_Basket_pop_up_window() throws Throwable {
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+        try {
+            PageFactory.initElements(driver, Agent_DealBuilderPage.class);
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            System.out.println("Unable to validate Quantity , please see the failure screenshot");
+            Assert.fail("Unable to validate Quantity , please see the failure screenshot");
+
+        }
+    }
     /*
 	 * #########################################################################
 	 * #########
@@ -1926,6 +2005,21 @@ public class E2EOrderPlaced_Steps {
         } catch (Exception e) {
             // TODO Auto-generated catch block
             log.debug("Unable to email basket, please see the failure screenshot");
+            Assert.fail("Unable to email basket, please see the failure screenshot");
+
+        }
+    }
+
+
+    @And("^click on 'Email Basket' link$")
+    public void click_on_email_Basket() {
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, Agent_DealBuilderPage.class);
+            Agent_DealBuilderPageActions.eMailBasket();
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            System.out.println("Unable to email basket, please see the failure screenshot");
             Assert.fail("Unable to email basket, please see the failure screenshot");
 
         }
@@ -2053,6 +2147,22 @@ public class E2EOrderPlaced_Steps {
         }
     }
 
+    @Then("^perform all the advisory checks_new$")
+    public void advisory_checks_new() {
+        try {
+            driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, Agent_AdvisoryPage.class);
+            Agent_AdvisoryChecksActions.AgreeAdvsioryCheck_new();
+            Thread.sleep(6000);
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            System.out.println("Unable to perform advisory checks , please see the failure screenshot");
+            Assert.fail("Unable to perform advisory checks , please see the failure screenshot");
+
+        }
+    }
+
+
 	/*
 	 * #########################################################################
 	 * #########
@@ -2111,6 +2221,21 @@ public class E2EOrderPlaced_Steps {
 
         }
 
+    }
+
+    @Then("^Register the customer with valid ([^\"]*), ([^\"]*), ([^\"]*), ([^\"]*) and other valid details in delivery page_new$")
+
+    public void register_the_customer_new(String Firstname, String Surname, String HouseNumber, String PostCode) {
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, Agent_RegisterCustomerPage.class);
+            Agent_RegisterCustomerActions.PayGRegistration_new(Firstname, Surname, HouseNumber, PostCode);
+
+        } catch (Exception e) { // TODO Auto-generated catch block
+            System.out.println("Unable to Register customer , please see the failure screenshot");
+            Assert.fail("Unable to Register customer , please see the failure screenshot");
+
+        }
     }
 
 
@@ -9036,5 +9161,58 @@ public class E2EOrderPlaced_Steps {
 
         }
     }
+//shubhasharee
+
+    @And("^verify 'Get basket link' is displayed next to selected device in the Email Basket pop up window$")
+    public void validateSelectedDevicesInEmailBasketPopup(){
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            Agent_DealBuilderPageActions.validateEmailBasketPopupDeviceList(selectedElements);
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            System.out.println("Unable to validate selected device list and Get Basket link");
+            junit.framework.Assert.fail("Unable to validate selected device list and Get Basket link, please see the failure screenshot");
+        }
+
+    }
+
+
+    @And("^get the list of Selected devices$")
+    public void getSelectedDevices() {
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, Agent_DealBuilderPage.class);
+            selectedElements = Agent_DealBuilderPageActions.getSelectedProducts();
+            System.out.println(selectedElements);
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            System.out.println("Unable to get list of selected devices");
+            junit.framework.Assert.fail("Unable to get list of selected devices, please see the failure screenshot");
+        }
+    }
+
+
+    @And("^Click on 'Plus' accordion at the top of deal builder$")
+    public void clickPlusButton() throws InterruptedException {
+
+        driver.findElement(By.xpath("//a[@class='addPackage']/img")).click();
+
+        Thread.sleep(5000);
+
+
+    }
+//venkat april release
+
+    @And("^verify 'Copy to Clipboard' CTA is displayed next to the basket link for the first deal$")
+    public void verify_CopyToClipboard_And_ClikOnLink() throws InterruptedException {
+
+        driver.findElement(By.xpath("//a[@class='addPackage']/img")).click();
+
+        Thread.sleep(5000);
+
+
+    }
+
+
 
 }

@@ -73,6 +73,22 @@ public class Agent_RegisterCustomerActions extends Environment {
 		log.debug("Clicked on Register customer");
 	}
 
+
+	public static void PayGRegistration_new(String Firstname, String Surname, String houseNumber, String postCode) throws InterruptedException {
+
+		Thread.sleep(2000);
+		Agent_RegisterCustomerPage.intialPassword.sendKeys("SitTester123");
+		Agent_RegisterCustomerPage.confirmPassword.sendKeys("SitTester123");
+		Thread.sleep(2000);
+		Select dropdown2 = new Select(pageobjects.Agent_RegisterCustomerPage.securityQuestion);
+		dropdown2.selectByIndex(2);
+		pageobjects.Agent_RegisterCustomerPage.securityAnswer.sendKeys("Rotary");
+		Thread.sleep(2000);
+		Agent_RegisterCustomerPage.registerCustomer.click();
+		Thread.sleep(3000);
+		log.debug("Clicked on Register customer");
+	}
+
 	public static void PayGRegistration(String Firstname, String Surname, String HouseNumber, String PostCode)
 			throws InterruptedException {
 		try {
@@ -193,24 +209,32 @@ public class Agent_RegisterCustomerActions extends Environment {
 	public static void CardDetails() throws InterruptedException {
 		Thread.sleep(7000);
 
-		Agent_RegisterCustomerPage.CardHolderName.sendKeys("TEST ACCEPTA");
-		log.debug("Card holder name ");
-		Select CardTypeDropDown = new Select(pageobjects.Agent_RegisterCustomerPage.CardType);
-		CardTypeDropDown.selectByIndex(3);
-		Agent_RegisterCustomerPage.CardNumber.sendKeys("4539791001730106");
-		Thread.sleep(2000);
-		Select CardMonthDropdown = new Select(pageobjects.Agent_RegisterCustomerPage.CardMonth);
-		CardMonthDropdown.selectByIndex(2);
-		Thread.sleep(2000);
-		Select CardYearDropdown = new Select(pageobjects.Agent_RegisterCustomerPage.CardYear);
-		CardYearDropdown.selectByIndex(3);
-		Thread.sleep(2000);
-		log.debug("Going to validate pay by card page displayed from mipay");
-		Agent_RegisterCustomerPage.SecurityCode.sendKeys("123");
-		Thread.sleep(2000);
-		Agent_RegisterCustomerPage.UsethisCard.click();
-
+		if (driver.findElements(By.xpath("CardHolderName")).size() >= 1) {
+			Agent_RegisterCustomerPage.CardHolderName.sendKeys("TEST ACCEPTA");
+			System.out.println("Card holder name ");
+			Select CardTypeDropDown = new Select(pageobjects.Agent_RegisterCustomerPage.CardType);
+			CardTypeDropDown.selectByIndex(3);
+			Agent_RegisterCustomerPage.CardNumber.sendKeys("4539791001730106");
+			Thread.sleep(2000);
+			Select CardMonthDropdown = new Select(pageobjects.Agent_RegisterCustomerPage.CardMonth);
+			CardMonthDropdown.selectByIndex(2);
+			Thread.sleep(2000);
+			Select CardYearDropdown = new Select(pageobjects.Agent_RegisterCustomerPage.CardYear);
+			CardYearDropdown.selectByIndex(3);
+			Thread.sleep(8000);
+			System.out.println("Going to validate pay by card page displayed from mipay");
+			Agent_RegisterCustomerPage.SecurityCode.sendKeys("123");
+			Thread.sleep(2000);
+			Agent_RegisterCustomerPage.UsethisCard.click();
+		} else {
+			Thread.sleep(8000);
+			System.out.println("Going to validate pay by card page displayed from mipay");
+			Agent_RegisterCustomerPage.SecurityCode.sendKeys("123");
+			Thread.sleep(2000);
+			Agent_RegisterCustomerPage.UsethisCard.click();
+		}
 	}
+
 
 	public static void RegisterCustomer(String Password, String Confirm_Password, String Security_Answer)
 			throws InterruptedException {
