@@ -159,8 +159,12 @@ public class PhonesListingPageAction extends Environment {
 
 		driver.manage().timeouts().implicitlyWait(30,TimeUnit.SECONDS);
 
-		WebElement requestedDevice = driver.findElement(By.xpath("//img[@class='device-image']/..//*[normalize-space()='" + elementName + "']"));
-		if (driver.findElements(By.xpath("//img[@class='device-image']/..//*[normalize-space()='" + elementName + "']")).size() >= 1) {
+		WebElement serchBox = driver.findElement(By.xpath("//input[@ng-model='textSearch.searchText']"));
+		serchBox.sendKeys(elementName);
+		Thread.sleep(2000);
+
+		WebElement requestedDevice = driver.findElement(By.xpath("(//img[@class='device-image']/..//*[contains(text(),'"+elementName+"')])[1]"));
+		if (driver.findElements(By.xpath("(//img[@class='device-image']/..//*[contains(text(),'\"+elementName+\"')])[1]")).size() >= 1) {
 			((JavascriptExecutor) driver).executeScript("arguments[0].click();", requestedDevice);
 			log.debug("Selected Device from Phones as Required is : " + elementName);
 			log.debug("Selected Device from Phones as Required is : " + elementName);
@@ -174,8 +178,7 @@ public class PhonesListingPageAction extends Environment {
 			log.debug(" As Required Device is not Availabe, We have picked default device from availabe  :: " + defaultSelDevice);
 			Thread.sleep(3000);
 
-			Screenshots.captureScreenshot();
-		}
+			Screenshots.captureScreenshot();		}
 	}
 
 	// Below is for PAYG phones

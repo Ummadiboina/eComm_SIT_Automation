@@ -39,7 +39,7 @@ public class AdditionalInformationPageActions extends Environment {
 		Screenshots.captureScreenshot();
 	}
 
-	public static void AdditionalCardDetails(String Username2) throws InterruptedException, AWTException, IOException {
+	public static void AdditionalCardDetails(String Username2) throws InterruptedException, IOException {
 
 		driver.switchTo().frame("additional-card-iframe"); // switching the frame by ID
 
@@ -70,7 +70,6 @@ public class AdditionalInformationPageActions extends Environment {
 		driver.switchTo().defaultContent();
 		// log.debug(driver.getTitle());
 		Screenshots.captureScreenshot();
-
 	}
 
 	public static void ClickOn() throws IOException, InterruptedException {

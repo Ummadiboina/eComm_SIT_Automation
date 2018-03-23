@@ -16,10 +16,10 @@ Feature: Feb_CFU_Tablet_Delivery_page_more_than_one_address_select_one_compress_
     And Click on 'Use a different delivery address'link
     #And enter a <houseNumber> and an <PostCode>
     #And enter a <houseNumber> and an <PostCode> in Delivery section
-    And land on the payment page and input <Username> and other details and click 'Continue' on next step for otac
+    And land on the payment page and input and other details and click 'Continue' on next step for otac
     And Continue to Agreements page and confirm all the agreement checks
     And Continue to Review page and review the order
-    And Click on 'I agree to the terms and condition' checkbox
+    #And Click on 'I agree to the terms and condition' checkbox
     And Click on 'Place your order' CTA
 
     Examples:
