@@ -1,20 +1,21 @@
 package actionsPerformed;
 
-import GlobalActions.Screenshots;
-import cucumber.api.java.en.And;
-import helpers.Environment;
-import junit.framework.Assert;
+import java.io.IOException;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Set;
+import java.util.concurrent.TimeUnit;
+
 import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
-import pageobjects.Agent_DealBuilderPage;
 
-import java.io.IOException;
-import java.util.*;
-import java.util.concurrent.TimeUnit;
+import GlobalActions.Screenshots;
+import helpers.Environment;
+import junit.framework.Assert;
+import pageobjects.Agent_DealBuilderPage;
 
 public class Agent_DealBuilderPageActions extends Environment {
 
@@ -118,7 +119,7 @@ public class Agent_DealBuilderPageActions extends Environment {
         List<WebElement> menuOuter = driver.findElements(By.xpath("//*[@id='planTable']/tbody/tr"));
         System.out.println(menuOuter.size());
         int j = 1;
-        for (int i = 0; i < menuOuter.size() - 1; i++) {
+        for (int i = 0; i < menuOuter.size()-1; i++) {
             j = i + 1;
             if (menuOuter.get(i).getText().trim().contains("Base Comms")) {
                 if (driver.findElement(By.xpath("//*[@id='planTable']/tbody/tr[" + j + "]/td[11]")).getText()
@@ -184,9 +185,10 @@ public class Agent_DealBuilderPageActions extends Environment {
                 //System.out.println("Selected Option : " + driver.findElement(By.xpath("(//*[@class='priceSelection']/select/option)[" + menuOuter.size() + "]")).getText());
 
 
-                driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+                driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
                 driver.findElement(By.xpath("(//*[@class='priceSelection']/select/option[3])")).click();
-                System.out.println("Selected Option : " + driver.findElement(By.xpath("(//*[@class='priceSelection']/select/option[3])")).getText());
+                System.out.println("Selected Option : "+driver.findElement(By.xpath("(//*[@class='priceSelection']/select/option[3])")).getText());
+
 
 
                 System.out.println("Selected combination of handset and talk plan");
@@ -245,7 +247,8 @@ public class Agent_DealBuilderPageActions extends Environment {
             System.out.println("Clicked on SearchTextBox to enter" + Device);
             log.debug("Clicked on SearchTextBox to enter" + Device);
             Thread.sleep(3000);
-        } else if (Device.contains("iPhone 6s 32GB Gold")) {
+        }
+        else if (Device.contains("iPhone 6s 32GB Gold")) {
             System.out.println("searched iPhone 6s 32GB Gold");
 
             // pageobjects.Agent_DealBuilderPage.prepayDeviceTableFilter.click();
@@ -390,10 +393,10 @@ public class Agent_DealBuilderPageActions extends Environment {
         driver.switchTo().window(Mainwindow);
         Screenshots.captureScreenshot();
 
-        /*
+		/*
          * String text = Agent_DealBuilderPage.emailConfirmation.getText();
-         * Assert.assertEquals(text, "Email sent successfully");
-         */
+		 * Assert.assertEquals(text, "Email sent successfully");
+		 */
         // driver.close();
 
     }
@@ -521,13 +524,13 @@ public class Agent_DealBuilderPageActions extends Environment {
 
     public static void AgentBuyOut() throws InterruptedException, IOException {
 
-        if (Agent_DealBuilderPage.AgentBuyOut_Button.isDisplayed()) {
+        if(Agent_DealBuilderPage.AgentBuyOut_Button.isDisplayed()) {
             System.out.println("The Buy Out Qustionair is displayed");
             Agent_DealBuilderPage.AgentBuyOut_Button.click();
             Screenshots.captureScreenshot();
         }
 
-        if (Agent_DealBuilderPage.Checkout.isDisplayed()) {
+        if(Agent_DealBuilderPage.Checkout.isDisplayed()) {
             System.out.println("Deal Builder is displayed");
             Agent_DealBuilderPage.Checkout.click();
             Screenshots.captureScreenshot();
@@ -699,163 +702,11 @@ public class Agent_DealBuilderPageActions extends Environment {
         Screenshots.captureScreenshot();
 
     }
-
-    /********************************************************
-     * Shubhashree
-     */
-
-    public static void SelectSmartTechDevice(String Device) throws InterruptedException, IOException {
-
-        Boolean flag = false;
-        Agent_DealBuilderPage.SmartTechDevicesTab.click();
-
-        if (Device.contains("Fitbit Flex 2")) {
-            System.out.println("searched Fitbit Flex 2");
-
-            // pageobjects.Agent_DealBuilderPage.prepayDeviceTableFilter.click();
-            Agent_DealBuilderPage.SearchTextBox_SmartTechDevice.sendKeys(Device);
-            log.debug("searching Fitbit Flex 2");
-            Thread.sleep(3000);
-
-            List<WebElement> menuOuter = driver.findElements(By.xpath("//*[@id='smartTechDeviceTable']/tbody/tr"));
-            System.out.println("The size of the table is :" + menuOuter.size());
-
-            if (menuOuter.get(0).getText().contains("No matching records for given search criteria")) {
-                driver.findElement(By.xpath("//*[@id='smartTechDeviceTable_filter']/label/a")).click();
-                log.debug("Cannot find Fitbit Flex 2 device. Clearing the search and selecting random In Stock Smart Tech Device");
-                Thread.sleep(6000);
-
-                System.out.println("searching In Stock Smart Tech Device");
-                Agent_DealBuilderPage.SearchTextBox_SmartTechDevice.sendKeys("In Stock");
-                log.debug("searched In Stock Smart Tech Device");
-                Thread.sleep(6000);
-                Agent_DealBuilderPage.SelectSearchedSmartTechDevice.click();
-                flag = true;
-                log.debug("Selected a random In stock Smart Tech Device");
-                Thread.sleep(3000);
-
-            } else {
-
-                List<WebElement> stockStatus = driver.findElements(By.xpath("//table[@id='smartTechDeviceTable']/tbody/tr/td[5]"));
-                int i;
-
-                outerloop:
-                for (i = 0; i < stockStatus.size()-1; i++){
-                    if (stockStatus.get(i).getText().trim().contains("Out of stock")) {
-
-                        i++;
-                        break;
-                    }
-                    else if (stockStatus.get(i).getText().trim().contains("In stock")){
-                        driver.findElement(By.xpath("//table[@id='smartTechDeviceTable']/tbody/tr["+i+"]/td/a/img")).click();
-                        flag = true;
-                        break outerloop;
-                    }
-                }
-
-            /*Agent_DealBuilderPage.SelectSearchedSmartTechDevice.click();
-            System.out.println("Found Clicked on + symbol next to " + Device);
-            log.debug("Clicked on + symbol next to " + Device);*/
-            }
-            Thread.sleep(3000);
-
-        }
-        if(flag == false){
-            driver.findElement(By.xpath("//*[@id='smartTechDeviceTable_filter']/label/a")).click();
-            System.out.println("searching In Stock Smart Tech Device");
-            Agent_DealBuilderPage.SearchTextBox_SmartTechDevice.sendKeys("In Stock");
-            log.debug("searched In Stock Smart Tech Device");
-            Thread.sleep(6000);
-            Agent_DealBuilderPage.SelectSearchedSmartTechDevice.click();
-            log.debug("Selected a random In stock Smart Tech Device");
-            Thread.sleep(3000);
-        }
+    public static void ClickPlusaccordion() throws InterruptedException, IOException {
+        Agent_DealBuilderPage.PlusButton.click();
+        System.out.println("Clicked on Plus button");
+        log.debug("Clicked on Plus Button");
+        Thread.sleep(3000);
         Screenshots.captureScreenshot();
     }
-
-
-
-    public static Hashtable getSelectedProducts() throws InterruptedException{
-
-        Hashtable selectedElements = new Hashtable();
-        ArrayList deviceNames = new ArrayList();
-        ArrayList DevicesAndTariffs = new ArrayList();
-
-        List<WebElement> elementsList = driver.findElements(By.xpath("//a[@class='basketHeading']"));
-
-        for(int i = 0 ; i < elementsList.size()-1; i++){
-
-            elementsList.get(i).click();
-            deviceNames.add(elementsList.get(i).getText());
-
-            Thread.sleep(5000);
-
-            List<WebElement> elements = driver.findElements(By.xpath("//div[@class='lineItemContainer']/table"));
-
-            for (WebElement elm2 : elements) {
-
-                if (elements.size() > 1) {
-                    if (elm2.getAttribute("class").contains("device")) {
-                        //div[@class='lineItemContainer']/table[contains(@class,'device')]
-                        String deviceName = driver.findElement(By.xpath("//table[contains(@class,'device')]//tbody/tr[contains(@class,'lineItemRow')]/td[1]/p[1]//span")).getText();
-                        DevicesAndTariffs.add(i,deviceName);
-
-                    } else if (elm2.getAttribute("class").contains("tariff")) {
-                        String tariffName =  elm2.findElement(By.xpath("//table[contains(@class,'tariff')]//tbody/tr[contains(@class,'lineItemRow')]/td[1]/p[1]//span")).getText();
-                        DevicesAndTariffs.add(i,"|"+tariffName);
-                    }
-                } else {
-                    String productName = elm2.findElement(By.xpath("//tbody/tr[contains(@class,'lineItemRow')]/td[1]/p[1]//span")).getText();
-                    DevicesAndTariffs.add(i,productName);
-                }
-            }
-        }
-
-        selectedElements.put("DEVICES", deviceNames);
-        selectedElements.put("DEVICESANDTARIFFS", DevicesAndTariffs);
-
-        return selectedElements;
-
-    }
-
-
-    public static void validateEmailBasketPopupDeviceList(Hashtable DeviceList) {
-
-        ArrayList DealBuilderDeviceList = new ArrayList<String>();
-        DealBuilderDeviceList = (ArrayList) DeviceList.get("DEVICES");
-
-        List<WebElement> emailBasketPopupDevicelist = driver.findElements(By.xpath("//h3[contains(text(),'Choose baskets to share with customer:')]/../table[1]/tbody/tr"));
-
-        for(WebElement elm : emailBasketPopupDevicelist){
-
-            if(DealBuilderDeviceList.contains(elm.findElement(By.xpath("//td[2]")).getAttribute("textContent"))){
-
-                log.debug(elm.findElement(By.xpath("//td[2]")).getAttribute("textContent")+ " device is listed");
-
-                if(elm.findElement(By.xpath("//td[3]")).isDisplayed() && elm.findElement(By.xpath("//td[3]")).getText().equalsIgnoreCase("GetBasketLink")){
-
-                    log.debug(elm.findElement(By.xpath("//td[2]")).getAttribute("textContent")+ " device is listed and Basket Link is present");
-                }
-                else{
-
-                    log.debug(elm.findElement(By.xpath("//td[2]")).getAttribute("textContent")+ " device is listed but Basket Link is not present");
-                }
-            }
-            else{
-                log.debug("Unselected device is present in Email Basket pop up.");
-            }
-
-        }
-
-
-    }
-
-
-
-
-
-
-
-
-
 }
