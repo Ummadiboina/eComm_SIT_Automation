@@ -861,7 +861,80 @@ public class Agent_DealBuilderPageActions extends Environment {
 
     }
 
-    
+     public static void verifyDevive_and_CopyClipboard_Btn() {
+        try {
+
+            //list of the devices which are selected at the deal builder page
+            int lstOfDeviceAddedInBuilder = getSelectedProducts().size();
+
+            List<WebElement> listOfDevicesAddedToBilder = driver.findElements(By.xpath("//div[@class='emailBasketWidget']//table[1]//tr"));
+            int sizeOfAddedDevice = listOfDevicesAddedToBilder.size();
+            int selectedDeviceList = getSelectedProducts().size();
+            System.out.println("List of Device which are added to Deal Builder (" + selectedDeviceList + ")");
+            for (int i = 1,j=0; i <= sizeOfAddedDevice; i++,j++) {
+
+                String deviceNameFromBuilder = (String) getSelectedProducts().get("+j+");
+
+                Thread.sleep(3000);
+                String deviceName = driver.findElement(By.xpath("//div[@class='emailBasketWidget']//table[1]//tr[" + i + "]/td[2]"));
+                System.out.println("Device Name :: " + deviceName);
+                log.info("Device Name :: " + deviceName);
+
+                if(deviceNameFromBuilder.contains(deviceName)){
+                    System.out.println("Successfully selected Device from the Deail builder is same as same in the Email Builder");
+                    log.info("Successfully selected Device from the Deail builder is same as same in the Email Builder");
+                }else{
+                    System.out.println("List of Selected devices from the deail builder and Email basket page are varying");
+                    log.info("List of Selected devices from the deail builder and Email basket page are varying");
+                }
+
+                WebElement getBasketLink = driver.findElement(By.xpath("//div[@class='emailBasketWidget']//table[1]//tr[" + i + "]/td[3]/input"));
+                getBasketLink.click();
+
+                WebElement generatedLink = driver.findElement(By.xpath("//div[@class='emailBasketWidget']//table[1]//tr[" + i + "]/td[3]/label"));
+                String genratedLnk = generatedLink.getText();
+
+                WebElement copyToClipboardBtn = driver.findElement(By.xpath("//div[@class='emailBasketWidget']//table[1]//tr[" + i + "]/td[4]/input"));
+                copyToClipboardBtn.click();
+                Thread.sleep(3000);
+                        driver.findElement(By.cssSelector("body")).sendKeys(Keys.CONTROL + "t");
+                Thread.sleep(3000);
+                CommonActions.switchToWindow();
+                Thread.sleep(2000);
+                driver.findElement(By.cssSelector("body")).sendKeys(Keys.CONTROL + "v");
+                Thread.sleep(3000);
+                String getTheLaunchedURL = driver.getCurrentUrl();
+                if (!getTheLaunchedURL.isEmpty()) {
+                    if (getTheLaunchedURL.contains(genratedLnk)) {
+                        System.out.println("Successfully verify the Both links which are displayed on the Email Basket window");
+                        log.info("Successfully verify the Both links which are displayed on the Email Basket window");
+                        System.out.println("Basket Link : (" + getTheLaunchedURL+")" );
+                        System.out.println("Basket Link : (" + genratedLnk+")" );
+                        driver.close();
+                        Thread.sleep(3000);
+                    } else {
+                        driver.close();
+                    }
+                    Thread.sleep(3000);
+                    CommonActions.switchToWindow();
+                }
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+
+
+
+
+
+
+
+
+}
+
     
     
 }
