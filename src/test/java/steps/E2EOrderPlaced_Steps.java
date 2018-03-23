@@ -1592,7 +1592,7 @@ public class E2EOrderPlaced_Steps {
 	 */
 
 
-    @And("^Continue to Agreements page and confirm all the agreement checks$")
+   /* @And("^Continue to Agreements page and confirm all the agreement checks$")
     public void EnterValidCardDetails(String Username2) {
         try {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
@@ -1606,7 +1606,7 @@ public class E2EOrderPlaced_Steps {
             Assert.fail("unable to add details in Additional information page");
 
         }
-    }
+    }*/
 
 
 
