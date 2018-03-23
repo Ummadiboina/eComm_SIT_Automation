@@ -207,7 +207,7 @@ public class UpgradeCustomerPage {
 	@FindBy(how = How.XPATH, using = "//a[@id='skip-this-step']")
 	public static WebElement skipThisStep_OTAC;
 
-	@FindBy(how = How.ID, using = "sendOtac")
+	@FindBy(how = How.XPATH, using = "//button[@id='sendOtac']")
 	public static WebElement sendCode_OTAC;
 
 	@FindBy(how = How.XPATH, using = "//input[@id='otac']")
