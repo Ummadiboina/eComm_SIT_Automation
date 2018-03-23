@@ -24,4 +24,4 @@ Feature: Reg_CFU_seperate_tariff_ribbons_Tariff_page_Basket_page_html_overlay_fo
 
     Examples:
       | username               | password | handset | tariff                 |
-      | in00533s_069647@o2.com | test123  | Galaxy  | 9.99upfront84.00amonth |
+      | in04962f_901133@o2.com | test123  | Galaxy  | 9.99upfront84.00amonth |

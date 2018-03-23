@@ -16,4 +16,4 @@ Feature: Reg_AFU_PAYM_Dongle_PayByCard
 
     Examples:
       | user        | Device | Tariffs |
-      | 07521117298 | dongle | Random  |
+      | 07521127505 | dongle | Random  |

@@ -23,6 +23,6 @@ Feature: Feb_CFU_Tablet_Delivery_page_more_than_one_address_select_one_compress_
     And Click on 'Place your order' CTA
 
     Examples:
-      | username                     | password | Tablet        | tariff                 | houseNumber | PostCode | Username     | Action    |
-      | inq_jan3955@stf.ref.o2.co.uk | test123  | Random Device | 9.99upfront60.00amonth | 111         | SL11Er   | Test Accepta | enterCode |
+      | username            | password | Tablet        | tariff                 | houseNumber | PostCode | Username     | Action    |
+      | sit3159@gmail.com   | test123  | Random Device | 9.99upfront60.00amonth | 111         | SL11Er   | Test Accepta | enterCode |
 

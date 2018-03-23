@@ -19,6 +19,6 @@ public class SimsPage {
 		@FindBy(how=How.XPATH,using="//p[contains(text(),'Buy now')][1]")
 		public static WebElement TabletPromo1;
 		
-		////h3[contains(text(),'1GB data – preloaded sim')] -- use it for 1GB sim
+		////h3[contains(text(),'1GB data - preloaded sim')] -- use it for 1GB sim
 		
 }

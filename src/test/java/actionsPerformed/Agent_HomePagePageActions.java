@@ -71,9 +71,11 @@ public class Agent_HomePagePageActions extends Environment {
 		{
 			driver.findElement(By.xpath("//a[@id='abandonCheckout']")).click();
 			driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
-			String TradeInUpgradeOptions = driver.findElement(By.className("tradeInMessage")).getText();
-			log.debug("Displaying Trade-in Upgrade Options Message");
-			System.out.println(TradeInUpgradeOptions);
+			if(driver.findElements(By.className("tradeInMessage")).size()>0) {
+				String TradeInUpgradeOptions = driver.findElement(By.className("tradeInMessage")).getText();
+				log.debug("Displaying Trade-in Upgrade Options Message");
+				System.out.println(TradeInUpgradeOptions);
+			}
 
 		}
 
