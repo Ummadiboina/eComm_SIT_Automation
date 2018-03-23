@@ -150,6 +150,23 @@ public class Agent_RegisterCustomerActions extends Environment {
 		log.debug("Clicked on Register customer");
 		log.debug("Clicked on Register customer");
 	}	
+	
+	public static void PaybyCard() throws InterruptedException {
+		String OneOff = Agent_RegisterCustomerPage.ZeroOneOff.getText();
+		log.debug(OneOff);
+		if (OneOff.contains("£0.00")) {
+			Agent_RegisterCustomerPage.SubmitBtn.click();
+		} else {
+
+			driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+			Thread.sleep(5000);
+			log.debug("Pay by card button is enabled ");
+			Agent_RegisterCustomerPage.PayByCard.click();
+			log.debug("Clicked on pay by card ");
+
+		}
+		Thread.sleep(2000);
+	}
 
 	public static void CardDetails_PayM() throws InterruptedException {
 		Thread.sleep(2000);
