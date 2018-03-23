@@ -14,7 +14,7 @@ public class MobileBroadBandPageActions extends Environment {
 	public static void DeviceSelect(String elementName) throws IOException, InterruptedException {
 
 		if (elementName.contains("Random Device")) {
-			System.out.println("Random Device Selected");
+			log.debug("Random Device Selected");
 
 			pageobjects.MobileBroadBandPage.RandomPayGDeviceSelect.click();
 			// Assert.assertEquals(elementName,"Galaxy S7 is not found");
@@ -22,7 +22,7 @@ public class MobileBroadBandPageActions extends Environment {
 		}
 
 		if (elementName.contains("Huawei 4G in Car Wifi")) {
-			System.out.println("Huawei 4G in Car Wifi Device Selected");
+			log.debug("Huawei 4G in Car Wifi Device Selected");
 
 			pageobjects.MobileBroadBandPage.Huawei4GinCarWifi.click();
 			// Assert.assertEquals(elementName,"Galaxy S7 is not found");
@@ -30,7 +30,7 @@ public class MobileBroadBandPageActions extends Environment {
 		}
 
 		if (elementName.contains("Huawei 4G Dongle")) {
-			System.out.println("Huawei 4G Dongle Device Selected");
+			log.debug("Huawei 4G Dongle Device Selected");
 
 			pageobjects.MobileBroadBandPage.Huawei4GDongle.click();
 			// Assert.assertEquals(elementName,"Galaxy S7 is not found");
@@ -38,7 +38,7 @@ public class MobileBroadBandPageActions extends Environment {
 		}
 
 		if (elementName.contains("Huawei 4g Pocket Hotspot Plus")) {
-			System.out.println("Huawei 4g Pocket Hotspot Plus Device Selected");
+			log.debug("Huawei 4g Pocket Hotspot Plus Device Selected");
 
 			pageobjects.MobileBroadBandPage.Huawei4gPocketHotspotPlus.click();
 			// Assert.assertEquals(elementName,"Galaxy S7 is not found");
@@ -47,7 +47,7 @@ public class MobileBroadBandPageActions extends Environment {
 		}
 
 		if (elementName.contains("Huawei 4g Pocket Hotspot")) {
-			System.out.println("Huawei 4g Pocket Hotspot Device Selected");
+			log.debug("Huawei 4g Pocket Hotspot Device Selected");
 
 			pageobjects.MobileBroadBandPage.Huawei4gPocketHotspot.click();
 			// Assert.assertEquals(elementName,"Galaxy S7 is not found");
@@ -56,7 +56,7 @@ public class MobileBroadBandPageActions extends Environment {
 		}
 
 		if (elementName.contains("Huawei 4G Dongle With Wifi")) {
-			System.out.println("Huawei 4G Dongle With Wifi Device Selected");
+			log.debug("Huawei 4G Dongle With Wifi Device Selected");
 
 			pageobjects.MobileBroadBandPage.Huawei4GDongleWithWifi.click();
 			// Assert.assertEquals(elementName,"Galaxy S7 is not found");

@@ -25,7 +25,7 @@ public class BaseCommPageActions extends Environment {
 	public static void SelectBaseCommTariff(String elementName) throws IOException, InterruptedException {
 
 		if (elementName.contains("Random")) {
-			System.out.println("Selected Random Tariff");
+			log.debug("Selected Random Tariff");
 
 			//pageobjects.BaseCommPage.RandomDevice.click();
 			JavascriptExecutor executor = (JavascriptExecutor)driver;
@@ -45,9 +45,9 @@ public class BaseCommPageActions extends Environment {
 
 		for (int i = 0; i < iPadDevices.size(); i++) {
 			if (iPadDevices.get(i).getText().contains("iPad")) {
-				System.out.println("" + iPadDevices.get(i).getText() + "");
+				log.debug("" + iPadDevices.get(i).getText() + "");
 			} else {
-				System.out.println("Devices other than iPad are also displayed");
+				log.debug("Devices other than iPad are also displayed");
 				Assert.fail("Devices other than iPad are also displayed");
 			}
 		}
@@ -57,7 +57,7 @@ public class BaseCommPageActions extends Environment {
 	public static void clickOnOtherTablets() throws InterruptedException, IOException {
 		log.debug("clicking on Other Tablets Tab");
 		pageobjects.BaseCommPage.OtherTablets.click();
-		System.out.println("clicking on Other Tablets Tab");
+		log.debug("clicking on Other Tablets Tab");
 		Thread.sleep(20000);
 		Screenshots.captureScreenshot();
 	}
@@ -131,31 +131,31 @@ public class BaseCommPageActions extends Environment {
 	}
 
 	public static void CompareURL(String NewURL) throws IOException, InterruptedException {
-		System.out.println("Comparing URL");
+		log.debug("Comparing URL");
 		// URL is reference , some instance which needs to be initialsed for
 
 		String URL = driver.getCurrentUrl();
-		System.out.println("URL is " + URL);
+		log.debug("URL is " + URL);
 		String FeatureURL = NewURL;
-		System.out.println("Feature url to compare is " + FeatureURL);
+		log.debug("Feature url to compare is " + FeatureURL);
 		Assert.assertEquals(FeatureURL, URL);
 		Screenshots.captureScreenshot();
 	}
 
 	public static void VerifyIpadURL() throws IOException, InterruptedException {
 
-		System.out.println("Going to Verify content inside URL");
+		log.debug("Going to Verify content inside URL");
 		String currenturl = driver.getCurrentUrl();
-		System.out.println(currenturl);
+		log.debug(currenturl);
 		final URI uri = URI.create(currenturl);
 		String queryString = uri.getQuery();
-		System.out.println("got final querystring  " + queryString);
+		log.debug("got final querystring  " + queryString);
 
 		// String subString = queryString.substring(queryString.);
 		String subString = queryString.substring(queryString.lastIndexOf('=') + 1);
-		System.out.println("EXTRACTED " + subString);
+		log.debug("EXTRACTED " + subString);
 		if (subString.equals("ipad")) {
-			System.out.println("url is correct");
+			log.debug("url is correct");
 		} else {
 			Assert.fail("url is improper and doesnot have ipad appended in it");
 		}
@@ -164,18 +164,18 @@ public class BaseCommPageActions extends Environment {
 	}
 
 	public static void VerifyTabletURL() throws IOException, InterruptedException {
-		System.out.println("Going to Verify content inside URL");
+		log.debug("Going to Verify content inside URL");
 		String currenturl = driver.getCurrentUrl();
-		System.out.println(currenturl);
+		log.debug(currenturl);
 		final URI uri = URI.create(currenturl);
 		String queryString = uri.getQuery();
-		System.out.println("got final querystring  " + queryString);
+		log.debug("got final querystring  " + queryString);
 
 		// String subString = queryString.substring(queryString.);
 		String subString = queryString.substring(queryString.lastIndexOf('=') + 1);
-		System.out.println("EXTRACTED " + subString);
+		log.debug("EXTRACTED " + subString);
 		if (subString.contains("tablet")) {
-			System.out.println("url is correct");
+			log.debug("url is correct");
 		} else {
 			Assert.fail("url is improper and doesnot have tablet appended in it");
 		}
@@ -186,84 +186,84 @@ public class BaseCommPageActions extends Environment {
 	/*
 	 * public static void BuynowwithDevice(String elementName) throws
 	 * MalformedURLException {
-	 * System.out.println("Going to click on the buy now button on device"); if
+	 * log.debug("Going to click on the buy now button on device"); if
 	 * (elementName.contains("Apple iPad mini 3")) {
-	 * System.out.println("Going to select Ipad mini 3 device");
-	 * 
+	 * log.debug("Going to select Ipad mini 3 device");
+	 *
 	 * pageobjects.BaseCommPage.IpadMini3Buynow.click();
-	 * 
-	 * System.out.println("Selected iPad mini 3 device");
-	 * 
+	 *
 	 * log.debug("Selected iPad mini 3 device");
-	 * 
+	 *
+	 * log.debug("Selected iPad mini 3 device");
+	 *
 	 * } if (elementName.contains("Appleï¿½iPad Pro 9.7 inch")) {
-	 * System.out.println("Going to select Appleï¿½iPad Pro 9.7 inch device");
-	 * 
+	 * log.debug("Going to select Appleï¿½iPad Pro 9.7 inch device");
+	 *
 	 * pageobjects.BaseCommPage.IpadPro97Buynow.click();
-	 * 
-	 * System.out.println("Selected Appleï¿½iPad Pro 9.7 inch device");
-	 * 
+	 *
 	 * log.debug("Selected Appleï¿½iPad Pro 9.7 inch device");
-	 * 
+	 *
+	 * log.debug("Selected Appleï¿½iPad Pro 9.7 inch device");
+	 *
 	 * } if (elementName.contains("Apple iPad mini 2")) {
-	 * System.out.println("Going to select iPad mini 2 device");
-	 * 
+	 * log.debug("Going to select iPad mini 2 device");
+	 *
 	 * pageobjects.BaseCommPage.IpadMini2Buynow.click();
-	 * 
-	 * System.out.println("Selected iPad mini 2 device");
-	 * 
+	 *
 	 * log.debug("Selected iPad mini 2 device");
-	 * 
+	 *
+	 * log.debug("Selected iPad mini 2 device");
+	 *
 	 * } if (elementName.contains("Apple iPad Air")) {
-	 * System.out.println("Going to select iPad Air device");
-	 * 
+	 * log.debug("Going to select iPad Air device");
+	 *
 	 * pageobjects.BaseCommPage.IpadAirBuynow.click();
-	 * 
-	 * System.out.println("Selected iPad Air device");
-	 * 
+	 *
+	 * log.debug("Selected iPad Air device");
+	 *
 	 * log.debug("Selected iPad Air device"); } if
 	 * (elementName.contains("Samsung Galaxy Tab Active")) {
-	 * System.out.println("Going to select Galaxy Tab device");
-	 * 
+	 * log.debug("Going to select Galaxy Tab device");
+	 *
 	 * pageobjects.BaseCommPage.GalaxyTabActiveBuynow.click();
-	 * 
-	 * System.out.println("Selected Galaxy Tab device");
-	 * 
+	 *
+	 * log.debug("Selected Galaxy Tab device");
+	 *
 	 * log.debug("Selected Galaxy Tab device"); } if
 	 * (elementName.contains("Samsung Galaxy Tab A 2016 10.1")) {
-	 * System.out.println("Going to Samsung Galaxy Tab A 2016 10.1 device");
-	 * 
+	 * log.debug("Going to Samsung Galaxy Tab A 2016 10.1 device");
+	 *
 	 * pageobjects.BaseCommPage.GalaxyTabActive2016101Buynow.click();
-	 * 
-	 * System.out.println("Selected Samsung Galaxy Tab A 2016 10.1 device");
-	 * 
+	 *
+	 * log.debug("Selected Samsung Galaxy Tab A 2016 10.1 device");
+	 *
 	 * log.debug("Selected Samsung Galaxy Tab A 2016 10.1 device"); } if
 	 * (elementName.contains("Sony Xperia Z2 Tablet")) {
-	 * System.out.println("Going to select XperiaZ2Tablet device");
-	 * 
+	 * log.debug("Going to select XperiaZ2Tablet device");
+	 *
 	 * pageobjects.BaseCommPage.XperiaZ2TabletBuynow.click();
-	 * 
-	 * System.out.println("Selected XperiaZ2Tablet device");
-	 * 
+	 *
+	 * log.debug("Selected XperiaZ2Tablet device");
+	 *
 	 * log.debug("Selected XperiaZ2Tablet device"); } }
 	 */
 
 	public static void VerifyPage() throws Exception {
-		System.out.println("Going to verify page");
+		log.debug("Going to verify page");
 		Thread.sleep(3000);
 		String title = pageobjects.BaseCommPage.headerofTariffandExtrasPage.getText();
-		// System.out.println("title is "+driver.getTitle());
+		// log.debug("title is "+driver.getTitle());
 		// String title=driver.findElement(By.id("header-primary")).getText();
 
 		Assert.assertEquals(title, "Tariff and extras");
-		System.out.println("End of Verify Page function");
+		log.debug("End of Verify Page function");
 		Screenshots.captureScreenshot();
 
 	}
 
 	public static void VerifyRibbon(String device) throws IOException, InterruptedException {
 		// TODO Auto-generated method stub
-		System.out.println("Going to Verify promotion ribbon");
+		log.debug("Going to Verify promotion ribbon");
 		int k = 0;
 
 		List<WebElement> iPadDevicesName = pageobjects.BaseCommPage.iPadDevicesName;
@@ -271,9 +271,9 @@ public class BaseCommPageActions extends Environment {
 		jse.executeScript("window.scrollBy(0,900)", "");
 
 		for (int i = 0; i < iPadDevicesName.size(); i++) {
-			System.out.println(iPadDevicesName.get(i).getText());
+			log.debug(iPadDevicesName.get(i).getText());
 			if (iPadDevicesName.get(i).getText().equals(device)) {
-				System.out.println("Device matches for verifying promotion ribbon");
+				log.debug("Device matches for verifying promotion ribbon");
 				k = i + 1;
 				String c = "(//div[@class='ribbon-wrapper'])[" + k + "]";
 				boolean str1 = driver.findElement(By.xpath(c)) != null;
@@ -282,10 +282,10 @@ public class BaseCommPageActions extends Environment {
 				if (str2.isEmpty()) {
 					Assert.fail("No promotion ribbon present");
 				}
-				System.out.println("the promotion text is " + str2);
-				System.out.println("Verified promotion ribbon");
+				log.debug("the promotion text is " + str2);
+				log.debug("Verified promotion ribbon");
 			} else {
-				System.out.println("Device is not matched");
+				log.debug("Device is not matched");
 			}
 		}
 		Screenshots.captureScreenshot();
@@ -299,28 +299,28 @@ public class BaseCommPageActions extends Environment {
 	 * driver.findElement(By.xpath("//*[@data-qa-device-model-family='iPad // mini
 	 * 3']/div[1]/div[2]/div[1]/div[2]/div[2]/select[@id='memory']")); WebElement
 	 * capacity = pageobjects.BaseCommPage.CapacityipadAir2;
-	 * 
+	 *
 	 * JavascriptExecutor js = (JavascriptExecutor) driver;
 	 * js.executeScript("arguments[0].setAttribute('style', 'display:block;')",
 	 * capacity); if (capacity.isDisplayed()) { List<WebElement> elementCount = new
 	 * Select(capacity).getOptions(); //
-	 * System.out.println("elementCount"+elementCount); if (elementCount.size() <=
+	 * log.debug("elementCount"+elementCount); if (elementCount.size() <=
 	 * 1) { Assert.
 	 * fail("There are no more than 1 option available for capacity dropdown"); } }
 	 * new Select(capacity).selectByVisibleText("128GB"); String price1 =
-	 * pageobjects.BaseCommPage.PriceiPadAir2.getText(); System.out.println(price1);
-	 * System.out.println("Now the second line is ..... "); new
+	 * pageobjects.BaseCommPage.PriceiPadAir2.getText(); log.debug(price1);
+	 * log.debug("Now the second line is ..... "); new
 	 * Select(capacity).selectByVisibleText("16GB"); String price2 =
-	 * pageobjects.BaseCommPage.PriceiPadAir2.getText(); System.out.println(price2);
+	 * pageobjects.BaseCommPage.PriceiPadAir2.getText(); log.debug(price2);
 	 * Assert.assertNotSame(price2, price1);
-	 * 
+	 *
 	 * }
 	 */
 
 	public static void VerifyPriceChangeuponCapacity(String Capacity1, String Capacity2, String device)
 			throws Exception {
 		// TODO Auto-generated method stub
-		System.out.println("Going to Verify whether price changes w.r.t. capacity");
+		log.debug("Going to Verify whether price changes w.r.t. capacity");
 		int k = 0;
 		String c = null, d = null;
 
@@ -334,7 +334,7 @@ public class BaseCommPageActions extends Environment {
 		}
 
 		for (int i = 0; i < iPadDevicesName.size(); i++) {
-			System.out.println(iPadDevicesName.get(i).getText());
+			log.debug(iPadDevicesName.get(i).getText());
 			if (iPadDevicesName.get(i).getText().equals(device)) {
 				k = i + 1;
 				d = "(//select[@id='memory'])[" + k + "]";
@@ -346,40 +346,40 @@ public class BaseCommPageActions extends Environment {
 
 		if (capacity.isDisplayed()) {
 			List<WebElement> elementCount = new Select(capacity).getOptions();
-			System.out.println("size is" + elementCount.size());
+			log.debug("size is" + elementCount.size());
 			for (int j = 0; j < elementCount.size(); j++) {
-				System.out.println(elementCount.get(j).getText());
+				log.debug(elementCount.get(j).getText());
 			}
 			new Select(capacity).selectByVisibleText(Capacity1);
 			Thread.sleep(3000);
 		}
 
 		for (int i = 0; i < iPadDevicesName.size(); i++) {
-			System.out.println(iPadDevicesName.get(i).getText());
+			log.debug(iPadDevicesName.get(i).getText());
 			if (iPadDevicesName.get(i).getText().equals(device)) {
-				System.out.println("Device matches for verifying price change upon capacity");
+				log.debug("Device matches for verifying price change upon capacity");
 				k = i + 1;
 				c = "(//span[contains(text(),'£')])[" + k + "]";
 			}
 		}
 		Thread.sleep(3000);
 		String price1 = driver.findElement(By.xpath(c)).getText();
-		System.out.println("Price before changing capacity is " + price1);
-		System.out.println("Going to select new capacity ..... ");
+		log.debug("Price before changing capacity is " + price1);
+		log.debug("Going to select new capacity ..... ");
 		Thread.sleep(3000);
 
 		if (capacity.isDisplayed()) {
 			List<WebElement> elementCount = new Select(capacity).getOptions();
-			System.out.println("size is" + elementCount.size());
+			log.debug("size is" + elementCount.size());
 			for (int j = 0; j < elementCount.size(); j++) {
-				System.out.println(elementCount.get(j).getText());
+				log.debug(elementCount.get(j).getText());
 			}
 
 			new Select(capacity).selectByVisibleText(Capacity2);
 			Thread.sleep(3000);
 		}
 		String price2 = driver.findElement(By.xpath(c)).getText();
-		System.out.println("Price after changing the capacity is" + price2);
+		log.debug("Price after changing the capacity is" + price2);
 		Thread.sleep(3000);
 		Assert.assertNotSame(price2, price1);
 		Screenshots.captureScreenshot();
@@ -404,20 +404,20 @@ public class BaseCommPageActions extends Environment {
 			if (ViewAllTariffs.size() > 0) {
 				js.executeScript("arguments[0].click();", ViewAllTariffs.get(0));
 			} else {
-				System.out.println("No ViewAllTariffs");
+				log.debug("No ViewAllTariffs");
 			}
 
 			if (PayInFull.size() > 0) {
 				js.executeScript("arguments[0].click();", PayInFull.get(0));
 			} else {
-				System.out.println("No PayInFull");
+				log.debug("No PayInFull");
 			}
 
 			if (UpfrontCostElement.size() != 0) {
 				for (int i = 0; i < UpfrontCostElement.size(); i++) {
 					k = i + 1;
 					NormalUpfrontCost.add(UpfrontCostElement.get(i).getText());
-					System.out.println(
+					log.debug(
 							"Upfront cost of position :" + k + " in tariffs is" + UpfrontCostElement.get(i).getText());
 				}
 			}
@@ -426,13 +426,13 @@ public class BaseCommPageActions extends Environment {
 				for (int i = 0; i < MonthlyCostElement.size(); i++) {
 					k = i + 1;
 					NormalMonthlyCost.add(MonthlyCostElement.get(i).getText());
-					System.out.println(
+					log.debug(
 							"Monthly cost of position :" + k + " in tariffs is" + MonthlyCostElement.get(i).getText());
 				}
 			}
 			for (int i = 0; i < NormalUpfrontCost.size(); i++) {
 				NormalCost.add(NormalUpfrontCost.get(i).concat(NormalMonthlyCost.get(i)));
-				System.out.println("Normal cost " + NormalCost.get(i));
+				log.debug("Normal cost " + NormalCost.get(i));
 			}
 			Screenshots.captureScreenshot();
 		}
@@ -447,19 +447,19 @@ public class BaseCommPageActions extends Environment {
 
 				js.executeScript("arguments[0].click();", ViewAllTariffs.get(0));
 			} else {
-				System.out.println("No ViewAllTariffs");
+				log.debug("No ViewAllTariffs");
 			}
 			if (PayInFull.size() > 0) {
 				js.executeScript("arguments[0].click();", PayInFull.get(0));
 			} else {
-				System.out.println("No PayInFull");
+				log.debug("No PayInFull");
 			}
 
 			if (UpfrontCostElement.size() != 0) {
 				for (int i = 0; i < UpfrontCostElement.size(); i++) {
 					k = i + 1;
 					BasecommUpfrontCost.add(UpfrontCostElement.get(i).getText());
-					System.out.println(
+					log.debug(
 							"Upfront cost of position :" + k + " in tariffs is" + UpfrontCostElement.get(i).getText());
 				}
 			}
@@ -468,26 +468,26 @@ public class BaseCommPageActions extends Environment {
 				for (int i = 0; i < MonthlyCostElement.size(); i++) {
 					k = i + 1;
 					BasecommMonthlyCost.add(MonthlyCostElement.get(i).getText());
-					System.out.println(
+					log.debug(
 							"Monthly cost of position :" + k + " in tariffs is" + MonthlyCostElement.get(i).getText());
 				}
 			}
 			for (int i = 0; i < BasecommUpfrontCost.size(); i++) {
 				BasecommCost.add(BasecommUpfrontCost.get(i).concat(BasecommMonthlyCost.get(i)));
-				System.out.println("Basecomm cost " + BasecommCost.get(i));
+				log.debug("Basecomm cost " + BasecommCost.get(i));
 			}
 			Screenshots.captureScreenshot();
 
 		}
 		if (flow.equals("Check")) {
-			System.out.println("Size  " + NormalCost.size() + '\n' + BasecommCost.size());
+			log.debug("Size  " + NormalCost.size() + '\n' + BasecommCost.size());
 			if (NormalCost.size() != 0 && BasecommCost.size() != 0) {
 
 				for (int z = 0; z < BasecommCost.size(); z++) {
 					if (NormalCost.contains(BasecommCost.get(z))) {
-						System.out.println("Failed - Basecomm tariffs are present in normal flow");
+						log.debug("Failed - Basecomm tariffs are present in normal flow");
 					} else {
-						System.out.println("Basecomm tariffs are not present in normal tariffs section as expected");
+						log.debug("Basecomm tariffs are not present in normal tariffs section as expected");
 					}
 				}
 			}
@@ -511,19 +511,19 @@ public class BaseCommPageActions extends Environment {
 			if (ViewAllTariffs.size() > 0) {
 				js.executeScript("arguments[0].click();", ViewAllTariffs.get(0));
 			} else {
-				System.out.println("No ViewAllTariffs");
+				log.debug("No ViewAllTariffs");
 			}
 
 			if (PayInFull.size() > 0) {
 				js.executeScript("arguments[0].click();", PayInFull.get(0));
 			} else {
-				System.out.println("No PayInFull");
+				log.debug("No PayInFull");
 			}
 			if (UpfrontCostElement.size() != 0) {
 				for (int i = 0; i < UpfrontCostElement.size(); i++) {
 					k = i + 1;
 					NormalUpfrontCost.add(UpfrontCostElement.get(i).getText());
-					System.out.println(
+					log.debug(
 							"Upfront cost of position :" + k + " in tariffs is" + UpfrontCostElement.get(i).getText());
 				}
 			}
@@ -532,13 +532,13 @@ public class BaseCommPageActions extends Environment {
 				for (int i = 0; i < MonthlyCostElement.size(); i++) {
 					k = i + 1;
 					NormalMonthlyCost.add(MonthlyCostElement.get(i).getText());
-					System.out.println(
+					log.debug(
 							"Monthly cost of position :" + k + " in tariffs is" + MonthlyCostElement.get(i).getText());
 				}
 			}
 			for (int i = 0; i < NormalUpfrontCost.size(); i++) {
 				NormalCost.add(NormalUpfrontCost.get(i).concat(NormalMonthlyCost.get(i)));
-				System.out.println("Normal cost " + NormalCost.get(i));
+				log.debug("Normal cost " + NormalCost.get(i));
 			}
 			Screenshots.captureScreenshot();
 		}
@@ -571,14 +571,14 @@ public class BaseCommPageActions extends Environment {
 			Screenshots.captureScreenshot();
 		}
 		if (flow.equals("Check")) {
-			System.out.println("Size  " + NormalCost.size() + '\n' + BasecommCost.size());
+			log.debug("Size  " + NormalCost.size() + '\n' + BasecommCost.size());
 			if (NormalCost.size() != 0 && BasecommCost.size() != 0) {
 
 				for (int z = 0; z < BasecommCost.size(); z++) {
 					if (NormalCost.contains(BasecommCost.get(z))) {
-						System.out.println("Failed - Basecomm tariffs are present in normal flow");
+						log.debug("Failed - Basecomm tariffs are present in normal flow");
 					} else {
-						System.out.println("Basecomm tariffs are not present in normal tariffs section as expected");
+						log.debug("Basecomm tariffs are not present in normal tariffs section as expected");
 					}
 				}
 			}
@@ -607,9 +607,9 @@ public class BaseCommPageActions extends Environment {
 		}
 
 		for (int y = 0; y < Devices.size(); y++) {
-			System.out.println(Devices.get(y));
+			log.debug(Devices.get(y));
 		}
-		System.out.println("passing device" + device);
+		log.debug("passing device" + device);
 
 		if (!Devices.contains(device)) {
 			Assert.fail("Expected device is not present");
@@ -617,7 +617,7 @@ public class BaseCommPageActions extends Environment {
 
 			for (int i = 0; i < TabletDevicesName.size(); i++) {
 				if (TabletDevicesName.get(i).getText().equals(device)) {
-					System.out.println("Device name matches");
+					log.debug("Device name matches");
 					k = i + 1;
 					c = "(//a[contains(text(),'See device details')])[" + k + "]";
 					d = "(//span[@class='headline ng-binding'])[" + k + "]";
@@ -625,14 +625,14 @@ public class BaseCommPageActions extends Environment {
 					PoundsElement = driver.findElements(By.xpath(d));
 					PenseElement = driver.findElements(By.xpath(e));
 					/*
-					 * System.out.println("Pounds List size :" + PoundsElement.size());
-					 * System.out.println("Pense List size :" + PenseElement.size());
+					 * log.debug("Pounds List size :" + PoundsElement.size());
+					 * log.debug("Pense List size :" + PenseElement.size());
 					 */
 
 					SeeDeviceDetailsLink = driver.findElement(By.xpath(c));
 					if (SeeDeviceDetailsLink.isDisplayed()) {
 						js.executeScript("arguments[0].click();", SeeDeviceDetailsLink);
-						System.out.println("Clicked on See Device Details Link");
+						log.debug("Clicked on See Device Details Link");
 						log.debug("Clicked on See Device Details Link");
 					} else {
 						Assert.fail("Device Details link not present");
@@ -642,7 +642,7 @@ public class BaseCommPageActions extends Environment {
 					for (String winHandle : driver.getWindowHandles()) {
 						driver.switchTo().window(winHandle);
 						log.debug("Control is in pop up");
-						System.out.println("Control is in pop up");
+						log.debug("Control is in pop up");
 					}
 					Thread.sleep(3000);
 					WebElement PopupdevicenametextElement = pageobjects.BaseCommPage.PopupdevicenametextElement;
@@ -651,7 +651,7 @@ public class BaseCommPageActions extends Environment {
 						if (popupdevicenametext.equals(device)) {
 							log.debug("Device name in pop up is " + popupdevicenametext
 									+ "and matches the device selected");
-							System.out.println("Device name in pop up is " + popupdevicenametext
+							log.debug("Device name in pop up is " + popupdevicenametext
 									+ "and matches the device selected");
 						}
 					} else {
@@ -664,7 +664,7 @@ public class BaseCommPageActions extends Environment {
 							log.debug(
 									"Pounds in pop up - " + poundselementtext + ", pounds value displayed for device - "
 											+ PoundsElement.get(0).getText() + "and they are the same");
-							System.out.println(
+							log.debug(
 									"Pounds in pop up - " + poundselementtext + ", pounds value displayed for device - "
 											+ PoundsElement.get(0).getText() + "and they are the same");
 						}
@@ -675,21 +675,21 @@ public class BaseCommPageActions extends Environment {
 						if (penseelementtext.equals(PenseElement.get(0).getText())) {
 							log.debug("Pense in pop up - " + penseelementtext + ", pense value displayed for device - "
 									+ PenseElement.get(0).getText() + "and they are the same");
-							System.out.println(
+							log.debug(
 									"Pense in pop up - " + penseelementtext + ", pense value displayed for device - "
 											+ PenseElement.get(0).getText() + "and they are the same");
 						}
 					}
 					WebElement SpecificationsElement = pageobjects.BaseCommPage.SpecificationsElement;
 					if (!SpecificationsElement.isDisplayed()) {
-						System.out.println("specifications not displayed");
+						log.debug("specifications not displayed");
 					} else
-						System.out.println("specifications displayed");
+						log.debug("specifications displayed");
 
 					WebElement FullSpecificationElement = pageobjects.BaseCommPage.FullSpecificationElement;
 					if (FullSpecificationElement.isDisplayed()) {
 						FullSpecificationElement.click();
-						System.out.println("Full specification link is present");
+						log.debug("Full specification link is present");
 					}
 					if (pageobjects.BaseCommPage.BoxClose.isDisplayed()) {
 						pageobjects.BaseCommPage.BoxClose.click();
@@ -718,8 +718,8 @@ public class BaseCommPageActions extends Environment {
 
 	public static void checkExpDevAndDetails(String device, String color, String capacity, String stockmessage)
 			throws IOException, InterruptedException {
-		System.out.println("Inside checkExpDevAndDetails function");
-		System.out.println(device + color + capacity + stockmessage);
+		log.debug("Inside checkExpDevAndDetails function");
+		log.debug(device + color + capacity + stockmessage);
 		int k = 0;
 
 		List<WebElement> iPadDevicesName = pageobjects.BaseCommPage.iPadDevicesName;
@@ -733,7 +733,7 @@ public class BaseCommPageActions extends Environment {
 				if (driver.findElement(By.xpath(r)).getText().isEmpty()) {
 					Assert.fail("No ratings present for this device");
 				} else {
-					System.out.println("Ratings for the device is present");
+					log.debug("Ratings for the device is present");
 				}
 
 				String c = "(//select[@id='colour'])[" + k + "]";
@@ -743,9 +743,9 @@ public class BaseCommPageActions extends Environment {
 				js.executeScript("arguments[0].setAttribute('style', 'display:block;')", colordropdown);
 				if (colordropdown.isDisplayed()) {
 					WebElement firstcolor = new Select(colordropdown).getFirstSelectedOption();
-					System.out.println("default color for this device is :" + firstcolor.getText());
+					log.debug("default color for this device is :" + firstcolor.getText());
 					/*if (color.equals(firstcolor.getText())) {
-						System.out.println("Expected color selected :" + firstcolor.getText());
+						log.debug("Expected color selected :" + firstcolor.getText());
 					} else {
 						Assert.fail("Expected color not selected by default");
 					}*/
@@ -758,17 +758,17 @@ public class BaseCommPageActions extends Environment {
 				if (capacitydropdown.isDisplayed()) {
 					WebElement firstcapacity = new Select(capacitydropdown).getFirstSelectedOption();
 					if (capacity.equals(firstcapacity.getText())) {
-						System.out.println("Expected capacity selected :" + firstcapacity.getText());
+						log.debug("Expected capacity selected :" + firstcapacity.getText());
 					} else {
-						System.out.println("Expected capacity not selected by default");
+						log.debug("Expected capacity not selected by default");
 						//Assert.fail("Expected capacity not selected by default");
 					}
 				}
 				String e = "(//div[@class='device-status'])[" + k + "]";
 				WebElement stockmsg = driver.findElement(By.xpath(e));
-				System.out.println(stockmsg.getText());
+				log.debug(stockmsg.getText());
 				/*if (stockmsg.getText().contains(stockmessage)) {
-					System.out.println("Expected stockmsg displayed :" + stockmsg.getText());
+					log.debug("Expected stockmsg displayed :" + stockmsg.getText());
 				} else {
 					//Assert.fail(" Expected stockmsg not displayed by default");
 					Assert.fail(" Expected stockmsg not displayed by default");
@@ -779,15 +779,15 @@ public class BaseCommPageActions extends Environment {
 	}
 
 	public static void checkExpDevAndDetailsForComingSoonDevice(String device, String color, String capacity, String stockmessage) throws IOException, InterruptedException {
-		System.out.println("Inside checkExpDevAndDetails function");
-		System.out.println(device + color + capacity + stockmessage);
+		log.debug("Inside checkExpDevAndDetails function");
+		log.debug(device + color + capacity + stockmessage);
 		int k = 0;
 
 		List<WebElement> iPadDevicesName = pageobjects.BaseCommPage.iPadDevicesName;
 		JavascriptExecutor jse = (JavascriptExecutor) driver;
 		jse.executeScript("window.scrollBy(0,400)", "");
 		for (int i = 0; i < iPadDevicesName.size(); i++) {
-			System.out.println(iPadDevicesName.get(i).getText());
+			log.debug(iPadDevicesName.get(i).getText());
 			if (iPadDevicesName.get(i).getText().equals(device)) {
 
 				k = i + 1;
@@ -795,7 +795,7 @@ public class BaseCommPageActions extends Environment {
 				if (driver.findElement(By.xpath(r)).getText().isEmpty()) {
 					Assert.fail("No ratings present for this device");
 				} else {
-					System.out.println("Ratings for the device is present");
+					log.debug("Ratings for the device is present");
 				}
 
 				String c = "(//select[@id='colour'])[" + k + "]";
@@ -805,9 +805,9 @@ public class BaseCommPageActions extends Environment {
 				js.executeScript("arguments[0].setAttribute('style', 'display:block;')", colordropdown);
 				if (colordropdown.isDisplayed()) {
 					WebElement firstcolor = new Select(colordropdown).getFirstSelectedOption();
-					System.out.println("default color for this device is :" + firstcolor.getText());
+					log.debug("default color for this device is :" + firstcolor.getText());
 					if (color.equals(firstcolor.getText())) {
-						System.out.println("Expected color selected :" + firstcolor.getText());
+						log.debug("Expected color selected :" + firstcolor.getText());
 					} else {
 						Assert.fail("Expected color not selected by default");
 					}
@@ -820,16 +820,16 @@ public class BaseCommPageActions extends Environment {
 				if (capacitydropdown.isDisplayed()) {
 					WebElement firstcapacity = new Select(capacitydropdown).getFirstSelectedOption();
 					if (capacity.equals(firstcapacity.getText())) {
-						System.out.println("Expected capacity selected :" + firstcapacity.getText());
+						log.debug("Expected capacity selected :" + firstcapacity.getText());
 					} else {
 						Assert.fail("Expected capacity not selected by default");
 					}
 				}
 				String e = "(//div[@class='device-status'])[" + k + "]";
 				WebElement stockmsg = driver.findElement(By.xpath(e));
-				System.out.println(stockmsg.getText());
+				log.debug(stockmsg.getText());
 				if (stockmsg.getText().contains(stockmessage)) {
-					System.out.println("Expected stockmsg displayed :" + stockmsg.getText());
+					log.debug("Expected stockmsg displayed :" + stockmsg.getText());
 				} else {
 					Assert.fail("Expected stockmsg not displayed by default");
 				}
@@ -839,19 +839,19 @@ public class BaseCommPageActions extends Environment {
 				if (BuyNowButtonList.size() > 0) {
 					Assert.fail("Buy Now Button present for coming soon device");
 				} else {
-					System.out.println("No buy now button for coming soon device as expected");
+					log.debug("No buy now button for coming soon device as expected");
 				}
 
 				String g = "//div[@data-qa-device-model-family='comingSoon']//div/p/span[@class='headline ng-binding']";
 				String h = "//div[@data-qa-device-model-family='comingSoon']//div/p/span[@class='pence ng-binding']";
 				List<WebElement> PoundsElement = driver.findElements(By.xpath(g));
 				List<WebElement> PenseElement = driver.findElements(By.xpath(h));
-				System.out.println("Pounds List size :" + PoundsElement.size());
-				System.out.println("Pense List size :" + PenseElement.size());
+				log.debug("Pounds List size :" + PoundsElement.size());
+				log.debug("Pense List size :" + PenseElement.size());
 				if (PoundsElement.size() > 0 || PenseElement.size() > 0) {
 					Assert.fail("Price details are being displayed for coming soon device");
 				} else {
-					System.out.println("Price details are not displayed for coming soon device as expected");
+					log.debug("Price details are not displayed for coming soon device as expected");
 				}
 
 			}
@@ -865,10 +865,10 @@ public class BaseCommPageActions extends Environment {
 		int k = 0;
 		List<WebElement> iPadDevicesName = pageobjects.BaseCommPage.iPadDevicesName;
 		js.executeScript("window.scrollBy(0,400)", "");
-		System.out.println(color + capacity + device);
+		log.debug(color + capacity + device);
 
 		for (int i = 0; i < iPadDevicesName.size(); i++) {
-			System.out.println(iPadDevicesName.get(i).getText());
+			log.debug(iPadDevicesName.get(i).getText());
 
 			if (iPadDevicesName.get(i).getText().equals(device)) {
 
@@ -890,7 +890,7 @@ public class BaseCommPageActions extends Environment {
 	}
 
 	public static void BuynowwithDevice(String device) throws Exception {
-		System.out.println("Going to click on the buy now button on device");
+		log.debug("Going to click on the buy now button on device");
 		device = trimEnd(device);
 		List<WebElement> TabletDevicesName = pageobjects.BaseCommPage.TabletDevicesName;
 		WebElement BuyNowButton;
@@ -901,15 +901,15 @@ public class BaseCommPageActions extends Environment {
 		for (WebElement f : TabletDevicesName) {
 			Devices.add(f.getText());
 		}
-		System.out.println("passing device" + device);
+		log.debug("passing device" + device);
 
 		for (int i = 0; i < TabletDevicesName.size(); i++) {
 			if (TabletDevicesName.get(i).getText().equals(device)) {
-				System.out.println("Device name matches");
+				log.debug("Device name matches");
 				k = i + 1;
-				System.out.println("k :" + k);
+				log.debug("k :" + k);
 				c = "(//button[@id='callToAction'])[" + k + "]";
-				System.out.println("xpath of button is" + c);
+				log.debug("xpath of button is" + c);
 				BuyNowButton = driver.findElement(By.xpath(c));
 				// Thread.sleep(3000);
 				js.executeScript("arguments[0].click();", BuyNowButton);
@@ -935,17 +935,17 @@ public class BaseCommPageActions extends Environment {
 	 * color2 = null, colorname = null, capacity_color = null, capacityname = null;
 	 * List<WebElement> images = pageobjects.BaseCommPage.ImgSrc; List<WebElement>
 	 * iPadDevicesName = pageobjects.BaseCommPage.iPadDevicesName;
-	 * 
+	 *
 	 * WebElement colornameelement = null; WebElement element1 = null; WebElement
 	 * element2 = null; WebElement capacitynameelement = null; String t = null, u =
 	 * null; int k = 0, z = 0;
-	 * 
+	 *
 	 * for (int i = 0; i < iPadDevicesName.size(); i++) {
-	 * System.out.println(iPadDevicesName.get(i).getText()); if
+	 * log.debug(iPadDevicesName.get(i).getText()); if
 	 * (iPadDevicesName.get(i).getText().equals(devicename)) {
-	 * System.out.println("device name matches for checking new image"); k = i + 1;
+	 * log.debug("device name matches for checking new image"); k = i + 1;
 	 * String c = "(//select[@id='colour'])[" + k + "]";
-	 * 
+	 *
 	 * WebElement colordropdown = driver.findElement(By.xpath(c));
 	 * js.executeScript("arguments[0].setAttribute('style', 'display:block;')",
 	 * colordropdown); colornameelement = new
@@ -953,42 +953,42 @@ public class BaseCommPageActions extends Environment {
 	 * colornameelement.getText().toLowerCase(); color = color.toLowerCase(); if
 	 * (!color.equalsIgnoreCase(colorname)) {
 	 * Assert.fail("color displayed is not the selected color"); }
-	 * 
+	 *
 	 * String d = "(//select[@id='memory'])[" + k + "]"; WebElement capacitydropdown
 	 * = driver.findElement(By.xpath(d));
 	 * js.executeScript("arguments[0].setAttribute('style', 'display:block;')",
 	 * capacitydropdown); capacitynameelement = new
 	 * Select(capacitydropdown).getFirstSelectedOption(); capacityname =
 	 * capacitynameelement.getText().toLowerCase(); capacity =
-	 * capacity.toLowerCase(); System.out.println("passing capacity : " + capacity);
-	 * System.out.println("selected capacity : " + capacityname);
-	 * 
+	 * capacity.toLowerCase(); log.debug("passing capacity : " + capacity);
+	 * log.debug("selected capacity : " + capacityname);
+	 *
 	 * if (!capacity.equalsIgnoreCase(capacityname)) {
 	 * Assert.fail("capacity displayed is not the selected capacity"); }
-	 * 
+	 *
 	 * if (colorname.contains(" ")) { String parts[] = colorname.split(" "); color1
 	 * = parts[0] + "_" + parts[1]; color2 = parts[0] + "-" + parts[1];
 	 * capacity_color = capacityname + "_" + color1; } else { capacity_color =
-	 * capacityname + "_" + colorname; } System.out.println("Capacity_color" +
+	 * capacityname + "_" + colorname; } log.debug("Capacity_color" +
 	 * capacity_color);
-	 * 
+	 *
 	 * }
-	 * 
+	 *
 	 * }
-	 * 
+	 *
 	 * for (int i = 0; i < iPadDevicesName.size(); i++) {
-	 * System.out.println(iPadDevicesName.get(i).getText()); if
+	 * log.debug(iPadDevicesName.get(i).getText()); if
 	 * (iPadDevicesName.get(i).getText().equals(devicename)) {
-	 * System.out.println("Device name matches"); if
+	 * log.debug("Device name matches"); if
 	 * (images.get(i).getAttribute("src").contains(capacity_color)) {
-	 * System.out.println(images.get(z).getAttribute("src"));
-	 * System.out.println("Image is as per selected color and capacity"); } else {
+	 * log.debug(images.get(z).getAttribute("src"));
+	 * log.debug("Image is as per selected color and capacity"); } else {
 	 * Assert.fail("New image is not as per selected color and capacity"); } } } }
 	 */
 
 	public static void checkImgSrcBasecommPage(String devicename, String capacity, String color)
 			throws IOException, InterruptedException {
-		System.out.println("checking whether new image is as per the selected color");
+		log.debug("checking whether new image is as per the selected color");
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		String color1 = null, color2 = null, colorname = null, capacity_color = null, capacity_color1 = null,
 				capacity_color2 = null, capacityname = null;
@@ -1003,9 +1003,9 @@ public class BaseCommPageActions extends Environment {
 		int k = 0, z = 0;
 
 		for (int i = 0; i < iPadDevicesName.size(); i++) {
-			System.out.println(iPadDevicesName.get(i).getText());
+			log.debug(iPadDevicesName.get(i).getText());
 			if (iPadDevicesName.get(i).getText().equals(devicename)) {
-				System.out.println("device name matches for checking new image");
+				log.debug("device name matches for checking new image");
 				k = i + 1;
 				String c = "(//select[@id='colour'])[" + k + "]";
 
@@ -1024,8 +1024,8 @@ public class BaseCommPageActions extends Environment {
 				capacitynameelement = new Select(capacitydropdown).getFirstSelectedOption();
 				capacityname = capacitynameelement.getText().toLowerCase();
 				capacity = capacity.toLowerCase();
-				System.out.println("passing capacity : " + capacity);
-				System.out.println("selected capacity : " + capacityname);
+				log.debug("passing capacity : " + capacity);
+				log.debug("selected capacity : " + capacityname);
 
 				if (!capacity.equalsIgnoreCase(capacityname)) {
 					Assert.fail("capacity displayed is not the selected capacity");
@@ -1043,32 +1043,32 @@ public class BaseCommPageActions extends Environment {
 					capacity_color = capacityname + "_" + colorname;
 				}
 				/*
-				 * System.out.println("Capacity_color1" + capacity_color1);
-				 * System.out.println("Capacity_color2" + capacity_color2);
+				 * log.debug("Capacity_color1" + capacity_color1);
+				 * log.debug("Capacity_color2" + capacity_color2);
 				 */
-				System.out.println("Capacity_color" + capacity_color);
-				System.out.println("color name " + colorname);
+				log.debug("Capacity_color" + capacity_color);
+				log.debug("color name " + colorname);
 
 			}
 
 		}
 
 		for (int i = 0; i < iPadDevicesName.size(); i++) {
-			System.out.println(iPadDevicesName.get(i).getText());
+			log.debug(iPadDevicesName.get(i).getText());
 			if (iPadDevicesName.get(i).getText().equals(devicename)) {
-				System.out.println("Device name matches");
-				System.out.println("image source is " + images.get(i).getAttribute("src"));
+				log.debug("Device name matches");
+				log.debug("image source is " + images.get(i).getAttribute("src"));
 
 				if (!colorname.contains(" ")) {
 					if (images.get(i).getAttribute("src").contains(capacity_color)
 							|| images.get(i).getAttribute("src").contains(colorname)) {
-						System.out.println("image is as per the selected color/capacity");
+						log.debug("image is as per the selected color/capacity");
 					}
 				}
 				if (colorname.contains(" ")) {
 					if (images.get(i).getAttribute("src").contains(color1)
 							|| images.get(i).getAttribute("src").contains(color2)) {
-						System.out.println("image is as per the selected color/capacity");
+						log.debug("image is as per the selected color/capacity");
 					}
 				}
 			}
@@ -1112,26 +1112,26 @@ public class BaseCommPageActions extends Environment {
 		} else {
 			capacity_color = capacityname + "_" + colorname;
 		}
-		System.out.println("Capacity_color1" + capacity_color1);
-		System.out.println("Capacity_color2" + capacity_color2);
-		System.out.println("Capacity_color" + capacity_color);
-		System.out.println("color name " + colorname);
+		log.debug("Capacity_color1" + capacity_color1);
+		log.debug("Capacity_color2" + capacity_color2);
+		log.debug("Capacity_color" + capacity_color);
+		log.debug("color name " + colorname);
 
 		if (image.getAttribute("title").equals(devicename)) {
-			System.out.println("device name matches to check for new image");
-			System.out.println("Device name matches");
-			System.out.println("image source is " + image.getAttribute("src"));
+			log.debug("device name matches to check for new image");
+			log.debug("Device name matches");
+			log.debug("image source is " + image.getAttribute("src"));
 
 			if (!colorname.contains(" ")) {
 				if (image.getAttribute("src").contains(capacity_color)
 						|| image.getAttribute("src").contains(colorname)) {
-					System.out.println("image is as per the selected color/capacity");
+					log.debug("image is as per the selected color/capacity");
 				}
 			}
 			if (colorname.contains(" ")) {
 				if (image.getAttribute("src").contains(capacity_color1)
 						|| image.getAttribute("src").contains(capacity_color2)) {
-					System.out.println("image is as per the selected color/capacity");
+					log.debug("image is as per the selected color/capacity");
 				}
 			}
 
@@ -1159,8 +1159,8 @@ public class BaseCommPageActions extends Environment {
 		WebElement BannerDescription = driver.findElement(By.xpath("//div[@class='default-content-container']"));
 
 		String text1 = "Save on your Airtime Plan";
-		String text2 = "Already on O2 Pay Monthly? Then you�ll be able to save 20% on your Airtime Plan for the whole of your contract. So you can chat, text and tweet, for less.";
-		String text3 = "You can get this discount with any iPad you want, on 2GB and above tariffs. But you won�t be able to use it with any other Airtime Plan discount. See terms.";
+		String text2 = "Already on O2 Pay Monthly? Then you'll be able to save 20% on your Airtime Plan for the whole of your contract. So you can chat, text and tweet, for less.";
+		String text3 = "You can get this discount with any iPad you want, on 2GB and above tariffs. But you won't be able to use it with any other Airtime Plan discount. See terms.";
 		String text4 = "Looking for an Android or Windows tablet? Take a look at our exclusive deals.";
 		String text5 = "New to O2? See our iPad offers.";
 		String BannerDescriptionText = null;
@@ -1168,7 +1168,7 @@ public class BaseCommPageActions extends Environment {
 		BannerDescriptionText = text1 + '\n' + text2 + '\n' + text3 + '\n' + '\n' + text4 + '\n' + '\n' + text5;
 
 		if (BannerDescription.isDisplayed() && BannerDescription.getText().contains(BannerDescriptionText)) {
-			System.out.println("Banner description text is verified");
+			log.debug("Banner description text is verified");
 		}
 
 		List<String> strings = new ArrayList<String>();
@@ -1180,18 +1180,18 @@ public class BaseCommPageActions extends Environment {
 		int stringsize = strings.size();
 		if (strings.size() != 0) {
 
-			System.out.println("First string is " + strings.get(0));
-			System.out.println("Second string is " + strings.get(1));
-			System.out.println("Last string is " + strings.get(stringsize - 1));
+			log.debug("First string is " + strings.get(0));
+			log.debug("Second string is " + strings.get(1));
+			log.debug("Last string is " + strings.get(stringsize - 1));
 
 			if (strings.get(0).startsWith("Click & Collect")) {
-				System.out.println("static sub navigation is at the correct position");
+				log.debug("static sub navigation is at the correct position");
 			}
 			if (strings.get(stringsize - 1).startsWith("Free delivery next working day")) {
-				System.out.println("Footer is at the correct position");
+				log.debug("Footer is at the correct position");
 			}
 			if (strings.get(1).startsWith("Tablet offers" + '\n' + "Especially for you")) {
-				System.out.println("Header carousel is at the correct position");
+				log.debug("Header carousel is at the correct position");
 			}
 		}
 		Screenshots.captureScreenshot();
@@ -1199,7 +1199,7 @@ public class BaseCommPageActions extends Environment {
 
 	public static void checkUserNavigatedTEPage() throws IOException, InterruptedException {
 
-		System.out.println("Title of the page is  " + driver.getTitle());
+		log.debug("Title of the page is  " + driver.getTitle());
 		if (driver.getTitle().contains("Tariffs And Extras")) {
 			log.debug("user is navigated back to Tariffs And Extras page");
 		} else {
@@ -1211,9 +1211,9 @@ public class BaseCommPageActions extends Environment {
 
 	public static void checkUserNavigatedBasecommPage() throws Exception {
 		Thread.sleep(3000);
-		System.out.println("Title of the page is :" + driver.getTitle());
+		log.debug("Title of the page is :" + driver.getTitle());
 		if (driver.getTitle().contains("O2 | MyOffers")) {
-			System.out.println("user is navigated back to Basecomm Page");
+			log.debug("user is navigated back to Basecomm Page");
 		} else {
 			Assert.fail("User is not at Basecomm page");
 		}
@@ -1226,10 +1226,10 @@ public class BaseCommPageActions extends Environment {
 
 		for (int i = 0; i < OtherTabletDevices.size(); i++) {
 			if (OtherTabletDevices.get(i).getText().contains("iPad")) {
-				System.out.println("Devices specific to iPad are also displayed");
+				log.debug("Devices specific to iPad are also displayed");
 			} else {
 				int j = i + 1;
-				System.out.println(
+				log.debug(
 						"Tile position (" + j + ")" + " and the device name is " + OtherTabletDevices.get(i).getText());
 			}
 		}

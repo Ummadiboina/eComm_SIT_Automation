@@ -16,30 +16,30 @@ public class TabletPageActions extends Environment {
 	final static Logger log = Logger.getLogger("TabletPageActions");
 
 	public static void validateElements(String Tabname) throws IOException, InterruptedException {
-		System.out.println(" ");
+		log.debug(" ");
 
-		System.out.println("Tablet_Page_Validation");
+		log.debug("Tablet_Page_Validation");
 
 		if (Tabname != null) {
 			switch (Tabname.toLowerCase()) {
-			case "filter":
-				if (pageobjects.TabletPage.TabletFilterTab.isDisplayed()) {
-					System.out.println("The Filter Tab is Present on the TabletPage and the Text is :"
-							+ pageobjects.TabletPage.TabletFilterTab.getText());
-				} else {
-					System.out.println("The  Filter Tab is not Present on the TabletPage and the Text is :"
-							+ pageobjects.TabletPage.TabletFilterTab.getText());
-				}
-				break;
-			case "sort":
-				if (pageobjects.TabletPage.TabletSortTab.isDisplayed()) {
-					System.out.println("The  Sort Tab is Present on the TabletPage and the Text is :"
-							+ pageobjects.TabletPage.TabletSortTab.getText());
-				} else {
-					System.out.println("The   Sort Tab is not Present on the TabletPage and the Text is :"
-							+ pageobjects.TabletPage.TabletSortTab.getText());
-				}
-				break;
+				case "filter":
+					if (pageobjects.TabletPage.TabletFilterTab.isDisplayed()) {
+						log.debug("The Filter Tab is Present on the TabletPage and the Text is :"
+								+ pageobjects.TabletPage.TabletFilterTab.getText());
+					} else {
+						log.debug("The  Filter Tab is not Present on the TabletPage and the Text is :"
+								+ pageobjects.TabletPage.TabletFilterTab.getText());
+					}
+					break;
+				case "sort":
+					if (pageobjects.TabletPage.TabletSortTab.isDisplayed()) {
+						log.debug("The  Sort Tab is Present on the TabletPage and the Text is :"
+								+ pageobjects.TabletPage.TabletSortTab.getText());
+					} else {
+						log.debug("The   Sort Tab is not Present on the TabletPage and the Text is :"
+								+ pageobjects.TabletPage.TabletSortTab.getText());
+					}
+					break;
 
 			}
 
@@ -51,18 +51,18 @@ public class TabletPageActions extends Environment {
 	public static void ElementClickAction(String elementname) throws IOException, InterruptedException {
 		// TODO Auto-generated method stub
 		WebElement w1 = null;
-		System.out.println(" ");
+		log.debug(" ");
 
-		System.out.println("Tablet_Page_Action");
+		log.debug("Tablet_Page_Action");
 
 		if (elementname != null) {
 			switch (elementname.toLowerCase()) {
-			case "filter":
-				w1 = pageobjects.TabletPage.TabletFilterTab;
-				break;
-			case "sort":
-				w1 = pageobjects.TabletPage.TabletSortTab;
-				break;
+				case "filter":
+					w1 = pageobjects.TabletPage.TabletFilterTab;
+					break;
+				case "sort":
+					w1 = pageobjects.TabletPage.TabletSortTab;
+					break;
 
 			}
 
@@ -79,10 +79,10 @@ public class TabletPageActions extends Environment {
 
 			if(driver.findElements(By.xpath("(//a[contains(., 'View all products on one page')])[2]")).size() > 0) {
 				driver.findElement(By.xpath("(//a[contains(., 'View all products on one page')])[2]")).click();
-				System.out.println(" Clicked on View all products on one page(2) ");
+				log.debug(" Clicked on View all products on one page(2) ");
 			}
 			driver.manage().timeouts().implicitlyWait(120, TimeUnit.SECONDS);
-			System.out.println("Random Tablet is selected");
+			log.debug("Random Tablet is selected");
 
 			pageobjects.TabletPage.RandomTablet.click();
 			Thread.sleep(7000);
@@ -91,7 +91,7 @@ public class TabletPageActions extends Environment {
 		}
 
 		if (elementName.contains("SamsungGalaxy10")) {
-			System.out.println("SamsungGalaxy10 is selected");
+			log.debug("SamsungGalaxy10 is selected");
 
 			pageobjects.TabletPage.SamsungGalaxy10.click();
 			Thread.sleep(7000);
@@ -101,37 +101,37 @@ public class TabletPageActions extends Environment {
 		if (elementName.contains("Apple iPad 9.7")) {
 			pageobjects.TabletPage.iPad97.click();
 			Thread.sleep(10000);
-			System.out.println("iPad is selected");
+			log.debug("iPad is selected");
 		}
 
 		if (elementName.contains("Apple iPad Pro 10.5 inch")) {
 
 			pageobjects.TabletPage.AppleiPadPro105inch.click();
 			Thread.sleep(7000);
-			System.out.println("Apple iPad Pro 10.5 inch is selected");
+			log.debug("Apple iPad Pro 10.5 inch is selected");
 		}
 
-		if (elementName.contains("Apple�iPad 9.7")) {
+		if (elementName.contains("AppleiPad 9.7")) {
 
 			pageobjects.TabletPage.AppleiPad97.click();
 			Thread.sleep(7000);
-			System.out.println("Apple�iPad 9.7 is selected");
+			log.debug("AppleiPad 9.7 is selected");
 		}
 		if (elementName.contains("Apple iPad Pro 12.9 inch")) {
 			pageobjects.TabletPage.iPadPro129.click();
 			Thread.sleep(10000);
-			System.out.println("iPad is selected");
+			log.debug("iPad is selected");
 		}
 		if (elementName.contains("Apple iPad Pro 9.7 inch")) {
 			pageobjects.TabletPage.AppleiPadPro97inch.click();
 			Thread.sleep(10000);
-			System.out.println("Apple iPad Pro 9.7 inch is selected");
+			log.debug("Apple iPad Pro 9.7 inch is selected");
 		}
 
 		if (elementName.contains("Samsung Galaxy Tab A 2016 10.1")) {
 			pageobjects.TabletPage.SamsungGalaxyTabA201610point1.click();
 			Thread.sleep(10000);
-			System.out.println("Samsung Galaxy Tab A 2016 10.1 is selected");
+			log.debug("Samsung Galaxy Tab A 2016 10.1 is selected");
 		}
 		Screenshots.captureScreenshot();
 	}

@@ -148,7 +148,7 @@ public class PaymentPageActions extends Environment {
 
         driver.switchTo().frame("payment-iframe"); // switching the frame by ID
 
-        System.out.println("********We are switch to the iframe*******");
+        log.debug("********We are switch to the iframe*******");
         log.debug("Entering the Payments section");
         Thread.sleep(5000);
         scrollToAnElement.scrollToElement(PaymentPage.CardHolderName);
@@ -172,10 +172,10 @@ public class PaymentPageActions extends Environment {
         PaymentPage.Continue_Next_Step.sendKeys(Keys.ENTER);
         log.debug("Clicking on continue to next step");
         Thread.sleep(2000);
-        System.out.println("*********We are done***************");
+        log.debug("*********We are done***************");
         log.debug("Exiting the Payments section");
         driver.switchTo().defaultContent();
-        // System.out.println(driver.getTitle());
+        // log.debug(driver.getTitle());
         Screenshots.captureScreenshot();
 
     }
@@ -184,7 +184,7 @@ public class PaymentPageActions extends Environment {
 
         driver.switchTo().frame("payment-iframe"); // switching the frame by ID
 
-        System.out.println("********We are switch to the iframe*******");
+        log.debug("********We are switch to the iframe*******");
         log.debug("Entering the Payments section");
         Thread.sleep(5000);
         scrollToAnElement.scrollToElement(PaymentPage.CardHolderName);
@@ -208,10 +208,10 @@ public class PaymentPageActions extends Environment {
         PaymentPage.Continue_Next_Step.sendKeys(Keys.ENTER);
         log.debug("Clicking on continue to next step");
         Thread.sleep(2000);
-        System.out.println("*********We are done***************");
+        log.debug("*********We are done***************");
         log.debug("Exiting the Payments section");
         driver.switchTo().defaultContent();
-        // System.out.println(driver.getTitle());
+        // log.debug(driver.getTitle());
         Screenshots.captureScreenshot();
 
     }
@@ -220,7 +220,7 @@ public class PaymentPageActions extends Environment {
     public static void Card_Details_hv() throws InterruptedException, IOException {
         driver.switchTo().frame("payment-iframe"); // switching the frame by ID
 
-        System.out.println("********We are switch to the iframe*******");
+        log.debug("********We are switch to the iframe*******");
         log.debug("Entering the Payments section");
         Thread.sleep(2000);
         scrollToAnElement.scrollToElement(PaymentPage.CardHolderName);
@@ -243,10 +243,10 @@ public class PaymentPageActions extends Environment {
         PaymentPage.Continue_Next_Step.sendKeys(Keys.ENTER);
         log.debug("Clicking on continue to next step");
         Thread.sleep(2000);
-        System.out.println("*********We are done***************");
+        log.debug("*********We are done***************");
         log.debug("Exiting the Payments section");
         driver.switchTo().defaultContent();
-        // System.out.println(driver.getTitle());
+        // log.debug(driver.getTitle());
         Screenshots.captureScreenshot();
     }
 
@@ -264,20 +264,20 @@ public class PaymentPageActions extends Environment {
     }
 
     public static void InsuranceSectionPaymentPage() throws InterruptedException, IOException {
-        System.out.println("Entering InsuranceSectionPaymentPage Method");
+        log.debug("Entering InsuranceSectionPaymentPage Method");
 
         Thread.sleep(3000);
 
         if (driver.findElement(By.xpath("//tr[@id='basket-insurance']")).isDisplayed()) {
-            System.out.println("Insurance is displayed in Payment page and text is  - "
+            log.debug("Insurance is displayed in Payment page and text is  - "
                     + driver.findElement(By.xpath("//tr[@id='basket-insurance']")).getText());
 
         } else {
-            System.out.println("Insurance is not displayed");
+            log.debug("Insurance is not displayed");
         }
 
         Thread.sleep(2000);
-        System.out.println("Completed InsuranceSectionPaymentPage function");
+        log.debug("Completed InsuranceSectionPaymentPage function");
         log.debug("Completed InsuranceSectionPaymentPage function");
         Screenshots.captureScreenshot();
 
@@ -292,15 +292,15 @@ public class PaymentPageActions extends Environment {
         ActualText = pageobjects.PaymentPage.HomeAddress.getText();
 
         if (ActualText.contains(ExpectedText)) {
-            System.out.println("Verification Success: Copy text message is getting displayed below home address");
+            log.debug("Verification Success: Copy text message is getting displayed below home address");
             log.debug("Verification Success: Copy text message is getting displayed below home address");
         } else {
-            System.out.println("Verification Failed: Copy text message is not getting displayed below home address");
+            log.debug("Verification Failed: Copy text message is not getting displayed below home address");
             log.debug("Verification Failed: Copy text message is not getting displayed below home address");
         }
 
         log.debug("Assertion worked for Ecomm-11886");
-        System.out.println("Assertion worked for Ecomm-11886");
+        log.debug("Assertion worked for Ecomm-11886");
         Screenshots.captureScreenshot();
 
     }

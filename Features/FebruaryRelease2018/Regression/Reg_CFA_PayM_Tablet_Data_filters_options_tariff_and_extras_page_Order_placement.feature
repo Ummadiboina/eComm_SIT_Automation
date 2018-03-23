@@ -7,12 +7,10 @@ Feature: Reg_CFA_PayM_Tablet_Data_filters_options_tariff_and_extras_page_Order_p
   Scenario Outline: CFA_PayM_Tablet_Data_filters_options_tariff_and_extras_page_Order_placement
 
     Given I am an CFA user and Lands on shop page
-    And navigate to PAYM Phones page
-    And I search for a PayM <handset> device
-    #select handset with more tariff and less tariff  -- > ask kanban team to set handset with 2 tariff and handset with more than 3 tariff
+    And navigate to PAYM Tablets page
+    And select any available <Device> Tablet
     And Navigate to device details page
     And Land on the 'Tariffs and extra' page
-    ##New functionality starts
     Then I should see data filters buttons next to existing sort drop-down for PAYM/SIMO tariffs <sortoption>
     When I click on respective <filtername> data filter
     Then Data filter button should be in 'selected' state
@@ -21,7 +19,6 @@ Feature: Reg_CFA_PayM_Tablet_Data_filters_options_tariff_and_extras_page_Order_p
     Then I should see tariffs relevant to selected sort option <sortoption> & filter option <filtername>
     When I deselect filter button
     Then I should see tariffs based on the selected sort option <sortoption>
-    ##New functionality ends
     And I Land on the basket page and choose home delivery option
     And click on "go to checkout" button
     And input <Firstname> and <Surname> and other valid details in Delivery page and Click on the 'Continue button'
@@ -31,6 +28,5 @@ Feature: Reg_CFA_PayM_Tablet_Data_filters_options_tariff_and_extras_page_Order_p
     Then order confirmation is displayed
 
     Examples:
-      | handset        | Firstname | Surname | Username     | filtername | sortoption                 |
-      | Galaxy S8 Plus | TEST      | ACCEPTA | TEST ACCEPTA | low        | Monthly data (Low to High) |
-   #   | Apple iPhone 7    | TEST      | ACCEPTA | TEST ACCEPTA | high       |
+      | Firstname | Surname | Username     | filtername | sortoption                 | Device        |
+      | TEST      | ACCEPTA | TEST ACCEPTA | low        | Monthly data (High to low) | Random Device |

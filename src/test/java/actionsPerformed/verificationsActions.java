@@ -43,13 +43,13 @@ public class verificationsActions extends Environment {
             ActualText = pageobjects.DeliveryPage.HouseNumberText.getText();
             Assert.assertTrue(ActualText.contains("*"),
                     "Assertion Failed: Expected Message: " + ExpectedText + " is not present in the page");
-            System.out.println("Assertion Success: '*' is present in: " + ActualText);
+            log.debug("Assertion Success: '*' is present in: " + ActualText);
 
             //Below is for finding text in post code text field
             ActualText = pageobjects.DeliveryPage.PostcodeText.getText();
             Assert.assertTrue(ActualText.contains("*"),
                     "Assertion Failed: Expected Message: " + ExpectedText + " is not present in the page");
-            System.out.println("Assertion Success: '*' is present in: " + ActualText);
+            log.debug("Assertion Success: '*' is present in: " + ActualText);
             //Below will set hardcoded post code and housenumeber  - BS12
             //DeliveryPageActions.SetDelivery();
 
@@ -58,31 +58,31 @@ public class verificationsActions extends Environment {
             ActualText = pageobjects.DeliveryPage.emailAddressText.getText();
             Assert.assertTrue(ActualText.contains("*"),
                     "Assertion Failed: Expected Message: " + ExpectedText + " is not present in the page");
-            System.out.println("Assertion Success: '*' is present in: " + ActualText);
+            log.debug("Assertion Success: '*' is present in: " + ActualText);
             ActualText = pageobjects.DeliveryPage.titleText.getText();
             Assert.assertTrue(ActualText.contains("*"),
                     "Assertion Failed: Expected Message: " + ExpectedText + " is not present in the page");
-            System.out.println("Assertion Success: '*' is present in: " + ActualText);
+            log.debug("Assertion Success: '*' is present in: " + ActualText);
             ActualText = pageobjects.DeliveryPage.nameText.getText();
             Assert.assertTrue(ActualText.contains("*"),
                     "Assertion Failed: Expected Message: " + ExpectedText + " is not present in the page");
-            System.out.println("Assertion Success: '*' is present in: " + ActualText);
+            log.debug("Assertion Success: '*' is present in: " + ActualText);
             ActualText = pageobjects.DeliveryPage.ContactNumberText.getText();
             Assert.assertTrue(ActualText.contains("*"),
                     "Assertion Failed: Expected Message: " + ExpectedText + " is not present in the page");
-            System.out.println("Assertion Success: '*' is present in: " + ActualText);
+            log.debug("Assertion Success: '*' is present in: " + ActualText);
             ActualText = pageobjects.DeliveryPage.PasswordText.getText();
             Assert.assertTrue(ActualText.contains("*"),
                     "Assertion Failed: Expected Message: " + ExpectedText + " is not present in the page");
-            System.out.println("Assertion Success: '*' is present in: " + ActualText);
+            log.debug("Assertion Success: '*' is present in: " + ActualText);
             ActualText = pageobjects.DeliveryPage.SecurityAnswerText.getText();
             Assert.assertTrue(ActualText.contains("*"),
                     "Assertion Failed: Expected Message: " + ExpectedText + " is not present in the page");
-            System.out.println("Assertion Success: '*' is present in: " + ActualText);
+            log.debug("Assertion Success: '*' is present in: " + ActualText);
             ActualText = pageobjects.DeliveryPage.DateofBirthText.getText();
             Assert.assertTrue(ActualText.contains("*"),
                     "Assertion Failed: Expected Message: " + ExpectedText + " is not present in the page");
-            System.out.println("Assertion Success: '*' is present in: " + ActualText);
+            log.debug("Assertion Success: '*' is present in: " + ActualText);
 
         }
         if (Field.contains("Payments")) {
@@ -92,15 +92,15 @@ public class verificationsActions extends Environment {
             ActualText = pageobjects.PaymentPage.NameonAccountText.getText();
             Assert.assertTrue(ActualText.contains("*"),
                     "Assertion Failed: Expected Message: " + ExpectedText + " is not present in the page");
-            System.out.println("Assertion Success: '*' is present in: " + ActualText);
+            log.debug("Assertion Success: '*' is present in: " + ActualText);
             ActualText = pageobjects.PaymentPage.AccountnumberText.getText();
             Assert.assertTrue(ActualText.contains("*"),
                     "Assertion Failed: Expected Message: " + ExpectedText + " is not present in the page");
-            System.out.println("Assertion Success: '*' is present in: " + ActualText);
+            log.debug("Assertion Success: '*' is present in: " + ActualText);
             ActualText = pageobjects.PaymentPage.SortcodeText.getText();
             Assert.assertTrue(ActualText.contains("*"),
                     "Assertion Failed: Expected Message: " + ExpectedText + " is not present in the page");
-            System.out.println("Assertion Success: '*' is present in: " + ActualText);
+            log.debug("Assertion Success: '*' is present in: " + ActualText);
 
 //Below will set bank details
             Set_Bank_details();
@@ -108,7 +108,7 @@ public class verificationsActions extends Environment {
             ActualText = pageobjects.PaymentPage.TimeAtAddressText.getText();
             Assert.assertTrue(ActualText.contains("*"),
                     "Assertion Failed: Expected Message: " + ExpectedText + " is not present in the page");
-            System.out.println("Assertion Success: '*' is present in: " + ActualText);
+            log.debug("Assertion Success: '*' is present in: " + ActualText);
 
             Time_At_Address();
 
@@ -116,7 +116,7 @@ public class verificationsActions extends Environment {
 
             driver.switchTo().frame("payment-iframe"); // switching the frame by ID
 
-            System.out.println("********We are switch to the iframe*******");
+            log.debug("********We are switch to the iframe*******");
             log.debug("Entering the Payments section");
             Thread.sleep(5000);
 
@@ -152,7 +152,7 @@ public class verificationsActions extends Environment {
             PaymentPage.Continue_Next_Step.sendKeys(Keys.ENTER);
             log.debug("Clicking on continue to next step");
             Thread.sleep(2000);
-            System.out.println("*********We are done***************");
+            log.debug("*********We are done***************");
             log.debug("Exiting the Payments section");
             driver.switchTo().defaultContent();
 
@@ -173,12 +173,12 @@ public class verificationsActions extends Environment {
             ActualText = pageobjects.DeliveryPage.HouseNumberText.getText();
             Assert.assertTrue(ActualText.contains("*"),
                     "Assertion Failed: Expected Message: " + ExpectedText + " is not present in the page");
-            System.out.println("Assertion Success: '*' is present in: " + ActualText);
+            log.debug("Assertion Success: '*' is present in: " + ActualText);
             //Below is for finding text in post code text field
             ActualText = pageobjects.DeliveryPage.PostcodeText.getText();
             Assert.assertTrue(ActualText.contains("*"),
                     "Assertion Failed: Expected Message: " + ExpectedText + " is not present in the page");
-            System.out.println("Assertion Success: '*' is present in: " + ActualText);
+            log.debug("Assertion Success: '*' is present in: " + ActualText);
             //Below will set hardcoded post code and housenumeber  - BS12
 
             //Verifying if "*" present in About you section of delivery page
@@ -186,15 +186,15 @@ public class verificationsActions extends Environment {
             ActualText = pageobjects.DeliveryPage.emailAddressText.getText();
             Assert.assertTrue(ActualText.contains("*"),
                     "Assertion Failed: Expected Message: " + ExpectedText + " is not present in the page");
-            System.out.println("Assertion Success: '*' is present in: " + ActualText);
+            log.debug("Assertion Success: '*' is present in: " + ActualText);
             ActualText = pageobjects.DeliveryPage.titleText.getText();
             Assert.assertTrue(ActualText.contains("*"),
                     "Assertion Failed: Expected Message: " + ExpectedText + " is not present in the page");
-            System.out.println("Assertion Success: '*' is present in: " + ActualText);
+            log.debug("Assertion Success: '*' is present in: " + ActualText);
             ActualText = pageobjects.DeliveryPage.nameText.getText();
             Assert.assertTrue(ActualText.contains("*"),
                     "Assertion Failed: Expected Message: " + ExpectedText + " is not present in the page");
-            System.out.println("Assertion Success: '*' is present in: " + ActualText);
+            log.debug("Assertion Success: '*' is present in: " + ActualText);
         }
 
         if (Field.contains("Passport")) {
@@ -204,11 +204,11 @@ public class verificationsActions extends Environment {
             ActualText = pageobjects.AdditionalInformationPage.CountryCodeText.getText();
             Assert.assertTrue(ActualText.contains("*"),
                     "Assertion Failed: Expected Message: " + ExpectedText + " is not present in the page");
-            System.out.println("Assertion Success: '*' is present in: " + ActualText);
+            log.debug("Assertion Success: '*' is present in: " + ActualText);
             ActualText = pageobjects.AdditionalInformationPage.PassportNumberText.getText();
             Assert.assertTrue(ActualText.contains("*"),
                     "Assertion Failed: Expected Message: " + ExpectedText + " is not present in the page");
-            System.out.println("Assertion Success: '*' is present in: " + ActualText);
+            log.debug("Assertion Success: '*' is present in: " + ActualText);
 
         }
 
@@ -219,11 +219,11 @@ public class verificationsActions extends Environment {
             ActualText = pageobjects.AdditionalInformationPage.DrivingLicenceNumberText.getText();
             Assert.assertTrue(ActualText.contains("*"),
                     "Assertion Failed: Expected Message: " + ExpectedText + " is not present in the page");
-            System.out.println("Assertion Success: '*' is present in: " + ActualText);
+            log.debug("Assertion Success: '*' is present in: " + ActualText);
             ActualText = pageobjects.AdditionalInformationPage.PostCodeText.getText();
             Assert.assertTrue(ActualText.contains("*"),
                     "Assertion Failed: Expected Message: " + ExpectedText + " is not present in the page");
-            System.out.println("Assertion Success: '*' is present in: " + ActualText);
+            log.debug("Assertion Success: '*' is present in: " + ActualText);
 
         }
 
@@ -234,11 +234,11 @@ public class verificationsActions extends Environment {
             ActualText = pageobjects.AdditionalInformationPage.EnterOtacCodeText.getText();
             Assert.assertTrue(ActualText.contains("*"),
                     "Assertion Failed: Expected Message: " + ExpectedText + " is not present in the page");
-            System.out.println("Assertion Success: '*' is present in: " + ActualText);
+            log.debug("Assertion Success: '*' is present in: " + ActualText);
             ActualText = pageobjects.AdditionalInformationPage.PostCodeText.getText();
             Assert.assertTrue(ActualText.contains("*"),
                     "Assertion Failed: Expected Message: " + ExpectedText + " is not present in the page");
-            System.out.println("Assertion Success: '*' is present in: " + ActualText);
+            log.debug("Assertion Success: '*' is present in: " + ActualText);
 
         }
         if (Field.contains("CFU Payments")) {
@@ -248,15 +248,15 @@ public class verificationsActions extends Environment {
             ActualText = pageobjects.PaymentPage.NameonAccountText.getText();
             Assert.assertTrue(ActualText.contains("*"),
                     "Assertion Failed: Expected Message: " + ExpectedText + " is not present in the page");
-            System.out.println("Assertion Success: '*' is present in: " + ActualText);
+            log.debug("Assertion Success: '*' is present in: " + ActualText);
             ActualText = pageobjects.PaymentPage.AccountnumberText.getText();
             Assert.assertTrue(ActualText.contains("*"),
                     "Assertion Failed: Expected Message: " + ExpectedText + " is not present in the page");
-            System.out.println("Assertion Success: '*' is present in: " + ActualText);
+            log.debug("Assertion Success: '*' is present in: " + ActualText);
             ActualText = pageobjects.PaymentPage.SortcodeText.getText();
             Assert.assertTrue(ActualText.contains("*"),
                     "Assertion Failed: Expected Message: " + ExpectedText + " is not present in the page");
-            System.out.println("Assertion Success: '*' is present in: " + ActualText);
+            log.debug("Assertion Success: '*' is present in: " + ActualText);
 
 //Below will set bank details
             Set_Bank_details();
@@ -274,7 +274,7 @@ public class verificationsActions extends Environment {
 
             driver.switchTo().frame("payment-iframe"); // switching the frame by ID
 
-            System.out.println("********We are switch to the iframe*******");
+            log.debug("********We are switch to the iframe*******");
             log.debug("Entering the Payments section");
             Thread.sleep(5000);
 
@@ -310,7 +310,7 @@ public class verificationsActions extends Environment {
             PaymentPage.Continue_Next_Step.sendKeys(Keys.ENTER);
             log.debug("Clicking on continue to next step");
             Thread.sleep(2000);
-            System.out.println("*********We are done***************");
+            log.debug("*********We are done***************");
             log.debug("Exiting the Payments section");
             driver.switchTo().defaultContent();
 
@@ -357,7 +357,7 @@ public class verificationsActions extends Environment {
         ActualText = pageobjects.verificationsPage.AsteriskText.getText();
         Assert.assertTrue(ActualText.contains(ExpectedText),
                 "Assertion Failed: Expected Message: " + ExpectedText + " is not present in the page");
-        System.out.println("Assertion Success: Expected Message : 'You'll need to give details for all fields marked with an asterisk (*)' is getting displayed");
+        log.debug("Assertion Success: Expected Message : 'You'll need to give details for all fields marked with an asterisk (*)' is getting displayed");
 
         Screenshots.captureScreenshot();
     }
@@ -373,7 +373,7 @@ public class verificationsActions extends Environment {
         ActualText = pageobjects.verificationsPage.AsteriskText_PAYGSim_Journey.getText();
         Assert.assertTrue(ActualText.contains(ExpectedText),
                 "Assertion Failed: Expected Message: " + ExpectedText + " is not present in the page");
-        System.out.println("Assertion Success: Expected Message : 'You'll need to give details for all fields marked with an asterisk (*)' is getting displayed");
+        log.debug("Assertion Success: Expected Message : 'You'll need to give details for all fields marked with an asterisk (*)' is getting displayed");
 
         Screenshots.captureScreenshot();
     }

@@ -19,7 +19,7 @@ public class FitnessTrackerPage {
     @FindBy(how = How.XPATH, using = "//a[contains(@href, '/shop/fitness-trackers/fitbit/charge-2#contractType=nonconnected')]")
     public static WebElement FitbitCharge2;
 
-    @FindBy(how = How.XPATH, using = "(//*[@component-name='productTile'])[3]")
+    @FindBy(how = How.XPATH, using = "(//img[@class='device-image'])[3]")
     public static WebElement RandomFitnesstracker;
 
     @FindBy(how = How.XPATH, using = "//a[contains(@href, '/shop/fitness-trackers/jawbone/up2/#contractType=nonconnected')]")

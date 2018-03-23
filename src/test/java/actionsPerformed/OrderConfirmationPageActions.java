@@ -20,24 +20,24 @@ public class OrderConfirmationPageActions extends Environment {
 		log.debug("The details are " + pageobjects.OrderConfirmationPage.deliverySection.getText());
 		log.debug("...................................");
 		log.debug("The details are " + pageobjects.OrderConfirmationPage.imsMessage.getText());
-		System.out.println("The details are " + pageobjects.OrderConfirmationPage.OrderconfirmationMessage.getText());
-		System.out.println("...................................");
-		System.out.println(pageobjects.OrderConfirmationPage.deliverySection.getText());
-		System.out.println("...................................");
-		System.out.println(pageobjects.OrderConfirmationPage.imsMessage.getText());
+		log.debug("The details are " + pageobjects.OrderConfirmationPage.OrderconfirmationMessage.getText());
+		log.debug("...................................");
+		log.debug(pageobjects.OrderConfirmationPage.deliverySection.getText());
+		log.debug("...................................");
+		log.debug(pageobjects.OrderConfirmationPage.imsMessage.getText());
 		Screenshots.captureScreenshot();
 	}
 
 	public static void gettitlepage() throws IOException, InterruptedException {
 
-		System.out.println(driver.getTitle());
+		log.debug(driver.getTitle());
 		log.info("The Page Title is " + driver.getTitle());
 		Screenshots.captureScreenshot();
 
 	}
 
 	public static void MessageDisplayed() throws IOException, InterruptedException {
-		System.out.println("This is order confirmation page and the message in this page is as below......");
+		log.debug("This is order confirmation page and the message in this page is as below......");
 		log.info("This is order confirmation/information page and the message in this page is as above......");
 
 		try {
@@ -48,7 +48,7 @@ public class OrderConfirmationPageActions extends Environment {
 
 			for (int i = 0; i <= DataContainer.size(); i++) {
 
-				System.out.println(DataContainer.get(i).getText());
+				log.debug(DataContainer.get(i).getText());
 				log.info(DataContainer.get(i).getText());
 			}
 			Screenshots.captureScreenshot();
@@ -58,7 +58,7 @@ public class OrderConfirmationPageActions extends Environment {
 	}
 
 	public static void VolteMessageDisplayed() throws IOException, InterruptedException {
-		System.out.println("The Volte message in this page is as below......");
+		log.debug("The Volte message in this page is as below......");
 		try {
 			List<WebElement> outercontainer = driver.findElements(By.xpath("//*[@id='imsMessage']"));
 
@@ -66,7 +66,7 @@ public class OrderConfirmationPageActions extends Environment {
 
 			for (int i = 0; i <= DataContainer.size(); i++) {
 
-				System.out.println(DataContainer.get(i).getText());
+				log.debug(DataContainer.get(i).getText());
 			}
 			Screenshots.captureScreenshot();
 		} catch (IndexOutOfBoundsException e) {
@@ -76,7 +76,7 @@ public class OrderConfirmationPageActions extends Environment {
 	}
 
 	public static String TimeslotMessage() {
-		System.out.println("The delivery message in this page is as below......");
+		log.debug("The delivery message in this page is as below......");
 		try {
 			List<WebElement> outercontainer = driver.findElements(By.xpath("//*[@id='home-standard-delivery']"));
 
@@ -85,7 +85,7 @@ public class OrderConfirmationPageActions extends Environment {
 			for (int i = 0; i <= DataContainer.size(); i++) {
 				String ExpectedMessage = "Your order will be delivered for free, via Royal Mail, within three working days.";
 				String message = DataContainer.get(i).getText();
-				System.out.println(DataContainer.get(i).getText());
+				log.debug(DataContainer.get(i).getText());
 
 			}
 		} catch (IndexOutOfBoundsException e) {
@@ -96,7 +96,7 @@ public class OrderConfirmationPageActions extends Environment {
 	}
 
 	public static String DelayedDeliveryMessage() {
-		System.out.println("The Delayed Delivery message in this page is as below......");
+		log.debug("The Delayed Delivery message in this page is as below......");
 		try {
 			List<WebElement> outercontainer = driver.findElements(By.xpath("//*[@id='delivery-section']"));
 
@@ -106,7 +106,7 @@ public class OrderConfirmationPageActions extends Environment {
 			for (int i = 0; i <= DataContainer.size(); i++) {
 				String ExpectedMessage = "Your order will be delivered for free, via Royal Mail, within three working days.";
 				String message = DataContainer.get(i).getText();
-				System.out.println(DataContainer.get(i).getText());
+				log.debug(DataContainer.get(i).getText());
 
 			}
 		} catch (IndexOutOfBoundsException e) {
@@ -117,7 +117,7 @@ public class OrderConfirmationPageActions extends Environment {
 	}
 
 	public static String PaccodeinfoMessage() {
-		System.out.println("The pac-code-info in this page is as below......");
+		log.debug("The pac-code-info in this page is as below......");
 		try {
 			List<WebElement> outercontainer = driver.findElements(By.xpath("//*[@id='pac-code-info']"));
 
@@ -126,7 +126,7 @@ public class OrderConfirmationPageActions extends Environment {
 			for (int i = 0; i <= DataContainer.size(); i++) {
 				String ExpectedMessage = "Your order will be delivered for free, via Royal Mail, within three working days.";
 				String message = DataContainer.get(i).getText();
-				System.out.println(DataContainer.get(i).getText());
+				log.debug(DataContainer.get(i).getText());
 
 			}
 		} catch (IndexOutOfBoundsException e) {
@@ -137,23 +137,23 @@ public class OrderConfirmationPageActions extends Environment {
 	}
 
 	public static void downloadPDFcopy() {
-		System.out.println("Entering downloadPDFcopy function");
+		log.debug("Entering downloadPDFcopy function");
 		driver.findElement(By.xpath("//a[@href='orderConfirmation.pdf']")).click();
-		System.out.println("Completed downloading order confirmation");
+		log.debug("Completed downloading order confirmation");
 
 	}
 
 	public static void Orderid() {
-		System.out.println("Your order has been successfully placed.Order number: ");
+		log.debug("Your order has been successfully placed.Order number: ");
 		log.info("Your order has been successfully placed.Order number: ");
-		System.out.println(pageobjects.OrderConfirmationPage.orderid.getText());
+		log.debug(pageobjects.OrderConfirmationPage.orderid.getText());
 	}
 
 	public static void FreeSimMessage() {
-		System.out.println("This is order confirmation page and the message in this page is as below......");
+		log.debug("This is order confirmation page and the message in this page is as below......");
 		log.info("This is order confirmation/information page and the message in this page is as above......");
 
-		System.out.println(pageobjects.OrderConfirmationPage.FreesimOrderConfirmation.getText());
+		log.debug(pageobjects.OrderConfirmationPage.FreesimOrderConfirmation.getText());
 	}
 
 }

@@ -22,5 +22,5 @@ Feature: Reg_Trustev_AFA_PAYM_Phones_WithAccessoryClick_and_Collect
     Then Order confirmation message should be displayed
 
     Examples:
-      | Device | Tariffs | Accessory                        | Firstname | Surname | HouseNumber | PostCode | Username     | Password | Confirm_Password | Security_Answer |
-      | Random | Random  | iPhone 7 Evo Elite Brushed Black | TEST      | ACCEPTA | 32          | SL11ER   | TEST ACCEPTA | test123  | test123          | Anything        |
+      | Device                             | Tariffs | Accessory                        | Firstname | Surname | HouseNumber | PostCode | Username     | Password | Confirm_Password | Security_Answer |
+      | Galaxy S8 Plus 64GB Midnight Black | Random  | iPhone 7 Evo Elite Brushed Black | TEST      | ACCEPTA | 32          | SL11ER   | TEST ACCEPTA | test123  | test123          | Anything        |

@@ -25,18 +25,18 @@ public class BasketPageActions extends Environment {
 	final static Logger log = Logger.getLogger("BasketPageActions");
 
 	public static void validatelabel() throws InterruptedException, IOException {
-		System.out.println(" ");
-		System.out.println("Verifying Shop basket pages");
+		log.debug(" ");
+		log.debug("Verifying Shop basket pages");
 		log.debug("Verifying Shop basket pages");
 
 		if (pageobjects.BasketPage.DeviceRemovebtn.getText().contains("Remove")) {
-			System.out.println("The Device_Remove_Link is Present and the Text is :"
+			log.debug("The Device_Remove_Link is Present and the Text is :"
 					+ pageobjects.BasketPage.DeviceRemovebtn.getText());
 			log.debug("The Device_Remove_Link is Present and the Text is :"
 					+ pageobjects.BasketPage.DeviceRemovebtn.getText());
 
 		} else {
-			System.out.println("The Device_Remove_Link is Absent and the Text is :"
+			log.debug("The Device_Remove_Link is Absent and the Text is :"
 					+ pageobjects.BasketPage.DeviceRemovebtn.getText());
 			log.debug("The Device_Remove_Link is Absent and the Text is :"
 					+ pageobjects.BasketPage.DeviceRemovebtn.getText());
@@ -45,13 +45,13 @@ public class BasketPageActions extends Environment {
 		Thread.sleep(5000);
 
 		if (pageobjects.BasketPage.tariffRemovebtn.getText().contains("Remove")) {
-			System.out.println("The Tarrif_Remove_link is Present and the Text is :"
+			log.debug("The Tarrif_Remove_link is Present and the Text is :"
 					+ pageobjects.BasketPage.tariffRemovebtn.getText());
 			log.debug("The Tarrif_Remove_link is Present and the Text is :"
 					+ pageobjects.BasketPage.tariffRemovebtn.getText());
 
 		} else {
-			System.out.println("The Tarrif_Remove_link is Absent and the Text is :"
+			log.debug("The Tarrif_Remove_link is Absent and the Text is :"
 					+ pageobjects.BasketPage.tariffRemovebtn.getText());
 
 			log.debug("The Tarrif_Remove_link is Absent and the Text is :"
@@ -64,7 +64,7 @@ public class BasketPageActions extends Environment {
 
 	public static void labelvaluedisplay() throws InterruptedException, IOException {
 
-		System.out.println("The upfront cost display :"
+		log.debug("The upfront cost display :"
 				+ pageobjects.BasketPage.upfrontcost.getAttribute("data-qa-upfront-total"));
 
 		log.debug("The upfront cost display :"
@@ -72,7 +72,7 @@ public class BasketPageActions extends Environment {
 
 		Thread.sleep(5000);
 
-		System.out.println("The monthly cost display :"
+		log.debug("The monthly cost display :"
 				+ pageobjects.BasketPage.monthlycost.getAttribute("data-qa-monthly-total"));
 		log.debug("The monthly cost display :"
 				+ pageobjects.BasketPage.monthlycost.getAttribute("data-qa-monthly-total"));
@@ -85,14 +85,14 @@ public class BasketPageActions extends Environment {
 		log.debug("Shop basket pages validations");
 
 		if (pageobjects.BasketPage.checkoutbtn.getText().contains("Go to checkout")) {
-			System.out.println(
+			log.debug(
 					"Go To Checkout is Present and the Text is :" + pageobjects.BasketPage.checkoutbtn.getText());
 
 			log.debug("Go To Checkout is Present and the Text is :" + pageobjects.BasketPage.checkoutbtn.getText());
 
 			pageobjects.BasketPage.checkoutbtn.sendKeys(Keys.ENTER);
-        } else {
-			System.out.println(
+		} else {
+			log.debug(
 					"Go To Checkout is Absent and the Text is :" + pageobjects.BasketPage.checkoutbtn.getText());
 			log.debug("Go To Checkout is Absent and the Text is :" + pageobjects.BasketPage.checkoutbtn.getText());
 
@@ -107,11 +107,11 @@ public class BasketPageActions extends Environment {
 	public static void checkOrderContractTextBP() throws IOException, InterruptedException {
 		String ActOrderContractMsg = pageobjects.BasketPage.OrderContractMessageBP.getText();
 		String ExpOrderContractMsg = "Your contract will not start until the order is on its way.";
-		System.out.println("Act Del MSg" + ActOrderContractMsg);
-		System.out.println("Exp Del MSg" + ExpOrderContractMsg);
+		log.debug("Act Del MSg" + ActOrderContractMsg);
+		log.debug("Exp Del MSg" + ExpOrderContractMsg);
 
 		if (ActOrderContractMsg.matches(ExpOrderContractMsg)) {
-			System.out.println("ActOrderContractMsg matches ExpOrderContractMsg");
+			log.debug("ActOrderContractMsg matches ExpOrderContractMsg");
 		} else {
 			Assert.fail("Order Contract Text does not match");
 
@@ -124,11 +124,11 @@ public class BasketPageActions extends Environment {
 				+ pageobjects.BasketPage.OrderContractMessageDDPOBP2.getText();
 		String ExpOrderContractMsg = "We will deliver the rest of your order as soon as possible." + '\n'
 				+ "Your contract will not start until the order is on its way.";
-		System.out.println("Act Del MSg" + ActOrderContractMsg);
-		System.out.println("Exp Del MSg" + ExpOrderContractMsg);
+		log.debug("Act Del MSg" + ActOrderContractMsg);
+		log.debug("Exp Del MSg" + ExpOrderContractMsg);
 
 		if (ActOrderContractMsg.matches(ExpOrderContractMsg)) {
-			System.out.println("ActOrderContractMsg matches ExpOrderContractMsg");
+			log.debug("ActOrderContractMsg matches ExpOrderContractMsg");
 		} else {
 			Assert.fail("Order Contract Text for DD phone does not match");
 
@@ -141,7 +141,7 @@ public class BasketPageActions extends Environment {
 
 		String title = driver.getTitle();
 		if (title.contains("Thanks for waiting")) {
-			System.out.println("Queue page is displayed");
+			log.debug("Queue page is displayed");
 
 			// Below is example of Fluent wait
 
@@ -160,7 +160,7 @@ public class BasketPageActions extends Environment {
 				driver.findElement(By.xpath("//input[@id='noNeedNewSim']")).click();
 				Thread.sleep(2000);
 			}
-			System.out.println("Queue page is not displayed");
+			log.debug("Queue page is not displayed");
 			WebElement element = pageobjects.BasketPage.checkoutbtn;
 			JavascriptExecutor executor = (JavascriptExecutor)driver;
 			executor.executeScript("arguments[0].click();", element);
@@ -176,7 +176,7 @@ public class BasketPageActions extends Environment {
 	public static void ValidateBasketPageContents() throws InterruptedException, IOException {
 		boolean fname = false;
 		log.debug("Shop basket pages validations" + driver.getTitle());
-		System.out.println("Shop basket pages validations" + driver.getTitle());
+		log.debug("Shop basket pages validations" + driver.getTitle());
 
 		// boolean fname = pageobjects.BasketPage.checkoutbtn.isEnabled();
 		if (pageobjects.BasketPage.checkoutbtn.isDisplayed()) {
@@ -187,15 +187,15 @@ public class BasketPageActions extends Environment {
 		System.out.print(fname);
 
 		if (fname != false) {
-			System.out.println(
+			log.debug(
 					"Checkout is Enabled and Present and the Text is :" + pageobjects.BasketPage.checkoutbtn.getText());
 
 			log.debug("Checkout is Present and the Text is :" + pageobjects.BasketPage.checkoutbtn.getText());
-			System.out.println("Checkout is Enabled and Present and the Text is :"
+			log.debug("Checkout is Enabled and Present and the Text is :"
 					+ pageobjects.BasketPage.DeviceDetailsDisplay.getText());
 
 		} else {
-			System.out.println(
+			log.debug(
 					"Go To Checkout is Absent and the Text is :" + pageobjects.BasketPage.checkoutbtn.getText());
 			log.debug("Go To Checkout is Absent and the Text is :" + pageobjects.BasketPage.checkoutbtn.getText());
 
@@ -203,13 +203,13 @@ public class BasketPageActions extends Environment {
 		// Below will display contents of the phone section
 
 		log.debug("The Main Headercontents are : " + pageobjects.BasketPage.MainHeaders.getText());
-		System.out.println("The Main Headercontents are : " + pageobjects.BasketPage.MainHeaders.getText());
+		log.debug("The Main Headercontents are : " + pageobjects.BasketPage.MainHeaders.getText());
 		log.debug("The Phone contents are : " + pageobjects.BasketPage.DeviceDetailsDisplay.getText());
-		System.out.println("The Phone contents are : " + pageobjects.BasketPage.DeviceDetailsDisplay.getText());
+		log.debug("The Phone contents are : " + pageobjects.BasketPage.DeviceDetailsDisplay.getText());
 		log.debug("The Basket Totals are : " + pageobjects.BasketPage.totals.getText());
-		System.out.println("The Basket Totals are : " + pageobjects.BasketPage.totals.getText());
+		log.debug("The Basket Totals are : " + pageobjects.BasketPage.totals.getText());
 		log.debug("The Home Delivery Text is : " + pageobjects.BasketPage.HomeDeliveryText.getText());
-		System.out.println("The Home Delivery Text is : " + pageobjects.BasketPage.HomeDeliveryText.getText());
+		log.debug("The Home Delivery Text is : " + pageobjects.BasketPage.HomeDeliveryText.getText());
 		Screenshots.captureScreenshot();
 	}
 
@@ -230,30 +230,30 @@ public class BasketPageActions extends Environment {
 
 		{
 			log.debug("Stock is not available, perhaps out of stock");
-			System.out.println("Stock is not available, perhaps out of stock");
+			log.debug("Stock is not available, perhaps out of stock");
 			Assert.fail("Stock is not available, perhaps out of stock");
 
 		}
 
 		log.debug("The Main Headercontents are : " + pageobjects.BasketPage.MainHeaders.getText());
-		System.out.println("The Main Headercontents are : " + pageobjects.BasketPage.MainHeaders.getText());
+		log.debug("The Main Headercontents are : " + pageobjects.BasketPage.MainHeaders.getText());
 
 		log.debug("The Device names is/are : " + pageobjects.BasketPage.AccessoryDetails.getText());
-		System.out.println("The Device names is/are : " + pageobjects.BasketPage.AccessoryDetails.getText());
+		log.debug("The Device names is/are : " + pageobjects.BasketPage.AccessoryDetails.getText());
 
 		log.debug("The Device names is/are : " + pageobjects.BasketPage.DeviceHeadingNonConnected.getText());
-		System.out.println("The Device names is/are : " + pageobjects.BasketPage.DeviceHeadingNonConnected.getText());
+		log.debug("The Device names is/are : " + pageobjects.BasketPage.DeviceHeadingNonConnected.getText());
 
 		// Taking element name and storing it
 		String devicename1 = "Text111";
 
 		log.debug("The Device names is/are : " + pageobjects.BasketPage.DeviceQuantityNonConnected.getText());
-		System.out.println("The Device names is/are : " + pageobjects.BasketPage.DeviceQuantityNonConnected.getText());
+		log.debug("The Device names is/are : " + pageobjects.BasketPage.DeviceQuantityNonConnected.getText());
 
-		System.out.println("The Device names is/are : " + pageobjects.BasketPage.DeviceQuantityNonConnected.getText());
+		log.debug("The Device names is/are : " + pageobjects.BasketPage.DeviceQuantityNonConnected.getText());
 
 		log.debug("The Basket Totals are : " + pageobjects.BasketPage.totals.getText());
-		System.out.println("The Basket Totals are : " + pageobjects.BasketPage.totals.getText());
+		log.debug("The Basket Totals are : " + pageobjects.BasketPage.totals.getText());
 		Screenshots.captureScreenshot();
 
 	}
@@ -265,12 +265,12 @@ public class BasketPageActions extends Environment {
 		boolean fname = pageobjects.BasketPage.checkoutbtn.isEnabled();
 
 		if (fname != false) {
-			System.out.println("Checkout is Enabled and Present");
+			log.debug("Checkout is Enabled and Present");
 
 			log.debug("Checkout is Enabled and Present");
 
 		} else {
-			System.out.println(
+			log.debug(
 					"Go To Checkout is Absent and the Text is :" + pageobjects.BasketPage.checkoutbtn.getText());
 			log.debug("Go To Checkout is Absent and the Text is :" + pageobjects.BasketPage.checkoutbtn.getText());
 
@@ -300,47 +300,84 @@ public class BasketPageActions extends Environment {
 
 
 		if(!BasketPage.checkoutbtn.isDisplayed()){
-		if (elementName.contains("homeDelivery")) {
-			pageobjects.BasketPage.HomeDeliverySelect.click();
-			// Assert.assertEquals(elementName,"Galaxy S7 is not found");
-			log.debug("HomeDelivery is Selected");
-			System.out.println("HomeDelivery is Selected");
-			Screenshots.captureScreenshot();
+			if (elementName.contains("homeDelivery")) {
+				pageobjects.BasketPage.HomeDeliverySelect.click();
+				// Assert.assertEquals(elementName,"Galaxy S7 is not found");
+				log.debug("HomeDelivery is Selected");
+				log.debug("HomeDelivery is Selected");
+				Screenshots.captureScreenshot();
 
-		}
-		if (elementName.contains("clickAndCollect")) {
-			pageobjects.BasketPage.clickAndCollectSelect.click();
-			// Assert.assertEquals(elementName,"Galaxy S7 is not found");
-			log.debug("click And Collect is Selected");
-			System.out.println("clickAndCollect radio button is Selected");
+			}
+			if (elementName.contains("clickAndCollect")) {
+				pageobjects.BasketPage.clickAndCollectSelect.click();
+				// Assert.assertEquals(elementName,"Galaxy S7 is not found");
+				log.debug("click And Collect is Selected");
+				log.debug("clickAndCollect radio button is Selected");
 
-			pageobjects.BasketPage.StorePostcode.sendKeys("G2");
-			log.debug("PostCode Entered for Search");
-			System.out.println("PostCode Entered for Search");
-			Thread.sleep(4000);
-			pageobjects.BasketPage.PostcodeSubmit.click();
-			Thread.sleep(5000);
-			// Assert.assertEquals(elementName,"Galaxy S7 is not found");
-			log.debug("Postcode Submitted for Search");
-			System.out.println("Postcode Submitted for Search");
-			Thread.sleep(5000);
-			pageobjects.BasketPage.Collectfromthisstore.click();
-			// Assert.assertEquals(elementName,"Galaxy S7 is not found");
-			log.debug("Store Selected for Colletion");
-			System.out.println("Store Selected for Colletion");
-			Thread.sleep(5000);
-			Screenshots.captureScreenshot();
-		}
+				pageobjects.BasketPage.StorePostcode.sendKeys("G2");
+				log.debug("PostCode Entered for Search");
+				log.debug("PostCode Entered for Search");
+				Thread.sleep(4000);
+				pageobjects.BasketPage.PostcodeSubmit.click();
+				Thread.sleep(5000);
+				// Assert.assertEquals(elementName,"Galaxy S7 is not found");
+				log.debug("Postcode Submitted for Search");
+				log.debug("Postcode Submitted for Search");
+				Thread.sleep(5000);
+				pageobjects.BasketPage.Collectfromthisstore.click();
+				// Assert.assertEquals(elementName,"Galaxy S7 is not found");
+				log.debug("Store Selected for Colletion");
+				log.debug("Store Selected for Colletion");
+				Thread.sleep(5000);
+				Screenshots.captureScreenshot();
+			}
 		}
 
 	}
+
+	public static void checkStoreStockForTradeIn(String elementName) throws InterruptedException, IOException {
+
+
+
+			if (elementName.contains("homeDelivery")) {
+				pageobjects.BasketPage.HomeDeliverySelect.click();
+				// Assert.assertEquals(elementName,"Galaxy S7 is not found");
+				log.debug("HomeDelivery is Selected");
+				log.debug("HomeDelivery is Selected");
+				Screenshots.captureScreenshot();
+
+			}
+			if (elementName.contains("clickAndCollect")) {
+				pageobjects.BasketPage.checkSoteSotck_TradeIn.click();
+				// Assert.assertEquals(elementName,"Galaxy S7 is not found");
+				log.debug("click And Collect is Selected");
+				log.debug("clickAndCollect radio button is Selected");
+				Thread.sleep(2000);
+				pageobjects.BasketPage.StorePostcode.sendKeys("G2");
+				log.debug("PostCode Entered for Search");
+				log.debug("PostCode Entered for Search");
+				Thread.sleep(4000);
+				pageobjects.BasketPage.PostcodeSubmit.click();
+				Thread.sleep(5000);
+				// Assert.assertEquals(elementName,"Galaxy S7 is not found");
+				log.debug("Postcode Submitted for Search");
+				log.debug("Postcode Submitted for Search");
+				Thread.sleep(5000);
+				pageobjects.BasketPage.Collectfromthisstore.click();
+				// Assert.assertEquals(elementName,"Galaxy S7 is not found");
+				log.debug("Store Selected for Colletion");
+				log.debug("Store Selected for Colletion");
+				Thread.sleep(7000);
+				Screenshots.captureScreenshot();
+			}
+		}
 
 	public static void JuneReleaseBasketContent() throws InterruptedException, IOException {
 
 		try {
 			Assert.assertEquals("Your basket", pageobjects.BasketPage.BasketHeaderXXL.getText());
-			System.out.println("Shop basket page header - " + driver.getTitle());
-			System.out.println("Basket header is - " + pageobjects.BasketPage.BasketHeaderXXL.getText());
+			log.debug("Shop basket page header - " + driver.getTitle());
+			log.debug("Basket header is - " + pageobjects.BasketPage.BasketHeaderXXL.getText());
 
 		} catch (Exception e) {
 			Assert.fail("Unable to find BasketHeaderXXL element in Reference shop Basket page");
@@ -357,7 +394,7 @@ public class BasketPageActions extends Environment {
 		 */
 		String Ele1 = pageobjects.BasketPage.VoucherMessage.getText();
 		if (Ele1.contains("This promo code is invalid")) {
-			System.out.println("This promo code is invalid");
+			log.debug("This promo code is invalid");
 		} else {
 			Assert.fail("Expected message is not displayed for invalid promo code");
 		}
@@ -381,11 +418,11 @@ public class BasketPageActions extends Environment {
 
 		boolean fname = pageobjects.BasketPage.checkoutbtn.isEnabled();
 		if (fname != false) {
-			System.out.println("Checkout is Enabled and Present");
+			log.debug("Checkout is Enabled and Present");
 			log.debug("Checkout is Enabled and Present");
 
 		} else {
-			System.out.println("Checkout is not Enabled and Present");
+			log.debug("Checkout is not Enabled and Present");
 			log.debug("Checkout is Not Enabled and Present");
 		}
 
@@ -470,36 +507,36 @@ public class BasketPageActions extends Environment {
 		log.debug("2" + SelectedDevices.get(1));
 		log.debug("3" + SelectedDevices.get(2));
 
-		System.out.println("Conn size" + MyConnDevices.size());
-		System.out.println("Non Conn size" + MyNonConnDevices.size());
-		System.out.println("Tariffs size" + MyTariffs.size());
+		log.debug("Conn size" + MyConnDevices.size());
+		log.debug("Non Conn size" + MyNonConnDevices.size());
+		log.debug("Tariffs size" + MyTariffs.size());
 
 		if (MyNonConnDevices.size() != 0) {
 			for (int i = 0; i < MyNonConnDevices.size(); i++) {
 				DisplayedDevices.add(MyNonConnDevices.get(i).getText());
-				System.out.println("Non Conn added: " + MyNonConnDevices.get(i).getText() + "");
+				log.debug("Non Conn added: " + MyNonConnDevices.get(i).getText() + "");
 			}
 		}
 		if (MyConnDevices.size() != 0) {
 			for (int i = 0; i < MyConnDevices.size(); i++) {
 				DisplayedDevices.add(MyConnDevices.get(i).getText());
-				System.out.println("Conn dev added: " + MyConnDevices.get(i).getText() + "");
+				log.debug("Conn dev added: " + MyConnDevices.get(i).getText() + "");
 			}
 		}
 
 		if (MyTariffs.size() != 0) {
 			for (int i = 0; i < MyTariffs.size(); i++) {
 				DisplayedDevices.add(MyTariffs.get(i).getText());
-				System.out.println("Tariff added: " + MyTariffs.get(i).getText() + "");
+				log.debug("Tariff added: " + MyTariffs.get(i).getText() + "");
 			}
 		}
 		if (DisplayedDevices.containsAll(SelectedDevices)) {
 			log.debug("Selected devices are in basket");
-			System.out.println("Selected devices are in basket");
+			log.debug("Selected devices are in basket");
 
 		} else {
 			for (int k = 0; k > DisplayedDevices.size(); k++) {
-				System.out.println("Devices in basket are : " + '\n' + DisplayedDevices.get(k) + '\n');
+				log.debug("Devices in basket are : " + '\n' + DisplayedDevices.get(k) + '\n');
 				log.debug("Devices in basket are : " + '\n' + DisplayedDevices.get(k) + '\n');
 			}
 			Assert.fail("Selected devices are not in basket");
@@ -520,37 +557,37 @@ public class BasketPageActions extends Environment {
 
 		SelectedDevices.add(dev1);
 		SelectedDevices.add(dev2);
-		System.out.println("1" + SelectedDevices.get(0));
-		System.out.println("2" + SelectedDevices.get(1));
+		log.debug("1" + SelectedDevices.get(0));
+		log.debug("2" + SelectedDevices.get(1));
 
-		System.out.println("Conn size: " + MyConnDevices.size());
-		System.out.println("Non Conn size: " + MyNonConnDevices.size());
-		System.out.println("Tariffs size: " + MyTariffs.size());
+		log.debug("Conn size: " + MyConnDevices.size());
+		log.debug("Non Conn size: " + MyNonConnDevices.size());
+		log.debug("Tariffs size: " + MyTariffs.size());
 
 		if (MyNonConnDevices.size() != 0) {
 			for (int i = 0; i < MyNonConnDevices.size(); i++) {
 				DisplayedDevices.add(MyNonConnDevices.get(i).getText());
-				System.out.println("Non Conn added: " + MyNonConnDevices.get(i).getText());
+				log.debug("Non Conn added: " + MyNonConnDevices.get(i).getText());
 			}
 		}
 		if (MyConnDevices.size() != 0) {
 			for (int i = 0; i < MyConnDevices.size(); i++) {
 				DisplayedDevices.add(MyConnDevices.get(i).getText());
-				System.out.println("Conn dev added: " + MyConnDevices.get(i).getText());
+				log.debug("Conn dev added: " + MyConnDevices.get(i).getText());
 			}
 		}
 		if (MyTariffs.size() != 0) {
 			for (int i = 0; i < MyTariffs.size(); i++) {
 				DisplayedDevices.add(MyTariffs.get(i).getText());
-				System.out.println("Tariff added: " + MyTariffs.get(i).getText() + "");
+				log.debug("Tariff added: " + MyTariffs.get(i).getText() + "");
 			}
 		}
 		if (DisplayedDevices.containsAll(SelectedDevices)) {
 			log.debug("Selected devices are in basket");
-			System.out.println("Selected devices are in basket");
+			log.debug("Selected devices are in basket");
 		} else {
 			for (int k = 0; k > DisplayedDevices.size(); k++) {
-				System.out.println("Devices in basket are : " + '\n' + DisplayedDevices.get(k) + '\n');
+				log.debug("Devices in basket are : " + '\n' + DisplayedDevices.get(k) + '\n');
 				log.debug("Devices in basket are : " + '\n' + DisplayedDevices.get(k) + '\n');
 			}
 			Assert.fail("Selected devices are not in basket");
@@ -574,27 +611,27 @@ public class BasketPageActions extends Environment {
 		if (MyNonConnDevices.size() != 0) {
 			for (int i = 0; i < MyNonConnDevices.size(); i++) {
 				DisplayedDevices.add(MyNonConnDevices.get(i).getText());
-				System.out.println("Non Conn added: " + MyNonConnDevices.get(i).getText());
+				log.debug("Non Conn added: " + MyNonConnDevices.get(i).getText());
 			}
 		}
 		if (MyConnDevices.size() != 0) {
 			for (int i = 0; i < MyConnDevices.size(); i++) {
 				DisplayedDevices.add(MyConnDevices.get(i).getText());
-				System.out.println("Conn dev added: " + MyConnDevices.get(i).getText());
+				log.debug("Conn dev added: " + MyConnDevices.get(i).getText());
 			}
 		}
 		if (MyTariffs.size() != 0) {
 			for (int i = 0; i < MyTariffs.size(); i++) {
 				DisplayedDevices.add(MyTariffs.get(i).getText());
-				System.out.println("Tariff added: " + MyTariffs.get(i).getText() + "");
+				log.debug("Tariff added: " + MyTariffs.get(i).getText() + "");
 			}
 		}
 		if (DisplayedDevices.containsAll(SelectedDevices)) {
 			log.debug("Selected device is in basket");
-			System.out.println("Selected device is in basket");
+			log.debug("Selected device is in basket");
 		} else {
 			for (int k = 0; k > DisplayedDevices.size(); k++) {
-				System.out.println("Devices in basket are : " + '\n' + DisplayedDevices.get(k) + '\n');
+				log.debug("Devices in basket are : " + '\n' + DisplayedDevices.get(k) + '\n');
 				log.debug("Devices in basket are : " + '\n' + DisplayedDevices.get(k) + '\n');
 			}
 			Assert.fail("Selected devices are not in basket");
@@ -605,46 +642,46 @@ public class BasketPageActions extends Environment {
 
 	public static void InsuranceSectionBasket() throws InterruptedException, IOException {
 		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
-		System.out.println("Entering add InsuranceSectionBasket Method");
+		log.debug("Entering add InsuranceSectionBasket Method");
 
 		// pageobjects.BasketPage.InsuranceSection.sendKeys(Keys.ENTER);
 
 		if (pageobjects.BasketPage.InsuranceSection.isDisplayed()) {
-			System.out.println("Insurance is displayed in Basket page and text is  - "
+			log.debug("Insurance is displayed in Basket page and text is  - "
 					+ pageobjects.BasketPage.InsuranceSection.getText());
 
 		}
 
 		Thread.sleep(2000);
-		System.out.println("Completed InsuranceSectionBasket function");
+		log.debug("Completed InsuranceSectionBasket function");
 		log.debug("Completed InsuranceSectionBasket function");
 		Screenshots.captureScreenshot();
 
 	}
 
 	public static void InsuranceSectionDeliveryPage() throws InterruptedException, IOException {
-		System.out.println("Entering InsuranceSectionDeliveryPage Method");
+		log.debug("Entering InsuranceSectionDeliveryPage Method");
 
 		Thread.sleep(3000);
 
 		if (driver.findElement(By.xpath("//tr[@id='basket-insurance']")).isDisplayed()) {
-			System.out.println("Insurance is displayed in Delivery page and text is  - "
+			log.debug("Insurance is displayed in Delivery page and text is  - "
 					+ driver.findElement(By.xpath("//tr[@id='basket-insurance']")).getText());
 
 		} else {
-			System.out.println("Insurance is not displayed");
+			log.debug("Insurance is not displayed");
 		}
 
 		/*
 		 * if(pageobjects.DeliveryPage.InsuranceSection.isDisplayed()) {
-		 * System.out.println("Insurance is displayed in Delivery page and text is  - "
+		 * log.debug("Insurance is displayed in Delivery page and text is  - "
 		 * +pageobjects.DeliveryPage.InsuranceSection.getText());
-		 * 
+		 *
 		 * }
 		 */
 
 		Thread.sleep(2000);
-		System.out.println("Completed InsuranceSectionDeliveryPage function");
+		log.debug("Completed InsuranceSectionDeliveryPage function");
 		log.debug("Completed InsuranceSectionDeliveryPage function");
 		Screenshots.captureScreenshot();
 
@@ -656,10 +693,10 @@ public class BasketPageActions extends Environment {
 	public static void UpgradeBasketPageYourSim() throws IOException, InterruptedException {
 
 		if (pageobjects.BasketPage.EnabledCheckout.isDisplayed()) {
-			System.out.println("The Checkout button is enabled");
+			log.debug("The Checkout button is enabled");
 			log.debug("The checkout button is enabled");
 		} else if (pageobjects.BasketPage.DisabledCheckout.isDisplayed()) {
-			System.out.println("The checkout button is not enabled");
+			log.debug("The checkout button is not enabled");
 			log.debug("The checkout button is not enabled");
 		}
 		Screenshots.captureScreenshot();
@@ -672,16 +709,16 @@ public class BasketPageActions extends Environment {
 		jse.executeScript("window.scrollBy(0,450)", "");
 
 		if (pageobjects.UpgradeCustomerPage.YourSimSection.isDisplayed()) {
-			System.out.println("The Your sim section is displayed");
+			log.debug("The Your sim section is displayed");
 		} else {
-			System.out.println("The Your sim section is not displayed");
+			log.debug("The Your sim section is not displayed");
 		}
 
 		boolean SelectedY = UpgradeCustomerPage.NeedNewSimRadioButton.isSelected();
 		if (SelectedY == true) {
-			System.out.println("The I need a sim is preselected");
+			log.debug("The I need a sim is preselected");
 		} else {
-			System.out.println("I dont need a sim is pre selected");
+			log.debug("I dont need a sim is pre selected");
 		}
 		Screenshots.captureScreenshot();
 
@@ -692,7 +729,7 @@ public class BasketPageActions extends Environment {
 		log.debug("Verifying if checkout page is displayed or not");
 		String ActualText = BasketPage.checkoutinProgress.getText();
 
-		System.out.println(ActualText);
+		log.debug(ActualText);
 
 		String Expected = "You order is in progress";
 
@@ -703,7 +740,7 @@ public class BasketPageActions extends Environment {
 		}
 		else
 		{
-			System.out.println("Order in progress is not displayed");
+			log.debug("Order in progress is not displayed");
 		}
 		Thread.sleep(5000);
 		Screenshots.captureScreenshot();

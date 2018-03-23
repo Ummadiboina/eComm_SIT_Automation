@@ -18,21 +18,21 @@ public class AdditionalInformationPageActions extends Environment {
 
 	public static void gettitlepage() throws IOException, InterruptedException {
 
-		System.out.println("Below is the Additional information page...");
-		System.out.println(driver.getTitle());
+		log.debug("Below is the Additional information page...");
+		log.debug(driver.getTitle());
 		log.debug("Entered Additional information page");
 		Screenshots.captureScreenshot();
 	}
 
 	public static void SectionsDisplayed() throws IOException, InterruptedException {
 
-		System.out.println("Below are the sections displayed");
+		log.debug("Below are the sections displayed");
 		pageobjects.AdditionalInformationPage.passportInfo.getText();
 		log.debug("Passport info section is displayed");
-		System.out.println("Driving license section is displayed ");
+		log.debug("Driving license section is displayed ");
 		pageobjects.AdditionalInformationPage.drivingLicence.getText();
 		log.debug("Driving license section is displayed ");
-		System.out.println("Additional card section ");
+		log.debug("Additional card section ");
 		pageobjects.AdditionalInformationPage.additionalCard.getText();
 		log.debug("Additional card section is displayed");
 
@@ -43,7 +43,7 @@ public class AdditionalInformationPageActions extends Environment {
 
 		driver.switchTo().frame("additional-card-iframe"); // switching the frame by ID
 
-		System.out.println("********We are switch to the iframe*******");
+		log.debug("********We are switch to the iframe*******");
 		log.debug("Entering the Payments section");
 		Thread.sleep(2000);
 		PaymentPage.CardHolderName.sendKeys(Username2);
@@ -65,17 +65,17 @@ public class AdditionalInformationPageActions extends Environment {
 		PaymentPage.Continue_Next_Step.sendKeys(Keys.ENTER);
 		log.debug("Clicking on continue to next step");
 		Thread.sleep(2000);
-		System.out.println("*********We are done***************");
+		log.debug("*********We are done***************");
 		log.debug("Exiting the Payments section");
 		driver.switchTo().defaultContent();
-		// System.out.println(driver.getTitle());
+		// log.debug(driver.getTitle());
 		Screenshots.captureScreenshot();
 
 	}
 
 	public static void ClickOn() throws IOException, InterruptedException {
 
-		System.out.println("Clicking on continue to next step");
+		log.debug("Clicking on continue to next step");
 		pageobjects.AdditionalInformationPage.Continue_Next_Step.click();
 		log.debug("Clicking on continue to next step");
 		Screenshots.captureScreenshot();
@@ -84,13 +84,13 @@ public class AdditionalInformationPageActions extends Environment {
 
 	public static void passportInfo() throws IOException, InterruptedException {
 
-		System.out.println("Below are the sections displayed");
+		log.debug("Below are the sections displayed");
 		pageobjects.AdditionalInformationPage.passportInfo.getText();
 		log.debug("Passport info section is displayed");
-		System.out.println("Driving license section is displayed ");
+		log.debug("Driving license section is displayed ");
 		pageobjects.AdditionalInformationPage.drivingLicence.getText();
 		log.debug("Driving license section is displayed ");
-		System.out.println("Additional card section ");
+		log.debug("Additional card section ");
 		pageobjects.AdditionalInformationPage.additionalCard.getText();
 		log.debug("Additional card section is displayed");
 
@@ -102,34 +102,34 @@ public class AdditionalInformationPageActions extends Environment {
 		for (Map<String, String> user : uservalue.asMaps(String.class, String.class))
 		{
 
-            pageobjects.AdditionalInformationPage.DrivingLicenceNumberText1.sendKeys(user.get("DLinfo1"));
-            pageobjects.AdditionalInformationPage.DrivingLicenceNumberText2.sendKeys(user.get("DLinfo2"));
-            pageobjects.AdditionalInformationPage.DrivingLicenceNumberText3.sendKeys(user.get("DLinfo3"));
-            pageobjects.AdditionalInformationPage.DrivingLicenceNumberText4.sendKeys(user.get("DLinfo4"));
-            pageobjects.AdditionalInformationPage.PostCode.sendKeys(user.get("PostCode"));
+			pageobjects.AdditionalInformationPage.DrivingLicenceNumberText1.sendKeys(user.get("DLinfo1"));
+			pageobjects.AdditionalInformationPage.DrivingLicenceNumberText2.sendKeys(user.get("DLinfo2"));
+			pageobjects.AdditionalInformationPage.DrivingLicenceNumberText3.sendKeys(user.get("DLinfo3"));
+			pageobjects.AdditionalInformationPage.DrivingLicenceNumberText4.sendKeys(user.get("DLinfo4"));
+			pageobjects.AdditionalInformationPage.PostCode.sendKeys(user.get("PostCode"));
 
 		}
 
 		Screenshots.captureScreenshot();
 	}
 
-    public static void enterPassportNumber(DataTable uservalue) throws IOException, InterruptedException {
+	public static void enterPassportNumber(DataTable uservalue) throws IOException, InterruptedException {
 
-        for (Map<String, String> user : uservalue.asMaps(String.class, String.class))
-        {
+		for (Map<String, String> user : uservalue.asMaps(String.class, String.class))
+		{
 
-            pageobjects.AdditionalInformationPage.CountryCode.sendKeys(user.get("CountryCode"));
-            pageobjects.AdditionalInformationPage.Passportnumber1.sendKeys(user.get("DLinfo1"));
-            pageobjects.AdditionalInformationPage.Passportnumber2.sendKeys(user.get("DLinfo1"));
-            pageobjects.AdditionalInformationPage.Passportnumber3.sendKeys(user.get("DLinfo1"));
-            pageobjects.AdditionalInformationPage.Passportnumber4.sendKeys(user.get("DLinfo1"));
-            pageobjects.AdditionalInformationPage.Passportnumber5.sendKeys(user.get("DLinfo1"));
-            pageobjects.AdditionalInformationPage.Passportnumber6.sendKeys(user.get("DLinfo1"));
-            pageobjects.AdditionalInformationPage.Passportnumber7.sendKeys(user.get("DLinfo1"));
+			pageobjects.AdditionalInformationPage.CountryCode.sendKeys(user.get("CountryCode"));
+			pageobjects.AdditionalInformationPage.Passportnumber1.sendKeys(user.get("DLinfo1"));
+			pageobjects.AdditionalInformationPage.Passportnumber2.sendKeys(user.get("DLinfo1"));
+			pageobjects.AdditionalInformationPage.Passportnumber3.sendKeys(user.get("DLinfo1"));
+			pageobjects.AdditionalInformationPage.Passportnumber4.sendKeys(user.get("DLinfo1"));
+			pageobjects.AdditionalInformationPage.Passportnumber5.sendKeys(user.get("DLinfo1"));
+			pageobjects.AdditionalInformationPage.Passportnumber6.sendKeys(user.get("DLinfo1"));
+			pageobjects.AdditionalInformationPage.Passportnumber7.sendKeys(user.get("DLinfo1"));
 
-        }
+		}
 
-        Screenshots.captureScreenshot();
-    }
+		Screenshots.captureScreenshot();
+	}
 
 }

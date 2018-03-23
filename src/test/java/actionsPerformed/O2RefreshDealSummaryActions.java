@@ -17,7 +17,7 @@ public class O2RefreshDealSummaryActions extends Environment {
 	public static void DealSummarySectionforCCA() throws IOException, InterruptedException {
 
 		if (driver.findElements(By.xpath("(//*[@id='secciYesButton' or @id='updateEmailAddressProceedButton'])[1]")).size() > 0){
-			System.out.println("The Deal summary section is displayed");
+			log.debug("The Deal summary section is displayed");
 			O2RefreshDealSummaryPage.SummariseTheDealYes.click();
 			log.debug("The Yes button in the deal summary is clicked");
 		}
@@ -25,12 +25,12 @@ public class O2RefreshDealSummaryActions extends Environment {
 		Thread.sleep(2000);
 		if(driver.findElements(By.xpath("(//*[@id='secciYesButton' or @id='updateEmailAddressProceedButton'])[2]")).size() > 0){
 			//((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", O2RefreshDealSummaryPage.SummariseTheDealYes2);
-				O2RefreshDealSummaryPage.SummariseTheDealYes2.click();
-				log.debug("The Yes2 button in the deal summary is clicked");
-			}
+			O2RefreshDealSummaryPage.SummariseTheDealYes2.click();
+			log.debug("The Yes2 button in the deal summary is clicked");
+		}
 
 		else {
-			System.out.println("The Deal summary is not present");
+			log.debug("The Deal summary is not present");
 		}
 		Thread.sleep(2000);
 		Screenshots.captureScreenshot();
@@ -40,10 +40,10 @@ public class O2RefreshDealSummaryActions extends Environment {
 	public static void ClickGenerateCCABtn() throws IOException, InterruptedException {
 
 		if (O2RefreshDealSummaryPage.GenerateCCABtn.isDisplayed()) {
-			System.out.println("The Generate CCA button is displayed");
+			log.debug("The Generate CCA button is displayed");
 			O2RefreshDealSummaryPage.GenerateCCABtn.click();
 		} else {
-			System.out.println("The Generate CCA button is not present");
+			log.debug("The Generate CCA button is not present");
 		}
 		Screenshots.captureScreenshot();
 	}
@@ -51,7 +51,7 @@ public class O2RefreshDealSummaryActions extends Environment {
 	public static void ClickGenerateCCALink() throws InterruptedException, IOException {
 
 		if (O2RefreshDealSummaryPage.CCALink.isDisplayed()) {
-			System.out.println("The CCA link is displayed");
+			log.debug("The CCA link is displayed");
 
 			JavascriptExecutor executor = (JavascriptExecutor) driver;
 			executor.executeScript("arguments[0].click();", O2RefreshDealSummaryPage.CCALink);
@@ -59,7 +59,7 @@ public class O2RefreshDealSummaryActions extends Environment {
 			// O2RefreshDealSummaryPage.CCALink.click();
 			Thread.sleep(3000);
 		} else {
-			System.out.println("The CCA link is not displayed");
+			log.debug("The CCA link is not displayed");
 		}
 		Screenshots.captureScreenshot();
 
@@ -72,13 +72,13 @@ public class O2RefreshDealSummaryActions extends Environment {
 		}
 
 		String CCAlogin = driver.getCurrentUrl();
-		System.out.println(CCAlogin);
+		log.debug(CCAlogin);
 		if (CCAlogin.contains("accounts.ref.o2.co.uk")) {
-			System.out.println("The CCA login page is displayed");
+			log.debug("The CCA login page is displayed");
 
 		} else {
 
-			System.out.println("The CCA login page is not displayed");
+			log.debug("The CCA login page is not displayed");
 
 		}
 		Screenshots.captureScreenshot();

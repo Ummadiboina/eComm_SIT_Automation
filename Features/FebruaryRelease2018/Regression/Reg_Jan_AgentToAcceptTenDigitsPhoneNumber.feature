@@ -21,5 +21,5 @@ Feature: Reg_Jan_AgentToAcceptTenDigitsPhoneNumber
     # And Update Device Plan Link Email Address
     # Then CCALink Should be generated
     Examples:
-      | Device              | Tariffs  | Extras | DeliveryType | Firstname | Surname | Username     | HouseNumber | PostCode |
-      | Galaxy S7 32gb Pink | Standard | Base   | HomeDelivery | TEST      | ACCEPTA | TEST ACCEPTA | 14          | SL11UP   |
+      | Device                             | Tariffs  | Extras | DeliveryType | Firstname | Surname | Username     | HouseNumber | PostCode |
+      | Galaxy S8 Plus 64GB Midnight Black | Standard | Base   | HomeDelivery | TEST      | ACCEPTA | TEST ACCEPTA | 14          | SL11UP   |

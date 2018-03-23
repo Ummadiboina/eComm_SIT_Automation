@@ -39,11 +39,11 @@ public class Hooks extends Environment {
 
         String rawFeatureName = scenario.getId().split(";")[0].replace("-", " ");
         String featureName = rawFeatureName.substring(0, 1).toUpperCase() + rawFeatureName.substring(1);
-        System.out.println("Running feature file : " + featureName);
+        log.debug("Running feature file : " + featureName);
         log.debug("Running feature file : " + featureName);
 
 
-        System.out.println("Called openBrowser");
+        log.debug("Called openBrowser");
         log.debug("Called openBrowser");
 
         String relativePath = System.getProperty("user.dir");
@@ -74,14 +74,14 @@ public class Hooks extends Environment {
 
     @Before("@MobileWeb")
     public void setupWeb() throws Exception {
-        System.out.println("Opening Mobile browser");
+        log.debug("Opening Mobile browser");
         capability.startMobileWeb();
-        System.out.println("Initiating Test case");
+        log.debug("Initiating Test case");
     }
 
     @Before("@MobileApp")
     public void setupApp() throws Exception {
-        System.out.println("Opening Mobile App");
+        log.debug("Opening Mobile App");
         capability.startApp();
     }
 
@@ -108,8 +108,8 @@ public class Hooks extends Environment {
         capability.stopAppiumServer();
         Thread.sleep(5000);
         log.debug("Stopped Appium server");
-        //driver.close();
-        //driver.quit();
+        driver.close();
+        driver.quit();
 
     }
 

@@ -20,19 +20,19 @@ public class Agent_ConfirmationPageActions extends Environment {
 
 		try {
 			String basketcontents = Agent_ConfirmationPage.sharedBasketContents.getText();
-			System.out.println(basketcontents);
+			log.debug(basketcontents);
 			log.debug("The basket contents are as below " + basketcontents);
 
 			String orderContents = Agent_ConfirmationPage.orderContent.getText();
-			System.out.println(orderContents);
+			log.debug(orderContents);
 			log.debug("The orderContents contents are as below " + orderContents);
 
 			String orderContentRefer = Agent_ConfirmationPage.orderContentRefer.getText();
-			System.out.println(orderContentRefer);
+			log.debug(orderContentRefer);
 			log.debug("The orderContentRefer contents are as below " + orderContentRefer);
 
 			String customerPaymentdetails = Agent_ConfirmationPage.customerPaymentdetails.getText();
-			System.out.println(customerPaymentdetails);
+			log.debug(customerPaymentdetails);
 			log.debug("The basket customerPaymentdetails are as below " + customerPaymentdetails);
 			Screenshots.captureScreenshot();
 
@@ -41,7 +41,7 @@ public class Agent_ConfirmationPageActions extends Environment {
 		catch (Exception e) {
 			if (driver.findElement(By.id("payDecline")).getText().contains("unsuccessful")) {
 				String message = driver.findElement(By.id("payDecline")).getText();
-				System.out.println(message);
+				log.debug(message);
 
 				// return message;
 
@@ -59,7 +59,7 @@ public class Agent_ConfirmationPageActions extends Environment {
 
 	private static void confirmation() throws Exception {
 		String message = driver.findElement(By.id("payDecline")).getText();
-		System.out.println(message);
+		log.debug(message);
 
 		fail("Payment didnt go through, and the text in the screen is " + message);
 		Screenshots.captureScreenshot();
@@ -68,9 +68,9 @@ public class Agent_ConfirmationPageActions extends Environment {
 
 	public static void SubmitOrder() throws Exception {
 		// TODO Auto-generated method stub
-		System.out.println("Entered submit order method");
+		log.debug("Entered submit order method");
 		Agent_ConfirmationPage.SubmitOrder.click();
-		System.out.println("Order submitted");
+		log.debug("Order submitted");
 		log.debug("Order submitted");
 		Screenshots.captureScreenshot();
 
