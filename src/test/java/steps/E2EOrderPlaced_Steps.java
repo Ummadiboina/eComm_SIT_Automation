@@ -1,32 +1,37 @@
 package steps;
 
-import GlobalActions.Autoredirection;
-import GlobalActions.CommonUtilities;
-import GlobalActions.JuneReleaseValidations;
-import GlobalActions.MouseHoverAction;
-import actionsPerformed.*;
-import cucumber.api.DataTable;
-import cucumber.api.PendingException;
-import cucumber.api.java.en.And;
-import cucumber.api.java.en.Given;
-import cucumber.api.java.en.Then;
-import cucumber.api.java.en.When;
-import helpers.Filereadingutility;
-import org.apache.log4j.Logger;
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.PageFactory;
-import org.testng.Assert;
-import pageobjects.*;
-
 import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.io.IOException;
 import java.util.*;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
+
+import GlobalActions.*;
+import actionsPerformed.*;
+import cucumber.api.DataTable;
+import org.apache.log4j.Logger;
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.PageFactory;
+
+import GlobalActions.Autoredirection;
+import GlobalActions.CommonUtilities;
+import GlobalActions.JuneReleaseValidations;
+import GlobalActions.MouseHoverAction;
+
+
+import cucumber.api.PendingException;
+import cucumber.api.java.en.And;
+import cucumber.api.java.en.Given;
+import cucumber.api.java.en.Then;
+import cucumber.api.java.en.When;
+import helpers.Filereadingutility;
+import org.testng.Assert;
+import org.testng.asserts.Assertion;
+import pageobjects.*;
 
 public class E2EOrderPlaced_Steps {
 
@@ -71,7 +76,7 @@ public class E2EOrderPlaced_Steps {
 
         } catch (Exception e) {
             // TODO Auto-generated catch block
-            System.out.println("unable to get title");
+            log.debug("unable to get title");
             Assert.fail("unable to get title");
         }
 
@@ -87,7 +92,7 @@ public class E2EOrderPlaced_Steps {
 /*
         } catch (Exception e) {
             // TODO Auto-generated catch block
-            System.out.println("unable to see the cookie pop up");
+            log.debug("unable to see the cookie pop up");
             Assert.fail("unable to see the cookie pop up");
         }
         */
@@ -96,13 +101,13 @@ public class E2EOrderPlaced_Steps {
     @And("^Delete all cookies$")
     public void Delete_all_cookies() {
         driver.manage().deleteAllCookies();
-        System.out.println("Successfully deleted all the cookies");
+        log.debug("Successfully deleted all the cookies");
     }
 
     @And("^launch the shop phones page$")
     public void launch_the_shop_phones_page() {
         driver.get("https://www.ref.o2.co.uk/shop/phones");
-        System.out.println("Successfully launched URL: https://www.ref.o2.co.uk/shop/phones");
+        log.debug("Successfully launched URL: https://www.ref.o2.co.uk/shop/phones");
     }
 
 
@@ -119,7 +124,7 @@ public class E2EOrderPlaced_Steps {
 
         } catch (Exception e) {
             e.printStackTrace();
-            System.out.println("unable to do mousehover to phones");
+            log.debug("unable to do mousehover to phones");
             Assert.fail("unable to do mousehover to phones");
         }
     }
@@ -137,7 +142,7 @@ public class E2EOrderPlaced_Steps {
 
         } catch (Exception e) {
             e.printStackTrace();
-            System.out.println("unable to do mousehover to phones");
+            log.debug("unable to do mousehover to phones");
             Assert.fail("unable to do mousehover to phones");
         }
     }
@@ -153,7 +158,7 @@ public class E2EOrderPlaced_Steps {
             //GlobalActions.//CommonFunctionscheckTitle("PayM MBB Page");
         } catch (Exception e) {
             // TODO Auto-generated catch block
-            System.out.println("unable to do mousehover to PayM MBB");
+            log.debug("unable to do mousehover to PayM MBB");
             Assert.fail("unable to do mousehover to PayM MBB");
         }
     }
@@ -169,7 +174,7 @@ public class E2EOrderPlaced_Steps {
             //GlobalActions.//CommonFunctionscheckTitle("Accessories");
         } catch (Exception e) {
             // TODO Auto-generated catch block
-            System.out.println("unable to do mousehover to Accessories");
+            log.debug("unable to do mousehover to Accessories");
             Assert.fail("unable to do mousehover to Accessories");
         }
     }
@@ -185,7 +190,7 @@ public class E2EOrderPlaced_Steps {
             //GlobalActions.//CommonFunctionscheckTitle("PayG MBB Page");
         } catch (Exception e) {
             // TODO Auto-generated catch block
-            System.out.println("unable to do mousehover to PayGMBB");
+            log.debug("unable to do mousehover to PayGMBB");
             Assert.fail("unable to do mousehover to PayGMBB");
         }
     }
@@ -202,7 +207,7 @@ public class E2EOrderPlaced_Steps {
         } catch (Exception e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
-            System.out.println("unable to do mousehover to Fitness Trackers");
+            log.debug("unable to do mousehover to Fitness Trackers");
             Assert.fail("unable to do mousehover to Fitness Trackers");
         }
     }
@@ -218,7 +223,7 @@ public class E2EOrderPlaced_Steps {
             //GlobalActions.//CommonFunctionscheckTitle("Smartwatches");
         } catch (Exception e) {
             e.printStackTrace();
-            System.out.println("unable to do mousehover to SmartWatches");
+            log.debug("unable to do mousehover to SmartWatches");
             Assert.fail("unable to do mousehover to SmartWatches");
         }
     }
@@ -234,7 +239,7 @@ public class E2EOrderPlaced_Steps {
             //GlobalActions.//CommonFunctionscheckTitle("PayG Phones page");
         } catch (Exception e) {
             // TODO Auto-generated catch block
-            System.out.println("unable to do mousehover to Pay as you Go Phones page");
+            log.debug("unable to do mousehover to Pay as you Go Phones page");
             Assert.fail("unable to do mousehover to Pay as you Go Phones page");
 
         }
@@ -250,7 +255,7 @@ public class E2EOrderPlaced_Steps {
             Thread.sleep(10000);
         } catch (Exception e) {
             // TODO Auto-generated catch block
-            System.out.println("unable to do mousehover to Sims and Ipad Sims page");
+            log.debug("unable to do mousehover to Sims and Ipad Sims page");
             Assert.fail("unable to do mousehover to Sims and Ipad Sims page");
         }
     }
@@ -265,7 +270,7 @@ public class E2EOrderPlaced_Steps {
             Thread.sleep(10000);
         } catch (Exception e) {
             // TODO Auto-generated catch block
-            System.out.println("Unable to do mousehover to Sims and Tablet Sims page");
+            log.debug("Unable to do mousehover to Sims and Tablet Sims page");
             Assert.fail("Unable to do mousehover to Sims and Tablet Sims page");
         }
     }
@@ -281,7 +286,7 @@ public class E2EOrderPlaced_Steps {
 
         } catch (Exception e) {
             // TODO Auto-generated catch block
-            System.out.println("Unable to do mousehover to PAYM SIMO page");
+            log.debug("Unable to do mousehover to PAYM SIMO page");
             Assert.fail("Unable to do mousehover to PAYM SIMO page");
         }
     }
@@ -297,12 +302,12 @@ public class E2EOrderPlaced_Steps {
             //GlobalActions.//CommonFunctionscheckTitle("Sign In Page");
         } catch (Exception e) {
             // TODO Auto-generated catch block
-            System.out.println("Unable to do navigate to signin pagee");
+            log.debug("Unable to do navigate to signin pagee");
             Assert.fail("Unable to do navigate to signin page");
         }
     }
 
-    /* #############           All the Below are for the Device Listing/Selecting page #######*/
+/* #############           All the Below are for the Device Listing/Selecting page #######*/
 
     @And("^I choose PayM ([^\"]*)$")
     public void Choose_PAYM_Handset(String handset) throws Throwable {
@@ -313,7 +318,7 @@ public class E2EOrderPlaced_Steps {
         } catch (Exception e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
-            System.out.println("Unable to choose PayM phone");
+            log.debug("Unable to choose PayM phone");
             Assert.fail("Unable to choose PayM phone");
         }
     }
@@ -326,7 +331,7 @@ public class E2EOrderPlaced_Steps {
             PhonesListingPageAction.PAYGPhoneSelect("Random Device");
         } catch (Exception e) {
             // TODO Auto-generated catch block
-            System.out.println("Unable to choose PayG phone");
+            log.debug("Unable to choose PayG phone");
             Assert.fail("Unable to choose PayG phone");
         }
 
@@ -340,7 +345,7 @@ public class E2EOrderPlaced_Steps {
             MobileBroadBandPageActions.DeviceSelect(elementName);
         } catch (Exception e) {
             // TODO Auto-generated catch block
-            System.out.println("Unable to select MBB PayM device");
+            log.debug("Unable to select MBB PayM device");
             Assert.fail("Unable to select MBB PayM device");
 
         }
@@ -355,7 +360,7 @@ public class E2EOrderPlaced_Steps {
         } catch (Exception e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
-            System.out.println("Unable to select fitness tracker");
+            log.debug("Unable to select fitness tracker");
             Assert.fail("Unable to select fitness tracker");
         }
     }
@@ -369,7 +374,7 @@ public class E2EOrderPlaced_Steps {
         } catch (Exception e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
-            System.out.println("Unable to select Smartwatch");
+            log.debug("Unable to select Smartwatch");
             Assert.fail("Unable to select Smartwatch");
 
         }
@@ -383,7 +388,7 @@ public class E2EOrderPlaced_Steps {
             MobileBroadBandPageActions.DeviceSelect(elementName);
         } catch (Exception e) {
             // TODO Auto-generated catch block
-            System.out.println("Unable to select MBB PayG device");
+            log.debug("Unable to select MBB PayG device");
             Assert.fail("Unable to select MBB PayG device");
 
         }
@@ -399,7 +404,7 @@ public class E2EOrderPlaced_Steps {
             SimsPageActions.SelectRandomTabletSim(elementname);
         } catch (Exception e) {
             // TODO Auto-generated catch block
-            System.out.println("Unable to select Tablet device");
+            log.debug("Unable to select Tablet device");
             Assert.fail("Unable to select Tablet device");
 
         }
@@ -415,7 +420,7 @@ public class E2EOrderPlaced_Steps {
             ConnectedDeviceDetailsPageAction.ViewAllTariffs();
         } catch (Exception e) {
             // TODO Auto-generated catch block
-            System.out.println("Unable to navigate to device details page");
+            log.debug("Unable to navigate to device details page");
             Assert.fail("Unable to navigate to device details page");
 
         }
@@ -429,7 +434,7 @@ public class E2EOrderPlaced_Steps {
             ConnectedDeviceDetailsPageAction.ViewAllTariffs();
         } catch (Exception e) {
             // TODO Auto-generated catch block
-            System.out.println("Unable to View all Tariffs");
+            log.debug("Unable to View all Tariffs");
             Assert.fail("Unable to View all Tariffs");
 
         }
@@ -446,7 +451,7 @@ public class E2EOrderPlaced_Steps {
             ConnectedDeviceDetailsPageAction.ViewAllTariffs();
         } catch (Exception e) {
             // TODO Auto-generated catch block
-            System.out.println("Unable to navigate to device details page");
+            log.debug("Unable to navigate to device details page");
             Assert.fail("Unable to navigate to device details page");
 
         }
@@ -462,7 +467,7 @@ public class E2EOrderPlaced_Steps {
             SimsPageActions.SelectRandomIpadSim(elementname);
         } catch (Exception e) {
             // TODO Auto-generated catch block
-            System.out.println("Unable to select any Ipad sim");
+            log.debug("Unable to select any Ipad sim");
             Assert.fail("Unable to select any Ipad sim");
 
         }
@@ -476,7 +481,7 @@ public class E2EOrderPlaced_Steps {
             AccessoryPageActions.SelectAnyAccessory(elementName);
         } catch (Exception e) {
             // TODO Auto-generated catch block
-            System.out.println("Unable to select accessory");
+            log.debug("Unable to select accessory");
             Assert.fail("Unable to select accessory");
 
         }
@@ -491,7 +496,7 @@ public class E2EOrderPlaced_Steps {
             PAYMSimOPageActions.ValidateContractLengths(Contract);
         } catch (Exception e) {
             // TODO Auto-generated catch block
-            System.out.println("Unable to click on different tariff");
+            log.debug("Unable to click on different tariff");
             Assert.fail("Unable to click on different tariff");
 
         }
@@ -503,10 +508,10 @@ public class E2EOrderPlaced_Steps {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, PAYMSimOPage.class);
             PAYMSimOPageActions.SelectTariffPhonesTab(Contract);
-            System.out.println("Completed Selecting Random Tariff");
+            log.debug("Completed Selecting Random Tariff");
         } catch (Exception e) {
             // TODO Auto-generated catch block
-            System.out.println("Unable to select Random Tariff ");
+            log.debug("Unable to select Random Tariff ");
             Assert.fail("Unable to select Random Tariff ");
 
         }
@@ -518,12 +523,12 @@ public class E2EOrderPlaced_Steps {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, PAYMSimOPage.class);
             PAYMSimOPageActions.SelectRecommendedTariffPhonesTab(Contract);
-            System.out.println("Completed Selecting Recommended Tariff");
+            log.debug("Completed Selecting Recommended Tariff");
 
             // PAYMSimOPageActions.SelectPromotionTariff(Contract);
         } catch (Exception e) {
             // TODO Auto-generated catch block
-            System.out.println("Unable to select Recommended Tariff ");
+            log.debug("Unable to select Recommended Tariff ");
             Assert.fail("Unable to select Recommended Tariff ");
 
         }
@@ -541,7 +546,7 @@ public class E2EOrderPlaced_Steps {
             /*
         } catch (Exception e) {
             // TODO Auto-generated catch block
-            System.out.println("Unable to add accessories to basket");
+            log.debug("Unable to add accessories to basket");
             Assert.fail("Unable to add accessories to basket");
 
         }
@@ -559,7 +564,7 @@ public class E2EOrderPlaced_Steps {
             // NonConnectedDeviceDetailsPageAction.ClickonBasketIcon();
         } catch (Exception e) {
             // TODO Auto-generated catch block
-            System.out.println("Unable to add Fitnesstracker to basket");
+            log.debug("Unable to add Fitnesstracker to basket");
             Assert.fail("Unable to add Fitnesstracker to basket");
         }
     }
@@ -572,7 +577,7 @@ public class E2EOrderPlaced_Steps {
             SmartwatchesPageActions.AddtoBasketSmartwatchTracker();
         } catch (Exception e) {
             // TODO Auto-generated catch block
-            System.out.println("Unable to add SmartWatch to basket");
+            log.debug("Unable to add SmartWatch to basket");
             Assert.fail("Unable to add SmartWatch to basket");
 
         }
@@ -587,7 +592,7 @@ public class E2EOrderPlaced_Steps {
             Thread.sleep(2000);
         } catch (Exception e) {
             // TODO Auto-generated catch block
-            System.out.println("Unable to choose Accesssory");
+            log.debug("Unable to choose Accesssory");
             Assert.fail("Unable to choose Accesssory");
 
         }
@@ -599,13 +604,13 @@ public class E2EOrderPlaced_Steps {
         try {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, PAYMandPAYGTariffAndExtrasPage.class);
-            System.out.println("Entering Choose All accessory method");
+            log.debug("Entering Choose All accessory method");
             PAYMandPAYGTariffAndExtrasPageActions.addMoreAccessory();
-            System.out.println("Completed Choose All accessory method");
+            log.debug("Completed Choose All accessory method");
             Thread.sleep(5000);
         } catch (Exception e) {
             // TODO Auto-generated catch block
-            System.out.println("Unable to choose Accesssory");
+            log.debug("Unable to choose Accesssory");
             Assert.fail("Unable to choose Accesssory");
 
         }
@@ -621,7 +626,7 @@ public class E2EOrderPlaced_Steps {
         } catch (Exception e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
-            System.out.println("Unable to signin using credentials");
+            log.debug("Unable to signin using credentials");
             Assert.fail("Unable to signin using credentials");
 
         }
@@ -645,7 +650,7 @@ public class E2EOrderPlaced_Steps {
         } catch (Exception e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
-            System.out.println("Unable to verify upgrade pages");
+            log.debug("Unable to verify upgrade pages");
             Assert.fail("Unable to verify upgrade pages");
         }
     }
@@ -659,12 +664,12 @@ public class E2EOrderPlaced_Steps {
         } catch (Exception e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
-            System.out.println("Unable to Logout ");
+            log.debug("Unable to Logout ");
             Assert.fail("Unable to Logout");
         }
     }
 
-    /*############# All the Below are for the Tariff and Extras Page*/
+	 /*############# All the Below are for the Tariff and Extras Page*/
 
     @Given("^Land on the 'Tariffs and extra' page$")
     public void land_on_the_Tariffs_and_extra_page() {
@@ -677,7 +682,7 @@ public class E2EOrderPlaced_Steps {
             // PAYMandPAYGTariffAndExtrasPageActions.addToBasketLive();
         } catch (Exception e) {
             // TODO Auto-generated catch block
-            System.out.println("Unable to Land on Tariff and extras page");
+            log.debug("Unable to Land on Tariff and extras page");
             Assert.fail("Unable to Land on Tariff and extras page");
 
         }
@@ -693,7 +698,7 @@ public class E2EOrderPlaced_Steps {
             // PAYMandPAYGTariffAndExtrasPageActions.addToBasketLive();
         } catch (Exception e) {
             // TODO Auto-generated catch block
-            System.out.println("Unable to pay tariff in full");
+            log.debug("Unable to pay tariff in full");
             Assert.fail("Unable to pay tariff in full");
 
         }
@@ -709,7 +714,7 @@ public class E2EOrderPlaced_Steps {
             // PAYMandPAYGTariffAndExtrasPageActions.addToBasketLive();
         } catch (Exception e) {
             // TODO Auto-generated catch block
-            System.out.println("Unable to pay tariff in full");
+            log.debug("Unable to pay tariff in full");
             Assert.fail("Unable to pay tariff in full");
 
         }
@@ -734,9 +739,9 @@ public class E2EOrderPlaced_Steps {
             PageFactory.initElements(driver, PAYMandPAYGTariffAndExtrasPage.class);
             String title = driver.getTitle();
             if (title.contains("Thanks for waiting")) {
-                System.out.println("Queue page is displayed");
+                log.debug("Queue page is displayed");
             } else {
-                System.out.println("Queue page is not displayed");
+                log.debug("Queue page is not displayed");
                 PAYMandPAYGTariffAndExtrasPageActions.addToBasketLive();
                 // BasketPageActions.ValidateBasketPageContents();
                 BasketPageActions.CollectionorDelivery("homeDelivery");
@@ -744,7 +749,7 @@ public class E2EOrderPlaced_Steps {
         } catch (Exception e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
-            System.out.println("Issue in Basket page");
+            log.debug("Issue in Basket page");
             Assert.fail("Issue in Basket page");
 
         }
@@ -758,7 +763,7 @@ public class E2EOrderPlaced_Steps {
             BasketPageActions.checkOrderContractTextBP();
         } catch (Exception e) {
             // TODO Auto-generated catch block
-            System.out.println("Unable to Check for order contract text in Basket Page");
+            log.debug("Unable to Check for order contract text in Basket Page");
             Assert.fail("Unable to Check for order contract text in Basket Page");
 
         }
@@ -772,7 +777,7 @@ public class E2EOrderPlaced_Steps {
             BasketPageActions.checkOrderContractTextDDPOBP();
         } catch (Exception e) {
             // TODO Auto-generated catch block
-            System.out.println("Unable to Check for order contract text for DD/PreOrder phone in Basket Page");
+            log.debug("Unable to Check for order contract text for DD/PreOrder phone in Basket Page");
             Assert.fail("Unable to Check for order contract text for DD/PreOrder phone in Basket Page");
 
         }
@@ -792,8 +797,25 @@ public class E2EOrderPlaced_Steps {
             Thread.sleep(3000);
         } catch (Exception e) {
             // TODO Auto-generated catch block
-            System.out.println("Unable to Land on the basket page and choose to collect from store");
+            log.debug("Unable to Land on the basket page and choose to collect from store");
             Assert.fail("Unable to Land on the basket page and choose to collect from store");
+        }
+    }
+
+    @And("^I select a Click and Collect store for Trade In$")
+    public void Select_TradeIn_ClickandCollect_from_store() {
+        // Write code here that turns the phrase above into concrete actions
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, BasketPage.class);
+            Thread.sleep(2000);
+            BasketPageActions.checkStoreStockForTradeIn("clickAndCollect");
+            log.debug("Selcted store for Click and Collect in Trade In");
+            Thread.sleep(5000);
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            log.debug("Unable to choose to Click and collect from store for Trade In");
+            Assert.fail("Unable to choose to Click and collect from store for Trade In");
         }
     }
 
@@ -809,7 +831,7 @@ public class E2EOrderPlaced_Steps {
             BasketPageActions.CollectionorDelivery("homeDelivery");
         } catch (Exception e) {
             // TODO Auto-generated catch block
-            System.out.println("Unable to Land on the Non Phone related basket page and choose home delivery option");
+            log.debug("Unable to Land on the Non Phone related basket page and choose home delivery option");
             Assert.fail("Unable to Land on the Non Phone related basket page and choose home delivery option");
         }
 
@@ -824,7 +846,7 @@ public class E2EOrderPlaced_Steps {
             BasketPageActions.PlanOnlyPageContents();
         } catch (Exception e) {
             // TODO Auto-generated catch block
-            System.out.println("Unable to Land on the Plan included basket page and choose home delivery option");
+            log.debug("Unable to Land on the Plan included basket page and choose home delivery option");
             Assert.fail("Unable to Land on the Plan included basket page and choose home delivery option");
         }
     }
@@ -839,7 +861,7 @@ public class E2EOrderPlaced_Steps {
             Thread.sleep(2000);
         } catch (Exception e) {
             // TODO Auto-generated catch block
-            System.out.println("Unable to Apply voucher");
+            log.debug("Unable to Apply voucher");
             Assert.fail("Unable to Apply voucher");
 
         }
@@ -851,12 +873,12 @@ public class E2EOrderPlaced_Steps {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, BasketPage.class);
             Thread.sleep(3000);
-            System.out.println("We are in yourbasket page");
+            log.debug("We are in yourbasket page");
             BasketPageActions.gotoCheckout();
             Thread.sleep(2000);
         } catch (Exception e) {
             // TODO Auto-generated catch block
-            System.out.println("Unable to click on Go to Checkout button");
+            log.debug("Unable to click on Go to Checkout button");
             Assert.fail("Unable to click on Go to Checkout button");
 
         }
@@ -882,24 +904,24 @@ public class E2EOrderPlaced_Steps {
             Thread.sleep(5000);
         } catch (Exception e) {
             // TODO Auto-generated catch block
-            System.out.println("Unable to input details in delivery page");
+            log.debug("Unable to input details in delivery page");
             Assert.fail("Unable to input details in delivery page");
 
         }
     }
 
-    /*
+	/*
      * #########################################################################
-     * #########
-     */
+	 * #########
+	 */
     /*
      * ############## All the Below are for the Delivery Page Validations
-     * #############
-     */
+	 * #############
+	 */
     /*
      * #########################################################################
-     * #########
-     */
+	 * #########
+	 */
 
     @And("^input ([^\"]*) and ([^\"]*) and other valid details in Delivery page and Click on the 'Continue button'$")
     public void DeliveryPage_Inputs_homeDelivery(String Firstname, String Surname) {
@@ -916,7 +938,7 @@ public class E2EOrderPlaced_Steps {
             Thread.sleep(5000);
         } catch (Exception e) {
             // TODO Auto-generated catch block
-            System.out.println("Unable to input details in delivery page");
+            log.debug("Unable to input details in delivery page");
             Assert.fail("Unable to input details in delivery page");
 
         }
@@ -934,14 +956,13 @@ public class E2EOrderPlaced_Steps {
             DeliveryPageActions.ClickContinue();
         } catch (Exception e) {
             // TODO Auto-generated catch block
-            System.out.println("Unable to input details in delivery page");
+            log.debug("Unable to input details in delivery page");
             Assert.fail("Unable to input details in delivery page");
 
         }
     }
-
     @And("^Enter details in Delivery page for Click and collect and Click on the 'Continue button'$")
-    public void DeliveryPage_enter_Inputs_ClickandCollect() {
+    public void DeliveryPage_enter_Inputs_ClickandCollect(String Firstname, String Surname) {
         try {
             driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
             PageFactory.initElements(driver, DeliveryPage.class);
@@ -949,7 +970,7 @@ public class E2EOrderPlaced_Steps {
 
         } catch (Exception e) {
             // TODO Auto-generated catch block
-            System.out.println("Unable to input details in delivery page");
+            log.debug("Unable to input details in delivery page");
             Assert.fail("Unable to input details in delivery page");
 
         }
@@ -967,7 +988,7 @@ public class E2EOrderPlaced_Steps {
             DeliveryPageActions.ClickContinue();
             Thread.sleep(50000);
         } catch (Exception e) {
-            System.out.println("Unable to input details in delivery page");
+            log.debug("Unable to input details in delivery page");
             Assert.fail("Unable to input details in delivery page");
         }
     }
@@ -984,7 +1005,7 @@ public class E2EOrderPlaced_Steps {
             DeliveryPageActions.MobileClickContinue();
             Thread.sleep(5000);
         } catch (Exception e) {
-            System.out.println("Unable to input details in delivery page");
+            log.debug("Unable to input details in delivery page");
             Assert.fail("Unable to input details in delivery page");
         }
     }
@@ -998,7 +1019,7 @@ public class E2EOrderPlaced_Steps {
             Thread.sleep(5000);
         } catch (Exception e) {
             // TODO Auto-generated catch block
-            System.out.println("Unable to input details in delivery page");
+            log.debug("Unable to input details in delivery page");
             Assert.fail("Unable to input details in delivery page");
         }
     }
@@ -1010,16 +1031,16 @@ public class E2EOrderPlaced_Steps {
             driver.manage().timeouts().implicitlyWait(120, TimeUnit.SECONDS);
             if (driver.findElements(By.xpath("(//div[@class='main-container']//*[contains(text(),' basket')])[1]")).size() > 0) {
                 String str = driver.findElement(By.xpath("(//div[@class='main-container']//*[contains(text(),' basket')])[1]")).getText();
-                System.out.println("the customer lands on Basket page as : " + str);
+                log.debug("the customer lands on Basket page as : " + str);
                 log.debug("the customer lands on Basket pageas : " + str);
                 Thread.sleep(5000);
             } else {
-                System.out.println("Failed to customer lands on Basket page ");
+                log.debug("Failed to customer lands on Basket page ");
                 log.debug("Failed to customer lands on Basket page ");
             }
         } catch (Exception e) {
             // TODO Auto-generated catch block
-            System.out.println("Unable to input details in Basket page");
+            log.debug("Unable to input details in Basket page");
             Assert.fail("Unable to input details in Basket page");
 
         }
@@ -1030,12 +1051,12 @@ public class E2EOrderPlaced_Steps {
         try {
             driver.manage().timeouts().implicitlyWait(120, TimeUnit.SECONDS);
             driver.navigate().back();
-            System.out.println("we have navigated back to the basket page");
+            log.debug("we have navigated back to the basket page");
             log.debug("we have navigated back to the basket page");
             Thread.sleep(5000);
         } catch (Exception e) {
             // TODO Auto-generated catch block
-            System.out.println("Failed to navigate back to the basket page");
+            log.debug("Failed to navigate back to the basket page");
             Assert.fail("Failed to navigate back to the basket page");
 
         }
@@ -1051,12 +1072,12 @@ public class E2EOrderPlaced_Steps {
             Robot robot = new Robot();
             robot.keyPress(KeyEvent.VK_ENTER);
             robot.keyRelease(KeyEvent.VK_ENTER);
-            System.out.println("Entered the shop URL is :" + driver.getCurrentUrl());
+            log.debug("Entered the shop URL is :" + driver.getCurrentUrl());
             log.debug("Entered the shop URL is :" + driver.getCurrentUrl());
             Thread.sleep(5000);
         } catch (Exception e) {
             // TODO Auto-generated catch block
-            System.out.println("Failed to Enter the Shop URL ");
+            log.debug("Failed to Enter the Shop URL ");
             Assert.fail("Failed to Enter the Shop URL ");
         }
     }
@@ -1068,16 +1089,16 @@ public class E2EOrderPlaced_Steps {
             driver.manage().timeouts().implicitlyWait(120, TimeUnit.SECONDS);
             if (driver.findElements(By.xpath("//div[@id='delivery-section']//*[normalize-space()='Delivery']")).size() > 0) {
                 String str = driver.findElement(By.xpath("//div[@id='delivery-section']//*[normalize-space()='Delivery']")).getText();
-                System.out.println("the customer lands on delivery page");
+                log.debug("the customer lands on delivery page");
                 log.debug("the customer lands on delivery page");
                 Thread.sleep(5000);
             } else {
-                System.out.println("Failed to customer lands on delivery page ");
+                log.debug("Failed to customer lands on delivery page ");
                 log.debug("Failed to customer lands on delivery page ");
             }
         } catch (Exception e) {
             // TODO Auto-generated catch block
-            System.out.println("Failed to customer lands on delivery page ");
+            log.debug("Failed to customer lands on delivery page ");
             Assert.fail("Failed to customer lands on delivery page ");
         }
     }
@@ -1091,16 +1112,16 @@ public class E2EOrderPlaced_Steps {
             if (driver.findElements(By.xpath("(//*[normalize-space()='Other']/preceding-sibling::input)[1]")).size() > 0) {
                 String str = driver.findElement(By.xpath("//div[@class='your-sim section']//*[normalize-space()='Other']")).getText();
                 driver.findElement(By.xpath("(//*[normalize-space()='Other']/preceding-sibling::input)[1]")).click();
-                System.out.println("Click on Other radio button as :: " + str);
+                log.debug("Click on Other radio button as :: " + str);
                 log.debug("Click on Other radio button as :: " + str);
                 Thread.sleep(5000);
             } else {
-                System.out.println("Failed to Click the Other radio button ");
+                log.debug("Failed to Click the Other radio button ");
                 log.debug("Failed to Click the Other radio button ");
             }
         } catch (Exception e) {
             // TODO Auto-generated catch block
-            System.out.println("Failed to Click the Other radio button " + e.getStackTrace());
+            log.debug("Failed to Click the Other radio button " + e.getStackTrace());
             Assert.fail("Failed to Click the Other radio button " + e.getStackTrace());
         }
     }
@@ -1114,16 +1135,16 @@ public class E2EOrderPlaced_Steps {
             if (driver.findElements(By.xpath("//*[contains(text(),'lace your order')]")).size() > 0) {
                 String btnValue = driver.findElement(By.xpath("//*[contains(text(),'lace your order')]")).getText();
                 driver.findElement(By.xpath("//*[contains(text(),'lace your order')]")).click();
-                System.out.println("Click on Other radio button as :: " + btnValue);
+                log.debug("Click on Other radio button as :: " + btnValue);
                 log.debug("Click on Other radio button as :: " + btnValue);
                 Thread.sleep(5000);
             } else {
-                System.out.println("Click on 'Place your order' CTA");
+                log.debug("Click on 'Place your order' CTA");
                 log.debug("Click on 'Place your order' CTA");
             }
         } catch (Exception e) {
             // TODO Auto-generated catch block
-            System.out.println("Click on 'Place your order' CTA" + e.getStackTrace());
+            log.debug("Click on 'Place your order' CTA" + e.getStackTrace());
             Assert.fail("Click on 'Place your order' CTA" + e.getStackTrace());
         }
     }
@@ -1139,14 +1160,14 @@ public class E2EOrderPlaced_Steps {
                 if (countExists > 0) {
                     String checkBoxTxt = driver.findElement(By.xpath("(//span[contains(text(),'ll be using an iPhone')])[" + i + "]")).getText();
                     driver.findElement(By.xpath("(//span[contains(text(),'ll be using an iPhone')])[" + i + "]/preceding-sibling::input")).click();
-                    System.out.println("We clicked the CheckBox below the  Select Button as :: " + checkBoxTxt);
+                    log.debug("We clicked the CheckBox below the  Select Button as :: " + checkBoxTxt);
                     log.debug("We clicked the CheckBox below the  Select Button as :: " + checkBoxTxt);
                     break;
                 }
             }
         } catch (Exception e) {
             // TODO Auto-generated catch block
-            System.out.println("Failed to clicked the CheckBox below the  Select Button");
+            log.debug("Failed to clicked the CheckBox below the  Select Button");
             Assert.fail("Failed to clicked the CheckBox below the  Select Button");
         }
     }
@@ -1161,18 +1182,18 @@ public class E2EOrderPlaced_Steps {
                 int countExists = driver.findElements(By.xpath("(//button[contains(text(),'elect')])[" + i + "]")).size();
                 if (countExists > 0) {
                     driver.findElement(By.xpath("(//button[contains(text(),'elect')])[" + i + "]")).click();
-                    System.out.println("We clicked the Select Button");
+                    log.debug("We clicked the Select Button");
                     log.debug("We clicked the Select Button");
                     break;
                 }
             }
             Thread.sleep(3000);
             String busketPg = driver.findElement(By.xpath("//h1[text()='Your basket']")).getText();
-            System.out.println("Successfully landing into the Busket page");
+            log.debug("Successfully landing into the Busket page");
             log.debug("Successfully landing into the Busket page");
         } catch (Exception e) {
             // TODO Auto-generated catch block
-            System.out.println("Failed to landing into the Busket page");
+            log.debug("Failed to landing into the Busket page");
             Assert.fail("Failed to landing into the Busket page");
         }
     }
@@ -1186,7 +1207,7 @@ public class E2EOrderPlaced_Steps {
             e2eOrder.click_Select_button_in_tile_targeted_promotion_and_Consumer_should_landed_Basket_Page();
         } catch (Exception e) {
             // TODO Auto-generated catch block
-            System.out.println("Failed to  Click on I'll be using an iPhone checkbox and Click on 'Select' CTA to buy a tariff");
+            log.debug("Failed to  Click on I'll be using an iPhone checkbox and Click on 'Select' CTA to buy a tariff");
             Assert.fail("Failed to  Click on I'll be using an iPhone checkbox and Click on 'Select' CTA to buy a tariff");
         }
     }
@@ -1200,16 +1221,16 @@ public class E2EOrderPlaced_Steps {
             int sizeof = driver.findElements(By.xpath("//*[contains(text(),'kage just for you')]")).size();
             if (sizeof > 0) {
                 String val = driver.findElement(By.xpath("//*[contains(text(),'kage just for you')]")).getText();
-                System.out.println("we are valideted the the A package just for you next to Upgrade and recycle options as :: " + val);
+                log.debug("we are valideted the the A package just for you next to Upgrade and recycle options as :: " + val);
                 log.debug("we are valideted the the A package just for you next to Upgrade and recycle options as :: " + val);
             } else {
-                System.out.println("Failed to find the targeted promotion section is displayed just below the 'recycle options' section");
+                log.debug("Failed to find the targeted promotion section is displayed just below the 'recycle options' section");
                 log.debug("Failed to find the the targeted promotion section is displayed just below the 'recycle options' section");
             }
             Thread.sleep(2000);
         } catch (Exception e) {
             // TODO Auto-generated catch block
-            System.out.println("Failed to find the the targeted promotion section is displayed just below the 'recycle options' section " + e.getStackTrace());
+            log.debug("Failed to find the the targeted promotion section is displayed just below the 'recycle options' section " + e.getStackTrace());
             Assert.fail("Failed to find the the targeted promotion section is displayed just below the 'recycle options' section " + e.getStackTrace());
 
         }
@@ -1223,13 +1244,13 @@ public class E2EOrderPlaced_Steps {
             Thread.sleep(2000);
             if (driver.findElements(By.xpath("//a[normalize-space()='terms and conditions']")).size() > 0) {
                 String termAndConditTxt = driver.findElement(By.xpath("//a[normalize-space()='terms and conditions']")).getText();
-                System.out.println(" verify 'Terms and conditions' link is present " + termAndConditTxt);
+                log.debug(" verify 'Terms and conditions' link is present " + termAndConditTxt);
                 log.debug(" verify 'Terms and conditions' link is present " + termAndConditTxt);
             }
             Thread.sleep(2000);
         } catch (Exception e) {
             // TODO Auto-generated catch block
-            System.out.println("Failed toerify 'Terms and conditions' link is present");
+            log.debug("Failed toerify 'Terms and conditions' link is present");
             Assert.fail("Failed toerify 'Terms and conditions' link is present");
         }
     }
@@ -1244,7 +1265,7 @@ public class E2EOrderPlaced_Steps {
             Thread.sleep(2000);
         } catch (Exception e) {
             // TODO Auto-generated catch block
-            System.out.println("Unable to input details in delivery page");
+            log.debug("Unable to input details in delivery page");
             Assert.fail("Unable to input details in delivery page");
         }
     }
@@ -1266,18 +1287,18 @@ public class E2EOrderPlaced_Steps {
 
 
 
-    /*
+	/*
      * #########################################################################
-     * #########
-     */
+	 * #########
+	 */
     /*
      * ############## All the Below are for the Payment Page Validations
-     * ##############
-     */
+	 * ##############
+	 */
     /*
      * #########################################################################
-     * #########
-     */
+	 * #########
+	 */
 
     @And("^land on the payment page and input ([^\"]*) and other details and click 'Continue on next step'$")
     public void CreditCheckPaymentPage_HomeDelivery(String Username) {
@@ -1297,7 +1318,7 @@ public class E2EOrderPlaced_Steps {
         } catch (Exception e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
-            System.out.println("Unable to input details in payment page");
+            log.debug("Unable to input details in payment page");
             Assert.fail("Unable to input details in payment page");
 
         }
@@ -1317,7 +1338,7 @@ public class E2EOrderPlaced_Steps {
         } catch (Exception e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
-            System.out.println("Unable to input details in payment page");
+            log.debug("Unable to input details in payment page");
             Assert.fail("Unable to input details in payment page");
 
         }
@@ -1340,7 +1361,7 @@ public class E2EOrderPlaced_Steps {
         } catch (Exception e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
-            System.out.println("Unable to input details in payment page");
+            log.debug("Unable to input details in payment page");
             Assert.fail("Unable to input details in payment page");
 
         }
@@ -1351,7 +1372,7 @@ public class E2EOrderPlaced_Steps {
         try {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, Agent_DealBuilderPage.class);
-            driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+            driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
             Agent_DealBuilderPageActions.HandsetTariffCombination_new();
             Thread.sleep(4000);
         } catch (Exception e) {
@@ -1373,7 +1394,7 @@ public class E2EOrderPlaced_Steps {
         } catch (Exception e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
-            System.out.println("Unable to input details in payment page");
+            log.debug("Unable to input details in payment page");
             Assert.fail("Unable to input details in payment page");
 
         }
@@ -1381,7 +1402,7 @@ public class E2EOrderPlaced_Steps {
 
 
     @And("^land on the payment page and input ([^\"]*) and other details for Click and collect order and click 'Continue on next step'$")
-    public void CreditCheckPaymentPage_ClickAndCollect(String Username) {
+    public void CreditCheckPaymentPage_ClickAndCollect(String Username){
         // Write code here that turns the phrase above into concrete actions
         try {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
@@ -1396,7 +1417,7 @@ public class E2EOrderPlaced_Steps {
         } catch (Exception e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
-            System.out.println("Unable to input details in payment page");
+            log.debug("Unable to input details in payment page");
             Assert.fail("Unable to input details in payment page");
 
         }
@@ -1414,7 +1435,7 @@ public class E2EOrderPlaced_Steps {
             Thread.sleep(25000);
         } catch (Exception e) {
             // TODO Auto-generated catch block
-            System.out.println("Unable to input details in payment page");
+            log.debug("Unable to input details in payment page");
             Assert.fail("Unable to input details in payment page");
 
         }
@@ -1436,16 +1457,16 @@ public class E2EOrderPlaced_Steps {
             Thread.sleep(10000);
         } catch (Exception e) {
             // TODO Auto-generated catch block
-            System.out.println("Unable to input details in payment page");
+            log.debug("Unable to input details in payment page");
             Assert.fail("Unable to input details in payment page");
 
         }
     }
 
-    /*
+	/*
      * ############## All the Below are for the Additional Information section
-     * ###################
-     */
+	 * ###################
+	 */
 
     @Then("^Additional information page should be displayed$")
     public void AdditionalInformation() {
@@ -1458,7 +1479,7 @@ public class E2EOrderPlaced_Steps {
             Thread.sleep(10000);
         } catch (Exception e) {
             // TODO Auto-generated catch block
-            System.out.println("Information is missing for Additional information page");
+            log.debug("Information is missing for Additional information page");
             Assert.fail("Information is missing for Additional information page");
 
         }
@@ -1474,12 +1495,11 @@ public class E2EOrderPlaced_Steps {
             Thread.sleep(4000);
         } catch (Exception e) {
             // TODO Auto-generated catch block
-            System.out.println("unable to add details in Additional information page");
+            log.debug("unable to add details in Additional information page");
             Assert.fail("unable to add details in Additional information page");
 
         }
     }
-
 
     @And("^land on the payment page and input and other details and click 'Continue' on next step for otac$")
     public void CreditCheckPaymentPage() {
@@ -1498,10 +1518,10 @@ public class E2EOrderPlaced_Steps {
         }
     }
 
-    /*
-     * ############## All the Below are for the Agreements Validations
-     * ###################
-     */
+	/*
+	 * ############## All the Below are for the Agreements Validations
+	 * ###################
+	 */
 
     @Given("^Continue to Agreements page and confirm all the agreement checks$")
     public void AgreementsPageConfirmation() {
@@ -1526,7 +1546,7 @@ public class E2EOrderPlaced_Steps {
             Thread.sleep(5000);
         } catch (Exception e) {
             e.printStackTrace();
-            System.out.println(
+            log.debug(
                     "Agreements page is not displayed or unable to enter some information in thie page, Please review the screenshots for failure");
             Assert.fail(
                     "Agreements page is not displayed or unable to enter some information in thie page, Please review the screenshots for failure");
@@ -1550,7 +1570,7 @@ public class E2EOrderPlaced_Steps {
             Thread.sleep(5000);
         } catch (Exception e) {
             // TODO Auto-generated catch block
-            System.out.println(
+            log.debug(
                     "Agreements page is not displayed or unable to enter some information in thie page, Please review the screenshots for failure");
             Assert.fail(
                     "Agreements page is not displayed or unable to enter some information in thie page, Please review the screenshots for failure");
@@ -1558,18 +1578,18 @@ public class E2EOrderPlaced_Steps {
         }
     }
 
-    /*
-     * #########################################################################
-     * #########
-     */
-    /*
-     * ############## All the Below are for the Review Page Validations
-     * ###############
-     */
-    /*
-     * #########################################################################
-     * #########
-     */
+	/*
+	 * #########################################################################
+	 * #########
+	 */
+	/*
+	 * ############## All the Below are for the Review Page Validations
+	 * ###############
+	 */
+	/*
+	 * #########################################################################
+	 * #########
+	 */
 
 
     @And("^Continue to Agreements page and confirm all the agreement checks$")
@@ -1602,7 +1622,7 @@ public class E2EOrderPlaced_Steps {
             ReviewPageActions.PayNow();
         } catch (Exception e) {
             e.printStackTrace();
-            System.out.println(
+            log.debug(
                     "Unable to Continue to Review page and review the order or unable to enter some information in this page, Please review the screenshots for failure");
             Assert.fail(
                     "Unable to Continue to Review page and review the order or unable to enter some information in this page, Please review the screenshots for failure");
@@ -1637,7 +1657,7 @@ public class E2EOrderPlaced_Steps {
             ReviewPageActions.PayNow();
         } catch (Exception e) {
             // TODO Auto-generated catch block
-            System.out.println(
+            log.debug(
                     "Unable to Continue to Review page and review the order or unable to enter some information in this page, Please review the screenshots for failure");
             Assert.fail(
                     "Unable to Continue to Review page and review the order or unable to enter some information in this page, Please review the screenshots for failure");
@@ -1645,18 +1665,18 @@ public class E2EOrderPlaced_Steps {
         }
     }
 
-    /*
-     * #########################################################################
-     * #########
-     */
-    /*
-     * ######## All the Below are for the Order Confirmation Page Validations
-     * #########
-     */
-    /*
-     * #########################################################################
-     * #########
-     */
+	/*
+	 * #########################################################################
+	 * #########
+	 */
+	/*
+	 * ######## All the Below are for the Order Confirmation Page Validations
+	 * #########
+	 */
+	/*
+	 * #########################################################################
+	 * #########
+	 */
 
     @Given("^Check order contract text in Order Confirmation page$")
     public void checkOrderContractTextOC() {
@@ -1677,11 +1697,11 @@ public class E2EOrderPlaced_Steps {
                     "Assertion Failed: Expected Message: " + ExpOrderContractMsg + " is not present in the page"
             );
 
-            System.out.println("Assertion Passed: Expected Mesasge: " + ExpOrderContractMsg
+            log.debug("Assertion Passed: Expected Mesasge: " + ExpOrderContractMsg
                     + " is present in the Order Confirmation page");
         } catch (AssertionError e) {
 
-            System.out.println(
+            log.debug(
                     "Assertion Failed: Expected Message: " + ExpOrderContractMsg + " is not present in the page");
 
         }
@@ -1699,7 +1719,7 @@ public class E2EOrderPlaced_Steps {
             OrderConfirmationPageActions.MessageDisplayed();
         } catch (Exception e) {
             // TODO Auto-generated catch block
-            System.out.println("Error in order confirmation page , Please review the screenshots for failure");
+            log.debug("Error in order confirmation page , Please review the screenshots for failure");
             Assert.fail("Error in order confirmation page , Please review the screenshots for failure");
 
         }
@@ -1716,7 +1736,7 @@ public class E2EOrderPlaced_Steps {
             // /Assert.assertEquals(MessageDisplayed(), actual);
         } catch (Exception e) {
             // TODO Auto-generated catch block
-            System.out.println("Unable to get Order Decline page");
+            log.debug("Unable to get Order Decline page");
             Assert.fail("Unable to get Order Decline page");
 
         }
@@ -1734,7 +1754,7 @@ public class E2EOrderPlaced_Steps {
             OrderConfirmationPageActions.OrderConfirmationPageSections();
         } catch (Exception e) {
             // TODO Auto-generated catch block
-            System.out.println("Unable to get Order confirmation page with volte message");
+            log.debug("Unable to get Order confirmation page with volte message");
             Assert.fail("Unable to get Order confirmation page with volte message");
 
         }
@@ -1744,9 +1764,9 @@ public class E2EOrderPlaced_Steps {
      * Below is for Agent shop
      ****************************************/
 
-    /*
+	/*
 
-     */
+	 */
     @Given("^I login to Agent shop$")
     public void LoginAgentShop() {
         try {
@@ -1758,7 +1778,7 @@ public class E2EOrderPlaced_Steps {
             Agent_HomePagePageActions.ValidateAgentHomepage();
         } catch (Exception e) {
             // TODO Auto-generated catch block
-            System.out.println("Unable to Login/validate home page, please see the failure screenshot");
+            log.debug("Unable to Login/validate home page, please see the failure screenshot");
             Assert.fail("Unable to Login/validate home page, please see the failure screenshot");
 
         }
@@ -1795,13 +1815,13 @@ public class E2EOrderPlaced_Steps {
     public void updatedeviceplan() throws Throwable {
         Thread.sleep(3000);
         driver.findElement(By.xpath("//*[@id='updateEmailAddressProceedButton']")).click();
-        System.out.println("Updated Device Plan Link Email Address");
+        log.debug("Updated Device Plan Link Email Address");
         Thread.sleep(3000);
         WebElement element = driver.findElement(By.xpath("//*[@id='secciYesButton']"));
         JavascriptExecutor executor = (JavascriptExecutor) driver;
         executor.executeScript("arguments[0].click();", element);
         //driver.findElement(By.xpath("//*[@id='secciYesButton']")).click();
-        System.out.println("Clicked on the O2 Refresh Deal Summary YES button");
+        log.debug("Clicked on the O2 Refresh Deal Summary YES button");
 
     }
 
@@ -1810,10 +1830,10 @@ public class E2EOrderPlaced_Steps {
     public void ccaLink() throws Throwable {
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         driver.findElement(By.xpath("//*[@id='generateCcaForm']/input[1]")).click();
-        System.out.println("Clicked on the Generate CCA link");
+        log.debug("Clicked on the Generate CCA link");
         Thread.sleep(5000);
         String CCALinkDetails = driver.findElement(By.xpath("//*[@id='ccaContent']")).getText();
-        System.out.println(CCALinkDetails);
+        log.debug(CCALinkDetails);
     }
 
     @When("^user select CCA link$")
@@ -1845,15 +1865,15 @@ public class E2EOrderPlaced_Steps {
 
     }
 
-    /*
-     * #########################################################################
-     * #########
-     */
-    /* ######## Perform Upgrade or Acquisition ######### */
-    /*
-     * #########################################################################
-     * #########
-     */
+	/*
+	 * #########################################################################
+	 * #########
+	 */
+	/* ######## Perform Upgrade or Acquisition ######### */
+	/*
+	 * #########################################################################
+	 * #########
+	 */
 
     @Given("^performs Upgrade for ([^\"]*)$")
     public void performs_Upgrade(String msisdn) throws Throwable {
@@ -1864,15 +1884,15 @@ public class E2EOrderPlaced_Steps {
         Thread.sleep(3000);
         Agent_HomePagePageActions.upgradeUser();
         Thread.sleep(4000);
-        /*
-         * } catch (Exception e) { // TODO Auto-generated catch block System.out.
-         * println("Unable to login for upgrade for user in Agent shop, please see the failure screenshot"
-         * ); Assert.
-         * fail("Unable to login for upgrade for user in Agent shop, please see the failure screenshot"
-         * );
-         *
-         * }
-         */
+		/*
+		 * } catch (Exception e) { // TODO Auto-generated catch block System.out.
+		 * println("Unable to login for upgrade for user in Agent shop, please see the failure screenshot"
+		 * ); Assert.
+		 * fail("Unable to login for upgrade for user in Agent shop, please see the failure screenshot"
+		 * );
+		 *
+		 * }
+		 */
     }
 
     @Given("^performs Acquisition for New user$")
@@ -1891,15 +1911,14 @@ public class E2EOrderPlaced_Steps {
     }
 
     /*
-     * #########################################################################
-     * #########
-     */
-    /* ######## Select Valid PAYM/PAYG Device ######### */
-    /*
-     * #########################################################################
-     * #########
-     */
-
+	 * #########################################################################
+	 * #########
+	 */
+	/* ######## Select Valid PAYM/PAYG Device ######### */
+	/*
+	 * #########################################################################
+	 * #########
+	 */
     @Given("^Select a valid PayM ([^\"]*)")
     public void SelectValid_Device(String Device) {
         try {
@@ -1909,10 +1928,11 @@ public class E2EOrderPlaced_Steps {
             Thread.sleep(4000);
         } catch (Exception e) {
             // TODO Auto-generated catch block
-            System.out.println("Unable to select Valid device, please see the failure screenshot");
+            log.debug("Unable to select Valid device, please see the failure screenshot");
             Assert.fail("Unable to select Valid device, please see the failure screenshot");
 
         }
+
     }
 
     @Given("^Select a valid PAYG ([^\"]*)$")
@@ -1923,13 +1943,13 @@ public class E2EOrderPlaced_Steps {
             Agent_DealBuilderPageActions.SelectPayGDevice(Device);
         } catch (Exception e) {
             // TODO Auto-generated catch block
-            System.out.println("Unable to select Valid PAYG device, please see the failure screenshot");
+            log.debug("Unable to select Valid PAYG device, please see the failure screenshot");
             Assert.fail("Unable to select Valid PAYG device, please see the failure screenshot");
         }
     }
-/*
-April2018
- */
+    /*
+    April2018
+     */
     @And("^verify 'Email Basket' link is displayed next to the Search CTA in deal builder section$")
     public void verify_Email_Basket_link_is_displayed_next_to_the_Search_CTA_in_deal_builder_section() throws Throwable {
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
@@ -1968,14 +1988,14 @@ April2018
         }
     }
     /*
-     * #########################################################################
-     * #########
-     */
-    /* ######## Other Scenarios ######### */
-    /*
-     * #########################################################################
-     * #########
-     */
+	 * #########################################################################
+	 * #########
+	 */
+	/* ######## Other Scenarios ######### */
+	/*
+	 * #########################################################################
+	 * #########
+	 */
     @Given("^choose to email basket to save the basket$")
     public void choose_to_email_basket_to_save_the_basket() {
         try {
@@ -1984,7 +2004,7 @@ April2018
             Agent_DealBuilderPageActions.eMailBasket();
         } catch (Exception e) {
             // TODO Auto-generated catch block
-            System.out.println("Unable to email basket, please see the failure screenshot");
+            log.debug("Unable to email basket, please see the failure screenshot");
             Assert.fail("Unable to email basket, please see the failure screenshot");
 
         }
@@ -2012,24 +2032,24 @@ April2018
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, Agent_DealBuilderPage.class);
             Agent_DealBuilderPageActions.eMailConfirmation();
-            System.out.println("Verify email is sent successfully method executed successfully");
+            log.debug("Verify email is sent successfully method executed successfully");
         } catch (Exception e) {
             // TODO Auto-generated catch block
-            System.out.println("Email is not sent");
+            log.debug("Email is not sent");
             Assert.fail("Email is not sent");
 
         }
     }
 
-    /*
-     * #########################################################################
-     * #########
-     */
-    /* ######## Select Valid PAYM/PAYG Tariff ######### */
-    /*
-     * #########################################################################
-     * #########
-     */
+	/*
+	 * #########################################################################
+	 * #########
+	 */
+	/* ######## Select Valid PAYM/PAYG Tariff ######### */
+	/*
+	 * #########################################################################
+	 * #########
+	 */
 
     @Given("^Select valid ([^\"]*) from PAYG tariffs tab$")
     public void select_valid_Months_from_PAYG_tariffs_tab(String Tariff) {
@@ -2039,7 +2059,7 @@ April2018
             Agent_DealBuilderPageActions.SelectPayGTariff(Tariff);
         } catch (Exception e) {
             // TODO Auto-generated catch block
-            System.out.println("Unable to select valid payg tariff, please see the failure screenshot");
+            log.debug("Unable to select valid payg tariff, please see the failure screenshot");
 
             Assert.fail("Unable to select valid payg tariff, please see the failure screenshot");
 
@@ -2054,7 +2074,7 @@ April2018
             Agent_DealBuilderPageActions.SelectAccessoryDevice(Device);
         } catch (Exception e) {
             // TODO Auto-generated catch block
-            System.out.println("Unable to select accessory basket, please see the failure screenshot");
+            log.debug("Unable to select accessory basket, please see the failure screenshot");
             Assert.fail("Unable to select accessory basket, please see the failure screenshot");
         }
     }
@@ -2066,10 +2086,10 @@ April2018
             PageFactory.initElements(driver, Agent_DealBuilderPage.class);
             Thread.sleep(3000);
             Agent_DealBuilderPageActions.SelectTariff(Tariff);
-            // System.out.println("Selecting a valid tariff");
+            // log.debug("Selecting a valid tariff");
         } catch (Exception e) {
             // TODO Auto-generated catch block
-            System.out.println("Unable to select valid tariff, please see the failure screenshot");
+            log.debug("Unable to select valid tariff, please see the failure screenshot");
             Assert.fail("Unable to select valid tariff, please see the failure screenshot");
 
         }
@@ -2077,14 +2097,14 @@ April2018
     }
 
 
-    /*
-     * #########################################################################
-     * #########
-     */
-    /* ######## Validate Basket contents ######### */
-    /*
-     * #########################################################################
-     */
+	/*
+	 * #########################################################################
+	 * #########
+	 */
+	/* ######## Validate Basket contents ######### */
+	/*
+	 * #########################################################################
+	 */
 
     @Given("^Validate all the Basket content and checkout$")
     public void validate_all_the_Basket_content_and_checkout() {
@@ -2097,21 +2117,21 @@ April2018
             Thread.sleep(7000);
         } catch (Exception e) {
             // TODO Auto-generated catch block
-            System.out.println("Unable to validate basket content/checkout , please see the failure screenshot");
+            log.debug("Unable to validate basket content/checkout , please see the failure screenshot");
             Assert.fail("Unable to validate basket content/checkout , please see the failure screenshot");
 
         }
     }
 
     /*
-     * #########################################################################
-     * #########
-     */
-    /* ######## Advisory checks ######### */
-    /*
-     * #########################################################################
-     * #########
-     */
+	 * #########################################################################
+	 * #########
+	 */
+	/* ######## Advisory checks ######### */
+	/*
+	 * #########################################################################
+	 * #########
+	 */
     @Then("^perform all the advisory checks$")
     public void advisory_checks() {
         try {
@@ -2121,12 +2141,11 @@ April2018
             Thread.sleep(6000);
         } catch (Exception e) {
             // TODO Auto-generated catch block
-            System.out.println("Unable to perform advisory checks , please see the failure screenshot");
+            log.debug("Unable to perform advisory checks , please see the failure screenshot");
             Assert.fail("Unable to perform advisory checks , please see the failure screenshot");
 
         }
     }
-
 
     @Then("^perform all the advisory checks_new$")
     public void advisory_checks_new() {
@@ -2143,15 +2162,16 @@ April2018
         }
     }
 
-    /*
-     * #########################################################################
-     * #########
-     */
-    /* ######## Credit Checks and Bank details ######### */
-    /*
-     * #########################################################################
-     * #########
-     */
+
+	/*
+	 * #########################################################################
+	 * #########
+	 */
+	/* ######## Credit Checks and Bank details ######### */
+	/*
+	 * #########################################################################
+	 * #########
+	 */
 
     @Then("^perform the credit checks using valid ([^\"]*), ([^\"]*), ([^\"]*), ([^\"]*) and valid ([^\"]*)$")
     public void CreditCheck(String Firstname, String Surname, String HouseNumber, String PostCode, String Username) {
@@ -2159,29 +2179,29 @@ April2018
             driver.manage().timeouts().implicitlyWait(200, TimeUnit.SECONDS);
             PageFactory.initElements(driver, Agent_CreditCheckDetailsPage.class);
             Agent_CreditCheckPageActions.Creditcheck(Firstname, Surname, HouseNumber, PostCode);
-            System.out.println("Completed Credit check");
+            log.debug("Completed Credit check");
             Agent_CreditCheckPageActions.BankDetails(Username);
-            System.out.println("Completed Bank details");
+            log.debug("Completed Bank details");
             Thread.sleep(5000);
 
         } catch (Exception e) {
             // TODO Auto-generated catch block
-            System.out.println("Unable to perform credit checks , please see the failure screenshot");
+            log.debug("Unable to perform credit checks , please see the failure screenshot");
             Assert.fail("Unable to perform credit checks , please see the failure screenshot");
 
         }
 
     }
 
-    /*
-     * #########################################################################
-     * #########
-     */
-    /* ######## Register ######### */
-    /*
-     * #########################################################################
-     * #########
-     */
+	/*
+	 * #########################################################################
+	 * #########
+	 */
+	/* ######## Register ######### */
+	/*
+	 * #########################################################################
+	 * #########
+	 */
 
     @Then("^enter ten digit contact number perform the credit checks using valid ([^\"]*), ([^\"]*), ([^\"]*), ([^\"]*) and valid ([^\"]*)$")
     public void enter_ten_digit_contact_number_perform_the_credit_checks(String Firstname, String Surname, String HouseNumber, String PostCode, String Username) {
@@ -2189,20 +2209,19 @@ April2018
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, Agent_CreditCheckDetailsPage.class);
             Agent_CreditCheckPageActions.CreditcheckAndTenDigitContact(Firstname, Surname, HouseNumber, PostCode);
-            System.out.println("Completed Credit check");
+            log.debug("Completed Credit check");
             Agent_CreditCheckPageActions.BankDetails(Username);
-            System.out.println("Completed Bank details");
+            log.debug("Completed Bank details");
             Thread.sleep(30000);
 
         } catch (Exception e) {
             // TODO Auto-generated catch block
-            System.out.println("Unable to perform credit checks , please see the failure screenshot");
+            log.debug("Unable to perform credit checks , please see the failure screenshot");
             Assert.fail("Unable to perform credit checks , please see the failure screenshot");
 
         }
 
     }
-
 
     @Then("^Register the customer with valid ([^\"]*), ([^\"]*), ([^\"]*), ([^\"]*) and other valid details in delivery page_new$")
 
@@ -2226,39 +2245,39 @@ April2018
         try {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, Agent_RegisterCustomerPage.class);
-            Agent_RegisterCustomerActions.PayGRegistration_new(Firstname, Surname, HouseNumber, PostCode);
+            Agent_RegisterCustomerActions.PayGRegistration(Firstname, Surname, HouseNumber, PostCode);
 
         } catch (Exception e) { // TODO Auto-generated catch block
-            System.out.println("Unable to Register customer , please see the failure screenshot");
+            log.debug("Unable to Register customer , please see the failure screenshot");
             Assert.fail("Unable to Register customer , please see the failure screenshot");
 
         }
     }
 
     /*
-     * #########################################################################
-     * #########
-     */
-    /* ######## Delivery Details ######### */
-    /*
-     * #########################################################################
-     * #########
-     */
+	 * #########################################################################
+	 * #########
+	 */
+	/* ######## Delivery Details ######### */
+	/*
+	 * #########################################################################
+	 * #########
+	 */
     @Then("^Choose HomeDelivery delivery address and delivery time$")
     public void HomeDelivery_Address() throws Throwable {
-        System.out.println("Choosing available delivery address");
+        log.debug("Choosing available delivery address");
         Thread.sleep(5000);
     }
 
     /*
-     * #########################################################################
-     * #########
-     */
-    /* ######## Pay by card ######### */
-    /*
-     * #########################################################################
-     * #########
-     */
+	 * #########################################################################
+	 * #########
+	 */
+	/* ######## Pay by card ######### */
+	/*
+	 * #########################################################################
+	 * #########
+	 */
     @When("^Pay by card$")
     public void pay_by_card() {
         driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
@@ -2268,7 +2287,7 @@ April2018
             Agent_RegisterCustomerActions.CardDetails();
         } catch (Exception e) {
             // TODO Auto-generated catch block
-            System.out.println("Unable to Pay by card , please see the failure screenshot");
+            log.debug("Unable to Pay by card , please see the failure screenshot");
             Assert.fail("Unable to Pay by card , please see the failure screenshot");
 
         }
@@ -2283,21 +2302,21 @@ April2018
             Agent_RegisterCustomerActions.CardDetails_PayM();
         } catch (Exception e) {
             // TODO Auto-generated catch block
-            System.out.println("Unable to Pay by card , please see the failure screenshot");
+            log.debug("Unable to Pay by card , please see the failure screenshot");
             Assert.fail("Unable to Pay by card , please see the failure screenshot");
 
         }
     }
 
-    /*
-     * #########################################################################
-     * #########
-     */
-    /* ######## Order confirmation ######### */
-    /*
-     * #########################################################################
-     * #########
-     */
+	/*
+	 * #########################################################################
+	 * #########
+	 */
+	/* ######## Order confirmation ######### */
+	/*
+	 * #########################################################################
+	 * #########
+	 */
 
     @When("^submit order button is clicked$")
     public void submit_order_button_is_clicked() {
@@ -2307,7 +2326,7 @@ April2018
             Agent_ConfirmationPageActions.SubmitOrder();
         } catch (Exception e) {
             // TODO Auto-generated catch block
-            System.out.println("Unable to get order confirmation screen , please see the failure screenshot");
+            log.debug("Unable to get order confirmation screen , please see the failure screenshot");
             Assert.fail("Unable to get order confirmation screen , please see the failure screenshot");
 
         }
@@ -2321,7 +2340,7 @@ April2018
             Agent_ConfirmationPageActions.Confirmationdetails();
         } catch (Exception e) {
             // TODO Auto-generated catch block
-            System.out.println("Unable to get order confirmation screen , please see the failure screenshot");
+            log.debug("Unable to get order confirmation screen , please see the failure screenshot");
             Assert.fail("Unable to get order confirmation screen , please see the failure screenshot");
 
         }
@@ -2330,15 +2349,15 @@ April2018
     ///////// ***********************************/////////////
 
     ///////// ***********************************/////////////
-    /*
-     * #########################################################################
-     * #########
-     */
-    /* ######## June Release ######### */
-    /*
-     * #########################################################################
-     * #########
-     */
+	/*
+	 * #########################################################################
+	 * #########
+	 */
+	/* ######## June Release ######### */
+	/*
+	 * #########################################################################
+	 * #########
+	 */
     @Given("^I Land on the Non Phone related basket page$")
     public void NonPhoneRelatedBasketPage_julyRelease() {
         try {
@@ -2349,7 +2368,7 @@ April2018
             BasketPageActions.JuneReleaseBasketContent();
         } catch (Exception e) {
             // TODO Auto-generated catch block
-            System.out.println("Unable to validate basket in basket page , please see the failure screenshot");
+            log.debug("Unable to validate basket in basket page , please see the failure screenshot");
             Assert.fail("Unable to validate basket in basket page , please see the failure screenshot");
 
         }
@@ -2362,7 +2381,7 @@ April2018
             JuneReleaseValidations.QuantityValidationsBasket();
         } catch (Exception e) {
             // TODO Auto-generated catch block
-            System.out.println("Unable to validate Quantity , please see the failure screenshot");
+            log.debug("Unable to validate Quantity , please see the failure screenshot");
             Assert.fail("Unable to validate Quantity , please see the failure screenshot");
 
         }
@@ -2375,7 +2394,7 @@ April2018
             JuneReleaseValidations.QuantityValidationsDelivery();
         } catch (Exception e) {
             // TODO Auto-generated catch block
-            System.out.println("Unable to validate Quantity in Delivery page, please see the failure screenshot");
+            log.debug("Unable to validate Quantity in Delivery page, please see the failure screenshot");
             Assert.fail("Unable to validate Quantity in Delivery page, please see the failure screenshot");
 
         }
@@ -2389,7 +2408,7 @@ April2018
             JuneReleaseValidations.updatedQuantityValidationsDelivery();
         } catch (Exception e) {
             // TODO Auto-generated catch block
-            System.out.println("Unable to validate Quantity in Delivery page, please see the failure screenshot");
+            log.debug("Unable to validate Quantity in Delivery page, please see the failure screenshot");
 
             Assert.fail("Unable to validate Quantity in Delivery page, please see the failure screenshot");
 
@@ -2403,7 +2422,7 @@ April2018
             JuneReleaseValidations.QuantityValidationsReview();
         } catch (Exception e) {
             // TODO Auto-generated catch block
-            System.out.println("Unable to validate Quantity in Review page, please see the failure screenshot");
+            log.debug("Unable to validate Quantity in Review page, please see the failure screenshot");
 
             Assert.fail("Unable to validate Quantity in Review page, please see the failure screenshot");
 
@@ -2417,7 +2436,7 @@ April2018
             JuneReleaseValidations.QuantityValidationsBasket_Grouped();
         } catch (Exception e) {
             // TODO Auto-generated catch block
-            System.out.println("Unable to validate Quantity , please see the failure screenshot");
+            log.debug("Unable to validate Quantity , please see the failure screenshot");
             Assert.fail("Unable to validate Quantity , please see the failure screenshot");
 
         }
@@ -2430,7 +2449,7 @@ April2018
             JuneReleaseValidations.QuantityValidationsDelivery_Grouped();
         } catch (Exception e) {
             // TODO Auto-generated catch block
-            System.out.println("Unable to validate Quantity , please see the failure screenshot");
+            log.debug("Unable to validate Quantity , please see the failure screenshot");
             Assert.fail("Unable to validate Quantity , please see the failure screenshot");
 
         }
@@ -2443,7 +2462,7 @@ April2018
             JuneReleaseValidations.QuantityValidationsReviewPage_Grouped();
         } catch (Exception e) {
             // TODO Auto-generated catch block
-            System.out.println("Unable to validate Quantity , please see the failure screenshot");
+            log.debug("Unable to validate Quantity , please see the failure screenshot");
             Assert.fail("Unable to validate Quantity , please see the failure screenshot");
 
         }
@@ -2456,7 +2475,7 @@ April2018
             JuneReleaseValidations.NavigatebackFromDelivery();
         } catch (Exception e) {
             // TODO Auto-generated catch block
-            System.out.println("Unable to Navigate back , please see the failure screenshot");
+            log.debug("Unable to Navigate back , please see the failure screenshot");
             Assert.fail("Unable to Navigate back , please see the failure screenshot");
 
         }
@@ -2469,21 +2488,21 @@ April2018
             JuneReleaseValidations.ChangeQuantity();
         } catch (Exception e) {
             // TODO Auto-generated catch block
-            System.out.println("Unable to validate Quantity , please see the failure screenshot");
+            log.debug("Unable to validate Quantity , please see the failure screenshot");
             Assert.fail("Unable to validate Quantity , please see the failure screenshot");
 
         }
     }
 
-    /*
-     * #########################################################################
-     * #########
-     */
-    /* ######## Upgrade Upsell ######### */
-    /*
-     * #########################################################################
-     * #########
-     */
+	/*
+	 * #########################################################################
+	 * #########
+	 */
+	/* ######## Upgrade Upsell ######### */
+	/*
+	 * #########################################################################
+	 * #########
+	 */
 
     @Then("^I should be displayed the promo modules$")
     public void i_should_be_displayed_the_promo_modules() {
@@ -2493,7 +2512,7 @@ April2018
             UpgradeCustomerPageActions.UpgradeUpsellPromoModule_Validation();
         } catch (Exception e) {
             // TODO Auto-generated catch block
-            System.out.println("Unable to validate promo modules , please see the failure screenshot");
+            log.debug("Unable to validate promo modules , please see the failure screenshot");
             Assert.fail("Unable to validate promo modules , please see the failure screenshot");
 
         }
@@ -2509,22 +2528,22 @@ April2018
             UpgradeCustomerPageActions.UpgradeUpsellPromoModule_MyO2Action();
         } catch (Exception e) {
             // TODO Auto-generated catch block
-            System.out.println("Unable to validate go to MyO2 CTA , please see the failure screenshot");
+            log.debug("Unable to validate go to MyO2 CTA , please see the failure screenshot");
             Assert.fail("Unable to validate go to MyO2 CTA , please see the failure screenshot");
 
         }
 
     }
 
-    /*
-     * #########################################################################
-     * #########
-     */
-    /* ######## Upgrade Upsell iPad Sims ######### */
-    /*
-     * #########################################################################
-     * #########
-     */
+	/*
+	 * #########################################################################
+	 * #########
+	 */
+	/* ######## Upgrade Upsell iPad Sims ######### */
+	/*
+	 * #########################################################################
+	 * #########
+	 */
 
     @When("^I Click on Pick a sim on the iPad promo module$")
     public void i_Click_on_Pick_a_sim_on_the_iPad_promo_module() {
@@ -2535,7 +2554,7 @@ April2018
             Autoredirection.redirect();
         } catch (Exception e) {
             // TODO Auto-generated catch block
-            System.out.println("Unable to click on ipad promo module , please see the failure screenshot");
+            log.debug("Unable to click on ipad promo module , please see the failure screenshot");
             Assert.fail("Unable to click on ipad promo module , please see the failure screenshot");
         }
     }
@@ -2557,22 +2576,22 @@ April2018
             Thread.sleep(2000);
         } catch (Exception e) {
             // TODO Auto-generated catch block
-            System.out.println("Unable to validate details in delivery page, please see the failure screenshot");
+            log.debug("Unable to validate details in delivery page, please see the failure screenshot");
             Assert.fail("Unable to validate details in delivery page, please see the failure screenshot");
 
         }
 
     }
 
-    /*
-     * #########################################################################
-     * #########
-     */
-    /* ######## Upgrade Upsell Tablet Sims ######### */
-    /*
-     * #########################################################################
-     * #########
-     */
+	/*
+	 * #########################################################################
+	 * #########
+	 */
+	/* ######## Upgrade Upsell Tablet Sims ######### */
+	/*
+	 * #########################################################################
+	 * #########
+	 */
 
     @When("^I Click on Pick a sim on the Tablet promo module$")
     public void i_Click_on_Pick_a_sim_on_the_Tablet_promo_module() {
@@ -2583,21 +2602,21 @@ April2018
             Autoredirection.redirect();
         } catch (Exception e) {
             // TODO Auto-generated catch block
-            System.out.println("Unable to pick a sim on tablet promo , please see the failure screenshot");
+            log.debug("Unable to pick a sim on tablet promo , please see the failure screenshot");
             Assert.fail("Unable to pick a sim on tablet promo , please see the failure screenshot");
         }
 
     }
 
-    /*
-     * #########################################################################
-     * #########
-     */
-    /* ######## Upgrade Upsell Dongle Sims ######### */
-    /*
-     * #########################################################################
-     * #########
-     */
+	/*
+	 * #########################################################################
+	 * #########
+	 */
+	/* ######## Upgrade Upsell Dongle Sims ######### */
+	/*
+	 * #########################################################################
+	 * #########
+	 */
 
     @When("^I Click on Pick a sim on the Dongle promo module$")
     public void i_Click_on_Pick_a_sim_on_the_Dongle_promo_module() {
@@ -3007,13 +3026,13 @@ April2018
 
         }
     }
-    /*
-     * ================================
-     *
-     * July release
-     *
-     * ================================
-     */
+	/*
+	 * ================================
+	 *
+	 * July release
+	 *
+	 * ================================
+	 */
 
     @And("^click on Add to Basket button$")
     public void click_on_Add_to_Basket_button() {
@@ -3055,7 +3074,7 @@ April2018
             Thread.sleep(15000);
         } catch (Exception e) {
             // TODO Auto-generated catch block
-            System.out.println("unable to do mousehover to tablets");
+            log.debug("unable to do mousehover to tablets");
             Assert.fail("unable to do mousehover to tablets");
         }
     }
@@ -3068,7 +3087,7 @@ April2018
             TabletPageActions.DeviceSelect(arg1);
         } catch (Exception e) {
             e.printStackTrace();
-            System.out.println("Unable to select tablet");
+            log.debug("Unable to select tablet");
             Assert.fail("Unable to select tablet");
         }
     }
@@ -3082,7 +3101,7 @@ April2018
 
         } catch (Exception e) {
             // TODO Auto-generated catch block
-            System.out.println("Unable to choose " + elementName + " device");
+            log.debug("Unable to choose " + elementName + " device");
             Assert.fail("Unable to choose " + elementName + " device");
 
         }
@@ -3096,7 +3115,7 @@ April2018
             FitnessTrackerPageActions.DeviceSelect(elementName);
         } catch (Exception e) {
             // TODO Auto-generated catch block
-            System.out.println("Unable to select FitnessTracker");
+            log.debug("Unable to select FitnessTracker");
             Assert.fail("Unable to select FitnessTracker");
 
         }
@@ -3109,10 +3128,10 @@ April2018
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, TabletPage.class);
             TabletPageActions.DeviceSelect(elementName);
-            System.out.println("Selected Device " + elementName + " successfully");
+            log.debug("Selected Device " + elementName + " successfully");
 
         } catch (Exception e) { // TODO Auto-generated catch block
-            System.out.println("Unable to select tablet");
+            log.debug("Unable to select tablet");
             Assert.fail("Unable to select tablet");
         }
 
@@ -3126,7 +3145,7 @@ April2018
             PAYMSimOPageActions.elementSelected();
         } catch (Exception e) {
             // TODO Auto-generated catch block
-            System.out.println("not able to verify if phone tab is selected");
+            log.debug("not able to verify if phone tab is selected");
             Assert.fail("not able to verify if phone tab is selected");
         }
     }
@@ -3141,7 +3160,7 @@ April2018
             // NonConnectedDeviceDetailsPageAction.ClickonBasketIcon();
         } catch (Exception e) {
             // TODO Auto-generated catch block
-            System.out.println("Unable to add accessories to basket");
+            log.debug("Unable to add accessories to basket");
             Assert.fail("Unable to add accessories to basket");
 
         }
@@ -3158,7 +3177,7 @@ April2018
             // NonConnectedDeviceDetailsPageAction.ClickonBasketIcon();
         } catch (Exception e) {
             // TODO Auto-generated catch block
-            System.out.println("Unable to add Fitnesstracker to basket");
+            log.debug("Unable to add Fitnesstracker to basket");
             Assert.fail("Unable to add Fitnesstracker to basket");
         }
     }
@@ -3172,7 +3191,7 @@ April2018
             SmartwatchesPageActions.UserSpecifiedSmartwatchTrackerLimit(Limit);
         } catch (Exception e) {
             // TODO Auto-generated catch block
-            System.out.println("Unable to add SmartWatches to basket");
+            log.debug("Unable to add SmartWatches to basket");
             Assert.fail("Unable to add SmartWatches to basket");
         }
     }
@@ -3191,7 +3210,7 @@ April2018
 
         } catch (Exception e) {
             e.printStackTrace();
-            System.out.println(
+            log.debug(
                     "Failed step : the previously selected standalone non-connected items should be removed from my basket");
             Assert.fail(
                     "Failed step : the previously selected standalone non-connected items should be removed from my basket");
@@ -3210,7 +3229,7 @@ April2018
         } catch (Exception e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
-            System.out.println("Unable to validate basket contents");
+            log.debug("Unable to validate basket contents");
             Assert.fail("Unable to validate basket contents");
         }
     }
@@ -3225,7 +3244,7 @@ April2018
         } catch (Exception e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
-            System.out.println("Unable to verify the devices in basket");
+            log.debug("Unable to verify the devices in basket");
             Assert.fail("Unable to verify the devices in basket");
         }
     }
@@ -3240,7 +3259,7 @@ April2018
         } catch (Exception e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
-            System.out.println("Unable to verify the devices in basket");
+            log.debug("Unable to verify the devices in basket");
             Assert.fail("Unable to verify the devices in basket");
         }
     }
@@ -3255,22 +3274,22 @@ April2018
         } catch (Exception e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
-            System.out.println("Unable to verify the devices in basket");
+            log.debug("Unable to verify the devices in basket");
             Assert.fail("Unable to verify the devices in basket");
         }
     }
 
-    /*
-     * @And("^Verify the devices ([^\"]*), ([^\"]*) and ([^\"]*) in basket$") public
-     * void verifyDevicesInBasket(String smartwatchname, String fitnesstrackername,
-     * String tabletname) throws Throwable { try {
-     * driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-     * PageFactory.initElements(driver, BasketPage.class);
-     * BasketPageActions.verifyDevicesInBasket(smartwatchname, fitnesstrackername,
-     * tabletname); } catch (Exception e) { // TODO Auto-generated catch block
-     * System.out.println("not able to verify if phone tab is selected");
-     * Assert.fail("not able to verify if phone tab is selected"); } }
-     */
+	/*
+	 * @And("^Verify the devices ([^\"]*), ([^\"]*) and ([^\"]*) in basket$") public
+	 * void verifyDevicesInBasket(String smartwatchname, String fitnesstrackername,
+	 * String tabletname) throws Throwable { try {
+	 * driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+	 * PageFactory.initElements(driver, BasketPage.class);
+	 * BasketPageActions.verifyDevicesInBasket(smartwatchname, fitnesstrackername,
+	 * tabletname); } catch (Exception e) { // TODO Auto-generated catch block
+	 * log.debug("not able to verify if phone tab is selected");
+	 * Assert.fail("not able to verify if phone tab is selected"); } }
+	 */
 
     @And("^select ([^\"]*) tab$")
     public void select_tab(String tabname) {
@@ -3281,7 +3300,7 @@ April2018
             PAYMSimOPageActions.ElementClick(tabname);
         } catch (Exception e) {
             e.printStackTrace();
-            System.out.println("Unable to select tab");
+            log.debug("Unable to select tab");
             Assert.fail("Unable to select tab");
         }
     }
@@ -3300,7 +3319,7 @@ April2018
 
         } catch (Exception e) {
             e.printStackTrace();
-            System.out.println("The selected device does not have more than 1 variant for both colour and capacity");
+            log.debug("The selected device does not have more than 1 variant for both colour and capacity");
             Assert.fail("The selected device does not have more than 1 variant for both colour and capacity");
         }
     }
@@ -3319,7 +3338,7 @@ April2018
 
         } catch (Exception e) {
             e.printStackTrace();
-            System.out.println("The selected device does not have more than 1 variant for both colour and capacity");
+            log.debug("The selected device does not have more than 1 variant for both colour and capacity");
             Assert.fail("The selected device does not have more than 1 variant for both colour and capacity");
         }
     }
@@ -3334,7 +3353,7 @@ April2018
 
         } catch (Exception e) {
             e.printStackTrace();
-            System.out.println("selected color" + color);
+            log.debug("selected color" + color);
             Assert.fail("not able to select  color" + color);
         }
     }
@@ -3349,7 +3368,7 @@ April2018
 
         } catch (Exception e) {
             e.printStackTrace();
-            System.out.println("selected capacity" + capacity);
+            log.debug("selected capacity" + capacity);
             Assert.fail("not able to select  capacity" + capacity);
         }
     }
@@ -3367,7 +3386,7 @@ April2018
 
         } catch (Exception e) {
             e.printStackTrace();
-            System.out.println("The selected device does not have more than 1 variant for both colour and capacity");
+            log.debug("The selected device does not have more than 1 variant for both colour and capacity");
             Assert.fail("The selected device does not have more than 1 variant for both colour and capacity");
         }
     }
@@ -3382,7 +3401,7 @@ April2018
 
         } catch (Exception e) {
             e.printStackTrace();
-            System.out.println("selected color" + color);
+            log.debug("selected color" + color);
             Assert.fail("not able to select  color" + color);
         }
     }
@@ -3397,7 +3416,7 @@ April2018
 
         } catch (Exception e) {
             e.printStackTrace();
-            System.out.println("selected color" + capacity);
+            log.debug("selected color" + capacity);
             Assert.fail("not able to select  color" + capacity);
         }
     }
@@ -3464,7 +3483,7 @@ April2018
             log.debug("Navigated to Like New Phones page successfully");
         } catch (Exception e) {
             // TODO Auto-generated catch block
-            System.out.println("unable to do mousehover to like new phones");
+            log.debug("unable to do mousehover to like new phones");
             Assert.fail("unable to do mousehover to like new phones");
         }
     }
@@ -3534,15 +3553,15 @@ April2018
         String Newurl_CVOS = Filereadingutility.getPropertyValue(EnvPropFilePath, "CVOS");
         driver.navigate().to(Newurl_CVOS);
         Thread.sleep(3000);
-        /*
-         * } catch (Exception e) { // TODO Auto-generated catch block System.out.
-         * println("Unable to Login/validate home page, please see the failure screenshot"
-         * ); Assert.
-         * fail("Unable to Login/validate home page, please see the failure screenshot"
-         * );
-         *
-         * }
-         */
+		/*
+		 * } catch (Exception e) { // TODO Auto-generated catch block System.out.
+		 * println("Unable to Login/validate home page, please see the failure screenshot"
+		 * ); Assert.
+		 * fail("Unable to Login/validate home page, please see the failure screenshot"
+		 * );
+		 *
+		 * }
+		 */
     }
 
     @And("^I Login with Supply Chain Credential ([^\"]*) and ([^\"]*)$")
@@ -3550,15 +3569,15 @@ April2018
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         PageFactory.initElements(driver, CVOS_PageObjects.class);
         // try {
-        System.out.println("Entering the login Supply Chain creds");
+        log.debug("Entering the login Supply Chain creds");
         CVOS_LandingPageActions.CVOSSupplyChainLogin(username, password);
-        System.out.println("completing the login Supply Chain creds");
+        log.debug("completing the login Supply Chain creds");
 
-        /*
-         * } catch (Exception e) { // TODO Auto-generated catch block
-         * System.out.println("Unable to Sign in to CVOS as SupplyChain");
-         * Assert.fail("Unable to Sign in to CVOS as SupplyChain");
-         */
+		/*
+		 * } catch (Exception e) { // TODO Auto-generated catch block
+		 * log.debug("Unable to Sign in to CVOS as SupplyChain");
+		 * Assert.fail("Unable to Sign in to CVOS as SupplyChain");
+		 */
         // }
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         PageFactory.initElements(driver, CVOS_PageObjects.class);
@@ -3566,7 +3585,7 @@ April2018
             CVOS_SupplyChainloggedIn.CVOSSupplyChainVal();
         } catch (Exception e) {
             // TODO Auto-generated catch block
-            System.out.println("Unable to Validate the CVOS SupplyChain Home Page");
+            log.debug("Unable to Validate the CVOS SupplyChain Home Page");
             Assert.fail("Unable to Validate the CVOS SupplyChain Home Page");
 
         }
@@ -3581,7 +3600,7 @@ April2018
             CVOSstockpotPageActions.CVOSSupplyChainAct(SKUID);
         } catch (Exception e) {
             // TODO Auto-generated catch block
-            System.out.println("Unable to Enter the SKU ID Page");
+            log.debug("Unable to Enter the SKU ID Page");
             Assert.fail("Unable to Enter the SKU ID Page");
 
         }
@@ -3596,7 +3615,7 @@ April2018
             CVOSstockpotPageActions.CVOSSupplyChainSearch();
         } catch (Exception e) {
             // TODO Auto-generated catch block
-            System.out.println("Unable to Search the stockpots for the SKU");
+            log.debug("Unable to Search the stockpots for the SKU");
             Assert.fail("Unable to Search the stockpots for the SKU");
 
         }
@@ -3611,7 +3630,7 @@ April2018
             CVOSstockpotPageActions.CVOSSupplyChainStockPot();
         } catch (Exception e) {
             // TODO Auto-generated catch block
-            System.out.println("Uploaded stockpots not displayed");
+            log.debug("Uploaded stockpots not displayed");
             Assert.fail("Uploaded stockpots not displayed");
 
         }
@@ -3626,7 +3645,7 @@ April2018
             CVOSstockpotPageActions.CVOSSupplyChainMoveDelivery();
         } catch (Exception e) {
             // TODO Auto-generated catch block
-            System.out.println("The Delivery date is not moved");
+            log.debug("The Delivery date is not moved");
             Assert.fail("The Delivery date is not moved");
 
         }
@@ -3642,7 +3661,7 @@ April2018
             CVOSstockpotPageActions.CVOSSupplyChainStockMerchandise();
         } catch (Exception e) {
             // TODO Auto-generated catch block
-            System.out.println("The Stock Merchandise tab is not clicked");
+            log.debug("The Stock Merchandise tab is not clicked");
             Assert.fail("The Stock Merchandise tab is not clicked");
 
         }
@@ -3657,7 +3676,7 @@ April2018
             CVOS_StockMerchandiseActions.CVOSSupplyChainStockMerch(Search_by_model);
         } catch (Exception e) {
             // TODO Auto-generated catch block
-            System.out.println("The Launch date is not set");
+            log.debug("The Launch date is not set");
             Assert.fail("The Launch date is not set");
 
         }
@@ -3672,7 +3691,7 @@ April2018
             CVOS_StockMerchandiseActions.CVOSSupplyChainlogout();
         } catch (Exception e) {
             // TODO Auto-generated catch block
-            System.out.println("The TradingAdmin is not able to login");
+            log.debug("The TradingAdmin is not able to login");
             Assert.fail("The TradingAdmin is not able to login");
 
         }
@@ -3687,7 +3706,7 @@ April2018
             CVOS_LandingPageActions.CVOSTradingAdminLogin(Username1, Password2);
         } catch (Exception e) {
             // TODO Auto-generated catch block
-            System.out.println("The TradingAdmin is not able to login");
+            log.debug("The TradingAdmin is not able to login");
             Assert.fail("The TradingAdmin is not able to login");
 
         }
@@ -3698,7 +3717,7 @@ April2018
             CVOS_TradingAdminloggedIn.CVOSTradingStockpot();
         } catch (Exception e) {
             // TODO Auto-generated catch block
-            System.out.println("Unable to click stockpot login");
+            log.debug("Unable to click stockpot login");
             Assert.fail("Unable to click stockpot login");
 
         }
@@ -3714,7 +3733,7 @@ April2018
             CVOSstockpotPageActions.CVOSTradingAdminAct(SKUID);
         } catch (Exception e) {
             // TODO Auto-generated catch block
-            System.out.println("Unable to Search the SKU ID");
+            log.debug("Unable to Search the SKU ID");
             Assert.fail("Unable to Search the SKU ID");
 
         }
@@ -3731,7 +3750,7 @@ April2018
             CVOS_StockAllocationActions.CVOSSupplyTradeAllocate(Search_by_model);
         } catch (Exception e) {
             // TODO Auto-generated catch block
-            System.out.println("Unable to allocate stock");
+            log.debug("Unable to allocate stock");
             Assert.fail("Unable to allocate stock");
 
         }
@@ -3748,7 +3767,7 @@ April2018
             CVOSstockpotPageActions.CVOSTradingAdminPreOrderVerf(SKUID);
         } catch (Exception e) {
             // TODO Auto-generated catch block
-            System.out.println("Unable to allocate stock");
+            log.debug("Unable to allocate stock");
             Assert.fail("Unable to allocate stock");
 
         }
@@ -3770,7 +3789,7 @@ April2018
             CVOS_StockMerchandiseActions.CVOSSupplyChainStockMerchDD(Search_by_model);
         } catch (Exception e) {
             // TODO Auto-generated catch block
-            System.out.println("Unable to set launch date for delayed delivery stock");
+            log.debug("Unable to set launch date for delayed delivery stock");
             Assert.fail("Unable to set launch date for delayed delivery stock");
 
         }
@@ -3795,10 +3814,11 @@ April2018
             String EnvPropFilePath = relativePath + "\\Configurations\\Properties\\AppConfig.properties";
             String Newurl = Filereadingutility.getPropertyValue(EnvPropFilePath, "OldMBBURL");
             driver.navigate().to(Newurl);
-            System.out.println("Launched URL: " + Newurl);
+            Thread.sleep(5000);
+            log.debug("Launched URL: " + Newurl);
         } catch (Exception e) {
             // TODO Auto-generated catch block
-            System.out.println("Unable to Launch MBB Basecomms url");
+            log.debug("Unable to Launch MBB Basecomms url");
             Assert.fail("Unable to Launch MBB Basecomms url");
         }
     }
@@ -3813,7 +3833,7 @@ April2018
             driver.navigate().to(Newurl);
         } catch (Exception e) {
             // TODO Auto-generated catch block
-            System.out.println("Unable to Launch Ipad Basecomms url");
+            log.debug("Unable to Launch Ipad Basecomms url");
             Assert.fail("Unable to Launch Ipad Basecomms url");
         }
     }
@@ -3828,7 +3848,7 @@ April2018
             driver.navigate().to(Newurl);
         } catch (Exception e) {
             // TODO Auto-generated catch block
-            System.out.println("Unable to Launch Tablet Basecomms url");
+            log.debug("Unable to Launch Tablet Basecomms url");
             Assert.fail("Unable to Launch Tablet Basecomms url");
         }
     }
@@ -3840,7 +3860,7 @@ April2018
             PageFactory.initElements(driver, BaseCommPage.class);
             BaseCommPageActions.SelectBaseCommTariff("Random");
         } catch (Exception e) {
-            System.out.println("Unable to Select MBB Tariff");
+            log.debug("Unable to Select MBB Tariff");
             Assert.fail("Unable to Select MBB Tariff");
         }
     }
@@ -3853,7 +3873,7 @@ April2018
             PageFactory.initElements(driver, PAYMandPAYGTariffAndExtrasPage.class);
             BaseCommPageActions.verifyTariffTypeMBB(arg1, "Basecomm");
         } catch (Exception e) {
-            System.out.println("Unable to Select MBB Tariff");
+            log.debug("Unable to Select MBB Tariff");
             Assert.fail("Unable to Select MBB Tariff");
         }
     }
@@ -3892,18 +3912,18 @@ April2018
         }
     }
 
-    /*
-     * @Then("^Verify only tablet specific devices are displayed under the Other tablets section$"
-     * ) public void Veri() throws Throwable {
-     * driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS); try {
-     * PageFactory.initElements(driver, BaseCommPage.class);
-     * BaseCommPageActions.checkIfTabletDevicesArePresent(); //Archana to update
-     * this code } catch (Exception e) { e.printStackTrace(); Assert.
-     * fail("Unable to verify if only iPad specific devices are displayed under the iPad section"
-     * );
-     *
-     * } }
-     */
+	/*
+	 * @Then("^Verify only tablet specific devices are displayed under the Other tablets section$"
+	 * ) public void Veri() throws Throwable {
+	 * driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS); try {
+	 * PageFactory.initElements(driver, BaseCommPage.class);
+	 * BaseCommPageActions.checkIfTabletDevicesArePresent(); //Archana to update
+	 * this code } catch (Exception e) { e.printStackTrace(); Assert.
+	 * fail("Unable to verify if only iPad specific devices are displayed under the iPad section"
+	 * );
+	 *
+	 * } }
+	 */
 
     @Given("^verify that I get redirected to ([^\"]*)$")
     public void VerifyOldBaseCommsURL_Redirection(String NewURL) {
@@ -4018,11 +4038,11 @@ April2018
             PageFactory.initElements(driver, BaseCommPage.class);
             PageFactory.initElements(driver, PAYMandPAYGTariffAndExtrasPage.class);
             BaseCommPageActions.BuynowwithDevice(device_name);
-            System.out.println("Buynow function completed");
+            log.debug("Buynow function completed");
             BaseCommPageActions.VerifyPage();
-            System.out.println("Verify page action completed");
+            log.debug("Verify page action completed");
             BaseCommPageActions.verifyTariffType("Basecomm");
-            System.out.println("Verify Tariff type action completed");
+            log.debug("Verify Tariff type action completed");
         } catch (Exception e) {
             e.printStackTrace();
             Assert.fail("Unable to select device and verify tariff and extras page");
@@ -4038,7 +4058,7 @@ April2018
             PageFactory.initElements(driver, BaseCommPage.class);
             PageFactory.initElements(driver, PAYMandPAYGTariffAndExtrasPage.class);
             BaseCommPageActions.BuynowwithDevice(device_name);
-            System.out.println("Buynow function completed");
+            log.debug("Buynow function completed");
         } catch (Exception e) {
             e.printStackTrace();
             Assert.fail("Unable to select device and verify tariff and extras page");
@@ -4068,7 +4088,7 @@ April2018
             PAYMSimOPageActions.SelectTariffPhonesTab(contractlength);
         } catch (Exception e) {
             e.printStackTrace();
-            System.out.println("Unable to choose contract length");
+            log.debug("Unable to choose contract length");
             Assert.fail("Unable to choose contract length");
         }
     }
@@ -4082,7 +4102,7 @@ April2018
             PAYMSimOPageActions.SelectTariffMBBTab(contractlength);
         } catch (Exception e) {
             e.printStackTrace();
-            System.out.println("Unable to choose contract length");
+            log.debug("Unable to choose contract length");
             Assert.fail("Unable to choose contract length");
         }
     }
@@ -4260,16 +4280,16 @@ April2018
     }
 
     // Then Verify the price gets updated based on the new colour and capacity
-    /*
-     * @And("^Verify the price gets updated based on the new colour and capacity$" )
-     * public void verifyPriceDisplaybased_on_Colour_and_capacity() {
-     * driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS); try {
-     * PageFactory.initElements(driver, BaseCommPage.class);
-     * BaseCommPageActions.VerifyPriceChangeuponCapacity();
-     *
-     * } catch (Exception e) { e.printStackTrace();
-     * Assert.fail("Unable to verify price updates"); } }
-     */
+	/*
+	 * @And("^Verify the price gets updated based on the new colour and capacity$" )
+	 * public void verifyPriceDisplaybased_on_Colour_and_capacity() {
+	 * driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS); try {
+	 * PageFactory.initElements(driver, BaseCommPage.class);
+	 * BaseCommPageActions.VerifyPriceChangeuponCapacity();
+	 *
+	 * } catch (Exception e) { e.printStackTrace();
+	 * Assert.fail("Unable to verify price updates"); } }
+	 */
 
     @And("^Verify the price gets updated based on ([^\"]*), ([^\"]*) for ([^\"]*)$")
     public void verifyPriceDisplaybased_on_Colour_and_capacity(String Capacity1, String Capacity2, String device) {
@@ -4291,12 +4311,12 @@ April2018
         try {
             log.debug("Running Test Step: @And(Verify the current sort order details)");
 
-            /*
-             * if (driver.findElement(By.xpath("//*[@class='page-all']")).isEnabled ()) {
-             * driver.findElement(By.xpath("//*[@class='page-all']")).click(); } else {
-             *
-             * PhonesListingPageAction.clickOnViewAllProductsOnOnePage(); }
-             */
+			/*
+			 * if (driver.findElement(By.xpath("//*[@class='page-all']")).isEnabled ()) {
+			 * driver.findElement(By.xpath("//*[@class='page-all']")).click(); } else {
+			 *
+			 * PhonesListingPageAction.clickOnViewAllProductsOnOnePage(); }
+			 */
 
             if (SortOption.equals("BrandAToZ") || SortOption.equals("BrandZToA")) {
                 originalList = PhonesListingPageAction.getCurrentSortOrderUsingDeviceName();
@@ -4309,7 +4329,7 @@ April2018
 
             LinkedList<String> TempList1 = originalList;
             LinkedList<String> TempList2 = null;
-            System.out.println("-Original List:-" + TempList1);
+            log.debug("-Original List:-" + TempList1);
 
             if (SortOption.equals("BrandAToZ")) {
                 TempList2 = PhonesListingPageAction.reArrangeListInAcendingBeforeApplyingSort(TempList1);
@@ -4325,10 +4345,10 @@ April2018
             }
 
             expectedListBeforeSort = TempList2;
-            System.out.println("Expected Listed Before Sort: ");
-            System.out.println(TempList2);
+            log.debug("Expected Listed Before Sort: ");
+            log.debug(TempList2);
 
-            System.out.println("Pass: Successfully read the phone details from the container");
+            log.debug("Pass: Successfully read the phone details from the container");
             log.debug("Pass: Successfully read the phone details from the container");
 
         } catch (Exception e) {
@@ -4354,11 +4374,11 @@ April2018
                 ListAfterSort = PhonesListingPageAction.getCurrentSortOrderUsingDevicePrice();
             }
 
-            System.out.println("---------List sent to verification method (BeforeSort)---------------");
-            System.out.println(ListBeforeSort);
+            log.debug("---------List sent to verification method (BeforeSort)---------------");
+            log.debug(ListBeforeSort);
 
-            System.out.println("---------List sent to verification method (AfterSort)---------------");
-            System.out.println(ListAfterSort);
+            log.debug("---------List sent to verification method (AfterSort)---------------");
+            log.debug(ListAfterSort);
 
             PhonesListingPageAction.verifyDeviceSortedOnBrand(ListBeforeSort, ListAfterSort);
 
@@ -4384,12 +4404,12 @@ April2018
             if (SortOption.equals("MonthlyLowToHigh") || SortOption.equals("MonthlyHighToLow")) {
                 TempList2 = PhonesListingPageAction.getCurrentSortOrderUsingDevicePrice();
             }
-            System.out.println("-Original List:--------" + TempList);
-            System.out.println("-List After Sort Reset------" + TempList2);
+            log.debug("-Original List:--------" + TempList);
+            log.debug("-List After Sort Reset------" + TempList2);
 
             PhonesListingPageAction.verifyOriginalSortOrderRetainedAfterSortReset(TempList, TempList2);
 
-            System.out.println("Pass: Successfully Verified that original sort order is retained");
+            log.debug("Pass: Successfully Verified that original sort order is retained");
             log.debug("Pass: Successfully Verified that original sort order is retained");
 
         } catch (Exception e) {
@@ -4506,6 +4526,7 @@ April2018
             PageFactory.initElements(driver, iPadPage.class);
             iPadPageAction.validateiPadElements(devicename);
             Autoredirection.redirect();
+            Thread.sleep(10000);
         } catch (Exception e) {
             e.printStackTrace();
             Assert.fail("Unable to navigate to iPad landing page");
@@ -4568,7 +4589,7 @@ April2018
 
         } catch (Exception e) {
             e.printStackTrace();
-            System.out.println(
+            log.debug(
                     "Failed step :check if the selected non connected device has more than 1 variant for colour and single variant for capacity");
             Assert.fail(
                     "Failed step :check if the selected non connected device has more than 1 variant for colour and single variant for capacity");
@@ -4585,7 +4606,7 @@ April2018
 
         } catch (Exception e) {
             e.printStackTrace();
-            System.out.println("The selected device does not have more than 1 variant for both colour and capacity");
+            log.debug("The selected device does not have more than 1 variant for both colour and capacity");
             Assert.fail("The selected device does not have more than 1 variant for both colour and capacity");
         }
     }
@@ -4600,7 +4621,7 @@ April2018
 
         } catch (Exception e) {
             e.printStackTrace();
-            System.out.println(
+            log.debug(
                     "Failed : check if the selected device has only 1 variant for both colour and capacity with dropdown");
             Assert.fail(
                     "Failed : check if the selected device has only 1 variant for both colour and capacity with dropdown");
@@ -4616,7 +4637,7 @@ April2018
             BaseCommPageActions.selectNewDevice(color, capacity, device);
         } catch (Exception e) {
             e.printStackTrace();
-            System.out.println("Failed : Select <color>, <capacity> of the device <device_name>");
+            log.debug("Failed : Select <color>, <capacity> of the device <device_name>");
             Assert.fail("Failed : Select <color>, <capacity> of the device <device_name>");
         }
     }
@@ -4626,14 +4647,14 @@ April2018
         try {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, PAYMandPAYGTariffAndExtrasPage.class);
-            System.out.println("Entering Choose Given accessory method");
+            log.debug("Entering Choose Given accessory method");
             PAYMandPAYGTariffAndExtrasPageActions.addGivenAccessory();
-            System.out.println("Completed Choose some accessory method");
+            log.debug("Completed Choose some accessory method");
             Thread.sleep(2000);
         } catch (Exception e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
-            System.out.println("Unable to choose some Accesssory");
+            log.debug("Unable to choose some Accesssory");
             Assert.fail("Unable to choose some Accesssory");
 
         }
@@ -4650,7 +4671,7 @@ April2018
         } catch (Exception e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
-            System.out.println("Unable to Land on the basket page and choose home delivery option");
+            log.debug("Unable to Land on the basket page and choose home delivery option");
             Assert.fail("Unable to Land on the basket page and choose home delivery option");
         }
     }
@@ -4666,7 +4687,7 @@ April2018
         } catch (Exception e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
-            System.out.println("Unable to Land on the basket page and choose home delivery option");
+            log.debug("Unable to Land on the basket page and choose home delivery option");
             Assert.fail("Unable to Land on the basket page and choose home delivery option");
         }
     }
@@ -4719,7 +4740,7 @@ April2018
             driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
             PageFactory.initElements(driver, UpgradeCustomerPage.class);
             UpgradeCustomerPageActions.verifyPromotionalRibbonDisplayedTEpage(Tariff);
-            System.out.println("Completed verify ");
+            log.debug("Completed verify ");
         } catch (Exception e) {
             e.printStackTrace();
             Assert.fail(
@@ -4933,7 +4954,7 @@ April2018
         }
     }
 
-    /* Order confirmation page validations - September release */
+	/* Order confirmation page validations - September release */
 
     @Then("^Verify contents of order confirmation page for Accessories containing In Stock$")
     public void verify_contents_of_order_confirmation_page_for_Accessories_containing_In_Stock() {
@@ -4953,11 +4974,11 @@ April2018
                     "Assertion Failed: Expected Message: " + ExpectedTimeSlotMessage + " is not present in the page"
             );
 
-            System.out.println("Assertion Passed: Expected Mesasge: " + ExpectedTimeSlotMessage
+            log.debug("Assertion Passed: Expected Mesasge: " + ExpectedTimeSlotMessage
                     + " is present in the Order Confirmation page");
         } catch (AssertionError e) {
 
-            System.out.println(
+            log.debug(
                     "Assertion Failed: Expected Message: " + ExpectedTimeSlotMessage + " is not present in the page");
 
         }
@@ -4984,21 +5005,21 @@ April2018
                             + " is not present in the page"
             );
 
-            System.out.println("Assertion Passed: Expected Mesasge: " + ExpectedDelayedDeliveryMessage
+            log.debug("Assertion Passed: Expected Mesasge: " + ExpectedDelayedDeliveryMessage
                     + " is present in the Order Confirmation page");
 
             Assert.assertTrue(driver.getPageSource().contains(ExpectedPacCodeInfoMessage),
                     "Assertion Failed: Expected Message: " + ExpectedPacCodeInfoMessage + " is not present in the page"
             );
 
-            System.out.println("Assertion Passed: Expected Mesasge: " + ExpectedPacCodeInfoMessage
+            log.debug("Assertion Passed: Expected Mesasge: " + ExpectedPacCodeInfoMessage
                     + " is present in the Order Confirmation page");
 
         } catch (AssertionError e) {
 
-            System.out.println("Assertion Failed: Expected Message: " + ExpectedDelayedDeliveryMessage
+            log.debug("Assertion Failed: Expected Message: " + ExpectedDelayedDeliveryMessage
                     + " is not present in the page");
-            System.out.println("Assertion Failed: Expected Message: " + ExpectedPacCodeInfoMessage
+            log.debug("Assertion Failed: Expected Message: " + ExpectedPacCodeInfoMessage
                     + " is not present in the page");
         }
 
@@ -5053,13 +5074,29 @@ April2018
         }
     }
 
+    @Then("^I select check box to bring the trade in device and Continue to delivery page$")
+    public void select_CheckBox_BringTradeInDevice() {
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, DeliveryPage.class);
+            DeliveryPageActions.select_BringTradeInDevice_CheckBox();
+            Thread.sleep(2000);
+            DeliveryPageActions.ClickContinue();
+            log.debug("Clicked on continue button");
+        } catch (Exception e) {
+            e.printStackTrace();
+            Assert.fail("Unable to perform action in OTAC Page");
+        }
+
+    }
+
     @Then("^Click on the 'Continue button' in delivery page$")
     public void click_on_the_Continue_button_in_delivery_page() {
         try {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, DeliveryPage.class);
             DeliveryPageActions.ClickContinue();
-            System.out.println("Clicked on continue button");
+            log.debug("Clicked on continue button");
         } catch (Exception e) {
             e.printStackTrace();
             Assert.fail("Unable to perform action in OTAC Page");
@@ -5079,7 +5116,7 @@ April2018
             Thread.sleep(2000);
         } catch (Exception e) {
             // TODO Auto-generated catch block
-            System.out.println("Unable to see insurance in basket page");
+            log.debug("Unable to see insurance in basket page");
             Assert.fail("Unable to see insurance in basket page");
 
         }
@@ -5091,13 +5128,13 @@ April2018
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, BasketPage.class);
             Thread.sleep(3000);
-            System.out.println("Entering insurance in Delivery page");
+            log.debug("Entering insurance in Delivery page");
 
             BasketPageActions.InsuranceSectionDeliveryPage();
             Thread.sleep(2000);
         } catch (Exception e) {
             // TODO Auto-generated catch block
-            System.out.println("Unable to see insurance in Delivery page");
+            log.debug("Unable to see insurance in Delivery page");
             Assert.fail("Unable to see insurance in Delivery page");
 
         }
@@ -5109,12 +5146,12 @@ April2018
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, PaymentPage.class);
             Thread.sleep(3000);
-            System.out.println("Entering insurance in payment page");
+            log.debug("Entering insurance in payment page");
             PaymentPageActions.InsuranceSectionPaymentPage();
             Thread.sleep(2000);
         } catch (Exception e) {
             // TODO Auto-generated catch block
-            System.out.println("Unable to see insurance in payment page");
+            log.debug("Unable to see insurance in payment page");
             Assert.fail("Unable to see insurance in payment page");
 
         }
@@ -5126,12 +5163,12 @@ April2018
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, AgreementPage.class);
             Thread.sleep(3000);
-            System.out.println("Entering insurance in Agreement page");
+            log.debug("Entering insurance in Agreement page");
             AgreementPageActions.InsuranceSectionAgreementPage();
             Thread.sleep(2000);
         } catch (Exception e) {
             // TODO Auto-generated catch block
-            System.out.println("Unable to see insurance in Agreement page");
+            log.debug("Unable to see insurance in Agreement page");
             Assert.fail("Unable to see insurance in Agreement page");
         }
     }
@@ -5142,12 +5179,12 @@ April2018
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, ReviewPage.class);
             Thread.sleep(3000);
-            System.out.println("Entering insurance in review page");
+            log.debug("Entering insurance in review page");
             ReviewPageActions.InsuranceSectionReviewPage();
             Thread.sleep(2000);
         } catch (Exception e) {
             // TODO Auto-generated catch block
-            System.out.println("Unable to see insurance in review page");
+            log.debug("Unable to see insurance in review page");
             Assert.fail("Unable to see insurance in review page");
 
         }
@@ -5163,12 +5200,12 @@ April2018
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, OrderConfirmationPage.class);
             Thread.sleep(3000);
-            System.out.println("Going to verify if download pdf can be done");
+            log.debug("Going to verify if download pdf can be done");
             OrderConfirmationPageActions.downloadPDFcopy();
             Thread.sleep(2000);
         } catch (Exception e) {
             // TODO Auto-generated catch block
-            System.out.println("Unable to download pdf from order confirmation page");
+            log.debug("Unable to download pdf from order confirmation page");
             Assert.fail("Unable to download pdf from order confirmation page");
 
         }
@@ -5185,7 +5222,7 @@ April2018
             Thread.sleep(2000);
         } catch (Exception e) {
             // TODO Auto-generated catch block
-            System.out.println("Unable to choose insurance");
+            log.debug("Unable to choose insurance");
             Assert.fail("Unable to choose insurance");
 
         }
@@ -5224,7 +5261,7 @@ April2018
             Thread.sleep(3000);
         } catch (Exception e) {
             // TODO Auto-generated catch block
-            System.out.println("unable to deselect if any insurance is autoselected");
+            log.debug("unable to deselect if any insurance is autoselected");
             Assert.fail("unable to deselect if any insurance is autoselected");
         }
     }
@@ -5238,7 +5275,7 @@ April2018
             Thread.sleep(3000);
         } catch (Exception e) {
             // TODO Auto-generated catch block
-            System.out.println("Unable to verify that the cheapest insurance is shown to crossell in the basket page");
+            log.debug("Unable to verify that the cheapest insurance is shown to crossell in the basket page");
             Assert.fail("Unable to verify that the cheapest insurance is shown to crossell in the basket page");
         }
     }
@@ -5252,7 +5289,7 @@ April2018
             Thread.sleep(3000);
         } catch (Exception e) {
             // TODO Auto-generated catch block
-            System.out.println(
+            log.debug(
                     "Unable to verify if the 'Add Now' button is displayed for the cheapest insurance shown in basket page");
             Assert.fail(
                     "Unable to verify if the 'Add Now' button is displayed for the cheapest insurance shown in basket page");
@@ -5268,7 +5305,7 @@ April2018
             Thread.sleep(3000);
         } catch (Exception e) {
             // TODO Auto-generated catch block
-            System.out.println("Unable to click on the 'Add now' button and verify Insurance gets added successfully");
+            log.debug("Unable to click on the 'Add now' button and verify Insurance gets added successfully");
             Assert.fail("Unable to click on the 'Add now' button and verify Insurance gets added successfully");
         }
     }
@@ -5294,7 +5331,7 @@ April2018
             Thread.sleep(3000);
         } catch (Exception e) {
             // TODO Auto-generated catch block
-            System.out.println("Unable to click on the 'Add now' button and verify Insurance gets added successfully");
+            log.debug("Unable to click on the 'Add now' button and verify Insurance gets added successfully");
             Assert.fail("Unable to click on the 'Add now' button and verify Insurance gets added successfully");
         }
     }
@@ -5409,7 +5446,7 @@ April2018
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, UpgradeCustomerPage.class);
             Assert.assertTrue(UpgradeCustomerPageActions.VerifyAccurateQuotedisplay());
-            System.out.println("Assertions pass for verify quote");
+            log.debug("Assertions pass for verify quote");
         } catch (Exception e) {
             e.printStackTrace();
             Assert.fail("Unable to verify get accurate quote");
@@ -5469,7 +5506,7 @@ April2018
             Autoredirection.redirect();
             Thread.sleep(10000);
         } catch (Exception e) {
-            System.out.println("unable to do mousehover to sims");
+            log.debug("unable to do mousehover to sims");
             Assert.fail("unable to do mousehover to sims");
         }
     }
@@ -5482,7 +5519,7 @@ April2018
             PageFactory.initElements(driver, FreeSimPage.class);
             FreeSimPageActions.iPadsandTabletstab();
         } catch (Exception e) {
-            System.out.println("unable to do select ipads and tablets tab");
+            log.debug("unable to do select ipads and tablets tab");
             Assert.fail("unable to do select ipads and tablets tab");
         }
     }
@@ -5496,7 +5533,7 @@ April2018
             FreeSimPageActions.iPadsim();
             Autoredirection.redirect();
         } catch (Exception e) {
-            System.out.println("unable to do select steady surfer ipad sim");
+            log.debug("unable to do select steady surfer ipad sim");
             Assert.fail("unable to do select steady surfer ipad sim");
         }
     }
@@ -5507,7 +5544,7 @@ April2018
             driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
             driver.get("https://www.ref.o2.co.uk/shop/sim-cards/pay-as-you-go/");
         } catch (Exception e) {
-            System.out.println("unable to do land on freesim page");
+            log.debug("unable to do land on freesim page");
             Assert.fail("unable to do land on freesim page");
         }
     }
@@ -5522,7 +5559,7 @@ April2018
             OrderConfirmationPageActions.Orderid();
 
         } catch (Exception e) {
-            System.out.println("Order number not generated");
+            log.debug("Order number not generated");
             Assert.fail("Order number not generated");
         }
     }
@@ -5732,11 +5769,11 @@ April2018
         MouseHoverAction.PayGSimoNavigation();
         Autoredirection.redirect();
         Thread.sleep(10000);
-        /*
-         * } catch (Exception e) { // TODO Auto-generated catch block
-         * System.out.println("Unable to do mousehover to PAYG SIMO page");
-         * Assert.fail("Unable to do mousehover to PAYG SIMO page"); }
-         */
+		/*
+		 * } catch (Exception e) { // TODO Auto-generated catch block
+		 * log.debug("Unable to do mousehover to PAYG SIMO page");
+		 * Assert.fail("Unable to do mousehover to PAYG SIMO page"); }
+		 */
 
     }
 
@@ -5752,7 +5789,7 @@ April2018
 
         } catch (Exception e) {
             // TODO Auto-generated catch block
-            System.out.println("Unable to input details in delivery page");
+            log.debug("Unable to input details in delivery page");
             Assert.fail("Unable to input details in delivery page");
 
         }
@@ -5769,15 +5806,15 @@ April2018
         OrderConfirmationPageActions.FreeSimMessage();
         Thread.sleep(2000);
         // }
-        /*
-         * catch (Exception e) { // TODO Auto-generated catch block System.out.
-         * println("Error in order confirmation page , Please review the screenshots for failure"
-         * ); Assert.
-         * fail("Error in order confirmation page , Please review the screenshots for failure"
-         * );
-         *
-         * }
-         */
+		/*
+		 * catch (Exception e) { // TODO Auto-generated catch block System.out.
+		 * println("Error in order confirmation page , Please review the screenshots for failure"
+		 * ); Assert.
+		 * fail("Error in order confirmation page , Please review the screenshots for failure"
+		 * );
+		 *
+		 * }
+		 */
     }
 
     //////////////////////////////////// CCA
@@ -5830,7 +5867,6 @@ April2018
 
         }
     }
-
     @And("^verify if the tradein offer is displayed in My Package section$")
     public void verifyTradeInOfferInMyPackage() {
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
@@ -6008,14 +6044,14 @@ April2018
 
             expectedTariffListBeforeSort = TempList2;
 
-            System.out.println("--------Orginal Tariff List-----------: " + originalTariffList);
-            System.out.println("--------Expected Tariff List After Applying Sort (without Data Filter) -----------: "
+            log.debug("--------Orginal Tariff List-----------: " + originalTariffList);
+            log.debug("--------Expected Tariff List After Applying Sort (without Data Filter) -----------: "
                     + expectedTariffListBeforeSort);
 
         } catch (Exception e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
-            System.out.println("Sort filter validation failed");
+            log.debug("Sort filter validation failed");
             Assert.fail("Sort filter validation failed");
 
         }
@@ -6030,7 +6066,7 @@ April2018
 
         } catch (Exception e) {
             // TODO Auto-generated catch block
-            System.out.println("Unable to verify tradein message");
+            log.debug("Unable to verify tradein message");
             Assert.fail("Unable to verify tradein message");
         }
     }
@@ -6044,7 +6080,7 @@ April2018
 
         } catch (Exception e) {
             // TODO Auto-generated catch block
-            System.out.println("Unable to Answer tradein questions");
+            log.debug("Unable to Answer tradein questions");
             Assert.fail("Unable to Answer tradein questions");
         }
     }
@@ -6059,7 +6095,7 @@ April2018
 
         } catch (Exception e) {
             // TODO Auto-generated catch block
-            System.out.println("Unable click on 'upgrade now' button");
+            log.debug("Unable click on 'upgrade now' button");
             Assert.fail("Unable click on 'upgrade now' button");
         }
     }
@@ -6073,7 +6109,7 @@ April2018
 
         } catch (Exception e) {
             // TODO Auto-generated catch block
-            System.out.println("Unable to Verify 'Upgrade on us' displayed in basket page");
+            log.debug("Unable to Verify 'Upgrade on us' displayed in basket page");
             Assert.fail("Unable to Verify 'Upgrade on us' displayed in basket page");
         }
     }
@@ -6087,7 +6123,7 @@ April2018
 
         } catch (Exception e) {
             // TODO Auto-generated catch block
-            System.out.println("\"Unable to Verify 'Upgrade on us' displayed in delivery page");
+            log.debug("\"Unable to Verify 'Upgrade on us' displayed in delivery page");
             Assert.fail("Unable to verify 'Upgrade on us' displayed in delivery page");
         }
     }
@@ -6101,7 +6137,7 @@ April2018
 
         } catch (Exception e) {
             // TODO Auto-generated catch block
-            System.out.println("Unable toVerify 'Upgrade on us' displayed in Payment page");
+            log.debug("Unable toVerify 'Upgrade on us' displayed in Payment page");
             Assert.fail("Unable to Verify 'Upgrade on us' displayed in Payment page");
         }
     }
@@ -6115,7 +6151,7 @@ April2018
 
         } catch (Exception e) {
             // TODO Auto-generated catch block
-            System.out.println("Unable to Verify 'Upgrade on us' displayed in review page");
+            log.debug("Unable to Verify 'Upgrade on us' displayed in review page");
             Assert.fail("Unable to Verify 'Upgrade on us' displayed in review page");
         }
     }
@@ -6133,7 +6169,7 @@ April2018
         } catch (Exception e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
-            System.out.println("Unable to click on respective data filter");
+            log.debug("Unable to click on respective data filter");
             Assert.fail("Unable to click on respective data filter");
         }
     }
@@ -6152,7 +6188,7 @@ April2018
         } catch (Exception e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
-            System.out.println("Unable to click on respective data filter");
+            log.debug("Unable to click on respective data filter");
             Assert.fail("Unable to click on respective data filter");
         }
     }
@@ -6171,7 +6207,7 @@ April2018
         } catch (Exception e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
-            System.out.println("Unable to click on respective data filter");
+            log.debug("Unable to click on respective data filter");
             Assert.fail("Unable to click on respective data filter");
         }
     }
@@ -6223,7 +6259,7 @@ April2018
 
         } catch (Exception e) {
             // TODO Auto-generated catch block
-            System.out.println("Unable to click on respective data filter");
+            log.debug("Unable to click on respective data filter");
             Assert.fail("Unable to click on respective data filter");
         }
     }
@@ -6264,7 +6300,7 @@ April2018
 
         } catch (Exception e) {
             // TODO Auto-generated catch block
-            System.out.println("Unable to click on respective data filter");
+            log.debug("Unable to click on respective data filter");
             Assert.fail("Unable to click on respective data filter");
         }
     }
@@ -6306,7 +6342,7 @@ April2018
 
         } catch (Exception e) {
             // TODO Auto-generated catch block
-            System.out.println("Unable to click on respective data filter");
+            log.debug("Unable to click on respective data filter");
             Assert.fail("Unable to click on respective data filter");
         }
     }
@@ -6372,17 +6408,17 @@ April2018
                 ListAfterSort = PAYMandPAYGTariffAndExtrasPageActions.getCurrentSortOrderUsingUpfrontCost();
             }
 
-            System.out.println("---------List sent to verification method (BeforeSort)---------------");
-            System.out.println(ListBeforeSort);
+            log.debug("---------List sent to verification method (BeforeSort)---------------");
+            log.debug(ListBeforeSort);
 
-            System.out.println("---------List sent to verification method (AfterSort)---------------");
-            System.out.println(ListAfterSort);
+            log.debug("---------List sent to verification method (AfterSort)---------------");
+            log.debug(ListAfterSort);
 
             PAYMandPAYGTariffAndExtrasPageActions.verifyTariffSortedAsPerSortOption(ListBeforeSort, ListAfterSort);
 
-            System.out.println(
+            log.debug(
                     "Assertion Success: Tariffs have been sorted successfully based on Sort Option and Tariff Option");
-            System.out.println(
+            log.debug(
                     "Assertion Success: Tariffs have been sorted successfully based on Sort Option and Tariff Option");
 
         } catch (AssertionError e) {
@@ -6448,17 +6484,17 @@ April2018
 
             }
 
-            System.out.println("---------List sent to verification method (BeforeSort)---------------");
-            System.out.println(ListBeforeSort);
+            log.debug("---------List sent to verification method (BeforeSort)---------------");
+            log.debug(ListBeforeSort);
 
-            System.out.println("---------List sent to verification method (AfterSort)---------------");
-            System.out.println(ListAfterSort);
+            log.debug("---------List sent to verification method (AfterSort)---------------");
+            log.debug(ListAfterSort);
 
             PAYMandPAYGTariffAndExtrasPageActions.verifyTariffSortedAsPerSortOption(ListBeforeSort, ListAfterSort);
 
-            System.out.println(
+            log.debug(
                     "Assertion Success: Tariffs have been sorted successfully based on Sort Option and Tariff Option");
-            System.out.println(
+            log.debug(
                     "Assertion Success: Tariffs have been sorted successfully based on Sort Option and Tariff Option");
 
         } catch (AssertionError e) {
@@ -6493,11 +6529,11 @@ April2018
                 ListAfterSort = PAYMandPAYGTariffAndExtrasPageActions.getCurrentSortOrderUsingUpfrontCost();
             }
 
-            System.out.println("---------List sent to verification method (BeforeSort)---------------");
-            System.out.println(ListBeforeSort);
+            log.debug("---------List sent to verification method (BeforeSort)---------------");
+            log.debug(ListBeforeSort);
 
-            System.out.println("---------List sent to verification method (AfterSort)---------------");
-            System.out.println(ListAfterSort);
+            log.debug("---------List sent to verification method (AfterSort)---------------");
+            log.debug(ListAfterSort);
 
             PAYMandPAYGTariffAndExtrasPageActions.verifyTariffSortedAsPerSortOption(ListBeforeSort, ListAfterSort);
 
@@ -6528,11 +6564,11 @@ April2018
                 ListAfterSort = UpgradeCustomerPageActions.getCurrentSortOrderUsingMonthlyCost_UpgradeSIMO_MBBTablet();
 
             }
-            System.out.println("---------List sent to verification method (BeforeSort)---------------");
-            System.out.println(ListBeforeSort);
+            log.debug("---------List sent to verification method (BeforeSort)---------------");
+            log.debug(ListBeforeSort);
 
-            System.out.println("---------List sent to verification method (AfterSort)---------------");
-            System.out.println(ListAfterSort);
+            log.debug("---------List sent to verification method (AfterSort)---------------");
+            log.debug(ListAfterSort);
 
             PAYMandPAYGTariffAndExtrasPageActions.verifyTariffSortedAsPerSortOption(ListBeforeSort, ListAfterSort);
 
@@ -6563,11 +6599,11 @@ April2018
                 ListAfterSort = UpgradeCustomerPageActions.getCurrentSortOrderUsingMonthlyCost_UpgradeSIMO_Phone();
 
             }
-            System.out.println("---------List sent to verification method (BeforeSort)---------------");
-            System.out.println(ListBeforeSort);
+            log.debug("---------List sent to verification method (BeforeSort)---------------");
+            log.debug(ListBeforeSort);
 
-            System.out.println("---------List sent to verification method (AfterSort)---------------");
-            System.out.println(ListAfterSort);
+            log.debug("---------List sent to verification method (AfterSort)---------------");
+            log.debug(ListAfterSort);
 
             PAYMandPAYGTariffAndExtrasPageActions.verifyTariffSortedAsPerSortOption(ListBeforeSort, ListAfterSort);
 
@@ -6588,7 +6624,7 @@ April2018
 
         } catch (Exception e) {
             e.printStackTrace();
-            System.out.println("\"Not able to select Tablets tab");
+            log.debug("\"Not able to select Tablets tab");
             Assert.fail("Not able to select Tablets tab");
         }
     }
@@ -6602,7 +6638,7 @@ April2018
 
         } catch (Exception e) {
             e.printStackTrace();
-            System.out.println("not able select sort option from the dropdown" + tariffSortDropDown);
+            log.debug("not able select sort option from the dropdown" + tariffSortDropDown);
             Assert.fail("not able to select sort option from the dropdown" + tariffSortDropDown);
         }
     }
@@ -6617,7 +6653,7 @@ April2018
 
         } catch (Exception e) {
             e.printStackTrace();
-            System.out.println("\"Not able to select view all tariffs link");
+            log.debug("\"Not able to select view all tariffs link");
             Assert.fail("Not able to select view all tariffs link");
         }
     }
@@ -6634,7 +6670,7 @@ April2018
 
         } catch (Exception e) {
             // TODO Auto-generated catch block
-            System.out.println("Unable to View Data Filter option");
+            log.debug("Unable to View Data Filter option");
             Assert.fail("Unable to View Data Filter option");
         }
 
@@ -6646,12 +6682,12 @@ April2018
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, PAYMandPAYGTariffAndExtrasPage.class);
             String Filteroption = FilterDataOption;
-            System.out.println(Filteroption);
+            log.debug(Filteroption);
             PAYMandPAYGTariffAndExtrasPageActions.SelectedState(Filteroption);
 
         } catch (Exception e) {
             e.printStackTrace();
-            System.out.println("Not able to verify if in Selected State");
+            log.debug("Not able to verify if in Selected State");
             Assert.fail("Not able to verify if in Selected State");
         }
     }
@@ -6690,7 +6726,7 @@ April2018
 
             Thread.sleep(2000);
         } catch (Exception e) {
-            System.out.println("unable to do enter the details");
+            log.debug("unable to do enter the details");
             Assert.fail("unable to do enter the details");
         }
     }
@@ -6704,7 +6740,7 @@ April2018
             FreeSimPageActions.AboutYouSection(Firstname, Lastname, Contact_number);
             Thread.sleep(2000);
         } catch (Exception e) {
-            System.out.println("unable to do enter the details in About you section");
+            log.debug("unable to do enter the details in About you section");
             Assert.fail("unable to do enter the details About you section");
         }
     }
@@ -6842,7 +6878,7 @@ April2018
         } catch (Exception e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
-            System.out.println("Unable to input details in payment page");
+            log.debug("Unable to input details in payment page");
             Assert.fail("Unable to input details in payment page");
 
         }
@@ -6877,7 +6913,7 @@ April2018
 
             Autoredirection.redirect();
         } catch (Exception e) {
-            System.out.println("unable to select surfer and sim");
+            log.debug("unable to select surfer and sim");
             Assert.fail("unable to select surfer and sim");
         }
     }
@@ -6893,36 +6929,68 @@ April2018
             for (int i = 1; i < stockSize.size(); i++) {
                 String stockStatus = driver.findElement(By.xpath("//*[@id='prepayDeviceTable']/tbody/tr[" + i + "]/td[4]")).getText();
                 if (stockStatus.contains("In stock")) {
-                    System.out.println("Selecting Device from " + stockStatus);
+                    log.debug("Selecting Device from " + stockStatus);
                     driver.findElement(By.xpath("//*[@id='prepayDeviceTable']/tbody/tr[" + i + "]/td[1]//img")).click();
                     Thread.sleep(5000);
                     String str = driver.findElement(By.xpath("//*[@id='prepayDeviceTable']/tbody/tr[" + i + "]/td[3]/a")).getText();
-                    System.out.println("Device Model :  " + str);
+                    log.debug("Device Model :  " + str);
                     break;
                 }
-                System.out.println("Successfully Selected Device from P&G");
+                log.debug("Successfully Selected Device from P&G");
             }
 
         } catch (Exception e) {
-            System.out.println("Failed to select the device fom P&G ");
+            log.debug("Failed to select the device fom P&G ");
+            Assert.fail("Failed to select the device fom P&G ");
+        }
+    }
+
+    @And("^Select a PAYG device in stock which is less than 50 GBP$")
+    public void Select_a_PAYG_Device_InStock_lessThan50GBP(String device) {
+        try {
+            driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, PayG_DevicesPage.class);
+            PayG_DevicesPage.payGdeviceTab.click();
+            Thread.sleep(1000);
+            PayG_DevicesPage.payG_CustomerCost_SortOption.click();
+            Thread.sleep(1000);
+
+            List<WebElement> stockSize = driver.findElements(By.xpath("//*[@id='prepayDeviceTable']/tbody/tr/td[4]"));
+            for (int i = 1; i < stockSize.size(); i++) {
+                String stockStatus = driver.findElement(By.xpath("//*[@id='prepayDeviceTable']/tbody/tr[" + i + "]/td[4]")).getText();
+                if (stockStatus.contains("In stock")) {
+                    log.debug("Selecting Device from " + stockStatus);
+                    driver.findElement(By.xpath("//*[@id='prepayDeviceTable']/tbody/tr[" + i + "]/td[1]//img")).click();
+                    Thread.sleep(5000);
+                    String str = driver.findElement(By.xpath("//*[@id='prepayDeviceTable']/tbody/tr[" + i + "]/td[3]/a")).getText();
+                    log.debug("Device Model :  " + str);
+                    break;
+                }
+                log.debug("Successfully Selected Device from P&G");
+            }
+
+        } catch (Exception e) {
+            log.debug("Failed to select the device fom P&G ");
             Assert.fail("Failed to select the device fom P&G ");
         }
     }
 
 
-    @And("^Select valid ([^\"]*) from PAYG tariffs tab less than 50 GBP$")
+    @And("^Select valid tariff from PAYG tariffs tab which is less than 50 GBP$")
     public void Select_valid_Tariffs_from_PAYG_tariffs_tab_LessThan50GBP(int device) {
         try {
             driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
             PageFactory.initElements(driver, Agent_DealBuilderPage.class);
             Agent_DealBuilderPage.prepayPlansTab.click();
             Thread.sleep(1000);
-            driver.findElement(By.xpath(".//*[@id='prepayPlanTable']/tbody/tr/td[1]//img")).click();
+            Agent_DealBuilderPage.payG_TariffCost_SortOption.click();
+            Thread.sleep(1000);
+            driver.findElement(By.xpath(".//*[@id='prepayPlanTable']/tbody/tr/td[1]/a/img")).click();
             Thread.sleep(5000);
-            System.out.println("Successfully Selected Tariff from P&G Tariffs");
+            log.debug("Successfully Selected Tariff from P&G Tariffs");
 
         } catch (Exception e) {
-            System.out.println("Failed to Select Tariff from P&G Tariffs ");
+            log.debug("Failed to Select Tariff from P&G Tariffs ");
             Assert.fail("Failed to Select Tariff from P&G Tariffs ");
         }
     }
@@ -6936,10 +7004,10 @@ April2018
             Agent_DealBuilderPage.deviceAdded_DealBuilder.isDisplayed();
             Agent_DealBuilderPage.tariffAdded_DealBuilder.isDisplayed();
             Thread.sleep(1000);
-            System.out.println("Successfylly added Device & Tariff into Deal Builer");
+            log.debug("Successfylly added Device & Tariff into Deal Builer");
 
         } catch (Exception e) {
-            System.out.println("Failed to add Device & Tariff into Deal Builer ");
+            log.debug("Failed to add Device & Tariff into Deal Builer ");
             Assert.fail("Failed to add Device & Tariff into Deal Builer");
         }
     }
@@ -6959,15 +7027,15 @@ April2018
             ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", checkStoreStockForPayG.selectStoreAddress);
             //scrollToAnElement.scrollToElement(checkStoreStockForPayG.selectStoreAddress);
             CommonUtilities.driverWait(driver, 3000);
-            System.out.println("before selectiong the store");
+            log.debug("before selectiong the store");
             checkStoreStockForPayG.selectStoreAddress.click();
-            System.out.println("after selectiong the store");
+            log.debug("after selectiong the store");
             CommonUtilities.driverWait(driver, 3000);
-            System.out.println("before navigation back");
+            log.debug("before navigation back");
             CommonUtilities.switchToWindow(driver);
-            System.out.println("Successfylly selected store");
+            log.debug("Successfylly selected store");
         } catch (Exception e) {
-            System.out.println("Failed to select store" + e.getMessage());
+            log.debug("Failed to select store" + e.getMessage());
             Assert.fail("Failed to select store");
         }
     }
@@ -7000,7 +7068,7 @@ April2018
 
 
         } catch (Exception e) {
-            System.out.println("Failed to select store" + e.getMessage());
+            log.debug("Failed to select store" + e.getMessage());
             Assert.fail("Failed to select store");
         }
     }
@@ -7015,7 +7083,7 @@ April2018
             Agent_DealBuilderPageActions.selectStore();
 
         } catch (Exception e) {
-            System.out.println("unable to select store");
+            log.debug("unable to select store");
             Assert.fail("unable to select store");
         }
     }
@@ -7051,7 +7119,7 @@ April2018
     @Given("^I am an CFA user and Lands on Mobile shop page$")
     public void i_am_an_CFA_user_and_Lands_on_Mobile_shop_page() {
         String title = driver.getTitle();
-        System.out.println(title);
+        log.debug(title);
     }
 
     @And("^navigate to PayG SIMO page in Mobile$")
@@ -7098,7 +7166,7 @@ April2018
     public void verify_user_is_navigated_to_Delivery_details_page() {
         try {
             String title = driver.getTitle();
-            System.out.println(title);
+            log.debug(title);
         } catch (Exception e) {
             Assert.fail("unable to verify delivery details page");
         }
@@ -7137,7 +7205,7 @@ April2018
         } catch (Exception e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
-            System.out.println("Unable to Click on view all tablets link");
+            log.debug("Unable to Click on view all tablets link");
             Assert.fail("Unable to Click on view all tablets link");
         }
     }
@@ -7151,7 +7219,7 @@ April2018
         } catch (Exception e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
-            System.out.println("Unable to Click on view all tablets link");
+            log.debug("Unable to Click on view all tablets link");
             Assert.fail("Unable to Click on view all tablets link");
         }
     }
@@ -7165,7 +7233,7 @@ April2018
         } catch (Exception e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
-            System.out.println("Unable to Click on view all tablets link");
+            log.debug("Unable to Click on view all tablets link");
             Assert.fail("Unable to Click on view all tablets link");
         }
     }
@@ -7179,7 +7247,7 @@ April2018
         } catch (Exception e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
-            System.out.println("Unable to Click on view all tablets link");
+            log.debug("Unable to Click on view all tablets link");
             Assert.fail("Unable to Click on view all tablets link");
         }
     }
@@ -7197,7 +7265,7 @@ April2018
 
         } catch (Exception e) {
             e.printStackTrace();
-            System.out.println("The color dropdown is not present");
+            log.debug("The color dropdown is not present");
             Assert.fail("not able to click on the colour dropdown");
         }
 
@@ -7214,7 +7282,7 @@ April2018
 
         } catch (Exception e) {
             e.printStackTrace();
-            System.out.println("Unable to select the sim free link");
+            log.debug("Unable to select the sim free link");
             Assert.fail("Unable to select the sim free link");
         }
 
@@ -7229,7 +7297,7 @@ April2018
             verificationsActions.verifyAsteriskMandatory(Field);
         } catch (Exception e) {
             e.printStackTrace();
-            System.out.println("Unable to select the sim free link");
+            log.debug("Unable to select the sim free link");
             Assert.fail("Unable to select the sim free link");
 
         }
@@ -7244,7 +7312,7 @@ April2018
             Thread.sleep(5000);
 
         } catch (Exception e) {
-            System.out.println("Unable to enter valid details in Addiitional information Driving licence page");
+            log.debug("Unable to enter valid details in Addiitional information Driving licence page");
             Assert.fail("Unable to enter valid details in Addiitional information Driving licence page");
         }
     }
@@ -7258,7 +7326,7 @@ April2018
             Thread.sleep(5000);
 
         } catch (Exception e) {
-            System.out.println("Unable to enter valid details in Addiitional information Driving licence page");
+            log.debug("Unable to enter valid details in Addiitional information Driving licence page");
             Assert.fail("Unable to enter valid details in Addiitional information Driving licence page");
         }
     }
@@ -7303,10 +7371,10 @@ April2018
 
             String dispalyText = driver.findElement(By.xpath("//*[contains(text(),'Not ')]"));
             if (dispalyText.contains("Not ")) {
-                System.out.println("Successfully Validate the reference : " + dispalyText);
+                log.debug("Successfully Validate the reference : " + dispalyText);
             }
             {
-                System.out.println("Unable to find the reference Displayed Message");
+                log.debug("Unable to find the reference Displayed Message");
             }
         } catch (Exception e) {
             log.debug(e.getMessage());
@@ -7324,7 +7392,7 @@ April2018
             for (int i = 1; i <= element.size(); i++) {
                 String valueContains = driver.findElement(By.xpath("(//*[contains(text(),*)])[" + i + "]")).getText();
                 if (valueContains.contains("*")) {
-                    System.out.println("Mandatary Field is + " + valueContains);
+                    log.debug("Mandatary Field is + " + valueContains);
                 } else {
                     System.err.println("There is no mandatary fields available in the Page");
                 }*/
@@ -7351,7 +7419,7 @@ April2018
             executor.executeScript("arguments[0].click();", driver.findElement(By.xpath("//*[@id='callToAction'][1]")));
             Thread.sleep(5000);
         } catch (Exception e) {
-            System.out.println(e.getMessage());
+            log.debug(e.getMessage());
 
         }
 
@@ -7376,9 +7444,9 @@ April2018
     @And("^Continue to Review page, click on ‘change delivery’$")
     public void continueToReviewPageClickOnChangeDelivery() {
         try {
-            System.out.println("in change delivery method");
+            log.debug("in change delivery method");
         } catch (Exception e) {
-            System.out.println(e.getMessage());
+            log.debug(e.getMessage());
         }
 
     }
@@ -7389,7 +7457,7 @@ April2018
             driver.findElement(By.id("sendOtac")).click();
             log.debug("Clicked on Send code button");
         } catch (Exception e) {
-            System.out.println(e.getMessage());
+            log.debug(e.getMessage());
         }
     }
 
@@ -7404,7 +7472,7 @@ April2018
 
         } catch (Exception e) {
             e.printStackTrace();
-            System.out.println("The color text is not present");
+            log.debug("The color text is not present");
             Assert.fail("The color text is not present");
         }
     }
@@ -7418,7 +7486,7 @@ April2018
 
         } catch (Exception e) {
             e.printStackTrace();
-            System.out.println("The color text is not present");
+            log.debug("The color text is not present");
             Assert.fail("The color text is not present");
         }
     }
@@ -7433,7 +7501,7 @@ April2018
 
         } catch (Exception e) {
             e.printStackTrace();
-            System.out.println("The color text is not present");
+            log.debug("The color text is not present");
             Assert.fail("The color text is not present");
         }
     }
@@ -7448,7 +7516,7 @@ April2018
 
         } catch (Exception e) {
             e.printStackTrace();
-            System.out.println("unable to enter additional card details in driving licence");
+            log.debug("unable to enter additional card details in driving licence");
             Assert.fail("unable to enter additional card details in driving licence");
         }
     }
@@ -7462,7 +7530,7 @@ April2018
 
         } catch (Exception e) {
             e.printStackTrace();
-            System.out.println("unable to enter additional  details in passport field");
+            log.debug("unable to enter additional  details in passport field");
             Assert.fail("unable to enter additional  details in passport field");
         }
     }
@@ -7476,7 +7544,7 @@ April2018
             BasketPageActions.CheckoutNotDisplayed();
         } catch (Exception e) {
             e.printStackTrace();
-            System.out.println("Unable to validate basket contents");
+            log.debug("Unable to validate basket contents");
             Assert.fail("Unable to validate basket contents");
         }
     }
@@ -7515,7 +7583,7 @@ April2018
 
         } catch (Exception e) {
 
-            System.out.println("Unable to do validate about you");
+            log.debug("Unable to do validate about you");
             Assert.fail("Unable to do validate about you");
         }
     }
@@ -7529,7 +7597,7 @@ April2018
 
         } catch (Exception e) {
 
-            System.out.println("unable to verify that text is displayed in First tile");
+            log.debug("unable to verify that text is displayed in First tile");
             Assert.fail("unable to verify that text is displayed in First tile");
         }
     }
@@ -7603,9 +7671,9 @@ April2018
 
 
     /*
-     * #########################################################################
-     * #######  EMPTY_basket_validate_promotion ##################################
-     */
+    * #########################################################################
+    * #######  EMPTY_basket_validate_promotion ##################################
+    */
     @Then("^Click on 'Empty basket' CTA the 'Promotions' should be removed from the basket$")
     public void click_on_Empty_basket_CTA_the_Promotions_should_be_removed_from_the_basket() {
         try {
@@ -7614,16 +7682,16 @@ April2018
             Agent_DealBuilderPageActions.Emptyabove();
         } catch (Exception e) {
             // TODO Auto-generated catch block
-            System.out.println("Unable to click on Empty above, please see the failure screenshot");
+            log.debug("Unable to click on Empty above, please see the failure screenshot");
             Assert.fail("Unable to click on Empty above , please see the failure screenshot");
         }
     }
 
     /*
-     * ##################################################################################
-     *  Standard_or_CCA_targeted_bolton_promotion_tab_Agent_upgrade_options_page_Order_placement
-     * #####################################################################################
-     */
+  * ##################################################################################
+  *  Standard_or_CCA_targeted_bolton_promotion_tab_Agent_upgrade_options_page_Order_placement
+  * #####################################################################################
+  */
     @And("^Click on 'Select' Button in targeted promotion tab$")
     public void click_on_Select_Button_in_targeted_promotion_tab() {
         try {
@@ -7632,7 +7700,7 @@ April2018
             Agent_DealBuilderPageActions.SelectPromotion();
         } catch (Exception e) {
             // TODO Auto-generated catch block
-            System.out.println("Unable to select button in targeted promotion tab , please see the failure screenshot");
+            log.debug("Unable to select button in targeted promotion tab , please see the failure screenshot");
             Assert.fail("Unable to get select button in targeted promotion tab , please see the failure screenshot");
 
         }
@@ -7646,7 +7714,7 @@ April2018
             Agent_DealBuilderPageActions.Copytobasket();
         } catch (Exception e) {
             // TODO Auto-generated catch block
-            System.out.println("Unable to click on Copy to basket CTA , please see the failure screenshot");
+            log.debug("Unable to click on Copy to basket CTA , please see the failure screenshot");
             Assert.fail("Unable to click on Copy to basket CTA , please see the failure screenshot");
 
         }
@@ -7661,7 +7729,7 @@ April2018
             Thread.sleep(3000);
         } catch (Exception e) {
             // TODO Auto-generated catch block
-            System.out.println("Failed to verify the Target Promotions Tab, please see the screen shoot");
+            log.debug("Failed to verify the Target Promotions Tab, please see the screen shoot");
             Assert.fail("Failed to verify the Target Promotions Tab, please see the screen shoot");
         }
     }
@@ -7675,7 +7743,7 @@ April2018
             Thread.sleep(3000);
         } catch (Exception e) {
             // TODO Auto-generated catch block
-            System.out.println("Failed to verify the targe promotions description, please see the screen shoot" + e.getStackTrace());
+            log.debug("Failed to verify the targe promotions description, please see the screen shoot" + e.getStackTrace());
             Assert.fail("Failed to verify the targe promotions description, please see the screen shoot" + e.getStackTrace());
         }
     }
@@ -7687,10 +7755,10 @@ April2018
             driver.manage().timeouts().implicitlyWait(2, TimeUnit.MINUTES);
             Agent_DealBuilderPageActions.verifyPromotionsDisplayed();
             Thread.sleep(3000);
-            // System.out.println("Selecting a valid tariff");
+            // log.debug("Selecting a valid tariff");
         } catch (Exception e) {
             // TODO Auto-generated catch block
-            System.out.println("Unable to select valid tariff, please see the failure screenshot");
+            log.debug("Unable to select valid tariff, please see the failure screenshot");
             Assert.fail("Unable to select valid tariff, please see the failure screenshot");
 
         }
@@ -7703,16 +7771,16 @@ April2018
             driver.manage().timeouts().implicitlyWait(120, TimeUnit.SECONDS);
             if (driver.findElements(By.xpath("//*[contains(text(),'2.co.uk')]")).size() > 0) {
                 String str = driver.findElement(By.xpath("(//*[contains(text(),'2.co.uk')])[1]")).getText();
-                System.out.println("Agent should be displayed with updated copy of 'Refer with Simo' response as :" + str);
+                log.debug("Agent should be displayed with updated copy of 'Refer with Simo' response as :" + str);
                 log.debug("Agent should be displayed with updated copy of 'Refer with Simo' response as :" + str);
                 Thread.sleep(3000);
             } else {
-                System.out.println("Failed to Agent should be displayed with updated copy of 'Refer with Simo' response ");
+                log.debug("Failed to Agent should be displayed with updated copy of 'Refer with Simo' response ");
                 log.debug("Failed to Agent should be displayed with updated copy of 'Refer with Simo' response ");
             }
         } catch (Exception e) {
             // TODO Auto-generated catch block
-            System.out.println("Failed to Agent should be displayed with updated copy of 'Refer with Simo' response @ " + e.getStackTrace());
+            log.debug("Failed to Agent should be displayed with updated copy of 'Refer with Simo' response @ " + e.getStackTrace());
             Assert.fail("Failed to Agent should be displayed with updated copy of 'Refer with Simo' response @ " + e.getStackTrace());
         }
     }
@@ -7731,7 +7799,7 @@ April2018
 
         } catch (Exception e) {
 
-            System.out.println("The Heading message is not expected one");
+            log.debug("The Heading message is not expected one");
             Assert.fail("The Heading message is not expected one");
         }
 
@@ -7747,7 +7815,7 @@ April2018
 
         } catch (Exception e) {
 
-            System.out.println("The Body message is not expected one");
+            log.debug("The Body message is not expected one");
             Assert.fail("The Body message is not expected one");
         }
 
@@ -7763,7 +7831,7 @@ April2018
 
         } catch (Exception e) {
 
-            System.out.println("The Body message is not expected one");
+            log.debug("The Body message is not expected one");
             Assert.fail("The Body message is not expected one");
         }
 
@@ -7772,7 +7840,7 @@ April2018
 
     @And("^the 'Promotions' section is displayed with all the applied promotions description in the deal builder$")
     public void thePromotionsSectionDisplay() {
-        System.out.println("In promotions method");
+        log.debug("In promotions method");
 
     }
 
@@ -8011,7 +8079,8 @@ April2018
     }
 
     @And("^Click on 'Select' CTA to buy a tariff$")
-    public void Click_on_Select_CTA_to_buy_SIMO_Tariff() {
+    public void Click_on_Select_CTA_to_buy_SIMO_Tariff()
+    {
         try {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, PAYMSimOPage.class);
@@ -8256,7 +8325,7 @@ April2018
             // PAYMSimOPageActions.SelectTariffPhonesTab(Contract);
         } catch (Exception e) {
             // TODO Auto-generated catch block
-            System.out.println("Unable to click on Tablets tab");
+            log.debug("Unable to click on Tablets tab");
             Assert.fail("Unable to click on Tablets tab");
 
         }
@@ -8320,7 +8389,7 @@ April2018
             SimsPageActions.clickOn_simOnlyTariffTab();
         } catch (Exception e) {
             // TODO Auto-generated catch block
-            System.out.println(e.getStackTrace());
+            log.debug(e.getStackTrace());
         }
     }
 
@@ -8330,7 +8399,7 @@ April2018
             SimsPageActions.verifyThatURL_has_simo_at_end();
         } catch (Exception e) {
             // TODO Auto-generated catch block
-            System.out.println(e.getStackTrace());
+            log.debug(e.getStackTrace());
         }
     }
 
@@ -8341,7 +8410,7 @@ April2018
             SimsPageActions.phonesButtonShouldSelectedByDefault();
         } catch (Exception e) {
             // TODO Auto-generated catch block
-            System.out.println(e.getStackTrace());
+            log.debug(e.getStackTrace());
         }
     }
 
@@ -8353,7 +8422,7 @@ April2018
             SimsPageActions.allTariffsUnderTwelveMonthsShouldDisplayed();
         } catch (Exception e) {
             // TODO Auto-generated catch block
-            System.out.println(e.getStackTrace());
+            log.debug(e.getStackTrace());
         }
     }
 
@@ -8366,7 +8435,7 @@ April2018
             SimsPageActions.sortingDropdownIsDisplayedJstBelowToggleButtonsSections();
         } catch (Exception e) {
             // TODO Auto-generated catch block
-            System.out.println(e.getStackTrace());
+            log.debug(e.getStackTrace());
         }
     }
 
@@ -8376,7 +8445,7 @@ April2018
             UpgradeCustomerPageActions.OOS_MsgShouldDisplayed_inUpgradeOptionsPage();
         } catch (Exception e) {
             // TODO Auto-generated catch block
-            System.out.println(e.getStackTrace());
+            log.debug(e.getStackTrace());
         }
     }
 
@@ -8386,7 +8455,7 @@ April2018
             UpgradeCustomerPageActions.verifyOOS_MessageIsDisplayedInUpgradesBasketPage();
         } catch (Exception e) {
             // TODO Auto-generated catch block
-            System.out.println(e.getStackTrace());
+            log.debug(e.getStackTrace());
         }
     }
 
@@ -8396,7 +8465,7 @@ April2018
             SimsPageActions.ifGiftBlockIsConfiguredThenDisplayBanner(giftbox);
         } catch (Exception e) {
             // TODO Auto-generated catch block
-            System.out.println(e.getStackTrace());
+            log.debug(e.getStackTrace());
         }
     }
 
@@ -8406,7 +8475,7 @@ April2018
             DeliveryPageActions.deliverySectionShouldShowOOS_message();
         } catch (Exception e) {
             // TODO Auto-generated catch block
-            System.out.println(e.getStackTrace());
+            log.debug(e.getStackTrace());
         }
     }
 
@@ -8417,7 +8486,7 @@ April2018
             DeliveryPageActions.deliverySectionShouldShowClick_anf_collect_option_without_radio_button_and_OOS_msg();
         } catch (Exception e) {
             // TODO Auto-generated catch block
-            System.out.println(e.getStackTrace());
+            log.debug(e.getStackTrace());
         }
     }
 
@@ -8428,7 +8497,7 @@ April2018
             SimsPageActions.clickonTabletsButton();
         } catch (Exception e) {
             // TODO Auto-generated catch block
-            System.out.println(e.getStackTrace());
+            log.debug(e.getStackTrace());
         }
     }
 
@@ -8441,7 +8510,7 @@ April2018
         }
         catch (Exception e) {
             // TODO Auto-generated catch block
-            System.out.println(e.getStackTrace());
+            log.debug(e.getStackTrace());
         }
     }*/
 
@@ -8452,7 +8521,7 @@ April2018
             DeliveryPageActions.enterHouseNumAndPostalCode_DeliverySection(houseNum, pcode);
         } catch (Exception e) {
             // TODO Auto-generated catch block
-            System.out.println(e.getStackTrace());
+            log.debug(e.getStackTrace());
         }
     }
 
@@ -8464,7 +8533,7 @@ April2018
             DeliveryPageActions.enteredInvalidPostcodeAdressLookUp(postalCodeMsg);
         } catch (Exception e) {
             // TODO Auto-generated catch block
-            System.out.println(e.getStackTrace());
+            log.debug(e.getStackTrace());
         }
     }
 
@@ -8475,7 +8544,7 @@ April2018
             DeliveryPageActions.enteredCommercialAddress_AddressLookUp(postalCodeMsg);
         } catch (Exception e) {
             // TODO Auto-generated catch block
-            System.out.println(e.getStackTrace());
+            log.debug(e.getStackTrace());
         }
     }
 
@@ -8486,7 +8555,7 @@ April2018
             DeliveryPageActions.enteredInvalidPostcodeEnterManualSection(postalCodeMsg);
         } catch (Exception e) {
             // TODO Auto-generated catch block
-            System.out.println(e.getStackTrace());
+            log.debug(e.getStackTrace());
         }
     }
 
@@ -8499,7 +8568,7 @@ April2018
             SimsPageActions.clickOnMBB_Button();
         } catch (Exception e) {
             // TODO Auto-generated catch block
-            System.out.println(e.getStackTrace());
+            log.debug(e.getStackTrace());
         }
     }
 
@@ -8509,7 +8578,7 @@ April2018
             UpgradeCustomerPageActions.whyChooseAn_O2_may_Monthly_sim_is_not_displayed();
         } catch (Exception e) {
             // TODO Auto-generated catch block
-            System.out.println(e.getStackTrace());
+            log.debug(e.getStackTrace());
         }
     }
 
@@ -8519,7 +8588,7 @@ April2018
             UpgradeCustomerPageActions.data_filtersIsDdisplayed();
         } catch (Exception e) {
             // TODO Auto-generated catch block
-            System.out.println(e.getStackTrace());
+            log.debug(e.getStackTrace());
         }
     }
 
@@ -8530,7 +8599,7 @@ April2018
             UpgradeCustomerPageActions.twoContractLengthShouldDisplayed();
         } catch (Exception e) {
             // TODO Auto-generated catch block
-            System.out.println(e.getStackTrace());
+            log.debug(e.getStackTrace());
         }
     }
 
@@ -8540,7 +8609,7 @@ April2018
             DeliveryPageActions.clickOnChange_delivery_link();
         } catch (Exception e) {
             // TODO Auto-generated catch block
-            System.out.println(e.getStackTrace());
+            log.debug(e.getStackTrace());
         }
     }
 
@@ -8553,7 +8622,7 @@ April2018
             UpgradeCustomerPageActions.upfront_sort_options_is_not_present_in_sortingDropdown();
         } catch (Exception e) {
             // TODO Auto-generated catch block
-            System.out.println(e.getStackTrace());
+            log.debug(e.getStackTrace());
         }
     }
 
@@ -8566,7 +8635,7 @@ April2018
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, DeliveryPage.class);
             DeliveryPageActions.ClickOnUseDifferentAddress();
-            System.out.println("Clicked on Use a different address link");
+            log.debug("Clicked on Use a different address link");
         } catch (Exception e) {
             e.printStackTrace();
             Assert.fail("Unable to click on Use a different address link");
@@ -8580,7 +8649,7 @@ April2018
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, DeliveryPage.class);
             DeliveryPageActions.EnterPostcode(Postcode);
-            System.out.println("Entered a commercial postcode");
+            log.debug("Entered a commercial postcode");
         } catch (Exception e) {
             e.printStackTrace();
             Assert.fail("Unable to enter a commercial postcode");
@@ -8593,9 +8662,9 @@ April2018
         try {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             driver.findElement(By.xpath("//*[contains(text(),'inish checking out with your order')]")).click();
-            System.out.println("Finish checking out with your order Link is Clicked");
+            log.debug("Finish checking out with your order Link is Clicked");
         } catch (Exception e) {
-            System.out.println(" Failed to clik the Finish checking out with your order Link(" + e.getStackTrace() + ")");
+            log.debug(" Failed to clik the Finish checking out with your order Link(" + e.getStackTrace() + ")");
             Assert.fail(" Failed to clik the Finish checking out with your order Link");
         }
     }
@@ -8606,7 +8675,7 @@ April2018
         try {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         } catch (Exception e) {
-            /*System.out.println(" Failed to clik the Finish checking out with your order Link(" + e.getStackTrace() +")");
+            /*log.debug(" Failed to clik the Finish checking out with your order Link(" + e.getStackTrace() +")");
             Assert.fail(" Failed to clik the Finish checking out with your order Link");*/
         }
     }
@@ -8626,7 +8695,7 @@ April2018
             ShopLandingPageAction.cookiePolicySelect();
         } catch (Exception e) {
             // TODO Auto-generated catch block
-            System.out.println("Unable to Click on 'cookie policy' link");
+            log.debug("Unable to Click on 'cookie policy' link");
             Assert.fail("Unable to Click on 'cookie policy' link");
 
         }
@@ -8640,7 +8709,7 @@ April2018
             ShopLandingPageAction.cookiePolicyValidate();
         } catch (Exception e) {
             // TODO Auto-generated catch block
-            System.out.println("Unable to find 'cookie policy' page");
+            log.debug("Unable to find 'cookie policy' page");
             Assert.fail("Unable to find 'cookie policy' page");
 
         }
@@ -8654,7 +8723,7 @@ April2018
             ShopLandingPageAction.clickManageCookies();
         } catch (Exception e) {
             // TODO Auto-generated catch block
-            System.out.println("Unable to Click on 'cookie policy' link");
+            log.debug("Unable to Click on 'cookie policy' link");
             Assert.fail("Unable to Click on 'cookie policy' link");
 
         }
@@ -8667,7 +8736,7 @@ April2018
             PageFactory.initElements(driver, ShopLandingPage.class);
             ShopLandingPageAction.manageCookieyValidate();
         } catch (Exception e) {
-            System.out.println("Unable to find 'manage cookies' page");
+            log.debug("Unable to find 'manage cookies' page");
             Assert.fail("Unable to find 'manage cookies' page");
 
         }
@@ -8680,7 +8749,7 @@ April2018
             PageFactory.initElements(driver, ShopLandingPage.class);
             ShopLandingPageAction.closeCookie();
         } catch (Exception e) {
-            System.out.println("Unable to click on close icon");
+            log.debug("Unable to click on close icon");
             Assert.fail("Unable to click on close icon");
         }
     }
@@ -8692,7 +8761,7 @@ April2018
             PageFactory.initElements(driver, ShopLandingPage.class);
             ShopLandingPageAction.CookiepopupValidation();
         } catch (Exception e) {
-            System.out.println("Unable to validate cookie section");
+            log.debug("Unable to validate cookie section");
             Assert.fail("Unable to validate cookie section");
         }
     }
@@ -8700,9 +8769,9 @@ April2018
     @And("^Click on 'Extras' tab$")
     public void click_on_Extras_tab() {
         try {
-            System.out.println("Successfully verified");
+            log.debug("Successfully verified");
         } catch (Exception e) {
-            System.out.println("Unable to validate section");
+            log.debug("Unable to validate section");
             Assert.fail("Unable to validate section");
         }
     }
@@ -8711,9 +8780,9 @@ April2018
     @And("^Select a Bolton$")
     public void select_Bolton() {
         try {
-            System.out.println("Successfully click and verfy the Bolton verified");
+            log.debug("Successfully click and verfy the Bolton verified");
         } catch (Exception e) {
-            System.out.println("Unable to validate section");
+            log.debug("Unable to validate section");
             Assert.fail("Unable to validate section");
         }
     }
@@ -8721,9 +8790,9 @@ April2018
     @Then("^Verify that the deal has already some offers Bolton ([^\"]*) promotions applied$")
     public void verify_that_the_deal_has_already_some_offers_Bolton_promotions(String str) {
         try {
-            System.out.println("Successfully verified the deail builder");
+            log.debug("Successfully verified the deail builder");
         } catch (Exception e) {
-            System.out.println("Unable to validate section");
+            log.debug("Unable to validate section");
             Assert.fail("Unable to validate section");
         }
     }
@@ -8731,9 +8800,9 @@ April2018
     @Then("^Verify that the error ([^\"]*) is displayed in the deal about the conflict$")
     public void verify_ErrorMsg_is_displayed_in_the_deal_about_conflict(String str) {
         try {
-            System.out.println("Successfully verified the error message builder");
+            log.debug("Successfully verified the error message builder");
         } catch (Exception e) {
-            System.out.println("Unable to validate section");
+            log.debug("Unable to validate section");
             Assert.fail("Unable to validate section");
         }
     }
@@ -8741,9 +8810,9 @@ April2018
     @And("^Verify that the incompatible boltons Bolton1 and the Offers Bolton Promotion is highlighted$")
     public void verify_that_the_incompatible_boltons_Bolton1_and_the_Offers_Bolton() {
         try {
-            System.out.println("verified that the incompatible boltons");
+            log.debug("verified that the incompatible boltons");
         } catch (Exception e) {
-            System.out.println("Unable to validate section");
+            log.debug("Unable to validate section");
             Assert.fail("Unable to validate section");
         }
     }
@@ -8751,9 +8820,9 @@ April2018
     @And("^Verify that the 'Checkout' CTA is not enabled$")
     public void verify_that_the_Checkout_CTA_is_not_enabled() {
         try {
-            System.out.println("Check out is vierified");
+            log.debug("Check out is vierified");
         } catch (Exception e) {
-            System.out.println("Unable to validate section");
+            log.debug("Unable to validate section");
             Assert.fail("Unable to validate section");
         }
     }
@@ -8761,9 +8830,9 @@ April2018
     @And("^To remove the Bolton2 applied by Promotion, Click on 'Remove' button in front of Bolton2$")
     public void remove_Bolton_applied_by_Promotion_Click_Remove_button_in_front_Bolton() {
         try {
-            System.out.println("Remove the bolt is verified");
+            log.debug("Remove the bolt is verified");
         } catch (Exception e) {
-            System.out.println("Unable to validate section");
+            log.debug("Unable to validate section");
             Assert.fail("Unable to validate section");
         }
     }
@@ -8771,9 +8840,9 @@ April2018
     @Then("^Verify that the 'Checkout' CTA is enabled$")
     public void verify_that_the_Checkout_CTA_is_enabled() {
         try {
-            System.out.println("Verify the Checkout button is Enabled");
+            log.debug("Verify the Checkout button is Enabled");
         } catch (Exception e) {
-            System.out.println("Unable to validate section");
+            log.debug("Unable to validate section");
             Assert.fail("Unable to validate section");
         }
     }
@@ -8781,9 +8850,9 @@ April2018
     @And("^Verify that the removed promotions is displayed as separate 'Promotions removed' list$")
     public void verify_that_removed_promotions_displayed_separate_Promotions_removed_list() {
         try {
-            System.out.println("verified the remoted promotions is displayed");
+            log.debug("verified the remoted promotions is displayed");
         } catch (Exception e) {
-            System.out.println("Unable to validate section");
+            log.debug("Unable to validate section");
             Assert.fail("Unable to validate section");
         }
     }
@@ -8791,9 +8860,9 @@ April2018
     @And("^Click on 're-apply' button shown in front of the promotion under 'Promotions removed' list$")
     public void click_on_Reapply_button_shown_front_of_the_promotion_under_Promotions_removed_list() {
         try {
-            System.out.println("Clicked on re-appay button");
+            log.debug("Clicked on re-appay button");
         } catch (Exception e) {
-            System.out.println("Unable to validate section");
+            log.debug("Unable to validate section");
             Assert.fail("Unable to validate section");
         }
     }
@@ -8801,9 +8870,9 @@ April2018
     @And("^Click on 'Remove' button in front of ([^\"]*)$")
     public void click_on_Remove_button_in_front_Button(String str) {
         try {
-            System.out.println("Clicked on re-appay button");
+            log.debug("Clicked on re-appay button");
         } catch (Exception e) {
-            System.out.println("Unable to validate section");
+            log.debug("Unable to validate section");
             Assert.fail("Unable to validate section");
         }
     }
@@ -8811,9 +8880,9 @@ April2018
     @And("^Click on 'Checkout' CTA and Proceed till Order placement$")
     public void click_on_Checkout_CTA_and_Proceed_till_Order_placement() {
         try {
-            System.out.println("Clicked on CheckOut button");
+            log.debug("Clicked on CheckOut button");
         } catch (Exception e) {
-            System.out.println("Unable to validate section");
+            log.debug("Unable to validate section");
             Assert.fail("Unable to validate section");
         }
     }
@@ -8821,9 +8890,9 @@ April2018
     @And("^Verify that the buyout offer section is displayed with 'Take offer and Upgrade' CTA under 'Your Options' heading$")
     public void verify_that_the_buyout_offer_section_is_displayed() {
         try {
-            System.out.println("Verified that the buyout offer section is displayed");
+            log.debug("Verified that the buyout offer section is displayed");
         } catch (Exception e) {
-            System.out.println("Unable to validate section");
+            log.debug("Unable to validate section");
             Assert.fail("Unable to validate section");
         }
     }
@@ -8831,9 +8900,9 @@ April2018
     @And("^Verify that '£XXX.XX left to pay on your current Device Plan' panel is displayed below the buyout offer panel and below to that upgrade and recycle options is displayed$")
     public void verify_that_XXXXX_left_to_pay_on_your_current() {
         try {
-            System.out.println("Verified left to pay on your current Device Plan");
+            log.debug("Verified left to pay on your current Device Plan");
         } catch (Exception e) {
-            System.out.println("Unable to validate section");
+            log.debug("Unable to validate section");
             Assert.fail("Unable to validate section");
         }
     }
@@ -8841,9 +8910,9 @@ April2018
     @And("^Click on 'Take Offer and Upgrade' button$")
     public void click_on_Take_Offer_and_Upgrade_button() {
         try {
-            System.out.println("Clicked on 'Take Offer and Upgrade' button");
+            log.debug("Clicked on 'Take Offer and Upgrade' button");
         } catch (Exception e) {
-            System.out.println("Unable to validate section");
+            log.debug("Unable to validate section");
             Assert.fail("Unable to validate section");
         }
     }
@@ -8851,9 +8920,9 @@ April2018
     @And("^Verify that the same recycle section is displayed as it is displayed to the non-buyout and non-trade-in users$")
     public void verify_that_same_recycle_section_is_displayed() {
         try {
-            System.out.println("Verified that the same recycle section is displayed");
+            log.debug("Verified that the same recycle section is displayed");
         } catch (Exception e) {
-            System.out.println("Unable to validate section");
+            log.debug("Unable to validate section");
             Assert.fail("Unable to validate section");
         }
     }
@@ -8861,9 +8930,9 @@ April2018
     @And("^Verify that the customer is able to do recycle and buyout together$")
     public void verify_that_the_customer_is_able_to_drecycle() {
         try {
-            System.out.println("Verified that the customer is able to do recycle");
+            log.debug("Verified that the customer is able to do recycle");
         } catch (Exception e) {
-            System.out.println("Unable to validate section");
+            log.debug("Unable to validate section");
             Assert.fail("Unable to validate section");
         }
     }
@@ -8871,9 +8940,9 @@ April2018
     @When("^Click on any one of the recycle option then Click on  'Yes get an accurate quote'$")
     public void click_on_any_one_of_the_recycle_option_then_Click_on_Yes_get_an_accurate_quote() {
         try {
-            System.out.println("Clicked on the get an accurate quote");
+            log.debug("Clicked on the get an accurate quote");
         } catch (Exception e) {
-            System.out.println("Unable to validate section");
+            log.debug("Unable to validate section");
             Assert.fail("Unable to validate section");
         }
     }
@@ -8881,9 +8950,9 @@ April2018
     @And("^Answer the Questions in the questionnaire$")
     public void answerthe_Questions_in_the_questionnaire() {
         try {
-            System.out.println("Answered the Questions in the questionnaire");
+            log.debug("Answered the Questions in the questionnaire");
         } catch (Exception e) {
-            System.out.println("Unable to validate section");
+            log.debug("Unable to validate section");
             Assert.fail("Unable to validate section");
         }
     }
@@ -8891,9 +8960,9 @@ April2018
     @Then("^Click on 'Accept and continue to upgrade'$")
     public void click_on_accept_and_continue_to_upgrade() {
         try {
-            System.out.println("Clicked on 'Accept and continue to upgrade'");
+            log.debug("Clicked on 'Accept and continue to upgrade'");
         } catch (Exception e) {
-            System.out.println("Unable to validate section");
+            log.debug("Unable to validate section");
             Assert.fail("Unable to validate section");
         }
     }
@@ -8901,9 +8970,9 @@ April2018
     @And("^Select a Device from the recommended section$")
     public void select_a_Device_from_the_recommended_section() {
         try {
-            System.out.println("Selected device from recomended diveice");
+            log.debug("Selected device from recomended diveice");
         } catch (Exception e) {
-            System.out.println("Unable to validate section");
+            log.debug("Unable to validate section");
             Assert.fail("Unable to validate section");
         }
     }
@@ -8911,9 +8980,9 @@ April2018
     @Then("^Select a Tariff$")
     public void select_a_Tariff() {
         try {
-            System.out.println("Selected Tariff");
+            log.debug("Selected Tariff");
         } catch (Exception e) {
-            System.out.println("Unable to validate section");
+            log.debug("Unable to validate section");
             Assert.fail("Unable to validate section");
         }
     }
@@ -8921,9 +8990,9 @@ April2018
     @And("^Verify that in 'Your package' summary Buyout is displayed with Recycle$")
     public void verify_that_in_Your_package_summarr_Buyout_is_displayed_with_Recycle() {
         try {
-            System.out.println("Verified that in 'Your package' summary Buyout");
+            log.debug("Verified that in 'Your package' summary Buyout");
         } catch (Exception e) {
-            System.out.println("Unable to validate section");
+            log.debug("Unable to validate section");
             Assert.fail("Unable to validate section");
         }
     }
@@ -8931,9 +9000,9 @@ April2018
     @Then("^Click on 'Add and Go to Basket' button$")
     public void click_on_Add_and_Go_to_Basket_button() {
         try {
-            System.out.println("Click on 'Add and Go to Basket' button");
+            log.debug("Click on 'Add and Go to Basket' button");
         } catch (Exception e) {
-            System.out.println("Unable to validate section");
+            log.debug("Unable to validate section");
             Assert.fail("Unable to validate section");
         }
     }
@@ -8941,9 +9010,9 @@ April2018
     @And("^Click on 'Go to checkout' and proceed till order confirmation$")
     public void click_on_Goto_checkout_and_proceed_till_order_confirmation() {
         try {
-            System.out.println("Clicked on Checkout button");
+            log.debug("Clicked on Checkout button");
         } catch (Exception e) {
-            System.out.println("Unable to validate section");
+            log.debug("Unable to validate section");
             Assert.fail("Unable to validate section");
         }
     }
@@ -8952,9 +9021,9 @@ April2018
     @And("^Click on 'No thanks, I'll keep my device' button$")
     public void click_on_No_thanks_I_will_keep_my_device_button() {
         try {
-            System.out.println("Click on 'No thanks, I'll keep my device'");
+            log.debug("Click on 'No thanks, I'll keep my device'");
         } catch (Exception e) {
-            System.out.println("Unable to validate section");
+            log.debug("Unable to validate section");
             Assert.fail("Unable to validate section");
         }
     }
@@ -8962,9 +9031,9 @@ April2018
     @And("^Verify that in 'Your package' summary Buyout is displayed without Recycle$")
     public void verify_in_Your_package_summary_Buyout_is_displayed_without_Recycle() {
         try {
-            System.out.println("Verified that in 'Your package' summary Buyout is displayed without Recycle");
+            log.debug("Verified that in 'Your package' summary Buyout is displayed without Recycle");
         } catch (Exception e) {
-            System.out.println(" Unable to validate section");
+            log.debug(" Unable to validate section");
             Assert.fail("Unable to validate section");
         }
     }
@@ -8973,10 +9042,10 @@ April2018
     @Given("^Read the data from exel with the location ([^\"]*)$")
     public void readTestDataFromExel(String exelLocation) {
         try {
-            System.out.println("Reading the data From Exel sheet: for validating the Test data :");
+            log.debug("Reading the data From Exel sheet: for validating the Test data :");
             ReadData.readingDataFromExel(exelLocation);
         } catch (Exception e) {
-            System.out.println("Unable to validate section");
+            log.debug("Unable to validate section");
             Assert.fail("Unable to validate section");
         }
     }
@@ -9024,14 +9093,14 @@ April2018
 
             expectedTariffListBeforeSort = TempList2;
 
-            System.out.println("--------Orginal Tariff List-----------: " + originalTariffList);
-            System.out.println("--------Expected Tariff List After Applying Sort (without Data Filter) -----------: "
+            log.debug("--------Orginal Tariff List-----------: " + originalTariffList);
+            log.debug("--------Expected Tariff List After Applying Sort (without Data Filter) -----------: "
                     + expectedTariffListBeforeSort);
 
         } catch (Exception e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
-            System.out.println("Sort filter validation failed");
+            log.debug("Sort filter validation failed");
             Assert.fail("Sort filter validation failed");
 
         }
@@ -9080,19 +9149,19 @@ April2018
 
             expectedTariffListBeforeSort = TempList2;
 
-            System.out.println("--------Orginal Tariff List-----------: " + originalTariffList);
-            System.out.println("--------Expected Tariff List After Applying Sort (without Data Filter) -----------: "
+            log.debug("--------Orginal Tariff List-----------: " + originalTariffList);
+            log.debug("--------Expected Tariff List After Applying Sort (without Data Filter) -----------: "
                     + expectedTariffListBeforeSort);
 
         } catch (Exception e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
-            System.out.println("Sort filter validation failed");
+            log.debug("Sort filter validation failed");
             Assert.fail("Sort filter validation failed");
 
         }
     }
-    //shubhasharee
+//shubhasharee
 
     @And("^verify 'Get basket link' is displayed next to selected device in the Email Basket pop up window$")
     public void validateSelectedDevicesInEmailBasketPopup(){
