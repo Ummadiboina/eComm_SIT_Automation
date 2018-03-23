@@ -234,7 +234,7 @@ public class Agent_RegisterCustomerActions extends Environment {
 			Agent_RegisterCustomerPage.UsethisCard.click();
 		}
 	}
-	
+
 
 	public static void RegisterCustomer(String Password, String Confirm_Password, String Security_Answer)
 			throws InterruptedException {
