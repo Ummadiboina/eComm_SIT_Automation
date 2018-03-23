@@ -22,5 +22,5 @@ Feature: Feb_CFU_Buyout_with_Recycle_Order_placement
     Then Click on 'Go to checkout' and proceed till order confirmation
 
     Examples:
-      | username    | password |
-      | inl_feb2115 | test123  |
+      | username           | password |
+      | vinodran@gmil.com  | test123  |

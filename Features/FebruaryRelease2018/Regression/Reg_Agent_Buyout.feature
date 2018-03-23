@@ -8,10 +8,10 @@ Feature: Reg_Agent_Buyout
     And performs Upgrade for <User>
     And Select a valid PayM <Device>
     And Select valid <Tariffs> from tariffs tab
-    And select a valid Handset and Tariff combination
+    And select a valid Handset and Tariff combination_new
     And clicks on 'Buyout' button
     #And Validate all the Basket content and checkout
-    Then perform all the advisory checks
+    Then perform all the advisory checks_new
     And Click on 'Generate CCA' button
     And click on the 'CCA' link
     And Signin using valid <username> and <password> credentials
@@ -24,4 +24,4 @@ Feature: Reg_Agent_Buyout
 
     Examples:
       | User         | Device              | Tariffs | username      | DeliveryType | Firstname | Surname | HouseNumber | PostCode | Username     | password |
-      | 447801058566 | iPhone 6s 32GB Gold | Refresh | erto@1234.com | HomeDelivery | Test      | Accepta | Flat 9      | SL11EL   | Test Accepta | test123  |
+      | 07521119257 | iPhone 6s 32GB Gold | Refresh | erto@1234.com | HomeDelivery | Test      | Accepta | Flat 9      | SL11EL   | Test Accepta | test123  |
