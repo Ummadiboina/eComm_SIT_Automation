@@ -875,7 +875,7 @@ public class E2EOrderPlaced_Steps {
             Thread.sleep(3000);
             log.debug("We are in yourbasket page");
             BasketPageActions.gotoCheckout();
-            Thread.sleep(2000);
+            Thread.sleep(5000);
         } catch (Exception e) {
             // TODO Auto-generated catch block
             log.debug("Unable to click on Go to Checkout button");

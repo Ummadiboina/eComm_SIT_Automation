@@ -398,7 +398,8 @@ public class UpgradeCustomerPageActions extends Environment {
 
         //driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
         //WebElement selectBtnEle = driver.findElement(By.xpath("(//button[@type='button']//*[normalize-space()='Select'])[2]"));
-        WebElement selectBtnEle = driver.findElement(By.xpath("//button[text()='Select' or @id='callToAction'][1]"));
+        WebElement selectBtnEle = driver.findElement(By.xpath("(//button[@id='callToAction'])[1]"));
+
         if(selectBtnEle.isDisplayed()){
             ((JavascriptExecutor) driver).executeScript("arguments[0].click();", selectBtnEle);
             log.debug("Tariff has selected");
@@ -510,7 +511,9 @@ public class UpgradeCustomerPageActions extends Environment {
     public static void verifyPromotionalRibbonDisplayedTEpage(String Tariff) throws IOException, InterruptedException {
 
         WebElement selectBtnEle = driver.findElement(By.xpath("(//button[@type='button']//*[normalize-space()='Select'])[2]"));
-        if(selectBtnEle.isDisplayed()){
+
+        if(driver.findElements(By.xpath("(//button[@type='button']//*[normalize-space()='Select'])[2]")).size()>=1){
+            driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
             ((JavascriptExecutor) driver).executeScript("arguments[0].click();", selectBtnEle);
             log.debug("Tariff has selected");
             log.info("Tariff has selected");
@@ -519,10 +522,12 @@ public class UpgradeCustomerPageActions extends Environment {
             Assert.fail("Failed to select the Tariff in the Extras&Tariff page");
         }
 
-        WebElement blueRibben = driver.findElement(By.xpath("(//div[@class='blue-promotion']//span[@class='promotion-text ng-binding'])[2]"));
+        //WebElement blueRibben = driver.findElement(By.xpath("(//div[@class='blue-promotion']//span[@class='promotion-text ng-binding'])[2]"));
 
-        if(blueRibben.isEnabled()){
-            log.debug("Blue ribben is displaayed on the Tariff tile in the Tariff and Extras page: @ " + blueRibben.getText());
+        //if(blueRibben.isEnabled()){
+
+        if(driver.findElements(By.xpath("(//div[@class='blue-promotion']//span[@class='promotion-text ng-binding'])[2]")).size()>=1){
+            log.debug("Blue ribben is displaayed on the Tariff tile in the Tariff and Extras page: @ ");
         }else{
             log.debug("Blue Ribben's are not Displayed on the Tariff tile in the Tariff and Extras page");
         }
@@ -665,7 +670,7 @@ public class UpgradeCustomerPageActions extends Environment {
 
         WebElement overlayIcon = driver.findElement(By.xpath("(//div[@class='blue-promotion']//span[@class='promotion-text ng-binding'])[2]/following-sibling::a"));
 
-        if (overlayIcon.isEnabled()) {
+        if (driver.findElements(By.xpath("(//div[@class='blue-promotion']//span[@class='promotion-text ng-binding'])[2]/following-sibling::a)")).size()>=1) {
             log.debug("Overlay is present for the selected tariff in the tariff tile as expected in the Tariff and Extras page");
             log.debug("Overlay is present for the selected tariff in the tariff tile as expected in the Tariff and Extras page");
         } else {
