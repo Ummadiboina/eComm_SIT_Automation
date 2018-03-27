@@ -524,7 +524,7 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 					.getAttribute("value");
 			log.debug("ActualAddInsuranceText " + ActualAddInsuranceText);
 		} else {
-			TempCheapInsurance = StringUtils.substringBefore(FirstInsurancePrice, ".");
+			//TempCheapInsurance = StringUtils.substringBefore(FirstInsurancePrice, ".");
 			ExpAddInsuranceText = "Add for " + TempCheapInsurance + "a month";
 			ExpAddInsuranceText = ExpAddInsuranceText.replace(" ", "");
 			ActualAddInsuranceText = driver.findElement(By.xpath("//input[@class='button secondary']"))
@@ -545,7 +545,7 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 		List<WebElement> AddInsuranceButton = driver.findElements(By.xpath("//input[@class='button secondary']"));
 		if (AddInsuranceButton.size() > 0) {
 			log.debug("Add insurance button is present");
-			if (AddInsuranceButton.get(0).getText().equals(FirstInsurancePrice)) {
+			if (AddInsuranceButton.get(0).getText().contains(FirstInsurancePrice)) {
 				log.debug("Text inside Add button is " + AddInsuranceButton.get(0).getText());
 			}
 		} else {
@@ -557,8 +557,9 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 	public static void clickOnAddNow() throws Exception {
 		List<WebElement> AddInsuranceButton = driver.findElements(By.xpath("//input[@class='button secondary']"));
 		if (AddInsuranceButton.size() > 0) {
-			AddInsuranceButton.get(0).click();
+			driver.findElement(By.xpath("//input[@class='button secondary']")).click();
 			Thread.sleep(4000);
+			log.debug("Clicked on Add Insurance button");
 		} else {
 			Assert.fail("Add now button is not present");
 		}

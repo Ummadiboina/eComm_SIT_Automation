@@ -23,4 +23,4 @@ Feature: Reg_CFA_iPad_Show_basecomms_tariffs_on_T&E_page_for_my_offers_journey
 
     Examples:
       | device_name    | default_colour | default_capacity | default_stock_message | color  | capacity |
-      | Apple iPad 9.7 | Space Grey     | 32GB             | In Stock              | Silver | 128GB    |
+      | Apple iPad 9.7 | Gold           | 32GB             | In Stock              | Silver | 128GB    |

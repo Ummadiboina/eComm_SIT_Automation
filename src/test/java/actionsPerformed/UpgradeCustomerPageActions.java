@@ -401,8 +401,7 @@ public class UpgradeCustomerPageActions extends Environment {
         WebElement selectBtnEle = driver.findElement(By.xpath("//button[text()='Select' or @id='callToAction'][1]"));
         if(selectBtnEle.isDisplayed()){
             ((JavascriptExecutor) driver).executeScript("arguments[0].click();", selectBtnEle);
-            log.debug("Tariff has selected");
-            log.info("Tariff has selected");
+            log.debug("Tariff has been selected");
         }else{
             log.debug("Failed to select the Tariff in the Extras&Tariff page");
             Assert.fail("Failed to select the Tariff in the Extras&Tariff page");

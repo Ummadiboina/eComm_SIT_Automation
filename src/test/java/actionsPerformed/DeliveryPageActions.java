@@ -524,7 +524,6 @@ public class DeliveryPageActions extends Environment {
             if (driver.findElements(By.xpath("//li[@class='delivery']//*[contains(text(),'out of stock')]")).size() > 0) {
                 if (driver.findElement(By.xpath("//li[@class='delivery']//*[contains(text(),'out of stock')]")).isDisplayed()) {
                     log.debug(" The Out of stock message is Displayed in the Delivery section");
-                    log.debug(" The Out of stock message is Displayed in the Delivery section");
                 }
             } else {
                 log.debug(" Failed to displayed  OOS message in the  Delivery section");
@@ -554,6 +553,24 @@ public class DeliveryPageActions extends Environment {
             // TODO Auto-generated catch block
             log.debug(" Failed to displayed  OOS message in the  Delivery section" + e.getStackTrace());
             Assert.fail(" Failed to displayed  OOS message in the  Delivery section");
+        }
+    }
+
+    public static void deliveryInformationSection_OOS_msg() {
+        try {
+            driver.manage().timeouts().implicitlyWait(2, TimeUnit.MINUTES);
+            if (driver.findElements(By.xpath("//*[contains(text(),'Out of stock')]")).size() > 0) {
+                if (driver.findElement(By.xpath("//*[contains(text(),'Out of stock')]")).isDisplayed()) {
+                    log.debug(" The Out of stock message is Displayed in the Delivery Information section");
+                }
+            } else {
+                log.debug(" Failed to displayed  OOS message in the  Delivery Information section");
+                Assert.fail(" Failed to displayed  OOS message in the  Delivery Information section");
+            }
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            log.debug(" Failed to displayed  OOS message in the  Delivery Information section" + e.getStackTrace());
+            Assert.fail(" Failed to displayed  OOS message in the  Delivery Information section");
         }
     }
 
