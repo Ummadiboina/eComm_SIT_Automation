@@ -806,7 +806,7 @@ public class PhonesListingPageAction extends Environment {
 
 		for (WebElement temp2 : devicePrice) {
 
-			String sTemp = StringUtils.substringBetween(temp2.getText(), "Â£", ".");
+			String sTemp = StringUtils.substringBetween(temp2.getText(), "£", ".");
 			devicepricecurrentorder.add(sTemp);
 
 		}

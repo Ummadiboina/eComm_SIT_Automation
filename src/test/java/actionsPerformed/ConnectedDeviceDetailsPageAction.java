@@ -265,7 +265,9 @@ public class ConnectedDeviceDetailsPageAction extends Environment {
 
         ConnectedDeviceDetailsPage.CapacityDropDown.click();
 
-        WebElement ele = driver.findElement(By.xpath("(//span[@class='selectboxit-option-icon-container']/following-sibling::span[normalize-space()='" + capacity + "'])[2]"));
+        //WebElement ele = driver.findElement(By.xpath("(//span[@class='selectboxit-option-icon-container']/following-sibling::span[normalize-space()='" + capacity + "'])[2]"));
+
+        WebElement ele = driver.findElement(By.xpath("//a[@class='selectboxit-option-anchor' and normalize-space(.)='" + capacity + "']"));
         Actions act = new Actions(driver);
         act.moveToElement(ele).click().build().perform();
 

@@ -99,7 +99,7 @@ public class PaymentPage {
     @FindBy(how = How.ID, using = "postcode-submit")
     public static WebElement postcodesubmit;
 
-    @FindBy(how = How.XPATH, using = "//*[@id='address-selection']/li/div/p/a")
+    @FindBy(how = How.XPATH, using = "//*[@id='delivery-address-selection']/li/div/p/a")
     public static WebElement Selectaddress;
 
     @FindBy(how = How.ID, using = ("basket-total"))

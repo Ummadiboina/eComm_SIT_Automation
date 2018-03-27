@@ -112,7 +112,7 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 		// pageobjects.PAYMandPAYGTariffAndExtrasPage.addToBasketLive.sendKeys(Keys.ENTER);
 		log.debug("Clicked on Add to Basket in Tariff and Extras page");
 		log.debug("Clicked on Add to Basket in Tariff and Extras page");
-		Thread.sleep(50000);
+		Thread.sleep(10000);
 		Screenshots.captureScreenshot();
 
 	}
