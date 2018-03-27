@@ -8490,6 +8490,16 @@ public class E2EOrderPlaced_Steps {
         }
     }
 
+    @And("^the Delivery information section should show the 'OOS message'$")
+    public void deliveryInformationSection_OOS_message_validation() {
+        try {
+            DeliveryPageActions.deliveryInformationSection_OOS_msg();
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            log.debug(e.getStackTrace());
+        }
+    }
+
     // jan release - durai
     @And("^click on the 'Tablets' button$")
     public void click_on_the_Tablets_button() {

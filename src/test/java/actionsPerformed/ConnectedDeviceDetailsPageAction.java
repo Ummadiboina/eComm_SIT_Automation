@@ -54,14 +54,16 @@ public class ConnectedDeviceDetailsPageAction extends Environment {
 
     public static void ViewAllTariffs() throws InterruptedException, IOException {
         driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
-
+        log.debug("Entering ViewAllTariffs() function ");
         JavascriptExecutor jse = (JavascriptExecutor) driver;
         jse.executeScript("window.scrollBy(0,600)", "");
-
+        Thread.sleep(2000);
         // pageobjects.ConnectedDeviceDetailsPage.ViewOurTariffs.click();
 
-        JavascriptExecutor executor = (JavascriptExecutor) driver;
-        executor.executeScript("arguments[0].click();", pageobjects.ConnectedDeviceDetailsPage.ViewOurTariffs);
+        WebElement ele1 = pageobjects.ConnectedDeviceDetailsPage.ViewOurTariffs;
+
+
+        jse.executeScript("arguments[0].click();", ele1);
 
         Thread.sleep(5000);
         // driver.findElement(By.id("deviceDetailsSubmit")).click();
@@ -247,7 +249,7 @@ public class ConnectedDeviceDetailsPageAction extends Environment {
         Actions act = new Actions(driver);
         act.moveToElement(ele).click().build().perform();
         // ele.click();
-		/*JavascriptExecutor js = (JavascriptExecutor) driver;
+        /*JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("arguments[0].setAttribute('style', 'display:block;')", element);*/
 		/*if (element.isDisplayed()) {
 			new Select(element).selectByVisibleText(color);

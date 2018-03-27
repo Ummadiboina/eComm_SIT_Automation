@@ -16,5 +16,5 @@ Feature: Reg_CFA_Basket_page_cross_sell_insurance_no_free_insurance
     And click on the 'Add now' button and verify Insurance gets added successfully
 
     Examples:
-      | handset        |
-      | Apple iPhone 8 |
+      | handset  |
+      | iPhone 8 |

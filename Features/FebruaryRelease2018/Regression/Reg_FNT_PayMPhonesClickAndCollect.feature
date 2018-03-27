@@ -16,5 +16,5 @@ Feature: Reg_FNT_PayMPhonesClickAndCollect
     Then order confirmation is displayed
 
     Examples:
-      | handset           | Firstname | Surname | Username     |
-      | Samsung Galaxy S8 | TEST      | ACCEPTA | TEST ACCEPTA |
+      | handset   | Firstname | Surname | Username     |
+      | Galaxy S8 | TEST      | ACCEPTA | TEST ACCEPTA |

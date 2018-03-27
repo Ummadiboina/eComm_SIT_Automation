@@ -31,5 +31,5 @@ Feature: Reg_October2Release_ECOM-12004_CFA_PAYM_Phones.feature
     Then order confirmation is displayed
 
     Examples:
-      | handset           |
-      | Samsung Galaxy S8 |
+      | handset   |
+      | Galaxy S8 |
