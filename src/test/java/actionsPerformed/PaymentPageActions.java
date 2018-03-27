@@ -2,6 +2,7 @@ package actionsPerformed;
 
 import java.awt.AWTException;
 import java.io.IOException;
+import java.util.concurrent.TimeUnit;
 
 import GlobalActions.scrollToAnElement;
 import org.apache.log4j.Logger;
@@ -79,9 +80,11 @@ public class PaymentPageActions extends Environment {
         pageobjects.PaymentPage.postcode.sendKeys("WA27JQ");
         log.debug("Entered the Postcode - WA27JQ");
 
+        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
         pageobjects.PaymentPage.postcodesubmit.click();
         log.debug("Clicked on Find address");
 
+        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
         pageobjects.PaymentPage.Selectaddress.click();
         log.debug("Home Address Selected");
         try {
@@ -193,7 +196,7 @@ public class PaymentPageActions extends Environment {
         Thread.sleep(2000);
         PaymentPage.Continue_Next_Step.sendKeys(Keys.ENTER);
         log.debug("Clicking on continue to next step");
-        Thread.sleep(2000);
+        Thread.sleep(10000);
         log.debug("*********We are done***************");
         log.debug("Exiting the Payments section");
         driver.switchTo().defaultContent();

@@ -2,6 +2,7 @@ package actionsPerformed;
 
 import java.io.IOException;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
@@ -138,7 +139,8 @@ public class OrderConfirmationPageActions extends Environment {
 
 	public static void downloadPDFcopy() {
 		log.debug("Entering downloadPDFcopy function");
-		driver.findElement(By.xpath("//a[@href='orderConfirmation.pdf']")).click();
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		driver.findElement(By.xpath("//a[@href='confirmation/orderConfirmation.pdf']")).click();
 		log.debug("Completed downloading order confirmation");
 
 	}

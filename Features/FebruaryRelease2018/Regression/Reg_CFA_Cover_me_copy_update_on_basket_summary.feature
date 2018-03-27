@@ -46,4 +46,4 @@ Feature: Reg_CFA_Cover_me_copy_update_on_basket_summary
     #And pdf content
     Examples:
       | tabletname    | color     | capacity | Status   | handset           | Firstname | Surname | Username     |
-      | Random Device | Rose Gold | 256GB    | In Stock | Samsung Galaxy S8 | TEST      | ACCEPTA | TEST ACCEPTA |
+      | Random Device | Rose Gold | 64GB    | In Stock | Samsung Galaxy S8 | TEST      | ACCEPTA | TEST ACCEPTA |
