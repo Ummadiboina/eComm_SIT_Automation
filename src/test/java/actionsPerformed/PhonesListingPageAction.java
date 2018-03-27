@@ -160,10 +160,9 @@ public class PhonesListingPageAction extends Environment {
 		driver.manage().timeouts().implicitlyWait(30,TimeUnit.SECONDS);
 
 		//WebElement serchBox = driver.findElement(By.xpath("//input[@ng-model='textSearch.searchText']"));
-
 		WebElement serchBox = driver.findElement(By.xpath("//input[@id='listing-search']"));
 		serchBox.sendKeys(elementName);
-		Thread.sleep(3000);
+		Thread.sleep(2000);
 
 		WebElement requestedDevice = driver.findElement(By.xpath("(//img[@class='device-image']/..//*[contains(text(),'"+elementName+"')])[1]"));
 		if (driver.findElements(By.xpath("(//img[@class='device-image']/..//*[contains(text(),'"+elementName+"')])[1]")).size() >= 1) {
@@ -807,7 +806,7 @@ public class PhonesListingPageAction extends Environment {
 
 		for (WebElement temp2 : devicePrice) {
 
-			String sTemp = StringUtils.substringBetween(temp2.getText(), "Â£", ".");
+			String sTemp = StringUtils.substringBetween(temp2.getText(), "£", ".");
 			devicepricecurrentorder.add(sTemp);
 
 		}
