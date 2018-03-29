@@ -149,6 +149,8 @@ public class Agent_RegisterCustomerActions extends Environment {
 		Thread.sleep(6000);
 		log.debug("Clicked on Register customer");
 		log.debug("Clicked on Register customer");
+
+		Thread.sleep(6000);
 	}
 
 	public static void PaybyCard() throws InterruptedException {
@@ -169,7 +171,7 @@ public class Agent_RegisterCustomerActions extends Environment {
 	}
 
 	public static void CardDetails_PayM() throws InterruptedException {
-		Thread.sleep(2000);
+		Thread.sleep(5000);
 		log.debug("Mipay bit : ");
 		//driver.findElements(By.xpath("//label[contains(text(),'Card ending with:')]")).size();
 		if (driver.findElements(By.xpath("//label[contains(text(),'Card ending with:')]")).size() > 0) {
@@ -271,9 +273,9 @@ public class Agent_RegisterCustomerActions extends Environment {
 			Thread.sleep(5000);
 			((JavascriptExecutor) driver).executeScript("arguments[0].click();", Agent_RegisterCustomerPage.additionalCaptureCardDetails);
 			Thread.sleep(15000);
-
+			String mainWindowHandle = driver.getWindowHandle ();
 			try {
-				String mainWindowHandle = driver.getWindowHandle ();
+				//String mainWindowHandle = driver.getWindowHandle ();
 				Set<String> openWindowSize = driver.getWindowHandles ();
 				log.debug(openWindowSize.size() + " windows are opend");
 				//Switch to child window and close it
@@ -310,10 +312,13 @@ public class Agent_RegisterCustomerActions extends Environment {
 			Thread.sleep(2000);
 			Agent_RegisterCustomerPage.UsethisCard.click();
 			log.debug("completed  Mypay bit");
-			Thread.sleep(6000);
+			Thread.sleep(3000);
 
+			driver.switchTo().window(mainWindowHandle);
+			/*
 			try {
 				String mainWindowHandle = driver.getWindowHandle ();
+				System.out.println("Main Window"+mainWindowHandle);
 				Set<String> openWindowSize = driver.getWindowHandles ();
 				log.debug(openWindowSize.size() + " windows are opend");
 				//Switch to child window and close it
@@ -333,28 +338,49 @@ public class Agent_RegisterCustomerActions extends Environment {
 				log.debug ("Failed to switch to window :: " + e.getStackTrace ());
 
 			}
+			System.out.println("Current Window"+driver.getWindowHandle ());
+			*/
 
-			((JavascriptExecutor) driver).executeScript("arguments[0].click();", Agent_RegisterCustomerPage.licenceDetailsCheckbox);
-			Agent_RegisterCustomerPage.licencePostCode.sendKeys("SL14Dx");
-			Agent_RegisterCustomerPage.licenceNumberSeg1.sendKeys("HOMES");
-			Agent_RegisterCustomerPage.licenceNumberSeg2.sendKeys("901550");
-			Agent_RegisterCustomerPage.licenceNumberSeg3.sendKeys("NDB");
-			Agent_RegisterCustomerPage.licenceNumberSeg4.sendKeys("23");
-			Thread.sleep(3000);
+			Thread.sleep(8000);
 
-			((JavascriptExecutor) driver).executeScript("arguments[0].click();", Agent_RegisterCustomerPage.passportDetailsCheckbox);
-			Thread.sleep(3000);
-			Agent_RegisterCustomerPage.passportIssueCountry.sendKeys("RTY");
-			Agent_RegisterCustomerPage.passportNumberSeg1.sendKeys("9865632131");
-			Agent_RegisterCustomerPage.passportNumberSeg2.sendKeys("RTY");
-			Agent_RegisterCustomerPage.passportNumberSeg3.sendKeys("9912301");
-			Agent_RegisterCustomerPage.passportNumberSeg4.sendKeys("M");
-			Agent_RegisterCustomerPage.passportNumberSeg5.sendKeys("2011089");
-			Agent_RegisterCustomerPage.passportNumberSeg6.sendKeys("12345678965441");
-			Agent_RegisterCustomerPage.passportNumberSeg7.sendKeys("09");
-			Thread.sleep(1000);
-			((JavascriptExecutor) driver).executeScript("arguments[0].click();", Agent_RegisterCustomerPage.performCredidCheckBtn);
-			log.debug("Filled the driving lisences and passport details and clicked on the perfrom credit check button");
+				((JavascriptExecutor) driver).executeScript("arguments[0].click();", Agent_RegisterCustomerPage.licenceDetailsCheckbox);
+				Thread.sleep(5000);
+				Agent_RegisterCustomerPage.licencePostCode.sendKeys("SL14Dx");
+				Thread.sleep(2000);
+				Agent_RegisterCustomerPage.licenceNumberSeg1.sendKeys("HOMES");
+				Thread.sleep(2000);
+				Agent_RegisterCustomerPage.licenceNumberSeg2.sendKeys("901550");
+				Thread.sleep(2000);
+				Agent_RegisterCustomerPage.licenceNumberSeg3.sendKeys("NDB");
+				Thread.sleep(2000);
+				Agent_RegisterCustomerPage.licenceNumberSeg4.sendKeys("23");
+				Thread.sleep(10000);
+
+
+				((JavascriptExecutor) driver).executeScript("arguments[0].click();", Agent_RegisterCustomerPage.passportDetailsCheckbox);
+				Thread.sleep(5000);
+				Agent_RegisterCustomerPage.passportIssueCountry.sendKeys("RTY");
+				Thread.sleep(2000);
+				Agent_RegisterCustomerPage.passportNumberSeg1.sendKeys("9865632131");
+				Thread.sleep(2000);
+				Agent_RegisterCustomerPage.passportNumberSeg2.sendKeys("RTY");
+				Thread.sleep(2000);
+				Agent_RegisterCustomerPage.passportNumberSeg3.sendKeys("9912301");
+				Thread.sleep(2000);
+				Agent_RegisterCustomerPage.passportNumberSeg4.sendKeys("M");
+				Thread.sleep(2000);
+				Agent_RegisterCustomerPage.passportNumberSeg5.sendKeys("2011089");
+				Thread.sleep(2000);
+				Agent_RegisterCustomerPage.passportNumberSeg6.sendKeys("12345678965441");
+				Thread.sleep(2000);
+				Agent_RegisterCustomerPage.passportNumberSeg7.sendKeys("09");
+				Thread.sleep(10000);
+
+				((JavascriptExecutor) driver).executeScript("arguments[0].click();", Agent_RegisterCustomerPage.performCredidCheckBtn);
+				log.debug("Filled the driving lisences and passport details and clicked on the perfrom credit check button");
+
+			Thread.sleep(10000);
+
 
 		}
 	}

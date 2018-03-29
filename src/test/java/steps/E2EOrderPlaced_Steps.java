@@ -1619,7 +1619,9 @@ public class E2EOrderPlaced_Steps {
             Thread.sleep(5000);
             ReviewPageActions.gettitlepage();
             ReviewPageActions.TermsCheckBox();
+            driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
             ReviewPageActions.PayNow();
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         } catch (Exception e) {
             e.printStackTrace();
             log.debug(
@@ -6945,7 +6947,7 @@ public class E2EOrderPlaced_Steps {
         }
     }
 
-    @And("^Select a PAYG device in stock which is less than 50 GBP$")
+    @And("^Select a PAYG ([^\"]*) in stock which is less than 50 GBP$")
     public void Select_a_PAYG_Device_InStock_lessThan50GBP(String device) {
         try {
             driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
@@ -6976,7 +6978,7 @@ public class E2EOrderPlaced_Steps {
     }
 
 
-    @And("^Select valid tariff from PAYG tariffs tab which is less than 50 GBP$")
+    @And("^Select valid tariff from PAYG tariffs tab which is less than ([^\"]*) GBP$")
     public void Select_valid_Tariffs_from_PAYG_tariffs_tab_LessThan50GBP(int device) {
         try {
             driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);

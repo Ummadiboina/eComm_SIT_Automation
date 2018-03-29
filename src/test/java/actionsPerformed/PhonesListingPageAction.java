@@ -163,10 +163,11 @@ public class PhonesListingPageAction extends Environment {
 
 		WebElement serchBox = driver.findElement(By.xpath("//input[@id='listing-search']"));
 		serchBox.sendKeys(elementName);
-		Thread.sleep(3000);
+		Thread.sleep(8000);
 
-		WebElement requestedDevice = driver.findElement(By.xpath("(//img[@class='device-image']/..//*[contains(text(),'"+elementName+"')])[1]"));
-		if (driver.findElements(By.xpath("(//img[@class='device-image']/..//*[contains(text(),'"+elementName+"')])[1]")).size() >= 1) {
+		WebElement requestedDevice = driver.findElement(By.xpath("(//img[@class='device-image']/..//*[contains(text(),'"+elementName+"')])[3]"));
+
+		if (driver.findElements(By.xpath("(//img[@class='device-image']/..//*[contains(text(),'"+elementName+"')])[3]")).size() >= 1) {
 			((JavascriptExecutor) driver).executeScript("arguments[0].click();", requestedDevice);
 			log.debug("Selected Device from Phones as Required is : " + elementName);
 			log.debug("Selected Device from Phones as Required is : " + elementName);
@@ -175,7 +176,7 @@ public class PhonesListingPageAction extends Environment {
 
 			WebElement element = driver.findElement(By.xpath("(//img[@class='device-image'])[1]"));
 			((JavascriptExecutor) driver).executeScript("arguments[0].click();", element);
-			String defaultSelDevice = driver.findElement(By.xpath("((//img[@class='device-image'])[1]/..//span[@class='ng-binding'])[2]")).getText();
+			String defaultSelDevice = driver.findElement(By.xpath("((//img[@class='device-image'])[1]/..//span[@class='ng-binding'])[1]")).getText();
 			log.debug(" As Required Device is not Availabe, We have picked default device from availabe  :: " + defaultSelDevice);
 			log.debug(" As Required Device is not Availabe, We have picked default device from availabe  :: " + defaultSelDevice);
 			Thread.sleep(3000);

@@ -221,7 +221,8 @@ public class UpgradeCustomerPage {
 	
 	@FindBy(how = How.ID, using = "qa-view-all")
 	public static WebElement ViewAllTariffs;
-	
+
+
 	@FindBy(how = How.ID, using = "otac")
 	public static WebElement SecurityOtac;
 	//*[@id='otac']

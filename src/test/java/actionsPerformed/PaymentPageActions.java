@@ -88,7 +88,7 @@ public class PaymentPageActions extends Environment {
         pageobjects.PaymentPage.Selectaddress.click();
         log.debug("Home Address Selected");
         try {
-            Thread.sleep(3000);
+            Thread.sleep(5000);
             driver.findElement(By.xpath("//*[@id='btn-continue-label']")).click();
         } catch (InterruptedException e) {
             e.printStackTrace();

@@ -154,16 +154,16 @@ public class BasketPageActions extends Environment {
 				}
 
 			});
-
+			driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
 			checkOutButtonValidation.click();
 		} else {
 			Thread.sleep(2000);
 			if(!pageobjects.BasketPage.checkoutbtn.isEnabled())
 			{
-				Thread.sleep(4000);
+				Thread.sleep(3000);
 				driver.findElement(By.xpath("//input[@id='noNeedNewSim']")).click();
 			}
-
+			Thread.sleep(3000);
 			log.debug("Queue page is not displayed");
 			WebElement element = pageobjects.BasketPage.checkoutbtn;
 			JavascriptExecutor executor = (JavascriptExecutor)driver;

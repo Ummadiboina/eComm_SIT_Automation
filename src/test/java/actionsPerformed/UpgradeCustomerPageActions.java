@@ -668,9 +668,9 @@ public class UpgradeCustomerPageActions extends Environment {
         log.debug('\n' + "Verify Overlay Icon Is Displayed in TE page");
         log.debug("Tariff for verifying overlay icon is " + Tariff);
 
-        WebElement overlayIcon = driver.findElement(By.xpath("(//div[@class='blue-promotion']//span[@class='promotion-text ng-binding'])[2]/following-sibling::a"));
+        //WebElement overlayIcon = driver.findElement(By.xpath("(//div[@class='blue-promotion']//span[@class='promotion-text ng-binding'])[2]/following-sibling::a"));
 
-        if (driver.findElements(By.xpath("(//div[@class='blue-promotion']//span[@class='promotion-text ng-binding'])[2]/following-sibling::a)")).size()>=1) {
+        if (driver.findElements(By.xpath("(//div[@class='blue-promotion']//span[@class='promotion-text ng-binding'])[2]/following-sibling::a")).size()>=1) {
             log.debug("Overlay is present for the selected tariff in the tariff tile as expected in the Tariff and Extras page");
             log.debug("Overlay is present for the selected tariff in the tariff tile as expected in the Tariff and Extras page");
         } else {

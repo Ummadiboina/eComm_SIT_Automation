@@ -37,4 +37,4 @@ Feature: Reg_October2Release_Reg_October2Release_CFA_Phones_ColourDropdownsWithC
     #Close the browser
     Examples:
       | handset        | Username     | color | CFATariffColour |
-      | Apple iPhone 8 | TEST ACCEPTA | Gold  | Gold            |
+      | Apple          | TEST ACCEPTA | Gold  | Gold            |
