@@ -164,8 +164,8 @@ public class PhonesListingPageAction extends Environment {
 		serchBox.sendKeys(elementName);
 		Thread.sleep(2000);
 
-		WebElement requestedDevice = driver.findElement(By.xpath("(//img[@class='device-image']/..//*[contains(text(),'"+elementName+"')])[1]"));
-		if (driver.findElements(By.xpath("(//img[@class='device-image']/..//*[contains(text(),'"+elementName+"')])[1]")).size() >= 1) {
+		WebElement requestedDevice = driver.findElement(By.xpath("(//img[@class='device-image']/..//*[contains(text(),'"+elementName+"')])[3]"));
+		if (driver.findElements(By.xpath("(//img[@class='device-image']/..//*[contains(text(),'"+elementName+"')])[3]")).size() >= 1) {
 			((JavascriptExecutor) driver).executeScript("arguments[0].click();", requestedDevice);
 			log.debug("Selected Device from Phones as Required is : " + elementName);
 			log.debug("Selected Device from Phones as Required is : " + elementName);
@@ -806,7 +806,7 @@ public class PhonesListingPageAction extends Environment {
 
 		for (WebElement temp2 : devicePrice) {
 
-			String sTemp = StringUtils.substringBetween(temp2.getText(), "£", ".");
+			String sTemp = StringUtils.substringBetween(temp2.getText(), "ï¿½", ".");
 			devicepricecurrentorder.add(sTemp);
 
 		}

@@ -35,4 +35,4 @@ Feature: Reg_October2Release_CFA_Phones_ColourDropdownsWithColourNamesBesideTheC
 
     Examples:
       | handset        | Username     | color |
-      | Apple iPhone 8 | TEST ACCEPTA | Gold  |
+      | Apple          | TEST ACCEPTA | Gold  |

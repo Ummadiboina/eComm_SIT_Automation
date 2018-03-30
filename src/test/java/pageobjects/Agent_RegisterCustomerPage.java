@@ -43,7 +43,7 @@ public class Agent_RegisterCustomerPage {
     @FindBy(how = How.XPATH, using = "//input[@value='Find address']")
     public static WebElement FindAddress;
 
-    @FindBy(how = How.XPATH, using = "//input[@value='Select address']")
+    @FindBy(how = How.XPATH, using = "(//input[@value='Select address'])[1]")
     public static WebElement Selectedaddress;
 
     @FindBy(how = How.ID, using = "securityQuestion")

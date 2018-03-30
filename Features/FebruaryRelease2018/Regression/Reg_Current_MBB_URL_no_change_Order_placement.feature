@@ -18,5 +18,5 @@ Feature: Reg_Current_MBB_URL_no_change_Order_placement.feature
 
     #Modify the above step to include pdf download
     Examples:
-      | username           | password | user         |
-      | 12342015@gmail.com | test123  | TEST ACCEPTA |
+      | username               | password | user         |
+      | in056936_348005@o2.com | test123  | TEST ACCEPTA |
