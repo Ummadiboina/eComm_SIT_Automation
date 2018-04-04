@@ -6,7 +6,7 @@ Feature: Reg_FNT_AFA_PayG_Phones_less_than_50_GBP_ClickAndCollect
     Given I login to Agent shop
     And performs Acquisition for New user
     And Select a PAYG device in stock which is less than 50 GBP
-    #And Select a valid PAYG <Device>
+    And Select a valid PAYG <Device>
     And Select valid tariff from PAYG tariffs tab which is less than 50 GBP
     And Confirm Device and Tariff are added in Deal Builder
     And Select a valid store using <PostCode> for Click and Collect
@@ -17,5 +17,5 @@ Feature: Reg_FNT_AFA_PayG_Phones_less_than_50_GBP_ClickAndCollect
     Then Order confirmation message should be displayed
 
     Examples:
-      | Device                               | Device   | Tariffs | Firstname | Surname | HouseNumber | PostCode |
-      | Galaxy Trend 2 Lite Perfect Like New | In stock | 50      | TEST      | ACCEPTA | 4           | sl11er   |
+      | Device                            | Tariffs  | Firstname | Surname | HouseNumber | PostCode |
+      | Galaxy S9 Plus 128GB Lilac Purple | In stock | TEST      | ACCEPTA | 4           | sl11er   |

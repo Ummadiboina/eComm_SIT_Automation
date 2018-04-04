@@ -11,10 +11,7 @@ import GlobalActions.*;
 import actionsPerformed.*;
 import cucumber.api.DataTable;
 import org.apache.log4j.Logger;
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.support.PageFactory;
 
 import GlobalActions.Autoredirection;
@@ -1951,7 +1948,7 @@ public class E2EOrderPlaced_Steps {
     April2018
      */
     @And("^verify 'Email Basket' link is displayed next to the Search CTA in deal builder section$")
-    public void verify_Email_Basket_link_is_displayed_next_to_the_Search_CTA_in_deal_builder_section() throws Throwable {
+    public void verify_Email_Basket_link_is_displayed_next_to_the_Search_CTA_in_deal_builder_section() {
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         try {
             PageFactory.initElements(driver, Agent_DealBuilderPage.class);
@@ -1963,7 +1960,7 @@ public class E2EOrderPlaced_Steps {
         }
     }
     @And("^click on '\\+' accordion at the top of deal builder$")
-    public void click_on_accordion_at_the_top_of_deal_builder() throws Throwable {
+    public void click_on_accordion_at_the_top_of_deal_builder() {
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         try {
             PageFactory.initElements(driver, Agent_DealBuilderPage.class);
@@ -1976,10 +1973,11 @@ public class E2EOrderPlaced_Steps {
         }
     }
     @And("^verify user switched to Email Basket pop up window$")
-    public void verify_user_switched_to_Email_Basket_pop_up_window() throws Throwable {
+    public void verify_user_switched_to_Email_Basket_pop_up_window() {
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         try {
             PageFactory.initElements(driver, Agent_DealBuilderPage.class);
+            CommonActions.switchToWindow();
         } catch (Exception e) {
             // TODO Auto-generated catch block
             System.out.println("Unable to validate Quantity , please see the failure screenshot");
@@ -7019,7 +7017,7 @@ public class E2EOrderPlaced_Steps {
             PageFactory.initElements(driver, checkStoreStockForPayG.class);
             checkStoreStockForPayG.checkStoreStockBtn.click();
             CommonUtilities.switchToWindow(driver);
-
+            checkStoreStockForPayG.postcodeTxt.sendKeys(Keys.CONTROL,"a",Keys.DELETE);
             checkStoreStockForPayG.postcodeTxt.sendKeys(postcode);
             CommonUtilities.driverWait(driver, 3000);
             checkStoreStockForPayG.findStoreSearchBtn.click();
@@ -7030,7 +7028,7 @@ public class E2EOrderPlaced_Steps {
             log.debug("before selectiong the store");
             checkStoreStockForPayG.selectStoreAddress.click();
             log.debug("after selectiong the store");
-            CommonUtilities.driverWait(driver, 3000);
+            CommonUtilities.driverWait(driver, 5000);
             log.debug("before navigation back");
             CommonUtilities.switchToWindow(driver);
             log.debug("Successfylly selected store");
@@ -9194,7 +9192,7 @@ public class E2EOrderPlaced_Steps {
 
     @And("^Click on 'Plus' accordion at the top of deal builder$")
     public void clickPlusButton() throws InterruptedException {
-
+        Thread.sleep(5000);
         driver.findElement(By.xpath("//a[@class='addPackage']/img")).click();
 
         Thread.sleep(5000);
@@ -9203,16 +9201,32 @@ public class E2EOrderPlaced_Steps {
     }
 //venkat april release
 
-    @And("^verify 'Copy to Clipboard' CTA is displayed next to the basket link for the first deal$")
-    public void verify_CopyToClipboard_And_ClikOnLink() throws InterruptedException {
-
-        driver.findElement(By.xpath("//a[@class='addPackage']/img")).click();
-
-        Thread.sleep(5000);
-
-
+    @And("^verify Basket link and 'Copy to Clipboard' CTA are enabled Click on 'Copy to Clipboard' button$")
+    public void verify_CopyToClipboard_And_ClikOnLink() {
+        try {
+            driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, Agent_DealBuilderPage.class);
+            Agent_DealBuilderPageActions.verifyDevive_and_CopyClipboard_Btn();
+            Thread.sleep(5000);
+        } catch (InterruptedException e) {
+            System.out.println("Failed to verify Basket link and 'Copy to Clipboard' CTA are enabled Click on 'Copy to Clipboard' button");
+            Assert.fail("Failed to verify Basket link and 'Copy to Clipboard' CTA are enabled Click on 'Copy to Clipboard' button");
+            e.printStackTrace();
+        }
     }
 
+    @And("^select ([^\"]*) Fitness tracker$")
+    public void selectSmartTEchDevice(String Device) {
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, Agent_DealBuilderPage.class);
+            Agent_DealBuilderPageActions.SelectSmartTechDevice(Device);
 
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            System.out.println("Unable to select Smart tech device");
+            junit.framework.Assert.fail("Unable to select Smart tech device, please see the failure screenshot");
+        }
+    }
 
 }

@@ -202,10 +202,12 @@ public class Agent_CreditCheckPageActions extends Environment {
 			if (!Mainwindow.equalsIgnoreCase(ChildWindow)) {
 				// Switching to Child window
 				driver.switchTo().window(ChildWindow);
-				Thread.sleep(3000);
+				Thread.sleep(15000);
 				Agent_CreditCheckDetailsPage.CardHolderName.sendKeys(Username);
 				log.debug("Entered card holder name");
 
+
+                Thread.sleep(3000);
 				Select CardTypeDropDown = new Select(pageobjects.Agent_CreditCheckDetailsPage.CardType);
 				CardTypeDropDown.selectByIndex(3);
 				log.debug("Entered Card type");

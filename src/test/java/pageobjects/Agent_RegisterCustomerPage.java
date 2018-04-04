@@ -173,7 +173,7 @@ public class Agent_RegisterCustomerPage {
     @FindBy(how = How.ID, using = "licenceDetailsCheckbox")
     public static WebElement licenceDetailsCheckbox;
 
-    @FindBy(how = How.ID, using = "licencePostCode")
+    @FindBy(how = How.ID, using = "//input[@id='licencePostCode']")
     public static WebElement licencePostCode;
 
     @FindBy(how = How.ID, using = "licenceNumberSeg1")

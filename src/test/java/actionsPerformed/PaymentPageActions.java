@@ -3,6 +3,7 @@ package actionsPerformed;
 import java.awt.AWTException;
 import java.io.IOException;
 
+import GlobalActions.CommonActions;
 import GlobalActions.scrollToAnElement;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
@@ -11,6 +12,7 @@ import org.openqa.selenium.Keys;
 
 import GlobalActions.Screenshots;
 import helpers.Environment;
+import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import pageobjects.PaymentPage;
 
@@ -71,22 +73,27 @@ public class PaymentPageActions extends Environment {
     }
 
 
-    public static void enterPotalCodeAddress()  {
+    public static void enterPotalCodeAddress() throws InterruptedException {
 
         pageobjects.PaymentPage.housenumber.sendKeys("41");
         log.debug("Entered the House Number - 41");
 
         pageobjects.PaymentPage.postcode.sendKeys("WA27JQ");
         log.debug("Entered the Postcode - WA27JQ");
-
+        Thread.sleep(5000);
         pageobjects.PaymentPage.postcodesubmit.click();
         log.debug("Clicked on Find address");
-
+        Thread.sleep(5000);
         pageobjects.PaymentPage.Selectaddress.click();
         log.debug("Home Address Selected");
         try {
-            Thread.sleep(3000);
-            driver.findElement(By.xpath("//*[@id='btn-continue-label']")).click();
+            Thread.sleep(5000);
+            System.out.println(driver.getWindowHandles());
+            CommonActions.switchToWindow();
+             WebElement ele =driver.findElement(By.xpath("//span[@id='btn-continue-label']"));
+            JavascriptExecutor executor = (JavascriptExecutor)driver;
+            executor.executeScript("arguments[0].click();", ele);
+            CommonActions.switchToWindow();
         } catch (InterruptedException e) {
             e.printStackTrace();
         }

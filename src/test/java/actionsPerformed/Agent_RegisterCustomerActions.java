@@ -3,6 +3,7 @@ package actionsPerformed;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
+import GlobalActions.CommonActions;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -209,7 +210,7 @@ public class Agent_RegisterCustomerActions extends Environment {
 	public static void CardDetails() throws InterruptedException {
 		Thread.sleep(7000);
 
-		if (driver.findElements(By.xpath("CardHolderName")).size() >= 1) {
+		if (driver.findElements(By.xpath("//input[@id='CardHolderName']")).size() >= 1) {
 			Agent_RegisterCustomerPage.CardHolderName.sendKeys("TEST ACCEPTA");
 			System.out.println("Card holder name ");
 			Select CardTypeDropDown = new Select(pageobjects.Agent_RegisterCustomerPage.CardType);
@@ -272,38 +273,18 @@ public class Agent_RegisterCustomerActions extends Environment {
 			((JavascriptExecutor) driver).executeScript("arguments[0].click();", Agent_RegisterCustomerPage.additionalCaptureCardDetails);
 			Thread.sleep(15000);
 
-			try {
-				String mainWindowHandle = driver.getWindowHandle ();
-				Set<String> openWindowSize = driver.getWindowHandles ();
-				log.debug(openWindowSize.size() + " windows are opend");
-				//Switch to child window and close it
-				for (String childWindowHandle : driver.getWindowHandles ()) {
-					//If window handle is not main window handle then close it
-					if (!childWindowHandle.equals (mainWindowHandle)) {
-						driver.switchTo ().window (childWindowHandle);
-						// Close child windows
-						// driver.close();
-					} else {
-						//switch back to main window
-						driver.switchTo ().window (mainWindowHandle);
-						log.debug ("Switched window");
-					}
-				}
-			} catch (Exception e){
-				log.debug ("Failed to switch to window :: " + e.getStackTrace ());
-
-			}
+			CommonActions.switchToWindow();
 
 			Agent_RegisterCustomerPage.CardHolderName.sendKeys("TEST ACCEPTA");
 			log.debug("Card holder name ");
-			Select CardTypeDropDown = new Select(pageobjects.Agent_RegisterCustomerPage.CardType);
+			Select CardTypeDropDown = new Select(Agent_RegisterCustomerPage.CardType);
 			CardTypeDropDown.selectByIndex(3);
 			Agent_RegisterCustomerPage.CardNumber.sendKeys("4539791001730106");
 			Thread.sleep(2000);
-			Select CardMonthDropdown = new Select(pageobjects.Agent_RegisterCustomerPage.CardMonth);
+			Select CardMonthDropdown = new Select(Agent_RegisterCustomerPage.CardMonth);
 			CardMonthDropdown.selectByIndex(2);
 			Thread.sleep(2000);
-			Select CardYearDropdown = new Select(pageobjects.Agent_RegisterCustomerPage.CardYear);
+			Select CardYearDropdown = new Select(Agent_RegisterCustomerPage.CardYear);
 			CardYearDropdown.selectByIndex(3);
 			Thread.sleep(2000);
 			Agent_RegisterCustomerPage.SecurityCode.sendKeys("123");
@@ -311,30 +292,41 @@ public class Agent_RegisterCustomerActions extends Environment {
 			Agent_RegisterCustomerPage.UsethisCard.click();
 			log.debug("completed  Mypay bit");
 			Thread.sleep(6000);
+			Set<String> noOfWindows = driver.getWindowHandles();
+			System.out.println(" noOfWindows : " + noOfWindows );
 
-			try {
-				String mainWindowHandle = driver.getWindowHandle ();
-				Set<String> openWindowSize = driver.getWindowHandles ();
-				log.debug(openWindowSize.size() + " windows are opend");
-				//Switch to child window and close it
-				for (String childWindowHandle : driver.getWindowHandles ()) {
-					//If window handle is not main window handle then close it
-					if (!childWindowHandle.equals (mainWindowHandle)) {
-						driver.switchTo ().window (childWindowHandle);
-						// Close child windows
-						// driver.close();
-					} else {
-						//switch back to main window
-						driver.switchTo ().window (mainWindowHandle);
-						log.debug ("Switched window");
+			if(noOfWindows.size() == 0) {
+				((JavascriptExecutor) driver).executeScript("arguments[0].click();", Agent_RegisterCustomerPage.licenceDetailsCheckbox);
+			}else{
+
+
+
+				try {
+					String mainWindowHandle = driver.getWindowHandle ();
+					//Switch to child window and close it
+					for (String childWindowHandle : driver.getWindowHandles ()) {
+						//If window handle is not main window handle then close it
+						if (!childWindowHandle.equals (mainWindowHandle)) {
+							driver.switchTo ().window (childWindowHandle);
+							System.out.println(" Driver is Switch to Child Window");
+							log.info(" Driver is Switch to Child Window");
+						} else {
+							//switch back to main window
+							driver.switchTo ().window (mainWindowHandle);
+							System.out.println(" Driver is still stands in Main Window");
+							log.info(" Driver is still stands in Main Window");
+						}
 					}
-				}
-			} catch (Exception e){
-				log.debug ("Failed to switch to window :: " + e.getStackTrace ());
+				} catch (Exception e){
+					System.out.println ("Failed to switch to window :: " + e.getStackTrace ());
+					log.info("Failed to switch to window :: " + e.getStackTrace ());
 
+				}
+
+
+				((JavascriptExecutor) driver).executeScript("arguments[0].click();", Agent_RegisterCustomerPage.licenceDetailsCheckbox);
 			}
 
-			((JavascriptExecutor) driver).executeScript("arguments[0].click();", Agent_RegisterCustomerPage.licenceDetailsCheckbox);
 			Agent_RegisterCustomerPage.licencePostCode.sendKeys("SL14Dx");
 			Agent_RegisterCustomerPage.licenceNumberSeg1.sendKeys("HOMES");
 			Agent_RegisterCustomerPage.licenceNumberSeg2.sendKeys("901550");

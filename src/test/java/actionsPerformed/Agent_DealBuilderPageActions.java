@@ -1,25 +1,27 @@
 package actionsPerformed;
 
-import java.io.IOException;
-import java.util.*;
-import java.util.concurrent.TimeUnit;
-
 import GlobalActions.CommonActions;
+import GlobalActions.Screenshots;
+import helpers.Environment;
+import junit.framework.Assert;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
-
-import GlobalActions.Screenshots;
-import helpers.Environment;
-import junit.framework.Assert;
 import pageobjects.Agent_DealBuilderPage;
+
+import java.io.IOException;
+import java.util.*;
+import java.util.concurrent.TimeUnit;
 
 public class Agent_DealBuilderPageActions extends Environment {
 
     final static Logger log = Logger.getLogger("Agent_DealBuilderPageActions");
+    public static ArrayList deviceNames;
+    public static ArrayList DevicesAndTariffs;
+    public  static ArrayList lstOfDeviceAdded_DB;
 
     // this method used to perform click action on the Agent Home Page
 
@@ -41,11 +43,13 @@ public class Agent_DealBuilderPageActions extends Environment {
         // Reporter.log("Selected the dropdown Mrs");
 
         Agent_DealBuilderPage.DevicesTab.click();
+
         log.debug("Clicked on Devices tab");
         log.debug("Clicked on Devices tab");
         Thread.sleep(3000);
 
         if (Device.contains("Random")) {
+            Agent_DealBuilderPage.SearchTextBox_PayMDevice.sendKeys(Keys.CONTROL,"a",Keys.DELETE);
             Thread.sleep(3000);
             Agent_DealBuilderPage.firstAvailableDevice.click();
             Thread.sleep(3000);
@@ -53,7 +57,9 @@ public class Agent_DealBuilderPageActions extends Environment {
             log.debug("Selected device ");
 
         } else {
-
+            System.out.println("The Device : " + Device);
+            Agent_DealBuilderPage.SearchTextBox_PayMDevice.sendKeys(Keys.CONTROL,"a",Keys.DELETE);
+            Thread.sleep(1000);
             Agent_DealBuilderPage.SearchTextBox_PayMDevice.sendKeys(Device);
             log.debug("Clicked on SearchTextBox to enter" + Device);
             log.debug("Clicked on SearchTextBox to enter" + Device);
@@ -65,16 +71,22 @@ public class Agent_DealBuilderPageActions extends Environment {
 
     public static void SelectTariff(String Tariff) throws InterruptedException, IOException {
         Agent_DealBuilderPage.TariffsTab.click();
-        Thread.sleep(5000);
+
+        Thread.sleep(3000);
+        Agent_DealBuilderPage.SearchTextBox_Tariff.sendKeys(Keys.CONTROL,"a",Keys.DELETE);
+        Thread.sleep(3000);
         if (Tariff.contains("Random")) {
+            Agent_DealBuilderPage.SearchTextBox_Tariff.sendKeys(Keys.CONTROL,"a",Keys.DELETE);
+            Thread.sleep(5000);
             // Agent_DealBuilderPage.SearchTextBox_Tariff.sendKeys("Standard");
             Agent_DealBuilderPage.SelectingFirstAvailableTariff.click();
             Thread.sleep(3000);
             log.debug("Selected Random Tariff ");
             log.debug("Selected Random Tariff ");
-
         }
         if (Tariff.contains("Standard")) {
+            Agent_DealBuilderPage.SearchTextBox_Tariff.sendKeys(Keys.CONTROL,"a",Keys.DELETE);
+            Thread.sleep(3000);
             Agent_DealBuilderPage.SearchTextBox_Tariff.sendKeys("Standard");
             Agent_DealBuilderPage.SelectingFirstAvailableTariff.click();
             Thread.sleep(3000);
@@ -233,7 +245,8 @@ public class Agent_DealBuilderPageActions extends Environment {
     public static void SelectPayGDevice(String Device) throws InterruptedException, IOException {
 
         Agent_DealBuilderPage.prepayDevicesTab.click();
-
+        Thread.sleep(6000);
+        Agent_DealBuilderPage.SearchTextBox_PrepayDevice.sendKeys(Keys.CONTROL,"a",Keys.DELETE);
         if (Device.contains("iPhone 7 Plus 128GB Jet Black")) {
             log.debug("searching iPhone 7 Plus 128GB Jet Black");
 
@@ -315,7 +328,11 @@ public class Agent_DealBuilderPageActions extends Environment {
         Agent_DealBuilderPage.prepayPlansTab.click();
         log.debug("Clicked on prepayPlansTab ");
         log.debug("Clicked on prepayPlansTab ");
-
+        if (Agent_DealBuilderPage.SearchTextBox_Tariff.isDisplayed()) {
+            Thread.sleep(3000);
+            Agent_DealBuilderPage.SearchTextBox_Tariff.sendKeys(Keys.CONTROL, "a", Keys.DELETE);
+            Thread.sleep(3000);
+        }
         if (Tariff.contains("Random")) {
 
             // pageobjects.Agent_DealBuilderPage.prepayDeviceTableFilter.click();
@@ -782,7 +799,7 @@ public class Agent_DealBuilderPageActions extends Environment {
 
 
 
-    public static Hashtable getSelectedProducts() throws InterruptedException{
+/*    public static Hashtable getSelectedProducts() throws InterruptedException{
 
         Hashtable selectedElements = new Hashtable();
         ArrayList deviceNames = new ArrayList();
@@ -793,6 +810,7 @@ public class Agent_DealBuilderPageActions extends Environment {
         for(int i = 0 ; i < elementsList.size()-1; i++){
 
             elementsList.get(i).click();
+            Thread.sleep(3000);
             deviceNames.add(elementsList.get(i).getText());
 
             Thread.sleep(5000);
@@ -806,10 +824,12 @@ public class Agent_DealBuilderPageActions extends Environment {
                         //div[@class='lineItemContainer']/table[contains(@class,'device')]
                         String deviceName = driver.findElement(By.xpath("//table[contains(@class,'device')]//tbody/tr[contains(@class,'lineItemRow')]/td[1]/p[1]//span")).getText();
                         DevicesAndTariffs.add(i,deviceName);
+                        System.out.println("The Device is : "+ deviceName);
 
                     } else if (elm2.getAttribute("class").contains("tariff")) {
                         String tariffName =  elm2.findElement(By.xpath("//table[contains(@class,'tariff')]//tbody/tr[contains(@class,'lineItemRow')]/td[1]/p[1]//span")).getText();
                         DevicesAndTariffs.add(i,"|"+tariffName);
+                        System.out.println("The Tariff is : "+ tariffName);
                     }
                 } else {
                     String productName = elm2.findElement(By.xpath("//tbody/tr[contains(@class,'lineItemRow')]/td[1]/p[1]//span")).getText();
@@ -823,104 +843,145 @@ public class Agent_DealBuilderPageActions extends Environment {
 
         return selectedElements;
 
-    }
+    }*/
 
 
-    public static void validateEmailBasketPopupDeviceList(Hashtable DeviceList) {
-
-        ArrayList DealBuilderDeviceList = new ArrayList<String>();
-        DealBuilderDeviceList = (ArrayList) DeviceList.get("DEVICES");
-
-        List<WebElement> emailBasketPopupDevicelist = driver.findElements(By.xpath("//h3[contains(text(),'Choose baskets to share with customer:')]/../table[1]/tbody/tr"));
-
-        for(WebElement elm : emailBasketPopupDevicelist){
-
-            if(DealBuilderDeviceList.contains(elm.findElement(By.xpath("//td[2]")).getAttribute("textContent"))){
-
-                log.debug(elm.findElement(By.xpath("//td[2]")).getAttribute("textContent")+ " device is listed");
-
-                if(elm.findElement(By.xpath("//td[3]")).isDisplayed() && elm.findElement(By.xpath("//td[3]")).getText().equalsIgnoreCase("GetBasketLink")){
-
-                    log.debug(elm.findElement(By.xpath("//td[2]")).getAttribute("textContent")+ " device is listed and Basket Link is present");
-                }
-                else{
-
-                    log.debug(elm.findElement(By.xpath("//td[2]")).getAttribute("textContent")+ " device is listed but Basket Link is not present");
-                }
+    public static Hashtable getSelectedProducts() throws InterruptedException {
+        Hashtable selectedElements = new Hashtable();
+        deviceNames = new ArrayList();
+        DevicesAndTariffs = new ArrayList();
+        lstOfDeviceAdded_DB = new ArrayList();
+        List<WebElement> elementsList = driver.findElements(By.xpath("//a[@class='basketHeading']"));
+        for (int i = 0, j = 1; i < elementsList.size() - 1; i++, j++) {
+            // elementsList.get(i).click();
+            WebElement addedDeviveName = driver.findElement(By.xpath("(//a[@class='basketHeading'])[" + j + "]"));
+            if(addedDeviveName.getText().contains("mpty")) {
+                System.out.println("the device is added as empty");
+            }else{
+                lstOfDeviceAdded_DB.add(addedDeviveName.getText());
             }
-            else{
-                log.debug("Unselected device is present in Email Basket pop up.");
+
+
+            JavascriptExecutor executor = (JavascriptExecutor) driver;
+            executor.executeScript("arguments[0].click();", addedDeviveName);
+            Thread.sleep(5000);
+            if (driver.findElements(By.xpath("(//div[@class='lineItemContainer']//span[@class='content'])[1]")).size() >= 1) {
+                String dNaame = driver.findElement(By.xpath("(//div[@class='lineItemContainer']//span[@class='content'])[1]")).getText();
+                deviceNames.add(dNaame);
+                System.out.println("The Device Name :: " + dNaame);
+                log.info("The Device Name :: " + dNaame);
+                Thread.sleep(2000);
+
+                String tariffName = driver.findElement(By.xpath("(//div[@class='lineItemContainer']//span[@class='content'])[3]")).getText();
+                DevicesAndTariffs.add(tariffName);
+                System.out.println("The Tariff Name :: " + tariffName);
+                log.info("The Device Name :: " + tariffName);
+                Thread.sleep(2000);
+
+                selectedElements.put(dNaame, tariffName);
+            } else{
+
+                continue;
             }
+        }
+            return selectedElements;
 
         }
 
 
-    }
 
-     public static void verifyDevive_and_CopyClipboard_Btn() {
-        try {
+        public static void validateEmailBasketPopupDeviceList (Hashtable DeviceList){
 
-            //list of the devices which are selected at the deal builder page
-            int lstOfDeviceAddedInBuilder = getSelectedProducts().size();
+            ArrayList DealBuilderDeviceList = new ArrayList<String>();
+            DealBuilderDeviceList = (ArrayList) DeviceList.get("DEVICES");
 
-            List<WebElement> listOfDevicesAddedToBilder = driver.findElements(By.xpath("//div[@class='emailBasketWidget']//table[1]//tr"));
-            int sizeOfAddedDevice = listOfDevicesAddedToBilder.size();
-            int selectedDeviceList = getSelectedProducts().size();
-            System.out.println("List of Device which are added to Deal Builder (" + selectedDeviceList + ")");
-            for (int i = 1,j=0; i <= sizeOfAddedDevice; i++,j++) {
+            List<WebElement> emailBasketPopupDevicelist = driver.findElements(By.xpath("//h3[contains(text(),'Choose baskets to share with customer:')]/../table[1]/tbody/tr"));
 
-                String deviceNameFromBuilder = (String) getSelectedProducts().get("+j+");
+            for (WebElement elm : emailBasketPopupDevicelist) {
 
-                Thread.sleep(3000);
-                String deviceName = driver.findElement(By.xpath("//div[@class='emailBasketWidget']//table[1]//tr[" + i + "]/td[2]"));
-                System.out.println("Device Name :: " + deviceName);
-                log.info("Device Name :: " + deviceName);
+                if (DealBuilderDeviceList.contains(elm.findElement(By.xpath("//td[2]")).getAttribute("textContent"))) {
 
-                if(deviceNameFromBuilder.contains(deviceName)){
-                    System.out.println("Successfully selected Device from the Deail builder is same as same in the Email Builder");
-                    log.info("Successfully selected Device from the Deail builder is same as same in the Email Builder");
-                }else{
-                    System.out.println("List of Selected devices from the deail builder and Email basket page are varying");
-                    log.info("List of Selected devices from the deail builder and Email basket page are varying");
+                    log.debug(elm.findElement(By.xpath("//td[2]")).getAttribute("textContent") + " device is listed");
+
+                    if (elm.findElement(By.xpath("//td[3]")).isDisplayed() && elm.findElement(By.xpath("//td[3]")).getText().equalsIgnoreCase("GetBasketLink")) {
+
+                        log.debug(elm.findElement(By.xpath("//td[2]")).getAttribute("textContent") + " device is listed and Basket Link is present");
+                    } else {
+
+                        log.debug(elm.findElement(By.xpath("//td[2]")).getAttribute("textContent") + " device is listed but Basket Link is not present");
+                    }
+                } else {
+                    log.debug("Unselected device is present in Email Basket pop up.");
                 }
 
-                WebElement getBasketLink = driver.findElement(By.xpath("//div[@class='emailBasketWidget']//table[1]//tr[" + i + "]/td[3]/input"));
-                getBasketLink.click();
+            }
+        }
 
-                WebElement generatedLink = driver.findElement(By.xpath("//div[@class='emailBasketWidget']//table[1]//tr[" + i + "]/td[3]/label"));
-                String genratedLnk = generatedLink.getText();
 
-                WebElement copyToClipboardBtn = driver.findElement(By.xpath("//div[@class='emailBasketWidget']//table[1]//tr[" + i + "]/td[4]/input"));
-                copyToClipboardBtn.click();
-                Thread.sleep(3000);
-                        driver.findElement(By.cssSelector("body")).sendKeys(Keys.CONTROL + "t");
-                Thread.sleep(3000);
+        public static void verifyDevive_and_CopyClipboard_Btn () {
+            try {
+                //list of the devices which are selected at the deal builder page
+                //int lstOfDeviceAddedInBuilder = lstOfDeviceAdded_DB.size();
                 CommonActions.switchToWindow();
-                Thread.sleep(2000);
-                driver.findElement(By.cssSelector("body")).sendKeys(Keys.CONTROL + "v");
-                Thread.sleep(3000);
-                String getTheLaunchedURL = driver.getCurrentUrl();
-                if (!getTheLaunchedURL.isEmpty()) {
-                    if (getTheLaunchedURL.contains(genratedLnk)) {
-                        System.out.println("Successfully verify the Both links which are displayed on the Email Basket window");
-                        log.info("Successfully verify the Both links which are displayed on the Email Basket window");
-                        System.out.println("Basket Link : (" + getTheLaunchedURL+")" );
-                        System.out.println("Basket Link : (" + genratedLnk+")" );
-                        driver.close();
-                        Thread.sleep(3000);
+                List<WebElement> listOfDevicesAddedToBilder = driver.findElements(By.xpath("//div[@class='emailBasketWidget']//table[1]//tr"));
+                int sizeOfAddedDevice = listOfDevicesAddedToBilder.size();
+                int selectedDeviceList = lstOfDeviceAdded_DB.size();
+                System.out.println("List of Device which are added to Deal Builder (" + selectedDeviceList + ")");
+                for (int i = 1, j = 0; i <= sizeOfAddedDevice; i++, j++) {
+
+                   // String deviceNameFromBuilder = (String) lstOfDeviceAdded_DB.get(j);
+
+                    Thread.sleep(3000);
+                    String deviceName = driver.findElement(By.xpath("//div[@class='emailBasketWidget']//table[1]//tr[" + i + "]/td[2]/label"));
+                    System.out.println("Device Name :: " + deviceName);
+                    log.info("Device Name :: " + deviceName);
+/*
+                    if (deviceNameFromBuilder.contains(deviceName)) {
+                        System.out.println("Successfully selected Device from the Deail builder is same as same in the Email Builder");
+                        log.info("Successfully selected Device from the Deail builder is same as same in the Email Builder");
                     } else {
-                        driver.close();
-                    }
+                        System.out.println("List of Selected devices from the deail builder and Email basket page are varying");
+                        log.info("List of Selected devices from the deail builder and Email basket page are varying");
+                    }*/
+                    Thread.sleep(6000);
+                    WebElement getBasketLink = driver.findElement(By.xpath("//div[@class='emailBasketWidget']//table[1]//tr[" + i + "]/td[3]/input"));
+                    getBasketLink.click();
+
+                    Thread.sleep(6000);
+                    WebElement generatedLink = driver.findElement(By.xpath("//div[@class='emailBasketWidget']//table[1]//tr[" + i + "]/td[3]/label"));
+                    String genratedLnk = generatedLink.getText();
+
+                    WebElement copyToClipboardBtn = driver.findElement(By.xpath("//div[@class='emailBasketWidget']//table[1]//tr[" + i + "]/td[4]/input"));
+                    copyToClipboardBtn.click();
+                    Thread.sleep(3000);
+                    driver.findElement(By.cssSelector("body")).sendKeys(Keys.CONTROL + "t");
                     Thread.sleep(3000);
                     CommonActions.switchToWindow();
+                    Thread.sleep(2000);
+                    driver.findElement(By.cssSelector("body")).sendKeys(Keys.CONTROL + "v");
+                    Thread.sleep(3000);
+                    String getTheLaunchedURL = driver.getCurrentUrl();
+                    if (!getTheLaunchedURL.isEmpty()) {
+                        if (getTheLaunchedURL.contains(genratedLnk)) {
+                            System.out.println("Successfully verify the Both links which are displayed on the Email Basket window");
+                            log.info("Successfully verify the Both links which are displayed on the Email Basket window");
+                            System.out.println("Basket Link : (" + getTheLaunchedURL + ")");
+                            System.out.println("Basket Link : (" + genratedLnk + ")");
+                            driver.close();
+                            Thread.sleep(3000);
+                        } else {
+                            driver.close();
+                        }
+                        Thread.sleep(3000);
+                        CommonActions.switchToWindow();
+                    }
                 }
+
+            } catch (Exception e) {
+                e.printStackTrace();
             }
-
-        } catch (Exception e) {
-            e.printStackTrace();
         }
-    }
 
-}
+    }
 
 
