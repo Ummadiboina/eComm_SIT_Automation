@@ -211,10 +211,14 @@ public class Agent_RegisterCustomerActions extends Environment {
 		Thread.sleep(7000);
 
 		if (driver.findElements(By.xpath("//input[@id='CardHolderName']")).size() >= 1) {
+			Thread.sleep(2000);
 			Agent_RegisterCustomerPage.CardHolderName.sendKeys("TEST ACCEPTA");
 			System.out.println("Card holder name ");
+			Thread.sleep(2000);
 			Select CardTypeDropDown = new Select(pageobjects.Agent_RegisterCustomerPage.CardType);
+			Thread.sleep(2000);
 			CardTypeDropDown.selectByIndex(3);
+			Thread.sleep(2000);
 			Agent_RegisterCustomerPage.CardNumber.sendKeys("4539791001730106");
 			Thread.sleep(2000);
 			Select CardMonthDropdown = new Select(pageobjects.Agent_RegisterCustomerPage.CardMonth);

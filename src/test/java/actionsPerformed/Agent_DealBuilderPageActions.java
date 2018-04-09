@@ -9,11 +9,15 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 import pageobjects.Agent_DealBuilderPage;
 
+import java.awt.*;
+import java.awt.event.KeyEvent;
 import java.io.IOException;
 import java.util.*;
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 public class Agent_DealBuilderPageActions extends Environment {
@@ -70,6 +74,7 @@ public class Agent_DealBuilderPageActions extends Environment {
     }
 
     public static void SelectTariff(String Tariff) throws InterruptedException, IOException {
+        Thread.sleep(3000);
         Agent_DealBuilderPage.TariffsTab.click();
 
         Thread.sleep(3000);
@@ -922,17 +927,47 @@ public class Agent_DealBuilderPageActions extends Environment {
             try {
                 //list of the devices which are selected at the deal builder page
                 //int lstOfDeviceAddedInBuilder = lstOfDeviceAdded_DB.size();
-                CommonActions.switchToWindow();
+                //CommonActions.switchToWindow();
+                String mainWindowHandle = driver.getWindowHandle ();
+
+                String childWindowpopUp="";
+                try {
+                    //String mainWindowHandle = driver.getWindowHandle ();
+                    //Switch to child window and close it
+                    for (String childWindowHandle : driver.getWindowHandles ()) {
+                        //If window handle is not main window handle then close it
+                        if (!childWindowHandle.equals (mainWindowHandle)) {
+                            driver.switchTo ().window (childWindowHandle);
+
+                            childWindowpopUp=driver.getWindowHandle ();
+
+                            System.out.println(" Driver is Switch to Child Window");
+                            log.info(" Driver is Switch to Child Window");
+                        } else {
+                            //switch back to main window
+                            driver.switchTo ().window (mainWindowHandle);
+                            System.out.println(" Driver is still stands in Main Window");
+                            log.info(" Driver is still stands in Main Window");
+                        }
+                    }
+                } catch (Exception e){
+                    System.out.println ("Failed to switch to window :: " + e.getStackTrace ());
+                    log.info("Failed to switch to window :: " + e.getStackTrace ());
+
+                }
+
+                Thread.sleep(5000);
                 List<WebElement> listOfDevicesAddedToBilder = driver.findElements(By.xpath("//div[@class='emailBasketWidget']//table[1]//tr"));
                 int sizeOfAddedDevice = listOfDevicesAddedToBilder.size();
                 int selectedDeviceList = lstOfDeviceAdded_DB.size();
                 System.out.println("List of Device which are added to Deal Builder (" + selectedDeviceList + ")");
+
                 for (int i = 1, j = 0; i <= sizeOfAddedDevice; i++, j++) {
 
                    // String deviceNameFromBuilder = (String) lstOfDeviceAdded_DB.get(j);
 
                     Thread.sleep(3000);
-                    String deviceName = driver.findElement(By.xpath("//div[@class='emailBasketWidget']//table[1]//tr[" + i + "]/td[2]/label"));
+                    String deviceName = driver.findElement(By.xpath("//div[@class='emailBasketWidget']//table[1]//tr[" + i + "]/td[2]/label")).getText();
                     System.out.println("Device Name :: " + deviceName);
                     log.info("Device Name :: " + deviceName);
 /*
@@ -954,28 +989,73 @@ public class Agent_DealBuilderPageActions extends Environment {
                     WebElement copyToClipboardBtn = driver.findElement(By.xpath("//div[@class='emailBasketWidget']//table[1]//tr[" + i + "]/td[4]/input"));
                     copyToClipboardBtn.click();
                     Thread.sleep(3000);
-                    driver.findElement(By.cssSelector("body")).sendKeys(Keys.CONTROL + "t");
+
+
+                    //CommonActions.switchToWindow();
+
+
+                    driver.switchTo().window(mainWindowHandle);
+                    Thread.sleep(5000);
+
+
+                    JavascriptExecutor executor = (JavascriptExecutor) driver;
+                    executor.executeScript("window.open()");
+
+                    Set<String> handles = driver.getWindowHandles();
+                    List<String> handlesList = new ArrayList<String>(handles);
+                    String newWindow = handlesList.get(handlesList.size() - 1);
+                    driver.switchTo().window(newWindow);
+                    driver.navigate().to(genratedLnk);
+
+
+                   /*
+                    driver.findElement(By.cssSelector("body")).sendKeys(Keys.CONTROL + "w");
                     Thread.sleep(3000);
-                    CommonActions.switchToWindow();
-                    Thread.sleep(2000);
-                    driver.findElement(By.cssSelector("body")).sendKeys(Keys.CONTROL + "v");
+
+                     driver.findElement(By.cssSelector("body")).sendKeys(Keys.CONTROL + "v");
                     Thread.sleep(3000);
+                    */
+
+
+                /*
+                    Robot robot = new Robot();
+                    robot.keyPress(KeyEvent.VK_CONTROL);
+                    robot.keyPress(KeyEvent.VK_T);
+
+                    Set<String> handles = driver.getWindowHandles();
+                    List<String> handlesList = new ArrayList<String>(handles);
+                    String newTab = handlesList.get(handlesList.size() - 1);
+
+                    // switch to new tab
+                    driver.switchTo().window(newTab);
+                    driver.get(genratedLnk);
+
+                    */
+
                     String getTheLaunchedURL = driver.getCurrentUrl();
+
                     if (!getTheLaunchedURL.isEmpty()) {
                         if (getTheLaunchedURL.contains(genratedLnk)) {
                             System.out.println("Successfully verify the Both links which are displayed on the Email Basket window");
                             log.info("Successfully verify the Both links which are displayed on the Email Basket window");
                             System.out.println("Basket Link : (" + getTheLaunchedURL + ")");
                             System.out.println("Basket Link : (" + genratedLnk + ")");
+
+                            //Basket validation should done here
+
                             driver.close();
                             Thread.sleep(3000);
                         } else {
                             driver.close();
                         }
-                        Thread.sleep(3000);
-                        CommonActions.switchToWindow();
+                        Thread.sleep(5000);
+                        //CommonActions.switchToWindow();
+                        driver.switchTo ().window (childWindowpopUp);
                     }
                 }
+                driver.close();
+
+                driver.switchTo().window(mainWindowHandle);
 
             } catch (Exception e) {
                 e.printStackTrace();

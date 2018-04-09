@@ -686,6 +686,25 @@ public class E2EOrderPlaced_Steps {
 
     }
 
+    /*Shubha----Data Roll over -------*/
+    @Given("^Land on the 'Tariffs and extra' page and validate Data Roll over copy for ([^\"]*) and ([^\"]*)$")
+    public void land_on_the_Tariffs_and_extra_page_validate_Data_Roll_Over(String Tariff_Value, String Big_Bundle_Data) {
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, PAYMandPAYGTariffAndExtrasPage.class);
+            Thread.sleep(3000);
+            PAYMandPAYGTariffAndExtrasPageActions.TariffSelect(Tariff_Value+"|"+Big_Bundle_Data);
+            Thread.sleep(6000);
+            // PAYMandPAYGTariffAndExtrasPageActions.addToBasketLive();
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            log.debug("Unable to Land on Tariff and extras page");
+            Assert.fail("Unable to Land on Tariff and extras page");
+
+        }
+
+    }
+
     @And("^Land on the 'Tariffs and extra' page selecting pay device in full$")
     public void land_on_the_Tariffs_and_extra_page_selecting_pay_device_in_full() {
         try {
@@ -2117,6 +2136,24 @@ public class E2EOrderPlaced_Steps {
             // TODO Auto-generated catch block
             log.debug("Unable to validate basket content/checkout , please see the failure screenshot");
             Assert.fail("Unable to validate basket content/checkout , please see the failure screenshot");
+
+        }
+    }
+
+    @Given("^Validate Credit check status for ReferralwithSimo$")
+    public void validate_Creditcheck_status_for_ReferralwithSimo() {
+        try {
+            driver.manage().timeouts().implicitlyWait(200, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, Agent_CreditCheckDetailsPage.class);
+            Agent_CreditCheckPageActions.CreditcheckReferStatus();
+            log.debug("Completed Credit check");
+
+            Thread.sleep(5000);
+
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            log.debug("Unable to perform credit checks , please see the failure screenshot");
+            Assert.fail("Unable to perform credit checks , please see the failure screenshot");
 
         }
     }
@@ -7768,7 +7805,7 @@ public class E2EOrderPlaced_Steps {
         try {
             driver.manage().timeouts().implicitlyWait(120, TimeUnit.SECONDS);
             if (driver.findElements(By.xpath("//*[contains(text(),'2.co.uk')]")).size() > 0) {
-                String str = driver.findElement(By.xpath("(//*[contains(text(),'2.co.uk')])[1]")).getText();
+                String str = driver.findElement(By.xpath("(//*[contains(text(),'o2.co.uk')])[1]")).getText();
                 log.debug("Agent should be displayed with updated copy of 'Refer with Simo' response as :" + str);
                 log.debug("Agent should be displayed with updated copy of 'Refer with Simo' response as :" + str);
                 Thread.sleep(3000);
