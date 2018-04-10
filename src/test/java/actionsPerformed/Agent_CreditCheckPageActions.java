@@ -179,6 +179,37 @@ public class Agent_CreditCheckPageActions extends Environment {
 
 	}
 
+	public static void CreditcheckReferStatus()throws InterruptedException, IOException {
+
+		try{
+			if(driver.findElements(By.xpath("//h2[@id='creditCheckHeader']/span")).size()>0) {
+				String refStatus = driver.findElement(By.xpath("//h2[@id='creditCheckHeader']/span")).getText();
+				log.debug(refStatus);
+				Reporter.log(refStatus);
+				if (refStatus.equalsIgnoreCase("Credit Check: Refer: You've been conditionally referred. You'll be able to upgrade to a new device after six months on this tariff. Are you happy to continue? If the customer agrees to the six month restriction, call the referral team before placing the order on 08001116000.")) {
+					System.out.println(refStatus);
+					Reporter.log("Credit Check: Refer:You've been conditionally referred");
+				}
+			}
+
+			if(driver.findElements(By.xpath("//span[@id='creditCheckStatus']")).size()>0)
+			{
+				String refStatus =driver.findElement(By.xpath("//span[@id='creditCheckStatus']"));
+				log.debug(refStatus);
+				Reporter.log(refStatus);
+				if (refStatus.equalsIgnoreCase("Customer has been referred to simo order. Abandone checkout to create a simo order if customer wants SIMO. Tell customer that even SIMO order will be referred.")) {
+					System.out.println(refStatus);
+					Reporter.log("Credit check with Refer status is not allowed");
+				}
+			}
+		}catch (Exception e) {
+			// TODO Auto-generated catch block
+			Assert.fail("Unable to select Credit Check status with Refer");
+
+		}
+		Screenshots.captureScreenshot();
+	}
+
 	public static void BankDetails(String Username) throws InterruptedException, IOException {
 
 		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);

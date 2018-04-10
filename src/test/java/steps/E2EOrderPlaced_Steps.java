@@ -426,6 +426,9 @@ public class E2EOrderPlaced_Steps {
         }
     }
 
+
+
+
     @And("^Click on View all Tariffs$")
     public void ClickonViewAllTariffsDeviceDetailspage() {
         try {
@@ -688,6 +691,26 @@ public class E2EOrderPlaced_Steps {
         }
 
     }
+
+    /*Shubha----Data Roll over -------*/
+    @Given("^Land on the 'Tariffs and extra' page and validate Data Roll over copy for ([^\"]*) and ([^\"]*)$")
+    public void land_on_the_Tariffs_and_extra_page_validate_Data_Roll_Over(String Tariff_Value, String Big_Bundle_Data) {
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, PAYMandPAYGTariffAndExtrasPage.class);
+            Thread.sleep(3000);
+            PAYMandPAYGTariffAndExtrasPageActions.TariffSelect(Tariff_Value+"|"+Big_Bundle_Data);
+            Thread.sleep(6000);
+            // PAYMandPAYGTariffAndExtrasPageActions.addToBasketLive();
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            log.debug("Unable to Land on Tariff and extras page");
+            Assert.fail("Unable to Land on Tariff and extras page");
+
+        }
+
+    }
+
 
     @And("^Land on the 'Tariffs and extra' page selecting pay device in full$")
     public void land_on_the_Tariffs_and_extra_page_selecting_pay_device_in_full() {
@@ -1340,6 +1363,25 @@ public class E2EOrderPlaced_Steps {
             e.printStackTrace();
             log.debug("Unable to input details in payment page");
             Assert.fail("Unable to input details in payment page");
+
+        }
+    }
+
+
+    @Given("^Validate Credit check status for ReferralwithSimo$")
+    public void validate_Creditcheck_status_for_ReferralwithSimo() {
+        try {
+            driver.manage().timeouts().implicitlyWait(200, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, Agent_CreditCheckDetailsPage.class);
+            Agent_CreditCheckPageActions.CreditcheckReferStatus();
+            log.debug("Completed Credit check");
+
+            Thread.sleep(5000);
+
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            log.debug("Unable to perform credit checks , please see the failure screenshot");
+            Assert.fail("Unable to perform credit checks , please see the failure screenshot");
 
         }
     }
@@ -2024,6 +2066,8 @@ public class E2EOrderPlaced_Steps {
 
         }
     }
+
+
 
 
     @Given("^Verify email is sent successfully$")
@@ -7425,6 +7469,8 @@ public class E2EOrderPlaced_Steps {
 
     }
 
+
+
     @And("^verify copy text You will need to give details for all fields marked with an asterisk is displayed in PAYG Sim Journey$")
     public void verify_copy_text_allFields_narked_with_asterisk_PAYG_sim_journey() {
         try {
@@ -9213,14 +9259,18 @@ public class E2EOrderPlaced_Steps {
     }
 //venkat april release
 
-    @And("^verify 'Copy to Clipboard' CTA is displayed next to the basket link for the first deal$")
-    public void verify_CopyToClipboard_And_ClikOnLink() throws InterruptedException {
-
-        driver.findElement(By.xpath("//a[@class='addPackage']/img")).click();
-
-        Thread.sleep(5000);
-
-
+    @And("^verify Basket link and 'Copy to Clipboard' CTA are enabled Click on 'Copy to Clipboard' button$")
+    public void verify_CopyToClipboard_And_ClikOnLink() {
+        try {
+            driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, Agent_DealBuilderPage.class);
+            Agent_DealBuilderPageActions.verifyDevive_and_CopyClipboard_Btn();
+            Thread.sleep(5000);
+        } catch (InterruptedException e) {
+            System.out.println("Failed to verify Basket link and 'Copy to Clipboard' CTA are enabled Click on 'Copy to Clipboard' button");
+            Assert.fail("Failed to verify Basket link and 'Copy to Clipboard' CTA are enabled Click on 'Copy to Clipboard' button");
+            e.printStackTrace();
+        }
     }
 
 

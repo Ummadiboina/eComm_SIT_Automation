@@ -272,8 +272,10 @@ public class Agent_RegisterCustomerActions extends Environment {
 			((JavascriptExecutor) driver).executeScript("arguments[0].click();", Agent_RegisterCustomerPage.additionalCaptureCardDetails);
 			Thread.sleep(15000);
 
+			String mainWindowHandle = driver.getWindowHandle ();
+
 			try {
-				String mainWindowHandle = driver.getWindowHandle ();
+				//String mainWindowHandle = driver.getWindowHandle ();
 				Set<String> openWindowSize = driver.getWindowHandles ();
 				log.debug(openWindowSize.size() + " windows are opend");
 				//Switch to child window and close it
@@ -294,6 +296,7 @@ public class Agent_RegisterCustomerActions extends Environment {
 
 			}
 
+			Thread.sleep(5000);
 			Agent_RegisterCustomerPage.CardHolderName.sendKeys("TEST ACCEPTA");
 			log.debug("Card holder name ");
 			Select CardTypeDropDown = new Select(pageobjects.Agent_RegisterCustomerPage.CardType);
@@ -311,7 +314,7 @@ public class Agent_RegisterCustomerActions extends Environment {
 			Agent_RegisterCustomerPage.UsethisCard.click();
 			log.debug("completed  Mypay bit");
 			Thread.sleep(6000);
-
+		/*
 			try {
 				String mainWindowHandle = driver.getWindowHandle ();
 				Set<String> openWindowSize = driver.getWindowHandles ();
@@ -333,6 +336,10 @@ public class Agent_RegisterCustomerActions extends Environment {
 				log.debug ("Failed to switch to window :: " + e.getStackTrace ());
 
 			}
+			*/
+
+			driver.switchTo().window(mainWindowHandle);
+			Thread.sleep(5000);
 
 			((JavascriptExecutor) driver).executeScript("arguments[0].click();", Agent_RegisterCustomerPage.licenceDetailsCheckbox);
 			Agent_RegisterCustomerPage.licencePostCode.sendKeys("SL14Dx");
@@ -352,7 +359,7 @@ public class Agent_RegisterCustomerActions extends Environment {
 			Agent_RegisterCustomerPage.passportNumberSeg5.sendKeys("2011089");
 			Agent_RegisterCustomerPage.passportNumberSeg6.sendKeys("12345678965441");
 			Agent_RegisterCustomerPage.passportNumberSeg7.sendKeys("09");
-			Thread.sleep(1000);
+			Thread.sleep(2000);
 			((JavascriptExecutor) driver).executeScript("arguments[0].click();", Agent_RegisterCustomerPage.performCredidCheckBtn);
 			log.debug("Filled the driving lisences and passport details and clicked on the perfrom credit check button");
 
