@@ -20,6 +20,9 @@ import pageobjects.Agent_DealBuilderPage;
 public class Agent_DealBuilderPageActions extends Environment {
 
     final static Logger log = Logger.getLogger("Agent_DealBuilderPageActions");
+    public static ArrayList deviceNames;
+    public static ArrayList DevicesAndTariffs;
+    public  static ArrayList lstOfDeviceAdded_DB;
 
     // this method used to perform click action on the Agent Home Page
 
@@ -782,144 +785,216 @@ public class Agent_DealBuilderPageActions extends Environment {
 
 
 
-    public static Hashtable getSelectedProducts() throws InterruptedException{
-
+    public static Hashtable getSelectedProducts() throws InterruptedException {
         Hashtable selectedElements = new Hashtable();
-        ArrayList deviceNames = new ArrayList();
-        ArrayList DevicesAndTariffs = new ArrayList();
-
+        deviceNames = new ArrayList();
+        DevicesAndTariffs = new ArrayList();
+        lstOfDeviceAdded_DB = new ArrayList();
         List<WebElement> elementsList = driver.findElements(By.xpath("//a[@class='basketHeading']"));
+        for (int i = 0, j = 1; i < elementsList.size() - 1; i++, j++) {
+            // elementsList.get(i).click();
+            WebElement addedDeviveName = driver.findElement(By.xpath("(//a[@class='basketHeading'])[" + j + "]"));
+            if(addedDeviveName.getText().contains("mpty")) {
+                System.out.println("the device is added as empty");
+            }else{
+                lstOfDeviceAdded_DB.add(addedDeviveName.getText());
+            }
 
-        for(int i = 0 ; i < elementsList.size()-1; i++){
 
-            elementsList.get(i).click();
-            deviceNames.add(elementsList.get(i).getText());
-
+            JavascriptExecutor executor = (JavascriptExecutor) driver;
+            executor.executeScript("arguments[0].click();", addedDeviveName);
             Thread.sleep(5000);
+            if (driver.findElements(By.xpath("(//div[@class='lineItemContainer']//span[@class='content'])[1]")).size() >= 1) {
+                String dNaame = driver.findElement(By.xpath("(//div[@class='lineItemContainer']//span[@class='content'])[1]")).getText();
+                deviceNames.add(dNaame);
+                System.out.println("The Device Name :: " + dNaame);
+                log.info("The Device Name :: " + dNaame);
+                Thread.sleep(2000);
 
-            List<WebElement> elements = driver.findElements(By.xpath("//div[@class='lineItemContainer']/table"));
+                String tariffName = driver.findElement(By.xpath("(//div[@class='lineItemContainer']//span[@class='content'])[3]")).getText();
+                DevicesAndTariffs.add(tariffName);
+                System.out.println("The Tariff Name :: " + tariffName);
+                log.info("The Device Name :: " + tariffName);
+                Thread.sleep(2000);
 
-            for (WebElement elm2 : elements) {
+                selectedElements.put(dNaame, tariffName);
+            } else{
 
-                if (elements.size() > 1) {
-                    if (elm2.getAttribute("class").contains("device")) {
-                        //div[@class='lineItemContainer']/table[contains(@class,'device')]
-                        String deviceName = driver.findElement(By.xpath("//table[contains(@class,'device')]//tbody/tr[contains(@class,'lineItemRow')]/td[1]/p[1]//span")).getText();
-                        DevicesAndTariffs.add(i,deviceName);
-
-                    } else if (elm2.getAttribute("class").contains("tariff")) {
-                        String tariffName =  elm2.findElement(By.xpath("//table[contains(@class,'tariff')]//tbody/tr[contains(@class,'lineItemRow')]/td[1]/p[1]//span")).getText();
-                        DevicesAndTariffs.add(i,"|"+tariffName);
-                    }
-                } else {
-                    String productName = elm2.findElement(By.xpath("//tbody/tr[contains(@class,'lineItemRow')]/td[1]/p[1]//span")).getText();
-                    DevicesAndTariffs.add(i,productName);
-                }
+                continue;
             }
         }
-
-        selectedElements.put("DEVICES", deviceNames);
-        selectedElements.put("DEVICESANDTARIFFS", DevicesAndTariffs);
-
         return selectedElements;
 
     }
 
 
-    public static void validateEmailBasketPopupDeviceList(Hashtable DeviceList) {
+
+    public static void validateEmailBasketPopupDeviceList (Hashtable DeviceList){
 
         ArrayList DealBuilderDeviceList = new ArrayList<String>();
         DealBuilderDeviceList = (ArrayList) DeviceList.get("DEVICES");
 
         List<WebElement> emailBasketPopupDevicelist = driver.findElements(By.xpath("//h3[contains(text(),'Choose baskets to share with customer:')]/../table[1]/tbody/tr"));
 
-        for(WebElement elm : emailBasketPopupDevicelist){
+        for (WebElement elm : emailBasketPopupDevicelist) {
 
-            if(DealBuilderDeviceList.contains(elm.findElement(By.xpath("//td[2]")).getAttribute("textContent"))){
+            if (DealBuilderDeviceList.contains(elm.findElement(By.xpath("//td[2]")).getAttribute("textContent"))) {
 
-                log.debug(elm.findElement(By.xpath("//td[2]")).getAttribute("textContent")+ " device is listed");
+                log.debug(elm.findElement(By.xpath("//td[2]")).getAttribute("textContent") + " device is listed");
 
-                if(elm.findElement(By.xpath("//td[3]")).isDisplayed() && elm.findElement(By.xpath("//td[3]")).getText().equalsIgnoreCase("GetBasketLink")){
+                if (elm.findElement(By.xpath("//td[3]")).isDisplayed() && elm.findElement(By.xpath("//td[3]")).getText().equalsIgnoreCase("GetBasketLink")) {
 
-                    log.debug(elm.findElement(By.xpath("//td[2]")).getAttribute("textContent")+ " device is listed and Basket Link is present");
+                    log.debug(elm.findElement(By.xpath("//td[2]")).getAttribute("textContent") + " device is listed and Basket Link is present");
+                } else {
+
+                    log.debug(elm.findElement(By.xpath("//td[2]")).getAttribute("textContent") + " device is listed but Basket Link is not present");
                 }
-                else{
-
-                    log.debug(elm.findElement(By.xpath("//td[2]")).getAttribute("textContent")+ " device is listed but Basket Link is not present");
-                }
-            }
-            else{
+            } else {
                 log.debug("Unselected device is present in Email Basket pop up.");
             }
 
         }
-
-
     }
 
-     public static void verifyDevive_and_CopyClipboard_Btn() {
+    public static void verifyDevive_and_CopyClipboard_Btn () {
         try {
-
             //list of the devices which are selected at the deal builder page
-            int lstOfDeviceAddedInBuilder = getSelectedProducts().size();
+            //int lstOfDeviceAddedInBuilder = lstOfDeviceAdded_DB.size();
+            //CommonActions.switchToWindow();
+            String mainWindowHandle = driver.getWindowHandle ();
 
+            String childWindowpopUp="";
+            try {
+                //String mainWindowHandle = driver.getWindowHandle ();
+                //Switch to child window and close it
+                for (String childWindowHandle : driver.getWindowHandles ()) {
+                    //If window handle is not main window handle then close it
+                    if (!childWindowHandle.equals (mainWindowHandle)) {
+                        driver.switchTo ().window (childWindowHandle);
+
+                        childWindowpopUp=driver.getWindowHandle ();
+
+                        System.out.println(" Driver is Switch to Child Window");
+                        log.info(" Driver is Switch to Child Window");
+                    } else {
+                        //switch back to main window
+                        driver.switchTo ().window (mainWindowHandle);
+                        System.out.println(" Driver is still stands in Main Window");
+                        log.info(" Driver is still stands in Main Window");
+                    }
+                }
+            } catch (Exception e){
+                System.out.println ("Failed to switch to window :: " + e.getStackTrace ());
+                log.info("Failed to switch to window :: " + e.getStackTrace ());
+
+            }
+
+            Thread.sleep(5000);
             List<WebElement> listOfDevicesAddedToBilder = driver.findElements(By.xpath("//div[@class='emailBasketWidget']//table[1]//tr"));
             int sizeOfAddedDevice = listOfDevicesAddedToBilder.size();
-            int selectedDeviceList = getSelectedProducts().size();
+            int selectedDeviceList = lstOfDeviceAdded_DB.size();
             System.out.println("List of Device which are added to Deal Builder (" + selectedDeviceList + ")");
-            for (int i = 1,j=0; i <= sizeOfAddedDevice; i++,j++) {
 
-                String deviceNameFromBuilder = (String) getSelectedProducts().get("+j+");
+            for (int i = 1, j = 0; i <= sizeOfAddedDevice; i++, j++) {
+
+                // String deviceNameFromBuilder = (String) lstOfDeviceAdded_DB.get(j);
 
                 Thread.sleep(3000);
-                String deviceName = driver.findElement(By.xpath("//div[@class='emailBasketWidget']//table[1]//tr[" + i + "]/td[2]"));
+                String deviceName = driver.findElement(By.xpath("//div[@class='emailBasketWidget']//table[1]//tr[" + i + "]/td[2]/label")).getText();
                 System.out.println("Device Name :: " + deviceName);
                 log.info("Device Name :: " + deviceName);
-
-                if(deviceNameFromBuilder.contains(deviceName)){
-                    System.out.println("Successfully selected Device from the Deail builder is same as same in the Email Builder");
-                    log.info("Successfully selected Device from the Deail builder is same as same in the Email Builder");
-                }else{
-                    System.out.println("List of Selected devices from the deail builder and Email basket page are varying");
-                    log.info("List of Selected devices from the deail builder and Email basket page are varying");
-                }
-
+/*
+                    if (deviceNameFromBuilder.contains(deviceName)) {
+                        System.out.println("Successfully selected Device from the Deail builder is same as same in the Email Builder");
+                        log.info("Successfully selected Device from the Deail builder is same as same in the Email Builder");
+                    } else {
+                        System.out.println("List of Selected devices from the deail builder and Email basket page are varying");
+                        log.info("List of Selected devices from the deail builder and Email basket page are varying");
+                    }*/
+                Thread.sleep(6000);
                 WebElement getBasketLink = driver.findElement(By.xpath("//div[@class='emailBasketWidget']//table[1]//tr[" + i + "]/td[3]/input"));
                 getBasketLink.click();
 
+                Thread.sleep(6000);
                 WebElement generatedLink = driver.findElement(By.xpath("//div[@class='emailBasketWidget']//table[1]//tr[" + i + "]/td[3]/label"));
                 String genratedLnk = generatedLink.getText();
 
                 WebElement copyToClipboardBtn = driver.findElement(By.xpath("//div[@class='emailBasketWidget']//table[1]//tr[" + i + "]/td[4]/input"));
                 copyToClipboardBtn.click();
                 Thread.sleep(3000);
-                        driver.findElement(By.cssSelector("body")).sendKeys(Keys.CONTROL + "t");
-                Thread.sleep(3000);
-                CommonActions.switchToWindow();
-                Thread.sleep(2000);
-                driver.findElement(By.cssSelector("body")).sendKeys(Keys.CONTROL + "v");
-                Thread.sleep(3000);
+
+
+                //CommonActions.switchToWindow();
+
+
+                driver.switchTo().window(mainWindowHandle);
+                Thread.sleep(5000);
+
+
+                JavascriptExecutor executor = (JavascriptExecutor) driver;
+                executor.executeScript("window.open()");
+
+                Set<String> handles = driver.getWindowHandles();
+                List<String> handlesList = new ArrayList<String>(handles);
+                String newWindow = handlesList.get(handlesList.size() - 1);
+                driver.switchTo().window(newWindow);
+                driver.navigate().to(genratedLnk);
+
+
+                   /*
+                    driver.findElement(By.cssSelector("body")).sendKeys(Keys.CONTROL + "w");
+                    Thread.sleep(3000);
+
+                     driver.findElement(By.cssSelector("body")).sendKeys(Keys.CONTROL + "v");
+                    Thread.sleep(3000);
+                    */
+
+
+                /*
+                    Robot robot = new Robot();
+                    robot.keyPress(KeyEvent.VK_CONTROL);
+                    robot.keyPress(KeyEvent.VK_T);
+
+                    Set<String> handles = driver.getWindowHandles();
+                    List<String> handlesList = new ArrayList<String>(handles);
+                    String newTab = handlesList.get(handlesList.size() - 1);
+
+                    // switch to new tab
+                    driver.switchTo().window(newTab);
+                    driver.get(genratedLnk);
+
+                    */
+
                 String getTheLaunchedURL = driver.getCurrentUrl();
+
                 if (!getTheLaunchedURL.isEmpty()) {
                     if (getTheLaunchedURL.contains(genratedLnk)) {
                         System.out.println("Successfully verify the Both links which are displayed on the Email Basket window");
                         log.info("Successfully verify the Both links which are displayed on the Email Basket window");
-                        System.out.println("Basket Link : (" + getTheLaunchedURL+")" );
-                        System.out.println("Basket Link : (" + genratedLnk+")" );
+                        System.out.println("Basket Link : (" + getTheLaunchedURL + ")");
+                        System.out.println("Basket Link : (" + genratedLnk + ")");
+
+                        //Basket validation should done here
+
                         driver.close();
                         Thread.sleep(3000);
                     } else {
                         driver.close();
                     }
-                    Thread.sleep(3000);
-                    CommonActions.switchToWindow();
+                    Thread.sleep(5000);
+                    //CommonActions.switchToWindow();
+                    driver.switchTo ().window (childWindowpopUp);
                 }
             }
+            driver.close();
+
+            driver.switchTo().window(mainWindowHandle);
 
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
+
 
 }
 

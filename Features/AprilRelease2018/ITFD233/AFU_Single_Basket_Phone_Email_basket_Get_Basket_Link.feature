@@ -19,8 +19,8 @@ Feature: AFU_Single_Basket_Phone_Email_basket_Get_Basket_Link
 
 
     Examples:
-    | user  | Device | Tariffs |
-    |  07521114790     |        | Refresh |
+      | user             | Device | Tariffs |
+      |  07521114790     |        | Refresh |
 
 
 
