@@ -98,7 +98,7 @@ public class Agent_CreditCheckDetailsPage {
         public static WebElement SecurityCode;
 
     */
-    @FindBy(how = How.XPATH, using = "//*[@id='CardHolderName' or @id='CardHolderName']")
+    @FindBy(how = How.XPATH, using = "//*[@id='CardHolderName' or @id='txtCardHolderName']")
     public static WebElement CardHolderName;
 
     @FindBy(how = How.XPATH, using = "//*[@id='ddlCardType' or @id='CardType']")
@@ -110,7 +110,7 @@ public class Agent_CreditCheckDetailsPage {
     @FindBy(how = How.XPATH, using = "//*[@id='ddlMonth' or @id='Month']")
     public static WebElement CardMonth;
 
-    @FindBy(how = How.XPATH, using = "//*[@id='ddlYear' or @id='Year']")
+    @FindBy(how = How.XPATH, using = "//*[@id='ddlYear' or @id='Year' or @id='ddlYr']")
     public static WebElement CardYear;
 
     @FindBy(how = How.XPATH, using = "//*[@id='txtSecurityCode' or @id='CardCvv']")

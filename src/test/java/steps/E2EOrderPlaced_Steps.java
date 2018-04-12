@@ -53,6 +53,7 @@ public class E2EOrderPlaced_Steps {
     static int BuyOutValue = 0;
     static int TradeInValue = 0;
     public static Hashtable selectedElements = new Hashtable();
+    static String expPlnList;
 
     public E2EOrderPlaced_Steps() {
         driver = Hooks.driver;
@@ -69,9 +70,9 @@ public class E2EOrderPlaced_Steps {
     public void i_am_an_CFA_user_and_Lands_on_shop_page() {
         try {
             PageFactory.initElements(driver, MouseHoverPage.class);
-
-            // MouseHoverAction.ByPassDroopalPage();
-            //ShopLandingPageAction.GetTitle_ref();
+            Thread.sleep(5000);
+            MouseHoverAction.ByPassDroopalPage();
+            ShopLandingPageAction.GetTitle_ref();
             ShopLandingPageAction.GetTitle();
 
         } catch (Exception e) {
@@ -233,7 +234,8 @@ public class E2EOrderPlaced_Steps {
         try {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, MouseHoverPage.class);
-            MouseHoverAction.PayGPhonesLandingPage();
+            //MouseHoverAction.PayGPhonesLandingPage();
+            MouseHoverAction.shopNav();
             Autoredirection.redirect();
             Thread.sleep(7000);
             //GlobalActions.//CommonFunctionscheckTitle("PayG Phones page");
@@ -766,7 +768,7 @@ public class E2EOrderPlaced_Steps {
             } else {
                 log.debug("Queue page is not displayed");
                 PAYMandPAYGTariffAndExtrasPageActions.addToBasketLive();
-                // BasketPageActions.ValidateBasketPageContents();
+                // BasketPageActions.ValidateBasketPageContents("","");
                 BasketPageActions.CollectionorDelivery("homeDelivery");
             }
         } catch (Exception e) {
@@ -815,7 +817,7 @@ public class E2EOrderPlaced_Steps {
             PageFactory.initElements(driver, PAYMandPAYGTariffAndExtrasPage.class);
             PAYMandPAYGTariffAndExtrasPageActions.addToBasketLive();
             Thread.sleep(3000);
-            BasketPageActions.ValidateBasketPageContents();
+            BasketPageActions.ValidateBasketPageContents("","");
             BasketPageActions.CollectionorDelivery("clickAndCollect");
             Thread.sleep(3000);
         } catch (Exception e) {
@@ -2167,6 +2169,23 @@ public class E2EOrderPlaced_Steps {
         }
     }
 
+    @And("^Validate all the Basket contents$")
+    public void validate_all_the_Basket_contents() {
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, BasketPage.class);
+            Thread.sleep(3000);
+            BasketPageActions.ValidateBasketPageContents("DataRollOver",expPlnList);
+            Thread.sleep(7000);
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            log.debug("Unable to validate basket content/checkout , please see the failure screenshot");
+            Assert.fail("Unable to validate basket content/checkout , please see the failure screenshot");
+
+        }
+    }
+
+
     /*
 	 * #########################################################################
 	 * #########
@@ -2756,7 +2775,7 @@ public class E2EOrderPlaced_Steps {
             PageFactory.initElements(driver, PAYMandPAYGTariffAndExtrasPage.class);
             PAYMandPAYGTariffAndExtrasPageActions.addToBasketLive();
             Thread.sleep(3000);
-            BasketPageActions.ValidateBasketPageContents();
+            BasketPageActions.ValidateBasketPageContents("","");
         } catch (Exception e) {
             // TODO Auto-generated catch block
             Assert.fail("Unable to land on Basket page");
@@ -7818,11 +7837,11 @@ public class E2EOrderPlaced_Steps {
             if (driver.findElements(By.xpath("//*[contains(text(),'2.co.uk')]")).size() > 0) {
                 String str = driver.findElement(By.xpath("(//*[contains(text(),'2.co.uk')])[1]")).getText();
                 log.debug("Agent should be displayed with updated copy of 'Refer with Simo' response as :" + str);
-                log.debug("Agent should be displayed with updated copy of 'Refer with Simo' response as :" + str);
+
                 Thread.sleep(3000);
             } else {
                 log.debug("Failed to Agent should be displayed with updated copy of 'Refer with Simo' response ");
-                log.debug("Failed to Agent should be displayed with updated copy of 'Refer with Simo' response ");
+
             }
         } catch (Exception e) {
             // TODO Auto-generated catch block
@@ -9273,6 +9292,21 @@ public class E2EOrderPlaced_Steps {
         }
     }
 
+//GDPR preferences section
 
+    @Then("^Choose Your Business preferences ([^\"]*) ([^\"]*) ([^\"]*) ([^\"]*) and Channel Preferences ([^\"]*) ([^\"]*) ([^\"]*) ([^\"]*)$")
+    public void Choose_Your_Preferences(String BP1, String BP2, String BP3, String BP4, String Chn1, String Chn2, String Chn3, String Chn4) {
+        // Write code here that turns the phrase above into concrete actions
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, OrderConfirmationPage.class);
+            OrderConfirmationPageActions.PreferencesSection(BP1, BP2, BP3, BP4, Chn1, Chn2, Chn3, Chn4);
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            log.debug("Unable to Choose your preferences");
+            Assert.fail("Unable to Choose your preferences");
+
+        }
+    }
 
 }

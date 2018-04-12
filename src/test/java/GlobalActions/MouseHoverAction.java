@@ -276,6 +276,57 @@ public class MouseHoverAction extends Environment {
 
     }
 
+    //Temporary Shop navigation method
+
+    public static void shopNav() throws Exception {
+
+        driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+
+        try {
+            log.debug("Performing PAYG Phones landing page navigations");
+
+            Point coordinates = driver.findElement(By.xpath("//div[@class='navContainer']/ul/li/a[contains(@href,'/shop')]")).getLocation();
+            Robot robot = new Robot();
+            robot.mouseMove(coordinates.getX(), coordinates.getY() + 120);
+            log.debug("Moving Mouse on the Shop Tab");
+
+            Actions action = new Actions(driver);
+            action.moveToElement(driver.findElement(By.xpath("//div[@class='navContainer']/ul/li/a[contains(@href,'/shop')]"))).perform();
+            log.debug("Mouse over on the Shop Header ");
+            Thread.sleep(2000);
+
+            Actions action1 = new Actions(driver);
+            action1.moveToElement(driver.findElement(By.xpath("//ul[@name='shop']/li/ul/li/a[text()='Browse phones']"))).perform();
+            log.debug("Moving Mouse on the Browse Phones option");
+            Thread.sleep(2000);
+
+            driver.findElement(By.xpath("//ul[@name='shop']/li/ul/li/a[text()='Browse phones']")).click();
+            Thread.sleep(5000);
+            Screenshots.captureScreenshot();
+
+            log.debug("Clicking on PayG Phones");
+
+            // Move mouse pointer away from location
+            Point coordinates2 = driver.findElement(By.xpath("//div[@class='navContainer']/ul")).getLocation();
+            Robot robot2 = new Robot();
+            robot2.mouseMove(coordinates2.getX(), coordinates.getY() + 300);
+            log.debug("Moved Mouse to somewhere side of page");
+
+            /*driver.findElement(By.xpath("//ul[@class='tabs']/li[contains(text(),'Pay As You Go')]")).click();
+            Thread.sleep(5000);*/
+
+            PayGPhonesLandingPage();
+
+        } catch (ElementNotVisibleException e) {
+
+            Thread.sleep(3000);
+
+        }
+
+
+
+    }
+
     // Below will navigate to Like New Phones Page
 
 	/*

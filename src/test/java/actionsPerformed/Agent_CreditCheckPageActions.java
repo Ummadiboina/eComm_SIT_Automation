@@ -205,14 +205,14 @@ public class Agent_CreditCheckPageActions extends Environment {
 		}catch (Exception e) {
 			// TODO Auto-generated catch block
 			Assert.fail("Unable to select Credit Check status with Refer");
-
+			Screenshots.captureScreenshot();
 		}
 		Screenshots.captureScreenshot();
 	}
 
 	public static void BankDetails(String Username) throws InterruptedException, IOException {
 
-		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
 		Agent_CreditCheckDetailsPage.AccountName.sendKeys(Username);
 		log.debug("Entered Account name");
 		Agent_CreditCheckDetailsPage.SortCode.sendKeys("201596");
@@ -233,20 +233,26 @@ public class Agent_CreditCheckPageActions extends Environment {
 			if (!Mainwindow.equalsIgnoreCase(ChildWindow)) {
 				// Switching to Child window
 				driver.switchTo().window(ChildWindow);
-				Thread.sleep(3000);
+				System.out.println("Switched to child window");
+
+				driver.manage().timeouts().implicitlyWait(12,TimeUnit.SECONDS);
+
 				Agent_CreditCheckDetailsPage.CardHolderName.sendKeys(Username);
 				log.debug("Entered card holder name");
 
 				Select CardTypeDropDown = new Select(pageobjects.Agent_CreditCheckDetailsPage.CardType);
 				CardTypeDropDown.selectByIndex(3);
 				log.debug("Entered Card type");
+
 				Agent_CreditCheckDetailsPage.CardNumber.sendKeys("4539791001730106");
 				log.debug("Entered card number");
 				Thread.sleep(2000);
+
 				Select CardMonthDropdown = new Select(pageobjects.Agent_CreditCheckDetailsPage.CardMonth);
 				log.debug("Entered card month");
 				CardMonthDropdown.selectByIndex(2);
 				Thread.sleep(2000);
+
 				Select CardYearDropdown = new Select(pageobjects.Agent_CreditCheckDetailsPage.CardYear);
 				CardYearDropdown.selectByIndex(3);
 				log.debug("Entered card year");
@@ -254,7 +260,7 @@ public class Agent_CreditCheckPageActions extends Environment {
 
 				Agent_CreditCheckDetailsPage.SecurityCode.sendKeys("123");
 				log.debug("Entered security code");
-				Thread.sleep(2000);
+				Thread.sleep(3000);
 
 				//Agent_CreditCheckDetailsPage.UsethisCard.click();
 				Screenshots.captureScreenshot();
@@ -275,16 +281,16 @@ public class Agent_CreditCheckPageActions extends Environment {
 		}
 		// Switching to Parent window i.e Main Window.
 		driver.switchTo().window(Mainwindow);
-
+		driver.manage().timeouts().implicitlyWait(8,TimeUnit.SECONDS);
 
 //*[@id="cardCaptureError"]/ul/li[4]/label[1]
 		int success = driver.findElements(By.xpath("//*[@id = 'cardCaptureStatus' and @class ='success']")).size();
 		if (success > 0) {
 			Agent_CreditCheckDetailsPage.AgreeCreditCheck.click();
-			Thread.sleep(2000);
+			Thread.sleep(4000);
 			Agent_CreditCheckDetailsPage.PerformCreditCheck.click();
 
-			Thread.sleep(20000);
+			Thread.sleep(5000);
 		}
 		else
 		{
