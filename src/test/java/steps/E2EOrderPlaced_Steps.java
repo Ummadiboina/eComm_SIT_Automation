@@ -2169,6 +2169,21 @@ public class E2EOrderPlaced_Steps {
         }
     }
 
+   @And("^Validate all the Basket contents$")
+    public void validate_all_the_Basket_contents() {
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, BasketPage.class);
+            Thread.sleep(3000);
+            BasketPageActions.ValidateBasketPageContents("DataRollOver",expPlnList);
+            Thread.sleep(7000);
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            log.debug("Unable to validate basket content/checkout , please see the failure screenshot");
+            Assert.fail("Unable to validate basket content/checkout , please see the failure screenshot");
+
+        }
+    }
     /*
 	 * #########################################################################
 	 * #########
