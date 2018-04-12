@@ -977,6 +977,7 @@ public class E2EOrderPlaced_Steps {
             DeliveryPageActions.SetDelivery();
             DeliveryPageActions.AboutYou(Firstname, Surname);
             DeliveryPageActions.ClickContinue();
+          //  DeliveryPageActions.clickOnSubmitBtn();
         } catch (Exception e) {
             // TODO Auto-generated catch block
             log.debug("Unable to input details in delivery page");
@@ -984,6 +985,7 @@ public class E2EOrderPlaced_Steps {
 
         }
     }
+
     @And("^Enter details in Delivery page for Click and collect and Click on the 'Continue button'$")
     public void DeliveryPage_enter_Inputs_ClickandCollect(String Firstname, String Surname) {
         try {
@@ -1993,7 +1995,7 @@ public class E2EOrderPlaced_Steps {
     April2018
      */
     @And("^verify 'Email Basket' link is displayed next to the Search CTA in deal builder section$")
-    public void verify_Email_Basket_link_is_displayed_next_to_the_Search_CTA_in_deal_builder_section() throws Throwable {
+    public void verify_Email_Basket_link_is_displayed_next_to_the_Search_CTA_in_deal_builder_section() {
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         try {
             PageFactory.initElements(driver, Agent_DealBuilderPage.class);
@@ -2005,7 +2007,7 @@ public class E2EOrderPlaced_Steps {
         }
     }
     @And("^click on '\\+' accordion at the top of deal builder$")
-    public void click_on_accordion_at_the_top_of_deal_builder() throws Throwable {
+    public void click_on_accordion_at_the_top_of_deal_builder() {
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         try {
             PageFactory.initElements(driver, Agent_DealBuilderPage.class);
@@ -2018,7 +2020,7 @@ public class E2EOrderPlaced_Steps {
         }
     }
     @And("^verify user switched to Email Basket pop up window$")
-    public void verify_user_switched_to_Email_Basket_pop_up_window() throws Throwable {
+    public void verify_user_switched_to_Email_Basket_pop_up_window() {
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         try {
             PageFactory.initElements(driver, Agent_DealBuilderPage.class);
@@ -2831,7 +2833,8 @@ public class E2EOrderPlaced_Steps {
             Thread.sleep(2000);
             DeliveryPageActions.AboutYou(Firstname, Surname);
             Thread.sleep(2000);
-            // DeliveryPageActions.ClickContinue();
+             DeliveryPageActions.ClickContinue();
+            // DeliveryPageActions.clickOnSubmitBtn();
         } catch (Exception e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
@@ -9273,6 +9276,21 @@ public class E2EOrderPlaced_Steps {
         }
     }
 
+//GDPR
+    @And("^Is this order for You or Someone else ([^\"]*)$")
+    public void isThisOrder4UorSomeoneElse(String customer) {
+        try {
+            driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, DeliveryPage.class);
+           // Agent_DealBuilderPageActions.verifyDevive_and_CopyClipboard_Btn();
+            DeliveryPageActions.clickOnSubmitBtn(customer);
+            Thread.sleep(5000);
+        } catch (InterruptedException e) {
+            System.out.println("Failed to verify Basket link and 'Copy to Clipboard' CTA are enabled Click on 'Copy to Clipboard' button");
+            Assert.fail("Failed to verify Basket link and 'Copy to Clipboard' CTA are enabled Click on 'Copy to Clipboard' button");
+            e.printStackTrace();
+        }
+    }
 
 
 }

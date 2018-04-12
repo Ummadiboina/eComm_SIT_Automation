@@ -144,11 +144,6 @@ public class DeliveryPage {
     public static WebElement DeliveryPageUseDiffAddressLink;
 
 
-
-
-
-
-
     //Commercial Address error-Address LookUp
     @FindBy(how = How.ID, using = "no-residential-address-match-error")
     public static WebElement commercialAddressErrorMsgAdressLookUp;
@@ -165,5 +160,30 @@ public class DeliveryPage {
     @FindBy(how = How.ID, using = "address-postcode-error")
     public static WebElement postalCodeErrorMsgEnterManualSection;
 
+//newly added for GDPR
+
+    @FindBy(how = How.XPATH, using = "//*[contains(text(),'this order for you or someone else')]")
+    public static WebElement thisOrderTxt;
+
+    @FindBy(how = How.XPATH, using = "//*[contains(text(),'this order for you or someone else')]/following-sibling::*")
+    public static WebElement thisOrderOverlay;
+
+    @FindBy(how = How.XPATH, using = "//*[contains(text(),'have the chance to choose to receive information on our products, offers and more")
+    public static WebElement thisOrderOverlayTxt;
+
+    @FindBy(how = How.XPATH, using = "//*[normalize-space(@class)='close']")
+    public static WebElement closeOveryPopup;
+
+    @FindBy(how = How.XPATH, using = "//*[normalize-space(.)='Me']/preceding-sibling::input")
+    public static WebElement Me_radioBtn;
+
+    @FindBy(how = How.XPATH, using = "//*[normalize-space(.)='Someone else']/preceding-sibling::input")
+    public static WebElement someoneElse_radioBtn;
+
+    @FindBy(how = How.XPATH, using = "//*[normalize-space(.)='Submit']")
+    public static WebElement submitBtn;
+
 
 }
+
+
