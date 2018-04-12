@@ -33,6 +33,7 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 	static ArrayList<Integer> datalistafter = new ArrayList<Integer>();
 	static ArrayList<Integer> start = new ArrayList<Integer>();
 	static ArrayList<Integer> end = new ArrayList<Integer>();
+	static String plan = "", actPlnList = "";
 
 	static Hashtable plnDetails = new Hashtable();
 	static Hashtable actPlnDetails = new Hashtable();
@@ -48,10 +49,7 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 
 	}
 
-	public static Hashtable TariffSelect(String ElementName) throws IOException, InterruptedException {
-
-		String plan = "";
-		int chkcount = 0;
+	public static String TariffSelect(String ElementName) throws IOException, InterruptedException {
 
 		driver.manage().timeouts().implicitlyWait(120, TimeUnit.SECONDS);
 		if (ElementName.equalsIgnoreCase("Randomtariff")) {
@@ -75,84 +73,84 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 			pageobjects.PAYMandPAYGTariffAndExtrasPage.RandomfullTariff1.sendKeys(Keys.ENTER);
 			log.debug("Selected a full payment Tariff");
 		}
+
+		//Validation for Data Roll Over Text
 		if(ElementName.contains("\\|")){
 
 			String tariffAmt = ElementName.split("\\|")[0];
 			String dataRolloverValue = ElementName.split("\\|")[1];
 
-			List<WebElement> bigBundlesLst = driver.findElements(By.xpath("//ul[contains(@class,'BigBundlesSection')]/li[contains(@ng-repeat,'big-bundles')]"));
+			if(driver.findElements(By.xpath("//span[text()='"+tariffAmt+"']")).size() >= 1 ){
 
-			outerloop:
-			for(WebElement elm : bigBundlesLst){
+				if(driver.findElement(By.xpath("//span[normalize-space()='"+tariffAmt+"']/../../../div/h3")).getText().equals(dataRolloverValue)){
 
-				String dataValue = elm.findElement(By.xpath("//div/div/h3")).getText();
-				String elmDataRollovr = elm.findElement(By.xpath("//li[contains(@ng-repeat,'big-bundles')]/div/ul/li[1]/p")).getText().replaceAll("\"","").trim();
-				String actTariffAmt = elm.findElement(By.xpath("//div/ul/following-sibling::div[2]/p/span[2]")).getText();
+					log.debug("Data value "+dataRolloverValue+" for "+tariffAmt+" is displayed");
+				}
+				else{
 
-				if(elm.findElement(By.xpath("//li[contains(@ng-repeat,'big-bundles')]/div/ul/li[1]/p")).isDisplayed() && elmDataRollovr.contains("Includes data rollover of up to "+dataRolloverValue) && dataRolloverValue.equals(dataValue) && actTariffAmt.contains(tariffAmt)){
+					log.debug("Data value "+dataRolloverValue+" for "+tariffAmt+" is not displayed");
+				}
+				if(driver.findElement(By.xpath("//span[[normalize-space()='"+tariffAmt+"']/../../../ul/li[1]/p")).getText().equals("Includes data rollover of up to "+dataRolloverValue)){
 
-					List<WebElement> plnList = elm.findElement(By.xpath("//div/ul/li/p"));
+					log.debug("Data Roll over copy text is displayed");
+				}
+				else{
 
-					for(WebElement elm1 : plnList) {
-						plan = elm1.getText().replaceAll("\"","").trim() + "|";
-            /*plan = plan + "|" + elm.findElement(By.xpath("//div/ul/li[2]/p")).getText();
-            plan = plan + "|" + elm.findElement(By.xpath("//div/ul/li[3]/p")).getText();
-            plan = plan + "|" + elm.findElement(By.xpath("//div/ul/li[4]/p")).getText();*/
-					}
+					log.debug("Data Roll over copy text is not displayed");
+				}
 
-					plnDetails.put("PLAN", plnList);
-					plnDetails.put("DATA", dataRolloverValue);
-					plnDetails.put("TARIFFAMT", tariffAmt+" top up in exchange for");
+				List<WebElement> plnList = driver.findElement(By.xpath("//span[text()='"+tariffAmt+"']/../../../ul/li"));
 
-					elm.findElement(By.xpath("//div/a")).click();
-					Thread.sleep(5000);
+				for(WebElement elm : plnList) {
+					plan = elm.getText().replaceAll("\"","").trim() + "|";
 
-					String dataRollOvrPopupTxt = driver.findElement(By.xpath("//div[@id='o2BundleCharges']/div[@class='box-content scroll-bar']/p[3]")).getAttribute("textContent");
-					if(dataRollOvrPopupTxt.contains("With data rollover, you can roll over your unused data into your next month‘s Big Bundle, subject to bundle caps. Terms apply.")){
-						log.debug("Data Roll over copy text is present in the popup");
+				}
 
-					}
-					else{
-						log.debug("Data Roll over copy text is not present in the popup");
-					}
+				driver.findElement(By.xpath("//span[text()='"+tariffAmt+"']/../../../a")).click();
+				log.debug("Clicked on More details link");
+				Thread.sleep(5000);
 
-					driver.findElement(By.xpath("//h3[text()='Big Bundles']/following-sibling::a")).click();
-					log.debug("Clicked on More details link");
-					Thread.sleep(3000);
+				String dataRollOvrPopupTxt = driver.findElement(By.xpath("//div[@id='o2BundleCharges']/div[@class='box-content scroll-bar']/p[3]")).getAttribute("textContent");
+				if(dataRollOvrPopupTxt.contains("With data rollover, you can roll over your unused data into your next month‘s Big Bundle, subject to bundle caps. Terms apply.")){
+					log.debug("Data Roll over copy text is present in the popup");
 
-					elm.findElement(By.xpath("//div/ul/following-sibling::button")).click();
-					log.debug("Clicked on More Details popup close button");
-					Thread.sleep(5000);
+				}
+				else{
+					log.debug("Data Roll over copy text is not present in the popup");
+				}
 
-					break outerloop;
+				driver.findElement(By.xpath("//h3[text()='Big Bundles']/following-sibling::a")).click();
+				log.debug("Clicked on More details popup close button");
+				Thread.sleep(3000);
+
+				driver.findElement(By.xpath("//span[text()='"+tariffAmt+"']/../../../button")).click();
+				log.debug("Selected the Big Bundle Tariff");
+
+				WebElement yourPackageSection = driver.findElement(By.xpath("//h2[contains(text(),'Your package')]"));
+				((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", yourPackageSection);
+				log.debug("Scrolling page to Your package section");
+
+				List<WebElement> actPlnListElm = driver.findElement(By.xpath("//span[text()='"+tariffAmt+"']/../../../ul/li"));
+
+				for(int i = 3;i<=actPlnListElm.size();i++) {
+					actPlnList = actPlnListElm.get(i).getText().replaceAll("\"","").trim() + "|";
+
+				}
+
+				if(plan.equals(actPlnList)){
+					log.debug("Selected Big Bundle Data Roll over plan details is displayed in your package section");
+
+				}
+				else{
+					log.debug("Selected Big Bundle Data Roll over plan details is not displayed in your package section");
+
 				}
 
 			}
 
-			WebElement yourPackageSection = driver.findElement(By.xpath("//h2[contains(text(),'Your package')]"));
-			((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", yourPackageSection);
-			log.debug("Scrolling page to Your package section");
-
-			String actPlnList = driver.findElement(By.xpath("//div[contains(@ng-if,'BigBundlePlan')]/ul/li[1]")).getText()
-					+ "|" +driver.findElement(By.xpath("//div[contains(@ng-if,'BigBundlePlan')]/ul/li[4]")).getText()
-					+ "|"+driver.findElement(By.xpath("//div[contains(@ng-if,'BigBundlePlan')]/ul/li[5]")).getText()
-					+ "|"+driver.findElement(By.xpath("//div[contains(@ng-if,'BigBundlePlan')]/ul/li[6]")).getText()+ "|";
-
-			actPlnDetails.put("PLAN", actPlnList);
-			actPlnDetails.put("DATA", driver.findElement(By.xpath("//div[contains(@ng-if,'BigBundlePlan')]/ul/li[2]")).getText());
-			actPlnDetails.put("TARIFFAMT", driver.findElement(By.xpath("//div[contains(@ng-if,'BigBundlePlan')]/ul/li[1]")).getText());
-
-      /*for(HashEntry<String, String> entry: actPlnDetails.entrySet()){
-         String actValue = plnDetails.get(entry.getKey());
-         String expValue = entry.getValue();
-         if(expValue != null && actValue != null && expValue.equals(actValue)){
-            chkcount = chkcount + 1;
-         }
-      }*/
-
 		}
 		Screenshots.captureScreenshot();
-		return plnDetails;
+		return plan;
 	}
 
 	public static void addAccessory() throws InterruptedException, IOException {

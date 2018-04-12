@@ -15,4 +15,4 @@ Feature: AFA_Not_Allow_ReferWithSIMO_Credit_Check_Status_For_SIMO_Order_And_Show
 
     Examples:
       | Device                | Tariff | DeliveryType | Firstname | Surname | Username     | HouseNumber | PostCode |
-      | Galaxy S8 Plus 64GB   | SIMO   | HomeDelivery | TEST      | ACCEPTA | TEST ACCEPTA |           6 | SL11ER   |
+      | Galaxy S8 Plus 64GB   | SimO   | HomeDelivery | TEST      | ACCEPTA | TEST ACCEPTA |           6 | SL11ER   |

@@ -177,7 +177,7 @@ public class BasketPageActions extends Environment {
 
 	}
 
-	public static void ValidateBasketPageContents() throws InterruptedException, IOException {
+	public static void ValidateBasketPageContents(String Element, String expValue) throws InterruptedException, IOException {
 		boolean fname = false;
 		log.debug("Shop basket pages validations" + driver.getTitle());
 		log.debug("Shop basket pages validations" + driver.getTitle());
@@ -214,6 +214,30 @@ public class BasketPageActions extends Environment {
 		log.debug("The Basket Totals are : " + pageobjects.BasketPage.totals.getText());
 		log.debug("The Home Delivery Text is : " + pageobjects.BasketPage.HomeDeliveryText.getText());
 		log.debug("The Home Delivery Text is : " + pageobjects.BasketPage.HomeDeliveryText.getText());
+
+		if(Element.equalsIgnoreCase("DataRollOver")){
+
+			String actValue = "";
+
+			List<WebElement> actPlnListElm = driver.findElement(By.xpath("//h3[@class='section-parent-header']//following-sibling::p"));
+
+			for(int i = 3;i<=actPlnListElm.size();i++) {
+				actValue = actPlnListElm.get(i).getText().replaceAll("\"","").trim() + "|";
+
+			}
+
+			if(expValue.equals(actValue)){
+				log.debug("Selected Big Bundle Data Roll over plan details is displayed in Basket page");
+
+			}
+			else{
+				log.debug("Selected Big Bundle Data Roll over plan details is not displayed in Basket page");
+
+			}
+
+
+		}
+
 		Screenshots.captureScreenshot();
 	}
 
