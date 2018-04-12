@@ -9293,4 +9293,21 @@ public class E2EOrderPlaced_Steps {
     }
 
 
+//GDPR preferences section
+
+    @Then("^Choose Your Business preferences ([^\"]*) ([^\"]*) ([^\"]*) ([^\"]*) and Channel Preferences ([^\"]*) ([^\"]*) ([^\"]*) ([^\"]*)$")
+    public void Choose_Your_Preferences(String BP1, String BP2, String BP3, String BP4, String Chn1, String Chn2, String Chn3, String Chn4) {
+        // Write code here that turns the phrase above into concrete actions
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, OrderConfirmationPage.class);
+            OrderConfirmationPageActions.PreferencesSection(BP1, BP2, BP3, BP4, Chn1, Chn2, Chn3, Chn4);
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            log.debug("Unable to Choose your preferences");
+            Assert.fail("Unable to Choose your preferences");
+
+        }
+    }
+
 }
