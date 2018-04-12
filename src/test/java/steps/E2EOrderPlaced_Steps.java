@@ -53,6 +53,7 @@ public class E2EOrderPlaced_Steps {
     static int BuyOutValue = 0;
     static int TradeInValue = 0;
     public static Hashtable selectedElements = new Hashtable();
+    static String expPlnList;
 
     public E2EOrderPlaced_Steps() {
         driver = Hooks.driver;
@@ -815,7 +816,7 @@ public class E2EOrderPlaced_Steps {
             PageFactory.initElements(driver, PAYMandPAYGTariffAndExtrasPage.class);
             PAYMandPAYGTariffAndExtrasPageActions.addToBasketLive();
             Thread.sleep(3000);
-            BasketPageActions.ValidateBasketPageContents();
+            BasketPageActions.ValidateBasketPageContents("","");
             BasketPageActions.CollectionorDelivery("clickAndCollect");
             Thread.sleep(3000);
         } catch (Exception e) {
@@ -2175,7 +2176,7 @@ public class E2EOrderPlaced_Steps {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, BasketPage.class);
             Thread.sleep(3000);
-            BasketPageActions.ValidateBasketPageContents("DataRollOver",expPlnList);
+            BasketPageActions.ValidateBasketPageContents("DataRollOver", expPlnList);
             Thread.sleep(7000);
         } catch (Exception e) {
             // TODO Auto-generated catch block
@@ -2773,7 +2774,7 @@ public class E2EOrderPlaced_Steps {
             PageFactory.initElements(driver, PAYMandPAYGTariffAndExtrasPage.class);
             PAYMandPAYGTariffAndExtrasPageActions.addToBasketLive();
             Thread.sleep(3000);
-            BasketPageActions.ValidateBasketPageContents();
+            BasketPageActions.ValidateBasketPageContents("","");
         } catch (Exception e) {
             // TODO Auto-generated catch block
             Assert.fail("Unable to land on Basket page");
