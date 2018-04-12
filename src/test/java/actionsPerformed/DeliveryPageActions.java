@@ -1,12 +1,9 @@
 package actionsPerformed;
 
-import java.io.IOException;
-import java.util.HashMap;
-import java.util.List;
-import java.util.concurrent.TimeUnit;
-
-import GlobalActions.scrollToAnElement;
+import GlobalActions.RandomEmailAddressCreation;
+import GlobalActions.Screenshots;
 import cucumber.api.DataTable;
+import helpers.Environment;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -15,15 +12,12 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.Reporter;
-
-import GlobalActions.RandomEmailAddressCreation;
-import GlobalActions.Screenshots;
-import helpers.Environment;
 import pageobjects.DeliveryPage;
-import steps.E2EOrderPlaced_Steps;
 
-import static GlobalActions.scrollToAnElement.scrollToElement;
-import static pageobjects.FreeSimPage.Firstname;
+import java.io.IOException;
+import java.util.HashMap;
+import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 public class DeliveryPageActions extends Environment {
 
@@ -35,7 +29,7 @@ public class DeliveryPageActions extends Environment {
 
         try {
 
-            if(DeliveryPage.Housenumber.isDisplayed()) {
+            if (DeliveryPage.Housenumber.isDisplayed()) {
                 DeliveryPage.Housenumber.sendKeys("12");
                 log.debug("Entered House number");
                 Thread.sleep(2000);
@@ -60,7 +54,7 @@ public class DeliveryPageActions extends Environment {
 
     public static void AboutYou(String Firstname, String Surname) {
         try {
-            driver.manage().timeouts().implicitlyWait(30,TimeUnit.SECONDS);
+            driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
             // Thread.sleep(3000);
             String str = RandomEmailAddressCreation.RandomEmail();
             log.debug("Entering an Random email id is " + str);
@@ -90,7 +84,6 @@ public class DeliveryPageActions extends Environment {
         }
 
     }
-
 
 
     public static void AboutYouTen(String Firstname, String Surname) throws IOException, InterruptedException {
@@ -146,7 +139,7 @@ public class DeliveryPageActions extends Environment {
         if (count >= 1) {
             log.debug("checkbox is present, so going to click on that");
             Thread.sleep(3000);
-            js.executeScript("arguments[0].click();",driver.findElement(By.xpath("//*[@id='checkbox-terms-agreement-required']")));
+            js.executeScript("arguments[0].click();", driver.findElement(By.xpath("//*[@id='checkbox-terms-agreement-required']")));
             log.debug("checkbox Selected");
             pageobjects.DeliveryPage.Continue.click();
             log.debug("Clicking on the continue link");
@@ -154,15 +147,77 @@ public class DeliveryPageActions extends Environment {
             Screenshots.captureScreenshot();
         } else {
             WebElement element = pageobjects.DeliveryPage.Continue;
-            JavascriptExecutor executor = (JavascriptExecutor)driver;
+            JavascriptExecutor executor = (JavascriptExecutor) driver;
             executor.executeScript("arguments[0].click();", element);
             //pageobjects.DeliveryPage.Continue.click();
             log.debug("Clicking on the continue link");
             Screenshots.captureScreenshot();
         }
-
-
     }
+
+    //code for GDPR
+    public static void clickOnSubmitBtn(String customer) throws InterruptedException {
+        Thread.sleep(3000);
+        log.debug("in click Submit button  function");
+        //code to new validate on GDPR
+        int count1 = driver.findElements(By.xpath("//*[@id='checkbox-terms-agreement-required']")).size();
+        int checkBox = driver.findElements(By.xpath("//*[@id='checkbox-terms-agreement-required']")).size();
+        if (count1 <= 0) {
+            System.out.println("checkbox is not displayed ie :: , I’d like to hear about everything I get, just for being on O2. Things like exclusive offers, tickets and upgrade deals.\n");
+        }
+        log.debug("checkbox is not displayed ie :: , I’d like to hear about everything I get, just for being on O2. Things like exclusive offers, tickets and upgrade deals.\n");
+        Thread.sleep(3000);
+        String thisOrderHeader = DeliveryPage.thisOrderTxt.getText();
+        if (thisOrderHeader.contains("this order for you or someone else")) {
+            System.out.println("New Check box of 'Is this order for you or someone else?' is Displayed");
+            log.debug("New Check box of 'Is this order for you or someone else?' is Displayed");
+            Thread.sleep(3000);
+            DeliveryPage.thisOrderOverlay.click();
+            String thisOrderOVerLayTxt = DeliveryPage.thisOrderOverlayTxt.getText();
+            if (DeliveryPage.thisOrderOverlayTxt.isDisplayed()) {
+                if (thisOrderOVerLayTxt.contains("choose to receive information on our products, offers and more")) {
+                    System.out.println("Successfully validated the OVerLay Icon Text ie : " + thisOrderOVerLayTxt);
+                    log.debug("Successfully validated the OVerLay Icon Text ie : " + thisOrderOVerLayTxt);
+                    DeliveryPage.closeOveryPopup.click();
+                } else {
+                    System.out.println("Failed to validate the Overlay icon Text");
+                    log.info("Failed to validate the Overlay icon Text");
+                }
+            }
+        } else {
+            System.out.println("Failed to validate New Check box of 'Is this order for you or someone else?' is Displayed");
+            log.debug("Failed to validate New Check box of 'Is this order for you or someone else?' is Displayed");
+        }
+
+        if(customer.contains("Me")) {
+            boolean defaultSelect = DeliveryPage.Me_radioBtn.isSelected();
+            if (defaultSelect) {
+                System.out.println("Me is selected by Default");
+                log.debug("Me is selected by Default");
+            } else {
+                DeliveryPage.Me_radioBtn.click();
+                System.out.println("Me radio button is not selected by Default");
+                log.debug("Me radio button is not selected by Default");
+            }
+        }
+
+        if(customer.contains("Someone")) {
+            boolean defaultSelect = DeliveryPage.someoneElse_radioBtn.isSelected();
+            if (!defaultSelect) {
+                DeliveryPage.someoneElse_radioBtn.click();
+                Thread.sleep(2000);
+                System.out.println("order for this customer : Me is selected by Default, as Requirement we have clicked Someone else");
+                log.debug("order for this customer : Me is selected by Default, as Requirement we have clicked Someone else");
+            } else {
+                DeliveryPage.Me_radioBtn.click();
+                System.out.println("Failed to select a order for some one else");
+                log.debug("Failed to select a order for some one else");
+            }
+        }
+
+        DeliveryPage.submitBtn.click();
+    }
+
 
     public static void select_BringTradeInDevice_CheckBox() throws InterruptedException, IOException {
         Thread.sleep(3000);
@@ -172,7 +227,7 @@ public class DeliveryPageActions extends Environment {
         if (isPresent) {
             log.debug("checkbox is present, so going to click on that");
             Thread.sleep(3000);
-            js.executeScript("arguments[0].click();",driver.findElement(By.xpath("//*[@id='trade-in-confirmation-required']")));
+            js.executeScript("arguments[0].click();", driver.findElement(By.xpath("//*[@id='trade-in-confirmation-required']")));
             log.debug("checkbox Selected");
             Thread.sleep(2000);
             Screenshots.captureScreenshot();
@@ -191,7 +246,7 @@ public class DeliveryPageActions extends Environment {
         if (isPresent) {
             log.debug("checkbox is present, so going to click on that");
             Thread.sleep(3000);
-            js.executeScript("arguments[0].click();",driver.findElement(By.xpath("//*[@id='checkbox-terms-agreement-required']")));
+            js.executeScript("arguments[0].click();", driver.findElement(By.xpath("//*[@id='checkbox-terms-agreement-required']")));
             log.debug("checkbox Selected");
 
             //driver.findElement(By.xpath("//*[@id='checkbox-terms-agreement-required']")).sendKeys(Keys.ENTER);
@@ -200,7 +255,7 @@ public class DeliveryPageActions extends Environment {
 
             log.debug("going to click on the continue link");
 
-            js.executeScript("arguments[0].click();",pageobjects.DeliveryPage.SendMeMySim2);
+            js.executeScript("arguments[0].click();", pageobjects.DeliveryPage.SendMeMySim2);
             log.debug("Clicking on the continue link");
             Thread.sleep(4000);
             Screenshots.captureScreenshot();
