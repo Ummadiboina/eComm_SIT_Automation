@@ -12,11 +12,13 @@ Feature: Feb_CFA_Phones_CnC_Delivery_page_Payment_page_more_than_one_address_sel
     And I Land on the basket page and choose home delivery option
     And click on "go to checkout" button
     And input <Firstname> and <Surname> and other valid details in Delivery page for Click and collect and Click on the 'Continue button'
+    #customer is either Me or Someone else
+    And Is this order for You or Someone else <consumer>
     And land on the payment page and input <Username> and other details for Click and collect order and click 'Continue on next step'
     And Continue to Agreements page and confirm all the agreement checks
     And Continue to Review page and review the order
     Then order confirmation is displayed with Volte message
 
     Examples:
-      | handset        | Firstname | Surname | Username     |
-      | Apple iPhone 6 | TEST      | ACCEPTA | TEST ACCEPTA |
+      | handset        | Firstname | Surname | Username     | consumer |
+      | Apple iPhone 6 | TEST      | ACCEPTA | TEST ACCEPTA | Me       |
