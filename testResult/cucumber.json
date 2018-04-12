@@ -6,7 +6,7 @@
         "before": [
           {
             "result": {
-              "duration": 10601298937,
+              "duration": 32863065203,
               "status": "passed"
             },
             "match": {
@@ -14,14 +14,14 @@
             }
           }
         ],
-        "line": 22,
-        "name": "CFA PayM Phones Home delivery E2E journey with Accessory",
+        "line": 17,
+        "name": "SMB - Update Names and Cost centres",
         "description": "",
-        "id": "reg-cs-paymphoneshomedeliverywithaccessory;cfa-paym-phones-home-delivery-e2e-journey-with-accessory;;2",
+        "id": "updatenameandcost;smb---update-names-and-cost-centres;;2",
         "after": [
           {
             "result": {
-              "duration": 20814627568,
+              "duration": 17004114300,
               "status": "passed"
             },
             "match": {
@@ -34,202 +34,129 @@
         "steps": [
           {
             "result": {
-              "duration": 872947022,
+              "duration": 128328042,
               "status": "passed"
             },
             "line": 5,
-            "name": "I am an CFA user and Lands on shop page",
+            "name": "that user is able to launch the O2ID login page",
             "match": {
-              "location": "E2EOrderPlaced_Steps.i_am_an_CFA_user_and_Lands_on_shop_page()"
+              "arguments": [
+                {
+                  "val": "2",
+                  "offset": 33
+                }
+              ],
+              "location": "E2EOrderPlaced_Steps.that_user_is_able_to_launch_the_O_ID_login_page(int)"
             },
             "keyword": "Given "
           },
           {
             "result": {
-              "duration": 23278154131,
+              "duration": 7621717254,
               "status": "passed"
             },
             "line": 6,
-            "name": "navigate to PAYM Phones page",
+            "name": "user is able login into the O2ID successfully using testmyaccountone@yopmail.com and Test_123",
             "match": {
-              "location": "E2EOrderPlaced_Steps.navigate_to_PAYM_Phones_page()"
+              "arguments": [
+                {
+                  "val": "testmyaccountone@yopmail.com",
+                  "offset": 52
+                },
+                {
+                  "val": "Test_123",
+                  "offset": 85
+                }
+              ],
+              "location": "E2EOrderPlaced_Steps.user_is_able_login_into_the_O_ID_successfully_using_and(String,String)"
             },
+            "matchedColumns": [
+              0,
+              1
+            ],
             "keyword": "And "
           },
           {
             "result": {
-              "duration": 5147055309,
+              "duration": 47733951643,
               "status": "passed"
             },
             "line": 7,
-            "name": "I choose PayM Samsung Galaxy S8",
+            "name": "user is able to navigate My Account successfully",
             "match": {
-              "arguments": [
-                {
-                  "val": "Samsung Galaxy S8",
-                  "offset": 14
-                }
-              ],
-              "location": "E2EOrderPlaced_Steps.Choose_PAYM_Handset(String)"
+              "location": "E2EOrderPlaced_Steps.user_is_able_to_navigate_My_Account_successfully()"
             },
-            "matchedColumns": [
-              0
-            ],
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 10558113951,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "user is able to click on Update names and cost centre link",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.user_is_able_to_click_on_Update_names_and_cost_centre_link()"
+            },
             "keyword": "And "
           },
           {
             "result": {
-              "duration": 19143133355,
+              "duration": 12446895209,
               "status": "passed"
             },
-            "comments": [
-              {
-                "line": 8,
-                "value": "#edit the above"
-              }
-            ],
             "line": 9,
-            "name": "Navigate to device details page",
-            "match": {
-              "location": "E2EOrderPlaced_Steps.Navigate_to_device_details_page()"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 9765323844,
-              "status": "passed"
-            },
-            "line": 10,
-            "name": "Land on the \u0027Tariffs and extra\u0027 page",
-            "match": {
-              "location": "E2EOrderPlaced_Steps.land_on_the_Tariffs_and_extra_page()"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 4611519841,
-              "status": "passed"
-            },
-            "line": 11,
-            "name": "Choose some Accesssory",
-            "match": {
-              "location": "E2EOrderPlaced_Steps.Choose_some_Accesssory()"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 53739018530,
-              "status": "passed"
-            },
-            "line": 12,
-            "name": "I Land on the basket page and choose home delivery option",
-            "match": {
-              "location": "E2EOrderPlaced_Steps.i_Land_on_the_basket_page_and_choose_home_delivery_option()"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 12034801293,
-              "status": "passed"
-            },
-            "line": 13,
-            "name": "click on \"go to checkout\" button",
+            "name": "user update the username \"Test14\" of any of one of the subscriptions and naviagte to Request Review page",
             "match": {
               "arguments": [
                 {
-                  "val": "go to checkout",
-                  "offset": 10
+                  "val": "Test14",
+                  "offset": 26
                 }
               ],
-              "location": "E2EOrderPlaced_Steps.CheckoutFromBasket(String)"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 62719743043,
-              "status": "passed"
-            },
-            "line": 14,
-            "name": "input TEST and ACCEPTA and other valid details in Delivery page and Click on the \u0027Continue button\u0027",
-            "match": {
-              "arguments": [
-                {
-                  "val": "TEST",
-                  "offset": 6
-                },
-                {
-                  "val": "ACCEPTA",
-                  "offset": 15
-                }
-              ],
-              "location": "E2EOrderPlaced_Steps.DeliveryPage_Inputs_homeDelivery(String,String)"
+              "location": "E2EOrderPlaced_Steps.user_update_the_username_of_any_of_one_of_the_subscriptions_and_naviagte_to_Request_Review_page(String)"
             },
             "matchedColumns": [
-              1,
               2
             ],
             "keyword": "And "
           },
           {
             "result": {
-              "duration": 169403420604,
+              "duration": 18601696009,
               "status": "passed"
             },
-            "line": 15,
-            "name": "land on the payment page and input TEST ACCEPTA and other details and click \u0027Continue on next step\u0027",
+            "line": 10,
+            "name": "user is able to submit the request successfully",
             "match": {
-              "arguments": [
-                {
-                  "val": "TEST ACCEPTA",
-                  "offset": 35
-                }
-              ],
-              "location": "E2EOrderPlaced_Steps.CreditCheckPaymentPage_HomeDelivery(String)"
+              "location": "E2EOrderPlaced_Steps.user_is_able_to_submit_the_request_successfully()"
             },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 13704935227,
+              "status": "passed"
+            },
+            "line": 11,
+            "name": "user gets the request number and launches salesforce",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.user_gets_the_request_number_and_launches_salesforce()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "undefined"
+            },
+            "line": 12,
+            "name": "user logins into salesforce using \"sundaram.subramanian@o2.com.csupreprod\" and \"Mar@2018\"",
+            "match": {},
             "matchedColumns": [
-              3
+              3,
+              4
             ],
             "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 33877790452,
-              "error_message": "java.lang.AssertionError: Agreements page is not displayed or unable to enter some information in thie page, Please review the screenshots for failure\r\n\tat org.testng.Assert.fail(Assert.java:94)\r\n\tat steps.E2EOrderPlaced_Steps.AgreementsPageConfirmation(E2EOrderPlaced_Steps.java:1530)\r\n\tat ✽.And Continue to Agreements page and confirm all the agreement checks(Features/FebruaryRelease2018/Regression/Reg_CS_PayMPhonesHomeDeliveryWithAccessory.feature:16)\r\n",
-              "status": "failed"
-            },
-            "line": 16,
-            "name": "Continue to Agreements page and confirm all the agreement checks",
-            "match": {
-              "location": "E2EOrderPlaced_Steps.AgreementsPageConfirmation()"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "status": "skipped"
-            },
-            "line": 17,
-            "name": "Continue to Review page and review the order",
-            "match": {
-              "location": "E2EOrderPlaced_Steps.ReviewPageConfirmation()"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "status": "skipped"
-            },
-            "line": 18,
-            "name": "order confirmation is displayed",
-            "match": {
-              "location": "E2EOrderPlaced_Steps.OrderConfirmationPage()"
-            },
-            "keyword": "Then "
           }
         ],
         "tags": [
@@ -240,10 +167,10 @@
         ]
       }
     ],
-    "name": "Reg_CS_PayMPhonesHomeDeliveryWithAccessory",
-    "description": "",
-    "id": "reg-cs-paymphoneshomedeliverywithaccessory",
+    "name": "UpdatenameAndCost",
+    "description": "This scenario is to update name and cost center of the customer",
+    "id": "updatenameandcost",
     "keyword": "Feature",
-    "uri": "Features/FebruaryRelease2018/Regression/Reg_CS_PayMPhonesHomeDeliveryWithAccessory.feature"
+    "uri": "C:/Users/sekark1/MyAccount/regression/Features/updateNameandCostcentre.feature"
   }
 ]

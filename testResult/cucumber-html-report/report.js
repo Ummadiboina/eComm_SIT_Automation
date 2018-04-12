@@ -1,16 +1,16 @@
-$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("Features/FebruaryRelease2018/Regression/Reg_CS_PayMPhonesHomeDeliveryWithAccessory.feature");
+$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("C:/Users/sekark1/MyAccount/regression/Features/updateNameandCostcentre.feature");
 formatter.feature({
   "line": 1,
-  "name": "Reg_CS_PayMPhonesHomeDeliveryWithAccessory",
-  "description": "",
-  "id": "reg-cs-paymphoneshomedeliverywithaccessory",
+  "name": "UpdatenameAndCost",
+  "description": "This scenario is to update name and cost center of the customer",
+  "id": "updatenameandcost",
   "keyword": "Feature"
 });
 formatter.scenarioOutline({
   "line": 4,
-  "name": "CFA PayM Phones Home delivery E2E journey with Accessory",
+  "name": "SMB - Update Names and Cost centres",
   "description": "",
-  "id": "reg-cs-paymphoneshomedeliverywithaccessory;cfa-paym-phones-home-delivery-e2e-journey-with-accessory",
+  "id": "updatenameandcost;smb---update-names-and-cost-centres",
   "type": "scenario_outline",
   "keyword": "Scenario Outline",
   "tags": [
@@ -22,113 +22,84 @@ formatter.scenarioOutline({
 });
 formatter.step({
   "line": 5,
-  "name": "I am an CFA user and Lands on shop page",
+  "name": "that user is able to launch the O2ID login page",
   "keyword": "Given "
 });
 formatter.step({
   "line": 6,
-  "name": "navigate to PAYM Phones page",
+  "name": "user is able login into the O2ID successfully using \u003cusername\u003e and \u003cpassword\u003e",
   "keyword": "And "
 });
 formatter.step({
   "line": 7,
-  "name": "I choose PayM \u003chandset\u003e",
+  "name": "user is able to navigate My Account successfully",
+  "keyword": "Then "
+});
+formatter.step({
+  "line": 8,
+  "name": "user is able to click on Update names and cost centre link",
   "keyword": "And "
 });
 formatter.step({
-  "comments": [
-    {
-      "line": 8,
-      "value": "#edit the above"
-    }
-  ],
   "line": 9,
-  "name": "Navigate to device details page",
+  "name": "user update the username \"\u003cnewusrNme\u003e\" of any of one of the subscriptions and naviagte to Request Review page",
   "keyword": "And "
 });
 formatter.step({
   "line": 10,
-  "name": "Land on the \u0027Tariffs and extra\u0027 page",
+  "name": "user is able to submit the request successfully",
   "keyword": "And "
 });
 formatter.step({
   "line": 11,
-  "name": "Choose some Accesssory",
+  "name": "user gets the request number and launches salesforce",
   "keyword": "And "
 });
 formatter.step({
   "line": 12,
-  "name": "I Land on the basket page and choose home delivery option",
+  "name": "user logins into salesforce using \"\u003cSFusername\u003e\" and \"\u003cSFpassword\u003e\"",
   "keyword": "And "
-});
-formatter.step({
-  "line": 13,
-  "name": "click on \"go to checkout\" button",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 14,
-  "name": "input \u003cFirstname\u003e and \u003cSurname\u003e and other valid details in Delivery page and Click on the \u0027Continue button\u0027",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 15,
-  "name": "land on the payment page and input \u003cUsername\u003e and other details and click \u0027Continue on next step\u0027",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 16,
-  "name": "Continue to Agreements page and confirm all the agreement checks",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 17,
-  "name": "Continue to Review page and review the order",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 18,
-  "name": "order confirmation is displayed",
-  "keyword": "Then "
 });
 formatter.examples({
-  "line": 20,
+  "line": 15,
   "name": "",
   "description": "",
-  "id": "reg-cs-paymphoneshomedeliverywithaccessory;cfa-paym-phones-home-delivery-e2e-journey-with-accessory;",
+  "id": "updatenameandcost;smb---update-names-and-cost-centres;",
   "rows": [
     {
       "cells": [
-        "handset",
-        "Firstname",
-        "Surname",
-        "Username"
+        "username",
+        "password",
+        "newusrNme",
+        "SFusername",
+        "SFpassword"
       ],
-      "line": 21,
-      "id": "reg-cs-paymphoneshomedeliverywithaccessory;cfa-paym-phones-home-delivery-e2e-journey-with-accessory;;1"
+      "line": 16,
+      "id": "updatenameandcost;smb---update-names-and-cost-centres;;1"
     },
     {
       "cells": [
-        "Samsung Galaxy S8",
-        "TEST",
-        "ACCEPTA",
-        "TEST ACCEPTA"
+        "testmyaccountone@yopmail.com",
+        "Test_123",
+        "Test14",
+        "sundaram.subramanian@o2.com.csupreprod",
+        "Mar@2018"
       ],
-      "line": 22,
-      "id": "reg-cs-paymphoneshomedeliverywithaccessory;cfa-paym-phones-home-delivery-e2e-journey-with-accessory;;2"
+      "line": 17,
+      "id": "updatenameandcost;smb---update-names-and-cost-centres;;2"
     }
   ],
   "keyword": "Examples"
 });
 formatter.before({
-  "duration": 10601298937,
+  "duration": 32863065203,
   "status": "passed"
 });
 formatter.scenario({
-  "line": 22,
-  "name": "CFA PayM Phones Home delivery E2E journey with Accessory",
+  "line": 17,
+  "name": "SMB - Update Names and Cost centres",
   "description": "",
-  "id": "reg-cs-paymphoneshomedeliverywithaccessory;cfa-paym-phones-home-delivery-e2e-journey-with-accessory;;2",
+  "id": "updatenameandcost;smb---update-names-and-cost-centres;;2",
   "type": "scenario",
   "keyword": "Scenario Outline",
   "tags": [
@@ -140,205 +111,132 @@ formatter.scenario({
 });
 formatter.step({
   "line": 5,
-  "name": "I am an CFA user and Lands on shop page",
+  "name": "that user is able to launch the O2ID login page",
   "keyword": "Given "
 });
 formatter.step({
   "line": 6,
-  "name": "navigate to PAYM Phones page",
+  "name": "user is able login into the O2ID successfully using testmyaccountone@yopmail.com and Test_123",
+  "matchedColumns": [
+    0,
+    1
+  ],
   "keyword": "And "
 });
 formatter.step({
   "line": 7,
-  "name": "I choose PayM Samsung Galaxy S8",
-  "matchedColumns": [
-    0
-  ],
+  "name": "user is able to navigate My Account successfully",
+  "keyword": "Then "
+});
+formatter.step({
+  "line": 8,
+  "name": "user is able to click on Update names and cost centre link",
   "keyword": "And "
 });
 formatter.step({
-  "comments": [
-    {
-      "line": 8,
-      "value": "#edit the above"
-    }
-  ],
   "line": 9,
-  "name": "Navigate to device details page",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 10,
-  "name": "Land on the \u0027Tariffs and extra\u0027 page",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 11,
-  "name": "Choose some Accesssory",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 12,
-  "name": "I Land on the basket page and choose home delivery option",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 13,
-  "name": "click on \"go to checkout\" button",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 14,
-  "name": "input TEST and ACCEPTA and other valid details in Delivery page and Click on the \u0027Continue button\u0027",
+  "name": "user update the username \"Test14\" of any of one of the subscriptions and naviagte to Request Review page",
   "matchedColumns": [
-    1,
     2
   ],
   "keyword": "And "
 });
 formatter.step({
-  "line": 15,
-  "name": "land on the payment page and input TEST ACCEPTA and other details and click \u0027Continue on next step\u0027",
+  "line": 10,
+  "name": "user is able to submit the request successfully",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 11,
+  "name": "user gets the request number and launches salesforce",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 12,
+  "name": "user logins into salesforce using \"sundaram.subramanian@o2.com.csupreprod\" and \"Mar@2018\"",
   "matchedColumns": [
-    3
+    3,
+    4
   ],
   "keyword": "And "
-});
-formatter.step({
-  "line": 16,
-  "name": "Continue to Agreements page and confirm all the agreement checks",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 17,
-  "name": "Continue to Review page and review the order",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 18,
-  "name": "order confirmation is displayed",
-  "keyword": "Then "
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.i_am_an_CFA_user_and_Lands_on_shop_page()"
-});
-formatter.result({
-  "duration": 872947022,
-  "status": "passed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.navigate_to_PAYM_Phones_page()"
-});
-formatter.result({
-  "duration": 23278154131,
-  "status": "passed"
 });
 formatter.match({
   "arguments": [
     {
-      "val": "Samsung Galaxy S8",
-      "offset": 14
+      "val": "2",
+      "offset": 33
     }
   ],
-  "location": "E2EOrderPlaced_Steps.Choose_PAYM_Handset(String)"
+  "location": "E2EOrderPlaced_Steps.that_user_is_able_to_launch_the_O_ID_login_page(int)"
 });
 formatter.result({
-  "duration": 5147055309,
-  "status": "passed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.Navigate_to_device_details_page()"
-});
-formatter.result({
-  "duration": 19143133355,
-  "status": "passed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.land_on_the_Tariffs_and_extra_page()"
-});
-formatter.result({
-  "duration": 9765323844,
-  "status": "passed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.Choose_some_Accesssory()"
-});
-formatter.result({
-  "duration": 4611519841,
-  "status": "passed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.i_Land_on_the_basket_page_and_choose_home_delivery_option()"
-});
-formatter.result({
-  "duration": 53739018530,
+  "duration": 128328042,
   "status": "passed"
 });
 formatter.match({
   "arguments": [
     {
-      "val": "go to checkout",
-      "offset": 10
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.CheckoutFromBasket(String)"
-});
-formatter.result({
-  "duration": 12034801293,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "TEST",
-      "offset": 6
+      "val": "testmyaccountone@yopmail.com",
+      "offset": 52
     },
     {
-      "val": "ACCEPTA",
-      "offset": 15
+      "val": "Test_123",
+      "offset": 85
     }
   ],
-  "location": "E2EOrderPlaced_Steps.DeliveryPage_Inputs_homeDelivery(String,String)"
+  "location": "E2EOrderPlaced_Steps.user_is_able_login_into_the_O_ID_successfully_using_and(String,String)"
 });
 formatter.result({
-  "duration": 62719743043,
+  "duration": 7621717254,
+  "status": "passed"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.user_is_able_to_navigate_My_Account_successfully()"
+});
+formatter.result({
+  "duration": 47733951643,
+  "status": "passed"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.user_is_able_to_click_on_Update_names_and_cost_centre_link()"
+});
+formatter.result({
+  "duration": 10558113951,
   "status": "passed"
 });
 formatter.match({
   "arguments": [
     {
-      "val": "TEST ACCEPTA",
-      "offset": 35
+      "val": "Test14",
+      "offset": 26
     }
   ],
-  "location": "E2EOrderPlaced_Steps.CreditCheckPaymentPage_HomeDelivery(String)"
+  "location": "E2EOrderPlaced_Steps.user_update_the_username_of_any_of_one_of_the_subscriptions_and_naviagte_to_Request_Review_page(String)"
 });
 formatter.result({
-  "duration": 169403420604,
+  "duration": 12446895209,
   "status": "passed"
 });
 formatter.match({
-  "location": "E2EOrderPlaced_Steps.AgreementsPageConfirmation()"
+  "location": "E2EOrderPlaced_Steps.user_is_able_to_submit_the_request_successfully()"
 });
 formatter.result({
-  "duration": 33877790452,
-  "error_message": "java.lang.AssertionError: Agreements page is not displayed or unable to enter some information in thie page, Please review the screenshots for failure\r\n\tat org.testng.Assert.fail(Assert.java:94)\r\n\tat steps.E2EOrderPlaced_Steps.AgreementsPageConfirmation(E2EOrderPlaced_Steps.java:1530)\r\n\tat ✽.And Continue to Agreements page and confirm all the agreement checks(Features/FebruaryRelease2018/Regression/Reg_CS_PayMPhonesHomeDeliveryWithAccessory.feature:16)\r\n",
-  "status": "failed"
+  "duration": 18601696009,
+  "status": "passed"
 });
 formatter.match({
-  "location": "E2EOrderPlaced_Steps.ReviewPageConfirmation()"
+  "location": "E2EOrderPlaced_Steps.user_gets_the_request_number_and_launches_salesforce()"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 13704935227,
+  "status": "passed"
 });
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.OrderConfirmationPage()"
-});
+formatter.match({});
 formatter.result({
-  "status": "skipped"
+  "status": "undefined"
 });
 formatter.after({
-  "duration": 20814627568,
+  "duration": 17004114300,
   "status": "passed"
 });
 });
