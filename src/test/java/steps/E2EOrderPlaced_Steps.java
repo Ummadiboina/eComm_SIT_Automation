@@ -53,7 +53,6 @@ public class E2EOrderPlaced_Steps {
     static int BuyOutValue = 0;
     static int TradeInValue = 0;
     public static Hashtable selectedElements = new Hashtable();
-    static String expPlnList;
 
     public E2EOrderPlaced_Steps() {
         driver = Hooks.driver;
@@ -70,9 +69,9 @@ public class E2EOrderPlaced_Steps {
     public void i_am_an_CFA_user_and_Lands_on_shop_page() {
         try {
             PageFactory.initElements(driver, MouseHoverPage.class);
-            Thread.sleep(5000);
-            MouseHoverAction.ByPassDroopalPage();
-            ShopLandingPageAction.GetTitle_ref();
+
+            // MouseHoverAction.ByPassDroopalPage();
+            //ShopLandingPageAction.GetTitle_ref();
             ShopLandingPageAction.GetTitle();
 
         } catch (Exception e) {
@@ -234,8 +233,7 @@ public class E2EOrderPlaced_Steps {
         try {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, MouseHoverPage.class);
-            //MouseHoverAction.PayGPhonesLandingPage();
-            MouseHoverAction.shopNav();
+            MouseHoverAction.PayGPhonesLandingPage();
             Autoredirection.redirect();
             Thread.sleep(7000);
             //GlobalActions.//CommonFunctionscheckTitle("PayG Phones page");
@@ -768,7 +766,7 @@ public class E2EOrderPlaced_Steps {
             } else {
                 log.debug("Queue page is not displayed");
                 PAYMandPAYGTariffAndExtrasPageActions.addToBasketLive();
-                // BasketPageActions.ValidateBasketPageContents("","");
+                // BasketPageActions.ValidateBasketPageContents();
                 BasketPageActions.CollectionorDelivery("homeDelivery");
             }
         } catch (Exception e) {
@@ -817,7 +815,7 @@ public class E2EOrderPlaced_Steps {
             PageFactory.initElements(driver, PAYMandPAYGTariffAndExtrasPage.class);
             PAYMandPAYGTariffAndExtrasPageActions.addToBasketLive();
             Thread.sleep(3000);
-            BasketPageActions.ValidateBasketPageContents("","");
+            BasketPageActions.ValidateBasketPageContents();
             BasketPageActions.CollectionorDelivery("clickAndCollect");
             Thread.sleep(3000);
         } catch (Exception e) {
@@ -979,6 +977,7 @@ public class E2EOrderPlaced_Steps {
             DeliveryPageActions.SetDelivery();
             DeliveryPageActions.AboutYou(Firstname, Surname);
             DeliveryPageActions.ClickContinue();
+          //  DeliveryPageActions.clickOnSubmitBtn();
         } catch (Exception e) {
             // TODO Auto-generated catch block
             log.debug("Unable to input details in delivery page");
@@ -986,6 +985,7 @@ public class E2EOrderPlaced_Steps {
 
         }
     }
+
     @And("^Enter details in Delivery page for Click and collect and Click on the 'Continue button'$")
     public void DeliveryPage_enter_Inputs_ClickandCollect(String Firstname, String Surname) {
         try {
@@ -1995,7 +1995,7 @@ public class E2EOrderPlaced_Steps {
     April2018
      */
     @And("^verify 'Email Basket' link is displayed next to the Search CTA in deal builder section$")
-    public void verify_Email_Basket_link_is_displayed_next_to_the_Search_CTA_in_deal_builder_section() throws Throwable {
+    public void verify_Email_Basket_link_is_displayed_next_to_the_Search_CTA_in_deal_builder_section() {
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         try {
             PageFactory.initElements(driver, Agent_DealBuilderPage.class);
@@ -2007,7 +2007,7 @@ public class E2EOrderPlaced_Steps {
         }
     }
     @And("^click on '\\+' accordion at the top of deal builder$")
-    public void click_on_accordion_at_the_top_of_deal_builder() throws Throwable {
+    public void click_on_accordion_at_the_top_of_deal_builder() {
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         try {
             PageFactory.initElements(driver, Agent_DealBuilderPage.class);
@@ -2020,7 +2020,7 @@ public class E2EOrderPlaced_Steps {
         }
     }
     @And("^verify user switched to Email Basket pop up window$")
-    public void verify_user_switched_to_Email_Basket_pop_up_window() throws Throwable {
+    public void verify_user_switched_to_Email_Basket_pop_up_window() {
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         try {
             PageFactory.initElements(driver, Agent_DealBuilderPage.class);
@@ -2169,7 +2169,7 @@ public class E2EOrderPlaced_Steps {
         }
     }
 
-    @And("^Validate all the Basket contents$")
+   @And("^Validate all the Basket contents$")
     public void validate_all_the_Basket_contents() {
         try {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
@@ -2184,8 +2184,6 @@ public class E2EOrderPlaced_Steps {
 
         }
     }
-
-
     /*
 	 * #########################################################################
 	 * #########
@@ -2775,7 +2773,7 @@ public class E2EOrderPlaced_Steps {
             PageFactory.initElements(driver, PAYMandPAYGTariffAndExtrasPage.class);
             PAYMandPAYGTariffAndExtrasPageActions.addToBasketLive();
             Thread.sleep(3000);
-            BasketPageActions.ValidateBasketPageContents("","");
+            BasketPageActions.ValidateBasketPageContents();
         } catch (Exception e) {
             // TODO Auto-generated catch block
             Assert.fail("Unable to land on Basket page");
@@ -2850,7 +2848,8 @@ public class E2EOrderPlaced_Steps {
             Thread.sleep(2000);
             DeliveryPageActions.AboutYou(Firstname, Surname);
             Thread.sleep(2000);
-            // DeliveryPageActions.ClickContinue();
+             DeliveryPageActions.ClickContinue();
+            // DeliveryPageActions.clickOnSubmitBtn();
         } catch (Exception e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
@@ -7837,11 +7836,11 @@ public class E2EOrderPlaced_Steps {
             if (driver.findElements(By.xpath("//*[contains(text(),'2.co.uk')]")).size() > 0) {
                 String str = driver.findElement(By.xpath("(//*[contains(text(),'2.co.uk')])[1]")).getText();
                 log.debug("Agent should be displayed with updated copy of 'Refer with Simo' response as :" + str);
-
+                log.debug("Agent should be displayed with updated copy of 'Refer with Simo' response as :" + str);
                 Thread.sleep(3000);
             } else {
                 log.debug("Failed to Agent should be displayed with updated copy of 'Refer with Simo' response ");
-
+                log.debug("Failed to Agent should be displayed with updated copy of 'Refer with Simo' response ");
             }
         } catch (Exception e) {
             // TODO Auto-generated catch block
@@ -9291,6 +9290,23 @@ public class E2EOrderPlaced_Steps {
             e.printStackTrace();
         }
     }
+
+//GDPR
+    @And("^Is this order for You or Someone else ([^\"]*)$")
+    public void isThisOrder4UorSomeoneElse(String customer) {
+        try {
+            driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, DeliveryPage.class);
+           // Agent_DealBuilderPageActions.verifyDevive_and_CopyClipboard_Btn();
+            DeliveryPageActions.clickOnSubmitBtn(customer);
+            Thread.sleep(5000);
+        } catch (InterruptedException e) {
+            System.out.println("Failed to verify Basket link and 'Copy to Clipboard' CTA are enabled Click on 'Copy to Clipboard' button");
+            Assert.fail("Failed to verify Basket link and 'Copy to Clipboard' CTA are enabled Click on 'Copy to Clipboard' button");
+            e.printStackTrace();
+        }
+    }
+
 
 //GDPR preferences section
 
