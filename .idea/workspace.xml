@@ -6,859 +6,12 @@
   <component name="ChangeListManager">
     <list id="9d0aef85-48ac-4e71-b67a-fff455014d99" name="New changelist" comment="New changelist" />
     <list default="true" id="b3431a87-97b1-4ffe-b872-0e6a8e54231a" name="Default" comment="Merge branch 'master' of https://bitbucket.org/ecommautomationteam/regression into Sharmi_19-02-2018&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;Features/FebruaryRelease2018/Regression/Reg_Jan_ConsumerToAcceptTenDigitsPhoneNumber.feature&#10;#&#9;src/test/java/actionsPerformed/Agent_DealBuilderPageActions.java&#10;#&#9;src/test/java/actionsPerformed/DeliveryPageActions.java&#10;#&#9;src/test/java/actionsPerformed/PAYMandPAYGTariffAndExtrasPageActions.java&#10;#&#9;src/test/java/actionsPerformed/UpgradeCustomerPageActions.java&#10;#&#9;src/test/java/steps/E2EOrderPlaced_Steps.java">
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/test/java/actionsPerformed/ActivateorDeactivateusr_pageactions.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/test/java/actionsPerformed/Existinguserlnk_pageactions.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/test/java/actionsPerformed/Newuser_pageactions.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/test/java/actionsPerformed/RequestSearch_pageactions.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/test/java/actionsPerformed/SeeDetails_pageactions.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/test/java/actionsPerformed/SelectValiduser_pageactions.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/test/java/actionsPerformed/Unlockdevice_pageactions.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/test/java/actionsPerformed/Validuser_pageactions.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/test/java/actionsPerformed/ViewContractDate_pageactions.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/test/java/actionsPerformed/ViewandManageservice_pageactions.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/test/java/actionsPerformed/o2idloginpage_pageactions.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/test/java/actionsPerformed/reviewpage_pageactions.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/test/java/actionsPerformed/updatenameandcost_pageactions.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/test/java/actionsPerformed/updateusername_pageactions.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/test/java/actionsPerformed/viewTariffandBoltons_pageactions.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/test/java/actionsPerformed/viewandmanageacnt_pageactions.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/test/java/pageobjects/ActivateorDeactivateusr.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/test/java/pageobjects/Existinguserlnk.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/test/java/pageobjects/Newuser.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/test/java/pageobjects/RequestSearch.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/test/java/pageobjects/SeeDetails.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/test/java/pageobjects/Selecvaliduser.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/test/java/pageobjects/Unlockdevice.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/test/java/pageobjects/Validuser.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/test/java/pageobjects/ViewContractDate.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/test/java/pageobjects/ViewandManageservice.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/test/java/pageobjects/o2idloginpage.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/test/java/pageobjects/reviewpage1.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/test/java/pageobjects/updatenameandcost.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/test/java/pageobjects/updateusername.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/test/java/pageobjects/viewTariffandBoltons.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/test/java/pageobjects/viewandmanageacnt.java" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/test/java/actionsPerformed/CaseDetails_pageaction.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/test/java/pageobjects/CaseDetails.java" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/Browsers/ChromeDriver/chromedriver.exe" afterPath="$PROJECT_DIR$/Browsers/ChromeDriver/chromedriver.exe" />
-      <change beforePath="$PROJECT_DIR$/Configurations/Properties/AppConfig.properties" afterPath="$PROJECT_DIR$/Configurations/Properties/AppConfig.properties" />
-      <change beforePath="$PROJECT_DIR$/Features/AprilRelease2018/ITFD233/AFA_Multiple_Basket_CnC_Email_basket_Get_Basket_Link.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/AprilRelease2018/ITFD233/AFA_Single_Basket_PAYG_Phones_Email_basket_Get_Basket_Link.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/AprilRelease2018/ITFD233/AFA_Single_Basket_Smart_Tech_Email_basket_Get_Basket_Link.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/AprilRelease2018/ITFD233/AFU_Multiple_Basket_Tablet_and_Phone_CnC_Email_basket_Get_Basket_Link.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/AprilRelease2018/ITFD233/AFU_Single_Basket_Phone_Email_basket_Get_Basket_Link.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/AprilRelease2018/Regression/Feb_AFU_eComm_Promotions_and_added_Bolton_Incompatible_error_message_Remove_and_reapply_removed_bolton_Order_Placement.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/AprilRelease2018/Regression/Feb_CFA_PayG_FreeSim_Delivery_page_more_than_one_address_select_one_compress_others.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/AprilRelease2018/Regression/Feb_CFA_Phones_CnC_Delivery_page_Payment_page_more_than_one_address_select_one_compress_others.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/AprilRelease2018/Regression/Feb_CFU_Buyout_with_Recycle_Order_placement.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/AprilRelease2018/Regression/Feb_CFU_Tablet_CnC_changes_on_Delivery_page_Order_placement.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/AprilRelease2018/Regression/Feb_CFU_Tablet_Delivery_page_more_than_one_address_select_one_compress_others.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/AprilRelease2018/Regression/Reg_AFA_PAYM_Acquistion.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/AprilRelease2018/Regression/Reg_AFA_PayG_withoutAnyAccessory.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/AprilRelease2018/Regression/Reg_AFA_PayMSimO_withoutAnyAccessory.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/AprilRelease2018/Regression/Reg_AFA_Tablet.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/AprilRelease2018/Regression/Reg_AFA_verify_Base_Comms_tariff_under_offer_column_order_placement_O2_offer.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/AprilRelease2018/Regression/Reg_AFU_PAYM_Dongle_payByCard.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/AprilRelease2018/Regression/Reg_AFU_PAYM_Dongle_submitOrder.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/AprilRelease2018/Regression/Reg_AFU_SavedBasket.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/AprilRelease2018/Regression/Reg_AFU_verify_Base_Comms_tariff_under_offer_column_order_placement_O2_offer.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/AprilRelease2018/Regression/Reg_Agent_Buyout.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/AprilRelease2018/Regression/Reg_Agent_DelayedDelivery.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/AprilRelease2018/Regression/Reg_Agent_GenerateCCA.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/AprilRelease2018/Regression/Reg_Agent_PreOrder.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/AprilRelease2018/Regression/Reg_Agent_TradeIn.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/AprilRelease2018/Regression/Reg_CFA_Accessories_Confirmation_Page_changes.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/AprilRelease2018/Regression/Reg_CFA_Basket page cross sell insurance.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/AprilRelease2018/Regression/Reg_CFA_Basket_page_cross_sell_insurance_no_free_insurance.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/AprilRelease2018/Regression/Reg_CFA_Cover_me_copy_update_on_basket_summary.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/AprilRelease2018/Regression/Reg_CFA_MBB_Data filters.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/AprilRelease2018/Regression/Reg_CFA_PayG_SIM_ipad.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/AprilRelease2018/Regression/Reg_CFA_PayM_Phone_Data_filters_options_tariff_and_extras_page_Order_placement.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/AprilRelease2018/Regression/Reg_CFA_PayM_Tablet_Data_filters_options_tariff_and_extras_page_Order_placement.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/AprilRelease2018/Regression/Reg_CFA_Phones_Delayed_delivery_Home_delivery_Confirmation_Page_formatting_box.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/AprilRelease2018/Regression/Reg_CFA_iPad_Show_basecomms_tariffs_on_T&amp;E_page_for_my_offers_journey.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/AprilRelease2018/Regression/Reg_CFA_morethan12Tablet.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/AprilRelease2018/Regression/Reg_CFA_seperate_tariff_ribbons_Tariff_page_Basket_page_html_overlay_for_tariff_ribbons.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/AprilRelease2018/Regression/Reg_CFD2064_ECOM11810_11811_CFU_ordering choice on upgrade options page_Phone_Option_selected.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/AprilRelease2018/Regression/Reg_CFD2064_ECOM11810_11811_CFU_ordering choice on upgrade options page_Phone_option_not selected.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/AprilRelease2018/Regression/Reg_CFU_Phones_Data_filters_options_tariff_and_extras_page.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/AprilRelease2018/Regression/Reg_CFU_Recycle_Phones_DD_Confirmation_Page_changes.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/AprilRelease2018/Regression/Reg_CFU_Tablets_Data_filters_options_tariff_and_extras_page_Order_placement.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/AprilRelease2018/Regression/Reg_CFU_seperate_tariff_ribbons_Tariff_page_Basket_page_html_overlay_for_tariff_ribbons.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/AprilRelease2018/Regression/Reg_CS_AccessoriesOnly.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/AprilRelease2018/Regression/Reg_CS_CFA_MBBPayG.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/AprilRelease2018/Regression/Reg_CS_CFU_SavedBasket.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/AprilRelease2018/Regression/Reg_CS_FitnessTrackers.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/AprilRelease2018/Regression/Reg_CS_Free_Sim.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/AprilRelease2018/Regression/Reg_CS_Free_Sim_Tablet.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/AprilRelease2018/Regression/Reg_CS_PayGPhonesHomeDeliveryWithoutAccessory.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/AprilRelease2018/Regression/Reg_CS_PayMPhonesHomeDeliveryWithAccessory.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/AprilRelease2018/Regression/Reg_CS_PayMPhonesHomeDeliveryWithoutAccessory.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/AprilRelease2018/Regression/Reg_CS_PayMSimOnly.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/AprilRelease2018/Regression/Reg_CS_PayMSimOnlyRecommended.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/AprilRelease2018/Regression/Reg_CS_PayMTabletsHomeDeliveryWithAccessory.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/AprilRelease2018/Regression/Reg_CS_Recycle.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/AprilRelease2018/Regression/Reg_CS_SmartWatch.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/AprilRelease2018/Regression/Reg_CVOSDelayedDelivery.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/AprilRelease2018/Regression/Reg_CVOSPreOrder.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/AprilRelease2018/Regression/Reg_Consumer_Buyout.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/AprilRelease2018/Regression/Reg_Consumer_DelayedDelivery.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/AprilRelease2018/Regression/Reg_Consumer_PreOrder.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/AprilRelease2018/Regression/Reg_Consumer_TradeIn.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/AprilRelease2018/Regression/Reg_Current_MBB_URL_no_change_Order_placement.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/AprilRelease2018/Regression/Reg_Existing_Customer_Tablets_Data_filters_options_tariff_and_extras_page.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/AprilRelease2018/Regression/Reg_FNT_AFA_Handset_Click_and_Collect_Passport_and_Driving_license.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/AprilRelease2018/Regression/Reg_FNT_AFA_PayG_Phones_less_than_50_GBP_ClickAndCollect.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/AprilRelease2018/Regression/Reg_FNT_DifferentStoreAddressthanBillingAddres.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/AprilRelease2018/Regression/Reg_FNT_MorethanMaxTransaction_Deny.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/AprilRelease2018/Regression/Reg_FNT_PayMPhonesAdditionalDepositConfirmation.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/AprilRelease2018/Regression/Reg_FNT_PayMPhonesClickAndCollect.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/AprilRelease2018/Regression/Reg_FNT_PayMPhonesOrderStraightDecline_ClickandCollect.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/AprilRelease2018/Regression/Reg_Jan_AgentShopToAcceptApostrophe.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/AprilRelease2018/Regression/Reg_Jan_AgentToAcceptTenDigitsPhoneNumber.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/AprilRelease2018/Regression/Reg_Jan_CFU_MbbSimo30days.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/AprilRelease2018/Regression/Reg_Jan_CFU_PhonesSimo30day.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/AprilRelease2018/Regression/Reg_Jan_ConsumerToAcceptTenDigitsPhoneNumber.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/AprilRelease2018/Regression/Reg_Jan_DrupalPageCookiesPopUp.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/AprilRelease2018/Regression/Reg_Jan_Existing_OOSForHomeDeliveryandCnC.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/AprilRelease2018/Regression/Reg_Jan_FreeSim_CommercialAddress.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/AprilRelease2018/Regression/Reg_Jan_FreeSim_InvalidPostCode_DeliverySection_AddressLookUp.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/AprilRelease2018/Regression/Reg_Jan_FreeSim_InvalidPostCode_EnteredManually.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/AprilRelease2018/Regression/Reg_October2Release_CFA_Phones_ColourDropdownsWithColourNamesBesideTheColourMultipleColour.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/AprilRelease2018/Regression/Reg_October2Release_ECOM-12004_CFA_PAYM_Phones.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/AprilRelease2018/Regression/Reg_October2Release_ECOM-12004_CFA_PayG_Freesim_Phones_DeliveryPageMarkMandatoryFieldsWithAsterisk.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/AprilRelease2018/Regression/Reg_October2Release_PayG Tablets_ShowMarketingMessageOnTariffAndExtrasPagePackageSummary.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/AprilRelease2018/Regression/Reg_October2Release_Reg_October2Release_CFA_Phones_ColourDropdownsWithColourNamesBesideTheColourMultipleColour.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/AprilRelease2018/Regression/Reg_October2Release_Reg_October2Release_ECOM-11886.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/AprilRelease2018/Regression/Reg_TrustevPayMPhones_ClickandCollectE2EjourneyWithAccessoryInAgentShop.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/AprilRelease2018/Regression/Reg_Trustev_AFA_PAYM_Phones_WithAccessoryClick_and_Collect.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/AprilRelease2018/Regression/Reg_Trustev_AFA_PAYM_Tablet_WithAccessoryClick_and_Collect.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/AprilRelease2018/Regression/Reg_Trustev_PayMPhonesHomeDeliveryWithAccessory.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/AprilRelease2018/Regression/Reg_Trustev_PayMPhonesHomeDeliveryWithoutAccessory.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/AprilRelease2018/Regression/Reg_Trustev_PayMTabletsHomeDeliveryWithAccessory.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/AprilRelease2018/Regression/Reg_VOLTE_PayMPhonesClickAndCollect.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/AprilRelease2018/Regression/Reg_VOLTE_PayMPhonesHomeDeliveryWithAccessory.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/AprilRelease2018/Regression/Reg_VOLTE_PayMPhonesHomeDeliveryWithoutAccessory.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/AugustRelease2017/C2101_E11769_CFA_Tariff page sort insurance and auto select free insurance.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/AugustRelease2017/C2101_E11771_ CFU_Basket page cross sell insurance.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/AugustRelease2017/C2101_E11771_CFA_Basket page cross sell insurance.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/C2101_E11770_CFU_Tariff page_ sort insurance and one associated tariff having free  insurance.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/CompleteJuneReleaseTestCases/CFA_Refresh_Order_Basket_Review_Page_and_Confirmation_Page.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/CompleteJuneReleaseTestCases/CFA_Refresh_Order_Ddphone_with_DDaccessory_Basket_Review_and_Confirmation_Page.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/CompleteJuneReleaseTestCases/CFA_Refresh_Order_Delayed_delivery_phone_with_Instock_accessory_Basket_Review_and_Confirmation_Page.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/CompleteJuneReleaseTestCases/CFA_Refresh_Order_PreOrderPhone_with_Instock_accessory_Basket_Review_and_Confirmation_Page.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/CompleteJuneReleaseTestCases/CFA_Standard_Order_Basket_Review_Page_and_Confirmation_Page.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/CompleteJuneReleaseTestCases/CFA_Standard_Order_Ddphone_with_Instock_accessory_Basket_Review_and_Confirmation_Page.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/CompleteJuneReleaseTestCases/CFA_Standard_Order_PreOrderPhone_with_Instock_accessory_Basket_Review_and_Confirmation_Page.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/CompleteJuneReleaseTestCases/CFU_Refresh_Order_Ddphone_with_Instock_accessory.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/CompleteJuneReleaseTestCases/CFU_Refresh_Order_Review_Page_and_Confirmation_Page.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/CompleteJuneReleaseTestCases/CFU_Standard_Order_Ddphone_with_Instock_accessory.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/CompleteJuneReleaseTestCases/Existing_Refresh_Order_Ddphone_with_ DDaccessory.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/CompleteJuneReleaseTestCases/Existing_Refresh_Order_Ddphone_with_Instock_accessory.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/CompleteJuneReleaseTestCases/Existing_Refresh_Order_PreOrder_phone_with_Instock_accessory.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/CompleteJuneReleaseTestCases/Existing_Standard_Order_Ddphone_with_Instock_accessory.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/CompleteJuneReleaseTestCases/Existing_Standard_Order_PreOrder_phone_with_Instock_accessory.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/CompleteJuneReleaseTestCases/Existing_customer_Refresh_Order_Review_Page_and_Confirmation_Page.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/CompleteJuneReleaseTestCases/Existing_customer_Standard_Order_Review_Page_and_Confirmation_Page.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/CompleteJuneReleaseTestCases/FTQ-Ecomm-11478-CFA_FitnessTrackerandAccessoryGroup.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/CompleteJuneReleaseTestCases/FTQ-Ecomm-11478-CFA_FitnessTrackerandAccessoryGroup_Remove.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/CompleteJuneReleaseTestCases/FTQ-Ecomm-11478-CFA_Smartwatches_Group.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/CompleteJuneReleaseTestCases/FTQ-Ecomm-11478-CFU_Smartwatches_Group.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/CompleteJuneReleaseTestCases/SurfaceVouchercodes_testcase_1.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/CompleteJuneReleaseTestCases/SurfaceVouchercodes_testcase_2.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/CompleteJuneReleaseTestCases/SurfaceVouchercodes_testcase_3.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/CompleteJuneReleaseTestCases/UpgradeUpsellPromoModuleDongleSims.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/CompleteJuneReleaseTestCases/UpgradeUpsellPromoModule_TabletSims.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/CompleteJuneReleaseTestCases/UpgradeUpsellPromoModule_iPadSims.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/CompleteJuneReleaseTestCases/UpgradeUpsellPromoModule_testcase_1.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/DecemberRelease2017/Functional/CFD-1819/AFA_Dongle_and_Tariff_validate_the_Promotions_section_for_Single_promotion_with device.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/DecemberRelease2017/Functional/CFD-1819/AFA_Phone_Promotions_section_in_deal_builder_MULIPLE_promotions_REMOVE_device_validate_promotion.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/DecemberRelease2017/Functional/CFD-1819/AFA_Phone_Promotions_section_in_deal_builder_MULTIPLE_promotions_REPLACE_device_with_DIFFERENT_device_validate_promotion.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/DecemberRelease2017/Functional/CFD-1819/AFA_SIMO_Promotions_section_in_deal_builder_SINGLE_promotions_EMPTY_basket_validate_promotion.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/DecemberRelease2017/Functional/CFD-1819/AFA_Tablet_Refresh_tariff_CCA_Promotions_section_in_deal_builder_SINGLE_promotions.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/DecemberRelease2017/Functional/CFD-1819/AFU_Phone_Promotions_section_in_deal_builder_SINGLE_promotions_REPLACE_device_with_SAME_device_validate_promotion.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/DecemberRelease2017/Functional/CFD-1819/AFU_SIMO_Promotions_section_in_deal_builder_MULIPLE_promotions_Order_Placement.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/DecemberRelease2017/Functional/CFD-1819/AFU_Tablet_Promotions_section_in_deal_builder_MULTIPLE_promotions_Order_placement.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/DecemberRelease2017/Functional/CFD-1819/AFU_customer_NOT_eligible_for_targeted_bolton_promotion_tab_Agent_upgrade_options_page.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/DecemberRelease2017/Functional/CFD-1819/AFU_customer_eligible_for_SIMO_targeted_bolton_promotion_NO_targeted_bolton_promotion_tab_Agent_upgrade_options_page.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/DecemberRelease2017/Functional/CFD-1819/AFU_customer_eligible_for_Standard_or_CCA_targeted_bolton_promotion_tab_Agent_upgrade_options_page.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/DecemberRelease2017/Functional/CFD-1819/CFU_SIMO_Targeted_bolton_promotions_upgrade_options_page.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/DecemberRelease2017/Functional/CFD-1819/CFU_Targeted_promotions_Basket_page_apply_instant_Bolton_Promotions.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/DecemberRelease2017/Functional/CFD-1819/CFU_Targeted_promotions_upgrade_options_page_Basket_page_SSC_and_PDF_changes.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/DecemberRelease2017/Functional/CFD-2292/AFU_Phones_checkout _in _progress_page_is_NOT_shown.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/DecemberRelease2017/Functional/CFD-2292/AFU_Phones_checkout_in_progress_page.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/DecemberRelease2017/Functional/CFD-2292/CFA_PayG Tablets_Shop_do_NOT_show _CIP_page .feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/DecemberRelease2017/Functional/CFD-2292/CFA_Phones_Shop do_not_show(CIP)_Checkout_In_Progress_page.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/DecemberRelease2017/Functional/CFD-2292/CFA_SIMO_Shop_do_not_show_CIP_page.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/DecemberRelease2017/Functional/CFD-2292/CFA_Tablets_Shop_do_NOT_show_Checkout_In_Progress_page.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/DecemberRelease2017/Functional/CFD-2292/CFU_Tablets_Shop_do _not _show_CIP_page.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/DecemberRelease2017/Functional/CFD-2292/ExistingCustomer_Phones_Shop_do NOT_show_CIP_page.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/DecemberRelease2017/Functional/CFD-2292/SimFree_Shop_do_not_show_CIP_page.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/DecemberRelease2017/Functional/CFD-2296/CFA_SIMO_order_iPhone_user.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/DecemberRelease2017/Functional/CFD-2296/CFU_user_with_NO_direct_debit_details_SIMO_order_Targeted_Promotions_user_Payment_page_changes.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/DecemberRelease2017/Functional/CFD-2296/CFU_user_with_direct_debit_details_SIMO_order_INSTANT_Promotions_user_Review_page_changes.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/DecemberRelease2017/Functional/CFD-2296/CFU_user_with_direct_debit_details_SIMO_order_MBB_user_Review_page_changes.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/DecemberRelease2017/Functional/CFD-2296/CFU_user_with_direct_debit_details_SIMO_order_Tablets_user_Review_page_changes.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/DecemberRelease2017/Functional/CFD-2296/CFU_user_with_direct_debit_details_SIMO_order_non_iPhone_user_Review_page_changes .feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/DecemberRelease2017/Functional/FTQ/AFA_Phones_credit_check_status_REFERRALWITHDEPOSIT_copy_change_to_hold_deposit_for_6_months.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/DecemberRelease2017/Functional/FTQ/AFA_update_copy_for_Refer_with_Simo_response.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/DecemberRelease2017/Functional/FTQ/CFA_Phones_credit_check_status_REFERRAL_copy_change_to_hold_deposit_for_6_months.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/DecemberRelease2017/Regression/Reg_AFA_PAYM_Acquistion.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/DecemberRelease2017/Regression/Reg_AFA_PayG_withoutAnyAccessory.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/DecemberRelease2017/Regression/Reg_AFA_PayMSimO_withoutAnyAccessory.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/DecemberRelease2017/Regression/Reg_AFA_Tablet.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/DecemberRelease2017/Regression/Reg_AFA_verify_Base_Comms_tariff_under_offer_column_order_placement_O2_offer.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/DecemberRelease2017/Regression/Reg_AFU_PAYM_Dongle_payByCard.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/DecemberRelease2017/Regression/Reg_AFU_PAYM_Dongle_submitOrder.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/DecemberRelease2017/Regression/Reg_AFU_SavedBasket.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/DecemberRelease2017/Regression/Reg_AFU_verify_Base_Comms_tariff_under_offer_column_order_placement_O2_offer.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/DecemberRelease2017/Regression/Reg_Agent_Buyout.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/DecemberRelease2017/Regression/Reg_Agent_DelayedDelivery.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/DecemberRelease2017/Regression/Reg_Agent_GenerateCCA.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/DecemberRelease2017/Regression/Reg_Agent_PreOrder.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/DecemberRelease2017/Regression/Reg_Agent_TradeIn.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/DecemberRelease2017/Regression/Reg_CFA_Accessories_Confirmation_Page_changes.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/DecemberRelease2017/Regression/Reg_CFA_Basket page cross sell insurance.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/DecemberRelease2017/Regression/Reg_CFA_Basket_page_cross_sell_insurance_no_free_insurance.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/DecemberRelease2017/Regression/Reg_CFA_Cover_me_copy_update_on_basket_summary.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/DecemberRelease2017/Regression/Reg_CFA_MBB_Data filters.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/DecemberRelease2017/Regression/Reg_CFA_PayG_SIM_ipad.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/DecemberRelease2017/Regression/Reg_CFA_PayM_Phone_Data_filters_options_tariff_and_extras_page_Order_placement.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/DecemberRelease2017/Regression/Reg_CFA_PayM_Tablet_Data_filters_options_tariff_and_extras_page_Order_placement.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/DecemberRelease2017/Regression/Reg_CFA_Phones_Delayed_delivery_Home_delivery_Confirmation_Page_formatting_box.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/DecemberRelease2017/Regression/Reg_CFA_SIMO_Phone_Data_filters_options_Order_placement.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/DecemberRelease2017/Regression/Reg_CFA_morethan12Tablet.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/DecemberRelease2017/Regression/Reg_CFA_seperate_tariff_ribbons_Tariff_page_Basket_page_html_overlay_for_tariff_ribbons.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/DecemberRelease2017/Regression/Reg_CFD2064_ECOM11810_11811_ CFU_ordering choice on upgrade options page_Phone_Option_selected.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/DecemberRelease2017/Regression/Reg_CFD2064_ECOM11810_11811_ CFU_ordering choice on upgrade options page_Phone_option_not selected.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/DecemberRelease2017/Regression/Reg_CFU_Phones_Data_filters_options_tariff_and_extras_page.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/DecemberRelease2017/Regression/Reg_CFU_Recycle_Phones_DD_Confirmation_Page_changes.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/DecemberRelease2017/Regression/Reg_CFU_Tablets_Data_filters_options_tariff_and_extras_page_Order_placement.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/DecemberRelease2017/Regression/Reg_CFU_seperate_tariff_ribbons_Tariff_page_Basket_page_html_overlay_for_tariff_ribbons.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/DecemberRelease2017/Regression/Reg_CS_AccessoriesOnly.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/DecemberRelease2017/Regression/Reg_CS_CFA_MBBPayG.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/DecemberRelease2017/Regression/Reg_CS_CFU_SavedBasket.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/DecemberRelease2017/Regression/Reg_CS_FitnessTrackers.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/DecemberRelease2017/Regression/Reg_CS_Free_Sim.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/DecemberRelease2017/Regression/Reg_CS_Free_Sim_Tablet.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/DecemberRelease2017/Regression/Reg_CS_PayGPhonesHomeDeliveryWithoutAccessory.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/DecemberRelease2017/Regression/Reg_CS_PayMPhonesHomeDeliveryWithAccessory.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/DecemberRelease2017/Regression/Reg_CS_PayMPhonesHomeDeliveryWithoutAccessory.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/DecemberRelease2017/Regression/Reg_CS_PayMSimOnly.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/DecemberRelease2017/Regression/Reg_CS_PayMSimOnlyRecommended.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/DecemberRelease2017/Regression/Reg_CS_PayMTabletsHomeDeliveryWithAccessory.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/DecemberRelease2017/Regression/Reg_CS_Recycle.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/DecemberRelease2017/Regression/Reg_CS_SmartWatch.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/DecemberRelease2017/Regression/Reg_CVOSDelayedDelivery.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/DecemberRelease2017/Regression/Reg_CVOSPreOrder.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/DecemberRelease2017/Regression/Reg_Consumer_Buyout.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/DecemberRelease2017/Regression/Reg_Consumer_DelayedDelivery.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/DecemberRelease2017/Regression/Reg_Consumer_PreOrder.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/DecemberRelease2017/Regression/Reg_Consumer_TradeIn.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/DecemberRelease2017/Regression/Reg_Current_MBB_URL_no_change_Order_placement.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/DecemberRelease2017/Regression/Reg_Dec_CFA_PayG Tablets_Shop_do_NOT_show _CIP_page .feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/DecemberRelease2017/Regression/Reg_Dec_CFA_Phones_Shop do_not_show(CIP)_Checkout_In_Progress_page.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/DecemberRelease2017/Regression/Reg_Dec_CFA_SIMO_order_iPhone_user.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/DecemberRelease2017/Regression/Reg_Existing_Customer_Tablets_Data_filters_options_tariff_and_extras_page.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/DecemberRelease2017/Regression/Reg_FNT_AFA_Handset_Click_and_Collect_Passport_and_Driving_license.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/DecemberRelease2017/Regression/Reg_FNT_AFA_PayG_Phones_less_than_50_GBP_ClickAndCollect.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/DecemberRelease2017/Regression/Reg_FNT_DifferentStoreAddressthanBillingAddres.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/DecemberRelease2017/Regression/Reg_FNT_MorethanMaxTransaction_Deny.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/DecemberRelease2017/Regression/Reg_FNT_PayMPhonesAdditionalDepositConfirmation.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/DecemberRelease2017/Regression/Reg_FNT_PayMPhonesClickAndCollect.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/DecemberRelease2017/Regression/Reg_FNT_PayMPhonesOrderStraightDecline_ClickandCollect.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/DecemberRelease2017/Regression/Reg_October2Release_CFA_Phones_ColourDropdownsWithColourNamesBesideTheColourMultipleColour.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/DecemberRelease2017/Regression/Reg_October2Release_ECOM-12004_CFA_PAYM_Phones.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/DecemberRelease2017/Regression/Reg_October2Release_ECOM-12004_CFA_PayG_Freesim_Phones_DeliveryPageMarkMandatoryFieldsWithAsterisk.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/DecemberRelease2017/Regression/Reg_October2Release_PayG Tablets_ShowMarketingMessageOnTariffAndExtrasPagePackageSummary.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/DecemberRelease2017/Regression/Reg_October2Release_Reg_October2Release_CFA_Phones_ColourDropdownsWithColourNamesBesideTheColourMultipleColour.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/DecemberRelease2017/Regression/Reg_October2Release_Reg_October2Release_ECOM-11886.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/DecemberRelease2017/Regression/Reg_TrustevPayMPhones_ClickandCollectE2EjourneyWithAccessoryInAgentShop.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/DecemberRelease2017/Regression/Reg_Trustev_AFA_PAYM_Phones_WithAccessoryClick_and_Collect.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/DecemberRelease2017/Regression/Reg_Trustev_AFA_PAYM_Tablet_WithAccessoryClick_and_Collect.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/DecemberRelease2017/Regression/Reg_Trustev_PayMPhonesHomeDeliveryWithAccessory.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/DecemberRelease2017/Regression/Reg_Trustev_PayMPhonesHomeDeliveryWithoutAccessory.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/DecemberRelease2017/Regression/Reg_Trustev_PayMTabletsHomeDeliveryWithAccessory.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/DecemberRelease2017/Regression/Reg_VOLTE_PayMPhonesClickAndCollect.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/DecemberRelease2017/Regression/Reg_VOLTE_PayMPhonesHomeDeliveryWithAccessory.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/DecemberRelease2017/Regression/Reg_VOLTE_PayMPhonesHomeDeliveryWithoutAccessory.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/DecemberRelease2017/Regression/Reg__CFA_iPad_Show_basecomms_tariffs_on_T&amp;E_page_for_my_offers_journey.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/DecemberRelease2017/Smoke/LoginLogout.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/FebruaryRelease2018/Functional/ITFD149/AFU_Incompatible_Boltons_error_Remove_and_reapply_removed_bolton_Order_Placement.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/FebruaryRelease2018/Functional/ITFD149/AFU_eComm_Promotions_and_added_Bolton_Incompatible_error_message_Remove_and_reapply_removed_bolton_Order_Placement.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/FebruaryRelease2018/Functional/ITFD165/CFU_Buyout_with_Recycle_Order_placement.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/FebruaryRelease2018/Functional/ITFD165/CFU_Buyout_without_Recycle_Order_placement.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/FebruaryRelease2018/Functional/ITFD194/CFA_PayG_FreeSim_Delivery_page_more_than_one_address_select_one_compress_others.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/FebruaryRelease2018/Functional/ITFD194/CFA_Phones_CnC_Delivery_page_Payment_page_more_than_one_address_select_one_compress_others.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/FebruaryRelease2018/Functional/ITFD194/CFU_Tablet_CnC_changes_on_Delivery_page_Order_placement.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/FebruaryRelease2018/Functional/ITFD194/CFU_Tablet_Delivery_page_more_than_one_address_select_one_compress_others.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/FebruaryRelease2018/Regression/Feb_AFU_eComm_Promotions_and_added_Bolton_Incompatible_error_message_Remove_and_reapply_removed_bolton_Order_Placement.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/FebruaryRelease2018/Regression/Feb_CFA_PayG_FreeSim_Delivery_page_more_than_one_address_select_one_compress_others.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/FebruaryRelease2018/Regression/Feb_CFA_Phones_CnC_Delivery_page_Payment_page_more_than_one_address_select_one_compress_others.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/FebruaryRelease2018/Regression/Feb_CFU_Buyout_with_Recycle_Order_placement.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/FebruaryRelease2018/Regression/Feb_CFU_Tablet_CnC_changes_on_Delivery_page_Order_placement.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/FebruaryRelease2018/Regression/Feb_CFU_Tablet_Delivery_page_more_than_one_address_select_one_compress_others.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/FebruaryRelease2018/Regression/Reg_AFA_PAYM_Acquistion.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/FebruaryRelease2018/Regression/Reg_AFA_PayG_withoutAnyAccessory.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/FebruaryRelease2018/Regression/Reg_AFA_PayMSimO_withoutAnyAccessory.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/FebruaryRelease2018/Regression/Reg_AFA_Tablet.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/FebruaryRelease2018/Regression/Reg_AFA_verify_Base_Comms_tariff_under_offer_column_order_placement_O2_offer.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/FebruaryRelease2018/Regression/Reg_AFU_PAYM_Dongle_payByCard.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/FebruaryRelease2018/Regression/Reg_AFU_PAYM_Dongle_submitOrder.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/FebruaryRelease2018/Regression/Reg_AFU_SavedBasket.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/FebruaryRelease2018/Regression/Reg_AFU_verify_Base_Comms_tariff_under_offer_column_order_placement_O2_offer.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/FebruaryRelease2018/Regression/Reg_Agent_Buyout.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/FebruaryRelease2018/Regression/Reg_Agent_DelayedDelivery.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/FebruaryRelease2018/Regression/Reg_Agent_GenerateCCA.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/FebruaryRelease2018/Regression/Reg_Agent_PreOrder.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/FebruaryRelease2018/Regression/Reg_Agent_TradeIn.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/FebruaryRelease2018/Regression/Reg_CFA_Accessories_Confirmation_Page_changes.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/FebruaryRelease2018/Regression/Reg_CFA_Basket page cross sell insurance.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/FebruaryRelease2018/Regression/Reg_CFA_Basket_page_cross_sell_insurance_no_free_insurance.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/FebruaryRelease2018/Regression/Reg_CFA_Cover_me_copy_update_on_basket_summary.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/FebruaryRelease2018/Regression/Reg_CFA_MBB_Data filters.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/FebruaryRelease2018/Regression/Reg_CFA_PayG_SIM_ipad.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/FebruaryRelease2018/Regression/Reg_CFA_PayM_Phone_Data_filters_options_tariff_and_extras_page_Order_placement.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/FebruaryRelease2018/Regression/Reg_CFA_PayM_Tablet_Data_filters_options_tariff_and_extras_page_Order_placement.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/FebruaryRelease2018/Regression/Reg_CFA_Phones_Delayed_delivery_Home_delivery_Confirmation_Page_formatting_box.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/FebruaryRelease2018/Regression/Reg_CFA_iPad_Show_basecomms_tariffs_on_T&amp;E_page_for_my_offers_journey.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/FebruaryRelease2018/Regression/Reg_CFA_morethan12Tablet.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/FebruaryRelease2018/Regression/Reg_CFA_seperate_tariff_ribbons_Tariff_page_Basket_page_html_overlay_for_tariff_ribbons.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/FebruaryRelease2018/Regression/Reg_CFD2064_ECOM11810_11811_CFU_ordering choice on upgrade options page_Phone_Option_selected.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/FebruaryRelease2018/Regression/Reg_CFD2064_ECOM11810_11811_CFU_ordering choice on upgrade options page_Phone_option_not selected.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/FebruaryRelease2018/Regression/Reg_CFU_Phones_Data_filters_options_tariff_and_extras_page.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/FebruaryRelease2018/Regression/Reg_CFU_Recycle_Phones_DD_Confirmation_Page_changes.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/FebruaryRelease2018/Regression/Reg_CFU_Tablets_Data_filters_options_tariff_and_extras_page_Order_placement.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/FebruaryRelease2018/Regression/Reg_CFU_seperate_tariff_ribbons_Tariff_page_Basket_page_html_overlay_for_tariff_ribbons.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/FebruaryRelease2018/Regression/Reg_CS_AccessoriesOnly.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/FebruaryRelease2018/Regression/Reg_CS_CFA_MBBPayG.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/FebruaryRelease2018/Regression/Reg_CS_CFU_SavedBasket.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/FebruaryRelease2018/Regression/Reg_CS_FitnessTrackers.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/FebruaryRelease2018/Regression/Reg_CS_Free_Sim.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/FebruaryRelease2018/Regression/Reg_CS_Free_Sim_Tablet.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/FebruaryRelease2018/Regression/Reg_CS_PayGPhonesHomeDeliveryWithoutAccessory.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/FebruaryRelease2018/Regression/Reg_CS_PayMPhonesHomeDeliveryWithAccessory.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/FebruaryRelease2018/Regression/Reg_CS_PayMPhonesHomeDeliveryWithoutAccessory.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/FebruaryRelease2018/Regression/Reg_CS_PayMSimOnly.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/FebruaryRelease2018/Regression/Reg_CS_PayMSimOnlyRecommended.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/FebruaryRelease2018/Regression/Reg_CS_PayMTabletsHomeDeliveryWithAccessory.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/FebruaryRelease2018/Regression/Reg_CS_Recycle.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/FebruaryRelease2018/Regression/Reg_CS_SmartWatch.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/FebruaryRelease2018/Regression/Reg_CVOSDelayedDelivery.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/FebruaryRelease2018/Regression/Reg_CVOSPreOrder.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/FebruaryRelease2018/Regression/Reg_Consumer_Buyout.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/FebruaryRelease2018/Regression/Reg_Consumer_DelayedDelivery.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/FebruaryRelease2018/Regression/Reg_Consumer_PreOrder.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/FebruaryRelease2018/Regression/Reg_Consumer_TradeIn.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/FebruaryRelease2018/Regression/Reg_Current_MBB_URL_no_change_Order_placement.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/FebruaryRelease2018/Regression/Reg_Existing_Customer_Tablets_Data_filters_options_tariff_and_extras_page.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/FebruaryRelease2018/Regression/Reg_FNT_AFA_Handset_Click_and_Collect_Passport_and_Driving_license.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/FebruaryRelease2018/Regression/Reg_FNT_AFA_PayG_Phones_less_than_50_GBP_ClickAndCollect.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/FebruaryRelease2018/Regression/Reg_FNT_DifferentStoreAddressthanBillingAddres.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/FebruaryRelease2018/Regression/Reg_FNT_MorethanMaxTransaction_Deny.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/FebruaryRelease2018/Regression/Reg_FNT_PayMPhonesAdditionalDepositConfirmation.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/FebruaryRelease2018/Regression/Reg_FNT_PayMPhonesClickAndCollect.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/FebruaryRelease2018/Regression/Reg_FNT_PayMPhonesOrderStraightDecline_ClickandCollect.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/FebruaryRelease2018/Regression/Reg_Jan_AgentShopToAcceptApostrophe.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/FebruaryRelease2018/Regression/Reg_Jan_AgentToAcceptTenDigitsPhoneNumber.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/FebruaryRelease2018/Regression/Reg_Jan_CFU_MbbSimo30days.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/FebruaryRelease2018/Regression/Reg_Jan_CFU_PhonesSimo30day.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/FebruaryRelease2018/Regression/Reg_Jan_ConsumerToAcceptTenDigitsPhoneNumber.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/FebruaryRelease2018/Regression/Reg_Jan_DrupalPageCookiesPopUp.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/FebruaryRelease2018/Regression/Reg_Jan_Existing_OOSForHomeDeliveryandCnC.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/FebruaryRelease2018/Regression/Reg_Jan_FreeSim_CommercialAddress.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/FebruaryRelease2018/Regression/Reg_Jan_FreeSim_InvalidPostCode_DeliverySection_AddressLookUp.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/FebruaryRelease2018/Regression/Reg_Jan_FreeSim_InvalidPostCode_EnteredManually.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/FebruaryRelease2018/Regression/Reg_October2Release_CFA_Phones_ColourDropdownsWithColourNamesBesideTheColourMultipleColour.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/FebruaryRelease2018/Regression/Reg_October2Release_ECOM-12004_CFA_PAYM_Phones.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/FebruaryRelease2018/Regression/Reg_October2Release_ECOM-12004_CFA_PayG_Freesim_Phones_DeliveryPageMarkMandatoryFieldsWithAsterisk.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/FebruaryRelease2018/Regression/Reg_October2Release_PayG Tablets_ShowMarketingMessageOnTariffAndExtrasPagePackageSummary.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/FebruaryRelease2018/Regression/Reg_October2Release_Reg_October2Release_CFA_Phones_ColourDropdownsWithColourNamesBesideTheColourMultipleColour.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/FebruaryRelease2018/Regression/Reg_October2Release_Reg_October2Release_ECOM-11886.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/FebruaryRelease2018/Regression/Reg_TrustevPayMPhones_ClickandCollectE2EjourneyWithAccessoryInAgentShop.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/FebruaryRelease2018/Regression/Reg_Trustev_AFA_PAYM_Phones_WithAccessoryClick_and_Collect.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/FebruaryRelease2018/Regression/Reg_Trustev_AFA_PAYM_Tablet_WithAccessoryClick_and_Collect.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/FebruaryRelease2018/Regression/Reg_Trustev_PayMPhonesHomeDeliveryWithAccessory.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/FebruaryRelease2018/Regression/Reg_Trustev_PayMPhonesHomeDeliveryWithoutAccessory.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/FebruaryRelease2018/Regression/Reg_Trustev_PayMTabletsHomeDeliveryWithAccessory.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/FebruaryRelease2018/Regression/Reg_VOLTE_PayMPhonesClickAndCollect.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/FebruaryRelease2018/Regression/Reg_VOLTE_PayMPhonesHomeDeliveryWithAccessory.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/FebruaryRelease2018/Regression/Reg_VOLTE_PayMPhonesHomeDeliveryWithoutAccessory.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/JanuaryRelease2018/Functional/CFD2235/CFU_MbbSimo30days.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/JanuaryRelease2018/Functional/CFD2235/CFU_PhonesSimo30day.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/JanuaryRelease2018/Functional/CFD2235/CFU_TabletsSimo12months.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/JanuaryRelease2018/Functional/CFD2320/AgentToAcceptTenDigitsPhoneNumber.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/JanuaryRelease2018/Functional/CFD2320/ConsumerToAcceptTenDigitsPhoneNumber.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/JanuaryRelease2018/Functional/CFD2374/DrupalPageCookiesPopUp.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/JanuaryRelease2018/Functional/CFD2374/DrupalPageCookiesPopUpLinks.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/JanuaryRelease2018/Functional/ITFD10/CFU_OOSForHomeDeliveryAndCnC.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/JanuaryRelease2018/Functional/ITFD10/CFU_OOSForHomeDeliveryButAvailableForCnC.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/JanuaryRelease2018/Functional/ITFD10/Existing_OOSForHomeDeliveryandCnC.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/JanuaryRelease2018/Functional/ITFD10/OOSForHomeDeliveryAndCnC.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/JanuaryRelease2018/Functional/ITFD10/OOSForHomeDeliveryButAvailableForCnC.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/JanuaryRelease2018/Functional/ITFD38/CFU_CommercialAddress_CheckoutPayment_ECOM180.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/JanuaryRelease2018/Functional/ITFD38/CFU_NoAddressFound_CheckoutPayment_ECOM180.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/JanuaryRelease2018/Functional/ITFD38/CommercialAddress_CheckoutReview_ECOM180.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/JanuaryRelease2018/Functional/ITFD38/FreeSim_CommercialAddress.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/JanuaryRelease2018/Functional/ITFD38/FreeSim_NoAddress.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/JanuaryRelease2018/Functional/ITFD38/NoAddressFound_ECOMC180.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/JanuaryRelease2018/Functional/ITFD38/NoAddress_CheckoutReview_ECOMC180.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/JanuaryRelease2018/Functional/ITFD45/AgentShopToAcceptApostrophe.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/JanuaryRelease2018/Functional/ITFD45/ConsumerShopToAcceptApostrophe.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/JanuaryRelease2018/Regression/Reg_AFA_PAYM_Acquistion.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/JanuaryRelease2018/Regression/Reg_AFA_PayG_withoutAnyAccessory.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/JanuaryRelease2018/Regression/Reg_AFA_PayMSimO_withoutAnyAccessory.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/JanuaryRelease2018/Regression/Reg_AFA_Tablet.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/JanuaryRelease2018/Regression/Reg_AFA_verify_Base_Comms_tariff_under_offer_column_order_placement_O2_offer.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/JanuaryRelease2018/Regression/Reg_AFU_PAYM_Dongle_payByCard.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/JanuaryRelease2018/Regression/Reg_AFU_PAYM_Dongle_submitOrder.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/JanuaryRelease2018/Regression/Reg_AFU_SavedBasket.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/JanuaryRelease2018/Regression/Reg_AFU_verify_Base_Comms_tariff_under_offer_column_order_placement_O2_offer.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/JanuaryRelease2018/Regression/Reg_Agent_Buyout.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/JanuaryRelease2018/Regression/Reg_Agent_DelayedDelivery.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/JanuaryRelease2018/Regression/Reg_Agent_GenerateCCA.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/JanuaryRelease2018/Regression/Reg_Agent_PreOrder.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/JanuaryRelease2018/Regression/Reg_Agent_TradeIn.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/JanuaryRelease2018/Regression/Reg_CFA_Accessories_Confirmation_Page_changes.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/JanuaryRelease2018/Regression/Reg_CFA_Basket page cross sell insurance.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/JanuaryRelease2018/Regression/Reg_CFA_Basket_page_cross_sell_insurance_no_free_insurance.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/JanuaryRelease2018/Regression/Reg_CFA_Cover_me_copy_update_on_basket_summary.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/JanuaryRelease2018/Regression/Reg_CFA_MBB_Data filters.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/JanuaryRelease2018/Regression/Reg_CFA_PayG_SIM_ipad.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/JanuaryRelease2018/Regression/Reg_CFA_PayM_Phone_Data_filters_options_tariff_and_extras_page_Order_placement.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/JanuaryRelease2018/Regression/Reg_CFA_PayM_Tablet_Data_filters_options_tariff_and_extras_page_Order_placement.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/JanuaryRelease2018/Regression/Reg_CFA_Phones_Delayed_delivery_Home_delivery_Confirmation_Page_formatting_box.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/JanuaryRelease2018/Regression/Reg_CFA_SIMO_Phone_Data_filters_options_Order_placement.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/JanuaryRelease2018/Regression/Reg_CFA_morethan12Tablet.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/JanuaryRelease2018/Regression/Reg_CFA_seperate_tariff_ribbons_Tariff_page_Basket_page_html_overlay_for_tariff_ribbons.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/JanuaryRelease2018/Regression/Reg_CFD2064_ECOM11810_11811_ CFU_ordering choice on upgrade options page_Phone_Option_selected.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/JanuaryRelease2018/Regression/Reg_CFD2064_ECOM11810_11811_ CFU_ordering choice on upgrade options page_Phone_option_not selected.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/JanuaryRelease2018/Regression/Reg_CFU_Phones_Data_filters_options_tariff_and_extras_page.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/JanuaryRelease2018/Regression/Reg_CFU_Recycle_Phones_DD_Confirmation_Page_changes.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/JanuaryRelease2018/Regression/Reg_CFU_Tablets_Data_filters_options_tariff_and_extras_page_Order_placement.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/JanuaryRelease2018/Regression/Reg_CFU_seperate_tariff_ribbons_Tariff_page_Basket_page_html_overlay_for_tariff_ribbons.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/JanuaryRelease2018/Regression/Reg_CS_AccessoriesOnly.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/JanuaryRelease2018/Regression/Reg_CS_CFA_MBBPayG.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/JanuaryRelease2018/Regression/Reg_CS_CFU_SavedBasket.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/JanuaryRelease2018/Regression/Reg_CS_FitnessTrackers.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/JanuaryRelease2018/Regression/Reg_CS_Free_Sim.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/JanuaryRelease2018/Regression/Reg_CS_Free_Sim_Tablet.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/JanuaryRelease2018/Regression/Reg_CS_PayGPhonesHomeDeliveryWithoutAccessory.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/JanuaryRelease2018/Regression/Reg_CS_PayMPhonesHomeDeliveryWithAccessory.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/JanuaryRelease2018/Regression/Reg_CS_PayMPhonesHomeDeliveryWithoutAccessory.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/JanuaryRelease2018/Regression/Reg_CS_PayMSimOnly.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/JanuaryRelease2018/Regression/Reg_CS_PayMSimOnlyRecommended.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/JanuaryRelease2018/Regression/Reg_CS_PayMTabletsHomeDeliveryWithAccessory.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/JanuaryRelease2018/Regression/Reg_CS_Recycle.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/JanuaryRelease2018/Regression/Reg_CS_SmartWatch.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/JanuaryRelease2018/Regression/Reg_CVOSDelayedDelivery.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/JanuaryRelease2018/Regression/Reg_CVOSPreOrder.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/JanuaryRelease2018/Regression/Reg_Consumer_Buyout.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/JanuaryRelease2018/Regression/Reg_Consumer_DelayedDelivery.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/JanuaryRelease2018/Regression/Reg_Consumer_PreOrder.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/JanuaryRelease2018/Regression/Reg_Consumer_TradeIn.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/JanuaryRelease2018/Regression/Reg_Current_MBB_URL_no_change_Order_placement.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/JanuaryRelease2018/Regression/Reg_Existing_Customer_Tablets_Data_filters_options_tariff_and_extras_page.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/JanuaryRelease2018/Regression/Reg_FNT_AFA_Handset_Click_and_Collect_Passport_and_Driving_license.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/JanuaryRelease2018/Regression/Reg_FNT_AFA_PayG_Phones_less_than_50_GBP_ClickAndCollect.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/JanuaryRelease2018/Regression/Reg_FNT_DifferentStoreAddressthanBillingAddres.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/JanuaryRelease2018/Regression/Reg_FNT_MorethanMaxTransaction_Deny.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/JanuaryRelease2018/Regression/Reg_FNT_PayMPhonesAdditionalDepositConfirmation.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/JanuaryRelease2018/Regression/Reg_FNT_PayMPhonesClickAndCollect.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/JanuaryRelease2018/Regression/Reg_FNT_PayMPhonesOrderStraightDecline_ClickandCollect.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/JanuaryRelease2018/Regression/Reg_October2Release_CFA_Phones_ColourDropdownsWithColourNamesBesideTheColourMultipleColour.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/JanuaryRelease2018/Regression/Reg_October2Release_ECOM-12004_CFA_PAYM_Phones.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/JanuaryRelease2018/Regression/Reg_October2Release_ECOM-12004_CFA_PayG_Freesim_Phones_DeliveryPageMarkMandatoryFieldsWithAsterisk.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/JanuaryRelease2018/Regression/Reg_October2Release_PayG Tablets_ShowMarketingMessageOnTariffAndExtrasPagePackageSummary.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/JanuaryRelease2018/Regression/Reg_October2Release_Reg_October2Release_CFA_Phones_ColourDropdownsWithColourNamesBesideTheColourMultipleColour.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/JanuaryRelease2018/Regression/Reg_October2Release_Reg_October2Release_ECOM-11886.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/JanuaryRelease2018/Regression/Reg_TrustevPayMPhones_ClickandCollectE2EjourneyWithAccessoryInAgentShop.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/JanuaryRelease2018/Regression/Reg_Trustev_AFA_PAYM_Phones_WithAccessoryClick_and_Collect.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/JanuaryRelease2018/Regression/Reg_Trustev_AFA_PAYM_Tablet_WithAccessoryClick_and_Collect.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/JanuaryRelease2018/Regression/Reg_Trustev_PayMPhonesHomeDeliveryWithAccessory.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/JanuaryRelease2018/Regression/Reg_Trustev_PayMPhonesHomeDeliveryWithoutAccessory.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/JanuaryRelease2018/Regression/Reg_Trustev_PayMTabletsHomeDeliveryWithAccessory.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/JanuaryRelease2018/Regression/Reg_VOLTE_PayMPhonesClickAndCollect.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/JanuaryRelease2018/Regression/Reg_VOLTE_PayMPhonesHomeDeliveryWithAccessory.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/JanuaryRelease2018/Regression/Reg_VOLTE_PayMPhonesHomeDeliveryWithoutAccessory.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/JanuaryRelease2018/Regression/Reg__CFA_iPad_Show_basecomms_tariffs_on_T&amp;E_page_for_my_offers_journey.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/JulyRelease2017/C1669/C1669_E11521_TC1_CFA_Add_All_NonConnected_Devices_To_Basket_Followed_By_Adding_A_Phone_Verify_Not_Overridden.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/JulyRelease2017/C1669/C1669_E11521_TC2_CFA_Add_All_NonConnected_Devices_To_Basket_Followed_By_Adding_A_Like_New_Phone_Verify_Not_Overridden.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/JulyRelease2017/C1669/C1669_E11521_TC3_Existing_customer_add_Standalone_Smartwatch_Fitnesstracker_to_basket_later_add_Tablet_to_basket_no_override.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/JulyRelease2017/C1669/C1669_E11521_TC4_Existing_customer_add_Standalone_Accessory_Fitnesstracker_to_basket_later_add_SIMO_phone_to_basket_no_override.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/JulyRelease2017/C1669/C1669_E11521_TC5_CFA_add_Standalone_Accessory_to_basket_later_add_SIMO_MBB_to_basket_no_override.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/JulyRelease2017/C1669/C1669_E11522_TC1_CFA_morethan12Tablet.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/JulyRelease2017/C1669/C1669_E11522_TC2_CFA_morethan12Phone.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/JulyRelease2017/C1924/C1924_E11409_TC10_CFA_Displaying_label_in_place_of_only_one_variant_and_displaying_dropdown_for_more_than_one_variant_on_device_details_page_of_smartwatch.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/JulyRelease2017/C1924/C1924_E11409_TC11_Existing_customer_displaying_label_in_place_of_only_one_variant_on_device_details_page_of_accessory.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/JulyRelease2017/C1924/C1924_E11409_TC12_CFU_Displaying_label_in_place_of_only_one_variant_on_device_details_page_of_tablet.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/JulyRelease2017/C1924/C1924_E11409_TC1_CFA_Displaying_dropdown_in_place_of_variant_swatches_on_device_details_page_of_Handset.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/JulyRelease2017/C1924/C1924_E11409_TC2_CFA_Displaying_dropdown_in_place_of_variant_swatches_on_device_details_page_of_Smartwatch.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/JulyRelease2017/C1924/C1924_E11409_TC3_CFA_Displaying_dropdown_in_place_of_variant_swatches_on_device_details_page_of_tablet.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/JulyRelease2017/C1924/C1924_E11409_TC4_CFA_Displaying_dropdown_in_place_of_variant_swatches_on_device_details_page_of_fitness_tracker.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/JulyRelease2017/C1924/C1924_E11409_TC5_Existing_customer_displaying_dropdown_in_place_of_variant_swatches_on_device_details_page_of_MBB.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/JulyRelease2017/C1924/C1924_E11409_TC6_Existing_customer_displaying_dropdown_in_place_of_variant_swatches_on_device_details_page_of_accessory.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/JulyRelease2017/C1924/C1924_E11409_TC7_CFU_Displaying_dropdown_in_place_of_variant_swatches_on_device_details_page_of_handset.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/JulyRelease2017/C1924/C1924_E11409_TC8_CFU_Displaying_dropdown_in_place_of_variant_swatches_on_device_details_page_of_tablet.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/JulyRelease2017/C1924/C1924_E11409_TC9_CFA_Displaying_label_in_place_of_only_one_variant_on_device_details_page_of_handset.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/JulyRelease2017/CFD1786/C1786_E-11349-11350-11352-11358_Existing_Custo_Layout_New_Basecomm_Page_header_carousel_Sub_navigation_Sub_Banner_footer_banner.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/JulyRelease2017/CFD1786/C1786_E-11353-11360-11361-11528_TC1_Existing_Custo_Basecomm_Ipads_Tab_Verification.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/JulyRelease2017/CFD1786/C1786_E-11353-11360-11361-11528_TC2_Existing_Custo_Basecomms_Other_Tablets_Tab_Verification.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/JulyRelease2017/CFD1786/C1786_E-11354-11447-11565_TC3_Existing_Custo_Ipads_tab_Recommended_tariff_in_tariffs_and_extras_page.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/JulyRelease2017/CFD1786/C1786_E-11354-11447-11565_TC4_Existing_Custo_Other_tablets_Recommended_tariff_in_tariffs_and_extras_page.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/JulyRelease2017/CFD1786/C1786_E-11355-11357-11356-11359_TC1_Existing_Custo_Basecomm_iPad_Device_Tile_Detail_and_TariffExtras_PageVerification.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/JulyRelease2017/CFD1786/C1786_E-11355-11357-11356-11359_TC2_Existing_Custo_Basecomm_Tablet_Device_Tile_Detail_and_TariffExtrasPage_Verification.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/JulyRelease2017/CFD1786/C1786_E-11355-11357-11356-11359_TC3_Existing_Custo_Basecomm_iPad_Device_Update_Colour_Capacity_Verify_New_Price.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/JulyRelease2017/CFD1786/C1786_E-11355-11357-11356-11359_TC4_Existing_Custo_Basecomm_Other_tablets_Device_Update_Colour_Capacity_Verify_New_Price.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/JulyRelease2017/CFD1786/C1786_E-11355-11357-11356-11359_TC5_Existing_Custo_Basecomm_iPad_DD_Stock_Message_and_Back_To_Ipad_Offer_Link_Verification.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/JulyRelease2017/CFD1786/C1786_E-11355-11357-11356-11359_TC6_Existing_Custo_Basecomm_Other_Tablet_PreOrder_Stock_Message_and_Back_To_Ipad_Offer_Link_Verification.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/JulyRelease2017/CFD1786/C1786_E-11510-11505_TC1_iPads_tab_Device_tile_Colour_and_Capacity_variant_Image_and_Promotion_change_same_variant_Tariff_page_Order_confirmation.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/JulyRelease2017/CFD1786/C1786_E-11510-11505_TC2_Other_Tablets_Device_tile_Colour_and_Capacity_variant_Image_and_Promotion_change_same_variant_Tariff_page_Order_confirmation.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/JulyRelease2017/CFD1786/C1786_E-11510-11505_TC3_iPads_Tab_Basecomm_tariff_basket_page_change_tariff_link.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/JulyRelease2017/CFD1786/C1786_E-11510-11505_TC4_Other_Tablets_Basecomm_tariff_basket_page_change_tariff_link.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/JulyRelease2017/CFD1786/C1786_E11354-11447-11565_TC1_Existing_Custo_Ipads_Tab_Filter_and_Sort_Functionality.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/JulyRelease2017/CFD1786/C1786_E11354-11447-11565_TC2_Existing_Custo_Other_Tablets_Filter_and_Sort_Functionality.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/JulyRelease2017/CFD1786/C1786_E11362-11564_Current_MBB_URL_no_change_Order_placement.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/JulyRelease2017/CFD1786/C1786_E11362-11564_TC1_Current_iPad_or_Tablet_URL_Redirection_to_new_Basecomm_page_URL.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/JulyRelease2017/CFD1786/C1786_E11510-11505_TC5_Non_Basecomm_tariff_basket_page_change_tariff_link_BAU_tariffs_decommission_flag.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/JulyRelease2017/CFD1786/C1786_ECOM-11527-11529-11633_TC1_New_basecomms_page_iPads_tab_coming_soon_device_promo_header_banner_Pay_For_Your_Device_In_Full_link_TariffandExtras_page.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/JulyRelease2017/CFD1786/C1786_ECOM-11527-11529-11633_TC2_New_basecomms_page_Other_tablets_tab_coming_soon_device_promo_header_banner.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/JulyRelease2017/CFD1960/C1960_E11522_TC1_AFU_verify_Base_Comms_tariff_under_offer_column_order_placement_O2_offer.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/JulyRelease2017/CFD1960/C1960_E11522_TC3_Agent_Existing_user_new_acquisition_verify_Base_Comms_tariff_under_offer_column_order_placement_O2_offer.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/JulyRelease2017/CFD1960/C1960_E11522_TC4_CFA_iPad_tab_basecomms_tariffs_Basket_Checkout_login_order_placement_O2_offer.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/JulyRelease2017/CFD1960/C1960_E11522_TC5_CFA_Other_tablets_tab_basecomms_tariffs_Basket_Checkout_login_order_placement_O2_offer.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/JulyRelease2017/CFD1960/C1960_ECOM-11420,11429,11431,11443_TC1_AFA_verify_Base_Comms_tariff_under_offer_column_order_placement_O2_offer.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/JulyRelease2017/CFD1960/C1960_ECOM11430_11485_11433_11419_TC1_CFA_iPad_Show_basecomms_tariffs_on_T&amp;E_page_for_my_offers_journey.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/JulyRelease2017/CFD1960/C1960_ECOM11430_11485_11433_11419_TC2_CFA_Tablets_Show_basecomms_tariffs_on_T&amp;E_page_for_my_offers_journey.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/JulyRelease2017/CFD1960/C1960_ECOM11430_11485_11433_11419_TC3_CFA_MBB_Show_basecomms_tariffs_on_T&amp;E_page_for_my_offers_journey.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/JulyRelease2017/CVOS/CVOS_Features/CVOSDelayedDelivery.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/JulyRelease2017/CVOS/CVOS_Features/CVOSPreOrder.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/JuneRelease_Features/CFA_Refresh_Order_Basket_Review_Page_and_Confirmation_Page.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/JuneRelease_Features/CFA_Refresh_Order_Ddphone_with_DDaccessory_Basket_Review_and_Confirmation_Page.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/JuneRelease_Features/CFA_Refresh_Order_Delayed_delivery_phone_with_Instock_accessory_Basket_Review_and_Confirmation_Page.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/JuneRelease_Features/CFA_Refresh_Order_PreOrderPhone_with_Instock_accessory_Basket_Review_and_Confirmation_Page.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/JuneRelease_Features/CFA_Standard_Order_Basket_Review_Page_and_Confirmation_Page.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/JuneRelease_Features/CFA_Standard_Order_Ddphone_with_Instock_accessory_Basket_Review_and_Confirmation_Page.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/JuneRelease_Features/CFA_Standard_Order_PreOrderPhone_with_Instock_accessory_Basket_Review_and_Confirmation_Page.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/JuneRelease_Features/CFU_Refresh_Order_Ddphone_with_Instock_accessory.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/JuneRelease_Features/CFU_Refresh_Order_Review_Page_and_Confirmation_Page.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/JuneRelease_Features/CFU_Standard_Order_Ddphone_with_Instock_accessory.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/JuneRelease_Features/Existing_Refresh_Order_Ddphone_with_ DDaccessory.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/JuneRelease_Features/Existing_Refresh_Order_Ddphone_with_Instock_accessory.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/JuneRelease_Features/Existing_Refresh_Order_PreOrder_phone_with_Instock_accessory.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/JuneRelease_Features/Existing_Standard_Order_Ddphone_with_Instock_accessory.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/JuneRelease_Features/Existing_Standard_Order_PreOrder_phone_with_Instock_accessory.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/JuneRelease_Features/Existing_customer_Refresh_Order_Review_Page_and_Confirmation_Page.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/JuneRelease_Features/Existing_customer_Standard_Order_Review_Page_and_Confirmation_Page.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/JuneRelease_Features/FTQ-Ecomm-11478-CFA_FitnessTrackerandAccessoryGroup.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/JuneRelease_Features/FTQ-Ecomm-11478-CFA_FitnessTrackerandAccessoryGroup_Remove.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/JuneRelease_Features/FTQ-Ecomm-11478-CFA_Smartwatches_Group.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/JuneRelease_Features/FTQ-Ecomm-11478-CFU_Smartwatches_Group.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/JuneRelease_Features/SurfaceVouchercodes_testcase_1.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/JuneRelease_Features/SurfaceVouchercodes_testcase_2.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/JuneRelease_Features/SurfaceVouchercodes_testcase_3.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/JuneRelease_Features/UpgradeUpsellPromoModuleDongleSims.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/JuneRelease_Features/UpgradeUpsellPromoModule_TabletSims.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/JuneRelease_Features/UpgradeUpsellPromoModule_iPadSims.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/JuneRelease_Features/UpgradeUpsellPromoModule_testcase_1.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/MobileWebTestCases/Mobile_CFA_FreeSimPAYGEndToEnd.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/MobileWebTestCases/Mobile_CFA_Tablets_AdditionalInfoPassportAndDrivingLicenseMarkMandatoryFields.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/MobileWebTestCases/Mobile_Reg_CS_PayMPhonesHomeDeliveryWithoutAccessory.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/October2Release/Functional/CFD_2044/CFA_Phones_ColourDropdownsWithColourNamesBesideTheColourMultipleColour.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/October2Release/Functional/CFD_2044/CFU_Phones_ColourDropdownsWithColourNamesBesideTheColourMultipleColour.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/October2Release/Functional/CFD_2044/CFU_Tablet_ColourDropdownsWithColourNamesBesideTheColourMultipleColour.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/October2Release/Functional/CFD_2044/CFU_Tablet_ColourDropdownsWithColourNamesBesideTheColourSingleColour.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/October2Release/Functional/CFD_2044/ExistingCustomer_Phones_ColourDropdownsWithColourNamesBesideTheColourSingleColour.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/October2Release/Functional/CFD_2044/MyOffersMBB_ColourDropdownsWithColourNamesBesideTheColour_MultipleColour.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/October2Release/Functional/CFD_2044/SimFree_ColourDropdownsWithColourNamesBesideTheColourMultipleColour.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/October2Release/Functional/CFD_2173/PayG FreeSim_ShowMarketingMessageOnTariffAndExtrasPagePackageSummary.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/October2Release/Functional/CFD_2173/PayG Phones_ShowMarketingMessageOnTariffAndExtrasPagePackageSummary.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/October2Release/Functional/CFD_2173/PayG Tablets_ShowMarketingMessageOnTariffAndExtrasPagePackageSummary.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/October2Release/Functional/FTQ/ECOM-11885.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/October2Release/Functional/FTQ/ECOM-11886.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/October2Release/Functional/FTQ/ECOM-12004_CFA_PAYM_Phones.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/October2Release/Functional/FTQ/ECOM-12004_CFA_PayG_Freesim_Phones_DeliveryPageMarkMandatoryFieldsWithAsterisk.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/October2Release/Functional/FTQ/ECOM-12004_CFA_Tablets_AdditionalInfoPassportAndDrivingLicenseMarkMandatoryFields.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/October2Release/Functional/FTQ/ECOM-12004_CFU_Phones_OTAC_and_SSC_checkout_pages_mark_mandatory_fields_with_asterisk.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/October2Release/Functional/FTQ/ECOM-12091.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/October2Release/Regression/Reg_AFA_PAYM_Acquistion.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/October2Release/Regression/Reg_AFA_PayG_withoutAnyAccessory.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/October2Release/Regression/Reg_AFA_PayMSimO_withoutAnyAccessory.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/October2Release/Regression/Reg_AFA_Tablet.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/October2Release/Regression/Reg_AFA_verify_Base_Comms_tariff_under_offer_column_order_placement_O2_offer.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/October2Release/Regression/Reg_AFU_PAYM_Dongle_payByCard.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/October2Release/Regression/Reg_AFU_PAYM_Dongle_submitOrder.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/October2Release/Regression/Reg_AFU_SavedBasket.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/October2Release/Regression/Reg_AFU_verify_Base_Comms_tariff_under_offer_column_order_placement_O2_offer.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/October2Release/Regression/Reg_Agent_Buyout.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/October2Release/Regression/Reg_Agent_DelayedDelivery.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/October2Release/Regression/Reg_Agent_GenerateCCA.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/October2Release/Regression/Reg_Agent_PreOrder.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/October2Release/Regression/Reg_Agent_TradeIn.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/October2Release/Regression/Reg_CFA_Accessories_Confirmation_Page_changes.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/October2Release/Regression/Reg_CFA_Basket page cross sell insurance.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/October2Release/Regression/Reg_CFA_Basket_page_cross_sell_insurance_no_free_insurance.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/October2Release/Regression/Reg_CFA_Cover_me_copy_update_on_basket_summary.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/October2Release/Regression/Reg_CFA_MBB_Data filters.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/October2Release/Regression/Reg_CFA_PayG_SIM_ipad.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/October2Release/Regression/Reg_CFA_PayM_Phone_Data_filters_options_tariff_and_extras_page_Order_placement.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/October2Release/Regression/Reg_CFA_PayM_Tablet_Data_filters_options_tariff_and_extras_page_Order_placement.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/October2Release/Regression/Reg_CFA_Phones_Delayed_delivery_Home_delivery_Confirmation_Page_formatting_box.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/October2Release/Regression/Reg_CFA_SIMO_Phone_Data_filters_options_Order_placement.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/October2Release/Regression/Reg_CFA_morethan12Tablet.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/October2Release/Regression/Reg_CFA_seperate_tariff_ribbons_Tariff_page_Basket_page_html_overlay_for_tariff_ribbons.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/October2Release/Regression/Reg_CFD2064_ECOM11810_11811_ CFU_ordering choice on upgrade options page_Phone_Option_selected.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/October2Release/Regression/Reg_CFD2064_ECOM11810_11811_ CFU_ordering choice on upgrade options page_Phone_option_not selected.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/October2Release/Regression/Reg_CFU_Phones_Data_filters_options_tariff_and_extras_page.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/October2Release/Regression/Reg_CFU_Recycle_Phones_DD_Confirmation_Page_changes.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/October2Release/Regression/Reg_CFU_Tablets_Data_filters_options_tariff_and_extras_page_Order_placement.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/October2Release/Regression/Reg_CFU_seperate_tariff_ribbons_Tariff_page_Basket_page_html_overlay_for_tariff_ribbons.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/October2Release/Regression/Reg_CS_AccessoriesOnly.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/October2Release/Regression/Reg_CS_CFA_MBBPayG.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/October2Release/Regression/Reg_CS_CFU_SavedBasket.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/October2Release/Regression/Reg_CS_FitnessTrackers.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/October2Release/Regression/Reg_CS_Free_Sim.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/October2Release/Regression/Reg_CS_Free_Sim_Tablet.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/October2Release/Regression/Reg_CS_PayGPhonesHomeDeliveryWithoutAccessory.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/October2Release/Regression/Reg_CS_PayMPhonesHomeDeliveryWithAccessory.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/October2Release/Regression/Reg_CS_PayMPhonesHomeDeliveryWithoutAccessory.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/October2Release/Regression/Reg_CS_PayMSimOnly.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/October2Release/Regression/Reg_CS_PayMSimOnlyRecommended.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/October2Release/Regression/Reg_CS_PayMTabletsHomeDeliveryWithAccessory.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/October2Release/Regression/Reg_CS_Recycle.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/October2Release/Regression/Reg_CS_SmartWatch.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/October2Release/Regression/Reg_CVOSDelayedDelivery.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/October2Release/Regression/Reg_CVOSPreOrder.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/October2Release/Regression/Reg_Consumer_Buyout.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/October2Release/Regression/Reg_Consumer_DelayedDelivery.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/October2Release/Regression/Reg_Consumer_PreOrder.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/October2Release/Regression/Reg_Consumer_TradeIn.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/October2Release/Regression/Reg_Current_MBB_URL_no_change_Order_placement.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/October2Release/Regression/Reg_Existing_Customer_Tablets_Data_filters_options_tariff_and_extras_page.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/October2Release/Regression/Reg_FNT_AFA_Handset_Click_and_Collect_Passport_and_Driving_license.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/October2Release/Regression/Reg_FNT_AFA_PayG_Phones_less_than_50_GBP_ClickAndCollect.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/October2Release/Regression/Reg_FNT_DifferentStoreAddressthanBillingAddres.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/October2Release/Regression/Reg_FNT_MorethanMaxTransaction_Deny.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/October2Release/Regression/Reg_FNT_PayMPhonesAdditionalDepositConfirmation.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/October2Release/Regression/Reg_FNT_PayMPhonesClickAndCollect.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/October2Release/Regression/Reg_FNT_PayMPhonesOrderStraightDecline_ClickandCollect.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/October2Release/Regression/Reg_October2Release_CFA_Phones_ColourDropdownsWithColourNamesBesideTheColourMultipleColour.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/October2Release/Regression/Reg_TrustevPayMPhones_ClickandCollectE2EjourneyWithAccessoryInAgentShop.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/October2Release/Regression/Reg_Trustev_AFA_PAYM_Phones_WithAccessoryClick_and_Collect.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/October2Release/Regression/Reg_Trustev_AFA_PAYM_Tablet_WithAccessoryClick_and_Collect.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/October2Release/Regression/Reg_Trustev_PayMPhonesHomeDeliveryWithAccessory.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/October2Release/Regression/Reg_Trustev_PayMPhonesHomeDeliveryWithoutAccessory.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/October2Release/Regression/Reg_Trustev_PayMTabletsHomeDeliveryWithAccessory.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/October2Release/Regression/Reg_VOLTE_PayMPhonesClickAndCollect.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/October2Release/Regression/Reg_VOLTE_PayMPhonesHomeDeliveryWithAccessory.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/October2Release/Regression/Reg_VOLTE_PayMPhonesHomeDeliveryWithoutAccessory.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/October2Release/Regression/Reg__CFA_iPad_Show_basecomms_tariffs_on_T&amp;E_page_for_my_offers_journey.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/OctoberRelease2017/Phase 1/CFA_MBB_Data filters.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/OctoberRelease2017/Phase 1/CFA_PayM_Phone_Data_filters_options_tariff_and_extras_page_Order_placement.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/OctoberRelease2017/Phase 1/CFA_PayM_Tablet_Data_filters_options_tariff_and_extras_page_Order_placement.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/OctoberRelease2017/Phase 1/CFA_SIMO_Phone_Data_filters_options_Order_placement.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/OctoberRelease2017/Phase 1/CFU_Phones_Data_filters_options_tariff_and_extras_page.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/OctoberRelease2017/Phase 1/CFU_Tablets_Data_filters_options_tariff_and_extras_page_Order_placement.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/OctoberRelease2017/Phase 1/Existing_Customer_Tablets_Data_filters_options_tariff_and_extras_page.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/RegressionPack_Master/Reg_AFA_PAYM_Acquistion.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/RegressionPack_Master/Reg_AFA_PayG_withoutAnyAccessory.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/RegressionPack_Master/Reg_AFA_PayMSimO_withoutAnyAccessory.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/RegressionPack_Master/Reg_AFA_Tablet.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/RegressionPack_Master/Reg_AFA_verify_Base_Comms_tariff_under_offer_column_order_placement_O2_offer.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/RegressionPack_Master/Reg_AFU_PAYM_Dongle_payByCard.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/RegressionPack_Master/Reg_AFU_PAYM_Dongle_submitOrder.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/RegressionPack_Master/Reg_AFU_SavedBasket.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/RegressionPack_Master/Reg_AFU_verify_Base_Comms_tariff_under_offer_column_order_placement_O2_offer.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/RegressionPack_Master/Reg_Agent_Buyout.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/RegressionPack_Master/Reg_Agent_DelayedDelivery.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/RegressionPack_Master/Reg_Agent_GenerateCCA.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/RegressionPack_Master/Reg_Agent_PreOrder.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/RegressionPack_Master/Reg_Agent_TradeIn.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/RegressionPack_Master/Reg_CFA_Accessories_Confirmation_Page_changes.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/RegressionPack_Master/Reg_CFA_Basket page cross sell insurance.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/RegressionPack_Master/Reg_CFA_Basket_page_cross_sell_insurance_no_free_insurance.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/RegressionPack_Master/Reg_CFA_Cover_me_copy_update_on_basket_summary.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/RegressionPack_Master/Reg_CFA_MBB_Data filters.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/RegressionPack_Master/Reg_CFA_PayG_SIM_ipad.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/RegressionPack_Master/Reg_CFA_PayM_Phone_Data_filters_options_tariff_and_extras_page_Order_placement.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/RegressionPack_Master/Reg_CFA_PayM_Tablet_Data_filters_options_tariff_and_extras_page_Order_placement.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/RegressionPack_Master/Reg_CFA_Phones_Delayed_delivery_Home_delivery_Confirmation_Page_formatting_box.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/RegressionPack_Master/Reg_CFA_SIMO_Phone_Data_filters_options_Order_placement.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/RegressionPack_Master/Reg_CFA_morethan12Tablet.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/RegressionPack_Master/Reg_CFA_seperate_tariff_ribbons_Tariff_page_Basket_page_html_overlay_for_tariff_ribbons.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/RegressionPack_Master/Reg_CFD2064_ECOM11810_11811_ CFU_ordering choice on upgrade options page_Phone_Option_selected.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/RegressionPack_Master/Reg_CFD2064_ECOM11810_11811_ CFU_ordering choice on upgrade options page_Phone_option_not selected.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/RegressionPack_Master/Reg_CFU_Phones_Data_filters_options_tariff_and_extras_page.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/RegressionPack_Master/Reg_CFU_Recycle_Phones_DD_Confirmation_Page_changes.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/RegressionPack_Master/Reg_CFU_Tablets_Data_filters_options_tariff_and_extras_page_Order_placement.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/RegressionPack_Master/Reg_CFU_seperate_tariff_ribbons_Tariff_page_Basket_page_html_overlay_for_tariff_ribbons.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/RegressionPack_Master/Reg_CS_AccessoriesOnly.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/RegressionPack_Master/Reg_CS_CFA_MBBPayG.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/RegressionPack_Master/Reg_CS_CFU_SavedBasket.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/RegressionPack_Master/Reg_CS_FitnessTrackers.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/RegressionPack_Master/Reg_CS_Free_Sim.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/RegressionPack_Master/Reg_CS_Free_Sim_Tablet.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/RegressionPack_Master/Reg_CS_PayGPhonesHomeDeliveryWithoutAccessory.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/RegressionPack_Master/Reg_CS_PayMPhonesHomeDeliveryWithAccessory.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/RegressionPack_Master/Reg_CS_PayMPhonesHomeDeliveryWithoutAccessory.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/RegressionPack_Master/Reg_CS_PayMSimOnly.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/RegressionPack_Master/Reg_CS_PayMSimOnlyRecommended.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/RegressionPack_Master/Reg_CS_PayMTabletsHomeDeliveryWithAccessory.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/RegressionPack_Master/Reg_CS_Recycle.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/RegressionPack_Master/Reg_CS_SmartWatch.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/RegressionPack_Master/Reg_CVOSDelayedDelivery.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/RegressionPack_Master/Reg_CVOSPreOrder.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/RegressionPack_Master/Reg_Consumer_Buyout.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/RegressionPack_Master/Reg_Consumer_DelayedDelivery.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/RegressionPack_Master/Reg_Consumer_PreOrder.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/RegressionPack_Master/Reg_Consumer_TradeIn.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/RegressionPack_Master/Reg_Current_MBB_URL_no_change_Order_placement.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/RegressionPack_Master/Reg_Existing_Customer_Tablets_Data_filters_options_tariff_and_extras_page.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/RegressionPack_Master/Reg_FNT_AFA_Handset_Click_and_Collect_Passport_and_Driving_license.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/RegressionPack_Master/Reg_FNT_AFA_PayG_Phones_less_than_50_GBP_ClickAndCollect.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/RegressionPack_Master/Reg_FNT_DifferentStoreAddressthanBillingAddres.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/RegressionPack_Master/Reg_FNT_MorethanMaxTransaction_Deny.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/RegressionPack_Master/Reg_FNT_PayMPhonesAdditionalDepositConfirmation.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/RegressionPack_Master/Reg_FNT_PayMPhonesClickAndCollect.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/RegressionPack_Master/Reg_FNT_PayMPhonesOrderStraightDecline_ClickandCollect.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/RegressionPack_Master/Reg_October2Release_ECOM-12004_CFA_PAYM_Phones.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/RegressionPack_Master/Reg_October2Release_ECOM-12004_CFA_PayG_Freesim_Phones_DeliveryPageMarkMandatoryFieldsWithAsterisk.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/RegressionPack_Master/Reg_October2Release_PayG Tablets_ShowMarketingMessageOnTariffAndExtrasPagePackageSummary.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/RegressionPack_Master/Reg_October2Release_Reg_October2Release_CFA_Phones_ColourDropdownsWithColourNamesBesideTheColourMultipleColour.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/RegressionPack_Master/Reg_October2Release_Reg_October2Release_ECOM-11886.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/RegressionPack_Master/Reg_TrustevPayMPhones_ClickandCollectE2EjourneyWithAccessoryInAgentShop.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/RegressionPack_Master/Reg_Trustev_AFA_PAYM_Phones_WithAccessoryClick_and_Collect.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/RegressionPack_Master/Reg_Trustev_AFA_PAYM_Tablet_WithAccessoryClick_and_Collect.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/RegressionPack_Master/Reg_Trustev_PayMPhonesHomeDeliveryWithAccessory.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/RegressionPack_Master/Reg_Trustev_PayMPhonesHomeDeliveryWithoutAccessory.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/RegressionPack_Master/Reg_Trustev_PayMTabletsHomeDeliveryWithAccessory.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/RegressionPack_Master/Reg_VOLTE_PayMPhonesClickAndCollect.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/RegressionPack_Master/Reg_VOLTE_PayMPhonesHomeDeliveryWithAccessory.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/RegressionPack_Master/Reg_VOLTE_PayMPhonesHomeDeliveryWithoutAccessory.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/RegressionPack_Master/Reg__CFA_iPad_Show_basecomms_tariffs_on_T&amp;E_page_for_my_offers_journey.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/SanityChecks/CFU_LoginLogoutValidation.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/SeptemberRelease2017/CFD2054/CFD2054_ECOM11808_CFA QueueIT.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/SeptemberRelease2017/CFD2054/CFD2054_ECOM11808_CFU QueueIT.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/SeptemberRelease2017/CFD2064/CFD2064_ECOM11810_11811_ CFU_ordering choice on upgrade basket page_Simo.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/SeptemberRelease2017/CFD2064/CFD2064_ECOM11810_11811_ CFU_ordering choice on upgrade options page_Phone_Option_selected.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/SeptemberRelease2017/CFD2064/CFD2064_ECOM11810_11811_ CFU_ordering choice on upgrade options page_Phone_option_not selected.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/SeptemberRelease2017/CFD2101/C2101_E11805-11806_CFA_seperate_tariff_ribbons_Tariff_page_Basket_page_html_overlay_for_tariff_ribbons.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/SeptemberRelease2017/CFD2101/C2101_E11805-11806_CFU_phones_seperate_tariff_ribbons__upgrade_options_page_Basket_page_html_overlay_for_tariff_ribbons.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/SeptemberRelease2017/CFD2101/C2101_E11805-11806_CFU_seperate_tariff_ribbons_Tariff_page_Basket_page_html_overlay_for_tariff_ribbons.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/SeptemberRelease2017/FTQ/ECOM-11739/CFA_Accessories_Confirmation_Page_changes.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/SeptemberRelease2017/FTQ/ECOM-11739/CFA_Phones_Delayed_delivery_Home_delivery_Confirmation_Page_formatting_box.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/SeptemberRelease2017/FTQ/ECOM-11739/CFA_Tablets_Delayed_delivery_Click_and_collect_Confirmation_Page_formatting_box.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/SeptemberRelease2017/FTQ/ECOM-11739/CFA_Tablets_Instock_Home_delivery_Confirmation_Page_formatting_box.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/SeptemberRelease2017/FTQ/ECOM-11739/CFU_Recycle_Phones_DD_Confirmation_Page_changes.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/SeptemberRelease2017/FTQ/ECOM-11794/CFA_Cover_me_copy_update_on_basket_summary.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/SeptemberRelease2017/FTQ/ECOM-11794/CFU_Cover_me_copy_update_on_basket_summary.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/TestDataValidation.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Features/dummy.feature" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ScreenshotsForFailures/ScreenshotsForFailures_2017-05-16 17-08-30.jpeg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ScreenshotsForFailures/ScreenshotsForFailures_2017-05-16 21-28-05.jpeg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ScreenshotsForFailures/ScreenshotsForFailures_2017-05-19 16-29-52.jpeg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ScreenshotsForSteps/ScreenshotsForSteps_2017-05-19 16-21-49.jpeg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/eCommAutomationSit.iml" afterPath="$PROJECT_DIR$/eCommAutomationSit.iml" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/GlobalActions/MouseHoverAction.java" afterPath="$PROJECT_DIR$/src/test/java/GlobalActions/MouseHoverAction.java" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/actionsPerformed/AccessoryPageActions.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/actionsPerformed/AdditionalInformationPageActions.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/actionsPerformed/AgentCCAEmailAddress.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/actionsPerformed/Agent_AdvisoryChecksActions.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/actionsPerformed/Agent_ConfirmationPageActions.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/actionsPerformed/Agent_CreditCheckPageActions.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/actionsPerformed/Agent_DealBuilderPageActions.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/actionsPerformed/Agent_DeliveryPageActions.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/actionsPerformed/Agent_HomePagePageActions.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/actionsPerformed/Agent_RegisterCustomerActions.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/actionsPerformed/AgreementPageActions.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/actionsPerformed/BaseCommPageActions.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/actionsPerformed/BasketPageActions.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/actionsPerformed/CVOS_LandingPageActions.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/actionsPerformed/CVOS_StockAllocationActions.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/actionsPerformed/CVOS_StockMerchandiseActions.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/actionsPerformed/CVOS_SupplyChainloggedIn.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/actionsPerformed/CVOS_TradingAdminloggedIn.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/actionsPerformed/CVOSstockpotPageActions.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/actionsPerformed/ConnectedDeviceDetailsPageAction.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/actionsPerformed/DeliveryPageActions.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/actionsPerformed/FitnessTrackerPageActions.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/actionsPerformed/FreeSimDeliveryPageActions.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/actionsPerformed/FreeSimPageActions.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/actionsPerformed/GlobalAction.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/actionsPerformed/LikeNewSimFreeDevicePageActions.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/actionsPerformed/LikefreeHomepageAction.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/actionsPerformed/MobileBroadBandPageActions.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/actionsPerformed/NonConnectedDeviceDetailsPageAction.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/actionsPerformed/O2RefreshDealSummaryActions.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/actionsPerformed/OrderConfirmationPageActions.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/actionsPerformed/OrderSummarySectionActions.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/actionsPerformed/PAYMSimOPageActions.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/actionsPerformed/PAYMandPAYGTariffAndExtrasPageActions.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/actionsPerformed/PaymentPageActions.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/actionsPerformed/PhonesListingPageAction.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/actionsPerformed/ReadData.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/actionsPerformed/ReviewAndConfirmPageActions.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/actionsPerformed/ReviewPageActions.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/actionsPerformed/ShopLandingPageAction.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/actionsPerformed/SimFreeExtrasPageActions.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/actionsPerformed/SimFreeLandingActions.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/actionsPerformed/SimsPageActions.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/actionsPerformed/SmartwatchesPageActions.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/actionsPerformed/TabletPageActions.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/actionsPerformed/UpdateDevicePlanLinkEmailAddressActions.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/actionsPerformed/UpgradeCustomerPageActions.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/actionsPerformed/iPadPageAction.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/actionsPerformed/verificationsActions.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pageobjects/AdditionalInformationPage.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pageobjects/Agent_AdvisoryPage.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pageobjects/Agent_ConfirmationPage.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pageobjects/Agent_CreditCheckDetailsPage.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pageobjects/Agent_DealBuilderPage.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pageobjects/Agent_DeliveryDetailsPage.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pageobjects/Agent_HomePage.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pageobjects/Agent_RegisterCustomerPage.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pageobjects/Agent_UpdateCCAEmailPage.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pageobjects/AgreementPage.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pageobjects/BaseCommPage.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pageobjects/BasketPage.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pageobjects/CVOS_PageObjects.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pageobjects/ConnectedDeviceDetailsPage.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pageobjects/DeliveryPage.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pageobjects/FitnessTrackerPage.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pageobjects/FreeSimPage.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pageobjects/LikeFreePage.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pageobjects/MobileBroadBandPage.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pageobjects/MouseHoverPage.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pageobjects/NonConnectedDeviceDetailsPage.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pageobjects/O2RefreshDealSummaryPage.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pageobjects/OrderConfirmationPage.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pageobjects/OrderSummarySection.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pageobjects/PAYMSimOPage.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pageobjects/PAYMandPAYGTariffAndExtrasPage.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pageobjects/PayG_DevicesPage.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pageobjects/PaymentPage.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pageobjects/PhonesListingPage.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pageobjects/ReviewAndConfirmPage.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pageobjects/ReviewPage.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pageobjects/ShopLandingPage.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pageobjects/SimFreeDevicePage.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pageobjects/SimFreeExtrasPage.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pageobjects/SimFreeLandingPage.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pageobjects/SimsPage.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pageobjects/SmartwatchesPage.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pageobjects/SortingAndFilter.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pageobjects/TabletPage.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pageobjects/UpdateDevicePlanLinkEmailAddress.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pageobjects/UpgradeCustomerPage.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pageobjects/UpgradePhonesListingPage.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pageobjects/UpgradeTabletListingPage.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pageobjects/checkStoreStockForPayG.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pageobjects/iPadPage.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pageobjects/personalDetailsPage.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pageobjects/verificationsPage.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/actionsPerformed/RequestSearch_pageactions.java" afterPath="$PROJECT_DIR$/src/test/java/actionsPerformed/RequestSearch_pageactions.java" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/actionsPerformed/reviewpage_pageactions.java" afterPath="$PROJECT_DIR$/src/test/java/actionsPerformed/reviewpage_pageactions.java" />
       <change beforePath="$PROJECT_DIR$/src/test/java/steps/E2EOrderPlaced_Steps.java" afterPath="$PROJECT_DIR$/src/test/java/steps/E2EOrderPlaced_Steps.java" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/testRunner/RunnerTest.java" afterPath="$PROJECT_DIR$/src/test/java/testRunner/RunnerTest.java" />
       <change beforePath="$PROJECT_DIR$/testResult/cucumber-html-report/report.js" afterPath="$PROJECT_DIR$/testResult/cucumber-html-report/report.js" />
       <change beforePath="$PROJECT_DIR$/testResult/cucumber.json" afterPath="$PROJECT_DIR$/testResult/cucumber.json" />
     </list>
@@ -878,11 +31,63 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="updateNameandCostcentre.feature" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Features/updateNameandCostcentre.feature">
+      <file leaf-file-name="E2EOrderPlaced_Steps.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/test/java/steps/E2EOrderPlaced_Steps.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+            <state relative-caret-position="-2080">
+              <caret line="38" column="0" lean-forward="true" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CaseDetails.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/pageobjects/CaseDetails.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="221">
+              <caret line="15" column="36" lean-forward="false" selection-start-line="15" selection-start-column="36" selection-end-line="15" selection-end-column="36" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CaseDetails_pageaction.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/actionsPerformed/CaseDetails_pageaction.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="323">
+              <caret line="28" column="36" lean-forward="false" selection-start-line="28" selection-start-column="36" selection-end-line="28" selection-end-column="36" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="salesforcelogin_pageactions.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/actionsPerformed/salesforcelogin_pageactions.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="476">
+              <caret line="38" column="0" lean-forward="false" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RequestSearch_pageactions.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/actionsPerformed/RequestSearch_pageactions.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="272">
+              <caret line="23" column="31" lean-forward="false" selection-start-line="23" selection-start-column="31" selection-end-line="23" selection-end-column="31" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="reviewpage_pageactions.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/actionsPerformed/reviewpage_pageactions.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="306">
+              <caret line="26" column="8" lean-forward="false" selection-start-line="26" selection-start-column="8" selection-end-line="26" selection-end-column="40" />
               <folding />
             </state>
           </provider>
@@ -891,76 +96,8 @@
       <file leaf-file-name="Salesforcelogin.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/pageobjects/Salesforcelogin.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="salesforcelogin_pageactions.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/test/java/actionsPerformed/salesforcelogin_pageactions.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="483">
-              <caret line="35" column="0" lean-forward="true" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="RequestSearch_pageactions.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/actionsPerformed/RequestSearch_pageactions.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="17" column="24" lean-forward="false" selection-start-line="17" selection-start-column="24" selection-end-line="17" selection-end-column="24" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="RequestSearch.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/pageobjects/RequestSearch.java">
-          <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="170">
-              <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="E2EOrderPlaced_Steps.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/steps/E2EOrderPlaced_Steps.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="224">
-              <caret line="214" column="79" lean-forward="true" selection-start-line="214" selection-start-column="79" selection-end-line="214" selection-end-column="79" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="updateusername.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/pageobjects/updateusername.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="updateusername_pageactions.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/actionsPerformed/updateusername_pageactions.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="24" column="27" lean-forward="false" selection-start-line="24" selection-start-column="27" selection-end-line="24" selection-end-column="27" />
+              <caret line="13" column="33" lean-forward="false" selection-start-line="13" selection-start-column="33" selection-end-line="13" selection-end-column="33" />
               <folding />
             </state>
           </provider>
@@ -1055,7 +192,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="Sharmi_15-03-2017_V1" />
+        <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
     <option name="SIGN_OFF_COMMIT" value="true" />
@@ -1077,8 +214,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/test/java/actionsPerformed/FitnessTrackerPageActions.java" />
-        <option value="$PROJECT_DIR$/src/test/java/pageobjects/FitnessTrackerPage.java" />
         <option value="$PROJECT_DIR$/Features/FebruaryRelease2018/Regression/Reg_CS_Free_Sim_Tablet.feature" />
         <option value="$PROJECT_DIR$/Features/FebruaryRelease2018/Regression/Reg_Current_MBB_URL_no_change_Order_placement.feature" />
         <option value="$PROJECT_DIR$/Features/FebruaryRelease2018/Regression/Reg_Jan_CFU_MbbSimo30days.feature" />
@@ -1106,7 +241,6 @@
         <option value="$PROJECT_DIR$/src/test/java/GlobalActions/MouseHoverAction.java" />
         <option value="$PROJECT_DIR$/src/test/java/actionsPerformed/ActivateorDeactivateusr_pageactions.java" />
         <option value="$PROJECT_DIR$/src/test/java/actionsPerformed/o2idloginpage_pageactions.java" />
-        <option value="$PROJECT_DIR$/src/test/java/actionsPerformed/reviewpage_pageactions.java" />
         <option value="$PROJECT_DIR$/src/test/java/actionsPerformed/Newuser_pageactions.java" />
         <option value="$PROJECT_DIR$/src/test/java/actionsPerformed/Existinguserlnk_pageactions.java" />
         <option value="$PROJECT_DIR$/src/test/java/actionsPerformed/SeeDetails_pageactions.java" />
@@ -1122,12 +256,15 @@
         <option value="$PROJECT_DIR$/src/test/java/testRunner/RunnerTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/pageobjects/RequestSearch.java" />
         <option value="$PROJECT_DIR$/src/test/java/actionsPerformed/RequestSearch.java" />
-        <option value="$PROJECT_DIR$/src/test/java/actionsPerformed/RequestSearch_pageactions.java" />
         <option value="$PROJECT_DIR$/src/test/java/actionsPerformed/updateusername_pageactions.java" />
         <option value="$PROJECT_DIR$/Features/updateNameandCostcentre.feature" />
+        <option value="$PROJECT_DIR$/src/test/java/pageobjects/CaseDetails.java" />
         <option value="$PROJECT_DIR$/src/test/java/steps/E2EOrderPlaced_Steps.java" />
-        <option value="$PROJECT_DIR$/src/test/java/actionsPerformed/salesforcelogin_pageactions.java" />
         <option value="$PROJECT_DIR$/src/test/java/pageobjects/Salesforcelogin.java" />
+        <option value="$PROJECT_DIR$/src/test/java/actionsPerformed/RequestSearch_pageactions.java" />
+        <option value="$PROJECT_DIR$/src/test/java/actionsPerformed/reviewpage_pageactions.java" />
+        <option value="$PROJECT_DIR$/src/test/java/actionsPerformed/CaseDetails_pageaction.java" />
+        <option value="$PROJECT_DIR$/src/test/java/actionsPerformed/salesforcelogin_pageactions.java" />
       </list>
     </option>
   </component>
@@ -1173,10 +310,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="AndroidView" />
       <pane id="Scratches" />
       <pane id="Scope" />
+      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -1235,6 +371,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -1994,39 +1131,46 @@
       <option name="project" value="LOCAL" />
       <updated>1521221506567</updated>
     </task>
-    <option name="localTasksCounter" value="44" />
+    <task id="LOCAL-00044" summary="Merge branch 'master' of https://bitbucket.org/ecommautomationteam/regression into Sharmi_19-02-2018&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;Features/FebruaryRelease2018/Regression/Reg_Jan_ConsumerToAcceptTenDigitsPhoneNumber.feature&#10;#&#9;src/test/java/actionsPerformed/Agent_DealBuilderPageActions.java&#10;#&#9;src/test/java/actionsPerformed/DeliveryPageActions.java&#10;#&#9;src/test/java/actionsPerformed/PAYMandPAYGTariffAndExtrasPageActions.java&#10;#&#9;src/test/java/actionsPerformed/UpgradeCustomerPageActions.java&#10;#&#9;src/test/java/steps/E2EOrderPlaced_Steps.java">
+      <created>1523528038711</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1523528038711</updated>
+    </task>
+    <option name="localTasksCounter" value="45" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="My_Account - 2018.04.12 at 09h 53m 13s.xml">
+    <history-entry file="My_Account - 2018.04.12 at 12h 51m 53s.xml">
       <configuration name="My Account" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="My_Account - 2018.04.12 at 09h 58m 44s.xml">
+    <history-entry file="My_Account - 2018.04.12 at 12h 58m 42s.xml">
       <configuration name="My Account" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="My_Account - 2018.04.12 at 10h 30m 47s.xml">
+    <history-entry file="My_Account - 2018.04.12 at 13h 03m 07s.xml">
       <configuration name="My Account" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="My_Account - 2018.04.12 at 10h 30m 48s.xml">
+    <history-entry file="My_Account - 2018.04.12 at 13h 11m 09s.xml">
       <configuration name="My Account" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="My_Account - 2018.04.12 at 10h 34m 20s.xml">
+    <history-entry file="My_Account - 2018.04.12 at 13h 35m 41s.xml">
       <configuration name="My Account" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="My_Account - 2018.04.12 at 10h 38m 43s.xml">
+    <history-entry file="My_Account - 2018.04.12 at 14h 32m 06s.xml">
       <configuration name="My Account" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="My_Account - 2018.04.12 at 10h 46m 50s.xml">
+    <history-entry file="My_Account - 2018.04.12 at 14h 33m 19s.xml">
       <configuration name="My Account" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="RunnerTest - 2018.03.22 at 12h 54m 13s.xml">
-      <configuration name="RunnerTest" configurationId="TestNG" />
+    <history-entry file="My_Account - 2018.04.12 at 14h 36m 40s.xml">
+      <configuration name="My Account" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="RunnerTest - 2018.03.22 at 16h 08m 05s.xml">
-      <configuration name="RunnerTest" configurationId="TestNG" />
+    <history-entry file="My_Account - 2018.04.12 at 14h 39m 41s.xml">
+      <configuration name="My Account" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="RunnerTest - 2018.04.04 at 16h 11m 46s.xml">
-      <configuration name="RunnerTest" configurationId="TestNG" />
+    <history-entry file="My_Account - 2018.04.12 at 14h 43m 33s.xml">
+      <configuration name="My Account" configurationId="TestNG" />
     </history-entry>
   </component>
   <component name="TodoView" selected-index="3">
@@ -2047,9 +1191,9 @@
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.0" sideWeight="0.13250366" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1855346" sideWeight="0.14275256" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.0" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.0" sideWeight="0.8674963" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1855346" sideWeight="0.8572474" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32843137" sideWeight="0.70423603" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3137255" sideWeight="0.7609682" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -2198,8 +1342,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Features/FebruaryRelease2018/Regression/Feb_CFA_Phones_CnC_Delivery_page_Payment_page_more_than_one_address_select_one_compress_others.feature" />
-    <entry file="file://$PROJECT_DIR$/Features/FebruaryRelease2018/Regression/Reg_Agent_DelayedDelivery.feature" />
     <entry file="file://$PROJECT_DIR$/Features/FebruaryRelease2018/Regression/Reg_FNT_AFA_PayG_Phones_less_than_50_GBP_ClickAndCollect.feature" />
     <entry file="file://$PROJECT_DIR$/src/test/java/pageobjects/ActivateorDeactivateusr.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -2342,13 +1484,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/actionsPerformed/reviewpage_pageactions.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="25" column="22" lean-forward="false" selection-start-line="25" selection-start-column="22" selection-end-line="25" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/actionsPerformed/o2idloginpage_pageactions.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
@@ -2437,7 +1572,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="6" column="53" lean-forward="false" selection-start-line="6" selection-start-column="53" selection-end-line="6" selection-end-column="53" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2453,7 +1587,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="16" lean-forward="false" selection-start-line="0" selection-start-column="16" selection-end-line="0" selection-end-column="16" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2473,27 +1606,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/pageobjects/RequestSearch.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/actionsPerformed/RequestSearch.java" />
-    <entry file="file://$PROJECT_DIR$/src/test/java/actionsPerformed/RequestSearch_pageactions.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="24" lean-forward="false" selection-start-line="17" selection-start-column="24" selection-end-line="17" selection-end-column="24" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/pageobjects/updateusername.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
@@ -2512,34 +1625,73 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Features/updateNameandCostcentre.feature">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="204">
+          <caret line="12" column="4" lean-forward="true" selection-start-line="12" selection-start-column="4" selection-end-line="12" selection-end-column="24" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/steps/E2EOrderPlaced_Steps.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/pageobjects/RequestSearch.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
-          <caret line="214" column="79" lean-forward="true" selection-start-line="214" selection-start-column="79" selection-end-line="214" selection-end-column="79" />
+        <state relative-caret-position="136">
+          <caret line="8" column="4" lean-forward="true" selection-start-line="8" selection-start-column="4" selection-end-line="10" selection-end-column="39" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/pageobjects/CaseDetails.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="15" column="36" lean-forward="false" selection-start-line="15" selection-start-column="36" selection-end-line="15" selection-end-column="36" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/pageobjects/Salesforcelogin.java">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="13" column="33" lean-forward="false" selection-start-line="13" selection-start-column="33" selection-end-line="13" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/actionsPerformed/RequestSearch_pageactions.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="23" column="31" lean-forward="false" selection-start-line="23" selection-start-column="31" selection-end-line="23" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/actionsPerformed/reviewpage_pageactions.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="26" column="8" lean-forward="false" selection-start-line="26" selection-start-column="8" selection-end-line="26" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/actionsPerformed/CaseDetails_pageaction.java">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
-          <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <caret line="28" column="36" lean-forward="false" selection-start-line="28" selection-start-column="36" selection-end-line="28" selection-end-column="36" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/actionsPerformed/salesforcelogin_pageactions.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="483">
-          <caret line="35" column="0" lean-forward="true" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
+        <state relative-caret-position="476">
+          <caret line="38" column="0" lean-forward="false" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/steps/E2EOrderPlaced_Steps.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2080">
+          <caret line="38" column="0" lean-forward="true" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

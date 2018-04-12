@@ -213,5 +213,11 @@ public class E2EOrderPlaced_Steps {
         PageFactory.initElements(driver,salesforcelogin_pageactions.class);
         salesforcelogin_pageactions.login_credentials(username,password,reqno);
     }
+
+    @And("^user closes the case$")
+    public void user_closes_the_case() throws Throwable {
+        PageFactory.initElements(driver,CaseDetails_pageaction.class);
+       CaseDetails_pageaction.CaseDetails();
+    }
 }
 

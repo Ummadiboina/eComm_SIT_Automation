@@ -12,7 +12,7 @@ import static helpers.Environment.driver;
 public class RequestSearch_pageactions {
 
 
-        final static Logger log = Logger.getLogger("Activate or deactivate pageactions");
+        final static Logger log = Logger.getLogger("Request Number");
         static JavascriptExecutor js = (JavascriptExecutor) driver;
 
         public static String RequestSearch() throws InterruptedException
@@ -22,6 +22,7 @@ public class RequestSearch_pageactions {
             String reqno = RequestSearch.RequestNo.getText();
             driver.get("https://test.salesforce.com/");
             Thread.sleep(5000);
+            log.debug(reqno);
             return reqno;
 
 

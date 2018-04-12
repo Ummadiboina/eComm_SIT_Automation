@@ -23,7 +23,7 @@ public class reviewpage_pageactions {
     {
         PageFactory.initElements(driver, reviewpage1.class);
         reviewpage1.submitbtn.click();
-        Thread.sleep(2000);
+        Thread.sleep(5000);
         Screenshots.captureScreenshot();
         log.debug("Reviewed the basket");
 
