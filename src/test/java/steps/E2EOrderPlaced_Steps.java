@@ -1370,6 +1370,7 @@ public class E2EOrderPlaced_Steps {
         }
     }
 
+// by JamalKhan
 
     @Given("^Validate Credit check status for ReferralwithSimo$")
     public void validate_Creditcheck_status_for_ReferralwithSimo() {
@@ -9309,19 +9310,37 @@ public class E2EOrderPlaced_Steps {
     }
 
 
-//GDPR preferences section
+//GDPR preferences section for CFA --- JamalKhan
 
-    @Then("^Choose Your Business preferences ([^\"]*) ([^\"]*) ([^\"]*) ([^\"]*) and Channel Preferences ([^\"]*) ([^\"]*) ([^\"]*) ([^\"]*)$")
-    public void Choose_Your_Preferences(String BP1, String BP2, String BP3, String BP4, String Chn1, String Chn2, String Chn3, String Chn4) {
+    @Then("^Choose ([^\"]*) Business preferences ([^\"]*) ([^\"]*) ([^\"]*) ([^\"]*) and Channel Preferences ([^\"]*) ([^\"]*) ([^\"]*) ([^\"]*)$")
+    public void Choose_Your_Preferences(String customer, String BP1, String BP2, String BP3, String BP4, String Chn1, String Chn2, String Chn3, String Chn4) {
         // Write code here that turns the phrase above into concrete actions
         try {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, OrderConfirmationPage.class);
-            OrderConfirmationPageActions.PreferencesSection(BP1, BP2, BP3, BP4, Chn1, Chn2, Chn3, Chn4);
+            OrderConfirmationPageActions.PreferencesSection(customer, BP1, BP2, BP3, BP4, Chn1, Chn2, Chn3, Chn4);
         } catch (Exception e) {
             // TODO Auto-generated catch block
-            log.debug("Unable to Choose your preferences");
-            Assert.fail("Unable to Choose your preferences");
+            log.debug("Unable to Choose your preferences, please see the failure screenshot");
+            Assert.fail("Unable to Choose your preferences, please see the failure screenshot");
+
+        }
+    }
+
+    //GDPR preferences section for AFA  --- JamalKhan
+    @Then("^Choose Business preferences ([^\"]*) ([^\"]*) ([^\"]*) ([^\"]*) and Channel Preferences ([^\"]*) ([^\"]*) ([^\"]*) ([^\"]*) for ([^\"]*)$")
+    public void Choose_Your_Preferences_AFA(String BP1, String BP2, String BP3, String BP4, String Chn1, String Chn2, String Chn3, String Chn4, String customer) {
+        // Write code here that turns the phrase above into concrete actions
+        try {
+            driver.manage().timeouts().implicitlyWait(200, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, Agent_RegisterCustomerPage.class);
+            Agent_RegisterCustomerActions.PreferencesSection_AFA(BP1, BP2, BP3, BP4, Chn1, Chn2, Chn3, Chn4, customer);
+            log.debug("Completed preference actions");
+
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            log.debug("Unable to Choose your preferences, please see the failure screenshot");
+            Assert.fail("Unable to Choose your preferences, please see the failure screenshot");
 
         }
     }

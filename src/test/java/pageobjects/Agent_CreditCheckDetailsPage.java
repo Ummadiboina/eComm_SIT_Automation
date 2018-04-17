@@ -123,5 +123,12 @@ public class Agent_CreditCheckDetailsPage {
     @FindBy(how = How.XPATH, using = "//*[@id='creditCheckAndAgreementAndStatus']/input[3]")
     public static WebElement PerformCreditCheck;
 
+    @FindBy(how = How.XPATH, using = "//h2[@id='creditCheckHeader']/span")
+    public static WebElement CreditCheckReferStatus;
+
+    @FindBy(how = How.XPATH, using = "//span[@id='creditCheckStatus']")
+    public static WebElement CreditCheckAbandoneStatus;
+
+
 
 }

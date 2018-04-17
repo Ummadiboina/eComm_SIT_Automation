@@ -38,14 +38,51 @@ public class OrderConfirmationPage {
 	@FindBy(how = How.XPATH, using = "//div[@data-label='check1']/input")
 	public static WebElement O2Products;
 
+	@FindBy(how = How.XPATH, using = "//div[@data-label='check1']//p/span")
+	public static WebElement O2Products_Text;
+
+	@FindBy(how = How.XPATH, using = "//div[@data-label='Hotspot - O2 products']")
+	public static WebElement O2Products_Link;
+
+	@FindBy(how = How.XPATH, using = "//div[@data-label='Close button - O2 products']")
+	public static WebElement O2ProductsClose_CloseButton;
+
+
 	@FindBy(how = How.XPATH, using = "//div[@data-label='check2']/input")
 	public static WebElement O2PerksAndExtras;
+
+	@FindBy(how = How.XPATH, using = "//div[@data-label='check2']//p/span")
+	public static WebElement O2PerksAndExtras_Text;
+
+	@FindBy(how = How.XPATH, using = "//div[@data-label='Hotspot - O2 perks and extras']")
+	public static WebElement O2PerksAndExtras_Link;
+
+	@FindBy(how = How.XPATH, using = "//div[@data-label='Close button - O2 perks and extras']")
+	public static WebElement O2PerksAndExtras_CloseButton;
 
 	@FindBy(how = How.XPATH, using = "//div[@data-label='check3']/input")
 	public static WebElement OffersFromO2Partner;
 
+	@FindBy(how = How.XPATH, using = "//div[@data-label='check3']//p/span")
+	public static WebElement OffersFromO2Partner_Text;
+
+	@FindBy(how = How.XPATH, using = "//div[@data-label='Hotspot - offers from o2 partners brands']")
+	public static WebElement OffersFromO2Partner_Link;
+
+	@FindBy(how = How.XPATH, using = "//div[@data-label='Close button - offers from partners and brands']")
+	public static WebElement OffersFromO2Partner_CloseButton;
+
 	@FindBy(how = How.XPATH, using = "//div[@data-label='check4']/input")
 	public static WebElement PartnersContacting;
+
+	@FindBy(how = How.XPATH, using = "//div[@data-label='check4']//p/span")
+	public static WebElement PartnersContacting_Text;
+
+	@FindBy(how = How.XPATH, using = "//div[@data-label='Hotspot - partners contacting me directly']")
+	public static WebElement PartnersContacting_Link;
+
+	@FindBy(how = How.XPATH, using = "//div[@data-label='Close button - partners contacting me directly']")
+	public static WebElement PartnersContacting_CloseButton;
 
 	@FindBy(how = How.XPATH, using = "//div[@data-label='checkcontact1']/input")
 	public static WebElement Contact_Text;
@@ -64,6 +101,18 @@ public class OrderConfirmationPage {
 
 	@FindBy(how = How.XPATH, using = "//img[@id='u1306_img']")
 	public static WebElement SavedPreferenceMessage;
+
+	@FindBy(how = How.XPATH, using = "//span[normalize-space()='O2Products_OverlayText']")
+	public static WebElement O2Products_OverlayText;
+
+	@FindBy(how = How.XPATH, using = "//span[normalize-space()='O2PerksAndExtras_OverlayText']")
+	public static WebElement O2PerksAndExtras_OverlayText;
+
+	@FindBy(how = How.XPATH, using = "//span[normalize-space()='OffersFromO2Partner_OverlayText']")
+	public static WebElement OffersFromO2Partner_OverlayText;
+
+	@FindBy(how = How.XPATH, using = "//span[normalize-space()='PartnersContacting_OverlayText']")
+	public static WebElement PartnersContacting_OverlayText;
 
 
 }

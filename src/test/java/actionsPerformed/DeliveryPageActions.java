@@ -155,7 +155,7 @@ public class DeliveryPageActions extends Environment {
         }
     }
 
-    //code for GDPR
+    //code for GDPR--Venkata
     public static void clickOnSubmitBtn(String customer) throws InterruptedException {
         Thread.sleep(3000);
         log.debug("in click Submit button  function");
