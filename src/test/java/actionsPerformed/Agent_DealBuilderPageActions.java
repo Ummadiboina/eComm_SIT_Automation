@@ -794,7 +794,7 @@ public class Agent_DealBuilderPageActions extends Environment {
         for (int i = 0, j = 1; i < elementsList.size() - 1; i++, j++) {
             // elementsList.get(i).click();
             WebElement addedDeviveName = driver.findElement(By.xpath("(//a[@class='basketHeading'])[" + j + "]"));
-            if(addedDeviveName.getText().contains("mpty")) {
+            if(addedDeviveName.getText().contains("empty")) {
                 System.out.println("the device is added as empty");
             }else{
                 lstOfDeviceAdded_DB.add(addedDeviveName.getText());
@@ -890,6 +890,7 @@ public class Agent_DealBuilderPageActions extends Environment {
             }
 
             Thread.sleep(5000);
+
             List<WebElement> listOfDevicesAddedToBilder = driver.findElements(By.xpath("//div[@class='emailBasketWidget']//table[1]//tr"));
             int sizeOfAddedDevice = listOfDevicesAddedToBilder.size();
             int selectedDeviceList = lstOfDeviceAdded_DB.size();
