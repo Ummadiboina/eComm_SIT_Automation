@@ -987,6 +987,29 @@ public class E2EOrderPlaced_Steps {
         }
     }
 
+
+
+    @And("^input ([^\"]*) and ([^\"]*) and other valid details in Delivery page for Click and collect and Click on the 'Continue button' in GDPR$")
+    public void DeliveryPage_Inputs_ClickandCollect_gdpr(String Firstname, String Surname) {
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, DeliveryPage.class);
+            //CommonFunctionscheckTitle("Delivery Page");
+            DeliveryPageActions.SetDelivery();
+            DeliveryPageActions.AboutYou(Firstname, Surname);
+           // DeliveryPageActions.ClickContinue();
+            //  DeliveryPageActions.clickOnSubmitBtn();
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            log.debug("Unable to input details in delivery page");
+            Assert.fail("Unable to input details in delivery page");
+
+        }
+    }
+
+
+
+
     @And("^Enter details in Delivery page for Click and collect and Click on the 'Continue button'$")
     public void DeliveryPage_enter_Inputs_ClickandCollect(String Firstname, String Surname) {
         try {
