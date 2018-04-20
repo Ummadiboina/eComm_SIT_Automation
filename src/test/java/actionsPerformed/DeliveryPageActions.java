@@ -158,15 +158,25 @@ public class DeliveryPageActions extends Environment {
     //code for GDPR--Venkata
     public static void clickOnSubmitBtn(String customer) throws InterruptedException {
         Thread.sleep(3000);
+
+
         log.debug("in click Submit button  function");
         //code to new validate on GDPR
         int count1 = driver.findElements(By.xpath("//*[@id='checkbox-terms-agreement-required']")).size();
-        int checkBox = driver.findElements(By.xpath("//*[@id='checkbox-terms-agreement-required']")).size();
+        //int checkBox = driver.findElements(By.xpath("//*[@id='checkbox-terms-agreement-required']")).size();
+
         if (count1 <= 0) {
             System.out.println("checkbox is not displayed ie :: , I’d like to hear about everything I get, just for being on O2. Things like exclusive offers, tickets and upgrade deals.\n");
+            log.debug("checkbox is not displayed ie :: , I’d like to hear about everything I get, just for being on O2. Things like exclusive offers, tickets and upgrade deals.\n");
+        }else{
+            System.out.println("checkbox is displayed ie :: , I’d like to hear about everything I get, just for being on O2. Things like exclusive offers, tickets and upgrade deals.\n");
+            log.debug("checkbox is displayed ie :: , I’d like to hear about everything I get, just for being on O2. Things like exclusive offers, tickets and upgrade deals.\n");
+            Assert.fail("checkbox is displayed ie :: , I’d like to hear about everything I get, just for being on O2. Things like exclusive offers, tickets and upgrade deals.\n");
         }
-        log.debug("checkbox is not displayed ie :: , I’d like to hear about everything I get, just for being on O2. Things like exclusive offers, tickets and upgrade deals.\n");
         Thread.sleep(3000);
+
+        if(driver.findElements(By.xpath("//*[normalize-space(.)='Me']/preceding-sibling::input")).size()>0)
+        {
         String thisOrderHeader = DeliveryPage.thisOrderTxt.getText();
         if (thisOrderHeader.contains("this order for you or someone else")) {
             System.out.println("New Check box of 'Is this order for you or someone else?' is Displayed");
@@ -189,33 +199,37 @@ public class DeliveryPageActions extends Environment {
             log.debug("Failed to validate New Check box of 'Is this order for you or someone else?' is Displayed");
         }
 
-        if(customer.contains("Me")) {
-            boolean defaultSelect = DeliveryPage.Me_radioBtn.isSelected();
-            if (defaultSelect) {
-                System.out.println("Me is selected by Default");
-                log.debug("Me is selected by Default");
-            } else {
-                DeliveryPage.Me_radioBtn.click();
-                System.out.println("Me radio button is not selected by Default");
-                log.debug("Me radio button is not selected by Default");
-            }
-        }
+            if(customer.contains("Me")) {
+                boolean defaultSelect = DeliveryPage.Me_radioBtn.isSelected();
+                if (defaultSelect) {
+                    System.out.println("Me is selected by Default");
+                    log.debug("Me is selected by Default");
+                } else {
 
-        if(customer.contains("Someone")) {
-            boolean defaultSelect = DeliveryPage.someoneElse_radioBtn.isSelected();
-            if (!defaultSelect) {
+                    System.out.println("Me radio button is not selected by Default");
+                    log.debug("Me radio button is not selected by Default");
+                    Assert.fail("Me radio button is not selected by Default");
+                }
+            }
+
+            if(customer.contains("Someone")) {
+                boolean defaultSelect = DeliveryPage.someoneElse_radioBtn.isSelected();
+                if (!defaultSelect) {
                 DeliveryPage.someoneElse_radioBtn.click();
                 Thread.sleep(2000);
-                System.out.println("order for this customer : Me is selected by Default, as Requirement we have clicked Someone else");
-                log.debug("order for this customer : Me is selected by Default, as Requirement we have clicked Someone else");
-            } else {
-                DeliveryPage.Me_radioBtn.click();
-                System.out.println("Failed to select a order for some one else");
-                log.debug("Failed to select a order for some one else");
+                System.out.println("order for this customer : Me was selected by Default, as Requirement we have clicked Someone else");
+                log.debug("order for this customer : Me was selected by Default, as Requirement we have clicked Someone else");
+                } else {
+                    System.out.println("Someone else radio button is selected by Default");
+                    log.debug("Someone else radio button is selected by Default");
+                }
             }
-        }
 
-        DeliveryPage.submitBtn.click();
+        }else{
+            System.out.println("GDPR is Disabled");
+            log.debug("GDPR is Disabled");
+        }
+        DeliveryPage.continueBtn.click();
     }
 
 

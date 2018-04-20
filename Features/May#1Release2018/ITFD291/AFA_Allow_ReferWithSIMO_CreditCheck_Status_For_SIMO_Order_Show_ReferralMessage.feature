@@ -10,7 +10,7 @@ Feature: AFA_Allow_ReferWithSIMO_Credit_Check_Status_For_SIMO_Order_And_Show_Ref
     Then perform all the advisory checks
     And perform the credit checks using valid <Firstname>, <Surname>, <HouseNumber>, <PostCode> and valid <Username>
     And Validate Credit check status for ReferralwithSimo
-    #And Register the customer with valid <Firstname>, <Surname>, <HouseNumber>, <PostCode> and other valid details in delivery page
+    And Register the customer with valid <Firstname>, <Surname>, <HouseNumber>, <PostCode> and other valid details in delivery page
     And Choose Business preferences <B1> <B2> <B3> <B4> and Channel Preferences <C1> <C2> <C3> <C4> for <Consumer>
     And Choose <DeliveryType> delivery address and delivery time
     When submit order button is clicked
