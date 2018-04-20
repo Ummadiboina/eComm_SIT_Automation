@@ -181,7 +181,7 @@ public class DeliveryPage {
     public static WebElement someoneElse_radioBtn;
 
     @FindBy(how = How.XPATH, using = "//*[normalize-space(.)='Submit']")
-    public static WebElement submitBtn;
+    public static WebElement continueBtn;
 
 
 }
