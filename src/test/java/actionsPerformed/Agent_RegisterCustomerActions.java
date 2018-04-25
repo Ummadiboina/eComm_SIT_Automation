@@ -376,7 +376,7 @@ public class Agent_RegisterCustomerActions extends Environment {
 		try {
 			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 
-			if(!customer.contains("Disabled") && driver.findElements(By.xpath("//*[normalize-space(.)='Me']/preceding-sibling::input")).size()>0) {
+			if(driver.findElements(By.xpath("//*[normalize-space(.)='Me']/preceding-sibling::input")).size()>0) {
 				System.out.println("GDPR is not disabled");
 				log.debug("GDPR is not disabled");
 
