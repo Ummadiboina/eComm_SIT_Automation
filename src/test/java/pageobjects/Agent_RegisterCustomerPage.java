@@ -290,7 +290,7 @@ public class Agent_RegisterCustomerPage {
     @FindBy(how = How.XPATH, using = "//img[@id='u1306_img']")
     public static WebElement SavedPreferenceMessage;
 
-    @FindBy(how = How.XPATH, using = "//*[contains(text(),'this order for you or someone else')]")
+    @FindBy(how = How.XPATH, using = "//div[@class='gdprLabel']")
     public static WebElement thisOrderTxt;
 
     @FindBy(how = How.XPATH, using = "//*[contains(text(),'this order for you or someone else')]/following-sibling::*")
@@ -302,13 +302,13 @@ public class Agent_RegisterCustomerPage {
     @FindBy(how = How.XPATH, using = "//*[normalize-space(@class)='close']")
     public static WebElement closeOveryPopup;
 
-    @FindBy(how = How.XPATH, using = "//*[normalize-space(.)='Me']/preceding-sibling::input")
+    @FindBy(how = How.XPATH, using = "//input[@id='endUserConsentConfirmedYes']")
     public static WebElement Me_radioBtn;
 
-    @FindBy(how = How.XPATH, using = "//*[normalize-space(.)='Someone else']/preceding-sibling::input")
+    @FindBy(how = How.XPATH, using = "//input[@id='endUserConsentConfirmedNo']")
     public static WebElement someoneElse_radioBtn;
 
-    @FindBy(how = How.XPATH, using = "//*[normalize-space(.)='SkipAndContinue']")
+    @FindBy(how = How.XPATH, using = "//a[@id='skipAndContinue']")
     public static WebElement SkipAndContinue;
 
     @FindBy(how = How.XPATH, using = "//*[normalize-space(.)='O2Products_OverlayText']")

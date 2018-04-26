@@ -24,14 +24,14 @@ Feature: AFA_Multiple_Basket_CnC_Email_basket_Get_Basket_Link
     Then perform all the advisory checks
     And perform the credit checks using valid <Firstname>, <Surname>, <HouseNumber>, <PostCode> and valid <Username>
     And Register the customer with valid <Firstname>, <Surname>, <HouseNumber>, <PostCode> and other valid details in delivery page
-    And Choose Business preferences <B1> <B2> <B3> <B4> and Channel Preferences <C1> <C2> <C3> <C4> for <Consumer>
+    And Choose Business preferences <B1> <B2> <B3> <B4> and Channel Preferences <Text> <Email> <Phone> <Post> for <Consumer> when GDPR <status>
     And Choose <DeliveryType> delivery address and delivery time
     When Pay by card for PAYM device
     Then Order confirmation message should be displayed
 
     Examples:
-      | Device1                | Tariffs1 | Device2             | Tariffs2 | Device3                 | Tariffs3 | Device4       | Firstname | Surname | Username     | HouseNumber | PostCode | DeliveryType | B1  | B2  | B3  | B4  | C1| C2 | C3  | C4 |Consumer    |
-      | Samsung Galaxy S9 Plus | Refresh  | Apple iPhone 7 Plus | Refresh  | iPhone 8 Plus 64GB Gold | Standard | Fitbit Flex 2 | TEST      | ACCEPTA | TEST ACCEPTA | 11          | SL11UP   | HomeDelivery | Not | Not | Not | Not |Not|Not | Not | Not|SomeOne else|
+      | Device1                | Tariffs1 | Device2             | Tariffs2 | Device3                 | Tariffs3 | Device4       | Firstname | Surname | Username     | HouseNumber | PostCode | DeliveryType | B1  | B2  | B3  | B4  | Text | Email    | Phone     | Post |Consumer    |status|
+      | Samsung Galaxy S9 Plus | Refresh  | Apple iPhone 7 Plus | Refresh  | iPhone 8 Plus 64GB Gold | Standard | Fitbit Flex 2 | TEST      | ACCEPTA | TEST ACCEPTA | 11          | SL11UP   | HomeDelivery | Not | Not | Not | Not |Not|Not | Not | Not|SomeOne else|Enabled|
 
 
 
