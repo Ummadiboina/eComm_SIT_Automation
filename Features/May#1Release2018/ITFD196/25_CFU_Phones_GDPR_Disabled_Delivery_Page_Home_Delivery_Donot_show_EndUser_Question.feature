@@ -2,6 +2,7 @@ Feature: 25_CFU_Phones_GDPR_Disabled_Delivery_Page_Home_Delivery_Donot_show_EndU
 
   @Web
   Scenario Outline: 25_CFU_Phones_GDPR_Disabled_Delivery_Page_Home_Delivery_Donot_show_EndUser_Question
+    Given I am existing user and I click on Signin button
     And Signin using valid <username> and <password> credentials
     #And Navigate to upgrade phone
     And choose to upgrade any Phone in My upgrade page
@@ -22,14 +23,14 @@ Feature: 25_CFU_Phones_GDPR_Disabled_Delivery_Page_Home_Delivery_Donot_show_EndU
     And Verify that the option selected by the user in 'Your sim card' section in upgrade options page is retained
     And click on "go to checkout" button
     And perform <Action> in OTAC page
-    And Is this order for You or Someone else <consumer>
+    And Is this order for You or Someone else <consumer> when GDPR is <status>
     #And Click on the 'Continue button' in delivery page
     And land on the payment page and input <Username> and other details and click 'Continue on next step' in upgrade journey
     And Continue to Agreements page and confirm all the agreement checks
     And Continue to Review page and review the order
     Then order confirmation is displayed
-    Then Choose <consumer> Business preferences <B1> <B2> <B3> <B4> and Channel Preferences <C1> <C2> <C3> <C4>
+    Then Choose <consumer> <status> Business preferences <B1> <B2> <B3> <B4> And Channel Preferences <Text> <Email> <Phone> <Post>
 
     Examples:
-      | username         | password | handset           | Username     | Action |tariff|consumer | B1  | B2  | B3  | B4  | C1| C2 | C3  | C4 |
-      | ash@o2.com       | test123  | Samsung Galaxy S8 | TEST ACCEPTA | skip   |      |Disabled | Not | Not | Not | Not |Not|Not | Not | Not|
+      | username         | password | handset           | Username     | Action |tariff|consumer | B1  | B2  | B3  | B4  | Text| Email | Phone  | Post |status|
+      | ash@o2.com       | test123  | Samsung Galaxy S8 | TEST ACCEPTA | skip   |      |Disabled | Not | Not | Not | Not |Not|Not | Not | Not|Disabled|

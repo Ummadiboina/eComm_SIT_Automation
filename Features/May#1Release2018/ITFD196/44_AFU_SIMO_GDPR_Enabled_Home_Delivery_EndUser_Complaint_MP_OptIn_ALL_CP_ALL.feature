@@ -15,7 +15,7 @@ Feature: 44_AFU_SIMO_GDPR_Enabled_Home_Delivery_EndUser_Complaint_MP_OptIn_ALL_C
     And for more than 1 promotions returned
     And the promotion returned is displayed in a single line
     Then perform all the advisory checks
-    And Choose Business preferences <B1> <B2> <B3> <B4> and Channel Preferences <C1> <C2> <C3> <C4> for <Consumer>
+    And Choose Business preferences <B1> <B2> <B3> <B4> and Channel Preferences <Text> <Email> <Phone> <Post> for <Consumer> when GDPR <status>
     And perform the credit checks using valid <Firstname>, <Surname>, <HouseNumber>, <PostCode> and valid <Username>
     And Register the customer with valid <Firstname>, <Surname>, <HouseNumber>, <PostCode> and other valid details in delivery page
     And Choose <DeliveryType> delivery address and delivery time
@@ -24,5 +24,5 @@ Feature: 44_AFU_SIMO_GDPR_Enabled_Home_Delivery_EndUser_Complaint_MP_OptIn_ALL_C
 
 
     Examples:
-      | user        | Tariff | DeliveryType | Firstname | Surname | Username     | HouseNumber | PostCode | consumer | B1     | B2  | B3     | B4     | C1     | C2     | C3  | C4  |
-      | 07521118904 | SIMO   | HomeDelivery | TEST      | ACCEPTA | TEST ACCEPTA | 6           | SL11ER   | Me       | Select | Not | Select | Select | Select | Select | Not | Not |
+      | user        | Tariff | DeliveryType | Firstname | Surname | Username     | HouseNumber | PostCode | consumer | B1     | B2  | B3     | B4     | Text | Email    | Phone     | Post |status|
+      | 07521118904 | SIMO   | HomeDelivery | TEST      | ACCEPTA | TEST ACCEPTA | 6           | SL11ER   | Me       | Select | Not | Select | Select | Select | Select | Not | Not |Enabled|

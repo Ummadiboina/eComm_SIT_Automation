@@ -11,8 +11,9 @@ Feature: 28_AFA_NewConnection_PAYM_Tablets_Refresh_GDPR_Enabled_EndUser_MP_OptOu
     And Validate all the Basket content and checkout
     Then perform all the advisory checks
     And perform the credit checks using valid <Firstname>, <Surname>, <HouseNumber>, <PostCode> and valid <Username>
-    And Register the customer with valid <Firstname>, <Surname>, <HouseNumber>, <PostCode> and other valid details in delivery page
-    And Choose Business preferences <B1> <B2> <B3> <B4> and Channel Preferences <C1> <C2> <C3> <C4> for <Consumer>
+    And Register customer with valid <Password>, <confirmPassword>, <SecurityAnswer> in delivery page
+    And validate register status
+    And Choose Business preferences <B1> <B2> <B3> <B4> and Channel Preferences <Text> <Email> <Phone> <Post> for <Consumer> when GDPR <status>
     And Choose <DeliveryType> delivery address and delivery time
     # And Update Device Plan Link Email Address
     # Then CCALink Should be generated
@@ -21,5 +22,5 @@ Feature: 28_AFA_NewConnection_PAYM_Tablets_Refresh_GDPR_Enabled_EndUser_MP_OptOu
 
 
     Examples:
-      | Device | Tariffs | DeliveryType | Firstname | Surname | Username     | HouseNumber | PostCode | B1  | B2  | B3  | B4  | C1| C2 | C3  | C4 |Consumer|
-      | tablet | Random  | HomeDelivery | TEST      | ACCEPTA | TEST ACCEPTA | 18          | SL11UP   | Not | Not | Not | Not |Not|Not | Not | Not|Me      |
+      | Device | Tariffs | DeliveryType | Firstname | Surname | Username     | HouseNumber | PostCode | B1  | B2  | B3  | B4  | Text   | Email | Phone  | Post |Consumer|status|Password|confirmPassword|SecurityAnswer|
+      | tablet | Refresh  | HomeDelivery | TEST      | ACCEPTA | TEST ACCEPTA | 18          | SL11UP   | Not | Not | Not | Not |Not|Not | Not | Not|Me      |Enabled|test123             |test123        |              |

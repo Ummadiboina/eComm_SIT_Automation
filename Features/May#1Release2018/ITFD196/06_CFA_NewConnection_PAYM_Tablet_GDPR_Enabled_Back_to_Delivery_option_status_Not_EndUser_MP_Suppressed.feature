@@ -11,23 +11,18 @@ Feature: 06_CFA_NewConnection_PAYM_Tablet_GDPR_Enabled_Back_to_Delivery_option_s
     And select any available <Device> Tablet
     And Navigate to device details page
     And Land on the 'Tariffs and extra' page
-    Then I should see data filters buttons next to existing sort drop-down for PAYM/SIMO tariffs <sortoption>
-    When I click on respective <filtername> data filter
-    Then Data filter button should be in 'selected' state
-    And I should see appropriate tariffs based on the selected data filter <sortoption>
-    And If I select ANY sort option <sortoption> from the drop-down
     And I Land on the basket page and choose home delivery option
     And click on "go to checkout" button
-    And input <Firstname> and <Surname> and other valid details in Delivery page for Click and collect and Click on the 'Continue button' in GDPR
+    And input <Firstname> and <Surname> and other valid details in Delivery page to verify GDPR
     #customer is either Me or Someone else
-    And Is this order for You or Someone else <consumer>
+    And Is this order for You or Someone else <consumer> when GDPR is <status>
     And land on the payment page and input <Username> and other details and click 'Continue on next step'
     And Continue to Agreements page and confirm all the agreement checks
     And Continue to Review page and review the order
     Then order confirmation is displayed
-    And Choose Business preferences <B1> <B2> <B3> <B4> and Channel Preferences <C1> <C2> <C3> <C4> for <Consumer>
+    Then Choose <consumer> <status> Business preferences <B1> <B2> <B3> <B4> And Channel Preferences <Text> <Email> <Phone> <Post>
 
 
     Examples:
-      | handset  | Firstname | Surname | Username       |consumer| B1       | B2   | B3       | B4      | C1     | C2    | C3  | C4 |
-      | iPhone 6 | TEST       | ACCEPTA | TEST ACCEPTA  |    Me   | Select  | Not | Select     | Select |Select  |Select | Not | Not|
+      | Device        | Firstname | Surname | Username     | consumer | B1     | B2  | B3     | B4     | Text   | Email  | Phone  | Post  | status  |
+      | Random Device | TEST      | ACCEPTA | TEST ACCEPTA | Me       | Select | Not | Select | Select | Select | Select | Not    | Not   | Enabled |

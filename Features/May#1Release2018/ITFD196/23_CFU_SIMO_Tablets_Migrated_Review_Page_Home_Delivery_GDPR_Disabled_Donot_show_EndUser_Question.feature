@@ -1,16 +1,16 @@
-Feature: 13_CFU_SIMO_Retained_Review_Page_Home_Delivery_GDPR_Enabled_EndUser_MP_OptIn_ALL_CP_ALL
+Feature: 23_CFU_SIMO_Tablets_Migrated_Review_Page_Home_Delivery_GDPR_Disabled_Donot_show_EndUser_Question
 
   This scenario ensures that an upgrade customer is able to select a 12 months tablets tariff under the simo tab in upgrade options page
 
   @Web
-  Scenario Outline: 13_CFU_SIMO_Retained_Review_Page_Home_Delivery_GDPR_Enabled_EndUser_MP_OptIn_ALL_CP_ALL
+  Scenario Outline: 23_CFU_Tablets_SIMO_Migrated_Review_Page_Home_Delivery_GDPR_Disabled_Donot_show_EndUser_Question
     Given I am an Existing user and Navigates to Signin page
     And Signin using valid <username> and <password> credentials
     And Navigate to upgrade > upgrade now
     And I click on 'Sim only Tariff' tab
     And verify that the url has simo at the end
     Then the 'Phones' button should be selected by default
-    #And click on the 'MBB' button
+    And click on the 'Tablets' button
     And the two contract lenght should be displayed
     And all the tariffs under twelve months should be displayed
     And the data filters is displayed
@@ -25,5 +25,5 @@ Feature: 13_CFU_SIMO_Retained_Review_Page_Home_Delivery_GDPR_Enabled_EndUser_MP_
     Then Choose <consumer> <status> Business preferences <B1> <B2> <B3> <B4> And Channel Preferences <Text> <Email> <Phone> <Post>
 
     Examples:
-      | Contract | username           | password | filtername | sortoption                 |consumer| B1     | B2     | B3     | B4     | Text   | Email    | Phone     | Post    |status|
-      | 12 Months| 12342015@gmail.com | test123  | low        | Monthly data (High to low) |    Me  | Select | Select | Select | Select |Select|Select | Select | Select|Enabled|
+      | Contract | username           | password | filtername | sortoption                 |consumer| B1     | B2  | B3     | B4  | Text| Email | Phone  | Post |status|
+      | 12 Months| 12342015@gmail.com | test123  | low        | Monthly data (High to low) |        | Not    | Not | Not    | Not |Not|Not | Not | Not|Disabled|

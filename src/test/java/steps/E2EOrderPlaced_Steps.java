@@ -989,8 +989,8 @@ public class E2EOrderPlaced_Steps {
 
 
 
-    @And("^input ([^\"]*) and ([^\"]*) and other valid details in Delivery page for Click and collect and Click on the 'Continue button' in GDPR$")
-    public void DeliveryPage_Inputs_ClickandCollect_gdpr(String Firstname, String Surname) {
+    @And("^input ([^\"]*) and ([^\"]*) and other valid details in Delivery page to verify GDPR$")
+    public void DeliveryPage_Inputs_gdpr(String Firstname, String Surname) {
         try {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, DeliveryPage.class);
@@ -998,7 +998,26 @@ public class E2EOrderPlaced_Steps {
             DeliveryPageActions.SetDelivery();
             DeliveryPageActions.AboutYou(Firstname, Surname);
            // DeliveryPageActions.ClickContinue();
-            //  DeliveryPageActions.clickOnSubmitBtn();
+             //DeliveryPageActions.clickOnSubmitBtn();
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            log.debug("Unable to input details in delivery page");
+            Assert.fail("Unable to input details in delivery page");
+
+        }
+    }
+
+
+    @And("^input ([^\"]*) and ([^\"]*) and other valid details in Delivery page to verify GDPR to click and collect$")
+    public void DeliveryPage_Inputs_gdpr_ClickAndCollect(String Firstname, String Surname) {
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, DeliveryPage.class);
+            //CommonFunctionscheckTitle("Delivery Page");
+          //  DeliveryPageActions.SetDelivery();
+            DeliveryPageActions.AboutYou(Firstname, Surname);
+            // DeliveryPageActions.ClickContinue();
+            //DeliveryPageActions.clickOnSubmitBtn();
         } catch (Exception e) {
             // TODO Auto-generated catch block
             log.debug("Unable to input details in delivery page");
@@ -1623,6 +1642,38 @@ public class E2EOrderPlaced_Steps {
         }
     }
 
+    @Given("^donot select the SECCI and CCA agreements in Agreement page$")
+    public void AgreementsPageConfirmation_new() {
+        try {
+            // Write code here that turns the phrase above into concrete actions
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, AgreementPage.class);
+            PageFactory.initElements(driver, ReviewPage.class);
+            Thread.sleep(10000);
+            AgreementPageActions.gettitlepage();
+            //CommonFunctionscheckTitle("Agreement Page");
+            Thread.sleep(3000);
+            AgreementPageActions.Affordability();
+            Thread.sleep(5000);
+            AgreementPageActions.KeyInformation();
+            Thread.sleep(5000);
+           // AgreementPageActions.secciSection();
+            //Thread.sleep(5000);
+            //AgreementPageActions.PayMMobileAgreement();
+            //Thread.sleep(5000);
+            AgreementPageActions.TermsDeclarationCheckbox();
+            Thread.sleep(5000);
+        } catch (Exception e) {
+            e.printStackTrace();
+            log.debug(
+                    "Agreements page is not displayed or unable to enter some information in thie page, Please review the screenshots for failure");
+            Assert.fail(
+                    "Agreements page is not displayed or unable to enter some information in thie page, Please review the screenshots for failure");
+
+        }
+    }
+
+
     @And("^Continue to CCA or Buyout or Trade In Agreements page and confirm all the agreement checks$")
     public void continue_to_CCA_or_Buyout_or_Trade_In_Agreements_page_and_confirm_all_the_agreement_checks() {
         try {
@@ -1893,6 +1944,17 @@ public class E2EOrderPlaced_Steps {
         log.debug("Clicked on the O2 Refresh Deal Summary YES button");
 
     }
+    @Then("^Accept O2 Refresh Deal Summary$")
+    public void AcceptO2() throws Throwable {
+        Thread.sleep(3000);
+        WebElement element = driver.findElement(By.xpath("//*[@id='AcceptO2YesButton']"));
+        JavascriptExecutor executor = (JavascriptExecutor) driver;
+        executor.executeScript("arguments[0].click();", element);
+        //driver.findElement(By.xpath("//*[@id='secciYesButton']")).click();
+        log.debug("Clicked on the O2 Accept YES button");
+
+    }
+
 
 
     @Then("^CCALink Should be generated$")
@@ -2326,7 +2388,6 @@ public class E2EOrderPlaced_Steps {
 
 
     @Then("^Register the customer with valid ([^\"]*), ([^\"]*), ([^\"]*), ([^\"]*) and other valid details in delivery page$")
-
     public void register_the_customer(String Firstname, String Surname, String HouseNumber, String PostCode) {
         try {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
@@ -5883,6 +5944,26 @@ public class E2EOrderPlaced_Steps {
 
     }
 
+    @And("^I enter details in Delivery Page([^\\\"]*) and ([^\\\"]*) for GDPR ([^\\\"]*)$")
+    public void i_enter_details_in_Delivery_PageTEST_and_ACCEPTA_new(String Firstname, String Surname, String CheckBox) {
+
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, DeliveryPage.class);
+            DeliveryPageActions.SetDelivery();
+            FreeSimDeliveryPageActions.FreeSimAboutYou(Firstname, Surname);
+            FreeSimDeliveryPageActions.marketingMessage(CheckBox);
+            FreeSimDeliveryPageActions.ClickSendMeMySim();
+
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            log.debug("Unable to input details in delivery page");
+            Assert.fail("Unable to input details in delivery page");
+
+        }
+
+    }
+
     @Then("^Free Sim order confirmation is displayed$")
     public void free_Sim_order_confirmation_is_displayed() throws Throwable {
 
@@ -7186,6 +7267,20 @@ public class E2EOrderPlaced_Steps {
             // TODO Auto-generated catch block
             e.printStackTrace();
             Assert.fail("Unable to Register customer");
+        }
+    }
+
+    @And("^validate register status$")
+    public void Validate_Register_Status() {
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, Agent_RegisterCustomerPage.class);
+            Agent_RegisterCustomerActions.RegisterStatus();
+            Thread.sleep(4000);
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+            Assert.fail("Register status is miss matched");
         }
     }
 
@@ -9317,13 +9412,13 @@ public class E2EOrderPlaced_Steps {
     }
 
 //GDPR
-    @And("^Is this order for You or Someone else ([^\"]*)$")
-    public void isThisOrder4UorSomeoneElse(String customer) {
+    @And("^Is this order for You or Someone else ([^\"]*) when GDPR is ([^\"]*)$")
+    public void isThisOrder4UorSomeoneElse(String customer, String status) {
         try {
             driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
             PageFactory.initElements(driver, DeliveryPage.class);
            // Agent_DealBuilderPageActions.verifyDevive_and_CopyClipboard_Btn();
-            DeliveryPageActions.clickOnSubmitBtn(customer);
+            DeliveryPageActions.clickOnSubmitBtn(customer, status);
             Thread.sleep(5000);
         } catch (InterruptedException e) {
             System.out.println("Failed to verify Basket link and 'Copy to Clipboard' CTA are enabled Click on 'Copy to Clipboard' button");
@@ -9335,13 +9430,13 @@ public class E2EOrderPlaced_Steps {
 
 //GDPR preferences section for CFA --- JamalKhan
 
-    @Then("^Choose ([^\"]*) Business preferences ([^\"]*) ([^\"]*) ([^\"]*) ([^\"]*) and Channel Preferences ([^\"]*) ([^\"]*) ([^\"]*) ([^\"]*)$")
-    public void Choose_Your_Preferences(String customer, String BP1, String BP2, String BP3, String BP4, String Chn1, String Chn2, String Chn3, String Chn4) {
+    @Then("^Choose ([^\"]*) ([^\"]*) Business preferences ([^\"]*) ([^\"]*) ([^\"]*) ([^\"]*) And Channel Preferences ([^\"]*) ([^\"]*) ([^\"]*) ([^\"]*)$")
+    public void Choose_Your_Preferences(String consumer, String gdprStatus, String BP1, String BP2, String BP3, String BP4, String Chn1, String Chn2, String Chn3, String Chn4) {
         // Write code here that turns the phrase above into concrete actions
         try {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, OrderConfirmationPage.class);
-            OrderConfirmationPageActions.PreferencesSection(customer, BP1, BP2, BP3, BP4, Chn1, Chn2, Chn3, Chn4);
+            OrderConfirmationPageActions.PreferencesSection(consumer,gdprStatus, BP1, BP2, BP3, BP4, Chn1, Chn2, Chn3, Chn4);
         } catch (Exception e) {
             // TODO Auto-generated catch block
             log.debug("Unable to Choose your preferences, please see the failure screenshot");
@@ -9351,19 +9446,33 @@ public class E2EOrderPlaced_Steps {
     }
 
     //GDPR preferences section for AFA  --- JamalKhan
-    @Then("^Choose Business preferences ([^\"]*) ([^\"]*) ([^\"]*) ([^\"]*) and Channel Preferences ([^\"]*) ([^\"]*) ([^\"]*) ([^\"]*) for ([^\"]*)$")
-    public void Choose_Your_Preferences_AFA(String BP1, String BP2, String BP3, String BP4, String Chn1, String Chn2, String Chn3, String Chn4, String customer) {
+    @Then("^Choose Business preferences ([^\"]*) ([^\"]*) ([^\"]*) ([^\"]*) and Channel Preferences ([^\"]*) ([^\"]*) ([^\"]*) ([^\"]*) for ([^\"]*) when GDPR ([^\"]*)$")
+    public void Choose_Your_Preferences_AFA(String BP1, String BP2, String BP3, String BP4, String Chn1, String Chn2, String Chn3, String Chn4, String customer, String status) {
         // Write code here that turns the phrase above into concrete actions
         try {
             driver.manage().timeouts().implicitlyWait(200, TimeUnit.SECONDS);
             PageFactory.initElements(driver, Agent_RegisterCustomerPage.class);
-            Agent_RegisterCustomerActions.PreferencesSection_AFA(BP1, BP2, BP3, BP4, Chn1, Chn2, Chn3, Chn4, customer);
+            Agent_RegisterCustomerActions.PreferencesSection_AFA(BP1, BP2, BP3, BP4, Chn1, Chn2, Chn3, Chn4, customer, status);
             log.debug("Completed preference actions");
 
         } catch (Exception e) {
             // TODO Auto-generated catch block
             log.debug("Unable to Choose your preferences, please see the failure screenshot");
             Assert.fail("Unable to Choose your preferences, please see the failure screenshot");
+
+        }
+    }
+
+    @And("Select create a new account and begin checkout")
+    public void Select_Create_New_account_and_begin_checkout() {
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+        try {
+            PageFactory.initElements(driver, DeliveryPage.class);
+            DeliveryPageActions.selectCreateNewAcctAndCheckOut();
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+            Assert.fail("Unable to select Create New account");
 
         }
     }

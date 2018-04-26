@@ -12,14 +12,13 @@ Feature: 32_AFA_NewConnection_PAYM_Phones_Standard_GDPR_Enabled_EndUser_MP_Optin
     And Validate all the Basket content and checkout
     Then perform all the advisory checks
     And perform the credit checks using valid <Firstname>, <Surname>, <HouseNumber>, <PostCode> and valid <Username>
-    And Register customer with valid <Password>, <confirmPassword>, <SecurityAnswer>  in delivery page
-    And Choose Business preferences <B1> <B2> <B3> <B4> and Channel Preferences <C1> <C2> <C3> <C4> for <Consumer>
+    And Register customer with valid <Password>, <confirmPassword>, <SecurityAnswer> in delivery page
+    And validate register status
+    And Choose Business preferences <B1> <B2> <B3> <B4> and Channel Preferences <Text> <Email> <Phone> <Post> for <Consumer> when GDPR <status>
     And Choose <DeliveryType> delivery address and delivery time
     When Pay by card for PAYM device
     Then Order confirmation message should be displayed
 
-    # And Update Device Plan Link Email Address
-    # Then CCALink Should be generated
     Examples:
-      | Device              | Tariffs | Extras | DeliveryType | Firstname | Surname | Username     | HouseNumber | PostCode | Password | confirmPassword | SecurityAnswer | B1     | B2     | B3     | B4     | C1| C2 | C3  | C4 |Consumer |
-      | Galaxy S8 Plus 64GB | Random  | Base   | HomeDelivery | TEST      | ACCEPTA | TEST ACCEPTA | 14          | SL11UP   | test1234 | test1234        | vinudeep       | Select | Select | Select | Select |Not|Not | Not | Not|Me       |
+      | Device              | Tariffs | Extras | DeliveryType | Firstname | Surname | Username     | HouseNumber | PostCode | Password | confirmPassword | SecurityAnswer | B1     | B2     | B3     | B4     | Text| Email | Phone  | Post |Consumer |status|
+      | Galaxy S8 Plus 64GB | Standard| Base   | HomeDelivery | TEST      | ACCEPTA | TEST ACCEPTA | 14          | SL11UP   | test1234 | test1234        | vinudeep       | Select | Select | Select | Select |Not|Not | Not | Not|Me       |Enabled|

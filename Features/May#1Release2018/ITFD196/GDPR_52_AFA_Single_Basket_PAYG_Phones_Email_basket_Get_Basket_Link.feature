@@ -14,11 +14,11 @@ Feature: AFA_Single_Basket_PAYG_Phones_Email_basket_Get_Basket_Link
     And Validate all the Basket content and checkout
     Then perform all the advisory checks
     And Register the customer with valid <Firstname>, <Surname>, <HouseNumber>, <PostCode> and other valid details in delivery page
-    And Choose Business preferences <B1> <B2> <B3> <B4> and Channel Preferences <C1> <C2> <C3> <C4> for <Consumer>
+    And Choose Business preferences <B1> <B2> <B3> <B4> and Channel Preferences <Text> <Email> <Phone> <Post> for <Consumer> when GDPR <status>
     And Choose <DeliveryType> delivery address and delivery time
     When Pay by card
     Then Order confirmation message should be displayed
 
     Examples:
-      | Device1                       | Tariffs | DeliveryType | Firstname | Surname | HouseNumber  | PostCode | B1  | B2  | B3  | B4  | C1| C2 | C3  | C4 |Consumer    |
-      | iPhone 7 Plus 128GB Jet Black | Random  | HomeDelivery |  TEST      | ACCEPTA | 11           | SL11UP  | Not | Not | Not | Not |Not|Not | Not | Not|SomeOne else|
+      | Device1                       | Tariffs | DeliveryType | Firstname | Surname | HouseNumber  | PostCode | B1  | B2  | B3  | B4  | Text | Email    | Phone     | Post |Consumer    |status|
+      | iPhone 7 Plus 128GB Jet Black | Random  | HomeDelivery |  TEST      | ACCEPTA | 11           | SL11UP  | Not | Not | Not | Not |Not|Not | Not | Not|SomeOne else|Enabled|

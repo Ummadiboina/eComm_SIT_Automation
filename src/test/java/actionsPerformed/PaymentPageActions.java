@@ -139,7 +139,7 @@ public class PaymentPageActions extends Environment {
     public static void Time_At_Address_CC() throws InterruptedException, IOException {
 
 
-        /*pageobjects.PaymentPage.housenumber.sendKeys("41");
+        pageobjects.PaymentPage.housenumber.sendKeys("41");
         log.debug("Entered the House Number - 41");
 
         pageobjects.PaymentPage.postcode.sendKeys("WA27JQ");
@@ -151,7 +151,6 @@ public class PaymentPageActions extends Environment {
         pageobjects.PaymentPage.Selectaddress.click();
         log.debug("Home Address Selected");
         Thread.sleep(3000);
-*/
         pageobjects.PaymentPage.Stay_Address_Years.sendKeys("9");
         log.debug("Entered the stayed at address - 9");
         Thread.sleep(2000);

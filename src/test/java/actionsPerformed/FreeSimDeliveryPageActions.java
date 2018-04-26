@@ -42,6 +42,11 @@ public class FreeSimDeliveryPageActions extends Environment {
 		Screenshots.captureScreenshot();
 	}
 
+	public static void marketingMessage(String CheckBox) {
+		//Marketing Message validation
+	}
+
+
 	public static void ClickSendMeMySim() throws InterruptedException, IOException {
 
 		log.debug("Clicking on Send me  my Free Sim page");

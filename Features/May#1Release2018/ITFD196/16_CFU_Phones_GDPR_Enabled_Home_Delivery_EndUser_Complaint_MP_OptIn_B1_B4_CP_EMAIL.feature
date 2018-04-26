@@ -23,14 +23,14 @@ Feature: 16_CFU_Phones_GDPR_Enabled_Home_Delivery_EndUser_Complaint_MP_OptIn_B1_
     And Verify that the option selected by the user in 'Your sim card' section in upgrade options page is retained
     And click on "go to checkout" button
     And perform <Action> in OTAC page
-    And Is this order for You or Someone else <consumer>
+    And Is this order for You or Someone else <consumer> when GDPR is <status>
     #And Click on the 'Continue button' in delivery page
     And land on the payment page and input <Username> and other details and click 'Continue on next step' in upgrade journey
     And Continue to Agreements page and confirm all the agreement checks
     And Continue to Review page and review the order
     Then order confirmation is displayed
-    Then Choose <consumer> Business preferences <B1> <B2> <B3> <B4> and Channel Preferences <C1> <C2> <C3> <C4>
+    Then Choose <consumer> <status> Business preferences <B1> <B2> <B3> <B4> And Channel Preferences <Text> <Email> <Phone> <Post>
 
     Examples:
-      | username         | password | handset           | Username     | Action |tariff|consumer| B1  | B2     | B3  | B4  | C1   | C2    | C3     | C4    |
-      | ash@o2.com       | test123  | Samsung Galaxy S8 | TEST ACCEPTA | skip   |      |    Me  | Not | Select | Not | Not |Select|Select | Select | Select|
+      | username         | password | handset           | Username     | Action |tariff|consumer| B1  | B2     | B3  | B4  | Text   | Email    | Phone     | Post    |status
+      | ash@o2.com       | test123  | Samsung Galaxy S8 | TEST ACCEPTA | skip   |      |    Me  | Select | Not | Not | Select |Select|Select | Select | Select|Enabled|
