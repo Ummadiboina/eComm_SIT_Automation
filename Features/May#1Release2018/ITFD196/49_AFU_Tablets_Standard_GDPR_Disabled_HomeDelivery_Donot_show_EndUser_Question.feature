@@ -10,10 +10,10 @@ Feature: 49_AFU_Tablets_Standard_GDPR_Disabled_HomeDelivery_Donot_show_EndUser_Q
     And Select valid <Tariffs> from tariffs tab
     And select a valid Handset and Tariff combination
     And Validate all the Basket content and checkout
-    And Choose Business preferences <B1> <B2> <B3> <B4> and Channel Preferences <Text> <Email> <Phone> <Post> for <Consumer> when GDPR <status>
+    And Choose Business preferences <B1> <B2> <B3> <B4> and Channel Preferences <Text> <Email> <Phone> <Post> for <consumer> when GDPR <status> <MBBStatus>
     When submit order button is clicked
     Then Order confirmation message should be displayed
 
     Examples:
-      | user        | Device | Tariffs | consumer | B1     | B2  | B3     | B4     | Text | Email    | Phone     | Post |status|
-      | 07521009589 | Tablet | Random  | Me       | Select | Not | Select | Select | Select | Select | Not | Not |Enabled|
+      | user        | Device | Tariffs | consumer | B1     | B2  | B3     | B4     | Text | Email    | Phone     | Post |status|MBBStatus|
+      | 07521009589 | Tablet | Random  | Me       | Select | Not | Select | Select | Select | Select | Not | Not |Enabled|No             |

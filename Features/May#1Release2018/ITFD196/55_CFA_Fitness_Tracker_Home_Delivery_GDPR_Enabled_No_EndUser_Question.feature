@@ -14,9 +14,9 @@ Feature: 55_CFA_Fitness_Tracker_Home_Delivery_GDPR_Enabled_No_EndUser_Question
     And land on the Non Credit check payment page and input <Username> and other details and click 'Continue on next step'
     And Continue to Review page and review the order
     Then order confirmation is displayed
-    Then Choose <consumer> <status> Business preferences <B1> <B2> <B3> <B4> And Channel Preferences <Text> <Email> <Phone> <Post>
+    Then Choose <consumer> <status> Business preferences <B1> <B2> <B3> <B4> And Channel Preferences <Text> <Email> <Phone> <Post> <MBBStatus>
 
 
     Examples:
-      | handset  | Firstname | Surname | Username       |consumer| B1       | B2   | B3       | B4      | Text     | Email    | Phone  | Post |status|
-      | iPhone 6 | TEST       | ACCEPTA | TEST ACCEPTA  |    Me   | Select  | Not | Select     | Select |Select  |Select | Not | Not|Enabled|
+      | handset  | Firstname | Surname | Username       |consumer| B1       | B2   | B3       | B4      | Text     | Email    | Phone  | Post |status|MBBStatus|
+      | iPhone 6 | TEST       | ACCEPTA | TEST ACCEPTA  |    Me   | Select  | Not | Select     | Select |Select  |Select | Not | Not|Enabled|No                |

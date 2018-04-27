@@ -21,9 +21,9 @@ Feature: 08_Existing_customer_PAYG_Tablets_Home_Delivery_GDPR_Enabled_Refresh_En
     #And Continue to Agreements page and confirm all the agreement checks
     And Continue to Review page and review the order
     Then order confirmation is displayed
-    Then Choose <consumer> <status> Business preferences <B1> <B2> <B3> <B4> And Channel Preferences <Text> <Email> <Phone> <Post>
+    Then Choose <consumer> <status> Business preferences <B1> <B2> <B3> <B4> And Channel Preferences <Text> <Email> <Phone> <Post> <MBBStatus>
 
 
     Examples:
-      | handset           | Firstname | Surname | Username     | filtername | sortoption                 | consumer | B1  | B2  | B3  | B4  | Text| Email | Phone  | Post | status |
-      | Samsung Galaxy S8 | TEST      | ACCEPTA | TEST ACCEPTA | low        | Monthly data (High to low) | Me       | Not | Not | Not | Not | Not | Not | Not | Not | Enabled |
+      | handset           | Firstname | Surname | username     |password| filtername | sortoption                 | consumer | B1  | B2  | B3  | B4  | Text| Email | Phone  | Post | status |Device|MBBStatus|
+      | Samsung Galaxy S8 | TEST      | ACCEPTA | TEST ACCEPTA |test123| low        | Monthly data (High to low) | Me       | Not | Not | Not | Not | Not | Not | Not | Not | Enabled |            |No       |

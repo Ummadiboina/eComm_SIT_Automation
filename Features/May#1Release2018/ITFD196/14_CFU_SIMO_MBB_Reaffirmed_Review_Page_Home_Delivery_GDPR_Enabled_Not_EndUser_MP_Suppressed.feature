@@ -22,8 +22,8 @@ Feature: 14_CFU_SIMO_MBB_Reaffirmed_Review_Page_Home_Delivery_GDPR_Enabled_Not_E
     And Click on 'I agree to the terms and condition' checkbox in SIMO review page
     And Click on 'Place your order' CTA
     Then order confirmation is displayed
-    Then Choose <consumer> <status> Business preferences <B1> <B2> <B3> <B4> And Channel Preferences <Text> <Email> <Phone> <Post>
+    Then Choose <consumer> <status> Business preferences <B1> <B2> <B3> <B4> And Channel Preferences <Text> <Email> <Phone> <Post> <MBBStatus>
 
     Examples:
-      | Contract | username           | password | filtername | sortoption                 |consumer    | B1     | B2  | B3     | B4  | Text| Email | Phone  | Post |status|
-      | 30 Days  | 12342015@gmail.com | test123  | low        | Monthly data (High to low) |SomeOne else| Not    | Not | Not    | Not |Not|Not | Not | Not|Enabled|
+      | Contract | username           | password | filtername | sortoption                 |consumer    | B1     | B2  | B3     | B4  | Text| Email | Phone  | Post |status|MBBStatus|
+      | 30 Days  | 12342015@gmail.com | test123  | low        | Monthly data (High to low) |SomeOne else| Not    | Not | Not    | Not |Not|Not | Not | Not|Enabled|Yes               |

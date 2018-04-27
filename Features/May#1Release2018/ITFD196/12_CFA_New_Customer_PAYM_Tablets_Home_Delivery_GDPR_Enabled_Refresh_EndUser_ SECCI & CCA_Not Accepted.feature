@@ -21,9 +21,9 @@ Feature: 12_CFA_New_Customer_PAYM_Tablets_Home_Delivery_GDPR_Enabled_Refresh_End
     And donot select the SECCI and CCA agreements in Agreement page
     #And Continue to Review page and review the order
     #Then order confirmation is displayed
-    #Then Choose <consumer> <status> Business preferences <B1> <B2> <B3> <B4> And Channel Preferences <Text> <Email> <Phone> <Post>
+    #Then Choose <consumer> <status> Business preferences <B1> <B2> <B3> <B4> And Channel Preferences <Text> <Email> <Phone> <Post> <MBBStatus>
 
 
     Examples:
-      | handset  | Firstname | Surname | Username       |consumer| B1       | B2   | B3       | B4      | Text     | Email    | Phone  | Post |status|
-      | iPhone 6 | TEST       | ACCEPTA | TEST ACCEPTA  |    Me   | Select  | Not | Select     | Select |Select  |Select | Not | Not|Enabled|
+      | handset  |Device| Firstname | Surname | Username       |consumer| B1       | B2   | B3       | B4      | Text     | Email    | Phone  | Post |status|MBBStatus|
+      | iPhone 6 |      |TEST       | ACCEPTA | TEST ACCEPTA  |    Me   | Select  | Not | Select     | Select |Select  |Select | Not | Not|Enabled|     No|

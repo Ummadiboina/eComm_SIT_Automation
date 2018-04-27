@@ -18,5 +18,5 @@ Feature: 10_CFA_NewConnection_FREESIM_GDPR_Enabled_Checkbox_Donot_Contact_for_MP
 
 
     Examples:
-      | handset  | Firstname | Surname | Username       |consumer| B1       | B2   | B3       | B4      | C1     | C2    | C3  | C4 |CheckBox|
-      | iPhone 6 | TEST       | ACCEPTA | TEST ACCEPTA  |    Me   | Select  | Not | Select     | Select |Select  |Select | Not | Not|Yes     |
+      | handset  | Firstname | Surname | Username       |consumer| B1       | B2   | B3       | B4      | C1     | C2    | C3  | C4 |CheckBox|MBBStatus|
+      | iPhone 6 | TEST       | ACCEPTA | TEST ACCEPTA  |    Me   | Select  | Not | Select     | Select |Select  |Select | Not | Not|Yes     |No       |

@@ -1955,6 +1955,16 @@ public class E2EOrderPlaced_Steps {
 
     }
 
+    @And("^Click on 'View all mobile Broadband' link$")
+    public void MobileBroadbandLink() throws Throwable {
+        Thread.sleep(3000);
+        WebElement element = driver.findElement(By.xpath("//*[@id='MobileBroadbandLink']"));
+        JavascriptExecutor executor = (JavascriptExecutor) driver;
+        executor.executeScript("arguments[0].click();", element);
+        //driver.findElement(By.xpath("//*[@id='secciYesButton']")).click();
+        log.debug("Clicked on the Mobile Broadband Link");
+
+    }
 
 
     @Then("^CCALink Should be generated$")
@@ -5925,7 +5935,7 @@ public class E2EOrderPlaced_Steps {
 
     }
 
-    @And("^I enter details in Delivery Page([^\\\"]*) and ([^\\\"]*)$")
+    @And("^I enter details in Delivery Page ([^\"]*) and ([^\"]*)$")
     public void i_enter_details_in_Delivery_PageTEST_and_ACCEPTA(String Firstname, String Surname) {
 
         try {
@@ -5944,7 +5954,7 @@ public class E2EOrderPlaced_Steps {
 
     }
 
-    @And("^I enter details in Delivery Page([^\\\"]*) and ([^\\\"]*) for GDPR ([^\\\"]*)$")
+    @And("^I enter details in Delivery Page ([^\"]*) and ([^\"]*) for GDPR ([^\"]*)$")
     public void i_enter_details_in_Delivery_PageTEST_and_ACCEPTA_new(String Firstname, String Surname, String CheckBox) {
 
         try {
@@ -9430,13 +9440,13 @@ public class E2EOrderPlaced_Steps {
 
 //GDPR preferences section for CFA --- JamalKhan
 
-    @Then("^Choose ([^\"]*) ([^\"]*) Business preferences ([^\"]*) ([^\"]*) ([^\"]*) ([^\"]*) And Channel Preferences ([^\"]*) ([^\"]*) ([^\"]*) ([^\"]*)$")
-    public void Choose_Your_Preferences(String consumer, String gdprStatus, String BP1, String BP2, String BP3, String BP4, String Chn1, String Chn2, String Chn3, String Chn4) {
+    @Then("^Choose ([^\"]*) ([^\"]*) Business preferences ([^\"]*) ([^\"]*) ([^\"]*) ([^\"]*) And Channel Preferences ([^\"]*) ([^\"]*) ([^\"]*) ([^\"]*) ([^\"]*)$")
+    public void Choose_Your_Preferences(String consumer, String gdprStatus, String BP1, String BP2, String BP3, String BP4, String Chn1, String Chn2, String Chn3, String Chn4, String MBBStatus) {
         // Write code here that turns the phrase above into concrete actions
         try {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, OrderConfirmationPage.class);
-            OrderConfirmationPageActions.PreferencesSection(consumer,gdprStatus, BP1, BP2, BP3, BP4, Chn1, Chn2, Chn3, Chn4);
+            OrderConfirmationPageActions.PreferencesSection(consumer,gdprStatus, BP1, BP2, BP3, BP4, Chn1, Chn2, Chn3, Chn4,MBBStatus);
         } catch (Exception e) {
             // TODO Auto-generated catch block
             log.debug("Unable to Choose your preferences, please see the failure screenshot");
@@ -9446,13 +9456,13 @@ public class E2EOrderPlaced_Steps {
     }
 
     //GDPR preferences section for AFA  --- JamalKhan
-    @Then("^Choose Business preferences ([^\"]*) ([^\"]*) ([^\"]*) ([^\"]*) and Channel Preferences ([^\"]*) ([^\"]*) ([^\"]*) ([^\"]*) for ([^\"]*) when GDPR ([^\"]*)$")
-    public void Choose_Your_Preferences_AFA(String BP1, String BP2, String BP3, String BP4, String Chn1, String Chn2, String Chn3, String Chn4, String customer, String status) {
+    @Then("^Choose Business preferences ([^\"]*) ([^\"]*) ([^\"]*) ([^\"]*) and Channel Preferences ([^\"]*) ([^\"]*) ([^\"]*) ([^\"]*) for ([^\"]*) when GDPR ([^\"]*) ([^\"]*)$")
+    public void Choose_Your_Preferences_AFA(String BP1, String BP2, String BP3, String BP4, String Chn1, String Chn2, String Chn3, String Chn4, String customer, String status,String MBBStatus) {
         // Write code here that turns the phrase above into concrete actions
         try {
             driver.manage().timeouts().implicitlyWait(200, TimeUnit.SECONDS);
             PageFactory.initElements(driver, Agent_RegisterCustomerPage.class);
-            Agent_RegisterCustomerActions.PreferencesSection_AFA(BP1, BP2, BP3, BP4, Chn1, Chn2, Chn3, Chn4, customer, status);
+            Agent_RegisterCustomerActions.PreferencesSection_AFA(BP1, BP2, BP3, BP4, Chn1, Chn2, Chn3, Chn4, customer, status,MBBStatus);
             log.debug("Completed preference actions");
 
         } catch (Exception e) {

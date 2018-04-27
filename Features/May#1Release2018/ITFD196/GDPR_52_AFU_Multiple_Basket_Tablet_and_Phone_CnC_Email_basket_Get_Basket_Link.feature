@@ -18,14 +18,14 @@ Feature: GDPR_52_AFU_Multiple_Basket_Tablet_and_Phone_CnC_Email_basket_Get_Baske
     Then perform all the advisory checks
     And perform the credit checks using valid <Firstname>, <Surname>, <HouseNumber>, <PostCode> and valid <Username>
     And Register the customer with valid <Firstname>, <Surname>, <HouseNumber>, <PostCode> and other valid details in delivery page
-    And Choose Business preferences <B1> <B2> <B3> <B4> and Channel Preferences <Text> <Email> <Phone> <Post> for <Consumer> when GDPR <status>
+    And Choose Business preferences <B1> <B2> <B3> <B4> and Channel Preferences <Text> <Email> <Phone> <Post> for <Consumer> when GDPR <status> <MBBStatus>
     And Choose <DeliveryType> delivery address and delivery time
     When Pay by card for PAYM device
     Then Order confirmation message should be displayed
 
     Examples:
-      | user       | Device1                 | Device2              | Tariffs1 | Tariffs2 | PostCode | Firstname | Surname | Username     | HouseNumber |DeliveryType | B1  | B2  | B3  | B4  | Text | Email    | Phone     | Post |Consumer    |status|
-      |07521114790 |  Samsung Galaxy S9 Plus | Apple iPhone 7 Plus  | Refresh  | Refresh  |  SL11UP  | TEST      | ACCEPTA | TEST ACCEPTA | 11          |HomeDelivery | Not | Not | Not | Not |Not|Not | Not | Not|SomeOne else|Enabled|
+      | user       | Device1                 | Device2              | Tariffs1 | Tariffs2 | PostCode | Firstname | Surname | Username     | HouseNumber |DeliveryType | B1  | B2  | B3  | B4  | Text | Email    | Phone     | Post |Consumer    |status|MBBStatus|
+      |07521114790 |  Samsung Galaxy S9 Plus | Apple iPhone 7 Plus  | Refresh  | Refresh  |  SL11UP  | TEST      | ACCEPTA | TEST ACCEPTA | 11          |HomeDelivery | Not | Not | Not | Not |Not|Not | Not | Not|SomeOne else|Enabled|No   |
 
 
 

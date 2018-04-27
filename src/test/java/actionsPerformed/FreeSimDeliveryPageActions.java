@@ -42,8 +42,14 @@ public class FreeSimDeliveryPageActions extends Environment {
 		Screenshots.captureScreenshot();
 	}
 
-	public static void marketingMessage(String CheckBox) {
+	public static void marketingMessage(String CheckBox) throws InterruptedException, IOException {
 		//Marketing Message validation
+
+		log.debug("Clicking on Marketing check box");
+		Thread.sleep(3000);
+		pageobjects.DeliveryPage.marketCheckBox.click();
+		log.debug("Clicking on the marketCheckBox");
+		Screenshots.captureScreenshot();
 	}
 
 

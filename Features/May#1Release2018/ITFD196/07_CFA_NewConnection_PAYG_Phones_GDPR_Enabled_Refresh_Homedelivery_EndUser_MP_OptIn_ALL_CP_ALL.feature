@@ -16,8 +16,8 @@ Feature: 07_CFA_NewConnection_PAYG_Phones_GDPR_Enabled_Refresh_Homedelivery_EndU
     #And Continue to Agreements page and confirm all the agreement checks
     And Continue to Review page and review the order
     Then order confirmation is displayed
-    Then Choose <consumer> <status> Business preferences <B1> <B2> <B3> <B4> And Channel Preferences <Text> <Email> <Phone> <Post>
+    Then Choose <consumer> <status> Business preferences <B1> <B2> <B3> <B4> And Channel Preferences <Text> <Email> <Phone> <Post> <MBBStatus>
 
     Examples:
-      | handset       | Firstname | Surname | Username     | consumer | B1     | B2  | B3     | B4     | Text| Email | Phone  | Post | status  |
-      | Random Device | TEST      | ACCEPTA | TEST ACCEPTA | Me       | Select | Not | Select | Select | Select | Select | Not | Not | Enabled |
+      | handset       | Firstname | Surname | Username     | consumer | B1     | B2  | B3     | B4     | Text| Email | Phone  | Post | status  |MBBStatus|
+      | Random Device | TEST      | ACCEPTA | TEST ACCEPTA | Me       | Select | Not | Select | Select | Select | Select | Not | Not | Enabled |No       |

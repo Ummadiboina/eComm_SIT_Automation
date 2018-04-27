@@ -1,7 +1,7 @@
-Feature: 15_CFU_Tablets_GDPR_Enabled_CC_EndUser_Complaint_MP_OptIn_ALL_CP_ALL
+Feature: 15_CFU_Tablets_GDPR_Enabled_CC_EndUser_Complaint_MP_OptOut
 
   @Web
-  Scenario Outline: 15_CFU_Tablets_GDPR_Enabled_CC_EndUser_Complaint_MP_OptIn_ALL_CP_ALL
+  Scenario Outline: 15_CFU_Tablets_GDPR_Enabled_CC_EndUser_Complaint_MP_OptOut
 
     Given I am an Existing user and Navigates to Signin page
     And Signin using valid <username> and <password> credentials
@@ -20,9 +20,9 @@ Feature: 15_CFU_Tablets_GDPR_Enabled_CC_EndUser_Complaint_MP_OptIn_ALL_CP_ALL
     And Continue to Agreements page and confirm all the agreement checks
     And Continue to Review page and review the order
     Then order confirmation is displayed
-    Then Choose <consumer> <status> Business preferences <B1> <B2> <B3> <B4> And Channel Preferences <Text> <Email> <Phone> <Post>
+    Then Choose <consumer> <status> Business preferences <B1> <B2> <B3> <B4> And Channel Preferences <Text> <Email> <Phone> <Post> <MBBStatus>
 
     Examples:
-      | Tablet        | Action | Surname | Username     | filtername | sortoption                 | username                      | password |consumer      | B1  | B2  | B3  | B4  | Text| Email | Phone  | Post |status |
-      | Random Device | skip   | ACCEPTA | TEST ACCEPTA | low        | Monthly data (Low to High) | identityref01@mailinator.com  | test123  |SomeOne else  | Not | Not | Not | Not |Not  |Not    | Not    | Not  |Enabled|
+      | Tablet        | Action | Surname | Username     | filtername | sortoption                 | username                      | password |consumer      | B1  | B2  | B3  | B4  | Text| Email | Phone  | Post |status |MBBStatus|
+      | Random Device | skip   | ACCEPTA | TEST ACCEPTA | low        | Monthly data (Low to High) | identityref01@mailinator.com  | test123  |SomeOne else  | Not | Not | Not | Not |Not  |Not    | Not    | Not  |Enabled|No       |
    #   | Apple iPhone 7    | TEST      | ACCEPTA | TEST ACCEPTA | high       |
