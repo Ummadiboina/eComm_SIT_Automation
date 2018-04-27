@@ -14,12 +14,13 @@ Feature: 52_AFA_Accessory_CC_GDPR_Enabled_No_EndUser_Question
     And Validate all the Basket content and checkout
     Then perform all the advisory checks
     And perform the credit checks using valid <Firstname>, <Surname>, <HouseNumber>, <PostCode> and valid <Username>
-    And Register the customer with valid <Firstname>, <Surname>, <HouseNumber>, <PostCode> and other valid details in delivery page
-    And Choose Business preferences <B1> <B2> <B3> <B4> and Channel Preferences <Text> <Email> <Phone> <Post> for <Consumer> when GDPR <status>
+    And Register customer with valid <Password>, <confirmPassword>, <SecurityAnswer> in delivery page
+    And validate register status
+    And Choose Business preferences <B1> <B2> <B3> <B4> and Channel Preferences <Text> <Email> <Phone> <Post> for <Consumer> when GDPR <status> <MBBStatus>
     And Choose <DeliveryType> delivery address and delivery time
     When Pay by card for PAYM device
     Then Order confirmation message should be displayed
 
     Examples:
-      | Device        | Firstname | Surname | Username     | HouseNumber | PostCode | DeliveryType | B1  | B2  | B3  | B4  | Text | Email    | Phone     | Post |Consumer    |status|
-      | Fitbit Flex 2 | TEST      | ACCEPTA | TEST ACCEPTA | 11          | SL11UP   | HomeDelivery | Not | Not | Not | Not |Not|Not | Not | Not|SomeOne else|Enabled|
+      | Device        | Firstname | Surname | Username     | HouseNumber | PostCode | DeliveryType | B1  | B2  | B3  | B4  | Text | Email    | Phone     | Post |Consumer    |status|Password|confirmPassword|SecurityAnswer|MBBStatus|
+      | Fitbit Flex 2 | TEST      | ACCEPTA | TEST ACCEPTA | 11          | SL11UP   | HomeDelivery | Not | Not | Not | Not |Not|Not | Not | Not|SomeOne else|Enabled|test123    |test123        |vinudeep          |No                |

@@ -11,12 +11,12 @@ Feature: Feature: 37_Agent_Existing_PAYG_Phones_CC_GDPR_Enabled_EndUser_MP_OptOu
     And Select valid <Tariffs> from PAYG tariffs tab
     And select a valid store for Click and Collect
     And Validate all the Basket content and checkout
-    And Choose Business preferences <B1> <B2> <B3> <B4> and Channel Preferences <Text> <Email> <Phone> <Post> for <Consumer> when GDPR <status>
+    And Choose Business preferences <B1> <B2> <B3> <B4> and Channel Preferences <Text> <Email> <Phone> <Post> for <Consumer> when GDPR <status> <MBBStatus>
     Then perform all the advisory checks
     When Pay by card
     Then Order confirmation message should be displayed
 
     Examples:
-      | user | Device                        | Tariffs  | Firstname | Surname | HouseNumber | PostCode | B1  | B2  | B3  | B4  | Text  | Email  | Phone  | Post  | Consumer |status|
-      |      | iPhone 7 Plus 128GB Jet Black | Standard | TEST      | ACCEPTA | 11          | SL11UP   | Not | Not | Not | Not | Not | Not | Not | Not | Me       |Enabled         |
+      | user | Device                        | Tariffs  | Firstname | Surname | HouseNumber | PostCode | B1  | B2  | B3  | B4  | Text  | Email  | Phone  | Post  | Consumer |status|MBBStatus|
+      |      | iPhone 7 Plus 128GB Jet Black | Standard | TEST      | ACCEPTA | 11          | SL11UP   | Not | Not | Not | Not | Not | Not | Not | Not | Me       |Enabled         |No       |
 

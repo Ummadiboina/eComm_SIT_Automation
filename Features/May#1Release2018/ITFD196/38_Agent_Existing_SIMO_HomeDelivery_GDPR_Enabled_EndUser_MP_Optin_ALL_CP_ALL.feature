@@ -9,7 +9,7 @@ Feature: Feature: 38_Agent_Existing_SIMO_HomeDelivery_GDPR_Enabled_EndUser_MP_Op
     And performs Agent Existing customer journery for <user>
     And Select valid <Tariff> from tariffs tab
     And Validate all the Basket content and checkout
-    And Choose Business preferences <B1> <B2> <B3> <B4> and Channel Preferences <Text> <Email> <Phone> <Post> for <Consumer> when GDPR <status>
+    And Choose Business preferences <B1> <B2> <B3> <B4> and Channel Preferences <Text> <Email> <Phone> <Post> for <Consumer> when GDPR <status> <MBBStatus>
     Then perform all the advisory checks
     And validate the Personal details for Agent Existing customer and Enter time at current Address <Years> <Months>
     And perform the credit checks for Agent Existing customer by Bank details
@@ -18,7 +18,7 @@ Feature: Feature: 38_Agent_Existing_SIMO_HomeDelivery_GDPR_Enabled_EndUser_MP_Op
     Then Order confirmation message should be displayed
 
     Examples:
-      | user | Tariff | DeliveryType | Firstname | Surname | Username     | HouseNumber | PostCode | B1     | B2     | B3     | B4     | Text     | Email     | Phone     | Post     | Consumer |status|
-      |      | SimO   | HomeDelivery | TEST      | ACCEPTA | TEST ACCEPTA | 6           | SL11UP   | Select | Select | Select | Select | Select | Select | Select | Select | Me       |Enabled         |
+      | user | Tariff | DeliveryType | Firstname | Surname | Username     | HouseNumber | PostCode | B1     | B2     | B3     | B4     | Text     | Email     | Phone     | Post     | Consumer |status|MBBStatus|
+      |      | SimO   | HomeDelivery | TEST      | ACCEPTA | TEST ACCEPTA | 6           | SL11UP   | Select | Select | Select | Select | Select | Select | Select | Select | Me       |Enabled         |No       |
 
 

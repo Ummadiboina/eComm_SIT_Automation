@@ -85,6 +85,10 @@ public class DeliveryPage {
     @FindBy(how = How.XPATH, using = "//button[@id='btn-continue']")
     public static WebElement SendMeMySim;
 
+    @FindBy(how = How.XPATH, using = "//input[@id='marketCheckBox']")
+    public static WebElement marketCheckBox;
+
+
     @FindBy(how = How.XPATH, using = "//*[@id='btn-continue']")
     public static WebElement SendMeMySim2;
 

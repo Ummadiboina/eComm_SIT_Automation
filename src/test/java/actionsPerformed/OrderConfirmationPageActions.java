@@ -162,7 +162,7 @@ public class OrderConfirmationPageActions extends Environment {
 
 	//GDPR Preferences Section --- JamalKhan
 
-	public static void PreferencesSection(String consumer, String gdprStatus,String BP1, String BP2, String BP3, String BP4, String Chn1, String Chn2, String Chn3, String Chn4) throws IOException, InterruptedException {
+	public static void PreferencesSection(String consumer, String gdprStatus,String BP1, String BP2, String BP3, String BP4, String Chn1, String Chn2, String Chn3, String Chn4, String MBBStatus) throws IOException, InterruptedException {
 
 				try {
 
@@ -185,6 +185,73 @@ public class OrderConfirmationPageActions extends Environment {
 									if (driver.findElements(By.xpath("//span[normalize-space()='Save my preferences")).size() <= 0) {
 										System.out.println("Preference Button is disabled before selecting business preferences");
 										log.debug("Preference Button is disabled before selecting business preferences");
+									}
+
+									//MBB validation
+									if(MBBStatus.equalsIgnoreCase("YES")){
+
+										//Business Preference validation for MBB
+										if (OrderConfirmationPage.O2Products.isSelected()) {
+											System.out.println("MBB:: O2Products business preference selected by default");
+											log.debug("MBB:: O2Products business preference selected by default");
+										}else{
+											System.out.println("MBB:: O2Products business preference not selected by default");
+											log.debug("MBB:: O2Products business preference not selected by default");
+										}
+										if (OrderConfirmationPage.O2PerksAndExtras.isSelected()) {
+											System.out.println("MBB:: O2 Perks And Extras preference selected by default");
+											log.debug("MBB:: O2 Perks And Extras preference selected by default");
+										}else{
+											System.out.println("MBB:: O2 Perks And Extras preference not selected by default");
+											log.debug("MBB:: O2 Perks And Extras preference not selected by default");
+										}
+										if (OrderConfirmationPage.OffersFromO2Partner.isSelected()) {
+											System.out.println("MBB:: Offers From O2 Partner preference selected by default");
+											log.debug("MBB:: Offers From O2 Partner preference selected by default");
+										}else{
+											System.out.println("MBB:: Offers From O2 Partner preference not selected by default");
+											log.debug("MBB:: Offers From O2 Partner preference not selected by default");
+										}
+										if (OrderConfirmationPage.PartnersContacting.isSelected()) {
+											System.out.println("MBB:: Partners Contacting preference selected by default");
+											log.debug("MBB:: Partners Contacting preference selected by default");
+										}else{
+											System.out.println("MBB:: Partners Contacting preference not selected by default");
+											log.debug("MBB:: Partners Contacting preference not selected by default");
+										}
+
+										Thread.sleep(4000);
+
+										//Channel Preference validation for MBB
+
+										if (OrderConfirmationPage.Contact_Text.isSelected()) {
+											System.out.println("MBB:: Contact_Text preference selected by default");
+											log.debug("MBB:: Contact_Text preference selected by default");
+										}else{
+											System.out.println("MBB:: Contact_Text preference not selected by default");
+											log.debug("MBB:: Contact_Text preference not selected by default");
+										}
+										if (OrderConfirmationPage.Contact_Email.isSelected()) {
+											System.out.println("MBB:: Contact_Email preference selected by default");
+											log.debug("MBB:: Contact_Email preference selected by default");
+										}else{
+											System.out.println("MBB:: Contact_Email preference not selected by default");
+											log.debug("MBB:: Contact_Email preference selected not by default");
+										}
+										if (OrderConfirmationPage.Contact_Phone.isSelected()) {
+											System.out.println("MBB:: Contact_Phone preference selected by default");
+											log.debug("MBB:: Contact_Phone preference selected by default");
+										}else{
+											System.out.println("MBB:: Contact_Phone preference not selected by default");
+											log.debug("MBB:: Contact_Phone preference selected not by default");
+										}
+										if (OrderConfirmationPage.Contact_Post.isSelected()) {
+											System.out.println("MBB:: Contact_Post preference selected by default");
+											log.debug("MBB:: Contact_Post preference selected by default");
+										}else{
+											System.out.println("MBB:: Contact_Post preference not selected by default");
+											log.debug("MBB:: Contact_Post preference not selected by default");
+										}
 									}
 
 									//O2 Products
@@ -349,8 +416,8 @@ public class OrderConfirmationPageActions extends Environment {
 									if (BP1.equalsIgnoreCase("Select")) {
 
 										if (driver.findElements(By.xpath("//div[@data-label='check1']/input")).size() <= 0) {
-											System.out.println("O2Products business preference is not displayed");
-											log.debug("O2Products business preference is not displayed");
+											System.out.println("O2Products business preference checkBox is not displayed");
+											log.debug("O2Products business preference checkBox is not displayed");
 										}
 										OrderConfirmationPage.O2Products.click();
 										System.out.println("O2Products business preference selected");
@@ -359,8 +426,8 @@ public class OrderConfirmationPageActions extends Environment {
 
 									if (BP2.equalsIgnoreCase("Select")) {
 										if (driver.findElements(By.xpath("//div[@data-label='check2']/input")).size() <= 0) {
-											System.out.println("O2 Perks And Extras business preference is not displayed");
-											log.debug("O2 Perks And Extras business preference is not displayed");
+											System.out.println("O2 Perks And Extras business preference checkBox is not displayed");
+											log.debug("O2 Perks And Extras business preference checkBox is not displayed");
 										}
 										OrderConfirmationPage.O2PerksAndExtras.click();
 										System.out.println("O2 Perks And Extras business preference selected");
@@ -369,8 +436,8 @@ public class OrderConfirmationPageActions extends Environment {
 
 									if (BP3.equalsIgnoreCase("Select")) {
 										if (driver.findElements(By.xpath("//div[@data-label='check3']/input")).size() <= 0) {
-											System.out.println("Offers From O2 Partner business preference is not displayed");
-											log.debug("Offers From O2 Partner business preference is not displayed");
+											System.out.println("Offers From O2 Partner business preference checkBox is not displayed");
+											log.debug("Offers From O2 Partner business preference checkBox is not displayed");
 										}
 										OrderConfirmationPage.OffersFromO2Partner.click();
 										System.out.println("Offers From O2 Partner business preference selected");
@@ -379,8 +446,8 @@ public class OrderConfirmationPageActions extends Environment {
 
 									if (BP4.equalsIgnoreCase("Select")) {
 										if (driver.findElements(By.xpath("//div[@data-label='check4']/input")).size() <= 0) {
-											System.out.println("Partners Contacting business preference is not displayed");
-											log.debug("Partners Contacting business preference is not displayed");
+											System.out.println("Partners Contacting business preference checkBox is not displayed");
+											log.debug("Partners Contacting business preference checkBox is not displayed");
 										}
 										OrderConfirmationPage.PartnersContacting.click();
 										System.out.println("Partners Contacting business preference selected");
@@ -397,21 +464,38 @@ public class OrderConfirmationPageActions extends Environment {
 
 									//Selecting Channel preferences
 									if (Chn1.equalsIgnoreCase("Select")) {
+
+										if (driver.findElements(By.xpath("//div[@data-label='checkcontact1']/input")).size() <= 0) {
+											System.out.println("Contact_Text preference checkBox is not displayed");
+											log.debug("Contact_Text preference checkBox is not displayed");
+										}
 										OrderConfirmationPage.Contact_Text.click();
 										System.out.println("Contact_Text preference selected");
 										log.debug("Contact_Text business preference selected");
 									}
 									if (Chn2.equalsIgnoreCase("Select")) {
+										if (driver.findElements(By.xpath("//div[@data-label='checkcontact2']/input")).size() <= 0) {
+											System.out.println("Contact_Email preference checkBox is not displayed");
+											log.debug("Contact_Email preference checkBox is not displayed");
+										}
 										OrderConfirmationPage.Contact_Email.click();
 										System.out.println("Contact_Email preference selected");
 										log.debug("Contact_Email preference selected");
 									}
 									if (Chn3.equalsIgnoreCase("Select")) {
+										if (driver.findElements(By.xpath("//div[@data-label='checkcontact3']/input")).size() <= 0) {
+											System.out.println("Contact_Phone preference checkBox is not displayed");
+											log.debug("Contact_Phone preference checkBox is not displayed");
+										}
 										OrderConfirmationPage.Contact_Phone.click();
 										System.out.println("Contact_Phone preference selected");
 										log.debug("Contact_Phone preference selected");
 									}
 									if (Chn4.equalsIgnoreCase("Select")) {
+										if (driver.findElements(By.xpath("//div[@data-label='checkcontact4']/input")).size() <= 0) {
+											System.out.println("Contact_Post preference checkBox is not displayed");
+											log.debug("Contact_Post preference checkBox is not displayed");
+										}
 										OrderConfirmationPage.Contact_Post.click();
 										System.out.println("Contact_Post preference selected");
 										log.debug("Contact_Post preference selected");

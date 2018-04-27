@@ -1,7 +1,7 @@
-Feature: 16_CFU_Phones_GDPR_Enabled_Home_Delivery_EndUser_Complaint_MP_OptIn_B1_B4_CP_EMAIL
+Feature: 16_CFU_Phones_GDPR_Enabled_Home_Delivery_EndUser_Complaint_MP_OptIn_B2_CP_ALL
 
   @Web
-  Scenario Outline: 16_CFU_Phones_GDPR_Enabled_Home_Delivery_EndUser_Complaint_MP_OptIn_B1_B4_CP_EMAIL
+  Scenario Outline: 16_CFU_Phones_GDPR_Enabled_Home_Delivery_EndUser_Complaint_MP_OptIn_B2_CP_ALL
     Given I am existing user and I click on Signin button
     And Signin using valid <username> and <password> credentials
     #And Navigate to upgrade phone
@@ -29,8 +29,8 @@ Feature: 16_CFU_Phones_GDPR_Enabled_Home_Delivery_EndUser_Complaint_MP_OptIn_B1_
     And Continue to Agreements page and confirm all the agreement checks
     And Continue to Review page and review the order
     Then order confirmation is displayed
-    Then Choose <consumer> <status> Business preferences <B1> <B2> <B3> <B4> And Channel Preferences <Text> <Email> <Phone> <Post>
+    Then Choose <consumer> <status> Business preferences <B1> <B2> <B3> <B4> And Channel Preferences <Text> <Email> <Phone> <Post> <MBBStatus>
 
     Examples:
-      | username         | password | handset           | Username     | Action |tariff|consumer| B1  | B2     | B3  | B4  | Text   | Email    | Phone     | Post    |status
-      | ash@o2.com       | test123  | Samsung Galaxy S8 | TEST ACCEPTA | skip   |      |    Me  | Select | Not | Not | Select |Select|Select | Select | Select|Enabled|
+      | username         | password | handset           | Username     | Action |tariff|consumer| B1  | B2     | B3  | B4  | Text   | Email    | Phone     | Post    |statusMBBStatus|
+      | ash@o2.com       | test123  | Samsung Galaxy S8 | TEST ACCEPTA | skip   |      |    Me  | Select | Not | Not | Select |Select|Select | Select | Select|Enabled|No|
