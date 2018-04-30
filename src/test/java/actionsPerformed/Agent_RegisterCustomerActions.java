@@ -381,6 +381,9 @@ public class Agent_RegisterCustomerActions extends Environment {
 
 				if(DeviceType.equalsIgnoreCase("Connected")){
 
+					System.out.println("Device type is connected and we are proceeding");
+					log.debug("Device type is connected and we are proceeding");
+
 					if (driver.findElements(By.xpath("//div[@class='gdprLabel']")).size() > 0) {
 						System.out.println("GDPR is Enabled and we are proceeding");
 						log.debug("GDPR is Enabled and we are proceeding");
