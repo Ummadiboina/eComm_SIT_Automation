@@ -21,10 +21,10 @@ Feature: 05_Existing_customer_PAYM_Phone_GDPR_Enabled_Refresh_Homedelivery_EndUs
     And Continue to Agreements page and confirm all the agreement checks
     And Continue to Review page and review the order
     Then order confirmation is displayed
-    Then Choose <consumer> <status> Business preferences <B1> <B2> <B3> <B4> And Channel Preferences <Text> <Email> <Phone> <Post> <MBBStatus>
+    Then Choose <consumer> <status> Business preferences <B1> <B2> <B3> <B4> And Channel Preferences <Text> <Email> <Phone> <Post> <MBBStatus> <DeviceType>
 
 
 
     Examples:
-      | username   | password | handset           | user         | consumer | status  | B1     | B2     | B3     | B4     | Text  | Email  | Phone  | Post  |MBBStatus|
-      | ash@o2.com | test123  | Samsung Galaxy S8 | TEST ACCEPTA | Me       | Enabled | Select | Select | Select | Select | Not | Not | Not | Not |No                 |
+      | username   | password | handset           | user         | consumer | status  | B1     | B2     | B3     | B4     | Text | Email | Phone | Post | MBBStatus |DeviceType|
+      | ash@o2.com | test123  | Samsung Galaxy S8 | TEST ACCEPTA | Me       | Enabled | Select | Select | Select | Select | Not  | Not   | Not   | Not  | No        |Connected |

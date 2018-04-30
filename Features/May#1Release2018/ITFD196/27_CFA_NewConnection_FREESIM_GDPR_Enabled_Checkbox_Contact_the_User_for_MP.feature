@@ -14,9 +14,9 @@ Feature: 27_CFA_NewConnection_FREESIM_GDPR_Enabled_Checkbox_Contact_the_User_for
     #customer is either Me or Someone else
     #And Is this order for You or Someone else <consumer>
     #Then order confirmation is displayed
-    #Then Choose <consumer> <status> Business preferences <B1> <B2> <B3> <B4> And Channel Preferences <Text> <Email> <Phone> <Post> <MBBStatus>
+    #Then Choose <consumer> <status> Business preferences <B1> <B2> <B3> <B4> And Channel Preferences <Text> <Email> <Phone> <Post> <MBBStatus> <DeviceType>
 
 
     Examples:
-      | handset  | Firstname | Surname | Username       |consumer| B1       | B2   | B3       | B4      | C1     | C2    | C3  | C4 |CheckBox|MBBStatus|
-      | iPhone 6 | TEST       | ACCEPTA | TEST ACCEPTA  |    Me   | Select  | Not | Select     | Select |Select  |Select | Not | Not|No      |No       |
+      | handset  | Firstname | Surname | Username     | consumer | B1     | B2  | B3     | B4     | Text   | Email  | Phone | Post | CheckBox | MBBStatus |DeviceType|
+      | iPhone 6 | TEST      | ACCEPTA | TEST ACCEPTA | Me       | Select | Not | Select | Select | Select | Select | Not   | Not  | No       | No        |Connected |

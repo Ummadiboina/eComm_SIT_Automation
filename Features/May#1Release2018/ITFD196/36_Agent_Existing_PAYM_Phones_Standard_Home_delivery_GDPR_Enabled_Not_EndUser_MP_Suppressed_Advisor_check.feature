@@ -6,12 +6,12 @@ Feature: Feature: 36_Agent_Existing_PAYM_Phones_Standard_Home_delivery_GDPR_Enab
   @Web
   Scenario Outline: 36_Agent_Existing_PAYM_Phones_Standard_Home_delivery_GDPR_Enabled_Not_EndUser_MP_Suppressed_Advisor_check
     Given I login to Agent shop
-    And performs Agent Existing customer journery for <user>
+    And performs Agent Existing customer journey for <user>
     And Select a valid PayM <Device>
     And Select valid <Tariffs> from tariffs tab
     And select a valid Handset and Tariff combination
     And Validate all the Basket content and checkout
-    And Choose Business preferences <B1> <B2> <B3> <B4> and Channel Preferences <Text> <Email> <Phone> <Post> for <Consumer> when GDPR <status> <MBBStatus>
+    And Choose Business preferences <B1> <B2> <B3> <B4> and Channel Preferences <Text> <Email> <Phone> <Post> for <Consumer> when GDPR <status> <MBBStatus> <DeviceType>
     Then perform all the advisory checks
     And validate the Personal details for Agent Existing customer and Enter time at current Address <Years> <Months>
     And perform the credit checks for Agent Existing customer by Bank details
@@ -20,6 +20,6 @@ Feature: Feature: 36_Agent_Existing_PAYM_Phones_Standard_Home_delivery_GDPR_Enab
 
 
     Examples:
-      | user | Device                        | Tariffs  | DeliveryType | Firstname | Surname | HouseNumber | PostCode | B1  | B2  | B3  | B4  | Text  | Email  | Phone  | Post  | Consumer     |status|MBBStatus|
-      |      | iPhone 7 Plus 128GB Jet Black | Standard | HomeDelivery | TEST      | ACCEPTA | 11          | SL11UP   | Not | Not | Not | Not | Not | Not | Not | Not | SomeOne else |Enabled         |No       |
+      | user        | Device                        | Tariffs  | DeliveryType | Firstname | Surname | HouseNumber | PostCode | B1  | B2  | B3  | B4  | Text | Email | Phone | Post | Consumer     | status  | MBBStatus |DeviceType|
+      | 07521009589 | iPhone 7 Plus 128GB Jet Black | Standard | HomeDelivery | TEST      | ACCEPTA | 11          | SL11UP   | Not | Not | Not | Not | Not  | Not   | Not   | Not  | SomeOne else | Enabled | No        |Connected |
 

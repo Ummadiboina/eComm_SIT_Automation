@@ -22,8 +22,8 @@ Feature: 24_CFU_SIMO_Phone_GDPR_Enabled_Home_Delivery_complaint_EndUser_MP_OptIn
     And Click on 'I agree to the terms and condition' checkbox in SIMO review page
     And Click on 'Place your order' CTA
     Then order confirmation is displayed
-    Then Choose <consumer> <status> Business preferences <B1> <B2> <B3> <B4> And Channel Preferences <Text> <Email> <Phone> <Post> <MBBStatus>
+    Then Choose <consumer> <status> Business preferences <B1> <B2> <B3> <B4> And Channel Preferences <Text> <Email> <Phone> <Post> <MBBStatus> <DeviceType>
 
     Examples:
-      | Contract | username           | password | filtername | sortoption                 |consumer    | B1     | B2  | B3     | B4  | Text   | Email | Phone  | Post |status|MBBStatus|
-      | 30 Days  | 12342015@gmail.com | test123  | low        | Monthly data (High to low) |SomeOne else| Select | Not | Select | Not |Select|Not | Not | Not|Enabled         |No       |
+      | Contract | username           | password | filtername | sortoption                 | consumer     | B1     | B2  | B3     | B4  | Text   | Email | Phone | Post | status  | MBBStatus |DeviceType|
+      | 30 Days  | 12342015@gmail.com | test123  | low        | Monthly data (High to low) | SomeOne else | Select | Not | Select | Not | Select | Not   | Not   | Not  | Enabled | No        |Connected |

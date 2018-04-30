@@ -20,8 +20,8 @@ Feature: 02_CFA_NewConnection_PAYM_Tablet_GDPR_Enabled_Refresh_CC_EndUser_MP_Opt
     And Continue to Agreements page and confirm all the agreement checks
     And Continue to Review page and review the order
     Then order confirmation is displayed
-    Then Choose <consumer> <status> Business preferences <B1> <B2> <B3> <B4> And Channel Preferences <Text> <Email> <Phone> <Post> <MBBStatus>
+    Then Choose <consumer> <status> Business preferences <B1> <B2> <B3> <B4> And Channel Preferences <Text> <Email> <Phone> <Post> <MBBStatus> <DeviceType>
 
     Examples:
-      | handset  | Firstname | Surname | Username       |consumer | B1      | B2  | B3     | B4     | Text   | Email | Phone  | Post  |status|Device|MBBStatus|
-      | iPhone 6 | TEST       | ACCEPTA | TEST ACCEPTA  |    Me   | Select  | Not | Select | Select |Select  |Select | Not    | Not|Enabled|        |No       |
+      | handset  | Firstname | Surname | Username     | consumer | B1     | B2  | B3     | B4     | Text   | Email  | Phone | Post | status  | Device | MBBStatus |DeviceType|
+      | iPhone 6 | TEST      | ACCEPTA | TEST ACCEPTA | Me       | Select | Not | Select | Select | Select | Select | Not   | Not  | Enabled |        | No        |Connected |

@@ -2051,6 +2051,23 @@ public class E2EOrderPlaced_Steps {
         }
     }
 
+    @Given("^performs Agent Existing customer journey for ([^\"]*)$")
+    public void performs_Agen_Existing_journey(String msisdn) {
+        try {
+            driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, Agent_HomePage.class);
+            Agent_HomePagePageActions.FindUser(msisdn);
+            Thread.sleep(3000);
+            Agent_HomePagePageActions.NewConnection();
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            System.out
+                    .println("Unable to perform Acquistion for user in Agent shop, please see the failure screenshot");
+            Assert.fail("Unable to perform Acquistion for user in Agent shop, please see the failure screenshot");
+
+        }
+    }
+
     /*
 	 * #########################################################################
 	 * #########
@@ -4736,6 +4753,22 @@ public class E2EOrderPlaced_Steps {
             Assert.fail("Unable to Validate basecomms offer link");
         }
     }
+
+    @And("^select ([^\"]*) Smart watch$")
+    public void Selecting_SmartTech_Device(String Device) {
+        try {
+
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, Agent_DealBuilderPage.class);
+            Agent_DealBuilderPageActions.SelectSmartTechDevice(Device);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            Assert.fail("Unable to select smart tech device");
+        }
+    }
+
+
 
     @Then("^check if the selected non connected device has more than 1 variant for colour and single variant for capacity$")
     public void check_if_the_selected_non_connected_device_has_more_than_1_variant_for_colour_and_single_variant_for_capacity() {
@@ -9440,13 +9473,13 @@ public class E2EOrderPlaced_Steps {
 
 //GDPR preferences section for CFA --- JamalKhan
 
-    @Then("^Choose ([^\"]*) ([^\"]*) Business preferences ([^\"]*) ([^\"]*) ([^\"]*) ([^\"]*) And Channel Preferences ([^\"]*) ([^\"]*) ([^\"]*) ([^\"]*) ([^\"]*)$")
-    public void Choose_Your_Preferences(String consumer, String gdprStatus, String BP1, String BP2, String BP3, String BP4, String Chn1, String Chn2, String Chn3, String Chn4, String MBBStatus) {
+    @Then("^Choose ([^\"]*) ([^\"]*) Business preferences ([^\"]*) ([^\"]*) ([^\"]*) ([^\"]*) And Channel Preferences ([^\"]*) ([^\"]*) ([^\"]*) ([^\"]*) ([^\"]*) ([^\"]*)$")
+    public void Choose_Your_Preferences(String consumer, String gdprStatus, String BP1, String BP2, String BP3, String BP4, String Chn1, String Chn2, String Chn3, String Chn4, String MBBStatus, String DeviceType) {
         // Write code here that turns the phrase above into concrete actions
         try {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, OrderConfirmationPage.class);
-            OrderConfirmationPageActions.PreferencesSection(consumer,gdprStatus, BP1, BP2, BP3, BP4, Chn1, Chn2, Chn3, Chn4,MBBStatus);
+            OrderConfirmationPageActions.PreferencesSection(consumer,gdprStatus, BP1, BP2, BP3, BP4, Chn1, Chn2, Chn3, Chn4,MBBStatus, DeviceType);
         } catch (Exception e) {
             // TODO Auto-generated catch block
             log.debug("Unable to Choose your preferences, please see the failure screenshot");
@@ -9456,13 +9489,13 @@ public class E2EOrderPlaced_Steps {
     }
 
     //GDPR preferences section for AFA  --- JamalKhan
-    @Then("^Choose Business preferences ([^\"]*) ([^\"]*) ([^\"]*) ([^\"]*) and Channel Preferences ([^\"]*) ([^\"]*) ([^\"]*) ([^\"]*) for ([^\"]*) when GDPR ([^\"]*) ([^\"]*)$")
-    public void Choose_Your_Preferences_AFA(String BP1, String BP2, String BP3, String BP4, String Chn1, String Chn2, String Chn3, String Chn4, String customer, String status,String MBBStatus) {
+    @Then("^Choose Business preferences ([^\"]*) ([^\"]*) ([^\"]*) ([^\"]*) and Channel Preferences ([^\"]*) ([^\"]*) ([^\"]*) ([^\"]*) for ([^\"]*) when GDPR ([^\"]*) ([^\"]*) ([^\"]*)$")
+    public void Choose_Your_Preferences_AFA(String BP1, String BP2, String BP3, String BP4, String Chn1, String Chn2, String Chn3, String Chn4, String customer, String status,String MBBStatus, String DeviceType) {
         // Write code here that turns the phrase above into concrete actions
         try {
             driver.manage().timeouts().implicitlyWait(200, TimeUnit.SECONDS);
             PageFactory.initElements(driver, Agent_RegisterCustomerPage.class);
-            Agent_RegisterCustomerActions.PreferencesSection_AFA(BP1, BP2, BP3, BP4, Chn1, Chn2, Chn3, Chn4, customer, status,MBBStatus);
+            Agent_RegisterCustomerActions.PreferencesSection_AFA(BP1, BP2, BP3, BP4, Chn1, Chn2, Chn3, Chn4, customer, status,MBBStatus,DeviceType);
             log.debug("Completed preference actions");
 
         } catch (Exception e) {
