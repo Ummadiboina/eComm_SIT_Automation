@@ -9,7 +9,10 @@ public class Agent_HomePage {
 	  
 		@FindBy(how=How.XPATH,using="//*[@id='acquisition']/p/a")
 		public static WebElement NewCustomer;
-				
+
+	@FindBy(how=How.XPATH,using="//a[normalize-space()='New Connection']")
+	public static WebElement NewConnection;
+
 		@FindBy(how=How.ID,using="msisdn")
 		public static WebElement MPN;
 		

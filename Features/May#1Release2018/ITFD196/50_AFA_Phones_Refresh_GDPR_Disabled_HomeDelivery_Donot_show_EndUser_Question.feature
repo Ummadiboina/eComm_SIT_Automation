@@ -14,7 +14,7 @@ Feature: 50_AFA_Phones_Refresh_GDPR_Disabled_HomeDelivery_Donot_show_EndUser_Que
     And perform the credit checks using valid <Firstname>, <Surname>, <HouseNumber>, <PostCode> and valid <Username>
     And Register customer with valid <Password>, <confirmPassword>, <SecurityAnswer> in delivery page
     And validate register status
-    And Choose Business preferences <B1> <B2> <B3> <B4> and Channel Preferences <Text> <Email> <Phone> <Post> for <Consumer> when GDPR <status> <MBBStatus>
+    And Choose Business preferences <B1> <B2> <B3> <B4> and Channel Preferences <Text> <Email> <Phone> <Post> for <Consumer> when GDPR <status> <MBBStatus> <DeviceType>
     And Choose <DeliveryType> delivery address and delivery time
     When Pay by card for PAYM device
     Then Order confirmation message should be displayed
@@ -22,5 +22,5 @@ Feature: 50_AFA_Phones_Refresh_GDPR_Disabled_HomeDelivery_Donot_show_EndUser_Que
     # And Update Device Plan Link Email Address
     # Then CCALink Should be generated
     Examples:
-      | Device              | Tariffs | Extras | DeliveryType | Firstname | Surname | Username     | HouseNumber | PostCode | Password | confirmPassword | SecurityAnswer | B1  | B2  | B3  | B4  | Text | Email    | Phone     | Post |Consumer |status|MBBStatus|
-      | Galaxy S8 Plus 64GB | Random  | Base   | HomeDelivery | TEST      | ACCEPTA | TEST ACCEPTA | 14          | SL11UP   | test1234 | test1234        | vinudeep       | Not | Not | Not | Not |Not|Not | Not | Not|Me       |Disabled|No                      |
+      | Device              | Tariffs | Extras | DeliveryType | Firstname | Surname | Username     | HouseNumber | PostCode | Password | confirmPassword | SecurityAnswer | B1  | B2  | B3  | B4  | Text | Email | Phone | Post | Consumer | status   | MBBStatus |DeviceType|
+      | Galaxy S8 Plus 64GB | Random  | Base   | HomeDelivery | TEST      | ACCEPTA | TEST ACCEPTA | 14          | SL11UP   | test1234 | test1234        | vinudeep       | Not | Not | Not | Not | Not  | Not   | Not   | Not  | Me       | Disabled | No        |Connected |

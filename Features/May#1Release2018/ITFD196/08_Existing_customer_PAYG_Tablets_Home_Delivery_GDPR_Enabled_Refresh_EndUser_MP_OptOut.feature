@@ -17,13 +17,13 @@ Feature: 08_Existing_customer_PAYG_Tablets_Home_Delivery_GDPR_Enabled_Refresh_En
     And click on "go to checkout" button
     And Select existing account and begin fast checkout
     And Is this order for You or Someone else <consumer> when GDPR is <status>
-    And land on the payment page and input <user> and other details for upgrade and click 'Continue on next step'
+    And land on the payment page and input <username> and other details for upgrade and click 'Continue on next step'
     #And Continue to Agreements page and confirm all the agreement checks
     And Continue to Review page and review the order
     Then order confirmation is displayed
-    Then Choose <consumer> <status> Business preferences <B1> <B2> <B3> <B4> And Channel Preferences <Text> <Email> <Phone> <Post> <MBBStatus>
+    Then Choose <consumer> <status> Business preferences <B1> <B2> <B3> <B4> And Channel Preferences <Text> <Email> <Phone> <Post> <MBBStatus> <DeviceType>
 
 
     Examples:
-      | handset           | Firstname | Surname | username     |password| filtername | sortoption                 | consumer | B1  | B2  | B3  | B4  | Text| Email | Phone  | Post | status |Device|MBBStatus|
-      | Samsung Galaxy S8 | TEST      | ACCEPTA | TEST ACCEPTA |test123| low        | Monthly data (High to low) | Me       | Not | Not | Not | Not | Not | Not | Not | Not | Enabled |            |No       |
+      | handset           | Firstname | Surname | username     | password | filtername | sortoption                 | consumer | B1  | B2  | B3  | B4  | Text | Email | Phone | Post | status  | Device | MBBStatus |DeviceType|
+      | Samsung Galaxy S8 | TEST      | ACCEPTA | TEST ACCEPTA | test123  | low        | Monthly data (High to low) | Me       | Not | Not | Not | Not | Not  | Not   | Not   | Not  | Enabled |        | No        |Connected |

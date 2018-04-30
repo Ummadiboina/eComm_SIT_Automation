@@ -371,7 +371,7 @@ public class Agent_RegisterCustomerActions extends Environment {
 
 //GDPR Preferences Section --- JamalKhan
 
-	public static void PreferencesSection_AFA(String BP1, String BP2, String BP3, String BP4, String Chn1, String Chn2, String Chn3, String Chn4, String customer, String gdprStatus,String MBBStatus) throws InterruptedException, IOException {
+	public static void PreferencesSection_AFA(String BP1, String BP2, String BP3, String BP4, String Chn1, String Chn2, String Chn3, String Chn4, String customer, String gdprStatus,String MBBStatus,String DeviceType) throws InterruptedException, IOException {
 
 		try {
 
@@ -379,441 +379,472 @@ public class Agent_RegisterCustomerActions extends Environment {
 
 			if(gdprStatus.equalsIgnoreCase("Enabled")) {
 
-				if (driver.findElements(By.xpath("//div[@class='gdprLabel']")).size() > 0) {
-					System.out.println("GDPR is Enabled and we are proceeding");
-					log.debug("GDPR is Enabled and we are proceeding");
+				if(DeviceType.equalsIgnoreCase("Connected")){
 
-					//Is this order for you or someone else validation
-					String thisOrderHeader = Agent_RegisterCustomerPage.thisOrderTxt.getText();
+					if (driver.findElements(By.xpath("//div[@class='gdprLabel']")).size() > 0) {
+						System.out.println("GDPR is Enabled and we are proceeding");
+						log.debug("GDPR is Enabled and we are proceeding");
 
-					if (thisOrderHeader.contains("Is this order for you or someone else")) {
-						System.out.println("As expected Text:: " + thisOrderHeader + " is displayed");
-						log.debug("As expected Text:: " + thisOrderHeader + " is displayed");
+						//Is this order for you or someone else validation
+						String thisOrderHeader = Agent_RegisterCustomerPage.thisOrderTxt.getText();
 
-						if (customer.contains("Me")) {
+						if (thisOrderHeader.contains("Is this order for you or someone else")) {
+							System.out.println("As expected Text:: " + thisOrderHeader + " is displayed");
+							log.debug("As expected Text:: " + thisOrderHeader + " is displayed");
 
-							//Me radio Btn
-							boolean defaultSelect = Agent_RegisterCustomerPage.Me_radioBtn.isSelected();
+							if (customer.contains("Me")) {
 
-							if (defaultSelect) {
-								System.out.println("Me is selected by Default");
-								log.debug("Me is selected by Default");
-							} else {
-								//Agent_RegisterCustomerPage.Me_radioBtn.click();
-								System.out.println("By Default Me radio button is not selected");
-								log.debug("By Default Me radio button is not selected");
-								Assert.fail("By Default Me radio button is not selected");
-							}
+								//Me radio Btn
+								boolean defaultSelect = Agent_RegisterCustomerPage.Me_radioBtn.isSelected();
 
-							// SaveMyPreferences button status before selecting business preferences
-							if (driver.findElements(By.xpath("//span[normalize-space()='Save my preferences']")).size() <= 0) {
-								System.out.println("As expected Save My Preference Button is disabled before selecting Business Preferences");
-								log.debug("As expected Save My Preference Button is disabled before selecting Business Preferences");
-							} else {
-								System.out.println("Save My Preference Button is displayed before selecting business/channel preferences");
-								log.debug("Save My Preference Button is displayed before selecting business/channel preferences");
-								Assert.fail("Save My Preference Button is displayed before selecting business/channel preferences");
-							}
-
-							//MBB validation
-							if(MBBStatus.equalsIgnoreCase("YES")){
-
-								//Business Preference validation for MBB
-								if (Agent_RegisterCustomerPage.O2Products.isSelected()) {
-									System.out.println("MBB:: O2Products business preference selected by default");
-									log.debug("MBB:: O2Products business preference selected by default");
-								}else{
-									System.out.println("MBB:: O2Products business preference not selected by default");
-									log.debug("MBB:: O2Products business preference not selected by default");
+								if (defaultSelect) {
+									System.out.println("Me is selected by Default");
+									log.debug("Me is selected by Default");
+								} else {
+									//Agent_RegisterCustomerPage.Me_radioBtn.click();
+									System.out.println("By Default Me radio button is not selected");
+									log.debug("By Default Me radio button is not selected");
+									Assert.fail("By Default Me radio button is not selected");
 								}
-								if (Agent_RegisterCustomerPage.O2PerksAndExtras.isSelected()) {
-									System.out.println("MBB:: O2 Perks And Extras preference selected by default");
-									log.debug("MBB:: O2 Perks And Extras preference selected by default");
-								}else{
-									System.out.println("MBB:: O2 Perks And Extras preference not selected by default");
-									log.debug("MBB:: O2 Perks And Extras preference not selected by default");
+
+								// SaveMyPreferences button status before selecting business preferences
+								if (driver.findElements(By.xpath("//span[normalize-space()='Save my preferences']")).size() <= 0) {
+									System.out.println("As expected Save My Preference Button is disabled before selecting Business Preferences");
+									log.debug("As expected Save My Preference Button is disabled before selecting Business Preferences");
+								} else {
+									System.out.println("Save My Preference Button is displayed before selecting business/channel preferences");
+									log.debug("Save My Preference Button is displayed before selecting business/channel preferences");
+									Assert.fail("Save My Preference Button is displayed before selecting business/channel preferences");
 								}
-								if (Agent_RegisterCustomerPage.OffersFromO2Partner.isSelected()) {
-									System.out.println("MBB:: Offers From O2 Partner preference selected by default");
-									log.debug("MBB:: Offers From O2 Partner preference selected by default");
-								}else{
-									System.out.println("MBB:: Offers From O2 Partner preference not selected by default");
-									log.debug("MBB:: Offers From O2 Partner preference not selected by default");
+
+								//MBB validation
+								if(MBBStatus.equalsIgnoreCase("YES")){
+
+									//Business Preference validation for MBB
+									if (Agent_RegisterCustomerPage.O2Products.isSelected()) {
+										System.out.println("MBB:: O2Products business preference selected by default");
+										log.debug("MBB:: O2Products business preference selected by default");
+									}else{
+										System.out.println("MBB:: O2Products business preference not selected by default");
+										log.debug("MBB:: O2Products business preference not selected by default");
+									}
+									if (Agent_RegisterCustomerPage.O2PerksAndExtras.isSelected()) {
+										System.out.println("MBB:: O2 Perks And Extras preference selected by default");
+										log.debug("MBB:: O2 Perks And Extras preference selected by default");
+									}else{
+										System.out.println("MBB:: O2 Perks And Extras preference not selected by default");
+										log.debug("MBB:: O2 Perks And Extras preference not selected by default");
+									}
+									if (Agent_RegisterCustomerPage.OffersFromO2Partner.isSelected()) {
+										System.out.println("MBB:: Offers From O2 Partner preference selected by default");
+										log.debug("MBB:: Offers From O2 Partner preference selected by default");
+									}else{
+										System.out.println("MBB:: Offers From O2 Partner preference not selected by default");
+										log.debug("MBB:: Offers From O2 Partner preference not selected by default");
+									}
+									if (Agent_RegisterCustomerPage.PartnersContacting.isSelected()) {
+										System.out.println("MBB:: Partners Contacting preference selected by default");
+										log.debug("MBB:: Partners Contacting preference selected by default");
+									}else{
+										System.out.println("MBB:: Partners Contacting preference not selected by default");
+										log.debug("MBB:: Partners Contacting preference not selected by default");
+									}
+
+									Thread.sleep(4000);
+
+									//Channel Preference validation for MBB
+
+									if (Agent_RegisterCustomerPage.Contact_Text.isSelected()) {
+										System.out.println("MBB:: Contact_Text preference selected by default");
+										log.debug("MBB:: Contact_Text preference selected by default");
+									}else{
+										System.out.println("MBB:: Contact_Text preference not selected by default");
+										log.debug("MBB:: Contact_Text preference not selected by default");
+									}
+									if (Agent_RegisterCustomerPage.Contact_Email.isSelected()) {
+										System.out.println("MBB:: Contact_Email preference selected by default");
+										log.debug("MBB:: Contact_Email preference selected by default");
+									}else{
+										System.out.println("MBB:: Contact_Email preference not selected by default");
+										log.debug("MBB:: Contact_Email preference selected not by default");
+									}
+									if (Agent_RegisterCustomerPage.Contact_Phone.isSelected()) {
+										System.out.println("MBB:: Contact_Phone preference selected by default");
+										log.debug("MBB:: Contact_Phone preference selected by default");
+									}else{
+										System.out.println("MBB:: Contact_Phone preference not selected by default");
+										log.debug("MBB:: Contact_Phone preference selected not by default");
+									}
+									if (Agent_RegisterCustomerPage.Contact_Post.isSelected()) {
+										System.out.println("MBB:: Contact_Post preference selected by default");
+										log.debug("MBB:: Contact_Post preference selected by default");
+									}else{
+										System.out.println("MBB:: Contact_Post preference not selected by default");
+										log.debug("MBB:: Contact_Post preference not selected by default");
+									}
 								}
-								if (Agent_RegisterCustomerPage.PartnersContacting.isSelected()) {
-									System.out.println("MBB:: Partners Contacting preference selected by default");
-									log.debug("MBB:: Partners Contacting preference selected by default");
-								}else{
-									System.out.println("MBB:: Partners Contacting preference not selected by default");
-									log.debug("MBB:: Partners Contacting preference not selected by default");
+
+								//GDPR_Business_Validation
+
+								//O2 Products
+								if (driver.findElements(By.xpath("//div[@data-label='Hotspot - O2 products']")).size() > 0) {
+
+									//O2 Products Tile Text validation
+									String contentText = Agent_RegisterCustomerPage.O2Products_Text.getText();
+
+									if (contentText.contains("I'm happy for O2 to let me know about offers relating to my service(upgrades, new tariffs, roaming, O2 Wifi etc.)")) {
+										System.out.println("O2 Tile Content text has as expected:: " + contentText);
+										log.debug("O2 Tile Content text has as expected:: " + contentText);
+									} else {
+										System.out.println("O2 Tile Content text is not matching:: " + contentText);
+										log.debug("O2 Tile Content text is not matching:: " + contentText);
+										Assert.fail("O2 Tile Content text is not matching:: " + contentText);
+									}
+
+									//O2 Products Link clicking
+									Agent_RegisterCustomerPage.O2Products_Link.click();
+									System.out.println("Clicked on Learn more about O2 products");
+									log.debug("Clicked on Learn more about O2 products");
+									driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+
+									//O2 Products Overlay Text validation
+									String overlayText = Agent_RegisterCustomerPage.O2Products_OverlayText.getText();
+									if (overlayText.contains("")) {
+										System.out.println("O2 products overlay text has as expected::" + overlayText);
+										log.debug("O2 products overlay text has as expected::" + overlayText);
+									} else {
+										System.out.println("O2 products overlay text is not matching:: " + overlayText);
+										log.debug("O2 products overlay text is not matching:: " + overlayText);
+										Assert.fail("O2 products overlay text is not matching:: " + overlayText);
+									}
+
+									//O2 Products Close Button clicking
+									Agent_RegisterCustomerPage.O2ProductsClose_CloseButton.click();
+									System.out.println("Clicked on O2 products overlay close button");
+									log.debug("Clicked on O2 products overlay close button");
+
+								}
+
+								//O2 Perks And Extras
+								if (driver.findElements(By.xpath("//div[@data-label='Hotspot - O2 perks and extras']")).size() > 0) {
+
+									//O2 Perks And Extra Tile Text validation
+									String contentText = Agent_RegisterCustomerPage.O2PerksAndExtras_Text.getText();
+
+									if (contentText.contains("I'm happy for O2 to let me know about offers, perks and services that are relevant to me, like Priority.")) {
+										System.out.println("O2 perks and extras Tile Content text has as expected:: " + contentText);
+										log.debug("O2 perks and extras Tile Content text has as expected:: " + contentText);
+									} else {
+										System.out.println("O2 perks and extras Tile Content text is not matching:: " + contentText);
+										log.debug("O2 perks and extras Tile Content text is not matching:: " + contentText);
+										Assert.fail("O2 perks and extras Tile Content text is not matching:: " + contentText);
+									}
+
+									//O2 Perks And Extras Link clicking
+									Agent_RegisterCustomerPage.O2PerksAndExtras_Link.click();
+									System.out.println("Clicked on Learn more about O2 perks and extras");
+									log.debug("Clicked on Learn more about O2 perks and extras");
+									driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+
+									//O2 Perks And Extras Overlay Text validation
+									String overlayText = Agent_RegisterCustomerPage.O2PerksAndExtras_OverlayText.getText();
+									if (overlayText.contains("")) {
+										System.out.println("O2 Perks And Extras overlay text has as expected::" + overlayText);
+										log.debug("O2 Perks And Extras overlay text has as expected::" + overlayText);
+									} else {
+										System.out.println("O2 Perks And Extras overlay text is not matching:: " + overlayText);
+										log.debug("O2 Perks And Extras overlay text is not matching:: " + overlayText);
+										Assert.fail("O2 Perks And Extras overlay text is not matching:: " + overlayText);
+									}
+
+									//O2 Perks And Extras Close Button clicking
+									Agent_RegisterCustomerPage.O2PerksAndExtras_CloseButton.click();
+									System.out.println("Clicked on O2 perks and extras overlay close button");
+									log.debug("Clicked on O2 perks and extras overlay close button");
+
+								}
+
+								//Offers From O2 Partner
+								if (driver.findElements(By.xpath("//div[@data-label='Hotspot - offers from o2 partners brands']")).size() > 0) {
+
+									//Offers From O2 Partner Text validation
+									String contentText = Agent_RegisterCustomerPage.OffersFromO2Partner_Text.getText();
+
+									if (contentText.contains("I'm happy for O2 to let me know about selected offers from leading brands, knowing my details won't be shared.")) {
+										System.out.println("Offers from o2 partners brands Tile Content text has as expected:: " + contentText);
+										log.debug("Offers from o2 partners brands Tile Content text has as expected:: " + contentText);
+									} else {
+										System.out.println("Offers from o2 partners brands Tile Content text is not matching:: " + contentText);
+										log.debug("Offers from o2 partners brands Tile Content text is not matching:: " + contentText);
+										Assert.fail("Offers from o2 partners brands Tile Content text is not matching:: " + contentText);
+									}
+
+									//Offers From O2 Partner Link clicking
+									Agent_RegisterCustomerPage.OffersFromO2Partner_Link.click();
+									System.out.println("Clicked on Learn more about partner offers");
+									log.debug("Clicked on Learn more about partner offers");
+									driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+
+									//Offers From O2 Partner Overlay Text validation
+									String overlayText = Agent_RegisterCustomerPage.OffersFromO2Partner_OverlayText.getText();
+									if (overlayText.contains("")) {
+										System.out.println("Offers From O2 Partner overlay text has as expected::" + overlayText);
+										log.debug("Offers From O2 Partner overlay text has as expected::" + overlayText);
+									} else {
+										System.out.println("Offers From O2 Partner overlay text is not matching:: " + overlayText);
+										log.debug("Offers From O2 Partner overlay text is not matching:: " + overlayText);
+										Assert.fail("Offers From O2 Partner overlay text is not matching:: " + overlayText);
+									}
+
+									//Offers From O2 Partner Close Button clicking
+									Agent_RegisterCustomerPage.OffersFromO2Partner_CloseButton.click();
+									System.out.println("Clicked on offers from partners and brands overlay close button");
+									log.debug("Clicked on offers from partners and brands overlay close button");
+
+								}
+
+								//Partners Contacting
+								if (driver.findElements(By.xpath("//div[@data-label='Hotspot - partners contacting me directly']")).size() > 0) {
+
+									//Partners Contacting Text validation
+									String contentText = Agent_RegisterCustomerPage.PartnersContacting_Text.getText();
+
+									if (contentText.contains("I'm happy for O2 to share my data with partner brands and for those brands to contact me directly.")) {
+										System.out.println("Partners contacting me directly Tile Content text has as expected:: " + contentText);
+										log.debug("Partners contacting me directly Tile Content text has as expected:: " + contentText);
+									} else {
+										System.out.println("Partners contacting me directly Tile Content text is not matching:: " + contentText);
+										log.debug("Partners contacting me directly Content text is not matching:: " + contentText);
+										Assert.fail("Partners contacting me directly Content text is not matching:: " + contentText);
+
+									}
+
+									//Partners Contacting Link clicking
+									Agent_RegisterCustomerPage.PartnersContacting_Link.click();
+									System.out.println("Clicked on Learn more about direct brand offers");
+									log.debug("Clicked on Learn more about direct brand offers");
+									driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+
+									//Partners Contacting Overlay Text validation
+									String overlayText = Agent_RegisterCustomerPage.PartnersContacting_OverlayText.getText();
+									if (overlayText.contains("")) {
+										System.out.println("Partners Contacting overlay text has as expected::" + overlayText);
+										log.debug("Partners Contacting overlay text has as expected::" + overlayText);
+									} else {
+										System.out.println("Partners Contacting overlay text is not matching:: " + overlayText);
+										log.debug("Partners Contacting overlay text is not matching:: " + overlayText);
+										Assert.fail("Partners Contacting overlay text is not matching:: " + overlayText);
+									}
+
+									//Partners Contacting Close Button cklicking
+									Agent_RegisterCustomerPage.PartnersContacting_CloseButton.click();
+									System.out.println("Clicked on partners contacting me directly overlay close button");
+									log.debug("Clicked onpartners contacting me directly overlay close button");
+
+								}
+
+								//checking Channel preference is displaying/not
+								if (driver.findElements(By.xpath("//div[@data-label='checkcontact1']/input")).size() > 0) {
+									System.out.println("Channel preferences is displaying before selecting business preferences");
+									log.debug("Channel preferences is displaying before selecting business preferences");
+								}
+
+								//Selecting Business preferences
+								if (BP1.equalsIgnoreCase("Select")) {
+
+									if (driver.findElements(By.xpath("//div[@data-label='check1']/input")).size() <= 0) {
+										System.out.println("O2Products business preference checkBox is not displayed");
+										log.debug("O2Products business preference checkBox is not displayed");
+									}
+									Agent_RegisterCustomerPage.O2Products.click();
+									System.out.println("O2Products business preference selected");
+									log.debug("O2Products business preference selected");
+								}
+
+								if (BP2.equalsIgnoreCase("Select")) {
+									if (driver.findElements(By.xpath("//div[@data-label='check2']/input")).size() <= 0) {
+										System.out.println("O2 Perks And Extras business preference checkBox is not displayed");
+										log.debug("O2 Perks And Extras business preference checkBox is not displayed");
+									}
+									Agent_RegisterCustomerPage.O2PerksAndExtras.click();
+									System.out.println("O2 Perks And Extras business preference selected");
+									log.debug("O2 Perks And Extras business preference selected");
+								}
+
+								if (BP3.equalsIgnoreCase("Select")) {
+									if (driver.findElements(By.xpath("//div[@data-label='check3']/input")).size() <= 0) {
+										System.out.println("Offers From O2 Partner business preference checkBox is not displayed");
+										log.debug("Offers From O2 Partner business preference checkBox is not displayed");
+									}
+									Agent_RegisterCustomerPage.OffersFromO2Partner.click();
+									System.out.println("Offers From O2 Partner business preference selected");
+									log.debug("Offers From O2 Partner business preference selected");
+								}
+
+								if (BP4.equalsIgnoreCase("Select")) {
+									if (driver.findElements(By.xpath("//div[@data-label='check4']/input")).size() <= 0) {
+										System.out.println("Partners Contacting business preference checkBox is not displayed");
+										log.debug("Partners Contacting business preference checkBox is not displayed");
+									}
+									Agent_RegisterCustomerPage.PartnersContacting.click();
+									System.out.println("Partners Contacting business preference selected");
+									log.debug("Partners Contacting business preference selected");
 								}
 
 								Thread.sleep(4000);
 
-								//Channel Preference validation for MBB
+								// SaveMyPreferences button status after selecting business preferences
+								if (driver.findElements(By.xpath("//span[normalize-space()='Save my preferences']")).size() > 0) {
+									System.out.println("Save MY Preference Button:: is enabled after selecting business preferences");
+									log.debug("Save My Preference Button:: is enabled after selecting business preferences");
 
-								if (Agent_RegisterCustomerPage.Contact_Text.isSelected()) {
-									System.out.println("MBB:: Contact_Text preference selected by default");
-									log.debug("MBB:: Contact_Text preference selected by default");
-								}else{
-									System.out.println("MBB:: Contact_Text preference not selected by default");
-									log.debug("MBB:: Contact_Text preference not selected by default");
-								}
-								if (Agent_RegisterCustomerPage.Contact_Email.isSelected()) {
-									System.out.println("MBB:: Contact_Email preference selected by default");
-									log.debug("MBB:: Contact_Email preference selected by default");
-								}else{
-									System.out.println("MBB:: Contact_Email preference not selected by default");
-									log.debug("MBB:: Contact_Email preference selected not by default");
-								}
-								if (Agent_RegisterCustomerPage.Contact_Phone.isSelected()) {
-									System.out.println("MBB:: Contact_Phone preference selected by default");
-									log.debug("MBB:: Contact_Phone preference selected by default");
-								}else{
-									System.out.println("MBB:: Contact_Phone preference not selected by default");
-									log.debug("MBB:: Contact_Phone preference selected not by default");
-								}
-								if (Agent_RegisterCustomerPage.Contact_Post.isSelected()) {
-									System.out.println("MBB:: Contact_Post preference selected by default");
-									log.debug("MBB:: Contact_Post preference selected by default");
-								}else{
-									System.out.println("MBB:: Contact_Post preference not selected by default");
-									log.debug("MBB:: Contact_Post preference not selected by default");
-								}
-							}
-
-							//GDPR_Business_Validation
-
-							//O2 Products
-							if (driver.findElements(By.xpath("//div[@data-label='Hotspot - O2 products']")).size() > 0) {
-
-								//O2 Products Tile Text validation
-								String contentText = Agent_RegisterCustomerPage.O2Products_Text.getText();
-
-								if (contentText.contains("I'm happy for O2 to let me know about offers relating to my service(upgrades, new tariffs, roaming, O2 Wifi etc.)")) {
-									System.out.println("O2 Tile Content text has as expected:: " + contentText);
-									log.debug("O2 Tile Content text has as expected:: " + contentText);
 								} else {
-									System.out.println("O2 Tile Content text is not matching:: " + contentText);
-									log.debug("O2 Tile Content text is not matching:: " + contentText);
-									Assert.fail("O2 Tile Content text is not matching:: " + contentText);
+									System.out.println("Save My Preference Button:: is disabled after selecting business preferences");
+									log.debug("Save My Preference Button:: is disabled after selecting business preferences");
+									Assert.fail("Save My Preference Button:: is disabled after selecting business preferences");
 								}
 
-								//O2 Products Link clicking
-								Agent_RegisterCustomerPage.O2Products_Link.click();
-								System.out.println("Clicked on Learn more about O2 products");
-								log.debug("Clicked on Learn more about O2 products");
+								//Selecting Channel preferences
+								if (Chn1.equalsIgnoreCase("Select")) {
+									if (driver.findElements(By.xpath("//div[@data-label='checkcontact1']/input")).size() <= 0) {
+										System.out.println("Contact_Text channel preference checkBox is not displayed");
+										log.debug("Contact_Text channel preference checkBox is not displayed");
+									}
+									Agent_RegisterCustomerPage.Contact_Text.click();
+									System.out.println("Contact_Text channel preference selected");
+									log.debug("Contact_Text business channel preference selected");
+								}
+								if (Chn2.equalsIgnoreCase("Select")) {
+									if (driver.findElements(By.xpath("//div[@data-label='checkcontact2']/input")).size() <= 0) {
+										System.out.println("Contact_Email channel preference checkBox is not displayed");
+										log.debug("Contact_Email channel preference checkBox is not displayed");
+									}
+									Agent_RegisterCustomerPage.Contact_Email.click();
+									System.out.println("Contact_Email channel preference selected");
+									log.debug("Contact_Email channel preference selected");
+								}
+								if (Chn3.equalsIgnoreCase("Select")) {
+									if (driver.findElements(By.xpath("//div[@data-label='checkcontact3']/input")).size() <= 0) {
+										System.out.println("Contact_Phone channel preference checkBox is not displayed");
+										log.debug("Contact_Phone channel preference checkBox is not displayed");
+									}
+									Agent_RegisterCustomerPage.Contact_Phone.click();
+									System.out.println("Contact_Phone channel preference selected");
+									log.debug("Contact_Phone channel preference selected");
+								}
+								if (Chn4.equalsIgnoreCase("Select")) {
+									if (driver.findElements(By.xpath("//div[@data-label='checkcontact4']/input")).size() <= 0) {
+										System.out.println("Contact_Post channel preference checkBox is not displayed");
+										log.debug("Contact_Post channel preference checkBox is not displayed");
+									}
+									Agent_RegisterCustomerPage.Contact_Post.click();
+									System.out.println("Contact_Post channel preference selected");
+									log.debug("Contact_Post channel preference selected");
+								}
+
 								driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
-								//O2 Products Overlay Text validation
-								String overlayText = Agent_RegisterCustomerPage.O2Products_OverlayText.getText();
-								if (overlayText.contains("")) {
-									System.out.println("O2 products overlay text has as expected::" + overlayText);
-									log.debug("O2 products overlay text has as expected::" + overlayText);
+								if (driver.findElements(By.xpath("//span[normalize-space()='Save my preferences']")).size() > 0) {
+									Agent_RegisterCustomerPage.SaveMyPreferences.click();
+									System.out.println("Save My Preference clicked");
+									log.debug("Save My Preference clicked");
 								} else {
-									System.out.println("O2 products overlay text is not matching:: " + overlayText);
-									log.debug("O2 products overlay text is not matching:: " + overlayText);
-									Assert.fail("O2 products overlay text is not matching:: " + overlayText);
+									System.out.println("Save My Preference button is not clicked after Business and Channel Preferences");
+									log.debug("Save My Preference button is not clicked after Business and Channel Preferences");
+									Assert.fail("Save My Preference button is not clicked after Business and Channel Preferences");
 								}
 
-								//O2 Products Close Button clicking
-								Agent_RegisterCustomerPage.O2ProductsClose_CloseButton.click();
-								System.out.println("Clicked on O2 products overlay close button");
-								log.debug("Clicked on O2 products overlay close button");
+								//Save My Preference Text Message
+								if (driver.findElements(By.xpath("//img[@id='u1306_img']")).size() > 0) {
 
-							}
-
-							//O2 Perks And Extras
-							if (driver.findElements(By.xpath("//div[@data-label='Hotspot - O2 perks and extras']")).size() > 0) {
-
-								//O2 Perks And Extra Tile Text validation
-								String contentText = Agent_RegisterCustomerPage.O2PerksAndExtras_Text.getText();
-
-								if (contentText.contains("I'm happy for O2 to let me know about offers, perks and services that are relevant to me, like Priority.")) {
-									System.out.println("O2 perks and extras Tile Content text has as expected:: " + contentText);
-									log.debug("O2 perks and extras Tile Content text has as expected:: " + contentText);
+									String saveText = Agent_RegisterCustomerPage.SavedPreferenceMessage.getText();
+									System.out.println("Saved your preferences:: " + saveText);
+									log.debug("Saved your preferences:: " + saveText);
 								} else {
-									System.out.println("O2 perks and extras Tile Content text is not matching:: " + contentText);
-									log.debug("O2 perks and extras Tile Content text is not matching:: " + contentText);
-									Assert.fail("O2 perks and extras Tile Content text is not matching:: " + contentText);
+									System.out.println("Saved your preferences text message is not showing");
+									log.debug("Saved your preferences text message is not showing");
+									Assert.fail("Saved your preferences text message is not showing");
 								}
 
-								//O2 Perks And Extras Link clicking
-								Agent_RegisterCustomerPage.O2PerksAndExtras_Link.click();
-								System.out.println("Clicked on Learn more about O2 perks and extras");
-								log.debug("Clicked on Learn more about O2 perks and extras");
-								driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-
-								//O2 Perks And Extras Overlay Text validation
-								String overlayText = Agent_RegisterCustomerPage.O2PerksAndExtras_OverlayText.getText();
-								if (overlayText.contains("")) {
-									System.out.println("O2 Perks And Extras overlay text has as expected::" + overlayText);
-									log.debug("O2 Perks And Extras overlay text has as expected::" + overlayText);
-								} else {
-									System.out.println("O2 Perks And Extras overlay text is not matching:: " + overlayText);
-									log.debug("O2 Perks And Extras overlay text is not matching:: " + overlayText);
-									Assert.fail("O2 Perks And Extras overlay text is not matching:: " + overlayText);
-								}
-
-								//O2 Perks And Extras Close Button clicking
-								Agent_RegisterCustomerPage.O2PerksAndExtras_CloseButton.click();
-								System.out.println("Clicked on O2 perks and extras overlay close button");
-								log.debug("Clicked on O2 perks and extras overlay close button");
-
-							}
-
-							//Offers From O2 Partner
-							if (driver.findElements(By.xpath("//div[@data-label='Hotspot - offers from o2 partners brands']")).size() > 0) {
-
-								//Offers From O2 Partner Text validation
-								String contentText = Agent_RegisterCustomerPage.OffersFromO2Partner_Text.getText();
-
-								if (contentText.contains("I'm happy for O2 to let me know about selected offers from leading brands, knowing my details won't be shared.")) {
-									System.out.println("Offers from o2 partners brands Tile Content text has as expected:: " + contentText);
-									log.debug("Offers from o2 partners brands Tile Content text has as expected:: " + contentText);
-								} else {
-									System.out.println("Offers from o2 partners brands Tile Content text is not matching:: " + contentText);
-									log.debug("Offers from o2 partners brands Tile Content text is not matching:: " + contentText);
-									Assert.fail("Offers from o2 partners brands Tile Content text is not matching:: " + contentText);
-								}
-
-								//Offers From O2 Partner Link clicking
-								Agent_RegisterCustomerPage.OffersFromO2Partner_Link.click();
-								System.out.println("Clicked on Learn more about partner offers");
-								log.debug("Clicked on Learn more about partner offers");
-								driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-
-								//Offers From O2 Partner Overlay Text validation
-								String overlayText = Agent_RegisterCustomerPage.OffersFromO2Partner_OverlayText.getText();
-								if (overlayText.contains("")) {
-									System.out.println("Offers From O2 Partner overlay text has as expected::" + overlayText);
-									log.debug("Offers From O2 Partner overlay text has as expected::" + overlayText);
-								} else {
-									System.out.println("Offers From O2 Partner overlay text is not matching:: " + overlayText);
-									log.debug("Offers From O2 Partner overlay text is not matching:: " + overlayText);
-									Assert.fail("Offers From O2 Partner overlay text is not matching:: " + overlayText);
-								}
-
-								//Offers From O2 Partner Close Button clicking
-								Agent_RegisterCustomerPage.OffersFromO2Partner_CloseButton.click();
-								System.out.println("Clicked on offers from partners and brands overlay close button");
-								log.debug("Clicked on offers from partners and brands overlay close button");
-
-							}
-
-							//Partners Contacting
-							if (driver.findElements(By.xpath("//div[@data-label='Hotspot - partners contacting me directly']")).size() > 0) {
-
-								//Partners Contacting Text validation
-								String contentText = Agent_RegisterCustomerPage.PartnersContacting_Text.getText();
-
-								if (contentText.contains("I'm happy for O2 to share my data with partner brands and for those brands to contact me directly.")) {
-									System.out.println("Partners contacting me directly Tile Content text has as expected:: " + contentText);
-									log.debug("Partners contacting me directly Tile Content text has as expected:: " + contentText);
-								} else {
-									System.out.println("Partners contacting me directly Tile Content text is not matching:: " + contentText);
-									log.debug("Partners contacting me directly Content text is not matching:: " + contentText);
-									Assert.fail("Partners contacting me directly Content text is not matching:: " + contentText);
-
-								}
-
-								//Partners Contacting Link clicking
-								Agent_RegisterCustomerPage.PartnersContacting_Link.click();
-								System.out.println("Clicked on Learn more about direct brand offers");
-								log.debug("Clicked on Learn more about direct brand offers");
-								driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-
-								//Partners Contacting Overlay Text validation
-								String overlayText = Agent_RegisterCustomerPage.PartnersContacting_OverlayText.getText();
-								if (overlayText.contains("")) {
-									System.out.println("Partners Contacting overlay text has as expected::" + overlayText);
-									log.debug("Partners Contacting overlay text has as expected::" + overlayText);
-								} else {
-									System.out.println("Partners Contacting overlay text is not matching:: " + overlayText);
-									log.debug("Partners Contacting overlay text is not matching:: " + overlayText);
-									Assert.fail("Partners Contacting overlay text is not matching:: " + overlayText);
-								}
-
-								//Partners Contacting Close Button cklicking
-								Agent_RegisterCustomerPage.PartnersContacting_CloseButton.click();
-								System.out.println("Clicked on partners contacting me directly overlay close button");
-								log.debug("Clicked onpartners contacting me directly overlay close button");
-
-							}
-
-							//checking Channel preference is displaying/not
-							if (driver.findElements(By.xpath("//div[@data-label='checkcontact1']/input")).size() > 0) {
-								System.out.println("Channel preferences is displaying before selecting business preferences");
-								log.debug("Channel preferences is displaying before selecting business preferences");
-							}
-
-							//Selecting Business preferences
-							if (BP1.equalsIgnoreCase("Select")) {
-
-								if (driver.findElements(By.xpath("//div[@data-label='check1']/input")).size() <= 0) {
-									System.out.println("O2Products business preference checkBox is not displayed");
-									log.debug("O2Products business preference checkBox is not displayed");
-								}
-								Agent_RegisterCustomerPage.O2Products.click();
-								System.out.println("O2Products business preference selected");
-								log.debug("O2Products business preference selected");
-							}
-
-							if (BP2.equalsIgnoreCase("Select")) {
-								if (driver.findElements(By.xpath("//div[@data-label='check2']/input")).size() <= 0) {
-									System.out.println("O2 Perks And Extras business preference checkBox is not displayed");
-									log.debug("O2 Perks And Extras business preference checkBox is not displayed");
-								}
-								Agent_RegisterCustomerPage.O2PerksAndExtras.click();
-								System.out.println("O2 Perks And Extras business preference selected");
-								log.debug("O2 Perks And Extras business preference selected");
-							}
-
-							if (BP3.equalsIgnoreCase("Select")) {
-								if (driver.findElements(By.xpath("//div[@data-label='check3']/input")).size() <= 0) {
-									System.out.println("Offers From O2 Partner business preference checkBox is not displayed");
-									log.debug("Offers From O2 Partner business preference checkBox is not displayed");
-								}
-								Agent_RegisterCustomerPage.OffersFromO2Partner.click();
-								System.out.println("Offers From O2 Partner business preference selected");
-								log.debug("Offers From O2 Partner business preference selected");
-							}
-
-							if (BP4.equalsIgnoreCase("Select")) {
-								if (driver.findElements(By.xpath("//div[@data-label='check4']/input")).size() <= 0) {
-									System.out.println("Partners Contacting business preference checkBox is not displayed");
-									log.debug("Partners Contacting business preference checkBox is not displayed");
-								}
-								Agent_RegisterCustomerPage.PartnersContacting.click();
-								System.out.println("Partners Contacting business preference selected");
-								log.debug("Partners Contacting business preference selected");
-							}
-
-							Thread.sleep(4000);
-
-							// SaveMyPreferences button status after selecting business preferences
-							if (driver.findElements(By.xpath("//span[normalize-space()='Save my preferences']")).size() > 0) {
-								System.out.println("Save MY Preference Button:: is enabled after selecting business preferences");
-								log.debug("Save My Preference Button:: is enabled after selecting business preferences");
-
-							} else {
-								System.out.println("Save My Preference Button:: is disabled after selecting business preferences");
-								log.debug("Save My Preference Button:: is disabled after selecting business preferences");
-								Assert.fail("Save My Preference Button:: is disabled after selecting business preferences");
-							}
-
-							//Selecting Channel preferences
-							if (Chn1.equalsIgnoreCase("Select")) {
-								if (driver.findElements(By.xpath("//div[@data-label='checkcontact1']/input")).size() <= 0) {
-									System.out.println("Contact_Text channel preference checkBox is not displayed");
-									log.debug("Contact_Text channel preference checkBox is not displayed");
-								}
-								Agent_RegisterCustomerPage.Contact_Text.click();
-								System.out.println("Contact_Text channel preference selected");
-								log.debug("Contact_Text business channel preference selected");
-							}
-							if (Chn2.equalsIgnoreCase("Select")) {
-								if (driver.findElements(By.xpath("//div[@data-label='checkcontact2']/input")).size() <= 0) {
-									System.out.println("Contact_Email channel preference checkBox is not displayed");
-									log.debug("Contact_Email channel preference checkBox is not displayed");
-								}
-								Agent_RegisterCustomerPage.Contact_Email.click();
-								System.out.println("Contact_Email channel preference selected");
-								log.debug("Contact_Email channel preference selected");
-							}
-							if (Chn3.equalsIgnoreCase("Select")) {
-								if (driver.findElements(By.xpath("//div[@data-label='checkcontact3']/input")).size() <= 0) {
-									System.out.println("Contact_Phone channel preference checkBox is not displayed");
-									log.debug("Contact_Phone channel preference checkBox is not displayed");
-								}
-								Agent_RegisterCustomerPage.Contact_Phone.click();
-								System.out.println("Contact_Phone channel preference selected");
-								log.debug("Contact_Phone channel preference selected");
-							}
-							if (Chn4.equalsIgnoreCase("Select")) {
-								if (driver.findElements(By.xpath("//div[@data-label='checkcontact4']/input")).size() <= 0) {
-									System.out.println("Contact_Post channel preference checkBox is not displayed");
-									log.debug("Contact_Post channel preference checkBox is not displayed");
-								}
-								Agent_RegisterCustomerPage.Contact_Post.click();
-								System.out.println("Contact_Post channel preference selected");
-								log.debug("Contact_Post channel preference selected");
-							}
-
-							driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-
-							if (driver.findElements(By.xpath("//span[normalize-space()='Save my preferences']")).size() > 0) {
-								Agent_RegisterCustomerPage.SaveMyPreferences.click();
-								System.out.println("Save My Preference clicked");
-								log.debug("Save My Preference clicked");
-							} else {
-								System.out.println("Save My Preference button is not clicked after Business and Channel Preferences");
-								log.debug("Save My Preference button is not clicked after Business and Channel Preferences");
-								Assert.fail("Save My Preference button is not clicked after Business and Channel Preferences");
-							}
-
-							//Save My Preference Text Message
-							if (driver.findElements(By.xpath("//img[@id='u1306_img']")).size() > 0) {
-
-								String saveText = Agent_RegisterCustomerPage.SavedPreferenceMessage.getText();
-								System.out.println("Saved your preferences:: " + saveText);
-								log.debug("Saved your preferences:: " + saveText);
-							} else {
-								System.out.println("Saved your preferences text message is not showing");
-								log.debug("Saved your preferences text message is not showing");
-								Assert.fail("Saved your preferences text message is not showing");
-							}
-
-						} else if (customer.contains("Someone")) {
-
-							boolean defaultSelect = Agent_RegisterCustomerPage.someoneElse_radioBtn.isSelected();
-							if (!defaultSelect) {
-								Agent_RegisterCustomerPage.someoneElse_radioBtn.click();
-								Thread.sleep(2000);
-								System.out.println("order for this customer : Me is selected by Default, as Requirement we have clicked Someone else");
-								log.debug("order for this customer : Me is selected by Default, as Requirement we have clicked Someone else");
+							} else if (customer.contains("Someone")) {
 
 								//checking business preference is displaying/not for someone else order selection
 								if (driver.findElements(By.xpath("//div[@data-label='check1']/input")).size() < 1) {
 									System.out.println("As expected business preferences is disabled for someone else order selection");
 									log.debug("As expected business preferences is disabled for someone else order selection");
+								}else{
+									Assert.fail("GDPR business preference Enabled:: for some one else order");
 								}
 
 								//checking Channel preferences is displaying/not for someone else order selection
 								if (driver.findElements(By.xpath("//div[@data-label='checkcontact1']/input")).size() < 1) {
 									System.out.println("As expected Channel preferences is disabled for someone else order selection");
 									log.debug("As expected Channel preferences is disabled for someone else order selection");
+								}else{
+									Assert.fail("GDPR Channel preferences Enabled:: for some one else order");
+								}
+
+								boolean defaultSelect = Agent_RegisterCustomerPage.someoneElse_radioBtn.isSelected();
+								if (!defaultSelect) {
+									Agent_RegisterCustomerPage.someoneElse_radioBtn.click();
+									Thread.sleep(2000);
+									System.out.println("order for this customer : Me is selected by Default, as Requirement we have clicked Someone else");
+									log.debug("order for this customer : Me is selected by Default, as Requirement we have clicked Someone else");
+								}
+
+								//Skip and Continue button
+								if (driver.findElements(By.xpath("//*[normalize-space(.)='SkipAndContinue']")).size() > 0) {
+									Agent_RegisterCustomerPage.SkipAndContinue.click();
+									System.out.println("Order is for Someone else:: so, clicked on Skip and Continue button");
+									log.debug("Order is for Someone else:: so, clicked on Skip and Continue button");
+								} else {
+									System.out.println("Skip and Continue:: button is not displayed");
+									log.debug("Skip and Continue:: button is not displayed");
+									Assert.fail("Skip and Continue:: button is not displayed");
 								}
 
 							}
-
-							//Skip and Continue button
-							if (driver.findElements(By.xpath("//*[normalize-space(.)='SkipAndContinue']")).size() > 0) {
-								Agent_RegisterCustomerPage.SkipAndContinue.click();
-								System.out.println("Order is for Someone else:: so, clicked on Skip and Continue button");
-								log.debug("Order is for Someone else:: so, clicked on Skip and Continue button");
-							} else {
-								System.out.println("Skip and Continue:: button is not displayed");
-								log.debug("Skip and Continue:: button is not displayed");
-								Assert.fail("Skip and Continue:: button is not displayed");
-							}
-
+						} else {
+							System.out.println("Text:: " + thisOrderHeader + " is not displayed");
+							log.debug("Text:: " + thisOrderHeader + " is not displayed");
+							Assert.fail("Text:: " + thisOrderHeader + " is not displayed");
 						}
-					} else {
-						System.out.println("Text:: " + thisOrderHeader + " is not displayed");
-						log.debug("Text:: " + thisOrderHeader + " is not displayed");
-						Assert.fail("Text:: " + thisOrderHeader + " is not displayed");
+					}else{
+						System.out.println("GDPR status is Enabled:: but preference header section is Disbaled");
+						log.debug("GDPR status is Enabled:: but preference header section is Disbaled");
+						Assert.fail("GDPR status is Enabled:: but preference header section is Disbaled");
 					}
-				}else{
-					Assert.fail("GDPR status is Enabled:: but preference header section is Disbaled");
+
+				}else if(DeviceType.equalsIgnoreCase("Non Connected")){
+
+					System.out.println("Device type is non connected");
+					log.debug("Device type is non connected");
+
+					if (driver.findElements(By.xpath("//div[@class='gdprLabel']")).size() < 1) {
+						System.out.println("GDPR is Disabled for non connected device");
+						log.debug("GDPR is Disabled for non connected device");
+					}else{
+						System.out.println("GDPR is Enabled for non connected device");
+						log.debug("GDPR is Enabled for non connected device");
+						Assert.fail("GDPR is Enabled for non connected device");
+					}
+
 				}
 			}else if(gdprStatus.equalsIgnoreCase("Disabled")){
-				if (driver.findElements(By.xpath("//div[@class='gdprLabel']")).size() < 1) {
-					System.out.println("GDPR is Disabled");
-					log.debug("GDPR is Disabled");
-				}else{
 
-					Assert.fail("GDPR is Enabled:: Text header is displaying");
+				if(DeviceType.equalsIgnoreCase("Connected")){
+					System.out.println("Device type is connected");
+					log.debug("Device type is connected");
+				}else if(DeviceType.equalsIgnoreCase("Non Connected")){
+					System.out.println("Device type is non connected");
+					log.debug("Device type is non connected");
+				}
+
+				if (driver.findElements(By.xpath("//div[@class='gdprLabel']")).size() < 1) {
+					System.out.println("GDPR is Disabled:: for disabled status");
+					log.debug("GDPR is Disabled:: for disabled status");
+				}else{
+					Assert.fail("GDPR is Enabled:: for disabled status (Text header is displaying)");
 				}
 			}
 			else{
@@ -821,8 +852,8 @@ public class Agent_RegisterCustomerActions extends Environment {
 			}
 		}
 		catch (Exception e) {
-			System.out.println("Unable to do GDPR validations");
-			log.debug("Unable to do GDPR validations");
+			System.out.println("Exception: Unable to do GDPR validations");
+			log.debug("Exception: Unable to do GDPR validations");
 			Screenshots.captureScreenshot();
 		}
 		Screenshots.captureScreenshot();

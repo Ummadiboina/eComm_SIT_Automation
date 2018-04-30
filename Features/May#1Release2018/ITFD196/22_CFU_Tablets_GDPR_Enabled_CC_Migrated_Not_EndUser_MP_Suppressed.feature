@@ -20,9 +20,9 @@ Feature: 22_CFU_Tablets_GDPR_Enabled_CC_Migrated_Not_EndUser_MP_Suppressed
     And Continue to Agreements page and confirm all the agreement checks
     And Continue to Review page and review the order
     Then order confirmation is displayed
-    Then Choose <consumer> <status> Business preferences <B1> <B2> <B3> <B4> And Channel Preferences <Text> <Email> <Phone> <Post> <MBBStatus>
+    Then Choose <consumer> <status> Business preferences <B1> <B2> <B3> <B4> And Channel Preferences <Text> <Email> <Phone> <Post> <MBBStatus> <DeviceType>
 
     Examples:
-      | Tablet        | Action | Surname | Username     | filtername | sortoption                 | username                      | password |consumer      | B1  | B2  | B3  | B4  | Text| Email | Phone  | Post |status|MBBStatus|
-      | Random Device | skip   | ACCEPTA | TEST ACCEPTA | low        | Monthly data (Low to High) | identityref01@mailinator.com  | test123  |SomeOne else  | Not | Not | Not | Not |Not|Not | Not | Not|Enabled|No                |
+      | Tablet        | Action | Surname | Username     | filtername | sortoption                 | username                     | password | consumer     | B1  | B2  | B3  | B4  | Text | Email | Phone | Post | status  | MBBStatus |DeviceType|
+      | Random Device | skip   | ACCEPTA | TEST ACCEPTA | low        | Monthly data (Low to High) | identityref01@mailinator.com | test123  | SomeOne else | Not | Not | Not | Not | Not  | Not   | Not   | Not  | Enabled | No        |Connected |
    #   | Apple iPhone 7    | TEST      | ACCEPTA | TEST ACCEPTA | high       |

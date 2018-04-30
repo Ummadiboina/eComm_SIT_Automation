@@ -1,8 +1,8 @@
-Feature: 45_AFU_SIMO_GDPR_Enabled_HomeDelivery_EndUser_Reaffirmed_MP_OptIn_B1B4_CP_Email
+Feature: 44_AFU_SIMO_GDPR_Enabled_Home_Delivery_EndUser_Compliant_MP_OptOut
   This scenario ensures that when the Agent in upgrade selects 'SIMO' tariff with multiple promotions, then the 'Promotions' section with all applied promotion description should be displayed in the deal builder and agent should be able to complete the order
 
   @Web
-  Scenario Outline: 45_AFU_SIMO_GDPR_Enabled_HomeDelivery_EndUser_Reaffirmed_MP_OptIn_B1B4_CP_Email
+  Scenario Outline: 44_AFU_SIMO_GDPR_Enabled_Home_Delivery_EndUser_Compliant_MP_OptOut
     Given I login to Agent shop
     And performs Upgrade for <user>
     And Select valid <Tariff> from tariffs tab

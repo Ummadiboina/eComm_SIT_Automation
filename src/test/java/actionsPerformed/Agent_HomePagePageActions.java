@@ -161,6 +161,26 @@ public class Agent_HomePagePageActions extends Environment {
 
 	}
 
+	public static void NewConnection() throws InterruptedException, IOException {
+		driver.manage().deleteAllCookies();
+
+		try {
+			Assert.assertTrue(pageobjects.Agent_HomePage.NewConnection.isDisplayed());
+			pageobjects.Agent_HomePage.NewConnection.click();
+			Thread.sleep(3000);
+			log.debug("Performing existing user new connection");
+			Reporter.log("Performing existing user new connection");
+			Screenshots.captureScreenshot();
+		} catch (Exception e) {
+			Assert.fail();
+			Screenshots.captureScreenshot();
+		}
+
+		Screenshots.captureScreenshot();
+
+	}
+
+
 	public static void ValidateAgentHomepage() throws IOException, InterruptedException {
 
 		log.debug("Agent Home page Validation" + driver.getTitle());
