@@ -9,6 +9,7 @@ import java.util.concurrent.TimeUnit;
 
 import org.apache.commons.lang.StringUtils;
 import org.apache.log4j.Logger;
+import org.apache.xmlbeans.impl.xb.xsdschema.FieldDocument;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -23,163 +24,36 @@ import helpers.Environment;
 public class PhonesListingPageAction extends Environment {
 	final static Logger log = Logger.getLogger("PhonesListingPageAction");
 
-	public static void PAYMPhoneSelect(String elementName) throws Throwable {
+	public static void PAYMPhoneSelect(String deviceName) throws Throwable {
 
-		// pageobjects.PhonesListingPage.ViewAllPhones.sendKeys(Key.ENTER);
+		driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
 
-		/*if(driver.findElements(By.xpath("(//a[contains(., 'View all products on one page')])[1]")).size() > 0)
-		{
-			driver.findElement(By.xpath("(//a[contains(., 'View all products on one page')])[1]")).click();
-			log.debug(" Clicked on View all products on one page(1) ");
-		}*/
+		try {
+			//WebElement serchBox = driver.findElement(By.xpath("//input[@ng-model='textSearch.searchText']"));
+			WebElement serchBox = driver.findElement(By.xpath("//input[@id='listing-search']"));
+			serchBox.sendKeys(deviceName);
+			Thread.sleep(2000);
 
-//		JavascriptExecutor js = ((JavascriptExecutor) driver);
-//		js.executeScript("arguments[0].scrollIntoView(true);",driver.findElement(By.xpath("(//a[contains(., 'View all products on one page')])[2]")));
+			WebElement requestedDevice = driver.findElement(By.xpath("(//img[@class='device-image']/..//*[contains(text(),'"+deviceName+"')])[3]"));
+			if (driver.findElements(By.xpath("(//img[@class='device-image']/..//*[contains(text(),'"+deviceName+"')])[3]")).size() >= 1) {
+                ((JavascriptExecutor) driver).executeScript("arguments[0].click();", requestedDevice);
+                log.debug("Selected Device from Phones as Required is : " + deviceName);
+                log.debug("Selected Device from Phones as Required is : " + deviceName);
+                Thread.sleep(3000);
+            } else {
 
-		/*if(driver.findElements(By.xpath("(//a[contains(., 'View all products on one page')])[2]")).size() > 0) {
-			WebElement element = driver.findElement(By.xpath("(//a[contains(., 'View all products on one page')])[2]"));
-			((JavascriptExecutor) driver).executeScript("arguments[0].click();", element);
+                WebElement element = driver.findElement(By.xpath("(//img[@class='device-image'])[1]"));
+                ((JavascriptExecutor) driver).executeScript("arguments[0].click();", element);
+                String defaultSelDevice = driver.findElement(By.xpath("((//img[@class='device-image'])[1]/..//span[@class='ng-binding'])[2]")).getText();
+                log.debug(" As Required Device is not Availabe, We have picked default device from availabe  :: " + defaultSelDevice);
+                log.debug(" As Required Device is not Availabe, We have picked default device from availabe  :: " + defaultSelDevice);
+                Thread.sleep(3000);
 
-			log.debug(" Clicked on View all products on one page(2) ");
-		}*/
-		/*driver.manage().timeouts().implicitlyWait(120, TimeUnit.SECONDS);
-		driver.findElement(By.xpath("//div[@class='fieldandsubmitbar']/input[1]")).sendKeys(elementName);*/
-		/*JavascriptExecutor executor = (JavascriptExecutor) driver;
-		executor.executeScript("arguments[0].click();", pageobjects.PhonesListingPage.ViewAllPhones);*/
-		Thread.sleep(2000);
-		/*if (elementName.contains("GalaxyS7")) {
-			pageobjects.PhonesListingPage.GalaxyS7.click();
-			log.debug("Selected GalaxyS7");
-			log.debug("Selected GalaxyS7");
+                Screenshots.captureScreenshot();
+            }
+		} catch (InterruptedException e) {
+			e.printStackTrace();
 		}
-		if (elementName.contains("BlackBerry Classic")) {
-			pageobjects.PhonesListingPage.BlackberryClassic.click();
-			log.debug("Blackberry Classic");
-			log.debug("Blackberry Classic");
-
-		}
-
-		if (elementName.contains("AquarisM45")) {
-			pageobjects.PhonesListingPage.AquarisM45.click();
-			log.debug("Selected AquarisM45");
-			log.debug("Selected AquarisM45");
-		}
-		if (elementName.contains("GalaxyS8")) {
-			pageobjects.PhonesListingPage.GalaxyS8.click();
-			// Assert.assertEquals(elementName,"Galaxy S7 is not found");
-			log.debug("Selected GalaxyS8");
-
-		}
-		if (elementName.contains("Samsung Galaxy S8")) {
-			pageobjects.PhonesListingPage.GalaxyS8.click();
-			// Assert.assertEquals(elementName,"Galaxy S7 is not found");
-			log.debug("Selected GalaxyS8");
-
-		}
-		if (elementName.contains("Samsung Galaxy S8 Plus")) {
-			pageobjects.PhonesListingPage.GalaxyS8Plus.click();
-			log.debug("Selected Samsung Galaxy S8 Plus");
-
-		}
-		if (elementName.contains("Iphone5S")) {
-			pageobjects.PhonesListingPage.Iphone5S.click();
-			// Assert.assertEquals(elementName,"Galaxy S7 is not found");
-			log.debug("Selected Iphone7");
-
-		}
-
-
-		if (elementName.contains("Apple8")) {
-			pageobjects.PhonesListingPage.Apple8.click();
-			// Assert.assertEquals(elementName,"Galaxy S7 is not found");
-			log.debug("Selected Iphone 8");
-
-		}
-
-		if (elementName.contains("Iphone7")) {
-			pageobjects.PhonesListingPage.Iphone7.click();
-			// Assert.assertEquals(elementName,"Galaxy S7 is not found");
-			log.debug("Selected Iphone7");
-
-		}
-
-		if (elementName.contains("Apple iPhone 7")) {
-			pageobjects.PhonesListingPage.AppleIphone7.click();
-			// Assert.assertEquals(elementName,"Galaxy S7 is not found");
-			log.debug("Selected Iphone7");
-
-		}
-		if (elementName.contains("AppleiPhone7Plus")) {
-			pageobjects.PhonesListingPage.Iphone7Plus.click();
-			// Assert.assertEquals(elementName,"Galaxy S7 is not found");
-			log.debug("Selected Iphone7Plus");
-
-		}
-
-		if (elementName.contains("IphoneSE")) {
-			pageobjects.PhonesListingPage.IphoneSE.click();
-			// Assert.assertEquals(elementName,"Galaxy S7 is not found");
-			log.debug("Selected IphoneSE");
-
-		}
-
-		if (elementName.contains("HuaweiP10")) {
-			pageobjects.PhonesListingPage.HuaweiP10.click();
-			// Assert.assertEquals(elementName,"Galaxy S7 is not found");
-			log.debug("Selected HuaweiP10");
-
-		}
-
-		if (elementName.contains("GalaxyS7Edge")) {
-			pageobjects.PhonesListingPage.GalaxyS7Edge.click();
-			// Assert.assertEquals(elementName,"Galaxy S7 is not found");
-			log.debug("Selected GalaxyS7Edge");
-		}
-
-		if (elementName.contains("Oneplus3T")) {
-			pageobjects.PhonesListingPage.Oneplus3T.click();
-			// Assert.assertEquals(elementName,"Galaxy S7 is not found");
-			log.debug("Selected Oneplus3T");
-
-		}
-
-		if (elementName.contains("Apple iPhone 7 Like New")) {
-			pageobjects.PhonesListingPage.AppleiPhone7LikeNew.click();
-			log.debug("Selected AppleiPhone7LikeNew");
-			log.debug("Selected AppleiPhone7LikeNew");
-
-		}
-
-		if (elementName.contains("Apple iPhone 6s Plus Like New")) {
-			pageobjects.PhonesListingPage.AppleiPhone6sPlusLikeNew.click();
-			log.debug("Selected AppleiPhone6sPlusLikeNew");
-			log.debug("Selected AppleiPhone6sPlusLikeNew");
-
-		}*/
-
-		driver.manage().timeouts().implicitlyWait(30,TimeUnit.SECONDS);
-
-		//WebElement serchBox = driver.findElement(By.xpath("//input[@ng-model='textSearch.searchText']"));
-		WebElement serchBox = driver.findElement(By.xpath("//input[@id='listing-search']"));
-		serchBox.sendKeys(elementName);
-		Thread.sleep(2000);
-
-		WebElement requestedDevice = driver.findElement(By.xpath("(//img[@class='device-image']/..//*[contains(text(),'"+elementName+"')])[3]"));
-		if (driver.findElements(By.xpath("(//img[@class='device-image']/..//*[contains(text(),'"+elementName+"')])[3]")).size() >= 1) {
-			((JavascriptExecutor) driver).executeScript("arguments[0].click();", requestedDevice);
-			log.debug("Selected Device from Phones as Required is : " + elementName);
-			log.debug("Selected Device from Phones as Required is : " + elementName);
-			Thread.sleep(3000);
-		} else {
-
-			WebElement element = driver.findElement(By.xpath("(//img[@class='device-image'])[1]"));
-			((JavascriptExecutor) driver).executeScript("arguments[0].click();", element);
-			String defaultSelDevice = driver.findElement(By.xpath("((//img[@class='device-image'])[1]/..//span[@class='ng-binding'])[2]")).getText();
-			log.debug(" As Required Device is not Availabe, We have picked default device from availabe  :: " + defaultSelDevice);
-			log.debug(" As Required Device is not Availabe, We have picked default device from availabe  :: " + defaultSelDevice);
-			Thread.sleep(3000);
-
-			Screenshots.captureScreenshot();		}
 	}
 
 	// Below is for PAYG phones

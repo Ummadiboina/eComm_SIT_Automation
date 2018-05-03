@@ -12,7 +12,8 @@ Feature: 53_Agent_Existing_Smartwatch_GDPR_Enabled_No_EndUser_Question.feature
     And Validate all the Basket content and checkout
     And Choose Business preferences <B1> <B2> <B3> <B4> and Channel Preferences <Text> <Email> <Phone> <Post> for <Consumer> when GDPR <status> <MBBStatus> <DeviceType>
     Then perform all the advisory checks
-    When Pay by card for Agent Smarttech devices
+    When Pay by card
+    #When Pay by card for Agent Smarttech devices
     Then Order confirmation message should be displayed
 
 

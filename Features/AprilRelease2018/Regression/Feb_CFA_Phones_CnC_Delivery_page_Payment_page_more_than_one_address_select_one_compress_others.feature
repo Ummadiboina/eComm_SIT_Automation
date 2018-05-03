@@ -22,5 +22,5 @@ Feature: Feb_CFA_Phones_CnC_Delivery_page_Payment_page_more_than_one_address_sel
 
 
     Examples:
-      | handset        | Firstname | Surname | Username     | consumer |
-      | iPhone 6 | TEST      | ACCEPTA | TEST ACCEPTA | Me       |
+      | handset | Firstname | Surname | Username     | consumer |
+      | iPhone  | TEST      | ACCEPTA | TEST ACCEPTA | Me       |
