@@ -1,5 +1,8 @@
 Feature: 30_AFA_NewConnection_PAYM_MBB_Standard_GDPR_Enabled_EndUser_MP_OptOut
 
+  This Scenario ensures that when the Agent in acquisition journey selects 'PAYM MBB' and placed an order by opting out of all Marketing preference,
+  then the Order consent profile should be created in CMT as expected
+
   #launch hooks and get browser
   @Web
   Scenario Outline: 30_AFA_NewConnection_PAYM_MBB_Standard_GDPR_Enabled_EndUser_MP_OptOut

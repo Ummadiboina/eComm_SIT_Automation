@@ -1,5 +1,8 @@
 Feature: 16_CFU_Phones_GDPR_Enabled_Home_Delivery_EndUser_Complaint_MP_OptIn_B2_CP_ALL
 
+  This Scenario ensures that when the upgrade customer with Compliant consent status selects 'PAYM Phone' and placed an order as an End user ,then the customer should be
+  able to select MP - B2 and CP - ALL  in Order confirmation page
+
   @Web
   Scenario Outline: 16_CFU_Phones_GDPR_Enabled_Home_Delivery_EndUser_Complaint_MP_OptIn_B2_CP_ALL
     Given I am existing user and I click on Signin button

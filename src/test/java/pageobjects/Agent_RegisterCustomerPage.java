@@ -290,7 +290,7 @@ public class Agent_RegisterCustomerPage {
     @FindBy(how = How.XPATH, using = "//img[@id='u1306_img']")
     public static WebElement SavedPreferenceMessage;
 
-    @FindBy(how = How.XPATH, using = "//div[@id='registerStatus']")
+    @FindBy(how = How.XPATH, using = "//div[@id='registerHeader']")
     public static WebElement registerStatus;
 
 

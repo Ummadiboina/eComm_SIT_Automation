@@ -1,5 +1,8 @@
 Feature: 35_AFA_NewConnection_PAYG_MBB_CC_GDPR_Enabled_EndUser_MP_Optin_ALL_CP_No
 
+  This Scenario ensures that when the Agent in acquisition journey selects 'PAYG MBB'  with Click and collect and placed an order by opting of Marketing preference 'ALL' and CP 'NO',
+  then the Order consent profile should be created in CMT as expected
+
   @Web
 
   Scenario Outline: 35_AFA_NewConnection_PAYG_MBB_CC_GDPR_Enabled_EndUser_MP_Optin_ALL_CP_No

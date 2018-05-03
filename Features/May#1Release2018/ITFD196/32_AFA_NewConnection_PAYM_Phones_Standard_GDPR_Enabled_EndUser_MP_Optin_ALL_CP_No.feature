@@ -1,5 +1,8 @@
 Feature: 32_AFA_NewConnection_PAYM_Phones_Standard_GDPR_Enabled_EndUser_MP_Optin_ALL_CP_No
 
+  This Scenario ensures that when the Agent in acquisition journey selects 'PAYM Phone'  with Home Delivery and placed an order by opting of Marketing preference 'ALL' and CP 'NO',
+  then the Order consent profile should be created in CMT as expected
+
   #launch hooks and get browser
   @Web
   Scenario Outline: 32_AFA_NewConnection_PAYM_Phones_Standard_GDPR_Enabled_EndUser_MP_Optin_ALL_CP_No

@@ -1,5 +1,8 @@
 Feature: 20_CFU_Tablets_GDPR_Enabled_HomeDelivery_EndUser_expired_MP_OptIn_B2B4_CP_Text_Post
 
+  This Scenario ensures that when the upgrade customer with Expired consent status selects 'PAYM Tablet' with Home delivery and placed an order by opting of Marketing preference 'B2/B4' and CP 'Text/Post',
+  then the Order consent profile should be created in CMT as expected
+
   @Web
   Scenario Outline: 20_CFU_Tablets_GDPR_Enabled_HomeDelivery_EndUser_expired_MP_OptIn_B2B4_CP_Text_Post
 

@@ -1,5 +1,8 @@
 Feature:21_CFU_Phones_GDPR_Enabled_CC_EndUser_Retained_MP_OptIn_All_CP_All
 
+  This Scenario ensures that when the upgrade customer with Compliant status selects 'PAYM Phone' with Click and collect placed an order by opting of Marketing preference 'All' and CP 'All',
+  then the Order consent profile should be created in CMT as expected
+
   @Web
   Scenario Outline: 21_CFU_Phones_GDPR_Enabled_CC_EndUser_Retained_MP_OptIn_All_CP_All
     Given I am existing user and I click on Signin button

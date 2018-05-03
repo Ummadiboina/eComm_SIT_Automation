@@ -1,5 +1,7 @@
 Feature: 44_AFU_SIMO_GDPR_Enabled_Home_Delivery_EndUser_Compliant_MP_OptOut
-  This scenario ensures that when the Agent in upgrade selects 'SIMO' tariff with multiple promotions, then the 'Promotions' section with all applied promotion description should be displayed in the deal builder and agent should be able to complete the order
+
+  This Scenario ensures that when the upgrade agent with Compliant consent status selects 'SIMO' and placed an order as an End user ,then the customer should be able to
+  Optout 'MP - ALL'and 'CP - ALL' selected in default in Order confirmation page
 
   @Web
   Scenario Outline: 44_AFU_SIMO_GDPR_Enabled_Home_Delivery_EndUser_Compliant_MP_OptOut

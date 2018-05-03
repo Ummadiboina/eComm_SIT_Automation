@@ -1,7 +1,7 @@
 Feature: 03_CFA_NewConnection_PAYM_MBB_GDPR_Enabled_Refresh_Homedelivery_EndUser_MP_OptIn_B1B2_CP_EmailandPost
 
-  This scenario ensures that when a customer in acquisition journey selects 'MBB' and navigates to tariff page ,
-  then the customer should be able to see  'Data filter' button next to sort drop-down for PayM tariffs
+  This Scenario ensures that when the Customer in acquisition journey selects 'PAYM MBB'  with Home delivery and placed an order by opting of Marketing preference 'B1/B2' and CP 'Email/Post',
+  then the Order consent profile should be created in CMT as expected
 
   @Web @OctoberReleasePhase1
   Scenario Outline: 03_CFA_NewConnection_PAYM_MBB_GDPR_Enabled_Refresh_Homedelivery_EndUser_MP_OptIn_B1B2_CP_EmailandPost
@@ -14,7 +14,6 @@ Feature: 03_CFA_NewConnection_PAYM_MBB_GDPR_Enabled_Refresh_Homedelivery_EndUser
     And I Land on the basket page and choose home delivery option
     And click on "go to checkout" button
     And input <Firstname> and <Surname> and other valid details in Delivery page to verify GDPR
-    #customer is either Me or Someone else
     And Is this order for You or Someone else <consumer> when GDPR is <status>
     And land on the payment page and input <Username> and other details and click 'Continue on next step'
     And Continue to Agreements page and confirm all the agreement checks

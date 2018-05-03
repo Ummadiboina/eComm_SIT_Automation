@@ -1,8 +1,8 @@
 Feature: 05_Existing_customer_PAYM_Phone_GDPR_Enabled_Refresh_Homedelivery_EndUser_MP_Optin_ALL_CP_No.feature
 
 
-  This scenario ensures that when a customer in Existing customer journey selects 'PayM Phones' as an EndUser
-  and selects MP_All and CP_No in Order confirmation page
+  This Scenario ensures that when the Existing customer in acquisition journey selects 'PAYM Phone'  with Home delivery and placed an order by opting of Marketing preference 'ALL' and CP 'NO',
+  then the Order consent profile should be created in CMT as expected
 
   @Web
 

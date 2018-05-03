@@ -1,5 +1,8 @@
 Feature: 29_AFA_NewConnection_PAYM_Phone_Refresh_CCA_GDPR_Enabled_EndUser_SECCI & CCA_Not Accepted
 
+  This Scenario ensures that when the Agent in acquisition journey selects 'PAYM Phone' with Home Delivery and Not Accepted 'SECCI & CCA' agreements,
+  then the Order should not be placed and consent profile should not be created
+
   #launch hooks and get browser
   @Web
   Scenario Outline: 29_AFA_NewConnection_PAYM_Phone_Refresh_CCA_GDPR_Enabled_EndUser_SECCI & CCA_Not Accepted

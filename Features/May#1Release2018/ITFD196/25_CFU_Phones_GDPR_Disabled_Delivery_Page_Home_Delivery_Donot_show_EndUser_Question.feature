@@ -1,5 +1,8 @@
 Feature: 25_CFU_Phones_GDPR_Disabled_Delivery_Page_Home_Delivery_Donot_show_EndUser_Question
 
+  This Scenario ensures that when the Customer in Upgrade journey selects 'Phones'  with Home delivery, then the new Radio buttons to capture "Is this order for you or someone else?"
+  and Marketing preferences should not be displayed
+
   @Web
   Scenario Outline: 25_CFU_Phones_GDPR_Disabled_Delivery_Page_Home_Delivery_Donot_show_EndUser_Question
     Given I am existing user and I click on Signin button

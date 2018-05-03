@@ -1,5 +1,8 @@
 Feature: 17_CFU_MBB_GDPR_Enabled_Hme_Delivery_complaint_Not_EndUser_MP_Suppressed
 
+  This Scenario ensures that when the upgrade customer with Compliant status selects 'PAYM MBB' and placed an order as Not an End user ,then the customer
+  should Not be displayed with MP and CP in Order confirmation page
+
   @Web
   Scenario Outline: 17_CFU_MBB_GDPR_Enabled_Hme_Delivery_complaint_Not_EndUser_MP_Suppressed
 

@@ -1,5 +1,8 @@
 Feature: 43_AFU_Phones_Refresh_GDPR_Enabled_Home_Delivery_EndUser_Compliant_MP_OptIn_B3_B4_CP_Email_Phone
 
+  This Scenario ensures that when the upgrade Agent with Compliant consent status selects 'PAYM Phone' and placed an order as an End user ,then the customer should be able to select displayed
+  with 'MP - B3/B4'and 'CP - Email/Phone' in Advisor checks
+
   #launch hooks and get browser
   @Web
   Scenario Outline: 43_AFU_Phones_Refresh_GDPR_Enabled_Home_Delivery_EndUser_Compliant_MP_OptIn_B3_B4_CP_Email_Phone

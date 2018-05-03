@@ -1,5 +1,8 @@
 Feature: 42_AFU_PayM_Tablets_Refresh_GDPR_Enabled_Home_Delivery_compliant_EndUser_MP_OptIn_B4_CP_Text
 
+  This Scenario ensures that when the upgrade Agent with Compliant consent status selects 'PayM Tablets' and placed an order as an End user ,then the customer should be able to
+  select 'MP - B4' and CP - Text in Advisor checks
+
   #launch hooks and get browser
   @Web
   Scenario Outline: 42_AFU_PayM_Tablets_Refresh_GDPR_Enabled_Home_Delivery_compliant_EndUser_MP_OptIn_B4_CP_Text

@@ -56,6 +56,11 @@ public class Agent_CreditCheckDetailsPage {
     @FindBy(how = How.ID, using = "yearsAtCurrentAddress")
     public static WebElement YearsatAddress;
 
+    @FindBy(how = How.ID, using = "")
+    public static WebElement Address;
+
+
+
     @FindBy(how = How.ID, using = "monthsAtCurrentAddress")
     public static WebElement monthsatAddress;
 

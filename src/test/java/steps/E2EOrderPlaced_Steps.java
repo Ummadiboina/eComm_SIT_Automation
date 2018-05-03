@@ -2368,6 +2368,42 @@ public class E2EOrderPlaced_Steps {
 
     }
 
+    @And("^validate the Personal details for Agent Existing customer and Enter time at current Address$")
+    public void CustomerDetailsYearMonth() {
+        try {
+            driver.manage().timeouts().implicitlyWait(200, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, Agent_CreditCheckDetailsPage.class);
+            Agent_CreditCheckPageActions.AddressDetails();
+            log.debug("Completed Bank details");
+            Thread.sleep(5000);
+
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            log.debug("Unable to perform credit checks , please see the failure screenshot");
+            Assert.fail("Unable to perform credit checks , please see the failure screenshot");
+
+        }
+
+    }
+
+    @And("^perform the credit checks for Agent Existing ([^\"]*) by Bank details$")
+    public void CreditCheckForExistingCustomer(String Username) {
+        try {
+            driver.manage().timeouts().implicitlyWait(200, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, Agent_CreditCheckDetailsPage.class);
+            Agent_CreditCheckPageActions.BankDetails(Username);
+            log.debug("Completed Bank details");
+            Thread.sleep(5000);
+
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            log.debug("Unable to perform credit checks , please see the failure screenshot");
+            Assert.fail("Unable to perform credit checks , please see the failure screenshot");
+
+        }
+
+    }
+
 	/*
 	 * #########################################################################
 	 * #########
@@ -5987,7 +6023,7 @@ public class E2EOrderPlaced_Steps {
 
     }
 
-    @And("^I enter details in Delivery Page ([^\"]*) and ([^\"]*) for GDPR ([^\"]*)$")
+    @And("^Enter details in Delivery Page ([^\"]*) and ([^\"]*) for GDPR ([^\"]*)$")
     public void i_enter_details_in_Delivery_PageTEST_and_ACCEPTA_new(String Firstname, String Surname, String CheckBox) {
 
         try {
@@ -5995,7 +6031,7 @@ public class E2EOrderPlaced_Steps {
             PageFactory.initElements(driver, DeliveryPage.class);
             DeliveryPageActions.SetDelivery();
             FreeSimDeliveryPageActions.FreeSimAboutYou(Firstname, Surname);
-            FreeSimDeliveryPageActions.marketingMessage(CheckBox);
+            FreeSimDeliveryPageActions.marketingMessageCheckBox(CheckBox);
             FreeSimDeliveryPageActions.ClickSendMeMySim();
 
         } catch (Exception e) {

@@ -1,5 +1,8 @@
 Feature: 33_AFA_NewConnection_PAYG_Phones_CC_GDPR_Enabled_EndUser_MP_OptIn_B3B4_CP_Email_Phone
 
+  This Scenario ensures that when the Agent in acquisition journey selects 'PAYG Phone'  with Click and collect and placed an order by opting of Marketing preference 'B3/B4' and CP 'Email/Phone',
+  then the Order consent profile should be created in CMT as expected
+
   @Web
 
   Scenario Outline: 33_AFA_NewConnection_PAYG_Phones_CC_GDPR_Enabled_EndUser_MP_OptIn_B3B4_CP_Email_Phone
