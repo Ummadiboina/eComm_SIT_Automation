@@ -85,6 +85,10 @@ public class DeliveryPage {
     @FindBy(how = How.XPATH, using = "//button[@id='btn-continue']")
     public static WebElement SendMeMySim;
 
+    @FindBy(how = How.XPATH, using = "//input[@id='marketCheckBox']")
+    public static WebElement marketCheckBox;
+
+
     @FindBy(how = How.XPATH, using = "//*[@id='btn-continue']")
     public static WebElement SendMeMySim2;
 
@@ -162,27 +166,32 @@ public class DeliveryPage {
 
 //newly added for GDPR
 
-    @FindBy(how = How.XPATH, using = "//*[contains(text(),'this order for you or someone else')]")
+    @FindBy(how = How.XPATH, using = "//label[contains(text(),'Is this order for you or someone else?')]")
     public static WebElement thisOrderTxt;
 
-    @FindBy(how = How.XPATH, using = "//*[contains(text(),'this order for you or someone else')]/following-sibling::*")
+    @FindBy(how = How.XPATH, using = "//a[@data-overlay='why-are-we-asking']")
     public static WebElement thisOrderOverlay;
 
-    @FindBy(how = How.XPATH, using = "//*[contains(text(),'have the chance to choose to receive information on our products, offers and more")
+    @FindBy(how = How.XPATH, using = "//p[contains(text(),'choose to receive information on our products, offers and more")
     public static WebElement thisOrderOverlayTxt;
 
-    @FindBy(how = How.XPATH, using = "//*[normalize-space(@class)='close']")
+    @FindBy(how = How.XPATH, using = "//a[@class='boxclose']")
     public static WebElement closeOveryPopup;
 
-    @FindBy(how = How.XPATH, using = "//*[normalize-space(.)='Me']/preceding-sibling::input")
+    @FindBy(how = How.XPATH, using = "//input[@id='consent-yes']")
     public static WebElement Me_radioBtn;
 
-    @FindBy(how = How.XPATH, using = "//*[normalize-space(.)='Someone else']/preceding-sibling::input")
+    @FindBy(how = How.XPATH, using = "//input[@id='consent-no']")
     public static WebElement someoneElse_radioBtn;
 
-    @FindBy(how = How.XPATH, using = "//*[normalize-space(.)='Submit']")
+    @FindBy(how = How.XPATH, using = "//button[@id='btn-continue']")
     public static WebElement continueBtn;
 
+    @FindBy(how = How.XPATH, using = "//*[normalize-space(@class)='on']")
+    public static WebElement SelectCreateNewAccount;
+
+    @FindBy(how = How.XPATH, using = "//button[@id='btn-continue-3']")
+    public static WebElement BeginCheckout;
 
 }
 

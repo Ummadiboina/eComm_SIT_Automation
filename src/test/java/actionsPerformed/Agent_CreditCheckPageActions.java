@@ -193,6 +193,7 @@ public class Agent_CreditCheckPageActions extends Environment {
 				}else{
 					System.out.println("Credit Check:: Refer status message is not matching with expected " + refStatus);
 					log.debug("Credit Check:: Refer status message is not matching with expected " + refStatus);
+					Assert.fail("Credit Check:: Refer status message is not matching with expected " + refStatus);
 
 				}
 			}
@@ -202,11 +203,12 @@ public class Agent_CreditCheckPageActions extends Environment {
 				String refStatus =Agent_CreditCheckDetailsPage.CreditCheckAbandoneStatus.getText();
 
 				if(refStatus.contains("Customer has been referred to simo order. Abandone checkout to create a simo order if customer wants SIMO. Tell customer that even SIMO order will be referred.")){
-					System.out.println("Credit Check:: Refer status message is as expected " + refStatus);
-					log.debug("Credit Check:: Refer status message is as expected " + refStatus);
+					System.out.println("Credit Check:: Non simo Refer status message is as expected " + refStatus);
+					log.debug("Credit Check:: Non simo Refer status message is as expected " + refStatus);
 				}else{
-					System.out.println("Credit Check:: Refer status message is not matching with expected " + refStatus);
-					log.debug("Credit Check:: Refer status message is not matching with expected " + refStatus);
+					System.out.println("Credit Check::  Non simo Refer status message is not matching with expected " + refStatus);
+					log.debug("Credit Check::  Non simo Refer status message is not matching with expected " + refStatus);
+					Assert.fail("Credit Check::  Non simo Refer status message is not matching with expected " + refStatus);
 				}
 			}
 		}catch (Exception e) {

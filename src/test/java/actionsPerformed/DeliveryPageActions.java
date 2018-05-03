@@ -156,15 +156,15 @@ public class DeliveryPageActions extends Environment {
     }
 
     //code for GDPR--Venkata
-    public static void clickOnSubmitBtn(String customer) throws InterruptedException {
+    public static void clickOnSubmitBtn(String customer, String status) throws InterruptedException {
         Thread.sleep(3000);
 
 
         log.debug("in click Submit button  function");
+        if(status.equalsIgnoreCase("Enabled")){
         //code to new validate on GDPR
         int count1 = driver.findElements(By.xpath("//*[@id='checkbox-terms-agreement-required']")).size();
         //int checkBox = driver.findElements(By.xpath("//*[@id='checkbox-terms-agreement-required']")).size();
-
         if (count1 <= 0) {
             System.out.println("checkbox is not displayed ie :: , I’d like to hear about everything I get, just for being on O2. Things like exclusive offers, tickets and upgrade deals.\n");
             log.debug("checkbox is not displayed ie :: , I’d like to hear about everything I get, just for being on O2. Things like exclusive offers, tickets and upgrade deals.\n");
@@ -175,31 +175,30 @@ public class DeliveryPageActions extends Environment {
         }
         Thread.sleep(3000);
 
-        if(driver.findElements(By.xpath("//*[normalize-space(.)='Me']/preceding-sibling::input")).size()>0)
-        {
-        String thisOrderHeader = DeliveryPage.thisOrderTxt.getText();
-        if (thisOrderHeader.contains("this order for you or someone else")) {
-            System.out.println("New Check box of 'Is this order for you or someone else?' is Displayed");
-            log.debug("New Check box of 'Is this order for you or someone else?' is Displayed");
-            Thread.sleep(3000);
-            DeliveryPage.thisOrderOverlay.click();
-            String thisOrderOVerLayTxt = DeliveryPage.thisOrderOverlayTxt.getText();
-            if (DeliveryPage.thisOrderOverlayTxt.isDisplayed()) {
-                if (thisOrderOVerLayTxt.contains("choose to receive information on our products, offers and more")) {
-                    System.out.println("Successfully validated the OVerLay Icon Text ie : " + thisOrderOVerLayTxt);
-                    log.debug("Successfully validated the OVerLay Icon Text ie : " + thisOrderOVerLayTxt);
-                    DeliveryPage.closeOveryPopup.click();
-                } else {
-                    System.out.println("Failed to validate the Overlay icon Text");
-                    log.info("Failed to validate the Overlay icon Text");
+        if(driver.findElements(By.xpath("//*[normalize-space(.)='Me']/preceding-sibling::input")).size()>0) {
+            String thisOrderHeader = DeliveryPage.thisOrderTxt.getText();
+            if (thisOrderHeader.contains("this order for you or someone else")) {
+                System.out.println("New Check box of 'Is this order for you or someone else?' is Displayed");
+                log.debug("New Check box of 'Is this order for you or someone else?' is Displayed");
+                Thread.sleep(3000);
+                DeliveryPage.thisOrderOverlay.click();
+                String thisOrderOVerLayTxt = DeliveryPage.thisOrderOverlayTxt.getText();
+                if (DeliveryPage.thisOrderOverlayTxt.isDisplayed()) {
+                    if (thisOrderOVerLayTxt.contains("choose to receive information on our products, offers and more")) {
+                        System.out.println("Successfully validated the OVerLay Icon Text ie : " + thisOrderOVerLayTxt);
+                        log.debug("Successfully validated the OVerLay Icon Text ie : " + thisOrderOVerLayTxt);
+                        DeliveryPage.closeOveryPopup.click();
+                    } else {
+                        System.out.println("Failed to validate the Overlay icon Text");
+                        log.info("Failed to validate the Overlay icon Text");
+                    }
                 }
+            } else {
+                System.out.println("Failed to validate New Check box of 'Is this order for you or someone else?' is Displayed");
+                log.debug("Failed to validate New Check box of 'Is this order for you or someone else?' is Displayed");
             }
-        } else {
-            System.out.println("Failed to validate New Check box of 'Is this order for you or someone else?' is Displayed");
-            log.debug("Failed to validate New Check box of 'Is this order for you or someone else?' is Displayed");
-        }
 
-            if(customer.contains("Me")) {
+            if (customer.contains("Me")) {
                 boolean defaultSelect = DeliveryPage.Me_radioBtn.isSelected();
                 if (defaultSelect) {
                     System.out.println("Me is selected by Default");
@@ -212,23 +211,30 @@ public class DeliveryPageActions extends Environment {
                 }
             }
 
-            if(customer.contains("Someone")) {
+            if (customer.contains("Someone")) {
                 boolean defaultSelect = DeliveryPage.someoneElse_radioBtn.isSelected();
                 if (!defaultSelect) {
-                DeliveryPage.someoneElse_radioBtn.click();
-                Thread.sleep(2000);
-                System.out.println("order for this customer : Me was selected by Default, as Requirement we have clicked Someone else");
-                log.debug("order for this customer : Me was selected by Default, as Requirement we have clicked Someone else");
+                    DeliveryPage.someoneElse_radioBtn.click();
+                    Thread.sleep(2000);
+                    System.out.println("order for this customer : Me was selected by Default, as Requirement we have clicked Someone else");
+                    log.debug("order for this customer : Me was selected by Default, as Requirement we have clicked Someone else");
                 } else {
                     System.out.println("Someone else radio button is selected by Default");
                     log.debug("Someone else radio button is selected by Default");
                 }
             }
-
-        }else{
-            System.out.println("GDPR is Disabled");
-            log.debug("GDPR is Disabled");
         }
+        }else if(status.equalsIgnoreCase("Disabled")) {
+            if (driver.findElements(By.xpath("//*[normalize-space(.)='Me']/preceding-sibling::input")).size() < 1 || !DeliveryPage.thisOrderOverlay.isDisplayed()) {
+                System.out.println("GDPR is Disabled");
+                log.debug("GDPR is Disabled");
+            } else {
+                Assert.fail("Failed to verify if GDPR is Disabled");
+        }
+        }else{
+            Assert.fail("Failed to do GDPR validations");
+        }
+
         DeliveryPage.continueBtn.click();
     }
 
@@ -681,6 +687,16 @@ public class DeliveryPageActions extends Environment {
         } else {
             log.debug("Unable to Enter Commercial or Invalid Address");
         }
+    }
+
+    public static void selectCreateNewAcctAndCheckOut() throws InterruptedException, IOException {
+        Thread.sleep(5000);
+        log.debug("Going to click on Create New account");
+        pageobjects.DeliveryPage.SelectCreateNewAccount.click();
+        Thread.sleep(3000);
+        js.executeScript("arguments[0].click();", pageobjects.DeliveryPage.BeginCheckout);
+        log.debug("BeginCheckout button is selected");
+        Screenshots.captureScreenshot();
     }
 
 
