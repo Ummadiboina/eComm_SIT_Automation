@@ -159,20 +159,23 @@ public class DeliveryPageActions extends Environment {
     public static void clickOnSubmitBtn(String customer, String status) throws InterruptedException {
         Thread.sleep(3000);
 
-
         log.debug("in click Submit button  function");
-        if(status.equalsIgnoreCase("Enabled")){
-        //code to new validate on GDPR
-        int count1 = driver.findElements(By.xpath("//*[@id='checkbox-terms-agreement-required']")).size();
-        //int checkBox = driver.findElements(By.xpath("//*[@id='checkbox-terms-agreement-required']")).size();
-        if (count1 <= 0) {
-            System.out.println("checkbox is not displayed ie :: , I’d like to hear about everything I get, just for being on O2. Things like exclusive offers, tickets and upgrade deals.\n");
-            log.debug("checkbox is not displayed ie :: , I’d like to hear about everything I get, just for being on O2. Things like exclusive offers, tickets and upgrade deals.\n");
-        }else{
-            System.out.println("checkbox is displayed ie :: , I’d like to hear about everything I get, just for being on O2. Things like exclusive offers, tickets and upgrade deals.\n");
-            log.debug("checkbox is displayed ie :: , I’d like to hear about everything I get, just for being on O2. Things like exclusive offers, tickets and upgrade deals.\n");
-            Assert.fail("checkbox is displayed ie :: , I’d like to hear about everything I get, just for being on O2. Things like exclusive offers, tickets and upgrade deals.\n");
-        }
+        if(status.equalsIgnoreCase("Enabled")) {
+            //code to new validate on GDPR
+            int count1 = driver.findElements(By.xpath("//*[@id='checkbox-terms-agreement-required']")).size();
+            //int checkBox = driver.findElements(By.xpath("//*[@id='checkbox-terms-agreement-required']")).size();
+            if (count1 <= 0) {
+                System.out.println("checkbox is not displayed ie :: , I’d like to hear about everything I get, just for being on O2. Things like exclusive offers, tickets and upgrade deals.\n");
+                log.debug("checkbox is not displayed ie :: , I’d like to hear about everything I get, just for being on O2. Things like exclusive offers, tickets and upgrade deals.\n");
+            } else if (driver.findElements(By.xpath("//*[contains(text(),'Is this order for you or someone else?')]")).size() > 0) {
+                System.out.println("Is this order for you or someone else? is displayed");
+                log.debug("Is this order for you or someone else? is displayed");
+            } else {
+                System.out.println("checkbox is displayed ie :: , I’d like to hear about everything I get, just for being on O2. Things like exclusive offers, tickets and upgrade deals.\n");
+                log.debug("checkbox is displayed ie :: , I’d like to hear about everything I get, just for being on O2. Things like exclusive offers, tickets and upgrade deals.\n");
+                Assert.fail("checkbox is displayed ie :: , I’d like to hear about everything I get, just for being on O2. Things like exclusive offers, tickets and upgrade deals.\n");
+            }
+
         Thread.sleep(3000);
 
         if(driver.findElements(By.xpath("//*[normalize-space(.)='Me']/preceding-sibling::input")).size()>0) {
@@ -225,7 +228,7 @@ public class DeliveryPageActions extends Environment {
             }
         }
         }else if(status.equalsIgnoreCase("Disabled")) {
-            if (driver.findElements(By.xpath("//*[normalize-space(.)='Me']/preceding-sibling::input")).size() < 1 || !DeliveryPage.thisOrderOverlay.isDisplayed()) {
+            if (driver.findElements(By.xpath("//label[normalize-space(.)='Me']")).size() < 1) {
                 System.out.println("GDPR is Disabled");
                 log.debug("GDPR is Disabled");
             } else {
