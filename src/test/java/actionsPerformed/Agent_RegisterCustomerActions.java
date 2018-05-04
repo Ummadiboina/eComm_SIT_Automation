@@ -164,6 +164,7 @@ public class Agent_RegisterCustomerActions extends Environment {
 			driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 			Thread.sleep(5000);
 			log.debug("Pay by card button is enabled ");
+			Thread.sleep(5000);
 			Agent_RegisterCustomerPage.PayByCard.click();
 			log.debug("Clicked on pay by card ");
 
@@ -172,7 +173,7 @@ public class Agent_RegisterCustomerActions extends Environment {
 	}
 
 	public static void CardDetails_PayM() throws InterruptedException {
-		Thread.sleep(2000);
+		Thread.sleep(5000);
 		log.debug("Mipay bit : ");
 		//driver.findElements(By.xpath("//label[contains(text(),'Card ending with:')]")).size();
 		if (driver.findElements(By.xpath("//label[contains(text(),'Card ending with:')]")).size() > 0) {

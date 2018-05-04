@@ -1,5 +1,7 @@
 Feature: 45_AFU_SIMO_GDPR_Enabled_HomeDelivery_EndUser_Reaffirmed_MP_OptIn_B1B4_CP_Email
-  This scenario ensures that when the Agent in upgrade selects 'SIMO' tariff with multiple promotions, then the 'Promotions' section with all applied promotion description should be displayed in the deal builder and agent should be able to complete the order
+
+  This Scenario ensures that when the Agent in Upgrade journey with Reaffirmed consent status selects 'SIMO' with Home delivery and placed an order by opting of Marketing preference 'B1/B4' and CP 'Email',
+  then the Order consent profile should be created in CMT as expected
 
   @Web
   Scenario Outline: 45_AFU_SIMO_GDPR_Enabled_HomeDelivery_EndUser_Reaffirmed_MP_OptIn_B1B4_CP_Email

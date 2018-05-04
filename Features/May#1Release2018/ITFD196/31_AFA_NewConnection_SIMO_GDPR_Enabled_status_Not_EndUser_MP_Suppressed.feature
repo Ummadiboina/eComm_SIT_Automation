@@ -1,5 +1,8 @@
 Feature: 31_AFA_NewConnection_SIMO_GDPR_Enabled_status_Not_EndUser_MP_Suppressed
 
+  This Scenario ensures that when the Agent in acquisition journey selects 'SIMO'  with Home delivery and placed an order by selecting End user as 'Someone else',
+  then the Order consent profile should be created in CMT as expected
+
   #launch hooks and get browser
   @Web
   Scenario Outline: 31_AFA_NewConnection_SIMO_GDPR_Enabled_status_Not_EndUser_MP_Suppressed

@@ -1,7 +1,7 @@
 Feature: 12_CFA_New_Customer_PAYM_Tablets_Home_Delivery_GDPR_Enabled_Refresh_EndUser_ SECCI & CCA_Not Accepted
 
-  This scenario ensures that when a customer in acquisition journey selects 'Phone' and navigated to tariff page ,then
-  the customer should be able to see  'Data filter' button next to sort drop-down for PayM tariffs
+  This Scenario ensures that when the Existing Customer in acquisition journey selects 'PAYM Tablets' with Home Delivery and Not Accepted 'SECCI & CCA' agreements,
+  then the Order should not be placed and consent profile should not be created
 
   @Web
   Scenario Outline: 12_CFA_New_Customer_PAYM_Tablets_Home_Delivery_GDPR_Enabled_Refresh_EndUser_ SECCI & CCA_Not Accepted
@@ -14,7 +14,6 @@ Feature: 12_CFA_New_Customer_PAYM_Tablets_Home_Delivery_GDPR_Enabled_Refresh_End
     And I Land on the basket page and choose home delivery option
     And click on "go to checkout" button
     And input <Firstname> and <Surname> and other valid details in Delivery page to verify GDPR
-    #customer is either Me or Someone else
     And Is this order for You or Someone else <consumer> when GDPR is <status>
     And land on the payment page and input <Username> and other details and click 'Continue on next step'
     #And Continue to Agreements page and confirm all the agreement checks

@@ -1,5 +1,8 @@
 Feature: 15_CFU_Tablets_GDPR_Enabled_CC_EndUser_Complaint_MP_OptOut
 
+  This Scenario ensures that when the upgrade customer with Compliant consent status selects 'PAYM Tablet' and placed an order as an End user ,then the customer should be displayed with MP - ALL and CP - ALL
+  in Opt out (Reset) status in Order confirmation page
+
   @Web
   Scenario Outline: 15_CFU_Tablets_GDPR_Enabled_CC_EndUser_Complaint_MP_OptOut
 

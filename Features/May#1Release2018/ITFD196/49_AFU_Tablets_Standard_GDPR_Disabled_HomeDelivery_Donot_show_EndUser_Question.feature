@@ -1,5 +1,8 @@
 Feature: 49_AFU_Tablets_Standard_GDPR_Disabled_HomeDelivery_Donot_show_EndUser_Question
 
+  This Scenario ensures that when the Agent in Upgrade journey selects 'Tablets'  with Home delivery, then the new Radio buttons to capture "Is this order for you or someone else?"
+  and Marketing preferences should not be displayed
+
   #launch hooks and get browser
   @Web
   Scenario Outline: 49_AFU_Tablets_Standard_GDPR_Disabled_HomeDelivery_Donot_show_EndUser_Question

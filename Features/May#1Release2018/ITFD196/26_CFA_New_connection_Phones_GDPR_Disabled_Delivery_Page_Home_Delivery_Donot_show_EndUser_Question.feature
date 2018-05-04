@@ -1,7 +1,7 @@
 Feature: 26_CFA_New_connection_Phones_GDPR_Disabled_Delivery_Page_Home_Delivery_Donot_show_EndUser_Question
 
-  This scenario ensures that when a customer in acquisition journey selects 'Phone' and navigated to tariff page ,then
-  the customer should be able to see  'Data filter' button next to sort drop-down for PayM tariffs
+  This Scenario ensures that when the Customer in Acquisition journey selects 'Phones'  with Home delivery, then the new Radio buttons to
+  capture "Is this order for you or someone else?" and Marketing preferences should not be displayed
 
   @Web
   Scenario Outline: 26_CFA_New_connection_Phones_GDPR_Disabled_Delivery_Page_Home_Delivery_Donot_show_EndUser_Question

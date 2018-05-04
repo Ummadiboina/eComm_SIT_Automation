@@ -1,5 +1,8 @@
 Feature: 34_AFA_NewConnection_PAYG_Tablets_HomeDelivery_GDPR_Enabled_EndUser_MP_OptIn_B2_CP_ALL
 
+  This Scenario ensures that when the Agent in acquisition journey selects 'PAYG Tablet'  with Home Delivery and placed an order by opting of Marketing preference 'B2' and CP 'All',
+  then the Order consent profile should be created in CMT as expected
+
   @Web
 
   Scenario Outline: 34_AFA_NewConnection_PAYG_Tablets_HomeDelivery_GDPR_Enabled_EndUser_MP_OptIn_B2_CP_ALL

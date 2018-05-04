@@ -3,7 +3,9 @@ package actionsPerformed;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
+import GlobalActions.CommonUtilities;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.Select;
@@ -16,7 +18,7 @@ import pageobjects.DeliveryPage;
 
 public class FreeSimDeliveryPageActions extends Environment {
 
-	public WebDriver driver;
+	public static WebDriver driver;
 	public List<HashMap<String, String>> datamap;
 	final static Logger log = Logger.getLogger("FreeSimDeliveryPageActions");
 	private static CharSequence Firstname;
@@ -42,13 +44,31 @@ public class FreeSimDeliveryPageActions extends Environment {
 		Screenshots.captureScreenshot();
 	}
 
-	public static void marketingMessage(String CheckBox) throws InterruptedException, IOException {
+	public static void marketingMessageCheckBox(String CheckBox) throws InterruptedException, IOException {
 		//Marketing Message validation
 
-		log.debug("Clicking on Marketing check box");
+		log.debug("Clicking on I agree check box");
 		Thread.sleep(3000);
+		pageobjects.DeliveryPage.Iagree.click();
+		//pageobjects.DeliveryPage.IagreeTermsCondition.click();
+
+		String NoMarkettingMessage = pageobjects.DeliveryPage.NoMarkettingMessage.getText();
+		log.debug("No Marketting Message :: "+ NoMarkettingMessage);
+
+		log.debug("Clicking on Privacy Policy");
+		pageobjects.DeliveryPage.PrivacyPolicy.click();
+		CommonUtilities.switchToWindow(driver);
+
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+
+		String PrivacyPolicyMessage = pageobjects.DeliveryPage.PrivacyPolicyMessage.getText();
+		log.debug("Privacy Policy Message :: "+PrivacyPolicyMessage);
+
+		CommonUtilities.switchToWindow(driver);
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		log.debug("Clicking on Marketing check box");
 		pageobjects.DeliveryPage.marketCheckBox.click();
-		log.debug("Clicking on the marketCheckBox");
+
 		Screenshots.captureScreenshot();
 	}
 

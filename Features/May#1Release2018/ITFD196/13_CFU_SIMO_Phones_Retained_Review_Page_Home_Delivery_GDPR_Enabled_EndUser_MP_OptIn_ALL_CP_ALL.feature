@@ -1,6 +1,7 @@
 Feature: 13_CFU_SIMO_Phones_Retained_Review_Page_Home_Delivery_GDPR_Enabled_EndUser_MP_OptIn_ALL_CP_ALL
 
-  This scenario ensures that an upgrade customer is able to select a 12 months tablets tariff under the simo tab in upgrade options page
+  This Scenario ensures that when the Customer in Upgrade journey selects 'SIMO Phones'  with Home delivery and placed an order by opting of Marketing preference 'ALL' and CP 'ALL',
+  then the Order consent profile should be created in CMT as expected
 
   @Web
   Scenario Outline: 13_CFU_SIMO_Phones_Retained_Review_Page_Home_Delivery_GDPR_Enabled_EndUser_MP_OptIn_ALL_CP_ALL

@@ -1,5 +1,8 @@
 Feature: 09_CFA_NewConnection_PAYG_MBB_Home_Delivery_GDPR_Enabled_Refresh_EndUser_MP_OptIn_B3_CP_ALL
 
+  This Scenario ensures that when the Customer in acquisition journey selects 'PAYG MBB'  with Home delivery and placed an order by opting of Marketing preference 'B3' and CP 'ALL',
+  then the Order consent profile should be created in CMT as expected
+
   @Web
   Scenario Outline: 09_CFA_NewConnection_PAYG_MBB_Home_Delivery_GDPR_Enabled_Refresh_EndUser_MP_OptIn_B3_CP_ALL
     Given I am an CFA user and Lands on shop page
@@ -10,7 +13,6 @@ Feature: 09_CFA_NewConnection_PAYG_MBB_Home_Delivery_GDPR_Enabled_Refresh_EndUse
     And I Land on the basket page and choose home delivery option
     And click on "go to checkout" button
     And input <Firstname> and <Surname> and other valid details in Delivery page to verify GDPR
-    #customer is either Me or Someone else
     And Is this order for You or Someone else <consumer> when GDPR is <status>
     And land on the Non Credit check payment page and input <Username> and other details and click 'Continue on next step'
     #And Continue to Agreements page and confirm all the agreement checks

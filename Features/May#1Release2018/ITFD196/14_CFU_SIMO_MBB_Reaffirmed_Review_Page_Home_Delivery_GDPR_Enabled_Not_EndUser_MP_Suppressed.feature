@@ -1,6 +1,7 @@
 Feature: 14_CFU_SIMO_MBB_Reaffirmed_Review_Page_Home_Delivery_GDPR_Enabled_Not_EndUser_MP_Suppressed
 
-  This scenario ensures that an upgrade customer is able to select a 12 months tablets tariff under the simo tab in upgrade options page
+  This Scenario ensures that when the Customer in Upgrade journey selects 'SIMO MBB' with Home delivery and placed an order by selecting End user as 'Someone else',
+  then the Order consent profile should be created in CMT as expected
 
   @Web
   Scenario Outline: 14_CFU_SIMO_MBB_Reaffirmed_Review_Page_Home_Delivery_GDPR_Enabled_Not_EndUser_MP_Suppressed

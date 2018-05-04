@@ -1,5 +1,8 @@
 Feature: 46_AFU_MBB_Refresh_GDPR_Enabled_CC_EndUser_Expired_MP_OptIn_B3_CP_ALL
 
+  This Scenario ensures that when the Agent in Upgrade journey with Expired consent status selects 'MBB' with Click and collect placed an order by opting of Marketing preference 'B3' and CP 'ALL',
+  then the Order consent profile should be created in CMT as expected
+
   #launch hooks and get browser
   @Web
   Scenario Outline: 46_AFU_MBB_Refresh_GDPR_Enabled_CC_EndUser_Expired_MP_OptIn_B3_CP_ALL

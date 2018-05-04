@@ -1,5 +1,8 @@
 Feature: 22_CFU_Tablets_GDPR_Enabled_CC_Migrated_Not_EndUser_MP_Suppressed
 
+  This Scenario ensures that when the upgrade customer with migrated status selects 'PAYM Tablet ' with Click and collect placed an order as Not an End user ,then the customer
+  should not be displayed with MP and CP in Order confirmation page
+
   @Web
   Scenario Outline: 22_CFU_Tablets_GDPR_Enabled_CC_Migrated_Not_EndUser_MP_Suppressed
 

@@ -1,5 +1,8 @@
 Feature: 28_AFA_NewConnection_PAYM_Tablets_Refresh_GDPR_Enabled_EndUser_MP_OptOut
 
+  This Scenario ensures that when the Agent in acquisition journey selects 'PAYM Tablet' and placed an order by opting out of all Marketing preference,
+  then the Order consent profile should be created in CMT as expected
+
   #launch hooks and get browser
   @Web
   Scenario Outline: 28_AFA_NewConnection_PAYM_Tablets_Refresh_GDPR_Enabled_EndUser_MP_OptOut

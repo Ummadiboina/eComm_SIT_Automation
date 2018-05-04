@@ -1,7 +1,7 @@
 Feature: 01_CFA_NewConnection_PAYM_Phone_GDPR_Enabled_Refresh_EndUser_MP_OptOut
 
-  This scenario ensures that when a customer in acquisition journey selects 'Phone' and navigated to tariff page ,then
-  the customer should be able to see  'Data filter' button next to sort drop-down for PayM tariffs
+  This Scenario ensures that when the Customer in acquisition journey selects 'PAYM Phone' and placed an order by opting out of all Marketing preference,
+  then the Order consent profile should be created in CMT as expected
 
   @Web
   Scenario Outline: 01_CFA_NewConnection_PAYM_Phone_GDPR_Enabled_Refresh_EndUser_MP_OptOut
@@ -13,7 +13,6 @@ Feature: 01_CFA_NewConnection_PAYM_Phone_GDPR_Enabled_Refresh_EndUser_MP_OptOut
     And I Land on the basket page and choose home delivery option
     And click on "go to checkout" button
     And input <Firstname> and <Surname> and other valid details in Delivery page to verify GDPR
-    #customer is either Me or Someone else
     And Is this order for You or Someone else <consumer> when GDPR is <status>
     And land on the payment page and input <Username> and other details and click 'Continue on next step'
     And Continue to Agreements page and confirm all the agreement checks

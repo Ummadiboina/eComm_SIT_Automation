@@ -12,9 +12,9 @@ Feature: AFA_Not_Allow_ReferWithSIMO_Credit_Check_Status_For_SIMO_Order_And_Show
     And perform the credit checks using valid <Firstname>, <Surname>, <HouseNumber>, <PostCode> and valid <Username>
     And Validate Credit check status for ReferralwithSimo
     And Register the customer with valid <Firstname>, <Surname>, <HouseNumber>, <PostCode> and other valid details in delivery page
-    And Choose Business preferences <B1> <B2> <B3> <B4> and Channel Preferences <Text> <Email> <Phone> <Post> for <Consumer> when GDPR <status> <MBBStatus>
+    And Choose Business preferences <B1> <B2> <B3> <B4> and Channel Preferences <Text> <Email> <Phone> <Post> for <Consumer> when GDPR <status> <MBBStatus> <DeviceType>
 
 
     Examples:
-      | Device              | Tariff | DeliveryType | Firstname | Surname          | Username     | HouseNumber | PostCode | B1     | B2  | B3     | B4     | Text   | Email  | Phone | Post | Consumer     | status  | MBBStatus |
-      | Galaxy S8 Plus 64GB | SimO   | HomeDelivery | TEST      | ReferralwithSimo | TEST ACCEPTA | 6           | SL11ER   | Select | Not | Select | Select | Select | Select | Not   | Not  | SomeOne else | Enabled | No        |
+      | Device              | Tariff | DeliveryType | Firstname | Surname          | Username     | HouseNumber | PostCode | B1     | B2  | B3     | B4     | Text   | Email  | Phone | Post | Consumer     | status  | MBBStatus |DeviceType|
+      | Galaxy S8 Plus 64GB | SimO   | HomeDelivery | TEST      | ReferralwithSimo | TEST ACCEPTA | 6           | SL11ER   | Select | Not | Select | Select | Select | Select | Not   | Not  | SomeOne else | Enabled | No        |Connected |
