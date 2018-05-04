@@ -16,7 +16,7 @@ Feature: 35_AFA_NewConnection_PAYG_MBB_CC_GDPR_Enabled_EndUser_MP_Optin_ALL_CP_N
     And Register the customer with valid <Firstname>, <Surname>, <HouseNumber>, <PostCode> and other valid details in delivery page
     And Register customer with valid <Password>, <confirmPassword>, <SecurityAnswer> in delivery page
     And validate register status
-    And Choose Business preferences <B1> <B2> <B3> <B4> and Channel Preferences <Text> <Email> <Phone> <Post> for <Consumer> when GDPR <status> <MBBStatus> <DeviceType>
+    And Choose Business preferences <B1> <B2> <B3> <B4> and Channel Preferences <Text> <Email> <Phone> <Post> for <Consumer> when GDPR <status> <DeviceType> for AFA journey
     And Choose <DeliveryType> delivery address and delivery time
     When Pay by card
     Then Order confirmation message should be displayed

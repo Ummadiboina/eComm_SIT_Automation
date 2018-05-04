@@ -14,7 +14,7 @@ Feature: 47_AFU_Tablets_Standard_GDPR_Enabled_CC_Not_EndUser_Retained_MP_Suppres
     And select a valid Handset and Tariff combination
     And select a valid store for Click and Collect
     And Validate all the Basket content and checkout
-    And Choose Business preferences <B1> <B2> <B3> <B4> and Channel Preferences <Text> <Email> <Phone> <Post> for <consumer> when GDPR <status> <MBBStatus> <DeviceType>
+    And Choose Business preferences <B1> <B2> <B3> <B4> and Channel Preferences <Text> <Email> <Phone> <Post> for <consumer> when GDPR <status> <DeviceType> for AFU journey
     Then perform all the advisory checks
     #When submit order button is clicked
     When Pay by card

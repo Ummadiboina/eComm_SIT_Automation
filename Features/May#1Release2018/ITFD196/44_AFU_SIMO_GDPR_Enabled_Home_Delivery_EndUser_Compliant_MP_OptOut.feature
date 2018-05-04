@@ -10,7 +10,7 @@ Feature: 44_AFU_SIMO_GDPR_Enabled_Home_Delivery_EndUser_Compliant_MP_OptOut
     And Select valid <Tariff> from tariffs tab
     #The tariff selected should have a Multiple promotion
     And Validate all the Basket content and checkout
-    And Choose Business preferences <B1> <B2> <B3> <B4> and Channel Preferences <Text> <Email> <Phone> <Post> for <Consumer> when GDPR <status> <MBBStatus> <DeviceType>
+    And Choose Business preferences <B1> <B2> <B3> <B4> and Channel Preferences <Text> <Email> <Phone> <Post> for <consumer> when GDPR <status> <DeviceType> for AFU journey
     Then perform all the advisory checks
     #And perform the credit checks using valid <Firstname>, <Surname>, <HouseNumber>, <PostCode> and valid <Username>
     #And Register the customer with valid <Firstname>, <Surname>, <HouseNumber>, <PostCode> and other valid details in delivery page

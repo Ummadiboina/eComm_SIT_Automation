@@ -13,7 +13,7 @@ Feature: 40_Agent_Existing_CCA_PAYM_Phones_Refresh_CCA_GDPR_Enabled_EndUser_EndU
     And Select valid <Tariffs> from tariffs tab
     And select a valid Handset and Tariff combination
     And Validate all the Basket content and checkout
-    And Choose Business preferences <B1> <B2> <B3> <B4> and Channel Preferences <Text> <Email> <Phone> <Post> for <Consumer> when GDPR <status> <MBBStatus> <DeviceType>
+    And Choose Business preferences <B1> <B2> <B3> <B4> and Channel Preferences <Text> <Email> <Phone> <Post> for <Consumer> when GDPR <status> <DeviceType> for AFU journey
     Then perform all the advisory checks
     And validate the Personal details for Agent Existing customer and Enter time at current Address
     And perform the credit checks for Agent Existing <Username> by Bank details
@@ -31,7 +31,7 @@ Feature: 40_Agent_Existing_CCA_PAYM_Phones_Refresh_CCA_GDPR_Enabled_EndUser_EndU
 
 
     Examples:
-      | user        | Device              | Tariffs | username | password | Username     | HouseNumber | PostCode | Password | confirmPassword | SecurityAnswer | B1  | B2  | B3     | B4  | Text | Email | Phone  | Post | Consumer | status2  | consumer | MBBStatus |DeviceType|
-      | 07521009589 | Galaxy S8 Plus 64GB | Refresh |          | test123  | TEST ACCEPTA | 14          | SL11UP   | test1234 | test1234        | vinudeep       | Not | Not | Select | Not | Not  | Not   | Select | Not  | Me       | Disabled | Me       | No        |Connected |
+      | user        | Device              | Tariffs | username | password | Username     | HouseNumber | status  | PostCode | Password | confirmPassword | SecurityAnswer | B1  | B2  | B3     | B4  | Text | Email | Phone  | Post | Consumer | status2  | consumer | MBBStatus | DeviceType |
+      | 07521009589 | Galaxy S8 Plus 64GB | Refresh |          | test123  | TEST ACCEPTA | 14          | Enabled | SL11UP   | test1234 | test1234        | vinudeep       | Not | Not | Select | Not | Not  | Not   | Select | Not  | Me       | Disabled | Me       | No        | Connected  |
 
 

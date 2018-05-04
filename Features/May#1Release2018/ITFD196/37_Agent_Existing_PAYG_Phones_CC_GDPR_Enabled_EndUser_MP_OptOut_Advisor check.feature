@@ -11,7 +11,7 @@ Feature: Feature: 37_Agent_Existing_PAYG_Phones_CC_GDPR_Enabled_EndUser_MP_OptOu
     And Select valid <Tariffs> from PAYG tariffs tab
     And select a valid store for Click and Collect
     And Validate all the Basket content and checkout
-    And Choose Business preferences <B1> <B2> <B3> <B4> and Channel Preferences <Text> <Email> <Phone> <Post> for <Consumer> when GDPR <status> <MBBStatus> <DeviceType>
+    And Choose Business preferences <B1> <B2> <B3> <B4> and Channel Preferences <Text> <Email> <Phone> <Post> for <Consumer> when GDPR <status> <DeviceType> for AFU journey
     Then perform all the advisory checks
     When Pay by card
     Then Order confirmation message should be displayed

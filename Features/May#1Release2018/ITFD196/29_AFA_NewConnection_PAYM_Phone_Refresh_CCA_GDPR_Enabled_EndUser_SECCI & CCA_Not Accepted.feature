@@ -16,7 +16,7 @@ Feature: 29_AFA_NewConnection_PAYM_Phone_Refresh_CCA_GDPR_Enabled_EndUser_SECCI 
     And perform the credit checks using valid <Firstname>, <Surname>, <HouseNumber>, <PostCode> and valid <Username>
     And Register customer with valid <Password>, <confirmPassword>, <SecurityAnswer> in delivery page
     And validate register status
-    And Choose Business preferences <B1> <B2> <B3> <B4> and Channel Preferences <Text> <Email> <Phone> <Post> for <Consumer> when GDPR <status> <MBBStatus> <DeviceType>
+    And Choose Business preferences <B1> <B2> <B3> <B4> and Channel Preferences <Text> <Email> <Phone> <Post> for <Consumer> when GDPR <status> <DeviceType> for AFA journey
     And Choose <DeliveryType> delivery address and delivery time
     And Update Device Plan Link Email Address
     And Accept O2 Refresh Deal Summary

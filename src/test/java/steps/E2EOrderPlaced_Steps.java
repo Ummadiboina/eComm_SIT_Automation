@@ -9525,13 +9525,13 @@ public class E2EOrderPlaced_Steps {
     }
 
     //GDPR preferences section for AFA  --- JamalKhan
-    @Then("^Choose Business preferences ([^\"]*) ([^\"]*) ([^\"]*) ([^\"]*) and Channel Preferences ([^\"]*) ([^\"]*) ([^\"]*) ([^\"]*) for ([^\"]*) when GDPR ([^\"]*) ([^\"]*) ([^\"]*)$")
-    public void Choose_Your_Preferences_AFA(String BP1, String BP2, String BP3, String BP4, String Chn1, String Chn2, String Chn3, String Chn4, String customer, String status,String MBBStatus, String DeviceType) {
+    @Then("^Choose Business preferences ([^\"]*) ([^\"]*) ([^\"]*) ([^\"]*) and Channel Preferences ([^\"]*) ([^\"]*) ([^\"]*) ([^\"]*) for ([^\"]*) when GDPR ([^\"]*) ([^\"]*) for AFA journey$")
+    public void Choose_Your_Preferences_AFA(String BP1, String BP2, String BP3, String BP4, String Chn1, String Chn2, String Chn3, String Chn4, String customer, String status, String DeviceType) {
         // Write code here that turns the phrase above into concrete actions
         try {
             driver.manage().timeouts().implicitlyWait(200, TimeUnit.SECONDS);
             PageFactory.initElements(driver, Agent_RegisterCustomerPage.class);
-            Agent_RegisterCustomerActions.PreferencesSection_AFA(BP1, BP2, BP3, BP4, Chn1, Chn2, Chn3, Chn4, customer, status,MBBStatus,DeviceType);
+            Agent_RegisterCustomerActions.PreferencesSection_AFA(BP1, BP2, BP3, BP4, Chn1, Chn2, Chn3, Chn4, customer, status,DeviceType);
             log.debug("Completed preference actions");
 
         } catch (Exception e) {
@@ -9541,6 +9541,26 @@ public class E2EOrderPlaced_Steps {
 
         }
     }
+
+    //GDPR preferences section for AFU  --- JamalKhan
+    @Then("^Choose Business preferences ([^\"]*) ([^\"]*) ([^\"]*) ([^\"]*) and Channel Preferences ([^\"]*) ([^\"]*) ([^\"]*) ([^\"]*) for ([^\"]*) when GDPR ([^\"]*) ([^\"]*) for AFU journey$")
+    public void Choose_Your_Preferences_AFU(String BP1, String BP2, String BP3, String BP4, String Chn1, String Chn2, String Chn3, String Chn4, String customer, String status, String DeviceType) {
+        // Write code here that turns the phrase above into concrete actions
+        try {
+            driver.manage().timeouts().implicitlyWait(200, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, Agent_RegisterCustomerPage.class);
+            Agent_RegisterCustomerActions.PreferencesSection_AFU(BP1, BP2, BP3, BP4, Chn1, Chn2, Chn3, Chn4, customer, status,DeviceType);
+            log.debug("Completed preference actions");
+
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            log.debug("Unable to Choose your preferences, please see the failure screenshot");
+            Assert.fail("Unable to Choose your preferences, please see the failure screenshot");
+
+        }
+    }
+
+
 
     @And("Select create a new account and begin checkout")
     public void Select_Create_New_account_and_begin_checkout() {

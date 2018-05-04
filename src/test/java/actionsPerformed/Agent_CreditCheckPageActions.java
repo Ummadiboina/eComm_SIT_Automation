@@ -183,7 +183,7 @@ public class Agent_CreditCheckPageActions extends Environment {
 	public static void CreditcheckReferStatus()throws InterruptedException, IOException {
 
 		try{
-			if(driver.findElements(By.xpath("//h2[@id='creditCheckHeader']/span")).size()>0)
+			if(driver.findElements(By.xpath("//h2[@id='creditCheckHeader']")).size()>0)
 			{
 				String refStatus = Agent_CreditCheckDetailsPage.CreditCheckReferStatus.getText();
 

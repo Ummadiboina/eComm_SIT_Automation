@@ -9,7 +9,7 @@ Feature: Feature: 38_Agent_Existing_SIMO_HomeDelivery_GDPR_Enabled_EndUser_MP_Op
     And performs Agent Existing customer journey for <user>
     And Select valid <Tariff> from tariffs tab
     And Validate all the Basket content and checkout
-    And Choose Business preferences <B1> <B2> <B3> <B4> and Channel Preferences <Text> <Email> <Phone> <Post> for <Consumer> when GDPR <status> <MBBStatus> <DeviceType>
+    And Choose Business preferences <B1> <B2> <B3> <B4> and Channel Preferences <Text> <Email> <Phone> <Post> for <Consumer> when GDPR <status> <DeviceType> for AFU journey
     Then perform all the advisory checks
     And validate the Personal details for Agent Existing customer and Enter time at current Address
     And perform the credit checks for Agent Existing <Username> by Bank details

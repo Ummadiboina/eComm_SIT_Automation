@@ -49,8 +49,6 @@ public class FreeSimDeliveryPageActions extends Environment {
 
 		log.debug("Clicking on I agree check box");
 		Thread.sleep(3000);
-		pageobjects.DeliveryPage.Iagree.click();
-		//pageobjects.DeliveryPage.IagreeTermsCondition.click();
 
 		String NoMarkettingMessage = pageobjects.DeliveryPage.NoMarkettingMessage.getText();
 		log.debug("No Marketting Message :: "+ NoMarkettingMessage);
