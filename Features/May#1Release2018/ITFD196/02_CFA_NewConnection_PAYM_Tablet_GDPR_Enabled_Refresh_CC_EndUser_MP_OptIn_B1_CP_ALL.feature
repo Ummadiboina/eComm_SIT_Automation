@@ -1,7 +1,7 @@
 Feature: 02_CFA_NewConnection_PAYM_Tablet_GDPR_Enabled_Refresh_CC_EndUser_MP_OptIn_B1_CP_ALL
 
-  This scenario ensures that when a customer in acquisition journey selects 'Phone' and navigated to tariff page ,then
-  the customer should be able to see  'Data filter' button next to sort drop-down for PayM tariffs
+  This Scenario ensures that when the Customer in acquisition journey selects 'PAYM Tablet'  with CC and placed an order by opting of Marketing preference 'B1' and CP 'ALL',
+  then the Order consent profile should be created in CMT as expected
 
   @Web
   Scenario Outline: 02_CFA_NewConnection_PAYM_Tablet_GDPR_Enabled_Refresh_CC_EndUser_MP_OptIn_B1_CP_ALL
@@ -14,7 +14,6 @@ Feature: 02_CFA_NewConnection_PAYM_Tablet_GDPR_Enabled_Refresh_CC_EndUser_MP_Opt
     And I Land on the basket page and choose to collect from store
     And click on "go to checkout" button
     And input <Firstname> and <Surname> and other valid details in Delivery page to verify GDPR to click and collect
-    #customer is either Me or Someone else
     And Is this order for You or Someone else <consumer> when GDPR is <status>
     And land on the payment page and input <Username> and other details for Click and collect order and click 'Continue on next step'
     And Continue to Agreements page and confirm all the agreement checks

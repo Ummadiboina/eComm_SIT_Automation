@@ -1,8 +1,8 @@
 Feature: 08_Existing_customer_PAYG_Tablets_Home_Delivery_GDPR_Enabled_Refresh_EndUser_MP_OptOut.feature
 
 
-  This scenario ensures that when a customer in Existing customer journey selects 'PayG Tablets' as an EndUser
-  and Optout all MP and CP in Order confirmation page then the Consent status should be 'Compliant'
+  This Scenario ensures that when the Existing Customer in acquisition journey selects 'PAYG Tablets' with Home Delivery and placed an order by opting out of all Marketing preference,
+  then the Order consent profile should be created in CMT as expected
 
   @Web
 

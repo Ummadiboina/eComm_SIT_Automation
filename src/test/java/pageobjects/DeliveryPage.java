@@ -85,8 +85,23 @@ public class DeliveryPage {
     @FindBy(how = How.XPATH, using = "//button[@id='btn-continue']")
     public static WebElement SendMeMySim;
 
-    @FindBy(how = How.XPATH, using = "//input[@id='marketCheckBox']")
+    @FindBy(how = How.XPATH, using = "//input[@id='optin']")
     public static WebElement marketCheckBox;
+
+    @FindBy(how = How.XPATH, using = "//input[@name='marketingInfo']")
+    public static WebElement Iagree;
+
+    @FindBy(how = How.XPATH, using = "//span[@class='terms' or contains(text(),'I agree to the')]")
+    public static WebElement IagreeTermsCondition;
+
+    @FindBy(how = How.XPATH, using = "//p[contains(text(),'If you check this box, we’ll send you information about your order, but no marketing')]")
+    public static WebElement NoMarkettingMessage;
+
+    @FindBy(how = How.XPATH, using = "//a[normalize-space()='Privacy Policy']")
+    public static WebElement PrivacyPolicy;
+
+    @FindBy(how = How.XPATH, using = "//div[@class='text']//p[1]")
+    public static WebElement PrivacyPolicyMessage;
 
 
     @FindBy(how = How.XPATH, using = "//*[@id='btn-continue']")

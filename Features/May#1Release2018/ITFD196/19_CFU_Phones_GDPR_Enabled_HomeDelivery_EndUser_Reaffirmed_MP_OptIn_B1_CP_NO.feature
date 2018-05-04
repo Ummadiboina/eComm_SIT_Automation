@@ -1,5 +1,8 @@
 Feature: 19_CFU_Phones_GDPR_Enabled_HomeDelivery_EndUser_Reaffirmed_MP_OptIn_B1_CP_NO
 
+  This Scenario ensures that when the upgrade customer with Reaffirmed consent status selects 'PAYM Phone' with Home delivery and placed an order by opting of Marketing preference 'B1' and CP 'NO', then the Order consent
+  profile should be created in CMT as expected
+
   @Web
   Scenario Outline: 19_CFU_Phones_GDPR_Enabled_HomeDelivery_EndUser_Reaffirmed_MP_OptIn_B1_CP_NO
     Given I am existing user and I click on Signin button

@@ -1,5 +1,8 @@
 Feature: 18_CFU_MBB_GDPR_Enabled_Home_Delivery_complaint_EndUser_MP_OptIn_B1B2B3_CP_EMAIL_Phone
 
+  This Scenario ensures that when the upgrade customer with Compliant consent status selects 'PAYM MBB' and placed an order as an End user ,then the  customer should be able to select MP - B1/B2/B3 and CP -
+  EMAIL/Phone in Order confirmation page
+
   @Web
   Scenario Outline: 18_CFU_MBB_GDPR_Enabled_Home_Delivery_complaint_EndUser_MP_OptIn_B1B2B3_CP_EMAIL_Phone
 

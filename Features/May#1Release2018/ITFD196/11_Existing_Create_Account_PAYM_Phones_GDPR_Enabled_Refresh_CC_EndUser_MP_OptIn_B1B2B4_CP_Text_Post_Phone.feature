@@ -1,8 +1,8 @@
 Feature: Feature: 11_Existing_Create_Account_PAYM_Phones_GDPR_Enabled_Refresh_CC_EndUser_MP_OptIn_B1B2B4_CP_Text_Post_Phone.feature
 
 
-  This scenario ensures that when a customer in Existing customer journey selects 'PayM Phones' as an EndUser and Click and collect
-  and Optin MP 'B1B2B4' and CP 'Text_Post_Phone' in Order confirmation page then the Consent status should be 'Compliant'
+  This Scenario ensures that when the Existing Customer in acquisition journey selects 'PAYM Phones'  with Click and Collect and placed an order by opting of Marketing preference 'B1/B2/B4' and CP 'Text/Post/Phone',
+  then the Order consent profile should be created in CMT as expected
 
   @Web
 

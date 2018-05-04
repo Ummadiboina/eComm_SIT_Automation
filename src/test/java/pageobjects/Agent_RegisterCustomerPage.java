@@ -223,41 +223,41 @@ public class Agent_RegisterCustomerPage {
     @FindBy(how = How.XPATH, using = "(//span[normalize-space()='Choose your preferences'])[1]")
     public static WebElement ChooseYourPreferences;
 
-    @FindBy(how = How.XPATH, using = "//div[@data-label='check1']/input")
+    @FindBy(how = How.XPATH, using = "//input[@name='B1']")
     public static WebElement O2Products;
 
-    @FindBy(how = How.XPATH, using = "//div[@data-label='check1']//p/span")
+    @FindBy(how = How.XPATH, using = "(//div[@class='checkBoxContent'])[1]")
     public static WebElement O2Products_Text;
 
-    @FindBy(how = How.XPATH, using = "//div[@data-label='Hotspot - O2 products']")
+    @FindBy(how = How.XPATH, using = "//a[normalize-space()='Learn more about O2 products']")
     public static WebElement O2Products_Link;
 
-    @FindBy(how = How.XPATH, using = "//div[@data-label='Close button - O2 products']")
+    @FindBy(how = How.XPATH, using = "(//div[@id='learnMoreDialog']/div/span)[1]")
     public static WebElement O2ProductsClose_CloseButton;
 
 
-    @FindBy(how = How.XPATH, using = "//div[@data-label='check2']/input")
+    @FindBy(how = How.XPATH, using = "//input[@name='B2']")
     public static WebElement O2PerksAndExtras;
 
-    @FindBy(how = How.XPATH, using = "//div[@data-label='check2']//p/span")
+    @FindBy(how = How.XPATH, using = "(//div[@class='checkBoxContent'])[2]")
     public static WebElement O2PerksAndExtras_Text;
 
-    @FindBy(how = How.XPATH, using = "//div[@data-label='Hotspot - O2 perks and extras']")
+    @FindBy(how = How.XPATH, using = "//a[normalize-space()='Learn more about O2 perks and extras']")
     public static WebElement O2PerksAndExtras_Link;
 
-    @FindBy(how = How.XPATH, using = "//div[@data-label='Close button - O2 perks and extras']")
+    @FindBy(how = How.XPATH, using = "(//div[@id='learnMoreDialog']/div/span)[2]")
     public static WebElement O2PerksAndExtras_CloseButton;
 
-    @FindBy(how = How.XPATH, using = "//div[@data-label='check3']/input")
+    @FindBy(how = How.XPATH, using = "//input[@name='B3']")
     public static WebElement OffersFromO2Partner;
 
-    @FindBy(how = How.XPATH, using = "//div[@data-label='check3']//p/span")
+    @FindBy(how = How.XPATH, using = "(//div[@class='checkBoxContent'])[3]")
     public static WebElement OffersFromO2Partner_Text;
 
-    @FindBy(how = How.XPATH, using = "//div[@data-label='Hotspot - offers from o2 partners brands']")
+    @FindBy(how = How.XPATH, using = "//a[normalize-space()='Learn more about our partner offers']")
     public static WebElement OffersFromO2Partner_Link;
 
-    @FindBy(how = How.XPATH, using = "//div[@data-label='Close button - offers from partners and brands']")
+    @FindBy(how = How.XPATH, using = "(//div[@id='learnMoreDialog']/div/span)[3]")
     public static WebElement OffersFromO2Partner_CloseButton;
 
     @FindBy(how = How.XPATH, using = "//div[@data-label='check4']/input")
@@ -272,25 +272,33 @@ public class Agent_RegisterCustomerPage {
     @FindBy(how = How.XPATH, using = "//div[@data-label='Close button - partners contacting me directly']")
     public static WebElement PartnersContacting_CloseButton;
 
-    @FindBy(how = How.XPATH, using = "//div[@data-label='checkcontact1']/input")
+
+    @FindBy(how = How.XPATH, using = "//div[@id='savePreferencesSection']")
+    public static WebElement ChannelePreferences;
+
+    @FindBy(how = How.XPATH, using = "//div[@id='customerPreferencesDetail']")
+    public static WebElement CustomerBusinessPreferences;
+
+
+    @FindBy(how = How.XPATH, using = "//input[@name='CP_Text']")
     public static WebElement Contact_Text;
 
-    @FindBy(how = How.XPATH, using = "//div[@data-label='checkcontact2']/input")
+    @FindBy(how = How.XPATH, using = "//input[@name='CP_E-mail']")
     public static WebElement Contact_Email;
 
-    @FindBy(how = How.XPATH, using = "//div[@data-label='checkcontact3']/input")
+    @FindBy(how = How.XPATH, using = "//input[@name='CP_Phone']")
     public static WebElement Contact_Phone;
 
-    @FindBy(how = How.XPATH, using = "//div[@data-label='checkcontact4']/input")
+    @FindBy(how = How.XPATH, using = "//input[@name='CP_Post']")
     public static WebElement Contact_Post;
 
-    @FindBy(how = How.XPATH, using = "//span[normalize-space()='Save my preferences']")
+    @FindBy(how = How.XPATH, using = "//input[@id='save-preferences']")
     public static WebElement SaveMyPreferences;
 
     @FindBy(how = How.XPATH, using = "//img[@id='u1306_img']")
     public static WebElement SavedPreferenceMessage;
 
-    @FindBy(how = How.XPATH, using = "//div[@id='registerStatus']")
+    @FindBy(how = How.XPATH, using = "//div[@id='registerHeader']")
     public static WebElement registerStatus;
 
 
@@ -312,16 +320,19 @@ public class Agent_RegisterCustomerPage {
     @FindBy(how = How.XPATH, using = "//input[@id='endUserConsentConfirmedNo']")
     public static WebElement someoneElse_radioBtn;
 
-    @FindBy(how = How.XPATH, using = "//a[@id='skipAndContinue']")
-    public static WebElement SkipAndContinue;
+    @FindBy(how = How.XPATH, using = "//input[@id='skip-preferences']")
+    public static WebElement SkipPreference;
 
-    @FindBy(how = How.XPATH, using = "//*[normalize-space(.)='O2Products_OverlayText']")
+    @FindBy(how = How.XPATH, using = "//input[@id='continue']")
+    public static WebElement Continue_Someone;
+
+    @FindBy(how = How.XPATH, using = "(//div[@id='learnMoreDialog']/div/p)[1]")
     public static WebElement O2Products_OverlayText;
 
-    @FindBy(how = How.XPATH, using = "//*[normalize-space(.)='O2PerksAndExtras_OverlayText']")
+    @FindBy(how = How.XPATH, using = "(//div[@id='learnMoreDialog']/div/p)[2]")
     public static WebElement O2PerksAndExtras_OverlayText;
 
-    @FindBy(how = How.XPATH, using = "//*[normalize-space(.)='OffersFromO2Partner_OverlayText']")
+    @FindBy(how = How.XPATH, using = "(//div[@id='learnMoreDialog']/div/p)[3]")
     public static WebElement OffersFromO2Partner_OverlayText;
 
     @FindBy(how = How.XPATH, using = "//*[normalize-space(.)='PartnersContacting_OverlayText']")

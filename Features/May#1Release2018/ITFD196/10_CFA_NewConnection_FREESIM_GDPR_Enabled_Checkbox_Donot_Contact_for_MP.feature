@@ -1,5 +1,8 @@
 Feature: 10_CFA_NewConnection_FREESIM_GDPR_Enabled_Checkbox_Donot_Contact_for_MP
 
+  This Scenario ensures that when the Customer in acquisition journey selects 'FreeSIM'  with Home delivery and placed an order by opting selecting the option 'Do not contact the user' ,
+  then the customer should not be contacted for Marketing Preferences
+
   @Web
   Scenario Outline: 10_CFA_NewConnection_FREESIM_GDPR_Enabled_Checkbox_Donot_Contact_for_MP
     Given I am an CFA user and Lands on shop page

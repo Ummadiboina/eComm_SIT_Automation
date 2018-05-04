@@ -183,7 +183,7 @@ public class Agent_CreditCheckPageActions extends Environment {
 	public static void CreditcheckReferStatus()throws InterruptedException, IOException {
 
 		try{
-			if(driver.findElements(By.xpath("//h2[@id='creditCheckHeader']/span")).size()>0)
+			if(driver.findElements(By.xpath("//h2[@id='creditCheckHeader']")).size()>0)
 			{
 				String refStatus = Agent_CreditCheckDetailsPage.CreditCheckReferStatus.getText();
 
@@ -222,6 +222,33 @@ public class Agent_CreditCheckPageActions extends Environment {
 		Screenshots.captureScreenshot();
 	}
 
+	public static void AddressDetails()throws InterruptedException, IOException {
+		try{
+
+			/*
+			String address = Agent_CreditCheckDetailsPage.Address.getText();
+			log.debug("Address is:: ");
+			*/
+
+			Thread.sleep(2000);
+			Agent_CreditCheckDetailsPage.ContactNumber.sendKeys("07888594958");
+			log.debug("Entered contact number");
+
+			Agent_CreditCheckDetailsPage.YearsatAddress.sendKeys("09");
+			log.debug("Entered Number of Years at address");
+
+			Agent_CreditCheckDetailsPage.monthsatAddress.sendKeys("05");
+			log.debug("Entered Number of Months at address");
+			Screenshots.captureScreenshot();
+
+		}catch(Exception e){
+			System.out.println("Unable to enter years and months");
+			log.debug("Unable to enter years and months");
+		}
+
+	}
+
+
 	public static void BankDetails(String Username) throws InterruptedException, IOException {
 
 		driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
@@ -247,7 +274,8 @@ public class Agent_CreditCheckPageActions extends Environment {
 				driver.switchTo().window(ChildWindow);
 				System.out.println("Switched to child window");
 
-				driver.manage().timeouts().implicitlyWait(12,TimeUnit.SECONDS);
+				//driver.manage().timeouts().implicitlyWait(15,TimeUnit.SECONDS);
+				Thread.sleep(10000);
 
 				Agent_CreditCheckDetailsPage.CardHolderName.sendKeys(Username);
 				log.debug("Entered card holder name");
@@ -310,7 +338,5 @@ public class Agent_CreditCheckPageActions extends Environment {
 		}
 		Screenshots.captureScreenshot();
 	}
-
-
 
 }

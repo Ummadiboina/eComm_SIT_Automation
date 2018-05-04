@@ -1,7 +1,7 @@
 Feature: 39_Agent_Existing_CCA_Tablets_Refresh_HomeDelivery_GDPR_Enabled_EndUser_MP_Optin_B1B3_CP_Text_Email.feature
 
-  This scenario ensures that when the Agent in Existing customer acquisition journey selects a 'Phone' with CCA as an END user and
-  MP_B1B3 and CP_Text_Email then the customer should be able to place order in Online shop
+  This Scenario ensures that when the Agent in Existing customer journey selects 'SIMO'  with Home Delivery and placed an order by opting of Marketing preference 'B1/B3' and CP 'Text/Email',
+  then the Order consent profile should be created in CMT as expected
 
   #launch hooks and get browser
   @Web
@@ -13,10 +13,10 @@ Feature: 39_Agent_Existing_CCA_Tablets_Refresh_HomeDelivery_GDPR_Enabled_EndUser
     And Select valid <Tariffs> from tariffs tab
     And select a valid Handset and Tariff combination
     And Validate all the Basket content and checkout
-    And Choose Business preferences <B1> <B2> <B3> <B4> and Channel Preferences <Text> <Email> <Phone> <Post> for <Consumer> when GDPR <status> <MBBStatus> <DeviceType>
+    And Choose Business preferences <B1> <B2> <B3> <B4> and Channel Preferences <Text> <Email> <Phone> <Post> for <Consumer> when GDPR <status> <DeviceType> for AFU journey
     Then perform all the advisory checks
-    And validate the Personal details for Agent Existing customer and Enter time at current Address <Years> <Months>
-    And perform the credit checks for Agent Existing customer by Bank details
+    And validate the Personal details for Agent Existing customer and Enter time at current Address
+    And perform the credit checks for Agent Existing <Username> by Bank details
     And Update Device Plan Link Email Address
     And Accept O2 Refresh Deal Summary
     And Click on 'Generate CCA' button

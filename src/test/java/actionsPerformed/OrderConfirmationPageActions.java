@@ -161,6 +161,76 @@ public class OrderConfirmationPageActions extends Environment {
 		log.debug(pageobjects.OrderConfirmationPage.FreesimOrderConfirmation.getText());
 	}
 
+	//MBB validation
+	public static void MBBValidation(String MBBStatus) throws IOException, InterruptedException {
+
+		if(MBBStatus.equalsIgnoreCase("YES")){
+
+			//Business Preference validation for MBB
+			if (OrderConfirmationPage.O2Products.isSelected()) {
+				System.out.println("MBB:: O2Products business preference selected by default");
+				log.debug("MBB:: O2Products business preference selected by default");
+			}else{
+				System.out.println("MBB:: O2Products business preference not selected by default");
+				log.debug("MBB:: O2Products business preference not selected by default");
+			}
+			if (OrderConfirmationPage.O2PerksAndExtras.isSelected()) {
+				System.out.println("MBB:: O2 Perks And Extras preference selected by default");
+				log.debug("MBB:: O2 Perks And Extras preference selected by default");
+			}else{
+				System.out.println("MBB:: O2 Perks And Extras preference not selected by default");
+				log.debug("MBB:: O2 Perks And Extras preference not selected by default");
+			}
+			if (OrderConfirmationPage.OffersFromO2Partner.isSelected()) {
+				System.out.println("MBB:: Offers From O2 Partner preference selected by default");
+				log.debug("MBB:: Offers From O2 Partner preference selected by default");
+			}else{
+				System.out.println("MBB:: Offers From O2 Partner preference not selected by default");
+				log.debug("MBB:: Offers From O2 Partner preference not selected by default");
+			}
+			if (OrderConfirmationPage.PartnersContacting.isSelected()) {
+				System.out.println("MBB:: Partners Contacting preference selected by default");
+				log.debug("MBB:: Partners Contacting preference selected by default");
+			}else{
+				System.out.println("MBB:: Partners Contacting preference not selected by default");
+				log.debug("MBB:: Partners Contacting preference not selected by default");
+			}
+
+			Thread.sleep(4000);
+
+			//Channel Preference validation for MBB
+
+			if (OrderConfirmationPage.Contact_Text.isSelected()) {
+				System.out.println("MBB:: Contact_Text preference selected by default");
+				log.debug("MBB:: Contact_Text preference selected by default");
+			}else{
+				System.out.println("MBB:: Contact_Text preference not selected by default");
+				log.debug("MBB:: Contact_Text preference not selected by default");
+			}
+			if (OrderConfirmationPage.Contact_Email.isSelected()) {
+				System.out.println("MBB:: Contact_Email preference selected by default");
+				log.debug("MBB:: Contact_Email preference selected by default");
+			}else{
+				System.out.println("MBB:: Contact_Email preference not selected by default");
+				log.debug("MBB:: Contact_Email preference selected not by default");
+			}
+			if (OrderConfirmationPage.Contact_Phone.isSelected()) {
+				System.out.println("MBB:: Contact_Phone preference selected by default");
+				log.debug("MBB:: Contact_Phone preference selected by default");
+			}else{
+				System.out.println("MBB:: Contact_Phone preference not selected by default");
+				log.debug("MBB:: Contact_Phone preference selected not by default");
+			}
+			if (OrderConfirmationPage.Contact_Post.isSelected()) {
+				System.out.println("MBB:: Contact_Post preference selected by default");
+				log.debug("MBB:: Contact_Post preference selected by default");
+			}else{
+				System.out.println("MBB:: Contact_Post preference not selected by default");
+				log.debug("MBB:: Contact_Post preference not selected by default");
+			}
+		}
+	}
+
 	//GDPR Preferences Section --- JamalKhan
 
 	public static void PreferencesSection(String consumer, String gdprStatus,String BP1, String BP2, String BP3, String BP4, String Chn1, String Chn2, String Chn3, String Chn4, String MBBStatus, String DeviceType) throws IOException, InterruptedException {
@@ -606,5 +676,6 @@ public class OrderConfirmationPageActions extends Environment {
 
 		Screenshots.captureScreenshot();
 	}
+
 
 }

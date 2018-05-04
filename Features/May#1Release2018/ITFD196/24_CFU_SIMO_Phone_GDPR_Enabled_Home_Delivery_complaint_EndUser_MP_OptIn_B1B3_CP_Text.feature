@@ -1,6 +1,7 @@
 Feature: 24_CFU_SIMO_Phone_GDPR_Enabled_Home_Delivery_complaint_EndUser_MP_OptIn_B1B3_CP_Text
 
-  This scenario ensures that an upgrade customer is able to select a 12 months tablets tariff under the simo tab in upgrade options page
+  This Scenario ensures that when the upgrade customer with Compliant consent status selects 'SIMO' and placed an order as an End user ,then the customer should be
+  able to select MP - B1/B3 and CP - Text selected in Order confirmation page
 
   @Web
   Scenario Outline: 24_CFU_SIMO_Phone_GDPR_Enabled_Home_Delivery_complaint_EndUser_MP_OptIn_B1B3_CP_Text

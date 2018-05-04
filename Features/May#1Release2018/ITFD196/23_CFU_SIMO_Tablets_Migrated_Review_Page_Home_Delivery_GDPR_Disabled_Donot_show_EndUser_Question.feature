@@ -1,6 +1,6 @@
 Feature: 23_CFU_SIMO_Tablets_Migrated_Review_Page_Home_Delivery_GDPR_Disabled_Donot_show_EndUser_Question
 
-  This scenario ensures that an upgrade customer is able to select a 12 months tablets tariff under the simo tab in upgrade options page
+  This Scenario ensures that when the Customer in Upgrade journey selects 'Phones'  with Home delivery, then the new Radio buttons to capture "Is this order for you or someone else?" and Marketing preferences should not be displayed
 
   @Web
   Scenario Outline: 23_CFU_Tablets_SIMO_Migrated_Review_Page_Home_Delivery_GDPR_Disabled_Donot_show_EndUser_Question

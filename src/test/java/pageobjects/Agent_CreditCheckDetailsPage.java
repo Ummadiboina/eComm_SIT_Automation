@@ -56,6 +56,11 @@ public class Agent_CreditCheckDetailsPage {
     @FindBy(how = How.ID, using = "yearsAtCurrentAddress")
     public static WebElement YearsatAddress;
 
+    @FindBy(how = How.ID, using = "")
+    public static WebElement Address;
+
+
+
     @FindBy(how = How.ID, using = "monthsAtCurrentAddress")
     public static WebElement monthsatAddress;
 
@@ -123,7 +128,7 @@ public class Agent_CreditCheckDetailsPage {
     @FindBy(how = How.XPATH, using = "//*[@id='creditCheckAndAgreementAndStatus']/input[3]")
     public static WebElement PerformCreditCheck;
 
-    @FindBy(how = How.XPATH, using = "//h2[@id='creditCheckHeader']/span")
+    @FindBy(how = How.XPATH, using = "//h2[@id='creditCheckHeader']")
     public static WebElement CreditCheckReferStatus;
 
     @FindBy(how = How.XPATH, using = "//span[@id='creditCheckStatus']")
