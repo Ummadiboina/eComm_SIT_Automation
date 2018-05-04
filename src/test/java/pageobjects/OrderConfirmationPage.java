@@ -32,86 +32,86 @@ public class OrderConfirmationPage {
 	public static WebElement FreesimOrderConfirmation;
 
 	//GDPR new consent
-	@FindBy(how = How.XPATH, using = "(//span[normalize-space()='Choose your preferences'])[1]")
+	@FindBy(how = How.XPATH, using = "//div[@class='choose-preferences-bar']/a")
 	public static WebElement ChooseYourPreferences;
 
-	@FindBy(how = How.XPATH, using = "//div[@data-label='check1']/input")
+	@FindBy(how = How.XPATH, using = "//input[@id='B1']")
 	public static WebElement O2Products;
 
-	@FindBy(how = How.XPATH, using = "//div[@data-label='check1']//p/span")
+	@FindBy(how = How.XPATH, using = "//label[@for='B1']")
 	public static WebElement O2Products_Text;
 
-	@FindBy(how = How.XPATH, using = "//div[@data-label='Hotspot - O2 products']")
+	@FindBy(how = How.XPATH, using = "//a[@data-overlay='B1']")
 	public static WebElement O2Products_Link;
 
-	@FindBy(how = How.XPATH, using = "//div[@data-label='Close button - O2 products']")
+	@FindBy(how = How.XPATH, using = "//div[@class='overlay-box B1']//a[@class='boxclose']")
 	public static WebElement O2ProductsClose_CloseButton;
 
 
-	@FindBy(how = How.XPATH, using = "//div[@data-label='check2']/input")
+	@FindBy(how = How.XPATH, using = "//input[@id='B2']")
 	public static WebElement O2PerksAndExtras;
 
-	@FindBy(how = How.XPATH, using = "//div[@data-label='check2']//p/span")
+	@FindBy(how = How.XPATH, using = "//label[@for='B2']")
 	public static WebElement O2PerksAndExtras_Text;
 
-	@FindBy(how = How.XPATH, using = "//div[@data-label='Hotspot - O2 perks and extras']")
+	@FindBy(how = How.XPATH, using = "//a[@data-overlay='B2']")
 	public static WebElement O2PerksAndExtras_Link;
 
-	@FindBy(how = How.XPATH, using = "//div[@data-label='Close button - O2 perks and extras']")
+	@FindBy(how = How.XPATH, using = "//div[@class='overlay-box B2']//a[@class='boxclose']")
 	public static WebElement O2PerksAndExtras_CloseButton;
 
-	@FindBy(how = How.XPATH, using = "//div[@data-label='check3']/input")
+	@FindBy(how = How.XPATH, using = "//input[@id='B3']")
 	public static WebElement OffersFromO2Partner;
 
-	@FindBy(how = How.XPATH, using = "//div[@data-label='check3']//p/span")
+	@FindBy(how = How.XPATH, using = "//label[@for='B3']")
 	public static WebElement OffersFromO2Partner_Text;
 
-	@FindBy(how = How.XPATH, using = "//div[@data-label='Hotspot - offers from o2 partners brands']")
+	@FindBy(how = How.XPATH, using = "//a[@data-overlay='B3']")
 	public static WebElement OffersFromO2Partner_Link;
 
-	@FindBy(how = How.XPATH, using = "//div[@data-label='Close button - offers from partners and brands']")
+	@FindBy(how = How.XPATH, using = "//a[@data-overlay='B3']")
 	public static WebElement OffersFromO2Partner_CloseButton;
 
-	@FindBy(how = How.XPATH, using = "//div[@data-label='check4']/input")
+	@FindBy(how = How.XPATH, using = "//input[@id='B4']")
 	public static WebElement PartnersContacting;
 
-	@FindBy(how = How.XPATH, using = "//div[@data-label='check4']//p/span")
+	@FindBy(how = How.XPATH, using = "//label[@for='B4']")
 	public static WebElement PartnersContacting_Text;
 
-	@FindBy(how = How.XPATH, using = "//div[@data-label='Hotspot - partners contacting me directly']")
+	@FindBy(how = How.XPATH, using = "//a[@data-overlay='B4']")
 	public static WebElement PartnersContacting_Link;
 
 	@FindBy(how = How.XPATH, using = "//div[@data-label='Close button - partners contacting me directly']")
 	public static WebElement PartnersContacting_CloseButton;
 
-	@FindBy(how = How.XPATH, using = "//div[@data-label='checkcontact1']/input")
+	@FindBy(how = How.ID, using = "CP_Text")
 	public static WebElement Contact_Text;
 
-	@FindBy(how = How.XPATH, using = "//div[@data-label='checkcontact2']/input")
+	@FindBy(how = How.ID, using = "CP_E-mail")
 	public static WebElement Contact_Email;
 
-	@FindBy(how = How.XPATH, using = "//div[@data-label='checkcontact3']/input")
+	@FindBy(how = How.ID, using = "CP_Phone")
 	public static WebElement Contact_Phone;
 
-	@FindBy(how = How.XPATH, using = "//div[@data-label='checkcontact4']/input")
+	@FindBy(how = How.ID, using = "CP_Post")
 	public static WebElement Contact_Post;
 
-	@FindBy(how = How.XPATH, using = "//span[normalize-space()='Save my preferences']")
+	@FindBy(how = How.ID, using = "saveMyPrefernces")
 	public static WebElement SaveMyPreferences;
 
 	@FindBy(how = How.XPATH, using = "//img[@id='u1306_img']")
 	public static WebElement SavedPreferenceMessage;
 
-	@FindBy(how = How.XPATH, using = "//span[normalize-space()='O2Products_OverlayText']")
+	@FindBy(how = How.XPATH, using = "//div[@class='overlay-box B1']//p")
 	public static WebElement O2Products_OverlayText;
 
-	@FindBy(how = How.XPATH, using = "//span[normalize-space()='O2PerksAndExtras_OverlayText']")
+	@FindBy(how = How.XPATH, using = "//div[@class='overlay-box B2']//p")
 	public static WebElement O2PerksAndExtras_OverlayText;
 
-	@FindBy(how = How.XPATH, using = "//span[normalize-space()='OffersFromO2Partner_OverlayText']")
+	@FindBy(how = How.XPATH, using = "//div[@class='overlay-box B3']//p")
 	public static WebElement OffersFromO2Partner_OverlayText;
 
-	@FindBy(how = How.XPATH, using = "//span[normalize-space()='PartnersContacting_OverlayText']")
+	@FindBy(how = How.XPATH, using = "//div[@class='overlay-box B4']//p")
 	public static WebElement PartnersContacting_OverlayText;
 
 
