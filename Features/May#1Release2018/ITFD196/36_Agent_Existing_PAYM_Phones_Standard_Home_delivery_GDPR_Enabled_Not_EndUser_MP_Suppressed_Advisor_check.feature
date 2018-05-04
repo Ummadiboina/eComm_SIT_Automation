@@ -16,7 +16,7 @@ Feature: Feature: 36_Agent_Existing_PAYM_Phones_Standard_Home_delivery_GDPR_Enab
     And validate the Personal details for Agent Existing customer and Enter time at current Address
     And perform the credit checks for Agent Existing <Username> by Bank details
     When Pay by card for PAYM device
-    Then Order confirmation message should be displayed
+    Then Order confirmation message should be displayeds
 
 
     Examples:

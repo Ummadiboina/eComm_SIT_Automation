@@ -131,7 +131,7 @@ public class Agent_CreditCheckDetailsPage {
     @FindBy(how = How.XPATH, using = "//h2[@id='creditCheckHeader']")
     public static WebElement CreditCheckReferStatus;
 
-    @FindBy(how = How.XPATH, using = "//span[@id='creditCheckStatus']")
+    @FindBy(how = How.XPATH, using = "//ul/li[@class='error']")
     public static WebElement CreditCheckAbandoneStatus;
 
 

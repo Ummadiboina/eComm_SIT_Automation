@@ -839,7 +839,7 @@ public class Agent_RegisterCustomerActions extends Environment {
 									log.debug("Save My Preference button is clicked");
 								}
 
-								/*
+
 								//Save My Preference Text Message
 								if (driver.findElements(By.xpath("//img[@id='u1306_img']")).size() > 0) {
 
@@ -851,7 +851,7 @@ public class Agent_RegisterCustomerActions extends Environment {
 									log.debug("Saved your preferences text message is not showing");
 									//Assert.fail("Saved your preferences text message is not showing");
 								}
-								*/
+
 							} else if (customer.contains("Someone")) {
 
 
@@ -1330,7 +1330,7 @@ public class Agent_RegisterCustomerActions extends Environment {
 									log.debug("Save My Preference button is clicked");
 								}
 
-								/*
+
 								//Save My Preference Text Message
 								if (driver.findElements(By.xpath("//img[@id='u1306_img']")).size() > 0) {
 
@@ -1342,7 +1342,7 @@ public class Agent_RegisterCustomerActions extends Environment {
 									log.debug("Saved your preferences text message is not showing");
 									//Assert.fail("Saved your preferences text message is not showing");
 								}
-								*/
+
 
 							} else if (customer.contains("Someone")) {
 
