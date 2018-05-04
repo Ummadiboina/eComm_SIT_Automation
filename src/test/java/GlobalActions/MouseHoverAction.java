@@ -2,10 +2,13 @@ package GlobalActions;
 
 import helpers.Environment;
 import org.apache.log4j.Logger;
-import org.openqa.selenium.*;
+import org.openqa.selenium.By;
+import org.openqa.selenium.ElementNotVisibleException;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Point;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
+import pageobjects.MouseHoverPage;
 
 import java.awt.*;
 import java.util.NoSuchElementException;
@@ -28,11 +31,12 @@ public class MouseHoverAction extends Environment {
             Robot robot = new Robot();
             robot.mouseMove(coordinates.getX(), coordinates.getY() + 120);
             log.debug("Moving Mouse the Drooapal - Shop Tab");
+            Thread.sleep(2000);
 
             Actions action = new Actions(driver);
             action.moveToElement(pageobjects.MouseHoverPage.MoveMouseonShopDroopal).perform();
             log.debug("Mouse over on the Droopal-Shop Header ");
-            Thread.sleep(2000);
+            Thread.sleep(3000);
 
             Actions action1 = new Actions(driver);
             action1.moveToElement(pageobjects.MouseHoverPage.MoveMouseonPayMSimsDroopal).perform();
@@ -58,55 +62,86 @@ public class MouseHoverAction extends Environment {
         driver.manage().timeouts().implicitlyWait(150, TimeUnit.SECONDS);
 
         try {
-            log.debug("Performing PAYM Phones landing page navigations");
-            log.debug("Performing PAYM Phones landing page navigations");
-            Thread.sleep(3000);
+            /*********************************************************************
+             normal execution flow in ref Env....        ************************/
+            if (driver.findElements(By.xpath("//div[@class='nav-consumer']/ul/li/a[contains(@href, '/shop')]")).size() >= 1) {
+                log.debug("Performing PAYM Phones landing page navigations");
+                log.debug("Performing PAYM Phones landing page navigations");
+                Thread.sleep(3000);
 
-            Point coordinates = pageobjects.MouseHoverPage.MoveMouseOnShopTab.getLocation();
-            Robot robot = new Robot();
-            robot.mouseMove(coordinates.getX(), coordinates.getY() + 120);
-            log.debug("Moving Mouse onThread.sleep(2000); the Shop Tab");
+                Point coordinates = pageobjects.MouseHoverPage.MoveMouseOnShopTab.getLocation();
+                Robot robot = new Robot();
+                robot.mouseMove(coordinates.getX(), coordinates.getY() + 120);
+                log.debug("Moving Mouse onThread.sleep(2000); the Shop Tab");
 
-            Actions action = new Actions(driver);
-            action.moveToElement(pageobjects.MouseHoverPage.MoveMouseOnShopTab).perform();
-            log.debug("Mouse over on the Shop Header ");
-            Thread.sleep(2000);
+                Actions action = new Actions(driver);
+                action.moveToElement(pageobjects.MouseHoverPage.MoveMouseOnShopTab).perform();
+                log.debug("Mouse over on the Shop Header ");
+                Thread.sleep(2000);
 
-            Actions action1 = new Actions(driver);
-            action1.moveToElement(pageobjects.MouseHoverPage.MoveMouseOnPhones).perform();
-            log.debug("Mouse over Shop---> Phones ");
-            log.debug("Moving Mouse on the Phones dropdown");
-            Thread.sleep(2000);
+                Actions action1 = new Actions(driver);
+                action1.moveToElement(pageobjects.MouseHoverPage.MoveMouseOnPhones).perform();
+                log.debug("Mouse over Shop---> Phones ");
+                log.debug("Moving Mouse on the Phones dropdown");
+                Thread.sleep(2000);
 
-            pageobjects.MouseHoverPage.MoveMouseOnPAYMPhones.click();
-            log.debug("Mouse over Shop---> Phones--> Pay monthly phones ");
-            Thread.sleep(5000);
-            log.debug("Moving Mouse on the Paymonthly link");
+                pageobjects.MouseHoverPage.MoveMouseOnPAYMPhones.click();
+                log.debug("Mouse over Shop---> Phones--> Pay monthly phones ");
+                Thread.sleep(5000);
+                log.debug("Moving Mouse on the Paymonthly link");
 
-            Screenshots.captureScreenshot();
+                Screenshots.captureScreenshot();
 
-            log.debug("Clicking on PayM Phones");
+                log.debug("Clicking on PayM Phones");
 
-            // Move mouse pointer away from location
-            Point coordinates2 = driver.findElement(By.xpath("//*[@id='header-consumer']/div")).getLocation();
-            Robot robot2 = new Robot();
-            robot2.mouseMove(coordinates2.getX(), coordinates.getY() + 300);
-            log.debug("Moved Mouse to somewhere side of page");
+                // Move mouse pointer away from location
+                Point coordinates2 = driver.findElement(By.xpath("//*[@id='header-consumer']/div")).getLocation();
+                Robot robot2 = new Robot();
+                robot2.mouseMove(coordinates2.getX(), coordinates.getY() + 300);
+                log.debug("Moved Mouse to somewhere side of page");
+            } else {
+                System.out.println("Drupal's are Enabled");
+                log.debug("Drupal's are Enabled");
+            }
 
+            /*********************************************************************
+             Drupal navigation change           ************************/
+            if (driver.findElements(By.xpath("//div[@class='navContainer']/ul/li[@name='Shop']/a[contains(@href,'/shop')]")).size() >= 1) {
+
+                Point coordinates = MouseHoverPage.MoveMouseOnShopTab_Drupal.getLocation();
+                Robot robot = new Robot();
+                robot.mouseMove(coordinates.getX(), coordinates.getY() + 100);
+                log.debug("Moving Mouse on the Shop Tab");
+
+                Actions action = new Actions(driver);
+                action.moveToElement(MouseHoverPage.MoveMouseOnShopTab_Drupal).perform();
+                log.debug("Mouse over on the Shop Header ");
+                Thread.sleep(2000);
+
+                Actions action1 = new Actions(driver);
+                action1.moveToElement(MouseHoverPage.MoveMouseOnPhones_Drupal).perform();
+                log.debug("Moving Mouse on the Browse Phones option");
+                Thread.sleep(2000);
+
+               // MouseHoverPage.MoveMouseOnPhones_Drupal.click();
+                JavascriptExecutor executor = (JavascriptExecutor)driver;
+                executor.executeScript("arguments[0].click();", MouseHoverPage.MoveMouseOnPhones_Drupal);
+                Thread.sleep(5000);
+                Screenshots.captureScreenshot();
+
+                log.debug("Clicking on PayG Phones");
+                // Move mouse pointer away from location
+                Point coordinates2 = driver.findElement(By.xpath("(//div[@class='navContainer']/ul)[1]")).getLocation();
+                Robot robot2 = new Robot();
+                robot2.mouseMove(coordinates2.getX(), coordinates.getY() + 300);
+                log.debug("Moved Mouse to somewhere side of page");
+            } else {
+                System.out.println("Drupal's are Disiabled");
+                log.debug("Drupal's are Disiabled");
+            }
         } catch (ElementNotVisibleException e) {
             log.debug("Failed to mouse over, &  Error as : " + e.getStackTrace());
-            // check if popup is present, if yes, handle it.
-				/*Environment.driver.switchTo().frame("edr_l_first");
-				log.debug("********We are switch to the iframe*******");
-				log.debug("Popup has appeared on the screen, Hence trying to close the survey");
-				Screenshots.captureScreenshot();
-				// Saying no to survey
-				driver.findElement(By.xpath("//a[@id='no']/span")).click();
-				log.debug("Closing the popup by saying No to Survey");
-				log.debug("*******Saying no to survey*******");
-				log.debug("*********Existing the popups present in iframe***************");
-				log.debug("Exiting the Survey");
-				Environment.driver.switchTo().defaultContent();*/
+            Assert.fail("Failed to Navigate to the Shop mouse over");
             Thread.sleep(2000);
         }
     }
@@ -252,10 +287,10 @@ public class MouseHoverAction extends Environment {
             log.debug("Clicking on PayG Phones");
 
             // Move mouse pointer away from location
-            Point coordinates2 = driver.findElement(By.xpath("//*[@id='header-consumer']/div")).getLocation();
+           /* Point coordinates2 = driver.findElement(By.xpath("//*[@id='header-consumer']/div")).getLocation();
             Robot robot2 = new Robot();
             robot2.mouseMove(coordinates2.getX(), coordinates.getY() + 300);
-            log.debug("Moved Mouse to somewhere side of page");
+            log.debug("Moved Mouse to somewhere side of page");*/
 
         } catch (ElementNotVisibleException e) {
             // check if popup is present, if yes, handle it.
@@ -324,114 +359,147 @@ public class MouseHoverAction extends Environment {
         }
 
 
-
     }
 
     // Below will navigate to Like New Phones Page
 
-	/*
-	 * public static void likeNewHomepageNavigation() throws Exception {
-	 * driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS); boolean
-	 * Worksfine = false; while(!Worksfine) try {
-	 * log.debug("Performing Like New navigations");
-	 * log.debug("Performing Like New navigations");
-	 *
-	 * Point coordinates =
-	 * pageobjects.MouseHoverPage.MoveMouseOnShopTab.getLocation(); Robot robot =
-	 * new Robot(); robot.mouseMove(coordinates.getX(),coordinates.getY()+120);
-	 *
-	 * Actions action = new Actions(driver);
-	 * action.moveToElement(pageobjects.MouseHoverPage.MoveMouseOnPhones).build(
-	 * ).perform(); Thread.sleep(2000);
-	 * action.moveToElement(pageobjects.MouseHoverPage.MoveMouseOnLikeNew).build
-	 * ().perform(); Thread.sleep(2000);
-	 *
-	 * pageobjects.MouseHoverPage.MoveMouseOnLikeNew.click();
-	 * Screenshots.captureScreenshot();
-	 *
-	 * //Move mouse pointer away from location Point coordinates2 =
-	 * driver.findElement(By.xpath("//*[@id='header-consumer']/div")).
-	 * getLocation(); Robot robot2 = new Robot();
-	 * robot2.mouseMove(coordinates2.getX(),coordinates.getY()+300);
-	 *
-	 * log.debug("Moved Mouse to somewhere side of page");
-	 *
-	 *
-	 * Worksfine = true;
-	 *
-	 * } catch(ElementNotVisibleException e) { //check if popup is present, if yes,
-	 * handle it. Environment.driver.switchTo().frame("edr_l_first");
-	 * log.debug("********We are switch to the iframe*******"); log.
-	 * debug("Popup has appeared on the screen, Hence trying to close the survey" );
-	 * Screenshots.captureScreenshot(); //Saying no to survey
-	 * driver.findElement(By.xpath("//a[@id='no']/span")).click();
-	 * log.debug("Closing the popup by saying No to Survey");
-	 * log.debug("*******Saying no to survey*******"); System.out.
-	 * println("*********Existing the popups present in iframe***************");
-	 * log.debug("Exiting the Survey");
-	 * Environment.driver.switchTo().defaultContent(); Thread.sleep(3000);
-	 *
-	 * }
-	 *
-	 * }
-	 */
+    /*
+     * public static void likeNewHomepageNavigation() throws Exception {
+     * driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS); boolean
+     * Worksfine = false; while(!Worksfine) try {
+     * log.debug("Performing Like New navigations");
+     * log.debug("Performing Like New navigations");
+     *
+     * Point coordinates =
+     * pageobjects.MouseHoverPage.MoveMouseOnShopTab.getLocation(); Robot robot =
+     * new Robot(); robot.mouseMove(coordinates.getX(),coordinates.getY()+120);
+     *
+     * Actions action = new Actions(driver);
+     * action.moveToElement(pageobjects.MouseHoverPage.MoveMouseOnPhones).build(
+     * ).perform(); Thread.sleep(2000);
+     * action.moveToElement(pageobjects.MouseHoverPage.MoveMouseOnLikeNew).build
+     * ().perform(); Thread.sleep(2000);
+     *
+     * pageobjects.MouseHoverPage.MoveMouseOnLikeNew.click();
+     * Screenshots.captureScreenshot();
+     *
+     * //Move mouse pointer away from location Point coordinates2 =
+     * driver.findElement(By.xpath("//*[@id='header-consumer']/div")).
+     * getLocation(); Robot robot2 = new Robot();
+     * robot2.mouseMove(coordinates2.getX(),coordinates.getY()+300);
+     *
+     * log.debug("Moved Mouse to somewhere side of page");
+     *
+     *
+     * Worksfine = true;
+     *
+     * } catch(ElementNotVisibleException e) { //check if popup is present, if yes,
+     * handle it. Environment.driver.switchTo().frame("edr_l_first");
+     * log.debug("********We are switch to the iframe*******"); log.
+     * debug("Popup has appeared on the screen, Hence trying to close the survey" );
+     * Screenshots.captureScreenshot(); //Saying no to survey
+     * driver.findElement(By.xpath("//a[@id='no']/span")).click();
+     * log.debug("Closing the popup by saying No to Survey");
+     * log.debug("*******Saying no to survey*******"); System.out.
+     * println("*********Existing the popups present in iframe***************");
+     * log.debug("Exiting the Survey");
+     * Environment.driver.switchTo().defaultContent(); Thread.sleep(3000);
+     *
+     * }
+     *
+     * }
+     */
 
     // Below will navigate to Like New Phones Page
 
     // Below will navigate to Tablets PayM Page
 
     public static void PayMTabletsLandingPage() throws Exception {
-        driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(45, TimeUnit.SECONDS);
 
         try {
-            log.debug("Performing navigations to PAYM Tablets");
-            log.debug("Performing navigations to PAYM Tablets");
+            /*********************************************************************
+             normal execution flow in ref Env....        ************************/
+            if (driver.findElements(By.xpath("//div[@class='nav-consumer']/ul/li/a[contains(@href, '/shop')]")).size() >= 1) {
+                log.debug("Performing PAYM Tablets landing page navigations");
+                log.debug("Performing PAYM Tablets landing page navigations");
+                Thread.sleep(3000);
 
-            Point coordinates = pageobjects.MouseHoverPage.MoveMouseOnShopTab.getLocation();
-            Robot robot = new Robot();
-            robot.mouseMove(coordinates.getX(), coordinates.getY() + 120);
-            log.debug("Moving Mouse onThread.sleep(2000); the Shop Tab");
+                Point coordinates = pageobjects.MouseHoverPage.MoveMouseOnShopTab.getLocation();
+                Robot robot = new Robot();
+                robot.mouseMove(coordinates.getX(), coordinates.getY() + 120);
+                log.debug("Moving Mouse onThread.sleep(2000); the Shop Tab");
 
-            Actions action = new Actions(driver);
-            action.moveToElement(pageobjects.MouseHoverPage.MoveMouseOnShopTab).perform();
-            log.debug("Mouse over on the Shop Header ");
-            Thread.sleep(2000);
+                Actions action = new Actions(driver);
+                action.moveToElement(pageobjects.MouseHoverPage.MoveMouseOnShopTab).perform();
+                log.debug("Mouse over on the Shop Header ");
+                Thread.sleep(2000);
 
-            Actions action1 = new Actions(driver);
-            action1.moveToElement(pageobjects.MouseHoverPage.MoveMouseOnTablets).perform();
-            Thread.sleep(2000);
-            log.debug("Moving Mouse on the Tablets dropdown");
+                Actions action1 = new Actions(driver);
+                action1.moveToElement(pageobjects.MouseHoverPage.MoveMouseOnBrowseTablets).perform();
+                log.debug("Mouse over Shop---> Tablets ");
+                log.debug("Moving Mouse on the Tablets dropdown");
+                Thread.sleep(2000);
 
-            pageobjects.MouseHoverPage.MoveMouseOnBrowseTablets.click();
-            Thread.sleep(5000);
+                pageobjects.MouseHoverPage.MoveMouseOnBrowseTablets.click();
+                log.debug("Mouse over Shop---> Tablets--> Pay monthly phones ");
+                Thread.sleep(5000);
+                log.debug("Moving Mouse on the Paymonthly link");
 
-            // Move mouse pointer away from location
-            Point coordinates2 = driver.findElement(By.xpath("//*[@id='header-consumer']/div")).getLocation();
-            Robot robot2 = new Robot();
-            robot2.mouseMove(coordinates2.getX(), coordinates2.getY() + 300);
-            log.debug("Moved Mouse to somewhere side of page");
+                Screenshots.captureScreenshot();
 
-            Screenshots.captureScreenshot();
+                log.debug("Clicking on PayM Tablets");
 
+                // Move mouse pointer away from location
+                Point coordinates2 = driver.findElement(By.xpath("//*[@id='header-consumer']/div")).getLocation();
+                Robot robot2 = new Robot();
+                robot2.mouseMove(coordinates2.getX(), coordinates.getY() + 300);
+                log.debug("Moved Mouse to somewhere side of page");
+            } else {
+                System.out.println("Drupal's are Enabled");
+                log.debug("Drupal's are Enabled");
+            }
 
+            /*********************************************************************
+             Drupal navigation change           ************************/
+            if (driver.findElements(By.xpath("//div[@class='navContainer']/ul/li[@name='Shop']/a[contains(@href,'/shop')]")).size() >= 1) {
+
+                Point coordinates = MouseHoverPage.MoveMouseOnShopTab_Drupal.getLocation();
+                Robot robot = new Robot();
+                robot.mouseMove(coordinates.getX(), coordinates.getY() + 100);
+                log.debug("Moving Mouse on the Shop Tab");
+
+                Actions action = new Actions(driver);
+                action.moveToElement(MouseHoverPage.MoveMouseOnShopTab_Drupal).perform();
+                log.debug("Mouse over on the Shop Header ");
+                Thread.sleep(2000);
+
+                Actions action1 = new Actions(driver);
+                action1.moveToElement(MouseHoverPage.MoveMouseOnBrowseTablets_Drupal).perform();
+                log.debug("Moving Mouse on the Browse Tablets option");
+                Thread.sleep(2000);
+
+                // MouseHoverPage.MoveMouseOnPhones_Drupal.click();
+                JavascriptExecutor executor = (JavascriptExecutor)driver;
+                executor.executeScript("arguments[0].click();", MouseHoverPage.MoveMouseOnBrowseTablets_Drupal);
+                Thread.sleep(5000);
+                Screenshots.captureScreenshot();
+
+                log.debug("Clicking on PayG Tablets");
+                // Move mouse pointer away from location
+                Point coordinates2 = driver.findElement(By.xpath("(//div[@class='navContainer']/ul)[1]")).getLocation();
+                Robot robot2 = new Robot();
+                robot2.mouseMove(coordinates2.getX(), coordinates.getY() + 300);
+                log.debug("Moved Mouse to somewhere side of page");
+            } else {
+                System.out.println("Drupal's are Disiabled");
+                log.debug("Drupal's are Disiabled");
+            }
         } catch (ElementNotVisibleException e) {
-            // check if popup is present, if yes, handle it.
-            Environment.driver.switchTo().frame("edr_l_first");
-            log.debug("********We are switch to the iframe*******");
-            log.debug("Popup has appeared on the screen, Hence trying to close the survey");
-            Screenshots.captureScreenshot();
-            // Saying no to survey
-            driver.findElement(By.xpath("//a[@id='no']/span")).click();
-            log.debug("Closing the popup by saying No to Survey");
-            log.debug("*******Saying no to survey*******");
-            log.debug("*********Existing the popups present in iframe***************");
-            log.debug("Exiting the Survey");
-            Environment.driver.switchTo().defaultContent();
-            Thread.sleep(3000);
-            Screenshots.captureScreenshot();
-
+            log.debug("Failed to mouse over, &  Error as : " + e.getStackTrace());
+            Assert.fail("Failed to Navigate to the Shop mouse over");
+            Thread.sleep(2000);
         }
-
     }
 
     // Below will navigate to PAYM SIMO Page
@@ -606,8 +674,8 @@ public class MouseHoverAction extends Environment {
             log.debug("Performing Fitness tracker navigations");
             log.debug("Performing Fitness navigations");
 
-           // driver.navigate().refresh();
-           // Thread.sleep(5000);
+            // driver.navigate().refresh();
+            // Thread.sleep(5000);
 
             Point coordinates = pageobjects.MouseHoverPage.MoveMouseOnShopTab.getLocation();
             log.debug("Getting coordinates for shop tab");
@@ -658,51 +726,86 @@ public class MouseHoverAction extends Environment {
         driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 
         try {
-            log.debug("Performing Accessories navigations");
-            log.debug("Performing Accessories navigations");
-            driver.navigate().refresh();
-            Thread.sleep(5000);
-            driver.manage().timeouts().implicitlyWait(1, TimeUnit.MINUTES);
+            /*********************************************************************
+             normal execution flow in ref Env....        ************************/
+            if (driver.findElements(By.xpath("//div[@class='nav-consumer']/ul/li/a[contains(@href, '/shop')]")).size() >= 1) {
+                log.debug("Performing Accessories landing page navigations");
+                Thread.sleep(3000);
 
-            Point coordinates = pageobjects.MouseHoverPage.MoveMouseOnShopTab.getLocation();
-            Robot robot = new Robot();
-            robot.mouseMove(coordinates.getX(), coordinates.getY() + 120);
+                Point coordinates = pageobjects.MouseHoverPage.MoveMouseOnShopTab.getLocation();
+                Robot robot = new Robot();
+                robot.mouseMove(coordinates.getX(), coordinates.getY() + 120);
+                log.debug("Moving Mouse onThread.sleep(2000); the Shop Tab");
 
-            Actions action = new Actions(driver);
-            action.moveToElement(pageobjects.MouseHoverPage.MoveMouseOnShopTab).perform();
-            log.debug("Mouse over on the Shop Header ");
+                Actions action = new Actions(driver);
+                action.moveToElement(pageobjects.MouseHoverPage.MoveMouseOnShopTab).perform();
+                log.debug("Mouse over on the Shop Header ");
+                Thread.sleep(2000);
+
+                Actions action1 = new Actions(driver);
+                action1.moveToElement(pageobjects.MouseHoverPage.MoveMouseOnAccessoriesAndMoreTab).perform();
+                log.debug("Mouse over Shop---> Accessories ");
+                log.debug("Moving Mouse on the Accessories dropdown");
+                Thread.sleep(2000);
+
+                pageobjects.MouseHoverPage.MoveMouseOnAccessoriesAndMoreTab.click();
+                log.debug("Mouse over Shop---> Accessories");
+                Thread.sleep(5000);
+                log.debug("Moving Mouse on the Paymonthly link");
+
+                Screenshots.captureScreenshot();
+
+                log.debug("Clicking on PayM Phones");
+
+                // Move mouse pointer away from location
+                Point coordinates2 = driver.findElement(By.xpath("//*[@id='header-consumer']/div")).getLocation();
+                Robot robot2 = new Robot();
+                robot2.mouseMove(coordinates2.getX(), coordinates.getY() + 300);
+                log.debug("Moved Mouse to somewhere side of page");
+            } else {
+                System.out.println("Drupal's are Enabled");
+                log.debug("Drupal's are Enabled");
+            }
+
+            /*********************************************************************
+             Drupal navigation change           ************************/
+            if (driver.findElements(By.xpath("//div[@class='navContainer']/ul/li[@name='Shop']/a[contains(@href,'/shop')]")).size() >= 1) {
+
+                Point coordinates = MouseHoverPage.MoveMouseOnShopTab_Drupal.getLocation();
+                Robot robot = new Robot();
+                robot.mouseMove(coordinates.getX(), coordinates.getY() + 100);
+                log.debug("Moving Mouse on the Shop Tab");
+
+                Actions action = new Actions(driver);
+                action.moveToElement(MouseHoverPage.MoveMouseOnShopTab_Drupal).perform();
+                log.debug("Mouse over on the Shop Header ");
+                Thread.sleep(2000);
+
+                Actions action1 = new Actions(driver);
+                action1.moveToElement(MouseHoverPage.MoveMouseOnAccessoriesAndMoreTab_Drupal).perform();
+                log.debug("Moving Mouse on the Browse Phones option");
+                Thread.sleep(2000);
+
+                // MouseHoverPage.MoveMouseOnPhones_Drupal.click();
+                JavascriptExecutor executor = (JavascriptExecutor)driver;
+                executor.executeScript("arguments[0].click();", MouseHoverPage.MoveMouseOnAccessoriesAndMoreTab_Drupal);
+                Thread.sleep(5000);
+                Screenshots.captureScreenshot();
+
+                log.debug("Clicking on PayG Phones");
+                // Move mouse pointer away from location
+                Point coordinates2 = driver.findElement(By.xpath("(//div[@class='navContainer']/ul)[1]")).getLocation();
+                Robot robot2 = new Robot();
+                robot2.mouseMove(coordinates2.getX(), coordinates.getY() + 300);
+                log.debug("Moved Mouse to somewhere side of page");
+            } else {
+                System.out.println("Drupal's are Disiabled");
+                log.debug("Drupal's are Disiabled");
+            }
+        } catch (ElementNotVisibleException e) {
+            log.debug("Failed to mouse over, &  Error as : " + e.getStackTrace());
+            Assert.fail("Failed to Navigate to the Shop mouse over");
             Thread.sleep(2000);
-
-            Actions action1 = new Actions(driver);
-            action1.moveToElement(pageobjects.MouseHoverPage.MoveMouseOnAccessoriesTab).perform();
-            Thread.sleep(2000);
-
-            pageobjects.MouseHoverPage.MoveMouseOnAllAccessories.click();
-            Thread.sleep(5000);
-            Screenshots.captureScreenshot();
-
-            Point coordinates2 = driver.findElement(By.xpath("//*[@id='header-consumer']/div")).getLocation();
-            Robot robot2 = new Robot();
-            robot2.mouseMove(coordinates2.getX(), coordinates.getY() + 300);
-            log.debug("Moved Mouse to somewhere side of page");
-            Screenshots.captureScreenshot();
-
-        } catch (NoSuchElementException e) {
-            // check if popup is present, if yes, handle it.
-				/*Environment.driver.switchTo().frame("edr_l_first");
-				log.debug("********We are switch to the iframe*******");
-				log.debug("Popup has appeared on the screen, Hence trying to close the survey");
-				Screenshots.captureScreenshot();
-				// Saying no to survey
-				driver.findElement(By.xpath("//a[@id='no']/span")).click();
-				log.debug("Closing the popup by saying No to Survey");
-				log.debug("*******Saying no to survey*******");
-				log.debug("*********Existing the popups present in iframe***************");
-				log.debug("Exiting the Survey");
-				Environment.driver.switchTo().defaultContent();*/
-            log.debug(" The Accessories are no available please try again");
-            log.debug(" The Accessories are no available please try again");
-            Thread.sleep(3000);
         }
     }
 
@@ -759,10 +862,10 @@ public class MouseHoverAction extends Environment {
 
     }
 
-	/*
-	 * ############## All the Below are for the CFU customer journey
-	 * ###################
-	 */
+    /*
+     * ############## All the Below are for the CFU customer journey
+     * ###################
+     */
 
     // Below will navigate to upgrade --- > upgrade now page
 
@@ -793,10 +896,10 @@ public class MouseHoverAction extends Environment {
             log.debug("Moved mouse on upgrades -- > upgradenow and clicked");
             Thread.sleep(5000);
             // Move mouse pointer away from location
-            Point coordinates2 = driver.findElement(By.xpath("//*[@id='header-consumer']/div")).getLocation();
+            /*Point coordinates2 = driver.findElement(By.xpath("//*[@id='header-consumer']/div")).getLocation();
             Robot robot2 = new Robot();
             robot2.mouseMove(coordinates2.getX(), coordinates.getY() + 300);
-            log.debug("Moved Mouse to somewhere side of page");
+            log.debug("Moved Mouse to somewhere side of page");*/
 
             Screenshots.captureScreenshot();
 
@@ -820,55 +923,88 @@ public class MouseHoverAction extends Environment {
         driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 
         try {
-            log.debug("Performing navigations to PAYM MBB");
-            log.debug("Performing navigations to PAYM MBB");
+            /*********************************************************************
+             normal execution flow in ref Env....        ************************/
+            if (driver.findElements(By.xpath("//div[@class='nav-consumer']/ul/li/a[contains(@href, '/shop')]")).size() >= 1) {
+                log.debug("Performing MBB landing page navigations");
+                log.debug("Performing MBB Phones landing page navigations");
+                Thread.sleep(3000);
 
-            Point coordinates = pageobjects.MouseHoverPage.MoveMouseOnShopTab.getLocation();
-            Robot robot = new Robot();
-            robot.mouseMove(coordinates.getX(), coordinates.getY() + 120);
-            log.debug("Moving Mouse on the Shop Tab");
+                Point coordinates = pageobjects.MouseHoverPage.MoveMouseOnShopTab.getLocation();
+                Robot robot = new Robot();
+                robot.mouseMove(coordinates.getX(), coordinates.getY() + 120);
+                log.debug("Moving Mouse onThread.sleep(2000); the Shop Tab");
 
-            Actions action = new Actions(driver);
-            action.moveToElement(pageobjects.MouseHoverPage.MoveMouseOnShopTab).perform();
-            log.debug("Mouse over on the Shop Header ");
-            Thread.sleep(2000);
+                Actions action = new Actions(driver);
+                action.moveToElement(pageobjects.MouseHoverPage.MoveMouseOnShopTab).perform();
+                log.debug("Mouse over on the Shop Header ");
+                Thread.sleep(2000);
 
-            Actions action1 = new Actions(driver);
-            action1.moveToElement(pageobjects.MouseHoverPage.MoveMouseOnMobileBroadband).perform();
-            log.debug("Moved Mouse on the Mobile broadband dropdown");
-            Thread.sleep(4000);
+                Actions action1 = new Actions(driver);
+                action1.moveToElement(pageobjects.MouseHoverPage.MoveMouseOnMobileBroadband).perform();
+                log.debug("Mouse over Shop---> MBB ");
+                log.debug("Moving Mouse on the MBB dropdown");
+                Thread.sleep(2000);
 
-            pageobjects.MouseHoverPage.MoveMouseOnPayMMBB.click();
-            log.debug("clicked on the PAYM MBB tab");
-            log.debug("Clicked on the PAYM MBB option");
-            Thread.sleep(5000);
+                pageobjects.MouseHoverPage.MoveMouseOnMobileBroadband.click();
+                log.debug("Mouse over Shop---> MBB");
+                Thread.sleep(5000);
+                log.debug("Moving Mouse on the MBB link");
 
-            // Move mouse pointer away from location
-            Point coordinates2 = driver.findElement(By.xpath("//*[@id='header-consumer']/div")).getLocation();
-            Robot robot2 = new Robot();
-            robot2.mouseMove(coordinates2.getX(), coordinates.getY() + 300);
-            log.debug("Moved Mouse to somewhere side of page");
+                Screenshots.captureScreenshot();
 
-            Screenshots.captureScreenshot();
+                log.debug("Clicking on MBB");
 
+                // Move mouse pointer away from location
+                Point coordinates2 = driver.findElement(By.xpath("//*[@id='header-consumer']/div")).getLocation();
+                Robot robot2 = new Robot();
+                robot2.mouseMove(coordinates2.getX(), coordinates.getY() + 300);
+                log.debug("Moved Mouse to somewhere side of page");
+            } else {
+                System.out.println("Drupal's are Enabled");
+                log.debug("Drupal's are Enabled");
+            }
+
+            /*********************************************************************
+             Drupal navigation change           ************************/
+            if (driver.findElements(By.xpath("//div[@class='navContainer']/ul/li[@name='Shop']/a[contains(@href,'/shop')]")).size() >= 1) {
+
+                Point coordinates = MouseHoverPage.MoveMouseOnShopTab_Drupal.getLocation();
+                Robot robot = new Robot();
+                robot.mouseMove(coordinates.getX(), coordinates.getY() + 100);
+                log.debug("Moving Mouse on the Shop Tab");
+
+                Actions action = new Actions(driver);
+                action.moveToElement(MouseHoverPage.MoveMouseOnShopTab_Drupal).perform();
+                log.debug("Mouse over on the Shop Header ");
+                Thread.sleep(2000);
+
+                Actions action1 = new Actions(driver);
+                action1.moveToElement(MouseHoverPage.MoveMouseOnMobileBroadband_Drupal).perform();
+                log.debug("Moving Mouse on the MBB");
+                Thread.sleep(2000);
+
+                // MouseHoverPage.MoveMouseOnPhones_Drupal.click();
+                JavascriptExecutor executor = (JavascriptExecutor)driver;
+                executor.executeScript("arguments[0].click();", MouseHoverPage.MoveMouseOnMobileBroadband_Drupal);
+                Thread.sleep(5000);
+                Screenshots.captureScreenshot();
+
+                log.debug("Clicking on MBB");
+                // Move mouse pointer away from location
+                Point coordinates2 = driver.findElement(By.xpath("(//div[@class='navContainer']/ul)[1]")).getLocation();
+                Robot robot2 = new Robot();
+                robot2.mouseMove(coordinates2.getX(), coordinates.getY() + 300);
+                log.debug("Moved Mouse to somewhere side of page");
+            } else {
+                System.out.println("Drupal's are Disiabled");
+                log.debug("Drupal's are Disiabled");
+            }
         } catch (ElementNotVisibleException e) {
-            // check if popup is present, if yes, handle it.
-            Environment.driver.switchTo().frame("edr_l_first");
-            log.debug("********We are switch to the iframe*******");
-            log.debug("Popup has appeared on the screen, Hence trying to close the survey");
-            Screenshots.captureScreenshot();
-            // Saying no to survey
-            driver.findElement(By.xpath("//a[@id='no']/span")).click();
-            log.debug("Closing the popup by saying No to Survey");
-            log.debug("*******Saying no to survey*******");
-            log.debug("*********Existing the popups present in iframe***************");
-            log.debug("Exiting the Survey");
-            Environment.driver.switchTo().defaultContent();
-            Thread.sleep(3000);
-            Screenshots.captureScreenshot();
-
+            log.debug("Failed to mouse over, &  Error as : " + e.getStackTrace());
+            Assert.fail("Failed to Navigate to the Shop mouse over");
+            Thread.sleep(2000);
         }
-
     }
 
     public static void iPadPage() throws Exception {
@@ -991,54 +1127,84 @@ public class MouseHoverAction extends Environment {
         driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 
         try {
-            log.debug("Performing PAYG SimO navigations");
-            log.debug("Performing PAYG SimO navigations");
-            Thread.sleep(1000);
+            /*********************************************************************
+             normal execution flow in ref Env....        ************************************************/
+            if (driver.findElements(By.xpath("//div[@class='nav-consumer']/ul/li/a[contains(@href, '/shop')]")).size() >= 1) {
+                log.debug("Performing Pay As You go Sim landing page navigations");
+                Thread.sleep(3000);
 
-            Point coordinates = pageobjects.MouseHoverPage.MoveMouseOnShopTab.getLocation();
-            Robot robot = new Robot();
-            robot.mouseMove(coordinates.getX(), coordinates.getY() + 120);
-            log.debug("Moving mouse on the Shop Tab");
+                Point coordinates = pageobjects.MouseHoverPage.MoveMouseOnShopTab.getLocation();
+                Robot robot = new Robot();
+                robot.mouseMove(coordinates.getX(), coordinates.getY() + 120);
+                log.debug("Moving Mouse onThread.sleep(2000); the Shop Tab");
 
-            Actions action = new Actions(driver);
-            action.moveToElement(pageobjects.MouseHoverPage.MoveMouseOnShopTab).perform();
-            log.debug("Moving mouse on the Sims in Shop Dropdown");
+                Actions action = new Actions(driver);
+                action.moveToElement(pageobjects.MouseHoverPage.MoveMouseOnShopTab).perform();
+                log.debug("Mouse over on the Shop Header ");
+                Thread.sleep(2000);
+
+
+                Actions action1 = new Actions(driver);
+                action1.moveToElement(pageobjects.MouseHoverPage.MoveMouseOnSims).perform();
+                log.debug("Moving mouse on the PayG Sims");
+                Thread.sleep(2000);
+
+                pageobjects.MouseHoverPage.MoveMouseOnSims.click();
+                log.debug("Clicking on Pay G Sims");
+                // Move mouse pointer away from location
+                Thread.sleep(5000);
+
+                Point coordinates2 = driver.findElement(By.xpath("//*[@id='header-consumer']/div")).getLocation();
+                Robot robot2 = new Robot();
+                robot2.mouseMove(coordinates2.getX(), coordinates.getY() + 300);
+                log.debug("Moved Mouse to somewhere side of page");
+            } else {
+                System.out.println("Drupal's are Enabled");
+                log.debug("Drupal's are Enabled");
+            }
+
+            /*********************************************************************
+             Drupal navigation change           ************************/
+            if (driver.findElements(By.xpath("//div[@class='navContainer']/ul/li[@name='Shop']/a[contains(@href,'/shop')]")).size() >= 1) {
+
+                Point coordinates = MouseHoverPage.MoveMouseOnShopTab_Drupal.getLocation();
+                Robot robot = new Robot();
+                robot.mouseMove(coordinates.getX(), coordinates.getY() + 100);
+                log.debug("Moving Mouse on the Shop Tab");
+
+                Actions action = new Actions(driver);
+                action.moveToElement(MouseHoverPage.MoveMouseOnShopTab_Drupal).perform();
+                log.debug("Mouse over on the Shop Header ");
+                Thread.sleep(2000);
+
+                Actions action1 = new Actions(driver);
+                action1.moveToElement(MouseHoverPage.MoveMouseOnSims_Drupal).perform();
+                log.debug("Moving mouse on the PayG Sims");
+                Thread.sleep(2000);
+
+                // MouseHoverPage.MoveMouseOnPhones_Drupal.click();
+                JavascriptExecutor executor = (JavascriptExecutor) driver;
+                executor.executeScript("arguments[0].click();", MouseHoverPage.MoveMouseOnSims_Drupal);
+                Thread.sleep(5000);
+                Screenshots.captureScreenshot();
+
+                log.debug("Clicking on Pay G Sims");
+                // Move mouse pointer away from location
+                Point coordinates2 = driver.findElement(By.xpath("(//div[@class='navContainer']/ul)[1]")).getLocation();
+                Robot robot2 = new Robot();
+                robot2.mouseMove(coordinates2.getX(), coordinates.getY() + 300);
+                log.debug("Moved Mouse to somewhere side of page");
+            } else {
+                System.out.println("Drupal's are Disiabled");
+                log.debug("Drupal's are Disiabled");
+            }
+        } catch (Exception e) {
+            log.debug("Failed to mouse over, &  Error as : " + e.getStackTrace());
+            Assert.fail("Failed to Navigate to the Shop mouse over");
             Thread.sleep(2000);
-
-            Actions action1 = new Actions(driver);
-            action1.moveToElement(pageobjects.MouseHoverPage.MoveMouseOnSims).perform();
-            log.debug("Moving mouse on the PayG Sims");
-            Thread.sleep(2000);
-
-            pageobjects.MouseHoverPage.MoveMouseOnPayGSims.click();
-            log.debug("Clicking on Pay G Sims");
-            // Move mouse pointer away from location
-            Thread.sleep(5000);
-
-            Point coordinates2 = driver.findElement(By.xpath("//*[@id='header-consumer']/div")).getLocation();
-            Robot robot2 = new Robot();
-            robot2.mouseMove(coordinates2.getX(), coordinates.getY() + 300);
-            log.debug("Moved Mouse to somewhere side of page");
-
-            Screenshots.captureScreenshot();
-        } catch (NoSuchElementException e) {
-            // check if popup is present, if yes, handle it.
-            Environment.driver.switchTo().frame("edr_l_first");
-            log.debug("********We are switch to the iframe*******");
-            log.debug("Popup has appeared on the screen, Hence trying to close the survey");
-            Screenshots.captureScreenshot();
-            // Saying no to survey
-            driver.findElement(By.xpath("//a[@id='no']/span")).click();
-            log.debug("Closing the popup by saying No to Survey");
-            log.debug("*******Saying no to survey*******");
-            log.debug("*********Existing the popups present in iframe***************");
-            log.debug("Exiting the Survey");
-            Environment.driver.switchTo().defaultContent();
-            Thread.sleep(3000);
-
         }
-
     }
+
 
     public static void MobilePayGSimLandingPage() throws Exception {
         driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
