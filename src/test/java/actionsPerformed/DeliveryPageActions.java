@@ -185,11 +185,13 @@ public class DeliveryPageActions extends Environment {
                 log.debug("New Check box of 'Is this order for you or someone else?' is Displayed");
                 Thread.sleep(3000);
                 DeliveryPage.thisOrderOverlay.click();
+                Thread.sleep(3000);
                 String thisOrderOVerLayTxt = DeliveryPage.thisOrderOverlayTxt.getText();
                 if (DeliveryPage.thisOrderOverlayTxt.isDisplayed()) {
                     if (thisOrderOVerLayTxt.contains("choose to receive information on our products, offers and more")) {
                         System.out.println("Successfully validated the OVerLay Icon Text ie : " + thisOrderOVerLayTxt);
                         log.debug("Successfully validated the OVerLay Icon Text ie : " + thisOrderOVerLayTxt);
+                        Thread.sleep(3000);
                         DeliveryPage.closeOveryPopup.click();
                     } else {
                         System.out.println("Failed to validate the Overlay icon Text");
@@ -238,6 +240,7 @@ public class DeliveryPageActions extends Environment {
             Assert.fail("Failed to do GDPR validations");
         }
 
+        Thread.sleep(5000);
         DeliveryPage.continueBtn.click();
     }
 

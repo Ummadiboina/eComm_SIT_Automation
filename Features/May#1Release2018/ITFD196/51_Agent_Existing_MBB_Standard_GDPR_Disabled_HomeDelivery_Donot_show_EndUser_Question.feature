@@ -16,7 +16,7 @@ Feature: 51_Agent_Existing_MBB_Standard_GDPR_Disabled_HomeDelivery_Donot_show_En
     Then perform all the advisory checks
     And validate the Personal details for Agent Existing customer and Enter time at current Address
     And perform the credit checks for Agent Existing <Username> by Bank details
-    When Pay by card for PAYM device
+    When Pay by card for PAYM device for Existing customer
     Then Order confirmation message should be displayed
 
 

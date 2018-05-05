@@ -176,7 +176,7 @@ public class PaymentPageActions extends Environment {
         log.debug("Entering the Payments section");
         Thread.sleep(5000);
         scrollToAnElement.scrollToElement(PaymentPage.CardHolderName);
-        Thread.sleep(2000);
+        Thread.sleep(5000);
         PaymentPage.CardHolderName.sendKeys(Username);
         log.debug("Entering name of the card as " + Username);
 
