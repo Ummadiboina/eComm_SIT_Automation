@@ -170,7 +170,7 @@ public class E2EOrderPlaced_Steps {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, MouseHoverPage.class);
             MouseHoverAction.AccessoriesLandingPage();
-            //Autoredirection.redirect();
+            Autoredirection.redirect();
             Thread.sleep(10000);
             //GlobalActions.//CommonFunctionscheckTitle("Accessories");
         } catch (Exception e) {
@@ -2509,6 +2509,7 @@ public class E2EOrderPlaced_Steps {
         try {
             PageFactory.initElements(driver, Agent_RegisterCustomerPage.class);
             Agent_RegisterCustomerActions.PaybyCard();
+            Thread.sleep(15000);
             Agent_RegisterCustomerActions.CardDetails_PayM();
         } catch (Exception e) {
             // TODO Auto-generated catch block
@@ -2517,6 +2518,24 @@ public class E2EOrderPlaced_Steps {
 
         }
     }
+
+    @When("^Pay by card for PAYM device for Existing customer$")
+    public void pay_by_card_payn_device_new() {
+        driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
+        try {
+            PageFactory.initElements(driver, Agent_RegisterCustomerPage.class);
+            Agent_RegisterCustomerActions.PaybyCard_new();
+            Thread.sleep(15000);
+            Agent_RegisterCustomerActions.CardDetails_PayM();
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            log.debug("Unable to Pay by card , please see the failure screenshot");
+            Assert.fail("Unable to Pay by card , please see the failure screenshot");
+
+        }
+    }
+
+
 
 	/*
 	 * #########################################################################

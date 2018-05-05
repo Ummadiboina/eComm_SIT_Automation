@@ -15,11 +15,11 @@ Feature: Feature: 36_Agent_Existing_PAYM_Phones_Standard_Home_delivery_GDPR_Enab
     Then perform all the advisory checks
     And validate the Personal details for Agent Existing customer and Enter time at current Address
     And perform the credit checks for Agent Existing <Username> by Bank details
-    When Pay by card for PAYM device
-    Then Order confirmation message should be displayeds
+    When Pay by card for PAYM device for Existing customer
+    Then Order confirmation message should be displayed
 
 
     Examples:
-      | user        | Device                        | Username    | Tariffs  | DeliveryType | Firstname | Surname | HouseNumber | PostCode | B1  | B2  | B3  | B4  | Text | Email | Phone | Post | Consumer     | status  | MBBStatus | DeviceType |
-      | 07521110585 | iPhone 7 Plus 128GB Jet Black | TEST ACCEPTA | Standard | HomeDelivery | TEST      | ACCEPTA | 11          | SL11UP   | Not | Not | Not | Not | Not  | Not   | Not   | Not  | SomeOne else | Enabled | No        | Connected  |
+      | user        | Device                        | Username     | Tariffs  | DeliveryType | Firstname | Surname | HouseNumber | PostCode | B1  | B2     | B3  | B4  | Text | Email | Phone  | Post | Consumer | status  | MBBStatus | DeviceType |
+      | 07521110585 | iPhone 7 Plus 128GB Jet Black | TEST ACCEPTA | Standard | HomeDelivery | TEST      | ACCEPTA | 11          | SL11UP   | Not | Select | Not | Not | Not  | Not   | Select | Not  | Me       | Enabled | No        | Connected  |
 

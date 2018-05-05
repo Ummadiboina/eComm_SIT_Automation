@@ -211,7 +211,7 @@ public class Agent_CreditCheckPageActions extends Environment {
 		Screenshots.captureScreenshot();
 	}
 
-	public static void AddressDetails()throws InterruptedException, IOException {
+	public static void AddressDetails() {
 		try{
 
 			/*
@@ -321,7 +321,7 @@ public class Agent_CreditCheckPageActions extends Environment {
 			Thread.sleep(4000);
 			Agent_CreditCheckDetailsPage.PerformCreditCheck.click();
 
-			Thread.sleep(5000);
+			Thread.sleep(15000);
 		}
 		else
 		{

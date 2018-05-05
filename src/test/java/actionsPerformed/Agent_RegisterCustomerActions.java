@@ -118,8 +118,8 @@ public class Agent_RegisterCustomerActions extends Environment {
 			e.getMessage();
 		}
 
-		Agent_RegisterCustomerPage.intialPassword.sendKeys("SitTester123");
-		Agent_RegisterCustomerPage.confirmPassword.sendKeys("SitTester123");
+		Agent_RegisterCustomerPage.intialPassword.sendKeys("test123");
+		Agent_RegisterCustomerPage.confirmPassword.sendKeys("test123");
 		Thread.sleep(2000);
 
 		try {
@@ -172,17 +172,33 @@ public class Agent_RegisterCustomerActions extends Environment {
 		Thread.sleep(2000);
 	}
 
+	public static void PaybyCard_new() throws InterruptedException {
+
+
+			driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+
+			log.debug("Pay by card button is enabled ");
+			Thread.sleep(15000);
+			Agent_RegisterCustomerPage.PayByCard.click();
+			log.debug("Clicked on pay by card ");
+			Thread.sleep(5000);
+	}
+
 	public static void CardDetails_PayM() throws InterruptedException {
-		Thread.sleep(5000);
+
+		driver.manage().timeouts().implicitlyWait(15,TimeUnit.SECONDS);
 		log.debug("Mipay bit : ");
+		Thread.sleep(10000);
 		//driver.findElements(By.xpath("//label[contains(text(),'Card ending with:')]")).size();
-		if (driver.findElements(By.xpath("//label[contains(text(),'Card ending with:')]")).size() > 0) {
+		if (driver.findElements(By.xpath("//span[@id='lblCardNumber']")).size() > 0) {
 			String PaybyCardCVV2 = Agent_RegisterCustomerPage.PayByCard_2.getText();
-			Thread.sleep(2000);
+			Thread.sleep(5000);
 			//if (PaybyCardCVV2.contains("Card ending with:")) {
 			System.out.print("The text is :" + PaybyCardCVV2);
 			Agent_RegisterCustomerPage.SecurityCode.sendKeys("123");
 			log.debug("Security card is entered as 123");
+
+			Thread.sleep(5000);
 			Agent_RegisterCustomerPage.UsethisCard.click();
 			log.debug("The Pay Now button is clicked");
 			log.debug("completed  Mypay bit");
@@ -467,7 +483,7 @@ public class Agent_RegisterCustomerActions extends Environment {
 						//Is this order for you or someone else validation
 						String thisOrderHeader = Agent_RegisterCustomerPage.thisOrderTxt.getText();
 
-						if (thisOrderHeader.contains("Is this order for you or someone else")) {
+						if (thisOrderHeader.contains("Is this order for you or someone else?")) {
 							System.out.println("As expected Text:: " + thisOrderHeader + " is displayed");
 							log.debug("As expected Text:: " + thisOrderHeader + " is displayed");
 
@@ -527,7 +543,7 @@ public class Agent_RegisterCustomerActions extends Environment {
 									//O2 Products Tile Text validation
 									String contentText = Agent_RegisterCustomerPage.O2Products_Text.getText();
 
-									if (contentText.contains("I'm happy for O2 to let me know about offers relating to my service(upgrades, new tariffs, roaming, O2 Wifi etc.)")) {
+									if (contentText.contains("I'm happy for O2 to let me know about offers relating to my service (upgrades, new tariffs, roaming, O2 Wifi etc.)")) {
 										System.out.println("O2 Tile Content text has as expected:: " + contentText);
 										log.debug("O2 Tile Content text has as expected:: " + contentText);
 									} else {
@@ -1034,7 +1050,7 @@ public class Agent_RegisterCustomerActions extends Environment {
 									//O2 Products Tile Text validation
 									String contentText = Agent_RegisterCustomerPage.O2Products_Text.getText();
 
-									if (contentText.contains("I'm happy for O2 to let me know about offers relating to my service(upgrades, new tariffs, roaming, O2 Wifi etc.)")) {
+									if (contentText.contains("I'm happy for O2 to let me know about offers relating to my service (upgrades, new tariffs, roaming, O2 Wifi etc.)")) {
 										System.out.println("O2 Tile Content text has as expected:: " + contentText);
 										log.debug("O2 Tile Content text has as expected:: " + contentText);
 									} else {
