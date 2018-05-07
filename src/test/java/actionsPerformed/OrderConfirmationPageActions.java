@@ -162,7 +162,7 @@ public class OrderConfirmationPageActions extends Environment {
 	}
 
 	//MBB validation
-	public static void MBBValidation(String MBBStatus) throws IOException, InterruptedException {
+	public static void MBBValidation(String MBBStatus) throws InterruptedException {
 
 		if(MBBStatus.equalsIgnoreCase("YES")){
 
@@ -236,6 +236,7 @@ public class OrderConfirmationPageActions extends Environment {
 	public static void PreferencesSection(String consumer, String gdprStatus,String BP1, String BP2, String BP3, String BP4, String Chn1, String Chn2, String Chn3, String Chn4, String MBBStatus, String DeviceType) throws IOException, InterruptedException {
 
 				try {
+					Thread.sleep(5000);
 					if (gdprStatus.contains("Enabled")){
 
 						if(DeviceType.equalsIgnoreCase("Connected")){
@@ -336,7 +337,8 @@ public class OrderConfirmationPageActions extends Environment {
 
 											//O2Products Tile Text validation
 											String contentText = OrderConfirmationPage.O2Products_Text.getText();
-											if (contentText.contains("I'm happy for O2 to let me know about offers relating to my service(upgrades, new tariffs, roaming, O2 Wifi etc.)")) {
+
+											if (contentText.contains("I'm happy for O2 to let me know about offers relating to my service (upgrades, new tariffs, roaming, O2 Wifi etc.)")) {
 												System.out.println("O2 Tile Content text has as expected:: " + contentText);
 												log.debug("O2 Tile Content text has as expected:: " + contentText);
 											} else {
@@ -362,7 +364,7 @@ public class OrderConfirmationPageActions extends Environment {
 												log.debug("O2 products overlay text is not matching:: " + overlayText);
 												Assert.fail("O2 products overlay text is not matching:: " + overlayText);
 											}
-
+											Thread.sleep(3000);
 											//O2Products Close Button clicking
 											if(OrderConfirmationPage.O2ProductsClose_CloseButton.isEnabled()) {
 												OrderConfirmationPage.O2ProductsClose_CloseButton.click();
@@ -376,6 +378,7 @@ public class OrderConfirmationPageActions extends Environment {
 
 											//O2 Perks And Extras Tile Text Validation
 											String contentText = OrderConfirmationPage.O2PerksAndExtras_Text.getText();
+
 											if (contentText.contains("I'm happy for O2 to let me know about offers, perks and services that are relevant to me, like Priority.")) {
 												System.out.println("O2 perks and extras Tile Content text has as expected:: " + contentText);
 												log.debug("O2 perks and extras Tile Content text has as expected:: " + contentText);
@@ -401,7 +404,7 @@ public class OrderConfirmationPageActions extends Environment {
 												log.debug("O2 perks and extras overlay text is not matching:: " + overlayText);
 												Assert.fail("O2 perks and extras overlay text is not matching:: " + overlayText);
 											}
-
+											Thread.sleep(3000);
 											//O2 Perks And Extras Close Button clicking
 											if(OrderConfirmationPage.O2PerksAndExtras_CloseButton.isEnabled()) {
 												OrderConfirmationPage.O2PerksAndExtras_CloseButton.click();
@@ -440,7 +443,7 @@ public class OrderConfirmationPageActions extends Environment {
 												log.debug("Offers from o2 overlay text is not matching:: " + overlayText);
 												Assert.fail("Offers from o2 overlay text is not matching:: " + overlayText);
 											}
-
+											Thread.sleep(3000);
 											//OffersFromO2Partner_CloseButton
 											if(OrderConfirmationPage.OffersFromO2Partner_CloseButton.isEnabled()) {
 												OrderConfirmationPage.OffersFromO2Partner_CloseButton.click();
@@ -477,7 +480,7 @@ public class OrderConfirmationPageActions extends Environment {
 												log.debug("Partners contacting me directly overlay text is not matching:: " + overlayText);
 												Assert.fail("Partners contacting me directly overlay text is not matching:: " + overlayText);
 											}
-
+											Thread.sleep(3000);
 											//Partners Contacting Close Button clicking
 											if(OrderConfirmationPage.PartnersContacting_CloseButton.isEnabled()) {
 												OrderConfirmationPage.PartnersContacting_CloseButton.click();
@@ -491,7 +494,7 @@ public class OrderConfirmationPageActions extends Environment {
 											System.out.println("As expected Channel preference Contact_Text is disabled before selecting business preferences");
 											log.debug("As expected Channel preference Contact_Text is disabled before selecting business preferences");
 										}
-
+										Thread.sleep(3000);
 										//Selecting O2 Products Business preferences
 										if (BP1.equalsIgnoreCase("Select")) {
 
@@ -538,7 +541,7 @@ public class OrderConfirmationPageActions extends Environment {
 											log.debug("Partners Contacting business preference selected");
 										}
 
-										Thread.sleep(4000);
+										Thread.sleep(3000);
 
 										// SaveMyPreferences button status before selecting channels preferences
 										if (driver.findElements(By.id("saveMyPrefernces")).size() <= 0) {
@@ -547,7 +550,7 @@ public class OrderConfirmationPageActions extends Environment {
 										}else{
 											Assert.fail("Failed to disiable the 'SaveMyPrefernces' CTA ");
 										}
-
+										Thread.sleep(3000);
 										//Selecting Channel preferences
 										if (Chn1.equalsIgnoreCase("Select")) {
 
@@ -591,7 +594,7 @@ public class OrderConfirmationPageActions extends Environment {
 											log.debug("Contact_Email preference selected");
 										}
 
-										driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+										Thread.sleep(3000);
 
 										// SaveMyPreferences button status after selecting channels preferences
 										if (driver.findElements(By.id("saveMyPrefernces")).size() > 0) {

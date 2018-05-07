@@ -22,5 +22,5 @@ Feature: 33_AFA_NewConnection_PAYG_Phones_CC_GDPR_Enabled_EndUser_MP_OptIn_B3B4_
     Then Order confirmation message should be displayed
 
     Examples:
-      | Device              | Tariffs | DeliveryType | Firstname | Surname | HouseNumber | PostCode | B1  | B2  | B3     | B4     | Text | Email  | Phone  | Post | Consumer | status  | Password | confirmPassword | SecurityAnswer | MBBStatus |DeviceType|
-      | iPhone 6s 32GB Gold | Random  | HomeDelivery | TEST      | ACCEPTA | 4           | SL11UP   | Not | Not | Select | Select | Not  | Select | Select | Not  | Me       | Enabled | test123  | test123         | vinudeep       | No        |Connected |
+      | Device              | Tariffs | DeliveryType | Firstname | Surname | HouseNumber | PostCode | B1  | B2  | B3     | B4  | Text | Email  | Phone  | Post | Consumer | status  | Password | confirmPassword | SecurityAnswer | MBBStatus | DeviceType |
+      | iPhone 6s 32GB Gold | Random  | HomeDelivery | TEST      | ACCEPTA | 4           | SL11UP   | Not | Not | Select | Not | Not  | Select | Select | Not  | Me       | Enabled | test123  | test123         | vinudeep       | No        | Connected  |

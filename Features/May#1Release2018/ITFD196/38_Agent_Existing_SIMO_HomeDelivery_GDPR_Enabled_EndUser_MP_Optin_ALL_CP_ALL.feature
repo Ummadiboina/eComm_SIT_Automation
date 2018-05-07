@@ -18,7 +18,7 @@ Feature: Feature: 38_Agent_Existing_SIMO_HomeDelivery_GDPR_Enabled_EndUser_MP_Op
     Then Order confirmation message should be displayed
 
     Examples:
-      | user        | Tariff | DeliveryType | Firstname | Surname | Username     | HouseNumber | PostCode | B1     | B2     | B3     | B4     | Text   | Email  | Phone  | Post   | Consumer | status  | MBBStatus |DeviceType|
-      | 07521009589 | SimO   | HomeDelivery | TEST      | ACCEPTA | TEST ACCEPTA | 6           | SL11UP   | Select | Select | Select | Select | Select | Select | Select | Select | Me       | Enabled | No        |Connected |
+      | user        | Tariff | DeliveryType | Firstname | Surname | Username     | HouseNumber | PostCode | B1     | B2     | B3     | B4  | Text   | Email  | Phone  | Post   | Consumer | status  | MBBStatus | DeviceType |
+      | 07521123351 | SimO   | HomeDelivery | TEST      | ACCEPTA | TEST ACCEPTA | 6           | SL11UP   | Select | Select | Select | Not | Select | Select | Select | Select | Me       | Enabled | No        | Connected  |
 
 

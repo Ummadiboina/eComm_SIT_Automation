@@ -626,7 +626,7 @@ public class E2EOrderPlaced_Steps {
         try {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, UpgradeCustomerPage.class);
-            UpgradeCustomerPageActions.Login(username, password);
+            UpgradeCustomerPageActions.Login(Agent_CreditCheckPageActions.emailAdd, password);
         } catch (Exception e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
@@ -1383,6 +1383,9 @@ public class E2EOrderPlaced_Steps {
             Thread.sleep(10000);
             PaymentPageActions.Card_Details(Username);
             Thread.sleep(75000);
+            PaymentPageActions.Card_Details_CCV();
+
+
         } catch (Exception e) {
             // TODO Auto-generated catch block
             e.printStackTrace();

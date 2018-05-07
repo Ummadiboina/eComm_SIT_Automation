@@ -26,5 +26,5 @@ Feature: 24_CFU_SIMO_Phone_GDPR_Enabled_Home_Delivery_complaint_EndUser_MP_OptIn
     Then Choose <consumer> <status> Business preferences <B1> <B2> <B3> <B4> And Channel Preferences <Text> <Email> <Phone> <Post> <MBBStatus> <DeviceType>
 
     Examples:
-      | Contract | username           | password | filtername | sortoption                 | consumer     | B1     | B2  | B3     | B4  | Text   | Email | Phone | Post | status  | MBBStatus |DeviceType|
-      | 30 Days  | 12342015@gmail.com | test123  | low        | Monthly data (High to low) | SomeOne else | Select | Not | Select | Not | Select | Not   | Not   | Not  | Enabled | No        |Connected |
+      | Contract | username                   | password | filtername | sortoption                 | consumer | B1     | B2  | B3     | B4  | Text   | Email | Phone | Post | status  | MBBStatus | DeviceType |
+      | 30 Days  | e2ed14411644@stf.ref.co.uk | test123  | low        | Monthly data (High to low) | Me       | Select | Not | Select | Not | Select | Not   | Not   | Not  | Enabled | No        | Connected  |

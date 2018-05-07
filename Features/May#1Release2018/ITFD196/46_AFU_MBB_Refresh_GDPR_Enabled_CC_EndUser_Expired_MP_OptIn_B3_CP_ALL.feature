@@ -20,5 +20,5 @@ Feature: 46_AFU_MBB_Refresh_GDPR_Enabled_CC_EndUser_Expired_MP_OptIn_B3_CP_ALL
     Then Order confirmation message should be displayed
 
     Examples:
-      | user        | Device | Tariffs | consumer | B1     | B2  | B3     | B4     | Text   | Email  | Phone | Post | status  | MBBStatus |DeviceType|
-      | 07521127505 | dongle | Random  | Me       | Select | Not | Select | Select | Select | Select | Not   | Not  | Enabled | Yes       |Connected |
+      | user        | Device | Tariffs | consumer | B1  | B2  | B3     | B4  | Text   | Email  | Phone  | Post   | status  | MBBStatus | DeviceType |
+      | 07568412088 | dongle | Random  | Me       | Not | Not | Select | Not | Select | Select | Select | Select | Enabled | Yes       | Connected  |

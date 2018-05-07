@@ -8,7 +8,7 @@ Feature: 08_Existing_customer_PAYG_Tablets_Home_Delivery_GDPR_Enabled_Refresh_En
 
   Scenario Outline: 08_Existing_customer_PAYG_Tablets_Home_Delivery_GDPR_Enabled_Refresh_EndUser_MP_OptOut
     Given I am an Existing user and Navigates to Signin page
-    And Signin using valid <username> and <password> credentials
+    And Signin using valid <Username> and <password> credentials
     And navigate to Pay as you Go Tablets page
     And select any available <Device> Tablet
     And Navigate to device details page
@@ -25,5 +25,5 @@ Feature: 08_Existing_customer_PAYG_Tablets_Home_Delivery_GDPR_Enabled_Refresh_En
 
 
     Examples:
-      | handset           | Firstname | Surname | username     | password | filtername | sortoption                 | consumer | B1  | B2  | B3  | B4  | Text | Email | Phone | Post | status  | Device | MBBStatus |DeviceType|
-      | Samsung Galaxy S8 | TEST      | ACCEPTA | TEST ACCEPTA | test123  | low        | Monthly data (High to low) | Me       | Not | Not | Not | Not | Not  | Not   | Not   | Not  | Enabled |        | No        |Connected |
+      | handset           | Firstname | Surname | Username                      | username     | password | filtername | sortoption                 | consumer | B1  | B2  | B3  | B4  | Text | Email | Phone | Post | status  | Device                   | MBBStatus | DeviceType |
+      | Samsung Galaxy S8 | TEST      | ACCEPTA | 27fe65687622@stf.ref.o2.co.uk | TEST ACCEPTA | test123  | low        | Monthly data (High to low) | Me       | Not | Not | Not | Not | Not  | Not   | Not   | Not  | Enabled | Apple iPad Pro 10.5 inch | No        | Connected  |

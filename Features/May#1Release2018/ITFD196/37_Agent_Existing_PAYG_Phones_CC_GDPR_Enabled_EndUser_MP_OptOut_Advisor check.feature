@@ -18,5 +18,5 @@ Feature: Feature: 37_Agent_Existing_PAYG_Phones_CC_GDPR_Enabled_EndUser_MP_OptOu
 
     Examples:
       | user        | Device                        | Tariffs  | Firstname | Surname | HouseNumber | PostCode | B1  | B2  | B3  | B4  | Text | Email | Phone | Post | Consumer | status  | MBBStatus |DeviceType|
-      | 07521009589 | iPhone 7 Plus 128GB Jet Black | Standard | TEST      | ACCEPTA | 11          | SL11UP   | Not | Not | Not | Not | Not  | Not   | Not   | Not  | Me       | Enabled | No        |Connected |
+      | 07521113867 | iPhone 7 Plus 128GB Jet Black | Standard | TEST      | ACCEPTA | 11          | SL11UP   | Not | Not | Not | Not | Not  | Not   | Not   | Not  | Me       | Enabled | No        |Connected |
 

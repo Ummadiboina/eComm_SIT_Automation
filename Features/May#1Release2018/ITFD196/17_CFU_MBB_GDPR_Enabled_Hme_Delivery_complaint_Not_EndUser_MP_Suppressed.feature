@@ -28,6 +28,6 @@ Feature: 17_CFU_MBB_GDPR_Enabled_Hme_Delivery_complaint_Not_EndUser_MP_Suppresse
     Then Choose <consumer> <status> Business preferences <B1> <B2> <B3> <B4> And Channel Preferences <Text> <Email> <Phone> <Post> <MBBStatus> <DeviceType>
 
     Examples:
-      | Tablet        | Action | Surname | Username     | filtername | sortoption                 | username                     | password | consumer     | B1  | B2  | B3  | B4  | Text | Email | Phone | Post | Device_Name | status  | MBBStatus |DeviceType|
-      | Random Device | skip   | ACCEPTA | TEST ACCEPTA | low        | Monthly data (Low to High) | identityref01@mailinator.com | test123  | SomeOne else | Not | Not | Not | Not | Not  | Not   | Not   | Not  |             | Enabled | Yes       |Connected |
+      | Tablet        | Action | Surname | Username     | filtername | sortoption                 | username                   | password | consumer | B1  | B2  | B3  | B4  | Text | Email | Phone | Post | Device_Name | status  | MBBStatus | DeviceType |
+      | Random Device | skip   | ACCEPTA | TEST ACCEPTA | low        | Monthly data (Low to High) | e2ed19698391@stf.ref.co.uk | test123  | Someone  | Not | Not | Not | Not | Not  | Not   | Not   | Not  | Huawei      | Enabled | Yes       | Connected  |
    #   | Apple iPhone 7    | TEST      | ACCEPTA | TEST ACCEPTA | high       |
