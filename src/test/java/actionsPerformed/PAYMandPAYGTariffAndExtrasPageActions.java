@@ -118,7 +118,6 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 				else{
 					log.debug("Data Roll over copy text is not present in the popup");
 				}
-
 				driver.findElement(By.xpath("//h3[text()='Big Bundles']/following-sibling::a")).click();
 				log.debug("Clicked on More details popup close button");
 				Thread.sleep(3000);
@@ -126,6 +125,7 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 				driver.findElement(By.xpath("//span[text()='"+tariffAmt+"']/../../../button")).click();
 				log.debug("Selected the Big Bundle Tariff");
 
+				//Scroll to Your Package section of T&E page
 				WebElement yourPackageSection = driver.findElement(By.xpath("//h2[contains(text(),'Your package')]"));
 				((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", yourPackageSection);
 				log.debug("Scrolling page to Your package section");
@@ -134,9 +134,7 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 
 				for(int i = 3;i<=actPlnListElm.size();i++) {
 					actPlnList = actPlnListElm.get(i).getText().replaceAll("\"","").trim() + "|";
-
 				}
-
 				if(plan.equals(actPlnList)){
 					log.debug("Selected Big Bundle Data Roll over plan details is displayed in your package section");
 
@@ -145,9 +143,7 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 					log.debug("Selected Big Bundle Data Roll over plan details is not displayed in your package section");
 
 				}
-
 			}
-
 		}
 		Screenshots.captureScreenshot();
 		return plan;

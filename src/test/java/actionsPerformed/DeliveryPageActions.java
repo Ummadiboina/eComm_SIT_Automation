@@ -705,5 +705,67 @@ public class DeliveryPageActions extends Environment {
         Screenshots.captureScreenshot();
     }
 
+    public static void validateYourOrderSection(String expValue, String Element) {
+
+        String plan = "";
+
+        if(Element.equalsIgnoreCase("DataRollOver")){
+
+            String actValue = "";
+
+            String simType = driver.findElement(By.xpath("//p[@id='qa-item']"));
+            List<WebElement> actPlnList = driver.findElements(By.xpath("//h2[text()='Your Order ']/../div[@class='order-desc']//p[contains(@ng-if,'freeSimDelivery')]/span"));
+
+            if(simType.equalsIgnoreCase("Big Bundles sim")){
+
+                for (int i = 2;i<actPlnList.size();i++) {
+                    plan = actPlnList.get(i).getAttribute("textContent").replaceAll("\"", "").trim() + "|";
+                }
+
+                if(expValue.equals(actPlnList)){
+                    log.debug("Selected Data Roll over plan details is displayed in Your order section of Delivery page");
+
+                }
+                else{
+                    log.debug("Selected Data Roll over plan details is not displayed in Your order section of Delivery page");
+
+                }
+            }
+
+            if(simType.equalsIgnoreCase("Classic Pay As You Go sim")){
+
+                for (int i = 1;i<actPlnList.size();i++) {
+                    plan = actPlnList.get(i).getAttribute("textContent").replaceAll("\"", "").trim() + "|";
+                }
+
+                if(expValue.equals(actPlnList)){
+                    log.debug("Selected Data Roll over plan details is displayed in Your order section of Delivery page");
+
+                }
+                else{
+                    log.debug("Selected Data Roll over plan details is not displayed in Your order section of Delivery page");
+
+                }
+            }
+
+            if(simType.equalsIgnoreCase("International sim")){
+
+                for (int i = 1;i<actPlnList.size();i++) {
+                    plan = actPlnList.get(i).getAttribute("textContent").replaceAll("\"", "").trim() + "|";
+                }
+
+                if(expValue.equals(actPlnList)){
+                    log.debug("Selected Data Roll over plan details is displayed in Your order section of Delivery page");
+
+                }
+                else{
+                    log.debug("Selected Data Roll over plan details is not displayed in Your order section of Delivery page");
+
+                }
+            }
+
+        }
+
+    }
 
 }

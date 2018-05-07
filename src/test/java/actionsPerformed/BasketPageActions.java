@@ -227,11 +227,11 @@ public class BasketPageActions extends Environment {
 			}
 
 			if(expValue.equals(actValue)){
-				log.debug("Selected Big Bundle Data Roll over plan details is displayed in Basket page");
+				log.debug("Selected Data Roll over plan details is displayed in Basket page");
 
 			}
 			else{
-				log.debug("Selected Big Bundle Data Roll over plan details is not displayed in Basket page");
+				log.debug("Selected Data Roll over plan details is not displayed in Basket page");
 
 			}
 
