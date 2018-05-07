@@ -18,4 +18,4 @@ Feature: AFA_Allow_ReferWithSIMO_Credit_Check_Status_For_SIMO_Order_And_Show_Ref
 
     Examples:
       | Tariff | DeliveryType | Firstname | Surname | Username     | HouseNumber | PostCode | B1     | B2  | B3     | B4     | Text   | Email  | Phone | Post | Consumer | status  | MBBStatus | DeviceType |
-      | SimO   | HomeDelivery | TEST      | Referc  | Test Referc | 6           | SL11ER   | Select | Not | Select | Select | Select | Select | Not   | Not  | Me       | Enabled | No        | Connected  |
+      | SimO   | HomeDelivery | TEST      | Referc  | Test Referc | 6           | SL11ER   | Select | Not | Select | Not | Select | Select | Not   | Not  | Me       | Enabled | No        | Connected  |
