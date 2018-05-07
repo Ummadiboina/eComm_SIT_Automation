@@ -20,5 +20,5 @@ Feature: 31_AFA_NewConnection_SIMO_GDPR_Enabled_status_Not_EndUser_MP_Suppressed
     Then Order confirmation message should be displayed
 
     Examples:
-      | Tariff | DeliveryType | Firstname | Surname | Username     | HouseNumber | PostCode | B1  | B2  | B3  | B4  | Text | Email | Phone | Post | Consumer     | status  | Password | confirmPassword | SecurityAnswer | MBBStatus |DeviceType|
-      | SimO   | HomeDelivery | TEST      | ACCEPTA | TEST ACCEPTA | 6           | SL11UP   | Not | Not | Not | Not | Not  | Not   | Not   | Not  | SomeOne else | Enabled | test123  | test123         |                | No        |Connected |
+      | Tariff | DeliveryType | Firstname | Surname | Username     | HouseNumber | PostCode | B1  | B2  | B3  | B4  | Text | Email | Phone | Post | Consumer | status  | Password | confirmPassword | SecurityAnswer | MBBStatus | DeviceType |
+      | SimO   | HomeDelivery | TEST      | ACCEPTA | TEST ACCEPTA | 6           | SL11UP   | Not | Not | Not | Not | Not  | Not   | Not   | Not  | Someone  | Enabled | test123  | test123         | JKhan          | No        | Connected  |

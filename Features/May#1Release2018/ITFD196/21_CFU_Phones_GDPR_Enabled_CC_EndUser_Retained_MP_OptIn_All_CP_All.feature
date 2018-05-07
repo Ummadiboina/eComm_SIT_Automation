@@ -34,5 +34,5 @@ Feature:21_CFU_Phones_GDPR_Enabled_CC_EndUser_Retained_MP_OptIn_All_CP_All
     Then Choose <consumer> <status> Business preferences <B1> <B2> <B3> <B4> And Channel Preferences <Text> <Email> <Phone> <Post> <MBBStatus> <DeviceType>
 
     Examples:
-      | username   | password | handset           | Username     | Action | tariff | consumer | B1     | B2     | B3     | B4     | Text   | Email  | Phone  | Post   | status  | MBBStatus |DeviceType|
-      | ash@o2.com | test123  | Samsung Galaxy S8 | TEST ACCEPTA | skip   |        | Me       | Select | Select | Select | Select | Select | Select | Select | Select | Enabled | No        |Connected |
+      | username                   | password | handset           | Username     | Action | tariff | consumer | B1     | B2     | B3     | B4  | Text   | Email  | Phone  | Post   | status  | MBBStatus | DeviceType |
+      | e2ed98325381@stf.ref.co.uk | test123  | Samsung Galaxy S8 | TEST ACCEPTA | skip   |        | Me       | Select | Select | Select | Not | Select | Select | Select | Select | Enabled | No        | Connected  |

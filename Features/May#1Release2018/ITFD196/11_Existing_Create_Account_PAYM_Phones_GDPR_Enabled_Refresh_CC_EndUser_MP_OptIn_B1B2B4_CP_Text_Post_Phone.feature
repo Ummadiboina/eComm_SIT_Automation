@@ -25,5 +25,5 @@ Feature: Feature: 11_Existing_Create_Account_PAYM_Phones_GDPR_Enabled_Refresh_CC
 
 
     Examples:
-      | username   | password | handset           | Username     | consumer | B1     | B2     | B3  | B4     | Text   | Email | Phone  | Post   | status  | MBBStatus |DeviceType|
-      | ash@o2.com | test123  | Samsung Galaxy S8 | TEST ACCEPTA | Me       | Select | Select | Not | Select | Select | Not   | Select | Select | Enabled | No        |Connected |
+      | username                    | password | handset           | Username     | consumer | B1     | B2     | B3  | B4  | Text   | Email | Phone  | Post   | status  | MBBStatus | DeviceType |
+      | in_nov4722@stf.ref.o2.co.uk | test123  | Samsung Galaxy S8 | TEST ACCEPTA | Me       | Select | Select | Not | Not | Select | Not   | Select | Select | Enabled | No        | Connected  |

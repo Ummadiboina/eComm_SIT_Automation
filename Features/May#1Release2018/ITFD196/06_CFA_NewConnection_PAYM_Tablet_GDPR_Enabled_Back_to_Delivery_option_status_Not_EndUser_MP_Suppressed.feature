@@ -23,5 +23,5 @@ Feature: 06_CFA_NewConnection_PAYM_Tablet_GDPR_Enabled_Back_to_Delivery_option_s
 
 
     Examples:
-      | Device        | Firstname | Surname | Username     | consumer | B1     | B2  | B3     | B4     | Text   | Email  | Phone | Post | status  | MBBStatus |DeviceType|
-      | Random Device | TEST      | ACCEPTA | TEST ACCEPTA | Me       | Select | Not | Select | Select | Select | Select | Not   | Not  | Enabled | No        |Connected |
+      | Device        | Firstname | Surname | Username     | consumer | B1  | B2  | B3  | B4  | Text | Email | Phone | Post | status  | MBBStatus | DeviceType |
+      | Random Device | TEST      | ACCEPTA | TEST ACCEPTA | Someone  | Not | Not | Not | Not | Not  | Not   | Not   | Not  | Enabled | No        | Connected  |

@@ -32,6 +32,6 @@ Feature: 40_Agent_Existing_CCA_PAYM_Phones_Refresh_CCA_GDPR_Enabled_EndUser_EndU
 
     Examples:
       | user        | Device              | Tariffs | username | password | Username     | HouseNumber | status  | PostCode | Password | confirmPassword | SecurityAnswer | B1  | B2  | B3     | B4  | Text | Email | Phone  | Post | Consumer | status2  | consumer | MBBStatus | DeviceType |
-      | 07521009589 | Galaxy S8 Plus 64GB | Refresh |          | test123  | TEST ACCEPTA | 14          | Enabled | SL11UP   | test1234 | test1234        | vinudeep       | Not | Not | Select | Not | Not  | Not   | Select | Not  | Me       | Disabled | Me       | No        | Connected  |
+      | 07521119994 | Galaxy S8 Plus 64GB | Refresh |          | test123  | TEST ACCEPTA | 14          | Enabled | SL11UP   | test1234 | test1234        | vinudeep       | Not | Not | Select | Not | Not  | Not   | Select | Not  | Me       | Disabled | Me       | No        | Connected  |
 
 

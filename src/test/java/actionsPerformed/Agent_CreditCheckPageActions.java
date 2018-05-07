@@ -19,7 +19,9 @@ import helpers.Environment;
 import pageobjects.Agent_CreditCheckDetailsPage;
 import pageobjects.DeliveryPage;
 
+
 public class Agent_CreditCheckPageActions extends Environment {
+	public static String emailAdd;
 
 	final static Logger log = Logger.getLogger("Agent_CreditCheckPageActions");
 
@@ -34,7 +36,10 @@ public class Agent_CreditCheckPageActions extends Environment {
 		Agent_CreditCheckDetailsPage.LastName.sendKeys(Surname);
 		log.debug("Entered Last name");
 
-		Agent_CreditCheckDetailsPage.Email.sendKeys(RandomEmailAddressCreation.RandomEmail());
+		emailAdd=RandomEmailAddressCreation.RandomEmail();
+		Agent_CreditCheckDetailsPage.Email.sendKeys(emailAdd);
+		log.debug("Entered email address is :: " + emailAdd);
+		Reporter.log("Entered email address is :: " + emailAdd);
 
 		log.debug("Entered email address");
 		Agent_CreditCheckDetailsPage.DOB.sendKeys("10-10-1981");
@@ -87,7 +92,10 @@ public class Agent_CreditCheckPageActions extends Environment {
 		Agent_CreditCheckDetailsPage.LastName.sendKeys(Surname);
 		log.debug("Entered Last name");
 
-		Agent_CreditCheckDetailsPage.Email.sendKeys(RandomEmailAddressCreation.RandomEmail());
+		emailAdd=RandomEmailAddressCreation.RandomEmail();
+		Agent_CreditCheckDetailsPage.Email.sendKeys(emailAdd);
+		log.debug("Entered email address is :: " + emailAdd);
+		Reporter.log("Entered email address is :: " + emailAdd);
 
 		log.debug("Entered email address");
 		Agent_CreditCheckDetailsPage.DOB.sendKeys("10-10-1981");
@@ -135,7 +143,12 @@ public class Agent_CreditCheckPageActions extends Environment {
 		Agent_CreditCheckDetailsPage.LastName.sendKeys(Surname);
 		log.debug("Entered Last name");
 
-		Agent_CreditCheckDetailsPage.Email.sendKeys(RandomEmailAddressCreation.RandomEmail());
+		emailAdd=RandomEmailAddressCreation.RandomEmail();
+		Agent_CreditCheckDetailsPage.Email.sendKeys(emailAdd);
+		log.debug("Entered email address is :: " + emailAdd);
+		Reporter.log("Entered email address is :: " + emailAdd);
+
+		//Agent_CreditCheckDetailsPage.Email.sendKeys(RandomEmailAddressCreation.RandomEmail());
 
 		log.debug("Entered email address");
 		Agent_CreditCheckDetailsPage.DOB.sendKeys("10-10-1981");

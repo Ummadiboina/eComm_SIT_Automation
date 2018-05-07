@@ -163,6 +163,19 @@ public class PaymentPageActions extends Environment {
         Screenshots.captureScreenshot();
 
     }
+    public static void Card_Details_CCV() throws InterruptedException {
+        Thread.sleep(4000);
+
+        if (driver.findElements(By.xpath("//input[@type='password']")).size() > 0) {
+            PaymentPage.CCVSecurityCode.sendKeys("1234");
+            log.debug("Entered CVV security code");
+            PaymentPage.Submit_Next_Step.click();
+            log.debug("Clicking on submit to next step");
+            Thread.sleep(10000);
+        }
+    }
+
+
 
     public static void Card_Details(String Username) throws InterruptedException, IOException {
 

@@ -21,6 +21,6 @@ Feature: 51_Agent_Existing_MBB_Standard_GDPR_Disabled_HomeDelivery_Donot_show_En
 
 
     Examples:
-      | user        | Device           | Tariffs  | Username|DeliveryType | Firstname | Surname | HouseNumber | PostCode | B1     | B2  | B3     | B4     | Text   | Email  | Phone  | Post   | consumer | status   | MBBStatus |DeviceType|
-      | 07521009589 | Huawei 4G Dongle | Standard |   Test Accepta      |HomeDelivery | TEST      | ACCEPTA | 11          | SL11UP   | Select | Not | Select | Select | Select | Select | Select | Select | Me       | Disabled | No        |Connected |
+      | user        | Device           | Tariffs  | Username     | DeliveryType | Firstname | Surname | HouseNumber | PostCode | B1  | B2  | B3  | B4  | Text | Email | Phone | Post | consumer | status   | MBBStatus | DeviceType |
+      | 07568412156 | Huawei 4G Dongle | Standard | Test Accepta | HomeDelivery | TEST      | ACCEPTA | 11          | SL11UP   | Not | Not | Not | Not | Not  | Not   | Not   | Not  | Someone  | Disabled | No        | Connected  |
 

@@ -19,5 +19,5 @@ Feature: 04_CFA_NewConnection_SIMO_GDPR_Enabled_Refresh_Homedelivery_EndUser_MP_
     Then Choose <consumer> <status> Business preferences <B1> <B2> <B3> <B4> And Channel Preferences <Text> <Email> <Phone> <Post> <MBBStatus> <DeviceType>
 
     Examples:
-      | handset           | Firstname | Surname | Username     | filtername | sortoption                 | consumer | B1     | B2  | B3     | B4     | Text   | Email  | Phone | Post | status  | Contract | MBBStatus |DeviceType|
-      | Samsung Galaxy S8 | TEST      | ACCEPTA | TEST ACCEPTA | low        | Monthly data (High to low) | Me       | Select | Not | Select | Select | Select | Select | Not   | Not  | Enabled | 30 Days  | NO        |Connected |
+      | handset           | Firstname | Surname | Username     | filtername | sortoption                 | consumer | B1     | B2     | B3     | B4  | Text   | Email  | Phone  | Post   | status  | Contract | MBBStatus | DeviceType |
+      | Samsung Galaxy S8 | TEST      | ACCEPTA | TEST ACCEPTA | low        | Monthly data (High to low) | Me       | Select | Select | Select | Not | Select | Select | Select | Select | Enabled | 30 Days  | NO        | Connected  |

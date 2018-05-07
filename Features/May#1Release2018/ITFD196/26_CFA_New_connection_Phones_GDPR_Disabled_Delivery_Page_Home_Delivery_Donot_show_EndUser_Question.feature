@@ -22,6 +22,6 @@ Feature: 26_CFA_New_connection_Phones_GDPR_Disabled_Delivery_Page_Home_Delivery_
     Then Choose <consumer> <status> Business preferences <B1> <B2> <B3> <B4> And Channel Preferences <Text> <Email> <Phone> <Post> <MBBStatus> <DeviceType>
 
     Examples:
-      | handset           | Firstname | Surname | Username     | filtername | sortoption                 | consumer | B1     | B2  | B3     | B4     | Text   | Email  | Phone | Post | status   | MBBStatus |DeviceType|
-      | Samsung Galaxy S8 | TEST      | ACCEPTA | TEST ACCEPTA | low        | Monthly data (High to low) | Me       | Select | Not | Select | Select | Select | Select | Not   | Not  | Disabled | No        |Connected |
+      | handset           | Firstname | Surname | Username     | filtername | sortoption                 | consumer | B1  | B2  | B3  | B4  | Text | Email | Phone | Post | status   | MBBStatus | DeviceType |
+      | Samsung Galaxy S8 | TEST      | ACCEPTA | TEST ACCEPTA | low        | Monthly data (High to low) | Me       | Not | Not | Not | Not | Not  | Not   | Not   | Not  | Disabled | No        | Connected  |
 

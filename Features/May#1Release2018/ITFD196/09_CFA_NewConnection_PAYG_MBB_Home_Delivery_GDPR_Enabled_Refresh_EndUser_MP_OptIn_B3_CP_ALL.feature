@@ -23,5 +23,5 @@ Feature: 09_CFA_NewConnection_PAYG_MBB_Home_Delivery_GDPR_Enabled_Refresh_EndUse
 
 
     Examples:
-      | handset  | Random Device | Firstname | Surname | Username     | consumer | B1     | B2  | B3     | B4     | Text   | Email  | Phone | Post | status  | MBBStatus |DeviceType|
-      | iPhone 6 |               | TEST      | ACCEPTA | TEST ACCEPTA | Me       | Select | Not | Select | Select | Select | Select | Not   | Not  | Enabled | No        |Connected |
+      | handset  | Random Device | Firstname | Surname | Username     | consumer | B1  | B2  | B3     | B4  | Text   | Email  | Phone  | Post   | status  | MBBStatus | DeviceType |
+      | iPhone 6 | Huawei        | TEST      | ACCEPTA | TEST ACCEPTA | Me       | Not | Not | Select | Not | Select | Select | Select | Select | Enabled | No        | Connected  |

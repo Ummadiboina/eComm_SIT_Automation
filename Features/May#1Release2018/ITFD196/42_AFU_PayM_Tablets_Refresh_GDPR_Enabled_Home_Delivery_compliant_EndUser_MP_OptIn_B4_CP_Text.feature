@@ -20,5 +20,5 @@ Feature: 42_AFU_PayM_Tablets_Refresh_GDPR_Enabled_Home_Delivery_compliant_EndUse
     Then Order confirmation message should be displayed
 
     Examples:
-      | user        | Device | Tariffs | B1     | B2  | B3     | B4     | Text   | Email  | Phone | Post | status  | Consumer | MBBStatus |DeviceType|
-      | 07521009589 | dongle | Refresh | Select | Not | Select | Select | Select | Select | Not   | Not  | Enabled | Me       | No        |Connected |
+      | user        | Device | Tariffs | B1  | B2  | B3     | B4  | Text   | Email | Phone | Post | status  | Consumer | MBBStatus | DeviceType |
+      | 07568412155 | dongle | Refresh | Not | Not | Select | Not | Select | Not   | Not   | Not  | Enabled | Me       | No        | Connected  |
