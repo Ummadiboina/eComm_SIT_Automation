@@ -2256,6 +2256,21 @@ public class E2EOrderPlaced_Steps {
 
     }
 
+    @And("^Select a pay as you go data roll over ([^\"]*) and validate Data Roll over copy for ([^\"]*) and ([^\"]*)$")
+    public void selectAPayAsYouGoBundleHavingDataRollOver(String FreeSim_Type, String Tariff_Value, String Big_Bundle_Data) {
+        try {
+            log.debug("in selecting pay as you go Simo");
+            driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, PAYGSimoPage.class);
+            Thread.sleep(3000);
+            PAYGSimOPageActions.selectTariff(FreeSim_Type, "DataRollOver", Tariff_Value+"|"+Big_Bundle_Data);
+            Thread.sleep(5000);
+        } catch (Exception e) {
+            log.debug(e.getMessage());
+
+        }
+
+    }
 
 	/*
 	 * #########################################################################
@@ -2297,6 +2312,24 @@ public class E2EOrderPlaced_Steps {
             Assert.fail("Unable to validate basket content/checkout , please see the failure screenshot");
 
         }
+    }
+
+    @And("^Validate Your order section in Delivery page$")
+    public void validateYourOrderSectionDeliveryPage(String plnList) {
+
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, DeliveryPage.class);
+            Thread.sleep(3000);
+            DeliveryPageActions.validateYourOrderSection("DataRollOver", expPlnList);
+            Thread.sleep(7000);
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            log.debug("Unable to validate Your order section in delivery page , please see the failure screenshot");
+            Assert.fail("Unable to validate Your order section in delivery page , please see the failure screenshot");
+
+        }
+
     }
     /*
 	 * #########################################################################
