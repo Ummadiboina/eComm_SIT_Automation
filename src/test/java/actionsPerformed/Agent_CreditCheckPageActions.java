@@ -188,11 +188,11 @@ public class Agent_CreditCheckPageActions extends Environment {
 				String refStatus = Agent_CreditCheckDetailsPage.CreditCheckReferStatus.getText();
 
 				if(refStatus.contains("Refer: You've been conditionally referred. You'll be able to upgrade to a new device after six months on this tariff. Are you happy to continue? If the customer agrees to the six month restriction, call the referral team before placing the order on 08001116000.")){
-					System.out.println("Credit Check status for SIMO only::  " + refStatus);
-					log.debug("Credit Check status for SIMO only::  " + refStatus);
+					System.out.println("Credit Check status for SIMO::  " + refStatus);
+					log.debug("Credit Check status for SIMO::  " + refStatus);
 				}else if(refStatus.contains("ReferWithSimOnly: Customer has been referred for SIMO order. Abandon checkout and create a SIMO order if customer wants SIMO. Tell customer that even SIMO order will be referred")){
-					System.out.println("Credit Check status for Non SIMO ::  " + refStatus);
-					log.debug("Credit Check status for Non SIMO ::  " + refStatus);
+					System.out.println("Credit Check status for Non SIMO::  " + refStatus);
+					log.debug("Credit Check status for Non SIMO::  " + refStatus);
 				}else{
 					System.out.println("Credit Check:: Refer status message is not matching with expected " + refStatus);
 					log.debug("Credit Check:: Refer status message is not matching with expected " + refStatus);
