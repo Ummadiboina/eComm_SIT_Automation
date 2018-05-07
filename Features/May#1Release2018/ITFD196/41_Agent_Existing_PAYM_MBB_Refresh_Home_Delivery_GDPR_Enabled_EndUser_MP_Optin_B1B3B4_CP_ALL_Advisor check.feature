@@ -21,6 +21,6 @@ Feature: 41_Agent_Existing_PAYM_MBB_Refresh_Home_Delivery_GDPR_Enabled_EndUser_M
 
 
     Examples:
-      | user        | Device           | Tariffs | Username     | DeliveryType | Firstname | Surname | HouseNumber | PostCode | B1     | B2  | B3     | B4     | Text   | Email  | Phone  | Post   | Consumer | status  | MBBStatus | DeviceType |
-      | 07521009589 | Huawei 4G Dongle | Refresh | Test Accepta | HomeDelivery | TEST      | ACCEPTA | 11          | SL11UP   | Select | Not | Select | Select | Select | Select | Select | Select | Me       | Enabled | No        | Connected  |
+      | user        | Device           | Tariffs | Username     | DeliveryType | Firstname | Surname | HouseNumber | PostCode | B1     | B2  | B3     | B4  | Text   | Email  | Phone  | Post   | Consumer | status  | MBBStatus | DeviceType |
+      | 07801260072 | Huawei 4G Dongle | Refresh | Test Accepta | HomeDelivery | TEST      | ACCEPTA | 11          | SL11UP   | Select | Not | Select | Not | Select | Select | Select | Select | Me       | Enabled | No        | Connected  |
 

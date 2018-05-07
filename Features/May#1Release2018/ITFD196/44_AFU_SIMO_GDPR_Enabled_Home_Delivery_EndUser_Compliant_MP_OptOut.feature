@@ -20,5 +20,5 @@ Feature: 44_AFU_SIMO_GDPR_Enabled_Home_Delivery_EndUser_Compliant_MP_OptOut
 
 
     Examples:
-      | user        | Tariff | DeliveryType | Firstname | Surname | Username     | HouseNumber | PostCode | consumer | B1     | B2  | B3     | B4     | Text   | Email  | Phone | Post | status  | MBBStatus |DeviceType|
-      | 07521118904 | SIMO   | HomeDelivery | TEST      | ACCEPTA | TEST ACCEPTA | 6           | SL11ER   | Me       | Select | Not | Select | Select | Select | Select | Not   | Not  | Enabled | No        |Connected |
+      | user        | Tariff | DeliveryType | Firstname | Surname | Username     | HouseNumber | PostCode | consumer | B1  | B2  | B3  | B4  | Text | Email | Phone | Post | status  | MBBStatus | DeviceType |
+      | 07568410735 | SimO   | HomeDelivery | TEST      | ACCEPTA | TEST ACCEPTA | 6           | SL11ER   | Me       | Not | Not | Not | Not | Not  | Not   | Not   | Not  | Enabled | No        | Connected  |

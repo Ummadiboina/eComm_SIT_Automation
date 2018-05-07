@@ -1,4 +1,4 @@
-Feature: 12_CFA_New_Customer_PAYM_Tablets_Home_Delivery_GDPR_Enabled_Refresh_EndUser_ SECCI & CCA_Not Accepted
+Feature: 12_CFA_New_Customer_PAYM_Tablets_Home_Delivery_GDPR_Enabled_Refresh_EndUser_SECCI & CCA_Not Accepted
 
   This Scenario ensures that when the Existing Customer in acquisition journey selects 'PAYM Tablets' with Home Delivery and Not Accepted 'SECCI & CCA' agreements,
   then the Order should not be placed and consent profile should not be created
@@ -24,5 +24,5 @@ Feature: 12_CFA_New_Customer_PAYM_Tablets_Home_Delivery_GDPR_Enabled_Refresh_End
 
 
     Examples:
-      | handset  | Device | Firstname | Surname | Username     | consumer | B1     | B2  | B3     | B4     | Text   | Email  | Phone | Post | status  | MBBStatus |DeviceType|
-      | iPhone 6 |        | TEST      | ACCEPTA | TEST ACCEPTA | Me       | Select | Not | Select | Select | Select | Select | Not   | Not  | Enabled | No        |Connected |
+      | handset  | Device        | Firstname | Surname | Username     | consumer | B1     | B2  | B3     | B4     | Text   | Email  | Phone | Post | status  | MBBStatus | DeviceType |
+      | iPhone 6 | Random Device | TEST      | ACCEPTA | TEST ACCEPTA | Me       | Select | Not | Select | Select | Select | Select | Not   | Not  | Enabled | No        | Connected  |

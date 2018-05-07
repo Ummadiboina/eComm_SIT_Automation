@@ -18,4 +18,4 @@ Feature: 53_Agent_Existing_Smartwatch_GDPR_Enabled_No_EndUser_Question.feature
 
     Examples:
       | user        | Device                       | Tariffs  | DeliveryType | Firstname | Surname | HouseNumber | PostCode | status  | B1     | B2  | B3     | B4     | Text   | Email  | Phone  | Post   | Consumer | DeviceType    |
-      | 07521009589 | Pebble Steel Stainless Steel | Standard | HomeDelivery | TEST      | ACCEPTA | 11          | SL11UP   | Enabled | Select | Not | Select | Select | Select | Select | Select | Select | Me       | Non Connected |
+      | 07801270003 | Pebble Steel Stainless Steel | Standard | HomeDelivery | TEST      | ACCEPTA | 11          | SL11UP   | Enabled | Select | Not | Select | Select | Select | Select | Select | Select | Me       | Non Connected |

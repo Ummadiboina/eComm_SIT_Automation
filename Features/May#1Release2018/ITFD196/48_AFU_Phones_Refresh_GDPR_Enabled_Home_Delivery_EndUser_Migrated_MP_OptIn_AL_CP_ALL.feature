@@ -20,5 +20,5 @@ Feature: 48_AFU_Phones_Refresh_GDPR_Enabled_Home_Delivery_EndUser_Migrated_MP_Op
     Then Order confirmation message should be displayed
 
     Examples:
-      | user        | Device | Tariffs | consumer | B1     | B2  | B3     | B4     | Text   | Email  | Phone | Post | status  | MBBStatus |DeviceType|
-      | 07521009589 | Phones | Random  | Me       | Select | Not | Select | Select | Select | Select | Not   | Not  | Enabled | No        |Connected |
+      | user        | Device | Tariffs | consumer | B1     | B2     | B3     | B4  | Text   | Email  | Phone  | Post   | status  | MBBStatus | DeviceType |
+      | 07568410926 | Phones | Random  | Me       | Select | Select | Select | Not | Select | Select | Select | Select | Enabled | No        | Connected  |
