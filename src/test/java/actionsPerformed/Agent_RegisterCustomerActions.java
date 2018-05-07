@@ -569,7 +569,7 @@ public class Agent_RegisterCustomerActions extends Environment {
 										log.debug("O2 products overlay text is not matching:: " + overlayText);
 										Assert.fail("O2 products overlay text is not matching:: " + overlayText);
 									}
-
+									Thread.sleep(3000);
 									//O2 Products Close Button clicking
 									Agent_RegisterCustomerPage.O2ProductsClose_CloseButton.click();
 									System.out.println("Clicked on O2 products overlay close button");
@@ -610,7 +610,7 @@ public class Agent_RegisterCustomerActions extends Environment {
 										log.debug("O2 Perks And Extras overlay text is not matching:: " + overlayText);
 										Assert.fail("O2 Perks And Extras overlay text is not matching:: " + overlayText);
 									}
-
+									Thread.sleep(3000);
 									//O2 Perks And Extras Close Button clicking
 									Agent_RegisterCustomerPage.O2PerksAndExtras_CloseButton.click();
 									System.out.println("Clicked on O2 perks and extras overlay close button");
@@ -651,7 +651,7 @@ public class Agent_RegisterCustomerActions extends Environment {
 										log.debug("Offers From O2 Partner overlay text is not matching:: " + overlayText);
 										Assert.fail("Offers From O2 Partner overlay text is not matching:: " + overlayText);
 									}
-
+									Thread.sleep(3000);
 									//Offers From O2 Partner Close Button clicking
 									Agent_RegisterCustomerPage.OffersFromO2Partner_CloseButton.click();
 									System.out.println("Clicked on offers from partners and brands overlay close button");
@@ -693,7 +693,7 @@ public class Agent_RegisterCustomerActions extends Environment {
 										log.debug("Partners Contacting overlay text is not matching:: " + overlayText);
 										Assert.fail("Partners Contacting overlay text is not matching:: " + overlayText);
 									}
-
+									Thread.sleep(3000);
 									//Partners Contacting Close Button cklicking
 									Agent_RegisterCustomerPage.PartnersContacting_CloseButton.click();
 									System.out.println("Clicked on partners contacting me directly overlay close button");
@@ -780,7 +780,7 @@ public class Agent_RegisterCustomerActions extends Environment {
 									log.debug("Channel preferences is not displaying after selecting business preferences");
 									Assert.fail("Channel preferences is not displaying after selecting business preferences");
 								}
-
+								Thread.sleep(3000);
 								//Selecting Channel preferences
 								if (Chn1.equalsIgnoreCase("Select")) {
 									if (driver.findElements(By.xpath("//input[@name='CP_Text']")).size() <= 0) {
@@ -994,7 +994,7 @@ public class Agent_RegisterCustomerActions extends Environment {
 
 					System.out.println("Device type is connected and we are proceeding");
 					log.debug("Device type is connected and we are proceeding");
-
+					Thread.sleep(3000);
 					if (driver.findElements(By.xpath("//div[@class='gdprLabel']")).size() > 0) {
 						System.out.println("GDPR is Enabled and we are proceeding");
 						log.debug("GDPR is Enabled and we are proceeding");
@@ -1076,7 +1076,7 @@ public class Agent_RegisterCustomerActions extends Environment {
 										log.debug("O2 products overlay text is not matching:: " + overlayText);
 										Assert.fail("O2 products overlay text is not matching:: " + overlayText);
 									}
-
+									Thread.sleep(3000);
 									//O2 Products Close Button clicking
 									Agent_RegisterCustomerPage.O2ProductsClose_CloseButton.click();
 									System.out.println("Clicked on O2 products overlay close button");
@@ -1117,7 +1117,7 @@ public class Agent_RegisterCustomerActions extends Environment {
 										log.debug("O2 Perks And Extras overlay text is not matching:: " + overlayText);
 										Assert.fail("O2 Perks And Extras overlay text is not matching:: " + overlayText);
 									}
-
+									Thread.sleep(3000);
 									//O2 Perks And Extras Close Button clicking
 									Agent_RegisterCustomerPage.O2PerksAndExtras_CloseButton.click();
 									System.out.println("Clicked on O2 perks and extras overlay close button");
@@ -1158,7 +1158,7 @@ public class Agent_RegisterCustomerActions extends Environment {
 										log.debug("Offers From O2 Partner overlay text is not matching:: " + overlayText);
 										Assert.fail("Offers From O2 Partner overlay text is not matching:: " + overlayText);
 									}
-
+									Thread.sleep(3000);
 									//Offers From O2 Partner Close Button clicking
 									Agent_RegisterCustomerPage.OffersFromO2Partner_CloseButton.click();
 									System.out.println("Clicked on offers from partners and brands overlay close button");
@@ -1199,7 +1199,7 @@ public class Agent_RegisterCustomerActions extends Environment {
 										log.debug("Partners Contacting overlay text is not matching:: " + overlayText);
 										Assert.fail("Partners Contacting overlay text is not matching:: " + overlayText);
 									}
-
+									Thread.sleep(3000);
 									//Partners Contacting Close Button cklicking
 									Agent_RegisterCustomerPage.PartnersContacting_CloseButton.click();
 									System.out.println("Clicked on partners contacting me directly overlay close button");
@@ -1282,7 +1282,7 @@ public class Agent_RegisterCustomerActions extends Environment {
 									log.debug("Channel preferences is not displaying after selecting business preferences");
 									Assert.fail("Channel preferences is not displaying after selecting business preferences");
 								}
-
+								Thread.sleep(3000);
 								//Selecting Channel preferences
 								if (Chn1.equalsIgnoreCase("Select")) {
 									if (driver.findElements(By.xpath("//input[@name='CP_Text']")).size() <= 0) {
@@ -1337,7 +1337,7 @@ public class Agent_RegisterCustomerActions extends Environment {
 									log.debug("Save My Preference Button is disabled after selecting Channel preferences");
 									Assert.fail("Save My Preference Button is disabled after selecting Channel preferences");
 								}
-
+								Thread.sleep(3000);
 
 								//clicking on Save mY Preferences Button
 								if (Agent_RegisterCustomerPage.SaveMyPreferences.isEnabled()) {
