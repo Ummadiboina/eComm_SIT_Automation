@@ -56,33 +56,44 @@ public class FreeSimDeliveryPageActions extends Environment {
 		String NoMarkettingMessage = pageobjects.DeliveryPage.NoMarkettingMessage.getText();
 		log.debug("No Marketting Message :: "+ NoMarkettingMessage);
 
-		log.debug("Clicking on Privacy Policy");
+		/*log.debug("Clicking on Privacy Policy");
 		pageobjects.DeliveryPage.PrivacyPolicy.click();
+		log.debug("Clicked the Privacy Policy link");*/
 
-		Thread.sleep(5000);
-		String Mainwindow = driver.getWindowHandle();
 
-		Set<String> s1 = driver.getWindowHandles();
-		Iterator<String> i1 = s1.iterator();
-		while (i1.hasNext()) {
-			String ChildWindow = i1.next();
-			if (!Mainwindow.equalsIgnoreCase(ChildWindow)) {
-				// Switching to Child window
-				driver.switchTo().window(ChildWindow);
-				System.out.println("Switched to child window");
-
-				driver.manage().timeouts().implicitlyWait(30,TimeUnit.SECONDS);
-				//Thread.sleep(10000);
-
-				String PrivacyPolicyMessage = pageobjects.DeliveryPage.PrivacyPolicyMessage.getText();
-				log.debug("Privacy Policy Message :: "+PrivacyPolicyMessage);
+		/*String mainWindowHandle = driver.getWindowHandle();
+		Set<String> mainWindowHandle1 = driver.getWindowHandles();
+		System.out.println("Main window :: " +mainWindowHandle);
+		System.out.println("Number of windows :: " +mainWindowHandle1.size());
+		try {
+			//String mainWindowHandle = driver.getWindowHandle ();
+			Set<String> openWindowSize = driver.getWindowHandles ();
+			log.debug(openWindowSize.size() + " windows are opend");
+			//Switch to child window and close it
+			for (String childWindowHandle : driver.getWindowHandles ()) {
+				//If window handle is not main window handle then close it
+				if (!childWindowHandle.equals (mainWindowHandle)) {
+					driver.switchTo ().window (childWindowHandle);
+					// Close child windows
+					// driver.close();
+				} else {
+					//switch back to main window
+					driver.switchTo ().window (mainWindowHandle);
+					log.debug ("Switched window");
+				}
 			}
+		} catch (Exception e){
+			log.debug ("Failed to switch to window :: " + e.getStackTrace ());
+
 		}
+		Thread.sleep(20000);
+		String PrivacyPolicyMessage = pageobjects.DeliveryPage.PrivacyPolicyMessage.getText();
+		log.debug("Privacy Policy Message :: "+PrivacyPolicyMessage);
 
-		// Switching to Parent window i.e Main Window.
-		driver.switchTo().window(Mainwindow);
-		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+		//driver.switchTo ().window (mainWindowHandle);
 
+		*/
+		Thread.sleep(10000);
 		log.debug("Clicking on Marketing check box");
 		pageobjects.DeliveryPage.marketCheckBox.click();
 
