@@ -21,7 +21,7 @@ Feature: CFA_PayG_To_Show_BigBundle_DataRollover_In_Basket_Page
     Then Choose <consumer> <status> Business preferences <B1> <B2> <B3> <B4> And Channel Preferences <Text> <Email> <Phone> <Post> <MBBStatus> <DeviceType>
 
     Examples:
-      | handset       | Firstname | Surname | Username     | Tariff_Value | Data | consumer | B1     | B2     | B3     | B4     |  Text  | Email  | Phone  | Post  | status  | MBBStatus | DeviceType |
-      | Random Device | TEST      | ACCEPTA | TEST ACCEPTA |      £15     |  5GB |    Me    | Select | Not    | Select | Select | Select | Select |   Not  |  Not  | Enabled |     No    |  Connected |
-      | Random Device | TEST      | ACCEPTA | TEST ACCEPTA |      £20     |  6GB |    Me    | Not    | Select | Not    | Select | Select | Select |   Not  |  Not  | Enabled |     No    |  Connected |
-      | Random Device | TEST      | ACCEPTA | TEST ACCEPTA |      £25     |  8GB |    Me    | Select | Not    | Select | Not    | Select | Select |   Not  |  Not  | Enabled |     No    |  Connected |
+      | handset       | Firstname | Surname | Username     | Tariff_Value | Data | consumer | B1     | B2     | B3     | B4  | Text   | Email  | Phone | Post | status  | MBBStatus | DeviceType |
+      | Random Device | TEST      | ACCEPTA | TEST ACCEPTA | £15          | 5GB  | Me       | Select | Not    | Select | Not | Select | Select | Not   | Not  | Enabled | No        | Connected  |
+      | Random Device | TEST      | ACCEPTA | TEST ACCEPTA | £20          | 6GB  | Me       | Not    | Select | Not    | Not | Select | Select | Not   | Not  | Enabled | No        | Connected  |
+      | Random Device | TEST      | ACCEPTA | TEST ACCEPTA | £25          | 8GB  | Me       | Select | Not    | Select | Not | Select | Select | Not   | Not  | Enabled | No        | Connected  |

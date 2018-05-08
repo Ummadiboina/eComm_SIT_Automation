@@ -14,4 +14,4 @@ Feature: CFA_PayG_Simo_To_Show_International_PAYG_DataRollOver_In_Delivery_Page
 
     Examples:
       | Firstname | Surname | FreeSim_Type | Tariff_Value  | Data | CheckBox  |
-      | TEST      | ACCEPTA | International|     £15+      | 200MB|   No      |
+      | TEST      | ACCEPTA | International|     £15+      | 200MB|   Yes      |
