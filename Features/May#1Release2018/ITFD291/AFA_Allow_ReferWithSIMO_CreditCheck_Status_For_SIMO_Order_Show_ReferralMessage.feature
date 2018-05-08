@@ -17,5 +17,5 @@ Feature: AFA_Allow_ReferWithSIMO_Credit_Check_Status_For_SIMO_Order_And_Show_Ref
     Then agent should be displayed with updated copy of 'Refer with Simo' response
 
     Examples:
-      | Tariff | DeliveryType | Firstname | Surname | Username     | HouseNumber | PostCode | B1     | B2  | B3     | B4     | Text   | Email  | Phone | Post | Consumer | status  | MBBStatus | DeviceType |
+      | Tariff | DeliveryType | Firstname | Surname | Username    | HouseNumber | PostCode | B1     | B2  | B3     | B4  | Text   | Email  | Phone | Post | Consumer | status  | MBBStatus | DeviceType |
       | SimO   | HomeDelivery | TEST      | Referc  | Test Referc | 6           | SL11ER   | Select | Not | Select | Not | Select | Select | Not   | Not  | Me       | Enabled | No        | Connected  |
