@@ -1150,11 +1150,12 @@ public class MouseHoverAction extends Environment {
     }
     // Below will navigate to PAYG SIMO Page
     public static void PayGSimoNavigation() throws Exception {
-        driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 
         try {
             /*********************************************************************
              normal execution flow in ref Env....        ************************************************/
+            Thread.sleep(3000);
             if (driver.findElements(By.xpath("//div[@class='nav-consumer']/ul/li/a[contains(@href, '/shop')]")).size() >= 1) {
                 log.debug("Performing Pay As You go Sim landing page navigations");
                 Thread.sleep(3000);
@@ -1215,11 +1216,11 @@ public class MouseHoverAction extends Environment {
                 Screenshots.captureScreenshot();
 
                 log.debug("Clicking on Pay G Sims");
-                // Move mouse pointer away from location
+                /*// Move mouse pointer away from location
                 Point coordinates2 = driver.findElement(By.xpath("(//div[@class='navContainer']/ul)[1]")).getLocation();
                 Robot robot2 = new Robot();
                 robot2.mouseMove(coordinates2.getX(), coordinates.getY() + 300);
-                log.debug("Moved Mouse to somewhere side of page");
+                log.debug("Moved Mouse to somewhere side of page");*/
             } else {
                 System.out.println("Drupal's are Disiabled");
                 log.debug("Drupal's are Disiabled");

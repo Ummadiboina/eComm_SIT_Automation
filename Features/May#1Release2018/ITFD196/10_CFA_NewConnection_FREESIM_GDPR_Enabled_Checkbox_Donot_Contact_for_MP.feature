@@ -9,7 +9,7 @@ Feature: 10_CFA_NewConnection_FREESIM_GDPR_Enabled_Checkbox_Donot_Contact_for_MP
     And navigate to PayG SIMO page
     And Select a pay as you go bundle
     And verify copy text You will need to give details for all fields marked with an asterisk is displayed in PAYG Sim Journey
-    And I enter details in Delivery Page <Firstname> and <Surname>  for GDPR <CheckBox>
+    And Enter details in Delivery Page <Firstname> and <Surname> for GDPR <CheckBox>
     Then Free Sim order confirmation is displayed
     #And verify asterisk is displayed against mandatory fields of "PAYG Free sim"
     #Add url redirection step above
