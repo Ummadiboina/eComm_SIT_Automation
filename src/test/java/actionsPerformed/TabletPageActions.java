@@ -127,11 +127,22 @@ public class TabletPageActions extends Environment {
 			Thread.sleep(10000);
 			log.debug("Apple iPad Pro 9.7 inch is selected");
 		}
-
+		Thread.sleep(5000);
 		if (elementName.contains("Samsung Galaxy Tab A 2016 10.1")) {
-			pageobjects.TabletPage.SamsungGalaxyTabA201610point1.click();
 			Thread.sleep(10000);
-			log.debug("Samsung Galaxy Tab A 2016 10.1 is selected");
+			if(driver.findElements(By.xpath("//a[contains(@href, '/shop/tablets/apple/ipad-pro-12.9-inch/#contractType=paymonthly')]")).size() > 0) {
+
+				JavascriptExecutor executor = (JavascriptExecutor)driver;
+				executor.executeScript("arguments[0].click();", pageobjects.TabletPage.SamsungGalaxyTabA201610point1);
+				log.debug("Samsung Galaxy Tab A 2016 10.1 is selected");
+				//pageobjects.TabletPage.SamsungGalaxyTabA201610point1.click();
+			}else{
+				pageobjects.TabletPage.RandomTablet.click();
+				Thread.sleep(7000);
+			}
+
+
+			Thread.sleep(10000);
 		}
 		Screenshots.captureScreenshot();
 	}

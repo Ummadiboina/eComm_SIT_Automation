@@ -21,7 +21,7 @@ Feature: 39_Agent_Existing_CCA_Tablets_Refresh_HomeDelivery_GDPR_Enabled_EndUser
     And Accept O2 Refresh Deal Summary
     And Click on 'Generate CCA' button
     And click on the 'CCA' link
-    And Signin using valid <username> and <password> credentials
+    And Signin using valid <username> and <password> credentials for New User
     And Click on 'Continue' button on upgrade page
     And Is this order for You or Someone else <consumer> when GDPR is <status2>
     And land on the payment page and input <Username> and other details and click 'Continue on next step' in upgrade journey

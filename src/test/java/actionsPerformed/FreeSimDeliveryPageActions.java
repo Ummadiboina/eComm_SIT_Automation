@@ -35,7 +35,7 @@ public class FreeSimDeliveryPageActions extends Environment {
 		DeliveryPage.Email_Address.sendKeys(RandomEmailAddressCreation.RandomEmail());
 		log.debug("Setting the About you options");
 		log.debug("Setting the About you options");
-		Select dropdown = new Select(pageobjects.DeliveryPage.Title);
+		Select dropdown = new Select(DeliveryPage.Title);
 		dropdown.selectByIndex(2);
 		log.debug("Selected the dropdown Mrs");
 		Reporter.log("Selected the dropdown Mrs");
@@ -53,7 +53,7 @@ public class FreeSimDeliveryPageActions extends Environment {
 		log.debug("Clicking on I agree check box");
 		Thread.sleep(3000);
 
-		String NoMarkettingMessage = pageobjects.DeliveryPage.NoMarkettingMessage.getText();
+		String NoMarkettingMessage = DeliveryPage.NoMarkettingMessage.getText();
 		log.debug("No Marketting Message :: "+ NoMarkettingMessage);
 
 		if(NoMarkettingMessage.contains("If you check this box, we’ll send you information about your order, but no marketing")){
@@ -100,7 +100,7 @@ public class FreeSimDeliveryPageActions extends Environment {
 		Thread.sleep(10000);
 		if(CheckBox.equalsIgnoreCase("Yes")){
 			log.debug("Clicking on Marketing check box because customer should not be contacted for Marketing Preferences");
-			pageobjects.DeliveryPage.marketCheckBox.click();
+			DeliveryPage.marketCheckBox.click();
 			log.debug("Clicked on Marketing check box because customer should not be contacted for Marketing Preferences");
 		}else{
 			log.debug("Not Clicked on Marketing check box because customer should be contacted for Marketing Preferences");
@@ -115,9 +115,9 @@ public class FreeSimDeliveryPageActions extends Environment {
 
 		log.debug("Clicking on Send me  my Free Sim page");
 		Thread.sleep(3000);
-		pageobjects.DeliveryPage.FreeSimTC.click();
+		DeliveryPage.FreeSimTC.click();
 		Thread.sleep(3000);
-		pageobjects.DeliveryPage.SendMeMySim.click();
+		DeliveryPage.SendMeMySim.click();
 		log.debug("Clicking on the Send me my Sim Button");
 		Screenshots.captureScreenshot();
 
