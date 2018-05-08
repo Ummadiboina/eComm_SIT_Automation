@@ -5,6 +5,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
+import GlobalActions.CommonActions;
 import GlobalActions.CommonUtilities;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.WebDriver;
@@ -15,6 +16,8 @@ import GlobalActions.RandomEmailAddressCreation;
 import GlobalActions.Screenshots;
 import helpers.Environment;
 import pageobjects.DeliveryPage;
+import java.util.Iterator;
+import java.util.Set;
 
 public class FreeSimDeliveryPageActions extends Environment {
 
@@ -55,15 +58,31 @@ public class FreeSimDeliveryPageActions extends Environment {
 
 		log.debug("Clicking on Privacy Policy");
 		pageobjects.DeliveryPage.PrivacyPolicy.click();
-		CommonUtilities.switchToWindow(driver);
 
-		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		Thread.sleep(5000);
+		String Mainwindow = driver.getWindowHandle();
 
-		String PrivacyPolicyMessage = pageobjects.DeliveryPage.PrivacyPolicyMessage.getText();
-		log.debug("Privacy Policy Message :: "+PrivacyPolicyMessage);
+		Set<String> s1 = driver.getWindowHandles();
+		Iterator<String> i1 = s1.iterator();
+		while (i1.hasNext()) {
+			String ChildWindow = i1.next();
+			if (!Mainwindow.equalsIgnoreCase(ChildWindow)) {
+				// Switching to Child window
+				driver.switchTo().window(ChildWindow);
+				System.out.println("Switched to child window");
 
-		CommonUtilities.switchToWindow(driver);
-		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+				driver.manage().timeouts().implicitlyWait(30,TimeUnit.SECONDS);
+				//Thread.sleep(10000);
+
+				String PrivacyPolicyMessage = pageobjects.DeliveryPage.PrivacyPolicyMessage.getText();
+				log.debug("Privacy Policy Message :: "+PrivacyPolicyMessage);
+			}
+		}
+
+		// Switching to Parent window i.e Main Window.
+		driver.switchTo().window(Mainwindow);
+		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+
 		log.debug("Clicking on Marketing check box");
 		pageobjects.DeliveryPage.marketCheckBox.click();
 
@@ -76,6 +95,7 @@ public class FreeSimDeliveryPageActions extends Environment {
 		log.debug("Clicking on Send me  my Free Sim page");
 		Thread.sleep(3000);
 		pageobjects.DeliveryPage.FreeSimTC.click();
+		Thread.sleep(3000);
 		pageobjects.DeliveryPage.SendMeMySim.click();
 		log.debug("Clicking on the Send me my Sim Button");
 		Screenshots.captureScreenshot();

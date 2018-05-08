@@ -6048,6 +6048,7 @@ public class E2EOrderPlaced_Steps {
         // try {
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         PageFactory.initElements(driver, MouseHoverPage.class);
+        Thread.sleep(10000);
         MouseHoverAction.PayGSimoNavigation();
         Autoredirection.redirect();
         Thread.sleep(10000);
@@ -6086,7 +6087,9 @@ public class E2EOrderPlaced_Steps {
             PageFactory.initElements(driver, DeliveryPage.class);
             DeliveryPageActions.SetDelivery();
             FreeSimDeliveryPageActions.FreeSimAboutYou(Firstname, Surname);
+            Thread.sleep(3000);
             FreeSimDeliveryPageActions.marketingMessageCheckBox(CheckBox);
+            Thread.sleep(3000);
             FreeSimDeliveryPageActions.ClickSendMeMySim();
 
         } catch (Exception e) {
