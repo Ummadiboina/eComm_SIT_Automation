@@ -24,4 +24,4 @@ Feature: 32_AFA_NewConnection_PAYM_Phones_Standard_GDPR_Enabled_EndUser_MP_Optin
 
     Examples:
       | Device              | Tariffs  | Extras | DeliveryType | Firstname | Surname | Username     | HouseNumber | PostCode | Password | confirmPassword | SecurityAnswer | B1     | B2     | B3     | B4  | Text | Email | Phone | Post | Consumer | status  | MBBStatus | DeviceType |
-      | Galaxy S8 Plus 64GB | Standard | Base   | HomeDelivery | TEST      | ACCEPTA | TEST ACCEPTA | 14          | SL11UP   | test1234 | test1234        | vinudeep       | Select | Select | Select | Not | Not  | Not   | Not   | Not  | Me       | Enabled | No        | Connected  |
+      | Galaxy S8 Plus 64GB | Standard | Base   | HomeDelivery | TEST      | ACCEPTA | TEST ACCEPTA | 14          | SL11UP   | test1234 | test1234        | vinudeep1      | Select | Select | Select | Not | Not  | Not   | Not   | Not  | Me       | Enabled | No        | Connected  |

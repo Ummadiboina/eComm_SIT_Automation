@@ -26,5 +26,5 @@ Feature: 05_Existing_customer_PAYM_Phone_GDPR_Enabled_Refresh_Homedelivery_EndUs
 
 
     Examples:
-      | username             | password | handset       | user         | consumer | status  | B1     | B2     | B3     | B4  | Text | Email | Phone | Post | MBBStatus | DeviceType |
-      | 07770001111@o2.co.uk | test123  | iPhone 7 Plus | TEST ACCEPTA | Me       | Enabled | Select | Select | Select | Not | Not  | Not   | Not   | Not  | No        | Connected  |
+      | username                     | password | handset       | user         | consumer | status  | B1     | B2     | B3     | B4  | Text | Email | Phone | Post | MBBStatus | DeviceType |
+      | identityref01@mailinator.com | test123  | iPhone 7 Plus | TEST ACCEPTA | Me       | Enabled | Select | Select | Select | Not | Not  | Not   | Not   | Not  | No        | Connected  |

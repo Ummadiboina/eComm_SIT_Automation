@@ -115,12 +115,12 @@ public class E2EOrderPlaced_Steps {
     @And("^navigate to PAYM Phones page$")
     public void navigate_to_PAYM_Phones_page() {
         try {
-            driver.manage().timeouts().implicitlyWait(120, TimeUnit.SECONDS);
+            driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
             PageFactory.initElements(driver, MouseHoverPage.class);
 
             MouseHoverAction.PayMPhonesLandingPage();
             Autoredirection.redirect();
-            Thread.sleep(10000);
+            Thread.sleep(6000);
             //GlobalActions.//CommonFunctionscheckTitle("PayM Phones Page");
 
         } catch (Exception e) {
@@ -417,7 +417,7 @@ public class E2EOrderPlaced_Steps {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, ConnectedDeviceDetailsPage.class);
             ConnectedDeviceDetailsPageAction.GetTitle();
-            Thread.sleep(2000);
+            Thread.sleep(5000);
             ConnectedDeviceDetailsPageAction.ViewAllTariffs();
         } catch (Exception e) {
             // TODO Auto-generated catch block
@@ -623,6 +623,22 @@ public class E2EOrderPlaced_Steps {
 
     @Given("^Signin using valid ([^\"]*) and ([^\"]*) credentials$")
     public void signin_using_valid_ink_jun_and_test_credentials(String username, String password) {
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, UpgradeCustomerPage.class);
+
+            UpgradeCustomerPageActions.Login(username, password);
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+            log.debug("Unable to signin using credentials");
+            Assert.fail("Unable to signin using credentials");
+
+        }
+    }
+
+    @Given("^Signin using valid ([^\"]*) and ([^\"]*) credentials for New User$")
+    public void signin_using_valid_ink_jun_and_test_credentials_New(String username, String password) {
         try {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, UpgradeCustomerPage.class);
@@ -1382,7 +1398,7 @@ public class E2EOrderPlaced_Steps {
             PaymentPageActions.Time_At_Address();
             Thread.sleep(10000);
             PaymentPageActions.Card_Details(Username);
-            Thread.sleep(75000);
+            Thread.sleep(10000);
             PaymentPageActions.Card_Details_CCV();
 
 
@@ -3351,6 +3367,7 @@ public class E2EOrderPlaced_Steps {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, TabletPage.class);
             TabletPageActions.DeviceSelect(arg1);
+
         } catch (Exception e) {
             e.printStackTrace();
             log.debug("Unable to select tablet");
