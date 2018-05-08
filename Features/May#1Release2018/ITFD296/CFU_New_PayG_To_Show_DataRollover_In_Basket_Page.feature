@@ -21,6 +21,6 @@ Feature: CFU_New_PayG_To_Show_DataRollover_In_Basket_Page
     Then Choose <consumer> <status> Business preferences <B1> <B2> <B3> <B4> And Channel Preferences <Text> <Email> <Phone> <Post> <MBBStatus> <DeviceType>
 
     Examples:
-      | handset       | Username     |  Tariff_Value  | Data | consumer | B1     | B2     | B3     | B4     |  Text  | Email | Phone  | Post  | status  | MBBStatus | DeviceType |
-      | Random Device | TEST ACCEPTA |      £15       | 5GB  |    Me    | Select | Not    | Select | Select | Select |Select |  Not   | Not   | Enabled |     No    |  Connected |
-      | Random Device | TEST ACCEPTA |      £20       | 6GB  |    Me    | Select | Not    | Select | Select | Select |  Not  | Select | Not   | Enabled |     No    |  Connected |
+      | handset       | Username     | Tariff_Value | Data | consumer | B1     | B2  | B3     | B4  | Text   | Email  | Phone  | Post | status  | MBBStatus | DeviceType |
+      | Random Device | TEST ACCEPTA | £15          | 5GB  | Me       | Select | Not | Select | Not | Select | Select | Not    | Not  | Enabled | No        | Connected  |
+      | Random Device | TEST ACCEPTA | £20          | 6GB  | Me       | Select | Not | Select | Not | Select | Not    | Select | Not  | Enabled | No        | Connected  |

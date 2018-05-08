@@ -56,6 +56,10 @@ public class FreeSimDeliveryPageActions extends Environment {
 		String NoMarkettingMessage = pageobjects.DeliveryPage.NoMarkettingMessage.getText();
 		log.debug("No Marketting Message :: "+ NoMarkettingMessage);
 
+		if(NoMarkettingMessage.contains("If you check this box, we’ll send you information about your order, but no marketing")){
+			log.debug("Marketting Message Successfully validated:: ");
+		}
+
 		/*log.debug("Clicking on Privacy Policy");
 		pageobjects.DeliveryPage.PrivacyPolicy.click();
 		log.debug("Clicked the Privacy Policy link");*/
@@ -94,8 +98,14 @@ public class FreeSimDeliveryPageActions extends Environment {
 
 		*/
 		Thread.sleep(10000);
-		log.debug("Clicking on Marketing check box");
-		pageobjects.DeliveryPage.marketCheckBox.click();
+		if(CheckBox.equalsIgnoreCase("Yes")){
+			log.debug("Clicking on Marketing check box because customer should not be contacted for Marketing Preferences");
+			pageobjects.DeliveryPage.marketCheckBox.click();
+			log.debug("Clicked on Marketing check box because customer should not be contacted for Marketing Preferences");
+		}else{
+			log.debug("Not Clicked on Marketing check box because customer should be contacted for Marketing Preferences");
+		}
+
 
 		Screenshots.captureScreenshot();
 	}

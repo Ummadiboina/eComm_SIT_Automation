@@ -13,4 +13,4 @@ Feature: CFA_PayG_Simo_To_Show_Classic_PAYG_DataRollOver_In_Delivery_Page
 
     Examples:
       | Firstname | Surname | FreeSim_Type | Tariff_Value  | Data | CheckBox  |
-      | TEST      | ACCEPTA |   Classic    |     £10       | 1GB  |   No      |
+      | TEST      | ACCEPTA |   Classic    |     £10       | 1GB  |   Yes      |
