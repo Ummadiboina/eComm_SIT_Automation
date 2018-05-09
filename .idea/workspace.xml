@@ -7,27 +7,9 @@
   <component name="ChangeListManager">
     <list id="9d0aef85-48ac-4e71-b67a-fff455014d99" name="New changelist" comment="New changelist" />
     <list default="true" id="b3431a87-97b1-4ffe-b872-0e6a8e54231a" name="Default" comment="Merge branch 'master' of https://bitbucket.org/ecommautomationteam/regression into Sharmi_19-02-2018&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;Features/FebruaryRelease2018/Regression/Reg_Jan_ConsumerToAcceptTenDigitsPhoneNumber.feature&#10;#&#9;src/test/java/actionsPerformed/Agent_DealBuilderPageActions.java&#10;#&#9;src/test/java/actionsPerformed/DeliveryPageActions.java&#10;#&#9;src/test/java/actionsPerformed/PAYMandPAYGTariffAndExtrasPageActions.java&#10;#&#9;src/test/java/actionsPerformed/UpgradeCustomerPageActions.java&#10;#&#9;src/test/java/steps/E2EOrderPlaced_Steps.java">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/Features/MayRelease2018/ITFD196/GDPR_12_CFA_PayM_Tablet_Data_filters_options_tariff_and_extras_page_Order_placement.feature" afterPath="$PROJECT_DIR$/Features/May#1Release2018/ITFD196/GDPR_12_CFA_PayM_Tablet_Data_filters_options_tariff_and_extras_page_Order_placement.feature" />
-      <change beforePath="$PROJECT_DIR$/Features/MayRelease2018/ITFD196/GDPR_26_CFA_PayM_Phone_Data_filters_options_tariff_and_extras_page_Order_placement.feature" afterPath="$PROJECT_DIR$/Features/May#1Release2018/ITFD196/GDPR_26_CFA_PayM_Phone_Data_filters_options_tariff_and_extras_page_Order_placement.feature" />
-      <change beforePath="$PROJECT_DIR$/Features/MayRelease2018/ITFD196/GDPR_43_AFU_PAYM_Dongle_submitOrder.feature" afterPath="$PROJECT_DIR$/Features/May#1Release2018/ITFD196/GDPR_43_AFU_PAYM_Dongle_submitOrder.feature" />
-      <change beforePath="$PROJECT_DIR$/Features/MayRelease2018/ITFD196/GDPR_45_AFU_SIMO_Promotions_section_in_deal_builder_MULIPLE_promotions_Order_Placement.feature" afterPath="$PROJECT_DIR$/Features/May#1Release2018/ITFD196/GDPR_45_AFU_SIMO_Promotions_section_in_deal_builder_MULIPLE_promotions_Order_Placement.feature" />
-      <change beforePath="$PROJECT_DIR$/Features/MayRelease2018/ITFD196/GDPR_47_AFU_PAYM_Dongle_submitOrder.feature" afterPath="$PROJECT_DIR$/Features/May#1Release2018/ITFD196/GDPR_47_AFU_PAYM_Dongle_submitOrder.feature" />
-      <change beforePath="$PROJECT_DIR$/Features/MayRelease2018/ITFD196/GDPR_48_AFU_PAYM_Dongle_submitOrder.feature" afterPath="$PROJECT_DIR$/Features/May#1Release2018/ITFD196/GDPR_48_AFU_PAYM_Dongle_submitOrder.feature" />
-      <change beforePath="$PROJECT_DIR$/Features/MayRelease2018/ITFD196/GDPR_49_AFU_PAYM_Dongle_submitOrder.feature" afterPath="$PROJECT_DIR$/Features/May#1Release2018/ITFD196/GDPR_49_AFU_PAYM_Dongle_submitOrder.feature" />
-      <change beforePath="$PROJECT_DIR$/Features/MayRelease2018/ITFD196/GDPR_6_CFA_PayM_Tablet_Data_filters_options_tariff_and_extras_page_Order_placement.feature" afterPath="$PROJECT_DIR$/Features/May#1Release2018/ITFD196/GDPR_6_CFA_PayM_Tablet_Data_filters_options_tariff_and_extras_page_Order_placement.feature" />
-      <change beforePath="$PROJECT_DIR$/Features/MayRelease2018/ITFD196/GDPR_AFU_PAYM_Dongle_payByCard.feature" afterPath="$PROJECT_DIR$/Features/May#1Release2018/ITFD196/GDPR_AFU_PAYM_Dongle_payByCard.feature" />
-      <change beforePath="$PROJECT_DIR$/Features/MayRelease2018/ITFD196/GDPR_AFU_PAYM_Dongle_submitOrder.feature" afterPath="$PROJECT_DIR$/Features/May#1Release2018/ITFD196/GDPR_AFU_PAYM_Dongle_submitOrder.feature" />
-      <change beforePath="$PROJECT_DIR$/Features/MayRelease2018/ITFD196/GDPR_AFU_SIMO_Promotions_section_in_deal_builder_MULIPLE_promotions_Order_Placement.feature" afterPath="$PROJECT_DIR$/Features/May#1Release2018/ITFD196/GDPR_AFU_SIMO_Promotions_section_in_deal_builder_MULIPLE_promotions_Order_Placement.feature" />
-      <change beforePath="$PROJECT_DIR$/Features/MayRelease2018/ITFD196/GDPR_CFA_MBB_Data filters.feature" afterPath="$PROJECT_DIR$/Features/May#1Release2018/ITFD196/GDPR_CFA_MBB_Data filters.feature" />
-      <change beforePath="$PROJECT_DIR$/Features/MayRelease2018/ITFD196/GDPR_CFA_PayG_Freesim_Phones_DeliveryPageMarkMandatoryFieldsWithAsterisk.feature" afterPath="$PROJECT_DIR$/Features/May#1Release2018/ITFD196/GDPR_CFA_PayG_Freesim_Phones_DeliveryPageMarkMandatoryFieldsWithAsterisk.feature" />
-      <change beforePath="$PROJECT_DIR$/Features/MayRelease2018/ITFD196/GDPR_CFA_PayM_Phone_Data_filters_options_tariff_and_extras_page_Order_placement.feature" afterPath="$PROJECT_DIR$/Features/May#1Release2018/ITFD196/GDPR_CFA_PayM_Phone_Data_filters_options_tariff_and_extras_page_Order_placement.feature" />
-      <change beforePath="$PROJECT_DIR$/Features/MayRelease2018/ITFD196/GDPR_CFA_PayM_Tablet_Data_filters_options_tariff_and_extras_page_Order_placement.feature" afterPath="$PROJECT_DIR$/Features/May#1Release2018/ITFD196/GDPR_CFA_PayM_Tablet_Data_filters_options_tariff_and_extras_page_Order_placement.feature" />
-      <change beforePath="$PROJECT_DIR$/Features/MayRelease2018/ITFD196/GDPR_CFA_Phones_CnC_Delivery_page_Payment_page_more_than_one_address_select_one_compress_others.feature" afterPath="$PROJECT_DIR$/Features/May#1Release2018/ITFD196/GDPR_CFA_Phones_CnC_Delivery_page_Payment_page_more_than_one_address_select_one_compress_others.feature" />
-      <change beforePath="$PROJECT_DIR$/Features/MayRelease2018/ITFD196/GDPR_CS_CFA_MBBPayG.feature" afterPath="$PROJECT_DIR$/Features/May#1Release2018/ITFD196/GDPR_CS_CFA_MBBPayG.feature" />
-      <change beforePath="$PROJECT_DIR$/Features/MayRelease2018/ITFD196/GDPR_CS_PayGPhonesHomeDeliveryWithoutAccessory.feature" afterPath="$PROJECT_DIR$/Features/May#1Release2018/ITFD196/GDPR_CS_PayGPhonesHomeDeliveryWithoutAccessory.feature" />
-      <change beforePath="$PROJECT_DIR$/Features/MayRelease2018/ITFD196/GDPR_CS_PayMSimOnly.feature" afterPath="$PROJECT_DIR$/Features/May#1Release2018/ITFD196/GDPR_CS_PayMSimOnly.feature" />
-      <change beforePath="$PROJECT_DIR$/Features/MayRelease2018/ITFD196/GFPR_CS_FitnessTrackers.feature" afterPath="$PROJECT_DIR$/Features/May#1Release2018/ITFD196/GFPR_CS_FitnessTrackers.feature" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Features/May#1Release2018/ITFD291/AFA_Not_Allow_ReferWithSIMO_CreditCheck_Status_For_SIMO_Order_Show_ReferralMessage.feature" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Browsers/ChromeDriver/chromedriver.exe" afterPath="$PROJECT_DIR$/Browsers/ChromeDriver/chromedriver.exe" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -40,11 +22,103 @@
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
   </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FavoritesManager">
     <favorites_list name="regression" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="08_Existing_customer_PAYG_Tablets_Home_Delivery_GDPR_Enabled_Refresh_EndUser_MP_OptOut.feature" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Features/May#1Release2018/ITFD196/08_Existing_customer_PAYG_Tablets_Home_Delivery_GDPR_Enabled_Refresh_EndUser_MP_OptOut.feature">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="272">
+              <caret line="16" column="40" lean-forward="true" selection-start-line="16" selection-start-column="40" selection-end-line="16" selection-end-column="40" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="11_Existing_Create_Account_PAYM_Phones_GDPR_Enabled_Refresh_CC_EndUser_MP_OptIn_B1B2B4_CP_Text_Post_Phone.feature" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Features/May#1Release2018/ITFD196/11_Existing_Create_Account_PAYM_Phones_GDPR_Enabled_Refresh_CC_EndUser_MP_OptIn_B1B2B4_CP_Text_Post_Phone.feature">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="13_CFU_SIMO_Phones_Retained_Review_Page_Home_Delivery_GDPR_Enabled_EndUser_MP_OptIn_ALL_CP_ALL.feature" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Features/May#1Release2018/ITFD196/13_CFU_SIMO_Phones_Retained_Review_Page_Home_Delivery_GDPR_Enabled_EndUser_MP_OptIn_ALL_CP_ALL.feature">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="408">
+              <caret line="24" column="28" lean-forward="false" selection-start-line="24" selection-start-column="28" selection-end-line="24" selection-end-column="28" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="14_CFU_SIMO_MBB_Reaffirmed_Review_Page_Home_Delivery_GDPR_Enabled_Not_EndUser_MP_Suppressed.feature" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Features/May#1Release2018/ITFD196/14_CFU_SIMO_MBB_Reaffirmed_Review_Page_Home_Delivery_GDPR_Enabled_Not_EndUser_MP_Suppressed.feature">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="15_CFU_Tablets_GDPR_Enabled_CC_EndUser_Complaint_MP_OptOut.feature" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Features/May#1Release2018/ITFD196/15_CFU_Tablets_GDPR_Enabled_CC_EndUser_Complaint_MP_OptOut.feature">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="170">
+              <caret line="10" column="23" lean-forward="true" selection-start-line="10" selection-start-column="23" selection-end-line="10" selection-end-column="23" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="16_CFU_Phones_GDPR_Enabled_Home_Delivery_EndUser_Complaint_MP_OptIn_B2_CP_ALL.feature" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Features/May#1Release2018/ITFD196/16_CFU_Phones_GDPR_Enabled_Home_Delivery_EndUser_Complaint_MP_OptIn_B2_CP_ALL.feature">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-29">
+              <caret line="13" column="44" lean-forward="true" selection-start-line="13" selection-start-column="44" selection-end-line="13" selection-end-column="44" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="34_AFA_NewConnection_PAYG_Tablets_HomeDelivery_GDPR_Enabled_EndUser_MP_OptIn_B2_CP_ALL.feature" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Features/May#1Release2018/ITFD196/34_AFA_NewConnection_PAYG_Tablets_HomeDelivery_GDPR_Enabled_EndUser_MP_OptIn_B2_CP_ALL.feature">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="33_AFA_NewConnection_PAYG_Phones_CC_GDPR_Enabled_EndUser_MP_OptIn_B3B4_CP_Email_Phone.feature" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Features/May#1Release2018/ITFD196/33_AFA_NewConnection_PAYG_Phones_CC_GDPR_Enabled_EndUser_MP_OptIn_B3B4_CP_Email_Phone.feature">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="32_AFA_NewConnection_PAYM_Phones_Standard_GDPR_Enabled_EndUser_MP_Optin_ALL_CP_No.feature" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Features/May#1Release2018/ITFD196/32_AFA_NewConnection_PAYM_Phones_Standard_GDPR_Enabled_EndUser_MP_Optin_ALL_CP_No.feature">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="204">
+              <caret line="12" column="53" lean-forward="true" selection-start-line="12" selection-start-column="4" selection-end-line="12" selection-end-column="53" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -56,39 +130,38 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>�</find>
-      <find>Reg_CFA_Basket_page_cross_sell_insurance_no_free_insurance</find>
-      <find>free</find>
-      <find>freesim</find>
-      <find>Reg_FNT_AFA_PayG_Phones_less_than_50_GBP_ClickAndCollect</find>
-      <find>50</find>
-      <find>50 GBP</find>
-      <find>GBP</find>
-      <find>Reg_CS_CFU_SavedBasket</find>
-      <find>Reg_Agent_DelayedDelivery</find>
-      <find>CCA</find>
-      <find>HandsetTariffCombination_new()</find>
-      <find>Is this order for You or Someone else &lt;consumer&gt;</find>
-      <find>Reg_CFA_MBB_Data filters</find>
-      <find>Reg_CS_PayMSimOnly</find>
-      <find>Reg_CS_PayGPhonesHomeDeliveryWithoutAccessory</find>
-      <find>Reg_CS_CFA_MBBPayG</find>
-      <find>Reg_October2Release_ECOM-12004_CFA_PayG_Freesim_Phones_DeliveryPageMarkMandatoryFieldsWithAsterisk.feature</find>
-      <find>GDPR_CFA_PayM_Phone_Data_filters_options_tariff_and_extras_page_Order_placement</find>
-      <find>CFA_PayM_Phone_Data_filters_options_tariff_and_extras_page_Order_placement</find>
-      <find>PayM_Phone_Data_filters_options_tariff_and_extras_page_Order_placement</find>
-      <find>CFA_PayM_Tablet_Data_filters_options_tariff_and_extras_page_Order_placement</find>
-      <find>CFA_PayG_Freesim_Phones_DeliveryPageMarkMandatoryFieldsWithAsterisk.feature</find>
-      <find>Reg_CFA_PayM_Phone_Data_filters_options_tariff_and_extras_page_Order_placement</find>
-      <find>Reg_CFA_PayM_Tablet_Data_filters_options_tariff_and_extras_page_Order_placement</find>
-      <find>Reg_CS_FitnessTrackers</find>
-      <find>Reg_AFU_PAYM_Dongle_SubmitOrder</find>
-      <find>Promotions_section_in_deal_builder_MULIPLE_promotions_Order_Placement</find>
-      <find>AFU_SIMO_Promotions_section_in_deal_builder_MULIPLE_promotions_Order_Placement</find>
-      <find>Reg_AFU_PAYM_Dongle_PayByCard</find>
+      <find>bitbucket@bitbucket.org/sharmi-o2-bitbucket/regression.git</find>
+      <find>bitbucket@bitbucket.org</find>
+      <find>https://subhas5a6@bitbucket.org/ecommautomationteam/regression.git</find>
+      <find>validate all</find>
+      <find>Validate Your order section in Delivery page</find>
+      <find>password</find>
+      <find>retention7</find>
+      <find>market</find>
+      <find>And Enter details in Delivery Page &lt;Firstname&gt; and &lt;Surname&gt; for GDPR &lt;CheckBox&gt;</find>
+      <find>I Enter details in Delivery Page &lt;Firstname&gt; and &lt;Surname&gt; for GDPR &lt;CheckBox&gt;</find>
+      <find>IEnter details in Delivery Page &lt;Firstname&gt; and &lt;Surname&gt; for GDPR &lt;CheckBox&gt;</find>
+      <find>Enter details in Delivery Page &lt;Firstname&gt; and &lt;Surname&gt; for GDPR &lt;CheckBox&gt;</find>
+      <find>Enter details in Delivery Page</find>
+      <find>email</find>
+      <find>PAYGSimoPage</find>
+      <find>bANK</find>
+      <find>Bank</find>
+      <find>BANK</find>
+      <find>child</find>
+      <find>bank</find>
+      <find>windo</find>
+      <find>ifra</find>
+      <find>ifr</find>
+      <find>agent</find>
+      <find>i</find>
+      <find>if</find>
+      <find>ifram</find>
+      <find>iframe</find>
+      <find>01_CFA_NewConnection_PAYM_Phone</find>
+      <find>I enter details in Delivery Page</find>
     </findStrings>
     <dirStrings>
-      <dir>C:\Users\subbaiv1\regression2\Features\JanuaryRelease2018\CFD2235</dir>
       <dir>C:\Users\subbaiv1\regression2\Features\JanuaryRelease2018\CFD2320</dir>
       <dir>C:\Users\subbaiv1\regression2\Features\JanuaryRelease2018\CFD2374</dir>
       <dir>C:\Users\subbaiv1\regression2\Features\JanuaryRelease2018\ITFD10</dir>
@@ -115,6 +188,10 @@
       <dir>C:\Users\subbaiv1\IdeaProjects\regression_V3\Features\AprilRelease2018\ITFD233</dir>
       <dir>C:\Users\subbaiv1\IdeaProjects\regression_V3\Features</dir>
       <dir>C:\Users\subbaiv1\IdeaProjects\regression_V3\Features\AprilRelease2018\Regression</dir>
+      <dir>C:\Users\subbaiv1\regression_JK5</dir>
+      <dir>C:\Users\subbaiv1\regression_JK5\Features\May#1Release2018\ITFD196</dir>
+      <dir>C:\Users\subbaiv1\regression_JK5\src</dir>
+      <dir>C:\Users\subbaiv1\regression_JK5\Features\May#1Release2018\Regression</dir>
     </dirStrings>
   </component>
   <component name="Git.Settings">
@@ -137,7 +214,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="master" />
+        <entry key="$PROJECT_DIR$" value="Jamal_08_May_2018_V3" />
       </map>
     </option>
     <option name="SIGN_OFF_COMMIT" value="true" />
@@ -159,57 +236,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Features/FebruaryRelease2018/Regression/Reg_CFA_PayM_Tablet_Data_filters_options_tariff_and_extras_page_Order_placement.feature" />
-        <option value="$PROJECT_DIR$/Features/FebruaryRelease2018/Regression/Reg_CFA_PayM_Phone_Data_filters_options_tariff_and_extras_page_Order_placement.feature" />
-        <option value="$PROJECT_DIR$/Features/FebruaryRelease2018/Regression/Reg_CFU_Phones_Data_filters_options_tariff_and_extras_page.feature" />
-        <option value="$PROJECT_DIR$/Features/FebruaryRelease2018/Regression/Reg_Consumer_Buyout.feature" />
-        <option value="$PROJECT_DIR$/src/test/java/pageobjects/UpgradeCustomerPage.java" />
-        <option value="$PROJECT_DIR$/src/test/java/pageobjects/BasketPage.java" />
-        <option value="$PROJECT_DIR$/src/test/java/actionsPerformed/BasketPageActions.java" />
-        <option value="$PROJECT_DIR$/Features/FebruaryRelease2018/Regression/Reg_Consumer_TradeIn.feature" />
-        <option value="$PROJECT_DIR$/src/test/java/GlobalActions/MouseHoverAction.java" />
-        <option value="$PROJECT_DIR$/src/test/java/actionsPerformed/FitnessTrackerPageActions.java" />
-        <option value="$PROJECT_DIR$/src/test/java/pageobjects/FitnessTrackerPage.java" />
-        <option value="$PROJECT_DIR$/Features/FebruaryRelease2018/Regression/Reg_CS_Free_Sim_Tablet.feature" />
-        <option value="$PROJECT_DIR$/Features/FebruaryRelease2018/Regression/Reg_Current_MBB_URL_no_change_Order_placement.feature" />
-        <option value="$PROJECT_DIR$/Features/FebruaryRelease2018/Regression/Reg_Jan_CFU_MbbSimo30days.feature" />
-        <option value="$PROJECT_DIR$/Features/FebruaryRelease2018/Regression/Reg_Jan_AgentShopToAcceptApostrophe.feature" />
+        <option value="$PROJECT_DIR$/Features/May#1Release2018/ITFD196/47_AFU_Tablets_Standard_GDPR_Enabled_CC_Not_EndUser_Retained_MP_Suppressed.feature" />
+        <option value="$PROJECT_DIR$/Features/May#1Release2018/ITFD196/48_AFU_Phones_Refresh_GDPR_Enabled_Home_Delivery_EndUser_Migrated_MP_OptIn_AL_CP_ALL.feature" />
+        <option value="$PROJECT_DIR$/Features/May#1Release2018/ITFD196/49_AFU_Tablets_Standard_GDPR_Disabled_HomeDelivery_Donot_show_EndUser_Question.feature" />
+        <option value="$PROJECT_DIR$/Features/May#1Release2018/ITFD196/50_AFA_Phones_Refresh_GDPR_Disabled_HomeDelivery_Donot_show_EndUser_Question.feature" />
+        <option value="$PROJECT_DIR$/Features/May#1Release2018/ITFD196/51_Agent_Existing_MBB_Standard_GDPR_Disabled_HomeDelivery_Donot_show_EndUser_Question.feature" />
+        <option value="$PROJECT_DIR$/Features/May#1Release2018/ITFD196/52_AFA_Accessory_CC_GDPR_Enabled_No_EndUser_Question#.feature" />
+        <option value="$PROJECT_DIR$/Features/May#1Release2018/ITFD196/53_Agent_Existing_Smartwatch_GDPR_Enabled_No_EndUser_Question .feature" />
+        <option value="$PROJECT_DIR$/src/test/java/pageobjects/Agent_RegisterCustomerPage.java" />
+        <option value="$PROJECT_DIR$/src/test/java/actionsPerformed/Agent_RegisterCustomerActions.java" />
+        <option value="$PROJECT_DIR$/src/test/java/pageobjects/Agent_CreditCheckDetailsPage.java" />
+        <option value="$PROJECT_DIR$/Features/May#1Release2018/ITFD196/36_Agent_Existing_PAYM_Phones_Standard_Home_delivery_GDPR_Enabled_Not_EndUser_MP_Suppressed_Advisor_check.feature" />
+        <option value="$PROJECT_DIR$/Configurations/Properties/AppConfig.properties" />
+        <option value="$PROJECT_DIR$/src/test/java/actionsPerformed/Agent_CreditCheckPageActions.java" />
         <option value="$PROJECT_DIR$/src/test/java/actionsPerformed/PAYMandPAYGTariffAndExtrasPageActions.java" />
-        <option value="$PROJECT_DIR$/src/test/java/actionsPerformed/ReviewPageActions.java" />
-        <option value="$PROJECT_DIR$/src/test/java/actionsPerformed/BaseCommPageActions.java" />
+        <option value="$PROJECT_DIR$/src/test/java/actionsPerformed/BasketPageActions.java" />
         <option value="$PROJECT_DIR$/src/test/java/actionsPerformed/DeliveryPageActions.java" />
-        <option value="$PROJECT_DIR$/src/test/java/actionsPerformed/UpgradeCustomerPageActions.java" />
-        <option value="$PROJECT_DIR$/src/test/java/actionsPerformed/PhonesListingPageAction.java" />
-        <option value="$PROJECT_DIR$/src/test/java/pageobjects/SimsPage.java" />
-        <option value="$PROJECT_DIR$/src/test/java/pageobjects/BaseCommPage.java" />
-        <option value="$PROJECT_DIR$/src/test/java/actionsPerformed/Agent_HomePagePageActions.java" />
-        <option value="$PROJECT_DIR$/src/test/java/actionsPerformed/Agent_DealBuilderPageActions.java" />
-        <option value="$PROJECT_DIR$/src/test/java/testRunner/RunnerTest.java" />
-        <option value="$PROJECT_DIR$/src/test/java/pageobjects/PayG_DevicesPage.java" />
-        <option value="$PROJECT_DIR$/src/test/java/pageobjects/Agent_DealBuilderPage.java" />
-        <option value="$PROJECT_DIR$/Features/FebruaryRelease2018/Regression/Reg_FNT_AFA_PayG_Phones_less_than_50_GBP_ClickAndCollect.feature" />
-        <option value="$PROJECT_DIR$/Features/FebruaryRelease2018/Regression/Reg_Agent_DelayedDelivery.feature" />
-        <option value="$PROJECT_DIR$/Features/AprilRelease2018/Regression/Reg_CFA_PayM_Phone_Data_filters_options_tariff_and_extras_page_Order_placement.feature" />
+        <option value="$PROJECT_DIR$/Features/May#1Release2018/ITFD196/01_CFA_NewConnection_PAYM_Phone_GDPR_Enabled_Refresh_EndUser_MP_OptOut.feature" />
+        <option value="$PROJECT_DIR$/Features/May#1Release2018/ITFD296/CFA_PayG_Simo_To_Show_BigBundle_DataRollOver_In_Delivery_Page.feature" />
+        <option value="$PROJECT_DIR$/Features/May#1Release2018/ITFD196/10_CFA_NewConnection_FREESIM_GDPR_Enabled_Checkbox_Donot_Contact_for_MP.feature" />
+        <option value="$PROJECT_DIR$/src/test/java/GlobalActions/MouseHoverAction.java" />
+        <option value="$PROJECT_DIR$/src/test/java/actionsPerformed/PAYGSimOPageActions.java" />
+        <option value="$PROJECT_DIR$/Features/May#1Release2018/ITFD291/AFA_Allow_ReferWithSIMO_CreditCheck_Status_For_SIMO_Order_Show_ReferralMessage.feature" />
+        <option value="$PROJECT_DIR$/Features/May#1Release2018/ITFD296/CFU_New_PayG_FreeSim_To_Show_DataRollOver_In_Delivery_Page.feature" />
+        <option value="$PROJECT_DIR$/Features/May#1Release2018/ITFD296/CFU_New_PayG_To_Show_DataRollover_In_Basket_Page.feature" />
+        <option value="$PROJECT_DIR$/Features/May#1Release2018/ITFD296/CFA_PayG_To_Show_BigBundle_DataRollover_In_Basket_Page.feature" />
+        <option value="$PROJECT_DIR$/src/test/java/actionsPerformed/FreeSimDeliveryPageActions.java" />
+        <option value="$PROJECT_DIR$/Features/May#1Release2018/ITFD296/CFA_PayG_Simo_To_Show_Classic_PAYG_DataRollOver_In_Delivery_Page.feature" />
+        <option value="$PROJECT_DIR$/Features/May#1Release2018/ITFD296/CFA_PayG_Simo_To_Show_International_PAYG_DataRollOver_In_Delivery_Page.feature" />
         <option value="$PROJECT_DIR$/src/test/java/steps/E2EOrderPlaced_Steps.java" />
-        <option value="$PROJECT_DIR$/Features/AprilRelease2018/Regression/Feb_CFA_Phones_CnC_Delivery_page_Payment_page_more_than_one_address_select_one_compress_others.feature" />
-        <option value="$PROJECT_DIR$/Features/MayRelease2018/ITFD196/GDPR_CFA_Phones_CnC_Delivery_page_Payment_page_more_than_one_address_select_one_compress_others.feature" />
-        <option value="$PROJECT_DIR$/Features/MayRelease2018/ITFD196/Reg_CFA_PayM_Tablet_Data_filters_options_tariff_and_extras_page_Order_placement.feature" />
-        <option value="$PROJECT_DIR$/Features/MayRelease2018/ITFD196/GDPR_CFA_MBB_Data filters.feature" />
-        <option value="$PROJECT_DIR$/Features/MayRelease2018/ITFD196/Reg_CS_PayMSimOnly.feature" />
-        <option value="$PROJECT_DIR$/Features/MayRelease2018/ITFD196/GDPR_CS_PayMSimOnly.feature" />
-        <option value="$PROJECT_DIR$/Features/MayRelease2018/ITFD196/GDPR_CS_PayGPhonesHomeDeliveryWithoutAccessory.feature" />
-        <option value="$PROJECT_DIR$/Features/MayRelease2018/ITFD196/GDPR_CS_CFA_MBBPayG.feature" />
-        <option value="$PROJECT_DIR$/Features/MayRelease2018/ITFD196/GDPR_CFA_PayG_Freesim_Phones_DeliveryPageMarkMandatoryFieldsWithAsterisk.feature" />
-        <option value="$PROJECT_DIR$/Features/MayRelease2018/ITFD196/GDPR_CFA_PayM_Tablet_Data_filters_options_tariff_and_extras_page_Order_placement.feature" />
-        <option value="$PROJECT_DIR$/Features/MayRelease2018/ITFD196/GDPR_CFA_PayM_Phone_Data_filters_options_tariff_and_extras_page_Order_placement.feature" />
-        <option value="$PROJECT_DIR$/Features/MayRelease2018/ITFD196/GFPR_CS_FitnessTrackers.feature" />
-        <option value="$PROJECT_DIR$/Features/AprilRelease2018/Regression/Reg_AFU_PAYM_Dongle_submitOrder.feature" />
-        <option value="$PROJECT_DIR$/Features/MayRelease2018/ITFD196/GDPR_43_AFU_PAYM_Dongle_submitOrder.feature" />
-        <option value="$PROJECT_DIR$/Features/MayRelease2018/ITFD196/GDPR_AFU_SIMO_Promotions_section_in_deal_builder_MULIPLE_promotions_Order_Placement.feature" />
-        <option value="$PROJECT_DIR$/Features/MayRelease2018/ITFD196/GDPR_AFU_PAYM_Dongle_payByCard.feature" />
-        <option value="$PROJECT_DIR$/Features/MayRelease2018/ITFD196/GDPR_47_AFU_PAYM_Dongle_submitOrder.feature" />
-        <option value="$PROJECT_DIR$/Features/MayRelease2018/ITFD196/GDPR_48_AFU_PAYM_Dongle_submitOrder.feature" />
-        <option value="$PROJECT_DIR$/Features/MayRelease2018/ITFD196/GDPR_49_AFU_PAYM_Dongle_submitOrder.feature" />
+        <option value="$PROJECT_DIR$/Features/May#1Release2018/Regression/Feb_AFU_eComm_Promotions_and_added_Bolton_Incompatible_error_message_Remove_and_reapply_removed_bolton_Order_Placement.feature" />
+        <option value="$PROJECT_DIR$/Features/May#1Release2018/Regression/Feb_CFA_PayG_FreeSim_Delivery_page_more_than_one_address_select_one_compress_others.feature" />
+        <option value="$PROJECT_DIR$/Features/May#1Release2018/Regression/Feb_CFA_Phones_CnC_Delivery_page_Payment_page_more_than_one_address_select_one_compress_others.feature" />
+        <option value="$PROJECT_DIR$/Features/May#1Release2018/Regression/Feb_CFU_Buyout_with_Recycle_Order_placement.feature" />
+        <option value="$PROJECT_DIR$/Features/May#1Release2018/Regression/Feb_CFU_Tablet_CnC_changes_on_Delivery_page_Order_placement.feature" />
+        <option value="$PROJECT_DIR$/Features/May#1Release2018/Regression/Feb_CFU_Tablet_Delivery_page_more_than_one_address_select_one_compress_others.feature" />
+        <option value="$PROJECT_DIR$/Features/May#1Release2018/Regression/Reg_AFA_PayG_withoutAnyAccessory.feature" />
+        <option value="$PROJECT_DIR$/Features/May#1Release2018/Regression/Reg_AFA_PAYM_Acquistion.feature" />
+        <option value="$PROJECT_DIR$/Features/May#1Release2018/Regression/Reg_AFA_PayMSimO_withoutAnyAccessory.feature" />
+        <option value="$PROJECT_DIR$/Features/May#1Release2018/Regression/Reg_AFA_Tablet.feature" />
+        <option value="$PROJECT_DIR$/Features/May#1Release2018/Regression/Reg_AFA_verify_Base_Comms_tariff_under_offer_column_order_placement_O2_offer.feature" />
+        <option value="$PROJECT_DIR$/Features/May#1Release2018/Regression/Reg_AFU_PAYM_Dongle_payByCard.feature" />
+        <option value="$PROJECT_DIR$/Features/May#1Release2018/Regression/Reg_AFU_PAYM_Dongle_submitOrder.feature" />
+        <option value="$PROJECT_DIR$/Features/May#1Release2018/Regression/Reg_AFU_verify_Base_Comms_tariff_under_offer_column_order_placement_O2_offer.feature" />
+        <option value="$PROJECT_DIR$/Features/May#1Release2018/Regression/Reg_Agent_Buyout.feature" />
+        <option value="$PROJECT_DIR$/Features/May#1Release2018/Regression/Reg_Agent_DelayedDelivery.feature" />
+        <option value="$PROJECT_DIR$/Features/May#1Release2018/Regression/Reg_Agent_GenerateCCA.feature" />
+        <option value="$PROJECT_DIR$/Features/May#1Release2018/Regression/Reg_Agent_PreOrder.feature" />
+        <option value="$PROJECT_DIR$/Features/May#1Release2018/Regression/Reg_Agent_TradeIn.feature" />
+        <option value="$PROJECT_DIR$/Features/May#1Release2018/Regression/Reg_CFA_Accessories_Confirmation_Page_changes.feature" />
+        <option value="$PROJECT_DIR$/Features/May#1Release2018/Regression/Reg_CFA_Cover_me_copy_update_on_basket_summary.feature" />
+        <option value="$PROJECT_DIR$/Features/May#1Release2018/ITFD291/AFA_Not_Allow_ReferWithSIMO_CreditCheck_Status_For_SIMO_Order_Show_ReferralMessage.feature" />
       </list>
     </option>
   </component>
@@ -234,10 +311,11 @@
       </PATH>
     </treeState>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="676" />
-    <option name="width" value="697" />
-    <option name="height" value="372" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1296" />
+    <option name="height" value="776" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -254,31 +332,123 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scratches" />
-      <pane id="Scope" />
-      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
-          <expand>
-            <path>
-              <item name="regression_V3" type="b2602c69:ProjectViewProjectNode" />
-              <item name="regression_V3" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="regression_V3" type="b2602c69:ProjectViewProjectNode" />
-              <item name="regression_V3" type="462c0819:PsiDirectoryNode" />
-              <item name="Features" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="regression_JK5" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="regression_JK5" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="regression_JK5" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="regression_JK5" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Features" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="regression_JK5" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="regression_JK5" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Features" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="May#1Release2018" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Regression" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="regression_JK5" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="regression_JK5" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Features" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="May#1Release2018" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="regression_JK5" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="regression_JK5" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Features" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="May#1Release2018" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ITFD291" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="regression_JK5" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="regression_JK5" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Features" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AprilRelease2018" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
+      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../regression_v1" />
+    <property name="last_opened_file_path" value="$USER_HOME$/regression_v1" />
     <property name="Git.Branch.Popup.ShowAllRemotes" value="true" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15128593" />
@@ -286,6 +456,7 @@
     <property name="Downloaded.Files.Path.Enabled" value="false" />
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
+    <property name="ChangesBrowser.SHOW_FLATTEN" value="true" />
   </component>
   <component name="Push.Settings">
     <force-push-targets>
@@ -300,11 +471,11 @@
       <recent name="helpers" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\subbaiv1\regression_JK5\Features\May#1Release2018" />
+      <recent name="C:\Users\subbaiv1\regression_JK5\src\test\java\pageobjects" />
+      <recent name="C:\Users\subbaiv1\regression_JK5\src\test\java\actionsPerformed" />
+      <recent name="C:\Users\subbaiv1\regression_JK5\Features\May#1Release2018\ITFD296" />
       <recent name="C:\Users\subbaiv1\IdeaProjects\regression_V3\Features\May#1Release2018\ITFD196" />
-      <recent name="C:\Users\subbaiv1\IdeaProjects\regression_V3\Features\MayRelease2018\ITFD196" />
-      <recent name="C:\Users\subbaiv1\IdeaProjects\regression\Features\FebruaryRelease2018\Regression" />
-      <recent name="C:\Users\subbaiv1\regression2\Features\FebruaryRelease2018\Regression" />
-      <recent name="C:\Users\subbaiv1\regression2\Browsers\ChromeDriver" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -319,35 +490,21 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="TestNG.RunnerTest">
-    <configuration default="true" type="Application" factoryName="Application">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="" />
-      <envs />
-    </configuration>
-    <configuration name="Scenario:  (1)" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Cucumber java.Scenario: 16_CFU_Phones_GDPR_Enabled_Home_Delivery_EndUser_Complaint_MP_OptIn_B2_CP_ALL">
+    <configuration default="false" name="Scenario: 27_CFA_NewConnection_FREESIM_GDPR_Enabled_Checkbox_Contact_the User for MP" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
           <option name="PATTERN" value="cucumber.api.cli.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="myFilePath" value="$PROJECT_DIR$/Features/FebruaryRelease2018/Regression/Reg_CFU_Recycle_Phones_DD_Confirmation_Page_changes.feature" />
+      <option name="myFilePath" value="$PROJECT_DIR$/Features/May#1Release2018/ITFD196/27_CFA_NewConnection_FREESIM_GDPR_Enabled_Checkbox_Contact_the_User_for_MP.feature" />
       <option name="GLUE" value="steps" />
-      <option name="myNameFilter" value="^$" />
-      <option name="myGeneratedName" value="Scenario: " />
+      <option name="myNameFilter" value="^27_CFA_NewConnection_FREESIM_GDPR_Enabled_Checkbox_Contact_the User for MP$" />
+      <option name="myGeneratedName" value="Scenario: 27_CFA_NewConnection_FREESIM_GDPR_Enabled_Checkbox_Contact_the User for MP" />
       <option name="MAIN_CLASS_NAME" value="cucumber.api.cli.Main" />
       <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvmSMFormatter --monochrome --name &quot;^$&quot;" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvmSMFormatter --monochrome --name &quot;^27_CFA_NewConnection_FREESIM_GDPR_Enabled_Checkbox_Contact_the User for MP$&quot;" />
       <option name="WORKING_DIRECTORY" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
@@ -356,21 +513,22 @@
       <option name="PASS_PARENT_ENVS" value="true" />
       <module name="eCommAutomationSit" />
       <envs />
+      <method />
     </configuration>
-    <configuration name="Scenario: " type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+    <configuration default="false" name="Scenario: AFA_update_copy_for_Refer_with_Simo_response" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
           <option name="PATTERN" value="cucumber.api.cli.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="myFilePath" value="$PROJECT_DIR$/Features/FebruaryRelease2018/Regression/Reg_CFU_seperate_tariff_ribbons_Tariff_page_Basket_page_html_overlay_for_tariff_ribbons.feature" />
+      <option name="myFilePath" value="$PROJECT_DIR$/Features/May#1Release2018/ITFD291/AFA_Not_Allow_ReferWithSIMO_CreditCheck_Status_For_SIMO_Order_Show_ReferralMessage.feature" />
       <option name="GLUE" value="steps" />
-      <option name="myNameFilter" value="^$" />
-      <option name="myGeneratedName" value="Scenario: " />
+      <option name="myNameFilter" value="^AFA_update_copy_for_Refer_with_Simo_response$" />
+      <option name="myGeneratedName" value="Scenario: AFA_update_copy_for_Refer_with_Simo_response" />
       <option name="MAIN_CLASS_NAME" value="cucumber.api.cli.Main" />
       <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvmSMFormatter --monochrome --name &quot;^$&quot;" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvmSMFormatter --monochrome --name &quot;^AFA_update_copy_for_Refer_with_Simo_response$&quot;" />
       <option name="WORKING_DIRECTORY" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
@@ -379,21 +537,22 @@
       <option name="PASS_PARENT_ENVS" value="true" />
       <module name="eCommAutomationSit" />
       <envs />
+      <method />
     </configuration>
-    <configuration name="Scenario: Successful completion of a BuyOut Journey" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+    <configuration default="false" name="Scenario: AFA_Allow_ReferWithSIMO_Credit_Check_Status_For_SIMO_Order_And_Show_ReferralMessage" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
           <option name="PATTERN" value="cucumber.api.cli.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="myFilePath" value="$PROJECT_DIR$/Features/FebruaryRelease2018/Regression/Reg_Agent_Buyout.feature" />
+      <option name="myFilePath" value="$PROJECT_DIR$/Features/May#1Release2018/ITFD291/AFA_Allow_ReferWithSIMO_CreditCheck_Status_For_SIMO_Order_Show_ReferralMessage.feature" />
       <option name="GLUE" value="steps" />
-      <option name="myNameFilter" value="^Successful completion of a BuyOut Journey$" />
-      <option name="myGeneratedName" value="Scenario: Successful completion of a BuyOut Journey" />
+      <option name="myNameFilter" value="^AFA_Allow_ReferWithSIMO_Credit_Check_Status_For_SIMO_Order_And_Show_ReferralMessage$" />
+      <option name="myGeneratedName" value="Scenario: AFA_Allow_ReferWithSIMO_Credit_Check_Status_For_SIMO_Order_And_Show_ReferralMessage" />
       <option name="MAIN_CLASS_NAME" value="cucumber.api.cli.Main" />
       <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvmSMFormatter --monochrome --name &quot;^Successful completion of a BuyOut Journey$&quot;" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvmSMFormatter --monochrome --name &quot;^AFA_Allow_ReferWithSIMO_Credit_Check_Status_For_SIMO_Order_And_Show_ReferralMessage$&quot;" />
       <option name="WORKING_DIRECTORY" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
@@ -402,21 +561,22 @@
       <option name="PASS_PARENT_ENVS" value="true" />
       <module name="eCommAutomationSit" />
       <envs />
+      <method />
     </configuration>
-    <configuration name="Scenario: Successful completion of a PAY M dongle Acqusistion Journey" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+    <configuration default="false" name="Scenario: 01_CFA_NewConnection_PAYM_Phone_GDPR_Enabled_Refresh_EndUser_MP_OptOut" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
           <option name="PATTERN" value="cucumber.api.cli.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="myFilePath" value="$PROJECT_DIR$/Features/FebruaryRelease2018/Regression/Reg_Agent_TradeIn.feature" />
+      <option name="myFilePath" value="$PROJECT_DIR$/Features/May#1Release2018/ITFD196/01_CFA_NewConnection_PAYM_Phone_GDPR_Enabled_Refresh_EndUser_MP_OptOut.feature" />
       <option name="GLUE" value="steps" />
-      <option name="myNameFilter" value="^Successful completion of a PAY M dongle Acqusistion Journey$" />
-      <option name="myGeneratedName" value="Scenario: Successful completion of a PAY M dongle Acqusistion Journey" />
+      <option name="myNameFilter" value="^01_CFA_NewConnection_PAYM_Phone_GDPR_Enabled_Refresh_EndUser_MP_OptOut$" />
+      <option name="myGeneratedName" value="Scenario: 01_CFA_NewConnection_PAYM_Phone_GDPR_Enabled_Refresh_EndUser_MP_OptOut" />
       <option name="MAIN_CLASS_NAME" value="cucumber.api.cli.Main" />
       <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvmSMFormatter --monochrome --name &quot;^Successful completion of a PAY M dongle Acqusistion Journey$&quot;" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvmSMFormatter --monochrome --name &quot;^01_CFA_NewConnection_PAYM_Phone_GDPR_Enabled_Refresh_EndUser_MP_OptOut$&quot;" />
       <option name="WORKING_DIRECTORY" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
@@ -425,72 +585,31 @@
       <option name="PASS_PARENT_ENVS" value="true" />
       <module name="eCommAutomationSit" />
       <envs />
+      <method />
     </configuration>
-    <configuration default="true" type="Remote" factoryName="Remote">
-      <option name="USE_SOCKET_TRANSPORT" value="true" />
-      <option name="SERVER_MODE" value="false" />
-      <option name="SHMEM_ADDRESS" value="javadebug" />
-      <option name="HOST" value="localhost" />
-      <option name="PORT" value="5005" />
-    </configuration>
-    <configuration name="RunnerTest" type="TestNG" factoryName="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration default="false" name="Scenario: 16_CFU_Phones_GDPR_Enabled_Home_Delivery_EndUser_Complaint_MP_OptIn_B2_CP_ALL" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
-          <option name="PATTERN" value="testRunner.*" />
+          <option name="PATTERN" value="cucumber.api.cli.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <option name="myFilePath" value="$PROJECT_DIR$/Features/May#1Release2018/ITFD196/16_CFU_Phones_GDPR_Enabled_Home_Delivery_EndUser_Complaint_MP_OptIn_B2_CP_ALL.feature" />
+      <option name="GLUE" value="steps" />
+      <option name="myNameFilter" value="^16_CFU_Phones_GDPR_Enabled_Home_Delivery_EndUser_Complaint_MP_OptIn_B2_CP_ALL$" />
+      <option name="myGeneratedName" value="Scenario: 16_CFU_Phones_GDPR_Enabled_Home_Delivery_EndUser_Complaint_MP_OptIn_B2_CP_ALL" />
+      <option name="MAIN_CLASS_NAME" value="cucumber.api.cli.Main" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvmSMFormatter --monochrome --name &quot;^16_CFU_Phones_GDPR_Enabled_Home_Delivery_EndUser_Complaint_MP_OptIn_B2_CP_ALL$&quot;" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
       <module name="eCommAutomationSit" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="SUITE_NAME" />
-      <option name="PACKAGE_NAME" value="testRunner" />
-      <option name="MAIN_CLASS_NAME" value="testRunner.RunnerTest" />
-      <option name="METHOD_NAME" />
-      <option name="GROUP_NAME" />
-      <option name="TEST_OBJECT" value="CLASS" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="OUTPUT_DIRECTORY" />
-      <option name="ANNOTATION_TYPE" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <option name="USE_DEFAULT_REPORTERS" value="false" />
-      <option name="PROPERTIES_FILE" />
       <envs />
-      <properties />
-      <listeners />
-    </configuration>
-    <configuration default="true" type="TestNG" factoryName="TestNG">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <module name="" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="SUITE_NAME" />
-      <option name="PACKAGE_NAME" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="METHOD_NAME" />
-      <option name="GROUP_NAME" />
-      <option name="TEST_OBJECT" value="CLASS" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="OUTPUT_DIRECTORY" />
-      <option name="ANNOTATION_TYPE" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <option name="USE_DEFAULT_REPORTERS" value="false" />
-      <option name="PROPERTIES_FILE" />
-      <envs />
-      <properties />
-      <listeners />
+      <method />
     </configuration>
     <configuration default="true" type="AndroidRunConfigurationType" factoryName="Android App">
       <module name="" />
@@ -520,54 +639,6 @@
       <option name="ACTIVITY_CLASS" value="" />
       <method />
     </configuration>
-    <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Instrumented Tests">
-      <module name="" />
-      <option name="TESTING_TYPE" value="0" />
-      <option name="INSTRUMENTATION_RUNNER_CLASS" value="" />
-      <option name="METHOD_NAME" value="" />
-      <option name="CLASS_NAME" value="" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="EXTRA_OPTIONS" value="" />
-      <option name="PREFERRED_AVD" value="" />
-      <option name="CLEAR_LOGCAT" value="false" />
-      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
-      <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
-      <option name="FORCE_STOP_RUNNING_APP" value="true" />
-      <option name="TARGET_SELECTION_MODE" value="SHOW_DIALOG" />
-      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
-      <option name="PREFERRED_AVD" value="" />
-      <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="-1" />
-      <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
-      <option name="DEBUGGER_TYPE" value="Auto" />
-      <Auto>
-        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
-        <option name="SHOW_STATIC_VARS" value="true" />
-        <option name="WORKING_DIR" value="" />
-        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
-        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
-      </Auto>
-      <Hybrid>
-        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
-        <option name="SHOW_STATIC_VARS" value="true" />
-        <option name="WORKING_DIR" value="" />
-        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
-        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
-      </Hybrid>
-      <Java />
-      <Native>
-        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
-        <option name="SHOW_STATIC_VARS" value="true" />
-        <option name="WORKING_DIR" value="" />
-        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
-        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
-      </Native>
-      <Profilers>
-        <option name="ENABLE_ADVANCED_PROFILING" value="true" />
-        <option name="SUPPORT_LIB_ENABLED" value="true" />
-        <option name="INSTRUMENTATION_ENABLED" value="true" />
-      </Profilers>
-      <method />
-    </configuration>
     <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Tests">
       <module name="" />
       <option name="TESTING_TYPE" value="0" />
@@ -593,6 +664,21 @@
         <option name="SUPPORT_LIB_ENABLED" value="true" />
         <option name="INSTRUMENTATION_ENABLED" value="true" />
       </Profilers>
+      <method />
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="" />
+      <envs />
       <method />
     </configuration>
     <configuration default="true" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java">
@@ -697,22 +783,106 @@
       <envs />
       <method />
     </configuration>
+    <configuration default="true" type="Remote" factoryName="Remote">
+      <option name="USE_SOCKET_TRANSPORT" value="true" />
+      <option name="SERVER_MODE" value="false" />
+      <option name="SHMEM_ADDRESS" value="javadebug" />
+      <option name="HOST" value="localhost" />
+      <option name="PORT" value="5005" />
+      <method />
+    </configuration>
+    <configuration default="true" type="TestNG" factoryName="TestNG">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="ANNOTATION_TYPE" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" />
+      <envs />
+      <properties />
+      <listeners />
+      <method />
+    </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Cucumber java.Scenario: " />
-      <item index="1" class="java.lang.String" itemvalue="Cucumber java.Scenario: Successful completion of a BuyOut Journey" />
-      <item index="2" class="java.lang.String" itemvalue="Cucumber java.Scenario: Successful completion of a PAY M dongle Acqusistion Journey" />
-      <item index="3" class="java.lang.String" itemvalue="Cucumber java.Scenario:  (1)" />
-      <item index="4" class="java.lang.String" itemvalue="TestNG.RunnerTest" />
+      <item index="0" class="java.lang.String" itemvalue="Cucumber java.Scenario: 27_CFA_NewConnection_FREESIM_GDPR_Enabled_Checkbox_Contact_the User for MP" />
+      <item index="1" class="java.lang.String" itemvalue="Cucumber java.Scenario: AFA_update_copy_for_Refer_with_Simo_response" />
+      <item index="2" class="java.lang.String" itemvalue="Cucumber java.Scenario: AFA_Allow_ReferWithSIMO_Credit_Check_Status_For_SIMO_Order_And_Show_ReferralMessage" />
+      <item index="3" class="java.lang.String" itemvalue="Cucumber java.Scenario: 01_CFA_NewConnection_PAYM_Phone_GDPR_Enabled_Refresh_EndUser_MP_OptOut" />
+      <item index="4" class="java.lang.String" itemvalue="Cucumber java.Scenario: 16_CFU_Phones_GDPR_Enabled_Home_Delivery_EndUser_Complaint_MP_OptIn_B2_CP_ALL" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="TestNG.RunnerTest" />
-        <item index="1" class="java.lang.String" itemvalue="Cucumber java.Scenario:  (1)" />
-        <item index="2" class="java.lang.String" itemvalue="Cucumber java.Scenario: Successful completion of a BuyOut Journey" />
-        <item index="3" class="java.lang.String" itemvalue="Cucumber java.Scenario: Successful completion of a PAY M dongle Acqusistion Journey" />
-        <item index="4" class="java.lang.String" itemvalue="Cucumber java.Scenario: " />
+        <item index="0" class="java.lang.String" itemvalue="Cucumber java.Scenario: 16_CFU_Phones_GDPR_Enabled_Home_Delivery_EndUser_Complaint_MP_OptIn_B2_CP_ALL" />
+        <item index="1" class="java.lang.String" itemvalue="Cucumber java.Scenario: 01_CFA_NewConnection_PAYM_Phone_GDPR_Enabled_Refresh_EndUser_MP_OptOut" />
+        <item index="2" class="java.lang.String" itemvalue="Cucumber java.Scenario: AFA_Allow_ReferWithSIMO_Credit_Check_Status_For_SIMO_Order_And_Show_ReferralMessage" />
+        <item index="3" class="java.lang.String" itemvalue="Cucumber java.Scenario: AFA_update_copy_for_Refer_with_Simo_response" />
+        <item index="4" class="java.lang.String" itemvalue="Cucumber java.Scenario: 27_CFA_NewConnection_FREESIM_GDPR_Enabled_Checkbox_Contact_the User for MP" />
       </list>
     </recent_temporary>
+    <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Instrumented Tests">
+      <module name="" />
+      <option name="TESTING_TYPE" value="0" />
+      <option name="INSTRUMENTATION_RUNNER_CLASS" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="EXTRA_OPTIONS" value="" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
+      <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
+      <option name="FORCE_STOP_RUNNING_APP" value="true" />
+      <option name="TARGET_SELECTION_MODE" value="SHOW_DIALOG" />
+      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="-1" />
+      <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
+      <option name="DEBUGGER_TYPE" value="Auto" />
+      <Auto>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Auto>
+      <Hybrid>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Hybrid>
+      <Java />
+      <Native>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Native>
+      <Profilers>
+        <option name="ENABLE_ADVANCED_PROFILING" value="true" />
+        <option name="SUPPORT_LIB_ENABLED" value="true" />
+        <option name="INSTRUMENTATION_ENABLED" value="true" />
+      </Profilers>
+      <method />
+    </configuration>
   </component>
   <component name="ShelveChangesManager" show_recycled="false">
     <option name="remove_strategy" value="false" />
@@ -728,41 +898,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1510763568253</updated>
-    </task>
-    <task id="LOCAL-00001" summary="Anusha_Nov15112017_V1">
-      <created>1510774132523</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1510774132523</updated>
-    </task>
-    <task id="LOCAL-00002" summary="Anusha_Nov15112017_v3">
-      <created>1510776896564</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1510776896564</updated>
-    </task>
-    <task id="LOCAL-00003" summary="Anusha_Nov16112017">
-      <created>1510869870753</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1510869870754</updated>
-    </task>
-    <task id="LOCAL-00004" summary="Anusha_Nov15112017_v3">
-      <created>1511190860633</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1511190860633</updated>
-    </task>
-    <task id="LOCAL-00005" summary="Anusha_Nov15112017_v3">
-      <created>1511276069428</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1511276069428</updated>
     </task>
     <task id="LOCAL-00006" summary="Anusha_Nov15112017_v3">
       <created>1511355817536</created>
@@ -1037,39 +1172,109 @@
       <option name="project" value="LOCAL" />
       <updated>1524147836339</updated>
     </task>
-    <option name="localTasksCounter" value="45" />
+    <task id="LOCAL-00045" summary="Merge branch 'master' of https://bitbucket.org/ecommautomationteam/regression into Sharmi_19-02-2018&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;Features/FebruaryRelease2018/Regression/Reg_Jan_ConsumerToAcceptTenDigitsPhoneNumber.feature&#10;#&#9;src/test/java/actionsPerformed/Agent_DealBuilderPageActions.java&#10;#&#9;src/test/java/actionsPerformed/DeliveryPageActions.java&#10;#&#9;src/test/java/actionsPerformed/PAYMandPAYGTariffAndExtrasPageActions.java&#10;#&#9;src/test/java/actionsPerformed/UpgradeCustomerPageActions.java&#10;#&#9;src/test/java/steps/E2EOrderPlaced_Steps.java">
+      <created>1525358184012</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1525358184012</updated>
+    </task>
+    <task id="LOCAL-00046" summary="Merge branch 'master' of https://bitbucket.org/ecommautomationteam/regression into Sharmi_19-02-2018&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;Features/FebruaryRelease2018/Regression/Reg_Jan_ConsumerToAcceptTenDigitsPhoneNumber.feature&#10;#&#9;src/test/java/actionsPerformed/Agent_DealBuilderPageActions.java&#10;#&#9;src/test/java/actionsPerformed/DeliveryPageActions.java&#10;#&#9;src/test/java/actionsPerformed/PAYMandPAYGTariffAndExtrasPageActions.java&#10;#&#9;src/test/java/actionsPerformed/UpgradeCustomerPageActions.java&#10;#&#9;src/test/java/steps/E2EOrderPlaced_Steps.java">
+      <created>1525435088248</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1525435088248</updated>
+    </task>
+    <task id="LOCAL-00047" summary="Merge branch 'master' of https://bitbucket.org/ecommautomationteam/regression into Sharmi_19-02-2018&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;Features/FebruaryRelease2018/Regression/Reg_Jan_ConsumerToAcceptTenDigitsPhoneNumber.feature&#10;#&#9;src/test/java/actionsPerformed/Agent_DealBuilderPageActions.java&#10;#&#9;src/test/java/actionsPerformed/DeliveryPageActions.java&#10;#&#9;src/test/java/actionsPerformed/PAYMandPAYGTariffAndExtrasPageActions.java&#10;#&#9;src/test/java/actionsPerformed/UpgradeCustomerPageActions.java&#10;#&#9;src/test/java/steps/E2EOrderPlaced_Steps.java">
+      <created>1525444936175</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1525444936175</updated>
+    </task>
+    <task id="LOCAL-00048" summary="Merge branch 'master' of https://bitbucket.org/ecommautomationteam/regression into Sharmi_19-02-2018&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;Features/FebruaryRelease2018/Regression/Reg_Jan_ConsumerToAcceptTenDigitsPhoneNumber.feature&#10;#&#9;src/test/java/actionsPerformed/Agent_DealBuilderPageActions.java&#10;#&#9;src/test/java/actionsPerformed/DeliveryPageActions.java&#10;#&#9;src/test/java/actionsPerformed/PAYMandPAYGTariffAndExtrasPageActions.java&#10;#&#9;src/test/java/actionsPerformed/UpgradeCustomerPageActions.java&#10;#&#9;src/test/java/steps/E2EOrderPlaced_Steps.java">
+      <created>1525671523299</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1525671523299</updated>
+    </task>
+    <task id="LOCAL-00049" summary="Merge branch 'master' of https://bitbucket.org/ecommautomationteam/regression into Sharmi_19-02-2018&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;Features/FebruaryRelease2018/Regression/Reg_Jan_ConsumerToAcceptTenDigitsPhoneNumber.feature&#10;#&#9;src/test/java/actionsPerformed/Agent_DealBuilderPageActions.java&#10;#&#9;src/test/java/actionsPerformed/DeliveryPageActions.java&#10;#&#9;src/test/java/actionsPerformed/PAYMandPAYGTariffAndExtrasPageActions.java&#10;#&#9;src/test/java/actionsPerformed/UpgradeCustomerPageActions.java&#10;#&#9;src/test/java/steps/E2EOrderPlaced_Steps.java">
+      <created>1525694433654</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1525694433654</updated>
+    </task>
+    <task id="LOCAL-00050" summary="Merge branch 'master' of https://bitbucket.org/ecommautomationteam/regression into Sharmi_19-02-2018&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;Features/FebruaryRelease2018/Regression/Reg_Jan_ConsumerToAcceptTenDigitsPhoneNumber.feature&#10;#&#9;src/test/java/actionsPerformed/Agent_DealBuilderPageActions.java&#10;#&#9;src/test/java/actionsPerformed/DeliveryPageActions.java&#10;#&#9;src/test/java/actionsPerformed/PAYMandPAYGTariffAndExtrasPageActions.java&#10;#&#9;src/test/java/actionsPerformed/UpgradeCustomerPageActions.java&#10;#&#9;src/test/java/steps/E2EOrderPlaced_Steps.java">
+      <created>1525699769889</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1525699769892</updated>
+    </task>
+    <task id="LOCAL-00051" summary="Merge branch 'master' of https://bitbucket.org/ecommautomationteam/regression into Sharmi_19-02-2018&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;Features/FebruaryRelease2018/Regression/Reg_Jan_ConsumerToAcceptTenDigitsPhoneNumber.feature&#10;#&#9;src/test/java/actionsPerformed/Agent_DealBuilderPageActions.java&#10;#&#9;src/test/java/actionsPerformed/DeliveryPageActions.java&#10;#&#9;src/test/java/actionsPerformed/PAYMandPAYGTariffAndExtrasPageActions.java&#10;#&#9;src/test/java/actionsPerformed/UpgradeCustomerPageActions.java&#10;#&#9;src/test/java/steps/E2EOrderPlaced_Steps.java">
+      <created>1525760603922</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1525760603923</updated>
+    </task>
+    <task id="LOCAL-00052" summary="Merge branch 'master' of https://bitbucket.org/ecommautomationteam/regression into Sharmi_19-02-2018&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;Features/FebruaryRelease2018/Regression/Reg_Jan_ConsumerToAcceptTenDigitsPhoneNumber.feature&#10;#&#9;src/test/java/actionsPerformed/Agent_DealBuilderPageActions.java&#10;#&#9;src/test/java/actionsPerformed/DeliveryPageActions.java&#10;#&#9;src/test/java/actionsPerformed/PAYMandPAYGTariffAndExtrasPageActions.java&#10;#&#9;src/test/java/actionsPerformed/UpgradeCustomerPageActions.java&#10;#&#9;src/test/java/steps/E2EOrderPlaced_Steps.java">
+      <created>1525769994163</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1525769994163</updated>
+    </task>
+    <task id="LOCAL-00053" summary="Merge branch 'master' of https://bitbucket.org/ecommautomationteam/regression into Sharmi_19-02-2018&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;Features/FebruaryRelease2018/Regression/Reg_Jan_ConsumerToAcceptTenDigitsPhoneNumber.feature&#10;#&#9;src/test/java/actionsPerformed/Agent_DealBuilderPageActions.java&#10;#&#9;src/test/java/actionsPerformed/DeliveryPageActions.java&#10;#&#9;src/test/java/actionsPerformed/PAYMandPAYGTariffAndExtrasPageActions.java&#10;#&#9;src/test/java/actionsPerformed/UpgradeCustomerPageActions.java&#10;#&#9;src/test/java/steps/E2EOrderPlaced_Steps.java">
+      <created>1525771427633</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1525771427633</updated>
+    </task>
+    <task id="LOCAL-00054" summary="Merge branch 'master' of https://bitbucket.org/ecommautomationteam/regression into Sharmi_19-02-2018&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;Features/FebruaryRelease2018/Regression/Reg_Jan_ConsumerToAcceptTenDigitsPhoneNumber.feature&#10;#&#9;src/test/java/actionsPerformed/Agent_DealBuilderPageActions.java&#10;#&#9;src/test/java/actionsPerformed/DeliveryPageActions.java&#10;#&#9;src/test/java/actionsPerformed/PAYMandPAYGTariffAndExtrasPageActions.java&#10;#&#9;src/test/java/actionsPerformed/UpgradeCustomerPageActions.java&#10;#&#9;src/test/java/steps/E2EOrderPlaced_Steps.java">
+      <created>1525859518557</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1525859518557</updated>
+    </task>
+    <option name="localTasksCounter" value="55" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="RunnerTest - 2018.03.21 at 19h 38m 02s.xml">
-      <configuration name="RunnerTest" configurationId="TestNG" />
+    <history-entry file="Scenario__01_CFA_NewConnection_PAYM_Phone_GDPR_Enabled_Refresh_EndUser_MP_OptOut - 2018.05.08 at 16h 28m 15s.xml">
+      <configuration name="Scenario: 01_CFA_NewConnection_PAYM_Phone_GDPR_Enabled_Refresh_EndUser_MP_OptOut" configurationId="CucumberJavaRunConfigurationType" />
     </history-entry>
-    <history-entry file="RunnerTest - 2018.03.22 at 00h 33m 40s.xml">
-      <configuration name="RunnerTest" configurationId="TestNG" />
+    <history-entry file="Scenario__10_CFA_NewConnection_FREESIM_GDPR_Enabled_Checkbox_Donot_Contact_for_MP - 2018.05.08 at 11h 21m 36s.xml">
+      <configuration name="Scenario: 10_CFA_NewConnection_FREESIM_GDPR_Enabled_Checkbox_Donot_Contact_for_MP" configurationId="CucumberJavaRunConfigurationType" />
     </history-entry>
-    <history-entry file="RunnerTest - 2018.03.22 at 00h 42m 50s.xml">
-      <configuration name="RunnerTest" configurationId="TestNG" />
+    <history-entry file="Scenario__10_CFA_NewConnection_FREESIM_GDPR_Enabled_Checkbox_Donot_Contact_for_MP - 2018.05.08 at 11h 42m 02s.xml">
+      <configuration name="Scenario: 10_CFA_NewConnection_FREESIM_GDPR_Enabled_Checkbox_Donot_Contact_for_MP" configurationId="CucumberJavaRunConfigurationType" />
     </history-entry>
-    <history-entry file="RunnerTest - 2018.03.22 at 00h 53m 48s.xml">
-      <configuration name="RunnerTest" configurationId="TestNG" />
+    <history-entry file="Scenario__10_CFA_NewConnection_FREESIM_GDPR_Enabled_Checkbox_Donot_Contact_for_MP - 2018.05.08 at 11h 49m 54s.xml">
+      <configuration name="Scenario: 10_CFA_NewConnection_FREESIM_GDPR_Enabled_Checkbox_Donot_Contact_for_MP" configurationId="CucumberJavaRunConfigurationType" />
     </history-entry>
-    <history-entry file="RunnerTest - 2018.03.22 at 11h 20m 17s.xml">
-      <configuration name="RunnerTest" configurationId="TestNG" />
+    <history-entry file="Scenario__10_CFA_NewConnection_FREESIM_GDPR_Enabled_Checkbox_Donot_Contact_for_MP - 2018.05.08 at 12h 05m 33s.xml">
+      <configuration name="Scenario: 10_CFA_NewConnection_FREESIM_GDPR_Enabled_Checkbox_Donot_Contact_for_MP" configurationId="CucumberJavaRunConfigurationType" />
     </history-entry>
-    <history-entry file="RunnerTest - 2018.03.22 at 11h 29m 24s.xml">
-      <configuration name="RunnerTest" configurationId="TestNG" />
+    <history-entry file="Scenario__10_CFA_NewConnection_FREESIM_GDPR_Enabled_Checkbox_Donot_Contact_for_MP - 2018.05.08 at 14h 13m 11s.xml">
+      <configuration name="Scenario: 10_CFA_NewConnection_FREESIM_GDPR_Enabled_Checkbox_Donot_Contact_for_MP" configurationId="CucumberJavaRunConfigurationType" />
     </history-entry>
-    <history-entry file="RunnerTest - 2018.03.22 at 12h 22m 43s.xml">
-      <configuration name="RunnerTest" configurationId="TestNG" />
+    <history-entry file="Scenario__10_CFA_NewConnection_FREESIM_GDPR_Enabled_Checkbox_Donot_Contact_for_MP - 2018.05.08 at 14h 16m 39s.xml">
+      <configuration name="Scenario: 10_CFA_NewConnection_FREESIM_GDPR_Enabled_Checkbox_Donot_Contact_for_MP" configurationId="CucumberJavaRunConfigurationType" />
     </history-entry>
-    <history-entry file="RunnerTest - 2018.03.22 at 12h 27m 04s.xml">
-      <configuration name="RunnerTest" configurationId="TestNG" />
+    <history-entry file="Scenario__AFA_Allow_ReferWithSIMO_Credit_Check_Status_For_SIMO_Order_And_Show_ReferralMessage - 2018.05.08 at 15h 55m 01s.xml">
+      <configuration name="Scenario: AFA_Allow_ReferWithSIMO_Credit_Check_Status_For_SIMO_Order_And_Show_ReferralMessage" configurationId="CucumberJavaRunConfigurationType" />
     </history-entry>
-    <history-entry file="RunnerTest - 2018.03.22 at 12h 54m 13s.xml">
-      <configuration name="RunnerTest" configurationId="TestNG" />
+    <history-entry file="Scenario__AFA_update_copy_for_Refer_with_Simo_response - 2018.05.08 at 15h 36m 11s.xml">
+      <configuration name="Scenario: AFA_update_copy_for_Refer_with_Simo_response" configurationId="CucumberJavaRunConfigurationType" />
     </history-entry>
-    <history-entry file="RunnerTest - 2018.03.22 at 16h 08m 05s.xml">
-      <configuration name="RunnerTest" configurationId="TestNG" />
+    <history-entry file="Scenario__AFA_update_copy_for_Refer_with_Simo_response - 2018.05.08 at 15h 41m 52s.xml">
+      <configuration name="Scenario: AFA_update_copy_for_Refer_with_Simo_response" configurationId="CucumberJavaRunConfigurationType" />
     </history-entry>
   </component>
   <component name="TodoView" selected-index="3">
@@ -1082,69 +1287,38 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="-8" y="-8" width="1296" height="776" extended-state="6" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32843137" sideWeight="0.71331316" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16491754" sideWeight="0.75078124" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.48202613" sideWeight="0.19742814" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.16491754" sideWeight="0.24921875" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.0" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.14215687" sideWeight="0.80257183" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32843137" sideWeight="0.70423603" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3137255" sideWeight="0.7609682" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32763976" sideWeight="0.70423603" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.40029985" sideWeight="0.80257183" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30284858" sideWeight="0.7609682" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.34341908" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2671875" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32763976" sideWeight="0.49367756" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24876848" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24962178" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32843137" sideWeight="0.8335855" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.089955024" sideWeight="0.8335855" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.048440065" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16503268" sideWeight="0.4515885" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32887402" sideWeight="0.49367756" order="1" side_tool="false" content_ui="tabs" />
     </layout>
-    <layout-to-restore>
-      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.48202613" sideWeight="0.19742814" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.0" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.048440065" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24876848" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24962178" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32843137" sideWeight="0.8335855" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32843137" sideWeight="0.71331316" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16503268" sideWeight="0.4515885" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.14215687" sideWeight="0.80257183" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32843137" sideWeight="0.70423603" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3137255" sideWeight="0.7609682" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25642964" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32887402" sideWeight="0.49367756" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-    </layout-to-restore>
   </component>
   <component name="UpdateCopyrightCheckinHandler">
     <option name="UPDATE_COPYRIGHT" value="true" />
@@ -1248,7 +1422,7 @@
         </line-breakpoint>
         <line-breakpoint type="java-method">
           <url>file://$PROJECT_DIR$/src/test/java/steps/E2EOrderPlaced_Steps.java</url>
-          <line>5216</line>
+          <line>5307</line>
           <properties class="steps.E2EOrderPlaced_Steps">
             <option name="EMULATED" value="true" />
           </properties>
@@ -1256,7 +1430,7 @@
         </line-breakpoint>
         <line-breakpoint type="java-method">
           <url>file://$PROJECT_DIR$/src/test/java/steps/E2EOrderPlaced_Steps.java</url>
-          <line>5928</line>
+          <line>6019</line>
           <properties class="steps.E2EOrderPlaced_Steps">
             <option name="EMULATED" value="true" />
           </properties>
@@ -1264,7 +1438,7 @@
         </line-breakpoint>
         <line-breakpoint type="java-method">
           <url>file://$PROJECT_DIR$/src/test/java/actionsPerformed/PAYMandPAYGTariffAndExtrasPageActions.java</url>
-          <line>569</line>
+          <line>565</line>
           <properties class="actionsPerformed.PAYMandPAYGTariffAndExtrasPageActions">
             <option name="EMULATED" value="true" />
           </properties>
@@ -1272,7 +1446,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/test/java/steps/E2EOrderPlaced_Steps.java</url>
-          <line>5813</line>
+          <line>5904</line>
           <properties class="steps.E2EOrderPlaced_Steps">
             <option name="EMULATED" value="true" />
           </properties>
@@ -1281,14 +1455,14 @@
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/test/java/actionsPerformed/UpgradeCustomerPageActions.java</url>
           <line>393</line>
-          <properties class="actionsPerformed.UpgradeCustomerPageActions" method="selectTariff">
+          <properties class="actionsPerformed.UpgradeCustomerPageActions">
             <option name="EMULATED" value="true" />
           </properties>
           <option name="timeStamp" value="126" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/test/java/steps/E2EOrderPlaced_Steps.java</url>
-          <line>4635</line>
+          <line>4726</line>
           <properties class="steps.E2EOrderPlaced_Steps">
             <option name="EMULATED" value="true" />
           </properties>
@@ -1296,7 +1470,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/test/java/steps/E2EOrderPlaced_Steps.java</url>
-          <line>4662</line>
+          <line>4753</line>
           <properties class="steps.E2EOrderPlaced_Steps">
             <option name="EMULATED" value="true" />
           </properties>
@@ -1304,7 +1478,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/test/java/steps/E2EOrderPlaced_Steps.java</url>
-          <line>4724</line>
+          <line>4815</line>
           <properties class="steps.E2EOrderPlaced_Steps">
             <option name="EMULATED" value="true" />
           </properties>
@@ -1312,7 +1486,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/test/java/steps/E2EOrderPlaced_Steps.java</url>
-          <line>4737</line>
+          <line>4828</line>
           <properties class="steps.E2EOrderPlaced_Steps">
             <option name="EMULATED" value="true" />
           </properties>
@@ -1320,7 +1494,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/test/java/steps/E2EOrderPlaced_Steps.java</url>
-          <line>4561</line>
+          <line>4652</line>
           <properties class="steps.E2EOrderPlaced_Steps">
             <option name="EMULATED" value="true" />
           </properties>
@@ -1328,7 +1502,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/test/java/steps/E2EOrderPlaced_Steps.java</url>
-          <line>4688</line>
+          <line>4779</line>
           <properties class="steps.E2EOrderPlaced_Steps">
             <option name="EMULATED" value="true" />
           </properties>
@@ -1345,7 +1519,7 @@
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/test/java/actionsPerformed/PAYMandPAYGTariffAndExtrasPageActions.java</url>
           <line>100</line>
-          <properties class="actionsPerformed.PAYMandPAYGTariffAndExtrasPageActions" method="addToBasketLive">
+          <properties class="actionsPerformed.PAYMandPAYGTariffAndExtrasPageActions">
             <option name="EMULATED" value="true" />
           </properties>
           <option name="timeStamp" value="135" />
@@ -1353,7 +1527,7 @@
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/test/java/steps/E2EOrderPlaced_Steps.java</url>
           <line>728</line>
-          <properties class="steps.E2EOrderPlaced_Steps" method="i_Land_on_the_basket_page_and_choose_home_delivery_option">
+          <properties class="steps.E2EOrderPlaced_Steps">
             <option name="EMULATED" value="true" />
           </properties>
           <option name="timeStamp" value="136" />
@@ -1361,10 +1535,18 @@
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/test/java/actionsPerformed/ConnectedDeviceDetailsPageAction.java</url>
           <line>290</line>
-          <properties class="actionsPerformed.ConnectedDeviceDetailsPageAction" method="checkDevStatusAsPreOrder">
+          <properties class="actionsPerformed.ConnectedDeviceDetailsPageAction">
             <option name="EMULATED" value="true" />
           </properties>
           <option name="timeStamp" value="137" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/test/java/steps/E2EOrderPlaced_Steps.java</url>
+          <line>1371</line>
+          <properties class="steps.E2EOrderPlaced_Steps" method="CreditCheckPaymentPage_HomeDelivery">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="152" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/actionsPerformed/SimsPageActions.java</url>
@@ -1380,7 +1562,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/GlobalActions/MouseHoverAction.java</url>
-          <line>697</line>
+          <line>765</line>
           <properties />
           <option name="timeStamp" value="113" />
         </line-breakpoint>
@@ -1392,13 +1574,13 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/actionsPerformed/DeliveryPageActions.java</url>
-          <line>575</line>
+          <line>581</line>
           <properties />
           <option name="timeStamp" value="117" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/steps/E2EOrderPlaced_Steps.java</url>
-          <line>4648</line>
+          <line>4739</line>
           <properties />
           <option name="timeStamp" value="128" />
         </line-breakpoint>
@@ -1406,7 +1588,7 @@
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="139" />
+      <option name="time" value="153" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1415,276 +1597,71 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/test/java/actionsPerformed/BasketPageActions.java">
+    <entry file="file://$PROJECT_DIR$/Features/May#1Release2018/ITFD196/46_AFU_MBB_Refresh_GDPR_Enabled_CC_EndUser_Expired_MP_OptIn_B3_CP_ALL.feature">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="139" column="23" lean-forward="false" selection-start-line="139" selection-start-column="23" selection-end-line="139" selection-end-column="23" />
+        <state relative-caret-position="357">
+          <caret line="21" column="13" lean-forward="true" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Features/FebruaryRelease2018/Regression/Reg_CFU_Phones_Data_filters_options_tariff_and_extras_page.feature">
+    <entry file="file://$PROJECT_DIR$/Features/May#1Release2018/ITFD196/31_AFA_NewConnection_SIMO_GDPR_Enabled_status_Not_EndUser_MP_Suppressed.feature">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-51">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/pageobjects/Agent_DealBuilderPage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="141">
-          <caret line="53" column="38" lean-forward="false" selection-start-line="53" selection-start-column="38" selection-end-line="53" selection-end-column="76" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/actionsPerformed/Agent_DealBuilderPageActions.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="268">
-          <caret line="443" column="44" lean-forward="true" selection-start-line="443" selection-start-column="44" selection-end-line="443" selection-end-column="44" />
+        <state relative-caret-position="238">
+          <caret line="14" column="16" lean-forward="false" selection-start-line="14" selection-start-column="8" selection-end-line="14" selection-end-column="16" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Features/FebruaryRelease2018/Regression/Reg_Agent_GenerateCCA.feature">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="30" lean-forward="true" selection-start-line="0" selection-start-column="9" selection-end-line="0" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Features/FebruaryRelease2018/Regression/Feb_CFA_Phones_CnC_Delivery_page_Payment_page_more_than_one_address_select_one_compress_others.feature">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="38" lean-forward="false" selection-start-line="12" selection-start-column="38" selection-end-line="12" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Features/FebruaryRelease2018/Regression/Reg_Agent_DelayedDelivery.feature">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="89">
-          <caret line="10" column="53" lean-forward="true" selection-start-line="10" selection-start-column="53" selection-end-line="10" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Features/FebruaryRelease2018/Regression/Reg_FNT_AFA_PayG_Phones_less_than_50_GBP_ClickAndCollect.feature">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="16" lean-forward="false" selection-start-line="6" selection-start-column="16" selection-end-line="6" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/testRunner/RunnerTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="287">
-          <caret line="44" column="18" lean-forward="false" selection-start-line="44" selection-start-column="18" selection-end-line="44" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/actionsPerformed/DeliveryPageActions.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-202">
-          <caret line="158" column="23" lean-forward="false" selection-start-line="158" selection-start-column="23" selection-end-line="158" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Features/AprilRelease2018/Regression/Feb_CFA_Phones_CnC_Delivery_page_Payment_page_more_than_one_address_select_one_compress_others.feature">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="31" lean-forward="true" selection-start-line="8" selection-start-column="31" selection-end-line="8" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Features/AprilRelease2018/Regression/Reg_CFA_MBB_Data filters.feature">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" column="76" lean-forward="true" selection-start-line="20" selection-start-column="76" selection-end-line="20" selection-end-column="76" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Features/MayRelease2018/ITFD196/GDPR_CFA_PayM_Tablet_Data_filters_options_tariff_and_extras_page_Order_placement.feature">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="19" column="1" lean-forward="true" selection-start-line="19" selection-start-column="1" selection-end-line="20" selection-end-column="76" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Features/AprilRelease2018/Regression/Reg_CS_PayMSimOnly.feature">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="9" lean-forward="false" selection-start-line="0" selection-start-column="9" selection-end-line="0" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Features/AprilRelease2018/Regression/Reg_CFA_PayG_SIM_ipad.feature">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Features/MayRelease2018/ITFD196/GDPR_CFA_PayM_Tablet_Data_filters_options_tariff_and_extras_page_Order_placement.feature">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="101">
-          <caret line="9" column="37" lean-forward="true" selection-start-line="9" selection-start-column="37" selection-end-line="9" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Features/AprilRelease2018/Regression/Reg_CS_PayGPhonesHomeDeliveryWithoutAccessory.feature">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Features/AprilRelease2018/Regression/Reg_FNT_PayMPhonesAdditionalDepositConfirmation.feature">
+    <entry file="file://$PROJECT_DIR$/Features/May#1Release2018/ITFD196/42_AFU_PayM_Tablets_Refresh_GDPR_Enabled_Home_Delivery_compliant_EndUser_MP_OptIn_B4_CP_Text.feature">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
-          <caret line="5" column="36" lean-forward="true" selection-start-line="5" selection-start-column="36" selection-end-line="5" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Features/AprilRelease2018/Regression/Reg_CS_CFA_MBBPayG.feature">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="9" lean-forward="false" selection-start-line="0" selection-start-column="9" selection-end-line="0" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Features/AprilRelease2018/Regression/Reg_October2Release_ECOM-12004_CFA_PayG_Freesim_Phones_DeliveryPageMarkMandatoryFieldsWithAsterisk.feature">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="9" lean-forward="false" selection-start-line="0" selection-start-column="9" selection-end-line="0" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Features/AprilRelease2018/Regression/Reg_CFA_PayM_Tablet_Data_filters_options_tariff_and_extras_page_Order_placement.feature">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="37" lean-forward="true" selection-start-line="9" selection-start-column="37" selection-end-line="9" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Features/AprilRelease2018/Regression/Reg_CFA_PayM_Phone_Data_filters_options_tariff_and_extras_page_Order_placement.feature">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="9" lean-forward="false" selection-start-line="0" selection-start-column="9" selection-end-line="0" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Features/MayRelease2018/ITFD196/GDPR_CFA_MBB_Data filters.feature">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="25" lean-forward="false" selection-start-line="4" selection-start-column="25" selection-end-line="4" selection-end-column="25" />
+          <caret line="5" column="31" lean-forward="true" selection-start-line="5" selection-start-column="31" selection-end-line="5" selection-end-column="31" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Features/MayRelease2018/ITFD196/GDPR_CFA_PayG_Freesim_Phones_DeliveryPageMarkMandatoryFieldsWithAsterisk.feature">
+    <entry file="file://$PROJECT_DIR$/Features/May#1Release2018/ITFD196/30_AFA_NewConnection_PAYM_MBB_Standard_GDPR_Enabled_EndUser_MP_OptOut.feature">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="40" lean-forward="true" selection-start-line="15" selection-start-column="40" selection-end-line="15" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Features/May#1Release2018/ITFD196/29_AFA_NewConnection_PAYM_Phone_Refresh_CCA_GDPR_Enabled_EndUser_SECCI &amp; CCA_Not Accepted.feature">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="537">
+          <caret line="37" column="0" lean-forward="true" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Features/May#1Release2018/ITFD196/43_AFU_Phones_Refresh_GDPR_Enabled_Home_Delivery_EndUser_Compliant_MP_OptIn_B3_B4_CP_Email_Phone.feature">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
-          <caret line="19" column="48" lean-forward="true" selection-start-line="19" selection-start-column="48" selection-end-line="19" selection-end-column="49" />
+          <caret line="19" column="55" lean-forward="true" selection-start-line="14" selection-start-column="4" selection-end-line="19" selection-end-column="55" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Features/MayRelease2018/ITFD196/GDPR_CFA_Phones_CnC_Delivery_page_Payment_page_more_than_one_address_select_one_compress_others.feature">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="237">
-          <caret line="18" column="52" lean-forward="true" selection-start-line="18" selection-start-column="52" selection-end-line="18" selection-end-column="52" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Features/MayRelease2018/ITFD196/GDPR_CS_CFA_MBBPayG.feature">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="0" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Features/MayRelease2018/ITFD196/GDPR_CS_PayGPhonesHomeDeliveryWithoutAccessory.feature">
+    <entry file="file://$PROJECT_DIR$/Features/May#1Release2018/ITFD196/06_CFA_NewConnection_PAYM_Tablet_GDPR_Enabled_Back_to_Delivery_option_status_Not_EndUser_MP_Suppressed.feature">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
-          <caret line="8" column="44" lean-forward="true" selection-start-line="8" selection-start-column="44" selection-end-line="8" selection-end-column="44" />
+          <caret line="8" column="39" lean-forward="true" selection-start-line="8" selection-start-column="39" selection-end-line="8" selection-end-column="39" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Features/MayRelease2018/ITFD196/GDPR_CFA_PayM_Phone_Data_filters_options_tariff_and_extras_page_Order_placement.feature">
+    <entry file="file://$PROJECT_DIR$/Features/May#1Release2018/ITFD196/07_CFA_NewConnection_PAYG_Phones_GDPR_Enabled_Refresh_Homedelivery_EndUser_MP_OptIn_ALL_CP_ALL.feature">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="9" lean-forward="false" selection-start-line="0" selection-start-column="9" selection-end-line="0" selection-end-column="9" />
+        <state relative-caret-position="85">
+          <caret line="5" column="6" lean-forward="true" selection-start-line="5" selection-start-column="6" selection-end-line="5" selection-end-column="6" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Features/MayRelease2018/ITFD196/GDPR_26_CFA_PayM_Phone_Data_filters_options_tariff_and_extras_page_Order_placement.feature">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Features/MayRelease2018/ITFD196/GDPR_12_CFA_PayM_Tablet_Data_filters_options_tariff_and_extras_page_Order_placement.feature">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="37" lean-forward="true" selection-start-line="9" selection-start-column="37" selection-end-line="9" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Features/MayRelease2018/ITFD196/GDPR_CS_PayMSimOnly.feature">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="56" lean-forward="true" selection-start-line="13" selection-start-column="56" selection-end-line="13" selection-end-column="56" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Features/AprilRelease2018/Regression/Reg_CS_FitnessTrackers.feature">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="9" lean-forward="false" selection-start-line="0" selection-start-column="9" selection-end-line="0" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Features/MayRelease2018/ITFD196/GFPR_CS_FitnessTrackers.feature">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="0" lean-forward="true" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Features/AprilRelease2018/Regression/Reg_AFU_PAYM_Dongle_submitOrder.feature">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="47" lean-forward="true" selection-start-line="9" selection-start-column="47" selection-end-line="9" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Features/MayRelease2018/ITFD196/GDPR_43_AFU_PAYM_Dongle_submitOrder.feature">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="47" lean-forward="true" selection-start-line="9" selection-start-column="47" selection-end-line="9" selection-end-column="47" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Features/DecemberRelease2017/Functional/CFD-1819/AFU_SIMO_Promotions_section_in_deal_builder_MULIPLE_promotions_Order_Placement.feature">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="9" lean-forward="false" selection-start-line="0" selection-start-column="9" selection-end-line="0" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Features/MayRelease2018/ITFD196/GDPR_AFU_SIMO_Promotions_section_in_deal_builder_MULIPLE_promotions_Order_Placement.feature">
+    <entry file="file://$PROJECT_DIR$/Features/May#1Release2018/ITFD196/01_CFA_NewConnection_PAYM_Phone_GDPR_Enabled_Refresh_EndUser_MP_OptOut.feature">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="391">
           <caret line="23" column="0" lean-forward="true" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
@@ -1692,78 +1669,159 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Features/MayRelease2018/ITFD196/GDPR_45_AFU_SIMO_Promotions_section_in_deal_builder_MULIPLE_promotions_Order_Placement.feature">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="367">
-          <caret line="27" column="36" lean-forward="false" selection-start-line="27" selection-start-column="36" selection-end-line="27" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Features/AprilRelease2018/Regression/Reg_AFU_PAYM_Dongle_payByCard.feature">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="9" lean-forward="false" selection-start-line="0" selection-start-column="9" selection-end-line="0" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Features/MayRelease2018/ITFD196/GDPR_AFU_PAYM_Dongle_payByCard.feature">
+    <entry file="file://$PROJECT_DIR$/Features/May#1Release2018/ITFD196/02_CFA_NewConnection_PAYM_Tablet_GDPR_Enabled_Refresh_CC_EndUser_MP_OptIn_B1_CP_ALL.feature">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
-          <caret line="16" column="0" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Features/MayRelease2018/ITFD196/GDPR_AFU_PAYM_Dongle_submitOrder.feature">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Features/MayRelease2018/ITFD196/GDPR_47_AFU_PAYM_Dongle_submitOrder.feature">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="31" lean-forward="true" selection-start-line="2" selection-start-column="31" selection-end-line="2" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Features/MayRelease2018/ITFD196/GDPR_48_AFU_PAYM_Dongle_submitOrder.feature">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Features/MayRelease2018/ITFD196/GDPR_49_AFU_PAYM_Dongle_submitOrder.feature">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="35" lean-forward="true" selection-start-line="7" selection-start-column="35" selection-end-line="7" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Features/AprilRelease2018/Regression/Feb_CFU_Buyout_with_Recycle_Order_placement.feature">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <caret line="16" column="78" lean-forward="true" selection-start-line="16" selection-start-column="78" selection-end-line="16" selection-end-column="78" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/steps/E2EOrderPlaced_Steps.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="379">
-          <caret line="992" column="16" lean-forward="false" selection-start-line="992" selection-start-column="16" selection-end-line="992" selection-end-column="16" />
+        <state relative-caret-position="243">
+          <caret line="9341" column="16" lean-forward="false" selection-start-line="9341" selection-start-column="16" selection-end-line="9341" selection-end-column="16" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Features/MayRelease2018/ITFD196/Feb_CFA_Choose_Preferences.feature">
+    <entry file="file://$PROJECT_DIR$/Features/May#1Release2018/Regression/Feb_AFU_eComm_Promotions_and_added_Bolton_Incompatible_error_message_Remove_and_reapply_removed_bolton_Order_Placement.feature">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="319">
+          <caret line="25" column="49" lean-forward="true" selection-start-line="25" selection-start-column="49" selection-end-line="25" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Features/May#1Release2018/ITFD196/19_CFU_Phones_GDPR_Enabled_HomeDelivery_EndUser_Reaffirmed_MP_OptIn_B1_CP_NO.feature">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-157">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Features/May#1Release2018/Regression/Feb_CFA_PayG_FreeSim_Delivery_page_more_than_one_address_select_one_compress_others.feature">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="29" lean-forward="true" selection-start-line="14" selection-start-column="29" selection-end-line="14" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Features/May#1Release2018/Regression/Feb_CFA_Phones_CnC_Delivery_page_Payment_page_more_than_one_address_select_one_compress_others.feature">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" column="0" lean-forward="true" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Features/May#1Release2018/ITFD196/22_CFU_Tablets_GDPR_Enabled_CC_Migrated_Not_EndUser_MP_Suppressed.feature">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="527">
+          <caret line="31" column="0" lean-forward="true" selection-start-line="16" selection-start-column="4" selection-end-line="31" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Features/May#1Release2018/ITFD196/25_CFU_Phones_GDPR_Disabled_Delivery_Page_Home_Delivery_Donot_show_EndUser_Question.feature">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="537">
+          <caret line="39" column="0" lean-forward="true" selection-start-line="33" selection-start-column="4" selection-end-line="39" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Features/May#1Release2018/Regression/Feb_CFU_Tablet_CnC_changes_on_Delivery_page_Order_placement.feature">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="27" column="0" lean-forward="true" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Features/May#1Release2018/ITFD196/20_CFU_Tablets_GDPR_Enabled_HomeDelivery_EndUser_expired_MP_OptIn_B2B4_CP_Text_Post.feature">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" column="78" lean-forward="true" selection-start-line="17" selection-start-column="4" selection-end-line="18" selection-end-column="78" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Features/May#1Release2018/Regression/Feb_CFU_Buyout_with_Recycle_Order_placement.feature">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="435">
+          <caret line="30" column="155" lean-forward="true" selection-start-line="29" selection-start-column="3" selection-end-line="30" selection-end-column="155" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Features/May#1Release2018/Regression/Feb_CFU_Tablet_Delivery_page_more_than_one_address_select_one_compress_others.feature">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="65" lean-forward="true" selection-start-line="9" selection-start-column="65" selection-end-line="9" selection-end-column="65" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Features/May#1Release2018/Regression/Reg_AFA_PayG_withoutAnyAccessory.feature">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="52" lean-forward="true" selection-start-line="9" selection-start-column="52" selection-end-line="9" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Features/May#1Release2018/Regression/Reg_AFA_PAYM_Acquistion.feature">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Features/May#1Release2018/Regression/Reg_AFA_PayMSimO_withoutAnyAccessory.feature">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="55" lean-forward="true" selection-start-line="16" selection-start-column="55" selection-end-line="16" selection-end-column="55" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Features/May#1Release2018/Regression/Reg_AFA_Tablet.feature">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="172" lean-forward="true" selection-start-line="14" selection-start-column="4" selection-end-line="14" selection-end-column="172" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Features/May#1Release2018/Regression/Reg_AFA_verify_Base_Comms_tariff_under_offer_column_order_placement_O2_offer.feature">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="37" lean-forward="true" selection-start-line="12" selection-start-column="37" selection-end-line="12" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Features/May#1Release2018/Regression/Reg_AFU_PAYM_Dongle_payByCard.feature">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="32" lean-forward="true" selection-start-line="12" selection-start-column="32" selection-end-line="12" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Features/May#1Release2018/Regression/Reg_AFU_PAYM_Dongle_submitOrder.feature">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="39" lean-forward="true" selection-start-line="12" selection-start-column="39" selection-end-line="12" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Features/May#1Release2018/Regression/Reg_AFU_SavedBasket.feature">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -1771,34 +1829,178 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Features/MayRelease2018/ITFD196/GDPR_CFA_PayM_Tablet_Data_filters_options_tariff_and_extras_page_Order_placement.feature">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="44" lean-forward="true" selection-start-line="10" selection-start-column="44" selection-end-line="10" selection-end-column="44" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Features/May#1Release2018/ITFD196/GDPR_6_CFA_PayM_Tablet_Data_filters_options_tariff_and_extras_page_Order_placement.feature">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Features/MayRelease2018/ITFD196/GDPR_6_CFA_PayM_Tablet_Data_filters_options_tariff_and_extras_page_Order_placement.feature">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Features/May#1Release2018/ITFD196/GFPR_CS_FitnessTrackers.feature">
+    <entry file="file://$PROJECT_DIR$/Features/May#1Release2018/Regression/Reg_AFU_verify_Base_Comms_tariff_under_offer_column_order_placement_O2_offer.feature">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
-          <caret line="21" column="22" lean-forward="false" selection-start-line="21" selection-start-column="22" selection-end-line="21" selection-end-column="22" />
+          <caret line="21" column="0" lean-forward="true" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Features/May#1Release2018/Regression/Reg_Agent_Buyout.feature">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="38" lean-forward="true" selection-start-line="15" selection-start-column="38" selection-end-line="15" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Features/May#1Release2018/Regression/Reg_Agent_DelayedDelivery.feature">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" column="55" lean-forward="true" selection-start-line="19" selection-start-column="55" selection-end-line="19" selection-end-column="55" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Features/May#1Release2018/Regression/Reg_Agent_GenerateCCA.feature">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="29" column="13" lean-forward="true" selection-start-line="29" selection-start-column="13" selection-end-line="29" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Features/May#1Release2018/Regression/Reg_Agent_PreOrder.feature">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="28" column="0" lean-forward="true" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Features/May#1Release2018/Regression/Reg_Agent_TradeIn.feature">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="38" lean-forward="true" selection-start-line="15" selection-start-column="38" selection-end-line="15" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Features/May#1Release2018/Regression/Reg_CFA_Accessories_Confirmation_Page_changes.feature">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="26" column="0" lean-forward="true" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Features/May#1Release2018/Regression/Reg_CFA_Basket page cross sell insurance.feature">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" column="82" lean-forward="true" selection-start-line="18" selection-start-column="82" selection-end-line="18" selection-end-column="82" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Features/May#1Release2018/Regression/Reg_CFA_Cover_me_copy_update_on_basket_summary.feature">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="33" column="40" lean-forward="true" selection-start-line="33" selection-start-column="40" selection-end-line="33" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Features/May#1Release2018/Regression/Reg_CFA_Basket_page_cross_sell_insurance_no_free_insurance.feature">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" column="0" lean-forward="true" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Features/May#1Release2018/Regression/Reg_CFA_iPad_Show_basecomms_tariffs_on_T&amp;E_page_for_my_offers_journey.feature">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" column="52" lean-forward="false" selection-start-line="19" selection-start-column="52" selection-end-line="19" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Features/May#1Release2018/ITFD196/05_Existing_customer_PAYM_Phone_GDPR_Enabled_Refresh_Homedelivery_EndUser_MP_Optin_ALL_CP_No.feature">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" column="78" lean-forward="true" selection-start-line="18" selection-start-column="4" selection-end-line="18" selection-end-column="78" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Features/May#1Release2018/ITFD196/08_Existing_customer_PAYG_Tablets_Home_Delivery_GDPR_Enabled_Refresh_EndUser_MP_OptOut.feature">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="40" lean-forward="true" selection-start-line="16" selection-start-column="40" selection-end-line="16" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Features/May#1Release2018/ITFD196/11_Existing_Create_Account_PAYM_Phones_GDPR_Enabled_Refresh_CC_EndUser_MP_OptIn_B1B2B4_CP_Text_Post_Phone.feature">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Features/May#1Release2018/ITFD196/13_CFU_SIMO_Phones_Retained_Review_Page_Home_Delivery_GDPR_Enabled_EndUser_MP_OptIn_ALL_CP_ALL.feature">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="24" column="28" lean-forward="false" selection-start-line="24" selection-start-column="28" selection-end-line="24" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Features/May#1Release2018/ITFD196/14_CFU_SIMO_MBB_Reaffirmed_Review_Page_Home_Delivery_GDPR_Enabled_Not_EndUser_MP_Suppressed.feature">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Features/May#1Release2018/ITFD196/15_CFU_Tablets_GDPR_Enabled_CC_EndUser_Complaint_MP_OptOut.feature">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="23" lean-forward="true" selection-start-line="10" selection-start-column="23" selection-end-line="10" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Features/May#1Release2018/ITFD196/16_CFU_Phones_GDPR_Enabled_Home_Delivery_EndUser_Complaint_MP_OptIn_B2_CP_ALL.feature">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-29">
+          <caret line="13" column="44" lean-forward="true" selection-start-line="13" selection-start-column="44" selection-end-line="13" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Features/May#1Release2018/ITFD196/34_AFA_NewConnection_PAYG_Tablets_HomeDelivery_GDPR_Enabled_EndUser_MP_OptIn_B2_CP_ALL.feature">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Features/May#1Release2018/ITFD196/33_AFA_NewConnection_PAYG_Phones_CC_GDPR_Enabled_EndUser_MP_OptIn_B3B4_CP_Email_Phone.feature">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Features/May#1Release2018/ITFD196/32_AFA_NewConnection_PAYM_Phones_Standard_GDPR_Enabled_EndUser_MP_Optin_ALL_CP_No.feature">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="53" lean-forward="true" selection-start-line="12" selection-start-column="4" selection-end-line="12" selection-end-column="53" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Features/May#1Release2018/ITFD291/AFA_Not_Allow_ReferWithSIMO_CreditCheck_Status_For_SIMO_Order_Show_ReferralMessage.feature">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="21" column="0" lean-forward="true" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
           <folding />
         </state>
       </provider>
