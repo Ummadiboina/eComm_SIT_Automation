@@ -115,12 +115,12 @@ public class E2EOrderPlaced_Steps {
     @And("^navigate to PAYM Phones page$")
     public void navigate_to_PAYM_Phones_page() {
         try {
-            driver.manage().timeouts().implicitlyWait(120, TimeUnit.SECONDS);
+            driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
             PageFactory.initElements(driver, MouseHoverPage.class);
 
             MouseHoverAction.PayMPhonesLandingPage();
             Autoredirection.redirect();
-            Thread.sleep(5000);
+            Thread.sleep(6000);
             //GlobalActions.//CommonFunctionscheckTitle("PayM Phones Page");
 
         } catch (Exception e) {
