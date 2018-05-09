@@ -712,6 +712,8 @@ public class Agent_RegisterCustomerActions extends Environment {
 									Agent_RegisterCustomerPage.O2Products.click();
 									System.out.println("O2Products business preference selected");
 									log.debug("O2Products business preference selected");
+								}else{
+									log.debug("O2Products business preference not selected for status NOT");
 								}
 
 								if (BP2.equalsIgnoreCase("Select")) {
@@ -723,6 +725,8 @@ public class Agent_RegisterCustomerActions extends Environment {
 									Agent_RegisterCustomerPage.O2PerksAndExtras.click();
 									System.out.println("O2 Perks And Extras business preference selected");
 									log.debug("O2 Perks And Extras business preference selected");
+								}else{
+									log.debug("O2 Perks And Extras business preference selected for status NOT");
 								}
 
 								if (BP3.equalsIgnoreCase("Select")) {
@@ -734,7 +738,10 @@ public class Agent_RegisterCustomerActions extends Environment {
 									Agent_RegisterCustomerPage.OffersFromO2Partner.click();
 									System.out.println("Offers From O2 Partner business preference selected");
 									log.debug("Offers From O2 Partner business preference selected");
+								}else{
+									log.debug("Offers From O2 Partner business preference selected for status NOT");
 								}
+
 
 								if (BP4.equalsIgnoreCase("Select")) {
 									if (driver.findElements(By.xpath("//div[@data-label='check4']/input")).size() <= 0) {
@@ -745,6 +752,8 @@ public class Agent_RegisterCustomerActions extends Environment {
 									Agent_RegisterCustomerPage.PartnersContacting.click();
 									System.out.println("Partners Contacting business preference selected");
 									log.debug("Partners Contacting business preference selected");
+								}else{
+									log.debug("Partners Contacting business preference selected for status NOT");
 								}
 
 								Thread.sleep(4000);
@@ -831,28 +840,39 @@ public class Agent_RegisterCustomerActions extends Environment {
 									System.out.println("As expected Save My Preference Button is enabled after selecting Channel Preferences");
 									log.debug("As expected Save My Preference Button is enabled after selecting Channel Preferences");
 								} else {
-									System.out.println("Save My Preference Button is disabled after selecting Channel preferences");
-									log.debug("Save My Preference Button is disabled after selecting Channel preferences");
-									Assert.fail("Save My Preference Button is disabled after selecting Channel preferences");
+
+									if(Chn1.equalsIgnoreCase("Select") || Chn2.equalsIgnoreCase("Select") || Chn3.equalsIgnoreCase("Select") || Chn4.equalsIgnoreCase("Select")) {
+										System.out.println("Save My Preference Button is disabled after selecting Channel preferences");
+										log.debug("Save My Preference Button is disabled after selecting Channel preferences");
+										Assert.fail("Save My Preference Button is disabled after selecting Channel preferences");
+									}
 								}
 
 
 								//Skip Preferences button status after selecting business preferences  and channel preferences
 								if (Agent_RegisterCustomerPage.SkipPreference.isEnabled()) {
-									System.out.println("Skip Preferences is enabled after selecting Channel preferences");
-									log.debug("Skip Preferences is enabled after selecting Channel preferences");
-									Assert.fail("Skip Preferences is enabled after selecting Channel preferences");
+									if(Chn1.equalsIgnoreCase("Select") || Chn2.equalsIgnoreCase("Select") || Chn3.equalsIgnoreCase("Select") || Chn4.equalsIgnoreCase("Select")) {
+										System.out.println("Skip Preferences is enabled after selecting Channel preferences");
+										log.debug("Skip Preferences is enabled after selecting Channel preferences");
+										Assert.fail("Skip Preferences is enabled after selecting Channel preferences");
+									}
 
 								} else {
 									System.out.println("Skip Preferences is disabled after selecting Channel preferences");
 									log.debug("Skip Preferences is disabled after selecting Channel preferences");
 								}
 
-								//clicking on Save mY Preferences Button
-								if (Agent_RegisterCustomerPage.SaveMyPreferences.isEnabled()) {
-									Agent_RegisterCustomerPage.SaveMyPreferences.click();
-									System.out.println("Save My Preference button is clicked");
-									log.debug("Save My Preference button is clicked");
+								if((BP1.equalsIgnoreCase("Select") || BP2.equalsIgnoreCase("Select") ||BP3.equalsIgnoreCase("Select") || BP4.equalsIgnoreCase("Select")) && (Chn1.equalsIgnoreCase("Select") || Chn2.equalsIgnoreCase("Select") || Chn3.equalsIgnoreCase("Select") || Chn4.equalsIgnoreCase("Select")) ) {
+
+									//clicking on Save mY Preferences Button
+									if (Agent_RegisterCustomerPage.SaveMyPreferences.isEnabled()) {
+										Agent_RegisterCustomerPage.SaveMyPreferences.click();
+										System.out.println("Save My Preference button is clicked");
+										log.debug("Save My Preference button is clicked");
+									}
+								}else{
+									log.debug("As non of the preference are required to select so, we are clicking on skip preferences CTA");
+									Agent_RegisterCustomerPage.SkipPreference.click();
 								}
 
 
@@ -1218,6 +1238,8 @@ public class Agent_RegisterCustomerActions extends Environment {
 									Agent_RegisterCustomerPage.O2Products.click();
 									System.out.println("O2Products business preference selected");
 									log.debug("O2Products business preference selected");
+								}else{
+									log.debug("O2Products business preference selected for status NOT");
 								}
 
 								if (BP2.equalsIgnoreCase("Select")) {
@@ -1229,6 +1251,8 @@ public class Agent_RegisterCustomerActions extends Environment {
 									Agent_RegisterCustomerPage.O2PerksAndExtras.click();
 									System.out.println("O2 Perks And Extras business preference selected");
 									log.debug("O2 Perks And Extras business preference selected");
+								}else{
+									log.debug("O2 Perks And Extras business preference selected for status NOT");
 								}
 
 								if (BP3.equalsIgnoreCase("Select")) {
@@ -1240,6 +1264,8 @@ public class Agent_RegisterCustomerActions extends Environment {
 									Agent_RegisterCustomerPage.OffersFromO2Partner.click();
 									System.out.println("Offers From O2 Partner business preference selected");
 									log.debug("Offers From O2 Partner business preference selected");
+								}else{
+									log.debug("Offers From O2 Partner business preference selected for status NOT");
 								}
 
 								if (BP4.equalsIgnoreCase("Select")) {
@@ -1251,6 +1277,8 @@ public class Agent_RegisterCustomerActions extends Environment {
 									Agent_RegisterCustomerPage.PartnersContacting.click();
 									System.out.println("Partners Contacting business preference selected");
 									log.debug("Partners Contacting business preference selected");
+								}else{
+									log.debug("Partners Contacting business preference selected for status NOT");
 								}
 
 								Thread.sleep(4000);
@@ -1333,18 +1361,29 @@ public class Agent_RegisterCustomerActions extends Environment {
 									System.out.println("As expected Save My Preference Button is enabled after selecting Channel Preferences");
 									log.debug("As expected Save My Preference Button is enabled after selecting Channel Preferences");
 								} else {
-									System.out.println("Save My Preference Button is disabled after selecting Channel preferences");
-									log.debug("Save My Preference Button is disabled after selecting Channel preferences");
-									Assert.fail("Save My Preference Button is disabled after selecting Channel preferences");
+
+									if(Chn1.equalsIgnoreCase("Select") || Chn2.equalsIgnoreCase("Select") || Chn3.equalsIgnoreCase("Select") || Chn4.equalsIgnoreCase("Select")) {
+										System.out.println("Save My Preference Button is disabled after selecting Channel preferences");
+										log.debug("Save My Preference Button is disabled after selecting Channel preferences");
+										Assert.fail("Save My Preference Button is disabled after selecting Channel preferences");
+									}
 								}
 								Thread.sleep(3000);
 
-								//clicking on Save mY Preferences Button
-								if (Agent_RegisterCustomerPage.SaveMyPreferences.isEnabled()) {
-									Agent_RegisterCustomerPage.SaveMyPreferences.click();
-									System.out.println("Save My Preference button is clicked");
-									log.debug("Save My Preference button is clicked");
+								if((BP1.equalsIgnoreCase("Select") || BP2.equalsIgnoreCase("Select") ||BP3.equalsIgnoreCase("Select") || BP4.equalsIgnoreCase("Select")) && (Chn1.equalsIgnoreCase("Select") || Chn2.equalsIgnoreCase("Select") || Chn3.equalsIgnoreCase("Select") || Chn4.equalsIgnoreCase("Select")) ) {
+
+									//clicking on Save mY Preferences Button
+									if (Agent_RegisterCustomerPage.SaveMyPreferences.isEnabled()) {
+										Agent_RegisterCustomerPage.SaveMyPreferences.click();
+										System.out.println("Save My Preference button is clicked");
+										log.debug("Save My Preference button is clicked");
+									}
+								}else{
+									log.debug("As non of the preference are required to select so, we are clicking on skip preferences CTA");
+									Agent_RegisterCustomerPage.SkipPreference.click();
 								}
+
+
 
 
 								//Save My Preference Text Message

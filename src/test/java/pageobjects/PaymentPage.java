@@ -76,7 +76,7 @@ public class PaymentPage {
     @FindBy(how = How.ID, using = "btnPayNow")
     public static WebElement Continue_Next_Step;
 
-    @FindBy(how = How.XPATH, using = "//input[@type='submit]")
+    @FindBy(how = How.XPATH, using = "//input[@name='UsernamePasswordEntry']")
     public static WebElement Submit_Next_Step;
 
     @FindBy(how = How.XPATH, using = "//input[@type='password']")
