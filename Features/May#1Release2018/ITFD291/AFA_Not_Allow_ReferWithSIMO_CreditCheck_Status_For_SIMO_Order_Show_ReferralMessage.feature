@@ -16,5 +16,5 @@ Feature: AFA_Not_Allow_ReferWithSIMO_Credit_Check_Status_For_SIMO_Order_And_Show
 
 
     Examples:
-      | Device | Tariff | DeliveryType | Firstname | Surname | Username    | HouseNumber | PostCode | B1     | B2  | B3     | B4     | Text   | Email  | Phone | Post | Consumer     | status  | MBBStatus | DeviceType |
-      | iphone | SimO   | HomeDelivery | TEST      | referc  | Test Referc | 6           | SL11ER   | Select | Not | Select | Select | Select | Select | Not   | Not  | SomeOne else | Enabled | No        | Connected  |
+      | Device     | Tariff | DeliveryType | Firstname | Surname | Username    | HouseNumber | PostCode | B1     | B2  | B3     | B4     | Text   | Email  | Phone | Post | Consumer     | status  | MBBStatus | DeviceType |
+      | Samsung s9 | SimO   | HomeDelivery | TEST      | referc  | Test Referc | 6           | SL11ER   | Select | Not | Select | Select | Select | Select | Not   | Not  | SomeOne else | Enabled | No        | Connected  |

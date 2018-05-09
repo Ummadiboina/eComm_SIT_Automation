@@ -120,7 +120,7 @@ public class E2EOrderPlaced_Steps {
 
             MouseHoverAction.PayMPhonesLandingPage();
             Autoredirection.redirect();
-            Thread.sleep(10000);
+            Thread.sleep(5000);
             //GlobalActions.//CommonFunctionscheckTitle("PayM Phones Page");
 
         } catch (Exception e) {
@@ -1382,7 +1382,7 @@ public class E2EOrderPlaced_Steps {
             PaymentPageActions.Time_At_Address();
             Thread.sleep(10000);
             PaymentPageActions.Card_Details(Username);
-            Thread.sleep(75000);
+            Thread.sleep(10000);
             PaymentPageActions.Card_Details_CCV();
 
 
