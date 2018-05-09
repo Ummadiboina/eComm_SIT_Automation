@@ -164,12 +164,17 @@ public class PaymentPageActions extends Environment {
 
     }
     public static void Card_Details_CCV() throws InterruptedException {
-        Thread.sleep(4000);
 
+        driver.switchTo().frame("payment-iframe");
+        Thread.sleep(5000);
         if (driver.findElements(By.xpath("//input[@type='password']")).size() > 0) {
             PaymentPage.CCVSecurityCode.sendKeys("1234");
             log.debug("Entered CVV security code");
-            PaymentPage.Submit_Next_Step.click();
+            Thread.sleep(3000);
+
+            JavascriptExecutor executor = (JavascriptExecutor)driver;
+            executor.executeScript("arguments[0].click();", PaymentPage.Submit_Next_Step);
+            //PaymentPage.Submit_Next_Step.click();
             log.debug("Clicking on submit to next step");
             Thread.sleep(10000);
         }

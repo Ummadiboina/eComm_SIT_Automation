@@ -23,7 +23,7 @@ Feature: 29_AFA_NewConnection_PAYM_Phone_Refresh_CCA_GDPR_Enabled_EndUser_SECCI 
     And Click on 'Generate CCA' button
     Then CCALink Should be generated
     And click on the 'CCA' link
-    And Signin using valid <username> and <password> credentials
+    And Signin using valid <username> and <password> credentials for New User
     And Click on 'Continue' button on upgrade page
     And Is this order for You or Someone else <consumer> when GDPR is <status2>
     And land on the payment page and input <Username> and other details and click 'Continue on next step' in upgrade journey

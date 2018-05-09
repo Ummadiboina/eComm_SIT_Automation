@@ -7,6 +7,7 @@ Feature: AFA_Not_Allow_ReferWithSIMO_Credit_Check_Status_For_SIMO_Order_And_Show
     And performs Acquisition for New user
     And Select a valid PayM <Device>
     And Select valid <Tariff> from tariffs tab
+    And select a valid Handset and Tariff combination
     And Validate all the Basket content and checkout
     Then perform all the advisory checks
     And perform the credit checks using valid <Firstname>, <Surname>, <HouseNumber>, <PostCode> and valid <Username>
@@ -16,5 +17,5 @@ Feature: AFA_Not_Allow_ReferWithSIMO_Credit_Check_Status_For_SIMO_Order_And_Show
 
 
     Examples:
-      | Device     | Tariff | DeliveryType | Firstname | Surname | Username    | HouseNumber | PostCode | B1     | B2  | B3     | B4     | Text   | Email  | Phone | Post | Consumer     | status  | MBBStatus | DeviceType |
-      | Samsung s9 | SimO   | HomeDelivery | TEST      | referc  | Test Referc | 6           | SL11ER   | Select | Not | Select | Select | Select | Select | Not   | Not  | SomeOne else | Enabled | No        | Connected  |
+      | Device | Tariff  | DeliveryType | Firstname | Surname | Username    | HouseNumber | PostCode | B1     | B2  | B3     | B4     | Text   | Email  | Phone | Post | Consumer     | status  | MBBStatus | DeviceType |
+      | iphone | Refresh | HomeDelivery | TEST      | referc  | Test Referc | 6           | SL11ER   | Select | Not | Select | Select | Select | Select | Not   | Not  | SomeOne else | Enabled | No        | Connected  |
