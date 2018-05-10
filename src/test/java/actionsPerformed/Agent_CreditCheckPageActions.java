@@ -230,12 +230,15 @@ public class Agent_CreditCheckPageActions extends Environment {
 			/*
 			String address = Agent_CreditCheckDetailsPage.Address.getText();
 			log.debug("Address is:: ");
-
+*/
 
 			Thread.sleep(2000);
-			Agent_CreditCheckDetailsPage.ContactNumber.sendKeys("07888594958");
-			log.debug("Entered contact number");
-			*/
+			String num = Agent_CreditCheckDetailsPage.ContactNumber.getText();
+			if(num.isEmpty() ) {
+				Agent_CreditCheckDetailsPage.ContactNumber.sendKeys("07888594958");
+				log.debug("Entered contact number");
+			}
+
 
 
 			Agent_CreditCheckDetailsPage.YearsatAddress.sendKeys("09");

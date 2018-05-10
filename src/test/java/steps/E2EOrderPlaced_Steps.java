@@ -155,7 +155,7 @@ public class E2EOrderPlaced_Steps {
             PageFactory.initElements(driver, MouseHoverPage.class);
             MouseHoverAction.PayMMBBPage();
             Autoredirection.redirect();
-            Thread.sleep(10000);
+            Thread.sleep(4000);
             //GlobalActions.//CommonFunctionscheckTitle("PayM MBB Page");
         } catch (Exception e) {
             // TODO Auto-generated catch block
@@ -2445,7 +2445,7 @@ public class E2EOrderPlaced_Steps {
             PageFactory.initElements(driver, Agent_CreditCheckDetailsPage.class);
             Agent_CreditCheckPageActions.BankDetails(Username);
             log.debug("Completed Bank details");
-            Thread.sleep(5000);
+            Thread.sleep(10000);
 
         } catch (Exception e) {
             // TODO Auto-generated catch block
@@ -2546,6 +2546,7 @@ public class E2EOrderPlaced_Steps {
         try {
             PageFactory.initElements(driver, Agent_RegisterCustomerPage.class);
             Agent_RegisterCustomerActions.PaybyCard();
+            Thread.sleep(15000);
             Agent_RegisterCustomerActions.CardDetails();
         } catch (Exception e) {
             // TODO Auto-generated catch block
@@ -2576,6 +2577,7 @@ public class E2EOrderPlaced_Steps {
         driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
         try {
             PageFactory.initElements(driver, Agent_RegisterCustomerPage.class);
+            Thread.sleep(15000);
             Agent_RegisterCustomerActions.PaybyCard_new();
             Thread.sleep(15000);
             Agent_RegisterCustomerActions.CardDetails_PayM();

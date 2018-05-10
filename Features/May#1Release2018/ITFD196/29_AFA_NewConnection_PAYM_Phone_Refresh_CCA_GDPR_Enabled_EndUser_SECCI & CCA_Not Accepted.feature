@@ -19,7 +19,7 @@ Feature: 29_AFA_NewConnection_PAYM_Phone_Refresh_CCA_GDPR_Enabled_EndUser_SECCI 
     And Choose Business preferences <B1> <B2> <B3> <B4> and Channel Preferences <Text> <Email> <Phone> <Post> for <Consumer> when GDPR <status> <DeviceType> for AFA journey
     And Choose <DeliveryType> delivery address and delivery time
     And Update Device Plan Link Email Address
-    And Accept O2 Refresh Deal Summary
+    #And Accept O2 Refresh Deal Summary
     And Click on 'Generate CCA' button
     Then CCALink Should be generated
     And click on the 'CCA' link

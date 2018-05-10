@@ -18,7 +18,7 @@ Feature: 39_Agent_Existing_CCA_Tablets_Refresh_HomeDelivery_GDPR_Enabled_EndUser
     And validate the Personal details for Agent Existing customer and Enter time at current Address
     And perform the credit checks for Agent Existing <Username> by Bank details
     And Update Device Plan Link Email Address
-    And Accept O2 Refresh Deal Summary
+    #And Accept O2 Refresh Deal Summary
     And Click on 'Generate CCA' button
     And click on the 'CCA' link
     And Signin using valid <username> and <password> credentials for New User

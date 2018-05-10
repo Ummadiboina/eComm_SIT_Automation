@@ -110,7 +110,7 @@ public class Agent_RegisterCustomerPage {
 	public static WebElement SecurityCode;
 */
 
-    @FindBy(how = How.XPATH, using = "//input[@id='CardHolderName']")
+    @FindBy(how = How.XPATH, using = "//input[@id='CardHolderName' or @id='txtCardHolderName']")
     public static WebElement CardHolderName;
 
     @FindBy(how = How.XPATH, using = "//*[@id='ddlCardType' or @id='CardType']")
@@ -122,11 +122,11 @@ public class Agent_RegisterCustomerPage {
     @FindBy(how = How.XPATH, using = "//*[@id='ddlMonth' or @id='Month']")
     public static WebElement CardMonth;
 
-    @FindBy(how = How.XPATH, using = "//*[@id='ddlYear' or @id='Year']")
+    @FindBy(how = How.XPATH, using = "//*[@id='ddlYear' or @id='ddlYr']")
     public static WebElement CardYear;
 
     ////label[normalize-space()='Security number']/following-sibling::input
-    @FindBy(how = How.XPATH, using = "//*[@id='txtCardSecurityCode' or @id='CardCvv']")
+    @FindBy(how = How.XPATH, using = "//*[@id='txtCardSecurityCode' or @id='CardCvv' or @id='txtSecurityCode']")
     public static WebElement SecurityCode;
 
 

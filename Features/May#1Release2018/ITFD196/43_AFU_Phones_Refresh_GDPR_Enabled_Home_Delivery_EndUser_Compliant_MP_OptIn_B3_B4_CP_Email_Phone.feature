@@ -21,4 +21,4 @@ Feature: 43_AFU_Phones_Refresh_GDPR_Enabled_Home_Delivery_EndUser_Compliant_MP_O
 
     Examples:
       | user        | Device | Tariffs | consumer | B1  | B2  | B3     | B4  | Text | Email  | Phone | Post   | Consumer | status  | MBBStatus | DeviceType |
-      | 07568410379 | phone  | Random  | Me       | Not | Not | Select | Not | Not  | Select | Not   | Select | Me       | Enabled | No        | Connected  |
+      | 07521000051 | phone  | Random  | Me       | Not | Not | Select | Not | Not  | Select | Not   | Select | Me       | Enabled | No        | Connected  |
