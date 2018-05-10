@@ -62,6 +62,8 @@ public class MobileBroadBandPageActions extends Environment {
 			// Assert.assertEquals(elementName,"Galaxy S7 is not found");
 			log.debug("Huawei 4G Dongle With Wifi Device Selected");
 
+		} else{
+			pageobjects.MobileBroadBandPage.RandomPayGDeviceSelect.click();
 		}
 		Screenshots.captureScreenshot();
 

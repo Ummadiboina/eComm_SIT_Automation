@@ -129,7 +129,7 @@ public class TabletPageActions extends Environment {
 		}
 		Thread.sleep(5000);
 		if (elementName.contains("Samsung Galaxy Tab A 2016 10.1")) {
-			Thread.sleep(10000);
+			Thread.sleep(3000);
 			if(driver.findElements(By.xpath("//a[contains(@href, '/shop/tablets/apple/ipad-pro-12.9-inch/#contractType=paymonthly')]")).size() > 0) {
 
 				JavascriptExecutor executor = (JavascriptExecutor)driver;

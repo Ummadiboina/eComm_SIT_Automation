@@ -1,0 +1,24 @@
+Feature: 48_AFU_Phones_Refresh_GDPR_Enabled_Home_Delivery_EndUser_Migrated_MP_OptIn_AL_CP_ALL
+
+  This Scenario ensures that when the Agent in Upgrade journey with Migrated consent status selects 'MBB' with Click and collect placed an order by opting of Marketing preference 'ALL' and CP 'ALL',
+  then the Order consent profile should be created in CMT as expected
+
+  #launch hooks and get browser
+  @Web
+  Scenario Outline: 48_AFU_Phones_Refresh_GDPR_Enabled_Home_Delivery_EndUser_Migrated_MP_OptIn_AL_CP_ALL
+    Given I login to Agent shop
+    #And performs Acquisition for New user
+    And performs Upgrade for <user>
+    And Select a valid PayM <Device>
+    And Select valid <Tariffs> from tariffs tab
+    And select a valid Handset and Tariff combination
+    And Validate all the Basket content and checkout
+    And Choose Business preferences <B1> <B2> <B3> <B4> and Channel Preferences <Text> <Email> <Phone> <Post> for <consumer> when GDPR <status> <DeviceType> for AFU journey
+    Then perform all the advisory checks
+    #When submit order button is clicked
+    When Pay by card
+    Then Order confirmation message should be displayed
+
+    Examples:
+      | user        | Device | Tariffs | consumer | B1     | B2     | B3     | B4  | Text   | Email  | Phone  | Post   | status  | MBBStatus | DeviceType |
+      | 07568410926 | Phones | Random  | Me       | Select | Select | Select | Not | Select | Select | Select | Select | Enabled | No        | Connected  |

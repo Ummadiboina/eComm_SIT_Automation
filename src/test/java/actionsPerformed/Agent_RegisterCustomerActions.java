@@ -162,10 +162,11 @@ public class Agent_RegisterCustomerActions extends Environment {
 		} else {
 
 			driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-			Thread.sleep(5000);
+
 			log.debug("Pay by card button is enabled ");
 			Thread.sleep(5000);
 			Agent_RegisterCustomerPage.PayByCard.click();
+			Thread.sleep(5000);
 			log.debug("Clicked on pay by card ");
 
 		}
@@ -174,11 +175,9 @@ public class Agent_RegisterCustomerActions extends Environment {
 
 	public static void PaybyCard_new() throws InterruptedException {
 
-
 			driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-
 			log.debug("Pay by card button is enabled ");
-			Thread.sleep(15000);
+			Thread.sleep(10000);
 			Agent_RegisterCustomerPage.PayByCard.click();
 			log.debug("Clicked on pay by card ");
 			Thread.sleep(5000);
@@ -186,7 +185,7 @@ public class Agent_RegisterCustomerActions extends Environment {
 
 	public static void CardDetails_PayM() throws InterruptedException {
 
-		driver.manage().timeouts().implicitlyWait(15,TimeUnit.SECONDS);
+		//driver.manage().timeouts().implicitlyWait(15,TimeUnit.SECONDS);
 		log.debug("Mipay bit : ");
 		Thread.sleep(10000);
 		//driver.findElements(By.xpath("//label[contains(text(),'Card ending with:')]")).size();
@@ -227,9 +226,9 @@ public class Agent_RegisterCustomerActions extends Environment {
 	}
 
 	public static void CardDetails() throws InterruptedException {
-		Thread.sleep(7000);
-
-		if (driver.findElements(By.xpath("CardHolderName")).size() >= 1) {
+		//Thread.sleep(15000);
+		driver.manage().timeouts().implicitlyWait(20,TimeUnit.SECONDS);
+		if (driver.findElements(By.xpath("//input[@id='CardHolderName' or @id='txtCardHolderName']")).size() >= 1) {
 			Agent_RegisterCustomerPage.CardHolderName.sendKeys("TEST ACCEPTA");
 			System.out.println("Card holder name ");
 			Select CardTypeDropDown = new Select(pageobjects.Agent_RegisterCustomerPage.CardType);
@@ -1306,9 +1305,11 @@ public class Agent_RegisterCustomerActions extends Environment {
 									System.out.println("Channel preferences is displaying after selecting business preferences");
 									log.debug("Channel preferences is displaying after selecting business preferences");
 								}else{
-									System.out.println("Channel preferences is not displaying after selecting business preferences");
-									log.debug("Channel preferences is not displaying after selecting business preferences");
-									Assert.fail("Channel preferences is not displaying after selecting business preferences");
+									if(Chn1.equalsIgnoreCase("Select") || Chn2.equalsIgnoreCase("Select") || Chn3.equalsIgnoreCase("Select") || Chn4.equalsIgnoreCase("Select")) {
+										System.out.println("Channel preferences is not displaying after selecting business preferences");
+										log.debug("Channel preferences is not displaying after selecting business preferences");
+										Assert.fail("Channel preferences is not displaying after selecting business preferences");
+									}
 								}
 								Thread.sleep(3000);
 								//Selecting Channel preferences
@@ -1379,8 +1380,9 @@ public class Agent_RegisterCustomerActions extends Environment {
 										log.debug("Save My Preference button is clicked");
 									}
 								}else{
-									log.debug("As non of the preference are required to select so, we are clicking on skip preferences CTA");
-									Agent_RegisterCustomerPage.SkipPreference.click();
+									log.debug("As non of the preference are required to select so, we are clicking on save preferences CTA");
+									Agent_RegisterCustomerPage.SaveMyPreferences.click();
+									//Agent_RegisterCustomerPage.SkipPreference.click();
 								}
 
 

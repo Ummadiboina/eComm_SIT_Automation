@@ -45,6 +45,9 @@ public class MouseHoverPage extends Environment {
 	@FindBy(how = How.XPATH, using = ("//li[@class='has-submenu']//a[normalize-space()='Sims']"))
 	public static WebElement MoveMouseOnSims;
 
+	@FindBy(how = How.XPATH, using = ("//li[contains(@class,'tier-menu-wrapper')]//li/a[text()='Pay Monthly sims']"))
+	public static WebElement MoveMouseOnSims_paym_Drupal;
+
 	@FindBy(how = How.XPATH, using = ("//li[contains(@class,'tier-menu-wrapper')]//a[normalize-space()='Pay As You Go sims']"))
 	public static WebElement MoveMouseOnSims_Drupal;
 
@@ -126,7 +129,7 @@ public class MouseHoverPage extends Environment {
 	@FindBy(how = How.XPATH, using = ("//a[contains(text(), 'Mobile broadband')]"))
 	public static WebElement MoveMouseOnMobileBroadband;
 
-	@FindBy(how = How.XPATH, using = ("//li[contains(@class,'tier-menu-wrapper')]//*[normalize-space()='Browse dongles']"))
+	@FindBy(how = How.XPATH, using = ("//li[contains(@class,'tier-menu-wrapper')]//li/a[text()='Browse dongles']"))
 	public static WebElement MoveMouseOnMobileBroadband_Drupal;
 
 	// Below will click on the Pay as you Go Link under MobileBroadband tab
