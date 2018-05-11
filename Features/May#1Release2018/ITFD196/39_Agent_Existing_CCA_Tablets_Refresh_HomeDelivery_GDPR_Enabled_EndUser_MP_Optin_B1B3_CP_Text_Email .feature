@@ -31,7 +31,7 @@ Feature: 39_Agent_Existing_CCA_Tablets_Refresh_HomeDelivery_GDPR_Enabled_EndUser
     Then Choose <consumer> <status> Business preferences <B1> <B2> <B3> <B4> And Channel Preferences <Text> <Email> <Phone> <Post> <MBBStatus> <DeviceType>
 
     Examples:
-      | user        | Device              | Tariffs | username | password | Username     | HouseNumber | PostCode | Password | confirmPassword | SecurityAnswer | B1     | B2  | B3     | B4  | Text   | Email  | Phone | Post | Consumer | status2  | status  | consumer | MBBStatus | DeviceType |
-      | 07521114788 | Galaxy S8 Plus 64GB | Refresh |          | test123  | TEST ACCEPTA | 14          | SL11UP   | test1234 | test1234        | vinudeep       | Select | Not | Select | Not | Select | Select | Not   | Not  | Me       | Disabled | Enabled | Me       | No        | Connected  |
+      | user        | Device | Tariffs | username | password | Username     | HouseNumber | PostCode | Password | confirmPassword | SecurityAnswer | B1     | B2  | B3     | B4  | Text   | Email  | Phone | Post | Consumer | status2  | status  | consumer | MBBStatus | DeviceType |
+      | 07521114788 | Tab    | Refresh |          | test123  | TEST ACCEPTA | 14          | SL11UP   | test1234 | test1234        | vinudeep       | Select | Not | Select | Not | Select | Select | Not   | Not  | Me       | Disabled | Enabled | Me       | No        | Connected  |
 
 
