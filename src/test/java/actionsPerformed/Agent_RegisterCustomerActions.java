@@ -274,8 +274,10 @@ public class Agent_RegisterCustomerActions extends Environment {
 		Agent_RegisterCustomerPage.Security_Answer.sendKeys(Security_Answer);
 		log.debug("Entered Security Answer");
 
-		//Agent_RegisterCustomerPage.Check_box.click();
-		//log.debug("Selected the TC checkbox");
+		if(driver.findElements(By.id("marketingRequired")).size()>0) {
+			Agent_RegisterCustomerPage.Check_box.click();
+			log.debug("Selected the TC checkbox");
+		}
 
 		Agent_RegisterCustomerPage.registerCustomer.click();
 		Thread.sleep(6000);
@@ -1380,7 +1382,7 @@ public class Agent_RegisterCustomerActions extends Environment {
 									}
 								}else{
 									log.debug("As non of the preference are required to select so, we are clicking on skip preferences CTA");
-									Agent_RegisterCustomerPage.SkipPreference.click();
+									Agent_RegisterCustomerPage.SaveMyPreferences.click();
 								}
 
 
