@@ -115,12 +115,12 @@ public class E2EOrderPlaced_Steps {
     @And("^navigate to PAYM Phones page$")
     public void navigate_to_PAYM_Phones_page() {
         try {
-            driver.manage().timeouts().implicitlyWait(120, TimeUnit.SECONDS);
+            driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
             PageFactory.initElements(driver, MouseHoverPage.class);
 
             MouseHoverAction.PayMPhonesLandingPage();
             Autoredirection.redirect();
-            Thread.sleep(10000);
+            Thread.sleep(6000);
             //GlobalActions.//CommonFunctionscheckTitle("PayM Phones Page");
 
         } catch (Exception e) {
@@ -155,7 +155,7 @@ public class E2EOrderPlaced_Steps {
             PageFactory.initElements(driver, MouseHoverPage.class);
             MouseHoverAction.PayMMBBPage();
             Autoredirection.redirect();
-            Thread.sleep(10000);
+            Thread.sleep(4000);
             //GlobalActions.//CommonFunctionscheckTitle("PayM MBB Page");
         } catch (Exception e) {
             // TODO Auto-generated catch block
@@ -170,7 +170,7 @@ public class E2EOrderPlaced_Steps {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, MouseHoverPage.class);
             MouseHoverAction.AccessoriesLandingPage();
-            //Autoredirection.redirect();
+            Autoredirection.redirect();
             Thread.sleep(10000);
             //GlobalActions.//CommonFunctionscheckTitle("Accessories");
         } catch (Exception e) {
@@ -417,7 +417,7 @@ public class E2EOrderPlaced_Steps {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, ConnectedDeviceDetailsPage.class);
             ConnectedDeviceDetailsPageAction.GetTitle();
-            Thread.sleep(2000);
+            Thread.sleep(5000);
             ConnectedDeviceDetailsPageAction.ViewAllTariffs();
         } catch (Exception e) {
             // TODO Auto-generated catch block
@@ -626,7 +626,23 @@ public class E2EOrderPlaced_Steps {
         try {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, UpgradeCustomerPage.class);
+
             UpgradeCustomerPageActions.Login(username, password);
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+            log.debug("Unable to signin using credentials");
+            Assert.fail("Unable to signin using credentials");
+
+        }
+    }
+
+    @Given("^Signin using valid ([^\"]*) and ([^\"]*) credentials for New User$")
+    public void signin_using_valid_ink_jun_and_test_credentials_New(String username, String password) {
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, UpgradeCustomerPage.class);
+            UpgradeCustomerPageActions.Login(Agent_CreditCheckPageActions.emailAdd, password);
         } catch (Exception e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
@@ -978,7 +994,7 @@ public class E2EOrderPlaced_Steps {
             DeliveryPageActions.SetDelivery();
             DeliveryPageActions.AboutYou(Firstname, Surname);
             DeliveryPageActions.ClickContinue();
-          //  DeliveryPageActions.clickOnSubmitBtn();
+            //  DeliveryPageActions.clickOnSubmitBtn();
         } catch (Exception e) {
             // TODO Auto-generated catch block
             log.debug("Unable to input details in delivery page");
@@ -997,8 +1013,8 @@ public class E2EOrderPlaced_Steps {
             //CommonFunctionscheckTitle("Delivery Page");
             DeliveryPageActions.SetDelivery();
             DeliveryPageActions.AboutYou(Firstname, Surname);
-           // DeliveryPageActions.ClickContinue();
-             //DeliveryPageActions.clickOnSubmitBtn();
+            // DeliveryPageActions.ClickContinue();
+            //DeliveryPageActions.clickOnSubmitBtn();
         } catch (Exception e) {
             // TODO Auto-generated catch block
             log.debug("Unable to input details in delivery page");
@@ -1014,7 +1030,7 @@ public class E2EOrderPlaced_Steps {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, DeliveryPage.class);
             //CommonFunctionscheckTitle("Delivery Page");
-          //  DeliveryPageActions.SetDelivery();
+            //  DeliveryPageActions.SetDelivery();
             DeliveryPageActions.AboutYou(Firstname, Surname);
             // DeliveryPageActions.ClickContinue();
             //DeliveryPageActions.clickOnSubmitBtn();
@@ -1382,7 +1398,10 @@ public class E2EOrderPlaced_Steps {
             PaymentPageActions.Time_At_Address();
             Thread.sleep(10000);
             PaymentPageActions.Card_Details(Username);
-            Thread.sleep(75000);
+            Thread.sleep(10000);
+            PaymentPageActions.Card_Details_CCV();
+
+
         } catch (Exception e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
@@ -1657,7 +1676,7 @@ public class E2EOrderPlaced_Steps {
             Thread.sleep(5000);
             AgreementPageActions.KeyInformation();
             Thread.sleep(5000);
-           // AgreementPageActions.secciSection();
+            // AgreementPageActions.secciSection();
             //Thread.sleep(5000);
             //AgreementPageActions.PayMMobileAgreement();
             //Thread.sleep(5000);
@@ -2256,6 +2275,21 @@ public class E2EOrderPlaced_Steps {
 
     }
 
+    @And("^Select a pay as you go data roll over ([^\"]*) and validate Data Roll over copy for ([^\"]*) and ([^\"]*)$")
+    public void selectAPayAsYouGoBundleHavingDataRollOver(String FreeSim_Type, String Tariff_Value, String Big_Bundle_Data) {
+        try {
+            log.debug("in selecting pay as you go Simo");
+            driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, PAYGSimoPage.class);
+            Thread.sleep(3000);
+            PAYGSimOPageActions.selectTariff(FreeSim_Type, "DataRollOver", Tariff_Value+"|"+Big_Bundle_Data);
+            Thread.sleep(5000);
+        } catch (Exception e) {
+            log.debug(e.getMessage());
+
+        }
+
+    }
 
 	/*
 	 * #########################################################################
@@ -2283,7 +2317,7 @@ public class E2EOrderPlaced_Steps {
         }
     }
 
-   @And("^Validate all the Basket contents$")
+    @And("^Validate all the Basket contents$")
     public void validate_all_the_Basket_contents() {
         try {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
@@ -2297,6 +2331,24 @@ public class E2EOrderPlaced_Steps {
             Assert.fail("Unable to validate basket content/checkout , please see the failure screenshot");
 
         }
+    }
+
+    @And("^Validate Your order section in Delivery page$")
+    public void validateYourOrderSectionDeliveryPage(String plnList) {
+
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, DeliveryPage.class);
+            Thread.sleep(3000);
+            DeliveryPageActions.validateYourOrderSection("DataRollOver", expPlnList);
+            Thread.sleep(7000);
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            log.debug("Unable to validate Your order section in delivery page , please see the failure screenshot");
+            Assert.fail("Unable to validate Your order section in delivery page , please see the failure screenshot");
+
+        }
+
     }
     /*
 	 * #########################################################################
@@ -2393,7 +2445,7 @@ public class E2EOrderPlaced_Steps {
             PageFactory.initElements(driver, Agent_CreditCheckDetailsPage.class);
             Agent_CreditCheckPageActions.BankDetails(Username);
             log.debug("Completed Bank details");
-            Thread.sleep(5000);
+            Thread.sleep(10000);
 
         } catch (Exception e) {
             // TODO Auto-generated catch block
@@ -2494,6 +2546,7 @@ public class E2EOrderPlaced_Steps {
         try {
             PageFactory.initElements(driver, Agent_RegisterCustomerPage.class);
             Agent_RegisterCustomerActions.PaybyCard();
+            Thread.sleep(15000);
             Agent_RegisterCustomerActions.CardDetails();
         } catch (Exception e) {
             // TODO Auto-generated catch block
@@ -2509,6 +2562,7 @@ public class E2EOrderPlaced_Steps {
         try {
             PageFactory.initElements(driver, Agent_RegisterCustomerPage.class);
             Agent_RegisterCustomerActions.PaybyCard();
+            Thread.sleep(15000);
             Agent_RegisterCustomerActions.CardDetails_PayM();
         } catch (Exception e) {
             // TODO Auto-generated catch block
@@ -2517,6 +2571,25 @@ public class E2EOrderPlaced_Steps {
 
         }
     }
+
+    @When("^Pay by card for PAYM device for Existing customer$")
+    public void pay_by_card_payn_device_new() {
+        driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
+        try {
+            PageFactory.initElements(driver, Agent_RegisterCustomerPage.class);
+            Thread.sleep(15000);
+            Agent_RegisterCustomerActions.PaybyCard_new();
+            Thread.sleep(15000);
+            Agent_RegisterCustomerActions.CardDetails_PayM();
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            log.debug("Unable to Pay by card , please see the failure screenshot");
+            Assert.fail("Unable to Pay by card , please see the failure screenshot");
+
+        }
+    }
+
+
 
 	/*
 	 * #########################################################################
@@ -2997,7 +3070,7 @@ public class E2EOrderPlaced_Steps {
             Thread.sleep(2000);
             DeliveryPageActions.AboutYou(Firstname, Surname);
             Thread.sleep(2000);
-             DeliveryPageActions.ClickContinue();
+            DeliveryPageActions.ClickContinue();
             // DeliveryPageActions.clickOnSubmitBtn();
         } catch (Exception e) {
             // TODO Auto-generated catch block
@@ -3296,6 +3369,7 @@ public class E2EOrderPlaced_Steps {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, TabletPage.class);
             TabletPageActions.DeviceSelect(arg1);
+
         } catch (Exception e) {
             e.printStackTrace();
             log.debug("Unable to select tablet");
@@ -5993,6 +6067,7 @@ public class E2EOrderPlaced_Steps {
         // try {
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         PageFactory.initElements(driver, MouseHoverPage.class);
+        Thread.sleep(10000);
         MouseHoverAction.PayGSimoNavigation();
         Autoredirection.redirect();
         Thread.sleep(10000);
@@ -6031,7 +6106,9 @@ public class E2EOrderPlaced_Steps {
             PageFactory.initElements(driver, DeliveryPage.class);
             DeliveryPageActions.SetDelivery();
             FreeSimDeliveryPageActions.FreeSimAboutYou(Firstname, Surname);
+            Thread.sleep(3000);
             FreeSimDeliveryPageActions.marketingMessageCheckBox(CheckBox);
+            Thread.sleep(3000);
             FreeSimDeliveryPageActions.ClickSendMeMySim();
 
         } catch (Exception e) {
@@ -9490,13 +9567,13 @@ public class E2EOrderPlaced_Steps {
         }
     }
 
-//GDPR
+    //GDPR
     @And("^Is this order for You or Someone else ([^\"]*) when GDPR is ([^\"]*)$")
     public void isThisOrder4UorSomeoneElse(String customer, String status) {
         try {
             driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
             PageFactory.initElements(driver, DeliveryPage.class);
-           // Agent_DealBuilderPageActions.verifyDevive_and_CopyClipboard_Btn();
+            // Agent_DealBuilderPageActions.verifyDevive_and_CopyClipboard_Btn();
             DeliveryPageActions.clickOnSubmitBtn(customer, status);
             Thread.sleep(5000);
         } catch (InterruptedException e) {
@@ -9525,13 +9602,14 @@ public class E2EOrderPlaced_Steps {
     }
 
     //GDPR preferences section for AFA  --- JamalKhan
-    @Then("^Choose Business preferences ([^\"]*) ([^\"]*) ([^\"]*) ([^\"]*) and Channel Preferences ([^\"]*) ([^\"]*) ([^\"]*) ([^\"]*) for ([^\"]*) when GDPR ([^\"]*) ([^\"]*) ([^\"]*)$")
-    public void Choose_Your_Preferences_AFA(String BP1, String BP2, String BP3, String BP4, String Chn1, String Chn2, String Chn3, String Chn4, String customer, String status,String MBBStatus, String DeviceType) {
+    @Then("^Choose Business preferences ([^\"]*) ([^\"]*) ([^\"]*) ([^\"]*) and Channel Preferences ([^\"]*) ([^\"]*) ([^\"]*) ([^\"]*) for ([^\"]*) when GDPR ([^\"]*) ([^\"]*) for AFA journey$")
+    public void Choose_Your_Preferences_AFA(String BP1, String BP2, String BP3, String BP4, String Chn1, String Chn2, String Chn3, String Chn4, String customer, String status, String DeviceType) {
         // Write code here that turns the phrase above into concrete actions
         try {
             driver.manage().timeouts().implicitlyWait(200, TimeUnit.SECONDS);
             PageFactory.initElements(driver, Agent_RegisterCustomerPage.class);
-            Agent_RegisterCustomerActions.PreferencesSection_AFA(BP1, BP2, BP3, BP4, Chn1, Chn2, Chn3, Chn4, customer, status,MBBStatus,DeviceType);
+            Thread.sleep(5000);
+            Agent_RegisterCustomerActions.PreferencesSection_AFA(BP1, BP2, BP3, BP4, Chn1, Chn2, Chn3, Chn4, customer, status,DeviceType);
             log.debug("Completed preference actions");
 
         } catch (Exception e) {
@@ -9541,6 +9619,27 @@ public class E2EOrderPlaced_Steps {
 
         }
     }
+
+    //GDPR preferences section for AFU  --- JamalKhan
+    @Then("^Choose Business preferences ([^\"]*) ([^\"]*) ([^\"]*) ([^\"]*) and Channel Preferences ([^\"]*) ([^\"]*) ([^\"]*) ([^\"]*) for ([^\"]*) when GDPR ([^\"]*) ([^\"]*) for AFU journey$")
+    public void Choose_Your_Preferences_AFU(String BP1, String BP2, String BP3, String BP4, String Chn1, String Chn2, String Chn3, String Chn4, String customer, String status, String DeviceType) {
+        // Write code here that turns the phrase above into concrete actions
+        try {
+            driver.manage().timeouts().implicitlyWait(200, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, Agent_RegisterCustomerPage.class);
+            Thread.sleep(5000);
+            Agent_RegisterCustomerActions.PreferencesSection_AFU(BP1, BP2, BP3, BP4, Chn1, Chn2, Chn3, Chn4, customer, status,DeviceType);
+            log.debug("Completed preference actions");
+
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            log.debug("Unable to Choose your preferences, please see the failure screenshot");
+            Assert.fail("Unable to Choose your preferences, please see the failure screenshot");
+
+        }
+    }
+
+
 
     @And("Select create a new account and begin checkout")
     public void Select_Create_New_account_and_begin_checkout() {
