@@ -185,12 +185,12 @@ public class Agent_RegisterCustomerActions extends Environment {
 
 	public static void PaybyCard_new() throws InterruptedException {
 
-		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-		log.debug("Pay by card button is enabled ");
-		Thread.sleep(10000);
-		Agent_RegisterCustomerPage.PayByCard.click();
-		log.debug("Clicked on pay by card ");
-		Thread.sleep(5000);
+			driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+			log.debug("Pay by card button is enabled ");
+			Thread.sleep(10000);
+			Agent_RegisterCustomerPage.PayByCard.click();
+			log.debug("Clicked on pay by card ");
+			Thread.sleep(5000);
 	}
 
 	public static void CardDetails_PayM() throws InterruptedException {
@@ -545,7 +545,7 @@ public class Agent_RegisterCustomerActions extends Environment {
 									System.out.println("Channel preferences is displaying before selecting any business preferences");
 									log.debug("Channel preferences is displaying before selecting any business preferences");
 									Assert.fail("Channel preferences is displaying before selecting any business preferences");
-								}else{
+									}else{
 									System.out.println("Channel preferences is not displaying before selecting business preferences");
 									log.debug("Channel preferences is not displaying before selecting business preferences");
 								}
