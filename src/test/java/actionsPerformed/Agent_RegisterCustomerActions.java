@@ -117,7 +117,7 @@ public class Agent_RegisterCustomerActions extends Environment {
 			// TODO Auto-generated catch block
 			e.getMessage();
 		}
-
+		Thread.sleep(3000);
 		Agent_RegisterCustomerPage.intialPassword.sendKeys("test123");
 		Agent_RegisterCustomerPage.confirmPassword.sendKeys("test123");
 		Thread.sleep(2000);
@@ -138,6 +138,16 @@ public class Agent_RegisterCustomerActions extends Environment {
 		} catch (Exception e) {
 			e.getMessage();
 			log.debug("Try catch block exception in Agent register cutomer actions page, nothing to worry :)");
+		}
+
+		Thread.sleep(3000);
+		if(driver.findElements(By.id("marketingRequired")).size()>0) {
+
+			JavascriptExecutor executor = (JavascriptExecutor)driver;
+			executor.executeScript("arguments[0].click();", Agent_RegisterCustomerPage.Check_box);
+			//Agent_RegisterCustomerPage.Check_box.click();
+			log.debug("Selected the TC checkbox");
+			Thread.sleep(2000);
 		}
 
 		Select dropdown2 = new Select(pageobjects.Agent_RegisterCustomerPage.securityQuestion);
@@ -162,10 +172,11 @@ public class Agent_RegisterCustomerActions extends Environment {
 		} else {
 
 			driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-			Thread.sleep(5000);
+
 			log.debug("Pay by card button is enabled ");
 			Thread.sleep(5000);
 			Agent_RegisterCustomerPage.PayByCard.click();
+			Thread.sleep(5000);
 			log.debug("Clicked on pay by card ");
 
 		}
@@ -174,19 +185,17 @@ public class Agent_RegisterCustomerActions extends Environment {
 
 	public static void PaybyCard_new() throws InterruptedException {
 
-
-			driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-
-			log.debug("Pay by card button is enabled ");
-			Thread.sleep(15000);
-			Agent_RegisterCustomerPage.PayByCard.click();
-			log.debug("Clicked on pay by card ");
-			Thread.sleep(5000);
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		log.debug("Pay by card button is enabled ");
+		Thread.sleep(10000);
+		Agent_RegisterCustomerPage.PayByCard.click();
+		log.debug("Clicked on pay by card ");
+		Thread.sleep(5000);
 	}
 
 	public static void CardDetails_PayM() throws InterruptedException {
 
-		driver.manage().timeouts().implicitlyWait(15,TimeUnit.SECONDS);
+		//driver.manage().timeouts().implicitlyWait(15,TimeUnit.SECONDS);
 		log.debug("Mipay bit : ");
 		Thread.sleep(10000);
 		//driver.findElements(By.xpath("//label[contains(text(),'Card ending with:')]")).size();
@@ -227,9 +236,9 @@ public class Agent_RegisterCustomerActions extends Environment {
 	}
 
 	public static void CardDetails() throws InterruptedException {
-		Thread.sleep(7000);
-
-		if (driver.findElements(By.xpath("//input[@id='txtCardHolderName' or @id='CardHolderName']")).size() >= 1) {
+		//Thread.sleep(15000);
+		driver.manage().timeouts().implicitlyWait(20,TimeUnit.SECONDS);
+		if (driver.findElements(By.xpath("//input[@id='CardHolderName' or @id='txtCardHolderName']")).size() >= 1) {
 			Agent_RegisterCustomerPage.CardHolderName.sendKeys("TEST ACCEPTA");
 			System.out.println("Card holder name ");
 			Select CardTypeDropDown = new Select(pageobjects.Agent_RegisterCustomerPage.CardType);
@@ -273,14 +282,18 @@ public class Agent_RegisterCustomerActions extends Environment {
 
 		Agent_RegisterCustomerPage.Security_Answer.sendKeys(Security_Answer);
 		log.debug("Entered Security Answer");
-
+		Thread.sleep(3000);
 		if(driver.findElements(By.id("marketingRequired")).size()>0) {
-			Agent_RegisterCustomerPage.Check_box.click();
+
+			JavascriptExecutor executor = (JavascriptExecutor)driver;
+			executor.executeScript("arguments[0].click();", Agent_RegisterCustomerPage.Check_box);
+			//Agent_RegisterCustomerPage.Check_box.click();
 			log.debug("Selected the TC checkbox");
+			Thread.sleep(2000);
 		}
 
 		Agent_RegisterCustomerPage.registerCustomer.click();
-		Thread.sleep(6000);
+		Thread.sleep(8000);
 		log.debug("Clicked on Register customer");
 		log.debug("Clicked on Register customer");
 
@@ -532,7 +545,7 @@ public class Agent_RegisterCustomerActions extends Environment {
 									System.out.println("Channel preferences is displaying before selecting any business preferences");
 									log.debug("Channel preferences is displaying before selecting any business preferences");
 									Assert.fail("Channel preferences is displaying before selecting any business preferences");
-									}else{
+								}else{
 									System.out.println("Channel preferences is not displaying before selecting business preferences");
 									log.debug("Channel preferences is not displaying before selecting business preferences");
 								}
@@ -1308,9 +1321,11 @@ public class Agent_RegisterCustomerActions extends Environment {
 									System.out.println("Channel preferences is displaying after selecting business preferences");
 									log.debug("Channel preferences is displaying after selecting business preferences");
 								}else{
-									System.out.println("Channel preferences is not displaying after selecting business preferences");
-									log.debug("Channel preferences is not displaying after selecting business preferences");
-									Assert.fail("Channel preferences is not displaying after selecting business preferences");
+									if(Chn1.equalsIgnoreCase("Select") || Chn2.equalsIgnoreCase("Select") || Chn3.equalsIgnoreCase("Select") || Chn4.equalsIgnoreCase("Select")) {
+										System.out.println("Channel preferences is not displaying after selecting business preferences");
+										log.debug("Channel preferences is not displaying after selecting business preferences");
+										Assert.fail("Channel preferences is not displaying after selecting business preferences");
+									}
 								}
 								Thread.sleep(3000);
 								//Selecting Channel preferences
@@ -1381,8 +1396,9 @@ public class Agent_RegisterCustomerActions extends Environment {
 										log.debug("Save My Preference button is clicked");
 									}
 								}else{
-									log.debug("As non of the preference are required to select so, we are clicking on skip preferences CTA");
+									log.debug("As non of the preference are required to select so, we are clicking on save preferences CTA");
 									Agent_RegisterCustomerPage.SaveMyPreferences.click();
+									//Agent_RegisterCustomerPage.SkipPreference.click();
 								}
 
 
