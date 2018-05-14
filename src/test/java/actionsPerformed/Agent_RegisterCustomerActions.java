@@ -229,7 +229,7 @@ public class Agent_RegisterCustomerActions extends Environment {
 	public static void CardDetails() throws InterruptedException {
 		Thread.sleep(7000);
 
-		if (driver.findElements(By.xpath("CardHolderName")).size() >= 1) {
+		if (driver.findElements(By.xpath("//input[@id='txtCardHolderName' or @id='CardHolderName']")).size() >= 1) {
 			Agent_RegisterCustomerPage.CardHolderName.sendKeys("TEST ACCEPTA");
 			System.out.println("Card holder name ");
 			Select CardTypeDropDown = new Select(pageobjects.Agent_RegisterCustomerPage.CardType);

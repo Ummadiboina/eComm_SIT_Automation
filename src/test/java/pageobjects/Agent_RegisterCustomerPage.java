@@ -110,7 +110,7 @@ public class Agent_RegisterCustomerPage {
 	public static WebElement SecurityCode;
 */
 
-    @FindBy(how = How.XPATH, using = "//input[@id='CardHolderName']")
+    @FindBy(how = How.XPATH, using = "//input[@id='txtCardHolderName' or @id='CardHolderName']")
     public static WebElement CardHolderName;
 
     @FindBy(how = How.XPATH, using = "//*[@id='ddlCardType' or @id='CardType']")

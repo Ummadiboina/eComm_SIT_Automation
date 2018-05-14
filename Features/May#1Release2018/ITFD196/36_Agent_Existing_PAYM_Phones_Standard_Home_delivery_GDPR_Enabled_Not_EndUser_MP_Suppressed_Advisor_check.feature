@@ -20,6 +20,6 @@ Feature: Feature: 36_Agent_Existing_PAYM_Phones_Standard_Home_delivery_GDPR_Enab
 
 
     Examples:
-      | user        | Device                        | Username     | Tariffs  | DeliveryType | Firstname | Surname | HouseNumber | PostCode | B1  | B2  | B3  | B4  | Text | Email | Phone  | Post | Consumer | status  | MBBStatus | DeviceType |
-      | 07801445776 | iPhone 7 Plus 128GB Jet Black | TEST ACCEPTA | Standard | HomeDelivery | TEST      | ACCEPTA | 11          | SL11UP   | Not | Not | Not | Not | Not  | Not   | Select | Not  | Someone  | Enabled | No        | Connected  |
+      | user        | Device                        | Username     | Tariffs  | DeliveryType | Firstname | Surname | HouseNumber | PostCode | B1  | B2  | B3  | B4  | Text | Email | Phone | Post | Consumer | status  | MBBStatus | DeviceType |
+      | 07801445776 | iPhone 7 Plus 128GB Jet Black | TEST ACCEPTA | Standard | HomeDelivery | TEST      | ACCEPTA | 11          | SL11UP   | Not | Not | Not | Not | Not  | Not   | Not   | Not  | Someone  | Enabled | No        | Connected  |
 

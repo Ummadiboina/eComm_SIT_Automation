@@ -1,344 +1,270 @@
-$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("Features/FebruaryRelease2018/Regression/Reg_CS_PayMPhonesHomeDeliveryWithAccessory.feature");
+$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("Features/AprilRelease2018/Regression/Reg_AFU_PAYM_Dongle_PayByCard.feature");
 formatter.feature({
   "line": 1,
-  "name": "Reg_CS_PayMPhonesHomeDeliveryWithAccessory",
+  "name": "Reg_AFU_PAYM_Dongle_PayByCard",
   "description": "",
-  "id": "reg-cs-paymphoneshomedeliverywithaccessory",
+  "id": "reg-afu-paym-dongle-paybycard",
   "keyword": "Feature"
 });
 formatter.scenarioOutline({
-  "line": 4,
-  "name": "CFA PayM Phones Home delivery E2E journey with Accessory",
+  "comments": [
+    {
+      "line": 3,
+      "value": "#launch hooks and get browser"
+    }
+  ],
+  "line": 5,
+  "name": "Successful completion of a PAY M dongle Acqusistion Journey",
   "description": "",
-  "id": "reg-cs-paymphoneshomedeliverywithaccessory;cfa-paym-phones-home-delivery-e2e-journey-with-accessory",
+  "id": "reg-afu-paym-dongle-paybycard;successful-completion-of-a-pay-m-dongle-acqusistion-journey",
   "type": "scenario_outline",
   "keyword": "Scenario Outline",
   "tags": [
     {
-      "line": 3,
+      "line": 4,
       "name": "@Web"
     }
   ]
 });
 formatter.step({
-  "line": 5,
-  "name": "I am an CFA user and Lands on shop page",
-  "keyword": "Given "
-});
-formatter.step({
   "line": 6,
-  "name": "navigate to PAYM Phones page",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 7,
-  "name": "I choose PayM \u003chandset\u003e",
-  "keyword": "And "
+  "name": "I login to Agent shop",
+  "keyword": "Given "
 });
 formatter.step({
   "comments": [
     {
-      "line": 8,
-      "value": "#edit the above"
+      "line": 7,
+      "value": "#And performs Acquisition for New user"
     }
   ],
+  "line": 8,
+  "name": "performs Upgrade for \u003cuser\u003e",
+  "keyword": "And "
+});
+formatter.step({
   "line": 9,
-  "name": "Navigate to device details page",
+  "name": "Select a valid PayM \u003cDevice\u003e",
   "keyword": "And "
 });
 formatter.step({
   "line": 10,
-  "name": "Land on the \u0027Tariffs and extra\u0027 page",
+  "name": "Select valid \u003cTariffs\u003e from tariffs tab",
   "keyword": "And "
 });
 formatter.step({
   "line": 11,
-  "name": "Choose some Accesssory",
+  "name": "select a valid Handset and Tariff combination",
   "keyword": "And "
 });
 formatter.step({
   "line": 12,
-  "name": "I Land on the basket page and choose home delivery option",
+  "name": "Validate all the Basket content and checkout",
   "keyword": "And "
 });
 formatter.step({
   "line": 13,
-  "name": "click on \"go to checkout\" button",
-  "keyword": "And "
+  "name": "perform all the advisory checks",
+  "keyword": "Then "
 });
 formatter.step({
   "line": 14,
-  "name": "input \u003cFirstname\u003e and \u003cSurname\u003e and other valid details in Delivery page and Click on the \u0027Continue button\u0027",
-  "keyword": "And "
+  "name": "Pay by card",
+  "keyword": "When "
 });
 formatter.step({
   "line": 15,
-  "name": "land on the payment page and input \u003cUsername\u003e and other details and click \u0027Continue on next step\u0027",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 16,
-  "name": "Continue to Agreements page and confirm all the agreement checks",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 17,
-  "name": "Continue to Review page and review the order",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 18,
-  "name": "order confirmation is displayed",
+  "name": "Order confirmation message should be displayed",
   "keyword": "Then "
 });
 formatter.examples({
-  "line": 20,
+  "line": 17,
   "name": "",
   "description": "",
-  "id": "reg-cs-paymphoneshomedeliverywithaccessory;cfa-paym-phones-home-delivery-e2e-journey-with-accessory;",
+  "id": "reg-afu-paym-dongle-paybycard;successful-completion-of-a-pay-m-dongle-acqusistion-journey;",
   "rows": [
     {
       "cells": [
-        "handset",
-        "Firstname",
-        "Surname",
-        "Username"
+        "user",
+        "Device",
+        "Tariffs"
       ],
-      "line": 21,
-      "id": "reg-cs-paymphoneshomedeliverywithaccessory;cfa-paym-phones-home-delivery-e2e-journey-with-accessory;;1"
+      "line": 18,
+      "id": "reg-afu-paym-dongle-paybycard;successful-completion-of-a-pay-m-dongle-acqusistion-journey;;1"
     },
     {
       "cells": [
-        "Samsung Galaxy S8",
-        "TEST",
-        "ACCEPTA",
-        "TEST ACCEPTA"
+        "07521127505",
+        "dongle",
+        "Random"
       ],
-      "line": 22,
-      "id": "reg-cs-paymphoneshomedeliverywithaccessory;cfa-paym-phones-home-delivery-e2e-journey-with-accessory;;2"
+      "line": 19,
+      "id": "reg-afu-paym-dongle-paybycard;successful-completion-of-a-pay-m-dongle-acqusistion-journey;;2"
     }
   ],
   "keyword": "Examples"
 });
 formatter.before({
-  "duration": 10601298937,
+  "duration": 59831448368,
   "status": "passed"
 });
 formatter.scenario({
-  "line": 22,
-  "name": "CFA PayM Phones Home delivery E2E journey with Accessory",
+  "line": 19,
+  "name": "Successful completion of a PAY M dongle Acqusistion Journey",
   "description": "",
-  "id": "reg-cs-paymphoneshomedeliverywithaccessory;cfa-paym-phones-home-delivery-e2e-journey-with-accessory;;2",
+  "id": "reg-afu-paym-dongle-paybycard;successful-completion-of-a-pay-m-dongle-acqusistion-journey;;2",
   "type": "scenario",
   "keyword": "Scenario Outline",
   "tags": [
     {
-      "line": 3,
+      "line": 4,
       "name": "@Web"
     }
   ]
 });
 formatter.step({
-  "line": 5,
-  "name": "I am an CFA user and Lands on shop page",
+  "line": 6,
+  "name": "I login to Agent shop",
   "keyword": "Given "
 });
 formatter.step({
-  "line": 6,
-  "name": "navigate to PAYM Phones page",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 7,
-  "name": "I choose PayM Samsung Galaxy S8",
+  "comments": [
+    {
+      "line": 7,
+      "value": "#And performs Acquisition for New user"
+    }
+  ],
+  "line": 8,
+  "name": "performs Upgrade for 07521127505",
   "matchedColumns": [
     0
   ],
   "keyword": "And "
 });
 formatter.step({
-  "comments": [
-    {
-      "line": 8,
-      "value": "#edit the above"
-    }
-  ],
   "line": 9,
-  "name": "Navigate to device details page",
+  "name": "Select a valid PayM dongle",
+  "matchedColumns": [
+    1
+  ],
   "keyword": "And "
 });
 formatter.step({
   "line": 10,
-  "name": "Land on the \u0027Tariffs and extra\u0027 page",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 11,
-  "name": "Choose some Accesssory",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 12,
-  "name": "I Land on the basket page and choose home delivery option",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 13,
-  "name": "click on \"go to checkout\" button",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 14,
-  "name": "input TEST and ACCEPTA and other valid details in Delivery page and Click on the \u0027Continue button\u0027",
+  "name": "Select valid Random from tariffs tab",
   "matchedColumns": [
-    1,
     2
   ],
   "keyword": "And "
 });
 formatter.step({
+  "line": 11,
+  "name": "select a valid Handset and Tariff combination",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 12,
+  "name": "Validate all the Basket content and checkout",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 13,
+  "name": "perform all the advisory checks",
+  "keyword": "Then "
+});
+formatter.step({
+  "line": 14,
+  "name": "Pay by card",
+  "keyword": "When "
+});
+formatter.step({
   "line": 15,
-  "name": "land on the payment page and input TEST ACCEPTA and other details and click \u0027Continue on next step\u0027",
-  "matchedColumns": [
-    3
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "line": 16,
-  "name": "Continue to Agreements page and confirm all the agreement checks",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 17,
-  "name": "Continue to Review page and review the order",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 18,
-  "name": "order confirmation is displayed",
+  "name": "Order confirmation message should be displayed",
   "keyword": "Then "
 });
 formatter.match({
-  "location": "E2EOrderPlaced_Steps.i_am_an_CFA_user_and_Lands_on_shop_page()"
+  "location": "E2EOrderPlaced_Steps.LoginAgentShop()"
 });
 formatter.result({
-  "duration": 872947022,
-  "status": "passed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.navigate_to_PAYM_Phones_page()"
-});
-formatter.result({
-  "duration": 23278154131,
+  "duration": 6105061022,
   "status": "passed"
 });
 formatter.match({
   "arguments": [
     {
-      "val": "Samsung Galaxy S8",
-      "offset": 14
+      "val": "07521127505",
+      "offset": 21
     }
   ],
-  "location": "E2EOrderPlaced_Steps.Choose_PAYM_Handset(String)"
+  "location": "E2EOrderPlaced_Steps.performs_Upgrade(String)"
 });
 formatter.result({
-  "duration": 5147055309,
-  "status": "passed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.Navigate_to_device_details_page()"
-});
-formatter.result({
-  "duration": 19143133355,
-  "status": "passed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.land_on_the_Tariffs_and_extra_page()"
-});
-formatter.result({
-  "duration": 9765323844,
-  "status": "passed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.Choose_some_Accesssory()"
-});
-formatter.result({
-  "duration": 4611519841,
-  "status": "passed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.i_Land_on_the_basket_page_and_choose_home_delivery_option()"
-});
-formatter.result({
-  "duration": 53739018530,
+  "duration": 56099659583,
   "status": "passed"
 });
 formatter.match({
   "arguments": [
     {
-      "val": "go to checkout",
-      "offset": 10
+      "val": "dongle",
+      "offset": 20
     }
   ],
-  "location": "E2EOrderPlaced_Steps.CheckoutFromBasket(String)"
+  "location": "E2EOrderPlaced_Steps.SelectValid_Device(String)"
 });
 formatter.result({
-  "duration": 12034801293,
+  "duration": 15490076224,
   "status": "passed"
 });
 formatter.match({
   "arguments": [
     {
-      "val": "TEST",
-      "offset": 6
-    },
-    {
-      "val": "ACCEPTA",
-      "offset": 15
+      "val": "Random",
+      "offset": 13
     }
   ],
-  "location": "E2EOrderPlaced_Steps.DeliveryPage_Inputs_homeDelivery(String,String)"
+  "location": "E2EOrderPlaced_Steps.SelectTariff(String)"
 });
 formatter.result({
-  "duration": 62719743043,
+  "duration": 11594601965,
   "status": "passed"
 });
 formatter.match({
-  "arguments": [
-    {
-      "val": "TEST ACCEPTA",
-      "offset": 35
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.CreditCheckPaymentPage_HomeDelivery(String)"
+  "location": "E2EOrderPlaced_Steps.select_a_valid_Handset_and_Tariff_combination()"
 });
 formatter.result({
-  "duration": 169403420604,
+  "duration": 13742168623,
   "status": "passed"
 });
 formatter.match({
-  "location": "E2EOrderPlaced_Steps.AgreementsPageConfirmation()"
+  "location": "E2EOrderPlaced_Steps.validate_all_the_Basket_content_and_checkout()"
 });
 formatter.result({
-  "duration": 33877790452,
-  "error_message": "java.lang.AssertionError: Agreements page is not displayed or unable to enter some information in thie page, Please review the screenshots for failure\r\n\tat org.testng.Assert.fail(Assert.java:94)\r\n\tat steps.E2EOrderPlaced_Steps.AgreementsPageConfirmation(E2EOrderPlaced_Steps.java:1530)\r\n\tat ✽.And Continue to Agreements page and confirm all the agreement checks(Features/FebruaryRelease2018/Regression/Reg_CS_PayMPhonesHomeDeliveryWithAccessory.feature:16)\r\n",
+  "duration": 15687034642,
+  "status": "passed"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.advisory_checks()"
+});
+formatter.result({
+  "duration": 13191395302,
+  "status": "passed"
+});
+formatter.match({
+  "location": "E2EOrderPlaced_Steps.pay_by_card()"
+});
+formatter.result({
+  "duration": 108821573825,
+  "error_message": "java.lang.AssertionError: Unable to Pay by card , please see the failure screenshot\r\n\tat org.testng.Assert.fail(Assert.java:94)\r\n\tat steps.E2EOrderPlaced_Steps.pay_by_card(E2EOrderPlaced_Steps.java:2553)\r\n\tat ✽.When Pay by card(Features/AprilRelease2018/Regression/Reg_AFU_PAYM_Dongle_PayByCard.feature:14)\r\n",
   "status": "failed"
 });
 formatter.match({
-  "location": "E2EOrderPlaced_Steps.ReviewPageConfirmation()"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.OrderConfirmationPage()"
+  "location": "E2EOrderPlaced_Steps.order_confirmation_message_should_be_displayed()"
 });
 formatter.result({
   "status": "skipped"
 });
 formatter.after({
-  "duration": 20814627568,
+  "duration": 17230547831,
   "status": "passed"
 });
 });

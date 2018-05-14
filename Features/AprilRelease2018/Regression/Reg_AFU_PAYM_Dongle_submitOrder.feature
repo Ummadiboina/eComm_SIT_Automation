@@ -15,4 +15,4 @@ Feature: Reg_AFU_PAYM_Dongle_SubmitOrder
 
     Examples:
       | user        | Device | Tariffs |
-      | 07521009589 | dongle | Random  |
+      | 07801445860 | dongle | Random  |

@@ -26,7 +26,7 @@ Feature: 29_AFA_NewConnection_PAYM_Phone_Refresh_CCA_GDPR_Enabled_EndUser_SECCI 
     And Signin using valid <username> and <password> credentials for New User
     And Click on 'Continue' button on upgrade page
     And Is this order for You or Someone else <consumer> when GDPR is <status2>
-    And land on the payment page and input <Username> and other details and click 'Continue on next step' in upgrade journey
+    #And land on the payment page and input <Username> and other details and click 'Continue on next step' in upgrade journey
     And Continue to CCA or Buyout or Trade In Agreements page and confirm all the agreement checks
     And Continue to Review page, check order contract text and review the order
     Then order confirmation is displayed
@@ -34,4 +34,4 @@ Feature: 29_AFA_NewConnection_PAYM_Phone_Refresh_CCA_GDPR_Enabled_EndUser_SECCI 
 
     Examples:
       | Device              | Tariffs | Extras | DeliveryType | Firstname | Surname | Username     | HouseNumber | PostCode | Password | confirmPassword | SecurityAnswer | B1  | B2  | B3  | B4  | Text | Email | Phone | Post | Consumer | status  | status2  | consumer | username | password | MBBStatus | DeviceType |
-      | Galaxy S8 Plus 64GB | Refresh | Base   | HomeDelivery | TEST      | ACCEPTA | TEST ACCEPTA | 14          | SL11UP   | test1234 | test1234        | vinudeep       | Not | Not | Not | Not | Not  | Not   | Not   | Not  | Someone  | Enabled | Disabled | Me       |          | test123  | No        | Connected  |
+      | Galaxy S8 Plus 64GB | Refresh | Base   | HomeDelivery | TEST      | ACCEPTA | TEST ACCEPTA | 14          | SL11UP   | test1234 | test1234        | vinudeep       | Not | Not | Not | Not | Not  | Not   | Not   | Not  | Me       | Enabled | Disabled | Me       |          | test123  | No        | Connected  |
