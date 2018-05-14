@@ -187,7 +187,7 @@ public class DeliveryPage {
     @FindBy(how = How.XPATH, using = "//a[@data-overlay='why-are-we-asking']")
     public static WebElement thisOrderOverlay;
 
-    @FindBy(how = How.XPATH, using = "//p[contains(text(),'choose to receive information on our products, offers and more")
+    @FindBy(how = How.XPATH, using = "//*[contains(text(),' have the chance to choose to receive information on our products, offers and more. ')]")
     public static WebElement thisOrderOverlayTxt;
 
     @FindBy(how = How.XPATH, using = "//a[@class='boxclose']")

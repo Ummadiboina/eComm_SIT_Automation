@@ -163,6 +163,25 @@ public class PaymentPageActions extends Environment {
         Screenshots.captureScreenshot();
 
     }
+    public static void Card_Details_CCV() throws InterruptedException {
+
+        if (driver.findElements(By.xpath("(//span[contains(text(),'ve read this - continue')])[1]")).size() < 1) {
+            driver.switchTo().frame("payment-iframe");
+            Thread.sleep(5000);
+            if (driver.findElements(By.xpath("//input[@type='password']")).size() > 0) {
+                PaymentPage.CCVSecurityCode.sendKeys("1234");
+                log.debug("Entered CVV security code");
+                Thread.sleep(3000);
+
+                JavascriptExecutor executor = (JavascriptExecutor) driver;
+                executor.executeScript("arguments[0].click();", PaymentPage.Submit_Next_Step);
+                //PaymentPage.Submit_Next_Step.click();
+                log.debug("Clicking on submit to next step");
+                Thread.sleep(10000);
+            }
+        }
+    }
+
 
     public static void Card_Details(String Username) throws InterruptedException, IOException {
 
@@ -176,7 +195,7 @@ public class PaymentPageActions extends Environment {
         log.debug("Entering the Payments section");
         Thread.sleep(5000);
         scrollToAnElement.scrollToElement(PaymentPage.CardHolderName);
-        Thread.sleep(2000);
+        Thread.sleep(5000);
         PaymentPage.CardHolderName.sendKeys(Username);
         log.debug("Entering name of the card as " + Username);
 

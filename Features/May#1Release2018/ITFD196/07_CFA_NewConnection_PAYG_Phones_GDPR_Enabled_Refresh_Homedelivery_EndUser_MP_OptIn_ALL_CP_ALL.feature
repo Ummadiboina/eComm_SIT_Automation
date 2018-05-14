@@ -21,5 +21,5 @@ Feature: 07_CFA_NewConnection_PAYG_Phones_GDPR_Enabled_Refresh_Homedelivery_EndU
     Then Choose <consumer> <status> Business preferences <B1> <B2> <B3> <B4> And Channel Preferences <Text> <Email> <Phone> <Post> <MBBStatus> <DeviceType>
 
     Examples:
-      | handset       | Firstname | Surname | Username     | consumer | B1     | B2  | B3     | B4     | Text   | Email  | Phone | Post | status  | MBBStatus |DeviceType|
-      | Random Device | TEST      | ACCEPTA | TEST ACCEPTA | Me       | Select | Not | Select | Select | Select | Select | Not   | Not  | Enabled | No        |Connected |
+      | handset       | Firstname | Surname | Username     | consumer | B1     | B2     | B3     | B4  | Text   | Email  | Phone  | Post   | status  | MBBStatus | DeviceType |
+      | Random Device | TEST      | ACCEPTA | TEST ACCEPTA | Me       | Select | Select | Select | Not | Select | Select | Select | Select | Enabled | No        | Connected  |

@@ -5,6 +5,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
+import GlobalActions.CommonActions;
 import GlobalActions.CommonUtilities;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.WebDriver;
@@ -15,6 +16,8 @@ import GlobalActions.RandomEmailAddressCreation;
 import GlobalActions.Screenshots;
 import helpers.Environment;
 import pageobjects.DeliveryPage;
+import java.util.Iterator;
+import java.util.Set;
 
 public class FreeSimDeliveryPageActions extends Environment {
 
@@ -32,7 +35,7 @@ public class FreeSimDeliveryPageActions extends Environment {
 		DeliveryPage.Email_Address.sendKeys(RandomEmailAddressCreation.RandomEmail());
 		log.debug("Setting the About you options");
 		log.debug("Setting the About you options");
-		Select dropdown = new Select(pageobjects.DeliveryPage.Title);
+		Select dropdown = new Select(DeliveryPage.Title);
 		dropdown.selectByIndex(2);
 		log.debug("Selected the dropdown Mrs");
 		Reporter.log("Selected the dropdown Mrs");
@@ -49,25 +52,60 @@ public class FreeSimDeliveryPageActions extends Environment {
 
 		log.debug("Clicking on I agree check box");
 		Thread.sleep(3000);
-		pageobjects.DeliveryPage.Iagree.click();
-		//pageobjects.DeliveryPage.IagreeTermsCondition.click();
 
-		String NoMarkettingMessage = pageobjects.DeliveryPage.NoMarkettingMessage.getText();
+		String NoMarkettingMessage = DeliveryPage.NoMarkettingMessage.getText();
 		log.debug("No Marketting Message :: "+ NoMarkettingMessage);
 
-		log.debug("Clicking on Privacy Policy");
+		if(NoMarkettingMessage.contains("If you check this box, we’ll send you information about your order, but no marketing")){
+			log.debug("Marketting Message Successfully validated:: ");
+		}
+
+		/*log.debug("Clicking on Privacy Policy");
 		pageobjects.DeliveryPage.PrivacyPolicy.click();
-		CommonUtilities.switchToWindow(driver);
+		log.debug("Clicked the Privacy Policy link");*/
 
-		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
+		/*String mainWindowHandle = driver.getWindowHandle();
+		Set<String> mainWindowHandle1 = driver.getWindowHandles();
+		System.out.println("Main window :: " +mainWindowHandle);
+		System.out.println("Number of windows :: " +mainWindowHandle1.size());
+		try {
+			//String mainWindowHandle = driver.getWindowHandle ();
+			Set<String> openWindowSize = driver.getWindowHandles ();
+			log.debug(openWindowSize.size() + " windows are opend");
+			//Switch to child window and close it
+			for (String childWindowHandle : driver.getWindowHandles ()) {
+				//If window handle is not main window handle then close it
+				if (!childWindowHandle.equals (mainWindowHandle)) {
+					driver.switchTo ().window (childWindowHandle);
+					// Close child windows
+					// driver.close();
+				} else {
+					//switch back to main window
+					driver.switchTo ().window (mainWindowHandle);
+					log.debug ("Switched window");
+				}
+			}
+		} catch (Exception e){
+			log.debug ("Failed to switch to window :: " + e.getStackTrace ());
+
+		}
+		Thread.sleep(20000);
 		String PrivacyPolicyMessage = pageobjects.DeliveryPage.PrivacyPolicyMessage.getText();
 		log.debug("Privacy Policy Message :: "+PrivacyPolicyMessage);
 
-		CommonUtilities.switchToWindow(driver);
-		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-		log.debug("Clicking on Marketing check box");
-		pageobjects.DeliveryPage.marketCheckBox.click();
+		//driver.switchTo ().window (mainWindowHandle);
+
+		*/
+		Thread.sleep(10000);
+		if(CheckBox.equalsIgnoreCase("Yes")){
+			log.debug("Clicking on Marketing check box because customer should not be contacted for Marketing Preferences");
+			DeliveryPage.marketCheckBox.click();
+			log.debug("Clicked on Marketing check box because customer should not be contacted for Marketing Preferences");
+		}else{
+			log.debug("Not Clicked on Marketing check box because customer should be contacted for Marketing Preferences");
+		}
+
 
 		Screenshots.captureScreenshot();
 	}
@@ -77,8 +115,9 @@ public class FreeSimDeliveryPageActions extends Environment {
 
 		log.debug("Clicking on Send me  my Free Sim page");
 		Thread.sleep(3000);
-		pageobjects.DeliveryPage.FreeSimTC.click();
-		pageobjects.DeliveryPage.SendMeMySim.click();
+		DeliveryPage.FreeSimTC.click();
+		Thread.sleep(3000);
+		DeliveryPage.SendMeMySim.click();
 		log.debug("Clicking on the Send me my Sim Button");
 		Screenshots.captureScreenshot();
 

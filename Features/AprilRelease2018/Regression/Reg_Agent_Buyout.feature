@@ -24,4 +24,4 @@ Feature: Reg_Agent_Buyout
 
     Examples:
       | User         | Device              | Tariffs | username      | DeliveryType | Firstname | Surname | HouseNumber | PostCode | Username     | password |
-      | 07521119257 | iPhone 6s 32GB Gold | Refresh | erto@1234.com | HomeDelivery | Test      | Accepta | Flat 9      | SL11EL   | Test Accepta | test123  |
+      | 07521121506 | iPhone 6s 32GB Gold | Refresh | erto@1234.com | HomeDelivery | Test      | Accepta | Flat 9      | SL11EL   | Test Accepta | test123  |

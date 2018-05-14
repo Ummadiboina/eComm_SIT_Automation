@@ -159,20 +159,23 @@ public class DeliveryPageActions extends Environment {
     public static void clickOnSubmitBtn(String customer, String status) throws InterruptedException {
         Thread.sleep(3000);
 
-
         log.debug("in click Submit button  function");
-        if(status.equalsIgnoreCase("Enabled")){
-        //code to new validate on GDPR
-        int count1 = driver.findElements(By.xpath("//*[@id='checkbox-terms-agreement-required']")).size();
-        //int checkBox = driver.findElements(By.xpath("//*[@id='checkbox-terms-agreement-required']")).size();
-        if (count1 <= 0) {
-            System.out.println("checkbox is not displayed ie :: , I’d like to hear about everything I get, just for being on O2. Things like exclusive offers, tickets and upgrade deals.\n");
-            log.debug("checkbox is not displayed ie :: , I’d like to hear about everything I get, just for being on O2. Things like exclusive offers, tickets and upgrade deals.\n");
-        }else{
-            System.out.println("checkbox is displayed ie :: , I’d like to hear about everything I get, just for being on O2. Things like exclusive offers, tickets and upgrade deals.\n");
-            log.debug("checkbox is displayed ie :: , I’d like to hear about everything I get, just for being on O2. Things like exclusive offers, tickets and upgrade deals.\n");
-            Assert.fail("checkbox is displayed ie :: , I’d like to hear about everything I get, just for being on O2. Things like exclusive offers, tickets and upgrade deals.\n");
-        }
+        if(status.equalsIgnoreCase("Enabled")) {
+            //code to new validate on GDPR
+            int count1 = driver.findElements(By.xpath("//*[@id='checkbox-terms-agreement-required']")).size();
+            //int checkBox = driver.findElements(By.xpath("//*[@id='checkbox-terms-agreement-required']")).size();
+            if (count1 <= 0) {
+                System.out.println("checkbox is not displayed ie :: , I’d like to hear about everything I get, just for being on O2. Things like exclusive offers, tickets and upgrade deals.\n");
+                log.debug("checkbox is not displayed ie :: , I’d like to hear about everything I get, just for being on O2. Things like exclusive offers, tickets and upgrade deals.\n");
+            } else if (driver.findElements(By.xpath("//*[contains(text(),'Is this order for you or someone else?')]")).size() > 0) {
+                System.out.println("Is this order for you or someone else? is displayed");
+                log.debug("Is this order for you or someone else? is displayed");
+            } else {
+                System.out.println("checkbox is displayed ie :: , I’d like to hear about everything I get, just for being on O2. Things like exclusive offers, tickets and upgrade deals.\n");
+                log.debug("checkbox is displayed ie :: , I’d like to hear about everything I get, just for being on O2. Things like exclusive offers, tickets and upgrade deals.\n");
+                Assert.fail("checkbox is displayed ie :: , I’d like to hear about everything I get, just for being on O2. Things like exclusive offers, tickets and upgrade deals.\n");
+            }
+
         Thread.sleep(3000);
 
         if(driver.findElements(By.xpath("//*[normalize-space(.)='Me']/preceding-sibling::input")).size()>0) {
@@ -182,11 +185,13 @@ public class DeliveryPageActions extends Environment {
                 log.debug("New Check box of 'Is this order for you or someone else?' is Displayed");
                 Thread.sleep(3000);
                 DeliveryPage.thisOrderOverlay.click();
+                Thread.sleep(3000);
                 String thisOrderOVerLayTxt = DeliveryPage.thisOrderOverlayTxt.getText();
                 if (DeliveryPage.thisOrderOverlayTxt.isDisplayed()) {
                     if (thisOrderOVerLayTxt.contains("choose to receive information on our products, offers and more")) {
                         System.out.println("Successfully validated the OVerLay Icon Text ie : " + thisOrderOVerLayTxt);
                         log.debug("Successfully validated the OVerLay Icon Text ie : " + thisOrderOVerLayTxt);
+                        Thread.sleep(3000);
                         DeliveryPage.closeOveryPopup.click();
                     } else {
                         System.out.println("Failed to validate the Overlay icon Text");
@@ -225,7 +230,7 @@ public class DeliveryPageActions extends Environment {
             }
         }
         }else if(status.equalsIgnoreCase("Disabled")) {
-            if (driver.findElements(By.xpath("//*[normalize-space(.)='Me']/preceding-sibling::input")).size() < 1 || !DeliveryPage.thisOrderOverlay.isDisplayed()) {
+            if (driver.findElements(By.xpath("//label[normalize-space(.)='Me']")).size() < 1) {
                 System.out.println("GDPR is Disabled");
                 log.debug("GDPR is Disabled");
             } else {
@@ -235,6 +240,7 @@ public class DeliveryPageActions extends Environment {
             Assert.fail("Failed to do GDPR validations");
         }
 
+        Thread.sleep(5000);
         DeliveryPage.continueBtn.click();
     }
 
@@ -699,5 +705,67 @@ public class DeliveryPageActions extends Environment {
         Screenshots.captureScreenshot();
     }
 
+    public static void validateYourOrderSection(String expValue, String Element) {
+
+        String plan = "";
+
+        if(Element.equalsIgnoreCase("DataRollOver")){
+
+            String actValue = "";
+
+            String simType = driver.findElement(By.xpath("//p[@id='qa-item']"));
+            List<WebElement> actPlnList = driver.findElements(By.xpath("//h2[text()='Your Order ']/../div[@class='order-desc']//p[contains(@ng-if,'freeSimDelivery')]/span"));
+
+            if(simType.equalsIgnoreCase("Big Bundles sim")){
+
+                for (int i = 2;i<actPlnList.size();i++) {
+                    plan = actPlnList.get(i).getAttribute("textContent").replaceAll("\"", "").trim() + "|";
+                }
+
+                if(expValue.equals(actPlnList)){
+                    log.debug("Selected Data Roll over plan details is displayed in Your order section of Delivery page");
+
+                }
+                else{
+                    log.debug("Selected Data Roll over plan details is not displayed in Your order section of Delivery page");
+
+                }
+            }
+
+            if(simType.equalsIgnoreCase("Classic Pay As You Go sim")){
+
+                for (int i = 1;i<actPlnList.size();i++) {
+                    plan = actPlnList.get(i).getAttribute("textContent").replaceAll("\"", "").trim() + "|";
+                }
+
+                if(expValue.equals(actPlnList)){
+                    log.debug("Selected Data Roll over plan details is displayed in Your order section of Delivery page");
+
+                }
+                else{
+                    log.debug("Selected Data Roll over plan details is not displayed in Your order section of Delivery page");
+
+                }
+            }
+
+            if(simType.equalsIgnoreCase("International sim")){
+
+                for (int i = 1;i<actPlnList.size();i++) {
+                    plan = actPlnList.get(i).getAttribute("textContent").replaceAll("\"", "").trim() + "|";
+                }
+
+                if(expValue.equals(actPlnList)){
+                    log.debug("Selected Data Roll over plan details is displayed in Your order section of Delivery page");
+
+                }
+                else{
+                    log.debug("Selected Data Roll over plan details is not displayed in Your order section of Delivery page");
+
+                }
+            }
+
+        }
+
+    }
 
 }

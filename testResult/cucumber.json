@@ -6,7 +6,7 @@
         "before": [
           {
             "result": {
-              "duration": 10601298937,
+              "duration": 38342183811,
               "status": "passed"
             },
             "match": {
@@ -14,14 +14,14 @@
             }
           }
         ],
-        "line": 22,
-        "name": "CFA PayM Phones Home delivery E2E journey with Accessory",
+        "line": 18,
+        "name": "Accessories only E2E journey",
         "description": "",
-        "id": "reg-cs-paymphoneshomedeliverywithaccessory;cfa-paym-phones-home-delivery-e2e-journey-with-accessory;;2",
+        "id": "reg-cs-accessoriesonly;accessories-only-e2e-journey;;2",
         "after": [
           {
             "result": {
-              "duration": 20814627568,
+              "duration": 17399163013,
               "status": "passed"
             },
             "match": {
@@ -34,7 +34,7 @@
         "steps": [
           {
             "result": {
-              "duration": 872947022,
+              "duration": 770762065,
               "status": "passed"
             },
             "line": 5,
@@ -46,97 +46,61 @@
           },
           {
             "result": {
-              "duration": 23278154131,
-              "status": "passed"
+              "duration": 20813157867,
+              "error_message": "java.lang.AssertionError: unable to do mousehover to Accessories\r\n\tat org.testng.Assert.fail(Assert.java:94)\r\n\tat steps.E2EOrderPlaced_Steps.navigate_to_Accessories(E2EOrderPlaced_Steps.java:179)\r\n\tat ✽.And Navigate to Accessories(Features/May#1Release2018/Regression/Reg_CS_AccessoriesOnly.feature:6)\r\n",
+              "status": "failed"
             },
             "line": 6,
-            "name": "navigate to PAYM Phones page",
+            "name": "Navigate to Accessories",
             "match": {
-              "location": "E2EOrderPlaced_Steps.navigate_to_PAYM_Phones_page()"
+              "location": "E2EOrderPlaced_Steps.navigate_to_Accessories()"
             },
             "keyword": "And "
           },
           {
             "result": {
-              "duration": 5147055309,
-              "status": "passed"
+              "status": "skipped"
             },
             "line": 7,
-            "name": "I choose PayM Samsung Galaxy S8",
+            "name": "select an \"Random\" Accessory",
             "match": {
               "arguments": [
                 {
-                  "val": "Samsung Galaxy S8",
-                  "offset": 14
+                  "val": "Random",
+                  "offset": 11
                 }
               ],
-              "location": "E2EOrderPlaced_Steps.Choose_PAYM_Handset(String)"
+              "location": "E2EOrderPlaced_Steps.select_an_Accessory(String)"
             },
-            "matchedColumns": [
-              0
-            ],
             "keyword": "And "
           },
           {
             "result": {
-              "duration": 19143133355,
-              "status": "passed"
+              "status": "skipped"
             },
-            "comments": [
-              {
-                "line": 8,
-                "value": "#edit the above"
-              }
-            ],
-            "line": 9,
-            "name": "Navigate to device details page",
+            "line": 8,
+            "name": "add Accessories to basket within limit in details page and navigate to basket",
             "match": {
-              "location": "E2EOrderPlaced_Steps.Navigate_to_device_details_page()"
+              "location": "E2EOrderPlaced_Steps.add_Accessories_to_basket_within_limit_in_details_page_and_navigate_to_basket()"
             },
             "keyword": "And "
           },
           {
             "result": {
-              "duration": 9765323844,
-              "status": "passed"
+              "status": "skipped"
+            },
+            "line": 9,
+            "name": "I Land on the Non Phone related basket page and choose home delivery option",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.NonPhoneRelatedBasketPage()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
             },
             "line": 10,
-            "name": "Land on the \u0027Tariffs and extra\u0027 page",
-            "match": {
-              "location": "E2EOrderPlaced_Steps.land_on_the_Tariffs_and_extra_page()"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 4611519841,
-              "status": "passed"
-            },
-            "line": 11,
-            "name": "Choose some Accesssory",
-            "match": {
-              "location": "E2EOrderPlaced_Steps.Choose_some_Accesssory()"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 53739018530,
-              "status": "passed"
-            },
-            "line": 12,
-            "name": "I Land on the basket page and choose home delivery option",
-            "match": {
-              "location": "E2EOrderPlaced_Steps.i_Land_on_the_basket_page_and_choose_home_delivery_option()"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 12034801293,
-              "status": "passed"
-            },
-            "line": 13,
             "name": "click on \"go to checkout\" button",
             "match": {
               "arguments": [
@@ -151,10 +115,9 @@
           },
           {
             "result": {
-              "duration": 62719743043,
-              "status": "passed"
+              "status": "skipped"
             },
-            "line": 14,
+            "line": 11,
             "name": "input TEST and ACCEPTA and other valid details in Delivery page and Click on the \u0027Continue button\u0027",
             "match": {
               "arguments": [
@@ -170,50 +133,36 @@
               "location": "E2EOrderPlaced_Steps.DeliveryPage_Inputs_homeDelivery(String,String)"
             },
             "matchedColumns": [
-              1,
-              2
+              0,
+              1
             ],
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 169403420604,
-              "status": "passed"
-            },
-            "line": 15,
-            "name": "land on the payment page and input TEST ACCEPTA and other details and click \u0027Continue on next step\u0027",
-            "match": {
-              "arguments": [
-                {
-                  "val": "TEST ACCEPTA",
-                  "offset": 35
-                }
-              ],
-              "location": "E2EOrderPlaced_Steps.CreditCheckPaymentPage_HomeDelivery(String)"
-            },
-            "matchedColumns": [
-              3
-            ],
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 33877790452,
-              "error_message": "java.lang.AssertionError: Agreements page is not displayed or unable to enter some information in thie page, Please review the screenshots for failure\r\n\tat org.testng.Assert.fail(Assert.java:94)\r\n\tat steps.E2EOrderPlaced_Steps.AgreementsPageConfirmation(E2EOrderPlaced_Steps.java:1530)\r\n\tat ✽.And Continue to Agreements page and confirm all the agreement checks(Features/FebruaryRelease2018/Regression/Reg_CS_PayMPhonesHomeDeliveryWithAccessory.feature:16)\r\n",
-              "status": "failed"
-            },
-            "line": 16,
-            "name": "Continue to Agreements page and confirm all the agreement checks",
-            "match": {
-              "location": "E2EOrderPlaced_Steps.AgreementsPageConfirmation()"
-            },
             "keyword": "And "
           },
           {
             "result": {
               "status": "skipped"
             },
-            "line": 17,
+            "line": 12,
+            "name": "land on the Non Credit check payment page and input TEST ACCEPTA and other details and click \u0027Continue on next step\u0027",
+            "match": {
+              "arguments": [
+                {
+                  "val": "TEST ACCEPTA",
+                  "offset": 52
+                }
+              ],
+              "location": "E2EOrderPlaced_Steps.NonCreditCheckPaymentPage_HomeDelivery(String)"
+            },
+            "matchedColumns": [
+              2
+            ],
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 13,
             "name": "Continue to Review page and review the order",
             "match": {
               "location": "E2EOrderPlaced_Steps.ReviewPageConfirmation()"
@@ -224,7 +173,7 @@
             "result": {
               "status": "skipped"
             },
-            "line": 18,
+            "line": 14,
             "name": "order confirmation is displayed",
             "match": {
               "location": "E2EOrderPlaced_Steps.OrderConfirmationPage()"
@@ -240,10 +189,10 @@
         ]
       }
     ],
-    "name": "Reg_CS_PayMPhonesHomeDeliveryWithAccessory",
+    "name": "Reg_CS_AccessoriesOnly",
     "description": "",
-    "id": "reg-cs-paymphoneshomedeliverywithaccessory",
+    "id": "reg-cs-accessoriesonly",
     "keyword": "Feature",
-    "uri": "Features/FebruaryRelease2018/Regression/Reg_CS_PayMPhonesHomeDeliveryWithAccessory.feature"
+    "uri": "Features/May#1Release2018/Regression/Reg_CS_AccessoriesOnly.feature"
   }
 ]

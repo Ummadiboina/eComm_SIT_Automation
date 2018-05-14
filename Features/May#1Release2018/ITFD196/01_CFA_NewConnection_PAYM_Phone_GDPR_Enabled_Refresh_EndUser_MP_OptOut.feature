@@ -23,5 +23,5 @@ Feature: 01_CFA_NewConnection_PAYM_Phone_GDPR_Enabled_Refresh_EndUser_MP_OptOut
 
 
     Examples:
-      | handset           | Firstname | Surname | Username     | filtername | sortoption                 | consumer | B1     | B2  | B3     | B4     | Text   | Email  | Phone | Post | status  | MBBStatus |DeviceType|
-      | Samsung Galaxy S8 | TEST      | ACCEPTA | TEST ACCEPTA | low        | Monthly data (High to low) | Me       | Select | Not | Select | Select | Select | Select | Not   | Not  | Enabled | No        |Connected |
+      | handset   | Firstname | Surname | Username     | filtername | sortoption                 | consumer | B1  | B2  | B3  | B4  | Text | Email  | Phone | Post | status  | MBBStatus | DeviceType |
+      | Galaxy S9 | TEST      | ACCEPTA | TEST ACCEPTA | low        | Monthly data (High to low) | Me       | Not | Not | Not | Not | Not  | Select | Not   | Not  | Enabled | No        | Connected  |

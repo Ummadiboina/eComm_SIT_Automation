@@ -22,5 +22,5 @@ Feature: 54_Consumer_Existing_Accessory_CC_GDPR_Enabled_No_EndUser_Question.feat
 
 
     Examples:
-      | username   | password | accessoryname     | Username     | limit1 | user         | status  | consumer            | B1  | B2  | B3  | B4  | Text | Email | Phone | Post | MBBStatus | DeviceType    |
-      | ash@o2.com | test123  | Samsung Galaxy S8 | test accepta | 2      | TEST ACCEPTA | Enabled | No End user section | Not | Not | Not | Not | Not  | Not   | Not   | Not  | No        | Non Connected |
+      | username             | password | accessoryname     | Username     | limit1 | user         | status  | consumer            | B1  | B2  | B3  | B4  | Text | Email | Phone | Post | MBBStatus | DeviceType    |
+      | test@usersadfsad.com | test123  | Samsung Galaxy S8 | test accepta | 2      | TEST ACCEPTA | Enabled | No End user section | Not | Not | Not | Not | Not  | Not   | Not   | Not  | No        | Non Connected |

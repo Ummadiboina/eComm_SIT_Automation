@@ -26,5 +26,5 @@ Feature: 14_CFU_SIMO_MBB_Reaffirmed_Review_Page_Home_Delivery_GDPR_Enabled_Not_E
     Then Choose <consumer> <status> Business preferences <B1> <B2> <B3> <B4> And Channel Preferences <Text> <Email> <Phone> <Post> <MBBStatus> <DeviceType>
 
     Examples:
-      | Contract | username           | password | filtername | sortoption                 | consumer     | B1  | B2  | B3  | B4  | Text | Email | Phone | Post | status  | MBBStatus |DeviceType|
-      | 30 Days  | 12342015@gmail.com | test123  | low        | Monthly data (High to low) | SomeOne else | Not | Not | Not | Not | Not  | Not   | Not   | Not  | Enabled | Yes       |Connected |
+      | Contract | username                   | password | filtername | sortoption                 | consumer | B1  | B2  | B3  | B4  | Text | Email | Phone | Post | status  | MBBStatus | DeviceType |
+      | 30 Days  | e2ed68736667@stf.ref.co.uk | test123  | low        | Monthly data (High to low) | Someone  | Not | Not | Not | Not | Not  | Not   | Not   | Not  | Enabled | No        | Connected  |

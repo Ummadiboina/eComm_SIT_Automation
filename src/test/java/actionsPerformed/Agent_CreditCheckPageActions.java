@@ -19,7 +19,9 @@ import helpers.Environment;
 import pageobjects.Agent_CreditCheckDetailsPage;
 import pageobjects.DeliveryPage;
 
+
 public class Agent_CreditCheckPageActions extends Environment {
+	public static String emailAdd;
 
 	final static Logger log = Logger.getLogger("Agent_CreditCheckPageActions");
 
@@ -34,7 +36,10 @@ public class Agent_CreditCheckPageActions extends Environment {
 		Agent_CreditCheckDetailsPage.LastName.sendKeys(Surname);
 		log.debug("Entered Last name");
 
-		Agent_CreditCheckDetailsPage.Email.sendKeys(RandomEmailAddressCreation.RandomEmail());
+		emailAdd=RandomEmailAddressCreation.RandomEmail();
+		Agent_CreditCheckDetailsPage.Email.sendKeys(emailAdd);
+		log.debug("Entered email address is :: " + emailAdd);
+		Reporter.log("Entered email address is :: " + emailAdd);
 
 		log.debug("Entered email address");
 		Agent_CreditCheckDetailsPage.DOB.sendKeys("10-10-1981");
@@ -87,7 +92,10 @@ public class Agent_CreditCheckPageActions extends Environment {
 		Agent_CreditCheckDetailsPage.LastName.sendKeys(Surname);
 		log.debug("Entered Last name");
 
-		Agent_CreditCheckDetailsPage.Email.sendKeys(RandomEmailAddressCreation.RandomEmail());
+		emailAdd=RandomEmailAddressCreation.RandomEmail();
+		Agent_CreditCheckDetailsPage.Email.sendKeys(emailAdd);
+		log.debug("Entered email address is :: " + emailAdd);
+		Reporter.log("Entered email address is :: " + emailAdd);
 
 		log.debug("Entered email address");
 		Agent_CreditCheckDetailsPage.DOB.sendKeys("10-10-1981");
@@ -135,7 +143,12 @@ public class Agent_CreditCheckPageActions extends Environment {
 		Agent_CreditCheckDetailsPage.LastName.sendKeys(Surname);
 		log.debug("Entered Last name");
 
-		Agent_CreditCheckDetailsPage.Email.sendKeys(RandomEmailAddressCreation.RandomEmail());
+		emailAdd=RandomEmailAddressCreation.RandomEmail();
+		Agent_CreditCheckDetailsPage.Email.sendKeys(emailAdd);
+		log.debug("Entered email address is :: " + emailAdd);
+		Reporter.log("Entered email address is :: " + emailAdd);
+
+		//Agent_CreditCheckDetailsPage.Email.sendKeys(RandomEmailAddressCreation.RandomEmail());
 
 		log.debug("Entered email address");
 		Agent_CreditCheckDetailsPage.DOB.sendKeys("10-10-1981");
@@ -183,33 +196,22 @@ public class Agent_CreditCheckPageActions extends Environment {
 	public static void CreditcheckReferStatus()throws InterruptedException, IOException {
 
 		try{
-			if(driver.findElements(By.xpath("//h2[@id='creditCheckHeader']/span")).size()>0)
+			if(driver.findElements(By.xpath("//h2[@id='creditCheckHeader']")).size()>0)
 			{
 				String refStatus = Agent_CreditCheckDetailsPage.CreditCheckReferStatus.getText();
 
-				if(refStatus.contains("Credit Check: Refer: You've been conditionally referred. You'll be able to upgrade to a new device after six months on this tariff. Are you happy to continue? If the customer agrees to the six month restriction, call the referral team before placing the order on 08001116000.")){
-					System.out.println("Credit Check:: Refer status message is as expected " + refStatus);
-					log.debug("Credit Check:: Refer status message is as expected " + refStatus);
+				if(refStatus.contains("Refer: You've been conditionally referred. You'll be able to upgrade to a new device after six months on this tariff. Are you happy to continue? If the customer agrees to the six month restriction, call the referral team before placing the order on 08001116000.")){
+					System.out.println("Credit Check status for SIMO only validated successfully::  " + refStatus);
+					log.debug("Credit Check status for SIMO only validated successfully::  " + refStatus);
+				}else if(refStatus.contains("ReferWithSimOnly: Customer has been referred for SIMO order. Abandon checkout and create a SIMO order if customer wants SIMO. Tell customer that even SIMO order will be referred")){
+					System.out.println("Credit Check status for Non SIMO  validated successfully::  " + refStatus);
+					log.debug("Credit Check status for Non SIMO  validated successfully::  " + refStatus);
 				}else{
 					System.out.println("Credit Check:: Refer status message is not matching with expected " + refStatus);
 					log.debug("Credit Check:: Refer status message is not matching with expected " + refStatus);
 					Assert.fail("Credit Check:: Refer status message is not matching with expected " + refStatus);
-
 				}
-			}
 
-			if(driver.findElements(By.xpath("//span[@id='creditCheckStatus']")).size()>0)
-			{
-				String refStatus =Agent_CreditCheckDetailsPage.CreditCheckAbandoneStatus.getText();
-
-				if(refStatus.contains("Customer has been referred to simo order. Abandone checkout to create a simo order if customer wants SIMO. Tell customer that even SIMO order will be referred.")){
-					System.out.println("Credit Check:: Non simo Refer status message is as expected " + refStatus);
-					log.debug("Credit Check:: Non simo Refer status message is as expected " + refStatus);
-				}else{
-					System.out.println("Credit Check::  Non simo Refer status message is not matching with expected " + refStatus);
-					log.debug("Credit Check::  Non simo Refer status message is not matching with expected " + refStatus);
-					Assert.fail("Credit Check::  Non simo Refer status message is not matching with expected " + refStatus);
-				}
 			}
 		}catch (Exception e) {
 			// TODO Auto-generated catch block
@@ -222,17 +224,22 @@ public class Agent_CreditCheckPageActions extends Environment {
 		Screenshots.captureScreenshot();
 	}
 
-	public static void AddressDetails()throws InterruptedException, IOException {
+	public static void AddressDetails() {
 		try{
 
 			/*
 			String address = Agent_CreditCheckDetailsPage.Address.getText();
 			log.debug("Address is:: ");
-			*/
+*/
 
 			Thread.sleep(2000);
-			Agent_CreditCheckDetailsPage.ContactNumber.sendKeys("07888594958");
-			log.debug("Entered contact number");
+			String num = Agent_CreditCheckDetailsPage.ContactNumber.getText();
+			if(num.isEmpty() ) {
+				Agent_CreditCheckDetailsPage.ContactNumber.sendKeys("07888594958");
+				log.debug("Entered contact number");
+			}
+
+
 
 			Agent_CreditCheckDetailsPage.YearsatAddress.sendKeys("09");
 			log.debug("Entered Number of Years at address");
@@ -330,7 +337,7 @@ public class Agent_CreditCheckPageActions extends Environment {
 			Thread.sleep(4000);
 			Agent_CreditCheckDetailsPage.PerformCreditCheck.click();
 
-			Thread.sleep(5000);
+			Thread.sleep(15000);
 		}
 		else
 		{

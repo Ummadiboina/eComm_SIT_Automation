@@ -36,5 +36,5 @@ Feature: 19_CFU_Phones_GDPR_Enabled_HomeDelivery_EndUser_Reaffirmed_MP_OptIn_B1_
 
 
     Examples:
-      | username   | password | handset           | Username     | Action | tariff | consumer | B1     | B2  | B3  | B4  | Text | Email | Phone | Post | status  | MBBStatus |DeviceType|
-      | ash@o2.com | test123  | Samsung Galaxy S8 | TEST ACCEPTA | skip   |        | Me       | Select | Not | Not | Not | Not  | Not   | Not   | Not  | Enabled | No        |Connected |
+      | username                   | password | handset       | Username     | Action | tariff   | consumer | B1     | B2  | B3  | B4  | Text | Email | Phone | Post | status  | MBBStatus | DeviceType |
+      | e2ed08467865@stf.ref.co.uk | test123  | Random Device | TEST ACCEPTA | skip   | Standard | Me       | Select | Not | Not | Not | Not  | Not   | Not   | Not  | Enabled | No        | Connected  |

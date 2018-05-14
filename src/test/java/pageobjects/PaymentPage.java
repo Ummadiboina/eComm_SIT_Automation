@@ -55,7 +55,7 @@ public class PaymentPage {
         public static WebElement SecurityCode;
 */
 
-    @FindBy(how = How.XPATH, using = "//*[@id='CardHolderName' or @id='CardHolderName']")
+    @FindBy(how = How.XPATH, using = "//*[@id='CardHolderName' or @id='txtCardHolderName']")
     public static WebElement CardHolderName;
 
     @FindBy(how = How.XPATH, using = "//*[@id='ddlCardType' or @id='CardType']")
@@ -64,10 +64,10 @@ public class PaymentPage {
     @FindBy(how = How.XPATH, using = "//*[@id='txtCardNumber' or @id='CardNumber']")
     public static WebElement CardNumber;
 
-    @FindBy(how = How.XPATH, using = "//*[@id='ddlMonth' or @id='Month']")
+    @FindBy(how = How.XPATH, using = "//*[@id='ddlMonth' or @id='txtMonth']")
     public static WebElement CardMonth;
 
-    @FindBy(how = How.XPATH, using = "//*[@id='ddlYear' or @id='Year']")
+    @FindBy(how = How.XPATH, using = "//*[@id='ddlYear' or @id='txtYr']")
     public static WebElement CardYear;
 
     @FindBy(how = How.XPATH, using = "//*[@id='txtSecurityCode' or @id='CardCvv']")
@@ -75,6 +75,13 @@ public class PaymentPage {
 
     @FindBy(how = How.ID, using = "btnPayNow")
     public static WebElement Continue_Next_Step;
+
+    @FindBy(how = How.XPATH, using = "//input[@name='UsernamePasswordEntry']")
+    public static WebElement Submit_Next_Step;
+
+    @FindBy(how = How.XPATH, using = "//input[@type='password']")
+    public static WebElement CCVSecurityCode;
+
 
     @FindBy(how = How.XPATH, using = "//tbody/tr[2]/td[2]/b/input[1]")
     public static WebElement checkoutPassword;

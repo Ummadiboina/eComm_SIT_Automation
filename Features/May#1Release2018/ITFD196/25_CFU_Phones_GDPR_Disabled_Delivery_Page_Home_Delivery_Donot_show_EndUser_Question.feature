@@ -35,5 +35,5 @@ Feature: 25_CFU_Phones_GDPR_Disabled_Delivery_Page_Home_Delivery_Donot_show_EndU
     Then Choose <consumer> <status> Business preferences <B1> <B2> <B3> <B4> And Channel Preferences <Text> <Email> <Phone> <Post> <MBBStatus> <DeviceType>
 
     Examples:
-      | username   | password | handset           | Username     | Action | tariff | consumer | B1  | B2  | B3  | B4  | Text | Email | Phone | Post | status   | MBBStatus |DeviceType|
-      | ash@o2.com | test123  | Samsung Galaxy S8 | TEST ACCEPTA | skip   |        | Disabled | Not | Not | Not | Not | Not  | Not   | Not   | Not  | Disabled | No        |Connected |
+      | username                   | password | handset           | Username     | Action | tariff | consumer | B1  | B2  | B3  | B4  | Text | Email | Phone | Post | status   | MBBStatus | DeviceType |
+      | e2ed25065586@stf.ref.co.uk | test123  | Samsung Galaxy S8 | TEST ACCEPTA | skip   |        | Somone   | Not | Not | Not | Not | Not  | Not   | Not   | Not  | Disabled | No        | Connected  |
