@@ -7,7 +7,7 @@ Feature: Feb_CFA_PayG_FreeSim_Delivery_page_more_than_one_address_select_one_com
     And navigate to PayG SIMO page
     And Select a pay as you go bundle
     #And Land on the 'Tariffs and extra' page
-    And I enter details in Delivery Page<Firstname> and <Surname>
+    And I enter details in Delivery Page <Firstname> and <Surname>
     Then Free Sim order confirmation is displayed
 
     Examples:

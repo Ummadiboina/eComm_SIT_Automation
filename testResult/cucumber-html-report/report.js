@@ -1,16 +1,16 @@
-$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("Features/FebruaryRelease2018/Regression/Reg_CS_PayMPhonesHomeDeliveryWithAccessory.feature");
+$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("Features/May#1Release2018/Regression/Reg_CS_AccessoriesOnly.feature");
 formatter.feature({
   "line": 1,
-  "name": "Reg_CS_PayMPhonesHomeDeliveryWithAccessory",
+  "name": "Reg_CS_AccessoriesOnly",
   "description": "",
-  "id": "reg-cs-paymphoneshomedeliverywithaccessory",
+  "id": "reg-cs-accessoriesonly",
   "keyword": "Feature"
 });
 formatter.scenarioOutline({
   "line": 4,
-  "name": "CFA PayM Phones Home delivery E2E journey with Accessory",
+  "name": "Accessories only E2E journey",
   "description": "",
-  "id": "reg-cs-paymphoneshomedeliverywithaccessory;cfa-paym-phones-home-delivery-e2e-journey-with-accessory",
+  "id": "reg-cs-accessoriesonly;accessories-only-e2e-journey",
   "type": "scenario_outline",
   "keyword": "Scenario Outline",
   "tags": [
@@ -27,108 +27,85 @@ formatter.step({
 });
 formatter.step({
   "line": 6,
-  "name": "navigate to PAYM Phones page",
+  "name": "Navigate to Accessories",
   "keyword": "And "
 });
 formatter.step({
   "line": 7,
-  "name": "I choose PayM \u003chandset\u003e",
+  "name": "select an \"Random\" Accessory",
   "keyword": "And "
 });
 formatter.step({
-  "comments": [
-    {
-      "line": 8,
-      "value": "#edit the above"
-    }
-  ],
+  "line": 8,
+  "name": "add Accessories to basket within limit in details page and navigate to basket",
+  "keyword": "And "
+});
+formatter.step({
   "line": 9,
-  "name": "Navigate to device details page",
+  "name": "I Land on the Non Phone related basket page and choose home delivery option",
   "keyword": "And "
 });
 formatter.step({
   "line": 10,
-  "name": "Land on the \u0027Tariffs and extra\u0027 page",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 11,
-  "name": "Choose some Accesssory",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 12,
-  "name": "I Land on the basket page and choose home delivery option",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 13,
   "name": "click on \"go to checkout\" button",
   "keyword": "And "
 });
 formatter.step({
-  "line": 14,
+  "line": 11,
   "name": "input \u003cFirstname\u003e and \u003cSurname\u003e and other valid details in Delivery page and Click on the \u0027Continue button\u0027",
   "keyword": "And "
 });
 formatter.step({
-  "line": 15,
-  "name": "land on the payment page and input \u003cUsername\u003e and other details and click \u0027Continue on next step\u0027",
+  "line": 12,
+  "name": "land on the Non Credit check payment page and input \u003cUsername\u003e and other details and click \u0027Continue on next step\u0027",
   "keyword": "And "
 });
 formatter.step({
-  "line": 16,
-  "name": "Continue to Agreements page and confirm all the agreement checks",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 17,
+  "line": 13,
   "name": "Continue to Review page and review the order",
   "keyword": "And "
 });
 formatter.step({
-  "line": 18,
+  "line": 14,
   "name": "order confirmation is displayed",
   "keyword": "Then "
 });
 formatter.examples({
-  "line": 20,
+  "line": 16,
   "name": "",
   "description": "",
-  "id": "reg-cs-paymphoneshomedeliverywithaccessory;cfa-paym-phones-home-delivery-e2e-journey-with-accessory;",
+  "id": "reg-cs-accessoriesonly;accessories-only-e2e-journey;",
   "rows": [
     {
       "cells": [
-        "handset",
         "Firstname",
         "Surname",
         "Username"
       ],
-      "line": 21,
-      "id": "reg-cs-paymphoneshomedeliverywithaccessory;cfa-paym-phones-home-delivery-e2e-journey-with-accessory;;1"
+      "line": 17,
+      "id": "reg-cs-accessoriesonly;accessories-only-e2e-journey;;1"
     },
     {
       "cells": [
-        "Samsung Galaxy S8",
         "TEST",
         "ACCEPTA",
         "TEST ACCEPTA"
       ],
-      "line": 22,
-      "id": "reg-cs-paymphoneshomedeliverywithaccessory;cfa-paym-phones-home-delivery-e2e-journey-with-accessory;;2"
+      "line": 18,
+      "id": "reg-cs-accessoriesonly;accessories-only-e2e-journey;;2"
     }
   ],
   "keyword": "Examples"
 });
 formatter.before({
-  "duration": 10601298937,
+  "duration": 38342183811,
   "status": "passed"
 });
 formatter.scenario({
-  "line": 22,
-  "name": "CFA PayM Phones Home delivery E2E journey with Accessory",
+  "line": 18,
+  "name": "Accessories only E2E journey",
   "description": "",
-  "id": "reg-cs-paymphoneshomedeliverywithaccessory;cfa-paym-phones-home-delivery-e2e-journey-with-accessory;;2",
+  "id": "reg-cs-accessoriesonly;accessories-only-e2e-journey;;2",
   "type": "scenario",
   "keyword": "Scenario Outline",
   "tags": [
@@ -145,77 +122,53 @@ formatter.step({
 });
 formatter.step({
   "line": 6,
-  "name": "navigate to PAYM Phones page",
+  "name": "Navigate to Accessories",
   "keyword": "And "
 });
 formatter.step({
   "line": 7,
-  "name": "I choose PayM Samsung Galaxy S8",
-  "matchedColumns": [
-    0
-  ],
+  "name": "select an \"Random\" Accessory",
   "keyword": "And "
 });
 formatter.step({
-  "comments": [
-    {
-      "line": 8,
-      "value": "#edit the above"
-    }
-  ],
+  "line": 8,
+  "name": "add Accessories to basket within limit in details page and navigate to basket",
+  "keyword": "And "
+});
+formatter.step({
   "line": 9,
-  "name": "Navigate to device details page",
+  "name": "I Land on the Non Phone related basket page and choose home delivery option",
   "keyword": "And "
 });
 formatter.step({
   "line": 10,
-  "name": "Land on the \u0027Tariffs and extra\u0027 page",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 11,
-  "name": "Choose some Accesssory",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 12,
-  "name": "I Land on the basket page and choose home delivery option",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 13,
   "name": "click on \"go to checkout\" button",
   "keyword": "And "
 });
 formatter.step({
-  "line": 14,
+  "line": 11,
   "name": "input TEST and ACCEPTA and other valid details in Delivery page and Click on the \u0027Continue button\u0027",
   "matchedColumns": [
-    1,
+    0,
+    1
+  ],
+  "keyword": "And "
+});
+formatter.step({
+  "line": 12,
+  "name": "land on the Non Credit check payment page and input TEST ACCEPTA and other details and click \u0027Continue on next step\u0027",
+  "matchedColumns": [
     2
   ],
   "keyword": "And "
 });
 formatter.step({
-  "line": 15,
-  "name": "land on the payment page and input TEST ACCEPTA and other details and click \u0027Continue on next step\u0027",
-  "matchedColumns": [
-    3
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "line": 16,
-  "name": "Continue to Agreements page and confirm all the agreement checks",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 17,
+  "line": 13,
   "name": "Continue to Review page and review the order",
   "keyword": "And "
 });
 formatter.step({
-  "line": 18,
+  "line": 14,
   "name": "order confirmation is displayed",
   "keyword": "Then "
 });
@@ -223,56 +176,40 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.i_am_an_CFA_user_and_Lands_on_shop_page()"
 });
 formatter.result({
-  "duration": 872947022,
+  "duration": 770762065,
   "status": "passed"
 });
 formatter.match({
-  "location": "E2EOrderPlaced_Steps.navigate_to_PAYM_Phones_page()"
+  "location": "E2EOrderPlaced_Steps.navigate_to_Accessories()"
 });
 formatter.result({
-  "duration": 23278154131,
-  "status": "passed"
+  "duration": 20813157867,
+  "error_message": "java.lang.AssertionError: unable to do mousehover to Accessories\r\n\tat org.testng.Assert.fail(Assert.java:94)\r\n\tat steps.E2EOrderPlaced_Steps.navigate_to_Accessories(E2EOrderPlaced_Steps.java:179)\r\n\tat ✽.And Navigate to Accessories(Features/May#1Release2018/Regression/Reg_CS_AccessoriesOnly.feature:6)\r\n",
+  "status": "failed"
 });
 formatter.match({
   "arguments": [
     {
-      "val": "Samsung Galaxy S8",
-      "offset": 14
+      "val": "Random",
+      "offset": 11
     }
   ],
-  "location": "E2EOrderPlaced_Steps.Choose_PAYM_Handset(String)"
+  "location": "E2EOrderPlaced_Steps.select_an_Accessory(String)"
 });
 formatter.result({
-  "duration": 5147055309,
-  "status": "passed"
+  "status": "skipped"
 });
 formatter.match({
-  "location": "E2EOrderPlaced_Steps.Navigate_to_device_details_page()"
+  "location": "E2EOrderPlaced_Steps.add_Accessories_to_basket_within_limit_in_details_page_and_navigate_to_basket()"
 });
 formatter.result({
-  "duration": 19143133355,
-  "status": "passed"
+  "status": "skipped"
 });
 formatter.match({
-  "location": "E2EOrderPlaced_Steps.land_on_the_Tariffs_and_extra_page()"
+  "location": "E2EOrderPlaced_Steps.NonPhoneRelatedBasketPage()"
 });
 formatter.result({
-  "duration": 9765323844,
-  "status": "passed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.Choose_some_Accesssory()"
-});
-formatter.result({
-  "duration": 4611519841,
-  "status": "passed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.i_Land_on_the_basket_page_and_choose_home_delivery_option()"
-});
-formatter.result({
-  "duration": 53739018530,
-  "status": "passed"
+  "status": "skipped"
 });
 formatter.match({
   "arguments": [
@@ -284,8 +221,7 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.CheckoutFromBasket(String)"
 });
 formatter.result({
-  "duration": 12034801293,
-  "status": "passed"
+  "status": "skipped"
 });
 formatter.match({
   "arguments": [
@@ -301,29 +237,19 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.DeliveryPage_Inputs_homeDelivery(String,String)"
 });
 formatter.result({
-  "duration": 62719743043,
-  "status": "passed"
+  "status": "skipped"
 });
 formatter.match({
   "arguments": [
     {
       "val": "TEST ACCEPTA",
-      "offset": 35
+      "offset": 52
     }
   ],
-  "location": "E2EOrderPlaced_Steps.CreditCheckPaymentPage_HomeDelivery(String)"
+  "location": "E2EOrderPlaced_Steps.NonCreditCheckPaymentPage_HomeDelivery(String)"
 });
 formatter.result({
-  "duration": 169403420604,
-  "status": "passed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.AgreementsPageConfirmation()"
-});
-formatter.result({
-  "duration": 33877790452,
-  "error_message": "java.lang.AssertionError: Agreements page is not displayed or unable to enter some information in thie page, Please review the screenshots for failure\r\n\tat org.testng.Assert.fail(Assert.java:94)\r\n\tat steps.E2EOrderPlaced_Steps.AgreementsPageConfirmation(E2EOrderPlaced_Steps.java:1530)\r\n\tat ✽.And Continue to Agreements page and confirm all the agreement checks(Features/FebruaryRelease2018/Regression/Reg_CS_PayMPhonesHomeDeliveryWithAccessory.feature:16)\r\n",
-  "status": "failed"
+  "status": "skipped"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.ReviewPageConfirmation()"
@@ -338,7 +264,7 @@ formatter.result({
   "status": "skipped"
 });
 formatter.after({
-  "duration": 20814627568,
+  "duration": 17399163013,
   "status": "passed"
 });
 });

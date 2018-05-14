@@ -117,7 +117,7 @@ public class Agent_RegisterCustomerActions extends Environment {
 			// TODO Auto-generated catch block
 			e.getMessage();
 		}
-
+		Thread.sleep(3000);
 		Agent_RegisterCustomerPage.intialPassword.sendKeys("test123");
 		Agent_RegisterCustomerPage.confirmPassword.sendKeys("test123");
 		Thread.sleep(2000);
@@ -138,6 +138,16 @@ public class Agent_RegisterCustomerActions extends Environment {
 		} catch (Exception e) {
 			e.getMessage();
 			log.debug("Try catch block exception in Agent register cutomer actions page, nothing to worry :)");
+		}
+
+		Thread.sleep(3000);
+		if(driver.findElements(By.id("marketingRequired")).size()>0) {
+
+			JavascriptExecutor executor = (JavascriptExecutor)driver;
+			executor.executeScript("arguments[0].click();", Agent_RegisterCustomerPage.Check_box);
+			//Agent_RegisterCustomerPage.Check_box.click();
+			log.debug("Selected the TC checkbox");
+			Thread.sleep(2000);
 		}
 
 		Select dropdown2 = new Select(pageobjects.Agent_RegisterCustomerPage.securityQuestion);
@@ -272,12 +282,18 @@ public class Agent_RegisterCustomerActions extends Environment {
 
 		Agent_RegisterCustomerPage.Security_Answer.sendKeys(Security_Answer);
 		log.debug("Entered Security Answer");
+		Thread.sleep(3000);
+		if(driver.findElements(By.id("marketingRequired")).size()>0) {
 
-		//Agent_RegisterCustomerPage.Check_box.click();
-		//log.debug("Selected the TC checkbox");
+			JavascriptExecutor executor = (JavascriptExecutor)driver;
+			executor.executeScript("arguments[0].click();", Agent_RegisterCustomerPage.Check_box);
+			//Agent_RegisterCustomerPage.Check_box.click();
+			log.debug("Selected the TC checkbox");
+			Thread.sleep(2000);
+		}
 
 		Agent_RegisterCustomerPage.registerCustomer.click();
-		Thread.sleep(6000);
+		Thread.sleep(8000);
 		log.debug("Clicked on Register customer");
 		log.debug("Clicked on Register customer");
 
