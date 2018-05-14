@@ -13,4 +13,3 @@ Feature: Feb_CFA_PayG_FreeSim_Delivery_page_more_than_one_address_select_one_com
     Examples:
       | Firstname | Surname |
       | TEST      | ACCEPTA |
-

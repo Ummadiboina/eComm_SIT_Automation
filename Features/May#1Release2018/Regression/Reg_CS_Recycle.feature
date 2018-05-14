@@ -1,6 +1,7 @@
 Feature: Reg_CS_Recycle.feature
 
   @Web
+
   Scenario Outline: This scenario ensures that the customer is able to recycle and upgrade
     Given I am an Existing user and Navigates to Signin page
     And Signin using valid <username> and <password> credentials
@@ -29,4 +30,4 @@ Feature: Reg_CS_Recycle.feature
 
     Examples:
       | username    | password | handset        | tariff                  | Firstname | Surname | Username     | Action | Make  | Model   | Network |
-      | 08ma54391583 | test123  | Apple iPhone 7 | 29.99upfront46.00amonth | TEST      | ACCEPTA | TEST ACCEPTA | skip   | Apple | Iphone7 | Orange  |
+      | inq_jan3955 | test123  | Apple iPhone 7 | 29.99upfront46.00amonth | TEST      | ACCEPTA | TEST ACCEPTA | skip   | Apple | Iphone7 | Orange  |

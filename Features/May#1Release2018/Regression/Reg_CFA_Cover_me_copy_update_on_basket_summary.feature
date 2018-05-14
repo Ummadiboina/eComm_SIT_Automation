@@ -32,7 +32,8 @@ Feature: Reg_CFA_Cover_me_copy_update_on_basket_summary
     And I Land on the basket page and choose home delivery option
     And verify cover me is present in Basket page
     And click on "go to checkout" button
-    Then verify cover me is present in delivery page
+    And input <Firstname> and <Surname> and other valid details in Delivery page to verify GDPR
+    And Is this order for You or Someone else <consumer> when GDPR is <status>
     And input <Firstname> and <Surname> and other valid details in Delivery page and Click on the 'Continue button'
     Then verify cover me is present in  payment page
     And land on the payment page and input <Username> and other details and click 'Continue on next step'
@@ -42,8 +43,9 @@ Feature: Reg_CFA_Cover_me_copy_update_on_basket_summary
     And Continue to Review page and review the order
     When order confirmation is displayed
     Then verify cover me is present in  pdf download
+    Then Choose <consumer> <status> Business preferences <B1> <B2> <B3> <B4> And Channel Preferences <Text> <Email> <Phone> <Post>
 
     #And pdf content
     Examples:
-      | tabletname    | color     | capacity | Status   | handset           | Firstname | Surname | Username     |
-      | Random Device | Rose Gold | 64GB    | In Stock | Samsung Galaxy S8 | TEST      | ACCEPTA | TEST ACCEPTA |
+      | tabletname    | color     | capacity | Status   | handset           | Firstname | Surname | Username     | consumer | B1  | B2  | B3  | B4  | Text | Email  | Phone | Post | status  | MBBStatus | DeviceType |
+      | Random Device | Rose Gold | 64GB     | In Stock | Samsung Galaxy S8 | TEST      | ACCEPTA | TEST ACCEPTA | Me       | Not | Not | Not | Not | Not  | Select | Not   | Not  | Enabled | No        | Connected  |

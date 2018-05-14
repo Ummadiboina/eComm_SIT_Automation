@@ -11,10 +11,11 @@ Feature: Reg_AFU_verify_Base_Comms_tariff_under_offer_column_order_placement_O2_
     And Verify that Basecomms is displayed in the offers section
     And select a valid Handset and Tariff combination
     And Validate all the Basket content and checkout
+    And Choose Business preferences <B1> <B2> <B3> <B4> and Channel Preferences <Text> <Email> <Phone> <Post> for <Consumer> when GDPR <status> <DeviceType> for AFU journey
     Then perform all the advisory checks
     When Pay by card
     Then Order confirmation message should be displayed
 
     Examples:
-      | user        | Device | Tariffs |
-      | 07521124085 | Random | Refresh |
+      | user        | Device | Tariffs |consumer | B1  | B2  | B3  | B4  | Text | Email  | Phone | Post | status  | MBBStatus | DeviceType |
+      | 07521124085 | Random | Refresh |Me       | Not | Not | Not | Not | Not  | Select | Not   | Not  | Enabled | No        | Connected  |

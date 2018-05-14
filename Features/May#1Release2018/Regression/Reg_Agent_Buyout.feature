@@ -11,6 +11,7 @@ Feature: Reg_Agent_Buyout
     And select a valid Handset and Tariff combination_new
     And clicks on 'Buyout' button
     #And Validate all the Basket content and checkout
+    And Choose Business preferences <B1> <B2> <B3> <B4> and Channel Preferences <Text> <Email> <Phone> <Post> for <Consumer> when GDPR <status> <DeviceType> for AFU journey
     Then perform all the advisory checks_new
     And Click on 'Generate CCA' button
     And click on the 'CCA' link
@@ -23,5 +24,5 @@ Feature: Reg_Agent_Buyout
     #Then order confirmation is displayed
 
     Examples:
-      | User        | Device              | Tariffs | username      | DeliveryType | Firstname | Surname | HouseNumber | PostCode | Username     | password |
-      | 07525948317 | iPhone 6s 32GB Gold | Refresh | erto@1234.com | HomeDelivery | Test      | Accepta | Flat 9      | SL11EL   | Test Accepta | test123  |
+      | User        | Device              | Tariffs | username      | DeliveryType | Firstname | Surname | HouseNumber | PostCode | Username     | password | consumer | B1  | B2  | B3  | B4  | Text | Email  | Phone | Post | status  | MBBStatus | DeviceType |
+      | 07521119257 | iPhone 6s 32GB Gold | Refresh | erto@1234.com | HomeDelivery | Test      | Accepta | Flat 9      | SL11EL   | Test Accepta | test123  | Me       | Not | Not | Not | Not | Not  | Select | Not   | Not  | Enabled | No        | Connected  |

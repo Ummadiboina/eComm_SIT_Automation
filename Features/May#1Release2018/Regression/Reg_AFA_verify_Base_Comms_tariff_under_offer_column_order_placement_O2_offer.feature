@@ -13,10 +13,11 @@ Feature: Reg_AFA_verify_Base_Comms_tariff_under_offer_column_order_placement_O2_
     Then perform all the advisory checks
     And perform the credit checks using valid <Firstname>, <Surname>, <HouseNumber>, <PostCode> and valid <Username>
     And Register the customer with valid <Firstname>, <Surname>, <HouseNumber>, <PostCode> and other valid details in delivery page
+    And Choose Business preferences <B1> <B2> <B3> <B4> and Channel Preferences <Text> <Email> <Phone> <Post> for <Consumer> when GDPR <status> <DeviceType> for AFA journey
     And Choose HomeDelivery delivery address and delivery time
     When Pay by card
     Then Order confirmation message should be displayed
 
     Examples:
-      | Device | Tariffs | Extras | Firstname | Surname | Username     | HouseNumber | PostCode |
-      | Random | Base    | Base   | Test      | Accepta | Test Accepta | 2           | SL11UP   |
+      | Device | Tariffs | Extras | Firstname | Surname | Username     | HouseNumber | PostCode |consumer | B1  | B2  | B3  | B4  | Text | Email  | Phone | Post | status  | MBBStatus | DeviceType |
+      | Random | Base    | Base   | Test      | Accepta | Test Accepta | 2           | SL11UP   | Me       | Not | Not | Not | Not | Not  | Select | Not   | Not  | Enabled | No        | Connected  |

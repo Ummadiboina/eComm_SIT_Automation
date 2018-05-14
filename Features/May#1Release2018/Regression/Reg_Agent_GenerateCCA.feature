@@ -14,6 +14,7 @@ Feature: Reg_Agent_GenerateCCA
     And perform the credit checks using valid <Firstname>, <Surname>, <HouseNumber>, <PostCode> and valid <Username>
     #And Register the customer with valid <Firstname>, <Surname>, <HouseNumber>, <PostCode> and other valid details in delivery page
     And Register the customer with valid <Firstname>, <Surname>, <HouseNumber>, <PostCode> and other valid details in delivery page_new
+    And Choose Business preferences <B1> <B2> <B3> <B4> and Channel Preferences <Text> <Email> <Phone> <Post> for <Consumer> when GDPR <status> <DeviceType> for AFA journey
     And get the emailid
     And Click on 'Generate CCA' button
    # And click on the 'CCA' link
@@ -27,5 +28,5 @@ Feature: Reg_Agent_GenerateCCA
 
 
     Examples:
-      | user        | Device                   | Tariffs | DeliveryType | Firstname | Surname | Username     | HouseNumber | PostCode | emailid        | password1    |
-      | 07521000051 | Galaxy S7 Edge 32GB Pink | Refresh | HomeDelivery | TEST      | ACCEPTA | TEST ACCEPTA | Flat 6      | SL11EL   | tester@tes.com | SitTester123 |
+      | user        | Device                   | Tariffs | DeliveryType | Firstname | Surname | Username     | HouseNumber | PostCode | emailid        | password1    | consumer | B1  | B2  | B3  | B4  | Text | Email  | Phone | Post | status  | MBBStatus | DeviceType |
+      | 07521000051 | Galaxy S7 Edge 32GB Pink | Refresh | HomeDelivery | TEST      | ACCEPTA | TEST ACCEPTA | Flat 6      | SL11EL   | tester@tes.com | SitTester123 | Me       | Not | Not | Not | Not | Not  | Select | Not   | Not  | Enabled | No        | Connected  |

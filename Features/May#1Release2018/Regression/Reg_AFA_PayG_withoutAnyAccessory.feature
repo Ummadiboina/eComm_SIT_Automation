@@ -10,10 +10,11 @@ Feature: Reg_AFA_PayG_withoutAnyAccessory
     And Validate all the Basket content and checkout
     Then perform all the advisory checks
     And Register the customer with valid <Firstname>, <Surname>, <HouseNumber>, <PostCode> and other valid details in delivery page
+    And Choose Business preferences <B1> <B2> <B3> <B4> and Channel Preferences <Text> <Email> <Phone> <Post> for <Consumer> when GDPR <status> <DeviceType> for AFA journey
     And Choose <DeliveryType> delivery address and delivery time
     When Pay by card
     Then Order confirmation message should be displayed
 
     Examples:
-      | Device              | Tariffs | DeliveryType | Firstname | Surname | HouseNumber | PostCode |
-      | iPhone 6s 32GB Gold | Random  | HomeDelivery | TEST      | ACCEPTA | 4           | SL11UP   |
+      | Device              | Tariffs | DeliveryType | Firstname | Surname | HouseNumber | PostCode | consumer | B1  | B2  | B3  | B4  | Text | Email  | Phone | Post | status  | MBBStatus | DeviceType |
+      | iPhone 6s 32GB Gold | Random  | HomeDelivery | TEST      | ACCEPTA | 4           | SL11UP   | Me       | Not | Not | Not | Not | Not  | Select | Not   | Not  | Enabled | No        | Connected  |

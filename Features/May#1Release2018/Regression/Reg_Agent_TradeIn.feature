@@ -11,6 +11,7 @@ Feature: Reg_Agent_TradeIn
     And select a valid Handset and Tariff combination_new
     And Clicks on 'Trade In'button
     And Validate all the Basket content and checkout
+    And Choose Business preferences <B1> <B2> <B3> <B4> and Channel Preferences <Text> <Email> <Phone> <Post> for <Consumer> when GDPR <status> <DeviceType> for AFU journey
     Then perform all the advisory checks
     And Click on 'Generate CCA' button
     And click on the 'CCA' link
@@ -24,5 +25,5 @@ Feature: Reg_Agent_TradeIn
 
 
     Examples:
-      | User        | Device                   | Tariffs | username                      | user         | DeliveryType | Firstname | Surname | Username     | HouseNumber | PostCode | password |
-      | 07521127887 | Galaxy S7 Edge 32GB Pink | Refresh | 23oc84050507@stf.ref.o2.co.uk | TEST ACCEPTA | HomeDelivery | TEST      | ACCEPTA | TEST ACCEPTA | Flat 6      | SL11EL   | test123  |
+      | User        | Device                   | Tariffs | username                      | user         | DeliveryType | Firstname | Surname | Username     | HouseNumber | PostCode | password | consumer | B1  | B2  | B3  | B4  | Text | Email  | Phone | Post | status  | MBBStatus | DeviceType |
+      | 07521000553 | Galaxy S7 Edge 32GB Pink | Refresh | 23oc84050507@stf.ref.o2.co.uk | TEST ACCEPTA | HomeDelivery | TEST      | ACCEPTA | TEST ACCEPTA | Flat 6      | SL11EL   | test123  | Me       | Not | Not | Not | Not | Not  | Select | Not   | Not  | Enabled | No        | Connected  |
