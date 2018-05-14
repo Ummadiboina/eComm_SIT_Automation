@@ -39,7 +39,10 @@ public class Agent_AdvisoryChecksActions extends Environment {
 		System.out.println("Going to Click on Advisory checks");
 		Thread.sleep(4000);
 		if (Agent_AdvisoryPage.ccaEmail.isDisplayed()) {
-			Agent_AdvisoryPage.ccaEmail.sendKeys(Keys.CLEAR);
+			//Agent_AdvisoryPage.ccaEmail.sendKeys(Keys.CLEAR);
+			Thread.sleep(2000);
+			Agent_AdvisoryPage.ccaEmail.sendKeys(Keys.CONTROL,"a",Keys.DELETE);
+			Thread.sleep(2000);
 			Agent_AdvisoryPage.ccaEmail.sendKeys("ramjkljldklld@gmail.com");
 			Agent_AdvisoryPage.houseNum.sendKeys("4");
 			Agent_AdvisoryPage.postalCode.sendKeys("sl11er");
