@@ -24,14 +24,8 @@ Feature: Feb_AFU_eComm_Promotions_and_added_Bolton_Incompatible_error_message_Re
     Then Verify that the error <ErrorMsg> is displayed in the deal about the conflict
     And Click on 'Remove' button in front of <Button>
     And Verify that the 'Checkout' CTA is enabled
-   # Then Click on 'Checkout' CTA and Proceed till Order placement
-    And Validate all the Basket content and checkout
-    And Choose Business preferences <B1> <B2> <B3> <B4> and Channel Preferences <Text> <Email> <Phone> <Post> for <Consumer> when GDPR <status> <DeviceType> for AFU journey
-    Then perform all the advisory checks
-    When Pay by card
-    #When submit order button is clicked
-    Then Order confirmation message should be displayed
+    Then Click on 'Checkout' CTA and Proceed till Order placement
 
     Examples:
-      | user        | Device | Tariffs | ErrorMsg                     | Button | consumer | B1  | B2  | B3  | B4  | Text | Email  | Phone | Post | status  | MBBStatus | DeviceType |
-      | 07521114790 | Random | Refresh | incompatible with each other | Bolton | Me       | Not | Not | Not | Not | Not  | Select | Not   | Not  | Enabled | No        | Connected  |
+      | user        | Device | Tariffs | ErrorMsg                     | Button |
+      | 07521114790 | Random | Refresh | incompatible with each other | Bolton |
