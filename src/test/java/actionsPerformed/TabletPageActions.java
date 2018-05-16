@@ -71,6 +71,7 @@ public class TabletPageActions extends Environment {
 	}
 
 	public static void DeviceSelect(String elementName) throws InterruptedException, IOException {
+		Thread.sleep(10000);
 
 		if (elementName.contains("Random Device")) {
 

@@ -12,7 +12,7 @@ public class MobileBroadBandPageActions extends Environment {
 	final static Logger log = Logger.getLogger("MobileBroadBandPageActions");
 
 	public static void DeviceSelect(String elementName) throws IOException, InterruptedException {
-
+		Thread.sleep(6000);
 		if (elementName.contains("Random Device")) {
 			log.debug("Random Device Selected");
 

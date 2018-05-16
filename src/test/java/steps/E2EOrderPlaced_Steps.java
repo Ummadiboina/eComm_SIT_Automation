@@ -119,6 +119,7 @@ public class E2EOrderPlaced_Steps {
             PageFactory.initElements(driver, MouseHoverPage.class);
 
             MouseHoverAction.PayMPhonesLandingPage();
+            Thread.sleep(4000);
             Autoredirection.redirect();
             Thread.sleep(6000);
             //GlobalActions.//CommonFunctionscheckTitle("PayM Phones Page");
@@ -329,6 +330,7 @@ public class E2EOrderPlaced_Steps {
         try {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, PhonesListingPage.class);
+            Thread.sleep(5000);
             PhonesListingPageAction.PAYGPhoneSelect("Random Device");
         } catch (Exception e) {
             // TODO Auto-generated catch block
@@ -343,6 +345,7 @@ public class E2EOrderPlaced_Steps {
         try {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, MobileBroadBandPage.class);
+            Thread.sleep(5000);
             MobileBroadBandPageActions.DeviceSelect(elementName);
         } catch (Exception e) {
             // TODO Auto-generated catch block
@@ -357,6 +360,7 @@ public class E2EOrderPlaced_Steps {
         try {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, FitnessTrackerPage.class);
+            Thread.sleep(5000);
             FitnessTrackerPageActions.DeviceSelect(arg1);
         } catch (Exception e) {
             // TODO Auto-generated catch block
@@ -386,6 +390,7 @@ public class E2EOrderPlaced_Steps {
         try {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, MobileBroadBandPage.class);
+            Thread.sleep(5000);
             MobileBroadBandPageActions.DeviceSelect(elementName);
         } catch (Exception e) {
             // TODO Auto-generated catch block
@@ -696,7 +701,7 @@ public class E2EOrderPlaced_Steps {
         try {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, PAYMandPAYGTariffAndExtrasPage.class);
-            Thread.sleep(3000);
+            Thread.sleep(5000);
             PAYMandPAYGTariffAndExtrasPageActions.TariffSelect("Randomtariff");
             Thread.sleep(6000);
             // PAYMandPAYGTariffAndExtrasPageActions.addToBasketLive();
@@ -784,6 +789,7 @@ public class E2EOrderPlaced_Steps {
                 log.debug("Queue page is not displayed");
                 PAYMandPAYGTariffAndExtrasPageActions.addToBasketLive();
                 // BasketPageActions.ValidateBasketPageContents();
+                Thread.sleep(4000);
                 BasketPageActions.CollectionorDelivery("homeDelivery");
             }
         } catch (Exception e) {
@@ -833,6 +839,7 @@ public class E2EOrderPlaced_Steps {
             PAYMandPAYGTariffAndExtrasPageActions.addToBasketLive();
             Thread.sleep(3000);
             BasketPageActions.ValidateBasketPageContents("","");
+            Thread.sleep(5000);
             BasketPageActions.CollectionorDelivery("clickAndCollect");
             Thread.sleep(3000);
         } catch (Exception e) {
@@ -1030,7 +1037,10 @@ public class E2EOrderPlaced_Steps {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, DeliveryPage.class);
             //CommonFunctionscheckTitle("Delivery Page");
-          //  DeliveryPageActions.SetDelivery();
+            //DeliveryPageActions.SetDelivery();
+
+            //DeliveryPageActions.ClickAndCollect();
+            Thread.sleep(5000);
             DeliveryPageActions.AboutYou(Firstname, Surname);
             // DeliveryPageActions.ClickContinue();
             //DeliveryPageActions.clickOnSubmitBtn();
@@ -1516,9 +1526,9 @@ public class E2EOrderPlaced_Steps {
             PageFactory.initElements(driver, PaymentPage.class);
             //CommonFunctionscheckTitle("Payment Page");
             PaymentPageActions.Set_Bank_details(Username);
-            Thread.sleep(3000);
+            Thread.sleep(5000);
             PaymentPageActions.Time_At_Address_CC();
-            Thread.sleep(3000);
+            Thread.sleep(5000);
             PaymentPageActions.Card_Details(Username);
             Thread.sleep(75000);
         } catch (Exception e) {
@@ -3368,6 +3378,7 @@ public class E2EOrderPlaced_Steps {
         try {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, TabletPage.class);
+            Thread.sleep(5000);
             TabletPageActions.DeviceSelect(arg1);
 
         } catch (Exception e) {
@@ -5656,7 +5667,7 @@ public class E2EOrderPlaced_Steps {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, PhonesListingPage.class);
             PhonesListingPageAction.searchForDevice(devicename);
-            Thread.sleep(3000);
+            Thread.sleep(5000);
         } catch (Exception e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
@@ -7754,7 +7765,7 @@ public class E2EOrderPlaced_Steps {
             //driver.findElement(By.xpath("//*[@id='callToAction'][1]")).click();
 
             JavascriptExecutor executor = (JavascriptExecutor) driver;
-            executor.executeScript("arguments[0].click();", driver.findElement(By.xpath("//*[@id='callToAction'][1]")));
+            executor.executeScript("arguments[0].click();", driver.findElement(By.xpath("(//*[@id='callToAction'])[1]")));
             Thread.sleep(5000);
         } catch (Exception e) {
             log.debug(e.getMessage());
@@ -9574,6 +9585,7 @@ public class E2EOrderPlaced_Steps {
             driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
             PageFactory.initElements(driver, DeliveryPage.class);
            // Agent_DealBuilderPageActions.verifyDevive_and_CopyClipboard_Btn();
+            Thread.sleep(4000);
             DeliveryPageActions.clickOnSubmitBtn(customer, status);
             Thread.sleep(5000);
         } catch (InterruptedException e) {
@@ -9592,6 +9604,7 @@ public class E2EOrderPlaced_Steps {
         try {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, OrderConfirmationPage.class);
+            Thread.sleep(5000);
             OrderConfirmationPageActions.PreferencesSection(consumer,gdprStatus, BP1, BP2, BP3, BP4, Chn1, Chn2, Chn3, Chn4,MBBStatus, DeviceType);
         } catch (Exception e) {
             // TODO Auto-generated catch block

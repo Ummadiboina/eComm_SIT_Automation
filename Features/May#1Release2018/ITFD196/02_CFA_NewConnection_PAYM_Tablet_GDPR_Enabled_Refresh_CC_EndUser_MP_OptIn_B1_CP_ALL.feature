@@ -22,5 +22,5 @@ Feature: 02_CFA_NewConnection_PAYM_Tablet_GDPR_Enabled_Refresh_CC_EndUser_MP_Opt
     Then Choose <consumer> <status> Business preferences <B1> <B2> <B3> <B4> And Channel Preferences <Text> <Email> <Phone> <Post> <MBBStatus> <DeviceType>
 
     Examples:
-      | handset  | Firstname | Surname | Username     | consumer | B1     | B2  | B3  | B4  | Text   | Email  | Phone  | Post   | status  | Device                 | MBBStatus | DeviceType |
-      | iPhone 6 | TEST      | ACCEPTA | TEST ACCEPTA | Me       | Select | Not | Not | Not | Select | Select | Select | Select | Enabled | Galaxy Tab A 2016 10.1 | No        | Connected  |
+      | handset  | Firstname | Surname | Username     | consumer | B1     | B2  | B3  | B4  | Text   | Email  | Phone  | Post   | status  | Device        | MBBStatus | DeviceType |
+      | iPhone 6 | TEST      | ACCEPTA | TEST ACCEPTA | Me       | Select | Not | Not | Not | Select | Select | Select | Select | Enabled | Random Device | No        | Connected  |

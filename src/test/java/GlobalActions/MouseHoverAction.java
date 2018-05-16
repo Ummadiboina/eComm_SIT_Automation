@@ -59,8 +59,8 @@ public class MouseHoverAction extends Environment {
     }
 
     public static void PayMPhonesLandingPage() throws Exception {
-        driver.manage().timeouts().implicitlyWait(150, TimeUnit.SECONDS);
-
+        //driver.manage().timeouts().implicitlyWait(150, TimeUnit.SECONDS);
+        Thread.sleep(10000);
         try {
             /*********************************************************************
              normal execution flow in ref Env....        ************************/
@@ -77,13 +77,13 @@ public class MouseHoverAction extends Environment {
                 Actions action = new Actions(driver);
                 action.moveToElement(pageobjects.MouseHoverPage.MoveMouseOnShopTab).perform();
                 log.debug("Mouse over on the Shop Header ");
-                Thread.sleep(2000);
+                Thread.sleep(3000);
 
                 Actions action1 = new Actions(driver);
                 action1.moveToElement(pageobjects.MouseHoverPage.MoveMouseOnPhones).perform();
                 log.debug("Mouse over Shop---> Phones ");
                 log.debug("Moving Mouse on the Phones dropdown");
-                Thread.sleep(2000);
+                Thread.sleep(3000);
 
                 pageobjects.MouseHoverPage.MoveMouseOnPAYMPhones.click();
                 log.debug("Mouse over Shop---> Phones--> Pay monthly phones ");
@@ -565,6 +565,8 @@ public class MouseHoverAction extends Environment {
                 JavascriptExecutor executor = (JavascriptExecutor)driver;
                 executor.executeScript("arguments[0].click();", MouseHoverPage.MoveMouseOnPhones_Drupal);
                 Thread.sleep(5000);
+
+
                 Screenshots.captureScreenshot();
 
                 log.debug("Clicking on PayG Phones");
@@ -1202,9 +1204,14 @@ public class MouseHoverAction extends Environment {
                 Thread.sleep(2000);
 
                 pageobjects.MouseHoverPage.MoveMouseOnSims.click();
-                log.debug("Clicking on Pay G Sims");
+                log.debug("Clicking on Sims");
                 // Move mouse pointer away from location
-                Thread.sleep(5000);
+                //Thread.sleep(5000);
+
+                /*driver.manage().timeouts().implicitlyWait(15,TimeUnit.SECONDS);
+
+                pageobjects.MouseHoverPage.MoveMouseOnPayGSims.click();
+                log.debug("Clicking on Pay G Sims");*/
 
                 Point coordinates2 = driver.findElement(By.xpath("//*[@id='header-consumer']/div")).getLocation();
                 Robot robot2 = new Robot();
@@ -1232,15 +1239,20 @@ public class MouseHoverAction extends Environment {
                 Actions action1 = new Actions(driver);
                 action1.moveToElement(MouseHoverPage.MoveMouseOnSims_Drupal).perform();
                 log.debug("Moving mouse on the PayG Sims");
-                Thread.sleep(2000);
+                Thread.sleep(5000);
 
                 // MouseHoverPage.MoveMouseOnPhones_Drupal.click();
                 JavascriptExecutor executor = (JavascriptExecutor) driver;
                 executor.executeScript("arguments[0].click();", MouseHoverPage.MoveMouseOnSims_Drupal);
-                Thread.sleep(5000);
+                //Thread.sleep(5000);
+
+                driver.manage().timeouts().implicitlyWait(15,TimeUnit.SECONDS);
+
+                pageobjects.MouseHoverPage.MoveMouseOnPayGSims.click();
+                log.debug("Clicking on Pay G Sims");
                 Screenshots.captureScreenshot();
 
-                log.debug("Clicking on Pay G Sims");
+
                 /*// Move mouse pointer away from location
                 Point coordinates2 = driver.findElement(By.xpath("(//div[@class='navContainer']/ul)[1]")).getLocation();
                 Robot robot2 = new Robot();
