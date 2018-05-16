@@ -361,7 +361,8 @@ public class E2EOrderPlaced_Steps {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, FitnessTrackerPage.class);
             Thread.sleep(5000);
-            FitnessTrackerPageActions.DeviceSelect(arg1);
+            Autoredirection.redirect();
+            FitnessTrackerPageActions.DeviceSelect("Random Device");
         } catch (Exception e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
@@ -569,6 +570,7 @@ public class E2EOrderPlaced_Steps {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, AccessoryPage.class);
             PageFactory.initElements(driver, NonConnectedDeviceDetailsPage.class);
+            Autoredirection.redirect();
             FitnessTrackerPageActions.AddtoBasketFitnessTracker();
             // NonConnectedDeviceDetailsPageAction.ClickonBasketIcon();
         } catch (Exception e) {

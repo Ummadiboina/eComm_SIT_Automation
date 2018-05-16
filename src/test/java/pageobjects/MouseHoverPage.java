@@ -113,6 +113,12 @@ public class MouseHoverPage extends Environment {
 	@FindBy(how = How.XPATH, using = ("//a[contains(@href, '/shop/smart-tech')]"))
 	public static WebElement MoveMouseOnSmarttechTab;
 
+	@FindBy(how = How.XPATH, using = ("//h3[normalize-space()='More fitness trackers']/following-sibling::p[@class='product-cta']"))
+	public static WebElement moreSmrtWatches;
+
+	@FindBy(how = How.XPATH, using = ("//li[contains(@class,'tier-menu-wrapper')]//li/a[text()='Browse smart tech']"))
+	public static WebElement MoveMouseOnSmarttechTab_gdpr;
+
 	// Below is the link on the Smartwatches
 	@FindBy(how = How.XPATH, using = ("//a[contains(text(), 'Smartwatches')]"))
 	public static WebElement MoveMouseOnSmartwatches;

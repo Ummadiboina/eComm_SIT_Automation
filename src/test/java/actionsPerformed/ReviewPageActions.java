@@ -23,15 +23,18 @@ public class ReviewPageActions extends Environment {
 
 	public static void TermsCheckBox() throws IOException, InterruptedException {
 		log.debug("Clicking on the checkbox");
-		WebElement element = pageobjects.ReviewPage.TermsCheckBox;
-		JavascriptExecutor executor = (JavascriptExecutor)driver;
-		executor.executeScript("arguments[0].click();", element);
+		if (pageobjects.ReviewPage.TermsCheckBox.isSelected()) {
 
-		//pageobjects.ReviewPage.TermsCheckBox.click();
-		log.debug("Clicked the Checkbox in Terms");
-		Screenshots.captureScreenshot();
+		} else {
+			WebElement element = pageobjects.ReviewPage.TermsCheckBox;
+			JavascriptExecutor executor = (JavascriptExecutor) driver;
+			executor.executeScript("arguments[0].click();", element);
+
+			//pageobjects.ReviewPage.TermsCheckBox.click();
+			log.debug("Clicked the Checkbox in Terms");
+			Screenshots.captureScreenshot();
+		}
 	}
-
 	public static void PayNow() throws InterruptedException, IOException {
 		log.debug("Clicking on Pay now");
 		WebElement element = pageobjects.ReviewPage.PayNow;
