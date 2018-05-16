@@ -1033,7 +1033,7 @@ public class PhonesListingPageAction extends Environment {
 		if (pageobjects.PhonesListingPage.SearchBox.isDisplayed()) {
 			log.debug("Search box is displayed");
 			pageobjects.PhonesListingPage.SearchBox.sendKeys(devicename);
-			pageobjects.PhonesListingPage.SearchBox.sendKeys(Keys.RETURN);
+			pageobjects.PhonesListingPage.SearchBox.sendKeys(Keys.ENTER);
 		} else {
 			Assert.fail("Search box is not present");
 		}

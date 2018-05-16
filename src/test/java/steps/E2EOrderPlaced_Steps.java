@@ -183,7 +183,7 @@ public class E2EOrderPlaced_Steps {
     @Given("^Navigate to PayG MBB page$")
     public void navigate_to_PayG_MBB_page() {
         try {
-            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+          //  driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, MouseHoverPage.class);
             MouseHoverAction.PayGMBBPage();
             Autoredirection.redirect();
@@ -1015,6 +1015,7 @@ public class E2EOrderPlaced_Steps {
             DeliveryPageActions.AboutYou(Firstname, Surname);
            // DeliveryPageActions.ClickContinue();
              //DeliveryPageActions.clickOnSubmitBtn();
+
         } catch (Exception e) {
             // TODO Auto-generated catch block
             log.debug("Unable to input details in delivery page");
