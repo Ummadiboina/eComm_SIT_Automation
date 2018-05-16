@@ -1560,6 +1560,27 @@ public class E2EOrderPlaced_Steps {
 
     }
 
+    @Given("^land on the Non Credit check payment page and input ([^\"]*) and other details and click 'Continue on next step' for GDPR$")
+    public void NonCreditCheckPaymentPage_HomeDelivery_for_GDPR(String Username) {
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, PaymentPage.class);
+            PaymentPageActions.ValidateNonCreditPaymentPage();
+            Thread.sleep(2000);
+            PaymentPageActions.Card_Details(Username);
+            Thread.sleep(5000);
+            PaymentPageActions.Card_Details_CCV();
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            log.debug("Unable to input details in payment page");
+            Assert.fail("Unable to input details in payment page");
+
+        }
+
+    }
+
+
+
     @Given("^I land on the payment page and input all the details for high value Click and collect order and click 'Continue on next step'$")
     public void CreditCheckPaymentPage_ClickAndCollect_highvalue() {
         // Write code here that turns the phrase above into concrete actions
@@ -1768,7 +1789,9 @@ public class E2EOrderPlaced_Steps {
             PageFactory.initElements(driver, ReviewPage.class);
             Thread.sleep(5000);
             ReviewPageActions.gettitlepage();
+            Thread.sleep(3000);
             ReviewPageActions.TermsCheckBox();
+            Thread.sleep(3000);
             ReviewPageActions.PayNow();
         } catch (Exception e) {
             e.printStackTrace();
