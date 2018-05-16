@@ -69,7 +69,7 @@ public class OrderConfirmationPage {
 	@FindBy(how = How.XPATH, using = "//a[@data-overlay='B3']")
 	public static WebElement OffersFromO2Partner_Link;
 
-	@FindBy(how = How.XPATH, using = "//a[@data-overlay='B3']")
+	@FindBy(how = How.XPATH, using = "//div[@class='overlay-box B3']//a[@class='boxclose']")
 	public static WebElement OffersFromO2Partner_CloseButton;
 
 	@FindBy(how = How.XPATH, using = "//input[@id='B4']")
