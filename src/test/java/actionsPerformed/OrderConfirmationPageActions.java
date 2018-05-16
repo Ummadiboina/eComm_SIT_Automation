@@ -260,10 +260,13 @@ public class OrderConfirmationPageActions extends Environment {
 										Thread.sleep(5000);
 
 										// SaveMyPreferences button status before selecting business preferences
-										if (driver.findElements(By.xpath("//input[@id='saveMyPrefernces']")).size() <= 0) {
-											System.out.println("Preference Button is disabled before selecting any preferences");
-											log.debug("Preference Button is disabled before selecting any preferences");
+										if(OrderConfirmationPage.SaveMyPreferences.isEnabled()){
+											Assert.fail("Failed:: 'SaveMyPrefernces' CTA is enabled before selecting Business preferences");
+										}else{
+											System.out.println("Preference Button is disabled before selecting Business/channels preferences");
+											log.debug("Preference Button is disabled before selecting Business/channel preferences");
 										}
+
 
 										//MBB validation
 										/*if(MBBStatus.equalsIgnoreCase("YES")){
@@ -422,7 +425,7 @@ public class OrderConfirmationPageActions extends Environment {
 
 											//Offers From O2 Partner Tile Text validation
 											String contentText = OrderConfirmationPage.OffersFromO2Partner_Text.getText();
-											if (contentText.contains("I'm happy for O2 to let me know about offers, perks and services that are relevant to me, like Priority.")) {
+											if (contentText.contains("I'm happy for O2 to let me know about selected offers from leading brands, knowing my details won't be shared.")) {
 												System.out.println("Offers from o2 partners brands Tile Content text has as expected:: " + contentText);
 												log.debug("Offers from o2 partners brands Tile Content text has as expected:: " + contentText);
 											} else {
@@ -440,7 +443,7 @@ public class OrderConfirmationPageActions extends Environment {
 
 											//Offers From O2 Partner Overlay Text validation
 											String overlayText = OrderConfirmationPage.OffersFromO2Partner_OverlayText.getText();
-											if (overlayText.contains("")) {
+											if (overlayText.contains("We work with lots of well-known brands that often have offers that are too good to miss. When there's an offer we think you'll like, we'll let you know about it. The message will come from O2 and it will be us using your data, not the third party. Then you can go to the brand's website or their place on the high street to get it. We're careful to match the right offer to right people.")) {
 												System.out.println("Offers from o2 overlay text has as expected:: " + overlayText);
 												log.debug("Offers from o2 overlay text has as expected:: " + overlayText);
 											} else {
@@ -448,7 +451,7 @@ public class OrderConfirmationPageActions extends Environment {
 												log.debug("Offers from o2 overlay text is not matching:: " + overlayText);
 												Assert.fail("Offers from o2 overlay text is not matching:: " + overlayText);
 											}
-											Thread.sleep(3000);
+											Thread.sleep(5000);
 											//OffersFromO2Partner_CloseButton
 											if(OrderConfirmationPage.OffersFromO2Partner_CloseButton.isEnabled()) {
 												OrderConfirmationPage.OffersFromO2Partner_CloseButton.click();
@@ -495,13 +498,17 @@ public class OrderConfirmationPageActions extends Environment {
 												log.debug("Clicked onpartners contacting me directly overlay close button");
 											}
 										}
-										Thread.sleep(3000);
+										Thread.sleep(5000);
 
 										//Channel preference is not displaying before business preference selection
-										if (driver.findElements(By.id("CP_Text")).size() < 1) {
-											System.out.println("As expected Channel preference Contact_Text is disabled before selecting business preferences");
-											log.debug("As expected Channel preference Contact_Text is disabled before selecting business preferences");
+										if(OrderConfirmationPage.Contact_Text.isDisplayed()){
+											Assert.fail("Failed:: 'Channel Preferences' are enabled before selecting Business preferences");
+										}else{
+											System.out.println("As expected Channel preference:: ie, Contact_Text is disabled before selecting business preferences");
+											log.debug("As expected Channel preference:: ie, Contact_Text is disabled before selecting business preferences");
 										}
+
+
 										Thread.sleep(3000);
 										//Selecting O2 Products Business preferences
 										if (BP1.equalsIgnoreCase("Select")) {
@@ -549,15 +556,32 @@ public class OrderConfirmationPageActions extends Environment {
 											log.debug("Partners Contacting business preference selected");
 										}
 
-										Thread.sleep(3000);
+										Thread.sleep(6000);
+
+										//Channel preference is not displaying before business preference selection
+										if(OrderConfirmationPage.Contact_Text.isDisplayed()){
+
+											System.out.println("As expected Channel preference displyed after selecting business preferences");
+											log.debug("As expected Channel preference displyed after selecting business preferences");
+
+										}else{
+											if(BP1.equalsIgnoreCase("Select") || BP2.equalsIgnoreCase("Select") || BP3.equalsIgnoreCase("Select") || BP4.equalsIgnoreCase("Select")) {
+												Assert.fail("Failed:: 'Channel Preferences' are not displyed after selecting Business preferences");
+											}
+										}
+
 
 										// SaveMyPreferences button status before selecting channels preferences
-										if (driver.findElements(By.id("saveMyPrefernces")).size() <= 0) {
+
+										if(OrderConfirmationPage.SaveMyPreferences.isEnabled()){
+											if(BP1.equalsIgnoreCase("Select") || BP2.equalsIgnoreCase("Select") || BP3.equalsIgnoreCase("Select") || BP4.equalsIgnoreCase("Select")) {
+												Assert.fail("Failed to disable the 'SaveMyPrefernces' CTA after selecting Business preferences");
+											}
+										}else{
 											System.out.println("Preference Button is disabled before selecting channels preferences");
 											log.debug("Preference Button is disabled before selecting channel preferences");
-										}else{
-											Assert.fail("Failed to disiable the 'SaveMyPrefernces' CTA ");
 										}
+
 										Thread.sleep(3000);
 										//Selecting Channel preferences
 										if (Chn1.equalsIgnoreCase("Select")) {
@@ -605,10 +629,12 @@ public class OrderConfirmationPageActions extends Environment {
 										Thread.sleep(3000);
 
 										// SaveMyPreferences button status after selecting channels preferences
+
+
 										if (driver.findElements(By.id("saveMyPrefernces")).size() > 0) {
 											OrderConfirmationPage.SaveMyPreferences.click();
-											System.out.println("Save My Preference clicked");
-											log.debug("Save My Preference clicked");
+											System.out.println("Save My Preference is clicked");
+											log.debug("Save My Preference is clicked");
 										} else {
 											System.out.println("Save My Preference button is not clicked");
 											log.debug("Save My Preference button is not clicked");
@@ -649,13 +675,13 @@ public class OrderConfirmationPageActions extends Environment {
 							System.out.println("Device type is non connected");
 							log.debug("Device type is non connected");
 
-							if (driver.findElements(By.id("saveMyPrefernces")).size() > 0) {
-								System.out.println("GDPR is Disabled for non connected device");
-								log.debug("GDPR is Disabled for non connected device");
-							}else{
+							if(OrderConfirmationPage.SaveMyPreferences.isEnabled()){
 								System.out.println("GDPR is Enabled for non connected device");
 								log.debug("GDPR is Enabled for non connected device");
 								Assert.fail("GDPR is Enabled for non connected device");
+							}else{
+								System.out.println("GDPR is Disabled for non connected device");
+								log.debug("GDPR is Disabled for non connected device");
 							}
 						}
 				}
@@ -672,8 +698,8 @@ public class OrderConfirmationPageActions extends Environment {
 						if (driver.findElements(By.xpath("//div[@class='choose-preferences-bar']/a")).size() < 1) {
 							System.out.println("GDPR is Disabled");
 							log.debug("GDPR is Disabled");
-					}else{
-							Assert.fail("Choose your preferences section is Enabled");
+						}else{
+							Assert.fail("Choose your preferences section is Enabled for Disabled status");
 						}
 				}else{
 						Assert.fail("Failed to do GDPR validations");
