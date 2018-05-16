@@ -12,11 +12,24 @@ public class DeliveryPage {
     @FindBy(how = How.ID, using = "housenumber")
     public static WebElement Housenumber;
 
+    @FindBy(how = How.XPATH, using = "//a[@title='Click and collect']")
+    public static WebElement clickAndCollect;
+
     @FindBy(how = How.ID, using = "postcode")
     public static WebElement Postcode;
 
+    @FindBy(how = How.ID, using = "storePostcode")
+    public static WebElement storePostcode;
+
     @FindBy(how = How.ID, using = "postcode-submit")
     public static WebElement Find_Address;
+
+    @FindBy(how = How.ID, using = "store-postcode-submit")
+    public static WebElement Find_Store;
+
+    @FindBy(how = How.XPATH, using = "(//a[contains(normalize-space(),'Collect from this store')])[1]")
+    public static WebElement Select_Store;
+
 
     @FindBy(how = How.XPATH, using = "//*[@id='delivery-address-selection']/li[1]")
     public static WebElement SelectAddress1;

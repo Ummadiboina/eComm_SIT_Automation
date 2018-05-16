@@ -24,6 +24,7 @@ public class ConnectedDeviceDetailsPageAction extends Environment {
     final static Logger log = Logger.getLogger("ConnectedDeviceDetailsPageAction");
 
     public static void GetTitle() throws InterruptedException, IOException {
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         log.debug("Currently in Device details page");
         String Ele1 = driver.getTitle();
         log.debug("The Page title is " + Ele1);
@@ -53,7 +54,7 @@ public class ConnectedDeviceDetailsPageAction extends Environment {
     }
 
     public static void ViewAllTariffs() throws InterruptedException, IOException {
-        driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         log.debug("Entering ViewAllTariffs() function ");
         JavascriptExecutor jse = (JavascriptExecutor) driver;
         jse.executeScript("window.scrollBy(0,600)", "");

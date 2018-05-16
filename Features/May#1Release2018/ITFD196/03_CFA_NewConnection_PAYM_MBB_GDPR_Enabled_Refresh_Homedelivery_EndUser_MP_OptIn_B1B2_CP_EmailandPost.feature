@@ -23,5 +23,5 @@ Feature: 03_CFA_NewConnection_PAYM_MBB_GDPR_Enabled_Refresh_Homedelivery_EndUser
 
 
     Examples:
-      | handset  | Firstname | Surname | Username     | consumer | B1     | B2     | B3  | B4  | Text | Email  | Phone | Post   | status  | Device_Name                   | MBBStatus | DeviceType |
-      | iPhone 6 | TEST      | ACCEPTA | TEST ACCEPTA | Me       | Select | Select | Not | Not | Not  | Select | Not   | Select | Enabled | Huawei 4G Pocket Hotspot Plus | No        | Connected  |
+      | handset  | Firstname | Surname | Username     | consumer | B1     | B2     | B3  | B4  | Text | Email  | Phone | Post   | status  | Device_Name      | MBBStatus | DeviceType |
+      | iPhone 6 | TEST      | ACCEPTA | TEST ACCEPTA | Me       | Select | Select | Not | Not | Not  | Select | Not   | Select | Enabled | Huawei 4G Dongle | No        | Connected  |

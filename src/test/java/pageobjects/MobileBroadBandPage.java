@@ -10,8 +10,10 @@ public class MobileBroadBandPage {
 		@FindBy(how=How.XPATH,using="//a[contains(@href, '/shop/mobile-broadband/huawei/4g-in-car-wifi/#contractType=payasyougo')]")
 		public static WebElement Huawei4GinCarWifi;
 		////a[@data-qa-device-model-family="4G In-Car wifi"]		
-		 
-		@FindBy(how=How.XPATH,using="//a[contains(@href, '/shop/mobile-broadband/huawei/4g-dongle')]")
+
+	////a[contains(@href, '/shop/mobile-broadband/huawei/4g-dongle')] | //span[normalize-space()='4G Dongle']
+
+		@FindBy(how=How.XPATH,using="//span[normalize-space()='4G Dongle']")
 		public static WebElement Huawei4GDongle;
 		
 		@FindBy(how=How.XPATH,using="//a[contains(@href, '/shop/mobile-broadband/huawei/4g-pocket-hotspot-plus/#contractType=payasyougo')]")

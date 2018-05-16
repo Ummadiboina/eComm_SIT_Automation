@@ -84,16 +84,19 @@ public class OrderConfirmationPage {
 	@FindBy(how = How.XPATH, using = "//div[@data-label='Close button - partners contacting me directly']")
 	public static WebElement PartnersContacting_CloseButton;
 
-	@FindBy(how = How.ID, using = "CP_Text")
+	@FindBy(how = How.XPATH, using = "//input[@id='CP_Text']")
 	public static WebElement Contact_Text;
 
-	@FindBy(how = How.ID, using = "CP_E-mail")
+	@FindBy(how = How.XPATH, using = "//input[@id='CP_E-mail']")
 	public static WebElement Contact_Email;
 
-	@FindBy(how = How.ID, using = "CP_Phone")
+
+
+	@FindBy(how = How.XPATH, using = "//input[@id='CP_Phone']")
 	public static WebElement Contact_Phone;
 
-	@FindBy(how = How.ID, using = "CP_Post")
+
+	@FindBy(how = How.XPATH, using = "//input[@id='CP_Post']")
 	public static WebElement Contact_Post;
 
 	@FindBy(how = How.ID, using = "saveMyPrefernces")
