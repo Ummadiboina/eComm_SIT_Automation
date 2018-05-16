@@ -164,9 +164,12 @@ public class PaymentPageActions extends Environment {
         Screenshots.captureScreenshot();
 
     }
-    public static void Card_Details_CCV() throws InterruptedException {
+    public static void Card_Details_CCV() throws InterruptedException, IOException {
 
-        if (driver.findElements(By.xpath("(//span[contains(text(),'ve read this - continue')])[1]")).size() < 1) {
+        driver.manage().timeouts().implicitlyWait(15,TimeUnit.SECONDS);
+        driver.switchTo().frame("payment-iframe");
+        Thread.sleep(5000);
+        if (driver.findElements(By.xpath("//input[@type='password']")).size() >= 1) {
             driver.switchTo().frame("payment-iframe");
             Thread.sleep(5000);
             if (driver.findElements(By.xpath("//input[@type='password']")).size() > 0) {
@@ -178,7 +181,9 @@ public class PaymentPageActions extends Environment {
                 executor.executeScript("arguments[0].click();", PaymentPage.Submit_Next_Step);
                 //PaymentPage.Submit_Next_Step.click();
                 log.debug("Clicking on submit to next step");
+                Screenshots.captureScreenshot();
                 Thread.sleep(10000);
+                driver.switchTo().defaultContent();
             }
         }
     }
@@ -189,7 +194,7 @@ public class PaymentPageActions extends Environment {
        /* if(driver.findElement(By.xpath(" (//button[@name='select-address-btn'])[2]")).isEnabled()){
             driver.findElement(By.xpath(" (//button[@name='select-address-btn'])[2]")).click();
         }*/
-
+        Thread.sleep(4000);
         driver.switchTo().frame("payment-iframe"); // switching the frame by ID
 
         log.debug("********We are switch to the iframe*******");

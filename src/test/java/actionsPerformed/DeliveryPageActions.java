@@ -246,6 +246,7 @@ public class DeliveryPageActions extends Environment {
 
             if (customer.contains("Someone")) {
                 boolean defaultSelect = DeliveryPage.someoneElse_radioBtn.isSelected();
+                Thread.sleep(5000);
                 if (!defaultSelect) {
                     DeliveryPage.someoneElse_radioBtn.click();
                     Thread.sleep(2000);

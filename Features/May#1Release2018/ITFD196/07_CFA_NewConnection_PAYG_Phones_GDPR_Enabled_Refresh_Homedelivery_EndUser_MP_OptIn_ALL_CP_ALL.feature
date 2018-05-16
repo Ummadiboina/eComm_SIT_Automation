@@ -14,7 +14,7 @@ Feature: 07_CFA_NewConnection_PAYG_Phones_GDPR_Enabled_Refresh_Homedelivery_EndU
     And click on "go to checkout" button
     And input <Firstname> and <Surname> and other valid details in Delivery page to verify GDPR
     And Is this order for You or Someone else <consumer> when GDPR is <status>
-    And land on the Non Credit check payment page and input <Username> and other details and click 'Continue on next step'
+    And land on the Non Credit check payment page and input <Username> and other details and click 'Continue on next step' for GDPR
     #And Continue to Agreements page and confirm all the agreement checks
     And Continue to Review page and review the order
     Then order confirmation is displayed
