@@ -325,10 +325,11 @@ public class BasketPageActions extends Environment {
 	}
 
 	public static void CollectionorDelivery(String elementName) throws InterruptedException, IOException {
+		Thread.sleep(4000);
 
-
-		if(!BasketPage.checkoutbtn.isDisplayed()){
+		//if(!BasketPage.checkoutbtn.isDisplayed()){
 			if (elementName.contains("homeDelivery")) {
+				Thread.sleep(3000);
 				pageobjects.BasketPage.HomeDeliverySelect.click();
 				// Assert.assertEquals(elementName,"Galaxy S7 is not found");
 				log.debug("HomeDelivery is Selected");
@@ -336,13 +337,14 @@ public class BasketPageActions extends Environment {
 				Screenshots.captureScreenshot();
 
 			}
+
 			if (elementName.contains("clickAndCollect")) {
-				pageobjects.BasketPage.clickAndCollectSelect.click();
+				pageobjects.BasketPage.clickAndCollect.click();
 				// Assert.assertEquals(elementName,"Galaxy S7 is not found");
 				log.debug("click And Collect is Selected");
 				log.debug("clickAndCollect radio button is Selected");
 
-				pageobjects.BasketPage.StorePostcode.sendKeys("G2");
+				pageobjects.BasketPage.StorePostcode.sendKeys("M4");
 				log.debug("PostCode Entered for Search");
 				log.debug("PostCode Entered for Search");
 				Thread.sleep(4000);
@@ -359,7 +361,7 @@ public class BasketPageActions extends Environment {
 				Thread.sleep(5000);
 				Screenshots.captureScreenshot();
 			}
-		}
+		//}
 
 	}
 

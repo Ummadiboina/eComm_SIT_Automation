@@ -61,7 +61,7 @@ public class BasketPage {
 	@FindBy(how = How.XPATH, using = ("//li[@class='totals']"))
 	public static WebElement totals;
 
-	@FindBy(how = How.ID, using = ("homeDelivery"))
+	@FindBy(how = How.ID, using = "homeDelivery")
 	public static WebElement HomeDeliverySelect;
 
 	@FindBy(how = How.XPATH, using = ("//div[@class='hasDelayedDeliveryItems']"))
@@ -69,6 +69,9 @@ public class BasketPage {
 
 	@FindBy(how = How.ID, using = ("clickAndCollect"))
 	public static WebElement clickAndCollectSelect;
+
+	@FindBy(how = How.XPATH, using = "//a[@id='checkStoreStock']")
+	public static WebElement clickAndCollect;
 
 	@FindBy(how = How.ID, using = ("checkStoreStock"))
 	public static WebElement checkSoteSotck_TradeIn;
@@ -82,14 +85,14 @@ public class BasketPage {
 	@FindBy(how = How.XPATH, using = ("//*[@class='ac-qauantity-heading']"))
 	public static WebElement DeviceHeadingNonConnected;
 
-	//
+
 	@FindBy(how = How.XPATH, using = ("//*[@id='accessory-quantitySelectBoxItContainer']"))
 	public static WebElement DeviceQuantityNonConnected;
 
-	@FindBy(how = How.ID, using = ("storePostcode"))
+	@FindBy(how = How.XPATH, using = "//input[@name='storePostcode']")
 	public static WebElement StorePostcode;
 
-	@FindBy(how = How.ID, using = ("store-postcode-submit"))
+	@FindBy(how = How.ID, using = "store-postcode-submit")
 	public static WebElement PostcodeSubmit;
 
 	@FindBy(how = How.XPATH, using = ("(//a[normalize-space()='Collect from this store'])[1]"))

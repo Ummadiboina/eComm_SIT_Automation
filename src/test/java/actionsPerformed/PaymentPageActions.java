@@ -148,12 +148,13 @@ public class PaymentPageActions extends Environment {
         pageobjects.PaymentPage.postcodesubmit.click();
         log.debug("Clicked on Find address");
 
+        Thread.sleep(6000);
         pageobjects.PaymentPage.Selectaddress.click();
         log.debug("Home Address Selected");
-        Thread.sleep(3000);
+        Thread.sleep(5000);
         pageobjects.PaymentPage.Stay_Address_Years.sendKeys("9");
         log.debug("Entered the stayed at address - 9");
-        Thread.sleep(2000);
+        Thread.sleep(4000);
         pageobjects.PaymentPage.Stay_Address_months.sendKeys("9");
         log.debug("Entered the stayed at months - 9");
 

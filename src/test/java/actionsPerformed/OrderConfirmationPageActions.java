@@ -373,6 +373,8 @@ public class OrderConfirmationPageActions extends Environment {
 											}
 										}
 
+										Thread.sleep(4000);
+
 										//O2 Perks And Extras
 										if (driver.findElements(By.id("preference-heading-B2")).size() > 0) {
 
@@ -392,7 +394,8 @@ public class OrderConfirmationPageActions extends Environment {
 											OrderConfirmationPage.O2PerksAndExtras_Link.click();
 											System.out.println("Clicked on Learn more about O2 perks and extras");
 											log.debug("Clicked on Learn more about O2 perks and extras");
-											driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+											//driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+											Thread.sleep(3000);
 
 											//O2 Perks And Extras Overlay Text validation
 											String overlayText = OrderConfirmationPage.O2PerksAndExtras_OverlayText.getText();
@@ -413,6 +416,7 @@ public class OrderConfirmationPageActions extends Environment {
 											}
 										}
 
+										Thread.sleep(4000);
 										//Offers From O2 Partner Text
 										if (driver.findElements(By.id("preference-heading-B3")).size() > 0) {
 
@@ -431,7 +435,8 @@ public class OrderConfirmationPageActions extends Environment {
 											OrderConfirmationPage.OffersFromO2Partner_Link.click();
 											System.out.println("Clicked on Learn more about partner offers");
 											log.debug("Clicked on Learn more about partner offers");
-											driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+											//driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+											Thread.sleep(4000);
 
 											//Offers From O2 Partner Overlay Text validation
 											String overlayText = OrderConfirmationPage.OffersFromO2Partner_OverlayText.getText();
@@ -452,6 +457,7 @@ public class OrderConfirmationPageActions extends Environment {
 											}
 										}
 
+										Thread.sleep(4000);
 										//Partners Contacting
 										if (driver.findElements(By.id("preference-heading-B4")).size() > 0) {
 											//Partners Contacting Tile Text validation
@@ -468,7 +474,8 @@ public class OrderConfirmationPageActions extends Environment {
 											OrderConfirmationPage.PartnersContacting_Link.click();
 											System.out.println("Clicked on Learn more about direct brand offers");
 											log.debug("Clicked on Learn more about direct brand offers");
-											driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+											//driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+											Thread.sleep(4000);
 
 											//Partners Contacting Overlay Text validation
 											String overlayText = OrderConfirmationPage.PartnersContacting_OverlayText.getText();
@@ -488,6 +495,7 @@ public class OrderConfirmationPageActions extends Environment {
 												log.debug("Clicked onpartners contacting me directly overlay close button");
 											}
 										}
+										Thread.sleep(3000);
 
 										//Channel preference is not displaying before business preference selection
 										if (driver.findElements(By.id("CP_Text")).size() < 1) {
@@ -498,7 +506,7 @@ public class OrderConfirmationPageActions extends Environment {
 										//Selecting O2 Products Business preferences
 										if (BP1.equalsIgnoreCase("Select")) {
 
-											if (driver.findElements(By.id("B1")).size() <= 0) {
+											if (driver.findElements(By.xpath("//input[@id='B1']")).size() <= 0) {
 												System.out.println("O2Products business preference checkBox is not displayed");
 												log.debug("O2Products business preference checkBox is not displayed");
 												Assert.fail("O2Products business preference checkBox is not displayed");
@@ -507,9 +515,9 @@ public class OrderConfirmationPageActions extends Environment {
 											System.out.println("O2Products business preference selected");
 											log.debug("O2Products business preference selected");
 										}
-
+										Thread.sleep(3000);
 										if (BP2.equalsIgnoreCase("Select")) {
-											if (driver.findElements(By.id("B2")).size() <= 0) {
+											if (driver.findElements(By.xpath("//input[@id='B2']")).size() <= 0) {
 												System.out.println("O2 Perks And Extras business preference checkBox is not displayed");
 												log.debug("O2 Perks And Extras business preference checkBox is not displayed");
 												Assert.fail("O2 Perks And Extras business preference checkBox is not displayed");
@@ -518,9 +526,9 @@ public class OrderConfirmationPageActions extends Environment {
 											System.out.println("O2 Perks And Extras business preference selected");
 											log.debug("O2 Perks And Extras business preference selected");
 										}
-
+										Thread.sleep(3000);
 										if (BP3.equalsIgnoreCase("Select")) {
-											if (driver.findElements(By.id("B3")).size() <= 0) {
+											if (driver.findElements(By.xpath("//input[@id='B3']")).size() <= 0) {
 												System.out.println("Offers From O2 Partner business preference checkBox is not displayed");
 												log.debug("Offers From O2 Partner business preference checkBox is not displayed");
 												Assert.fail("Offers From O2 Partner business preference checkBox is not displayed");
@@ -529,7 +537,7 @@ public class OrderConfirmationPageActions extends Environment {
 											System.out.println("Offers From O2 Partner business preference selected");
 											log.debug("Offers From O2 Partner business preference selected");
 										}
-
+										Thread.sleep(3000);
 										if (BP4.equalsIgnoreCase("Select")) {
 											if (driver.findElements(By.id("B4")).size() <= 0) {
 												System.out.println("Partners Contacting business preference checkBox is not displayed");
@@ -554,7 +562,7 @@ public class OrderConfirmationPageActions extends Environment {
 										//Selecting Channel preferences
 										if (Chn1.equalsIgnoreCase("Select")) {
 
-											if (driver.findElements(By.id("CP_Text")).size() <= 0) {
+											if (driver.findElements(By.xpath("//input[@id='CP_Text']")).size() <= 0) {
 												System.out.println("Contact_Text preference checkBox is not displayed");
 												log.debug("Contact_Text preference checkBox is not displayed");
 												Assert.fail("Contact_Text preference checkBox is not displayed");
@@ -564,7 +572,7 @@ public class OrderConfirmationPageActions extends Environment {
 											log.debug("Contact_Text business preference selected");
 										}
 										if (Chn2.equalsIgnoreCase("Select")) {
-											if (driver.findElements(By.id("CP_Post")).size() <= 0) {
+											if (driver.findElements(By.xpath("//input[@id='CP_Post']")).size() <= 0) {
 												System.out.println("CP_Post preference checkBox is not displayed");
 												log.debug("CP_Post preference checkBox is not displayed");
 												Assert.fail("CP_Post preference checkBox is not displayed");
@@ -574,7 +582,7 @@ public class OrderConfirmationPageActions extends Environment {
 											log.debug("CP_Post preference selected");
 										}
 										if (Chn3.equalsIgnoreCase("Select")) {
-											if (driver.findElements(By.id("CP_Phone")).size() <= 0) {
+											if (driver.findElements(By.xpath("//input[@id='CP_Phone']")).size() <= 0) {
 												System.out.println("Contact_Phone preference checkBox is not displayed");
 												log.debug("Contact_Phone preference checkBox is not displayed");
 												Assert.fail("CP_Post preference checkBox is not displayed");
@@ -584,7 +592,7 @@ public class OrderConfirmationPageActions extends Environment {
 											log.debug("Contact_Phone preference selected");
 										}
 										if (Chn4.equalsIgnoreCase("Select")) {
-											if (driver.findElements(By.id("CP_E-mail")).size() <= 0) {
+											if (driver.findElements(By.xpath("//input[@id='CP_E-mail']")).size() <= 0) {
 												System.out.println("Contact_Email preference checkBox is not displayed");
 												log.debug("Contact_Email preference checkBox is not displayed");
 												Assert.fail("Contact_Email preference checkBox is not displayed");

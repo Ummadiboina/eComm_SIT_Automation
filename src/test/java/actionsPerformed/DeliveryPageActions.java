@@ -52,6 +52,34 @@ public class DeliveryPageActions extends Environment {
         }
     }
 
+    public static void ClickAndCollect() {
+
+        try {
+            Thread.sleep(3000);
+            if (pageobjects.DeliveryPage.clickAndCollect.isDisplayed()) {
+                pageobjects.DeliveryPage.clickAndCollect.click();
+                log.debug("Click and collect tab Selected an address");
+
+                Thread.sleep(2000);
+                pageobjects.DeliveryPage.storePostcode.sendKeys("B15 2LG");
+                log.debug("Entered Post code");
+                Thread.sleep(2000);
+                pageobjects.DeliveryPage.Find_Store.click();
+                log.debug("Clicked on the Find address button");
+                Thread.sleep(5000);
+                pageobjects.DeliveryPage.Select_Store.click();
+                log.debug("Clicked on the Find address button");
+
+
+            }
+            Thread.sleep(3000);
+            Screenshots.captureScreenshot();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
     public static void AboutYou(String Firstname, String Surname) {
         try {
             driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);

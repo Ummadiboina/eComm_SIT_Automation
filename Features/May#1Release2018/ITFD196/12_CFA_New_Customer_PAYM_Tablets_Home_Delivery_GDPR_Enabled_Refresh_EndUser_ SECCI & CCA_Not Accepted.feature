@@ -15,7 +15,7 @@ Feature: 12_CFA_New_Customer_PAYM_Tablets_Home_Delivery_GDPR_Enabled_Refresh_End
     And click on "go to checkout" button
     And input <Firstname> and <Surname> and other valid details in Delivery page to verify GDPR
     And Is this order for You or Someone else <consumer> when GDPR is <status>
-    And land on the payment page and input <Username> and other details and click 'Continue on next step'
+    And land on the payment page and  input <Username> and other details and click 'Continue on next step'
     #And Continue to Agreements page and confirm all the agreement checks
     And donot select the SECCI and CCA agreements in Agreement page
     #And Continue to Review page and review the order
