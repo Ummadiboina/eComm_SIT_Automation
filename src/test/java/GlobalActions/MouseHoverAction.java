@@ -415,8 +415,8 @@ public class MouseHoverAction extends Environment {
     // Below will navigate to Tablets PayM Page
 
     public static void PayMTabletsLandingPage() throws Exception {
-        driver.manage().timeouts().implicitlyWait(45, TimeUnit.SECONDS);
-
+        //driver.manage().timeouts().implicitlyWait(45, TimeUnit.SECONDS);
+            Thread.sleep(10000);
         try {
             /*********************************************************************
              normal execution flow in ref Env....        ************************/
