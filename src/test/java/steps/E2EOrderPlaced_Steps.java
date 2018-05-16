@@ -3364,7 +3364,7 @@ public class E2EOrderPlaced_Steps {
     @And("^navigate to PAYM Tablets page$")
     public void navigate_to_PAYM_Tablets_page() {
         try {
-            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+           // driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, MouseHoverPage.class);
             MouseHoverAction.PayMTabletsLandingPage();
             Autoredirection.redirect();
