@@ -58,7 +58,7 @@ public class PhonesListingPageAction extends Environment {
 
 	// Below is for PAYG phones
 	public static void PAYGPhoneSelect(String elementName) throws IOException, InterruptedException {
-
+		Thread.sleep(5000);
 		if (elementName.contains("Random Device")) {
 			log.debug("Selecting Random Device");
 			pageobjects.PhonesListingPage.RandomDevice.click();
@@ -1033,6 +1033,7 @@ public class PhonesListingPageAction extends Environment {
 		if (pageobjects.PhonesListingPage.SearchBox.isDisplayed()) {
 			log.debug("Search box is displayed");
 			pageobjects.PhonesListingPage.SearchBox.sendKeys(devicename);
+			Thread.sleep(3000);
 			pageobjects.PhonesListingPage.SearchBox.sendKeys(Keys.ENTER);
 		} else {
 			Assert.fail("Search box is not present");
