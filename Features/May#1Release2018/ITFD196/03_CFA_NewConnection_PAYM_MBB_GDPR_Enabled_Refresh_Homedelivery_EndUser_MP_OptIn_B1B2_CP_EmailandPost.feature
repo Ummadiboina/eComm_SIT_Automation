@@ -7,7 +7,7 @@ Feature: 03_CFA_NewConnection_PAYM_MBB_GDPR_Enabled_Refresh_Homedelivery_EndUser
   Scenario Outline: 03_CFA_NewConnection_PAYM_MBB_GDPR_Enabled_Refresh_Homedelivery_EndUser_MP_OptIn_B1B2_CP_EmailandPost
     Given I am an CFA user and Lands on shop page
     And Navigate to PayM MBB page
-    And I choose MBB PayM <Device_Name>
+    And I choose MBB PayM PayM MBB page<Device_Name>
     And Navigate to device details page
     And Land on the 'Tariffs and extra' page
     #Then I should see tariffs based on the selected sort option <sortoption>
