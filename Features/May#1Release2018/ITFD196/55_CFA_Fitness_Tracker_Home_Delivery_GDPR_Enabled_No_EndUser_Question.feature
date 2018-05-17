@@ -18,5 +18,5 @@ Feature: 55_CFA_Fitness_Tracker_Home_Delivery_GDPR_Enabled_No_EndUser_Question
 
 
     Examples:
-      | handset  | Firstname | Surname | Username     | consumer | B1  | B2  | B3  | B4  | Text | Email | Phone | Post | status  | MBBStatus | DeviceType    |
+      | Device  | Firstname | Surname | Username     | consumer | B1  | B2  | B3  | B4  | Text | Email | Phone | Post | status  | MBBStatus | DeviceType    |
       | iPhone 6 | TEST      | ACCEPTA | TEST ACCEPTA | Me       | Not | Not | Not | Not | Not  | Not   | Not   | Not  | Enabled | No        | Non Connected |

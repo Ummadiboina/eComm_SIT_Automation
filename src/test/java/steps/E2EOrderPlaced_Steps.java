@@ -361,7 +361,8 @@ public class E2EOrderPlaced_Steps {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, FitnessTrackerPage.class);
             Thread.sleep(5000);
-            FitnessTrackerPageActions.DeviceSelect(arg1);
+            Autoredirection.redirect();
+            FitnessTrackerPageActions.DeviceSelect("Random Device");
         } catch (Exception e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
@@ -569,6 +570,7 @@ public class E2EOrderPlaced_Steps {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, AccessoryPage.class);
             PageFactory.initElements(driver, NonConnectedDeviceDetailsPage.class);
+            Autoredirection.redirect();
             FitnessTrackerPageActions.AddtoBasketFitnessTracker();
             // NonConnectedDeviceDetailsPageAction.ClickonBasketIcon();
         } catch (Exception e) {
@@ -3409,7 +3411,7 @@ public class E2EOrderPlaced_Steps {
     @And("^navigate to PAYM Tablets page$")
     public void navigate_to_PAYM_Tablets_page() {
         try {
-            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+           // driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, MouseHoverPage.class);
             MouseHoverAction.PayMTabletsLandingPage();
             Autoredirection.redirect();
