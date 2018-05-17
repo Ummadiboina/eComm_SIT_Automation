@@ -25,6 +25,19 @@ public class MouseHoverPage extends Environment {
 	@FindBy(how = How.XPATH, using = ("//li[contains(@class,'tier-menu-wrapper')]//li/a[text()='Browse phones']"))
 	public static WebElement MoveMouseOnPhones_Drupal;
 
+	@FindBy(how = How.XPATH, using = ("//a[normalize-space()='Pay As You Go']"))
+	public static WebElement PayGPhones_Drupal;
+
+
+
+	@FindBy(how = How.XPATH, using = ("//li[contains(@class,'tier-menu-wrapper')]//li/a[text()='Browse sims']"))
+	public static WebElement MoveMouseOnSimo_Drupal;
+
+	@FindBy(how = How.XPATH, using = ("//h3[normalize-space()='Pay Monthly sims']"))
+	public static WebElement Sims_paym_Drupal;
+
+
+
 	@FindBy(how = How.XPATH, using = ("//li/a[normalize-space()='Pay Monthly phones']"))
 	public static WebElement MoveMouseOnPAYMPhones;
 
@@ -134,6 +147,11 @@ public class MouseHoverPage extends Environment {
 	// Below will click on the MobileBroadband Link in Shop Drop down
 	@FindBy(how = How.XPATH, using = ("//a[contains(text(), 'Mobile broadband')]"))
 	public static WebElement MoveMouseOnMobileBroadband;
+
+	@FindBy(how = How.XPATH, using = ("//a[normalize-space()='Pay As You Go']"))
+	public static WebElement PayGMobileBroadband;
+
+
 
 	@FindBy(how = How.XPATH, using = ("//li[contains(@class,'tier-menu-wrapper')]//li/a[text()='Browse dongles']"))
 	public static WebElement MoveMouseOnMobileBroadband_Drupal;

@@ -102,7 +102,7 @@ public class OrderConfirmationPage {
 	@FindBy(how = How.ID, using = "saveMyPrefernces")
 	public static WebElement SaveMyPreferences;
 
-	@FindBy(how = How.XPATH, using = "//img[@id='u1306_img']")
+	@FindBy(how = How.XPATH, using = "//span[@class='saveMsg']")
 	public static WebElement SavedPreferenceMessage;
 
 	@FindBy(how = How.XPATH, using = "//div[@class='overlay-box B1']//p")

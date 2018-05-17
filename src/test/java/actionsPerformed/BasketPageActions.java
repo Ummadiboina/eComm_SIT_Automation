@@ -336,9 +336,7 @@ public class BasketPageActions extends Environment {
 				log.debug("HomeDelivery is Selected");
 				Screenshots.captureScreenshot();
 
-			}
-
-			if (elementName.contains("clickAndCollect")) {
+			}else if (elementName.contains("clickAndCollect")) {
 				pageobjects.BasketPage.clickAndCollect.click();
 				// Assert.assertEquals(elementName,"Galaxy S7 is not found");
 				log.debug("click And Collect is Selected");

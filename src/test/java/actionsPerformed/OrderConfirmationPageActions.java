@@ -460,7 +460,7 @@ public class OrderConfirmationPageActions extends Environment {
 											}
 										}
 
-										Thread.sleep(4000);
+										//Thread.sleep(4000);
 										//Partners Contacting
 										if (driver.findElements(By.id("preference-heading-B4")).size() > 0) {
 											//Partners Contacting Tile Text validation
@@ -641,9 +641,10 @@ public class OrderConfirmationPageActions extends Environment {
 											Assert.fail("Save My Preference button is not clicked");
 										}
 
-										if (driver.findElements(By.xpath("//img[@id='u1306_img']")).size() > 0) {
-											System.out.println("Saved your preferences");
-											log.debug("Saved your preferences");
+										if (OrderConfirmationPage.SavedPreferenceMessage.isDisplayed()) {
+											String saveMessage = driver.findElement(By.xpath("//span[@class='saveMsg']"));
+											System.out.println("Saved your preferences :: "+saveMessage);
+											log.debug("Saved your preferences :: "+ saveMessage);
 										}
 									} else {
 										System.out.println("Unable to find Choose your preferences link header");
