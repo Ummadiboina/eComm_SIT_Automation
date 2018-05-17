@@ -1749,6 +1749,30 @@ public class E2EOrderPlaced_Steps {
         }
     }
 
+    @And("^Continue to CCA or Buyout or Trade In Agreements page and confirm all the agreement checks for SECCI and CCA not accepted$")
+    public void continue_to_CCA_or_Buyout_or_Trade_In_Agreements_page_and_confirm_all_the_agreement_checks_New() {
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, AgreementPage.class);
+            PageFactory.initElements(driver, ReviewPage.class);
+            AgreementPageActions.KeyInformation();
+            Thread.sleep(5000);
+            //AgreementPageActions.secciSection();
+            Thread.sleep(5000);
+            //AgreementPageActions.PayMMobileAgreement();
+            Thread.sleep(5000);
+            AgreementPageActions.TermsDeclarationCheckbox();
+            Thread.sleep(5000);
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            log.debug(
+                    "Agreements page is not displayed or unable to enter some information in thie page, Please review the screenshots for failure");
+            Assert.fail(
+                    "Agreements page is not displayed or unable to enter some information in thie page, Please review the screenshots for failure");
+
+        }
+    }
+
 	/*
 	 * #########################################################################
 	 * #########
@@ -7453,7 +7477,7 @@ public class E2EOrderPlaced_Steps {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, Agent_RegisterCustomerPage.class);
             Agent_RegisterCustomerActions.RegisterCustomer(Password, confirmPassword, SecurityAnswer);
-            Thread.sleep(4000);
+            Thread.sleep(5000);
         } catch (Exception e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
@@ -9639,14 +9663,14 @@ public class E2EOrderPlaced_Steps {
     }
 
     //GDPR preferences section for AFA  --- JamalKhan
-    @Then("^Choose Business preferences ([^\"]*) ([^\"]*) ([^\"]*) ([^\"]*) and Channel Preferences ([^\"]*) ([^\"]*) ([^\"]*) ([^\"]*) for ([^\"]*) when GDPR ([^\"]*) ([^\"]*) for AFA journey$")
-    public void Choose_Your_Preferences_AFA(String BP1, String BP2, String BP3, String BP4, String Chn1, String Chn2, String Chn3, String Chn4, String customer, String status, String DeviceType) {
+    @Then("^Choose Business preferences ([^\"]*) ([^\"]*) ([^\"]*) ([^\"]*) and Channel Preferences ([^\"]*) ([^\"]*) ([^\"]*) ([^\"]*) for ([^\"]*) when GDPR ([^\"]*) ([^\"]*) ([^\"]*) for AFA journey$")
+    public void Choose_Your_Preferences_AFA(String BP1, String BP2, String BP3, String BP4, String Chn1, String Chn2, String Chn3, String Chn4, String customer, String status, String DeviceType, String Device_Module) {
         // Write code here that turns the phrase above into concrete actions
         try {
             driver.manage().timeouts().implicitlyWait(200, TimeUnit.SECONDS);
             PageFactory.initElements(driver, Agent_RegisterCustomerPage.class);
             Thread.sleep(5000);
-            Agent_RegisterCustomerActions.PreferencesSection_AFA(BP1, BP2, BP3, BP4, Chn1, Chn2, Chn3, Chn4, customer, status,DeviceType);
+            Agent_RegisterCustomerActions.PreferencesSection_AFA(BP1, BP2, BP3, BP4, Chn1, Chn2, Chn3, Chn4, customer, status,DeviceType, Device_Module);
             log.debug("Completed preference actions");
 
         } catch (Exception e) {

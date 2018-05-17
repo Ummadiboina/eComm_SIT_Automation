@@ -166,12 +166,11 @@ public class PaymentPageActions extends Environment {
     }
     public static void Card_Details_CCV() throws InterruptedException, IOException {
 
-        driver.manage().timeouts().implicitlyWait(15,TimeUnit.SECONDS);
+       driver.manage().timeouts().implicitlyWait(15,TimeUnit.SECONDS);
+
         driver.switchTo().frame("payment-iframe");
         Thread.sleep(5000);
-        if (driver.findElements(By.xpath("//input[@type='password']")).size() >= 1) {
-            driver.switchTo().frame("payment-iframe");
-            Thread.sleep(5000);
+
             if (driver.findElements(By.xpath("//input[@type='password']")).size() > 0) {
                 PaymentPage.CCVSecurityCode.sendKeys("1234");
                 log.debug("Entered CVV security code");
@@ -183,8 +182,8 @@ public class PaymentPageActions extends Environment {
                 log.debug("Clicking on submit to next step");
                 Screenshots.captureScreenshot();
                 Thread.sleep(10000);
-                driver.switchTo().defaultContent();
-            }
+
+
         }
     }
 
