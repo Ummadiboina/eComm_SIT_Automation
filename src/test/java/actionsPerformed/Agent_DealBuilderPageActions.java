@@ -236,6 +236,7 @@ public class Agent_DealBuilderPageActions extends Environment {
     public static void SelectPayGDevice(String Device) throws InterruptedException, IOException {
 
         Agent_DealBuilderPage.prepayDevicesTab.click();
+        Thread.sleep(6000);
 
         if (Device.contains("iPhone 7 Plus 128GB Jet Black")) {
             log.debug("searching iPhone 7 Plus 128GB Jet Black");
@@ -251,6 +252,28 @@ public class Agent_DealBuilderPageActions extends Environment {
         }
         else if (Device.contains("iPhone 6s 32GB Gold")) {
             log.debug("searching iPhone 6s 32GB Gold");
+
+            // pageobjects.Agent_DealBuilderPage.prepayDeviceTableFilter.click();
+            Agent_DealBuilderPage.SearchTextBox_PrepayDevice.sendKeys(Device);
+
+            Thread.sleep(6000);
+            Agent_DealBuilderPage.SelectInStockPAYGDevice.click();
+            log.debug("searched iPhone 6s 32GB Gold");
+            log.debug("Clicked on SearchTextBox to enter" + Device);
+            Thread.sleep(3000);
+        }else if(Device.contains("Galaxy Tab S3 9.7")){
+            log.debug("searching Galaxy Tab S3 9.7");
+
+            // pageobjects.Agent_DealBuilderPage.prepayDeviceTableFilter.click();
+            Agent_DealBuilderPage.SearchTextBox_PrepayDevice.sendKeys(Device);
+
+            Thread.sleep(6000);
+            Agent_DealBuilderPage.SelectInStockPAYGDevice.click();
+            log.debug("searched iPhone 6s 32GB Gold");
+            log.debug("Clicked on SearchTextBox to enter" + Device);
+            Thread.sleep(3000);
+        }else{
+            log.debug("searching " +Device);
 
             // pageobjects.Agent_DealBuilderPage.prepayDeviceTableFilter.click();
             Agent_DealBuilderPage.SearchTextBox_PrepayDevice.sendKeys(Device);
