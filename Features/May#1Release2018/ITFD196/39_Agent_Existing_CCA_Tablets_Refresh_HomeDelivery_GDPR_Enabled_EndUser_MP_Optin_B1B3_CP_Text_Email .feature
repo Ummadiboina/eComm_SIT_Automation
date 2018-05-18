@@ -17,14 +17,15 @@ Feature: 39_Agent_Existing_CCA_Tablets_Refresh_HomeDelivery_GDPR_Enabled_EndUser
     Then perform all the advisory checks
     And validate the Personal details for Agent Existing customer and Enter time at current Address
     And perform the credit checks for Agent Existing <Username> by Bank details
-    And Update Device Plan Link Email Address
+    #And Update Device Plan Link Email Address
     #And Accept O2 Refresh Deal Summary
     And Click on 'Generate CCA' button
     And click on the 'CCA' link
     And Signin using valid <username> and <password> credentials for New User
     And Click on 'Continue' button on upgrade page
     And Is this order for You or Someone else <consumer> when GDPR is <status2>
-    And land on the payment page and input <Username> and other details and click 'Continue on next step' in upgrade journey
+    #And land on the payment page and input <Username> and other details and click 'Continue on next step' in upgrade journey
+    And land on the payment page and input details and click 'Continue on next step' in upgrade journey for CCA Link
     And Continue to CCA or Buyout or Trade In Agreements page and confirm all the agreement checks
     And Continue to Review page, check order contract text and review the order
     Then order confirmation is displayed

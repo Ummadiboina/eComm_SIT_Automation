@@ -645,10 +645,11 @@ public class E2EOrderPlaced_Steps {
     }
 
     @Given("^Signin using valid ([^\"]*) and ([^\"]*) credentials for New User$")
-    public void signin_using_valid_ink_jun_and_test_credentials_New(String username, String password) {
+    public void signin_using_valid_ink_jun_and_test_credentials_New(String username, String password)throws Throwable {
         try {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, UpgradeCustomerPage.class);
+            Screenshots.captureScreenshot();
             UpgradeCustomerPageActions.Login(Agent_CreditCheckPageActions.emailAdd, password);
         } catch (Exception e) {
             // TODO Auto-generated catch block
@@ -1763,8 +1764,8 @@ public class E2EOrderPlaced_Steps {
             Thread.sleep(5000);
             //AgreementPageActions.PayMMobileAgreement();
             Thread.sleep(5000);
-            AgreementPageActions.TermsDeclarationCheckbox();
-            Thread.sleep(5000);
+            //AgreementPageActions.TermsDeclarationCheckbox();
+            //Thread.sleep(5000);
         } catch (Exception e) {
             // TODO Auto-generated catch block
             log.debug(
@@ -2013,9 +2014,11 @@ public class E2EOrderPlaced_Steps {
     @Then("^Update Device Plan Link Email Address$")
     public void updatedeviceplan() throws Throwable {
         Thread.sleep(3000);
+        Screenshots.captureScreenshot();
         driver.findElement(By.xpath("//*[@id='updateEmailAddressProceedButton']")).click();
         log.debug("Updated Device Plan Link Email Address");
-        Thread.sleep(3000);
+        Thread.sleep(5000);
+        Screenshots.captureScreenshot();
         WebElement element = driver.findElement(By.xpath("//*[@id='secciYesButton']"));
         JavascriptExecutor executor = (JavascriptExecutor) driver;
         executor.executeScript("arguments[0].click();", element);
@@ -2050,6 +2053,7 @@ public class E2EOrderPlaced_Steps {
     public void ccaLink() throws Throwable {
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         driver.findElement(By.xpath("//*[@id='generateCcaForm']/input[1]")).click();
+        Screenshots.captureScreenshot();
         log.debug("Clicked on the Generate CCA link");
         Thread.sleep(5000);
         String CCALinkDetails = driver.findElement(By.xpath("//*[@id='ccaContent']")).getText();
@@ -7169,6 +7173,7 @@ public class E2EOrderPlaced_Steps {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, O2RefreshDealSummaryPage.class);
             O2RefreshDealSummaryActions.DealSummarySectionforCCA();
+            Thread.sleep(4000);
             O2RefreshDealSummaryActions.ClickGenerateCCABtn();
 
             Thread.sleep(4000);
@@ -7186,6 +7191,8 @@ public class E2EOrderPlaced_Steps {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, O2RefreshDealSummaryPage.class);
             O2RefreshDealSummaryActions.ClickGenerateCCALink();
+            Thread.sleep(4000);
+            Thread.sleep(4000);
             O2RefreshDealSummaryActions.SwitchFocusToNewTab();
 
             Thread.sleep(4000);
@@ -7268,6 +7275,26 @@ public class E2EOrderPlaced_Steps {
 
         }
     }
+
+    @And("^land on the payment page and input details and click 'Continue on next step' in upgrade journey for CCA Link$")
+    public void CreditCheckPaymentPage_HomeDelivery_Upgrade_CCA_Link(String Username) {
+        // Write code here that turns the phrase above into concrete actions
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, PaymentPage.class);
+            PaymentPageActions.Card_Details_CCA();
+            Thread.sleep(8000);
+            PaymentPageActions.Card_Details_CCV();
+            Thread.sleep(8000);
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+            log.debug("Unable to input details in payment page");
+            Assert.fail("Unable to input details in payment page");
+
+        }
+    }
+
     ///////////////////////////////////////////////////////////////////////////////////////////////
     ///////////////////////////////// Agent_BuyOut/////////////////////////////////////////////////
     ////////////////////////////////////////////////////////////////////////////////////////////////
@@ -7465,6 +7492,7 @@ public class E2EOrderPlaced_Steps {
 
             driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
             PageFactory.initElements(driver, Agent_DealBuilderPage.class);
+            Thread.sleep(4000);
             Agent_DealBuilderPageActions.selectStore();
 
         } catch (Exception e) {

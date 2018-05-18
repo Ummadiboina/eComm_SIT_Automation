@@ -325,7 +325,7 @@ public class Agent_DealBuilderPageActions extends Environment {
 
         } else {
             log.debug("searching In Stock Accessory");
-            Agent_DealBuilderPage.SearchTextBox_Accessories.sendKeys("In Stock");
+            Agent_DealBuilderPage.SearchTextBox_Accessories.sendKeys("screen protector");
             log.debug("searched In Stock Accessory");
             Thread.sleep(6000);
             Agent_DealBuilderPage.SelectSearchedaccessory.click();
@@ -565,7 +565,7 @@ public class Agent_DealBuilderPageActions extends Environment {
         Agent_DealBuilderPage.CheckStore.click();
         log.debug("Clicked on Check store stock Tab");
         log.debug("Clicked on Check store stock Tab");
-        Thread.sleep(3000);
+        Thread.sleep(4000);
 
         String Mainwindow = driver.getWindowHandle();
         // getting all the popup windows , hence using getwindowhandles instead of
