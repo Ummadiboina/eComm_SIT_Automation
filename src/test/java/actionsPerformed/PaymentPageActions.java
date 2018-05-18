@@ -228,6 +228,31 @@ public class PaymentPageActions extends Environment {
 
     }
 
+    public static void Card_Details_CCA() throws InterruptedException, IOException {
+
+       /* if(driver.findElement(By.xpath(" (//button[@name='select-address-btn'])[2]")).isEnabled()){
+            driver.findElement(By.xpath(" (//button[@name='select-address-btn'])[2]")).click();
+        }*/
+        Thread.sleep(4000);
+        driver.switchTo().frame("payment-iframe"); // switching the frame by ID
+
+        Thread.sleep(2000);
+        PaymentPage.SecurityCode.sendKeys("123");
+        log.debug("Entered CVV security code");
+        Thread.sleep(2000);
+        PaymentPage.Continue_Next_Step.sendKeys(Keys.ENTER);
+        log.debug("Clicking on continue to next step");
+        Thread.sleep(10000);
+        log.debug("*********We are done***************");
+        log.debug("Exiting the Payments section");
+        driver.switchTo().defaultContent();
+        // log.debug(driver.getTitle());
+        Screenshots.captureScreenshot();
+
+    }
+
+
+
     public static void Card_Details() throws InterruptedException, IOException {
 
         driver.switchTo().frame("payment-iframe"); // switching the frame by ID

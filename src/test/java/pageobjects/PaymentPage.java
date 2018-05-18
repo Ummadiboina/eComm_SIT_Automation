@@ -70,7 +70,7 @@ public class PaymentPage {
     @FindBy(how = How.XPATH, using = "//*[@id='ddlYear' or @id='txtYr']")
     public static WebElement CardYear;
 
-    @FindBy(how = How.XPATH, using = "//*[@id='txtSecurityCode' or @id='CardCvv']")
+    @FindBy(how = How.XPATH, using = "//*[@id='txtSecurityCode' or @id='CardCvv' or @id='txtCardSecurityCode']")
     public static WebElement SecurityCode;
 
     @FindBy(how = How.ID, using = "btnPayNow")
