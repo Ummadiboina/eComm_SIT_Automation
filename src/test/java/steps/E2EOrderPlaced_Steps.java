@@ -7520,6 +7520,7 @@ public class E2EOrderPlaced_Steps {
         try {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, Agent_RegisterCustomerPage.class);
+            Thread.sleep(4000);
             Agent_RegisterCustomerActions.RegisterStatus();
             Thread.sleep(4000);
         } catch (Exception e) {
