@@ -518,7 +518,7 @@ public class Agent_RegisterCustomerActions extends Environment {
 									Assert.fail("By Default Me radio button is not selected");
 								}
 
-								if(Device_Module.equalsIgnoreCase("Tablet") || Device_Module.equalsIgnoreCase("MBB"))
+								if(Device_Module.equalsIgnoreCase("Tablet") || Device_Module.equalsIgnoreCase("MBB") || Device_Module.equalsIgnoreCase("Simo"))
 								{
 									System.out.println("Device is MBB/Tablet");
 									log.debug("Device is MBB/Tablet");
@@ -811,7 +811,7 @@ public class Agent_RegisterCustomerActions extends Environment {
 								}
 
 								//Skip Preferences button status after selecting business preferences
-								if(Device_Module.equalsIgnoreCase("Tablet") || Device_Module.equalsIgnoreCase("MBB")) {
+								if(Device_Module.equalsIgnoreCase("Tablet") || Device_Module.equalsIgnoreCase("MBB") || Device_Module.equalsIgnoreCase("Simo")) {
 									if (Agent_RegisterCustomerPage.SkipPreference.isDisplayed()) {
 										System.out.println("Skip Preferences is enabled for Tablet/MBB after selecting Business preferences");
 										log.debug("Skip Preferences is enabled for Tablet/MBB after selecting Business preferences");
@@ -890,7 +890,7 @@ public class Agent_RegisterCustomerActions extends Environment {
 								Screenshots.captureScreenshot();
 
 								// SaveMyPreferences button status after selecting business preferences and channel preferences
-								if(Device_Module.equalsIgnoreCase("Tablet") || Device_Module.equalsIgnoreCase("MBB")) {
+								if(Device_Module.equalsIgnoreCase("Tablet") || Device_Module.equalsIgnoreCase("MBB") || Device_Module.equalsIgnoreCase("Simo")) {
 
 									if (Agent_RegisterCustomerPage.SaveMyPreferences.isEnabled()) {
 										System.out.println("As expected Save My Preference Button is enabled after selecting Channel Preferences");
@@ -1563,17 +1563,23 @@ public class Agent_RegisterCustomerActions extends Environment {
 		Screenshots.captureScreenshot();
 	}
 
-	public static void RegisterStatus() {
-
-		if (driver.findElements(By.xpath("//div[@id='registerStatus']")).size() > 0) {
+	public static void RegisterStatus() throws InterruptedException, IOException {
+		Thread.sleep(5000);
+		if (driver.findElements(By.xpath("//span[@id='successStatus']")).size() > 0) {
 
 			String registerStatus = Agent_RegisterCustomerPage.registerStatus.getText();
-			System.out.println("Register Status:: " + registerStatus);
-			log.debug("Register Status:: " + registerStatus);
+			if(registerStatus.contains("Registered")) {
+				System.out.println("Register Status validated :: " + registerStatus);
+				log.debug("Register Status validated :: " + registerStatus);
+			}else{
+				System.out.println("Register Status text message is miss matching");
+				log.debug("Register Status text message is miss matching");
+				Assert.fail("Register Status text message is miss matching");
+			}
 		} else {
-			System.out.println("Register Status text message is miss matching");
-			log.debug("Register Status text message is miss matching");
-			Assert.fail("Register Status text message is miss matching");
+			System.out.println("Register Status text message is not available");
+			log.debug("Register Status text message is not available");
+			Assert.fail("Register Status text message is not available");
 		}
 	}
 }

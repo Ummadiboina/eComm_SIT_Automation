@@ -1,6 +1,7 @@
 package actionsPerformed;
 
 import java.io.IOException;
+import java.util.concurrent.TimeUnit;
 
 import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
@@ -21,21 +22,21 @@ public class O2RefreshDealSummaryActions extends Environment {
 			O2RefreshDealSummaryPage.SummariseTheDealYes.click();
 			log.debug("The Yes button in the deal summary is clicked");
 		}*/
-
+		Screenshots.captureScreenshot();
+		Thread.sleep(5000);
 		if (O2RefreshDealSummaryPage.SummariseTheDealYes.isDisplayed() && driver.findElements(By.xpath("(//*[@id='secciYesButton' or @id='updateEmailAddressProceedButton'])[1]")).size() > 0){
 			System.out.println("The Deal summary section is displayed");
 			O2RefreshDealSummaryPage.SummariseTheDealYes.click();
 			log.debug("The Yes button in the deal summary is clicked");
 		}
 
-		Thread.sleep(2000);
+		Thread.sleep(5000);
+		Screenshots.captureScreenshot();
 		if(driver.findElements(By.xpath("(//*[@id='secciYesButton' or @id='updateEmailAddressProceedButton'])[2]")).size() > 0){
 			//((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", O2RefreshDealSummaryPage.SummariseTheDealYes2);
 			O2RefreshDealSummaryPage.SummariseTheDealYes2.click();
 			log.debug("The Yes2 button in the deal summary is clicked");
-		}
-
-		else {
+		}else {
 			System.out.println("The Deal summary is not present");
 		}
 		Thread.sleep(2000);
@@ -45,8 +46,11 @@ public class O2RefreshDealSummaryActions extends Environment {
 
 	public static void ClickGenerateCCABtn() throws IOException, InterruptedException {
 
+		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+		Screenshots.captureScreenshot();
 		if (O2RefreshDealSummaryPage.GenerateCCABtn.isDisplayed()) {
 			log.debug("The Generate CCA button is displayed");
+			Thread.sleep(3000);
 			O2RefreshDealSummaryPage.GenerateCCABtn.click();
 		} else {
 			log.debug("The Generate CCA button is not present");
@@ -61,13 +65,14 @@ public class O2RefreshDealSummaryActions extends Environment {
 
 			JavascriptExecutor executor = (JavascriptExecutor) driver;
 			executor.executeScript("arguments[0].click();", O2RefreshDealSummaryPage.CCALink);
-
+			Screenshots.captureScreenshot();
 			// O2RefreshDealSummaryPage.CCALink.click();
 			Thread.sleep(3000);
 		} else {
 			log.debug("The CCA link is not displayed");
+			Screenshots.captureScreenshot();
 		}
-		Screenshots.captureScreenshot();
+
 
 	}
 
