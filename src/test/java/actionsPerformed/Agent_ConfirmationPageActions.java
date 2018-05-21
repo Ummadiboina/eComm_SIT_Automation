@@ -27,6 +27,12 @@ public class Agent_ConfirmationPageActions extends Environment {
 			log.debug(orderContents);
 			log.debug("The orderContents contents are as below " + orderContents);
 
+
+			String orderNum = Agent_ConfirmationPage.orderNumber.getText();
+			log.debug(orderNum);
+			log.debug("The Order Confirmation  @ ::  " + orderNum);
+
+
 			String orderContentRefer = Agent_ConfirmationPage.orderContentRefer.getText();
 			log.debug(orderContentRefer);
 			log.debug("The orderContentRefer contents are as below " + orderContentRefer);

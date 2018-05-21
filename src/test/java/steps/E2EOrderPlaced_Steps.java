@@ -1667,9 +1667,11 @@ public class E2EOrderPlaced_Steps {
 
     @Given("^Continue to Agreements page and confirm all the agreement checks$")
     public void AgreementsPageConfirmation() {
+
         try {
             // Write code here that turns the phrase above into concrete actions
-            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+           // driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            Thread.sleep(10000);
             PageFactory.initElements(driver, AgreementPage.class);
             PageFactory.initElements(driver, ReviewPage.class);
             Thread.sleep(10000);

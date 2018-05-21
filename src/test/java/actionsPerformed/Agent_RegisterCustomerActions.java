@@ -1068,9 +1068,8 @@ public class Agent_RegisterCustomerActions extends Environment {
 	public static void PreferencesSection_AFU(String BP1, String BP2, String BP3, String BP4, String Chn1, String Chn2, String Chn3, String Chn4, String customer, String gdprStatus,String DeviceType) throws InterruptedException, IOException {
 
 		try {
-
-			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-
+			//driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			Thread.sleep(8000);
 			if(gdprStatus.equalsIgnoreCase("Enabled")) {
 
 					/*
@@ -1475,8 +1474,9 @@ public class Agent_RegisterCustomerActions extends Environment {
 
 								boolean defaultSelect = Agent_RegisterCustomerPage.someoneElse_radioBtn.isSelected();
 								if (!defaultSelect) {
+									Thread.sleep(6000);
 									Agent_RegisterCustomerPage.someoneElse_radioBtn.click();
-									Thread.sleep(2000);
+									Thread.sleep(6000);
 									System.out.println("SomeOne else Order:: Me is selected by Default, as Requirement we have clicked Someone else");
 									log.debug("SomeOne else Order:: Me is selected by Default, as Requirement we have clicked Someone else");
 								}else
