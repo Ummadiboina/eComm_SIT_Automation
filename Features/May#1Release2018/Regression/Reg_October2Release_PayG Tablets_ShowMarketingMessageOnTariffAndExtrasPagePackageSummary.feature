@@ -1,4 +1,4 @@
-Feature:
+Feature:  PayG Tablets_ShowMarketingMessageOnTariffAndExtrasPagePackageSummary
 
   @Web
   Scenario Outline: PayG Tablets_ShowMarketingMessageOnTariffAndExtrasPagePackageSummary

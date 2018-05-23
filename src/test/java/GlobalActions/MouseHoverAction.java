@@ -60,7 +60,7 @@ public class MouseHoverAction extends Environment {
 
     public static void PayMPhonesLandingPage() throws Exception {
         //driver.manage().timeouts().implicitlyWait(150, TimeUnit.SECONDS);
-        Thread.sleep(10000);
+        Thread.sleep(2000);
         try {
             /*********************************************************************
              normal execution flow in ref Env....        ************************/
@@ -453,7 +453,7 @@ public class MouseHoverAction extends Environment {
 
     public static void PayMTabletsLandingPage() throws Exception {
         //driver.manage().timeouts().implicitlyWait(45, TimeUnit.SECONDS);
-            Thread.sleep(10000);
+            Thread.sleep(5000);
         try {
             /*********************************************************************
              normal execution flow in ref Env....        ************************/
@@ -826,7 +826,7 @@ public class MouseHoverAction extends Environment {
 
     // Below will navigate to ACCESSORIES Page
     public static void AccessoriesLandingPage() throws Exception {
-        driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+        //driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 
         try {
             /*********************************************************************
@@ -873,7 +873,7 @@ public class MouseHoverAction extends Environment {
             /*********************************************************************
              Drupal navigation change           ************************/
             if (driver.findElements(By.xpath("//div[@class='navContainer']/ul/li[@name='Shop']/a[contains(@href,'/shop')]")).size() >= 1) {
-
+                Thread.sleep(5000);
                 Point coordinates = MouseHoverPage.MoveMouseOnShopTab_Drupal.getLocation();
                 Robot robot = new Robot();
                 robot.mouseMove(coordinates.getX(), coordinates.getY() + 100);
@@ -892,7 +892,7 @@ public class MouseHoverAction extends Environment {
                 // MouseHoverPage.MoveMouseOnPhones_Drupal.click();
                 JavascriptExecutor executor = (JavascriptExecutor)driver;
                 executor.executeScript("arguments[0].click();", MouseHoverPage.MoveMouseOnAccessoriesAndMoreTab_Drupal);
-                Thread.sleep(5000);
+                Thread.sleep(8000);
                 Screenshots.captureScreenshot();
 
                 log.debug("Clicking on PayG Phones");

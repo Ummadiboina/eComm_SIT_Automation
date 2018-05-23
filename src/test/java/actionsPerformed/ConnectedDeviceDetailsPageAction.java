@@ -54,7 +54,8 @@ public class ConnectedDeviceDetailsPageAction extends Environment {
     }
 
     public static void ViewAllTariffs() throws InterruptedException, IOException {
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+      //  driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        Thread.sleep(8000);
         log.debug("Entering ViewAllTariffs() function ");
         JavascriptExecutor jse = (JavascriptExecutor) driver;
         jse.executeScript("window.scrollBy(0,600)", "");
@@ -245,10 +246,14 @@ public class ConnectedDeviceDetailsPageAction extends Environment {
         // TODO Auto-generated method stub
         Thread.sleep(5000);
 
-        ConnectedDeviceDetailsPage.ColorDropDown.click();
+        //ConnectedDeviceDetailsPage.ColorDropDown.click();
         WebElement ele = driver.findElement(By.xpath("(//span[@class='selectboxit-option-icon-container']/following-sibling::span[normalize-space()='" + color + "'])[1]"));
         Actions act = new Actions(driver);
-        act.moveToElement(ele).click().build().perform();
+        if(ele.isDisplayed()){
+            System.out.println("Successfully selected the color: " + color);
+        }else {
+            act.moveToElement(ele).click().build().perform();
+        }
         // ele.click();
         /*JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("arguments[0].setAttribute('style', 'display:block;')", element);*/

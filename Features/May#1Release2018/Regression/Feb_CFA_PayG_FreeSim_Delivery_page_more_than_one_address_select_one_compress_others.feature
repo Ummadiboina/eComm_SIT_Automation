@@ -8,8 +8,11 @@ Feature: Feb_CFA_PayG_FreeSim_Delivery_page_more_than_one_address_select_one_com
     And Select a pay as you go bundle
     #And Land on the 'Tariffs and extra' page
     And I enter details in Delivery Page <Firstname> and <Surname>
+    #And input <Firstname> and <Surname> and other valid details in Delivery page to verify GDPR
+    And Enter details in Delivery Page <Firstname> and <Surname> for GDPR <CheckBox>
     Then Free Sim order confirmation is displayed
+    Then Choose <consumer> <status> Business preferences <B1> <B2> <B3> <B4> And Channel Preferences <Text> <Email> <Phone> <Post> <MBBStatus> <DeviceType>
 
     Examples:
-      | Firstname | Surname |
-      | TEST      | ACCEPTA |
+      | Firstname | Surname | consumer | B1  | B2  | B3  | B4  | Text | Email | Phone | Post | status    | MBBStatus | DeviceType | CheckBox |
+      | TEST      | ACCEPTA | Me       | Not | Not | Not | Not | Not  | Not   | Not   | Not  | Disiabled | No        | Connected  | Yes      |

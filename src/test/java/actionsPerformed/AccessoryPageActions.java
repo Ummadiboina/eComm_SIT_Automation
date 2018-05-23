@@ -104,8 +104,17 @@ public class AccessoryPageActions extends Environment {
 
 	public static void SelectAnyAccessory(String elementName) throws IOException, InterruptedException {
 
-		JavascriptExecutor executor = (JavascriptExecutor) driver;
+		Thread.sleep(3000);
+		if(driver.findElements(By.xpath("//p[contains(text(),'Explore our range of cases, screen protectors, headphones and more.')]/following-sibling::p")).size() > 0){
+			WebElement ele = driver.findElement(By.xpath("//p[contains(text(),'Explore our range of cases, screen protectors, headphones and more.')]/following-sibling::p/../.."));
+			JavascriptExecutor executor = (JavascriptExecutor) driver;
+			Thread.sleep(1000	);
+			executor.executeScript("arguments[0].scrollIntoView(true);",ele);
+			executor.executeScript("arguments[0].click();", ele);
+		}
 
+		Thread.sleep(6000);
+		JavascriptExecutor executor = (JavascriptExecutor) driver;
 		Thread.sleep(1000	);
 		executor.executeScript("arguments[0].scrollIntoView(true);",pageobjects.AccessoryPage.ViewAllProductsOnOnePage);
 		Thread.sleep(2000	);
@@ -216,8 +225,8 @@ public class AccessoryPageActions extends Environment {
 			Thread.sleep(5000);
 
 
-			driver.findElement(By.xpath("(//div[@class='device-tile__top']//img)[1]")).click();
-			driver.manage().timeouts().implicitlyWait(02, TimeUnit.MINUTES);
+			/*driver.findElement(By.xpath("(//div[@class='device-tile__top']//img)[1]")).click();
+			driver.manage().timeouts().implicitlyWait(02, TimeUnit.MINUTES);*/
 			Thread.sleep(5000);
 			String status = driver.findElement(By.xpath("//p[@class='delivery-information']//span[1]")).getText();
 			log.debug(status);

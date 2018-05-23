@@ -19,5 +19,5 @@ Feature: Reg_CFA_Basket page cross sell insurance
     And click on the 'Add now' button and verify Insurance gets added successfully
 
     Examples:
-      | handset        | tariff                 |
-      | Apple iPhone 8 | 9.99upfront44.00amonth |
+      | handset | tariff                 |
+      | Apple   | 9.99upfront44.00amonth |

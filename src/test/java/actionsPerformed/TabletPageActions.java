@@ -90,6 +90,7 @@ public class TabletPageActions extends Environment {
 
 			log.debug("Random Tablet is selected");
 		}
+	//	if(driver.findElements(By.id("deviceDetailsSubmit")).size() <1 ){
 
 		if (elementName.contains("SamsungGalaxy10")) {
 			log.debug("SamsungGalaxy10 is selected");
@@ -131,19 +132,19 @@ public class TabletPageActions extends Environment {
 		Thread.sleep(5000);
 		if (elementName.contains("Samsung Galaxy Tab A 2016 10.1")) {
 			Thread.sleep(3000);
-			if(driver.findElements(By.xpath("//a[contains(@href, '/shop/tablets/apple/ipad-pro-12.9-inch/#contractType=paymonthly')]")).size() > 0) {
+			if (driver.findElements(By.xpath("//a[contains(@href, '/shop/tablets/apple/ipad-pro-12.9-inch/#contractType=paymonthly')]")).size() > 0) {
 
-				JavascriptExecutor executor = (JavascriptExecutor)driver;
+				JavascriptExecutor executor = (JavascriptExecutor) driver;
 				executor.executeScript("arguments[0].click();", pageobjects.TabletPage.SamsungGalaxyTabA201610point1);
 				log.debug("Samsung Galaxy Tab A 2016 10.1 is selected");
 				//pageobjects.TabletPage.SamsungGalaxyTabA201610point1.click();
-			}else{
-				pageobjects.TabletPage.RandomTablet.click();
-				Thread.sleep(7000);
-			}
+			} else {
+				/*pageobjects.TabletPage.RandomTablet.click();
+				Thread.sleep(7000);*/
+			//}
 
 
-			Thread.sleep(10000);
+		}	Thread.sleep(10000);
 		}
 		Screenshots.captureScreenshot();
 	}

@@ -115,9 +115,9 @@ public class E2EOrderPlaced_Steps {
     @And("^navigate to PAYM Phones page$")
     public void navigate_to_PAYM_Phones_page() {
         try {
-            driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+            //driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
             PageFactory.initElements(driver, MouseHoverPage.class);
-
+            Thread.sleep(8000);
             MouseHoverAction.PayMPhonesLandingPage();
             Thread.sleep(4000);
             Autoredirection.redirect();
@@ -168,7 +168,8 @@ public class E2EOrderPlaced_Steps {
     @Given("^Navigate to Accessories$")
     public void navigate_to_Accessories() {
         try {
-            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+           // driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            Thread.sleep(6000);
             PageFactory.initElements(driver, MouseHoverPage.class);
             MouseHoverAction.AccessoriesLandingPage();
             Autoredirection.redirect();
@@ -423,7 +424,7 @@ public class E2EOrderPlaced_Steps {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, ConnectedDeviceDetailsPage.class);
             ConnectedDeviceDetailsPageAction.GetTitle();
-            Thread.sleep(5000);
+            //Thread.sleep(5000);
             ConnectedDeviceDetailsPageAction.ViewAllTariffs();
         } catch (Exception e) {
             // TODO Auto-generated catch block
@@ -645,7 +646,7 @@ public class E2EOrderPlaced_Steps {
     }
 
     @Given("^Signin using valid ([^\"]*) and ([^\"]*) credentials for New User$")
-    public void signin_using_valid_ink_jun_and_test_credentials_New(String username, String password)throws Throwable {
+    public void signin_using_valid_ink_jun_and_test_credentials_New(String username, String password) {
         try {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, UpgradeCustomerPage.class);
@@ -920,7 +921,7 @@ public class E2EOrderPlaced_Steps {
     @And("^click on \"([^\"]*)\" button$")
     public void CheckoutFromBasket(String arg1) {
         try {
-            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            //driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, BasketPage.class);
             Thread.sleep(3000);
             log.debug("We are in yourbasket page");
@@ -1018,7 +1019,8 @@ public class E2EOrderPlaced_Steps {
     @And("^input ([^\"]*) and ([^\"]*) and other valid details in Delivery page to verify GDPR$")
     public void DeliveryPage_Inputs_gdpr(String Firstname, String Surname) {
         try {
-            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            //driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            Thread.sleep(6000);
             PageFactory.initElements(driver, DeliveryPage.class);
             //CommonFunctionscheckTitle("Delivery Page");
             DeliveryPageActions.SetDelivery();
@@ -1532,9 +1534,35 @@ public class E2EOrderPlaced_Steps {
             PaymentPageActions.Set_Bank_details(Username);
             Thread.sleep(5000);
             PaymentPageActions.Time_At_Address_CC();
+            //PaymentPageActions.Time_At_Address();
             Thread.sleep(5000);
             PaymentPageActions.Card_Details(Username);
             Thread.sleep(75000);
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+            log.debug("Unable to input details in payment page");
+            Assert.fail("Unable to input details in payment page");
+
+        }
+    }
+
+
+    @And("^land on the payment page and input ([^\"]*) and other details for Click and collect order and click 'Continue on next step' for payments$")
+    public void CreditCheckPaymentPage_ClickAndCollect_CreditCheck(String Username){
+        // Write code here that turns the phrase above into concrete actions
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, PaymentPage.class);
+            //CommonFunctionscheckTitle("Payment Page");
+            PaymentPageActions.Set_Bank_details(Username);
+            Thread.sleep(5000);
+           // PaymentPageActions.Time_At_Address_CC();
+            PaymentPageActions.Time_At_Address();
+            Thread.sleep(5000);
+            PaymentPageActions.Card_Details(Username);
+            Thread.sleep(75000);
+            PaymentPageActions.Card_Details_CCV();
         } catch (Exception e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
@@ -3417,11 +3445,12 @@ public class E2EOrderPlaced_Steps {
     @And("^navigate to PAYM Tablets page$")
     public void navigate_to_PAYM_Tablets_page() {
         try {
+            Thread.sleep(8000);
            // driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, MouseHoverPage.class);
             MouseHoverAction.PayMTabletsLandingPage();
             Autoredirection.redirect();
-            Thread.sleep(15000);
+            Thread.sleep(5000);
         } catch (Exception e) {
             // TODO Auto-generated catch block
             log.debug("unable to do mousehover to tablets");
@@ -5544,7 +5573,8 @@ public class E2EOrderPlaced_Steps {
     @Then("^verify cover me is present in review page$")
     public void verify_cover_me_is_present_in_review_page() {
         try {
-            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            //driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            Thread.sleep(8000);
             PageFactory.initElements(driver, ReviewPage.class);
             Thread.sleep(3000);
             log.debug("Entering insurance in review page");

@@ -330,12 +330,14 @@ public class BasketPageActions extends Environment {
 		//if(!BasketPage.checkoutbtn.isDisplayed()){
 			if (elementName.contains("homeDelivery")) {
 				Thread.sleep(3000);
-				pageobjects.BasketPage.HomeDeliverySelect.click();
-				// Assert.assertEquals(elementName,"Galaxy S7 is not found");
-				log.debug("HomeDelivery is Selected");
-				log.debug("HomeDelivery is Selected");
-				Screenshots.captureScreenshot();
-
+				boolean b =driver.findElement(By.xpath("//*[@id='homeDelivery']")).isSelected();
+				if(!b) {
+					pageobjects.BasketPage.HomeDeliverySelect.click();
+					// Assert.assertEquals(elementName,"Galaxy S7 is not found");
+					log.debug("HomeDelivery is Selected");
+					log.debug("HomeDelivery is Selected");
+					Screenshots.captureScreenshot();
+				}
 			}else if (elementName.contains("clickAndCollect")) {
 				pageobjects.BasketPage.clickAndCollect.click();
 				// Assert.assertEquals(elementName,"Galaxy S7 is not found");

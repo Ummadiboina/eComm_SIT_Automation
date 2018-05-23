@@ -22,7 +22,7 @@ public class AgreementPageActions extends Environment {
 	}
 
 	public static void Affordability() throws IOException, InterruptedException {
-
+		Thread.sleep(8000);
 		log.debug("Selecting 'I agree that with my current financial commitments...'checkbox");
 		pageobjects.AgreementPage.affordabilityCheck1.click();
 		log.debug("Selecting affordability Checks # 1");
