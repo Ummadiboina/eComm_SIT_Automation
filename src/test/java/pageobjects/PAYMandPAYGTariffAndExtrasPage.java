@@ -43,7 +43,7 @@ public class PAYMandPAYGTariffAndExtrasPage {
 	public static WebElement RandomfullTariff2;
 
 	// Below is to add an accessory in TandE page
-	@FindBy(how = How.XPATH, using = ("(//*[@id='accessoryTile_']/div[5]/input)[2]"))
+	@FindBy(how = How.XPATH, using = ("(//*[@id='accessoryTile_']/div[5]/input)[1]"))
 	public static WebElement AddRandomAccessory;
 
 	// Below is to add an accessory in TandE page
