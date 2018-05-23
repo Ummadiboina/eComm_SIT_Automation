@@ -12,6 +12,9 @@ public class Agent_ConfirmationPage {
 		@FindBy(how=How.XPATH,using="//*[@id='orderContent']/p")
 		public static WebElement orderContent;
 
+		@FindBy(how=How.XPATH,using="//span[@class='orderNumber']")
+		public static WebElement orderNumber;
+
 		@FindBy(how=How.ID,using="orderContentRefer")
 		public static WebElement orderContentRefer;
 
