@@ -31,7 +31,7 @@ public class TabletPage {
 	@FindBy(how = How.XPATH, using = "//span[contains(text(),'Galaxy Tab A 2016 10.1')]")
 	public static WebElement SamsungGalaxy10;
 
-	@FindBy(how = How.XPATH, using = "(//div[@class='device-tile__top']/img)[2]")
+	@FindBy(how = How.XPATH, using = "(//div[@class='device-tile__top']/img)[7]")
 	public static WebElement RandomTablet;
 
 	/*

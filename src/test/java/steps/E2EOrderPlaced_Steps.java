@@ -115,7 +115,7 @@ public class E2EOrderPlaced_Steps {
     @And("^navigate to PAYM Phones page$")
     public void navigate_to_PAYM_Phones_page() {
         try {
-            driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+            driver.manage().timeouts().implicitlyWait(12, TimeUnit.SECONDS);
             PageFactory.initElements(driver, MouseHoverPage.class);
 
             MouseHoverAction.PayMPhonesLandingPage();
@@ -314,7 +314,7 @@ public class E2EOrderPlaced_Steps {
     @And("^I choose PayM ([^\"]*)$")
     public void Choose_PAYM_Handset(String handset) throws Throwable {
         try {
-            driver.manage().timeouts().implicitlyWait(120, TimeUnit.SECONDS);
+            driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
             PageFactory.initElements(driver, PhonesListingPage.class);
             PhonesListingPageAction.PAYMPhoneSelect(handset);
         } catch (Exception e) {
@@ -1553,7 +1553,8 @@ public class E2EOrderPlaced_Steps {
             PaymentPageActions.ValidateNonCreditPaymentPage();
             Thread.sleep(2000);
             PaymentPageActions.Card_Details(Username);
-            Thread.sleep(25000);
+            Thread.sleep(12000);
+            PaymentPageActions.Card_Details_CCV();
         } catch (Exception e) {
             // TODO Auto-generated catch block
             log.debug("Unable to input details in payment page");
@@ -1569,9 +1570,9 @@ public class E2EOrderPlaced_Steps {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, PaymentPage.class);
             PaymentPageActions.ValidateNonCreditPaymentPage();
-            Thread.sleep(2000);
+            Thread.sleep(10000);
             PaymentPageActions.Card_Details(Username);
-            Thread.sleep(5000);
+            Thread.sleep(10000);
             PaymentPageActions.Card_Details_CCV();
         } catch (Exception e) {
             // TODO Auto-generated catch block
@@ -9661,7 +9662,7 @@ public class E2EOrderPlaced_Steps {
 
 //GDPR
     @And("^Is this order for You or Someone else ([^\"]*) when GDPR is ([^\"]*)$")
-    public void isThisOrder4UorSomeoneElse(String customer, String status) {
+    public void isThisOrder4UorSomeoneElse(String customer, String status)throws InterruptedException, IOException {
         try {
             driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
             PageFactory.initElements(driver, DeliveryPage.class);

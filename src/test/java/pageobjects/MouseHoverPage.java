@@ -101,6 +101,11 @@ public class MouseHoverPage extends Environment {
 	@FindBy(how = How.XPATH, using = ("//li[contains(@class,'tier-menu-wrapper')]//li/a[text()='Browse tablets']"))
 	public static WebElement MoveMouseOnBrowseTablets_Drupal;
 
+	@FindBy(how = How.XPATH, using = ("//a[normalize-space()='Pay As You Go']"))
+	public static WebElement PayGBrowseTablets_Drupal;
+
+
+
 	@FindBy(how = How.XPATH, using = ("(//a[contains(text(), 'Tablets')])[1]"))
 	public static WebElement MoveMouseOnTablets;
 
@@ -187,7 +192,7 @@ public class MouseHoverPage extends Environment {
 
 
 
-	@FindBy(how = How.XPATH, using = ("//li[contains(@class,'tier-menu-wrapper')]//li/a[text()='Pay As You Go sims']"))
+	@FindBy(how = How.XPATH, using = ("//li[contains(@class,'tier-menu-wrapper')]//li/a[text()='Pay As You Go sims'] | //li[contains(@class,'tier-menu-wrapper')]//li/a[text()='Browse sims']"))
 	public static WebElement MoveMouseOnPayGSims_Drupal;
 
 	// @FindBy(how = How.XPATH, using = ("//a[contains(text(), 'Pay As You Go

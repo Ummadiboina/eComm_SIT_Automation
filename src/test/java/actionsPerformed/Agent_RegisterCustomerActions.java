@@ -14,6 +14,7 @@ import org.testng.Reporter;
 
 import GlobalActions.RandomEmailAddressCreation;
 import helpers.Environment;
+import pageobjects.Agent_CreditCheckDetailsPage;
 import pageobjects.Agent_RegisterCustomerPage;
 import GlobalActions.Screenshots;
 
@@ -94,6 +95,7 @@ public class Agent_RegisterCustomerActions extends Environment {
 
 	public static void PayGRegistration(String Firstname, String Surname, String HouseNumber, String PostCode)
 			throws InterruptedException {
+		Thread.sleep(5000);
 		try {
 			Select dropdown = new Select(pageobjects.Agent_RegisterCustomerPage.Title);
 			dropdown.selectByIndex(1);
@@ -107,6 +109,7 @@ public class Agent_RegisterCustomerActions extends Environment {
 
 			Agent_RegisterCustomerPage.Email.clear();
 			Agent_RegisterCustomerPage.Email.sendKeys(RandomEmailAddressCreation.RandomEmail());
+
 			Agent_RegisterCustomerPage.DOB.sendKeys("10-10-1981");
 			log.debug("Entered date of birth");
 			Thread.sleep(2000);
@@ -299,35 +302,35 @@ public class Agent_RegisterCustomerActions extends Environment {
 
 	}
 
-	public static void provideDrivingLicence() throws InterruptedException {
-
-		if (driver.findElements(By.id("additionalCardDetailsCheckbox")).size() > 0) {
+	public static void provideDrivingLicence() throws InterruptedException, IOException {
+			Thread.sleep(7000);
+		/*if (driver.findElements(By.id("additionalCardDetailsCheckbox")).size() > 0) {
 			((JavascriptExecutor) driver).executeScript("arguments[0].click();", Agent_RegisterCustomerPage.additionalCardDetailsCheckbox);
 			Thread.sleep(5000);
 			((JavascriptExecutor) driver).executeScript("arguments[0].click();", Agent_RegisterCustomerPage.additionalCaptureCardDetails);
 			Thread.sleep(15000);
 
-			String mainWindowHandle = driver.getWindowHandle ();
+			String mainWindowHandle = driver.getWindowHandle();
 
 			try {
 				//String mainWindowHandle = driver.getWindowHandle ();
-				Set<String> openWindowSize = driver.getWindowHandles ();
+				Set<String> openWindowSize = driver.getWindowHandles();
 				log.debug(openWindowSize.size() + " windows are opend");
 				//Switch to child window and close it
-				for (String childWindowHandle : driver.getWindowHandles ()) {
+				for (String childWindowHandle : driver.getWindowHandles()) {
 					//If window handle is not main window handle then close it
-					if (!childWindowHandle.equals (mainWindowHandle)) {
-						driver.switchTo ().window (childWindowHandle);
+					if (!childWindowHandle.equals(mainWindowHandle)) {
+						driver.switchTo().window(childWindowHandle);
 						// Close child windows
 						// driver.close();
 					} else {
 						//switch back to main window
-						driver.switchTo ().window (mainWindowHandle);
-						log.debug ("Switched window");
+						driver.switchTo().window(mainWindowHandle);
+						log.debug("Switched window");
 					}
 				}
-			} catch (Exception e){
-				log.debug ("Failed to switch to window :: " + e.getStackTrace ());
+			} catch (Exception e) {
+				log.debug("Failed to switch to window :: " + e.getStackTrace());
 
 			}
 
@@ -349,7 +352,7 @@ public class Agent_RegisterCustomerActions extends Environment {
 			Agent_RegisterCustomerPage.UsethisCard.click();
 			log.debug("completed  Mypay bit");
 			Thread.sleep(6000);
-		/*
+		*//*
 			try {
 				String mainWindowHandle = driver.getWindowHandle ();
 				Set<String> openWindowSize = driver.getWindowHandles ();
@@ -371,10 +374,11 @@ public class Agent_RegisterCustomerActions extends Environment {
 				log.debug ("Failed to switch to window :: " + e.getStackTrace ());
 
 			}
-			*/
+			*//*
 
 			driver.switchTo().window(mainWindowHandle);
 			Thread.sleep(5000);
+		}*/
 
 			((JavascriptExecutor) driver).executeScript("arguments[0].click();", Agent_RegisterCustomerPage.licenceDetailsCheckbox);
 			Agent_RegisterCustomerPage.licencePostCode.sendKeys("SL14Dx");
@@ -395,10 +399,12 @@ public class Agent_RegisterCustomerActions extends Environment {
 			Agent_RegisterCustomerPage.passportNumberSeg6.sendKeys("12345678965441");
 			Agent_RegisterCustomerPage.passportNumberSeg7.sendKeys("09");
 			Thread.sleep(2000);
+			Screenshots.captureScreenshot();
+			Thread.sleep(2000);
 			((JavascriptExecutor) driver).executeScript("arguments[0].click();", Agent_RegisterCustomerPage.performCredidCheckBtn);
 			log.debug("Filled the driving lisences and passport details and clicked on the perfrom credit check button");
 
-		}
+
 	}
 
 	//MBB validation
@@ -1056,6 +1062,7 @@ public class Agent_RegisterCustomerActions extends Environment {
 		catch (Exception e) {
 			System.out.println("Exception: Unable to do GDPR validations");
 			log.debug("Exception: Unable to do GDPR validations");
+			org.testng.Assert.fail("Exception: Unable to do GDPR validations");
 			Screenshots.captureScreenshot();
 		}
 		Screenshots.captureScreenshot();
