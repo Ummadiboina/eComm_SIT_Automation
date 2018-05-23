@@ -244,13 +244,13 @@ public class OrderConfirmationPageActions extends Environment {
 							System.out.println("Device type is connected and we are proceeding");
 							log.debug("Device type is connected and we are proceeding");
 
-							//Choose your preferences link
-							if (driver.findElements(By.xpath("//div[@class='choose-preferences-bar']/a")).size() > 0) {
-								System.out.println("GDPR is Enabled and we are proceeding");
-								log.debug("GDPR is Enabled and we are proceeding");
-
 								if (consumer.contains("Me")) {
-									driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+
+									//Choose your preferences link
+									if (driver.findElements(By.xpath("//div[@class='choose-preferences-bar']/a")).size() > 0) {
+										System.out.println("GDPR is Enabled and we are proceeding");
+										log.debug("GDPR is Enabled and we are proceeding");
+										driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 
 									//Choose your preferences link
 									if (driver.findElements(By.xpath("//div[@class='choose-preferences-bar']/a")).size() > 0) {
@@ -654,7 +654,11 @@ public class OrderConfirmationPageActions extends Environment {
 										Assert.fail("Unable to find Choose your preferences link header");
 									}Screenshots.captureScreenshot();
 								} else {
-
+										System.out.println("GDPR status is Enabled:: but Choose your preferences section is Disbaled");
+										log.debug("GDPR status is Enabled:: but Choose your preferences section is Disbaled");
+										Assert.fail("GDPR status is Enabled:: but Choose your preferences section is Disbaled");
+								}
+							}else{
 									//This order is for someone else
 									if (consumer.contains("Someone")) {
 										System.out.println("This order is for some one else");
@@ -667,13 +671,7 @@ public class OrderConfirmationPageActions extends Environment {
 											Assert.fail("GDPR is Enabled:: for some one else order");
 										}
 									}
-								}
-							}else{
-								System.out.println("GDPR status is Enabled:: but Choose your preferences section is Disbaled");
-								log.debug("GDPR status is Enabled:: but Choose your preferences section is Disbaled");
-								Assert.fail("GDPR status is Enabled:: but Choose your preferences section is Disbaled");
 							}
-
 						}else if(DeviceType.equalsIgnoreCase("Non Connected")){
 							System.out.println("Device type is non connected");
 							log.debug("Device type is non connected");
@@ -687,8 +685,7 @@ public class OrderConfirmationPageActions extends Environment {
 								log.debug("GDPR is Disabled for non connected device");
 							}
 						}
-				}
-				else if(gdprStatus.equalsIgnoreCase("Disabled")){
+				}else if(gdprStatus.equalsIgnoreCase("Disabled")){
 
 						if(DeviceType.equalsIgnoreCase("Connected")){
 							System.out.println("Device type is connected");
@@ -705,7 +702,7 @@ public class OrderConfirmationPageActions extends Environment {
 							Assert.fail("Choose your preferences section is Enabled for Disabled status");
 						}
 				}else{
-						Assert.fail("Failed to do GDPR validations");
+						Assert.fail("Failed to do GDPR validations as no status submitted");
 					}
 				}
 				catch (Exception e) {

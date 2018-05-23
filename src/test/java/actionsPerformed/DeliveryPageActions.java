@@ -98,6 +98,10 @@ public class DeliveryPageActions extends Environment {
             DeliveryPage.Last_Name.sendKeys(Surname);
             log.debug("Entered first name and last name as " + Firstname + " " + Surname);
             DeliveryPage.Contact_Number.sendKeys("07829483426");
+            log.debug("Enetered 10 digit contact number");
+            Thread.sleep(3000);
+            Screenshots.captureScreenshot();
+            Thread.sleep(3000);
             DeliveryPage.Password.sendKeys("NTTDATA123");
             DeliveryPage.security_answer.sendKeys("SitTester");
             DeliveryPage.date.sendKeys("25");

@@ -433,6 +433,38 @@ public class E2EOrderPlaced_Steps {
         }
     }
 
+    @And("^Navigate to device details page for color selection$")
+    public void Navigate_to_device_details_page_For_Color_Selection() {
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, ConnectedDeviceDetailsPage.class);
+            ConnectedDeviceDetailsPageAction.GetTitle();
+            Thread.sleep(5000);
+            //ConnectedDeviceDetailsPageAction.ViewAllTariffs();
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            log.debug("Unable to navigate to device details page");
+            Assert.fail("Unable to navigate to device details page");
+
+        }
+    }
+
+    @And("^Navigate to View tariff page$")
+    public void Navigate_to_View_tariff_page() {
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, ConnectedDeviceDetailsPage.class);
+            //ConnectedDeviceDetailsPageAction.GetTitle();
+            Thread.sleep(5000);
+            ConnectedDeviceDetailsPageAction.ViewAllTariffs();
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            log.debug("Unable to navigate to device details page");
+            Assert.fail("Unable to navigate to device details page");
+
+        }
+    }
+
 
 
 
@@ -1534,7 +1566,8 @@ public class E2EOrderPlaced_Steps {
             PaymentPageActions.Time_At_Address_CC();
             Thread.sleep(5000);
             PaymentPageActions.Card_Details(Username);
-            Thread.sleep(75000);
+            Thread.sleep(12000);
+            PaymentPageActions.Card_Details_CCV();
         } catch (Exception e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
@@ -7692,6 +7725,7 @@ public class E2EOrderPlaced_Steps {
         try {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, ConnectedDeviceDetailsPage.class);
+            Thread.sleep(4000);
             ConnectedDeviceDetailsPageAction.UpdatedColordropdown();
 
         } catch (Exception e) {

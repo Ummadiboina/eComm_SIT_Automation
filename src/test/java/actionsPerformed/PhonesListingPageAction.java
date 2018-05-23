@@ -37,12 +37,13 @@ public class PhonesListingPageAction extends Environment {
 
 			WebElement requestedDevice = driver.findElement(By.xpath("(//img[@class='device-image']/..//*[contains(text(),'"+deviceName+"')])[1]"));
 			if (driver.findElements(By.xpath("(//img[@class='device-image']/..//*[contains(text(),'"+deviceName+"')])[1]")).size() >= 1) {
+				Thread.sleep(3000);
                 ((JavascriptExecutor) driver).executeScript("arguments[0].click();", requestedDevice);
                 log.debug("Selected Device from Phones as Required is : " + deviceName);
                 log.debug("Selected Device from Phones as Required is : " + deviceName);
                 Thread.sleep(3000);
             } else {
-
+				Thread.sleep(3000);
                 WebElement element = driver.findElement(By.xpath("(//img[@class='device-image'])[1]"));
                 ((JavascriptExecutor) driver).executeScript("arguments[0].click();", element);
                 String defaultSelDevice = driver.findElement(By.xpath("((//img[@class='device-image'])[1]/..//span[@class='ng-binding'])[2]")).getText();

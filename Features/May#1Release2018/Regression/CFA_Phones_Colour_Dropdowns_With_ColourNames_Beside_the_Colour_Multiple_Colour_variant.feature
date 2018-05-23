@@ -1,22 +1,25 @@
-Feature: Reg_October2Release_CFA_Phones_ColourDropdownsWithColourNamesBesideTheColourMultipleColour.feature
+Feature: CFA_Phones_Colour_Dropdowns_With_ColourNames_Beside_the_Colour_Multiple_Colour_variant.feature
 
   @Web
-  Scenario Outline: CFA_Phones_ColourDropdownsWithColourNamesBesideTheColourMultipleColour
+  Scenario Outline: CFA_Phones_Colour_Dropdowns_With_ColourNames_Beside_the_Colour_Multiple_Colour_variant
     Given I am an CFA user and Lands on shop page
     And navigate to PAYM Phones page
     And I choose PayM <handset>
+    And Navigate to device details page for color selection
     And click on the color dropdown
     And verify the name of the colour is next to the colour tile in CFAPhoneColour
-    And Navigate to device details page
    # And select a color
     And select <color> color of the connected device
+    And Navigate to View tariff page
     And Land on the 'Tariffs and extra' page
     And click on the color dropdown
     And verify the name of the colour is next to the colour tile in CFAPhoneColour
     And select <color> color of the connected device
     And I Land on the basket page and choose home delivery option
     And click on "go to checkout" button
-    And input the below details in Delivery page
+    And input <Firstname> and <Surname> and other valid details in Delivery page to verify GDPR
+    And Is this order for You or Someone else <consumer> when GDPR is <status>
+    #And input the below details in Delivery page
       | HouseNumber           | 5            |
       | Post Code             | BS7 0NP      |
       | Title                 | Mr           |
@@ -32,7 +35,8 @@ Feature: Reg_October2Release_CFA_Phones_ColourDropdownsWithColourNamesBesideTheC
     And Continue to Agreements page and confirm all the agreement checks
     And Continue to Review page and review the order
     Then order confirmation is displayed
+    Then Choose <consumer> <status> Business preferences <B1> <B2> <B3> <B4> And Channel Preferences <Text> <Email> <Phone> <Post> <MBBStatus> <DeviceType>
 
     Examples:
-      | handset        | Username     | color |
-      | Apple iPhone 8 | TEST ACCEPTA | Gold  |
+      | handset  | Username     | Firstname | Surname | color  | consumer | B1     | B2     | B3  | B4  | Text   | Email  | Phone  | Post   | status  | MBBStatus | DeviceType |
+      | iPhone X | TEST ACCEPTA | Test      | Accepta | Silver | Me       | Select | Select | Not | Not | Select | Select | Select | Select | Enabled | No        | Connected  |

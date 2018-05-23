@@ -66,7 +66,7 @@ public class ConnectedDeviceDetailsPageAction extends Environment {
 
         jse.executeScript("arguments[0].click();", ele1);
 
-        Thread.sleep(5000);
+        Thread.sleep(7000);
         // driver.findElement(By.id("deviceDetailsSubmit")).click();
         log.debug("Clicked on ViewOurTariffs");
         log.debug("Clicked on ViewOurTariffs");
@@ -246,6 +246,7 @@ public class ConnectedDeviceDetailsPageAction extends Environment {
         Thread.sleep(5000);
 
         ConnectedDeviceDetailsPage.ColorDropDown.click();
+        Thread.sleep(3000);
         WebElement ele = driver.findElement(By.xpath("(//span[@class='selectboxit-option-icon-container']/following-sibling::span[normalize-space()='" + color + "'])[1]"));
         Actions act = new Actions(driver);
         act.moveToElement(ele).click().build().perform();
@@ -337,8 +338,10 @@ public class ConnectedDeviceDetailsPageAction extends Environment {
 
     public static void UpdatedColordropdown() throws IOException, InterruptedException {
         // TODO Auto-generated method stub
+        Thread.sleep(3000);
         if (pageobjects.ConnectedDeviceDetailsPage.UpdatedColorLabel.isDisplayed()) {
             log.debug("The color dropdown is displayed");
+            Thread.sleep(3000);
             pageobjects.ConnectedDeviceDetailsPage.colorselectBoxArow.click();
             log.debug("The colour dropdown is clicked");
         } else {
