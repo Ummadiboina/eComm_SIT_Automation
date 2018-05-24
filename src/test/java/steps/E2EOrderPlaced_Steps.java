@@ -1562,7 +1562,7 @@ public class E2EOrderPlaced_Steps {
             PaymentPageActions.Time_At_Address();
             Thread.sleep(5000);
             PaymentPageActions.Card_Details(Username);
-            Thread.sleep(75000);
+            Thread.sleep(7000);
             PaymentPageActions.Card_Details_CCV();
         } catch (Exception e) {
             // TODO Auto-generated catch block
