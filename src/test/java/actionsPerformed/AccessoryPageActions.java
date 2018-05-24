@@ -103,14 +103,19 @@ public class AccessoryPageActions extends Environment {
 	// This Method is used to select Accessory from the accessory listing page
 
 	public static void SelectAnyAccessory(String elementName) throws IOException, InterruptedException {
+		Thread.sleep(5000);
+		pageobjects.AccessoryPage.SeeAllAccessories.click();
+		Thread.sleep(7000);
 
-		JavascriptExecutor executor = (JavascriptExecutor) driver;
+		if(driver.findElements(By.xpath("(//a[contains(., 'View all products on one page')])[1]")).size()>0) {
+			JavascriptExecutor executor = (JavascriptExecutor) driver;
 
-		Thread.sleep(1000	);
-		executor.executeScript("arguments[0].scrollIntoView(true);",pageobjects.AccessoryPage.ViewAllProductsOnOnePage);
-		Thread.sleep(2000	);
-		executor.executeScript("arguments[0].click();", pageobjects.AccessoryPage.ViewAllProductsOnOnePage);
-
+			Thread.sleep(1000);
+			executor.executeScript("arguments[0].scrollIntoView(true);", pageobjects.AccessoryPage.ViewAllProductsOnOnePage);
+			Thread.sleep(2000);
+			executor.executeScript("arguments[0].click();", pageobjects.AccessoryPage.ViewAllProductsOnOnePage);
+		}
+		Thread.sleep(6000);
 		if (elementName.contains("Random")) {
 			log.debug("Selecting Any Accessory");
 			log.debug("Selecting Any Accessory");
