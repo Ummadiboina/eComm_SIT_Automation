@@ -234,7 +234,8 @@ public class E2EOrderPlaced_Steps {
     @Given("^navigate to Pay as you Go Phones page$")
     public void navigate_to_Pay_as_you_Go_Phones_page() {
         try {
-            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+           // driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            Thread.sleep(8000);
             PageFactory.initElements(driver, MouseHoverPage.class);
             MouseHoverAction.PayGPhonesLandingPage();
             Autoredirection.redirect();

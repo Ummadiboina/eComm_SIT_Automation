@@ -25,7 +25,7 @@ Feature: Reg_CFA_morethan12Tablet
     And click on "go to checkout" button
     And input <Firstname> and <Surname> and other valid details in Delivery page to verify GDPR
     And Is this order for You or Someone else <consumer> when GDPR is <status>
-    And input <Firstname> and <Surname> and other valid details in Delivery page and Click on the 'Continue button'
+    #And input <Firstname> and <Surname> and other valid details in Delivery page and Click on the 'Continue button'
     And land on the payment page and input <Username> and other details and click 'Continue on next step'
     And Continue to Agreements page and confirm all the agreement checks
     And Continue to Review page and review the order
@@ -33,5 +33,5 @@ Feature: Reg_CFA_morethan12Tablet
     Then Choose <consumer> <status> Business preferences <B1> <B2> <B3> <B4> And Channel Preferences <Text> <Email> <Phone> <Post> <MBBStatus> <DeviceType>
 
     Examples:
-      | Firstname | Surname | Username     | limit1 | tabletname    | limit2 | accessoryname    | fitnesstrackername | consumer | B1  | B2     | B3  | B4  | Text | Email  | Phone | Post | status  | MBBStatus | DeviceType |
-      | TEST      | ACCEPTA | TEST ACCEPTA | 6      | Random Device | 6      | JBL Flip 4 Black | Fitbit Ionic       | Me       | Yes | Select | Not | Not | Not  | Select | Not   | Not  | Enabled | No        | Connected  |
+      | Firstname | Surname | Username     | limit1 | tabletname    | limit2 | accessoryname | fitnesstrackername | consumer | B1  | B2     | B3  | B4  | Text   | Email | Phone | Post | status  | MBBStatus | DeviceType |
+      | TEST      | ACCEPTA | TEST ACCEPTA | 6      | Random Device | 6      | Random        | Fitbit Ionic       | Me       | Yes | Select | Not | Not | Select | Not   | Not   | Not  | Enabled | No        | Connected  |

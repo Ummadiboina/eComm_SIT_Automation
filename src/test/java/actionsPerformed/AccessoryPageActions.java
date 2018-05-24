@@ -15,6 +15,7 @@ import GlobalActions.Screenshots;
 import helpers.Environment;
 import helpers.Filereadingutility;
 import helpers.setRuntimeProperty;
+import pageobjects.AccessoryPage;
 
 import javax.security.sasl.SaslServer;
 
@@ -128,7 +129,6 @@ public class AccessoryPageActions extends Environment {
 			log.debug("Random Accessory Selected");
 		}
 		if (elementName.contains("HarmanKardonOnxyxStudio3"))
-
 		{
 			log.debug("Selecting HarmanKardonOnxyxStudio2 Accessory");
 			log.debug("Selecting HarmanKardonOnxyxStudio2 Accessory");
@@ -147,19 +147,15 @@ public class AccessoryPageActions extends Environment {
 			log.debug("PencilforiPadPro Accessory Selected");
 		}
 
-		if (elementName.contains("JBL Flip 4 Black"))
-
-		{
+		if (elementName.contains("Apple")){
 			log.debug("Selecting JBL Clip4 Accessory");
 			log.debug("Selecting JBL Clip4 Accessory");
-			log.debug("Selected an accessory -  " + pageobjects.AccessoryPage.Clip4.getText());
-			pageobjects.AccessoryPage.Clip4.click();
+			//log.debug("Selected an accessory -  " + AccessoryPage.randam1.getText());
+			AccessoryPage.randam1.click();
 			log.debug("JBL Clip4 Accessory Selected");
 		}
 
-		if (elementName.contains("JBL Xtreme Black"))
-
-		{
+		if (elementName.contains("JBL Xtreme Black")){
 			log.debug("Selecting JBLXtreme Accessory");
 			log.debug("Selecting JBLXtreme Accessory");
 			pageobjects.AccessoryPage.JBLXtreme.click();

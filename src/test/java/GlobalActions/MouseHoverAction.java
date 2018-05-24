@@ -131,9 +131,9 @@ public class MouseHoverAction extends Environment {
 
                 log.debug("Clicking on PayG Phones");
                 // Move mouse pointer away from location
-                Point coordinates2 = driver.findElement(By.xpath("(//div[@class='navContainer']/ul)[1]")).getLocation();
+                /*Point coordinates2 = driver.findElement(By.xpath("(//div[@class='navContainer']/ul)[1]")).getLocation();
                 Robot robot2 = new Robot();
-                robot2.mouseMove(coordinates2.getX(), coordinates.getY() + 300);
+                robot2.mouseMove(coordinates2.getX(), coordinates.getY() + 300);*/
                 log.debug("Moved Mouse to somewhere side of page");
             } else {
                 System.out.println("Drupal's are Disiabled");
@@ -260,7 +260,7 @@ public class MouseHoverAction extends Environment {
 
    public static void PayGPhonesLandingPage() throws Exception {
         //driver.manage().timeouts().implicitlyWait(150, TimeUnit.SECONDS);
-        Thread.sleep(10000);
+        Thread.sleep(4000);
         try {
             /*********************************************************************
              normal execution flow in ref Env....        ************************/
