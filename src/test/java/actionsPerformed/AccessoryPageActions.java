@@ -15,7 +15,6 @@ import GlobalActions.Screenshots;
 import helpers.Environment;
 import helpers.Filereadingutility;
 import helpers.setRuntimeProperty;
-import pageobjects.AccessoryPage;
 
 import javax.security.sasl.SaslServer;
 
@@ -100,8 +99,7 @@ public class AccessoryPageActions extends Environment {
 			Screenshots.captureScreenshot();
 		}
 	}
-
-	// This Method is used to select Accessory from the accessory listing page
+// This Method is used to select Accessory from the accessory listing page
 
 	public static void SelectAnyAccessory(String elementName) throws IOException, InterruptedException {
 
@@ -221,8 +219,8 @@ public class AccessoryPageActions extends Environment {
 			Thread.sleep(5000);
 
 
-			/*driver.findElement(By.xpath("(//div[@class='device-tile__top']//img)[1]")).click();
-			driver.manage().timeouts().implicitlyWait(02, TimeUnit.MINUTES);*/
+			driver.findElement(By.xpath("(//div[@class='device-tile__top']//img)[1]")).click();
+			driver.manage().timeouts().implicitlyWait(02, TimeUnit.MINUTES);
 			Thread.sleep(5000);
 			String status = driver.findElement(By.xpath("//p[@class='delivery-information']//span[1]")).getText();
 			log.debug(status);
