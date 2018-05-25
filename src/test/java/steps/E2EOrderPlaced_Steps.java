@@ -1536,12 +1536,18 @@ public class E2EOrderPlaced_Steps {
     }
 
 
-    @And("^land on the payment page and input ([^\"]*) and other details and click 'Continue' on next step for otac$")
-    public void CreditCheckPaymentPage_HomeDel(String Username) {
+    @And("^land on the payment page and input ([^\"]*) and other details for Click and collect order and click 'Continue on next step'$")
+    public void CreditCheckPaymentPage_ClickAndCollect(String Username){
         // Write code here that turns the phrase above into concrete actions
         try {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, PaymentPage.class);
+            //CommonFunctionscheckTitle("Payment Page");
+            PaymentPageActions.Set_Bank_details(Username);
+            Thread.sleep(5000);
+            PaymentPageActions.Time_At_Address_CC();
+            //PaymentPageActions.Time_At_Address();
+            Thread.sleep(5000);
             PaymentPageActions.Card_Details(Username);
             Thread.sleep(75000);
         } catch (Exception e) {
@@ -1554,8 +1560,8 @@ public class E2EOrderPlaced_Steps {
     }
 
 
-    @And("^land on the payment page and input ([^\"]*) and other details for Click and collect order and click 'Continue on next step'$")
-    public void CreditCheckPaymentPage_ClickAndCollect(String Username){
+    @And("^land on the payment page and input ([^\"]*) and other details for Click and collect order and click 'Continue on next step' for payments$")
+    public void CreditCheckPaymentPage_ClickAndCollect_CreditCheck(String Username){
         // Write code here that turns the phrase above into concrete actions
         try {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
@@ -1563,10 +1569,11 @@ public class E2EOrderPlaced_Steps {
             //CommonFunctionscheckTitle("Payment Page");
             PaymentPageActions.Set_Bank_details(Username);
             Thread.sleep(5000);
-            PaymentPageActions.Time_At_Address_CC();
+           // PaymentPageActions.Time_At_Address_CC();
+            PaymentPageActions.Time_At_Address();
             Thread.sleep(5000);
             PaymentPageActions.Card_Details(Username);
-            Thread.sleep(12000);
+            Thread.sleep(7000);
             PaymentPageActions.Card_Details_CCV();
         } catch (Exception e) {
             // TODO Auto-generated catch block
