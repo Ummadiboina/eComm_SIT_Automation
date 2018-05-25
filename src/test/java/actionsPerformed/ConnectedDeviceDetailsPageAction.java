@@ -241,15 +241,18 @@ public class ConnectedDeviceDetailsPageAction extends Environment {
         Screenshots.captureScreenshot();
     }
 
-    public static void colorSelectOfDeviceDropDown(String color) throws Exception {
+     public static void colorSelectOfDeviceDropDown(String color) throws Exception {
         // TODO Auto-generated method stub
         Thread.sleep(5000);
 
-        ConnectedDeviceDetailsPage.ColorDropDown.click();
-        Thread.sleep(3000);
+        //ConnectedDeviceDetailsPage.ColorDropDown.click();
         WebElement ele = driver.findElement(By.xpath("(//span[@class='selectboxit-option-icon-container']/following-sibling::span[normalize-space()='" + color + "'])[1]"));
         Actions act = new Actions(driver);
-        act.moveToElement(ele).click().build().perform();
+        if(ele.isDisplayed()){
+            System.out.println("Successfully selected the color: " + color);
+        }else {
+            act.moveToElement(ele).click().build().perform();
+        }
         // ele.click();
         /*JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("arguments[0].setAttribute('style', 'display:block;')", element);*/
