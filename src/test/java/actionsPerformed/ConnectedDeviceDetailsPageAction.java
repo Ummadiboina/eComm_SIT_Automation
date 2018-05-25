@@ -54,8 +54,7 @@ public class ConnectedDeviceDetailsPageAction extends Environment {
     }
 
     public static void ViewAllTariffs() throws InterruptedException, IOException {
-      //  driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-        Thread.sleep(8000);
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         log.debug("Entering ViewAllTariffs() function ");
         JavascriptExecutor jse = (JavascriptExecutor) driver;
         jse.executeScript("window.scrollBy(0,600)", "");
@@ -67,7 +66,7 @@ public class ConnectedDeviceDetailsPageAction extends Environment {
 
         jse.executeScript("arguments[0].click();", ele1);
 
-        Thread.sleep(5000);
+        Thread.sleep(7000);
         // driver.findElement(By.id("deviceDetailsSubmit")).click();
         log.debug("Clicked on ViewOurTariffs");
         log.debug("Clicked on ViewOurTariffs");
@@ -242,7 +241,7 @@ public class ConnectedDeviceDetailsPageAction extends Environment {
         Screenshots.captureScreenshot();
     }
 
-    public static void colorSelectOfDeviceDropDown(String color) throws Exception {
+     public static void colorSelectOfDeviceDropDown(String color) throws Exception {
         // TODO Auto-generated method stub
         Thread.sleep(5000);
 
@@ -342,8 +341,10 @@ public class ConnectedDeviceDetailsPageAction extends Environment {
 
     public static void UpdatedColordropdown() throws IOException, InterruptedException {
         // TODO Auto-generated method stub
+        Thread.sleep(3000);
         if (pageobjects.ConnectedDeviceDetailsPage.UpdatedColorLabel.isDisplayed()) {
             log.debug("The color dropdown is displayed");
+            Thread.sleep(3000);
             pageobjects.ConnectedDeviceDetailsPage.colorselectBoxArow.click();
             log.debug("The colour dropdown is clicked");
         } else {
