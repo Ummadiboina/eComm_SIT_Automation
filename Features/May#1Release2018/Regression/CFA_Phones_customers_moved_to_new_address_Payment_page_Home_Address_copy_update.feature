@@ -1,4 +1,4 @@
-Feature: Reg_October2Release_Reg_October2Release_ECOM-11886.feature
+Feature: CFA_Phones_customers_moved_to_new_address_Payment_page_Home_Address_copy_update.feature
 
   This scenario ensures that when the customer in acquisition journey who have moved address recently selects 'PayM Phone', then the customer should be prompted with updated copy of 'Home Address' to ensure that their address is up to date
 
@@ -11,14 +11,17 @@ Feature: Reg_October2Release_Reg_October2Release_ECOM-11886.feature
     And Land on the 'Tariffs and extra' page
     And I Land on the basket page and choose home delivery option
     And click on "go to checkout" button
-    And input <Firstname> and <Surname> and other valid details in Delivery page and Click on the 'Continue button'
+    #And input <Firstname> and <Surname> and other valid details in Delivery page and Click on the 'Continue button'
+    And input <Firstname> and <Surname> and other valid details in Delivery page to verify GDPR
+    And Is this order for You or Someone else <consumer> when GDPR is <status>
     And land on the payment page and verify copy text message below home address
     And land on the payment page and input <Username> and other details and click 'Continue on next step'
     And Continue to Agreements page and confirm all the agreement checks
     And Continue to Review page and review the order
     Then order confirmation is displayed
+    Then Choose <consumer> <status> Business preferences <B1> <B2> <B3> <B4> And Channel Preferences <Text> <Email> <Phone> <Post> <MBBStatus> <DeviceType>
 
 
     Examples:
-      | handset           | Firstname | Surname | Username     |
-      | Samsung Galaxy S8 | TEST      | ACCEPTA | TEST ACCEPTA |
+      | handset   | Firstname | Surname | Username     | consumer | B1  | B2  | B3  | B4  | Text | Email | Phone | Post | status  | MBBStatus | DeviceType |
+      | Galaxy S8 | TEST      | ACCEPTA | TEST ACCEPTA | Someone  | Not | Not | Not | Not | Not  | Not   | Not   | Not  | Enabled | No        | Connected  |

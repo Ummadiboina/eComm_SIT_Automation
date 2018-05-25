@@ -38,6 +38,11 @@ public class AccessoryPage {
 	@FindBy(how = How.XPATH, using = "(//div[@component-name='productTile'])[2]//a")
 	public static WebElement RandomAccessory;
 
+	@FindBy(how = How.XPATH, using = "(//h3[normalize-space()='All accessories']//following-sibling::p)[2]")
+	public static WebElement SeeAllAccessories;
+
+
+
 	// Below is for clicking on the Basket icon in Accessories page
 
 	@FindBy(how = How.XPATH, using = "//*[@id='deviceDetailsSubmit']")

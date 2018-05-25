@@ -99,6 +99,10 @@ public class DeliveryPageActions extends Environment {
             DeliveryPage.Last_Name.sendKeys(Surname);
             log.debug("Entered first name and last name as " + Firstname + " " + Surname);
             DeliveryPage.Contact_Number.sendKeys("07829483426");
+            log.debug("Enetered 10 digit contact number");
+            Thread.sleep(3000);
+            Screenshots.captureScreenshot();
+            Thread.sleep(3000);
             DeliveryPage.Password.sendKeys("NTTDATA123");
             DeliveryPage.security_answer.sendKeys("SitTester");
             DeliveryPage.date.sendKeys("25");
@@ -185,7 +189,7 @@ public class DeliveryPageActions extends Environment {
     }
 
     //code for GDPR--Venkata
-    public static void clickOnSubmitBtn(String customer, String status) throws InterruptedException {
+    public static void clickOnSubmitBtn(String customer, String status) throws InterruptedException, IOException {
         Thread.sleep(3000);
 
         log.debug("in click Submit button  function");
@@ -215,6 +219,7 @@ public class DeliveryPageActions extends Environment {
                 Thread.sleep(3000);
                 DeliveryPage.thisOrderOverlay.click();
                 Thread.sleep(3000);
+                Screenshots.captureScreenshot();
                 String thisOrderOVerLayTxt = DeliveryPage.thisOrderOverlayTxt.getText();
                 if (DeliveryPage.thisOrderOverlayTxt.isDisplayed()) {
                     if (thisOrderOVerLayTxt.contains("choose to receive information on our products, offers and more")) {
@@ -269,7 +274,7 @@ public class DeliveryPageActions extends Environment {
         }else{
             Assert.fail("Failed to do GDPR validations");
         }
-
+        Screenshots.captureScreenshot();
         Thread.sleep(5000);
         DeliveryPage.continueBtn.click();
     }

@@ -26,22 +26,24 @@ public class PhonesListingPageAction extends Environment {
 
 	public static void PAYMPhoneSelect(String deviceName) throws Throwable {
 
-		driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
+		//driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		Thread.sleep(6000);
 
 		try {
 			//WebElement serchBox = driver.findElement(By.xpath("//input[@ng-model='textSearch.searchText']"));
 			WebElement serchBox = driver.findElement(By.xpath("//input[@id='listing-search']"));
 			serchBox.sendKeys(deviceName);
-			Thread.sleep(2000);
+			Thread.sleep(10000);
 
-			WebElement requestedDevice = driver.findElement(By.xpath("(//img[@class='device-image']/..//*[contains(text(),'"+deviceName+"')])[3]"));
-			if (driver.findElements(By.xpath("(//img[@class='device-image']/..//*[contains(text(),'"+deviceName+"')])[3]")).size() >= 1) {
+			WebElement requestedDevice = driver.findElement(By.xpath("(//img[@class='device-image']/..//*[contains(text(),'"+deviceName+"')])[1]"));
+			if (driver.findElements(By.xpath("(//img[@class='device-image']/..//*[contains(text(),'"+deviceName+"')])[1]")).size() >= 1) {
+				Thread.sleep(3000);
                 ((JavascriptExecutor) driver).executeScript("arguments[0].click();", requestedDevice);
                 log.debug("Selected Device from Phones as Required is : " + deviceName);
                 log.debug("Selected Device from Phones as Required is : " + deviceName);
                 Thread.sleep(3000);
             } else {
-
+				Thread.sleep(3000);
                 WebElement element = driver.findElement(By.xpath("(//img[@class='device-image'])[1]"));
                 ((JavascriptExecutor) driver).executeScript("arguments[0].click();", element);
                 String defaultSelDevice = driver.findElement(By.xpath("((//img[@class='device-image'])[1]/..//span[@class='ng-binding'])[2]")).getText();

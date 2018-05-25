@@ -244,13 +244,13 @@ public class OrderConfirmationPageActions extends Environment {
 							System.out.println("Device type is connected and we are proceeding");
 							log.debug("Device type is connected and we are proceeding");
 
-							//Choose your preferences link
-							if (driver.findElements(By.xpath("//div[@class='choose-preferences-bar']/a")).size() > 0) {
-								System.out.println("GDPR is Enabled and we are proceeding");
-								log.debug("GDPR is Enabled and we are proceeding");
-
 								if (consumer.contains("Me")) {
-									driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+
+									//Choose your preferences link
+									if (driver.findElements(By.xpath("//div[@class='choose-preferences-bar']/a")).size() > 0) {
+										System.out.println("GDPR is Enabled and we are proceeding");
+										log.debug("GDPR is Enabled and we are proceeding");
+										driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 
 									//Choose your preferences link
 									if (driver.findElements(By.xpath("//div[@class='choose-preferences-bar']/a")).size() > 0) {
@@ -335,7 +335,9 @@ public class OrderConfirmationPageActions extends Environment {
 											}
 										}
 
-*/										//O2 Products
+*/
+										Screenshots.captureScreenshot();
+										  //O2 Products
 										if (driver.findElements(By.id("preference-heading-B1")).size() > 0) {
 
 											//O2Products Tile Text validation
@@ -356,7 +358,7 @@ public class OrderConfirmationPageActions extends Environment {
 											log.debug("Clicked on Learn more about O2 products");
 											//driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 											Thread.sleep(2000);
-
+											Screenshots.captureScreenshot();
 											//O2Products Overlay Text Validation
 											String overlayText = OrderConfirmationPage.O2Products_OverlayText.getText();
 											if (overlayText.contains("We'll send you useful reminders like when you're due for an upgrade. You'll hear about any new tariffs that")) {
@@ -399,7 +401,7 @@ public class OrderConfirmationPageActions extends Environment {
 											log.debug("Clicked on Learn more about O2 perks and extras");
 											//driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 											Thread.sleep(3000);
-
+											Screenshots.captureScreenshot();
 											//O2 Perks And Extras Overlay Text validation
 											String overlayText = OrderConfirmationPage.O2PerksAndExtras_OverlayText.getText();
 											if (overlayText.contains("We'll share perks we think you might be interested in. That might be a free gift for you through Priority, or tickets")) {
@@ -440,7 +442,7 @@ public class OrderConfirmationPageActions extends Environment {
 											log.debug("Clicked on Learn more about partner offers");
 											//driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 											Thread.sleep(4000);
-
+											Screenshots.captureScreenshot();
 											//Offers From O2 Partner Overlay Text validation
 											String overlayText = OrderConfirmationPage.OffersFromO2Partner_OverlayText.getText();
 											if (overlayText.contains("We work with lots of well-known brands that often have offers that are too good to miss. When there's an offer we think you'll like, we'll let you know about it. The message will come from O2 and it will be us using your data, not the third party. Then you can go to the brand's website or their place on the high street to get it. We're careful to match the right offer to right people.")) {
@@ -479,7 +481,7 @@ public class OrderConfirmationPageActions extends Environment {
 											log.debug("Clicked on Learn more about direct brand offers");
 											//driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 											Thread.sleep(4000);
-
+											Screenshots.captureScreenshot();
 											//Partners Contacting Overlay Text validation
 											String overlayText = OrderConfirmationPage.PartnersContacting_OverlayText.getText();
 											if (overlayText.contains("Partners")) {
@@ -557,7 +559,7 @@ public class OrderConfirmationPageActions extends Environment {
 										}
 
 										Thread.sleep(6000);
-
+										Screenshots.captureScreenshot();
 										//Channel preference is not displaying before business preference selection
 										if(OrderConfirmationPage.Contact_Text.isDisplayed()){
 
@@ -627,7 +629,7 @@ public class OrderConfirmationPageActions extends Environment {
 										}
 
 										Thread.sleep(3000);
-
+										Screenshots.captureScreenshot();
 										// SaveMyPreferences button status after selecting channels preferences
 
 
@@ -650,9 +652,13 @@ public class OrderConfirmationPageActions extends Environment {
 										System.out.println("Unable to find Choose your preferences link header");
 										log.debug("Unable to find Choose your preferences link header");
 										Assert.fail("Unable to find Choose your preferences link header");
-									}
+									}Screenshots.captureScreenshot();
 								} else {
-
+										System.out.println("GDPR status is Enabled:: but Choose your preferences section is Disbaled");
+										log.debug("GDPR status is Enabled:: but Choose your preferences section is Disbaled");
+										Assert.fail("GDPR status is Enabled:: but Choose your preferences section is Disbaled");
+								}
+							}else{
 									//This order is for someone else
 									if (consumer.contains("Someone")) {
 										System.out.println("This order is for some one else");
@@ -665,13 +671,7 @@ public class OrderConfirmationPageActions extends Environment {
 											Assert.fail("GDPR is Enabled:: for some one else order");
 										}
 									}
-								}
-							}else{
-								System.out.println("GDPR status is Enabled:: but Choose your preferences section is Disbaled");
-								log.debug("GDPR status is Enabled:: but Choose your preferences section is Disbaled");
-								Assert.fail("GDPR status is Enabled:: but Choose your preferences section is Disbaled");
 							}
-
 						}else if(DeviceType.equalsIgnoreCase("Non Connected")){
 							System.out.println("Device type is non connected");
 							log.debug("Device type is non connected");
@@ -685,8 +685,7 @@ public class OrderConfirmationPageActions extends Environment {
 								log.debug("GDPR is Disabled for non connected device");
 							}
 						}
-				}
-				else if(gdprStatus.equalsIgnoreCase("Disabled")){
+				}else if(gdprStatus.equalsIgnoreCase("Disabled")){
 
 						if(DeviceType.equalsIgnoreCase("Connected")){
 							System.out.println("Device type is connected");
@@ -703,7 +702,7 @@ public class OrderConfirmationPageActions extends Environment {
 							Assert.fail("Choose your preferences section is Enabled for Disabled status");
 						}
 				}else{
-						Assert.fail("Failed to do GDPR validations");
+						Assert.fail("Failed to do GDPR validations as no status submitted");
 					}
 				}
 				catch (Exception e) {

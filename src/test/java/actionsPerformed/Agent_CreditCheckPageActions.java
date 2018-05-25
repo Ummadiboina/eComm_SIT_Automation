@@ -212,7 +212,7 @@ public class Agent_CreditCheckPageActions extends Environment {
 					log.debug("Credit Check:: Refer status message is not matching with expected " + refStatus);
 					Assert.fail("Credit Check:: Refer status message is not matching with expected " + refStatus);
 				}
-
+			Screenshots.captureScreenshot();
 			}
 		}catch (Exception e) {
 			// TODO Auto-generated catch block
@@ -346,5 +346,8 @@ public class Agent_CreditCheckPageActions extends Environment {
 		}
 		Screenshots.captureScreenshot();
 	}
+
+
+
 
 }

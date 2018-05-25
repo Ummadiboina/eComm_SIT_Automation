@@ -118,7 +118,7 @@ public class Agent_DealBuilderPageActions extends Environment {
     /////////////////////////////////// validation//////////////////////////////////
 
     public static void BasecommsAgentOffersColumnValidation() throws InterruptedException, IOException {
-
+    Thread.sleep(6000);
         List<WebElement> menuOuter = driver.findElements(By.xpath("//*[@id='planTable']/tbody/tr"));
         log.debug(menuOuter.size());
         int j = 1;

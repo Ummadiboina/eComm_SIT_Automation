@@ -14,6 +14,8 @@ Feature: Reg_Jan_AgentToAcceptTenDigitsPhoneNumber
     Then perform all the advisory checks
     And enter ten digit contact number perform the credit checks using valid <Firstname>, <Surname>, <HouseNumber>, <PostCode> and valid <Username>
     And Register the customer with valid <Firstname>, <Surname>, <HouseNumber>, <PostCode> and other valid details in delivery page
+    And validate register status
+    And Choose Business preferences <B1> <B2> <B3> <B4> and Channel Preferences <Text> <Email> <Phone> <Post> for <Consumer> when GDPR <status> <DeviceType> <DeviceModule> for AFA journey
     And Choose <DeliveryType> delivery address and delivery time
     When Pay by card for PAYM device
     Then Order confirmation message should be displayed
@@ -21,5 +23,5 @@ Feature: Reg_Jan_AgentToAcceptTenDigitsPhoneNumber
     # And Update Device Plan Link Email Address
     # Then CCALink Should be generated
     Examples:
-      | Device                             | Tariffs  | Extras | DeliveryType | Firstname | Surname | Username     | HouseNumber | PostCode |
-      | Galaxy S8 Plus 64GB Midnight Black | Standard | Base   | HomeDelivery | TEST      | ACCEPTA | TEST ACCEPTA | 14          | SL11UP   |
+      | Device                             | Tariffs  | Extras | DeliveryType | Firstname | Surname | Username     | HouseNumber | PostCode | B1     | B2  | B3     | B4  | Text   | Email  | Phone | Post | Consumer | status  | MBBStatus | DeviceType | DeviceModule |
+      | Galaxy S8 Plus 64GB Midnight Black | Standard | Base   | HomeDelivery | TEST      | ACCEPTA | TEST ACCEPTA | 14          | SL11UP   | Select | Not | Select | Not | Select | Select | Not   | Not  | Me       | Enabled | No        | Connected  | Phone        |

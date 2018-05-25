@@ -359,6 +359,9 @@ public class BasketPageActions extends Environment {
 				log.debug("Store Selected for Colletion");
 				log.debug("Store Selected for Colletion");
 				Thread.sleep(5000);
+				log.debug("Click on the Add To Basket");
+				JavascriptExecutor jse = (JavascriptExecutor) driver;
+				jse.executeScript("window.scrollBy(0,600)", "");
 				Screenshots.captureScreenshot();
 			}
 		//}
