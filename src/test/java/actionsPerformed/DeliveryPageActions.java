@@ -25,8 +25,8 @@ public class DeliveryPageActions extends Environment {
     final static Logger log = Logger.getLogger("DeliveryPageActions");
     static JavascriptExecutor js = (JavascriptExecutor) driver;
 
-    public static void SetDelivery() {
-
+    public static void SetDelivery() throws InterruptedException {
+        Thread.sleep(8000);
         try {
 
             if (DeliveryPage.Housenumber.isDisplayed()) {
@@ -40,7 +40,8 @@ public class DeliveryPageActions extends Environment {
                 log.debug("Clicked on the Find address button");
                 Thread.sleep(5000);
             }
-            if (pageobjects.DeliveryPage.SelectAddress1.isDisplayed()) {
+            Thread.sleep(3000);
+            if (driver.findElements(By.xpath("//*[@id='delivery-address-selection']/li[1]")).size() > 0) {
                 pageobjects.DeliveryPage.SelectAddress1.click();
                 log.debug("Selected an address");
             }

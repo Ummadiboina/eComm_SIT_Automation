@@ -9,14 +9,18 @@ Feature: Reg_Current_MBB_URL_no_change_Order_placement.feature
     And select "random" MBBtariff
     #And I Land on the basket page and choose home delivery option
     And click on "go to checkout" button
+    And input <Firstname> and <Surname> and other valid details in Delivery page to verify GDPR
+    And Is this order for You or Someone else <consumer> when GDPR is <status>
+    #And input <Firstname> and <Surname> and other valid details in Delivery page and Click on the 'Continue button'
     And Select existing account and begin fast checkout
     And select continue button in delivery page for existing customer
     And land on the payment page and input <user> and other details for upgrade and click 'Continue on next step'
     And Continue to Agreements page and confirm all the agreement checks
     And Continue to Review page and review the order
     Then order confirmation is displayed
+    Then Choose <consumer> <status> Business preferences <B1> <B2> <B3> <B4> And Channel Preferences <Text> <Email> <Phone> <Post> <MBBStatus> <DeviceType>
 
     #Modify the above step to include pdf download
     Examples:
-      | username           | password | user         |
-      | 12342015@gmail.com | test123  | TEST ACCEPTA |
+      | username           | password | user         | consumer | B1  | B2  | B3  | B4  | Text | Email  | Phone | Post | status  | MBBStatus | DeviceType |
+      | 12342015@gmail.com | test123  | TEST ACCEPTA | Me       | Not | Not | Not | Not | Not  | Select | Not   | Not  | Enabled | No        | Connected  |

@@ -6,7 +6,7 @@ Feature: Reg_CFA_PayG_SIM_ipad
     And navigate to PayG SIMO page
     And Select a pay as you go bundle
     #And Land on the 'Tariffs and extra' page
-    And I enter details in Delivery Page<Firstname> and <Surname>
+    And I enter details in Delivery Page <Firstname> and <Surname>
     Then Free Sim order confirmation is displayed
 
     Examples: 

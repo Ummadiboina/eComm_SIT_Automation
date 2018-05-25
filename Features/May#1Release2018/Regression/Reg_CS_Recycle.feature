@@ -22,12 +22,15 @@ Feature: Reg_CS_Recycle.feature
     And I Land on the basket page for upgrades
     And click on "go to checkout" button
     And perform <Action> in OTAC page
-    And Click on the 'Continue button' in delivery page
+    #And Click on the 'Continue button' in delivery page
+    #And input <Firstname> and <Surname> and other valid details in Delivery page to verify GDPR
+    And Is this order for You or Someone else <consumer> when GDPR is <status>
     And land on the payment page and input <Username> and other details and click 'Continue on next step' in upgrade journey
     And Continue to Agreements page and confirm all the agreement checks
     And Continue to Review page and review the order
     Then order confirmation is displayed
+    Then Choose <consumer> <status> Business preferences <B1> <B2> <B3> <B4> And Channel Preferences <Text> <Email> <Phone> <Post> <MBBStatus> <DeviceType>
 
     Examples:
-      | username    | password | handset        | tariff                  | Firstname | Surname | Username     | Action | Make  | Model   | Network |
-      | inq_jan3955 | test123  | Apple iPhone 7 | 29.99upfront46.00amonth | TEST      | ACCEPTA | TEST ACCEPTA | skip   | Apple | Iphone7 | Orange  |
+      | username    | password | handset        | tariff                  | Firstname | Surname | Username     | Action | Make  | Model   | Network | consumer | B1  | B2     | B3  | B4  | Text   | Email | Phone | Post | status  | MBBStatus | DeviceType |
+      | inq_jan3955 | test123  | Apple iPhone 7 | 29.99upfront46.00amonth | TEST      | ACCEPTA | TEST ACCEPTA | skip   | Apple | Iphone7 | Orange  | Me       | Not | Select | Not | Not | Select | Not   | Not   | Not  | Enabled | No        | Connected  |

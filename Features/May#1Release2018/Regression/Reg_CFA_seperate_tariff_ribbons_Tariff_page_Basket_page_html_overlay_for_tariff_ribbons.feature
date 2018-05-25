@@ -21,12 +21,15 @@ Feature: Reg_CFA_seperate_tariff_ribbons_Tariff_page_Basket_page_html_overlay_fo
     And Verify 'Overlay icon' is displayed on the promotional ribbons in the Basket page
     And Click on the 'Overlay icon' in the Basket page and verify pop gets displayed
     And click on "go to checkout" button
-    And input <Firstname> and <Surname> and other valid details in Delivery page and Click on the 'Continue button'
+    #And input <Firstname> and <Surname> and other valid details in Delivery page and Click on the 'Continue button'
+    And input <Firstname> and <Surname> and other valid details in Delivery page to verify GDPR
+    And Is this order for You or Someone else <consumer> when GDPR is <status>
     And land on the payment page and input <Username> and other details and click 'Continue on next step'
     And Continue to Agreements page and confirm all the agreement checks
     And Continue to Review page and review the order
     Then order confirmation is displayed
+    Then Choose <consumer> <status> Business preferences <B1> <B2> <B3> <B4> And Channel Preferences <Text> <Email> <Phone> <Post> <MBBStatus> <DeviceType>
 
     Examples:
-      | handset | tariff                 | Firstname | Surname | Username     |
-      | Sony    | 9.99upfront35.00amonth | TEST      | ACCEPTA | TEST ACCEPTA |
+      | handset                | tariff                 | Firstname | Surname | Username     | consumer | B1  | B2     | B3  | B4  | Text   | Email | Phone | Post | status  | MBBStatus | DeviceType |
+      | Samsung Galaxy J3 2017 | 9.99upfront35.00amonth | TEST      | ACCEPTA | TEST ACCEPTA | Me       | Yes | Select | Not | Not | Select | Not   | Not   | Not  | Enabled | No        | Connected  |

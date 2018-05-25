@@ -21,4 +21,4 @@ Feature: 49_AFU_Tablets_Standard_GDPR_Disabled_HomeDelivery_Donot_show_EndUser_Q
 
     Examples:
       | user        | Device | Tariffs | consumer | B1  | B2  | B3  | B4  | Text | Email | Phone | Post | status   | MBBStatus | DeviceType |
-      | 07568412110 | Tablet | Random  | Someone  | Not | Not | Not | Not | Not  | Not   | Not   | Not  | Disabled | No        | Connected  |
+      | 07568412110 | Tablet | Random  | Someone  | Not | Not | Not | Not | Not  | Not   | Not   | Not  | Enabled | No        | Connected  |

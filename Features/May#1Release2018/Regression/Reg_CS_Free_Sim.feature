@@ -11,8 +11,8 @@ Feature: Reg_CS_Free_Sim
     Then verify order number is displayed
 
     Examples:
-      | Surfer_Type  | sim_type | Flatnumber | Housename | Address1 | Town  | Postcode | Firstname | Lastname | Contact_number |
-      | Light surfer | iPad     |         26 |       100 | slough   | Berks | Sl11er   | Test      | Accepta  |    07123456789 |
+      | Surfer_Type  | sim_type | Flatnumber | Housename | Address1 | Town  | Postcode | Firstname | Lastname | Contact_number |consumer | B1  | B2  | B3  | B4  | Text | Email  | Phone | Post | status  | MBBStatus | DeviceType |
+      | Light surfer | iPad     |         26 |       100 | slough   | Berks | Sl11er   | Test      | Accepta  |    07123456789 |Me       | Not | Not | Not | Not | Not  | Select | Not   | Not  | Enabled | No        | Connected  |
 
  # Scenario Outline: Steady surfer iPad Sim entering delivery details manually
  #   Given I am an CFA user and Lands on shop page
