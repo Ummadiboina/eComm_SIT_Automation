@@ -47,5 +47,5 @@ Feature: Reg_CFA_Cover_me_copy_update_on_basket_summary
 
     #And pdf content
     Examples:
-      | tabletname    | color | capacity | Status   | handset | Firstname | Surname | Username     | consumer | B1  | B2     | B3  | B4  | Text | Email  | Phone | Post | status  | MBBStatus | DeviceType |
-      | Random Device | Black | 32GB     | In Stock | Samsung | TEST      | ACCEPTA | TEST ACCEPTA | Me       | Not | Select | Yes | Not | Not  | Select | Not   | Not  | Enabled | No        | Connected  |
+      | tabletname    | color | capacity | Status   | handset | Firstname | Surname | Username     | consumer | B1  | B2     | B3     | B4  | Text | Email  | Phone | Post | status  | MBBStatus | DeviceType |
+      | Random Device | Black | 32GB     | In Stock | Samsung | TEST      | ACCEPTA | TEST ACCEPTA | Me       | Not | Select | Select | Not | Not  | Select | Not   | Not  | Enabled | No        | Connected  |

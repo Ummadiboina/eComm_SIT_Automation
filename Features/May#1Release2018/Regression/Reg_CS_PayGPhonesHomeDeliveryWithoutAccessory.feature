@@ -9,9 +9,9 @@ Feature: Reg_CS_PayGPhonesHomeDeliveryWithoutAccessory
     And Land on the 'Tariffs and extra' page
     And I Land on the basket page and choose home delivery option
     And click on "go to checkout" button
+    #And input <Firstname> and <Surname> and other valid details in Delivery page and Click on the 'Continue button'
     And input <Firstname> and <Surname> and other valid details in Delivery page to verify GDPR
     And Is this order for You or Someone else <consumer> when GDPR is <status>
-    #And input <Firstname> and <Surname> and other valid details in Delivery page and Click on the 'Continue button'
     And land on the Non Credit check payment page and input <Username> and other details and click 'Continue on next step' for GDPR
     And Continue to Review page and review the order
     Then order confirmation is displayed
