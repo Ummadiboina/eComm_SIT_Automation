@@ -27,11 +27,15 @@ public class AccessoryPage {
 	@FindBy(how = How.XPATH, using = "//a[contains(@href, '/shop/accessories/jbl/flip-4#contractType=nonconnected')]")
 	public static WebElement Clip4;
 
+	//@FindBy(how = How.XPATH, using = "//a[contains(@data-qa-device-model-family, 'Clip 2')]")
+	@FindBy(how = How.XPATH, using = "//a[contains(@href, '/shop/accessories/jbl/flip-4#contractType=nonconnected')]")
+	public static WebElement randam1;
+
 	//@FindBy(how = How.XPATH, using = "//a[contains(@data-qa-device-model-family, 'Xtreme')]")
 	@FindBy(how = How.XPATH, using = "//a[contains(@href, '/shop/accessories/jbl/xtreme#contractType=nonconnected')]")
 	public static WebElement JBLXtreme;
 
-	@FindBy(how = How.XPATH, using = "(//div[@component-name='productTile'])[1]//a")
+	@FindBy(how = How.XPATH, using = "(//div[@component-name='productTile'])[2]//a")
 	public static WebElement RandomAccessory;
 
 	@FindBy(how = How.XPATH, using = "(//h3[normalize-space()='All accessories']//following-sibling::p)[2]")

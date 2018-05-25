@@ -22,5 +22,5 @@ Feature: Reg_CFA_iPad_Show_basecomms_tariffs_on_T&E_page_for_my_offers_journey
     And verify that the Basecomms tariff is not displayed in the Tariff and Extras page
 
     Examples:
-      | device_name    | default_colour | default_capacity | default_stock_message | color  | capacity |
-      | Apple iPad 9.7 | Gold           | 32GB             | In Stock              | Silver | 128GB    |
+      | device_name        | default_colour | default_capacity | default_stock_message | color  | capacity |
+      | iPad Pro 10.5 inch | Gold           | 32GB             | In Stock              | Silver | 128GB    |

@@ -99,23 +99,26 @@ public class AccessoryPageActions extends Environment {
 			Screenshots.captureScreenshot();
 		}
 	}
-
-	// This Method is used to select Accessory from the accessory listing page
+// This Method is used to select Accessory from the accessory listing page
 
 	public static void SelectAnyAccessory(String elementName) throws IOException, InterruptedException {
-		Thread.sleep(5000);
-		pageobjects.AccessoryPage.SeeAllAccessories.click();
-		Thread.sleep(7000);
 
-		if(driver.findElements(By.xpath("(//a[contains(., 'View all products on one page')])[1]")).size()>0) {
+		Thread.sleep(3000);
+		if(driver.findElements(By.xpath("//p[contains(text(),'Explore our range of cases, screen protectors, headphones and more.')]/following-sibling::p")).size() > 0){
+			WebElement ele = driver.findElement(By.xpath("//p[contains(text(),'Explore our range of cases, screen protectors, headphones and more.')]/following-sibling::p/../.."));
 			JavascriptExecutor executor = (JavascriptExecutor) driver;
-
-			Thread.sleep(1000);
-			executor.executeScript("arguments[0].scrollIntoView(true);", pageobjects.AccessoryPage.ViewAllProductsOnOnePage);
-			Thread.sleep(2000);
-			executor.executeScript("arguments[0].click();", pageobjects.AccessoryPage.ViewAllProductsOnOnePage);
+			Thread.sleep(1000	);
+			executor.executeScript("arguments[0].scrollIntoView(true);",ele);
+			executor.executeScript("arguments[0].click();", ele);
 		}
+
 		Thread.sleep(6000);
+		JavascriptExecutor executor = (JavascriptExecutor) driver;
+		Thread.sleep(1000	);
+		executor.executeScript("arguments[0].scrollIntoView(true);",pageobjects.AccessoryPage.ViewAllProductsOnOnePage);
+		Thread.sleep(2000	);
+		executor.executeScript("arguments[0].click();", pageobjects.AccessoryPage.ViewAllProductsOnOnePage);
+
 		if (elementName.contains("Random")) {
 			log.debug("Selecting Any Accessory");
 			log.debug("Selecting Any Accessory");
@@ -124,7 +127,6 @@ public class AccessoryPageActions extends Environment {
 			log.debug("Random Accessory Selected");
 		}
 		if (elementName.contains("HarmanKardonOnxyxStudio3"))
-
 		{
 			log.debug("Selecting HarmanKardonOnxyxStudio2 Accessory");
 			log.debug("Selecting HarmanKardonOnxyxStudio2 Accessory");
@@ -143,19 +145,15 @@ public class AccessoryPageActions extends Environment {
 			log.debug("PencilforiPadPro Accessory Selected");
 		}
 
-		if (elementName.contains("JBL Flip 4 Black"))
-
-		{
+		if (elementName.contains("Apple")){
 			log.debug("Selecting JBL Clip4 Accessory");
 			log.debug("Selecting JBL Clip4 Accessory");
-			log.debug("Selected an accessory -  " + pageobjects.AccessoryPage.Clip4.getText());
-			pageobjects.AccessoryPage.Clip4.click();
+			//log.debug("Selected an accessory -  " + AccessoryPage.randam1.getText());
+			AccessoryPage.randam1.click();
 			log.debug("JBL Clip4 Accessory Selected");
 		}
 
-		if (elementName.contains("JBL Xtreme Black"))
-
-		{
+		if (elementName.contains("JBL Xtreme Black")){
 			log.debug("Selecting JBLXtreme Accessory");
 			log.debug("Selecting JBLXtreme Accessory");
 			pageobjects.AccessoryPage.JBLXtreme.click();

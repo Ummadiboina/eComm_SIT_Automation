@@ -23,14 +23,16 @@ Feature: Reg_CFA_PayM_Phone_Data_filters_options_tariff_and_extras_page_Order_pl
     ##New functionality ends
     And I Land on the basket page and choose home delivery option
     And click on "go to checkout" button
-
-    And input <Firstname> and <Surname> and other valid details in Delivery page and Click on the 'Continue button'
+    And input <Firstname> and <Surname> and other valid details in Delivery page to verify GDPR
+    And Is this order for You or Someone else <consumer> when GDPR is <status>
+    #And input <Firstname> and <Surname> and other valid details in Delivery page and Click on the 'Continue button'
     And land on the payment page and input <Username> and other details and click 'Continue on next step'
     And Continue to Agreements page and confirm all the agreement checks
     And Continue to Review page and review the order
     Then order confirmation is displayed
+    Then Choose <consumer> <status> Business preferences <B1> <B2> <B3> <B4> And Channel Preferences <Text> <Email> <Phone> <Post> <MBBStatus> <DeviceType>
 
     Examples:
-      | handset           | Firstname | Surname | Username     | filtername | sortoption                 |
-      | Samsung Galaxy S8 | TEST      | ACCEPTA | TEST ACCEPTA | low        | Monthly data (High to low) |
+      | handset           | Firstname | Surname | Username     | filtername | sortoption                 | consumer | B1     | B2  | B3  | B4  | Text | Email  | Phone | Post | status  | MBBStatus | DeviceType |
+      | Samsung Galaxy S8 | TEST      | ACCEPTA | TEST ACCEPTA | low        | Monthly data (High to low) | Me       | Select | Not | Not | Not | Not  | Select | Not   | Not  | Enabled | No        | Connected  |
 

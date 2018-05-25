@@ -138,7 +138,7 @@ public class PaymentPageActions extends Environment {
 
     public static void Time_At_Address_CC() throws InterruptedException, IOException {
 
-
+        Thread.sleep(5000);
         pageobjects.PaymentPage.housenumber.sendKeys("41");
         log.debug("Entered the House Number - 41");
 
@@ -341,9 +341,9 @@ public class PaymentPageActions extends Environment {
 
         Thread.sleep(3000);
 
-        if (driver.findElement(By.xpath("//tr[@id='basket-insurance']")).isDisplayed()) {
+        if (driver.findElement(By.xpath("//li[@class='minicopy']")).isDisplayed()) {
             log.debug("Insurance is displayed in Payment page and text is  - "
-                    + driver.findElement(By.xpath("//tr[@id='basket-insurance']")).getText());
+                    + driver.findElement(By.xpath("//li[@class='minicopy']")).getText());
 
         } else {
             log.debug("Insurance is not displayed");
