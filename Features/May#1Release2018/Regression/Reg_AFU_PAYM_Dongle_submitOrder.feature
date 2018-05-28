@@ -11,6 +11,7 @@ Feature: Reg_AFU_PAYM_Dongle_SubmitOrder
     And select a valid Handset and Tariff combination
     And Validate all the Basket content and checkout
     And Choose Business preferences <B1> <B2> <B3> <B4> and Channel Preferences <Text> <Email> <Phone> <Post> for <consumer> when GDPR <status> <DeviceType> for AFU journey
+    Then perform all the advisory checks
     When submit order button is clicked
     Then Order confirmation message should be displayed
 

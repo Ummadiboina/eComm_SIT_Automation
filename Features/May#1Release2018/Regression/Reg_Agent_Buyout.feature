@@ -15,7 +15,8 @@ Feature: Reg_Agent_Buyout
     Then perform all the advisory checks_new
     And Click on 'Generate CCA' button
     And click on the 'CCA' link
-    And Signin using valid <username> and <password> credentials
+    #And Signin using valid <username> and <password> credentials
+    And Signin using valid <username> and <password> credentials for New User
     #And Click on 'Continue' button on upgrade page
     #And Click on the 'Continue button' in delivery page
     #And land on the payment page and input <Username> and other details and click 'Continue on next step' in upgrade journey

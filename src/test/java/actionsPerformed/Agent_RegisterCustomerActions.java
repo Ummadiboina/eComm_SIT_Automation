@@ -1449,7 +1449,7 @@ public class Agent_RegisterCustomerActions extends Environment {
 
 								Thread.sleep(5000);
 								Screenshots.captureScreenshot();
-
+								Thread.sleep(3000);
 								// SaveMyPreferences button status after selecting business preferences and channel preferences
 								if(Chn1.equalsIgnoreCase("Select") || Chn2.equalsIgnoreCase("Select") || Chn3.equalsIgnoreCase("Select") || Chn4.equalsIgnoreCase("Select")) {
 									if (Agent_RegisterCustomerPage.SaveMyPreferences.isEnabled()) {

@@ -20,5 +20,5 @@ Feature: Reg_FNT_MorethanMaxTransaction_Deny
 
 
     Examples:
-      | handset  | Firstname | Surname | Username  | consumer | B1  | B2  | B3  | B4  | Text | Email | Phone | Post | status  | MBBStatus | DeviceType |
-      | Galaxy S | TEST      | NINE    | TEST NINE | Me       | Not | Not | Not | Not | Not  | Not   | Not   | Not  | Enabled | No        | Connected  |
+      | handset  | Firstname | Surname | Username  | consumer | B1     | B2  | B3  | B4  | Text   | Email | Phone | Post | status  | MBBStatus | DeviceType |
+      | Galaxy S | TEST      | NINE    | TEST NINE | Me       | Select | Not | Not | Not | Select | Not   | Not   | Not  | Enabled | No        | Connected  |

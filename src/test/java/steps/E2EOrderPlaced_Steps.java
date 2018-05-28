@@ -982,8 +982,8 @@ public class E2EOrderPlaced_Steps {
             Thread.sleep(2000);
             DeliveryPageActions.AboutYouTen(Firstname, Surname);
             Thread.sleep(2000);
-            DeliveryPageActions.ClickContinue();
-            Thread.sleep(5000);
+            //DeliveryPageActions.ClickContinue();
+            //Thread.sleep(5000);
         } catch (Exception e) {
             // TODO Auto-generated catch block
             log.debug("Unable to input details in delivery page");
@@ -5459,7 +5459,7 @@ public class E2EOrderPlaced_Steps {
 
     }
 
-    @Then("^perform ([^\\\"]*) in OTAC page$")
+    @Then("^perform ([^\"]*) in OTAC page$")
     public void perform_skip_in_OTAC_page(String Action) {
         try {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
@@ -5471,7 +5471,7 @@ public class E2EOrderPlaced_Steps {
         }
     }
 
-    @And("^Enter code ([^\\\"]*) in OTAC page to verify account in TadeIn journey$")
+    @And("^Enter code ([^\"]*) in OTAC page to verify account in TadeIn journey$")
     public void EnterVericationCode_in_OTAC_page(String Action) {
         try {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
@@ -6406,7 +6406,7 @@ public class E2EOrderPlaced_Steps {
         }
     }*/
 
-    @Given("^Search for ([^\\\\\\\"]*) device$")
+    @Given("^Search for ([^\"]*) device$")
     public void search_for_Delayed_device(String Status) {
         try {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
@@ -6588,7 +6588,7 @@ public class E2EOrderPlaced_Steps {
         }
     }
 
-    @When("^I click on respective ([^\\\"]*) data filter$")
+    @When("^I click on respective ([^\"]*) data filter$")
     public void clickOnRespectiveDataFilter(String range) {
         try {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
@@ -6606,7 +6606,7 @@ public class E2EOrderPlaced_Steps {
         }
     }
 
-    @When("^I click on respective ([^\\\"]*) data filter in Upgrade SIMO MBB/Tablet journey$")
+    @When("^I click on respective ([^\"]*) data filter in Upgrade SIMO MBB/Tablet journey$")
     public void clickOnRespectiveDataFilter_UpgreadeSIMO_MBBTablet(String range) {
         try {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
@@ -6625,7 +6625,7 @@ public class E2EOrderPlaced_Steps {
         }
     }
 
-    @When("^I click on respective ([^\\\"]*) data filter in Upgrade SIMO Phone journey$")
+    @When("^I click on respective ([^\"]*) data filter in Upgrade SIMO Phone journey$")
     public void clickOnRespectiveDataFilter_UpgreadeSIMO_Phone(String range) {
         try {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
@@ -7302,7 +7302,7 @@ public class E2EOrderPlaced_Steps {
 
     }
 
-    @And("^land on the payment page and input ([^\\\"]*) and other details and click 'Continue on next step' in upgrade journey$")
+    @And("^land on the payment page and input ([^\"]*) and other details and click 'Continue on next step' in upgrade journey$")
     public void CreditCheckPaymentPage_HomeDelivery_Upgrade(String Username) {
         // Write code here that turns the phrase above into concrete actions
         try {
