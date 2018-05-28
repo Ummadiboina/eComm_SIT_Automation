@@ -41,7 +41,7 @@ import java.util.List;
 @CucumberOptions(plugin = {"html:testResult/cucumber-html-report",
         "json:testResult/cucumber.json", "pretty:testResult/cucumber-pretty.txt",
         "usage:testResult/cucumber-usage.json", "junit:testResult/cucumber-results.xml"},
-        features = {"Features//AFA_Batch"},
+        features = {"Features//May#1Release2018//Regression"},
         glue = {"steps"},
         tags = {})
 

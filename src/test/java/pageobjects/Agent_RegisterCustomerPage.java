@@ -229,7 +229,7 @@ public class Agent_RegisterCustomerPage {
     @FindBy(how = How.XPATH, using = "(//div[@class='checkBoxContent'])[1]")
     public static WebElement O2Products_Text;
 
-    @FindBy(how = How.XPATH, using = "//a[normalize-space()='Learn more about O2 products']")
+    @FindBy(how = How.XPATH, using = "(//a[normalize-space()='Learn More'])[1]")
     public static WebElement O2Products_Link;
 
     @FindBy(how = How.XPATH, using = "(//div[@id='learnMoreDialog']/div/span)[1]")
@@ -242,7 +242,7 @@ public class Agent_RegisterCustomerPage {
     @FindBy(how = How.XPATH, using = "(//div[@class='checkBoxContent'])[2]")
     public static WebElement O2PerksAndExtras_Text;
 
-    @FindBy(how = How.XPATH, using = "//a[normalize-space()='Learn more about O2 perks and extras']")
+    @FindBy(how = How.XPATH, using = "(//a[normalize-space()='Learn More'])[2]")
     public static WebElement O2PerksAndExtras_Link;
 
     @FindBy(how = How.XPATH, using = "(//div[@id='learnMoreDialog']/div/span)[2]")
@@ -254,7 +254,7 @@ public class Agent_RegisterCustomerPage {
     @FindBy(how = How.XPATH, using = "(//div[@class='checkBoxContent'])[3]")
     public static WebElement OffersFromO2Partner_Text;
 
-    @FindBy(how = How.XPATH, using = "//a[normalize-space()='Learn more about our partner offers']")
+    @FindBy(how = How.XPATH, using = "(//a[normalize-space()='Learn More'])[3]")
     public static WebElement OffersFromO2Partner_Link;
 
     @FindBy(how = How.XPATH, using = "(//div[@id='learnMoreDialog']/div/span)[3]")

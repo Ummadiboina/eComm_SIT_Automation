@@ -20,5 +20,5 @@ Feature: Reg_VOLTE_PayMPhonesHomeDeliveryWithAccessory
     Then Choose <consumer> <status> Business preferences <B1> <B2> <B3> <B4> And Channel Preferences <Text> <Email> <Phone> <Post> <MBBStatus> <DeviceType>
 
     Examples:
-      | handset | Firstname | Surname | Username     | consumer | B1  | B2  | B3  | B4  | Text | Email | Phone | Post | status  | MBBStatus | DeviceType |
-      | Sony    | TEST      | ACCEPTA | TEST ACCEPTA | Someone  | Not | Not | Not | Not | Not  | Not   | Not   | Not  | Enabled | No        | Connected  |
+      | handset | Firstname | Surname | Username     | consumer | B1  | B2  | B3     | B4  | Text | Email | Phone | Post   | status  | MBBStatus | DeviceType |
+      | Sony    | TEST      | ACCEPTA | TEST ACCEPTA | Someone  | Not | Not | Select | Not | Not  | Not   | Not   | Select | Enabled | No        | Connected  |
