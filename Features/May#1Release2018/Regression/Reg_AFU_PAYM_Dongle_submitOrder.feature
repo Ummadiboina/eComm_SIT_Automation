@@ -10,9 +10,10 @@ Feature: Reg_AFU_PAYM_Dongle_SubmitOrder
     And Select valid <Tariffs> from tariffs tab
     And select a valid Handset and Tariff combination
     And Validate all the Basket content and checkout
+    And Choose Business preferences <B1> <B2> <B3> <B4> and Channel Preferences <Text> <Email> <Phone> <Post> for <consumer> when GDPR <status> <DeviceType> for AFU journey
     When submit order button is clicked
     Then Order confirmation message should be displayed
 
     Examples:
-      | user        | Device | Tariffs |
-      | 07521009589 | dongle | Random  |
+      | user        | Device | Tariffs | consumer | B1     | B2  | B3  | B4  | Text | Email  | Phone | Post   | status  | MBBStatus | DeviceType |
+      | 07521116469 | dongle | Random  | Me       | Select | Not | Not | Not | Not  | Select | Not   | Select | Enabled | No        | Connected  |

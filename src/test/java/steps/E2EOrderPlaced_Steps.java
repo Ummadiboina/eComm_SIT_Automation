@@ -2469,7 +2469,7 @@ public class E2EOrderPlaced_Steps {
     @Then("^perform all the advisory checks$")
     public void advisory_checks() {
         try {
-            driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+            driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
             PageFactory.initElements(driver, Agent_AdvisoryPage.class);
             Agent_AdvisoryChecksActions.AgreeAdvsioryCheck();
             Thread.sleep(6000);
@@ -2649,7 +2649,7 @@ public class E2EOrderPlaced_Steps {
 	 */
     @When("^Pay by card$")
     public void pay_by_card() {
-        driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         try {
             PageFactory.initElements(driver, Agent_RegisterCustomerPage.class);
             Agent_RegisterCustomerActions.PaybyCard();

@@ -1144,7 +1144,7 @@ public class Agent_RegisterCustomerActions extends Environment {
 									//O2 Products Tile Text validation
 									String contentText = Agent_RegisterCustomerPage.O2Products_Text.getText();
 
-									if (contentText.contains("I'm happy for O2 to let me know about offers relating to my service (upgrades, new tariffs, roaming, O2 Wifi etc.)")) {
+									if (contentText.contains("I’m happy to hear about things like new tariffs, upgrades and offers.")) {
 										System.out.println("O2 Tile Content text has as expected:: " + contentText);
 										log.debug("O2 Tile Content text has as expected:: " + contentText);
 									} else {
@@ -1162,7 +1162,7 @@ public class Agent_RegisterCustomerActions extends Environment {
 
 									//O2 Products Overlay Text validation
 									String overlayText = Agent_RegisterCustomerPage.O2Products_OverlayText.getText();
-									if (overlayText.contains("We'll send you useful reminders like when you're due for an upgrade. You'll hear about any new tariffs that could suit you better and you'll know about services like O2 Wifi that can save you using your data. You could also get timely reminders of roaming offers if you're heading on holiday, to help you stay in control of your bills.")) {
+									if (overlayText.contains("We’ll let you know about new tariffs and upgrades that could suit you better. You’ll also hear about offers and services that you can benefit from, like O2 Wifi that helps you save your data or services that could help you stay on top of your spending.")) {
 										System.out.println("O2 products overlay text has as expected::" + overlayText);
 										log.debug("O2 products overlay text has as expected::" + overlayText);
 									} else {
@@ -1171,6 +1171,7 @@ public class Agent_RegisterCustomerActions extends Environment {
 										Assert.fail("O2 products overlay text is not matching:: " + overlayText);
 									}
 									Thread.sleep(3000);
+									Screenshots.captureScreenshot();
 									//O2 Products Close Button clicking
 									Agent_RegisterCustomerPage.O2ProductsClose_CloseButton.click();
 									System.out.println("Clicked on O2 products overlay close button");
@@ -1184,7 +1185,7 @@ public class Agent_RegisterCustomerActions extends Environment {
 									//O2 Perks And Extra Tile Text validation
 									String contentText = Agent_RegisterCustomerPage.O2PerksAndExtras_Text.getText();
 
-									if (contentText.contains("I'm happy for O2 to let me know about offers, perks and services that are relevant to me, like Priority.")) {
+									if (contentText.contains("I’m happy to hear about perks, prizes and surprises from Priority and beyond.")) {
 										System.out.println("O2 perks and extras Tile Content text has as expected:: " + contentText);
 										log.debug("O2 perks and extras Tile Content text has as expected:: " + contentText);
 									} else {
@@ -1200,10 +1201,10 @@ public class Agent_RegisterCustomerActions extends Environment {
 									//driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
 									Thread.sleep(3000);
-
+									Screenshots.captureScreenshot();
 									//O2 Perks And Extras Overlay Text validation
 									String overlayText = Agent_RegisterCustomerPage.O2PerksAndExtras_OverlayText.getText();
-									if (overlayText.contains("We'll share perks we think you might be interested in. That might be a free gift for you through Priority, or tickets to your favourite band 48 hours before general release through Priority Tickets. We'll only send you extras that match the things you like.")) {
+									if (overlayText.contains("We’ll share perks, prizes and surprises we think you’ll like. This includes offers to join Priority, and if you choose to register, you’ll receive Priority offers and experiences directly. Priority messages have their own separate preferences, you can manage those preferences or turn messages on and off in the Priority app or online.")) {
 										System.out.println("O2 Perks And Extras overlay text has as expected::" + overlayText);
 										log.debug("O2 Perks And Extras overlay text has as expected::" + overlayText);
 									} else {
@@ -1225,7 +1226,7 @@ public class Agent_RegisterCustomerActions extends Environment {
 									//Offers From O2 Partner Text validation
 									String contentText = Agent_RegisterCustomerPage.OffersFromO2Partner_Text.getText();
 
-									if (contentText.contains("I'm happy for O2 to let me know about selected offers from leading brands, knowing my details won't be shared.")) {
+									if (contentText.contains("I’m happy for O2 to text me about selected offers from leading brands across retail, dining, automotive and consumer goods, knowing my details won’t be shared.")) {
 										System.out.println("Offers from o2 partners brands Tile Content text has as expected:: " + contentText);
 										log.debug("Offers from o2 partners brands Tile Content text has as expected:: " + contentText);
 									} else {
@@ -1241,10 +1242,10 @@ public class Agent_RegisterCustomerActions extends Environment {
 									//driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
 									Thread.sleep(3000);
-
+									Screenshots.captureScreenshot();
 									//Offers From O2 Partner Overlay Text validation
 									String overlayText = Agent_RegisterCustomerPage.OffersFromO2Partner_OverlayText.getText();
-									if (overlayText.contains("We work with lots of well-known brands that often have offers that are too good to miss. When there's an offer we think you'll like, we'll let you know about it. The message will come from O2 and it will be us using your data, not the third party. Then you can go to the brand's website or their place on the high street to get it. We're careful to match the right offer to right people.")) {
+									if (overlayText.contains("We work with lots of well-known brands across retail, dining, automotive, consumer goods and loads more that often have offers you might be interested in. When there’s an offer we think you’ll like, we’ll let you know about it. The message will come from O2, not the third party. Then you can go to the brand’s website or their place on the high street to get it. We’re careful to match the right offer to the right people.")) {
 										System.out.println("Offers From O2 Partner overlay text has as expected::" + overlayText);
 										log.debug("Offers From O2 Partner overlay text has as expected::" + overlayText);
 									} else {
@@ -1260,7 +1261,7 @@ public class Agent_RegisterCustomerActions extends Environment {
 
 								}
 
-								//Partners Contacting
+								/*//Partners Contacting
 								if (driver.findElements(By.xpath("//div[@data-label='Hotspot - partners contacting me directly']")).size() > 0) {
 
 									//Partners Contacting Text validation
@@ -1299,7 +1300,10 @@ public class Agent_RegisterCustomerActions extends Environment {
 									System.out.println("Clicked on partners contacting me directly overlay close button");
 									log.debug("Clicked onpartners contacting me directly overlay close button");
 
-								}
+								}*/
+
+								Screenshots.captureScreenshot();
+								Thread.sleep(4000);
 
 								//Selecting Business preferences
 								if (BP1.equalsIgnoreCase("Select")) {
@@ -1356,9 +1360,9 @@ public class Agent_RegisterCustomerActions extends Environment {
 								}
 
 								Thread.sleep(4000);
-
+								Screenshots.captureScreenshot();
 								// SaveMyPreferences button status after selecting business preferences
-								if(BP1.equalsIgnoreCase("Select") || BP2.equalsIgnoreCase("Select") ||BP3.equalsIgnoreCase("Select") ||BP4.equalsIgnoreCase("Select")) {
+								if(BP1.equalsIgnoreCase("Select") || BP2.equalsIgnoreCase("Select") || BP3.equalsIgnoreCase("Select") || BP4.equalsIgnoreCase("Select")) {
 									if (Agent_RegisterCustomerPage.SaveMyPreferences.isEnabled()) {
 										System.out.println("Save My Preference Button is displayed after selecting business preferences");
 										log.debug("Save My Preference Button is displayed after selecting business preferences");
@@ -1371,21 +1375,35 @@ public class Agent_RegisterCustomerActions extends Environment {
 									if (Agent_RegisterCustomerPage.SaveMyPreferences.isEnabled()) {
 										System.out.println("As expected Save My Preference Button is enabled for no Business Preferences selection");
 										log.debug("As expected Save My Preference Button is enabled for no Business Preferences selection");
+									}else{
+										System.out.println("Save My Preference Button is disabled for no Business Preferences selection");
+										log.debug("As expected Save My Preference Button is disabled for no Business Preferences selection");
+										Assert.fail("As expected Save My Preference Button is disabled for no Business Preferences selection");
 									}
 								}
-
 
 								//checking Channel preference is displaying/not after business preferences selection
-								if (Agent_RegisterCustomerPage.ChannelePreferences.isDisplayed()) {
-									System.out.println("Channel preferences is displaying after selecting business preferences");
-									log.debug("Channel preferences is displaying after selecting business preferences");
+								if(BP1.equalsIgnoreCase("Select") || BP2.equalsIgnoreCase("Select") || BP3.equalsIgnoreCase("Select") || BP4.equalsIgnoreCase("Select")) {
+									if (Agent_RegisterCustomerPage.ChannelePreferences.isDisplayed()) {
+										System.out.println("Channel preferences is displaying after selecting business preferences");
+										log.debug("Channel preferences is displaying after selecting business preferences");
+									}else{
+										System.out.println("Channel preferences are not displaying after selecting business preferences");
+										log.debug("Channel preferences are not displaying after selecting business preferences");
+										Assert.fail("Channel preferences are not displaying after selecting business preferences");
+									}
 								}else{
-									if(Chn1.equalsIgnoreCase("Select") || Chn2.equalsIgnoreCase("Select") || Chn3.equalsIgnoreCase("Select") || Chn4.equalsIgnoreCase("Select")) {
-										System.out.println("Channel preferences is not displaying after selecting business preferences");
-										log.debug("Channel preferences is not displaying after selecting business preferences");
-										Assert.fail("Channel preferences is not displaying after selecting business preferences");
+									if (Agent_RegisterCustomerPage.ChannelePreferences.isDisplayed()) {
+										System.out.println("Channel preferences is displaying even for no business preferences");
+										log.debug("Channel preferences is displaying even for no selecting business preferences");
+										Assert.fail("Channel preferences is displaying even for no selecting business preferences");
+									}else{
+										System.out.println("Channel preferences are not displaying for no business preferences");
+										log.debug("Channel preferences are not displaying for no business preferences");
 									}
 								}
+
+
 								Thread.sleep(3000);
 								//Selecting Channel preferences
 								if (Chn1.equalsIgnoreCase("Select")) {
@@ -1429,56 +1447,60 @@ public class Agent_RegisterCustomerActions extends Environment {
 									log.debug("Contact_Post channel preference selected");
 								}
 
-								driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-
+								Thread.sleep(5000);
+								Screenshots.captureScreenshot();
 
 								// SaveMyPreferences button status after selecting business preferences and channel preferences
-								if (Agent_RegisterCustomerPage.SaveMyPreferences.isEnabled()) {
-									System.out.println("As expected Save My Preference Button is enabled after selecting Channel Preferences");
-									log.debug("As expected Save My Preference Button is enabled after selecting Channel Preferences");
-								} else {
-
-									if(Chn1.equalsIgnoreCase("Select") || Chn2.equalsIgnoreCase("Select") || Chn3.equalsIgnoreCase("Select") || Chn4.equalsIgnoreCase("Select")) {
-										System.out.println("Save My Preference Button is disabled after selecting Channel preferences");
-										log.debug("Save My Preference Button is disabled after selecting Channel preferences");
-										Assert.fail("Save My Preference Button is disabled after selecting Channel preferences");
-									}
-								}
-								Thread.sleep(3000);
-
-								if((BP1.equalsIgnoreCase("Select") || BP2.equalsIgnoreCase("Select") ||BP3.equalsIgnoreCase("Select") || BP4.equalsIgnoreCase("Select")) && (Chn1.equalsIgnoreCase("Select") || Chn2.equalsIgnoreCase("Select") || Chn3.equalsIgnoreCase("Select") || Chn4.equalsIgnoreCase("Select")) ) {
-
-									//clicking on Save mY Preferences Button
+								if(Chn1.equalsIgnoreCase("Select") || Chn2.equalsIgnoreCase("Select") || Chn3.equalsIgnoreCase("Select") || Chn4.equalsIgnoreCase("Select")) {
 									if (Agent_RegisterCustomerPage.SaveMyPreferences.isEnabled()) {
+										System.out.println("As expected Save My Preference Button is displayed after selecting channel/business preferences so, clicking on Save Preference CTA");
+										log.debug("As expected Save My Preference Button is displayed after selecting channel/business preferences so, clicking on Save Preference CTA");
+
 										Agent_RegisterCustomerPage.SaveMyPreferences.click();
 										System.out.println("Save My Preference button is clicked");
 										log.debug("Save My Preference button is clicked");
+
+									} else {
+										System.out.println("Save My Preference Button is disabled after selecting Channel/Business Preferences");
+										log.debug("Save My Preference Button is disabled after selecting Channel/Business Preferences");
+										Assert.fail("Save My Preference Button is disabled after selecting Channel/Business Preferences");
 									}
 								}else{
-									log.debug("As non of the preference are required to select so, we are clicking on save preferences CTA");
-									Agent_RegisterCustomerPage.SaveMyPreferences.click();
-									//Agent_RegisterCustomerPage.SkipPreference.click();
+									if (Agent_RegisterCustomerPage.SaveMyPreferences.isEnabled()) {
+										System.out.println("As expected Save My Preference Button is enabled for no Business Preferences selection");
+										log.debug("As expected Save My Preference Button is enabled for no Business Preferences selection");
+
+										Agent_RegisterCustomerPage.SaveMyPreferences.click();
+										System.out.println("Save My Preference button is clicked");
+										log.debug("Save My Preference button is clicked");
+									}else{
+										System.out.println("Save My Preference Button is disabled for no Business Preferences selection");
+										log.debug("Save My Preference Button is disabled for no Business Preferences selection");
+										Assert.fail("Save My Preference Button is disabled for no Business Preferences selection");
+									}
 								}
 
 
-
+								Thread.sleep(3000);
 
 								//Save My Preference Text Message
-								if (driver.findElements(By.xpath("//img[@id='u1306_img']")).size() > 0) {
+								if(Chn1.equalsIgnoreCase("Select") || Chn2.equalsIgnoreCase("Select") || Chn3.equalsIgnoreCase("Select") || Chn4.equalsIgnoreCase("Select")) {
+									if (driver.findElements(By.xpath("//p[@id='save-preferences-message']")).size() > 0) {
 
-									String saveText = Agent_RegisterCustomerPage.SavedPreferenceMessage.getText();
-									System.out.println("Saved your preferences:: " + saveText);
-									log.debug("Saved your preferences:: " + saveText);
-								} else {
-									System.out.println("Saved your preferences text message is not showing");
-									log.debug("Saved your preferences text message is not showing");
-									//Assert.fail("Saved your preferences text message is not showing");
+										String saveText = Agent_RegisterCustomerPage.SavedPreferenceMessage.getText();
+										System.out.println("Saved your preferences:: " + saveText);
+										log.debug("Saved your preferences:: " + saveText);
+									} else {
+										System.out.println("Saved your preferences text message is not showing");
+										log.debug("Saved your preferences text message is not showing");
+										Assert.fail("Saved your preferences text message is not showing");
+									}
 								}
 
 
 							} else if (customer.contains("Someone")) {
-
-
+								Thread.sleep(3000);
+								Screenshots.captureScreenshot();
 								boolean defaultSelect = Agent_RegisterCustomerPage.someoneElse_radioBtn.isSelected();
 								if (!defaultSelect) {
 									Thread.sleep(6000);
@@ -1510,7 +1532,7 @@ public class Agent_RegisterCustomerActions extends Environment {
 									System.out.println("GDPR business preference Disabled:: Channel preferences is disabled for someone else order selection");
 									log.debug("GDPR business preference Disabled:: Channel preferences is disabled for someone else order selection");
 								}
-
+								Screenshots.captureScreenshot();
 							}
 						} else {
 							System.out.println("Text:: " + thisOrderHeader + " is not displayed");

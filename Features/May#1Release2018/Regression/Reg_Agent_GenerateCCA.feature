@@ -7,27 +7,28 @@ Feature: Reg_Agent_GenerateCCA
     And performs Acquisition for New user
     And Select a valid PayM <Device>
     And Select valid <Tariffs> from tariffs tab
-    And select a valid Handset and Tariff combination such that there is monthly
-    # And Select valid <Extras> from extras tab
+    And select a valid Handset and Tariff combination_new
     And Validate all the Basket content and checkout
     Then perform all the advisory checks
     And perform the credit checks using valid <Firstname>, <Surname>, <HouseNumber>, <PostCode> and valid <Username>
-    #And Register the customer with valid <Firstname>, <Surname>, <HouseNumber>, <PostCode> and other valid details in delivery page
-    And Register the customer with valid <Firstname>, <Surname>, <HouseNumber>, <PostCode> and other valid details in delivery page_new
+    And Register customer with valid <Password>, <confirmPassword>, <SecurityAnswer> in delivery page
     And validate register status
     And Choose Business preferences <B1> <B2> <B3> <B4> and Channel Preferences <Text> <Email> <Phone> <Post> for <Consumer> when GDPR <status> <DeviceType> <DeviceModule> for AFA journey
-    And get the emailid
+    And Choose <DeliveryType> delivery address and delivery time
+    #And Update Device Plan Link Email Address
+    #And Accept O2 Refresh Deal Summary
     And Click on 'Generate CCA' button
-   # And click on the 'CCA' link
-    #And Signin using CCA valid emailid and <password1> credentials
-    #And Click on 'Continue' button on upgrade page
-    #And Click on the 'Continue button' in delivery page
-    #And land on the payment page and input <Username> and other details and click 'Continue on next step' in upgrade journey
-    #And Continue to Agreements page and confirm all the agreement checks
+    #Then CCALink Should be generated
+    And click on the 'CCA' link
+    And Signin using valid <username> and <password> credentials for New User
+    And Click on 'Continue' button on upgrade page
+    And Is this order for You or Someone else <consumer> when GDPR is <status2>
+    And land on the payment page and input details and click 'Continue on next step' in upgrade journey for CCA Link
+    And Continue to CCA or Buyout or Trade In Agreements page and confirm all the agreement checks for SECCI and CCA not accepted
     #And Continue to Review page, check order contract text and review the order
     #Then order confirmation is displayed
-
+    #Then Choose <consumer> <status> Business preferences <B1> <B2> <B3> <B4> And Channel Preferences <Text> <Email> <Phone> <Post> <MBBStatus> <DeviceType>
 
     Examples:
-      | user        | Device                   | Tariffs | DeliveryType | Firstname | Surname | Username     | HouseNumber | PostCode | emailid        | password1    | Consumer | B1  | B2  | B3  | B4  | Text | Email  | Phone | Post | status  | MBBStatus | DeviceType | DeviceModule |
-      | 07521000051 | Galaxy S7 Edge 32GB Pink | Refresh | HomeDelivery | TEST      | ACCEPTA | TEST ACCEPTA | Flat 6      | SL11EL   | tester@tes.com | SitTester123 | Someone  | Not | Not | Not | Not | Not  | Select | Not   | Not  | Enabled | No        | Connected  | Phone        |
+      | Device              | Tariffs | Extras | DeliveryType | Firstname | Surname | Username     | HouseNumber | PostCode | Password | confirmPassword | SecurityAnswer | B1     | B2     | B3     | B4  | Text   | Email  | Phone  | Post   | Consumer | status  | status2  | consumer | username | password | MBBStatus | DeviceType | DeviceModule |
+      | Galaxy S8 Plus 64GB | Refresh | Base   | HomeDelivery | TEST      | ACCEPTA | TEST ACCEPTA | 14          | SL11UP   | test1234 | test1234        | vinudeep       | Select | Select | Select | Not | Select | Select | Select | Select | Me       | Enabled | Disabled | Me       |          | test1234 | No        | Connected  | Phone        |
