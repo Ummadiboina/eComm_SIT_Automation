@@ -1380,6 +1380,7 @@ public class UpgradeCustomerPageActions extends Environment {
     }
 
     public static void Otac(String arg) throws IOException, InterruptedException {
+        Thread.sleep(4000);
         log.debug("In OTAC page");
         if (arg.contains("skip")) {
             log.debug("Skipping OTAC entry to verify account");
@@ -2118,7 +2119,7 @@ public class UpgradeCustomerPageActions extends Environment {
 
     public static void clickOnViewAllTariffslink() throws InterruptedException, IOException {
 
-        Thread.sleep(3000);
+        Thread.sleep(5000);
 
         ((JavascriptExecutor) driver).executeScript("arguments[0].click();",
                 pageobjects.UpgradeCustomerPage.ViewAllTariffs);

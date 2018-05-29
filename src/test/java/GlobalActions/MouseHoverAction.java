@@ -1016,11 +1016,11 @@ public class MouseHoverAction extends Environment {
 
     // Below will navigate to upgrade --- > upgrade now page
 
-    public static void UpgradeandUpgradeNow() throws Exception {
-        driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
-
-        try {
-
+    public static void UpgradeandUpgradeNow() throws Exception {try {
+        /*********************************************************************
+         normal execution flow in ref Env....        ************************************************/
+        Thread.sleep(3000);
+        if (driver.findElements(By.xpath("//div[@class='nav-consumer']/ul/li/a[contains(@href, '/shop')]")).size() >= 1) {
             log.debug("Performing Upgrade -- > upgrade now navigations");
             log.debug("Performing PAYG MBB navigations");
             Thread.sleep(3000);
@@ -1049,20 +1049,52 @@ public class MouseHoverAction extends Environment {
             log.debug("Moved Mouse to somewhere side of page");*/
 
             Screenshots.captureScreenshot();
-
-        } catch (ElementNotVisibleException e) {
-            // check if popup is present, if yes, handle it.
-            Environment.driver.switchTo().frame("edr_l_first");
-            log.debug("********We are switch to the iframe*******");
-            // Saying no to survey
-            driver.findElement(By.xpath("//a[@id='no']/span")).click();
-            log.debug("*******Saying no to survey*******");
-            log.debug("*********Existing the popups present in iframe***************");
-            Environment.driver.switchTo().defaultContent();
-            Screenshots.captureScreenshot();
-
+        } else {
+            System.out.println("Drupal's are Enabled");
+            log.debug("Drupal's are Enabled");
         }
 
+        /*********************************************************************
+         Drupal navigation change           ************************/
+        if (driver.findElements(By.xpath("//div[@class='navContainer']/ul/li[@name='Shop']/a[contains(@href,'/shop')]")).size() >= 1) {
+
+            Point coordinates = MouseHoverPage.MoveMouseOnShopTab_Drupal.getLocation();
+            Robot robot = new Robot();
+            robot.mouseMove(coordinates.getX(), coordinates.getY() + 100);
+            log.debug("Moving Mouse on the Shop Tab");
+
+            Actions action = new Actions(driver);
+            action.moveToElement(MouseHoverPage.MoveMouseOnShopTab_Drupal).perform();
+            log.debug("Mouse over on the Shop Header ");
+            Thread.sleep(2000);
+
+            Actions action1 = new Actions(driver);
+            action1.moveToElement(MouseHoverPage.MouseMoveonUpgrade_Drupal).perform();
+            log.debug("Moving mouse on the PayG Sims");
+            Thread.sleep(5000);
+
+            // MouseHoverPage.MoveMouseOnPhones_Drupal.click();
+            JavascriptExecutor executor = (JavascriptExecutor) driver;
+            executor.executeScript("arguments[0].click();", MouseHoverPage.MouseMoveonUpgrade_Drupal);
+            //Thread.sleep(5000);
+
+            //driver.manage().timeouts().implicitlyWait(15,TimeUnit.SECONDS);
+
+
+                /*// Move mouse pointer away from location
+                Point coordinates2 = driver.findElement(By.xpath("(//div[@class='navContainer']/ul)[1]")).getLocation();
+                Robot robot2 = new Robot();
+                robot2.mouseMove(coordinates2.getX(), coordinates.getY() + 300);
+                log.debug("Moved Mouse to somewhere side of page");*/
+        } else {
+            System.out.println("Drupal's are Disiabled");
+            log.debug("Drupal's are Disiabled");
+        }
+    } catch (Exception e) {
+        log.debug("Failed to mouse over, &  Error as : " + e.getStackTrace());
+        Assert.fail("Failed to Navigate to the Shop mouse over");
+        Thread.sleep(2000);
+    }
     }
 
     // Below will navigate to PAYM MBB page

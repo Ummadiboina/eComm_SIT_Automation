@@ -20,6 +20,7 @@ Feature: Reg_Consumer_TradeIn
     And Enter code <Action> in OTAC page to verify account in TadeIn journey
     And verify if trade in offer is displayed under Order Summary section in <Delivery> page
     And I select check box to bring the trade in device and Continue to delivery page
+    And Is this order for You or Someone else <consumer> when GDPR is <status>
     And verify if trade in offer is displayed under Order Summary section in <Payment> page
     And land on the payment page and input <Username> and other details and click 'Continue on next step' in upgrade journey
     And verify if trade in offer is displayed under Order Summary section in <Agreement> page
@@ -27,7 +28,8 @@ Feature: Reg_Consumer_TradeIn
     And verify if trade in offer is displayed under Order Summary section in <Review> page
     And Continue to Review page and review the order
     Then order confirmation is displayed
+    Then Choose <consumer> <status> Business preferences <B1> <B2> <B3> <B4> And Channel Preferences <Text> <Email> <Phone> <Post> <MBBStatus> <DeviceType>
 
     Examples:
-      | username                      | password | handset  | tariff                  | Username     | Action    |
-      | 23oc44430255@stf.ref.o2.co.uk | test123  | iPhone X | 19.99upfront45.00amonth | TEST ACCEPTA | enterCode |
+      | username                      | password | handset  | tariff                  | OTAC | Delivery | Payment | Agreement | Review | Username     | Action    | consumer | B1  | B2  | B3     | B4  | Text | Email  | Phone | Post | status  | MBBStatus | DeviceType |
+      | 23oc30086819@stf.ref.o2.co.uk | test123  | iPhone X | 19.99upfront45.00amonth | OTAC | Delivery | Payment | Agreement | Review | TEST ACCEPTA | enterCode | Me       | Not | Not | Select | Not | Not  | Select | Not   | Not  | Enabled | No        | Connected  |

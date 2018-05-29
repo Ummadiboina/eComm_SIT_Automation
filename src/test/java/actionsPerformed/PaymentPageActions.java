@@ -166,7 +166,8 @@ public class PaymentPageActions extends Environment {
     }
     public static void Card_Details_CCV() throws InterruptedException, IOException {
 
-       driver.manage().timeouts().implicitlyWait(15,TimeUnit.SECONDS);
+       //driver.manage().timeouts().implicitlyWait(15,TimeUnit.SECONDS);
+        Thread.sleep(8000);
 
         driver.switchTo().frame("payment-iframe");
         Thread.sleep(5000);
@@ -182,9 +183,7 @@ public class PaymentPageActions extends Environment {
                 log.debug("Clicking on submit to next step");
                 Screenshots.captureScreenshot();
                 Thread.sleep(10000);
-
-
-        }
+            }
     }
 
 
@@ -211,7 +210,7 @@ public class PaymentPageActions extends Environment {
         PaymentPage.CardMonth.sendKeys("01");
         log.debug("Entered Expiry Month");
         Thread.sleep(2000);
-        PaymentPage.CardYear.sendKeys("2020");
+        PaymentPage.CardYear.sendKeys("2021");
         log.debug("Entered Expiry Year");
         Thread.sleep(2000);
         PaymentPage.SecurityCode.sendKeys("123");

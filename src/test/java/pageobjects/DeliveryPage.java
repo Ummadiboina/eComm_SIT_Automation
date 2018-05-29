@@ -12,17 +12,27 @@ public class DeliveryPage {
     @FindBy(how = How.ID, using = "housenumber")
     public static WebElement Housenumber;
 
+    @FindBy(how = How.XPATH, using = "//input[@name='houseNum']")
+    public static WebElement HouseNum;
+
     @FindBy(how = How.XPATH, using = "//a[@title='Click and collect']")
     public static WebElement clickAndCollect;
 
     @FindBy(how = How.ID, using = "postcode")
     public static WebElement Postcode;
 
+    @FindBy(how = How.XPATH, using = "//*[@name='postcode']")
+    public static WebElement Post;
+
+
     @FindBy(how = How.ID, using = "storePostcode")
     public static WebElement storePostcode;
 
     @FindBy(how = How.ID, using = "postcode-submit")
     public static WebElement Find_Address;
+
+    @FindBy(how = How.XPATH, using = "//*[@class='findAddressBtn']")
+    public static WebElement FindAddress;
 
     @FindBy(how = How.ID, using = "store-postcode-submit")
     public static WebElement Find_Store;
@@ -33,6 +43,11 @@ public class DeliveryPage {
 
     @FindBy(how = How.XPATH, using = "//*[@id='delivery-address-selection']/li[1]")
     public static WebElement SelectAddress1;
+
+
+    @FindBy(how = How.XPATH, using = "(//*[@class='selectAddrBtn'])[1]")
+    public static WebElement SelectAdd1;
+
 
     @FindBy(how = How.XPATH, using = "//*[@id='delivery-address-selector']")
     public static WebElement SelectAddressDropdown;

@@ -17,13 +17,13 @@ Feature: Feb_CFU_Tablet_Delivery_page_more_than_one_address_select_one_compress_
     And Click on 'Use a different delivery address'link
     #And enter a <houseNumber> and an <PostCode>
     #And enter a <houseNumber> and an <PostCode> in Delivery section
-    And land on the payment page and input and other details and click 'Continue' on next step for otac
+    #And land on the payment page and input and other details and click 'Continue' on next step for otac
     And Continue to Agreements page and confirm all the agreement checks
     And Continue to Review page and review the order
     #And Click on 'I agree to the terms and condition' checkbox
     Then order confirmation is displayed
     Then Choose <consumer> <status> Business preferences <B1> <B2> <B3> <B4> And Channel Preferences <Text> <Email> <Phone> <Post> <MBBStatus> <DeviceType>
     Examples:
-      | username               | password | Tablet        | tariff                 | houseNumber | PostCode | Username     | Action    | consumer | B1  | B2  | B3  | B4  | Text | Email  | Phone | Post | status  | MBBStatus | DeviceType |
-      | in04962f_901133@o2.com | test123  | Random Device | 9.99upfront60.00amonth | 111         | SL11Er   | Test Accepta | enterCode | Me       | Not | Not | Not | Not | Not  | Select | Not   | Not  | Enabled | No        | Connected  |
+      | username                     | password | Tablet        | tariff                 | houseNumber | PostCode | Username     | Action    | consumer | B1  | B2  | B3     | B4  | Text | Email  | Phone | Post   | status  | MBBStatus | DeviceType |
+      | inl_feb4914@stf.ref.o2.co.uk | test123  | Random Device | 9.99upfront60.00amonth | 111         | SL11Er   | Test Accepta | enterCode | Me       | Not | Not | Select | Not | Not  | Select | Not   | Select | Enabled | No        | Connected  |
 

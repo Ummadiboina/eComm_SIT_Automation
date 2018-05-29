@@ -1052,7 +1052,7 @@ public class E2EOrderPlaced_Steps {
         try {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, DeliveryPage.class);
-            //CommonFunctionscheckTitle("Delivery Page");
+
             DeliveryPageActions.SetDelivery();
             DeliveryPageActions.AboutYou(Firstname, Surname);
            // DeliveryPageActions.ClickContinue();
@@ -1457,6 +1457,33 @@ public class E2EOrderPlaced_Steps {
         }
     }
 
+    @And("^land on the payment page and input ([^\"]*) and other details and click 'Continue on next step' for SimOnly$")
+    public void CreditCheckPaymentPage_HomeDelivery_SimOnly(String Username) {
+        // Write code here that turns the phrase above into concrete actions
+        try {
+            driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, PaymentPage.class);
+
+            Thread.sleep(10000);
+            //CommonFunctionscheckTitle("Payment Page");
+            PaymentPageActions.Set_Bank_details(Username);
+            Thread.sleep(10000);
+            PaymentPageActions.Time_At_Address();
+            Thread.sleep(10000);
+            PaymentPageActions.Card_Details(Username);
+            //Thread.sleep(10000);
+            //PaymentPageActions.Card_Details_CCV();
+
+
+        } catch (Exception e) {
+            //TODO Auto-generated catch block
+            e.printStackTrace();
+            log.debug("Unable to input details in payment page");
+            Assert.fail("Unable to input details in payment page");
+
+        }
+    }
+
 
     @And("^land on the payment page and input ([^\"]*) and other details and click 'Continue on next step' for DD confirmation$")
     public void CreditCheckPaymentPage_HomeDelivery_forDD(String Username) {
@@ -1467,7 +1494,8 @@ public class E2EOrderPlaced_Steps {
 
             Thread.sleep(10000);
             PaymentPageActions.Card_Details(Username);
-            Thread.sleep(75000);
+            Thread.sleep(15000);
+            PaymentPageActions.Card_Details_CCV();
         } catch (Exception e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
@@ -2390,6 +2418,7 @@ public class E2EOrderPlaced_Steps {
             PageFactory.initElements(driver, PAYGSimoPage.class);
             Thread.sleep(3000);
             PAYGSimOPageActions.selectTariff(FreeSim_Type, "DataRollOver", Tariff_Value+"|"+Big_Bundle_Data);
+
             Thread.sleep(5000);
         } catch (Exception e) {
             log.debug(e.getMessage());
@@ -2466,12 +2495,21 @@ public class E2EOrderPlaced_Steps {
 	 * #########################################################################
 	 * #########
 	 */
+
+
     @Then("^perform all the advisory checks$")
     public void advisory_checks() {
         try {
-            driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+            //driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+            Thread.sleep(6000);
             PageFactory.initElements(driver, Agent_AdvisoryPage.class);
-            Agent_AdvisoryChecksActions.AgreeAdvsioryCheck();
+            PageFactory.initElements(driver, DeliveryPage.class);
+
+            if(driver.findElements(By.xpath("//*[@name='houseNum']")).size() > 0) {
+                DeliveryPageActions.SetDelivery_AFU();
+            }
+            Thread.sleep(4000);
+           Agent_AdvisoryChecksActions.AgreeAdvsioryCheck();
             Thread.sleep(6000);
         } catch (Exception e) {
             // TODO Auto-generated catch block
@@ -3393,6 +3431,8 @@ public class E2EOrderPlaced_Steps {
             PageFactory.initElements(driver, MouseHoverPage.class);
             PageFactory.initElements(driver, UpgradePhonesListingPage.class);
             MouseHoverAction.UpgradeandUpgradeNow();
+            Thread.sleep(5000);
+            Autoredirection.redirectUpgrades();
             Thread.sleep(5000);
         } catch (Exception e) {
             // TODO Auto-generated catch block
@@ -5120,10 +5160,11 @@ public class E2EOrderPlaced_Steps {
         try {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, UpgradeCustomerPage.class);
+            Thread.sleep(6000);
             //UpgradeCustomerPageActions.selectDeviceInRecommendedDevicesSection(devicename);
             // driver.findElement(By.xpath("(//span[normalize-space()='Apple'])[1]")).click();
             JavascriptExecutor executor = (JavascriptExecutor) driver;
-            executor.executeScript("arguments[0].click();", driver.findElement(By.xpath("(//span[normalize-space()='Apple'])[1]")));
+            executor.executeScript("arguments[0].click();", driver.findElement(By.xpath("(//button[normalize-space()='Select'])[1]")));
             Thread.sleep(7000);
         } catch (Exception e) {
             e.printStackTrace();
@@ -5462,7 +5503,7 @@ public class E2EOrderPlaced_Steps {
     @Then("^perform ([^\"]*) in OTAC page$")
     public void perform_skip_in_OTAC_page(String Action) {
         try {
-            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
             PageFactory.initElements(driver, UpgradeCustomerPage.class);
             UpgradeCustomerPageActions.Otac(Action);
         } catch (Exception e) {
@@ -5490,8 +5531,8 @@ public class E2EOrderPlaced_Steps {
             PageFactory.initElements(driver, DeliveryPage.class);
             DeliveryPageActions.select_BringTradeInDevice_CheckBox();
             Thread.sleep(2000);
-            DeliveryPageActions.ClickContinue();
-            log.debug("Clicked on continue button");
+            //DeliveryPageActions.ClickContinue();
+            //log.debug("Clicked on continue button");
         } catch (Exception e) {
             e.printStackTrace();
             Assert.fail("Unable to perform action in OTAC Page");

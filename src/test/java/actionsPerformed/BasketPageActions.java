@@ -139,6 +139,7 @@ public class BasketPageActions extends Environment {
 	// Below is for Clicking on the goto Checkout button
 	public static void gotoCheckout() throws IOException, InterruptedException {
 
+		Thread.sleep(4000);
 		String title = driver.getTitle();
 		if (title.contains("Thanks for waiting")) {
 			log.debug("Queue page is displayed");
@@ -163,7 +164,7 @@ public class BasketPageActions extends Environment {
 				Thread.sleep(4000);
 				driver.findElement(By.xpath("//input[@id='noNeedNewSim']")).click();
 			}
-
+			Thread.sleep(3000);
 			log.debug("Queue page is not displayed");
 			WebElement element = pageobjects.BasketPage.checkoutbtn;
 			JavascriptExecutor executor = (JavascriptExecutor)driver;
@@ -348,6 +349,7 @@ public class BasketPageActions extends Environment {
 				log.debug("PostCode Entered for Search");
 				log.debug("PostCode Entered for Search");
 				Thread.sleep(4000);
+				Screenshots.captureScreenshot();
 				pageobjects.BasketPage.PostcodeSubmit.click();
 				Thread.sleep(5000);
 				// Assert.assertEquals(elementName,"Galaxy S7 is not found");
@@ -359,6 +361,7 @@ public class BasketPageActions extends Environment {
 				log.debug("Store Selected for Colletion");
 				log.debug("Store Selected for Colletion");
 				Thread.sleep(5000);
+				Screenshots.captureScreenshot();
 				log.debug("Click on the Add To Basket");
 				JavascriptExecutor jse = (JavascriptExecutor) driver;
 				jse.executeScript("window.scrollBy(0,600)", "");
@@ -386,7 +389,7 @@ public class BasketPageActions extends Environment {
 				log.debug("click And Collect is Selected");
 				log.debug("clickAndCollect radio button is Selected");
 				Thread.sleep(2000);
-				pageobjects.BasketPage.StorePostcode.sendKeys("G2");
+				pageobjects.BasketPage.StorePostcode.sendKeys("M4");
 				log.debug("PostCode Entered for Search");
 				log.debug("PostCode Entered for Search");
 				Thread.sleep(4000);
