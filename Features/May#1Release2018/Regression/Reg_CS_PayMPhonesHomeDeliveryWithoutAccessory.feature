@@ -22,4 +22,4 @@ Feature: Reg_CS_PayMPhonesHomeDeliveryWithoutAccessory
     #Close the browser
     Examples:
       | handset  | Firstname | Surname | Username     | consumer | B1  | B2     | B3  | B4  | Text | Email  | Phone | Post | status  | MBBStatus | DeviceType |
-      | iPhone 8 | TEST      | ACCEPTA | TEST ACCEPTA | Me       | Not | Select | Not | Not | Not  | Select | Not   | Not  | Enabled | No        | Connected  |
+      | iPhone X | TEST      | ACCEPTA | TEST ACCEPTA | Me       | Not | Select | Not | Not | Not  | Select | Not   | Not  | Enabled | No        | Connected  |
