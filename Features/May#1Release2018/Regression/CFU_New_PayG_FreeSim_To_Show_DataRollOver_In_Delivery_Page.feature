@@ -15,5 +15,5 @@ Feature: CFU_New_PayG_FreeSim_To_Show_DataRollOver_In_Delivery_Page
     Then Choose <consumer> <status> Business preferences <B1> <B2> <B3> <B4> And Channel Preferences <Text> <Email> <Phone> <Post> <MBBStatus> <DeviceType>
 
     Examples:
-      | username     | password | FreeSim_Type | Tariff_Value | Data | consumer | B1     | B2  | B3     | B4  | Text   | Email  | Phone | Post | status  | MBBStatus | DeviceType |
-      | TEST ACCEPTA | test123  | Big_Bundle   | £15          | 6GB  | Me       | Select | Not | Select | Not | Select | Select | Not   | Not  | Enabled | No        | Connected  |
+      | username                     | password | Username     | Password | FreeSim_Type | Tariff_Value | Data | consumer | B1     | B2  | B3     | B4  | Text   | Email  | Phone | Post | status  | MBBStatus | DeviceType |
+      | ina_jan5832@stf.ref.o2.co.uk | test123  | TEST ACCEPTA | test123  | BigBundle    | £15          | 5GB  | Me       | Select | Not | Select | Not | Select | Select | Not   | Not  | Enabled | No        | Connected  |

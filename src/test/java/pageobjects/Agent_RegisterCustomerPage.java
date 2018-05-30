@@ -295,7 +295,7 @@ public class Agent_RegisterCustomerPage {
     @FindBy(how = How.XPATH, using = "//input[@id='save-preferences']")
     public static WebElement SaveMyPreferences;
 
-    @FindBy(how = How.XPATH, using = "//img[@id='u1306_img']")
+    @FindBy(how = How.XPATH, using = "//p[@id='save-preferences-message']")
     public static WebElement SavedPreferenceMessage;
 
     @FindBy(how = How.XPATH, using = "//span[@id='successStatus']")

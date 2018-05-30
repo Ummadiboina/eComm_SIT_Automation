@@ -53,6 +53,34 @@ public class DeliveryPageActions extends Environment {
         }
     }
 
+    public static void SetDelivery_AFU() throws InterruptedException {
+        Thread.sleep(5000);
+        try {
+
+
+                pageobjects.DeliveryPage.HouseNum.sendKeys("12");
+                log.debug("Entered House number");
+                Thread.sleep(2000);
+                pageobjects.DeliveryPage.Post.sendKeys("B15 2LG");
+                log.debug("Entered Post code");
+                Thread.sleep(2000);
+                pageobjects.DeliveryPage.FindAddress.click();
+                log.debug("Clicked on the Find address button");
+                Thread.sleep(5000);
+
+
+            if (driver.findElements(By.xpath("(//*[@class='selectAddrBtn'])[1]")).size() > 0) {
+                pageobjects.DeliveryPage.SelectAdd1.click();
+                log.debug("Selected an address");
+            }
+            Thread.sleep(3000);
+            Screenshots.captureScreenshot();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
     public static void ClickAndCollect() {
 
         try {

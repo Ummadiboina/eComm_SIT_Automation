@@ -20,13 +20,15 @@ Feature: Reg_CFU_Recycle_Phones_DD_Confirmation_Page_changes.feature
     And I Land on the basket page for upgrades
     And click on "go to checkout" button
     And perform <Action> in OTAC page
-    And Click on the 'Continue button' in delivery page
+    And Is this order for You or Someone else <consumer> when GDPR is <status>
+    #And Click on the 'Continue button' in delivery page
     And land on the payment page and input <Username> and other details and click 'Continue on next step' for DD confirmation
     And Continue to Agreements page and confirm all the agreement checks
     And Continue to Review page and review the order
     Then order confirmation is displayed
     Then Verify contents of order confirmation page for Phones containing <Status>
+    Then Choose <consumer> <status> Business preferences <B1> <B2> <B3> <B4> And Channel Preferences <Text> <Email> <Phone> <Post> <MBBStatus> <DeviceType>
 
     Examples:
-      | username                     | password | handset        | tariff                 | Firstname | Surname | Username     | Action | Status           | Make  | Model   | Network |
-      | ink_aug5715@stf.ref.o2.co.uk | test123  | Apple iPhone 7 | 9.99upfront84.00amonth | TEST      | ACCEPTA | TEST ACCEPTA | skip   | Delayed Delivery | Apple | Iphone7 | Orange  |
+      | username                     | password | handset        | tariff                 | Firstname | Surname | Username     | Action | Status           | Make  | Model   | Network | consumer | B1     | B2  | B3  | B4  | Text   | Email | Phone | Post | status  | MBBStatus | DeviceType |
+      | evolutionpayg@mailinator.com | test123  | Apple iPhone 7 | 9.99upfront84.00amonth | TEST      | ACCEPTA | TEST ACCEPTA | skip   | Delayed Delivery | Apple | Iphone7 | Orange  | Me       | Select | Not | Not | Not | Select | Not   | Not   | Not  | Enabled | No        | Connected  |
