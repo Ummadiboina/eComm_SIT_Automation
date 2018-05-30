@@ -18,7 +18,7 @@ public class Agent_AdvisoryChecksActions extends Environment {
 
 	// this method used to perform click action on the Agent Home Page
 
-	public static void AgreeAdvsioryCheck() throws InterruptedException {
+	public static void AgreeAdvsioryCheck() throws InterruptedException, IOException {
 
 		log.debug("Going to Click on Advisory checks");
 		Thread.sleep(4000);
@@ -28,9 +28,9 @@ public class Agent_AdvisoryChecksActions extends Environment {
 		JavascriptExecutor executor = (JavascriptExecutor) driver;
 		executor.executeScript("arguments[0].click();", element);
 		log.debug("Clicked on Advisory checks");
-		log.debug("Clicked on Advisory checks");
+		Screenshots.captureScreenshot();
 		Thread.sleep(3000);
-		//Screenshots.captureScreenshot();
+
 	}
 
 

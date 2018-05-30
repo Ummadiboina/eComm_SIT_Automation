@@ -551,7 +551,7 @@ public class Agent_DealBuilderPageActions extends Environment {
             Agent_DealBuilderPage.AgentBuyOut_Button.click();
             Screenshots.captureScreenshot();
         }
-
+        Thread.sleep(5000);
         if(Agent_DealBuilderPage.Checkout.isDisplayed()) {
             log.debug("Deal Builder is displayed");
             Agent_DealBuilderPage.Checkout.click();
