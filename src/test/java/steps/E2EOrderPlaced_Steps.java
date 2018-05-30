@@ -2505,7 +2505,7 @@ public class E2EOrderPlaced_Steps {
             PageFactory.initElements(driver, Agent_AdvisoryPage.class);
             PageFactory.initElements(driver, DeliveryPage.class);
 
-            if(driver.findElements(By.xpath("//*[@name='houseNum']")).size() > 0) {
+            if(pageobjects.DeliveryPage.HouseNum.isDisplayed()) {
                 DeliveryPageActions.SetDelivery_AFU();
             }
             Thread.sleep(4000);

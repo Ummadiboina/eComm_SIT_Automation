@@ -303,7 +303,7 @@ public class Agent_RegisterCustomerActions extends Environment {
 	}
 
 	public static void provideDrivingLicence() throws InterruptedException, IOException {
-			Thread.sleep(7000);
+			Thread.sleep(10000);
 		/*if (driver.findElements(By.id("additionalCardDetailsCheckbox")).size() > 0) {
 			((JavascriptExecutor) driver).executeScript("arguments[0].click();", Agent_RegisterCustomerPage.additionalCardDetailsCheckbox);
 			Thread.sleep(5000);
@@ -382,22 +382,22 @@ public class Agent_RegisterCustomerActions extends Environment {
 
 			((JavascriptExecutor) driver).executeScript("arguments[0].click();", Agent_RegisterCustomerPage.licenceDetailsCheckbox);
 			Agent_RegisterCustomerPage.licencePostCode.sendKeys("SL14Dx");
-			Agent_RegisterCustomerPage.licenceNumberSeg1.sendKeys("HOMES");
-			Agent_RegisterCustomerPage.licenceNumberSeg2.sendKeys("901550");
-			Agent_RegisterCustomerPage.licenceNumberSeg3.sendKeys("NDB");
-			Agent_RegisterCustomerPage.licenceNumberSeg4.sendKeys("23");
+			Agent_RegisterCustomerPage.licenceNumberSeg1.sendKeys("HOWES");
+			Agent_RegisterCustomerPage.licenceNumberSeg2.sendKeys("905110");
+			Agent_RegisterCustomerPage.licenceNumberSeg3.sendKeys("MD9");
+			Agent_RegisterCustomerPage.licenceNumberSeg4.sendKeys("33");
 			Thread.sleep(3000);
 
 			((JavascriptExecutor) driver).executeScript("arguments[0].click();", Agent_RegisterCustomerPage.passportDetailsCheckbox);
 			Thread.sleep(3000);
-			Agent_RegisterCustomerPage.passportIssueCountry.sendKeys("RTY");
-			Agent_RegisterCustomerPage.passportNumberSeg1.sendKeys("9865632131");
-			Agent_RegisterCustomerPage.passportNumberSeg2.sendKeys("RTY");
-			Agent_RegisterCustomerPage.passportNumberSeg3.sendKeys("9912301");
-			Agent_RegisterCustomerPage.passportNumberSeg4.sendKeys("M");
-			Agent_RegisterCustomerPage.passportNumberSeg5.sendKeys("2011089");
-			Agent_RegisterCustomerPage.passportNumberSeg6.sendKeys("12345678965441");
-			Agent_RegisterCustomerPage.passportNumberSeg7.sendKeys("09");
+			Agent_RegisterCustomerPage.passportIssueCountry.sendKeys("gbr");
+			Agent_RegisterCustomerPage.passportNumberSeg1.sendKeys("9542354167");
+			Agent_RegisterCustomerPage.passportNumberSeg2.sendKeys("gbr");
+			Agent_RegisterCustomerPage.passportNumberSeg3.sendKeys("9905116");
+				Agent_RegisterCustomerPage.passportNumberSeg4.sendKeys("M");
+			Agent_RegisterCustomerPage.passportNumberSeg5.sendKeys("2011097");
+			Agent_RegisterCustomerPage.passportNumberSeg6.sendKeys("12345678911111");
+			Agent_RegisterCustomerPage.passportNumberSeg7.sendKeys("08");
 			Thread.sleep(2000);
 			Screenshots.captureScreenshot();
 			Thread.sleep(2000);
@@ -892,7 +892,8 @@ public class Agent_RegisterCustomerActions extends Environment {
 									log.debug("Contact_Post channel preference selected");
 								}
 
-								driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+								//driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+								Thread.sleep(4000);
 								Screenshots.captureScreenshot();
 
 								// SaveMyPreferences button status after selecting business preferences and channel preferences

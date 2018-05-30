@@ -598,14 +598,14 @@ public class OrderConfirmationPageActions extends Environment {
 											log.debug("Contact_Text business preference selected");
 										}
 										if (Chn2.equalsIgnoreCase("Select")) {
-											if (driver.findElements(By.xpath("//input[@id='CP_Post']")).size() <= 0) {
-												System.out.println("CP_Post preference checkBox is not displayed");
-												log.debug("CP_Post preference checkBox is not displayed");
-												Assert.fail("CP_Post preference checkBox is not displayed");
+											if (driver.findElements(By.xpath("//input[@id='CP_E-mail']")).size() <= 0) {
+												System.out.println("Contact_Email preference checkBox is not displayed");
+												log.debug("Contact_Email preference checkBox is not displayed");
+												Assert.fail("Contact_Email preference checkBox is not displayed");
 											}
-											OrderConfirmationPage.Contact_Post.click();
-											System.out.println("CP_Post preference selected");
-											log.debug("CP_Post preference selected");
+											OrderConfirmationPage.Contact_Email.click();
+											System.out.println("Contact_Email preference selected");
+											log.debug("Contact_Email preference selected");
 										}
 										if (Chn3.equalsIgnoreCase("Select")) {
 											if (driver.findElements(By.xpath("//input[@id='CP_Phone']")).size() <= 0) {
@@ -618,14 +618,14 @@ public class OrderConfirmationPageActions extends Environment {
 											log.debug("Contact_Phone preference selected");
 										}
 										if (Chn4.equalsIgnoreCase("Select")) {
-											if (driver.findElements(By.xpath("//input[@id='CP_E-mail']")).size() <= 0) {
-												System.out.println("Contact_Email preference checkBox is not displayed");
-												log.debug("Contact_Email preference checkBox is not displayed");
-												Assert.fail("Contact_Email preference checkBox is not displayed");
+											if (driver.findElements(By.xpath("//input[@id='CP_Post']")).size() <= 0) {
+												System.out.println("CP_Post preference checkBox is not displayed");
+												log.debug("CP_Post preference checkBox is not displayed");
+												Assert.fail("CP_Post preference checkBox is not displayed");
 											}
-											OrderConfirmationPage.Contact_Email.click();
-											System.out.println("Contact_Email preference selected");
-											log.debug("Contact_Email preference selected");
+											OrderConfirmationPage.Contact_Post.click();
+											System.out.println("CP_Post preference selected");
+											log.debug("CP_Post preference selected");
 										}
 
 										Thread.sleep(3000);
