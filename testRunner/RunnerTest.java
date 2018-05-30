@@ -3,11 +3,6 @@ package testRunner;
 import com.github.mkolisnyk.cucumber.runner.ExtendedCucumberOptions;
 import com.github.mkolisnyk.cucumber.runner.ExtendedTestNGRunner;
 import cucumber.api.CucumberOptions;
-import cucumber.api.testng.AbstractTestNGCucumberTests;
-
-
-import java.text.SimpleDateFormat;
-import java.util.Date;
 
 //Below is newly added on 08102017 - vinu
 
