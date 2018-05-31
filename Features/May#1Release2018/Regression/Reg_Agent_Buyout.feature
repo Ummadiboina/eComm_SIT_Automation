@@ -15,8 +15,7 @@ Feature: Reg_Agent_Buyout
     Then perform all the advisory checks_new
     And Click on 'Generate CCA' button
     And click on the 'CCA' link
-    #And Signin using valid <username> and <password> credentials
-    And Signin using valid <username> and <password> credentials for New User
+    And Signin using valid <username> and <password> credentials
     #And Click on 'Continue' button on upgrade page
     #And Click on the 'Continue button' in delivery page
     #And land on the payment page and input <Username> and other details and click 'Continue on next step' in upgrade journey
@@ -25,5 +24,5 @@ Feature: Reg_Agent_Buyout
     #Then order confirmation is displayed
 
     Examples:
-      | User        | Device              | Tariffs | username      | DeliveryType | Firstname | Surname | HouseNumber | PostCode | Username     | password | consumer | B1  | B2  | B3     | B4  | Text   | Email  | Phone  | Post   | status  | MBBStatus | DeviceType |
-      | 07568414230 | iPhone 6s 32GB Gold | Refresh | erto@1234.com | HomeDelivery | Test      | Accepta | Flat 9      | SL11EL   | Test Accepta | test123  | Me       | Not | Not | Select | Not | Select | Select | Select | Select | Enabled | No        | Connected  |
+      | User        | Device                  | Tariffs | username      | DeliveryType | Firstname | Surname | HouseNumber | PostCode | Username     | password | consumer | B1  | B2  | B3     | B4  | Text   | Email  | Phone  | Post   | status  | MBBStatus | DeviceType |
+      | 07568413508 | iPhone 8 Plus 64GB Gold | Refresh | erto@1234.com | HomeDelivery | Test      | Accepta | Flat 9      | SL11EL   | Test Accepta | test123  | Me       | Not | Not | Select | Not | Select | Select | Select | Select | Enabled | No        | Connected  |

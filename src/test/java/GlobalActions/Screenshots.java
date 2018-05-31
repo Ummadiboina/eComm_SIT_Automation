@@ -15,6 +15,7 @@ import org.openqa.selenium.TakesScreenshot;
 import helpers.Environment;
 import helpers.Filereadingutility;
 import org.openqa.selenium.WebDriver;
+import steps.Hooks;
 
 public class Screenshots extends Environment {
 
@@ -22,7 +23,7 @@ public class Screenshots extends Environment {
 	final static Logger log = Logger.getLogger("Screenshots");
 
 
-	public static void captureScreenshot() throws IOException, InterruptedException {
+	/*public static void captureScreenshot() throws IOException, InterruptedException {
 
 		CONFIG = new Properties();
 		FileInputStream fis = new FileInputStream(
@@ -47,6 +48,36 @@ public class Screenshots extends Environment {
 
 			File scr = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
 			File dest = new File("ScreenshotsForSteps\\ScreenshotsForFailures_" + timestamp() + ".jpeg");
+			FileUtils.copyFile(scr, dest);
+		}
+
+	}*/
+
+	public static void captureScreenshot() throws IOException, InterruptedException {
+
+		CONFIG = new Properties();
+		FileInputStream fis = new FileInputStream(
+				System.getProperty("user.dir") + "\\Configurations\\Properties\\AppConfig.properties");
+
+		CONFIG.load(fis);
+		fis.close();
+
+		if (Filereadingutility
+				.getPropertyValue(System.getProperty("user.dir") + "\\Configurations\\Properties\\AppConfig.properties",
+						"screenshot_everyStep")
+				.equalsIgnoreCase("Y")) {
+
+			File scr = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+			File dest = new File("ScreenshotsForSteps\\"+ Hooks.directoryName + "\\ScreenshotsForSteps_" + timestamp() + ".jpeg");
+			FileUtils.copyFile(scr, dest);
+
+		} else if (Filereadingutility
+				.getPropertyValue(System.getProperty("user.dir") + "\\Configurations\\Properties\\AppConfig.properties",
+						"screenshot_onError")
+				.equalsIgnoreCase("Y")) {
+
+			File scr = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+			File dest = new File("ScreenshotsForSteps\\"+ Hooks.directoryName + "\\ScreenshotsForFailures_" + timestamp() + ".jpeg");
 			FileUtils.copyFile(scr, dest);
 		}
 

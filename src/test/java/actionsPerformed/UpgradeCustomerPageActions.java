@@ -26,6 +26,7 @@ import helpers.Environment;
 import helpers.Filereadingutility;
 import helpers.setRuntimeProperty;
 import pageobjects.*;
+import steps.Hooks;
 
 import static actionsPerformed.PaymentPageActions.Set_Bank_details;
 import static actionsPerformed.PaymentPageActions.Time_At_Address;
@@ -40,8 +41,13 @@ public class UpgradeCustomerPageActions extends Environment {
     static int PositionUpgrade = 0;
 
     public static void Login(String username, String password) throws InterruptedException, IOException {
+        driver.manage().timeouts().implicitlyWait(15,TimeUnit.SECONDS);
         pageobjects.UpgradeCustomerPage.username.sendKeys(username);
         pageobjects.UpgradeCustomerPage.password.sendKeys(password);
+
+        Screenshots.captureScreenshot();
+        //Screenshots.captureScreenshot(Hooks.directoryName);
+
         Thread.sleep(5000);
         if (pageobjects.UpgradeCustomerPage.signInButton.isDisplayed()) {
             pageobjects.UpgradeCustomerPage.signInButton.click();
@@ -70,7 +76,7 @@ public class UpgradeCustomerPageActions extends Environment {
 		 *
 		 * }
 		 */
-        Screenshots.captureScreenshot();
+
 
     }
 
@@ -91,7 +97,7 @@ public class UpgradeCustomerPageActions extends Environment {
         //pageobjects.UpgradeCustomerPage.Signinlink2.click();
         log.debug("Sign in button clicked");
         Screenshots.captureScreenshot();
-
+        //Screenshots.captureScreenshot(Hooks.directoryName);
     }
 
     public static void PickSimOTariff() throws InterruptedException, IOException {
@@ -399,11 +405,12 @@ public class UpgradeCustomerPageActions extends Environment {
         //driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
         //WebElement selectBtnEle = driver.findElement(By.xpath("(//button[@type='button']//*[normalize-space()='Select'])[2]"));
         WebElement selectBtnEle = driver.findElement(By.xpath("(//button[@id='callToAction'])[1]"));
-
+        Screenshots.captureScreenshot();
         if(selectBtnEle.isDisplayed()){
             ((JavascriptExecutor) driver).executeScript("arguments[0].click();", selectBtnEle);
             log.debug("Tariff has been selected");
         }else{
+
             log.debug("Failed to select the Tariff in the Extras&Tariff page");
             Assert.fail("Failed to select the Tariff in the Extras&Tariff page");
         }
@@ -439,7 +446,8 @@ public class UpgradeCustomerPageActions extends Environment {
         }*/
 
 
-        Screenshots.captureScreenshot();
+
+        //Screenshots.captureScreenshot(Hooks.directoryName);
     }
 
     public static void selectTariffWithRibbonAndOverlayUpgradeJourney(String Tariff)
@@ -490,7 +498,7 @@ public class UpgradeCustomerPageActions extends Environment {
             log.debug("UpfrontCost is " + UpfrontCost);
             log.debug("MonthlyCost is " + MonthlyCost);
             log.debug("TextOfTariffTile is " + TextOfTariffTile);
-
+            Screenshots.captureScreenshot();
             if (TextOfTariffTile.contains(Tariff)) {
                 PositionUpgrade = j;
                 log.debug("Provided tariff is present in the list of tariffs");
@@ -500,11 +508,13 @@ public class UpgradeCustomerPageActions extends Environment {
                 flag = true;
             }
         }
+
         if (flag == false) {
+            Screenshots.captureScreenshot();
             driver.findElement(By.xpath("(//div[contains(@class, 'grid-tile')]/div/button[@id='callToAction'])[1]")).click();
             // Assert.fail("Provided tariff is not present in the list of tariffs");
         }
-        Screenshots.captureScreenshot();
+
     }
 
     public static void verifyPromotionalRibbonDisplayedTEpage(String Tariff) throws IOException, InterruptedException {
@@ -1346,6 +1356,7 @@ public class UpgradeCustomerPageActions extends Environment {
             WebElement needNewSimRadio = driver.findElement(By.xpath("//input[@id='needNewSim']"));
             ((JavascriptExecutor) driver).executeScript("arguments[0].click();", needNewSimRadio);
             log.debug("Selected need new sim radio button");
+            Screenshots.captureScreenshot();
             driver.findElement(By.xpath("//*[@id='confirmSim']")).click();
             log.debug("Completed your sim  function");
             Thread.sleep(3000);
@@ -1353,7 +1364,7 @@ public class UpgradeCustomerPageActions extends Environment {
             // TODO Auto-generated catch block
             log.debug("Unable to click on element " + e.getStackTrace());
         }
-        Screenshots.captureScreenshot();
+
     }
 
     public static void addAndGoToBasket() throws IOException, InterruptedException {
@@ -1366,12 +1377,15 @@ public class UpgradeCustomerPageActions extends Environment {
             ((JavascriptExecutor) driver).executeScript("arguments[0].click();", simNotRequire);
             Thread.sleep(2000);
             ((JavascriptExecutor) driver).executeScript("arguments[0].click();", clickonCofirmSim);
-
+            Screenshots.captureScreenshot();
         }
 
         Thread.sleep(3000 );
+
         // driver.findElement(By.xpath("//*[@id='qa-proceed-to-basket']")).click();
         WebElement BasketButton = driver.findElement(By.xpath("//*[@id='qa-proceed-to-basket']"));
+        scrollToAnElement.scrollToElement(BasketButton);
+        Screenshots.captureScreenshot();
         ((JavascriptExecutor) driver).executeScript("arguments[0].click();", BasketButton);
         log.debug("Completed AddandGotoBasket Section");
         Thread.sleep(3000);
@@ -1712,10 +1726,12 @@ public class UpgradeCustomerPageActions extends Environment {
     public static void ClickIneedAsim() throws Exception {
 
         if (UpgradeCustomerPage.IneedAsimRadio.isDisplayed()) {
+            Thread.sleep(6000);
             UpgradeCustomerPage.IneedAsimRadio.click();
             log.debug("The I need a sim radio button is clicked");
         }
         Screenshots.captureScreenshot();
+       // Screenshots.captureScreenshot(Hooks.directoryName);
     }
 
 
@@ -1727,6 +1743,7 @@ public class UpgradeCustomerPageActions extends Environment {
             log.debug("The Confirm CTA is not displayed");
         }
         Screenshots.captureScreenshot();
+        //Screenshots.captureScreenshot(Hooks.directoryName);
     }
 
     public static void ClickConfirmCTADisplayed() throws Exception {
@@ -1739,6 +1756,7 @@ public class UpgradeCustomerPageActions extends Environment {
         JavascriptExecutor jse = (JavascriptExecutor) driver;
         jse.executeScript("window.scrollBy(0,150)", "");
         Screenshots.captureScreenshot();
+       // Screenshots.captureScreenshot(Hooks.directoryName);
     }
 
     public static void ClickIdontneedAsim() throws Exception {
@@ -1756,18 +1774,20 @@ public class UpgradeCustomerPageActions extends Environment {
 
     public static void clickTakeOfferAndUpgrade() throws IOException, InterruptedException {
         log.debug("Going to click on Take Offer and Upgrade");
+        Screenshots.captureScreenshot();
         if (UpgradeCustomerPage.TakeOfferAndUpgrade.size() > 0) {
             UpgradeCustomerPage.TakeOfferAndUpgrade.get(0).click();
         } else {
             log.debug("Take offer and upgrade button is not present or enabled");
         }
-        Screenshots.captureScreenshot();
+
     }
 
     public static void selectTariffFromRecommendedSection() throws IOException, InterruptedException {
         log.debug("Going to select tariff from recommended section");
-        executor.executeScript("arguments[0].click();", UpgradeCustomerPage.RandomTariffUpgrade);
         Screenshots.captureScreenshot();
+        executor.executeScript("arguments[0].click();", UpgradeCustomerPage.RandomTariffUpgrade);
+
     }
 
     public static int verifyBuyOutDisplayedInMyPackage() throws IOException, InterruptedException {
@@ -1783,6 +1803,7 @@ public class UpgradeCustomerPageActions extends Environment {
         log.debug("Left to Pay Value: " + Actcost1);
         log.debug("Buy out Amount: " + Actcost2);
 
+        Screenshots.captureScreenshot();
 
         tmpcost1 = org.apache.commons.lang3.StringUtils.substringBetween(Actcost1, "£", ".");
         a = NumberUtils.toInt(tmpcost1);
@@ -1824,7 +1845,7 @@ public class UpgradeCustomerPageActions extends Environment {
         Actcost2 = UpgradeCustomerPage.TradeInCost2MyPkg.getText();
         log.debug("Left to Pay Value: " + Actcost1);
         log.debug("TradeIn Amount: " + Actcost2);
-
+        Screenshots.captureScreenshot();
 
         tmpcost1 = org.apache.commons.lang3.StringUtils.substringBetween(Actcost1, "£", ".");
         a = NumberUtils.toInt(tmpcost1);
@@ -1862,7 +1883,7 @@ public class UpgradeCustomerPageActions extends Environment {
         int BouOutValue_FromMyPackageSection = BouOutValueFromMyPackageSection;
 
         scrollToAnElement.scrollToElement(UpgradeCustomerPage.BuyOutTextBasketPage);
-
+        Screenshots.captureScreenshot();
         AcText = UpgradeCustomerPage.BuyOutTextBasketPage.getText();
         Actcost1 = UpgradeCustomerPage.BuyOutCost1BasketPage.getText();
         Actcost2 = UpgradeCustomerPage.BuyOutCost2BasketPage.getText();
@@ -1913,6 +1934,7 @@ public class UpgradeCustomerPageActions extends Environment {
 
         scrollToAnElement.scrollToElement(UpgradeCustomerPage.TradeInTextBasketPage);
 
+        Screenshots.captureScreenshot();
         AcText = UpgradeCustomerPage.TradeInTextBasketPage.getText();
         Actcost1 = UpgradeCustomerPage.TradeInCost1BasketPage.getText();
         Actcost2 = UpgradeCustomerPage.TradeInCost2BasketPage.getText();
@@ -2042,10 +2064,11 @@ public class UpgradeCustomerPageActions extends Environment {
         }
         // driver.findElement(By.xpath("//button[contains(text(),'Take this offer and upgrade')]")).click();
         // JavascriptExecutor js = (JavascriptExecutor) driver;
+        Screenshots.captureScreenshot();
         ((JavascriptExecutor) driver).executeScript("arguments[0].click();",
                 driver.findElement(By.xpath("//button[contains(text(),'Take this offer and upgrade')]")));
 
-        Screenshots.captureScreenshot();
+
     }
 
     public static void AnswerTradeinQuestion() throws InterruptedException, IOException {
@@ -2081,13 +2104,13 @@ public class UpgradeCustomerPageActions extends Environment {
     public static void UpgradeNowButton() throws InterruptedException, IOException {
         log.debug("in UpgradeNowButton function");
         Thread.sleep(8000);
-
+        Screenshots.captureScreenshot();
         //driver.findElement(By.xpath("//button[contains(text(),'Upgrade now')]")).click();
         ((JavascriptExecutor) driver).executeScript("arguments[0].click();",
                 driver.findElement(By.xpath("//button[contains(text(),'Upgrade now')]")));
 
         Thread.sleep(8000);
-        Screenshots.captureScreenshot();
+
 
     }
 

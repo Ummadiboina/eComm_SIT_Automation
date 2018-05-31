@@ -172,16 +172,17 @@ public class PaymentPageActions extends Environment {
         driver.switchTo().frame("payment-iframe");
         Thread.sleep(5000);
 
+
             if (driver.findElements(By.xpath("//input[@type='password']")).size() > 0) {
                 PaymentPage.CCVSecurityCode.sendKeys("1234");
                 log.debug("Entered CVV security code");
                 Thread.sleep(3000);
-
+                Screenshots.captureScreenshot();
                 JavascriptExecutor executor = (JavascriptExecutor) driver;
                 executor.executeScript("arguments[0].click();", PaymentPage.Submit_Next_Step);
                 //PaymentPage.Submit_Next_Step.click();
                 log.debug("Clicking on submit to next step");
-                Screenshots.captureScreenshot();
+
                 Thread.sleep(10000);
             }
     }
@@ -216,6 +217,7 @@ public class PaymentPageActions extends Environment {
         PaymentPage.SecurityCode.sendKeys("123");
         log.debug("Entered CVV security code");
         Thread.sleep(2000);
+        Screenshots.captureScreenshot();
         PaymentPage.Continue_Next_Step.sendKeys(Keys.ENTER);
         log.debug("Clicking on continue to next step");
         Thread.sleep(10000);
@@ -223,7 +225,7 @@ public class PaymentPageActions extends Environment {
         log.debug("Exiting the Payments section");
         driver.switchTo().defaultContent();
         // log.debug(driver.getTitle());
-        Screenshots.captureScreenshot();
+
 
     }
 

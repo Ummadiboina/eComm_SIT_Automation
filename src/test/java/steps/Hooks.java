@@ -30,7 +30,7 @@ public class Hooks extends Environment {
 
     final static Logger log = Logger.getLogger("Hooks");
     AndroidCapability capability = new AndroidCapability();
-
+    public static String directoryName="";
 
 
     @Before("@Web")
@@ -39,6 +39,11 @@ public class Hooks extends Environment {
 
         String rawFeatureName = scenario.getId().split(";")[0].replace("-", " ");
         String featureName = rawFeatureName.substring(0, 1).toUpperCase() + rawFeatureName.substring(1);
+
+        String rawFeatureName1 = scenario.getId().split(";")[0].replace("-", "_");
+        String featureName1 = rawFeatureName1.substring(0, 1).toUpperCase() + rawFeatureName.substring(1);
+        directoryName = featureName1;
+
         log.debug("Running feature file : " + featureName);
         log.debug("Running feature file : " + featureName);
 
@@ -92,7 +97,7 @@ public class Hooks extends Environment {
             try {
 
                 File scr = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-                File dest = new File("ScreenshotsForFailures\\ScreenshotsForFailures_" + timestamp() + ".jpeg");
+                File dest = new File("ScreenshotsForFailures\\" + directoryName + "\\ScreenshotsForFailures_" + timestamp() + ".jpeg");
                 FileUtils.copyFile(scr, dest);
 
             } catch (WebDriverException somePlatformsDontSupportScreenshots) {

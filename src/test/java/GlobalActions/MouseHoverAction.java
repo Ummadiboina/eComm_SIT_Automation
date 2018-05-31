@@ -9,6 +9,7 @@ import org.openqa.selenium.Point;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
 import pageobjects.MouseHoverPage;
+import steps.Hooks;
 
 import java.awt.*;
 import java.util.NoSuchElementException;
@@ -1039,6 +1040,8 @@ public class MouseHoverAction extends Environment {
             log.debug("Moved mouse on upgrades");
             Thread.sleep(2000);
 
+            Screenshots.captureScreenshot();
+
             pageobjects.MouseHoverPage.MouseMoveonUpgradeAndUpgradeNow.click();
             log.debug("Moved mouse on upgrades -- > upgradenow and clicked");
             Thread.sleep(5000);
@@ -1048,7 +1051,8 @@ public class MouseHoverAction extends Environment {
             robot2.mouseMove(coordinates2.getX(), coordinates.getY() + 300);
             log.debug("Moved Mouse to somewhere side of page");*/
 
-            Screenshots.captureScreenshot();
+
+            //Screenshots.captureScreenshot(Hooks.directoryName);
         } else {
             System.out.println("Drupal's are Enabled");
             log.debug("Drupal's are Enabled");

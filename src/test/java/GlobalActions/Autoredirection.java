@@ -5,6 +5,7 @@ import java.io.IOException;
 import org.apache.log4j.Logger;
 
 import helpers.Environment;
+import steps.Hooks;
 
 //Below is for redirecting the Url back to reference shop from live shop
 
@@ -77,6 +78,7 @@ public class Autoredirection extends Environment {
 			log.debug("Auto Redirection is not required, URL already pointed to Ref");
 		}
 		Screenshots.captureScreenshot();
+		//Screenshots.captureScreenshot(Hooks.directoryName);
 	}
 
 	public static void redirectforHTTPconnections() throws InterruptedException, IOException {
