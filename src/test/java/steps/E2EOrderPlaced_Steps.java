@@ -803,6 +803,17 @@ public class E2EOrderPlaced_Steps {
 
     @Given("^Select any new Tariff and land on basket page$")
     public void select_any_new_Tariff_and_land_on_basket_page() {
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, PAYMandPAYGTariffAndExtrasPage.class);
+            Thread.sleep(3000);
+
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            log.debug("Unable to select valid tariff, please see the failure screenshot");
+            Assert.fail("Unable to select valid tariff, please see the failure screenshot");
+
+        }
 
     }
 
@@ -968,6 +979,15 @@ public class E2EOrderPlaced_Steps {
 
     @Given("^Verifies the basket page for the upgrade journey$")
     public void verifies_the_basket_page_for_the_upgrade_journey() {
+
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, UpgradeCustomerPage.class);
+            BasketPageActions.UpgradeBasketYourSim();
+        } catch (Exception e) {
+            e.printStackTrace();
+            Assert.fail("The Your sim card section is not present");
+        }
 
     }
 
@@ -1553,7 +1573,7 @@ public class E2EOrderPlaced_Steps {
         try {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, Agent_DealBuilderPage.class);
-            driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
+            Thread.sleep(7000);
             Agent_DealBuilderPageActions.HandsetTariffCombination_new();
             Thread.sleep(4000);
         } catch (Exception e) {
@@ -1577,7 +1597,9 @@ public class E2EOrderPlaced_Steps {
             //PaymentPageActions.Time_At_Address();
             Thread.sleep(5000);
             PaymentPageActions.Card_Details(Username);
-            Thread.sleep(75000);
+            Thread.sleep(7000);
+            PaymentPageActions.Card_Details_CCV();
+            Thread.sleep(12000);
         } catch (Exception e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
@@ -2322,6 +2344,21 @@ public class E2EOrderPlaced_Steps {
         }
     }
 
+    @Given("^choose to email basket to save the basket in CFU for ([^\"]*)$")
+    public void choose_to_email_basket_to_save_the_basket_CFU(String userName) {
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+
+            PageFactory.initElements(driver, UpgradeCustomerPage.class);
+            BasketPageActions.eMailBasketCFU(userName);
+
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            log.debug("Unable to email basket, please see the failure screenshot");
+            Assert.fail("Unable to email basket, please see the failure screenshot");
+
+        }
+    }
 
     @And("^click on 'Email Basket' link$")
     public void click_on_email_Basket() {
@@ -5163,6 +5200,8 @@ public class E2EOrderPlaced_Steps {
             Thread.sleep(6000);
             //UpgradeCustomerPageActions.selectDeviceInRecommendedDevicesSection(devicename);
             // driver.findElement(By.xpath("(//span[normalize-space()='Apple'])[1]")).click();
+            Screenshots.captureScreenshot();
+            //Screenshots.captureScreenshot(Hooks.directoryName);
             JavascriptExecutor executor = (JavascriptExecutor) driver;
             executor.executeScript("arguments[0].click();", driver.findElement(By.xpath("(//button[normalize-space()='Select'])[1]")));
             Thread.sleep(7000);
@@ -6365,7 +6404,7 @@ public class E2EOrderPlaced_Steps {
             PageFactory.initElements(driver, UpgradePhonesListingPage.class);
             PageFactory.initElements(driver, UpgradeCustomerPage.class);
             int BouOutValueFromMyPackageSection = BuyOutValue;
-
+            Screenshots.captureScreenshot();
             UpgradeCustomerPageActions.verifyBuyOutDisplayedInBasketPage(BouOutValueFromMyPackageSection);
             Thread.sleep(2000);
         } catch (Exception e) {
@@ -7350,7 +7389,9 @@ public class E2EOrderPlaced_Steps {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, PaymentPage.class);
             PaymentPageActions.Card_Details(Username);
-            Thread.sleep(75000);
+            Thread.sleep(10000);
+            PaymentPageActions.Card_Details_CCV();
+            Thread.sleep(8000);
         } catch (Exception e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
@@ -7389,6 +7430,7 @@ public class E2EOrderPlaced_Steps {
         try {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, Agent_DealBuilderPage.class);
+            Thread.sleep(4000);
             Agent_DealBuilderPageActions.AgentBuyOut();
             Thread.sleep(4000);
         } catch (Exception e) {

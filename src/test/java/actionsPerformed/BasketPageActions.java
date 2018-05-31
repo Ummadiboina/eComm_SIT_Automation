@@ -19,6 +19,7 @@ import helpers.Filereadingutility;
 import org.testng.Assert;
 import pageobjects.BasketPage;
 import pageobjects.UpgradeCustomerPage;
+import steps.Hooks;
 
 public class BasketPageActions extends Environment {
 
@@ -393,6 +394,7 @@ public class BasketPageActions extends Environment {
 				log.debug("PostCode Entered for Search");
 				log.debug("PostCode Entered for Search");
 				Thread.sleep(4000);
+
 				pageobjects.BasketPage.PostcodeSubmit.click();
 				Thread.sleep(5000);
 				// Assert.assertEquals(elementName,"Galaxy S7 is not found");
@@ -403,8 +405,9 @@ public class BasketPageActions extends Environment {
 				// Assert.assertEquals(elementName,"Galaxy S7 is not found");
 				log.debug("Store Selected for Colletion");
 				log.debug("Store Selected for Colletion");
-				Thread.sleep(7000);
 				Screenshots.captureScreenshot();
+				Thread.sleep(7000);
+
 			}
 		}
 
@@ -736,6 +739,7 @@ public class BasketPageActions extends Environment {
 			log.debug("The checkout button is not enabled");
 		}
 		Screenshots.captureScreenshot();
+		//Screenshots.captureScreenshot(Hooks.directoryName);
 
 	}
 
@@ -757,6 +761,29 @@ public class BasketPageActions extends Environment {
 			log.debug("I dont need a sim is pre selected");
 		}
 		Screenshots.captureScreenshot();
+		//Screenshots.captureScreenshot(Hooks.directoryName);
+
+	}
+
+	public static void eMailBasketCFU(String userName) throws InterruptedException, IOException {
+		Thread.sleep(3000);
+		// Selecting an eMail Link
+		pageobjects.UpgradeCustomerPage.BasketeMail.sendKeys(userName);
+		log.debug("eMail entered to save Basket");
+		log.debug("eMail entered to save Basket");
+		Thread.sleep(3000);
+
+		/*pageobjects.UpgradeCustomerPage.ReadCaptcha.click();
+		log.debug("clicked on captcha to save Basket");
+		log.debug("clicked on captcha to save Basket");
+		Thread.sleep(3000);
+		Screenshots.captureScreenshot();
+		pageobjects.UpgradeCustomerPage.emailSubmit.click();
+		log.debug("clicked on captcha to save Basket");
+		log.debug("clicked on captcha to save Basket");
+		Thread.sleep(3000);
+*/
+
 
 	}
 

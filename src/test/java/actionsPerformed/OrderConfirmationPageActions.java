@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
+import GlobalActions.scrollToAnElement;
 import com.sun.xml.internal.ws.policy.AssertionSet;
 import org.apache.log4j.Logger;
 import org.junit.Assert;
@@ -13,6 +14,7 @@ import org.openqa.selenium.WebElement;
 import GlobalActions.Screenshots;
 import helpers.Environment;
 import pageobjects.OrderConfirmationPage;
+import pageobjects.UpgradeCustomerPage;
 
 public class OrderConfirmationPageActions extends Environment {
 	final static Logger log = Logger.getLogger("OrderConfirmationPageActions");
@@ -629,6 +631,7 @@ public class OrderConfirmationPageActions extends Environment {
 										}
 
 										Thread.sleep(3000);
+
 										Screenshots.captureScreenshot();
 										// SaveMyPreferences button status after selecting channels preferences
 
@@ -647,12 +650,15 @@ public class OrderConfirmationPageActions extends Environment {
 											String saveMessage = driver.findElement(By.xpath("//span[@class='saveMsg']"));
 											System.out.println("Saved your preferences :: "+saveMessage);
 											log.debug("Saved your preferences :: "+ saveMessage);
+											scrollToAnElement.scrollToElement(OrderConfirmationPage.SavedPreferenceMessage);
+											Thread.sleep(5000);
+											Screenshots.captureScreenshot();
 										}
 									} else {
 										System.out.println("Unable to find Choose your preferences link header");
 										log.debug("Unable to find Choose your preferences link header");
 										Assert.fail("Unable to find Choose your preferences link header");
-									}Screenshots.captureScreenshot();
+									}
 								} else {
 										System.out.println("GDPR status is Enabled:: but Choose your preferences section is Disbaled");
 										log.debug("GDPR status is Enabled:: but Choose your preferences section is Disbaled");

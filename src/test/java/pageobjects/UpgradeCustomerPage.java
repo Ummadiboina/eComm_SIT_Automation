@@ -105,6 +105,15 @@ public class UpgradeCustomerPage {
 	@FindBy(how = How.XPATH, using = "//*[@id='sim-section']")
 	public static WebElement YourSimSection;
 
+	@FindBy(how = How.XPATH, using = "//input[@id='email']")
+	public static WebElement BasketeMail;
+
+	@FindBy(how = How.XPATH, using = "//*[@id='recaptcha-anchor']")
+	public static WebElement ReadCaptcha;
+
+	@FindBy(how = How.XPATH, using = "//button[normalize-space()='Continue']")
+	public static WebElement emailSubmit;
+
 	@FindBy(how = How.XPATH, using = "//*[@id='sim-section']/div/div[2]/div[1]/div[@class='sim-info-left']")
 	public static WebElement YourSimSectionCopyText;
 

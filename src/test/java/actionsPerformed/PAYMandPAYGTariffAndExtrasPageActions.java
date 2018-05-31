@@ -21,6 +21,7 @@ import GlobalActions.Screenshots;
 import helpers.Environment;
 import helpers.setRuntimeProperty;
 import pageobjects.PAYMandPAYGTariffAndExtrasPage;
+import steps.Hooks;
 
 public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 	final static Logger log = Logger.getLogger("PAYMandPAYGTariffAndExtrasPageActions");
@@ -48,6 +49,7 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 		Screenshots.captureScreenshot();
 
 	}
+
 
 	public static String TariffSelect(String ElementName) throws IOException, InterruptedException {
 
@@ -196,6 +198,7 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 		log.debug("Clicked on Add to Basket in Tariff and Extras page");
 		Thread.sleep(10000);
 		Screenshots.captureScreenshot();
+		//Screenshots.captureScreenshot(Hooks.directoryName);
 
 	}
 
@@ -204,11 +207,13 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 
 		JavascriptExecutor jse = (JavascriptExecutor) driver;
 		jse.executeScript("window.scrollBy(0,600)", "");
+		Screenshots.captureScreenshot();
 		pageobjects.PAYMandPAYGTariffAndExtrasPage.addToBasketBuyOutJourney.sendKeys(Keys.ENTER);
 		log.debug("Clicked on Add to Basket in Tariff and Extras page");
 		log.debug("Clicked on Add to Basket in Tariff and Extras page");
-		Thread.sleep(20000);
-		Screenshots.captureScreenshot();
+
+		Thread.sleep(12000);
+
 
 	}
 

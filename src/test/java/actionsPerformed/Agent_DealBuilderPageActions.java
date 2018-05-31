@@ -66,6 +66,8 @@ public class Agent_DealBuilderPageActions extends Environment {
         Screenshots.captureScreenshot();
     }
 
+
+
     public static void SelectTariff(String Tariff) throws InterruptedException, IOException {
         Agent_DealBuilderPage.TariffsTab.click();
         Thread.sleep(5000);

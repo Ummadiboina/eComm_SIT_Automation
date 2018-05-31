@@ -18,7 +18,8 @@ Feature: Reg_Consumer_Buyout.feature
     And verify if buyout offer is displayed under Order Summary section in <OTAC> page
     And perform <Action> in OTAC page
     And verify if buyout offer is displayed under Order Summary section in <Delivery> page
-    Then Click on the 'Continue button' in delivery page
+    #Then Click on the 'Continue button' in delivery page
+    And Is this order for You or Someone else <consumer> when GDPR is <status>
     And verify if buyout offer is displayed under Order Summary section in <Payment> page
     And land on the payment page and input <Username> and other details and click 'Continue on next step' in upgrade journey
     And verify if buyout offer is displayed under Order Summary section in <Agreement> page
@@ -26,7 +27,8 @@ Feature: Reg_Consumer_Buyout.feature
     And verify if buyout offer is displayed under Order Summary section in <Review> page
     And Continue to Review page and review the order
     Then order confirmation is displayed
+    Then Choose <consumer> <status> Business preferences <B1> <B2> <B3> <B4> And Channel Preferences <Text> <Email> <Phone> <Post> <MBBStatus> <DeviceType>
 
     Examples:
-      | username                      | password | handset        | Action | Username     |
-      | 23oc40681896@stf.ref.o2.co.uk | test123  | Apple iPhone 8 | skip   | TEST ACCEPTA |
+      | username               | password | handset  | Action | Username     | OTAC | Delivery | Payment | Agreement | Review | Username     | Action    | consumer | B1  | B2  | B3     | B4  | Text | Email  | Phone | Post | status  | MBBStatus | DeviceType |
+      | in01808o_490350@o2.com | test123  | iPhone 8 | skip   | TEST ACCEPTA | OTAC | Delivery | Payment | Agreement | Review | TEST ACCEPTA | enterCode | Me       | Not | Not | Select | Not | Not  | Select | Not   | Not  | Enabled | No        | Connected  |

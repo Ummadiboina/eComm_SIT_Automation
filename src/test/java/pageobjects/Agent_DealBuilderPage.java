@@ -69,6 +69,7 @@ public class Agent_DealBuilderPage {
     @FindBy(how = How.XPATH, using = "//a[contains(text(),'Email Basket')]")
     public static WebElement eMailBasket;
 
+
     @FindBy(how = How.ID, using = "sendBasketEmailAddress")
     public static WebElement sendBasketEmailAddress;
 
