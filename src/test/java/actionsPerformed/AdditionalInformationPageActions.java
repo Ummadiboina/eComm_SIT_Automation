@@ -27,14 +27,14 @@ public class AdditionalInformationPageActions extends Environment {
 	public static void SectionsDisplayed() throws IOException, InterruptedException {
 
 		log.debug("Below are the sections displayed");
-		pageobjects.AdditionalInformationPage.passportInfo.getText();
-		log.debug("Passport info section is displayed");
+		String passPortInfo = pageobjects.AdditionalInformationPage.passportInfo.getText();
+		log.debug("Passport info section is displayed :: "+passPortInfo);
 		log.debug("Driving license section is displayed ");
-		pageobjects.AdditionalInformationPage.drivingLicence.getText();
-		log.debug("Driving license section is displayed ");
+		String drivingLicence = pageobjects.AdditionalInformationPage.drivingLicence.getText();
+		log.debug("Driving license section is displayed :: "+drivingLicence);
 		log.debug("Additional card section ");
-		pageobjects.AdditionalInformationPage.additionalCard.getText();
-		log.debug("Additional card section is displayed");
+		String additionalCard = pageobjects.AdditionalInformationPage.additionalCard.getText();
+		log.debug("Additional card section is displayed :: "+additionalCard);
 
 		Screenshots.captureScreenshot();
 	}

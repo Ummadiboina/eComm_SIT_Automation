@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
+import GlobalActions.scrollToAnElement;
 import org.apache.log4j.Logger;
 
 import GlobalActions.Screenshots;
@@ -74,7 +75,11 @@ public class SimsPageActions extends Environment {
     public static void clickOnMBB_Button() throws Exception {
         try {
             driver.manage().timeouts().implicitlyWait(2, TimeUnit.MINUTES);
+
             if (driver.findElements(By.xpath("//input[@value='Mobile broadband']")).size() > 0) {
+                scrollToAnElement.scrollToElement(driver.findElement(By.xpath("//input[@value='Mobile broadband']")));
+                Thread.sleep(4000);
+                Screenshots.captureScreenshot();
                 driver.findElement(By.xpath("//input[@value='Mobile broadband']")).click();
                 log.debug(" Clicked on the 'MBB' button");
                 log.debug(" Clicked on the 'MBB' button");
@@ -91,6 +96,9 @@ public class SimsPageActions extends Environment {
 
     public static void clickOn_simOnlyTariffTab() throws Exception {
         WebElement simOnlyTarirr = driver.findElement(By.xpath("//a[@id='tab-keep-your-phone']"));
+        scrollToAnElement.scrollToElement(simOnlyTarirr);
+        Thread.sleep(4000);
+        Screenshots.captureScreenshot();
         try {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             if (driver.findElements(By.xpath("//a[@id='tab-keep-your-phone']")).size() >= 1) {
@@ -114,6 +122,7 @@ public class SimsPageActions extends Environment {
             driver.manage().timeouts().implicitlyWait(2, TimeUnit.MINUTES);
             Thread.sleep(5000);
             String currentUrl = driver.getCurrentUrl();
+            Screenshots.captureScreenshot();
             log.debug("Current URL is :  " + currentUrl);
             if (currentUrl.contains("simo")) {
                 log.debug(" verifyed that the url has simo at the end");
@@ -133,6 +142,8 @@ public class SimsPageActions extends Environment {
     public static void phonesButtonShouldSelectedByDefault() throws Exception {
         try {
             driver.manage().timeouts().implicitlyWait(2, TimeUnit.MINUTES);
+
+            Screenshots.captureScreenshot();
             if (driver.findElements(By.xpath("//div/input[@class='secondary phones-btn active']")).size() > 0) {
                 if (driver.findElement(By.xpath("//div/input[@class='secondary phones-btn active']")).isDisplayed()) {
                     log.debug(" The 'Phones' button is selected by default");
@@ -170,6 +181,7 @@ public class SimsPageActions extends Environment {
             log.debug("Failed to display the tariffs under twelve months" + e.getStackTrace());
             Assert.fail("Failed to display the tariffs under twelve months");
         }
+        Screenshots.captureScreenshot();
     }
 
     public static void allTariffsUnderThirtyDaysShouldDisplayed() throws Exception {
@@ -201,6 +213,8 @@ public class SimsPageActions extends Environment {
             driver.manage().timeouts().implicitlyWait(2, TimeUnit.MINUTES);
             if (driver.findElements(By.xpath("//div[@class='tab-buttons-container']/following-sibling::div//span[@id='dataFilterSelectSelectBoxIt']")).size() > 0) {
                 if (driver.findElement(By.xpath("//div[@class='tab-buttons-container']/following-sibling::div//span[@id='dataFilterSelectSelectBoxIt']")).isDisplayed()) {
+                    scrollToAnElement.scrollToElement(driver.findElement(By.xpath("//div[@class='tab-buttons-container']/following-sibling::div//span[@id='dataFilterSelectSelectBoxIt']")));
+                    Screenshots.captureScreenshot();
                     log.debug("the 'sorting dropdown' is displayed just below the toggle buttons sections");
                     log.debug("the 'sorting dropdown' is displayed just below the toggle buttons sections");
                 } else {

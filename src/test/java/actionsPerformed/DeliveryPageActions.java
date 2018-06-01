@@ -146,6 +146,22 @@ public class DeliveryPageActions extends Environment {
 
     }
 
+    public static void AboutYouTitle() {
+        try {
+
+            Thread.sleep(3000);
+            Select dropdown = new Select(pageobjects.DeliveryPage.Title);
+            dropdown.selectByIndex(2);
+            log.debug("Selected the dropdown Mrs");
+            Reporter.log("Selected the dropdown Mrs");
+            Screenshots.captureScreenshot();
+        } catch (Exception e) {
+            log.debug("Failed to proceed on Delivey page : " + e.getMessage());
+            e.printStackTrace();
+        }
+
+    }
+
 
     public static void AboutYouTen(String Firstname, String Surname) throws IOException, InterruptedException {
         log.debug("Entering an Random email id");
@@ -249,11 +265,12 @@ public class DeliveryPageActions extends Environment {
                 Thread.sleep(3000);
                 Screenshots.captureScreenshot();
                 String thisOrderOVerLayTxt = DeliveryPage.thisOrderOverlayTxt.getText();
+                Thread.sleep(3000);
                 if (DeliveryPage.thisOrderOverlayTxt.isDisplayed()) {
                     if (thisOrderOVerLayTxt.contains("choose to receive information on our products, offers and more")) {
                         System.out.println("Successfully validated the OVerLay Icon Text ie : " + thisOrderOVerLayTxt);
                         log.debug("Successfully validated the OVerLay Icon Text ie : " + thisOrderOVerLayTxt);
-                        Thread.sleep(3000);
+                        Thread.sleep(5000);
                         DeliveryPage.closeOveryPopup.click();
                     } else {
                         System.out.println("Failed to validate the Overlay icon Text");

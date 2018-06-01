@@ -31,7 +31,7 @@ public class BaseCommPage {
     public static List<WebElement> DevicesList;
 
 
-    @FindBy(how = How.XPATH, using = ("(//*[@id='qa-data']/a[@id='data_qa_Huawei_1']/form/button)[2]"))
+    @FindBy(how = How.XPATH, using = ("(//button[normalize-space()='Buy Now'])[1]"))
     public static WebElement RandomDevice;
 
 	/*@FindAll({

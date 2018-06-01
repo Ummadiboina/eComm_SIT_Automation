@@ -14,7 +14,7 @@ Feature: Reg_FNT_PayMPhonesAdditionalDepositConfirmation
     #And input <Firstname> and <Surname> and other valid details in Delivery page and Click on the 'Continue button'
     #And input <Firstname> and <Surname> and other valid details in Delivery page for Click and collect and Click on the 'Continue button'
     And land on the payment page and input <Username> and other details for Click and collect order and click 'Continue on next step'
-    Then Additional information page should be displayed
+    #Then Additional information page should be displayed
     And upon entering Valid details with valid new <Username2> and card number
     And Continue to Agreements page and confirm all the agreement checks
     And Continue to Review page and review the order
@@ -22,5 +22,5 @@ Feature: Reg_FNT_PayMPhonesAdditionalDepositConfirmation
     Then Choose <consumer> <status> Business preferences <B1> <B2> <B3> <B4> And Channel Preferences <Text> <Email> <Phone> <Post> <MBBStatus> <DeviceType>
 
     Examples:
-      | Firstname | Surname  | Username      | handset | Username2    | consumer | B1     | B2  | B3  | B4  | Text   | Email | Phone | Post | status  | MBBStatus | DeviceType |
-      | TEST      | ADDINFOI | TEST ADDINFOI | Galaxy  | TEST ACCEPTA | Me       | Select | Not | Not | Not | Select | Not   | Not   | Not  | Enabled | No        | Connected  |
+      | Firstname | Surname | Username     | handset | Username2    | consumer | B1     | B2  | B3  | B4  | Text   | Email | Phone | Post | status  | MBBStatus | DeviceType |
+      | test      | acceptb | test acceptb | Galaxy  | TEST ACCEPTB | Me       | Select | Not | Not | Not | Select | Not   | Not   | Not  | Enabled | No        | Connected  |

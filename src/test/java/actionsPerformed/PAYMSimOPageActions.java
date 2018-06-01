@@ -3,6 +3,8 @@ package actionsPerformed;
 import java.awt.AWTException;
 import java.io.IOException;
 import java.util.List;
+
+import GlobalActions.scrollToAnElement;
 import org.openqa.selenium.Keys;
 import org.apache.log4j.Logger;
 import org.junit.Assert;
@@ -27,10 +29,12 @@ public class PAYMSimOPageActions extends Environment {
 	public static void ValidateContractLengths(String elementName)
 			throws InterruptedException, AWTException, IOException {
 		// Assert.assertTrue(driver.getTitle().contains("30 Days");
-
+		scrollToAnElement.scrollToElement(pageobjects.PAYMSimOPage.thirtydays);
+		Screenshots.captureScreenshot();
 		if (elementName.contains("30 Days")) {
 			log.debug("The Contract length is " + pageobjects.PAYMSimOPage.thirtydays.getText());
 			log.debug("The Contract length is " + pageobjects.PAYMSimOPage.thirtydays.getText());
+			Screenshots.captureScreenshot();
 			pageobjects.PAYMSimOPage.thirtydays.sendKeys(Keys.ENTER);
 			Thread.sleep(10000);
 			log.debug("Clicked on 30 Days contract tab");
@@ -40,11 +44,12 @@ public class PAYMSimOPageActions extends Environment {
 
 			log.debug("The Contract length is " + pageobjects.PAYMSimOPage.twelevemonths.getText());
 			log.debug("The Contract length is " + pageobjects.PAYMSimOPage.twelevemonths.getText());
+			Screenshots.captureScreenshot();
 			pageobjects.PAYMSimOPage.twelevemonths.sendKeys(Keys.ENTER);
 			Thread.sleep(10000);
 			log.debug("Clicked on 12 Months contract tab");
 		}
-		Screenshots.captureScreenshot();
+
 	}
 
 	public static void SelectTariffPhonesTab(String elementName)
@@ -791,6 +796,8 @@ public class PAYMSimOPageActions extends Environment {
 	public static void selectIWillKeepMyCurrentSIM() throws IOException, InterruptedException {
 
 		WebElement element = pageobjects.PAYMSimOPage.IWillKeepMyCurrentSIM;
+		scrollToAnElement.scrollToElement(pageobjects.PAYMSimOPage.IWillKeepMyCurrentSIM);
+		Screenshots.captureScreenshot();
 		JavascriptExecutor executor = (JavascriptExecutor)driver;
 		executor.executeScript("arguments[0].click();", element);
 
