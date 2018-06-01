@@ -33,6 +33,10 @@ public class BasketPage {
 	@FindBy(how = How.XPATH, using = "//*[@class='basket-nav']/div[@class='proceed-checkout']/form//input[@name='securecheckout']")
 	public static WebElement checkoutbtn;
 
+	@FindBy(how = How.XPATH, using = "//h2[normalize-space()='Your order']")
+	public static WebElement YourOrder;
+
+
 	@FindBy(how = How.XPATH, using = "//*[@id='shopApp']/div[3]/div/div/div[1]/div[2]/ul/li[5]/section[2]/div/div/p[1]")
 	public static WebElement upfrontcost;
 

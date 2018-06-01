@@ -26,12 +26,15 @@ Feature: Reg_Jan_CFU_MbbSimo30days.feature
     Then I should see appropriate tariffs based on the selected sort option in the Upgrade SIMO MBB/Tablet journey <sortoption>
     And Click on different <Contract>  Months Tariff in Tab
     And Click on 'Select' CTA to buy a tariff
+    And land on the Non Credit check payment page and input <Username> and other details and click 'Continue on next step'
     And copy text SIM delivery required or not is displayed
     And Select 'I’ll keep my current sim' option
     And Click on 'I agree to the terms and condition' checkbox in SIMO review page
+    And Is this order for You or Someone else <consumer> when GDPR is <status>
     And Click on 'Place your order' CTA
     Then order confirmation is displayed
+    Then Choose <consumer> <status> Business preferences <B1> <B2> <B3> <B4> And Channel Preferences <Text> <Email> <Phone> <Post> <MBBStatus> <DeviceType>
 
     Examples:
-      | Contract | username           | password | filtername | sortoption                 |
-      | 30 Days  | 12342015@gmail.com | test123  | low        | Monthly data (High to low) |
+      | Contract | username                    | password | filtername | sortoption                 | Username     | consumer | B1  | B2  | B3     | B4  | Text | Email  | Phone | Post | status  | MBBStatus | DeviceType |
+      | 30 Days  | in_sep9242@stf.ref.o2.co.uk | test123  | low        | Monthly data (High to low) | TEST ACCEPTA | Me       | Not | Not | Select | Not | Not  | Select | Not   | Not  | Enabled | No        | Connected  |

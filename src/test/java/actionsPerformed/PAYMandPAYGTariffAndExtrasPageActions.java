@@ -8,6 +8,7 @@ import java.util.Hashtable;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
+import GlobalActions.scrollToAnElement;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.math.NumberUtils;
 import org.apache.log4j.Logger;
@@ -54,6 +55,8 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 	public static String TariffSelect(String ElementName) throws IOException, InterruptedException {
 
 		driver.manage().timeouts().implicitlyWait(120, TimeUnit.SECONDS);
+		scrollToAnElement.scrollToElement(PAYMandPAYGTariffAndExtrasPage.RandomTariff1);
+		Screenshots.captureScreenshot();
 		if (ElementName.equalsIgnoreCase("Randomtariff")) {
 			pageobjects.PAYMandPAYGTariffAndExtrasPage.RandomTariff1.sendKeys(Keys.ENTER);
 			//pageobjects.PAYMandPAYGTariffAndExtrasPage.RandomTariff1.click();

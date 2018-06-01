@@ -1086,6 +1086,18 @@ public class E2EOrderPlaced_Steps {
         }
     }
 
+    @And("^input title in Delivery page$")
+    public void DeliveryPage_Title() {
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, DeliveryPage.class);
+            DeliveryPageActions.AboutYouTitle();
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            log.debug("Unable to input title details in delivery page");
+            Assert.fail("Unable to input title details in delivery page");
+        }
+    }
 
     @And("^input ([^\"]*) and ([^\"]*) and other valid details in Delivery page to verify GDPR to click and collect$")
     public void DeliveryPage_Inputs_gdpr_ClickAndCollect(String Firstname, String Surname) {
@@ -1645,6 +1657,7 @@ public class E2EOrderPlaced_Steps {
             PaymentPageActions.Card_Details(Username);
             Thread.sleep(12000);
             PaymentPageActions.Card_Details_CCV();
+            Thread.sleep(12000);
         } catch (Exception e) {
             // TODO Auto-generated catch block
             log.debug("Unable to input details in payment page");
@@ -3325,7 +3338,9 @@ public class E2EOrderPlaced_Steps {
             PaymentPageActions.Time_At_Address();
             Thread.sleep(2000);
             PaymentPageActions.Card_Details(Username);
-            Thread.sleep(75000);
+            Thread.sleep(15000);
+            PaymentPageActions.Card_Details_CCV();
+            Thread.sleep(10000);
         } catch (Exception e) {
             // TODO Auto-generated catch block
             e.printStackTrace();

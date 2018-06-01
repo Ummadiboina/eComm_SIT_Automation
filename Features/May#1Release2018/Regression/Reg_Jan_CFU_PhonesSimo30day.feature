@@ -17,7 +17,7 @@ Feature: Reg_Jan_CFU_PhonesSimo30day
     And the data filters is displayed
     When I click on respective <filtername> data filter
     Then Data filter button should be in 'selected' state
-    And I should see appropriate tariffs based on the selected data filter <Tariffsortoption>
+    And I should see appropriate tariffs based on the selected data filter <sortoption>
     And the 'sorting dropdown' is displayed just below the toggle buttons sections
     And verify that the upfront sort options is not present in the 'sorting dropdown'
     Then I should see data filters buttons next to existing sort drop-down for PAYM/SIMO tariffs <sortoption>
@@ -27,8 +27,9 @@ Feature: Reg_Jan_CFU_PhonesSimo30day
     Then I should see tariffs based on the selected sort option <sortoption>
     And Click on different <Contract>  Months Tariff in Tab
     And Click on 'Select' CTA to buy a tariff
+    And land on the Non Credit check payment page and input <Username> and other details and click 'Continue on next step'
     And copy text SIM delivery required or not is displayed
 
     Examples:
-      | Contract | GiftBlock  | username               | password | filtername | sortoption                 | GiftBlock |
-      | 12 Days  | Configured | in01808o_894013@o2.com | test123  | high       | Monthly data (Low to High) | dfdf      |
+      | Contract | GiftBlock  | username               | Username     | password | filtername | sortoption                 | GiftBlock |
+      | 12 Days  | Configured | in01808o_894013@o2.com | TEST ACCEPTA | test123  | high       | Monthly data (Low to High) | dfdf      |

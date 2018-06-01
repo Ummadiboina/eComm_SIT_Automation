@@ -5,6 +5,7 @@ import java.net.MalformedURLException;
 import java.net.URI;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 import org.apache.log4j.Logger;
 import org.junit.Assert;
@@ -23,7 +24,7 @@ public class BaseCommPageActions extends Environment {
 	static List<String> BasecommCost = new ArrayList<>();
 
 	public static void SelectBaseCommTariff(String elementName) throws IOException, InterruptedException {
-
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		if (elementName.contains("Random")) {
 			log.debug("Selected Random Tariff");
 
