@@ -1,22 +1,16 @@
 package StepDefinition;
 
-import java.util.concurrent.TimeUnit;
-
-
-
-import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.interactions.Actions;
-
+import Environment.*;
+import Resources.SeleniumHelper;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
-import Resources.Filereadingutility;
-import Resources.SeleniumHelper;
-import Environment.*;
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
+
+import javax.annotation.Resources.Filereadingutility;
 
 
 public class Tariff_selection_Flow {
