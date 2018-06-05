@@ -15,7 +15,8 @@ Feature: Reg_FNT_PayMPhonesAdditionalDepositConfirmation
     #And input <Firstname> and <Surname> and other valid details in Delivery page for Click and collect and Click on the 'Continue button'
     And land on the payment page and input <Username> and other details for Click and collect order and click 'Continue on next step'
     #Then Additional information page should be displayed
-    And upon entering Valid details with valid new <Username2> and card number
+    #And upon entering Valid details with valid new <Username2> and card number
+    And upon entering Valid details for card number
     And Continue to Agreements page and confirm all the agreement checks
     And Continue to Review page and review the order
     Then order confirmation is displayed

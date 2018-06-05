@@ -677,7 +677,7 @@ public class E2EOrderPlaced_Steps {
     }
 
     @Given("^Signin using valid ([^\"]*) and ([^\"]*) credentials for New User$")
-    public void signin_using_valid_ink_jun_and_test_credentials_New(String username, String password)throws Throwable {
+    public void signin_using_valid_ink_jun_and_test_credentials_New(String username, String password) {
         try {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, UpgradeCustomerPage.class);
@@ -1739,6 +1739,21 @@ public class E2EOrderPlaced_Steps {
             Thread.sleep(2000);
             AdditionalInformationPageActions.AdditionalCardDetails(Username2);
             Thread.sleep(4000);
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            log.debug("unable to add details in Additional information page");
+            Assert.fail("unable to add details in Additional information page");
+
+        }
+    }
+
+    @Then("^upon entering Valid details for card number$")
+    public void EnterValidCardCCV() {
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, AdditionalInformationPage.class);
+            AdditionalInformationPageActions.AdditionalCardCCV();
+
         } catch (Exception e) {
             // TODO Auto-generated catch block
             log.debug("unable to add details in Additional information page");
@@ -9803,7 +9818,7 @@ public class E2EOrderPlaced_Steps {
 
 //GDPR
     @And("^Is this order for You or Someone else ([^\"]*) when GDPR is ([^\"]*)$")
-    public void isThisOrder4UorSomeoneElse(String customer, String status)throws InterruptedException, IOException {
+    public void isThisOrder4UorSomeoneElse(String customer, String status)throws IOException {
         try {
             driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
             PageFactory.initElements(driver, DeliveryPage.class);
