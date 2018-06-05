@@ -21,5 +21,5 @@ Feature: Reg_TrustevPayMPhones_ClickandCollectE2EjourneyWithAccessoryInAgentShop
     Then Order confirmation message should be displayed
 #Random
     Examples:
-      | Device | Tariffs  | Accessory                        | Firstname | Surname | HouseNumber | PostCode | Username     | Password | Confirm_Password | Security_Answer | B1     | B2  | B3     | B4  | Text   | Email  | Phone | Post | Consumer | status  | MBBStatus | DeviceType | DeviceModule |
-      | Random | Standard | iPhone 7 Evo Elite Brushed Black | TEST      | ACCEPTA | 32          | SL11ER   | TEST ACCEPTA | test123  | test123          | Anything        | Select | Not | Select | Not | Select | Select | Not   | Not  | Me       | Enabled | No        | Connected  | Phone        |
+      | Device                    | Tariffs  | Accessory                        | Firstname | Surname | HouseNumber | PostCode | Username     | Password | Confirm_Password | Security_Answer | B1     | B2  | B3     | B4  | Text   | Email  | Phone | Post | Consumer | status  | MBBStatus | DeviceType | DeviceModule |
+      | iPhone X 256GB Space Grey | Standard | iPhone 7 Evo Elite Brushed Black | TEST      | ACCEPTA | 32          | SL11ER   | TEST ACCEPTA | test123  | test123          | Anything        | Select | Not | Select | Not | Select | Select | Not   | Not  | Me       | Enabled | No        | Connected  | Phone        |

@@ -6,6 +6,7 @@ import java.util.Map;
 
 import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import cucumber.api.DataTable;
 
@@ -70,6 +71,42 @@ public class AdditionalInformationPageActions extends Environment {
 		driver.switchTo().defaultContent();
 		// log.debug(driver.getTitle());
 		Screenshots.captureScreenshot();
+	}
+
+	public static void AdditionalCardCCV() throws InterruptedException, IOException {
+		Thread.sleep(7000);
+		driver.switchTo().frame("deposit-iframe"); // switching the frame by ID
+
+
+		PaymentPage.SecurityCode.sendKeys("123");
+		log.debug("Entered CVV security code");
+		Thread.sleep(2000);
+		Screenshots.captureScreenshot();
+		PaymentPage.Continue_Next_Step.sendKeys(Keys.ENTER);
+		log.debug("Clicking on continue to next step");
+		Thread.sleep(2000);
+		log.debug("*********We are done***************");
+		log.debug("Exiting the deposit section");
+
+		// log.debug(driver.getTitle());
+
+		Thread.sleep(10000);
+
+		if (driver.findElements(By.xpath("//input[@type='password']")).size() > 0) {
+			PaymentPage.CCVSecurityCode.sendKeys("1234");
+			log.debug("Entered CVV security code");
+			Thread.sleep(3000);
+			Screenshots.captureScreenshot();
+			JavascriptExecutor executor = (JavascriptExecutor) driver;
+			executor.executeScript("arguments[0].click();", PaymentPage.Submit_Next_Step);
+			//PaymentPage.Submit_Next_Step.click();
+			log.debug("Clicking on submit to next step");
+			log.debug("*********We are done***************");
+			log.debug("Exiting the payment section");
+
+			Thread.sleep(10000);
+		}
+		driver.switchTo().defaultContent();
 	}
 
 	public static void ClickOn() throws IOException, InterruptedException {
