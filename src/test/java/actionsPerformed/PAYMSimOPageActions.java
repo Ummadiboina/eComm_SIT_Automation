@@ -812,7 +812,7 @@ public class PAYMSimOPageActions extends Environment {
 	}
 
 	public static void clickOnPlaceYourOrderButton() throws IOException, InterruptedException {
-
+		Thread.sleep(6000);
 		WebElement element = pageobjects.PAYMSimOPage.PlaceYourOrder;
 		JavascriptExecutor executor = (JavascriptExecutor)driver;
 		executor.executeScript("arguments[0].click();", element);

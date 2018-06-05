@@ -268,10 +268,13 @@ public class DeliveryPageActions extends Environment {
                 Thread.sleep(3000);
                 if (DeliveryPage.thisOrderOverlayTxt.isDisplayed()) {
                     if (thisOrderOVerLayTxt.contains("choose to receive information on our products, offers and more")) {
-                        System.out.println("Successfully validated the OVerLay Icon Text ie : " + thisOrderOVerLayTxt);
+                        System.out.println("Successfully validated the OverLay Icon Text ie : " + thisOrderOVerLayTxt);
                         log.debug("Successfully validated the OVerLay Icon Text ie : " + thisOrderOVerLayTxt);
-                        Thread.sleep(5000);
-                        DeliveryPage.closeOveryPopup.click();
+                        Thread.sleep(8000);
+
+                        JavascriptExecutor executor = (JavascriptExecutor)driver;
+                        executor.executeScript("arguments[0].click();", DeliveryPage.closeOveryPopup);
+                        //DeliveryPage.closeOveryPopup.click();
                     } else {
                         System.out.println("Failed to validate the Overlay icon Text");
                         log.info("Failed to validate the Overlay icon Text");

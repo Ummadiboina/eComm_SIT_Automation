@@ -2,6 +2,7 @@ package actionsPerformed;
 
 import java.io.IOException;
 
+import GlobalActions.scrollToAnElement;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.By;
@@ -84,7 +85,9 @@ public class TabletPageActions extends Environment {
 			}
 			driver.manage().timeouts().implicitlyWait(120, TimeUnit.SECONDS);
 			log.debug("Random Tablet is selected");
-
+			scrollToAnElement.scrollToElement(pageobjects.TabletPage.RandomTablet);
+			Screenshots.captureScreenshot();
+			Thread.sleep(3000);
 			pageobjects.TabletPage.RandomTablet.click();
 			Thread.sleep(7000);
 

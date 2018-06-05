@@ -210,7 +210,7 @@ public class SimsPageActions extends Environment {
 
     public static void sortingDropdownIsDisplayedJstBelowToggleButtonsSections() throws Exception {
         try {
-            driver.manage().timeouts().implicitlyWait(2, TimeUnit.MINUTES);
+            driver.manage().timeouts().implicitlyWait(10, TimeUnit.MINUTES);
             if (driver.findElements(By.xpath("//div[@class='tab-buttons-container']/following-sibling::div//span[@id='dataFilterSelectSelectBoxIt']")).size() > 0) {
                 if (driver.findElement(By.xpath("//div[@class='tab-buttons-container']/following-sibling::div//span[@id='dataFilterSelectSelectBoxIt']")).isDisplayed()) {
                     scrollToAnElement.scrollToElement(driver.findElement(By.xpath("//div[@class='tab-buttons-container']/following-sibling::div//span[@id='dataFilterSelectSelectBoxIt']")));

@@ -533,7 +533,7 @@ public class E2EOrderPlaced_Steps {
     @And("^Click on different ([^\"]*) Months Tariff in Tab$")
     public void click_on_different_Months_Tariff_in_Tab(String Contract) {
         try {
-            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
             PageFactory.initElements(driver, PAYMSimOPage.class);
             PAYMSimOPageActions.ValidateContractLengths(Contract);
         } catch (Exception e) {
@@ -6524,7 +6524,7 @@ public class E2EOrderPlaced_Steps {
 
         try {
 
-            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
             PageFactory.initElements(driver, PAYMandPAYGTariffAndExtrasPage.class);
 
             PAYMandPAYGTariffAndExtrasPageActions.SortFilterPosition();
@@ -6686,7 +6686,7 @@ public class E2EOrderPlaced_Steps {
     @When("^I click on respective ([^\"]*) data filter$")
     public void clickOnRespectiveDataFilter(String range) {
         try {
-            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
             PageFactory.initElements(driver, PAYMandPAYGTariffAndExtrasPage.class);
             DataFilterRange = range;
             PAYMandPAYGTariffAndExtrasPageActions.clickViewAllTariffs();
@@ -6742,7 +6742,7 @@ public class E2EOrderPlaced_Steps {
     @And("^I should see appropriate tariffs based on the selected data filter ([^\"]*)$")
     public void getTariffList(String SortOption) {
         try {
-            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
             PageFactory.initElements(driver, PAYMandPAYGTariffAndExtrasPage.class);
 
             if (DataFilterRange.contains("high")) {
@@ -6880,7 +6880,7 @@ public class E2EOrderPlaced_Steps {
         log.debug("Running Test Step: @And(I should see tariffs relevant to selected sort option and filter option)");
 
         try {
-            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
             PageFactory.initElements(driver, PAYMandPAYGTariffAndExtrasPage.class);
             PageFactory.initElements(driver, UpgradeCustomerPage.class);
 
@@ -7037,9 +7037,11 @@ public class E2EOrderPlaced_Steps {
         log.debug("Running Test Step: @And(I should see tariffs based on the selected sort option)");
 
         try {
-            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
             PageFactory.initElements(driver, PAYMandPAYGTariffAndExtrasPage.class);
-
+            scrollToAnElement.scrollToElement(pageobjects.PAYMandPAYGTariffAndExtrasPage.RandomTariff1);
+            Screenshots.captureScreenshot();
+            Thread.sleep(4000);
             ArrayList<Integer> ListAfterSort = null;
             ArrayList<Integer> ListBeforeSort = expectedTariffListBeforeSort;
 
@@ -7159,7 +7161,7 @@ public class E2EOrderPlaced_Steps {
     @And("^If I select ANY sort option ([^\"]*) from the drop-down$")
     public void select_sort_Tariff_dropdown(String tariffSortDropDown) {
         try {
-            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
             PageFactory.initElements(driver, PAYMandPAYGTariffAndExtrasPage.class);
             PAYMandPAYGTariffAndExtrasPageActions.selectTariffSort(tariffSortDropDown);
 
@@ -7206,7 +7208,7 @@ public class E2EOrderPlaced_Steps {
     @Then("^Data filter button should be in 'selected' state$")
     public void data_filter_button_should_be_in_selected_state() {
         try {
-            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
             PageFactory.initElements(driver, PAYMandPAYGTariffAndExtrasPage.class);
             String Filteroption = FilterDataOption;
             log.debug(Filteroption);
@@ -7222,7 +7224,7 @@ public class E2EOrderPlaced_Steps {
     @When("^I deselect filter button$")
     public void i_deselect_filter_button() {
         try {
-            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
             PageFactory.initElements(driver, PAYMandPAYGTariffAndExtrasPage.class);
             PAYMandPAYGTariffAndExtrasPageActions.DeSelectedState();
         } catch (Exception e) {
@@ -8654,7 +8656,7 @@ public class E2EOrderPlaced_Steps {
     public void Click_on_Select_CTA_to_buy_SIMO_Tariff()
     {
         try {
-            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
             PageFactory.initElements(driver, PAYMSimOPage.class);
             PAYMSimOPageActions.SelectCTAtoBuySIMOtariff();
             log.debug("Selected tariff in SIMO journey");

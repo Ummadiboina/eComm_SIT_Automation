@@ -2464,7 +2464,7 @@ public class UpgradeCustomerPageActions extends Environment {
 
     public static void upfront_sort_options_is_not_present_in_sortingDropdown() {
         try {
-            driver.manage().timeouts().implicitlyWait(2, TimeUnit.MINUTES);
+            driver.manage().timeouts().implicitlyWait(10, TimeUnit.MINUTES);
             if (UpgradeCustomerPage.dataFilter.isDisplayed()) {
                 UpgradeCustomerPage.dataFilter.click();
 
