@@ -1040,6 +1040,7 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 		pageobjects.PAYMandPAYGTariffAndExtrasPage.DataFilterSelectedXpath.click();
 		Thread.sleep(5000);
 		log.debug("Deselected the selected data filter tab");
+		Thread.sleep(5000);
 		Screenshots.captureScreenshot();
 
 	}

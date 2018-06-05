@@ -354,6 +354,7 @@ public class BasketPageActions extends Environment {
 				log.debug("PostCode Entered for Search");
 				Thread.sleep(4000);
 				Screenshots.captureScreenshot();
+				Thread.sleep(3000);
 				pageobjects.BasketPage.PostcodeSubmit.click();
 				Thread.sleep(5000);
 				// Assert.assertEquals(elementName,"Galaxy S7 is not found");
