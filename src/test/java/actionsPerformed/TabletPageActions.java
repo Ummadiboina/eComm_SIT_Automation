@@ -76,18 +76,19 @@ public class TabletPageActions extends Environment {
 
 		if (elementName.contains("Random Device")) {
 
-			/*JavascriptExecutor js = ((JavascriptExecutor) driver);
+			JavascriptExecutor js = ((JavascriptExecutor) driver);
 			js.executeScript("arguments[0].scrollIntoView(true);",driver.findElement(By.xpath("(//a[contains(., 'View all products on one page')])[2]")));
 			Thread.sleep(4000);
 			if(driver.findElements(By.xpath("(//a[contains(., 'View all products on one page')])[2]")).size() > 0) {
+				Thread.sleep(4000);
 				driver.findElement(By.xpath("(//a[contains(., 'View all products on one page')])[2]")).click();
 				log.debug("Clicked on View all products on one page(2)");
-			}*/
+			}
 			//driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 			Thread.sleep(6000);
 			scrollToAnElement.scrollToElement(pageobjects.TabletPage.RandomTablet);
 			Screenshots.captureScreenshot();
-			Thread.sleep(3000);
+			Thread.sleep(4000);
 			pageobjects.TabletPage.RandomTablet.click();
 			log.debug("Random Tablet is selected");
 			Thread.sleep(7000);

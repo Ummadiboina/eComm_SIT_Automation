@@ -5,15 +5,12 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
-import GlobalActions.CommonActions;
-import GlobalActions.CommonUtilities;
+import GlobalActions.*;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Reporter;
 
-import GlobalActions.RandomEmailAddressCreation;
-import GlobalActions.Screenshots;
 import helpers.Environment;
 import pageobjects.DeliveryPage;
 import java.util.Iterator;
@@ -44,7 +41,9 @@ public class FreeSimDeliveryPageActions extends Environment {
 		DeliveryPage.Last_Name.sendKeys(Surname);
 		log.debug("Entered first name and last name as " + Firstname + " " + Surname);
 		DeliveryPage.Contact_Number.sendKeys("07829483426");
+		scrollToAnElement.scrollToElement(DeliveryPage.Email_Address);
 		Screenshots.captureScreenshot();
+		Thread.sleep(4000);
 	}
 
 	public static void marketingMessageCheckBox(String CheckBox) throws InterruptedException, IOException {
@@ -116,10 +115,11 @@ public class FreeSimDeliveryPageActions extends Environment {
 		log.debug("Clicking on Send me  my Free Sim page");
 		Thread.sleep(3000);
 		DeliveryPage.FreeSimTC.click();
+		Screenshots.captureScreenshot();
 		Thread.sleep(3000);
 		DeliveryPage.SendMeMySim.click();
 		log.debug("Clicking on the Send me my Sim Button");
-		Screenshots.captureScreenshot();
+
 
 	}
 

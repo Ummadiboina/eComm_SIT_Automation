@@ -22,7 +22,6 @@ public class MouseHoverPage extends Environment {
 	public static WebElement MouseMoveonUpgrade_Drupal;
 
 
-
 	// Below will click on the Phones Link
 	@FindBy(how = How.XPATH, using = ("//li[@class='has-submenu']//a[normalize-space()='Phones']"))
 	public static WebElement MoveMouseOnPhones;
@@ -145,6 +144,13 @@ public class MouseHoverPage extends Environment {
 	// Below is the link on the Smartwatches
 	@FindBy(how = How.XPATH, using = ("//a[contains(text(), 'Smartwatches')]"))
 	public static WebElement MoveMouseOnSmartwatches;
+
+	@FindBy(how = How.XPATH, using = ("//li[contains(@class,'tier-menu-wrapper')]//a[normalize-space()='Browse smart tech']"))
+	public static WebElement MoveMouseOnSmarttechTab_Drupal;
+
+	@FindBy(how = How.XPATH, using = ("//h3[normalize-space()='Smartwatches']//following-sibling::p[normalize-space()='See the range']"))
+	public static WebElement MoveMouseOnSmarttechWatches_Drupal;
+
 
 	// Below is the link on the Fitness
 
