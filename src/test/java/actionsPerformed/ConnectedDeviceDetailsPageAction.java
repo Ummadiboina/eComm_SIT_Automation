@@ -316,7 +316,7 @@ public class ConnectedDeviceDetailsPageAction extends Environment {
     public static void checkDevStatusAsDelayedDelivery() throws IOException, InterruptedException {
         // TODO Auto-generated method stub
         String deliveryMg = pageobjects.ConnectedDeviceDetailsPage.DevStatusMsg.getText();
-        if (deliveryMg.contains("Home delivery")) {
+        if (deliveryMg.contains("Home delivery") || deliveryMg.contains("Order by midnight")) {
             log.debug("Device is Delayed Delivery Device");
             log.debug("Device is Delayed Delivery Device");
         } else {

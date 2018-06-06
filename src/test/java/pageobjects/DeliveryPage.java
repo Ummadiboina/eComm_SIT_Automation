@@ -41,7 +41,7 @@ public class DeliveryPage {
     public static WebElement Select_Store;
 
 
-    @FindBy(how = How.XPATH, using = "//*[@id='delivery-address-selection']/li[1]")
+    @FindBy(how = How.XPATH, using = "//*[@id='delivery-address-selection' or @id='address-selection']/li[1]")
     public static WebElement SelectAddress1;
 
 

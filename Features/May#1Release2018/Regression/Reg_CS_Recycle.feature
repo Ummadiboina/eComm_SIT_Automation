@@ -33,4 +33,4 @@ Feature: Reg_CS_Recycle.feature
 
     Examples:
       | username                  | password | handset        | tariff                  | Firstname | Surname | Username     | Action | Make  | Model   | Network | consumer | B1  | B2     | B3  | B4  | Text   | Email | Phone | Post | status  | MBBStatus | DeviceType |
-      | aslkrewq@stf.ref.o2.co.uk | test123  | Apple iPhone 7 | 29.99upfront46.00amonth | TEST      | ACCEPTA | TEST ACCEPTA | skip   | Apple | Iphone7 | Orange  | Me       | Not | Select | Not | Not | Select | Not   | Not   | Not  | Enabled | No        | Connected  |
+      | test@usersadfsad.com | test123  | Apple iPhone 7 | 29.99upfront46.00amonth | TEST      | ACCEPTA | TEST ACCEPTA | skip   | Apple | Iphone7 | Orange  | Me       | Not | Select | Not | Not | Select | Not   | Not   | Not  | Enabled | No        | Connected  |

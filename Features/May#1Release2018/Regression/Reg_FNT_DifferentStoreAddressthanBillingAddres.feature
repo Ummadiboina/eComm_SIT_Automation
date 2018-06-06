@@ -20,5 +20,5 @@ Feature: Reg_FNT_DifferentStoreAddressthanBillingAddres
     Then Choose <consumer> <status> Business preferences <B1> <B2> <B3> <B4> And Channel Preferences <Text> <Email> <Phone> <Post> <MBBStatus> <DeviceType>
 
     Examples:
-      | handset | Firstname | Surname | Username     | consumer | B1     | B2  | B3  | B4  | Text   | Email | Phone | Post | status  | MBBStatus | DeviceType |
-      | Samsung  | TEST      | ACCEPTA | TEST ACCEPTA | Me       | Select | Not | Not | Not | Select | Not   | Not   | Not  | Enabled | No        | Connected  |
+      | handset | Firstname | Surname | Username     | consumer | B1     | B2  | B3     | B4  | Text   | Email | Phone | Post   | status  | MBBStatus | DeviceType |
+      | Samsung | TEST      | ACCEPTA | TEST ACCEPTA | Me       | Select | Not | Select | Not | Select | Not   | Not   | Select | Enabled | No        | Connected  |

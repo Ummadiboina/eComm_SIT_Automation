@@ -54,7 +54,7 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 
 	public static String TariffSelect(String ElementName) throws IOException, InterruptedException {
 
-		driver.manage().timeouts().implicitlyWait(120, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		scrollToAnElement.scrollToElement(PAYMandPAYGTariffAndExtrasPage.RandomTariff1);
 		Screenshots.captureScreenshot();
 		if (ElementName.equalsIgnoreCase("Randomtariff")) {
@@ -70,11 +70,17 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 		}
 		if (ElementName.contains("fullpaymenttariff1")) {
 
-			JavascriptExecutor jse = (JavascriptExecutor) driver;
-			jse.executeScript("window.scrollBy(0,350)", "");
-			pageobjects.PAYMandPAYGTariffAndExtrasPage.paydevicefulllink.click();
-			log.debug("Expanded the Full payment Tariff Section");
+			JavascriptExecutor executor = (JavascriptExecutor)driver;
+			executor.executeScript("window.scrollBy(0,300)", "");
+			Thread.sleep(5000);
+			Screenshots.captureScreenshot();
+			//pageobjects.PAYMandPAYGTariffAndExtrasPage.paydevicefulllink.click();
 
+			executor.executeScript("arguments[0].click();", pageobjects.PAYMandPAYGTariffAndExtrasPage.paydevicefulllink);
+
+			log.debug("Expanded the Full payment Tariff Section");
+			Thread.sleep(5000);
+			Screenshots.captureScreenshot();
 			pageobjects.PAYMandPAYGTariffAndExtrasPage.RandomfullTariff1.sendKeys(Keys.ENTER);
 			log.debug("Selected a full payment Tariff");
 		}

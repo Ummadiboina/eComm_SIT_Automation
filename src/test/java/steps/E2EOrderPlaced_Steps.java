@@ -1631,6 +1631,8 @@ public class E2EOrderPlaced_Steps {
             //CommonFunctionscheckTitle("Payment Page");
             PaymentPageActions.Set_Bank_details(Username);
             Thread.sleep(5000);
+            DeliveryPageActions.SetDelivery();
+            Thread.sleep(4000);
            // PaymentPageActions.Time_At_Address_CC();
             PaymentPageActions.Time_At_Address();
             Thread.sleep(5000);
@@ -5892,8 +5894,8 @@ public class E2EOrderPlaced_Steps {
                 Thread.sleep(3000);
             }
             if (status.equals("Delayed Delivery")) {
-                // ConnectedDeviceDetailsPageAction.checkDevStatusAsDelayedDelivery();
-                ConnectedDeviceDetailsPageAction.checkDevStatusAsPreOrder();
+                ConnectedDeviceDetailsPageAction.checkDevStatusAsDelayedDelivery();
+                //ConnectedDeviceDetailsPageAction.checkDevStatusAsPreOrder();
                 Thread.sleep(3000);
             }
             if (status.equals("In Stock")) {

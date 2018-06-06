@@ -127,7 +127,7 @@ public class PaymentPageActions extends Environment {
         Thread.sleep(2000);
         pageobjects.PaymentPage.Stay_Address_months.sendKeys("9");
         log.debug("Entered the stayed at months - 9");
-        Thread.sleep(2000);
+        Thread.sleep(4000);
 
         //executor.executeScript("arguments[0].click();", pageobjects.PaymentPage.Confirm_Address_Checkbox);
 

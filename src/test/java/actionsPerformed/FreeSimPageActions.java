@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
 
+import GlobalActions.scrollToAnElement;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.support.ui.Select;
@@ -25,10 +26,12 @@ public class FreeSimPageActions extends Environment {
 
 		log.debug("Clicking on iPadsandTabletstab");
 		Thread.sleep(3000);
+		Screenshots.captureScreenshot();
 		pageobjects.FreeSimPage.iPadsandTabletstab.click();
 		log.debug("Clicking on iPadsandTablets tab");
+		scrollToAnElement.scrollToElement(pageobjects.FreeSimPage.iPadsandTabletstab);
 		Screenshots.captureScreenshot();
-
+		Thread.sleep(6000);
 	}
 
 	public static void Mobile_iPadsandTabletstab() throws InterruptedException, IOException {
@@ -69,6 +72,7 @@ public class FreeSimPageActions extends Environment {
 		pageobjects.FreeSimPage.Postcode.sendKeys(Keys.TAB );
 		Thread.sleep(3000);
 		log.debug("Entered the Postcode");
+		scrollToAnElement.scrollToElement(pageobjects.FreeSimPage.Housename);
 		Screenshots.captureScreenshot();
 	}
 
