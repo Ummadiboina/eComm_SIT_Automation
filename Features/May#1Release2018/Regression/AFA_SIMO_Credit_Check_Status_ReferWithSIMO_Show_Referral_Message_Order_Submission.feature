@@ -1,4 +1,4 @@
-Feature: AFA_Allow_ReferWithSIMO_Credit_Check_Status_For_SIMO_Order_And_Show_ReferralMessage
+Feature: AFA_SIMO_Credit_Check_Status_ReferWithSIMO_Show_Referral_Message_Order_Submission
   This scenario ensures that when agent on acquisition journey selects 'SIMO' and performs credit check status with 'RefferWithSIMO' then agent should see referral message and then should be able to place an order successfully and order submission status should be 'Referred' in log file
 
   @Web

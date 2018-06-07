@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
+import GlobalActions.Autoredirection;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -177,6 +178,9 @@ public class AccessoryPageActions extends Environment {
 			log.debug("Samsung S8 Plus Original LED Cover Selected");
 		}
 		Screenshots.captureScreenshot();
+
+		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+		Autoredirection.redirectforHTTPsconnections();
 	}
 	/*
 	 * Below has been modified as per the new ui layout, new function has been

@@ -3852,6 +3852,7 @@ public class E2EOrderPlaced_Steps {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, ConnectedDeviceDetailsPage.class);
             ConnectedDeviceDetailsPageAction.colorSelectOfDeviceDropDown(color);
+            Thread.sleep(5000);
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -5489,7 +5490,7 @@ public class E2EOrderPlaced_Steps {
             // Assert.assertTrue("Your error message",
             // OrderConfirmationPageActions.TimeslotMessage().contains(ExpectedMessage));
 
-            ExpectedTimeSlotMessage = "Your order will be delivered for free, via Royal Mail, within three working days.";
+
 
             Assert.assertTrue(driver.getPageSource().contains(ExpectedTimeSlotMessage),
                     "Assertion Failed: Expected Message: " + ExpectedTimeSlotMessage + " is not present in the page"
@@ -6803,8 +6804,8 @@ public class E2EOrderPlaced_Steps {
 
         } catch (Exception e) {
             // TODO Auto-generated catch block
-            log.debug("Unable to click on respective data filter");
-            Assert.fail("Unable to click on respective data filter");
+            log.debug("Unable to click on appropriate tariffs based on the selected data filter");
+            Assert.fail("Unable to click on appropriate tariffs based on the selected data filter");
         }
     }
 

@@ -21,5 +21,5 @@ Feature: Reg_Jan_Existing_OOSForHomeDeliveryandCnC.feature
 
 
     Examples:
-      | handset | color     | username                      | password |
-      | 3T      | Soft Gold | 01ma92047305@stf.ref.o2.co.uk | test123  |
+      | handset | color     | username               | password |
+      | 3T      | Soft Gold | dasdasdkjaskd@sdsd.com | test123  |
