@@ -23,12 +23,14 @@ Feature: Reg_CFD2064_ECOM11810_11811_CFU_ordering choice on upgrade options page
     And Verify that the option selected by the user in 'Your sim card' section in upgrade options page is retained
     And click on "go to checkout" button
     And perform <Action> in OTAC page
-    And Click on the 'Continue button' in delivery page
+    #And Click on the 'Continue button' in delivery page
+    And Is this order for You or Someone else <consumer> when GDPR is <status>
     And land on the payment page and input <Username> and other details and click 'Continue on next step' in upgrade journey
     And Continue to Agreements page and confirm all the agreement checks
     And Continue to Review page and review the order
     Then order confirmation is displayed
+    Then Choose <consumer> <status> Business preferences <B1> <B2> <B3> <B4> And Channel Preferences <Text> <Email> <Phone> <Post> <MBBStatus> <DeviceType>
 
     Examples:
-      | username         | password | handset           | Username     | Action |tariff|
-      | ash@o2.com       | test123  | Samsung Galaxy S8 | TEST ACCEPTA | skip   |      |
+      | username           | password | handset           | Username     | Action | tariff                  | consumer | B1     | B2  | B3     | B4  | Text | Email  | Phone | Post | status  | MBBStatus | DeviceType |
+      | test7894@gmail.com | test123  | Samsung Galaxy S8 | TEST ACCEPTA | skip   | 19.99upfront45.00amonth | Me       | Select | Not | Select | Not | Not  | Select | Not   | Not  | Enabled | No        | Connected  |

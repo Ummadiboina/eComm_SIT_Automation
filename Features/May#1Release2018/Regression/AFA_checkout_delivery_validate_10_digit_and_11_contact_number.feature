@@ -1,4 +1,4 @@
-Feature: Reg_Jan_AgentToAcceptTenDigitsPhoneNumber
+Feature: AFA_checkout_delivery_validate_10_digit_and_11_contact_number
 
   This scenario ensures that the Agent shop accepts 10 digit home number
 

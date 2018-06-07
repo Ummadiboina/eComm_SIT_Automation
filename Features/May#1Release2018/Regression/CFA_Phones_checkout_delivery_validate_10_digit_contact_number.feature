@@ -1,4 +1,4 @@
-Feature: Reg_Jan_ConsumerToAcceptTenDigitsPhoneNumber.feature
+Feature: CFA_Phones_checkout_delivery_validate_10_digit_contact_number.feature
 
   This scenario ensures that the consumer shop accepts 10 digit home number
 

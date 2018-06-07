@@ -930,12 +930,14 @@ public class MouseHoverAction extends Environment {
                 Thread.sleep(5000);
                 Screenshots.captureScreenshot();
 
-                log.debug("Clicking on PayG Phones");
+                log.debug("Clicking on Accessories Tab");
                 // Move mouse pointer away from location
                 Point coordinates2 = driver.findElement(By.xpath("(//div[@class='navContainer']/ul)[1]")).getLocation();
                 Robot robot2 = new Robot();
                 robot2.mouseMove(coordinates2.getX(), coordinates.getY() + 300);
                 log.debug("Moved Mouse to somewhere side of page");
+
+
             } else {
                 System.out.println("Drupal's are Disiabled");
                 log.debug("Drupal's are Disiabled");
