@@ -71,7 +71,7 @@ public class TabletPageActions extends Environment {
 	}
 
 	public static void DeviceSelect(String elementName) throws InterruptedException, IOException {
-		Thread.sleep(10000);
+		Thread.sleep(4000);
 
 		if (elementName.contains("Random Device")) {
 
@@ -79,12 +79,16 @@ public class TabletPageActions extends Environment {
 			js.executeScript("arguments[0].scrollIntoView(true);",driver.findElement(By.xpath("(//a[contains(., 'View all products on one page')])[2]")));
 
 			if(driver.findElements(By.xpath("(//a[contains(., 'View all products on one page')])[2]")).size() > 0) {
-				driver.findElement(By.xpath("(//a[contains(., 'View all products on one page')])[2]")).click();
+				Thread.sleep(2000);
+				WebElement ele = driver.findElement(By.xpath("(//a[contains(., 'View all products on one page')])[2]"));
+				((JavascriptExecutor)driver).executeScript("arguments[0].click();", ele);
+				Thread.sleep(5000);
+				//driver.findElement(By.xpath("(//a[contains(., 'View all products on one page')])[2]")).click();
 				log.debug(" Clicked on View all products on one page(2) ");
 			}
-			driver.manage().timeouts().implicitlyWait(120, TimeUnit.SECONDS);
+			//driver.manage().timeouts().implicitlyWait(120, TimeUnit.SECONDS);
 			log.debug("Random Tablet is selected");
-
+			Thread.sleep(3000);
 			pageobjects.TabletPage.RandomTablet.click();
 			Thread.sleep(7000);
 

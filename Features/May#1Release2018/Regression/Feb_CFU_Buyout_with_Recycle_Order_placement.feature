@@ -32,5 +32,5 @@ Feature: Feb_CFU_Buyout_with_Recycle_Order_placement
 
     Examples:
       | Tablet        | Action | Surname | Username     | filtername | sortoption                 | username                   | password | consumer     | B1  | B2  | B3  | B4  | Text | Email | Phone | Post | status  | MBBStatus | DeviceType |
-      | Random Device | skip   | ACCEPTA | TEST ACCEPTA | low        | Monthly data (Low to High) | e2ed43365255@stf.ref.co.uk | test123  | SomeOne else | Not | Not | Not | Not | Not  | Not   | Not   | Not  | Enabled | No        | Connected  |
+      | Random Device | skip   | ACCEPTA | TEST ACCEPTA | low        | Monthly data (Low to High) | e2ed43365255@stf.ref.co.uk | test123  | SomeOne else | Select | Not | Not | Not | Not  | Select   | Not   | Not  | Enabled | No        | Connected  |
    #   | Apple iPhone 7    | TEST      | ACCEPTA | TEST ACCEPTA | high       |

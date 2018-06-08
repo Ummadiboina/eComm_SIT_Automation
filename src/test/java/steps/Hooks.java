@@ -41,7 +41,7 @@ public class Hooks extends Environment {
         String featureName = rawFeatureName.substring(0, 1).toUpperCase() + rawFeatureName.substring(1);
 
         String rawFeatureName1 = scenario.getId().split(";")[0].replace("-", "_");
-        String featureName1 = rawFeatureName1.substring(0, 1).toUpperCase() + rawFeatureName.substring(1);
+        String featureName1 = rawFeatureName1.substring(0, 1).toUpperCase() + rawFeatureName1.substring(1);
         directoryName = featureName1;
 
         log.debug("Running feature file : " + featureName);

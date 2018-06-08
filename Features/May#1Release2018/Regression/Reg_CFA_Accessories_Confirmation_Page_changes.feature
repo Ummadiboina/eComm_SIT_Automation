@@ -21,5 +21,5 @@ Feature: Reg_CFA_Accessories_Confirmation_Page_changes
     Then Choose <consumer> <status> Business preferences <B1> <B2> <B3> <B4> And Channel Preferences <Text> <Email> <Phone> <Post> <MBBStatus> <DeviceType>
     #Step 9 and Step 10 of ALM clubbed together
     Examples:
-      | Firstname | Surname | Username     | Status   | consumer | B1  | B2     | B3  | B4  | Text | Email  | Phone | Post | status  | MBBStatus | DeviceType |
-      | TEST      | ACCEPTA | TEST ACCEPTA | In Stock | Me       | Yes | Select | Not | Not | Not  | Select | Not   | Not  | Enabled | No        | Connected  |
+      | Firstname | Surname | Username     | Status   | consumer | B1     | B2     | B3  | B4  | Text | Email  | Phone | Post | status  | MBBStatus | DeviceType |
+      | TEST      | ACCEPTA | TEST ACCEPTA | In Stock | Me       | Select | Select | Not | Not | Not  | Select | Not   | Not  | Enabled | No        | Connected  |
