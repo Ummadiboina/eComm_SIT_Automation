@@ -71,7 +71,7 @@ public class TabletPageActions extends Environment {
 	}
 
 	public static void DeviceSelect(String elementName) throws InterruptedException, IOException {
-		Thread.sleep(4000);
+		Thread.sleep(7000);
 
 		if (elementName.contains("Random Device")) {
 
@@ -87,8 +87,10 @@ public class TabletPageActions extends Environment {
 				log.debug(" Clicked on View all products on one page(2) ");
 			}
 			//driver.manage().timeouts().implicitlyWait(120, TimeUnit.SECONDS);
-			log.debug("Random Tablet is selected");
+
 			Thread.sleep(3000);
+			scrollToAnElement.scrollToElement(pageobjects.TabletPage.RandomTablet);
+			Screenshots.captureScreenshot();
 			pageobjects.TabletPage.RandomTablet.click();
 			Thread.sleep(7000);
 
