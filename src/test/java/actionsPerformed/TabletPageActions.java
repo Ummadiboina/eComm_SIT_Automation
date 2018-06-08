@@ -2,6 +2,7 @@ package actionsPerformed;
 
 import java.io.IOException;
 
+import GlobalActions.scrollToAnElement;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.By;

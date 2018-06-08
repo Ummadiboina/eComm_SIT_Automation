@@ -1,4 +1,4 @@
-Feature: Reg_Jan_DrupalPageCookiesPopUp.feature
+Feature: CFA_ Cookie_pop_up_for_the_Shop_pages.feature
   This scenario ensures that when the pop up is displayed then the links in the pop up should launch the respective pages
 
   @Web

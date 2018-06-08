@@ -16,6 +16,7 @@ import org.openqa.selenium.support.ui.Select;
 import GlobalActions.Screenshots;
 import helpers.Environment;
 import pageobjects.ConnectedDeviceDetailsPage;
+import pageobjects.MouseHoverPage;
 
 //This page will have details on the individual device
 
@@ -248,10 +249,15 @@ public class ConnectedDeviceDetailsPageAction extends Environment {
         //ConnectedDeviceDetailsPage.ColorDropDown.click();
         WebElement ele = driver.findElement(By.xpath("(//span[@class='selectboxit-option-icon-container']/following-sibling::span[normalize-space()='" + color + "'])[1]"));
         Actions act = new Actions(driver);
+
         if(ele.isDisplayed()){
             System.out.println("Successfully selected the color: " + color);
         }else {
-            act.moveToElement(ele).click().build().perform();
+            //act.moveToElement(ele).click().build().perform();
+            act.moveToElement(ele).build().perform();
+            Thread.sleep(3000);
+            JavascriptExecutor executor = (JavascriptExecutor)driver;
+            executor.executeScript("arguments[0].click();", ele);
         }
         // ele.click();
         /*JavascriptExecutor js = (JavascriptExecutor) driver;
@@ -316,7 +322,7 @@ public class ConnectedDeviceDetailsPageAction extends Environment {
     public static void checkDevStatusAsDelayedDelivery() throws IOException, InterruptedException {
         // TODO Auto-generated method stub
         String deliveryMg = pageobjects.ConnectedDeviceDetailsPage.DevStatusMsg.getText();
-        if (deliveryMg.contains("Home delivery")) {
+        if (deliveryMg.contains("Home delivery") || deliveryMg.contains("Order by midnight")) {
             log.debug("Device is Delayed Delivery Device");
             log.debug("Device is Delayed Delivery Device");
         } else {

@@ -1,4 +1,4 @@
-Feature: Reg_CFA_MBB_Data filters
+Feature: MBB_Data filters
   This scenario ensures that when a customer in acquisition journey selects 'MBB' and navigates to tariff page ,
   then the customer should be able to see  'Data filter' button next to sort drop-down for PayM tariffs
 

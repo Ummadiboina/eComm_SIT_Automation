@@ -2,6 +2,7 @@ package actionsPerformed;
 
 import GlobalActions.RandomEmailAddressCreation;
 import GlobalActions.Screenshots;
+import GlobalActions.scrollToAnElement;
 import cucumber.api.DataTable;
 import helpers.Environment;
 import org.apache.log4j.Logger;
@@ -41,7 +42,7 @@ public class DeliveryPageActions extends Environment {
                 Thread.sleep(5000);
             }
             Thread.sleep(3000);
-            if (driver.findElements(By.xpath("//*[@id='delivery-address-selection']/li[1]")).size() > 0) {
+            if (driver.findElements(By.xpath("//*[@id='delivery-address-selection' or @id='address-selection']/li[1]")).size() > 0) {
                 pageobjects.DeliveryPage.SelectAddress1.click();
                 log.debug("Selected an address");
             }
@@ -138,6 +139,22 @@ public class DeliveryPageActions extends Environment {
             DeliveryPage.year.sendKeys("1957");
             DeliveryPage.year.sendKeys(Keys.TAB);
             log.debug("Entered all the other relavant details");
+            Screenshots.captureScreenshot();
+        } catch (Exception e) {
+            log.debug("Failed to proceed on Delivey page : " + e.getMessage());
+            e.printStackTrace();
+        }
+
+    }
+
+    public static void AboutYouTitle() {
+        try {
+
+            Thread.sleep(3000);
+            Select dropdown = new Select(pageobjects.DeliveryPage.Title);
+            dropdown.selectByIndex(2);
+            log.debug("Selected the dropdown Mrs");
+            Reporter.log("Selected the dropdown Mrs");
             Screenshots.captureScreenshot();
         } catch (Exception e) {
             log.debug("Failed to proceed on Delivey page : " + e.getMessage());
@@ -249,12 +266,16 @@ public class DeliveryPageActions extends Environment {
                 Thread.sleep(3000);
                 Screenshots.captureScreenshot();
                 String thisOrderOVerLayTxt = DeliveryPage.thisOrderOverlayTxt.getText();
+                Thread.sleep(3000);
                 if (DeliveryPage.thisOrderOverlayTxt.isDisplayed()) {
                     if (thisOrderOVerLayTxt.contains("choose to receive information on our products, offers and more")) {
-                        System.out.println("Successfully validated the OVerLay Icon Text ie : " + thisOrderOVerLayTxt);
+                        System.out.println("Successfully validated the OverLay Icon Text ie : " + thisOrderOVerLayTxt);
                         log.debug("Successfully validated the OVerLay Icon Text ie : " + thisOrderOVerLayTxt);
-                        Thread.sleep(3000);
-                        DeliveryPage.closeOveryPopup.click();
+                        Thread.sleep(8000);
+
+                        JavascriptExecutor executor = (JavascriptExecutor)driver;
+                        executor.executeScript("arguments[0].click();", DeliveryPage.closeOveryPopup);
+                        //DeliveryPage.closeOveryPopup.click();
                     } else {
                         System.out.println("Failed to validate the Overlay icon Text");
                         log.info("Failed to validate the Overlay icon Text");
@@ -305,6 +326,8 @@ public class DeliveryPageActions extends Environment {
         Screenshots.captureScreenshot();
         Thread.sleep(5000);
         DeliveryPage.continueBtn.click();
+        System.out.println("Clicking on Continue button");
+        log.debug("Clicking on Continue button");
     }
 
 
@@ -566,7 +589,7 @@ public class DeliveryPageActions extends Environment {
 
     public static void enterHouseNumAndPostalCode_DeliverySection(String houseNum, String postCode) {
         try {
-            driver.manage().timeouts().implicitlyWait(2, TimeUnit.MINUTES);
+            driver.manage().timeouts().implicitlyWait(10, TimeUnit.MINUTES);
 
             if (DeliveryPage.Housenumber.isDisplayed()) {
                 DeliveryPage.Housenumber.sendKeys(houseNum);
@@ -574,6 +597,8 @@ public class DeliveryPageActions extends Environment {
                 DeliveryPage.Postcode.sendKeys(postCode);
                 DeliveryPage.Find_Address.click();
                 Thread.sleep(5000);
+                scrollToAnElement.scrollToElement(DeliveryPage.Find_Address);
+                Screenshots.captureScreenshot();
                 log.debug(" Entered the houseNumber and postcCode");
                 log.debug(" Entered the houseNumber and postcCode");
             } else {
@@ -588,7 +613,7 @@ public class DeliveryPageActions extends Environment {
 
     public static void enteredCommercialAddress_AddressLookUp(String postCode) {
         try {
-            driver.manage().timeouts().implicitlyWait(2, TimeUnit.MINUTES);
+            driver.manage().timeouts().implicitlyWait(10, TimeUnit.MINUTES);
             if (DeliveryPage.commercialAddressErrorMsgAdressLookUp.isDisplayed()) {
                 String invalidMsg = DeliveryPage.commercialAddressErrorMsgAdressLookUp.getText();
                 if (invalidMsg.contains(postCode)) {
@@ -598,6 +623,8 @@ public class DeliveryPageActions extends Environment {
                     log.debug(" Failed to  Display the Respective Error message, When we entered commercial address during address lookup ");
                     log.debug(" Failed to  Display the Respective Error message, When we entered commercial address during address lookup ");
                 }
+                scrollToAnElement.scrollToElement(DeliveryPage.commercialAddressErrorMsgAdressLookUp);
+                Screenshots.captureScreenshot();
             }
         } catch (Exception e) {
             log.debug(" Failed to  Display the Respective Error message, When we entered commercial address during address lookup " + e.getStackTrace());

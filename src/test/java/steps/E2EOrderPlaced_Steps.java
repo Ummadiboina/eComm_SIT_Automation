@@ -533,7 +533,7 @@ public class E2EOrderPlaced_Steps {
     @And("^Click on different ([^\"]*) Months Tariff in Tab$")
     public void click_on_different_Months_Tariff_in_Tab(String Contract) {
         try {
-            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
             PageFactory.initElements(driver, PAYMSimOPage.class);
             PAYMSimOPageActions.ValidateContractLengths(Contract);
         } catch (Exception e) {
@@ -677,7 +677,7 @@ public class E2EOrderPlaced_Steps {
     }
 
     @Given("^Signin using valid ([^\"]*) and ([^\"]*) credentials for New User$")
-    public void signin_using_valid_ink_jun_and_test_credentials_New(String username, String password)throws Throwable {
+    public void signin_using_valid_ink_jun_and_test_credentials_New(String username, String password) {
         try {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, UpgradeCustomerPage.class);
@@ -1086,6 +1086,18 @@ public class E2EOrderPlaced_Steps {
         }
     }
 
+    @And("^input title in Delivery page$")
+    public void DeliveryPage_Title() {
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, DeliveryPage.class);
+            DeliveryPageActions.AboutYouTitle();
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            log.debug("Unable to input title details in delivery page");
+            Assert.fail("Unable to input title details in delivery page");
+        }
+    }
 
     @And("^input ([^\"]*) and ([^\"]*) and other valid details in Delivery page to verify GDPR to click and collect$")
     public void DeliveryPage_Inputs_gdpr_ClickAndCollect(String Firstname, String Surname) {
@@ -1619,6 +1631,8 @@ public class E2EOrderPlaced_Steps {
             //CommonFunctionscheckTitle("Payment Page");
             PaymentPageActions.Set_Bank_details(Username);
             Thread.sleep(5000);
+            DeliveryPageActions.SetDelivery();
+            Thread.sleep(4000);
            // PaymentPageActions.Time_At_Address_CC();
             PaymentPageActions.Time_At_Address();
             Thread.sleep(5000);
@@ -1645,6 +1659,7 @@ public class E2EOrderPlaced_Steps {
             PaymentPageActions.Card_Details(Username);
             Thread.sleep(12000);
             PaymentPageActions.Card_Details_CCV();
+            Thread.sleep(12000);
         } catch (Exception e) {
             // TODO Auto-generated catch block
             log.debug("Unable to input details in payment page");
@@ -1726,6 +1741,21 @@ public class E2EOrderPlaced_Steps {
             Thread.sleep(2000);
             AdditionalInformationPageActions.AdditionalCardDetails(Username2);
             Thread.sleep(4000);
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            log.debug("unable to add details in Additional information page");
+            Assert.fail("unable to add details in Additional information page");
+
+        }
+    }
+
+    @Then("^upon entering Valid details for card number$")
+    public void EnterValidCardCCV() {
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, AdditionalInformationPage.class);
+            AdditionalInformationPageActions.AdditionalCardCCV();
+
         } catch (Exception e) {
             // TODO Auto-generated catch block
             log.debug("unable to add details in Additional information page");
@@ -3325,7 +3355,9 @@ public class E2EOrderPlaced_Steps {
             PaymentPageActions.Time_At_Address();
             Thread.sleep(2000);
             PaymentPageActions.Card_Details(Username);
-            Thread.sleep(75000);
+            Thread.sleep(15000);
+            PaymentPageActions.Card_Details_CCV();
+            Thread.sleep(10000);
         } catch (Exception e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
@@ -3820,6 +3852,7 @@ public class E2EOrderPlaced_Steps {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, ConnectedDeviceDetailsPage.class);
             ConnectedDeviceDetailsPageAction.colorSelectOfDeviceDropDown(color);
+            Thread.sleep(5000);
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -5457,7 +5490,7 @@ public class E2EOrderPlaced_Steps {
             // Assert.assertTrue("Your error message",
             // OrderConfirmationPageActions.TimeslotMessage().contains(ExpectedMessage));
 
-            ExpectedTimeSlotMessage = "Your order will be delivered for free, via Royal Mail, within three working days.";
+
 
             Assert.assertTrue(driver.getPageSource().contains(ExpectedTimeSlotMessage),
                     "Assertion Failed: Expected Message: " + ExpectedTimeSlotMessage + " is not present in the page"
@@ -5862,8 +5895,8 @@ public class E2EOrderPlaced_Steps {
                 Thread.sleep(3000);
             }
             if (status.equals("Delayed Delivery")) {
-                // ConnectedDeviceDetailsPageAction.checkDevStatusAsDelayedDelivery();
-                ConnectedDeviceDetailsPageAction.checkDevStatusAsPreOrder();
+                ConnectedDeviceDetailsPageAction.checkDevStatusAsDelayedDelivery();
+                //ConnectedDeviceDetailsPageAction.checkDevStatusAsPreOrder();
                 Thread.sleep(3000);
             }
             if (status.equals("In Stock")) {
@@ -6509,7 +6542,7 @@ public class E2EOrderPlaced_Steps {
 
         try {
 
-            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
             PageFactory.initElements(driver, PAYMandPAYGTariffAndExtrasPage.class);
 
             PAYMandPAYGTariffAndExtrasPageActions.SortFilterPosition();
@@ -6671,7 +6704,7 @@ public class E2EOrderPlaced_Steps {
     @When("^I click on respective ([^\"]*) data filter$")
     public void clickOnRespectiveDataFilter(String range) {
         try {
-            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
             PageFactory.initElements(driver, PAYMandPAYGTariffAndExtrasPage.class);
             DataFilterRange = range;
             PAYMandPAYGTariffAndExtrasPageActions.clickViewAllTariffs();
@@ -6727,7 +6760,7 @@ public class E2EOrderPlaced_Steps {
     @And("^I should see appropriate tariffs based on the selected data filter ([^\"]*)$")
     public void getTariffList(String SortOption) {
         try {
-            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
             PageFactory.initElements(driver, PAYMandPAYGTariffAndExtrasPage.class);
 
             if (DataFilterRange.contains("high")) {
@@ -6771,8 +6804,8 @@ public class E2EOrderPlaced_Steps {
 
         } catch (Exception e) {
             // TODO Auto-generated catch block
-            log.debug("Unable to click on respective data filter");
-            Assert.fail("Unable to click on respective data filter");
+            log.debug("Unable to click on appropriate tariffs based on the selected data filter");
+            Assert.fail("Unable to click on appropriate tariffs based on the selected data filter");
         }
     }
 
@@ -6865,7 +6898,7 @@ public class E2EOrderPlaced_Steps {
         log.debug("Running Test Step: @And(I should see tariffs relevant to selected sort option and filter option)");
 
         try {
-            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
             PageFactory.initElements(driver, PAYMandPAYGTariffAndExtrasPage.class);
             PageFactory.initElements(driver, UpgradeCustomerPage.class);
 
@@ -7022,9 +7055,11 @@ public class E2EOrderPlaced_Steps {
         log.debug("Running Test Step: @And(I should see tariffs based on the selected sort option)");
 
         try {
-            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
             PageFactory.initElements(driver, PAYMandPAYGTariffAndExtrasPage.class);
-
+            scrollToAnElement.scrollToElement(pageobjects.PAYMandPAYGTariffAndExtrasPage.RandomTariff1);
+            Screenshots.captureScreenshot();
+            Thread.sleep(4000);
             ArrayList<Integer> ListAfterSort = null;
             ArrayList<Integer> ListBeforeSort = expectedTariffListBeforeSort;
 
@@ -7144,7 +7179,7 @@ public class E2EOrderPlaced_Steps {
     @And("^If I select ANY sort option ([^\"]*) from the drop-down$")
     public void select_sort_Tariff_dropdown(String tariffSortDropDown) {
         try {
-            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
             PageFactory.initElements(driver, PAYMandPAYGTariffAndExtrasPage.class);
             PAYMandPAYGTariffAndExtrasPageActions.selectTariffSort(tariffSortDropDown);
 
@@ -7191,7 +7226,7 @@ public class E2EOrderPlaced_Steps {
     @Then("^Data filter button should be in 'selected' state$")
     public void data_filter_button_should_be_in_selected_state() {
         try {
-            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
             PageFactory.initElements(driver, PAYMandPAYGTariffAndExtrasPage.class);
             String Filteroption = FilterDataOption;
             log.debug(Filteroption);
@@ -7207,7 +7242,7 @@ public class E2EOrderPlaced_Steps {
     @When("^I deselect filter button$")
     public void i_deselect_filter_button() {
         try {
-            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
             PageFactory.initElements(driver, PAYMandPAYGTariffAndExtrasPage.class);
             PAYMandPAYGTariffAndExtrasPageActions.DeSelectedState();
         } catch (Exception e) {
@@ -8639,7 +8674,7 @@ public class E2EOrderPlaced_Steps {
     public void Click_on_Select_CTA_to_buy_SIMO_Tariff()
     {
         try {
-            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
             PageFactory.initElements(driver, PAYMSimOPage.class);
             PAYMSimOPageActions.SelectCTAtoBuySIMOtariff();
             log.debug("Selected tariff in SIMO journey");
@@ -9786,7 +9821,7 @@ public class E2EOrderPlaced_Steps {
 
 //GDPR
     @And("^Is this order for You or Someone else ([^\"]*) when GDPR is ([^\"]*)$")
-    public void isThisOrder4UorSomeoneElse(String customer, String status)throws InterruptedException, IOException {
+    public void isThisOrder4UorSomeoneElse(String customer, String status)throws IOException {
         try {
             driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
             PageFactory.initElements(driver, DeliveryPage.class);

@@ -1,4 +1,4 @@
-Feature: Reg_Jan_AgentShopToAcceptApostrophe
+Feature: AFA_Phone_CCN_customer_firstname_apostrophe_and_lastname_apostrophe_SOA_validation_successful
 
   This scenario ensures that the Agent shop accepts Apostrophe in First Name and Last Name fields
 

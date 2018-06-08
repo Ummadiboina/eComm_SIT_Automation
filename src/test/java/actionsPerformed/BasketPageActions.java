@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.concurrent.TimeUnit;
 
+import GlobalActions.scrollToAnElement;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.FluentWait;
@@ -141,6 +142,8 @@ public class BasketPageActions extends Environment {
 	public static void gotoCheckout() throws IOException, InterruptedException {
 
 		Thread.sleep(4000);
+		scrollToAnElement.scrollToElement(BasketPage.YourOrder);
+		Screenshots.captureScreenshot();
 		String title = driver.getTitle();
 		if (title.contains("Thanks for waiting")) {
 			log.debug("Queue page is displayed");
@@ -351,18 +354,22 @@ public class BasketPageActions extends Environment {
 				log.debug("PostCode Entered for Search");
 				Thread.sleep(4000);
 				Screenshots.captureScreenshot();
+				Thread.sleep(4000);
 				pageobjects.BasketPage.PostcodeSubmit.click();
 				Thread.sleep(5000);
 				// Assert.assertEquals(elementName,"Galaxy S7 is not found");
 				log.debug("Postcode Submitted for Search");
 				log.debug("Postcode Submitted for Search");
 				Thread.sleep(5000);
+				scrollToAnElement.scrollToElement(BasketPage.Collectfromthisstore);
+				Thread.sleep(3000);
+				Screenshots.captureScreenshot();
 				pageobjects.BasketPage.Collectfromthisstore.click();
 				// Assert.assertEquals(elementName,"Galaxy S7 is not found");
 				log.debug("Store Selected for Colletion");
 				log.debug("Store Selected for Colletion");
 				Thread.sleep(5000);
-				Screenshots.captureScreenshot();
+
 				log.debug("Click on the Add To Basket");
 				JavascriptExecutor jse = (JavascriptExecutor) driver;
 				jse.executeScript("window.scrollBy(0,600)", "");
@@ -765,7 +772,7 @@ public class BasketPageActions extends Environment {
 
 	}
 
-	public static void eMailBasketCFU(String userName) throws InterruptedException, IOException {
+	public static void eMailBasketCFU(String userName) throws InterruptedException {
 		Thread.sleep(3000);
 		// Selecting an eMail Link
 		pageobjects.UpgradeCustomerPage.BasketeMail.sendKeys(userName);

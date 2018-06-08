@@ -2362,6 +2362,8 @@ public class UpgradeCustomerPageActions extends Environment {
             driver.manage().timeouts().implicitlyWait(2, TimeUnit.MINUTES);
             if (driver.findElements(By.xpath("//div[@class='filter-options']/button")).size() > 0) {
                 List<WebElement> filtes = driver.findElements(By.xpath("//div[@class='filter-options']/button"));
+                scrollToAnElement.scrollToElement(driver.findElement(By.xpath("(//div[@class='filter-options']/button)[1]")));
+                Screenshots.captureScreenshot();
                 for (int i = 1; i <= filtes.size(); i++) {
                     if (driver.findElement(By.xpath("(//div[@class='filter-options']/button)[" + i + "]")).isDisplayed()) {
                         String fltr = driver.findElement(By.xpath("(//div[@class='filter-options']/button)[" + i + "]")).getText();
@@ -2385,6 +2387,8 @@ public class UpgradeCustomerPageActions extends Environment {
             driver.manage().timeouts().implicitlyWait(2, TimeUnit.MINUTES);
             if (driver.findElements(By.xpath("//div[@class='button-tabs']//a")).size() > 0) {
                 List<WebElement> contractLength = driver.findElements(By.xpath("//div[@class='button-tabs']//a"));
+
+                Screenshots.captureScreenshot();
                 for (int i = 1; i <= contractLength.size(); i++) {
                     if (driver.findElement(By.xpath("(//div[@class='button-tabs']//a)[" + i + "]")).isDisplayed()) {
                         String contrctLent = driver.findElement(By.xpath("(//div[@class='button-tabs']//a)[" + i + "]")).getText();
@@ -2460,7 +2464,7 @@ public class UpgradeCustomerPageActions extends Environment {
 
     public static void upfront_sort_options_is_not_present_in_sortingDropdown() {
         try {
-            driver.manage().timeouts().implicitlyWait(2, TimeUnit.MINUTES);
+            driver.manage().timeouts().implicitlyWait(10, TimeUnit.MINUTES);
             if (UpgradeCustomerPage.dataFilter.isDisplayed()) {
                 UpgradeCustomerPage.dataFilter.click();
 

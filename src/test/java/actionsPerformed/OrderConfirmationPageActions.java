@@ -150,10 +150,12 @@ public class OrderConfirmationPageActions extends Environment {
 
 	}
 
-	public static void Orderid() {
+	public static void Orderid() throws InterruptedException, IOException {
 		log.debug("Your order has been successfully placed.Order number: ");
 		log.info("Your order has been successfully placed.Order number: ");
 		log.debug(pageobjects.OrderConfirmationPage.orderid.getText());
+		scrollToAnElement.scrollToElement(pageobjects.OrderConfirmationPage.orderid);
+		Screenshots.captureScreenshot();
 	}
 
 	public static void FreeSimMessage() {
@@ -708,7 +710,13 @@ public class OrderConfirmationPageActions extends Environment {
 							Assert.fail("Choose your preferences section is Enabled for Disabled status");
 						}
 				}else{
-						Assert.fail("Failed to do GDPR validations as no status submitted");
+
+						if(DeviceType.equalsIgnoreCase("Connected")) {
+							Assert.fail("Failed to do GDPR validations as no status submitted");
+						}else{
+							System.out.println("GDPR is Disabled for Non Connected Device");
+							log.debug("GDPR is Disabled for Non Connected Device");
+						}
 					}
 				}
 				catch (Exception e) {

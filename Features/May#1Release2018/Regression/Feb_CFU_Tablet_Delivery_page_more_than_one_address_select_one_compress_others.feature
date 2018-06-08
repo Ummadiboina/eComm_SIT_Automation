@@ -25,5 +25,5 @@ Feature: Feb_CFU_Tablet_Delivery_page_more_than_one_address_select_one_compress_
     Then Choose <consumer> <status> Business preferences <B1> <B2> <B3> <B4> And Channel Preferences <Text> <Email> <Phone> <Post> <MBBStatus> <DeviceType>
     Examples:
       | username                     | password | Tablet        | tariff                 | houseNumber | PostCode | Username     | Action    | consumer | B1  | B2  | B3     | B4  | Text | Email  | Phone | Post   | status  | MBBStatus | DeviceType |
-      | inl_feb4914@stf.ref.o2.co.uk | test123  | Random Device | 9.99upfront60.00amonth | 111         | SL11Er   | Test Accepta | enterCode | Me       | Not | Not | Select | Not | Not  | Select | Not   | Select | Enabled | No        | Connected  |
+      | ins_nov6572@stf.ref.o2.co.uk | test123  | Random Device | 9.99upfront60.00amonth | 111         | SL11Er   | Test Accepta | enterCode | Me       | Not | Not | Select | Not | Not  | Select | Not   | Select | Enabled | No        | Connected  |
 
