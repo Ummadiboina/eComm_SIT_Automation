@@ -72,27 +72,30 @@ public class TabletPageActions extends Environment {
 	}
 
 	public static void DeviceSelect(String elementName) throws InterruptedException, IOException {
-		Thread.sleep(10000);
+		Thread.sleep(7000);
 
 		if (elementName.contains("Random Device")) {
 
 			JavascriptExecutor js = ((JavascriptExecutor) driver);
 			js.executeScript("arguments[0].scrollIntoView(true);",driver.findElement(By.xpath("(//a[contains(., 'View all products on one page')])[2]")));
-			Thread.sleep(4000);
+
 			if(driver.findElements(By.xpath("(//a[contains(., 'View all products on one page')])[2]")).size() > 0) {
-				Thread.sleep(4000);
-				driver.findElement(By.xpath("(//a[contains(., 'View all products on one page')])[2]")).click();
-				log.debug("Clicked on View all products on one page(2)");
+				Thread.sleep(2000);
+				WebElement ele = driver.findElement(By.xpath("(//a[contains(., 'View all products on one page')])[2]"));
+				((JavascriptExecutor)driver).executeScript("arguments[0].click();", ele);
+				Thread.sleep(5000);
+				//driver.findElement(By.xpath("(//a[contains(., 'View all products on one page')])[2]")).click();
+				log.debug(" Clicked on View all products on one page(2) ");
 			}
-			//driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-			Thread.sleep(6000);
+			//driver.manage().timeouts().implicitlyWait(120, TimeUnit.SECONDS);
+
+			Thread.sleep(3000);
 			scrollToAnElement.scrollToElement(pageobjects.TabletPage.RandomTablet);
 			Screenshots.captureScreenshot();
-			Thread.sleep(4000);
 			pageobjects.TabletPage.RandomTablet.click();
-			log.debug("Random Tablet is selected");
 			Thread.sleep(7000);
 
+			log.debug("Random Tablet is selected");
 		}
 	//	if(driver.findElements(By.id("deviceDetailsSubmit")).size() <1 ){
 

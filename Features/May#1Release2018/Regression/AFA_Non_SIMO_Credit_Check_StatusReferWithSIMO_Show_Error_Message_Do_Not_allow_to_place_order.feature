@@ -17,5 +17,5 @@ Feature: AFA_Non_SIMO_Credit_Check_StatusReferWithSIMO_Show_Error_Message_Do_Not
 
 
     Examples:
-      | Device | Tariff  | DeliveryType | Firstname | Surname | Username    | HouseNumber | PostCode | B1     | B2  | B3     | B4     | Text   | Email  | Phone | Post | Consumer     | status  | MBBStatus | DeviceType | DeviceModule |
-      | iphone | Refresh | HomeDelivery | TEST      | referc  | Test Referc | 6           | SL11ER   | Select | Not | Select | Select | Select | Select | Not   | Not  | SomeOne else | Enabled | No        | Connected  | simo         |
+      | Device | Tariff  | DeliveryType | Firstname | Surname | Username    | HouseNumber | PostCode | B1     | B2  | B3     | B4     | Text   | Email  | Phone | Post | Consumer | status  | MBBStatus | DeviceType | DeviceModule |
+      | iphone | Refresh | HomeDelivery | TEST      | referc  | Test Referc | 6           | SL11ER   | Select | Not | Select | Select | Select | Select | Not   | Not  | Someone  | Enabled | No        | Connected  | simo         |
