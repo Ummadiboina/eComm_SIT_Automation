@@ -352,12 +352,16 @@ public class ConnectedDeviceDetailsPageAction extends Environment {
             log.debug("The color dropdown is displayed");
             Thread.sleep(3000);
             pageobjects.ConnectedDeviceDetailsPage.colorselectBoxArow.click();
+            Thread.sleep(2000);
+            pageobjects.ConnectedDeviceDetailsPage.colorselectBoxArow.click();
             log.debug("The colour dropdown is clicked");
+            Screenshots.captureScreenshot();
         } else {
             log.debug("colour drop down is not displayed");
-            Assert.fail("The colour dropdown is not displayed");
+            //Assert.fail("The colour dropdown is not displayed");
+            Screenshots.captureScreenshot();
         }
-        Screenshots.captureScreenshot();
+
     }
 
     public static void UpdatedColordropdownText() {
@@ -365,7 +369,7 @@ public class ConnectedDeviceDetailsPageAction extends Environment {
         if (pageobjects.ConnectedDeviceDetailsPage.Colourdropdownbox.isDisplayed()) {
             WebElement colourDropdown = driver.findElement(By.xpath("//*[@id='colourSelectBoxItOptions']"));
             //a[@class='selectboxit-option-anchor']//span[@class='selectboxit-option-label']
-            List<WebElement> elementColor = colourDropdown.findElements(By.xpath("//*[@class='selectboxit-option-label']"));
+            List<WebElement> elementColor = colourDropdown.findElements(By.xpath("(//*[@class='selectboxit-option-label'])[1]"));
             for (int i = 0; i < elementColor.size(); i++) {
                 log.debug(elementColor.get(i).getText());
             }

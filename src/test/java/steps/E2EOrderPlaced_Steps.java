@@ -6288,7 +6288,7 @@ public class E2EOrderPlaced_Steps {
         // try {
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         PageFactory.initElements(driver, MouseHoverPage.class);
-        Thread.sleep(10000);
+        Thread.sleep(3000);
         MouseHoverAction.PayGSimoNavigation();
         Autoredirection.redirect();
         Thread.sleep(10000);

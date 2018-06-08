@@ -22,5 +22,5 @@ Feature: Feb_CFA_Phones_CnC_Delivery_page_Payment_page_more_than_one_address_sel
 
 
     Examples:
-      | handset | Firstname | Surname | Username     | consumer | B1  | B2  | B3     | B4  | Text | Email  | Phone | Post | status  | MBBStatus | DeviceType |
-      | iPhone  | TEST      | ACCEPTA | TEST ACCEPTA | Me       | Not | Yes | Select | Not | Not  | Select | Not   | Not  | Enabled | No        | Connected  |
+      | handset | Firstname | Surname | Username     | consumer | B1     | B2  | B3     | B4  | Text   | Email  | Phone | Post | status  | MBBStatus | DeviceType |
+      | iPhone  | TEST      | ACCEPTA | TEST ACCEPTA | Me       | Select | Yes | Select | Not | Select | Select | Not   | Not  | Enabled | No        | Connected  |

@@ -14,5 +14,5 @@ Feature: Feb_CFA_PayG_FreeSim_Delivery_page_more_than_one_address_select_one_com
     Then Choose <consumer> <status> Business preferences <B1> <B2> <B3> <B4> And Channel Preferences <Text> <Email> <Phone> <Post> <MBBStatus> <DeviceType>
 
     Examples:
-      | Firstname | Surname | consumer | B1  | B2  | B3  | B4  | Text | Email | Phone | Post | status    | MBBStatus | DeviceType | CheckBox |
-      | TEST      | ACCEPTA | Me       | Not | Not | Not | Not | Not  | Not   | Not   | Not  | Disiabled | No        | Connected  | Yes      |
+      | Firstname | Surname | consumer | B1     | B2  | B3  | B4  | Text | Email | Phone  | Post | status    | MBBStatus | DeviceType | CheckBox |
+      | TEST      | ACCEPTA | Me       | Select | Not | Not | Not | Not  | Not   | Select | Not  | Disiabled | No        | Connected  | Yes      |

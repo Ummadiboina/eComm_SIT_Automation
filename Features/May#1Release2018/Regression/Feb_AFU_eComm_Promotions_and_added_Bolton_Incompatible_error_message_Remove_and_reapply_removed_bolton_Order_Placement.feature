@@ -33,5 +33,5 @@ Feature: Feb_AFU_eComm_Promotions_and_added_Bolton_Incompatible_error_message_Re
     Then Order confirmation message should be displayed
 
     Examples:
-      | user        | Device | Tariffs | ErrorMsg                     | Button | consumer | B1  | B2  | B3  | B4  | Text | Email | Phone | Post | status  | MBBStatus | DeviceType |
-      | 07521114790 | Random | Refresh | incompatible with each other | Bolton | Someone  | Not | Not | Not | Not | Not  | Not   | Not   | Not  | Enabled | No        | Connected  |
+      | user        | Device                            | Tariffs | ErrorMsg                     | Button | consumer | B1  | B2  | B3  | B4  | Text | Email | Phone | Post | status  | MBBStatus | DeviceType |
+      | 07521114790 | Galaxy S9 Plus 128GB Lilac Purple | Refresh | incompatible with each other | Bolton | Someone  | Yes | Not | Not | Not | Yes  | Not   | Not   | Not  | Enabled | No        | Connected  |
