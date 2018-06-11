@@ -35,7 +35,7 @@ import cucumber.api.CucumberOptions;
 @CucumberOptions(plugin = { "html:testResult/cucumber-html-report",
 		"json:testResult/cucumber.json", "pretty:testResult/cucumber-pretty.txt",
 		"usage:testResult/cucumber-usage.json", "junit:testResult/cucumber-results.xml" },
-		features = { "RegressionV1.0/Features/RegressionPack_Master/Reg_AFA_PAYM_Acquistion.feature" },
+		features = { "Features//JuneRelease2018//Regression" },
 		glue = { "steps" },
 		tags = {"@Web"})
 
