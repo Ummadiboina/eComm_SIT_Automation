@@ -108,6 +108,12 @@ public class UpgradeCustomerPage {
 	@FindBy(how = How.XPATH, using = "//input[@id='email']")
 	public static WebElement BasketeMail;
 
+	@FindBy(how = How.XPATH, using = "//input[@id='promoCodeDetails']")
+	public static WebElement promoCodeDetails;
+
+	@FindBy(how = How.XPATH, using = "//input[@id='promoCodeSubmit']")
+	public static WebElement promoCodeSubmit;
+
 	@FindBy(how = How.XPATH, using = "//*[@id='recaptcha-anchor']")
 	public static WebElement ReadCaptcha;
 

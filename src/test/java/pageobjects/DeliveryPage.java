@@ -218,7 +218,7 @@ public class DeliveryPage {
     @FindBy(how = How.XPATH, using = "//*[contains(text(),' have the chance to choose to receive information on our products, offers and more. ')]")
     public static WebElement thisOrderOverlayTxt;
 
-    @FindBy(how = How.XPATH, using = "//a[@class='boxclose']")
+    @FindBy(how = How.XPATH, using = "//h3[normalize-space()='Why are we asking?']//following-sibling::a[@class='boxclose']")
     public static WebElement closeOveryPopup;
 
     @FindBy(how = How.XPATH, using = "//input[@id='consent-yes']")
@@ -227,7 +227,7 @@ public class DeliveryPage {
     @FindBy(how = How.XPATH, using = "//input[@id='consent-no']")
     public static WebElement someoneElse_radioBtn;
 
-    @FindBy(how = How.XPATH, using = "//button[@id='btn-continue' or @id='change-delivery-confirm']")
+    @FindBy(how = How.XPATH, using = "//button[@id='btn-continue' or @id='change-delivery-confirm' or @id='change-delivery-confirm-label']")
     public static WebElement continueBtn;
 
     @FindBy(how = How.XPATH, using = "//*[normalize-space(@class)='on']")

@@ -1,15 +1,19 @@
-Feature: CFU_Validate_Basket_Page_For_Simo_Tariff_With_Matching_Promotions_Available_But_Not_Valid_For_Current_Date.feature
+Feature: CFU_Validate_Basket_Page_For_Simo_Tariff_With_Active_Voucherable_Promotions_Available_And_Valid_For_Current_Date_And_Upfront_Payment_Pending.feature
 
-  This scenario validates if basket page is displayed for customer in Simo upgrade journey with matching promotions available but not valid for current date
+  This scenario validates basket and payment page is displayed for customer in Simo upgrade journey with active voucherable promotions available and upfront payment pending from customer
 
   @Web
-  Scenario Outline: CFU_Validate_Basket_Page_For_Simo_Tariff_With_Matching_Promotions_Available_But_Not_Valid_For_Current_Date
+  Scenario Outline: CFU_Validate_Basket_Page_For_Simo_Tariff_With_Active_Voucherable_Promotions_Available_And_Valid_For_Current_Date_And_Upfront_Payment_Pending
     Given I am an Existing user and Navigates to Signin page
     And Signin using valid <username> and <password> credentials
     And Navigate to upgrade > upgrade now
     And I click on 'Sim only Tariff' tab
+    And click on the 'Tablets' button
     #And Click on 'Select' CTA to buy a <tariff>
     And Select ribboned tariff <tariff> in upgrade journey
+    And Click on 'plus' accordion at get promo code section and enter valid <promoCode> details in Basket page
+    And click on "go to checkout" button
+    And land on the Non Credit check payment page and input <Username> and other details and click 'Continue on next step'
     And Select 'I need a new sim' option
     And Click on 'I agree to the terms and condition' checkbox in SIMO review page
     And Is this order for You or Someone else <consumer> when GDPR is <status>

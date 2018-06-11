@@ -772,7 +772,18 @@ public class BasketPageActions extends Environment {
 
 	}
 
-	public static void eMailBasketCFU(String userName) throws InterruptedException {
+	public static void EnterValidPromoCodeDetails(String promoCode) throws InterruptedException {
+		Thread.sleep(3000);
+		// Selecting an eMail Link
+		pageobjects.UpgradeCustomerPage.promoCodeDetails.sendKeys(promoCode);
+		log.debug("Promo Code Details entered");
+		Thread.sleep(3000);
+		pageobjects.UpgradeCustomerPage.promoCodeSubmit.sendKeys(promoCode);
+		log.debug("Submited the promo code");
+		Thread.sleep(3000);
+	}
+
+		public static void eMailBasketCFU(String userName) throws InterruptedException {
 		Thread.sleep(3000);
 		// Selecting an eMail Link
 		pageobjects.UpgradeCustomerPage.BasketeMail.sendKeys(userName);
