@@ -1373,12 +1373,12 @@ public class MouseHoverAction extends Environment {
     }
     // Below will navigate to PAYG SIMO Page
     public static void PayGSimoNavigation() throws Exception {
-        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+       // driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 
         try {
             /*********************************************************************
              normal execution flow in ref Env....        ************************************************/
-            Thread.sleep(3000);
+            Thread.sleep(6000);
             if (driver.findElements(By.xpath("//div[@class='nav-consumer']/ul/li/a[contains(@href, '/shop')]")).size() >= 1) {
                 log.debug("Performing Pay As You go Sim landing page navigations");
                 Thread.sleep(3000);
