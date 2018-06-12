@@ -8699,7 +8699,7 @@ public class E2EOrderPlaced_Steps {
         }
     }
 
-    @And("^Click on 'Select' CTA to buy a ([^\"]*)$")
+    @And("^Click on 'Select' CTA to buy a valid ([^\"]*)$")
     public void Select_CTA_to_buy_SIMO_Tariff(String tariff)
     {
         try {

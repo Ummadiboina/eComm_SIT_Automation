@@ -9,8 +9,9 @@ Feature: CFU_Validate_Basket_Page_For_Simo_Tariff_With_Active_Voucherable_Promot
     And Navigate to upgrade > upgrade now
     And I click on 'Sim only Tariff' tab
     And click on the 'Tablets' button
-    #And Click on 'Select' CTA to buy a <tariff>
+    #And Click on 'Select' CTA to buy a valid <tariff>
     And Select ribboned tariff <tariff> in upgrade journey
+    And I Land on the Plan included basket page and choose home delivery option
     And Click on 'plus' accordion at get promo code section and enter valid <promoCode> details in Basket page
     And click on "go to checkout" button
     And land on the Non Credit check payment page and input <Username> and other details and click 'Continue on next step'

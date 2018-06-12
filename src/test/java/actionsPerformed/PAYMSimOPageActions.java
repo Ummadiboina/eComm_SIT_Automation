@@ -815,6 +815,7 @@ public class PAYMSimOPageActions extends Environment {
 
 	public static void selectINeedNewSIM() throws IOException, InterruptedException {
 
+		log.debug("Review Page validation :: " + driver.getTitle());
 		WebElement element = pageobjects.PAYMSimOPage.INeedNewSIM;
 		scrollToAnElement.scrollToElement(pageobjects.PAYMSimOPage.INeedNewSIM);
 		Screenshots.captureScreenshot();

@@ -327,7 +327,7 @@ public class PaymentPageActions extends Environment {
     public static void ValidateNonCreditPaymentPage() throws IOException, InterruptedException {
         // Below will display contents of the section
 
-        log.debug("Payment pages validations" + driver.getTitle());
+        log.debug("Payment pages validations :: " + driver.getTitle());
 
         log.debug("The Main Total are : " + pageobjects.PaymentPage.BasketTotal.getText());
 

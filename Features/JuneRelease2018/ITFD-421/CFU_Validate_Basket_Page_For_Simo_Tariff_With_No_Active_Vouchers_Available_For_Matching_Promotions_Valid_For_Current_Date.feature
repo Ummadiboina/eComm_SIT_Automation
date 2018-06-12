@@ -9,7 +9,7 @@ Feature: CFU_Validate_Basket_Page_For_Simo_Tariff_With_No_Active_Vouchers_Availa
     And Navigate to upgrade > upgrade now
     And I click on 'Sim only Tariff' tab
     And click on the 'MBB' button
-    #And Click on 'Select' CTA to buy a <tariff>
+    #And Click on 'Select' CTA to buy a valid <tariff>
     And Select ribboned tariff <tariff> in upgrade journey
     And Select 'I need a new sim' option
     And Click on 'I agree to the terms and condition' checkbox in SIMO review page

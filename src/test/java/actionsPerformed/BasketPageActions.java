@@ -293,7 +293,7 @@ public class BasketPageActions extends Environment {
 
 	public static void PlanOnlyPageContents() throws InterruptedException, IOException {
 
-		log.debug("Shop basket pages validations" + driver.getTitle());
+		log.debug("Shop basket pages validations ::" + driver.getTitle());
 
 		boolean fname = pageobjects.BasketPage.checkoutbtn.isEnabled();
 
@@ -774,13 +774,17 @@ public class BasketPageActions extends Environment {
 
 	public static void EnterValidPromoCodeDetails(String promoCode) throws InterruptedException {
 		Thread.sleep(3000);
-		// Selecting an eMail Link
+
+		pageobjects.UpgradeCustomerPage.plusAccordion.click();
+		Thread.sleep(4000);
 		pageobjects.UpgradeCustomerPage.promoCodeDetails.sendKeys(promoCode);
 		log.debug("Promo Code Details entered");
 		Thread.sleep(3000);
-		pageobjects.UpgradeCustomerPage.promoCodeSubmit.sendKeys(promoCode);
+		pageobjects.UpgradeCustomerPage.promoCodeSubmit.click();
 		log.debug("Submited the promo code");
-		Thread.sleep(3000);
+		Thread.sleep(4000);
+
+		log.debug("Promo code is validated:: status is: " + pageobjects.UpgradeCustomerPage.promoCodeStatus.getText());
 	}
 
 		public static void eMailBasketCFU(String userName) throws InterruptedException {
