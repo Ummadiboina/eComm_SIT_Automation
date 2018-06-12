@@ -1,16 +1,16 @@
-Feature: CFU_Validate_Basket_Page_For_Simo_Tariff_With_No_Active_Vouchers_Available_For_Matching_Promotions_Valid_For_Current_Date.feature
+Feature: CFU_Validate_Basket_Page_For_Simo_Tariff_With_Matching_Promotions_Available_But_Not_Valid_For_Current_Date.feature
 
-  This scenario validates if basket page is displayed for customer in Simo upgrade journey with no active vouchers present for available matching promotions
+  This scenario validates if basket page is displayed for customer in Simo upgrade journey with matching promotions available but not valid for current date
 
   @Web
-  Scenario Outline: CFU_Validate_Basket_Page_For_Simo_Tariff_With_No_Active_Vouchers_Available_For_Matching_Promotions_Valid_For_Current_Date
+  Scenario Outline: CFU_Validate_Basket_Page_For_Simo_Tariff_With_Matching_Promotions_Available_But_Not_Valid_For_Current_Date
     Given I am an Existing user and Navigates to Signin page
     And Signin using valid <username> and <password> credentials
     And Navigate to upgrade > upgrade now
     And I click on 'Sim only Tariff' tab
-    And click on the 'MBB' button
-    #And Click on 'Select' CTA to buy a <tariff>
+    #And Click on 'Select' CTA to buy a valid <tariff>
     And Select ribboned tariff <tariff> in upgrade journey
+    #And I Land on the Plan included basket page and choose home delivery option
     And Select 'I need a new sim' option
     And Click on 'I agree to the terms and condition' checkbox in SIMO review page
     And Is this order for You or Someone else <consumer> when GDPR is <status>

@@ -991,6 +991,21 @@ public class E2EOrderPlaced_Steps {
 
     }
 
+    @And("^Click on 'plus' accordion at get promo code section and enter valid ([^\"]*) details in Basket page$")
+    public void validatePromoCodeAtBasketPage(String promoCode) {
+
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, UpgradeCustomerPage.class);
+            BasketPageActions.EnterValidPromoCodeDetails(promoCode);
+            Thread.sleep(4000);
+        } catch (Exception e) {
+            e.printStackTrace();
+            Assert.fail("Unable to validate promo code");
+        }
+
+    }
+
     @And("^^enter a ([^\"]*) and ([^\"]*) and ten digit home number$")
     public void enter_a_digit_home_number(String Firstname, String Surname) {
         try {
@@ -8684,6 +8699,19 @@ public class E2EOrderPlaced_Steps {
         }
     }
 
+    @And("^Click on 'Select' CTA to buy a valid ([^\"]*)$")
+    public void Select_CTA_to_buy_SIMO_Tariff(String tariff)
+    {
+        try {
+            driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, PAYMSimOPage.class);
+            PAYMSimOPageActions.SelectCTASIMOtariff(tariff);
+            log.debug("Selected tariff in SIMO journey");
+        } catch (Exception e) {
+            e.printStackTrace();
+            Assert.fail("Unable to click on Click on 'Pick a sim only tariff link', please see the failure screenshot");
+        }
+    }
 
     @And("^the customer is landed on Review page$")
     public void theCustomerIsLandedOnReviewPage() {
@@ -8898,6 +8926,21 @@ public class E2EOrderPlaced_Steps {
         } catch (Exception e) {
             e.printStackTrace();
             Assert.fail("Unable to click on button 'I will keep my current sim'");
+        }
+    }
+
+
+    @And("^Select 'I need a new sim' option$")
+    public void selectINeedNewSimOption() {
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, PAYMSimOPage.class);
+            PAYMSimOPageActions.selectINeedNewSIM();
+            Thread.sleep(2000);
+            log.debug("Clicked on button 'I need a new sim'");
+        } catch (Exception e) {
+            e.printStackTrace();
+            Assert.fail("Unable to click on button 'I need a new sim'");
         }
     }
 

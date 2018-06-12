@@ -30,10 +30,10 @@ Feature: Reg_Jan_CFU_MbbSimo30days.feature
     And copy text SIM delivery required or not is displayed
     And Select 'I’ll keep my current sim' option
     And Click on 'I agree to the terms and condition' checkbox in SIMO review page
-    #And Is this order for You or Someone else <consumer> when GDPR is <status>
+    And Is this order for You or Someone else <consumer> when GDPR is <status>
     #And Click on 'Place your order' CTA
-    #Then order confirmation is displayed
-    #Then Choose <consumer> <status> Business preferences <B1> <B2> <B3> <B4> And Channel Preferences <Text> <Email> <Phone> <Post> <MBBStatus> <DeviceType>
+    Then order confirmation is displayed
+    Then Choose <consumer> <status> Business preferences <B1> <B2> <B3> <B4> And Channel Preferences <Text> <Email> <Phone> <Post> <MBBStatus> <DeviceType>
 
     Examples:
       | Contract | username                     | password | filtername | sortoption                 | Username     | consumer | B1  | B2  | B3     | B4  | Text | Email  | Phone | Post | status  | MBBStatus | DeviceType |

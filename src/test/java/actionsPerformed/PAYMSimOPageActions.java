@@ -27,7 +27,7 @@ public class PAYMSimOPageActions extends Environment {
 	// days contract
 
 	public static void ValidateContractLengths(String elementName)
-			throws InterruptedException, AWTException, IOException {
+			throws InterruptedException, IOException {
 		// Assert.assertTrue(driver.getTitle().contains("30 Days");
 		scrollToAnElement.scrollToElement(pageobjects.PAYMSimOPage.thirtydays);
 		Screenshots.captureScreenshot();
@@ -53,7 +53,7 @@ public class PAYMSimOPageActions extends Environment {
 	}
 
 	public static void SelectTariffPhonesTab(String elementName)
-			throws InterruptedException, AWTException, IOException {
+			throws InterruptedException, IOException {
 		// Assert.assertTrue(driver.getTitle().contains("30 Days");
 
 		if (elementName.contains("30 Days")) {
@@ -81,7 +81,7 @@ public class PAYMSimOPageActions extends Environment {
 	}
 
 	public static void SelectRecommendedTariffPhonesTab(String elementName)
-			throws InterruptedException, AWTException, IOException {
+			throws InterruptedException, IOException {
 		// Assert.assertTrue(driver.getTitle().contains("30 Days");
 
 		if (elementName.contains("30 Days")) {
@@ -753,7 +753,7 @@ public class PAYMSimOPageActions extends Environment {
 
 	}
 
-	public static void SelectTariffMBBTab(String elementName) throws InterruptedException, AWTException, IOException {
+	public static void SelectTariffMBBTab(String elementName) throws InterruptedException, IOException {
 		JavascriptExecutor executor = (JavascriptExecutor) driver;
 		if (elementName.contains("30 Days")) {
 			log.debug("Selecting a Random Tariff under 30 days tab");
@@ -772,6 +772,7 @@ public class PAYMSimOPageActions extends Environment {
 		}
 		Screenshots.captureScreenshot();
 	}
+
 	public static void SelectCTAtoBuySIMOtariff() throws IOException, InterruptedException {
 		log.debug("clicking on Select to buy SIMO tariff");
 		WebElement element = pageobjects.PAYMSimOPage.SelectSIMOTariff;
@@ -782,10 +783,19 @@ public class PAYMSimOPageActions extends Environment {
 		Screenshots.captureScreenshot();
 	}
 
+	public static void SelectCTASIMOtariff(String tariff) throws IOException, InterruptedException {
+		log.debug("clicking on Select to buy SIMO tariff");
+		WebElement element = pageobjects.PAYMSimOPage.SelectSIMOTariff;
+		JavascriptExecutor executor = (JavascriptExecutor)driver;
+		executor.executeScript("arguments[0].click();", element);
+		Thread.sleep(10000);
+		//pageobjects.PAYMSimOPage.SelectSIMOTariff.click();
+		Screenshots.captureScreenshot();
+	}
 
 	///////////////////////////Upgrade Simo Page/////////////////////////////////////////////
 
-	public static void ClickonTabletsTabSimo() throws IOException, InterruptedException {
+	public static void ClickonTabletsTabSimo() {
 
 		WebElement element = pageobjects.PAYMSimOPage.TabletsTabSimo;
 		JavascriptExecutor executor = (JavascriptExecutor)driver;
@@ -803,7 +813,19 @@ public class PAYMSimOPageActions extends Environment {
 
 	}
 
-	public static void clickOnTermsAndConditionsCheckboxInReviewPage() throws IOException, InterruptedException {
+	public static void selectINeedNewSIM() throws IOException, InterruptedException {
+
+		log.debug("Review Page validation :: " + driver.getTitle());
+		WebElement element = pageobjects.PAYMSimOPage.INeedNewSIM;
+		scrollToAnElement.scrollToElement(pageobjects.PAYMSimOPage.INeedNewSIM);
+		Screenshots.captureScreenshot();
+		JavascriptExecutor executor = (JavascriptExecutor)driver;
+		executor.executeScript("arguments[0].click();", element);
+		log.debug("Clicked on I need a new sim option");
+
+	}
+
+	public static void clickOnTermsAndConditionsCheckboxInReviewPage() throws InterruptedException {
 
 		WebElement element = pageobjects.PAYMSimOPage.TermsAndConditionsCheckbox_ReviewPage;
 		JavascriptExecutor executor = (JavascriptExecutor)driver;
@@ -811,7 +833,7 @@ public class PAYMSimOPageActions extends Environment {
 		Thread.sleep(2000);
 	}
 
-	public static void clickOnPlaceYourOrderButton() throws IOException, InterruptedException {
+	public static void clickOnPlaceYourOrderButton() throws InterruptedException {
 		Thread.sleep(6000);
 		WebElement element = pageobjects.PAYMSimOPage.PlaceYourOrder;
 		JavascriptExecutor executor = (JavascriptExecutor)driver;
