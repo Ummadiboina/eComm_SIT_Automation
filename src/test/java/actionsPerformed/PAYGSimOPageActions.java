@@ -4,6 +4,7 @@ import GlobalActions.Screenshots;
 import helpers.Environment;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.*;
+import org.testng.Assert;
 import pageobjects.PAYGSimoPage;
 
 import java.awt.*;
@@ -19,7 +20,7 @@ public class PAYGSimOPageActions extends Environment {
     // days contract
 
     public static String selectTariff(String tariffType, String ElementName, String value)
-            throws InterruptedException, AWTException, IOException {
+            throws InterruptedException, IOException {
         // Assert.assertTrue(driver.getTitle().contains("30 Days");
 
         String tariffAmt = "", dataRolloverValue = "", dataRolloverTxtAppend;
@@ -53,8 +54,7 @@ public class PAYGSimOPageActions extends Environment {
                         log.debug("Data Roll over copy text is not displayed");
                     }
 
-                    List<WebElement> plnList = driver.findElement(By.xpath("//span[normalize-space()='" + tariffAmt + "']/../../../div/div[@class='plan-info']/div"));
-
+                    List<WebElement> plnList = driver.findElements(By.xpath("//span[normalize-space()='" + tariffAmt + "']/../../../div/div[@class='plan-info']/div"));
                     for (WebElement elm : plnList) {
                         if(elm.getAttribute("textContent").replaceAll("\"","").trim().contains("Includes data rollover")){
 
@@ -72,7 +72,7 @@ public class PAYGSimOPageActions extends Environment {
 
                     } else {
                         log.debug("Selected Big Bundle do not have Data Roll over plan");
-
+                        Assert.fail("Selected Big Bundle do not have Data Roll over plan");
                     }
 
                     driver.findElement(By.xpath("//span[text()='" + tariffAmt + "']/../../../../../following-sibling::div/div/div[@class='tile-button']")).click();
@@ -92,7 +92,7 @@ public class PAYGSimOPageActions extends Environment {
                 tariffAmt = value.split("\\|")[0];
                 dataRolloverValue = value.split("\\|")[1];
 
-                List<WebElement> plnList = driver.findElement(By.xpath("//div[contains(@ng-if,'big-talker')]/p/span[normalize-space()='"+tariffAmt+"']/../../../div/div/div"));
+                List<WebElement> plnList = driver.findElements(By.xpath("//div[contains(@ng-if,'big-talker')]/p/span[normalize-space()='"+tariffAmt+"']/../../../div/div/div"));
 
                 for (WebElement elm : plnList) {
                     if(elm.getAttribute("textContent").replaceAll("\"","").trim().contains("Includes data rollover")){
@@ -111,7 +111,7 @@ public class PAYGSimOPageActions extends Environment {
 
                 } else {
                     log.debug("Selected Classic PAYG do not have Data Roll over plan");
-
+                    Assert.fail("Selected Classic PAYG do not have Data Roll over plan");
                 }
 
 
@@ -134,7 +134,7 @@ public class PAYGSimOPageActions extends Environment {
                 tariffAmt = value.split("\\|")[0];
                 dataRolloverValue = value.split("\\|")[1];
 
-                List<WebElement> plnList = driver.findElement(By.xpath("//div[contains(@ng-if,'international')]/p/span[normalize-space()='"+tariffAmt+""+"']/../../../div/div/div"));
+                List<WebElement> plnList = driver.findElements(By.xpath("//div[contains(@ng-if,'international')]/p/span[normalize-space()='"+tariffAmt+""+"']/../../../div/div/div"));
 
                 for (WebElement elm : plnList) {
                     if(elm.getAttribute("textContent").replaceAll("\"","").trim().contains("Includes data rollover")){
@@ -152,7 +152,7 @@ public class PAYGSimOPageActions extends Environment {
 
                 } else {
                     log.debug("Selected International PAYG do not have Data Roll over plan");
-
+                    Assert.fail("Selected International PAYG do not have Data Roll over plan");
                 }
 
                 driver.findElement(By.xpath("//div[contains(@ng-if,'international')]/p/span[text()='" + tariffAmt + "']/../../../../../following-sibling::div/div/div[@class='tile-button']")).click();

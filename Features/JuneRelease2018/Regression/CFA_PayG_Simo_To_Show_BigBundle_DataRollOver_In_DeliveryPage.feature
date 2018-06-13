@@ -12,5 +12,5 @@ Feature: CFA_PayG_Simo_To_Show_BigBundle_DataRollOver_In_Delivery_Page
     Then Free Sim order confirmation is displayed
 
     Examples:
-      | Firstname | Surname | FreeSim_Type | Tariff_Value  | Data | CheckBox |
-      | TEST      | ACCEPTA | Big_Bundle   |     £20       | 5GB |   No     |
+      | Firstname | Surname | FreeSim_Type | Tariff_Value | Data | CheckBox |
+      | TEST      | ACCEPTA | BigBundle    | £15          | 5GB  | No       |

@@ -21,5 +21,5 @@ Feature: CFU_Validate_Basket_Page_For_Simo_Tariff_With_Active_Voucherable_Promot
     Then Choose <consumer> <status> Business preferences <B1> <B2> <B3> <B4> And Channel Preferences <Text> <Email> <Phone> <Post> <MBBStatus> <DeviceType>
 
     Examples:
-      | username                     |tariff|promoCode| password | Username     | consumer | B1  | B2  | B3     | B4  | Text | Email  | Phone | Post | status  | MBBStatus | DeviceType |
-      | ins_nov1474@stf.ref.o2.co.uk |      |promoCode| test123  | TEST ACCEPTA | Me       | Not | Not | Select | Not | Not  | Select | Not   | Not  | Enabled | No        | Connected  |
+      | username                     | tariff                 | promoCode | password | Username     | consumer | B1  | B2  | B3     | B4  | Text | Email  | Phone | Post | status  | MBBStatus | DeviceType |
+      | ins_nov1474@stf.ref.o2.co.uk | 9.99upfront35.00amonth | promoCode | test123  | TEST ACCEPTA | Me       | Not | Not | Select | Not | Not  | Select | Not   | Not  | Enabled | No        | Connected  |
