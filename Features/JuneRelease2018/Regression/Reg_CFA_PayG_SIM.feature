@@ -1,5 +1,4 @@
-Feature: Reg_CFA_PayG_SIM_ipad
-
+Feature: Reg_CFA_PayG_SIM
 @Web
   Scenario Outline: Ordering a free sim 
     Given I am an CFA user and Lands on shop page
