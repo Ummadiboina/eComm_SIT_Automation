@@ -1,4 +1,4 @@
-Feature: 94_Reg_TrustevPayMPhones_ClickandCollectE2EjourneyWithAccessoryInAgentShop
+Feature: 94_Reg_Trustev_AFA_PayMPhones_ClickandCollectE2EjourneyWithAccessory
 
   #launch hooks and get browser
   @Web
