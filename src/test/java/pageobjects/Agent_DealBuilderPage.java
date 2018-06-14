@@ -15,6 +15,9 @@ public class Agent_DealBuilderPage {
     @FindBy(how = How.ID, using = "extrasTab")
     public static WebElement ExtrasTab;
 
+    @FindBy(how = How.ID, using = "(//span[@class='boltonName'])[1]")
+    public static WebElement SelectBolton;
+
     @FindBy(how = How.ID, using = "accessoriesTab")
     public static WebElement AccessoriesTab;
 
@@ -189,6 +192,10 @@ public class Agent_DealBuilderPage {
     //check the device weather added into the Deal Builder
     @FindBy(how = How.XPATH, using = "//table[@class='lineItemTable device']//th")
     public static WebElement deviceAdded_DealBuilder;
+
+    @FindBy(how = How.XPATH, using = "(//table[@class='lineItemTable boltons']//tr[2]/td/p/a)[1]")
+    public static WebElement removeBolton;
+
 
     //check the Tariff weather added into the Deal Builder
     @FindBy(how = How.XPATH, using = "//table[@class='lineItemTable tariff']//th")

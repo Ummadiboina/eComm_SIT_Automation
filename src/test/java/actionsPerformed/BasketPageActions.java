@@ -141,7 +141,7 @@ public class BasketPageActions extends Environment {
 	// Below is for Clicking on the goto Checkout button
 	public static void gotoCheckout() throws IOException, InterruptedException {
 
-		Thread.sleep(4000);
+		Thread.sleep(10000);
 		scrollToAnElement.scrollToElement(BasketPage.YourOrder);
 		Screenshots.captureScreenshot();
 		String title = driver.getTitle();
@@ -162,13 +162,13 @@ public class BasketPageActions extends Environment {
 
 			checkOutButtonValidation.click();
 		} else {
-			Thread.sleep(2000);
+			Thread.sleep(4000);
 			if(!pageobjects.BasketPage.checkoutbtn.isEnabled())
 			{
 				Thread.sleep(4000);
 				driver.findElement(By.xpath("//input[@id='noNeedNewSim']")).click();
 			}
-			Thread.sleep(3000);
+			Thread.sleep(5000);
 			log.debug("Queue page is not displayed");
 			WebElement element = pageobjects.BasketPage.checkoutbtn;
 			JavascriptExecutor executor = (JavascriptExecutor)driver;

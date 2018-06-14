@@ -59,7 +59,7 @@ public class Agent_DealBuilderPageActions extends Environment {
 
             Agent_DealBuilderPage.SearchTextBox_PayMDevice.sendKeys(Device);
             log.debug("Clicked on SearchTextBox to enter" + Device);
-            log.debug("Clicked on SearchTextBox to enter" + Device);
+            Thread.sleep(4000);
             Agent_DealBuilderPage.SelectInStockPAYMDevice.click();
             Thread.sleep(3000);
         }
@@ -74,33 +74,31 @@ public class Agent_DealBuilderPageActions extends Environment {
         if (Tariff.contains("Random")) {
             // Agent_DealBuilderPage.SearchTextBox_Tariff.sendKeys("Standard");
             Agent_DealBuilderPage.SelectingFirstAvailableTariff.click();
-            Thread.sleep(3000);
+            Thread.sleep(5000);
             log.debug("Selected Random Tariff ");
-            log.debug("Selected Random Tariff ");
-
         }
         if (Tariff.contains("Standard")) {
             Agent_DealBuilderPage.SearchTextBox_Tariff.sendKeys("Standard");
             Agent_DealBuilderPage.SelectingFirstAvailableTariff.click();
-            Thread.sleep(3000);
+            Thread.sleep(5000);
             log.debug("Selected Random Tariff ");
-            log.debug("Selected Random Tariff ");
+
 
         }
         if (Tariff.contains("SimO")) {
             Agent_DealBuilderPage.SearchTextBox_Tariff.sendKeys("- / Simo");
             Agent_DealBuilderPage.SelectingFirstAvailableTariff.click();
-            Thread.sleep(3000);
+            Thread.sleep(5000);
             log.debug("Selected Random SimO Tariff ");
-            log.debug("Selected Random SimO Tariff ");
+
         }
 
         if (Tariff.contains("Refresh")) {
             Agent_DealBuilderPage.SearchTextBox_Tariff.sendKeys("Refresh");
             Agent_DealBuilderPage.SelectingFirstAvailableTariff.click();
-            Thread.sleep(3000);
+            Thread.sleep(5000);
             log.debug("Selected Refresh Tariff ");
-            log.debug("Selected Refresh Tariff ");
+
         }
         ////////////////////////////// Basecomms
         ////////////////////////////// Tariff//////////////////////////////////////
@@ -212,7 +210,7 @@ public class Agent_DealBuilderPageActions extends Environment {
         // Selecting an Extra
         Agent_DealBuilderPage.ExtrasTab.click();
         log.debug("Clicked on Extras Tab");
-        log.debug("Clicked on Extras Tab");
+
         Thread.sleep(3000);
 
         if (Extras.contains("Random")) {
@@ -234,6 +232,28 @@ public class Agent_DealBuilderPageActions extends Environment {
         Screenshots.captureScreenshot();
 
     }
+
+    public static void ClickOnExtras() throws InterruptedException, IOException {
+
+        // Selecting an Extra
+        Agent_DealBuilderPage.ExtrasTab.click();
+        log.debug("Clicked on Extras Tab");
+        Thread.sleep(3000);
+        Screenshots.captureScreenshot();
+        Thread.sleep(3000);
+    }
+
+    public static void SelectBolton() throws InterruptedException, IOException {
+
+        // Selecting a Bolton
+        Thread.sleep(3000);
+        Agent_DealBuilderPage.SelectBolton.click();
+        log.debug("Clicked on Extras Tab");
+        Thread.sleep(3000);
+        Screenshots.captureScreenshot();
+        Thread.sleep(4000);
+    }
+
 
     public static void SelectPayGDevice(String Device) throws InterruptedException, IOException {
 
@@ -380,6 +400,16 @@ public class Agent_DealBuilderPageActions extends Environment {
         Agent_DealBuilderPage.Checkout.click();
         log.debug("Clicked on Checkout ");
         log.debug("Clicked on Checkout ");
+        Screenshots.captureScreenshot();
+    }
+
+    public static void checkoutEnabledDisabled() throws InterruptedException, IOException {
+        Thread.sleep(3000);
+        if(Agent_DealBuilderPage.Checkout.isEnabled()){
+            log.debug("Checkout CTA is enabled");
+        }else {
+            log.debug("Checkout CTA is disabled");
+        }
         Screenshots.captureScreenshot();
     }
 
@@ -615,6 +645,20 @@ public class Agent_DealBuilderPageActions extends Environment {
             log.debug("handset and tariff dropdown is not displayed, should be fine");
         }
     }
+
+    //Remove Bolton
+    public static void removeBolton() {
+        try {
+
+                Agent_DealBuilderPage.removeBolton.isDisplayed();
+                log.debug(" Bolton is removed from the the builder ");
+                Screenshots.captureScreenshot();
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            log.debug("Bolton removing is not done");
+        }
+    }
+
     //select remove the device
 
     public static void verifyPromotionsDisplayed() {
