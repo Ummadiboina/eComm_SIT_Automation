@@ -783,13 +783,20 @@ public class PAYMSimOPageActions extends Environment {
 		Screenshots.captureScreenshot();
 	}
 
-	public static void SelectCTASIMOtariff(String tariff) throws IOException, InterruptedException {
-		log.debug("clicking on Select to buy SIMO tariff");
-		WebElement element = pageobjects.PAYMSimOPage.SelectSIMOTariff;
-		JavascriptExecutor executor = (JavascriptExecutor)driver;
-		executor.executeScript("arguments[0].click();", element);
-		Thread.sleep(10000);
-		//pageobjects.PAYMSimOPage.SelectSIMOTariff.click();
+	public static void SelectValidCTASIMOtariff(String tariffAmt, String dataValue) throws IOException, InterruptedException {
+
+				List<WebElement> plnList = driver.findElements(By.xpath("//*[@name='P12M']"));
+					for (WebElement elm : plnList) {
+
+						if(driver.findElements(By.xpath("//*[@name='P12M']/div[@class='col-xs-6 col-sm-3 info-container price-block-container']/div/h2[contains(normalize-space(),'" + tariffAmt + "')]")).size()>0){
+							if(driver.findElements(By.xpath("//*[@name='P12M']/div[@class='col-xs-6 col-sm-3 dmt-container info-container']/ul/li/h2[contains(normalize-space(),'"+dataValue+"')]")).size()>0) {
+								driver.findElement(By.xpath("(//*[@name='P12M']/div[@class='col-xs-12 col-sm-5 info-container buy-now']/div/form/button)[1]")).click();
+								break;
+							}
+						}
+					}
+		log.debug("Selected the valid Tariff");
+		Thread.sleep(5000);
 		Screenshots.captureScreenshot();
 	}
 

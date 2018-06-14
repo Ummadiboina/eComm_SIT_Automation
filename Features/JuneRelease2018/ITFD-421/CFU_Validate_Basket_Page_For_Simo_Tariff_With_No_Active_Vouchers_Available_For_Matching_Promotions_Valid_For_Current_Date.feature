@@ -9,8 +9,8 @@ Feature: CFU_Validate_Basket_Page_For_Simo_Tariff_With_No_Active_Vouchers_Availa
     And Navigate to upgrade > upgrade now
     And I click on 'Sim only Tariff' tab
     And click on the 'MBB' button
-    #And Click on 'Select' CTA to buy a valid <tariff>
-    And Select ribboned tariff <tariff> in upgrade journey
+    And Click on 'Select' CTA to buy a valid <tariffAmt> and <dataValue>
+    #And Select ribboned tariff <tariff> in upgrade journey
     And Select 'I need a new sim' option
     And Click on 'I agree to the terms and condition' checkbox in SIMO review page
     And Is this order for You or Someone else <consumer> when GDPR is <status>
@@ -19,5 +19,5 @@ Feature: CFU_Validate_Basket_Page_For_Simo_Tariff_With_No_Active_Vouchers_Availa
     Then Choose <consumer> <status> Business preferences <B1> <B2> <B3> <B4> And Channel Preferences <Text> <Email> <Phone> <Post> <MBBStatus> <DeviceType>
 
     Examples:
-      | username                     | tariff | promoCode | password | Username     | consumer | B1     | B2  | B3     | B4  | Text   | Email  | Phone | Post | status  | MBBStatus | DeviceType |
-      | ins_nov1474@stf.ref.o2.co.uk |        | promoCode | test123  | TEST ACCEPTA | Me       | Select | Not | Select | Not | Select | Select | Not   | Not  | Enabled | No        | Connected  |
+      | username               | tariffAmt | dataValue | promoCode | password | Username     | consumer | B1     | B2  | B3     | B4  | Text   | Email  | Phone | Post | status  | MBBStatus | DeviceType |
+      | inaveglg_057535@o2.com | £9        | 3GB       | promoCode | test123  | TEST ACCEPTA | Me       | Select | Not | Select | Not | Select | Select | Not   | Not  | Enabled | No        | Connected  |

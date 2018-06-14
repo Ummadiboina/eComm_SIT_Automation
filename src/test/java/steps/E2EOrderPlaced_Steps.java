@@ -2535,7 +2535,7 @@ public class E2EOrderPlaced_Steps {
         }
     }
 
-   @And("^Validate all the Basket contents$")
+    @And("^Validate all the Basket contents$")
     public void validate_all_the_Basket_contents() {
         try {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
@@ -8699,13 +8699,13 @@ public class E2EOrderPlaced_Steps {
         }
     }
 
-    @And("^Click on 'Select' CTA to buy a valid ([^\"]*)$")
-    public void Select_CTA_to_buy_SIMO_Tariff(String tariff)
+    @And("^Click on 'Select' CTA to buy a valid ([^\"]*) and ([^\"]*)$")
+    public void Select_CTA_to_buy_SIMO_Tariff(String tariffAmt, String dataValue)
     {
         try {
             driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
             PageFactory.initElements(driver, PAYMSimOPage.class);
-            PAYMSimOPageActions.SelectCTASIMOtariff(tariff);
+            PAYMSimOPageActions.SelectValidCTASIMOtariff(tariffAmt, dataValue);
             log.debug("Selected tariff in SIMO journey");
         } catch (Exception e) {
             e.printStackTrace();
@@ -9414,10 +9414,15 @@ public class E2EOrderPlaced_Steps {
     @And("^Click on 'Extras' tab$")
     public void click_on_Extras_tab() {
         try {
+
+            driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, Agent_DealBuilderPage.class);
+            Agent_DealBuilderPageActions.ClickOnExtras();
+            Thread.sleep(4000);
             log.debug("Successfully verified");
         } catch (Exception e) {
-            log.debug("Unable to validate section");
-            Assert.fail("Unable to validate section");
+            log.debug("Unable to validate Extra section");
+            Assert.fail("Unable to validate Extra section");
         }
     }
 
@@ -9425,10 +9430,14 @@ public class E2EOrderPlaced_Steps {
     @And("^Select a Bolton$")
     public void select_Bolton() {
         try {
+            driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, Agent_DealBuilderPage.class);
+            Agent_DealBuilderPageActions.SelectBolton();
+            Thread.sleep(4000);
             log.debug("Successfully click and verfy the Bolton verified");
         } catch (Exception e) {
-            log.debug("Unable to validate section");
-            Assert.fail("Unable to validate section");
+            log.debug("Unable to validate Bolton section");
+            Assert.fail("Unable to validate Bolton section");
         }
     }
 
@@ -9475,6 +9484,10 @@ public class E2EOrderPlaced_Steps {
     @And("^To remove the Bolton2 applied by Promotion, Click on 'Remove' button in front of Bolton2$")
     public void remove_Bolton_applied_by_Promotion_Click_Remove_button_in_front_Bolton() {
         try {
+            driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, Agent_DealBuilderPage.class);
+            Agent_DealBuilderPageActions.removeBolton();
+            Thread.sleep(4000);
             log.debug("Remove the bolt is verified");
         } catch (Exception e) {
             log.debug("Unable to validate section");
@@ -9482,13 +9495,17 @@ public class E2EOrderPlaced_Steps {
         }
     }
 
-    @Then("^Verify that the 'Checkout' CTA is enabled$")
+    @And("^Verify that the 'Checkout' CTA is enabled or disabled$")
     public void verify_that_the_Checkout_CTA_is_enabled() {
         try {
-            log.debug("Verify the Checkout button is Enabled");
+            driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, Agent_DealBuilderPage.class);
+            Agent_DealBuilderPageActions.checkoutEnabledDisabled();
+            Thread.sleep(4000);
+            log.debug("Verify the Checkout button is Enabled or Disabled");
         } catch (Exception e) {
-            log.debug("Unable to validate section");
-            Assert.fail("Unable to validate section");
+            log.debug("Unable to validate Checkout button is Enabled or Disabled");
+            Assert.fail("Unable to validate Checkout button is Enabled or Disabled");
         }
     }
 

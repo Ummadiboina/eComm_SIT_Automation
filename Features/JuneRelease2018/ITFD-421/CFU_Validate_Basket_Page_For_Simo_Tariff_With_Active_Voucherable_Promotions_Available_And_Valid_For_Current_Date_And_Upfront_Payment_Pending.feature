@@ -9,8 +9,8 @@ Feature: CFU_Validate_Basket_Page_For_Simo_Tariff_With_Active_Voucherable_Promot
     And Navigate to upgrade > upgrade now
     And I click on 'Sim only Tariff' tab
     And click on the 'Tablets' button
-    #And Click on 'Select' CTA to buy a valid <tariff>
-    And Select ribboned tariff <tariff> in upgrade journey
+    And Click on 'Select' CTA to buy a valid <tariffAmt> and <dataValue>
+    #And Select ribboned tariff <tariff> in upgrade journey
     And I Land on the Plan included basket page and choose home delivery option
     And Click on 'plus' accordion at get promo code section and enter valid <promoCode> details in Basket page
     And click on "go to checkout" button
@@ -23,5 +23,5 @@ Feature: CFU_Validate_Basket_Page_For_Simo_Tariff_With_Active_Voucherable_Promot
     Then Choose <consumer> <status> Business preferences <B1> <B2> <B3> <B4> And Channel Preferences <Text> <Email> <Phone> <Post> <MBBStatus> <DeviceType>
 
     Examples:
-      | username                     | tariff | promoCode | password | Username     | consumer | B1     | B2  | B3     | B4  | Text   | Email  | Phone | Post | status  | MBBStatus | DeviceType |
-      | ins_nov1474@stf.ref.o2.co.uk |        | promoCode | test123  | TEST ACCEPTA | Me       | Select | Not | Select | Not | Select | Select | Not   | Not  | Enabled | No        | Connected  |
+      | username                          | tariffAmt | dataValue | promoCode | password | Username     | consumer | B1     | B2  | B3     | B4  | Text   | Email  | Phone | Post | status  | MBBStatus | DeviceType |
+      | inavgmsa_jan9508@stf.ref.o2.co.uk | £20       | 18GB      | promoCode | test123  | TEST ACCEPTA | Me       | Select | Not | Select | Not | Select | Select | Not   | Not  | Enabled | No        | Connected  |
