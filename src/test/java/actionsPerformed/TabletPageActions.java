@@ -78,7 +78,7 @@ public class TabletPageActions extends Environment {
 
 			JavascriptExecutor js = ((JavascriptExecutor) driver);
 			js.executeScript("arguments[0].scrollIntoView(true);",driver.findElement(By.xpath("(//a[contains(., 'View all products on one page')])[2]")));
-
+			Thread.sleep(4000);
 			if(driver.findElements(By.xpath("(//a[contains(., 'View all products on one page')])[2]")).size() > 0) {
 				Thread.sleep(2000);
 				WebElement ele = driver.findElement(By.xpath("(//a[contains(., 'View all products on one page')])[2]"));

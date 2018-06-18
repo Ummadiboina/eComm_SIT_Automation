@@ -1311,6 +1311,7 @@ public class UpgradeCustomerPageActions extends Environment {
 
     public static void RecyclesectionDisplayed() throws InterruptedException, IOException {
         // pageobjects.UpgradeCustomerPage.RecycleWidget.click();
+        Thread.sleep(8000);
         if (driver.findElement(By.xpath("//*[@id='newRecycleOptionsTile']")).isDisplayed()) {
             log.debug("Upgrade and Recycle options is displayed");
             // driver.findElement(By.xpath("//*[@id='newRecycleOptionsTile']//*[@ng-click='selectRecycleDevice();']/span")).click();
@@ -1331,9 +1332,10 @@ public class UpgradeCustomerPageActions extends Environment {
         log.debug("in Select recycle an continue to upgrade function");
         driver.findElement(By.id("recycleCredit")).click();
         log.debug("Clicked on Radio button next to Recycle and get up to XXXX credit");
+        Thread.sleep(3000);
         //driver.findElement(By.xpath("//button[contains(text(),'upgrade now')]")).click();
         JavascriptExecutor executor = (JavascriptExecutor) driver;
-        executor.executeScript("arguments[0].click();", driver.findElement(By.xpath("//button[contains(text(),'upgrade now')]")));
+        executor.executeScript("arguments[0].click();", driver.findElement(By.xpath("//button[contains(text(),'upgrade now')] | //button[contains(text(),'Continue to upgrade')]")));
         Thread.sleep(3000);
 
         log.debug("Clicked on upgrade now button");
@@ -1349,7 +1351,7 @@ public class UpgradeCustomerPageActions extends Environment {
         Screenshots.captureScreenshot();
     }
 
-    public static void yourSim() throws IOException, InterruptedException {
+    public static void yourSim() {
         try {
             log.debug("In your Sim Section");
             log.debug("Choosing need new sim");
@@ -1462,7 +1464,7 @@ public class UpgradeCustomerPageActions extends Environment {
             WebElement Make1 = pageobjects.UpgradeCustomerPage.Make;
             js.executeScript("arguments[0].setAttribute('style', 'display:block;')", Make1);
             new Select(Make1).selectByVisibleText("Apple");
-            Thread.sleep(3000);
+            Thread.sleep(6000);
             log.debug("Selected Apple as Make");
             log.debug("Selected Apple as Make");
 
@@ -1472,8 +1474,9 @@ public class UpgradeCustomerPageActions extends Environment {
                 WebElement Model1 = pageobjects.UpgradeCustomerPage.Model;
                 js.executeScript("arguments[0].setAttribute('style', 'display:block;')", Model1);
                 new Select(Model1).selectByVisibleText("iPhone 7 32GB");
-                Thread.sleep(3000);
+                Thread.sleep(6000);
                 log.debug("Selected model completed");
+
                 // Validating for Network
                 if (Network.contains("Orange")) {
                     log.debug("in selecting Network");

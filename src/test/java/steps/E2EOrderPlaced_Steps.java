@@ -2070,7 +2070,7 @@ public class E2EOrderPlaced_Steps {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, OrderConfirmationPage.class);
             OrderConfirmationPageActions.gettitlepage();
-            OrderConfirmationPageActions.MessageDisplayed();
+            OrderConfirmationPageActions.OrderDeclineMessageDisplayed();
             // /Assert.assertEquals(MessageDisplayed(), actual);
         } catch (Exception e) {
             // TODO Auto-generated catch block
@@ -2480,7 +2480,7 @@ public class E2EOrderPlaced_Steps {
         try {
             driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
             PageFactory.initElements(driver, Agent_DealBuilderPage.class);
-            Thread.sleep(3000);
+            Thread.sleep(7000);
             Agent_DealBuilderPageActions.SelectTariff(Tariff);
             // log.debug("Selecting a valid tariff");
         } catch (Exception e) {
