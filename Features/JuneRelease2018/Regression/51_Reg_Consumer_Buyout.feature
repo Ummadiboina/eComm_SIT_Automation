@@ -5,7 +5,7 @@ Feature: 51_Reg_Consumer_Buyout
     Given I am an Existing user and Navigates to Signin page
     And Signin using valid <username> and <password> credentials
     And Navigate to upgrade > upgrade now
-    And click on 'Take offer and upgrade'button
+    #And click on 'Take offer and upgrade'button
     And Select a <handset> device from Recommended devices section
     And select any random tariff from Recommended devices section
     And Select a 'I need a sim'option

@@ -31,7 +31,7 @@ public class BaseCommPageActions extends Environment {
 			//pageobjects.BaseCommPage.RandomDevice.click();
 			JavascriptExecutor executor = (JavascriptExecutor)driver;
 			executor.executeScript("arguments[0].click();",pageobjects.BaseCommPage.RandomDevice);
-
+			Thread.sleep(4000);
 			log.debug("Selected Random Device");
 		}
 		Screenshots.captureScreenshot();

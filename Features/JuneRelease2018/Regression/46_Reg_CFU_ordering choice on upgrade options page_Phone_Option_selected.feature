@@ -32,5 +32,5 @@ Feature: 46_Reg_CFU_ordering choice on upgrade options page_Phone_Option_selecte
     Then Choose <consumer> <status> Business preferences <B1> <B2> <B3> <B4> And Channel Preferences <Text> <Email> <Phone> <Post> <MBBStatus> <DeviceType>
 
     Examples:
-      | username               | password | handset           | Username     | Action | tariff                  | consumer | B1     | B2  | B3     | B4  | Text | Email  | Phone | Post | status  | MBBStatus | DeviceType |
-      | inavl0wx_593140@o2.com | test123  | Samsung Galaxy S8 | TEST ACCEPTA | skip   | 19.99upfront45.00amonth | Me       | Select | Not | Select | Not | Not  | Select | Not   | Not  | Enabled | No        | Connected  |
+      | username             | password | handset           | Username     | Action | tariff                  | consumer | B1     | B2  | B3     | B4  | Text | Email  | Phone | Post | status  | MBBStatus | DeviceType |
+      | lucky@rediffmail.com | test123  | Samsung Galaxy S8 | TEST ACCEPTA | skip   | 19.99upfront45.00amonth | Me       | Select | Not | Select | Not | Not  | Select | Not   | Not  | Enabled | No        | Connected  |

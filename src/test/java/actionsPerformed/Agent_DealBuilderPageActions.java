@@ -56,7 +56,7 @@ public class Agent_DealBuilderPageActions extends Environment {
             log.debug("Selected device ");
 
         } else {
-
+            Thread.sleep(3000);
             Agent_DealBuilderPage.SearchTextBox_PayMDevice.sendKeys(Device);
             log.debug("Clicked on SearchTextBox to enter" + Device);
             Thread.sleep(4000);
@@ -118,14 +118,14 @@ public class Agent_DealBuilderPageActions extends Environment {
     /////////////////////////////////// validation//////////////////////////////////
 
     public static void BasecommsAgentOffersColumnValidation() throws InterruptedException, IOException {
-    Thread.sleep(6000);
+    Thread.sleep(8000);
         List<WebElement> menuOuter = driver.findElements(By.xpath("//*[@id='planTable']/tbody/tr"));
         log.debug(menuOuter.size());
         int j = 1;
         for (int i = 0; i < menuOuter.size()-1; i++) {
             j = i + 1;
             if (menuOuter.get(i).getText().trim().contains("Base Comms")) {
-                if (driver.findElement(By.xpath("//*[@id='planTable']/tbody/tr[" + j + "]/td[11]")).getText()
+                if (driver.findElement(By.xpath("//*[@id='planTable']/tbody/tr[" + j + "]/td[1]")).getText()
                         .equals("Base Comms")) {
                     log.debug("Offers contains Base comms");
                     driver.findElement(By.xpath("//*[@id='planTable']/tbody/tr")).click();
@@ -134,7 +134,7 @@ public class Agent_DealBuilderPageActions extends Environment {
                 } else {
 
                     log.debug("Offers does not contain Basecomms");
-                    log.debug("Offers does not contain Basecomms");
+
                 }
             }
         }
@@ -481,7 +481,7 @@ public class Agent_DealBuilderPageActions extends Environment {
 
         }
 
-        if (Status.contains("Preorder")) {
+        if (Status.contains("preorder")) {
             Thread.sleep(3000);
             Agent_DealBuilderPage.SearchDevice.sendKeys(Status);
             Thread.sleep(3000);
@@ -577,7 +577,7 @@ public class Agent_DealBuilderPageActions extends Environment {
     }
 
     public static void AgentBuyOut() throws InterruptedException, IOException {
-
+        Thread.sleep(3000);
         if(Agent_DealBuilderPage.AgentBuyOut_Button.isDisplayed()) {
             log.debug("The Buy Out Qustionair is displayed");
             Agent_DealBuilderPage.AgentBuyOut_Button.click();

@@ -63,6 +63,27 @@ public class OrderConfirmationPageActions extends Environment {
 		}
 	}
 
+	public static void OrderDeclineMessageDisplayed() throws IOException, InterruptedException {
+		log.debug("This is order decline page and the message in this page is as below......");
+
+		try {
+			String outercontainer = driver.findElement(By.xpath("//h1[normalize-space()='Unable to continue']")).getText();
+			log.debug("Trying to find the Element for order decline using element identifier");
+
+			String DataContainer1 = driver.findElement(By.xpath("//div[@class='large']/p")).getText();
+			String DataContainer2 = driver.findElement(By.xpath("(//div[@id='contact-o2']/p)[1]")).getText();
+
+				log.debug(outercontainer +" - ");
+				log.info(DataContainer1 +" - ");
+				log.info(DataContainer2);
+
+			Screenshots.captureScreenshot();
+		} catch (IndexOutOfBoundsException e) {
+			Screenshots.captureScreenshot();
+		}
+	}
+
+
 	public static void VolteMessageDisplayed() throws IOException, InterruptedException {
 		log.debug("The Volte message in this page is as below......");
 		try {

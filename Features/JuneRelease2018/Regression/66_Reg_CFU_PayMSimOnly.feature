@@ -39,4 +39,4 @@ Feature: 66_Reg_CFU_PayMSimOnly
 
     Examples:
       | Contract | GiftBlock  | username                     | Username     | password | filtername | sortoption                 | GiftBlock | consumer | B1     | B2  | B3     | B4  | Text | Email  | Phone | Post | status  | MBBStatus | DeviceType |
-      | 30 Days  | Configured | ins_nov1474@stf.ref.o2.co.uk | TEST ACCEPTA | test123  | high       | Monthly data (Low to High) | dfdf      | Me       | Select | Not | Select | Not | Not  | Select | Not   | Not  | Enabled | No        | Connected  |
+      | 30 Days  | Configured | ins_feb8544@stf.ref.o2.co.uk | TEST ACCEPTA | test123  | high       | Monthly data (Low to High) | dfdf      | Me       | Select | Not | Select | Not | Not  | Select | Not   | Not  | Enabled | No        | Connected  |

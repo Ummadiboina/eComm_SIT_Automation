@@ -23,4 +23,3 @@ Feature: 12_Reg_Consumer_Existing_PAYG_Phone_BigBundle_To_Show_£15_Data_Roll_Ov
     Examples:
       | username                     | password | handset       | Username     | Tariff_Value | Data | consumer | B1     | B2  | B3     | B4  | Text   | Email  | Phone  | Post | status  | MBBStatus | DeviceType |
       | ins_feb3087@stf.ref.o2.co.uk | test123  | Random Device | TEST ACCEPTA | £15          | 5GB  | Me       | Select | Not | Select | Not | Select | Select | Not    | Not  | Enabled | No        | Connected  |
-      |                              |          | Random Device | TEST ACCEPTA | £20          | 6GB  | Me       | Select | Not | Select | Not | Select | Not    | Select | Not  | Enabled | No        | Connected  |

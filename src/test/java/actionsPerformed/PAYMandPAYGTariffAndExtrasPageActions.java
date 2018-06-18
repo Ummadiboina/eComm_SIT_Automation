@@ -663,7 +663,7 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 	}
 
 	public static void SortFilterPosition() throws InterruptedException, IOException {
-		driver.manage().timeouts().implicitlyWait(150, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 		log.debug("Entering SortFilterPosition method");
 
 		/*//scroll the webElement
@@ -942,6 +942,7 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 	}
 
 	public static void clickViewAllTariffs() throws IOException, InterruptedException {
+		Thread.sleep(5000);
 		List<WebElement> ViewAllTariffs = pageobjects.PAYMandPAYGTariffAndExtrasPage.ViewAllTariffs;
 		if (ViewAllTariffs.size() > 0) {
 			js.executeScript("arguments[0].click();", ViewAllTariffs.get(0));

@@ -29,7 +29,10 @@ public class FreeSimDeliveryPageActions extends Environment {
 	{
 
 		log.debug("Entering an Random email id");
-		DeliveryPage.Email_Address.sendKeys(RandomEmailAddressCreation.RandomEmail());
+		String email = RandomEmailAddressCreation.RandomEmail();
+		System.out.println("Email Id entered::" +email);
+		log.debug("Email Id entered:: " +email);
+		DeliveryPage.Email_Address.sendKeys(email);
 		log.debug("Setting the About you options");
 		log.debug("Setting the About you options");
 		Select dropdown = new Select(DeliveryPage.Title);

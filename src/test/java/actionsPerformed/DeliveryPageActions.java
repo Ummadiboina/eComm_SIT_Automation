@@ -332,7 +332,7 @@ public class DeliveryPageActions extends Environment {
 
 
     public static void select_BringTradeInDevice_CheckBox() throws InterruptedException, IOException {
-        Thread.sleep(3000);
+        Thread.sleep(8000);
         log.debug("Running select_BringTradeInDevice_CheckBox function");
 
         Boolean isPresent = driver.findElements(By.xpath("//*[@id='trade-in-confirmation-required']")).size() > 0;

@@ -107,7 +107,7 @@ public class Agent_DealBuilderPage {
     @FindBy(how = How.XPATH, using = "//*[@class='priceSelection']/select")
     public static WebElement basecommstariff;
 
-    @FindBy(how = How.XPATH, using = "html/body/div[1]/div/div[2]/div[1]/table/tbody/tr[1]/td[1]/a/img")
+    @FindBy(how = How.XPATH, using = "html/body/div[1]/div/div[2]/div[1]/table/tbody/tr[2]/td[1]/a/img")
     public static WebElement firstAvailableDevice;
 
     @FindBy(how = How.XPATH, using = "//input[@type='checkbox']")
