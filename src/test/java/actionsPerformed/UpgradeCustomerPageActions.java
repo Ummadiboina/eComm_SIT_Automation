@@ -1314,6 +1314,7 @@ public class UpgradeCustomerPageActions extends Environment {
         Thread.sleep(8000);
         if (driver.findElement(By.xpath("//*[@id='newRecycleOptionsTile']")).isDisplayed()) {
             log.debug("Upgrade and Recycle options is displayed");
+            Thread.sleep(4000);
             // driver.findElement(By.xpath("//*[@id='newRecycleOptionsTile']//*[@ng-click='selectRecycleDevice();']/span")).click();
             JavascriptExecutor executor = (JavascriptExecutor) driver;
             executor.executeScript("arguments[0].click();", driver.findElement(By.xpath("//div[@class='recycle-device not-your-device-box']/a/span")));

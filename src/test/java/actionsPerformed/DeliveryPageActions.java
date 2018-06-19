@@ -219,9 +219,9 @@ public class DeliveryPageActions extends Environment {
             Thread.sleep(3000);
             js.executeScript("arguments[0].click();", driver.findElement(By.xpath("//*[@id='checkbox-terms-agreement-required']")));
             log.debug("checkbox Selected");
-            pageobjects.DeliveryPage.Continue.click();
+           /* pageobjects.DeliveryPage.Continue.click();
             log.debug("Clicking on the continue link");
-            Thread.sleep(4000);
+            Thread.sleep(4000);*/
             Screenshots.captureScreenshot();
         } else {
             WebElement element = pageobjects.DeliveryPage.Continue;
@@ -381,12 +381,12 @@ public class DeliveryPageActions extends Environment {
     }
 
     public static void selectExistingAcctAndFastCheckOut() throws InterruptedException, IOException {
-        Thread.sleep(5000);
+        Thread.sleep(8000);
 
         log.debug("going to click on existing account");
 
         pageobjects.DeliveryPage.SelectAcct.click();
-        Thread.sleep(3000);
+        Thread.sleep(4000);
         js.executeScript("arguments[0].click();", pageobjects.DeliveryPage.FastCheckOut);
         // pageobjects.DeliveryPage.FastCheckOut.click();
         log.debug("FastCheckout button is selected");
@@ -746,12 +746,26 @@ public class DeliveryPageActions extends Environment {
     }
 
 
-    public static void ClickOnUseDifferentAddress() {
-        List<WebElement> DiffAddressLink = driver.findElements(By.xpath("//*[@id='different-delivery-address']"));
+    public static void ClickOnUseDifferentAddress() throws InterruptedException {
+        List<WebElement> DiffAddressLink = driver.findElements(By.xpath("//a[normalize-space()='Use a different delivery address']"));
         if (DiffAddressLink.size() > 0) {
             WebElement element = pageobjects.DeliveryPage.DeliveryPageUseDiffAddressLink;
             JavascriptExecutor executor = (JavascriptExecutor) driver;
             executor.executeScript("arguments[0].click();", element);
+
+            Thread.sleep(3000);
+
+            log.debug("Entering the address");
+            pageobjects.DeliveryPage.Housenumber.sendKeys("12");
+            log.debug("Entered House number");
+
+            pageobjects.DeliveryPage.Postcode.sendKeys("SL11ER");
+            log.debug("Entered Post code");
+            pageobjects.DeliveryPage.Find_Address.click();
+            log.debug("Clicked on the Find address button");
+
+            pageobjects.DeliveryPage.SelectAddress1.click();
+            log.debug("Clicked on the select address button");
 
         } else
             Assert.fail("Unable to click on the Use a different address link");

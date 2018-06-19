@@ -9,7 +9,7 @@ Feature: 19_Reg_MBB_Data filters
     And Navigate to PayM MBB page
     And I choose MBB PayM <Device_Name>
     And Navigate to device details page
-    And Land on the 'Tariffs and extra' page
+    And Select PayM Tariff Tab
     ##New functionality starts
     Then I should see data filters buttons next to existing sort drop-down for PAYM/SIMO tariffs <sortoption>
     #Verification point - A - More than 2 should be displayed
@@ -20,9 +20,9 @@ Feature: 19_Reg_MBB_Data filters
     Then I should see tariffs relevant to selected sort option <sortoption> & filter option <filtername>
     When I deselect filter button
     Then I should see tariffs based on the selected sort option <sortoption>
+    And Land on the 'Tariffs and extra' page
 
     ##New functionality ends
     Examples:
       | Device_Name   | Firstname | Surname | Username     | filtername | sortoption                 |
       | Random Device | TEST      | ACCEPTA | TEST ACCEPTA | high       | Monthly data (Low to High) |
-   #  | Apple iPhone 7    | TEST      | ACCEPTA | TEST ACCEPTA | high       |

@@ -151,6 +151,9 @@ public class MouseHoverPage extends Environment {
 	@FindBy(how = How.XPATH, using = ("//h3[normalize-space()='Smartwatches']//following-sibling::p[normalize-space()='See the range']"))
 	public static WebElement MoveMouseOnSmarttechWatches_Drupal;
 
+	@FindBy(how = How.XPATH, using = ("//h3[contains(text(), 'Fitness trackers')]"))
+	public static WebElement MoveMouseOnFitnessTrackers_Drupal;
+
 
 	// Below is the link on the Fitness
 
@@ -166,8 +169,6 @@ public class MouseHoverPage extends Environment {
 
 	@FindBy(how = How.XPATH, using = ("//a[normalize-space()='Pay As You Go']"))
 	public static WebElement PayGMobileBroadband;
-
-
 
 	@FindBy(how = How.XPATH, using = ("//li[contains(@class,'tier-menu-wrapper')]//li/a[text()='Browse dongles']"))
 	public static WebElement MoveMouseOnMobileBroadband_Drupal;

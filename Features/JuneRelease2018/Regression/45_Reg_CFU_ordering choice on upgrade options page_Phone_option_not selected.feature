@@ -33,4 +33,4 @@ Feature: 45_Reg_CFU_ordering choice on upgrade options page_Phone_option_not sel
 
     Examples:
       | username                    | password | handset  | Username     | Action | tariff                   | consumer | B1     | B2     | B3     | B4  | Text   | Email  | Phone  | Post   | status  | MBBStatus | DeviceType |
-      | ina_aug732@stf.ref.o2.co.uk | test123  | iPhone X | TEST ACCEPTA | skip   | 129.99upfront37.00amonth | Me       | Select | Select | Select | Not | Select | Select | Select | Select | Enabled | No        | Connected  |
+      | in_oct5304@stf.ref.o2.co.uk | test123  | iPhone X | TEST ACCEPTA | skip   | 129.99upfront37.00amonth | Me       | Select | Select | Select | Not | Select | Select | Select | Select | Enabled | No        | Connected  |

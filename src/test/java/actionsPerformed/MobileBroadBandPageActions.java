@@ -20,8 +20,11 @@ public class MobileBroadBandPageActions extends Environment {
 
 		if (elementName.contains("Random Device")) {
 			log.debug("Random Device Selected");
-
-			pageobjects.MobileBroadBandPage.RandomPayGDeviceSelect.click();
+			Thread.sleep(5000);
+			JavascriptExecutor executor = (JavascriptExecutor) driver;
+			Thread.sleep(3000);
+			executor.executeScript("arguments[0].click();", pageobjects.MobileBroadBandPage.RandomPayGDeviceSelect);
+			//pageobjects.MobileBroadBandPage.RandomPayGDeviceSelect.click();
 			// Assert.assertEquals(elementName,"Galaxy S7 is not found");
 			log.debug("Random Device Selected");
 		}else if (elementName.contains("Huawei 4G in Car Wifi")) {

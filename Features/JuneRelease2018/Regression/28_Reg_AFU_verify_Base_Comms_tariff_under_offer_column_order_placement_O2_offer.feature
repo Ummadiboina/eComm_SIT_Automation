@@ -18,4 +18,4 @@ Feature: 28_Reg_AFU_verify_Base_Comms_tariff_under_offer_column_order_placement_
 
     Examples:
       | user        | Device                                   | Tariffs | consumer | B1     | B2     | B3  | B4  | Text | Email  | Phone | Post | status  | MBBStatus | DeviceType |
-      | 07521119685 | Apple iPad Pro 10.5 inch 64GB Space Grey | Refresh | Me       | Select | Select | Not | Not | Not  | Select | Not   | Not  | Enabled | No        | Connected  |
+      | 07521114774 | Apple iPad Pro 10.5 inch 64GB Space Grey | Refresh | Me       | Select | Select | Not | Not | Not  | Select | Not   | Not  | Enabled | No        | Connected  |
