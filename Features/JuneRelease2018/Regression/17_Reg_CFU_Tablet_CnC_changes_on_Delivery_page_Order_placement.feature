@@ -27,4 +27,4 @@ Feature: 17_Reg_CFU_Tablet_CnC_changes_on_Delivery_page_Order_placement
 
     Examples:
       | username               | password | Firstname | Surname | Tablet  | Username     | Action | tariff | consumer | B1     | B2  | B3  | B4  | Text   | Email | Phone | Post | status  | MBBStatus | DeviceType |
-      | inaveglg_057535@o2.com | test123  | Test      | Accepta | Samsung | TEST ACCEPTA | skip   |        | Me       | Select | Not | Not | Not | Select | Not   | Not   | Not  | Enabled | No        | Connected  |
+      | in034242_226353@o2.com | test123  | Test      | Accepta | Samsung | TEST ACCEPTA | skip   |        | Me       | Select | Not | Not | Not | Select | Not   | Not   | Not  | Enabled | No        | Connected  |

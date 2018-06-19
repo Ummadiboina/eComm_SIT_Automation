@@ -20,15 +20,15 @@ Feature: 31_Reg_Agent_GenerateCCA
     And Click on 'Generate CCA' button
     #Then CCALink Should be generated
     And click on the 'CCA' link
-    And Signin using valid <username> and <password> credentials for New User
-    And Click on 'Continue' button on upgrade page
-    And Is this order for You or Someone else <consumer> when GDPR is <status2>
-    And land on the payment page and input details and click 'Continue on next step' in upgrade journey for CCA Link
-    And Continue to CCA or Buyout or Trade In Agreements page and confirm all the agreement checks for SECCI and CCA not accepted
+    And Signin using valid <username> and <password> credentials
+    #And Click on 'Continue' button on upgrade page
+    #And Is this order for You or Someone else <consumer> when GDPR is <status2>
+    #And land on the payment page and input details and click 'Continue on next step' in upgrade journey for CCA Link
+    #And Continue to CCA or Buyout or Trade In Agreements page and confirm all the agreement checks for SECCI and CCA not accepted
     #And Continue to Review page, check order contract text and review the order
     #Then order confirmation is displayed
     #Then Choose <consumer> <status> Business preferences <B1> <B2> <B3> <B4> And Channel Preferences <Text> <Email> <Phone> <Post> <MBBStatus> <DeviceType>
 
     Examples:
-      | Device                            | Tariffs | Extras | DeliveryType | Firstname | Surname | Username     | HouseNumber | PostCode | Password | confirmPassword | SecurityAnswer | B1     | B2     | B3     | B4  | Text   | Email  | Phone  | Post   | Consumer | status  | status2  | consumer | username | password | MBBStatus | DeviceType | DeviceModule |
-      | Galaxy S9 Plus 128GB Lilac Purple | Refresh | Base   | HomeDelivery | TEST      | ACCEPTA | TEST ACCEPTA | 14          | SL11UP   | test1234 | test1234        | vinudeep       | Select | Select | Select | Not | Select | Select | Select | Select | Me       | Enabled | Disabled | Me       |          | test1234 | No        | Connected  | Phone        |
+      | Device                            | Tariffs | Extras | DeliveryType | Firstname | Surname | Username     | HouseNumber | PostCode | Password | confirmPassword | SecurityAnswer | B1     | B2     | B3     | B4  | Text   | Email  | Phone  | Post   | Consumer | status  | status2  | consumer | username                            | password | MBBStatus | DeviceType | DeviceModule |
+      | Galaxy S9 Plus 128GB Lilac Purple | Refresh | Base   | HomeDelivery | TEST      | ACCEPTA | TEST ACCEPTA | 14          | SL11UP   | test1234 | test1234        | vinudeep       | Select | Select | Select | Not | Select | Select | Select | Select | Me       | Enabled | Disabled | Me       | hardeepashwini3398@stf.ref.o2.co.uk | test1234 | No        | Connected  | Phone        |

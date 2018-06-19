@@ -27,6 +27,9 @@ public class PAYMandPAYGTariffAndExtrasPage {
 	@FindBy(how = How.XPATH, using = ("(//*[@id='callToAction'])[2]"))
 	public static WebElement RandomTariff1;
 
+	@FindBy(how = How.XPATH, using = ("//a[contains(text(),'Pay Monthly')]"))
+	public static WebElement SelectPayMTariffTab;
+
 	@FindBy(how = How.XPATH, using = ("(//span[normalize-space()='Sim only tariff'])[1]"))
 	public static WebElement SimOnlyTariffsTab;
 

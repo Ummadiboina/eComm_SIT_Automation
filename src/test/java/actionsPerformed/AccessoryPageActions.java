@@ -114,7 +114,8 @@ public class AccessoryPageActions extends Environment {
 			executor.executeScript("arguments[0].click();", ele);
 		}
 
-		Thread.sleep(6000);
+		Thread.sleep(8000);
+		Autoredirection.redirect();
 		JavascriptExecutor executor = (JavascriptExecutor) driver;
 		Thread.sleep(1000	);
 		executor.executeScript("arguments[0].scrollIntoView(true);",pageobjects.AccessoryPage.ViewAllProductsOnOnePage);

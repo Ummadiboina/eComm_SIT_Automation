@@ -187,8 +187,9 @@ public class E2EOrderPlaced_Steps {
           //  driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, MouseHoverPage.class);
             MouseHoverAction.PayGMBBPage();
+            Thread.sleep(5000);
             Autoredirection.redirect();
-            Thread.sleep(10000);
+            Thread.sleep(8000);
             //GlobalActions.//CommonFunctionscheckTitle("PayG MBB Page");
         } catch (Exception e) {
             // TODO Auto-generated catch block
@@ -729,7 +730,26 @@ public class E2EOrderPlaced_Steps {
         }
     }
 
+    @And("^Select PayM Tariff Tab$")
+    public void select_PayM_Tariff_Tab() {
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, PAYMandPAYGTariffAndExtrasPage.class);
+            Thread.sleep(5000);
+            PAYMandPAYGTariffAndExtrasPageActions.SelectPayMTariffTab();
+            Thread.sleep(6000);
+            //PAYMandPAYGTariffAndExtrasPageActions.addToBasketLive();
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            log.debug("Unable to Select PayM Tariff Tab");
+            Assert.fail("Unable to Select PayM Tariff Tab");
+
+        }
+
+    }
 	 /*############# All the Below are for the Tariff and Extras Page*/
+
+
 
     @Given("^Land on the 'Tariffs and extra' page$")
     public void land_on_the_Tariffs_and_extra_page() {
@@ -739,7 +759,7 @@ public class E2EOrderPlaced_Steps {
             Thread.sleep(5000);
             PAYMandPAYGTariffAndExtrasPageActions.TariffSelect("Randomtariff");
             Thread.sleep(6000);
-            // PAYMandPAYGTariffAndExtrasPageActions.addToBasketLive();
+            //PAYMandPAYGTariffAndExtrasPageActions.addToBasketLive();
         } catch (Exception e) {
             // TODO Auto-generated catch block
             log.debug("Unable to Land on Tariff and extras page");
@@ -2129,7 +2149,7 @@ public class E2EOrderPlaced_Steps {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, Agent_DealBuilderPage.class);
             Agent_DealBuilderPageActions.HandsetTariffCombination();
-            Thread.sleep(4000);
+            Thread.sleep(6000);
         } catch (Exception e) {
             // TODO Auto-generated catch block
             e.printStackTrace();

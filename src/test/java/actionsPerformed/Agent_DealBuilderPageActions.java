@@ -49,19 +49,17 @@ public class Agent_DealBuilderPageActions extends Environment {
         Thread.sleep(7000);
 
         if (Device.contains("Random")) {
-            Thread.sleep(3000);
+            Thread.sleep(6000);
             Agent_DealBuilderPage.firstAvailableDevice.click();
-            Thread.sleep(3000);
+            Thread.sleep(6000);
             log.debug("Selected device ");
-            log.debug("Selected device ");
-
         } else {
             Thread.sleep(3000);
             Agent_DealBuilderPage.SearchTextBox_PayMDevice.sendKeys(Device);
             log.debug("Clicked on SearchTextBox to enter" + Device);
             Thread.sleep(4000);
             Agent_DealBuilderPage.SelectInStockPAYMDevice.click();
-            Thread.sleep(3000);
+            Thread.sleep(6000);
         }
         Screenshots.captureScreenshot();
     }
@@ -70,7 +68,7 @@ public class Agent_DealBuilderPageActions extends Environment {
 
     public static void SelectTariff(String Tariff) throws InterruptedException, IOException {
         Agent_DealBuilderPage.TariffsTab.click();
-        Thread.sleep(5000);
+        Thread.sleep(8000);
         if (Tariff.contains("Random")) {
             // Agent_DealBuilderPage.SearchTextBox_Tariff.sendKeys("Standard");
             Agent_DealBuilderPage.SelectingFirstAvailableTariff.click();
@@ -125,7 +123,7 @@ public class Agent_DealBuilderPageActions extends Environment {
         for (int i = 0; i < menuOuter.size()-1; i++) {
             j = i + 1;
             if (menuOuter.get(i).getText().trim().contains("Base Comms")) {
-                if (driver.findElement(By.xpath("//*[@id='planTable']/tbody/tr[" + j + "]/td[1]")).getText()
+                if (driver.findElement(By.xpath("//*[@id='planTable']/tbody/tr[" + j + "]/td[11]")).getText()
                         .equals("Base Comms")) {
                     log.debug("Offers contains Base comms");
                     driver.findElement(By.xpath("//*[@id='planTable']/tbody/tr")).click();

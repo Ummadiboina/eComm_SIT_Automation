@@ -51,6 +51,18 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 
 	}
 
+	public static void SelectPayMTariffTab() throws IOException, InterruptedException {
+
+		Thread.sleep(7000);
+		log.debug("Selecting Pay Monthly Tariff Tab");
+		pageobjects.PAYMandPAYGTariffAndExtrasPage.SelectPayMTariffTab.click();
+		log.debug("Clicked Pay Monthly Tariff Tab");
+		Thread.sleep(5000);
+		Screenshots.captureScreenshot();
+
+	}
+
+
 
 	public static String TariffSelect(String ElementName) throws IOException, InterruptedException {
 
@@ -61,7 +73,7 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 			pageobjects.PAYMandPAYGTariffAndExtrasPage.RandomTariff1.sendKeys(Keys.ENTER);
 			//pageobjects.PAYMandPAYGTariffAndExtrasPage.RandomTariff1.click();
 			log.debug("Selected a Random Tariff");
-			log.debug("Selected a Random Tariff");
+
 		}
 
 		if (ElementName.contains("SelectPromotedTariff")) {

@@ -11,6 +11,7 @@ import org.testng.Assert;
 import pageobjects.MouseHoverPage;
 
 import java.io.IOException;
+import java.util.concurrent.TimeUnit;
 
 public class FitnessTrackerPageActions extends Environment {
     final static Logger log = Logger.getLogger("FitnessTrackerPageActions");
@@ -72,12 +73,12 @@ public class FitnessTrackerPageActions extends Environment {
 
     public static void DeviceSelect(String elementName) throws InterruptedException, IOException {
 
-        Thread.sleep(5000);
-        MouseHoverPage.moreSmrtWatches.click();
-        Thread.sleep(5000);
+        /*Thread.sleep(5000);
+        MouseHoverPage.moreSmrtWatches.click();*/
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         if (elementName.contains("Random Device")) {
             log.debug("Random Fitness tracker Device Selected");
-
+            Thread.sleep(5000);
             //pageobjects.FitnessTrackerPage.RandomFitnesstracker.click();
             WebElement element = pageobjects.FitnessTrackerPage.RandomFitnesstracker;
             JavascriptExecutor executor = (JavascriptExecutor) driver;

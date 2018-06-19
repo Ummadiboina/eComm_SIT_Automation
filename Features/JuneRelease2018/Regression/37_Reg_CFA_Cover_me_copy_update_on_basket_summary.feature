@@ -23,8 +23,8 @@ Feature: 37_Reg_CFA_Cover_me_copy_update_on_basket_summary
     Given I am an CFA user and Lands on shop page
     And navigate to PAYM Tablets page
     And I choose <tabletname> Tablet
-    And select <color> color of the connected device
-    And select <capacity> capacity of the connected device
+    #And select <color> color of the connected device
+    #And select <capacity> capacity of the connected device
     And Navigate to device details page
     And Land on the 'Tariffs and extra' page
     And select an insurance
