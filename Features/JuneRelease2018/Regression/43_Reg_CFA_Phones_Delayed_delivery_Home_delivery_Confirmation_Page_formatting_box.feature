@@ -27,5 +27,5 @@ Feature: 43_Reg_CFA_Phones_Delayed_delivery_Home_delivery_Confirmation_Page_form
     #Step 12 and Step 13 of ALM clubbed together
     #Close the browser
     Examples:
-      | handset       | Firstname | Surname | Username     | Status           | color | consumer | B1     | B2  | B3     | B4  | Text   | Email  | Phone | Post | status  | MBBStatus | DeviceType |
-      | iPhone 7 Plus | TEST      | ACCEPTA | TEST ACCEPTA | Delayed Delivery | Black | Me       | Select | Yes | Select | Not | Select | Select | Not   | Not  | Enabled | No        | Connected  |
+      | handset       | Firstname | Surname | Username     | Status           | color | consumer | B1     | B2     | B3     | B4  | Text   | Email  | Phone | Post | status  | MBBStatus | DeviceType |
+      | iPhone 7 Plus | TEST      | ACCEPTA | TEST ACCEPTA | Delayed Delivery | Black | Me       | Select | Select | Select | Not | Select | Select | Not   | Not  | Enabled | No        | Connected  |

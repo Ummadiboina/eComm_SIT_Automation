@@ -23,4 +23,4 @@ Feature: 38_Reg_CFA_iPad_Show_basecomms_tariffs_on_T&E_page_for_my_offers_journe
 
     Examples:
       | device_name        | default_colour | default_capacity | default_stock_message | color  | capacity |
-      | iPad Pro 10.5 inch | Gold           | 32GB             | In Stock              | Silver | 128GB    |
+      | iPad Pro 10.5 inch | Black          | 64GB             | In Stock              | Silver | 128GB    |

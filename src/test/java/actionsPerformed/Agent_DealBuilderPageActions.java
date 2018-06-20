@@ -506,6 +506,7 @@ public class Agent_DealBuilderPageActions extends Environment {
     }
 
     public static void AgentTradeInQuestionair() throws InterruptedException, IOException {
+        Thread.sleep(5000);
         if (Agent_DealBuilderPage.AgentTradeInBtn.isDisplayed()) {
             log.debug("The trade in button is displayed");
             Agent_DealBuilderPage.AgentTradeInBtn.click();

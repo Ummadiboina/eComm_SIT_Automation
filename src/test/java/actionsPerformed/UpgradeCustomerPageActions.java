@@ -400,7 +400,7 @@ public class UpgradeCustomerPageActions extends Environment {
 
     public static void selectTariff(String Tariff) throws IOException, InterruptedException {
         log.debug("selectTariff");
-        Thread.sleep(5000);
+        Thread.sleep(8000);
 
         //driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
         //WebElement selectBtnEle = driver.findElement(By.xpath("(//button[@type='button']//*[normalize-space()='Select'])[2]"));
@@ -1612,7 +1612,7 @@ public class UpgradeCustomerPageActions extends Environment {
             log.debug("The Your sim section is displayed");
         } else
             log.debug("The Your sim section us not diplayed");
-        log.debug("The Your sim section is not displayed");
+
         Screenshots.captureScreenshot();
 
     }
@@ -1641,10 +1641,10 @@ public class UpgradeCustomerPageActions extends Environment {
         boolean ConfimNotDisplayed = YourSimSectionContainer.contains("Confirm");
         if (ConfimNotDisplayed == false) {
             log.debug("Confirm button is not displayed");
-            log.debug("Confirm button is not displayed");
+
         } else {
             log.debug("Confirm button is displayed");
-            log.debug("Confirm button is displayed");
+
         }
         Screenshots.captureScreenshot();
     }

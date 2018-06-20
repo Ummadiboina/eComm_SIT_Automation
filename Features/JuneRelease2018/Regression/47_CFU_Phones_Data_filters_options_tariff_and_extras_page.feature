@@ -26,5 +26,5 @@ Feature: 47_CFU_Phones_Data_filters_options_tariff_and_extras_page
     Then I should see tariffs based on the selected sort option <sortoption>
 
     Examples:
-      | username                     | password | handset           | filtername | sortoption                 | Make  | Model   | Network |
-      | kllklsdklsklklklk@sdsd.com | test123  | Samsung Galaxy S8 | medium     | Monthly data (Low to High) | Apple | Iphone7 | Orange  |
+      | username                         | password | handset           | filtername | sortoption                 | Make  | Model   | Network |
+      | testaccepta4289@stf.ref.o2.co.uk | test123  | Samsung Galaxy S8 | medium     | Monthly data (Low to High) | Apple | Iphone7 | Orange  |

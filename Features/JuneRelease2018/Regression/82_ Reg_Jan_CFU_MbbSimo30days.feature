@@ -36,5 +36,5 @@ Feature: 82_ Reg_Jan_CFU_MbbSimo30days
     Then Choose <consumer> <status> Business preferences <B1> <B2> <B3> <B4> And Channel Preferences <Text> <Email> <Phone> <Post> <MBBStatus> <DeviceType>
 
     Examples:
-      | Contract | username                     | password | filtername | sortoption                 | Username     | consumer | B1  | B2  | B3     | B4  | Text | Email  | Phone | Post | status  | MBBStatus | DeviceType |
-      | 30 Days  | ins_nov1474@stf.ref.o2.co.uk | test123  | low        | Monthly data (High to low) | TEST ACCEPTA | Me       | Not | Not | Select | Not | Not  | Select | Not   | Not  | Enabled | No        | Connected  |
+      | Contract | username                      | password | filtername | sortoption                 | Username     | consumer | B1  | B2  | B3     | B4  | Text | Email  | Phone | Post | status  | MBBStatus | DeviceType |
+      | 30 Days  | 05ap67035292@stf.ref.o2.co.uk | test123  | low        | Monthly data (High to low) | TEST ACCEPTA | Me       | Not | Not | Select | Not | Not  | Select | Not   | Not  | Enabled | No        | Connected  |

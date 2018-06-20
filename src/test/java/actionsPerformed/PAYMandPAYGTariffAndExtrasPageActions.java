@@ -70,6 +70,7 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 		scrollToAnElement.scrollToElement(PAYMandPAYGTariffAndExtrasPage.RandomTariff1);
 		Screenshots.captureScreenshot();
 		if (ElementName.equalsIgnoreCase("Randomtariff")) {
+			Thread.sleep(4000);
 			pageobjects.PAYMandPAYGTariffAndExtrasPage.RandomTariff1.sendKeys(Keys.ENTER);
 			//pageobjects.PAYMandPAYGTariffAndExtrasPage.RandomTariff1.click();
 			log.debug("Selected a Random Tariff");
@@ -215,7 +216,6 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 
 		((JavascriptExecutor) driver).executeScript("arguments[0].click();", pageobjects.PAYMandPAYGTariffAndExtrasPage.addToBasketLive);
 		// pageobjects.PAYMandPAYGTariffAndExtrasPage.addToBasketLive.sendKeys(Keys.ENTER);
-		log.debug("Clicked on Add to Basket in Tariff and Extras page");
 		log.debug("Clicked on Add to Basket in Tariff and Extras page");
 		Thread.sleep(10000);
 		Screenshots.captureScreenshot();
