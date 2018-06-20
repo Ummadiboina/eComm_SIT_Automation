@@ -19,12 +19,12 @@ Feature: 17_Reg_CFU_Tablet_CnC_changes_on_Delivery_page_Order_placement
     And Is this order for You or Someone else <consumer> when GDPR is <status>
     #And input <Firstname> and <Surname> and other valid details in Delivery page for Click and collect and Click on the 'Continue button'
     #And Enter details in Delivery page for Click and collect and Click on the 'Continue button'
-    #And Enter cardDetails in payment page input <username> and click 'Continue on next step'
+    And Enter cardDetails in payment page input <Username> and click 'Continue on next step'
     And Continue to Agreements page and confirm all the agreement checks
     And Continue to Review page and review the order
     Then order confirmation is displayed
     Then Choose <consumer> <status> Business preferences <B1> <B2> <B3> <B4> And Channel Preferences <Text> <Email> <Phone> <Post> <MBBStatus> <DeviceType>
 
     Examples:
-      | username               | password | Firstname | Surname | Tablet  | Username     | Action | tariff | consumer | B1     | B2  | B3  | B4  | Text   | Email | Phone | Post | status  | MBBStatus | DeviceType |
-      | in034242_226353@o2.com | test123  | Test      | Accepta | Samsung | TEST ACCEPTA | skip   |        | Me       | Select | Not | Not | Not | Select | Not   | Not   | Not  | Enabled | No        | Connected  |
+      | username           | password | Firstname | Surname | Tablet  | Username     | Action | tariff | consumer | B1     | B2  | B3  | B4  | Text   | Email | Phone | Post | status  | MBBStatus | DeviceType |
+      | ash1425a@gmail.com | test123  | Test      | Accepta | Samsung | TEST ACCEPTA | skip   |        | Me       | Select | Not | Not | Not | Select | Not   | Not   | Not  | Enabled | No        | Connected  |

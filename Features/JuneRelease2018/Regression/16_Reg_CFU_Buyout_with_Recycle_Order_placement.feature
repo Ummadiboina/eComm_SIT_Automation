@@ -32,6 +32,6 @@ Feature: 16_Reg_CFU_Buyout_with_Recycle_Order_placement
     Then Choose <consumer> <status> Business preferences <B1> <B2> <B3> <B4> And Channel Preferences <Text> <Email> <Phone> <Post> <MBBStatus> <DeviceType>
 
     Examples:
-      | Tablet        | Action | Surname | Username     | filtername | sortoption                 | username                     | password | consumer     | B1     | B2  | B3  | B4  | Text | Email  | Phone | Post | status  | MBBStatus | DeviceType |
-      | Random Device | skip   | ACCEPTA | TEST ACCEPTA | low        | Monthly data (Low to High) | ins_nov6572@stf.ref.o2.co.uk | test123  | SomeOne else | Select | Not | Not | Not | Not  | Select | Not   | Not  | Enabled | No        | Connected  |
+      | Tablet        | Action | Surname | Username     | filtername | sortoption                 | username                      | password | consumer     | B1     | B2  | B3  | B4  | Text | Email  | Phone | Post | status  | MBBStatus | DeviceType |
+      | Random Device | skip   | ACCEPTA | TEST ACCEPTA | low        | Monthly data (Low to High) | 19ju96256984@stf.ref.o2.co.uk | test123  | SomeOne else | Select | Not | Not | Not | Not  | Select | Not   | Not  | Enabled | No        | Connected  |
    #   | Apple iPhone 7    | TEST      | ACCEPTA | TEST ACCEPTA | high       |

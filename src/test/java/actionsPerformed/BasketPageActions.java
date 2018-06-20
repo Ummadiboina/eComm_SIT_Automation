@@ -204,9 +204,8 @@ public class BasketPageActions extends Environment {
 					+ pageobjects.BasketPage.DeviceDetailsDisplay.getText());
 
 		} else {
-			log.debug(
-					"Go To Checkout is Absent and the Text is :" + pageobjects.BasketPage.checkoutbtn.getText());
 			log.debug("Go To Checkout is Absent and the Text is :" + pageobjects.BasketPage.checkoutbtn.getText());
+
 
 		}
 		// Below will display contents of the phone section
@@ -396,17 +395,17 @@ public class BasketPageActions extends Environment {
 				// Assert.assertEquals(elementName,"Galaxy S7 is not found");
 				log.debug("click And Collect is Selected");
 				log.debug("clickAndCollect radio button is Selected");
-				Thread.sleep(2000);
+				Thread.sleep(4000);
 				pageobjects.BasketPage.StorePostcode.sendKeys("M4");
 				log.debug("PostCode Entered for Search");
-				log.debug("PostCode Entered for Search");
-				Thread.sleep(4000);
+
+				Thread.sleep(5000);
 
 				pageobjects.BasketPage.PostcodeSubmit.click();
 				Thread.sleep(5000);
 				// Assert.assertEquals(elementName,"Galaxy S7 is not found");
 				log.debug("Postcode Submitted for Search");
-				log.debug("Postcode Submitted for Search");
+
 				Thread.sleep(5000);
 				pageobjects.BasketPage.Collectfromthisstore.click();
 				// Assert.assertEquals(elementName,"Galaxy S7 is not found");
