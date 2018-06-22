@@ -629,13 +629,37 @@ public class BasketPageActions extends Environment {
 		}
 
 		//DisplayedDevices.containsAll(SelectedDevices)
+		int cnt= 0;
 
-				if(DisplayedDevices.containsAll(SelectedDevices)) {
+		if (DisplayedDevices.size() != 0 ) {
+			String displayDeviceText="";
+			String selectedDeviceText="";
+			for (int i = 0; i < DisplayedDevices.size(); i++) {
+				displayDeviceText=DisplayedDevices.get(i).toString();
+				for (int j = 0; j < SelectedDevices.size(); j++) {
+					selectedDeviceText=SelectedDevices.get(j).toString();
+					if(displayDeviceText.contains(selectedDeviceText)){
+						log.debug("Devices in basket are matching with selected device :: Displayed device is- "+ displayDeviceText+" and Selected device is -"+selectedDeviceText);
+						cnt++;
+					}
+				}
+			}
+		}
+
+		if(cnt == SelectedDevices.size())
+		{
+			log.debug("Devices in basket are matching with Selected device");
+		}else{
+			log.debug("Devices in basket are not matching with selected devices");
+			Assert.fail("Selected devices are not in basket");
+		}
+
+				/*if(DisplayedDevices.containsAll(SelectedDevices)) {
 					log.debug("Devices in basket are ");
 				}else{
 					log.debug("Devices not in basket : ");
 					Assert.fail("Selected devices are not in basket");
-				}
+				}*/
 
 		Screenshots.captureScreenshot();
 	}
