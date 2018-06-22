@@ -13,6 +13,7 @@ Feature: 73_Existing_Csutomer_Tablets_Data_filters_options_tariff_and_extras_pag
    # And select <color> color of the connected device
    # And select <capacity> capacity of the connected device
     And Navigate to device details page
+    And Land on the 'Tariffs and extra' page
     Then I should see data filters buttons next to existing sort drop-down for PAYM/SIMO tariffs <sortoption>
     #Verification point - A - More than 2 should be displayed
     When I click on respective <filtername> data filter
