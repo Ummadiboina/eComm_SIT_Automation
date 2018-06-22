@@ -15,9 +15,9 @@ Feature: 18_Reg_CFU_Tablet_Delivery_page_more_than_one_address_select_one_compre
     And click on "go to checkout" button
     And perform <Action> in OTAC page
     And Click on 'Use a different delivery address'link
+    And enter a <houseNumber> and an <PostCode> in Delivery section
     And Is this order for You or Someone else <consumer> when GDPR is <status>
-    #And enter a <houseNumber> and an <PostCode>
-    #And enter a <houseNumber> and an <PostCode> in Delivery section
+    And Select the Home address
     And Enter cardDetails in payment page input <Username> and click 'Continue on next step'
     #And land on the payment page and input and other details and click 'Continue' on next step for otac
     And Continue to Agreements page and confirm all the agreement checks

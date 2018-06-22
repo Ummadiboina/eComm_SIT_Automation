@@ -9,12 +9,13 @@ import org.openqa.selenium.WebElement;
 
 import GlobalActions.Screenshots;
 import helpers.Environment;
+import pageobjects.iPadPage;
 
 public class iPadPageAction extends Environment {
     final static Logger log = Logger.getLogger("iPadPageActions");
 
     public static void validateiPadElements(String elementName) throws IOException, InterruptedException {
-
+        Thread.sleep(4000);
         JavascriptExecutor jse = (JavascriptExecutor) driver;
         jse.executeScript("window.scrollBy(0,150)", "");
         if (elementName.contains("RandomIpadDevice")) {
@@ -52,6 +53,15 @@ public class iPadPageAction extends Environment {
             // pageobjects.iPadPage.IPad9point7.click();
             Thread.sleep(7000);
             log.debug("Apple iPad 9.7 is selected");
+        }
+
+        if (elementName.contains("iPad Pro 10.5 inch")) {
+            WebElement element = iPadPage.IPadPro10point5;
+            JavascriptExecutor executor = (JavascriptExecutor)driver;
+            executor.executeScript("arguments[0].click();", element);
+            // pageobjects.iPadPage.IPad9point7.click();
+            Thread.sleep(7000);
+            log.debug("Apple iPad Pro 10.5 inch is selected");
         }
 
         Screenshots.captureScreenshot();

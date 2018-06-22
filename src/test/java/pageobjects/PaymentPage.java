@@ -109,6 +109,9 @@ public class PaymentPage {
     @FindBy(how = How.XPATH, using = "(//*[@id='address-selection']/li/div/p/a)[1]")
     public static WebElement Selectaddress;
 
+    @FindBy(how = How.XPATH, using = "(//p[@id='customerAddress']//following-sibling::button)[1]")
+    public static WebElement Selectadd;
+
     @FindBy(how = How.ID, using = ("basket-total"))
     public static WebElement BasketTotal;
 

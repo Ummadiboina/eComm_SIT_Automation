@@ -7,10 +7,10 @@ Feature: 38_Reg_CFA_iPad_Show_basecomms_tariffs_on_T&E_page_for_my_offers_journe
     And Verify expected <device_name> and its specific details are present in the device list <default_colour>,<default_capacity>,<default_stock_message>
     #Veirfy device price details are also getting displayed in the above step
     And Select <color>, <capacity> of the device <device_name>
-    #And Verify that promotion ribbon is displayed for <device_name>
+    And Verify that promotion ribbon is displayed for <device_name>
     And Verify new image is as per the selected <device_name>,<capacity>and <color> in the Basecomms page
     And Click on "Buy Now" button for <device_name> and verify "Tariffs and Extras" page is displayed
-    And Verify new image is as per the selected <device_name>,<capacity>and <color> in the Tariffs and Extras Page
+    #And Verify new image is as per the selected <device_name>,<capacity>and <color> in the Tariffs and Extras Page
     And Land on the 'Tariffs and extra' page
     And I Land on the basket page by clicking on Add to Basket button
     And click on continue shopping button
@@ -22,5 +22,5 @@ Feature: 38_Reg_CFA_iPad_Show_basecomms_tariffs_on_T&E_page_for_my_offers_journe
     And verify that the Basecomms tariff is not displayed in the Tariff and Extras page
 
     Examples:
-      | device_name        | default_colour | default_capacity | default_stock_message | color  | capacity |
-      | iPad Pro 10.5 inch | Black          | 64GB             | In Stock              | Silver | 128GB    |
+      | device_name        | default_colour | default_capacity | default_stock_message | color      | capacity |
+      | iPad Pro 10.5 inch | Black          | 64GB             | In Stock              | Space Grey | 128GB    |

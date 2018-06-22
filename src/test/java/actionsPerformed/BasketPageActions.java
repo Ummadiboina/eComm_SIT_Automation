@@ -602,8 +602,8 @@ public class BasketPageActions extends Environment {
 
 		SelectedDevices.add(dev1);
 		SelectedDevices.add(dev2);
-		log.debug("1" + SelectedDevices.get(0));
-		log.debug("2" + SelectedDevices.get(1));
+		log.debug("1st selected device" + SelectedDevices.get(0));
+		log.debug("2nd selected device" + SelectedDevices.get(1));
 
 		log.debug("Conn size: " + MyConnDevices.size());
 		log.debug("Non Conn size: " + MyNonConnDevices.size());
@@ -627,16 +627,16 @@ public class BasketPageActions extends Environment {
 				log.debug("Tariff added: " + MyTariffs.get(i).getText() + "");
 			}
 		}
-		if (DisplayedDevices.containsAll(SelectedDevices)) {
-			log.debug("Selected devices are in basket");
-			log.debug("Selected devices are in basket");
-		} else {
-			for (int k = 0; k > DisplayedDevices.size(); k++) {
-				log.debug("Devices in basket are : " + '\n' + DisplayedDevices.get(k) + '\n');
-				log.debug("Devices in basket are : " + '\n' + DisplayedDevices.get(k) + '\n');
-			}
-			Assert.fail("Selected devices are not in basket");
-		}
+
+		//DisplayedDevices.containsAll(SelectedDevices)
+
+				if(DisplayedDevices.containsAll(SelectedDevices)) {
+					log.debug("Devices in basket are ");
+				}else{
+					log.debug("Devices not in basket : ");
+					Assert.fail("Selected devices are not in basket");
+				}
+
 		Screenshots.captureScreenshot();
 	}
 

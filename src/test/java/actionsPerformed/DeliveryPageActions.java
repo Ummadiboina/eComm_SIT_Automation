@@ -592,22 +592,25 @@ public class DeliveryPageActions extends Environment {
             driver.manage().timeouts().implicitlyWait(10, TimeUnit.MINUTES);
 
             if (DeliveryPage.Housenumber.isDisplayed()) {
-                DeliveryPage.Housenumber.sendKeys(houseNum);
-                DeliveryPage.Housenumber.sendKeys(Keys.TAB);
-                DeliveryPage.Postcode.sendKeys(postCode);
-                DeliveryPage.Find_Address.click();
-                Thread.sleep(5000);
-                scrollToAnElement.scrollToElement(DeliveryPage.Find_Address);
-                Screenshots.captureScreenshot();
-                log.debug(" Entered the houseNumber and postcCode");
-                log.debug(" Entered the houseNumber and postcCode");
+                log.debug("Entering the address");
+                pageobjects.DeliveryPage.Housenumber.sendKeys("12");
+                log.debug("Entered House number");
+
+                pageobjects.DeliveryPage.Postcode.sendKeys("SL11ER");
+                log.debug("Entered Post code");
+                pageobjects.DeliveryPage.Find_Address.click();
+                log.debug("Clicked on the Find address button");
+
+                pageobjects.DeliveryPage.SelectAddress1.click();
+                log.debug("Clicked on the select address button");
+
             } else {
                 log.debug(" Failed to  Entered the houseNumber and postcCode");
-                log.debug(" Failed to  Entered the houseNumber and postcCode");
+
             }
         } catch (Exception e) {
             log.debug(" Failed to  Entered the houseNumber and postcCode" + e.getStackTrace());
-            log.debug(" Failed to  Entered the houseNumber and postcCode" + e.getStackTrace());
+
         }
     }
 
@@ -755,7 +758,7 @@ public class DeliveryPageActions extends Environment {
 
             Thread.sleep(3000);
 
-            log.debug("Entering the address");
+           /* log.debug("Entering the address");
             pageobjects.DeliveryPage.Housenumber.sendKeys("12");
             log.debug("Entered House number");
 
@@ -765,7 +768,7 @@ public class DeliveryPageActions extends Environment {
             log.debug("Clicked on the Find address button");
 
             pageobjects.DeliveryPage.SelectAddress1.click();
-            log.debug("Clicked on the select address button");
+            log.debug("Clicked on the select address button");*/
 
         } else
             Assert.fail("Unable to click on the Use a different address link");
