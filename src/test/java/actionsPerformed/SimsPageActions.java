@@ -51,7 +51,7 @@ public class SimsPageActions extends Environment {
         Screenshots.captureScreenshot();
     }
 
-    public static void clickonTabletsButton() throws Exception {
+    public static void clickonTabletsButton() {
         try {
             driver.manage().timeouts().implicitlyWait(2, TimeUnit.MINUTES);
             if (driver.findElements(By.xpath("//input[@value='Tablets']")).size() > 0) {
@@ -72,7 +72,7 @@ public class SimsPageActions extends Environment {
     }
 
 
-    public static void clickOnMBB_Button() throws Exception {
+    public static void clickOnMBB_Button() {
         try {
             driver.manage().timeouts().implicitlyWait(2, TimeUnit.MINUTES);
 
@@ -117,7 +117,7 @@ public class SimsPageActions extends Environment {
         }
     }
 
-    public static void verifyThatURL_has_simo_at_end() throws Exception {
+    public static void verifyThatURL_has_simo_at_end() {
         try {
             driver.manage().timeouts().implicitlyWait(2, TimeUnit.MINUTES);
             Thread.sleep(5000);
@@ -139,7 +139,7 @@ public class SimsPageActions extends Environment {
     }
 
 
-    public static void phonesButtonShouldSelectedByDefault() throws Exception {
+    public static void phonesButtonShouldSelectedByDefault() {
         try {
             driver.manage().timeouts().implicitlyWait(2, TimeUnit.MINUTES);
 
@@ -184,7 +184,7 @@ public class SimsPageActions extends Environment {
         Screenshots.captureScreenshot();
     }
 
-    public static void allTariffsUnderThirtyDaysShouldDisplayed() throws Exception {
+    public static void allTariffsUnderThirtyDaysShouldDisplayed() {
         try {
             driver.manage().timeouts().implicitlyWait(2, TimeUnit.MINUTES);
             if (driver.findElements(By.xpath("//li[@id='id-30-days' and @class=' active ']")).size() > 0) {
@@ -208,7 +208,7 @@ public class SimsPageActions extends Environment {
     }
 
 
-    public static void sortingDropdownIsDisplayedJstBelowToggleButtonsSections() throws Exception {
+    public static void sortingDropdownIsDisplayedJstBelowToggleButtonsSections() {
         try {
             driver.manage().timeouts().implicitlyWait(10, TimeUnit.MINUTES);
             if (driver.findElements(By.xpath("//div[@class='tab-buttons-container']/following-sibling::div//span[@id='dataFilterSelectSelectBoxIt']")).size() > 0) {
@@ -230,21 +230,21 @@ public class SimsPageActions extends Environment {
     }
 
 
-    public static void ifGiftBlockIsConfiguredThenDisplayBanner(String giftbox) throws Exception {
+    public static void ifGiftBlockIsConfiguredThenDisplayBanner(String giftbox) {
         try {
             driver.manage().timeouts().implicitlyWait(2, TimeUnit.MINUTES);
             if (driver.findElements(By.xpath("//div[@class='button-tabs']//a")).size() > 0) {
                 String giftbock = driver.findElement(By.xpath("//div[@class='button-tabs']//a")).getText();
                 log.debug(" Configured Gift block/banner is displayed ::: " + giftbock);
-                log.debug(" Configured Gift block/banner is displayed ::: " + giftbock);
+
             } else {
                 log.debug(" Configured Gift block/banner is not displayed");
-                log.debug(" Configured Gift block/banner is not displayed");
+
             }
         } catch (Exception e) {
             // TODO Auto-generated catch block
             log.debug(" Configured Gift block/banner is not displayed");
-            log.debug(" Configured Gift block/banner is not displayed");
+
         }
     }
 
