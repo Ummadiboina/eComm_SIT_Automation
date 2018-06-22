@@ -167,16 +167,13 @@ public class PaymentPageActions extends Environment {
     public static void Card_Details_CCV() throws InterruptedException, IOException {
 
        //driver.manage().timeouts().implicitlyWait(15,TimeUnit.SECONDS);
-        Thread.sleep(8000);
+        Thread.sleep(5000);
 
             driver.switchTo().frame("payment-iframe");
             Thread.sleep(5000);
 
-
             if (driver.findElements(By.xpath("//input[@type='password']")).size() > 0) {
 
-                driver.switchTo().frame("payment-iframe");
-                Thread.sleep(5000);
                 PaymentPage.CCVSecurityCode.sendKeys("1234");
                 log.debug("Entered CVV security code");
                 Thread.sleep(3000);

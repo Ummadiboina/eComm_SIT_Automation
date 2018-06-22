@@ -1315,12 +1315,12 @@ public class UpgradeCustomerPageActions extends Environment {
         if (driver.findElement(By.xpath("//*[@id='newRecycleOptionsTile']")).isDisplayed()) {
             log.debug("Upgrade and Recycle options is displayed");
             Thread.sleep(4000);
+            scrollToAnElement.scrollToElement(driver.findElement(By.xpath("//*[@id='newRecycleOptionsTile']")));
+            Screenshots.captureScreenshot();
             // driver.findElement(By.xpath("//*[@id='newRecycleOptionsTile']//*[@ng-click='selectRecycleDevice();']/span")).click();
             JavascriptExecutor executor = (JavascriptExecutor) driver;
             executor.executeScript("arguments[0].click();", driver.findElement(By.xpath("//div[@class='recycle-device not-your-device-box']/a/span")));
 
-
-            //  driver.findElement( By.xpath("//div[@class='recycle-device not-your-device-box']/a/span")).click();
             log.debug("Clicked on the choose your device link");
         } else {
             Assert.fail("Unable to verify recycle options");
@@ -1341,6 +1341,23 @@ public class UpgradeCustomerPageActions extends Environment {
 
         log.debug("Clicked on upgrade now button");
         Screenshots.captureScreenshot();
+    }
+
+    public static void SelectRecycleAndCClickAccurateQuote() throws IOException, InterruptedException {
+
+        log.debug("in Select recycle an continue to upgrade function");
+        driver.findElement(By.id("recycleCredit")).click();
+        log.debug("Clicked on Radio button next to Recycle and get up to XXXX credit");
+        scrollToAnElement.scrollToElement(driver.findElement(By.id("recycleCredit")));
+        Screenshots.captureScreenshot();
+        Thread.sleep(5000);
+        //driver.findElement(By.xpath("//button[contains(text(),'upgrade now')]")).click();
+        JavascriptExecutor executor = (JavascriptExecutor) driver;
+        executor.executeScript("arguments[0].click();", pageobjects.UpgradeCustomerPage.GetAccurateQuote);
+        Thread.sleep(3000);
+
+        log.debug("Clicked on 'Yes, get an accurate quote' button");
+
     }
 
     public static void selectTariff() throws IOException, InterruptedException {
@@ -1538,8 +1555,8 @@ public class UpgradeCustomerPageActions extends Environment {
 
     public static boolean VerifyAccurateQuotedisplay() throws InterruptedException, IOException {
         log.debug("Going to verify VerifyAccurateQuotedisplay function");
-        pageobjects.UpgradeCustomerPage.GetAccurateQuoteSectionDisplay.getText();
-        log.debug("Completed verify VerifyAccurateQuotedisplay function");
+        String accurateText=pageobjects.UpgradeCustomerPage.GetAccurateQuoteSectionDisplay.getText();
+        log.debug("Completed verify VerifyAccurateQuotedisplay function :: "+accurateText);
         Thread.sleep(4000);
         Screenshots.captureScreenshot();
         return true;
@@ -1780,6 +1797,7 @@ public class UpgradeCustomerPageActions extends Environment {
         log.debug("Going to click on Take Offer and Upgrade");
         Screenshots.captureScreenshot();
         if (UpgradeCustomerPage.TakeOfferAndUpgrade.size() > 0) {
+
             UpgradeCustomerPage.TakeOfferAndUpgrade.get(0).click();
         } else {
             log.debug("Take offer and upgrade button is not present or enabled");
@@ -2075,32 +2093,63 @@ public class UpgradeCustomerPageActions extends Environment {
 
     }
 
+    public static void verifyBuyOutMessage() {
+        log.debug("in verify BuyOut message function");
+
+        String text = driver.findElement(By.xpath("//div[@class='trade-in-offer']/p")).getText();
+        if (text.contains("We'll buy you out of your contract, so you can choose a brand new phone")) {
+            log.debug("The Text is: " + text);
+        } else {
+            Assert.fail("BuyOut in not displayed, hence failed");
+        }
+    }
+
+    public static void verifyPoundLeftToPay() {
+        log.debug("in verify BuyOut message function");
+
+        String text = driver.findElement(By.xpath("//div[@id='o2RecycleModule']/h2")).getText();
+        if (text.contains("left to pay on your current Device Plan")) {
+            log.debug("Verified successfully, The Text is: " + text);
+        } else {
+            Assert.fail("Verified left to pay on your current Device Plan");
+        }
+    }
+
+
     public static void AnswerTradeinQuestion() throws InterruptedException, IOException {
+        Thread.sleep(5000);
         log.debug("in AnswerTradeinQuestion function");
         JavascriptExecutor js = (JavascriptExecutor) driver;
 
-        WebElement Question0 = driver.findElement(By.xpath("//select[@id='question0']"));
-        js.executeScript("arguments[0].setAttribute('style', 'display:block;')", Question0);
-        new Select(Question0).selectByValue("0");
+        /*if(driver.findElement(By.xpath("//a[normalize-space()='Answer questions again']")).isDisplayed()) {
+            WebElement QuestionLink = driver.findElement(By.xpath("//a[normalize-space()='Answer questions again']"));
+            js.executeScript("arguments[0].setAttribute('style', 'display:block;')", QuestionLink);
+        }*/
+
         Thread.sleep(8000);
+        if(driver.findElement(By.xpath("//div[@class='selectboxit-container questionnair']")).isDisplayed()) {
+            WebElement Question0 = driver.findElement(By.xpath("//select[@id='question0']"));
+            js.executeScript("arguments[0].setAttribute('style', 'display:block;')", Question0);
+            new Select(Question0).selectByValue("0");
 
-        // Select Second questionaire - Does your phone have any damage
-        WebElement Question1 = driver.findElement(By.xpath("//select[@id='question1']"));
-        js.executeScript("arguments[0].setAttribute('style', 'display:block;')", Question1);
-        new Select(Question1).selectByValue("0");
+            // Select Second questionaire - Does your phone have any damage
+            WebElement Question1 = driver.findElement(By.xpath("//select[@id='question1']"));
+            js.executeScript("arguments[0].setAttribute('style', 'display:block;')", Question1);
+            new Select(Question1).selectByValue("0");
 
-        // Select Third questionaire - Could your phone be water damaged
-        WebElement Question2 = driver.findElement(By.xpath("//select[@id='question2']"));
-        js.executeScript("arguments[0].setAttribute('style', 'display:block;')", Question2);
-        new Select(Question2).selectByValue("0");
+            // Select Third questionaire - Could your phone be water damaged
+            WebElement Question2 = driver.findElement(By.xpath("//select[@id='question2']"));
+            js.executeScript("arguments[0].setAttribute('style', 'display:block;')", Question2);
+            new Select(Question2).selectByValue("0");
 
-        // Select Second questionaire - Remove icloud from device
-        WebElement Question3 = driver.findElement(By.xpath("//select[@id='question3']"));
-        js.executeScript("arguments[0].setAttribute('style', 'display:block;')", Question3);
-        new Select(Question3).selectByValue("0");
+            // Select Second questionaire - Remove icloud from device
+            WebElement Question3 = driver.findElement(By.xpath("//select[@id='question3']"));
+            js.executeScript("arguments[0].setAttribute('style', 'display:block;')", Question3);
+            new Select(Question3).selectByValue("0");
 
-        // driver.findElement(By.id("continue-with-accurate-quote")).click();
-        log.debug("Completed questionaire");
+            // driver.findElement(By.id("continue-with-accurate-quote")).click();
+            log.debug("Completed questionaire");
+        }
         Screenshots.captureScreenshot();
 
     }

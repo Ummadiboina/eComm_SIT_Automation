@@ -399,18 +399,18 @@ public class BasketPageActions extends Environment {
 				pageobjects.BasketPage.StorePostcode.sendKeys("M4");
 				log.debug("PostCode Entered for Search");
 
-				Thread.sleep(5000);
+				Screenshots.captureScreenshot();
 
 				pageobjects.BasketPage.PostcodeSubmit.click();
 				Thread.sleep(5000);
 				// Assert.assertEquals(elementName,"Galaxy S7 is not found");
 				log.debug("Postcode Submitted for Search");
 
-				Thread.sleep(5000);
+				Thread.sleep(7000);
 				pageobjects.BasketPage.Collectfromthisstore.click();
 				// Assert.assertEquals(elementName,"Galaxy S7 is not found");
 				log.debug("Store Selected for Colletion");
-				log.debug("Store Selected for Colletion");
+
 				Screenshots.captureScreenshot();
 				Thread.sleep(7000);
 

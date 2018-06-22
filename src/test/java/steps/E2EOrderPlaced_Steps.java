@@ -6540,7 +6540,7 @@ public class E2EOrderPlaced_Steps {
         } catch (Exception e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
-            Assert.fail("Unable to verify if the buyout offer is displayed in " + pageName + " page");
+            Assert.fail("Unable to verify if the buyout with Recycle offer is displayed in " + pageName + " page");
         }
     }
 
@@ -9608,6 +9608,8 @@ public class E2EOrderPlaced_Steps {
     @And("^Verify that the buyout offer section is displayed with 'Take offer and Upgrade' CTA under 'Your Options' heading$")
     public void verify_that_the_buyout_offer_section_is_displayed() {
         try {
+            PageFactory.initElements(driver, UpgradePhonesListingPage.class);
+            UpgradeCustomerPageActions.verifyBuyOutMessage();
             log.debug("Verified that the buyout offer section is displayed");
         } catch (Exception e) {
             log.debug("Unable to validate section");
@@ -9618,6 +9620,8 @@ public class E2EOrderPlaced_Steps {
     @And("^Verify that '£XXX.XX left to pay on your current Device Plan' panel is displayed below the buyout offer panel and below to that upgrade and recycle options is displayed$")
     public void verify_that_XXXXX_left_to_pay_on_your_current() {
         try {
+            PageFactory.initElements(driver, UpgradePhonesListingPage.class);
+            UpgradeCustomerPageActions.verifyPoundLeftToPay();
             log.debug("Verified left to pay on your current Device Plan");
         } catch (Exception e) {
             log.debug("Unable to validate section");
@@ -9638,6 +9642,8 @@ public class E2EOrderPlaced_Steps {
     @And("^Verify that the same recycle section is displayed as it is displayed to the non-buyout and non-trade-in users$")
     public void verify_that_same_recycle_section_is_displayed() {
         try {
+            PageFactory.initElements(driver, UpgradePhonesListingPage.class);
+            UpgradeCustomerPageActions.RecyclesectionDisplayed();
             log.debug("Verified that the same recycle section is displayed");
         } catch (Exception e) {
             log.debug("Unable to validate section");
@@ -9658,6 +9664,8 @@ public class E2EOrderPlaced_Steps {
     @When("^Click on any one of the recycle option then Click on  'Yes get an accurate quote'$")
     public void click_on_any_one_of_the_recycle_option_then_Click_on_Yes_get_an_accurate_quote() {
         try {
+            PageFactory.initElements(driver, UpgradePhonesListingPage.class);
+            UpgradeCustomerPageActions.SelectRecycleAndCClickAccurateQuote();
             log.debug("Clicked on the get an accurate quote");
         } catch (Exception e) {
             log.debug("Unable to validate section");
@@ -9667,7 +9675,11 @@ public class E2EOrderPlaced_Steps {
 
     @And("^Answer the Questions in the questionnaire$")
     public void answerthe_Questions_in_the_questionnaire() {
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         try {
+
+            PageFactory.initElements(driver, UpgradeCustomerPage.class);
+            UpgradeCustomerPageActions.AnswerTradeinQuestion();
             log.debug("Answered the Questions in the questionnaire");
         } catch (Exception e) {
             log.debug("Unable to validate section");
@@ -9707,8 +9719,14 @@ public class E2EOrderPlaced_Steps {
 
     @And("^Verify that in 'Your package' summary Buyout is displayed with Recycle$")
     public void verify_that_in_Your_package_summarr_Buyout_is_displayed_with_Recycle() {
+        driver.manage().timeouts().implicitlyWait(15,TimeUnit.SECONDS);
         try {
-            log.debug("Verified that in 'Your package' summary Buyout");
+            int tmpBuyOutValue = 0;
+            PageFactory.initElements(driver, UpgradePhonesListingPage.class);
+            tmpBuyOutValue = UpgradeCustomerPageActions.verifyBuyOutDisplayedInMyPackage();
+            BuyOutValue = tmpBuyOutValue;
+            Thread.sleep(2000);
+            log.debug("Verified that in 'Your package' summary Buyout with Recycle");
         } catch (Exception e) {
             log.debug("Unable to validate section");
             Assert.fail("Unable to validate section");

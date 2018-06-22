@@ -24,7 +24,7 @@ public class PaymentPage {
     @FindBy(how = How.ID, using = "sortCodePart3")
     public static WebElement Sort_Code3;
 
-    @FindBy(how = How.ID, using = "accept-terms")
+    @FindBy(how = How.XPATH, using = "//div[@id='accept-terms' or @id='accept-terms-container']")
     public static WebElement Accept_Terms_Checkbox;
 
     //@FindBy(how = How.ID, using = "years")
