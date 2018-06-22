@@ -227,7 +227,7 @@ public class DeliveryPage {
     @FindBy(how = How.XPATH, using = "//input[@id='consent-no']")
     public static WebElement someoneElse_radioBtn;
 
-    @FindBy(how = How.XPATH, using = "//button[@id='btn-continue' or @id='change-delivery-confirm' or @id='change-delivery-confirm-label']")
+    @FindBy(how = How.XPATH, using = "//button[@id='btn-continue' or @id='change-delivery-confirm' or @id='change-delivery-confirm-label' or @id='btn-continue-label']")
     public static WebElement continueBtn;
 
     @FindBy(how = How.XPATH, using = "//*[normalize-space(@class)='on']")

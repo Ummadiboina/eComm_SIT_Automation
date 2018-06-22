@@ -3403,6 +3403,27 @@ public class E2EOrderPlaced_Steps {
         }
     }
 
+    @Given("^land on the payment page and input ([^\"]*) and other details for MBB url no change order placement$")
+    public void CreditCheckPaymentPage_MBBurlUpgrade(String Username) {
+        // Write code here that turns the phrase above into concrete actions
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+        try {
+            PageFactory.initElements(driver, PaymentPage.class);
+            Thread.sleep(2000);
+            PaymentPageActions.Time_At_Address();
+            Thread.sleep(2000);
+            PaymentPageActions.Card_Details(Username);
+            Thread.sleep(15000);
+            //PaymentPageActions.Card_Details_CCV();
+            //Thread.sleep(10000);
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+            Assert.fail("land on the payment page, Please refer to screenshots");
+
+        }
+    }
+
     @Given("^land on the payment page, check stock extended message for ([^\"]*) and input ([^\"]*) and other details for upgrade and click 'Continue on next step'$")
     public void CreditCheckPaymentPage_check_Stock_ext_msg_Upgrade(String Username, String product) {
         // Write code here that turns the phrase above into concrete actions
@@ -3794,7 +3815,7 @@ public class E2EOrderPlaced_Steps {
         try {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, BasketPage.class);
-            BasketPageActions.verifyDevicesInBasket(dev1, dev2);
+            BasketPageActions.verifyDevicesInBasket(AccessoryPageActions.accessoryName, dev2);
         } catch (Exception e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
@@ -4579,8 +4600,10 @@ public class E2EOrderPlaced_Steps {
             PageFactory.initElements(driver, PAYMandPAYGTariffAndExtrasPage.class);
             BaseCommPageActions.BuynowwithDevice(device_name);
             log.debug("Buynow function completed");
+            Thread.sleep(4000);
             BaseCommPageActions.VerifyPage();
             log.debug("Verify page action completed");
+            Thread.sleep(4000);
             BaseCommPageActions.verifyTariffType("Basecomm");
             log.debug("Verify Tariff type action completed");
         } catch (Exception e) {
@@ -4682,7 +4705,7 @@ public class E2EOrderPlaced_Steps {
         try {
             PageFactory.initElements(driver, BaseCommPage.class);
             PageFactory.initElements(driver, ConnectedDeviceDetailsPage.class);
-            //BaseCommPageActions.checkImgSrcTEPage(devicename, capacity, color);
+            BaseCommPageActions.checkImgSrcTEPage(devicename, capacity, color);
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -9016,7 +9039,18 @@ public class E2EOrderPlaced_Steps {
     @And("^Select the Home address$")
     public void selectTheHomeAddress() {
         // Write code here that turns the phrase above into concrete actions
-        throw new PendingException();
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, PaymentPage.class);
+
+            Thread.sleep(3000);
+            PaymentPageActions.SelectAddrerss();
+            log.debug("Clicked on address link");
+        } catch (Exception e) {
+            e.printStackTrace();
+            Assert.fail("Unable to click address link");
+        }
+
     }
 
     @And("^Enter the card details and click on 'Continue'$")

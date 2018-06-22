@@ -29,6 +29,7 @@ public class AccessoryPageActions extends Environment {
 	static int UserSpecifiedFitnessTrackerLimit = 0;
 	static JavascriptExecutor js = (JavascriptExecutor) driver;
 	static int totalcount = 0;
+	public static String accessoryName="";
 
 	public static void Elementdisplayvalidation(String Tabname) throws IOException, InterruptedException {
 		log.debug(" ");
@@ -124,15 +125,24 @@ public class AccessoryPageActions extends Environment {
 
 		if (elementName.contains("Random")) {
 			log.debug("Selecting Any Accessory");
-			log.debug("Selecting Any Accessory");
-			log.debug("Selected an accessory -  " + pageobjects.AccessoryPage.RandomAccessory.getText());
+			accessoryName = pageobjects.AccessoryPage.RandomAccessory.getText();
+			log.debug("Selected an accessory -  " + accessoryName);
 			pageobjects.AccessoryPage.RandomAccessory.click();
-			log.debug("Random Accessory Selected");
+
 		}
+
+		if (elementName.contains("AirPods")) {
+			log.debug("Selecting Any Accessory");
+			accessoryName = pageobjects.AccessoryPage.AirPods.getText();
+			log.debug("Selected an accessory -  " + accessoryName);
+			pageobjects.AccessoryPage.AirPods.click();
+
+		}
+
 		if (elementName.contains("HarmanKardonOnxyxStudio3"))
 		{
 			log.debug("Selecting HarmanKardonOnxyxStudio2 Accessory");
-			log.debug("Selecting HarmanKardonOnxyxStudio2 Accessory");
+
 			log.debug("Selected an accessory -  " + pageobjects.AccessoryPage.HarmanKardonOnxyxStudio2.getText());
 			pageobjects.AccessoryPage.HarmanKardonOnxyxStudio2.click();
 			log.debug("HarmanKardonOnxyxStudio2 Accessory Selected");

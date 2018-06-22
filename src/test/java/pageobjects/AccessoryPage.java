@@ -38,6 +38,11 @@ public class AccessoryPage {
 	@FindBy(how = How.XPATH, using = "(//div[@component-name='productTile'])[2]//a")
 	public static WebElement RandomAccessory;
 
+	@FindBy(how = How.XPATH, using = "(//span[contains(text(),'AirPods')])[1]")
+	public static WebElement AirPods;
+
+
+
 	@FindBy(how = How.XPATH, using = "(//h3[normalize-space()='All accessories']//following-sibling::p)[2]")
 	public static WebElement SeeAllAccessories;
 

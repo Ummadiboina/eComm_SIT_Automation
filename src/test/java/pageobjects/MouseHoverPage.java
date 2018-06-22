@@ -21,6 +21,8 @@ public class MouseHoverPage extends Environment {
 	@FindBy(how = How.XPATH, using = ("(//li[contains(@class,'tier-menu-wrapper')]//li/a[text()='Upgrades'])[2]"))
 	public static WebElement MouseMoveonUpgrade_Drupal;
 
+	@FindBy(how = How.XPATH, using = ("//li[contains(@class,'tier-menu-wrapper')]//li/a[text()='iPad']"))
+	public static WebElement MoveMouseOniPad_Drupal;
 
 	// Below will click on the Phones Link
 	@FindBy(how = How.XPATH, using = ("//li[@class='has-submenu']//a[normalize-space()='Phones']"))

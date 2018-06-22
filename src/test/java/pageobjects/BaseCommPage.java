@@ -127,7 +127,7 @@ public class BaseCommPage {
     public static WebElement iPadMini4BuyNow;
 
     @FindAll({
-            @FindBy(how = How.XPATH, using = ("//div[@class='multi-size-tile clearfix cube']//p[@class='details']"))})
+            @FindBy(how = How.XPATH, using = ("//div[@class='multi-size-tile clearfix cube']//p[@class='details']/span[2]"))})
     public static List<WebElement> TabletDevicesName;
     @FindAll({
             @FindBy(how = How.XPATH, using = ("//div[@class='multi-size-tile clearfix cube']//p[@class='details']"))})

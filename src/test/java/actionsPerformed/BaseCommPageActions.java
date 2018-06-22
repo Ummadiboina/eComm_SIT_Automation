@@ -891,6 +891,7 @@ public class BaseCommPageActions extends Environment {
 	}
 
 	public static void BuynowwithDevice(String device) throws Exception {
+		Thread.sleep(6000);
 		log.debug("Going to click on the buy now button on device");
 		device = trimEnd(device);
 		List<WebElement> TabletDevicesName = pageobjects.BaseCommPage.TabletDevicesName;
@@ -914,6 +915,7 @@ public class BaseCommPageActions extends Environment {
 				BuyNowButton = driver.findElement(By.xpath(c));
 				// Thread.sleep(3000);
 				js.executeScript("arguments[0].click();", BuyNowButton);
+				break;
 			}
 		}
 		Screenshots.captureScreenshot();
@@ -1079,6 +1081,7 @@ public class BaseCommPageActions extends Environment {
 
 	public static void checkImgSrcTEPage(String devicename, String capacity, String color)
 			throws IOException, InterruptedException {
+		Thread.sleep(5000);
 		String color1 = null, color2 = null, colorname = null, capacity_color = null, capacity_color1 = null,
 				capacity_color2 = null, capacityname = null;
 		WebElement image = pageobjects.BaseCommPage.ImgSrcTEpages;
@@ -1087,15 +1090,16 @@ public class BaseCommPageActions extends Environment {
 		WebElement element2 = null;
 		WebElement capacitynameelement = null;
 
-		element2 = pageobjects.ConnectedDeviceDetailsPage.CapacityDropDown;
+
 		JavascriptExecutor js = (JavascriptExecutor) driver;
+		element2 = pageobjects.ConnectedDeviceDetailsPage.CapacityDropDown;
+		Thread.sleep(4000);
 		js.executeScript("arguments[0].setAttribute('style', 'display:block;')", element2);
 		if (element2.isDisplayed()) {
 			capacitynameelement = new Select(element2).getFirstSelectedOption();
 		}
 
 		capacityname = capacitynameelement.getText().toLowerCase();
-
 		element1 = pageobjects.ConnectedDeviceDetailsPage.ColorDropDown;
 		js.executeScript("arguments[0].setAttribute('style', 'display:block;')", element1);
 		if (element1.isDisplayed()) {

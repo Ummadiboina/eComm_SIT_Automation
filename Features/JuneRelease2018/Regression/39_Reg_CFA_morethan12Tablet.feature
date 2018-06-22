@@ -34,4 +34,4 @@ Feature: 39_Reg_CFA_morethan12Tablet
 
     Examples:
       | Firstname | Surname | Username     | limit1 | tabletname    | limit2 | accessoryname | fitnesstrackername | consumer | B1  | B2  | B3  | B4  | Text | Email | Phone | Post | status  | MBBStatus | DeviceType |
-      | TEST      | ACCEPTA | TEST ACCEPTA | 6      | Random Device | 6      | Random        | Fitbit Ionic       | Someone  | Not | Not | Not | Not | Not  | Not   | Not   | Not  | Enabled | No        | Connected  |
+      | TEST      | ACCEPTA | TEST ACCEPTA | 6      | Random Device | 6      | AirPods       | Fitbit Ionic       | Someone  | Not | Not | Not | Not | Not  | Not   | Not   | Not  | Enabled | No        | Connected  |

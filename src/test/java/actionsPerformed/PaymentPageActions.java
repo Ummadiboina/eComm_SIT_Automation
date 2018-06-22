@@ -169,11 +169,14 @@ public class PaymentPageActions extends Environment {
        //driver.manage().timeouts().implicitlyWait(15,TimeUnit.SECONDS);
         Thread.sleep(8000);
 
-        driver.switchTo().frame("payment-iframe");
-        Thread.sleep(5000);
+            driver.switchTo().frame("payment-iframe");
+            Thread.sleep(5000);
 
 
             if (driver.findElements(By.xpath("//input[@type='password']")).size() > 0) {
+
+                driver.switchTo().frame("payment-iframe");
+                Thread.sleep(5000);
                 PaymentPage.CCVSecurityCode.sendKeys("1234");
                 log.debug("Entered CVV security code");
                 Thread.sleep(3000);
@@ -185,6 +188,12 @@ public class PaymentPageActions extends Environment {
 
                 Thread.sleep(10000);
             }
+    }
+
+    public static void SelectAddrerss() throws InterruptedException {
+        Thread.sleep(5000);
+        PaymentPage.Selectadd.click();
+        log.debug("Address Selected");
     }
 
 
