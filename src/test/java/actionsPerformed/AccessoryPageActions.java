@@ -734,6 +734,7 @@ public class AccessoryPageActions extends Environment {
 				log.debug(
 						"Checkout button is not present since the total count is greater than 6 ->as expected");
 			}
+			Screenshots.captureScreenshot();
 			clickOnRemoveButton();
 			Thread.sleep(15000);
 			clickOnRemoveButton();

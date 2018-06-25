@@ -3558,7 +3558,7 @@ public class E2EOrderPlaced_Steps {
             PageFactory.initElements(driver, MouseHoverPage.class);
             PageFactory.initElements(driver, UpgradePhonesListingPage.class);
             MouseHoverAction.UpgradeandUpgradeNow();
-            Thread.sleep(5000);
+            Thread.sleep(7000);
             Autoredirection.redirectUpgrades();
             Thread.sleep(5000);
         } catch (Exception e) {
@@ -6658,7 +6658,6 @@ public class E2EOrderPlaced_Steps {
             e.printStackTrace();
             log.debug("Sort filter validation failed");
             Assert.fail("Sort filter validation failed");
-
         }
     }
 
@@ -6767,8 +6766,9 @@ public class E2EOrderPlaced_Steps {
             driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
             PageFactory.initElements(driver, PAYMandPAYGTariffAndExtrasPage.class);
             DataFilterRange = range;
-            PAYMandPAYGTariffAndExtrasPageActions.clickViewAllTariffs();
+            //PAYMandPAYGTariffAndExtrasPageActions.clickViewAllTariffs();
             datalistbefore = PAYMandPAYGTariffAndExtrasPageActions.getDataListBeforeSelectingFilter();
+            Thread.sleep(4000);
             PAYMandPAYGTariffAndExtrasPageActions.selectFilter(range);
             FilterDataOption = range;
         } catch (Exception e) {

@@ -213,7 +213,7 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 		log.debug("Click on the Add To Basket");
 		JavascriptExecutor jse = (JavascriptExecutor) driver;
 		jse.executeScript("window.scrollBy(0,600)", "");
-
+		Screenshots.captureScreenshot();
 		((JavascriptExecutor) driver).executeScript("arguments[0].click();", pageobjects.PAYMandPAYGTariffAndExtrasPage.addToBasketLive);
 		// pageobjects.PAYMandPAYGTariffAndExtrasPage.addToBasketLive.sendKeys(Keys.ENTER);
 		log.debug("Clicked on Add to Basket in Tariff and Extras page");

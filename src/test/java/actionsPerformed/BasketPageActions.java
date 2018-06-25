@@ -646,6 +646,9 @@ public class BasketPageActions extends Environment {
 			}
 		}
 
+		log.debug("count -"+ cnt);
+		System.out.println("count -"+ cnt);
+
 		if(cnt == SelectedDevices.size())
 		{
 			log.debug("Devices in basket are matching with Selected device");
