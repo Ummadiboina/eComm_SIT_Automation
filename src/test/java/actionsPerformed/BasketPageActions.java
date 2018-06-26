@@ -166,7 +166,9 @@ public class BasketPageActions extends Environment {
 			if(!pageobjects.BasketPage.checkoutbtn.isEnabled())
 			{
 				Thread.sleep(4000);
-				driver.findElement(By.xpath("//input[@id='noNeedNewSim']")).click();
+				JavascriptExecutor executor = (JavascriptExecutor)driver;
+				executor.executeScript("arguments[0].click();", driver.findElement(By.xpath("//input[@id='noNeedNewSim']")));
+				//driver.findElement(By.xpath("//input[@id='noNeedNewSim']")).click();
 			}
 			Thread.sleep(5000);
 			log.debug("Queue page is not displayed");

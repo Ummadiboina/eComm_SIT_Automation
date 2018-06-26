@@ -24,7 +24,19 @@ Feature: 47_CFU_Phones_Data_filters_options_tariff_and_extras_page
     Then I should see tariffs relevant to selected sort option <sortoption> & filter option <filtername>
     When I deselect filter button
     Then I should see tariffs based on the selected sort option <sortoption>
+    And Land on the 'Tariffs and extra' page
+    And I Land on the basket page by clicking on Add to Basket button
+    And click on "go to checkout" button
+    And perform <Action> in OTAC page
+    And Is this order for You or Someone else <consumer> when GDPR is <status>
+    #And Click on the 'Continue button' in delivery page
+    #And land on the payment page and input <Username> and other details and click 'Continue' on next step for otac
+    And land on the payment page and input <Username> and other details and click 'Continue on next step' for DD confirmation
+    And Continue to Agreements page and confirm all the agreement checks
+    And Continue to Review page and review the order
+    Then order confirmation is displayed
+    Then Choose <consumer> <status> Business preferences <B1> <B2> <B3> <B4> And Channel Preferences <Text> <Email> <Phone> <Post> <MBBStatus> <DeviceType>
 
     Examples:
-      | username                         | password | handset           | filtername | sortoption                 | Make  | Model   | Network |
-      | testaccepta4289@stf.ref.o2.co.uk | test123  | Samsung Galaxy S8 | medium     | Monthly data (Low to High) | Apple | Iphone7 | Orange  |
+      | username                         | password | handset           | filtername | sortoption                 | Username     | Make  | Model   | Network | consumer | B1  | B2  | B3     | B4  | Text | Email  | Phone | Post | status  | MBBStatus | DeviceType |
+      | testaccepta4289@stf.ref.o2.co.uk | test123  | Samsung Galaxy S8 | low        | Monthly data (Low to High) | TEST ACCEPTA | Apple | Iphone7 | Orange  | Me       | Not | Not | Select | Not | Not  | Select | Not   | Not  | Enabled | No        | Connected  |

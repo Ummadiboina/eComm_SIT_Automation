@@ -85,21 +85,23 @@ public class DeliveryPageActions extends Environment {
     public static void ClickAndCollect() {
 
         try {
-            Thread.sleep(3000);
+            Thread.sleep(6000);
             if (pageobjects.DeliveryPage.clickAndCollect.isDisplayed()) {
                 pageobjects.DeliveryPage.clickAndCollect.click();
                 log.debug("Click and collect tab Selected an address");
-
                 Thread.sleep(2000);
-                pageobjects.DeliveryPage.storePostcode.sendKeys("B15 2LG");
+                pageobjects.DeliveryPage.storePostcode.clear();
+                Thread.sleep(2000);
+                pageobjects.DeliveryPage.storePostcode.sendKeys("M4");
                 log.debug("Entered Post code");
                 Thread.sleep(2000);
+                Screenshots.captureScreenshot();
                 pageobjects.DeliveryPage.Find_Store.click();
                 log.debug("Clicked on the Find address button");
                 Thread.sleep(5000);
                 pageobjects.DeliveryPage.Select_Store.click();
                 log.debug("Clicked on the Find address button");
-
+                Screenshots.captureScreenshot();
 
             }
             Thread.sleep(3000);
