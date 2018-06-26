@@ -702,19 +702,28 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 	}
 
 	public static void selectFilter(String range) throws IOException, InterruptedException {
+		Thread.sleep(4000);
 		if (range.equals("low")) {
+
 			js.executeScript("arguments[0].click();", pageobjects.PAYMandPAYGTariffAndExtrasPage.lowfilter);
+			scrollToAnElement.scrollToElement(PAYMandPAYGTariffAndExtrasPage.lowfilter);
+			Screenshots.captureScreenshot();
 		}
 		if (range.equals("medium")) {
 			js.executeScript("arguments[0].click();", pageobjects.PAYMandPAYGTariffAndExtrasPage.mediumfilter);
+			scrollToAnElement.scrollToElement(PAYMandPAYGTariffAndExtrasPage.mediumfilter);
+			Screenshots.captureScreenshot();
 		}
 		if (range.equals("high")) {
 			js.executeScript("arguments[0].click();", pageobjects.PAYMandPAYGTariffAndExtrasPage.highfilter);
+			scrollToAnElement.scrollToElement(PAYMandPAYGTariffAndExtrasPage.highfilter);
+			Screenshots.captureScreenshot();
 		}
-		Screenshots.captureScreenshot();
+
 	}
 
 	public static ArrayList<Integer> getDataListBeforeSelectingFilter() throws IOException, InterruptedException {
+		Thread.sleep(4000);
 		List<WebElement> DataTextElement = PAYMandPAYGTariffAndExtrasPage.DataTextElement;
 		ArrayList<Integer> datalist = new ArrayList<Integer>();
 		String data = null, tempdata = null;
@@ -739,7 +748,7 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 			}
 
 		}
-
+		Thread.sleep(4000);
 		log.debug('\n');
 
 		log.debug("----------------------Data List before selecting filter--------------");
@@ -753,6 +762,7 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 	}
 
 	public static ArrayList<Integer> getDataListAfterSelectingFilter() throws IOException, InterruptedException {
+		Thread.sleep(5000);
 		List<WebElement> DataTextElement = PAYMandPAYGTariffAndExtrasPage.DataTextElement;
 
 		String data = null, tempdata = null;
@@ -957,6 +967,7 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 		Thread.sleep(5000);
 		List<WebElement> ViewAllTariffs = pageobjects.PAYMandPAYGTariffAndExtrasPage.ViewAllTariffs;
 		if (ViewAllTariffs.size() > 0) {
+			Thread.sleep(5000);
 			js.executeScript("arguments[0].click();", ViewAllTariffs.get(0));
 			log.debug("Clicked on View All Tariffs link in Tariffs and Extras page");
 		} else {
@@ -1008,7 +1019,7 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 	}
 
 	public static void SelectedState(String Filteroption) throws InterruptedException, IOException {
-
+		Thread.sleep(4000);
 		String DatafilterText = pageobjects.PAYMandPAYGTariffAndExtrasPage.DataFilterSelectedXpath.getText();
 		log.debug("DatafilterText " + DatafilterText);
 
@@ -1058,6 +1069,8 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 
 		pageobjects.PAYMandPAYGTariffAndExtrasPage.DataFilterSelectedXpath.click();
 		Thread.sleep(5000);
+		scrollToAnElement.scrollToElement(PAYMandPAYGTariffAndExtrasPage.DataFilterSelectedXpath);
+		Screenshots.captureScreenshot();
 		log.debug("Deselected the selected data filter tab");
 		Thread.sleep(5000);
 		Screenshots.captureScreenshot();

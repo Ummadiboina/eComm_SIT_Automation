@@ -11,11 +11,10 @@ Feature: 70_Reg_Current_MBB_URL_no_change_Order_placement
     And click on "go to checkout" button
     And Select existing account and begin fast checkout
     #And input <Firstname> and <Surname> and other valid details in Delivery page and Click on the 'Continue button'
-    #And input <Firstname> and <Surname> and other valid details in Delivery page to verify GDPR
     And input title in Delivery page
     And Is this order for You or Someone else <consumer> when GDPR is <status>
     #And land on the payment page and input <user> and other details for upgrade and click 'Continue on next step'
-    And land on the payment page and input <user> and other details for MBB url no change order placement
+    And land on the payment page and input <user> and other details for existing customer
     And Continue to Agreements page and confirm all the agreement checks
     And Continue to Review page and review the order
     Then order confirmation is displayed

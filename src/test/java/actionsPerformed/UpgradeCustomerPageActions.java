@@ -1418,7 +1418,7 @@ public class UpgradeCustomerPageActions extends Environment {
         log.debug("In OTAC page");
         if (arg.contains("skip")) {
             log.debug("Skipping OTAC entry to verify account");
-
+            Thread.sleep(3000);
             WebElement element = UpgradeCustomerPage.skipThisStep_OTAC;
             JavascriptExecutor executor = (JavascriptExecutor)driver;
             executor.executeScript("arguments[0].click();", element);
@@ -1429,7 +1429,7 @@ public class UpgradeCustomerPageActions extends Environment {
         }
         if (arg.contains("enterCode")) {
             log.debug("Entering OTAC to verify account");
-
+            Thread.sleep(3000);
             WebElement element = UpgradeCustomerPage.sendCode_OTAC;
             JavascriptExecutor executor = (JavascriptExecutor)driver;
             executor.executeScript("arguments[0].click();", element);
