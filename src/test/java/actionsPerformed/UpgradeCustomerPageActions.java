@@ -2212,6 +2212,34 @@ public class UpgradeCustomerPageActions extends Environment {
         Screenshots.captureScreenshot();
     }
 
+    public static void validateLogoutMessage() throws InterruptedException, IOException {
+
+        driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
+
+        String logOutTxt = driver.findElement(By.xpath("//h1")).getText();
+        log.debug("Logout message :: " +logOutTxt);
+        if (logOutTxt.contains("You have successfully signed out")) {
+            log.debug("Logout page is displayed and validated logout message successfully");
+        } else {
+            log.debug("Logout Message is not matching");
+            Assert.fail("Logout Message is not matching");
+        }
+        Screenshots.captureScreenshot();
+    }
+
+    public static void redirectUrlAfterLogout() throws Exception {
+        Thread.sleep(5000);
+        String redirectUrl = driver.getCurrentUrl();
+        log.debug("Redirect URL:: "+ redirectUrl);
+        if (redirectUrl.contains("https://www.o2.co.uk/apps/my-o2?logout=true")) {
+            log.debug("Redirected to the valid URL");
+        } else {
+            log.debug("Redirected to the invalid URL : "+redirectUrl);
+            Assert.fail("Redirected to the invalid URL: "+redirectUrl);
+        }
+        Screenshots.captureScreenshot();
+    }
+
     public static void verifyUpgradeShop() throws InterruptedException, IOException {
 
         Thread.sleep(3000);

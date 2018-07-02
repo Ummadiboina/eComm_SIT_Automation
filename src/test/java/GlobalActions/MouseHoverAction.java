@@ -127,7 +127,7 @@ public class MouseHoverAction extends Environment {
                // MouseHoverPage.MoveMouseOnPhones_Drupal.click();
                 JavascriptExecutor executor = (JavascriptExecutor)driver;
                 executor.executeScript("arguments[0].click();", MouseHoverPage.MoveMouseOnPhones_Drupal);
-                Thread.sleep(2000);
+                Thread.sleep(3000);
                 Screenshots.captureScreenshot();
 
                 log.debug("Clicking on PayG Phones");
