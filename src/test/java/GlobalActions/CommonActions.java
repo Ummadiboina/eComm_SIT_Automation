@@ -128,6 +128,31 @@ public class CommonActions extends  Environment{
         }
     }
 
+
+    // set data to the text fields using Java script
+    public static void setDataForTextField_JS(WebElement locater, String inputVal) {
+        try {
+            if(locater.isEnabled()) {
+                highlightElement(locater);
+
+
+                /*JavascriptExecutor executor = (JavascriptExecutor)driver;
+                executor.executeScript("document.locater).setAttribute('value',inputVal)");*/
+
+
+
+
+            }else
+                System.out.println("Not able to set the data to the field");
+
+        } catch (Exception e){
+            // TODO: handle exception
+            System.out.println ("Failed to Set input data to the Field : " + e.getStackTrace ());
+        }
+    }
+
+
+
     // click the web element using javaScript functions
     public static void clickWebElement(WebElement locater) {
         try {
@@ -294,8 +319,8 @@ public class CommonActions extends  Environment{
     // highlight the webelement if it visible
     public static void highlightElement(WebElement locater) throws InterruptedException {
         JavascriptExecutor js = (JavascriptExecutor) driver;
-        js.executeScript ("arguments[0].setAttribute('style', 'background: yellow; border: 2px solid red;');", locater);
-        Thread.sleep (2000);
+        js.executeScript ("arguments[0].setAttribute('style', 'background: yellow; border: 2px solid pink;');", locater);
+        Thread.sleep (1000);
         js.executeScript ("arguments[0].setAttribute('style','border: solid 2px white')", locater);
     }
 
