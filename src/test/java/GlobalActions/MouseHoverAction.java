@@ -73,7 +73,8 @@ public class MouseHoverAction extends Environment {
                 Point coordinates = pageobjects.MouseHoverPage.MoveMouseOnShopTab.getLocation();
                 Robot robot = new Robot();
                 robot.mouseMove(coordinates.getX(), coordinates.getY() + 120);
-                log.debug("Moving Mouse onThread.sleep(2000); the Shop Tab");
+                Thread.sleep(2000);
+                log.debug("Moving Mouse on the Shop Tab");
 
                 Actions action = new Actions(driver);
                 action.moveToElement(pageobjects.MouseHoverPage.MoveMouseOnShopTab).perform();

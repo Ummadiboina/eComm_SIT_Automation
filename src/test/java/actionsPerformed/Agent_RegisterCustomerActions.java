@@ -196,7 +196,7 @@ public class Agent_RegisterCustomerActions extends Environment {
 			Thread.sleep(5000);
 	}
 
-	public static void CardDetails_PayM() throws InterruptedException {
+	public static void CardDetails_PayM() throws InterruptedException, IOException {
 
 		//driver.manage().timeouts().implicitlyWait(15,TimeUnit.SECONDS);
 		log.debug("Mipay bit : ");
@@ -212,6 +212,7 @@ public class Agent_RegisterCustomerActions extends Environment {
 
 			Thread.sleep(5000);
 			Agent_RegisterCustomerPage.UsethisCard.click();
+			Screenshots.captureScreenshot();
 			log.debug("The Pay Now button is clicked");
 			log.debug("completed  Mypay bit");
 			Thread.sleep(6000);
@@ -232,6 +233,7 @@ public class Agent_RegisterCustomerActions extends Environment {
 			Agent_RegisterCustomerPage.SecurityCode.sendKeys("123");
 			Thread.sleep(2000);
 			Agent_RegisterCustomerPage.UsethisCard.click();
+			Screenshots.captureScreenshot();
 			log.debug("completed  Mypay bit");
 			Thread.sleep(6000);
 		}
@@ -1593,7 +1595,7 @@ public class Agent_RegisterCustomerActions extends Environment {
 		Screenshots.captureScreenshot();
 	}
 
-	public static void RegisterStatus() throws InterruptedException, IOException {
+	public static void RegisterStatus() throws InterruptedException {
 		Thread.sleep(5000);
 		if (driver.findElements(By.xpath("//span[@id='successStatus']")).size() > 0) {
 

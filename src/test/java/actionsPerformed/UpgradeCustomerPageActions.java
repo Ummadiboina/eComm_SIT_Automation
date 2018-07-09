@@ -401,10 +401,11 @@ public class UpgradeCustomerPageActions extends Environment {
     public static void selectTariff(String Tariff) throws IOException, InterruptedException {
         log.debug("selectTariff");
         Thread.sleep(8000);
-
+        /*((JavascriptExecutor) driver).executeScript("arguments[0].click();", PAYMandPAYGTariffAndExtrasPage.ViewAllTariffs_new);
+        Thread.sleep(4000);*/
         //driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
         //WebElement selectBtnEle = driver.findElement(By.xpath("(//button[@type='button']//*[normalize-space()='Select'])[2]"));
-        WebElement selectBtnEle = driver.findElement(By.xpath("(//button[@id='callToAction'])[1]"));
+        WebElement selectBtnEle = driver.findElement(By.xpath("(//button[@id='callToAction'])[5]"));
         Screenshots.captureScreenshot();
         if(selectBtnEle.isDisplayed()){
             ((JavascriptExecutor) driver).executeScript("arguments[0].click();", selectBtnEle);
@@ -519,9 +520,9 @@ public class UpgradeCustomerPageActions extends Environment {
 
     public static void verifyPromotionalRibbonDisplayedTEpage(String Tariff) throws IOException, InterruptedException {
 
-        WebElement selectBtnEle = driver.findElement(By.xpath("(//button[@type='button']//*[normalize-space()='Select'])[2]"));
+        WebElement selectBtnEle = driver.findElement(By.xpath("(//button[@type='button']//*[normalize-space()='Select'])[5]"));
 
-        if(driver.findElements(By.xpath("(//button[@type='button']//*[normalize-space()='Select'])[2]")).size()>=1){
+        if(driver.findElements(By.xpath("(//button[@type='button']//*[normalize-space()='Select'])[4]")).size()>=1){
             driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
             ((JavascriptExecutor) driver).executeScript("arguments[0].click();", selectBtnEle);
             log.debug("Tariff has selected");
@@ -2231,7 +2232,7 @@ public class UpgradeCustomerPageActions extends Environment {
         Thread.sleep(5000);
         String redirectUrl = driver.getCurrentUrl();
         log.debug("Redirect URL:: "+ redirectUrl);
-        if (redirectUrl.contains("https://www.o2.co.uk/apps/my-o2?logout=true")) {
+        if (redirectUrl.contains("https://www.ref.o2.co.uk/apps/my-o2?logout=true")) {
             log.debug("Redirected to the valid URL");
         } else {
             log.debug("Redirected to the invalid URL : "+redirectUrl);

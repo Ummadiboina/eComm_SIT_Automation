@@ -83,14 +83,21 @@ public class MyO2PageActions extends Environment {
 			Screenshots.captureScreenshot();
 
 			if (MyO2Page.signIn.isDisplayed()) {log.debug("My O2 page has 'Sign in' link :"+MyO2Page.signIn.getText());}
-			if (MyO2Page.register.isDisplayed()) {log.debug("My O2 page has 'Sign in' link :"+MyO2Page.register.getText());}
-			if (MyO2Page.signInSectionHeader.isDisplayed()) {log.debug("My O2 page has 'Sign in' section header :"+MyO2Page.signInSectionHeader.getText());}
-			if (MyO2Page.signInSectionHintTxt.isDisplayed()) {log.debug("My O2 page has 'Sign in' section hint text :"+MyO2Page.signInSectionHintTxt.getText());}
-			if (MyO2Page.signInUserName.isDisplayed()) {log.debug("My O2 page 'Sign in' section has user name input field :"+MyO2Page.signInUserName.getText());}
-			if (MyO2Page.signInPassword.isDisplayed()) {log.debug("My O2 page 'Sign in' section has password input field :"+MyO2Page.signInPassword.getText());}
+			if (MyO2Page.register.isDisplayed()) {log.debug("My O2 page has 'Register' link :"+MyO2Page.register.getText());}
+			if (MyO2Page.signInSectionHeader.isDisplayed()) {log.debug("My O2 page 'Sign in' section header :"+MyO2Page.signInSectionHeader.getText());}
+			if (MyO2Page.signInSectionHintTxt.isDisplayed()) {log.debug("My O2 page 'Sign in' section hint text :"+MyO2Page.signInSectionHintTxt.getText());}
+			if (MyO2Page.signInUserName.isDisplayed()) {log.debug("My O2 page 'Sign in' section has user name input field :");}
+			if (MyO2Page.signInPassword.isDisplayed()) {log.debug("My O2 page 'Sign in' section has password input field :");}
 			if (MyO2Page.rememberUserName.isDisplayed()) {log.debug("My O2 page 'Sign in' section has 'Remember My UserName' input field :"+MyO2Page.rememberUserName.getText());}
 			if (MyO2Page.signInButton.isDisplayed()) {log.debug("My O2 page 'Sign in' section has sign in button :"+MyO2Page.signInButton.getText());}
 			if (MyO2Page.forgotUserName.isDisplayed()) {log.debug("My O2 page 'Sign in' section has forgotton user name link :"+MyO2Page.forgotUserName.getText());}
+
+			if (MyO2Page.signInButton.isEnabled()) {
+				log.debug("Sign-in Button is enabled before providing login credentials at MY O2 Page");
+
+			}else{
+				log.debug("As Expected:: Sign-in Button is disabled before providing login credentials at MY O2 Page");
+			}
 
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
@@ -104,7 +111,7 @@ public class MyO2PageActions extends Environment {
 		Thread.sleep(5000);
 		String redirectUrl = driver.getCurrentUrl();
 		log.debug("Redirect URL when existing customer clicked on My O2 link:: "+ redirectUrl);
-		if (redirectUrl.contains("https://mymobile.o2.co.uk/")) {
+		if (redirectUrl.contains("https://mymobile.ref.o2.co.uk/")) {
 			log.debug("Redirected to the valid URL");
 		} else {
 			log.debug("Redirected to the invalid URL when existing customer clicked on My O2 link : " +redirectUrl);
@@ -118,7 +125,7 @@ public class MyO2PageActions extends Environment {
 		Thread.sleep(5000);
 		String redirectUrl = driver.getCurrentUrl();
 		log.debug("Redirect URL when customer clicked on register link at My O2 page:: "+ redirectUrl);
-		if (redirectUrl.contains("https://accounts.o2.co.uk/register")) {
+		if (redirectUrl.contains("https://accounts.ref.o2.co.uk/register")) {
 			log.debug("Redirected to the valid URL");
 		} else {
 			log.debug("Redirected to the invalid URL when customer clicked on register link at My O2 : " +redirectUrl);
@@ -133,7 +140,7 @@ public class MyO2PageActions extends Environment {
 		Thread.sleep(5000);
 		String redirectUrl = driver.getCurrentUrl();
 		log.debug("Redirect URL when customer clicked on 'Forgotten username or password' link at My O2 page:: "+ redirectUrl);
-		if (redirectUrl.contains("https://accounts.o2.co.uk/resetpassword/selectusername")) {
+		if (redirectUrl.contains("https://accounts.ref.o2.co.uk/resetpassword/selectusername")) {
 			log.debug("Redirected to the valid URL");
 		} else {
 			log.debug("Redirected to the invalid URL when customer clicked on 'Forgotten username or password' link at My O2 : " +redirectUrl);
@@ -152,7 +159,7 @@ public class MyO2PageActions extends Environment {
 			Thread.sleep(4000);
 			Screenshots.captureScreenshot();
 
-			if (driver.findElements(By.xpath("//*[contains(text(),'register')]")).size() > 0) {
+			if (driver.findElements(By.xpath("//a[contains(text(),'Register')]")).size() > 0) {
 				log.debug("Register link is present at My O2 page and clicking on it");
 				MyO2Page.register.click();
 				log.debug("Clicked on register link at My O2 page");

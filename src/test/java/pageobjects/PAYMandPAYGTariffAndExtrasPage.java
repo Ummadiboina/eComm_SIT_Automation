@@ -145,6 +145,9 @@ public class PAYMandPAYGTariffAndExtrasPage {
 	@FindAll({ @FindBy(how = How.XPATH, using = ("(//div[@class='viewAllTariffs'])[1]")) })
 	public static List<WebElement> ViewAllTariffs;
 
+	@FindBy(how = How.XPATH, using = "//*[@id=\"DR346\"]/a[1]/button(//div[@class='viewAllTariffs'])[1]")
+	public static WebElement ViewAllTariffs_new;
+
 	@FindBy(how = How.XPATH, using = "//*[@id=\"DR346\"]/a[1]/button")
 	public static WebElement DataTariff_One;
 
