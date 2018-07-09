@@ -10285,4 +10285,37 @@ public class E2EOrderPlaced_Steps {
         }
     }
 
+    //*********************************************************  REMEDY AUTOMATION   ******************************************
+
+
+    @Given("Login Remedy tool with the details userName ([^\"]*) and password ([^\"]*)")
+    public void loginRemedyTool(String userName, String password) throws InterruptedException {
+        Thread.sleep(8000);
+        try {
+            PageFactory.initElements(driver, RemedyLoginPage.class);
+            RemedyLoginAction.LoginIntoRemedyApp(userName,password);
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+            Assert.fail("Unable to select Create New account");
+
+        }
+    }
+
+
+    @And("Select a Application Type and serch the records with query")
+    public void selectApplicationType() throws InterruptedException {
+        Thread.sleep(3000);
+        try {
+            PageFactory.initElements(driver, RemedyLoginPage.class);
+            RemedyLoginAction.chooseAppType();
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+            Assert.fail("Unable to select Create New account");
+
+        }
+    }
+
+
 }
