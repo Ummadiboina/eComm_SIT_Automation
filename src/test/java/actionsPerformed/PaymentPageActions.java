@@ -169,10 +169,14 @@ public class PaymentPageActions extends Environment {
        //driver.manage().timeouts().implicitlyWait(15,TimeUnit.SECONDS);
         Thread.sleep(5000);
 
-            driver.switchTo().frame("payment-iframe");
+            /*driver.switchTo().frame("payment-iframe");
             Thread.sleep(5000);
+            if (driver.findElements(By.xpath("//input[@type='password']")).size() > 0) {*/
 
-            if (driver.findElements(By.xpath("//input[@type='password']")).size() > 0) {
+            if (driver.findElements(By.xpath("//iframe[@class='payment-iframe']")).size() > 0) {
+
+                driver.switchTo().frame("payment-iframe");
+                Thread.sleep(5000);
 
                 PaymentPage.CCVSecurityCode.sendKeys("1234");
                 log.debug("Entered CVV security code");
@@ -182,10 +186,36 @@ public class PaymentPageActions extends Environment {
                 executor.executeScript("arguments[0].click();", PaymentPage.Submit_Next_Step);
                 //PaymentPage.Submit_Next_Step.click();
                 log.debug("Clicking on submit to next step");
-
-                Thread.sleep(10000);
+                Thread.sleep(12000);
+                log.debug("*********We are done***************");
+                log.debug("Exiting the Card_CCV section");
+                driver.switchTo().defaultContent();
             }
     }
+
+    public static void depositCard_Details_CCV() throws InterruptedException, IOException {
+
+        //driver.manage().timeouts().implicitlyWait(15,TimeUnit.SECONDS);
+        Thread.sleep(5000);
+
+        if (driver.findElements(By.xpath("//iframe[@class='deposit-iframe']")).size() > 0) {
+
+            driver.switchTo().frame("deposit-iframe");
+            Thread.sleep(5000);
+
+            PaymentPage.SecurityCode.sendKeys("123");
+            log.debug("Entered CVV security code for deposit section");
+            Thread.sleep(3000);
+            Screenshots.captureScreenshot();
+            JavascriptExecutor executor = (JavascriptExecutor) driver;
+            executor.executeScript("arguments[0].click();", PaymentPage.Continue_Next_Step);
+            //PaymentPage.Submit_Next_Step.click();
+            log.debug("Clicking on submit to next step");
+
+            Thread.sleep(10000);
+        }
+    }
+
 
     public static void SelectAddrerss() throws InterruptedException {
         Thread.sleep(5000);

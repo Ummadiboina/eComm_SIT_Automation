@@ -73,7 +73,8 @@ public class MouseHoverAction extends Environment {
                 Point coordinates = pageobjects.MouseHoverPage.MoveMouseOnShopTab.getLocation();
                 Robot robot = new Robot();
                 robot.mouseMove(coordinates.getX(), coordinates.getY() + 120);
-                log.debug("Moving Mouse onThread.sleep(2000); the Shop Tab");
+                Thread.sleep(2000);
+                log.debug("Moving Mouse on the Shop Tab");
 
                 Actions action = new Actions(driver);
                 action.moveToElement(pageobjects.MouseHoverPage.MoveMouseOnShopTab).perform();
@@ -127,7 +128,7 @@ public class MouseHoverAction extends Environment {
                // MouseHoverPage.MoveMouseOnPhones_Drupal.click();
                 JavascriptExecutor executor = (JavascriptExecutor)driver;
                 executor.executeScript("arguments[0].click();", MouseHoverPage.MoveMouseOnPhones_Drupal);
-                Thread.sleep(2000);
+                Thread.sleep(3000);
                 Screenshots.captureScreenshot();
 
                 log.debug("Clicking on PayG Phones");

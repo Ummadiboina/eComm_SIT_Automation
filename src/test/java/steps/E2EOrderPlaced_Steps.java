@@ -111,6 +111,129 @@ public class E2EOrderPlaced_Steps {
         log.debug("Successfully launched URL: https://www.ref.o2.co.uk/shop/phones");
     }
 
+    @And("^click on 'My O2' link$")
+    public void click_on_MyO2Link() {
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+        String pageTitle = driver.getTitle();
+        try {
+
+            log.debug("The Page title is " + pageTitle);
+            log.debug("Currently we are at "+pageTitle+" page");
+            Thread.sleep(4000);
+            Screenshots.captureScreenshot();
+
+            if (driver.findElements(By.xpath("//li[@class='myO2Link']/a/span")).size() > 0) {
+                log.debug("My O2 link is present and clicking on My O2 link");
+                driver.findElement(By.xpath("//li[@class='myO2Link']/a/span")).click();
+                log.debug("Clicked on My O2 link");
+                Thread.sleep(5000);
+            } else {
+                log.debug("Failed to Click on My O2 link at "+pageTitle+" page");
+                Assert.fail("Failed to Click on My O2 link at "+pageTitle+" page");
+            }
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            log.debug("Failed to Click on My O2 link at " + pageTitle + " page ::" + e.getStackTrace());
+            Assert.fail("Failed to Click on My O2 link at " + pageTitle + " page ::" + e.getStackTrace());
+        }
+    }
+
+    @And("^validate pre-populated input fields at My O2 page$")
+    public void validate_prePopulatedField() {
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+        String pageTitle = driver.getTitle();
+        try {
+
+            log.debug("The Page title is " + pageTitle);
+            log.debug("Currently we are at "+pageTitle+" page");
+            Thread.sleep(4000);
+            Screenshots.captureScreenshot();
+
+            if (MyO2Page.rememberUserName.isSelected()) {
+                log.debug("'Remember my username' checkbox is selected");
+            } else {
+                log.debug("'Remember my username' checkbox is not selected");
+                Assert.fail("'Remember my username' checkbox is not selected");
+            }
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            log.debug("Failed to validate 'Remember my username' checkbox at My O2 link page ::" + e.getStackTrace());
+            Assert.fail("Failed to validate 'Remember my username' checkbox at My O2 link page ::" + e.getStackTrace());
+        }
+    }
+
+    @And("^click on 'Register' link$")
+    public void click_on_RegisterLink_MyO2() {
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, MyO2Page.class);
+            MyO2PageActions.click_RegisterLink_MyO2();
+            Thread.sleep(4000);
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            log.debug("Failed to Click on register link at My O2 page ::" + e.getStackTrace());
+            Assert.fail("Failed to Click on register link at My O2 page ::" + e.getStackTrace());
+        }
+    }
+
+    @And("^click on 'Forgotten username or password' link$")
+    public void click_on_Forgotten_username_password_MyO2() {
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, MyO2Page.class);
+            MyO2PageActions.click_Forgotten_username_password_MyO2();
+            Thread.sleep(4000);
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            log.debug("Failed to Click on 'Forgotton your username and password?' link at My O2 page ::" + e.getStackTrace());
+            Assert.fail("Failed to Click on 'Forgotton your username and password?' link at My O2 page ::" + e.getStackTrace());
+        }
+    }
+
+    @Then("^validate 'My O2' page$")
+    public void validateMyO2Page() {
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, MyO2Page.class);
+            MyO2PageActions.validateMyO2Page();
+            Thread.sleep(4000);
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+            log.debug("Unable to validate My O2 Page");
+            Assert.fail("Unable to validate My O2 Page");
+        }
+    }
+
+    @And("^Enter valid credentials ([^\"]*) ([^\"]*) and submit form$")
+    public void signin_using_valid_credentials(String username, String password) {
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, MyO2Page.class);
+
+            MyO2PageActions.Login_MYO2(username, password);
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+            log.debug("Unable to signin using credentials at MY O2 page");
+            Assert.fail("Unable to signin using credentials at MY O2 page");
+
+        }
+    }
+
+    @Then("^Logout from MyO2 page$")
+    public void LogoutMyO2() {
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, MyO2Page.class);
+            MyO2PageActions.Logout_MyO2();
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+            log.debug("Unable to Logout ");
+            Assert.fail("Unable to Logout");
+        }
+    }
 
     @And("^navigate to PAYM Phones page$")
     public void navigate_to_PAYM_Phones_page() {
@@ -730,6 +853,81 @@ public class E2EOrderPlaced_Steps {
         }
     }
 
+    @And("^validate logout message$")
+    public void LogoutMessage() {
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, UpgradeCustomerPage.class);
+            Thread.sleep(3000);
+            UpgradeCustomerPageActions.validateLogoutMessage();
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+            log.debug("Unable to validate Logout Message");
+            Assert.fail("Unable to validate Logout Message");
+        }
+    }
+
+    @And("^validate url after logout$")
+    public void redirectLogoutURL() {
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, UpgradeCustomerPage.class);
+            Thread.sleep(3000);
+            UpgradeCustomerPageActions.redirectUrlAfterLogout();
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+            log.debug("Unable to validate Logout Message");
+            Assert.fail("Unable to validate Logout Message");
+        }
+    }
+
+    @And("^validate url for existing customer when clicks on 'My O2' link$")
+    public void redirectURLWhenClicksOnMyO2() {
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, MyO2Page.class);
+            Thread.sleep(3000);
+            MyO2PageActions.redirectMYO2Url();
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+            log.debug("Unable to validate URL when existing customer clicks on My O2 link");
+            Assert.fail("Unable to validate URL when existing customer clicks on My O2 link");
+        }
+    }
+
+    @Then("^validate URL after clicking on 'Register' link$")
+    public void redirectURLWhenClicksOnRegisterLink_MyO2() {
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, MyO2Page.class);
+            Thread.sleep(3000);
+            MyO2PageActions.registerRedirectUrl();
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+            log.debug("Unable to validate URL customer clicks on register link at My O2 page");
+            Assert.fail("Unable to validate URL customer clicks on register link at My O2 page");
+        }
+    }
+
+    @Then("^validate URL after clicking on 'Forgotten username or password' link$")
+    public void redirectURLWhenClicksOnForgottenUserNamePasswordLink_MyO2() {
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, MyO2Page.class);
+            Thread.sleep(3000);
+            MyO2PageActions.forgottonUserNamePasswordRedirectUrl();
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+            log.debug("Unable to validate URL customer clicks on 'Forgotten username or password' link at My O2 page");
+            Assert.fail("Unable to validate URL customer clicks on 'Forgotten username or password' link at My O2 page");
+        }
+    }
+
     @And("^Select PayM Tariff Tab$")
     public void select_PayM_Tariff_Tab() {
         try {
@@ -1155,7 +1353,22 @@ public class E2EOrderPlaced_Steps {
         }
     }
 
+    @And("^Enter details in Delivery page for Click and collect$")
+    public void DeliveryPage_ClickandCollect() {
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, DeliveryPage.class);
+            Thread.sleep(4000);
+            Screenshots.captureScreenshot();
+            DeliveryPageActions.ClickAndCollect();
 
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            log.debug("Unable to input details in delivery page for click and collect delivery");
+            Assert.fail("Unable to input details in delivery page for click and collect delivery");
+
+        }
+    }
 
 
     @And("^Enter details in Delivery page for Click and collect and Click on the 'Continue button'$")
@@ -2573,14 +2786,14 @@ public class E2EOrderPlaced_Steps {
         }
     }
 
-    @And("^Validate Your order section in Delivery page$")
-    public void validateYourOrderSectionDeliveryPage(String plnList) {
+    @And("^Validate Your order section in Delivery page ([^\"]*)$")
+    public void validateYourOrderSectionDeliveryPage(String Tariff_Value) {
 
         try {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, DeliveryPage.class);
             Thread.sleep(3000);
-            DeliveryPageActions.validateYourOrderSection("DataRollOver", expPlnList);
+            DeliveryPageActions.validateYourOrderSection("DataRollOver", Tariff_Value);
             Thread.sleep(7000);
         } catch (Exception e) {
             // TODO Auto-generated catch block
@@ -3403,7 +3616,7 @@ public class E2EOrderPlaced_Steps {
         }
     }
 
-    @Given("^land on the payment page and input ([^\"]*) and other details for MBB url no change order placement$")
+    @Given("^land on the payment page and input ([^\"]*) and other details for existing customer$")
     public void CreditCheckPaymentPage_MBBurlUpgrade(String Username) {
         // Write code here that turns the phrase above into concrete actions
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
@@ -3414,8 +3627,11 @@ public class E2EOrderPlaced_Steps {
             Thread.sleep(2000);
             PaymentPageActions.Card_Details(Username);
             Thread.sleep(15000);
-            //PaymentPageActions.Card_Details_CCV();
+            PaymentPageActions.Card_Details_CCV();
+            Thread.sleep(10000);
+            //PaymentPageActions.depositCard_Details_CCV();
             //Thread.sleep(10000);
+
         } catch (Exception e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
@@ -5247,6 +5463,8 @@ public class E2EOrderPlaced_Steps {
             PageFactory.initElements(driver, PAYMandPAYGTariffAndExtrasPage.class);
             PAYMandPAYGTariffAndExtrasPageActions.addToBasketLive();
             Thread.sleep(3000);
+            BasketPageActions.ValidateBasketPageContents("","");
+            Thread.sleep(3000);
         } catch (Exception e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
@@ -5296,7 +5514,7 @@ public class E2EOrderPlaced_Steps {
             Screenshots.captureScreenshot();
             //Screenshots.captureScreenshot(Hooks.directoryName);
             JavascriptExecutor executor = (JavascriptExecutor) driver;
-            executor.executeScript("arguments[0].click();", driver.findElement(By.xpath("(//button[normalize-space()='Select'])[1]")));
+            executor.executeScript("arguments[0].click();", driver.findElement(By.xpath("(//button[normalize-space()='Select'])[2]")));
             Thread.sleep(7000);
         } catch (Exception e) {
             e.printStackTrace();
@@ -6604,49 +6822,64 @@ public class E2EOrderPlaced_Steps {
 
             driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
             PageFactory.initElements(driver, PAYMandPAYGTariffAndExtrasPage.class);
-
+            Thread.sleep(4000);
             PAYMandPAYGTariffAndExtrasPageActions.SortFilterPosition();
-            Thread.sleep(2000);
+            Thread.sleep(4000);
             PAYMandPAYGTariffAndExtrasPageActions.clickViewAllTariffs();
-            Thread.sleep(5000);
-
+            Thread.sleep(6000);
+            Screenshots.captureScreenshot();
             ArrayList<Integer> TempList1 = null;
             ArrayList<Integer> TempList2 = null;
+            Thread.sleep(6000);
 
             if (SortOption.contains("Monthly data (High to low)")) {
+                Thread.sleep(3000);
                 originalTariffList = PAYMandPAYGTariffAndExtrasPageActions.getCurrentSortOrderUsingMonthlyData();
+                Thread.sleep(3000);
                 TempList1 = originalTariffList;
+                Thread.sleep(3000);
                 TempList2 = PAYMandPAYGTariffAndExtrasPageActions
                         .reArrangeListInDescendingBeforeApplyingSort(TempList1);
             }
             if (SortOption.contains("Monthly data (Low to High)")) {
                 originalTariffList = PAYMandPAYGTariffAndExtrasPageActions.getCurrentSortOrderUsingMonthlyData();
+                Thread.sleep(3000);
                 TempList1 = originalTariffList;
+                Thread.sleep(3000);
                 TempList2 = PAYMandPAYGTariffAndExtrasPageActions.reArrangeListInAcendingBeforeApplyingSort(TempList1);
             }
             if (SortOption.contains("Monthly cost (High to low)")) {
                 originalTariffList = PAYMandPAYGTariffAndExtrasPageActions.getCurrentSortOrderUsingMonthlyCost();
+                Thread.sleep(3000);
                 TempList1 = originalTariffList;
+                Thread.sleep(3000);
                 TempList2 = PAYMandPAYGTariffAndExtrasPageActions
                         .reArrangeListInDescendingBeforeApplyingSort(TempList1);
             }
             if (SortOption.contains("Monthly cost (Low to High)")) {
+                Thread.sleep(3000);
                 originalTariffList = PAYMandPAYGTariffAndExtrasPageActions.getCurrentSortOrderUsingMonthlyCost();
+                Thread.sleep(3000);
                 TempList1 = originalTariffList;
+                Thread.sleep(3000);
                 TempList2 = PAYMandPAYGTariffAndExtrasPageActions.reArrangeListInAcendingBeforeApplyingSort(TempList1);
             }
             if (SortOption.contains("Upfront cost (High to low)")) {
                 originalTariffList = PAYMandPAYGTariffAndExtrasPageActions.getCurrentSortOrderUsingUpfrontCost();
+                Thread.sleep(3000);
                 TempList1 = originalTariffList;
+                Thread.sleep(3000);
                 TempList2 = PAYMandPAYGTariffAndExtrasPageActions
                         .reArrangeListInDescendingBeforeApplyingSort(TempList1);
             }
             if (SortOption.contains("Upfront cost (Low to high)")) {
                 originalTariffList = PAYMandPAYGTariffAndExtrasPageActions.getCurrentSortOrderUsingUpfrontCost();
+                Thread.sleep(3000);
                 TempList1 = originalTariffList;
+                Thread.sleep(3000);
                 TempList2 = PAYMandPAYGTariffAndExtrasPageActions.reArrangeListInAcendingBeforeApplyingSort(TempList1);
             }
-
+            Thread.sleep(4000);
             expectedTariffListBeforeSort = TempList2;
 
             log.debug("--------Orginal Tariff List-----------: " + originalTariffList);
@@ -6765,11 +6998,13 @@ public class E2EOrderPlaced_Steps {
         try {
             driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
             PageFactory.initElements(driver, PAYMandPAYGTariffAndExtrasPage.class);
+            Thread.sleep(5000);
             DataFilterRange = range;
             //PAYMandPAYGTariffAndExtrasPageActions.clickViewAllTariffs();
             datalistbefore = PAYMandPAYGTariffAndExtrasPageActions.getDataListBeforeSelectingFilter();
             Thread.sleep(4000);
             PAYMandPAYGTariffAndExtrasPageActions.selectFilter(range);
+            Thread.sleep(4000);
             FilterDataOption = range;
         } catch (Exception e) {
             // TODO Auto-generated catch block
@@ -6822,7 +7057,7 @@ public class E2EOrderPlaced_Steps {
         try {
             driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
             PageFactory.initElements(driver, PAYMandPAYGTariffAndExtrasPage.class);
-
+            Thread.sleep(4000);
             if (DataFilterRange.contains("high")) {
                 if (SortOption.contains("Monthly data (High to low)")
                         || SortOption.contains("Monthly data (Low to High)")) {
@@ -6841,6 +7076,7 @@ public class E2EOrderPlaced_Steps {
                 PAYMandPAYGTariffAndExtrasPageActions.getRange();
                 PAYMandPAYGTariffAndExtrasPageActions.getValuesToCompareWhenGreaterIsSelected();
                 PAYMandPAYGTariffAndExtrasPageActions.verifyListWhenGreaterIsSelected();
+                Thread.sleep(5000);
             } else if (DataFilterRange.contains("low") || DataFilterRange.contains("medium")) {
                 if (SortOption.contains("Monthly data (High to low)") || SortOption.contains("Monthly data (Low to High)")) {
                     datalistafter = PAYMandPAYGTariffAndExtrasPageActions.getDataListAfterSelectingFilter();
@@ -7141,7 +7377,7 @@ public class E2EOrderPlaced_Steps {
 
             log.debug("---------List sent to verification method (AfterSort)---------------");
             log.debug(ListAfterSort);
-
+            Thread.sleep(6000);
             PAYMandPAYGTariffAndExtrasPageActions.verifyTariffSortedAsPerSortOption(ListBeforeSort, ListAfterSort);
 
         } catch (AssertionError e) {
@@ -7256,7 +7492,10 @@ public class E2EOrderPlaced_Steps {
 
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, UpgradeCustomerPage.class);
+            Thread.sleep(5000);
+            Screenshots.captureScreenshot();
             UpgradeCustomerPageActions.clickOnViewAllTariffslink();
+            Thread.sleep(5000);
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -7288,10 +7527,12 @@ public class E2EOrderPlaced_Steps {
         try {
             driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
             PageFactory.initElements(driver, PAYMandPAYGTariffAndExtrasPage.class);
+            Thread.sleep(4000);
             String Filteroption = FilterDataOption;
             log.debug(Filteroption);
+            Thread.sleep(4000);
             PAYMandPAYGTariffAndExtrasPageActions.SelectedState(Filteroption);
-
+            Thread.sleep(4000);
         } catch (Exception e) {
             e.printStackTrace();
             log.debug("Not able to verify if in Selected State");
@@ -7864,12 +8105,13 @@ public class E2EOrderPlaced_Steps {
         try {
             driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
             PageFactory.initElements(driver, UpgradeCustomerPage.class);
+            PageFactory.initElements(driver, PAYMandPAYGTariffAndExtrasPage.class);
             UpgradeCustomerPageActions.selectTariff(Tariff);
         } catch (Exception e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
-            log.debug("Unable to Click on view all tablets link");
-            Assert.fail("Unable to Click on view all tablets link");
+            log.debug("Unable to Click on view all tariff link");
+            Assert.fail("Unable to Click on view all tariff link");
         }
     }
 

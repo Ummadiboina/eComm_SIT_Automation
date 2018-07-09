@@ -1,5 +1,6 @@
 package GlobalActions;
 
+import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -9,12 +10,11 @@ import java.util.Properties;
 
 import org.apache.commons.io.FileUtils;
 import org.apache.log4j.Logger;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.*;
 
 import helpers.Environment;
 import helpers.Filereadingutility;
-import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import steps.Hooks;
 
 public class Screenshots extends Environment {
@@ -53,7 +53,7 @@ public class Screenshots extends Environment {
 
 	}*/
 
-	public static void captureScreenshot() throws IOException, InterruptedException {
+	public static void captureScreenshot() throws IOException {
 
 		CONFIG = new Properties();
 		FileInputStream fis = new FileInputStream(
@@ -82,6 +82,7 @@ public class Screenshots extends Environment {
 		}
 
 	}
+
 
 	public static String timestamp() {
 		return new SimpleDateFormat("yyyy-MM-dd HH-mm-ss").format(new Date());

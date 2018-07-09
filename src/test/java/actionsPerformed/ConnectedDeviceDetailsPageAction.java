@@ -64,13 +64,12 @@ public class ConnectedDeviceDetailsPageAction extends Environment {
 
         WebElement ele1 = pageobjects.ConnectedDeviceDetailsPage.ViewOurTariffs;
 
-
         jse.executeScript("arguments[0].click();", ele1);
 
         Thread.sleep(7000);
         // driver.findElement(By.id("deviceDetailsSubmit")).click();
         log.debug("Clicked on ViewOurTariffs");
-        log.debug("Clicked on ViewOurTariffs");
+
         Screenshots.captureScreenshot();
 
     }

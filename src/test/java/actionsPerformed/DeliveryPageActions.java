@@ -85,21 +85,23 @@ public class DeliveryPageActions extends Environment {
     public static void ClickAndCollect() {
 
         try {
-            Thread.sleep(3000);
+            Thread.sleep(6000);
             if (pageobjects.DeliveryPage.clickAndCollect.isDisplayed()) {
                 pageobjects.DeliveryPage.clickAndCollect.click();
                 log.debug("Click and collect tab Selected an address");
-
                 Thread.sleep(2000);
-                pageobjects.DeliveryPage.storePostcode.sendKeys("B15 2LG");
+                pageobjects.DeliveryPage.storePostcode.clear();
+                Thread.sleep(2000);
+                pageobjects.DeliveryPage.storePostcode.sendKeys("M4");
                 log.debug("Entered Post code");
                 Thread.sleep(2000);
+                Screenshots.captureScreenshot();
                 pageobjects.DeliveryPage.Find_Store.click();
                 log.debug("Clicked on the Find address button");
                 Thread.sleep(5000);
                 pageobjects.DeliveryPage.Select_Store.click();
                 log.debug("Clicked on the Find address button");
-
+                Screenshots.captureScreenshot();
 
             }
             Thread.sleep(3000);
@@ -812,7 +814,7 @@ public class DeliveryPageActions extends Environment {
         Screenshots.captureScreenshot();
     }
 
-    public static void validateYourOrderSection(String expValue, String Element) {
+    public static void validateYourOrderSection(String Element, String expValue) {
 
         String plan = "";
 
@@ -820,7 +822,7 @@ public class DeliveryPageActions extends Environment {
 
             String actValue = "";
 
-            String simType = driver.findElement(By.xpath("//p[@id='qa-item']"));
+            String simType = driver.findElement(By.xpath("//p[@id='qa-item']")).getText();
             List<WebElement> actPlnList = driver.findElements(By.xpath("//h2[text()='Your Order ']/../div[@class='order-desc']//p[contains(@ng-if,'freeSimDelivery')]/span"));
 
             if(simType.equalsIgnoreCase("Big Bundles sim")){
@@ -829,7 +831,7 @@ public class DeliveryPageActions extends Environment {
                     plan = actPlnList.get(i).getAttribute("textContent").replaceAll("\"", "").trim() + "|";
                 }
 
-                if(expValue.equals(actPlnList)){
+                if(plan.contains(expValue)){
                     log.debug("Selected Data Roll over plan details is displayed in Your order section of Delivery page");
 
                 }
