@@ -7,7 +7,7 @@ Feature: 07_Reg_CFA_PayG_Freesim_To_Show_BigBundle_DataRollOver_In_DeliveryPage
     Given I am an CFA user and Lands on shop page
     And navigate to PayG SIMO page
     And Select a pay as you go data roll over <FreeSim_Type> and validate Data Roll over copy for <Tariff_Value> and <Data>
-    And Validate Your order section in Delivery page
+    And Validate Your order section in Delivery page <Tariff_Value>
     And Enter details in Delivery Page <Firstname> and <Surname> for GDPR <CheckBox>
     Then Free Sim order confirmation is displayed
 

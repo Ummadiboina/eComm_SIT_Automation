@@ -44,7 +44,7 @@ public class PhonesListingPageAction extends Environment {
 				Thread.sleep(3000);
                 ((JavascriptExecutor) driver).executeScript("arguments[0].click();", requestedDevice);
                 log.debug("Selected Device from Phones as Required is : " + deviceName);
-                log.debug("Selected Device from Phones as Required is : " + deviceName);
+
                 Thread.sleep(3000);
             } else {
 				Thread.sleep(3000);
@@ -52,7 +52,7 @@ public class PhonesListingPageAction extends Environment {
                 ((JavascriptExecutor) driver).executeScript("arguments[0].click();", element);
                 String defaultSelDevice = driver.findElement(By.xpath("((//img[@class='device-image'])[1]/..//span[@class='ng-binding'])[2]")).getText();
                 log.debug(" As Required Device is not Availabe, We have picked default device from availabe  :: " + defaultSelDevice);
-                log.debug(" As Required Device is not Availabe, We have picked default device from availabe  :: " + defaultSelDevice);
+
                 Thread.sleep(3000);
 
                 Screenshots.captureScreenshot();

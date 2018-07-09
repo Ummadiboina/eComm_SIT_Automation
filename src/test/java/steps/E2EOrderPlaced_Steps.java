@@ -122,9 +122,9 @@ public class E2EOrderPlaced_Steps {
             Thread.sleep(4000);
             Screenshots.captureScreenshot();
 
-            if (driver.findElements(By.xpath("(//*[normalize-space()='My O2']")).size() > 0) {
+            if (driver.findElements(By.xpath("//li[@class='myO2Link']/a/span")).size() > 0) {
                 log.debug("My O2 link is present and clicking on My O2 link");
-                driver.findElement(By.xpath("(//*[normalize-space()='My O2']")).click();
+                driver.findElement(By.xpath("//li[@class='myO2Link']/a/span")).click();
                 log.debug("Clicked on My O2 link");
                 Thread.sleep(5000);
             } else {
@@ -2786,14 +2786,14 @@ public class E2EOrderPlaced_Steps {
         }
     }
 
-    @And("^Validate Your order section in Delivery page$")
-    public void validateYourOrderSectionDeliveryPage(String plnList) {
+    @And("^Validate Your order section in Delivery page ([^\"]*)$")
+    public void validateYourOrderSectionDeliveryPage(String Tariff_Value) {
 
         try {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, DeliveryPage.class);
             Thread.sleep(3000);
-            DeliveryPageActions.validateYourOrderSection("DataRollOver", expPlnList);
+            DeliveryPageActions.validateYourOrderSection("DataRollOver", Tariff_Value);
             Thread.sleep(7000);
         } catch (Exception e) {
             // TODO Auto-generated catch block
@@ -8105,12 +8105,13 @@ public class E2EOrderPlaced_Steps {
         try {
             driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
             PageFactory.initElements(driver, UpgradeCustomerPage.class);
+            PageFactory.initElements(driver, PAYMandPAYGTariffAndExtrasPage.class);
             UpgradeCustomerPageActions.selectTariff(Tariff);
         } catch (Exception e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
-            log.debug("Unable to Click on view all tablets link");
-            Assert.fail("Unable to Click on view all tablets link");
+            log.debug("Unable to Click on view all tariff link");
+            Assert.fail("Unable to Click on view all tariff link");
         }
     }
 

@@ -814,7 +814,7 @@ public class DeliveryPageActions extends Environment {
         Screenshots.captureScreenshot();
     }
 
-    public static void validateYourOrderSection(String expValue, String Element) {
+    public static void validateYourOrderSection(String Element, String expValue) {
 
         String plan = "";
 
@@ -822,7 +822,7 @@ public class DeliveryPageActions extends Environment {
 
             String actValue = "";
 
-            String simType = driver.findElement(By.xpath("//p[@id='qa-item']"));
+            String simType = driver.findElement(By.xpath("//p[@id='qa-item']")).getText();
             List<WebElement> actPlnList = driver.findElements(By.xpath("//h2[text()='Your Order ']/../div[@class='order-desc']//p[contains(@ng-if,'freeSimDelivery')]/span"));
 
             if(simType.equalsIgnoreCase("Big Bundles sim")){
@@ -831,7 +831,7 @@ public class DeliveryPageActions extends Environment {
                     plan = actPlnList.get(i).getAttribute("textContent").replaceAll("\"", "").trim() + "|";
                 }
 
-                if(expValue.equals(actPlnList)){
+                if(plan.contains(expValue)){
                     log.debug("Selected Data Roll over plan details is displayed in Your order section of Delivery page");
 
                 }
