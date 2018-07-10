@@ -1,7 +1,7 @@
 Feature: 02_Reg_AFA_Non_SIMO_Credit_Check_StatusReferWithSIMO_Show_Error_Message_Do_Not_allow_to_place_order
   This scenario ensures that when agent on acquisition journey selects 'SIMO' and device and performs credit check status with 'RefferWithSIMO' then agent should see referral message and then should be able to place an order successfully and order submission status should be 'Referred' in log file
 
-  @Web
+  @WebEleme
   Scenario Outline: AFA_update_copy_for_Refer_with_Simo_response
     Given I login to Agent shop
     And performs Acquisition for New user
