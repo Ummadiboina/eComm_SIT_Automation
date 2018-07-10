@@ -10270,6 +10270,8 @@ public class E2EOrderPlaced_Steps {
         }
     }
 
+
+
     @And("Select create a new account and begin checkout")
     public void Select_Create_New_account_and_begin_checkout() {
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
@@ -10284,6 +10286,38 @@ public class E2EOrderPlaced_Steps {
         }
     }
 
+    //*********************************************************  REMEDY AUTOMATION   ******************************************
+
+
+    @Given("Login Remedy tool with the details userName ([^\"]*) and password ([^\"]*)")
+    public void loginRemedyTool(String userName, String password) throws InterruptedException {
+        Thread.sleep(8000);
+        try {
+            PageFactory.initElements(driver, RemedyLoginPage.class);
+            RemedyLoginAction.LoginIntoRemedyApp(userName,password);
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+            Assert.fail("Unable to select Create New account");
+
+        }
+    }
+
+
+    @And("Select a Application Type and serch the records with query")
+    public void selectApplicationType() throws InterruptedException {
+        Thread.sleep(3000);
+        try {
+            PageFactory.initElements(driver, RemedyLoginPage.class);
+            RemedyLoginAction.chooseAppType();
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+            Assert.fail("Unable to select Create New account");
+
+        }
+    }
+    
     //Jamal----Bill Spend Caps Section--------
 
     @And("Validate Bill Spend Caps section and choose your cap ([^\"]*) ([^\"]*)")
