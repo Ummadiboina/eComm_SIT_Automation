@@ -307,7 +307,7 @@ public class E2EOrderPlaced_Steps {
     @Given("^Navigate to PayG MBB page$")
     public void navigate_to_PayG_MBB_page() {
         try {
-          //  driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            //  driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, MouseHoverPage.class);
             MouseHoverAction.PayGMBBPage();
             Thread.sleep(5000);
@@ -433,7 +433,7 @@ public class E2EOrderPlaced_Steps {
         }
     }
 
-/* #############           All the Below are for the Device Listing/Selecting page #######*/
+    /* #############           All the Below are for the Device Listing/Selecting page #######*/
 
     @And("^I choose PayM ([^\"]*)$")
     public void Choose_PAYM_Handset(String handset) throws Throwable {
@@ -945,7 +945,7 @@ public class E2EOrderPlaced_Steps {
         }
 
     }
-	 /*############# All the Below are for the Tariff and Extras Page*/
+    /*############# All the Below are for the Tariff and Extras Page*/
 
 
 
@@ -1245,18 +1245,18 @@ public class E2EOrderPlaced_Steps {
         }
     }
 
-	/*
+    /*
      * #########################################################################
-	 * #########
-	 */
+     * #########
+     */
     /*
      * ############## All the Below are for the Delivery Page Validations
-	 * #############
-	 */
+     * #############
+     */
     /*
      * #########################################################################
-	 * #########
-	 */
+     * #########
+     */
 
     @And("^input ([^\"]*) and ([^\"]*) and other valid details in Delivery page and Click on the 'Continue button'$")
     public void DeliveryPage_Inputs_homeDelivery(String Firstname, String Surname) {
@@ -1289,7 +1289,7 @@ public class E2EOrderPlaced_Steps {
             DeliveryPageActions.SetDelivery();
             DeliveryPageActions.AboutYou(Firstname, Surname);
             DeliveryPageActions.ClickContinue();
-          //  DeliveryPageActions.clickOnSubmitBtn();
+            //  DeliveryPageActions.clickOnSubmitBtn();
         } catch (Exception e) {
             // TODO Auto-generated catch block
             log.debug("Unable to input details in delivery page");
@@ -1308,8 +1308,8 @@ public class E2EOrderPlaced_Steps {
 
             DeliveryPageActions.SetDelivery();
             DeliveryPageActions.AboutYou(Firstname, Surname);
-           // DeliveryPageActions.ClickContinue();
-             //DeliveryPageActions.clickOnSubmitBtn();
+            // DeliveryPageActions.ClickContinue();
+            //DeliveryPageActions.clickOnSubmitBtn();
 
         } catch (Exception e) {
             // TODO Auto-generated catch block
@@ -1697,18 +1697,18 @@ public class E2EOrderPlaced_Steps {
 
 
 
-	/*
+    /*
      * #########################################################################
-	 * #########
-	 */
+     * #########
+     */
     /*
      * ############## All the Below are for the Payment Page Validations
-	 * ##############
-	 */
+     * ##############
+     */
     /*
      * #########################################################################
-	 * #########
-	 */
+     * #########
+     */
 
     @And("^land on the payment page and input ([^\"]*) and other details and click 'Continue on next step'$")
     public void CreditCheckPaymentPage_HomeDelivery(String Username) {
@@ -1883,7 +1883,7 @@ public class E2EOrderPlaced_Steps {
             Thread.sleep(5000);
             DeliveryPageActions.SetDelivery();
             Thread.sleep(4000);
-           // PaymentPageActions.Time_At_Address_CC();
+            // PaymentPageActions.Time_At_Address_CC();
             PaymentPageActions.Time_At_Address();
             Thread.sleep(5000);
             PaymentPageActions.Card_Details(Username);
@@ -1961,10 +1961,10 @@ public class E2EOrderPlaced_Steps {
         }
     }
 
-	/*
+    /*
      * ############## All the Below are for the Additional Information section
-	 * ###################
-	 */
+     * ###################
+     */
 
     @Then("^Additional information page should be displayed$")
     public void AdditionalInformation() {
@@ -2031,17 +2031,17 @@ public class E2EOrderPlaced_Steps {
         }
     }
 
-	/*
-	 * ############## All the Below are for the Agreements Validations
-	 * ###################
-	 */
+    /*
+     * ############## All the Below are for the Agreements Validations
+     * ###################
+     */
 
     @Given("^Continue to Agreements page and confirm all the agreement checks$")
     public void AgreementsPageConfirmation() {
 
         try {
             // Write code here that turns the phrase above into concrete actions
-           // driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            // driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             Thread.sleep(10000);
             PageFactory.initElements(driver, AgreementPage.class);
             PageFactory.initElements(driver, ReviewPage.class);
@@ -2084,7 +2084,7 @@ public class E2EOrderPlaced_Steps {
             Thread.sleep(5000);
             AgreementPageActions.KeyInformation();
             Thread.sleep(5000);
-           // AgreementPageActions.secciSection();
+            // AgreementPageActions.secciSection();
             //Thread.sleep(5000);
             //AgreementPageActions.PayMMobileAgreement();
             //Thread.sleep(5000);
@@ -2149,18 +2149,18 @@ public class E2EOrderPlaced_Steps {
         }
     }
 
-	/*
-	 * #########################################################################
-	 * #########
-	 */
-	/*
-	 * ############## All the Below are for the Review Page Validations
-	 * ###############
-	 */
-	/*
-	 * #########################################################################
-	 * #########
-	 */
+    /*
+     * #########################################################################
+     * #########
+     */
+    /*
+     * ############## All the Below are for the Review Page Validations
+     * ###############
+     */
+    /*
+     * #########################################################################
+     * #########
+     */
 
 
    /* @And("^Continue to Agreements page and confirm all the agreement checks$")
@@ -2238,18 +2238,18 @@ public class E2EOrderPlaced_Steps {
         }
     }
 
-	/*
-	 * #########################################################################
-	 * #########
-	 */
-	/*
-	 * ######## All the Below are for the Order Confirmation Page Validations
-	 * #########
-	 */
-	/*
-	 * #########################################################################
-	 * #########
-	 */
+    /*
+     * #########################################################################
+     * #########
+     */
+    /*
+     * ######## All the Below are for the Order Confirmation Page Validations
+     * #########
+     */
+    /*
+     * #########################################################################
+     * #########
+     */
 
     @Given("^Check order contract text in Order Confirmation page$")
     public void checkOrderContractTextOC() {
@@ -2337,9 +2337,9 @@ public class E2EOrderPlaced_Steps {
      * Below is for Agent shop
      ****************************************/
 
-	/*
+    /*
 
-	 */
+     */
     @Given("^I login to Agent shop$")
     public void LoginAgentShop() {
         try {
@@ -2462,15 +2462,15 @@ public class E2EOrderPlaced_Steps {
 
     }
 
-	/*
-	 * #########################################################################
-	 * #########
-	 */
-	/* ######## Perform Upgrade or Acquisition ######### */
-	/*
-	 * #########################################################################
-	 * #########
-	 */
+    /*
+     * #########################################################################
+     * #########
+     */
+    /* ######## Perform Upgrade or Acquisition ######### */
+    /*
+     * #########################################################################
+     * #########
+     */
 
     @Given("^performs Upgrade for ([^\"]*)$")
     public void performs_Upgrade(String msisdn) throws Throwable {
@@ -2481,15 +2481,15 @@ public class E2EOrderPlaced_Steps {
         Thread.sleep(3000);
         Agent_HomePagePageActions.upgradeUser();
         Thread.sleep(4000);
-		/*
-		 * } catch (Exception e) { // TODO Auto-generated catch block System.out.
-		 * println("Unable to login for upgrade for user in Agent shop, please see the failure screenshot"
-		 * ); Assert.
-		 * fail("Unable to login for upgrade for user in Agent shop, please see the failure screenshot"
-		 * );
-		 *
-		 * }
-		 */
+        /*
+         * } catch (Exception e) { // TODO Auto-generated catch block System.out.
+         * println("Unable to login for upgrade for user in Agent shop, please see the failure screenshot"
+         * ); Assert.
+         * fail("Unable to login for upgrade for user in Agent shop, please see the failure screenshot"
+         * );
+         *
+         * }
+         */
     }
 
     @Given("^performs Acquisition for New user$")
@@ -2525,14 +2525,14 @@ public class E2EOrderPlaced_Steps {
     }
 
     /*
-	 * #########################################################################
-	 * #########
-	 */
-	/* ######## Select Valid PAYM/PAYG Device ######### */
-	/*
-	 * #########################################################################
-	 * #########
-	 */
+     * #########################################################################
+     * #########
+     */
+    /* ######## Select Valid PAYM/PAYG Device ######### */
+    /*
+     * #########################################################################
+     * #########
+     */
     @Given("^Select a valid PayM ([^\"]*)")
     public void SelectValid_Device(String Device) {
         try {
@@ -2602,14 +2602,14 @@ public class E2EOrderPlaced_Steps {
         }
     }
     /*
-	 * #########################################################################
-	 * #########
-	 */
-	/* ######## Other Scenarios ######### */
-	/*
-	 * #########################################################################
-	 * #########
-	 */
+     * #########################################################################
+     * #########
+     */
+    /* ######## Other Scenarios ######### */
+    /*
+     * #########################################################################
+     * #########
+     */
     @Given("^choose to email basket to save the basket$")
     public void choose_to_email_basket_to_save_the_basket() {
         try {
@@ -2672,15 +2672,15 @@ public class E2EOrderPlaced_Steps {
         }
     }
 
-	/*
-	 * #########################################################################
-	 * #########
-	 */
-	/* ######## Select Valid PAYM/PAYG Tariff ######### */
-	/*
-	 * #########################################################################
-	 * #########
-	 */
+    /*
+     * #########################################################################
+     * #########
+     */
+    /* ######## Select Valid PAYM/PAYG Tariff ######### */
+    /*
+     * #########################################################################
+     * #########
+     */
 
     @Given("^Select valid ([^\"]*) from PAYG tariffs tab$")
     public void select_valid_Months_from_PAYG_tariffs_tab(String Tariff) {
@@ -2744,14 +2744,14 @@ public class E2EOrderPlaced_Steps {
 
     }
 
-	/*
-	 * #########################################################################
-	 * #########
-	 */
-	/* ######## Validate Basket contents ######### */
-	/*
-	 * #########################################################################
-	 */
+    /*
+     * #########################################################################
+     * #########
+     */
+    /* ######## Validate Basket contents ######### */
+    /*
+     * #########################################################################
+     */
 
     @Given("^Validate all the Basket content and checkout$")
     public void validate_all_the_Basket_content_and_checkout() {
@@ -2804,14 +2804,14 @@ public class E2EOrderPlaced_Steps {
 
     }
     /*
-	 * #########################################################################
-	 * #########
-	 */
-	/* ######## Advisory checks ######### */
-	/*
-	 * #########################################################################
-	 * #########
-	 */
+     * #########################################################################
+     * #########
+     */
+    /* ######## Advisory checks ######### */
+    /*
+     * #########################################################################
+     * #########
+     */
 
 
     @Then("^perform all the advisory checks$")
@@ -2826,7 +2826,7 @@ public class E2EOrderPlaced_Steps {
                 DeliveryPageActions.SetDelivery_AFU();
             }
             Thread.sleep(4000);
-           Agent_AdvisoryChecksActions.AgreeAdvsioryCheck();
+            Agent_AdvisoryChecksActions.AgreeAdvsioryCheck();
             Thread.sleep(6000);
         } catch (Exception e) {
             // TODO Auto-generated catch block
@@ -2852,15 +2852,15 @@ public class E2EOrderPlaced_Steps {
     }
 
 
-	/*
-	 * #########################################################################
-	 * #########
-	 */
-	/* ######## Credit Checks and Bank details ######### */
-	/*
-	 * #########################################################################
-	 * #########
-	 */
+    /*
+     * #########################################################################
+     * #########
+     */
+    /* ######## Credit Checks and Bank details ######### */
+    /*
+     * #########################################################################
+     * #########
+     */
 
     @Then("^perform the credit checks using valid ([^\"]*), ([^\"]*), ([^\"]*), ([^\"]*) and valid ([^\"]*)$")
     public void CreditCheck(String Firstname, String Surname, String HouseNumber, String PostCode, String Username) {
@@ -2918,15 +2918,15 @@ public class E2EOrderPlaced_Steps {
 
     }
 
-	/*
-	 * #########################################################################
-	 * #########
-	 */
-	/* ######## Register ######### */
-	/*
-	 * #########################################################################
-	 * #########
-	 */
+    /*
+     * #########################################################################
+     * #########
+     */
+    /* ######## Register ######### */
+    /*
+     * #########################################################################
+     * #########
+     */
 
     @Then("^enter ten digit contact number perform the credit checks using valid ([^\"]*), ([^\"]*), ([^\"]*), ([^\"]*) and valid ([^\"]*)$")
     public void enter_ten_digit_contact_number_perform_the_credit_checks(String Firstname, String Surname, String HouseNumber, String PostCode, String Username) {
@@ -2979,14 +2979,14 @@ public class E2EOrderPlaced_Steps {
     }
 
     /*
-	 * #########################################################################
-	 * #########
-	 */
-	/* ######## Delivery Details ######### */
-	/*
-	 * #########################################################################
-	 * #########
-	 */
+     * #########################################################################
+     * #########
+     */
+    /* ######## Delivery Details ######### */
+    /*
+     * #########################################################################
+     * #########
+     */
     @Then("^Choose HomeDelivery delivery address and delivery time$")
     public void HomeDelivery_Address() throws Throwable {
         log.debug("Choosing available delivery address");
@@ -2994,14 +2994,14 @@ public class E2EOrderPlaced_Steps {
     }
 
     /*
-	 * #########################################################################
-	 * #########
-	 */
-	/* ######## Pay by card ######### */
-	/*
-	 * #########################################################################
-	 * #########
-	 */
+     * #########################################################################
+     * #########
+     */
+    /* ######## Pay by card ######### */
+    /*
+     * #########################################################################
+     * #########
+     */
     @When("^Pay by card$")
     public void pay_by_card() {
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
@@ -3053,15 +3053,15 @@ public class E2EOrderPlaced_Steps {
 
 
 
-	/*
-	 * #########################################################################
-	 * #########
-	 */
-	/* ######## Order confirmation ######### */
-	/*
-	 * #########################################################################
-	 * #########
-	 */
+    /*
+     * #########################################################################
+     * #########
+     */
+    /* ######## Order confirmation ######### */
+    /*
+     * #########################################################################
+     * #########
+     */
 
     @When("^submit order button is clicked$")
     public void submit_order_button_is_clicked() {
@@ -3094,15 +3094,15 @@ public class E2EOrderPlaced_Steps {
     ///////// ***********************************/////////////
 
     ///////// ***********************************/////////////
-	/*
-	 * #########################################################################
-	 * #########
-	 */
-	/* ######## June Release ######### */
-	/*
-	 * #########################################################################
-	 * #########
-	 */
+    /*
+     * #########################################################################
+     * #########
+     */
+    /* ######## June Release ######### */
+    /*
+     * #########################################################################
+     * #########
+     */
     @Given("^I Land on the Non Phone related basket page$")
     public void NonPhoneRelatedBasketPage_julyRelease() {
         try {
@@ -3239,15 +3239,15 @@ public class E2EOrderPlaced_Steps {
         }
     }
 
-	/*
-	 * #########################################################################
-	 * #########
-	 */
-	/* ######## Upgrade Upsell ######### */
-	/*
-	 * #########################################################################
-	 * #########
-	 */
+    /*
+     * #########################################################################
+     * #########
+     */
+    /* ######## Upgrade Upsell ######### */
+    /*
+     * #########################################################################
+     * #########
+     */
 
     @Then("^I should be displayed the promo modules$")
     public void i_should_be_displayed_the_promo_modules() {
@@ -3280,15 +3280,15 @@ public class E2EOrderPlaced_Steps {
 
     }
 
-	/*
-	 * #########################################################################
-	 * #########
-	 */
-	/* ######## Upgrade Upsell iPad Sims ######### */
-	/*
-	 * #########################################################################
-	 * #########
-	 */
+    /*
+     * #########################################################################
+     * #########
+     */
+    /* ######## Upgrade Upsell iPad Sims ######### */
+    /*
+     * #########################################################################
+     * #########
+     */
 
     @When("^I Click on Pick a sim on the iPad promo module$")
     public void i_Click_on_Pick_a_sim_on_the_iPad_promo_module() {
@@ -3328,15 +3328,15 @@ public class E2EOrderPlaced_Steps {
 
     }
 
-	/*
-	 * #########################################################################
-	 * #########
-	 */
-	/* ######## Upgrade Upsell Tablet Sims ######### */
-	/*
-	 * #########################################################################
-	 * #########
-	 */
+    /*
+     * #########################################################################
+     * #########
+     */
+    /* ######## Upgrade Upsell Tablet Sims ######### */
+    /*
+     * #########################################################################
+     * #########
+     */
 
     @When("^I Click on Pick a sim on the Tablet promo module$")
     public void i_Click_on_Pick_a_sim_on_the_Tablet_promo_module() {
@@ -3353,15 +3353,15 @@ public class E2EOrderPlaced_Steps {
 
     }
 
-	/*
-	 * #########################################################################
-	 * #########
-	 */
-	/* ######## Upgrade Upsell Dongle Sims ######### */
-	/*
-	 * #########################################################################
-	 * #########
-	 */
+    /*
+     * #########################################################################
+     * #########
+     */
+    /* ######## Upgrade Upsell Dongle Sims ######### */
+    /*
+     * #########################################################################
+     * #########
+     */
 
     @When("^I Click on Pick a sim on the Dongle promo module$")
     public void i_Click_on_Pick_a_sim_on_the_Dongle_promo_module() {
@@ -3532,7 +3532,7 @@ public class E2EOrderPlaced_Steps {
             Thread.sleep(2000);
             DeliveryPageActions.AboutYou(Firstname, Surname);
             Thread.sleep(2000);
-             DeliveryPageActions.ClickContinue();
+            DeliveryPageActions.ClickContinue();
             // DeliveryPageActions.clickOnSubmitBtn();
         } catch (Exception e) {
             // TODO Auto-generated catch block
@@ -3800,13 +3800,13 @@ public class E2EOrderPlaced_Steps {
 
         }
     }
-	/*
-	 * ================================
-	 *
-	 * July release
-	 *
-	 * ================================
-	 */
+    /*
+     * ================================
+     *
+     * July release
+     *
+     * ================================
+     */
 
     @And("^click on Add to Basket button$")
     public void click_on_Add_to_Basket_button() {
@@ -3841,7 +3841,7 @@ public class E2EOrderPlaced_Steps {
     @And("^navigate to PAYM Tablets page$")
     public void navigate_to_PAYM_Tablets_page() {
         try {
-           // driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            // driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, MouseHoverPage.class);
             MouseHoverAction.PayMTabletsLandingPage();
             Autoredirection.redirect();
@@ -4055,17 +4055,17 @@ public class E2EOrderPlaced_Steps {
         }
     }
 
-	/*
-	 * @And("^Verify the devices ([^\"]*), ([^\"]*) and ([^\"]*) in basket$") public
-	 * void verifyDevicesInBasket(String smartwatchname, String fitnesstrackername,
-	 * String tabletname) throws Throwable { try {
-	 * driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-	 * PageFactory.initElements(driver, BasketPage.class);
-	 * BasketPageActions.verifyDevicesInBasket(smartwatchname, fitnesstrackername,
-	 * tabletname); } catch (Exception e) { // TODO Auto-generated catch block
-	 * log.debug("not able to verify if phone tab is selected");
-	 * Assert.fail("not able to verify if phone tab is selected"); } }
-	 */
+    /*
+     * @And("^Verify the devices ([^\"]*), ([^\"]*) and ([^\"]*) in basket$") public
+     * void verifyDevicesInBasket(String smartwatchname, String fitnesstrackername,
+     * String tabletname) throws Throwable { try {
+     * driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+     * PageFactory.initElements(driver, BasketPage.class);
+     * BasketPageActions.verifyDevicesInBasket(smartwatchname, fitnesstrackername,
+     * tabletname); } catch (Exception e) { // TODO Auto-generated catch block
+     * log.debug("not able to verify if phone tab is selected");
+     * Assert.fail("not able to verify if phone tab is selected"); } }
+     */
 
     @And("^select ([^\"]*) tab$")
     public void select_tab(String tabname) {
@@ -4330,15 +4330,15 @@ public class E2EOrderPlaced_Steps {
         String Newurl_CVOS = Filereadingutility.getPropertyValue(EnvPropFilePath, "CVOS");
         driver.navigate().to(Newurl_CVOS);
         Thread.sleep(3000);
-		/*
-		 * } catch (Exception e) { // TODO Auto-generated catch block System.out.
-		 * println("Unable to Login/validate home page, please see the failure screenshot"
-		 * ); Assert.
-		 * fail("Unable to Login/validate home page, please see the failure screenshot"
-		 * );
-		 *
-		 * }
-		 */
+        /*
+         * } catch (Exception e) { // TODO Auto-generated catch block System.out.
+         * println("Unable to Login/validate home page, please see the failure screenshot"
+         * ); Assert.
+         * fail("Unable to Login/validate home page, please see the failure screenshot"
+         * );
+         *
+         * }
+         */
     }
 
     @And("^I Login with Supply Chain Credential ([^\"]*) and ([^\"]*)$")
@@ -4350,11 +4350,11 @@ public class E2EOrderPlaced_Steps {
         CVOS_LandingPageActions.CVOSSupplyChainLogin(username, password);
         log.debug("completing the login Supply Chain creds");
 
-		/*
-		 * } catch (Exception e) { // TODO Auto-generated catch block
-		 * log.debug("Unable to Sign in to CVOS as SupplyChain");
-		 * Assert.fail("Unable to Sign in to CVOS as SupplyChain");
-		 */
+        /*
+         * } catch (Exception e) { // TODO Auto-generated catch block
+         * log.debug("Unable to Sign in to CVOS as SupplyChain");
+         * Assert.fail("Unable to Sign in to CVOS as SupplyChain");
+         */
         // }
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         PageFactory.initElements(driver, CVOS_PageObjects.class);
@@ -4689,18 +4689,18 @@ public class E2EOrderPlaced_Steps {
         }
     }
 
-	/*
-	 * @Then("^Verify only tablet specific devices are displayed under the Other tablets section$"
-	 * ) public void Veri() throws Throwable {
-	 * driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS); try {
-	 * PageFactory.initElements(driver, BaseCommPage.class);
-	 * BaseCommPageActions.checkIfTabletDevicesArePresent(); //Archana to update
-	 * this code } catch (Exception e) { e.printStackTrace(); Assert.
-	 * fail("Unable to verify if only iPad specific devices are displayed under the iPad section"
-	 * );
-	 *
-	 * } }
-	 */
+    /*
+     * @Then("^Verify only tablet specific devices are displayed under the Other tablets section$"
+     * ) public void Veri() throws Throwable {
+     * driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS); try {
+     * PageFactory.initElements(driver, BaseCommPage.class);
+     * BaseCommPageActions.checkIfTabletDevicesArePresent(); //Archana to update
+     * this code } catch (Exception e) { e.printStackTrace(); Assert.
+     * fail("Unable to verify if only iPad specific devices are displayed under the iPad section"
+     * );
+     *
+     * } }
+     */
 
     @Given("^verify that I get redirected to ([^\"]*)$")
     public void VerifyOldBaseCommsURL_Redirection(String NewURL) {
@@ -5059,16 +5059,16 @@ public class E2EOrderPlaced_Steps {
     }
 
     // Then Verify the price gets updated based on the new colour and capacity
-	/*
-	 * @And("^Verify the price gets updated based on the new colour and capacity$" )
-	 * public void verifyPriceDisplaybased_on_Colour_and_capacity() {
-	 * driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS); try {
-	 * PageFactory.initElements(driver, BaseCommPage.class);
-	 * BaseCommPageActions.VerifyPriceChangeuponCapacity();
-	 *
-	 * } catch (Exception e) { e.printStackTrace();
-	 * Assert.fail("Unable to verify price updates"); } }
-	 */
+    /*
+     * @And("^Verify the price gets updated based on the new colour and capacity$" )
+     * public void verifyPriceDisplaybased_on_Colour_and_capacity() {
+     * driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS); try {
+     * PageFactory.initElements(driver, BaseCommPage.class);
+     * BaseCommPageActions.VerifyPriceChangeuponCapacity();
+     *
+     * } catch (Exception e) { e.printStackTrace();
+     * Assert.fail("Unable to verify price updates"); } }
+     */
 
     @And("^Verify the price gets updated based on ([^\"]*), ([^\"]*) for ([^\"]*)$")
     public void verifyPriceDisplaybased_on_Colour_and_capacity(String Capacity1, String Capacity2, String device) {
@@ -5090,12 +5090,12 @@ public class E2EOrderPlaced_Steps {
         try {
             log.debug("Running Test Step: @And(Verify the current sort order details)");
 
-			/*
-			 * if (driver.findElement(By.xpath("//*[@class='page-all']")).isEnabled ()) {
-			 * driver.findElement(By.xpath("//*[@class='page-all']")).click(); } else {
-			 *
-			 * PhonesListingPageAction.clickOnViewAllProductsOnOnePage(); }
-			 */
+            /*
+             * if (driver.findElement(By.xpath("//*[@class='page-all']")).isEnabled ()) {
+             * driver.findElement(By.xpath("//*[@class='page-all']")).click(); } else {
+             *
+             * PhonesListingPageAction.clickOnViewAllProductsOnOnePage(); }
+             */
 
             if (SortOption.equals("BrandAToZ") || SortOption.equals("BrandZToA")) {
                 originalList = PhonesListingPageAction.getCurrentSortOrderUsingDeviceName();
@@ -5754,7 +5754,7 @@ public class E2EOrderPlaced_Steps {
         }
     }
 
-	/* Order confirmation page validations - September release */
+    /* Order confirmation page validations - September release */
 
     @Then("^Verify contents of order confirmation page for Accessories containing In Stock$")
     public void verify_contents_of_order_confirmation_page_for_Accessories_containing_In_Stock() {
@@ -6570,11 +6570,11 @@ public class E2EOrderPlaced_Steps {
         MouseHoverAction.PayGSimoNavigation();
         Autoredirection.redirect();
         Thread.sleep(10000);
-		/*
-		 * } catch (Exception e) { // TODO Auto-generated catch block
-		 * log.debug("Unable to do mousehover to PAYG SIMO page");
-		 * Assert.fail("Unable to do mousehover to PAYG SIMO page"); }
-		 */
+        /*
+         * } catch (Exception e) { // TODO Auto-generated catch block
+         * log.debug("Unable to do mousehover to PAYG SIMO page");
+         * Assert.fail("Unable to do mousehover to PAYG SIMO page"); }
+         */
 
     }
 
@@ -6629,15 +6629,15 @@ public class E2EOrderPlaced_Steps {
         OrderConfirmationPageActions.FreeSimMessage();
         Thread.sleep(2000);
         // }
-		/*
-		 * catch (Exception e) { // TODO Auto-generated catch block System.out.
-		 * println("Error in order confirmation page , Please review the screenshots for failure"
-		 * ); Assert.
-		 * fail("Error in order confirmation page , Please review the screenshots for failure"
-		 * );
-		 *
-		 * }
-		 */
+        /*
+         * catch (Exception e) { // TODO Auto-generated catch block System.out.
+         * println("Error in order confirmation page , Please review the screenshots for failure"
+         * ); Assert.
+         * fail("Error in order confirmation page , Please review the screenshots for failure"
+         * );
+         *
+         * }
+         */
     }
 
     //////////////////////////////////// CCA
@@ -8565,9 +8565,9 @@ public class E2EOrderPlaced_Steps {
 
 
     /*
-    * #########################################################################
-    * #######  EMPTY_basket_validate_promotion ##################################
-    */
+     * #########################################################################
+     * #######  EMPTY_basket_validate_promotion ##################################
+     */
     @Then("^Click on 'Empty basket' CTA the 'Promotions' should be removed from the basket$")
     public void click_on_Empty_basket_CTA_the_Promotions_should_be_removed_from_the_basket() {
         try {
@@ -8582,10 +8582,10 @@ public class E2EOrderPlaced_Steps {
     }
 
     /*
-  * ##################################################################################
-  *  Standard_or_CCA_targeted_bolton_promotion_tab_Agent_upgrade_options_page_Order_placement
-  * #####################################################################################
-  */
+     * ##################################################################################
+     *  Standard_or_CCA_targeted_bolton_promotion_tab_Agent_upgrade_options_page_Order_placement
+     * #####################################################################################
+     */
     @And("^Click on 'Select' Button in targeted promotion tab$")
     public void click_on_Select_Button_in_targeted_promotion_tab() {
         try {
@@ -10196,13 +10196,13 @@ public class E2EOrderPlaced_Steps {
         }
     }
 
-//GDPR
+    //GDPR
     @And("^Is this order for You or Someone else ([^\"]*) when GDPR is ([^\"]*)$")
     public void isThisOrder4UorSomeoneElse(String customer, String status)throws IOException {
         try {
             driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
             PageFactory.initElements(driver, DeliveryPage.class);
-           // Agent_DealBuilderPageActions.verifyDevive_and_CopyClipboard_Btn();
+            // Agent_DealBuilderPageActions.verifyDevive_and_CopyClipboard_Btn();
             Thread.sleep(4000);
             DeliveryPageActions.clickOnSubmitBtn(customer, status);
             Thread.sleep(5000);
@@ -10270,12 +10270,46 @@ public class E2EOrderPlaced_Steps {
         }
     }
 
+
+
     @And("Select create a new account and begin checkout")
     public void Select_Create_New_account_and_begin_checkout() {
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         try {
             PageFactory.initElements(driver, DeliveryPage.class);
             DeliveryPageActions.selectCreateNewAcctAndCheckOut();
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+            Assert.fail("Unable to select Create New account");
+
+        }
+    }
+
+    //*********************************************************  REMEDY AUTOMATION   ******************************************
+
+
+    @Given("Login Remedy tool with the details userName ([^\"]*) and password ([^\"]*)")
+    public void loginRemedyTool(String userName, String password) throws InterruptedException {
+        Thread.sleep(8000);
+        try {
+            PageFactory.initElements(driver, RemedyLoginPage.class);
+            RemedyLoginAction.LoginIntoRemedyApp(userName,password);
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+            Assert.fail("Unable to select Create New account");
+
+        }
+    }
+
+
+    @And("Select a Application Type and serch the records with query")
+    public void selectApplicationType() throws InterruptedException {
+        Thread.sleep(3000);
+        try {
+            PageFactory.initElements(driver, RemedyLoginPage.class);
+            RemedyLoginAction.chooseAppType();
         } catch (Exception e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
