@@ -9000,6 +9000,7 @@ public class E2EOrderPlaced_Steps {
         }
     }
 
+
     @And("^the customer is landed on Review page$")
     public void theCustomerIsLandedOnReviewPage() {
         // Write code here that turns the phrase above into concrete actions
@@ -10316,6 +10317,23 @@ public class E2EOrderPlaced_Steps {
 
         }
     }
+    
+    //Jamal----Bill Spend Caps Section--------
 
+    @And("Validate Bill Spend Caps section and choose your cap ([^\"]*) ([^\"]*)")
+    public void ChoosYourCap(String BillCap, String CapAmount) {
 
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, PAYMandPAYGTariffAndExtrasPage.class);
+            Thread.sleep(5000);
+            PAYMandPAYGTariffAndExtrasPageActions.add_BillSpendCap( BillCap, CapAmount);
+            Thread.sleep(6000);
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            log.debug("Unable to Land on Tariff and extras page and fail to cap the bill");
+            Assert.fail("Unable to Land on Tariff and extras page and fail to cap the bill");
+
+        }
+    }
 }
