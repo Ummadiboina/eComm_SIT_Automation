@@ -41,7 +41,7 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 	static Hashtable actPlnDetails = new Hashtable();
 
 
-	public static void GetPageName() throws IOException, InterruptedException {
+	public static void GetPageName() throws IOException {
 
 		log.debug("Tariff and Extras page");
 		log.debug("Tariff and Extras page Validations");
@@ -197,7 +197,7 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 
 	}
 
-	public static void PayDeviceFullLink() throws IOException, InterruptedException {
+	public static void PayDeviceFullLink() throws IOException {
 		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 		pageobjects.PAYMandPAYGTariffAndExtrasPage.addToBasketLive.sendKeys(Keys.ENTER);
 		log.debug("Clicked on Add to Basket in Tariff and Extras page");
@@ -238,7 +238,7 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 
 	}
 
-	public static void addToBasketDockHeader() throws IOException, InterruptedException {
+	public static void addToBasketDockHeader() throws IOException {
 		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 		pageobjects.PAYMandPAYGTariffAndExtrasPage.addToBasketDockHeader.sendKeys(Keys.ENTER);
 		log.debug("Clicked on Add to Basket in Tariff and Extras page");
@@ -281,7 +281,7 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 		log.debug("Added a random accessory to basket");
 	}
 
-	public static void verifyBasecommTariffAndExtrasPageHeaderDetails() throws IOException, InterruptedException {
+	public static void verifyBasecommTariffAndExtrasPageHeaderDetails() throws IOException {
 		log.debug("Running verifyBasecommTariffAndExtrasPageHeaderDetails function");
 
 		try {
@@ -298,7 +298,7 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 		}
 	}
 
-	public static void verifyBasecommTariffAndExtrasDockHeaderDetails() throws IOException, InterruptedException {
+	public static void verifyBasecommTariffAndExtrasDockHeaderDetails() throws IOException {
 		log.debug("Running verifyBasecommTariffAndExtrasDockHeaderDetails function");
 
 		try {
@@ -387,7 +387,7 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 
 	}
 
-	public static void verifyViewAllTariffsLinkEnabled() throws IOException, InterruptedException {
+	public static void verifyViewAllTariffsLinkEnabled() throws IOException {
 		log.debug("Running verifyViewAllTariffsLinkEnabled function");
 
 		try {
@@ -404,7 +404,7 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 		}
 	}
 
-	public static void verifyPayForYourDeviceInFullLinkEnabled() throws IOException, InterruptedException {
+	public static void verifyPayForYourDeviceInFullLinkEnabled() throws IOException {
 		log.debug("Running verifyPayForYourDeviceInFullLinkEnabled function");
 
 		try {
@@ -435,7 +435,7 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 		}
 	}
 
-	public static void verifyAllSectionsDisplayedInTariffsAndExtrasPage() throws IOException, InterruptedException {
+	public static void verifyAllSectionsDisplayedInTariffsAndExtrasPage() throws IOException {
 		log.debug("Running verifyAllSectionsDisplayedInTariffsAndExtrasPage function");
 
 		try {
@@ -459,7 +459,7 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 		}
 	}
 
-	public static void verifyClickAndCollectDeliveryWorks() throws InterruptedException, IOException {
+	public static void verifyClickAndCollectDeliveryWorks() throws IOException {
 		log.debug("Running verifyClickAndCollectDeliveryWorks function");
 
 		try {
@@ -649,7 +649,7 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 		Screenshots.captureScreenshot();
 	}
 
-	public static void verifyAddNowButtonDisplayed() throws IOException, InterruptedException {
+	public static void verifyAddNowButtonDisplayed() throws IOException {
 		List<WebElement> AddInsuranceButton = driver.findElements(By.xpath("//input[@class='button secondary']"));
 		if (AddInsuranceButton.size() > 0) {
 			log.debug("Add insurance button is present");
@@ -800,7 +800,7 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 		return datalistafter;
 	}
 
-	public static ArrayList<Integer> getMonthlyCostListAfterSelectingFilter() throws IOException, InterruptedException {
+	public static ArrayList<Integer> getMonthlyCostListAfterSelectingFilter() throws IOException {
 		List<WebElement> MonthlyCostTextElement = pageobjects.PAYMandPAYGTariffAndExtrasPage.MonthlyCostTextElement;
 		ArrayList<Integer> MonthlyCostlist = new ArrayList<Integer>();
 		String data = null;
@@ -825,7 +825,7 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 		return MonthlyCostlist;
 	}
 
-	public static ArrayList<Integer> getUpfrontCostListAfterSelectingFilter() throws IOException, InterruptedException {
+	public static ArrayList<Integer> getUpfrontCostListAfterSelectingFilter() throws IOException {
 		List<WebElement> UpfrontCostTextElement = pageobjects.PAYMandPAYGTariffAndExtrasPage.UpfrontTextElement;
 		ArrayList<Integer> UpfrontCostlist = new ArrayList<Integer>();
 		String data = null;
@@ -850,7 +850,7 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 		return UpfrontCostlist;
 	}
 
-	public static void getRange() throws IOException, InterruptedException {
+	public static void getRange() throws IOException {
 		String datafiltertext = null;
 		String a = null;
 		int part = 0;
@@ -894,7 +894,7 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 		Screenshots.captureScreenshot();
 	}
 
-	public static void getValuesToCompare() throws IOException, InterruptedException {
+	public static void getValuesToCompare() throws IOException {
 
 		log.debug("---------------------------");
 		int j = 0;
@@ -914,13 +914,13 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 
 	}
 
-	public static void getValuesToCompareWhenGreaterIsSelected() throws IOException, InterruptedException {
+	public static void getValuesToCompareWhenGreaterIsSelected() throws IOException {
 		start.add(HighFilterGreater);
 		Screenshots.captureScreenshot();
 
 	}
 
-	public static void verifyListWhenGreaterIsSelected() throws IOException, InterruptedException {
+	public static void verifyListWhenGreaterIsSelected() throws IOException {
 		boolean flag = false;
 		for (int s = 0; s < datalistafter.size(); s++) {
 			flag = datalistafter.get(s) >= start.get(0);
@@ -933,7 +933,7 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 		Screenshots.captureScreenshot();
 	}
 
-	public static void verifyList() throws IOException, InterruptedException {
+	public static void verifyList() throws IOException {
 		log.debug("verifyList");
 		boolean flag = false;
 		for (int s = 0; s < datalistafter.size(); s++) {
@@ -980,7 +980,7 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 	/////////////// FilterDataAllowance
 	//////////////////////////////////////////////////////////////////////////////////////// ////////////////////////////////////////////////////
 
-	public static void FilterDataAllowance(String Filteroption) throws InterruptedException, IOException {
+	public static void FilterDataAllowance(String Filteroption) throws IOException {
 
 		if (Filteroption.contains("low")) {
 
@@ -1004,7 +1004,7 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 
 	}
 
-	public static void VerifyFilterDataTabPresent() throws InterruptedException, IOException {
+	public static void VerifyFilterDataTabPresent() throws IOException {
 
 		List<WebElement> DataFilterTab = driver
 				.findElements(By.xpath("//*[@class='choose-tariff-section section']/div[4]"));
@@ -1077,7 +1077,7 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 
 	}
 
-	public static ArrayList<Integer> getCurrentSortOrderUsingMonthlyData() throws IOException, InterruptedException {
+	public static ArrayList<Integer> getCurrentSortOrderUsingMonthlyData() throws IOException {
 		log.debug("Executing getCurrentSortOrderUsingMonthlyData ()");
 
 		List<WebElement> DataTextElement = pageobjects.PAYMandPAYGTariffAndExtrasPage.DataTextElement;
@@ -1119,7 +1119,7 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 		return tariffListUsingMonthlyData;
 	}
 
-	public static ArrayList<Integer> getCurrentSortOrderUsingMonthlyCost() throws IOException, InterruptedException {
+	public static ArrayList<Integer> getCurrentSortOrderUsingMonthlyCost() throws IOException {
 		List<WebElement> DataTextElement = pageobjects.PAYMandPAYGTariffAndExtrasPage.MonthlyCostTextElement;
 		ArrayList<Integer> tariffListUsingMonthlyCost = new ArrayList<Integer>();
 		String data = null;
@@ -1138,7 +1138,7 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 		return tariffListUsingMonthlyCost;
 	}
 
-	public static ArrayList<Integer> getCurrentSortOrderUsingUpfrontCost() throws IOException, InterruptedException {
+	public static ArrayList<Integer> getCurrentSortOrderUsingUpfrontCost() throws IOException {
 		List<WebElement> DataTextElement = pageobjects.PAYMandPAYGTariffAndExtrasPage.UpfrontTextElement;
 		ArrayList<Integer> tariffListUsingMonthlyUpfront = new ArrayList<Integer>();
 		String data = null;
@@ -1158,7 +1158,7 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 	}
 
 	public static ArrayList<Integer> reArrangeListInAcendingBeforeApplyingSort(ArrayList<Integer> OriginalList)
-			throws InterruptedException, IOException {
+			throws IOException {
 
 		ArrayList<Integer> ListBeforeApplyingSort = OriginalList;
 		// listSortEx(ListBeforeApplyingSort, false);
@@ -1182,7 +1182,7 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 	}
 
 	public static void verifyTariffSortedAsPerSortOption(ArrayList<Integer> ListBeforeApplyingSort,
-														 ArrayList<Integer> ListAfterApplyingSort) throws IOException, InterruptedException {
+														 ArrayList<Integer> ListAfterApplyingSort) throws IOException {
 
 		try {
 
@@ -1205,4 +1205,96 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 
 	}
 
+	//Jamal----- Bill Spend Caps section----
+
+	public static void add_BillSpendCap(String BillCap, String CapAmount) {
+
+		String BillCapStatus = "";
+
+		try {
+			driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+			scrollToAnElement.scrollToElement(PAYMandPAYGTariffAndExtrasPage.CapMyBill);
+			Screenshots.captureScreenshot();
+
+			if (driver.findElements(By.xpath("//*[contains(text(),'Would you like to add a spend cap?')]")).size() > 0) {
+				System.out.println("Would you like to add a spend cap? - is displayed");
+				log.debug("Would you like to add a spend cap? - is displayed");
+
+				PAYMandPAYGTariffAndExtrasPage.CapMyBillOverlay.click();
+				Thread.sleep(4000);
+				Screenshots.captureScreenshot();
+				String CapMyBillOverlayTxt = PAYMandPAYGTariffAndExtrasPage.CapMyBillOverlayTxt.getText();
+
+				System.out.println("Bill Spend Cap OverLay Icon Text is displayed and ie : " + CapMyBillOverlayTxt);
+				log.debug("Bill Spend Cap OverLay Icon Text is displayed and ie : " + CapMyBillOverlayTxt);
+				Thread.sleep(3000);
+
+				JavascriptExecutor executor = (JavascriptExecutor)driver;
+				executor.executeScript("arguments[0].click();", PAYMandPAYGTariffAndExtrasPage.CapMyBillOverlayPopupClose);
+				Thread.sleep(3000);
+
+			} else {
+				System.out.println("Bill Spend Cap section is not displayed.\n");
+				log.debug("Bill Spend Cap section is not displayed.\n");
+				Assert.fail("Bill Spend Cap section is not displayed.\n");
+			}
+
+			Thread.sleep(4000);
+
+			if (BillCap.equalsIgnoreCase("CapMyBill")) {
+				pageobjects.PAYMandPAYGTariffAndExtrasPage.CapMyBill.click();
+				log.debug("Clicked on 'Cap My Bill Option'");
+
+				Thread.sleep(5000);
+				scrollToAnElement.scrollToElement(driver.findElement(By.xpath("//*[contains(text(),'Would you like to add a spend cap?')]")));
+				Screenshots.captureScreenshot();
+
+				//Finding all cap amounts and listing them
+				List<WebElement> capAmountslist = driver.findElements(By.xpath("//*[@class='CapAmount']"));
+
+				if(capAmountslist.size()>0) {
+					log.debug("Cap amount list is listed and list values are::\n");
+					for (WebElement ele : capAmountslist) {
+						log.debug("\n"+ele.getText());
+					}
+				}else{
+					log.debug("Cap amount list is not displayed");
+					Assert.fail("Cap amount list is not displayed");
+				}
+
+				//Selecting specified cap amount
+				JavascriptExecutor executor = (JavascriptExecutor) driver;
+				log.debug("Specified Cap amount is selecting");
+				for (WebElement ele : capAmountslist) {
+					if(ele.getText().contains(CapAmount)){
+						executor.executeScript("arguments[0].click();", ele);
+						log.debug("Specified Cap amount is selected, ie:" +CapAmount);
+						Thread.sleep(3000);
+						break;
+					}
+				}
+
+				BillCapStatus = pageobjects.PAYMandPAYGTariffAndExtrasPage.BillCapStatusMsg.getText();
+				log.debug("Cap is applied and status is:: " + BillCapStatus);
+
+				scrollToAnElement.scrollToElement(pageobjects.PAYMandPAYGTariffAndExtrasPage.BillCapStatusMsg);
+				Screenshots.captureScreenshot();
+
+			}else if (BillCap.equalsIgnoreCase("Dont CapMyBill")) {
+				pageobjects.PAYMandPAYGTariffAndExtrasPage.DontCapMyBill.click();
+				log.debug("Clicked on Don't Cap My Bill Option");
+
+				Thread.sleep(4000);
+				BillCapStatus = pageobjects.PAYMandPAYGTariffAndExtrasPage.BillCapStatusMsg.getText();
+				log.debug("Cap is applied and status is:: " + BillCapStatus);
+
+				scrollToAnElement.scrollToElement(pageobjects.PAYMandPAYGTariffAndExtrasPage.BillCapStatusMsg);
+				Screenshots.captureScreenshot();
+			}
+		} catch (Exception e) {
+			log.debug("Unable to cap the bill :: "+e.getStackTrace());
+			Assert.fail("Unable to cap the bill :: "+e.getStackTrace());
+		}
+
+	}
 }

@@ -1,9 +1,9 @@
-Feature: CFU_Validate_Basket_Page_For_Simo_Tariff_With_Active_Voucherable_Promotions_Available_And_Valid_For_Current_Date_And_No_Upfront_Payment_Pending.feature
+Feature: 98_Reg_June_CFU_Validate_Basket_Page_For_Simo_Tariff_With_Active_Voucherable_Promotions_Available_And_Valid_For_Current_Date_And_No_Upfront_Payment_Pending
 
   This scenario validates basket and payment page is displayed for customer in Simo upgrade journey with active voucherable promotions available for the selected tariff and No upfront payment pending from customer
 
   @Web
-  Scenario Outline: CFU_Validate_Basket_Page_For_Simo_Tariff_With_Active_Voucherable_Promotions_Available_And_Valid_For_Current_Date_And_No_Upfront_Payment_Pending
+  Scenario Outline: 98_Reg_June_CFU_Validate_Basket_Page_For_Simo_Tariff_With_Active_Voucherable_Promotions_Available_And_Valid_For_Current_Date_And_No_Upfront_Payment_Pending
     Given I am an Existing user and Navigates to Signin page
     And Signin using valid <username> and <password> credentials
     And Navigate to upgrade > upgrade now

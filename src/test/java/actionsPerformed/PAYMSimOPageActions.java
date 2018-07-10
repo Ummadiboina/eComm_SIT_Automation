@@ -109,7 +109,7 @@ public class PAYMSimOPageActions extends Environment {
 		Screenshots.captureScreenshot();
 	}
 
-	public static void Elementverify(String elementName) throws InterruptedException, IOException {
+	public static void Elementverify(String elementName) throws IOException {
 
 		if (elementName.contains("12 Months")) {
 			if (driver.findElements(By.xpath("//*[@id='id-12-months']/p/a")).size() != 0) {
@@ -130,7 +130,7 @@ public class PAYMSimOPageActions extends Environment {
 		Screenshots.captureScreenshot();
 	}
 
-	public static void DisplayContent(String ElementName) throws IOException, InterruptedException {
+	public static void DisplayContent(String ElementName) throws IOException {
 		if (ElementName.equalsIgnoreCase("paymheader")) {
 			log.debug("Pay monthly sims banner header - as per today is displayed :"
 					+ pageobjects.SimFreeExtrasPage.Tariffvaladity.getText());
@@ -146,7 +146,7 @@ public class PAYMSimOPageActions extends Environment {
 	////////// ************Below were done for Jan
 	////////// Release********************/////////////////
 
-	public static void Sorting(String elementName) throws InterruptedException, IOException {
+	public static void Sorting(String elementName) throws IOException {
 		List<WebElement> list = driver.findElements(By.xpath("//span[@class='pound'"));
 		log.debug(list);
 
@@ -174,7 +174,7 @@ public class PAYMSimOPageActions extends Environment {
 		Screenshots.captureScreenshot();
 	}
 
-	public static void elementSelected() throws IOException, InterruptedException {
+	public static void elementSelected() throws IOException {
 
 		// Assert.assertEquals(true,
 		// pageobjects.PAYMSimOPage.simphonetab.isSelected());
@@ -188,7 +188,7 @@ public class PAYMSimOPageActions extends Environment {
 		Screenshots.captureScreenshot();
 	}
 
-	public static void ElementColour(String elementName, String colouractual) throws InterruptedException, IOException {
+	public static void ElementColour(String elementName, String colouractual) throws IOException {
 
 		String blueexpected = "rgba(3, 43, 90, 1)";
 		String greenexpected = "rgba(0, 204, 204, 1)";
@@ -217,7 +217,7 @@ public class PAYMSimOPageActions extends Environment {
 		Screenshots.captureScreenshot();
 	}
 
-	public static void charlengthcheck(String elementName, int elengthvalue) throws InterruptedException, IOException {
+	public static void charlengthcheck(String elementName, int elengthvalue) throws IOException {
 
 		if (elementName.contains("promotionprimary")) {
 			Actions action = new Actions(driver);
@@ -259,7 +259,7 @@ public class PAYMSimOPageActions extends Environment {
 
 	}
 
-	public static void ElementClick(String elementName) throws InterruptedException, IOException {
+	public static void ElementClick(String elementName) throws IOException {
 		if (elementName.equalsIgnoreCase("PhoneTab"))
 			pageobjects.PAYMSimOPage.PhoneTab.sendKeys(Keys.ENTER);
 
@@ -269,7 +269,7 @@ public class PAYMSimOPageActions extends Environment {
 		Screenshots.captureScreenshot();
 	}
 
-	public static void ElementClick2(String elementName) throws InterruptedException, IOException {
+	public static void ElementClick2(String elementName) throws IOException {
 
 		if (pageobjects.PAYMSimOPage.months12tab.getText().equalsIgnoreCase("12 months")) {
 			log.debug(
@@ -492,7 +492,7 @@ public class PAYMSimOPageActions extends Environment {
 
 	// Below is for displaying which mins text and data are present
 
-	public static void VerifyMinsDataDisplayed() throws IOException, InterruptedException {
+	public static void VerifyMinsDataDisplayed() throws IOException {
 		try {
 			List<WebElement> outercontainer = driver
 					.findElements(By.xpath("//*[@class='tariffs-container voice-tariffs']"));
@@ -511,7 +511,7 @@ public class PAYMSimOPageActions extends Environment {
 		Screenshots.captureScreenshot();
 	}
 
-	public static void VerifyCostDisplayed() throws IOException, InterruptedException, IndexOutOfBoundsException {
+	public static void VerifyCostDisplayed() throws IOException, IndexOutOfBoundsException {
 		try {
 			List<WebElement> outercontainer = driver
 					.findElements(By.xpath("//*[@class='tariffs-container voice-tariffs']"));
@@ -535,7 +535,7 @@ public class PAYMSimOPageActions extends Environment {
 	 * ========================================================
 	 */
 
-	public static void BuyNowButtonDisplay() throws IOException, InterruptedException {
+	public static void BuyNowButtonDisplay() throws IOException {
 		/*
 		 * String Actualtext =
 		 * driver.findElement(By.linkText("http://localhost:8080/imdb/homepage")
@@ -560,7 +560,7 @@ public class PAYMSimOPageActions extends Environment {
 		Screenshots.captureScreenshot();
 	}
 
-	public static void BuyNowButtonValidation() throws IOException, InterruptedException {
+	public static void BuyNowButtonValidation() throws IOException {
 		/*
 		 * String Actualtext =
 		 * driver.findElement(By.linkText("http://localhost:8080/imdb/homepage")
@@ -590,7 +590,7 @@ public class PAYMSimOPageActions extends Environment {
 		Screenshots.captureScreenshot();
 	}
 
-	public static void CheckboxValidation() throws IOException, InterruptedException {
+	public static void CheckboxValidation() throws IOException {
 		log.debug("Clicking on one of the checkbox");
 		pageobjects.PAYMSimOPage.CheckboxPresence.click();
 		log.debug("Clicking on one of the checkbox");
@@ -599,7 +599,7 @@ public class PAYMSimOPageActions extends Environment {
 	}
 
 	//// added 14/03/2017 - for cfd1222 - ecomm10206/206/202/203
-	public static void VerifyPreferredTariffDisplay(String elementName1) throws InterruptedException, IOException {
+	public static void VerifyPreferredTariffDisplay(String elementName1) throws IOException {
 
 		if (pageobjects.PAYMSimOPage.simmbbtab.getText().contains("Mobile broadband"))
 			log.debug("Mobile broadband tab is displayed");
@@ -624,7 +624,7 @@ public class PAYMSimOPageActions extends Environment {
 		Screenshots.captureScreenshot();
 	}
 
-	public static void LengthPromotionTariff(String arg1) throws InterruptedException, IOException {
+	public static void LengthPromotionTariff(String arg1) throws IOException {
 
 		WebDriverWait wait = new WebDriverWait(driver, 40);
 		wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector(".col-xs-12.promotion-ribbon")));// instead
@@ -684,7 +684,7 @@ public class PAYMSimOPageActions extends Environment {
 	 * }
 	 *
 	 */
-	public static void TariffTilePosition() throws InterruptedException, IOException {
+	public static void TariffTilePosition() throws IOException {
 		WebDriverWait wait = new WebDriverWait(driver, 40);
 		wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector(".col-xs-12.promotion-ribbon")));// instead
 		// of
@@ -714,7 +714,7 @@ public class PAYMSimOPageActions extends Environment {
 		Screenshots.captureScreenshot();
 	}
 
-	public static void DisplayPromotionTariff(String elementName) throws InterruptedException, IOException {
+	public static void DisplayPromotionTariff(String elementName) throws IOException {
 
 		WebDriverWait wait = new WebDriverWait(driver, 40);
 		wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector(".col-xs-12.promotion-ribbon")));// instead
@@ -783,24 +783,30 @@ public class PAYMSimOPageActions extends Environment {
 		Screenshots.captureScreenshot();
 	}
 
-	public static void SelectValidCTASIMOtariff(String tariffAmt, String dataValue) throws IOException, InterruptedException {
+	public static void SelectValidCTASIMOtariff(String tariffAmt, String dataValue) throws InterruptedException {
 
-				List<WebElement> plnList = driver.findElements(By.xpath("//*[@name='P12M']"));
-					for (WebElement elm : plnList) {
+		List<WebElement> lstOfTariff = driver.findElements(By.xpath("//div[@class='price-block']/h2/span[@class='pound']"));
+		for (int i = 1; i <= lstOfTariff.size(); i++) {
+			System.out.println("The value of i is " + i);
+			String price = driver.findElement(By.xpath("(//div[@class='price-block']/h2/span[@class='pound'])[" + i + "]")).getText();
 
-						if(driver.findElements(By.xpath("//*[@name='P12M']/div[@class='col-xs-6 col-sm-3 info-container price-block-container']/div/h2[contains(normalize-space(),'" + tariffAmt + "')]")).size()>0){
-							if(driver.findElements(By.xpath("//*[@name='P12M']/div[@class='col-xs-6 col-sm-3 dmt-container info-container']/ul/li/h2[contains(normalize-space(),'"+dataValue+"')]")).size()>0) {
-								driver.findElement(By.xpath("(//*[@name='P12M']/div[@class='col-xs-12 col-sm-5 info-container buy-now']/div/form/button)[1]")).click();
-								break;
-							}
-						}
-					}
-		log.debug("Selected the valid Tariff");
-		Thread.sleep(5000);
-		Screenshots.captureScreenshot();
+			if (driver.findElements(By.xpath("(//div[@class='price-block']/h2/span[@class='pound'])[" + i + "]/../../../..//h2[contains(.,'GB')]")).size() > 0) {
+				String data = driver.findElement(By.xpath("(//div[@class='price-block']/h2/span[@class='pound'])[" + i + "]/../../../..//h2[contains(.,'GB')]")).getText();
+				if (price.contains(tariffAmt) && data.contains(dataValue)) {
+					System.out.println("Actual tariff :: " + price + ", " + data + " And Actual :: " + price + "," + data + "===  are Verified ====");
+					log.info("Actual tariff :: " + price + ", " + data + " And Actual :: " + price + "," + data + "===  are Verified ====");
+					Thread.sleep(3000);
+					driver.findElement(By.xpath("(//div[@class='price-block']/h2/span[@class='pound'])[" + i + "]/../../../..//button")).click();
+					Thread.sleep(3000);
+					break;
+				}
+			} else {
+				continue;
+			}
+
+		}
 	}
-
-	///////////////////////////Upgrade Simo Page/////////////////////////////////////////////
+		///////////////////////////Upgrade Simo Page/////////////////////////////////////////////
 
 	public static void ClickonTabletsTabSimo() {
 
@@ -810,7 +816,7 @@ public class PAYMSimOPageActions extends Environment {
 
 	}
 
-	public static void selectIWillKeepMyCurrentSIM() throws IOException, InterruptedException {
+	public static void selectIWillKeepMyCurrentSIM() throws IOException {
 
 		WebElement element = pageobjects.PAYMSimOPage.IWillKeepMyCurrentSIM;
 		scrollToAnElement.scrollToElement(pageobjects.PAYMSimOPage.IWillKeepMyCurrentSIM);
@@ -820,7 +826,7 @@ public class PAYMSimOPageActions extends Environment {
 
 	}
 
-	public static void selectINeedNewSIM() throws IOException, InterruptedException {
+	public static void selectINeedNewSIM() throws IOException {
 
 		log.debug("Review Page validation :: " + driver.getTitle());
 		WebElement element = pageobjects.PAYMSimOPage.INeedNewSIM;

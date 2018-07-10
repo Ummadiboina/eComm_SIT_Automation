@@ -163,4 +163,26 @@ public class PAYMandPAYGTariffAndExtrasPage {
 
 	@FindBy(how = How.XPATH, using = "//*[@class='choose-tariff-section section']/div[4]/div[2]/a[1]/button[@class='secondary sortGrpBtn']")
 	public static WebElement DeSelectedState;
+
+	// Bill Spend Caps section----
+
+	@FindBy(how = How.XPATH, using = "//*[@id='CapMyBill']")
+	public static WebElement CapMyBill;
+
+	@FindBy(how = How.XPATH, using = "//*[@id='DontCapMyBill']")
+	public static WebElement DontCapMyBill;
+
+	@FindBy(how = How.XPATH, using = "//*[@id='CapMyBillOverlay']")
+	public static WebElement CapMyBillOverlay;
+
+	@FindBy(how = How.XPATH, using = "//*[@id='CapMyBillOverlayTxt']")
+	public static WebElement CapMyBillOverlayTxt;
+
+	@FindBy(how = How.XPATH, using = "//*[@id='CapMyBillOverlayPopupClose']")
+	public static WebElement CapMyBillOverlayPopupClose;
+
+	@FindBy(how = How.XPATH, using = "//*[@id='BillCapStatusMsg']")
+	public static WebElement BillCapStatusMsg;
+
+
 }

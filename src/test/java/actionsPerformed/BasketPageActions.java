@@ -106,7 +106,7 @@ public class BasketPageActions extends Environment {
 
 	// Below is for checking the order contract text
 
-	public static void checkOrderContractTextBP() throws IOException, InterruptedException {
+	public static void checkOrderContractTextBP() throws IOException {
 		String ActOrderContractMsg = pageobjects.BasketPage.OrderContractMessageBP.getText();
 		String ExpOrderContractMsg = "Your contract will not start until the order is on its way.";
 		log.debug("Act Del MSg" + ActOrderContractMsg);
@@ -121,7 +121,7 @@ public class BasketPageActions extends Environment {
 		Screenshots.captureScreenshot();
 	}
 
-	public static void checkOrderContractTextDDPOBP() throws IOException, InterruptedException {
+	public static void checkOrderContractTextDDPOBP() throws IOException {
 		String ActOrderContractMsg = pageobjects.BasketPage.OrderContractMessageDDPOBP1.getText() + '\n'
 				+ pageobjects.BasketPage.OrderContractMessageDDPOBP2.getText();
 		String ExpOrderContractMsg = "We will deliver the rest of your order as soon as possible." + '\n'
@@ -184,7 +184,7 @@ public class BasketPageActions extends Environment {
 
 	}
 
-	public static void ValidateBasketPageContents(String Element, String expValue) throws InterruptedException, IOException {
+	public static void ValidateBasketPageContents(String Element, String expValue) throws IOException {
 		boolean fname = false;
 		log.debug("Shop basket pages validations" + driver.getTitle());
 		log.debug("Shop basket pages validations" + driver.getTitle());
@@ -247,7 +247,7 @@ public class BasketPageActions extends Environment {
 		Screenshots.captureScreenshot();
 	}
 
-	public static void BasketContentsforNonConnected() throws InterruptedException, IOException {
+	public static void BasketContentsforNonConnected() throws IOException {
 
 		try {
 			Assert.assertEquals("Your basket", pageobjects.BasketPage.BasketHeaderXXL.getText());
@@ -292,7 +292,7 @@ public class BasketPageActions extends Environment {
 
 	}
 
-	public static void PlanOnlyPageContents() throws InterruptedException, IOException {
+	public static void PlanOnlyPageContents() throws IOException {
 
 		log.debug("Shop basket pages validations ::" + driver.getTitle());
 
@@ -321,7 +321,7 @@ public class BasketPageActions extends Environment {
 		Screenshots.captureScreenshot();
 	}
 
-	public static void PromoCode(String PromoCode) throws IOException, InterruptedException {
+	public static void PromoCode(String PromoCode) throws IOException {
 		log.debug("Clicking promocode");
 		pageobjects.BasketPage.GotaPromoCode.click();
 		pageobjects.BasketPage.voucherCode.sendKeys(PromoCode);
@@ -419,7 +419,7 @@ public class BasketPageActions extends Environment {
 			}
 		}
 
-	public static void JuneReleaseBasketContent() throws InterruptedException, IOException {
+	public static void JuneReleaseBasketContent() throws IOException {
 
 		try {
 			Assert.assertEquals("Your basket", pageobjects.BasketPage.BasketHeaderXXL.getText());
@@ -432,7 +432,7 @@ public class BasketPageActions extends Environment {
 		Screenshots.captureScreenshot();
 	}
 
-	public static void ValidatePromoCode() throws IOException, InterruptedException {
+	public static void ValidatePromoCode() throws IOException {
 		log.debug("Clicking promocode");
 		/*
 		 * pageobjects.BasketPage.GotaPromoCode.click();
@@ -461,7 +461,7 @@ public class BasketPageActions extends Environment {
 		Screenshots.captureScreenshot();
 	}
 
-	public static void ValidateContentEcomm11522() throws InterruptedException, IOException {
+	public static void ValidateContentEcomm11522() throws IOException {
 
 		boolean fname = pageobjects.BasketPage.checkoutbtn.isEnabled();
 		if (fname != false) {
@@ -486,7 +486,7 @@ public class BasketPageActions extends Environment {
 
 	}
 
-	public static void verifyNCDRemovedinBasketPageAfterCDSelection() throws InterruptedException, IOException {
+	public static void verifyNCDRemovedinBasketPageAfterCDSelection() throws IOException {
 		log.debug("Opening verifyNCDRemovedinBasketPageAfterCDSelection function");
 
 		String AccessoryName_Before = "";
@@ -535,7 +535,7 @@ public class BasketPageActions extends Environment {
 	}
 
 	public static void verifyDevicesInBasket(String dev1, String dev2, String dev3)
-			throws IOException, InterruptedException {
+			throws IOException {
 		log.debug("Verifying the devices in basket");
 		// List<WebElement> MyDevices = pageobjects.BasketPage.DevicesList;
 
@@ -591,7 +591,7 @@ public class BasketPageActions extends Environment {
 		Screenshots.captureScreenshot();
 	}
 
-	public static void verifyDevicesInBasket(String dev1, String dev2) throws IOException, InterruptedException {
+	public static void verifyDevicesInBasket(String dev1, String dev2) throws IOException {
 
 		// List<WebElement> MyDevices = pageobjects.BasketPage.DevicesList;
 
@@ -669,7 +669,7 @@ public class BasketPageActions extends Environment {
 		Screenshots.captureScreenshot();
 	}
 
-	public static void verifyDevicesInBasket(String dev1) throws IOException, InterruptedException {
+	public static void verifyDevicesInBasket(String dev1) throws IOException {
 
 		// List<WebElement> MyDevices = pageobjects.BasketPage.DevicesList;
 
@@ -764,7 +764,7 @@ public class BasketPageActions extends Environment {
 	////////////////////////////// Upgrade Basket
 	////////////////////////////// Page///////////////////////////////////////////////
 
-	public static void UpgradeBasketPageYourSim() throws IOException, InterruptedException {
+	public static void UpgradeBasketPageYourSim() throws IOException {
 
 		if (pageobjects.BasketPage.EnabledCheckout.isDisplayed()) {
 			log.debug("The Checkout button is enabled");
@@ -778,7 +778,7 @@ public class BasketPageActions extends Environment {
 
 	}
 
-	public static void UpgradeBasketYourSim() throws IOException, InterruptedException {
+	public static void UpgradeBasketYourSim() throws IOException {
 
 		JavascriptExecutor jse = (JavascriptExecutor) driver;
 		jse.executeScript("window.scrollBy(0,450)", "");
@@ -800,7 +800,7 @@ public class BasketPageActions extends Environment {
 
 	}
 
-	public static void EnterValidPromoCodeDetails(String promoCode) throws InterruptedException {
+	public static void EnterValidPromoCodeDetails(String promoCode) throws IOException, InterruptedException {
 		Thread.sleep(3000);
 
 		pageobjects.UpgradeCustomerPage.plusAccordion.click();
@@ -808,14 +808,21 @@ public class BasketPageActions extends Environment {
 		pageobjects.UpgradeCustomerPage.promoCodeDetails.sendKeys(promoCode);
 		log.debug("Promo Code Details entered");
 		Thread.sleep(3000);
+		Screenshots.captureScreenshot();
 		pageobjects.UpgradeCustomerPage.promoCodeSubmit.click();
 		log.debug("Submited the promo code");
-		Thread.sleep(4000);
+		Thread.sleep(6000);
+		if(UpgradeCustomerPage.AppliedPromoCodeValidation.isDisplayed()){
+			System.out.println(UpgradeCustomerPage.AppliedPromoCodeValidation.getText());
+			log.info(UpgradeCustomerPage.AppliedPromoCodeValidation.getText());
+		}
+		Thread.sleep(2000);
 
 		log.debug("Promo code is validated:: status is: " + pageobjects.UpgradeCustomerPage.promoCodeStatus.getText());
 	}
 
-		public static void eMailBasketCFU(String userName) throws InterruptedException {
+
+	public static void eMailBasketCFU(String userName) throws InterruptedException {
 		Thread.sleep(3000);
 		// Selecting an eMail Link
 		pageobjects.UpgradeCustomerPage.BasketeMail.sendKeys(userName);
