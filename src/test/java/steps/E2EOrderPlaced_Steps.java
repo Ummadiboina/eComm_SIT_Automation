@@ -898,6 +898,21 @@ public class E2EOrderPlaced_Steps {
         }
     }
 
+    @And("^Click on browser back arrow and land on previous page$")
+    public void click_browser_back_arrow() {
+        try {
+            driver.manage().timeouts().implicitlyWait(120, TimeUnit.SECONDS);
+            driver.navigate().back();
+            log.debug("we have navigated back to the previous page");
+            Thread.sleep(5000);
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            log.debug("Failed to navigate back to the previous page");
+            Assert.fail("Failed to navigate back to the previous page");
+
+        }
+    }
+
     @Then("^validate URL after clicking on 'Register' link$")
     public void redirectURLWhenClicksOnRegisterLink_MyO2() {
         try {

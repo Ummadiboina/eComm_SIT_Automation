@@ -341,7 +341,6 @@ public class BasketPageActions extends Environment {
 					pageobjects.BasketPage.HomeDeliverySelect.click();
 					// Assert.assertEquals(elementName,"Galaxy S7 is not found");
 					log.debug("HomeDelivery is Selected");
-					log.debug("HomeDelivery is Selected");
 					Screenshots.captureScreenshot();
 				}
 			}else if (elementName.contains("clickAndCollect")) {
