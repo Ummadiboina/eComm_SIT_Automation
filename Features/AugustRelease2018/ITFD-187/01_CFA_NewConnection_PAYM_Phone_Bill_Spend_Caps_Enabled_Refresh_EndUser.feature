@@ -12,6 +12,7 @@ Feature: 01_CFA_NewConnection_PAYM_Phone_Bill_Spend_Caps_Enabled_Refresh_EndUser
     And Land on the 'Tariffs and extra' page
     And Validate Bill Spend Caps section and choose your cap <BillCap> <CapAmount>
     And I Land on the basket page and choose home delivery option
+    And Validate added Bill Spend Cap in Basket page
     And click on "go to checkout" button
     And input <Firstname> and <Surname> and other valid details in Delivery page to verify GDPR
     And Is this order for You or Someone else <consumer> when GDPR is <status>

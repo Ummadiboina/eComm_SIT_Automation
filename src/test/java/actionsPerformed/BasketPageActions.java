@@ -866,4 +866,38 @@ public class BasketPageActions extends Environment {
 
 	}
 
+	//Validating you bill cap in Basket page
+	public static void ValidateBillSpendCapInBasketPage() {
+		String AppliedBillCap="";
+		try {
+			Thread.sleep(4000);
+
+			if(pageobjects.BasketPage.BillSpendCapHeader_Basket.isDisplayed()) {
+				log.debug("Bill Spend Cap header is displayed in basket page ie :: "+pageobjects.BasketPage.BillSpendCapHeader_Basket.getText());
+			}
+
+			if(pageobjects.BasketPage.AppliedBillCap_Basket.isDisplayed()) {
+				AppliedBillCap = pageobjects.BasketPage.AppliedBillCap_Basket.getText();
+				if(AppliedBillCap.contains("")){
+					log.debug("Validated successfully and Applied bill cap in basket page is:: " + AppliedBillCap);
+				}else{
+					log.debug("Applied bill cap is not present in basket page is:: " + AppliedBillCap);
+					Assert.fail("Applied bill cap is not present in basket page is:: " + AppliedBillCap);
+				}
+			}
+
+			if(pageobjects.BasketPage.BillCapEditLink_Basket.isDisplayed()) {
+				log.debug("Bill cap Edit link is present in basket page \n");
+			}else{
+				log.debug("Bill cap Edit link is not present in basket page \n");
+			}
+
+			scrollToAnElement.scrollToElement(pageobjects.BasketPage.BillSpendCapHeader_Basket);
+			Screenshots.captureScreenshot();
+
+		}catch(Exception e){
+			log.debug("Unable to validate Bill cap section in basket page is:: " + e);
+		}
+	}
+
 }

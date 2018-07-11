@@ -172,4 +172,16 @@ public class BasketPage {
 
 	@FindBy(how = How.XPATH, using = "//h1[@class='staticPage']")
 	public static WebElement checkoutinProgress;
+
+	//Bill Spend cap
+	@FindBy(how = How.XPATH, using = "//*[@id='AppliedBillCap_Basket']")
+	public static WebElement AppliedBillCap_Basket;
+
+	@FindBy(how = How.XPATH, using = "//*[@id='BillCapEditLink_Basket']")
+	public static WebElement BillCapEditLink_Basket;
+
+	@FindBy(how = How.XPATH, using = "//*[@id='BillSpendCapHeader_Basket']")
+	public static WebElement BillSpendCapHeader_Basket;
+
+
 }
