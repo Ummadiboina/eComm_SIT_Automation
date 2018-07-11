@@ -10351,4 +10351,22 @@ public class E2EOrderPlaced_Steps {
 
         }
     }
+
+    @And("Validate added Bill Spend Cap in Basket page")
+    public void ValidateYourCapInBasketPage() {
+
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, BasketPage.class);
+            Thread.sleep(5000);
+            BasketPageActions.ValidateBillSpendCapInBasketPage();
+            Thread.sleep(5000);
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            log.debug("Unable to validate you bill cap in basket page");
+            Assert.fail("Unable to validate you bill cap in basket page");
+
+        }
+
+    }
 }

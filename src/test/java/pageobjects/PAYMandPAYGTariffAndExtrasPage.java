@@ -169,8 +169,14 @@ public class PAYMandPAYGTariffAndExtrasPage {
 	@FindBy(how = How.XPATH, using = "//*[@id='CapMyBill']")
 	public static WebElement CapMyBill;
 
+	@FindBy(how = How.XPATH, using = "//*[@id='InfoText']")
+	public static WebElement InfoText;
+
 	@FindBy(how = How.XPATH, using = "//*[@id='DontCapMyBill']")
 	public static WebElement DontCapMyBill;
+
+	@FindBy(how = How.XPATH, using = "//a[normalize-space()='I don\''t want a spend cap']")
+	public static WebElement DontCapMyBillLink;
 
 	@FindBy(how = How.XPATH, using = "//*[@id='CapMyBillOverlay']")
 	public static WebElement CapMyBillOverlay;
