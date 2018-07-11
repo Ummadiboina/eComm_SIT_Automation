@@ -4,16 +4,12 @@ import GlobalActions.CommonActions;
 import helpers.Environment;
 import org.apache.log4j.Logger;
 
-import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import pageobjects.RemedyLoginPage;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.IOException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.*;
@@ -24,7 +20,11 @@ public class RemedyLoginAction extends Environment {
     final static Logger log = Logger.getLogger("DeliveryPageActions");
     static JavascriptExecutor js = (JavascriptExecutor) driver;
     public static String query1 = "( '1000003229' = \"WP Procurement\" OR '1000003229' = \"My IT Procurement\" ) AND ( 'Status*' = \"Pending\" AND 'Status Reason' = \"Purchase Order Approval\")";
-
+    public static int thisDate;
+    public static int thisMonth;
+    public static String text_SammaryField;
+    public static String subTextOfSummay;
+    public static String updatedSummaryText;
 
     public static void LoginIntoRemedyApp(String userName, String password) {
         try {
@@ -62,50 +62,144 @@ public class RemedyLoginAction extends Environment {
             Thread.sleep(3000);
 
             Actions actions = new Actions(driver);
-            //WebElement notesElement = driver.findElement(By.xpath("//*[@id=\"arid_WIN_3_1000000151\"]"));
             actions.moveToElement(RemedyLoginPage.querySerchBarTextField);
-
             actions.click();
             Thread.sleep(1000l);
             actions.sendKeys(query1);
-            Thread.sleep(5000);
+            Thread.sleep(3000);
             actions.build().perform();
-
+            Thread.sleep(10000);
             CommonActions.clickWebElement(RemedyLoginPage.serchBtnAtBottom);
+            Thread.sleep(3000);
 
-           /* Workbook wb=Workbook.(new FileInputStream("D:\\SreeRam\\Automation\\Telefonica Team1.xls"));
-            Sheet sh=wb.getSheet(0);
-            int totalNoOfRows = sh.getRows();
-            ArrayList al= new ArrayList();
+            // get ToDay date
+            DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy", Locale.UK);
+            Date date = new Date();
+            System.out.println("The date format is :: " + dateFormat.format(date));
+            String todayDate = dateFormat.format(date);
+            StringTokenizer st = new StringTokenizer(todayDate, "/");
+            thisDate = Integer.parseInt(st.nextToken());
+            thisMonth = Integer.parseInt(st.nextToken());
 
-            for (int row = 2; row < totalNoOfRows; row++) {
-                al.add((sh.getCell(6, row).getContents()));
-            }
-*/
-
-            Thread.sleep(8000);
+            Thread.sleep(5000);
             List<WebElement> lstSize = driver.findElements(By.xpath("//th[normalize-space()='Submit Date']/../following-sibling::tr/td[4]//span"));
 
             for (int i = 1; i < lstSize.size(); i++) {
 
-                driver.findElement(By.xpath("(//*[@id='T301389923']//th[normalize-space()='Submit Date']/../following-sibling::tr[" + i + "]/td[4]//span)[1]")).getText();
-                driver.findElement(By.xpath("(//*[@id='T301389923']//th[normalize-space()='Submit Date']/../following-sibling::tr[" + i + "]/td[5]//span)[1]")).getText();
+                String capturDatge = driver.findElement(By.xpath("(//*[@id='T301389923']//th[normalize-space()='Submit Date']/../following-sibling::tr[" + i + "]/td[4]//span)[1]")).getText();
+                String nameOfSubmitter = driver.findElement(By.xpath("(//*[@id='T301389923']//th[normalize-space()='Submit Date']/../following-sibling::tr[" + i + "]/td[5]//span)[1]")).getText();
+                StringTokenizer strT = new StringTokenizer(capturDatge, "/");
+                int getDate = Integer.parseInt(strT.nextToken());
+                int getMonth = Integer.parseInt(strT.nextToken());
 
-                System.out.println("Sumit Date is:  " + driver.findElement(By.xpath("(//th[normalize-space()='Submit Date']/../following-sibling::tr[" + i + "]/td[4]//span)[1]")).getText());
-                System.out.println("Submitter is " + driver.findElement(By.xpath("(//th[normalize-space()='Submit Date']/../following-sibling::tr[" + i + "]/td[5]//span)[1]")).getText());
-                //System.out.print("Submitter is "+ driver.findElement(By.xpath((//th[normalize-space()='Submit Date']/../following-sibling::tr[" + i + "]/td[5]//span)[1]")).getText());
-                System.out.println(" ");
+                driver.findElement(By.xpath("//img[@alt='Editor for Summary*']")).click();
+                Thread.sleep(3000);
+                text_SammaryField = driver.findElement(By.xpath("//div[@class='OverflowAuto']/textarea")).getText();
+                Thread.sleep(3000);
+                driver.findElement(By.xpath("//button[@class='Close  right']")).click();
+                Thread.sleep(3000);
+
+                subTextOfSummay = text_SammaryField.substring(0, 5);
+
+                if (thisMonth >= getMonth) {
+                    if ((thisDate - getDate) >= 0) {
+                        summaryUpdateWithCT(subTextOfSummay);
+                    }
+
+                } else {
+                    System.out.println("Not able to validate the date");
+                    break;
+                }
             }
-            System.out.println(dateDispaly());
-            //readExcel("Sheet1");
 
-
-        }catch (Exception e){
+        } catch (Exception e) {
             System.out.println("Failed to login to the Remedy Portal, please look the error message for reference " + e.getMessage());
         }
     }
 
-    public static String  dateDispaly() throws InterruptedException{
+    public static void summaryUpdateWithCT(String subTextOfSummay) throws InterruptedException {
+
+        Thread.sleep(3000);
+
+        if (!subTextOfSummay.contains("CT")) {
+            updatedSummaryText = "CT0 " + thisDate + "/" + thisMonth + " " + text_SammaryField;
+
+            Thread.sleep(1000);
+            CommonActions.scrollToElement(RemedyLoginPage.add_updateRequest);
+            Thread.sleep(1000);
+            RemedyLoginPage.noteTextArea.sendKeys("Sample Text yet to get");
+            Thread.sleep(1000);
+            CommonActions.clickWebElement(RemedyLoginPage.moreDetailsArrow);
+            CommonActions.clickWebElement(RemedyLoginPage.radioBtn_public);
+            Thread.sleep(2000);
+        } else if (subTextOfSummay.contains("CT0")) {
+            updatedSummaryText = "CT1 " + thisDate + "/" + thisMonth + " " + text_SammaryField;
+
+            RemedyLoginPage.noteTextArea.sendKeys("Sample Text yet to get");
+            Thread.sleep(1000);
+            CommonActions.clickWebElement(RemedyLoginPage.moreDetailsArrow);
+            CommonActions.clickWebElement(RemedyLoginPage.radioBtn_public);
+            Thread.sleep(2000);
+        } else if (subTextOfSummay.contains("CT1")) {
+            updatedSummaryText = "CT2 " + thisDate + "/" + thisMonth + " " + text_SammaryField;
+
+            RemedyLoginPage.noteTextArea.sendKeys("Sample Text yet to get");
+            Thread.sleep(1000);
+            CommonActions.clickWebElement(RemedyLoginPage.moreDetailsArrow);
+            CommonActions.clickWebElement(RemedyLoginPage.radioBtn_public);
+            Thread.sleep(2000);
+        } else if (subTextOfSummay.contains("CT2")) {
+            updatedSummaryText = "CT3 " + thisDate + "/" + thisMonth + " " + text_SammaryField;
+
+            RemedyLoginPage.noteTextArea.sendKeys("Sample Text yet to get");
+            Thread.sleep(1000);
+            CommonActions.clickWebElement(RemedyLoginPage.moreDetailsArrow);
+            CommonActions.clickWebElement(RemedyLoginPage.radioBtn_public);
+            Thread.sleep(2000);
+
+        } else if (subTextOfSummay.contains("CT3")) {
+            updatedSummaryText = text_SammaryField;
+
+            RemedyLoginPage.noteTextArea.sendKeys("Sample Text yet to get");
+            Thread.sleep(1000);
+            CommonActions.clickWebElement(RemedyLoginPage.moreDetailsArrow);
+            CommonActions.clickWebElement(RemedyLoginPage.radioBtn_public);
+            Thread.sleep(2000);
+            CommonActions.clickWebElement(RemedyLoginPage.workInfotyepArow);
+            CommonActions.clickWebElement(RemedyLoginPage.cancelInfo);
+            Thread.sleep(2000);
+            statusUpdate("Rejected");
+            Thread.sleep(2000);
+        }
+        Thread.sleep(2000);
+        RemedyLoginPage.summaryField.clear();
+        Thread.sleep(2000);
+        RemedyLoginPage.summaryField.sendKeys(updatedSummaryText);
+
+        /*   final step to update the request
+         * ***********************************************************************/
+        //add_RequestUpdate();
+
+    }
+
+    public static void statusUpdate(String type) throws InterruptedException {
+
+        Thread.sleep(2000);
+        RemedyLoginPage.statusTypeSelArrow.click();
+        Thread.sleep(2000);
+        driver.findElement(By.xpath("(//tr[@class='MenuTableRow']/td[normalize-space()='" + type + "'][1])[1]")).click();
+        Thread.sleep(2000);
+    }
+
+
+    public static void add_RequestUpdate() throws InterruptedException {
+        Thread.sleep(2000);
+        CommonActions.clickWebElement(RemedyLoginPage.add_updateRequest);
+        Thread.sleep(2000);
+        System.out.println("Successfully request has been updated");
+    }
+
+ /*   public static String  getCurrentDate() throws InterruptedException{
 
         DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy" , Locale.UK);
         Date date = new Date();
@@ -113,85 +207,15 @@ public class RemedyLoginAction extends Environment {
         String todayDate = dateFormat.format(date);
         System.out.println("Today date is :  "+ todayDate);
         StringTokenizer st = new StringTokenizer(todayDate,"/");
-        String thisDate = st.nextToken();
-        String thisMoth =st.nextToken();
+         thisDate = st.nextToken();
+         thisMonth =st.nextToken();
         Thread.sleep(230);
-        System.out.println("thisDate ----- >>  "   +thisDate);
-        System.out.println("thisMoth ----- >>  "   +thisMoth);
-        return thisDate+","+thisMoth;
-    }
+        //System.out.println("thisDate ----- >>  "   +thisDate);
+        //System.out.println("thisMoth ----- >>  "   +thisMoth);
+        return thisDate+","+thisMonth;
+    }*/
 
-
-    /*public static  void readExcel(String sheetName) throws IOException {
-
-        String fileName="Copy of Telefonica Team";
-
-        //Create an object of File class to open xlsx file
-
-        File file =    new File("C:\\Users\\subbaiv1\\Desktop\\REMEDY");
-
-        //Create an object of FileInputStream class to read excel file
-
-        FileInputStream inputStream = new FileInputStream(file);
-
-        Workbook guru99Workbook = null;
-
-        //Find the file extension by splitting file name in substring  and getting only extension name
-
-        String fileExtensionName = fileName.substring(fileName.indexOf("."));
-
-        //Check condition if the file is xlsx file
-
-        if(fileExtensionName.equals(".xlsx")){
-
-            //If it is xlsx file then create object of XSSFWorkbook class
-
-            guru99Workbook = new XSSFWorkbook(inputStream);
-
-        }
-
-        //Check condition if the file is xls file
-
-        else if(fileExtensionName.equals(".xls")){
-
-            //If it is xls file then create object of XSSFWorkbook class
-
-            guru99Workbook = new HSSFWorkbook(inputStream);
-
-        }
-
-        //Read sheet inside the workbook by its name
-
-        Sheet guru99Sheet = guru99Workbook.getSheet(sheetName);
-
-        //Find number of rows in excel file
-
-        int rowCount = guru99Sheet.getLastRowNum()-guru99Sheet.getFirstRowNum();
-
-        //Create a loop over all the rows of excel file to read it
-
-        for (int i = 0; i < rowCount+1; i++) {
-
-            Row row = guru99Sheet.getRow(i);
-
-            //Create a loop to print cell values in a row
-
-            for (int j = 0; j < row.getLastCellNum(); j++) {
-
-                //Print Excel data in console
-
-                System.out.print(row.getCell(j).getStringCellValue()+"|| ");
-
-            }
-
-            System.out.println();
-
-        }
-
-
-
-    }
-
-*/
 
 }
+
+

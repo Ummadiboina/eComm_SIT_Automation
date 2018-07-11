@@ -49,7 +49,41 @@ public class RemedyLoginPage {
     public static WebElement querySerchBarTextField;
 
 
+    //summary field
+    @FindBy(how = How.XPATH, using = "(//label[normalize-space()='Summary*']/following-sibling::textarea)[1]")
+    public static WebElement summaryField;
 
+
+    //status type select arrow
+    @FindBy(how = How.XPATH, using = "(//div[@ardbn='Status']//img)[2]")
+    public static WebElement statusTypeSelArrow;
+
+
+    //Note Text Area
+    @FindBy(how = How.XPATH, using = "//label[text()='Notes:']/following-sibling::textarea")
+    public static WebElement noteTextArea;
+
+    //More Details Arrow
+    @FindBy(how = How.XPATH, using = "//span[contains(text(),'More Details')]/../a/span")
+    public static WebElement moreDetailsArrow;
+
+    //Public radio button
+    @FindBy(how = How.XPATH, using = "(//label[text()='Public']/preceding-sibling::input)[2]")
+    public static WebElement radioBtn_public;
+
+    //add button to update query
+    @FindBy(how = How.XPATH, using = "//a[@ardbn='z3Btn_AddWorkInfoLessMode']/div/div")
+    public static WebElement add_updateRequest;
+
+
+    //work info type arrow
+    @FindBy(how = How.XPATH, using = "//label[text()='Work Info Type']/..//a")
+    public static WebElement workInfotyepArow;
+
+
+    //Cancellation information
+    @FindBy(how = How.XPATH, using = "//tr/td[text()='Cancellation Information']")
+    public static WebElement cancelInfo;
 
 }
 
