@@ -58,7 +58,6 @@ public class RemedyLoginPage {
     @FindBy(how = How.XPATH, using = "(//div[@ardbn='Status']//img)[2]")
     public static WebElement statusTypeSelArrow;
 
-
     //Note Text Area
     @FindBy(how = How.XPATH, using = "//label[text()='Notes:']/following-sibling::textarea")
     public static WebElement noteTextArea;
@@ -84,6 +83,11 @@ public class RemedyLoginPage {
     //Cancellation information
     @FindBy(how = How.XPATH, using = "//tr/td[text()='Cancellation Information']")
     public static WebElement cancelInfo;
+
+    //Logout Button
+    @FindBy(how = How.XPATH, using = "(//a[@ardbn='Logout_btn'])[1]")
+    public static WebElement logOut;
+
 
 }
 

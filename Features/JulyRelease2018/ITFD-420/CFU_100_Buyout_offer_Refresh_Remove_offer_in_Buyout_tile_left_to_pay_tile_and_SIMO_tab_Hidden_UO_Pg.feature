@@ -1,17 +1,17 @@
-Feature: CFU_100_Buyout_offer_Refresh_Remove_Buyout_offer_in_Buyout_tile_Display_left_to_pay_tile_and_SIMO_tab.feature
+Feature: CFU_100_Buyout_offer_Refresh_Remove_offer_in_Buyout_tile_left_to_pay_tile_and_SIMO_tab_Hidden_UO_Pg.feature
 
   This scenario validates basket and payment page is displayed for customer in Simo upgrade journey with active voucherable promotions available for the selected tariff and No upfront payment pending from customer
 
   @Web
-  Scenario Outline: CFU_100_Buyout_offer_Refresh_Remove_Buyout_offer_in_Buyout_tile_Display_left_to_pay_tile_and_SIMO_tab
+  Scenario Outline: CFU_100_Buyout_offer_Refresh_Remove_offer_in_Buyout_tile_left_to_pay_tile_and_SIMO_tab_Hidden_UO_Pg
     Given I am an Existing user and Navigates to Signin page
     And Signin using valid <username> and <password> credentials
     And Navigate to upgrade > upgrade now
-    And MSISDN should be selected by default and buyout offer should be applied by default
+    And MSISDN <MSISDN> should be selected by default and buyout offer should be applied by default
     #The £ saving should be the left to pay value on current device plan i.e. CCA settlement fee
-    And The new copy text "Upgrade to a new phone today. We'll pay off the rest of your Device Plan, saving you £XXX" should be displayed in buyout offered tile
+    And The new copy text 'Upgrade to a new phone today. We'll pay off the rest of your Device Plan, saving you £XXX' should be displayed in buyout offered tile
     And verify The 'Remove offer' is displayed on the Buyout offer tile
-    And Verify that the buyout offer section is displayed with 'Take offer and Upgrade' CTA under 'Your Options' heading
+    #And Verify that the buyout offer section is displayed with 'Take offer and Upgrade' CTA under 'Your Options' heading
     And Verify that '£XXX.XX left to pay on your current Device Plan' panel is displayed below the buyout offer panel and below to that upgrade and recycle options should not be displayed
     And verify that The 'SIMO tab' should be hidden
     #And click on 'Take offer and upgrade'button
@@ -52,6 +52,6 @@ Feature: CFU_100_Buyout_offer_Refresh_Remove_Buyout_offer_in_Buyout_tile_Display
     Then Choose <consumer> <status> Business preferences <B1> <B2> <B3> <B4> And Channel Preferences <Text> <Email> <Phone> <Post> <MBBStatus> <DeviceType>
 
     Examples:
-      | Tablet        | Action | Surname | Username     | handset  | Delivery | Payment | filtername | sortoption                 | username                         | password | consumer     | B1     | B2     | B3  | B4  | Text | Email  | Phone | Post   | status  | MBBStatus | DeviceType |
-      | Random Device | skip   | ACCEPTA | TEST ACCEPTA | iPhone 8 | Delivery | Payment | low        | Monthly data (Low to High) | testaccepta4289@stf.ref.o2.co.uk | test123  | SomeOne else | Select | Select | Not | Not | Not  | Select | Not   | Select | Enabled | No        | Connected  |
+      | Tablet        | Action | Surname | handset  | Delivery | Payment | filtername | sortoption                 | username                         | password | consumer     | B1     | B2     | B3  | B4  | Text | Email  | Phone | Post   | status  | MBBStatus | DeviceType |MSISDN|
+      | Random Device | skip   | ACCEPTA | iPhone 8 | Delivery | Payment | low        | Monthly data (Low to High) | testaccepta4289@stf.ref.o2.co.uk | test123  | SomeOne else | Select | Select | Not | Not | Not  | Select | Not   | Select | Enabled | No        | Connected  |098789999|
 

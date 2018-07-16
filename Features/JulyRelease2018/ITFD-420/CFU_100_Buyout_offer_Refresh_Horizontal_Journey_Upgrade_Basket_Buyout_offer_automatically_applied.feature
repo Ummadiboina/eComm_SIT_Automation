@@ -7,9 +7,9 @@ Feature: CFU_100_Buyout_offer_Refresh_Horizontal_Journey_Upgrade_Basket_Buyout_o
     Given I am an Existing user and Navigates to Signin page
     And Signin using valid <username> and <password> credentials
     And Navigate to upgrade > upgrade now
-    And MSISDN should be selected by default and buyout offer should be applied by default
+    And MSISDN <MSISDN> should be selected by default and buyout offer should be applied by default
     #The £ saving should be the left to pay value on current device plan i.e. CCA settlement fee
-    And The new copy text "Upgrade to a new phone today. We'll pay off the rest of your Device Plan, saving you £XXX" should be displayed in buyout offered tile
+  The new copy text 'Upgrade to a new phone today. We'll pay off the rest of your Device Plan, saving you £XXX' should be displayed in buyout offered tile
     And verify The 'Remove offer' is displayed on the Buyout offer tile
     And Verify that the buyout offer section is displayed with 'Take offer and Upgrade' CTA under 'Your Options' heading
     And Verify that '£XXX.XX left to pay on your current Device Plan' panel is displayed below the buyout offer panel and below to that upgrade and recycle options should not be displayed

@@ -2,7 +2,7 @@ Feature: Ensuring that the Drupal- logout message is merchandised_Desktop
 
   This scenario validates that the Drupal - logout message is merchandised
 
-  @Web
+  @Web123
 
   Scenario Outline: Ensuring that the Drupal- logout message is merchandised_Desktop
     Given I am an Existing user and Navigates to Signin page
