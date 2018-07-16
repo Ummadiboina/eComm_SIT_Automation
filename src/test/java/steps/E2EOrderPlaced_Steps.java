@@ -118,7 +118,7 @@ public class E2EOrderPlaced_Steps {
         try {
 
             log.debug("The Page title is " + pageTitle);
-            log.debug("Currently we are at " + pageTitle + " page");
+            log.debug("Currently we are at "+pageTitle+" page");
             Thread.sleep(4000);
             Screenshots.captureScreenshot();
 
@@ -128,8 +128,8 @@ public class E2EOrderPlaced_Steps {
                 log.debug("Clicked on My O2 link");
                 Thread.sleep(5000);
             } else {
-                log.debug("Failed to Click on My O2 link at " + pageTitle + " page");
-                Assert.fail("Failed to Click on My O2 link at " + pageTitle + " page");
+                log.debug("Failed to Click on My O2 link at "+pageTitle+" page");
+                Assert.fail("Failed to Click on My O2 link at "+pageTitle+" page");
             }
         } catch (Exception e) {
             // TODO Auto-generated catch block
@@ -145,7 +145,7 @@ public class E2EOrderPlaced_Steps {
         try {
 
             log.debug("The Page title is " + pageTitle);
-            log.debug("Currently we are at " + pageTitle + " page");
+            log.debug("Currently we are at "+pageTitle+" page");
             Thread.sleep(4000);
             Screenshots.captureScreenshot();
 
@@ -190,7 +190,7 @@ public class E2EOrderPlaced_Steps {
         }
     }
 
-    @Then("^validate 'My O2' page$")
+    @Then("^validate 'My O2' section$")
     public void validateMyO2Page() {
         try {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
@@ -240,7 +240,6 @@ public class E2EOrderPlaced_Steps {
         try {
             driver.manage().timeouts().implicitlyWait(12, TimeUnit.SECONDS);
             PageFactory.initElements(driver, MouseHoverPage.class);
-
             MouseHoverAction.PayMPhonesLandingPage();
             Thread.sleep(4000);
             Autoredirection.redirect();
@@ -368,6 +367,21 @@ public class E2EOrderPlaced_Steps {
             log.debug("unable to do mousehover to Pay as you Go Phones page");
             Assert.fail("unable to do mousehover to Pay as you Go Phones page");
 
+        }
+    }
+
+    @Given("^Navigate to Ipad page$")
+    public void navigate_to_Ipad_page() {
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, MouseHoverPage.class);
+            MouseHoverAction.IpadPage();
+            Autoredirection.redirectforHTTPsconnections();
+            Thread.sleep(10000);
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            log.debug("unable to do mousehover to Sims and Ipad Sims page");
+            Assert.fail("unable to do mousehover to Sims and Ipad Sims page");
         }
     }
 
@@ -590,6 +604,8 @@ public class E2EOrderPlaced_Steps {
     }
 
 
+
+
     @And("^Click on View all Tariffs$")
     public void ClickonViewAllTariffsDeviceDetailspage() {
         try {
@@ -787,7 +803,7 @@ public class E2EOrderPlaced_Steps {
         try {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, UpgradeCustomerPage.class);
-
+            Thread.sleep(4000);
             UpgradeCustomerPageActions.Login(username, password);
         } catch (Exception e) {
             // TODO Auto-generated catch block
@@ -896,6 +912,21 @@ public class E2EOrderPlaced_Steps {
         }
     }
 
+    @And("^Click on browser back arrow and land on previous page$")
+    public void click_browser_back_arrow() {
+        try {
+            driver.manage().timeouts().implicitlyWait(120, TimeUnit.SECONDS);
+            driver.navigate().back();
+            log.debug("we have navigated back to the previous page");
+            Thread.sleep(5000);
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            log.debug("Failed to navigate back to the previous page");
+            Assert.fail("Failed to navigate back to the previous page");
+
+        }
+    }
+
     @Then("^validate URL after clicking on 'Register' link$")
     public void redirectURLWhenClicksOnRegisterLink_MyO2() {
         try {
@@ -946,6 +977,7 @@ public class E2EOrderPlaced_Steps {
     /*############# All the Below are for the Tariff and Extras Page*/
 
 
+
     @Given("^Land on the 'Tariffs and extra' page$")
     public void land_on_the_Tariffs_and_extra_page() {
         try {
@@ -971,7 +1003,7 @@ public class E2EOrderPlaced_Steps {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, PAYMandPAYGTariffAndExtrasPage.class);
             Thread.sleep(3000);
-            PAYMandPAYGTariffAndExtrasPageActions.TariffSelect(Tariff_Value + "|" + Big_Bundle_Data);
+            PAYMandPAYGTariffAndExtrasPageActions.TariffSelect(Tariff_Value+"|"+Big_Bundle_Data);
             Thread.sleep(6000);
             // PAYMandPAYGTariffAndExtrasPageActions.addToBasketLive();
         } catch (Exception e) {
@@ -1099,7 +1131,7 @@ public class E2EOrderPlaced_Steps {
             PageFactory.initElements(driver, PAYMandPAYGTariffAndExtrasPage.class);
             PAYMandPAYGTariffAndExtrasPageActions.addToBasketLive();
             Thread.sleep(3000);
-            BasketPageActions.ValidateBasketPageContents("", "");
+            BasketPageActions.ValidateBasketPageContents("","");
             Thread.sleep(5000);
             BasketPageActions.CollectionorDelivery("clickAndCollect");
             Thread.sleep(3000);
@@ -1294,6 +1326,7 @@ public class E2EOrderPlaced_Steps {
 
         }
     }
+
 
 
     @And("^input ([^\"]*) and ([^\"]*) and other valid details in Delivery page to verify GDPR$")
@@ -1843,7 +1876,7 @@ public class E2EOrderPlaced_Steps {
 
 
     @And("^land on the payment page and input ([^\"]*) and other details for Click and collect order and click 'Continue on next step'$")
-    public void CreditCheckPaymentPage_ClickAndCollect(String Username) {
+    public void CreditCheckPaymentPage_ClickAndCollect(String Username){
         // Write code here that turns the phrase above into concrete actions
         try {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
@@ -1869,7 +1902,7 @@ public class E2EOrderPlaced_Steps {
 
 
     @And("^land on the payment page and input ([^\"]*) and other details for Click and collect order and click 'Continue on next step' for payments$")
-    public void CreditCheckPaymentPage_ClickAndCollect_CreditCheck(String Username) {
+    public void CreditCheckPaymentPage_ClickAndCollect_CreditCheck(String Username){
         // Write code here that turns the phrase above into concrete actions
         try {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
@@ -1933,6 +1966,7 @@ public class E2EOrderPlaced_Steps {
         }
 
     }
+
 
 
     @Given("^I land on the payment page and input all the details for high value Click and collect order and click 'Continue on next step'$")
@@ -2175,6 +2209,7 @@ public class E2EOrderPlaced_Steps {
     }*/
 
 
+
     @And("^Continue to Review page and review the order$")
     public void ReviewPageConfirmation() {
         // Write code here that turns the phrase above into concrete actions
@@ -2393,7 +2428,6 @@ public class E2EOrderPlaced_Steps {
         log.debug("Clicked on the O2 Refresh Deal Summary YES button");
 
     }
-
     @Then("^Accept O2 Refresh Deal Summary$")
     public void AcceptO2() throws Throwable {
         Thread.sleep(3000);
@@ -2476,6 +2510,7 @@ public class E2EOrderPlaced_Steps {
         Thread.sleep(3000);
         Agent_HomePagePageActions.upgradeUser();
         Thread.sleep(4000);
+        Screenshots.captureScreenshot();
         /*
          * } catch (Exception e) { // TODO Auto-generated catch block System.out.
          * println("Unable to login for upgrade for user in Agent shop, please see the failure screenshot"
@@ -2556,7 +2591,6 @@ public class E2EOrderPlaced_Steps {
             Assert.fail("Unable to select Valid PAYG device, please see the failure screenshot");
         }
     }
-
     /*
     April2018
      */
@@ -2572,7 +2606,6 @@ public class E2EOrderPlaced_Steps {
 
         }
     }
-
     @And("^click on '\\+' accordion at the top of deal builder$")
     public void click_on_accordion_at_the_top_of_deal_builder() {
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
@@ -2586,7 +2619,6 @@ public class E2EOrderPlaced_Steps {
             Assert.fail("Unable to click on '+'accordion , please see the failure screenshot");
         }
     }
-
     @And("^verify user switched to Email Basket pop up window$")
     public void verify_user_switched_to_Email_Basket_pop_up_window() {
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
@@ -2599,7 +2631,6 @@ public class E2EOrderPlaced_Steps {
 
         }
     }
-
     /*
      * #########################################################################
      * #########
@@ -2652,6 +2683,8 @@ public class E2EOrderPlaced_Steps {
 
         }
     }
+
+
 
 
     @Given("^Verify email is sent successfully$")
@@ -2731,7 +2764,7 @@ public class E2EOrderPlaced_Steps {
             driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
             PageFactory.initElements(driver, PAYGSimoPage.class);
             Thread.sleep(3000);
-            PAYGSimOPageActions.selectTariff(FreeSim_Type, "DataRollOver", Tariff_Value + "|" + Big_Bundle_Data);
+            PAYGSimOPageActions.selectTariff(FreeSim_Type, "DataRollOver", Tariff_Value+"|"+Big_Bundle_Data);
 
             Thread.sleep(5000);
         } catch (Exception e) {
@@ -2819,7 +2852,7 @@ public class E2EOrderPlaced_Steps {
             PageFactory.initElements(driver, Agent_AdvisoryPage.class);
             PageFactory.initElements(driver, DeliveryPage.class);
 
-            if (pageobjects.DeliveryPage.HouseNum.isDisplayed()) {
+            if(pageobjects.DeliveryPage.HouseNum.isDisplayed()) {
                 DeliveryPageActions.SetDelivery_AFU();
             }
             Thread.sleep(4000);
@@ -3454,7 +3487,7 @@ public class E2EOrderPlaced_Steps {
             PageFactory.initElements(driver, PAYMandPAYGTariffAndExtrasPage.class);
             PAYMandPAYGTariffAndExtrasPageActions.addToBasketLive();
             Thread.sleep(3000);
-            BasketPageActions.ValidateBasketPageContents("", "");
+            BasketPageActions.ValidateBasketPageContents("","");
         } catch (Exception e) {
             // TODO Auto-generated catch block
             Assert.fail("Unable to land on Basket page");
@@ -3773,7 +3806,7 @@ public class E2EOrderPlaced_Steps {
             MouseHoverAction.UpgradeandUpgradeNow();
             Thread.sleep(7000);
             Autoredirection.redirectUpgrades();
-            Thread.sleep(5000);
+            Thread.sleep(7000);
         } catch (Exception e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
@@ -5370,6 +5403,7 @@ public class E2EOrderPlaced_Steps {
     }
 
 
+
     @Then("^check if the selected non connected device has more than 1 variant for colour and single variant for capacity$")
     public void check_if_the_selected_non_connected_device_has_more_than_1_variant_for_colour_and_single_variant_for_capacity() {
 
@@ -5459,7 +5493,7 @@ public class E2EOrderPlaced_Steps {
             PageFactory.initElements(driver, PAYMandPAYGTariffAndExtrasPage.class);
             PAYMandPAYGTariffAndExtrasPageActions.addToBasketLive();
             Thread.sleep(3000);
-            BasketPageActions.ValidateBasketPageContents("", "");
+            BasketPageActions.ValidateBasketPageContents("","");
             Thread.sleep(3000);
         } catch (Exception e) {
             // TODO Auto-generated catch block
@@ -5507,8 +5541,9 @@ public class E2EOrderPlaced_Steps {
             Thread.sleep(6000);
             //UpgradeCustomerPageActions.selectDeviceInRecommendedDevicesSection(devicename);
             // driver.findElement(By.xpath("(//span[normalize-space()='Apple'])[1]")).click();
+            scrollToAnElement.scrollToElement(driver.findElement(By.xpath("(//button[normalize-space()='Select'])[2]")));
             Screenshots.captureScreenshot();
-            //Screenshots.captureScreenshot(Hooks.directoryName);
+
             JavascriptExecutor executor = (JavascriptExecutor) driver;
             executor.executeScript("arguments[0].click();", driver.findElement(By.xpath("(//button[normalize-space()='Select'])[2]")));
             Thread.sleep(7000);
@@ -5763,6 +5798,7 @@ public class E2EOrderPlaced_Steps {
             ExpectedTimeSlotMessage = "Your order will be delivered for free, via Royal Mail, within three working days.";
             // Assert.assertTrue("Your error message",
             // OrderConfirmationPageActions.TimeslotMessage().contains(ExpectedMessage));
+
 
 
             Assert.assertTrue(driver.getPageSource().contains(ExpectedTimeSlotMessage),
@@ -6685,7 +6721,6 @@ public class E2EOrderPlaced_Steps {
 
         }
     }
-
     @And("^verify if the tradein offer is displayed in My Package section$")
     public void verifyTradeInOfferInMyPackage() {
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
@@ -8314,6 +8349,7 @@ public class E2EOrderPlaced_Steps {
     }
 
 
+
     @And("^verify copy text You will need to give details for all fields marked with an asterisk is displayed in PAYG Sim Journey$")
     public void verify_copy_text_allFields_narked_with_asterisk_PAYG_sim_journey() {
         try {
@@ -8968,7 +9004,8 @@ public class E2EOrderPlaced_Steps {
     }
 
     @And("^Click on 'Select' CTA to buy a tariff$")
-    public void Click_on_Select_CTA_to_buy_SIMO_Tariff() {
+    public void Click_on_Select_CTA_to_buy_SIMO_Tariff()
+    {
         try {
             driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
             PageFactory.initElements(driver, PAYMSimOPage.class);
@@ -8981,7 +9018,8 @@ public class E2EOrderPlaced_Steps {
     }
 
     @And("^Click on 'Select' CTA to buy a valid ([^\"]*) and ([^\"]*)$")
-    public void Select_CTA_to_buy_SIMO_Tariff(String tariffAmt, String dataValue) {
+    public void Select_CTA_to_buy_SIMO_Tariff(String tariffAmt, String dataValue)
+    {
         try {
             driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
             PageFactory.initElements(driver, PAYMSimOPage.class);
@@ -8992,6 +9030,7 @@ public class E2EOrderPlaced_Steps {
             Assert.fail("Unable to click on Click on 'Pick a sim only tariff link', please see the failure screenshot");
         }
     }
+
 
     @And("^the customer is landed on Review page$")
     public void theCustomerIsLandedOnReviewPage() {
@@ -9735,7 +9774,9 @@ public class E2EOrderPlaced_Steps {
     @Then("^Verify that the deal has already some offers Bolton ([^\"]*) promotions applied$")
     public void verify_that_the_deal_has_already_some_offers_Bolton_promotions(String str) {
         try {
-            log.debug("Successfully verified the deail builder");
+            Thread.sleep(4000);
+            Screenshots.captureScreenshot();
+            log.debug("Successfully verified the deal builder");
         } catch (Exception e) {
             log.debug("Unable to validate section");
             Assert.fail("Unable to validate section");
@@ -9843,6 +9884,7 @@ public class E2EOrderPlaced_Steps {
     @And("^Verify that the buyout offer section is displayed with 'Take offer and Upgrade' CTA under 'Your Options' heading$")
     public void verify_that_the_buyout_offer_section_is_displayed() {
         try {
+            driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
             PageFactory.initElements(driver, UpgradePhonesListingPage.class);
             UpgradeCustomerPageActions.verifyBuyOutMessage();
             log.debug("Verified that the buyout offer section is displayed");
@@ -9954,7 +9996,7 @@ public class E2EOrderPlaced_Steps {
 
     @And("^Verify that in 'Your package' summary Buyout is displayed with Recycle$")
     public void verify_that_in_Your_package_summarr_Buyout_is_displayed_with_Recycle() {
-        driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(15,TimeUnit.SECONDS);
         try {
             int tmpBuyOutValue = 0;
             PageFactory.initElements(driver, UpgradePhonesListingPage.class);
@@ -10135,7 +10177,7 @@ public class E2EOrderPlaced_Steps {
 //shubhasharee
 
     @And("^verify 'Get basket link' is displayed next to selected device in the Email Basket pop up window$")
-    public void validateSelectedDevicesInEmailBasketPopup() {
+    public void validateSelectedDevicesInEmailBasketPopup(){
         try {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             Agent_DealBuilderPageActions.validateEmailBasketPopupDeviceList(selectedElements);
@@ -10190,7 +10232,7 @@ public class E2EOrderPlaced_Steps {
 
     //GDPR
     @And("^Is this order for You or Someone else ([^\"]*) when GDPR is ([^\"]*)$")
-    public void isThisOrder4UorSomeoneElse(String customer, String status) throws IOException {
+    public void isThisOrder4UorSomeoneElse(String customer, String status)throws IOException {
         try {
             driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
             PageFactory.initElements(driver, DeliveryPage.class);
@@ -10215,7 +10257,7 @@ public class E2EOrderPlaced_Steps {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, OrderConfirmationPage.class);
             Thread.sleep(5000);
-            OrderConfirmationPageActions.PreferencesSection(consumer, gdprStatus, BP1, BP2, BP3, BP4, Chn1, Chn2, Chn3, Chn4, MBBStatus, DeviceType);
+            OrderConfirmationPageActions.PreferencesSection(consumer,gdprStatus, BP1, BP2, BP3, BP4, Chn1, Chn2, Chn3, Chn4,MBBStatus, DeviceType);
         } catch (Exception e) {
             // TODO Auto-generated catch block
             log.debug("Unable to Choose your preferences, please see the failure screenshot");
@@ -10232,7 +10274,7 @@ public class E2EOrderPlaced_Steps {
             driver.manage().timeouts().implicitlyWait(200, TimeUnit.SECONDS);
             PageFactory.initElements(driver, Agent_RegisterCustomerPage.class);
             Thread.sleep(5000);
-            Agent_RegisterCustomerActions.PreferencesSection_AFA(BP1, BP2, BP3, BP4, Chn1, Chn2, Chn3, Chn4, customer, status, DeviceType, Device_Module);
+            Agent_RegisterCustomerActions.PreferencesSection_AFA(BP1, BP2, BP3, BP4, Chn1, Chn2, Chn3, Chn4, customer, status,DeviceType, Device_Module);
             log.debug("Completed preference actions");
 
         } catch (Exception e) {
@@ -10251,7 +10293,7 @@ public class E2EOrderPlaced_Steps {
             driver.manage().timeouts().implicitlyWait(200, TimeUnit.SECONDS);
             PageFactory.initElements(driver, Agent_RegisterCustomerPage.class);
             Thread.sleep(5000);
-            Agent_RegisterCustomerActions.PreferencesSection_AFU(BP1, BP2, BP3, BP4, Chn1, Chn2, Chn3, Chn4, customer, status, DeviceType);
+            Agent_RegisterCustomerActions.PreferencesSection_AFU(BP1, BP2, BP3, BP4, Chn1, Chn2, Chn3, Chn4, customer, status,DeviceType);
             log.debug("Completed preference actions");
 
         } catch (Exception e) {
@@ -10261,6 +10303,7 @@ public class E2EOrderPlaced_Steps {
 
         }
     }
+
 
 
     @And("Select create a new account and begin checkout")
@@ -10276,8 +10319,9 @@ public class E2EOrderPlaced_Steps {
 
         }
     }
-
-
+    
+    
+    
     @And("MSISDN <MSISDN> should be selected by default and buyout offer should be applied by default")
     public void MSISDN_should_be_selected_by_default_and_buyout_offer_should_be_applied_by_default(String msisdn) {
         //driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
@@ -10431,16 +10475,17 @@ public class E2EOrderPlaced_Steps {
                 Assert.fail("Unable to select Create New account");
             }
         }
-
+             
 
     //*********************************************************  REMEDY AUTOMATION   ******************************************
+
 
     @Given("Login Remedy tool with the details userName ([^\"]*) and password ([^\"]*)")
     public void loginRemedyTool(String userName, String password) throws InterruptedException {
         Thread.sleep(8000);
         try {
             PageFactory.initElements(driver, RemedyLoginPage.class);
-            RemedyLoginAction.LoginIntoRemedyApp(userName, password);
+            RemedyLoginAction.LoginIntoRemedyApp(userName,password);
         } catch (Exception e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
@@ -10451,8 +10496,8 @@ public class E2EOrderPlaced_Steps {
 
 
     @And("update the request with CT")
-    public void updateTheRequest() throws InterruptedException {
-        Thread.sleep(8000);
+    public void selectApplicationType() throws InterruptedException {
+        Thread.sleep(3000);
         try {
             PageFactory.initElements(driver, RemedyLoginPage.class);
             RemedyLoginAction.chooseAppType();
@@ -10464,7 +10509,43 @@ public class E2EOrderPlaced_Steps {
         }
     }
 
+    //Jamal----Bill Spend Caps Section--------
 
+    @And("Validate Bill Spend Caps section and choose your cap ([^\"]*) ([^\"]*)")
+    public void ChoosYourCap(String BillCap, String CapAmount) {
 
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, PAYMandPAYGTariffAndExtrasPage.class);
+            Thread.sleep(5000);
+            PAYMandPAYGTariffAndExtrasPageActions.add_BillSpendCap( BillCap, CapAmount);
+            Thread.sleep(6000);
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            log.debug("Unable to Land on Tariff and extras page and fail to cap the bill");
+            Assert.fail("Unable to Land on Tariff and extras page and fail to cap the bill");
 
+        }
+    }
+
+    @And("Validate added Bill Spend Cap in Basket page")
+    public void ValidateYourCapInBasketPage() {
+
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, BasketPage.class);
+            Thread.sleep(5000);
+            BasketPageActions.ValidateBillSpendCapInBasketPage();
+            Thread.sleep(5000);
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            log.debug("Unable to validate you bill cap in basket page");
+            Assert.fail("Unable to validate you bill cap in basket page");
+
+        }
+
+    }   
+    
+    
+    
 }
