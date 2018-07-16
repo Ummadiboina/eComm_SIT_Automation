@@ -7,7 +7,7 @@ Feature: Invalid_Credentials_DGN_Clicking_My_O2_link_on_global Nav_Tablet
   Scenario Outline: Invalid_Credentials_DGN_Clicking_My_O2_link_on_global Nav_Tablet
     Given I am an CFA user and Lands on shop page
     And click on 'My O2' link
-    Then validate 'My O2' page
+    Then validate 'My O2' section
     And Enter valid credentials <username> <password> and submit form
 
 

@@ -7,7 +7,7 @@ Feature: My_O2_Sign_in_Overlay_Validation_Desktop
   Scenario Outline: My_O2_Sign_in_Overlay_Validation_Desktop
     Given I am an CFA user and Lands on shop page
     And click on 'My O2' link
-    Then validate 'My O2' page
+    Then validate 'My O2' section
     And Enter valid credentials <username> <password> and submit form
     Then Logout from MyO2 page
     And click on 'My O2' link

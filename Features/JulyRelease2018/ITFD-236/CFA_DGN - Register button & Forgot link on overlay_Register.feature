@@ -7,7 +7,7 @@ Feature: CFA_DGN - Register button & Forgot link on overlay_Register
   Scenario Outline: CFA_DGN - Register button & Forgot link on overlay_Register
     Given I am an CFA user and Lands on shop page
     And click on 'My O2' link
-    And validate 'My O2' page
+    And validate 'My O2' section
     And click on 'Register' link
     Then validate URL after clicking on 'Register' link
 

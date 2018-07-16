@@ -8,7 +8,7 @@ Feature: CFA_DGN - Register button & Forgot link on overlay_Forgot Password
   Scenario Outline: CFA_DGN - Register button & Forgot link on overlay_Forgot Password
     Given I am an CFA user and Lands on shop page
     And click on 'My O2' link
-    And validate 'My O2' page
+    And validate 'My O2' section
     And click on 'Forgotten username or password' link
     Then validate URL after clicking on 'Forgotten username or password' link
 

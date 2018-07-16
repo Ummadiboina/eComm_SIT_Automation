@@ -1,6 +1,5 @@
 package actionsPerformed;
 
-import GlobalActions.Autoredirection;
 import GlobalActions.Screenshots;
 import helpers.Environment;
 import helpers.Filereadingutility;
@@ -13,6 +12,7 @@ import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import pageobjects.AccessoryPage;
 import pageobjects.MyO2Page;
+import GlobalActions.CommonActions;
 
 import java.io.IOException;
 import java.util.List;
@@ -47,10 +47,10 @@ public class MyO2PageActions extends Environment {
 			Assert.fail("Sign-in Button is disabled after providing login credentials at MY O2 Page");
 		}
 
-		Thread.sleep(4000);
+		driver.manage().timeouts().implicitlyWait(15,TimeUnit.SECONDS);
 		log.debug("Title of the page is " + driver.getTitle());
-		 if ((!driver.getTitle().contains("MYO2 | Accounts | Please verify your email address") ||
-		 !driver.getTitle().contains("MYO2 | Accounts | Update username")))
+		 if ((!driver.getTitle().contains("O2 | Accounts | Please verify your email address") ||
+		 !driver.getTitle().contains("O2 | Accounts | Update username")))
 		 {
 		 	String errorMsg = driver.findElement(By.xpath("//*[@class='errorMsg']")).getText();
 		 	log.debug("Login failed:: "+errorMsg);
@@ -64,8 +64,7 @@ public class MyO2PageActions extends Environment {
 
 		Thread.sleep(3000);
 
-		((JavascriptExecutor) driver).executeScript("arguments[0].click();",
-				MyO2Page.SignoutLink);
+		((JavascriptExecutor) driver).executeScript("arguments[0].click();",MyO2Page.SignoutLink);
 		log.debug("Clicked on Sign out link");
 		Thread.sleep(3000);
 		Screenshots.captureScreenshot();
@@ -77,24 +76,31 @@ public class MyO2PageActions extends Environment {
 		try {
 
 			log.debug("The Page title is :" + pageTitle);
-			log.debug("Currently we are at "+pageTitle+" page");
-			log.debug("Validating the "+pageTitle+" page");
+			log.debug("Currently we are at "+pageTitle+" page \n");
+			log.debug("Validating the "+pageTitle+" page \n");
 			Thread.sleep(5000);
 			Screenshots.captureScreenshot();
 
-			if (MyO2Page.signIn.isDisplayed()) {log.debug("My O2 page has 'Sign in' link :"+MyO2Page.signIn.getText());}
-			if (MyO2Page.register.isDisplayed()) {log.debug("My O2 page has 'Register' link :"+MyO2Page.register.getText());}
+			//if (MyO2Page.signIn.isDisplayed()) {log.debug("My O2 page has 'Sign in' link :"+MyO2Page.signIn.getText());}
+
 			if (MyO2Page.signInSectionHeader.isDisplayed()) {log.debug("My O2 page 'Sign in' section header :"+MyO2Page.signInSectionHeader.getText());}
 			if (MyO2Page.signInSectionHintTxt.isDisplayed()) {log.debug("My O2 page 'Sign in' section hint text :"+MyO2Page.signInSectionHintTxt.getText());}
 			if (MyO2Page.signInUserName.isDisplayed()) {log.debug("My O2 page 'Sign in' section has user name input field :");}
 			if (MyO2Page.signInPassword.isDisplayed()) {log.debug("My O2 page 'Sign in' section has password input field :");}
-			if (MyO2Page.rememberUserName.isDisplayed()) {log.debug("My O2 page 'Sign in' section has 'Remember My UserName' input field :"+MyO2Page.rememberUserName.getText());}
+
+			if (MyO2Page.rememberUserName.isDisplayed()) {
+				String rememberTxt = driver.findElement(By.xpath("//div[normalize-space()='Remember my username']")).getText();
+				Thread.sleep(2000);
+				log.debug("My O2 page 'Sign in' section has 'Remember My UserName' input field :"+rememberTxt);
+			}
+
 			if (MyO2Page.signInButton.isDisplayed()) {log.debug("My O2 page 'Sign in' section has sign in button :"+MyO2Page.signInButton.getText());}
 			if (MyO2Page.forgotUserName.isDisplayed()) {log.debug("My O2 page 'Sign in' section has forgotton user name link :"+MyO2Page.forgotUserName.getText());}
+			if (MyO2Page.register.isDisplayed()) {log.debug("My O2 page has 'Register' link :"+MyO2Page.register.getText());}
 
 			if (MyO2Page.signInButton.isEnabled()) {
 				log.debug("Sign-in Button is enabled before providing login credentials at MY O2 Page");
-
+				Assert.fail("Sign-in Button is enabled before providing login credentials at MY O2 Page");
 			}else{
 				log.debug("As Expected:: Sign-in Button is disabled before providing login credentials at MY O2 Page");
 			}
@@ -125,8 +131,8 @@ public class MyO2PageActions extends Environment {
 		Thread.sleep(5000);
 		String redirectUrl = driver.getCurrentUrl();
 		log.debug("Redirect URL when customer clicked on register link at My O2 page:: "+ redirectUrl);
-		if (redirectUrl.contains("https://accounts.ref.o2.co.uk/register")) {
-			log.debug("Redirected to the valid URL");
+		if (redirectUrl.contains("https://accounts.o2.co.uk/register")) {
+			log.debug("Redirected to the valid Register URL: "+redirectUrl);
 		} else {
 			log.debug("Redirected to the invalid URL when customer clicked on register link at My O2 : " +redirectUrl);
 			Assert.fail("Redirected to the invalid URL when customer clicked on register link at My O2 : " +redirectUrl);
@@ -141,7 +147,7 @@ public class MyO2PageActions extends Environment {
 		String redirectUrl = driver.getCurrentUrl();
 		log.debug("Redirect URL when customer clicked on 'Forgotten username or password' link at My O2 page:: "+ redirectUrl);
 		if (redirectUrl.contains("https://accounts.ref.o2.co.uk/resetpassword/selectusername")) {
-			log.debug("Redirected to the valid URL");
+			log.debug("Redirected to the valid Forgotten username or password URL : "+redirectUrl);
 		} else {
 			log.debug("Redirected to the invalid URL when customer clicked on 'Forgotten username or password' link at My O2 : " +redirectUrl);
 			Assert.fail("Redirected to the invalid URL when customer clicked on 'Forgotten username or password' link at My O2 : " +redirectUrl);
@@ -159,7 +165,7 @@ public class MyO2PageActions extends Environment {
 			Thread.sleep(4000);
 			Screenshots.captureScreenshot();
 
-			if (driver.findElements(By.xpath("//a[contains(text(),'Register')]")).size() > 0) {
+			if (driver.findElements(By.xpath("//div[@class='register']/a")).size() > 0) {
 				log.debug("Register link is present at My O2 page and clicking on it");
 				MyO2Page.register.click();
 				log.debug("Clicked on register link at My O2 page");
@@ -185,7 +191,7 @@ public class MyO2PageActions extends Environment {
 			Thread.sleep(4000);
 			Screenshots.captureScreenshot();
 
-			if (driver.findElements(By.xpath("//*[contains(text(),'Forgotton your username and password?')]")).size() > 0) {
+			if (driver.findElements(By.xpath("//a[contains(text(),'Forgotton your username and password?')] | //div[@class='forgotton-your-usern']")).size() > 0) {
 				log.debug("'Forgotton your username and password?' link is present at My O2 page and clicking on it");
 				MyO2Page.forgotUserName.click();
 				log.debug("Clicked on 'Forgotton your username and password?' link at My O2 page");

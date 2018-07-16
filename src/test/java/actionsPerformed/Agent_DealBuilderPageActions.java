@@ -74,6 +74,7 @@ public class Agent_DealBuilderPageActions extends Environment {
             Agent_DealBuilderPage.SelectingFirstAvailableTariff.click();
             Thread.sleep(5000);
             log.debug("Selected Random Tariff ");
+            Screenshots.captureScreenshot();
         }
         if (Tariff.contains("Standard")) {
             Agent_DealBuilderPage.SearchTextBox_Tariff.sendKeys("Standard");
@@ -93,6 +94,7 @@ public class Agent_DealBuilderPageActions extends Environment {
 
         if (Tariff.contains("Refresh")) {
             Agent_DealBuilderPage.SearchTextBox_Tariff.sendKeys("Refresh");
+            Thread.sleep(3000);
             Agent_DealBuilderPage.SelectingFirstAvailableTariff.click();
             Thread.sleep(5000);
             log.debug("Selected Refresh Tariff ");
@@ -117,14 +119,14 @@ public class Agent_DealBuilderPageActions extends Environment {
 
     public static void BasecommsAgentOffersColumnValidation() throws InterruptedException, IOException {
     Thread.sleep(8000);
+        Screenshots.captureScreenshot();
         List<WebElement> menuOuter = driver.findElements(By.xpath("//*[@id='planTable']/tbody/tr"));
         log.debug(menuOuter.size());
         int j = 1;
         for (int i = 0; i < menuOuter.size()-1; i++) {
             j = i + 1;
             if (menuOuter.get(i).getText().trim().contains("Base Comms")) {
-                if (driver.findElement(By.xpath("//*[@id='planTable']/tbody/tr[" + j + "]/td[11]")).getText()
-                        .equals("Base Comms")) {
+                if (driver.findElement(By.xpath("//*[@id='planTable']/tbody/tr[" + j + "]/td[11]")).getText().equalsIgnoreCase("Base Comms")) {
                     log.debug("Offers contains Base comms");
                     driver.findElement(By.xpath("//*[@id='planTable']/tbody/tr")).click();
                     break;
@@ -136,7 +138,7 @@ public class Agent_DealBuilderPageActions extends Environment {
                 }
             }
         }
-        Screenshots.captureScreenshot();
+
     }
 
     public static void HandsetTariffCombination() throws InterruptedException, IOException {
@@ -217,15 +219,12 @@ public class Agent_DealBuilderPageActions extends Environment {
             Agent_DealBuilderPage.SelectingAvailableDataAllowance.click();
             Thread.sleep(3000);
             log.debug("Selected Random extra ");
-            log.debug("Selected Random extra ");
 
         }
 
         if (Extras.contains("Base")) {
 
             log.debug("No extras for Basecomms devices");
-            log.debug("No extras for Basecomms devices");
-
         }
         Screenshots.captureScreenshot();
 
@@ -577,6 +576,7 @@ public class Agent_DealBuilderPageActions extends Environment {
 
     public static void AgentBuyOut() throws InterruptedException, IOException {
         Thread.sleep(3000);
+        Screenshots.captureScreenshot();
         if(Agent_DealBuilderPage.AgentBuyOut_Button.isDisplayed()) {
             log.debug("The Buy Out Qustionair is displayed");
             Agent_DealBuilderPage.AgentBuyOut_Button.click();

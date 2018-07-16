@@ -355,6 +355,7 @@ public class UpgradeCustomerPageActions extends Environment {
         } else {
             log.debug("The Security checks page is displayed");
             pageobjects.UpgradeCustomerPage.SecurityOtac.sendKeys("999999");
+            Thread.sleep(2000);
             pageobjects.UpgradeCustomerPage.SecurityContinue.click();
             Thread.sleep(2000);
             pageobjects.UpgradeCustomerPage.Continue.click();
@@ -405,7 +406,7 @@ public class UpgradeCustomerPageActions extends Environment {
         Thread.sleep(4000);*/
         //driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
         //WebElement selectBtnEle = driver.findElement(By.xpath("(//button[@type='button']//*[normalize-space()='Select'])[2]"));
-        WebElement selectBtnEle = driver.findElement(By.xpath("(//button[@id='callToAction'])[5]"));
+        WebElement selectBtnEle = driver.findElement(By.xpath("(//button[@id='callToAction'])[1]"));
         Screenshots.captureScreenshot();
         if(selectBtnEle.isDisplayed()){
             ((JavascriptExecutor) driver).executeScript("arguments[0].click();", selectBtnEle);
@@ -520,9 +521,9 @@ public class UpgradeCustomerPageActions extends Environment {
 
     public static void verifyPromotionalRibbonDisplayedTEpage(String Tariff) throws IOException, InterruptedException {
 
-        WebElement selectBtnEle = driver.findElement(By.xpath("(//button[@type='button']//*[normalize-space()='Select'])[5]"));
+        WebElement selectBtnEle = driver.findElement(By.xpath("(//button[@type='button']//*[normalize-space()='Select'])[1]"));
 
-        if(driver.findElements(By.xpath("(//button[@type='button']//*[normalize-space()='Select'])[4]")).size()>=1){
+        if(driver.findElements(By.xpath("(//button[@type='button']//*[normalize-space()='Select'])[1]")).size()>=1){
             driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
             ((JavascriptExecutor) driver).executeScript("arguments[0].click();", selectBtnEle);
             log.debug("Tariff has selected");
@@ -536,18 +537,18 @@ public class UpgradeCustomerPageActions extends Environment {
 
         //if(blueRibben.isEnabled()){
 
-        if(driver.findElements(By.xpath("(//div[@class='blue-promotion']//span[@class='promotion-text ng-binding'])[2]")).size()>=1){
+        if(driver.findElements(By.xpath("(//div[@class='blue-promotion']//span[@class='promotion-text ng-binding'])[1] | (//div[@class='ribbon']/p[contains(normalize-space(),'Get double data')])[1]")).size()>=1){
             log.debug("Blue ribben is displaayed on the Tariff tile in the Tariff and Extras page: @ ");
         }else{
             log.debug("Blue Ribben's are not Displayed on the Tariff tile in the Tariff and Extras page");
         }
 
-        if(driver.findElements(By.xpath("(//div[@class='green-promotion']//span[@class='promotion-text ng-binding'])[2]")).size() >= 1){
-            WebElement greenRibben = driver.findElement(By.xpath("(//div[@class='green-promotion']//span[@class='promotion-text ng-binding'])[2]"));
+        if(driver.findElements(By.xpath("(//div[@class='green-promotion']//span[@class='promotion-text ng-binding'])[1] | (//div[@class='promo-banner additional-promo ng-scope'])[1]")).size() >= 1){
+            WebElement greenRibben = driver.findElement(By.xpath("(//div[@class='green-promotion']//span[@class='promotion-text ng-binding'])[1] | (//div[@class='promo-banner additional-promo ng-scope'])[1]"));
 
-            log.debug("Green ribben is displaayed  on the Tariff tile in the Tariff and Extras page: @ " + greenRibben.getText());
+            log.debug("Green ribbon is displayed  on the Tariff tile in the Tariff and Extras page: @ " + greenRibben.getText());
         }else{
-            log.debug("Green Ribben's are not Displayed on the Tariff tile in the Tariff and Extras page");
+            log.debug("Green Ribbon's are not Displayed on the Tariff tile in the Tariff and Extras page");
         }
 
         /*log.debug('\n' + "Verify Promotional Ribbon is displayed in TE page");
@@ -737,7 +738,7 @@ public class UpgradeCustomerPageActions extends Environment {
       }*/
         }else{
             log.debug("Failed to Click on Overlay TE function");
-            log.debug("Failed to Click on Overlay TE function");
+
         }
         WebElement eleofClose = driver.findElement(By.xpath("(//h3[contains(text(),'Sony Xperia')]/following-sibling::a/../following-sibling::div)[1]//..//a[@class='boxclose']"));
         if(eleofClose.isEnabled()){
@@ -1534,6 +1535,8 @@ public class UpgradeCustomerPageActions extends Environment {
 
     public static void updateDeviceButton() throws InterruptedException, IOException {
         log.debug("Going to click updateDeviceButton button");
+        scrollToAnElement.scrollToElement(pageobjects.UpgradeCustomerPage.UpdateDevice);
+        Screenshots.captureScreenshot();
         pageobjects.UpgradeCustomerPage.UpdateDevice.click();
         Thread.sleep(4000);
         log.debug("Completed updateDeviceButton function");
@@ -1707,10 +1710,10 @@ public class UpgradeCustomerPageActions extends Environment {
 
         if (UpgradeCustomerPage.SimSwaplink.isDisplayed()) {
             log.debug("The Sim Swap link is displayed");
-            log.debug("The Sim Swap link is displayed");
+
         } else {
             log.debug("The Sim Swap form link is displayed");
-            log.debug("The Sim Swap form link is displayed");
+
         }
         Screenshots.captureScreenshot();
 
@@ -1719,7 +1722,7 @@ public class UpgradeCustomerPageActions extends Environment {
     public static void ClickOnSimSwapLink() throws Exception {
 
         UpgradeCustomerPage.SimSwaplink.click();
-        Thread.sleep(2000);
+        Thread.sleep(4000);
 
         // driver.close();
         for (String winHandle : driver.getWindowHandles()) {
@@ -1727,7 +1730,7 @@ public class UpgradeCustomerPageActions extends Environment {
         }
 
         String simswapurl = driver.getCurrentUrl();
-        log.debug(simswapurl);
+        log.debug("The URL is: "+simswapurl);
         if (simswapurl.contains("swapmysim")) {
             log.debug("The Swap you sim page is displayed");
 
@@ -2090,7 +2093,7 @@ public class UpgradeCustomerPageActions extends Environment {
         Screenshots.captureScreenshot();
         ((JavascriptExecutor) driver).executeScript("arguments[0].click();",
                 driver.findElement(By.xpath("//button[contains(text(),'Take this offer and upgrade')]")));
-
+        Thread.sleep(4000);
 
     }
 
@@ -2217,7 +2220,8 @@ public class UpgradeCustomerPageActions extends Environment {
 
         driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
 
-        String logOutTxt = driver.findElement(By.xpath("//h1")).getText();
+        String logOutTxt = driver.findElement(By.xpath("//p[@class='header-logout-msg-txt']")).getText();
+        Screenshots.captureScreenshot();
         log.debug("Logout message :: " +logOutTxt);
         if (logOutTxt.contains("You have successfully signed out")) {
             log.debug("Logout page is displayed and validated logout message successfully");
@@ -2225,7 +2229,7 @@ public class UpgradeCustomerPageActions extends Environment {
             log.debug("Logout Message is not matching");
             Assert.fail("Logout Message is not matching");
         }
-        Screenshots.captureScreenshot();
+
     }
 
     public static void redirectUrlAfterLogout() throws Exception {
