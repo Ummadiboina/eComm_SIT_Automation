@@ -10319,9 +10319,9 @@ public class E2EOrderPlaced_Steps {
 
         }
     }
-
-
-
+    
+    
+    
     @And("MSISDN <MSISDN> should be selected by default and buyout offer should be applied by default")
     public void MSISDN_should_be_selected_by_default_and_buyout_offer_should_be_applied_by_default(String msisdn) {
         //driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
@@ -10465,17 +10465,17 @@ public class E2EOrderPlaced_Steps {
 
     @And("click on 'Remove offer' then verify that 'Take offer and upgrade'button")
     public  void verifyRemoveOfferAndVerifyTakeOffer(){
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        try {
-            PageFactory.initElements(driver, UpgradeCustomerPage.class);
-            UpgradeCustomerPageActions.checkIsSimoTabEnable("Yes");
-        } catch (Exception e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-            Assert.fail("Unable to select Create New account");
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            try {
+                PageFactory.initElements(driver, UpgradeCustomerPage.class);
+                UpgradeCustomerPageActions.checkIsSimoTabEnable("Yes");
+            } catch (Exception e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+                Assert.fail("Unable to select Create New account");
+            }
         }
-    }
-
+             
 
     //*********************************************************  REMEDY AUTOMATION   ******************************************
 
@@ -10544,10 +10544,8 @@ public class E2EOrderPlaced_Steps {
 
         }
 
-    }
-
-
-
-
-
+    }   
+    
+    
+    
 }
