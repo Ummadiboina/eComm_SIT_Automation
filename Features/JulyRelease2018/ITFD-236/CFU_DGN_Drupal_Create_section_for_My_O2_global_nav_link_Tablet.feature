@@ -40,11 +40,7 @@ Feature: CFU_DGN_Drupal_Create_section_for_My_O2_global_nav_link_Tablet
     And click on 'My O2' link
     Then validate url for existing customer when clicks on 'My O2' link
     Then Click on browser back arrow and land on previous page
-    And Navigate to sims and Ipad Sims page
-    And click on 'My O2' link
-    Then validate url for existing customer when clicks on 'My O2' link
-    Then Click on browser back arrow and land on previous page
-    And Navigate to sims and Tablet Sims page
+    And Navigate to Ipad page
     And click on 'My O2' link
     Then validate url for existing customer when clicks on 'My O2' link
     Then Click on browser back arrow and land on previous page

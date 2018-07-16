@@ -21,5 +21,5 @@ Feature: 53_Reg_Consumer_PreOrder
 
       #Close the browser
     Examples:
-      | handset        | Firstname | Surname | Username     | Status    | consumer | B1  | B2     | B3  | B4  | Text   | Email | Phone | Post | status  | MBBStatus | DeviceType |
-      | Apple iPhone x | TEST      | ACCEPTA | TEST ACCEPTA | Pre Order | Me       | Not | Select | Not | Not | Select | Not   | Not   | Not  | Enabled | No        | Connected  |
+      | handset  | Firstname | Surname | Username     | Status    | consumer | B1  | B2     | B3  | B4  | Text   | Email | Phone | Post | status  | MBBStatus | DeviceType |
+      | iPhone x | TEST      | ACCEPTA | TEST ACCEPTA | Pre Order | Me       | Not | Select | Not | Not | Select | Not   | Not   | Not  | Enabled | No        | Connected  |

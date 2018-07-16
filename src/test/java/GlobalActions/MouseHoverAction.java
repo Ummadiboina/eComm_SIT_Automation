@@ -148,6 +148,93 @@ public class MouseHoverAction extends Environment {
         }
     }
 
+    //Ipad page
+
+    public static void IpadPage() throws Exception {
+        driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+
+        try {
+            /*********************************************************************
+             normal execution flow in ref Env....        ************************************************/
+            Thread.sleep(3000);
+            if (driver.findElements(By.xpath("//div[@class='nav-consumer']/ul/li/a[contains(@href, '/shop')]")).size() >= 1) {
+                log.debug("Navigating to Ipad --> Ipad landing page navigations");
+
+                Point coordinates = pageobjects.MouseHoverPage.MoveMouseOnShopTab.getLocation();
+                Robot robot = new Robot();
+                robot.mouseMove(coordinates.getX(), coordinates.getY() + 120);
+                log.debug("Moving Mouse on the Shop Tab");
+                log.debug("Moving Mouse on the Shop Tab");
+
+                Actions action = new Actions(driver);
+                action.moveToElement(pageobjects.MouseHoverPage.MoveMouseOnShopTab).perform();
+                log.debug("Mouse over on the Shop Header ");
+                Thread.sleep(2000);
+
+                Actions action1 = new Actions(driver);
+                action1.moveToElement(pageobjects.MouseHoverPage.MoveMouseOnSims).build().perform();
+                log.debug("Moving Mouse on the Sims in Shop Dropdown");
+                log.debug("Moved Mouse on Sims");
+                Thread.sleep(2000);
+
+                pageobjects.MouseHoverPage.MoveMouseOnIpadSims.click();
+                log.debug("Clicking on ipad sims link");
+                Thread.sleep(5000);
+                Screenshots.captureScreenshot();
+
+                log.debug("Trying to take screenshots of page");
+
+                // Move mouse pointer away from location
+                Point coordinates2 = driver.findElement(By.xpath("//*[@id='header-consumer']/div")).getLocation();
+                Robot robot2 = new Robot();
+                robot2.mouseMove(coordinates2.getX(), coordinates.getY() + 300);
+                log.debug("Moved Mouse to somewhere side of page");
+
+                Screenshots.captureScreenshot();
+            } else {
+                System.out.println("Drupal's are Enabled");
+                log.debug("Drupal's are Enabled");
+            }
+
+            /*********************************************************************
+             Drupal navigation change           ************************/
+            if (driver.findElements(By.xpath("//div[@class='navContainer']/ul/li[@name='Shop']/a[contains(@href,'/shop')]")).size() >= 1) {
+
+                Point coordinates = pageobjects.MouseHoverPage.MoveMouseOnShopTab_Drupal.getLocation();
+                Robot robot = new Robot();
+                robot.mouseMove(coordinates.getX(), coordinates.getY() + 120);
+
+                Actions action = new Actions(driver);
+                action.moveToElement(pageobjects.MouseHoverPage.MoveMouseOnShopTab_Drupal).perform();
+                log.debug("Mouse over on the Shop Header ");
+                Thread.sleep(2000);
+
+                Actions action1 = new Actions(driver);
+                action1.moveToElement(MouseHoverPage.MoveMouseOniPad_Drupal).perform();
+                Thread.sleep(3000);
+
+                action1.moveToElement(MouseHoverPage.MoveMouseOniPad_Drupal).perform();
+                log.debug("Moving Mouse on the Ipad Tab");
+                Thread.sleep(2000);
+
+                // MouseHoverPage.MoveMouseOnPhones_Drupal.click();
+                JavascriptExecutor executor = (JavascriptExecutor)driver;
+                executor.executeScript("arguments[0].click();", MouseHoverPage.MoveMouseOniPad_Drupal);
+                Thread.sleep(5000);
+                Screenshots.captureScreenshot();
+                driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+
+            } else {
+                System.out.println("Drupal's are Disiabled");
+                log.debug("Drupal's are Disiabled");
+            }
+        } catch (Exception e) {
+            log.debug("Failed to mouse over, &  Error as : " + e.getStackTrace());
+            Assert.fail("Failed to Navigate to the Shop mouse over");
+            Thread.sleep(2000);
+        }
+    }
+
     // Below will navigate to PayG Phones Page
 
     public static void SimIpadSimsPage() throws Exception {

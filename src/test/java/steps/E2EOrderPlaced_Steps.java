@@ -190,7 +190,7 @@ public class E2EOrderPlaced_Steps {
         }
     }
 
-    @Then("^validate 'My O2' page$")
+    @Then("^validate 'My O2' section$")
     public void validateMyO2Page() {
         try {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
@@ -240,7 +240,6 @@ public class E2EOrderPlaced_Steps {
         try {
             driver.manage().timeouts().implicitlyWait(12, TimeUnit.SECONDS);
             PageFactory.initElements(driver, MouseHoverPage.class);
-
             MouseHoverAction.PayMPhonesLandingPage();
             Thread.sleep(4000);
             Autoredirection.redirect();
@@ -368,6 +367,21 @@ public class E2EOrderPlaced_Steps {
             log.debug("unable to do mousehover to Pay as you Go Phones page");
             Assert.fail("unable to do mousehover to Pay as you Go Phones page");
 
+        }
+    }
+
+    @Given("^Navigate to Ipad page$")
+    public void navigate_to_Ipad_page() {
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, MouseHoverPage.class);
+            MouseHoverAction.IpadPage();
+            Autoredirection.redirectforHTTPsconnections();
+            Thread.sleep(10000);
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            log.debug("unable to do mousehover to Sims and Ipad Sims page");
+            Assert.fail("unable to do mousehover to Sims and Ipad Sims page");
         }
     }
 
@@ -789,7 +803,7 @@ public class E2EOrderPlaced_Steps {
         try {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, UpgradeCustomerPage.class);
-
+            Thread.sleep(4000);
             UpgradeCustomerPageActions.Login(username, password);
         } catch (Exception e) {
             // TODO Auto-generated catch block
@@ -2496,6 +2510,7 @@ public class E2EOrderPlaced_Steps {
         Thread.sleep(3000);
         Agent_HomePagePageActions.upgradeUser();
         Thread.sleep(4000);
+        Screenshots.captureScreenshot();
         /*
          * } catch (Exception e) { // TODO Auto-generated catch block System.out.
          * println("Unable to login for upgrade for user in Agent shop, please see the failure screenshot"
@@ -3791,7 +3806,7 @@ public class E2EOrderPlaced_Steps {
             MouseHoverAction.UpgradeandUpgradeNow();
             Thread.sleep(7000);
             Autoredirection.redirectUpgrades();
-            Thread.sleep(5000);
+            Thread.sleep(7000);
         } catch (Exception e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
@@ -5526,8 +5541,9 @@ public class E2EOrderPlaced_Steps {
             Thread.sleep(6000);
             //UpgradeCustomerPageActions.selectDeviceInRecommendedDevicesSection(devicename);
             // driver.findElement(By.xpath("(//span[normalize-space()='Apple'])[1]")).click();
+            scrollToAnElement.scrollToElement(driver.findElement(By.xpath("(//button[normalize-space()='Select'])[2]")));
             Screenshots.captureScreenshot();
-            //Screenshots.captureScreenshot(Hooks.directoryName);
+
             JavascriptExecutor executor = (JavascriptExecutor) driver;
             executor.executeScript("arguments[0].click();", driver.findElement(By.xpath("(//button[normalize-space()='Select'])[2]")));
             Thread.sleep(7000);
@@ -9758,7 +9774,9 @@ public class E2EOrderPlaced_Steps {
     @Then("^Verify that the deal has already some offers Bolton ([^\"]*) promotions applied$")
     public void verify_that_the_deal_has_already_some_offers_Bolton_promotions(String str) {
         try {
-            log.debug("Successfully verified the deail builder");
+            Thread.sleep(4000);
+            Screenshots.captureScreenshot();
+            log.debug("Successfully verified the deal builder");
         } catch (Exception e) {
             log.debug("Unable to validate section");
             Assert.fail("Unable to validate section");
@@ -9866,6 +9884,7 @@ public class E2EOrderPlaced_Steps {
     @And("^Verify that the buyout offer section is displayed with 'Take offer and Upgrade' CTA under 'Your Options' heading$")
     public void verify_that_the_buyout_offer_section_is_displayed() {
         try {
+            driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
             PageFactory.initElements(driver, UpgradePhonesListingPage.class);
             UpgradeCustomerPageActions.verifyBuyOutMessage();
             log.debug("Verified that the buyout offer section is displayed");
@@ -10319,7 +10338,7 @@ public class E2EOrderPlaced_Steps {
     }
 
 
-    @And("Select a Application Type and serch the records with query")
+    @And("update the request with CT")
     public void selectApplicationType() throws InterruptedException {
         Thread.sleep(3000);
         try {

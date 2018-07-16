@@ -7,59 +7,56 @@ Feature: CFA_DGN_Drupal_Create_section_for_My_O2_global_nav_link
   Scenario Outline: CFA_DGN_Drupal_Create_section_for_My_O2_global_nav_link
     Given I am an CFA user and Lands on shop page
     And click on 'My O2' link
-    Then validate 'My O2' page
+    Then validate 'My O2' section
     And navigate to PAYM Phones page
     And click on 'My O2' link
-    Then validate 'My O2' page
+    Then validate 'My O2' section
     And navigate to PAYM Tablets page
     And click on 'My O2' link
-    Then validate 'My O2' page
+    Then validate 'My O2' section
     And Navigate to PayM MBB page
     And click on 'My O2' link
-    Then validate 'My O2' page
+    Then validate 'My O2' section
     And navigate to PAYM SIMO page
     And click on 'My O2' link
-    Then validate 'My O2' page
+    Then validate 'My O2' section
     And Navigate to Accessories
     And click on 'My O2' link
-    Then validate 'My O2' page
+    Then validate 'My O2' section
     And Navigate to Fitness Trackers
     And click on 'My O2' link
-    Then validate 'My O2' page
+    Then validate 'My O2' section
     And Navigate to SmartWatches
     And click on 'My O2' link
-    Then validate 'My O2' page
-    And Navigate to sims and Ipad Sims page
+    Then validate 'My O2' section
+    And Navigate to Ipad page
     And click on 'My O2' link
-    Then validate 'My O2' page
-    And Navigate to sims and Tablet Sims page
-    And click on 'My O2' link
-    Then validate 'My O2' page
+    Then validate 'My O2' section
     # PayG navigations starts
     And navigate to Pay as you Go Phones page
     And click on 'My O2' link
-    Then validate 'My O2' page
+    Then validate 'My O2' section
     And navigate to Pay as you Go Tablets page
     And click on 'My O2' link
-    Then validate 'My O2' page
+    Then validate 'My O2' section
     And navigate to PayG SIMO page
     And click on 'My O2' link
-    Then validate 'My O2' page
+    Then validate 'My O2' section
     And Navigate to PayG MBB page
     And click on 'My O2' link
-    Then validate 'My O2' page
+    Then validate 'My O2' section
     #//--------Validating at Device details,Tariff&Extras, Basket and order confirmation page-------------
     And navigate to PAYM Phones page
     And I search for a PayM <handset> device
     And click on 'My O2' link
-    Then validate 'My O2' page
+    Then validate 'My O2' section
     And Navigate to device details page
     And click on 'My O2' link
-    Then validate 'My O2' page
+    Then validate 'My O2' section
     And Land on the 'Tariffs and extra' page
     And I Land on the basket page and choose home delivery option
     And click on 'My O2' link
-    Then validate 'My O2' page
+    Then validate 'My O2' section
     And click on "go to checkout" button
     And input <Firstname> and <Surname> and other valid details in Delivery page to verify GDPR
     And Is this order for You or Someone else <consumer> when GDPR is <status>
@@ -68,8 +65,8 @@ Feature: CFA_DGN_Drupal_Create_section_for_My_O2_global_nav_link
     And Continue to Review page and review the order
     Then order confirmation is displayed
     And click on 'My O2' link
-    Then validate 'My O2' page
-    Then Choose <consumer> <status> Business preferences <B1> <B2> <B3> <B4> And Channel Preferences <Text> <Email> <Phone> <Post> <MBBStatus> <DeviceType>
+    Then validate 'My O2' section
+    #Then Choose <consumer> <status> Business preferences <B1> <B2> <B3> <B4> And Channel Preferences <Text> <Email> <Phone> <Post> <MBBStatus> <DeviceType>
 
 
 

@@ -23,5 +23,5 @@ Feature: 99_Reg_June_CFU_Validate_Basket_Page_For_Simo_Tariff_With_Active_Vouche
     Then Choose <consumer> <status> Business preferences <B1> <B2> <B3> <B4> And Channel Preferences <Text> <Email> <Phone> <Post> <MBBStatus> <DeviceType>
 
     Examples:
-      | username                          | tariffAmt | dataValue | promoCode | password | Username     | consumer | B1     | B2  | B3     | B4  | Text   | Email  | Phone | Post | status  | MBBStatus | DeviceType |
-      | inavgmsa_jan9508@stf.ref.o2.co.uk | £20       | 18GB      | promoCode | test123  | TEST ACCEPTA | Me       | Select | Not | Select | Not | Select | Select | Not   | Not  | Enabled | No        | Connected  |
+      | username                      | tariffAmt | dataValue | promoCode | password | Username     | consumer | B1     | B2  | B3     | B4  | Text   | Email  | Phone | Post | status  | MBBStatus | DeviceType |
+      | 05ap50122912@stf.ref.o2.co.uk | £20       | 18GB      | promoCode | test123  | TEST ACCEPTA | Me       | Select | Not | Select | Not | Select | Select | Not   | Not  | Enabled | No        | Connected  |

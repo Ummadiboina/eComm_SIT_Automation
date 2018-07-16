@@ -13,5 +13,5 @@ Feature: CFU_Ensuring_that_the_Drupal_logout_message_Merchandised_Desktop
     And validate url after logout
 
     Examples:
-      | username                     | password |
-      | ins_feb3087@stf.ref.o2.co.uk | test123  |
+      | username                    | password |
+      | in_mar2358@stf.ref.o2.co.uk | test123  |
