@@ -2957,4 +2957,128 @@ public class UpgradeCustomerPageActions extends Environment {
         Screenshots.captureScreenshot();
         return tariffListUsingMonthlyCost;
     }
+    
+    
+     public static void validateMSISDN(String MSISDN){
+        try {
+
+            if(UpgradeCustomerPage.upgrade_options_msisdn.isDisplayed()){
+                String msisdn = UpgradeCustomerPage.upgrade_options_msisdn.getText();
+                System.out.println(" MSISDN: "+msisdn);
+                log.info(" MSISDN: "+msisdn);
+            }else{
+                System.out.println("Failed to a find the msisdn");
+                log.info("Failed to validate the MSISDN: ");
+            }
+
+        }catch (Exception e){
+            System.out.println("Failed to validate the MSISDN: "+ e.getMessage());
+            log.info("Failed to validate the MSISDN: "+ e.getMessage());
+            Assert.fail("Failed to validate the MSISDN: "+ e.getMessage());
+
+        }
+    }
+
+    public static void copyTextOfUpgradeOptions(){
+        try {
+            if(UpgradeCustomerPage.buyOutCopyText.isDisplayed()){
+                String copyTextOfUpgradeOptions = UpgradeCustomerPage.buyOutCopyText.getText();
+                System.out.println(" Copy text of upgrade options: "+copyTextOfUpgradeOptions);
+                log.info(" Copy text of upgrade options: "+copyTextOfUpgradeOptions);
+            }else{
+                System.out.println("Failed to a find the Copy text of upgrade options");
+                log.info("Failed to validate the Copy text of upgrade options: ");
+            }
+
+        }catch (Exception e){
+            System.out.println("Failed to validate the Copy text of upgrade options: "+ e.getMessage());
+            log.info("Failed to validate the Copy text of upgrade options: "+ e.getMessage());
+            Assert.fail("Failed to validate the Copy text of upgrade options: "+ e.getMessage());
+
+        }
+    }
+
+
+    public static void clickOnRemoveOfferCTA(){
+        try {
+            if(UpgradeCustomerPage.removeOfferCTA.isDisplayed()){
+                String copyTextOfUpgradeOptions = UpgradeCustomerPage.buyOutCopyText.getText();
+                System.out.println("Remove offer CTA is displayed");
+                log.info("Remove offer CTA is displayed");
+            }else{
+                System.out.println("Failed to a find Remove offer CTA");
+                log.info("Failed to a find Remove offer CTA");
+            }
+        }catch (Exception e){
+            System.out.println("Failed to a find Remove offer CTA"+ e.getMessage());
+            log.info("Failed to a find Remove offer CTA"+ e.getMessage());
+            Assert.fail("Failed to a find Remove offer CTA"+ e.getMessage());
+        }
+    }
+
+
+
+    public static void leftToPay_Validate(String display) {
+        try {
+            if (display.contains("No")) {
+                if (!UpgradeCustomerPage.lerfToPay.isDisplayed()) {
+                    String leftToPayTxt = UpgradeCustomerPage.lerfToPay.getText();
+                    System.out.println("Left to pay " + leftToPayTxt);
+                    log.info("Left to pay " + leftToPayTxt);
+                } else {
+                    System.out.println("Failed to a find left to pay text");
+                    log.info("Failed to a find left to pay text");
+                }
+            }
+
+            if (display.contains("Yes")) {
+                if (UpgradeCustomerPage.lerfToPay.isDisplayed()) {
+                    String leftToPayTxt = UpgradeCustomerPage.lerfToPay.getText();
+                    System.out.println("Left to pay " + leftToPayTxt);
+                    log.info("Left to pay " + leftToPayTxt);
+                } else {
+                    System.out.println("Failed to display - left to pay text");
+                    log.info("Failed to display - left to pay text");
+                }
+            }
+        }
+        catch(Exception e){
+                System.out.println("Failed to a find left to pay text" + e.getMessage());
+                log.info("Failed to a find left to pay text" + e.getMessage());
+                Assert.fail("Failed to a find left to pay text" + e.getMessage());
+            }
+        }
+
+
+
+    public static void checkIsSimoTabEnable(String status){
+        try {
+
+            if (status.contains("No")) {
+                if (!UpgradeCustomerPage.simoTab.isDisplayed()) {
+                    System.out.println("Simo tab is disabled");
+                    log.info("Simo tab is disabled");
+                } else {
+                    System.out.println("Failed - Simo tab is Enabled");
+                    log.info("Failed to Simo tab is Enabled");
+                }
+            }
+
+            if (status.contains("Yes")) {
+                if (UpgradeCustomerPage.simoTab.isDisplayed()) {
+                        System.out.println("Simo tab is Displayed");
+                        log.info("Simo tab is Displayed");
+                    } else {
+                        System.out.println("Failed to Simo tab is Displayed");
+                        log.info("Failed to Simo tab is Displayed");
+                    }
+                }
+
+        }catch (Exception e){
+            System.out.println("Failed validate the Simo Display"+ e.getMessage());
+            log.info("Failed validate the Simo Display"+ e.getMessage());
+            Assert.fail("Failed validate the Simo Display"+ e.getMessage());
+        }
+        }   
+    
 }
