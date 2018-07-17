@@ -12,5 +12,5 @@ Feature: Invalid_Credentials_DGN_Clicking_My_O2_link_on_global Nav_Tablet
 
 
     Examples:
-      | username                     | password |
-      | ins_feb3087@stf.ref.o2.co.uk | test123  |
+      | username | password |
+      | invalid  | test123  |

@@ -164,7 +164,7 @@ public class Agent_RegisterCustomerActions extends Environment {
 
 		Thread.sleep(6000);
 		log.debug("Clicked on Register customer");
-		log.debug("Clicked on Register customer");
+
 	}
 
 	public static void PaybyCard() throws InterruptedException {
@@ -260,6 +260,7 @@ public class Agent_RegisterCustomerActions extends Environment {
 			Agent_RegisterCustomerPage.SecurityCode.sendKeys("123");
 			Thread.sleep(2000);
 			Agent_RegisterCustomerPage.UsethisCard.click();
+			Thread.sleep(8000);
 		} else {
 			Thread.sleep(8000);
 			System.out.println("Going to validate pay by card page displayed from mipay");
@@ -481,7 +482,7 @@ public class Agent_RegisterCustomerActions extends Environment {
 
 //GDPR Preferences Section AFA --- JamalKhan
 
-	public static void PreferencesSection_AFA(String BP1, String BP2, String BP3, String BP4, String Chn1, String Chn2, String Chn3, String Chn4, String customer, String gdprStatus,String DeviceType, String Device_Module) throws InterruptedException, IOException {
+	public static void PreferencesSection_AFA(String BP1, String BP2, String BP3, String BP4, String Chn1, String Chn2, String Chn3, String Chn4, String customer, String gdprStatus,String DeviceType, String Device_Module) throws IOException {
 
 		try {
 
@@ -1075,7 +1076,7 @@ public class Agent_RegisterCustomerActions extends Environment {
 
 	//GDPR Preferences Section AFU --- JamalKhan
 
-	public static void PreferencesSection_AFU(String BP1, String BP2, String BP3, String BP4, String Chn1, String Chn2, String Chn3, String Chn4, String customer, String gdprStatus,String DeviceType) throws InterruptedException, IOException {
+	public static void PreferencesSection_AFU(String BP1, String BP2, String BP3, String BP4, String Chn1, String Chn2, String Chn3, String Chn4, String customer, String gdprStatus,String DeviceType) throws IOException {
 
 		try {
 			//driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);

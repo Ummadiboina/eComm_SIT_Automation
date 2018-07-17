@@ -35,12 +35,12 @@ public class PhonesListingPageAction extends Environment {
 			serchBox.sendKeys(deviceName);
 			Thread.sleep(10000);
 
-			WebElement requestedDevice = driver.findElement(By.xpath("(//img[@class='device-image']/..//*[contains(text(),'"+deviceName+"')])[1]"));
+			WebElement requestedDevice = driver.findElement(By.xpath("(//img[@class='device-image lazyload']/..//*[contains(text(),'"+deviceName+"')])[1]"));
 			if(requestedDevice.isDisplayed()) {
 				scrollToAnElement.scrollToElement(requestedDevice);
 				Screenshots.captureScreenshot();
 			}
-			if (driver.findElements(By.xpath("(//img[@class='device-image']/..//*[contains(text(),'"+deviceName+"')])[1]")).size() >= 1) {
+			if (driver.findElements(By.xpath("(//img[@class='device-image lazyload']/..//*[contains(text(),'"+deviceName+"')])[1]")).size() >= 1) {
 				Thread.sleep(3000);
                 ((JavascriptExecutor) driver).executeScript("arguments[0].click();", requestedDevice);
                 log.debug("Selected Device from Phones as Required is : " + deviceName);
@@ -48,9 +48,9 @@ public class PhonesListingPageAction extends Environment {
                 Thread.sleep(3000);
             } else {
 				Thread.sleep(3000);
-                WebElement element = driver.findElement(By.xpath("(//img[@class='device-image'])[1]"));
+                WebElement element = driver.findElement(By.xpath("(//img[@class='device-image lazyload'])[1]"));
                 ((JavascriptExecutor) driver).executeScript("arguments[0].click();", element);
-                String defaultSelDevice = driver.findElement(By.xpath("((//img[@class='device-image'])[1]/..//span[@class='ng-binding'])[2]")).getText();
+                String defaultSelDevice = driver.findElement(By.xpath("((//img[@class='device-image lazyload'])[1]/..//span[@class='ng-binding'])[2]")).getText();
                 log.debug(" As Required Device is not Availabe, We have picked default device from availabe  :: " + defaultSelDevice);
 
                 Thread.sleep(3000);
@@ -84,7 +84,7 @@ public class PhonesListingPageAction extends Environment {
 		Screenshots.captureScreenshot();
 	}
 
-	public static void SelectBaseCommTariff(String elementName) throws IOException, InterruptedException {
+	public static void SelectBaseCommTariff(String elementName) throws IOException {
 
 		if (elementName.contains("Random")) {
 			log.debug("Selected Random Tariff");
@@ -94,7 +94,7 @@ public class PhonesListingPageAction extends Environment {
 		Screenshots.captureScreenshot();
 	}
 
-	public static void checkIfiPadDevicesArePresent() throws IOException, InterruptedException {
+	public static void checkIfiPadDevicesArePresent() throws IOException {
 
 		List<WebElement> iPadDevices = pageobjects.BaseCommPage.iPadDevicesName;
 
@@ -110,7 +110,7 @@ public class PhonesListingPageAction extends Environment {
 		Screenshots.captureScreenshot();
 	}
 
-	public static void isPayAsUGoTabDisplayed() throws IOException, InterruptedException {
+	public static void isPayAsUGoTabDisplayed() throws IOException {
 		log.debug("checking whether Pay As U Go tab is displayed");
 		if (pageobjects.BaseCommPage.PayAsUGo.isDisplayed()) {
 			Assert.fail("Pay As U Go tab is displayed");
@@ -118,7 +118,7 @@ public class PhonesListingPageAction extends Environment {
 		Screenshots.captureScreenshot();
 	}
 
-	public static void clickOnSortTab() throws IOException, InterruptedException {
+	public static void clickOnSortTab() throws IOException {
 		try {
 			log.debug("Entering clickOnSortTab function");
 
@@ -227,7 +227,7 @@ public class PhonesListingPageAction extends Environment {
 		Screenshots.captureScreenshot();
 	}
 
-	public static void clickOnResetSort() throws IOException, InterruptedException {
+	public static void clickOnResetSort() throws IOException {
 		log.debug("Entering clickOnResetSort function");
 		log.debug("Entering clickOnResetSort function");
 
@@ -250,7 +250,7 @@ public class PhonesListingPageAction extends Environment {
 	}
 
 	public static void verifyDeviceGetsDisplayedBasedOnBrandFilterApplied(String FilterOption)
-			throws IOException, InterruptedException {
+			throws IOException {
 		try {
 			log.debug("Entering verifyDeviceGetsDisplayedBasedOnBrandFilterApplied function");
 			log.debug("Entering verifyDeviceGetsDisplayedBasedOnBrandFilterApplied function");
@@ -276,7 +276,7 @@ public class PhonesListingPageAction extends Environment {
 	}
 
 	public static void verifyDeviceGetsDisplayedBasedOnColourFilterApplied(String FilterOption)
-			throws IOException, InterruptedException {
+			throws IOException {
 		try {
 			log.debug("Entering verifyDeviceGetsDisplayedBasedOnColourFilterApplied function");
 			log.debug("Entering verifyDeviceGetsDisplayedBasedOnColourFilterApplied function");
@@ -301,7 +301,7 @@ public class PhonesListingPageAction extends Environment {
 		}
 	}
 
-	public static void clickOnFilterTab() throws IOException, InterruptedException {
+	public static void clickOnFilterTab() throws IOException {
 		try {
 			log.debug("Entering clickOnFilterTab function");
 
@@ -317,7 +317,7 @@ public class PhonesListingPageAction extends Environment {
 		}
 	}
 
-	public static void selectFilterOption(String Filter, String Option) throws IOException, InterruptedException {
+	public static void selectFilterOption(String Filter, String Option) throws IOException {
 		try {
 			log.debug("Entering selectFilterOption function");
 			log.debug("Selecting Filter option: " + Filter + " :With: " + Option);
@@ -578,7 +578,7 @@ public class PhonesListingPageAction extends Environment {
 
 	}
 
-	public static void clickOnViewAllProductsOnOnePage() throws IOException, InterruptedException {
+	public static void clickOnViewAllProductsOnOnePage() throws IOException {
 		try {
 			log.debug("Entering clickOnViewAllProductsOnOnePage function");
 			log.debug("Entering clickOnViewAllProductsOnOnePage function");
@@ -797,7 +797,7 @@ public class PhonesListingPageAction extends Environment {
 	}
 
 	public static void verifyDeviceSortedOnBrand(LinkedList<String> ListBeforeApplyingSort,
-												 LinkedList<String> ListAfterApplyingSort) throws IOException, InterruptedException {
+												 LinkedList<String> ListAfterApplyingSort) throws IOException {
 
 		try {
 
@@ -831,7 +831,7 @@ public class PhonesListingPageAction extends Environment {
 	}
 
 	public static void verifyOriginalSortOrderRetainedAfterSortReset(LinkedList<String> ListBeforeApplyingSort,
-																	 LinkedList<String> ListAfterApplyingSort) throws IOException, InterruptedException {
+																	 LinkedList<String> ListAfterApplyingSort) throws IOException {
 
 		try {
 
@@ -884,7 +884,7 @@ public class PhonesListingPageAction extends Environment {
 		});
 	}
 
-	public static void isChooseADifferentTariffDisplayed() throws IOException, InterruptedException {
+	public static void isChooseADifferentTariffDisplayed() throws IOException {
 		log.debug("checking if the Choose a Different Tariff link is displayed");
 		if (pageobjects.BaseCommPage.ChooseADifferentTariff.isDisplayed()) {
 			log.debug("Choose a different tariff link is displayed");
@@ -894,7 +894,7 @@ public class PhonesListingPageAction extends Environment {
 		Screenshots.captureScreenshot();
 	}
 
-	public static void clickChooseADifferentTariff() throws IOException, InterruptedException {
+	public static void clickChooseADifferentTariff() throws IOException {
 		log.debug("clicking on Choose a Different Tariff link");
 		if (pageobjects.BaseCommPage.ChooseADifferentTariff.isDisplayed()) {
 			pageobjects.BaseCommPage.ChooseADifferentTariff.click();
@@ -904,7 +904,7 @@ public class PhonesListingPageAction extends Environment {
 		Screenshots.captureScreenshot();
 	}
 
-	public static void clickBackToiPadOffers() throws IOException, InterruptedException {
+	public static void clickBackToiPadOffers() throws IOException {
 		log.debug("clicking on Back to iPad Offers link");
 		if (pageobjects.BaseCommPage.BackToOffers.isDisplayed()) {
 			pageobjects.BaseCommPage.BackToOffers.click();
@@ -914,7 +914,7 @@ public class PhonesListingPageAction extends Environment {
 		Screenshots.captureScreenshot();
 	}
 
-	public static void clickBackToTabletOffers() throws IOException, InterruptedException {
+	public static void clickBackToTabletOffers() throws IOException {
 		log.debug("clicking on Back to Tablet Offers link");
 		if (pageobjects.BaseCommPage.BackToOffers.isDisplayed()) {
 			pageobjects.BaseCommPage.BackToOffers.click();
@@ -964,7 +964,7 @@ public class PhonesListingPageAction extends Environment {
 	 */
 
 	public static void verifyDeviceGetsDisplayedBasedOnOfferFilterApplied(String FilterOption)
-			throws IOException, InterruptedException {
+			throws IOException {
 		try {
 			log.debug("Entering verifyDeviceGetsDisplayedBasedOnOfferFilterApplied function");
 			log.debug("Entering verifyDeviceGetsDisplayedBasedOnOfferApplied function");

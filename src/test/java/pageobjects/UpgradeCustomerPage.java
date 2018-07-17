@@ -11,13 +11,22 @@ public class UpgradeCustomerPage {
 
 	public static final String RecycleWidget = null;
 
-	@FindBy(how = How.ID, using = "username")
+	/*@FindBy(how = How.ID, using = "username")
 	public static WebElement username;
 
 	@FindBy(how = How.ID, using = "password")
 	public static WebElement password;
 
 	@FindBy(how = How.ID, using = "signInButton")
+	public static WebElement signInButton;*/
+
+	@FindBy(how = How.XPATH, using = "(//input[@id='username'])[2]")
+	public static WebElement username;
+
+	@FindBy(how = How.XPATH, using = "(//input[@id='password'])[2]")
+	public static WebElement password;
+
+	@FindBy(how = How.XPATH, using = "//input[@id='signInButton']")
 	public static WebElement signInButton;
 
 	@FindBy(how = How.CLASS_NAME, using = "simo-link")
@@ -129,26 +138,29 @@ public class UpgradeCustomerPage {
 	@FindBy(how = How.XPATH, using = "//button[normalize-space()='Continue']")
 	public static WebElement emailSubmit;
 
-	@FindBy(how = How.XPATH, using = "//*[@id='sim-section']/div/div[2]/div[1]/div[@class='sim-info-left']")
+	@FindBy(how = How.XPATH, using = "//*[@id='sim-section']/div/div[2]/div[1]/div[@class='sim-info-left'] | //*[@id='sim-section']/div/div/div/div[@class='sim-info-left']")
 	public static WebElement YourSimSectionCopyText;
 
-	@FindBy(how = How.XPATH, using = "//*[@id='sim-section']/div/div[2]/div[2]/form/p[1]")
+	@FindBy(how = How.XPATH, using = "//*[@id='sim-section']/div/div[2]/div[2]/form/p[1] | //*[@id='sim-section']/div/div/div[2]/form/p[1]/label")
 	public static WebElement YourSimOptionsOne;
 
-	@FindBy(how = How.XPATH, using = "//*[@id='sim-section']/div/div[2]/div[2]/form/p[2]")
+	@FindBy(how = How.XPATH, using = "//*[@id='sim-section']/div/div[2]/div[2]/form/p[2] | //*[@id='sim-section']/div/div/div[2]/form/p[2]/label")
 	public static WebElement YourSimOptionsTwo;
 
-	@FindBy(how = How.XPATH, using = "//*[@id='sim-section']/div/div[2]/div[1]/div[1]/p[3]/a")
+	@FindBy(how = How.XPATH, using = "//*[@id='sim-section']/div/div[2]/div[1]/div[1]/p[3]/a | //*[@id='sim-section']/div/div/div/div/p[3]/a")
 	public static WebElement SimSwaplink;
 
-	@FindBy(how = How.XPATH, using = "//*[@id='sim-section']/div/div[2]/div[2]/form/p[1]/label")
+	@FindBy(how = How.XPATH, using = "//*[@id='sim-section']/div/div[2]/div[2]/form/p[1]/label | //input[@id='needNewSim']")
 	public static WebElement IneedAsimRadio;
 
-	@FindBy(how = How.XPATH, using = "//*[@id='sim-section']/div/div[2]/div[2]/form/p[2]/label")
+	@FindBy(how = How.XPATH, using = "//*[@id='sim-section']/div/div[2]/div[2]/form/p[2]/label | //input[@id='noNeedNewSim']")
 	public static WebElement IdontNeedSimRadio;
 
 	@FindBy(how = How.XPATH, using = "//*[@id='confirmSim']")
 	public static WebElement ConfirmCTA;
+
+	@FindAll({@FindBy(how = How.XPATH, using = "//Button[normalize-space()='Remove offer']")})
+	public static List<WebElement> RemoveOffer;
 
 	@FindAll({@FindBy(how = How.XPATH, using = "//div[@class='btn-container']/button[@class='primary']")})
 	public static List<WebElement> TakeOfferAndUpgrade;

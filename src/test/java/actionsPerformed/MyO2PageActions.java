@@ -47,17 +47,16 @@ public class MyO2PageActions extends Environment {
 			Assert.fail("Sign-in Button is disabled after providing login credentials at MY O2 Page");
 		}
 
-		driver.manage().timeouts().implicitlyWait(15,TimeUnit.SECONDS);
-		log.debug("Title of the page is " + driver.getTitle());
-		 if ((!driver.getTitle().contains("O2 | Accounts | Please verify your email address") ||
-		 !driver.getTitle().contains("O2 | Accounts | Update username")))
-		 {
-		 	String errorMsg = driver.findElement(By.xpath("//*[@class='errorMsg']")).getText();
-		 	log.debug("Login failed:: "+errorMsg);
+		driver.manage().timeouts().implicitlyWait(20,TimeUnit.SECONDS);
+		String currentURL = driver.getCurrentUrl();
+		log.debug("The redirected url is: " + currentURL);
 
-		 } else {
-		 	log.debug("Logged in successfully");
-  	     }
+		if(currentURL.contains("https://www.ref.o2.co.uk/shop?invalidAttemptCount=1&error=invalidCredentials")){
+			log.debug("Logged in failed");
+		}else{
+			log.debug("Logged in successfully");
+		}
+
 	}
 
 	public static void Logout_MyO2() throws InterruptedException, IOException {
@@ -146,7 +145,7 @@ public class MyO2PageActions extends Environment {
 		Thread.sleep(5000);
 		String redirectUrl = driver.getCurrentUrl();
 		log.debug("Redirect URL when customer clicked on 'Forgotten username or password' link at My O2 page:: "+ redirectUrl);
-		if (redirectUrl.contains("https://accounts.ref.o2.co.uk/resetpassword/selectusername")) {
+		if (redirectUrl.contains("https://accounts.o2.co.uk/auth?sendTo=https")) {
 			log.debug("Redirected to the valid Forgotten username or password URL : "+redirectUrl);
 		} else {
 			log.debug("Redirected to the invalid URL when customer clicked on 'Forgotten username or password' link at My O2 : " +redirectUrl);
