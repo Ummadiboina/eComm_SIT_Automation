@@ -10348,6 +10348,163 @@ public class E2EOrderPlaced_Steps {
 
         }
     }
+    
+    
+    
+    @And("MSISDN <MSISDN> should be selected by default and buyout offer should be applied by default")
+    public void MSISDN_should_be_selected_by_default_and_buyout_offer_should_be_applied_by_default(String msisdn) {
+        //driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+        try {
+            PageFactory.initElements(driver, UpgradeCustomerPage.class);
+            UpgradeCustomerPageActions.validateMSISDN(msisdn);
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+            Assert.fail("Unable to select Create New account");
+
+        }
+    }
+
+    @And("The new copy text 'Upgrade to a new phone today. We'll pay off the rest of your Device Plan, saving you £XXX' should be displayed in buyout offered tile")
+    public  void newcopyTextUpgradeToNewhoneToday() {
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+        try {
+            PageFactory.initElements(driver, UpgradeCustomerPage.class);
+            UpgradeCustomerPageActions.copyTextOfUpgradeOptions();
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+            Assert.fail("Unable to select Create New account");
+
+        }
+    }
+
+
+    @And("verify The 'Remove offer' is displayed on the Buyout offer tile")
+    public void clickOn_removeOfferCTA() {
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+        try {
+            PageFactory.initElements(driver, UpgradeCustomerPage.class);
+            UpgradeCustomerPageActions.copyTextOfUpgradeOptions();
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+            Assert.fail("Unable to select Create New account");
+
+        }
+    }
+
+
+    @And("Verify that '£XXX.XX left to pay on your current Device Plan' panel is displayed below the buyout offer panel and below to that upgrade and recycle options should not be displayed")
+    public void isLeftToPayisDisplayed() {
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+        try {
+            PageFactory.initElements(driver, UpgradeCustomerPage.class);
+            UpgradeCustomerPageActions.leftToPay_Validate("No");
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+            Assert.fail("Unable to select Create New account");
+
+        }
+    }
+
+
+    @And("Verify that '£XXX.XX left to pay on your current Device Plan' panel is displayed below the buyout offer panel and below to that upgrade and recycle options should be displayed")
+    public void leftTopayOn_YourCurrentDevicePlan() {
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+        try {
+            PageFactory.initElements(driver, UpgradeCustomerPage.class);
+            UpgradeCustomerPageActions.leftToPay_Validate("Yes");
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+            Assert.fail("Unable to select Create New account");
+        }
+    }
+
+
+    @And("verify that The 'SIMO tab' should be hidden")
+    public  void isSimoTabEnable() {
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+        try {
+            PageFactory.initElements(driver, UpgradeCustomerPage.class);
+            UpgradeCustomerPageActions.checkIsSimoTabEnable("No");
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+            Assert.fail("Unable to select Create New account");
+        }
+    }
+
+
+    @And("verify The 'Buyout offer line item' should be displayed in 'Your package' summary as per BAU")
+    public  void VerifytheBuyoutOfferIineItem_shouldDisplay() {
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+        try {
+            PageFactory.initElements(driver, UpgradeCustomerPage.class);
+            //UpgradeCustomerPageActions.checkIsSimoTabEnable("No");
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+            Assert.fail("Unable to select Create New account");
+        }
+    }
+
+
+    @And("verify The 'Buyout offer line item' should be not displayed in 'Your package' summary as per BAU")
+    public  void VerifytheBuyoutOfferIineItem_Display() {
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+        try {
+            PageFactory.initElements(driver, UpgradeCustomerPage.class);
+            //UpgradeCustomerPageActions.checkIsSimoTabEnable("No");
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+            Assert.fail("Unable to select Create New account");
+        }
+    }
+
+
+    @And("verify The 'Buyout offer line item' should be displayed in 'Your package' summary as per BAU")
+    public  void verifyBuyoutOfferLineItem() {
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+        try {
+            PageFactory.initElements(driver, UpgradeCustomerPage.class);
+            //UpgradeCustomerPageActions.checkIsSimoTabEnable("No");
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+            Assert.fail("Unable to select Create New account");
+        }
+    }
+
+    @And("verify that The 'SIMO tab' should be displayed")
+    public  void isSimoTabDisplayed() {
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+        try {
+            PageFactory.initElements(driver, UpgradeCustomerPage.class);
+            UpgradeCustomerPageActions.checkIsSimoTabEnable("Yes");
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+            Assert.fail("Unable to select Create New account");
+        }
+    }
+
+    @And("click on 'Remove offer' then verify that 'Take offer and upgrade'button")
+    public  void verifyRemoveOfferAndVerifyTakeOffer(){
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            try {
+                PageFactory.initElements(driver, UpgradeCustomerPage.class);
+                UpgradeCustomerPageActions.checkIsSimoTabEnable("Yes");
+            } catch (Exception e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+                Assert.fail("Unable to select Create New account");
+            }
+        }
+             
 
     //*********************************************************  REMEDY AUTOMATION   ******************************************
 
@@ -10416,5 +10573,8 @@ public class E2EOrderPlaced_Steps {
 
         }
 
-    }
+    }   
+    
+    
+    
 }
