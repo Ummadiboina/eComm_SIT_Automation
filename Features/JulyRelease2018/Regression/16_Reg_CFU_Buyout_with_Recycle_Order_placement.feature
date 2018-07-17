@@ -7,6 +7,7 @@ Feature: 16_Reg_CFU_Buyout_with_Recycle_Order_placement
     Given I am an Existing user and Navigates to Signin page
     And Signin using valid <username> and <password> credentials
     And Navigate to upgrade > upgrade now
+    And Click on 'Remove Button'
     And Verify that the buyout offer section is displayed with 'Take offer and Upgrade' CTA under 'Your Options' heading
     And Verify that '£XXX.XX left to pay on your current Device Plan' panel is displayed below the buyout offer panel and below to that upgrade and recycle options is displayed
     And click on 'Take offer and upgrade'button

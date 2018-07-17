@@ -45,13 +45,13 @@ public class BaseCommPage {
     @FindBy(how = How.XPATH, using = ("//a[@href='changeTariff/']"))
     public static WebElement ChooseADifferentTariff;
 
-    @FindAll({@FindBy(how = How.XPATH, using = "//img[@class='device-image']")})
+    @FindAll({@FindBy(how = How.XPATH, using = "//img[@class='device-image'] | //img[@class='device-image lazyload']")})
     public static List<WebElement> ImgSrc;
 
     @FindAll({@FindBy(how = How.XPATH, using = "//div[@class='device-title']/div/h2")})
     public static List<WebElement> DeviceNames;
 
-    @FindBy(how = How.XPATH, using = ("//*[@id='deviceImage']"))
+    @FindBy(how = How.XPATH, using = ("//*[@id='deviceImage'] | //*[@id='device-image lazyload']"))
     public static WebElement ImgSrcTEpages;
 
     @FindAll({@FindBy(how = How.XPATH, using = "//div[@class='tariff-container']")})

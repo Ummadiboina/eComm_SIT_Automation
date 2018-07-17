@@ -80,7 +80,7 @@ public class UpgradeCustomerPageActions extends Environment {
 
     }
 
-    public static void CCALogin(String password1) throws InterruptedException, IOException {
+    public static void CCALogin(String password1) throws IOException {
 
         String CCALoginEmailID = Filereadingutility.getPropertyValue(
                 System.getProperty("user.dir") + "\\Configurations\\Properties\\Run.properties", "emailid");
@@ -90,7 +90,7 @@ public class UpgradeCustomerPageActions extends Environment {
 
     }
 
-    public static void Signin() throws InterruptedException, IOException {
+    public static void Signin() throws IOException {
         log.debug("in signin function");
         JavascriptExecutor jse = (JavascriptExecutor) driver;
         jse.executeScript("arguments[0].click()", pageobjects.UpgradeCustomerPage.Signinlink2);
@@ -205,7 +205,7 @@ public class UpgradeCustomerPageActions extends Environment {
     //////////////////////////// Customer not eligible for
     //////////////////////////// upgrade//////////////////////////
 
-    public static void UpgradeUpsellPromoModule_Validation() throws InterruptedException, IOException {
+    public static void UpgradeUpsellPromoModule_Validation() throws IOException {
         JavascriptExecutor jse = (JavascriptExecutor) driver;
         jse.executeScript("window.scrollBy(0,150)", "");
 
@@ -252,7 +252,7 @@ public class UpgradeCustomerPageActions extends Environment {
         Screenshots.captureScreenshot();
     }
 
-    public static void UpgradeUpsellPromoModule_MyO2Action() throws InterruptedException, IOException {
+    public static void UpgradeUpsellPromoModule_MyO2Action() throws IOException {
 
         if (pageobjects.UpgradeCustomerPage.GoToMyO2_CTA.isDisplayed()) {
             log.debug("The Go To My O2 CTA is displayed and the text is : "
@@ -269,7 +269,7 @@ public class UpgradeCustomerPageActions extends Environment {
 
     }
 
-    public static void UpgradeUpsellPromoModule_iPadAction() throws InterruptedException, IOException {
+    public static void UpgradeUpsellPromoModule_iPadAction() throws IOException {
 
         JavascriptExecutor jse = (JavascriptExecutor) driver;
         jse.executeScript("window.scrollBy(0,300)", "");
@@ -287,7 +287,7 @@ public class UpgradeCustomerPageActions extends Environment {
 
     }
 
-    public static void UpgradeUpsellPromoModule_TabletAction() throws InterruptedException, IOException {
+    public static void UpgradeUpsellPromoModule_TabletAction() throws IOException {
 
         JavascriptExecutor jse = (JavascriptExecutor) driver;
         jse.executeScript("window.scrollBy(0,300)", "");
@@ -305,7 +305,7 @@ public class UpgradeCustomerPageActions extends Environment {
 
     }
 
-    public static void UpgradeUpsellPromoModule_DongleAction() throws InterruptedException, IOException {
+    public static void UpgradeUpsellPromoModule_DongleAction() throws IOException {
 
         JavascriptExecutor jse = (JavascriptExecutor) driver;
         jse.executeScript("window.scrollBy(0,300)", "");
@@ -453,7 +453,7 @@ public class UpgradeCustomerPageActions extends Environment {
     }
 
     public static void selectTariffWithRibbonAndOverlayUpgradeJourney(String Tariff)
-            throws IOException, InterruptedException {
+            throws IOException {
         log.debug('\n' + "To select Tariff With Ribbon And Overlay in upgrade journey");
         List<WebElement> TariffList = driver
                 .findElements(By.xpath("(//div[contains(@class, 'grid-tile')]/div/button[@id='callToAction'])[1]"));
@@ -519,7 +519,7 @@ public class UpgradeCustomerPageActions extends Environment {
 
     }
 
-    public static void verifyPromotionalRibbonDisplayedTEpage(String Tariff) throws IOException, InterruptedException {
+    public static void verifyPromotionalRibbonDisplayedTEpage(String Tariff) throws IOException {
 
         WebElement selectBtnEle = driver.findElement(By.xpath("(//button[@type='button']//*[normalize-space()='Select'])[1]"));
 
@@ -595,7 +595,7 @@ public class UpgradeCustomerPageActions extends Environment {
     }
 
     public static void verifyPromotionalRibbonDisplayedUpgradePage(String Tariff)
-            throws IOException, InterruptedException {
+            throws IOException {
         log.debug("To verify Promotional Ribbon Displayed in Upgrade Page");
 
         String PrimaryPromotionXpath = null, SecondaryPromotionXpath = null;
@@ -653,7 +653,7 @@ public class UpgradeCustomerPageActions extends Environment {
         Screenshots.captureScreenshot();
     }
 
-    public static void checkIfPromotionalRibbonTextsNotSame() throws IOException, InterruptedException {
+    public static void checkIfPromotionalRibbonTextsNotSame() throws IOException {
         String PrimaryPromotionTextRecommendedSection = Filereadingutility.getPropertyValue(RunTimeFilePath,
                 "PrimaryPromotionTextRecommendedSection");
         String SecondaryPromotionTextRecommendedSection = Filereadingutility.getPropertyValue(RunTimeFilePath,
@@ -675,7 +675,7 @@ public class UpgradeCustomerPageActions extends Environment {
         Screenshots.captureScreenshot();
     }
 
-    public static void verifyOverlayIconIsDisplayedTEpage(String Tariff) throws IOException, InterruptedException {
+    public static void verifyOverlayIconIsDisplayedTEpage(String Tariff) throws IOException {
         log.debug('\n' + "Verify Overlay Icon Is Displayed in TE page");
         log.debug("Tariff for verifying overlay icon is " + Tariff);
 
@@ -703,7 +703,7 @@ public class UpgradeCustomerPageActions extends Environment {
         Screenshots.captureScreenshot();
     }
 
-    public static void verifyOverlayIconIsDisplayedUpgradePage(String Tariff) throws IOException, InterruptedException {
+    public static void verifyOverlayIconIsDisplayedUpgradePage(String Tariff) throws IOException {
         log.debug('\n' + "Verify Overlay Icon Is Displayed in upgrade page");
         log.debug("Tariff for verifying overlay icon is " + Tariff);
         String TariffTile = null;
@@ -892,7 +892,7 @@ public class UpgradeCustomerPageActions extends Environment {
         Screenshots.captureScreenshot();
     }
 
-    public static void closeOverlayIconTEpage() throws IOException, InterruptedException {
+    public static void closeOverlayIconTEpage() throws IOException {
         log.debug('\n' + "To close Overlay Icon TE page");
         List<WebElement> close = driver.findElements(By.xpath(
                 "//div[contains(@class, 'overlay-box tariff-tile-info-promo-overlay')]/div/a[@class='boxclose']"));
@@ -905,7 +905,7 @@ public class UpgradeCustomerPageActions extends Environment {
         Screenshots.captureScreenshot();
     }
 
-    public static void closeOverlayIconBasketpage() throws IOException, InterruptedException {
+    public static void closeOverlayIconBasketpage() throws IOException {
         log.debug('\n' + "To close Overlay Icon Basket page ");
         List<WebElement> closeP = driver.findElements(
                 By.xpath("//div[contains(@class, 'overlay-box primary-promo-overlay')]/div/a[@class='boxclose']"));
@@ -925,7 +925,7 @@ public class UpgradeCustomerPageActions extends Environment {
         Screenshots.captureScreenshot();
     }
 
-    public static void verifyPromotionalRibbonDisplayedBasketpage() throws IOException, InterruptedException {
+    public static void verifyPromotionalRibbonDisplayedBasketpage() throws IOException {
         log.debug('\n' + "Verify Promotional Ribbon is Displayed in Basket page");
 
         WebElement primaryPramotion = driver.findElement(By.xpath("//div[@class='primary promotion']"));
@@ -980,7 +980,7 @@ public class UpgradeCustomerPageActions extends Environment {
         Screenshots.captureScreenshot();
     }
 
-    public static void verifyOverlayIconIsDisplayedBasketpage() throws IOException, InterruptedException {
+    public static void verifyOverlayIconIsDisplayedBasketpage() throws IOException {
         log.debug('\n' + "Verify Overlay Icon Is Displayed in Basket page");
         if (pageobjects.BasketPage.PrimaryPromotionOverlay.isDisplayed()) {
             log.debug("Overlay icon is present in primary promotion");
@@ -1061,7 +1061,7 @@ public class UpgradeCustomerPageActions extends Environment {
         Screenshots.captureScreenshot();
     }
 
-    public static void verifyPromotionalRibbonDisplayedMyPackageSection() throws IOException, InterruptedException {
+    public static void verifyPromotionalRibbonDisplayedMyPackageSection() throws IOException {
         log.debug('\n' + "Verify Promotional Ribbon Displayed in MyPackage Section");
         List<WebElement> PrimaryPromotionalWrapperList = driver
                 .findElements(By.xpath("//div[@class='data-qa-promotion promotion-wrapper']/div[1]"));
@@ -1111,7 +1111,7 @@ public class UpgradeCustomerPageActions extends Environment {
     }
 
     public static void verifyPromotionalRibbonDisplayedMyPackageSectionInUpgrade()
-            throws IOException, InterruptedException {
+            throws IOException {
         log.debug('\n' + "Verify Promotional Ribbon Displayed in MyPackage Section in upgrade");
         List<WebElement> PrimaryPromotionalWrapperList = driver
                 .findElements(By.xpath("//div[@class='data-qa-promotion promotion-wrapper']/div[1]"));
@@ -1362,7 +1362,7 @@ public class UpgradeCustomerPageActions extends Environment {
 
     }
 
-    public static void selectTariff() throws IOException, InterruptedException {
+    public static void selectTariff() throws IOException {
         log.debug("In Select Tariff function");
         ((JavascriptExecutor) driver).executeScript("arguments[0].click();",
                 driver.findElement(By.xpath("(//button[@id='callToAction'])[2]")));
@@ -1442,7 +1442,7 @@ public class UpgradeCustomerPageActions extends Environment {
             Thread.sleep(2000);
             log.debug("Entered OTAC code 999999 successfully");
 
-            WebElement element1 = UpgradeCustomerPage. submitCode_OTAC;
+            WebElement element1 = UpgradeCustomerPage.submitCode_OTAC;
             executor.executeScript("arguments[0].click();", element1);
             Thread.sleep(5000);
 
@@ -1709,7 +1709,7 @@ public class UpgradeCustomerPageActions extends Environment {
     public static void SimSwapLinkDisplayed() throws Exception {
 
         if (UpgradeCustomerPage.SimSwaplink.isDisplayed()) {
-            log.debug("The Sim Swap link is displayed");
+            log.debug("The Sim Swap link is displayed ie:: "+UpgradeCustomerPage.SimSwaplink.getText());
 
         } else {
             log.debug("The Sim Swap form link is displayed");
@@ -1749,11 +1749,12 @@ public class UpgradeCustomerPageActions extends Environment {
     }
 
     public static void ClickIneedAsim() throws Exception {
-
+        Thread.sleep(3000);
         if (UpgradeCustomerPage.IneedAsimRadio.isDisplayed()) {
             Thread.sleep(6000);
             UpgradeCustomerPage.IneedAsimRadio.click();
             log.debug("The I need a sim radio button is clicked");
+            Thread.sleep(2000);
         }
         Screenshots.captureScreenshot();
        // Screenshots.captureScreenshot(Hooks.directoryName);
@@ -1797,7 +1798,7 @@ public class UpgradeCustomerPageActions extends Environment {
 
     }
 
-    public static void clickTakeOfferAndUpgrade() throws IOException, InterruptedException {
+    public static void clickTakeOfferAndUpgrade() throws IOException {
         log.debug("Going to click on Take Offer and Upgrade");
         Screenshots.captureScreenshot();
         if (UpgradeCustomerPage.TakeOfferAndUpgrade.size() > 0) {
@@ -1809,14 +1810,28 @@ public class UpgradeCustomerPageActions extends Environment {
 
     }
 
-    public static void selectTariffFromRecommendedSection() throws IOException, InterruptedException {
+    public static void clickRemoveOfferButton() throws IOException {
+        log.debug("Going to click on Remove Offer aButton");
+        Screenshots.captureScreenshot();
+        if (UpgradeCustomerPage.RemoveOffer.size() > 0) {
+
+            UpgradeCustomerPage.RemoveOffer.get(0).click();
+            log.debug("Remove Offer button is clicked");
+        } else {
+            log.debug("Remove Offer button is not present or enabled");
+        }
+
+    }
+
+
+    public static void selectTariffFromRecommendedSection() throws IOException {
         log.debug("Going to select tariff from recommended section");
         Screenshots.captureScreenshot();
         executor.executeScript("arguments[0].click();", UpgradeCustomerPage.RandomTariffUpgrade);
 
     }
 
-    public static int verifyBuyOutDisplayedInMyPackage() throws IOException, InterruptedException {
+    public static int verifyBuyOutDisplayedInMyPackage() throws IOException {
         log.debug("verifyBuyOutDisplayedInMyPackage");
 
         String AcText = null, Actcost1 = null, Actcost2 = null, tmpcost1 = null, tmpcost2 = null;
@@ -1859,7 +1874,7 @@ public class UpgradeCustomerPageActions extends Environment {
         return a;
     }
 
-    public static int verifyTradeInDisplayedInMyPackage() throws IOException, InterruptedException {
+    public static int verifyTradeInDisplayedInMyPackage() throws IOException {
         log.debug("verifyTradeInDisplayedInMyPackage");
 
         String AcText = null, Actcost1 = null, Actcost2 = null, tmpcost1 = null, tmpcost2 = null;
@@ -1901,7 +1916,7 @@ public class UpgradeCustomerPageActions extends Environment {
         return a;
     }
 
-    public static void verifyBuyOutDisplayedInBasketPage(int BouOutValueFromMyPackageSection) throws IOException, InterruptedException {
+    public static void verifyBuyOutDisplayedInBasketPage(int BouOutValueFromMyPackageSection) throws IOException {
         log.debug("verifyBuyOutDisplayedInBasketPage");
         String AcText = null, Actcost1 = null, Actcost2 = null, tmpcost1 = null, tmpcost2 = null;
         int a = 0;
@@ -1951,7 +1966,7 @@ public class UpgradeCustomerPageActions extends Environment {
         Screenshots.captureScreenshot();
     }
 
-    public static void verifyTradeInDisplayedInBasketPage(int TradeInValueFromMyPackageSection) throws IOException, InterruptedException {
+    public static void verifyTradeInDisplayedInBasketPage(int TradeInValueFromMyPackageSection) throws IOException {
         log.debug("verifyTradeInDisplayedInBasketPage");
         String AcText = null, Actcost1 = null, Actcost2 = null, tmpcost1 = null, tmpcost2 = null;
         int a = 0;
@@ -2002,7 +2017,7 @@ public class UpgradeCustomerPageActions extends Environment {
         Screenshots.captureScreenshot();
     }
 
-    public static void verifyBuyOutDisplayed_OrderSummarySection(int BouOutValueFromMyPackageSection, String pageName) throws IOException, InterruptedException {
+    public static void verifyBuyOutDisplayed_OrderSummarySection(int BouOutValueFromMyPackageSection, String pageName) throws IOException {
         log.debug("verify Buy Out is displayed");
 
         String AcText = null, Actcost1 = null, tmpcost1 = null, Title = null;
@@ -2040,7 +2055,7 @@ public class UpgradeCustomerPageActions extends Environment {
         Screenshots.captureScreenshot();
     }
 
-    public static void verifyTradeInDisplayed_OrderSummarySection(int TradeInValueFromMyPackageSection, String pageName) throws IOException, InterruptedException {
+    public static void verifyTradeInDisplayed_OrderSummarySection(int TradeInValueFromMyPackageSection, String pageName) throws IOException {
         log.debug("verify TradeIn is displayed");
 
         String AcText = null, Actcost1 = null, tmpcost1 = null, Title = null;
@@ -2172,7 +2187,7 @@ public class UpgradeCustomerPageActions extends Environment {
 
     }
 
-    public static void VerifyUpgradeonUs() throws IOException, InterruptedException {
+    public static void VerifyUpgradeonUs() throws IOException {
         log.debug("in VerifyUpgradeonUs function");
 
         ((JavascriptExecutor) driver).executeScript("arguments[0].click();",
@@ -2216,7 +2231,7 @@ public class UpgradeCustomerPageActions extends Environment {
         Screenshots.captureScreenshot();
     }
 
-    public static void validateLogoutMessage() throws InterruptedException, IOException {
+    public static void validateLogoutMessage() throws IOException {
 
         driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
 
@@ -2227,7 +2242,7 @@ public class UpgradeCustomerPageActions extends Environment {
             log.debug("Logout page is displayed and validated logout message successfully");
         } else {
             log.debug("Logout Message is not matching");
-            Assert.fail("Logout Message is not matching");
+            //Assert.fail("Logout Message is not matching");
         }
 
     }
@@ -2292,7 +2307,7 @@ public class UpgradeCustomerPageActions extends Environment {
         }
     }
 
-    public static void upgradeTablet(String handset) throws IOException, InterruptedException {
+    public static void upgradeTablet(String handset) throws IOException {
         JavascriptExecutor executor = (JavascriptExecutor) driver;
         executor.executeScript("arguments[0].click();", pageobjects.PhonesListingPage.ViewAllPhones);
 
@@ -2323,7 +2338,7 @@ public class UpgradeCustomerPageActions extends Environment {
     }
 
 
-    public static void reviewTariff() throws InterruptedException, IOException {
+    public static void reviewTariff() throws IOException {
         log.debug("Trying to verify first section is review tariff");
 
 //Give function with position so that review tariff is at first section like 1. Review your tariff
@@ -2333,7 +2348,7 @@ public class UpgradeCustomerPageActions extends Environment {
         Screenshots.captureScreenshot();
     }
 
-    public static void contentDisplayedFirstTariff() throws InterruptedException, IOException {
+    public static void contentDisplayedFirstTariff() throws IOException {
         log.debug("Trying to verify first section is review tariff");
         //Below tariff validations should be in such a way that this should be first tile text
         pageobjects.UpgradeCustomerPage.moveFromTariff.getText();
@@ -2341,7 +2356,7 @@ public class UpgradeCustomerPageActions extends Environment {
         Screenshots.captureScreenshot();
     }
 
-    public static void contentDisplayedSecondTariff() throws InterruptedException, IOException {
+    public static void contentDisplayedSecondTariff() throws IOException {
         log.debug("Trying to verify first section is review tariff");
         //Below tariff validations should be in such a way that this should be second tile text
         pageobjects.UpgradeCustomerPage.toThisTariff.getText();
@@ -2349,7 +2364,7 @@ public class UpgradeCustomerPageActions extends Environment {
         Screenshots.captureScreenshot();
     }
 
-    public static void clickonnoSurelink() throws InterruptedException, IOException {
+    public static void clickonnoSurelink() throws IOException {
         log.debug("Trying to verify first section is review tariff");
         //Below tariff validations should be in such a way that this should be second tile text
         pageobjects.UpgradeCustomerPage.clickonNotsureSimType.click();
@@ -2357,7 +2372,7 @@ public class UpgradeCustomerPageActions extends Environment {
         Screenshots.captureScreenshot();
     }
 
-    public static void nonDisplayDeliverySection() throws InterruptedException, IOException {
+    public static void nonDisplayDeliverySection() throws IOException {
         log.debug("Trying to verify delivery section is present or not");
         //Below get the delivery section size
         int deliverySection = driver.findElements(By.xpath("")).size();
@@ -2577,7 +2592,7 @@ public class UpgradeCustomerPageActions extends Environment {
         }
     }
 
-    public static ArrayList<Integer> getDataListAfterSelectingFilter_UpgradeSIMO_MBBTablet() throws IOException, InterruptedException {
+    public static ArrayList<Integer> getDataListAfterSelectingFilter_UpgradeSIMO_MBBTablet() throws IOException {
 
         List<WebElement> DataTextElement=null;
 
@@ -2621,7 +2636,7 @@ public class UpgradeCustomerPageActions extends Environment {
         return datalistafter;
     }
 
-    public static ArrayList<Integer> getDataListAfterSelectingFilter_UpgradeSIMO_Phone() throws IOException, InterruptedException {
+    public static ArrayList<Integer> getDataListAfterSelectingFilter_UpgradeSIMO_Phone() throws IOException {
 
         List<WebElement> DataTextElement = pageobjects.UpgradeCustomerPage.DataTextElement_Phones;
 
@@ -2660,7 +2675,7 @@ public class UpgradeCustomerPageActions extends Environment {
         return datalistafter;
     }
 
-    public static ArrayList<Integer> getMonthlyCostListAfterSelectingFilter_UpgradeSIMO_MBBTablet() throws IOException, InterruptedException {
+    public static ArrayList<Integer> getMonthlyCostListAfterSelectingFilter_UpgradeSIMO_MBBTablet() throws IOException {
         List<WebElement> MonthlyCostTextElement = null;
 
         if (driver.findElements(By.xpath("//li[@id='id-12-months' and @class=' active ']")).size() > 0) {
@@ -2692,7 +2707,7 @@ public class UpgradeCustomerPageActions extends Environment {
         return MonthlyCostlist;
     }
 
-    public static ArrayList<Integer> getMonthlyCostListAfterSelectingFilter_UpgradeSIMO_Phone() throws IOException, InterruptedException {
+    public static ArrayList<Integer> getMonthlyCostListAfterSelectingFilter_UpgradeSIMO_Phone() throws IOException {
 
         List<WebElement> MonthlyCostTextElement = pageobjects.UpgradeCustomerPage.MonthlyTextElement_Phones;
 
@@ -2719,7 +2734,7 @@ public class UpgradeCustomerPageActions extends Environment {
         return MonthlyCostlist;
     }
 
-    public static ArrayList<Integer> getDataListBeforeSelectingFilter_UpgradeSIMO_MBBTablet() throws IOException, InterruptedException {
+    public static ArrayList<Integer> getDataListBeforeSelectingFilter_UpgradeSIMO_MBBTablet() throws IOException {
         List<WebElement> DataTextElement = null;
 
         if (driver.findElements(By.xpath("//li[@id='id-12-months' and @class=' active ']")).size() > 0) {
@@ -2764,7 +2779,7 @@ public class UpgradeCustomerPageActions extends Environment {
         return datalist;
     }
 
-    public static ArrayList<Integer> getDataListBeforeSelectingFilter_UpgradeSIMO_Phone() throws IOException, InterruptedException {
+    public static ArrayList<Integer> getDataListBeforeSelectingFilter_UpgradeSIMO_Phone() throws IOException {
 
         List<WebElement> DataTextElement = pageobjects.UpgradeCustomerPage.DataTextElement_Phones;
 
@@ -2804,7 +2819,7 @@ public class UpgradeCustomerPageActions extends Environment {
         return datalist;
     }
 
-    public static ArrayList<Integer> getCurrentSortOrderUsingMonthlyData_UpgradeSIMO_MBBTablet() throws IOException, InterruptedException {
+    public static ArrayList<Integer> getCurrentSortOrderUsingMonthlyData_UpgradeSIMO_MBBTablet() throws IOException {
         log.debug("Executing getCurrentSortOrderUsingMonthlyData_UpgradeSIMO_MBBTablet ()");
 
         List<WebElement> DataTextElement = null;
@@ -2853,7 +2868,7 @@ public class UpgradeCustomerPageActions extends Environment {
         return tariffListUsingMonthlyData;
     }
 
-    public static ArrayList<Integer> getCurrentSortOrderUsingMonthlyCost_UpgradeSIMO_MBBTablet() throws IOException, InterruptedException {
+    public static ArrayList<Integer> getCurrentSortOrderUsingMonthlyCost_UpgradeSIMO_MBBTablet() throws IOException {
 
         List<WebElement> DataTextElement = null;
 
@@ -2880,7 +2895,7 @@ public class UpgradeCustomerPageActions extends Environment {
         return tariffListUsingMonthlyCost;
     }
 
-    public static ArrayList<Integer> getCurrentSortOrderUsingMonthlyData_UpgradeSIMO_Phone() throws IOException, InterruptedException {
+    public static ArrayList<Integer> getCurrentSortOrderUsingMonthlyData_UpgradeSIMO_Phone() throws IOException {
         log.debug("Executing getCurrentSortOrderUsingMonthlyData_UpgradeSIMO_Phone ()");
 
         List<WebElement> DataTextElement = pageobjects.UpgradeCustomerPage.DataTextElement_Phones;
@@ -2923,7 +2938,7 @@ public class UpgradeCustomerPageActions extends Environment {
         return tariffListUsingMonthlyData;
     }
 
-    public static ArrayList<Integer> getCurrentSortOrderUsingMonthlyCost_UpgradeSIMO_Phone() throws IOException, InterruptedException {
+    public static ArrayList<Integer> getCurrentSortOrderUsingMonthlyCost_UpgradeSIMO_Phone() throws IOException {
 
         List<WebElement> DataTextElement = pageobjects.UpgradeCustomerPage.MonthlyTextElement_Phones;
         ArrayList<Integer> tariffListUsingMonthlyCost = new ArrayList<Integer>();

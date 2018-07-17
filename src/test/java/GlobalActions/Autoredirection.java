@@ -17,7 +17,6 @@ public class Autoredirection extends Environment {
 		String newUrl = null;
 		String url = driver.getCurrentUrl();
 		log.debug("The current url is " + url);
-		log.debug("The current url is " + url);
 
 		int length = url.length();// length of url
 		log.debug("the length of url is " + length);

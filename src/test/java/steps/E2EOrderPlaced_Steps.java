@@ -149,6 +149,13 @@ public class E2EOrderPlaced_Steps {
             Thread.sleep(4000);
             Screenshots.captureScreenshot();
 
+            log.debug("validate pre-populated input fields at My O2 section \n");
+
+            if(MyO2Page.signInUserName.getText()!="")
+            {
+                log.debug("'Username' input field is not empty:: "+MyO2Page.signInUserName.getText());
+            }
+
             if (MyO2Page.rememberUserName.isSelected()) {
                 log.debug("'Remember my username' checkbox is selected");
             } else {
@@ -215,8 +222,8 @@ public class E2EOrderPlaced_Steps {
         } catch (Exception e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
-            log.debug("Unable to signin using credentials at MY O2 page");
-            Assert.fail("Unable to signin using credentials at MY O2 page");
+            log.debug("Unable to sign in using credentials at MY O2 section");
+            Assert.fail("Unable to sign in using credentials at MY O2 section");
 
         }
     }
@@ -227,6 +234,9 @@ public class E2EOrderPlaced_Steps {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, MyO2Page.class);
             MyO2PageActions.Logout_MyO2();
+            Thread.sleep(7000);
+            Autoredirection.redirect();
+            Thread.sleep(2000);
         } catch (Exception e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
@@ -872,8 +882,10 @@ public class E2EOrderPlaced_Steps {
         try {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, UpgradeCustomerPage.class);
-            Thread.sleep(3000);
             UpgradeCustomerPageActions.validateLogoutMessage();
+            Thread.sleep(2000);
+            Autoredirection.redirect();
+            Thread.sleep(5000);
         } catch (Exception e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
@@ -887,7 +899,8 @@ public class E2EOrderPlaced_Steps {
         try {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, UpgradeCustomerPage.class);
-            Thread.sleep(3000);
+
+            Thread.sleep(2000);
             UpgradeCustomerPageActions.redirectUrlAfterLogout();
         } catch (Exception e) {
             // TODO Auto-generated catch block
@@ -6673,6 +6686,22 @@ public class E2EOrderPlaced_Steps {
 
     //////////////////////////////////// CCA
     //////////////////////////////////// Agent///////////////////////////////////////////////////////
+
+    @And("^Click on 'Remove Button'$")
+    public void clickOnRemoveOfferButton() {
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+        try {
+            PageFactory.initElements(driver, UpgradePhonesListingPage.class);
+            UpgradeCustomerPageActions.clickRemoveOfferButton();
+            // driver.findElement(By.xpath("//button[contains(text(),'Continue to upgrade')]")).click();
+            Thread.sleep(2000);
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+            Assert.fail("Unable to click on 'Remove offer' button");
+
+        }
+    }
 
     @And("^click on 'Take offer and upgrade'button$")
     public void clickOnTakeOfferAndUpgradeButton() {
