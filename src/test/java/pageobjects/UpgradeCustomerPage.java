@@ -341,5 +341,33 @@ public class UpgradeCustomerPage {
 	@FindAll({ @FindBy(how = How.XPATH, using = "//div[@class='tariffs-container voice-tariffs']//div[@class='price-block']/h2/span[1]") })
 	public static List<WebElement> MonthlyTextElement_Phones;
 
+
+	//ITFD 420
+	@FindBy(how = How.ID, using = "upgrade-options-msisdn")
+	public static WebElement upgrade_options_msisdn;
+
+	@FindBy(how = How.ID, using = "o2RecycleModule")
+	public static WebElement text_UpgradeOption;
+
+	@FindBy(how = How.XPATH, using = "//a[@tabname='sims']")
+	public static WebElement simTab;
+
+	@FindBy(how = How.XPATH, using = "//button[text()='Remove']")
+	public static WebElement removeCTA;
+
+
+	@FindBy(how = How.XPATH, using = "//h3[text()='Upgrade on us']/../div[2]/p")
+	public static WebElement buyOutCopyText;
+
+	@FindBy(how = How.XPATH, using = "//h3[text()='Upgrade on us']/../div[3]/button")
+	public static WebElement removeOfferCTA;
+
+	@FindBy(how = How.XPATH, using = "(//div[@ng-controller='O2RecycleCtrl'])[1]")
+	public static WebElement  lerfToPay;
+
+	@FindBy(how = How.XPATH, using = "//a[@id='tab-keep-your-phone']/span[text()='Sim only tariff']")
+	public static WebElement  simoTab;
+
+
 }
 
