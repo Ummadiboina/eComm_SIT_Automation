@@ -355,6 +355,7 @@ public class UpgradeCustomerPageActions extends Environment {
         } else {
             log.debug("The Security checks page is displayed");
             pageobjects.UpgradeCustomerPage.SecurityOtac.sendKeys("999999");
+            Thread.sleep(2000);
             pageobjects.UpgradeCustomerPage.SecurityContinue.click();
             Thread.sleep(2000);
             pageobjects.UpgradeCustomerPage.Continue.click();
@@ -405,7 +406,7 @@ public class UpgradeCustomerPageActions extends Environment {
         Thread.sleep(4000);*/
         //driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
         //WebElement selectBtnEle = driver.findElement(By.xpath("(//button[@type='button']//*[normalize-space()='Select'])[2]"));
-        WebElement selectBtnEle = driver.findElement(By.xpath("(//button[@id='callToAction'])[5]"));
+        WebElement selectBtnEle = driver.findElement(By.xpath("(//button[@id='callToAction'])[1]"));
         Screenshots.captureScreenshot();
         if(selectBtnEle.isDisplayed()){
             ((JavascriptExecutor) driver).executeScript("arguments[0].click();", selectBtnEle);
@@ -520,9 +521,9 @@ public class UpgradeCustomerPageActions extends Environment {
 
     public static void verifyPromotionalRibbonDisplayedTEpage(String Tariff) throws IOException {
 
-        WebElement selectBtnEle = driver.findElement(By.xpath("(//button[@type='button']//*[normalize-space()='Select'])[5]"));
+        WebElement selectBtnEle = driver.findElement(By.xpath("(//button[@type='button']//*[normalize-space()='Select'])[1]"));
 
-        if(driver.findElements(By.xpath("(//button[@type='button']//*[normalize-space()='Select'])[4]")).size()>=1){
+        if(driver.findElements(By.xpath("(//button[@type='button']//*[normalize-space()='Select'])[1]")).size()>=1){
             driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
             ((JavascriptExecutor) driver).executeScript("arguments[0].click();", selectBtnEle);
             log.debug("Tariff has selected");
@@ -536,18 +537,18 @@ public class UpgradeCustomerPageActions extends Environment {
 
         //if(blueRibben.isEnabled()){
 
-        if(driver.findElements(By.xpath("(//div[@class='blue-promotion']//span[@class='promotion-text ng-binding'])[2]")).size()>=1){
+        if(driver.findElements(By.xpath("(//div[@class='blue-promotion']//span[@class='promotion-text ng-binding'])[1] | (//div[@class='ribbon']/p[contains(normalize-space(),'Get double data')])[1]")).size()>=1){
             log.debug("Blue ribben is displaayed on the Tariff tile in the Tariff and Extras page: @ ");
         }else{
             log.debug("Blue Ribben's are not Displayed on the Tariff tile in the Tariff and Extras page");
         }
 
-        if(driver.findElements(By.xpath("(//div[@class='green-promotion']//span[@class='promotion-text ng-binding'])[2]")).size() >= 1){
-            WebElement greenRibben = driver.findElement(By.xpath("(//div[@class='green-promotion']//span[@class='promotion-text ng-binding'])[2]"));
+        if(driver.findElements(By.xpath("(//div[@class='green-promotion']//span[@class='promotion-text ng-binding'])[1] | (//div[@class='promo-banner additional-promo ng-scope'])[1]")).size() >= 1){
+            WebElement greenRibben = driver.findElement(By.xpath("(//div[@class='green-promotion']//span[@class='promotion-text ng-binding'])[1] | (//div[@class='promo-banner additional-promo ng-scope'])[1]"));
 
-            log.debug("Green ribben is displaayed  on the Tariff tile in the Tariff and Extras page: @ " + greenRibben.getText());
+            log.debug("Green ribbon is displayed  on the Tariff tile in the Tariff and Extras page: @ " + greenRibben.getText());
         }else{
-            log.debug("Green Ribben's are not Displayed on the Tariff tile in the Tariff and Extras page");
+            log.debug("Green Ribbon's are not Displayed on the Tariff tile in the Tariff and Extras page");
         }
 
         /*log.debug('\n' + "Verify Promotional Ribbon is displayed in TE page");
@@ -737,7 +738,7 @@ public class UpgradeCustomerPageActions extends Environment {
       }*/
         }else{
             log.debug("Failed to Click on Overlay TE function");
-            log.debug("Failed to Click on Overlay TE function");
+
         }
         WebElement eleofClose = driver.findElement(By.xpath("(//h3[contains(text(),'Sony Xperia')]/following-sibling::a/../following-sibling::div)[1]//..//a[@class='boxclose']"));
         if(eleofClose.isEnabled()){
@@ -1441,7 +1442,7 @@ public class UpgradeCustomerPageActions extends Environment {
             Thread.sleep(2000);
             log.debug("Entered OTAC code 999999 successfully");
 
-            WebElement element1 = UpgradeCustomerPage. submitCode_OTAC;
+            WebElement element1 = UpgradeCustomerPage.submitCode_OTAC;
             executor.executeScript("arguments[0].click();", element1);
             Thread.sleep(5000);
 
@@ -1534,6 +1535,8 @@ public class UpgradeCustomerPageActions extends Environment {
 
     public static void updateDeviceButton() throws InterruptedException, IOException {
         log.debug("Going to click updateDeviceButton button");
+        scrollToAnElement.scrollToElement(pageobjects.UpgradeCustomerPage.UpdateDevice);
+        Screenshots.captureScreenshot();
         pageobjects.UpgradeCustomerPage.UpdateDevice.click();
         Thread.sleep(4000);
         log.debug("Completed updateDeviceButton function");
@@ -1706,11 +1709,11 @@ public class UpgradeCustomerPageActions extends Environment {
     public static void SimSwapLinkDisplayed() throws Exception {
 
         if (UpgradeCustomerPage.SimSwaplink.isDisplayed()) {
-            log.debug("The Sim Swap link is displayed");
-            log.debug("The Sim Swap link is displayed");
+            log.debug("The Sim Swap link is displayed ie:: "+UpgradeCustomerPage.SimSwaplink.getText());
+
         } else {
             log.debug("The Sim Swap form link is displayed");
-            log.debug("The Sim Swap form link is displayed");
+
         }
         Screenshots.captureScreenshot();
 
@@ -1719,7 +1722,7 @@ public class UpgradeCustomerPageActions extends Environment {
     public static void ClickOnSimSwapLink() throws Exception {
 
         UpgradeCustomerPage.SimSwaplink.click();
-        Thread.sleep(2000);
+        Thread.sleep(4000);
 
         // driver.close();
         for (String winHandle : driver.getWindowHandles()) {
@@ -1727,7 +1730,7 @@ public class UpgradeCustomerPageActions extends Environment {
         }
 
         String simswapurl = driver.getCurrentUrl();
-        log.debug(simswapurl);
+        log.debug("The URL is: "+simswapurl);
         if (simswapurl.contains("swapmysim")) {
             log.debug("The Swap you sim page is displayed");
 
@@ -1746,11 +1749,12 @@ public class UpgradeCustomerPageActions extends Environment {
     }
 
     public static void ClickIneedAsim() throws Exception {
-
+        Thread.sleep(3000);
         if (UpgradeCustomerPage.IneedAsimRadio.isDisplayed()) {
             Thread.sleep(6000);
             UpgradeCustomerPage.IneedAsimRadio.click();
             log.debug("The I need a sim radio button is clicked");
+            Thread.sleep(2000);
         }
         Screenshots.captureScreenshot();
        // Screenshots.captureScreenshot(Hooks.directoryName);
@@ -1805,6 +1809,20 @@ public class UpgradeCustomerPageActions extends Environment {
         }
 
     }
+
+    public static void clickRemoveOfferButton() throws IOException {
+        log.debug("Going to click on Remove Offer aButton");
+        Screenshots.captureScreenshot();
+        if (UpgradeCustomerPage.RemoveOffer.size() > 0) {
+
+            UpgradeCustomerPage.RemoveOffer.get(0).click();
+            log.debug("Remove Offer button is clicked");
+        } else {
+            log.debug("Remove Offer button is not present or enabled");
+        }
+
+    }
+
 
     public static void selectTariffFromRecommendedSection() throws IOException {
         log.debug("Going to select tariff from recommended section");
@@ -2075,7 +2093,7 @@ public class UpgradeCustomerPageActions extends Environment {
         Screenshots.captureScreenshot();
     }
 
-    public static void VerifyTradeinMessage() throws IOException {
+    public static void VerifyTradeinMessage() throws IOException, InterruptedException {
         log.debug("in verify tradein message function");
         driver.findElement(By.xpath("//div[@class='ng-scope trade-in-offer']")).getText();
         String text = driver.findElement(By.xpath("//div[@class='ng-scope trade-in-offer']")).getText();
@@ -2090,7 +2108,7 @@ public class UpgradeCustomerPageActions extends Environment {
         Screenshots.captureScreenshot();
         ((JavascriptExecutor) driver).executeScript("arguments[0].click();",
                 driver.findElement(By.xpath("//button[contains(text(),'Take this offer and upgrade')]")));
-
+        Thread.sleep(4000);
 
     }
 
@@ -2217,15 +2235,16 @@ public class UpgradeCustomerPageActions extends Environment {
 
         driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
 
-        String logOutTxt = driver.findElement(By.xpath("//h1")).getText();
+        String logOutTxt = driver.findElement(By.xpath("//p[@class='header-logout-msg-txt']")).getText();
+        Screenshots.captureScreenshot();
         log.debug("Logout message :: " +logOutTxt);
         if (logOutTxt.contains("You have successfully signed out")) {
             log.debug("Logout page is displayed and validated logout message successfully");
         } else {
             log.debug("Logout Message is not matching");
-            Assert.fail("Logout Message is not matching");
+            //Assert.fail("Logout Message is not matching");
         }
-        Screenshots.captureScreenshot();
+
     }
 
     public static void redirectUrlAfterLogout() throws Exception {
@@ -2656,134 +2675,6 @@ public class UpgradeCustomerPageActions extends Environment {
         return datalistafter;
     }
 
-
-    public static void validateMSISDN(String MSISDN){
-        try {
-
-            if(UpgradeCustomerPage.upgrade_options_msisdn.isDisplayed()){
-                String msisdn = UpgradeCustomerPage.upgrade_options_msisdn.getText();
-                System.out.println(" MSISDN: "+msisdn);
-                log.info(" MSISDN: "+msisdn);
-            }else{
-                System.out.println("Failed to a find the msisdn");
-                log.info("Failed to validate the MSISDN: ");
-            }
-
-        }catch (Exception e){
-            System.out.println("Failed to validate the MSISDN: "+ e.getMessage());
-            log.info("Failed to validate the MSISDN: "+ e.getMessage());
-            Assert.fail("Failed to validate the MSISDN: "+ e.getMessage());
-
-        }
-    }
-
-    public static void copyTextOfUpgradeOptions(){
-        try {
-            if(UpgradeCustomerPage.buyOutCopyText.isDisplayed()){
-                String copyTextOfUpgradeOptions = UpgradeCustomerPage.buyOutCopyText.getText();
-                System.out.println(" Copy text of upgrade options: "+copyTextOfUpgradeOptions);
-                log.info(" Copy text of upgrade options: "+copyTextOfUpgradeOptions);
-            }else{
-                System.out.println("Failed to a find the Copy text of upgrade options");
-                log.info("Failed to validate the Copy text of upgrade options: ");
-            }
-
-        }catch (Exception e){
-            System.out.println("Failed to validate the Copy text of upgrade options: "+ e.getMessage());
-            log.info("Failed to validate the Copy text of upgrade options: "+ e.getMessage());
-            Assert.fail("Failed to validate the Copy text of upgrade options: "+ e.getMessage());
-
-        }
-    }
-
-
-    public static void clickOnRemoveOfferCTA(){
-        try {
-            if(UpgradeCustomerPage.removeOfferCTA.isDisplayed()){
-                String copyTextOfUpgradeOptions = UpgradeCustomerPage.buyOutCopyText.getText();
-                System.out.println("Remove offer CTA is displayed");
-                log.info("Remove offer CTA is displayed");
-            }else{
-                System.out.println("Failed to a find Remove offer CTA");
-                log.info("Failed to a find Remove offer CTA");
-            }
-        }catch (Exception e){
-            System.out.println("Failed to a find Remove offer CTA"+ e.getMessage());
-            log.info("Failed to a find Remove offer CTA"+ e.getMessage());
-            Assert.fail("Failed to a find Remove offer CTA"+ e.getMessage());
-        }
-    }
-
-
-
-    public static void leftToPay_Validate(String display) {
-        try {
-            if (display.contains("No")) {
-                if (!UpgradeCustomerPage.lerfToPay.isDisplayed()) {
-                    String leftToPayTxt = UpgradeCustomerPage.lerfToPay.getText();
-                    System.out.println("Left to pay " + leftToPayTxt);
-                    log.info("Left to pay " + leftToPayTxt);
-                } else {
-                    System.out.println("Failed to a find left to pay text");
-                    log.info("Failed to a find left to pay text");
-                }
-            }
-
-            if (display.contains("Yes")) {
-                if (UpgradeCustomerPage.lerfToPay.isDisplayed()) {
-                    String leftToPayTxt = UpgradeCustomerPage.lerfToPay.getText();
-                    System.out.println("Left to pay " + leftToPayTxt);
-                    log.info("Left to pay " + leftToPayTxt);
-                } else {
-                    System.out.println("Failed to display - left to pay text");
-                    log.info("Failed to display - left to pay text");
-                }
-            }
-        }
-        catch(Exception e){
-                System.out.println("Failed to a find left to pay text" + e.getMessage());
-                log.info("Failed to a find left to pay text" + e.getMessage());
-                Assert.fail("Failed to a find left to pay text" + e.getMessage());
-            }
-        }
-
-
-
-    public static void checkIsSimoTabEnable(String status){
-        try {
-
-            if (status.contains("No")) {
-                if (!UpgradeCustomerPage.simoTab.isDisplayed()) {
-                    System.out.println("Simo tab is disabled");
-                    log.info("Simo tab is disabled");
-                } else {
-                    System.out.println("Failed - Simo tab is Enabled");
-                    log.info("Failed to Simo tab is Enabled");
-                }
-            }
-
-            if (status.contains("Yes")) {
-                if (UpgradeCustomerPage.simoTab.isDisplayed()) {
-                        System.out.println("Simo tab is Displayed");
-                        log.info("Simo tab is Displayed");
-                    } else {
-                        System.out.println("Failed to Simo tab is Displayed");
-                        log.info("Failed to Simo tab is Displayed");
-                    }
-                }
-
-        }catch (Exception e){
-            System.out.println("Failed validate the Simo Display"+ e.getMessage());
-            log.info("Failed validate the Simo Display"+ e.getMessage());
-            Assert.fail("Failed validate the Simo Display"+ e.getMessage());
-        }
-        }
-
-
-
-
-
-
     public static ArrayList<Integer> getMonthlyCostListAfterSelectingFilter_UpgradeSIMO_MBBTablet() throws IOException {
         List<WebElement> MonthlyCostTextElement = null;
 
@@ -3066,4 +2957,128 @@ public class UpgradeCustomerPageActions extends Environment {
         Screenshots.captureScreenshot();
         return tariffListUsingMonthlyCost;
     }
+    
+    
+     public static void validateMSISDN(String MSISDN){
+        try {
+
+            if(UpgradeCustomerPage.upgrade_options_msisdn.isDisplayed()){
+                String msisdn = UpgradeCustomerPage.upgrade_options_msisdn.getText();
+                System.out.println(" MSISDN: "+msisdn);
+                log.info(" MSISDN: "+msisdn);
+            }else{
+                System.out.println("Failed to a find the msisdn");
+                log.info("Failed to validate the MSISDN: ");
+            }
+
+        }catch (Exception e){
+            System.out.println("Failed to validate the MSISDN: "+ e.getMessage());
+            log.info("Failed to validate the MSISDN: "+ e.getMessage());
+            Assert.fail("Failed to validate the MSISDN: "+ e.getMessage());
+
+        }
+    }
+
+    public static void copyTextOfUpgradeOptions(){
+        try {
+            if(UpgradeCustomerPage.buyOutCopyText.isDisplayed()){
+                String copyTextOfUpgradeOptions = UpgradeCustomerPage.buyOutCopyText.getText();
+                System.out.println(" Copy text of upgrade options: "+copyTextOfUpgradeOptions);
+                log.info(" Copy text of upgrade options: "+copyTextOfUpgradeOptions);
+            }else{
+                System.out.println("Failed to a find the Copy text of upgrade options");
+                log.info("Failed to validate the Copy text of upgrade options: ");
+            }
+
+        }catch (Exception e){
+            System.out.println("Failed to validate the Copy text of upgrade options: "+ e.getMessage());
+            log.info("Failed to validate the Copy text of upgrade options: "+ e.getMessage());
+            Assert.fail("Failed to validate the Copy text of upgrade options: "+ e.getMessage());
+
+        }
+    }
+
+
+    public static void clickOnRemoveOfferCTA(){
+        try {
+            if(UpgradeCustomerPage.removeOfferCTA.isDisplayed()){
+                String copyTextOfUpgradeOptions = UpgradeCustomerPage.buyOutCopyText.getText();
+                System.out.println("Remove offer CTA is displayed");
+                log.info("Remove offer CTA is displayed");
+            }else{
+                System.out.println("Failed to a find Remove offer CTA");
+                log.info("Failed to a find Remove offer CTA");
+            }
+        }catch (Exception e){
+            System.out.println("Failed to a find Remove offer CTA"+ e.getMessage());
+            log.info("Failed to a find Remove offer CTA"+ e.getMessage());
+            Assert.fail("Failed to a find Remove offer CTA"+ e.getMessage());
+        }
+    }
+
+
+
+    public static void leftToPay_Validate(String display) {
+        try {
+            if (display.contains("No")) {
+                if (!UpgradeCustomerPage.lerfToPay.isDisplayed()) {
+                    String leftToPayTxt = UpgradeCustomerPage.lerfToPay.getText();
+                    System.out.println("Left to pay " + leftToPayTxt);
+                    log.info("Left to pay " + leftToPayTxt);
+                } else {
+                    System.out.println("Failed to a find left to pay text");
+                    log.info("Failed to a find left to pay text");
+                }
+            }
+
+            if (display.contains("Yes")) {
+                if (UpgradeCustomerPage.lerfToPay.isDisplayed()) {
+                    String leftToPayTxt = UpgradeCustomerPage.lerfToPay.getText();
+                    System.out.println("Left to pay " + leftToPayTxt);
+                    log.info("Left to pay " + leftToPayTxt);
+                } else {
+                    System.out.println("Failed to display - left to pay text");
+                    log.info("Failed to display - left to pay text");
+                }
+            }
+        }
+        catch(Exception e){
+                System.out.println("Failed to a find left to pay text" + e.getMessage());
+                log.info("Failed to a find left to pay text" + e.getMessage());
+                Assert.fail("Failed to a find left to pay text" + e.getMessage());
+            }
+        }
+
+
+
+    public static void checkIsSimoTabEnable(String status){
+        try {
+
+            if (status.contains("No")) {
+                if (!UpgradeCustomerPage.simoTab.isDisplayed()) {
+                    System.out.println("Simo tab is disabled");
+                    log.info("Simo tab is disabled");
+                } else {
+                    System.out.println("Failed - Simo tab is Enabled");
+                    log.info("Failed to Simo tab is Enabled");
+                }
+            }
+
+            if (status.contains("Yes")) {
+                if (UpgradeCustomerPage.simoTab.isDisplayed()) {
+                        System.out.println("Simo tab is Displayed");
+                        log.info("Simo tab is Displayed");
+                    } else {
+                        System.out.println("Failed to Simo tab is Displayed");
+                        log.info("Failed to Simo tab is Displayed");
+                    }
+                }
+
+        }catch (Exception e){
+            System.out.println("Failed validate the Simo Display"+ e.getMessage());
+            log.info("Failed validate the Simo Display"+ e.getMessage());
+            Assert.fail("Failed validate the Simo Display"+ e.getMessage());
+        }
+        }   
+    
 }
