@@ -10351,7 +10351,7 @@ public class E2EOrderPlaced_Steps {
     
     
     
-    @And("MSISDN <MSISDN> should be selected by default and buyout offer should be applied by default")
+    @And("MSISDN ([^\"]*) should be selected by default and buyout offer should be applied by default")
     public void MSISDN_should_be_selected_by_default_and_buyout_offer_should_be_applied_by_default(String msisdn) {
         //driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         try {
@@ -10439,11 +10439,11 @@ public class E2EOrderPlaced_Steps {
 
 
     @And("verify The 'Buyout offer line item' should be displayed in 'Your package' summary as per BAU")
-    public  void VerifytheBuyoutOfferIineItem_shouldDisplay() {
+    public  void VerifytheBuyoutOfferIineItem_shouldDisplayed() {
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         try {
             PageFactory.initElements(driver, UpgradeCustomerPage.class);
-            //UpgradeCustomerPageActions.checkIsSimoTabEnable("No");
+            UpgradeCustomerPageActions.checkIsSimoTabEnable("Yes");
         } catch (Exception e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
@@ -10457,7 +10457,7 @@ public class E2EOrderPlaced_Steps {
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         try {
             PageFactory.initElements(driver, UpgradeCustomerPage.class);
-            //UpgradeCustomerPageActions.checkIsSimoTabEnable("No");
+            UpgradeCustomerPageActions.checkIsSimoTabEnable("No");
         } catch (Exception e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
@@ -10465,19 +10465,19 @@ public class E2EOrderPlaced_Steps {
         }
     }
 
-
+/*
     @And("verify The 'Buyout offer line item' should be displayed in 'Your package' summary as per BAU")
     public  void verifyBuyoutOfferLineItem() {
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         try {
             PageFactory.initElements(driver, UpgradeCustomerPage.class);
-            //UpgradeCustomerPageActions.checkIsSimoTabEnable("No");
+            UpgradeCustomerPageActions.checkIsSimoTabEnable("Yes");
         } catch (Exception e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
             Assert.fail("Unable to select Create New account");
         }
-    }
+    }*/
 
     @And("verify that The 'SIMO tab' should be displayed")
     public  void isSimoTabDisplayed() {
