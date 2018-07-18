@@ -153,15 +153,12 @@ public class E2EOrderPlaced_Steps {
 
             if(MyO2Page.signInUserName.getText()!="")
             {
-                log.debug("'Username' input field is not empty:: "+MyO2Page.signInUserName.getText());
+                log.debug("'Username' input field is not empty and value is:: "+MyO2Page.signInUserName.getAttribute("value"));
+            }else {
+                log.debug("'Username' input field is not prepopulated");
+                Assert.fail("'Username' input field is not prepopulated");
             }
 
-            if (MyO2Page.rememberUserName.isSelected()) {
-                log.debug("'Remember my username' checkbox is selected");
-            } else {
-                log.debug("'Remember my username' checkbox is not selected");
-                Assert.fail("'Remember my username' checkbox is not selected");
-            }
         } catch (Exception e) {
             // TODO Auto-generated catch block
             log.debug("Failed to validate 'Remember my username' checkbox at My O2 link page ::" + e.getStackTrace());
@@ -234,9 +231,9 @@ public class E2EOrderPlaced_Steps {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, MyO2Page.class);
             MyO2PageActions.Logout_MyO2();
-            Thread.sleep(7000);
+            Thread.sleep(8000);
             Autoredirection.redirect();
-            Thread.sleep(2000);
+            Thread.sleep(4000);
         } catch (Exception e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
@@ -495,6 +492,7 @@ public class E2EOrderPlaced_Steps {
             PageFactory.initElements(driver, MobileBroadBandPage.class);
             Thread.sleep(5000);
             MobileBroadBandPageActions.DeviceSelect(elementName);
+            Thread.sleep(5000);
         } catch (Exception e) {
             // TODO Auto-generated catch block
             log.debug("Unable to select MBB PayM device");
@@ -1349,6 +1347,7 @@ public class E2EOrderPlaced_Steps {
             PageFactory.initElements(driver, DeliveryPage.class);
 
             DeliveryPageActions.SetDelivery();
+            Thread.sleep(4000);
             DeliveryPageActions.AboutYou(Firstname, Surname);
             // DeliveryPageActions.ClickContinue();
             //DeliveryPageActions.clickOnSubmitBtn();
@@ -1791,9 +1790,9 @@ public class E2EOrderPlaced_Steps {
             PaymentPageActions.Set_Bank_details(Username);
             Thread.sleep(10000);
             PaymentPageActions.Time_At_Address();
-            Thread.sleep(10000);
+            Thread.sleep(12000);
             PaymentPageActions.Card_Details(Username);
-            //Thread.sleep(10000);
+            Thread.sleep(12000);
             //PaymentPageActions.Card_Details_CCV();
 
 
@@ -7784,6 +7783,7 @@ public class E2EOrderPlaced_Steps {
         try {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, PaymentPage.class);
+            Thread.sleep(8000);
             PaymentPageActions.Card_Details(Username);
             Thread.sleep(10000);
             PaymentPageActions.Card_Details_CCV();

@@ -14,14 +14,14 @@ import org.openqa.selenium.WebElement;
 public class ReviewPageActions extends Environment {
 	final static Logger log = Logger.getLogger("ReviewPageActions");
 
-	public static void gettitlepage() throws IOException, InterruptedException {
+	public static void gettitlepage() throws IOException {
 
 		log.debug(driver.getTitle());
 		Screenshots.captureScreenshot();
 
 	}
 
-	public static void TermsCheckBox() throws IOException, InterruptedException {
+	public static void TermsCheckBox() throws IOException {
 		log.debug("Clicking on the checkbox");
 		if (pageobjects.ReviewPage.TermsCheckBox.isSelected()) {
 
@@ -42,13 +42,13 @@ public class ReviewPageActions extends Environment {
 		executor.executeScript("arguments[0].click();", element);
 		//pageobjects.ReviewPage.PayNow.click();
 		log.debug("Completing on Review page");
-		log.debug("Clicked the Paynow button");
+
 		Thread.sleep(5000L);
 		Screenshots.captureScreenshot();
 
 	}
 
-	public static void checktrustev() throws IOException, InterruptedException {
+	public static void checktrustev() throws IOException {
 		String Source = driver.getPageSource();
 		String Trustev = "trustev";
 
@@ -65,7 +65,7 @@ public class ReviewPageActions extends Environment {
 		return false;
 	}
 
-	public static void checkOrderContractTextRP() throws IOException, InterruptedException {
+	public static void checkOrderContractTextRP() throws IOException {
 		String ActOrderContractMsg = "";
 		String ExpOrderContractMsg = "";
 
@@ -104,7 +104,7 @@ public class ReviewPageActions extends Environment {
 		}
 	}
 
-	public static void checkStockExtMsgRP() throws IOException, InterruptedException {
+	public static void checkStockExtMsgRP() throws IOException {
 		// TODO Auto-generated method stub
 		String ActualStockExtMsg = pageobjects.ReviewPage.StockExtMessageDDPORP.getText();
 		String ExpStockExtMsg = "You'll pay for your phone now. We'll send you an email or text to let you know when it will be delivered";
@@ -120,7 +120,7 @@ public class ReviewPageActions extends Environment {
 		Screenshots.captureScreenshot();
 	}
 
-	public static void checkStockExtMsgRP(String product) throws IOException, InterruptedException {
+	public static void checkStockExtMsgRP(String product) throws IOException {
 		// TODO Auto-generated method stub
 		String ActualStockExtMsg = pageobjects.ReviewPage.StockExtMessageDDPORP.getText();
 
@@ -139,7 +139,7 @@ public class ReviewPageActions extends Environment {
 		Screenshots.captureScreenshot();
 	}
 
-	public static void checkDelTextRP() throws IOException, InterruptedException {
+	public static void checkDelTextRP() throws IOException {
 		String ExpStockExtMsgDelText = "We will deliver the rest of your order as soon as possible.";
 		if (pageobjects.ReviewPage.DeliveryTextRP.getText().matches(ExpStockExtMsgDelText)) {
 			log.debug("Delivery Text in Review Page is present");

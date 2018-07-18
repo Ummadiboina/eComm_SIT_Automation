@@ -301,11 +301,8 @@ public class BasketPageActions extends Environment {
 		if (fname != false) {
 			log.debug("Checkout is Enabled and Present");
 
-			log.debug("Checkout is Enabled and Present");
-
 		} else {
-			log.debug(
-					"Go To Checkout is Absent and the Text is :" + pageobjects.BasketPage.checkoutbtn.getText());
+
 			log.debug("Go To Checkout is Absent and the Text is :" + pageobjects.BasketPage.checkoutbtn.getText());
 
 		}
