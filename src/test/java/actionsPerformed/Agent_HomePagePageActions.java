@@ -21,7 +21,7 @@ public class Agent_HomePagePageActions extends Environment {
 	/*
 	 * //this method used to perform click action on the Agent Home Page
 	 */
-	public static void ElementClickAction(String elementname) throws IOException, InterruptedException {
+	public static void ElementClickAction(String elementname) throws IOException {
 		// TODO Auto-generated method stub
 
 		log.debug("Agent_Home_Page_Action");
@@ -65,7 +65,7 @@ public class Agent_HomePagePageActions extends Environment {
 		log.debug("Verifying if Upgrade link is enabled");
 		Agent_HomePage.UpgradeLink.click();
 		log.debug("Clicking on upgrade link");
-		log.debug("Clicking on upgrade link");
+		Thread.sleep(5000);
 
 		if(driver.findElements(By.xpath("//a[@id='abandonCheckout']")).size()>0)
 		{
@@ -79,8 +79,17 @@ public class Agent_HomePagePageActions extends Environment {
 
 		}
 
+		if(driver.findElements(By.className("tradeInMessage")).size()>0) {
+			String TradeInUpgradeOptions = driver.findElement(By.className("tradeInMessage")).getText();
+			log.debug("Displaying Trade-in Upgrade Options Message");
+			log.debug(TradeInUpgradeOptions);
+		}
+
 		try {
 			if (driver.findElement(By.xpath("//*[@id='cca']/div[2]/a[1]")).isDisplayed()) {
+				if (driver.findElement(By.xpath("//*[@id='cca']/div[2]/a[1]")).isEnabled()) {
+					driver.findElement(By.xpath("//*[@id='cca']/div[2]/a[1]")).click();
+				}
 				log.debug("new overlay is displayed");
 			} else {
 				log.debug("new overlay is not displayed");
@@ -109,7 +118,7 @@ public class Agent_HomePagePageActions extends Environment {
 					log.debug("The Empty Deal button is enabled hence Emptying the basket");
 					Agent_HomePage.emptyDealButton.click();
 					log.debug("Clicking on emptyDealButton button");
-					log.debug("Clicking on emptyDealButton button");
+
 				} else {
 					System.out.print("Deal builder is not enables which is ok  ");
 				}
@@ -136,7 +145,7 @@ public class Agent_HomePagePageActions extends Environment {
 
 	}
 
-	public static void NewUser() throws InterruptedException, IOException {
+	public static void NewUser() throws IOException {
 		driver.manage().deleteAllCookies();
 
 		try {
@@ -161,7 +170,7 @@ public class Agent_HomePagePageActions extends Environment {
 
 	}
 
-	public static void NewConnection() throws InterruptedException, IOException {
+	public static void NewConnection() throws IOException {
 		driver.manage().deleteAllCookies();
 
 		try {
@@ -181,7 +190,7 @@ public class Agent_HomePagePageActions extends Environment {
 	}
 
 
-	public static void ValidateAgentHomepage() throws IOException, InterruptedException {
+	public static void ValidateAgentHomepage() throws IOException {
 
 		log.debug("Agent Home page Validation" + driver.getTitle());
 		log.debug("Agent Home Page validation" + driver.getTitle());

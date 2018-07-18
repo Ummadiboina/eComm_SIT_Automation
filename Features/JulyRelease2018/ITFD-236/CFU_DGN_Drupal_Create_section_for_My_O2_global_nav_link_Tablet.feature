@@ -11,65 +11,65 @@ Feature: CFU_DGN_Drupal_Create_section_for_My_O2_global_nav_link_Tablet
     And Navigate to upgrade > upgrade now
     And click on 'My O2' link
     Then validate url for existing customer when clicks on 'My O2' link
-    Then Click on browser back arrow and land on previous page
+    #Then Click on browser back arrow and land on previous page
     And navigate to PAYM Phones page
     And click on 'My O2' link
     Then validate url for existing customer when clicks on 'My O2' link
-    Then Click on browser back arrow and land on previous page
+    #Then Click on browser back arrow and land on previous page
     And navigate to PAYM Tablets page
     And click on 'My O2' link
     Then validate url for existing customer when clicks on 'My O2' link
-    Then Click on browser back arrow and land on previous page
+    #Then Click on browser back arrow and land on previous page
     And Navigate to PayM MBB page
     And click on 'My O2' link
     Then validate url for existing customer when clicks on 'My O2' link
-    Then Click on browser back arrow and land on previous page
+    #Then Click on browser back arrow and land on previous page
     And navigate to PAYM SIMO page
     And click on 'My O2' link
     Then validate url for existing customer when clicks on 'My O2' link
-    Then Click on browser back arrow and land on previous page
+    #Then Click on browser back arrow and land on previous page
     And Navigate to Accessories
     And click on 'My O2' link
     Then validate url for existing customer when clicks on 'My O2' link
-    Then Click on browser back arrow and land on previous page
+    #Then Click on browser back arrow and land on previous page
     And Navigate to Fitness Trackers
     And click on 'My O2' link
     Then validate url for existing customer when clicks on 'My O2' link
-    Then Click on browser back arrow and land on previous page
+    #Then Click on browser back arrow and land on previous page
     And Navigate to SmartWatches
     And click on 'My O2' link
     Then validate url for existing customer when clicks on 'My O2' link
-    Then Click on browser back arrow and land on previous page
+    #Then Click on browser back arrow and land on previous page
     And Navigate to Ipad page
     And click on 'My O2' link
     Then validate url for existing customer when clicks on 'My O2' link
-    Then Click on browser back arrow and land on previous page
+    #Then Click on browser back arrow and land on previous page
     # PayG navigations starts
     And navigate to Pay as you Go Phones page
     And click on 'My O2' link
     Then validate url for existing customer when clicks on 'My O2' link
-    Then Click on browser back arrow and land on previous page
+    #Then Click on browser back arrow and land on previous page
     And navigate to Pay as you Go Tablets page
     And click on 'My O2' link
     Then validate url for existing customer when clicks on 'My O2' link
-    Then Click on browser back arrow and land on previous page
+    #Then Click on browser back arrow and land on previous page
     And navigate to PayG SIMO page
     And click on 'My O2' link
     Then validate url for existing customer when clicks on 'My O2' link
-    Then Click on browser back arrow and land on previous page
+    #Then Click on browser back arrow and land on previous page
     And Navigate to PayG MBB page
     And click on 'My O2' link
     Then validate url for existing customer when clicks on 'My O2' link
-    Then Click on browser back arrow and land on previous page
+    #Then Click on browser back arrow and land on previous page
     #//--------Validating at Device details,Tariff&Extras, Basket and order confirmation page-------------
     And Navigate to upgrade > upgrade now
     And Click on Tablet section in upgrade options page
     And Select a <Tablet> device from Recommended devices section
     And Click on View all Tariffs link in upgrade options page
-    And Land on the 'Tariffs and extra' page
     And click on 'My O2' link
     Then validate url for existing customer when clicks on 'My O2' link
     Then Click on browser back arrow and land on previous page
+    And Land on the 'Tariffs and extra' page
     And I Land on the basket page by clicking on Add to Basket button
     And click on 'My O2' link
     Then validate url for existing customer when clicks on 'My O2' link
@@ -88,5 +88,5 @@ Feature: CFU_DGN_Drupal_Create_section_for_My_O2_global_nav_link_Tablet
 
 
     Examples:
-      | username           | password | Firstname | Surname | Tablet  | Username     | Action    | consumer | status  |
-      | ash1425a@gmail.com | test123  | Test      | Accepta | Samsung | TEST ACCEPTA | enterCode | Me       | Enabled |
+      | username                     | password | Firstname | Surname | Tablet  | Username     | Action    | consumer | status  |
+      | ins_feb3087@stf.ref.o2.co.uk | test123  | Test      | Accepta | Samsung | TEST ACCEPTA | enterCode | Me       | Enabled |

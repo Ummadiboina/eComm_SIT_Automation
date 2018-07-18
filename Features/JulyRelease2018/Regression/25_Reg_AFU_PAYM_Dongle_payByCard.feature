@@ -17,4 +17,4 @@ Feature: 25_Reg_AFU_PAYM_Dongle_payByCard
 
     Examples:
       | user        | Device | Tariffs | consumer | B1     | B2  | B3     | B4  | Text | Email  | Phone | Post | status  | MBBStatus | DeviceType |
-      | 07521114774 | dongle | Random  | Me       | Select | Not | Select | Not | Not  | Select | Not   | Not  | Enabled | No        | Connected  |
+      | 07729000526 | dongle | Random  | Me       | Select | Not | Select | Not | Not  | Select | Not   | Not  | Enabled | No        | Connected  |

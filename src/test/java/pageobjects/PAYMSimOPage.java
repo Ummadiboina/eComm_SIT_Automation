@@ -212,7 +212,7 @@ public class PAYMSimOPage {
 	@FindBy(how = How.XPATH, using = ("//button[@id='currentSim']"))
 	public static WebElement IWillKeepMyCurrentSIM;
 
-	@FindBy(how = How.XPATH, using = ("//button[@id='newSim']"))
+	@FindBy(how = How.XPATH, using = ("//button[@id='newSim'] | //input[@id='newSim'] | //input[@id='needNewSim']"))
 	public static WebElement INeedNewSIM;
 
 	@FindBy(how = How.XPATH, using = ("//*[@id='simonly-upgrade-terms-label']/input"))

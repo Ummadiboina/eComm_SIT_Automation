@@ -26,7 +26,7 @@ public class Agent_DealBuilderPageActions extends Environment {
 
     // this method used to perform click action on the Agent Home Page
 
-    public static void ValidateAgentHomepage() throws IOException, InterruptedException {
+    public static void ValidateAgentHomepage() throws IOException {
 
         log.debug("Agent Home page Validation" + driver.getTitle());
         log.debug("Agent Home Page validation" + driver.getTitle());
@@ -45,7 +45,7 @@ public class Agent_DealBuilderPageActions extends Environment {
 
         Agent_DealBuilderPage.DevicesTab.click();
         log.debug("Clicked on Devices tab");
-        log.debug("Clicked on Devices tab");
+
         Thread.sleep(7000);
 
         if (Device.contains("Random")) {
@@ -141,7 +141,7 @@ public class Agent_DealBuilderPageActions extends Environment {
 
     }
 
-    public static void HandsetTariffCombination() throws InterruptedException, IOException {
+    public static void HandsetTariffCombination() throws IOException {
         try {
             log.debug("Tariff Name: " + driver.findElement(By.xpath("//*[@id='planTable']/tbody/tr[1]/td[6]")).getText());
             if (driver.findElement(By.xpath("//*[@id='planTable']/tbody/tr[1]/td[6]")).getText().equals("Standard")) {
@@ -169,7 +169,7 @@ public class Agent_DealBuilderPageActions extends Environment {
         }
     }
 
-    public static void HandsetTariffCombination_new() throws InterruptedException, IOException {
+    public static void HandsetTariffCombination_new() throws IOException {
         try {
             log.debug("Tariff Name: " + driver.findElement(By.xpath("//*[@id='planTable']/tbody/tr[1]/td[6]")).getText());
             if (driver.findElement(By.xpath("//*[@id='planTable']/tbody/tr[1]/td[6]")).getText()
@@ -489,7 +489,7 @@ public class Agent_DealBuilderPageActions extends Environment {
         Screenshots.captureScreenshot();
     }
 
-    public static void CCAHandsetTariffCombination() throws InterruptedException, IOException {
+    public static void CCAHandsetTariffCombination() throws IOException {
         try {
             Select dropdown = new Select(pageobjects.Agent_DealBuilderPage.HandsetTariffCombination);
             dropdown.selectByIndex(1);
@@ -505,12 +505,15 @@ public class Agent_DealBuilderPageActions extends Environment {
     }
 
     public static void AgentTradeInQuestionair() throws InterruptedException, IOException {
-        Thread.sleep(5000);
+        Thread.sleep(7000);
         if (Agent_DealBuilderPage.AgentTradeInBtn.isDisplayed()) {
             log.debug("The trade in button is displayed");
-            Agent_DealBuilderPage.AgentTradeInBtn.click();
-            log.debug("The Trade In button is clicked");
+            //Agent_DealBuilderPage.AgentTradeInBtn.click();
+            JavascriptExecutor executor = (JavascriptExecutor) driver;
+            executor.executeScript("arguments[0].click();", Agent_DealBuilderPage.AgentTradeInBtn);
 
+            log.debug("The Trade In button is clicked");
+            Thread.sleep(6000);
             String Mainwindow1 = driver.getWindowHandle();
             // getting all the popup windows , hence using getwindowhandles
             // instead of
@@ -537,7 +540,7 @@ public class Agent_DealBuilderPageActions extends Environment {
                     Select Question4 = new Select(pageobjects.Agent_DealBuilderPage.AgentTradeAns4);
                     Question4.selectByIndex(1);
 
-                    Thread.sleep(2000);
+                    Thread.sleep(3000);
 
                     pageobjects.Agent_DealBuilderPage.AgentTradeAccept.click();
 
@@ -549,7 +552,7 @@ public class Agent_DealBuilderPageActions extends Environment {
             driver.switchTo().window(Mainwindow1);
             Thread.sleep(5000);
 
-            JavascriptExecutor executor = (JavascriptExecutor) driver;
+            //JavascriptExecutor executor = (JavascriptExecutor) driver;
             executor.executeScript("arguments[0].click();", Agent_DealBuilderPage.TradeInCheckBox);
             Screenshots.captureScreenshot();
 
@@ -563,7 +566,7 @@ public class Agent_DealBuilderPageActions extends Environment {
 
     }
 
-    public static void AgentTradeInQuestionairAns() throws InterruptedException, IOException {
+    public static void AgentTradeInQuestionairAns() throws IOException {
 
         if (Agent_DealBuilderPage.TradeInQuestions.isDisplayed()) {
             log.debug("The trade in Qustionair is displayed");

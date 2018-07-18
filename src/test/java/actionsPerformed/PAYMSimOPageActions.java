@@ -43,7 +43,7 @@ public class PAYMSimOPageActions extends Environment {
 		if (elementName.contains("12 Months")) {
 
 			log.debug("The Contract length is " + pageobjects.PAYMSimOPage.twelevemonths.getText());
-			log.debug("The Contract length is " + pageobjects.PAYMSimOPage.twelevemonths.getText());
+
 			Screenshots.captureScreenshot();
 			pageobjects.PAYMSimOPage.twelevemonths.sendKeys(Keys.ENTER);
 			Thread.sleep(10000);
@@ -60,7 +60,7 @@ public class PAYMSimOPageActions extends Environment {
 			log.debug("Selecting a Random Tariff under 30 days tab");
 			log.debug("Selecting a Random Tariff under 30 days tab");
 			pageobjects.PAYMSimOPage.thirtydays.sendKeys(Keys.ENTER);
-			Thread.sleep(10000);
+			Thread.sleep(7000);
 			JavascriptExecutor executor = (JavascriptExecutor)driver;
 			executor.executeScript("arguments[0].click();",pageobjects.PAYMSimOPage.BuyNowRandomTariff30Months);
 			Thread.sleep(5000);
@@ -86,7 +86,7 @@ public class PAYMSimOPageActions extends Environment {
 
 		if (elementName.contains("30 Days")) {
 			log.debug("Selecting a Recommended Tariff under 30 days tab");
-			log.debug("Selecting a Recommended Tariff under 30 days tab");
+
 			pageobjects.PAYMSimOPage.thirtydays.sendKeys(Keys.ENTER);
 			Thread.sleep(3000);
 			JavascriptExecutor executor = (JavascriptExecutor)driver;
@@ -97,9 +97,9 @@ public class PAYMSimOPageActions extends Environment {
 		}
 		if (elementName.contains("12 Months")) {
 			log.debug("Selecting a Recommended Tariff under 12 Months tab");
-			log.debug("Selecting a Recommended Tariff under 12 Months tab");
+
 			pageobjects.PAYMSimOPage.twelevemonths.sendKeys(Keys.ENTER);
-			Thread.sleep(3000);
+			Thread.sleep(4000);
 			JavascriptExecutor executor = (JavascriptExecutor)driver;
 			executor.executeScript("arguments[0].click();",pageobjects.PAYMSimOPage.BuyNowPromotedTariff12Months);
 			Thread.sleep(5000);
