@@ -98,7 +98,7 @@ public class RemedyLoginAction extends Environment {
             int getDate = Integer.parseInt(strT.nextToken());
             int getMonth = Integer.parseInt(strT.nextToken());
 
-            user = user + "" + nameOfSubmitter;
+            //user = user + "" + nameOfSubmitter;
             driver.findElement(By.xpath("//img[@alt='Editor for Summary*']")).click();
             CommonActions.driverWait(1000);
             text_SammaryField = driver.findElement(By.xpath("//div[@class='OverflowAuto']/textarea")).getText();
@@ -293,7 +293,7 @@ public class RemedyLoginAction extends Environment {
         }
     }
 
-    public static void dataprint() throws InterruptedException{
+    public static void dataprint() {
         readDataFromEXel();
         System.out.println("test the data inside map" + lstOfsupportGrpMember);
         for (Map.Entry<String, String> entry : lstOfsupportGrpMember.entrySet()) {
