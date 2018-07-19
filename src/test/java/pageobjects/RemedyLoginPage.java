@@ -55,7 +55,7 @@ public class RemedyLoginPage {
 
 
     //status type select arrow
-    @FindBy(how = How.XPATH, using = "(//div[@ardbn='Status']//img)[2]")
+    @FindBy(how = How.XPATH, using = "//div[@ardbn='Status']//img")
     public static WebElement statusTypeSelArrow;
 
     //Note Text Area
@@ -67,7 +67,7 @@ public class RemedyLoginPage {
     public static WebElement moreDetailsArrow;
 
     //Public radio button
-    @FindBy(how = How.XPATH, using = "(//label[text()='Public']/preceding-sibling::input)[2]")
+    @FindBy(how = How.XPATH, using = "//label[text()='Public']/preceding-sibling::input")
     public static WebElement radioBtn_public;
 
     //add button to update query
