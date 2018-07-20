@@ -1373,6 +1373,7 @@ public class UpgradeCustomerPageActions extends Environment {
 
     public static void yourSim() {
         try {
+            Thread.sleep(4000);
             log.debug("In your Sim Section");
             log.debug("Choosing need new sim");
             WebElement needNewSimRadio = driver.findElement(By.xpath("//input[@id='needNewSim']"));
@@ -1402,7 +1403,7 @@ public class UpgradeCustomerPageActions extends Environment {
             Screenshots.captureScreenshot();
         }
 
-        Thread.sleep(3000 );
+        Thread.sleep(5000 );
 
         // driver.findElement(By.xpath("//*[@id='qa-proceed-to-basket']")).click();
         WebElement BasketButton = driver.findElement(By.xpath("//*[@id='qa-proceed-to-basket']"));
@@ -1831,9 +1832,10 @@ public class UpgradeCustomerPageActions extends Environment {
 
     }
 
-    public static int verifyBuyOutDisplayedInMyPackage() throws IOException {
+    public static int verifyBuyOutDisplayedInMyPackage() throws IOException, InterruptedException {
         log.debug("verifyBuyOutDisplayedInMyPackage");
 
+        Thread.sleep(4000);
         String AcText = null, Actcost1 = null, Actcost2 = null, tmpcost1 = null, tmpcost2 = null;
         int a = 0;
         int b = 0;
@@ -1844,6 +1846,7 @@ public class UpgradeCustomerPageActions extends Environment {
         log.debug("Left to Pay Value: " + Actcost1);
         log.debug("Buy out Amount: " + Actcost2);
 
+        scrollToAnElement.scrollToElement(UpgradeCustomerPage.BuyoutTextMyPkg);
         Screenshots.captureScreenshot();
 
         tmpcost1 = org.apache.commons.lang3.StringUtils.substringBetween(Actcost1, "£", ".");
@@ -2238,7 +2241,7 @@ public class UpgradeCustomerPageActions extends Environment {
         String logOutTxt = driver.findElement(By.xpath("//p[@class='header-logout-msg-txt']")).getText();
         Screenshots.captureScreenshot();
         log.debug("Logout message :: " +logOutTxt);
-        if (logOutTxt.contains("You have successfully signed out")) {
+        if (logOutTxt.contains("You have been successfully logged out")) {
             log.debug("Logout page is displayed and validated logout message successfully");
         } else {
             log.debug("Logout Message is not matching");

@@ -15,7 +15,7 @@ public class Agent_DealBuilderPage {
     @FindBy(how = How.ID, using = "extrasTab")
     public static WebElement ExtrasTab;
 
-    @FindBy(how = How.ID, using = "(//span[@class='boltonName'])[1]")
+    @FindBy(how = How.ID, using = "(//span[@class='boltonName'])[2]")
     public static WebElement SelectBolton;
 
     @FindBy(how = How.ID, using = "accessoriesTab")

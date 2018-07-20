@@ -234,7 +234,7 @@ public class PaymentPageActions extends Environment {
 
         log.debug("********We are switch to the iframe*******");
         log.debug("Entering the Payments section");
-        Thread.sleep(5000);
+        Thread.sleep(3000);
         scrollToAnElement.scrollToElement(PaymentPage.CardHolderName);
         Thread.sleep(5000);
         PaymentPage.CardHolderName.sendKeys(Username);
@@ -360,7 +360,7 @@ public class PaymentPageActions extends Environment {
         Screenshots.captureScreenshot();
     }
 
-    public static void ValidateNonCreditPaymentPage() throws IOException, InterruptedException {
+    public static void ValidateNonCreditPaymentPage() throws IOException {
         // Below will display contents of the section
 
         log.debug("Payment pages validations :: " + driver.getTitle());
@@ -393,7 +393,7 @@ public class PaymentPageActions extends Environment {
 
     }
 
-    public static void verifyCopyTextHomeAddress() throws IOException, InterruptedException {
+    public static void verifyCopyTextHomeAddress() throws IOException {
         String ExpectedText = "";
         String ActualText = "";
 

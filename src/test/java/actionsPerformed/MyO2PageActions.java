@@ -51,12 +51,12 @@ public class MyO2PageActions extends Environment {
 		String currentURL = driver.getCurrentUrl();
 		log.debug("The redirected url is: " + currentURL);
 
-		if(currentURL.contains("https://www.ref.o2.co.uk/shop?invalidAttemptCount=1&error=invalidCredentials")){
+		if(currentURL.contains("invalidAttempt")){
 			log.debug("Logged in failed");
 		}else{
 			log.debug("Logged in successfully");
 		}
-
+		Screenshots.captureScreenshot();
 	}
 
 	public static void Logout_MyO2() throws InterruptedException, IOException {
