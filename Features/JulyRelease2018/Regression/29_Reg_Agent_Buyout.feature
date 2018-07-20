@@ -25,4 +25,4 @@ Feature: 29_Reg_Agent_Buyout
 
     Examples:
       | User        | Device                                    | Tariffs | username      | DeliveryType | Firstname | Surname | HouseNumber | PostCode | Username     | password | consumer | B1  | B2  | B3     | B4  | Text   | Email  | Phone  | Post   | status  | MBBStatus | DeviceType |
-      | 07521121848 | Samsung Galaxy S9 Plus 128GB Lilac Purple | Refresh | erto@1234.com | HomeDelivery | Test      | Accepta | Flat 9      | SL11EL   | Test Accepta | test123  | Me       | Not | Not | Select | Not | Select | Select | Select | Select | Enabled | No        | Connected  |
+      | 07568415205 | Samsung Galaxy S9 Plus 128GB Lilac Purple | Refresh | erto@1234.com | HomeDelivery | Test      | Accepta | Flat 9      | SL11EL   | Test Accepta | test123  | Me       | Not | Not | Select | Not | Select | Select | Select | Select | Enabled | No        | Connected  |

@@ -142,7 +142,8 @@ public class Agent_DealBuilderPageActions extends Environment {
     }
 
     public static void HandsetTariffCombination() throws IOException {
-        try {
+
+        try { Thread.sleep(3000);
             log.debug("Tariff Name: " + driver.findElement(By.xpath("//*[@id='planTable']/tbody/tr[1]/td[6]")).getText());
             if (driver.findElement(By.xpath("//*[@id='planTable']/tbody/tr[1]/td[6]")).getText().equals("Standard")) {
                 log.debug("Selected Tariff is a Standard Tariff hence Handset Tariff combination is not required");
@@ -388,15 +389,14 @@ public class Agent_DealBuilderPageActions extends Environment {
         Thread.sleep(3000);
         //String str1 = Agent_DealBuilderPage.dealBuilderContent.getText();
         log.debug("Validated Basket page");
-        log.debug("Validated Basket page");
-        Screenshots.captureScreenshot();
+                Screenshots.captureScreenshot();
     }
 
     public static void checkout() throws InterruptedException, IOException {
         Thread.sleep(3000);
         Agent_DealBuilderPage.Checkout.click();
         log.debug("Clicked on Checkout ");
-        log.debug("Clicked on Checkout ");
+
         Screenshots.captureScreenshot();
     }
 
@@ -462,7 +462,7 @@ public class Agent_DealBuilderPageActions extends Environment {
         Agent_DealBuilderPage.DevicesTab.click();
         log.debug("Clicked on Devices tab");
         log.debug("Clicked on Devices tab");
-        Thread.sleep(3000);
+        Thread.sleep(4000);
 
         Agent_DealBuilderPage.DeviceSearchFilter.click();
         log.debug("Clicked on Device Search field");
@@ -474,7 +474,7 @@ public class Agent_DealBuilderPageActions extends Environment {
             Agent_DealBuilderPage.SearchDevice.sendKeys(Status);
             Thread.sleep(3000);
             log.debug("Sent search as - " + Status);
-            log.debug("Sent search as - " + Status);
+
 
         }
 
@@ -483,7 +483,7 @@ public class Agent_DealBuilderPageActions extends Environment {
             Agent_DealBuilderPage.SearchDevice.sendKeys(Status);
             Thread.sleep(3000);
             log.debug("Sent search as - " + Status);
-            log.debug("Sent search as - " + Status);
+
 
         }
         Screenshots.captureScreenshot();
@@ -585,7 +585,7 @@ public class Agent_DealBuilderPageActions extends Environment {
             Agent_DealBuilderPage.AgentBuyOut_Button.click();
             Screenshots.captureScreenshot();
         }
-        Thread.sleep(5000);
+        Thread.sleep(7000);
         if(Agent_DealBuilderPage.Checkout.isDisplayed()) {
             log.debug("Deal Builder is displayed");
             Agent_DealBuilderPage.Checkout.click();

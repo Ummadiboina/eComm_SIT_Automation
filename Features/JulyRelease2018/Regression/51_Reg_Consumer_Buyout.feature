@@ -7,6 +7,7 @@ Feature: 51_Reg_Consumer_Buyout
     And Navigate to upgrade > upgrade now
     And Click on 'Remove Button'
     And click on 'Take offer and upgrade'button
+    And Click on Tablet section in upgrade options page
     And Select a <handset> device from Recommended devices section
     And select any random tariff from Recommended devices section
     And Select a 'I need a sim'option
@@ -31,5 +32,5 @@ Feature: 51_Reg_Consumer_Buyout
     Then Choose <consumer> <status> Business preferences <B1> <B2> <B3> <B4> And Channel Preferences <Text> <Email> <Phone> <Post> <MBBStatus> <DeviceType>
 
     Examples:
-      | username   | password | handset  | Action | Username     | OTAC | Delivery | Payment | Agreement | Review | Username     | Action    | consumer | B1  | B2  | B3     | B4  | Text | Email  | Phone | Post | status  | MBBStatus | DeviceType |
-      | in_jul1497 | test123  | iPhone 8 | skip   | TEST ACCEPTA | OTAC | Delivery | Payment | Agreement | Review | TEST ACCEPTA | enterCode | Me       | Not | Not | Select | Not | Not  | Select | Not   | Not  | Enabled | No        | Connected  |
+      | username                      | password | handset  | Action | Username     | OTAC | Delivery | Payment | Agreement | Review | Username     | Action    | consumer | B1  | B2  | B3     | B4  | Text | Email  | Phone | Post | status  | MBBStatus | DeviceType |
+      | 10ju72099214@stf.ref.o2.co.uk | test123  | iPhone 8 | skip   | TEST ACCEPTA | OTAC | Delivery | Payment | Agreement | Review | TEST ACCEPTA | enterCode | Me       | Not | Not | Select | Not | Not  | Select | Not   | Not  | Enabled | No        | Connected  |
