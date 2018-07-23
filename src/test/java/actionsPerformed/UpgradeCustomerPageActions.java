@@ -1479,6 +1479,7 @@ public class UpgradeCustomerPageActions extends Environment {
 
     public static void SelectMakeModelandNetwork(String Make, String Model, String Network)
             throws InterruptedException, IOException {
+        Thread.sleep(5000);
         JavascriptExecutor js = (JavascriptExecutor) driver;
 
         if (Make.contains("Apple")) {
@@ -1487,28 +1488,31 @@ public class UpgradeCustomerPageActions extends Environment {
             new Select(Make1).selectByVisibleText("Apple");
             Thread.sleep(6000);
             log.debug("Selected Apple as Make");
-            log.debug("Selected Apple as Make");
 
             // Validating for models
             if (Model.contains("Iphone7")) {
                 log.debug("in selecting model");
                 WebElement Model1 = pageobjects.UpgradeCustomerPage.Model;
                 js.executeScript("arguments[0].setAttribute('style', 'display:block;')", Model1);
-                new Select(Model1).selectByVisibleText("iPhone 7 32GB");
+                new Select(Model1).selectByVisibleText("HAN APP iPhone 5s 16GB");
                 Thread.sleep(6000);
                 log.debug("Selected model completed");
 
                 // Validating for Network
                 if (Network.contains("Orange")) {
-                    log.debug("in selecting Network");
-                    WebElement Network1 = pageobjects.UpgradeCustomerPage.Network;
-                    js.executeScript("arguments[0].setAttribute('style', 'display:block;')", Network1);
-                    new Select(Network1).selectByVisibleText("Orange");
-                    log.debug("Selected Orange completed");
+                    if(driver.findElements(By.xpath("//select[@class='recycle-network ng-scope ng-pristine ng-valid']")).size()>0) {
+                        log.debug("in selecting Network");
+                        WebElement Network1 = pageobjects.UpgradeCustomerPage.Network;
+                        js.executeScript("arguments[0].setAttribute('style', 'display:block;')", Network1);
+                        new Select(Network1).selectByVisibleText("Orange");
+                        log.debug("Selected Orange completed");
+                    }
                 } else if (Network.contains("EE")) {
-                    WebElement Network1 = pageobjects.UpgradeCustomerPage.Network;
-                    js.executeScript("arguments[0].setAttribute('style', 'display:block;')", Network1);
-                    new Select(Network1).selectByVisibleText("EE");
+                    if(driver.findElements(By.xpath("//select[@class='recycle-network ng-scope ng-pristine ng-valid']")).size()>0) {
+                        WebElement Network1 = pageobjects.UpgradeCustomerPage.Network;
+                        js.executeScript("arguments[0].setAttribute('style', 'display:block;')", Network1);
+                        new Select(Network1).selectByVisibleText("EE");
+                    }
                 }
 
             }

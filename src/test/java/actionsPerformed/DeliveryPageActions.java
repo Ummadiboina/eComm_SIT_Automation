@@ -396,7 +396,7 @@ public class DeliveryPageActions extends Environment {
         Screenshots.captureScreenshot();
     }
 
-    public static void checkStockExtMsgDP() throws IOException, InterruptedException {
+    public static void checkStockExtMsgDP() throws IOException {
         String ActualStockExtMsg = pageobjects.DeliveryPage.StockExtMessageDDPODP.getText();
         String ExpStockExtMsg = "You'll pay for your phone now. We'll send you an email or text to let you know when it will be delivered";
         log.debug("Act Del MSg" + ActualStockExtMsg);
@@ -411,7 +411,7 @@ public class DeliveryPageActions extends Environment {
         Screenshots.captureScreenshot();
     }
 
-    public static void InsuranceSectionDeliveryPage() throws IOException, InterruptedException {
+    public static void InsuranceSectionDeliveryPage() throws IOException {
         log.debug("Entering InsuranceSectionDeliveryPage Method");
 
         if (driver.findElement(By.xpath("//tr[@id='basket-insurance']")).isDisplayed()) {
@@ -699,11 +699,11 @@ public class DeliveryPageActions extends Environment {
             driver.manage().timeouts().implicitlyWait(2, TimeUnit.MINUTES);
             if (driver.findElements(By.xpath("//li[@class='delivery']//*[contains(text(),'out of stock')]")).size() > 0) {
                 if (driver.findElement(By.xpath("//li[@class='delivery']//*[contains(text(),'out of stock')]")).isDisplayed()) {
-                    log.debug(" The Out of stock message is Displayed in the Delivery section");
+                    log.debug(" The Out of stock message is Displayed in the 'Your package' section");
                 }
             } else {
-                log.debug(" Failed to displayed  OOS message in the  Delivery section");
-                Assert.fail(" Failed to displayed  OOS message in the  Delivery section");
+                log.debug(" Failed to displayed  OOS message in the  'Your package' section");
+                Assert.fail(" Failed to displayed  OOS message in 'Your package' section");
             }
         } catch (Exception e) {
             // TODO Auto-generated catch block

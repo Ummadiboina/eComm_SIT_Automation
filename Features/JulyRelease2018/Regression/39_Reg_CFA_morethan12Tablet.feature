@@ -19,8 +19,9 @@ Feature: 39_Reg_CFA_morethan12Tablet
     And I choose <tabletname> Tablet
     And Navigate to device details page
     And Land on the 'Tariffs and extra' page
-    And Choose Accesssory
-    And I Land on the basket page by clicking on Add to Basket button
+    #And Choose Accesssory
+    #And I Land on the basket page by clicking on Add to Basket button
+    And Land on the basket page by clicking on Add to Basket button
     And the previously selected standalone non-connected items should be removed from my basket
     And click on "go to checkout" button
     #And input <Firstname> and <Surname> and other valid details in Delivery page and Click on the 'Continue button'

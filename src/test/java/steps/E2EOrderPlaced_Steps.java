@@ -4022,7 +4022,7 @@ public class E2EOrderPlaced_Steps {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, BasketPage.class);
             PageFactory.initElements(driver, PAYMandPAYGTariffAndExtrasPage.class);
-            Thread.sleep(3000);
+            Thread.sleep(5000);
             // BasketPageActions.ValidateContentEcomm11522();
             // BasketPageActions.verifyNCDRemovedinBasketPageAfterCDSelection();
             // AccessoryPageActions.removeItemsFromBasketBasedOnAdditionOfItems();
@@ -5507,7 +5507,7 @@ public class E2EOrderPlaced_Steps {
             PageFactory.initElements(driver, BasketPage.class);
             PageFactory.initElements(driver, PAYMandPAYGTariffAndExtrasPage.class);
             PAYMandPAYGTariffAndExtrasPageActions.addToBasketLive();
-            Thread.sleep(3000);
+            Thread.sleep(5000);
             BasketPageActions.ValidateBasketPageContents("","");
             Thread.sleep(3000);
         } catch (Exception e) {
@@ -5515,6 +5515,22 @@ public class E2EOrderPlaced_Steps {
             e.printStackTrace();
             log.debug("Unable to Land on the basket page and choose home delivery option");
             Assert.fail("Unable to Land on the basket page and choose home delivery option");
+        }
+    }
+
+    @And("^Land on the basket page by clicking on Add to Basket button$")
+    public void Land_on_the_basket_page_by_clicking_AddToBasket() {
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, BasketPage.class);
+            PageFactory.initElements(driver, PAYMandPAYGTariffAndExtrasPage.class);
+            PAYMandPAYGTariffAndExtrasPageActions.addToBasketLive();
+
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+            log.debug("Unable to Land on the basket page");
+            Assert.fail("Unable to Land on the basket page");
         }
     }
 
