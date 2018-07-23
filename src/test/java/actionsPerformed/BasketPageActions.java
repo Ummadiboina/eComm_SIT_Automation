@@ -185,17 +185,20 @@ public class BasketPageActions extends Environment {
 	}
 
 	public static void ValidateBasketPageContents(String Element, String expValue) throws IOException {
+		driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
 		boolean fname = false;
 		log.debug("Shop basket pages validations" + driver.getTitle());
-		log.debug("Shop basket pages validations" + driver.getTitle());
+
+		scrollToAnElement.scrollToElement(BasketPage.YourOrder);
+		Screenshots.captureScreenshot();
 
 		// boolean fname = pageobjects.BasketPage.checkoutbtn.isEnabled();
-		if (pageobjects.BasketPage.checkoutbtn.isDisplayed()) {
+		if (driver.findElements(By.xpath("//*[@class='basket-nav']/div[@class='proceed-checkout']/form//input[@name='securecheckout']")).size() > 0) {
 			if (pageobjects.BasketPage.checkoutbtn.isEnabled()) {
 				fname = true;
 			}
 		}
-		System.out.print(fname);
+		//System.out.print(fname);
 
 		if (fname != false) {
 			log.debug(
@@ -206,20 +209,20 @@ public class BasketPageActions extends Environment {
 					+ pageobjects.BasketPage.DeviceDetailsDisplay.getText());
 
 		} else {
-			log.debug("Go To Checkout is Absent and the Text is :" + pageobjects.BasketPage.checkoutbtn.getText());
-
-
+			log.debug("Go To Checkout is Absent and the Text is :");
 		}
 		// Below will display contents of the phone section
 
 		log.debug("The Main Headercontents are : " + pageobjects.BasketPage.MainHeaders.getText());
-		log.debug("The Main Headercontents are : " + pageobjects.BasketPage.MainHeaders.getText());
+
 		log.debug("The Phone contents are : " + pageobjects.BasketPage.DeviceDetailsDisplay.getText());
-		log.debug("The Phone contents are : " + pageobjects.BasketPage.DeviceDetailsDisplay.getText());
+
 		log.debug("The Basket Totals are : " + pageobjects.BasketPage.totals.getText());
-		log.debug("The Basket Totals are : " + pageobjects.BasketPage.totals.getText());
-		log.debug("The Home Delivery Text is : " + pageobjects.BasketPage.HomeDeliveryText.getText());
-		log.debug("The Home Delivery Text is : " + pageobjects.BasketPage.HomeDeliveryText.getText());
+
+		if(driver.findElements(By.xpath("//div[@class='hasDelayedDeliveryItems']")).size()>0) {
+			log.debug("The Home Delivery Text is : " + pageobjects.BasketPage.HomeDeliveryText.getText());
+		}
+
 
 		if(Element.equalsIgnoreCase("DataRollOver")){
 
@@ -702,7 +705,7 @@ public class BasketPageActions extends Environment {
 		} else {
 			for (int k = 0; k > DisplayedDevices.size(); k++) {
 				log.debug("Devices in basket are : " + '\n' + DisplayedDevices.get(k) + '\n');
-				log.debug("Devices in basket are : " + '\n' + DisplayedDevices.get(k) + '\n');
+
 			}
 			//Assert.fail("Selected devices are not in basket");
 		}

@@ -15,7 +15,7 @@ Feature: 77_Reg_FNT_MorethanMaxTransaction_Deny
     #And input <Firstname> and <Surname> and other valid details in Delivery page and Click on the 'Continue button'
     #And input <Firstname> and <Surname> and other valid details in Delivery page for Click and collect and Click on the 'Continue button'
     And land on the payment page and input <Username> and other details for Click and collect order and click 'Continue on next step' for payments
-    #Then Order Decline page should be displayed
+    Then Order Decline page should be displayed
     #Then Choose <consumer> <status> Business preferences <B1> <B2> <B3> <B4> And Channel Preferences <Text> <Email> <Phone> <Post> <MBBStatus> <DeviceType>
 
 
