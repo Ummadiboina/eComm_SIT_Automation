@@ -968,12 +968,19 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 		List<WebElement> ViewAllTariffs = pageobjects.PAYMandPAYGTariffAndExtrasPage.ViewAllTariffs;
 		if (ViewAllTariffs.size() > 0) {
 			Thread.sleep(5000);
-			//js.executeScript("arguments[0].click();", ViewAllTariffs.get(0));
-			js.executeScript("arguments[0].click();", driver.findElement(By.xpath("//div[@class='viewAllTariffs'])[1]")));
+			if (driver.findElement(By.xpath("(//div[@class='viewAllTariffs'])[1]")).isDisplayed()) {
+				//js.executeScript("arguments[0].click();", ViewAllTariffs.get(0));
+				js.executeScript("arguments[0].click();", driver.findElement(By.xpath("(//div[@class='viewAllTariffs'])[1]")));
 
-			log.debug("Clicked on View All Tariffs link in Tariffs and Extras page");
-		} else {
-			log.debug("View All Tariffs link is not present");
+				log.debug("Clicked on View All Tariffs link in Tariffs and Extras page");
+			} /*else if (driver.findElement(By.xpath("//div[@class='viewAllTariffs'])[2]")).isDisplayed()) {
+				//js.executeScript("arguments[0].click();", ViewAllTariffs.get(0));
+				js.executeScript("arguments[0].click();", driver.findElement(By.xpath("//div[@class='viewAllTariffs'])[2]")));
+
+				log.debug("Clicked on View All Tariffs link in Tariffs and Extras page");
+			}*/ else {
+				log.debug("View All Tariffs link is not present");
+			}
 		}
 		Screenshots.captureScreenshot();
 	}

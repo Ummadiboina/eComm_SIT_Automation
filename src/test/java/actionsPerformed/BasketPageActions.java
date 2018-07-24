@@ -190,7 +190,7 @@ public class BasketPageActions extends Environment {
 		log.debug("Shop basket pages validations" + driver.getTitle());
 
 		// boolean fname = pageobjects.BasketPage.checkoutbtn.isEnabled();
-		if (pageobjects.BasketPage.checkoutbtn.isDisplayed()) {
+		if (driver.findElements(By.xpath("//*[@class='basket-nav']/div[@class='proceed-checkout']/form//input[@name='securecheckout']")).size() > 0) {
 			if (pageobjects.BasketPage.checkoutbtn.isEnabled()) {
 				fname = true;
 			}
@@ -206,7 +206,7 @@ public class BasketPageActions extends Environment {
 					+ pageobjects.BasketPage.DeviceDetailsDisplay.getText());
 
 		} else {
-			log.debug("Go To Checkout is Absent and the Text is :" + pageobjects.BasketPage.checkoutbtn.getText());
+			//log.debug("Go To Checkout is Absent and the Text is :" + pageobjects.BasketPage.checkoutbtn.getText());
 
 
 		}
@@ -218,8 +218,8 @@ public class BasketPageActions extends Environment {
 		log.debug("The Phone contents are : " + pageobjects.BasketPage.DeviceDetailsDisplay.getText());
 		log.debug("The Basket Totals are : " + pageobjects.BasketPage.totals.getText());
 		log.debug("The Basket Totals are : " + pageobjects.BasketPage.totals.getText());
-		log.debug("The Home Delivery Text is : " + pageobjects.BasketPage.HomeDeliveryText.getText());
-		log.debug("The Home Delivery Text is : " + pageobjects.BasketPage.HomeDeliveryText.getText());
+		//log.debug("The Home Delivery Text is : " + pageobjects.BasketPage.HomeDeliveryText.getText());
+		//log.debug("The Home Delivery Text is : " + pageobjects.BasketPage.HomeDeliveryText.getText());
 
 		if(Element.equalsIgnoreCase("DataRollOver")){
 
