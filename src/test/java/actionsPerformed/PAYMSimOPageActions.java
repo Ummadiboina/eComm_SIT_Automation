@@ -816,8 +816,8 @@ public class PAYMSimOPageActions extends Environment {
 
 	}
 
-	public static void selectIWillKeepMyCurrentSIM() throws IOException {
-
+	public static void selectIWillKeepMyCurrentSIM() throws IOException, InterruptedException {
+		Thread.sleep(4000);
 		WebElement element = pageobjects.PAYMSimOPage.IWillKeepMyCurrentSIM;
 		scrollToAnElement.scrollToElement(pageobjects.PAYMSimOPage.IWillKeepMyCurrentSIM);
 		Screenshots.captureScreenshot();

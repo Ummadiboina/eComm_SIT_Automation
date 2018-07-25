@@ -249,8 +249,7 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 	public static void addMoreAccessory() throws InterruptedException, IOException {
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		log.debug("addMoreAccessory() method");
-		log.debug("The Accessory which will be added is  - "
-				+ pageobjects.PAYMandPAYGTariffAndExtrasPage.AddRandomAccessory.getText());
+		//log.debug("The Accessory which will be added is  - "+ pageobjects.PAYMandPAYGTariffAndExtrasPage.AddRandomAccessory.getText());
 		try {
 			Thread.sleep(4000);
 			WebElement ele0 = pageobjects.PAYMandPAYGTariffAndExtrasPage.AccessoryContainer;

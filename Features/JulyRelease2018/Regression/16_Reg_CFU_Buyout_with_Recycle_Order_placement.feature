@@ -18,6 +18,7 @@ Feature: 16_Reg_CFU_Buyout_with_Recycle_Order_placement
     #Then Click on 'Accept and continue to upgrade'
     And answer the questionnaire and click on 'Accept and continue to upgrade' button
     #And Select a Device from the recommended section
+    And Click on Tablet section in upgrade options page
     And Select a <handset> device from Recommended devices section
     #Then Select a Tariff
     And select any random tariff from Recommended devices section

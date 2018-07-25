@@ -1857,7 +1857,7 @@ public class E2EOrderPlaced_Steps {
             // PaymentPageActions.Set_Bank_details(Username);
             //Thread.sleep(3000);
             //PaymentPageActions.Time_At_Address_CC();
-            Thread.sleep(3000);
+            Thread.sleep(12000);
             PaymentPageActions.Card_Details(Username);
             Thread.sleep(7000);
             PaymentPageActions.Card_Details_CCV();
@@ -1946,7 +1946,7 @@ public class E2EOrderPlaced_Steps {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, PaymentPage.class);
             PaymentPageActions.ValidateNonCreditPaymentPage();
-            Thread.sleep(2000);
+            Thread.sleep(10000);
             PaymentPageActions.Card_Details(Username);
             Thread.sleep(12000);
             PaymentPageActions.Card_Details_CCV();
@@ -2580,6 +2580,7 @@ public class E2EOrderPlaced_Steps {
         try {
             driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
             PageFactory.initElements(driver, Agent_DealBuilderPage.class);
+            Thread.sleep(7000);
             Agent_DealBuilderPageActions.SelectPAYMDevice(Device);
             Thread.sleep(4000);
         } catch (Exception e) {
@@ -3049,6 +3050,7 @@ public class E2EOrderPlaced_Steps {
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         try {
             PageFactory.initElements(driver, Agent_RegisterCustomerPage.class);
+            Thread.sleep(5000);
             Agent_RegisterCustomerActions.PaybyCard();
             Thread.sleep(15000);
             Agent_RegisterCustomerActions.CardDetails();
@@ -3666,7 +3668,7 @@ public class E2EOrderPlaced_Steps {
             PageFactory.initElements(driver, PaymentPage.class);
             Thread.sleep(2000);
             PaymentPageActions.Time_At_Address();
-            Thread.sleep(2000);
+            Thread.sleep(10000);
             PaymentPageActions.Card_Details(Username);
             Thread.sleep(15000);
             PaymentPageActions.Card_Details_CCV();
@@ -4020,7 +4022,7 @@ public class E2EOrderPlaced_Steps {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, BasketPage.class);
             PageFactory.initElements(driver, PAYMandPAYGTariffAndExtrasPage.class);
-            Thread.sleep(3000);
+            Thread.sleep(5000);
             // BasketPageActions.ValidateContentEcomm11522();
             // BasketPageActions.verifyNCDRemovedinBasketPageAfterCDSelection();
             // AccessoryPageActions.removeItemsFromBasketBasedOnAdditionOfItems();
@@ -5392,6 +5394,7 @@ public class E2EOrderPlaced_Steps {
 
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, Agent_DealBuilderPage.class);
+            Thread.sleep(3000);
             Agent_DealBuilderPageActions.BasecommsAgentOffersColumnValidation();
 
         } catch (Exception e) {
@@ -5504,7 +5507,7 @@ public class E2EOrderPlaced_Steps {
             PageFactory.initElements(driver, BasketPage.class);
             PageFactory.initElements(driver, PAYMandPAYGTariffAndExtrasPage.class);
             PAYMandPAYGTariffAndExtrasPageActions.addToBasketLive();
-            Thread.sleep(3000);
+            Thread.sleep(5000);
             BasketPageActions.ValidateBasketPageContents("","");
             Thread.sleep(3000);
         } catch (Exception e) {
@@ -5512,6 +5515,22 @@ public class E2EOrderPlaced_Steps {
             e.printStackTrace();
             log.debug("Unable to Land on the basket page and choose home delivery option");
             Assert.fail("Unable to Land on the basket page and choose home delivery option");
+        }
+    }
+
+    @And("^Land on the basket page by clicking on Add to Basket button$")
+    public void Land_on_the_basket_page_by_clicking_AddToBasket() {
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, BasketPage.class);
+            PageFactory.initElements(driver, PAYMandPAYGTariffAndExtrasPage.class);
+            PAYMandPAYGTariffAndExtrasPageActions.addToBasketLive();
+
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+            log.debug("Unable to Land on the basket page");
+            Assert.fail("Unable to Land on the basket page");
         }
     }
 
@@ -6884,8 +6903,8 @@ public class E2EOrderPlaced_Steps {
             Thread.sleep(4000);
             PAYMandPAYGTariffAndExtrasPageActions.SortFilterPosition();
             Thread.sleep(4000);
-            PAYMandPAYGTariffAndExtrasPageActions.clickViewAllTariffs();
-            Thread.sleep(6000);
+            /*PAYMandPAYGTariffAndExtrasPageActions.clickViewAllTariffs();
+            Thread.sleep(6000);*/
             Screenshots.captureScreenshot();
             ArrayList<Integer> TempList1 = null;
             ArrayList<Integer> TempList2 = null;
@@ -7783,11 +7802,11 @@ public class E2EOrderPlaced_Steps {
         try {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, PaymentPage.class);
-            Thread.sleep(8000);
+            Thread.sleep(12000);
             PaymentPageActions.Card_Details(Username);
-            Thread.sleep(10000);
+            Thread.sleep(14000);
             PaymentPageActions.Card_Details_CCV();
-            Thread.sleep(8000);
+            Thread.sleep(10000);
         } catch (Exception e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
@@ -7973,6 +7992,8 @@ public class E2EOrderPlaced_Steps {
             Assert.fail("Failed to select store");
         }
     }
+
+
 
 
     @And("^perform the credit checks using valid details like ([^\"]*), ([^\"]*), ([^\"]*), ([^\"]*), ([^\"]*), ([^\"]*), ([^\"]*), ([^\"]*), ([^\"]*), ([^\"]*), ([^\"]*), ([^\"]*) and ([^\"]*)$")

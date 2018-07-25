@@ -11,7 +11,7 @@ Feature: 81_Reg_Jan_CFA_OOSForHomeDeliveryandCnC
     And navigate to PAYM Phones page
     And I choose PayM <handset>
     And Navigate to device details page
-    And select <color> color of the connected device
+    #And select <color> color of the connected device
     And the Delivery information section should show the 'OOS message'
     And Land on the 'Tariffs and extra' page
     And the Delivery section should show 'OOS message'

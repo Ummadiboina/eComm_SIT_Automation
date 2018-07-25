@@ -19,7 +19,7 @@ import pageobjects.UpgradeCustomerPage;
 public class OrderConfirmationPageActions extends Environment {
 	final static Logger log = Logger.getLogger("OrderConfirmationPageActions");
 
-	public static void OrderConfirmationPageSections() throws IOException, InterruptedException {
+	public static void OrderConfirmationPageSections() throws IOException {
 		log.debug("Below are order confirmation page details");
 		log.debug("The details are " + pageobjects.OrderConfirmationPage.OrderconfirmationMessage.getText());
 		log.debug("...................................");
@@ -34,7 +34,7 @@ public class OrderConfirmationPageActions extends Environment {
 		Screenshots.captureScreenshot();
 	}
 
-	public static void gettitlepage() throws IOException, InterruptedException {
+	public static void gettitlepage() throws IOException {
 
 		log.debug(driver.getTitle());
 		log.info("The Page Title is " + driver.getTitle());
@@ -42,7 +42,7 @@ public class OrderConfirmationPageActions extends Environment {
 
 	}
 
-	public static void MessageDisplayed() throws IOException, InterruptedException {
+	public static void MessageDisplayed() throws IOException {
 		log.debug("This is order confirmation page and the message in this page is as below......");
 		log.info("This is order confirmation/information page and the message in this page is as above......");
 
@@ -63,7 +63,7 @@ public class OrderConfirmationPageActions extends Environment {
 		}
 	}
 
-	public static void OrderDeclineMessageDisplayed() throws IOException, InterruptedException {
+	public static void OrderDeclineMessageDisplayed() throws IOException {
 		log.debug("This is order decline page and the message in this page is as below......");
 
 		try {
@@ -71,7 +71,7 @@ public class OrderConfirmationPageActions extends Environment {
 			log.debug("Trying to find the Element for order decline using element identifier");
 
 			String DataContainer1 = driver.findElement(By.xpath("//div[@class='large']/p")).getText();
-			String DataContainer2 = driver.findElement(By.xpath("(//div[@id='contact-o2']/p)[1]")).getText();
+			String DataContainer2 = driver.findElement(By.xpath("(//div[@id='contact-o2']/p)[1] | //div[@class='large']/div/p")).getText();
 
 				log.debug(outercontainer +" - ");
 				log.info(DataContainer1 +" - ");
@@ -84,7 +84,7 @@ public class OrderConfirmationPageActions extends Environment {
 	}
 
 
-	public static void VolteMessageDisplayed() throws IOException, InterruptedException {
+	public static void VolteMessageDisplayed() throws IOException {
 		log.debug("The Volte message in this page is as below......");
 		try {
 			List<WebElement> outercontainer = driver.findElements(By.xpath("//*[@id='imsMessage']"));
@@ -171,7 +171,7 @@ public class OrderConfirmationPageActions extends Environment {
 
 	}
 
-	public static void Orderid() throws InterruptedException, IOException {
+	public static void Orderid() throws IOException {
 		log.debug("Your order has been successfully placed.Order number: ");
 		log.info("Your order has been successfully placed.Order number: ");
 		log.debug(pageobjects.OrderConfirmationPage.orderid.getText());
@@ -258,7 +258,7 @@ public class OrderConfirmationPageActions extends Environment {
 
 	//GDPR Preferences Section --- JamalKhan
 
-	public static void PreferencesSection(String consumer, String gdprStatus,String BP1, String BP2, String BP3, String BP4, String Chn1, String Chn2, String Chn3, String Chn4, String MBBStatus, String DeviceType) throws IOException, InterruptedException {
+	public static void PreferencesSection(String consumer, String gdprStatus,String BP1, String BP2, String BP3, String BP4, String Chn1, String Chn2, String Chn3, String Chn4, String MBBStatus, String DeviceType) throws IOException {
 
 				try {
 					Thread.sleep(5000);
