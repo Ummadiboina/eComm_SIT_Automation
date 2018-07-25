@@ -24,15 +24,22 @@ public class AgreementPageActions extends Environment {
 	public static void Affordability() throws IOException, InterruptedException {
 
 		log.debug("Selecting 'I agree that with my current financial commitments...'checkbox");
-		pageobjects.AgreementPage.affordabilityCheck1.click();
-		log.debug("Selecting affordability Checks # 1");
-		log.debug("Selecting ' I agree there are no future changes to my ...'checkbox");
-		pageobjects.AgreementPage.affordabilityCheck2.click();
-		log.debug("Selecting affordability Checks # 2");
-		log.debug("Clicking on the affordabilityButton ");
-		pageobjects.AgreementPage.affordabilityButton.click();
-		log.debug("Selecting affordability button");
-		Screenshots.captureScreenshot();
+		if (pageobjects.AgreementPage.affordabilityCheck1.isDisplayed()) {
+			pageobjects.AgreementPage.affordabilityCheck1.click();
+			log.debug("Selecting affordability Checks # 1");
+			log.debug("Selecting ' I agree there are no future changes to my ...'checkbox");
+		}
+		if (pageobjects.AgreementPage.affordabilityCheck2.isDisplayed()) {
+			pageobjects.AgreementPage.affordabilityCheck2.click();
+			log.debug("Selecting affordability Checks # 2");
+			log.debug("Clicking on the affordabilityButton ");
+		}
+
+		if (pageobjects.AgreementPage.affordabilityButton.isDisplayed()) {
+			pageobjects.AgreementPage.affordabilityButton.click();
+			log.debug("Selecting affordability button");
+			Screenshots.captureScreenshot();
+		}
 	}
 
 	public static void KeyInformation() throws IOException, InterruptedException {

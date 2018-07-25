@@ -406,7 +406,7 @@ public class UpgradeCustomerPageActions extends Environment {
         Thread.sleep(4000);*/
         //driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
         //WebElement selectBtnEle = driver.findElement(By.xpath("(//button[@type='button']//*[normalize-space()='Select'])[2]"));
-        WebElement selectBtnEle = driver.findElement(By.xpath("(//button[@id='callToAction'])[1]"));
+        WebElement selectBtnEle = driver.findElement(By.xpath("(//button[@class='secondary selectButton tariff-select'])[2]"));
         Screenshots.captureScreenshot();
         if(selectBtnEle.isDisplayed()){
             ((JavascriptExecutor) driver).executeScript("arguments[0].click();", selectBtnEle);
@@ -679,9 +679,9 @@ public class UpgradeCustomerPageActions extends Environment {
         log.debug('\n' + "Verify Overlay Icon Is Displayed in TE page");
         log.debug("Tariff for verifying overlay icon is " + Tariff);
 
-        WebElement overlayIcon = driver.findElement(By.xpath("(//div[@class='blue-promotion']//span[@class='promotion-text ng-binding'])[2]/following-sibling::a"));
+        WebElement overlayIcon = driver.findElement(By.xpath("(//div[@class='blue-promotion']//span[@class='promotion-text ng-binding'])[2]/following-sibling::a | //*[@class='blue-promotion']"));
 
-        if (driver.findElements(By.xpath("(//div[@class='blue-promotion']//span[@class='promotion-text ng-binding'])[2]/following-sibling::a)")).size()>=1) {
+        if (driver.findElements(By.xpath("//*[@class='blue-promotion']")).size()>=1) {
             log.debug("Overlay is present for the selected tariff in the tariff tile as expected in the Tariff and Extras page");
             log.debug("Overlay is present for the selected tariff in the tariff tile as expected in the Tariff and Extras page");
         } else {
@@ -722,14 +722,19 @@ public class UpgradeCustomerPageActions extends Environment {
         log.debug("In Click on Overlay TE function");
         log.debug('\n' + "To Click On Overlay Icon TE page");
         log.debug("Tariff for verifying overlay icon is " + Tariff);
-
-        WebElement overlayIcon = driver.findElement(By.xpath("(//div[@class='blue-promotion']//span[@class='promotion-text ng-binding'])[2]/following-sibling::a"));
-
-        if (overlayIcon.isEnabled()) {
+        if(driver.findElements(By.xpath("//div[@class='promotion-wrapper']//a[@alt='ribbon information']")).size() >= 1){
+        WebElement overlayIcon = driver.findElement(By.xpath("//div[@class='promotion-wrapper']//a[@alt='ribbon information']"));
             ((JavascriptExecutor) driver).executeScript("arguments[0].click();", overlayIcon);
             log.debug("Clicked on the Overlay Icon");
             log.debug("Clicked on the Overlay Icon");
             Thread.sleep(3000);
+            Screenshots.captureScreenshot();
+            WebElement eleofClose = driver.findElement(By.xpath("//button[@class='close boxclose']"));
+            if(eleofClose.isEnabled()){
+                ((JavascriptExecutor) driver).executeScript("arguments[0].click();", eleofClose);
+            }else {
+                log.debug("There is no bolten for this tarrief");
+            }
         /*List<WebElement> ele = driver.findElements(By.xpath("(//h3[contains(text(),'Sony Xperia')]/following-sibling::a/../following-sibling::div)[1]/p"));
         for(int i=1;i<ele.size();i++){
           String str = driver.findElement(By.xpath("(//h3[contains(text(),'Sony Xperia')]/following-sibling::a/../following-sibling::div)[1]/p["+i+"]")).getText();
@@ -737,13 +742,9 @@ public class UpgradeCustomerPageActions extends Environment {
           log.debug(str);
       }*/
         }else{
-            log.debug("Failed to Click on Overlay TE function");
+            log.debug("There is no bolten for this tarrief , If really wanted need to select the anither tariff plan");
+        }
 
-        }
-        WebElement eleofClose = driver.findElement(By.xpath("(//h3[contains(text(),'Sony Xperia')]/following-sibling::a/../following-sibling::div)[1]//..//a[@class='boxclose']"));
-        if(eleofClose.isEnabled()){
-            ((JavascriptExecutor) driver).executeScript("arguments[0].click();", eleofClose);
-        }
         /*String TariffTile = null;
         TariffTile = "(//div[@id='tariff-tile']/div[@id])[" + position + "]";
         List<WebElement> PrimaryOverlayIcon = driver.findElement(By.xpath(TariffTile))

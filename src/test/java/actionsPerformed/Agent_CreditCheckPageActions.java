@@ -283,7 +283,7 @@ public class Agent_CreditCheckPageActions extends Environment {
 				System.out.println("Switched to child window");
 
 				//driver.manage().timeouts().implicitlyWait(15,TimeUnit.SECONDS);
-				Thread.sleep(10000);
+				Thread.sleep(10100);
 
 				Agent_CreditCheckDetailsPage.CardHolderName.sendKeys(Username);
 				log.debug("Entered card holder name");
