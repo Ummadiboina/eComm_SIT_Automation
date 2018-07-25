@@ -24,7 +24,7 @@ public class PAYMandPAYGTariffAndExtrasPage {
 
 	// Below is for Selecting Any Tariff
 
-	@FindBy(how = How.XPATH, using = ("(//button[contains(@class,'secondary selectButton tariff-select')])[2]"))
+	@FindBy(how = How.XPATH, using = ("(//*[@id='callToAction'])[1] | (//button[@class='secondary selectButton tariff-select'])[1]"))
 	public static WebElement RandomTariff1;
 
 	@FindBy(how = How.XPATH, using = ("//a[contains(text(),'Pay Monthly')]"))
@@ -39,22 +39,22 @@ public class PAYMandPAYGTariffAndExtrasPage {
 	@FindBy(how = How.XPATH, using = ("//*[@id='terms']"))
 	public static WebElement AgreeTerms;
 
-	@FindBy(how = How.XPATH, using = ("(//*[@id='callToAction'])[2]"))
+	@FindBy(how = How.XPATH, using = ("(//*[@id='callToAction'])[2] | (//button[@class='secondary selectButton tariff-select'])[2]"))
 	public static WebElement SelectingAnyAvailableTariff;
 
 	// Below is for Selecting Any Tariff
-	@FindBy(how = How.XPATH, using = ("(//*[@id='callToAction'])[3]"))
+	@FindBy(how = How.XPATH, using = ("(//*[@id='callToAction'])[3] | (//button[@class='secondary selectButton tariff-select'])[3]"))
 	public static WebElement RandomTariff2;
 
 	@FindBy(how = How.XPATH, using = ("//*[@id='pay-full-device-tariff-tile']"))
 	public static WebElement PayYourdDeviceInFullContainer;
 
 	// Below is for Selecting Any Tariff
-	@FindBy(how = How.XPATH, using = ("(//div[@id='pay-full-device-tariff-tile']/div[@class='tariff ng-scope no-promotion-exists']/div[6]/div/button)[1]"))
+	@FindBy(how = How.XPATH, using = ("(//div[@id='pay-full-device-tariff-tile']/div[@class='tariff ng-scope no-promotion-exists']/div[6]/div/button)[1] | (//div[@class='tariff no-promotion-exists']/div[4]/div/button)[1]"))
 	public static WebElement RandomfullTariff1;
 
 	// Below is for Selecting Any Tariff
-	@FindBy(how = How.XPATH, using = ("(//*[@id='callToAction'])[8]"))
+	@FindBy(how = How.XPATH, using = ("(//*[@id='callToAction'])[8] | (//button[@class='secondary selectButton tariff-select'])[8]"))
 	public static WebElement RandomfullTariff2;
 
 	// Below is to add an accessory in TandE page
@@ -109,7 +109,7 @@ public class PAYMandPAYGTariffAndExtrasPage {
 	@FindBy(how = How.XPATH, using = "//select[@id='dataFilterSelect']")
 	public static WebElement TariffSortDropDown;
 
-	@FindAll({ @FindBy(how = How.XPATH, using = "//div[@id='tariff-tile']//ul/li[1]/h2 | //div[contains(@class,'col-xs-6 col-sm-3 dmt-container info-container')]/ul/li[1]/h2") })
+	@FindAll({ @FindBy(how = How.XPATH, using = "//div[@id='tariff-tile']//ul/li[1]/h2") })
 	public static List<WebElement> DataTextElement;
 
 	@FindAll({
@@ -123,23 +123,23 @@ public class PAYMandPAYGTariffAndExtrasPage {
 	// @FindBy(how = How.XPATH, using =
 	// ("//a[@manual_cm_re='DR346B_low']/button[contains(@class,'secondary
 	// sortGrpBtn')]"))
-	@FindBy(how = How.XPATH, using = ("//div[@class='filter-options']/button[1] | (//button[contains(@class,'secondary filter-btn')])[1]"))
+	@FindBy(how = How.XPATH, using = ("//div[@class='filter-options']/button[1] | //div[@class='filter-options tariff-page']/button[1]"))
 	public static WebElement lowfilter;
 
 	// @FindBy(how = How.XPATH, using =
 	// ("//a[@manual_cm_re='DR346B_medium']/button[contains(@class,'secondary
 	// sortGrpBtn')]"))
-	@FindBy(how = How.XPATH, using = ("//div[@class='filter-options']/button[2] | (//button[contains(@class,'secondary filter-btn')])[2]"))
+	@FindBy(how = How.XPATH, using = ("//div[@class='filter-options']/button[2] | //div[@class='filter-options tariff-page']/button[2]"))
 	public static WebElement mediumfilter;
 
 	// @FindBy(how = How.XPATH, using =
 	// ("//a[@manual_cm_re='DR346B_high']/button[contains(@class,'secondary
 	// sortGrpBtn')]"))
-	@FindBy(how = How.XPATH, using = ("//div[@class='filter-options']/button[3] | (//button[contains(@class,'secondary filter-btn')])[3]"))
+	@FindBy(how = How.XPATH, using = ("//div[@class='filter-options']/button[3] | //div[@class='filter-options tariff-page']/button[3]"))
 	public static WebElement highfilter;
 
 	//@FindBy(how = How.XPATH, using = ("//button[@class='secondary sortGrpBtn btnToggle']"))
-	@FindBy(how = How.XPATH, using = "//button[contains(@class,'active')]")
+	@FindBy(how = How.XPATH, using = "//div[@class='filter-options']/button[contains(@class,'active')] | //div[@class='filter-options tariff-page']/button[contains(@class,'active')]")
 	public static WebElement DataFilterSelectedXpath;
 
 	@FindAll({ @FindBy(how = How.XPATH, using = ("(//div[@class='viewAllTariffs'])[1]")) })
