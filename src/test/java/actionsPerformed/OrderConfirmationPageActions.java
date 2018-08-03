@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 import GlobalActions.scrollToAnElement;
-import com.sun.xml.internal.ws.policy.AssertionSet;
+//import com.sun.xml.internal.ws.policy.AssertionSet;
 import org.apache.log4j.Logger;
 import org.junit.Assert;
 import org.openqa.selenium.By;
