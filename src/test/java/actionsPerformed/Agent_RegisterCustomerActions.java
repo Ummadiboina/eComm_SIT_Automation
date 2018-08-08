@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
+import GlobalActions.scrollToAnElement;
 import org.apache.log4j.Logger;
 import org.junit.Assert;
 import org.openqa.selenium.By;
@@ -95,13 +96,13 @@ public class Agent_RegisterCustomerActions extends Environment {
 
 	public static void PayGRegistration(String Firstname, String Surname, String HouseNumber, String PostCode)
 			throws InterruptedException {
-		Thread.sleep(5000);
+		//Thread.sleep(5000);
 		try {
 			Select dropdown = new Select(pageobjects.Agent_RegisterCustomerPage.Title);
 			dropdown.selectByIndex(1);
 			log.debug("Selected the dropdown Mr");
 			Reporter.log("Selected the dropdown Mr");
-			Thread.sleep(5000);
+			//Thread.sleep(5000);
 			Agent_RegisterCustomerPage.FirstName.sendKeys(Firstname);
 			log.debug("Entered First name");
 			Agent_RegisterCustomerPage.LastName.sendKeys(Surname);
@@ -120,20 +121,20 @@ public class Agent_RegisterCustomerActions extends Environment {
 			// TODO Auto-generated catch block
 			e.getMessage();
 		}
-		Thread.sleep(3000);
+		Thread.sleep(2000);
 		Agent_RegisterCustomerPage.intialPassword.sendKeys("test123");
 		Agent_RegisterCustomerPage.confirmPassword.sendKeys("test123");
 		Thread.sleep(2000);
 
 		try {
 			Agent_RegisterCustomerPage.HouseNumber.sendKeys(HouseNumber);
-			Thread.sleep(2000);
+			//Thread.sleep(2000);
 			Agent_RegisterCustomerPage.Postcode.sendKeys(PostCode);
 			log.debug("Entered House Postcode  as: " + PostCode);
 
-			Thread.sleep(2000);
+			//Thread.sleep(2000);
 			pageobjects.Agent_RegisterCustomerPage.FindAddress.click();
-			Thread.sleep(3000);
+			//Thread.sleep(3000);
 			log.debug("Clicked on the Find address button");
 
 			pageobjects.Agent_RegisterCustomerPage.Selectedaddress.click();
@@ -143,7 +144,7 @@ public class Agent_RegisterCustomerActions extends Environment {
 			log.debug("Try catch block exception in Agent register cutomer actions page, nothing to worry :)");
 		}
 
-		Thread.sleep(3000);
+		Thread.sleep(2000);
 		if(driver.findElements(By.id("marketingRequired")).size()>0) {
 
 			JavascriptExecutor executor = (JavascriptExecutor)driver;
@@ -162,26 +163,26 @@ public class Agent_RegisterCustomerActions extends Environment {
 		JavascriptExecutor executor = (JavascriptExecutor) driver;
 		executor.executeScript("arguments[0].click();", element);
 
-		Thread.sleep(6000);
+		Thread.sleep(2000);
 		log.debug("Clicked on Register customer");
 
 	}
 
-	public static void PaybyCard() throws InterruptedException {
+	public static void PaybyCard() throws InterruptedException, IOException {
 		String OneOff = Agent_RegisterCustomerPage.ZeroOneOff.getText();
 		log.debug(OneOff);
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		if (OneOff.contains("�0.00")) {
 			Agent_RegisterCustomerPage.SubmitBtn.click();
 		} else {
-
-			driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-
 			log.debug("Pay by card button is enabled ");
-			Thread.sleep(5000);
+			//Thread.sleep(4000);
+			scrollToAnElement.scrollToElement(driver.findElement(By.xpath("//h3[normalize-space()='Order Summary']")));
+			Screenshots.captureScreenshot();
+			Thread.sleep(3000);
 			Agent_RegisterCustomerPage.PayByCard.click();
 			Thread.sleep(5000);
 			log.debug("Clicked on pay by card ");
-
 		}
 		Thread.sleep(2000);
 	}

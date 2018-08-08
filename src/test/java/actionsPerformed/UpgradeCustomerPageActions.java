@@ -1792,7 +1792,10 @@ public class UpgradeCustomerPageActions extends Environment {
 
     public static void ClickIdontneedAsim() throws Exception {
 
+        Thread.sleep(2000);
         if (UpgradeCustomerPage.IdontNeedSimRadio.isDisplayed()) {
+            scrollToAnElement.scrollToElement(UpgradeCustomerPage.IdontNeedSimRadio);
+            Screenshots.captureScreenshot();
             WebElement element = pageobjects.UpgradeCustomerPage.IdontNeedSimRadio;
             JavascriptExecutor executor = (JavascriptExecutor) driver;
             executor.executeScript("arguments[0].click();", element);
@@ -3086,6 +3089,21 @@ public class UpgradeCustomerPageActions extends Environment {
             log.info("Failed validate the Simo Display"+ e.getMessage());
             Assert.fail("Failed validate the Simo Display"+ e.getMessage());
         }
-        }   
+        }
+
+    public static void clickOnNoThanks_IllKeepMyDevice(){
+        try {
+                if (driver.findElements(By.xpath("(//button[@id='NoThanksIllKeepMyDevice'])[1]")).size()>0) {
+                    UpgradeCustomerPage.NoThanksIllKeepMyDevice.click();
+                    log.info("'No Thanks, Ill Keep My Device' is clicked");
+                } else {
+                    log.info("'No Thanks, Ill Keep My Device' is not displayed");
+                }
+
+        }catch (Exception e){
+            log.info("Failed click on 'No Thanks, Ill Keep My Device': "+ e.getMessage());
+            Assert.fail("Failed click on 'No Thanks, Ill Keep My Device': "+ e.getMessage());
+        }
+    }
     
 }

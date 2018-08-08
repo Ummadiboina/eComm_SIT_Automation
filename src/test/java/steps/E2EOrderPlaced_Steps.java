@@ -1761,7 +1761,7 @@ public class E2EOrderPlaced_Steps {
             Thread.sleep(10000);
             //CommonFunctionscheckTitle("Payment Page");
             PaymentPageActions.Set_Bank_details(Username);
-            Thread.sleep(10000);
+            Thread.sleep(8000);
             PaymentPageActions.Time_At_Address();
             Thread.sleep(10000);
             PaymentPageActions.Card_Details(Username);
@@ -2813,6 +2813,22 @@ public class E2EOrderPlaced_Steps {
         }
     }
 
+    @And("^Validate checkout is enabled or disabled$")
+    public void validate_checkout() {
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, Agent_DealBuilderPage.class);
+            Thread.sleep(2000);
+            Agent_DealBuilderPageActions.validateCheckout();
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            log.debug("Unable to validate checkout , please see the failure screenshot");
+            Assert.fail("Unable to validate checkout , please see the failure screenshot");
+
+        }
+    }
+
+
     @And("^Validate all the Basket contents$")
     public void validate_all_the_Basket_contents() {
         try {
@@ -3010,7 +3026,7 @@ public class E2EOrderPlaced_Steps {
     @Then("^Register the customer with valid ([^\"]*), ([^\"]*), ([^\"]*), ([^\"]*) and other valid details in delivery page$")
     public void register_the_customer(String Firstname, String Surname, String HouseNumber, String PostCode) {
         try {
-            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
             PageFactory.initElements(driver, Agent_RegisterCustomerPage.class);
             Agent_RegisterCustomerActions.PayGRegistration(Firstname, Surname, HouseNumber, PostCode);
 
@@ -3124,7 +3140,7 @@ public class E2EOrderPlaced_Steps {
     @Then("^Order confirmation message should be displayed$")
     public void order_confirmation_message_should_be_displayed() {
         try {
-            driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
+            driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
             PageFactory.initElements(driver, Agent_ConfirmationPage.class);
             Agent_ConfirmationPageActions.Confirmationdetails();
         } catch (Exception e) {
@@ -5569,12 +5585,12 @@ public class E2EOrderPlaced_Steps {
         try {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, UpgradeCustomerPage.class);
-            Thread.sleep(6000);
+            Thread.sleep(4000);
             //UpgradeCustomerPageActions.selectDeviceInRecommendedDevicesSection(devicename);
             // driver.findElement(By.xpath("(//span[normalize-space()='Apple'])[1]")).click();
             scrollToAnElement.scrollToElement(driver.findElement(By.xpath("(//button[normalize-space()='Select'])[2]")));
             Screenshots.captureScreenshot();
-
+            Thread.sleep(4000);
             JavascriptExecutor executor = (JavascriptExecutor) driver;
             executor.executeScript("arguments[0].click();", driver.findElement(By.xpath("(//button[normalize-space()='Select'])[2]")));
             Thread.sleep(7000);
@@ -8747,11 +8763,11 @@ public class E2EOrderPlaced_Steps {
             if (driver.findElements(By.xpath("//*[contains(text(),'2.co.uk')]")).size() > 0) {
                 String str = driver.findElement(By.xpath("(//*[contains(text(),'2.co.uk')])[1]")).getText();
                 log.debug("Agent should be displayed with updated copy of 'Refer with Simo' response as :" + str);
-                log.debug("Agent should be displayed with updated copy of 'Refer with Simo' response as :" + str);
+
                 Thread.sleep(3000);
             } else {
                 log.debug("Failed to Agent should be displayed with updated copy of 'Refer with Simo' response ");
-                log.debug("Failed to Agent should be displayed with updated copy of 'Refer with Simo' response ");
+
             }
         } catch (Exception e) {
             // TODO Auto-generated catch block
@@ -9255,6 +9271,7 @@ public class E2EOrderPlaced_Steps {
         try {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, PAYMSimOPage.class);
+            Thread.sleep(2000);
             PAYMSimOPageActions.clickOnTermsAndConditionsCheckboxInReviewPage();
             Thread.sleep(2000);
             log.debug("Clicked on Terms and Conditions Checkbox in Review Page");
@@ -9836,6 +9853,10 @@ public class E2EOrderPlaced_Steps {
     @Then("^Verify that the error ([^\"]*) is displayed in the deal about the conflict$")
     public void verify_ErrorMsg_is_displayed_in_the_deal_about_conflict(String str) {
         try {
+            driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, Agent_DealBuilderPage.class);
+            Agent_DealBuilderPageActions.verifyIncompatibleErrror(str);
+            Thread.sleep(4000);
             log.debug("Successfully verified the error message builder");
         } catch (Exception e) {
             log.debug("Unable to validate section");
@@ -10084,7 +10105,11 @@ public class E2EOrderPlaced_Steps {
     @And("^Click on 'No thanks, I'll keep my device' button$")
     public void click_on_No_thanks_I_will_keep_my_device_button() {
         try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, UpgradePhonesListingPage.class);
+            UpgradeCustomerPageActions.clickOnNoThanks_IllKeepMyDevice();
             log.debug("Click on 'No thanks, I'll keep my device'");
+
         } catch (Exception e) {
             log.debug("Unable to validate section");
             Assert.fail("Unable to validate section");
@@ -10174,7 +10199,6 @@ public class E2EOrderPlaced_Steps {
 
         log.debug(
                 "Running Step: @Then(I should see data filters buttons next to existing sort drop-down in Upgrade SIMO Phone journey)");
-
         try {
 
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
@@ -10221,7 +10245,6 @@ public class E2EOrderPlaced_Steps {
             e.printStackTrace();
             log.debug("Sort filter validation failed");
             Assert.fail("Sort filter validation failed");
-
         }
     }
 //shubhasharee
@@ -10236,7 +10259,6 @@ public class E2EOrderPlaced_Steps {
             System.out.println("Unable to validate selected device list and Get Basket link");
             junit.framework.Assert.fail("Unable to validate selected device list and Get Basket link, please see the failure screenshot");
         }
-
     }
 
 
@@ -10261,8 +10283,6 @@ public class E2EOrderPlaced_Steps {
         driver.findElement(By.xpath("//a[@class='addPackage']/img")).click();
 
         Thread.sleep(5000);
-
-
     }
 //venkat april release
 
@@ -10312,7 +10332,6 @@ public class E2EOrderPlaced_Steps {
             // TODO Auto-generated catch block
             log.debug("Unable to Choose your preferences, please see the failure screenshot");
             Assert.fail("Unable to Choose your preferences, please see the failure screenshot");
-
         }
     }
 
@@ -10326,12 +10345,10 @@ public class E2EOrderPlaced_Steps {
             Thread.sleep(5000);
             Agent_RegisterCustomerActions.PreferencesSection_AFA(BP1, BP2, BP3, BP4, Chn1, Chn2, Chn3, Chn4, customer, status,DeviceType, Device_Module);
             log.debug("Completed preference actions");
-
         } catch (Exception e) {
             // TODO Auto-generated catch block
             log.debug("Unable to Choose your preferences, please see the failure screenshot");
             Assert.fail("Unable to Choose your preferences, please see the failure screenshot");
-
         }
     }
 
@@ -10345,18 +10362,16 @@ public class E2EOrderPlaced_Steps {
             Thread.sleep(5000);
             Agent_RegisterCustomerActions.PreferencesSection_AFU(BP1, BP2, BP3, BP4, Chn1, Chn2, Chn3, Chn4, customer, status,DeviceType);
             log.debug("Completed preference actions");
-
         } catch (Exception e) {
             // TODO Auto-generated catch block
             log.debug("Unable to Choose your preferences, please see the failure screenshot");
             Assert.fail("Unable to Choose your preferences, please see the failure screenshot");
-
         }
     }
 
 
 
-    @And("Select create a new account and begin checkout")
+    @And("^Select create a new account and begin checkout$")
     public void Select_Create_New_account_and_begin_checkout() {
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         try {
@@ -10366,13 +10381,12 @@ public class E2EOrderPlaced_Steps {
             // TODO Auto-generated catch block
             e.printStackTrace();
             Assert.fail("Unable to select Create New account");
-
         }
     }
     
     
     
-    @And("MSISDN ([^\"]*) should be selected by default and buyout offer should be applied by default")
+    @And("^MSISDN ([^\"]*) should be selected by default and buyout offer should be applied by default$")
     public void MSISDN_should_be_selected_by_default_and_buyout_offer_should_be_applied_by_default(String msisdn) {
         //driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         try {
@@ -10382,11 +10396,10 @@ public class E2EOrderPlaced_Steps {
             // TODO Auto-generated catch block
             e.printStackTrace();
             Assert.fail("Unable to select Create New account");
-
         }
     }
 
-    @And("The new copy text 'Upgrade to a new phone today. We'll pay off the rest of your Device Plan, saving you £XXX' should be displayed in buyout offered tile")
+    @And("^The new copy text 'Upgrade to a new phone today. We'll pay off the rest of your Device Plan, saving you £XXX' should be displayed in buyout offered tile$")
     public  void newcopyTextUpgradeToNewhoneToday() {
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         try {
@@ -10401,7 +10414,7 @@ public class E2EOrderPlaced_Steps {
     }
 
 
-    @And("verify The 'Remove offer' is displayed on the Buyout offer tile")
+    @And("^verify The 'Remove offer' is displayed on the Buyout offer tile$")
     public void clickOn_removeOfferCTA() {
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         try {
@@ -10411,12 +10424,11 @@ public class E2EOrderPlaced_Steps {
             // TODO Auto-generated catch block
             e.printStackTrace();
             Assert.fail("Unable to select Create New account");
-
         }
     }
 
 
-    @And("Verify that '£XXX.XX left to pay on your current Device Plan' panel is displayed below the buyout offer panel and below to that upgrade and recycle options should not be displayed")
+    @And("^Verify that '£XXX.XX left to pay on your current Device Plan' panel is displayed below the buyout offer panel and below to that upgrade and recycle options should not be displayed$")
     public void isLeftToPayisDisplayed() {
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         try {
@@ -10426,12 +10438,11 @@ public class E2EOrderPlaced_Steps {
             // TODO Auto-generated catch block
             e.printStackTrace();
             Assert.fail("Unable to select Create New account");
-
         }
     }
 
 
-    @And("Verify that '£XXX.XX left to pay on your current Device Plan' panel is displayed below the buyout offer panel and below to that upgrade and recycle options should be displayed")
+    @And("^Verify that '£XXX.XX left to pay on your current Device Plan' panel is displayed below the buyout offer panel and below to that upgrade and recycle options should be displayed$")
     public void leftTopayOn_YourCurrentDevicePlan() {
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         try {
@@ -10445,7 +10456,7 @@ public class E2EOrderPlaced_Steps {
     }
 
 
-    @And("verify that The 'SIMO tab' should be hidden")
+    @And("^verify that The 'SIMO tab' should be hidden$")
     public  void isSimoTabEnable() {
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         try {
@@ -10459,7 +10470,7 @@ public class E2EOrderPlaced_Steps {
     }
 
 
-    @And("verify The 'Buyout offer line item' should be displayed in 'Your package' summary as per BAU")
+    @And("^verify The 'Buyout offer line item' should be displayed in 'Your package' summary as per BAU$")
     public  void VerifytheBuyoutOfferIineItem_shouldDisplayed() {
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         try {
@@ -10473,7 +10484,7 @@ public class E2EOrderPlaced_Steps {
     }
 
 
-    @And("verify The 'Buyout offer line item' should be not displayed in 'Your package' summary as per BAU")
+    @And("^verify The 'Buyout offer line item' should be not displayed in 'Your package' summary as per BAU$")
     public  void VerifytheBuyoutOfferIineItem_Display() {
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         try {
@@ -10487,7 +10498,7 @@ public class E2EOrderPlaced_Steps {
     }
 
 /*
-    @And("verify The 'Buyout offer line item' should be displayed in 'Your package' summary as per BAU")
+    @And("^verify The 'Buyout offer line item' should be displayed in 'Your package' summary as per BAU$")
     public  void verifyBuyoutOfferLineItem() {
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         try {
@@ -10500,7 +10511,7 @@ public class E2EOrderPlaced_Steps {
         }
     }*/
 
-    @And("verify that The 'SIMO tab' should be displayed")
+    @And("^verify that The 'SIMO tab' should be displayed$")
     public  void isSimoTabDisplayed() {
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         try {
@@ -10513,7 +10524,7 @@ public class E2EOrderPlaced_Steps {
         }
     }
 
-    @And("click on 'Remove offer' then verify that 'Take offer and upgrade'button")
+    @And("^click on 'Remove offer' then verify that 'Take offer and upgrade'button$")
     public  void verifyRemoveOfferAndVerifyTakeOffer(){
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             try {
@@ -10530,7 +10541,7 @@ public class E2EOrderPlaced_Steps {
     //*********************************************************  REMEDY AUTOMATION   ******************************************
 
 
-    @Given("Login Remedy tool with the details userName ([^\"]*) and password ([^\"]*)")
+    @Given("^Login Remedy tool with the details userName ([^\"]*) and password ([^\"]*)$")
     public void loginRemedyTool(String userName, String password) throws InterruptedException {
         Thread.sleep(8000);
         try {
@@ -10540,12 +10551,11 @@ public class E2EOrderPlaced_Steps {
             // TODO Auto-generated catch block
             e.printStackTrace();
             Assert.fail("Unable to select Create New account");
-
         }
     }
 
 
-    @And("update the request with CT")
+    @And("^update the request with CT$")
     public void selectApplicationType() throws InterruptedException {
         Thread.sleep(3000);
         try {
@@ -10561,41 +10571,144 @@ public class E2EOrderPlaced_Steps {
 
     //Jamal----Bill Spend Caps Section--------
 
-    @And("Validate Bill Spend Caps section and choose your cap ([^\"]*) ([^\"]*)")
-    public void ChoosYourCap(String BillCap, String CapAmount) {
-
+    //Validating Bill Spend Cap Section and Choosing Bill Cap
+    @And("^Validate consumer Bill Spend Caps section and choose your cap ([^\"]*) ([^\"]*) when BSC is ([^\"]*)$")
+    public void ValidateBillSpendCap(String BillCap, String CapAmount, String BSCstatus) {
         try {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, PAYMandPAYGTariffAndExtrasPage.class);
             Thread.sleep(5000);
-            PAYMandPAYGTariffAndExtrasPageActions.add_BillSpendCap( BillCap, CapAmount);
+            log.debug("Currently we are at page: "+driver.getTitle());
+            PAYMandPAYGTariffAndExtrasPageActions.Validate_BillSpendCap(BSCstatus);
             Thread.sleep(6000);
+            PAYMandPAYGTariffAndExtrasPageActions.add_BillSpendCap( BillCap, CapAmount,BSCstatus);
         } catch (Exception e) {
             // TODO Auto-generated catch block
             log.debug("Unable to Land on Tariff and extras page and fail to cap the bill");
             Assert.fail("Unable to Land on Tariff and extras page and fail to cap the bill");
-
         }
     }
 
-    @And("Validate added Bill Spend Cap in Basket page")
-    public void ValidateYourCapInBasketPage() {
-
+    //Jamal----ValidateAndClickEditLink-----
+    @And("^Validate and click on 'Edit' link$")
+    public void ValidateAndClickEditLink() {
         try {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-            PageFactory.initElements(driver, BasketPage.class);
+            PageFactory.initElements(driver, PAYMandPAYGTariffAndExtrasPage.class);
             Thread.sleep(5000);
-            BasketPageActions.ValidateBillSpendCapInBasketPage();
+            PAYMandPAYGTariffAndExtrasPageActions.validateEditLink();
+            Thread.sleep(5000);
+            PAYMandPAYGTariffAndExtrasPageActions.clickEditLink();
+            Thread.sleep(5000);
+            PAYMandPAYGTariffAndExtrasPageActions.statusAfterEditClicked();
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            log.debug("Unable to validate edit link");
+            Assert.fail("Unable to validate edit link");
+        }
+    }
+
+    //Jamal----ValidateAndClickEditLink-----
+    @And("^Validate 'Edit' link$")
+    public void ValidateEditLink() {
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, PAYMandPAYGTariffAndExtrasPage.class);
+            Thread.sleep(5000);
+            PAYMandPAYGTariffAndExtrasPageActions.validateEditLink();
             Thread.sleep(5000);
         } catch (Exception e) {
             // TODO Auto-generated catch block
-            log.debug("Unable to validate you bill cap in basket page");
-            Assert.fail("Unable to validate you bill cap in basket page");
+            log.debug("Unable to validate edit link");
+            Assert.fail("Unable to validate edit link");
+        }
+    }
+
+    //Jamal----Validating your bill cap in Basket page-----
+    @And("^Validate applied Bill Spend Cap ([^\"]*) ([^\"]*) when BSC is ([^\"]*)$")
+    public void ValidateYourCapInBasketPage(String BillCap, String CapAmount, String BSCstatus) {
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, BasketPage.class);
+            log.debug("Currently we are at page: "+driver.getTitle());
+            Thread.sleep(5000);
+            BasketPageActions.ValidateAppliedBillSpendCapInBasketPage(BillCap,CapAmount, BSCstatus);
+            Thread.sleep(5000);
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            log.debug("Unable to validate your bill cap in basket page");
+            Assert.fail("Unable to validate your bill cap in basket page");
+        }
+    }
+
+    //Jamal----Agent Bill Spend Cap----
+
+    //Validate Bill spend cap section in agent deal builder section
+    @And("^Validate Bill Spend Cap in agent deal builder section when BSC is ([^\"]*)$")
+    public void ValidateBillCap_AgentDealBuilder(String BSCstatus) {
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, Agent_DealBuilderPage.class);
+            log.debug("Currently we are at page: "+driver.getTitle());
+            Thread.sleep(4000);
+            Agent_DealBuilderPageActions.ValidateBillSpendCap_AgentDealBuilder(BSCstatus);
+            Thread.sleep(4000);
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            log.debug("Unable to validate your bill cap in Agent deal builder page");
+            Assert.fail("Unable to validate your bill cap in Agent deal builder page");
+        }
+    }
+
+    //choose a valid Bill Cap Amount in agent
+    @And("^Add your Bill Spend Cap ([^\"]*) in agent deal builder when BSC is ([^\"]*)$")
+    public void addBillCap_AgentDealBuilder(String BillCapAmount, String BSCstatus) {
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, Agent_DealBuilderPage.class);
+            log.debug("Currently we are at page: "+driver.getTitle());
+            Thread.sleep(4000);
+            Agent_DealBuilderPageActions.addBillSpendCap_AgentDealBuilder(BillCapAmount,BSCstatus);
+            Thread.sleep(4000);
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            log.debug("Unable to add your bill cap in Agent deal builder page");
+            Assert.fail("Unable to add your bill cap in Agent deal builder page");
+        }
+    }
+
+    @Then("^Verify that the BSC Bolton is displayed or not in agent extra tab$")
+    public void verify_BSC_Bolton_PresentOrNotInAgentExtraTab() {
+        try {
+            Thread.sleep(4000);
+            Screenshots.captureScreenshot();
+            driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, Agent_DealBuilderPage.class);
+            Agent_DealBuilderPageActions.verify_BSC_Bolton_PresentOrNotInAgentExtraTab();
+            Thread.sleep(4000);
+            log.debug("Successfully verified the extra tab for BSC_Bolton_PresentOrNot");
+        } catch (Exception e) {
+            log.debug("Unable to validate extra tab for BSC_Bolton_PresentOrNot");
+            Assert.fail("Unable to validate extra tab for BSC_Bolton_PresentOrNot");
+        }
+    }
+
+    //Jamal----Validating your bill cap in deal summary after checkout in Agent shop-----
+    @Then("^Validate deal summary for applied Bill Spend Cap ([^\"]*) when BSC is ([^\"]*)$")
+    public void ValidateYourCapInAgentDealSummary(String BillCapAmount, String BSCstatus) {
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, Agent_DealBuilderPage.class);
+            log.debug("Currently we are at page: "+driver.getTitle());
+            Thread.sleep(5000);
+            Agent_DealBuilderPageActions.ValidateAppliedBillSpendCapInAgentDealSummary(BillCapAmount, BSCstatus);
+            Thread.sleep(5000);
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            log.debug("Unable to validate your bill cap in deal summary");
+            Assert.fail("Unable to validate your bill cap in deal summary");
 
         }
 
-    }   
-    
-    
-    
+    }
 }

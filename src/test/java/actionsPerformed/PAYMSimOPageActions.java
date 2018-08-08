@@ -58,9 +58,8 @@ public class PAYMSimOPageActions extends Environment {
 
 		if (elementName.contains("30 Days")) {
 			log.debug("Selecting a Random Tariff under 30 days tab");
-			log.debug("Selecting a Random Tariff under 30 days tab");
 			pageobjects.PAYMSimOPage.thirtydays.sendKeys(Keys.ENTER);
-			Thread.sleep(7000);
+			Thread.sleep(8000);
 			JavascriptExecutor executor = (JavascriptExecutor)driver;
 			executor.executeScript("arguments[0].click();",pageobjects.PAYMSimOPage.BuyNowRandomTariff30Months);
 			Thread.sleep(5000);
@@ -68,9 +67,8 @@ public class PAYMSimOPageActions extends Environment {
 		}
 		if (elementName.contains("12 Months")) {
 			log.debug("Selecting a Random Tariff under 12 Months tab");
-			log.debug("Selecting a Random Tariff under 12 Months tab");
 			pageobjects.PAYMSimOPage.twelevemonths.sendKeys(Keys.ENTER);
-			Thread.sleep(10000);
+			Thread.sleep(8000);
 			JavascriptExecutor executor = (JavascriptExecutor)driver;
 			executor.executeScript("arguments[0].click();",pageobjects.PAYMSimOPage.BuyNowRandomTariff12Months);
 			Thread.sleep(5000);
@@ -838,7 +836,10 @@ public class PAYMSimOPageActions extends Environment {
 
 	}
 
-	public static void clickOnTermsAndConditionsCheckboxInReviewPage() throws InterruptedException {
+	public static void clickOnTermsAndConditionsCheckboxInReviewPage() throws InterruptedException, IOException {
+		Thread.sleep(3000);
+		scrollToAnElement.scrollToElement(pageobjects.PAYMSimOPage.TermsAndConditionsCheckbox_ReviewPage);
+		Screenshots.captureScreenshot();
 
 		WebElement element = pageobjects.PAYMSimOPage.TermsAndConditionsCheckbox_ReviewPage;
 		JavascriptExecutor executor = (JavascriptExecutor)driver;
