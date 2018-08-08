@@ -5,6 +5,7 @@ import java.util.*;
 import java.util.concurrent.TimeUnit;
 
 import GlobalActions.CommonActions;
+import GlobalActions.scrollToAnElement;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -14,8 +15,10 @@ import org.openqa.selenium.support.ui.Select;
 
 import GlobalActions.Screenshots;
 import helpers.Environment;
-import junit.framework.Assert;
+
 import pageobjects.Agent_DealBuilderPage;
+
+import org.junit.Assert;
 
 public class Agent_DealBuilderPageActions extends Environment {
 
@@ -29,7 +32,7 @@ public class Agent_DealBuilderPageActions extends Environment {
     public static void ValidateAgentHomepage() throws IOException {
 
         log.debug("Agent Home page Validation" + driver.getTitle());
-        log.debug("Agent Home Page validation" + driver.getTitle());
+
         Screenshots.captureScreenshot();
 
         // Assert.assertEquals("Agent Home Page",
@@ -64,8 +67,6 @@ public class Agent_DealBuilderPageActions extends Environment {
         Screenshots.captureScreenshot();
     }
 
-
-
     public static void SelectTariff(String Tariff) throws InterruptedException, IOException {
         Agent_DealBuilderPage.TariffsTab.click();
         Thread.sleep(8000);
@@ -81,8 +82,6 @@ public class Agent_DealBuilderPageActions extends Environment {
             Agent_DealBuilderPage.SelectingFirstAvailableTariff.click();
             Thread.sleep(5000);
             log.debug("Selected Random Tariff ");
-
-
         }
         if (Tariff.contains("SimO")) {
             Agent_DealBuilderPage.SearchTextBox_Tariff.sendKeys("- / Simo");
@@ -91,7 +90,6 @@ public class Agent_DealBuilderPageActions extends Environment {
             log.debug("Selected Random SimO Tariff ");
 
         }
-
         if (Tariff.contains("Refresh")) {
             Agent_DealBuilderPage.SearchTextBox_Tariff.sendKeys("Refresh");
             Thread.sleep(3000);
@@ -143,7 +141,8 @@ public class Agent_DealBuilderPageActions extends Environment {
 
     public static void HandsetTariffCombination() throws IOException {
 
-        try { Thread.sleep(3000);
+        try {
+            Thread.sleep(3000);
             log.debug("Tariff Name: " + driver.findElement(By.xpath("//*[@id='planTable']/tbody/tr[1]/td[6]")).getText());
             if (driver.findElement(By.xpath("//*[@id='planTable']/tbody/tr[1]/td[6]")).getText().equals("Standard")) {
                 log.debug("Selected Tariff is a Standard Tariff hence Handset Tariff combination is not required");
@@ -155,9 +154,11 @@ public class Agent_DealBuilderPageActions extends Environment {
                 for (int i = 0; i < menuOuter.size(); i++) {
                     log.debug("Option " + i + " is: " + menuOuter.get(i).getText());
                 }
+                int selectSize=menuOuter.size()-1;
 
-                driver.findElement(By.xpath("(//*[@class='priceSelection']/select/option)[" + menuOuter.size() + "]")).click();
-                log.debug("Selected Option : " + driver.findElement(By.xpath("(//*[@class='priceSelection']/select/option)[" + menuOuter.size() + "]")).getText());
+                //driver.findElement(By.xpath("(//*[@class='priceSelection']/select/option)[" + menuOuter.size() + "]")).click();
+                driver.findElement(By.xpath("(//*[@class='priceSelection']/select/option)[" + selectSize + "]")).click();
+                log.debug("Selected Option : " + driver.findElement(By.xpath("(//*[@class='priceSelection']/select/option)[" + selectSize + "]")).getText());
 
                 log.debug("Selected combination of handset and talk plan");
                 Thread.sleep(9000);
@@ -190,10 +191,8 @@ public class Agent_DealBuilderPageActions extends Environment {
 
 
                 driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
-                driver.findElement(By.xpath("(//*[@class='priceSelection']/select/option[3])")).click();
-                log.debug("Selected Option : "+driver.findElement(By.xpath("(//*[@class='priceSelection']/select/option[3])")).getText());
-
-
+                driver.findElement(By.xpath("(//*[@class='priceSelection']/select/option[2])")).click();
+                log.debug("Selected Option : "+driver.findElement(By.xpath("(//*[@class='priceSelection']/select/option[2])")).getText());
 
                 log.debug("Selected combination of handset and talk plan");
                 Thread.sleep(9000);
@@ -400,6 +399,17 @@ public class Agent_DealBuilderPageActions extends Environment {
         Screenshots.captureScreenshot();
     }
 
+    public static void validateCheckout() throws InterruptedException, IOException {
+        Thread.sleep(3000);
+        if(Agent_DealBuilderPage.Checkout.isEnabled()) {
+            log.debug("Checkout is enabled");
+        }else{
+            log.debug("Checkout is disabled");
+        }
+
+        Screenshots.captureScreenshot();
+    }
+
     public static void checkoutEnabledDisabled() throws InterruptedException, IOException {
         Thread.sleep(3000);
         if(Agent_DealBuilderPage.Checkout.isEnabled()){
@@ -434,6 +444,7 @@ public class Agent_DealBuilderPageActions extends Environment {
                 // Closing the Child Window.
                 String text = Agent_DealBuilderPage.emailConfirmation.getText();
                 Assert.assertEquals(text, "Email sent successfully");
+                //assertEquals(text, "Email sent successfully");
                 Screenshots.captureScreenshot();
 
                 driver.close();
@@ -503,6 +514,23 @@ public class Agent_DealBuilderPageActions extends Environment {
             Screenshots.captureScreenshot();
         }
     }
+
+    public static void verifyIncompatibleErrror(String strError) throws IOException, InterruptedException {
+        Thread.sleep(3000);
+        try {
+            if(driver.findElements(By.xpath("//*[@id='incomaptibleError']")).size()>0) {
+                String errorMessage = pageobjects.Agent_DealBuilderPage.incomaptibleError.getText();
+                log.debug("Error Message after adding Bill Spend cap bolton is: "+errorMessage);
+            }else{
+                log.debug("There is no incompatible error Message after adding Bill Spend cap bolton is");
+            }
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            log.debug("Unable to validate Incompatible error message");
+        }
+        Screenshots.captureScreenshot();
+    }
+
 
     public static void AgentTradeInQuestionair() throws InterruptedException, IOException {
         Thread.sleep(7000);
@@ -1067,6 +1095,222 @@ public class Agent_DealBuilderPageActions extends Environment {
         }
     }
 
+    //Jamal----Agent Bill Spend Cap validation-----
+    public static void ValidateBillSpendCap_AgentDealBuilder(String BSCstatus) throws IOException {
+        try {
+
+            if(BSCstatus.equalsIgnoreCase("Enabled")) {
+                if (driver.findElements(By.xpath("//*[contains(text(),'Spend cap')]")).size() > 0) {
+
+                    log.debug("Bill spend cap section is enabled");
+
+                    String capHeader = pageobjects.Agent_DealBuilderPage.BillSpendCapHeader.getText();
+                    log.debug("Bill Spend Cap header is displayed in DealBuilder page ie :: " + capHeader);
+
+                    //Bill cap header validation
+                    if (capHeader.equalsIgnoreCase("Bill spend cap")) {
+                        log.debug("Bill Spend Cap header is displayed as expected");
+                    } else {
+                        log.debug("Bill Spend Cap header is not matching");
+                        Assert.fail("Bill Spend Cap header is not matching");
+                    }
+
+                    //Listing all the cap amounts
+                    List<WebElement> menuOuter = driver.findElements(By.xpath("//*[@class='capSelection']/select/option"));
+                    log.debug("The size of the table is :" + menuOuter.size());
+                    log.debug("Bill Spend Cap Options are: \n");
+
+                    for (int i = 0; i < menuOuter.size(); i++) {
+                        log.debug("Cap Option " + i + " is: " + menuOuter.get(i).getText());
+                    }
+
+                    String BillCapStatus = pageobjects.Agent_DealBuilderPage.BillSpendCapMessage.getText();
+                    log.debug("Bill Spend Status message before selecting bill cap:: " + BillCapStatus);
+
+                    //Checkout CTA status before selecting BSC bolton
+                    if(Agent_DealBuilderPage.Checkout.isEnabled()) {
+                        log.debug("Checkout is enabled before selecting BSC bolton");
+                        Assert.fail("Checkout is enabled before selecting BSC bolton");
+                    }else{
+                        log.debug("As expected Checkout is disabled before selecting BSC bolton");
+                    }
+
+                    //Spend cap overlay icon
+                    if(driver.findElements(By.xpath("//*[normalize-space()='BSCoverlayIcon']")).size()>0) {
+                        log.debug("BSC overlay icon is present and clicking on it");
+                        Agent_DealBuilderPage.BSCoverlayIcon.click();
+                        log.debug("BSC overlay icon is clicked");
+                        Thread.sleep(3000);
+                        String overlayText =Agent_DealBuilderPage.BSCoverlayText.getText();
+                        Thread.sleep(3000);
+                        log.debug("BSC overlay text is: "+overlayText);
+                        log.debug("\n BSC overlay is closing now");
+                        Agent_DealBuilderPage.BSCoverlayClosed.click();
+                        log.debug("\n BSC overlay is closed");
+                    }else{
+                        log.debug("BSC overlay icon is not present");
+                        Assert.fail("BSC overlay icon is not present");
+                    }
+
+                    Screenshots.captureScreenshot();
+                } else {
+                    log.debug("Bill Spend Cap section is not displayed under deal builder section");
+                    Assert.fail("Bill Spend Cap section is not displayed under deal builder section");
+                    Screenshots.captureScreenshot();
+                }
+            }else if(BSCstatus.equalsIgnoreCase("Disabled")){
+                if (driver.findElements(By.xpath("//*[contains(text(),'Spend cap')]")).size() > 0) {
+                    log.debug("Bill spend cap section is enabled it suppose to be in disabled status");
+                    Assert.fail("Bill spend cap section is enabled it suppose to be in disabled status");
+                }else{
+                    log.debug("As expected, Bill spend cap section is disabled");
+                }
+            }else {
+                System.out.println("Unable to validate bill spend cap section \n");
+                log.debug("Unable to validate bill spend cap section \n");
+                Assert.fail("Unable to validate bill spend cap section \n");
+            }
+
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            log.debug("Unable to find Bill Spend Cap section");
+            Screenshots.captureScreenshot();
+        }
+    }
+
+    //Jamal----choose a valid Bill Cap Amount in agent-----
+    public static void addBillSpendCap_AgentDealBuilder(String BillCapAmount, String BSCstatus) throws IOException {
+        try {
+            String BillCap = "";
+            int cnt=0;
+
+            if(BSCstatus.equalsIgnoreCase("Enabled")) {
+                if (driver.findElements(By.xpath("//*[contains(text(),'Spend cap')]")).size() > 0) {
+
+                    log.debug("Bill spend cap section is enabled");
+
+                    List<WebElement> menuOuter = driver.findElements(By.xpath("//*[@class='capSelection']/select/option"));
+
+                    String BillCapStatus = pageobjects.Agent_DealBuilderPage.BillSpendCapMessage.getText();
+
+                    //Selecting specified bill cap
+                    log.debug("Selecting your Bill Cap:");
+                    for (int i = 0; i < menuOuter.size(); i++) {
+                        BillCap = driver.findElement(By.xpath("(//*[@class='priceSelection']/select/option[" + i + "])")).getText();
+                        if (BillCap.contains(BillCapAmount)) {
+                            driver.findElement(By.xpath("(//*[@class='priceSelection']/select/option[" + i + "])")).click();
+                            log.debug("Your Bill cap is selected ie:: " + BillCapAmount);
+                            cnt++;
+                            break;
+                        }
+                    }
+                    Thread.sleep(4000);
+                    if (cnt == 0) {
+                        log.debug("Bill Spend Cap list does not contain specified cap amount and your Bill cap is not selected ie:: " + BillCapAmount);
+                        Assert.fail("Bill Spend Cap list does not contain specified cap amount and your Bill cap is not selected ie:: " + BillCapAmount);
+                    }
+
+                    //status message validation
+                    if (BillCapStatus.contains(BillCapAmount)) {
+                        log.debug("Bill Spend Status message after selecting bill cap:: " + BillCapStatus);
+                        log.debug("Status message after selecting bill cap contain your bill cap amount :: " + BillCapStatus);
+                    }else {
+                        log.debug("Status message after selecting bill cap does not contain your bill cap amount :: " + BillCapStatus);
+                        Assert.fail("Status message after selecting bill cap does not contain your bill cap amount :: " + BillCapStatus);
+                    }
+
+                   /* //Checkout CTA status after selecting BSC bolton
+                    if(Agent_DealBuilderPage.Checkout.isEnabled()) {
+                        log.debug("As expected Checkout is enabled after selecting BSC bolton");
+                    }else{
+                        log.debug("Checkout is disabled after selecting BSC bolton");
+                        Assert.fail("Checkout is disabled after selecting BSC bolton");
+                    }*/
+
+                    Screenshots.captureScreenshot();
+                } else {
+                    log.debug("Not able to select your Bill Spend Cap");
+                    Assert.fail("Not able to select your Bill Spend Cap");
+                    Screenshots.captureScreenshot();
+                }
+            }else if(BSCstatus.equalsIgnoreCase("Disabled")){
+                if (driver.findElements(By.xpath("//*[contains(text(),'Spend cap')]")).size() > 0) {
+                    log.debug("Bill spend cap section is enabled it suppose to be disabled for disable status");
+                    Assert.fail("Bill spend cap section is enabled it suppose to be disabled for disable status");
+                }else{
+                    log.debug("As expected, Bill spend cap section is disabled");
+                }
+            }else {
+                System.out.println("Unable to validate bill spend cap section \n");
+                log.debug("Unable to validate bill spend cap section \n");
+                Assert.fail("Unable to validate bill spend cap section \n");
+            }
+
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            log.debug("Not able to select your Bill Spend Cap");
+            Screenshots.captureScreenshot();
+        }
+    }
+
+    public static void verify_BSC_Bolton_PresentOrNotInAgentExtraTab() throws InterruptedException, IOException {
+
+        Thread.sleep(3000);
+        if(driver.findElements(By.xpath("//*[normalize-space()='Spend cap']")).size()>0){
+            log.debug("Bill Spend Cap Bolton is available in extra tab");
+            Assert.fail("Bill Spend Cap Bolton is available in extra tab");
+        }else{
+            log.debug("As expected Bill Spend Cap Bolton is not available in extra tab");
+        }
+        Screenshots.captureScreenshot();
+        Thread.sleep(4000);
+    }
+
+    //Validating your bill cap in Basket page
+    public static void ValidateAppliedBillSpendCapInAgentDealSummary(String BillCapAmount, String BSCstatus) throws InterruptedException {
+        Thread.sleep(4000);
+        String AppliedBillCap="";
+        String pageTitle = driver.getTitle();
+        try {
+            if(BSCstatus.equalsIgnoreCase("Enabled")) {
+                if (driver.findElements(By.xpath("//h3[normalize-space()='Spend Cap']")).size() > 0) {
+
+                    log.debug("Bill spend cap section is displayed");
+                    scrollToAnElement.scrollToElement(pageobjects.Agent_DealBuilderPage.BillSpendCapHeader);
+                    Screenshots.captureScreenshot();
+                    log.debug("Bill Spend Cap header is displayed in " + pageTitle + " page ie :: " + pageobjects.Agent_DealBuilderPage.BillSpendCapHeader.getText());
+
+                    AppliedBillCap = pageobjects.Agent_DealBuilderPage.appliedBillCap.getText();
+
+                    if (AppliedBillCap.contains(BillCapAmount)) {
+                        log.debug("Applied bill cap is validated successfully in " + pageTitle + " page ie :: " + AppliedBillCap);
+                    }else {
+                            log.debug("Failed to validate applied bill cap:: " + AppliedBillCap);
+                            Assert.fail("Failed to validate applied bill cap :: " + AppliedBillCap);
+                    }
+
+                } else {
+                    log.debug("Bill cap section is not present under deal summary section in " + pageTitle + " page");
+                    Assert.fail("Bill cap section is not present under deal summary section in " + pageTitle + " page");
+                }
+            }else if(BSCstatus.equalsIgnoreCase("Disabled")){
+                if (driver.findElements(By.xpath("//h3[normalize-space()='Spend Cap']")).size() > 0) {
+                    log.debug("Bill spend cap section is enabled it suppose to be in disabled status in " + pageTitle + " page");
+                    Assert.fail("Bill spend cap section is enabled it suppose to be in disabled status in " + pageTitle + " page");
+                }else{
+                    log.debug("As expected, Bill spend cap section is disabled in " + pageTitle + " page");
+                }
+            }else {
+                System.out.println("Unable to validate bill spend cap section in " + pageTitle + " page for invalid status\n");
+                log.debug("Unable to validate bill spend cap section in " + pageTitle + " page for invalid status\n");
+                Assert.fail("Unable to validate bill spend cap section in " + pageTitle + " page for invalid status\n");
+            }
+        }catch(Exception e){
+            log.debug("Unable to validate Bill cap section in " + pageTitle + " page is:: " + e);
+            Assert.fail("Unable to validate Bill cap section in " + pageTitle + " page is:: " + e);
+        }
+    }
+    
     /*********************************************************************************************************************************************************************
        * validation    : To validate the flexible refresh (ITFD - 466)                                                                                                 *
        * Created by    : Venkata                                                                                                                                       *
