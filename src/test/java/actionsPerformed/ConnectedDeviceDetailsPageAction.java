@@ -35,7 +35,7 @@ public class ConnectedDeviceDetailsPageAction extends Environment {
         Screenshots.captureScreenshot();
     }
 
-    public static void colorSelect(String color) throws IOException, InterruptedException {
+    public static void colorSelect(String color) throws IOException {
         JavascriptExecutor executor = (JavascriptExecutor) driver;
         if (color.contains("pink")) {
             executor.executeScript("arguments[0].click();", pageobjects.ConnectedDeviceDetailsPage.Pink);
@@ -74,13 +74,13 @@ public class ConnectedDeviceDetailsPageAction extends Environment {
 
     }
 
-    public static void clickAnywhere() throws IOException, InterruptedException {
+    public static void clickAnywhere() throws IOException {
         // TODO Auto-generated method stub
         pageobjects.ConnectedDeviceDetailsPage.clickanywhere.click();
         Screenshots.captureScreenshot();
     }
 
-    public static void colorSelectOfDevice(String color) throws IOException, InterruptedException {
+    public static void colorSelectOfDevice(String color) throws IOException {
         // TODO Auto-generated method stub
         JavascriptExecutor executor = (JavascriptExecutor) driver;
 
@@ -302,7 +302,7 @@ public class ConnectedDeviceDetailsPageAction extends Environment {
         Screenshots.captureScreenshot();
     }
 
-    public static void checkDevStatusAsPreOrder() throws IOException, InterruptedException {
+    public static void checkDevStatusAsPreOrder() throws IOException {
         // TODO Auto-generated method stub
         // Have to change the below text
         log.debug("checkDevStatusAsPreOrder");
@@ -318,7 +318,7 @@ public class ConnectedDeviceDetailsPageAction extends Environment {
         Screenshots.captureScreenshot();
     }
 
-    public static void checkDevStatusAsDelayedDelivery() throws IOException, InterruptedException {
+    public static void checkDevStatusAsDelayedDelivery() throws IOException {
         // TODO Auto-generated method stub
         String deliveryMg = pageobjects.ConnectedDeviceDetailsPage.DevStatusMsg.getText();
         if (deliveryMg.contains("Home delivery") || deliveryMg.contains("Order by midnight")) {
@@ -331,7 +331,7 @@ public class ConnectedDeviceDetailsPageAction extends Environment {
         Screenshots.captureScreenshot();
     }
 
-    public static void checkDevStatusAsInStock() throws IOException, InterruptedException {
+    public static void checkDevStatusAsInStock() throws IOException {
         // TODO Auto-generated method stub
         if (pageobjects.ConnectedDeviceDetailsPage.DevStatusMsg.getText().contains("In Stock")) {
             log.debug("Device is in stock");
@@ -378,6 +378,93 @@ public class ConnectedDeviceDetailsPageAction extends Environment {
         }
 
     }
+
+
+
+    /*********************************************************************************************************************************************************************
+     * validation    : To validate the flexible refresh (ITFD - 466)                                                                                                 *
+     * Created by    : Venkata                                                                                                                                       *
+     * Created date  : 02/08/18     - August Release                                                                                                                 *
+     * Modified by/date :                                                                                                                                            *
+     * Reason to change:                                                                                                                                             *
+     **********************************************************************************************************************************************************************/
+        public static void flexibleReressh_CFA() {
+            if (ConnectedDeviceDetailsPage.pay_monthly_TabName.isDisplayed()) {
+
+                if (ConnectedDeviceDetailsPage.toggle_360_spin.isDisplayed()) {
+                    System.out.println("Successfully Displayed the toggle 36o spin device");
+                    log.info("Successfully Displayed the toggle 36o spin device");
+                } else {
+                    System.out.println("Failed to Displayed the toggle 36o spin device");
+                    log.info("Failed to Displayed the toggle 36o spin device");
+                    Assert.fail("Failed to Displayed the toggle 36o spin device");
+                }
+
+
+                if (ConnectedDeviceDetailsPage.toggle_gallery.isDisplayed()) {
+                    System.out.println("Successfully Displayed the toggle gallery");
+                    log.info("Successfully Displayed the toggle gallery");
+                } else {
+                    System.out.println("Failed to Displayed the toggle gallery");
+                    log.info("Failed to Displayed the toggle gallery");
+                    Assert.fail("Failed to Displayed the toggle gallery");
+                }
+
+                if (ConnectedDeviceDetailsPage.toggle_play_video.isDisplayed()) {
+                    System.out.println("Successfully Displayed the toggle play video");
+                    log.info("Successfully Displayed the toggle play video");
+                } else {
+                    System.out.println("Failed to Displayed the toggle play video");
+                    log.info("Failed to Displayed the toggle play video");
+                    Assert.fail("Failed to Displayed the toggle play video");
+                }
+
+                if (ConnectedDeviceDetailsPage.pay_monthly_flexible_refresh_section.isDisplayed()) {
+                    System.out.println("Successfully Displayed pay monthly flexible refresh section");
+                    log.info("Successfully Displayed the pay monthly flexible refresh section");
+                } else {
+                    System.out.println("Failed to Displayed the pay monthly flexible refresh section");
+                    log.info("Failed to Displayed the pay monthly flexible refresh section");
+                    Assert.fail("Failed to Displayed the pay monthly flexible refresh section");
+                }
+
+                if (ConnectedDeviceDetailsPage.reSet_BuildYourPlan.isDisplayed()) {
+                    System.out.println("Successfully Displayed reSet to build your plan");
+                    log.info("Successfully Displayed the reSet to build your plan");
+                } else {
+                    System.out.println("Failed to Displayed the reSet to build your plan");
+                    log.info("Failed to Displayed the reSet to build your plan");
+                    Assert.fail("Failed to Displayed the reSet to build your plan");
+                }
+
+
+                //Up front validati
+
+
+                WebElement colourDropdown = driver.findElement(By.xpath("//*[@id='colourSelectBoxItOptions']"));
+                List<WebElement> elementColor = colourDropdown.findElements(By.xpath("(//*[@class='selectboxit-option-label'])[1]"));
+                for (int i = 0; i < elementColor.size(); i++) {
+                    log.debug(elementColor.get(i).getText());
+                }
+            } else {
+                log.debug("The colour labels are not displayed");
+                log.debug("The colour labels are not displayed");
+            }
+        }
+
+
+        public static  void upFrontCalc_click(){
+
+
+
+
+    }
+
+
+
+
+
+
 
     //*[@id='colourSelectBoxItText']
 

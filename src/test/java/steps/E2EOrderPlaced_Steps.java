@@ -2405,6 +2405,7 @@ public class E2EOrderPlaced_Steps {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, Agent_DealBuilderPage.class);
             Agent_DealBuilderPageActions.HandsetTariffCombination();
+            Agent_DealBuilderPageActions.buildTariff_DealBuilder_Agent("Input");
             Thread.sleep(6000);
         } catch (Exception e) {
             // TODO Auto-generated catch block
@@ -10591,11 +10592,23 @@ public class E2EOrderPlaced_Steps {
             // TODO Auto-generated catch block
             log.debug("Unable to validate you bill cap in basket page");
             Assert.fail("Unable to validate you bill cap in basket page");
+        }
+    }
+
+
+    @And("^Validate Flexible Refresh$")
+    public void validate_Flexible_Refresh(){
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, ConnectedDeviceDetailsPage.class);
+            ConnectedDeviceDetailsPageAction.flexibleReressh_CFA();
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            log.debug("Unable to navigate to device details page");
+            Assert.fail("Unable to navigate to device details page");
 
         }
-
-    }   
-    
+    }
     
     
 }

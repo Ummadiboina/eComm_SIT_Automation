@@ -238,6 +238,9 @@ public class Agent_DealBuilderPage {
     @FindBy(how = How.XPATH, using = "(//table[@id='smartTechDeviceTable']/tbody/tr/td/a/img)[1]")
     public static WebElement SelectSearchedSmartTechDevice;
 
+    //price section in deal builder
+    @FindBy(how = How.XPATH, using = "//p[@class='priceSelection']//select")
+    public static WebElement priceSection;
 
 
 
