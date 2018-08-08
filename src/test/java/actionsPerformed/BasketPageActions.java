@@ -351,10 +351,10 @@ public class BasketPageActions extends Environment {
 
 				pageobjects.BasketPage.StorePostcode.sendKeys("M4");
 				log.debug("PostCode Entered for Search");
-				log.debug("PostCode Entered for Search");
+
 				Thread.sleep(4000);
 				Screenshots.captureScreenshot();
-				Thread.sleep(4000);
+				Thread.sleep(2000);
 				pageobjects.BasketPage.PostcodeSubmit.click();
 				Thread.sleep(5000);
 				// Assert.assertEquals(elementName,"Galaxy S7 is not found");
@@ -767,10 +767,9 @@ public class BasketPageActions extends Environment {
 
 		if (pageobjects.BasketPage.EnabledCheckout.isDisplayed()) {
 			log.debug("The Checkout button is enabled");
-			log.debug("The checkout button is enabled");
 		} else if (pageobjects.BasketPage.DisabledCheckout.isDisplayed()) {
 			log.debug("The checkout button is not enabled");
-			log.debug("The checkout button is not enabled");
+
 		}
 		Screenshots.captureScreenshot();
 		//Screenshots.captureScreenshot(Hooks.directoryName);
@@ -866,37 +865,66 @@ public class BasketPageActions extends Environment {
 
 	}
 
-	//Validating you bill cap in Basket page
-	public static void ValidateBillSpendCapInBasketPage() {
+	//Validating your bill cap in Basket page
+	public static void ValidateAppliedBillSpendCapInBasketPage(String BillCap, String CapAmount, String BSCstatus) throws InterruptedException {
+		Thread.sleep(4000);
 		String AppliedBillCap="";
+		String pageTitle = driver.getTitle();
 		try {
-			Thread.sleep(4000);
+			if(BSCstatus.equalsIgnoreCase("Enabled")) {
+				if (driver.findElements(By.xpath("//h3[normalize-space()='Spend Cap']")).size() > 0) {
 
-			if(pageobjects.BasketPage.BillSpendCapHeader_Basket.isDisplayed()) {
-				log.debug("Bill Spend Cap header is displayed in basket page ie :: "+pageobjects.BasketPage.BillSpendCapHeader_Basket.getText());
-			}
+					log.debug("Bill spend cap section is enabled");
+					scrollToAnElement.scrollToElement(pageobjects.BasketPage.BillSpendCapHeader_Basket);
+					Screenshots.captureScreenshot();
+					log.debug("Bill Spend Cap header is displayed in "+pageTitle+" page ie :: " + pageobjects.BasketPage.BillSpendCapHeader_Basket.getText());
 
-			if(pageobjects.BasketPage.AppliedBillCap_Basket.isDisplayed()) {
-				AppliedBillCap = pageobjects.BasketPage.AppliedBillCap_Basket.getText();
-				if(AppliedBillCap.contains("")){
-					log.debug("Validated successfully and Applied bill cap in basket page is:: " + AppliedBillCap);
-				}else{
-					log.debug("Applied bill cap is not present in basket page is:: " + AppliedBillCap);
-					Assert.fail("Applied bill cap is not present in basket page is:: " + AppliedBillCap);
+					AppliedBillCap = pageobjects.BasketPage.AppliedBillCap_Basket.getText();
+
+					if (BillCap.contains("CapMyBill")) {
+
+						if (AppliedBillCap.contains(CapAmount)) {
+							log.debug("Applied bill cap is validated successfully in "+pageTitle+" page ie :: " + AppliedBillCap);
+						} else {
+							log.debug("Applied bill cap is not present in " + pageTitle + " page is:: " + AppliedBillCap);
+							Assert.fail("Applied bill cap is not present in " + pageTitle + " page is:: " + AppliedBillCap);
+						}
+					} else if (BillCap.contains("DontCapMyBill")) {
+						if (AppliedBillCap.contains("Your bill has not been capped")) {
+							log.debug("'Dont Cap My Bill' is validated successfully and cap text is::" + AppliedBillCap);
+						} else {
+							log.debug("Failed to validate 'Dont Cap My Bill' and cap text is::" + AppliedBillCap);
+							Assert.fail("Failed to validate 'Dont Cap My Bill' and cap text is::" + AppliedBillCap);
+						}
+					}
+
+					/*if (driver.findElements(By.xpath("//a[@href='basket/changeBillSpendCap']")).size() > 0) {
+						log.debug("Bill cap Edit link/option is present in " + pageTitle + " page \n");
+					} else {
+						log.debug("Bill cap Edit link/option is not present in " + pageTitle + " page \n");
+						Assert.fail("Bill cap Edit link/option is not present in " + pageTitle + " page \n");
+					}*/
+
+				} else {
+					log.debug("Bill cap section is not present under order summary section in " + pageTitle + " page");
+					Assert.fail("Bill cap section is not present under order summary section in " + pageTitle + " page");
 				}
+			}else if(BSCstatus.equalsIgnoreCase("Disabled")){
+				if (driver.findElements(By.xpath("//h3[normalize-space()='Spend Cap']")).size() > 0) {
+					log.debug("Bill spend cap section is enabled it suppose to be in disabled status in " + pageTitle + " page");
+					Assert.fail("Bill spend cap section is enabled it suppose to be in disabled status in " + pageTitle + " page");
+				}else{
+					log.debug("As expected, Bill spend cap section is disabled in " + pageTitle + " page");
+				}
+			}else {
+				System.out.println("Unable to validate bill spend cap section in " + pageTitle + " page\n");
+				log.debug("Unable to validate bill spend cap section in " + pageTitle + " page\n");
+				Assert.fail("Unable to validate bill spend cap section in " + pageTitle + " page\n");
 			}
-
-			if(pageobjects.BasketPage.BillCapEditLink_Basket.isDisplayed()) {
-				log.debug("Bill cap Edit link is present in basket page \n");
-			}else{
-				log.debug("Bill cap Edit link is not present in basket page \n");
-			}
-
-			scrollToAnElement.scrollToElement(pageobjects.BasketPage.BillSpendCapHeader_Basket);
-			Screenshots.captureScreenshot();
 
 		}catch(Exception e){
-			log.debug("Unable to validate Bill cap section in basket page is:: " + e);
+			log.debug("Unable to validate Bill cap section in " + pageTitle + " page is:: " + e);
+			Assert.fail("Unable to validate Bill cap section in " + pageTitle + " page is:: " + e);
 		}
 	}
 

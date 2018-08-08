@@ -82,7 +82,7 @@ public class SimsPageActions extends Environment {
                 Screenshots.captureScreenshot();
                 driver.findElement(By.xpath("//input[@value='Mobile broadband']")).click();
                 log.debug(" Clicked on the 'MBB' button");
-                log.debug(" Clicked on the 'MBB' button");
+
             } else {
                 log.debug(" Failed to  Clicked on the 'MBB' button");
                 Assert.fail(" Failed to  Clicked on the 'MBB' button");
@@ -105,7 +105,7 @@ public class SimsPageActions extends Environment {
                 ((JavascriptExecutor) driver).executeScript("arguments[0].click();", simOnlyTarirr);
                 //simOnlyTarirr.click();
                 log.debug(" clicked on Sim only Tariff tab");
-                log.debug(" Clicked on Sim only Tariff tab");
+
             } else {
                 log.debug("Failed to click on Sim only Tariff tab");
                 Assert.fail("Failed to click on Sim only Tariff tab");
@@ -126,7 +126,7 @@ public class SimsPageActions extends Environment {
             log.debug("Current URL is :  " + currentUrl);
             if (currentUrl.contains("simo")) {
                 log.debug(" verifyed that the url has simo at the end");
-                log.debug(" verifyed that the url has simo at the end");
+
             } else {
                 log.debug(" Failed to  verify that the url has simo at the end");
                 Assert.fail(" Failed to  verify that the url has simo at the end");
@@ -147,7 +147,7 @@ public class SimsPageActions extends Environment {
             if (driver.findElements(By.xpath("//div/input[@class='secondary phones-btn active']")).size() > 0) {
                 if (driver.findElement(By.xpath("//div/input[@class='secondary phones-btn active']")).isDisplayed()) {
                     log.debug(" The 'Phones' button is selected by default");
-                    log.debug(" The 'Phones' button is selected by default");
+
                 } else {
                     log.debug(" Failed to The 'Phones' button is selected by default");
                     Assert.fail(" Failed to  The 'Phones' button is selected by default");

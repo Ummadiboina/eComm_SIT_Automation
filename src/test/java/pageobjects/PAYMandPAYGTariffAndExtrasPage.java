@@ -166,19 +166,31 @@ public class PAYMandPAYGTariffAndExtrasPage {
 
 	// Bill Spend Caps section----
 
-	@FindBy(how = How.XPATH, using = "//*[@id='CapMyBill']")
-	public static WebElement CapMyBill;
+	@FindBy(how = How.XPATH, using = "//div/p//span[contains(text(),'Spend cap')]")
+	public static WebElement SpendCapSection;
 
-	@FindBy(how = How.XPATH, using = "//*[@id='InfoText']")
+	@FindBy(how = How.XPATH, using = "//div//p[contains(text(),'Would you like to add a spend cap?')]")
+	public static WebElement SpendCapHeader;
+
+	@FindBy(how = How.XPATH, using = "//button[@id='cap']")
+	public static WebElement CapMyBillButton;
+
+	@FindBy(how = How.XPATH, using = "//button[normalize-space()='Submit']")
+	public static WebElement CapMyBillSubmitButton;
+
+	@FindBy(how = How.XPATH, using = "//*[@id='BlueTickMark']")
+	public static WebElement BlueTickMark;
+
+	@FindBy(how = How.XPATH, using = "//p[contains(text(),'Lorem Ipsum is simply dummy text')]")
 	public static WebElement InfoText;
 
-	@FindBy(how = How.XPATH, using = "//*[@id='DontCapMyBill']")
-	public static WebElement DontCapMyBill;
+	@FindBy(how = How.XPATH, using = "//button[@id='dontcap']")
+	public static WebElement DontCapMyBillButton;
 
-	@FindBy(how = How.XPATH, using = "//a[normalize-space()='I don\''t want a spend cap']")
+	@FindBy(how = How.XPATH, using = "//a[@class='dont-cap-link']")
 	public static WebElement DontCapMyBillLink;
 
-	@FindBy(how = How.XPATH, using = "//*[@id='CapMyBillOverlay']")
+	@FindBy(how = How.XPATH, using = "//a[@class='activate-overlay info']")
 	public static WebElement CapMyBillOverlay;
 
 	@FindBy(how = How.XPATH, using = "//*[@id='CapMyBillOverlayTxt']")
@@ -187,8 +199,21 @@ public class PAYMandPAYGTariffAndExtrasPage {
 	@FindBy(how = How.XPATH, using = "//*[@id='CapMyBillOverlayPopupClose']")
 	public static WebElement CapMyBillOverlayPopupClose;
 
-	@FindBy(how = How.XPATH, using = "//*[@id='BillCapStatusMsg']")
+	@FindBy(how = How.XPATH, using = "//p[@class='section-heading']/../p[2]")
 	public static WebElement BillCapStatusMsg;
 
+	@FindBy(how = How.XPATH, using = "//div[@class='selected-cap-msg']")
+	public static WebElement BillCapStatusInfo;
+
+
+	@FindBy(how = How.XPATH, using = "//p[@class='section-heading']/a")
+	public static WebElement BillCapEditLink;
+
+	//Bill Spend cap
+	@FindBy(how = How.XPATH, using = "//h3[normalize-space()='Spend Cap']//following-sibling::h3/span")
+	public static WebElement AppliedBillCap_YourPackage;
+
+	@FindBy(how = How.XPATH, using = "//h3[normalize-space()='Spend Cap']")
+	public static WebElement BillSpendCapHeader_YourPackage;
 
 }
