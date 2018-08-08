@@ -1,770 +1,2457 @@
 [
   {
     "line": 1,
-    "name": "AFA_Allow_ReferWithSIMO_Credit_Check_Status_For_SIMO_Order_And_Show_ReferralMessage",
-    "description": "This scenario ensures that when agent on acquisition journey selects \u0027SIMO\u0027 and performs credit check status with \u0027RefferWithSIMO\u0027 then agent should see referral message and then should be able to place an order successfully and order submission status should be \u0027Referred\u0027 in log file",
-    "id": "afa-allow-referwithsimo-credit-check-status-for-simo-order-and-show-referralmessage",
-    "keyword": "Feature",
-    "uri": "AFA_Allow_ReferWithSIMO_CreditCheck_Status_For_SIMO_Order_Show_ReferralMessage.feature"
-  },
-  {
-    "line": 1,
-    "name": "AFA_Not_Allow_ReferWithSIMO_Credit_Check_Status_For_SIMO_Order_And_Show_ReferralMessage",
-    "description": "This scenario ensures that when agent on acquisition journey selects \u0027SIMO\u0027 and device and performs credit check status with \u0027RefferWithSIMO\u0027 then agent should see referral message and then should be able to place an order successfully and order submission status should be \u0027Referred\u0027 in log file",
-    "id": "afa-not-allow-referwithsimo-credit-check-status-for-simo-order-and-show-referralmessage",
-    "keyword": "Feature",
-    "uri": "AFA_Not_Allow_ReferWithSIMO_CreditCheck_Status_For_SIMO_Order_Show_ReferralMessage.feature"
-  },
-  {
-    "line": 1,
-    "name": "CFA_PayG_Freesim_Phones_delivery_page_mark_mandatory_fields_with_asterisk.feature",
-    "description": "",
-    "id": "cfa-payg-freesim-phones-delivery-page-mark-mandatory-fields-with-asterisk.feature",
-    "keyword": "Feature",
-    "uri": "CFA_PayG_Freesim_Phones_delivery_page_mark_mandatory_fields_with_asterisk.feature"
-  },
-  {
-    "line": 1,
-    "name": "CFA_PayG_Simo_To_Show_BigBundle_DataRollOver_In_Delivery_Page",
-    "description": "This scenario ensures that when the customer on acquisition journey selects Big Bundle \u0027Pay As You Go\u0027 Sim\r\nthen Data Roll over copy text is displayed in the tile info and Delivery page",
-    "id": "cfa-payg-simo-to-show-bigbundle-datarollover-in-delivery-page",
-    "keyword": "Feature",
-    "uri": "CFA_PayG_Simo_To_Show_BigBundle_DataRollOver_In_DeliveryPage.feature"
-  },
-  {
-    "line": 1,
-    "name": "CFA_Phones_Colour_Dropdowns_With_ColourNames_Beside_the_Colour_Multiple_Colour_variant.feature",
-    "description": "",
-    "id": "cfa-phones-colour-dropdowns-with-colournames-beside-the-colour-multiple-colour-variant.feature",
-    "keyword": "Feature",
-    "uri": "CFA_Phones_Colour_Dropdowns_With_ColourNames_Beside_the_Colour_Multiple_Colour_variant.feature"
-  },
-  {
-    "line": 1,
-    "name": "CFA_Phones_SSC_checkout_pages_mark_mandatory_fields_with_asterisk.feature",
-    "description": "",
-    "id": "cfa-phones-ssc-checkout-pages-mark-mandatory-fields-with-asterisk.feature",
-    "keyword": "Feature",
-    "uri": "CFA_Phones_SSC_checkout_pages_mark_mandatory_fields_with_asterisk.feature"
-  },
-  {
-    "line": 1,
-    "name": "CFA_Phones_customers_moved_to_new_address_Payment_page_Home_Address_copy_update.feature",
-    "description": "\r\nThis scenario ensures that when the customer in acquisition journey who have moved address recently selects \u0027PayM Phone\u0027, then the customer should be prompted with updated copy of \u0027Home Address\u0027 to ensure that their address is up to date",
-    "id": "cfa-phones-customers-moved-to-new-address-payment-page-home-address-copy-update.feature",
-    "keyword": "Feature",
-    "uri": "CFA_Phones_customers_moved_to_new_address_Payment_page_Home_Address_copy_update.feature"
-  },
-  {
-    "line": 1,
-    "name": "CFU_New_PayG_To_Show_DataRollover_In_Basket_Page",
-    "description": "This scenario ensures that when the customer on Existing customer new aquisition journey selects \u0027Freesim\u0027 for Phones then\r\nData Roll over copy text is displayed in the tile info, Your package section and Basket page",
-    "id": "cfu-new-payg-to-show-datarollover-in-basket-page",
-    "keyword": "Feature",
-    "uri": "CFU_New_PayG_To_Show_DataRollover_In_Basket_Page.feature"
-  },
-  {
-    "line": 1,
-    "name": "Feb_AFU_eComm_Promotions_and_added_Bolton_Incompatible_error_message_Remove_and_reapply_removed_bolton_Order_Placement",
-    "description": "This scenario ensures that when the Retention Agent in Upgrade selects a \u0027Phone\u0027 and tariff eligible for eComm Promotion and adds another Bolton, then the customer should be displayed with error message",
-    "id": "feb-afu-ecomm-promotions-and-added-bolton-incompatible-error-message-remove-and-reapply-removed-bolton-order-placement",
-    "keyword": "Feature",
-    "uri": "Feb_AFU_eComm_Promotions_and_added_Bolton_Incompatible_error_message_Remove_and_reapply_removed_bolton_Order_Placement.feature"
-  },
-  {
-    "line": 1,
-    "name": "Feb_CFA_PayG_FreeSim_Delivery_page_more_than_one_address_select_one_compress_others",
-    "description": "This scenario ensures that when the customer on acquisition journey selects \u0027Freesim\u0027 for Phones  and enters the postcode in Delivery page, then all the other addresses in the drop down should be compressed on selecting one of the address",
-    "id": "feb-cfa-payg-freesim-delivery-page-more-than-one-address-select-one-compress-others",
-    "keyword": "Feature",
-    "uri": "Feb_CFA_PayG_FreeSim_Delivery_page_more_than_one_address_select_one_compress_others.feature"
-  },
-  {
-    "line": 1,
-    "name": "Feb_CFA_Phones_CnC_Delivery_page_Payment_page_more_than_one_address_select_one_compress_others",
-    "description": "This scenario ensures that when the customer on acquisition journey selects \u0027Phones\u0027 with click and collect enters the postcode in payment page, then all the other addresses in the drop down should be compressed on selecting one of the address",
-    "id": "feb-cfa-phones-cnc-delivery-page-payment-page-more-than-one-address-select-one-compress-others",
-    "keyword": "Feature",
-    "uri": "Feb_CFA_Phones_CnC_Delivery_page_Payment_page_more_than_one_address_select_one_compress_others.feature"
-  },
-  {
-    "line": 1,
-    "name": "Feb_CFU_Buyout_with_Recycle_Order_placement",
-    "description": "This scenario ensures that when  a customer in an upgrade journey has opted for Buyout ,then the Buyout is displayed with Recycle in  \u0027Your package\u0027 summary",
-    "id": "feb-cfu-buyout-with-recycle-order-placement",
-    "keyword": "Feature",
-    "uri": "Feb_CFU_Buyout_with_Recycle_Order_placement.feature"
-  },
-  {
-    "line": 1,
-    "name": "Feb_CFU_Tablet_CnC_changes_on_Delivery_page_Order_placement",
-    "description": "\r\nThis scenario ensures that when the customer on upgrade journey selects \u0027Tablet\u0027 proceeds till Delivery page, then the customer should be displayed with \u0027Go to click and collect’ under the Home delivery tab and should be able to place order with Click and collect",
-    "id": "feb-cfu-tablet-cnc-changes-on-delivery-page-order-placement",
-    "keyword": "Feature",
-    "uri": "Feb_CFU_Tablet_CnC_changes_on_Delivery_page_Order_placement.feature"
-  },
-  {
-    "line": 1,
-    "name": "Feb_CFU_Tablet_Delivery_page_more_than_one_address_select_one_compress_others",
-    "description": "This scenario ensures that when the customer on upgrade journey selects \u0027Tablet\u0027 proceeds till Delivery page and enters the postcode, then all the other addresses in the drop down should be compressed on selecting one of the address",
-    "id": "feb-cfu-tablet-delivery-page-more-than-one-address-select-one-compress-others",
-    "keyword": "Feature",
-    "uri": "Feb_CFU_Tablet_Delivery_page_more_than_one_address_select_one_compress_others.feature"
-  },
-  {
-    "line": 1,
-    "name": "Reg_AFA_PAYM_Acquistion",
-    "description": "",
-    "id": "reg-afa-paym-acquistion",
-    "keyword": "Feature",
-    "uri": "Reg_AFA_PAYM_Acquistion.feature"
-  },
-  {
-    "line": 1,
-    "name": "Reg_AFA_PayG_withoutAnyAccessory",
-    "description": "",
-    "id": "reg-afa-payg-withoutanyaccessory",
-    "keyword": "Feature",
-    "uri": "Reg_AFA_PayG_withoutAnyAccessory.feature"
-  },
-  {
-    "line": 1,
-    "name": "Reg_AFA_PayMSimO_withoutAnyAccessory",
-    "description": "",
-    "id": "reg-afa-paymsimo-withoutanyaccessory",
-    "keyword": "Feature",
-    "uri": "Reg_AFA_PayMSimO_withoutAnyAccessory.feature"
-  },
-  {
-    "line": 1,
-    "name": "Reg_AFA_Tablet",
-    "description": "",
-    "id": "reg-afa-tablet",
-    "keyword": "Feature",
-    "uri": "Reg_AFA_Tablet.feature"
-  },
-  {
-    "line": 1,
-    "name": "Reg_AFA_verify_Base_Comms_tariff_under_offer_column_order_placement_O2_offer",
-    "description": "",
-    "id": "reg-afa-verify-base-comms-tariff-under-offer-column-order-placement-o2-offer",
-    "keyword": "Feature",
-    "uri": "Reg_AFA_verify_Base_Comms_tariff_under_offer_column_order_placement_O2_offer.feature"
-  },
-  {
-    "line": 1,
-    "name": "Reg_AFU_PAYM_Dongle_PayByCard",
-    "description": "",
-    "id": "reg-afu-paym-dongle-paybycard",
-    "keyword": "Feature",
-    "uri": "Reg_AFU_PAYM_Dongle_payByCard.feature"
-  },
-  {
-    "line": 1,
-    "name": "Reg_AFU_PAYM_Dongle_SubmitOrder",
-    "description": "",
-    "id": "reg-afu-paym-dongle-submitorder",
-    "keyword": "Feature",
-    "uri": "Reg_AFU_PAYM_Dongle_submitOrder.feature"
-  },
-  {
-    "line": 1,
-    "name": "Reg_AFU_SavedBasket",
-    "description": "",
-    "id": "reg-afu-savedbasket",
-    "keyword": "Feature",
-    "uri": "Reg_AFU_SavedBasket.feature"
-  },
-  {
-    "line": 1,
-    "name": "Reg_AFU_verify_Base_Comms_tariff_under_offer_column_order_placement_O2_offer",
-    "description": "",
-    "id": "reg-afu-verify-base-comms-tariff-under-offer-column-order-placement-o2-offer",
-    "keyword": "Feature",
-    "uri": "Reg_AFU_verify_Base_Comms_tariff_under_offer_column_order_placement_O2_offer.feature"
-  },
-  {
-    "line": 1,
-    "name": "Reg_Agent_Buyout",
-    "description": "",
-    "id": "reg-agent-buyout",
-    "keyword": "Feature",
-    "uri": "Reg_Agent_Buyout.feature"
-  },
-  {
-    "line": 1,
-    "name": "Reg_Agent_DelayedDelivery",
-    "description": "",
-    "id": "reg-agent-delayeddelivery",
-    "keyword": "Feature",
-    "uri": "Reg_Agent_DelayedDelivery.feature"
-  },
-  {
-    "line": 1,
-    "name": "Reg_Agent_GenerateCCA",
-    "description": "",
-    "id": "reg-agent-generatecca",
-    "keyword": "Feature",
-    "uri": "Reg_Agent_GenerateCCA.feature"
-  },
-  {
-    "line": 1,
-    "name": "Reg_Agent_PreOrder",
-    "description": "",
-    "id": "reg-agent-preorder",
-    "keyword": "Feature",
-    "uri": "Reg_Agent_PreOrder.feature"
-  },
-  {
-    "line": 1,
-    "name": "Reg_Agent_TradeIn",
-    "description": "",
-    "id": "reg-agent-tradein",
-    "keyword": "Feature",
-    "uri": "Reg_Agent_TradeIn.feature"
-  },
-  {
-    "line": 1,
-    "name": "Reg_CFA_Accessories_Confirmation_Page_changes",
-    "description": "",
-    "id": "reg-cfa-accessories-confirmation-page-changes",
-    "keyword": "Feature",
-    "uri": "Reg_CFA_Accessories_Confirmation_Page_changes.feature"
-  },
-  {
-    "line": 1,
-    "name": "Reg_CFA_Basket page cross sell insurance",
-    "description": "",
-    "id": "reg-cfa-basket-page-cross-sell-insurance",
-    "keyword": "Feature",
-    "uri": "Reg_CFA_Basket page cross sell insurance.feature"
-  },
-  {
-    "line": 1,
-    "name": "Reg_CFA_Basket_page_cross_sell_insurance_no_free_insurance",
-    "description": "",
-    "id": "reg-cfa-basket-page-cross-sell-insurance-no-free-insurance",
-    "keyword": "Feature",
-    "uri": "Reg_CFA_Basket_page_cross_sell_insurance_no_free_insurance.feature"
-  },
-  {
-    "line": 1,
-    "name": "Reg_CFA_Cover_me_copy_update_on_basket_summary",
-    "description": "",
-    "id": "reg-cfa-cover-me-copy-update-on-basket-summary",
-    "keyword": "Feature",
-    "uri": "Reg_CFA_Cover_me_copy_update_on_basket_summary.feature"
-  },
-  {
-    "line": 1,
-    "name": "Reg_CFA_MBB_Data filters",
-    "description": "This scenario ensures that when a customer in acquisition journey selects \u0027MBB\u0027 and navigates to tariff page ,\r\nthen the customer should be able to see  \u0027Data filter\u0027 button next to sort drop-down for PayM tariffs",
-    "id": "reg-cfa-mbb-data-filters",
-    "keyword": "Feature",
-    "uri": "Reg_CFA_MBB_Data filters.feature"
-  },
-  {
-    "line": 1,
-    "name": "Reg_CFA_PayG_SIM_ipad",
-    "description": "",
-    "id": "reg-cfa-payg-sim-ipad",
-    "keyword": "Feature",
-    "uri": "Reg_CFA_PayG_SIM_ipad.feature"
-  },
-  {
-    "line": 1,
-    "name": "Reg_CFA_PayM_Phone_Data_filters_options_tariff_and_extras_page_Order_placement",
-    "description": "\r\nThis scenario ensures that when a customer in acquisition journey selects \u0027Phone\u0027 and navigated to tariff page ,then\r\nthe customer should be able to see  \u0027Data filter\u0027 button next to sort drop-down for PayM tariffs",
-    "id": "reg-cfa-paym-phone-data-filters-options-tariff-and-extras-page-order-placement",
-    "keyword": "Feature",
-    "uri": "Reg_CFA_PayM_Phone_Data_filters_options_tariff_and_extras_page_Order_placement.feature"
-  },
-  {
-    "line": 1,
-    "name": "Reg_CFA_PayM_Tablet_Data_filters_options_tariff_and_extras_page_Order_placement",
-    "description": "\r\nThis scenario ensures that when a customer in acquisition journey selects \u0027Phone\u0027 and navigated to tariff page ,then\r\nthe customer should be able to see  \u0027Data filter\u0027 button next to sort drop-down for PayM tariffs",
-    "id": "reg-cfa-paym-tablet-data-filters-options-tariff-and-extras-page-order-placement",
-    "keyword": "Feature",
-    "uri": "Reg_CFA_PayM_Tablet_Data_filters_options_tariff_and_extras_page_Order_placement.feature"
-  },
-  {
-    "line": 1,
-    "name": "Reg_CFA_Phones_Delayed_delivery_Home_delivery_Confirmation_Page_formatting_box",
-    "description": "",
-    "id": "reg-cfa-phones-delayed-delivery-home-delivery-confirmation-page-formatting-box",
-    "keyword": "Feature",
-    "uri": "Reg_CFA_Phones_Delayed_delivery_Home_delivery_Confirmation_Page_formatting_box.feature"
-  },
-  {
-    "line": 1,
-    "name": "Reg_CFA_iPad_Show_basecomms_tariffs_on_T\u0026E_page_for_my_offers_journey",
-    "description": "",
-    "id": "reg-cfa-ipad-show-basecomms-tariffs-on-t\u0026e-page-for-my-offers-journey",
-    "keyword": "Feature",
-    "uri": "Reg_CFA_iPad_Show_basecomms_tariffs_on_T\u0026E_page_for_my_offers_journey.feature"
-  },
-  {
-    "line": 1,
-    "name": "Reg_CFA_morethan12Tablet",
-    "description": "",
-    "id": "reg-cfa-morethan12tablet",
-    "keyword": "Feature",
-    "uri": "Reg_CFA_morethan12Tablet.feature"
-  },
-  {
-    "line": 1,
-    "name": "Reg_CFA_seperate_tariff_ribbons_Tariff_page_Basket_page_html_overlay_for_tariff_ribbons",
-    "description": "",
-    "id": "reg-cfa-seperate-tariff-ribbons-tariff-page-basket-page-html-overlay-for-tariff-ribbons",
-    "keyword": "Feature",
-    "uri": "Reg_CFA_seperate_tariff_ribbons_Tariff_page_Basket_page_html_overlay_for_tariff_ribbons.feature"
-  },
-  {
-    "line": 1,
-    "name": "Reg_CFD2064_ECOM11810_11811_CFU_ordering choice on upgrade options page_Phone_Option selected",
-    "description": "",
-    "id": "reg-cfd2064-ecom11810-11811-cfu-ordering-choice-on-upgrade-options-page-phone-option-selected",
-    "keyword": "Feature",
-    "uri": "Reg_CFD2064_ECOM11810_11811_CFU_ordering choice on upgrade options page_Phone_Option_selected.feature"
-  },
-  {
-    "line": 1,
-    "name": "Reg_CFD2064_ECOM11810_11811_CFU_ordering choice on upgrade options page_Phone_option_not selected",
-    "description": "",
-    "id": "reg-cfd2064-ecom11810-11811-cfu-ordering-choice-on-upgrade-options-page-phone-option-not-selected",
-    "keyword": "Feature",
-    "uri": "Reg_CFD2064_ECOM11810_11811_CFU_ordering choice on upgrade options page_Phone_option_not selected.feature"
-  },
-  {
-    "line": 1,
-    "name": "Reg_CFU_Phones_Data_filters_options_tariff_and_extras_page",
-    "description": "\r\nThis scenario ensures that when a customer in upgrade journey selects handset and navigated to tariff page ,\r\nthen the customer should be able to see  \u0027Data filter\u0027 button next to sort drop-down for PayM tariffs",
-    "id": "reg-cfu-phones-data-filters-options-tariff-and-extras-page",
-    "keyword": "Feature",
-    "uri": "Reg_CFU_Phones_Data_filters_options_tariff_and_extras_page.feature"
-  },
-  {
-    "line": 1,
-    "name": "Reg_CFU_Recycle_Phones_DD_Confirmation_Page_changes.feature",
-    "description": "",
-    "id": "reg-cfu-recycle-phones-dd-confirmation-page-changes.feature",
-    "keyword": "Feature",
-    "uri": "Reg_CFU_Recycle_Phones_DD_Confirmation_Page_changes.feature"
-  },
-  {
-    "line": 1,
-    "name": "Reg_CFU_Tablets_Data_filters_options_tariff_and_extras_page_Order_placement",
-    "description": "",
-    "id": "reg-cfu-tablets-data-filters-options-tariff-and-extras-page-order-placement",
-    "keyword": "Feature",
-    "uri": "Reg_CFU_Tablets_Data_filters_options_tariff_and_extras_page_Order_placement.feature"
-  },
-  {
-    "line": 1,
-    "name": "Reg_CFU_seperate_tariff_ribbons_Tariff_page_Basket_page_html_overlay_for_tariff_ribbons",
-    "description": "",
-    "id": "reg-cfu-seperate-tariff-ribbons-tariff-page-basket-page-html-overlay-for-tariff-ribbons",
-    "keyword": "Feature",
-    "uri": "Reg_CFU_seperate_tariff_ribbons_Tariff_page_Basket_page_html_overlay_for_tariff_ribbons.feature"
-  },
-  {
-    "line": 1,
-    "name": "Reg_CS_AccessoriesOnly",
-    "description": "",
-    "id": "reg-cs-accessoriesonly",
-    "keyword": "Feature",
-    "uri": "Reg_CS_AccessoriesOnly.feature"
-  },
-  {
-    "line": 1,
-    "name": "Reg_CS_CFA_MBBPayG",
-    "description": "",
-    "id": "reg-cs-cfa-mbbpayg",
-    "keyword": "Feature",
-    "uri": "Reg_CS_CFA_MBBPayG.feature"
-  },
-  {
-    "line": 1,
-    "name": "Reg_CS_CFU_SavedBasket",
-    "description": "",
-    "id": "reg-cs-cfu-savedbasket",
-    "keyword": "Feature",
-    "uri": "Reg_CS_CFU_SavedBasket.feature"
-  },
-  {
-    "line": 1,
-    "name": "Reg_CS_FitnessTrackers",
-    "description": "",
-    "id": "reg-cs-fitnesstrackers",
-    "keyword": "Feature",
-    "uri": "Reg_CS_FitnessTrackers.feature"
-  },
-  {
-    "line": 1,
-    "name": "Reg_CS_Free_Sim",
-    "description": "",
-    "id": "reg-cs-free-sim",
-    "keyword": "Feature",
-    "uri": "Reg_CS_Free_Sim.feature"
-  },
-  {
-    "line": 1,
-    "name": "Reg_CS_Free_Sim_Tablet",
-    "description": "",
-    "id": "reg-cs-free-sim-tablet",
-    "keyword": "Feature",
-    "uri": "Reg_CS_Free_Sim_Tablet.feature"
-  },
-  {
-    "line": 1,
-    "name": "Reg_CS_PayGPhonesHomeDeliveryWithoutAccessory",
-    "description": "",
-    "id": "reg-cs-paygphoneshomedeliverywithoutaccessory",
-    "keyword": "Feature",
-    "uri": "Reg_CS_PayGPhonesHomeDeliveryWithoutAccessory.feature"
-  },
-  {
-    "line": 1,
-    "name": "Reg_CS_PayMPhonesHomeDeliveryWithAccessory",
-    "description": "",
-    "id": "reg-cs-paymphoneshomedeliverywithaccessory",
-    "keyword": "Feature",
-    "uri": "Reg_CS_PayMPhonesHomeDeliveryWithAccessory.feature"
-  },
-  {
-    "line": 1,
-    "name": "Reg_CS_PayMPhonesHomeDeliveryWithoutAccessory",
-    "description": "",
-    "id": "reg-cs-paymphoneshomedeliverywithoutaccessory",
-    "keyword": "Feature",
-    "uri": "Reg_CS_PayMPhonesHomeDeliveryWithoutAccessory.feature"
-  },
-  {
-    "line": 1,
-    "name": "Reg_CS_PayMSimOnly",
-    "description": "",
-    "id": "reg-cs-paymsimonly",
-    "keyword": "Feature",
-    "uri": "Reg_CS_PayMSimOnly.feature"
-  },
-  {
-    "line": 1,
-    "name": "Reg_CS_PayMSimOnlyRecommended",
-    "description": "",
-    "id": "reg-cs-paymsimonlyrecommended",
-    "keyword": "Feature",
-    "uri": "Reg_CS_PayMSimOnlyRecommended.feature"
-  },
-  {
-    "line": 1,
-    "name": "Reg_CS_PayMTabletsHomeDeliveryWithAccessory",
-    "description": "",
-    "id": "reg-cs-paymtabletshomedeliverywithaccessory",
-    "keyword": "Feature",
-    "uri": "Reg_CS_PayMTabletsHomeDeliveryWithAccessory.feature"
-  },
-  {
-    "line": 1,
-    "name": "Reg_CS_Recycle.feature",
-    "description": "",
-    "id": "reg-cs-recycle.feature",
-    "keyword": "Feature",
-    "uri": "Reg_CS_Recycle.feature"
-  },
-  {
-    "line": 1,
-    "name": "Reg_CS_SmartWatch",
-    "description": "",
-    "id": "reg-cs-smartwatch",
-    "keyword": "Feature",
-    "uri": "Reg_CS_SmartWatch.feature"
-  },
-  {
-    "line": 1,
-    "name": "Reg_CVOSDelayedDelivery",
-    "description": "",
-    "id": "reg-cvosdelayeddelivery",
-    "keyword": "Feature",
-    "uri": "Reg_CVOSDelayedDelivery.feature"
-  },
-  {
-    "line": 1,
-    "name": "Reg_CVOSPreOrder",
-    "description": "",
-    "id": "reg-cvospreorder",
-    "keyword": "Feature",
-    "uri": "Reg_CVOSPreOrder.feature"
-  },
-  {
-    "line": 1,
-    "name": "Reg_Consumer_Buyout.feature",
-    "description": "",
-    "id": "reg-consumer-buyout.feature",
-    "keyword": "Feature",
-    "uri": "Reg_Consumer_Buyout.feature"
-  },
-  {
-    "line": 1,
-    "name": "Reg_Consumer_DelayedDelivery",
-    "description": "",
-    "id": "reg-consumer-delayeddelivery",
-    "keyword": "Feature",
-    "uri": "Reg_Consumer_DelayedDelivery.feature"
-  },
-  {
-    "line": 1,
-    "name": "Reg_Consumer_PreOrder",
-    "description": "",
-    "id": "reg-consumer-preorder",
-    "keyword": "Feature",
-    "uri": "Reg_Consumer_PreOrder.feature"
-  },
-  {
-    "line": 1,
-    "name": "Reg_Consumer_TradeIn",
-    "description": "",
-    "id": "reg-consumer-tradein",
-    "keyword": "Feature",
-    "uri": "Reg_Consumer_TradeIn.feature"
-  },
-  {
-    "line": 1,
-    "name": "Reg_Current_MBB_URL_no_change_Order_placement.feature",
-    "description": "",
-    "id": "reg-current-mbb-url-no-change-order-placement.feature",
-    "keyword": "Feature",
-    "uri": "Reg_Current_MBB_URL_no_change_Order_placement.feature"
-  },
-  {
-    "line": 1,
-    "name": "Reg_Existing_Customer_Tablets_Data_filters_options_tariff_and_extras_page.feature",
-    "description": "\r\nThis scenario ensures that when a customer in Existing customer journey selects \u0027Tablet\u0027 and navigated to tariff page ,then the customer\r\nshould be able to see  \u0027Data filter\u0027 button next to sort drop-down for PayM tariffs",
-    "id": "reg-existing-customer-tablets-data-filters-options-tariff-and-extras-page.feature",
-    "keyword": "Feature",
-    "uri": "Reg_Existing_Customer_Tablets_Data_filters_options_tariff_and_extras_page.feature"
-  },
-  {
-    "line": 1,
-    "name": "Reg_FNT_AFA_Handset_Click_and_Collect_Passport_and_Driving_license.feature",
-    "description": "",
-    "id": "reg-fnt-afa-handset-click-and-collect-passport-and-driving-license.feature",
-    "keyword": "Feature",
-    "uri": "Reg_FNT_AFA_Handset_Click_and_Collect_Passport_and_Driving_license.feature"
-  },
-  {
-    "line": 1,
-    "name": "Reg_FNT_AFA_PayG_Phones_less_than_50_GBP_ClickAndCollect",
-    "description": "",
-    "id": "reg-fnt-afa-payg-phones-less-than-50-gbp-clickandcollect",
-    "keyword": "Feature",
-    "uri": "Reg_FNT_AFA_PayG_Phones_less_than_50_GBP_ClickAndCollect.feature"
-  },
-  {
-    "line": 1,
-    "name": "Reg_FNT_DifferentStoreAddressthanBillingAddres",
-    "description": "",
-    "id": "reg-fnt-differentstoreaddressthanbillingaddres",
-    "keyword": "Feature",
-    "uri": "Reg_FNT_DifferentStoreAddressthanBillingAddres.feature"
-  },
-  {
-    "line": 1,
-    "name": "Reg_FNT_MorethanMaxTransaction_Deny",
-    "description": "",
-    "id": "reg-fnt-morethanmaxtransaction-deny",
-    "keyword": "Feature",
-    "uri": "Reg_FNT_MorethanMaxTransaction_Deny.feature"
-  },
-  {
-    "line": 1,
-    "name": "Reg_FNT_PayMPhonesAdditionalDepositConfirmation",
-    "description": "",
-    "id": "reg-fnt-paymphonesadditionaldepositconfirmation",
-    "keyword": "Feature",
-    "uri": "Reg_FNT_PayMPhonesAdditionalDepositConfirmation.feature"
-  },
-  {
-    "line": 1,
-    "name": "Reg_FNT_PayMPhonesClickAndCollect",
-    "description": "",
-    "id": "reg-fnt-paymphonesclickandcollect",
-    "keyword": "Feature",
-    "uri": "Reg_FNT_PayMPhonesClickAndCollect.feature"
-  },
-  {
-    "line": 1,
-    "name": "Reg_FNT_PayMPhonesOrderStraightDecline_ClickandCollect",
-    "description": "",
-    "id": "reg-fnt-paymphonesorderstraightdecline-clickandcollect",
-    "keyword": "Feature",
-    "uri": "Reg_FNT_PayMPhonesOrderStraightDecline_ClickandCollect.feature"
-  },
-  {
-    "line": 1,
-    "name": "Reg_Jan_AgentShopToAcceptApostrophe",
-    "description": "\r\nThis scenario ensures that the Agent shop accepts Apostrophe in First Name and Last Name fields",
-    "id": "reg-jan-agentshoptoacceptapostrophe",
-    "keyword": "Feature",
-    "uri": "Reg_Jan_AgentShopToAcceptApostrophe.feature"
-  },
-  {
-    "line": 1,
-    "name": "Reg_Jan_AgentToAcceptTenDigitsPhoneNumber",
-    "description": "\r\nThis scenario ensures that the Agent shop accepts 10 digit home number",
-    "id": "reg-jan-agenttoaccepttendigitsphonenumber",
-    "keyword": "Feature",
-    "uri": "Reg_Jan_AgentToAcceptTenDigitsPhoneNumber.feature"
-  },
-  {
-    "line": 1,
-    "name": "Reg_Jan_CFU_MbbSimo30days.feature",
-    "description": "\r\nThis scenario ensures that an upgrade customer is able to select a 12 months tablets tariff under the simo tab in upgrade options page",
-    "id": "reg-jan-cfu-mbbsimo30days.feature",
-    "keyword": "Feature",
-    "uri": "Reg_Jan_CFU_MbbSimo30days.feature"
-  },
-  {
-    "line": 1,
-    "name": "Reg_Jan_CFU_PhonesSimo30day",
-    "description": "This scenario ensures that an upgrade customer is able to select a 30 day tariff under the simo tab in upgrade options page",
-    "id": "reg-jan-cfu-phonessimo30day",
-    "keyword": "Feature",
-    "uri": "Reg_Jan_CFU_PhonesSimo30day.feature"
-  },
-  {
-    "line": 1,
-    "name": "Reg_Jan_ConsumerToAcceptTenDigitsPhoneNumber.feature",
-    "description": "\r\nThis scenario ensures that the consumer shop accepts 10 digit home number",
-    "id": "reg-jan-consumertoaccepttendigitsphonenumber.feature",
-    "keyword": "Feature",
-    "uri": "Reg_Jan_ConsumerToAcceptTenDigitsPhoneNumber.feature"
-  },
-  {
-    "line": 1,
-    "name": "Reg_Jan_DrupalPageCookiesPopUp.feature",
-    "description": "This scenario ensures that when the pop up is displayed then the links in the pop up should launch the respective pages",
-    "id": "reg-jan-drupalpagecookiespopup.feature",
-    "keyword": "Feature",
-    "uri": "Reg_Jan_DrupalPageCookiesPopUp.feature"
-  },
-  {
-    "line": 1,
-    "name": "Reg_Jan_Existing_OOSForHomeDeliveryandCnC.feature",
-    "description": "\r\nThis scenario ensures that when an existing customer has selected a device which is out of stock for both Home delivery and click and collect then the updated\r\nerror messages should be displayed",
-    "id": "reg-jan-existing-oosforhomedeliveryandcnc.feature",
-    "keyword": "Feature",
-    "uri": "Reg_Jan_Existing_OOSForHomeDeliveryandCnC.feature"
-  },
-  {
-    "line": 1,
-    "name": "Reg_Jan_FreeSim_CommercialAddress.feature",
-    "description": "",
-    "id": "reg-jan-freesim-commercialaddress.feature",
-    "keyword": "Feature",
-    "uri": "Reg_Jan_FreeSim_CommercialAddress.feature"
-  },
-  {
-    "line": 1,
-    "name": "Reg_Jan_FreeSim_InvalidPostCode_DeliverySection_AddressLookUp.feature",
-    "description": "\r\nThis ensures that a valid error message should get displayed when user enters invalid postcode while doing address look up in the Delivery section",
-    "id": "reg-jan-freesim-invalidpostcode-deliverysection-addresslookup.feature",
-    "keyword": "Feature",
-    "uri": "Reg_Jan_FreeSim_InvalidPostCode_DeliverySection_AddressLookUp.feature"
-  },
-  {
-    "line": 1,
-    "name": "Reg_Jan_FreeSim_InvalidPostCode_EnteredManually.feature",
-    "description": "\r\nThis ensures that a valid error message should get displayed when user enters invalid postcode in the enter manually section",
-    "id": "reg-jan-freesim-invalidpostcode-enteredmanually.feature",
-    "keyword": "Feature",
-    "uri": "Reg_Jan_FreeSim_InvalidPostCode_EnteredManually.feature"
-  },
-  {
-    "line": 1,
-    "name": "Reg_October2Release_PayG Tablets_ShowMarketingMessageOnTariffAndExtrasPagePackageSummary.feature",
-    "description": "",
-    "id": "reg-october2release-payg-tablets-showmarketingmessageontariffandextraspagepackagesummary.feature",
-    "keyword": "Feature",
-    "uri": "Reg_October2Release_PayG Tablets_ShowMarketingMessageOnTariffAndExtrasPagePackageSummary.feature"
-  },
-  {
-    "line": 1,
-    "name": "Reg_October2Release_Reg_October2Release_CFA_Phones_ColourDropdownsWithColourNamesBesideTheColourMultipleColour.feature",
-    "description": "",
-    "id": "reg-october2release-reg-october2release-cfa-phones-colourdropdownswithcolournamesbesidethecolourmultiplecolour.feature",
-    "keyword": "Feature",
-    "uri": "Reg_October2Release_Reg_October2Release_CFA_Phones_ColourDropdownsWithColourNamesBesideTheColourMultipleColour.feature"
-  },
-  {
-    "line": 1,
-    "name": "Reg_TrustevPayMPhones_ClickandCollectE2EjourneyWithAccessoryInAgentShop.feature",
-    "description": "",
-    "id": "reg-trustevpaymphones-clickandcollecte2ejourneywithaccessoryinagentshop.feature",
-    "keyword": "Feature",
-    "uri": "Reg_TrustevPayMPhones_ClickandCollectE2EjourneyWithAccessoryInAgentShop.feature"
-  },
-  {
-    "line": 1,
-    "name": "Reg_Trustev_AFA_PAYM_Phones_WithAccessoryClick_and_Collect",
-    "description": "",
-    "id": "reg-trustev-afa-paym-phones-withaccessoryclick-and-collect",
-    "keyword": "Feature",
-    "uri": "Reg_Trustev_AFA_PAYM_Phones_WithAccessoryClick_and_Collect.feature"
-  },
-  {
-    "line": 1,
-    "name": "Reg_Trustev_AFA_PAYM_Tablet_WithAccessoryClick_and_Collect",
-    "description": "",
-    "id": "reg-trustev-afa-paym-tablet-withaccessoryclick-and-collect",
-    "keyword": "Feature",
-    "uri": "Reg_Trustev_AFA_PAYM_Tablet_WithAccessoryClick_and_Collect.feature"
-  },
-  {
-    "line": 1,
-    "name": "Reg_Trustev_PayMPhonesHomeDeliveryWithAccessory.feature",
-    "description": "",
-    "id": "reg-trustev-paymphoneshomedeliverywithaccessory.feature",
-    "keyword": "Feature",
-    "uri": "Reg_Trustev_PayMPhonesHomeDeliveryWithAccessory.feature"
-  },
-  {
-    "line": 1,
-    "name": "Reg_Trustev_PayMPhonesHomeDeliveryWithoutAccessory",
-    "description": "",
-    "id": "reg-trustev-paymphoneshomedeliverywithoutaccessory",
-    "keyword": "Feature",
-    "uri": "Reg_Trustev_PayMPhonesHomeDeliveryWithoutAccessory.feature"
-  },
-  {
-    "line": 1,
-    "name": "Reg_Trustev_PayMTabletsHomeDeliveryWithAccessory",
-    "description": "",
-    "id": "reg-trustev-paymtabletshomedeliverywithaccessory",
-    "keyword": "Feature",
-    "uri": "Reg_Trustev_PayMTabletsHomeDeliveryWithAccessory.feature"
-  },
-  {
-    "line": 1,
-    "name": "Reg_VOLTE_PayMPhonesClickAndCollect.feature",
-    "description": "",
-    "id": "reg-volte-paymphonesclickandcollect.feature",
-    "keyword": "Feature",
-    "uri": "Reg_VOLTE_PayMPhonesClickAndCollect.feature"
-  },
-  {
-    "line": 1,
-    "name": "Reg_VOLTE_PayMPhonesHomeDeliveryWithAccessory",
-    "description": "",
-    "id": "reg-volte-paymphoneshomedeliverywithaccessory",
-    "keyword": "Feature",
-    "uri": "Reg_VOLTE_PayMPhonesHomeDeliveryWithAccessory.feature"
-  },
-  {
-    "line": 1,
-    "name": "Reg_VOLTE_PayMPhonesHomeDeliveryWithoutAccessory.feature",
-    "description": "",
-    "id": "reg-volte-paymphoneshomedeliverywithoutaccessory.feature",
-    "keyword": "Feature",
-    "uri": "Reg_VOLTE_PayMPhonesHomeDeliveryWithoutAccessory.feature"
+    "elements": [
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 29711785726,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Hooks.openBrowser(Scenario)"
+            }
+          }
+        ],
+        "line": 17,
+        "name": "CFA_DGN - Register button \u0026 Forgot link on overlay_Forgot Password",
+        "description": "",
+        "id": "cfa-dgn---register-button-\u0026-forgot-link-on-overlay-forgot-password;cfa-dgn---register-button-\u0026-forgot-link-on-overlay-forgot-password;;2",
+        "after": [
+          {
+            "result": {
+              "duration": 17006696600,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Hooks.embedScreenshot(Scenario)"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 600432897,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "I am an CFA user and Lands on shop page",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.i_am_an_CFA_user_and_Lands_on_shop_page()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 9488778187,
+              "status": "passed"
+            },
+            "line": 10,
+            "name": "click on \u0027My O2\u0027 link",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.click_on_MyO2Link()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 11968446847,
+              "status": "passed"
+            },
+            "line": 11,
+            "name": "validate \u0027My O2\u0027 section",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.validateMyO2Page()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 28296900177,
+              "status": "passed"
+            },
+            "line": 12,
+            "name": "click on \u0027Forgotten username or password\u0027 link",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.click_on_Forgotten_username_password_MyO2()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 8326901100,
+              "status": "passed"
+            },
+            "line": 13,
+            "name": "validate URL after clicking on \u0027Forgotten username or password\u0027 link",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.redirectURLWhenClicksOnForgottenUserNamePasswordLink_MyO2()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "line": 6,
+            "name": "@Web"
+          }
+        ]
+      }
+    ],
+    "name": "CFA_DGN - Register button \u0026 Forgot link on overlay_Forgot Password",
+    "description": "\r\nThis scenario validates that when a CFA customer click on the \u0027My O2\u0027 link and chooses to click \"Forgotten username or password\" on the Overlay window, then the customer should be re-directed to shop\u0027s Get Help sign in page - \"https://accounts.o2.co.uk/resetpassword/selectusername\"",
+    "id": "cfa-dgn---register-button-\u0026-forgot-link-on-overlay-forgot-password",
+    "keyword": "Feature",
+    "uri": "CFA_DGN - Register button \u0026 Forgot link on overlay_Forgot Password.feature"
+  },
+  {
+    "line": 1,
+    "elements": [
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 26869913891,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Hooks.openBrowser(Scenario)"
+            }
+          }
+        ],
+        "line": 16,
+        "name": "CFA_DGN - Register button \u0026 Forgot link on overlay_Register",
+        "description": "",
+        "id": "cfa-dgn---register-button-\u0026-forgot-link-on-overlay-register;cfa-dgn---register-button-\u0026-forgot-link-on-overlay-register;;2",
+        "after": [
+          {
+            "result": {
+              "duration": 17004027799,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Hooks.embedScreenshot(Scenario)"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 337937998,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "I am an CFA user and Lands on shop page",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.i_am_an_CFA_user_and_Lands_on_shop_page()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 9491229691,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "click on \u0027My O2\u0027 link",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.click_on_MyO2Link()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 11940922554,
+              "status": "passed"
+            },
+            "line": 10,
+            "name": "validate \u0027My O2\u0027 section",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.validateMyO2Page()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 24443849883,
+              "status": "passed"
+            },
+            "line": 11,
+            "name": "click on \u0027Register\u0027 link",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.click_on_RegisterLink_MyO2()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 8324070564,
+              "status": "passed"
+            },
+            "line": 12,
+            "name": "validate URL after clicking on \u0027Register\u0027 link",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.redirectURLWhenClicksOnRegisterLink_MyO2()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "line": 5,
+            "name": "@Web"
+          }
+        ]
+      }
+    ],
+    "name": "CFA_DGN - Register button \u0026 Forgot link on overlay_Register",
+    "description": "\r\nThis scenario validates that when a Acquisition customer click on the \u0027My O2\u0027 link and chooses to click \u0027Register\u0027 on the Overlay window, then the customer should be re-directed to \"https://accounts.o2.co.uk/register\"",
+    "id": "cfa-dgn---register-button-\u0026-forgot-link-on-overlay-register",
+    "keyword": "Feature",
+    "uri": "CFA_DGN - Register button \u0026 Forgot link on overlay_Register.feature"
+  },
+  {
+    "line": 1,
+    "elements": [
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 25232548831,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Hooks.openBrowser(Scenario)"
+            }
+          }
+        ],
+        "line": 75,
+        "name": "CFA_DGN_Drupal_Create_section_for_My_O2_global_nav_link",
+        "description": "",
+        "id": "cfa-dgn-drupal-create-section-for-my-o2-global-nav-link;cfa-dgn-drupal-create-section-for-my-o2-global-nav-link;;2",
+        "after": [
+          {
+            "result": {
+              "duration": 17004786572,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Hooks.embedScreenshot(Scenario)"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 361917928,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "I am an CFA user and Lands on shop page",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.i_am_an_CFA_user_and_Lands_on_shop_page()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 9480031059,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "click on \u0027My O2\u0027 link",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.click_on_MyO2Link()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 11910563832,
+              "status": "passed"
+            },
+            "line": 10,
+            "name": "validate \u0027My O2\u0027 section",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.validateMyO2Page()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 54879041822,
+              "status": "passed"
+            },
+            "line": 11,
+            "name": "navigate to PAYM Phones page",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.navigate_to_PAYM_Phones_page()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 9435209988,
+              "status": "passed"
+            },
+            "line": 12,
+            "name": "click on \u0027My O2\u0027 link",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.click_on_MyO2Link()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 11953981667,
+              "status": "passed"
+            },
+            "line": 13,
+            "name": "validate \u0027My O2\u0027 section",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.validateMyO2Page()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 58444231393,
+              "status": "passed"
+            },
+            "line": 14,
+            "name": "navigate to PAYM Tablets page",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.navigate_to_PAYM_Tablets_page()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 9444604764,
+              "status": "passed"
+            },
+            "line": 15,
+            "name": "click on \u0027My O2\u0027 link",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.click_on_MyO2Link()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 11972896146,
+              "status": "passed"
+            },
+            "line": 16,
+            "name": "validate \u0027My O2\u0027 section",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.validateMyO2Page()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 44418319847,
+              "status": "passed"
+            },
+            "line": 17,
+            "name": "Navigate to PayM MBB page",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.navigate_to_PayM_MBB_page()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 9483782811,
+              "status": "passed"
+            },
+            "line": 18,
+            "name": "click on \u0027My O2\u0027 link",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.click_on_MyO2Link()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 11896435924,
+              "status": "passed"
+            },
+            "line": 19,
+            "name": "validate \u0027My O2\u0027 section",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.validateMyO2Page()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 71127577626,
+              "status": "passed"
+            },
+            "line": 20,
+            "name": "navigate to PAYM SIMO page",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.navigate_to_PAYM_SIMO_page()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 9448527098,
+              "status": "passed"
+            },
+            "line": 21,
+            "name": "click on \u0027My O2\u0027 link",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.click_on_MyO2Link()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 11851374551,
+              "status": "passed"
+            },
+            "line": 22,
+            "name": "validate \u0027My O2\u0027 section",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.validateMyO2Page()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 45057351449,
+              "status": "passed"
+            },
+            "line": 23,
+            "name": "Navigate to Accessories",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.navigate_to_Accessories()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 9624687811,
+              "status": "passed"
+            },
+            "line": 24,
+            "name": "click on \u0027My O2\u0027 link",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.click_on_MyO2Link()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 12084798237,
+              "status": "passed"
+            },
+            "line": 25,
+            "name": "validate \u0027My O2\u0027 section",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.validateMyO2Page()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 47539169731,
+              "status": "passed"
+            },
+            "line": 26,
+            "name": "Navigate to Fitness Trackers",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.navigate_to_Fitness_Trackers()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 9498212247,
+              "status": "passed"
+            },
+            "line": 27,
+            "name": "click on \u0027My O2\u0027 link",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.click_on_MyO2Link()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 11946175220,
+              "status": "passed"
+            },
+            "line": 28,
+            "name": "validate \u0027My O2\u0027 section",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.validateMyO2Page()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 67790542442,
+              "status": "passed"
+            },
+            "line": 29,
+            "name": "Navigate to SmartWatches",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.navigate_to_SmartWatches()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 9471962367,
+              "status": "passed"
+            },
+            "line": 30,
+            "name": "click on \u0027My O2\u0027 link",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.click_on_MyO2Link()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 11928430043,
+              "status": "passed"
+            },
+            "line": 31,
+            "name": "validate \u0027My O2\u0027 section",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.validateMyO2Page()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 43731487999,
+              "status": "passed"
+            },
+            "line": 32,
+            "name": "Navigate to Ipad page",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.navigate_to_Ipad_page()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 9477045158,
+              "status": "passed"
+            },
+            "line": 33,
+            "name": "click on \u0027My O2\u0027 link",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.click_on_MyO2Link()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 11939653803,
+              "status": "passed"
+            },
+            "line": 34,
+            "name": "validate \u0027My O2\u0027 section",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.validateMyO2Page()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 64278674044,
+              "status": "passed"
+            },
+            "comments": [
+              {
+                "line": 35,
+                "value": "# PayG navigations starts"
+              }
+            ],
+            "line": 36,
+            "name": "navigate to Pay as you Go Phones page",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.navigate_to_Pay_as_you_Go_Phones_page()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 9447248792,
+              "status": "passed"
+            },
+            "line": 37,
+            "name": "click on \u0027My O2\u0027 link",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.click_on_MyO2Link()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 11967001143,
+              "status": "passed"
+            },
+            "line": 38,
+            "name": "validate \u0027My O2\u0027 section",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.validateMyO2Page()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 55937973105,
+              "status": "passed"
+            },
+            "line": 39,
+            "name": "navigate to Pay as you Go Tablets page",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.navigateToPayAsYouGoTabletsPage()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 9482093620,
+              "status": "passed"
+            },
+            "line": 40,
+            "name": "click on \u0027My O2\u0027 link",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.click_on_MyO2Link()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 11838427272,
+              "status": "passed"
+            },
+            "line": 41,
+            "name": "validate \u0027My O2\u0027 section",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.validateMyO2Page()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 64116842965,
+              "status": "passed"
+            },
+            "line": 42,
+            "name": "navigate to PayG SIMO page",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.navigate_to_PayG_SIMO_page()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 9462386038,
+              "status": "passed"
+            },
+            "line": 43,
+            "name": "click on \u0027My O2\u0027 link",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.click_on_MyO2Link()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 11878107511,
+              "status": "passed"
+            },
+            "line": 44,
+            "name": "validate \u0027My O2\u0027 section",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.validateMyO2Page()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 61785002051,
+              "status": "passed"
+            },
+            "line": 45,
+            "name": "Navigate to PayG MBB page",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.navigate_to_PayG_MBB_page()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 9449227124,
+              "status": "passed"
+            },
+            "line": 46,
+            "name": "click on \u0027My O2\u0027 link",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.click_on_MyO2Link()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 11858466818,
+              "status": "passed"
+            },
+            "line": 47,
+            "name": "validate \u0027My O2\u0027 section",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.validateMyO2Page()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 45001334931,
+              "status": "passed"
+            },
+            "comments": [
+              {
+                "line": 48,
+                "value": "#//--------Validating at Device details,Tariff\u0026Extras, Basket and order confirmation page-------------"
+              }
+            ],
+            "line": 49,
+            "name": "navigate to PAYM Phones page",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.navigate_to_PAYM_Phones_page()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 21949780100,
+              "status": "passed"
+            },
+            "line": 50,
+            "name": "I search for a PayM Galaxy S9 device",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Galaxy S9",
+                  "offset": 20
+                }
+              ],
+              "location": "E2EOrderPlaced_Steps.search_for_device(String)"
+            },
+            "matchedColumns": [
+              0
+            ],
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 9550414017,
+              "status": "passed"
+            },
+            "line": 51,
+            "name": "click on \u0027My O2\u0027 link",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.click_on_MyO2Link()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 11833684938,
+              "status": "passed"
+            },
+            "line": 52,
+            "name": "validate \u0027My O2\u0027 section",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.validateMyO2Page()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 33062706040,
+              "status": "passed"
+            },
+            "line": 53,
+            "name": "Navigate to device details page",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.Navigate_to_device_details_page()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 9466859404,
+              "status": "passed"
+            },
+            "line": 54,
+            "name": "click on \u0027My O2\u0027 link",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.click_on_MyO2Link()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 12031560231,
+              "status": "passed"
+            },
+            "line": 55,
+            "name": "validate \u0027My O2\u0027 section",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.validateMyO2Page()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 16065297335,
+              "status": "passed"
+            },
+            "line": 56,
+            "name": "Land on the \u0027Tariffs and extra\u0027 page",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.land_on_the_Tariffs_and_extra_page()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 36385932185,
+              "status": "passed"
+            },
+            "line": 57,
+            "name": "I Land on the basket page and choose home delivery option",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.i_Land_on_the_basket_page_and_choose_home_delivery_option()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 9504480266,
+              "status": "passed"
+            },
+            "line": 58,
+            "name": "click on \u0027My O2\u0027 link",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.click_on_MyO2Link()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 11867113437,
+              "status": "passed"
+            },
+            "line": 59,
+            "name": "validate \u0027My O2\u0027 section",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.validateMyO2Page()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 40093020877,
+              "status": "passed"
+            },
+            "line": 60,
+            "name": "click on \"go to checkout\" button",
+            "match": {
+              "arguments": [
+                {
+                  "val": "go to checkout",
+                  "offset": 10
+                }
+              ],
+              "location": "E2EOrderPlaced_Steps.CheckoutFromBasket(String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 33263381078,
+              "status": "passed"
+            },
+            "line": 61,
+            "name": "input TEST and ACCEPTA and other valid details in Delivery page to verify GDPR",
+            "match": {
+              "arguments": [
+                {
+                  "val": "TEST",
+                  "offset": 6
+                },
+                {
+                  "val": "ACCEPTA",
+                  "offset": 15
+                }
+              ],
+              "location": "E2EOrderPlaced_Steps.DeliveryPage_Inputs_gdpr(String,String)"
+            },
+            "matchedColumns": [
+              1,
+              2
+            ],
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 83370339109,
+              "status": "passed"
+            },
+            "line": 62,
+            "name": "Is this order for You or Someone else Me when GDPR is Enabled",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Me",
+                  "offset": 38
+                },
+                {
+                  "val": "Enabled",
+                  "offset": 54
+                }
+              ],
+              "location": "E2EOrderPlaced_Steps.isThisOrder4UorSomeoneElse(String,String)"
+            },
+            "matchedColumns": [
+              6,
+              15
+            ],
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 213193125881,
+              "status": "passed"
+            },
+            "line": 63,
+            "name": "land on the payment page and input TEST ACCEPTA and other details and click \u0027Continue on next step\u0027",
+            "match": {
+              "arguments": [
+                {
+                  "val": "TEST ACCEPTA",
+                  "offset": 35
+                }
+              ],
+              "location": "E2EOrderPlaced_Steps.CreditCheckPaymentPage_HomeDelivery(String)"
+            },
+            "matchedColumns": [
+              3
+            ],
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 57202142332,
+              "status": "passed"
+            },
+            "line": 64,
+            "name": "Continue to Agreements page and confirm all the agreement checks",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.AgreementsPageConfirmation()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 29876721971,
+              "status": "passed"
+            },
+            "line": 65,
+            "name": "Continue to Review page and review the order",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.ReviewPageConfirmation()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 738904089,
+              "status": "passed"
+            },
+            "line": 66,
+            "name": "order confirmation is displayed",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.OrderConfirmationPage()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 9468150451,
+              "status": "passed"
+            },
+            "line": 67,
+            "name": "click on \u0027My O2\u0027 link",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.click_on_MyO2Link()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 11856507597,
+              "status": "passed"
+            },
+            "line": 68,
+            "name": "validate \u0027My O2\u0027 section",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.validateMyO2Page()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "line": 5,
+            "name": "@Web"
+          }
+        ]
+      }
+    ],
+    "name": "CFA_DGN_Drupal_Create_section_for_My_O2_global_nav_link",
+    "description": "\r\nThis scenario ensures that when an Acquisition customer lands on Drupal Global nav enabled Page and clicks on the \u0027My O2\u0027 link, then the customer should be displayed with \u0027My O2\u0027 Sign in section",
+    "id": "cfa-dgn-drupal-create-section-for-my-o2-global-nav-link",
+    "keyword": "Feature",
+    "uri": "CFA_DGN_Drupal_Create_section_for_My_O2_global_nav_link.feature"
+  },
+  {
+    "line": 1,
+    "elements": [
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 25591773891,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Hooks.openBrowser(Scenario)"
+            }
+          }
+        ],
+        "line": 92,
+        "name": "CFU_DGN_Drupal_Create_section_for_My_O2_global_nav_link_Tablet",
+        "description": "",
+        "id": "cfu-dgn-drupal-create-section-for-my-o2-global-nav-link-tablet;cfu-dgn-drupal-create-section-for-my-o2-global-nav-link-tablet;;2",
+        "after": [
+          {
+            "result": {
+              "duration": 17301930590,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Hooks.embedScreenshot(Scenario)"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 16294728612,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "I am an Existing user and Navigates to Signin page",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.i_am_an_Existing_user_and_Navigates_to_Signin_page()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 25805752239,
+              "status": "passed"
+            },
+            "line": 10,
+            "name": "Signin using valid ash1425a@gmail.com and test123 credentials",
+            "match": {
+              "arguments": [
+                {
+                  "val": "ash1425a@gmail.com",
+                  "offset": 19
+                },
+                {
+                  "val": "test123",
+                  "offset": 42
+                }
+              ],
+              "location": "E2EOrderPlaced_Steps.signin_using_valid_ink_jun_and_test_credentials(String,String)"
+            },
+            "matchedColumns": [
+              0,
+              1
+            ],
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 54699847432,
+              "status": "passed"
+            },
+            "line": 11,
+            "name": "Navigate to upgrade \u003e upgrade now",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.navigate_to_upgrade_upgrade_now()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 9454868732,
+              "status": "passed"
+            },
+            "line": 12,
+            "name": "click on \u0027My O2\u0027 link",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.click_on_MyO2Link()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 94166465118,
+              "status": "passed"
+            },
+            "line": 13,
+            "name": "validate url for existing customer when clicks on \u0027My O2\u0027 link",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.redirectURLWhenClicksOnMyO2()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 15761061051,
+              "status": "passed"
+            },
+            "line": 14,
+            "name": "Click on browser back arrow and land on previous page",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.click_browser_back_arrow()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 45845089543,
+              "status": "passed"
+            },
+            "line": 15,
+            "name": "navigate to PAYM Phones page",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.navigate_to_PAYM_Phones_page()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 9460755595,
+              "status": "passed"
+            },
+            "line": 16,
+            "name": "click on \u0027My O2\u0027 link",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.click_on_MyO2Link()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 8337835365,
+              "status": "passed"
+            },
+            "line": 17,
+            "name": "validate url for existing customer when clicks on \u0027My O2\u0027 link",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.redirectURLWhenClicksOnMyO2()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 9511283038,
+              "status": "passed"
+            },
+            "line": 18,
+            "name": "Click on browser back arrow and land on previous page",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.click_browser_back_arrow()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 158442839129,
+              "status": "passed"
+            },
+            "line": 19,
+            "name": "navigate to PAYM Tablets page",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.navigate_to_PAYM_Tablets_page()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 9491351788,
+              "status": "passed"
+            },
+            "line": 20,
+            "name": "click on \u0027My O2\u0027 link",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.click_on_MyO2Link()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 8335065347,
+              "status": "passed"
+            },
+            "line": 21,
+            "name": "validate url for existing customer when clicks on \u0027My O2\u0027 link",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.redirectURLWhenClicksOnMyO2()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 8375034373,
+              "status": "passed"
+            },
+            "line": 22,
+            "name": "Click on browser back arrow and land on previous page",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.click_browser_back_arrow()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 46672961938,
+              "status": "passed"
+            },
+            "line": 23,
+            "name": "Navigate to PayM MBB page",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.navigate_to_PayM_MBB_page()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 9508221756,
+              "status": "passed"
+            },
+            "line": 24,
+            "name": "click on \u0027My O2\u0027 link",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.click_on_MyO2Link()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 8309144600,
+              "status": "passed"
+            },
+            "line": 25,
+            "name": "validate url for existing customer when clicks on \u0027My O2\u0027 link",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.redirectURLWhenClicksOnMyO2()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 7972523838,
+              "status": "passed"
+            },
+            "line": 26,
+            "name": "Click on browser back arrow and land on previous page",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.click_browser_back_arrow()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 71895145584,
+              "status": "passed"
+            },
+            "line": 27,
+            "name": "navigate to PAYM SIMO page",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.navigate_to_PAYM_SIMO_page()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 9457015876,
+              "status": "passed"
+            },
+            "line": 28,
+            "name": "click on \u0027My O2\u0027 link",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.click_on_MyO2Link()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 8336614392,
+              "status": "passed"
+            },
+            "line": 29,
+            "name": "validate url for existing customer when clicks on \u0027My O2\u0027 link",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.redirectURLWhenClicksOnMyO2()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 8361043780,
+              "status": "passed"
+            },
+            "line": 30,
+            "name": "Click on browser back arrow and land on previous page",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.click_browser_back_arrow()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 40412437230,
+              "status": "passed"
+            },
+            "line": 31,
+            "name": "Navigate to Accessories",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.navigate_to_Accessories()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 9665092495,
+              "status": "passed"
+            },
+            "line": 32,
+            "name": "click on \u0027My O2\u0027 link",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.click_on_MyO2Link()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 8324126836,
+              "status": "passed"
+            },
+            "line": 33,
+            "name": "validate url for existing customer when clicks on \u0027My O2\u0027 link",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.redirectURLWhenClicksOnMyO2()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 10379696017,
+              "status": "passed"
+            },
+            "line": 34,
+            "name": "Click on browser back arrow and land on previous page",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.click_browser_back_arrow()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 46990958776,
+              "status": "passed"
+            },
+            "line": 35,
+            "name": "Navigate to Fitness Trackers",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.navigate_to_Fitness_Trackers()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 9475545306,
+              "status": "passed"
+            },
+            "line": 36,
+            "name": "click on \u0027My O2\u0027 link",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.click_on_MyO2Link()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 11041072857,
+              "status": "passed"
+            },
+            "line": 37,
+            "name": "validate url for existing customer when clicks on \u0027My O2\u0027 link",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.redirectURLWhenClicksOnMyO2()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 9049374065,
+              "status": "passed"
+            },
+            "line": 38,
+            "name": "Click on browser back arrow and land on previous page",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.click_browser_back_arrow()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 66572838884,
+              "status": "passed"
+            },
+            "line": 39,
+            "name": "Navigate to SmartWatches",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.navigate_to_SmartWatches()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 9477519037,
+              "status": "passed"
+            },
+            "line": 40,
+            "name": "click on \u0027My O2\u0027 link",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.click_on_MyO2Link()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 8324572403,
+              "status": "passed"
+            },
+            "line": 41,
+            "name": "validate url for existing customer when clicks on \u0027My O2\u0027 link",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.redirectURLWhenClicksOnMyO2()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 7801461134,
+              "status": "passed"
+            },
+            "line": 42,
+            "name": "Click on browser back arrow and land on previous page",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.click_browser_back_arrow()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 42911547335,
+              "status": "passed"
+            },
+            "line": 43,
+            "name": "Navigate to Ipad page",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.navigate_to_Ipad_page()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 9489197919,
+              "status": "passed"
+            },
+            "line": 44,
+            "name": "click on \u0027My O2\u0027 link",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.click_on_MyO2Link()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 8321498025,
+              "status": "passed"
+            },
+            "line": 45,
+            "name": "validate url for existing customer when clicks on \u0027My O2\u0027 link",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.redirectURLWhenClicksOnMyO2()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 7408829871,
+              "status": "passed"
+            },
+            "line": 46,
+            "name": "Click on browser back arrow and land on previous page",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.click_browser_back_arrow()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 60347514681,
+              "status": "passed"
+            },
+            "comments": [
+              {
+                "line": 47,
+                "value": "# PayG navigations starts"
+              }
+            ],
+            "line": 48,
+            "name": "navigate to Pay as you Go Phones page",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.navigate_to_Pay_as_you_Go_Phones_page()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 9454485097,
+              "status": "passed"
+            },
+            "line": 49,
+            "name": "click on \u0027My O2\u0027 link",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.click_on_MyO2Link()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 8313696179,
+              "status": "passed"
+            },
+            "line": 50,
+            "name": "validate url for existing customer when clicks on \u0027My O2\u0027 link",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.redirectURLWhenClicksOnMyO2()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 8770861756,
+              "status": "passed"
+            },
+            "line": 51,
+            "name": "Click on browser back arrow and land on previous page",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.click_browser_back_arrow()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 57332407517,
+              "status": "passed"
+            },
+            "line": 52,
+            "name": "navigate to Pay as you Go Tablets page",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.navigateToPayAsYouGoTabletsPage()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 9546954236,
+              "status": "passed"
+            },
+            "line": 53,
+            "name": "click on \u0027My O2\u0027 link",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.click_on_MyO2Link()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 8340820912,
+              "status": "passed"
+            },
+            "line": 54,
+            "name": "validate url for existing customer when clicks on \u0027My O2\u0027 link",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.redirectURLWhenClicksOnMyO2()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 7879129236,
+              "status": "passed"
+            },
+            "line": 55,
+            "name": "Click on browser back arrow and land on previous page",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.click_browser_back_arrow()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 72432944993,
+              "status": "passed"
+            },
+            "line": 56,
+            "name": "navigate to PayG SIMO page",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.navigate_to_PayG_SIMO_page()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 9475981318,
+              "status": "passed"
+            },
+            "line": 57,
+            "name": "click on \u0027My O2\u0027 link",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.click_on_MyO2Link()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 8303323562,
+              "status": "passed"
+            },
+            "line": 58,
+            "name": "validate url for existing customer when clicks on \u0027My O2\u0027 link",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.redirectURLWhenClicksOnMyO2()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 6663142829,
+              "status": "passed"
+            },
+            "line": 59,
+            "name": "Click on browser back arrow and land on previous page",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.click_browser_back_arrow()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 62387272779,
+              "status": "passed"
+            },
+            "line": 60,
+            "name": "Navigate to PayG MBB page",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.navigate_to_PayG_MBB_page()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 9531489274,
+              "status": "passed"
+            },
+            "line": 61,
+            "name": "click on \u0027My O2\u0027 link",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.click_on_MyO2Link()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 8324409960,
+              "status": "passed"
+            },
+            "line": 62,
+            "name": "validate url for existing customer when clicks on \u0027My O2\u0027 link",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.redirectURLWhenClicksOnMyO2()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 7774193423,
+              "status": "passed"
+            },
+            "line": 63,
+            "name": "Click on browser back arrow and land on previous page",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.click_browser_back_arrow()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 48324064902,
+              "status": "passed"
+            },
+            "comments": [
+              {
+                "line": 64,
+                "value": "#//--------Validating at Device details,Tariff\u0026Extras, Basket and order confirmation page-------------"
+              }
+            ],
+            "line": 65,
+            "name": "Navigate to upgrade \u003e upgrade now",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.navigate_to_upgrade_upgrade_now()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 3387834781,
+              "status": "passed"
+            },
+            "line": 66,
+            "name": "Click on Tablet section in upgrade options page",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.click_on_Tablets_tab()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 13526945481,
+              "status": "passed"
+            },
+            "line": 67,
+            "name": "Select a Samsung device from Recommended devices section",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Samsung",
+                  "offset": 9
+                }
+              ],
+              "location": "E2EOrderPlaced_Steps.select_device_from_recommended_devices_section(String)"
+            },
+            "matchedColumns": [
+              4
+            ],
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 23099808431,
+              "status": "passed"
+            },
+            "line": 68,
+            "name": "Click on View all Tariffs link in upgrade options page",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.click_on_View_all_tariffs()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 16160705306,
+              "status": "passed"
+            },
+            "line": 69,
+            "name": "Land on the \u0027Tariffs and extra\u0027 page",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.land_on_the_Tariffs_and_extra_page()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 4357641333,
+              "error_message": "java.lang.AssertionError: Failed to Click on My O2 link at O2 | Upgrade | Tariffs And Extras page ::[Ljava.lang.StackTraceElement;@6e78fcf5\r\n\tat org.testng.Assert.fail(Assert.java:94)\r\n\tat steps.E2EOrderPlaced_Steps.click_on_MyO2Link(E2EOrderPlaced_Steps.java:137)\r\n\tat ✽.And click on \u0027My O2\u0027 link(CFU_DGN_Drupal_Create_section_for_My_O2_global_nav_link_Tablet.feature:70)\r\n",
+              "status": "failed"
+            },
+            "line": 70,
+            "name": "click on \u0027My O2\u0027 link",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.click_on_MyO2Link()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 71,
+            "name": "validate url for existing customer when clicks on \u0027My O2\u0027 link",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.redirectURLWhenClicksOnMyO2()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 72,
+            "name": "Click on browser back arrow and land on previous page",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.click_browser_back_arrow()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 73,
+            "name": "I Land on the basket page by clicking on Add to Basket button",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.i_Land_on_the_basket_page_by_clicking_AddToBasket()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 74,
+            "name": "click on \u0027My O2\u0027 link",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.click_on_MyO2Link()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 75,
+            "name": "validate url for existing customer when clicks on \u0027My O2\u0027 link",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.redirectURLWhenClicksOnMyO2()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 76,
+            "name": "Click on browser back arrow and land on previous page",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.click_browser_back_arrow()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 77,
+            "name": "click on \"go to checkout\" button",
+            "match": {
+              "arguments": [
+                {
+                  "val": "go to checkout",
+                  "offset": 10
+                }
+              ],
+              "location": "E2EOrderPlaced_Steps.CheckoutFromBasket(String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 78,
+            "name": "perform enterCode in OTAC page",
+            "match": {
+              "arguments": [
+                {
+                  "val": "enterCode",
+                  "offset": 8
+                }
+              ],
+              "location": "E2EOrderPlaced_Steps.perform_skip_in_OTAC_page(String)"
+            },
+            "matchedColumns": [
+              6
+            ],
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 79,
+            "name": "Enter details in Delivery page for Click and collect",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.DeliveryPage_ClickandCollect()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 80,
+            "name": "Is this order for You or Someone else Me when GDPR is Enabled",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Me",
+                  "offset": 38
+                },
+                {
+                  "val": "Enabled",
+                  "offset": 54
+                }
+              ],
+              "location": "E2EOrderPlaced_Steps.isThisOrder4UorSomeoneElse(String,String)"
+            },
+            "matchedColumns": [
+              7,
+              8
+            ],
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 81,
+            "name": "Enter cardDetails in payment page input TEST ACCEPTA and click \u0027Continue on next step\u0027",
+            "match": {
+              "arguments": [
+                {
+                  "val": "TEST ACCEPTA",
+                  "offset": 40
+                }
+              ],
+              "location": "E2EOrderPlaced_Steps.CreditCheckPaymentPg_ClickAndCollect(String)"
+            },
+            "matchedColumns": [
+              5
+            ],
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 82,
+            "name": "Continue to Agreements page and confirm all the agreement checks",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.AgreementsPageConfirmation()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 83,
+            "name": "Continue to Review page and review the order",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.ReviewPageConfirmation()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 84,
+            "name": "order confirmation is displayed",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.OrderConfirmationPage()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 85,
+            "name": "click on \u0027My O2\u0027 link",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.click_on_MyO2Link()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 86,
+            "name": "validate url for existing customer when clicks on \u0027My O2\u0027 link",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.redirectURLWhenClicksOnMyO2()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 87,
+            "name": "Click on browser back arrow and land on previous page",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.click_browser_back_arrow()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "line": 6,
+            "name": "@Web"
+          }
+        ]
+      }
+    ],
+    "name": "CFU_DGN_Drupal_Create_section_for_My_O2_global_nav_link_Tablet",
+    "description": "\r\nThis scenario ensures that when an Upgrade customer lands on Drupal Global nav enabled Page and clicks on the \u0027My O2\u0027 link, then the customer should be re-directed to\r\n\u0027https://mymobile.ref.o2.co.uk/\u0027",
+    "id": "cfu-dgn-drupal-create-section-for-my-o2-global-nav-link-tablet",
+    "keyword": "Feature",
+    "uri": "CFU_DGN_Drupal_Create_section_for_My_O2_global_nav_link_Tablet.feature"
+  },
+  {
+    "line": 1,
+    "elements": [
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 26420636159,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Hooks.openBrowser(Scenario)"
+            }
+          }
+        ],
+        "line": 17,
+        "name": "CFU_Ensuring_that_the_Drupal_logout_message_Merchandised_Desktop",
+        "description": "",
+        "id": "cfu-ensuring-that-the-drupal-logout-message-merchandised-desktop;cfu-ensuring-that-the-drupal-logout-message-merchandised-desktop;;2",
+        "after": [
+          {
+            "result": {
+              "duration": 17426596635,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Hooks.embedScreenshot(Scenario)"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 17542939885,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "I am an Existing user and Navigates to Signin page",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.i_am_an_Existing_user_and_Navigates_to_Signin_page()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 26826682564,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "Signin using valid in_mar2358@stf.ref.o2.co.uk and test123 credentials",
+            "match": {
+              "arguments": [
+                {
+                  "val": "in_mar2358@stf.ref.o2.co.uk",
+                  "offset": 19
+                },
+                {
+                  "val": "test123",
+                  "offset": 51
+                }
+              ],
+              "location": "E2EOrderPlaced_Steps.signin_using_valid_ink_jun_and_test_credentials(String,String)"
+            },
+            "matchedColumns": [
+              0,
+              1
+            ],
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 48629332113,
+              "status": "passed"
+            },
+            "line": 10,
+            "name": "navigate to PAYM Phones page",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.navigate_to_PAYM_Phones_page()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 3350703723,
+              "status": "passed"
+            },
+            "line": 11,
+            "name": "Logout from shop",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.Logput()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 22020364076,
+              "error_message": "java.lang.AssertionError: Unable to validate Logout Message\r\n\tat org.testng.Assert.fail(Assert.java:94)\r\n\tat steps.E2EOrderPlaced_Steps.LogoutMessage(E2EOrderPlaced_Steps.java:890)\r\n\tat ✽.And validate logout message(CFU_Ensuring_that_the_Drupal_logout_message_Merchandised_Desktop.feature:12)\r\n",
+              "status": "failed"
+            },
+            "line": 12,
+            "name": "validate logout message",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.LogoutMessage()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 13,
+            "name": "validate url after logout",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.redirectLogoutURL()"
+            },
+            "keyword": "And "
+          }
+        ],
+        "tags": [
+          {
+            "line": 5,
+            "name": "@Web"
+          }
+        ]
+      }
+    ],
+    "name": "CFU_Ensuring_that_the_Drupal_logout_message_Merchandised_Desktop",
+    "description": "\r\nThis scenario validates that the Drupal logout message should be merchandised",
+    "id": "cfu-ensuring-that-the-drupal-logout-message-merchandised-desktop",
+    "keyword": "Feature",
+    "uri": "CFU_Ensuring_that_the_Drupal_logout_message_Merchandised_Desktop.feature"
+  },
+  {
+    "line": 1,
+    "elements": [
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 32607294417,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Hooks.openBrowser(Scenario)"
+            }
+          }
+        ],
+        "line": 16,
+        "name": "Invalid_Credentials_DGN_Clicking_My_O2_link_on_global Nav_Tablet",
+        "description": "",
+        "id": "invalid-credentials-dgn-clicking-my-o2-link-on-global-nav-tablet;invalid-credentials-dgn-clicking-my-o2-link-on-global-nav-tablet;;2",
+        "after": [
+          {
+            "result": {
+              "duration": 17004013996,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Hooks.embedScreenshot(Scenario)"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 348626651,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "I am an CFA user and Lands on shop page",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.i_am_an_CFA_user_and_Lands_on_shop_page()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 9461485703,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "click on \u0027My O2\u0027 link",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.click_on_MyO2Link()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 11884208489,
+              "status": "passed"
+            },
+            "line": 10,
+            "name": "validate \u0027My O2\u0027 section",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.validateMyO2Page()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 18144412911,
+              "status": "passed"
+            },
+            "line": 11,
+            "name": "Enter valid credentials invalid test123 and submit form",
+            "match": {
+              "arguments": [
+                {
+                  "val": "invalid",
+                  "offset": 24
+                },
+                {
+                  "val": "test123",
+                  "offset": 32
+                }
+              ],
+              "location": "E2EOrderPlaced_Steps.signin_using_valid_credentials(String,String)"
+            },
+            "matchedColumns": [
+              0,
+              1
+            ],
+            "keyword": "And "
+          }
+        ],
+        "tags": [
+          {
+            "line": 5,
+            "name": "@Web"
+          }
+        ]
+      }
+    ],
+    "name": "Invalid_Credentials_DGN_Clicking_My_O2_link_on_global Nav_Tablet",
+    "description": "\r\nThis scenario ensures that when a customer is not signed in and tries to sign in with invalid credentials in \u0027My o2\u0027 link overlay on Drupal global nav,then the  error message should be displayed on the overlay",
+    "id": "invalid-credentials-dgn-clicking-my-o2-link-on-global-nav-tablet",
+    "keyword": "Feature",
+    "uri": "Invalid_Credentials_DGN_Clicking_My_O2_link_on_global Nav_Tablet.feature"
+  },
+  {
+    "line": 1,
+    "elements": [
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 66793239555,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Hooks.openBrowser(Scenario)"
+            }
+          }
+        ],
+        "line": 18,
+        "name": "My_O2_Sign_in_Overlay_Validation_Desktop",
+        "description": "",
+        "id": "my-o2-sign-in-overlay-validation-desktop;my-o2-sign-in-overlay-validation-desktop;;2",
+        "after": [
+          {
+            "result": {
+              "duration": 17001889148,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Hooks.embedScreenshot(Scenario)"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 421013069,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "I am an CFA user and Lands on shop page",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.i_am_an_CFA_user_and_Lands_on_shop_page()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 9493920788,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "click on \u0027My O2\u0027 link",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.click_on_MyO2Link()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 12023398463,
+              "status": "passed"
+            },
+            "line": 10,
+            "name": "validate \u0027My O2\u0027 section",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.validateMyO2Page()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 14370257003,
+              "status": "passed"
+            },
+            "line": 11,
+            "name": "Enter valid credentials ins_feb3087@stf.ref.o2.co.uk test123 and submit form",
+            "match": {
+              "arguments": [
+                {
+                  "val": "ins_feb3087@stf.ref.o2.co.uk",
+                  "offset": 24
+                },
+                {
+                  "val": "test123",
+                  "offset": 53
+                }
+              ],
+              "location": "E2EOrderPlaced_Steps.signin_using_valid_credentials(String,String)"
+            },
+            "matchedColumns": [
+              0,
+              1
+            ],
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 36113711609,
+              "status": "passed"
+            },
+            "line": 12,
+            "name": "Logout from MyO2 page",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.LogoutMyO2()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 9559361101,
+              "status": "passed"
+            },
+            "line": 13,
+            "name": "click on \u0027My O2\u0027 link",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.click_on_MyO2Link()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 4435581589,
+              "status": "passed"
+            },
+            "line": 14,
+            "name": "validate pre-populated input fields at My O2 page",
+            "match": {
+              "location": "E2EOrderPlaced_Steps.validate_prePopulatedField()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "line": 5,
+            "name": "@Web"
+          }
+        ]
+      }
+    ],
+    "name": "My_O2_Sign_in_Overlay_Validation_Desktop",
+    "description": "\r\nThis scenario ensures that when a customer is not signed in and clicks on the \u0027My o2\u0027 link on the Drupal global nav,then an overlay to \u0027Sign in\u0027 should be displayed",
+    "id": "my-o2-sign-in-overlay-validation-desktop",
+    "keyword": "Feature",
+    "uri": "My_O2_Sign_in_Overlay_Validation_Desktop.feature"
   }
 ]

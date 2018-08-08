@@ -12,8 +12,10 @@ import org.openqa.selenium.Keys;
 
 import GlobalActions.Screenshots;
 import helpers.Environment;
+import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import pageobjects.PaymentPage;
+import org.openqa.selenium.support.ui.Select;
 
 public class PaymentPageActions extends Environment {
 
@@ -122,12 +124,13 @@ public class PaymentPageActions extends Environment {
 
     public static void Time_At_Address() throws IOException, InterruptedException {
 
+        scrollToAnElement.scrollToElement(PaymentPage.Stay_Address_Years);
         pageobjects.PaymentPage.Stay_Address_Years.sendKeys("9");
         log.debug("Entered the stayed at address - 9");
         Thread.sleep(2000);
         pageobjects.PaymentPage.Stay_Address_months.sendKeys("9");
         log.debug("Entered the stayed at months - 9");
-        Thread.sleep(4000);
+        Thread.sleep(2000);
 
         //executor.executeScript("arguments[0].click();", pageobjects.PaymentPage.Confirm_Address_Checkbox);
 
@@ -236,6 +239,8 @@ public class PaymentPageActions extends Environment {
         log.debug("Entering the Payments section");
         Thread.sleep(3000);
         scrollToAnElement.scrollToElement(PaymentPage.CardHolderName);
+        //scrollToAnElement.scrollToElement(driver.findElement(By.xpath("//div[@id='card-details-section']/div[2]/h2")));
+
         Thread.sleep(5000);
         PaymentPage.CardHolderName.sendKeys(Username);
         log.debug("Entering name of the card as " + Username);

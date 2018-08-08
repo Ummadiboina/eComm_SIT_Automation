@@ -236,6 +236,12 @@ public class DeliveryPage {
     @FindBy(how = How.XPATH, using = "//button[@id='btn-continue-3']")
     public static WebElement BeginCheckout;
 
+    @FindBy(how = How.XPATH, using = "//*[@id='BillSpendCapHeader']")
+    public static WebElement BillSpendCapHeader;
+
+    @FindBy(how = How.XPATH, using = "//*[@id='AppliedBillCap']")
+    public static WebElement AppliedBillCap;
+
 }
 
 

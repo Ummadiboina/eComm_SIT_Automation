@@ -1206,7 +1206,7 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 			log.debug("Assertion Success: Tariffs have been sorted successfully based on Sort Option");
 			Screenshots.captureScreenshot();
 		} catch (AssertionError e) {
-			log.debug("Assertion Failed: Tariifs are not sorted based on Sort Option ");
+			log.debug("Assertion Failed: Tariffs are not sorted based on Sort Option ");
 			log.debug("Fail" + " - " + e.getMessage());
 			Screenshots.captureScreenshot();
 		}
@@ -1215,145 +1215,316 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 
 	//Jamal----- Bill Spend Caps section----
 
-	public static void add_BillSpendCap(String BillCap, String CapAmount) {
-
-		String BillCapStatus = "";
+	public static void Validate_BillSpendCap(String BSCstatus) {
 
 		try {
 			driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-			scrollToAnElement.scrollToElement(PAYMandPAYGTariffAndExtrasPage.CapMyBill);
-			Screenshots.captureScreenshot();
 
-			if (driver.findElements(By.xpath("//*[contains(text(),'Would you like to add a spend cap?')]")).size() > 0) {
-				System.out.println("Would you like to add a spend cap? - is displayed");
-				log.debug("Would you like to add a spend cap? - is displayed");
+			if(BSCstatus.equalsIgnoreCase("Enabled")) {
+				if (driver.findElements(By.xpath("//div/p//span[contains(text(),'Spend cap')]")).size() > 0) {
 
-				PAYMandPAYGTariffAndExtrasPage.CapMyBillOverlay.click();
-				Thread.sleep(4000);
-				Screenshots.captureScreenshot();
-				String CapMyBillOverlayTxt = PAYMandPAYGTariffAndExtrasPage.CapMyBillOverlayTxt.getText();
+					scrollToAnElement.scrollToElement(PAYMandPAYGTariffAndExtrasPage.SpendCapSection);
+					Screenshots.captureScreenshot();
 
-				System.out.println("Bill Spend Cap OverLay Icon Text is displayed and ie : " + CapMyBillOverlayTxt);
-				log.debug("Bill Spend Cap OverLay Icon Text is displayed and ie : " + CapMyBillOverlayTxt);
-				Thread.sleep(3000);
+					log.debug("Bill spend cap section is enabled ie:"+PAYMandPAYGTariffAndExtrasPage.SpendCapSection.getText());
 
-				JavascriptExecutor executor = (JavascriptExecutor)driver;
-				executor.executeScript("arguments[0].click();", PAYMandPAYGTariffAndExtrasPage.CapMyBillOverlayPopupClose);
-				Thread.sleep(3000);
+					//Spend cap header text validation
+					String sepenCapHeaderTxt = PAYMandPAYGTariffAndExtrasPage.SpendCapHeader.getText();
+					if (sepenCapHeaderTxt.contains("Would you like to add a spend cap?")) {
+						System.out.println("Would you like to add a spend cap? -header text is displayed");
+						log.debug("Would you like to add a spend cap? - header text is displayed");
+					} else {
+						log.debug("Would you like to add a spend cap? - header text is not displayed");
+						Assert.fail("Would you like to add a spend cap? - header text is not displayed");
+					}
 
-				if(pageobjects.PAYMandPAYGTariffAndExtrasPage.CapMyBill.isEnabled()) {
-					log.debug("Cap My Bill button is Enabled :: " + PAYMandPAYGTariffAndExtrasPage.CapMyBill.getText());
-				}else{
-					log.debug("Cap My Bill button is not Enabled");
-					Assert.fail("Cap My Bill button is not Enabled");
+					scrollToAnElement.scrollToElement(PAYMandPAYGTariffAndExtrasPage.SpendCapHeader);
+					Screenshots.captureScreenshot();
+					Thread.sleep(2000);
+
+					//Bill Cap overlay
+					PAYMandPAYGTariffAndExtrasPage.CapMyBillOverlay.click();
+					Thread.sleep(5000);
+					Screenshots.captureScreenshot();
+					String CapMyBillOverlayTxt = PAYMandPAYGTariffAndExtrasPage.CapMyBillOverlayTxt.getText();
+
+					System.out.println("Bill Spend Cap OverLay Icon Text is displayed and ie : " + CapMyBillOverlayTxt);
+					log.debug("Bill Spend Cap OverLay Icon Text is displayed and ie : " + CapMyBillOverlayTxt);
+
+					//closing overlay
+					JavascriptExecutor executor = (JavascriptExecutor) driver;
+					executor.executeScript("arguments[0].click();", PAYMandPAYGTariffAndExtrasPage.CapMyBillOverlayPopupClose);
+					Thread.sleep(3000);
+
+					if (pageobjects.PAYMandPAYGTariffAndExtrasPage.CapMyBillButton.isEnabled()) {
+						log.debug("Cap My Bill button is Displayed/Enabled :: " + PAYMandPAYGTariffAndExtrasPage.CapMyBillButton.getText());
+					} else {
+						log.debug("Cap My Bill button is not Displayed/Enabled");
+						Assert.fail("Cap My Bill button is not Displayed/Enabled");
+					}
+
+					if (pageobjects.PAYMandPAYGTariffAndExtrasPage.DontCapMyBillButton.isEnabled()) {
+						log.debug("Don't Cap My Bill button is Displayed/Enabled :: " + PAYMandPAYGTariffAndExtrasPage.DontCapMyBillButton.getText());
+					} else {
+						log.debug("Don't Cap My Bill button is not Displayed/Enabled");
+						Assert.fail("Don't Cap My Bill button is not Displayed/Enabled");
+					}
+
+				} else {
+					System.out.println("Bill Spend Cap section is not displayed.\n");
+					log.debug("Bill Spend Cap section is not displayed.\n");
+					Assert.fail("Bill Spend Cap section is not displayed.\n");
 				}
-
-				if(pageobjects.PAYMandPAYGTariffAndExtrasPage.DontCapMyBill.isEnabled()) {
-					log.debug("Don't Cap My Bill button is Enabled :: " + PAYMandPAYGTariffAndExtrasPage.DontCapMyBill.getText());
+			}else if(BSCstatus.equalsIgnoreCase("Disabled")){
+				if (driver.findElements(By.xpath("//div/p//span[contains(text(),'Spend cap')]")).size() > 0) {
+					log.debug("Bill spend cap section is enabled it suppose to be in disabled status");
+					Assert.fail("Bill spend cap section is enabled it suppose to be in disabled status");
 				}else{
-					log.debug("Don't Cap My Bill button is not Enabled");
-					Assert.fail("Don't Cap My Bill button is not Enabled");
+					log.debug("As expected, Bill spend cap section is disabled");
 				}
-
-			} else {
-				System.out.println("Bill Spend Cap section is not displayed.\n");
-				log.debug("Bill Spend Cap section is not displayed.\n");
-				Assert.fail("Bill Spend Cap section is not displayed.\n");
+			}else {
+				System.out.println("Unable to validate bill spend cap section \n");
+				log.debug("Unable to validate bill spend cap section \n");
+				Assert.fail("Unable to validate bill spend cap section \n");
 			}
 
 			Thread.sleep(4000);
 
-			if (BillCap.equalsIgnoreCase("CapMyBill")) {
-				pageobjects.PAYMandPAYGTariffAndExtrasPage.CapMyBill.click();
-				log.debug("Clicked on 'Cap My Bill Option'");
+		} catch (Exception e) {
+			log.debug("Unable to validate bill spend cap section :: "+e);
+			Assert.fail("Unable to validate bill spend cap section :: "+e);
+		}
 
-				Thread.sleep(5000);
-				scrollToAnElement.scrollToElement(driver.findElement(By.xpath("//*[@class='CapAmountHeader']")));
-				Screenshots.captureScreenshot();
+	}
 
-				//Cap Info list details
-				List<WebElement> capInfolist = driver.findElements(By.xpath("//*[@class='capInfolist']"));
-				if(capInfolist.size()>0) {
-					log.debug("Cap Info list Contains following details ::\n");
-					for (WebElement ele : capInfolist) {
-						log.debug("\n"+ele.getText());
-					}
-				}
+	public static void add_BillSpendCap(String BillCap, String CapAmount, String BSCstatus) {
 
-				String CapAmountHeader = driver.findElement(By.xpath("//*[@class='CapAmountHeader']")).getText();
-				log.debug("Cap Amount header is displayed ie:: "+CapAmountHeader+"\n");
+		String BillCapStatus = "";
+		int cnt=0;
+		try {
+			Thread.sleep(4000);
+			if(BSCstatus.equalsIgnoreCase("Enabled")) {
+				if (driver.findElements(By.xpath("//*[contains(text(),'Would you like to add a spend cap?')]")).size() > 0) {
+					log.debug("Bill spend cap section is enabled");
+					if (BillCap.equalsIgnoreCase("CapMyBill")) {
+						pageobjects.PAYMandPAYGTariffAndExtrasPage.CapMyBillButton.click();
+						log.debug("Clicked on 'Cap My Bill Option'");
 
-				//Finding all cap amounts and listing them
-				List<WebElement> capAmountslist = driver.findElements(By.xpath("//*[@class='CapAmount']"));
+						Thread.sleep(5000);
+						if (pageobjects.PAYMandPAYGTariffAndExtrasPage.InfoText.isDisplayed()) {
+							log.debug("Info text is displayed after selecting your bill cap: " + pageobjects.PAYMandPAYGTariffAndExtrasPage.InfoText.getText());
+						}
 
-				if(capAmountslist.size()>0) {
-					log.debug("Cap amount list is displayed and list values are::\n");
-					for (WebElement ele : capAmountslist) {
-						log.debug("\n"+ele.getText());
-					}
-				}else{
-					log.debug("Cap amount list is not displayed");
-					Assert.fail("Cap amount list is not displayed");
-				}
+						//CapAmountHeader- Select cap:
+						scrollToAnElement.scrollToElement(driver.findElement(By.xpath("//div[@class='caps-holder']/h3[normalize-space()='Select cap:']")));
+						Screenshots.captureScreenshot();
 
-				if(pageobjects.PAYMandPAYGTariffAndExtrasPage.InfoText.isDisplayed()){
-					log.debug("Info text is displayed ie, :: "+pageobjects.PAYMandPAYGTariffAndExtrasPage.InfoText.getText());
-				}
+						//Cap Info list details
+						List<WebElement> capBoltonInfolist = driver.findElements(By.xpath("//div[@class='select-caps-container']"));
+						if (capBoltonInfolist.size() > 0) {
+							log.debug("Cap Info/Bolton list Contains following details ::\n");
+							for (WebElement ele : capBoltonInfolist) {
+								log.debug("\n" + ele.getText());
+							}
+						}
 
-				//Cap My bill button under Bill spend cap section
-				if(pageobjects.PAYMandPAYGTariffAndExtrasPage.CapMyBill.isEnabled()) {
-					log.debug("Cap My Bill button is Enabled under spend cap section:: " + PAYMandPAYGTariffAndExtrasPage.CapMyBill.getText());
-				}else{
-					log.debug("Cap My Bill button is not Enabled");
-					Assert.fail("Cap My Bill button is not Enabled");
-				}
+						String CapAmountHeader = driver.findElement(By.xpath("//div[@class='caps-holder']/h3[normalize-space()='Select cap:']")).getText();
+						log.debug("Cap Amount header is displayed ie:: " + CapAmountHeader + "\n");
 
-				//Don't cap my bill link under Bill spend cap section
-				if(pageobjects.PAYMandPAYGTariffAndExtrasPage.DontCapMyBillLink.isDisplayed()) {
-					log.debug("I Don't want a spend cap link is displayed under spend cap section :: " + PAYMandPAYGTariffAndExtrasPage.DontCapMyBillLink.getText());
-				}else{
-					log.debug("I Don't want a spend cap link is not displayed");
-					Assert.fail("I Don't want a spend cap link is not displayed");
-				}
+						//Finding all cap amounts and listing them
+						List<WebElement> capAmountslist = driver.findElements(By.xpath("//div[@class='caps-roundel']/a"));
+						log.debug("Cap amount list is displayed and it's size is: "+capAmountslist.size());
+						if (capAmountslist.size() > 0) {
+							log.debug("Cap amount list is displayed and list values are::\n");
+							for (WebElement ele : capAmountslist) {
+								log.debug("\n" + ele.getText());
+							}
+						} else {
+							log.debug("Cap amount list is not displayed");
+							Assert.fail("Cap amount list is not displayed");
+						}
 
-				//Selecting specified cap amount
-				JavascriptExecutor executor = (JavascriptExecutor) driver;
-				log.debug("Specified Cap amount is selecting");
-				for (WebElement ele : capAmountslist) {
-					if(ele.getText().contains(CapAmount)){
-						executor.executeScript("arguments[0].click();", ele);
-						log.debug("Specified Cap amount is selected, ie:" +CapAmount);
+						//Cap My bill button under Bill spend cap section
+						if (pageobjects.PAYMandPAYGTariffAndExtrasPage.CapMyBillSubmitButton.isEnabled()) {
+							log.debug("Cap My Bill button is Enabled before selecting cap amount");
+							Assert.fail("Cap My Bill button is Enabled before selecting cap amount");
+						} else {
+							log.debug("As expected Cap My Bill button is disabled before selecting Cap Amount");
+						}
+
+						//Don't cap my bill link under Bill spend cap section
+						if (pageobjects.PAYMandPAYGTariffAndExtrasPage.DontCapMyBillLink.isDisplayed()) {
+							log.debug("I Don't want a spend cap link is displayed under spend cap section :: " + PAYMandPAYGTariffAndExtrasPage.DontCapMyBillLink.getText());
+						} else {
+							log.debug("I Don't want a spend cap link is not displayed");
+							Assert.fail("I Don't want a spend cap link is not displayed");
+						}
+
+						//Selecting specified cap amount
+						JavascriptExecutor executor = (JavascriptExecutor) driver;
+						log.debug("Specified Cap amount is selecting");
+						for (WebElement ele : capAmountslist) {
+							if (ele.getText().contains(CapAmount)) {
+								executor.executeScript("arguments[0].click();", ele);
+								log.debug("Specified Cap amount is selected, ie:" + CapAmount);
+								cnt++;
+								break;
+							}
+						}
+
+						Thread.sleep(4000);
+						if (cnt == 0) {
+							log.debug("Bill Spend Cap list does not contain specified cap amount and your Bill cap is not selected ie:: " + CapAmount);
+							Assert.fail("Bill Spend Cap list does not contain specified cap amount and your Bill cap is not selected ie:: " + CapAmount);
+						}
+
+						//Selected cap Info
+						scrollToAnElement.scrollToElement(pageobjects.PAYMandPAYGTariffAndExtrasPage.BillCapStatusInfo);
+						Screenshots.captureScreenshot();
+
+						String SelectedBillCapInfo = pageobjects.PAYMandPAYGTariffAndExtrasPage.BillCapStatusInfo.getText();
+						log.debug("Your selected Cap is :: " + SelectedBillCapInfo);
+
+						//Cap my bill button status after selecting bill and clicking on it
+						if (pageobjects.PAYMandPAYGTariffAndExtrasPage.CapMyBillSubmitButton.isEnabled()) {
+							log.debug("As expected Cap My Bill submit button is enabled");
+
+							pageobjects.PAYMandPAYGTariffAndExtrasPage.CapMyBillSubmitButton.click();
+							log.debug("Clicked on Cap my bill submit button");
+
+						} else {
+							log.debug("Cap My Bill submit button is not enabled after selecting cap amount");
+							Assert.fail("Cap My Bill submit button is not enabled after selecting cap amount");
+						}
+
+						Thread.sleep(4000);
+
+						//Selected BillCap Status Message
+						scrollToAnElement.scrollToElement(pageobjects.PAYMandPAYGTariffAndExtrasPage.BillCapStatusMsg);
+						Screenshots.captureScreenshot();
+						BillCapStatus = pageobjects.PAYMandPAYGTariffAndExtrasPage.BillCapStatusMsg.getText();
+						log.debug("Your Cap is applied and status message is:: " + BillCapStatus);
+
+						if (BillCapStatus.contains("Your bill has been capped at")) {
+							log.debug("Status message is validated successfully for your Bill Cap");
+						} else {
+							log.debug("Status message is not matching for your Bill Cap");
+						}
+
 						Thread.sleep(3000);
-						break;
+
+					} else if (BillCap.equalsIgnoreCase("DontCapMyBill")) {
+						pageobjects.PAYMandPAYGTariffAndExtrasPage.DontCapMyBillButton.click();
+						log.debug("Clicked on Don't Cap My Bill Option/CTA");
+
+						Thread.sleep(4000);
+						//Selected BillCap Status Message
+						scrollToAnElement.scrollToElement(pageobjects.PAYMandPAYGTariffAndExtrasPage.BillCapStatusMsg);
+						Screenshots.captureScreenshot();
+						BillCapStatus = pageobjects.PAYMandPAYGTariffAndExtrasPage.BillCapStatusMsg.getText();
+						log.debug("Don't Cap My Bill Option selected and status message is:: " + BillCapStatus);
+
+						if (BillCapStatus.contains("Your bill has not been capped")) {
+							log.debug("Status message is validated successfully for Don't Cap My Bill option");
+						} else {
+							log.debug("Status message is not matching for Don't Cap My Bill option ie: " + BillCapStatus);
+						}
+
+						scrollToAnElement.scrollToElement(pageobjects.PAYMandPAYGTariffAndExtrasPage.BillCapStatusMsg);
+						Screenshots.captureScreenshot();
+
 					}
+					Thread.sleep(4000);
 				}
-
-				scrollToAnElement.scrollToElement(pageobjects.PAYMandPAYGTariffAndExtrasPage.BillCapStatusMsg);
-				Screenshots.captureScreenshot();
-
-				pageobjects.PAYMandPAYGTariffAndExtrasPage.CapMyBill.click();
-				log.debug("Clicked on Cap my bill button");
-				Thread.sleep(4000);
-				scrollToAnElement.scrollToElement(pageobjects.PAYMandPAYGTariffAndExtrasPage.BillCapStatusMsg);
-				Screenshots.captureScreenshot();
-
-				BillCapStatus = pageobjects.PAYMandPAYGTariffAndExtrasPage.BillCapStatusMsg.getText();
-				log.debug("Your Cap is applied and status is:: " + BillCapStatus);
-
-			}else if (BillCap.equalsIgnoreCase("Dont CapMyBill")) {
-				pageobjects.PAYMandPAYGTariffAndExtrasPage.DontCapMyBill.click();
-				log.debug("Clicked on Don't Cap My Bill Option");
-
-				Thread.sleep(4000);
-				BillCapStatus = pageobjects.PAYMandPAYGTariffAndExtrasPage.BillCapStatusMsg.getText();
-				log.debug("Don't Cap My Bill Option selected and status is:: " + BillCapStatus);
-
-				scrollToAnElement.scrollToElement(pageobjects.PAYMandPAYGTariffAndExtrasPage.BillCapStatusMsg);
-				Screenshots.captureScreenshot();
+			}else if(BSCstatus.equalsIgnoreCase("Disabled")){
+				if (driver.findElements(By.xpath("//div/p//span[contains(text(),'Spend cap')]")).size() > 0) {
+					log.debug("Bill spend cap section is enabled it suppose to be in disabled status");
+					Assert.fail("Bill spend cap section is enabled it suppose to be in disabled status");
+				}else{
+					log.debug("As expected, Bill spend cap section is disabled");
+				}
+			}else {
+				System.out.println("Unable to validate bill spend cap section \n");
+				log.debug("Unable to validate bill spend cap section \n");
+				Assert.fail("Unable to validate bill spend cap section \n");
 			}
 		} catch (Exception e) {
 			log.debug("Unable to cap the bill :: "+e);
 			Assert.fail("Unable to cap the bill :: "+e);
+		}
+	}
+
+	//Jamal----- ValidateAndClickEditLink----
+
+	public static void validateEditLink() {
+
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+
+				scrollToAnElement.scrollToElement(PAYMandPAYGTariffAndExtrasPage.BillCapEditLink);
+				Screenshots.captureScreenshot();
+
+				if (driver.findElements(By.xpath("//p[@class='section-heading']/a")).size() > 0) {
+					log.debug("Edit option is displayed after applying Bill Spend Cap: " + pageobjects.PAYMandPAYGTariffAndExtrasPage.BillCapEditLink.getText());
+
+				} else {
+					log.debug("Edit option is not displayed after applying Bill Spend Cap");
+				}
+				Thread.sleep(4000);
+
+		} catch (Exception e) {
+			log.debug("Unable to validate edit link :: "+e);
+			Assert.fail("Unable to validate edit link :: "+e);
+		}
+
+	}
+
+	//Jamal----- ClickEditLink----
+
+	public static void clickEditLink() {
+
+		try {
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+
+			scrollToAnElement.scrollToElement(PAYMandPAYGTariffAndExtrasPage.BillCapEditLink);
+			Screenshots.captureScreenshot();
+
+			log.debug("Clicking on Edit link");
+			PAYMandPAYGTariffAndExtrasPage.BillCapEditLink.click();
+
+			Thread.sleep(4000);
+
+			if(pageobjects.PAYMandPAYGTariffAndExtrasPage.BillCapStatusMsg.isDisplayed()){
+				log.debug("Status message is displayed after clicking on Edit link");
+			}else{
+				log.debug("Status message is removed after clicking on Edit link");
+			}
+
+		} catch (Exception e) {
+			log.debug("Unable to click on edit link :: "+e);
+			Assert.fail("Unable to click on edit link :: "+e);
+		}
+	}
+
+	//Jamal----- statusAfterEditClicked----
+
+	public static void statusAfterEditClicked() {
+
+		try {
+			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+
+			scrollToAnElement.scrollToElement(PAYMandPAYGTariffAndExtrasPage.SpendCapSection);
+			Screenshots.captureScreenshot();
+
+			if(pageobjects.PAYMandPAYGTariffAndExtrasPage.BillCapStatusMsg.isDisplayed()){
+				log.debug("Status message is present after clicking on Edit link");
+			}else{
+				log.debug("Status message is removed after clicking on Edit link");
+			}
+
+		} catch (Exception e) {
+			log.debug("Unable to validate status after clicking on edit link :: "+e);
+			Assert.fail("Unable to validate status after clicking on edit link :: "+e);
 		}
 
 	}

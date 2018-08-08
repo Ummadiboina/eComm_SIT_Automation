@@ -576,15 +576,14 @@ public class DeliveryPageActions extends Environment {
             if (driver.findElements(By.xpath("//*[contains(text(),'Use a different delivery address')]")).size() > 0) {
                 driver.findElement(By.xpath("//*[contains(text(),'Use a different delivery address')]")).click();
                 log.debug(" Clicked on 'Use a different delivery address'link");
-                log.debug(" Clicked on 'Use a different delivery address'link");
+
             } else {
-                log.debug(" Failed to Click on 'Use a different delivery address'link");
                 log.debug(" Failed to Click on 'Use a different delivery address'link");
             }
 
         } catch (Exception e) {
             log.debug(" Failed to Click on 'Use a different delivery address'link" + e.getStackTrace());
-            log.debug(" Failed to Click on 'Use a different delivery address'link" + e.getStackTrace());
+
         }
 
     }
@@ -623,17 +622,17 @@ public class DeliveryPageActions extends Environment {
                 String invalidMsg = DeliveryPage.commercialAddressErrorMsgAdressLookUp.getText();
                 if (invalidMsg.contains(postCode)) {
                     log.debug(" Entered commercial address during address lookup & displayed error message as ::  (" + invalidMsg + ")");
-                    log.debug(" Entered commercial address during address lookup & displayed error message as ::  (" + invalidMsg + ")");
+
                 } else {
                     log.debug(" Failed to  Display the Respective Error message, When we entered commercial address during address lookup ");
-                    log.debug(" Failed to  Display the Respective Error message, When we entered commercial address during address lookup ");
+
                 }
                 scrollToAnElement.scrollToElement(DeliveryPage.commercialAddressErrorMsgAdressLookUp);
                 Screenshots.captureScreenshot();
             }
         } catch (Exception e) {
             log.debug(" Failed to  Display the Respective Error message, When we entered commercial address during address lookup " + e.getStackTrace());
-            log.debug(" Failed to  Display the Respective Error message, When we entered commercial address during address lookup " + e.getStackTrace());
+
         }
     }
 
@@ -645,15 +644,15 @@ public class DeliveryPageActions extends Environment {
                 String invalidMsg = DeliveryPage.postalCodeErrorMsgAdressLookUp.getText();
                 if (invalidMsg.contains(postCode)) {
                     log.debug(" Entered invalid PostCode & displayed error message as ::  (" + invalidMsg + ")");
-                    log.debug(" Entered ivnalid PostCode & displayed error message as ::  (" + invalidMsg + ")");
+
                 } else {
                     log.debug(" Failed to  Display the Respective Error message, When we enter the invalid PostCode ");
-                    log.debug(" Failed to  Display the Respective Error message, When we enter the invalid PostCode ");
+
                 }
             }
         } catch (Exception e) {
             log.debug(" Failed to  Display the Respective Error message, When we enter the invalid PostCode " + e.getStackTrace());
-            log.debug(" Failed to  Display the Respective Error message, When we enter the invalid PostCode " + e.getStackTrace());
+
         }
     }
 
@@ -664,15 +663,15 @@ public class DeliveryPageActions extends Environment {
                 String invalidMsg = DeliveryPage.postalCodeErrorMsgEnterManualSection.getText();
                 if (invalidMsg.contains(postCode)) {
                     log.debug(" Entered invalid PostCode in Enter manually section & displayed error message as ::  (" + invalidMsg + ")");
-                    log.debug(" Entered ivnalid PostCode in Enter manually section & displayed error message as ::  (" + invalidMsg + ")");
+
                 } else {
                     log.debug(" Failed to  Display the Respective Error message, When we enter the invalid PostCode in Enter manually section ");
-                    log.debug(" Failed to  Display the Respective Error message, When we enter the invalid PostCode in Enter manually section ");
+
                 }
             }
         } catch (Exception e) {
             log.debug(" Failed to  Display the Respective Error message, When we enter the invalid PostCode in Enter manually section " + e.getStackTrace());
-            log.debug(" Failed to  Display the Respective Error message, When we enter the invalid PostCode in Enter manually section " + e.getStackTrace());
+
         }
     }
 
@@ -719,7 +718,7 @@ public class DeliveryPageActions extends Environment {
             if (driver.findElements(By.xpath("//*[contains(text(),'Out of stock')]")).size() > 0) {
                 if (driver.findElement(By.xpath("//*[contains(text(),'Out of stock')]")).isDisplayed()) {
                     log.debug(" The Out of stock message is Displayed in the Delivery section");
-                    log.debug(" The Out of stock message is Displayed in the Delivery section");
+
                 }
             } else {
                 log.debug(" Failed to displayed  OOS message in the  Delivery section");
@@ -876,5 +875,7 @@ public class DeliveryPageActions extends Environment {
         }
 
     }
+
+
 
 }

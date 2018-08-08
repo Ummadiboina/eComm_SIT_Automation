@@ -20,6 +20,9 @@ public class UpgradeCustomerPage {
 	@FindBy(how = How.ID, using = "signInButton")
 	public static WebElement signInButton;*/
 
+	@FindBy(how = How.XPATH, using = "(//button[@id='NoThanksIllKeepMyDevice'])[1]")
+	public static WebElement NoThanksIllKeepMyDevice;
+
 	@FindBy(how = How.XPATH, using = "(//input[@id='username'])[2]")
 	public static WebElement username;
 

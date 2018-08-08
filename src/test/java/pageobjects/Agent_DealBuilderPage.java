@@ -9,6 +9,9 @@ public class Agent_DealBuilderPage {
     @FindBy(how = How.ID, using = "plansTab")
     public static WebElement TariffsTab;
 
+    @FindBy(how = How.XPATH, using = "//*[@id='incomaptibleError']")
+    public static WebElement incomaptibleError;
+
     @FindBy(how = How.ID, using = "devicesTab")
     public static WebElement DevicesTab;
 
@@ -238,7 +241,25 @@ public class Agent_DealBuilderPage {
     @FindBy(how = How.XPATH, using = "(//table[@id='smartTechDeviceTable']/tbody/tr/td/a/img)[1]")
     public static WebElement SelectSearchedSmartTechDevice;
 
+    @FindBy(how = How.XPATH, using = "//*[normalize-space()='BillSpendCapHeader']")
+    public static WebElement BillSpendCapHeader;
 
+    @FindBy(how = How.XPATH, using = "//*[normalize-space()='BillSpendCapMessage']")
+    public static WebElement BillSpendCapMessage;
 
+    @FindBy(how = How.XPATH, using = "//*[normalize-space()='Spend cap']")
+    public static WebElement verfyBSCBolton;
+
+    @FindBy(how = How.XPATH, using = "//*[normalize-space()='BSCoverlayIcon']")
+    public static WebElement BSCoverlayIcon;
+
+    @FindBy(how = How.XPATH, using = "//*[normalize-space()='BSCoverlayText']")
+    public static WebElement BSCoverlayText;
+
+    @FindBy(how = How.XPATH, using = "//*[normalize-space()='BSCoverlayClosed']")
+    public static WebElement BSCoverlayClosed;
+
+    @FindBy(how = How.XPATH, using = "//*[normalize-space()='appliedBillCap']")
+    public static WebElement appliedBillCap;
 
 }

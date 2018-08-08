@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
+import GlobalActions.scrollToAnElement;
 import org.apache.log4j.Logger;
 import org.junit.Assert;
 import org.openqa.selenium.By;
@@ -35,7 +36,7 @@ public class ConnectedDeviceDetailsPageAction extends Environment {
         Screenshots.captureScreenshot();
     }
 
-    public static void colorSelect(String color) throws IOException, InterruptedException {
+    public static void colorSelect(String color) throws IOException {
         JavascriptExecutor executor = (JavascriptExecutor) driver;
         if (color.contains("pink")) {
             executor.executeScript("arguments[0].click();", pageobjects.ConnectedDeviceDetailsPage.Pink);
@@ -57,30 +58,34 @@ public class ConnectedDeviceDetailsPageAction extends Environment {
     public static void ViewAllTariffs() throws InterruptedException, IOException {
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         log.debug("Entering ViewAllTariffs() function ");
+
         JavascriptExecutor jse = (JavascriptExecutor) driver;
         jse.executeScript("window.scrollBy(0,600)", "");
         Thread.sleep(2000);
         // pageobjects.ConnectedDeviceDetailsPage.ViewOurTariffs.click();
 
-        WebElement ele1 = pageobjects.ConnectedDeviceDetailsPage.ViewOurTariffs;
+        //scrollToAnElement.scrollToElement(pageobjects.ConnectedDeviceDetailsPage.ViewOurTariffs);
+        Screenshots.captureScreenshot();
+        /*WebElement ele1 = pageobjects.ConnectedDeviceDetailsPage.ViewOurTariffs;
+        jse.executeScript("arguments[0].click();", ele1);*/
 
+        WebElement ele1 = pageobjects.ConnectedDeviceDetailsPage.SeeOurplans;
         jse.executeScript("arguments[0].click();", ele1);
-
+        log.debug("Clicked on ViewOurTariffs/ See our plans");
         Thread.sleep(7000);
         // driver.findElement(By.id("deviceDetailsSubmit")).click();
-        log.debug("Clicked on ViewOurTariffs");
 
         Screenshots.captureScreenshot();
 
     }
 
-    public static void clickAnywhere() throws IOException, InterruptedException {
+    public static void clickAnywhere() throws IOException {
         // TODO Auto-generated method stub
         pageobjects.ConnectedDeviceDetailsPage.clickanywhere.click();
         Screenshots.captureScreenshot();
     }
 
-    public static void colorSelectOfDevice(String color) throws IOException, InterruptedException {
+    public static void colorSelectOfDevice(String color) throws IOException {
         // TODO Auto-generated method stub
         JavascriptExecutor executor = (JavascriptExecutor) driver;
 
@@ -302,7 +307,7 @@ public class ConnectedDeviceDetailsPageAction extends Environment {
         Screenshots.captureScreenshot();
     }
 
-    public static void checkDevStatusAsPreOrder() throws IOException, InterruptedException {
+    public static void checkDevStatusAsPreOrder() throws IOException {
         // TODO Auto-generated method stub
         // Have to change the below text
         log.debug("checkDevStatusAsPreOrder");
@@ -310,7 +315,7 @@ public class ConnectedDeviceDetailsPageAction extends Environment {
         log.debug("Stock status is " + preoder);
         if (preoder.contains("Pre") || preoder.contains("Order by midnight")) {
             log.debug("Device is Pre Order Device");
-            log.debug("Device is Pre Order Device");
+
         } else {
             log.debug("Device is not Pre Order Device");
             Assert.fail("Device is not Pre Order Device");
@@ -318,12 +323,12 @@ public class ConnectedDeviceDetailsPageAction extends Environment {
         Screenshots.captureScreenshot();
     }
 
-    public static void checkDevStatusAsDelayedDelivery() throws IOException, InterruptedException {
+    public static void checkDevStatusAsDelayedDelivery() throws IOException {
         // TODO Auto-generated method stub
         String deliveryMg = pageobjects.ConnectedDeviceDetailsPage.DevStatusMsg.getText();
         if (deliveryMg.contains("Home delivery") || deliveryMg.contains("Order by midnight")) {
             log.debug("Device is Delayed Delivery Device");
-            log.debug("Device is Delayed Delivery Device");
+
         } else {
             log.debug("Device is not Delayed Delivery Device");
             Assert.fail("Device is not Delayed Delivery Device");
@@ -331,11 +336,11 @@ public class ConnectedDeviceDetailsPageAction extends Environment {
         Screenshots.captureScreenshot();
     }
 
-    public static void checkDevStatusAsInStock() throws IOException, InterruptedException {
+    public static void checkDevStatusAsInStock() throws IOException {
         // TODO Auto-generated method stub
         if (pageobjects.ConnectedDeviceDetailsPage.DevStatusMsg.getText().contains("In Stock")) {
             log.debug("Device is in stock");
-            log.debug("Device is in stock");
+
         } else {
             log.debug("Device is not in stock");
             Assert.fail("Device is not in stock");
@@ -374,7 +379,7 @@ public class ConnectedDeviceDetailsPageAction extends Environment {
             }
         } else {
             log.debug("The colour labels are not displayed");
-            log.debug("The colour labels are not displayed");
+
         }
 
     }
