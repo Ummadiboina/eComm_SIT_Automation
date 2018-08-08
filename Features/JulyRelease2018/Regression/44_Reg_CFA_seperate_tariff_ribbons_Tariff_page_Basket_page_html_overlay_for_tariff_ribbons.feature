@@ -14,7 +14,7 @@ Feature: 44_Reg_CFA_seperate_tariff_ribbons_Tariff_page_Basket_page_html_overlay
     And Verify whether promotional ribbons are displayed for <tariff> on the Tariff tile in the Tariff and Extras page
     And Verify 'Overlay icon' is displayed on the promotional ribbons for <tariff> in the Tariff and Extras page
     And Click on the 'Overlay icon' for <tariff> in the Tariff and Extras page and verify pop up gets displayed
-    And Verify that the tariff ribbons are displayed in tariff upsell config of 'Your package' section
+    #And Verify that the tariff ribbons are displayed in tariff upsell config of 'Your package' section
     And Click on the 'Overlay icon' in tariff upsell config of 'Your package' section and verify pop up gets displayed in the Tariff and Extras Page
     And I Land on the basket page by clicking on Add to Basket button
     And Verify Promotional ribbons are displayed under Tariff section in the Basket page
