@@ -1310,6 +1310,31 @@ public class Agent_DealBuilderPageActions extends Environment {
             Assert.fail("Unable to validate Bill cap section in " + pageTitle + " page is:: " + e);
         }
     }
+    
+    /*********************************************************************************************************************************************************************
+       * validation    : To validate the flexible refresh (ITFD - 466)                                                                                                 *
+       * Created by    : Venkata                                                                                                                                       *
+       * Created date  : 02/08/18     - August Release                                                                                                                 *
+       * Modified by/date :                                                                                                                                            *
+       * Reason to change:                                                                                                                                             *
+     **********************************************************************************************************************************************************************/
+    public static void buildTariff_DealBuilder_Agent(String buildTariff){
+        try{
+        log.info("Entered int to method - buildTariff_DealBuilder_Agent");
+        CommonActions.clickWebElement(Agent_DealBuilderPage.priceSection);
+        CommonActions.selectValueFromDropDown(Agent_DealBuilderPage.priceSection,null,null,buildTariff);
+
+
+
+        log.info("From pricing section Selected Tariff - " + buildTariff);
+        CommonActions.driverWait(3000);
+
+
+        }catch (Exception e){
+
+        }
+    }
+
 
 }
 
