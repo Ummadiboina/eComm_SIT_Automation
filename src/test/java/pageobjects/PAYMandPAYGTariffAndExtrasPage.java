@@ -100,7 +100,7 @@ public class PAYMandPAYGTariffAndExtrasPage {
 	@FindAll({ @FindBy(how = How.XPATH, using = "//div[@class='col-xs-6 monthly']//span[@class='pound ng-binding']") })
 	public static List<WebElement> MonthlyCost;
 
-	@FindAll({ @FindBy(how = How.XPATH, using = "//div[@class=' insurance-button-container '][1]") })
+	@FindAll({ @FindBy(how = How.XPATH, using = "(//div[@class='insurance-button-container'])[1]") })
 	public static WebElement AddRandomInsurance;
 
 	@FindAll({ @FindBy(how = How.XPATH, using = "(//div[@class='filter-label'])[1]//span") })

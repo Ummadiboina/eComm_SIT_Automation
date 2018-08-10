@@ -8,7 +8,9 @@ Feature: 54_Reg_Consumer_TradeIn
     And Verify trade in message is displayed under 'Get your latest phone on us today' section
     And Answer appropriate questionaire in 'your device' section
     And click on 'upgrade now' button
+    And Click on 'Get Started' CTA
     And Click on Tablet section in upgrade options page
+    And Click on device 'Confirm CTA'
     And Select a <handset> device from Recommended devices section
     And Select ribboned tariff <tariff> in upgrade journey
     Then choose appropriately in 'Your Sim Card'section

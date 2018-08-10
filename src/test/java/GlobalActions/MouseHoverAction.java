@@ -67,7 +67,7 @@ public class MouseHoverAction extends Environment {
              normal execution flow in ref Env....        ************************/
             if (driver.findElements(By.xpath("//div[@class='nav-consumer']/ul/li/a[contains(@href, '/shop')]")).size() >= 1) {
                 log.debug("Performing PAYM Phones landing page navigations");
-                log.debug("Performing PAYM Phones landing page navigations");
+
                 Thread.sleep(3000);
 
                 Point coordinates = pageobjects.MouseHoverPage.MoveMouseOnShopTab.getLocation();

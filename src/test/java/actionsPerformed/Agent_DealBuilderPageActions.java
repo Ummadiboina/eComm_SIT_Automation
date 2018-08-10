@@ -472,11 +472,9 @@ public class Agent_DealBuilderPageActions extends Environment {
         Thread.sleep(8000);
         Agent_DealBuilderPage.DevicesTab.click();
         log.debug("Clicked on Devices tab");
-        log.debug("Clicked on Devices tab");
         Thread.sleep(4000);
 
         Agent_DealBuilderPage.DeviceSearchFilter.click();
-        log.debug("Clicked on Device Search field");
         log.debug("Clicked on Device Search field");
         Thread.sleep(3000);
 
@@ -485,8 +483,6 @@ public class Agent_DealBuilderPageActions extends Environment {
             Agent_DealBuilderPage.SearchDevice.sendKeys(Status);
             Thread.sleep(3000);
             log.debug("Sent search as - " + Status);
-
-
         }
 
         if (Status.contains("preorder")) {
@@ -494,8 +490,6 @@ public class Agent_DealBuilderPageActions extends Environment {
             Agent_DealBuilderPage.SearchDevice.sendKeys(Status);
             Thread.sleep(3000);
             log.debug("Sent search as - " + Status);
-
-
         }
         Screenshots.captureScreenshot();
     }
@@ -609,7 +603,7 @@ public class Agent_DealBuilderPageActions extends Environment {
         Thread.sleep(3000);
         Screenshots.captureScreenshot();
         if(Agent_DealBuilderPage.AgentBuyOut_Button.isDisplayed()) {
-            log.debug("The Buy Out Qustionair is displayed");
+            log.debug("The Buy Out Questionair is displayed");
             Agent_DealBuilderPage.AgentBuyOut_Button.click();
             Screenshots.captureScreenshot();
         }
@@ -1321,8 +1315,8 @@ public class Agent_DealBuilderPageActions extends Environment {
     public static void buildTariff_DealBuilder_Agent(String buildTariff){
         try{
         log.info("Entered int to method - buildTariff_DealBuilder_Agent");
-        CommonActions.clickWebElement(Agent_DealBuilderPage.priceSection);
-        CommonActions.selectValueFromDropDown(Agent_DealBuilderPage.priceSection,null,null,buildTariff);
+        //CommonActions.clickWebElement(Agent_DealBuilderPage.priceSection);
+        //CommonActions.selectValueFromDropDown(Agent_DealBuilderPage.priceSection,null,null,buildTariff);
 
 
 

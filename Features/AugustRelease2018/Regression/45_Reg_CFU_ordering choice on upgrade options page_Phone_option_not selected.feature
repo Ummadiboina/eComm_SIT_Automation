@@ -6,7 +6,9 @@ Feature: 45_Reg_CFU_ordering choice on upgrade options page_Phone_option_not sel
     And Signin using valid <username> and <password> credentials
     #And Navigate to upgrade phone
     And choose to upgrade any Phone in My upgrade page
+    And Click on 'Get Started' CTA
     And Select a <handset> device from Recommended devices section
+    And Click on device 'Confirm CTA'
     And Select a tariff <tariff>
     Then I should see 'Your Sim Card'section
     And no option should be selected
@@ -18,6 +20,7 @@ Feature: 45_Reg_CFU_ordering choice on upgrade options page_Phone_option_not sel
     And Select a 'I dont need a new sim'option
     And Verify that 'Confirm CTA' is displayed
     And Click on 'Confirm CTA'
+    And Click on 'Continue' button on upgrade page at extra section
     And I Land on the basket page by clicking on Add to Basket button
     And verify that 'Go to checkout' CTA is enabled
     And Verify that the option selected by the user in 'Your sim card' section in upgrade options page is retained

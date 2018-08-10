@@ -28,7 +28,10 @@ public class PhonesListingPageAction extends Environment {
 
 		//driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		Thread.sleep(6000);
-
+		JavascriptExecutor jse = (JavascriptExecutor) driver;
+		jse.executeScript("window.scrollBy(0,300)", "");
+		Screenshots.captureScreenshot();
+		Thread.sleep(3000);
 		try {
 			//WebElement serchBox = driver.findElement(By.xpath("//input[@ng-model='textSearch.searchText']"));
 			WebElement serchBox = driver.findElement(By.xpath("//input[@id='listing-search']"));
@@ -37,7 +40,7 @@ public class PhonesListingPageAction extends Environment {
 
 			WebElement requestedDevice = driver.findElement(By.xpath("(//img[@class='device-image lazy']/..//*[contains(text(),'"+deviceName+"')])[1]"));
 			if(requestedDevice.isDisplayed()) {
-				scrollToAnElement.scrollToElement(requestedDevice);
+				//scrollToAnElement.scrollToElement(requestedDevice);
 				Screenshots.captureScreenshot();
 			}
 			if (driver.findElements(By.xpath("(//img[@class='device-image lazy']/..//*[contains(text(),'"+deviceName+"')])[1]")).size() >= 1) {

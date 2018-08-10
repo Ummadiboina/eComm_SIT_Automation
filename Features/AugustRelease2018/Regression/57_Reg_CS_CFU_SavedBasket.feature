@@ -5,7 +5,9 @@ Feature: 57_Reg_CS_CFU_SavedBasket
     Given I am an Existing user and Navigates to Signin page
     And Signin using valid <username> and <password> credentials
     And choose to upgrade any Phone in My upgrade page
+    And Click on 'Get Started' CTA
     And Select a <handset> device from Recommended devices section
+    And Click on device 'Confirm CTA'
     And Select a tariff <tariff>
     And Select a 'I need a sim'option
     And Verify that 'Confirm CTA' is displayed

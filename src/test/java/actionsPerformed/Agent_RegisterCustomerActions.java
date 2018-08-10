@@ -95,9 +95,10 @@ public class Agent_RegisterCustomerActions extends Environment {
 	}
 
 	public static void PayGRegistration(String Firstname, String Surname, String HouseNumber, String PostCode)
-			throws InterruptedException {
-		//Thread.sleep(5000);
+			throws InterruptedException, IOException {
+		Thread.sleep(5000);
 		try {
+			Screenshots.captureScreenshot();
 			Select dropdown = new Select(pageobjects.Agent_RegisterCustomerPage.Title);
 			dropdown.selectByIndex(1);
 			log.debug("Selected the dropdown Mr");
@@ -127,21 +128,23 @@ public class Agent_RegisterCustomerActions extends Environment {
 		Thread.sleep(2000);
 
 		try {
-			Agent_RegisterCustomerPage.HouseNumber.sendKeys(HouseNumber);
-			//Thread.sleep(2000);
-			Agent_RegisterCustomerPage.Postcode.sendKeys(PostCode);
-			log.debug("Entered House Postcode  as: " + PostCode);
 
-			//Thread.sleep(2000);
-			pageobjects.Agent_RegisterCustomerPage.FindAddress.click();
-			//Thread.sleep(3000);
-			log.debug("Clicked on the Find address button");
+				Agent_RegisterCustomerPage.HouseNumber.sendKeys(HouseNumber);
+				//Thread.sleep(2000);
+				Agent_RegisterCustomerPage.Postcode.sendKeys(PostCode);
+				log.debug("Entered House Postcode  as: " + PostCode);
 
-			pageobjects.Agent_RegisterCustomerPage.Selectedaddress.click();
-			log.debug("Selected an address");
+				//Thread.sleep(2000);
+				pageobjects.Agent_RegisterCustomerPage.FindAddress.click();
+				//Thread.sleep(3000);
+				log.debug("Clicked on the Find address button");
+
+				pageobjects.Agent_RegisterCustomerPage.Selectedaddress.click();
+				log.debug("Selected an address");
+
 		} catch (Exception e) {
 			e.getMessage();
-			log.debug("Try catch block exception in Agent register cutomer actions page, nothing to worry :)");
+			log.debug("Try catch block exception in Agent register customer actions page, nothing to worry :)");
 		}
 
 		Thread.sleep(2000);
@@ -158,6 +161,7 @@ public class Agent_RegisterCustomerActions extends Environment {
 		dropdown2.selectByIndex(2);
 		pageobjects.Agent_RegisterCustomerPage.securityAnswer.sendKeys("Rotary");
 		Thread.sleep(2000);
+		Screenshots.captureScreenshot();
 		//Agent_RegisterCustomerPage.registerCustomer.click();
 		WebElement element = pageobjects.Agent_RegisterCustomerPage.registerCustomer;
 		JavascriptExecutor executor = (JavascriptExecutor) driver;
@@ -201,19 +205,20 @@ public class Agent_RegisterCustomerActions extends Environment {
 
 		//driver.manage().timeouts().implicitlyWait(15,TimeUnit.SECONDS);
 		log.debug("Mipay bit : ");
-		Thread.sleep(10000);
+		Thread.sleep(8000);
+		Screenshots.captureScreenshot();
 		//driver.findElements(By.xpath("//label[contains(text(),'Card ending with:')]")).size();
-		if (driver.findElements(By.xpath("//span[@id='lblCardNumber']")).size() > 0) {
+		if (driver.findElements(By.xpath("//span[@id='lblCardNumber'] | //div[@id='cardDetails']/div[2]/p/label")).size() > 0) {
 			String PaybyCardCVV2 = Agent_RegisterCustomerPage.PayByCard_2.getText();
-			Thread.sleep(5000);
+			Thread.sleep(2000);
 			//if (PaybyCardCVV2.contains("Card ending with:")) {
 			System.out.print("The text is :" + PaybyCardCVV2);
 			Agent_RegisterCustomerPage.SecurityCode.sendKeys("123");
 			log.debug("Security card is entered as 123");
-
-			Thread.sleep(5000);
-			Agent_RegisterCustomerPage.UsethisCard.click();
 			Screenshots.captureScreenshot();
+			Thread.sleep(2000);
+			Agent_RegisterCustomerPage.UsethisCard.click();
+
 			log.debug("The Pay Now button is clicked");
 			log.debug("completed  Mypay bit");
 			Thread.sleep(6000);
@@ -502,6 +507,8 @@ public class Agent_RegisterCustomerActions extends Environment {
 					log.debug("Device type is connected and we are proceeding");
 
 					if (driver.findElements(By.xpath("//div[@class='gdprLabel']")).size() > 0) {
+						scrollToAnElement.scrollToElement(driver.findElement(By.xpath("//div[@class='gdprLabel']")));
+						Screenshots.captureScreenshot();
 						System.out.println("GDPR is Enabled and we are proceeding");
 						log.debug("GDPR is Enabled and we are proceeding");
 
@@ -513,8 +520,8 @@ public class Agent_RegisterCustomerActions extends Environment {
 							log.debug("As expected Text:: " + thisOrderHeader + " is displayed");
 
 							if (customer.contains("Me")) {
-								Thread.sleep(3000);
-								Screenshots.captureScreenshot();
+								/*Thread.sleep(3000);
+								Screenshots.captureScreenshot();*/
 								//Me radio Btn
 								boolean defaultSelect = Agent_RegisterCustomerPage.Me_radioBtn.isSelected();
 

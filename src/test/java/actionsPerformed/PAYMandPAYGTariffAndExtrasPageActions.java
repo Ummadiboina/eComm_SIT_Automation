@@ -192,7 +192,7 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 		pageobjects.PAYMandPAYGTariffAndExtrasPage.AddRandomInsurance.click();
 		Thread.sleep(2000);
 		log.debug("Completed add insurance function");
-		log.debug("Completed add insurance function");
+
 		Screenshots.captureScreenshot();
 
 	}
@@ -206,13 +206,13 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 
 	public static void addToBasketLive() throws InterruptedException, IOException {
 		//driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
-		Thread.sleep(6000);
+		Thread.sleep(4000);
         /*if(PAYMandPAYGTariffAndExtrasPage.RandomfullTariff1.isEnabled()){
         ((JavascriptExecutor) driver).executeScript("arguments[0].click();", PAYMandPAYGTariffAndExtrasPage.RandomfullTariff1);
 		}*/
-		log.debug("Click on the Add To Basket");
-		JavascriptExecutor jse = (JavascriptExecutor) driver;
-		jse.executeScript("window.scrollBy(0,600)", "");
+		log.debug("Click on the Add To Basket/Go To Basket CTA");
+		/*JavascriptExecutor jse = (JavascriptExecutor) driver;
+		jse.executeScript("window.scrollBy(0,600)", "");*/
 		Screenshots.captureScreenshot();
 		((JavascriptExecutor) driver).executeScript("arguments[0].click();", pageobjects.PAYMandPAYGTariffAndExtrasPage.addToBasketLive);
 		// pageobjects.PAYMandPAYGTariffAndExtrasPage.addToBasketLive.sendKeys(Keys.ENTER);
@@ -538,7 +538,7 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 		double iTemp = 0;
 
 		List<WebElement> InsurancePriceElement = driver
-				.findElements(By.xpath("//div[@id='insuranceContainer']//div/p[@class=' price ']"));
+				.findElements(By.xpath("(//div[@id='insuranceContainer']/div/div[3]/p[@class='price'])[1]"));
 		FirstInsurancePrice = InsurancePriceElement.get(0).getText();
 
 		for (WebElement temp : InsurancePriceElement) {
@@ -572,8 +572,7 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 	public static void verifyFreeInsuranceAutoSelected() throws Exception {
 		log.debug("verifyFreeInsuranceAutoSelected");
 
-		WebElement FirstInsurancePrice = driver.findElement(By.xpath("(//div[@id='insuranceContainer']/div[@id])[1]"))
-				.findElement(By.xpath("//div[@id='insuranceContainer']//div/p[@class=' price ']"));
+		WebElement FirstInsurancePrice = driver.findElement(By.xpath("(//div[@id='insuranceContainer']/div/div[3]/p[@class='price'])[1]"));
 		if (FirstInsurancePrice.getText().contains("0.00")) {
 			log.debug("Free insurance is present");
 		}

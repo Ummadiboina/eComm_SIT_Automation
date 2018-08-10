@@ -165,7 +165,10 @@ public class BasketPageActions extends Environment {
 			Thread.sleep(4000);
 			if(!pageobjects.BasketPage.checkoutbtn.isEnabled())
 			{
-				Thread.sleep(4000);
+				//Thread.sleep(4000);
+				scrollToAnElement.scrollToElement(driver.findElement(By.xpath("//input[@id='noNeedNewSim']")));
+				Screenshots.captureScreenshot();
+
 				JavascriptExecutor executor = (JavascriptExecutor)driver;
 				executor.executeScript("arguments[0].click();", driver.findElement(By.xpath("//input[@id='noNeedNewSim']")));
 				//driver.findElement(By.xpath("//input[@id='noNeedNewSim']")).click();
@@ -727,7 +730,7 @@ public class BasketPageActions extends Environment {
 
 		Thread.sleep(2000);
 		log.debug("Completed InsuranceSectionBasket function");
-		log.debug("Completed InsuranceSectionBasket function");
+
 		Screenshots.captureScreenshot();
 
 	}

@@ -22,4 +22,4 @@ Feature: 83_ Reg_Jan_Existing_OOSForHomeDeliveryandCnC
 
     Examples:
       | handset | color     | username               | password |
-      | 3T      | Soft Gold | dasdasdkjaskd@sdsd.com | test123  |
+      | Nokia   | Soft Gold | dasdasdkjaskd@sdsd.com | test123  |

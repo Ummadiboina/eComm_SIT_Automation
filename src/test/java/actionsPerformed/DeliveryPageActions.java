@@ -696,7 +696,12 @@ public class DeliveryPageActions extends Environment {
     public static void deliverySectionShouldShowOOS_message() {
         try {
             driver.manage().timeouts().implicitlyWait(2, TimeUnit.MINUTES);
+            Screenshots.captureScreenshot();
             if (driver.findElements(By.xpath("//li[@class='delivery']//*[contains(text(),'out of stock')]")).size() > 0) {
+
+                JavascriptExecutor jse = (JavascriptExecutor) driver;
+                jse.executeScript("window.scrollBy(0,300)", "");
+                Screenshots.captureScreenshot();
                 if (driver.findElement(By.xpath("//li[@class='delivery']//*[contains(text(),'out of stock')]")).isDisplayed()) {
                     log.debug(" The Out of stock message is Displayed in the 'Your package' section");
                 }
@@ -733,7 +738,7 @@ public class DeliveryPageActions extends Environment {
 
     public static void deliveryInformationSection_OOS_msg() {
         try {
-            driver.manage().timeouts().implicitlyWait(2, TimeUnit.MINUTES);
+            driver.manage().timeouts().implicitlyWait(1, TimeUnit.MINUTES);
             if (driver.findElements(By.xpath("//*[contains(text(),'Out of stock')]")).size() > 0) {
                 if (driver.findElement(By.xpath("//*[contains(text(),'Out of stock')]")).isDisplayed()) {
                     log.debug(" The Out of stock message is Displayed in the Delivery Information section");

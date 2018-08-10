@@ -65,7 +65,7 @@ public class Agent_RegisterCustomerPage {
     public static WebElement SubmitBtn;
 
     //@FindBy(how = How.XPATH, using = "//*[@id='lblCardNumber' or @id='CardNumber']")
-    @FindBy(how = How.XPATH, using = "//span[@id='lblCardNumber']")
+    @FindBy(how = How.XPATH, using = "//span[@id='lblCardNumber'] | //div[@id='cardDetails']/div[2]/p/label")
     public static WebElement PayByCard_2;
 
     // *[@id='lblCardNumber']

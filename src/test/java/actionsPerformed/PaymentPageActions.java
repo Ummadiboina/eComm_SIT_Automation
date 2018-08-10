@@ -50,7 +50,10 @@ public class PaymentPageActions extends Environment {
 
     public static void Set_Bank_details(String Username) throws IOException, InterruptedException {
 
-        scrollToAnElement.scrollToElement(PaymentPage.Name_On_Account);
+        //scrollToAnElement.scrollToElement(PaymentPage.Name_On_Account);
+        JavascriptExecutor jse = (JavascriptExecutor) driver;
+        jse.executeScript("window.scrollBy(0,300)", "");
+
         Thread.sleep(2000);
         pageobjects.PaymentPage.Name_On_Account.sendKeys(Username);
         log.debug("Entered name is " + Username);
@@ -67,6 +70,7 @@ public class PaymentPageActions extends Environment {
         pageobjects.PaymentPage.Sort_Code3.sendKeys("96");
         log.debug("Entered sort code - 96");
         Thread.sleep(2000);
+        Screenshots.captureScreenshot();
         pageobjects.PaymentPage.Accept_Terms_Checkbox.click();
         log.debug("Clicked on the Accept Terms checkbox");
         Screenshots.captureScreenshot();

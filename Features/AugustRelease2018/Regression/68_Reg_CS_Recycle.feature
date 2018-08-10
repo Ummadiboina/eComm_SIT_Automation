@@ -14,7 +14,9 @@ Feature: 68_Reg_CS_Recycle
     And Verify 'Yes,get an accurate quote' is displayed
     And click on 'Yes,get an accurate quote'
     And answer the questionnaire and click on 'Accept and continue to upgrade' button
+    And Click on 'Get Started' CTA
     And Select a <handset> device from Recommended devices section
+    And Click on device 'Confirm CTA'
     ##And Select ribboned tariff <tariff> in upgrade journey
     And Select tariff in upgrade journey
    ##Then choose appropriately in 'Your Sim Card'section

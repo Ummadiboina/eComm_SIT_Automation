@@ -9,11 +9,13 @@ Feature: 47_CFU_Phones_Data_filters_options_tariff_and_extras_page
     Given I am an Existing user and Navigates to Signin page
     And Signin using valid <username> and <password> credentials
     And Navigate to upgrade > upgrade now
-    Then Verify that in the recycle value is displayed in the Recycle panel
+    #Then Verify that in the recycle value is displayed in the Recycle panel
     #And Select <Make>, <Model> and <Network>
     #And perform update device
-    Then Select any one recycle option and click on 'Continue to Upgrade'
+    #Then Select any one recycle option and click on 'Continue to Upgrade'
+    And Click on 'Get Started' CTA
     And Select a <handset> device from Recommended devices section
+    And Click on device 'Confirm CTA'
     And Click on View all Tariffs link in upgrade options page
     Then I should see data filters buttons next to existing sort drop-down for PAYM/SIMO tariffs <sortoption>
     #Verification point - A - More than 2 should be displayed
@@ -38,5 +40,5 @@ Feature: 47_CFU_Phones_Data_filters_options_tariff_and_extras_page
     Then Choose <consumer> <status> Business preferences <B1> <B2> <B3> <B4> And Channel Preferences <Text> <Email> <Phone> <Post> <MBBStatus> <DeviceType>
 
     Examples:
-      | username                         | password | handset           | filtername | sortoption                 | Username     | Make  | Model   | Network | consumer | B1  | B2  | B3     | B4  | Text | Email  | Phone | Post | status  | MBBStatus | DeviceType |
-      | testaccepta4289@stf.ref.o2.co.uk | test123  | Samsung Galaxy S8 | low        | Monthly data (Low to High) | TEST ACCEPTA | Apple | Iphone7 | Orange  | Me       | Not | Not | Select | Not | Not  | Select | Not   | Not  | Enabled | No        | Connected  |
+      | username                         | password | handset           | filtername | Action | sortoption                 | Username     | Make  | Model   | Network | consumer | B1  | B2  | B3     | B4  | Text | Email  | Phone | Post | status  | MBBStatus | DeviceType |
+      | testaccepta4289@stf.ref.o2.co.uk | test123  | Samsung Galaxy S8 | low        | skip   | Monthly data (Low to High) | TEST ACCEPTA | Apple | Iphone7 | Orange  | Me       | Not | Not | Select | Not | Not  | Select | Not   | Not  | Enabled | No        | Connected  |

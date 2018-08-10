@@ -14,7 +14,9 @@ Feature: 48_CFU_Recycle_Phones_DD_Confirmation_Page_changes
     Then Select any one recycle option and click on 'Continue to Upgrade'
     And click on 'Yes,get an accurate quote'
     And answer the questionnaire and click on 'Accept and continue to upgrade' button
+    And Click on 'Get Started' CTA
     And Select a <handset> device from Recommended devices section
+    And Click on device 'Confirm CTA'
     And Select ribboned tariff <tariff> in upgrade journey
     #And Select a tariff in upgrade journey
     And I Land on the basket page for upgrades
@@ -30,5 +32,5 @@ Feature: 48_CFU_Recycle_Phones_DD_Confirmation_Page_changes
     Then Choose <consumer> <status> Business preferences <B1> <B2> <B3> <B4> And Channel Preferences <Text> <Email> <Phone> <Post> <MBBStatus> <DeviceType>
 
     Examples:
-      | username                     | password | handset        | tariff                 | Firstname | Surname | Username     | Action | Status           | Make  | Model   | Network | consumer | B1     | B2  | B3  | B4  | Text   | Email | Phone | Post | status  | MBBStatus | DeviceType |
-      | ins_nov6572@stf.ref.o2.co.uk | test123  | Apple iPhone 7 | 9.99upfront84.00amonth | TEST      | ACCEPTA | TEST ACCEPTA | skip   | Delayed Delivery | LG | Iphone7 | Orange  | Me       | Select | Not | Not | Not | Select | Not   | Not   | Not  | Enabled | No        | Connected  |
+      | username                     | password | handset        | tariff                 | Firstname | Surname | Username     | Action | Status           | Make | Model   | Network | consumer | B1     | B2  | B3  | B4  | Text   | Email | Phone | Post | status  | MBBStatus | DeviceType |
+      | ins_nov6572@stf.ref.o2.co.uk | test123  | Apple iPhone 7 | 9.99upfront84.00amonth | TEST      | ACCEPTA | TEST ACCEPTA | skip   | Delayed Delivery | LG   | Iphone7 | Orange  | Me       | Select | Not | Not | Not | Select | Not   | Not   | Not  | Enabled | No        | Connected  |
