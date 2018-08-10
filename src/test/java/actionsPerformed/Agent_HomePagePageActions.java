@@ -81,8 +81,14 @@ public class Agent_HomePagePageActions extends Environment {
 
 		if(driver.findElements(By.className("tradeInMessage")).size()>0) {
 			String TradeInUpgradeOptions = driver.findElement(By.className("tradeInMessage")).getText();
-			log.debug("Displaying Trade-in Upgrade Options Message");
+			log.debug("Displaying Trade-in Upgrade Options Message: ");
 			log.debug(TradeInUpgradeOptions);
+		}
+
+		if(driver.findElements(By.xpath("//div[@id='buyout']")).size()>0) {
+			String BuyOutUpgradeOptionsTxt = driver.findElement(By.xpath("//div[@id='buyout']")).getText();
+			log.debug("Displaying BuyOut Upgrade Options Message: ");
+			log.debug(BuyOutUpgradeOptionsTxt);
 		}
 
 		try {

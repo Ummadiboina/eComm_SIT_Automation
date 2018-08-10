@@ -35,4 +35,4 @@ Feature: 73_Existing_Csutomer_Tablets_Data_filters_options_tariff_and_extras_pag
 
     Examples:
       | tabletname    | color     | capacity | filtername | sortoption                 | username                     | password | Username     | consumer | B1  | B2  | B3     | B4  | Text | Email  | Phone | Post | status  | MBBStatus | DeviceType |
-      | Random Device | Rose Gold | 32GB     | low        | Monthly data (Low to High) | ins_feb3087@stf.ref.o2.co.uk | test123  | TEST ACCEPTA | Me       | Not | Not | Select | Not | Not  | Select | Not   | Not  | Enabled | No        | Connected  |
+      | Random Device | Rose Gold | 32GB     | low        | Monthly data (Low to High) | ina_feb6526@stf.ref.o2.co.uk | test123  | TEST ACCEPTA | Me       | Not | Not | Select | Not | Not  | Select | Not   | Not  | Enabled | No        | Connected  |

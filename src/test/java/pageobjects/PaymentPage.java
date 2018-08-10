@@ -64,10 +64,10 @@ public class PaymentPage {
     @FindBy(how = How.XPATH, using = "//*[@id='txtCardNumber' or @id='CardNumber']")
     public static WebElement CardNumber;
 
-    @FindBy(how = How.XPATH, using = "//*[@id='ddlMonth' or @id='txtMonth']")
+    @FindBy(how = How.XPATH, using = "//*[@id='ddlMonth' or @id='txtMonth' or @id='Month']")
     public static WebElement CardMonth;
 
-    @FindBy(how = How.XPATH, using = "//*[@id='ddlYear' or @id='txtYr']")
+    @FindBy(how = How.XPATH, using = "//*[@id='ddlYear' or @id='txtYr' or @id='Year']")
     public static WebElement CardYear;
 
     @FindBy(how = How.XPATH, using = "//*[@id='txtSecurityCode' or @id='CardCvv' or @id='txtCardSecurityCode']")

@@ -21,4 +21,4 @@ Feature: 81_Reg_Jan_CFA_OOSForHomeDeliveryandCnC
 
     Examples:
       | handset | color     | username               | password |
-      | 3T      | Soft Gold | dasdasdkjaskd@sdsd.com | test123  |
+      | Nokia   | Soft Gold | dasdasdkjaskd@sdsd.com | test123  |

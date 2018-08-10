@@ -16,7 +16,7 @@ public class TabletPageActions extends Environment {
 
 	final static Logger log = Logger.getLogger("TabletPageActions");
 
-	public static void validateElements(String Tabname) throws IOException, InterruptedException {
+	public static void validateElements(String Tabname) throws IOException {
 		log.debug(" ");
 
 		log.debug("Tablet_Page_Validation");
@@ -49,7 +49,7 @@ public class TabletPageActions extends Environment {
 
 	}
 
-	public static void ElementClickAction(String elementname) throws IOException, InterruptedException {
+	public static void ElementClickAction(String elementname) throws IOException {
 		// TODO Auto-generated method stub
 		WebElement w1 = null;
 		log.debug(" ");
@@ -78,7 +78,7 @@ public class TabletPageActions extends Environment {
 
 			JavascriptExecutor js = ((JavascriptExecutor) driver);
 			js.executeScript("arguments[0].scrollIntoView(true);",driver.findElement(By.xpath("(//a[contains(., 'View all products on one page')])[2]")));
-			Thread.sleep(4000);
+			Thread.sleep(3000);
 			if(driver.findElements(By.xpath("(//a[contains(., 'View all products on one page')])[2]")).size() > 0) {
 				Thread.sleep(2000);
 				WebElement ele = driver.findElement(By.xpath("(//a[contains(., 'View all products on one page')])[2]"));

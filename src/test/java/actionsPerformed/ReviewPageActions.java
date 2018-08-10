@@ -2,6 +2,7 @@ package actionsPerformed;
 
 import java.io.IOException;
 
+import GlobalActions.scrollToAnElement;
 import org.apache.log4j.Logger;
 import org.junit.Assert;
 import org.openqa.selenium.By;
@@ -26,6 +27,8 @@ public class ReviewPageActions extends Environment {
 		if (pageobjects.ReviewPage.TermsCheckBox.isSelected()) {
 
 		} else {
+			scrollToAnElement.scrollToElement(pageobjects.ReviewPage.TermsCheckBox);
+			Screenshots.captureScreenshot();
 			WebElement element = pageobjects.ReviewPage.TermsCheckBox;
 			JavascriptExecutor executor = (JavascriptExecutor) driver;
 			executor.executeScript("arguments[0].click();", element);
@@ -43,7 +46,7 @@ public class ReviewPageActions extends Environment {
 		//pageobjects.ReviewPage.PayNow.click();
 		log.debug("Completing on Review page");
 
-		Thread.sleep(5000L);
+		Thread.sleep(5000);
 		Screenshots.captureScreenshot();
 
 	}

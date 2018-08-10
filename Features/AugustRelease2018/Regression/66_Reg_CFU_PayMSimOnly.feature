@@ -6,6 +6,7 @@ Feature: 66_Reg_CFU_PayMSimOnly
     Given I am an Existing user and Navigates to Signin page
     And Signin using valid <username> and <password> credentials
     And Navigate to upgrade > upgrade now
+    #And Click on 'Get Started' CTA
     And I click on 'Sim only Tariff' tab
     And verify that the url has simo at the end
     Then the 'Phones' button should be selected by default

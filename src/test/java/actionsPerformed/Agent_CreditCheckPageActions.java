@@ -98,7 +98,7 @@ public class Agent_CreditCheckPageActions extends Environment {
 		Reporter.log("Entered email address is :: " + emailAdd);
 
 		log.debug("Entered email address");
-		Agent_CreditCheckDetailsPage.DOB.sendKeys("10-10-1981");
+		Agent_CreditCheckDetailsPage.DOB.sendKeys("10-10-1971");
 		log.debug("Entered date of birth");
 		Thread.sleep(2000);
 		Agent_CreditCheckDetailsPage.ContactNumber.sendKeys("07888594958");
@@ -165,6 +165,7 @@ public class Agent_CreditCheckPageActions extends Environment {
 		Agent_CreditCheckDetailsPage.ContactNumber.sendKeys("1234567890");
 		log.debug("Entered contact number")*/
 		Thread.sleep(2000);
+		Screenshots.captureScreenshot();
 		try {
 			Agent_CreditCheckDetailsPage.HouseNumber.sendKeys(HouseNumber);
 			Thread.sleep(2000);
@@ -266,6 +267,7 @@ public class Agent_CreditCheckPageActions extends Environment {
 		log.debug("Entered Sort code");
 		Agent_CreditCheckDetailsPage.AccountNumber.sendKeys("10207136");
 		log.debug("Entered Account Number");
+		Screenshots.captureScreenshot();
 		Agent_CreditCheckDetailsPage.CardCapture.click();
 		log.debug("Clicked on card capture");
 
@@ -335,9 +337,9 @@ public class Agent_CreditCheckPageActions extends Environment {
 		int success = driver.findElements(By.xpath("//*[@id = 'cardCaptureStatus' and @class ='success']")).size();
 		if (success > 0) {
 			Agent_CreditCheckDetailsPage.AgreeCreditCheck.click();
-			Thread.sleep(4000);
+			Thread.sleep(2000);
 			Agent_CreditCheckDetailsPage.PerformCreditCheck.click();
-
+			Screenshots.captureScreenshot();
 			Thread.sleep(15000);
 		}
 		else

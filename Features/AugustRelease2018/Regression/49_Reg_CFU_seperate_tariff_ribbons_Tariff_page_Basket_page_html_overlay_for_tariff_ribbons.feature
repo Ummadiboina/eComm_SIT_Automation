@@ -9,6 +9,7 @@ Feature: 49_Reg_CFU_seperate_tariff_ribbons_Tariff_page_Basket_page_html_overlay
     Given I am existing user and I click on Signin button
     And Signin using valid <username> and <password> credentials
     And Navigate to upgrade phone
+    And Click on 'Get Started' CTA
     And I choose upgrade PayM handset <handset>
     And Navigate to device details page
     And Select a tariff <tariff>

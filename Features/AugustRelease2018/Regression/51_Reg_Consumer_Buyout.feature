@@ -7,8 +7,10 @@ Feature: 51_Reg_Consumer_Buyout
     And Navigate to upgrade > upgrade now
     And Click on 'Remove Button'
     And click on 'Take offer and upgrade'button
+    And Click on 'Get Started' CTA
     And Click on Tablet section in upgrade options page
     And Select a <handset> device from Recommended devices section
+    And Click on device 'Confirm CTA'
     And select any random tariff from Recommended devices section
     And Select a 'I need a sim'option
     And Verify that 'Confirm CTA' is displayed

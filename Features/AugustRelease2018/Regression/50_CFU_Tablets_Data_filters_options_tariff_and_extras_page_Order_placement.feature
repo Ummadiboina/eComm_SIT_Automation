@@ -7,8 +7,10 @@ Feature: 50_CFU_Tablets_Data_filters_options_tariff_and_extras_page_Order_placem
     Given I am an Existing user and Navigates to Signin page
     And Signin using valid <username> and <password> credentials
     And Navigate to upgrade > upgrade now
+    And Click on 'Get Started' CTA
     And Click on Tablet section in upgrade options page
     And Select a <Tablet> device from Recommended devices section
+    And Click on device 'Confirm CTA'
     And Click on View all Tariffs link in upgrade options page
     Then I should see data filters buttons next to existing sort drop-down for PAYM/SIMO tariffs <sortoption>
       #Verification point - A - More than 2 should be displayed

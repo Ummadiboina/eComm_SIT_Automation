@@ -44,6 +44,7 @@ public class Autoredirection extends Environment {
 
 			log.debug("Auto Redirection is not required, URL already pointed to Ref");
 		}
+		Thread.sleep(2000);
 		Screenshots.captureScreenshot();
 	}
 

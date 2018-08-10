@@ -105,7 +105,7 @@ public class UpgradeCustomerPage {
 	//////////////////////////// Your Sim
 	//////////////////////////// Section///////////////////////////////////////////////////
 
-	@FindBy(how = How.XPATH, using = "//*[@id='yourSim']")
+	@FindBy(how = How.XPATH, using = "//*[@id='yourSim'] | //div[contains(text(),'3. Your sim')]")
 	public static WebElement YourSimHeading;
 
 	@FindBy(how = How.XPATH, using = "//*[@id='needNewSim']")
@@ -162,7 +162,7 @@ public class UpgradeCustomerPage {
 	@FindBy(how = How.XPATH, using = "//*[@id='confirmSim']")
 	public static WebElement ConfirmCTA;
 
-	@FindAll({@FindBy(how = How.XPATH, using = "//Button[normalize-space()='Remove offer']")})
+	@FindAll({@FindBy(how = How.XPATH, using = "//Button[normalize-space()='Remove offer'] | //Button[normalize-space()='Remove offer to see sim options']")})
 	public static List<WebElement> RemoveOffer;
 
 	@FindAll({@FindBy(how = How.XPATH, using = "//div[@class='btn-container']/button[@class='primary']")})
@@ -258,9 +258,15 @@ public class UpgradeCustomerPage {
 	@FindBy(how = How.XPATH, using = "//a[@id='tab-switch-to-a-tablet'][1]")
 	public static WebElement TabletsTab;
 	
-	@FindBy(how = How.ID, using = "qa-view-all")
+	/*@FindBy(how = How.ID, using = "qa-view-all")
+	public static WebElement ViewAllTariffs;*/
+
+	@FindBy(how = How.XPATH, using = "//*[@id='qa-view-all'] | //p[normalize-space()='View all tariffs']")
 	public static WebElement ViewAllTariffs;
-	
+
+	@FindBy(how = How.XPATH, using = "//h3[normalize-space()='Which tariff should you choose?']")
+	public static WebElement whichTariff;
+
 	@FindBy(how = How.ID, using = "otac")
 	public static WebElement SecurityOtac;
 	//*[@id='otac']
@@ -370,6 +376,19 @@ public class UpgradeCustomerPage {
 
 	@FindBy(how = How.XPATH, using = "//a[@id='tab-keep-your-phone']/span[text()='Sim only tariff']")
 	public static WebElement  simoTab;
+
+
+	@FindBy(how = How.XPATH, using = "//button[@class='btnblue']")
+	public static WebElement GetStartedCTA;
+
+	@FindBy(how = How.XPATH, using = "//div[contains(text(),'Choose your device')]")
+	public static WebElement chooseDeviseSection;
+
+	@FindBy(how = How.XPATH, using = "//div[@class='choose-your-phone-container clear-row']/button[normalize-space()='Confirm']")
+	public static WebElement deviceConfirmCTA;
+
+	@FindBy(how = How.XPATH, using = "//div[@id='extras-section']/div[3]/button")
+	public static WebElement extraContinueCTA;
 
 
 }

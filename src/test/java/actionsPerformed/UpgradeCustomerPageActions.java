@@ -111,7 +111,7 @@ public class UpgradeCustomerPageActions extends Environment {
 
     public static void upgradePAYMPhoneSelect(String elementName) throws Throwable {
         // Below is to view all phones in the same page
-        if (pageobjects.PhonesListingPage.ViewAllPhones.isDisplayed()) {
+        if (driver.findElements(By.xpath("(//a[contains(., 'View all products on one page')])[2]")).size()>0) {
             executor.executeScript("arguments[0].click();", pageobjects.PhonesListingPage.ViewAllPhones);
             Thread.sleep(3000);
         }
@@ -193,13 +193,13 @@ public class UpgradeCustomerPageActions extends Environment {
 
     }
 
-    public static void viewAllPhones() throws InterruptedException, IOException {
+    public static void viewAllPhones() throws InterruptedException {
         Thread.sleep(3000);
         if (pageobjects.UpgradePhonesListingPage.ViewAllPhones.isDisplayed()) {
             executor.executeScript("arguments[0].click();", pageobjects.UpgradePhonesListingPage.ViewAllPhones);
             Thread.sleep(3000);
         }
-        Screenshots.captureScreenshot();
+        //Screenshots.captureScreenshot();
     }
 
     //////////////////////////// Customer not eligible for
@@ -400,13 +400,13 @@ public class UpgradeCustomerPageActions extends Environment {
     }
 
     public static void selectTariff(String Tariff) throws IOException, InterruptedException {
-        log.debug("selectTariff");
-        Thread.sleep(8000);
+        log.debug("selecting Tariff");
+        Thread.sleep(4000);
         /*((JavascriptExecutor) driver).executeScript("arguments[0].click();", PAYMandPAYGTariffAndExtrasPage.ViewAllTariffs_new);
         Thread.sleep(4000);*/
         //driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
         //WebElement selectBtnEle = driver.findElement(By.xpath("(//button[@type='button']//*[normalize-space()='Select'])[2]"));
-        WebElement selectBtnEle = driver.findElement(By.xpath("(//button[@class='secondary selectButton tariff-select'])[2]"));
+        WebElement selectBtnEle = driver.findElement(By.xpath("(//button[@class='secondary selectButton tariff-select'])[2] | (//button[@class='secondary selectButton tst-select ng-binding ng-pristine ng-valid'])[2]"));
         Screenshots.captureScreenshot();
         if(selectBtnEle.isDisplayed()){
             ((JavascriptExecutor) driver).executeScript("arguments[0].click();", selectBtnEle);
@@ -683,10 +683,10 @@ public class UpgradeCustomerPageActions extends Environment {
 
         if (driver.findElements(By.xpath("//*[@class='blue-promotion']")).size()>=1) {
             log.debug("Overlay is present for the selected tariff in the tariff tile as expected in the Tariff and Extras page");
-            log.debug("Overlay is present for the selected tariff in the tariff tile as expected in the Tariff and Extras page");
+
         } else {
             log.debug("No overlay is present for the selected tariff in the tariff tile, in the Tariff and Extras page");
-            log.debug("No overlay is present for the selected tariff in the tariff tile in the Tariff and Extras page");
+
         }
 /*
 
@@ -726,14 +726,14 @@ public class UpgradeCustomerPageActions extends Environment {
         WebElement overlayIcon = driver.findElement(By.xpath("//div[@class='promotion-wrapper']//a[@alt='ribbon information']"));
             ((JavascriptExecutor) driver).executeScript("arguments[0].click();", overlayIcon);
             log.debug("Clicked on the Overlay Icon");
-            log.debug("Clicked on the Overlay Icon");
+
             Thread.sleep(3000);
             Screenshots.captureScreenshot();
             WebElement eleofClose = driver.findElement(By.xpath("//button[@class='close boxclose']"));
             if(eleofClose.isEnabled()){
                 ((JavascriptExecutor) driver).executeScript("arguments[0].click();", eleofClose);
             }else {
-                log.debug("There is no bolten for this tarrief");
+                log.debug("There is no bolton for this tarrief");
             }
         /*List<WebElement> ele = driver.findElements(By.xpath("(//h3[contains(text(),'Sony Xperia')]/following-sibling::a/../following-sibling::div)[1]/p"));
         for(int i=1;i<ele.size();i++){
@@ -1738,11 +1738,11 @@ public class UpgradeCustomerPageActions extends Environment {
         String simswapurl = driver.getCurrentUrl();
         log.debug("The URL is: "+simswapurl);
         if (simswapurl.contains("swapmysim")) {
-            log.debug("The Swap you sim page is displayed");
-
+            log.debug("Swap you sim page is displayed");
+            Screenshots.captureScreenshot();
         } else {
 
-            log.debug("The Swap my sim page is not displayed");
+            log.debug("Swap my sim page is not displayed");
         }
         driver.close();
         Thread.sleep(2000);
@@ -1782,7 +1782,7 @@ public class UpgradeCustomerPageActions extends Environment {
 
         if (UpgradeCustomerPage.ConfirmCTA.isDisplayed()) {
             UpgradeCustomerPage.ConfirmCTA.click();
-            log.debug("The Confirm CTA is clicked");
+            log.debug("Your sim section Confirm CTA is clicked");
         }
         Thread.sleep(3000);
         JavascriptExecutor jse = (JavascriptExecutor) driver;
@@ -2226,11 +2226,12 @@ public class UpgradeCustomerPageActions extends Environment {
 
     public static void clickOnViewAllTariffslink() throws InterruptedException, IOException {
 
-        Thread.sleep(5000);
-
+        Thread.sleep(2000);
+        scrollToAnElement.scrollToElement(pageobjects.UpgradeCustomerPage.whichTariff);
+        Screenshots.captureScreenshot();
         ((JavascriptExecutor) driver).executeScript("arguments[0].click();",
                 pageobjects.UpgradeCustomerPage.ViewAllTariffs);
-        Screenshots.captureScreenshot();
+        //Screenshots.captureScreenshot();
     }
 
     public static void Logout() throws InterruptedException, IOException {
@@ -3106,5 +3107,55 @@ public class UpgradeCustomerPageActions extends Environment {
             Assert.fail("Failed click on 'No Thanks, Ill Keep My Device': "+ e.getMessage());
         }
     }
-    
+
+     public static void clickOnGetStartedCTA(){
+        try {
+            if(driver.findElements(By.xpath("//button[@class='btnblue']")).size()>0){
+                /*scrollToAnElement.scrollToElement(UpgradeCustomerPage.chooseDeviseSection);
+                Screenshots.captureScreenshot();*/
+                JavascriptExecutor jse = (JavascriptExecutor) driver;
+                jse.executeScript("window.scrollBy(0,300)", "");
+
+                Thread.sleep(3000);
+                log.debug("Clicking on Get Started CTA");
+                //JavascriptExecutor jse = (JavascriptExecutor) driver;
+                jse.executeScript("arguments[0].click()", pageobjects.UpgradeCustomerPage.GetStartedCTA);
+                //UpgradeCustomerPage.GetStartedCTA.click();
+                Thread.sleep(4000);
+                Screenshots.captureScreenshot();
+            }
+        }catch (Exception e){
+            log.info("Unable to click on Get Started CTA "+ e.getMessage());
+            Assert.fail("Unable to click on Get Started CTA "+ e.getMessage());
+        }
+    }
+
+    public static void clickOnDevice_ConfirmCTA() throws Exception {
+
+        Screenshots.captureScreenshot();
+        if (driver.findElements(By.xpath("//div[@class='choose-your-phone-container clear-row']/button[normalize-space()='Confirm']")).size()>0) {
+            JavascriptExecutor jse = (JavascriptExecutor) driver;
+            jse.executeScript("arguments[0].click()", pageobjects.UpgradeCustomerPage.deviceConfirmCTA);
+            //UpgradeCustomerPage.deviceConfirmCTA.click();
+            log.debug("The device Confirm CTA is clicked");
+        }
+        Thread.sleep(3000);
+        Screenshots.captureScreenshot();
+    }
+
+    public static void clickOnContinueUpgradeExtraSection() throws Exception {
+
+        Screenshots.captureScreenshot();
+        if (driver.findElements(By.xpath("//div[@id='extras-section']/div[3]/button")).size()>0) {
+            JavascriptExecutor jse = (JavascriptExecutor) driver;
+            jse.executeScript("arguments[0].click()", pageobjects.UpgradeCustomerPage.extraContinueCTA);
+            //UpgradeCustomerPage.deviceConfirmCTA.click();
+            log.debug("Clicked on 'continue' CTA at extra section");
+        }
+        Thread.sleep(3000);
+        Screenshots.captureScreenshot();
+    }
+
+
+
 }

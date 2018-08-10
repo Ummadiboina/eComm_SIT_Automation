@@ -22,5 +22,5 @@ Feature: 70_Reg_Current_MBB_URL_no_change_Order_placement
 
     #Modify the above step to include pdf download
     Examples:
-      | username               | password | user         | Firstname | Surname | consumer | B1  | B2  | B3     | B4  | Text | Email  | Phone  | Post | status  | MBBStatus | DeviceType |
-      | in034242_226353@o2.com | test123  | TEST ACCEPTA | TEST      | ACCEPTA | Me       | Not | Not | Select | Not | Not  | Select | Select | Not  | Enabled | No        | Connected  |
+      | username                     | password | user         | Firstname | Surname | consumer | B1  | B2  | B3     | B4  | Text | Email  | Phone  | Post | status  | MBBStatus | DeviceType |
+      | ina_feb3828@stf.ref.o2.co.uk | test123  | TEST ACCEPTA | TEST      | ACCEPTA | Me       | Not | Not | Select | Not | Not  | Select | Select | Not  | Enabled | No        | Connected  |

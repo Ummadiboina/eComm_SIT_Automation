@@ -1224,7 +1224,7 @@ public class E2EOrderPlaced_Steps {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, BasketPage.class);
             Thread.sleep(3000);
-            log.debug("We are in yourbasket page");
+            log.debug("We are in your basket page");
             BasketPageActions.gotoCheckout();
             Thread.sleep(5000);
         } catch (Exception e) {
@@ -1345,7 +1345,9 @@ public class E2EOrderPlaced_Steps {
         try {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, DeliveryPage.class);
-
+            JavascriptExecutor jse = (JavascriptExecutor) driver;
+            jse.executeScript("window.scrollBy(0,300)", "");
+            Screenshots.captureScreenshot();
             DeliveryPageActions.SetDelivery();
             Thread.sleep(4000);
             DeliveryPageActions.AboutYou(Firstname, Surname);
@@ -1380,8 +1382,10 @@ public class E2EOrderPlaced_Steps {
             PageFactory.initElements(driver, DeliveryPage.class);
             //CommonFunctionscheckTitle("Delivery Page");
             //DeliveryPageActions.SetDelivery();
-
-            //DeliveryPageActions.ClickAndCollect();
+            JavascriptExecutor jse = (JavascriptExecutor) driver;
+            jse.executeScript("window.scrollBy(0,300)", "");
+            Screenshots.captureScreenshot();
+            DeliveryPageActions.ClickAndCollect();
             Thread.sleep(5000);
             DeliveryPageActions.AboutYou(Firstname, Surname);
             // DeliveryPageActions.ClickContinue();
@@ -1924,7 +1928,7 @@ public class E2EOrderPlaced_Steps {
             Thread.sleep(5000);
             DeliveryPageActions.SetDelivery();
             Thread.sleep(4000);
-            // PaymentPageActions.Time_At_Address_CC();
+            //PaymentPageActions.Time_At_Address_CC();
             PaymentPageActions.Time_At_Address();
             Thread.sleep(5000);
             PaymentPageActions.Card_Details(Username);
@@ -2229,6 +2233,8 @@ public class E2EOrderPlaced_Steps {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, ReviewPage.class);
             Thread.sleep(5000);
+            JavascriptExecutor jse = (JavascriptExecutor) driver;
+            jse.executeScript("window.scrollBy(0,300)", "");
             ReviewPageActions.gettitlepage();
             Thread.sleep(3000);
             ReviewPageActions.TermsCheckBox();
@@ -2930,7 +2936,7 @@ public class E2EOrderPlaced_Steps {
             log.debug("Completed Credit check");
             Agent_CreditCheckPageActions.BankDetails(Username);
             log.debug("Completed Bank details");
-            Thread.sleep(5000);
+            Thread.sleep(8000);
 
         } catch (Exception e) {
             // TODO Auto-generated catch block
@@ -2996,7 +3002,7 @@ public class E2EOrderPlaced_Steps {
             log.debug("Completed Credit check");
             Agent_CreditCheckPageActions.BankDetails(Username);
             log.debug("Completed Bank details");
-            Thread.sleep(30000);
+            Thread.sleep(10000);
 
         } catch (Exception e) {
             // TODO Auto-generated catch block
@@ -3816,7 +3822,7 @@ public class E2EOrderPlaced_Steps {
             MouseHoverAction.UpgradeandUpgradeNow();
             Thread.sleep(5000);
             Autoredirection.redirectUpgrades();
-            UpgradeCustomerPageActions.viewAllPhones();
+            //UpgradeCustomerPageActions.viewAllPhones();
             Thread.sleep(2000);
         } catch (Exception e) {
             // TODO Auto-generated catch block
@@ -3852,6 +3858,7 @@ public class E2EOrderPlaced_Steps {
             PageFactory.initElements(driver, UpgradePhonesListingPage.class);
             PageFactory.initElements(driver, PhonesListingPage.class);
             Thread.sleep(3000);
+            UpgradeCustomerPageActions.viewAllPhones();
             UpgradeCustomerPageActions.upgradePAYMPhoneSelect(handset);
         } catch (Exception e) {
             // TODO Auto-generated catch block
@@ -5594,6 +5601,7 @@ public class E2EOrderPlaced_Steps {
             JavascriptExecutor executor = (JavascriptExecutor) driver;
             executor.executeScript("arguments[0].click();", driver.findElement(By.xpath("(//button[normalize-space()='Select'])[2]")));
             Thread.sleep(7000);
+
         } catch (Exception e) {
             e.printStackTrace();
             Assert.fail("Unable to select a device from Recommended devices section");
@@ -7554,7 +7562,6 @@ public class E2EOrderPlaced_Steps {
     @And("^Click on Tablet section in upgrade options page$")
     public void click_on_Tablets_tab() {
         try {
-
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, UpgradeCustomerPage.class);
             UpgradeCustomerPageActions.clickOnTabletstab();
@@ -7587,7 +7594,7 @@ public class E2EOrderPlaced_Steps {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, UpgradeCustomerPage.class);
             Thread.sleep(5000);
-            Screenshots.captureScreenshot();
+           // Screenshots.captureScreenshot();
             UpgradeCustomerPageActions.clickOnViewAllTariffslink();
             Thread.sleep(5000);
 
@@ -8207,8 +8214,8 @@ public class E2EOrderPlaced_Steps {
         } catch (Exception e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
-            log.debug("Unable to Click on view all tariff link");
-            Assert.fail("Unable to Click on view all tariff link");
+            log.debug("Unable to select tariff");
+            Assert.fail("Unable to select tariff");
         }
     }
 
@@ -8542,7 +8549,7 @@ public class E2EOrderPlaced_Steps {
 
 
     @And("^MSISDN is displayed as label only$")
-    public void msisdnIsDisplayedAsLabelOnly() throws Throwable {
+    public void msisdnIsDisplayedAsLabelOnly() {
         try {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, ReviewAndConfirmPage.class);
@@ -8554,7 +8561,7 @@ public class E2EOrderPlaced_Steps {
     }
 
     @And("^the 'About you' section is not displayed$")
-    public void theAboutYouSectionIsNotDisplayed() throws Throwable {
+    public void theAboutYouSectionIsNotDisplayed() {
         try {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, ReviewAndConfirmPage.class);
@@ -9016,7 +9023,7 @@ public class E2EOrderPlaced_Steps {
 
 
     @And("^the Progress bar is not displayed at the top$")
-    public void theProgressBarIsNotDisplayedAtTheTop() throws Throwable {
+    public void theProgressBarIsNotDisplayedAtTheTop() {
         try {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, ReviewAndConfirmPage.class);
@@ -9034,7 +9041,7 @@ public class E2EOrderPlaced_Steps {
     }
 
     @And("^the Header navigation is not displayed$")
-    public void theHeaderNavigationIsNotDisplayed() throws Throwable {
+    public void theHeaderNavigationIsNotDisplayed() {
         try {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, ReviewAndConfirmPage.class);
@@ -9105,7 +9112,7 @@ public class E2EOrderPlaced_Steps {
     }
 
     @And("^the Order summary and the assurance messages is not displayed on the right$")
-    public void theOrderSummaryAndTheAssuranceMessagesIsNotDisplayedOnTheRight() throws Throwable {
+    public void theOrderSummaryAndTheAssuranceMessagesIsNotDisplayedOnTheRight() {
         try {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, ReviewAndConfirmPage.class);
@@ -10710,5 +10717,46 @@ public class E2EOrderPlaced_Steps {
 
         }
 
+    }
+
+    @And("^Click on 'Get Started' CTA$")
+    public void ClickOn_GetStartedCTA() {
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+        try {
+            PageFactory.initElements(driver, UpgradeCustomerPage.class);
+            UpgradeCustomerPageActions.clickOnGetStartedCTA();
+
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+            Assert.fail("Unable to click on 'Get Started CTA'");
+
+        }
+    }
+
+    @And("^Click on device 'Confirm CTA'$")
+    public void clickOnDeviceConfirm_CTA() {
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, UpgradeCustomerPage.class);
+            UpgradeCustomerPageActions.clickOnDevice_ConfirmCTA();
+        } catch (Exception e) {
+            e.printStackTrace();
+            Assert.fail("The device confirm CTA is not clicked");
+        }
+    }
+
+    @And("^Click on 'Continue' button on upgrade page at extra section$")
+    public void clickOnContinueUpgrade_extraSection() {
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, UpgradeCustomerPage.class);
+            Thread.sleep(6000);
+            UpgradeCustomerPageActions.clickOnContinueUpgradeExtraSection();
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+            Assert.fail("Unable to click on Continue button");
+        }
     }
 }

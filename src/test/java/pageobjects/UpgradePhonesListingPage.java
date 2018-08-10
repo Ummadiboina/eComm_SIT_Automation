@@ -10,7 +10,7 @@ public class UpgradePhonesListingPage {
 
 	// @FindBy(how = How.XPATH, using = "//a[contains(@href,
 	// '/upgrade/phones/']")
-	@FindBy(how = How.XPATH, using = "//a[normalize-space()='View all phones']")
+	@FindBy(how = How.XPATH, using = "//a[normalize-space()='View all phones'] | //a[normalize-space()='See all phones']")
 	public static WebElement ViewAllPhones;
 
 	// Below Are list of all the phones in first page of the PayM phones landing
