@@ -23,5 +23,5 @@ Feature: 10_Reg_CFA_Phones_customers_moved_to_new_address_Payment_page_Home_Addr
 
 
     Examples:
-      | handset   | Firstname | Surname | Username     | consumer | B1  | B2  | B3  | B4  | Text | Email | Phone | Post | status  | MBBStatus | DeviceType |
-      | Galaxy S8 | TEST      | ACCEPTA | TEST ACCEPTA | Someone  | Not | Yes | Not | Not | Yes  | Not   | Not   | Not  | Enabled | No        | Connected  |
+      | handset  | Firstname | Surname | Username     | consumer | B1  | B2  | B3  | B4  | Text | Email | Phone | Post | status  | MBBStatus | DeviceType |
+      | iPhone X | TEST      | ACCEPTA | TEST ACCEPTA | Someone  | Not | Not | Not | Not | Not  | Not   | Not   | Not  | Enabled | No        | Connected  |

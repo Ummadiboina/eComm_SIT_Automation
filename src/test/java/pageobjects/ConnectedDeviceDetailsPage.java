@@ -17,6 +17,10 @@ public class ConnectedDeviceDetailsPage {
     @FindBy(how = How.XPATH, using = "(//a[normalize-space()='See our plans'])[1]")
     public static WebElement SeeOurplans;
 
+    @FindBy(how = How.XPATH, using = "(//button[normalize-space()='Add to basket'])[1]")
+    public static WebElement AddtoBasket;
+
+
     // the element not found issue was mainly because not giving proper element
     // idenfier, had declared ID in xpath defining format
 

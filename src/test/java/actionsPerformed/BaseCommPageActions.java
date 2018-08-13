@@ -37,7 +37,7 @@ public class BaseCommPageActions extends Environment {
 		Screenshots.captureScreenshot();
 	}
 
-	public static void checkIfiPadDevicesArePresent() throws IOException, InterruptedException {
+	public static void checkIfiPadDevicesArePresent() throws IOException {
 
 		// List<WebElement> iPadDevices =
 		// pageobjects.BaseCommPage.iPadDevicesName;
@@ -63,7 +63,7 @@ public class BaseCommPageActions extends Environment {
 		Screenshots.captureScreenshot();
 	}
 
-	public static void clickOniPadTab() throws IOException, InterruptedException {
+	public static void clickOniPadTab() throws IOException {
 		try {
 			log.debug("clicking on iPad Tab");
 			pageobjects.BaseCommPage.iPad.click();
@@ -77,13 +77,13 @@ public class BaseCommPageActions extends Environment {
 
 	}
 
-	public static void clickOnSortTab() throws IOException, InterruptedException {
+	public static void clickOnSortTab() throws IOException {
 		log.debug("clicking on Sort Tab");
 		pageobjects.BaseCommPage.SortTab.click();
 		Screenshots.captureScreenshot();
 	}
 
-	public static void selectSortOption(String Sort) throws IOException, InterruptedException {
+	public static void selectSortOption(String Sort) throws IOException {
 		log.debug("Selecting Sort option" + Sort);
 		if (Sort.equals("MonthlyHighToLow")) {
 			pageobjects.SortingAndFilter.MonthlyHighToLow.click();
@@ -125,13 +125,13 @@ public class BaseCommPageActions extends Environment {
 
 	}
 
-	public static void clickOnResetSort() throws IOException, InterruptedException {
+	public static void clickOnResetSort() throws IOException {
 		log.debug("clicking on Reset Sort");
 		pageobjects.SortingAndFilter.ResetSort.click();
 		Screenshots.captureScreenshot();
 	}
 
-	public static void CompareURL(String NewURL) throws IOException, InterruptedException {
+	public static void CompareURL(String NewURL) throws IOException {
 		log.debug("Comparing URL");
 		// URL is reference , some instance which needs to be initialsed for
 
@@ -143,7 +143,7 @@ public class BaseCommPageActions extends Environment {
 		Screenshots.captureScreenshot();
 	}
 
-	public static void VerifyIpadURL() throws IOException, InterruptedException {
+	public static void VerifyIpadURL() throws IOException {
 
 		log.debug("Going to Verify content inside URL");
 		String currenturl = driver.getCurrentUrl();
@@ -164,7 +164,7 @@ public class BaseCommPageActions extends Environment {
 		Screenshots.captureScreenshot();
 	}
 
-	public static void VerifyTabletURL() throws IOException, InterruptedException {
+	public static void VerifyTabletURL() throws IOException {
 		log.debug("Going to Verify content inside URL");
 		String currenturl = driver.getCurrentUrl();
 		log.debug(currenturl);
@@ -256,13 +256,19 @@ public class BaseCommPageActions extends Environment {
 		// log.debug("title is "+driver.getTitle());
 		// String title=driver.findElement(By.id("header-primary")).getText();
 
-		Assert.assertEquals(title, "Tariff and extras");
+		//Assert.assertEquals(title, "Tariff and extras");
+
+		if(title.contains("Choose your tariff")) {
+		log.debug("Verified T&E page successfully");
+		}else{
+			Assert.fail("Failed to verify T&E page");
+		}
 		log.debug("End of Verify Page function");
 		Screenshots.captureScreenshot();
 
 	}
 
-	public static void VerifyRibbon(String device) throws IOException, InterruptedException {
+	public static void VerifyRibbon(String device) throws IOException {
 		// TODO Auto-generated method stub
 		log.debug("Going to Verify promotion ribbon");
 		int k = 0;
@@ -386,11 +392,11 @@ public class BaseCommPageActions extends Environment {
 		Screenshots.captureScreenshot();
 	}
 
-	public static void verifyTariffType(String flow) throws IOException, InterruptedException {
+	public static void verifyTariffType(String flow) throws IOException {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 
 		List<WebElement> PayInFull = driver.findElements(By.id("link-pay-for-your-device"));
-		List<WebElement> ViewAllTariffs = driver.findElements(By.xpath("//div[@class='viewAllTariffs']"));
+		List<WebElement> ViewAllTariffs = driver.findElements(By.xpath("//div[@class='viewAllTariffs' or @class='viewAllTariffsBaner']"));
 		List<String> NormalUpfrontCost = new ArrayList<>();
 		List<String> NormalMonthlyCost = new ArrayList<>();
 
@@ -398,8 +404,8 @@ public class BaseCommPageActions extends Environment {
 		List<String> BasecommMonthlyCost = new ArrayList<>();
 
 		if (flow.equals("Normal")) {
-			List<WebElement> UpfrontCostElement = pageobjects.PAYMandPAYGTariffAndExtrasPage.UpfrontCost;
-			List<WebElement> MonthlyCostElement = pageobjects.PAYMandPAYGTariffAndExtrasPage.MonthlyCost;
+			List<WebElement> UpfrontCostElement = pageobjects.PAYMandPAYGTariffAndExtrasPage.NormalUpfrontCost;
+			List<WebElement> MonthlyCostElement = pageobjects.PAYMandPAYGTariffAndExtrasPage.NormalMonthlyCost;
 			int k = 0;
 
 			if (ViewAllTariffs.size() > 0) {
@@ -440,9 +446,11 @@ public class BaseCommPageActions extends Environment {
 
 		if (flow.equals("Basecomm")) {
 
-			List<WebElement> UpfrontCostElement = pageobjects.PAYMandPAYGTariffAndExtrasPage.UpfrontCost;
-			List<WebElement> MonthlyCostElement = pageobjects.PAYMandPAYGTariffAndExtrasPage.MonthlyCost;
-			int k = 0;
+			if (PayInFull.size() > 0) {
+				js.executeScript("arguments[0].click();", PayInFull.get(0));
+			} else {
+				log.debug("No PayInFull link present");
+			}
 
 			if (ViewAllTariffs.size() > 0) {
 
@@ -450,11 +458,11 @@ public class BaseCommPageActions extends Environment {
 			} else {
 				log.debug("No ViewAllTariffs");
 			}
-			if (PayInFull.size() > 0) {
-				js.executeScript("arguments[0].click();", PayInFull.get(0));
-			} else {
-				log.debug("No PayInFull");
-			}
+
+			List<WebElement> UpfrontCostElement = pageobjects.PAYMandPAYGTariffAndExtrasPage.BasecommUpfrontCost;
+			List<WebElement> MonthlyCostElement = pageobjects.PAYMandPAYGTariffAndExtrasPage.BasecommMonthlyCost;
+			int k = 0;
+
 
 			if (UpfrontCostElement.size() != 0) {
 				for (int i = 0; i < UpfrontCostElement.size(); i++) {
@@ -496,7 +504,7 @@ public class BaseCommPageActions extends Environment {
 		}
 	}
 
-	public static void verifyTariffTypeMBB(String device, String flow) throws IOException, InterruptedException {
+	public static void verifyTariffTypeMBB(String device, String flow) throws IOException {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		List<String> NormalUpfrontCost = new ArrayList<>();
 		List<String> NormalMonthlyCost = new ArrayList<>();
@@ -505,8 +513,8 @@ public class BaseCommPageActions extends Environment {
 
 		if (flow.equals("Normal")) {
 
-			List<WebElement> UpfrontCostElement = pageobjects.PAYMandPAYGTariffAndExtrasPage.UpfrontCost;
-			List<WebElement> MonthlyCostElement = pageobjects.PAYMandPAYGTariffAndExtrasPage.MonthlyCost;
+			List<WebElement> UpfrontCostElement = pageobjects.PAYMandPAYGTariffAndExtrasPage.NormalUpfrontCost;
+			List<WebElement> MonthlyCostElement = pageobjects.PAYMandPAYGTariffAndExtrasPage.NormalMonthlyCost;
 			int k = 0;
 
 			if (ViewAllTariffs.size() > 0) {
@@ -718,7 +726,7 @@ public class BaseCommPageActions extends Environment {
 	}
 
 	public static void checkExpDevAndDetails(String device, String color, String capacity, String stockmessage)
-			throws IOException, InterruptedException {
+			throws IOException {
 		log.debug("Inside checkExpDevAndDetails function");
 		log.debug(device + color + capacity + stockmessage);
 		int k = 0;
@@ -779,7 +787,7 @@ public class BaseCommPageActions extends Environment {
 		Screenshots.captureScreenshot();
 	}
 
-	public static void checkExpDevAndDetailsForComingSoonDevice(String device, String color, String capacity, String stockmessage) throws IOException, InterruptedException {
+	public static void checkExpDevAndDetailsForComingSoonDevice(String device, String color, String capacity, String stockmessage) throws IOException {
 		log.debug("Inside checkExpDevAndDetails function");
 		log.debug(device + color + capacity + stockmessage);
 		int k = 0;
@@ -921,7 +929,7 @@ public class BaseCommPageActions extends Environment {
 		Screenshots.captureScreenshot();
 	}
 
-	public static void isPayAsUGoTabDisplayed() throws IOException, InterruptedException {
+	public static void isPayAsUGoTabDisplayed() throws IOException {
 		log.debug("checking whether Pay As U Go tab is displayed");
 		List<WebElement> PayAsYouGo = driver.findElements(By.xpath("(//a[@href='?contractType=payasyougo'])"));
 		if (PayAsYouGo.size() > 0) {
@@ -990,7 +998,7 @@ public class BaseCommPageActions extends Environment {
 	 */
 
 	public static void checkImgSrcBasecommPage(String devicename, String capacity, String color)
-			throws IOException, InterruptedException {
+			throws IOException {
 		log.debug("checking whether new image is as per the selected color");
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		String color1 = null, color2 = null, colorname = null, capacity_color = null, capacity_color1 = null,
@@ -1145,7 +1153,7 @@ public class BaseCommPageActions extends Environment {
 
 	}
 
-	public static void checkRecommendedTariffIsAtFirstTile() throws IOException, InterruptedException {
+	public static void checkRecommendedTariffIsAtFirstTile() throws IOException {
 
 		List<WebElement> tariffs = pageobjects.BaseCommPage.TariffTile;
 
@@ -1159,7 +1167,7 @@ public class BaseCommPageActions extends Environment {
 		Screenshots.captureScreenshot();
 	}
 
-	public static void checkContentsOfBaseCommPage() throws IOException, InterruptedException {
+	public static void checkContentsOfBaseCommPage() throws IOException {
 		List<WebElement> panellist = driver.findElements(By.xpath("//div[@id='panel']//div"));
 		WebElement BannerDescription = driver.findElement(By.xpath("//div[@class='default-content-container']"));
 
@@ -1202,7 +1210,7 @@ public class BaseCommPageActions extends Environment {
 		Screenshots.captureScreenshot();
 	}
 
-	public static void checkUserNavigatedTEPage() throws IOException, InterruptedException {
+	public static void checkUserNavigatedTEPage() throws IOException {
 
 		log.debug("Title of the page is  " + driver.getTitle());
 		if (driver.getTitle().contains("Tariffs And Extras")) {
@@ -1225,7 +1233,7 @@ public class BaseCommPageActions extends Environment {
 		Screenshots.captureScreenshot();
 	}
 
-	public static void checkIfTabletDevicesArePresent() throws IOException, InterruptedException {
+	public static void checkIfTabletDevicesArePresent() throws IOException {
 
 		List<WebElement> OtherTabletDevices = pageobjects.BaseCommPage.TabletDevicesName;
 

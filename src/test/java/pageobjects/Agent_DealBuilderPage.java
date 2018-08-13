@@ -125,6 +125,10 @@ public class Agent_DealBuilderPage {
     @FindBy(how = How.XPATH, using = "//div[@id='deviceTable_filter']/label/input")
     public static WebElement SearchDevice;
 
+    @FindBy(how = How.XPATH, using = "html/body/div[1]/div/div[2]/div[1]/table/tbody/tr[1]/td[1]/a/img")
+    public static WebElement firstDevice;
+
+
     ///////////////////////////// Trade In////////////////////////
 
     @FindBy(how = How.ID, using = "tradeInButton")

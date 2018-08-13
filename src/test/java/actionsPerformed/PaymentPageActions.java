@@ -55,24 +55,26 @@ public class PaymentPageActions extends Environment {
         jse.executeScript("window.scrollBy(0,300)", "");
 
         Thread.sleep(2000);
-        pageobjects.PaymentPage.Name_On_Account.sendKeys(Username);
-        log.debug("Entered name is " + Username);
-        Thread.sleep(2000);
-        pageobjects.PaymentPage.Account_Number.sendKeys("10207136");
-        log.debug("Entered Account number - 10207136");
-        Thread.sleep(2000);
-        pageobjects.PaymentPage.Sort_Code1.sendKeys("20");
-        log.debug("Entered sort code - 20");
-        Thread.sleep(2000);
-        pageobjects.PaymentPage.Sort_Code2.sendKeys("15");
-        log.debug("Entered sort code - 15");
-        Thread.sleep(2000);
-        pageobjects.PaymentPage.Sort_Code3.sendKeys("96");
-        log.debug("Entered sort code - 96");
-        Thread.sleep(2000);
-        Screenshots.captureScreenshot();
-        pageobjects.PaymentPage.Accept_Terms_Checkbox.click();
-        log.debug("Clicked on the Accept Terms checkbox");
+        if(driver.findElements(By.xpath("//input[@id='accountName']")).size()>0) {
+            pageobjects.PaymentPage.Name_On_Account.sendKeys(Username);
+            log.debug("Entered name is " + Username);
+            Thread.sleep(2000);
+            pageobjects.PaymentPage.Account_Number.sendKeys("10207136");
+            log.debug("Entered Account number - 10207136");
+            Thread.sleep(2000);
+            pageobjects.PaymentPage.Sort_Code1.sendKeys("20");
+            log.debug("Entered sort code - 20");
+            Thread.sleep(2000);
+            pageobjects.PaymentPage.Sort_Code2.sendKeys("15");
+            log.debug("Entered sort code - 15");
+            Thread.sleep(2000);
+            pageobjects.PaymentPage.Sort_Code3.sendKeys("96");
+            log.debug("Entered sort code - 96");
+            Thread.sleep(2000);
+            Screenshots.captureScreenshot();
+            pageobjects.PaymentPage.Accept_Terms_Checkbox.click();
+            log.debug("Clicked on the Accept Terms checkbox");
+        }
         Screenshots.captureScreenshot();
 
     }
@@ -241,7 +243,7 @@ public class PaymentPageActions extends Environment {
 
         log.debug("********We are switch to the iframe*******");
         log.debug("Entering the Payments section");
-        Thread.sleep(3000);
+        Thread.sleep(5000);
         scrollToAnElement.scrollToElement(PaymentPage.CardHolderName);
         //scrollToAnElement.scrollToElement(driver.findElement(By.xpath("//div[@id='card-details-section']/div[2]/h2")));
 
@@ -412,14 +414,14 @@ public class PaymentPageActions extends Environment {
 
         if (ActualText.contains(ExpectedText)) {
             log.debug("Verification Success: Copy text message is getting displayed below home address");
-            log.debug("Verification Success: Copy text message is getting displayed below home address");
+
         } else {
             log.debug("Verification Failed: Copy text message is not getting displayed below home address");
-            log.debug("Verification Failed: Copy text message is not getting displayed below home address");
+
         }
 
         log.debug("Assertion worked for Ecomm-11886");
-        log.debug("Assertion worked for Ecomm-11886");
+
         Screenshots.captureScreenshot();
 
     }

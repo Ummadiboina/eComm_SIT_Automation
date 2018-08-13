@@ -107,7 +107,7 @@ public class Agent_DealBuilderPageActions extends Environment {
             Agent_DealBuilderPage.SelectingFirstAvailableTariff.click();
             Thread.sleep(3000);
             log.debug("Selected Random Basecomms Tariff ");
-            log.debug("Selected Random Basecomms Tariff ");
+
         }
         Screenshots.captureScreenshot();
 
@@ -479,18 +479,23 @@ public class Agent_DealBuilderPageActions extends Environment {
         Thread.sleep(3000);
 
         if (Status.contains("Delayed")) {
-            Thread.sleep(3000);
+
             Agent_DealBuilderPage.SearchDevice.sendKeys(Status);
             Thread.sleep(3000);
             log.debug("Sent search as - " + Status);
+            /*Agent_DealBuilderPage.firstDevice.click();
+            log.debug("Selected Delayed device");*/
         }
 
         if (Status.contains("preorder")) {
-            Thread.sleep(3000);
+
             Agent_DealBuilderPage.SearchDevice.sendKeys(Status);
             Thread.sleep(3000);
             log.debug("Sent search as - " + Status);
+            Agent_DealBuilderPage.firstDevice.click();
+            log.debug("Selected pre order device");
         }
+
         Screenshots.captureScreenshot();
     }
 

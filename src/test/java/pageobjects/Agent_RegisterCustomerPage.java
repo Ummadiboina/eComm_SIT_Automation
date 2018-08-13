@@ -40,7 +40,7 @@ public class Agent_RegisterCustomerPage {
     @FindBy(how = How.XPATH, using = "//input[@name='postcode']")
     public static WebElement Postcode;
 
-    @FindBy(how = How.XPATH, using = "//input[@value='Find address']")
+    @FindBy(how = How.XPATH, using = "(//input[@value='Find address'])[1]")
     public static WebElement FindAddress;
 
     @FindBy(how = How.XPATH, using = "(//input[@value='Select address'])[1]")
@@ -122,7 +122,7 @@ public class Agent_RegisterCustomerPage {
     @FindBy(how = How.XPATH, using = "//*[@id='ddlMonth' or @id='Month']")
     public static WebElement CardMonth;
 
-    @FindBy(how = How.XPATH, using = "//*[@id='ddlYear' or @id='ddlYr']")
+    @FindBy(how = How.XPATH, using = "//*[@id='ddlYear' or @id='ddlYr' or @id='Year']")
     public static WebElement CardYear;
 
     ////label[normalize-space()='Security number']/following-sibling::input

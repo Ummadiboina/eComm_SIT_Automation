@@ -22,7 +22,7 @@ public class MobileBroadBandPageActions extends Environment {
 			log.debug("Random Device Selected");
 			Thread.sleep(5000);
 			JavascriptExecutor executor = (JavascriptExecutor) driver;
-			Thread.sleep(3000);
+
 			executor.executeScript("arguments[0].click();", pageobjects.MobileBroadBandPage.RandomPayGDeviceSelect);
 			//pageobjects.MobileBroadBandPage.RandomPayGDeviceSelect.click();
 			// Assert.assertEquals(elementName,"Galaxy S7 is not found");

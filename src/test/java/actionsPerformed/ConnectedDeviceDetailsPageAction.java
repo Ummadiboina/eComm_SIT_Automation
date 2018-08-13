@@ -69,9 +69,17 @@ public class ConnectedDeviceDetailsPageAction extends Environment {
         /*WebElement ele1 = pageobjects.ConnectedDeviceDetailsPage.ViewOurTariffs;
         jse.executeScript("arguments[0].click();", ele1);*/
 
-        WebElement ele1 = pageobjects.ConnectedDeviceDetailsPage.SeeOurplans;
-        jse.executeScript("arguments[0].click();", ele1);
-        log.debug("Clicked on ViewOurTariffs/ See our plans");
+        if(driver.findElements(By.xpath("(//a[normalize-space()='See our plans'])[1]")).size()>0) {
+            if(pageobjects.ConnectedDeviceDetailsPage.SeeOurplans.isDisplayed()) {
+                WebElement ele1 = pageobjects.ConnectedDeviceDetailsPage.SeeOurplans;
+                jse.executeScript("arguments[0].click();", ele1);
+                log.debug("Clicked on ViewOurTariffs/ See our plans");
+            }else{
+                WebElement ele1 = pageobjects.ConnectedDeviceDetailsPage.AddtoBasket;
+                jse.executeScript("arguments[0].click();", ele1);
+                log.debug("Clicked on Add to basket CTA at device details page to land on T&E page");
+            }
+        }
         Thread.sleep(7000);
         // driver.findElement(By.id("deviceDetailsSubmit")).click();
 

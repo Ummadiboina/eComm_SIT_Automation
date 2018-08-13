@@ -24,6 +24,13 @@ public class PAYMandPAYGTariffAndExtrasPage {
 
 	// Below is for Selecting Any Tariff
 
+	@FindBy(how = How.XPATH, using = ("(//button[@class='secondary selectButton tariff-select'])[2] | (//button[@class='secondary selectButton tst-select ng-binding ng-pristine ng-valid'])[2]"))
+	public static WebElement SelectAnyTariff;
+
+	@FindBy(how = How.XPATH, using = ("(//button[@id='callToAction'])[1]"))
+	public static WebElement SelectAnyPayGTariff;
+
+
 	@FindBy(how = How.XPATH, using = ("(//*[@id='callToAction'])[1] | (//button[@class='secondary selectButton tariff-select'])[1]"))
 	public static WebElement RandomTariff1;
 
@@ -94,11 +101,17 @@ public class PAYMandPAYGTariffAndExtrasPage {
 	@FindBys({ @FindBy(how = How.XPATH, using = ("//*[@class='accessory-button-container']/input[@value='Add']")) })
 	public static List<WebElement> Add_AccessoryContainer;
 
-	@FindAll({ @FindBy(how = How.XPATH, using = "//div[@class='col-xs-6 upfront']//span[@class='pound ng-binding']") })
-	public static List<WebElement> UpfrontCost;
+	@FindAll({ @FindBy(how = How.XPATH, using = "//div[@class='tariffs-container pay-monthly-tariffs']//div[@class='col-xs-6 upfront']//span[@class='pound']") })
+	public static List<WebElement> NormalUpfrontCost;
 
-	@FindAll({ @FindBy(how = How.XPATH, using = "//div[@class='col-xs-6 monthly']//span[@class='pound ng-binding']") })
-	public static List<WebElement> MonthlyCost;
+	@FindAll({ @FindBy(how = How.XPATH, using = "//div[@class='tariffs-container pay-monthly-tariffs']//div[@class='col-xs-6 monthly']//span[@class='pound']") })
+	public static List<WebElement> NormalMonthlyCost;
+
+	@FindAll({ @FindBy(how = How.XPATH, using = "//div[@class='tariff-with-device-cost-zero sim-only-user']//div[@class='col-xs-6 upfront']//span[@class='pound']") })
+	public static List<WebElement> BasecommUpfrontCost;
+
+	@FindAll({ @FindBy(how = How.XPATH, using = "//div[@class='tariff-with-device-cost-zero sim-only-user']//div[@class='col-xs-6 monthly']//span[@class='pound']") })
+	public static List<WebElement> BasecommMonthlyCost;
 
 	@FindAll({ @FindBy(how = How.XPATH, using = "(//div[@class='insurance-button-container'])[1]") })
 	public static WebElement AddRandomInsurance;
@@ -109,7 +122,7 @@ public class PAYMandPAYGTariffAndExtrasPage {
 	@FindBy(how = How.XPATH, using = "//select[@id='dataFilterSelect']")
 	public static WebElement TariffSortDropDown;
 
-	@FindAll({ @FindBy(how = How.XPATH, using = "//div[@id='tariff-tile']//ul/li[1]/h2") })
+	@FindAll({ @FindBy(how = How.XPATH, using = "//div[@id='tariff-tile']//ul/li[1]/h2 | //div[@class='col-xs-6 col-sm-3 dmt-container info-container']//ul/li[1]/h2") })
 	public static List<WebElement> DataTextElement;
 
 	@FindAll({
@@ -117,7 +130,7 @@ public class PAYMandPAYGTariffAndExtrasPage {
 	public static List<WebElement> UpfrontTextElement;
 
 	@FindAll({
-			@FindBy(how = How.XPATH, using = "//div[@id='tariff-tile']//div[@class='price-block']/div[@class='col-xs-6 monthly']/h2/span[2]") })
+			@FindBy(how = How.XPATH, using = "//div[@id='tariff-tile' or @class='col-xs-6 col-sm-3 info-container price-block-container']//div[@class='price-block']/div[@class='col-xs-6 monthly']/h2/span[1]") })
 	public static List<WebElement> MonthlyCostTextElement;
 
 	// @FindBy(how = How.XPATH, using =

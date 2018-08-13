@@ -21,5 +21,5 @@ Feature: 23_Reg_AFA_Tablet
     Then Order confirmation message should be displayed
 
     Examples:
-      | Device | Tariffs | DeliveryType | Firstname | Surname | Username     | HouseNumber | PostCode | Consumer | B1     | B2     | B3     | B4  | Text   | Email  | Phone  | Post   | status  | MBBStatus | DeviceType | DeviceModule |
-      | tablet | Random  | HomeDelivery | TEST      | ACCEPTA | TEST ACCEPTA | 18          | SL11UP   | Me       | Select | Select | Select | Not | Select | Select | Select | Select | Enabled | No        | Connected  | Tablet       |
+      | Device     | Tariffs | DeliveryType | Firstname | Surname | Username     | HouseNumber | PostCode | Consumer | B1     | B2     | B3     | B4  | Text   | Email  | Phone  | Post   | status  | MBBStatus | DeviceType | DeviceModule |
+      | Galaxy Tab | Random  | HomeDelivery | TEST      | ACCEPTA | TEST ACCEPTA | 18          | SL11UP   | Me       | Select | Select | Select | Not | Select | Select | Select | Select | Enabled | No        | Connected  | Tablet       |

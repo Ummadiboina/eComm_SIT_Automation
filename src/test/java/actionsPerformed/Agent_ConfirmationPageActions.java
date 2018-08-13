@@ -17,7 +17,7 @@ public class Agent_ConfirmationPageActions extends Environment {
 
 		driver.getTitle();
 		// final String confirmation = confirmation();
-
+		Thread.sleep(5000);
 		try {
 			String basketcontents = Agent_ConfirmationPage.sharedBasketContents.getText();
 			log.debug(basketcontents);

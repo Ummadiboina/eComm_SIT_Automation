@@ -34,7 +34,7 @@ public class PaymentPage {
     @FindBy(how = How.XPATH, using = "//*[@id='input-address-time']//*[@id='months']")
     public static WebElement Stay_Address_months;
 
-    @FindBy(how = How.ID, using = "confirm-address")
+    @FindBy(how = How.XPATH, using = "//input[@id='confirm-address' or @id='confirm-address']")
     public static WebElement Confirm_Address_Checkbox;
 
 /*

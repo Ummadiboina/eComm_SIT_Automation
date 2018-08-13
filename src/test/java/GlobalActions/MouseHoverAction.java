@@ -1118,11 +1118,11 @@ public class MouseHoverAction extends Environment {
 
                 log.debug("Clicking on MBB");
 
-                /*Thread.sleep(8000);
+               driver.manage().timeouts().implicitlyWait(20,TimeUnit.SECONDS);
                 executor.executeScript("arguments[0].click();", MouseHoverPage.PayGMobileBroadband);
-                //pageobjects.MouseHoverPage.PayGMobileBroadband.click();*/
+                //pageobjects.MouseHoverPage.PayGMobileBroadband.click();
 
-                log.debug("Clicking on PayG MBB");
+                log.debug("Clicked on PayG MBB");
                 Thread.sleep(6000);
 
                 /*// Move mouse pointer away from location
@@ -1635,7 +1635,7 @@ public class MouseHoverAction extends Environment {
             if (driver.findElements(By.xpath("//div[@class='nav-consumer']/ul/li/a[contains(@href, '/shop')]")).size() >= 1) {
 
                 log.debug("Performing Pay as you go Tablets navigations");
-                log.debug("Performing Pay as you go Tablets navigations");
+
                 Thread.sleep(3000);
 
                 Point coordinates = pageobjects.MouseHoverPage.MoveMouseOnShopTab.getLocation();

@@ -113,6 +113,7 @@ public class Agent_CreditCheckPageActions extends Environment {
 
 			pageobjects.Agent_CreditCheckDetailsPage.FindAddress.click();
 			log.debug("Clicked on the Find address button");
+			Thread.sleep(4000);
 			pageobjects.Agent_CreditCheckDetailsPage.Selectedaddress.click();
 			log.debug("Selected an address");
 			Screenshots.captureScreenshot();
