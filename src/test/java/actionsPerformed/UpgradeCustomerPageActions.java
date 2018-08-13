@@ -406,7 +406,10 @@ public class UpgradeCustomerPageActions extends Environment {
         Thread.sleep(4000);*/
         //driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
         //WebElement selectBtnEle = driver.findElement(By.xpath("(//button[@type='button']//*[normalize-space()='Select'])[2]"));
-        WebElement selectBtnEle = driver.findElement(By.xpath("(//button[@class='secondary selectButton tariff-select'])[2] | (//button[@class='secondary selectButton tst-select ng-binding ng-pristine ng-valid'])[2]"));
+
+        //WebElement selectBtnEle = driver.findElement(By.xpath("(//button[@class='secondary selectButton tariff-select'])[2] | (//button[@class='secondary selectButton tst-select ng-binding ng-pristine ng-valid'])[2]"));
+
+        WebElement selectBtnEle = PAYMandPAYGTariffAndExtrasPage.SelectAnyTariff;
         Screenshots.captureScreenshot();
         if(selectBtnEle.isDisplayed()){
             ((JavascriptExecutor) driver).executeScript("arguments[0].click();", selectBtnEle);
@@ -450,6 +453,22 @@ public class UpgradeCustomerPageActions extends Environment {
 
 
         //Screenshots.captureScreenshot(Hooks.directoryName);
+    }
+
+    public static void selectPayGTariff(String Tariff) throws IOException, InterruptedException {
+        log.debug("selecting PayG Tariff");
+        Thread.sleep(4000);
+
+            WebElement selectBtnEle = PAYMandPAYGTariffAndExtrasPage.SelectAnyPayGTariff;
+            Screenshots.captureScreenshot();
+            if (selectBtnEle.isDisplayed()) {
+                ((JavascriptExecutor) driver).executeScript("arguments[0].click();", selectBtnEle);
+                log.debug("PayG Tariff has been selected");
+                //log.debug("Selected 'Device with 1GB preloaded data sim'");
+            } else {
+                log.debug("Failed to select the PayG Tariff in the Extras&Tariff page");
+                Assert.fail("Failed to select the PayG Tariff in the Extras&Tariff page");
+            }
     }
 
     public static void selectTariffWithRibbonAndOverlayUpgradeJourney(String Tariff)

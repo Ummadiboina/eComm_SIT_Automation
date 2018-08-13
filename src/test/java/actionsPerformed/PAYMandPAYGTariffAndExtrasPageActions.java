@@ -696,6 +696,7 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 
 		Thread.sleep(2000);
 		log.debug("Sort filter position validation worked fine");
+		scrollToAnElement.scrollToElement(pageobjects.PAYMandPAYGTariffAndExtrasPage.FilterandSortLabel);
 		Screenshots.captureScreenshot();
 	}
 

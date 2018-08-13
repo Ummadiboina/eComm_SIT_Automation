@@ -87,7 +87,7 @@ public class BaseCommPage {
     @FindBy(how = How.XPATH, using = ("//*[@data-qa-device-model-family='Xperia Z2 Tablet']/div[4]/form/button"))
     public static WebElement XperiaZ2TabletBuynow;
 
-    @FindBy(how = How.ID, using = ("header-primary"))
+    @FindBy(how = How.XPATH, using = ("//h2[@class='sectionHeader choose-tariff']"))
     public static WebElement headerofTariffandExtrasPage;
 
     @FindBy(how = How.XPATH, using = ("//div[@class='ribbon-wrapper']"))

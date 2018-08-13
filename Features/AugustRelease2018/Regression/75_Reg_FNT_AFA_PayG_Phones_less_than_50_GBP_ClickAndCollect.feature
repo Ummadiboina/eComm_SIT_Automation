@@ -7,7 +7,7 @@ Feature: 75_Reg_FNT_AFA_PayG_Phones_less_than_50_GBP_ClickAndCollect
     And performs Acquisition for New user
     And Select a PAYG device in stock which is less than 50 GBP
     #And Select a valid PAYG <Device>
-    And Select valid tariff from PAYG tariffs tab which is less than 50 GBP
+    And Select valid tariff from PAYG tariffs tab which is less than <Tariffs> GBP
     And Confirm Device and Tariff are added in Deal Builder
     And Select a valid store using <PostCode> for Click and Collect
     And Validate all the Basket content and checkout

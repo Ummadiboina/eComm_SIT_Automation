@@ -23,10 +23,10 @@ public class UpgradeCustomerPage {
 	@FindBy(how = How.XPATH, using = "(//button[@id='NoThanksIllKeepMyDevice'])[1]")
 	public static WebElement NoThanksIllKeepMyDevice;
 
-	@FindBy(how = How.XPATH, using = "(//input[@id='username'])[2]")
+	@FindBy(how = How.XPATH, using = "(//input[@id='username'])")
 	public static WebElement username;
 
-	@FindBy(how = How.XPATH, using = "(//input[@id='password'])[2]")
+	@FindBy(how = How.XPATH, using = "(//input[@id='password'])")
 	public static WebElement password;
 
 	@FindBy(how = How.XPATH, using = "//input[@id='signInButton']")

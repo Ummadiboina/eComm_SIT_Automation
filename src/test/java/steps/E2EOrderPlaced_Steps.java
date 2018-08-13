@@ -1970,7 +1970,7 @@ public class E2EOrderPlaced_Steps {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, PaymentPage.class);
             PaymentPageActions.ValidateNonCreditPaymentPage();
-            Thread.sleep(10000);
+            Thread.sleep(7000);
             PaymentPageActions.Card_Details(Username);
             Thread.sleep(10000);
             PaymentPageActions.Card_Details_CCV();
@@ -2808,7 +2808,7 @@ public class E2EOrderPlaced_Steps {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, Agent_DealBuilderPage.class);
             Agent_DealBuilderPageActions.ValdiateBasket();
-            Thread.sleep(2000);
+            Thread.sleep(5000);
             Agent_DealBuilderPageActions.checkout();
             Thread.sleep(7000);
         } catch (Exception e) {
@@ -7106,7 +7106,7 @@ public class E2EOrderPlaced_Steps {
             datalistbefore = PAYMandPAYGTariffAndExtrasPageActions.getDataListBeforeSelectingFilter();
             Thread.sleep(4000);
             PAYMandPAYGTariffAndExtrasPageActions.selectFilter(range);
-            Thread.sleep(4000);
+            Thread.sleep(6000);
             FilterDataOption = range;
         } catch (Exception e) {
             // TODO Auto-generated catch block
@@ -8204,6 +8204,21 @@ public class E2EOrderPlaced_Steps {
         }
     }
 
+    @And("^Select a PayG tariff ([^\"]*)$")
+    public void selectPayGTariffTariff(String Tariff) {
+        try {
+            driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, UpgradeCustomerPage.class);
+            PageFactory.initElements(driver, PAYMandPAYGTariffAndExtrasPage.class);
+            UpgradeCustomerPageActions.selectPayGTariff(Tariff);
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+            log.debug("Unable to select PayG tariff");
+            Assert.fail("Unable to select PayG tariff");
+        }
+    }
+
     @And("^Select a tariff ([^\"]*)$")
     public void selectATariffTariff(String Tariff) {
         try {
@@ -8214,8 +8229,8 @@ public class E2EOrderPlaced_Steps {
         } catch (Exception e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
-            log.debug("Unable to select tariff");
-            Assert.fail("Unable to select tariff");
+            log.debug("Unable to select PayG tariff");
+            Assert.fail("Unable to select PayG tariff");
         }
     }
 
