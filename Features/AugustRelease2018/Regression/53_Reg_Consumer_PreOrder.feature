@@ -4,9 +4,15 @@ Feature: 53_Reg_Consumer_PreOrder
   Scenario Outline: CFA PayM Pre Order Phones Home delivery E2E journey
     Given I am an CFA user and Lands on shop page
     And navigate to PAYM Phones page
-    And I search for a PayM <handset> device
+    #And I search for a PayM <handset> device
+    And I choose PayM <handset>
+    And click on the color dropdown
+    And verify the name of the colour is next to the colour tile in CFAPhoneColour
+   # And select a color
+    And select <color> color of the connected device
+    And select <Capacity> capacity of the connected device
     And check the status <Status> of the device
-    And Navigate to device details page
+    And Navigate to View tariff page
     And Land on the 'Tariffs and extra' page
     And I Land on the basket page and choose home delivery option
     And click on "go to checkout" button
@@ -21,5 +27,5 @@ Feature: 53_Reg_Consumer_PreOrder
 
       #Close the browser
     Examples:
-      | handset  | Firstname | Surname | Username     | Status    | consumer | B1  | B2     | B3  | B4  | Text   | Email | Phone | Post | status  | MBBStatus | DeviceType |
-      | iPhone x | TEST      | ACCEPTA | TEST ACCEPTA | Pre Order | Me       | Not | Select | Not | Not | Select | Not   | Not   | Not  | Enabled | No        | Connected  |
+      | handset            | Firstname | color      | Capacity | Surname | Username     | Status    | consumer | B1  | B2     | B3  | B4  | Text   | Email | Phone | Post | status  | MBBStatus | DeviceType |
+      | iPhone SE Like New | TEST      | Space Grey | 32GB     | ACCEPTA | TEST ACCEPTA | Pre Order | Me       | Not | Select | Not | Not | Select | Not   | Not   | Not  | Enabled | No        | Connected  |

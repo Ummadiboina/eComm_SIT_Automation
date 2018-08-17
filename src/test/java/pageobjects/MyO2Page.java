@@ -18,10 +18,10 @@ public class MyO2Page {
 	@FindBy(how = How.XPATH, using = "//div[@class='username']/div[normalize-space()='Sign in to review your account']")
 	public static WebElement signInSectionHintTxt;
 
-	@FindBy(how = How.XPATH, using = "//input[@id='username']")
+	@FindBy(how = How.XPATH, using = "//input[@id='accountsusername']")
 	public static WebElement signInUserName;
 
-	@FindBy(how = How.XPATH, using = "//input[@id='password']")
+	@FindBy(how = How.XPATH, using = "//input[@id='accountspassword']")
 	public static WebElement signInPassword;
 
 	@FindBy(how = How.XPATH, using = "//input[@id='rememberMe']")
@@ -30,7 +30,7 @@ public class MyO2Page {
 	@FindBy(how = How.XPATH, using = "//button[normalize-space()='Sign in']")
 	public static WebElement signInButton;
 
-	@FindBy(how = How.XPATH, using = "//a[contains(text(),'Forgotten your username and password')] | //div[@class='forgotton-your-usern']")
+	@FindBy(how = How.XPATH, using = "//a[contains(text(),'Forgotten your username and password')]")
 	public static WebElement forgotUserName;
 
 	@FindBy(how = How.XPATH, using = "//*[contains(text(),'Sign out')]")

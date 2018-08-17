@@ -702,20 +702,28 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 
 	public static void selectFilter(String range) throws IOException, InterruptedException {
 		Thread.sleep(4000);
-		if (range.equals("low")) {
 
+		List<WebElement> filtersCount = driver.findElements(By.xpath("//div[@class='filter-options']/button | //div[@class='filter-options tariff-page']/button"));
+		log.debug("There are "+filtersCount.size()+" filter ranges \n");
+
+		if (range.equals("low")) {
 			js.executeScript("arguments[0].click();", pageobjects.PAYMandPAYGTariffAndExtrasPage.lowfilter);
+			log.debug("Clicked on low range filter");
 			scrollToAnElement.scrollToElement(PAYMandPAYGTariffAndExtrasPage.lowfilter);
 			Screenshots.captureScreenshot();
 		}
 		if (range.equals("medium")) {
 			js.executeScript("arguments[0].click();", pageobjects.PAYMandPAYGTariffAndExtrasPage.mediumfilter);
+			log.debug("Clicked on medium range filter");
 			scrollToAnElement.scrollToElement(PAYMandPAYGTariffAndExtrasPage.mediumfilter);
 			Screenshots.captureScreenshot();
 		}
 		if (range.equals("high")) {
-			js.executeScript("arguments[0].click();", pageobjects.PAYMandPAYGTariffAndExtrasPage.highfilter);
-			scrollToAnElement.scrollToElement(PAYMandPAYGTariffAndExtrasPage.highfilter);
+			js.executeScript("arguments[0].click();", driver.findElement(By.xpath("//div[@class='filter-options']/button["+filtersCount.size()+"] | //div[@class='filter-options tariff-page']/button["+filtersCount.size()+"]")));
+			log.debug("Clicked on high range filter");
+			/*js.executeScript("arguments[0].click();", pageobjects.PAYMandPAYGTariffAndExtrasPage.highfilter);
+			scrollToAnElement.scrollToElement(PAYMandPAYGTariffAndExtrasPage.highfilter);*/
+			scrollToAnElement.scrollToElement(driver.findElement(By.xpath("//div[@class='filter-options']/button["+filtersCount.size()+"] | //div[@class='filter-options tariff-page']/button["+filtersCount.size()+"]")));
 			Screenshots.captureScreenshot();
 		}
 
@@ -1031,6 +1039,8 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 		String DatafilterText = pageobjects.PAYMandPAYGTariffAndExtrasPage.DataFilterSelectedXpath.getText();
 		log.debug("DatafilterText " + DatafilterText);
 
+		List<WebElement> filtersCount = driver.findElements(By.xpath("//div[@class='filter-options']/button | //div[@class='filter-options tariff-page']/button"));
+
 		if (Filteroption.contains("low")) {
 			// PAYMandPAYGTariffAndExtrasPage.DataTariff_One.getText();
 			String DataFilterLowText = PAYMandPAYGTariffAndExtrasPage.lowfilter.getText();
@@ -1056,7 +1066,9 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 
 		if (Filteroption.contains("high")) {
 			// PAYMandPAYGTariffAndExtrasPage.DataTariff_Three.getText();
-			String DataFilterHighText = PAYMandPAYGTariffAndExtrasPage.highfilter.getText();
+			//String DataFilterHighText = PAYMandPAYGTariffAndExtrasPage.highfilter.getText();
+
+			String DataFilterHighText = driver.findElement(By.xpath("//div[@class='filter-options']/button["+filtersCount.size()+"] | //div[@class='filter-options tariff-page']/button["+filtersCount.size()+"]")).getText();
 			log.debug("DataFilterHighText " + DataFilterHighText);
 
 			if (DataFilterHighText.equals(DatafilterText)) {
@@ -1074,7 +1086,7 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 	}
 
 	public static void DeSelectedState() throws InterruptedException, IOException {
-
+		Thread.sleep(2000);
 		pageobjects.PAYMandPAYGTariffAndExtrasPage.DataFilterSelectedXpath.click();
 		Thread.sleep(5000);
 		scrollToAnElement.scrollToElement(PAYMandPAYGTariffAndExtrasPage.DataFilterSelectedXpath);

@@ -18,6 +18,9 @@ public class verificationsPage {
 	@FindBy(how = How.XPATH, using = "(//*[@class='form-element input-microcopy  '])[1]")
 	public static WebElement AsteriskText;
 
+	@FindBy(how = How.XPATH, using = "//*[@id='delivery-page']//*[@id='delivery-section']/p | //p[contains(text(),'need to give details for all fields marked with an asterisk')]")
+	public static WebElement AsteriskFieldsNote;
+
 	@FindBy(how = How.XPATH, using = "(//*[@class='form-element input-microcopy'])[1]")
 	public static WebElement AsteriskText_PAYGSim_Journey;
 

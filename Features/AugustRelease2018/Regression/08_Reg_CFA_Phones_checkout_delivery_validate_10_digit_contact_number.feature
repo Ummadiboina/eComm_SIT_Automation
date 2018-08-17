@@ -9,8 +9,10 @@ Feature: 08_Reg_CFA_Phones_checkout_delivery_validate_10_digit_contact_number
     And navigate to PAYM Phones page
     And I choose PayM <handset>
     #provide handset which is already set as delayed delivery
+    And click on the color dropdown
+    And verify the name of the colour is next to the colour tile in CFAPhoneColour
     And select <color> color of the connected device
-    And Navigate to device details page
+    And Navigate to View tariff page
     And Land on the 'Tariffs and extra' page
     And I Land on the basket page and choose home delivery option
     And click on "go to checkout" button

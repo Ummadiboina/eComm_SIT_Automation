@@ -49,9 +49,10 @@ public class MyO2PageActions extends Environment {
 
 		driver.manage().timeouts().implicitlyWait(20,TimeUnit.SECONDS);
 		String currentURL = driver.getCurrentUrl();
+		String errorMessage = driver.findElement(By.xpath("//div[@id='accountsError']/p")).getText();
 		log.debug("The redirected url is: " + currentURL);
 
-		if(currentURL.contains("invalidAttempt")){
+		if(currentURL.contains("The information you provided does not match our records")){
 			log.debug("Logged in failed");
 		}else{
 			log.debug("Logged in successfully");

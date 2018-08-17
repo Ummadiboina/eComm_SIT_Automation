@@ -43,6 +43,9 @@ public class ConnectedDeviceDetailsPage {
     @FindBy(how = How.ID, using = "deviceBackground")
     public static WebElement clickanywhere;
 
+    @FindBy(how = How.XPATH, using = "//p[@class='delivery-information']/span[1]")
+    public static WebElement PreDevStatusMsg;
+
     @FindBy(how = How.XPATH, using = "//p[@class='delivery-information']/span[2]")
     public static WebElement DevStatusMsg;
     // have to change the below xpath after getting the environment
@@ -65,13 +68,16 @@ public class ConnectedDeviceDetailsPage {
     @FindAll({@FindBy(how = How.XPATH, using = "//span[@class='selectboxit-colour-name']")})
     public static WebElement UpdatedColorLabel;
 
-    @FindAll({@FindBy(how = How.ID, using = "colourSelectBoxItArrowContainer")})
+    @FindAll({@FindBy(how = How.XPATH, using = "//span[@id='colourSelectBoxItArrowContainer' or @id='colorSelectBoxItArrowContainer']")})
     public static WebElement colorselectBoxArow;
 
-    @FindAll({@FindBy(how = How.XPATH, using = "//*[@id='colourSelectBoxIt']")})
+    /*@FindAll({@FindBy(how = How.ID, using = "colourSelectBoxItArrowContainer")})
+    public static WebElement colorselectBoxArow;*/
+
+    @FindAll({@FindBy(how = How.XPATH, using = "//*[@id='colourSelectBoxIt' or @id='colorSelectBoxIt']")})
     public static WebElement Colourdropdownbox;
 
-    @FindAll({@FindBy(how = How.XPATH, using = "//*[@id='colour']/option")})
+    @FindAll({@FindBy(how = How.XPATH, using = "//*[@id='color']/option")})
     public static WebElement ColourText;
 
 
