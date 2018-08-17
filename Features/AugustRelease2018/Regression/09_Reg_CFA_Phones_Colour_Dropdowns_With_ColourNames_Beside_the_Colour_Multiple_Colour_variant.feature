@@ -12,9 +12,6 @@ Feature: 09_Reg_CFA_Phones_Colour_Dropdowns_With_ColourNames_Beside_the_Colour_M
     And select <color> color of the connected device
     And Navigate to View tariff page
     And Land on the 'Tariffs and extra' page
-    And click on the color dropdown
-    And verify the name of the colour is next to the colour tile in CFAPhoneColour
-    And select <color> color of the connected device
     And I Land on the basket page and choose home delivery option
     And click on "go to checkout" button
     And input <Firstname> and <Surname> and other valid details in Delivery page to verify GDPR
@@ -38,5 +35,5 @@ Feature: 09_Reg_CFA_Phones_Colour_Dropdowns_With_ColourNames_Beside_the_Colour_M
     Then Choose <consumer> <status> Business preferences <B1> <B2> <B3> <B4> And Channel Preferences <Text> <Email> <Phone> <Post> <MBBStatus> <DeviceType>
 
     Examples:
-      | handset  | Username     | Firstname | Surname | color  | consumer | B1     | B2     | B3  | B4  | Text   | Email  | Phone  | Post   | status  | MBBStatus | DeviceType |
-      | iPhone X | TEST ACCEPTA | Test      | Accepta | Silver | Me       | Select | Select | Not | Not | Select | Select | Select | Select | Enabled | No        | Connected  |
+      | handset   | Username     | Firstname | Surname | color        | consumer | B1     | B2     | B3  | B4  | Text   | Email  | Phone  | Post   | status  | MBBStatus | DeviceType |
+      | Galaxy S9 | TEST ACCEPTA | Test      | Accepta | Lilac Purple | Me       | Select | Select | Not | Not | Select | Select | Select | Select | Enabled | No        | Connected  |

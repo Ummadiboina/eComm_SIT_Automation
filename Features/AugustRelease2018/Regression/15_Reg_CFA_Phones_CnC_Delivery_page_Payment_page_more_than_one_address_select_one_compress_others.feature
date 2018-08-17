@@ -22,5 +22,5 @@ Feature: 15_Reg_CFA_Phones_CnC_Delivery_page_Payment_page_more_than_one_address_
     Then Choose <consumer> <status> Business preferences <B1> <B2> <B3> <B4> And Channel Preferences <Text> <Email> <Phone> <Post> <MBBStatus> <DeviceType>
 
     Examples:
-      | handset | Firstname | Surname | Username     | consumer | B1     | B2     | B3     | B4  | Text   | Email  | Phone | Post | status  | MBBStatus | DeviceType |
-      | iPhone  | TEST      | ACCEPTA | TEST ACCEPTA | Me       | Select | Select | Select | Not | Select | Select | Not   | Not  | Enabled | No        | Connected  |
+      | handset  | Firstname | Surname | Username     | consumer | B1     | B2     | B3     | B4  | Text   | Email  | Phone | Post | status  | MBBStatus | DeviceType |
+      | iPhone X | TEST      | ACCEPTA | TEST ACCEPTA | Me       | Select | Select | Select | Not | Select | Select | Not   | Not  | Enabled | No        | Connected  |

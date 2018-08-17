@@ -354,11 +354,11 @@ public class verificationsActions extends Environment {
 
         String ExpectedText = "";
         String ActualText = "";
-
+        log.debug("We are at Page: "+driver.getTitle());
         PageFactory.initElements(driver, verificationsPage.class);
         //Verifying Asterisk is present below Delivery header
         ExpectedText = "You'll need to give details for all fields marked with an asterisk (*)";
-        ActualText = pageobjects.verificationsPage.AsteriskText.getText();
+        ActualText = pageobjects.verificationsPage.AsteriskFieldsNote.getText();
         Assert.assertTrue(ActualText.contains(ExpectedText),
                 "Assertion Failed: Expected Message: " + ExpectedText + " is not present in the page");
         log.debug("Assertion Success: Expected Message : 'You'll need to give details for all fields marked with an asterisk (*)' is getting displayed");

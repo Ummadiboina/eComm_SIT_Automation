@@ -10,7 +10,6 @@ Feature: 42_Reg_CFA_PayM_Tablet_Data_filters_options_tariff_and_extras_page_Orde
     And navigate to PAYM Tablets page
     And select any available <Device> Tablet
     And Navigate to device details page
-    And Land on the 'Tariffs and extra' page
     Then I should see data filters buttons next to existing sort drop-down for PAYM/SIMO tariffs <sortoption>
     When I click on respective <filtername> data filter
     Then Data filter button should be in 'selected' state
@@ -19,6 +18,7 @@ Feature: 42_Reg_CFA_PayM_Tablet_Data_filters_options_tariff_and_extras_page_Orde
     Then I should see tariffs relevant to selected sort option <sortoption> & filter option <filtername>
     When I deselect filter button
     Then I should see tariffs based on the selected sort option <sortoption>
+    And Land on the 'Tariffs and extra' page
     And I Land on the basket page and choose home delivery option
     And click on "go to checkout" button
     And input <Firstname> and <Surname> and other valid details in Delivery page to verify GDPR

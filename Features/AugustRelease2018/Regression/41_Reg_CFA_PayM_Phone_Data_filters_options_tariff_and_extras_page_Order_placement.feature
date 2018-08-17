@@ -10,7 +10,6 @@ Feature: 41_Reg_CFA_PayM_Phone_Data_filters_options_tariff_and_extras_page_Order
     And I search for a PayM <handset> device
     #select handset with more tariff and less tariff  -- > ask kanban team to set handset with 2 tariff and handset with more than 3 tariff
     And Navigate to device details page
-    And Land on the 'Tariffs and extra' page
     ##New functionality starts
     Then I should see data filters buttons next to existing sort drop-down for PAYM/SIMO tariffs <sortoption>
     When I click on respective <filtername> data filter
@@ -21,6 +20,7 @@ Feature: 41_Reg_CFA_PayM_Phone_Data_filters_options_tariff_and_extras_page_Order
     When I deselect filter button
     Then I should see tariffs based on the selected sort option <sortoption>
     ##New functionality ends
+    And Land on the 'Tariffs and extra' page
     And I Land on the basket page and choose home delivery option
     And click on "go to checkout" button
     And input <Firstname> and <Surname> and other valid details in Delivery page to verify GDPR
