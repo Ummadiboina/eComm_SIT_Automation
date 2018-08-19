@@ -5,14 +5,14 @@ Feature: 88_CFA_Phones_ColourDropdownsWithColourNamesBesideTheColourMultipleColo
     Given I am an CFA user and Lands on shop page
     And navigate to PAYM Phones page
     And I choose PayM <handset>
-    And click on the color dropdown
-    And verify the name of the colour is next to the colour tile in CFAPhoneColour
-    And select <color> color of the connected device
-    And Navigate to device details page
     # And select a color
     And click on the color dropdown
     And verify the name of the colour is next to the colour tile in CFAPhoneColour
     And select <color> color of the connected device
+    And Navigate to device details page
+    #And click on the color dropdown
+    #And verify the name of the colour is next to the colour tile in CFAPhoneColour
+    #And select <color> color of the connected device
     And Land on the 'Tariffs and extra' page
     And I Land on the basket page and choose home delivery option
     And click on "go to checkout" button
@@ -39,5 +39,5 @@ Feature: 88_CFA_Phones_ColourDropdownsWithColourNamesBesideTheColourMultipleColo
 
     #Close the browser
     Examples:
-      | handset  | Username     | Firstname | Surname | color        | CFATariffColour | consumer | B1  | B2  | B3     | B4  | Text | Email  | Phone | Post | status  | MBBStatus | DeviceType |
-      | iPhone 7 | TEST ACCEPTA | Test      | Accepta | Lilac Purple | Gold            | Me       | Not | Not | Select | Not | Not  | Select | Not   | Not  | Enabled | No        | Connected  |
+      | handset  | Username     | Firstname | Surname | color | CFATariffColour | consumer | B1  | B2  | B3     | B4  | Text | Email  | Phone | Post | status  | MBBStatus | DeviceType |
+      | iPhone 7 | TEST ACCEPTA | Test      | Accepta | Gold  | Gold            | Me       | Not | Not | Select | Not | Not  | Select | Not   | Not  | Enabled | No        | Connected  |

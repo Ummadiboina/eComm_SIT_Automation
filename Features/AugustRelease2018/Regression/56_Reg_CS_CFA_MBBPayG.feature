@@ -20,5 +20,5 @@ Feature: 56_Reg_CS_CFA_MBBPayG
 
 
     Examples:
-      | Firstname | Surname | Username     | consumer | B1     | B2  | B3  | B4  | Text   | Email | Phone | Post | status  | MBBStatus | DeviceType |
-      | TEST      | ACCEPTA | TEST ACCEPTA | Me       | Select | Not | Not | Not | Select | Not   | Not   | Not  | Enabled | No        | Connected  |
+      | Firstname | Surname | Username     |tariff| consumer | B1     | B2  | B3  | B4  | Text   | Email | Phone | Post | status  | MBBStatus | DeviceType |
+      | TEST      | ACCEPTA | TEST ACCEPTA |      | Me       | Select | Not | Not | Not | Select | Not   | Not   | Not  | Enabled | No        | Connected  |

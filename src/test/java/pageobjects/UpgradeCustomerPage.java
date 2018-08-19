@@ -105,7 +105,7 @@ public class UpgradeCustomerPage {
 	//////////////////////////// Your Sim
 	//////////////////////////// Section///////////////////////////////////////////////////
 
-	@FindBy(how = How.XPATH, using = "//*[@id='yourSim'] | //div[contains(text(),'3. Your sim')]")
+	@FindBy(how = How.XPATH, using = "//*[@id='yourSim'] | (//div[contains(text(),'3. Your sim')])[2]")
 	public static WebElement YourSimHeading;
 
 	@FindBy(how = How.XPATH, using = "//*[@id='needNewSim']")

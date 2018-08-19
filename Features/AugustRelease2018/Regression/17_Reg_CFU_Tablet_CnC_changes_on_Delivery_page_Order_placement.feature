@@ -29,5 +29,5 @@ Feature: 17_Reg_CFU_Tablet_CnC_changes_on_Delivery_page_Order_placement
     Then Choose <consumer> <status> Business preferences <B1> <B2> <B3> <B4> And Channel Preferences <Text> <Email> <Phone> <Post> <MBBStatus> <DeviceType>
 
     Examples:
-      | username                     | password | Firstname | Surname | Tablet  | Username     | Action    | tariff | consumer | B1     | B2  | B3  | B4  | Text   | Email | Phone | Post | status  | MBBStatus | DeviceType |
-      | ina_feb3593@stf.ref.o2.co.uk | test123  | Test      | Accepta | Samsung | TEST ACCEPTA | enterCode |        | Me       | Select | Not | Not | Not | Select | Not   | Not   | Not  | Enabled | No        | Connected  |
+      | username                                    | password | Firstname | Surname | Tablet  | Username     | Action    | tariff | consumer | B1     | B2  | B3  | B4  | Text   | Email | Phone | Post | status  | MBBStatus | DeviceType |
+      | rbmuatlokesh_donotusee3013@stf.ref.o2.co.uk | test123  | Test      | Accepta | Samsung | TEST ACCEPTA | enterCode |        | Me       | Select | Not | Not | Not | Select | Not   | Not   | Not  | Enabled | No        | Connected  |

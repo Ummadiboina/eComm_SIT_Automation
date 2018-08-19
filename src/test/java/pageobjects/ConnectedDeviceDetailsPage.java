@@ -14,7 +14,7 @@ public class ConnectedDeviceDetailsPage {
     @FindBy(how = How.XPATH, using = "//button[@id='deviceDetailsSubmit']")
     public static WebElement ViewOurTariffs;
 
-    @FindBy(how = How.XPATH, using = "(//a[normalize-space()='See our plans'])[1]")
+    @FindBy(how = How.XPATH, using = "(//button[normalize-space()='See our plans'])[1]")
     public static WebElement SeeOurplans;
 
     @FindBy(how = How.XPATH, using = "(//button[normalize-space()='Add to basket'])[1]")
