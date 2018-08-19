@@ -5,6 +5,9 @@ Feature: 61_Reg_CS_PayGPhonesHomeDeliveryWithoutAccessory
     Given I am an CFA user and Lands on shop page
     And navigate to Pay as you Go Phones page
     And I choose PayG <handset>
+    And click on the color dropdown
+    And verify the name of the colour is next to the colour tile in CFAPhoneColour
+    And select <color> color of the connected device
     And Navigate to device details page
     #And Land on the 'Tariffs and extra' page
     And Select a PayG tariff <tariff>
@@ -19,5 +22,5 @@ Feature: 61_Reg_CS_PayGPhonesHomeDeliveryWithoutAccessory
     Then Choose <consumer> <status> Business preferences <B1> <B2> <B3> <B4> And Channel Preferences <Text> <Email> <Phone> <Post> <MBBStatus> <DeviceType>
 
     Examples:
-      | handset       | Firstname | tariff | Surname | Username     | consumer | B1  | B2     | B3  | B4  | Text | Email  | Phone | Post | status  | MBBStatus | DeviceType |
-      | Random Device | TEST      |        | ACCEPTA | TEST ACCEPTA | Me       | Not | Select | Not | Not | Not  | Select | Not   | Not  | Enabled | No        | Connected  |
+      | handset            | color | Firstname | tariff | Surname | Username     | consumer | B1  | B2     | B3  | B4  | Text | Email  | Phone | Post | status  | MBBStatus | DeviceType |
+      | Xperia XZ2 Compact | Black | TEST      |        | ACCEPTA | TEST ACCEPTA | Me       | Not | Select | Not | Not | Not  | Select | Not   | Not  | Enabled | No        | Connected  |

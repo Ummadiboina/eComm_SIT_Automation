@@ -17,5 +17,5 @@ Feature: 20_Reg_AFA_PayG_withoutAnyAccessory
     Then Order confirmation message should be displayed
 
     Examples:
-      | Device              | Tariffs | DeliveryType | Firstname | Surname | HouseNumber | PostCode | consumer | B1  | B2  | B3     | B4  | Text | Email  | Phone | Post | status  | MBBStatus | DeviceType | DeviceModule |
-      | iPhone 6s 32GB Gold | Random  | HomeDelivery | TEST      | ACCEPTA | 4           | SL11UP   | Me       | Not | Not | Select | Not | Not  | Select | Not   | Not  | Enabled | No        | Connected  | Phone        |
+      | Device                        | Tariffs | DeliveryType | Firstname | Surname | HouseNumber | PostCode | consumer | B1  | B2  | B3     | B4  | Text | Email  | Phone | Post | status  | MBBStatus | DeviceType | DeviceModule |
+      | Sony Xperia XZ2 Compact Black | Random  | HomeDelivery | TEST      | ACCEPTA | 4           | SL11UP   | Me       | Not | Not | Select | Not | Not  | Select | Not   | Not  | Enabled | No        | Connected  | Phone        |

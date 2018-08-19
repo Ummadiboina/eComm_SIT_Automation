@@ -31,5 +31,5 @@ Feature: 44_Reg_CFA_seperate_tariff_ribbons_Tariff_page_Basket_page_html_overlay
     Then Choose <consumer> <status> Business preferences <B1> <B2> <B3> <B4> And Channel Preferences <Text> <Email> <Phone> <Post> <MBBStatus> <DeviceType>
 
     Examples:
-      | handset        | tariff                 | Firstname | Surname | Username     | consumer | B1     | B2     | B3  | B4  | Text   | Email | Phone | Post | status  | MBBStatus | DeviceType |
-      | Galaxy J3 2017 | 19.99upfront31.00amonth | TEST      | ACCEPTA | TEST ACCEPTA | Me       | Select | Select | Not | Not | Select | Not   | Not   | Not  | Enabled | No        | Connected  |
+      | handset            | tariff                  | Firstname | Surname | Username     | consumer | B1     | B2     | B3  | B4  | Text   | Email | Phone | Post | status  | MBBStatus | DeviceType |
+      | Xperia XZ2 Compact | 19.99upfront31.00amonth | TEST      | ACCEPTA | TEST ACCEPTA | Me       | Select | Select | Not | Not | Select | Not   | Not   | Not  | Enabled | No        | Connected  |

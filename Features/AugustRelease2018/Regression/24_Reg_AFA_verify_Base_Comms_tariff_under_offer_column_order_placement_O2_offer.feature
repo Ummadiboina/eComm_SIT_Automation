@@ -20,5 +20,5 @@ Feature: 24_Reg_AFA_verify_Base_Comms_tariff_under_offer_column_order_placement_
     Then Order confirmation message should be displayed
 
     Examples:
-      | Device                   | Tariffs | Extras | Firstname | Surname | Username     | HouseNumber | PostCode | Consumer | B1  | B2  | B3  | B4  | Text | Email | Phone | Post | status  | MBBStatus | DeviceType | DeviceModule |
-      | Samsung Galaxy Book 10.6 | Base    | Base   | Test      | Accepta | Test Accepta | 2           | SL11UP   | Me       | Not | Not | Not | Not | Not  | Not   | Not   | Not  | Enabled | No        | Connected  | Tablet       |
+      | Device                              | Tariffs | Extras | Firstname | Surname | Username     | HouseNumber | PostCode | Consumer | B1  | B2  | B3  | B4  | Text | Email | Phone | Post | status  | MBBStatus | DeviceType | DeviceModule |
+      | iPad Pro 10.5 inch 256GB Space Grey | Base    | Base   | Test      | Accepta | Test Accepta | 2           | SL11UP   | Me       | Not | Not | Not | Not | Not  | Not   | Not   | Not  | Enabled | No        | Connected  | Tablet       |

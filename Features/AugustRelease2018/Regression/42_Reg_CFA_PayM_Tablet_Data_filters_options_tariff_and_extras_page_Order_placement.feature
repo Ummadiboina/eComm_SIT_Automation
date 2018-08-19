@@ -8,7 +8,8 @@ Feature: 42_Reg_CFA_PayM_Tablet_Data_filters_options_tariff_and_extras_page_Orde
 
     Given I am an CFA user and Lands on shop page
     And navigate to PAYM Tablets page
-    And select any available <Device> Tablet
+    #And select any available <Device> Tablet
+    And Select PayM Tablet <tabletname>
     And Navigate to device details page
     Then I should see data filters buttons next to existing sort drop-down for PAYM/SIMO tariffs <sortoption>
     When I click on respective <filtername> data filter
@@ -32,5 +33,5 @@ Feature: 42_Reg_CFA_PayM_Tablet_Data_filters_options_tariff_and_extras_page_Orde
     Then Choose <consumer> <status> Business preferences <B1> <B2> <B3> <B4> And Channel Preferences <Text> <Email> <Phone> <Post> <MBBStatus> <DeviceType>
 
     Examples:
-      | Firstname | Surname | Username     | filtername | sortoption                 | Device        | consumer | B1     | B2  | B3  | B4  | Text | Email  | Phone | Post | status  | MBBStatus | DeviceType |
-      | TEST      | ACCEPTA | TEST ACCEPTA | low        | Monthly data (High to low) | Random Device | Me       | Select | Not | Not | Not | Not  | Select | Not   | Not  | Enabled | No        | Connected  |
+      | Firstname | Surname | Username     | filtername | sortoption                 | tabletname | consumer | B1     | B2  | B3  | B4  | Text | Email  | Phone | Post | status  | MBBStatus | DeviceType |
+      | TEST      | ACCEPTA | TEST ACCEPTA | low        | Monthly data (High to low) | A3 10      | Me       | Select | Not | Not | Not | Not  | Select | Not   | Not  | Enabled | No        | Connected  |

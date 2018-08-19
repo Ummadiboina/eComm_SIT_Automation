@@ -8,6 +8,8 @@ Feature: 43_Reg_CFA_Phones_Delayed_delivery_Home_delivery_Confirmation_Page_form
     Given I am an CFA user and Lands on shop page
     And navigate to PAYM Phones page
     And I choose PayM <handset>
+    And click on the color dropdown
+    And verify the name of the colour is next to the colour tile in CFAPhoneColour
     And select <color> color of the connected device
     And Navigate to device details page
     And Land on the 'Tariffs and extra' page
@@ -28,4 +30,4 @@ Feature: 43_Reg_CFA_Phones_Delayed_delivery_Home_delivery_Confirmation_Page_form
     #Close the browser
     Examples:
       | handset       | Firstname | Surname | Username     | Status           | color | consumer | B1     | B2     | B3     | B4  | Text   | Email  | Phone | Post | status  | MBBStatus | DeviceType |
-      | iPhone 7 Plus | TEST      | ACCEPTA | TEST ACCEPTA | Delayed Delivery | Black | Me       | Select | Select | Select | Not | Select | Select | Not   | Not  | Enabled | No        | Connected  |
+      | iPhone 8 Plus | TEST      | ACCEPTA | TEST ACCEPTA | Delayed Delivery | RED   | Me       | Select | Select | Select | Not | Select | Select | Not   | Not  | Enabled | No        | Connected  |
