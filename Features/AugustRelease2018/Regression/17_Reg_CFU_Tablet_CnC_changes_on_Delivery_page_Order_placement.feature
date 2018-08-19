@@ -9,9 +9,12 @@ Feature: 17_Reg_CFU_Tablet_CnC_changes_on_Delivery_page_Order_placement
     And Navigate to upgrade > upgrade now
     And Click on 'Get Started' CTA
     And Click on Tablet section in upgrade options page
-    And Select a <Tablet> device from Recommended devices section
-    And Click on device 'Confirm CTA'
-    And Click on View all Tariffs link in upgrade options page
+    And Click on View all Tablets link in upgrade options page
+    And Select PayM Tablet <Tablet>
+    And Navigate to device details page
+    #And Select a <Tablet> device from Recommended devices section
+    #And Click on device 'Confirm CTA'
+    #And Click on View all Tariffs link in upgrade options page
     And Land on the 'Tariffs and extra' page
     #And I Land on the basket page and choose to collect from store
     And I Land on the basket page by clicking on Add to Basket button
@@ -29,5 +32,5 @@ Feature: 17_Reg_CFU_Tablet_CnC_changes_on_Delivery_page_Order_placement
     Then Choose <consumer> <status> Business preferences <B1> <B2> <B3> <B4> And Channel Preferences <Text> <Email> <Phone> <Post> <MBBStatus> <DeviceType>
 
     Examples:
-      | username                                    | password | Firstname | Surname | Tablet  | Username     | Action    | tariff | consumer | B1     | B2  | B3  | B4  | Text   | Email | Phone | Post | status  | MBBStatus | DeviceType |
-      | rbmuatlokesh_donotusee3013@stf.ref.o2.co.uk | test123  | Test      | Accepta | Samsung | TEST ACCEPTA | enterCode |        | Me       | Select | Not | Not | Not | Select | Not   | Not   | Not  | Enabled | No        | Connected  |
+      | username                                    | password | Firstname | Surname | Tablet  | color       | Username     | Action    | tariff | consumer | B1     | B2  | B3  | B4  | Text   | Email | Phone | Post | status  | MBBStatus | DeviceType |
+      | rbmuatlokesh_donotusee3013@stf.ref.o2.co.uk | test123  | Test      | Accepta | Pixi3 8 | Smokey Grey | TEST ACCEPTA | enterCode |        | Me       | Select | Not | Not | Not | Select | Not   | Not   | Not  | Enabled | No        | Connected  |

@@ -5,6 +5,9 @@ Feature: 91_Reg_CFA_Trustev_PayMPhonesHomeDeliveryWithAccessory
     Given I am an CFA user and Lands on shop page
     And navigate to PAYM Phones page
     And I choose PayM <handset>
+    And click on the color dropdown
+    And verify the name of the colour is next to the colour tile in CFAPhoneColour
+    And select <color> color of the connected device
     And Navigate to device details page
     And Land on the 'Tariffs and extra' page
     And Choose some Accesssory
@@ -20,5 +23,5 @@ Feature: 91_Reg_CFA_Trustev_PayMPhonesHomeDeliveryWithAccessory
     Then Choose <consumer> <status> Business preferences <B1> <B2> <B3> <B4> And Channel Preferences <Text> <Email> <Phone> <Post> <MBBStatus> <DeviceType>
 
     Examples:
-      | handset   | Firstname | Surname | Username     | consumer | B1  | B2  | B3  | B4  | Text | Email | Phone | Post | status  | MBBStatus | DeviceType |
-      | Galaxy S9 | TEST      | ACCEPTA | TEST ACCEPTA | Someone  | Not | Not | Not | Not | Not  | Not   | Not   | Not  | Enabled | No        | Connected  |
+      | handset            | color | Firstname | Surname | Username     | consumer | B1  | B2  | B3  | B4  | Text | Email | Phone | Post | status  | MBBStatus | DeviceType |
+      | Xperia XZ2 Compact | Black | TEST      | ACCEPTA | TEST ACCEPTA | Someone  | Not | Not | Not | Not | Not  | Not   | Not   | Not  | Enabled | No        | Connected  |

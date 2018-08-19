@@ -625,12 +625,12 @@ public class Agent_DealBuilderPageActions extends Environment {
         }
     }
 
-    public static void selectStore() throws InterruptedException {
+    public static void selectStore() throws InterruptedException, IOException {
 
         // Selecting an Extra
         Agent_DealBuilderPage.CheckStore.click();
         log.debug("Clicked on Check store stock Tab");
-        log.debug("Clicked on Check store stock Tab");
+
         Thread.sleep(4000);
 
         String Mainwindow = driver.getWindowHandle();
@@ -647,11 +647,13 @@ public class Agent_DealBuilderPageActions extends Environment {
                 Agent_DealBuilderPage.Postcode.sendKeys("G2");
 
                 Agent_DealBuilderPage.searchStore.click();
-
+                Screenshots.captureScreenshot();
+                Thread.sleep(4000);
                 JavascriptExecutor jse = (JavascriptExecutor) driver;
                 jse.executeScript("window.scrollBy(0,200)", "");
                 JavascriptExecutor executor = (JavascriptExecutor) driver;
                 executor.executeScript("arguments[0].click();", Agent_DealBuilderPage.selectStore);
+                Screenshots.captureScreenshot();
 
             }
         }

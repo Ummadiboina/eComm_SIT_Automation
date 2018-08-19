@@ -4,7 +4,11 @@ Feature: 52_Reg_Consumer_DelayedDelivery
   Scenario Outline: CFA PayM Delayed Delivery Phones Home delivery E2E journey
     Given I am an CFA user and Lands on shop page
     And navigate to PAYM Phones page
-    And I search for a PayM <DD_handset> device
+    #And I search for a PayM <DD_handset> device
+    And I choose PayM <DD_handset>
+    And click on the color dropdown
+    And verify the name of the colour is next to the colour tile in CFAPhoneColour
+    And select <color> color of the connected device
     And check the status <Status> of the device
     And Navigate to device details page
     And Land on the 'Tariffs and extra' page
@@ -21,5 +25,5 @@ Feature: 52_Reg_Consumer_DelayedDelivery
 
      #Close the browser
     Examples:
-      | DD_handset     | Firstname | Surname | Username     | Status           | consumer | B1     | B2     | B3  | B4  | Text | Email  | Phone  | Post   | status  | MBBStatus | DeviceType |
-      | Apple iPhone 7 | TEST      | ACCEPTA | TEST ACCEPTA | Delayed Delivery | Me       | Select | Select | Not | Not | Not  | Select | Select | Select | Enabled | No        | Connected  |
+      | DD_handset    | color | Firstname | Surname | Username     | Status           | consumer | B1     | B2     | B3  | B4  | Text | Email  | Phone  | Post   | status  | MBBStatus | DeviceType |
+      | iPhone 8 Plus | RED   | TEST      | ACCEPTA | TEST ACCEPTA | Delayed Delivery | Me       | Select | Select | Not | Not | Not  | Select | Select | Select | Enabled | No        | Connected  |

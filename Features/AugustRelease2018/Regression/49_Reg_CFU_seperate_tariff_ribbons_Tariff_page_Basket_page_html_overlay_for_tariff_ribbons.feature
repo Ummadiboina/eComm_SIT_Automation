@@ -11,6 +11,9 @@ Feature: 49_Reg_CFU_seperate_tariff_ribbons_Tariff_page_Basket_page_html_overlay
     And Navigate to upgrade phone
     And Click on 'Get Started' CTA
     And I choose upgrade PayM handset <handset>
+    And click on the color dropdown
+    And verify the name of the colour is next to the colour tile in CFAPhoneColour
+    And select <color> color of the connected device
     And Navigate to device details page
     And Select a tariff <tariff>
     And Verify whether promotional ribbons are displayed for <tariff> on the Tariff tile in the Tariff and Extras page
@@ -24,5 +27,5 @@ Feature: 49_Reg_CFU_seperate_tariff_ribbons_Tariff_page_Basket_page_html_overlay
     And Click on the 'Overlay icon' in the Basket page and verify pop gets displayed
 
     Examples:
-      | username                     | password | handset | tariff                 |
-      | ins_nov1474@stf.ref.o2.co.uk | test123  | Galaxy  | 9.99upfront84.00amonth |
+      | username                     | password | handset            | tariff                 | color |
+      | ins_nov1474@stf.ref.o2.co.uk | test123  | Xperia XZ2 Compact | 9.99upfront84.00amonth | Black |

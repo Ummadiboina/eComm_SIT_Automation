@@ -275,8 +275,11 @@ public class UpgradeCustomerPage {
 	public static WebElement SignoutLink;
 
 	//Clicking on View all Tablets
-	@FindBy(how = How.XPATH, using = "//a[@href='#tablets']")
+	@FindBy(how = How.XPATH, using = "//a[@href='#tablets'] | //a[normalize-space()='View all Tablets']")
 	public static WebElement ViewAllTablets;
+
+	@FindBy(how = How.XPATH, using = "//a[normalize-space()='See all phones']")
+	public static WebElement ViewAllPhones;
 
 	//Clicking on random Table
 	@FindBy(how = How.XPATH, using = "//*[@id='qa-recommendedDevicesTile']/a/div[2]/button")

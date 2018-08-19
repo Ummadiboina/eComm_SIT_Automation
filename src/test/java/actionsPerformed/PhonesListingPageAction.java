@@ -65,24 +65,100 @@ public class PhonesListingPageAction extends Environment {
 		}
 	}
 
+	public static void PAYMTabletSelect(String deviceName) throws Throwable {
+
+		//driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		Thread.sleep(6000);
+		JavascriptExecutor jse = (JavascriptExecutor) driver;
+		jse.executeScript("window.scrollBy(0,300)", "");
+		Screenshots.captureScreenshot();
+		Thread.sleep(3000);
+		try {
+			//WebElement serchBox = driver.findElement(By.xpath("//input[@ng-model='textSearch.searchText']"));
+			WebElement serchBox = driver.findElement(By.xpath("//input[@id='listing-search']"));
+			serchBox.sendKeys(deviceName);
+			Thread.sleep(10000);
+
+			WebElement requestedDevice = driver.findElement(By.xpath("(//img[@class='device-image lazy']/..//*[contains(text(),'"+deviceName+"')])[1]"));
+			if(requestedDevice.isDisplayed()) {
+				//scrollToAnElement.scrollToElement(requestedDevice);
+				Screenshots.captureScreenshot();
+			}
+			if (driver.findElements(By.xpath("(//img[@class='device-image lazy']/..//*[contains(text(),'"+deviceName+"')])[1]")).size() >= 1) {
+				Thread.sleep(3000);
+				((JavascriptExecutor) driver).executeScript("arguments[0].click();", requestedDevice);
+				log.debug("Selected Device from Tablet as Required is : " + deviceName);
+
+				Thread.sleep(3000);
+			} else {
+				Thread.sleep(3000);
+				WebElement element = driver.findElement(By.xpath("(//img[@class='device-image lazy'])[1]"));
+				((JavascriptExecutor) driver).executeScript("arguments[0].click();", element);
+				String defaultSelDevice = driver.findElement(By.xpath("((//img[@class='device-image lazy'])[1]/..//span[@class='ng-binding'])[2]")).getText();
+				log.debug(" As Required Device is not Availabe, We have picked default device from availabe  :: " + defaultSelDevice);
+
+				Thread.sleep(3000);
+
+				Screenshots.captureScreenshot();
+			}
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+	}
+
 	// Below is for PAYG phones
-	public static void PAYGPhoneSelect(String elementName) throws IOException, InterruptedException {
+	public static void PAYGPhoneSelect(String deviceName) throws IOException, InterruptedException {
 		Thread.sleep(5000);
-		if (elementName.contains("Random Device")) {
+		if (deviceName.contains("Random Device")) {
 			log.debug("Selecting Random Device");
 			pageobjects.PhonesListingPage.RandomDevice.click();
 			log.debug("Selected Random Device");
 			Thread.sleep(3000);
 
-		}
-
-		if (elementName.contains("MotoG5")) {
+		}else if (deviceName.contains("MotoG5")) {
 			log.debug("Selecting MotoG5");
 
 			pageobjects.PhonesListingPage.MotoG5.click();
 			// Assert.assertEquals(elementName,"Galaxy S7 is not found");
 			log.debug("Selected MotoG5");
 
+		}else{
+			Thread.sleep(6000);
+			JavascriptExecutor jse = (JavascriptExecutor) driver;
+			jse.executeScript("window.scrollBy(0,300)", "");
+			Screenshots.captureScreenshot();
+			Thread.sleep(3000);
+			try {
+				//WebElement serchBox = driver.findElement(By.xpath("//input[@ng-model='textSearch.searchText']"));
+				WebElement serchBox = driver.findElement(By.xpath("//input[@id='listing-search']"));
+				serchBox.sendKeys(deviceName);
+				Thread.sleep(10000);
+
+				WebElement requestedDevice = driver.findElement(By.xpath("(//img[@class='device-image lazy']/..//*[contains(text(),'"+deviceName+"')])[1]"));
+				if(requestedDevice.isDisplayed()) {
+					//scrollToAnElement.scrollToElement(requestedDevice);
+					Screenshots.captureScreenshot();
+				}
+				if (driver.findElements(By.xpath("(//img[@class='device-image lazy']/..//*[contains(text(),'"+deviceName+"')])[1]")).size() >= 1) {
+					Thread.sleep(3000);
+					((JavascriptExecutor) driver).executeScript("arguments[0].click();", requestedDevice);
+					log.debug("Selected Device from Phones as Required is : " + deviceName);
+
+					Thread.sleep(3000);
+				} else {
+					Thread.sleep(3000);
+					WebElement element = driver.findElement(By.xpath("(//img[@class='device-image lazy'])[1]"));
+					((JavascriptExecutor) driver).executeScript("arguments[0].click();", element);
+					String defaultSelDevice = driver.findElement(By.xpath("((//img[@class='device-image lazy'])[1]/..//span[@class='ng-binding'])[2]")).getText();
+					log.debug(" As Required Device is not Availabe, We have picked default device from availabe  :: " + defaultSelDevice);
+
+					Thread.sleep(3000);
+
+					Screenshots.captureScreenshot();
+				}
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
 		}
 		Screenshots.captureScreenshot();
 	}

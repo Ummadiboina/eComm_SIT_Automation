@@ -470,13 +470,27 @@ public class E2EOrderPlaced_Steps {
         }
     }
 
+    @And("^Select PayM Tablet ([^\"]*)$")
+    public void Choose_PayMTablet(String tablet) throws Throwable {
+        try {
+            driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, PhonesListingPage.class);
+            PhonesListingPageAction.PAYMTabletSelect(tablet);
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+            log.debug("Unable to choose PayM phone");
+            Assert.fail("Unable to choose PayM phone");
+        }
+    }
+
     @Given("^I choose PayG ([^\"]*)$")
     public void Choose_PAYG_Handset(String device) {
         try {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, PhonesListingPage.class);
             Thread.sleep(5000);
-            PhonesListingPageAction.PAYGPhoneSelect("Random Device");
+            PhonesListingPageAction.PAYGPhoneSelect(device);
         } catch (Exception e) {
             // TODO Auto-generated catch block
             log.debug("Unable to choose PayG phone");
@@ -10772,6 +10786,42 @@ public class E2EOrderPlaced_Steps {
             // TODO Auto-generated catch block
             e.printStackTrace();
             Assert.fail("Unable to click on Continue button");
+        }
+    }
+
+    @And("^Click on View all Tablets link in upgrade options page$")
+    public void click_on_View_all_tablets() {
+        try {
+
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, UpgradeCustomerPage.class);
+            Thread.sleep(5000);
+            // Screenshots.captureScreenshot();
+            UpgradeCustomerPageActions.clickOnViewAllTablets();
+            Thread.sleep(5000);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            log.debug("\"Not able to select view all tablet link");
+            Assert.fail("Not able to select view all tablet link");
+        }
+    }
+
+    @And("^Click on View all Phones link in upgrade options page$")
+    public void click_on_View_all_Phones() {
+        try {
+
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, UpgradeCustomerPage.class);
+            Thread.sleep(5000);
+            // Screenshots.captureScreenshot();
+            UpgradeCustomerPageActions.clickOnViewAllPhones();
+            Thread.sleep(5000);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            log.debug("\"Not able to select view all phones link");
+            Assert.fail("Not able to select view all phones link");
         }
     }
 }
