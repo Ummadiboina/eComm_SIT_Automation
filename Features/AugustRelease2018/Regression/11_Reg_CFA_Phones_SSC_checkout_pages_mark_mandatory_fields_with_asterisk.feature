@@ -9,7 +9,8 @@ Feature: 11_Reg_CFA_Phones_SSC_checkout_pages_mark_mandatory_fields_with_asteris
     And verify the name of the colour is next to the colour tile in CFAPhoneColour
     And select <color> color of the connected device
     And Navigate to device details page
-    And Land on the 'Tariffs and extra' page
+    #And Land on the 'Tariffs and extra' page
+    #And Click on 'Select' CTA to buy a valid <tariffAmt> and <dataValue>
     And I Land on the basket page and choose home delivery option
     And click on "go to checkout" button
     And verify copy text You will need to give details for all fields marked with an asterisk is displayed
@@ -36,5 +37,5 @@ Feature: 11_Reg_CFA_Phones_SSC_checkout_pages_mark_mandatory_fields_with_asteris
     Then Choose <consumer> <status> Business preferences <B1> <B2> <B3> <B4> And Channel Preferences <Text> <Email> <Phone> <Post> <MBBStatus> <DeviceType>
 
     Examples:
-      | handset            | color | Firstname | Surname | consumer | B1     | B2  | B3  | B4  | Text   | Email | Phone | Post | status  | MBBStatus | DeviceType |
-      | Xperia XZ2 Compact | Black | Test      | Accepta | Me       | Select | Not | Not | Not | Select | Not   | Not   | Not  | Enabled | No        | Connected  |
+      | handset       | tariffAmt | dataValue | color      | Firstname | Surname | consumer | B1     | B2  | B3  | B4  | Text   | Email | Phone | Post | status  | MBBStatus | DeviceType |
+      | iPhone 8 Plus | £39       | 8GB       | Space Grey | Test      | Accepta | Me       | Select | Not | Not | Not | Select | Not   | Not   | Not  | Enabled | No        | Connected  |

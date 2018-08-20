@@ -84,7 +84,7 @@ public class Agent_DealBuilderPageActions extends Environment {
             log.debug("Selected Random Tariff ");
         }
         if (Tariff.contains("SimO")) {
-            Agent_DealBuilderPage.SearchTextBox_Tariff.sendKeys("Simo");
+            Agent_DealBuilderPage.SearchTextBox_Tariff.sendKeys("- / Simo");
             Agent_DealBuilderPage.SelectingFirstAvailableTariff.click();
             Thread.sleep(5000);
             log.debug("Selected Random SimO Tariff ");

@@ -57,7 +57,7 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 		log.debug("Selecting Pay Monthly Tariff Tab");
 		pageobjects.PAYMandPAYGTariffAndExtrasPage.SelectPayMTariffTab.click();
 		log.debug("Clicked Pay Monthly Tariff Tab");
-		Thread.sleep(5000);
+		Thread.sleep(3000);
 		Screenshots.captureScreenshot();
 
 	}
