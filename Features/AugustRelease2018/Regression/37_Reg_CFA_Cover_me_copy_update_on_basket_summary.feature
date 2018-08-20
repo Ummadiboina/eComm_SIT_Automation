@@ -24,12 +24,12 @@ Feature: 37_Reg_CFA_Cover_me_copy_update_on_basket_summary
     And navigate to PAYM Tablets page
     #And I choose <tabletname> Tablet
     And Select PayM Tablet <tabletname>
-    #And click on the color dropdown
-    #And verify the name of the colour is next to the colour tile in CFAPhoneColour
-    #And select <color> color of the connected device
-    #And select <capacity> capacity of the connected device
+    And click on the color dropdown
+    And verify the name of the colour is next to the colour tile in CFAPhoneColour
+    And select <color> color of the connected device
+    And select <capacity> capacity of the connected device
     And Navigate to device details page
-    And Land on the 'Tariffs and extra' page
+    #And Land on the 'Tariffs and extra' page
     And select an insurance
     #And Click on "Buy Now" button for <tabletname>
     And I Land on the basket page and choose home delivery option
@@ -50,5 +50,5 @@ Feature: 37_Reg_CFA_Cover_me_copy_update_on_basket_summary
 
     #And pdf content
     Examples:
-      | tabletname        | color | capacity | Status   | handset | Firstname | Surname | Username     | consumer | B1  | B2     | B3     | B4  | Text | Email  | Phone | Post | status  | MBBStatus | DeviceType |
-      | Galaxy Tab S3 9.7 | Black | 32GB     | In Stock | Samsung | TEST      | ACCEPTA | TEST ACCEPTA | Me       | Not | Select | Select | Not | Not  | Select | Not   | Not  | Enabled | No        | Connected  |
+      | tabletname         | color  | capacity | Status   | handset | Firstname | Surname | Username     | consumer | B1  | B2     | B3     | B4  | Text | Email  | Phone | Post | status  | MBBStatus | DeviceType |
+      | iPad 9.7 inch 2018 | Silver | 128GB    | In Stock | Samsung | TEST      | ACCEPTA | TEST ACCEPTA | Me       | Not | Select | Select | Not | Not  | Select | Not   | Not  | Enabled | No        | Connected  |
