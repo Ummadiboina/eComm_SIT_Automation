@@ -6,7 +6,7 @@ Feature: 93_Reg_Trustev_CFA_PayMTabletsHomeDeliveryWithAccessory
     And navigate to PAYM Tablets page
     And select any available <Device> Tablet
     And Navigate to device details page
-    #And Land on the 'Tariffs and extra' page
+    And Land on the 'Tariffs and extra' page
     And Choose some Accesssory
     And I Land on the basket page and choose home delivery option
     And click on "go to checkout" button

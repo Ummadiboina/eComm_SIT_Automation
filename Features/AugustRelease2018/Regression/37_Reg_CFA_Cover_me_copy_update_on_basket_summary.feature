@@ -29,7 +29,7 @@ Feature: 37_Reg_CFA_Cover_me_copy_update_on_basket_summary
     And select <color> color of the connected device
     And select <capacity> capacity of the connected device
     And Navigate to device details page
-    #And Land on the 'Tariffs and extra' page
+    And Land on the 'Tariffs and extra' page
     And select an insurance
     #And Click on "Buy Now" button for <tabletname>
     And I Land on the basket page and choose home delivery option

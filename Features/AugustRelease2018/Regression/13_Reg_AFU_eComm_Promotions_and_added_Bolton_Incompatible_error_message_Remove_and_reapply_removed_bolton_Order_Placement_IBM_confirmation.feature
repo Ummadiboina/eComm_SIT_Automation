@@ -35,5 +35,5 @@ Feature: 13_Reg_AFU_eComm_Promotions_and_added_Bolton_Incompatible_error_message
     Then Order confirmation message should be displayed
 
     Examples:
-      | user        | Device                        | Button | Tariffs | ErrorMsg                     | Bolton | consumer | B1     | B2  | B3  | B4  | Text   | Email | Phone | Post | status  | MBBStatus | DeviceType |
-      | 07521114062 | Sony Xperia XZ2 Compact Black | Button | Refresh | incompatible with each other | Bolton | Someone  | Select | Not | Not | Not | Select | Not   | Not   | Not  | Enabled | No        | Connected  |
+      | user        | Device                    | Button | Tariffs | ErrorMsg                     | Bolton | consumer | B1     | B2  | B3  | B4  | Text   | Email | Phone | Post | status  | MBBStatus | DeviceType |
+      | 07521114062 | iPhone X 256GB Space Grey | Button | Refresh | incompatible with each other | Bolton | Someone  | Select | Not | Not | Not | Select | Not   | Not   | Not  | Enabled | No        | Connected  |

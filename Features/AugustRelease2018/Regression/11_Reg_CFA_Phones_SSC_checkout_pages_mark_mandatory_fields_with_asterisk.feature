@@ -9,8 +9,7 @@ Feature: 11_Reg_CFA_Phones_SSC_checkout_pages_mark_mandatory_fields_with_asteris
     And verify the name of the colour is next to the colour tile in CFAPhoneColour
     And select <color> color of the connected device
     And Navigate to device details page
-    #And Land on the 'Tariffs and extra' page
-    #And Click on 'Select' CTA to buy a valid <tariffAmt> and <dataValue>
+    And Land on the 'Tariffs and extra' page
     And I Land on the basket page and choose home delivery option
     And click on "go to checkout" button
     And verify copy text You will need to give details for all fields marked with an asterisk is displayed

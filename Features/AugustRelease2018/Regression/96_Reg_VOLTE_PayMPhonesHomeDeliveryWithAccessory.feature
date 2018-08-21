@@ -10,7 +10,7 @@ Feature: 96_Reg_VOLTE_PayMPhonesHomeDeliveryWithAccessory
     And select <color> color of the connected device
     And select <Capacity> capacity of the connected device
     And Navigate to device details page
-    #And Land on the 'Tariffs and extra' page
+    And Land on the 'Tariffs and extra' page
     And Choose some Accesssory
     And I Land on the basket page and choose home delivery option
     And click on "go to checkout" button

@@ -19,7 +19,7 @@ Feature: 39_Reg_CFA_morethan12Tablet
     #And I choose <tabletname> Tablet
     And Select PayM Tablet <tabletname>
     And Navigate to device details page
-    #And Land on the 'Tariffs and extra' page
+    And Land on the 'Tariffs and extra' page
     #And Choose Accesssory
     #And I Land on the basket page by clicking on Add to Basket button
     And Land on the basket page by clicking on Add to Basket button

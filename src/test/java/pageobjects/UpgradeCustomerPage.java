@@ -255,7 +255,7 @@ public class UpgradeCustomerPage {
 	@FindBy(how = How.XPATH, using = "//button[@id='verifyOtac']")
 	public static WebElement submitCode_OTAC;
 	
-	@FindBy(how = How.XPATH, using = "//a[@id='tab-switch-to-a-tablet'][1]")
+	@FindBy(how = How.XPATH, using = "(//a[@id='tab-switch-to-a-tablet'])[1]")
 	public static WebElement TabletsTab;
 	
 	/*@FindBy(how = How.ID, using = "qa-view-all")

@@ -10,7 +10,7 @@ Feature: 63_Reg_CS_PayMPhonesHomeDeliveryWithoutAccessory
     And select <color> color of the connected device
     And select <Capacity> capacity of the connected device
     And Navigate to device details page
-    #And Land on the 'Tariffs and extra' page
+    And Land on the 'Tariffs and extra' page
     And I Land on the basket page and choose home delivery option
     And click on "go to checkout" button
     And input <Firstname> and <Surname> and other valid details in Delivery page to verify GDPR
