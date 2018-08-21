@@ -70,10 +70,11 @@ public class ConnectedDeviceDetailsPageAction extends Environment {
         /*WebElement ele1 = pageobjects.ConnectedDeviceDetailsPage.ViewOurTariffs;
         jse.executeScript("arguments[0].click();", ele1);*/
         Thread.sleep(2000);
-        if(driver.findElements(By.xpath("(//button[normalize-space()='Choose this tariff'])[1]")).size()>0) {
+        /*if(driver.findElements(By.xpath("(//button[normalize-space()='Choose this tariff'])[1]")).size()>0) {
             driver.findElement(By.xpath("(//button[normalize-space()='Choose this tariff'])[1]")).click();
             log.debug("Choose this CTA clicked and tariff selected");
-        }else if(driver.findElements(By.xpath("(//button[normalize-space()='See our plans'])[1]")).size()>0) {
+        }*/
+        if(driver.findElements(By.xpath("(//button[normalize-space()='See our plans'])[1]")).size()>0) {
             if(pageobjects.ConnectedDeviceDetailsPage.SeeOurplans.isDisplayed()) {
                 WebElement ele1 = pageobjects.ConnectedDeviceDetailsPage.SeeOurplans;
                 jse.executeScript("arguments[0].click();", ele1);
