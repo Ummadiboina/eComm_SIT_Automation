@@ -115,7 +115,46 @@ public class UpgradeCustomerPageActions extends Environment {
             executor.executeScript("arguments[0].click();", pageobjects.PhonesListingPage.ViewAllPhones);
             Thread.sleep(3000);
         }
-        executor.executeScript("arguments[0].click();", pageobjects.PhonesListingPage.choosedefaultDevice);
+        if(elementName=="") {
+            executor.executeScript("arguments[0].click();", pageobjects.PhonesListingPage.choosedefaultDevice);
+        }else{
+            Thread.sleep(6000);
+            JavascriptExecutor jse = (JavascriptExecutor) driver;
+            jse.executeScript("window.scrollBy(0,300)", "");
+            Screenshots.captureScreenshot();
+            Thread.sleep(3000);
+            try {
+                //WebElement serchBox = driver.findElement(By.xpath("//input[@ng-model='textSearch.searchText']"));
+                WebElement serchBox = driver.findElement(By.xpath("//input[@id='listing-search']"));
+                serchBox.sendKeys(elementName);
+                Thread.sleep(10000);
+
+                WebElement requestedDevice = driver.findElement(By.xpath("(//img[@class='device-image lazy']/..//*[contains(text(),'"+elementName+"')])[1]"));
+                if(requestedDevice.isDisplayed()) {
+                    //scrollToAnElement.scrollToElement(requestedDevice);
+                    Screenshots.captureScreenshot();
+                }
+                if (driver.findElements(By.xpath("(//img[@class='device-image lazy']/..//*[contains(text(),'"+elementName+"')])[1]")).size() >= 1) {
+                    Thread.sleep(3000);
+                    ((JavascriptExecutor) driver).executeScript("arguments[0].click();", requestedDevice);
+                    log.debug("Selected Device from Phones as Required is : " + elementName);
+
+                    Thread.sleep(3000);
+                } else {
+                    Thread.sleep(3000);
+                    WebElement element = driver.findElement(By.xpath("(//img[@class='device-image lazy'])[1]"));
+                    ((JavascriptExecutor) driver).executeScript("arguments[0].click();", element);
+                    String defaultSelDevice = driver.findElement(By.xpath("((//img[@class='device-image lazy'])[1]/..//span[@class='ng-binding'])[2]")).getText();
+                    log.debug(" As Required Device is not Availabe, We have picked default device from availabe  :: " + defaultSelDevice);
+
+                    Thread.sleep(3000);
+
+                    Screenshots.captureScreenshot();
+                }
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
         // Thread.sleep(3000);
         /*if (elementName.contains("GalaxyS7")) {
             pageobjects.UpgradePhonesListingPage.GalaxyS7.click();
@@ -2310,6 +2349,15 @@ public class UpgradeCustomerPageActions extends Environment {
 
         ((JavascriptExecutor) driver).executeScript("arguments[0].click();",
                 pageobjects.UpgradeCustomerPage.ViewAllTablets);
+        Screenshots.captureScreenshot();
+    }
+
+    public static void clickOnViewAllPhones() throws InterruptedException, IOException {
+
+        Thread.sleep(3000);
+
+        ((JavascriptExecutor) driver).executeScript("arguments[0].click();",
+                pageobjects.UpgradeCustomerPage.ViewAllPhones);
         Screenshots.captureScreenshot();
     }
 

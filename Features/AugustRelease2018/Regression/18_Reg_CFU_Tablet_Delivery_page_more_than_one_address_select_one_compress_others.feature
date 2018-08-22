@@ -9,9 +9,12 @@ Feature: 18_Reg_CFU_Tablet_Delivery_page_more_than_one_address_select_one_compre
     And Navigate to upgrade > upgrade now
     And Click on 'Get Started' CTA
     And Click on Tablet section in upgrade options page
-    And Select a <Tablet> device from Recommended devices section
-    And Click on device 'Confirm CTA'
-    And Click on View all Tariffs link in upgrade options page
+    And Click on View all Tablets link in upgrade options page
+    And Select PayM Tablet <Tablet>
+    And Navigate to device details page
+    #And Select a <Tablet> device from Recommended devices section
+    #And Click on device 'Confirm CTA'
+    #And Click on View all Tariffs link in upgrade options page
     And Land on the 'Tariffs and extra' page
     And I Land on the basket page by clicking on Add to Basket button
     And click on "go to checkout" button
@@ -29,6 +32,6 @@ Feature: 18_Reg_CFU_Tablet_Delivery_page_more_than_one_address_select_one_compre
     Then Choose <consumer> <status> Business preferences <B1> <B2> <B3> <B4> And Channel Preferences <Text> <Email> <Phone> <Post> <MBBStatus> <DeviceType>
 
     Examples:
-      | username                     | password | Tablet        | tariff                 | houseNumber | PostCode | Username     | Action    | consumer | B1  | B2  | B3     | B4  | Text | Email  | Phone | Post   | status  | MBBStatus | DeviceType |
-      | ink_jun5746@stf.ref.o2.co.uk | test123  | Random Device | 9.99upfront60.00amonth | 111         | SL11Er   | Test Accepta | enterCode | Me       | Not | Not | Select | Not | Not  | Select | Not   | Select | Enabled | No        | Connected  |
+      | username                                    | password | Tablet                | color | tariff                 | houseNumber | PostCode | Username     | Action    | consumer | B1  | B2  | B3     | B4  | Text | Email  | Phone | Post   | status  | MBBStatus | DeviceType |
+      | rbmuatlokesh_donotusee8049@stf.ref.o2.co.uk | test123  | Galaxy Tab A 2016 7.0 | Gold  | 9.99upfront60.00amonth | 11          | SL11Er   | Test Accepta | enterCode | Me       | Not | Not | Select | Not | Not  | Select | Not   | Select | Enabled | No        | Connected  |
 

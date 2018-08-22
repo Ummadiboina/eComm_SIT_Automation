@@ -16,7 +16,8 @@ Feature: 39_Reg_CFA_morethan12Tablet
     And calculate the total quantity of devices added to basket
     And click on continue shopping button
     And navigate to PAYM Tablets page
-    And I choose <tabletname> Tablet
+    #And I choose <tabletname> Tablet
+    And Select PayM Tablet <tabletname>
     And Navigate to device details page
     And Land on the 'Tariffs and extra' page
     #And Choose Accesssory
@@ -34,5 +35,5 @@ Feature: 39_Reg_CFA_morethan12Tablet
     Then Choose <consumer> <status> Business preferences <B1> <B2> <B3> <B4> And Channel Preferences <Text> <Email> <Phone> <Post> <MBBStatus> <DeviceType>
 
     Examples:
-      | Firstname | Surname | Username     | limit1 | tabletname    | limit2 | accessoryname | fitnesstrackername | consumer | B1  | B2  | B3  | B4  | Text | Email | Phone | Post | status  | MBBStatus | DeviceType |
-      | TEST      | ACCEPTA | TEST ACCEPTA | 6      | Random Device | 6      | AirPods       | Fitbit Ionic       | Someone  | Not | Not | Not | Not | Not  | Not   | Not   | Not  | Enabled | No        | Connected  |
+      | Firstname | Surname | Username     | limit1 | tabletname            | color      | capacity | limit2 | accessoryname | fitnesstrackername | consumer | B1  | B2  | B3  | B4  | Text | Email | Phone | Post | status  | MBBStatus | DeviceType |
+      | TEST      | ACCEPTA | TEST ACCEPTA | 6      | Galaxy Tab A 2016 7.0 | Space Grey | 256GB    | 6      | AirPods       | Fitbit Ionic       | Someone  | Not | Not | Not | Not | Not  | Not   | Not   | Not  | Enabled | No        | Connected  |

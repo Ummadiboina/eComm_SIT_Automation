@@ -61,7 +61,7 @@ public class ConnectedDeviceDetailsPageAction extends Environment {
         log.debug("Entering ViewAllTariffs() function ");
 
         JavascriptExecutor jse = (JavascriptExecutor) driver;
-        jse.executeScript("window.scrollBy(0,600)", "");
+        jse.executeScript("window.scrollBy(0,400)", "");
         Thread.sleep(2000);
         // pageobjects.ConnectedDeviceDetailsPage.ViewOurTariffs.click();
 
@@ -69,17 +69,27 @@ public class ConnectedDeviceDetailsPageAction extends Environment {
         Screenshots.captureScreenshot();
         /*WebElement ele1 = pageobjects.ConnectedDeviceDetailsPage.ViewOurTariffs;
         jse.executeScript("arguments[0].click();", ele1);*/
-
-        if(driver.findElements(By.xpath("(//a[normalize-space()='See our plans'])[1]")).size()>0) {
+        Thread.sleep(2000);
+        /*if(driver.findElements(By.xpath("(//button[normalize-space()='Choose this tariff'])[1]")).size()>0) {
+            driver.findElement(By.xpath("(//button[normalize-space()='Choose this tariff'])[1]")).click();
+            log.debug("Choose this CTA clicked and tariff selected");
+        }*/
+        if(driver.findElements(By.xpath("(//button[normalize-space()='See our plans'])[1]")).size()>0) {
             if(pageobjects.ConnectedDeviceDetailsPage.SeeOurplans.isDisplayed()) {
                 WebElement ele1 = pageobjects.ConnectedDeviceDetailsPage.SeeOurplans;
                 jse.executeScript("arguments[0].click();", ele1);
                 log.debug("Clicked on ViewOurTariffs/ See our plans");
             }else{
+                Thread.sleep(2000);
                 WebElement ele1 = pageobjects.ConnectedDeviceDetailsPage.AddtoBasket;
                 jse.executeScript("arguments[0].click();", ele1);
                 log.debug("Clicked on Add to basket CTA at device details page to land on T&E page");
             }
+        }else{
+            Thread.sleep(2000);
+            WebElement ele1 = pageobjects.ConnectedDeviceDetailsPage.AddtoBasket;
+            jse.executeScript("arguments[0].click();", ele1);
+            log.debug("Clicked on Add to basket CTA at device details page to land on T&E page");
         }
         Thread.sleep(7000);
         // driver.findElement(By.id("deviceDetailsSubmit")).click();
@@ -257,7 +267,7 @@ public class ConnectedDeviceDetailsPageAction extends Environment {
 
      public static void colorSelectOfDeviceDropDown(String color) throws Exception {
         // TODO Auto-generated method stub
-        Thread.sleep(5000);
+        //Thread.sleep(5000);
 
         //ConnectedDeviceDetailsPage.ColorDropDown.click();
          //WebElement ele = driver.findElement(By.xpath("(//span[@class='selectboxit-option-icon-container']/following-sibling::span[normalize-space()='" + color + "'])[1]"));

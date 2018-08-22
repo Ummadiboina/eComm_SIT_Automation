@@ -105,7 +105,7 @@ public class UpgradeCustomerPage {
 	//////////////////////////// Your Sim
 	//////////////////////////// Section///////////////////////////////////////////////////
 
-	@FindBy(how = How.XPATH, using = "//*[@id='yourSim'] | //div[contains(text(),'3. Your sim')]")
+	@FindBy(how = How.XPATH, using = "//*[@id='yourSim'] | (//div[contains(text(),'3. Your sim')])[2]")
 	public static WebElement YourSimHeading;
 
 	@FindBy(how = How.XPATH, using = "//*[@id='needNewSim']")
@@ -255,7 +255,7 @@ public class UpgradeCustomerPage {
 	@FindBy(how = How.XPATH, using = "//button[@id='verifyOtac']")
 	public static WebElement submitCode_OTAC;
 	
-	@FindBy(how = How.XPATH, using = "//a[@id='tab-switch-to-a-tablet'][1]")
+	@FindBy(how = How.XPATH, using = "(//a[@id='tab-switch-to-a-tablet'])[1]")
 	public static WebElement TabletsTab;
 	
 	/*@FindBy(how = How.ID, using = "qa-view-all")
@@ -275,8 +275,11 @@ public class UpgradeCustomerPage {
 	public static WebElement SignoutLink;
 
 	//Clicking on View all Tablets
-	@FindBy(how = How.XPATH, using = "//a[@href='#tablets']")
+	@FindBy(how = How.XPATH, using = "//a[@href='#tablets'] | //a[normalize-space()='View all Tablets']")
 	public static WebElement ViewAllTablets;
+
+	@FindBy(how = How.XPATH, using = "//a[normalize-space()='See all phones']")
+	public static WebElement ViewAllPhones;
 
 	//Clicking on random Table
 	@FindBy(how = How.XPATH, using = "//*[@id='qa-recommendedDevicesTile']/a/div[2]/button")

@@ -7,7 +7,10 @@ Feature: 41_Reg_CFA_PayM_Phone_Data_filters_options_tariff_and_extras_page_Order
   Scenario Outline: CFA_PayM_Phone_Data_filters_options_tariff_and_extras_page_Order_placement
     Given I am an CFA user and Lands on shop page
     And navigate to PAYM Phones page
-    And I search for a PayM <handset> device
+    And I choose PayM <handset>
+    And click on the color dropdown
+    And verify the name of the colour is next to the colour tile in CFAPhoneColour
+    And select <color> color of the connected device
     #select handset with more tariff and less tariff  -- > ask kanban team to set handset with 2 tariff and handset with more than 3 tariff
     And Navigate to device details page
     ##New functionality starts
@@ -33,6 +36,6 @@ Feature: 41_Reg_CFA_PayM_Phone_Data_filters_options_tariff_and_extras_page_Order
     Then Choose <consumer> <status> Business preferences <B1> <B2> <B3> <B4> And Channel Preferences <Text> <Email> <Phone> <Post> <MBBStatus> <DeviceType>
 
     Examples:
-      | handset           | Firstname | Surname | Username     | filtername | sortoption                 | consumer | B1     | B2  | B3  | B4  | Text | Email  | Phone | Post | status  | MBBStatus | DeviceType |
-      | Samsung Galaxy S8 | TEST      | ACCEPTA | TEST ACCEPTA | low        | Monthly data (High to low) | Me       | Select | Not | Not | Not | Not  | Select | Not   | Not  | Enabled | No        | Connected  |
+      | handset        | color          | Firstname | Surname | Username     | filtername | sortoption                 | consumer | B1     | B2  | B3  | B4  | Text | Email  | Phone | Post | status  | MBBStatus | DeviceType |
+      | Galaxy S9 Plus | Midnight Black | TEST      | ACCEPTA | TEST ACCEPTA | low        | Monthly data (High to low) | Me       | Select | Not | Not | Not | Not  | Select | Not   | Not  | Enabled | No        | Connected  |
 

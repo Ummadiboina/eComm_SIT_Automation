@@ -9,9 +9,12 @@ Feature: 50_CFU_Tablets_Data_filters_options_tariff_and_extras_page_Order_placem
     And Navigate to upgrade > upgrade now
     And Click on 'Get Started' CTA
     And Click on Tablet section in upgrade options page
-    And Select a <Tablet> device from Recommended devices section
-    And Click on device 'Confirm CTA'
-    And Click on View all Tariffs link in upgrade options page
+    And Click on View all Tablets link in upgrade options page
+    And Select PayM Tablet <Tablet>
+    And Navigate to device details page
+    #And Select a <Tablet> device from Recommended devices section
+    #And Click on device 'Confirm CTA'
+    #And Click on View all Tariffs link in upgrade options page
     Then I should see data filters buttons next to existing sort drop-down for PAYM/SIMO tariffs <sortoption>
       #Verification point - A - More than 2 should be displayed
     When I click on respective <filtername> data filter
@@ -35,6 +38,6 @@ Feature: 50_CFU_Tablets_Data_filters_options_tariff_and_extras_page_Order_placem
     Then Choose <consumer> <status> Business preferences <B1> <B2> <B3> <B4> And Channel Preferences <Text> <Email> <Phone> <Post> <MBBStatus> <DeviceType>
 
     Examples:
-      | Tablet        | Action | Surname | Username     | filtername | sortoption                 | username                          | password | consumer | B1  | B2  | B3     | B4  | Text | Email  | Phone | Post | status  | MBBStatus | DeviceType |
-      | Random Device | skip   | ACCEPTA | TEST ACCEPTA | low        | Monthly data (Low to High) | carphone_one1499@stf.ref.o2.co.uk | test123  | Me       | Not | Not | Select | Not | Not  | Select | Not   | Not  | Enabled | No        | Connected  |
+      | Tablet            | Action | Surname | Username     | filtername | sortoption                 | username                          | password | consumer | B1  | B2  | B3     | B4  | Text | Email  | Phone | Post | status  | MBBStatus | DeviceType |
+      | Galaxy Tab S3 9.7 | skip   | ACCEPTA | TEST ACCEPTA | low        | Monthly data (Low to High) | carphone_one1499@stf.ref.o2.co.uk | test123  | Me       | Not | Not | Select | Not | Not  | Select | Not   | Not  | Enabled | No        | Connected  |
    #   | Apple iPhone 7    | TEST      | ACCEPTA | TEST ACCEPTA | high       |
