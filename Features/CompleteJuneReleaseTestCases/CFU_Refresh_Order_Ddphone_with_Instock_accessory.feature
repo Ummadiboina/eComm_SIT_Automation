@@ -5,8 +5,8 @@ Scenario Outline:
 	CFU Refresh Order Delayed delivery phone with InStock Accessory Basket Review and Confirmation Page 
 	Given I am existing user and I click on Signin button 
 	And Signin using valid <username> and <password> credentials 
-	And Navigate to upgrade phone 
-	And I choose upgrade PayM <handset> 
+	And Navigate to upgrade phone
+	And I choose upgrade PayM handset <handset>
 	And Navigate to device details page, check if the selected device is Delayed Delivery and select <color> 
 	And Land on the 'Tariffs and extra' page 
 	And Choose some Accesssory 
