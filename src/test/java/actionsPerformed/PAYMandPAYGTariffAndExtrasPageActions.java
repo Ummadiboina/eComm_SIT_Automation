@@ -66,112 +66,117 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 
 	public static String TariffSelect(String ElementName) throws IOException, InterruptedException {
 
-		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-		scrollToAnElement.scrollToElement(PAYMandPAYGTariffAndExtrasPage.RandomTariff1);
-		Screenshots.captureScreenshot();
-		if (ElementName.equalsIgnoreCase("Randomtariff")) {
-			Thread.sleep(4000);
-			pageobjects.PAYMandPAYGTariffAndExtrasPage.RandomTariff1.sendKeys(Keys.ENTER);
-			//pageobjects.PAYMandPAYGTariffAndExtrasPage.RandomTariff1.click();
-			log.debug("Selected a Random Tariff");
 
-		}
+		if(driver.findElements(By.xpath("(//input[@type='button' and @value='Go to basket'])[1]")).size() <=  0) {
 
-		if (ElementName.contains("SelectPromotedTariff")) {
-			pageobjects.PAYMandPAYGTariffAndExtrasPage.SelectPromotedTariff.sendKeys(Keys.ENTER);
-			log.debug("Selected a Promoted Tariff");
-		}
-		if (ElementName.contains("fullpaymenttariff1")) {
-
-			JavascriptExecutor executor = (JavascriptExecutor)driver;
-			executor.executeScript("window.scrollBy(0,300)", "");
-			Thread.sleep(5000);
+			driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+			scrollToAnElement.scrollToElement(PAYMandPAYGTariffAndExtrasPage.RandomTariff1);
 			Screenshots.captureScreenshot();
-			//pageobjects.PAYMandPAYGTariffAndExtrasPage.paydevicefulllink.click();
+			if (ElementName.equalsIgnoreCase("Randomtariff")) {
+				Thread.sleep(4000);
+				pageobjects.PAYMandPAYGTariffAndExtrasPage.RandomTariff1.sendKeys(Keys.ENTER);
+				//pageobjects.PAYMandPAYGTariffAndExtrasPage.RandomTariff1.click();
+				log.debug("Selected a Random Tariff");
 
-			executor.executeScript("arguments[0].click();", pageobjects.PAYMandPAYGTariffAndExtrasPage.paydevicefulllink);
+			}
 
-			log.debug("Expanded the Full payment Tariff Section");
-			Thread.sleep(5000);
-			Screenshots.captureScreenshot();
-			pageobjects.PAYMandPAYGTariffAndExtrasPage.RandomfullTariff1.sendKeys(Keys.ENTER);
-			log.debug("Selected a full payment Tariff");
-		}
+			if (ElementName.contains("SelectPromotedTariff")) {
+				pageobjects.PAYMandPAYGTariffAndExtrasPage.SelectPromotedTariff.sendKeys(Keys.ENTER);
+				log.debug("Selected a Promoted Tariff");
+			}
+			if (ElementName.contains("fullpaymenttariff1")) {
 
-		//Validation for Data Roll Over Text
-		if(ElementName.contains("\\|")){
-
-			String tariffAmt = ElementName.split("\\|")[0];
-			String dataRolloverValue = ElementName.split("\\|")[1];
-
-			if(driver.findElements(By.xpath("//span[text()='"+tariffAmt+"']")).size() >= 1 ){
-
-				if(driver.findElement(By.xpath("//span[normalize-space()='"+tariffAmt+"']/../../../div/h3")).getText().equals(dataRolloverValue)){
-
-					log.debug("Data value "+dataRolloverValue+" for "+tariffAmt+" is displayed");
-				}
-				else{
-
-					log.debug("Data value "+dataRolloverValue+" for "+tariffAmt+" is not displayed");
-				}
-				if(driver.findElement(By.xpath("//span[[normalize-space()='"+tariffAmt+"']/../../../ul/li[1]/p")).getText().equals("Includes data rollover of up to "+dataRolloverValue)){
-
-					log.debug("Data Roll over copy text is displayed");
-				}
-				else{
-
-					log.debug("Data Roll over copy text is not displayed");
-				}
-
-				List<WebElement> plnList = driver.findElement(By.xpath("//span[text()='"+tariffAmt+"']/../../../ul/li"));
-
-				for(WebElement elm : plnList) {
-					plan = elm.getText().replaceAll("\"","").trim() + "|";
-
-				}
-
-				driver.findElement(By.xpath("//span[text()='"+tariffAmt+"']/../../../a")).click();
-				log.debug("Clicked on More details link");
+				JavascriptExecutor executor = (JavascriptExecutor) driver;
+				executor.executeScript("window.scrollBy(0,300)", "");
 				Thread.sleep(5000);
+				Screenshots.captureScreenshot();
+				//pageobjects.PAYMandPAYGTariffAndExtrasPage.paydevicefulllink.click();
 
-				String dataRollOvrPopupTxt = driver.findElement(By.xpath("//div[@id='o2BundleCharges']/div[@class='box-content scroll-bar']/p[3]")).getAttribute("textContent");
-				if(dataRollOvrPopupTxt.contains("With data rollover, you can roll over your unused data into your next month‘s Big Bundle, subject to bundle caps. Terms apply.")){
-					log.debug("Data Roll over copy text is present in the popup");
+				executor.executeScript("arguments[0].click();", pageobjects.PAYMandPAYGTariffAndExtrasPage.paydevicefulllink);
 
-				}
-				else{
-					log.debug("Data Roll over copy text is not present in the popup");
-				}
-				driver.findElement(By.xpath("//h3[text()='Big Bundles']/following-sibling::a")).click();
-				log.debug("Clicked on More details popup close button");
-				Thread.sleep(3000);
+				log.debug("Expanded the Full payment Tariff Section");
+				Thread.sleep(5000);
+				Screenshots.captureScreenshot();
+				pageobjects.PAYMandPAYGTariffAndExtrasPage.RandomfullTariff1.sendKeys(Keys.ENTER);
+				log.debug("Selected a full payment Tariff");
+			}
 
-				driver.findElement(By.xpath("//span[text()='"+tariffAmt+"']/../../../button")).click();
-				log.debug("Selected the Big Bundle Tariff");
+			//Validation for Data Roll Over Text
+			if (ElementName.contains("\\|")) {
 
-				//Scroll to Your Package section of T&E page
-				WebElement yourPackageSection = driver.findElement(By.xpath("//h2[contains(text(),'Your package')]"));
-				((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", yourPackageSection);
-				log.debug("Scrolling page to Your package section");
+				String tariffAmt = ElementName.split("\\|")[0];
+				String dataRolloverValue = ElementName.split("\\|")[1];
 
-				List<WebElement> actPlnListElm = driver.findElement(By.xpath("//span[text()='"+tariffAmt+"']/../../../ul/li"));
+				if (driver.findElements(By.xpath("//span[text()='" + tariffAmt + "']")).size() >= 1) {
 
-				for(int i = 3;i<=actPlnListElm.size();i++) {
-					actPlnList = actPlnListElm.get(i).getText().replaceAll("\"","").trim() + "|";
-				}
-				if(plan.equals(actPlnList)){
-					log.debug("Selected Big Bundle Data Roll over plan details is displayed in your package section");
+					if (driver.findElement(By.xpath("//span[normalize-space()='" + tariffAmt + "']/../../../div/h3")).getText().equals(dataRolloverValue)) {
 
-				}
-				else{
-					log.debug("Selected Big Bundle Data Roll over plan details is not displayed in your package section");
+						log.debug("Data value " + dataRolloverValue + " for " + tariffAmt + " is displayed");
+					} else {
 
+						log.debug("Data value " + dataRolloverValue + " for " + tariffAmt + " is not displayed");
+					}
+					if (driver.findElement(By.xpath("//span[[normalize-space()='" + tariffAmt + "']/../../../ul/li[1]/p")).getText().equals("Includes data rollover of up to " + dataRolloverValue)) {
+
+						log.debug("Data Roll over copy text is displayed");
+					} else {
+
+						log.debug("Data Roll over copy text is not displayed");
+					}
+
+					List<WebElement> plnList = driver.findElement(By.xpath("//span[text()='" + tariffAmt + "']/../../../ul/li"));
+
+					for (WebElement elm : plnList) {
+						plan = elm.getText().replaceAll("\"", "").trim() + "|";
+
+					}
+
+					driver.findElement(By.xpath("//span[text()='" + tariffAmt + "']/../../../a")).click();
+					log.debug("Clicked on More details link");
+					Thread.sleep(5000);
+
+					String dataRollOvrPopupTxt = driver.findElement(By.xpath("//div[@id='o2BundleCharges']/div[@class='box-content scroll-bar']/p[3]")).getAttribute("textContent");
+					if (dataRollOvrPopupTxt.contains("With data rollover, you can roll over your unused data into your next month‘s Big Bundle, subject to bundle caps. Terms apply.")) {
+						log.debug("Data Roll over copy text is present in the popup");
+
+					} else {
+						log.debug("Data Roll over copy text is not present in the popup");
+					}
+					driver.findElement(By.xpath("//h3[text()='Big Bundles']/following-sibling::a")).click();
+					log.debug("Clicked on More details popup close button");
+					Thread.sleep(3000);
+
+					driver.findElement(By.xpath("//span[text()='" + tariffAmt + "']/../../../button")).click();
+					log.debug("Selected the Big Bundle Tariff");
+
+					//Scroll to Your Package section of T&E page
+					WebElement yourPackageSection = driver.findElement(By.xpath("//h2[contains(text(),'Your package')]"));
+					((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", yourPackageSection);
+					log.debug("Scrolling page to Your package section");
+
+					List<WebElement> actPlnListElm = driver.findElement(By.xpath("//span[text()='" + tariffAmt + "']/../../../ul/li"));
+
+					for (int i = 3; i <= actPlnListElm.size(); i++) {
+						actPlnList = actPlnListElm.get(i).getText().replaceAll("\"", "").trim() + "|";
+					}
+					if (plan.equals(actPlnList)) {
+						log.debug("Selected Big Bundle Data Roll over plan details is displayed in your package section");
+
+					} else {
+						log.debug("Selected Big Bundle Data Roll over plan details is not displayed in your package section");
+
+					}
 				}
 			}
+			Screenshots.captureScreenshot();
+			return plan;
 		}
-		Screenshots.captureScreenshot();
+		else  {
+			driver.findElement(By.xpath("(//input[@type='button' and @value='Go to basket'])[1]")).click();
+		}
 		return plan;
 	}
+
 
 	public static void addAccessory() throws InterruptedException, IOException {
 		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
@@ -205,22 +210,27 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 	}
 
 	public static void addToBasketLive() throws InterruptedException, IOException {
-		//driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
-		Thread.sleep(4000);
+
+		if(driver.findElements(By.xpath("(//input[@value='Go to basket'])[1]")).size() > 0) {
+			//driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+			Thread.sleep(4000);
         /*if(PAYMandPAYGTariffAndExtrasPage.RandomfullTariff1.isEnabled()){
         ((JavascriptExecutor) driver).executeScript("arguments[0].click();", PAYMandPAYGTariffAndExtrasPage.RandomfullTariff1);
 		}*/
-		log.debug("Click on the Add To Basket/Go To Basket CTA");
+			log.debug("Click on the Add To Basket/Go To Basket CTA");
 		/*JavascriptExecutor jse = (JavascriptExecutor) driver;
 		jse.executeScript("window.scrollBy(0,600)", "");*/
-		Screenshots.captureScreenshot();
-		((JavascriptExecutor) driver).executeScript("arguments[0].click();", pageobjects.PAYMandPAYGTariffAndExtrasPage.addToBasketLive);
-		// pageobjects.PAYMandPAYGTariffAndExtrasPage.addToBasketLive.sendKeys(Keys.ENTER);
-		log.debug("Clicked on Add to Basket in Tariff and Extras page");
-		Thread.sleep(10000);
-		Screenshots.captureScreenshot();
-		//Screenshots.captureScreenshot(Hooks.directoryName);
-
+			Screenshots.captureScreenshot();
+			((JavascriptExecutor) driver).executeScript("arguments[0].click();", pageobjects.PAYMandPAYGTariffAndExtrasPage.addToBasketLive);
+			// pageobjects.PAYMandPAYGTariffAndExtrasPage.addToBasketLive.sendKeys(Keys.ENTER);
+			log.debug("Clicked on Add to Basket in Tariff and Extras page");
+			Thread.sleep(10000);
+			Screenshots.captureScreenshot();
+			//Screenshots.captureScreenshot(Hooks.directoryName);
+		}
+		else{
+			//driver.findElement(By.xpath("(//input[@type='submit' and @value='Go to checkout'])[1]")).click();
+		}
 	}
 
 	public static void addToBasket_BoyOut_Journey() throws InterruptedException, IOException {
