@@ -378,8 +378,6 @@ public class DeliveryPageActions extends Environment {
             log.debug("Clicking on the continue link");
             Screenshots.captureScreenshot();
         }
-
-
     }
 
     public static void selectExistingAcctAndFastCheckOut() throws InterruptedException, IOException {
@@ -432,10 +430,10 @@ public class DeliveryPageActions extends Environment {
         for (int i = 0; i < values.size(); i++) {
             log.debug("The Details passed for delivery page are as below \n " + values.get(i).toString());
         }
-        pageobjects.DeliveryPage.Housenumber.sendKeys(values.get(0).get(1).toString());
+        pageobjects.DeliveryPage.Housenumber.sendKeys(values.get(0).get(1));
         log.debug("Entered House number");
         log.debug("Entered House number");
-        pageobjects.DeliveryPage.Postcode.sendKeys(values.get(1).get(1).toString());
+        pageobjects.DeliveryPage.Postcode.sendKeys(values.get(1).get(1));
         log.debug("Entered Post code");
         Thread.sleep(3000);
         pageobjects.DeliveryPage.Find_Address.click();
@@ -471,43 +469,43 @@ public class DeliveryPageActions extends Environment {
 
         Thread.sleep(3000);
         Select dropdown = new Select(pageobjects.DeliveryPage.Title);
-        dropdown.selectByValue(values.get(2).get(1).toString());
+        dropdown.selectByValue(values.get(2).get(1));
         log.debug("Selected the title dropdown ");
-        log.debug("Selected the title dropdown " + values.get(2).get(1).toString());
+        log.debug("Selected the title dropdown " + values.get(2).get(1));
 
         Thread.sleep(3000);
-        DeliveryPage.First_Name.sendKeys(values.get(3).get(1).toString());
-        log.debug("Entered first name as " + values.get(3).get(1).toString());
-        log.debug("Entered first name as " + values.get(3).get(1).toString());
+        DeliveryPage.First_Name.sendKeys(values.get(3).get(1));
+        log.debug("Entered first name as " + values.get(3).get(1));
+        log.debug("Entered first name as " + values.get(3).get(1));
 
         Thread.sleep(3000);
-        DeliveryPage.Last_Name.sendKeys(values.get(4).get(1).toString());
-        log.debug("Entered last name as " + values.get(4).get(1).toString());
-        log.debug("Entered last name as " + values.get(4).get(1).toString());
+        DeliveryPage.Last_Name.sendKeys(values.get(4).get(1));
+        log.debug("Entered last name as " + values.get(4).get(1));
+        log.debug("Entered last name as " + values.get(4).get(1));
 
         Thread.sleep(3000);
-        DeliveryPage.Contact_Number.sendKeys(values.get(5).get(1).toString());
-        log.debug("Entered contact number as " + values.get(5).get(1).toString());
+        DeliveryPage.Contact_Number.sendKeys(values.get(5).get(1));
+        log.debug("Entered contact number as " + values.get(5).get(1));
 
         Thread.sleep(3000);
-        DeliveryPage.Password.sendKeys(values.get(6).get(1).toString());
-        log.debug("Entered password as " + values.get(6).get(1).toString());
+        DeliveryPage.Password.sendKeys(values.get(6).get(1));
+        log.debug("Entered password as " + values.get(6).get(1));
 
         Thread.sleep(3000);
-        DeliveryPage.security_answer.sendKeys(values.get(7).get(1).toString());
-        log.debug("Entered Security Answer as " + values.get(7).get(1).toString());
+        DeliveryPage.security_answer.sendKeys(values.get(7).get(1));
+        log.debug("Entered Security Answer as " + values.get(7).get(1));
 
         Thread.sleep(3000);
-        DeliveryPage.date.sendKeys(values.get(8).get(1).toString());
-        log.debug("Entered Date of Birth - Date as " + values.get(8).get(1).toString());
+        DeliveryPage.date.sendKeys(values.get(8).get(1));
+        log.debug("Entered Date of Birth - Date as " + values.get(8).get(1));
 
         Thread.sleep(3000);
-        DeliveryPage.Month.sendKeys(values.get(9).get(1).toString());
-        log.debug("Entered Date of Birth - Month as " + values.get(9).get(1).toString());
+        DeliveryPage.Month.sendKeys(values.get(9).get(1));
+        log.debug("Entered Date of Birth - Month as " + values.get(9).get(1));
 
         Thread.sleep(3000);
-        DeliveryPage.year.sendKeys(values.get(10).get(1).toString());
-        log.debug("Entered Date of Birth - Year as " + values.get(10).get(1).toString());
+        DeliveryPage.year.sendKeys(values.get(10).get(1));
+        log.debug("Entered Date of Birth - Year as " + values.get(10).get(1));
         log.debug("Entered all the other relavant details");
         log.debug("Entered all the other Relevant details");
 
@@ -527,23 +525,23 @@ public class DeliveryPageActions extends Environment {
 
         Thread.sleep(3000);
         Select dropdown = new Select(pageobjects.DeliveryPage.Title);
-        dropdown.selectByValue(values.get(2).get(1).toString());
+        dropdown.selectByValue(values.get(2).get(1));
         log.debug("Selected the title dropdown ");
-        log.debug("Selected the title dropdown " + values.get(2).get(1).toString());
+        log.debug("Selected the title dropdown " + values.get(2).get(1));
 
         Thread.sleep(3000);
-        DeliveryPage.First_Name.sendKeys(values.get(3).get(1).toString());
-        log.debug("Entered first name as " + values.get(3).get(1).toString());
-        log.debug("Entered first name as " + values.get(3).get(1).toString());
+        DeliveryPage.First_Name.sendKeys(values.get(3).get(1));
+        log.debug("Entered first name as " + values.get(3).get(1));
+        log.debug("Entered first name as " + values.get(3).get(1));
 
         Thread.sleep(3000);
-        DeliveryPage.Last_Name.sendKeys(values.get(4).get(1).toString());
-        log.debug("Entered last name as " + values.get(4).get(1).toString());
-        log.debug("Entered last name as " + values.get(4).get(1).toString());
+        DeliveryPage.Last_Name.sendKeys(values.get(4).get(1));
+        log.debug("Entered last name as " + values.get(4).get(1));
+        log.debug("Entered last name as " + values.get(4).get(1));
 
         Thread.sleep(3000);
-        DeliveryPage.Contact_Number.sendKeys(values.get(5).get(1).toString());
-        log.debug("Entered contact number as " + values.get(5).get(1).toString());
+        DeliveryPage.Contact_Number.sendKeys(values.get(5).get(1));
+        log.debug("Entered contact number as " + values.get(5).get(1));
 
         Screenshots.captureScreenshot();
 

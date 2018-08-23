@@ -35,5 +35,5 @@ Feature: 09_Reg_CFA_Phones_Colour_Dropdowns_With_ColourNames_Beside_the_Colour_M
     Then Choose <consumer> <status> Business preferences <B1> <B2> <B3> <B4> And Channel Preferences <Text> <Email> <Phone> <Post> <MBBStatus> <DeviceType>
 
     Examples:
-      | handset       | Username     | Firstname | Surname | color      | consumer | B1     | B2     | B3  | B4  | Text   | Email  | Phone  | Post   | status  | MBBStatus | DeviceType |
-      | iPhone 8 Plus | TEST ACCEPTA | Test      | Accepta | Space Grey | Me       | Select | Select | Not | Not | Select | Select | Select | Select | Enabled | No        | Connected  |
+      | handset  | Username     | Firstname | Surname | color | consumer | B1     | B2     | B3  | B4  | Text   | Email  | Phone  | Post   | status  | MBBStatus | DeviceType |
+      | iPhone 7 | TEST ACCEPTA | Test      | Accepta | Red   | Me       | Select | Select | Not | Not | Select | Select | Select | Select | Enabled | No        | Connected  |

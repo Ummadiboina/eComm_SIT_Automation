@@ -26,7 +26,6 @@ public class PhonesListingPageAction extends Environment {
 
 	public static void PAYMPhoneSelect(String deviceName) throws Throwable {
 
-		//driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		Thread.sleep(6000);
 		JavascriptExecutor jse = (JavascriptExecutor) driver;
 		jse.executeScript("window.scrollBy(0,300)", "");
@@ -47,7 +46,6 @@ public class PhonesListingPageAction extends Environment {
 				Thread.sleep(3000);
                 ((JavascriptExecutor) driver).executeScript("arguments[0].click();", requestedDevice);
                 log.debug("Selected Device from Phones as Required is : " + deviceName);
-
                 Thread.sleep(3000);
             } else {
 				Thread.sleep(3000);

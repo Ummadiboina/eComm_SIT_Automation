@@ -7,7 +7,7 @@ Feature: 12_Reg_Consumer_Existing_PAYG_Phone_BigBundle_To_Show_£15_Data_Roll_Ov
     Given I am an Existing user and Navigates to Signin page
     And Signin using valid <username> and <password> credentials
     And navigate to Pay as you Go Phones page
-    #And I choose PayG <handset>
+    #    #And I choose PayG <handset>
     And I choose PayM <handset>
     And click on the color dropdown
     And verify the name of the colour is next to the colour tile in CFAPhoneColour
@@ -25,5 +25,5 @@ Feature: 12_Reg_Consumer_Existing_PAYG_Phone_BigBundle_To_Show_£15_Data_Roll_Ov
     Then Choose <consumer> <status> Business preferences <B1> <B2> <B3> <B4> And Channel Preferences <Text> <Email> <Phone> <Post> <MBBStatus> <DeviceType>
 
     Examples:
-      | username                     | password | handset       | color      | Username     | Tariff_Value | Data | consumer | B1     | B2  | B3     | B4  | Text   | Email  | Phone | Post | status  | MBBStatus | DeviceType |
-      | ins_feb3087@stf.ref.o2.co.uk | test123  | iPhone 8 Plus | Space Grey | TEST ACCEPTA | £15          | 5GB  | Me       | Select | Not | Select | Not | Select | Select | Not   | Not  | Enabled | No        | Connected  |
+      | username      | password | handset       | color      | Username     | Tariff_Value | Data | consumer | B1     | B2  | B3     | B4  | Text   | Email  | Phone | Post | status  | MBBStatus | DeviceType |
+      | qwertyuiiuytr | test123  | iPhone 8 Plus | Space Grey | TEST ACCEPTA | £15          | 5GB  | Me       | Select | Not | Select | Not | Select | Select | Not   | Not  | Enabled | No        | Connected  |

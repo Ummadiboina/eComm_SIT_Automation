@@ -50,8 +50,24 @@ public class ConnectedDeviceDetailsPage {
     public static WebElement DevStatusMsg;
     // have to change the below xpath after getting the environment
 
+//**********************************88
+    //colour
 
-//============================
+    @FindBy(how = How.XPATH, using = "//span[@class='selectboxit-colour-name']")
+    public static WebElement defaut_Selectd_Colour;
+
+    @FindBy(how = How.ID, using = "memorySelectBoxItArrow")
+    public static WebElement Arrow_deviceCapacity;
+
+
+    @FindBy(how = How.ID, using = "memorySelectBoxItText")
+    public static WebElement default_deviceCapacity;
+
+
+
+
+
+//============================FR - Flexible Refresh
 
     @FindBy(how = How.XPATH, using = "//span/i[@id='colourSelectBoxItArrow']")
     public static WebElement ColorDropDown;
@@ -71,8 +87,9 @@ public class ConnectedDeviceDetailsPage {
     @FindAll({@FindBy(how = How.XPATH, using = "//span[@id='colourSelectBoxItArrowContainer' or @id='colorSelectBoxItArrowContainer']")})
     public static WebElement colorselectBoxArow;
 
-    /*@FindAll({@FindBy(how = How.ID, using = "colourSelectBoxItArrowContainer")})
-    public static WebElement colorselectBoxArow;*/
+    //Arrow - color drop down
+    @FindAll({@FindBy(how = How.XPATH, using = "//span[@id='colourSelectBoxItArrowContainer']")})
+    public static WebElement selectColour;
 
     @FindAll({@FindBy(how = How.XPATH, using = "//*[@id='colourSelectBoxIt' or @id='colorSelectBoxIt']")})
     public static WebElement Colourdropdownbox;
