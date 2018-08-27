@@ -34,12 +34,6 @@ public class Agent_DealBuilderPageActions extends Environment {
         log.debug("Agent Home page Validation" + driver.getTitle());
 
         Screenshots.captureScreenshot();
-
-        // Assert.assertEquals("Agent Home Page",
-        // pageobjects.Agent_HomePage.sectionHeading.getText());
-
-        // Assert.assertEquals("Your basket",
-        // pageobjects.BasketPage.BasketHeaderXXL.getText());
     }
 
     public static void SelectPAYMDevice(String Device) throws InterruptedException, IOException {
@@ -83,8 +77,9 @@ public class Agent_DealBuilderPageActions extends Environment {
             Thread.sleep(5000);
             log.debug("Selected Random Tariff ");
         }
-        if (Tariff.contains("SimO")) {
-            Agent_DealBuilderPage.SearchTextBox_Tariff.sendKeys("- / Simo");
+        if (Tariff.contains("Sim")) {
+            //Agent_DealBuilderPage.SearchTextBox_Tariff.sendKeys("- / Simo");
+            Agent_DealBuilderPage.SearchTextBox_Tariff.sendKeys("Simo");
             Agent_DealBuilderPage.SelectingFirstAvailableTariff.click();
             Thread.sleep(5000);
             log.debug("Selected Random SimO Tariff ");
@@ -144,7 +139,7 @@ public class Agent_DealBuilderPageActions extends Environment {
         try {
             Thread.sleep(3000);
             log.debug("Tariff Name: " + driver.findElement(By.xpath("//*[@id='planTable']/tbody/tr[1]/td[6]")).getText());
-            if (driver.findElement(By.xpath("//*[@id='planTable']/tbody/tr[1]/td[6]")).getText().equals("Standard")) {
+                if (driver.findElement(By.xpath("//*[@id='planTable']/tbody/tr[1]/td[6]")).getText().equals("Standard")) {
                 log.debug("Selected Tariff is a Standard Tariff hence Handset Tariff combination is not required");
             } else {
 
@@ -154,16 +149,18 @@ public class Agent_DealBuilderPageActions extends Environment {
                 for (int i = 0; i < menuOuter.size(); i++) {
                     log.debug("Option " + i + " is: " + menuOuter.get(i).getText());
                 }
+/*
 
                 //For FR Comment below 2 lines
                 driver.findElement(By.xpath("(//*[@class='priceSelection']/select/option)[" + menuOuter.size() + "]")).click();
                 log.debug("Selected Option : " + driver.findElement(By.xpath("(//*[@class='priceSelection']/select/option)[" + menuOuter.size() + "]")).getText());
+*/
 
 
                 //For FR enable below 3 lines
-                /*int selectSize=menuOuter.size()-1;
+                int selectSize=menuOuter.size()-1;
                 driver.findElement(By.xpath("(//*[@class='priceSelection']/select/option)[" + selectSize + "]")).click();
-                log.debug("Selected Option : " + driver.findElement(By.xpath("(//*[@class='priceSelection']/select/option)[" + selectSize + "]")).getText());*/
+                log.debug("Selected Option : " + driver.findElement(By.xpath("(//*[@class='priceSelection']/select/option)[" + selectSize + "]")).getText());
 
                 log.debug("Selected combination of handset and talk plan");
                 Thread.sleep(9000);

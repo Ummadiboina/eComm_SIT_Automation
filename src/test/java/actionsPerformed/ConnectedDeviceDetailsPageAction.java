@@ -17,6 +17,7 @@ import org.openqa.selenium.support.ui.Select;
 
 import GlobalActions.Screenshots;
 import helpers.Environment;
+import org.testng.asserts.Assertion;
 import pageobjects.ConnectedDeviceDetailsPage;
 import pageobjects.MouseHoverPage;
 
@@ -439,8 +440,14 @@ public class ConnectedDeviceDetailsPageAction extends Environment {
             //Assert.fail("The colour dropdown is not displayed");
             Screenshots.captureScreenshot();
         }
-
     }
+
+
+
+
+
+
+
 
     public static void UpdatedColordropdownText() {
 
@@ -457,6 +464,67 @@ public class ConnectedDeviceDetailsPageAction extends Environment {
         }
 
     }
+
+
+
+
+    public static void chooseColourOfDevice(String colourOfDevice) throws IOException, InterruptedException {
+        // TODO Auto-generated method stub
+        Thread.sleep(3000);
+        boolean isAvailabeRequiredColor = false;
+        if(ConnectedDeviceDetailsPage.defaut_Selectd_Colour.getText().contains(colourOfDevice)) {
+            log.debug("The Default selected colour is + " + colourOfDevice);
+            Screenshots.captureScreenshot();
+        }else   if(driver.findElements(By.xpath("//span[@id='colourSelectBoxItArrowContainer']")).size() > 0){
+            WebElement colourDropdown = driver.findElement(By.xpath("//*[@id='colourSelectBoxItOptions' or @id='colorSelectBoxItOptions']"));
+            List<WebElement> elementColor = colourDropdown.findElements(By.xpath("(//*[@class='selectboxit-option-label'])"));
+            log.debug("Available colour variants are : ");
+            driver.findElement(By.xpath("//span[@id='colourSelectBoxItArrowContainer']")).click();
+            for (int i = 1; i <= elementColor.size(); i++) {
+                String colourFromist = driver.findElement(By.xpath("(//*[@class='selectboxit-option-label'])["+i+"]")).getText();
+
+                if(colourFromist.contains(colourOfDevice)){
+                    driver.findElement(By.xpath("((//*[@class='selectboxit-option-label']))["+i+"]")).click();
+                    log.debug("Selected Device colour from the list is  + " + colourOfDevice);
+                    isAvailabeRequiredColor = true;
+                }
+            }
+        } else{
+            log.debug("Selected Device colour from the list is not availabe so picking availabe one + " + ConnectedDeviceDetailsPage.defaut_Selectd_Colour.getText());
+
+        }
+
+        Screenshots.captureScreenshot();
+    }
+
+
+    public static void chooseCapacityOfDevice(String capacityOfDevice) throws IOException, InterruptedException {
+        // TODO Auto-generated method stub
+        Thread.sleep(3000);
+        boolean isAvailabeRequiredCapacity = false;
+        if(ConnectedDeviceDetailsPage.default_deviceCapacity.getText().contains(capacityOfDevice)) {
+            log.debug("The Default selected Capacity is + " + capacityOfDevice);
+            Screenshots.captureScreenshot();
+        }else   if(driver.findElements(By.xpath("//span[@id='memorySelectBoxItArrow']")).size() > 0){
+
+            List<WebElement> eleCapacity = driver.findElements(By.xpath("//select[@id='memory']//option"));
+            log.debug("Available colour variants are : ");
+
+            for (int i = 0; i < eleCapacity.size(); i++) {
+                String colourFromist = eleCapacity.get(i).getText();
+                if(colourFromist.contains(capacityOfDevice)){
+                    eleCapacity.get(i).click();
+                    log.debug("Selected Device colour from the list is  + " + capacityOfDevice);
+                }
+            }
+        } else{
+            log.debug("Selected Device colour from the list is not availabe so picking availabe one + " + ConnectedDeviceDetailsPage.default_deviceCapacity.getText());
+
+        }
+
+        Screenshots.captureScreenshot();
+    }
+
 
 
 

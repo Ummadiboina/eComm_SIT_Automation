@@ -335,18 +335,18 @@ public class BasketPageActions extends Environment {
 
 	public static void CollectionorDelivery(String elementName) throws InterruptedException, IOException {
 		Thread.sleep(4000);
-
-		//if(!BasketPage.checkoutbtn.isDisplayed()){
+		if(driver.findElements(By.xpath("//*[@id='homeDelivery']")).size()  >  0) {
+			//if(!BasketPage.checkoutbtn.isDisplayed()){
 			if (elementName.contains("homeDelivery")) {
 				Thread.sleep(3000);
-				boolean b =driver.findElement(By.xpath("//*[@id='homeDelivery']")).isSelected();
-				if(!b) {
+				boolean b = driver.findElement(By.xpath("//*[@id='homeDelivery']")).isSelected();
+				if (!b) {
 					pageobjects.BasketPage.HomeDeliverySelect.click();
 					// Assert.assertEquals(elementName,"Galaxy S7 is not found");
 					log.debug("HomeDelivery is Selected");
 					Screenshots.captureScreenshot();
 				}
-			}else if (elementName.contains("clickAndCollect")) {
+			} else if (elementName.contains("clickAndCollect")) {
 				pageobjects.BasketPage.clickAndCollect.click();
 				// Assert.assertEquals(elementName,"Galaxy S7 is not found");
 				log.debug("click And Collect is Selected");
@@ -378,8 +378,8 @@ public class BasketPageActions extends Environment {
 				jse.executeScript("window.scrollBy(0,600)", "");
 				Screenshots.captureScreenshot();
 			}
-		//}
-
+			//}
+		}
 	}
 
 	public static void checkStoreStockForTradeIn(String elementName) throws InterruptedException, IOException {
@@ -639,9 +639,9 @@ public class BasketPageActions extends Environment {
 			String displayDeviceText="";
 			String selectedDeviceText="";
 			for (int i = 0; i < DisplayedDevices.size(); i++) {
-				displayDeviceText=DisplayedDevices.get(i).toString();
+				displayDeviceText= DisplayedDevices.get(i);
 				for (int j = 0; j < SelectedDevices.size(); j++) {
-					selectedDeviceText=SelectedDevices.get(j).toString();
+					selectedDeviceText= SelectedDevices.get(j);
 					if(displayDeviceText.contains(selectedDeviceText)){
 						log.debug("Devices in basket are matching with selected device :: Displayed device is- "+ displayDeviceText+" and Selected device is -"+selectedDeviceText);
 						cnt++;
