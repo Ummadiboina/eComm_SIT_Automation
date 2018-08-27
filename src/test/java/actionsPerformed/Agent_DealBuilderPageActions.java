@@ -644,22 +644,24 @@ public class Agent_DealBuilderPageActions extends Environment {
                 // Switching to Child window
                 driver.switchTo().window(ChildWindow);
                 Thread.sleep(3000);
-                Agent_DealBuilderPage.Postcode.sendKeys("G2");
+                Agent_DealBuilderPage.Postcode.sendKeys("M4");
 
                 Agent_DealBuilderPage.searchStore.click();
+                Thread.sleep(8000);
                 Screenshots.captureScreenshot();
-                Thread.sleep(4000);
-                JavascriptExecutor jse = (JavascriptExecutor) driver;
-                jse.executeScript("window.scrollBy(0,200)", "");
+
+                /*JavascriptExecutor jse = (JavascriptExecutor) driver;
+                jse.executeScript("window.scrollBy(0,200)", "");*/
                 JavascriptExecutor executor = (JavascriptExecutor) driver;
                 executor.executeScript("arguments[0].click();", Agent_DealBuilderPage.selectStore);
                 Screenshots.captureScreenshot();
 
             }
         }
+        Thread.sleep(3000);
         // Switching to Parent window i.e Main Window.
         driver.switchTo().window(Mainwindow);
-        log.debug("Selected store is" + pageobjects.Agent_DealBuilderPage.Storedetails.getText());
+        //log.debug("Selected store is" + Agent_DealBuilderPage.Storedetails.getText());
 
     }
 
