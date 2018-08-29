@@ -149,21 +149,21 @@ public class Agent_DealBuilderPageActions extends Environment {
                 for (int i = 0; i < menuOuter.size(); i++) {
                     log.debug("Option " + i + " is: " + menuOuter.get(i).getText());
                 }
-/*
 
-                //For FR Comment below 2 lines
-                driver.findElement(By.xpath("(//*[@class='priceSelection']/select/option)[" + menuOuter.size() + "]")).click();
-                log.debug("Selected Option : " + driver.findElement(By.xpath("(//*[@class='priceSelection']/select/option)[" + menuOuter.size() + "]")).getText());
-*/
+                String priceCombinationLastItem = driver.findElement(By.xpath("(//*[@class='priceSelection']/select/option)[" + menuOuter.size() + "]")).getText();
 
-
-                //For FR enable below 3 lines
-                int selectSize=menuOuter.size()-1;
-                driver.findElement(By.xpath("(//*[@class='priceSelection']/select/option)[" + selectSize + "]")).click();
-                log.debug("Selected Option : " + driver.findElement(By.xpath("(//*[@class='priceSelection']/select/option)[" + selectSize + "]")).getText());
+                if(priceCombinationLastItem.contains("Build tariff")){
+                    log.debug("Build tariff option is present in the price dropdown menu ie :: "+ priceCombinationLastItem);
+                    int selectSize=menuOuter.size()-1;
+                    driver.findElement(By.xpath("(//*[@class='priceSelection']/select/option)[" + selectSize + "]")).click();
+                    log.debug("Selected Option : " + driver.findElement(By.xpath("(//*[@class='priceSelection']/select/option)[" + selectSize + "]")).getText());
+                }else{
+                    driver.findElement(By.xpath("(//*[@class='priceSelection']/select/option)[" + menuOuter.size() + "]")).click();
+                    log.debug("Selected Option : " + driver.findElement(By.xpath("(//*[@class='priceSelection']/select/option)[" + menuOuter.size() + "]")).getText());
+                }
 
                 log.debug("Selected combination of handset and talk plan");
-                Thread.sleep(9000);
+                Thread.sleep(5000);
             }
             Screenshots.captureScreenshot();
         } catch (Exception e) {
@@ -187,17 +187,11 @@ public class Agent_DealBuilderPageActions extends Environment {
                 for (int i = 0; i < menuOuter.size(); i++) {
                     log.debug("Option " + i + " is: " + menuOuter.get(i).getText());
                 }
-
-                //driver.findElement(By.xpath("(//*[@class='priceSelection']/select/option)[" + menuOuter.size() + "]")).click();
-                //log.debug("Selected Option : " + driver.findElement(By.xpath("(//*[@class='priceSelection']/select/option)[" + menuOuter.size() + "]")).getText());
-
-
-                driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
-                driver.findElement(By.xpath("(//*[@class='priceSelection']/select/option[2])")).click();
-                log.debug("Selected Option : "+driver.findElement(By.xpath("(//*[@class='priceSelection']/select/option[2])")).getText());
+                    driver.findElement(By.xpath("(//*[@class='priceSelection']/select/option[2])")).click();
+                    log.debug("Selected Option : "+driver.findElement(By.xpath("(//*[@class='priceSelection']/select/option[2])")).getText());
 
                 log.debug("Selected combination of handset and talk plan");
-                Thread.sleep(8000);
+                Thread.sleep(5000);
             }
             Screenshots.captureScreenshot();
         } catch (Exception e) {
@@ -641,22 +635,24 @@ public class Agent_DealBuilderPageActions extends Environment {
                 // Switching to Child window
                 driver.switchTo().window(ChildWindow);
                 Thread.sleep(3000);
-                Agent_DealBuilderPage.Postcode.sendKeys("G2");
+                Agent_DealBuilderPage.Postcode.sendKeys("M4");
 
                 Agent_DealBuilderPage.searchStore.click();
+                Thread.sleep(8000);
                 Screenshots.captureScreenshot();
-                Thread.sleep(4000);
-                JavascriptExecutor jse = (JavascriptExecutor) driver;
-                jse.executeScript("window.scrollBy(0,200)", "");
+
+                /*JavascriptExecutor jse = (JavascriptExecutor) driver;
+                jse.executeScript("window.scrollBy(0,200)", "");*/
                 JavascriptExecutor executor = (JavascriptExecutor) driver;
                 executor.executeScript("arguments[0].click();", Agent_DealBuilderPage.selectStore);
                 Screenshots.captureScreenshot();
 
             }
         }
+        Thread.sleep(3000);
         // Switching to Parent window i.e Main Window.
         driver.switchTo().window(Mainwindow);
-        log.debug("Selected store is" + pageobjects.Agent_DealBuilderPage.Storedetails.getText());
+        //log.debug("Selected store is" + Agent_DealBuilderPage.Storedetails.getText());
 
     }
 

@@ -13,7 +13,7 @@ import org.openqa.selenium.WebElement;
 public class AgreementPageActions extends Environment {
 	final static Logger log = Logger.getLogger("AgreementPageActions");
 
-	public static void gettitlepage() throws IOException, InterruptedException {
+	public static void gettitlepage() throws IOException {
 
 		log.debug("Now Entering Agreement Page...");
 		log.debug(driver.getTitle());
@@ -21,7 +21,7 @@ public class AgreementPageActions extends Environment {
 		Screenshots.captureScreenshot();
 	}
 
-	public static void Affordability() throws IOException, InterruptedException {
+	public static void Affordability() throws IOException {
 
 		log.debug("Selecting 'I agree that with my current financial commitments...'checkbox");
 		if (pageobjects.AgreementPage.affordabilityCheck1.isDisplayed()) {
@@ -42,7 +42,8 @@ public class AgreementPageActions extends Environment {
 		}
 	}
 
-	public static void KeyInformation() throws IOException, InterruptedException {
+	public static void KeyInformation() throws IOException {
+		Screenshots.captureScreenshot();
 		log.debug("Verifying Key Information");
 		WebElement element = pageobjects.AgreementPage.keyInfoSection;
 		JavascriptExecutor executor = (JavascriptExecutor)driver;
@@ -52,7 +53,7 @@ public class AgreementPageActions extends Environment {
 		Screenshots.captureScreenshot();
 	}
 
-	public static void secciSection() throws IOException, InterruptedException {
+	public static void secciSection() throws IOException {
 		log.debug("Verifying Key Information");
 		WebElement element = pageobjects.AgreementPage.secciSection;
 		JavascriptExecutor executor = (JavascriptExecutor)driver;
@@ -62,7 +63,7 @@ public class AgreementPageActions extends Environment {
 		Screenshots.captureScreenshot();
 	}
 
-	public static void PayMMobileAgreement() throws IOException, InterruptedException {
+	public static void PayMMobileAgreement() throws IOException {
 		log.debug("Verifying Mobile Agreement section");
 		WebElement element = pageobjects.AgreementPage.PayMMobileAgreement;
 		JavascriptExecutor executor = (JavascriptExecutor)driver;
@@ -72,7 +73,7 @@ public class AgreementPageActions extends Environment {
 		Screenshots.captureScreenshot();
 	}
 
-	public static void TermsDeclarationCheckbox() throws IOException, InterruptedException {
+	public static void TermsDeclarationCheckbox() throws IOException {
 		log.debug("Verifying Consumner Credit Agreement");
 		WebElement element = pageobjects.AgreementPage.TermsDeclarationCheckbox;
 		JavascriptExecutor executor = (JavascriptExecutor)driver;

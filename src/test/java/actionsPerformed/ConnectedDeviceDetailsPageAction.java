@@ -64,33 +64,44 @@ public class ConnectedDeviceDetailsPageAction extends Environment {
         JavascriptExecutor jse = (JavascriptExecutor) driver;
         jse.executeScript("window.scrollBy(0,400)", "");
         Thread.sleep(2000);
-        // pageobjects.ConnectedDeviceDetailsPage.ViewOurTariffs.click();
 
-        //scrollToAnElement.scrollToElement(pageobjects.ConnectedDeviceDetailsPage.ViewOurTariffs);
         Screenshots.captureScreenshot();
         /*WebElement ele1 = pageobjects.ConnectedDeviceDetailsPage.ViewOurTariffs;
         jse.executeScript("arguments[0].click();", ele1);*/
         Thread.sleep(2000);
-        /*if(driver.findElements(By.xpath("(//button[normalize-space()='Choose this tariff'])[1]")).size()>0) {
-            driver.findElement(By.xpath("(//button[normalize-space()='Choose this tariff'])[1]")).click();
-            log.debug("Choose this CTA clicked and tariff selected");
-        }*/
-        if(driver.findElements(By.xpath("(//button[normalize-space()='See our plans'])[1]")).size()>0) {
-            if(pageobjects.ConnectedDeviceDetailsPage.SeeOurplans.isDisplayed()) {
-                WebElement ele1 = pageobjects.ConnectedDeviceDetailsPage.SeeOurplans;
+
+        if(driver.findElements(By.xpath("(//a[normalize-space()='See our plans'])[1]")).size()>0) {
+            //When FR is ON
+            if(pageobjects.ConnectedDeviceDetailsPage.SeeOurplansLink.isDisplayed()) {
+                WebElement ele1 = pageobjects.ConnectedDeviceDetailsPage.SeeOurplansLink;
                 jse.executeScript("arguments[0].click();", ele1);
-                log.debug("Clicked on ViewOurTariffs/ See our plans");
+                log.debug("Clicked on ViewOurTariffs/ See our plans Link \n");
             }else{
+                // For PayG Devices
                 Thread.sleep(2000);
                 WebElement ele1 = pageobjects.ConnectedDeviceDetailsPage.AddtoBasket;
                 jse.executeScript("arguments[0].click();", ele1);
-                log.debug("Clicked on Add to basket CTA at device details page to land on T&E page");
+                log.debug("Clicked on Add to basket CTA at PayG device details page to land on T&E page \n");
+            }
+        }else if(driver.findElements(By.xpath("(//button[normalize-space()='See our plans'])[1]")).size()>0) {
+            //When FR is off
+            if(pageobjects.ConnectedDeviceDetailsPage.SeeOurplansCTA.isDisplayed()) {
+                WebElement ele1 = pageobjects.ConnectedDeviceDetailsPage.SeeOurplansCTA;
+                jse.executeScript("arguments[0].click();", ele1);
+                log.debug("Clicked on ViewOurTariffs/ See our plans CTA \n");
+            }else{
+                // For PayG Devices
+                Thread.sleep(2000);
+                WebElement ele1 = pageobjects.ConnectedDeviceDetailsPage.AddtoBasket;
+                jse.executeScript("arguments[0].click();", ele1);
+                log.debug("Clicked on Add to basket CTA at PayG device details page to land on T&E page \n");
             }
         }else{
+            // For PayG Devices
             Thread.sleep(2000);
             WebElement ele1 = pageobjects.ConnectedDeviceDetailsPage.AddtoBasket;
             jse.executeScript("arguments[0].click();", ele1);
-            log.debug("Clicked on Add to basket CTA at device details page to land on T&E page");
+            log.debug("Clicked on Add to basket CTA at PayG device details page to land on T&E page \n");
         }
         Thread.sleep(7000);
         // driver.findElement(By.id("deviceDetailsSubmit")).click();

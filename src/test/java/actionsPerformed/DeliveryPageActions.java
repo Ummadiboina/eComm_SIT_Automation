@@ -316,6 +316,12 @@ public class DeliveryPageActions extends Environment {
             }
         }
         }else if(status.equalsIgnoreCase("Disabled")) {
+            JavascriptExecutor jse = (JavascriptExecutor) driver;
+            jse.executeScript("window.scrollBy(0,300)", "");
+            Screenshots.captureScreenshot();
+            Thread.sleep(3000);
+            scrollToAnElement.scrollToElement(pageobjects.DeliveryPage.continueBtn);
+            Screenshots.captureScreenshot();
             if (driver.findElements(By.xpath("//label[normalize-space(.)='Me']")).size() < 1) {
                 System.out.println("GDPR is Disabled");
                 log.debug("GDPR is Disabled");
@@ -325,6 +331,7 @@ public class DeliveryPageActions extends Environment {
         }else{
             Assert.fail("Failed to do GDPR validations");
         }
+
         Screenshots.captureScreenshot();
         Thread.sleep(5000);
         DeliveryPage.continueBtn.click();

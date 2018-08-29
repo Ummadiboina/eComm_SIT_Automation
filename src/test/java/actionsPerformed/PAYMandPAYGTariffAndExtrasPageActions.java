@@ -67,7 +67,7 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 	public static String TariffSelect(String ElementName) throws IOException, InterruptedException {
 
 
-		if(driver.findElements(By.xpath("(//input[@type='button' and @value='Go to basket'])[1]")).size() <=  0) {
+		if(driver.findElements(By.xpath("(//input[@type='button' and @value='Go to basket'])[1]")).size() >=  0) {
 
 			driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 			scrollToAnElement.scrollToElement(PAYMandPAYGTariffAndExtrasPage.RandomTariff1);
