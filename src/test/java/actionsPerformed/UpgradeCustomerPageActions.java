@@ -387,7 +387,7 @@ public class UpgradeCustomerPageActions extends Environment {
 
         List<WebElement> MissingElement = driver.findElements(By.xpath("//*[@class='rounded-button']"));
         if (MissingElement.size() > 0) {
-
+            Screenshots.captureScreenshot();
             pageobjects.UpgradeCustomerPage.Continue.click();
             log.debug("Clicked on Continue button in Upgrade page");
 
@@ -396,11 +396,10 @@ public class UpgradeCustomerPageActions extends Environment {
             pageobjects.UpgradeCustomerPage.SecurityOtac.sendKeys("999999");
             Thread.sleep(2000);
             pageobjects.UpgradeCustomerPage.SecurityContinue.click();
-            Thread.sleep(2000);
+            //Thread.sleep(2000);
+            driver.manage().timeouts().implicitlyWait(12,TimeUnit.SECONDS);
             pageobjects.UpgradeCustomerPage.Continue.click();
             log.debug("Clicked on Continue button in Upgrade page");
-
-
         }
         Screenshots.captureScreenshot();
     }

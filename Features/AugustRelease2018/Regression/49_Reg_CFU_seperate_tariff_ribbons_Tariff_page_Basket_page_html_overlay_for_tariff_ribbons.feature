@@ -27,5 +27,5 @@ Feature: 49_Reg_CFU_seperate_tariff_ribbons_Tariff_page_Basket_page_html_overlay
     And Click on the 'Overlay icon' in the Basket page and verify pop gets displayed
 
     Examples:
-      | username                     | password | handset            | tariff                 | color |
-      | ins_nov1474@stf.ref.o2.co.uk | test123  | Xperia XZ2 Compact | 9.99upfront84.00amonth | Black |
+      | username                     | password | handset       | tariff                 | color      |
+      | ins_nov1474@stf.ref.o2.co.uk | test123  | iPhone 8 Plus | 9.99upfront84.00amonth | Space Grey |
