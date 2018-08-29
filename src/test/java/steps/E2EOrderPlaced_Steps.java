@@ -2192,11 +2192,11 @@ public class E2EOrderPlaced_Steps {
             PageFactory.initElements(driver, ReviewPage.class);
             AgreementPageActions.KeyInformation();
             Thread.sleep(5000);
-            //AgreementPageActions.secciSection();
+            AgreementPageActions.secciSection();
             Thread.sleep(5000);
-            //AgreementPageActions.PayMMobileAgreement();
+            AgreementPageActions.PayMMobileAgreement();
             Thread.sleep(5000);
-            //AgreementPageActions.TermsDeclarationCheckbox();
+            AgreementPageActions.TermsDeclarationCheckbox();
             //Thread.sleep(5000);
         } catch (Exception e) {
             // TODO Auto-generated catch block
@@ -7854,7 +7854,7 @@ public class E2EOrderPlaced_Steps {
     }
 
     @And("^land on the payment page and input details and click 'Continue on next step' in upgrade journey for CCA Link$")
-    public void CreditCheckPaymentPage_HomeDelivery_Upgrade_CCA_Link(String Username) {
+    public void CreditCheckPaymentPage_HomeDelivery_Upgrade_CCA_Link() {
         // Write code here that turns the phrase above into concrete actions
         try {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);

@@ -81,6 +81,8 @@ public class MouseHoverAction extends Environment {
                 log.debug("Mouse over on the Shop Header ");
                 Thread.sleep(3000);
 
+                Screenshots.captureScreenshot();
+
                 Actions action1 = new Actions(driver);
                 action1.moveToElement(pageobjects.MouseHoverPage.MoveMouseOnPhones).perform();
                 log.debug("Mouse over Shop---> Phones ");
@@ -119,6 +121,8 @@ public class MouseHoverAction extends Environment {
                 action.moveToElement(MouseHoverPage.MoveMouseOnShopTab_Drupal).perform();
                 log.debug("Mouse over on the Shop Header ");
                 Thread.sleep(4000);
+
+                Screenshots.captureScreenshot();
 
                 Actions action1 = new Actions(driver);
                 action1.moveToElement(MouseHoverPage.MoveMouseOnPhones_Drupal).perform();
@@ -974,6 +978,8 @@ public class MouseHoverAction extends Environment {
                 log.debug("Mouse over on the Shop Header ");
                 Thread.sleep(2000);
 
+                Screenshots.captureScreenshot();
+
                 Actions action1 = new Actions(driver);
                 action1.moveToElement(pageobjects.MouseHoverPage.MoveMouseOnAccessoriesAndMoreTab).perform();
                 log.debug("Mouse over Shop---> Accessories ");
@@ -1012,6 +1018,8 @@ public class MouseHoverAction extends Environment {
                 action.moveToElement(MouseHoverPage.MoveMouseOnShopTab_Drupal).perform();
                 log.debug("Mouse over on the Shop Header ");
                 Thread.sleep(2000);
+
+                Screenshots.captureScreenshot();
 
                 Actions action1 = new Actions(driver);
                 action1.moveToElement(MouseHoverPage.MoveMouseOnAccessoriesAndMoreTab_Drupal).perform();
@@ -1066,6 +1074,8 @@ public class MouseHoverAction extends Environment {
                 log.debug("Mouse over on the Shop Header ");
                 Thread.sleep(2000);
 
+                Screenshots.captureScreenshot();
+
                 Actions action1 = new Actions(driver);
                 action1.moveToElement(pageobjects.MouseHoverPage.MoveMouseOnMobileBroadband).perform();
                 log.debug("Mouse over Shop---> MBB ");
@@ -1104,6 +1114,8 @@ public class MouseHoverAction extends Environment {
                 action.moveToElement(MouseHoverPage.MoveMouseOnShopTab_Drupal).perform();
                 log.debug("Mouse over on the Shop Header ");
                 Thread.sleep(2000);
+
+                Screenshots.captureScreenshot();
 
                 Actions action1 = new Actions(driver);
                 action1.moveToElement(MouseHoverPage.MoveMouseOnMobileBroadband_Drupal).perform();
@@ -1166,13 +1178,13 @@ public class MouseHoverAction extends Environment {
             action.moveToElement(pageobjects.MouseHoverPage.MoveMouseOnShopTab).perform();
             log.debug("Mouse over on the Shop Header ");
             Thread.sleep(2000);
+            Screenshots.captureScreenshot();
 
             Actions action1 = new Actions(driver);
             action1.moveToElement(pageobjects.MouseHoverPage.MouseMoveonUpgrade).perform();
             log.debug("Moved mouse on upgrades");
             Thread.sleep(2000);
 
-            Screenshots.captureScreenshot();
 
             pageobjects.MouseHoverPage.MouseMoveonUpgradeAndUpgradeNow.click();
             log.debug("Moved mouse on upgrades -- > upgradenow and clicked");
@@ -1203,6 +1215,8 @@ public class MouseHoverAction extends Environment {
             action.moveToElement(MouseHoverPage.MoveMouseOnShopTab_Drupal).perform();
             log.debug("Mouse over on the Shop Header ");
             Thread.sleep(2000);
+
+            Screenshots.captureScreenshot();
 
             Actions action1 = new Actions(driver);
             action1.moveToElement(MouseHoverPage.MouseMoveonUpgrade_Drupal).perform();
@@ -1255,6 +1269,8 @@ public class MouseHoverAction extends Environment {
                 log.debug("Mouse over on the Shop Header ");
                 Thread.sleep(2000);
 
+                Screenshots.captureScreenshot();
+
                 Actions action1 = new Actions(driver);
                 action1.moveToElement(pageobjects.MouseHoverPage.MoveMouseOnMobileBroadband).perform();
                 log.debug("Mouse over Shop---> MBB ");
@@ -1293,6 +1309,8 @@ public class MouseHoverAction extends Environment {
                 action.moveToElement(MouseHoverPage.MoveMouseOnShopTab_Drupal).perform();
                 log.debug("Mouse over on the Shop Header ");
                 Thread.sleep(2000);
+
+                Screenshots.captureScreenshot();
 
                 Actions action1 = new Actions(driver);
                 action1.moveToElement(MouseHoverPage.MoveMouseOnMobileBroadband_Drupal).perform();
@@ -1341,6 +1359,8 @@ public class MouseHoverAction extends Environment {
                 log.debug("Mouse over on the Shop Header ");
                 Thread.sleep(2000);
 
+                Screenshots.captureScreenshot();
+
                 Actions action1 = new Actions(driver);
                 action1.moveToElement(pageobjects.MouseHoverPage.MoveMouseOnTablets).perform();
                 log.debug("Hovered over tablets option");
@@ -1375,6 +1395,8 @@ public class MouseHoverAction extends Environment {
                 action.moveToElement(MouseHoverPage.MoveMouseOnShopTab_Drupal).perform();
                 log.debug("Mouse over on the Shop Header ");
                 Thread.sleep(2000);
+
+                Screenshots.captureScreenshot();
 
                 Actions action1 = new Actions(driver);
                 action1.moveToElement(MouseHoverPage.MoveMouseOniPad_Drupal).perform();
@@ -1429,15 +1451,17 @@ public class MouseHoverAction extends Environment {
                 log.debug("Mouse over on the Shop Header ");
                 Thread.sleep(2000);
 
+                Screenshots.captureScreenshot();
+
                 Actions action1 = new Actions(driver);
                 action1.moveToElement(pageobjects.MouseHoverPage.MouseOnSims).perform();
                 log.debug("Moving mouse on the Sims in Shop Dropdown");
-                log.debug("Moving mouse on the Sims in Shop Dropdown");
+
                 Thread.sleep(2000);
 
                 pageobjects.MouseHoverPage.MoveMouseOnPayGSims.click();
                 log.debug("Clicked on PayG Sims");
-                log.debug("Clicked on PayG Sims");
+
                 Thread.sleep(5000);
 
                 // Move mouse pointer away from location
@@ -1464,6 +1488,8 @@ public class MouseHoverAction extends Environment {
                 action.moveToElement(MouseHoverPage.MoveMouseOnShopTab_Drupal).perform();
                 log.debug("Mouse over on the Shop Header ");
                 Thread.sleep(2000);
+
+                Screenshots.captureScreenshot();
 
                 Actions action1 = new Actions(driver);
                 action1.moveToElement(MouseHoverPage.MoveMouseOnPayGSims_Drupal).perform();
@@ -1518,6 +1544,7 @@ public class MouseHoverAction extends Environment {
                 log.debug("Mouse over on the Shop Header ");
                 Thread.sleep(2000);
 
+                Screenshots.captureScreenshot();
 
                 Actions action1 = new Actions(driver);
                 action1.moveToElement(pageobjects.MouseHoverPage.MoveMouseOnSims).perform();
@@ -1556,6 +1583,8 @@ public class MouseHoverAction extends Environment {
                 action.moveToElement(MouseHoverPage.MoveMouseOnShopTab_Drupal).perform();
                 log.debug("Mouse over on the Shop Header ");
                 Thread.sleep(2000);
+
+                Screenshots.captureScreenshot();
 
                 Actions action1 = new Actions(driver);
                 action1.moveToElement(MouseHoverPage.MoveMouseOnSims_Drupal).perform();
@@ -1648,6 +1677,8 @@ public class MouseHoverAction extends Environment {
                 log.debug("Mouse over on the Shop Header ");
                 Thread.sleep(2000);
 
+                Screenshots.captureScreenshot();
+
                 Actions action1 = new Actions(driver);
                 action1.moveToElement(pageobjects.MouseHoverPage.MoveMouseOnTablets).perform();
                 log.debug("Mouse over Shop---> Tablets ");
@@ -1689,6 +1720,8 @@ public class MouseHoverAction extends Environment {
                 action.moveToElement(MouseHoverPage.MoveMouseOnShopTab_Drupal).perform();
                 log.debug("Mouse over on the Shop Header ");
                 Thread.sleep(2000);
+
+                Screenshots.captureScreenshot();
 
                 Actions action1 = new Actions(driver);
                 action1.moveToElement(MouseHoverPage.MoveMouseOnBrowseTablets_Drupal).perform();
