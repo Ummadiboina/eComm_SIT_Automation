@@ -45,10 +45,7 @@ public class Hooks extends Environment {
         directoryName = featureName1;
 
         log.debug("Running feature file : " + featureName);
-        log.debug("Running feature file : " + featureName);
 
-
-        log.debug("Called openBrowser");
         log.debug("Called openBrowser");
 
         String relativePath = System.getProperty("user.dir");

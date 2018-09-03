@@ -877,12 +877,12 @@ public class BasketPageActions extends Environment {
 			if(BSCstatus.equalsIgnoreCase("Enabled")) {
 				if (driver.findElements(By.xpath("//h3[normalize-space()='Spend Cap']")).size() > 0) {
 
-					log.debug("Bill spend cap section is enabled");
-					scrollToAnElement.scrollToElement(pageobjects.BasketPage.BillSpendCapHeader_Basket);
+					log.debug("Bill spend cap section is enabled/displayed at "+pageTitle+" page \n");
+					scrollToAnElement.scrollToElement(pageobjects.BasketPage.BillSpendCapHeader);
 					Screenshots.captureScreenshot();
-					log.debug("Bill Spend Cap header is displayed in "+pageTitle+" page ie :: " + pageobjects.BasketPage.BillSpendCapHeader_Basket.getText());
+					log.debug("Bill Spend Cap header is displayed in "+pageTitle+" page ie :: " + pageobjects.BasketPage.BillSpendCapHeader.getText());
 
-					AppliedBillCap = pageobjects.BasketPage.AppliedBillCap_Basket.getText();
+					AppliedBillCap = pageobjects.BasketPage.AppliedBillCap.getText();
 
 					if (BillCap.contains("CapMyBill")) {
 

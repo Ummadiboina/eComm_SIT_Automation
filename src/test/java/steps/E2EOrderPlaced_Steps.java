@@ -8248,12 +8248,26 @@ public class E2EOrderPlaced_Steps {
         }
     }
 
-    @And("^Verify the copytext of marketing message in \"([^\"]*)\"$")
+    @And("^Verify the copytext of marketing message in ([^\"]*)$")
     public void verifyTheCopytextOfMarketingMessageIn(String section) {
         try {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, UpgradeCustomerPage.class);
             UpgradeCustomerPageActions.VerifyMarketingMessage(section);
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+            log.debug("Unable to Click on view all tablets link");
+            Assert.fail("Unable to Click on view all tablets link");
+        }
+    }
+
+    @And("^Verify the copytext of marketing message$")
+    public void verifyTheCopytextOfMarketingMessage() {
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, PAYMandPAYGTariffAndExtrasPage.class);
+            UpgradeCustomerPageActions.Verify_Marketing_Message();
         } catch (Exception e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
