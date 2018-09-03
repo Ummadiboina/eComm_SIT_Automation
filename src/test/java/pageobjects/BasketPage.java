@@ -175,13 +175,13 @@ public class BasketPage {
 
 	//Bill Spend cap
 	@FindBy(how = How.XPATH, using = "//h3[normalize-space()='Spend Cap']//following-sibling::h3/span")
-	public static WebElement AppliedBillCap_Basket;
+	public static WebElement AppliedBillCap;
 
 	@FindBy(how = How.XPATH, using = "//a[@href='basket/changeBillSpendCap']")
 	public static WebElement BillCapEditLink_Basket;
 
 	@FindBy(how = How.XPATH, using = "//h3[normalize-space()='Spend Cap']")
-	public static WebElement BillSpendCapHeader_Basket;
+	public static WebElement BillSpendCapHeader;
 
 
 }

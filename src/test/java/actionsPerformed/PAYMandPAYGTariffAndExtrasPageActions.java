@@ -1244,7 +1244,7 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 
 			if(BSCstatus.equalsIgnoreCase("Enabled")) {
 				if (driver.findElements(By.xpath("//div/p//span[contains(text(),'Spend cap')]")).size() > 0) {
-
+					log.debug("Bill spend cap section is enabled");
 					scrollToAnElement.scrollToElement(PAYMandPAYGTariffAndExtrasPage.SpendCapSection);
 					Screenshots.captureScreenshot();
 
@@ -1299,8 +1299,8 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 				}
 			}else if(BSCstatus.equalsIgnoreCase("Disabled")){
 				if (driver.findElements(By.xpath("//div/p//span[contains(text(),'Spend cap')]")).size() > 0) {
-					log.debug("Bill spend cap section is enabled it suppose to be in disabled status");
-					Assert.fail("Bill spend cap section is enabled it suppose to be in disabled status");
+					log.debug("Bill spend cap section is enabled it suppose to be in disabled mode for disabled status");
+					Assert.fail("Bill spend cap section is enabled it suppose to be in disabled mode for disabled status");
 				}else{
 					log.debug("As expected, Bill spend cap section is disabled");
 				}
@@ -1460,8 +1460,8 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 				}
 			}else if(BSCstatus.equalsIgnoreCase("Disabled")){
 				if (driver.findElements(By.xpath("//div/p//span[contains(text(),'Spend cap')]")).size() > 0) {
-					log.debug("Bill spend cap section is enabled it suppose to be in disabled status");
-					Assert.fail("Bill spend cap section is enabled it suppose to be in disabled status");
+					log.debug("Bill spend cap section is enabled it suppose to be in disabled mode for disabled status");
+					Assert.fail("Bill spend cap section is enabled it suppose to be in disabled mode for disabled status");
 				}else{
 					log.debug("As expected, Bill spend cap section is disabled");
 				}
@@ -1490,7 +1490,7 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 					log.debug("Edit option is displayed after applying Bill Spend Cap: " + pageobjects.PAYMandPAYGTariffAndExtrasPage.BillCapEditLink.getText());
 
 				} else {
-					log.debug("Edit option is not displayed after applying Bill Spend Cap");
+					log.debug("Edit option is not displayed after applying Bill Spend Cap \n");
 				}
 				Thread.sleep(4000);
 
@@ -1513,14 +1513,7 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 
 			log.debug("Clicking on Edit link");
 			PAYMandPAYGTariffAndExtrasPage.BillCapEditLink.click();
-
-			Thread.sleep(4000);
-
-			if(pageobjects.PAYMandPAYGTariffAndExtrasPage.BillCapStatusMsg.isDisplayed()){
-				log.debug("Status message is displayed after clicking on Edit link");
-			}else{
-				log.debug("Status message is removed after clicking on Edit link");
-			}
+			log.debug("Edit link is clicked \n");
 
 		} catch (Exception e) {
 			log.debug("Unable to click on edit link :: "+e);
@@ -1538,10 +1531,11 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 			scrollToAnElement.scrollToElement(PAYMandPAYGTariffAndExtrasPage.SpendCapSection);
 			Screenshots.captureScreenshot();
 
+			//Previous tariff selection status should not be retained
 			if(pageobjects.PAYMandPAYGTariffAndExtrasPage.BillCapStatusMsg.isDisplayed()){
-				log.debug("Status message is present after clicking on Edit link");
+				log.debug("Status message is present after clicking on Edit link ie,: " +pageobjects.PAYMandPAYGTariffAndExtrasPage.BillCapStatusMsg.getText()+"\n");
 			}else{
-				log.debug("Status message is removed after clicking on Edit link");
+				log.debug("Status message has been removed after clicking on Edit link \n");
 			}
 
 		} catch (Exception e) {

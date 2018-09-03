@@ -7,7 +7,9 @@ Feature:87_Reg_PayG Tablets_ShowMarketingMessageOnTariffAndExtrasPagePackageSumm
     And select any available <Device> Tablet
     And Navigate to device details page
     And Select a PayG tariff <tariff>
+    And Verify the copytext of marketing message
     And I Land on the basket page and choose home delivery option
+    And Verify the copytext of marketing message
     And click on "go to checkout" button
     And input <Firstname> and <Surname> and other valid details in Delivery page to verify GDPR
     And Is this order for You or Someone else <consumer> when GDPR is <status>

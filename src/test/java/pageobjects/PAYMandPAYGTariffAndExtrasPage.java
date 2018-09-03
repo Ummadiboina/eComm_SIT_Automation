@@ -92,6 +92,9 @@ public class PAYMandPAYGTariffAndExtrasPage {
 	@FindBy(how = How.XPATH, using = ("//*[@class='accessory-button-container']"))
 	public static WebElement AccessoryContainer;
 
+	@FindBy(how = How.XPATH, using = ("//h2[contains(text(),'Your package')]"))
+	public static WebElement yourPackageSection;
+
 	/*
 	 * @FindBy(how=How.XPATH,using=(
 	 * "//*[@class='accessory-button-container']/input[@value='Add']")) public
