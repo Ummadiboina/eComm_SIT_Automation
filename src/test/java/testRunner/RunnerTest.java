@@ -39,7 +39,7 @@ import java.util.List;
 @CucumberOptions(plugin = {"html:testResult/cucumber-html-report",
         "json:testResult/cucumber.json", "pretty:testResult/cucumber-pretty.txt",
         "usage:testResult/cucumber-usage.json", "junit:testResult/cucumber-results.xml"},
-        features = {"Features//AugustRelease2018//Regression//05_Reg_CFA_ Cookie_pop_up_for_the_Shop_pages.feature"},
+        features = {"Features//SeptemberRelease2018//Regression"},
         glue = {"steps"},
         tags = {"@Web"})
 
