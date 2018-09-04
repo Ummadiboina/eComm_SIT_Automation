@@ -24,14 +24,14 @@ public class PAYMandPAYGTariffAndExtrasPage {
 
 	// Below is for Selecting Any Tariff
 
-	@FindBy(how = How.XPATH, using = ("(//button[@class='secondary selectButton tariff-select'])[2] | (//button[@class='secondary selectButton tst-select ng-binding ng-pristine ng-valid'])[2]"))
+	@FindBy(how = How.XPATH, using = ("(//button[@class='btn buyNowBtn ng-binding ng-pristine ng-valid'])[1] | (//button[@class='secondary selectButton tst-select ng-binding ng-pristine ng-valid'])[1]"))
 	public static WebElement SelectAnyTariff;
 
 	@FindBy(how = How.XPATH, using = ("(//button[@id='callToAction'])[1]"))
 	public static WebElement SelectAnyPayGTariff;
 
 
-	@FindBy(how = How.XPATH, using = ("(//*[@id='callToAction'])[1] | (//button[@class='secondary selectButton tariff-select'])[1]"))
+	@FindBy(how = How.XPATH, using = ("(//*[@id='callToAction'] | //button[@class='secondary selectButton tariff-select buyNowBtn'])[1]"))
 	public static WebElement RandomTariff1;
 
 	@FindBy(how = How.XPATH, using = ("//a[contains(text(),'Pay Monthly')]"))

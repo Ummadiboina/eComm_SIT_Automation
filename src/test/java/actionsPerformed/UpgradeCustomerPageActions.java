@@ -1757,7 +1757,7 @@ public class UpgradeCustomerPageActions extends Environment {
 
         {
             log.debug("The valid copytext is displayed" + YouSimCopyText);
-            log.debug("The valid copytext is displayed");
+
         } else {
             log.debug("The valid copytext is not displayed");
         }
