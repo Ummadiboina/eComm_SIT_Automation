@@ -25,4 +25,4 @@ Feature: 19_Reg_MBB_Data filters
     ##New functionality ends
     Examples:
       | Device_Name   | Firstname | Surname | Username     | filtername | sortoption                 |
-      | Random Device | TEST      | ACCEPTA | TEST ACCEPTA | high       | Monthly data (Low to High) |
+      | Random Device | TEST      | ACCEPTA | TEST ACCEPTA | high       | Monthly data (High to low) |

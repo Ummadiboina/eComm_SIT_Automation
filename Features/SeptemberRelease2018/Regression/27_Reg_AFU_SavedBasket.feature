@@ -13,5 +13,5 @@ Feature: 27_Reg_AFU_SavedBasket
     And Verify email is sent successfully
 
     Examples:
-      | user        | Device | Tariffs |
-      | 07521116288 | dongle | Refresh |
+      | user        | Device                            | Tariffs |
+      | 07521116997 | Galaxy S9 Plus 128GB Lilac Purple | Refresh |

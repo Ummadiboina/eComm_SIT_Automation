@@ -18,4 +18,4 @@ Feature: 22_Reg_AFA_PayMSimO_withoutAnyAccessory
 
     Examples:
       | Tariff | DeliveryType | Firstname | Surname | Username     | HouseNumber | PostCode | Consumer | B1  | B2     | B3  | B4  | Text | Email  | Phone  | Post   | status  | MBBStatus | DeviceType | DeviceModule |
-      | SimO   | HomeDelivery | TEST      | ACCEPTA | TEST ACCEPTA | 6           | SL11UP   | Me       | Not | Select | Not | Not | Not  | Select | Select | Select | Enabled | No        | Connected  | Simo         |
+      | Simo   | HomeDelivery | TEST      | ACCEPTA | TEST ACCEPTA | 6           | SL11UP   | Me       | Not | Select | Not | Not | Not  | Select | Select | Select | Enabled | No        | Connected  | Simo         |

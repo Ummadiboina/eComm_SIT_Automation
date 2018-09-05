@@ -20,5 +20,5 @@ Feature: 81_Reg_Jan_CFA_OOSForHomeDeliveryandCnC
 
 
     Examples:
-      | handset | color     | username               | password |
-      | Nokia 5 | Soft Gold | dasdasdkjaskd@sdsd.com | test123  |
+      | handset            | color     | username               | password |
+      | iPhone 5s Like New | Soft Gold | dasdasdkjaskd@sdsd.com | test123  |

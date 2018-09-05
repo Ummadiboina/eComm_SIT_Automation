@@ -786,19 +786,18 @@ public class PAYMSimOPageActions extends Environment {
 
 	public static void SelectValidCTASIMOtariff(String tariffAmt, String dataValue) throws InterruptedException {
 
-		List<WebElement> lstOfTariff = driver.findElements(By.xpath("//div[@class='price-block']/div/h2/span[@class='pound']"));
+		List<WebElement> lstOfTariff = driver.findElements(By.xpath("//div[@name='P12M']/div/div/h2/span[@class='pound']"));
 		for (int i = 1; i <= lstOfTariff.size(); i++) {
 			System.out.println("The value of i is " + i);
-			String price = driver.findElement(By.xpath("(//div[@class='price-block']/div/h2/span[@class='pound'])[" + i + "]")).getText();
+			String price = driver.findElement(By.xpath("(//div[@name='P12M']/div/div/h2/span[@class='pound'])[" + i + "]")).getText();
 
-
-			if (driver.findElements(By.xpath("(//div[@class='price-block']/div/h2/span[@class='pound'])[" + i + "]/../../../../../div/ul/li/h2[contains(text(),'GB')]")).size() > 0) {
-				String data = driver.findElement(By.xpath("(//div[@class='price-block']/h2/span[@class='pound'])[" + i + "]/../../../../../div/ul/li/h2[contains(text(),'GB')]")).getText();
+			if (driver.findElements(By.xpath("(//div[@name='P12M']/div/div/h2/span[@class='pound'])[" + i + "]/../../../../div[1]/ul/li[1]/h2[contains(text(),'GB')]")).size() > 0) {
+				String data = driver.findElement(By.xpath("(//div[@name='P12M']/div/div/h2/span[@class='pound'])[" + i + "]/../../../../div[1]/ul/li[1]/h2[contains(text(),'GB')]")).getText();
 				if (price.contains(tariffAmt) && data.contains(dataValue)) {
 					System.out.println("Actual tariff :: " + price + ", " + data + " And Actual :: " + price + "," + data + "===  are Verified ====");
 					log.info("Actual tariff :: " + price + ", " + data + " And Actual :: " + price + "," + data + "===  are Verified ====");
 					Thread.sleep(3000);
-					driver.findElement(By.xpath("(//div[@class='price-block']/div/h2/span[@class='pound'])[" + i + "]/../../../../../div[4]/div/button")).click();
+					driver.findElement(By.xpath("(//div[@name='P12M']/div/div/h2/span[@class='pound'])[" + i + "]/../../../../div[5]/div/form/button")).click();
 					Thread.sleep(3000);
 					break;
 				}
