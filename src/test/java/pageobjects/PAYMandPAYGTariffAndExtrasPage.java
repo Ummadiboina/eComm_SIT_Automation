@@ -24,7 +24,7 @@ public class PAYMandPAYGTariffAndExtrasPage {
 
 	// Below is for Selecting Any Tariff
 
-	@FindBy(how = How.XPATH, using = ("(//button[@class='btn buyNowBtn ng-binding ng-pristine ng-valid'])[1] | (//button[@class='secondary selectButton tst-select ng-binding ng-pristine ng-valid'])[1]"))
+	@FindBy(how = How.XPATH, using = ("(//button[@class='btn buyNowBtn ng-binding ng-pristine ng-valid'])[1] | (//button[@class='secondary selectButton tst-select ng-binding ng-pristine ng-valid'])[1] | | //button[@class='secondary selectButton tariff-select buyNowBtn'])[1]"))
 	public static WebElement SelectAnyTariff;
 
 	@FindBy(how = How.XPATH, using = ("(//button[@id='callToAction'])[1]"))
@@ -125,7 +125,7 @@ public class PAYMandPAYGTariffAndExtrasPage {
 	@FindBy(how = How.XPATH, using = "//select[@id='dataFilterSelect']")
 	public static WebElement TariffSortDropDown;
 
-	@FindAll({ @FindBy(how = How.XPATH, using = "//div[@id='tariff-tile']//ul/li[1]/h2 | //div[@class='col-xs-6 col-sm-3 dmt-container info-container']//ul/li[1]/h2") })
+	@FindAll({ @FindBy(how = How.XPATH, using = "//div[@id='tariff-tile']//ul/li[1]/h2 | //div[@class='col-xs-6 col-sm-3 dmt-container info-container']//ul/li[1]/h2 | //div[@class='box clearfix']/div[1]/div[2]/div/span") })
 	public static List<WebElement> DataTextElement;
 
 	@FindAll({

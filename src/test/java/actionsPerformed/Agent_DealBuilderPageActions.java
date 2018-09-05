@@ -77,9 +77,10 @@ public class Agent_DealBuilderPageActions extends Environment {
             Thread.sleep(5000);
             log.debug("Selected Random Tariff ");
         }
-        if (Tariff.contains("Sim")) {
-            //Agent_DealBuilderPage.SearchTextBox_Tariff.sendKeys("- / Simo");
-            Agent_DealBuilderPage.SearchTextBox_Tariff.sendKeys("Simo");
+        if (Tariff.contains("Simo")) {
+            Agent_DealBuilderPage.SearchTextBox_Tariff.sendKeys("- / Simo");
+            Thread.sleep(3000);
+            //Agent_DealBuilderPage.SearchTextBox_Tariff.sendKeys("Simo");
             Agent_DealBuilderPage.SelectingFirstAvailableTariff.click();
             Thread.sleep(5000);
             log.debug("Selected Random SimO Tariff ");
@@ -374,7 +375,7 @@ public class Agent_DealBuilderPageActions extends Environment {
         // Selecting an eMail Link
         Agent_DealBuilderPage.eMailBasket.click();
         log.debug("Clicked on eMail Basket");
-        log.debug("Clicked on eMail Basket");
+
         Thread.sleep(3000);
         Screenshots.captureScreenshot();
 
@@ -645,13 +646,15 @@ public class Agent_DealBuilderPageActions extends Environment {
                 jse.executeScript("window.scrollBy(0,200)", "");*/
                 JavascriptExecutor executor = (JavascriptExecutor) driver;
                 executor.executeScript("arguments[0].click();", Agent_DealBuilderPage.selectStore);
+                Thread.sleep(3000);
                 Screenshots.captureScreenshot();
 
             }
         }
-        Thread.sleep(3000);
+        Thread.sleep(5000);
         // Switching to Parent window i.e Main Window.
         driver.switchTo().window(Mainwindow);
+
         //log.debug("Selected store is" + Agent_DealBuilderPage.Storedetails.getText());
 
     }

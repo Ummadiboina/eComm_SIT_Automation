@@ -21,5 +21,5 @@ Feature: 83_ Reg_Jan_Existing_OOSForHomeDeliveryandCnC
 
 
     Examples:
-      | handset | color     | username                                    | password |
-      | Nokia 5 | Soft Gold | rbmuatlokesh_donotusee9623@stf.ref.o2.co.uk | test123  |
+      | handset            | color     | username                                    | password |
+      | iPhone 5s Like New | Soft Gold | rbmuatlokesh_donotusee9623@stf.ref.o2.co.uk | test123  |

@@ -1096,7 +1096,7 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 	}
 
 	public static void DeSelectedState() throws InterruptedException, IOException {
-		Thread.sleep(2000);
+		Thread.sleep(5000);
 		pageobjects.PAYMandPAYGTariffAndExtrasPage.DataFilterSelectedXpath.click();
 		Thread.sleep(5000);
 		scrollToAnElement.scrollToElement(PAYMandPAYGTariffAndExtrasPage.DataFilterSelectedXpath);
