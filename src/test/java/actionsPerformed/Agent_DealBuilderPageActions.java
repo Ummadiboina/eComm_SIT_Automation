@@ -647,12 +647,24 @@ public class Agent_DealBuilderPageActions extends Environment {
                 JavascriptExecutor executor = (JavascriptExecutor) driver;
                 executor.executeScript("arguments[0].click();", Agent_DealBuilderPage.selectStore);
                 Thread.sleep(3000);
-                Screenshots.captureScreenshot();
+
 
             }
         }
         Thread.sleep(5000);
         // Switching to Parent window i.e Main Window.
+        /*Set<String> windows = driver.getWindowHandles();
+        System.out.println(windows.size());
+        Screenshots.captureScreenshot();
+        Iterator<String> itr = s1.iterator();
+        while (itr.hasNext()) {
+            String ChildWindow = itr.next();
+            if (!Mainwindow.equalsIgnoreCase(ChildWindow)) {
+                // Switching to Child window
+                driver.switchTo().window(ChildWindow);
+            }
+        }*/
+
         driver.switchTo().window(Mainwindow);
 
         //log.debug("Selected store is" + Agent_DealBuilderPage.Storedetails.getText());

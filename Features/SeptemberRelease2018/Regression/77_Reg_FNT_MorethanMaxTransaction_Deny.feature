@@ -8,6 +8,7 @@ Feature: 77_Reg_FNT_MorethanMaxTransaction_Deny
     And click on the color dropdown
     And verify the name of the colour is next to the colour tile in CFAPhoneColour
     And select <color> color of the connected device
+    And select <Capacity> capacity of the connected device
     And Navigate to device details page
     And Land on the 'Tariffs and extra' page selecting pay device in full
     And Choose all Accesssory
@@ -23,5 +24,5 @@ Feature: 77_Reg_FNT_MorethanMaxTransaction_Deny
 
 
     Examples:
-      | handset            | color | Firstname | Surname | Username  | consumer | B1     | B2  | B3  | B4  | Text   | Email | Phone | Post | status  | MBBStatus | DeviceType |
-      | Xperia XZ2 Compact | Black | TEST      | NINE    | TEST NINE | Me       | Select | Not | Not | Not | Select | Not   | Not   | Not  | Enabled | No        | Connected  |
+      | handset  | color      | Capacity | Firstname | Surname | Username  | consumer | B1     | B2  | B3  | B4  | Text   | Email | Phone | Post | status  | MBBStatus | DeviceType |
+      | iPhone X | Space Grey | 256GB    | TEST      | NINE    | TEST NINE | Me       | Select | Not | Not | Not | Select | Not   | Not   | Not  | Enabled | No        | Connected  |

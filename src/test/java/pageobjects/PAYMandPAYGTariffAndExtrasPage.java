@@ -24,7 +24,7 @@ public class PAYMandPAYGTariffAndExtrasPage {
 
 	// Below is for Selecting Any Tariff
 
-	@FindBy(how = How.XPATH, using = ("(//button[@class='btn buyNowBtn ng-binding ng-pristine ng-valid'])[1] | (//button[@class='secondary selectButton tst-select ng-binding ng-pristine ng-valid'])[1] | | //button[@class='secondary selectButton tariff-select buyNowBtn'])[1]"))
+	@FindBy(how = How.XPATH, using = ("(//button[@class='btn buyNowBtn ng-binding ng-pristine ng-valid'])[1] | (//button[@class='secondary selectButton tst-select ng-binding ng-pristine ng-valid'])[1] | (//button[@class='secondary selectButton tariff-select buyNowBtn'])[1]"))
 	public static WebElement SelectAnyTariff;
 
 	@FindBy(how = How.XPATH, using = ("(//button[@id='callToAction'])[1]"))
@@ -57,7 +57,7 @@ public class PAYMandPAYGTariffAndExtrasPage {
 	public static WebElement PayYourdDeviceInFullContainer;
 
 	// Below is for Selecting Any Tariff
-	@FindBy(how = How.XPATH, using = ("(//div[@id='pay-full-device-tariff-tile']/div[@class='tariff ng-scope no-promotion-exists']/div[6]/div/button)[1] | (//div[@class='tariff no-promotion-exists']/div[4]/div/button)[1]"))
+	@FindBy(how = How.XPATH, using = ("(//div[@class='dataAllowance clearfix tariff no-promotion-exists']/div/div/div/div[7]/div[2]/button)[1]"))
 	public static WebElement RandomfullTariff1;
 
 	// Below is for Selecting Any Tariff

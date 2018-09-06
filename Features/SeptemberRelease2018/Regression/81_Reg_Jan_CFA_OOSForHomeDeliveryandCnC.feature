@@ -10,8 +10,10 @@ Feature: 81_Reg_Jan_CFA_OOSForHomeDeliveryandCnC
     Given I am an CFA user and Lands on shop page
     And navigate to PAYM Phones page
     And I choose PayM <handset>
+    And click on the color dropdown
+    And verify the name of the colour is next to the colour tile in CFAPhoneColour
+    And select <color> color of the connected device
     And Navigate to device details page
-    #And select <color> color of the connected device
     And the Delivery information section should show the 'OOS message'
     And Land on the 'Tariffs and extra' page
     And the Delivery section should show 'OOS message'
@@ -20,5 +22,5 @@ Feature: 81_Reg_Jan_CFA_OOSForHomeDeliveryandCnC
 
 
     Examples:
-      | handset            | color     | username               | password |
-      | iPhone 5s Like New | Soft Gold | dasdasdkjaskd@sdsd.com | test123  |
+      | handset            | color  | username               | password |
+      | iPhone 5s Like New | Silver | dasdasdkjaskd@sdsd.com | test123  |

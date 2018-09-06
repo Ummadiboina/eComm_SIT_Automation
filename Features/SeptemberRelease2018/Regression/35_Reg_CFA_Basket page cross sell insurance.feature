@@ -20,4 +20,4 @@ Feature: 35_Reg_CFA_Basket page cross sell insurance
 
     Examples:
       | handset | tariff                 |
-      | Apple   | 9.99upfront44.00amonth |
+      | iPhone  | 9.99upfront44.00amonth |
