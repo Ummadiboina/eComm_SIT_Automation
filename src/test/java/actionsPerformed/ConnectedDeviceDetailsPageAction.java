@@ -918,5 +918,3 @@ public class ConnectedDeviceDetailsPageAction extends Environment {
     //*[@id='colourSelectBoxItText']
 
 }
-
-
