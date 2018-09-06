@@ -58,7 +58,7 @@ public class CommonUtilities{
 
 
 	//driver Sleep
-	public static void driverWait(WebDriver driver, int waitTime) throws InterruptedException {
+	public static void driverWait(WebDriver driver, int waitTime) {
 		try {
 			Thread.sleep (waitTime);
 		} catch (Exception e){
@@ -68,7 +68,7 @@ public class CommonUtilities{
 	}
 
 	// select the value from the DropDown
-	public static void selectValueFromDropDown(WebDriver driver, WebElement locater, String byIndex, String byValue, String byVisibleText) throws InterruptedException {
+	public static void selectValueFromDropDown(WebDriver driver, WebElement locater, String byIndex, String byValue, String byVisibleText) {
 		try {
 			Select select = new Select (locater);
 			highlightElement (driver, locater);
@@ -97,7 +97,7 @@ public class CommonUtilities{
 
 
 	// set data to the text fields
-	public static void setDataForTextField(WebDriver driver, WebElement locater, String inputVal) throws InterruptedException {
+	public static void setDataForTextField(WebDriver driver, WebElement locater, String inputVal) {
 		try {
 			locater.isDisplayed ();
 			highlightElement (driver, locater);
@@ -113,7 +113,7 @@ public class CommonUtilities{
 	}
 
 	// click the web element using javaScript functions
-	public static void clickWebElement(WebDriver driver, WebElement locater) throws InterruptedException {
+	public static void clickWebElement(WebDriver driver, WebElement locater) {
 		try {
 			//locater.isDisplayed();
 			driverWait (driver, 3000);
@@ -127,7 +127,7 @@ public class CommonUtilities{
 			System.out.println ("Failed to Click WebElement : " + e.getStackTrace ());
 		}
 	}
-	public static void clickWebElement(WebElement locater) throws InterruptedException {
+	public static void clickWebElement(WebElement locater) {
 		try {
 			//locater.isDisplayed();
 			JavascriptExecutor executor = (JavascriptExecutor) driver;
@@ -141,7 +141,7 @@ public class CommonUtilities{
 	}
 
 	// scroll to web element for viewing
-	public static void scrollToElement(WebDriver driver, WebElement locater) throws InterruptedException {
+	public static void scrollToElement(WebDriver driver, WebElement locater) {
 		try {
 			driverWait (driver, 3000);
 			//JavascriptExecutor executor = (JavascriptExecutor)driver;
@@ -156,7 +156,7 @@ public class CommonUtilities{
 
 
 	// mouse hour on element
-	public static void mouseHousrOnElement(WebDriver driver, WebElement locater) throws InterruptedException {
+	public static void mouseHousrOnElement(WebDriver driver, WebElement locater) {
 		try {
 			Actions actions = new Actions (driver);
 			highlightElement (driver, locater);
@@ -311,7 +311,7 @@ public class CommonUtilities{
 
 
 
-	public static String VerifyText(WebDriver driver, String verify) throws InterruptedException{
+	public static String VerifyText(WebDriver driver, String verify) {
 		String ele="";
 		try{
 			ele= driver.findElement(By.xpath("//*[contains()='"+verify+"']")).getText();

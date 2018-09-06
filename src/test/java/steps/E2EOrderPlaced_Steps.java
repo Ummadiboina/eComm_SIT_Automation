@@ -5634,6 +5634,8 @@ public class E2EOrderPlaced_Steps {
         }
     }
 
+
+
     @And("^Verify whether promotional ribbons are displayed for ([^\"]*) on the Tariff tile in the Tariff and Extras page$")
     public void Verify_whether_promotional_ribbons_are_displayed_on_the_Tariff_tile_in_the_Tariff_and_Extras_page(String Tariff) {
         try {
@@ -10824,18 +10826,54 @@ public class E2EOrderPlaced_Steps {
     @And("^Click on View all Phones link in upgrade options page$")
     public void click_on_View_all_Phones() {
         try {
-
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, UpgradeCustomerPage.class);
             Thread.sleep(5000);
             // Screenshots.captureScreenshot();
             UpgradeCustomerPageActions.clickOnViewAllPhones();
             Thread.sleep(5000);
-
         } catch (Exception e) {
             e.printStackTrace();
             log.debug("\"Not able to select view all phones link");
             Assert.fail("Not able to select view all phones link");
         }
     }
+
+
+    @And("^Build your plan with ([^\"]*) ([^\"]*) and ([^\"]*)$")
+    public void fr_PDpage(String upfront, String term, String data){
+        try {
+            // driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            Thread.sleep(500);
+            PageFactory.initElements(driver, ConnectedDeviceDetailsPage.class);
+            log.debug("Currently we are at page: "+driver.getTitle());
+            Thread.sleep(500);
+            ConnectedDeviceDetailsPageAction.flexibleReressh_CFA(upfront,term,data);
+            Thread.sleep(5000);
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            log.debug("Unable to validate your bill cap in deal summary");
+            Assert.fail("Unable to validate your bill cap in deal summary");
+        }
+    }
+
+    @And("^Click on link view Phone Details link next to device$")
+    public void clickOn_Click_on_View_Phone(){
+        try {
+            // driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            Thread.sleep(500);
+            PageFactory.initElements(driver, ConnectedDeviceDetailsPage.class);
+            log.debug("Currently we are at page: "+driver.getTitle());
+           // Thread.sleep(500);
+            ConnectedDeviceDetailsPageAction.clickLink();
+            Thread.sleep(2000);
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            log.debug("Unable to validate your bill cap in deal summary");
+            Assert.fail("Unable to validate your bill cap in deal summary");
+       }
+    }
+
+
+
 }

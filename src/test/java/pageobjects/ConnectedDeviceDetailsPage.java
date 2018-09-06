@@ -68,9 +68,8 @@ public class ConnectedDeviceDetailsPage {
 
 
 
-
-
 //============================FR - Flexible Refresh
+
 
     @FindBy(how = How.XPATH, using = "//span/i[@id='colourSelectBoxItArrow']")
     public static WebElement ColorDropDown;
@@ -103,7 +102,7 @@ public class ConnectedDeviceDetailsPage {
 
 //Flexible Refresh
     //toggle-360-spin
-    @FindBy(how = How.XPATH, using = "//a[@class='icon-link toggle-360-spin']")
+    @FindBy(how = How.XPATH, using = "//a[normalize-space()='360 spin']")
     public static WebElement toggle_360_spin;
 
     //toggle-gallery
@@ -126,6 +125,15 @@ public class ConnectedDeviceDetailsPage {
     @FindBy(how = How.XPATH, using = "//div[contains(@data-calc,'upfront')]/..//div[contains(@class,'min-icon')]")
     public static WebElement minIcon_Upfrent;
 
+    @FindBy(how = How.XPATH, using = "//div[contains(@data-calc,'upfront')]/..//div[contains(@class,'min-icon')]/..//div[contains(@class,'min-icon calc-track-element disable')]")
+    public static WebElement minIcon_Upfrent_disiabled;
+
+
+
+    @FindAll({@FindBy(how = How.XPATH, using = "//div[contains(@data-calc,'upfront')]/..//div[contains(@class,'min-icon')]")})
+    public static List<WebElement> minIcon_Upfrent_1;
+
+
     //min - Val of Upfrent
     @FindBy(how = How.XPATH, using = "//div[contains(@data-calc,'upfront')]/..//div[contains(@class,'min-icon')]/following-sibling::div")
     public static WebElement minVal_Upfrent;
@@ -133,6 +141,9 @@ public class ConnectedDeviceDetailsPage {
     //max - con Upfrent
     @FindBy(how = How.XPATH, using = "//div[contains(@data-calc,'upfront')]/..//div[contains(@class,'max-icon')]")
     public static WebElement maxIcon_Upfrent;
+
+    @FindBy(how = How.XPATH, using = "//div[contains(@data-calc,'upfront')]/..//div[contains(@class,'max-icon')]/..//div[contains(@class,'max-icon calc-track-element disable')]")
+    public static WebElement maxIcon_Upfrent_disiabled;
 
     //max - Value Upfrent
     @FindBy(how = How.XPATH, using = "//div[contains(@data-calc,'upfront')]/..//div[contains(@class,'max-icon')]/following-sibling::div")
@@ -146,6 +157,10 @@ public class ConnectedDeviceDetailsPage {
     @FindBy(how = How.XPATH, using = "//div[contains(@data-calc,'term')]/..//div[contains(@class,'min-icon')]")
     public static WebElement minIcon_term;
 
+    @FindBy(how = How.XPATH, using = "//div[contains(@data-calc,'term')]/..//div[contains(@class,'min-icon')]/..//div[contains(@class,'min-icon calc-track-element disable')]")
+    public static WebElement minIcon_term_disable;
+
+
     //min - Val of term
     @FindBy(how = How.XPATH, using = "//div[contains(@data-calc,'term')]/..//div[contains(@class,'min-icon')]/following-sibling::div")
     public static WebElement minVal_term;
@@ -154,33 +169,42 @@ public class ConnectedDeviceDetailsPage {
     @FindBy(how = How.XPATH, using = "//div[contains(@data-calc,'term')]/..//div[contains(@class,'max-icon')]")
     public static WebElement maxIcon_term;
 
+    @FindBy(how = How.XPATH, using = "//div[contains(@data-calc,'term')]/..//div[contains(@class,'max-icon')]/..//div[contains(@class,'max-icon calc-track-element disable')]")
+    public static WebElement maxIcon_term_Disable;
+
     //max - Value term
     @FindBy(how = How.XPATH, using = "//div[contains(@data-calc,'term')]/..//div[contains(@class,'max-icon')]/following-sibling::div")
     public static WebElement maxVal_term;
 
     //fr-defaultTermMonth value
     @FindBy(how = How.XPATH, using = "//div[contains(@class,'fr-defaultTermMonth value')]")
-    public static WebElement defaultTermMonthValue;
+    public static WebElement termVal;
 
     //min-icon tariff
     @FindBy(how = How.XPATH, using = "//div[contains(@data-calc,'tariff')]/..//div[contains(@class,'min-icon')]")
-    public static WebElement minIcon_tariff;
+    public static WebElement minIcon_data;
+
+    @FindBy(how = How.XPATH, using = "//div[contains(@data-calc,'tariff')]/..//div[contains(@class,'min-icon')]/..//div[contains(@class,'min-icon calc-track-element disable')]")
+    public static WebElement minIcon_data_disable;
 
     //min - Val of tariff
     @FindBy(how = How.XPATH, using = "//div[contains(@data-calc,'tariff')]/..//div[contains(@class,'min-icon')]/following-sibling::div")
-    public static WebElement minVal_tariff;
+    public static WebElement minVal_data;
 
     //max - icon tariff
     @FindBy(how = How.XPATH, using = "//div[contains(@data-calc,'tariff')]/..//div[contains(@class,'max-icon')]")
-    public static WebElement maxIcon_tariff;
+    public static WebElement maxIcon_data;
+
+    @FindBy(how = How.XPATH, using = "//div[contains(@data-calc,'tariff')]/..//div[contains(@class,'max-icon')]/..//div[contains(@class,'max-icon calc-track-element disable')]")
+    public static WebElement maxIcon_data_Disable;
 
     //max - Value tariff
     @FindBy(how = How.XPATH, using = "//div[contains(@data-calc,'tariff')]/..//div[contains(@class,'max-icon')]/following-sibling::div")
-    public static WebElement maxVal_tariff;
+    public static WebElement maxVal_data;
 
     //fr-default term data
     @FindBy(how = How.XPATH, using = "//div[contains(@class,'value fr-default-term-data')]")
-    public static WebElement defaultTermData_tariff;
+    public static WebElement dataVal;
 
     //refresh - Build your plan
     @FindBy(how = How.XPATH, using = "//span[contains(@class,'fr-refresh-text')]")
@@ -235,8 +259,34 @@ public class ConnectedDeviceDetailsPage {
     public static WebElement seeOurPlans;
 
     //Offers included
-    @FindBy(how = How.XPATH, using = "//span[normalize-space()='Offers included']")
+    @FindBy(how = How.XPATH, using = "(//span[normalize-space()='Offers included'])[1]")
     public static WebElement offersIncluded;
+
+    //Choose this plan
+    @FindBy(how = How.XPATH, using = "//a[contains(text(),'Choose this plan')]")
+    public static WebElement chooseThisPlan;
+
+
+
+    // TnE page
+
+
+    //total cost
+    @FindBy(how = How.XPATH, using = "//li[@class='totals']/section")
+    public static WebElement totalCost_BasketPage;
+
+    //product-details
+    @FindBy(how = How.XPATH, using = "//section[@class='product-details']")
+    public static WebElement prodctDetails_TnE;
+
+    //Air time plan details
+    @FindBy(how = How.XPATH, using = "//section[@class='airtime-plan pay-monthly-plan']")
+    public static WebElement airTimePlan_TnE;
+
+
+    //Click link for CFU
+    @FindBy(how = How.XPATH, using = "(//a[normalize-space()='View phone details'])[2]")
+    public static WebElement clickLink4CFU;
 
 
 
