@@ -5,8 +5,9 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.StringTokenizer;
 import java.util.concurrent.TimeUnit;
-
+import GlobalActions.CommonActions;
 import GlobalActions.scrollToAnElement;
 import org.apache.log4j.Logger;
 import org.junit.Assert;
@@ -543,94 +544,374 @@ public class ConnectedDeviceDetailsPageAction extends Environment {
 
         Screenshots.captureScreenshot();
     }
-
-
-
-
-    /*********************************************************************************************************************************************************************
+/*********************************************************************************************************************************************************************
      * validation    : To validate the flexible refresh (ITFD - 466)                                                                                                 *
      * Created by    : Venkata                                                                                                                                       *
-     * Created date  : 02/08/18     - August Release                                                                                                                 *
+     * Created date  : 03/09/18     - August Release                                                                                                                 *
      * Modified by/date :                                                                                                                                            *
      * Reason to change:                                                                                                                                             *
      **********************************************************************************************************************************************************************/
-        public static void flexibleReressh_CFA() {
-            if (ConnectedDeviceDetailsPage.pay_monthly_TabName.isDisplayed()) {
 
-                if (ConnectedDeviceDetailsPage.toggle_360_spin.isDisplayed()) {
-                    System.out.println("Successfully Displayed the toggle 36o spin device");
-                    log.info("Successfully Displayed the toggle 36o spin device");
-                } else {
-                    System.out.println("Failed to Displayed the toggle 36o spin device");
-                    log.info("Failed to Displayed the toggle 36o spin device");
-                    Assert.fail("Failed to Displayed the toggle 36o spin device");
-                }
+    public static void flexibleReressh_CFA(String upFront, String term, String data) throws InterruptedException {
+        upFrontCost = "";
+        totalCostPerMonth = "";
 
+        if (ConnectedDeviceDetailsPage.pay_monthly_TabName.isDisplayed()) {
 
-                if (ConnectedDeviceDetailsPage.toggle_gallery.isDisplayed()) {
-                    System.out.println("Successfully Displayed the toggle gallery");
-                    log.info("Successfully Displayed the toggle gallery");
-                } else {
-                    System.out.println("Failed to Displayed the toggle gallery");
-                    log.info("Failed to Displayed the toggle gallery");
-                    Assert.fail("Failed to Displayed the toggle gallery");
-                }
+            if (ConnectedDeviceDetailsPage.toggle_360_spin.isDisplayed()) {
+                System.out.println("Successfully Displayed the toggle 36o spin device");
+                log.info("Successfully Displayed the toggle 36o spin device");
+            } else {
+                System.out.println("Failed to Displayed the toggle 36o spin device");
+                log.info("Failed to Displayed the toggle 36o spin device");
+                //Assert.fail("Failed to Displayed the toggle 36o spin device");
+            }
 
-                if (ConnectedDeviceDetailsPage.toggle_play_video.isDisplayed()) {
+            if (ConnectedDeviceDetailsPage.toggle_gallery.isDisplayed()) {
+                System.out.println("Successfully Displayed the toggle gallery");
+                log.info("Successfully Displayed the toggle gallery");
+            } else {
+                System.out.println("Failed to Displayed the toggle gallery");
+                log.info("Failed to Displayed the toggle gallery");
+                //Assert.fail("Failed to Displayed the toggle gallery");
+            }
+
+            // not yet implemented from the dev team
+                /*if (ConnectedDeviceDetailsPage.toggle_play_video.isDisplayed()) {
                     System.out.println("Successfully Displayed the toggle play video");
                     log.info("Successfully Displayed the toggle play video");
                 } else {
                     System.out.println("Failed to Displayed the toggle play video");
                     log.info("Failed to Displayed the toggle play video");
                     Assert.fail("Failed to Displayed the toggle play video");
-                }
+                }*/
 
-                if (ConnectedDeviceDetailsPage.pay_monthly_flexible_refresh_section.isDisplayed()) {
-                    System.out.println("Successfully Displayed pay monthly flexible refresh section");
-                    log.info("Successfully Displayed the pay monthly flexible refresh section");
-                } else {
-                    System.out.println("Failed to Displayed the pay monthly flexible refresh section");
-                    log.info("Failed to Displayed the pay monthly flexible refresh section");
-                    Assert.fail("Failed to Displayed the pay monthly flexible refresh section");
-                }
-
-                if (ConnectedDeviceDetailsPage.reSet_BuildYourPlan.isDisplayed()) {
-                    System.out.println("Successfully Displayed reSet to build your plan");
-                    log.info("Successfully Displayed the reSet to build your plan");
-                } else {
-                    System.out.println("Failed to Displayed the reSet to build your plan");
-                    log.info("Failed to Displayed the reSet to build your plan");
-                    Assert.fail("Failed to Displayed the reSet to build your plan");
-                }
-
-
-                //Up front validati
-
-
-                WebElement colourDropdown = driver.findElement(By.xpath("//*[@id='colourSelectBoxItOptions']"));
-                List<WebElement> elementColor = colourDropdown.findElements(By.xpath("(//*[@class='selectboxit-option-label'])[1]"));
-                for (int i = 0; i < elementColor.size(); i++) {
-                    log.debug(elementColor.get(i).getText());
-                }
+            if (ConnectedDeviceDetailsPage.pay_monthly_flexible_refresh_section.isDisplayed()) {
+                System.out.println("FR calc is Displayed");
+                log.info("FR calc is Displayed");
             } else {
-                log.debug("The colour labels are not displayed");
-                log.debug("The colour labels are not displayed");
+                System.out.println("Failed to Displayed FR calc");
+                log.info("Failed to Displayed FR calc");
+                Assert.fail("Failed to Displayed FR calc");
+            }
+
+            if (ConnectedDeviceDetailsPage.reSet_BuildYourPlan.isDisplayed()) {
+                System.out.println("Displayed - Reset Calc");
+                log.info("Displayed - Reset Calc");
+            } else {
+                System.out.println("Failed to Displayed the reSet calc");
+                log.info("Failed to Displayed the reSet calc");
+                Assert.fail("Failed to Displayed the reSet calc");
+            }
+
+            if (ConnectedDeviceDetailsPage.offersIncluded.isDisplayed()) {
+                System.out.println("Displayed - Offers Included header in Calc");
+                log.info("Displayed - Offers Included header in Calc");
+            } else {
+                System.out.println("Failed to Display - Offers Included header in Calc");
+                log.info("Failed to Displayed the reSet calc");
+                Assert.fail("Failed to Displayed the reSet calc");
+            }
+
+            if (ConnectedDeviceDetailsPage.totalPrice.isDisplayed()) {
+                System.out.println("Displayed - Total Price per month ");
+                log.info("Displayed - Total Price per month ");
+            } else {
+                System.out.println("Failed to Display - Total Price per month");
+                log.info("Failed to Displayed- Total Price per month");
+                Assert.fail("Failed to Displayed- Total Price per month");
+            }
+
+
+            if (ConnectedDeviceDetailsPage.chooseThisPlan.isDisplayed()) {
+                System.out.println("Displayed - Choose This plan in Calc ");
+                log.info("Displayed - Choose This plan in Calc ");
+            } else {
+                System.out.println("Failed to Display - Choose This plan in Calc");
+                log.info("Failed to Displayed- Choose This plan in Calc");
+                Assert.fail("Failed to Displayed- Choose This plan in Calc");
+            }
+
+            if (ConnectedDeviceDetailsPage.seeOurPlans.isDisplayed()) {
+                System.out.println("Displayed - See our plans link ");
+                log.info("Displayed - See our plans link ");
+            } else {
+                System.out.println("Failed to Display -  See our plans link");
+                log.info("Failed to Displayed -  See our plans link");
+                Assert.fail("Failed to Displayed -  See our plans link");
+            }
+
+
+            if (ConnectedDeviceDetailsPage.reSet_BuildYourPlan.isDisplayed()) {
+                System.out.println("Displayed - Reset Build your plan ");
+                log.info("Displayed - Reset Build your plan ");
+            } else {
+                System.out.println("Failed to Display -  Reset Build your plan");
+                log.info("Failed to Displayed -  Reset Build your plan");
+                Assert.fail("Failed to Displayed - Reset Build your plan");
+            }
+
+            if (ConnectedDeviceDetailsPage.calc_msg.isDisplayed()) {
+                System.out.println("Displayed - Calc message ");
+                log.info("Displayed - Calc message ");
+            } else {
+                System.out.println("Failed to Display -  Calc message");
+                log.info("Failed to Displayed - Calc message");
+                Assert.fail("Failed to Displayed - Calc message");
+            }
+
+
+            if (upFront.contains("Min") || upFront.contains("min")) {
+                boolean b = false;
+                for (int i = 1; i < 100; i++) {
+                    String minValUpfrnt = (String) ConnectedDeviceDetailsPage.minVal_Upfrent.getText().subSequence(5, 7);
+                    String upFrntVal = ConnectedDeviceDetailsPage.upfrentVal.getText().substring(1, 3);
+
+                    if (driver.findElements(By.xpath("//div[contains(@data-calc,'upfront')]/..//div[contains(@class,'min-icon')]/..//div[contains(@class,'min-icon calc-track-element disable')]")).size() <= 0) {
+                        CommonActions.clickWebElement(ConnectedDeviceDetailsPage.minIcon_Upfrent);
+                    }
+                    if (minValUpfrnt.contains(upFrntVal) && ConnectedDeviceDetailsPage.minIcon_Upfrent_disiabled.isDisplayed()) {
+                        log.info("The Upfront cost is changes to minimum - " + ConnectedDeviceDetailsPage.minVal_Upfrent.getText());
+                        b = true;
+                        break;
+                    }
+                }
+                if (b == false) {
+                    log.info("Failed to displayed - the upfront Min icon is not disable though changed to main value");
+                    Assert.fail("\"Failed to displayed - the upfront Min icon is not disable though changed to main value\"");
+                }
+            }
+
+
+            if (upFront.equalsIgnoreCase("max")) {
+                boolean b = false;
+
+                for (int i = 1; i < 100; i++) {
+                    String maxValUpfrnt = (String) ConnectedDeviceDetailsPage.maxVal_Upfrent.getText().subSequence(5, 7);
+                    String upFrntVal = ConnectedDeviceDetailsPage.upfrentVal.getText().substring(1, 3);
+
+                    if (driver.findElements(By.xpath("//div[contains(@data-calc,'upfront')]/..//div[contains(@class,'max-icon')]/..//div[contains(@class,'max-icon calc-track-element disable')]")).size() <= 0) {
+                        CommonActions.clickWebElement(ConnectedDeviceDetailsPage.maxIcon_Upfrent);
+                    }
+                    if (maxValUpfrnt.contains(upFrntVal) && ConnectedDeviceDetailsPage.maxIcon_Upfrent_disiabled.isDisplayed()) {
+                        log.info("the Upfront cost is changes to maximum - " + ConnectedDeviceDetailsPage.maxVal_Upfrent.getText());
+                        b = true;
+                        break;
+                    }
+                }
+                if (b == false) {
+                    log.info("Failed to displayed - the upfront Max icon is not disable though changed to main value");
+                    Assert.fail("\"Failed to displayed - the upfront MAx icon is not disable though changed to main value\"");
+                }
+            }
+
+
+            if (upFront.equalsIgnoreCase("avg")) {
+                if (driver.findElements(By.xpath("//div[contains(@data-calc,'upfront')]/..//div[contains(@class,'min-icon')]/..//div[contains(@class,'min-icon calc-track-element disable')]")).size() > 0) {
+                    // CommonActions.clickWebElement(ConnectedDeviceDetailsPage.minIcon_Upfrent);
+                    CommonActions.clickWebElement(ConnectedDeviceDetailsPage.maxIcon_Upfrent);
+                }
+
+                if (driver.findElements(By.xpath("//div[contains(@data-calc,'upfront')]/..//div[contains(@class,'max-icon')]/..//div[contains(@class,'max-icon calc-track-element disable')]")).size() > 0) {
+                    // CommonActions.clickWebElement(ConnectedDeviceDetailsPage.maxIcon_Upfrent);
+                    CommonActions.clickWebElement(ConnectedDeviceDetailsPage.minIcon_Upfrent);
+                }
+
+                if (driver.findElements(By.xpath("//div[contains(@data-calc,'upfront')]/..//div[contains(@class,'max-icon')]/..//div[contains(@class,'min-icon calc-track-element disable')]")).size() <= 0 && driver.findElements(By.xpath("//div[contains(@data-calc,'upfront')]/..//div[contains(@class,'min-icon')]/..//div[contains(@class,'min-icon calc-track-element disable')]")).size() <= 0) {
+                    log.info("the Upfront cost is changes to average  - " + ConnectedDeviceDetailsPage.minVal_Upfrent.getText());
+                    log.info("the Upfront cost is changes to average - " + ConnectedDeviceDetailsPage.minVal_Upfrent.getText());
+                } else {
+                    log.info("Failed to Display - the Upfront cost is changes to average  - " + ConnectedDeviceDetailsPage.minVal_Upfrent.getText());
+                    log.info("Failed to Display - the Upfront cost is changes to average - " + ConnectedDeviceDetailsPage.minVal_Upfrent.getText());
+                    Assert.fail("the Upfront cost is changes to average");
+                }
+            }
+
+
+            if (term.equalsIgnoreCase("Min")) {
+                boolean b = false;
+                for (int i = 1; i < 37; i++) {
+                    String termMinVal = ConnectedDeviceDetailsPage.minVal_term.getText();
+                    StringTokenizer st = new StringTokenizer(termMinVal, " ");
+                    st.nextToken();
+                    String str = st.nextToken();
+                    String termValue = ConnectedDeviceDetailsPage.termVal.getText();
+
+                    if (driver.findElements(By.xpath("//div[contains(@data-calc,'term')]/..//div[contains(@class,'min-icon')]/..//div[contains(@class,'min-icon calc-track-element disable')]")).size() <= 0) {
+                        CommonActions.clickWebElement(ConnectedDeviceDetailsPage.minIcon_term);
+                    }
+                    if (termValue.equalsIgnoreCase(str) && ConnectedDeviceDetailsPage.minIcon_term_disable.isDisplayed()) {
+                        log.info("Displayed - term " + ConnectedDeviceDetailsPage.minVal_term.getText());
+                        b = true;
+                        break;
+                    }
+                }
+                if (b == false) {
+                    log.info("Failed to displayed - term value");
+                    Assert.fail("Failed to displayed - term value");
+                }
+            }
+
+
+            if (term.equalsIgnoreCase("max")) {
+                boolean b = false;
+                for (int i = 1; i < 37; i++) {
+
+                    String maxvalTerm = ConnectedDeviceDetailsPage.maxVal_term.getText();
+                    StringTokenizer st = new StringTokenizer(maxvalTerm, " ");
+                    st.nextToken();
+                    String str = st.nextToken();
+                    String termValue = ConnectedDeviceDetailsPage.termVal.getText();
+
+                    if (driver.findElements(By.xpath("//div[contains(@data-calc,'term')]/..//div[contains(@class,'max-icon')]/..//div[contains(@class,'max-icon calc-track-element disable')]")).size() <= 0) {
+                        CommonActions.clickWebElement(ConnectedDeviceDetailsPage.maxIcon_term);
+                    }
+                    if (termValue.equalsIgnoreCase(str) && ConnectedDeviceDetailsPage.maxIcon_term_Disable.isDisplayed()) {
+                        log.info("The Term cost is changes to maximum - " + ConnectedDeviceDetailsPage.maxVal_term.getText());
+                        b = true;
+                        break;
+                    }
+                }
+                if (b == false) {
+                    log.info("Failed to displayed - the Term Max icon is not disable though changed to main value");
+                    Assert.fail("\"Failed to displayed - the Term MAx icon is not disable though changed to main value\"");
+                }
+            }
+
+            if (term.equalsIgnoreCase("avg")) {
+                if (driver.findElements(By.xpath("//div[contains(@data-calc,'term')]/..//div[contains(@class,'min-icon')]/..//div[contains(@class,'min-icon calc-track-element disable')]")).size() > 0) {
+                    CommonActions.clickWebElement(ConnectedDeviceDetailsPage.maxIcon_term);
+                }
+                if (driver.findElements(By.xpath("//div[contains(@data-calc,'term')]/..//div[contains(@class,'max-icon')]/..//div[contains(@class,'max-icon calc-track-element disable')]")).size() > 0) {
+                    CommonActions.clickWebElement(ConnectedDeviceDetailsPage.minIcon_term);
+                }
+
+                if (driver.findElements(By.xpath("//div[contains(@data-calc,'term')]/..//div[contains(@class,'max-icon')]/..//div[contains(@class,'max-icon calc-track-element disable')]")).size() <= 0 && driver.findElements(By.xpath("//div[contains(@data-calc,'term')]/..//div[contains(@class,'min-icon')]/..//div[contains(@class,'min-icon calc-track-element disable')]")).size() <= 0) {
+                    log.info("the term cost is changes to average  - " + ConnectedDeviceDetailsPage.minVal_term.getText());
+                    log.info("the term cost is changes to average - " + ConnectedDeviceDetailsPage.maxVal_term.getText());
+                } else {
+                    log.info("Failed to Display - the term cost is changes to average   - " + ConnectedDeviceDetailsPage.minVal_term.getText());
+                    log.info("Failed to Display - the term cost is changes to average - " + ConnectedDeviceDetailsPage.maxVal_term.getText());
+                    Assert.fail("the term cost is changes to average");
+                }
             }
         }
 
 
-        public static  void upFrontCalc_click(){
+        if (data.equalsIgnoreCase("min")) {
+            boolean b = false;
+            for (int i = 1; i < 30; i++) {
+                String minData = ConnectedDeviceDetailsPage.minVal_data.getText();
+                StringTokenizer st = new StringTokenizer(minData, " ");
+                st.nextToken();
+                String sst = st.nextToken();
+                String dataValue = ConnectedDeviceDetailsPage.dataVal.getText();
+
+                if (driver.findElements(By.xpath("//div[contains(@data-calc,'tariff')]/..//div[contains(@class,'min-icon')]/..//div[contains(@class,'min-icon calc-track-element disable')]")).size() <= 0) {
+                    CommonActions.clickWebElement(ConnectedDeviceDetailsPage.minIcon_data);
+                }
+                if (dataValue.equalsIgnoreCase(sst) && ConnectedDeviceDetailsPage.minIcon_data_disable.isDisplayed()) {
+                    log.info("the Data cost is changes to minimum - " + ConnectedDeviceDetailsPage.minVal_data.getText());
+                    b = true;
+                    break;
+                }
+            }
+            if (b == false) {
+                log.info("Failed to displayed - the Data/tariff Min icon is not disable though changed to main value");
+                Assert.fail("\"Failed to displayed - the Data/tariff Min icon is not disable though changed to main value\"");
+            }
+        }
 
 
+        if (data.equalsIgnoreCase("max")) {
+            boolean b = false;
+            for (int i = 1; i < 30; i++) {
+                String maDataVal = ConnectedDeviceDetailsPage.maxVal_data.getText();
+                StringTokenizer st = new StringTokenizer(maDataVal, " ");
+                st.nextToken();
+                String sst1 = st.nextToken();
+                String dataValue = ConnectedDeviceDetailsPage.dataVal.getText();
+
+                if (driver.findElements(By.xpath("//div[contains(@data-calc,'tariff')]/..//div[contains(@class,'max-icon')]/..//div[contains(@class,'max-icon calc-track-element disable')]")).size() <= 0) {
+                    CommonActions.clickWebElement(ConnectedDeviceDetailsPage.maxIcon_data);
+                }
+                if (dataValue.equalsIgnoreCase(sst1) && ConnectedDeviceDetailsPage.maxIcon_data_Disable.isDisplayed()) {
+                    log.info("the Data cost is changes to maximum - " + ConnectedDeviceDetailsPage.maxVal_data.getText());
+                    b = true;
+                    break;
+                }
+            }
+            if (b == false) {
+                log.info("Failed to displayed - the data Max icon is not disable though changed to main value");
+                Assert.fail("\"Failed to displayed - the data MAx icon is not disable though changed to main value\"");
+            }
+        }
 
 
+        if (data.equalsIgnoreCase("avg")) {
+            if (driver.findElements(By.xpath("//div[contains(@data-calc,'tariff')]/..//div[contains(@class,'min-icon')]/..//div[contains(@class,'min-icon calc-track-element disable')]")).size() > 0) {
+                CommonActions.clickWebElement(ConnectedDeviceDetailsPage.maxIcon_data);
+            }
+
+            if (driver.findElements(By.xpath("//div[contains(@data-calc,'tariff')]/..//div[contains(@class,'max-icon')]/..//div[contains(@class,'max-icon calc-track-element disable')]")).size() > 0) {
+                CommonActions.clickWebElement(ConnectedDeviceDetailsPage.minIcon_data);
+            }
+
+            if (driver.findElements(By.xpath("//div[contains(@data-calc,'tariff')]/..//div[contains(@class,'max-icon')]/..//div[contains(@class,'max-icon calc-track-element disable')]")).size() <= 0 && driver.findElements(By.xpath("//div[contains(@data-calc,'tariff')]/..//div[contains(@class,'min-icon')]/..//div[contains(@class,'max-icon calc-track-element disable')]")).size() <= 0) {
+                log.info("the Dat cost is changes to average  - " + ConnectedDeviceDetailsPage.minVal_Upfrent.getText());
+                log.info("the Data cost is changes to average - " + ConnectedDeviceDetailsPage.minVal_Upfrent.getText());
+            } else {
+                log.info("Failed to Display - the Data cost is changes to average  - " + ConnectedDeviceDetailsPage.minVal_Upfrent.getText());
+                log.info("Failed to Display - the Data cost is changes to average - " + ConnectedDeviceDetailsPage.minVal_Upfrent.getText());
+                Assert.fail("the Data cost is changes to average");
+            }
+        }
+
+        totalCostPerMonth = ConnectedDeviceDetailsPage.totalPrice.getText();
+        upFrontCost = ConnectedDeviceDetailsPage.upfrentVal.getText();
+        CommonActions.clickWebElement(ConnectedDeviceDetailsPage.chooseThisPlan);
+        Thread.sleep(5000);
+
+
+        if(ConnectedDeviceDetailsPage.prodctDetails_TnE.isDisplayed()) {
+
+            CommonActions.scrollToElement(ConnectedDeviceDetailsPage.totalCost_BasketPage);
+            String totalCost_TnE = ConnectedDeviceDetailsPage.totalCost_BasketPage.getText();
+            System.out.println("The Total price is + ::: " + totalCost_TnE);
+
+            if (totalCost_TnE.contains(totalCostPerMonth)) {
+                System.out.println(" Matched = == The Upfront price from the PD page and TnE page are matched  + ::: " + totalCost_TnE + " & " + totalCostPerMonth);
+            } else {
+                System.out.println(" Not Matched = == The Upfront price from the PD page and TnE page are matched  + ::: " + totalCost_TnE + " & " + totalCostPerMonth);
+            }
+
+            if (totalCost_TnE.contains(upFrontCost)) {
+                System.out.println(" Matched = == The Monthly price from the PD page and TnE page are matched  + ::: " + totalCost_TnE + " & " + upFrontCost);
+            } else {
+                System.out.println(" Not Matched = == The Monthly price from the PD page and TnE page are matched  + ::: " + totalCost_TnE + " & " + upFrontCost);
+
+            }
+            if (ConnectedDeviceDetailsPage.prodctDetails_TnE.isDisplayed()) {
+                String ProductDeatails_TnE = ConnectedDeviceDetailsPage.prodctDetails_TnE.getText();
+                System.out.println("The Product details in TnE are  + ::: " + ProductDeatails_TnE);
+            }
+
+        }
+   }
+
+
+    public static void clickLink() throws InterruptedException {
+        //Thread.sleep(3000);
+        if(driver.findElements(By.xpath("(//a[normalize-space()='View phone details'])[2]")).size() > 0) {
+            CommonActions.clickWebElement(ConnectedDeviceDetailsPage.clickLink4CFU);
+        }
+
+        if(driver.findElements(By.xpath("(//a[normalize-space()='View phone details'])[1]")).size() > 0) {
+            driver.findElement(By.xpath("(//a[normalize-space()='View phone details'])[1]")).click();
+        }
+
+        Thread.sleep(6000);
     }
-
-
-
-
-
-
 
     //*[@id='colourSelectBoxItText']
 
