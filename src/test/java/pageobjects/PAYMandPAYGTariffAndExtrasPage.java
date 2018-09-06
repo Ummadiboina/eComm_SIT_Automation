@@ -24,14 +24,14 @@ public class PAYMandPAYGTariffAndExtrasPage {
 
 	// Below is for Selecting Any Tariff
 
-	@FindBy(how = How.XPATH, using = ("(//button[@class='secondary selectButton tariff-select'])[2] | (//button[@class='secondary selectButton tst-select ng-binding ng-pristine ng-valid'])[2]"))
+	@FindBy(how = How.XPATH, using = ("(//button[@class='btn buyNowBtn ng-binding ng-pristine ng-valid'])[1] | (//button[@class='secondary selectButton tst-select ng-binding ng-pristine ng-valid'])[1] | | //button[@class='secondary selectButton tariff-select buyNowBtn'])[1]"))
 	public static WebElement SelectAnyTariff;
 
 	@FindBy(how = How.XPATH, using = ("(//button[@id='callToAction'])[1]"))
 	public static WebElement SelectAnyPayGTariff;
 
 
-	@FindBy(how = How.XPATH, using = ("(//*[@id='callToAction'])[1] | (//button[@class='secondary selectButton tariff-select'])[1]"))
+	@FindBy(how = How.XPATH, using = ("(//*[@id='callToAction'] | //button[@class='secondary selectButton tariff-select buyNowBtn'])[1]"))
 	public static WebElement RandomTariff1;
 
 	@FindBy(how = How.XPATH, using = ("//a[contains(text(),'Pay Monthly')]"))
@@ -92,6 +92,9 @@ public class PAYMandPAYGTariffAndExtrasPage {
 	@FindBy(how = How.XPATH, using = ("//*[@class='accessory-button-container']"))
 	public static WebElement AccessoryContainer;
 
+	@FindBy(how = How.XPATH, using = ("//h2[contains(text(),'Your package')]"))
+	public static WebElement yourPackageSection;
+
 	/*
 	 * @FindBy(how=How.XPATH,using=(
 	 * "//*[@class='accessory-button-container']/input[@value='Add']")) public
@@ -122,7 +125,7 @@ public class PAYMandPAYGTariffAndExtrasPage {
 	@FindBy(how = How.XPATH, using = "//select[@id='dataFilterSelect']")
 	public static WebElement TariffSortDropDown;
 
-	@FindAll({ @FindBy(how = How.XPATH, using = "//div[@id='tariff-tile']//ul/li[1]/h2 | //div[@class='col-xs-6 col-sm-3 dmt-container info-container']//ul/li[1]/h2") })
+	@FindAll({ @FindBy(how = How.XPATH, using = "//div[@id='tariff-tile']//ul/li[1]/h2 | //div[@class='col-xs-6 col-sm-3 dmt-container info-container']//ul/li[1]/h2 | //div[@class='box clearfix']/div[1]/div[2]/div/span") })
 	public static List<WebElement> DataTextElement;
 
 	@FindAll({

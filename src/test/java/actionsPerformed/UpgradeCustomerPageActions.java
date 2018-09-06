@@ -39,6 +39,8 @@ public class UpgradeCustomerPageActions extends Environment {
     static ArrayList<Integer> datalistafter = new ArrayList<Integer>();
     static int position = 0;
     static int PositionUpgrade = 0;
+    public static String tariffNameTxt;
+    public static String marketingMessage;
 
     public static void Login(String username, String password) throws InterruptedException, IOException {
         driver.manage().timeouts().implicitlyWait(15,TimeUnit.SECONDS);
@@ -507,6 +509,16 @@ public class UpgradeCustomerPageActions extends Environment {
                 log.debug("Failed to select the PayG Tariff in the Extras&Tariff page");
                 Assert.fail("Failed to select the PayG Tariff in the Extras&Tariff page");
             }
+            Thread.sleep(3000);
+            if(driver.findElements(By.xpath("(//p[normalize-space()='Selected'])[1]/../div[1]")).size()>0) {
+                tariffNameTxt = driver.findElement(By.xpath("(//p[normalize-space()='Selected'])[1]/../div[1]")).getText();
+                log.debug("Tariff:"+tariffNameTxt);
+            }
+            if(driver.findElements(By.xpath("(//p[normalize-space()='Selected'])[1]/../ul[1]")).size()>0) {
+                marketingMessage = driver.findElement(By.xpath("(//p[normalize-space()='Selected'])[1]/../ul[1]")).getText();
+                log.debug("Marketing Message:"+marketingMessage);
+            }
+
     }
 
     public static void selectTariffWithRibbonAndOverlayUpgradeJourney(String Tariff)
@@ -1708,7 +1720,6 @@ public class UpgradeCustomerPageActions extends Environment {
         boolean actualValue = UpgradeCustomerPage.NeedNewSimRadioButton.isSelected();
         boolean actualValue1 = UpgradeCustomerPage.DontNeedNewSimRadioButton.isSelected();
         if ((actualValue && actualValue1) != true) {
-            log.debug("Radio button is not selected");
             log.debug("Radio button is not selected by default");
         } else {
             log.debug("Radio button is selected by default");
@@ -1746,7 +1757,7 @@ public class UpgradeCustomerPageActions extends Environment {
 
         {
             log.debug("The valid copytext is displayed" + YouSimCopyText);
-            log.debug("The valid copytext is displayed");
+
         } else {
             log.debug("The valid copytext is not displayed");
         }
@@ -2382,6 +2393,42 @@ public class UpgradeCustomerPageActions extends Environment {
         } else if (section.contains("Order Confirmation")) {
             Assert.assertEquals("Sample Text", pageobjects.UpgradeCustomerPage.ViewAllTablets.getText());
             Screenshots.captureScreenshot();
+        }
+    }
+
+    public static void Verify_Marketing_Message() throws Exception {
+        Thread.sleep(3000);
+        String section=driver.getTitle();
+
+
+        if (section.contains("Tariffs And Extras") || section.contains("Your Package")) {
+            log.debug("Validating Marketing Message at Your Package Section\n");
+            scrollToAnElement.scrollToElement(pageobjects.PAYMandPAYGTariffAndExtrasPage.yourPackageSection);
+            Screenshots.captureScreenshot();
+            String yourPackageMarketingMessage= driver.findElement(By.xpath("//ul[@class='orders']/li/section[6]/ul/li[2]")).getText();
+            Thread.sleep(3000);
+            log.debug("Marketing Message at your package section is: "+yourPackageMarketingMessage);
+
+            if(UpgradeCustomerPageActions.marketingMessage.contains(yourPackageMarketingMessage)){
+                log.debug("Marketing message is validated successfully at Your Package section ie, "+yourPackageMarketingMessage);
+            }else{
+                log.debug("Marketing message is not displayed at Your Package section");
+                Assert.fail("Marketing message is not displayed at Your Package section");
+            }
+        }else if (section.contains("Basket")) {
+            log.debug("Validating Marketing Message at Basket Page\n");
+            scrollToAnElement.scrollToElement(BasketPage.YourOrder);
+            Screenshots.captureScreenshot();
+            String yourBasketMarketingMessage= driver.findElement(By.xpath("//ul[@class='orders']/li/section[2]/p")).getText();
+            Thread.sleep(3000);
+            log.debug("Marketing Message at your Basket page section is: "+yourBasketMarketingMessage);
+
+            if(UpgradeCustomerPageActions.marketingMessage.contains(yourBasketMarketingMessage)){
+                log.debug("Marketing message is validated successfully at Basket page ie, "+yourBasketMarketingMessage);
+            }else{
+                log.debug("Marketing message is not displayed at Basket page section");
+                Assert.fail("Marketing message is not displayed at Basket page section");
+            }
         }
     }
 

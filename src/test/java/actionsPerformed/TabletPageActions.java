@@ -111,12 +111,13 @@ public class TabletPageActions extends Environment {
 					serchBox.sendKeys(elementName);
 					Thread.sleep(10000);
 
-					WebElement requestedDevice = driver.findElement(By.xpath("(//img[@class='device-image lazy']/..//*[contains(text(),'"+elementName+"')])[1]"));
+					/*WebElement requestedDevice = driver.findElement(By.xpath("(//img[@class='device-image lazy']/..//*[contains(text(),'"+elementName+"')])[1]"));
 					if(requestedDevice.isDisplayed()) {
 						//scrollToAnElement.scrollToElement(requestedDevice);
 						Screenshots.captureScreenshot();
-					}
+					}*/
 					if (driver.findElements(By.xpath("(//img[@class='device-image lazy']/..//*[contains(text(),'"+elementName+"')])[1]")).size() >= 1) {
+						WebElement requestedDevice = driver.findElement(By.xpath("(//img[@class='device-image lazy']/..//*[contains(text(),'"+elementName+"')])[1]"));
 						Thread.sleep(3000);
 						((JavascriptExecutor) driver).executeScript("arguments[0].click();", requestedDevice);
 						log.debug("Selected Device from Phones as Required is : " + elementName);

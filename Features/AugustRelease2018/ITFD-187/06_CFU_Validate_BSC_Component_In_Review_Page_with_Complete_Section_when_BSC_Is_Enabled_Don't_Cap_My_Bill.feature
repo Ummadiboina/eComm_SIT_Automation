@@ -15,6 +15,11 @@ Feature: 06_CFU_Validate_BSC_Component_In_Review_Page_with_Complete_Section_when
     And copy text SIM delivery required or not is displayed
     And Validate consumer Bill Spend Caps section and choose your cap <BillCap> <CapAmount> when BSC is <BSCstatus>
     And Validate 'Edit' link
+    Then I should see 'Your Sim Card'section
+    And verify that copy text 'Your Sim Card'section
+    And verfiy that two option are displayed
+    And no option should be selected
+    And verify that Confirm CTA is not displayed
     And Select 'I need a new sim' option
     And Validate and click on 'Edit' link
     And Validate consumer Bill Spend Caps section and choose your cap <BillCap> <NewCapAmount> when BSC is <BSCstatus>

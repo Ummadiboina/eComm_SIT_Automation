@@ -33,23 +33,20 @@ public class PAYMSimOPageActions extends Environment {
 		Screenshots.captureScreenshot();
 		if (elementName.contains("30 Days")) {
 			log.debug("The Contract length is " + pageobjects.PAYMSimOPage.thirtydays.getText());
-			log.debug("The Contract length is " + pageobjects.PAYMSimOPage.thirtydays.getText());
 			Screenshots.captureScreenshot();
 			pageobjects.PAYMSimOPage.thirtydays.sendKeys(Keys.ENTER);
 			Thread.sleep(10000);
 			log.debug("Clicked on 30 Days contract tab");
-
 		}
 		if (elementName.contains("12 Months")) {
 
 			log.debug("The Contract length is " + pageobjects.PAYMSimOPage.twelevemonths.getText());
-
 			Screenshots.captureScreenshot();
 			pageobjects.PAYMSimOPage.twelevemonths.sendKeys(Keys.ENTER);
 			Thread.sleep(10000);
 			log.debug("Clicked on 12 Months contract tab");
 		}
-
+		Screenshots.captureScreenshot();
 	}
 
 	public static void SelectTariffPhonesTab(String elementName)
@@ -60,22 +57,28 @@ public class PAYMSimOPageActions extends Environment {
 			log.debug("Selecting a Random Tariff under 30 days tab");
 			pageobjects.PAYMSimOPage.thirtydays.sendKeys(Keys.ENTER);
 			Thread.sleep(8000);
+			scrollToAnElement.scrollToElement(pageobjects.PAYMSimOPage.thirtydays);
+			Screenshots.captureScreenshot();
 			JavascriptExecutor executor = (JavascriptExecutor)driver;
 			executor.executeScript("arguments[0].click();",pageobjects.PAYMSimOPage.BuyNowRandomTariff30Months);
 			Thread.sleep(5000);
-			log.debug("Clicked on a Random Tariff");
+			log.debug("Selected a thirty days Random Tariff");
+			scrollToAnElement.scrollToElement(pageobjects.PAYMSimOPage.thirtydays);
+			Screenshots.captureScreenshot();
 		}
 		if (elementName.contains("12 Months")) {
 			log.debug("Selecting a Random Tariff under 12 Months tab");
 			pageobjects.PAYMSimOPage.twelevemonths.sendKeys(Keys.ENTER);
 			Thread.sleep(8000);
+			scrollToAnElement.scrollToElement(pageobjects.PAYMSimOPage.twelevemonths);
+			Screenshots.captureScreenshot();
 			JavascriptExecutor executor = (JavascriptExecutor)driver;
 			executor.executeScript("arguments[0].click();",pageobjects.PAYMSimOPage.BuyNowRandomTariff12Months);
 			Thread.sleep(5000);
-			log.debug("Clicked on a Random Tariff");
+			log.debug("Selected a twelve months Random Tariff");
+			scrollToAnElement.scrollToElement(pageobjects.PAYMSimOPage.twelevemonths);
+			Screenshots.captureScreenshot();
 		}
-		Screenshots.captureScreenshot();
-
 	}
 
 	public static void SelectRecommendedTariffPhonesTab(String elementName)
@@ -783,19 +786,18 @@ public class PAYMSimOPageActions extends Environment {
 
 	public static void SelectValidCTASIMOtariff(String tariffAmt, String dataValue) throws InterruptedException {
 
-		List<WebElement> lstOfTariff = driver.findElements(By.xpath("//div[@class='price-block']/div/h2/span[@class='pound']"));
+		List<WebElement> lstOfTariff = driver.findElements(By.xpath("//div[@name='P12M']/div/div/h2/span[@class='pound']"));
 		for (int i = 1; i <= lstOfTariff.size(); i++) {
 			System.out.println("The value of i is " + i);
-			String price = driver.findElement(By.xpath("(//div[@class='price-block']/div/h2/span[@class='pound'])[" + i + "]")).getText();
+			String price = driver.findElement(By.xpath("(//div[@name='P12M']/div/div/h2/span[@class='pound'])[" + i + "]")).getText();
 
-
-			if (driver.findElements(By.xpath("(//div[@class='price-block']/div/h2/span[@class='pound'])[" + i + "]/../../../../../div/ul/li/h2[contains(text(),'GB')]")).size() > 0) {
-				String data = driver.findElement(By.xpath("(//div[@class='price-block']/h2/span[@class='pound'])[" + i + "]/../../../../../div/ul/li/h2[contains(text(),'GB')]")).getText();
+			if (driver.findElements(By.xpath("(//div[@name='P12M']/div/div/h2/span[@class='pound'])[" + i + "]/../../../../div[1]/ul/li[1]/h2[contains(text(),'GB')]")).size() > 0) {
+				String data = driver.findElement(By.xpath("(//div[@name='P12M']/div/div/h2/span[@class='pound'])[" + i + "]/../../../../div[1]/ul/li[1]/h2[contains(text(),'GB')]")).getText();
 				if (price.contains(tariffAmt) && data.contains(dataValue)) {
 					System.out.println("Actual tariff :: " + price + ", " + data + " And Actual :: " + price + "," + data + "===  are Verified ====");
 					log.info("Actual tariff :: " + price + ", " + data + " And Actual :: " + price + "," + data + "===  are Verified ====");
 					Thread.sleep(3000);
-					driver.findElement(By.xpath("(//div[@class='price-block']/div/h2/span[@class='pound'])[" + i + "]/../../../../../div[4]/div/button")).click();
+					driver.findElement(By.xpath("(//div[@name='P12M']/div/div/h2/span[@class='pound'])[" + i + "]/../../../../div[5]/div/form/button")).click();
 					Thread.sleep(3000);
 					break;
 				}
