@@ -7,7 +7,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.StringTokenizer;
 import java.util.concurrent.TimeUnit;
-
 import GlobalActions.CommonActions;
 import GlobalActions.scrollToAnElement;
 import org.apache.log4j.Logger;
@@ -28,8 +27,7 @@ import pageobjects.MouseHoverPage;
 public class ConnectedDeviceDetailsPageAction extends Environment {
 
     final static Logger log = Logger.getLogger("ConnectedDeviceDetailsPageAction");
-
-    public static String upFrontCost;
+    public static String upFrontCost;		
     public static String totalCostPerMonth;
 
     public static void GetTitle() throws InterruptedException, IOException {
@@ -75,33 +73,33 @@ public class ConnectedDeviceDetailsPageAction extends Environment {
         jse.executeScript("arguments[0].click();", ele1);*/
         Thread.sleep(2000);
 
-        if (driver.findElements(By.xpath("(//a[normalize-space()='See our plans'])[1]")).size() > 0) {
+        if(driver.findElements(By.xpath("(//a[normalize-space()='See our plans'])[1]")).size()>0) {
             //When FR is ON
-            if (pageobjects.ConnectedDeviceDetailsPage.SeeOurplansLink.isDisplayed()) {
+            if(pageobjects.ConnectedDeviceDetailsPage.SeeOurplansLink.isDisplayed()) {
                 WebElement ele1 = pageobjects.ConnectedDeviceDetailsPage.SeeOurplansLink;
                 jse.executeScript("arguments[0].click();", ele1);
                 log.debug("Clicked on ViewOurTariffs/ See our plans Link \n");
-            } else {
+            }else{
                 // For PayG Devices
                 Thread.sleep(2000);
                 WebElement ele1 = pageobjects.ConnectedDeviceDetailsPage.AddtoBasket;
                 jse.executeScript("arguments[0].click();", ele1);
                 log.debug("Clicked on Add to basket CTA at PayG device details page to land on T&E page \n");
             }
-        } else if (driver.findElements(By.xpath("(//button[normalize-space()='See our plans'])[1]")).size() > 0) {
+        }else if(driver.findElements(By.xpath("(//button[normalize-space()='See our plans'])[1]")).size()>0) {
             //When FR is off
-            if (pageobjects.ConnectedDeviceDetailsPage.SeeOurplansCTA.isDisplayed()) {
+            if(pageobjects.ConnectedDeviceDetailsPage.SeeOurplansCTA.isDisplayed()) {
                 WebElement ele1 = pageobjects.ConnectedDeviceDetailsPage.SeeOurplansCTA;
                 jse.executeScript("arguments[0].click();", ele1);
                 log.debug("Clicked on ViewOurTariffs/ See our plans CTA \n");
-            } else {
+            }else{
                 // For PayG Devices
                 Thread.sleep(2000);
                 WebElement ele1 = pageobjects.ConnectedDeviceDetailsPage.AddtoBasket;
                 jse.executeScript("arguments[0].click();", ele1);
                 log.debug("Clicked on Add to basket CTA at PayG device details page to land on T&E page \n");
             }
-        } else {
+        }else{
             // For PayG Devices
             Thread.sleep(2000);
             WebElement ele1 = pageobjects.ConnectedDeviceDetailsPage.AddtoBasket;
@@ -169,43 +167,43 @@ public class ConnectedDeviceDetailsPageAction extends Environment {
         Screenshots.captureScreenshot();
     }
 
-    /*
+	/*
      * public static void checkOnlyOneOptionAvailable() throws Exception { // TODO
-     * Auto-generated method stub Thread.sleep(5000); WebElement capacity =
-     * pageobjects.ConnectedDeviceDetailsPage.CapacityDropDown; JavascriptExecutor
-     * js = (JavascriptExecutor) driver;
-     * js.executeScript("arguments[0].setAttribute('style', 'display:block;')",
-     * capacity);
-     *
-     * WebElement color = pageobjects.ConnectedDeviceDetailsPage.ColorDropDown;
-     *
-     * js.executeScript("arguments[0].setAttribute('style', 'display:block;')",
-     * color);
-     *
-     * if (capacity.isDisplayed()) {
-     *
-     * Assert.fail("Capacity has more than 1 dropdown"); }
-     *
-     * if (color.isDisplayed()) {
-     * Assert.fail("There are more than 1 option available for color dropdown");
-     *
-     * }
-     *
-     *
-     * List<org.openqa.selenium.WebElement> capacityLabel =
-     * pageobjects.ConnectedDeviceDetailsPage.CapacityLabel; if
-     * (capacityLabel.size() > 1) {
-     * Assert.fail("There are more than 1 capacity variant displayed as a label"); }
-     *
-     * List<org.openqa.selenium.WebElement> colorLabel =
-     * pageobjects.ConnectedDeviceDetailsPage.ColorLabel; if (colorLabel.size() > 1)
-     * { Assert.fail("There are more than 1 capacity variant displayed as a label");
-     * }
-     *
-     *
-     *
-     * }
-     */
+	 * Auto-generated method stub Thread.sleep(5000); WebElement capacity =
+	 * pageobjects.ConnectedDeviceDetailsPage.CapacityDropDown; JavascriptExecutor
+	 * js = (JavascriptExecutor) driver;
+	 * js.executeScript("arguments[0].setAttribute('style', 'display:block;')",
+	 * capacity);
+	 *
+	 * WebElement color = pageobjects.ConnectedDeviceDetailsPage.ColorDropDown;
+	 *
+	 * js.executeScript("arguments[0].setAttribute('style', 'display:block;')",
+	 * color);
+	 *
+	 * if (capacity.isDisplayed()) {
+	 *
+	 * Assert.fail("Capacity has more than 1 dropdown"); }
+	 *
+	 * if (color.isDisplayed()) {
+	 * Assert.fail("There are more than 1 option available for color dropdown");
+	 *
+	 * }
+	 *
+	 *
+	 * List<org.openqa.selenium.WebElement> capacityLabel =
+	 * pageobjects.ConnectedDeviceDetailsPage.CapacityLabel; if
+	 * (capacityLabel.size() > 1) {
+	 * Assert.fail("There are more than 1 capacity variant displayed as a label"); }
+	 *
+	 * List<org.openqa.selenium.WebElement> colorLabel =
+	 * pageobjects.ConnectedDeviceDetailsPage.ColorLabel; if (colorLabel.size() > 1)
+	 * { Assert.fail("There are more than 1 capacity variant displayed as a label");
+	 * }
+	 *
+	 *
+	 *
+	 * }
+	 */
 
     public static void checkOnlyOneOptionAvailable() throws Exception {
         Thread.sleep(2000);
@@ -282,39 +280,41 @@ public class ConnectedDeviceDetailsPageAction extends Environment {
         Screenshots.captureScreenshot();
     }
 
-    public static void colorSelectOfDeviceDropDown(String color) throws Exception {
+     public static void colorSelectOfDeviceDropDown(String color) throws Exception {
         // TODO Auto-generated method stub
         //Thread.sleep(5000);
 
         //ConnectedDeviceDetailsPage.ColorDropDown.click();
-        //WebElement ele = driver.findElement(By.xpath("(//span[@class='selectboxit-option-icon-container']/following-sibling::span[normalize-space()='" + color + "'])[1]"));
+         //WebElement ele = driver.findElement(By.xpath("(//span[@class='selectboxit-option-icon-container']/following-sibling::span[normalize-space()='" + color + "'])[1]"));
 
-        //WebElement eleColor = driver.findElement(By.xpath("//ul[@id='colourSelectBoxItOptions']/li[1]"));
-        WebElement elementColor = null;
-        String colorName = "";
-        List<WebElement> eleColor = driver.findElements(By.xpath("//ul[@id='colourSelectBoxItOptions' or @id='colorSelectBoxItOptions']/li"));
+         //WebElement eleColor = driver.findElement(By.xpath("//ul[@id='colourSelectBoxItOptions']/li[1]"));
+         if(driver.findElements(By.xpath("//ul[@id='colourSelectBoxItOptions' or @id='colorSelectBoxItOptions']/li")).size()>0) {
+             WebElement elementColor = null;
+             String colorName = "";
+             List<WebElement> eleColor = driver.findElements(By.xpath("//ul[@id='colourSelectBoxItOptions' or @id='colorSelectBoxItOptions']/li"));
 
-        for (int i = 1; i <= eleColor.size(); i++) {
-            colorName = driver.findElement(By.xpath("//ul[@id='colourSelectBoxItOptions' or @id='colorSelectBoxItOptions']/li[" + i + "]")).getText();
-            Thread.sleep(2000);
-            if (colorName.contains(color)) {
-                elementColor = driver.findElement(By.xpath("//ul[@id='colourSelectBoxItOptions' or @id='colorSelectBoxItOptions']/li[" + i + "]"));
-                break;
-            }
-        }
+             for (int i = 1; i <= eleColor.size(); i++) {
+                 colorName = driver.findElement(By.xpath("//ul[@id='colourSelectBoxItOptions' or @id='colorSelectBoxItOptions']/li[" + i + "]")).getText();
+                 Thread.sleep(2000);
+                 if (colorName.contains(color)) {
+                     elementColor = driver.findElement(By.xpath("//ul[@id='colourSelectBoxItOptions' or @id='colorSelectBoxItOptions']/li[" + i + "]"));
+                     break;
+                 }
+             }
 
-        Thread.sleep(3000);
-        Point coordinates = elementColor.getLocation();
-        Robot robot = new Robot();
-        robot.mouseMove(coordinates.getX() + 120, coordinates.getY() + 120);
-        Thread.sleep(2000);
-        log.debug("Moving Mouse Color dropdown");
+             Thread.sleep(3000);
+             Point coordinates = elementColor.getLocation();
+             Robot robot = new Robot();
+             robot.mouseMove(coordinates.getX() + 120, coordinates.getY() + 120);
+             Thread.sleep(2000);
+             log.debug("Moving Mouse Color dropdown");
 
-        Actions action = new Actions(driver);
-        action.moveToElement(elementColor).click().build().perform();
-        log.debug("Selected " + color + "from color dropdown");
-        Screenshots.captureScreenshot();
-        Thread.sleep(3000);
+             Actions action = new Actions(driver);
+             action.moveToElement(elementColor).click().build().perform();
+             log.debug("Selected " + color + "from color dropdown");
+             Screenshots.captureScreenshot();
+             Thread.sleep(3000);
+         }
 
          /*Actions act = new Actions(driver);
          Thread.sleep(3000);
@@ -340,40 +340,42 @@ public class ConnectedDeviceDetailsPageAction extends Environment {
         // TODO Auto-generated method stub
         Thread.sleep(5000);
 
-        ConnectedDeviceDetailsPage.CapacityDropDown.click();
-        Thread.sleep(3000);
-        Screenshots.captureScreenshot();
-        //WebElement ele = driver.findElement(By.xpath("(//span[@class='selectboxit-option-icon-container']/following-sibling::span[normalize-space()='" + capacity + "'])[2]"));
+        if(driver.findElements(By.xpath("//span/i[@id='memorySelectBoxItArrow']")).size()>0) {
+            ConnectedDeviceDetailsPage.CapacityDropDown.click();
+            Thread.sleep(3000);
+            Screenshots.captureScreenshot();
+            //WebElement ele = driver.findElement(By.xpath("(//span[@class='selectboxit-option-icon-container']/following-sibling::span[normalize-space()='" + capacity + "'])[2]"));
 
         /*WebElement ele = driver.findElement(By.xpath("//a[@class='selectboxit-option-anchor' and normalize-space(.)='" + capacity + "']"));
         Actions act = new Actions(driver);
         act.moveToElement(ele).click().build().perform();*/
 
-        WebElement elementCapacity = null;
-        String colorName = "";
-        List<WebElement> eleCapacity = driver.findElements(By.xpath("//ul[@id='memorySelectBoxItOptions']/li"));
+            WebElement elementCapacity = null;
+            String colorName = "";
+            List<WebElement> eleCapacity = driver.findElements(By.xpath("//ul[@id='memorySelectBoxItOptions']/li"));
 
-        for (int i = 1; i <= eleCapacity.size(); i++) {
-            colorName = driver.findElement(By.xpath("//ul[@id='memorySelectBoxItOptions']/li[" + i + "]")).getText();
-            Thread.sleep(2000);
-            if (colorName.contains(capacity)) {
-                elementCapacity = driver.findElement(By.xpath("//ul[@id='memorySelectBoxItOptions']/li[" + i + "]"));
-                break;
+            for (int i = 1; i <= eleCapacity.size(); i++) {
+                colorName = driver.findElement(By.xpath("//ul[@id='memorySelectBoxItOptions']/li[" + i + "]")).getText();
+                Thread.sleep(2000);
+                if (colorName.contains(capacity)) {
+                    elementCapacity = driver.findElement(By.xpath("//ul[@id='memorySelectBoxItOptions']/li[" + i + "]"));
+                    break;
+                }
             }
+
+            Thread.sleep(3000);
+            Point coordinates = elementCapacity.getLocation();
+            Robot robot = new Robot();
+            robot.mouseMove(coordinates.getX() + 80, coordinates.getY() + 100);
+            Thread.sleep(2000);
+            log.debug("Moving Mouse Color dropdown");
+
+            Actions action = new Actions(driver);
+            action.moveToElement(elementCapacity).click().build().perform();
+            log.debug("Selected " + capacity + "from capacity dropdown");
+            Thread.sleep(3000);
+            Screenshots.captureScreenshot();
         }
-
-        Thread.sleep(3000);
-        Point coordinates = elementCapacity.getLocation();
-        Robot robot = new Robot();
-        robot.mouseMove(coordinates.getX() + 80, coordinates.getY() + 100);
-        Thread.sleep(2000);
-        log.debug("Moving Mouse Color dropdown");
-
-        Actions action = new Actions(driver);
-        action.moveToElement(elementCapacity).click().build().perform();
-        log.debug("Selected " + capacity + "from capacity dropdown");
-        Thread.sleep(3000);
-        Screenshots.captureScreenshot();
 
 
         /*WebElement element = pageobjects.ConnectedDeviceDetailsPage.CapacityDropDown;
@@ -446,11 +448,13 @@ public class ConnectedDeviceDetailsPageAction extends Environment {
             Thread.sleep(3000);
            /* pageobjects.ConnectedDeviceDetailsPage.colorselectBoxArow.click();
             Thread.sleep(2000);*/
-            JavascriptExecutor executor = (JavascriptExecutor) driver;
-            executor.executeScript("arguments[0].click();", pageobjects.ConnectedDeviceDetailsPage.colorselectBoxArow);
-            //pageobjects.ConnectedDeviceDetailsPage.colorselectBoxArow.click();
-            log.debug("The colour dropdown is clicked");
-            Screenshots.captureScreenshot();
+           if(driver.findElements(By.xpath("//span[@id='colourSelectBoxItArrowContainer' or @id='colorSelectBoxItArrowContainer']")).size()>0) {
+               JavascriptExecutor executor = (JavascriptExecutor) driver;
+               executor.executeScript("arguments[0].click();", pageobjects.ConnectedDeviceDetailsPage.colorselectBoxArow);
+               //pageobjects.ConnectedDeviceDetailsPage.colorselectBoxArow.click();
+               log.debug("The colour dropdown is clicked");
+               Screenshots.captureScreenshot();
+           }
         } else {
             log.debug("colour drop down is not displayed");
             //Assert.fail("The colour dropdown is not displayed");
@@ -459,15 +463,23 @@ public class ConnectedDeviceDetailsPageAction extends Environment {
     }
 
 
+
+
+
+
+
+
     public static void UpdatedColordropdownText() {
 
         if (pageobjects.ConnectedDeviceDetailsPage.Colourdropdownbox.isDisplayed()) {
-            WebElement colourDropdown = driver.findElement(By.xpath("//*[@id='colourSelectBoxItOptions' or @id='colorSelectBoxItOptions']"));
-            //a[@class='selectboxit-option-anchor']//span[@class='selectboxit-option-label']
-            List<WebElement> elementColor = colourDropdown.findElements(By.xpath("(//*[@class='selectboxit-option-label'])"));
-            log.debug("Available colour variants are : ");
-            for (int i = 0; i < elementColor.size(); i++) {
-                log.debug(elementColor.get(i).getText());
+            if(driver.findElements(By.xpath("//*[@id='colourSelectBoxItOptions' or @id='colorSelectBoxItOptions']")).size()>0) {
+                WebElement colourDropdown = driver.findElement(By.xpath("//*[@id='colourSelectBoxItOptions' or @id='colorSelectBoxItOptions']"));
+                //a[@class='selectboxit-option-anchor']//span[@class='selectboxit-option-label']
+                List<WebElement> elementColor = colourDropdown.findElements(By.xpath("(//*[@class='selectboxit-option-label'])"));
+                log.debug("Available colour variants are : ");
+                for (int i = 0; i < elementColor.size(); i++) {
+                    log.debug(elementColor.get(i).getText());
+                }
             }
         } else {
             log.debug("The color labels are not displayed");
@@ -476,28 +488,30 @@ public class ConnectedDeviceDetailsPageAction extends Environment {
     }
 
 
+
+
     public static void chooseColourOfDevice(String colourOfDevice) throws IOException, InterruptedException {
         // TODO Auto-generated method stub
         Thread.sleep(3000);
         boolean isAvailabeRequiredColor = false;
-        if (ConnectedDeviceDetailsPage.defaut_Selectd_Colour.getText().contains(colourOfDevice)) {
+        if(ConnectedDeviceDetailsPage.defaut_Selectd_Colour.getText().contains(colourOfDevice)) {
             log.debug("The Default selected colour is + " + colourOfDevice);
             Screenshots.captureScreenshot();
-        } else if (driver.findElements(By.xpath("//span[@id='colourSelectBoxItArrowContainer']")).size() > 0) {
+        }else   if(driver.findElements(By.xpath("//span[@id='colourSelectBoxItArrowContainer']")).size() > 0){
             WebElement colourDropdown = driver.findElement(By.xpath("//*[@id='colourSelectBoxItOptions' or @id='colorSelectBoxItOptions']"));
             List<WebElement> elementColor = colourDropdown.findElements(By.xpath("(//*[@class='selectboxit-option-label'])"));
             log.debug("Available colour variants are : ");
             driver.findElement(By.xpath("//span[@id='colourSelectBoxItArrowContainer']")).click();
             for (int i = 1; i <= elementColor.size(); i++) {
-                String colourFromist = driver.findElement(By.xpath("(//*[@class='selectboxit-option-label'])[" + i + "]")).getText();
+                String colourFromist = driver.findElement(By.xpath("(//*[@class='selectboxit-option-label'])["+i+"]")).getText();
 
-                if (colourFromist.contains(colourOfDevice)) {
-                    driver.findElement(By.xpath("((//*[@class='selectboxit-option-label']))[" + i + "]")).click();
+                if(colourFromist.contains(colourOfDevice)){
+                    driver.findElement(By.xpath("((//*[@class='selectboxit-option-label']))["+i+"]")).click();
                     log.debug("Selected Device colour from the list is  + " + colourOfDevice);
                     isAvailabeRequiredColor = true;
                 }
             }
-        } else {
+        } else{
             log.debug("Selected Device colour from the list is not availabe so picking availabe one + " + ConnectedDeviceDetailsPage.defaut_Selectd_Colour.getText());
 
         }
@@ -510,31 +524,29 @@ public class ConnectedDeviceDetailsPageAction extends Environment {
         // TODO Auto-generated method stub
         Thread.sleep(3000);
         boolean isAvailabeRequiredCapacity = false;
-        if (ConnectedDeviceDetailsPage.default_deviceCapacity.getText().contains(capacityOfDevice)) {
+        if(ConnectedDeviceDetailsPage.default_deviceCapacity.getText().contains(capacityOfDevice)) {
             log.debug("The Default selected Capacity is + " + capacityOfDevice);
             Screenshots.captureScreenshot();
-        } else if (driver.findElements(By.xpath("//span[@id='memorySelectBoxItArrow']")).size() > 0) {
+        }else   if(driver.findElements(By.xpath("//span[@id='memorySelectBoxItArrow']")).size() > 0){
 
             List<WebElement> eleCapacity = driver.findElements(By.xpath("//select[@id='memory']//option"));
             log.debug("Available colour variants are : ");
 
             for (int i = 0; i < eleCapacity.size(); i++) {
                 String colourFromist = eleCapacity.get(i).getText();
-                if (colourFromist.contains(capacityOfDevice)) {
+                if(colourFromist.contains(capacityOfDevice)){
                     eleCapacity.get(i).click();
                     log.debug("Selected Device colour from the list is  + " + capacityOfDevice);
                 }
             }
-        } else {
+        } else{
             log.debug("Selected Device colour from the list is not availabe so picking availabe one + " + ConnectedDeviceDetailsPage.default_deviceCapacity.getText());
 
         }
 
         Screenshots.captureScreenshot();
     }
-
-
-    /*********************************************************************************************************************************************************************
+/*********************************************************************************************************************************************************************
      * validation    : To validate the flexible refresh (ITFD - 466)                                                                                                 *
      * Created by    : Venkata                                                                                                                                       *
      * Created date  : 03/09/18     - August Release                                                                                                                 *
@@ -902,5 +914,7 @@ public class ConnectedDeviceDetailsPageAction extends Environment {
 
         Thread.sleep(6000);
     }
+
+    //*[@id='colourSelectBoxItText']
 
 }
