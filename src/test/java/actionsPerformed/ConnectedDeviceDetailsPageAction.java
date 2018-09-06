@@ -27,6 +27,8 @@ import pageobjects.MouseHoverPage;
 public class ConnectedDeviceDetailsPageAction extends Environment {
 
     final static Logger log = Logger.getLogger("ConnectedDeviceDetailsPageAction");
+    public static String upFrontCost;		
+    public static String totalCostPerMonth;
 
     public static void GetTitle() throws InterruptedException, IOException {
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
