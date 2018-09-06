@@ -362,15 +362,15 @@ public class BasketPageActions extends Environment {
 				Thread.sleep(5000);
 				// Assert.assertEquals(elementName,"Galaxy S7 is not found");
 				log.debug("Postcode Submitted for Search");
-				log.debug("Postcode Submitted for Search");
+
 				Thread.sleep(5000);
 				scrollToAnElement.scrollToElement(BasketPage.Collectfromthisstore);
 				Thread.sleep(3000);
-				Screenshots.captureScreenshot();
+				//Screenshots.captureScreenshot();
 				pageobjects.BasketPage.Collectfromthisstore.click();
 				// Assert.assertEquals(elementName,"Galaxy S7 is not found");
 				log.debug("Store Selected for Colletion");
-				log.debug("Store Selected for Colletion");
+
 				Thread.sleep(5000);
 
 				log.debug("Click on the Add To Basket");

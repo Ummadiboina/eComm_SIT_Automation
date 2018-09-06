@@ -78,13 +78,10 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 				//pageobjects.PAYMandPAYGTariffAndExtrasPage.RandomTariff1.click();
 				log.debug("Selected a Random Tariff");
 
-			}
-
-			if (ElementName.contains("SelectPromotedTariff")) {
+			}else if (ElementName.contains("SelectPromotedTariff")) {
 				pageobjects.PAYMandPAYGTariffAndExtrasPage.SelectPromotedTariff.sendKeys(Keys.ENTER);
 				log.debug("Selected a Promoted Tariff");
-			}
-			if (ElementName.contains("fullpaymenttariff1")) {
+			}else if (ElementName.contains("fullpaymenttariff1")) {
 
 				JavascriptExecutor executor = (JavascriptExecutor) driver;
 				executor.executeScript("window.scrollBy(0,300)", "");
@@ -95,9 +92,11 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 				executor.executeScript("arguments[0].click();", pageobjects.PAYMandPAYGTariffAndExtrasPage.paydevicefulllink);
 
 				log.debug("Expanded the Full payment Tariff Section");
-				Thread.sleep(5000);
+				Thread.sleep(7000);
 				Screenshots.captureScreenshot();
-				pageobjects.PAYMandPAYGTariffAndExtrasPage.RandomfullTariff1.sendKeys(Keys.ENTER);
+				//pageobjects.PAYMandPAYGTariffAndExtrasPage.RandomfullTariff1.sendKeys(Keys.ENTER);
+
+				executor.executeScript("arguments[0].click();", pageobjects.PAYMandPAYGTariffAndExtrasPage.RandomfullTariff1);
 				log.debug("Selected a full payment Tariff");
 			}
 
