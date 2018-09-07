@@ -31,7 +31,7 @@ public class PAYMandPAYGTariffAndExtrasPage {
 	public static WebElement SelectAnyPayGTariff;
 
 
-	@FindBy(how = How.XPATH, using = ("(//*[@id='callToAction'] | //button[@class='secondary selectButton tariff-select buyNowBtn'])[1]"))
+	@FindBy(how = How.XPATH, using = ("(//*[@id='callToAction'] | //button[@class='secondary selectButton tariff-select buyNowBtn'] | //button[@class='btn buyNowBtn secondary selectButton tariff-select'])[1]"))
 	public static WebElement RandomTariff1;
 
 	@FindBy(how = How.XPATH, using = ("//a[contains(text(),'Pay Monthly')]"))
@@ -127,6 +127,8 @@ public class PAYMandPAYGTariffAndExtrasPage {
 
 	@FindAll({ @FindBy(how = How.XPATH, using = "//div[@id='tariff-tile']//ul/li[1]/h2 | //div[@class='col-xs-6 col-sm-3 dmt-container info-container']//ul/li[1]/h2 | //div[@class='box clearfix']/div[1]/div[2]/div/span") })
 	public static List<WebElement> DataTextElement;
+
+
 
 	@FindAll({
 			@FindBy(how = How.XPATH, using = "//div[@id='tariff-tile']//div[@class='price-block']/div[@class='col-xs-6 upfront']/h2/span[2]") })

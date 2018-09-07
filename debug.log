@@ -564,3 +564,5 @@
 [0704/092734.031:ERROR:file_io_win.cc(170)] CreateFile C:\Users\subbaiv1\AppData\Local\Temp\scoped_dir7176_29979\Crashpad\reports\14178684-18f8-4ca1-86fa-31eca859be21.dmp: The system cannot find the path specified. (0x3)
 [0704/092734.032:ERROR:crash_report_exception_handler.cc(97)] PrepareNewCrashReport failed
 [0704/103904.333:ERROR:prune_crash_reports.cc(34)] PruneCrashReportDatabase: Failed to get pending reports
+[0906/193520.080:ERROR:process_reader_win.cc(123)] NtOpenThread: {Access Denied} A process has requested access to an object, but has not been granted those access rights. (0xc0000022)
+[0906/193520.108:ERROR:exception_snapshot_win.cc(88)] thread ID 11168 not found in process

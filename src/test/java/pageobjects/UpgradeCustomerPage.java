@@ -381,7 +381,7 @@ public class UpgradeCustomerPage {
 	public static WebElement  simoTab;
 
 
-	@FindBy(how = How.XPATH, using = "//button[@class='btnblue']")
+	@FindBy(how = How.XPATH, using = "//button[@class='btnblue'] | //button[@class='btnblue ng-binding']")
 	public static WebElement GetStartedCTA;
 
 	@FindBy(how = How.XPATH, using = "//div[contains(text(),'Choose your device')]")
