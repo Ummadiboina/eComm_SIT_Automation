@@ -692,6 +692,9 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 		if (pageobjects.PAYMandPAYGTariffAndExtrasPage.FilterandSortLabel.isDisplayed()) {
 			log.debug("Filter label is displayed");
 			Thread.sleep(4000);
+			JavascriptExecutor jse = (JavascriptExecutor) driver;
+			jse.executeScript("window.scrollBy(0,400)", "");
+			Screenshots.captureScreenshot();
 			String text1 = pageobjects.PAYMandPAYGTariffAndExtrasPage.FilterandSortLabel.getText();
 			log.debug("Validating Tariff is : " +text1);
 			if (text1.contains("Sort")) {
@@ -741,6 +744,8 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 	public static ArrayList<Integer> getDataListBeforeSelectingFilter() throws IOException, InterruptedException {
 		Thread.sleep(4000);
 		List<WebElement> DataTextElement = PAYMandPAYGTariffAndExtrasPage.DataTextElement;
+		scrollToAnElement.scrollToElement(driver.findElement(By.xpath("//div[@id='tariff-tile']//ul/li[1]/h2 | //div[@class='col-xs-6 col-sm-3 dmt-container info-container']//ul/li[1]/h2 | //div[@class='box clearfix']/div[1]/div[2]/div/span")));
+		Screenshots.captureScreenshot();
 		ArrayList<Integer> datalist = new ArrayList<Integer>();
 		String data = null, tempdata = null;
 		int a = 0;
@@ -975,7 +980,9 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 			new Select(element).selectByVisibleText(tariffSortDropDown);
 			log.debug("Sorted: " + tariffSortDropDown);
 		}
+		scrollToAnElement.scrollToElement(pageobjects.PAYMandPAYGTariffAndExtrasPage.TariffSortDropDown);
 		Screenshots.captureScreenshot();
+
 		Thread.sleep(5000);
 	}
 
@@ -1110,6 +1117,8 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 		log.debug("Executing getCurrentSortOrderUsingMonthlyData ()");
 
 		List<WebElement> DataTextElement = pageobjects.PAYMandPAYGTariffAndExtrasPage.DataTextElement;
+		scrollToAnElement.scrollToElement(pageobjects.PAYMandPAYGTariffAndExtrasPage.FilterandSortLabel);
+		Screenshots.captureScreenshot();
 		ArrayList<Integer> tariffListUsingMonthlyData = new ArrayList<Integer>();
 		String data = null, tempdata = null;
 		int a = 0;
@@ -1150,6 +1159,8 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 
 	public static ArrayList<Integer> getCurrentSortOrderUsingMonthlyCost() throws IOException {
 		List<WebElement> DataTextElement = pageobjects.PAYMandPAYGTariffAndExtrasPage.MonthlyCostTextElement;
+		scrollToAnElement.scrollToElement(driver.findElement(By.xpath("//div[@id='tariff-tile' or @class='col-xs-6 col-sm-3 info-container price-block-container']//div[@class='price-block']/div[@class='col-xs-6 monthly']/h2/span[1]")));
+		Screenshots.captureScreenshot();
 		ArrayList<Integer> tariffListUsingMonthlyCost = new ArrayList<Integer>();
 		String data = null;
 		int a = 0;
@@ -1169,6 +1180,8 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 
 	public static ArrayList<Integer> getCurrentSortOrderUsingUpfrontCost() throws IOException {
 		List<WebElement> DataTextElement = pageobjects.PAYMandPAYGTariffAndExtrasPage.UpfrontTextElement;
+		scrollToAnElement.scrollToElement(driver.findElement(By.xpath("//div[@id='tariff-tile']//div[@class='price-block']/div[@class='col-xs-6 upfront']/h2/span[2]")));
+		Screenshots.captureScreenshot();
 		ArrayList<Integer> tariffListUsingMonthlyUpfront = new ArrayList<Integer>();
 		String data = null;
 		int a = 0;

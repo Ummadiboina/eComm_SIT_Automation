@@ -3223,14 +3223,14 @@ public class UpgradeCustomerPageActions extends Environment {
 
      public static void clickOnGetStartedCTA(){
         try {
-            if(driver.findElements(By.xpath("//button[@class='btnblue']")).size()>0){
+            if(driver.findElements(By.xpath("//button[@class='btnblue'] | //button[@class='btnblue ng-binding']")).size()>0){
                 /*scrollToAnElement.scrollToElement(UpgradeCustomerPage.chooseDeviseSection);
                 Screenshots.captureScreenshot();*/
                 JavascriptExecutor jse = (JavascriptExecutor) driver;
                 jse.executeScript("window.scrollBy(0,300)", "");
 
                 Thread.sleep(3000);
-                log.debug("Clicking on Get Started CTA");
+                log.debug("Clicking on Get Started/ See sim only Tariff CTA");
                 //JavascriptExecutor jse = (JavascriptExecutor) driver;
                 jse.executeScript("arguments[0].click()", pageobjects.UpgradeCustomerPage.GetStartedCTA);
                 //UpgradeCustomerPage.GetStartedCTA.click();

@@ -5609,11 +5609,11 @@ public class E2EOrderPlaced_Steps {
             Thread.sleep(4000);
             //UpgradeCustomerPageActions.selectDeviceInRecommendedDevicesSection(devicename);
             // driver.findElement(By.xpath("(//span[normalize-space()='Apple'])[1]")).click();
-            scrollToAnElement.scrollToElement(driver.findElement(By.xpath("(//button[normalize-space()='Select'])[2]")));
+            scrollToAnElement.scrollToElement(driver.findElement(By.xpath("(//button[normalize-space()='Select'])[1]")));
             Screenshots.captureScreenshot();
             Thread.sleep(4000);
             JavascriptExecutor executor = (JavascriptExecutor) driver;
-            executor.executeScript("arguments[0].click();", driver.findElement(By.xpath("(//button[normalize-space()='Select'])[2]")));
+            executor.executeScript("arguments[0].click();", driver.findElement(By.xpath("(//button[normalize-space()='Select'])[1]")));
             Thread.sleep(7000);
 
         } catch (Exception e) {
@@ -7379,6 +7379,9 @@ public class E2EOrderPlaced_Steps {
                     "Assertion Success: Tariffs have been sorted successfully based on Sort Option and Tariff Option");
             log.debug(
                     "Assertion Success: Tariffs have been sorted successfully based on Sort Option and Tariff Option");
+
+            scrollToAnElement.scrollToElement(pageobjects.PAYMandPAYGTariffAndExtrasPage.TariffSortDropDown);
+            Screenshots.captureScreenshot();
 
         } catch (AssertionError e) {
 
