@@ -9,6 +9,7 @@ import GlobalActions.scrollToAnElement;
 import org.apache.log4j.Logger;
 import org.junit.Assert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 
 import GlobalActions.Screenshots;
@@ -45,6 +46,9 @@ public class OrderConfirmationPageActions extends Environment {
 	public static void MessageDisplayed() throws IOException {
 		log.debug("This is order confirmation page and the message in this page is as below......");
 		log.info("This is order confirmation/information page and the message in this page is as above......");
+		JavascriptExecutor jse = (JavascriptExecutor) driver;
+		jse.executeScript("window.scrollBy(0,100)", "");
+		Screenshots.captureScreenshot();
 
 		try {
 			List<WebElement> outercontainer = driver.findElements(By.xpath("//*[@id='order-number']"));

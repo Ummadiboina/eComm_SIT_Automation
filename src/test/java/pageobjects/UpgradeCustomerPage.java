@@ -257,6 +257,9 @@ public class UpgradeCustomerPage {
 	
 	@FindBy(how = How.XPATH, using = "(//a[@id='tab-switch-to-a-tablet'])[1]")
 	public static WebElement TabletsTab;
+
+	@FindBy(how = How.XPATH, using = "(//a[@id='tab-switch-to-a-mbb'])[1]")
+	public static WebElement MBBTab;
 	
 	/*@FindBy(how = How.ID, using = "qa-view-all")
 	public static WebElement ViewAllTariffs;*/

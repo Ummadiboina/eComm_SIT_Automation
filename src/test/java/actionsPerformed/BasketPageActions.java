@@ -141,13 +141,13 @@ public class BasketPageActions extends Environment {
 	// Below is for Clicking on the goto Checkout button
 	public static void gotoCheckout() throws IOException, InterruptedException {
 
-		Thread.sleep(10000);
+		Thread.sleep(4000);
 		scrollToAnElement.scrollToElement(BasketPage.YourOrder);
 		Screenshots.captureScreenshot();
 		String title = driver.getTitle();
 		if (title.contains("Thanks for waiting")) {
 			log.debug("Queue page is displayed");
-
+			Screenshots.captureScreenshot();
 			// Below is example of Fluent wait
 
 			WebDriverWait wait = (WebDriverWait) new FluentWait<WebDriver>(driver).withTimeout(60, TimeUnit.SECONDS)
@@ -878,8 +878,10 @@ public class BasketPageActions extends Environment {
 				if (driver.findElements(By.xpath("//h3[normalize-space()='Spend Cap']")).size() > 0) {
 
 					log.debug("Bill spend cap section is enabled/displayed at "+pageTitle+" page \n");
-					scrollToAnElement.scrollToElement(pageobjects.BasketPage.BillSpendCapHeader);
-					Screenshots.captureScreenshot();
+					/*scrollToAnElement.scrollToElement(pageobjects.BasketPage.BillSpendCapHeader);
+					Screenshots.captureScreenshot();*/
+					JavascriptExecutor jse = (JavascriptExecutor) driver;
+					jse.executeScript("window.scrollBy(0,200)", "");
 					log.debug("Bill Spend Cap header is displayed in "+pageTitle+" page ie :: " + pageobjects.BasketPage.BillSpendCapHeader.getText());
 
 					AppliedBillCap = pageobjects.BasketPage.AppliedBillCap.getText();
