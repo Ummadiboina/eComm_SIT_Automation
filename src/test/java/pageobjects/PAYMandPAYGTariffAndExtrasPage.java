@@ -227,6 +227,9 @@ public class PAYMandPAYGTariffAndExtrasPage {
 	@FindBy(how = How.XPATH, using = "//p[@class='section-heading']/a")
 	public static WebElement BillCapEditLink;
 
+	@FindBy(how = How.XPATH, using = "//p[@class='section-heading']/a")
+	public static WebElement TariffEditLink;
+
 	//Bill Spend cap
 	@FindBy(how = How.XPATH, using = "//h3[normalize-space()='Spend Cap']//following-sibling::h3/span")
 	public static WebElement AppliedBillCap_YourPackage;

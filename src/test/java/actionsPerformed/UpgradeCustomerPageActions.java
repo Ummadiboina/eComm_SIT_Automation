@@ -499,11 +499,16 @@ public class UpgradeCustomerPageActions extends Environment {
         log.debug("selecting PayG Tariff");
         Thread.sleep(4000);
 
-            WebElement selectBtnEle = PAYMandPAYGTariffAndExtrasPage.SelectAnyPayGTariff;
-            Screenshots.captureScreenshot();
+        WebElement selectBtnEle = PAYMandPAYGTariffAndExtrasPage.SelectAnyPayGTariff;
+        scrollToAnElement.scrollToElement(PAYMandPAYGTariffAndExtrasPage.SelectAnyPayGTariff);
+        Thread.sleep(3000);
+        Screenshots.captureScreenshot();
             if (selectBtnEle.isDisplayed()) {
                 ((JavascriptExecutor) driver).executeScript("arguments[0].click();", selectBtnEle);
                 log.debug("PayG Tariff has been selected");
+                scrollToAnElement.scrollToElement(driver.findElement(By.xpath("//div[contains(text(),'Your extras')]")));
+                Thread.sleep(3000);
+                Screenshots.captureScreenshot();
                 //log.debug("Selected 'Device with 1GB preloaded data sim'");
             } else {
                 log.debug("Failed to select the PayG Tariff in the Extras&Tariff page");
@@ -2280,6 +2285,14 @@ public class UpgradeCustomerPageActions extends Environment {
         log.debug("In tablets clicking function");
         ((JavascriptExecutor) driver).executeScript("arguments[0].click();",
                 pageobjects.UpgradeCustomerPage.TabletsTab);
+        Thread.sleep(3000);
+        Screenshots.captureScreenshot();
+    }
+
+    public static void clickOnMBBtab() throws InterruptedException, IOException {
+        log.debug("In MBB clicking function");
+        ((JavascriptExecutor) driver).executeScript("arguments[0].click();",
+                pageobjects.UpgradeCustomerPage.MBBTab);
         Thread.sleep(3000);
         Screenshots.captureScreenshot();
     }

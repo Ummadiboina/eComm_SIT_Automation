@@ -438,6 +438,36 @@ public class E2EOrderPlaced_Steps {
         }
     }
 
+    @And("^Select 'Tablets' tab$")
+    public void selectTabletsTab() {
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            //PageFactory.initElements(driver, MouseHoverPage.class);
+            driver.findElement(By.xpath("//li[@id='tablet']")).click();
+            Thread.sleep(3000);
+
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            log.debug("Unable to do mousehover to PAYM SIMO page");
+            Assert.fail("Unable to do mousehover to PAYM SIMO page");
+        }
+    }
+
+    @And("^Select 'MBB' tab$")
+    public void selectMBBTab() {
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            //PageFactory.initElements(driver, MouseHoverPage.class);
+            driver.findElement(By.xpath("//li[@id='mbb']")).click();
+            Thread.sleep(3000);
+
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            log.debug("Unable to do mousehover to PAYM SIMO page");
+            Assert.fail("Unable to do mousehover to PAYM SIMO page");
+        }
+    }
+
     @Given("^I am an Existing user and Navigates to Signin page$")
     public void i_am_an_Existing_user_and_Navigates_to_Signin_page() {
         try {
@@ -7592,6 +7622,20 @@ public class E2EOrderPlaced_Steps {
         }
     }
 
+    @And("^Click on MBB section in upgrade options page$")
+    public void click_on_MBB_tab() {
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, UpgradeCustomerPage.class);
+            UpgradeCustomerPageActions.clickOnMBBtab();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            log.debug("\"Not able to select MBB tab");
+            Assert.fail("Not able to select MBB tab");
+        }
+    }
+
     @And("^If I select ANY sort option ([^\"]*) from the drop-down$")
     public void select_sort_Tariff_dropdown(String tariffSortDropDown) {
         try {
@@ -10626,36 +10670,69 @@ public class E2EOrderPlaced_Steps {
 
     //Jamal----Bill Spend Caps Section--------
 
-    //Validating Bill Spend Cap Section and Choosing Bill Cap
-    @And("^Validate consumer Bill Spend Caps section and choose your cap ([^\"]*) ([^\"]*) when BSC is ([^\"]*)$")
-    public void ValidateBillSpendCap(String BillCap, String CapAmount, String BSCstatus) {
+    //Validating Bill Spend Cap Section
+    @And("^Validate consumer Bill Spend Caps section when BSC is ([^\"]*)$")
+    public void ValidateBillSpendCap(String BSCstatus) {
         try {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, PAYMandPAYGTariffAndExtrasPage.class);
             Thread.sleep(5000);
             log.debug("Currently we are at page: "+driver.getTitle());
             PAYMandPAYGTariffAndExtrasPageActions.Validate_BillSpendCap(BSCstatus);
-            Thread.sleep(6000);
-            PAYMandPAYGTariffAndExtrasPageActions.add_BillSpendCap( BillCap, CapAmount,BSCstatus);
+
         } catch (Exception e) {
             // TODO Auto-generated catch block
-            log.debug("Unable to Land on Tariff and extras page and fail to cap the bill");
-            Assert.fail("Unable to Land on Tariff and extras page and fail to cap the bill");
+            log.debug("Unable to validate Bill Spend capSection");
+            Assert.fail("Unable to validate Bill Spend Section");
         }
     }
 
-    //Jamal----ValidateAndClickEditLink-----
-    @And("^Validate and click on 'Edit' link$")
-    public void ValidateAndClickEditLink() {
+    //Choosing Bill Cap
+    @And("^Choose your bill cap ([^\"]*) ([^\"]*) when BSC is ([^\"]*)$")
+    public void ChooseBillSpendCap(String BillCap, String CapAmount, String BSCstatus) {
         try {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, PAYMandPAYGTariffAndExtrasPage.class);
             Thread.sleep(5000);
-            PAYMandPAYGTariffAndExtrasPageActions.validateEditLink();
+            log.debug("Currently we are at page: "+driver.getTitle());
+            PAYMandPAYGTariffAndExtrasPageActions.add_BillSpendCap( BillCap, CapAmount,BSCstatus);
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            log.debug("Failed to cap your bill");
+            Assert.fail("Failed to cap your bill");
+        }
+    }
+
+
+    //Jamal----ValidateAndClickEditLink-----
+    @And("^Validate and click on BSC 'Edit' link to change ([^\"]*)$")
+    public void ValidateAndClickEditLink(String BillCap) {
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, PAYMandPAYGTariffAndExtrasPage.class);
             Thread.sleep(5000);
-            PAYMandPAYGTariffAndExtrasPageActions.clickEditLink();
+            PAYMandPAYGTariffAndExtrasPageActions.validateBSCEditLink();
             Thread.sleep(5000);
-            PAYMandPAYGTariffAndExtrasPageActions.statusAfterEditClicked();
+            PAYMandPAYGTariffAndExtrasPageActions.clickBSCEditLink();
+            Thread.sleep(5000);
+            PAYMandPAYGTariffAndExtrasPageActions.statusAfterBSCEditClicked(BillCap);
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            log.debug("Unable to validate edit link");
+            Assert.fail("Unable to validate edit link");
+        }
+    }
+
+    @And("^Validate and click on Tariff 'Edit' link$")
+    public void ValidateAndClickTariffEditLink() {
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, PAYMandPAYGTariffAndExtrasPage.class);
+            Thread.sleep(5000);
+            PAYMandPAYGTariffAndExtrasPageActions.validateTariffEditLink();
+            Thread.sleep(5000);
+            PAYMandPAYGTariffAndExtrasPageActions.clickTariffEditLink();
+
         } catch (Exception e) {
             // TODO Auto-generated catch block
             log.debug("Unable to validate edit link");
@@ -10664,13 +10741,13 @@ public class E2EOrderPlaced_Steps {
     }
 
     //Jamal----ValidateAndClickEditLink-----
-    @And("^Validate 'Edit' link$")
+    @And("^Validate BSC 'Edit' link$")
     public void ValidateEditLink() {
         try {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, PAYMandPAYGTariffAndExtrasPage.class);
             Thread.sleep(5000);
-            PAYMandPAYGTariffAndExtrasPageActions.validateEditLink();
+            PAYMandPAYGTariffAndExtrasPageActions.validateBSCEditLink();
             Thread.sleep(5000);
         } catch (Exception e) {
             // TODO Auto-generated catch block
