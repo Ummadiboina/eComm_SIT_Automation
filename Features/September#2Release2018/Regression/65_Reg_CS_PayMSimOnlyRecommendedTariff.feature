@@ -6,6 +6,8 @@ Feature: 65_Reg_CS_PayMSimOnlyRecommendedTariff
     And navigate to PAYM SIMO page
     And Click on different <Contract>  Months Tariff in Tab
     And Select Recommended Tariff in the displayed list of Tariffs under different <Contract> tab
+    #And Validate consumer Bill Spend Caps section when BSC is <BSCstatus>
+    And Click on Dont Select Cap My Bill CTA
     And I Land on the Plan included basket page and choose home delivery option
     And click on "go to checkout" button
     And input <Firstname> and <Surname> and other valid details in Delivery page to verify GDPR
@@ -17,5 +19,5 @@ Feature: 65_Reg_CS_PayMSimOnlyRecommendedTariff
     Then Choose <consumer> <status> Business preferences <B1> <B2> <B3> <B4> And Channel Preferences <Text> <Email> <Phone> <Post> <MBBStatus> <DeviceType>
     #30 Days
     Examples:
-      | Contract  | Firstname | Surname | Username     | consumer | B1  | B2     | B3     | B4  | Text | Email  | Phone | Post | status  | MBBStatus | DeviceType |
-      | 12 Months | TEST      | ACCEPTA | TEST ACCEPTA | Me       | Not | Select | Select | Not | Not  | Select | Not   | Not  | Enabled | No        | Connected  |
+      | Contract  | Firstname | Surname | Username     | BSCstatus | consumer | B1  | B2     | B3     | B4  | Text | Email  | Phone | Post | status  | MBBStatus | DeviceType |
+      | 12 Months | TEST      | ACCEPTA | TEST ACCEPTA | Enabled   | Me       | Not | Select | Select | Not | Not  | Select | Not   | Not  | Enabled | No        | Connected  |

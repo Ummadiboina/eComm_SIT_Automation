@@ -459,6 +459,9 @@ public class UpgradeCustomerPageActions extends Environment {
             log.debug("Failed to select the Tariff in the Extras&Tariff page");
             Assert.fail("Failed to select the Tariff in the Extras&Tariff page");
         }
+        JavascriptExecutor jse = (JavascriptExecutor) driver;
+        jse.executeScript("window.scrollBy(0,100)", "");
+        Screenshots.captureScreenshot();
         // executor.executeScript("arguments[0].click();",
         // pageobjects.PAYMandPAYGTariffAndExtrasPage.ViewAllTariffs);
 /*        List<WebElement> TariffList = driver.findElements(By.xpath("//*[@class='tariff-grids tiles row']/li[@class='liTariffPlan col-sm-6 col-md-4 col-lg-3 ng-scope']"));
@@ -523,6 +526,9 @@ public class UpgradeCustomerPageActions extends Environment {
                 marketingMessage = driver.findElement(By.xpath("(//p[normalize-space()='Selected'])[1]/../ul[1]")).getText();
                 log.debug("Marketing Message:"+marketingMessage);
             }
+        JavascriptExecutor jse = (JavascriptExecutor) driver;
+        jse.executeScript("window.scrollBy(0,100)", "");
+        Screenshots.captureScreenshot();
 
     }
 
@@ -530,7 +536,7 @@ public class UpgradeCustomerPageActions extends Environment {
             throws IOException {
         log.debug('\n' + "To select Tariff With Ribbon And Overlay in upgrade journey");
         List<WebElement> TariffList = driver
-                .findElements(By.xpath("(//div[contains(@class, 'grid-tile')]/div/button[@id='callToAction'])[1]"));
+                .findElements(By.xpath("(//div[contains(@class, 'grid-tile')]/div/button[@id='callToAction'])[1] | (//button[@class='btn buyNowBtn ng-binding ng-pristine ng-valid'])[1] | (//button[@class='secondary selectButton tst-select ng-binding ng-pristine ng-valid'])[1] | (//button[@class='secondary selectButton tariff-select buyNowBtn'])[1]"));
         String UpfrontPoundXPath = null, UpfrontPenceXPath = null, MonthlyPoundXPath = null, MonthlyPenceXPath = null;
         String UpfrontPound = null, UpfrontPence = null, MonthlyPound = null, MonthlyPence = null;
         String UpfrontCost = null, MonthlyCost = null;
@@ -1440,7 +1446,7 @@ public class UpgradeCustomerPageActions extends Environment {
     public static void selectTariff() throws IOException {
         log.debug("In Select Tariff function");
         ((JavascriptExecutor) driver).executeScript("arguments[0].click();",
-                driver.findElement(By.xpath("(//button[@id='callToAction'])[2]")));
+                driver.findElement(By.xpath("(//button[@class='btn buyNowBtn ng-binding ng-pristine ng-valid'])[1] | (//button[@class='secondary selectButton tst-select ng-binding ng-pristine ng-valid'])[1] | (//button[@class='secondary selectButton tariff-select buyNowBtn'])[1]")));
 
         log.debug("Completed Select Tariff function");
         Screenshots.captureScreenshot();
@@ -1829,6 +1835,7 @@ public class UpgradeCustomerPageActions extends Environment {
 
     public static void ClickIneedAsim() throws Exception {
         Thread.sleep(3000);
+        Screenshots.captureScreenshot();
         if (UpgradeCustomerPage.IneedAsimRadio.isDisplayed()) {
             Thread.sleep(6000);
             UpgradeCustomerPage.IneedAsimRadio.click();
@@ -2196,11 +2203,12 @@ public class UpgradeCustomerPageActions extends Environment {
 
     }
 
-    public static void verifyBuyOutMessage() {
+    public static void verifyBuyOutMessage() throws IOException {
         log.debug("in verify BuyOut message function");
 
+        Screenshots.captureScreenshot();
         String text = driver.findElement(By.xpath("//div[@class='trade-in-offer']/p")).getText();
-        if (text.contains("We'll buy you out of your contract, so you can choose a brand new phone")) {
+        if (text.contains("We'll buy you out of your contract, so you can choose a brand new phone") || text.contains("Upgrade to a new phone today. We'll pay off the rest of your Device Plan, saving you")) {
             log.debug("The Text is: " + text);
         } else {
             log.debug("BuyOut is not displayed, hence failed");
@@ -2208,9 +2216,10 @@ public class UpgradeCustomerPageActions extends Environment {
         }
     }
 
-    public static void verifyPoundLeftToPay() {
+    public static void verifyPoundLeftToPay() throws InterruptedException {
         log.debug("in verify BuyOut message function");
 
+        Thread.sleep(4000);
         String text = driver.findElement(By.xpath("//div[@id='o2RecycleModule']/h2")).getText();
         if (text.contains("left to pay on your current Device Plan")) {
             log.debug("Verified successfully, The Text is: " + text);

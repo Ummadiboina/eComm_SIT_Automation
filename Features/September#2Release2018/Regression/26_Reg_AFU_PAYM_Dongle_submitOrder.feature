@@ -8,6 +8,8 @@ Feature: 26_Reg_AFU_PAYM_Dongle_submitOrder
     And performs Upgrade for <user>
     And Select a valid PayM <Device>
     And Select valid <Tariffs> from tariffs tab
+    And Validate Bill Spend Cap in agent deal builder section when BSC is <BSCstatus>
+    And Dont cap my bill
     And select a valid Handset and Tariff combination
     And Validate all the Basket content and checkout
     And Choose Business preferences <B1> <B2> <B3> <B4> and Channel Preferences <Text> <Email> <Phone> <Post> for <consumer> when GDPR <status> <DeviceType> for AFU journey
@@ -16,5 +18,5 @@ Feature: 26_Reg_AFU_PAYM_Dongle_submitOrder
     Then Order confirmation message should be displayed
 
     Examples:
-      | user        | Device | Tariffs | consumer | B1     | B2  | B3  | B4  | Text | Email  | Phone | Post   | status  | MBBStatus | DeviceType |
-      | 07521117326 | dongle | Random  | Me       | Select | Not | Not | Not | Not  | Select | Not   | Select | Enabled | No        | Connected  |
+      | user        | Device | Tariffs | BSCstatus | consumer | B1     | B2  | B3  | B4  | Text | Email  | Phone | Post   | status  | MBBStatus | DeviceType |
+      | 07521117326 | dongle | Random  | Enabled   | Me       | Select | Not | Not | Not | Not  | Select | Not   | Select | Enabled | No        | Connected  |

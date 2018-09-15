@@ -6,6 +6,8 @@ Feature: 04_Reg_AFA_SIMO_Credit_Check_Status_ReferWithSIMO_Show_Referral_Message
     Given I login to Agent shop
     And performs Acquisition for New user
     And Select valid <Tariff> from tariffs tab
+    And Validate Bill Spend Cap in agent deal builder section when BSC is <BSCstatus>
+    And Dont cap my bill
     And Validate all the Basket content and checkout
     Then perform all the advisory checks
     And perform the credit checks using valid <Firstname>, <Surname>, <HouseNumber>, <PostCode> and valid <Username>
@@ -18,5 +20,5 @@ Feature: 04_Reg_AFA_SIMO_Credit_Check_Status_ReferWithSIMO_Show_Referral_Message
     Then agent should be displayed with updated copy of 'Refer with Simo' response
 
     Examples:
-      | Tariff | DeliveryType | Firstname | Surname | Username    | HouseNumber | PostCode | B1     | B2  | B3     | B4  | Text   | Email  | Phone | Post | Consumer | status  | MBBStatus | DeviceType | DeviceModule |
-      | Simo   | HomeDelivery | TEST      | Referc  | Test Referc | 6           | SL11ER   | Select | Not | Select | Not | Select | Select | Not   | Not  | Me       | Enabled | No        | Connected  | Simo         |
+      | Tariff | DeliveryType | Firstname | Surname | Username    | BSCstatus | HouseNumber | PostCode | B1     | B2  | B3     | B4  | Text   | Email  | Phone | Post | Consumer | status  | MBBStatus | DeviceType | DeviceModule |
+      | Simo   | HomeDelivery | TEST      | Referc  | Test Referc | Enabled   | 6           | SL11ER   | Select | Not | Select | Not | Select | Select | Not   | Not  | Me       | Enabled | No        | Connected  | Simo         |

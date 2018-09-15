@@ -10,6 +10,8 @@ Feature: 01_Reg_AFA_checkout_delivery_validate_10_digit_and_11_contact_number
     And Select valid <Tariffs> from tariffs tab
     And select a valid Handset and Tariff combination
     And Select valid <Extras> from extras tab
+    And Validate Bill Spend Cap in agent deal builder section when BSC is <BSCstatus>
+    And Dont cap my bill
     And Validate all the Basket content and checkout
     Then perform all the advisory checks
     And enter ten digit contact number perform the credit checks using valid <Firstname>, <Surname>, <HouseNumber>, <PostCode> and valid <Username>
@@ -24,5 +26,5 @@ Feature: 01_Reg_AFA_checkout_delivery_validate_10_digit_and_11_contact_number
     # Then CCALink Should be generated
 
     Examples:
-      | Device                        | Tariffs | Extras | DeliveryType | Firstname | Surname | Username     | HouseNumber | PostCode | B1     | B2  | B3     | B4  | Text   | Email  | Phone | Post | Consumer | status  | MBBStatus | DeviceType | DeviceModule |
-      | iPhone 8 Plus 64GB Space Grey | Refresh | Base   | HomeDelivery | TEST      | ACCEPTA | TEST ACCEPTA | 14          | SL11UP   | Select | Not | Select | Not | Select | Select | Not   | Not  | Me       | Enabled | No        | Connected  | Phone        |
+      | Device                        | Tariffs | Extras | BSCstatus | DeliveryType | Firstname | Surname | Username     | HouseNumber | PostCode | B1     | B2  | B3     | B4  | Text   | Email  | Phone | Post | Consumer | status  | MBBStatus | DeviceType | DeviceModule |
+      | iPhone 8 Plus 64GB Space Grey | Refresh | Base   | Enabled   | HomeDelivery | TEST      | ACCEPTA | TEST ACCEPTA | 14          | SL11UP   | Select | Not | Select | Not | Select | Select | Not   | Not  | Me       | Enabled | No        | Connected  | Phone        |

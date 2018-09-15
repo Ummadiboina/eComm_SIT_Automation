@@ -12,6 +12,8 @@ Feature: 09_Reg_CFA_Phones_Colour_Dropdowns_With_ColourNames_Beside_the_Colour_M
     And select <color> color of the connected device
     And Navigate to View tariff page
     And Land on the 'Tariffs and extra' page
+    #And Validate consumer Bill Spend Caps section when BSC is <BSCstatus>
+    And Click on Dont Select Cap My Bill CTA
     And I Land on the basket page and choose home delivery option
     And click on "go to checkout" button
     And input <Firstname> and <Surname> and other valid details in Delivery page to verify GDPR
@@ -35,5 +37,5 @@ Feature: 09_Reg_CFA_Phones_Colour_Dropdowns_With_ColourNames_Beside_the_Colour_M
     Then Choose <consumer> <status> Business preferences <B1> <B2> <B3> <B4> And Channel Preferences <Text> <Email> <Phone> <Post> <MBBStatus> <DeviceType>
 
     Examples:
-      | handset       | Username     | Firstname | Surname | color      | consumer | B1     | B2     | B3  | B4  | Text   | Email  | Phone  | Post   | status  | MBBStatus | DeviceType |
-      | iPhone 8 Plus | TEST ACCEPTA | Test      | Accepta | Space Grey | Me       | Select | Select | Not | Not | Select | Select | Select | Select | Enabled | No        | Connected  |
+      | handset       | Username     | Firstname | Surname | color      | consumer | BSCstatus | B1     | B2     | B3  | B4  | Text   | Email  | Phone  | Post   | status  | MBBStatus | DeviceType |
+      | iPhone 8 Plus | TEST ACCEPTA | Test      | Accepta | Space Grey | Me       | Enabled   | Select | Select | Not | Not | Select | Select | Select | Select | Enabled | No        | Connected  |

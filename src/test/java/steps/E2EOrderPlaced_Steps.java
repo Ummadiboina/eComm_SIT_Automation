@@ -1235,9 +1235,11 @@ public class E2EOrderPlaced_Steps {
     @And("^I Land on the Plan included basket page and choose home delivery option$")
     public void i_Land_on_the_Plan_included_basket_page_and_choose_home_delivery_option() {
         try {
+            Thread.sleep(3000);
+            driver.findElement(By.xpath("//button[@id='btnAddToBasket']")).click();
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, BasketPage.class);
-            Thread.sleep(3000);
+            Thread.sleep(7000);
             BasketPageActions.PlanOnlyPageContents();
         } catch (Exception e) {
             // TODO Auto-generated catch block
@@ -3884,9 +3886,9 @@ public class E2EOrderPlaced_Steps {
             PageFactory.initElements(driver, MouseHoverPage.class);
             PageFactory.initElements(driver, UpgradePhonesListingPage.class);
             MouseHoverAction.UpgradeandUpgradeNow();
-            Thread.sleep(7000);
+            Thread.sleep(4000);
             Autoredirection.redirectUpgrades();
-            Thread.sleep(7000);
+            Thread.sleep(12000);
         } catch (Exception e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
@@ -5637,6 +5639,7 @@ public class E2EOrderPlaced_Steps {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, UpgradeCustomerPage.class);
             Thread.sleep(4000);
+            Screenshots.captureScreenshot();
             //UpgradeCustomerPageActions.selectDeviceInRecommendedDevicesSection(devicename);
             // driver.findElement(By.xpath("(//span[normalize-space()='Apple'])[1]")).click();
             scrollToAnElement.scrollToElement(driver.findElement(By.xpath("(//button[normalize-space()='Select'])[1]")));
@@ -6780,6 +6783,7 @@ public class E2EOrderPlaced_Steps {
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         try {
             PageFactory.initElements(driver, UpgradePhonesListingPage.class);
+            Screenshots.captureScreenshot();
             UpgradeCustomerPageActions.clickRemoveOfferButton();
             // driver.findElement(By.xpath("//button[contains(text(),'Continue to upgrade')]")).click();
             Thread.sleep(2000);
@@ -7614,6 +7618,7 @@ public class E2EOrderPlaced_Steps {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, UpgradeCustomerPage.class);
             UpgradeCustomerPageActions.clickOnTabletstab();
+            Thread.sleep(3000);
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -8502,7 +8507,9 @@ public class E2EOrderPlaced_Steps {
         try {
             log.debug("in selecting pay as you go bundle");
             //driver.findElement(By.xpath("//*[@id='callToAction'][1]")).click();
-
+            JavascriptExecutor jse = (JavascriptExecutor) driver;
+            jse.executeScript("window.scrollBy(0,200)", "");
+            Screenshots.captureScreenshot();
             JavascriptExecutor executor = (JavascriptExecutor) driver;
             executor.executeScript("arguments[0].click();", driver.findElement(By.xpath("(//*[@id='callToAction'])[1]")));
             Thread.sleep(5000);
@@ -10670,6 +10677,27 @@ public class E2EOrderPlaced_Steps {
 
     //Jamal----Bill Spend Caps Section--------
 
+    //Dont cap my bill CTA
+    @And("^Click on Dont Select Cap My Bill CTA$")
+    public void DontCapBillSpendCap() {
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, PAYMandPAYGTariffAndExtrasPage.class);
+            Thread.sleep(3000);
+            Screenshots.captureScreenshot();
+            if (pageobjects.PAYMandPAYGTariffAndExtrasPage.DontCapMyBillButton.isEnabled()) {
+                PAYMandPAYGTariffAndExtrasPage.DontCapMyBillButton.click();
+                log.debug("Dont Cap My Bill Button is clicked");
+                Thread.sleep(3000);
+                Screenshots.captureScreenshot();
+            }
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            log.debug("Unable to click on Dont Cap My Bill CTA");
+            Assert.fail("Unable to click on Dont Cap My Bill CTA");
+        }
+    }
+
     //Validating Bill Spend Cap Section
     @And("^Validate consumer Bill Spend Caps section when BSC is ([^\"]*)$")
     public void ValidateBillSpendCap(String BSCstatus) {
@@ -10789,6 +10817,25 @@ public class E2EOrderPlaced_Steps {
             // TODO Auto-generated catch block
             log.debug("Unable to validate your bill cap in Agent deal builder page");
             Assert.fail("Unable to validate your bill cap in Agent deal builder page");
+        }
+    }
+
+    //choose a valid Bill Cap Amount in agent
+    @And("^Dont cap my bill$")
+    public void dontCapBillCap_AgentDealBuilder() {
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, Agent_DealBuilderPage.class);
+            log.debug("Currently we are at page: "+driver.getTitle());
+            Thread.sleep(3000);
+            Screenshots.captureScreenshot();
+            driver.findElement(By.xpath("//p[@class='billSpendCapSelection']/select/option[2]")).click();
+            log.debug("No Spend Cap option is selected");
+            Screenshots.captureScreenshot();
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            log.debug("Unable to add your bill cap in Agent deal builder page");
+            Assert.fail("Unable to add your bill cap in Agent deal builder page");
         }
     }
 

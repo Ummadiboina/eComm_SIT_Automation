@@ -10,6 +10,8 @@ Feature: 91_Reg_CFA_Trustev_PayMPhonesHomeDeliveryWithAccessory
     And select <color> color of the connected device
     And Navigate to device details page
     And Land on the 'Tariffs and extra' page
+    #And Validate consumer Bill Spend Caps section when BSC is <BSCstatus>
+    And Click on Dont Select Cap My Bill CTA
     And Choose some Accesssory
     And I Land on the basket page and choose home delivery option
     And click on "go to checkout" button
@@ -23,5 +25,5 @@ Feature: 91_Reg_CFA_Trustev_PayMPhonesHomeDeliveryWithAccessory
     Then Choose <consumer> <status> Business preferences <B1> <B2> <B3> <B4> And Channel Preferences <Text> <Email> <Phone> <Post> <MBBStatus> <DeviceType>
 
     Examples:
-      | handset       | color      | Firstname | Surname | Username     | consumer | B1  | B2  | B3  | B4  | Text | Email | Phone | Post | status  | MBBStatus | DeviceType |
-      | iPhone 8 Plus | Space Grey | TEST      | ACCEPTA | TEST ACCEPTA | Someone  | Not | Not | Not | Not | Not  | Not   | Not   | Not  | Enabled | No        | Connected  |
+      | handset       | color      | Firstname | Surname | Username     | consumer | BSCstatus | B1  | B2  | B3  | B4  | Text | Email | Phone | Post | status  | MBBStatus | DeviceType |
+      | iPhone 8 Plus | Space Grey | TEST      | ACCEPTA | TEST ACCEPTA | Someone  | Enabled   | Not | Not | Not | Not | Not  | Not   | Not   | Not  | Enabled | No        | Connected  |

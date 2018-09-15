@@ -10,6 +10,8 @@ Feature: 32_Reg_Agent_PreOrder
     And Select valid <Tariffs> from tariffs tab
     #And select a valid Handset and Tariff combination
     And Select valid <Extras> from extras tab
+    And Validate Bill Spend Cap in agent deal builder section when BSC is <BSCstatus>
+    And Dont cap my bill
     And Validate all the Basket content and checkout
     Then perform all the advisory checks
     And perform the credit checks using valid <Firstname>, <Surname>, <HouseNumber>, <PostCode> and valid <Username>
@@ -25,5 +27,5 @@ Feature: 32_Reg_Agent_PreOrder
     # And Update Device Plan Link Email Address
     # Then CCALink Should be generated
     Examples:
-      | Status   | Device | Tariffs | Extras | DeliveryType | Firstname | Surname | Username     | HouseNumber | PostCode | Consumer | B1  | B2  | B3     | B4  | Text | Email  | Phone | Post   | status  | MBBStatus | DeviceType | DeviceModule |
-      | preorder | Random | Random  | Base   | HomeDelivery | TEST      | ACCEPTA | TEST ACCEPTA | 14          | SL11UP   | Me       | Not | Not | Select | Not | Not  | Select | Not   | Select | Enabled | No        | Connected  | Phone        |
+      | Status   | Device | Tariffs | Extras | DeliveryType | BSCstatus | Firstname | Surname | Username     | HouseNumber | PostCode | Consumer | B1  | B2  | B3     | B4  | Text | Email  | Phone | Post   | status  | MBBStatus | DeviceType | DeviceModule |
+      | preorder | Random | Random  | Base   | HomeDelivery | Enabled   | TEST      | ACCEPTA | TEST ACCEPTA | 14          | SL11UP   | Me       | Not | Not | Select | Not | Not  | Select | Not   | Select | Enabled | No        | Connected  | Phone        |

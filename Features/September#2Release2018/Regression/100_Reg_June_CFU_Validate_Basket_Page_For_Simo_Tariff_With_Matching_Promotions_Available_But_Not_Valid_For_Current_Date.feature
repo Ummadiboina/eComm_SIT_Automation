@@ -10,6 +10,8 @@ Feature: 100_Reg_June_CFU_Validate_Basket_Page_For_Simo_Tariff_With_Matching_Pro
     #And I click on 'Sim only Tariff' tab
     And Click on 'Get Started' CTA
     And Click on 'Select' CTA to buy a valid <tariffAmt> and <dataValue>
+    #And Validate consumer Bill Spend Caps section when BSC is <BSCstatus>
+    And Click on Dont Select Cap My Bill CTA
     #And Select ribboned tariff <tariff> in upgrade journey
     #And I Land on the Plan included basket page and choose home delivery option
     And Select 'I need a new sim' option
@@ -20,5 +22,5 @@ Feature: 100_Reg_June_CFU_Validate_Basket_Page_For_Simo_Tariff_With_Matching_Pro
     Then Choose <consumer> <status> Business preferences <B1> <B2> <B3> <B4> And Channel Preferences <Text> <Email> <Phone> <Post> <MBBStatus> <DeviceType>
 
     Examples:
-      | username                      | tariffAmt | dataValue | promoCode | password | Username     | consumer | B1     | B2  | B3     | B4  | Text   | Email  | Phone | Post | status  | MBBStatus | DeviceType |
-      | 05ap45589417@stf.ref.o2.co.uk | £15       | 4GB       | promoCode | test123  | TEST ACCEPTA | Me       | Select | Not | Select | Not | Select | Select | Not   | Not  | Enabled | No        | Connected  |
+      | username                      | tariffAmt | dataValue | promoCode | password | Username     | BSCstatus | consumer | B1     | B2  | B3     | B4  | Text   | Email  | Phone | Post | status  | MBBStatus | DeviceType |
+      | 05ap45589417@stf.ref.o2.co.uk | £15       | 4GB       | promoCode | test123  | TEST ACCEPTA | Enabled   | Me       | Select | Not | Select | Not | Select | Select | Not   | Not  | Enabled | No        | Connected  |

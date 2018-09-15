@@ -7,6 +7,8 @@ Feature: 67_Reg_CS_PayMTabletsHomeDeliveryWithAccessory
     And select any available <Device> Tablet
     And Navigate to device details page
     And Land on the 'Tariffs and extra' page
+    #And Validate consumer Bill Spend Caps section when BSC is <BSCstatus>
+    And Click on Dont Select Cap My Bill CTA
     And Choose some Accesssory
     And I Land on the basket page and choose home delivery option
     And click on "go to checkout" button
@@ -21,5 +23,5 @@ Feature: 67_Reg_CS_PayMTabletsHomeDeliveryWithAccessory
 
 
     Examples:
-      | Device                | color | Capacity | Firstname | Surname | Username     | consumer | B1  | B2     | B3  | B4  | Text   | Email  | Phone | Post | status  | MBBStatus | DeviceType |
-      | Galaxy Tab A 2016 7.0 | Gold  | 64GB     | TEST      | ACCEPTA | TEST ACCEPTA | Me       | Not | Select | Not | Not | Select | Select | Not   | Not  | Enabled | No        | Connected  |
+      | Device                | color | Capacity | BSCstatus | Firstname | Surname | Username     | consumer | B1  | B2     | B3  | B4  | Text   | Email  | Phone | Post | status  | MBBStatus | DeviceType |
+      | Galaxy Tab A 2016 7.0 | Gold  | 64GB     | Enabled   | TEST      | ACCEPTA | TEST ACCEPTA | Me       | Not | Select | Not | Not | Select | Select | Not   | Not  | Enabled | No        | Connected  |

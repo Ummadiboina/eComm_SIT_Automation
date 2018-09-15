@@ -12,6 +12,8 @@ Feature: 52_Reg_Consumer_DelayedDelivery
     And check the status <Status> of the device
     And Navigate to device details page
     And Land on the 'Tariffs and extra' page
+    #And Validate consumer Bill Spend Caps section when BSC is <BSCstatus>
+    And Click on Dont Select Cap My Bill CTA
     And I Land on the basket page and choose home delivery option
     And click on "go to checkout" button
     #And input <Firstname> and <Surname> and other valid details in Delivery page and Click on the 'Continue button'
@@ -25,5 +27,5 @@ Feature: 52_Reg_Consumer_DelayedDelivery
 
      #Close the browser
     Examples:
-      | DD_handset    | color | Firstname | Surname | Username     | Status           | consumer | B1     | B2     | B3  | B4  | Text | Email  | Phone  | Post   | status  | MBBStatus | DeviceType |
-      | iPhone 8 Plus | RED   | TEST      | ACCEPTA | TEST ACCEPTA | Delayed Delivery | Me       | Select | Select | Not | Not | Not  | Select | Select | Select | Enabled | No        | Connected  |
+      | DD_handset    | color | Firstname | Surname | Username     | Status           | BSCstatus | consumer | B1     | B2     | B3  | B4  | Text | Email  | Phone  | Post   | status  | MBBStatus | DeviceType |
+      | iPhone 7 Plus | Black | TEST      | ACCEPTA | TEST ACCEPTA | Delayed Delivery | Enabled   | Me       | Select | Select | Not | Not | Not  | Select | Select | Select | Enabled | No        | Connected  |

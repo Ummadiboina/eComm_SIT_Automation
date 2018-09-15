@@ -33,6 +33,8 @@ Feature: 47_CFU_Phones_Data_filters_options_tariff_and_extras_page
     When I deselect filter button
     Then I should see tariffs based on the selected sort option <sortoption>
     And Land on the 'Tariffs and extra' page
+    #And Validate consumer Bill Spend Caps section when BSC is <BSCstatus>
+    And Click on Dont Select Cap My Bill CTA
     And I Land on the basket page by clicking on Add to Basket button
     And click on "go to checkout" button
     And perform <Action> in OTAC page
@@ -46,5 +48,5 @@ Feature: 47_CFU_Phones_Data_filters_options_tariff_and_extras_page
     Then Choose <consumer> <status> Business preferences <B1> <B2> <B3> <B4> And Channel Preferences <Text> <Email> <Phone> <Post> <MBBStatus> <DeviceType>
 
     Examples:
-      | username                         | password | handset  | color      | filtername | Action | sortoption                 | Username     | Make  | Model   | Network | consumer | B1  | B2  | B3     | B4  | Text | Email  | Phone | Post | status  | MBBStatus | DeviceType |
-      | testaccepta4289@stf.ref.o2.co.uk | test123  | iPhone X | Space Grey | low        | skip   | Monthly data (Low to High) | TEST ACCEPTA | Apple | Iphone7 | Orange  | Me       | Not | Not | Select | Not | Not  | Select | Not   | Not  | Enabled | No        | Connected  |
+      | username                   | password | handset  | BSCstatus | color      | filtername | Action | sortoption                 | Username     | Make  | Model   | Network | consumer | B1  | B2  | B3     | B4  | Text | Email  | Phone | Post | status  | MBBStatus | DeviceType |
+      | rbmuatlokesh_donotusee5889 | test123  | iPhone X | Enabled   | Space Grey | low        | skip   | Monthly data (Low to High) | TEST ACCEPTA | Apple | Iphone7 | Orange  | Me       | Not | Not | Select | Not | Not  | Select | Not   | Not  | Enabled | No        | Connected  |

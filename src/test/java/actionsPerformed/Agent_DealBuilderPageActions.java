@@ -480,8 +480,8 @@ public class Agent_DealBuilderPageActions extends Environment {
             Agent_DealBuilderPage.SearchDevice.sendKeys(Status);
             Thread.sleep(3000);
             log.debug("Sent search as - " + Status);
-            /*Agent_DealBuilderPage.firstDevice.click();
-            log.debug("Selected Delayed device");*/
+            Agent_DealBuilderPage.firstDevice.click();
+            log.debug("Selected Delayed device");
         }
 
         if (Status.contains("preorder")) {
@@ -492,7 +492,7 @@ public class Agent_DealBuilderPageActions extends Environment {
             Agent_DealBuilderPage.firstDevice.click();
             log.debug("Selected pre order device");
         }
-
+        Thread.sleep(3000);
         Screenshots.captureScreenshot();
     }
 
@@ -1114,47 +1114,28 @@ public class Agent_DealBuilderPageActions extends Environment {
         try {
 
             if(BSCstatus.equalsIgnoreCase("Enabled")) {
-                if (driver.findElements(By.xpath("//*[contains(text(),'Spend cap')]")).size() > 0) {
+                if (driver.findElements(By.xpath("(//th[contains(text(),'Spend cap')])[1]")).size() > 0) {
 
                     log.debug("Bill spend cap section is enabled");
 
                     String capHeader = pageobjects.Agent_DealBuilderPage.BillSpendCapHeader.getText();
                     log.debug("Bill Spend Cap header is displayed in DealBuilder page ie :: " + capHeader);
 
-                    //Bill cap header validation
-                    if (capHeader.equalsIgnoreCase("Bill spend cap")) {
+                    /*//Bill cap header validation
+                    if (capHeader.equalsIgnoreCase("Spend cap")) {
                         log.debug("Bill Spend Cap header is displayed as expected");
                     } else {
                         log.debug("Bill Spend Cap header is not matching");
                         Assert.fail("Bill Spend Cap header is not matching");
-                    }
-
-                    //Listing all the cap amounts
-                    List<WebElement> menuOuter = driver.findElements(By.xpath("//*[@class='capSelection']/select/option"));
-                    log.debug("The size of the table is :" + menuOuter.size());
-                    log.debug("Bill Spend Cap Options are: \n");
-
-                    for (int i = 0; i < menuOuter.size(); i++) {
-                        log.debug("Cap Option " + i + " is: " + menuOuter.get(i).getText());
-                    }
-
-                    String BillCapStatus = pageobjects.Agent_DealBuilderPage.BillSpendCapMessage.getText();
-                    log.debug("Bill Spend Status message before selecting bill cap:: " + BillCapStatus);
-
-                    //Checkout CTA status before selecting BSC bolton
-                    if(Agent_DealBuilderPage.Checkout.isEnabled()) {
-                        log.debug("Checkout is enabled before selecting BSC bolton");
-                        Assert.fail("Checkout is enabled before selecting BSC bolton");
-                    }else{
-                        log.debug("As expected Checkout is disabled before selecting BSC bolton");
-                    }
+                    }*/
 
                     //Spend cap overlay icon
-                    if(driver.findElements(By.xpath("//*[normalize-space()='BSCoverlayIcon']")).size()>0) {
+                    if(driver.findElements(By.xpath("//a[@id='billSpendCapOverlay']")).size()>0) {
                         log.debug("BSC overlay icon is present and clicking on it");
                         Agent_DealBuilderPage.BSCoverlayIcon.click();
                         log.debug("BSC overlay icon is clicked");
                         Thread.sleep(3000);
+                        Screenshots.captureScreenshot();
                         String overlayText =Agent_DealBuilderPage.BSCoverlayText.getText();
                         Thread.sleep(3000);
                         log.debug("BSC overlay text is: "+overlayText);
@@ -1166,6 +1147,28 @@ public class Agent_DealBuilderPageActions extends Environment {
                         Assert.fail("BSC overlay icon is not present");
                     }
 
+                    //Listing all the cap amounts
+                    List<WebElement> menuOuter = driver.findElements(By.xpath("//*[@class='billSpendCapSelection']/select/option"));
+                    log.debug("The size of the table is :" + menuOuter.size());
+                    log.debug("Bill Spend Cap Options are: \n");
+
+                    for (int i = 1; i < menuOuter.size(); i++) {
+                        log.debug("Cap Option " + i + " is: " + menuOuter.get(i).getText());
+                    }
+
+                    if(driver.findElements(By.xpath("//span[@class='selectedBillSpendCap']")).size()>0) {
+                        String BillCapStatus = pageobjects.Agent_DealBuilderPage.BillSpendCapMessage.getText();
+                        log.debug("Bill Spend Status message before selecting bill cap:: " + BillCapStatus);
+                    }
+
+                    //Checkout CTA status before selecting BSC bolton
+                    if(Agent_DealBuilderPage.Checkout.isEnabled()) {
+                        log.debug("Checkout is enabled before selecting BSC bolton");
+                        Assert.fail("Checkout is enabled before selecting BSC bolton");
+                    }else{
+                        log.debug("As expected Checkout is disabled before selecting BSC bolton");
+                    }
+
                     Screenshots.captureScreenshot();
                 } else {
                     log.debug("Bill Spend Cap section is not displayed under deal builder section");
@@ -1173,7 +1176,7 @@ public class Agent_DealBuilderPageActions extends Environment {
                     Screenshots.captureScreenshot();
                 }
             }else if(BSCstatus.equalsIgnoreCase("Disabled")){
-                if (driver.findElements(By.xpath("//*[contains(text(),'Spend cap')]")).size() > 0) {
+                if (driver.findElements(By.xpath("(//th[contains(text(),'Spend cap')])[1]")).size() > 0) {
                     log.debug("Bill spend cap section is enabled it suppose to be in disabled status");
                     Assert.fail("Bill spend cap section is enabled it suppose to be in disabled status");
                 }else{

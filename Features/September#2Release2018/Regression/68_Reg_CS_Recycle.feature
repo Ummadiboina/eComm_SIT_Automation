@@ -6,7 +6,25 @@ Feature: 68_Reg_CS_Recycle
     Given I am an Existing user and Navigates to Signin page
     And Signin using valid <username> and <password> credentials
     And Navigate to upgrade > upgrade now
-    # Then Verify that in the recycle value is displayed in the Recycle panel
+    And Click on 'Get Started' CTA
+    And Select a <handset> device from Recommended devices section
+    And Click on device 'Confirm CTA'
+    ##And Select ribboned tariff <tariff> in upgrade journey
+    And Select tariff in upgrade journey
+    #And Validate consumer Bill Spend Caps section when BSC is <BSCstatus>
+    And Click on Dont Select Cap My Bill CTA
+    Then I should see 'Your Sim Card'section
+    And no option should be selected
+    And verify that Confirm CTA is not displayed
+    And verify that copy text 'Your Sim Card'section
+    And verfiy that two option are displayed
+    And verify that 'Sim Swap Form'link is diplayed
+    When I click on 'Sim Swap Form' I should be opned with a new tab
+    And Select a 'I dont need a new sim'option
+    And Verify that 'Confirm CTA' is displayed
+    And Click on 'Confirm CTA'
+    And Click on 'Continue' button on upgrade page at extra section
+    Then Verify that in the recycle value is displayed in the Recycle panel
     And Select 'Not your device' option
     And Select <Make>, <Model> and <Network>
     And perform update device
@@ -14,11 +32,6 @@ Feature: 68_Reg_CS_Recycle
     And Verify 'Yes,get an accurate quote' is displayed
     And click on 'Yes,get an accurate quote'
     And answer the questionnaire and click on 'Accept and continue to upgrade' button
-    And Select a <handset> device from Recommended devices section
-    ##And Select ribboned tariff <tariff> in upgrade journey
-    And Select tariff in upgrade journey
-   ##Then choose appropriately in 'Your Sim Card'section
-   ##And select <NeedSim> action and confirm
     And I Land on the basket page for upgrades
     And click on "go to checkout" button
     And perform <Action> in OTAC page
@@ -32,5 +45,5 @@ Feature: 68_Reg_CS_Recycle
     Then Choose <consumer> <status> Business preferences <B1> <B2> <B3> <B4> And Channel Preferences <Text> <Email> <Phone> <Post> <MBBStatus> <DeviceType>
 
     Examples:
-      | username                      | password | handset  | tariff                  | Firstname | Surname | Username     | Action | Make  | Model   | Network | consumer | B1  | B2     | B3  | B4  | Text   | Email | Phone | Post | status  | MBBStatus | DeviceType |
-      | 19ju17664673@stf.ref.o2.co.uk | test123  | iPhone 7 | 29.99upfront46.00amonth | TEST      | ACCEPTA | TEST ACCEPTA | skip   | Apple | Iphone7 | Orange  | Me       | Not | Select | Not | Not | Select | Not   | Not   | Not  | Enabled | No        | Connected  |
+      | username                      | password | handset  | BSCstatus | tariff                  | Firstname | Surname | Username     | Action | Make  | Model   | Network | consumer | B1  | B2     | B3  | B4  | Text   | Email | Phone | Post | status  | MBBStatus | DeviceType |
+      | 19ju17664673@stf.ref.o2.co.uk | test123  | iPhone 7 | Enabled   | 29.99upfront46.00amonth | TEST      | ACCEPTA | TEST ACCEPTA | skip   | Apple | Iphone7 | Orange  | Me       | Not | Select | Not | Not | Select | Not   | Not   | Not  | Enabled | No        | Connected  |

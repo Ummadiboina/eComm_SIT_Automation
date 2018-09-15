@@ -14,6 +14,8 @@ Feature: 08_Reg_CFA_Phones_checkout_delivery_validate_10_digit_contact_number
     And select <color> color of the connected device
     And Navigate to View tariff page
     And Land on the 'Tariffs and extra' page
+    #And Validate consumer Bill Spend Caps section when BSC is <BSCstatus>
+    And Click on Dont Select Cap My Bill CTA
     And I Land on the basket page and choose home delivery option
     And click on "go to checkout" button
     #The below statement also checks for 0 in case of a mobile number
@@ -30,5 +32,5 @@ Feature: 08_Reg_CFA_Phones_checkout_delivery_validate_10_digit_contact_number
       #Step 12 and Step 13 of ALM clubbed together
       #Close the browser
     Examples:
-      | handset       | Firstname | Surname | Username     | Status           | color      | consumer | B1  | B2  | B3     | B4  | Text | Email  | Phone | Post | status  | MBBStatus | DeviceType |
-      | iPhone 8 Plus | TEST      | ACCEPTA | TEST ACCEPTA | Delayed Delivery | Space Grey | Me       | Not | Not | Select | Not | Not  | Select | Not   | Not  | Enabled | No        | Connected  |
+      | handset       | Firstname | Surname | Username     | Status           | BSCstatus | color      | consumer | B1  | B2  | B3     | B4  | Text | Email  | Phone | Post | status  | MBBStatus | DeviceType |
+      | iPhone 8 Plus | TEST      | ACCEPTA | TEST ACCEPTA | Delayed Delivery | Enabled   | Space Grey | Me       | Not | Not | Select | Not | Not  | Select | Not   | Not  | Enabled | No        | Connected  |

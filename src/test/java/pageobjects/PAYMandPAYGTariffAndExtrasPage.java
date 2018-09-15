@@ -31,8 +31,11 @@ public class PAYMandPAYGTariffAndExtrasPage {
 	public static WebElement SelectAnyPayGTariff;
 
 
-	@FindBy(how = How.XPATH, using = ("(//*[@id='callToAction'] | //button[@class='secondary selectButton tariff-select buyNowBtn'] | //button[@class='btn buyNowBtn secondary selectButton tariff-select'])[1]"))
+	@FindBy(how = How.XPATH, using = ("(//*[@id='callToAction'] | //button[@class='secondary selectButton tariff-select buyNowBtn'] | //button[@class='btn buyNowBtn secondary selectButton tariff-select'] | //button[@class='secondary tst-select  selectButton  '])[1]"))
 	public static WebElement RandomTariff1;
+
+	@FindBy(how = How.XPATH, using = ("(//button[@class='secondary tst-select  selectButton  '])[1]"))
+	public static WebElement BigBundleRandomTariff;
 
 	@FindBy(how = How.XPATH, using = ("//a[contains(text(),'Pay Monthly')]"))
 	public static WebElement SelectPayMTariffTab;
@@ -81,7 +84,7 @@ public class PAYMandPAYGTariffAndExtrasPage {
 	@FindBy(how = How.XPATH, using = ("(//input[@value='Go to basket'])[1]"))
 	public static WebElement addToBasketLive;
 
-	@FindBy(how = How.XPATH, using = ("(//input[@value='Add and go to basket'])[1]"))
+	@FindBy(how = How.XPATH, using = ("(//input[@value='Add and go to basket'])[1] | (//input[@value='Go to basket'])[1]"))
 	public static WebElement addToBasketBuyOutJourney;
 
 	// Below is for Clicking on the Add to basket option which is at the top of the
@@ -184,23 +187,41 @@ public class PAYMandPAYGTariffAndExtrasPage {
 
 	// Bill Spend Caps section----
 
-	@FindBy(how = How.XPATH, using = "//div/p//span[contains(text(),'Spend cap')]")
+	@FindBy(how = How.XPATH, using = "//div[contains(text(),'Your spend cap')] | //div/p/span[contains(text(),'Your Spend Cap')]")
 	public static WebElement SpendCapSection;
 
-	@FindBy(how = How.XPATH, using = "//div//p[contains(text(),'Would you like to add a spend cap?')]")
+	@FindBy(how = How.XPATH, using = "//div/p/span[contains(text(),'Would you like to add a spend cap ?')] | //div/p[contains(text(),'Would you like to add a Spend Cap? ')]")
 	public static WebElement SpendCapHeader;
 
 	@FindBy(how = How.XPATH, using = "//button[@id='cap']")
 	public static WebElement CapMyBillButton;
 
-	@FindBy(how = How.XPATH, using = "//button[normalize-space()='Submit']")
-	public static WebElement CapMyBillSubmitButton;
+	@FindBy(how = How.XPATH, using = "//button[@id='sendCapDetails']")
+	public static WebElement CapMyBillContinueButton;
+
+	@FindBy(how = How.XPATH, using = "//div[@class='selected-cap-msg']")
+	public static WebElement InforAfterCapAmount;
 
 	@FindBy(how = How.XPATH, using = "//*[@id='BlueTickMark']")
 	public static WebElement BlueTickMark;
 
-	@FindBy(how = How.XPATH, using = "//p[contains(text(),'Lorem Ipsum is simply dummy text')]")
-	public static WebElement InfoText;
+	@FindBy(how = How.XPATH, using = "//div[@class='select-caps-container']/div/div/div[1]")
+	public static WebElement capProsTop;
+
+	@FindBy(how = How.XPATH, using = "//div[@class='select-caps-container']/div/div/ul[1]")
+	public static WebElement capPros;
+
+	@FindBy(how = How.XPATH, using = "//div[@class='select-caps-container']/div/div/ul[2]")
+	public static WebElement capCons;
+
+	@FindBy(how = How.XPATH, using = "//div[@class='select-caps-container']/div/div/div[2]")
+	public static WebElement capProsBottom;
+
+	@FindBy(how = How.XPATH, using = "//div[@class='caps-holder']/h3")
+	public static WebElement capBoltonHeader;
+
+	@FindBy(how = How.XPATH, using = "//div[@class='spend-cap-desc']/p | //div/p[contains(text(),'Would you like to add a Spend Cap? ')]/../p[2]")
+	public static WebElement Info1Text;
 
 	@FindBy(how = How.XPATH, using = "//button[@id='dontcap']")
 	public static WebElement DontCapMyBillButton;
@@ -208,26 +229,26 @@ public class PAYMandPAYGTariffAndExtrasPage {
 	@FindBy(how = How.XPATH, using = "//a[@class='dont-cap-link']")
 	public static WebElement DontCapMyBillLink;
 
-	@FindBy(how = How.XPATH, using = "//a[@class='activate-overlay info']")
+	@FindBy(how = How.XPATH, using = "//div/p/span[contains(text(),'Would you like to add a spend cap ?')]/../a | //div/p[contains(text(),'Would you like to add a Spend Cap? ')]/a")
 	public static WebElement CapMyBillOverlay;
 
-	@FindBy(how = How.XPATH, using = "//*[@id='CapMyBillOverlayTxt']")
+	@FindBy(how = How.XPATH, using = "//div[@class='bscOverlay']")
 	public static WebElement CapMyBillOverlayTxt;
 
-	@FindBy(how = How.XPATH, using = "//*[@id='CapMyBillOverlayPopupClose']")
+	@FindBy(how = How.XPATH, using = "//button[@class='close boxclose']")
 	public static WebElement CapMyBillOverlayPopupClose;
 
-	@FindBy(how = How.XPATH, using = "//p[@class='section-heading']/../p[2]")
+	@FindBy(how = How.XPATH, using = "//div[@class='largeTitle']/p | //div[@class='build-spend-caps-container']/p")
 	public static WebElement BillCapStatusMsg;
 
 	@FindBy(how = How.XPATH, using = "//div[@class='selected-cap-msg']")
 	public static WebElement BillCapStatusInfo;
 
 
-	@FindBy(how = How.XPATH, using = "//p[@class='section-heading']/a")
+	@FindBy(how = How.XPATH, using = "//div[@class='largeTitle']/h2/a | //section[@id='billSpendCapSection']/a[normalize-space()='Edit Spend Cap'] | //span[contains(text(),'2. Your Spend Cap')]/../a")
 	public static WebElement BillCapEditLink;
 
-	@FindBy(how = How.XPATH, using = "//p[@class='section-heading']/a")
+	@FindBy(how = How.XPATH, using = "//a[normalize-space()='Change tariff']")
 	public static WebElement TariffEditLink;
 
 	//Bill Spend cap

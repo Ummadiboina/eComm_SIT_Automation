@@ -245,22 +245,22 @@ public class Agent_DealBuilderPage {
     @FindBy(how = How.XPATH, using = "(//table[@id='smartTechDeviceTable']/tbody/tr/td/a/img)[1]")
     public static WebElement SelectSearchedSmartTechDevice;
 
-    @FindBy(how = How.XPATH, using = "//*[normalize-space()='BillSpendCapHeader']")
+    @FindBy(how = How.XPATH, using = "(//th[contains(text(),'Spend cap')])[1]")
     public static WebElement BillSpendCapHeader;
 
-    @FindBy(how = How.XPATH, using = "//*[normalize-space()='BillSpendCapMessage']")
+    @FindBy(how = How.XPATH, using = "//span[@class='selectedBillSpendCap']")
     public static WebElement BillSpendCapMessage;
 
     @FindBy(how = How.XPATH, using = "//*[normalize-space()='Spend cap']")
     public static WebElement verfyBSCBolton;
 
-    @FindBy(how = How.XPATH, using = "//*[normalize-space()='BSCoverlayIcon']")
+    @FindBy(how = How.XPATH, using = "//a[@id='billSpendCapOverlay']")
     public static WebElement BSCoverlayIcon;
 
-    @FindBy(how = How.XPATH, using = "//*[normalize-space()='BSCoverlayText']")
+    @FindBy(how = How.XPATH, using = "//div[@class='bscOverlay']")
     public static WebElement BSCoverlayText;
 
-    @FindBy(how = How.XPATH, using = "//*[normalize-space()='BSCoverlayClosed']")
+    @FindBy(how = How.XPATH, using = "(//div[@id='buildSpendCapOverlayDialog']/div/span)[1]")
     public static WebElement BSCoverlayClosed;
 
     @FindBy(how = How.XPATH, using = "//*[normalize-space()='appliedBillCap']")

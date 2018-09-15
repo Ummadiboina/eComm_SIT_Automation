@@ -8,6 +8,8 @@ Feature: 90_Reg_Trustev_AFA_PAYM_Tablet_WithAccessoryClick_and_Collect
     And Select a valid PayM <Device>
     And Select valid <Tariffs> from tariffs tab
     And select a valid Handset and Tariff combination
+    And Validate Bill Spend Cap in agent deal builder section when BSC is <BSCstatus>
+    And Dont cap my bill
     And Select a valid Accessory <Accessory>
     And select a valid store for Click and Collect
     And Validate all the Basket content and checkout
@@ -20,5 +22,5 @@ Feature: 90_Reg_Trustev_AFA_PAYM_Tablet_WithAccessoryClick_and_Collect
     Then Order confirmation message should be displayed
 
     Examples:
-      | Device                              | Tariffs | Accessory                        | Firstname | Surname | HouseNumber | PostCode | Username     | Password | Confirm_Password | Security_Answer | B1  | B2  | B3     | B4  | Text | Email | Phone  | Post   | Consumer | status  | Password | confirmPassword | SecurityAnswer | MBBStatus | DeviceType | DeviceModule |
-      | iPad Pro 10.5 inch 256GB Space Grey | Random  | iPhone 7 Evo Elite Brushed Black | TEST      | ACCEPTA | 32          | SL11ER   | TEST ACCEPTA | test123  | test123          | Anything        | Not | Not | Select | Not | Not  | Not   | Select | Select | Me       | Enabled | test123  | test123         | Jkhan          | No        | Connected  | Tablet       |
+      | Device                              | Tariffs | BSCstatus | Accessory                        | Firstname | Surname | HouseNumber | PostCode | Username     | Password | Confirm_Password | Security_Answer | B1  | B2  | B3     | B4  | Text | Email | Phone  | Post   | Consumer | status  | Password | confirmPassword | SecurityAnswer | MBBStatus | DeviceType | DeviceModule |
+      | iPad Pro 10.5 inch 256GB Space Grey | Random  | Enabled   | iPhone 7 Evo Elite Brushed Black | TEST      | ACCEPTA | 32          | SL11ER   | TEST ACCEPTA | test123  | test123          | Anything        | Not | Not | Select | Not | Not  | Not   | Select | Select | Me       | Enabled | test123  | test123         | Jkhan          | No        | Connected  | Tablet       |

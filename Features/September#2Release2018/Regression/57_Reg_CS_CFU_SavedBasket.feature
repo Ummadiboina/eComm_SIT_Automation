@@ -9,6 +9,8 @@ Feature: 57_Reg_CS_CFU_SavedBasket
     And Select a <handset> device from Recommended devices section
     And Click on device 'Confirm CTA'
     And Select a tariff <tariff>
+    #And Validate consumer Bill Spend Caps section when BSC is <BSCstatus>
+    And Click on Dont Select Cap My Bill CTA
     And Select a 'I need a sim'option
     And Verify that 'Confirm CTA' is displayed
     And Click on 'Confirm CTA'
@@ -20,5 +22,5 @@ Feature: 57_Reg_CS_CFU_SavedBasket
 
 
     Examples:
-      | username                     | password | status  | consumer | handset           | tariff |
-      | inl_feb4914@stf.ref.o2.co.uk | test123  | Enabled | Me       | Samsung Galaxy S8 | Random |
+      | username                     | password | status  | consumer | handset           | tariff | BSCstatus |
+      | inl_feb4914@stf.ref.o2.co.uk | test123  | Enabled | Me       | Samsung Galaxy S8 | Random | Enabled   |

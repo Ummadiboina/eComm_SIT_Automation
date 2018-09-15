@@ -9,6 +9,8 @@ Feature: 36_Reg_CFA_Basket_page_cross_sell_insurance_no_free_insurance
     And I choose PayM <handset>
     And Navigate to device details page
     And Land on the 'Tariffs and extra' page
+    #And Validate consumer Bill Spend Caps section when BSC is <BSCstatus>
+    And Click on Dont Select Cap My Bill CTA
     And verify that the insurance is in a sorted order
     And I Land on the basket page by clicking on Add to Basket button
     And verify that the cheapest insurance is shown to crossell in the basket page
@@ -16,5 +18,5 @@ Feature: 36_Reg_CFA_Basket_page_cross_sell_insurance_no_free_insurance
     And click on the 'Add now' button and verify Insurance gets added successfully
 
     Examples:
-      | handset |
-      | iPhone  |
+      | handset       | BSCstatus |
+      | iPhone 8 Plus | Enabled   |
