@@ -8,6 +8,8 @@ Feature: 13_Reg_AFU_eComm_Promotions_and_added_Bolton_Incompatible_error_message
     And performs Upgrade for <user>
     And Select a valid PayM <Device>
     And Select valid <Tariffs> from tariffs tab
+    And Validate Bill Spend Cap in agent deal builder section when BSC is <BSCstatus>
+    And Dont cap my bill
     And Click on 'Extras' tab
     #(Bolton1 for reference)
     And Select a Bolton
@@ -35,5 +37,5 @@ Feature: 13_Reg_AFU_eComm_Promotions_and_added_Bolton_Incompatible_error_message
     Then Order confirmation message should be displayed
 
     Examples:
-      | user        | Device               | Button | Tariffs | ErrorMsg                     | Bolton | consumer | B1     | B2  | B3  | B4  | Text   | Email | Phone | Post | status  | MBBStatus | DeviceType |
-      | 07521130254 | Apple iPhone 6s 32GB | Button | Refresh | incompatible with each other | Bolton | Someone  | Select | Not | Not | Not | Select | Not   | Not   | Not  | Enabled | No        | Connected  |
+      | user        | Device               | Button | Tariffs | BSCstatus | ErrorMsg                     | Bolton | consumer | B1     | B2  | B3  | B4  | Text   | Email | Phone | Post | status  | MBBStatus | DeviceType |
+      | 07521130254 | Apple iPhone 6s 32GB | Button | Refresh | Enabled   | incompatible with each other | Bolton | Someone  | Select | Not | Not | Not | Select | Not   | Not   | Not  | Enabled | No        | Connected  |

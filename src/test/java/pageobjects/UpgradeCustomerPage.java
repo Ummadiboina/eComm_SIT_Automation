@@ -105,7 +105,7 @@ public class UpgradeCustomerPage {
 	//////////////////////////// Your Sim
 	//////////////////////////// Section///////////////////////////////////////////////////
 
-	@FindBy(how = How.XPATH, using = "//*[@id='yourSim'] | (//div[contains(text(),'3. Your sim')])[2]")
+	@FindBy(how = How.XPATH, using = "//*[@id='yourSim'] | (//div[contains(text(),'Your sim')])[2]")
 	public static WebElement YourSimHeading;
 
 	@FindBy(how = How.XPATH, using = "//*[@id='needNewSim']")
@@ -168,7 +168,7 @@ public class UpgradeCustomerPage {
 	@FindAll({@FindBy(how = How.XPATH, using = "//div[@class='btn-container']/button[@class='primary']")})
 	public static List<WebElement> TakeOfferAndUpgrade;
 
-	@FindBy(how = How.XPATH, using = "(//button[@id='callToAction'])[1]")
+	@FindBy(how = How.XPATH, using = "(//button[@id='callToAction'])[1] | (//button[@class='btn buyNowBtn ng-binding ng-pristine ng-valid'])[1] | (//button[@class='secondary selectButton tst-select ng-binding ng-pristine ng-valid'])[1] | (//button[@class='secondary selectButton tariff-select buyNowBtn'])[1]")
 	public static WebElement RandomTariffUpgrade;
 
 	@FindBy(how = How.ID, using = "qa-basket-upgrade-promotion-discountMessageHeader")

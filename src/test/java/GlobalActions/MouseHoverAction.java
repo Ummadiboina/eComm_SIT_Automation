@@ -110,7 +110,7 @@ public class MouseHoverAction extends Environment {
 
             /*********************************************************************
              Drupal navigation change           ************************/
-            if (driver.findElements(By.xpath("//div[@class='navContainer']/ul/li[@name='Shop']/a[contains(@href,'/shop')]")).size() >= 1) {
+            if (driver.findElements(By.xpath("//div[@class='navContainer']/ul/li[@name='Shop']/a[contains(@href,'/shop')] | //div[@class='navContainer']/div/ul/li[@name='Shop']/a[contains(@href,'/shop')]")).size() >= 1) {
 
                 Point coordinates = MouseHoverPage.MoveMouseOnShopTab_Drupal.getLocation();
                 Robot robot = new Robot();
@@ -592,7 +592,7 @@ public class MouseHoverAction extends Environment {
 
             /*********************************************************************
              Drupal navigation change           ************************/
-            if (driver.findElements(By.xpath("//div[@class='navContainer']/ul/li[@name='Shop']/a[contains(@href,'/shop')]")).size() >= 1) {
+            if (driver.findElements(By.xpath("//div[@class='navContainer']/ul/li[@name='Shop']/a[contains(@href,'/shop')] | //div[@class='navContainer']/div/ul/li[@name='Shop']/a[contains(@href,'/shop')]")).size() >= 1) {
 
                 Point coordinates = MouseHoverPage.MoveMouseOnShopTab_Drupal.getLocation();
                 Robot robot = new Robot();
@@ -1204,7 +1204,7 @@ public class MouseHoverAction extends Environment {
 
         /*********************************************************************
          Drupal navigation change           ************************/
-        if (driver.findElements(By.xpath("//div[@class='navContainer']/ul/li[@name='Shop']/a[contains(@href,'/shop')]")).size() >= 1) {
+        if (driver.findElements(By.xpath("//div[@class='navContainer']/ul/li[@name='Shop']/a[contains(@href,'/shop')] | //div[@class='navContainer']/div/ul/li[@name='Shop']/a[contains(@href,'/shop')]")).size() >= 1) {
 
             Point coordinates = MouseHoverPage.MoveMouseOnShopTab_Drupal.getLocation();
             Robot robot = new Robot();

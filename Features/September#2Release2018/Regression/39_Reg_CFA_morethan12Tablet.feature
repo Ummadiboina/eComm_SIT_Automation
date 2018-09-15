@@ -20,6 +20,8 @@ Feature: 39_Reg_CFA_morethan12Tablet
     And Select PayM Tablet <tabletname>
     And Navigate to device details page
     And Land on the 'Tariffs and extra' page
+    And Validate consumer Bill Spend Caps section when BSC is <BSCstatus>
+    And Click on Dont Select Cap My Bill CTA
     #And Choose Accesssory
     #And I Land on the basket page by clicking on Add to Basket button
     And Land on the basket page by clicking on Add to Basket button
@@ -35,5 +37,5 @@ Feature: 39_Reg_CFA_morethan12Tablet
     Then Choose <consumer> <status> Business preferences <B1> <B2> <B3> <B4> And Channel Preferences <Text> <Email> <Phone> <Post> <MBBStatus> <DeviceType>
 
     Examples:
-      | Firstname | Surname | Username     | limit1 | tabletname            | color      | capacity | limit2 | accessoryname | fitnesstrackername | consumer | B1  | B2  | B3  | B4  | Text | Email | Phone | Post | status  | MBBStatus | DeviceType |
-      | TEST      | ACCEPTA | TEST ACCEPTA | 6      | Galaxy Tab A 2016 7.0 | Space Grey | 256GB    | 6      | AirPods       | Fitbit Ionic       | Someone  | Not | Not | Not | Not | Not  | Not   | Not   | Not  | Enabled | No        | Connected  |
+      | Firstname | Surname | Username     | BSCstatus | limit1 | tabletname            | color      | capacity | limit2 | accessoryname | fitnesstrackername | consumer | B1  | B2  | B3  | B4  | Text | Email | Phone | Post | status  | MBBStatus | DeviceType |
+      | TEST      | ACCEPTA | TEST ACCEPTA | Enabled   | 6      | Galaxy Tab A 2016 7.0 | Space Grey | 256GB    | 6      | AirPods       | Fitbit Ionic       | Someone  | Not | Not | Not | Not | Not  | Not   | Not   | Not  | Enabled | No        | Connected  |

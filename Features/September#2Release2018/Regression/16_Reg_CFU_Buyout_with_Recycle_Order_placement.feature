@@ -11,22 +11,24 @@ Feature: 16_Reg_CFU_Buyout_with_Recycle_Order_placement
     And Verify that the buyout offer section is displayed with 'Take offer and Upgrade' CTA under 'Your Options' heading
     And Verify that '£XXX.XX left to pay on your current Device Plan' panel is displayed below the buyout offer panel and below to that upgrade and recycle options is displayed
     And click on 'Take offer and upgrade'button
+    And Click on 'Get Started' CTA
+    And Click on Tablet section in upgrade options page
+    And Select a <handset> device from Recommended devices section
+    And Click on device 'Confirm CTA'
+    #Then Select a Tariff
+    And select any random tariff from Recommended devices section
+    #And Validate consumer Bill Spend Caps section when BSC is <BSCstatus>
+    And Click on Dont Select Cap My Bill CTA
+    And Select a 'I need a sim'option
+    And Verify that 'Confirm CTA' is displayed
+    And Click on 'Confirm CTA'
+    And Verify that in 'Your package' summary Buyout is displayed with Recycle
     And Verify that the same recycle section is displayed as it is displayed to the non-buyout and non-trade-in users
     And Verify that the customer is able to do recycle and buyout together
     When Click on any one of the recycle option then Click on  'Yes get an accurate quote'
     #And Answer the Questions in the questionnaire
     #Then Click on 'Accept and continue to upgrade'
     And answer the questionnaire and click on 'Accept and continue to upgrade' button
-    #And Select a Device from the recommended section
-    And Click on Tablet section in upgrade options page
-    And Select a <handset> device from Recommended devices section
-    #Then Select a Tariff
-    And select any random tariff from Recommended devices section
-    And Select a 'I need a sim'option
-    And Verify that 'Confirm CTA' is displayed
-    And Click on 'Confirm CTA'
-    And Verify that in 'Your package' summary Buyout is displayed with Recycle
-    #Then Click on 'Add and Go to Basket' button
     And I Land on the basket page by clicking on Add to Basket button in the BuyOut Journey
     And verify if the buyout offer is displayed in Basket page
     And click on "go to checkout" button
@@ -44,6 +46,6 @@ Feature: 16_Reg_CFU_Buyout_with_Recycle_Order_placement
     Then Choose <consumer> <status> Business preferences <B1> <B2> <B3> <B4> And Channel Preferences <Text> <Email> <Phone> <Post> <MBBStatus> <DeviceType>
 
     Examples:
-      | Tablet        | Action | Surname | Username     | handset  | Delivery | Payment | filtername | sortoption                 | username                      | password | consumer     | B1     | B2     | B3  | B4  | Text | Email  | Phone | Post   | status  | MBBStatus | DeviceType |
-      | Random Device | skip   | ACCEPTA | TEST ACCEPTA | iPhone 8 | Delivery | Payment | low        | Monthly data (Low to High) | 18ju22607860@stf.ref.o2.co.uk | test123  | SomeOne else | Select | Select | Not | Not | Not  | Select | Not   | Select | Enabled | No        | Connected  |
+      | Tablet        | Action | Surname | Username     | BSCstatus | handset  | Delivery | Payment | filtername | sortoption                 | username               | password | consumer     | B1     | B2     | B3  | B4  | Text | Email  | Phone | Post   | status  | MBBStatus | DeviceType |
+      | Random Device | skip   | ACCEPTA | TEST ACCEPTA | Enabled   | iPhone 8 | Delivery | Payment | low        | Monthly data (Low to High) | in01808o_315700@o2.com | test123  | SomeOne else | Select | Select | Not | Not | Not  | Select | Not   | Select | Enabled | No        | Connected  |
 

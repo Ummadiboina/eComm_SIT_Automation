@@ -7,6 +7,8 @@ Feature:87_Reg_PayG Tablets_ShowMarketingMessageOnTariffAndExtrasPagePackageSumm
     And select any available <Device> Tablet
     And Navigate to device details page
     And Select a PayG tariff <tariff>
+    #And Validate consumer Bill Spend Caps section when BSC is <BSCstatus>
+    #And Click on Dont Select Cap My Bill CTA
     And Verify the copytext of marketing message
     And I Land on the basket page and choose home delivery option
     And Verify the copytext of marketing message
@@ -23,5 +25,5 @@ Feature:87_Reg_PayG Tablets_ShowMarketingMessageOnTariffAndExtrasPagePackageSumm
     Then Choose <consumer> <status> Business preferences <B1> <B2> <B3> <B4> And Channel Preferences <Text> <Email> <Phone> <Post> <MBBStatus> <DeviceType>
 
     Examples:
-      | Device            | Firstname | Surname | Username     | PaymentSectionName | AgreementSectionName | tariff        | consumer | B1     | B2     | B3     | B4  | Text   | Email  | Phone | Post | status  | MBBStatus | DeviceType |
-      | Galaxy Tab S3 9.7 | TEST      | ACCEPTA | TEST ACCEPTA | Payment Page       | Order Summary        | 1GB Preloaded | Me       | Select | Select | Select | Not | Select | Select | Not   | Not  | Enabled | No        | Connected  |
+      | Device            | Firstname | Surname | Username     | BSCstatus | PaymentSectionName | AgreementSectionName | tariff        | consumer | B1     | B2     | B3     | B4  | Text   | Email  | Phone | Post | status  | MBBStatus | DeviceType |
+      | Galaxy Tab S3 9.7 | TEST      | ACCEPTA | TEST ACCEPTA | Enabled   | Payment Page       | Order Summary        | 1GB Preloaded | Me       | Select | Select | Select | Not | Select | Select | Not   | Not  | Enabled | No        | Connected  |

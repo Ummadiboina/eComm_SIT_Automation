@@ -11,6 +11,8 @@ Feature: 76_Reg_FNT_DifferentStoreAddressthanBillingAddres
     And select <Capacity> capacity of the connected device
     And Navigate to device details page
     And Land on the 'Tariffs and extra' page
+    #And Validate consumer Bill Spend Caps section when BSC is <BSCstatus>
+    And Click on Dont Select Cap My Bill CTA
     And I Land on the basket page and choose to collect from store
     And click on "go to checkout" button
     And input <Firstname> and <Surname> and other valid details in Delivery page to verify GDPR
@@ -24,5 +26,5 @@ Feature: 76_Reg_FNT_DifferentStoreAddressthanBillingAddres
     Then Choose <consumer> <status> Business preferences <B1> <B2> <B3> <B4> And Channel Preferences <Text> <Email> <Phone> <Post> <MBBStatus> <DeviceType>
 
     Examples:
-      | handset       | color      | Capacity | Firstname | Surname | Username     | consumer | B1     | B2  | B3     | B4  | Text   | Email | Phone | Post   | status  | MBBStatus | DeviceType |
-      | iPhone 8 Plus | Space Grey | 64GB     | TEST      | ACCEPTA | TEST ACCEPTA | Me       | Select | Not | Select | Not | Select | Not   | Not   | Select | Enabled | No        | Connected  |
+      | handset       | color      | Capacity | Firstname | BSCstatus | Surname | Username     | consumer | B1     | B2  | B3     | B4  | Text   | Email | Phone | Post   | status  | MBBStatus | DeviceType |
+      | iPhone 8 Plus | Space Grey | 64GB     | TEST      | Enabled   | ACCEPTA | TEST ACCEPTA | Me       | Select | Not | Select | Not | Select | Not   | Not   | Select | Enabled | No        | Connected  |

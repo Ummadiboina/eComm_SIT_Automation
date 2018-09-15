@@ -10,6 +10,8 @@ Feature: 98_Reg_June_CFU_Validate_Basket_Page_For_Simo_Tariff_With_Active_Vouche
     And Click on 'Get Started' CTA
     #And I click on 'Sim only Tariff' tab
     And Click on 'Select' CTA to buy a valid <tariffAmt> and <dataValue>
+    #And Validate consumer Bill Spend Caps section when BSC is <BSCstatus>
+    And Click on Dont Select Cap My Bill CTA
     #And Select ribboned tariff <tariff> in upgrade journey
     And I Land on the Plan included basket page and choose home delivery option
     And Click on 'plus' accordion at get promo code section and enter valid <promoCode> details in Basket page
@@ -22,5 +24,5 @@ Feature: 98_Reg_June_CFU_Validate_Basket_Page_For_Simo_Tariff_With_Active_Vouche
     Then Choose <consumer> <status> Business preferences <B1> <B2> <B3> <B4> And Channel Preferences <Text> <Email> <Phone> <Post> <MBBStatus> <DeviceType>
 
     Examples:
-      | username                      | tariffAmt | dataValue | promoCode | password | Username     | consumer | B1  | B2  | B3     | B4  | Text | Email  | Phone | Post | status  | MBBStatus | DeviceType |
-      | 20se14717577@stf.ref.o2.co.uk | £18       | 6GB       | VOUCHER3  | test123  | TEST ACCEPTA | Me       | Not | Not | Select | Not | Not  | Select | Not   | Not  | Enabled | No        | Connected  |
+      | username                      | tariffAmt | dataValue | promoCode | password | BSCstatus | Username     | consumer | B1  | B2  | B3     | B4  | Text | Email  | Phone | Post | status  | MBBStatus | DeviceType |
+      | 20se14717577@stf.ref.o2.co.uk | £18       | 6GB       | VOUCHER3  | test123  | Enabled   | TEST ACCEPTA | Me       | Not | Not | Select | Not | Not  | Select | Not   | Not  | Enabled | No        | Connected  |

@@ -7,6 +7,8 @@ Feature: 56_Reg_CS_CFA_MBBPayG
     And I choose MBB PayG "Random Device"
     And Navigate to device details page
     And Select a PayG tariff <tariff>
+    #And Validate consumer Bill Spend Caps section when BSC is <BSCstatus>
+    #And Click on Dont Select Cap My Bill CTA
     And I Land on the basket page and choose home delivery option
     And click on "go to checkout" button
     And input <Firstname> and <Surname> and other valid details in Delivery page to verify GDPR
@@ -19,5 +21,5 @@ Feature: 56_Reg_CS_CFA_MBBPayG
 
 
     Examples:
-      | Firstname | Surname | Username     |tariff| consumer | B1     | B2  | B3  | B4  | Text   | Email | Phone | Post | status  | MBBStatus | DeviceType |
-      | TEST      | ACCEPTA | TEST ACCEPTA |      | Me       | Select | Not | Not | Not | Select | Not   | Not   | Not  | Enabled | No        | Connected  |
+      | Firstname | Surname | Username     | tariff | BSCstatus | consumer | B1     | B2  | B3  | B4  | Text   | Email | Phone | Post | status  | MBBStatus | DeviceType |
+      | TEST      | ACCEPTA | TEST ACCEPTA |        | Enabled   | Me       | Select | Not | Not | Not | Select | Not   | Not   | Not  | Enabled | No        | Connected  |

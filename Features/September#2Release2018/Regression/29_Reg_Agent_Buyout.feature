@@ -9,6 +9,8 @@ Feature: 29_Reg_Agent_Buyout
     And Select a valid PayM <Device>
     And Select valid <Tariffs> from tariffs tab
     And select a valid Handset and Tariff combination_new
+    And Validate Bill Spend Cap in agent deal builder section when BSC is <BSCstatus>
+    And Dont cap my bill
     And clicks on 'Buyout' button
     #And Validate all the Basket content and checkout
     And Choose Business preferences <B1> <B2> <B3> <B4> and Channel Preferences <Text> <Email> <Phone> <Post> for <consumer> when GDPR <status> <DeviceType> for AFU journey
@@ -24,5 +26,5 @@ Feature: 29_Reg_Agent_Buyout
     #Then order confirmation is displayed
 
     Examples:
-      | User        | Device                                    | Tariffs | username      | DeliveryType | Firstname | Surname | HouseNumber | PostCode | Username     | password | consumer | B1  | B2  | B3     | B4  | Text   | Email  | Phone  | Post   | status  | MBBStatus | DeviceType |
-      | 07568415205 | Samsung Galaxy S9 Plus 128GB Lilac Purple | Refresh | erto@1234.com | HomeDelivery | Test      | Accepta | Flat 9      | SL11EL   | Test Accepta | test123  | Me       | Not | Not | Select | Not | Select | Select | Select | Select | Enabled | No        | Connected  |
+      | User        | Device                                    | BSCstatus | Tariffs | username      | DeliveryType | Firstname | Surname | HouseNumber | PostCode | Username     | password | consumer | B1  | B2  | B3     | B4  | Text   | Email  | Phone  | Post   | status  | MBBStatus | DeviceType |
+      | 07568415205 | Samsung Galaxy S9 Plus 128GB Lilac Purple | Enabled   | Refresh | erto@1234.com | HomeDelivery | Test      | Accepta | Flat 9      | SL11EL   | Test Accepta | test123  | Me       | Not | Not | Select | Not | Select | Select | Select | Select | Enabled | No        | Connected  |

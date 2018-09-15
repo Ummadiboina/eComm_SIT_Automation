@@ -14,6 +14,8 @@ Feature: 12_Reg_Consumer_Existing_PAYG_Phone_BigBundle_To_Show_£15_Data_Roll_Ov
     And select <color> color of the connected device
     And Navigate to device details page
     And Land on the 'Tariffs and extra' page and validate Data Roll over copy for <Tariff_Value> and <Data>
+    #And Validate consumer Bill Spend Caps section when BSC is <BSCstatus>
+    #And Click on Dont Select Cap My Bill CTA
     And I Land on the basket page and choose to collect from store
     And Validate all the Basket contents
     And click on "go to checkout" button
@@ -25,5 +27,5 @@ Feature: 12_Reg_Consumer_Existing_PAYG_Phone_BigBundle_To_Show_£15_Data_Roll_Ov
     Then Choose <consumer> <status> Business preferences <B1> <B2> <B3> <B4> And Channel Preferences <Text> <Email> <Phone> <Post> <MBBStatus> <DeviceType>
 
     Examples:
-      | username      | password | handset       | color      | Username     | Tariff_Value | Data | consumer | B1     | B2  | B3     | B4  | Text   | Email  | Phone | Post | status  | MBBStatus | DeviceType |
-      | qwertyuiiuytr | test123  | iPhone 8 Plus | Space Grey | TEST ACCEPTA | £15          | 5GB  | Me       | Select | Not | Select | Not | Select | Select | Not   | Not  | Enabled | No        | Connected  |
+      | username      | password | handset       | color      | Username     | Tariff_Value | Data | consumer | BSCstatus | B1     | B2  | B3     | B4  | Text   | Email  | Phone | Post | status  | MBBStatus | DeviceType |
+      | qwertyuiiuytr | test123  | iPhone 8 Plus | Space Grey | TEST ACCEPTA | £15          | 5GB  | Me       | Enabled   | Select | Not | Select | Not | Select | Select | Not   | Not  | Enabled | No        | Connected  |

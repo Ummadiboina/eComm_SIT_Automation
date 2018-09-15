@@ -8,6 +8,8 @@ Feature: 74_Reg_FNT_AFA_Handset_Click_and_Collect_Passport_and_Driving_license
     And Select a valid PayM <Device>
     And Select valid <Tariffs> from tariffs tab
     And select a valid Handset and Tariff combination
+    And Validate Bill Spend Cap in agent deal builder section when BSC is <BSCstatus>
+    And Dont cap my bill
     And Select a valid store using <postCode> for Click and Collect
     And Validate all the Basket content and checkout
     Then perform all the advisory checks

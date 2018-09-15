@@ -174,14 +174,22 @@ public class BasketPage {
 	public static WebElement checkoutinProgress;
 
 	//Bill Spend cap
-	@FindBy(how = How.XPATH, using = "//h3[normalize-space()='Spend Cap']//following-sibling::h3/span")
+	@FindBy(how = How.XPATH, using = "//section[@id='billSpendCapSection']/h3[2]/span")
 	public static WebElement AppliedBillCap;
 
 	@FindBy(how = How.XPATH, using = "//a[@href='basket/changeBillSpendCap']")
 	public static WebElement BillCapEditLink_Basket;
 
-	@FindBy(how = How.XPATH, using = "//h3[normalize-space()='Spend Cap']")
+	@FindBy(how = How.XPATH, using = "//section[@id='billSpendCapSection']/h3[1]")
 	public static WebElement BillSpendCapHeader;
 
+	@FindBy(how = How.XPATH, using = "//section[@id='billSpendCapSection']/h3[1]/a")
+	public static WebElement BasketBSCOverlay;
+
+	@FindBy(how = How.XPATH, using = "//div[@class='bscOverlay']")
+	public static WebElement BasketBSCOverlayTxt;
+
+	@FindBy(how = How.XPATH, using = "//button[@class='close boxclose']")
+	public static WebElement BasketBSCOverlayCloseBtn;
 
 }

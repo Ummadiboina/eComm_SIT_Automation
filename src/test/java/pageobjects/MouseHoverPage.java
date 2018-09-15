@@ -15,7 +15,7 @@ public class MouseHoverPage extends Environment {
 	@FindBy(how = How.XPATH, using = ("//div[@class='nav-consumer']/ul/li/a[contains(@href, '/shop')]"))
 	public static WebElement MoveMouseOnShopTab;
 
-	@FindBy(how = How.XPATH, using = ("//div[@class='navContainer']/ul/li[@name='Shop']/a[contains(@href,'/shop')]"))
+	@FindBy(how = How.XPATH, using = ("//div[@class='navContainer']/ul/li[@name='Shop']/a[contains(@href,'/shop')] | //div[@class='navContainer']/div/ul/li[@name='Shop']/a[contains(@href,'/shop')]"))
 	public static WebElement MoveMouseOnShopTab_Drupal;
 
 	@FindBy(how = How.XPATH, using = ("(//li[contains(@class,'tier-menu-wrapper')]//li/a[text()='Upgrades'])[1]"))

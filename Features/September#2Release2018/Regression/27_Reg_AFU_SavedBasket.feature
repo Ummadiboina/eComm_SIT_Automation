@@ -8,10 +8,12 @@ Feature: 27_Reg_AFU_SavedBasket
     And Select a valid PayM <Device>
     And Select valid <Tariffs> from tariffs tab
     And select a valid Handset and Tariff combination
+    And Validate Bill Spend Cap in agent deal builder section when BSC is <BSCstatus>
+    And Dont cap my bill
     # And Select a valid Accessory <Device>
     And choose to email basket to save the basket
     And Verify email is sent successfully
 
     Examples:
-      | user        | Device                            | Tariffs |
-      | 07521116997 | Galaxy S9 Plus 128GB Lilac Purple | Refresh |
+      | user        | Device                            | Tariffs | BSCstatus |
+      | 07521116249 | Galaxy S9 Plus 128GB Lilac Purple | Refresh | Enabled   |

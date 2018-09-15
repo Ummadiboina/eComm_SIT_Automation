@@ -28,8 +28,10 @@ Feature: 66_Reg_CFU_PayMSimOnly
     Then I should see tariffs based on the selected sort option <sortoption>
     And Click on different <Contract>  Months Tariff in Tab
     And Click on 'Select' CTA to buy a tariff
+    #And Validate consumer Bill Spend Caps section when BSC is <BSCstatus>
     #And land on the Non Credit check payment page and input <Username> and other details and click 'Continue on next step'
     And copy text SIM delivery required or not is displayed
+    And Click on Dont Select Cap My Bill CTA
     And Select 'I’ll keep my current sim' option
     And Click on 'I agree to the terms and condition' checkbox in SIMO review page
     And Is this order for You or Someone else <consumer> when GDPR is <status>
@@ -39,5 +41,5 @@ Feature: 66_Reg_CFU_PayMSimOnly
 
 
     Examples:
-      | Contract | GiftBlock  | username                      | Username     | password | filtername | sortoption                 | consumer | B1     | B2  | B3     | B4  | Text | Email  | Phone | Post | status  | MBBStatus | DeviceType |
-      | 30 Days  | Configured | 05ap38085201@stf.ref.o2.co.uk | TEST ACCEPTA | test123  | high       | Monthly data (Low to High) | Me       | Select | Not | Select | Not | Not  | Select | Not   | Not  | Enabled | No        | Connected  |
+      | Contract | GiftBlock  | username                      | BSCstatus | Username     | password | filtername | sortoption                 | consumer | B1     | B2  | B3     | B4  | Text | Email  | Phone | Post | status  | MBBStatus | DeviceType |
+      | 30 Days  | Configured | 05ap38085201@stf.ref.o2.co.uk | Enabled   | TEST ACCEPTA | test123  | high       | Monthly data (Low to High) | Me       | Select | Not | Select | Not | Not  | Select | Not   | Not  | Enabled | No        | Connected  |

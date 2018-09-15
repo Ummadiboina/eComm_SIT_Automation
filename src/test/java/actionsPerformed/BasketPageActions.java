@@ -869,20 +869,36 @@ public class BasketPageActions extends Environment {
 	}
 
 	//Validating your bill cap in Basket page
-	public static void ValidateAppliedBillSpendCapInBasketPage(String BillCap, String CapAmount, String BSCstatus) throws InterruptedException {
-		Thread.sleep(4000);
+	public static void ValidateAppliedBillSpendCapInBasketPage(String BillCap, String CapAmount, String BSCstatus) throws InterruptedException, IOException {
+		Thread.sleep(3000);
 		String AppliedBillCap="";
 		String pageTitle = driver.getTitle();
+		scrollToAnElement.scrollToElement(BasketPage.YourOrder);
+		Thread.sleep(2000);
+		Screenshots.captureScreenshot();
 		try {
 			if(BSCstatus.equalsIgnoreCase("Enabled")) {
-				if (driver.findElements(By.xpath("//h3[normalize-space()='Spend Cap']")).size() > 0) {
+				if (driver.findElements(By.xpath("//section[@id='billSpendCapSection']")).size() > 0) {
 
-					log.debug("Bill spend cap section is enabled/displayed at "+pageTitle+" page \n");
+					log.debug("Bill spend cap section is displayed at "+pageTitle+" page \n");
 					/*scrollToAnElement.scrollToElement(pageobjects.BasketPage.BillSpendCapHeader);
 					Screenshots.captureScreenshot();*/
 					JavascriptExecutor jse = (JavascriptExecutor) driver;
 					jse.executeScript("window.scrollBy(0,200)", "");
 					log.debug("Bill Spend Cap header is displayed in "+pageTitle+" page ie :: " + pageobjects.BasketPage.BillSpendCapHeader.getText());
+
+					log.debug("Basket page Bill spend cap section overlay icon is displayed and clicking on it \n");
+					pageobjects.BasketPage.BasketBSCOverlay.click();
+					Thread.sleep(3000);
+					Screenshots.captureScreenshot();
+
+					String basketBSCOverlayTxt = pageobjects.BasketPage.BasketBSCOverlayTxt.getText();
+					Thread.sleep(3000);
+					log.debug("Basket page BSC section overlay text:: \n"+basketBSCOverlayTxt);
+					log.debug("Basket page BSC section overlay is closing");
+					pageobjects.BasketPage.BasketBSCOverlayCloseBtn.click();
+					log.debug("Basket page BSC section overlay is closed");
+					Thread.sleep(2000);
 
 					AppliedBillCap = pageobjects.BasketPage.AppliedBillCap.getText();
 
@@ -895,7 +911,7 @@ public class BasketPageActions extends Environment {
 							Assert.fail("Applied bill cap is not present in " + pageTitle + " page is:: " + AppliedBillCap);
 						}
 					} else if (BillCap.contains("DontCapMyBill")) {
-						if (AppliedBillCap.contains("Your bill has not been capped")) {
+						if (AppliedBillCap.contains("You've chosen not to add a Spend Cap")) {
 							log.debug("'Dont Cap My Bill' is validated successfully and cap text is::" + AppliedBillCap);
 						} else {
 							log.debug("Failed to validate 'Dont Cap My Bill' and cap text is::" + AppliedBillCap);
@@ -915,7 +931,7 @@ public class BasketPageActions extends Environment {
 					Assert.fail("Bill cap section is not present under order summary section in " + pageTitle + " page");
 				}
 			}else if(BSCstatus.equalsIgnoreCase("Disabled")){
-				if (driver.findElements(By.xpath("//h3[normalize-space()='Spend Cap']")).size() > 0) {
+				if (driver.findElements(By.xpath("//section[@id='billSpendCapSection']")).size() > 0) {
 					log.debug("Bill spend cap section is enabled it suppose to be in disabled status in " + pageTitle + " page");
 					Assert.fail("Bill spend cap section is enabled it suppose to be in disabled status in " + pageTitle + " page");
 				}else{

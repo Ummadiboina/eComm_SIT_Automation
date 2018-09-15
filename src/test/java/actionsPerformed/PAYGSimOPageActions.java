@@ -27,6 +27,16 @@ public class PAYGSimOPageActions extends Environment {
 
         if (tariffType.equalsIgnoreCase("BigBundle")) {
 
+            driver.findElement(By.xpath("//div/ul/li/a/span/h2[@id='bigbundles']")).click();
+            log.debug("Big Bundles Tab clicked");
+            Screenshots.captureScreenshot();
+            Thread.sleep(4000);
+            JavascriptExecutor jse = (JavascriptExecutor) driver;
+            jse.executeScript("window.scrollBy(0,600)", "");
+            Thread.sleep(4000);
+            Screenshots.captureScreenshot();
+            Thread.sleep(2000);
+
             log.debug("Selecting a big bundle tariff");
 
             if (ElementName.equalsIgnoreCase("DataRollOver")) {
@@ -76,6 +86,8 @@ public class PAYGSimOPageActions extends Environment {
                     }
 
                     driver.findElement(By.xpath("//span[text()='" + tariffAmt + "']/../../../../../following-sibling::div/div/div[@class='tile-button']")).click();
+                    Thread.sleep(2000);
+                    Screenshots.captureScreenshot();
                     log.debug("Selected the Big Bundle Tariff");
                     Thread.sleep(5000);
                 }

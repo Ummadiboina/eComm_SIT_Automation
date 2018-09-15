@@ -7,6 +7,8 @@ Feature: 93_Reg_Trustev_CFA_PayMTabletsHomeDeliveryWithAccessory
     And select any available <Device> Tablet
     And Navigate to device details page
     And Land on the 'Tariffs and extra' page
+    #And Validate consumer Bill Spend Caps section when BSC is <BSCstatus>
+    And Click on Dont Select Cap My Bill CTA
     And Choose some Accesssory
     And I Land on the basket page and choose home delivery option
     And click on "go to checkout" button
@@ -20,5 +22,5 @@ Feature: 93_Reg_Trustev_CFA_PayMTabletsHomeDeliveryWithAccessory
     Then Choose <consumer> <status> Business preferences <B1> <B2> <B3> <B4> And Channel Preferences <Text> <Email> <Phone> <Post> <MBBStatus> <DeviceType>
 
     Examples:
-      | Device | color | Capacity | Firstname | Surname | Username     | consumer | B1  | B2  | B3     | B4  | Text | Email  | Phone | Post | status  | MBBStatus | DeviceType |
-      | A3 10  | Gold  | 64GB     | TEST      | ACCEPTA | TEST ACCEPTA | Me       | Not | Not | Select | Not | Not  | Select | Not   | Not  | Enabled | No        | Connected  |
+      | Device | color | Capacity | Firstname | Surname | Username     | consumer | BSCstatus | B1  | B2  | B3     | B4  | Text | Email  | Phone | Post | status  | MBBStatus | DeviceType |
+      | A3 10  | Gold  | 64GB     | TEST      | ACCEPTA | TEST ACCEPTA | Me       | Enabled   | Not | Not | Select | Not | Not  | Select | Not   | Not  | Enabled | No        | Connected  |
