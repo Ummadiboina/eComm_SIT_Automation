@@ -10681,9 +10681,9 @@ public class E2EOrderPlaced_Steps {
     @And("^Click on Dont Select Cap My Bill CTA$")
     public void DontCapBillSpendCap() {
         try {
-            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+           // driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, PAYMandPAYGTariffAndExtrasPage.class);
-            Thread.sleep(3000);
+            Thread.sleep(5000);
             Screenshots.captureScreenshot();
             if (pageobjects.PAYMandPAYGTariffAndExtrasPage.DontCapMyBillButton.isEnabled()) {
                 PAYMandPAYGTariffAndExtrasPage.DontCapMyBillButton.click();
