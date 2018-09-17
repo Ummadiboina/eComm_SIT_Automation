@@ -7,8 +7,8 @@ Feature: Agent_PAYM_Acquistion_Bill_Spend_Caps_Enabled_Refresh_EndUser
     And performs Acquisition for New user
     And Select a valid PayM <Device>
     And Select valid <Tariffs> from tariffs tab
-    And Validate Bill Spend Cap in agent deal builder section when BSC is <BSCstatus>
     And select a valid Handset and Tariff combination
+    And Validate Bill Spend Cap in agent deal builder section when BSC is <BSCstatus>
     And Add your Bill Spend Cap <BillCapAmount> in agent deal builder when BSC is <BSCstatus>
     And Verify that the error <IncompatibleError> is displayed in the deal about the conflict
     And Validate all the Basket content and checkout
@@ -24,4 +24,4 @@ Feature: Agent_PAYM_Acquistion_Bill_Spend_Caps_Enabled_Refresh_EndUser
 
     Examples:
       | Device | Tariffs | DeliveryType | BillCapAmount | BSCstatus | IncompatibleError | Firstname | Surname | Username     | HouseNumber | PostCode | Consumer | B1  | B2  | B3     | B4  | Text   | Email  | Phone | Post   | status  | MBBStatus | DeviceType | DeviceModule |
-      | Random | Refresh | HomeDelivery | £5.00         | Enabled   | Error             | TEST      | ACCEPTA | TEST ACCEPTA | 14          | SL11UP   | Me       | Not | Not | Select | Not | Select | Select | Not   | Select | Enabled | No        | Connected  | Phone        |
+      | Random | Refresh | HomeDelivery | £5            | Enabled   | Error             | TEST      | ACCEPTA | TEST ACCEPTA | 14          | SL11UP   | Me       | Not | Not | Select | Not | Select | Select | Not   | Select | Enabled | No        | Connected  | Phone        |

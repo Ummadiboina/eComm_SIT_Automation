@@ -14,7 +14,7 @@ Feature: 11_CFU_Tablets_BSC_Component_in_Upgrade_Options_Page_and_Select_Do_Not_
     And Select a tariff <tariff>
     And Validate consumer Bill Spend Caps section when BSC is <BSCstatus>
     And Choose your bill cap <BillCap> <CapAmount> when BSC is <BSCstatus>
-    And Validate applied Bill Spend Cap <BillCap> <CapAmount> when BSC is <BSCstatus>
+    #And Validate applied Bill Spend Cap <BillCap> <CapAmount> when BSC is <BSCstatus>
     Then I should see 'Your Sim Card'section
     And no option should be selected
     And verify that Confirm CTA is not displayed
@@ -23,7 +23,7 @@ Feature: 11_CFU_Tablets_BSC_Component_in_Upgrade_Options_Page_and_Select_Do_Not_
     And Click on 'Confirm CTA'
     And Click on 'Continue' button on upgrade page at extra section
     And I Land on the basket page by clicking on Add to Basket button
-    And Validate applied Bill Spend Cap <BillCap> <CapAmount> when BSC is <BSCstatus>
+    And Validate Basket Page for applied Bill Spend Cap <BillCap> <CapAmount> when BSC is <BSCstatus>
     And click on "go to checkout" button
     And perform <Action> in OTAC page
     And Validate applied Bill Spend Cap <BillCap> <CapAmount> when BSC is <BSCstatus>
@@ -37,9 +37,9 @@ Feature: 11_CFU_Tablets_BSC_Component_in_Upgrade_Options_Page_and_Select_Do_Not_
     And Validate applied Bill Spend Cap <BillCap> <CapAmount> when BSC is <BSCstatus>
     And Continue to Review page and review the order
     Then order confirmation is displayed
-    And Validate applied Bill Spend Cap <BillCap> <CapAmount> when BSC is <BSCstatus>
+    And Validate order confirmation page for applied Bill Spend Cap <BillCap> <CapAmount> when BSC is <BSCstatus>
     Then Choose <consumer> <status> Business preferences <B1> <B2> <B3> <B4> And Channel Preferences <Text> <Email> <Phone> <Post> <MBBStatus> <DeviceType>
 
     Examples:
-      | username                     | password | Tablet            | houseNumber | PostCode | BillCap       | CapAmount | BSCstatus | Username     | Action    | tariff                   | consumer | B1     | B2     | B3     | B4  | Text   | Email  | Phone  | Post   | status  | MBBStatus | DeviceType |
-      | ins_feb8544@stf.ref.o2.co.uk | test123  | Galaxy Tab S3 9.7 | 11          | SL11ER   | DontCapMyBill | Nill      | Enabled   | TEST ACCEPTA | enterCode | 129.99upfront37.00amonth | Me       | Select | Select | Select | Not | Select | Select | Select | Select | Enabled | No        | Connected  |
+      | username                      | password | Tablet            | houseNumber | PostCode | BillCap       | CapAmount | BSCstatus | Username     | Action    | tariff                   | consumer | B1     | B2     | B3     | B4  | Text   | Email  | Phone  | Post   | status  | MBBStatus | DeviceType |
+      | 31ja82038747@stf.ref.o2.co.uk | test123  | Galaxy Tab S3 9.7 | 11          | SL11ER   | DontCapMyBill | Nill      | Enabled   | TEST ACCEPTA | enterCode | 129.99upfront37.00amonth | Me       | Select | Select | Select | Not | Select | Select | Select | Select | Enabled | No        | Connected  |

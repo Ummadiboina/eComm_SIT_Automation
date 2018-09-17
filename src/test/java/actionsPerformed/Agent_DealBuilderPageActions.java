@@ -1208,8 +1208,6 @@ public class Agent_DealBuilderPageActions extends Environment {
 
                     List<WebElement> menuOuter = driver.findElements(By.xpath("//*[@class='capSelection']/select/option"));
 
-                    String BillCapStatus = pageobjects.Agent_DealBuilderPage.BillSpendCapMessage.getText();
-
                     //Selecting specified bill cap
                     log.debug("Selecting your Bill Cap:");
                     for (int i = 0; i < menuOuter.size(); i++) {
@@ -1227,13 +1225,30 @@ public class Agent_DealBuilderPageActions extends Environment {
                         Assert.fail("Bill Spend Cap list does not contain specified cap amount and your Bill cap is not selected ie:: " + BillCapAmount);
                     }
 
+                    String BillCapStatus = pageobjects.Agent_DealBuilderPage.BillSpendCapMessage.getText().toLowerCase();
+
+                    Thread.sleep(3000);
+
                     //status message validation
-                    if (BillCapStatus.contains(BillCapAmount)) {
-                        log.debug("Bill Spend Status message after selecting bill cap:: " + BillCapStatus);
-                        log.debug("Status message after selecting bill cap contain your bill cap amount :: " + BillCapStatus);
+                    if(BillCapAmount.equalsIgnoreCase("No Spend Cap")){
+
+                        if (BillCapStatus.contains("No spend cap")) {
+                            log.debug("Bill Spend Status message after selecting No bill cap:: " + BillCapStatus);
+                            log.debug("No Bill Spend Status message validated successfully");
+                        } else {
+                            log.debug("Status message after selecting No bill cap does not matching :: " + BillCapStatus);
+                            Assert.fail("Status message after selecting No bill cap does not matching :: " + BillCapStatus);
+                        }
+
                     }else {
-                        log.debug("Status message after selecting bill cap does not contain your bill cap amount :: " + BillCapStatus);
-                        Assert.fail("Status message after selecting bill cap does not contain your bill cap amount :: " + BillCapStatus);
+
+                        if (BillCapStatus.contains(BillCapAmount)) {
+                            log.debug("Bill Spend Status message after selecting bill cap:: " + BillCapStatus);
+                            log.debug("Status message after selecting bill cap contain your bill cap amount :: " + BillCapStatus);
+                        } else {
+                            log.debug("Status message after selecting bill cap does not contain your bill cap amount :: " + BillCapStatus);
+                            Assert.fail("Status message after selecting bill cap does not contain your bill cap amount :: " + BillCapStatus);
+                        }
                     }
 
                    /* //Checkout CTA status after selecting BSC bolton

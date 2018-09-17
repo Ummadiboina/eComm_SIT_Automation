@@ -8,20 +8,15 @@ Feature: 15_CFU_Validate_BSC_Component_In_Upgrade_Options_Page_for_Pre_Q1_2018_T
     And Signin using valid <username> and <password> credentials
     And Navigate to upgrade > upgrade now
     And Click on 'Get Started' CTA
+    And Click on Tablet section in upgrade options page
     And Click on MBB section in upgrade options page
-    And Select a <MBB Device> device from Recommended devices section
-    And Click on device 'Confirm CTA'
+    And I choose MBB PayM <Device_Name>
+    And Navigate to device details page
+    #And Land on the 'Tariffs and extra' page
     And Click on 'Select' CTA to buy a valid <tariffAmt> and <dataValue>
     And Validate consumer Bill Spend Caps section when BSC is <Q1TariffBSCstatus>
-    Then I should see 'Your Sim Card'section
-    And no option should be selected
-    And verify that Confirm CTA is not displayed
-    And Select a 'I dont need a new sim'option
-    And Verify that 'Confirm CTA' is displayed
-    And Click on 'Confirm CTA'
-    And Click on 'Continue' button on upgrade page at extra section
     And I Land on the basket page by clicking on Add to Basket button
-    And Validate consumer Bill Spend Caps section when BSC is <Q1TariffBSCstatus>
+    And Validate Basket Page for applied Bill Spend Cap <BillCap> <CapAmount> when BSC is <Q1TariffBSCstatus>
     And click on "go to checkout" button
     And perform <Action> in OTAC page
     And Validate applied Bill Spend Cap <BillCap> <CapAmount> when BSC is <Q1TariffBSCstatus>
@@ -35,9 +30,9 @@ Feature: 15_CFU_Validate_BSC_Component_In_Upgrade_Options_Page_for_Pre_Q1_2018_T
     And Validate applied Bill Spend Cap <BillCap> <CapAmount> when BSC is <Q1TariffBSCstatus>
     And Continue to Review page and review the order
     Then order confirmation is displayed
-    And Validate applied Bill Spend Cap <BillCap> <CapAmount> when BSC is <Q1TariffBSCstatus>
+    And Validate order confirmation page for applied Bill Spend Cap <BillCap> <CapAmount> when BSC is <Q1TariffBSCstatus>
     Then Choose <consumer> <status> Business preferences <B1> <B2> <B3> <B4> And Channel Preferences <Text> <Email> <Phone> <Post> <MBBStatus> <DeviceType>
 
     Examples:
-      | username                     | password | tariffAmt | dataValue | MBB Device | houseNumber | PostCode | BillCap       | CapAmount | Q1TariffBSCstatus | BSCstatus | Username     | Action    | tariff                   | consumer | B1  | B2  | B3  | B4  | Text | Email | Phone | Post | status  | MBBStatus | DeviceType |
-      | ins_feb8544@stf.ref.o2.co.uk | test123  | £18       | 6GB       | dongle     | 11          | SL11ER   | DontCapMyBill | Nill      | Disabled          | Enabled   | TEST ACCEPTA | enterCode | 129.99upfront37.00amonth | Someone  | Not | Not | Not | Not | Not  | Not   | Not   | Not  | Enabled | No        | Connected  |
+      | username                      | password | tariffAmt | dataValue | Device_Name   | houseNumber | PostCode | BillCap       | CapAmount | Q1TariffBSCstatus | BSCstatus | Username     | Action    | tariff                   | consumer | B1  | B2  | B3  | B4  | Text | Email | Phone | Post | status  | MBBStatus | DeviceType |
+      | 02fe58138853@stf.ref.o2.co.uk | test123  | £18       | 6GB       | Random Device | 11          | SL11ER   | DontCapMyBill | Nill      | Disabled          | Enabled   | TEST ACCEPTA | enterCode | 129.99upfront37.00amonth | Someone  | Not | Not | Not | Not | Not  | Not   | Not   | Not  | Enabled | No        | Connected  |

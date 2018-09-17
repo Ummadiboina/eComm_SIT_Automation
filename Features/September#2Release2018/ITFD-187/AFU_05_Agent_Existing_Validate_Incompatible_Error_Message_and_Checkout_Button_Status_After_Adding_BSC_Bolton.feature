@@ -20,4 +20,4 @@ Feature: 12_Agent_Existing_Validate_Incompatible_Error_Message_and_Checkout_Butt
 
     Examples:
       | user        | Device | Tariffs  | DeliveryType | BillCapAmount | BSCstatus | IncompatibleError | Firstname | Surname | Username     | HouseNumber | PostCode | Consumer | B1  | B2  | B3     | B4  | Text   | Email  | Phone | Post   | status  | MBBStatus | DeviceType | DeviceModule |
-      | 07801445776 | Phones | Standard | HomeDelivery | £5.00         | Enabled   | Error             | TEST      | ACCEPTA | TEST ACCEPTA | 14          | SL11UP   | Me       | Not | Not | Select | Not | Select | Select | Not   | Select | Enabled | No        | Connected  | Phone        |
+      | 07568414365 | Phones | Standard | HomeDelivery | £5            | Enabled   | Error             | TEST      | ACCEPTA | TEST ACCEPTA | 14          | SL11UP   | Me       | Not | Not | Select | Not | Select | Select | Not   | Select | Enabled | No        | Connected  | Phone        |

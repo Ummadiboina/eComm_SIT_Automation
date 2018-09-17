@@ -753,6 +753,62 @@ public class OrderConfirmationPageActions extends Environment {
 		Screenshots.captureScreenshot();
 	}
 
+	//Validating your bill cap
+	public static void ValidateAppliedBillSpendCapIn_OrderConfirmationPage(String BillCap, String CapAmount, String BSCstatus) throws InterruptedException {
+		Thread.sleep(3000);
+		String AppliedBillCap="";
+		String pageTitle = driver.getTitle();
+		Thread.sleep(2000);
+		try {
+			if(BSCstatus.equalsIgnoreCase("Enabled")) {
+				if (driver.findElements(By.xpath("//p[contains(text(),'Spend Cap')]")).size() > 0) {
 
+					log.debug("Bill spend cap section is displayed at "+pageTitle+" page \n");
+					JavascriptExecutor jse = (JavascriptExecutor) driver;
+					jse.executeScript("window.scrollBy(0,120)", "");
+					log.debug("Bill Spend Cap header is displayed in "+pageTitle+" page ie :: " + pageobjects.OrderConfirmationPage.BillSpendCapHeader.getText());
+
+					Thread.sleep(2000);
+
+					AppliedBillCap = pageobjects.OrderConfirmationPage.AppliedBillCap.getText();
+					Thread.sleep(2000);
+					if (BillCap.contains("CapMyBill")) {
+
+						if (AppliedBillCap.contains(CapAmount)) {
+							log.debug("Applied bill cap is validated successfully in "+pageTitle+" page ie :: " + AppliedBillCap);
+						} else {
+							log.debug("Applied bill cap is not present in " + pageTitle + " page is:: " + AppliedBillCap);
+							Assert.fail("Applied bill cap is not present in " + pageTitle + " page is:: " + AppliedBillCap);
+						}
+					} else if (BillCap.contains("DontCapMyBill")) {
+						if (AppliedBillCap.contains("You've chosen not to add a Spend Cap")) {
+							log.debug("'Dont Cap My Bill' is validated successfully and cap text is::" + AppliedBillCap);
+						} else {
+							log.debug("Failed to validate 'Dont Cap My Bill' and cap text is::" + AppliedBillCap);
+							Assert.fail("Failed to validate 'Dont Cap My Bill' and cap text is::" + AppliedBillCap);
+						}
+					}
+				} else {
+					log.debug("Bill cap section is not present under order summary section in " + pageTitle + " page");
+					Assert.fail("Bill cap section is not present under order summary section in " + pageTitle + " page");
+				}
+			}else if(BSCstatus.equalsIgnoreCase("Disabled")){
+				if (driver.findElements(By.xpath("//p[contains(text(),'Spend Cap')]")).size() > 0) {
+					log.debug("Bill spend cap section is enabled it suppose to be in disabled status in " + pageTitle + " page");
+					Assert.fail("Bill spend cap section is enabled it suppose to be in disabled status in " + pageTitle + " page");
+				}else{
+					log.debug("As expected, Bill spend cap section is disabled in " + pageTitle + " page");
+				}
+			}else {
+				System.out.println("Unable to validate bill spend cap section in " + pageTitle + " page\n");
+				log.debug("Unable to validate bill spend cap section in " + pageTitle + " page\n");
+				Assert.fail("Unable to validate bill spend cap section in " + pageTitle + " page\n");
+			}
+
+		}catch(Exception e){
+			log.debug("Unable to validate Bill cap section in " + pageTitle + " page is:: " + e);
+			Assert.fail("Unable to validate Bill cap section in " + pageTitle + " page is:: " + e);
+		}
+	}
 
 }

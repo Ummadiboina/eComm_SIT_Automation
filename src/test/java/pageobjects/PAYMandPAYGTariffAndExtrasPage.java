@@ -187,10 +187,10 @@ public class PAYMandPAYGTariffAndExtrasPage {
 
 	// Bill Spend Caps section----
 
-	@FindBy(how = How.XPATH, using = "//div[contains(text(),'Your spend cap')] | //div/p/span[contains(text(),'Your Spend Cap')]")
+	@FindBy(how = How.XPATH, using = "//div[contains(text(),'Your Spend Cap')] | //div/p/span[contains(text(),'Your Spend Cap')]")
 	public static WebElement SpendCapSection;
 
-	@FindBy(how = How.XPATH, using = "//div/p/span[contains(text(),'Would you like to add a spend cap ?')] | //div/p[contains(text(),'Would you like to add a Spend Cap? ')]")
+	@FindBy(how = How.XPATH, using = "//div/p/span[contains(text(),'Would you like to add a Spend Cap')] | //div/p[contains(text(),'Would you like to add a Spend Cap')]")
 	public static WebElement SpendCapHeader;
 
 	@FindBy(how = How.XPATH, using = "//button[@id='cap']")
@@ -229,7 +229,7 @@ public class PAYMandPAYGTariffAndExtrasPage {
 	@FindBy(how = How.XPATH, using = "//a[@class='dont-cap-link']")
 	public static WebElement DontCapMyBillLink;
 
-	@FindBy(how = How.XPATH, using = "//div/p/span[contains(text(),'Would you like to add a spend cap ?')]/../a | //div/p[contains(text(),'Would you like to add a Spend Cap? ')]/a")
+	@FindBy(how = How.XPATH, using = "//div/p/span[contains(text(),'Would you like to add a Spend Cap')]/../a | //div/p[contains(text(),'Would you like to add a Spend Cap? ')]/a")
 	public static WebElement CapMyBillOverlay;
 
 	@FindBy(how = How.XPATH, using = "//div[@class='bscOverlay']")
@@ -248,7 +248,7 @@ public class PAYMandPAYGTariffAndExtrasPage {
 	@FindBy(how = How.XPATH, using = "//div[@class='largeTitle']/h2/a | //section[@id='billSpendCapSection']/a[normalize-space()='Edit Spend Cap'] | //span[contains(text(),'2. Your Spend Cap')]/../a")
 	public static WebElement BillCapEditLink;
 
-	@FindBy(how = How.XPATH, using = "//a[normalize-space()='Change tariff']")
+	@FindBy(how = How.XPATH, using = "//a[normalize-space()='Change tariff'] | //div[@class='spentstariff']/div[2]/a")
 	public static WebElement TariffEditLink;
 
 	//Bill Spend cap

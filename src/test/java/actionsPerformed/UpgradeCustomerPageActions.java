@@ -1724,6 +1724,25 @@ public class UpgradeCustomerPageActions extends Environment {
 
     }
 
+    public static void UpgradeYourSimCardSection() throws Exception {
+
+        log.debug('\n' + "Validate Your Sim section is displayed");
+
+        scrollToAnElement.scrollToElement(pageobjects.UpgradeCustomerPage.UpgradeYourSimHeading);
+        Thread.sleep(3000);
+        Screenshots.captureScreenshot();
+
+        if (pageobjects.UpgradeCustomerPage.UpgradeYourSimHeading.isDisplayed()) {
+            log.debug(
+                    "The Your sim section is displayed" + pageobjects.UpgradeCustomerPage.UpgradeYourSimHeading.getText());
+            log.debug("The Your sim section is displayed");
+        } else
+            log.debug("The Your sim section us not diplayed");
+
+        Screenshots.captureScreenshot();
+
+    }
+
     public static void RadioButtonNotSelectedByDefault() throws Exception {
 
         log.debug('\n' + "Validate Your No option is selected by default");

@@ -6519,6 +6519,19 @@ public class E2EOrderPlaced_Steps {
 
     }
 
+    @Then("^I should see 'Your Sim Card'section in upgrade$")
+    public void Your_Sim_Card_section_Upgrade() {
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, UpgradeCustomerPage.class);
+            UpgradeCustomerPageActions.UpgradeYourSimCardSection();
+        } catch (Exception e) {
+            e.printStackTrace();
+            Assert.fail("The Your Sim section not displayed for upgrade users");
+        }
+
+    }
+
     @And("^no option should be selected$")
     public void no_option_should_be_selected() {
         try {
@@ -10733,8 +10746,8 @@ public class E2EOrderPlaced_Steps {
 
 
     //Jamal----ValidateAndClickEditLink-----
-    @And("^Validate and click on BSC 'Edit' link to change ([^\"]*)$")
-    public void ValidateAndClickEditLink(String BillCap) {
+    @And("^Validate and click on BSC 'Edit' link to change ([^\"]*) ([^\"]*)$")
+    public void ValidateAndClickEditLink(String BillCap, String CapAmount) {
         try {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, PAYMandPAYGTariffAndExtrasPage.class);
@@ -10743,7 +10756,7 @@ public class E2EOrderPlaced_Steps {
             Thread.sleep(5000);
             PAYMandPAYGTariffAndExtrasPageActions.clickBSCEditLink();
             Thread.sleep(5000);
-            PAYMandPAYGTariffAndExtrasPageActions.statusAfterBSCEditClicked(BillCap);
+            PAYMandPAYGTariffAndExtrasPageActions.statusAfterBSCEditClicked(BillCap, CapAmount);
         } catch (Exception e) {
             // TODO Auto-generated catch block
             log.debug("Unable to validate edit link");
@@ -10785,14 +10798,47 @@ public class E2EOrderPlaced_Steps {
     }
 
     //Jamal----Validating your bill cap in Basket page-----
-    @And("^Validate applied Bill Spend Cap ([^\"]*) ([^\"]*) when BSC is ([^\"]*)$")
-    public void ValidateYourCapInBasketPage(String BillCap, String CapAmount, String BSCstatus) {
+    @And("^Validate Basket Page for applied Bill Spend Cap([^\"]*) ([^\"]*) when BSC is ([^\"]*)$")
+    public void ValidateBillCapIn_BasketPage(String BillCap, String CapAmount, String BSCstatus) {
         try {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, BasketPage.class);
             log.debug("Currently we are at page: "+driver.getTitle());
             Thread.sleep(5000);
-            BasketPageActions.ValidateAppliedBillSpendCapInBasketPage(BillCap,CapAmount, BSCstatus);
+            BasketPageActions.ValidateAppliedBillSpendCapIn_BasketPage(BillCap,CapAmount, BSCstatus);
+            Thread.sleep(5000);
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            log.debug("Unable to validate your bill cap in basket page");
+            Assert.fail("Unable to validate your bill cap in basket page");
+        }
+    }
+
+    @And("^Validate applied Bill Spend Cap ([^\"]*) ([^\"]*) when BSC is ([^\"]*)$")
+    public void ValidateYourAppliedCap(String BillCap, String CapAmount, String BSCstatus) {
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, DeliveryPage.class);
+            log.debug("Currently we are at page: "+driver.getTitle());
+            Thread.sleep(5000);
+            DeliveryPageActions.ValidateAppliedBillSpendCap(BillCap,CapAmount, BSCstatus);
+            Thread.sleep(5000);
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            log.debug("Unable to validate your bill cap in basket page");
+            Assert.fail("Unable to validate your bill cap in basket page");
+        }
+    }
+
+    //Jamal----Validating your bill cap in Basket page-----
+    @And("^Validate order confirmation page for applied Bill Spend Cap ([^\"]*) ([^\"]*) when BSC is ([^\"]*)$")
+    public void ValidateBillCapIn_OrderConfirmationPage(String BillCap, String CapAmount, String BSCstatus) {
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, OrderConfirmationPage.class);
+            log.debug("Currently we are at page: "+driver.getTitle());
+            Thread.sleep(5000);
+            OrderConfirmationPageActions.ValidateAppliedBillSpendCapIn_OrderConfirmationPage(BillCap,CapAmount, BSCstatus);
             Thread.sleep(5000);
         } catch (Exception e) {
             // TODO Auto-generated catch block

@@ -88,7 +88,7 @@ public class PhonesListingPageAction extends Environment {
 		//driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		Thread.sleep(6000);
 		JavascriptExecutor jse = (JavascriptExecutor) driver;
-		jse.executeScript("window.scrollBy(0,300)", "");
+		jse.executeScript("window.scrollBy(0,200)", "");
 		Screenshots.captureScreenshot();
 		Thread.sleep(3000);
 		try {

@@ -108,6 +108,10 @@ public class UpgradeCustomerPage {
 	@FindBy(how = How.XPATH, using = "//*[@id='yourSim'] | (//div[contains(text(),'Your sim')])[2]")
 	public static WebElement YourSimHeading;
 
+	@FindBy(how = How.XPATH, using = "//div[@id='yourSimSect']")
+	public static WebElement UpgradeYourSimHeading;
+
+
 	@FindBy(how = How.XPATH, using = "//*[@id='needNewSim']")
 	public static WebElement NeedNewSimRadioButton;
 
@@ -258,7 +262,7 @@ public class UpgradeCustomerPage {
 	@FindBy(how = How.XPATH, using = "(//a[@id='tab-switch-to-a-tablet'])[1]")
 	public static WebElement TabletsTab;
 
-	@FindBy(how = How.XPATH, using = "(//a[@id='tab-switch-to-a-mbb'])[1]")
+	@FindBy(how = How.XPATH, using = "//a[normalize-space()='View all Mobile Broadband']")
 	public static WebElement MBBTab;
 	
 	/*@FindBy(how = How.ID, using = "qa-view-all")
