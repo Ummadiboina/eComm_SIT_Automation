@@ -14,7 +14,7 @@ Feature: 24_CFA_PAYG_Phones_Verify_BSC_Component_in_Tariff_and_Extras_Page
     And Select a PayG tariff <tariff>
     And Validate consumer Bill Spend Caps section when BSC is <PayGBSCstatus>
     And I Land on the basket page and choose home delivery option
-    And Validate consumer Bill Spend Caps section when BSC is <PayGBSCstatus>
+    And Validate Basket Page for applied Bill Spend Cap <BillCap> <CapAmount> when BSC is <PayGBSCstatus>
     And click on "go to checkout" button
     And Validate consumer Bill Spend Caps section when BSC is <PayGBSCstatus>
     And input <Firstname> and <Surname> and other valid details in Delivery page to verify GDPR
@@ -25,8 +25,9 @@ Feature: 24_CFA_PAYG_Phones_Verify_BSC_Component_in_Tariff_and_Extras_Page
     And Continue to Review page and review the order
     And Validate consumer Bill Spend Caps section when BSC is <PayGBSCstatus>
     Then order confirmation is displayed
+    And Validate order confirmation page for applied Bill Spend Cap <BillCap> <CapAmount> when BSC is <PayGBSCstatus>
     Then Choose <consumer> <status> Business preferences <B1> <B2> <B3> <B4> And Channel Preferences <Text> <Email> <Phone> <Post> <MBBStatus> <DeviceType>
 
     Examples:
-      | handset       | color      | Firstname | tariff | PayGBSCstatus | Surname | Username     | consumer | B1  | B2     | B3  | B4  | Text | Email  | Phone | Post | status  | MBBStatus | DeviceType |
-      | iPhone 8 Plus | Space Grey | TEST      |        | Disabled      | ACCEPTA | TEST ACCEPTA | Me       | Not | Select | Not | Not | Not  | Select | Not   | Not  | Enabled | No        | Connected  |
+      | handset       | color      | Firstname | tariff | BillCap       | CapAmount | PayGBSCstatus | Surname | Username     | consumer | B1  | B2     | B3  | B4  | Text | Email  | Phone | Post | status  | MBBStatus | DeviceType |
+      | iPhone 8 Plus | Space Grey | TEST      |        | DontCapMyBill | Nill      | Disabled      | ACCEPTA | TEST ACCEPTA | Me       | Not | Select | Not | Not | Not  | Select | Not   | Not  | Enabled | No        | Connected  |

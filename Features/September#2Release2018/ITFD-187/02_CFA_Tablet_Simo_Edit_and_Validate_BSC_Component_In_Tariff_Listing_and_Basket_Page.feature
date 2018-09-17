@@ -13,9 +13,10 @@ Feature: 02_CFA_Tablet_Simo_Edit_and_Validate_BSC_Component_In_Tariff_Listing_an
     And Validate BSC 'Edit' link
     And Validate and click on Tariff 'Edit' link
     And Select any Random Tariff in the displayed list of Tariffs under different <Contract> tab
+    And Validate consumer Bill Spend Caps section when BSC is <BSCstatus>
     And Choose your bill cap <NewBillCap> <NewCapAmount> when BSC is <BSCstatus>
     And I Land on the Plan included basket page and choose home delivery option
-    And Validate applied Bill Spend Cap <NewBillCap> <NewCapAmount> when BSC is <BSCstatus>
+    And Validate Basket Page for applied Bill Spend Cap <BillCap> <CapAmount> when BSC is <BSCstatus>
     And click on "go to checkout" button
     And input <Firstname> and <Surname> and other valid details in Delivery page to verify GDPR
     And Validate applied Bill Spend Cap <NewBillCap> <NewCapAmount> when BSC is <BSCstatus>
@@ -24,7 +25,7 @@ Feature: 02_CFA_Tablet_Simo_Edit_and_Validate_BSC_Component_In_Tariff_Listing_an
     And land on the payment page and input <Username> and other details and click 'Continue on next step' for SimOnly
     And Continue to Review page and review the order
     Then order confirmation is displayed
-    And Validate applied Bill Spend Cap <NewBillCap> <NewCapAmount> when BSC is <BSCstatus>
+    And Validate order confirmation page for applied Bill Spend Cap <NewBillCap> <NewCapAmount> when BSC is <BSCstatus>
     Then verify cover me is present in  pdf download
     Then Choose <consumer> <status> Business preferences <B1> <B2> <B3> <B4> And Channel Preferences <Text> <Email> <Phone> <Post> <MBBStatus> <DeviceType>
 
