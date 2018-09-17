@@ -11017,7 +11017,7 @@ public class E2EOrderPlaced_Steps {
     public void fr_PDpage(String upfront, String term, String data){
         try {
             // driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-            Thread.sleep(500);
+            Thread.sleep(2000);
             PageFactory.initElements(driver, ConnectedDeviceDetailsPage.class);
             log.debug("Currently we are at page: "+driver.getTitle());
             Thread.sleep(500);
