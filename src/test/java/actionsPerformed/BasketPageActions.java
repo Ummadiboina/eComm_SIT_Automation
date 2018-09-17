@@ -869,7 +869,7 @@ public class BasketPageActions extends Environment {
 	}
 
 	//Validating your bill cap in Basket page
-	public static void ValidateAppliedBillSpendCapInBasketPage(String BillCap, String CapAmount, String BSCstatus) throws InterruptedException, IOException {
+	public static void ValidateAppliedBillSpendCapIn_BasketPage(String BillCap, String CapAmount, String BSCstatus) throws InterruptedException, IOException {
 		Thread.sleep(3000);
 		String AppliedBillCap="";
 		String pageTitle = driver.getTitle();
@@ -901,7 +901,7 @@ public class BasketPageActions extends Environment {
 					Thread.sleep(2000);
 
 					AppliedBillCap = pageobjects.BasketPage.AppliedBillCap.getText();
-
+					Thread.sleep(2000);
 					if (BillCap.contains("CapMyBill")) {
 
 						if (AppliedBillCap.contains(CapAmount)) {

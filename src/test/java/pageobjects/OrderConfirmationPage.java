@@ -117,10 +117,10 @@ public class OrderConfirmationPage {
 	@FindBy(how = How.XPATH, using = "//div[@class='overlay-box B4']//p")
 	public static WebElement PartnersContacting_OverlayText;
 
-	@FindBy(how = How.XPATH, using = "//*[@class='BillSpendCapHeader']")
+	@FindBy(how = How.XPATH, using = "//p[contains(text(),'Spend Cap')]")
 	public static WebElement BillSpendCapHeader;
 
-	@FindBy(how = How.XPATH, using = "//*[@class='AppliedBillCap']")
+	@FindBy(how = How.XPATH, using = "//p[contains(text(),'Spend Cap')]")
 	public static WebElement AppliedBillCap;
 
 }

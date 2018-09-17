@@ -14,12 +14,14 @@ Feature: 23_CFA_Choose_Different_Tariff_From_Basket_Page_and_Validate_Tariffs_an
     And Land on the 'Tariffs and extra' page
     And Validate consumer Bill Spend Caps section when BSC is <BSCstatus>
     And Choose your bill cap <BillCap> <CapAmount> when BSC is <BSCstatus>
-    And Validate applied Bill Spend Cap <BillCap> <CapAmount> when BSC is <BSCstatus>
+    #And Validate applied Bill Spend Cap <BillCap> <CapAmount> when BSC is <BSCstatus>
     And I Land on the basket page and choose home delivery option
-    And Validate applied Bill Spend Cap <BillCap> <CapAmount> when BSC is <BSCstatus>
+    And Validate Basket Page for applied Bill Spend Cap <BillCap> <CapAmount> when BSC is <BSCstatus>
     And Validate and click on Tariff 'Edit' link
     And Click on 'Select' CTA to buy a valid <tariffAmt> and <dataValue>
     And Validate consumer Bill Spend Caps section when BSC is <Q1TariffBSCstatus>
+    And I Land on the basket page and choose home delivery option
+    And Validate Basket Page for applied Bill Spend Cap <BillCap> <CapAmount> when BSC is <Q1TariffBSCstatus>
     And click on "go to checkout" button
     And Validate applied Bill Spend Cap <BillCap> <CapAmount> when BSC is <Q1TariffBSCstatus>
     And enter a <Firstname> and <Surname> and ten digit home number
@@ -31,7 +33,7 @@ Feature: 23_CFA_Choose_Different_Tariff_From_Basket_Page_and_Validate_Tariffs_an
     And Validate applied Bill Spend Cap <BillCap> <CapAmount> when BSC is <Q1TariffBSCstatus>
     And Continue to Review page and review the order
     When order confirmation is displayed
-    And Validate applied Bill Spend Cap <BillCap> <CapAmount> when BSC is <Q1TariffBSCstatus>
+    And Validate order confirmation page for applied Bill Spend Cap <BillCap> <CapAmount> when BSC is <Q1TariffBSCstatus>
     Then Choose <consumer> <status> Business preferences <B1> <B2> <B3> <B4> And Channel Preferences <Text> <Email> <Phone> <Post> <MBBStatus> <DeviceType>
 
     Examples:

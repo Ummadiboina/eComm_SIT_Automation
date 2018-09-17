@@ -14,4 +14,4 @@ Feature: 21_AFU_Verify_that_the_BSC_component_is_not_displayed_when_the_BSC_flag
 
     Examples:
       | user        | Device | Tariffs | DeliveryType | BillCapAmount | BSCstatus | IncompatibleError | Firstname | Surname | Username     | HouseNumber | PostCode | Consumer | B1  | B2  | B3     | B4  | Text   | Email  | Phone | Post   | status  | MBBStatus | DeviceType | DeviceModule |
-      | 07801445776 | Phone  | Refresh | HomeDelivery | Nill          | Disabled  | Error             | TEST      | ACCEPTA | TEST ACCEPTA | 14          | SL11UP   | Me       | Not | Not | Select | Not | Select | Select | Not   | Select | Enabled | No        | Connected  | Phone        |
+      | 07731435829 | Phone  | Refresh | HomeDelivery | Nill          | Disabled  | Error             | TEST      | ACCEPTA | TEST ACCEPTA | 14          | SL11UP   | Me       | Not | Not | Select | Not | Select | Select | Not   | Select | Enabled | No        | Connected  | Phone        |

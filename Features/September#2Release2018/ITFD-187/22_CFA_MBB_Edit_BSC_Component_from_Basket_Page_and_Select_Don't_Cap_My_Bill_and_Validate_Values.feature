@@ -11,14 +11,14 @@ Feature: 22_CFA_MBB_Edit_BSC_Component_from_Basket_Page_and_Select_Don't_Cap_My_
     And Land on the 'Tariffs and extra' page
     And Validate consumer Bill Spend Caps section when BSC is <BSCstatus>
     And Choose your bill cap <BillCap> <CapAmount> when BSC is <BSCstatus>
-    And Validate applied Bill Spend Cap <BillCap> <CapAmount> when BSC is <BSCstatus>
+    #And Validate applied Bill Spend Cap <BillCap> <CapAmount> when BSC is <BSCstatus>
     And I Land on the basket page and choose home delivery option
-    And Validate applied Bill Spend Cap <BillCap> <CapAmount> when BSC is <BSCstatus>
-    And Validate and click on BSC 'Edit' link to change <BillCap>
+    And Validate Basket Page for applied Bill Spend Cap <BillCap> <CapAmount> when BSC is <BSCstatus>
+    And Validate and click on BSC 'Edit' link to change <BillCap> <CapAmount>
     And Choose your bill cap <NewBillCap> <NewCapAmount> when BSC is <BSCstatus>
-    And Validate applied Bill Spend Cap <NewBillCap> <NewCapAmount> when BSC is <BSCstatus>
+    #And Validate applied Bill Spend Cap <NewBillCap> <NewCapAmount> when BSC is <BSCstatus>
     And I Land on the basket page and choose home delivery option
-    And Validate applied Bill Spend Cap <NewBillCap> <NewCapAmount> when BSC is <BSCstatus>
+    And Validate Basket Page for applied Bill Spend Cap <NewBillCap> <NewCapAmount> when BSC is <BSCstatus>
     And click on "go to checkout" button
     And Validate applied Bill Spend Cap <NewBillCap> <NewCapAmount> when BSC is <BSCstatus>
     And input <Firstname> and <Surname> and other valid details in Delivery page to verify GDPR
@@ -30,7 +30,7 @@ Feature: 22_CFA_MBB_Edit_BSC_Component_from_Basket_Page_and_Select_Don't_Cap_My_
     And Validate applied Bill Spend Cap <NewBillCap> <NewCapAmount> when BSC is <BSCstatus>
     And Continue to Review page and review the order
     When order confirmation is displayed
-    And Validate applied Bill Spend Cap <NewBillCap> <NewCapAmount> when BSC is <BSCstatus>
+    And Validate order confirmation page for applied Bill Spend Cap <NewBillCap> <NewCapAmount> when BSC is <BSCstatus>
     Then Choose <consumer> <status> Business preferences <B1> <B2> <B3> <B4> And Channel Preferences <Text> <Email> <Phone> <Post> <MBBStatus> <DeviceType>
 
     Examples:

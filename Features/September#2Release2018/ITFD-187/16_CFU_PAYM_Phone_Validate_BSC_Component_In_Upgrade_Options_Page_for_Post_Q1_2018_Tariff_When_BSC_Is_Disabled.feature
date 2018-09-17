@@ -19,7 +19,7 @@ Feature: 16_CFU_PAYM_Phone_Validate_BSC_Component_In_Upgrade_Options_Page_for_Po
     And Verify that 'Confirm CTA' is displayed
     And Click on 'Confirm CTA'
     And I Land on the basket page by clicking on Add to Basket button
-    And Validate applied Bill Spend Cap <BillCap> <CapAmount> when BSC is <Q1TariffBSCstatus>
+    And Validate Basket Page for applied Bill Spend Cap <BillCap> <CapAmount> when BSC is <Q1TariffBSCstatus>
     And click on "go to checkout" button
     And perform <Action> in OTAC page
     And Validate applied Bill Spend Cap <BillCap> <CapAmount> when BSC is <Q1TariffBSCstatus>
@@ -33,9 +33,9 @@ Feature: 16_CFU_PAYM_Phone_Validate_BSC_Component_In_Upgrade_Options_Page_for_Po
     And Validate applied Bill Spend Cap <BillCap> <CapAmount> when BSC is <Q1TariffBSCstatus>
     And Continue to Review page and review the order
     Then order confirmation is displayed
-    And Validate applied Bill Spend Cap <BillCap> <CapAmount> when BSC is <Q1TariffBSCstatus>
+    And Validate order confirmation page for applied Bill Spend Cap <BillCap> <CapAmount> when BSC is <Q1TariffBSCstatus>
     Then Choose <consumer> <status> Business preferences <B1> <B2> <B3> <B4> And Channel Preferences <Text> <Email> <Phone> <Post> <MBBStatus> <DeviceType>
 
     Examples:
-      | username                     | password | handset  | tariffAmt | dataValue | houseNumber | PostCode | BillCap       | CapAmount | Q1TariffBSCstatus | BSCstatus | Username     | Action    | tariff                   | consumer | B1     | B2     | B3     | B4  | Text   | Email  | Phone  | Post   | status  | MBBStatus | DeviceType |
-      | ins_feb8544@stf.ref.o2.co.uk | test123  | iPhone X | £18       | 6GB       | 11          | SL11ER   | DontCapMyBill | Nill      | Disabled          | Enabled   | TEST ACCEPTA | enterCode | 129.99upfront37.00amonth | Me       | Select | Select | Select | Not | Select | Select | Select | Select | Enabled | No        | Connected  |
+      | username                      | password | handset  | tariffAmt | dataValue | houseNumber | PostCode | BillCap       | CapAmount | Q1TariffBSCstatus | BSCstatus | Username     | Action    | tariff                   | consumer | B1     | B2     | B3     | B4  | Text   | Email  | Phone  | Post   | status  | MBBStatus | DeviceType |
+      | 31ja96389478@stf.ref.o2.co.uk | test123  | iPhone X | £18       | 6GB       | 11          | SL11ER   | DontCapMyBill | Nill      | Disabled          | Enabled   | TEST ACCEPTA | enterCode | 129.99upfront37.00amonth | Me       | Select | Select | Select | Not | Select | Select | Select | Select | Enabled | No        | Connected  |

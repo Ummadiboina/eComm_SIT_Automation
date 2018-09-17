@@ -13,5 +13,5 @@ Feature: 22_Agent_exisiting_customer_Verify_that_the_BSC_component_is_not_displa
     And Validate Bill Spend Cap in agent deal builder section when BSC is <BSCstatus>
 
     Examples:
-      | user        | Device | Tariffs | DeliveryType | BillCapAmount   | BSCstatus | IncompatibleError | Firstname | Surname | Username     | HouseNumber | PostCode | Consumer | B1  | B2  | B3     | B4  | Text   | Email  | Phone | Post   | status  | MBBStatus | DeviceType | DeviceModule |
-      | 07801445776 | Phones | Refresh | HomeDelivery | Dont cap my bil | Disabled  | Error             | TEST      | ACCEPTA | TEST ACCEPTA | 14          | SL11UP   | Me       | Not | Not | Select | Not | Select | Select | Not   | Select | Enabled | No        | Connected  | Phone        |
+      | user        | Device | Tariffs | DeliveryType | BillCapAmount | BSCstatus | IncompatibleError | Firstname | Surname | Username     | HouseNumber | PostCode | Consumer | B1  | B2  | B3     | B4  | Text   | Email  | Phone | Post   | status  | MBBStatus | DeviceType | DeviceModule |
+      | 07521127392 | Phones | Refresh | HomeDelivery | No Spend Cap  | Disabled  | Error             | TEST      | ACCEPTA | TEST ACCEPTA | 14          | SL11UP   | Me       | Not | Not | Select | Not | Select | Select | Not   | Select | Enabled | No        | Connected  | Phone        |

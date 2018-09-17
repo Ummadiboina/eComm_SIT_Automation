@@ -14,15 +14,15 @@ Feature: 17_CFA_Phones_Choose_Different_Tariff_From_Basket_Page_and_Validate_BSC
     And Land on the 'Tariffs and extra' page
     And Validate consumer Bill Spend Caps section when BSC is <BSCstatus>
     And Choose your bill cap <BillCap> <CapAmount> when BSC is <BSCstatus>
-    And Validate applied Bill Spend Cap <BillCap> <CapAmount> when BSC is <BSCstatus>
+    #And Validate applied Bill Spend Cap <BillCap> <CapAmount> when BSC is <BSCstatus>
     And I Land on the basket page and choose home delivery option
-    And Validate applied Bill Spend Cap <BillCap> <CapAmount> when BSC is <BSCstatus>
+    And Validate Basket Page for applied Bill Spend Cap <BillCap> <CapAmount> when BSC is <BSCstatus>
     And Validate and click on Tariff 'Edit' link
     And Land on the 'Tariffs and extra' page
     And Validate consumer Bill Spend Caps section when BSC is <BSCstatus>
     And Choose your bill cap <NewBillCap> <NewCapAmount> when BSC is <BSCstatus>
     And I Land on the basket page and choose home delivery option
-    And Validate applied Bill Spend Cap <NewBillCap> <NewCapAmount> when BSC is <BSCstatus>
+    And Validate Basket Page for applied Bill Spend Cap <NewBillCap> <NewCapAmount> when BSC is <BSCstatus>
     And click on "go to checkout" button
     And Validate applied Bill Spend Cap <NewBillCap> <NewCapAmount> when BSC is <BSCstatus>
     And enter a <Firstname> and <Surname> and ten digit home number
@@ -34,7 +34,7 @@ Feature: 17_CFA_Phones_Choose_Different_Tariff_From_Basket_Page_and_Validate_BSC
     And Validate applied Bill Spend Cap <NewBillCap> <NewCapAmount> when BSC is <BSCstatus>
     And Continue to Review page and review the order
     When order confirmation is displayed
-    And Validate applied Bill Spend Cap <NewBillCap> <NewCapAmount> when BSC is <BSCstatus>
+    And Validate order confirmation page for applied Bill Spend Cap <NewBillCap> <NewCapAmount> when BSC is <BSCstatus>
     Then Choose <consumer> <status> Business preferences <B1> <B2> <B3> <B4> And Channel Preferences <Text> <Email> <Phone> <Post> <MBBStatus> <DeviceType>
 
     Examples:
