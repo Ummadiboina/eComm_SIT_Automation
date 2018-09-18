@@ -154,11 +154,11 @@ public class CommonActions extends  Environment {
     public static void clickWebElement(WebElement locater) {
         try {
             //locater.isDisplayed();
-            driverWait(1000);
+            driverWait(500);
             highlightElement(locater);
             JavascriptExecutor executor = (JavascriptExecutor) driver;
             executor.executeScript("arguments[0].click();", locater);
-            driverWait(1000);
+            driverWait(500);
 
         } catch (Exception e) {
             // TODO: handle exception
@@ -313,7 +313,6 @@ public class CommonActions extends  Environment {
         }
     }
 
-
     public static String getTheText(WebElement locater) {
         String val="";
         try {
@@ -331,7 +330,7 @@ public class CommonActions extends  Environment {
     public static void highlightElement(WebElement locater) throws InterruptedException {
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript ("arguments[0].setAttribute('style', 'background: yellow; border: 2px solid pink;');", locater);
-        Thread.sleep (500);
+        Thread.sleep (100);
         js.executeScript ("arguments[0].setAttribute('style','border: solid 2px white')", locater);
     }
 

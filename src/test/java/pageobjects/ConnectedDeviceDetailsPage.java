@@ -106,7 +106,7 @@ public class ConnectedDeviceDetailsPage {
     public static WebElement toggle_360_spin;
 
     //toggle-gallery
-    @FindBy(how = How.XPATH, using = "//a[@class='icon-link  toggle-gallery']")
+    @FindBy(how = How.XPATH, using = "//a[@class='icon-link  toggle-gallery tabIndexClass']")
     public static WebElement toggle_gallery;
 
     //toggle-play video
