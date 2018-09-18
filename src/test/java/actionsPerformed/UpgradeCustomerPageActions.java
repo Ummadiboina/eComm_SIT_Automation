@@ -500,16 +500,17 @@ public class UpgradeCustomerPageActions extends Environment {
 
     public static void selectPayGTariff(String Tariff) throws IOException, InterruptedException {
         log.debug("selecting PayG Tariff");
-        Thread.sleep(4000);
+        Thread.sleep(6000);
 
         WebElement selectBtnEle = PAYMandPAYGTariffAndExtrasPage.SelectAnyPayGTariff;
+        Thread.sleep(2000);
         scrollToAnElement.scrollToElement(PAYMandPAYGTariffAndExtrasPage.SelectAnyPayGTariff);
         Thread.sleep(3000);
         Screenshots.captureScreenshot();
             if (selectBtnEle.isDisplayed()) {
                 ((JavascriptExecutor) driver).executeScript("arguments[0].click();", selectBtnEle);
                 log.debug("PayG Tariff has been selected");
-                scrollToAnElement.scrollToElement(driver.findElement(By.xpath("//div[contains(text(),'Your extras')]")));
+                //scrollToAnElement.scrollToElement(driver.findElement(By.xpath("//div[contains(text(),'Your extras')]")));
                 Thread.sleep(3000);
                 Screenshots.captureScreenshot();
                 //log.debug("Selected 'Device with 1GB preloaded data sim'");
@@ -520,10 +521,12 @@ public class UpgradeCustomerPageActions extends Environment {
             Thread.sleep(3000);
             if(driver.findElements(By.xpath("(//p[normalize-space()='Selected'])[1]/../div[1]")).size()>0) {
                 tariffNameTxt = driver.findElement(By.xpath("(//p[normalize-space()='Selected'])[1]/../div[1]")).getText();
+                Thread.sleep(2000);
                 log.debug("Tariff:"+tariffNameTxt);
             }
             if(driver.findElements(By.xpath("(//p[normalize-space()='Selected'])[1]/../ul[1]")).size()>0) {
                 marketingMessage = driver.findElement(By.xpath("(//p[normalize-space()='Selected'])[1]/../ul[1]")).getText();
+                Thread.sleep(2000);
                 log.debug("Marketing Message:"+marketingMessage);
             }
         JavascriptExecutor jse = (JavascriptExecutor) driver;

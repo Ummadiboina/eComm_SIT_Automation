@@ -419,6 +419,7 @@ public class Agent_DealBuilderPageActions extends Environment {
 
     public static void eMailConfirmation() throws InterruptedException, IOException {
         // TODO Auto-generated method stub
+        Thread.sleep(3000);
 
         String Mainwindow = driver.getWindowHandle();
         // getting all the popup windows , hence using getwindowhandles instead

@@ -915,7 +915,7 @@ public class DeliveryPageActions extends Environment {
                             Assert.fail("Applied bill cap is not present in " + pageTitle + " page is:: " + AppliedBillCap);
                         }
                     } else if (BillCap.contains("DontCapMyBill")) {
-                        if (AppliedBillCap.contains("You've chosen not to add a Spend Cap")) {
+                        if (AppliedBillCap.contains("No Spend Cap applied")) {
                             log.debug("'Dont Cap My Bill' is validated successfully and cap text is::" + AppliedBillCap);
                         } else {
                             log.debug("Failed to validate 'Dont Cap My Bill' and cap text is::" + AppliedBillCap);

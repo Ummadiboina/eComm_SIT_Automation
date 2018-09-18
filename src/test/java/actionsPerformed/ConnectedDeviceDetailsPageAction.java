@@ -399,11 +399,12 @@ public class ConnectedDeviceDetailsPageAction extends Environment {
 
     }
 
-    public static void checkDevStatusAsPreOrder() throws IOException {
+    public static void checkDevStatusAsPreOrder() throws IOException, InterruptedException {
         // TODO Auto-generated method stub
         // Have to change the below text
         log.debug("checkDevStatusAsPreOrder");
         String preoder = pageobjects.ConnectedDeviceDetailsPage.PreDevStatusMsg.getText();
+        Thread.sleep(3000);
         log.debug("Stock status is :" + preoder);
         if (preoder.contains("Pre") || preoder.contains("Pre-order") || preoder.contains("Order by midnight")) {
             log.debug("Device is Pre Order Device");
@@ -415,9 +416,10 @@ public class ConnectedDeviceDetailsPageAction extends Environment {
         Screenshots.captureScreenshot();
     }
 
-    public static void checkDevStatusAsDelayedDelivery() throws IOException {
+    public static void checkDevStatusAsDelayedDelivery() throws IOException, InterruptedException {
         // TODO Auto-generated method stub
         String deliveryMg = pageobjects.ConnectedDeviceDetailsPage.DevStatusMsg.getText();
+        Thread.sleep(3000);
         if (deliveryMg.contains("Home delivery") || deliveryMg.contains("Order by midnight")) {
             log.debug("Device is Delayed Delivery Device: " + deliveryMg);
 

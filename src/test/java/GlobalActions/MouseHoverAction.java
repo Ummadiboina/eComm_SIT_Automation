@@ -61,7 +61,7 @@ public class MouseHoverAction extends Environment {
 
     public static void PayMPhonesLandingPage() throws Exception {
         //driver.manage().timeouts().implicitlyWait(150, TimeUnit.SECONDS);
-        Thread.sleep(8000);
+        Thread.sleep(10000);
         try {
             /*********************************************************************
              normal execution flow in ref Env....        ************************/
@@ -921,12 +921,12 @@ public class MouseHoverAction extends Environment {
                 Actions action = new Actions(driver);
                 action.moveToElement(MouseHoverPage.MoveMouseOnShopTab_Drupal).perform();
                 log.debug("Mouse over on the Shop Header ");
-                Thread.sleep(2000);
+                Thread.sleep(3000);
 
                 Actions action1 = new Actions(driver);
                 action1.moveToElement(MouseHoverPage.MoveMouseOnSmarttechTab_gdpr).perform();
                 log.debug("Moving Mouse on the Browse Phones option");
-                Thread.sleep(2000);
+                Thread.sleep(3000);
 
                 // MouseHoverPage.MoveMouseOnPhones_Drupal.click();
                 JavascriptExecutor executor = (JavascriptExecutor)driver;
@@ -1113,14 +1113,14 @@ public class MouseHoverAction extends Environment {
                 Actions action = new Actions(driver);
                 action.moveToElement(MouseHoverPage.MoveMouseOnShopTab_Drupal).perform();
                 log.debug("Mouse over on the Shop Header ");
-                Thread.sleep(2000);
+                Thread.sleep(4000);
 
                 Screenshots.captureScreenshot();
 
                 Actions action1 = new Actions(driver);
                 action1.moveToElement(MouseHoverPage.MoveMouseOnMobileBroadband_Drupal).perform();
                 log.debug("Moving Mouse on the MBB");
-                Thread.sleep(2000);
+                Thread.sleep(3000);
 
                 // MouseHoverPage.MoveMouseOnPhones_Drupal.click();
                 JavascriptExecutor executor = (JavascriptExecutor) driver;
@@ -1733,6 +1733,8 @@ public class MouseHoverAction extends Environment {
                 executor.executeScript("arguments[0].click();", MouseHoverPage.MoveMouseOnBrowseTablets_Drupal);
                 Thread.sleep(5000);
                 Screenshots.captureScreenshot();
+
+                Thread.sleep(5000);
 
                 JavascriptExecutor executor1 = (JavascriptExecutor)driver;
                 executor1.executeScript("arguments[0].click();", MouseHoverPage.PayGBrowseTablets_Drupal);

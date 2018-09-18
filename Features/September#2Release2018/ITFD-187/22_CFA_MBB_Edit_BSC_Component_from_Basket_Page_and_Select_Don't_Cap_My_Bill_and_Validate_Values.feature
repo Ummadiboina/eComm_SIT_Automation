@@ -34,5 +34,5 @@ Feature: 22_CFA_MBB_Edit_BSC_Component_from_Basket_Page_and_Select_Don't_Cap_My_
     Then Choose <consumer> <status> Business preferences <B1> <B2> <B3> <B4> And Channel Preferences <Text> <Email> <Phone> <Post> <MBBStatus> <DeviceType>
 
     Examples:
-      | Device_Name   | Firstname | Surname | Username     | BillCap   | CapAmount | NewBillCap    | NewCapAmount | BSCstatus | color      | consumer | B1  | B2  | B3     | B4  | Text | Email  | Phone | Post | status  | MBBStatus | DeviceType |
-      | Random Device | TEST      | ACCEPTA | TEST ACCEPTA | CapMyBill | £5        | DontCapMyBill | Nill         | Enabled   | Space Grey | Me       | Not | Not | Select | Not | Not  | Select | Not   | Not  | Enabled | No        | Connected  |
+      | Device_Name   | Firstname | Surname | Username     | BillCap   | CapAmount | NewBillCap    | NewCapAmount      | BSCstatus | color      | consumer | B1  | B2  | B3     | B4  | Text | Email  | Phone | Post | status  | MBBStatus | DeviceType |
+      | Random Device | TEST      | ACCEPTA | TEST ACCEPTA | CapMyBill | £5        | DontCapMyBill | DontCapMyBillLink | Enabled   | Space Grey | Me       | Not | Not | Select | Not | Not  | Select | Not   | Not  | Enabled | No        | Connected  |

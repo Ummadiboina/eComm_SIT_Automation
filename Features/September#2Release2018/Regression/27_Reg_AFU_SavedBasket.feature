@@ -15,5 +15,5 @@ Feature: 27_Reg_AFU_SavedBasket
     And Verify email is sent successfully
 
     Examples:
-      | user        | Device                            | Tariffs | BSCstatus |
-      | 07521116249 | Galaxy S9 Plus 128GB Lilac Purple | Refresh | Enabled   |
+      | user        | Device                         | Tariffs | BSCstatus |
+      | 07521116249 | iPhone 8 Plus 256GB Space Grey | Refresh | Enabled   |

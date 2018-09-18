@@ -70,10 +70,13 @@ public class E2EOrderPlaced_Steps {
     public void i_am_an_CFA_user_and_Lands_on_shop_page() {
         try {
             PageFactory.initElements(driver, MouseHoverPage.class);
-
-            // MouseHoverAction.ByPassDroopalPage();
+             // MouseHoverAction.ByPassDroopalPage();
             //ShopLandingPageAction.GetTitle_ref();
             ShopLandingPageAction.GetTitle();
+
+            if(driver.findElements(By.xpath("//div[@class='container']/a[@class='close-icon']")).size()>0){
+                driver.findElement(By.xpath("//div[@class='container']/a[@class='close-icon']")).click();
+            }
 
         } catch (Exception e) {
             // TODO Auto-generated catch block
@@ -245,12 +248,12 @@ public class E2EOrderPlaced_Steps {
     @And("^navigate to PAYM Phones page$")
     public void navigate_to_PAYM_Phones_page() {
         try {
-            driver.manage().timeouts().implicitlyWait(12, TimeUnit.SECONDS);
+            driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
             PageFactory.initElements(driver, MouseHoverPage.class);
             MouseHoverAction.PayMPhonesLandingPage();
             Thread.sleep(4000);
             Autoredirection.redirect();
-            Thread.sleep(6000);
+            Thread.sleep(8000);
             //GlobalActions.//CommonFunctionscheckTitle("PayM Phones Page");
 
         } catch (Exception e) {
@@ -476,6 +479,9 @@ public class E2EOrderPlaced_Steps {
             // MouseHoverAction.UpgradeandUpgradeNow();
             UpgradeCustomerPageActions.Signin();
             Autoredirection.redirectUpgrades();
+            if(driver.findElements(By.xpath("//div[@class='container']/a[@class='close-icon']")).size()>0){
+                driver.findElement(By.xpath("//div[@class='container']/a[@class='close-icon']")).click();
+            }
             //GlobalActions.//CommonFunctionscheckTitle("Sign In Page");
         } catch (Exception e) {
             // TODO Auto-generated catch block
@@ -3954,7 +3960,7 @@ public class E2EOrderPlaced_Steps {
     @And("^navigate to PAYM Tablets page$")
     public void navigate_to_PAYM_Tablets_page() {
         try {
-            // driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
             PageFactory.initElements(driver, MouseHoverPage.class);
             MouseHoverAction.PayMTabletsLandingPage();
             Autoredirection.redirect();
@@ -6301,6 +6307,7 @@ public class E2EOrderPlaced_Steps {
     @And("^check the status ([^\"]*) of the device$")
     public void check_status_of_device(String status) {
         try {
+            Thread.sleep(3000);
             driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
             PageFactory.initElements(driver, ConnectedDeviceDetailsPage.class);
             if (status.equals("Pre Order")) {
@@ -8288,7 +8295,7 @@ public class E2EOrderPlaced_Steps {
     @And("^Select a PayG tariff ([^\"]*)$")
     public void selectPayGTariffTariff(String Tariff) {
         try {
-            driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, UpgradeCustomerPage.class);
             PageFactory.initElements(driver, PAYMandPAYGTariffAndExtrasPage.class);
             UpgradeCustomerPageActions.selectPayGTariff(Tariff);
@@ -10698,11 +10705,13 @@ public class E2EOrderPlaced_Steps {
             PageFactory.initElements(driver, PAYMandPAYGTariffAndExtrasPage.class);
             Thread.sleep(5000);
             Screenshots.captureScreenshot();
-            if (pageobjects.PAYMandPAYGTariffAndExtrasPage.DontCapMyBillButton.isEnabled()) {
-                PAYMandPAYGTariffAndExtrasPage.DontCapMyBillButton.click();
-                log.debug("Dont Cap My Bill Button is clicked");
-                Thread.sleep(3000);
-                Screenshots.captureScreenshot();
+            if(driver.findElements(By.xpath("//button[@id='dontcap']")).size()>0) {
+                if (pageobjects.PAYMandPAYGTariffAndExtrasPage.DontCapMyBillButton.isEnabled()) {
+                    PAYMandPAYGTariffAndExtrasPage.DontCapMyBillButton.click();
+                    log.debug("Dont Cap My Bill Button is clicked");
+                    Thread.sleep(3000);
+                    Screenshots.captureScreenshot();
+                }
             }
         } catch (Exception e) {
             // TODO Auto-generated catch block
@@ -10875,9 +10884,11 @@ public class E2EOrderPlaced_Steps {
             log.debug("Currently we are at page: "+driver.getTitle());
             Thread.sleep(3000);
             Screenshots.captureScreenshot();
-            driver.findElement(By.xpath("//p[@class='billSpendCapSelection']/select/option[2]")).click();
-            log.debug("No Spend Cap option is selected");
-            Screenshots.captureScreenshot();
+            if(driver.findElements(By.xpath("//p[@class='billSpendCapSelection']/select")).size()>0) {
+                driver.findElement(By.xpath("//p[@class='billSpendCapSelection']/select/option[2]")).click();
+                log.debug("No Spend Cap option is selected");
+                Screenshots.captureScreenshot();
+            }
         } catch (Exception e) {
             // TODO Auto-generated catch block
             log.debug("Unable to add your bill cap in Agent deal builder page");
