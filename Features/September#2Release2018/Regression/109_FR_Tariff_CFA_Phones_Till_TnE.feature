@@ -1,7 +1,7 @@
-Feature: 3_3_FR_Tariff_CFA_Phones_Till_TnE.feature
+Feature: 109_FR_Tariff_CFA_Phones_Till_TnE
 
   @Web
-  Scenario Outline: 3_3_FR_Tariff_CFA_Phones_Till_TnE
+  Scenario Outline: 109_FR_Tariff_CFA_Phones_Till_TnE
     Given I am an CFA user and Lands on shop page
     And navigate to PAYM Phones page
     And I choose PayM <handset>
@@ -14,5 +14,5 @@ Feature: 3_3_FR_Tariff_CFA_Phones_Till_TnE.feature
 
     Examples:
       | handset       | tariffAmt | dataValue | color      | Firstname | Surname | consumer | B1     | B2  | B3  | B4  | Text   | Email | Phone | Post | status  | MBBStatus | DeviceType | upFront | term | data |
-      | iPhone 8 Plus | £39       | 8GB       | Space Grey | Test      | Accepta | Me       | Select | Not | Not | Not | Select | Not   | Not   | Not  | Enabled | No        | Connected  | avg     | min  | avg  |
+      | iPhone 8 Plus | £39       | 8GB       | Space Grey | Test      | Accepta | Me       | Select | Not | Not | Not | Select | Not   | Not   | Not  | Enabled | No        | Connected  | max     | max  | avg  |
 

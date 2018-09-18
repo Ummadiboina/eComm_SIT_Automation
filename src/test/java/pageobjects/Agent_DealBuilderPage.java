@@ -179,7 +179,7 @@ public class Agent_DealBuilderPage {
     /////////////////////////////////// Agent_BuyOut///////////////////////////////
     //////////////////////////////////////////////////////////////////////////////
 
-    @FindBy(how = How.XPATH, using = "//*[@id='buyOutButton']")
+    @FindBy(how = How.XPATH, using = "//*[@id='BuyOutButton']")
     public static WebElement AgentBuyOut_Button;
     @FindBy(how = How.ID, using = "checkStoreStock")
     public static WebElement CheckStore;

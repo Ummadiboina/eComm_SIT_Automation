@@ -29,5 +29,5 @@ Feature: 53_Reg_Consumer_PreOrder
 
       #Close the browser
     Examples:
-      | handset           | Firstname | BSCstatus | color  | Capacity | Surname | Username     | Status    | consumer | B1  | B2     | B3  | B4  | Text   | Email | Phone | Post | status  | MBBStatus | DeviceType |
-      | iPhone 6 Like New | TEST      | Enabled   | Silver | 64GB     | ACCEPTA | TEST ACCEPTA | Pre Order | Me       | Not | Select | Not | Not | Select | Not   | Not   | Not  | Enabled | No        | Connected  |
+      | handset            | Firstname | BSCstatus | color      | Capacity | Surname | Username     | Status    | consumer | B1  | B2     | B3  | B4  | Text   | Email | Phone | Post | status  | MBBStatus | DeviceType |
+      | iPhone SE Like New | TEST      | Enabled   | Space Grey | 32GB     | ACCEPTA | TEST ACCEPTA | Pre Order | Me       | Not | Select | Not | Not | Select | Not   | Not   | Not  | Enabled | No        | Connected  |

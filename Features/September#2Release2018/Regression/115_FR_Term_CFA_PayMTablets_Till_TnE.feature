@@ -1,7 +1,7 @@
-Feature: 5_2_FR_Term_CFA_PayMTablets_Till_TnE.feature
+Feature: 115_FR_Term_CFA_PayMTablets_Till_TnE
 
   @Web
-  Scenario Outline: 5_2_FR_Term_CFA_PayMTablets_Till_TnE
+  Scenario Outline: 115_FR_Term_CFA_PayMTablets_Till_TnE
     Given I am an CFA user and Lands on shop page
     And navigate to PAYM Tablets page
     And select any available <Device> Tablet

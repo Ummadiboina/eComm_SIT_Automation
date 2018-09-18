@@ -1,7 +1,7 @@
-Feature: 10_2_FR_Mix_CFU_Phone.feature
+Feature: 121_FR_Mix_CFU_Phone
 
   @Web
-  Scenario Outline: 10_2_FR_Mix_CFU_Phone
+  Scenario Outline: 121_FR_Mix_CFU_Phone
     Given I am existing user and I click on Signin button
     And Signin using valid <username> and <password> credentials
     #And Navigate to upgrade phone
@@ -14,4 +14,4 @@ Feature: 10_2_FR_Mix_CFU_Phone.feature
 
     Examples:
       | username                   | password | handset       | upFront | term | data |
-      | rbmuatlokesh_donotusee3035 | test123  | iPhone 8 Plus | avg     | avg  | avg  |
+      | rbmuatlokesh_donotusee3035 | test123  | iPhone 8 Plus | max     | max  | avg  |

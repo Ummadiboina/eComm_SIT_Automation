@@ -32,5 +32,5 @@ Feature: 07_CFU_Phone_Simo_Validate_BSC_Component_In_Review_Page_with_Incomplete
     Then Choose <consumer> <status> Business preferences <B1> <B2> <B3> <B4> And Channel Preferences <Text> <Email> <Phone> <Post> <MBBStatus> <DeviceType>
 
     Examples:
-      | username                      | password | BillCap   | CapAmount | NewBillCap    | NewCapAmount | BSCstatus | consumer | B1     | B2  | B3     | B4  | Text   | Email | Phone | Post | status  | MBBStatus | DeviceType |
-      | test98373539@stf.ref.o2.co.uk | test123  | CapMyBill | £20       | DontCapMyBill | Nill         | Enabled   | Me       | Select | Not | Select | Not | Select | Not   | Not   | Not  | Enabled | No        | Connected  |
+      | username                      | password | BillCap   | CapAmount | NewBillCap    | NewCapAmount      | BSCstatus | consumer | B1     | B2  | B3     | B4  | Text   | Email | Phone | Post | status  | MBBStatus | DeviceType |
+      | test98373539@stf.ref.o2.co.uk | test123  | CapMyBill | £20       | DontCapMyBill | DontCapMyBillLink | Enabled   | Me       | Select | Not | Select | Not | Select | Not   | Not   | Not  | Enabled | No        | Connected  |

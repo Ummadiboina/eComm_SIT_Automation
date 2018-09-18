@@ -1,7 +1,7 @@
-Feature: 5_1_FR_Term_CFA_PayMTablets_Till_TnE.feature
+Feature: 113_FR_Term_CFA_PayMTablets_Till_TnE
 
   @Web
-  Scenario Outline: 5_1_FR_Term_CFA_PayMTablets_Till_TnE
+  Scenario Outline: 113_FR_Term_CFA_PayMTablets_Till_TnE
     Given I am an CFA user and Lands on shop page
     And navigate to PAYM Tablets page
     And select any available <Device> Tablet
@@ -9,4 +9,4 @@ Feature: 5_1_FR_Term_CFA_PayMTablets_Till_TnE.feature
 
     Examples:
       | Device                | upFront | term | data |
-      | Galaxy Tab A 2016 7.0 | max     | min  | avg  |
+      | Galaxy Tab A 2016 7.0 | max     | max  | min  |

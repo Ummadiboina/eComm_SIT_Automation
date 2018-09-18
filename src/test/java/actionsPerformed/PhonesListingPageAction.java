@@ -37,9 +37,8 @@ public class PhonesListingPageAction extends Environment {
 			serchBox.sendKeys(deviceName);
 			Thread.sleep(10000);
 
-
-			if (driver.findElements(By.xpath("(//img[@class='device-image lazy']/..//*[contains(text(),'"+deviceName+"')])[1]")).size() >= 1) {
-				WebElement requestedDevice = driver.findElement(By.xpath("(//img[@class='device-image lazy']/..//*[contains(text(),'"+deviceName+"')])[1]"));
+			if (driver.findElements(By.xpath("(//img[@class='device-image lazy']/..//*[normalize-space()='"+deviceName+"'])[1]")).size() >= 1) {
+				WebElement requestedDevice = driver.findElement(By.xpath("(//img[@class='device-image lazy']/..//*[normalize-space()='"+deviceName+"'])[1]"));
 
 					Screenshots.captureScreenshot();
 

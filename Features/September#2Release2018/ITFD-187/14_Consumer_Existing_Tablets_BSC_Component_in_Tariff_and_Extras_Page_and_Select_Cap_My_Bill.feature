@@ -33,5 +33,5 @@ Feature: 14_Consumer_Existing_Tablets_BSC_Component_in_Tariff_and_Extras_Page_an
     Then Choose <consumer> <status> Business preferences <B1> <B2> <B3> <B4> And Channel Preferences <Text> <Email> <Phone> <Post> <MBBStatus> <DeviceType>
 
     Examples:
-      | username                      | password | tabletname        | houseNumber | PostCode | BillCap   | CapAmount | NewBillCap    | NewCapAmount | BSCstatus | Username     | Action    | tariff                   | consumer | B1  | B2  | B3  | B4  | Text | Email | Phone | Post | status  | MBBStatus | DeviceType |
-      | 12oc17594354@stf.ref.o2.co.uk | test123  | Galaxy Tab S3 9.7 | 11          | SL11ER   | CapMyBill | £5        | DontCapMyBill | Nill         | Enabled   | TEST ACCEPTA | enterCode | 129.99upfront37.00amonth | Somone   | Not | Not | Not | Not | Not  | Not   | Not   | Not  | Enabled | No        | Connected  |
+      | username                      | password | tabletname        | houseNumber | PostCode | BillCap   | CapAmount | NewBillCap    | NewCapAmount      | BSCstatus | Username     | Action    | tariff                   | consumer | B1  | B2  | B3  | B4  | Text | Email | Phone | Post | status  | MBBStatus | DeviceType |
+      | 12oc17594354@stf.ref.o2.co.uk | test123  | Galaxy Tab S3 9.7 | 11          | SL11ER   | CapMyBill | £5        | DontCapMyBill | DontCapMyBillLink | Enabled   | TEST ACCEPTA | enterCode | 129.99upfront37.00amonth | Somone   | Not | Not | Not | Not | Not  | Not   | Not   | Not  | Enabled | No        | Connected  |

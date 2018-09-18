@@ -1,13 +1,13 @@
-Feature: 7_1_FR_UpfrontAndTerm_CFA_Phones_Till_TnE
+Feature: 120_FR_All_CFA_Phones_Till_TnE
 
   @Web
-  Scenario Outline: 7_1_FR_UpfrontAndTerm_CFA_Phones_Till_TnE
+  Scenario Outline: 120_FR_All_CFA_Phones_Till_TnE
     Given I am an CFA user and Lands on shop page
     And navigate to PAYM Phones page
     And I choose PayM <handset>
-    And click on the color dropdown
-    And verify the name of the colour is next to the colour tile in CFAPhoneColour
-    And select <color> color of the connected device
+    #And click on the color dropdown
+    #And verify the name of the colour is next to the colour tile in CFAPhoneColour
+   # And select <color> color of the connected device
     And Build your plan with <upFront> <term> and <data>
     #And Navigate to device details page
     #And Land on the 'Tariffs and extra' page

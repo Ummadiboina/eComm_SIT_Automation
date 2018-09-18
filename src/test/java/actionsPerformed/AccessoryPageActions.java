@@ -31,7 +31,7 @@ public class AccessoryPageActions extends Environment {
 	static int totalcount = 0;
 	public static String accessoryName="";
 
-	public static void Elementdisplayvalidation(String Tabname) throws IOException, InterruptedException {
+	public static void Elementdisplayvalidation(String Tabname) throws IOException {
 		log.debug(" ");
 
 		log.debug("Accessory_Page_Validation");
@@ -82,7 +82,7 @@ public class AccessoryPageActions extends Environment {
 
 	// this method used to perform click action on the Accessory Page
 
-	public static void ElementClickAction(String elementname) throws IOException, InterruptedException {
+	public static void ElementClickAction(String elementname) throws IOException {
 		// TODO Auto-generated method stub
 		log.debug(" ");
 
@@ -228,7 +228,7 @@ public class AccessoryPageActions extends Environment {
 
 	}
 
-	public static void selectAnyAccessoryLimit() throws InterruptedException, IOException {
+	public static void selectAnyAccessoryLimit() throws IOException {
 
 		try {
 			// Below will give status like in stock / out of stock etc
@@ -300,8 +300,14 @@ public class AccessoryPageActions extends Environment {
 			log.debug(status);
 
 			if (status.contains("In Stock")) {
-				WebElement element = driver
+				/*WebElement element = driver
 						.findElement(By.xpath("//select[@class='accessory-option ng-pristine ng-valid']"));
+				JavascriptExecutor js = (JavascriptExecutor) driver;
+				js.executeScript("arguments[0].setAttribute('style', 'display:block;')", element);
+				new Select(element).selectByValue(Limit);*/
+
+				WebElement element = driver
+						.findElement(By.xpath("//div[@on-dimension-select='selectQuantityDimension']/select"));
 				JavascriptExecutor js = (JavascriptExecutor) driver;
 				js.executeScript("arguments[0].setAttribute('style', 'display:block;')", element);
 				new Select(element).selectByValue(Limit);
@@ -311,6 +317,7 @@ public class AccessoryPageActions extends Environment {
 				String DeviceDetailsQuantityValue = DeviceDetailsQuantity.getText();
 				log.debug("DeviceDetailsQuantityValue is " + DeviceDetailsQuantityValue);
 				count = count + Integer.parseInt(Limit);
+				Thread.sleep(3000);
 				driver.findElement(By.id("deviceDetailsSubmit")).click();
 
 				Thread.sleep(7000);
@@ -341,7 +348,7 @@ public class AccessoryPageActions extends Environment {
 		}
 	}
 
-	public static void continueShopping() throws InterruptedException, IOException {
+	public static void continueShopping() throws IOException {
 		log.debug("Opening continueShopping function");
 		try {
 
@@ -511,7 +518,7 @@ public class AccessoryPageActions extends Environment {
 	 * Assert.fail("Non Connected device is not present in the Basket section"); } }
 	 */
 
-	public static void verifyNonConnectedDeviceAddedToBasketBefore() throws InterruptedException, IOException {
+	public static void verifyNonConnectedDeviceAddedToBasketBefore() throws IOException {
 		log.debug("Opening verifyNonConnectedDeviceAddedToBasketBefore function");
 		String AccessoryName = "";
 		String FitnessTrackerName = "";
@@ -581,14 +588,14 @@ public class AccessoryPageActions extends Environment {
 	 * driver.findElement(By.xpath("(//a[contains(., 'Remove')])[1]")).click(); } }
 	 */
 
-	public static void calculateTotalQtyAddedInBasket() throws IOException, InterruptedException {
+	public static void calculateTotalQtyAddedInBasket() throws IOException {
 		count = UserSpecifiedFitnessTrackerLimit + UserSpecifiedAccessoryLimit;
 		log.debug("Total Qty added for Fitness Tracker and Accessory is :" + count);
 		Screenshots.captureScreenshot();
 	}
 
 	public static void verifyNonConnectedDeviceRetainedInBasketAfterPhoneSelection()
-			throws InterruptedException, IOException {
+			throws IOException {
 		log.debug("Opening verifyNonConnectedDeviceRetainedInBasketAfterPhoneSelection function");
 		log.debug("Opening verifyNonConnectedDeviceRetainedInBasketAfterPhoneSelection function");
 		String AccessoryName_Before = "";
@@ -676,7 +683,7 @@ public class AccessoryPageActions extends Environment {
 		}
 	}
 
-	public static void getTotalQtyInBasket() throws IOException, InterruptedException {
+	public static void getTotalQtyInBasket() throws IOException {
 
 		int loop = 0;
 		String XpathQty = null;
@@ -745,7 +752,7 @@ public class AccessoryPageActions extends Environment {
 
 	}
 
-	public static void clickOnRemoveButton() throws IOException, InterruptedException {
+	public static void clickOnRemoveButton() throws IOException {
 
 		pageobjects.BasketPage.RemoveButton.click();
 		log.debug("Clicked on Remove button");
