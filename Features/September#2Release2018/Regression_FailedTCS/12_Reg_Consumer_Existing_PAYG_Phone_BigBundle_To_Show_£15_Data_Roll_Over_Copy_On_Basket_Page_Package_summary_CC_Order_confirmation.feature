@@ -7,8 +7,8 @@ Feature: 12_Reg_Consumer_Existing_PAYG_Phone_BigBundle_To_Show_£15_Data_Roll_Ov
     Given I am an Existing user and Navigates to Signin page
     And Signin using valid <username> and <password> credentials
     And navigate to Pay as you Go Phones page
-    # #And I choose PayG <handset>
-    And I choose PayM <handset>
+    And I choose PayG <handset>
+    #And I choose PayM <handset>
     And click on the color dropdown
     And verify the name of the colour is next to the colour tile in CFAPhoneColour
     And select <color> color of the connected device
