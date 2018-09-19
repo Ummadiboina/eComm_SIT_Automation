@@ -536,7 +536,8 @@ public class UpgradeCustomerPageActions extends Environment {
     }
 
     public static void selectTariffWithRibbonAndOverlayUpgradeJourney(String Tariff)
-            throws IOException {
+            throws IOException, InterruptedException {
+        Thread.sleep(5000);
         log.debug('\n' + "To select Tariff With Ribbon And Overlay in upgrade journey");
         List<WebElement> TariffList = driver
                 .findElements(By.xpath("(//div[contains(@class, 'grid-tile')]/div/button[@id='callToAction'])[1] | (//button[@class='btn buyNowBtn ng-binding ng-pristine ng-valid'])[1] | (//button[@class='secondary selectButton tst-select ng-binding ng-pristine ng-valid'])[1] | (//button[@class='secondary selectButton tariff-select buyNowBtn'])[1]"));

@@ -167,11 +167,14 @@ public class OrderConfirmationPageActions extends Environment {
 
 	}
 
-	public static void downloadPDFcopy() {
+	public static void downloadPDFcopy() throws InterruptedException {
 		log.debug("Entering downloadPDFcopy function");
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-		driver.findElement(By.xpath("//a[@href='confirmation/orderConfirmation.pdf']")).click();
-		log.debug("Completed downloading order confirmation");
+		if(driver.findElements(By.xpath("//a[@href='confirmation/orderConfirmation.pdf']")).size()>0) {
+			driver.findElement(By.xpath("//a[@href='confirmation/orderConfirmation.pdf']")).click();
+			Thread.sleep(5000);
+			log.debug("Completed downloading order confirmation");
+		}
 
 	}
 
@@ -765,23 +768,32 @@ public class OrderConfirmationPageActions extends Environment {
 
 					log.debug("Bill spend cap section is displayed at "+pageTitle+" page \n");
 					JavascriptExecutor jse = (JavascriptExecutor) driver;
-					jse.executeScript("window.scrollBy(0,120)", "");
+					jse.executeScript("window.scrollBy(0,150)", "");
 					log.debug("Bill Spend Cap header is displayed in "+pageTitle+" page ie :: " + pageobjects.OrderConfirmationPage.BillSpendCapHeader.getText());
 
 					Thread.sleep(2000);
 
 					AppliedBillCap = pageobjects.OrderConfirmationPage.AppliedBillCap.getText();
 					Thread.sleep(2000);
-					if (BillCap.contains("CapMyBill")) {
+					if (BillCap.equalsIgnoreCase("CapMyBill")) {
 
-						if (AppliedBillCap.contains(CapAmount)) {
-							log.debug("Applied bill cap is validated successfully in "+pageTitle+" page ie :: " + AppliedBillCap);
-						} else {
-							log.debug("Applied bill cap is not present in " + pageTitle + " page is:: " + AppliedBillCap);
-							Assert.fail("Applied bill cap is not present in " + pageTitle + " page is:: " + AppliedBillCap);
+						if (CapAmount.equalsIgnoreCase("DontCapMyBillLink")) {
+							if (AppliedBillCap.contains("not to add a Spend Cap") || AppliedBillCap.contains("No Spend Cap applied")) {
+								log.debug("'Dont Cap My Bill' is validated successfully and cap text is::" + AppliedBillCap);
+							} else {
+								log.debug("Failed to validate 'Dont Cap My Bill' and cap text is::" + AppliedBillCap);
+								Assert.fail("Failed to validate 'Dont Cap My Bill' and cap text is::" + AppliedBillCap);
+							}
+						}else {
+							if (AppliedBillCap.contains(CapAmount)) {
+								log.debug("Applied bill cap is validated successfully in " + pageTitle + " page ie :: " + AppliedBillCap);
+							} else {
+								log.debug("Applied bill cap is not present in " + pageTitle + " page is:: " + AppliedBillCap);
+								Assert.fail("Applied bill cap is not present in " + pageTitle + " page is:: " + AppliedBillCap);
+							}
 						}
-					} else if (BillCap.contains("DontCapMyBill")) {
-						if (AppliedBillCap.contains("You've chosen not to add a Spend Cap")) {
+					} else if (BillCap.equalsIgnoreCase("DontCapMyBill")) {
+						if (AppliedBillCap.contains("not to add a Spend Cap") || AppliedBillCap.contains("No Spend Cap applied")) {
 							log.debug("'Dont Cap My Bill' is validated successfully and cap text is::" + AppliedBillCap);
 						} else {
 							log.debug("Failed to validate 'Dont Cap My Bill' and cap text is::" + AppliedBillCap);

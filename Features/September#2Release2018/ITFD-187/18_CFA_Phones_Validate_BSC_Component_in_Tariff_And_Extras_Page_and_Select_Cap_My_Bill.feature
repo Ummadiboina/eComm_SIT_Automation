@@ -29,6 +29,7 @@ Feature: 18_CFA_Phones_Validate_BSC_Component_in_Tariff_And_Extras_Page_and_Sele
     And Continue to Review page and review the order
     When order confirmation is displayed
     And Validate order confirmation page for applied Bill Spend Cap <BillCap> <CapAmount> when BSC is <BSCstatus>
+    Then verify cover me is present in  pdf download
     Then Choose <consumer> <status> Business preferences <B1> <B2> <B3> <B4> And Channel Preferences <Text> <Email> <Phone> <Post> <MBBStatus> <DeviceType>
 
     Examples:

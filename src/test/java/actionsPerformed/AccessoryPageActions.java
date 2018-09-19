@@ -312,6 +312,8 @@ public class AccessoryPageActions extends Environment {
 				js.executeScript("arguments[0].setAttribute('style', 'display:block;')", element);
 				new Select(element).selectByValue(Limit);
 
+				Thread.sleep(3000);
+
 				WebElement DeviceDetailsQuantity = driver.findElement(
 						By.xpath("//div[@on-dimension-select='selectQuantityDimension']/span[@role='combobox']"));
 				String DeviceDetailsQuantityValue = DeviceDetailsQuantity.getText();
@@ -763,17 +765,25 @@ public class AccessoryPageActions extends Environment {
 		// TODO Auto-generated method stub
 		try {
 			// Below will give status like in stock / out of stock etc
-			Thread.sleep(5000);
+			Thread.sleep(6000);
 			UserSpecifiedFitnessTrackerLimit = Integer.parseInt(Limit);
 			String status = driver.findElement(By.className("status-info")).getText();
 			log.debug(status);
 
 			if (status.contains("In Stock")) {
-				WebElement element = driver
+				/*WebElement element = driver
 						.findElement(By.xpath("//select[@class='accessory-option ng-pristine ng-valid']"));
 				JavascriptExecutor js = (JavascriptExecutor) driver;
 				js.executeScript("arguments[0].setAttribute('style', 'display:block;')", element);
+				new Select(element).selectByValue(Limit);*/
+
+				WebElement element = driver
+						.findElement(By.xpath("//div[@on-dimension-select='selectQuantityDimension']/select"));
+				JavascriptExecutor js = (JavascriptExecutor) driver;
+				js.executeScript("arguments[0].setAttribute('style', 'display:block;')", element);
 				new Select(element).selectByValue(Limit);
+
+				Thread.sleep(3000);
 
 				WebElement DeviceDetailsQuantity = driver.findElement(
 						By.xpath("//div[@on-dimension-select='selectQuantityDimension']/span[@role='combobox']"));

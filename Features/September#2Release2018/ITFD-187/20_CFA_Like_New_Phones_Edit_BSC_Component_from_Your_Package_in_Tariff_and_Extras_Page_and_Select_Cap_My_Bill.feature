@@ -32,6 +32,7 @@ Feature: 20_CFA_Like_New_Phones_Edit_BSC_Component_from_Your_Package_in_Tariff_a
     And Continue to Review page and review the order
     When order confirmation is displayed
     And Validate order confirmation page for applied Bill Spend Cap <BillCap> <NewCapAmount> when BSC is <BSCstatus>
+    Then verify cover me is present in  pdf download
     Then Choose <consumer> <status> Business preferences <B1> <B2> <B3> <B4> And Channel Preferences <Text> <Email> <Phone> <Post> <MBBStatus> <DeviceType>
 
     Examples:

@@ -32,5 +32,5 @@ Feature: 01_CFA_Phone_Simo_Select_Cap_My_Bill_and_Validate_BSC_Component_In_Tari
     Then Choose <consumer> <status> Business preferences <B1> <B2> <B3> <B4> And Channel Preferences <Text> <Email> <Phone> <Post> <MBBStatus> <DeviceType>
 
     Examples:
-      | Contract | Firstname | Surname | Username     | BillCap   | CapAmount | NewBillCap    | NewCapAmount      | BSCstatus | consumer | B1  | B2  | B3     | B4  | Text | Email  | Phone | Post   | status  | MBBStatus | DeviceType |
-      | 30 Days  | TEST      | ACCEPTA | TEST ACCEPTA | CapMyBill | £5        | DontCapMyBill | DontCapMyBillLink | Enabled   | Me       | Not | Not | Select | Not | Not  | Select | Not   | Select | Enabled | No        | Connected  |
+      | Contract | Firstname | Surname | Username     | BillCap   | CapAmount | NewBillCap | NewCapAmount      | BSCstatus | consumer | B1  | B2  | B3     | B4  | Text | Email  | Phone | Post   | status  | MBBStatus | DeviceType |
+      | 30 Days  | TEST      | ACCEPTA | TEST ACCEPTA | CapMyBill | £5        | CapMyBill  | DontCapMyBillLink | Enabled   | Me       | Not | Not | Select | Not | Not  | Select | Not   | Select | Enabled | No        | Connected  |
