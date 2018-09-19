@@ -906,15 +906,24 @@ public class DeliveryPageActions extends Environment {
 
                     AppliedBillCap = pageobjects.DeliveryPage.AppliedBillCap.getText();
                     Thread.sleep(2000);
-                    if (BillCap.contains("CapMyBill")) {
+                    if (BillCap.equalsIgnoreCase("CapMyBill")) {
 
-                        if (AppliedBillCap.contains(CapAmount)) {
-                            log.debug("Applied bill cap is validated successfully in "+pageTitle+" page ie :: " + AppliedBillCap);
-                        } else {
-                            log.debug("Applied bill cap is not present in " + pageTitle + " page is:: " + AppliedBillCap);
-                            Assert.fail("Applied bill cap is not present in " + pageTitle + " page is:: " + AppliedBillCap);
+                        if (CapAmount.equalsIgnoreCase("DontCapMyBillLink")) {
+                            if (AppliedBillCap.contains("No Spend Cap applied")) {
+                                log.debug("'Dont Cap My Bill' is validated successfully and cap text is::" + AppliedBillCap);
+                            } else {
+                                log.debug("Failed to validate 'Dont Cap My Bill' and cap text is::" + AppliedBillCap);
+                                Assert.fail("Failed to validate 'Dont Cap My Bill' and cap text is::" + AppliedBillCap);
+                            }
+                        }else {
+                            if (AppliedBillCap.contains(CapAmount)) {
+                                log.debug("Applied bill cap is validated successfully in " + pageTitle + " page ie :: " + AppliedBillCap);
+                            } else {
+                                log.debug("Applied bill cap is not present in " + pageTitle + " page is:: " + AppliedBillCap);
+                                Assert.fail("Applied bill cap is not present in " + pageTitle + " page is:: " + AppliedBillCap);
+                            }
                         }
-                    } else if (BillCap.contains("DontCapMyBill")) {
+                    } else if (BillCap.equalsIgnoreCase("DontCapMyBill")) {
                         if (AppliedBillCap.contains("No Spend Cap applied")) {
                             log.debug("'Dont Cap My Bill' is validated successfully and cap text is::" + AppliedBillCap);
                         } else {

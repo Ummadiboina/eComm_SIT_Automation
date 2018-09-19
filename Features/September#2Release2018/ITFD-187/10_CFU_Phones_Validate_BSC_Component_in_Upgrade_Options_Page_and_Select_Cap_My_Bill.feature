@@ -35,8 +35,9 @@ Feature: 10_CFU_Phones_Validate_BSC_Component_in_Upgrade_Options_Page_and_Select
     And Continue to Review page and review the order
     Then order confirmation is displayed
     And Validate order confirmation page for applied Bill Spend Cap <BillCap> <CapAmount> when BSC is <BSCstatus>
+    Then verify cover me is present in  pdf download
     Then Choose <consumer> <status> Business preferences <B1> <B2> <B3> <B4> And Channel Preferences <Text> <Email> <Phone> <Post> <MBBStatus> <DeviceType>
 
     Examples:
-      | username                      | password | handset  | BillCap   | CapAmount | BSCstatus | Username     | Action    | tariff                   | consumer | B1     | B2     | B3     | B4  | Text   | Email  | Phone  | Post   | status  | MBBStatus | DeviceType |
-      | 31ja53626382@stf.ref.o2.co.uk | test123  | iPhone X | CapMyBill | £5        | Enabled   | TEST ACCEPTA | enterCode | 129.99upfront37.00amonth | Me       | Select | Select | Select | Not | Select | Select | Select | Select | Enabled | No        | Connected  |
+      | username               | password | handset  | BillCap   | CapAmount | BSCstatus | Username     | Action    | tariff                   | consumer | B1     | B2     | B3     | B4  | Text   | Email  | Phone  | Post   | status  | MBBStatus | DeviceType |
+      | in01808o_223140@o2.com | test123  | iPhone X | CapMyBill | £5        | Enabled   | TEST ACCEPTA | enterCode | 129.99upfront37.00amonth | Me       | Select | Select | Select | Not | Select | Select | Select | Select | Enabled | No        | Connected  |

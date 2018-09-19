@@ -16,7 +16,7 @@ import java.util.concurrent.TimeUnit;
 public class FitnessTrackerPageActions extends Environment {
     final static Logger log = Logger.getLogger("FitnessTrackerPageActions");
 
-    public static void Elementdisplayvalidation(String Tabname) throws IOException, InterruptedException {
+    public static void Elementdisplayvalidation(String Tabname) throws IOException {
         log.debug(" ");
 
         log.debug("FitnessTracker_Page_Validation");
@@ -49,7 +49,7 @@ public class FitnessTrackerPageActions extends Environment {
 
     }
 
-    public static void ElementClickAction(String elementname) throws IOException, InterruptedException {
+    public static void ElementClickAction(String elementname) throws IOException {
         // TODO Auto-generated method stub
         log.debug(" ");
 
@@ -139,11 +139,19 @@ public class FitnessTrackerPageActions extends Environment {
             log.debug(status);
 
             if (status.contains("In Stock")) {
-                WebElement element = driver
+                /*WebElement element = driver
                         .findElement(By.xpath("//select[@class='accessory-option ng-pristine ng-valid']"));
                 JavascriptExecutor js = (JavascriptExecutor) driver;
                 js.executeScript("arguments[0].setAttribute('style', 'display:block;')", element);
+                new Select(element).selectByValue("1");*/
+
+                WebElement element = driver
+                        .findElement(By.xpath("//div[@on-dimension-select='selectQuantityDimension']/select"));
+                JavascriptExecutor js = (JavascriptExecutor) driver;
+                js.executeScript("arguments[0].setAttribute('style', 'display:block;')", element);
                 new Select(element).selectByValue("1");
+
+                Thread.sleep(3000);
 
                 WebElement DeviceDetailsQuantity = driver.findElement(
                         By.xpath("//div[@on-dimension-select='selectQuantityDimension']/span[@role='combobox']"));

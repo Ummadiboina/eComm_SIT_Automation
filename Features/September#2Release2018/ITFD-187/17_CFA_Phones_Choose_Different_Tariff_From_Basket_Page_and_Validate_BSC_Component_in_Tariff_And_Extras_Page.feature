@@ -35,8 +35,9 @@ Feature: 17_CFA_Phones_Choose_Different_Tariff_From_Basket_Page_and_Validate_BSC
     And Continue to Review page and review the order
     When order confirmation is displayed
     And Validate order confirmation page for applied Bill Spend Cap <NewBillCap> <NewCapAmount> when BSC is <BSCstatus>
+    Then verify cover me is present in  pdf download
     Then Choose <consumer> <status> Business preferences <B1> <B2> <B3> <B4> And Channel Preferences <Text> <Email> <Phone> <Post> <MBBStatus> <DeviceType>
 
     Examples:
-      | handset       | Firstname | Surname | Username     | BillCap   | CapAmount | NewBillCap    | NewCapAmount      | BSCstatus | color      | consumer | B1  | B2  | B3     | B4  | Text | Email  | Phone | Post | status  | MBBStatus | DeviceType |
-      | iPhone 8 Plus | TEST      | ACCEPTA | TEST ACCEPTA | CapMyBill | £5        | DontCapMyBill | DontCapMyBillLink | Enabled   | Space Grey | Me       | Not | Not | Select | Not | Not  | Select | Not   | Not  | Enabled | No        | Connected  |
+      | handset       | Firstname | Surname | Username     | BillCap   | CapAmount | NewBillCap | NewCapAmount      | BSCstatus | color      | consumer | B1  | B2  | B3     | B4  | Text | Email  | Phone | Post | status  | MBBStatus | DeviceType |
+      | iPhone 8 Plus | TEST      | ACCEPTA | TEST ACCEPTA | CapMyBill | £5        | CapMyBill  | DontCapMyBillLink | Enabled   | Space Grey | Me       | Not | Not | Select | Not | Not  | Select | Not   | Not  | Enabled | No        | Connected  |

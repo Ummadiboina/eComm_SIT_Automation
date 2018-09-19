@@ -26,6 +26,7 @@ Feature: 24_CFA_PAYG_Phones_Verify_BSC_Component_in_Tariff_and_Extras_Page
     And Validate consumer Bill Spend Caps section when BSC is <PayGBSCstatus>
     Then order confirmation is displayed
     And Validate order confirmation page for applied Bill Spend Cap <BillCap> <CapAmount> when BSC is <PayGBSCstatus>
+    Then verify cover me is present in  pdf download
     Then Choose <consumer> <status> Business preferences <B1> <B2> <B3> <B4> And Channel Preferences <Text> <Email> <Phone> <Post> <MBBStatus> <DeviceType>
 
     Examples:

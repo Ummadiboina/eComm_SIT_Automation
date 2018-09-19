@@ -18,7 +18,7 @@ Feature: 05_CFU_Tablet_SIMO_Validate_BSC_Component_In_Review_Page_with_Incomplet
     #And Validate applied Bill Spend Cap <BillCap> <CapAmount> when BSC is <BSCstatus>
     #And Validate BSC 'Edit' link
     And Validate and click on BSC 'Edit' link to change <BillCap> <CapAmount>
-    And Validate consumer Bill Spend Caps section when BSC is <NewBillCap>
+    And Validate consumer Bill Spend Caps section when BSC is <BSCstatus>
     And Choose your bill cap <NewBillCap> <NewCapAmount> when BSC is <BSCstatus>
     And Validate applied Bill Spend Cap <NewBillCap> <NewCapAmount> when BSC is <BSCstatus>
     Then I should see 'Your Sim Card'section in upgrade
@@ -28,6 +28,7 @@ Feature: 05_CFU_Tablet_SIMO_Validate_BSC_Component_In_Review_Page_with_Incomplet
     #And Click on 'Place your order' CTA
     Then order confirmation is displayed
     And Validate order confirmation page for applied Bill Spend Cap <NewBillCap> <NewCapAmount> when BSC is <BSCstatus>
+    Then verify cover me is present in  pdf download
     Then Choose <consumer> <status> Business preferences <B1> <B2> <B3> <B4> And Channel Preferences <Text> <Email> <Phone> <Post> <MBBStatus> <DeviceType>
 
     Examples:

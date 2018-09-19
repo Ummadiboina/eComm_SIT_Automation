@@ -40,6 +40,7 @@ Feature: 12_CFU_Phones_Edit_BSC_Component_from_Your_Package_in_Upgrade_Options_P
     And Continue to Review page and review the order
     Then order confirmation is displayed
     And Validate order confirmation page for applied Bill Spend Cap <BillCap> <NewCapAmount> when BSC is <BSCstatus>
+    Then verify cover me is present in  pdf download
     Then Choose <consumer> <status> Business preferences <B1> <B2> <B3> <B4> And Channel Preferences <Text> <Email> <Phone> <Post> <MBBStatus> <DeviceType>
 
     Examples:

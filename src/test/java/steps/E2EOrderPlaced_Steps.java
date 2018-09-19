@@ -69,6 +69,7 @@ public class E2EOrderPlaced_Steps {
     @Given("^I am an CFA user and Lands on shop page$")
     public void i_am_an_CFA_user_and_Lands_on_shop_page() {
         try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, MouseHoverPage.class);
              // MouseHoverAction.ByPassDroopalPage();
             //ShopLandingPageAction.GetTitle_ref();
@@ -5644,7 +5645,7 @@ public class E2EOrderPlaced_Steps {
         try {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, UpgradeCustomerPage.class);
-            Thread.sleep(4000);
+            Thread.sleep(7000);
             Screenshots.captureScreenshot();
             //UpgradeCustomerPageActions.selectDeviceInRecommendedDevicesSection(devicename);
             // driver.findElement(By.xpath("(//span[normalize-space()='Apple'])[1]")).click();
@@ -6197,7 +6198,9 @@ public class E2EOrderPlaced_Steps {
         try {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, PAYMandPAYGTariffAndExtrasPage.class);
+            Thread.sleep(3000);
             PAYMandPAYGTariffAndExtrasPageActions.verifyFreeInsuranceAutoSelected();
+            Thread.sleep(3000);
             PAYMandPAYGTariffAndExtrasPageActions.deselectAutoSelectedInsurance();
             Thread.sleep(3000);
         } catch (Exception e) {
@@ -9362,6 +9365,11 @@ public class E2EOrderPlaced_Steps {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, ReviewAndConfirmPage.class);
             ReviewAndConfirmPageActions.ReviewConfirmPageHeader();
+            JavascriptExecutor jse = (JavascriptExecutor) driver;
+            jse.executeScript("window.scrollBy(0,400)", "");
+            Thread.sleep(4000);
+            Screenshots.captureScreenshot();
+
         } catch (Exception e) {
             e.printStackTrace();
             Assert.fail("Review and confirm copy text not displayed");
@@ -10703,7 +10711,7 @@ public class E2EOrderPlaced_Steps {
         try {
            // driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, PAYMandPAYGTariffAndExtrasPage.class);
-            Thread.sleep(5000);
+            Thread.sleep(6000);
             Screenshots.captureScreenshot();
             if(driver.findElements(By.xpath("//button[@id='dontcap']")).size()>0) {
                 if (pageobjects.PAYMandPAYGTariffAndExtrasPage.DontCapMyBillButton.isEnabled()) {

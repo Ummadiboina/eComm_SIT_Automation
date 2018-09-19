@@ -21,6 +21,7 @@ Feature: 09_CFU_Validate_BSC_Component_In_Review_Page_for_Pre_Q1_2018_Tariff_Whe
     #And Click on 'Place your order' CTA
     Then order confirmation is displayed
     And Validate order confirmation page for applied Bill Spend Cap <BillCap> <CapAmount> when BSC is <BSCstatus>
+    Then verify cover me is present in  pdf download
     Then Choose <consumer> <status> Business preferences <B1> <B2> <B3> <B4> And Channel Preferences <Text> <Email> <Phone> <Post> <MBBStatus> <DeviceType>
 
     Examples:

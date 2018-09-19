@@ -28,7 +28,7 @@ public class PhonesListingPageAction extends Environment {
 
 		Thread.sleep(6000);
 		JavascriptExecutor jse = (JavascriptExecutor) driver;
-		jse.executeScript("window.scrollBy(0,300)", "");
+		jse.executeScript("window.scrollBy(0,250)", "");
 		Screenshots.captureScreenshot();
 		Thread.sleep(3000);
 		try {

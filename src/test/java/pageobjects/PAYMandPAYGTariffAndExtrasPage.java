@@ -241,6 +241,9 @@ public class PAYMandPAYGTariffAndExtrasPage {
 	@FindBy(how = How.XPATH, using = "//div[@class='largeTitle']/p | //div[@class='build-spend-caps-container']/p")
 	public static WebElement BillCapStatusMsg;
 
+	@FindBy(how = How.XPATH, using = "//div[@class='largeTitle']/p | //div[@class='build-spend-caps-container']/p[2]")
+	public static WebElement BillCapUpgradeStatusMsg;
+
 	@FindBy(how = How.XPATH, using = "//div[@class='selected-cap-msg']")
 	public static WebElement BillCapStatusInfo;
 
