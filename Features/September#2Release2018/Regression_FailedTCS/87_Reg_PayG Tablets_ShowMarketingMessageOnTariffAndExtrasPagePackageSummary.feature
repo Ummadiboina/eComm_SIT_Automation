@@ -20,7 +20,7 @@ Feature:87_Reg_PayG Tablets_ShowMarketingMessageOnTariffAndExtrasPagePackageSumm
     And land on the Non Credit check payment page and input <Username> and other details and click 'Continue on next step'
     #And Verify the copytext of marketing message in <AgreementSectionName>
     And Continue to Review page and review the order
-   # And Verify the copytext of marketing message in <ReviewSectionName>
+    #And Verify the copytext of marketing message in <ReviewSectionName>
     Then order confirmation is displayed
     Then Choose <consumer> <status> Business preferences <B1> <B2> <B3> <B4> And Channel Preferences <Text> <Email> <Phone> <Post> <MBBStatus> <DeviceType>
 
