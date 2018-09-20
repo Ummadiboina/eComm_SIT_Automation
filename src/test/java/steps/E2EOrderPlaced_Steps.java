@@ -10,6 +10,7 @@ import java.util.concurrent.TimeUnit;
 import GlobalActions.*;
 import actionsPerformed.*;
 import cucumber.api.DataTable;
+import javafx.stage.Screen;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -3912,6 +3913,7 @@ public class E2EOrderPlaced_Steps {
             PageFactory.initElements(driver, PhonesListingPage.class);
             Thread.sleep(3000);
             UpgradeCustomerPageActions.viewAllPhones();
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             UpgradeCustomerPageActions.upgradePAYMPhoneSelect(handset);
         } catch (Exception e) {
             // TODO Auto-generated catch block
@@ -5972,6 +5974,8 @@ public class E2EOrderPlaced_Steps {
         try {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, UpgradeCustomerPage.class);
+            Thread.sleep(5000);
+            Screenshots.captureScreenshot();
             UpgradeCustomerPageActions.RecyclesectionDisplayed();
         } catch (Exception e) {
             e.printStackTrace();
@@ -6995,7 +6999,7 @@ public class E2EOrderPlaced_Steps {
 
         try {
 
-            driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, PAYMandPAYGTariffAndExtrasPage.class);
             Thread.sleep(4000);
             PAYMandPAYGTariffAndExtrasPageActions.SortFilterPosition();
@@ -7531,7 +7535,7 @@ public class E2EOrderPlaced_Steps {
         try {
             driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
             PageFactory.initElements(driver, PAYMandPAYGTariffAndExtrasPage.class);
-            scrollToAnElement.scrollToElement(pageobjects.PAYMandPAYGTariffAndExtrasPage.RandomTariff1);
+            //scrollToAnElement.scrollToElement(pageobjects.PAYMandPAYGTariffAndExtrasPage.RandomTariff1);
             Screenshots.captureScreenshot();
             Thread.sleep(4000);
             ArrayList<Integer> ListAfterSort = null;
@@ -7557,7 +7561,7 @@ public class E2EOrderPlaced_Steps {
             log.debug(ListAfterSort);
             Thread.sleep(6000);
             PAYMandPAYGTariffAndExtrasPageActions.verifyTariffSortedAsPerSortOption(ListBeforeSort, ListAfterSort);
-
+            Thread.sleep(3000);
         } catch (AssertionError e) {
 
             log.debug("Fail" + " - " + e.getMessage());
@@ -7638,7 +7642,7 @@ public class E2EOrderPlaced_Steps {
     @And("^Click on Tablet section in upgrade options page$")
     public void click_on_Tablets_tab() {
         try {
-            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
             PageFactory.initElements(driver, UpgradeCustomerPage.class);
             UpgradeCustomerPageActions.clickOnTabletstab();
             Thread.sleep(3000);
@@ -10961,6 +10965,7 @@ public class E2EOrderPlaced_Steps {
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         try {
             PageFactory.initElements(driver, UpgradeCustomerPage.class);
+            Screenshots.captureScreenshot();
             UpgradeCustomerPageActions.clickOnGetStartedCTA();
 
         } catch (Exception e) {
@@ -11001,7 +11006,7 @@ public class E2EOrderPlaced_Steps {
     public void click_on_View_all_tablets() {
         try {
 
-            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            //driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, UpgradeCustomerPage.class);
             Thread.sleep(5000);
             // Screenshots.captureScreenshot();

@@ -397,7 +397,7 @@ public class UpgradeCustomerPage {
 	@FindBy(how = How.XPATH, using = "//div[@class='choose-your-phone-container clear-row']/button[normalize-space()='Confirm']")
 	public static WebElement deviceConfirmCTA;
 
-	@FindBy(how = How.XPATH, using = "//div[@id='extras-section']/div[3]/button")
+	@FindBy(how = How.XPATH, using = "//div[@id='extras-section']/button")
 	public static WebElement extraContinueCTA;
 
 

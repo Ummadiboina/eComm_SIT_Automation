@@ -169,7 +169,7 @@ public class OrderConfirmationPageActions extends Environment {
 
 	public static void downloadPDFcopy() throws InterruptedException {
 		log.debug("Entering downloadPDFcopy function");
-		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		Thread.sleep(5000);
 		if(driver.findElements(By.xpath("//a[@href='confirmation/orderConfirmation.pdf']")).size()>0) {
 			driver.findElement(By.xpath("//a[@href='confirmation/orderConfirmation.pdf']")).click();
 			Thread.sleep(5000);
