@@ -22,7 +22,7 @@ public class ReviewPageActions extends Environment {
 
 	}
 
-	public static void TermsCheckBox() throws IOException {
+	public static void TermsCheckBox() throws IOException, InterruptedException {
 		log.debug("Clicking on the checkbox");
 		if (pageobjects.ReviewPage.TermsCheckBox.isSelected()) {
 
@@ -33,8 +33,21 @@ public class ReviewPageActions extends Environment {
 			JavascriptExecutor executor = (JavascriptExecutor) driver;
 			executor.executeScript("arguments[0].click();", element);
 
-			//pageobjects.ReviewPage.TermsCheckBox.click();
+			Thread.sleep(2000);
 			log.debug("Clicked the Checkbox in Terms");
+
+			if(driver.findElements(By.xpath("//input[@id='insurance-terms']")).size()>0){
+				WebElement element1 = pageobjects.ReviewPage.TermsInsumrance;
+				JavascriptExecutor exe = (JavascriptExecutor) driver;
+				exe.executeScript("arguments[0].click();", element1);
+				log.debug("Clicked the Insurance Checkbox in Terms");
+				Thread.sleep(2000);
+				String insuranceTxt = pageobjects.ReviewPage.TermsInsumranceTxt.getText();
+				Thread.sleep(2000);
+				log.debug("Insurance Text: "+insuranceTxt);
+
+			}
+			//pageobjects.ReviewPage.TermsCheckBox.click();
 			Screenshots.captureScreenshot();
 		}
 	}

@@ -8,9 +8,15 @@ import org.openqa.selenium.support.How;
 public class ReviewPage {
 	
 	  
-	  @FindBy(how=How.ID,using="terms")
+	@FindBy(how=How.ID,using="terms")
 	public static WebElement TermsCheckBox;
-	  
+
+	@FindBy(how=How.XPATH,using="//input[@id='insurance-terms']")
+	public static WebElement TermsInsumrance;
+
+	@FindBy(how=How.XPATH,using="//label[@id='insurance-terms-label']/span")
+	public static WebElement TermsInsumranceTxt;
+
 	  @FindBy(how=How.ID,using="order-review-continue") 
 	  public static WebElement PayNow;
 	  

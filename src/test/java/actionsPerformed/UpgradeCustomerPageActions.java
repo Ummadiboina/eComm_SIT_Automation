@@ -537,7 +537,7 @@ public class UpgradeCustomerPageActions extends Environment {
 
     public static void selectTariffWithRibbonAndOverlayUpgradeJourney(String Tariff)
             throws IOException, InterruptedException {
-        Thread.sleep(5000);
+        Thread.sleep(6000);
         log.debug('\n' + "To select Tariff With Ribbon And Overlay in upgrade journey");
         List<WebElement> TariffList = driver
                 .findElements(By.xpath("(//div[contains(@class, 'grid-tile')]/div/button[@id='callToAction'])[1] | (//button[@class='btn buyNowBtn ng-binding ng-pristine ng-valid'])[1] | (//button[@class='secondary selectButton tst-select ng-binding ng-pristine ng-valid'])[1] | (//button[@class='secondary selectButton tariff-select buyNowBtn'])[1]"));
@@ -552,7 +552,7 @@ public class UpgradeCustomerPageActions extends Environment {
 
         for (int i = 0; i < TariffList.size(); i++) {
             log.debug("inside for loop");
-            log.debug("inside for loop");
+            //log.debug("inside for loop");
             j = i + 1;
             UpfrontPoundXPath = "(//*[@id='qa-upfront-pound'])[" + j + "]";
             UpfrontPenceXPath = "(//*[@id='qa-upfront-pence'])[" + j + "]";
@@ -560,9 +560,13 @@ public class UpgradeCustomerPageActions extends Environment {
             MonthlyPenceXPath = "(//*[@id='qa-month-pence'])[" + j + "]";
 
             UpfrontPound = driver.findElement(By.xpath(UpfrontPoundXPath)).getText();
+            Thread.sleep(2000);
             UpfrontPence = driver.findElement(By.xpath(UpfrontPenceXPath)).getText();
+            Thread.sleep(2000);
             MonthlyPound = driver.findElement(By.xpath(MonthlyPoundXPath)).getText();
+            Thread.sleep(2000);
             MonthlyPence = driver.findElement(By.xpath(MonthlyPenceXPath)).getText();
+            Thread.sleep(2000);
 
             log.debug("UpfrontPound " + UpfrontPound);
             log.debug("UpfrontPence " + UpfrontPence);
@@ -588,7 +592,9 @@ public class UpgradeCustomerPageActions extends Environment {
             if (TextOfTariffTile.contains(Tariff)) {
                 PositionUpgrade = j;
                 log.debug("Provided tariff is present in the list of tariffs");
-                SelectBtnXpath = "(//button[@id='callToAction'])[" + j + "]";
+                //SelectBtnXpath = "(//button[@id='callToAction'])[" + j + "]";
+                Thread.sleep(3000);
+                SelectBtnXpath = "(//div[contains(@class, 'grid-tile')]/div/button[@id='callToAction'])[" + j + "] | (//button[@class='btn buyNowBtn ng-binding ng-pristine ng-valid'])["+j+"] | (//button[@class='secondary selectButton tst-select ng-binding ng-pristine ng-valid'])["+j+"] | (//button[@class='secondary selectButton tariff-select buyNowBtn'])["+j+"]";
                 log.debug("Going to select the given tariff :" + Tariff);
                 driver.findElement(By.xpath(SelectBtnXpath)).click();
                 flag = true;
@@ -597,7 +603,7 @@ public class UpgradeCustomerPageActions extends Environment {
 
         if (flag == false) {
             Screenshots.captureScreenshot();
-            driver.findElement(By.xpath("(//div[contains(@class, 'grid-tile')]/div/button[@id='callToAction'])[1]")).click();
+            driver.findElement(By.xpath("(//div[contains(@class, 'grid-tile')]/div/button[@id='callToAction'])[1] | (//button[@class='btn buyNowBtn ng-binding ng-pristine ng-valid'])[1] | (//button[@class='secondary selectButton tst-select ng-binding ng-pristine ng-valid'])[1] | (//button[@class='secondary selectButton tariff-select buyNowBtn'])[1]")).click();
             // Assert.fail("Provided tariff is not present in the list of tariffs");
         }
 
@@ -605,13 +611,12 @@ public class UpgradeCustomerPageActions extends Environment {
 
     public static void verifyPromotionalRibbonDisplayedTEpage(String Tariff) throws IOException {
 
-        WebElement selectBtnEle = driver.findElement(By.xpath("(//button[@type='button']//*[normalize-space()='Select'])[1]"));
-
         if(driver.findElements(By.xpath("(//button[@type='button']//*[normalize-space()='Select'])[1]")).size()>=1){
+            WebElement selectBtnEle = driver.findElement(By.xpath("(//button[@type='button']//*[normalize-space()='Select'])[1]"));
             driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
             ((JavascriptExecutor) driver).executeScript("arguments[0].click();", selectBtnEle);
             log.debug("Tariff has selected");
-            log.info("Tariff has selected");
+
         }else{
             log.debug("Failed to select the Tariff in the Extras&Tariff page");
             Assert.fail("Failed to select the Tariff in the Extras&Tariff page");
@@ -1936,9 +1941,10 @@ public class UpgradeCustomerPageActions extends Environment {
     }
 
 
-    public static void selectTariffFromRecommendedSection() throws IOException {
+    public static void selectTariffFromRecommendedSection() throws IOException, InterruptedException {
         log.debug("Going to select tariff from recommended section");
         Screenshots.captureScreenshot();
+        Thread.sleep(3000);
         executor.executeScript("arguments[0].click();", UpgradeCustomerPage.RandomTariffUpgrade);
 
     }
@@ -2317,7 +2323,7 @@ public class UpgradeCustomerPageActions extends Environment {
         log.debug("In tablets clicking function");
         ((JavascriptExecutor) driver).executeScript("arguments[0].click();",
                 pageobjects.UpgradeCustomerPage.TabletsTab);
-        Thread.sleep(3000);
+        Thread.sleep(5000);
         Screenshots.captureScreenshot();
     }
 
@@ -3272,9 +3278,10 @@ public class UpgradeCustomerPageActions extends Environment {
                 /*scrollToAnElement.scrollToElement(UpgradeCustomerPage.chooseDeviseSection);
                 Screenshots.captureScreenshot();*/
                 JavascriptExecutor jse = (JavascriptExecutor) driver;
-                jse.executeScript("window.scrollBy(0,300)", "");
+                jse.executeScript("window.scrollBy(0,400)", "");
 
                 Thread.sleep(3000);
+                Screenshots.captureScreenshot();
                 log.debug("Clicking on Get Started/ See sim only Tariff CTA");
                 //JavascriptExecutor jse = (JavascriptExecutor) driver;
                 jse.executeScript("arguments[0].click()", pageobjects.UpgradeCustomerPage.GetStartedCTA);
@@ -3304,7 +3311,7 @@ public class UpgradeCustomerPageActions extends Environment {
     public static void clickOnContinueUpgradeExtraSection() throws Exception {
 
         Screenshots.captureScreenshot();
-        if (driver.findElements(By.xpath("//div[@id='extras-section']/div[3]/button")).size()>0) {
+        if (driver.findElements(By.xpath("//div[@id='extras-section']/button")).size()>0) {
             JavascriptExecutor jse = (JavascriptExecutor) driver;
             jse.executeScript("arguments[0].click()", pageobjects.UpgradeCustomerPage.extraContinueCTA);
             //UpgradeCustomerPage.deviceConfirmCTA.click();

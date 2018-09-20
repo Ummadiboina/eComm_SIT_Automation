@@ -702,6 +702,9 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 	}
 
 	public static void verifyAddNowButtonDisplayed() throws IOException {
+		JavascriptExecutor jse = (JavascriptExecutor) driver;
+		jse.executeScript("window.scrollBy(0,200)", "");
+		Screenshots.captureScreenshot();
 		List<WebElement> AddInsuranceButton = driver.findElements(By.xpath("//input[@class='button secondary']"));
 		if (AddInsuranceButton.size() > 0) {
 			log.debug("Add insurance button is present");
@@ -718,11 +721,14 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 		List<WebElement> AddInsuranceButton = driver.findElements(By.xpath("//input[@class='button secondary']"));
 		if (AddInsuranceButton.size() > 0) {
 			driver.findElement(By.xpath("//input[@class='button secondary']")).click();
-			Thread.sleep(4000);
+			Thread.sleep(6000);
 			log.debug("Clicked on Add Insurance button");
 		} else {
 			Assert.fail("Add now button is not present");
 		}
+		driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
+		JavascriptExecutor jse = (JavascriptExecutor) driver;
+		jse.executeScript("window.scrollBy(0,600)", "");
 		Screenshots.captureScreenshot();
 	}
 
@@ -758,6 +764,7 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 		Thread.sleep(4000);
 
 		List<WebElement> filtersCount = driver.findElements(By.xpath("//div[@class='filter-options']/button | //div[@class='filter-options tariff-page']/button"));
+		Thread.sleep(2000);
 		log.debug("There are "+filtersCount.size()+" filter ranges \n");
 		Thread.sleep(2000);
 
@@ -794,6 +801,7 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 		/*JavascriptExecutor jse = (JavascriptExecutor) driver;
 		jse.executeScript("window.scrollBy(0,300)", "");*/
 		Screenshots.captureScreenshot();
+		Thread.sleep(4000);
 
 		ArrayList<Integer> datalist = new ArrayList<Integer>();
 		String data = null, tempdata = null;
@@ -1029,7 +1037,9 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 			new Select(element).selectByVisibleText(tariffSortDropDown);
 			log.debug("Sorted: " + tariffSortDropDown);
 		}
-		scrollToAnElement.scrollToElement(pageobjects.PAYMandPAYGTariffAndExtrasPage.TariffSortDropDown);
+
+		jse.executeScript("window.scrollBy(0,200)", "");
+		Thread.sleep(3000);
 		Screenshots.captureScreenshot();
 
 		Thread.sleep(5000);
@@ -1156,13 +1166,18 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 
 	public static void DeSelectedState() throws InterruptedException, IOException {
 		Thread.sleep(5000);
-		pageobjects.PAYMandPAYGTariffAndExtrasPage.DataFilterSelectedXpath.click();
-		Thread.sleep(5000);
-		/*JavascriptExecutor jse = (JavascriptExecutor) driver;
-		jse.executeScript("window.scrollBy(0,200)", "");*/
+		//scrollToAnElement.scrollToElement(pageobjects.PAYMandPAYGTariffAndExtrasPage.DataFilterSelectedXpath);
+		//Thread.sleep(3000);
 		Screenshots.captureScreenshot();
+		//pageobjects.PAYMandPAYGTariffAndExtrasPage.DataFilterSelectedXpath.click();
+		JavascriptExecutor executor = (JavascriptExecutor) driver;
+		executor.executeScript("arguments[0].click();", pageobjects.PAYMandPAYGTariffAndExtrasPage.DataFilterSelectedXpath);
+		Thread.sleep(3000);
+		/*JavascriptExecutor jse = (JavascriptExecutor) driver;
+		jse.executeScript("window.scrollBy(0,200)", "");
+		Screenshots.captureScreenshot();*/
+
 		log.debug("Deselected the selected data filter tab");
-		Thread.sleep(5000);
 		JavascriptExecutor jse = (JavascriptExecutor) driver;
 		jse.executeScript("window.scrollBy(0,200)", "");
 		Screenshots.captureScreenshot();

@@ -107,10 +107,13 @@ public class ConnectedDeviceDetailsPageAction extends Environment {
             jse.executeScript("arguments[0].click();", ele1);
             log.debug("Clicked on Add to basket CTA at PayG device details page to land on T&E page \n");
         }
-        Thread.sleep(7000);
-        // driver.findElement(By.id("deviceDetailsSubmit")).click();
-
+        Thread.sleep(8000);
         Screenshots.captureScreenshot();
+        // driver.findElement(By.id("deviceDetailsSubmit")).click();
+        //JavascriptExecutor jse = (JavascriptExecutor) driver;
+        jse.executeScript("window.scrollBy(0,300)", "");
+        Screenshots.captureScreenshot();
+
 
     }
 
