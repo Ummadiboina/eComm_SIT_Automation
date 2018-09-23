@@ -12,7 +12,7 @@ Feature: 96_Reg_VOLTE_PayMPhonesHomeDeliveryWithAccessory
     And Navigate to device details page
     And Land on the 'Tariffs and extra' page
     #And Validate consumer Bill Spend Caps section when BSC is <BSCstatus>
-    And Click on Dont Select Cap My Bill CTA
+    And Click on Dont Select Cap My Bill CTA when BSC is <BSCstatus>
     And Choose some Accesssory
     And I Land on the basket page and choose home delivery option
     And click on "go to checkout" button
@@ -27,4 +27,4 @@ Feature: 96_Reg_VOLTE_PayMPhonesHomeDeliveryWithAccessory
 
     Examples:
       | handset  | color      | Capacity | Firstname | Surname | Username     | BSCstatus | consumer | B1  | B2  | B3     | B4  | Text   | Email | Phone | Post | status  | MBBStatus | DeviceType |
-      | iPhone X | Space Grey | 256GB    | TEST      | ACCEPTA | TEST ACCEPTA | Enabled   | Me       | Not | Not | Select | Not | Select | Not   | Not   | Not  | Enabled | No        | Connected  |
+      | iPhone X | Space Grey | 256GB    | TEST      | ACCEPTA | TEST ACCEPTA | Disabled  | Me       | Not | Not | Select | Not | Select | Not   | Not   | Not  | Enabled | No        | Connected  |

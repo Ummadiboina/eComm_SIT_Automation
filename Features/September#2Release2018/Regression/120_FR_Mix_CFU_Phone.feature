@@ -10,6 +10,7 @@ Feature: 120_FR_Mix_CFU_Phone
     And Select a <handset> device from Recommended devices section
     And Click on link view Phone Details link next to device
     And Build your plan with <upFront> <term> and <data>
+    #And Click on Dont Select Cap My Bill CTA when BSC is <BSCstatus>
     And I Land on the basket page by clicking on Add to Basket button
     And click on "go to checkout" button
     And perform <Action> in OTAC page
@@ -26,4 +27,4 @@ Feature: 120_FR_Mix_CFU_Phone
 
     Examples:
       | username                     | password | Firstname | Surname | BSCstatus | Tablet             | color | Capacity | Username     | Action    | tariff | consumer | B1     | B2  | B3  | B4  | Text   | Email | Phone | Post | status  | MBBStatus | DeviceType | upFront | term | data |
-      | ina_feb3593@stf.ref.o2.co.uk | test123  | Test      | Accepta | Enabled   | iPad 9.7 inch 2018 | Gold  | 32GB     | TEST ACCEPTA | enterCode |        | Me       | Select | Not | Not | Not | Select | Not   | Not   | Not  | Enabled | No        | Connected  | max     | max  | max  |
+      | ina_feb3593@stf.ref.o2.co.uk | test123  | Test      | Accepta | Disabled  | iPad 9.7 inch 2018 | Gold  | 32GB     | TEST ACCEPTA | enterCode |        | Me       | Select | Not | Not | Not | Select | Not   | Not   | Not  | Enabled | No        | Connected  | max     | max  | max  |

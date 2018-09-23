@@ -14,7 +14,7 @@ Feature: 15_Reg_CFA_Phones_CnC_Delivery_page_Payment_page_more_than_one_address_
     And Navigate to device details page
     And Land on the 'Tariffs and extra' page
     #And Validate consumer Bill Spend Caps section when BSC is <BSCstatus>
-    And Click on Dont Select Cap My Bill CTA
+    And Click on Dont Select Cap My Bill CTA when BSC is <BSCstatus>
     And I Land on the basket page and choose home delivery option
     And click on "go to checkout" button
     #And input <Firstname> and <Surname> and other valid details in Delivery page to verify GDPR
@@ -28,4 +28,4 @@ Feature: 15_Reg_CFA_Phones_CnC_Delivery_page_Payment_page_more_than_one_address_
 
     Examples:
       | handset       | color | Firstname | Surname | Username     | consumer | BSCstatus | B1     | B2     | B3     | B4  | Text   | Email  | Phone | Post | status  | MBBStatus | DeviceType |
-      | iPhone 8 Plus | RED   | TEST      | ACCEPTA | TEST ACCEPTA | Me       | Enabled   | Select | Select | Select | Not | Select | Select | Not   | Not  | Enabled | No        | Connected  |
+      | iPhone 8 Plus | RED   | TEST      | ACCEPTA | TEST ACCEPTA | Me       | Disabled  | Select | Select | Select | Not | Select | Select | Not   | Not  | Enabled | No        | Connected  |

@@ -21,7 +21,7 @@ Feature: 17_Reg_CFU_Tablet_CnC_changes_on_Delivery_page_Order_placement
     #And Click on View all Tariffs link in upgrade options page
     And Land on the 'Tariffs and extra' page
     #And Validate consumer Bill Spend Caps section when BSC is <BSCstatus>
-    And Click on Dont Select Cap My Bill CTA
+    And Click on Dont Select Cap My Bill CTA when BSC is <BSCstatus>
     #And I Land on the basket page and choose to collect from store
     And I Land on the basket page by clicking on Add to Basket button
     And click on "go to checkout" button
@@ -38,5 +38,5 @@ Feature: 17_Reg_CFU_Tablet_CnC_changes_on_Delivery_page_Order_placement
     Then Choose <consumer> <status> Business preferences <B1> <B2> <B3> <B4> And Channel Preferences <Text> <Email> <Phone> <Post> <MBBStatus> <DeviceType>
 
     Examples:
-      | username                      | password | Firstname | Surname | BSCstatus | Tablet             | color | Capacity | Username     | Action    | tariff | consumer | B1     | B2  | B3  | B4  | Text   | Email | Phone | Post | status  | MBBStatus | DeviceType |
-      | 27fe66830918@stf.ref.o2.co.uk | test123  | Test      | Accepta | Enabled   | iPad 9.7 inch 2018 | Gold  | 32GB     | TEST ACCEPTA | enterCode |        | Me       | Select | Not | Not | Not | Select | Not   | Not   | Not  | Enabled | No        | Connected  |
+      | username                     | password | Firstname | Surname | BSCstatus | Tablet             | color | Capacity | Username     | Action    | tariff | consumer | B1     | B2  | B3  | B4  | Text   | Email | Phone | Post | status  | MBBStatus | DeviceType |
+      | ink_jun6562@stf.ref.o2.co.uk | test123  | Test      | Accepta | Disabled  | iPad 9.7 inch 2018 | Gold  | 32GB     | TEST ACCEPTA | enterCode |        | Me       | Select | Not | Not | Not | Select | Not   | Not   | Not  | Enabled | No        | Connected  |

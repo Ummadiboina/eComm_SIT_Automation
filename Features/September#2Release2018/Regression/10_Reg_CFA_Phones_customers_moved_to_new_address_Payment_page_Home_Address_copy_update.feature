@@ -13,7 +13,7 @@ Feature: 10_Reg_CFA_Phones_customers_moved_to_new_address_Payment_page_Home_Addr
     And Navigate to View tariff page
     And Land on the 'Tariffs and extra' page
     #And Validate consumer Bill Spend Caps section when BSC is <BSCstatus>
-    And Click on Dont Select Cap My Bill CTA
+    And Click on Dont Select Cap My Bill CTA when BSC is <BSCstatus>
     And I Land on the basket page and choose home delivery option
     And click on "go to checkout" button
     #And input <Firstname> and <Surname> and other valid details in Delivery page and Click on the 'Continue button'
@@ -29,4 +29,4 @@ Feature: 10_Reg_CFA_Phones_customers_moved_to_new_address_Payment_page_Home_Addr
 
     Examples:
       | handset       | Firstname | Surname | color | Username     | consumer | BSCstatus | B1  | B2  | B3  | B4  | Text | Email | Phone | Post | status  | MBBStatus | DeviceType |
-      | iPhone 8 Plus | TEST      | ACCEPTA | RED   | TEST ACCEPTA | Someone  | Enabled   | Not | Not | Not | Not | Not  | Not   | Not   | Not  | Enabled | No        | Connected  |
+      | iPhone 8 Plus | TEST      | ACCEPTA | RED   | TEST ACCEPTA | Someone  | Disabled  | Not | Not | Not | Not | Not  | Not   | Not   | Not  | Enabled | No        | Connected  |

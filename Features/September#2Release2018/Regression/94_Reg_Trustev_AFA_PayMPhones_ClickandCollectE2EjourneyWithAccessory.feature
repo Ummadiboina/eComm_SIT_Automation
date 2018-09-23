@@ -10,7 +10,7 @@ Feature: 94_Reg_Trustev_AFA_PayMPhones_ClickandCollectE2EjourneyWithAccessory
     And Select valid <Tariffs> from tariffs tab
     And select a valid Handset and Tariff combination
     And Validate Bill Spend Cap in agent deal builder section when BSC is <BSCstatus>
-    And Dont cap my bill
+    And Dont cap my bill when BSC is <BSCstatus>
     And Select a valid Accessory <Accessory>
     And select a valid store for Click and Collect
     And Validate all the Basket content and checkout
@@ -24,4 +24,4 @@ Feature: 94_Reg_Trustev_AFA_PayMPhones_ClickandCollectE2EjourneyWithAccessory
 #Random
     Examples:
       | Device                    | Tariffs | Accessory                       | BSCstatus | Firstname | Surname | HouseNumber | PostCode | Username     | Password | Confirm_Password | Security_Answer | B1     | B2  | B3     | B4  | Text   | Email  | Phone | Post | Consumer | status  | MBBStatus | DeviceType | DeviceModule |
-      | iPhone X 256GB Space Grey | Refresh | iPhone X Fashion Case Dual Pack | Enabled   | TEST      | ACCEPTA | 32          | SL11ER   | TEST ACCEPTA | test123  | test123          | Anything        | Select | Not | Select | Not | Select | Select | Not   | Not  | Me       | Enabled | No        | Connected  | Phone        |
+      | iPhone X 256GB Space Grey | Refresh | iPhone X Fashion Case Dual Pack | Disabled  | TEST      | ACCEPTA | 32          | SL11ER   | TEST ACCEPTA | test123  | test123          | Anything        | Select | Not | Select | Not | Select | Select | Not   | Not  | Me       | Enabled | No        | Connected  | Phone        |

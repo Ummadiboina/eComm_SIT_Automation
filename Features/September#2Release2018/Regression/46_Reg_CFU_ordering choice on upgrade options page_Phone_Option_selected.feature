@@ -11,7 +11,7 @@ Feature: 46_Reg_CFU_ordering choice on upgrade options page_Phone_Option_selecte
     And Click on device 'Confirm CTA'
     And Select a tariff <tariff>
     #And Validate consumer Bill Spend Caps section when BSC is <BSCstatus>
-    And Click on Dont Select Cap My Bill CTA
+    And Click on Dont Select Cap My Bill CTA when BSC is <BSCstatus>
     Then I should see 'Your Sim Card'section
     And no option should be selected
     And verify that Confirm CTA is not displayed
@@ -37,5 +37,5 @@ Feature: 46_Reg_CFU_ordering choice on upgrade options page_Phone_Option_selecte
     Then Choose <consumer> <status> Business preferences <B1> <B2> <B3> <B4> And Channel Preferences <Text> <Email> <Phone> <Post> <MBBStatus> <DeviceType>
 
     Examples:
-      | username                   | password | handset       | BSCstatus | Username     | Action | tariff                  | consumer | B1     | B2  | B3     | B4  | Text | Email  | Phone | Post | status  | MBBStatus | DeviceType |
-      | rbmuatlokesh_donotusee6051 | test123  | iPhone 8 Plus | Enabled   | TEST ACCEPTA | skip   | 19.99upfront45.00amonth | Me       | Select | Not | Select | Not | Not  | Select | Not   | Not  | Enabled | No        | Connected  |
+      | username                      | password | handset       | BSCstatus | Username     | Action | tariff                  | consumer | B1  | B2  | B3  | B4  | Text | Email | Phone | Post | status  | MBBStatus | DeviceType |
+      | 10au66996482@stf.ref.o2.co.uk | test123  | iPhone 8 Plus | Disabled  | TEST ACCEPTA | skip   | 19.99upfront45.00amonth | Someone  | Not | Not | Not | Not | Not  | Not   | Not   | Not  | Enabled | No        | Connected  |

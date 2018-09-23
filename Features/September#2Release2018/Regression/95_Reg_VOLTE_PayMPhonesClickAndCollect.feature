@@ -11,7 +11,7 @@ Feature: 95_Reg_VOLTE_PayMPhonesClickAndCollect
     And Navigate to device details page
     And Land on the 'Tariffs and extra' page
     #And Validate consumer Bill Spend Caps section when BSC is <BSCstatus>
-    And Click on Dont Select Cap My Bill CTA
+    And Click on Dont Select Cap My Bill CTA when BSC is <BSCstatus>
     And I Land on the basket page and choose to collect from store
     And click on "go to checkout" button
     #And input <Firstname> and <Surname> and other valid details in Delivery page for Click and collect and Click on the 'Continue button'
@@ -25,4 +25,4 @@ Feature: 95_Reg_VOLTE_PayMPhonesClickAndCollect
 
     Examples:
       | handset       | color      | Firstname | Surname | Username     | BSCstatus | consumer | B1  | B2  | B3  | B4  | Text | Email | Phone | Post | status  | MBBStatus | DeviceType |
-      | iPhone 8 Plus | Space Grey | TEST      | ACCEPTA | TEST ACCEPTA | Enabled   | Someone  | Not | Not | Not | Not | Not  | Not   | Not   | Not  | Enabled | No        | Connected  |
+      | iPhone 8 Plus | Space Grey | TEST      | ACCEPTA | TEST ACCEPTA | Disabled  | Someone  | Not | Not | Not | Not | Not  | Not   | Not   | Not  | Enabled | No        | Connected  |

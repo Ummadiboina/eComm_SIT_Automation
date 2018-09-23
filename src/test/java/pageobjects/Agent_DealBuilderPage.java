@@ -263,7 +263,7 @@ public class Agent_DealBuilderPage {
     @FindBy(how = How.XPATH, using = "(//div[@id='buildSpendCapOverlayDialog']/div/span)[1]")
     public static WebElement BSCoverlayClosed;
 
-    @FindBy(how = How.XPATH, using = "//*[normalize-space()='appliedBillCap']")
+    @FindBy(how = How.XPATH, using = "(//th[contains(text(),'Spend cap')])[1]/../../tr[2]/td/p[1]")
     public static WebElement appliedBillCap;
 
 }

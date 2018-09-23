@@ -14,7 +14,7 @@ Feature: 43_Reg_CFA_Phones_Delayed_delivery_Home_delivery_Confirmation_Page_form
     And Navigate to device details page
     And Land on the 'Tariffs and extra' page
     #And Validate consumer Bill Spend Caps section when BSC is <BSCstatus>
-    And Click on Dont Select Cap My Bill CTA
+    And Click on Dont Select Cap My Bill CTA when BSC is <BSCstatus>
     And I Land on the basket page and choose home delivery option
     And click on "go to checkout" button
     #And input <Firstname> and <Surname> and other valid details in Delivery page and Click on the 'Continue button'
@@ -32,4 +32,4 @@ Feature: 43_Reg_CFA_Phones_Delayed_delivery_Home_delivery_Confirmation_Page_form
     #Close the browser
     Examples:
       | handset       | Firstname | Surname | Username     | Status           | BSCstatus | color | consumer | B1     | B2     | B3     | B4  | Text   | Email  | Phone | Post | status  | MBBStatus | DeviceType |
-      | iPhone 8 Plus | TEST      | ACCEPTA | TEST ACCEPTA | Delayed Delivery | Enabled   | RED   | Me       | Select | Select | Select | Not | Select | Select | Not   | Not  | Enabled | No        | Connected  |
+      | iPhone 8 Plus | TEST      | ACCEPTA | TEST ACCEPTA | Delayed Delivery | Disabled  | RED   | Me       | Select | Select | Select | Not | Select | Select | Not   | Not  | Enabled | No        | Connected  |

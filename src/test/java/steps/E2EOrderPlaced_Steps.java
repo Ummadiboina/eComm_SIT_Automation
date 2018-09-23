@@ -7183,7 +7183,7 @@ public class E2EOrderPlaced_Steps {
             datalistbefore = PAYMandPAYGTariffAndExtrasPageActions.getDataListBeforeSelectingFilter();
             Thread.sleep(4000);
             PAYMandPAYGTariffAndExtrasPageActions.selectFilter(range);
-            Thread.sleep(6000);
+            Thread.sleep(8000);
             FilterDataOption = range;
         } catch (Exception e) {
             // TODO Auto-generated catch block
@@ -10710,19 +10710,34 @@ public class E2EOrderPlaced_Steps {
     //Jamal----Bill Spend Caps Section--------
 
     //Dont cap my bill CTA
-    @And("^Click on Dont Select Cap My Bill CTA$")
-    public void DontCapBillSpendCap() {
+    @And("^Click on Dont Select Cap My Bill CTA when BSC is ([^\"]*)$")
+    public void DontCapBillSpendCap(String BSCstatus) {
         try {
            // driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, PAYMandPAYGTariffAndExtrasPage.class);
             Thread.sleep(6000);
             Screenshots.captureScreenshot();
-            if(driver.findElements(By.xpath("//button[@id='dontcap']")).size()>0) {
-                if (pageobjects.PAYMandPAYGTariffAndExtrasPage.DontCapMyBillButton.isEnabled()) {
-                    PAYMandPAYGTariffAndExtrasPage.DontCapMyBillButton.click();
-                    log.debug("Dont Cap My Bill Button is clicked");
-                    Thread.sleep(3000);
-                    Screenshots.captureScreenshot();
+
+            if(BSCstatus.equalsIgnoreCase("Enabled")) {
+                Thread.sleep(4000);
+                if (driver.findElements(By.xpath("//div[contains(text(),'Your Spend Cap')] | //div/p/span[contains(text(),'Your Spend Cap')]")).size() > 0) {
+                    log.debug("Bill spend cap section is enabled");
+
+                    if (driver.findElements(By.xpath("//button[@id='dontcap']")).size() > 0) {
+                        if (pageobjects.PAYMandPAYGTariffAndExtrasPage.DontCapMyBillButton.isEnabled()) {
+                            PAYMandPAYGTariffAndExtrasPage.DontCapMyBillButton.click();
+                            log.debug("Dont Cap My Bill Button is clicked");
+                            Thread.sleep(3000);
+                            Screenshots.captureScreenshot();
+                        }
+                    }
+                }
+            }else if(BSCstatus.equalsIgnoreCase("Disabled")) {
+                if (driver.findElements(By.xpath("//div[contains(text(),'Your Spend Cap')] | //div/p/span[contains(text(),'Your Spend Cap')]")).size() > 0) {
+                    log.debug("Bill spend cap section is enabled it suppose to be in disabled mode for disabled status");
+                    Assert.fail("Bill spend cap section is enabled it suppose to be in disabled mode for disabled status");
+                } else {
+                    log.debug("As expected, Bill spend cap section is disabled");
                 }
             }
         } catch (Exception e) {
@@ -10888,18 +10903,39 @@ public class E2EOrderPlaced_Steps {
     }
 
     //choose a valid Bill Cap Amount in agent
-    @And("^Dont cap my bill$")
-    public void dontCapBillCap_AgentDealBuilder() {
+    @And("^Dont cap my bill when BSC is ([^\"]*)$")
+    public void dontCapBillCap_AgentDealBuilder(String BSCstatus) {
         try {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, Agent_DealBuilderPage.class);
             log.debug("Currently we are at page: "+driver.getTitle());
             Thread.sleep(3000);
             Screenshots.captureScreenshot();
-            if(driver.findElements(By.xpath("//p[@class='billSpendCapSelection']/select")).size()>0) {
-                driver.findElement(By.xpath("//p[@class='billSpendCapSelection']/select/option[2]")).click();
-                log.debug("No Spend Cap option is selected");
-                Screenshots.captureScreenshot();
+            if(BSCstatus.equalsIgnoreCase("Enabled")) {
+                if (driver.findElements(By.xpath("(//th[contains(text(),'Spend cap')])[1]")).size() > 0) {
+
+                    log.debug("Bill spend cap section is enabled");
+
+                    String capHeader = pageobjects.Agent_DealBuilderPage.BillSpendCapHeader.getText();
+                    Thread.sleep(3000);
+                    log.debug("Bill Spend Cap header is displayed in DealBuilder page ie :: " + capHeader);
+                    if (driver.findElements(By.xpath("//p[@class='billSpendCapSelection']/select")).size() > 0) {
+                        driver.findElement(By.xpath("//p[@class='billSpendCapSelection']/select/option[2]")).click();
+                        log.debug("No Spend Cap option is selected");
+                        Screenshots.captureScreenshot();
+                    }
+                }
+            }else if(BSCstatus.equalsIgnoreCase("Disabled")){
+                if (driver.findElements(By.xpath("(//th[contains(text(),'Spend cap')])[1]")).size() > 0) {
+                    log.debug("Bill spend cap section is enabled it suppose to be in disabled status");
+                    Assert.fail("Bill spend cap section is enabled it suppose to be in disabled status");
+                }else{
+                    log.debug("As expected, Bill spend cap section is disabled\n");
+                }
+            }else {
+                System.out.println("Unable to validate bill spend cap section \n");
+                log.debug("Unable to validate bill spend cap section \n");
+                Assert.fail("Unable to validate bill spend cap section \n");
             }
         } catch (Exception e) {
             // TODO Auto-generated catch block

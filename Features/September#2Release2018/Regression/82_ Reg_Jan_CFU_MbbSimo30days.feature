@@ -28,7 +28,7 @@ Feature: 82_ Reg_Jan_CFU_MbbSimo30days
     And Click on different <Contract>  Months Tariff in Tab
     And Click on 'Select' CTA to buy a tariff
     #And Validate consumer Bill Spend Caps section when BSC is <BSCstatus>
-    And Click on Dont Select Cap My Bill CTA
+    And Click on Dont Select Cap My Bill CTA when BSC is <BSCstatus>
     #And land on the Non Credit check payment page and input <Username> and other details and click 'Continue on next step'
     And copy text SIM delivery required or not is displayed
     And Select 'I’ll keep my current sim' option
@@ -40,4 +40,4 @@ Feature: 82_ Reg_Jan_CFU_MbbSimo30days
 
     Examples:
       | Contract | username                      | BSCstatus | password | filtername | sortoption                 | Username     | consumer | B1  | B2  | B3     | B4  | Text | Email  | Phone | Post | status  | MBBStatus | DeviceType |
-      | 30 Days  | 05ap67035292@stf.ref.o2.co.uk | Enabled   | test123  | low        | Monthly data (High to low) | TEST ACCEPTA | Me       | Not | Not | Select | Not | Not  | Select | Not   | Not  | Enabled | No        | Connected  |
+      | 30 Days  | 05ap22044765@stf.ref.o2.co.uk | Disabled  | test123  | low        | Monthly data (High to low) | TEST ACCEPTA | Me       | Not | Not | Select | Not | Not  | Select | Not   | Not  | Enabled | No        | Connected  |

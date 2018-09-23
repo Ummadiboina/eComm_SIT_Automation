@@ -13,7 +13,7 @@ Feature: 48_CFU_Recycle_Phones_DD_Confirmation_Page_changes
     And Click on device 'Confirm CTA'
     And Select ribboned tariff <tariff> in upgrade journey
     #And Validate consumer Bill Spend Caps section when BSC is <BSCstatus>
-    And Click on Dont Select Cap My Bill CTA
+    And Click on Dont Select Cap My Bill CTA when BSC is <BSCstatus>
     Then I should see 'Your Sim Card'section
     And no option should be selected
     And verify that Confirm CTA is not displayed
@@ -46,5 +46,5 @@ Feature: 48_CFU_Recycle_Phones_DD_Confirmation_Page_changes
     Then Choose <consumer> <status> Business preferences <B1> <B2> <B3> <B4> And Channel Preferences <Text> <Email> <Phone> <Post> <MBBStatus> <DeviceType>
 
     Examples:
-      | username                   | password | BSCstatus | handset        | tariff                 | Firstname | Surname | Username     | Action | Status           | Make | Model   | Network | consumer | B1     | B2  | B3  | B4  | Text   | Email | Phone | Post | status  | MBBStatus | DeviceType |
-      | rbmuatlokesh_donotusee3035 | test123  | Enabled   | Apple iPhone 7 | 9.99upfront84.00amonth | TEST      | ACCEPTA | TEST ACCEPTA | skip   | Delayed Delivery | LG   | Iphone7 | Orange  | Me       | Select | Not | Not | Not | Select | Not   | Not   | Not  | Enabled | No        | Connected  |
+      | username                   | password | BSCstatus | handset        | tariff                  | Firstname | Surname | Username     | Action | Status           | Make | Model   | Network | consumer | B1     | B2  | B3  | B4  | Text   | Email | Phone | Post | status  | MBBStatus | DeviceType |
+      | rbmuatlokesh_donotusee3035 | test123  | Disabled   | Apple iPhone 7 | 29.99upfront60.34amonth | TEST      | ACCEPTA | TEST ACCEPTA | skip   | Delayed Delivery | LG   | Iphone7 | Orange  | Me       | Select | Not | Not | Not | Select | Not   | Not   | Not  | Enabled | No        | Connected  |

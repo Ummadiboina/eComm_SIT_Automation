@@ -12,7 +12,7 @@ Feature: 35_Reg_CFA_Basket page cross sell insurance
     And Navigate to device details page
     And select a <tariff> which has free insurance
     #And Validate consumer Bill Spend Caps section when BSC is <BSCstatus>
-    And Click on Dont Select Cap My Bill CTA
+    And Click on Dont Select Cap My Bill CTA when BSC is <BSCstatus>
     And deselect if any insurance is autoselected
     And verify that the insurance is in a sorted order
     And I Land on the basket page by clicking on Add to Basket button
@@ -30,4 +30,4 @@ Feature: 35_Reg_CFA_Basket page cross sell insurance
 
     Examples:
       | handset  | tariff                 | BSCstatus | consumer | B1  | B2  | B3  | B4  | Text | Email | Phone | Post | status  | MBBStatus | DeviceType | Firstname | Surname | Username     |
-      | iPhone X | 9.99upfront44.00amonth | Enabled   | Someone  | Not | Not | Not | Not | Not  | Not   | Not   | Not  | Enabled | No        | Connected  | TEST      | ACCEPTA | TEST ACCEPTA |
+      | iPhone X | 9.99upfront44.00amonth | Disabled  | Someone  | Not | Not | Not | Not | Not  | Not   | Not   | Not  | Enabled | No        | Connected  | TEST      | ACCEPTA | TEST ACCEPTA |

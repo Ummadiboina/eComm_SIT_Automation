@@ -12,7 +12,7 @@ Feature: 63_Reg_CS_PayMPhonesHomeDeliveryWithoutAccessory
     And Navigate to device details page
     And Land on the 'Tariffs and extra' page
     #And Validate consumer Bill Spend Caps section when BSC is <BSCstatus>
-    And Click on Dont Select Cap My Bill CTA
+    And Click on Dont Select Cap My Bill CTA when BSC is <BSCstatus>
     And I Land on the basket page and choose home delivery option
     And click on "go to checkout" button
     And input <Firstname> and <Surname> and other valid details in Delivery page to verify GDPR
@@ -28,4 +28,4 @@ Feature: 63_Reg_CS_PayMPhonesHomeDeliveryWithoutAccessory
     #Close the browser
     Examples:
       | handset       | color      | Capacity | BSCstatus | Firstname | Surname | Username     | consumer | B1  | B2     | B3  | B4  | Text | Email  | Phone | Post | status  | MBBStatus | DeviceType |
-      | iPhone 8 Plus | Space Grey | 64GB     | Enabled   | TEST      | ACCEPTA | TEST ACCEPTA | Me       | Not | Select | Not | Not | Not  | Select | Not   | Not  | Enabled | No        | Connected  |
+      | iPhone 8 Plus | Space Grey | 64GB     | Disabled  | TEST      | ACCEPTA | TEST ACCEPTA | Me       | Not | Select | Not | Not | Not  | Select | Not   | Not  | Enabled | No        | Connected  |

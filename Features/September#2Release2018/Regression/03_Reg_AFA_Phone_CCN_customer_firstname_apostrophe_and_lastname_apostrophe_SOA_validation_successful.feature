@@ -1,6 +1,6 @@
 Feature: 03_Reg_AFA_Phone_CCN_customer_firstname_apostrophe_and_lastname_apostrophe_SOA_validation_successful
 
-  This scenario ensures that the Agent shop accepts Apostrophe in First Name and Last Name fields
+  This scenario ensures that the Agent  shop accepts Apostrophe in First Name and Last Name fields
 
   @Web
   Scenario Outline: ConsumerShopToAcceptApostrophe
@@ -12,7 +12,7 @@ Feature: 03_Reg_AFA_Phone_CCN_customer_firstname_apostrophe_and_lastname_apostro
     And select a valid Handset and Tariff combination
     And Select valid <Extras> from extras tab
     And Validate Bill Spend Cap in agent deal builder section when BSC is <BSCstatus>
-    And Dont cap my bill
+    And Dont cap my bill when BSC is <BSCstatus>
     And Validate all the Basket content and checkout
     Then perform all the advisory checks
     And perform the credit checks using valid <Firstname>, <Surname>, <HouseNumber>, <PostCode> and valid <Username>
@@ -27,4 +27,4 @@ Feature: 03_Reg_AFA_Phone_CCN_customer_firstname_apostrophe_and_lastname_apostro
       # Then CCALink Should be generated
     Examples:
       | Device                    | Tariffs | Extras | BSCstatus | DeliveryType | Firstname | Surname  | Username     | HouseNumber | PostCode | B1  | B2  | B3  | B4  | Text | Email | Phone | Post | Consumer | status  | MBBStatus | DeviceType | DeviceModule |
-      | iPhone X 256GB Space Grey | Refresh | Base   | Enabled   | HomeDelivery | TEST'     | ACCEPTA' | TEST ACCEPTA | 14          | SL11UP   | Not | Not | Not | Not | Not  | Not   | Not   | Not  | Someone  | Enabled | No        | Connected  | Phone        |
+      | iPhone X 256GB Space Grey | Refresh | Base   | Disabled  | HomeDelivery | test'     | accepta' | TEST ACCEPTA | 14          | SL11UP   | Not | Not | Not | Not | Not  | Not   | Not   | Not  | Someone  | Enabled | No        | Connected  | Phone        |

@@ -11,7 +11,7 @@ Feature: 78_Reg_FNT_PayMPhonesAdditionalDepositConfirmation
     And Navigate to device details page
     And Land on the 'Tariffs and extra' page
     #And Validate consumer Bill Spend Caps section when BSC is <BSCstatus>
-    And Click on Dont Select Cap My Bill CTA
+    And Click on Dont Select Cap My Bill CTA when BSC is <BSCstatus>
     And I Land on the basket page and choose to collect from store
     And click on "go to checkout" button
     And input <Firstname> and <Surname> and other valid details in Delivery page to verify GDPR
@@ -29,4 +29,4 @@ Feature: 78_Reg_FNT_PayMPhonesAdditionalDepositConfirmation
 
     Examples:
       | Firstname | Surname | Username     | handset       | color      | BSCstatus | Username2    | consumer | B1     | B2  | B3  | B4  | Text   | Email | Phone | Post | status  | MBBStatus | DeviceType |
-      | test      | acceptb | test acceptb | iPhone 8 Plus | Space Grey | Enabled   | TEST ACCEPTB | Me       | Select | Not | Not | Not | Select | Not   | Not   | Not  | Enabled | No        | Connected  |
+      | test      | acceptb | test acceptb | iPhone 8 Plus | Space Grey | Disabled   | TEST ACCEPTB | Me       | Select | Not | Not | Not | Select | Not   | Not   | Not  | Enabled | No        | Connected  |

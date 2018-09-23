@@ -10,7 +10,7 @@ Feature: 33_Reg_Agent_TradeIn
     And Select valid <Tariffs> from tariffs tab
     And select a valid Handset and Tariff combination_new
     And Validate Bill Spend Cap in agent deal builder section when BSC is <BSCstatus>
-    And Dont cap my bill
+    And Dont cap my bill when BSC is <BSCstatus>
     And Clicks on 'Trade In'button
     And Validate all the Basket content and checkout
     And Choose Business preferences <B1> <B2> <B3> <B4> and Channel Preferences <Text> <Email> <Phone> <Post> for <consumer> when GDPR <status> <DeviceType> for AFU journey
@@ -28,4 +28,4 @@ Feature: 33_Reg_Agent_TradeIn
 
     Examples:
       | User        | Device                    | Tariffs | BSCstatus | username                      | user         | DeliveryType | Firstname | Surname | Username     | HouseNumber | PostCode | password | consumer | B1  | B2     | B3  | B4  | Text | Email  | Phone | Post | status  | MBBStatus | DeviceType |
-      | 07568414644 | iPhone X 256GB Space Grey | Refresh | Enabled   | 23oc84050507@stf.ref.o2.co.uk | TEST ACCEPTA | HomeDelivery | TEST      | ACCEPTA | TEST ACCEPTA | Flat 6      | SL11EL   | test123  | Me       | Not | Select | Not | Not | Not  | Select | Not   | Not  | Enabled | No        | Connected  |
+      | 07568414644 | iPhone X 256GB Space Grey | Refresh | Disabled  | 23oc84050507@stf.ref.o2.co.uk | TEST ACCEPTA | HomeDelivery | TEST      | ACCEPTA | TEST ACCEPTA | Flat 6      | SL11EL   | test123  | Me       | Not | Select | Not | Not | Not  | Select | Not   | Not  | Enabled | No        | Connected  |

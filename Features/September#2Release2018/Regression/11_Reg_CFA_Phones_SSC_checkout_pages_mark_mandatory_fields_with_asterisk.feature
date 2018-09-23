@@ -11,7 +11,7 @@ Feature: 11_Reg_CFA_Phones_SSC_checkout_pages_mark_mandatory_fields_with_asteris
     And Navigate to device details page
     And Land on the 'Tariffs and extra' page
     #And Validate consumer Bill Spend Caps section when BSC is <BSCstatus>
-    And Click on Dont Select Cap My Bill CTA
+    And Click on Dont Select Cap My Bill CTA when BSC is <BSCstatus>
     And I Land on the basket page and choose home delivery option
     And click on "go to checkout" button
     And verify copy text You will need to give details for all fields marked with an asterisk is displayed
@@ -39,4 +39,4 @@ Feature: 11_Reg_CFA_Phones_SSC_checkout_pages_mark_mandatory_fields_with_asteris
 
     Examples:
       | handset  | tariffAmt | dataValue | color      | Firstname | Surname | consumer | BSCstatus | B1     | B2  | B3  | B4  | Text   | Email | Phone | Post | status  | MBBStatus | DeviceType |
-      | iPhone X | £39       | 8GB       | Space Grey | Test      | Accepta | Me       | Enabled   | Select | Not | Not | Not | Select | Not   | Not   | Not  | Enabled | No        | Connected  |
+      | iPhone X | £39       | 8GB       | Space Grey | Test      | Accepta | Me       | Disabled  | Select | Not | Not | Not | Select | Not   | Not   | Not  | Enabled | No        | Connected  |
