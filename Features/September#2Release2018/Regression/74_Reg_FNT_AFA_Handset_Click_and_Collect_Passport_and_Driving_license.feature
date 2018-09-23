@@ -9,7 +9,7 @@ Feature: 74_Reg_FNT_AFA_Handset_Click_and_Collect_Passport_and_Driving_license
     And Select valid <Tariffs> from tariffs tab
     And select a valid Handset and Tariff combination
     And Validate Bill Spend Cap in agent deal builder section when BSC is <BSCstatus>
-    And Dont cap my bill
+    And Dont cap my bill when BSC is <BSCstatus>
     And Select a valid store using <postCode> for Click and Collect
     And Validate all the Basket content and checkout
     Then perform all the advisory checks
@@ -27,4 +27,4 @@ Feature: 74_Reg_FNT_AFA_Handset_Click_and_Collect_Passport_and_Driving_license
     #Step number 16 and 17 need to be defined to carry out end to end journey#
     Examples:
       | Device                        | Tariffs | License_postcode | License_Number | BSCstatus | country | Passport_number | Firstname | Surname  | Username      | HouseNumber | PostCode | postCode | B1  | B2  | B3     | B4  | Text | Email | Phone | Post | Consumer | status  | Password | confirmPassword | SecurityAnswer | MBBStatus | DeviceType | DeviceModule |
-      | iPhone 8 Plus 64GB Space Grey | Random  | sl11el           | 122SS23ERT     | Enabled   | IND     | G02DSRE£        | TEST      | ADDINFOI | TEST ADDINFOI | 14          | SL11UP   | TQ13DG   | Not | Not | Select | Not | Not  | Not   | Not   | Post | Me       | Enabled | test123  | test123         | Jkhan          | No        | Connected  | Phone        |
+      | iPhone 8 Plus 64GB Space Grey | Random  | sl11el           | 122SS23ERT     | Disabled  | IND     | G02DSRE£        | TEST      | ADDINFOI | TEST ADDINFOI | 14          | SL11UP   | TQ13DG   | Not | Not | Select | Not | Not  | Not   | Not   | Post | Me       | Enabled | test123  | test123         | Jkhan          | No        | Connected  | Phone        |

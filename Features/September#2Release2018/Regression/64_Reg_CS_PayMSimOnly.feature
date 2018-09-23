@@ -7,7 +7,7 @@ Feature: 64_Reg_CS_PayMSimOnly
     And Click on different <Contract>  Months Tariff in Tab
     And Select any Random Tariff in the displayed list of Tariffs under different <Contract> tab
     #And Validate consumer Bill Spend Caps section when BSC is <BSCstatus>
-    And Click on Dont Select Cap My Bill CTA
+    And Click on Dont Select Cap My Bill CTA when BSC is <BSCstatus>
     And I Land on the Plan included basket page and choose home delivery option
     And click on "go to checkout" button
     #And input <Firstname> and <Surname> and other valid details in Delivery page and Click on the 'Continue button'
@@ -20,4 +20,4 @@ Feature: 64_Reg_CS_PayMSimOnly
 
     Examples:
       | Contract | Firstname | Surname | Username     | BSCstatus | consumer | B1  | B2  | B3     | B4  | Text | Email  | Phone | Post   | status  | MBBStatus | DeviceType |
-      | 30 Days  | TEST      | ACCEPTA | TEST ACCEPTA | Enabled   | Me       | Not | Not | Select | Not | Not  | Select | Not   | Select | Enabled | No        | Connected  |
+      | 30 Days  | TEST      | ACCEPTA | TEST ACCEPTA | Disabled  | Me       | Not | Not | Select | Not | Not  | Select | Not   | Select | Enabled | No        | Connected  |

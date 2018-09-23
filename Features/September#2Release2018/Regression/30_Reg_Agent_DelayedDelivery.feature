@@ -10,7 +10,7 @@ Feature: 30_Reg_Agent_DelayedDelivery
     And Select valid <Tariffs> from tariffs tab
     And select a valid Handset and Tariff combination
     And Validate Bill Spend Cap in agent deal builder section when BSC is <BSCstatus>
-    And Dont cap my bill
+    And Dont cap my bill when BSC is <BSCstatus>
     And Select valid <Extras> from extras tab
     And Validate all the Basket content and checkout
     Then perform all the advisory checks
@@ -26,4 +26,4 @@ Feature: 30_Reg_Agent_DelayedDelivery
     # Then CCALink Should be generated
     Examples:
       | Status  | Device           | BSCstatus | Tariffs | Extras | DeliveryType | Firstname | Surname | Username     | HouseNumber | PostCode | Consumer | B1  | B2  | B3     | B4  | Text   | Email  | Phone | Post   | status  | MBBStatus | DeviceType | DeviceModule |
-      | Delayed | Delayed delivery | Enabled   | Refresh | Base   | HomeDelivery | TEST      | ACCEPTA | TEST ACCEPTA | 14          | SL11UP   | Me       | Not | Not | Select | Not | Select | Select | Not   | Select | Enabled | No        | Connected  | Phone        |
+      | Delayed | Delayed delivery | Disabled  | Refresh | Base   | HomeDelivery | TEST      | ACCEPTA | TEST ACCEPTA | 14          | SL11UP   | Me       | Not | Not | Select | Not | Select | Select | Not   | Select | Enabled | No        | Connected  | Phone        |

@@ -136,8 +136,10 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 					}
 
 					String textStr3 = driver.findElement(By.xpath("//span[normalize-space()='" + tariffAmt + "']/../../../div[2]/div/p")).getText();
+
+					String expectedTxt = "Includes data rollover of up to " + dataRolloverValue;
 					Thread.sleep(3000);
-					if (textStr3.contains("Includes data rollover of up to " + dataRolloverValue)) {
+					if (textStr3.contains(expectedTxt)) {
 
 						log.debug("Tariff tile included Data Roll over ribbon Includes data rollover of up to " + dataRolloverValue);
 					} else {

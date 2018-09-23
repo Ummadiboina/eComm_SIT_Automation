@@ -9,7 +9,7 @@ Feature: 02_Reg_AFA_Non_SIMO_Credit_Check_StatusReferWithSIMO_Show_Error_Message
     And Select valid <Tariff> from tariffs tab
     And select a valid Handset and Tariff combination
     And Validate Bill Spend Cap in agent deal builder section when BSC is <BSCstatus>
-    And Dont cap my bill
+    And Dont cap my bill when BSC is <BSCstatus>
     And Validate all the Basket content and checkout
     Then perform all the advisory checks
     And perform the credit checks using valid <Firstname>, <Surname>, <HouseNumber>, <PostCode> and valid <Username>
@@ -20,4 +20,4 @@ Feature: 02_Reg_AFA_Non_SIMO_Credit_Check_StatusReferWithSIMO_Show_Error_Message
 
     Examples:
       | Device                    | Tariff  | DeliveryType | BSCstatus | Firstname | Surname | Username    | HouseNumber | PostCode | B1     | B2  | B3     | B4     | Text   | Email  | Phone | Post | Consumer | status  | MBBStatus | DeviceType | DeviceModule |
-      | iphone X 256GB Space Grey | Refresh | HomeDelivery | Enabled   | TEST      | referc  | Test Referc | 6           | SL11ER   | Select | Not | Select | Select | Select | Select | Not   | Not  | Someone  | Enabled | No        | Connected  | simo         |
+      | iphone X 256GB Space Grey | Refresh | HomeDelivery | Disabled  | TEST      | referc  | Test Referc | 6           | SL11ER   | Select | Not | Select | Select | Select | Select | Not   | Not  | Someone  | Enabled | No        | Connected  | simo         |

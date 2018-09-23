@@ -20,7 +20,7 @@ Feature: 44_Reg_CFA_seperate_tariff_ribbons_Tariff_page_Basket_page_html_overlay
     And Click on the 'Overlay icon' in tariff upsell config of 'Your package' section and verify pop up gets displayed in the Tariff and Extras Page
     And Land on the 'Tariffs and extra' page
     #And Validate consumer Bill Spend Caps section when BSC is <BSCstatus>
-    And Click on Dont Select Cap My Bill CTA
+    And Click on Dont Select Cap My Bill CTA when BSC is <BSCstatus>
     And I Land on the basket page by clicking on Add to Basket button
     And Verify Promotional ribbons are displayed under Tariff section in the Basket page
     And Verify 'Overlay icon' is displayed on the promotional ribbons in the Basket page
@@ -37,4 +37,4 @@ Feature: 44_Reg_CFA_seperate_tariff_ribbons_Tariff_page_Basket_page_html_overlay
 
     Examples:
       | handset            | color | tariff                  | BSCstatus | Firstname | Surname | Username     | consumer | B1     | B2     | B3  | B4  | Text   | Email | Phone | Post | status  | MBBStatus | DeviceType |
-      | Xperia XZ2 Compact | Black | 19.99upfront31.00amonth | Enabled   | TEST      | ACCEPTA | TEST ACCEPTA | Me       | Select | Select | Not | Not | Select | Not   | Not   | Not  | Enabled | No        | Connected  |
+      | Xperia XZ2 Compact | Black | 19.99upfront31.00amonth | Disabled  | TEST      | ACCEPTA | TEST ACCEPTA | Me       | Select | Select | Not | Not | Select | Not   | Not   | Not  | Enabled | No        | Connected  |

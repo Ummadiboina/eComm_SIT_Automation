@@ -10,6 +10,7 @@ Feature: 122_FR_Mix_CFU_Phone
     And Select a <handset> device from Recommended devices section
     And Click on link view Phone Details link next to device
     And Build your plan with <upFront> <term> and <data>
+    #And Click on Dont Select Cap My Bill CTA when BSC is <BSCstatus>
     And I Land on the basket page and choose home delivery option
     And click on "go to checkout" button
     And input <Firstname> and <Surname> and other valid details in Delivery page to verify GDPR
@@ -24,4 +25,4 @@ Feature: 122_FR_Mix_CFU_Phone
 
     Examples:
       | username                      | password | handset       | upFront | term | data | Firstname | Surname | Username     | filtername | BSCstatus | sortoption                 | tabletname | consumer | B1     | B2  | B3  | B4  | Text | Email  | Phone | Post | status  | MBBStatus | DeviceType | upFront | term | data |
-      | 25ap82244372@stf.ref.o2.co.uk | test123  | iPhone 8 Plus | avg     | avg  | avg  | TEST      | ACCEPTA | TEST ACCEPTA | low        | Enabled   | Monthly data (High to low) | A3 10      | Me       | Select | Not | Not | Not | Not  | Select | Not   | Not  | Enabled | No        | Connected  | min     | min  | min  |
+      | 25ap82244372@stf.ref.o2.co.uk | test123  | iPhone 8 Plus | avg     | avg  | avg  | TEST      | ACCEPTA | TEST ACCEPTA | low        | Disabled  | Monthly data (High to low) | A3 10      | Me       | Select | Not | Not | Not | Not  | Select | Not   | Not  | Enabled | No        | Connected  | min     | min  | min  |

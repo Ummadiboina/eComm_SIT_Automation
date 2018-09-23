@@ -9,11 +9,11 @@ Feature: 27_Reg_AFU_SavedBasket
     And Select valid <Tariffs> from tariffs tab
     And select a valid Handset and Tariff combination
     And Validate Bill Spend Cap in agent deal builder section when BSC is <BSCstatus>
-    And Dont cap my bill
+    And Dont cap my bill when BSC is <BSCstatus>
     # And Select a valid Accessory <Device>
     And choose to email basket to save the basket
     And Verify email is sent successfully
 
     Examples:
-      | user        | Device                         | Tariffs | BSCstatus |
-      | 07521116249 | iPhone 8 Plus 256GB Space Grey | Refresh | Enabled   |
+      | user        | Device                                     | Tariffs | BSCstatus |
+      | 07801801173 | Samsung Galaxy S8 Plus 64GB Midnight Black | Refresh | Disabled  |

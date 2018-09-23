@@ -6,7 +6,7 @@ Feature: 110_FR_Upfront_CFA_PayMTablets_Till_TnE.feature
     And navigate to PAYM Tablets page
     And select any available <Device> Tablet
     And Build your plan with <upFront> <term> and <data>
-    #And Click on Dont Select Cap My Bill CTA
+    #And Click on Dont Select Cap My Bill CTA when BSC is <BSCstatus>
     And I Land on the basket page and choose home delivery option
     And click on "go to checkout" button
     And verify copy text You will need to give details for all fields marked with an asterisk is displayed
@@ -22,6 +22,6 @@ Feature: 110_FR_Upfront_CFA_PayMTablets_Till_TnE.feature
 
     Examples:
       | Device                | tariffAmt | dataValue | color      | Firstname | Surname | consumer | BSCstatus | B1     | B2  | B3  | B4  | Text   | Email | Phone | Post | status  | MBBStatus | DeviceType | upFront | term | data |
-      | Galaxy Tab A 2016 7.0 | £39       | 8GB       | Space Grey | Test      | Accepta | Me       | Enabled   | Select | Not | Not | Not | Select | Not   | Not   | Not  | Enabled | No        | Connected  | max     |  max  | avg  |
+      | Galaxy Tab A 2016 7.0 | £39       | 8GB       | Space Grey | Test      | Accepta | Me       | Disabled  | Select | Not | Not | Not | Select | Not   | Not   | Not  | Enabled | No        | Connected  | max     | max  | avg  |
 
 

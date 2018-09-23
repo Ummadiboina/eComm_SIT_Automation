@@ -17,7 +17,7 @@ Feature: 81_Reg_Jan_CFA_OOSForHomeDeliveryandCnC
     And the Delivery information section should show the 'OOS message'
     And Land on the 'Tariffs and extra' page
     #And Validate consumer Bill Spend Caps section when BSC is <BSCstatus>
-    And Click on Dont Select Cap My Bill CTA
+    And Click on Dont Select Cap My Bill CTA when BSC is <BSCstatus>
     And the Delivery section should show 'OOS message'
     And I Land on the basket page by clicking on Add to Basket button
     And the Delivery section should show 'OOS message'
@@ -25,4 +25,4 @@ Feature: 81_Reg_Jan_CFA_OOSForHomeDeliveryandCnC
 
     Examples:
       | handset            | color  | username               | password | BSCstatus |
-      | iPhone 5s Like New | Silver | dasdasdkjaskd@sdsd.com | test123  | Enabled   |
+      | iPhone 5s Like New | Silver | dasdasdkjaskd@sdsd.com | test123  | Disabled  |

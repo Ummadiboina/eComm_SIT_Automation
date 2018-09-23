@@ -373,10 +373,12 @@ public class Agent_DealBuilderPageActions extends Environment {
     public static void eMailBasket() throws InterruptedException, IOException {
 
         // Selecting an eMail Link
+        Screenshots.captureScreenshot();
+        Thread.sleep(5000);
         Agent_DealBuilderPage.eMailBasket.click();
         log.debug("Clicked on eMail Basket");
 
-        Thread.sleep(3000);
+        Thread.sleep(4000);
         Screenshots.captureScreenshot();
 
     }
@@ -420,7 +422,7 @@ public class Agent_DealBuilderPageActions extends Environment {
     public static void eMailConfirmation() throws InterruptedException, IOException {
         // TODO Auto-generated method stub
         Thread.sleep(3000);
-
+        Screenshots.captureScreenshot();
         String Mainwindow = driver.getWindowHandle();
         // getting all the popup windows , hence using getwindowhandles instead
         // of getwindowhandle
@@ -432,6 +434,7 @@ public class Agent_DealBuilderPageActions extends Environment {
                 // Switching to Child window
                 driver.switchTo().window(ChildWindow);
                 Thread.sleep(3000);
+                //Screenshots.captureScreenshot();
                 Agent_DealBuilderPage.ChooseBasketToSend.click();
                 Thread.sleep(2000);
                 Agent_DealBuilderPage.sendBasketEmailAddress.sendKeys("vinudeep.malalur@o2.com");
@@ -1182,7 +1185,7 @@ public class Agent_DealBuilderPageActions extends Environment {
                     log.debug("Bill spend cap section is enabled it suppose to be in disabled status");
                     Assert.fail("Bill spend cap section is enabled it suppose to be in disabled status");
                 }else{
-                    log.debug("As expected, Bill spend cap section is disabled");
+                    log.debug("As expected, Bill spend cap section is disabled\n");
                 }
             }else {
                 System.out.println("Unable to validate bill spend cap section \n");
@@ -1210,10 +1213,12 @@ public class Agent_DealBuilderPageActions extends Environment {
 
                     List<WebElement> menuOuter = driver.findElements(By.xpath("//*[@class='billSpendCapSelection']/select/option"));
 
+                    Thread.sleep(3000);
                     //Selecting specified bill cap
                     log.debug("Selecting your Bill Cap:");
-                    for (int i = 0; i < menuOuter.size(); i++) {
+                    for (int i = 1; i < menuOuter.size(); i++) {
                         BillCap = driver.findElement(By.xpath("(//*[@class='billSpendCapSelection']/select/option[" + i + "])")).getText();
+                        Thread.sleep(2000);
                         if (BillCap.contains(BillCapAmount)) {
                             driver.findElement(By.xpath("(//*[@class='billSpendCapSelection']/select/option[" + i + "])")).click();
                             log.debug("Your Bill cap is selected ie:: " + BillCapAmount);
@@ -1307,7 +1312,7 @@ public class Agent_DealBuilderPageActions extends Environment {
         String pageTitle = driver.getTitle();
         try {
             if(BSCstatus.equalsIgnoreCase("Enabled")) {
-                if (driver.findElements(By.xpath("//h3[normalize-space()='Spend Cap']")).size() > 0) {
+                if (driver.findElements(By.xpath("(//th[contains(text(),'Spend cap')])[1]")).size() > 0) {
 
                     log.debug("Bill spend cap section is displayed");
                     scrollToAnElement.scrollToElement(pageobjects.Agent_DealBuilderPage.BillSpendCapHeader);
@@ -1315,6 +1320,7 @@ public class Agent_DealBuilderPageActions extends Environment {
                     log.debug("Bill Spend Cap header is displayed in " + pageTitle + " page ie :: " + pageobjects.Agent_DealBuilderPage.BillSpendCapHeader.getText());
 
                     AppliedBillCap = pageobjects.Agent_DealBuilderPage.appliedBillCap.getText();
+                    Thread.sleep(3000);
 
                     if (AppliedBillCap.contains(BillCapAmount)) {
                         log.debug("Applied bill cap is validated successfully in " + pageTitle + " page ie :: " + AppliedBillCap);
@@ -1328,7 +1334,7 @@ public class Agent_DealBuilderPageActions extends Environment {
                     Assert.fail("Bill cap section is not present under deal summary section in " + pageTitle + " page");
                 }
             }else if(BSCstatus.equalsIgnoreCase("Disabled")){
-                if (driver.findElements(By.xpath("//h3[normalize-space()='Spend Cap']")).size() > 0) {
+                if (driver.findElements(By.xpath("(//th[contains(text(),'Spend cap')])[1]")).size() > 0) {
                     log.debug("Bill spend cap section is enabled it suppose to be in disabled status in " + pageTitle + " page");
                     Assert.fail("Bill spend cap section is enabled it suppose to be in disabled status in " + pageTitle + " page");
                 }else{

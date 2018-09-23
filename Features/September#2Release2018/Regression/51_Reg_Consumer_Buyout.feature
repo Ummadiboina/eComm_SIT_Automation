@@ -15,7 +15,7 @@ Feature: 51_Reg_Consumer_Buyout
     And Click on device 'Confirm CTA'
     And select any random tariff from Recommended devices section
     #And Validate consumer Bill Spend Caps section when BSC is <BSCstatus>
-    And Click on Dont Select Cap My Bill CTA
+    And Click on Dont Select Cap My Bill CTA when BSC is <BSCstatus>
     And Select a 'I need a sim'option
     And Verify that 'Confirm CTA' is displayed
     And Click on 'Confirm CTA'
@@ -39,4 +39,4 @@ Feature: 51_Reg_Consumer_Buyout
 
     Examples:
       | username                      | BSCstatus | password | handset  | Action | Username     | OTAC | Delivery | Payment | Agreement | Review | Username     | Action    | consumer | B1  | B2  | B3     | B4  | Text | Email  | Phone | Post | status  | MBBStatus | DeviceType |
-      | 18ju22607860@stf.ref.o2.co.uk | Enabled   | test123  | iPhone 8 | skip   | TEST ACCEPTA | OTAC | Delivery | Payment | Agreement | Review | TEST ACCEPTA | enterCode | Me       | Not | Not | Select | Not | Not  | Select | Not   | Not  | Enabled | No        | Connected  |
+      | 18ju22607860@stf.ref.o2.co.uk | Disabled  | test123  | iPhone 8 | skip   | TEST ACCEPTA | OTAC | Delivery | Payment | Agreement | Review | TEST ACCEPTA | enterCode | Me       | Not | Not | Select | Not | Not  | Select | Not   | Not  | Enabled | No        | Connected  |

@@ -20,7 +20,7 @@ Feature: 49_Reg_CFU_seperate_tariff_ribbons_Tariff_page_Basket_page_html_overlay
     And Click on the 'Overlay icon' for <tariff> in the Tariff and Extras page and verify pop up gets displayed
     And Select a tariff <tariff>
     #And Validate consumer Bill Spend Caps section when BSC is <BSCstatus>
-    And Click on Dont Select Cap My Bill CTA
+    And Click on Dont Select Cap My Bill CTA when BSC is <BSCstatus>
     And Verify that the tariff ribbons are displayed in tariff upsell config of 'Your package' section
     And Click on the 'Overlay icon' in tariff upsell config of 'Your package' section and verify pop up gets displayed in the Tariff and Extras Page
     And I Land on the basket page by clicking on Add to Basket button
@@ -30,4 +30,4 @@ Feature: 49_Reg_CFU_seperate_tariff_ribbons_Tariff_page_Basket_page_html_overlay
 
     Examples:
       | username                     | password | handset       | tariff                 | color      | BSCstatus |
-      | ins_nov1474@stf.ref.o2.co.uk | test123  | iPhone 8 Plus | 9.99upfront84.00amonth | Space Grey | Enabled   |
+      | ins_nov1474@stf.ref.o2.co.uk | test123  | iPhone 8 Plus | 9.99upfront84.00amonth | Space Grey | Disabled  |

@@ -9,7 +9,7 @@ Feature: 21_Reg_AFA_PAYM_Acquistion
     And Select valid <Tariffs> from tariffs tab
     And select a valid Handset and Tariff combination
     And Validate Bill Spend Cap in agent deal builder section when BSC is <BSCstatus>
-    And Dont cap my bill
+    And Dont cap my bill when BSC is <BSCstatus>
     And Select valid <Extras> from extras tab
     And Validate all the Basket content and checkout
     Then perform all the advisory checks
@@ -25,4 +25,4 @@ Feature: 21_Reg_AFA_PAYM_Acquistion
     # Then CCALink Should be generated
     Examples:
       | Device                        | Tariffs | Extras | DeliveryType | BSCstatus | Firstname | Surname | Username     | HouseNumber | PostCode | Password | confirmPassword | SecurityAnswer | Consumer | B1     | B2     | B3     | B4  | Text   | Email  | Phone | Post | status  | MBBStatus | DeviceType | DeviceModule |
-      | iPhone 8 Plus 64GB Space Grey | Random  | Base   | HomeDelivery | Enabled   | TEST      | ACCEPTA | TEST ACCEPTA | 14          | SL11UP   | test1234 | test1234        | vinudeep       | Me       | Select | Select | Select | Not | Select | Select | Not   | Not  | Enabled | No        | Connected  | Phone        |
+      | iPhone 8 Plus 64GB Space Grey | Random  | Base   | HomeDelivery | Disabled  | TEST      | ACCEPTA | TEST ACCEPTA | 14          | SL11UP   | test1234 | test1234        | vinudeep       | Me       | Select | Select | Select | Not | Select | Select | Not   | Not  | Enabled | No        | Connected  | Phone        |

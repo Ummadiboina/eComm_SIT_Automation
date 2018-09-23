@@ -9,7 +9,7 @@ Feature: 109_FR_Upfront_CFA_Phones_Till_TnE.feature
     And verify the name of the colour is next to the colour tile in CFAPhoneColour
     And select <color> color of the connected device
     And Build your plan with <upFront> <term> and <data>
-    #And Click on Dont Select Cap My Bill CTA
+    #And Click on Dont Select Cap My Bill CTA when BSC is <BSCstatus>
     And I Land on the basket page and choose home delivery option
     And click on "go to checkout" button
     And verify copy text You will need to give details for all fields marked with an asterisk is displayed
@@ -25,5 +25,5 @@ Feature: 109_FR_Upfront_CFA_Phones_Till_TnE.feature
 
     Examples:
       | handset       | tariffAmt | dataValue | color      | Firstname | Surname | consumer | BSCstatus | B1     | B2  | B3  | B4  | Text   | Email | Phone | Post | status  | MBBStatus | DeviceType | upFront | term | data |
-      | iPhone 8 Plus | £39       | 8GB       | Space Grey | Test      | Accepta | Me       | Enabled   | Select | Not | Not | Not | Select | Not   | Not   | Not  | Enabled | No        | Connected  | min     | min  | max  |
+      | iPhone 8 Plus | £39       | 8GB       | Space Grey | Test      | Accepta | Me       | Disabled  | Select | Not | Not | Not | Select | Not   | Not   | Not  | Enabled | No        | Connected  | min     | min  | max  |
 

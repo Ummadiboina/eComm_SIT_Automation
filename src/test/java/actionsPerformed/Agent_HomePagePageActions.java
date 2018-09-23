@@ -65,7 +65,8 @@ public class Agent_HomePagePageActions extends Environment {
 		log.debug("Verifying if Upgrade link is enabled");
 		Agent_HomePage.UpgradeLink.click();
 		log.debug("Clicking on upgrade link");
-		Thread.sleep(5000);
+		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+
 
 		if(driver.findElements(By.xpath("//a[@id='abandonCheckout']")).size()>0)
 		{
@@ -90,6 +91,7 @@ public class Agent_HomePagePageActions extends Environment {
 			log.debug("Displaying BuyOut Upgrade Options Message: ");
 			log.debug(BuyOutUpgradeOptionsTxt);
 		}
+		Thread.sleep(5000);
 
 		try {
 			if (driver.findElement(By.xpath("//*[@id='cca']/div[2]/a[1]")).isDisplayed()) {

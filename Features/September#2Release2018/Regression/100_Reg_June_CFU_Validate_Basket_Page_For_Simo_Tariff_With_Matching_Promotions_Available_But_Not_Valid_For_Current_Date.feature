@@ -11,7 +11,7 @@ Feature: 100_Reg_June_CFU_Validate_Basket_Page_For_Simo_Tariff_With_Matching_Pro
     And Click on 'Get Started' CTA
     And Click on 'Select' CTA to buy a valid <tariffAmt> and <dataValue>
     #And Validate consumer Bill Spend Caps section when BSC is <BSCstatus>
-    And Click on Dont Select Cap My Bill CTA
+    And Click on Dont Select Cap My Bill CTA when BSC is <BSCstatus>
     #And Select ribboned tariff <tariff> in upgrade journey
     #And I Land on the Plan included basket page and choose home delivery option
     And Select 'I need a new sim' option
@@ -23,4 +23,4 @@ Feature: 100_Reg_June_CFU_Validate_Basket_Page_For_Simo_Tariff_With_Matching_Pro
 
     Examples:
       | username                      | tariffAmt | dataValue | promoCode | password | Username     | BSCstatus | consumer | B1     | B2  | B3     | B4  | Text   | Email  | Phone | Post | status  | MBBStatus | DeviceType |
-      | 05ap45589417@stf.ref.o2.co.uk | £15       | 4GB       | promoCode | test123  | TEST ACCEPTA | Enabled   | Me       | Select | Not | Select | Not | Select | Select | Not   | Not  | Enabled | No        | Connected  |
+      | 05ap45589417@stf.ref.o2.co.uk | £15       | 4GB       | promoCode | test123  | TEST ACCEPTA | Disabled  | Me       | Select | Not | Select | Not | Select | Select | Not   | Not  | Enabled | No        | Connected  |

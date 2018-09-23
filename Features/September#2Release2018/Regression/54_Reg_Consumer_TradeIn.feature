@@ -7,12 +7,13 @@ Feature: 54_Reg_Consumer_TradeIn
     And Navigate to upgrade > upgrade now
     And Verify trade in message is displayed under 'Get your latest phone on us today' section
     And Answer appropriate questionaire in 'your device' section
-    And click on 'upgrade now' button
+    #And click on 'upgrade now' button
+    And Click on 'Get Started' CTA
     And Click on Tablet section in upgrade options page
     And Select a <handset> device from Recommended devices section
     And Select ribboned tariff <tariff> in upgrade journey
     #And Validate consumer Bill Spend Caps section when BSC is <BSCstatus>
-    And Click on Dont Select Cap My Bill CTA
+    And Click on Dont Select Cap My Bill CTA when BSC is <BSCstatus>
     Then choose appropriately in 'Your Sim Card'section
     And verify if the tradein offer is displayed in My Package section
     And I Land on the basket page for upgrades
@@ -35,4 +36,4 @@ Feature: 54_Reg_Consumer_TradeIn
 
     Examples:
       | username                      | password | BSCstatus | handset  | tariff                  | OTAC | Delivery | Payment | Agreement | Review | Username     | Action    | consumer | B1     | B2  | B3     | B4  | Text | Email  | Phone | Post | status  | MBBStatus | DeviceType |
-      | 23oc84050507@stf.ref.o2.co.uk | test123  | Enabled   | iPhone X | 19.99upfront45.00amonth | OTAC | Delivery | Payment | Agreement | Review | TEST ACCEPTA | enterCode | Me       | Select | Not | Select | Not | Not  | Select | Not   | Not  | Enabled | No        | Connected  |
+      | 23oc84050507@stf.ref.o2.co.uk | test123  | Disabled  | iPhone X | 19.99upfront45.00amonth | OTAC | Delivery | Payment | Agreement | Review | TEST ACCEPTA | enterCode | Me       | Select | Not | Select | Not | Not  | Select | Not   | Not  | Enabled | No        | Connected  |
