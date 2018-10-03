@@ -27,4 +27,4 @@ Feature: 120_FR_Mix_CFU_Phone
 
     Examples:
       | username                     | password | Firstname | Surname | BSCstatus | Tablet             | color | Capacity | Username     | Action    | tariff | consumer | B1     | B2  | B3  | B4  | Text   | Email | Phone | Post | status  | MBBStatus | DeviceType | upFront | term | data |
-      | ina_feb3593@stf.ref.o2.co.uk | test123  | Test      | Accepta | Disabled  | iPad 9.7 inch 2018 | Gold  | 32GB     | TEST ACCEPTA | enterCode |        | Me       | Select | Not | Not | Not | Select | Not   | Not   | Not  | Enabled | No        | Connected  | max     | max  | max  |
+      | ina_feb3593@stf.ref.o2.co.uk | test123  | Test      | Accepta | Enabled   | iPad 9.7 inch 2018 | Gold  | 32GB     | TEST ACCEPTA | enterCode |        | Me       | Select | Not | Not | Not | Select | Not   | Not   | Not  | Enabled | No        | Connected  | max     | max  | max  |

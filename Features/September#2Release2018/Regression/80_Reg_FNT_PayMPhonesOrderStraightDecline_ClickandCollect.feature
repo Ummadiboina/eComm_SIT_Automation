@@ -24,4 +24,4 @@ Feature: 80_Reg_FNT_PayMPhonesOrderStraightDecline_ClickandCollect
 
     Examples:
       | handset            | color | Firstname | Surname  | Username      | BSCstatus | consumer | B1  | B2  | B3     | B4  | Text | Email  | Phone | Post | status  | MBBStatus | DeviceType |
-      | Xperia XZ2 Compact | Black | TEST      | DECLINEA | TEST DECLINEA | Disabled  | Me       | Not | Not | Select | Not | Not  | Select | Not   | Not  | Enabled | No        | Connected  |
+      | Xperia XZ2 Compact | Black | TEST      | DECLINEA | TEST DECLINEA | Enabled   | Me       | Not | Not | Select | Not | Not  | Select | Not   | Not  | Enabled | No        | Connected  |

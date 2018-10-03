@@ -187,7 +187,7 @@ public class BasketPageActions extends Environment {
 
 	}
 
-	public static void ValidateBasketPageContents(String Element, String expValue) throws IOException {
+	public static void ValidateBasketPageContents(String Element, String expValue) throws IOException, InterruptedException {
 		driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
 		boolean fname = false;
 		log.debug("Shop basket pages validations" + driver.getTitle());
@@ -229,25 +229,22 @@ public class BasketPageActions extends Environment {
 
 		if(Element.equalsIgnoreCase("DataRollOver")){
 
-			String actValue = "";
+			/*String actValue = "";
 
-			List<WebElement> actPlnListElm = driver.findElement(By.xpath("//h3[@class='section-parent-header']//following-sibling::p"));
+			List<WebElement> actPlnListElm = driver.findElements(By.xpath("//h3[@class='section-parent-header']//following-sibling::p"));
 
 			for(int i = 3;i<=actPlnListElm.size();i++) {
 				actValue = actPlnListElm.get(i).getText().replaceAll("\"","").trim() + "|";
+			}*/
 
-			}
-
-			if(expValue.equals(actValue)){
+			String actPlnListElmTxt = driver.findElement(By.xpath("//h3[@class='section-parent-header']//following-sibling::p")).getText();
+			Thread.sleep(2000);
+			if(actPlnListElmTxt.contains(expValue)){
 				log.debug("Selected Data Roll over plan details is displayed in Basket page");
-
 			}
 			else{
 				log.debug("Selected Data Roll over plan details is not displayed in Basket page");
-
 			}
-
-
 		}
 
 		Screenshots.captureScreenshot();

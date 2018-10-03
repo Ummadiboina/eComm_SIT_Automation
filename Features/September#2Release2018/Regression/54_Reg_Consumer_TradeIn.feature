@@ -36,4 +36,4 @@ Feature: 54_Reg_Consumer_TradeIn
 
     Examples:
       | username                      | password | BSCstatus | handset  | tariff                  | OTAC | Delivery | Payment | Agreement | Review | Username     | Action    | consumer | B1     | B2  | B3     | B4  | Text | Email  | Phone | Post | status  | MBBStatus | DeviceType |
-      | 23oc84050507@stf.ref.o2.co.uk | test123  | Disabled  | iPhone X | 19.99upfront45.00amonth | OTAC | Delivery | Payment | Agreement | Review | TEST ACCEPTA | enterCode | Me       | Select | Not | Select | Not | Not  | Select | Not   | Not  | Enabled | No        | Connected  |
+      | 23oc84050507@stf.ref.o2.co.uk | test123  | Enabled   | iPhone X | 19.99upfront45.00amonth | OTAC | Delivery | Payment | Agreement | Review | TEST ACCEPTA | enterCode | Me       | Select | Not | Select | Not | Not  | Select | Not   | Not  | Enabled | No        | Connected  |

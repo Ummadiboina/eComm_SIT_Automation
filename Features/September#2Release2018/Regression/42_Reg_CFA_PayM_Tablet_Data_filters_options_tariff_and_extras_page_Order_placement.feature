@@ -36,4 +36,4 @@ Feature: 42_Reg_CFA_PayM_Tablet_Data_filters_options_tariff_and_extras_page_Orde
 
     Examples:
       | Firstname | Surname | Username     | filtername | BSCstatus | sortoption                 | tabletname | consumer | B1     | B2  | B3  | B4  | Text | Email  | Phone | Post | status  | MBBStatus | DeviceType |
-      | TEST      | ACCEPTA | TEST ACCEPTA | low        | Disabled  | Monthly data (High to low) | A3 10      | Me       | Select | Not | Not | Not | Not  | Select | Not   | Not  | Enabled | No        | Connected  |
+      | TEST      | ACCEPTA | TEST ACCEPTA | low        | Enabled   | Monthly data (High to low) | A3 10      | Me       | Select | Not | Not | Not | Not  | Select | Not   | Not  | Enabled | No        | Connected  |

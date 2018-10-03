@@ -27,4 +27,4 @@ Feature: 83_ Reg_Jan_Existing_OOSForHomeDeliveryandCnC
 
     Examples:
       | handset            | color  | username                     | password | BSCstatus |
-      | iPhone 5s Like New | Silver | inl_feb4914@stf.ref.o2.co.uk | test123  | Disabled  |
+      | iPhone 5s Like New | Silver | inl_feb4914@stf.ref.o2.co.uk | test123  | Enabled   |

@@ -37,4 +37,4 @@ Feature: 44_Reg_CFA_seperate_tariff_ribbons_Tariff_page_Basket_page_html_overlay
 
     Examples:
       | handset            | color | tariff                  | BSCstatus | Firstname | Surname | Username     | consumer | B1     | B2     | B3  | B4  | Text   | Email | Phone | Post | status  | MBBStatus | DeviceType |
-      | Xperia XZ2 Compact | Black | 19.99upfront31.00amonth | Disabled  | TEST      | ACCEPTA | TEST ACCEPTA | Me       | Select | Select | Not | Not | Select | Not   | Not   | Not  | Enabled | No        | Connected  |
+      | Xperia XZ2 Compact | Black | 19.99upfront31.00amonth | Enabled   | TEST      | ACCEPTA | TEST ACCEPTA | Me       | Select | Select | Not | Not | Select | Not   | Not   | Not  | Enabled | No        | Connected  |

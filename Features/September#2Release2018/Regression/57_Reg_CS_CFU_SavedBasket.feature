@@ -23,4 +23,4 @@ Feature: 57_Reg_CS_CFU_SavedBasket
 
     Examples:
       | username                     | password | status  | consumer | handset           | tariff | BSCstatus |
-      | inl_feb4914@stf.ref.o2.co.uk | test123  | Enabled | Me       | Samsung Galaxy S8 | Random | Disabled  |
+      | inl_feb4914@stf.ref.o2.co.uk | test123  | Enabled | Me       | Samsung Galaxy S8 | Random | Enabled   |

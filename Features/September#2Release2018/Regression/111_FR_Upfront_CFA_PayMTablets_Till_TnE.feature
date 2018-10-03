@@ -22,6 +22,6 @@ Feature: 111_FR_Upfront_CFA_PayMTablets_Till_TnE.feature
 
     Examples:
       | Device                | tariffAmt | dataValue | color      | Firstname | Surname | consumer | BSCstatus | B1     | B2  | B3  | B4  | Text   | Email | Phone | Post | status  | MBBStatus | DeviceType | upFront | term | data |
-      | Galaxy Tab A 2016 7.0 | £39       | 8GB       | Space Grey | Test      | Accepta | Me       | Disabled  | Select | Not | Not | Not | Select | Not   | Not   | Not  | Enabled | No        | Connected  | max     | min  | max  |
+      | Galaxy Tab A 2016 7.0 | £39       | 8GB       | Space Grey | Test      | Accepta | Me       | Enabled   | Select | Not | Not | Not | Select | Not   | Not   | Not  | Enabled | No        | Connected  | max     | min  | max  |
 
 

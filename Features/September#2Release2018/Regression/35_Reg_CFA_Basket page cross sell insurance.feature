@@ -30,4 +30,4 @@ Feature: 35_Reg_CFA_Basket page cross sell insurance
 
     Examples:
       | handset  | tariff                 | BSCstatus | consumer | B1  | B2  | B3  | B4  | Text | Email | Phone | Post | status  | MBBStatus | DeviceType | Firstname | Surname | Username     |
-      | iPhone X | 9.99upfront44.00amonth | Disabled  | Someone  | Not | Not | Not | Not | Not  | Not   | Not   | Not  | Enabled | No        | Connected  | TEST      | ACCEPTA | TEST ACCEPTA |
+      | iPhone X | 9.99upfront44.00amonth | Enabled   | Someone  | Not | Not | Not | Not | Not  | Not   | Not   | Not  | Enabled | No        | Connected  | TEST      | ACCEPTA | TEST ACCEPTA |

@@ -23,4 +23,4 @@ Feature: 93_Reg_Trustev_CFA_PayMTabletsHomeDeliveryWithAccessory
 
     Examples:
       | Device | color | Capacity | Firstname | Surname | Username     | consumer | BSCstatus | B1  | B2  | B3     | B4  | Text | Email  | Phone | Post | status  | MBBStatus | DeviceType |
-      | A3 10  | Gold  | 64GB     | TEST      | ACCEPTA | TEST ACCEPTA | Me       | Disabled  | Not | Not | Select | Not | Not  | Select | Not   | Not  | Enabled | No        | Connected  |
+      | A3 10  | Gold  | 64GB     | TEST      | ACCEPTA | TEST ACCEPTA | Me       | Enabled   | Not | Not | Select | Not | Not  | Select | Not   | Not  | Enabled | No        | Connected  |

@@ -20,4 +20,4 @@ Feature: 65_Reg_CS_PayMSimOnlyRecommendedTariff
     #30 Days
     Examples:
       | Contract  | Firstname | Surname | Username     | BSCstatus | consumer | B1  | B2     | B3     | B4  | Text | Email  | Phone | Post | status  | MBBStatus | DeviceType |
-      | 12 Months | TEST      | ACCEPTA | TEST ACCEPTA | Disabled  | Me       | Not | Select | Select | Not | Not  | Select | Not   | Not  | Enabled | No        | Connected  |
+      | 12 Months | TEST      | ACCEPTA | TEST ACCEPTA | Enabled   | Me       | Not | Select | Select | Not | Not  | Select | Not   | Not  | Enabled | No        | Connected  |

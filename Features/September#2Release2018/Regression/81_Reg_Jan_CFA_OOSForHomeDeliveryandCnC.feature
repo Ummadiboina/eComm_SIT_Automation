@@ -25,4 +25,4 @@ Feature: 81_Reg_Jan_CFA_OOSForHomeDeliveryandCnC
 
     Examples:
       | handset            | color  | username               | password | BSCstatus |
-      | iPhone 5s Like New | Silver | dasdasdkjaskd@sdsd.com | test123  | Disabled  |
+      | iPhone 5s Like New | Silver | dasdasdkjaskd@sdsd.com | test123  | Enabled   |

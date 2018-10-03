@@ -27,4 +27,4 @@ Feature: 62_Reg_CS_PayMPhonesHomeDeliveryWithAccessory
 
     Examples:
       | handset       | color      | Firstname | BSCstatus | Surname | Username     | consumer | B1  | B2     | B3  | B4  | Text   | Email | Phone | Post | status  | MBBStatus | DeviceType |
-      | iPhone 8 Plus | Space Grey | TEST      | Disabled  | ACCEPTA | TEST ACCEPTA | Me       | Not | Select | Not | Not | Select | Not   | Not   | Not  | Enabled | No        | Connected  |
+      | iPhone 8 Plus | Space Grey | TEST      | Enabled   | ACCEPTA | TEST ACCEPTA | Me       | Not | Select | Not | Not | Select | Not   | Not   | Not  | Enabled | No        | Connected  |

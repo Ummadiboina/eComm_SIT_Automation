@@ -30,4 +30,4 @@ Feature: 92_Reg_Trustev_CFA_PayMPhonesHomeDeliveryWithoutAccessory
     #Close the browser
     Examples:
       | handset       | color      | Capacity | Firstname | Surname | BSCstatus | Username     | consumer | B1     | B2  | B3     | B4  | Text   | Email  | Phone  | Post   | status  | MBBStatus | DeviceType |
-      | iPhone 8 Plus | Space Grey | 64GB     | TEST      | ACCEPTA | Disabled  | TEST ACCEPTA | Me       | Select | Not | Select | Not | Select | Select | Select | Select | Enabled | No        | Connected  |
+      | iPhone 8 Plus | Space Grey | 64GB     | TEST      | ACCEPTA | Enabled   | TEST ACCEPTA | Me       | Select | Not | Select | Not | Select | Select | Select | Select | Enabled | No        | Connected  |

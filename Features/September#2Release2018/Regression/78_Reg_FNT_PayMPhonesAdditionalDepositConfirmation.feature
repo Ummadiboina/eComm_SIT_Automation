@@ -29,4 +29,4 @@ Feature: 78_Reg_FNT_PayMPhonesAdditionalDepositConfirmation
 
     Examples:
       | Firstname | Surname | Username     | handset       | color      | BSCstatus | Username2    | consumer | B1     | B2  | B3  | B4  | Text   | Email | Phone | Post | status  | MBBStatus | DeviceType |
-      | test      | acceptb | test acceptb | iPhone 8 Plus | Space Grey | Disabled   | TEST ACCEPTB | Me       | Select | Not | Not | Not | Select | Not   | Not   | Not  | Enabled | No        | Connected  |
+      | test      | acceptb | test acceptb | iPhone 8 Plus | Space Grey | Enabled   | TEST ACCEPTB | Me       | Select | Not | Not | Not | Select | Not   | Not   | Not  | Enabled | No        | Connected  |

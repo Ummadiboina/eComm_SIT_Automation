@@ -19,13 +19,15 @@ Feature: 12_Reg_Consumer_Existing_PAYG_Phone_BigBundle_To_Show_£15_Data_Roll_Ov
     And I Land on the basket page and choose to collect from store
     And Validate all the Basket contents
     And click on "go to checkout" button
+    And scroll to an element in DeliveryPage for taking screenshots
     And Is this order for You or Someone else <consumer> when GDPR is <status>
-    And land on the payment page and input <Username> and other details for Click and collect order and click 'Continue on next step'
+    #And land on the payment page and input <Username> and other details for Click and collect order and click 'Continue on next step'
+    And land on the existing customer payment page and input <Username> and other details for Click and collect order
     And Continue to Agreements page and confirm all the agreement checks
     And Continue to Review page and review the order
     Then order confirmation is displayed
     Then Choose <consumer> <status> Business preferences <B1> <B2> <B3> <B4> And Channel Preferences <Text> <Email> <Phone> <Post> <MBBStatus> <DeviceType>
 
     Examples:
-      | username      | password | handset       | color      | Username     | Tariff_Value | Data | consumer | BSCstatus | B1     | B2  | B3     | B4  | Text   | Email  | Phone | Post | status  | MBBStatus | DeviceType |
-      | qwertyuiiuytr | test123  | iPhone 8 Plus | Space Grey | TEST ACCEPTA | £15          | 5GB  | Me       | Enabled   | Select | Not | Select | Not | Select | Select | Not   | Not  | Enabled | No        | Connected  |
+      | username                     | password | handset       | color      | Username     | Tariff_Value | Data | consumer | BSCstatus | B1     | B2  | B3     | B4  | Text   | Email  | Phone | Post | status  | MBBStatus | DeviceType |
+      | ins_nov1474@stf.ref.o2.co.uk | test123  | iPhone 8 Plus | Space Grey | TEST ACCEPTA | £15          | 5GB  | Me       | Enabled   | Select | Not | Select | Not | Select | Select | Not   | Not  | Enabled | No        | Connected  |

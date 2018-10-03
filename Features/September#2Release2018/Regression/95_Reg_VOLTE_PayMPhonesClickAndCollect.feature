@@ -25,4 +25,4 @@ Feature: 95_Reg_VOLTE_PayMPhonesClickAndCollect
 
     Examples:
       | handset       | color      | Firstname | Surname | Username     | BSCstatus | consumer | B1  | B2  | B3  | B4  | Text | Email | Phone | Post | status  | MBBStatus | DeviceType |
-      | iPhone 8 Plus | Space Grey | TEST      | ACCEPTA | TEST ACCEPTA | Disabled  | Someone  | Not | Not | Not | Not | Not  | Not   | Not   | Not  | Enabled | No        | Connected  |
+      | iPhone 8 Plus | Space Grey | TEST      | ACCEPTA | TEST ACCEPTA | Enabled   | Someone  | Not | Not | Not | Not | Not  | Not   | Not   | Not  | Enabled | No        | Connected  |

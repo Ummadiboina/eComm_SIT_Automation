@@ -46,4 +46,4 @@ Feature: 68_Reg_CS_Recycle
 
     Examples:
       | username                      | password | handset  | BSCstatus | tariff                  | Firstname | Surname | Username     | Action | Make  | Model   | Network | consumer | B1  | B2     | B3  | B4  | Text   | Email | Phone | Post | status  | MBBStatus | DeviceType |
-      | 19ju17664673@stf.ref.o2.co.uk | test123  | iPhone 7 | Disabled  | 29.99upfront46.00amonth | TEST      | ACCEPTA | TEST ACCEPTA | skip   | Apple | Iphone7 | Orange  | Me       | Not | Select | Not | Not | Select | Not   | Not   | Not  | Enabled | No        | Connected  |
+      | 19ju17664673@stf.ref.o2.co.uk | test123  | iPhone 7 | Enabled   | 29.99upfront46.00amonth | TEST      | ACCEPTA | TEST ACCEPTA | skip   | Apple | Iphone7 | Orange  | Me       | Not | Select | Not | Not | Select | Not   | Not   | Not  | Enabled | No        | Connected  |

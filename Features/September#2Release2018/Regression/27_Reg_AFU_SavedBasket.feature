@@ -16,4 +16,4 @@ Feature: 27_Reg_AFU_SavedBasket
 
     Examples:
       | user        | Device                                     | Tariffs | BSCstatus |
-      | 07801801173 | Samsung Galaxy S8 Plus 64GB Midnight Black | Refresh | Disabled  |
+      | 07801801173 | Samsung Galaxy S8 Plus 64GB Midnight Black | Refresh | Enabled   |

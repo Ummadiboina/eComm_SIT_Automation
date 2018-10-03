@@ -15,7 +15,7 @@ Feature: 03_Reg_AFA_Phone_CCN_customer_firstname_apostrophe_and_lastname_apostro
     And Dont cap my bill when BSC is <BSCstatus>
     And Validate all the Basket content and checkout
     Then perform all the advisory checks
-    And perform the credit checks using valid <Firstname>, <Surname>, <HouseNumber>, <PostCode> and valid <Username>
+    And perform the credit checks using <Firstname>, <Surname>, <HouseNumber>, <PostCode> for valid <Username> for apostrophe validation
     And Register the customer with valid <Firstname>, <Surname>, <HouseNumber>, <PostCode> and other valid details in delivery page
     And validate register status
     And Choose Business preferences <B1> <B2> <B3> <B4> and Channel Preferences <Text> <Email> <Phone> <Post> for <Consumer> when GDPR <status> <DeviceType> <DeviceModule> for AFA journey
@@ -26,5 +26,5 @@ Feature: 03_Reg_AFA_Phone_CCN_customer_firstname_apostrophe_and_lastname_apostro
       # And Update Device Plan Link Email Address
       # Then CCALink Should be generated
     Examples:
-      | Device                    | Tariffs | Extras | BSCstatus | DeliveryType | Firstname | Surname  | Username     | HouseNumber | PostCode | B1  | B2  | B3  | B4  | Text | Email | Phone | Post | Consumer | status  | MBBStatus | DeviceType | DeviceModule |
-      | iPhone X 256GB Space Grey | Refresh | Base   | Disabled  | HomeDelivery | test'     | accepta' | TEST ACCEPTA | 14          | SL11UP   | Not | Not | Not | Not | Not  | Not   | Not   | Not  | Someone  | Enabled | No        | Connected  | Phone        |
+      | Device                    | Tariffs | Extras | BSCstatus | DeliveryType | Firstname | Surname     | Username     | HouseNumber | PostCode | B1  | B2  | B3  | B4  | Text | Email | Phone | Post | Consumer | status  | MBBStatus | DeviceType | DeviceModule |
+      | iPhone X 256GB Space Grey | Refresh | Base   | Enabled   | HomeDelivery | test'one  | accepta'two | TEST ACCEPTA | 14          | SL11UP   | Not | Not | Not | Not | Not  | Not   | Not   | Not  | Someone  | Enabled | No        | Connected  | Phone        |

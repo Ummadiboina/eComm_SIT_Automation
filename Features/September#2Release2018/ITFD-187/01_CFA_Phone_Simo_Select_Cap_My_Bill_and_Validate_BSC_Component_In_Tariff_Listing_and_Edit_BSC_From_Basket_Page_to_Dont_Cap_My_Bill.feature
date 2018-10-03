@@ -20,8 +20,8 @@ Feature: 01_CFA_Phone_Simo_Select_Cap_My_Bill_and_Validate_BSC_Component_In_Tari
     And I Land on the Plan included basket page and choose home delivery option
     And Validate Basket Page for applied Bill Spend Cap <NewBillCap> <NewCapAmount> when BSC is <BSCstatus>
     And click on "go to checkout" button
-    And input <Firstname> and <Surname> and other valid details in Delivery page to verify GDPR
     And Validate applied Bill Spend Cap <NewBillCap> <NewCapAmount> when BSC is <BSCstatus>
+    And input <Firstname> and <Surname> and other valid details in Delivery page to verify GDPR
     And Is this order for You or Someone else <consumer> when GDPR is <status>
     And Validate applied Bill Spend Cap <NewBillCap> <NewCapAmount> when BSC is <BSCstatus>
     And land on the payment page and input <Username> and other details and click 'Continue on next step' for SimOnly

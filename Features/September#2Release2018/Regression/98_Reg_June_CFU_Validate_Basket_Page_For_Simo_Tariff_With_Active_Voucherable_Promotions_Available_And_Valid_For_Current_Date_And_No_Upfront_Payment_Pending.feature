@@ -11,12 +11,12 @@ Feature: 98_Reg_June_CFU_Validate_Basket_Page_For_Simo_Tariff_With_Active_Vouche
     #And I click on 'Sim only Tariff' tab
     And Click on 'Select' CTA to buy a valid <tariffAmt> and <dataValue>
     #And Validate consumer Bill Spend Caps section when BSC is <BSCstatus>
-    And Click on Dont Select Cap My Bill CTA when BSC is <BSCstatus>
     #And Select ribboned tariff <tariff> in upgrade journey
     And I Land on the Plan included basket page and choose home delivery option
     And Click on 'plus' accordion at get promo code section and enter valid <promoCode> details in Basket page
     And Select 'I need a new sim' option
     And click on "go to checkout" button
+    And Click on Dont Select Cap My Bill CTA when BSC is <BSCstatus>
     And Click on 'I agree to the terms and condition' checkbox in SIMO review page
     And Is this order for You or Someone else <consumer> when GDPR is <status>
     #And Click on 'Place your order' CTA
@@ -25,4 +25,4 @@ Feature: 98_Reg_June_CFU_Validate_Basket_Page_For_Simo_Tariff_With_Active_Vouche
 
     Examples:
       | username                      | tariffAmt | dataValue | promoCode | password | BSCstatus | Username     | consumer | B1  | B2  | B3     | B4  | Text | Email  | Phone | Post | status  | MBBStatus | DeviceType |
-      | 20se14717577@stf.ref.o2.co.uk | £18       | 6GB       | VOUCHER3  | test123  | Disabled  | TEST ACCEPTA | Me       | Not | Not | Select | Not | Not  | Select | Not   | Not  | Enabled | No        | Connected  |
+      | 20se14717577@stf.ref.o2.co.uk | £18       | 6GB       | VOUCHER3  | test123  | Enabled   | TEST ACCEPTA | Me       | Not | Not | Select | Not | Not  | Select | Not   | Not  | Enabled | No        | Connected  |

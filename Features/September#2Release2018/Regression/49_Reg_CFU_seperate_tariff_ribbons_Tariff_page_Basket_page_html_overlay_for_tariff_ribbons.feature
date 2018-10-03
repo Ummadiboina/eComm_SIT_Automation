@@ -30,4 +30,4 @@ Feature: 49_Reg_CFU_seperate_tariff_ribbons_Tariff_page_Basket_page_html_overlay
 
     Examples:
       | username                     | password | handset       | tariff                 | color      | BSCstatus |
-      | ins_nov1474@stf.ref.o2.co.uk | test123  | iPhone 8 Plus | 9.99upfront84.00amonth | Space Grey | Disabled  |
+      | ins_nov1474@stf.ref.o2.co.uk | test123  | iPhone 8 Plus | 9.99upfront84.00amonth | Space Grey | Enabled   |

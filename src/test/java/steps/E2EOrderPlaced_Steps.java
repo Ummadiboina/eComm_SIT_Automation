@@ -1971,6 +1971,26 @@ public class E2EOrderPlaced_Steps {
     }
 
 
+    @And("^land on the existing customer payment page and input ([^\"]*) and other details for Click and collect order$")
+    public void existingCustomerPaymentPage_ClickAndCollect(String Username){
+        // Write code here that turns the phrase above into concrete actions
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, PaymentPage.class);
+            Thread.sleep(5000);
+            PaymentPageActions.Card_Details(Username);
+            Thread.sleep(7000);
+            PaymentPageActions.Card_Details_CCV();
+            Thread.sleep(12000);
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+            log.debug("Unable to input details in existing customer payment page");
+            Assert.fail("Unable to input details in existing customer payment page");
+
+        }
+    }
+
     @And("^land on the payment page and input ([^\"]*) and other details for Click and collect order and click 'Continue on next step' for payments$")
     public void CreditCheckPaymentPage_ClickAndCollect_CreditCheck(String Username){
         // Write code here that turns the phrase above into concrete actions
@@ -2895,7 +2915,7 @@ public class E2EOrderPlaced_Steps {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, BasketPage.class);
             Thread.sleep(3000);
-            BasketPageActions.ValidateBasketPageContents("DataRollOver", expPlnList);
+            BasketPageActions.ValidateBasketPageContents("DataRollOver", PAYMandPAYGTariffAndExtrasPageActions.planAmnt);
             Thread.sleep(7000);
         } catch (Exception e) {
             // TODO Auto-generated catch block
@@ -2989,6 +3009,26 @@ public class E2EOrderPlaced_Steps {
             Agent_CreditCheckPageActions.Creditcheck(Firstname, Surname, HouseNumber, PostCode);
             log.debug("Completed Credit check");
             Agent_CreditCheckPageActions.BankDetails(Username);
+            log.debug("Completed Bank details");
+            Thread.sleep(8000);
+
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            log.debug("Unable to perform credit checks , please see the failure screenshot");
+            Assert.fail("Unable to perform credit checks , please see the failure screenshot");
+
+        }
+
+    }
+
+    @Then("^perform the credit checks using ([^\"]*), ([^\"]*), ([^\"]*), ([^\"]*) for valid ([^\"]*) for apostrophe validation$")
+    public void CreditCheck_apostropheValidation(String Firstname, String Surname, String HouseNumber, String PostCode, String Username) {
+        try {
+            driver.manage().timeouts().implicitlyWait(200, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, Agent_CreditCheckDetailsPage.class);
+            Agent_CreditCheckPageActions.Creditcheck(Firstname, Surname, HouseNumber, PostCode);
+            log.debug("Completed Credit check");
+            Agent_CreditCheckPageActions.BankDetails_apostropheValidation(Username);
             log.debug("Completed Bank details");
             Thread.sleep(8000);
 
@@ -9521,8 +9561,7 @@ public class E2EOrderPlaced_Steps {
         try {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, PaymentPage.class);
-
-            Thread.sleep(3000);
+            Thread.sleep(5000);
             PaymentPageActions.SelectAddrerss();
             log.debug("Clicked on address link");
         } catch (Exception e) {
@@ -10449,6 +10488,31 @@ public class E2EOrderPlaced_Steps {
             DeliveryPageActions.clickOnSubmitBtn(customer, status);
             Thread.sleep(5000);
         } catch (InterruptedException e) {
+            System.out.println("Failed to verify Basket link and 'Copy to Clipboard' CTA are enabled Click on 'Copy to Clipboard' button");
+            Assert.fail("Failed to verify Basket link and 'Copy to Clipboard' CTA are enabled Click on 'Copy to Clipboard' button");
+            e.printStackTrace();
+        }
+    }
+
+    @And("scroll to an element in DeliveryPage for taking screenshots$")
+    public void scrollToAnElement() {
+        try {
+            driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
+            JavascriptExecutor jse = (JavascriptExecutor) driver;
+            Screenshots.captureScreenshot();
+            jse.executeScript("window.scrollBy(0,300)", "");
+            Thread.sleep(3000);
+            Screenshots.captureScreenshot();
+            jse.executeScript("window.scrollBy(0,300)", "");
+            Thread.sleep(3000);
+            Screenshots.captureScreenshot();
+            jse.executeScript("window.scrollBy(0,300)", "");
+            Thread.sleep(3000);
+            Screenshots.captureScreenshot();
+            jse.executeScript("window.scrollBy(0,300)", "");
+            Thread.sleep(3000);
+            Screenshots.captureScreenshot();
+        } catch (Exception e) {
             System.out.println("Failed to verify Basket link and 'Copy to Clipboard' CTA are enabled Click on 'Copy to Clipboard' button");
             Assert.fail("Failed to verify Basket link and 'Copy to Clipboard' CTA are enabled Click on 'Copy to Clipboard' button");
             e.printStackTrace();
