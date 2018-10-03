@@ -38,4 +38,4 @@ Feature: 09_Reg_CFA_Phones_Colour_Dropdowns_With_ColourNames_Beside_the_Colour_M
 
     Examples:
       | handset       | Username     | Firstname | Surname | color      | consumer | BSCstatus | B1     | B2     | B3  | B4  | Text   | Email  | Phone  | Post   | status  | MBBStatus | DeviceType |
-      | iPhone 8 Plus | TEST ACCEPTA | Test      | Accepta | Space Grey | Me       | Disabled  | Select | Select | Not | Not | Select | Select | Select | Select | Enabled | No        | Connected  |
+      | iPhone 8 Plus | TEST ACCEPTA | Test      | Accepta | Space Grey | Me       | Enabled   | Select | Select | Not | Not | Select | Select | Select | Select | Enabled | No        | Connected  |

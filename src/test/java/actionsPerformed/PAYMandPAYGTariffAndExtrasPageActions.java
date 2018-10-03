@@ -35,11 +35,11 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 	static ArrayList<Integer> datalistafter = new ArrayList<Integer>();
 	static ArrayList<Integer> start = new ArrayList<Integer>();
 	static ArrayList<Integer> end = new ArrayList<Integer>();
-	static String plan = "", actPlnList = "";
+	public static String plan = "", actPlnList = "", planAmnt="";
 
 	static Hashtable plnDetails = new Hashtable();
 	static Hashtable actPlnDetails = new Hashtable();
-
+	public static Boolean BSCRetainedFlag=false;
 
 	public static void GetPageName() throws IOException {
 
@@ -85,7 +85,7 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 			}else if (ElementName.contains("fullpaymenttariff1")) {
 
 				JavascriptExecutor executor = (JavascriptExecutor) driver;
-				executor.executeScript("window.scrollBy(0,300)", "");
+				executor.executeScript("window.scrollBy(0,-200)", "");
 				Thread.sleep(5000);
 				Screenshots.captureScreenshot();
 				//pageobjects.PAYMandPAYGTariffAndExtrasPage.paydevicefulllink.click();
@@ -105,8 +105,10 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 				String tariffAmt = ElementName.split("\\|")[0];
 				String dataRolloverValue = ElementName.split("\\|")[1];
 
-				System.out.println("tariffAmt: "+tariffAmt+" data: "+dataRolloverValue+"\n");
+				planAmnt = tariffAmt;
 
+				System.out.println("tariffAmt: "+tariffAmt+" data: "+dataRolloverValue+"\n");
+				Screenshots.captureScreenshot();
 				JavascriptExecutor jse = (JavascriptExecutor) driver;
 				jse.executeScript("window.scrollBy(0,100)", "");
 				Screenshots.captureScreenshot();
@@ -147,38 +149,39 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 						log.debug("Tariff tile included Data Roll over ribbon 'Includes data rollover of up to'");
 					}
 
-					List<WebElement> plnList = driver.findElement(By.xpath("//span[text()='" + tariffAmt + "']/../../../ul/li"));
+					List<WebElement> plnList = driver.findElements(By.xpath("//span[text()='" + tariffAmt + "']/../../../ul/li"));
 
 					for (WebElement elm : plnList) {
 						plan = elm.getText().replaceAll("\"", "").trim() + "|";
 
 					}
 					Thread.sleep(3000);
+					log.debug("Clicking on More details link");
 					driver.findElement(By.xpath("//span[text()='" + tariffAmt + "']/../../../a")).click();
 					log.debug("Clicked on More details link");
 					Thread.sleep(5000);
 					Screenshots.captureScreenshot();
 
 					//String dataRollOvrPopupTxt = driver.findElement(By.xpath("//div[@id='o2BundleCharges']/div[@class='box-content scroll-bar']/p[3]")).getAttribute("textContent");
-					String dataRollOvrPopupTxt = driver.findElement(By.xpath("//div[@id='o2BundleCharges']/div[@class='box-content scroll-bar']/p[3]")).getText();
+					String dataRollOvrPopupTxt = driver.findElement(By.xpath("(//div[@class='payg-overlay big-bundles']/div[@class='box-content scroll-bar'])[1]")).getText();
+					Thread.sleep(2000);
 					if (dataRollOvrPopupTxt.contains("With data rollover, you can roll over your unused data into your next month‘s Big Bundle, subject to bundle caps. Terms apply.")) {
 						log.debug("Data Roll over copy text is present in the popup");
 
 					} else {
-						log.debug("Data Roll over copy text is not present in the popup");
+						log.debug("Data Roll over copy text is not matching in the popup");
 					}
 					//driver.findElement(By.xpath("//h3[text()='Big Bundles']/following-sibling::a")).click();
 					driver.findElement(By.xpath("//div[@id='tariffOverlay']/div/button")).click();
 					log.debug("Clicked on More details popup close button");
-					Thread.sleep(3000);
+					Thread.sleep(5000);
 
-					driver.findElement(By.xpath("//span[text()='" + tariffAmt + "']/../../../button")).click();
-					log.debug("Selected the Big Bundle Tariff");
+					//driver.findElement(By.xpath("//span[text()='" + tariffAmt + "']/../../../button")).click();
 
-					//Scroll to Your Package section of T&E page
-					WebElement yourPackageSection = driver.findElement(By.xpath("//div[contains(text(),'Your extras')]"));
-					((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", yourPackageSection);
-					log.debug("Scrolling page to Your package section");
+					JavascriptExecutor js = (JavascriptExecutor) driver;
+					js.executeScript("arguments[0].click();",driver.findElement(By.xpath("//span[text()='" + tariffAmt + "']/../../../button")));
+					log.debug("Selected the specified Big Bundle Tariff");
+
 					Thread.sleep(4000);
 					Screenshots.captureScreenshot();
 
@@ -198,7 +201,7 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 					*/
 
 					String strTariff = driver.findElement(By.xpath("//ul[@class='orders']/li/section[3]/h3")).getText();
-
+					Thread.sleep(2000);
 					if(strTariff.contains(tariffAmt+" data Big Bundles")){
 						log.debug("Selected Big Bundle Data Roll over plan details is displayed in your package section");
 					}else{
@@ -746,7 +749,9 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 			JavascriptExecutor jse = (JavascriptExecutor) driver;
 			jse.executeScript("window.scrollBy(0,100)", "");
 			Screenshots.captureScreenshot();
+			jse.executeScript("window.scrollBy(0,-200)", "");
 			String text1 = pageobjects.PAYMandPAYGTariffAndExtrasPage.FilterandSortLabel.getText();
+
 			log.debug("Validating Tariff is : " +text1);
 			if (text1.contains("Sort")) {
 				log.debug("Section is containing both Sort tariff and Filter");
@@ -759,7 +764,7 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 		Thread.sleep(2000);
 		log.debug("Sort filter position validation worked fine");
 		//scrollToAnElement.scrollToElement(pageobjects.PAYMandPAYGTariffAndExtrasPage.FilterandSortLabel);
-		Screenshots.captureScreenshot();
+		//Screenshots.captureScreenshot();
 	}
 
 	public static void selectFilter(String range) throws IOException, InterruptedException {
@@ -768,42 +773,50 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 		List<WebElement> filtersCount = driver.findElements(By.xpath("//div[@class='filter-options']/button | //div[@class='filter-options tariff-page']/button"));
 		Thread.sleep(2000);
 		log.debug("There are "+filtersCount.size()+" filter ranges \n");
+		JavascriptExecutor jse = (JavascriptExecutor) driver;
+		//jse.executeScript("window.scrollBy(0,-200)", "");
 		Thread.sleep(2000);
+		Screenshots.captureScreenshot();
+
 
 		if (range.equals("low")) {
-			js.executeScript("arguments[0].click();", pageobjects.PAYMandPAYGTariffAndExtrasPage.lowfilter);
+			jse.executeScript("arguments[0].click();", pageobjects.PAYMandPAYGTariffAndExtrasPage.lowfilter);
 			log.debug("Clicked on low range filter");
 			/*JavascriptExecutor jse = (JavascriptExecutor) driver;
 			jse.executeScript("window.scrollBy(0,200)", "");*/
 			Screenshots.captureScreenshot();
 		}
 		if (range.equals("medium")) {
-			js.executeScript("arguments[0].click();", pageobjects.PAYMandPAYGTariffAndExtrasPage.mediumfilter);
+			jse.executeScript("arguments[0].click();", pageobjects.PAYMandPAYGTariffAndExtrasPage.mediumfilter);
 			log.debug("Clicked on medium range filter");
 			/*JavascriptExecutor jse = (JavascriptExecutor) driver;
 			jse.executeScript("window.scrollBy(0,200)", "");*/
 			Screenshots.captureScreenshot();
 		}
 		if (range.equals("high")) {
-			js.executeScript("arguments[0].click();", driver.findElement(By.xpath("//div[@class='filter-options']/button["+filtersCount.size()+"] | //div[@class='filter-options tariff-page']/button["+filtersCount.size()+"]")));
+			jse.executeScript("arguments[0].click();", driver.findElement(By.xpath("//div[@class='filter-options']/button["+filtersCount.size()+"] | //div[@class='filter-options tariff-page']/button["+filtersCount.size()+"]")));
 			log.debug("Clicked on high range filter");
 			/*js.executeScript("arguments[0].click();", pageobjects.PAYMandPAYGTariffAndExtrasPage.highfilter);
 			scrollToAnElement.scrollToElement(PAYMandPAYGTariffAndExtrasPage.highfilter);*//*
-			JavascriptExecutor jse = (JavascriptExecutor) driver;
-			jse.executeScript("window.scrollBy(0,200)", "");*/
+			JavascriptExecutor jse = (JavascriptExecutor) driver;*/
+			//jse.executeScript("window.scrollBy(0,100)", "");
 			Screenshots.captureScreenshot();
 		}
-
+		jse.executeScript("window.scrollBy(0,120)", "");
+		Thread.sleep(2000);
+		Screenshots.captureScreenshot();
+		jse.executeScript("window.scrollBy(0,-200)", "");
 	}
 
 	public static ArrayList<Integer> getDataListBeforeSelectingFilter() throws IOException, InterruptedException {
 		Thread.sleep(4000);
 		List<WebElement> DataTextElement = PAYMandPAYGTariffAndExtrasPage.DataTextElement;
 		//scrollToAnElement.scrollToElement(driver.findElement(By.xpath("//div[@id='tariff-tile']//ul/li[1]/h2 | //div[@class='col-xs-6 col-sm-3 dmt-container info-container']//ul/li[1]/h2 | //div[@class='box clearfix']/div[1]/div[2]/div/span")));
-		/*JavascriptExecutor jse = (JavascriptExecutor) driver;
-		jse.executeScript("window.scrollBy(0,300)", "");*/
-		Screenshots.captureScreenshot();
+		JavascriptExecutor jse = (JavascriptExecutor) driver;
+		jse.executeScript("window.scrollBy(0,200)", "");
 		Thread.sleep(4000);
+		Screenshots.captureScreenshot();
+
 
 		ArrayList<Integer> datalist = new ArrayList<Integer>();
 		String data = null, tempdata = null;
@@ -837,6 +850,8 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 
 		}
 		log.debug("---------------------------------------------");
+
+		jse.executeScript("window.scrollBy(0,-200)", "");
 		Screenshots.captureScreenshot();
 		return datalist;
 	}
@@ -1031,7 +1046,8 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 		// TODO Auto-generated method stub
 		Thread.sleep(5000);
 		JavascriptExecutor jse = (JavascriptExecutor) driver;
-		jse.executeScript("window.scrollBy(0,200)", "");
+		//jse.executeScript("window.scrollBy(0,200)", "");
+		Screenshots.captureScreenshot();
 		WebElement element = pageobjects.PAYMandPAYGTariffAndExtrasPage.TariffSortDropDown;
 
 		jse.executeScript("arguments[0].setAttribute('style', 'display:block;')", element);
@@ -1039,10 +1055,11 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 			new Select(element).selectByVisibleText(tariffSortDropDown);
 			log.debug("Sorted: " + tariffSortDropDown);
 		}
-
-		jse.executeScript("window.scrollBy(0,200)", "");
+		Thread.sleep(2000);
+		jse.executeScript("window.scrollBy(0,120)", "");
 		Thread.sleep(3000);
 		Screenshots.captureScreenshot();
+		jse.executeScript("window.scrollBy(0,-200)", "");
 
 		Thread.sleep(5000);
 	}
@@ -1113,12 +1130,15 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 
 	public static void SelectedState(String Filteroption) throws InterruptedException, IOException {
 		Thread.sleep(4000);
+		Screenshots.captureScreenshot();
 		String DatafilterText = pageobjects.PAYMandPAYGTariffAndExtrasPage.DataFilterSelectedXpath.getText();
 		log.debug("DatafilterText " + DatafilterText);
 
-		/*JavascriptExecutor jse = (JavascriptExecutor) driver;
-		jse.executeScript("window.scrollBy(0,200)", "");*/
+		JavascriptExecutor jse = (JavascriptExecutor) driver;
+		jse.executeScript("window.scrollBy(0,120)", "");
 		Screenshots.captureScreenshot();
+		Thread.sleep(2000);
+
 
 		List<WebElement> filtersCount = driver.findElements(By.xpath("//div[@class='filter-options']/button | //div[@class='filter-options tariff-page']/button"));
 
@@ -1164,35 +1184,37 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 			log.debug("Data Filter not Selected");
 		}
 		Screenshots.captureScreenshot();
+		jse.executeScript("window.scrollBy(0,-200)", "");
+
 	}
 
 	public static void DeSelectedState() throws InterruptedException, IOException {
 		Thread.sleep(5000);
-		//scrollToAnElement.scrollToElement(pageobjects.PAYMandPAYGTariffAndExtrasPage.DataFilterSelectedXpath);
-		//Thread.sleep(3000);
-		Screenshots.captureScreenshot();
+
 		//pageobjects.PAYMandPAYGTariffAndExtrasPage.DataFilterSelectedXpath.click();
 		JavascriptExecutor executor = (JavascriptExecutor) driver;
 		executor.executeScript("arguments[0].click();", pageobjects.PAYMandPAYGTariffAndExtrasPage.DataFilterSelectedXpath);
 		Thread.sleep(3000);
-		/*JavascriptExecutor jse = (JavascriptExecutor) driver;
-		jse.executeScript("window.scrollBy(0,200)", "");
-		Screenshots.captureScreenshot();*/
+		Screenshots.captureScreenshot();
 
 		log.debug("Deselected the selected data filter tab");
 		JavascriptExecutor jse = (JavascriptExecutor) driver;
-		jse.executeScript("window.scrollBy(0,200)", "");
+		jse.executeScript("window.scrollBy(0,120)", "");
+		Thread.sleep(3000);
 		Screenshots.captureScreenshot();
+		jse.executeScript("window.scrollBy(0,-200)", "");
 
 	}
 
-	public static ArrayList<Integer> getCurrentSortOrderUsingMonthlyData() throws IOException {
+	public static ArrayList<Integer> getCurrentSortOrderUsingMonthlyData() throws IOException, InterruptedException {
 		log.debug("Executing getCurrentSortOrderUsingMonthlyData ()");
 
 		List<WebElement> DataTextElement = pageobjects.PAYMandPAYGTariffAndExtrasPage.DataTextElement;
-		/*JavascriptExecutor jse = (JavascriptExecutor) driver;
+		JavascriptExecutor jse = (JavascriptExecutor) driver;
 		jse.executeScript("window.scrollBy(0,200)", "");
-		Screenshots.captureScreenshot();*/
+		Thread.sleep(3000);
+		Screenshots.captureScreenshot();
+		jse.executeScript("window.scrollBy(0,-250)", "");
 		ArrayList<Integer> tariffListUsingMonthlyData = new ArrayList<Integer>();
 		String data = null, tempdata = null;
 		int a = 0;
@@ -1227,15 +1249,15 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 
 		}
 		log.debug("---------------------------------------------");
-		Screenshots.captureScreenshot();
+		//Screenshots.captureScreenshot();
 		return tariffListUsingMonthlyData;
 	}
 
 	public static ArrayList<Integer> getCurrentSortOrderUsingMonthlyCost() throws IOException {
 		List<WebElement> DataTextElement = pageobjects.PAYMandPAYGTariffAndExtrasPage.MonthlyCostTextElement;
 		//scrollToAnElement.scrollToElement(driver.findElement(By.xpath("//div[@id='tariff-tile' or @class='col-xs-6 col-sm-3 info-container price-block-container']//div[@class='price-block']/div[@class='col-xs-6 monthly']/h2/span[1]")));
-		/*JavascriptExecutor jse = (JavascriptExecutor) driver;
-		jse.executeScript("window.scrollBy(0,200)", "");*/
+		JavascriptExecutor jse = (JavascriptExecutor) driver;
+		jse.executeScript("window.scrollBy(0,200)", "");
 		Screenshots.captureScreenshot();
 
 		ArrayList<Integer> tariffListUsingMonthlyCost = new ArrayList<Integer>();
@@ -1251,15 +1273,15 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 			}
 
 		}
-		Screenshots.captureScreenshot();
+		//Screenshots.captureScreenshot();
 		return tariffListUsingMonthlyCost;
 	}
 
 	public static ArrayList<Integer> getCurrentSortOrderUsingUpfrontCost() throws IOException {
 		List<WebElement> DataTextElement = pageobjects.PAYMandPAYGTariffAndExtrasPage.UpfrontTextElement;
 		//scrollToAnElement.scrollToElement(driver.findElement(By.xpath("//div[@id='tariff-tile']//div[@class='price-block']/div[@class='col-xs-6 upfront']/h2/span[2]")));
-		/*JavascriptExecutor jse = (JavascriptExecutor) driver;
-		jse.executeScript("window.scrollBy(0,200)", "");*/
+		JavascriptExecutor jse = (JavascriptExecutor) driver;
+		jse.executeScript("window.scrollBy(0,200)", "");
 		Screenshots.captureScreenshot();
 		ArrayList<Integer> tariffListUsingMonthlyUpfront = new ArrayList<Integer>();
 		String data = null;
@@ -1274,12 +1296,12 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 			}
 
 		}
-		Screenshots.captureScreenshot();
+		//Screenshots.captureScreenshot();
 		return tariffListUsingMonthlyUpfront;
 	}
 
 	public static ArrayList<Integer> reArrangeListInAcendingBeforeApplyingSort(ArrayList<Integer> OriginalList)
-			throws IOException {
+			throws IOException, InterruptedException {
 
 		ArrayList<Integer> ListBeforeApplyingSort = OriginalList;
 		// listSortEx(ListBeforeApplyingSort, false);
@@ -1287,19 +1309,21 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 		Collections.sort(ListBeforeApplyingSort);
 		log.debug("-List arranged in ascending Order-\n");
 		log.debug(ListBeforeApplyingSort);
-		/*JavascriptExecutor jse = (JavascriptExecutor) driver;
-		jse.executeScript("window.scrollBy(0,200)", "");*/
+		JavascriptExecutor jse = (JavascriptExecutor) driver;
+		jse.executeScript("window.scrollBy(0,-200)", "");
+		Thread.sleep(4000);
 		Screenshots.captureScreenshot();
 		return ListBeforeApplyingSort;
 
 	}
 
-	public static ArrayList<Integer> reArrangeListInDescendingBeforeApplyingSort(ArrayList<Integer> OriginalList) throws IOException {
+	public static ArrayList<Integer> reArrangeListInDescendingBeforeApplyingSort(ArrayList<Integer> OriginalList) throws IOException, InterruptedException {
 
 		ArrayList<Integer> ListBeforeApplyingSort = OriginalList;
 		Collections.sort(ListBeforeApplyingSort, Collections.reverseOrder());
 		/*JavascriptExecutor jse = (JavascriptExecutor) driver;
-		jse.executeScript("window.scrollBy(0,200)", "");*/
+		jse.executeScript("window.scrollBy(0,-200)", "");*/
+		Thread.sleep(3000);
 		Screenshots.captureScreenshot();
 		return ListBeforeApplyingSort;
 
@@ -1337,6 +1361,8 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 
 		try {
 			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			JavascriptExecutor jse = (JavascriptExecutor) driver;
+			jse.executeScript("window.scrollBy(0,-100)", "");
 
 			if(BSCstatus.equalsIgnoreCase("Enabled")) {
 				Thread.sleep(4000);
@@ -1369,12 +1395,13 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 					Thread.sleep(3000);
 					//Bill Cap overlay
 					PAYMandPAYGTariffAndExtrasPage.CapMyBillOverlay.click();
+					log.debug("BSC overlay icon is clicked");
 					Thread.sleep(4000);
 					Screenshots.captureScreenshot();
 
 					if(driver.findElements(By.xpath("//div[@class='bscOverlay']")).size()>0) {
 						String CapMyBillOverlayTxt = PAYMandPAYGTariffAndExtrasPage.CapMyBillOverlayTxt.getText();
-						Thread.sleep(2000);
+						Thread.sleep(3000);
 
 						System.out.println("Bill Spend Cap OverLay Icon Text is displayed and ie : " + CapMyBillOverlayTxt);
 						log.debug("Bill Spend Cap OverLay Icon Text is displayed and ie : " + CapMyBillOverlayTxt);
@@ -1495,10 +1522,12 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 						}*/
 
 						//Cap My bill Continue button under Bill spend cap section Before selecting cap amount
-						if (pageobjects.PAYMandPAYGTariffAndExtrasPage.CapMyBillContinueButton.isEnabled()) {
+						if (pageobjects.PAYMandPAYGTariffAndExtrasPage.CapMyBillContinueButton.isEnabled() && BSCRetainedFlag==false) {
 							log.debug("Cap My Bill button is Enabled before selecting cap amount");
 							Assert.fail("Cap My Bill button is Enabled before selecting cap amount");
-						} else {
+						} else if (BSCRetainedFlag==true) {
+							log.debug("Cap My Bill button is Enabled as it already selected cap amount and trying to edit BSC cap option by clicking edit link");
+						}else {
 							log.debug("As expected Cap My Bill button is disabled before selecting Cap Amount");
 						}
 
@@ -1510,13 +1539,29 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 
 							//scrollToAnElement.scrollToElement(pageobjects.PAYMandPAYGTariffAndExtrasPage.BillCapStatusMsg);
 							Screenshots.captureScreenshot();
-							BillCapStatus = pageobjects.PAYMandPAYGTariffAndExtrasPage.BillCapStatusMsg.getText();
+							/*BillCapStatus = pageobjects.PAYMandPAYGTariffAndExtrasPage.BillCapStatusMsg.getText();
 							log.debug("Don't Cap My Bill link is clicked and status message is:: " + BillCapStatus);
 
 							if (BillCapStatus.contains("You’ve chosen not to add a Spend Cap")) {
 								log.debug("Status message is validated successfully for Don't Cap My Bill option");
 							} else {
 								log.debug("Status message is not matching for Don't Cap My Bill option ie: " + BillCapStatus);
+							}*/
+							String consumerStatusMsg="",upgradeStatusMsg="";
+							if(pageobjects.PAYMandPAYGTariffAndExtrasPage.BillCapStatusMsg.isDisplayed()) {
+								consumerStatusMsg = pageobjects.PAYMandPAYGTariffAndExtrasPage.BillCapStatusMsg.getText();
+								Thread.sleep(2000);
+								log.debug("Status Message: "+consumerStatusMsg+"\n");
+							}
+							if(pageobjects.PAYMandPAYGTariffAndExtrasPage.BillCapUpgradeStatusMsg.isDisplayed()) {
+								upgradeStatusMsg = pageobjects.PAYMandPAYGTariffAndExtrasPage.BillCapUpgradeStatusMsg.getText();
+								Thread.sleep(2000);
+								log.debug("Status Message: "+upgradeStatusMsg+"\n");
+							}
+							if (consumerStatusMsg.contains("not to add a Spend Cap") || upgradeStatusMsg.contains("not to add a Spend Cap")) {
+								log.debug("Status message is validated successfully for Don't Cap My Bill option");
+							} else {
+								log.debug("Status message is not matching for Don't Cap My Bill option ");
 							}
 
 						}else {
@@ -1557,23 +1602,43 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 							Thread.sleep(6000);
 
 							//Selected BillCap Status Message
-
-							BillCapStatus = pageobjects.PAYMandPAYGTariffAndExtrasPage.BillCapStatusMsg.getText();
-							log.debug("Your Cap is applied and status message is:: " + BillCapStatus);
-
-							scrollToAnElement.scrollToElement(pageobjects.PAYMandPAYGTariffAndExtrasPage.SpendCapSection);
+							JavascriptExecutor jse = (JavascriptExecutor) driver;
+							jse.executeScript("window.scrollBy(0,-140)", "");
 							Thread.sleep(3000);
 							Screenshots.captureScreenshot();
+
+							String consumerStatusMsg="",upgradeStatusMsg="";
+
+							/*BillCapStatus = pageobjects.PAYMandPAYGTariffAndExtrasPage.BillCapStatusMsg.getText();
+							log.debug("Your Cap is applied and status message is:: " + BillCapStatus);
 
 							if (BillCapStatus.contains("You’ve got a Spend Cap set at")) {
 								log.debug("Status message is validated successfully for your Bill Cap");
 							} else {
 								log.debug("Status message is not matching for your Bill Cap");
+							}*/
+
+							if(driver.findElements(By.xpath("//div[@class='largeTitle']/p | //div[@class='build-spend-caps-container']/p")).size()>0){
+								if(pageobjects.PAYMandPAYGTariffAndExtrasPage.BillCapStatusMsg.isDisplayed()) {
+								consumerStatusMsg = pageobjects.PAYMandPAYGTariffAndExtrasPage.BillCapStatusMsg.getText();
+								Thread.sleep(2000);
+								log.debug("Status Message: "+consumerStatusMsg+"\n");
+								}
 							}
-
+							if(driver.findElements(By.xpath("//div[@class='build-spend-caps-container']/p[2] | (//div[@class='selection-details'])[1]/p")).size()>0) {
+								if (pageobjects.PAYMandPAYGTariffAndExtrasPage.BillCapUpgradeStatusMsg.isDisplayed()) {
+									upgradeStatusMsg = pageobjects.PAYMandPAYGTariffAndExtrasPage.BillCapUpgradeStatusMsg.getText();
+									Thread.sleep(2000);
+									log.debug("Status Message: " + upgradeStatusMsg + "\n");
+								}
+							}
 							Thread.sleep(2000);
+							if (consumerStatusMsg.contains("You’ve got a Spend Cap set at") || upgradeStatusMsg.contains("You’ve got a Spend Cap set at")) {
+								log.debug("Status message is validated successfully for your Bill Cap");
+							} else {
+								log.debug("Status message is not matching for your Bill Cap \n");
+							}
 						}
-
 					} else if (BillCap.equalsIgnoreCase("DontCapMyBill")) {
 
 						if(CapAmount.equalsIgnoreCase("DontCapMyBillLink")) {
@@ -1589,13 +1654,31 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 						//Selected BillCap Status Message
 						//scrollToAnElement.scrollToElement(pageobjects.PAYMandPAYGTariffAndExtrasPage.BillCapStatusMsg);
 						Screenshots.captureScreenshot();
-						BillCapStatus = pageobjects.PAYMandPAYGTariffAndExtrasPage.BillCapStatusMsg.getText();
+						/*BillCapStatus = pageobjects.PAYMandPAYGTariffAndExtrasPage.BillCapStatusMsg.getText();
 						log.debug("Don't Cap My Bill Option selected and status message is:: " + BillCapStatus);
 
 						if (BillCapStatus.contains("You’ve chosen not to add a Spend Cap")) {
 							log.debug("Status message is validated successfully for Don't Cap My Bill option");
 						} else {
 							log.debug("Status message is not matching for Don't Cap My Bill option ie: " + BillCapStatus);
+						}*/
+
+						String consumerStatusMsg="",upgradeStatusMsg="";
+
+						if(pageobjects.PAYMandPAYGTariffAndExtrasPage.BillCapStatusMsg.isDisplayed()) {
+							consumerStatusMsg = pageobjects.PAYMandPAYGTariffAndExtrasPage.BillCapStatusMsg.getText();
+							Thread.sleep(2000);
+							log.debug("Status Message: "+consumerStatusMsg+"\n");
+						}
+						if(pageobjects.PAYMandPAYGTariffAndExtrasPage.BillCapUpgradeStatusMsg.isDisplayed()) {
+							upgradeStatusMsg = pageobjects.PAYMandPAYGTariffAndExtrasPage.BillCapUpgradeStatusMsg.getText();
+							Thread.sleep(2000);
+							log.debug("Status Message: "+upgradeStatusMsg+"\n");
+						}
+						if (consumerStatusMsg.contains("not to add a Spend Cap") || upgradeStatusMsg.contains("not to add a Spend Cap")) {
+							log.debug("Status message is validated successfully for Don't Cap My Bill option");
+						} else {
+							log.debug("Status message is not matching for Don't Cap My Bill option ");
 						}
 					}
 					Thread.sleep(2000);
@@ -1632,7 +1715,7 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 				scrollToAnElement.scrollToElement(PAYMandPAYGTariffAndExtrasPage.BillCapEditLink);
 				Screenshots.captureScreenshot();
 
-				if (driver.findElements(By.xpath("//div[@class='largeTitle']/h2/a | //section[@id='billSpendCapSection']/a[normalize-space()='Edit Spend Cap'] | //span[contains(text(),'2. Your Spend Cap')]/../a")).size() > 0) {
+				if (driver.findElements(By.xpath("//div[@class='largeTitle']/h2/a | //section[@id='billSpendCapSection']/a[normalize-space()='Edit Spend Cap'] | //span[contains(text(),'2. Your Spend Cap')]/../a | (//div[contains(text(),'3. Your Spend Cap')])[3]/../div[@class='edit-link']")).size() > 0) {
 					log.debug("BSC Edit option is displayed at Bill Spend Cap section: " + pageobjects.PAYMandPAYGTariffAndExtrasPage.BillCapEditLink.getText());
 
 				} else {
@@ -1674,7 +1757,7 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 		try {
 			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 
-			if (driver.findElements(By.xpath("//div[@class='largeTitle']/h2/a | //section[@id='billSpendCapSection']/a[normalize-space()='Edit Spend Cap'] | //span[contains(text(),'2. Your Spend Cap')]/../a")).size() > 0) {
+			if (driver.findElements(By.xpath("//div[@class='largeTitle']/h2/a | //section[@id='billSpendCapSection']/a[normalize-space()='Edit Spend Cap'] | //span[contains(text(),'2. Your Spend Cap')]/../a | (//div[contains(text(),'3. Your Spend Cap')])[3]/../div[@class='edit-link']")).size() > 0) {
 				scrollToAnElement.scrollToElement(PAYMandPAYGTariffAndExtrasPage.BillCapEditLink);
 				Screenshots.captureScreenshot();
 
@@ -1698,6 +1781,7 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 				log.debug("Clicking on Tariff Edit link");
 				PAYMandPAYGTariffAndExtrasPage.TariffEditLink.click();
 				log.debug("Tariff Edit link is clicked \n");
+				BSCRetainedFlag=false;
 			}
 
 		} catch (Exception e) {
@@ -1739,11 +1823,12 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 					JavascriptExecutor jse = (JavascriptExecutor) driver;
 					jse.executeScript("window.scrollBy(0,100)", "");
 					Screenshots.captureScreenshot();
-					Boolean flag =driver.findElement(By.xpath("//div[@class='caps-holder']/div/a[contains(text(),'" + CapAmount + "')]")).isSelected();
+					BSCRetainedFlag =driver.findElement(By.xpath("//div[@class='caps-holder']/div/a[contains(text(),'" + CapAmount + "')]")).isSelected();
 					String selectedCap = driver.findElement(By.xpath("//div[@class='caps-holder']/div/a[@class='capButton selected']")).getText();
 					Thread.sleep(3000);
-					if (flag==true || selectedCap.contains(CapAmount)) {
+					if (BSCRetainedFlag==true || selectedCap.contains(CapAmount)) {
 						log.debug("Status message for CapMyBill option is present/retained after clicking on BSC Edit link ie,: " + pageobjects.PAYMandPAYGTariffAndExtrasPage.BillCapStatusMsg.getText() + "\n");
+						BSCRetainedFlag = true;
 					} else {
 						log.debug("Status message for CapMyBill option has been removed after clicking on BSC Edit link \n");
 						Assert.fail("Status message for CapMyBill option has been removed after clicking on BSC Edit link \n");

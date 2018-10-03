@@ -170,7 +170,6 @@ public class DeliveryPageActions extends Environment {
         log.debug("Entering an Random email id");
         DeliveryPage.Email_Address.sendKeys(RandomEmailAddressCreation.RandomEmail());
         log.debug("Setting the About you options");
-        log.debug("Setting the About you options");
         Select dropdown = new Select(pageobjects.DeliveryPage.Title);
         dropdown.selectByIndex(2);
         log.debug("Selected the dropdown Mrs");
@@ -189,7 +188,11 @@ public class DeliveryPageActions extends Environment {
         } else {
             log.debug("Mobile number without 0 is getting accepted");
         }
+        Thread.sleep(2000);
+        Screenshots.captureScreenshot();
         DeliveryPage.Contact_Number.clear();
+        Thread.sleep(2000);
+        Screenshots.captureScreenshot();
         DeliveryPage.Contact_Number.sendKeys("1234567890");
         List<WebElement> menuOuter1 = driver.findElements(By.xpath("//*[@id='contact-number-error']"));
         if (menuOuter1.size() > 0) {
@@ -199,6 +202,8 @@ public class DeliveryPageActions extends Environment {
         } else {
             log.debug("Landline number without 0 is getting accepted");
         }
+        Thread.sleep(2000);
+        Screenshots.captureScreenshot();
         DeliveryPage.Password.sendKeys("NTTDATA123");
         DeliveryPage.security_answer.sendKeys("SitTester");
         DeliveryPage.date.sendKeys("25");
@@ -909,7 +914,7 @@ public class DeliveryPageActions extends Environment {
                     if (BillCap.equalsIgnoreCase("CapMyBill")) {
 
                         if (CapAmount.equalsIgnoreCase("DontCapMyBillLink")) {
-                            if (AppliedBillCap.contains("No Spend Cap applied")) {
+                            if (AppliedBillCap.contains("You've chosen not to add a Spend Cap")) {
                                 log.debug("'Dont Cap My Bill' is validated successfully and cap text is::" + AppliedBillCap);
                             } else {
                                 log.debug("Failed to validate 'Dont Cap My Bill' and cap text is::" + AppliedBillCap);
@@ -924,7 +929,7 @@ public class DeliveryPageActions extends Environment {
                             }
                         }
                     } else if (BillCap.equalsIgnoreCase("DontCapMyBill")) {
-                        if (AppliedBillCap.contains("No Spend Cap applied")) {
+                        if (AppliedBillCap.contains("You've chosen not to add a Spend Cap")) {
                             log.debug("'Dont Cap My Bill' is validated successfully and cap text is::" + AppliedBillCap);
                         } else {
                             log.debug("Failed to validate 'Dont Cap My Bill' and cap text is::" + AppliedBillCap);

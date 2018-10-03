@@ -39,5 +39,5 @@ Feature: 41_Reg_CFA_PayM_Phone_Data_filters_options_tariff_and_extras_page_Order
 
     Examples:
       | handset       | color      | Firstname | Surname | Username     | BSCstatus | filtername | sortoption                 | consumer | B1     | B2  | B3  | B4  | Text | Email  | Phone | Post | status  | MBBStatus | DeviceType |
-      | iPhone 8 Plus | Space Grey | TEST      | ACCEPTA | TEST ACCEPTA | Disabled  | low        | Monthly data (High to low) | Me       | Select | Not | Not | Not | Not  | Select | Not   | Not  | Enabled | No        | Connected  |
+      | iPhone 8 Plus | Space Grey | TEST      | ACCEPTA | TEST ACCEPTA | Enabled   | low        | Monthly data (High to low) | Me       | Select | Not | Not | Not | Not  | Select | Not   | Not  | Enabled | No        | Connected  |
 

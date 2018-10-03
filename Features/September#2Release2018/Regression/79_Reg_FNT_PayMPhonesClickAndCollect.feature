@@ -25,4 +25,4 @@ Feature: 79_Reg_FNT_PayMPhonesClickAndCollect
 
     Examples:
       | handset       | color | Firstname | Surname | Username     | BSCstatus | consumer | B1     | B2     | B3     | B4  | Text   | Email | Phone | Post | status  | MBBStatus | DeviceType |
-      | iPhone 8 Plus | RED   | TEST      | ACCEPTA | TEST ACCEPTA | Disabled  | Me       | Select | Select | Select | Not | Select | Not   | Not   | Not  | Enabled | No        | Connected  |
+      | iPhone 8 Plus | RED   | TEST      | ACCEPTA | TEST ACCEPTA | Enabled   | Me       | Select | Select | Select | Not | Select | Not   | Not   | Not  | Enabled | No        | Connected  |

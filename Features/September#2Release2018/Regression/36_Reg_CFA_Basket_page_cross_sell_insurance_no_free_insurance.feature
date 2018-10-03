@@ -19,4 +19,4 @@ Feature: 36_Reg_CFA_Basket_page_cross_sell_insurance_no_free_insurance
 
     Examples:
       | handset       | BSCstatus |
-      | iPhone 8 Plus | Disabled  |
+      | iPhone 8 Plus | Enabled   |

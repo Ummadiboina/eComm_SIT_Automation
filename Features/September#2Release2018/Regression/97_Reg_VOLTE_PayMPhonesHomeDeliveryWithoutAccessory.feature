@@ -26,4 +26,4 @@ Feature: 97_Reg_VOLTE_PayMPhonesHomeDeliveryWithoutAccessory
 
     Examples:
       | handset       | color      | Firstname | Surname | Username     | consumer | BSCstatus | B1  | B2  | B3     | B4  | Text | Email  | Phone | Post   | status  | MBBStatus | DeviceType |
-      | iPhone 8 Plus | Space Grey | TEST      | ACCEPTA | TEST ACCEPTA | Me       | Disabled  | Not | Not | Select | Not | Not  | Select | Not   | Select | Enabled | No        | Connected  |
+      | iPhone 8 Plus | Space Grey | TEST      | ACCEPTA | TEST ACCEPTA | Me       | Enabled   | Not | Not | Select | Not | Not  | Select | Not   | Select | Enabled | No        | Connected  |

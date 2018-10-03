@@ -33,4 +33,4 @@ Feature: 08_Reg_CFA_Phones_checkout_delivery_validate_10_digit_contact_number
       #Close the browser
     Examples:
       | handset       | Firstname | Surname | Username     | Status           | BSCstatus | color      | consumer | B1  | B2  | B3     | B4  | Text | Email  | Phone | Post | status  | MBBStatus | DeviceType |
-      | iPhone 8 Plus | TEST      | ACCEPTA | TEST ACCEPTA | Delayed Delivery | Disabled  | Space Grey | Me       | Not | Not | Select | Not | Not  | Select | Not   | Not  | Enabled | No        | Connected  |
+      | iPhone 8 Plus | TEST      | ACCEPTA | TEST ACCEPTA | Delayed Delivery | Enabled   | Space Grey | Me       | Not | Not | Select | Not | Not  | Select | Not   | Not  | Enabled | No        | Connected  |

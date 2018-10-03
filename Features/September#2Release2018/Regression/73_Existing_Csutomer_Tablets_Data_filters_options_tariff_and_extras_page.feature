@@ -37,4 +37,4 @@ Feature: 73_Existing_Csutomer_Tablets_Data_filters_options_tariff_and_extras_pag
 
     Examples:
       | tabletname        | color     | capacity | filtername | BSCstatus | sortoption                 | username                                    | password | Username     | consumer | B1  | B2  | B3     | B4  | Text | Email  | Phone | Post | status  | MBBStatus | DeviceType |
-      | Galaxy Tab S3 9.7 | Rose Gold | 32GB     | low        | Disabled  | Monthly data (Low to High) | rbmuatlokesh_donotusee3035@stf.ref.o2.co.uk | test123  | TEST ACCEPTA | Me       | Not | Not | Select | Not | Not  | Select | Not   | Not  | Enabled | No        | Connected  |
+      | Galaxy Tab S3 9.7 | Rose Gold | 32GB     | low        | Enabled   | Monthly data (Low to High) | rbmuatlokesh_donotusee3035@stf.ref.o2.co.uk | test123  | TEST ACCEPTA | Me       | Not | Not | Select | Not | Not  | Select | Not   | Not  | Enabled | No        | Connected  |

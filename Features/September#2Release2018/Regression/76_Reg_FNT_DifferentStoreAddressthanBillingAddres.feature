@@ -27,4 +27,4 @@ Feature: 76_Reg_FNT_DifferentStoreAddressthanBillingAddres
 
     Examples:
       | handset       | color      | Capacity | Firstname | BSCstatus | Surname | Username     | consumer | B1     | B2  | B3     | B4  | Text   | Email | Phone | Post   | status  | MBBStatus | DeviceType |
-      | iPhone 8 Plus | Space Grey | 64GB     | TEST      | Disabled  | ACCEPTA | TEST ACCEPTA | Me       | Select | Not | Select | Not | Select | Not   | Not   | Select | Enabled | No        | Connected  |
+      | iPhone 8 Plus | Space Grey | 64GB     | TEST      | Enabled   | ACCEPTA | TEST ACCEPTA | Me       | Select | Not | Select | Not | Select | Not   | Not   | Select | Enabled | No        | Connected  |

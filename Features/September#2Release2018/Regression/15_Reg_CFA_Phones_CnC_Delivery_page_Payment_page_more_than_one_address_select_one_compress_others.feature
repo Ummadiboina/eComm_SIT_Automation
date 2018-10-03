@@ -28,4 +28,4 @@ Feature: 15_Reg_CFA_Phones_CnC_Delivery_page_Payment_page_more_than_one_address_
 
     Examples:
       | handset       | color | Firstname | Surname | Username     | consumer | BSCstatus | B1     | B2     | B3     | B4  | Text   | Email  | Phone | Post | status  | MBBStatus | DeviceType |
-      | iPhone 8 Plus | RED   | TEST      | ACCEPTA | TEST ACCEPTA | Me       | Disabled  | Select | Select | Select | Not | Select | Select | Not   | Not  | Enabled | No        | Connected  |
+      | iPhone 8 Plus | RED   | TEST      | ACCEPTA | TEST ACCEPTA | Me       | Enabled   | Select | Select | Select | Not | Select | Select | Not   | Not  | Enabled | No        | Connected  |

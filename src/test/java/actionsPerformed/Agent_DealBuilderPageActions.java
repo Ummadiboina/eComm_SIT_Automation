@@ -1151,7 +1151,7 @@ public class Agent_DealBuilderPageActions extends Environment {
                         log.debug("BSC overlay icon is not present");
                         Assert.fail("BSC overlay icon is not present");
                     }
-
+                    Thread.sleep(3000);
                     //Listing all the cap amounts
                     List<WebElement> menuOuter = driver.findElements(By.xpath("//*[@class='billSpendCapSelection']/select/option"));
                     log.debug("The size of the table is :" + menuOuter.size());

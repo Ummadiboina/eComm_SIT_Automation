@@ -793,7 +793,7 @@ public class OrderConfirmationPageActions extends Environment {
 							}
 						}
 					} else if (BillCap.equalsIgnoreCase("DontCapMyBill")) {
-						if (AppliedBillCap.contains("not to add a Spend Cap") || AppliedBillCap.contains("No Spend Cap applied")) {
+						if (AppliedBillCap.contains("not to add a Spend Cap")) {
 							log.debug("'Dont Cap My Bill' is validated successfully and cap text is::" + AppliedBillCap);
 						} else {
 							log.debug("Failed to validate 'Dont Cap My Bill' and cap text is::" + AppliedBillCap);

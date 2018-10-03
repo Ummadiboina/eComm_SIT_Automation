@@ -42,4 +42,4 @@ Feature: 66_Reg_CFU_PayMSimOnly
 
     Examples:
       | Contract | GiftBlock  | username                      | BSCstatus | Username     | password | filtername | sortoption                 | consumer | B1     | B2  | B3     | B4  | Text | Email  | Phone | Post | status  | MBBStatus | DeviceType |
-      | 30 Days  | Configured | 05ap38085201@stf.ref.o2.co.uk | Disabled  | TEST ACCEPTA | test123  | high       | Monthly data (Low to High) | Me       | Select | Not | Select | Not | Not  | Select | Not   | Not  | Enabled | No        | Connected  |
+      | 30 Days  | Configured | 05ap38085201@stf.ref.o2.co.uk | Enabled   | TEST ACCEPTA | test123  | high       | Monthly data (Low to High) | Me       | Select | Not | Select | Not | Not  | Select | Not   | Not  | Enabled | No        | Connected  |

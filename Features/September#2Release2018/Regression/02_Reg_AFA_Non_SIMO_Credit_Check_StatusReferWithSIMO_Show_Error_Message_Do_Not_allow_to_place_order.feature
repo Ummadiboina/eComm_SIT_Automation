@@ -20,4 +20,4 @@ Feature: 02_Reg_AFA_Non_SIMO_Credit_Check_StatusReferWithSIMO_Show_Error_Message
 
     Examples:
       | Device                    | Tariff  | DeliveryType | BSCstatus | Firstname | Surname | Username    | HouseNumber | PostCode | B1     | B2  | B3     | B4     | Text   | Email  | Phone | Post | Consumer | status  | MBBStatus | DeviceType | DeviceModule |
-      | iphone X 256GB Space Grey | Refresh | HomeDelivery | Disabled  | TEST      | referc  | Test Referc | 6           | SL11ER   | Select | Not | Select | Select | Select | Select | Not   | Not  | Someone  | Enabled | No        | Connected  | simo         |
+      | iphone X 256GB Space Grey | Refresh | HomeDelivery | Enabled   | TEST      | referc  | Test Referc | 6           | SL11ER   | Select | Not | Select | Select | Select | Select | Not   | Not  | Someone  | Enabled | No        | Connected  | simo         |

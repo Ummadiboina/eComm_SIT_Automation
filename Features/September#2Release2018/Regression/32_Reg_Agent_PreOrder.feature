@@ -28,4 +28,4 @@ Feature: 32_Reg_Agent_PreOrder
     # Then CCALink Should be generated
     Examples:
       | Status   | Device | Tariffs | Extras | DeliveryType | BSCstatus | Firstname | Surname | Username     | HouseNumber | PostCode | Consumer | B1  | B2  | B3     | B4  | Text | Email  | Phone | Post   | status  | MBBStatus | DeviceType | DeviceModule |
-      | preorder | Random | Random  | Base   | HomeDelivery | Disabled  | TEST      | ACCEPTA | TEST ACCEPTA | 14          | SL11UP   | Me       | Not | Not | Select | Not | Not  | Select | Not   | Select | Enabled | No        | Connected  | Phone        |
+      | preorder | Random | Random  | Base   | HomeDelivery | Enabled   | TEST      | ACCEPTA | TEST ACCEPTA | 14          | SL11UP   | Me       | Not | Not | Select | Not | Not  | Select | Not   | Select | Enabled | No        | Connected  | Phone        |

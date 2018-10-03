@@ -19,4 +19,4 @@ Feature: 26_Reg_AFU_PAYM_Dongle_submitOrder
 
     Examples:
       | user        | Device | Tariffs | BSCstatus | consumer | B1     | B2  | B3  | B4  | Text | Email  | Phone | Post   | status  | MBBStatus | DeviceType |
-      | 07521111696 | dongle | Random  | Disabled  | Me       | Select | Not | Not | Not | Not  | Select | Not   | Select | Enabled | No        | Connected  |
+      | 07521111696 | dongle | Random  | Enabled   | Me       | Select | Not | Not | Not | Not  | Select | Not   | Select | Enabled | No        | Connected  |

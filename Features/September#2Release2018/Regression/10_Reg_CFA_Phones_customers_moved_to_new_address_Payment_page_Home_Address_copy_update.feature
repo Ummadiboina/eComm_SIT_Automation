@@ -29,4 +29,4 @@ Feature: 10_Reg_CFA_Phones_customers_moved_to_new_address_Payment_page_Home_Addr
 
     Examples:
       | handset       | Firstname | Surname | color | Username     | consumer | BSCstatus | B1  | B2  | B3  | B4  | Text | Email | Phone | Post | status  | MBBStatus | DeviceType |
-      | iPhone 8 Plus | TEST      | ACCEPTA | RED   | TEST ACCEPTA | Someone  | Disabled  | Not | Not | Not | Not | Not  | Not   | Not   | Not  | Enabled | No        | Connected  |
+      | iPhone 8 Plus | TEST      | ACCEPTA | RED   | TEST ACCEPTA | Someone  | Enabled   | Not | Not | Not | Not | Not  | Not   | Not   | Not  | Enabled | No        | Connected  |

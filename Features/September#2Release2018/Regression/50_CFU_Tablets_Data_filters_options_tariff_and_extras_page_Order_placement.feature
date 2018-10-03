@@ -41,5 +41,5 @@ Feature: 50_CFU_Tablets_Data_filters_options_tariff_and_extras_page_Order_placem
 
     Examples:
       | Tablet            | Action | Surname | BSCstatus | Username     | filtername | sortoption                 | username                   | password | consumer | B1  | B2  | B3     | B4  | Text | Email  | Phone | Post | status  | MBBStatus | DeviceType |
-      | Galaxy Tab S3 9.7 | skip   | ACCEPTA | Disabled  | TEST ACCEPTA | low        | Monthly data (Low to High) | rbmuatlokesh_donotusee3196 | test123  | Me       | Not | Not | Select | Not | Not  | Select | Not   | Not  | Enabled | No        | Connected  |
+      | Galaxy Tab S3 9.7 | skip   | ACCEPTA | Enabled   | TEST ACCEPTA | low        | Monthly data (Low to High) | rbmuatlokesh_donotusee3196 | test123  | Me       | Not | Not | Select | Not | Not  | Select | Not   | Not  | Enabled | No        | Connected  |
    #   | Apple iPhone 7    | TEST      | ACCEPTA | TEST ACCEPTA | high       |

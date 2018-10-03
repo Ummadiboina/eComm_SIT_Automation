@@ -32,4 +32,4 @@ Feature: 43_Reg_CFA_Phones_Delayed_delivery_Home_delivery_Confirmation_Page_form
     #Close the browser
     Examples:
       | handset       | Firstname | Surname | Username     | Status           | BSCstatus | color | consumer | B1     | B2     | B3     | B4  | Text   | Email  | Phone | Post | status  | MBBStatus | DeviceType |
-      | iPhone 8 Plus | TEST      | ACCEPTA | TEST ACCEPTA | Delayed Delivery | Disabled  | RED   | Me       | Select | Select | Select | Not | Select | Select | Not   | Not  | Enabled | No        | Connected  |
+      | iPhone 8 Plus | TEST      | ACCEPTA | TEST ACCEPTA | Delayed Delivery | Enabled   | RED   | Me       | Select | Select | Select | Not | Select | Select | Not   | Not  | Enabled | No        | Connected  |

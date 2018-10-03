@@ -38,4 +38,4 @@ Feature: 46_Reg_CFU_ordering choice on upgrade options page_Phone_Option_selecte
 
     Examples:
       | username                      | password | handset       | BSCstatus | Username     | Action | tariff                  | consumer | B1  | B2  | B3  | B4  | Text | Email | Phone | Post | status  | MBBStatus | DeviceType |
-      | 10au66996482@stf.ref.o2.co.uk | test123  | iPhone 8 Plus | Disabled  | TEST ACCEPTA | skip   | 19.99upfront45.00amonth | Someone  | Not | Not | Not | Not | Not  | Not   | Not   | Not  | Enabled | No        | Connected  |
+      | 10au66996482@stf.ref.o2.co.uk | test123  | iPhone 8 Plus | Enabled   | TEST ACCEPTA | skip   | 19.99upfront45.00amonth | Someone  | Not | Not | Not | Not | Not  | Not   | Not   | Not  | Enabled | No        | Connected  |

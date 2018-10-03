@@ -40,4 +40,4 @@ Feature: 82_ Reg_Jan_CFU_MbbSimo30days
 
     Examples:
       | Contract | username                      | BSCstatus | password | filtername | sortoption                 | Username     | consumer | B1  | B2  | B3     | B4  | Text | Email  | Phone | Post | status  | MBBStatus | DeviceType |
-      | 30 Days  | 05ap22044765@stf.ref.o2.co.uk | Disabled  | test123  | low        | Monthly data (High to low) | TEST ACCEPTA | Me       | Not | Not | Select | Not | Not  | Select | Not   | Not  | Enabled | No        | Connected  |
+      | 30 Days  | 05ap22044765@stf.ref.o2.co.uk | Enabled   | test123  | low        | Monthly data (High to low) | TEST ACCEPTA | Me       | Not | Not | Select | Not | Not  | Select | Not   | Not  | Enabled | No        | Connected  |

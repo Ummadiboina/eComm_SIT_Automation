@@ -28,4 +28,4 @@ Feature: 52_Reg_Consumer_DelayedDelivery
      #Close the browser
     Examples:
       | DD_handset    | color | Firstname | Surname | Username     | Status           | BSCstatus | consumer | B1     | B2     | B3  | B4  | Text | Email  | Phone  | Post   | status  | MBBStatus | DeviceType |
-      | iPhone 7 Plus | Black | TEST      | ACCEPTA | TEST ACCEPTA | Delayed Delivery | Disabled  | Me       | Select | Select | Not | Not | Not  | Select | Select | Select | Enabled | No        | Connected  |
+      | iPhone 7 Plus | Black | TEST      | ACCEPTA | TEST ACCEPTA | Delayed Delivery | Enabled   | Me       | Select | Select | Not | Not | Not  | Select | Select | Select | Enabled | No        | Connected  |

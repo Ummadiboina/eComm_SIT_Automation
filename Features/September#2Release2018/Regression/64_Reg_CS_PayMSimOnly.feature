@@ -20,4 +20,4 @@ Feature: 64_Reg_CS_PayMSimOnly
 
     Examples:
       | Contract | Firstname | Surname | Username     | BSCstatus | consumer | B1  | B2  | B3     | B4  | Text | Email  | Phone | Post   | status  | MBBStatus | DeviceType |
-      | 30 Days  | TEST      | ACCEPTA | TEST ACCEPTA | Disabled  | Me       | Not | Not | Select | Not | Not  | Select | Not   | Select | Enabled | No        | Connected  |
+      | 30 Days  | TEST      | ACCEPTA | TEST ACCEPTA | Enabled   | Me       | Not | Not | Select | Not | Not  | Select | Not   | Select | Enabled | No        | Connected  |

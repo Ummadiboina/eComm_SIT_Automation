@@ -21,4 +21,4 @@ Feature: 04_Reg_AFA_SIMO_Credit_Check_Status_ReferWithSIMO_Show_Referral_Message
 
     Examples:
       | Tariff | DeliveryType | Firstname | Surname | Username    | BSCstatus | HouseNumber | PostCode | B1     | B2  | B3     | B4  | Text   | Email  | Phone | Post | Consumer | status  | MBBStatus | DeviceType | DeviceModule |
-      | Simo   | HomeDelivery | TEST      | Referc  | Test Referc | Disabled  | 6           | SL11ER   | Select | Not | Select | Not | Select | Select | Not   | Not  | Me       | Enabled | No        | Connected  | Simo         |
+      | Simo   | HomeDelivery | TEST      | Referc  | Test Referc | Enabled   | 6           | SL11ER   | Select | Not | Select | Not | Select | Select | Not   | Not  | Me       | Enabled | No        | Connected  | Simo         |

@@ -39,4 +39,4 @@ Feature: 88_CFA_Phones_ColourDropdownsWithColourNamesBesideTheColourMultipleColo
     #Close the browser
     Examples:
       | handset       | Username     | Firstname | Surname | color      | CFATariffColour | consumer | BSCstatus | B1  | B2  | B3     | B4  | Text | Email  | Phone | Post | status  | MBBStatus | DeviceType |
-      | iPhone 8 Plus | TEST ACCEPTA | Test      | Accepta | Space Grey | Gold            | Me       | Disabled  | Not | Not | Select | Not | Not  | Select | Not   | Not  | Enabled | No        | Connected  |
+      | iPhone 8 Plus | TEST ACCEPTA | Test      | Accepta | Space Grey | Gold            | Me       | Enabled   | Not | Not | Select | Not | Not  | Select | Not   | Not  | Enabled | No        | Connected  |
