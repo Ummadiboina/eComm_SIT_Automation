@@ -533,7 +533,7 @@ public class Agent_DealBuilderPageActions extends Environment {
 
 
     public static void AgentTradeInQuestionair() throws InterruptedException, IOException {
-        Thread.sleep(7000);
+        Thread.sleep(5000);
         if (Agent_DealBuilderPage.AgentTradeInBtn.isDisplayed()) {
             log.debug("The trade in button is displayed");
             //Agent_DealBuilderPage.AgentTradeInBtn.click();
@@ -553,7 +553,7 @@ public class Agent_DealBuilderPageActions extends Environment {
                 if (!Mainwindow1.equalsIgnoreCase(ChildWindow1)) {
                     // Switching to Child window
                     driver.switchTo().window(ChildWindow1);
-                    Thread.sleep(3000);
+                    Thread.sleep(6000);
                     // Agent_DealBuilderPage.AgentTradeAns1.click();
 
                     Select Question1 = new Select(pageobjects.Agent_DealBuilderPage.AgentTradeAns1);
@@ -1232,14 +1232,15 @@ public class Agent_DealBuilderPageActions extends Environment {
                         Assert.fail("Bill Spend Cap list does not contain specified cap amount and your Bill cap is not selected ie:: " + BillCapAmount);
                     }
 
-                    String BillCapStatus = pageobjects.Agent_DealBuilderPage.BillSpendCapMessage.getText().toLowerCase();
+                    String BillCapStatus = pageobjects.Agent_DealBuilderPage.BillSpendCapMessage.getText();
 
-                    Thread.sleep(3000);
+                    Thread.sleep(5000);
+                    Screenshots.captureScreenshot();
 
                     //status message validation
                     if(BillCapAmount.equalsIgnoreCase("No Spend Cap")){
 
-                        if (BillCapStatus.contains("No spend cap")) {
+                        if (BillCapStatus.contains("No spend cap applied")) {
                             log.debug("Bill Spend Status message after selecting No bill cap:: " + BillCapStatus);
                             log.debug("No Bill Spend Status message validated successfully");
                         } else {

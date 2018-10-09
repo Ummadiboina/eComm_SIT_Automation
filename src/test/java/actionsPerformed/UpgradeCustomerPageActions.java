@@ -1407,13 +1407,13 @@ public class UpgradeCustomerPageActions extends Environment {
         if (driver.findElement(By.xpath("//*[@id='newRecycleOptionsTile']")).isDisplayed()) {
             log.debug("Upgrade and Recycle options is displayed");
             Thread.sleep(4000);
-            scrollToAnElement.scrollToElement(driver.findElement(By.xpath("//*[@id='newRecycleOptionsTile']")));
+            //scrollToAnElement.scrollToElement(driver.findElement(By.xpath("//*[@id='newRecycleOptionsTile']")));
             Screenshots.captureScreenshot();
             // driver.findElement(By.xpath("//*[@id='newRecycleOptionsTile']//*[@ng-click='selectRecycleDevice();']/span")).click();
             JavascriptExecutor executor = (JavascriptExecutor) driver;
             executor.executeScript("arguments[0].click();", driver.findElement(By.xpath("//div[@class='recycle-device not-your-device-box']/a/span")));
 
-            log.debug("Clicked on the choose your device link");
+            log.debug("Clicked on the Not your device link");
         } else {
             Assert.fail("Unable to verify recycle options");
         }
@@ -1423,12 +1423,14 @@ public class UpgradeCustomerPageActions extends Environment {
     public static void SelectRecycleContinueToUpgrade() throws IOException, InterruptedException {
         // Clicking on Recycle and get up to £54.00 credit
         log.debug("in Select recycle an continue to upgrade function");
-        driver.findElement(By.id("recycleCredit")).click();
+        driver.findElement(By.xpath("//input[@id='recycleCredit']")).click();
+        Thread.sleep(2000);
+        Screenshots.captureScreenshot();
         log.debug("Clicked on Radio button next to Recycle and get up to XXXX credit");
         Thread.sleep(3000);
         //driver.findElement(By.xpath("//button[contains(text(),'upgrade now')]")).click();
         JavascriptExecutor executor = (JavascriptExecutor) driver;
-        executor.executeScript("arguments[0].click();", driver.findElement(By.xpath("//button[contains(text(),'upgrade now')] | //button[contains(text(),'Continue to upgrade')]")));
+        executor.executeScript("arguments[0].click();", driver.findElement(By.xpath("//button[contains(text(),'No,upgrade now')] | //button[contains(text(),'Continue to upgrade')]")));
         Thread.sleep(3000);
 
         log.debug("Clicked on upgrade now button");
@@ -1438,9 +1440,9 @@ public class UpgradeCustomerPageActions extends Environment {
     public static void SelectRecycleAndCClickAccurateQuote() throws IOException, InterruptedException {
 
         log.debug("in Select recycle an continue to upgrade function");
-        driver.findElement(By.id("recycleCredit")).click();
+        driver.findElement(By.xpath("//input[@id='recycleCredit']")).click();
+        Thread.sleep(2000);
         log.debug("Clicked on Radio button next to Recycle and get up to XXXX credit");
-        scrollToAnElement.scrollToElement(driver.findElement(By.id("recycleCredit")));
         Screenshots.captureScreenshot();
         Thread.sleep(5000);
         //driver.findElement(By.xpath("//button[contains(text(),'upgrade now')]")).click();
@@ -1672,6 +1674,7 @@ public class UpgradeCustomerPageActions extends Environment {
     }
 
     public static void questionnaire() throws InterruptedException, IOException {
+        Thread.sleep(3000);
         JavascriptExecutor js = (JavascriptExecutor) driver;
 
         // Set<String> handle= driver.getWindowHandles();//Return a set of
@@ -1682,36 +1685,42 @@ public class UpgradeCustomerPageActions extends Environment {
         }
         Thread.sleep(4000);
         log.debug(driver.findElement(By.xpath("//*[@id='redeem-questionnaire']/p[@class='info']")).getText());
-
+        Thread.sleep(2000);
         // Select first questionnaire - Is your phone fully functional
         WebElement Question0 = driver
                 .findElement(By.xpath("//select[@id='question0'][@class='select-questionnaire ng-pristine ng-valid']"));
         js.executeScript("arguments[0].setAttribute('style', 'display:block;')", Question0);
+        Thread.sleep(2000);
         new Select(Question0).selectByValue("0");
-        Thread.sleep(8000);
+        Thread.sleep(2000);
 
         // Select Second questionaire - Does your phone have any damage
         WebElement Question1 = driver
                 .findElement(By.xpath("//select[@id='question1'][@class='select-questionnaire ng-pristine ng-valid']"));
         js.executeScript("arguments[0].setAttribute('style', 'display:block;')", Question1);
+        Thread.sleep(2000);
         new Select(Question1).selectByValue("0");
 
         // Select Third questionaire - Could your phone be water damaged
         WebElement Question2 = driver
                 .findElement(By.xpath("//select[@id='question2'][@class='select-questionnaire ng-pristine ng-valid']"));
         js.executeScript("arguments[0].setAttribute('style', 'display:block;')", Question2);
+        Thread.sleep(2000);
         new Select(Question2).selectByValue("0");
 
         // Select Second questionaire - Remove icloud from device
         WebElement Question3 = driver
                 .findElement(By.xpath("//select[@id='question3'][@class='select-questionnaire ng-pristine ng-valid']"));
         js.executeScript("arguments[0].setAttribute('style', 'display:block;')", Question3);
+        Thread.sleep(2000);
         new Select(Question3).selectByValue("0");
-
-        driver.findElement(By.id("continue-with-accurate-quote")).click();
+        Thread.sleep(2000);
+        Screenshots.captureScreenshot();
+        Thread.sleep(2000);
+        driver.findElement(By.xpath("//button[@id='continue-with-accurate-quote']")).click();
         log.debug("Completed questionaire");
 
-        Thread.sleep(8000);
+        Thread.sleep(6000);
         Screenshots.captureScreenshot();
     }
 
@@ -2250,8 +2259,9 @@ public class UpgradeCustomerPageActions extends Environment {
 
         Thread.sleep(4000);
         String text = driver.findElement(By.xpath("//div[@id='o2RecycleModule']/h2")).getText();
+        Thread.sleep(3000);
         if (text.contains("left to pay on your current Device Plan")) {
-            log.debug("Verified successfully, The Text is: " + text);
+            log.debug("Verified successfully, The Text is: " + text+"\n");
         } else {
             Assert.fail("Verified left to pay on your current Device Plan");
         }

@@ -1611,6 +1611,7 @@ public class Agent_RegisterCustomerActions extends Environment {
 		if (driver.findElements(By.xpath("//span[@id='successStatus']")).size() > 0) {
 
 			String registerStatus = Agent_RegisterCustomerPage.registerStatus.getText();
+			Thread.sleep(3000);
 			if(registerStatus.contains("Registered")) {
 				System.out.println("Register Status validated :: " + registerStatus);
 				log.debug("Register Status validated :: " + registerStatus);
