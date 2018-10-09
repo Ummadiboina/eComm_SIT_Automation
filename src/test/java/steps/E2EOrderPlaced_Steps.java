@@ -1289,6 +1289,23 @@ public class E2EOrderPlaced_Steps {
         }
     }
 
+    @And("^Click on SIMO Add to Basket CTA$")
+    public void SimoAddToBasketCTA(String arg1) {
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            Thread.sleep(3000);
+            log.debug("Clicking in SIMO Add to Basket button");
+            driver.findElement(By.xpath("//button[@id='btnAddToBasket']")).click();
+            Thread.sleep(2000);
+            log.debug("Clicked SIMO Add to Basket button");
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            log.debug("Unable to click on Go to Checkout button");
+            Assert.fail("Unable to click on Go to Checkout button");
+
+        }
+    }
+
     @Given("^Verifies the basket page for the upgrade journey$")
     public void verifies_the_basket_page_for_the_upgrade_journey() {
 
@@ -5852,6 +5869,10 @@ public class E2EOrderPlaced_Steps {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, UpgradeCustomerPage.class);
             UpgradeCustomerPageActions.selectTariffWithRibbonAndOverlayUpgradeJourney(Tariff);
+            Thread.sleep(3000);
+            JavascriptExecutor jse = (JavascriptExecutor) driver;
+            jse.executeScript("window.scrollBy(0,-100)", "");
+            Screenshots.captureScreenshot();
         } catch (Exception e) {
             e.printStackTrace();
             Assert.fail(
@@ -6461,6 +6482,10 @@ public class E2EOrderPlaced_Steps {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, UpgradeCustomerPage.class);
             UpgradeCustomerPageActions.questionnaire();
+            Thread.sleep(3000);
+            JavascriptExecutor jse = (JavascriptExecutor) driver;
+            jse.executeScript("window.scrollBy(0,-200)", "");
+            Screenshots.captureScreenshot();
         } catch (Exception e) {
             e.printStackTrace();
             Assert.fail("Unable to validate and enter questionaire");
@@ -11017,7 +11042,7 @@ public class E2EOrderPlaced_Steps {
             log.debug("Currently we are at page: "+driver.getTitle());
             Thread.sleep(4000);
             Agent_DealBuilderPageActions.addBillSpendCap_AgentDealBuilder(BillCapAmount,BSCstatus);
-            Thread.sleep(4000);
+            Thread.sleep(5000);
         } catch (Exception e) {
             // TODO Auto-generated catch block
             log.debug("Unable to add your bill cap in Agent deal builder page");

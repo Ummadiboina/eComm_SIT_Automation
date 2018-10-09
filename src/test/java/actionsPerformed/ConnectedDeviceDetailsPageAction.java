@@ -876,6 +876,7 @@ public class ConnectedDeviceDetailsPageAction extends Environment {
 
        if(dontCapMyBill.isDisplayed()){
            CommonActions.clickWebElement(dontCapMyBill);
+           log.debug("Dont Cap My Bill CTA is clicked\n");
        }
         Thread.sleep(3000);
 
