@@ -15,12 +15,9 @@ Feature: 126_BSC_CFU_Tablet_SIMO_Validate_BSC_Component_In_Review_Page_with_Inco
     And copy text SIM delivery required or not is displayed
     And Validate consumer Bill Spend Caps section when BSC is <BSCstatus>
     And Choose your bill cap <BillCap> <CapAmount> when BSC is <BSCstatus>
-    #And Validate applied Bill Spend Cap <BillCap> <CapAmount> when BSC is <BSCstatus>
-    #And Validate BSC 'Edit' link
     And Validate and click on BSC 'Edit' link to change <BillCap> <CapAmount>
     And Validate consumer Bill Spend Caps section when BSC is <BSCstatus>
     And Choose your bill cap <NewBillCap> <NewCapAmount> when BSC is <BSCstatus>
-    And Validate applied Bill Spend Cap <NewBillCap> <NewCapAmount> when BSC is <BSCstatus>
     Then I should see 'Your Sim Card'section in upgrade
     And Select 'I need a new sim' option
     And Click on 'I agree to the terms and condition' checkbox in SIMO review page

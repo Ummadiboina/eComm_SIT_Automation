@@ -16,7 +16,7 @@ Feature: 124_BSC_CFA_Tablet_Simo_Edit_and_Validate_BSC_Component_In_Tariff_Listi
     And Validate consumer Bill Spend Caps section when BSC is <BSCstatus>
     And Choose your bill cap <NewBillCap> <NewCapAmount> when BSC is <BSCstatus>
     And I Land on the Plan included basket page and choose home delivery option
-    And Validate Basket Page for applied Bill Spend Cap <BillCap> <CapAmount> when BSC is <BSCstatus>
+    And Validate Basket Page for applied Bill Spend Cap <NewBillCap> <NewCapAmount> when BSC is <BSCstatus>
     And click on "go to checkout" button
     And input <Firstname> and <Surname> and other valid details in Delivery page to verify GDPR
     And Validate applied Bill Spend Cap <NewBillCap> <NewCapAmount> when BSC is <BSCstatus>

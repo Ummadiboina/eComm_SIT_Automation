@@ -1403,16 +1403,16 @@ public class UpgradeCustomerPageActions extends Environment {
 
     public static void RecyclesectionDisplayed() throws InterruptedException, IOException {
         // pageobjects.UpgradeCustomerPage.RecycleWidget.click();
-        Thread.sleep(8000);
+        Thread.sleep(6000);
+        Screenshots.captureScreenshot();
         if (driver.findElement(By.xpath("//*[@id='newRecycleOptionsTile']")).isDisplayed()) {
             log.debug("Upgrade and Recycle options is displayed");
-            Thread.sleep(4000);
+            Thread.sleep(2000);
             //scrollToAnElement.scrollToElement(driver.findElement(By.xpath("//*[@id='newRecycleOptionsTile']")));
-            Screenshots.captureScreenshot();
             // driver.findElement(By.xpath("//*[@id='newRecycleOptionsTile']//*[@ng-click='selectRecycleDevice();']/span")).click();
             JavascriptExecutor executor = (JavascriptExecutor) driver;
             executor.executeScript("arguments[0].click();", driver.findElement(By.xpath("//div[@class='recycle-device not-your-device-box']/a/span")));
-
+            Screenshots.captureScreenshot();
             log.debug("Clicked on the Not your device link");
         } else {
             Assert.fail("Unable to verify recycle options");
@@ -1546,7 +1546,7 @@ public class UpgradeCustomerPageActions extends Environment {
 
     public static void NotYourDevice() throws InterruptedException, IOException {
         // pageobjects.UpgradeCustomerPage.RecycleWidget.click();
-        Thread.sleep(8000);
+        Thread.sleep(5000);
         log.debug("in not your device function");
         FluentWait<WebDriver> wait = new FluentWait<WebDriver>(driver);
         wait.pollingEvery(250, TimeUnit.MILLISECONDS);
@@ -1586,7 +1586,7 @@ public class UpgradeCustomerPageActions extends Environment {
                 log.debug("in selecting model");
                 WebElement Model1 = pageobjects.UpgradeCustomerPage.Model;
                 js.executeScript("arguments[0].setAttribute('style', 'display:block;')", Model1);
-                new Select(Model1).selectByVisibleText("HAN APP iPhone 5s 16GB");
+                new Select(Model1).selectByVisibleText("iPhone 7 256GB");
                 Thread.sleep(6000);
                 log.debug("Selected model completed");
 
@@ -1631,8 +1631,9 @@ public class UpgradeCustomerPageActions extends Environment {
     }
 
     public static void updateDeviceButton() throws InterruptedException, IOException {
+        Thread.sleep(2000);
         log.debug("Going to click updateDeviceButton button");
-        scrollToAnElement.scrollToElement(pageobjects.UpgradeCustomerPage.UpdateDevice);
+        //scrollToAnElement.scrollToElement(pageobjects.UpgradeCustomerPage.UpdateDevice);
         Screenshots.captureScreenshot();
         pageobjects.UpgradeCustomerPage.UpdateDevice.click();
         Thread.sleep(4000);
@@ -1693,6 +1694,7 @@ public class UpgradeCustomerPageActions extends Environment {
         Thread.sleep(2000);
         new Select(Question0).selectByValue("0");
         Thread.sleep(2000);
+        Screenshots.captureScreenshot();
 
         // Select Second questionaire - Does your phone have any damage
         WebElement Question1 = driver
@@ -1700,6 +1702,7 @@ public class UpgradeCustomerPageActions extends Environment {
         js.executeScript("arguments[0].setAttribute('style', 'display:block;')", Question1);
         Thread.sleep(2000);
         new Select(Question1).selectByValue("0");
+        Screenshots.captureScreenshot();
 
         // Select Third questionaire - Could your phone be water damaged
         WebElement Question2 = driver
@@ -1830,43 +1833,49 @@ public class UpgradeCustomerPageActions extends Environment {
 
     public static void SimSwapLinkDisplayed() throws Exception {
 
-        if (UpgradeCustomerPage.SimSwaplink.isDisplayed()) {
-            log.debug("The Sim Swap link is displayed ie:: "+UpgradeCustomerPage.SimSwaplink.getText());
-
-        } else {
-            log.debug("The Sim Swap form link is displayed");
-
+        if(driver.findElements(By.xpath("//*[@id='sim-section']/div/div[2]/div[1]/div[1]/p[3]/a | //*[@id='sim-section']/div/div/div/div/p[3]/a")).size()>0) {
+            if (UpgradeCustomerPage.SimSwaplink.isDisplayed()) {
+                log.debug("The Sim Swap link is displayed ie:: " + UpgradeCustomerPage.SimSwaplink.getText());
+            }else {
+                log.debug("The Sim Swap form link is not displayed");
+            }
+        }else {
+            log.debug("The Sim Swap form link is not displayed/present");
         }
         Screenshots.captureScreenshot();
-
     }
 
     public static void ClickOnSimSwapLink() throws Exception {
 
-        UpgradeCustomerPage.SimSwaplink.click();
-        Thread.sleep(4000);
+        if(driver.findElements(By.xpath("//*[@id='sim-section']/div/div[2]/div[1]/div[1]/p[3]/a | //*[@id='sim-section']/div/div/div/div/p[3]/a")).size()>0) {
+            UpgradeCustomerPage.SimSwaplink.click();
+            Thread.sleep(4000);
 
-        // driver.close();
-        for (String winHandle : driver.getWindowHandles()) {
-            driver.switchTo().window(winHandle);
-        }
+            // driver.close();
+            for (String winHandle : driver.getWindowHandles()) {
+                driver.switchTo().window(winHandle);
+            }
 
-        String simswapurl = driver.getCurrentUrl();
-        log.debug("The URL is: "+simswapurl);
-        if (simswapurl.contains("swapmysim")) {
-            log.debug("Swap you sim page is displayed");
+            String simswapurl = driver.getCurrentUrl();
+            log.debug("The URL is: " + simswapurl);
+            if (simswapurl.contains("swapmysim")) {
+                log.debug("Swap you sim page is displayed");
+                Thread.sleep(2000);
+                Screenshots.captureScreenshot();
+            } else {
+                Thread.sleep(2000);
+                Screenshots.captureScreenshot();
+                log.debug("Swap my sim page is not displayed");
+            }
+            driver.close();
+            Thread.sleep(2000);
+            for (String winHandle : driver.getWindowHandles()) {
+                driver.switchTo().window(winHandle);
+            }
+            Thread.sleep(2000);
+            log.debug(driver.getCurrentUrl());
             Screenshots.captureScreenshot();
-        } else {
-
-            log.debug("Swap my sim page is not displayed");
         }
-        driver.close();
-        Thread.sleep(2000);
-        for (String winHandle : driver.getWindowHandles()) {
-            driver.switchTo().window(winHandle);
-        }
-        log.debug(driver.getCurrentUrl());
-        Screenshots.captureScreenshot();
 
     }
 
@@ -2700,7 +2709,7 @@ public class UpgradeCustomerPageActions extends Environment {
             driver.manage().timeouts().implicitlyWait(2, TimeUnit.MINUTES);
             if (driver.findElements(By.xpath("//*[contains(text(),'hy choose an O2 Pay Monthly sim?')]")).size() <= 0) {
                 log.debug(" text 'Why choose an O2 Pay Monthly sim?' is Displayed ");
-                log.debug(" text 'Why choose an O2 Pay Monthly sim?' is Displayed ");
+
             } else {
                 log.debug("  'Why choose an O2 Pay Monthly sim?' is Displayed ");
                 Assert.fail("  'Why choose an O2 Pay Monthly sim?' is Displayed ");
@@ -3288,7 +3297,7 @@ public class UpgradeCustomerPageActions extends Environment {
                 /*scrollToAnElement.scrollToElement(UpgradeCustomerPage.chooseDeviseSection);
                 Screenshots.captureScreenshot();*/
                 JavascriptExecutor jse = (JavascriptExecutor) driver;
-                jse.executeScript("window.scrollBy(0,400)", "");
+                jse.executeScript("window.scrollBy(0,300)", "");
 
                 Thread.sleep(3000);
                 Screenshots.captureScreenshot();

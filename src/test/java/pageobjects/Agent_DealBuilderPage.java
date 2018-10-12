@@ -266,4 +266,87 @@ public class Agent_DealBuilderPage {
     @FindBy(how = How.XPATH, using = "(//th[contains(text(),'Spend cap')])[1]/../../tr[2]/td/p[1]")
     public static WebElement appliedBillCap;
 
+
+    ////Agent FR Calc validation By Jamal Khan
+    @FindBy(how = How.XPATH, using = "//div[@class='devicePlanFlexCalculator']")
+    public static WebElement planFRCaluclator;
+
+    @FindBy(how = How.XPATH, using = "//input[@id='resetCalculator']")
+    public static WebElement reSet_BuildYourPlan;
+
+    @FindBy(how = How.XPATH, using = "//input[@id='confirmCalButton']")
+    public static WebElement ConfirmCTA;
+
+    @FindBy(how = How.XPATH, using = "//input[@id='cancelButton']")
+    public static WebElement CancelCTA;
+
+    @FindBy(how = How.XPATH, using = "//span[@class='planDetails']")
+    public static WebElement calc_msg;
+
+    @FindBy(how = How.XPATH, using = "//span[@id='totalMonthlyTariff']")
+    public static WebElement totalPrice;
+
+    @FindBy(how = How.XPATH, using = "//span[@id='minUpfront']")
+    public static WebElement minVal_Upfrent;
+
+    @FindBy(how = How.XPATH, using = "//span[@id='minUpfront']/../../div[2]/span[1]")
+    public static WebElement upfrentVal;
+
+    @FindBy(how = How.XPATH, using = "//span[@id='minUpfront']/../a[contains(@class,'previousUpfront')]")
+    public static WebElement minIcon_Upfrent;
+
+    @FindBy(how = How.XPATH, using = "//span[@id='minUpfront']/../a[@class='previousUpfront disablePrevious']")
+    public static WebElement minIcon_Upfrent_disiabled;
+
+    @FindBy(how = How.XPATH, using = "//span[@id='maxUpfront']")
+    public static WebElement maxVal_Upfrent;
+
+    @FindBy(how = How.XPATH, using = "//span[@id='maxUpfront']/../a[contains(@class,'nextUpfront')]")
+    public static WebElement maxIcon_Upfrent;
+
+    @FindBy(how = How.XPATH, using = "//span[@id='maxUpfront']/../a[contains(@class,'nextUpfront disableNext')]")
+    public static WebElement maxIcon_Upfrent_disiabled;
+
+    @FindBy(how = How.XPATH, using = "//span[@id='minTerm']")
+    public static WebElement minVal_term;
+
+    @FindBy(how = How.XPATH, using = "//span[@id='minTerm']/../../div[2]/span[1]")
+    public static WebElement termVal;
+
+    @FindBy(how = How.XPATH, using = "//span[@id='minTerm']/../a[@class='previousTerm disablePrevious']")
+    public static WebElement minIcon_term_disable;
+
+    @FindBy(how = How.XPATH, using = "//span[@id='minTerm']/../a[contains(@class,'previousTerm')]")
+    public static WebElement minIcon_term;
+
+    @FindBy(how = How.XPATH, using = "//span[@id='maxTerm']")
+    public static WebElement maxVal_term;
+
+    @FindBy(how = How.XPATH, using = "//span[@id='maxTerm']/../a[@class='nextTerm disableNext']")
+    public static WebElement maxIcon_term_Disable;
+
+    @FindBy(how = How.XPATH, using = "//span[@id='maxTerm']/../a[contains(@class,'nextTerm')]")
+    public static WebElement maxIcon_term;
+
+    @FindBy(how = How.XPATH, using = "//span[@id='minData']")
+    public static WebElement minVal_data;
+
+    @FindBy(how = How.XPATH, using = "//span[@id='minData']/../../div[2]/span[1]")
+    public static WebElement dataVal;
+
+    @FindBy(how = How.XPATH, using = "//span[@id='minData']/../a[@class='previousData disablePrevious']")
+    public static WebElement minIcon_data_disable;
+
+    @FindBy(how = How.XPATH, using = "//span[@id='minData']/../a[contains(@class,'previousData')]")
+    public static WebElement minIcon_data;
+
+    @FindBy(how = How.XPATH, using = "//span[@id='maxData']")
+    public static WebElement maxVal_data;
+
+    @FindBy(how = How.XPATH, using = "//span[@id='maxData']/../a[contains(@class,'nextData')]")
+    public static WebElement maxIcon_data;
+
+    @FindBy(how = How.XPATH, using = "//span[@id='maxData']/../a[@class='nextData disableNext']")
+    public static WebElement maxIcon_data_Disable;
+
 }

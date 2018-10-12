@@ -228,6 +228,9 @@ public class PaymentPageActions extends Environment {
 
     public static void SelectAddrerss() throws InterruptedException {
         Thread.sleep(5000);
+        JavascriptExecutor jse = (JavascriptExecutor) driver;
+        jse.executeScript("window.scrollBy(0,400)", "");
+        Thread.sleep(3000);
         PaymentPage.Selectadd.click();
         log.debug("Address Selected");
     }
@@ -255,10 +258,10 @@ public class PaymentPageActions extends Environment {
         PaymentPage.CardNumber.sendKeys("4539791001730106");
         log.debug("Entered Card number as 4539xxxxxxxxxx06");
         Thread.sleep(2000);
-        PaymentPage.CardMonth.sendKeys("01");
+        PaymentPage.CardMonth.sendKeys("12");
         log.debug("Entered Expiry Month");
         Thread.sleep(2000);
-        PaymentPage.CardYear.sendKeys("2021");
+        PaymentPage.CardYear.sendKeys("2019");
         log.debug("Entered Expiry Year");
         Thread.sleep(2000);
         PaymentPage.SecurityCode.sendKeys("123");

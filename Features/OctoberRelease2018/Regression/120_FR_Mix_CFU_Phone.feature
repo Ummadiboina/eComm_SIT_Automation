@@ -7,8 +7,8 @@ Feature: 120_FR_Mix_CFU_Phone
     #And Navigate to upgrade phone
     And choose to upgrade any Phone in My upgrade page
     And Click on 'Get Started' CTA
-    And Select a <handset> device from Recommended devices section
-    And Click on link view Phone Details link next to device
+    And Click on View all Phones link in upgrade options page
+    And I choose PayM <handset>
     And Build your plan with <upFront> <term> and <data>
     #And Click on Dont Select Cap My Bill CTA when BSC is <BSCstatus>
     And I Land on the basket page by clicking on Add to Basket button
@@ -26,5 +26,5 @@ Feature: 120_FR_Mix_CFU_Phone
     Then Choose <consumer> <status> Business preferences <B1> <B2> <B3> <B4> And Channel Preferences <Text> <Email> <Phone> <Post> <MBBStatus> <DeviceType>
 
     Examples:
-      | username                     | password | Firstname | Surname | BSCstatus | Tablet             | color | Capacity | Username     | Action    | tariff | consumer | B1     | B2  | B3  | B4  | Text   | Email | Phone | Post | status  | MBBStatus | DeviceType | upFront | term | data |
-      | ina_feb3593@stf.ref.o2.co.uk | test123  | Test      | Accepta | Enabled   | iPad 9.7 inch 2018 | Gold  | 32GB     | TEST ACCEPTA | enterCode |        | Me       | Select | Not | Not | Not | Select | Not   | Not   | Not  | Enabled | No        | Connected  | max     | max  | max  |
+      | username                     | password | Firstname | Surname | BSCstatus | Username     | Action    | handset  | consumer | B1     | B2  | B3  | B4  | Text   | Email | Phone | Post | status  | MBBStatus | DeviceType | upFront | term | data |
+      | ina_feb3593@stf.ref.o2.co.uk | test123  | Test      | Accepta | Enabled   | TEST ACCEPTA | enterCode | iPhone X | Me       | Select | Not | Not | Not | Select | Not   | Not   | Not  | Enabled | No        | Connected  | max     | max  | max  |

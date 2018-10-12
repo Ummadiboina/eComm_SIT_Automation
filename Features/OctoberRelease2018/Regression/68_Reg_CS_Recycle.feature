@@ -25,7 +25,7 @@ Feature: 68_Reg_CS_Recycle
     And Click on 'Confirm CTA'
     And Click on 'Continue' button on upgrade page at extra section
     Then Verify that in the recycle value is displayed in the Recycle panel
-    And Select 'Not your device' option
+    #And Select 'Not your device' option
     And Select <Make>, <Model> and <Network>
     And perform update device
     Then Select any one refundable recycle option

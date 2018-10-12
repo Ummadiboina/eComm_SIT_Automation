@@ -148,10 +148,10 @@ public class UpgradeCustomerPage {
 	@FindBy(how = How.XPATH, using = "//*[@id='sim-section']/div/div[2]/div[1]/div[@class='sim-info-left'] | //*[@id='sim-section']/div/div/div/div[@class='sim-info-left']")
 	public static WebElement YourSimSectionCopyText;
 
-	@FindBy(how = How.XPATH, using = "//*[@id='sim-section']/div/div[2]/div[2]/form/p[1] | //*[@id='sim-section']/div/div/div[2]/form/p[1]/label")
+	@FindBy(how = How.XPATH, using = "//*[@id='sim-section']/div/div[2]/div[2]/form/p[1] | //*[@id='sim-section']/div/div/div[2]/form/p[1]/label | //div[@id='sim-section']/div/div/div/div[3]/form/p[1]/label")
 	public static WebElement YourSimOptionsOne;
 
-	@FindBy(how = How.XPATH, using = "//*[@id='sim-section']/div/div[2]/div[2]/form/p[2] | //*[@id='sim-section']/div/div/div[2]/form/p[2]/label")
+	@FindBy(how = How.XPATH, using = "//*[@id='sim-section']/div/div[2]/div[2]/form/p[2] | //*[@id='sim-section']/div/div/div[2]/form/p[2]/label | //div[@id='sim-section']/div/div/div/div[3]/form/p[2]/label")
 	public static WebElement YourSimOptionsTwo;
 
 	@FindBy(how = How.XPATH, using = "//*[@id='sim-section']/div/div[2]/div[1]/div[1]/p[3]/a | //*[@id='sim-section']/div/div/div/div/p[3]/a")
