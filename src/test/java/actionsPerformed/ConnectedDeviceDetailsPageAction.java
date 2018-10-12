@@ -553,10 +553,14 @@ public class ConnectedDeviceDetailsPageAction extends Environment {
      * Reason to change:                                                                                                                                             *
      **********************************************************************************************************************************************************************/
 
-    public static void flexibleReressh_CFA(String upFront, String term, String data) throws InterruptedException {
+    public static void flexibleReressh_CFA(String upFront, String term, String data) throws InterruptedException, IOException {
         upFrontCost = "";
         totalCostPerMonth = "";
 
+        JavascriptExecutor jse = (JavascriptExecutor) driver;
+        jse.executeScript("window.scrollBy(0,400)", "");
+        Screenshots.captureScreenshot();
+        Thread.sleep(2000);
         if (ConnectedDeviceDetailsPage.pay_monthly_TabName.isDisplayed()) {
 
             /*if (ConnectedDeviceDetailsPage.toggle_360_spin.isDisplayed()) {
@@ -567,14 +571,14 @@ public class ConnectedDeviceDetailsPageAction extends Environment {
                 log.info("Failed to Displayed the toggle 36o spin device");
                 //Assert.fail("Failed to Displayed the toggle 36o spin device");
             }*/
-            if (ConnectedDeviceDetailsPage.toggle_gallery.isDisplayed()) {
+            /*if (ConnectedDeviceDetailsPage.toggle_gallery.isDisplayed()) {
                 System.out.println("Successfully Displayed the toggle gallery");
                 log.info("Successfully Displayed the toggle gallery");
             } else {
                 System.out.println("Failed to Displayed the toggle gallery");
                 log.info("Failed to Displayed the toggle gallery");
                 //Assert.fail("Failed to Displayed the toggle gallery");
-            }
+            }*/
 
             // not yet implemented from the dev team
                 /*if (ConnectedDeviceDetailsPage.toggle_play_video.isDisplayed()) {
@@ -590,18 +594,18 @@ public class ConnectedDeviceDetailsPageAction extends Environment {
                 System.out.println("FR calc is Displayed");
                 log.info("FR calc is Displayed");
             } else {
-                System.out.println("Failed to Displayed FR calc");
-                log.info("Failed to Displayed FR calc");
-                Assert.fail("Failed to Displayed FR calc");
+                System.out.println("Failed to Display FR calc");
+                log.info("Failed to Display FR calc");
+                Assert.fail("Failed to Display FR calc");
             }
 
             if (ConnectedDeviceDetailsPage.reSet_BuildYourPlan.isDisplayed()) {
-                System.out.println("Displayed - Reset Calc");
-                log.info("Displayed - Reset Calc");
+                System.out.println("Displayed - Reset Calc link");
+                log.info("Displayed - Reset Calc link");
             } else {
-                System.out.println("Failed to Displayed the reSet calc");
-                log.info("Failed to Displayed the reSet calc");
-                Assert.fail("Failed to Displayed the reSet calc");
+                System.out.println("Failed to Displayed the reSet calc link");
+                log.info("Failed to Displayed the reSet calc link");
+                Assert.fail("Failed to Displayed the reSet calc link");
             }
 
             if (ConnectedDeviceDetailsPage.offersIncluded.isDisplayed()) {
@@ -665,7 +669,9 @@ public class ConnectedDeviceDetailsPageAction extends Environment {
                 boolean b = false;
                 for (int i = 1; i < 100; i++) {
                     String minValUpfrnt = (String) ConnectedDeviceDetailsPage.minVal_Upfrent.getText().subSequence(5, 7);
+                    Thread.sleep(2000);
                     String upFrntVal = ConnectedDeviceDetailsPage.upfrentVal.getText().substring(1, 3);
+                    Thread.sleep(2000);
 
                     if (driver.findElements(By.xpath("//div[contains(@data-calc,'upfront')]/..//div[contains(@class,'min-icon')]/..//div[contains(@class,'min-icon calc-track-element disable')]")).size() <= 0) {
                         CommonActions.clickWebElement(ConnectedDeviceDetailsPage.minIcon_Upfrent);
@@ -688,8 +694,9 @@ public class ConnectedDeviceDetailsPageAction extends Environment {
 
                 for (int i = 1; i < 100; i++) {
                     String maxValUpfrnt = (String) ConnectedDeviceDetailsPage.maxVal_Upfrent.getText().subSequence(5, 7);
+                    Thread.sleep(2000);
                     String upFrntVal = ConnectedDeviceDetailsPage.upfrentVal.getText().substring(1, 3);
-
+                    Thread.sleep(2000);
                     if (driver.findElements(By.xpath("//div[contains(@data-calc,'upfront')]/..//div[contains(@class,'max-icon')]/..//div[contains(@class,'max-icon calc-track-element disable')]")).size() <= 0) {
                         CommonActions.clickWebElement(ConnectedDeviceDetailsPage.maxIcon_Upfrent);
                     }
@@ -869,9 +876,34 @@ public class ConnectedDeviceDetailsPageAction extends Environment {
 
         totalCostPerMonth = ConnectedDeviceDetailsPage.totalPrice.getText();
         upFrontCost = ConnectedDeviceDetailsPage.upfrentVal.getText();
+        Screenshots.captureScreenshot();
         CommonActions.clickWebElement(ConnectedDeviceDetailsPage.chooseThisPlan);
-        Thread.sleep(5000);
+        log.debug("Clicked on Choose this plan CTA\n");
+        Thread.sleep(8000);
+        log.debug("We are at TnE page\n");
+        Screenshots.captureScreenshot();
 
+        jse.executeScript("window.scrollBy(0,-700)", "");
+        Thread.sleep(2000);
+        Screenshots.captureScreenshot();
+
+        String TnEPageFRCalcupFrontCost = ConnectedDeviceDetailsPage.upfrentVal.getText();
+        Thread.sleep(2000);
+
+        if (TnEPageFRCalcupFrontCost.contains(upFrontCost)) {
+            System.out.println("The Monthly upfront price from the PD page and TnE FR Calc Upfront value are matched  + ::: " + TnEPageFRCalcupFrontCost + " & " + upFrontCost);
+            log.debug("The Monthly upfront price from the PD page and TnE FR Calc Upfront value are matched  + ::: " + TnEPageFRCalcupFrontCost + " & " + upFrontCost);
+        } else {
+            System.out.println(" Not Matched = ==The Monthly upfront price from the PD page and TnE FR Calc Upfront value are not matched  + ::: " + TnEPageFRCalcupFrontCost + " & " + upFrontCost);
+            log.debug(" Not Matched = ==The Monthly upfront price from the PD page and TnE FR Calc Upfront value are not matched  + ::: " + TnEPageFRCalcupFrontCost + " & " + upFrontCost);
+            Assert.fail(" Not Matched = ==The Monthly upfront price from the PD page and TnE FR Calc Upfront value are not matched  + ::: " + TnEPageFRCalcupFrontCost + " & " + upFrontCost);
+        }
+
+        scrollToAnElement.scrollToElement(driver.findElement(By.xpath("//div[contains(text(),'Your Spend Cap')] | //div/p/span[contains(text(),'Your Spend Cap')]")));
+        Thread.sleep(3000);
+        Screenshots.captureScreenshot();
+
+       //Bill Spend Cap section
        WebElement dontCapMyBill = driver.findElement(By.xpath("//button[@id='dontcap']"));
 
        if(dontCapMyBill.isDisplayed()){
@@ -879,28 +911,38 @@ public class ConnectedDeviceDetailsPageAction extends Environment {
            log.debug("Dont Cap My Bill CTA is clicked\n");
        }
         Thread.sleep(3000);
+        Screenshots.captureScreenshot();
 
+        //Mini Basket Validation
         if (ConnectedDeviceDetailsPage.prodctDetails_TnE.isDisplayed()) {
 
             CommonActions.scrollToElement(ConnectedDeviceDetailsPage.totalCost_BasketPage);
+            Thread.sleep(3000);
+            Screenshots.captureScreenshot();
             String totalCost_TnE = ConnectedDeviceDetailsPage.totalCost_BasketPage.getText();
             System.out.println("The Total price is + ::: " + totalCost_TnE);
+            log.debug("The Total price is + ::: " + totalCost_TnE);
 
             if (totalCost_TnE.contains(totalCostPerMonth)) {
                 System.out.println(" Matched = == The Upfront price from the PD page and TnE page are matched  + ::: " + totalCost_TnE + " & " + totalCostPerMonth);
+                log.debug(" Matched = == The Upfront price from the PD page and TnE page are matched  + ::: " + totalCost_TnE + " & " + totalCostPerMonth);
             } else {
                 System.out.println(" Not Matched = == The Upfront price from the PD page and TnE page are matched  + ::: " + totalCost_TnE + " & " + totalCostPerMonth);
+                log.debug(" Not Matched = == The Upfront price from the PD page and TnE page are matched  + ::: " + totalCost_TnE + " & " + totalCostPerMonth);
             }
 
             if (totalCost_TnE.contains(upFrontCost)) {
                 System.out.println(" Matched = == The Monthly price from the PD page and TnE page are matched  + ::: " + totalCost_TnE + " & " + upFrontCost);
+                log.debug(" Matched = == The Monthly price from the PD page and TnE page are matched  + ::: " + totalCost_TnE + " & " + upFrontCost);
             } else {
                 System.out.println(" Not Matched = == The Monthly price from the PD page and TnE page are matched  + ::: " + totalCost_TnE + " & " + upFrontCost);
+                log.debug(" Not Matched = == The Monthly price from the PD page and TnE page are matched  + ::: " + totalCost_TnE + " & " + upFrontCost);
 
             }
             if (ConnectedDeviceDetailsPage.prodctDetails_TnE.isDisplayed()) {
                 String ProductDeatails_TnE = ConnectedDeviceDetailsPage.prodctDetails_TnE.getText();
                 System.out.println("The Product details in TnE are  + ::: " + ProductDeatails_TnE);
+                log.debug("The Product details in TnE are  + ::: " + ProductDeatails_TnE);
             }
         }
     }

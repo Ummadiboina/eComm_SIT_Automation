@@ -4,19 +4,17 @@ Feature: 22_CFA_MBB_Edit_BSC_Component_from_Basket_Page_and_Select_Don't_Cap_My_
 
   @Web
   Scenario Outline: 22_CFA_MBB_Edit_BSC_Component_from_Basket_Page_and_Select_Don't_Cap_My_Bill_and_Validate_Values
-  GGiven I am an CFA user and Lands on shop page
+    Given I am an CFA user and Lands on shop page
     And Navigate to PayM MBB page
     And I choose MBB PayM <Device_Name>
     And Navigate to device details page
     And Land on the 'Tariffs and extra' page
     And Validate consumer Bill Spend Caps section when BSC is <BSCstatus>
     And Choose your bill cap <BillCap> <CapAmount> when BSC is <BSCstatus>
-    #And Validate applied Bill Spend Cap <BillCap> <CapAmount> when BSC is <BSCstatus>
     And I Land on the basket page and choose home delivery option
     And Validate Basket Page for applied Bill Spend Cap <BillCap> <CapAmount> when BSC is <BSCstatus>
     And Validate and click on BSC 'Edit' link to change <BillCap> <CapAmount>
     And Choose your bill cap <NewBillCap> <NewCapAmount> when BSC is <BSCstatus>
-    #And Validate applied Bill Spend Cap <NewBillCap> <NewCapAmount> when BSC is <BSCstatus>
     And I Land on the basket page and choose home delivery option
     And Validate Basket Page for applied Bill Spend Cap <NewBillCap> <NewCapAmount> when BSC is <BSCstatus>
     And click on "go to checkout" button

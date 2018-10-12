@@ -40,6 +40,6 @@ Feature: 50_CFU_Tablets_Data_filters_options_tariff_and_extras_page_Order_placem
     Then Choose <consumer> <status> Business preferences <B1> <B2> <B3> <B4> And Channel Preferences <Text> <Email> <Phone> <Post> <MBBStatus> <DeviceType>
 
     Examples:
-      | Tablet            | Action | Surname | BSCstatus | BillCap   | CapAmount | Username     | filtername | sortoption                 | username                   | password | consumer | B1  | B2  | B3     | B4  | Text | Email  | Phone | Post | status  | MBBStatus | DeviceType |
-      | Galaxy Tab S3 9.7 | skip   | ACCEPTA | Enabled   | CapMyBill | £100      | TEST ACCEPTA | low        | Monthly data (Low to High) | rbmuatlokesh_donotusee3196 | test123  | Me       | Not | Not | Select | Not | Not  | Select | Not   | Not  | Enabled | No        | Connected  |
+      | Tablet | Action | Surname | BSCstatus | BillCap   | CapAmount | Username     | filtername | sortoption                 | username                      | password | consumer | B1  | B2  | B3     | B4  | Text | Email  | Phone | Post | status  | MBBStatus | DeviceType |
+      | A3 10  | skip   | ACCEPTA | Enabled   | CapMyBill | £100      | TEST ACCEPTA | low        | Monthly data (Low to High) | 10au66996482@stf.ref.o2.co.uk | test123  | Me       | Not | Not | Select | Not | Not  | Select | Not   | Not  | Enabled | No        | Connected  |
    #   | Apple iPhone 7    | TEST      | ACCEPTA | TEST ACCEPTA | high       |

@@ -43,11 +43,14 @@ public class OrderConfirmationPageActions extends Environment {
 
 	}
 
-	public static void MessageDisplayed() throws IOException {
+	public static void MessageDisplayed() throws IOException, InterruptedException {
 		log.debug("This is order confirmation page and the message in this page is as below......");
 		log.info("This is order confirmation/information page and the message in this page is as above......");
 		JavascriptExecutor jse = (JavascriptExecutor) driver;
-		jse.executeScript("window.scrollBy(0,100)", "");
+		jse.executeScript("window.scrollBy(0,120)", "");
+		Screenshots.captureScreenshot();
+		Thread.sleep(2000);
+		jse.executeScript("window.scrollBy(0,150)", "");
 		Screenshots.captureScreenshot();
 
 		try {

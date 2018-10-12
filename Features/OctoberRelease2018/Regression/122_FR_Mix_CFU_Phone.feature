@@ -7,8 +7,8 @@ Feature: 122_FR_Mix_CFU_Phone
     #And Navigate to upgrade phone
     And choose to upgrade any Phone in My upgrade page
     And Click on 'Get Started' CTA
-    And Select a <handset> device from Recommended devices section
-    And Click on link view Phone Details link next to device
+    And Click on View all Phones link in upgrade options page
+    And I choose PayM <handset>
     And Build your plan with <upFront> <term> and <data>
     #And Click on Dont Select Cap My Bill CTA when BSC is <BSCstatus>
     And I Land on the basket page and choose home delivery option

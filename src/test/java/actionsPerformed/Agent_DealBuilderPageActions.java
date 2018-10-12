@@ -26,6 +26,8 @@ public class Agent_DealBuilderPageActions extends Environment {
     public static ArrayList deviceNames;
     public static ArrayList DevicesAndTariffs;
     public  static ArrayList lstOfDeviceAdded_DB;
+    public static String upFrontCost;
+    public static String totalCostPerMonth;
 
     // this method used to perform click action on the Agent Home Page
 
@@ -1376,7 +1378,348 @@ public class Agent_DealBuilderPageActions extends Environment {
         }
     }
 
+    ////Agent FR Calc validation By Jamal Khan
 
+    public static void flexibleReressh_AFA(String upFront,String term,String data)  throws InterruptedException, IOException {
+        upFrontCost = "";
+        totalCostPerMonth = "";
+
+        List<WebElement> menuOuter = driver.findElements(By.xpath("//*[@class='priceSelection']/select/option"));
+        log.debug("The size of the table is :" + menuOuter.size());
+
+        for (int i = 0; i < menuOuter.size(); i++) {
+            log.debug("Option " + i + " is: " + menuOuter.get(i).getText());
+        }
+
+        Screenshots.captureScreenshot();
+        String priceCombinationLastItem = driver.findElement(By.xpath("(//*[@class='priceSelection']/select/option)[" + menuOuter.size() + "]")).getText();
+
+        if(priceCombinationLastItem.contains("Build tariff")){
+            log.debug("Build tariff option is present in the price dropdown menu ie :: "+ priceCombinationLastItem);
+
+            driver.findElement(By.xpath("(//*[@class='priceSelection']/select/option)[" + menuOuter.size() + "]")).click();
+            log.debug("Selected Option : " + driver.findElement(By.xpath("(//*[@class='priceSelection']/select/option)[" + menuOuter.size() + "]")).getText());
+        }else{
+            log.debug("Build tariff option does not exist in the Device/Tariff drop down");
+            Assert.fail("Build tariff option does not exist in the Device/Tariff drop down");
+        }
+
+        String Mainwindow = driver.getWindowHandle();
+        // getting all the popup windows , hence using getwindowhandles instead of
+        // getwindowhandle
+        Set<String> s1 = driver.getWindowHandles();
+        Iterator<String> i1 = s1.iterator();
+        while (i1.hasNext()) {
+            String ChildWindow = i1.next();
+            if (!Mainwindow.equalsIgnoreCase(ChildWindow)) {
+                // Switching to Child window
+                driver.switchTo().window(ChildWindow);
+                log.debug("Switched to child window");
+                Thread.sleep(8000);
+                Screenshots.captureScreenshot();
+
+                //FR Validations
+
+                if (driver.findElements(By.xpath("//div[@class='devicePlanFlexCalculator']")).size()>0) {
+
+                    if (Agent_DealBuilderPage.planFRCaluclator.isDisplayed()) {
+                        System.out.println("FR calc is Displayed");
+                        log.info("FR calc is Displayed");
+                    } else {
+                        System.out.println("Failed to Display FR calc");
+                        log.info("Failed to Display FR calc");
+                        Assert.fail("Failed to Display FR calc");
+                    }
+
+                    if (Agent_DealBuilderPage.reSet_BuildYourPlan.isDisplayed()) {
+                        System.out.println("Displayed - Reset Calc button");
+                        log.info("Displayed - Reset Calc button");
+                    } else {
+                        System.out.println("Failed to Displayed the reSet calc button");
+                        log.info("Failed to Displayed the reSet calc button");
+                        Assert.fail("Failed to Displayed the reSet calc button");
+                    }
+
+                    if (Agent_DealBuilderPage.ConfirmCTA.isDisplayed()) {
+                        System.out.println("Displayed - Confirm button in Calc ");
+                        log.info("Displayed - Confirm button in Calc ");
+                    } else {
+                        System.out.println("Failed to Display - Confirm CTA in Calc");
+                        log.info("Failed to Displayed- Confirm CTA in Calc");
+                        Assert.fail("Failed to Displayed- Confirm CTA in Calc");
+                    }
+
+                    if (Agent_DealBuilderPage.CancelCTA.isDisplayed()) {
+                        System.out.println("Displayed - Cancel button in Calc ");
+                        log.info("Displayed - Cancel button in Calc ");
+                    } else {
+                        System.out.println("Failed to Display - Cancel CTA in Calc");
+                        log.info("Failed to Displayed- Cancel CTA in Calc");
+                        Assert.fail("Failed to Displayed- Cancel CTA in Calc");
+                    }
+
+                    if (Agent_DealBuilderPage.totalPrice.isDisplayed()) {
+                        System.out.println("Displayed - Total Price per month ");
+                        log.info("Displayed - Total Price per month ");
+                    } else {
+                        System.out.println("Failed to Display - Total Price per month");
+                        log.info("Failed to Displayed- Total Price per month");
+                        Assert.fail("Failed to Displayed- Total Price per month");
+                    }
+
+                    if (Agent_DealBuilderPage.reSet_BuildYourPlan.isDisplayed()) {
+                        System.out.println("Displayed - Reset Build your plan ");
+                        log.info("Displayed - Reset Build your plan ");
+                    } else {
+                        System.out.println("Failed to Display -  Reset Build your plan");
+                        log.info("Failed to Displayed -  Reset Build your plan");
+                        Assert.fail("Failed to Displayed - Reset Build your plan");
+                    }
+
+                    if (Agent_DealBuilderPage.calc_msg.isDisplayed()) {
+                        System.out.println("Displayed - Calc message ");
+                        log.info("Displayed - Calc message ");
+                    } else {
+                        System.out.println("Failed to Display -  Calc message");
+                        log.info("Failed to Displayed - Calc message");
+                        Assert.fail("Failed to Displayed - Calc message");
+                    }
+
+
+                    if (upFront.contains("Min") || upFront.contains("min")) {
+                        boolean b = false;
+                        for (int i = 1; i < 100; i++) {
+                            String minValUpfrnt = (String) Agent_DealBuilderPage.minVal_Upfrent.getText().subSequence(5, 7);
+                            Thread.sleep(2000);
+                            String upFrntVal = Agent_DealBuilderPage.upfrentVal.getText().substring(1, 3);
+                            Thread.sleep(2000);
+
+                            if (driver.findElements(By.xpath("//span[@id='minUpfront']/../a[@class='previousUpfront disablePrevious']")).size() <= 0) {
+                                CommonActions.clickWebElement(Agent_DealBuilderPage.minIcon_Upfrent);
+                            }
+                            if (minValUpfrnt.contains(upFrntVal) && Agent_DealBuilderPage.minIcon_Upfrent_disiabled.isDisplayed()) {
+                                log.info("The Upfront cost is changes to minimum - " + Agent_DealBuilderPage.minVal_Upfrent.getText());
+                                b = true;
+                                break;
+                            }
+                        }
+                        if (b == false) {
+                            log.info("Failed to displayed - the upfront Min icon is not disable though changed to main value");
+                            Assert.fail("\"Failed to displayed - the upfront Min icon is not disable though changed to main value\"");
+                        }
+                    }
+
+
+                    if (upFront.equalsIgnoreCase("max")) {
+                        boolean b = false;
+
+                        for (int i = 1; i < 100; i++) {
+                            String maxValUpfrnt = (String) Agent_DealBuilderPage.maxVal_Upfrent.getText().subSequence(5, 7);
+                            Thread.sleep(2000);
+                            String upFrntVal = Agent_DealBuilderPage.upfrentVal.getText().substring(1, 3);
+                            Thread.sleep(2000);
+                            if (driver.findElements(By.xpath("//span[@id='maxUpfront']/../a[contains(@class,'nextUpfront disableNext')]")).size() <=0) {
+                                CommonActions.clickWebElement(Agent_DealBuilderPage.maxIcon_Upfrent);
+                            }
+                            if (maxValUpfrnt.contains(upFrntVal) && Agent_DealBuilderPage.maxIcon_Upfrent_disiabled.isDisplayed()) {
+                                log.info("the Upfront cost is changes to maximum - " + Agent_DealBuilderPage.maxVal_Upfrent.getText());
+                                b = true;
+                                break;
+                            }
+                        }
+                        if (b == false) {
+                            log.info("Failed to displayed - the upfront Max icon is not disable though changed to main value");
+                            Assert.fail("\"Failed to displayed - the upfront MAx icon is not disable though changed to main value\"");
+                        }
+                    }
+
+
+                    if (upFront.equalsIgnoreCase("avg")) {
+                        if (driver.findElements(By.xpath("//span[@id='minUpfront']/../a[@class='previousUpfront disablePrevious']")).size() > 0) {
+                            // CommonActions.clickWebElement(ConnectedDeviceDetailsPage.minIcon_Upfrent);
+                            CommonActions.clickWebElement(Agent_DealBuilderPage.maxIcon_Upfrent);
+                        }
+
+                        if (driver.findElements(By.xpath("//span[@id='maxUpfront']/../a[contains(@class,'nextUpfront disableNext')]")).size() > 0) {
+                            // CommonActions.clickWebElement(ConnectedDeviceDetailsPage.maxIcon_Upfrent);
+                            CommonActions.clickWebElement(Agent_DealBuilderPage.minIcon_Upfrent);
+                        }
+
+                        if (driver.findElements(By.xpath("//span[@id='maxUpfront']/../a[contains(@class,'nextUpfront disableNext')]")).size() <= 0 && driver.findElements(By.xpath("//span[@id='minUpfront']/../a[@class='previousUpfront disablePrevious']")).size() <= 0) {
+                            log.info("the Upfront cost is changes to average  - " + Agent_DealBuilderPage.minVal_Upfrent.getText());
+                            log.info("the Upfront cost is changes to average - " + Agent_DealBuilderPage.maxVal_Upfrent.getText());
+                        } else {
+                            log.info("Failed to Display - the Upfront cost is changes to average  - " + Agent_DealBuilderPage.minVal_Upfrent.getText());
+                            log.info("Failed to Display - the Upfront cost is changes to average - " + Agent_DealBuilderPage.maxVal_Upfrent.getText());
+                            Assert.fail("the Upfront cost is changes to average");
+                        }
+                    }
+
+
+                    if (term.equalsIgnoreCase("Min")) {
+                        boolean b = false;
+                        for (int i = 1; i < 37; i++) {
+                            String termMinVal = Agent_DealBuilderPage.minVal_term.getText();
+                            StringTokenizer st = new StringTokenizer(termMinVal, " ");
+                            st.nextToken();
+                            String str = st.nextToken();
+                            String termValue = Agent_DealBuilderPage.termVal.getText();
+
+                            if (driver.findElements(By.xpath("//span[@id='minTerm']/../a[@class='previousTerm disablePrevious']")).size() <= 0) {
+                                CommonActions.clickWebElement(Agent_DealBuilderPage.minIcon_term);
+                            }
+                            if (termValue.equalsIgnoreCase(str) && Agent_DealBuilderPage.minIcon_term_disable.isDisplayed()) {
+                                log.info("Displayed - term " + Agent_DealBuilderPage.minVal_term.getText());
+                                b = true;
+                                break;
+                            }
+                        }
+                        if (b == false) {
+                            log.info("Failed to displayed - term value");
+                            Assert.fail("Failed to displayed - term value");
+                        }
+                    }
+
+
+                    if (term.equalsIgnoreCase("max")) {
+                        boolean b = false;
+                        for (int i = 1; i < 37; i++) {
+
+                            String maxvalTerm = Agent_DealBuilderPage.maxVal_term.getText();
+                            StringTokenizer st = new StringTokenizer(maxvalTerm, " ");
+                            st.nextToken();
+                            String str = st.nextToken();
+                            String termValue = Agent_DealBuilderPage.termVal.getText();
+
+                            if (driver.findElements(By.xpath("//span[@id='maxTerm']/../a[@class='nextTerm disableNext']")).size() <= 0) {
+                                CommonActions.clickWebElement(Agent_DealBuilderPage.maxIcon_term);
+                            }
+                            if (termValue.equalsIgnoreCase(str) && Agent_DealBuilderPage.maxIcon_term_Disable.isDisplayed()) {
+                                log.info("The Term cost is changes to maximum - " + Agent_DealBuilderPage.maxVal_term.getText());
+                                b = true;
+                                break;
+                            }
+                        }
+                        if (b == false) {
+                            log.info("Failed to displayed - the Term Max icon is not disable though changed to main value");
+                            Assert.fail("\"Failed to displayed - the Term MAx icon is not disable though changed to main value\"");
+                        }
+                    }
+
+                    if (term.equalsIgnoreCase("avg")) {
+                        if (driver.findElements(By.xpath("//span[@id='minTerm']/../a[@class='previousTerm disablePrevious']")).size() > 0) {
+                            CommonActions.clickWebElement(Agent_DealBuilderPage.maxIcon_term);
+                        }
+                        if (driver.findElements(By.xpath("//span[@id='maxTerm']/../a[@class='nextTerm disableNext']")).size() > 0) {
+                            CommonActions.clickWebElement(Agent_DealBuilderPage.minIcon_term);
+                        }
+
+                        if (driver.findElements(By.xpath("//span[@id='maxTerm']/../a[@class='nextTerm disableNext']")).size() <= 0 && driver.findElements(By.xpath("//span[@id='minTerm']/../a[@class='previousTerm disablePrevious']")).size() <= 0) {
+                            log.info("the term cost is changes to average  - " + Agent_DealBuilderPage.minVal_term.getText());
+                            log.info("the term cost is changes to average - " + Agent_DealBuilderPage.maxVal_term.getText());
+                        } else {
+                            log.info("Failed to Display - the term cost is changes to average   - " + Agent_DealBuilderPage.minVal_term.getText());
+                            log.info("Failed to Display - the term cost is changes to average - " + Agent_DealBuilderPage.maxVal_term.getText());
+                            Assert.fail("the term cost is changes to average");
+                        }
+                    }
+                }
+
+
+                if (data.equalsIgnoreCase("min")) {
+                    boolean b = false;
+                    for (int i = 1; i < 30; i++) {
+                        String minData = Agent_DealBuilderPage.minVal_data.getText();
+                        StringTokenizer st = new StringTokenizer(minData, " ");
+                        st.nextToken();
+                        String sst = st.nextToken();
+                        String dataValue = Agent_DealBuilderPage.dataVal.getText();
+
+                        if (driver.findElements(By.xpath("//span[@id='minData']/../a[@class='previousData disablePrevious']")).size() <= 0) {
+                            CommonActions.clickWebElement(Agent_DealBuilderPage.minIcon_data);
+                        }
+                        if (dataValue.equalsIgnoreCase(sst) && Agent_DealBuilderPage.minIcon_data_disable.isDisplayed()) {
+                            log.info("the Data cost is changes to minimum - " + Agent_DealBuilderPage.minVal_data.getText());
+                            b = true;
+                            break;
+                        }
+                    }
+                    if (b == false) {
+                        log.info("Failed to displayed - the Data/tariff Min icon is not disable though changed to main value");
+                        Assert.fail("\"Failed to displayed - the Data/tariff Min icon is not disable though changed to main value\"");
+                    }
+                }
+
+
+                if (data.equalsIgnoreCase("max")) {
+                    boolean b = false;
+                    for (int i = 1; i < 30; i++) {
+                        String maDataVal = Agent_DealBuilderPage.maxVal_data.getText();
+                        StringTokenizer st = new StringTokenizer(maDataVal, " ");
+                        st.nextToken();
+                        String sst1 = st.nextToken();
+                        String dataValue = Agent_DealBuilderPage.dataVal.getText();
+
+                        if (driver.findElements(By.xpath("//span[@id='maxData']/../a[@class='nextData disableNext']")).size() <= 0) {
+                            CommonActions.clickWebElement(Agent_DealBuilderPage.maxIcon_data);
+                        }
+                        if (dataValue.equalsIgnoreCase(sst1) && Agent_DealBuilderPage.maxIcon_data_Disable.isDisplayed()) {
+                            log.info("the Data cost is changes to maximum - " + Agent_DealBuilderPage.maxVal_data.getText());
+                            b = true;
+                            break;
+                        }
+                    }
+                    if (b == false) {
+                        log.info("Failed to displayed - the data Max icon is not disable though changed to main value");
+                        Assert.fail("\"Failed to displayed - the data MAx icon is not disable though changed to main value\"");
+                    }
+                }
+
+
+                if (data.equalsIgnoreCase("avg")) {
+                    if (driver.findElements(By.xpath("//span[@id='minData']/../a[@class='previousData disablePrevious']")).size() > 0) {
+                        CommonActions.clickWebElement(Agent_DealBuilderPage.maxIcon_data);
+                    }
+
+                    if (driver.findElements(By.xpath("//span[@id='maxData']/../a[@class='nextData disableNext']")).size() > 0) {
+                        CommonActions.clickWebElement(Agent_DealBuilderPage.minIcon_data);
+                    }
+
+                    if (driver.findElements(By.xpath("//span[@id='maxData']/../a[@class='nextData disableNext']")).size() <= 0 && driver.findElements(By.xpath("//span[@id='minData']/../a[@class='previousData disablePrevious']")).size() <= 0) {
+                        log.info("the Dat cost is changes to average  - " + Agent_DealBuilderPage.minVal_data.getText());
+                        log.info("the Data cost is changes to average - " + Agent_DealBuilderPage.maxVal_data.getText());
+                    } else {
+                        log.info("Failed to Display - the Data cost is changes to average  - " + Agent_DealBuilderPage.minVal_data.getText());
+                        log.info("Failed to Display - the Data cost is changes to average - " + Agent_DealBuilderPage.maxVal_data.getText());
+                        Assert.fail("the Data cost is changes to average");
+                    }
+                }
+
+                totalCostPerMonth = Agent_DealBuilderPage.totalPrice.getText();
+                upFrontCost = Agent_DealBuilderPage.upfrentVal.getText();
+                Screenshots.captureScreenshot();
+                CommonActions.clickWebElement(Agent_DealBuilderPage.ConfirmCTA);
+                log.debug("Clicked on Choose this plan CTA\n");
+
+            }
+        }
+
+        Thread.sleep(4000);
+        // Switching to Parent window i.e Main Window.
+        driver.switchTo().window(Mainwindow);
+        //driver.manage().timeouts().implicitlyWait(12,TimeUnit.SECONDS);
+        Thread.sleep(4000);
+        Screenshots.captureScreenshot();
+
+        String dealBuilderUpfrontVal = driver.findElement(By.xpath("(//div[@class='priceComponent']/p)[1]")).getText();
+
+        if(dealBuilderUpfrontVal.contains(upFrontCost)){
+            log.debug("FR build plan selected upfront cost is matching with deal builder upfront cost\n");
+        }else{
+            log.debug("Not Matching:: FR build plan selected upfront cost is not matching with deal builder upfront cost\n");
+        }
+
+    }
 }
 
 

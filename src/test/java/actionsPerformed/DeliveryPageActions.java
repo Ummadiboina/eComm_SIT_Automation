@@ -339,9 +339,16 @@ public class DeliveryPageActions extends Environment {
 
         Screenshots.captureScreenshot();
         Thread.sleep(5000);
-        DeliveryPage.continueBtn.click();
         System.out.println("Clicking on Continue button");
         log.debug("Clicking on Continue button");
+        if(DeliveryPage.continueBtn.isDisplayed()) {
+            DeliveryPage.continueBtn.click();
+        }else{
+            driver.findElement(By.xpath("(//button/span[@id='btn-continue-label'])[2]")).click();
+        }
+        Screenshots.captureScreenshot();
+
+        log.debug("Clicked on Continue button");
     }
 
 
@@ -393,11 +400,14 @@ public class DeliveryPageActions extends Environment {
     }
 
     public static void selectExistingAcctAndFastCheckOut() throws InterruptedException, IOException {
-        Thread.sleep(8000);
+        Thread.sleep(5000);
 
         log.debug("going to click on existing account");
 
-        pageobjects.DeliveryPage.SelectAcct.click();
+        Screenshots.captureScreenshot();
+        //pageobjects.DeliveryPage.SelectAcct.click();
+        js.executeScript("arguments[0].click();", pageobjects.DeliveryPage.SelectAcct);
+        log.debug("Selected existing account");
         Thread.sleep(4000);
         js.executeScript("arguments[0].click();", pageobjects.DeliveryPage.FastCheckOut);
         // pageobjects.DeliveryPage.FastCheckOut.click();
@@ -614,6 +624,7 @@ public class DeliveryPageActions extends Environment {
 
                 pageobjects.DeliveryPage.SelectAddress1.click();
                 log.debug("Clicked on the select address button");
+                Screenshots.captureScreenshot();
 
             } else {
                 log.debug(" Failed to  Entered the houseNumber and postcCode");
@@ -903,8 +914,8 @@ public class DeliveryPageActions extends Environment {
                 if (driver.findElements(By.xpath("//h3[contains(text(),'Spend cap')] | //h3[contains(text(),'Spend Cap')]")).size() > 0) {
 
                     log.debug("Bill spend cap section is displayed at "+pageTitle+" page \n");
-					JavascriptExecutor jse = (JavascriptExecutor) driver;
-                    jse.executeScript("window.scrollBy(0,100)", "");
+					/*JavascriptExecutor jse = (JavascriptExecutor) driver;
+                    jse.executeScript("window.scrollBy(0,100)", "");*/
                     log.debug("Bill Spend Cap header is displayed in "+pageTitle+" page ie :: " + pageobjects.DeliveryPage.BillSpendCapHeader.getText());
 
                     Thread.sleep(2000);

@@ -13,19 +13,18 @@ Feature: 12_CFU_Phones_Edit_BSC_Component_from_Your_Package_in_Upgrade_Options_P
     And Select a tariff <tariff>
     And Validate consumer Bill Spend Caps section when BSC is <BSCstatus>
     And Choose your bill cap <BillCap> <CapAmount> when BSC is <BSCstatus>
-    #And Validate applied Bill Spend Cap <BillCap> <CapAmount> when BSC is <BSCstatus>
     Then I should see 'Your Sim Card'section
     And no option should be selected
     And verify that Confirm CTA is not displayed
     And Select a 'I dont need a new sim'option
     And Verify that 'Confirm CTA' is displayed
     And Click on 'Confirm CTA'
+    And Click on 'Continue' button on upgrade page at extra section
     And Validate and click on BSC 'Edit' link to change <BillCap> <CapAmount>
     And Choose your bill cap <BillCap> <NewCapAmount> when BSC is <BSCstatus>
     #And Validate applied Bill Spend Cap <BillCap> <NewCapAmount> when BSC is <BSCstatus>
-    And Click on 'Continue' button on upgrade page at extra section
     And I Land on the basket page by clicking on Add to Basket button
-    And Validate Basket Page for applied Bill Spend Cap <BillCap> <CapAmount> when BSC is <BSCstatus>
+    And Validate Basket Page for applied Bill Spend Cap <BillCap> <NewCapAmount> when BSC is <BSCstatus>
     And click on "go to checkout" button
     And perform <Action> in OTAC page
     And Validate applied Bill Spend Cap <BillCap> <NewCapAmount> when BSC is <BSCstatus>
@@ -33,6 +32,7 @@ Feature: 12_CFU_Phones_Edit_BSC_Component_from_Your_Package_in_Upgrade_Options_P
     And enter a <houseNumber> and an <PostCode> in Delivery section
     And Is this order for You or Someone else <consumer> when GDPR is <status>
     And Validate applied Bill Spend Cap <BillCap> <NewCapAmount> when BSC is <BSCstatus>
+    And Select the Home address
     And land on the payment page and input <Username> and other details and click 'Continue on next step' in upgrade journey
     And Validate applied Bill Spend Cap <BillCap> <NewCapAmount> when BSC is <BSCstatus>
     And Continue to Agreements page and confirm all the agreement checks

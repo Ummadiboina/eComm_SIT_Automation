@@ -102,7 +102,7 @@ public class verificationsActions extends Environment {
                     "Assertion Failed: Expected Message: " + ExpectedText + " is not present in the page");
             log.debug("Assertion Success: '*' is present in: " + ActualText);
             Thread.sleep(4000);
-//Below will set bank details
+            //Below will set bank details
             Set_Bank_details();
 
             /*ActualText = pageobjects.PaymentPage.TimeAtAddressText.getText();
@@ -141,10 +141,10 @@ public class verificationsActions extends Environment {
             PaymentPage.CardNumber.sendKeys("4539791001730106");
             log.debug("Entered Card number as 4539xxxxxxxxxx06");
             Thread.sleep(2000);
-            PaymentPage.CardMonth.sendKeys("01");
+            PaymentPage.CardMonth.sendKeys("12");
             log.debug("Entered Expiry Month");
             Thread.sleep(2000);
-            PaymentPage.CardYear.sendKeys("2020");
+            PaymentPage.CardYear.sendKeys("2019");
             log.debug("Entered Expiry Year");
             Thread.sleep(2000);
             PaymentPage.SecurityCode.sendKeys("123");
@@ -157,7 +157,7 @@ public class verificationsActions extends Environment {
             log.debug("Exiting the Payments section");
             driver.switchTo().defaultContent();
 
-            Thread.sleep(8000);
+            Thread.sleep(12000);
             PaymentPageActions.Card_Details_CCV();
 
         }
