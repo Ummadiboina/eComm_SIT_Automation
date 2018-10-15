@@ -383,13 +383,13 @@ public class PaymentPageActions extends Environment {
         Screenshots.captureScreenshot();
     }
 
-    public static void ValidateNonCreditPaymentPage() throws IOException {
+    public static void ValidateNonCreditPaymentPage() throws IOException, InterruptedException {
         // Below will display contents of the section
 
         log.debug("Payment pages validations :: " + driver.getTitle());
 
         log.debug("The Main Total are : " + pageobjects.PaymentPage.BasketTotal.getText());
-
+        Thread.sleep(3000);
         // log.debug("The Basket contents are : "
         // +pageobjects.PaymentPage.BasketContent.getText());
         Screenshots.captureScreenshot();

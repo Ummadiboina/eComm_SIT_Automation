@@ -668,9 +668,16 @@ public class ConnectedDeviceDetailsPageAction extends Environment {
             if (upFront.contains("Min") || upFront.contains("min")) {
                 boolean b = false;
                 for (int i = 1; i < 100; i++) {
-                    String minValUpfrnt = (String) ConnectedDeviceDetailsPage.minVal_Upfrent.getText().subSequence(5, 7);
+
+
+                    //String minValUpfrnt = (String) ConnectedDeviceDetailsPage.minVal_Upfrent.getText().subSequence(5, 7);
+                    //String upFrntVal = ConnectedDeviceDetailsPage.upfrentVal.getText().substring(1, 3);
+                    int minUpfrentSize = ConnectedDeviceDetailsPage.minVal_Upfrent.getText().length();
+
+                    String minValUpfrnt = (String) ConnectedDeviceDetailsPage.minVal_Upfrent.getText().subSequence(5, minUpfrentSize);
                     Thread.sleep(2000);
-                    String upFrntVal = ConnectedDeviceDetailsPage.upfrentVal.getText().substring(1, 3);
+                    int upfrentSize = ConnectedDeviceDetailsPage.upfrentVal.getText().length();
+                    String upFrntVal = ConnectedDeviceDetailsPage.upfrentVal.getText().substring(1, upfrentSize-3);
                     Thread.sleep(2000);
 
                     if (driver.findElements(By.xpath("//div[contains(@data-calc,'upfront')]/..//div[contains(@class,'min-icon')]/..//div[contains(@class,'min-icon calc-track-element disable')]")).size() <= 0) {
