@@ -1489,9 +1489,14 @@ public class Agent_DealBuilderPageActions extends Environment {
                     if (upFront.contains("Min") || upFront.contains("min")) {
                         boolean b = false;
                         for (int i = 1; i < 100; i++) {
-                            String minValUpfrnt = (String) Agent_DealBuilderPage.minVal_Upfrent.getText().subSequence(5, 7);
+                            //String minValUpfrnt = (String) Agent_DealBuilderPage.minVal_Upfrent.getText().subSequence(5, 7);
+                            int minUpfrentSize = Agent_DealBuilderPage.minVal_Upfrent.getText().length();
+                            String minValUpfrnt = (String) Agent_DealBuilderPage.minVal_Upfrent.getText().subSequence(5, minUpfrentSize);
                             Thread.sleep(2000);
-                            String upFrntVal = Agent_DealBuilderPage.upfrentVal.getText().substring(1, 3);
+
+                            //String upFrntVal = Agent_DealBuilderPage.upfrentVal.getText().substring(1, 3);
+                            int upfrentSize = Agent_DealBuilderPage.upfrentVal.getText().length();
+                            String upFrntVal = Agent_DealBuilderPage.upfrentVal.getText().substring(1, upfrentSize);
                             Thread.sleep(2000);
 
                             if (driver.findElements(By.xpath("//span[@id='minUpfront']/../a[@class='previousUpfront disablePrevious']")).size() <= 0) {

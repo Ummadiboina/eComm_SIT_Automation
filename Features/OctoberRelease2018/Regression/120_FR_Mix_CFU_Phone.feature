@@ -14,12 +14,8 @@ Feature: 120_FR_Mix_CFU_Phone
     And I Land on the basket page by clicking on Add to Basket button
     And click on "go to checkout" button
     And perform <Action> in OTAC page
-    #And input <Firstname> and <Surname> and other valid details in Delivery page to verify GDPR
-    And Enter details in Delivery page for Click and collect
     And Is this order for You or Someone else <consumer> when GDPR is <status>
-    #And input <Firstname> and <Surname> and other valid details in Delivery page for Click and collect and Click on the 'Continue button'
-    #And Enter details in Delivery page for Click and collect and Click on the 'Continue button'
-    And Enter cardDetails in payment page input <Username> and click 'Continue on next step'
+    And land on the payment page and input <Username> and other details and click 'Continue on next step' in upgrade journey
     And Continue to Agreements page and confirm all the agreement checks
     And Continue to Review page and review the order
     Then order confirmation is displayed
