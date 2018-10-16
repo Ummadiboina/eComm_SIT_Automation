@@ -33,5 +33,5 @@ Feature: 08_Reg_CFA_Phones_checkout_delivery_validate_10_digit_contact_number
       #Step 12 and Step 13 of ALM clubbed together
       #Close the browser
     Examples:
-      | handset       | Firstname | Surname | Username     | BSCstatus | BillCap   | CapAmount | color      | consumer | B1  | B2  | B3     | B4  | Text | Email  | Phone | Post | status  | MBBStatus | DeviceType |
-      | iPhone 8 Plus | TEST      | ACCEPTA | TEST ACCEPTA | Enabled   | CapMyBill | £5        | Space Grey | Me       | Not | Not | Select | Not | Not  | Select | Not   | Not  | Enabled | No        | Connected  |
+      | handset        | Firstname | Surname | Username     | BSCstatus | BillCap   | CapAmount | color | consumer | B1  | B2  | B3     | B4  | Text | Email  | Phone | Post | status  | MBBStatus | DeviceType |
+      | Galaxy J3 2017 | TEST      | ACCEPTA | TEST ACCEPTA | Enabled   | CapMyBill | £5        | Black | Me       | Not | Not | Select | Not | Not  | Select | Not   | Not  | Enabled | No        | Connected  |
