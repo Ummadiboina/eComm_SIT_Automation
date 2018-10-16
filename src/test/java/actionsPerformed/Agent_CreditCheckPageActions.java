@@ -410,11 +410,11 @@ public class Agent_CreditCheckPageActions extends Environment {
 
 				Select CardMonthDropdown = new Select(pageobjects.Agent_CreditCheckDetailsPage.CardMonth);
 				log.debug("Entered card month");
-				CardMonthDropdown.selectByIndex(2);
+				CardMonthDropdown.selectByIndex(12);
 				Thread.sleep(2000);
 
 				Select CardYearDropdown = new Select(pageobjects.Agent_CreditCheckDetailsPage.CardYear);
-				CardYearDropdown.selectByIndex(3);
+				CardYearDropdown.selectByIndex(2);
 				log.debug("Entered card year");
 				Thread.sleep(2000);
 

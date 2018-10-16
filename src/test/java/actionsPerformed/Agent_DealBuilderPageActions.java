@@ -1233,15 +1233,15 @@ public class Agent_DealBuilderPageActions extends Environment {
                         log.debug("Bill Spend Cap list does not contain specified cap amount and your Bill cap is not selected ie:: " + BillCapAmount);
                         Assert.fail("Bill Spend Cap list does not contain specified cap amount and your Bill cap is not selected ie:: " + BillCapAmount);
                     }
-
+                    Thread.sleep(5000);
                     String BillCapStatus = pageobjects.Agent_DealBuilderPage.BillSpendCapMessage.getText();
 
-                    Thread.sleep(5000);
+                    Thread.sleep(2000);
                     Screenshots.captureScreenshot();
 
                     //status message validation
                     if(BillCapAmount.equalsIgnoreCase("No Spend Cap")){
-
+                        Thread.sleep(3000);
                         if (BillCapStatus.contains("No spend cap applied")) {
                             log.debug("Bill Spend Status message after selecting No bill cap:: " + BillCapStatus);
                             log.debug("No Bill Spend Status message validated successfully");
@@ -1251,7 +1251,7 @@ public class Agent_DealBuilderPageActions extends Environment {
                         }
 
                     }else {
-
+                        Thread.sleep(3000);
                         if (BillCapStatus.contains(BillCapAmount)) {
                             log.debug("Bill Spend Status message after selecting bill cap:: " + BillCapStatus);
                             log.debug("Status message after selecting bill cap contain your bill cap amount :: " + BillCapStatus);
@@ -1496,7 +1496,7 @@ public class Agent_DealBuilderPageActions extends Environment {
 
                             //String upFrntVal = Agent_DealBuilderPage.upfrentVal.getText().substring(1, 3);
                             int upfrentSize = Agent_DealBuilderPage.upfrentVal.getText().length();
-                            String upFrntVal = Agent_DealBuilderPage.upfrentVal.getText().substring(1, upfrentSize);
+                            String upFrntVal = Agent_DealBuilderPage.upfrentVal.getText().substring(1, upfrentSize-3);
                             Thread.sleep(2000);
 
                             if (driver.findElements(By.xpath("//span[@id='minUpfront']/../a[@class='previousUpfront disablePrevious']")).size() <= 0) {
