@@ -646,6 +646,27 @@ public class E2EOrderPlaced_Steps {
         }
     }
 
+    @And("^Chosse this plan$")
+    public void ChooseThisPlan() {
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            Thread.sleep(5000);
+            JavascriptExecutor jse = (JavascriptExecutor) driver;
+            jse.executeScript("window.scrollBy(0,400)", "");
+            Thread.sleep(2000);
+
+            Screenshots.captureScreenshot();
+            driver.findElement(By.xpath("//button[contains(text(),'Choose this tariff')]")).click();
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            log.debug("Unable to select choose this plan");
+            Assert.fail("Unable to select choose this plan");
+
+        }
+    }
+
+
+
     @And("^Navigate to View tariff page$")
     public void Navigate_to_View_tariff_page() {
         try {
