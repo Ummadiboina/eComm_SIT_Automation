@@ -119,7 +119,7 @@ public class SimsPageActions extends Environment {
 
     public static void verifyThatURL_has_simo_at_end() {
         try {
-            driver.manage().timeouts().implicitlyWait(2, TimeUnit.MINUTES);
+            driver.manage().timeouts().implicitlyWait(1, TimeUnit.MINUTES);
             Thread.sleep(5000);
             String currentUrl = driver.getCurrentUrl();
             Screenshots.captureScreenshot();

@@ -1945,8 +1945,9 @@ public class UpgradeCustomerPageActions extends Environment {
 
     }
 
-    public static void clickRemoveOfferButton() throws IOException {
+    public static void clickRemoveOfferButton() throws IOException, InterruptedException {
         log.debug("Going to click on Remove Offer aButton");
+        Thread.sleep(4000);
         Screenshots.captureScreenshot();
         if (UpgradeCustomerPage.RemoveOffer.size() > 0) {
 

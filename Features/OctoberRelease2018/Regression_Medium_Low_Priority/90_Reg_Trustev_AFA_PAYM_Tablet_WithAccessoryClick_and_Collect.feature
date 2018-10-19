@@ -1,9 +1,8 @@
-Feature: 94_Reg_Trustev_AFA_PayMPhones_ClickandCollectE2EjourneyWithAccessory
+Feature: 90_Reg_Trustev_AFA_PAYM_Tablet_WithAccessoryClick_and_Collect
 
-  #launch hooks and get browser
   @Web
 
-  Scenario Outline: Trustev PayM Phones Click and collect E2E journey with Accessory in Agent shop
+  Scenario Outline: Trustev PayM Tablets Click and Collect E2E journey with Accessory in Agent shop
     Given I login to Agent shop
     And performs Acquisition for New user
     And Select a valid PayM <Device>
@@ -16,13 +15,13 @@ Feature: 94_Reg_Trustev_AFA_PayMPhones_ClickandCollectE2EjourneyWithAccessory
     And Validate all the Basket content and checkout
     Then Validate deal summary for applied Bill Spend Cap <BillCapAmount> when BSC is <BSCstatus>
     Then perform all the advisory checks
-    Then perform the credit checks using valid <Firstname>, <Surname>, <HouseNumber>, <PostCode> and valid <Username>
+    And perform the credit checks using valid <Firstname>, <Surname>, <HouseNumber>, <PostCode> and valid <Username>
     And Register customer with valid <Password>, <Confirm_Password>, <Security_Answer> in delivery page
     And validate register status
     And Choose Business preferences <B1> <B2> <B3> <B4> and Channel Preferences <Text> <Email> <Phone> <Post> for <Consumer> when GDPR <status> <DeviceType> <DeviceModule> for AFA journey
     When Pay by card for PAYM device
     Then Order confirmation message should be displayed
-#Random
+
     Examples:
-      | Device                    | Tariffs | Accessory                       | BSCstatus | BillCapAmount | Firstname | Surname | HouseNumber | PostCode | Username     | Password | Confirm_Password | Security_Answer | B1     | B2  | B3     | B4  | Text   | Email  | Phone | Post | Consumer | status  | MBBStatus | DeviceType | DeviceModule |
-      | iPhone X 256GB Space Grey | Refresh | iPhone X Fashion Case Dual Pack | Enabled   | No Spend Cap  | TEST      | ACCEPTA | 32          | SL11ER   | TEST ACCEPTA | test123  | test123          | Anything        | Select | Not | Select | Not | Select | Select | Not   | Not  | Me       | Enabled | No        | Connected  | Phone        |
+      | Device                              | Tariffs | BSCstatus | BillCapAmount | Accessory                        | Firstname | Surname | HouseNumber | PostCode | Username     | Password | Confirm_Password | Security_Answer | B1  | B2  | B3     | B4  | Text | Email | Phone  | Post   | Consumer | status  | Password | confirmPassword | SecurityAnswer | MBBStatus | DeviceType | DeviceModule |
+      | iPad Pro 10.5 inch 256GB Space Grey | Random  | Enabled   | £100          | iPhone 7 Evo Elite Brushed Black | TEST      | ACCEPTA | 32          | SL11ER   | TEST ACCEPTA | test123  | test123          | Anything        | Not | Not | Select | Not | Not  | Not   | Select | Select | Me       | Enabled | test123  | test123         | Jkhan          | No        | Connected  | Tablet       |

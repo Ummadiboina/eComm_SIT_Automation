@@ -790,9 +790,11 @@ public class PAYMSimOPageActions extends Environment {
 		for (int i = 1; i <= lstOfTariff.size(); i++) {
 			System.out.println("The value of i is " + i);
 			String price = driver.findElement(By.xpath("(//div[@name='P12M']/div/div/h2/span[@class='pound'])[" + i + "]")).getText();
+			Thread.sleep(2000);
 
 			if (driver.findElements(By.xpath("(//div[@name='P12M']/div/div/h2/span[@class='pound'])[" + i + "]/../../../../div[1]/ul/li[1]/h2[contains(text(),'GB')]")).size() > 0) {
 				String data = driver.findElement(By.xpath("(//div[@name='P12M']/div/div/h2/span[@class='pound'])[" + i + "]/../../../../div[1]/ul/li[1]/h2[contains(text(),'GB')]")).getText();
+				Thread.sleep(2000);
 				if (price.contains(tariffAmt) && data.contains(dataValue)) {
 					System.out.println("Actual tariff :: " + price + ", " + data + " And Actual :: " + price + "," + data + "===  are Verified ====");
 					log.info("Actual tariff :: " + price + ", " + data + " And Actual :: " + price + "," + data + "===  are Verified ====");
