@@ -826,6 +826,10 @@ public class E2EOrderPlaced_Steps {
         try {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, PAYMandPAYGTariffAndExtrasPage.class);
+            JavascriptExecutor jse = (JavascriptExecutor) driver;
+            jse.executeScript("window.scrollBy(0,300)", "");
+            Thread.sleep(3000);
+            Screenshots.captureScreenshot();
             PAYMandPAYGTariffAndExtrasPageActions.addAccessory();
             Thread.sleep(2000);
         } catch (Exception e) {
@@ -843,6 +847,10 @@ public class E2EOrderPlaced_Steps {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, PAYMandPAYGTariffAndExtrasPage.class);
             log.debug("Entering Choose All accessory method");
+            JavascriptExecutor jse = (JavascriptExecutor) driver;
+            jse.executeScript("window.scrollBy(0,300)", "");
+            Thread.sleep(3000);
+            Screenshots.captureScreenshot();
             PAYMandPAYGTariffAndExtrasPageActions.addMoreAccessory();
             log.debug("Completed Choose All accessory method");
             Thread.sleep(5000);
@@ -11166,7 +11174,7 @@ public class E2EOrderPlaced_Steps {
         } catch (Exception e) {
             // TODO Auto-generated catch block
             log.debug("Unable to validate your build plan in deal summary");
-            Assert.fail("Unable to validate build plan cap in deal summary");
+            Assert.fail("Unable to validate build plan in deal summary");
         }
     }
 

@@ -316,8 +316,9 @@ public class ConnectedDeviceDetailsPageAction extends Environment {
             Actions action = new Actions(driver);
             action.moveToElement(elementColor).click().build().perform();
             log.debug("Selected " + color + "from color dropdown");
-            Screenshots.captureScreenshot();
             Thread.sleep(3000);
+            Screenshots.captureScreenshot();
+
         }
 
          /*Actions act = new Actions(driver);
@@ -886,16 +887,17 @@ public class ConnectedDeviceDetailsPageAction extends Environment {
         Screenshots.captureScreenshot();
         CommonActions.clickWebElement(ConnectedDeviceDetailsPage.chooseThisPlan);
         log.debug("Clicked on Choose this plan CTA\n");
-        Thread.sleep(8000);
+        Thread.sleep(12000);
         log.debug("We are at TnE page\n");
         Screenshots.captureScreenshot();
 
-        jse.executeScript("window.scrollBy(0,-700)", "");
+        jse.executeScript("window.scrollBy(0,-600)", "");
         Thread.sleep(2000);
         Screenshots.captureScreenshot();
 
-        String TnEPageFRCalcupFrontCost = ConnectedDeviceDetailsPage.upfrentVal.getText();
-        Thread.sleep(2000);
+        //String TnEPageFRCalcupFrontCost = ConnectedDeviceDetailsPage.upfrentVal.getText();
+        String TnEPageFRCalcupFrontCost = ConnectedDeviceDetailsPage.upfrentVal_NewLayout.getText();
+        Thread.sleep(4000);
 
         if (TnEPageFRCalcupFrontCost.contains(upFrontCost)) {
             System.out.println("The Monthly upfront price from the PD page and TnE FR Calc Upfront value are matched  + ::: " + TnEPageFRCalcupFrontCost + " & " + upFrontCost);
@@ -921,35 +923,37 @@ public class ConnectedDeviceDetailsPageAction extends Environment {
         Screenshots.captureScreenshot();
 
         //Mini Basket Validation
-        if (ConnectedDeviceDetailsPage.prodctDetails_TnE.isDisplayed()) {
-
-            CommonActions.scrollToElement(ConnectedDeviceDetailsPage.totalCost_BasketPage);
-            Thread.sleep(3000);
-            Screenshots.captureScreenshot();
-            String totalCost_TnE = ConnectedDeviceDetailsPage.totalCost_BasketPage.getText();
-            System.out.println("The Total price is + ::: " + totalCost_TnE);
-            log.debug("The Total price is + ::: " + totalCost_TnE);
-
-            if (totalCost_TnE.contains(totalCostPerMonth)) {
-                System.out.println(" Matched = == The Upfront price from the PD page and TnE page are matched  + ::: " + totalCost_TnE + " & " + totalCostPerMonth);
-                log.debug(" Matched = == The Upfront price from the PD page and TnE page are matched  + ::: " + totalCost_TnE + " & " + totalCostPerMonth);
-            } else {
-                System.out.println(" Not Matched = == The Upfront price from the PD page and TnE page are matched  + ::: " + totalCost_TnE + " & " + totalCostPerMonth);
-                log.debug(" Not Matched = == The Upfront price from the PD page and TnE page are matched  + ::: " + totalCost_TnE + " & " + totalCostPerMonth);
-            }
-
-            if (totalCost_TnE.contains(upFrontCost)) {
-                System.out.println(" Matched = == The Monthly price from the PD page and TnE page are matched  + ::: " + totalCost_TnE + " & " + upFrontCost);
-                log.debug(" Matched = == The Monthly price from the PD page and TnE page are matched  + ::: " + totalCost_TnE + " & " + upFrontCost);
-            } else {
-                System.out.println(" Not Matched = == The Monthly price from the PD page and TnE page are matched  + ::: " + totalCost_TnE + " & " + upFrontCost);
-                log.debug(" Not Matched = == The Monthly price from the PD page and TnE page are matched  + ::: " + totalCost_TnE + " & " + upFrontCost);
-
-            }
+        if(driver.findElements(By.xpath("//section[@class='product-details']")).size()>0) {
             if (ConnectedDeviceDetailsPage.prodctDetails_TnE.isDisplayed()) {
-                String ProductDeatails_TnE = ConnectedDeviceDetailsPage.prodctDetails_TnE.getText();
-                System.out.println("The Product details in TnE are  + ::: " + ProductDeatails_TnE);
-                log.debug("The Product details in TnE are  + ::: " + ProductDeatails_TnE);
+
+                CommonActions.scrollToElement(ConnectedDeviceDetailsPage.totalCost_BasketPage);
+                Thread.sleep(3000);
+                Screenshots.captureScreenshot();
+                String totalCost_TnE = ConnectedDeviceDetailsPage.totalCost_BasketPage.getText();
+                System.out.println("The Total price is + ::: " + totalCost_TnE);
+                log.debug("The Total price is + ::: " + totalCost_TnE);
+
+                if (totalCost_TnE.contains(totalCostPerMonth)) {
+                    System.out.println(" Matched = == The Upfront price from the PD page and TnE page are matched  + ::: " + totalCost_TnE + " & " + totalCostPerMonth);
+                    log.debug(" Matched = == The Upfront price from the PD page and TnE page are matched  + ::: " + totalCost_TnE + " & " + totalCostPerMonth);
+                } else {
+                    System.out.println(" Not Matched = == The Upfront price from the PD page and TnE page are matched  + ::: " + totalCost_TnE + " & " + totalCostPerMonth);
+                    log.debug(" Not Matched = == The Upfront price from the PD page and TnE page are matched  + ::: " + totalCost_TnE + " & " + totalCostPerMonth);
+                }
+
+                if (totalCost_TnE.contains(upFrontCost)) {
+                    System.out.println(" Matched = == The Monthly price from the PD page and TnE page are matched  + ::: " + totalCost_TnE + " & " + upFrontCost);
+                    log.debug(" Matched = == The Monthly price from the PD page and TnE page are matched  + ::: " + totalCost_TnE + " & " + upFrontCost);
+                } else {
+                    System.out.println(" Not Matched = == The Monthly price from the PD page and TnE page are matched  + ::: " + totalCost_TnE + " & " + upFrontCost);
+                    log.debug(" Not Matched = == The Monthly price from the PD page and TnE page are matched  + ::: " + totalCost_TnE + " & " + upFrontCost);
+
+                }
+                if (ConnectedDeviceDetailsPage.prodctDetails_TnE.isDisplayed()) {
+                    String ProductDeatails_TnE = ConnectedDeviceDetailsPage.prodctDetails_TnE.getText();
+                    System.out.println("The Product details in TnE are  + ::: " + ProductDeatails_TnE);
+                    log.debug("The Product details in TnE are  + ::: " + ProductDeatails_TnE);
+                }
             }
         }
     }

@@ -79,7 +79,7 @@ public class AccessoryPage {
 	@FindBy(how = How.XPATH, using = "//a[contains(@data-qa-device-model-family, 'Ultra Memory Card 80Mbs')]")
 	public static WebElement SanDiskUltraMemoryCard80Mbs;
 	
-	@FindBy(how = How.XPATH, using = "//a[contains(., 'View all products on one page')]")
+	@FindBy(how = How.XPATH, using = "(//a[contains(., 'View all products on one page')])[2]")
 	public static WebElement ViewAllProductsOnOnePage;
 	
 	@FindBy(how = How.XPATH, using = "//a[contains(@data-qa-device-model-family, 'S8 Plus Original LED Cover')]")

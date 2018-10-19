@@ -6,6 +6,7 @@ import java.util.concurrent.TimeUnit;
 
 import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.testng.Reporter;
 
@@ -66,7 +67,7 @@ public class Agent_HomePagePageActions extends Environment {
 		Agent_HomePage.UpgradeLink.click();
 		log.debug("Clicking on upgrade link");
 		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
-
+		Screenshots.captureScreenshot();
 
 		if(driver.findElements(By.xpath("//a[@id='abandonCheckout']")).size()>0)
 		{
@@ -81,12 +82,21 @@ public class Agent_HomePagePageActions extends Environment {
 		}
 
 		if(driver.findElements(By.className("tradeInMessage")).size()>0) {
+			JavascriptExecutor jse = (JavascriptExecutor) driver;
+			jse.executeScript("window.scrollBy(0,300)", "");
+			Thread.sleep(2000);
+			Screenshots.captureScreenshot();
+
 			String TradeInUpgradeOptions = driver.findElement(By.className("tradeInMessage")).getText();
 			log.debug("Displaying Trade-in Upgrade Options Message: ");
 			log.debug(TradeInUpgradeOptions);
 		}
 
 		if(driver.findElements(By.xpath("//div[@id='buyout']")).size()>0) {
+			JavascriptExecutor jse = (JavascriptExecutor) driver;
+			jse.executeScript("window.scrollBy(0,300)", "");
+			Thread.sleep(2000);
+			Screenshots.captureScreenshot();
 			String BuyOutUpgradeOptionsTxt = driver.findElement(By.xpath("//div[@id='buyout']")).getText();
 			log.debug("Displaying BuyOut Upgrade Options Message: ");
 			log.debug(BuyOutUpgradeOptionsTxt);

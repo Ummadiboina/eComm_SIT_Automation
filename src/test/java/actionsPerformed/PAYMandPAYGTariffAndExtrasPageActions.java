@@ -224,7 +224,7 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 
 	public static void addAccessory() throws InterruptedException, IOException {
 		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
-		if(driver.findElements(By.xpath("(//*[@id='accessoryTile_']/div[5]/input)[2]")).size() > 0) {
+		if(driver.findElements(By.xpath("(//*[@id='accessoryTile_']/div[5]/input)[2] | (//*[@class='accessory-button-container']/input[@value='Add'])[2]")).size() > 0) {
 			log.debug("The Accessory which will be added is  - "
 					+ pageobjects.PAYMandPAYGTariffAndExtrasPage.AddRandomAccessory.getText());
 			pageobjects.PAYMandPAYGTariffAndExtrasPage.AddRandomAccessory.sendKeys(Keys.ENTER);
@@ -1522,7 +1522,7 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 							Thread.sleep(3000);
 
 							Screenshots.captureScreenshot();
-							Thread.sleep(2000);
+							Thread.sleep(5000);
 							String consumerStatusMsg="",upgradeStatusMsg="";
 							if(driver.findElements(By.xpath("//div[@class='largeTitle']/p | //div[@class='build-spend-caps-container']/p")).size()>0) {
 								if (pageobjects.PAYMandPAYGTariffAndExtrasPage.BillCapStatusMsg.isDisplayed()) {
@@ -1558,7 +1558,7 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 								}
 							}
 
-							Thread.sleep(3000);
+							Thread.sleep(4000);
 							if (cnt == 0) {
 								log.debug("Bill Spend Cap list does not contain specified cap amount and your Bill cap is not selected ie:: " + CapAmount);
 								Assert.fail("Bill Spend Cap list does not contain specified cap amount and your Bill cap is not selected ie:: " + CapAmount);
@@ -1616,11 +1616,11 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 						if(CapAmount.equalsIgnoreCase("DontCapMyBillLink")) {
 							pageobjects.PAYMandPAYGTariffAndExtrasPage.DontCapMyBillLink.click();
 							log.debug("Dont cap my bill link is clicked");
-							Thread.sleep(3000);
+							Thread.sleep(6000);
 						}else {
 							pageobjects.PAYMandPAYGTariffAndExtrasPage.DontCapMyBillButton.click();
 							log.debug("Clicked on Don't Cap My Bill Option/CTA");
-							Thread.sleep(3000);
+							Thread.sleep(6000);
 						}
 
 						String consumerStatusMsg="",upgradeStatusMsg="";

@@ -110,7 +110,7 @@ public class AccessoryPageActions extends Environment {
 		if(driver.findElements(By.xpath("//p[contains(text(),'Explore our range of cases, screen protectors, headphones and more.')]/following-sibling::p")).size() > 0){
 			WebElement ele = driver.findElement(By.xpath("//p[contains(text(),'Explore our range of cases, screen protectors, headphones and more.')]/following-sibling::p/../.."));
 			JavascriptExecutor executor = (JavascriptExecutor) driver;
-			Thread.sleep(1000	);
+			Thread.sleep(2000	);
 			executor.executeScript("arguments[0].scrollIntoView(true);",ele);
 			executor.executeScript("arguments[0].click();", ele);
 		}

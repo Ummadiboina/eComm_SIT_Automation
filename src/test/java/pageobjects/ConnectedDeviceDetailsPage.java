@@ -153,6 +153,10 @@ public class ConnectedDeviceDetailsPage {
     @FindBy(how = How.XPATH, using = "//div[contains(@class,'fr-defaultUpfront value')]")
     public static WebElement upfrentVal;
 
+    //fr-defaultUpfront value from TnE page new design
+    @FindBy(how = How.XPATH, using = "//div[@class='upfront-cost']")
+    public static WebElement upfrentVal_NewLayout;
+
     //min-icon term/month
     @FindBy(how = How.XPATH, using = "//div[contains(@data-calc,'term')]/..//div[contains(@class,'min-icon')]")
     public static WebElement minIcon_term;

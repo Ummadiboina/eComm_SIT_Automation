@@ -380,7 +380,7 @@ public class Agent_DealBuilderPageActions extends Environment {
         Agent_DealBuilderPage.eMailBasket.click();
         log.debug("Clicked on eMail Basket");
 
-        Thread.sleep(4000);
+        Thread.sleep(7000);
         Screenshots.captureScreenshot();
 
     }
@@ -435,14 +435,14 @@ public class Agent_DealBuilderPageActions extends Environment {
             if (!Mainwindow.equalsIgnoreCase(ChildWindow)) {
                 // Switching to Child window
                 driver.switchTo().window(ChildWindow);
-                Thread.sleep(3000);
-                //Screenshots.captureScreenshot();
+                Thread.sleep(7000);
+                Screenshots.captureScreenshot();
                 Agent_DealBuilderPage.ChooseBasketToSend.click();
                 Thread.sleep(2000);
                 Agent_DealBuilderPage.sendBasketEmailAddress.sendKeys("vinudeep.malalur@o2.com");
                 Thread.sleep(3000);
                 Agent_DealBuilderPage.sendBasketPopupSubmit.click();
-                Thread.sleep(3000);
+                Thread.sleep(6000);
                 // eMailConfirmation();
                 // Closing the Child Window.
                 String text = Agent_DealBuilderPage.emailConfirmation.getText();
@@ -453,9 +453,10 @@ public class Agent_DealBuilderPageActions extends Environment {
                 driver.close();
             }
         }
-
+        Thread.sleep(3000);
         // Switching to Parent window i.e Main Window.
         driver.switchTo().window(Mainwindow);
+        Thread.sleep(5000);
         Screenshots.captureScreenshot();
 
 		/*
@@ -539,11 +540,18 @@ public class Agent_DealBuilderPageActions extends Environment {
         if (Agent_DealBuilderPage.AgentTradeInBtn.isDisplayed()) {
             log.debug("The trade in button is displayed");
             //Agent_DealBuilderPage.AgentTradeInBtn.click();
+
+            JavascriptExecutor jse = (JavascriptExecutor) driver;
+            jse.executeScript("window.scrollBy(0,300)", "");
+            Screenshots.captureScreenshot();
+
+            Thread.sleep(3000);
+
             JavascriptExecutor executor = (JavascriptExecutor) driver;
             executor.executeScript("arguments[0].click();", Agent_DealBuilderPage.AgentTradeInBtn);
 
             log.debug("The Trade In button is clicked");
-            Thread.sleep(6000);
+            Thread.sleep(10000);
             String Mainwindow1 = driver.getWindowHandle();
             // getting all the popup windows , hence using getwindowhandles
             // instead of
@@ -556,6 +564,7 @@ public class Agent_DealBuilderPageActions extends Environment {
                     // Switching to Child window
                     driver.switchTo().window(ChildWindow1);
                     Thread.sleep(6000);
+                    Screenshots.captureScreenshot();
                     // Agent_DealBuilderPage.AgentTradeAns1.click();
 
                     Select Question1 = new Select(pageobjects.Agent_DealBuilderPage.AgentTradeAns1);
@@ -572,6 +581,8 @@ public class Agent_DealBuilderPageActions extends Environment {
 
                     Thread.sleep(3000);
 
+                    Screenshots.captureScreenshot();
+
                     pageobjects.Agent_DealBuilderPage.AgentTradeAccept.click();
 
 
@@ -582,12 +593,13 @@ public class Agent_DealBuilderPageActions extends Environment {
             driver.switchTo().window(Mainwindow1);
             Thread.sleep(5000);
 
-            //JavascriptExecutor executor = (JavascriptExecutor) driver;
-            executor.executeScript("arguments[0].click();", Agent_DealBuilderPage.TradeInCheckBox);
-            Screenshots.captureScreenshot();
+            if(driver.findElements(By.xpath("//*[@id='dealBuilderContent']/div[@class='basketContents']/div[@class='lineItemContainer']/table[@class='lineItemTable discounts']/tbody/tr[@id='TRADEIN_']/td[@class='lineItemDescription']/p[4]/input[@id='tradeInHomeDeliveryCheckbox']")).size()>0) {
+                //JavascriptExecutor executor = (JavascriptExecutor) driver;
+                executor.executeScript("arguments[0].click();", Agent_DealBuilderPage.TradeInCheckBox);
+            }
+                Screenshots.captureScreenshot();
 
             // Agent_DealBuilderPage.TradeInCheckboxText.click();
-
             // Agent_DealBuilderPage.TradeInCheckBox.click();
 
         } else
@@ -1218,7 +1230,7 @@ public class Agent_DealBuilderPageActions extends Environment {
                     Thread.sleep(3000);
                     //Selecting specified bill cap
                     log.debug("Selecting your Bill Cap:");
-                    for (int i = 1; i < menuOuter.size(); i++) {
+                    for (int i = 1; i <= menuOuter.size(); i++) {
                         BillCap = driver.findElement(By.xpath("(//*[@class='billSpendCapSelection']/select/option[" + i + "])")).getText();
                         Thread.sleep(2000);
                         if (BillCap.contains(BillCapAmount)) {
@@ -1228,7 +1240,7 @@ public class Agent_DealBuilderPageActions extends Environment {
                             break;
                         }
                     }
-                    Thread.sleep(4000);
+                    Thread.sleep(8000);
                     if (cnt == 0) {
                         log.debug("Bill Spend Cap list does not contain specified cap amount and your Bill cap is not selected ie:: " + BillCapAmount);
                         Assert.fail("Bill Spend Cap list does not contain specified cap amount and your Bill cap is not selected ie:: " + BillCapAmount);
@@ -1722,6 +1734,7 @@ public class Agent_DealBuilderPageActions extends Environment {
             log.debug("FR build plan selected upfront cost is matching with deal builder upfront cost\n");
         }else{
             log.debug("Not Matching:: FR build plan selected upfront cost is not matching with deal builder upfront cost\n");
+            Assert.fail("Not Matching:: FR build plan selected upfront cost is not matching with deal builder upfront cost\n");
         }
 
     }

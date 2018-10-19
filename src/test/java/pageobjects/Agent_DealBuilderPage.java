@@ -167,7 +167,7 @@ public class Agent_DealBuilderPage {
     @FindBy(how = How.XPATH, using = "//*[@id='TRADEIN_']/td[1]/p[3]/label")
     public static WebElement TradeInCheckboxText;
 
-    @FindBy(how = How.XPATH, using = "//*[@id='dealBuilderContent']/div[@class='basketContents']/div[@class='lineItemContainer']/table[@class='lineItemTable discounts']/tbody/tr[@id='TRADEIN_']/td[@class='lineItemDescription']/p[3]/input[@id='tradeInHomeDeliveryCheckbox']")
+    @FindBy(how = How.XPATH, using = "//*[@id='dealBuilderContent']/div[@class='basketContents']/div[@class='lineItemContainer']/table[@class='lineItemTable discounts']/tbody/tr[@id='TRADEIN_']/td[@class='lineItemDescription']/p[4]/input[@id='tradeInHomeDeliveryCheckbox']")
     public static WebElement TradeInCheckBox;
 
     // input[@name='tradeInHomeDeliveryAllowed']

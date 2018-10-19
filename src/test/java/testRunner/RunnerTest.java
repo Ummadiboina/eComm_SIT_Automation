@@ -39,7 +39,7 @@ import java.util.List;
 @CucumberOptions(plugin = {"html:testResult/cucumber-html-report",
         "json:testResult/cucumber.json", "pretty:testResult/cucumber-pretty.txt",
         "usage:testResult/cucumber-usage.json", "junit:testResult/cucumber-results.xml"},
-        features = {"Features//September#2Release2018//Regression_FailedTCS"},
+        features = {"Features//OctoberRelease2018//Regression_Highest_Priority"},
         glue = {"steps"},
         tags = {"@Web"})
 

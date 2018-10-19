@@ -140,7 +140,7 @@ public class OrderConfirmationPageActions extends Environment {
 			for (int i = 0; i <= DataContainer.size(); i++) {
 				String ExpectedMessage = "Your order will be delivered for free, via Royal Mail, within three working days.";
 				String message = DataContainer.get(i).getText();
-				log.debug(DataContainer.get(i).getText());
+				log.debug("Delayed Deliver order confirmation message: "+message);
 
 			}
 		} catch (IndexOutOfBoundsException e) {
