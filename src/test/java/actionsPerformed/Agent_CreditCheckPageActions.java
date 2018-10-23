@@ -443,7 +443,7 @@ public class Agent_CreditCheckPageActions extends Environment {
 			Thread.sleep(15000);
 			Agent_CreditCheckDetailsPage.PerformCreditCheck.click();
 			Screenshots.captureScreenshot();
-			Thread.sleep(25000);
+			Thread.sleep(30000);
 		}
 		else
 		{

@@ -75,10 +75,10 @@ public class E2EOrderPlaced_Steps {
             // MouseHoverAction.ByPassDroopalPage();
             //ShopLandingPageAction.GetTitle_ref();
             ShopLandingPageAction.GetTitle();
-
+/*
             if (driver.findElements(By.xpath("//div[@class='container']/a[@class='close-icon']")).size() > 0) {
                 driver.findElement(By.xpath("//div[@class='container']/a[@class='close-icon']")).click();
-            }
+            }*/
 
         } catch (Exception e) {
             // TODO Auto-generated catch block
@@ -646,7 +646,7 @@ public class E2EOrderPlaced_Steps {
         }
     }
 
-    @And("^Chosse this plan$")
+    @And("^Choose this plan$")
     public void ChooseThisPlan() {
         try {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
@@ -921,7 +921,7 @@ public class E2EOrderPlaced_Steps {
         PageFactory.initElements(driver, MouseHoverPage.class);
         PageFactory.initElements(driver, UpgradePhonesListingPage.class);
         MouseHoverAction.UpgradeandUpgradeNow();
-        Thread.sleep(5000);
+        Thread.sleep(8000);
         Autoredirection.redirectUpgrades();
     }
 
@@ -1268,7 +1268,7 @@ public class E2EOrderPlaced_Steps {
     @And("^I Land on the Plan included basket page and choose home delivery option$")
     public void i_Land_on_the_Plan_included_basket_page_and_choose_home_delivery_option() {
         try {
-            Thread.sleep(3000);
+            Thread.sleep(5000);
             driver.findElement(By.xpath("//button[@id='btnAddToBasket']")).click();
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, BasketPage.class);
@@ -3976,7 +3976,7 @@ public class E2EOrderPlaced_Steps {
             PageFactory.initElements(driver, MouseHoverPage.class);
             PageFactory.initElements(driver, UpgradePhonesListingPage.class);
             MouseHoverAction.UpgradeandUpgradeNow();
-            Thread.sleep(4000);
+            Thread.sleep(7000);
             Autoredirection.redirectUpgrades();
             Thread.sleep(12000);
         } catch (Exception e) {
@@ -6900,7 +6900,7 @@ public class E2EOrderPlaced_Steps {
             Screenshots.captureScreenshot();
             UpgradeCustomerPageActions.clickRemoveOfferButton();
             // driver.findElement(By.xpath("//button[contains(text(),'Continue to upgrade')]")).click();
-            Thread.sleep(2000);
+            Thread.sleep(4000);
         } catch (Exception e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
@@ -6930,6 +6930,7 @@ public class E2EOrderPlaced_Steps {
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         try {
             PageFactory.initElements(driver, UpgradePhonesListingPage.class);
+            Thread.sleep(3000);
             UpgradeCustomerPageActions.selectTariffFromRecommendedSection();
             Thread.sleep(2000);
         } catch (Exception e) {
@@ -8053,7 +8054,7 @@ public class E2EOrderPlaced_Steps {
             PageFactory.initElements(driver, Agent_DealBuilderPage.class);
             Thread.sleep(4000);
             Agent_DealBuilderPageActions.AgentBuyOut();
-            Thread.sleep(4000);
+            Thread.sleep(5000);
         } catch (Exception e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
@@ -8434,7 +8435,7 @@ public class E2EOrderPlaced_Steps {
         try {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, PAYMandPAYGTariffAndExtrasPage.class);
-            UpgradeCustomerPageActions.Verify_Marketing_Message();
+            UpgradeCustomerPageActions.Verify_Marketing_Message("Basket");
         } catch (Exception e) {
             // TODO Auto-generated catch block
             e.printStackTrace();

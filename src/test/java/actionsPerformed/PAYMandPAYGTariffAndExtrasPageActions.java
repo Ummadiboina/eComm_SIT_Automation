@@ -157,14 +157,17 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 					}
 					Thread.sleep(3000);
 					log.debug("Clicking on More details link");
-					driver.findElement(By.xpath("//span[text()='" + tariffAmt + "']/../../../a")).click();
+					JavascriptExecutor js = (JavascriptExecutor) driver;
+
+					//driver.findElement(By.xpath("//span[text()='" + tariffAmt + "']/../../../a")).click();
+					js.executeScript("arguments[0].click();",driver.findElement(By.xpath("//span[text()='" + tariffAmt + "']/../../../a")));
 					log.debug("Clicked on More details link");
 					Thread.sleep(5000);
 					Screenshots.captureScreenshot();
 
 					//String dataRollOvrPopupTxt = driver.findElement(By.xpath("//div[@id='o2BundleCharges']/div[@class='box-content scroll-bar']/p[3]")).getAttribute("textContent");
 					String dataRollOvrPopupTxt = driver.findElement(By.xpath("(//div[@class='payg-overlay big-bundles']/div[@class='box-content scroll-bar'])[1]")).getText();
-					Thread.sleep(2000);
+					Thread.sleep(4000);
 					if (dataRollOvrPopupTxt.contains("With data rollover, you can roll over your unused data into your next month‘s Big Bundle, subject to bundle caps. Terms apply.")) {
 						log.debug("Data Roll over copy text is present in the popup");
 
@@ -172,13 +175,13 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 						log.debug("Data Roll over copy text is not matching in the popup");
 					}
 					//driver.findElement(By.xpath("//h3[text()='Big Bundles']/following-sibling::a")).click();
-					driver.findElement(By.xpath("//div[@id='tariffOverlay']/div/button")).click();
+
+					//driver.findElement(By.xpath("//div[@id='tariffOverlay']/div/button")).click();
+					js.executeScript("arguments[0].click();",driver.findElement(By.xpath("//div[@id='tariffOverlay']/div/button")));
 					log.debug("Clicked on More details popup close button");
 					Thread.sleep(5000);
 
 					//driver.findElement(By.xpath("//span[text()='" + tariffAmt + "']/../../../button")).click();
-
-					JavascriptExecutor js = (JavascriptExecutor) driver;
 					js.executeScript("arguments[0].click();",driver.findElement(By.xpath("//span[text()='" + tariffAmt + "']/../../../button")));
 					log.debug("Selected the specified Big Bundle Tariff");
 
@@ -199,15 +202,15 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 
 					}
 					*/
-
+				if(driver.findElements(By.xpath("//ul[@class='orders']/li/section[3]/h3")).size()>0) {
 					String strTariff = driver.findElement(By.xpath("//ul[@class='orders']/li/section[3]/h3")).getText();
 					Thread.sleep(2000);
-					if(strTariff.contains(tariffAmt+" data Big Bundles")){
+					if (strTariff.contains(tariffAmt + " data Big Bundles")) {
 						log.debug("Selected Big Bundle Data Roll over plan details is displayed in your package section");
-					}else{
+					} else {
 						log.debug("Selected Big Bundle Data Roll over plan details is not displayed in your package section");
 					}
-
+				}
 				}
 			}
 			JavascriptExecutor jse = (JavascriptExecutor) driver;
@@ -217,8 +220,8 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 		}
 		else  {
 			driver.findElement(By.xpath("(//input[@type='button' and @value='Go to basket'])[1]")).click();
+			return plan;
 		}
-		return plan;
 	}
 
 
@@ -1520,14 +1523,15 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 							pageobjects.PAYMandPAYGTariffAndExtrasPage.DontCapMyBillLink.click();
 							log.debug("Dont cap my bill link is clicked");
 							Thread.sleep(3000);
-
+							JavascriptExecutor jse = (JavascriptExecutor) driver;
+							jse.executeScript("window.scrollBy(0,100)", "");
 							Screenshots.captureScreenshot();
 							Thread.sleep(5000);
 							String consumerStatusMsg="",upgradeStatusMsg="";
 							if(driver.findElements(By.xpath("//div[@class='largeTitle']/p | //div[@class='build-spend-caps-container']/p")).size()>0) {
 								if (pageobjects.PAYMandPAYGTariffAndExtrasPage.BillCapStatusMsg.isDisplayed()) {
 									consumerStatusMsg = pageobjects.PAYMandPAYGTariffAndExtrasPage.BillCapStatusMsg.getText();
-									Thread.sleep(2000);
+									Thread.sleep(3000);
 									log.debug("Status Message: " + consumerStatusMsg + "\n");
 								}
 							}
@@ -1535,7 +1539,7 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 							if(driver.findElements(By.xpath("//div[@class='build-spend-caps-container']/p[2] | (//div[@class='selection-details'])[1]/p")).size()>0) {
 								if (pageobjects.PAYMandPAYGTariffAndExtrasPage.BillCapUpgradeStatusMsg.isDisplayed()) {
 									upgradeStatusMsg = pageobjects.PAYMandPAYGTariffAndExtrasPage.BillCapUpgradeStatusMsg.getText();
-									Thread.sleep(2000);
+									Thread.sleep(3000);
 									log.debug("Status Message: " + upgradeStatusMsg + "\n");
 								}
 							}
@@ -1580,27 +1584,27 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 								Assert.fail("Cap My Bill Continue button is Enabled before selecting cap amount");
 							}
 
-							Thread.sleep(6000);
+							Thread.sleep(4000);
 
 							//Selected BillCap Status Message
 							JavascriptExecutor jse = (JavascriptExecutor) driver;
-							jse.executeScript("window.scrollBy(0,-140)", "");
+							jse.executeScript("window.scrollBy(0,-200)", "");
 							Thread.sleep(3000);
 							Screenshots.captureScreenshot();
-
+							Thread.sleep(4000);
 							String consumerStatusMsg="",upgradeStatusMsg="";
 
 							if(driver.findElements(By.xpath("//div[@class='largeTitle']/p | //div[@class='build-spend-caps-container']/p")).size()>0){
 								if(pageobjects.PAYMandPAYGTariffAndExtrasPage.BillCapStatusMsg.isDisplayed()) {
 								consumerStatusMsg = pageobjects.PAYMandPAYGTariffAndExtrasPage.BillCapStatusMsg.getText();
-								Thread.sleep(2000);
+								Thread.sleep(3000);
 								log.debug("Status Message: "+consumerStatusMsg+"\n");
 								}
 							}
 							if(driver.findElements(By.xpath("//div[@class='build-spend-caps-container']/p[2] | (//div[@class='selection-details'])[1]/p")).size()>0) {
 								if (pageobjects.PAYMandPAYGTariffAndExtrasPage.BillCapUpgradeStatusMsg.isDisplayed()) {
 									upgradeStatusMsg = pageobjects.PAYMandPAYGTariffAndExtrasPage.BillCapUpgradeStatusMsg.getText();
-									Thread.sleep(2000);
+									Thread.sleep(3000);
 									log.debug("Status Message: " + upgradeStatusMsg + "\n");
 								}
 							}
@@ -1659,8 +1663,8 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 				log.debug("Unable to validate bill spend cap section \n");
 				Assert.fail("Unable to validate bill spend cap section \n");
 			}
-			JavascriptExecutor jse = (JavascriptExecutor) driver;
-			jse.executeScript("window.scrollBy(0,150)", "");
+			/*JavascriptExecutor jse = (JavascriptExecutor) driver;
+			jse.executeScript("window.scrollBy(0,150)", "");*/
 			Screenshots.captureScreenshot();
 		} catch (Exception e) {
 			log.debug("Unable to cap the bill :: "+e);
@@ -1796,6 +1800,7 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 					jse.executeScript("window.scrollBy(0,100)", "");
 					Screenshots.captureScreenshot();
 					BSCRetainedFlag =driver.findElement(By.xpath("//div[@class='caps-holder']/div/a[contains(text(),'" + CapAmount + "')]")).isSelected();
+					Thread.sleep(2000);
 					String selectedCap = driver.findElement(By.xpath("//div[@class='caps-holder']/div/a[@class='capButton selected']")).getText();
 					Thread.sleep(3000);
 					if (BSCRetainedFlag==true || selectedCap.contains(CapAmount)) {

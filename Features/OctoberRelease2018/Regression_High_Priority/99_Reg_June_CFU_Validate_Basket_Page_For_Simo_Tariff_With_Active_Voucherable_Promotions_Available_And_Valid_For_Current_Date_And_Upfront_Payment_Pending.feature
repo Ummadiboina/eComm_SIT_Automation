@@ -12,7 +12,7 @@ Feature: 99_Reg_June_CFU_Validate_Basket_Page_For_Simo_Tariff_With_Active_Vouche
     And click on the 'Tablets' button
     And Click on 'Select' CTA to buy a valid <tariffAmt> and <dataValue>
     #And Select ribboned tariff <tariff> in upgrade journey
-    And I Land on the Plan included basket page and choose home delivery option
+    #And I Land on the Plan included basket page and choose home delivery option
     And Click on 'plus' accordion at get promo code section and enter valid <promoCode> details in Basket page
     And Select 'I need a new sim' option
     And click on "go to checkout" button

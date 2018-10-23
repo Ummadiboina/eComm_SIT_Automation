@@ -7,7 +7,6 @@ Feature: 54_Reg_Consumer_TradeIn
     And Navigate to upgrade > upgrade now
     And Verify trade in message is displayed under 'Get your latest phone on us today' section
     And Answer appropriate questionaire in 'your device' section
-    #And click on 'upgrade now' button
     And Click on 'Get Started' CTA
     And Click on Tablet section in upgrade options page
     And Select a <handset> device from Recommended devices section
@@ -15,7 +14,7 @@ Feature: 54_Reg_Consumer_TradeIn
     And Validate consumer Bill Spend Caps section when BSC is <BSCstatus>
     And Choose your bill cap <BillCap> <CapAmount> when BSC is <BSCstatus>
     Then choose appropriately in 'Your Sim Card'section
-    And verify if the tradein offer is displayed in My Package section
+    #And verify if the tradein offer is displayed in My Package section
     And I Land on the basket page for upgrades
     And verify if the trade in offer is displayed in Basket page
     And I select a Click and Collect store for Trade In

@@ -15,4 +15,4 @@ Feature: 135_FR_UpFront_AFU_PAYM_Phones
 
     Examples:
       | user        | Device                       | Tariffs | upFront | term | data | BSCstatus | BillCapAmount | consumer | B1     | B2  | B3     | B4  | Text | Email  | Phone | Post | status  | MBBStatus | DeviceType |
-      | 07731605829 | iPhone 7 Plus 32GB Rose Gold | Refresh | min     | min  | max  | Enabled   | £10           | Me       | Select | Not | Select | Not | Not  | Select | Not   | Not  | Enabled | No        | Connected  |
+      | 07521115241 | iPhone 7 Plus 32GB Rose Gold | Refresh | min     | min  | max  | Enabled   | £10           | Me       | Select | Not | Select | Not | Not  | Select | Not   | Not  | Enabled | No        | Connected  |

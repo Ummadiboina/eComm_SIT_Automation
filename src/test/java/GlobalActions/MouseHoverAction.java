@@ -1226,7 +1226,7 @@ public class MouseHoverAction extends Environment {
             // MouseHoverPage.MoveMouseOnPhones_Drupal.click();
             JavascriptExecutor executor = (JavascriptExecutor) driver;
             executor.executeScript("arguments[0].click();", MouseHoverPage.MouseMoveonUpgrade_Drupal);
-            //Thread.sleep(5000);
+            Thread.sleep(5000);
 
             //driver.manage().timeouts().implicitlyWait(15,TimeUnit.SECONDS);
 

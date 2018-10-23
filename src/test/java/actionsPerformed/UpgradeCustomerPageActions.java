@@ -611,8 +611,8 @@ public class UpgradeCustomerPageActions extends Environment {
 
     public static void verifyPromotionalRibbonDisplayedTEpage(String Tariff) throws IOException {
 
-        if(driver.findElements(By.xpath("(//button[@type='button']//*[normalize-space()='Select'])[1]")).size()>=1){
-            WebElement selectBtnEle = driver.findElement(By.xpath("(//button[@type='button']//*[normalize-space()='Select'])[1]"));
+        if(driver.findElements(By.xpath("(//*[@id='callToAction'] | //button[@class='secondary selectButton tariff-select buyNowBtn'] | //button[@class='btn buyNowBtn secondary selectButton tariff-select'] | //button[@class='secondary tst-select  selectButton  '])[1]")).size()>=1){
+            WebElement selectBtnEle = driver.findElement(By.xpath("(//*[@id='callToAction'] | //button[@class='secondary selectButton tariff-select buyNowBtn'] | //button[@class='btn buyNowBtn secondary selectButton tariff-select'] | //button[@class='secondary tst-select  selectButton  '])[1]"));
             driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
             ((JavascriptExecutor) driver).executeScript("arguments[0].click();", selectBtnEle);
             log.debug("Tariff has selected");
@@ -1468,6 +1468,7 @@ public class UpgradeCustomerPageActions extends Environment {
             Thread.sleep(4000);
             log.debug("In your Sim Section");
             log.debug("Choosing need new sim");
+            Screenshots.captureScreenshot();
             WebElement needNewSimRadio = driver.findElement(By.xpath("//input[@id='needNewSim']"));
             ((JavascriptExecutor) driver).executeScript("arguments[0].click();", needNewSimRadio);
             log.debug("Selected need new sim radio button");
@@ -1783,6 +1784,7 @@ public class UpgradeCustomerPageActions extends Environment {
         log.debug('\n' + "Validate Confirm button not displayed");
 
         String YourSimSectionContainer = UpgradeCustomerPage.YourSimSection.getText();
+        Thread.sleep(2000);
         log.debug(YourSimSectionContainer);
         boolean ConfimNotDisplayed = YourSimSectionContainer.contains("Confirm");
         if (ConfimNotDisplayed == false) {
@@ -2234,11 +2236,13 @@ public class UpgradeCustomerPageActions extends Environment {
 
     public static void VerifyTradeinMessage() throws IOException, InterruptedException {
         log.debug("in verify tradein message function");
-        driver.findElement(By.xpath("//div[@class='ng-scope trade-in-offer']")).getText();
+        //driver.findElement(By.xpath("//div[@class='ng-scope trade-in-offer']")).getText();
         String text = driver.findElement(By.xpath("//div[@class='ng-scope trade-in-offer']")).getText();
-        if (text.contains("Trade in")) {
+        Screenshots.captureScreenshot();
+        Thread.sleep(4000);
+        if (text.contains("trade in")) {
             log.debug("Working fine");
-            log.debug("The Text is: " + text);
+            log.debug("The Trade in Text is: " + text);
         } else {
             Assert.fail("Trade in not displayed, hence failed");
         }
@@ -2264,12 +2268,13 @@ public class UpgradeCustomerPageActions extends Environment {
         }
     }
 
-    public static void verifyPoundLeftToPay() throws InterruptedException {
+    public static void verifyPoundLeftToPay() throws InterruptedException, IOException {
         log.debug("in verify BuyOut message function");
 
         Thread.sleep(4000);
         String text = driver.findElement(By.xpath("//div[@id='o2RecycleModule']/h2")).getText();
         Thread.sleep(3000);
+        Screenshots.captureScreenshot();
         if (text.contains("left to pay on your current Device Plan")) {
             log.debug("Verified successfully, The Text is: " + text+"\n");
         } else {
@@ -2281,6 +2286,7 @@ public class UpgradeCustomerPageActions extends Environment {
     public static void AnswerTradeinQuestion() throws InterruptedException, IOException {
         Thread.sleep(5000);
         log.debug("in AnswerTradeinQuestion function");
+        Screenshots.captureScreenshot();
         JavascriptExecutor js = (JavascriptExecutor) driver;
 
         /*if(driver.findElement(By.xpath("//a[normalize-space()='Answer questions again']")).isDisplayed()) {
@@ -2288,22 +2294,32 @@ public class UpgradeCustomerPageActions extends Environment {
             js.executeScript("arguments[0].setAttribute('style', 'display:block;')", QuestionLink);
         }*/
 
-        Thread.sleep(8000);
+        if(driver.findElements(By.xpath("//button[normalize-space()='Continue with trade in']")).size()>0) {
+            driver.findElement(By.xpath("//button[normalize-space()='Continue with trade in']")).click();
+        }
+
+        Thread.sleep(4000);
+        Screenshots.captureScreenshot();
         if(driver.findElement(By.xpath("//div[@class='selectboxit-container questionnair']")).isDisplayed()) {
             WebElement Question0 = driver.findElement(By.xpath("//select[@id='question0']"));
             js.executeScript("arguments[0].setAttribute('style', 'display:block;')", Question0);
             new Select(Question0).selectByValue("0");
 
+            Thread.sleep(2000);
             // Select Second questionaire - Does your phone have any damage
             WebElement Question1 = driver.findElement(By.xpath("//select[@id='question1']"));
             js.executeScript("arguments[0].setAttribute('style', 'display:block;')", Question1);
             new Select(Question1).selectByValue("0");
+
+            Thread.sleep(2000);
+            Screenshots.captureScreenshot();
 
             // Select Third questionaire - Could your phone be water damaged
             WebElement Question2 = driver.findElement(By.xpath("//select[@id='question2']"));
             js.executeScript("arguments[0].setAttribute('style', 'display:block;')", Question2);
             new Select(Question2).selectByValue("0");
 
+            Thread.sleep(2000);
             // Select Second questionaire - Remove icloud from device
             WebElement Question3 = driver.findElement(By.xpath("//select[@id='question3']"));
             js.executeScript("arguments[0].setAttribute('style', 'display:block;')", Question3);
@@ -2312,6 +2328,7 @@ public class UpgradeCustomerPageActions extends Environment {
             // driver.findElement(By.id("continue-with-accurate-quote")).click();
             log.debug("Completed questionaire");
         }
+        Thread.sleep(2000);
         Screenshots.captureScreenshot();
 
     }
@@ -2341,6 +2358,7 @@ public class UpgradeCustomerPageActions extends Environment {
 
     public static void clickOnTabletstab() throws InterruptedException, IOException {
         log.debug("In tablets clicking function");
+        Thread.sleep(3000);
         ((JavascriptExecutor) driver).executeScript("arguments[0].click();",
                 pageobjects.UpgradeCustomerPage.TabletsTab);
         Thread.sleep(5000);
@@ -2426,8 +2444,11 @@ public class UpgradeCustomerPageActions extends Environment {
 
     public static void clickOnViewAllTablets() throws InterruptedException, IOException {
 
-        Thread.sleep(3000);
-
+        Thread.sleep(5000);
+        JavascriptExecutor jse = (JavascriptExecutor) driver;
+        jse.executeScript("window.scrollBy(0,100)", "");
+        Screenshots.captureScreenshot();
+        Thread.sleep(2000);
         ((JavascriptExecutor) driver).executeScript("arguments[0].click();",
                 pageobjects.UpgradeCustomerPage.ViewAllTablets);
         Screenshots.captureScreenshot();
@@ -2467,7 +2488,7 @@ public class UpgradeCustomerPageActions extends Environment {
         }
     }
 
-    public static void Verify_Marketing_Message() throws Exception {
+    public static void Verify_Marketing_Message(String Section) throws Exception {
         Thread.sleep(3000);
         String section=driver.getTitle();
 
@@ -3298,7 +3319,7 @@ public class UpgradeCustomerPageActions extends Environment {
                 /*scrollToAnElement.scrollToElement(UpgradeCustomerPage.chooseDeviseSection);
                 Screenshots.captureScreenshot();*/
                 JavascriptExecutor jse = (JavascriptExecutor) driver;
-                jse.executeScript("window.scrollBy(0,300)", "");
+                jse.executeScript("window.scrollBy(0,450)", "");
 
                 Thread.sleep(3000);
                 Screenshots.captureScreenshot();
@@ -3316,7 +3337,7 @@ public class UpgradeCustomerPageActions extends Environment {
     }
 
     public static void clickOnDevice_ConfirmCTA() throws Exception {
-
+        Thread.sleep(5000);
         Screenshots.captureScreenshot();
         if (driver.findElements(By.xpath("//div[@class='choose-your-phone-container clear-row']/button[normalize-space()='Confirm']")).size()>0) {
             JavascriptExecutor jse = (JavascriptExecutor) driver;

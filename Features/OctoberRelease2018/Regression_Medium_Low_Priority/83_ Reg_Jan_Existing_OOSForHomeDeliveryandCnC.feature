@@ -20,11 +20,11 @@ Feature: 83_ Reg_Jan_Existing_OOSForHomeDeliveryandCnC
     And Land on the 'Tariffs and extra' page
     And Validate consumer Bill Spend Caps section when BSC is <BSCstatus>
     And Choose your bill cap <BillCap> <CapAmount> when BSC is <BSCstatus>
-    And the Delivery section should show 'OOS message'
+    #And the Delivery section should show 'OOS message'
     And I Land on the basket page by clicking on Add to Basket button
     And the Delivery section should show 'OOS message'
 
 
     Examples:
-      | handset            | color  | username                     | password | BSCstatus | BillCap   | CapAmount |
-      | iPhone 5s Like New | Silver | inl_feb4914@stf.ref.o2.co.uk | test123  | Enabled   | CapMyBill | £10       |
+      | handset            | color  | username               | password | BSCstatus | BillCap   | CapAmount |
+      | iPhone 5s Like New | Silver | inavl0wx_700444@o2.com | test123  | Enabled   | CapMyBill | £10       |

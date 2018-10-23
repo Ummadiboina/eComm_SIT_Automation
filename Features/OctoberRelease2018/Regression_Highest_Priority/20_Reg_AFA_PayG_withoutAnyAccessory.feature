@@ -7,6 +7,7 @@ Feature: 20_Reg_AFA_PayG_withoutAnyAccessory
     And performs Acquisition for New user
     And Select a valid PAYG <Device>
     And Select valid <Tariffs> from PAYG tariffs tab
+    And Validate Bill Spend Cap in agent deal builder section when BSC is <BSCstatus>
     And Validate all the Basket content and checkout
     Then perform all the advisory checks
     And Register the customer with valid <Firstname>, <Surname>, <HouseNumber>, <PostCode> and other valid details in delivery page
@@ -17,5 +18,5 @@ Feature: 20_Reg_AFA_PayG_withoutAnyAccessory
     Then Order confirmation message should be displayed
 
     Examples:
-      | Device                    | Tariffs | DeliveryType | Firstname | Surname | HouseNumber | PostCode | consumer | B1  | B2  | B3     | B4  | Text | Email  | Phone | Post | status  | MBBStatus | DeviceType | DeviceModule |
-      | iPhone X 256GB Space Grey | Random  | HomeDelivery | TEST      | ACCEPTA | 4           | SL11UP   | Me       | Not | Not | Select | Not | Not  | Select | Not   | Not  | Enabled | No        | Connected  | Phone        |
+      | Device                    | Tariffs | DeliveryType | BSCstatus | Firstname | Surname | HouseNumber | PostCode | consumer | B1  | B2  | B3     | B4  | Text | Email  | Phone | Post | status  | MBBStatus | DeviceType | DeviceModule |
+      | iPhone X 256GB Space Grey | Random  | HomeDelivery | Disabled  | TEST      | ACCEPTA | 4           | SL11UP   | Me       | Not | Not | Select | Not | Not  | Select | Not   | Not  | Enabled | No        | Connected  | Phone        |

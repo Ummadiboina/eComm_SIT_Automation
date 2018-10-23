@@ -16,4 +16,4 @@ Feature: 27_Reg_AFU_SavedBasket
 
     Examples:
       | user        | Device                                     | Tariffs | BSCstatus | BillCapAmount |
-      | 07801801173 | Samsung Galaxy S8 Plus 64GB Midnight Black | Refresh | Enabled   | No Spend Cap  |
+      | 07729000024 | Samsung Galaxy S8 Plus 64GB Midnight Black | Refresh | Enabled   | No Spend Cap  |

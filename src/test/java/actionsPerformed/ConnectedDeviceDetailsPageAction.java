@@ -895,17 +895,18 @@ public class ConnectedDeviceDetailsPageAction extends Environment {
         Thread.sleep(2000);
         Screenshots.captureScreenshot();
 
-        //String TnEPageFRCalcupFrontCost = ConnectedDeviceDetailsPage.upfrentVal.getText();
-        String TnEPageFRCalcupFrontCost = ConnectedDeviceDetailsPage.upfrentVal_NewLayout.getText();
+        String TnEPageFRCalcupFrontCost = ConnectedDeviceDetailsPage.upfrentVal.getText();
+        Thread.sleep(2000);
+        String TnEPageNewLayoutupFrontCost = ConnectedDeviceDetailsPage.upfrentVal_NewLayout.getText();
         Thread.sleep(4000);
 
-        if (TnEPageFRCalcupFrontCost.contains(upFrontCost)) {
-            System.out.println("The Monthly upfront price from the PD page and TnE FR Calc Upfront value are matched  + ::: " + TnEPageFRCalcupFrontCost + " & " + upFrontCost);
-            log.debug("The Monthly upfront price from the PD page and TnE FR Calc Upfront value are matched  + ::: " + TnEPageFRCalcupFrontCost + " & " + upFrontCost);
+        if (TnEPageFRCalcupFrontCost.contains(upFrontCost) || TnEPageNewLayoutupFrontCost.contains(upFrontCost)) {
+            System.out.println("The Monthly upfront price from the PD page and TnE FR Calc Upfront value are matched  + ie, ::: " + upFrontCost);
+            log.debug("The Monthly upfront price from the PD page and TnE FR Calc Upfront value are matched  + ie, ::: " + upFrontCost);
         } else {
-            System.out.println(" Not Matched = ==The Monthly upfront price from the PD page and TnE FR Calc Upfront value are not matched  + ::: " + TnEPageFRCalcupFrontCost + " & " + upFrontCost);
-            log.debug(" Not Matched = ==The Monthly upfront price from the PD page and TnE FR Calc Upfront value are not matched  + ::: " + TnEPageFRCalcupFrontCost + " & " + upFrontCost);
-            Assert.fail(" Not Matched = ==The Monthly upfront price from the PD page and TnE FR Calc Upfront value are not matched  + ::: " + TnEPageFRCalcupFrontCost + " & " + upFrontCost);
+            System.out.println(" Not Matched = ==The Monthly upfront price from the PD page and TnE FR Calc Upfront value are not matched  + ie, ::: " + upFrontCost);
+            log.debug(" Not Matched = ==The Monthly upfront price from the PD page and TnE FR Calc Upfront value are not matched  + ie, ::: " + upFrontCost);
+            Assert.fail(" Not Matched = ==The Monthly upfront price from the PD page and TnE FR Calc Upfront value are not matched  + ie, ::: " + upFrontCost);
         }
 
         scrollToAnElement.scrollToElement(driver.findElement(By.xpath("//div[contains(text(),'Your Spend Cap')] | //div/p/span[contains(text(),'Your Spend Cap')]")));
@@ -922,6 +923,7 @@ public class ConnectedDeviceDetailsPageAction extends Environment {
         Thread.sleep(3000);
         Screenshots.captureScreenshot();
 
+        /*
         //Mini Basket Validation
         if(driver.findElements(By.xpath("//section[@class='product-details']")).size()>0) {
             if (ConnectedDeviceDetailsPage.prodctDetails_TnE.isDisplayed()) {
@@ -955,7 +957,7 @@ public class ConnectedDeviceDetailsPageAction extends Environment {
                     log.debug("The Product details in TnE are  + ::: " + ProductDeatails_TnE);
                 }
             }
-        }
+        }*/
     }
 
 

@@ -1,4 +1,4 @@
-Feature: 101_FR_Upfront_CFA_Phones_Till_TnE.feature
+Feature: 119_FR_All_CFA_Phones_Till_TnE
 
   @Web
   Scenario Outline: 101_FR_Upfront_CFA_Phones_Till_TnE
