@@ -399,11 +399,11 @@ public class PaymentPageActions extends Environment {
     public static void InsuranceSectionPaymentPage() throws InterruptedException, IOException {
         log.debug("Entering InsuranceSectionPaymentPage Method");
 
-        Thread.sleep(3000);
+        Thread.sleep(5000);
 
-        if (driver.findElement(By.xpath("//li[@class='minicopy']")).isDisplayed()) {
+        if (driver.findElement(By.xpath("(//li[@class='minicopy'] | //li[@class='microcopy'])[1]")).isDisplayed()) {
             log.debug("Insurance is displayed in Payment page and text is  - "
-                    + driver.findElement(By.xpath("//li[@class='minicopy']")).getText());
+                    + driver.findElement(By.xpath("(//li[@class='minicopy'] | //li[@class='microcopy'])[1]")).getText());
 
         } else {
             log.debug("Insurance is not displayed");
@@ -411,7 +411,7 @@ public class PaymentPageActions extends Environment {
 
         Thread.sleep(2000);
         log.debug("Completed InsuranceSectionPaymentPage function");
-        log.debug("Completed InsuranceSectionPaymentPage function");
+
         Screenshots.captureScreenshot();
 
     }

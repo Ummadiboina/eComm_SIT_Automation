@@ -7,12 +7,12 @@ Feature: 53_Reg_Consumer_PreOrder
     #And I search for a PayM <handset> device
     And I choose PayM <handset>
     #And click on the color dropdown
-    And verify the name of the colour is next to the colour tile in CFAPhoneColour
+    #And verify the name of the colour is next to the colour tile in CFAPhoneColour
     #And select a color
     #And select <color> color of the connected device
     #And select <Capacity> capacity of the connected device
     And check the status <Status> of the device
-    And Chosse this plan
+    And Choose this plan
     #And Navigate to View tariff page
     And Land on the 'Tariffs and extra' page
     And Validate consumer Bill Spend Caps section when BSC is <BSCstatus>

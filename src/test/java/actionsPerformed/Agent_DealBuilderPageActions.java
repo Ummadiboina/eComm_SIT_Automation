@@ -423,7 +423,7 @@ public class Agent_DealBuilderPageActions extends Environment {
 
     public static void eMailConfirmation() throws InterruptedException, IOException {
         // TODO Auto-generated method stub
-        Thread.sleep(3000);
+        Thread.sleep(6000);
         Screenshots.captureScreenshot();
         String Mainwindow = driver.getWindowHandle();
         // getting all the popup windows , hence using getwindowhandles instead
@@ -1174,9 +1174,10 @@ public class Agent_DealBuilderPageActions extends Environment {
                     for (int i = 1; i < menuOuter.size(); i++) {
                         log.debug("Cap Option " + i + " is: " + menuOuter.get(i).getText());
                     }
-
+                    Thread.sleep(3000);
                     if(driver.findElements(By.xpath("//span[@class='selectedBillSpendCap']")).size()>0) {
                         String BillCapStatus = pageobjects.Agent_DealBuilderPage.BillSpendCapMessage.getText();
+                        Thread.sleep(2000);
                         log.debug("Bill Spend Status message before selecting bill cap:: " + BillCapStatus);
                     }
 
@@ -1245,10 +1246,10 @@ public class Agent_DealBuilderPageActions extends Environment {
                         log.debug("Bill Spend Cap list does not contain specified cap amount and your Bill cap is not selected ie:: " + BillCapAmount);
                         Assert.fail("Bill Spend Cap list does not contain specified cap amount and your Bill cap is not selected ie:: " + BillCapAmount);
                     }
-                    Thread.sleep(5000);
+                    Thread.sleep(6000);
                     String BillCapStatus = pageobjects.Agent_DealBuilderPage.BillSpendCapMessage.getText();
 
-                    Thread.sleep(2000);
+                    Thread.sleep(3000);
                     Screenshots.captureScreenshot();
 
                     //status message validation
@@ -1322,7 +1323,7 @@ public class Agent_DealBuilderPageActions extends Environment {
 
     //Validating your bill cap in Basket page
     public static void ValidateAppliedBillSpendCapInAgentDealSummary(String BillCapAmount, String BSCstatus) throws InterruptedException {
-        Thread.sleep(4000);
+        Thread.sleep(6000);
         String AppliedBillCap="";
         String pageTitle = driver.getTitle();
         try {
@@ -1333,15 +1334,37 @@ public class Agent_DealBuilderPageActions extends Environment {
                     scrollToAnElement.scrollToElement(pageobjects.Agent_DealBuilderPage.BillSpendCapHeader);
                     Screenshots.captureScreenshot();
                     log.debug("Bill Spend Cap header is displayed in " + pageTitle + " page ie :: " + pageobjects.Agent_DealBuilderPage.BillSpendCapHeader.getText());
-
+                    Thread.sleep(3000);
                     AppliedBillCap = pageobjects.Agent_DealBuilderPage.appliedBillCap.getText();
                     Thread.sleep(3000);
 
-                    if (AppliedBillCap.contains(BillCapAmount)) {
+                    /*if (AppliedBillCap.contains(BillCapAmount)) {
                         log.debug("Applied bill cap is validated successfully in " + pageTitle + " page ie :: " + AppliedBillCap);
                     }else {
                             log.debug("Failed to validate applied bill cap:: " + AppliedBillCap);
                             Assert.fail("Failed to validate applied bill cap :: " + AppliedBillCap);
+                    }*/
+
+                    //status message validation
+                    if(BillCapAmount.equalsIgnoreCase("No Spend Cap")){
+                        Thread.sleep(3000);
+                        if (AppliedBillCap.contains("No spend cap applied")) {
+                            log.debug("Bill Spend Status message after selecting No bill cap:: " + AppliedBillCap);
+                            log.debug("No Bill Spend Status message validated successfully");
+                        } else {
+                            log.debug("Status message after selecting No bill cap does not matching :: " + AppliedBillCap);
+                            Assert.fail("Status message after selecting No bill cap does not matching :: " + AppliedBillCap);
+                        }
+
+                    }else {
+                        Thread.sleep(3000);
+                        if (AppliedBillCap.contains(BillCapAmount)) {
+                            log.debug("Bill Spend Status message after selecting bill cap:: " + AppliedBillCap);
+                            log.debug("Status message after selecting bill cap contain your bill cap amount :: " + AppliedBillCap);
+                        } else {
+                            log.debug("Status message after selecting bill cap does not contain your bill cap amount :: " + AppliedBillCap);
+                            Assert.fail("Status message after selecting bill cap does not contain your bill cap amount :: " + AppliedBillCap);
+                        }
                     }
 
                 } else {
@@ -1427,7 +1450,7 @@ public class Agent_DealBuilderPageActions extends Environment {
                 // Switching to Child window
                 driver.switchTo().window(ChildWindow);
                 log.debug("Switched to child window");
-                Thread.sleep(8000);
+                Thread.sleep(10000);
                 Screenshots.captureScreenshot();
 
                 //FR Validations
@@ -1730,13 +1753,15 @@ public class Agent_DealBuilderPageActions extends Environment {
 
         String dealBuilderUpfrontVal = driver.findElement(By.xpath("(//div[@class='priceComponent']/p)[1]")).getText();
 
+        Thread.sleep(3000);
+
         if(dealBuilderUpfrontVal.contains(upFrontCost)){
             log.debug("FR build plan selected upfront cost is matching with deal builder upfront cost\n");
         }else{
             log.debug("Not Matching:: FR build plan selected upfront cost is not matching with deal builder upfront cost\n");
             Assert.fail("Not Matching:: FR build plan selected upfront cost is not matching with deal builder upfront cost\n");
         }
-
+        Thread.sleep(3000);
     }
 }
 

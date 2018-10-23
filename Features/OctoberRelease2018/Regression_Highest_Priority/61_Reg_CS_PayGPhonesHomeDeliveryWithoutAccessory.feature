@@ -11,6 +11,7 @@ Feature: 61_Reg_CS_PayGPhonesHomeDeliveryWithoutAccessory
     And Navigate to device details page
     #And Land on the 'Tariffs and extra' page
     And Select a PayG tariff <tariff>
+    And Validate consumer Bill Spend Caps section when BSC is <BSCstatus>
     And I Land on the basket page and choose home delivery option
     And click on "go to checkout" button
     #And input <Firstname> and <Surname> and other valid details in Delivery page and Click on the 'Continue button'
@@ -23,4 +24,4 @@ Feature: 61_Reg_CS_PayGPhonesHomeDeliveryWithoutAccessory
 
     Examples:
       | handset       | color      | Firstname | tariff | BSCstatus | Surname | Username     | consumer | B1  | B2     | B3  | B4  | Text | Email  | Phone | Post | status  | MBBStatus | DeviceType |
-      | iPhone 8 Plus | Space Grey | TEST      |        | Enabled   | ACCEPTA | TEST ACCEPTA | Me       | Not | Select | Not | Not | Not  | Select | Not   | Not  | Enabled | No        | Connected  |
+      | iPhone 8 Plus | Space Grey | TEST      |        | Disabled  | ACCEPTA | TEST ACCEPTA | Me       | Not | Select | Not | Not | Not  | Select | Not   | Not  | Enabled | No        | Connected  |

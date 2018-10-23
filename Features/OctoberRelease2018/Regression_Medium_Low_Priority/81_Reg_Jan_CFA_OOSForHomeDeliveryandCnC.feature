@@ -18,7 +18,7 @@ Feature: 81_Reg_Jan_CFA_OOSForHomeDeliveryandCnC
     And Land on the 'Tariffs and extra' page
     And Validate consumer Bill Spend Caps section when BSC is <BSCstatus>
     And Choose your bill cap <BillCap> <CapAmount> when BSC is <BSCstatus>
-    And the Delivery section should show 'OOS message'
+    #And the Delivery section should show 'OOS message'
     And I Land on the basket page by clicking on Add to Basket button
     And the Delivery section should show 'OOS message'
 

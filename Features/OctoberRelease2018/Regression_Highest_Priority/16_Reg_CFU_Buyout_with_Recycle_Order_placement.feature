@@ -29,7 +29,7 @@ Feature: 16_Reg_CFU_Buyout_with_Recycle_Order_placement
     #And Answer the Questions in the questionnaire
     #Then Click on 'Accept and continue to upgrade'
     And answer the questionnaire and click on 'Accept and continue to upgrade' button
-    And Verify that in 'Your package' summary Buyout is displayed with Recycle
+    #And Verify that in 'Your package' summary Buyout is displayed with Recycle
     And I Land on the basket page by clicking on Add to Basket button in the BuyOut Journey
     And verify if the buyout offer is displayed in Basket page
     And click on "go to checkout" button

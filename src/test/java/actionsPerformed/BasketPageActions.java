@@ -174,6 +174,7 @@ public class BasketPageActions extends Environment {
 				//driver.findElement(By.xpath("//input[@id='noNeedNewSim']")).click();
 			}
 			Thread.sleep(5000);
+			Screenshots.captureScreenshot();
 			log.debug("Queue page is not displayed");
 			WebElement element = pageobjects.BasketPage.checkoutbtn;
 			JavascriptExecutor executor = (JavascriptExecutor)driver;
@@ -799,8 +800,8 @@ public class BasketPageActions extends Environment {
 	}
 
 	public static void EnterValidPromoCodeDetails(String promoCode) throws IOException, InterruptedException {
-		Thread.sleep(3000);
-
+		Thread.sleep(5000);
+		Screenshots.captureScreenshot();
 		pageobjects.UpgradeCustomerPage.plusAccordion.click();
 		Thread.sleep(4000);
 		pageobjects.UpgradeCustomerPage.promoCodeDetails.sendKeys(promoCode);
@@ -867,7 +868,7 @@ public class BasketPageActions extends Environment {
 
 	//Validating your bill cap in Basket page
 	public static void ValidateAppliedBillSpendCapIn_BasketPage(String BillCap, String CapAmount, String BSCstatus) throws InterruptedException, IOException {
-		Thread.sleep(3000);
+		Thread.sleep(5000);
 		String AppliedBillCap="";
 		String pageTitle = driver.getTitle();
 		scrollToAnElement.scrollToElement(BasketPage.YourOrder);
@@ -898,7 +899,7 @@ public class BasketPageActions extends Environment {
 					Thread.sleep(2000);
 
 					AppliedBillCap = pageobjects.BasketPage.AppliedBillCap.getText();
-					Thread.sleep(2000);
+					Thread.sleep(5000);
 					if (BillCap.equalsIgnoreCase("CapMyBill")) {
 
 						if (CapAmount.equalsIgnoreCase("DontCapMyBillLink")) {
@@ -924,13 +925,6 @@ public class BasketPageActions extends Environment {
 							Assert.fail("Failed to validate 'Dont Cap My Bill' and cap text is::" + AppliedBillCap);
 						}
 					}
-
-					/*if (driver.findElements(By.xpath("//a[@href='basket/changeBillSpendCap']")).size() > 0) {
-						log.debug("Bill cap Edit link/option is present in " + pageTitle + " page \n");
-					} else {
-						log.debug("Bill cap Edit link/option is not present in " + pageTitle + " page \n");
-						Assert.fail("Bill cap Edit link/option is not present in " + pageTitle + " page \n");
-					}*/
 
 				} else {
 					log.debug("Bill cap section is not present under order summary section in " + pageTitle + " page");

@@ -35,7 +35,7 @@ import cucumber.api.CucumberOptions;
 @CucumberOptions(plugin = { "html:testResult/cucumber-html-report",
 		"json:testResult/cucumber.json", "pretty:testResult/cucumber-pretty.txt",
 		"usage:testResult/cucumber-usage.json", "junit:testResult/cucumber-results.xml" },
-		features = { "Features//OctoberRelease2018//Regression_Highest_Priority" },
+		features = { "Features//OctoberRelease2018//Regression_Medium_Low_Priority" },
 		glue = { "steps" },
 		tags = {"@Web"})
 

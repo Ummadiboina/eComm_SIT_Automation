@@ -11,7 +11,7 @@ Feature: 98_Reg_June_CFU_Validate_BasketPage_For_SimoTariff_With_Active_Vouchera
     #And I click on 'Sim only Tariff' tab
     And Click on 'Select' CTA to buy a valid <tariffAmt> and <dataValue>
     #And Select ribboned tariff <tariff> in upgrade journey
-    And I Land on the Plan included basket page and choose home delivery option
+    #And I Land on the Plan included basket page and choose home delivery option
     And Click on 'plus' accordion at get promo code section and enter valid <promoCode> details in Basket page
     And Select 'I need a new sim' option
     And click on "go to checkout" button
