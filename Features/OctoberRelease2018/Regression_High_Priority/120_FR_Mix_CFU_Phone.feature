@@ -22,5 +22,5 @@ Feature: 120_FR_Mix_CFU_Phone
     Then Choose <consumer> <status> Business preferences <B1> <B2> <B3> <B4> And Channel Preferences <Text> <Email> <Phone> <Post> <MBBStatus> <DeviceType>
 
     Examples:
-      | username               | password | Firstname | Surname | BSCstatus | Username     | Action    | handset  | consumer | B1     | B2  | B3  | B4  | Text   | Email | Phone | Post | status  | MBBStatus | DeviceType | upFront | term | data |
-      | gb083240_146602@o2.com | test123  | Test      | Accepta | Enabled   | TEST ACCEPTA | enterCode | iPhone X | Me       | Select | Not | Not | Not | Select | Not   | Not   | Not  | Enabled | No        | Connected  | max     | max  | max  |
+      | username                     | password | Firstname | Surname | BSCstatus | Username     | Action    | handset  | consumer | B1     | B2  | B3  | B4  | Text   | Email | Phone | Post | status  | MBBStatus | DeviceType | upFront | term | data |
+      | ins_nov1474@stf.ref.o2.co.uk | test123  | Test      | Accepta | Enabled   | TEST ACCEPTA | enterCode | iPhone X | Me       | Select | Not | Not | Not | Select | Not   | Not   | Not  | Enabled | No        | Connected  | max     | max  | max  |

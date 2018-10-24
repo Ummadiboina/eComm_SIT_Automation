@@ -15,4 +15,4 @@ Feature: 134_FR_UpFront_AFU_PAYM_Tablet
 
     Examples:
       | user        | Device                              | Tariffs | upFront | term | data | BSCstatus | BillCapAmount | consumer | B1     | B2  | B3     | B4  | Text | Email  | Phone | Post | status  | MBBStatus | DeviceType |
-      | 07743800890 | iPad Pro 10.5 inch 256GB Space Grey | Refresh | avg     | avg  | min  | Enabled   | £10           | Me       | Select | Not | Select | Not | Not  | Select | Not   | Not  | Enabled | No        | Connected  |
+      | 07568410956 | iPad Pro 10.5 inch 256GB Space Grey | Refresh | avg     | avg  | min  | Enabled   | £10           | Me       | Select | Not | Select | Not | Not  | Select | Not   | Not  | Enabled | No        | Connected  |

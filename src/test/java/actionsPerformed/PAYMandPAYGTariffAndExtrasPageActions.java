@@ -1375,7 +1375,7 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 					Screenshots.captureScreenshot();
 
 					log.debug("Bill spend cap section is enabled ie:"+PAYMandPAYGTariffAndExtrasPage.SpendCapSection.getText());
-					Thread.sleep(2000);
+					Thread.sleep(4000);
 					//Spend cap header text validation
 					String sepenCapHeaderTxt = PAYMandPAYGTariffAndExtrasPage.SpendCapHeader.getText();
 					Thread.sleep(4000);
