@@ -537,7 +537,7 @@ public class UpgradeCustomerPageActions extends Environment {
 
     public static void selectTariffWithRibbonAndOverlayUpgradeJourney(String Tariff)
             throws IOException, InterruptedException {
-        Thread.sleep(6000);
+        Thread.sleep(8000);
         log.debug('\n' + "To select Tariff With Ribbon And Overlay in upgrade journey");
         List<WebElement> TariffList = driver
                 .findElements(By.xpath("(//div[contains(@class, 'grid-tile')]/div/button[@id='callToAction'])[1] | (//button[@class='btn buyNowBtn ng-binding ng-pristine ng-valid'])[1] | (//button[@class='secondary selectButton tst-select ng-binding ng-pristine ng-valid'])[1] | (//button[@class='secondary selectButton tariff-select buyNowBtn'])[1]"));
@@ -585,6 +585,7 @@ public class UpgradeCustomerPageActions extends Environment {
             MonthlyCost = MonthlyPound + MonthlyPence + " a month";
 
             TextOfTariffTile = UpfrontCost + MonthlyCost;
+            Thread.sleep(3000);
             log.debug("UpfrontCost is " + UpfrontCost);
             log.debug("MonthlyCost is " + MonthlyCost);
             log.debug("TextOfTariffTile is " + TextOfTariffTile);
@@ -600,7 +601,7 @@ public class UpgradeCustomerPageActions extends Environment {
                 flag = true;
             }
         }
-
+        Thread.sleep(3000);
         if (flag == false) {
             Screenshots.captureScreenshot();
             driver.findElement(By.xpath("(//div[contains(@class, 'grid-tile')]/div/button[@id='callToAction'])[1] | (//button[@class='btn buyNowBtn ng-binding ng-pristine ng-valid'])[1] | (//button[@class='secondary selectButton tst-select ng-binding ng-pristine ng-valid'])[1] | (//button[@class='secondary selectButton tariff-select buyNowBtn'])[1]")).click();
@@ -1965,7 +1966,7 @@ public class UpgradeCustomerPageActions extends Environment {
     public static void selectTariffFromRecommendedSection() throws IOException, InterruptedException {
         log.debug("Going to select tariff from recommended section");
         Screenshots.captureScreenshot();
-        Thread.sleep(3000);
+        Thread.sleep(5000);
         executor.executeScript("arguments[0].click();", UpgradeCustomerPage.RandomTariffUpgrade);
 
     }
@@ -3315,6 +3316,7 @@ public class UpgradeCustomerPageActions extends Environment {
 
      public static void clickOnGetStartedCTA(){
         try {
+            Thread.sleep(3000);
             if(driver.findElements(By.xpath("//button[@class='btnblue'] | //button[@class='btnblue ng-binding']")).size()>0){
                 /*scrollToAnElement.scrollToElement(UpgradeCustomerPage.chooseDeviseSection);
                 Screenshots.captureScreenshot();*/
@@ -3337,7 +3339,7 @@ public class UpgradeCustomerPageActions extends Environment {
     }
 
     public static void clickOnDevice_ConfirmCTA() throws Exception {
-        Thread.sleep(5000);
+        Thread.sleep(6000);
         Screenshots.captureScreenshot();
         if (driver.findElements(By.xpath("//div[@class='choose-your-phone-container clear-row']/button[normalize-space()='Confirm']")).size()>0) {
             JavascriptExecutor jse = (JavascriptExecutor) driver;

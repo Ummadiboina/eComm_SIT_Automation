@@ -45,4 +45,4 @@ Feature: 127_BSC_CFU_Phones_Edit_BSC_Component_from_Your_Package_in_Upgrade_Opti
 
     Examples:
       | username                      | password | handset  | houseNumber | PostCode | BillCap   | CapAmount | NewCapAmount | BSCstatus | Username     | Action    | tariff                   | consumer | B1     | B2     | B3     | B4  | Text   | Email  | Phone  | Post   | status  | MBBStatus | DeviceType |
-      | 05ap22044765@stf.ref.o2.co.uk | test123  | iPhone X | 11          | SL11ER   | CapMyBill | £5        | £10          | Enabled   | TEST ACCEPTA | enterCode | 129.99upfront37.00amonth | Me       | Select | Select | Select | Not | Select | Select | Select | Select | Enabled | No        | Connected  |
+      | till88634368@stf.ref.o2.co.uk | test123  | iPhone X | 11          | SL11ER   | CapMyBill | £5        | £10          | Enabled   | TEST ACCEPTA | enterCode | 129.99upfront37.00amonth | Me       | Select | Select | Select | Not | Select | Select | Select | Select | Enabled | No        | Connected  |

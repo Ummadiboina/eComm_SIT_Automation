@@ -921,7 +921,7 @@ public class E2EOrderPlaced_Steps {
         PageFactory.initElements(driver, MouseHoverPage.class);
         PageFactory.initElements(driver, UpgradePhonesListingPage.class);
         MouseHoverAction.UpgradeandUpgradeNow();
-        Thread.sleep(8000);
+        Thread.sleep(10000);
         Autoredirection.redirectUpgrades();
     }
 
@@ -1351,6 +1351,7 @@ public class E2EOrderPlaced_Steps {
         try {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, UpgradeCustomerPage.class);
+            Thread.sleep(4000);
             BasketPageActions.EnterValidPromoCodeDetails(promoCode);
             Thread.sleep(4000);
         } catch (Exception e) {
@@ -6930,7 +6931,7 @@ public class E2EOrderPlaced_Steps {
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         try {
             PageFactory.initElements(driver, UpgradePhonesListingPage.class);
-            Thread.sleep(3000);
+            Thread.sleep(4000);
             UpgradeCustomerPageActions.selectTariffFromRecommendedSection();
             Thread.sleep(2000);
         } catch (Exception e) {
@@ -7264,7 +7265,7 @@ public class E2EOrderPlaced_Steps {
     @When("^I click on respective ([^\"]*) data filter$")
     public void clickOnRespectiveDataFilter(String range) {
         try {
-            driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+            driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
             PageFactory.initElements(driver, PAYMandPAYGTariffAndExtrasPage.class);
             Thread.sleep(5000);
             DataFilterRange = range;
@@ -7993,6 +7994,7 @@ public class E2EOrderPlaced_Steps {
         try {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, Agent_DealBuilderPage.class);
+            Thread.sleep(2000);
             Agent_DealBuilderPageActions.AgentTradeInQuestionair();
             Thread.sleep(4000);
         } catch (Exception e) {
@@ -8058,7 +8060,7 @@ public class E2EOrderPlaced_Steps {
         } catch (Exception e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
-            Assert.fail("Unable to click on Trade in Button");
+            Assert.fail("Unable to click on BuyOut in Button");
         }
 
     }

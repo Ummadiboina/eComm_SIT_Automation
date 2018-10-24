@@ -393,7 +393,8 @@ public class Agent_DealBuilderPageActions extends Environment {
     }
 
     public static void checkout() throws InterruptedException, IOException {
-        Thread.sleep(3000);
+        Thread.sleep(5000);
+        log.debug("Clicking on Checkout CTA\n");
         Agent_DealBuilderPage.Checkout.click();
         log.debug("Clicked on Checkout ");
 
@@ -536,13 +537,13 @@ public class Agent_DealBuilderPageActions extends Environment {
 
 
     public static void AgentTradeInQuestionair() throws InterruptedException, IOException {
-        Thread.sleep(5000);
+        Thread.sleep(8000);
         if (Agent_DealBuilderPage.AgentTradeInBtn.isDisplayed()) {
             log.debug("The trade in button is displayed");
             //Agent_DealBuilderPage.AgentTradeInBtn.click();
 
             JavascriptExecutor jse = (JavascriptExecutor) driver;
-            jse.executeScript("window.scrollBy(0,300)", "");
+            jse.executeScript("window.scrollBy(0,-300)", "");
             Screenshots.captureScreenshot();
 
             Thread.sleep(3000);
@@ -1225,7 +1226,7 @@ public class Agent_DealBuilderPageActions extends Environment {
                 if (driver.findElements(By.xpath("(//th[contains(text(),'Spend cap')])[1]")).size() > 0) {
 
                     log.debug("Bill spend cap section is enabled");
-
+                    Thread.sleep(4000);
                     List<WebElement> menuOuter = driver.findElements(By.xpath("//*[@class='billSpendCapSelection']/select/option"));
 
                     Thread.sleep(3000);

@@ -896,7 +896,7 @@ public class ConnectedDeviceDetailsPageAction extends Environment {
         Screenshots.captureScreenshot();
 
         String TnEPageFRCalcupFrontCost = ConnectedDeviceDetailsPage.upfrentVal.getText();
-        Thread.sleep(2000);
+        Thread.sleep(3000);
         String TnEPageNewLayoutupFrontCost = ConnectedDeviceDetailsPage.upfrentVal_NewLayout.getText();
         Thread.sleep(4000);
 
