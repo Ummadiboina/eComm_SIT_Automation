@@ -1269,7 +1269,7 @@ public class E2EOrderPlaced_Steps {
     public void i_Land_on_the_Plan_included_basket_page_and_choose_home_delivery_option() {
         try {
             Thread.sleep(5000);
-            driver.findElement(By.xpath("//button[@id='btnAddToBasket']")).click();
+            driver.findElement(By.xpath("//button[@id='btnAddToBasket'] | //input[@id='qa-proceed-to-basket']")).click();
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, BasketPage.class);
             Thread.sleep(7000);
@@ -10910,6 +10910,26 @@ public class E2EOrderPlaced_Steps {
             // TODO Auto-generated catch block
             log.debug("Unable to validate edit link");
             Assert.fail("Unable to validate edit link");
+        }
+    }
+
+    //As per new requirement Oct#2 Release, when we try to edit BSC from basket page, it should navigate back to package option page should not retain any value in both the cases
+
+    @And("^Validate and click on BSC 'Edit' link at basket page to change ([^\"]*) ([^\"]*)$")
+    public void ValidateAndClickEditLink_BasketPage(String BillCap, String CapAmount) {
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, PAYMandPAYGTariffAndExtrasPage.class);
+            Thread.sleep(5000);
+            PAYMandPAYGTariffAndExtrasPageActions.validateBSCEditLink();
+            Thread.sleep(5000);
+            PAYMandPAYGTariffAndExtrasPageActions.clickBSCEditLink();
+            Thread.sleep(5000);
+            PAYMandPAYGTariffAndExtrasPageActions.packageOptionsPage();
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            log.debug("Unable to validate edit link in basket page");
+            Assert.fail("Unable to validate edit link in basket page");
         }
     }
 
