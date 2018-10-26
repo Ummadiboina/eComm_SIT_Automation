@@ -196,7 +196,7 @@ formatter.examples({
   "keyword": "Examples"
 });
 formatter.before({
-  "duration": 40123158191,
+  "duration": 50237337934,
   "status": "passed"
 });
 formatter.scenario({
@@ -363,14 +363,14 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.LoginAgentShop()"
 });
 formatter.result({
-  "duration": 3204606922,
+  "duration": 4337957090,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.performs_Acquisition_for_New_user()"
 });
 formatter.result({
-  "duration": 11538053622,
+  "duration": 12182025570,
   "status": "passed"
 });
 formatter.match({
@@ -383,7 +383,7 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.SelectValid_Device(String)"
 });
 formatter.result({
-  "duration": 35323810579,
+  "duration": 36275826056,
   "status": "passed"
 });
 formatter.match({
@@ -396,14 +396,14 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.SelectTariff(String)"
 });
 formatter.result({
-  "duration": 23858250478,
+  "duration": 23953232647,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.select_a_valid_Handset_and_Tariff_combination()"
 });
 formatter.result({
-  "duration": 14735190673,
+  "duration": 14919285114,
   "status": "passed"
 });
 formatter.match({
@@ -416,7 +416,7 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.select_valid_Random_from_extras_tab(String)"
 });
 formatter.result({
-  "duration": 3407076965,
+  "duration": 3429886486,
   "status": "passed"
 });
 formatter.match({
@@ -429,7 +429,7 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.ValidateBillCap_AgentDealBuilder(String)"
 });
 formatter.result({
-  "duration": 20589618625,
+  "duration": 25671909046,
   "status": "passed"
 });
 formatter.match({
@@ -446,14 +446,14 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.addBillCap_AgentDealBuilder(String,String)"
 });
 formatter.result({
-  "duration": 41115937823,
+  "duration": 45068796815,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.validate_all_the_Basket_content_and_checkout()"
 });
 formatter.result({
-  "duration": 18772466413,
+  "duration": 20754671267,
   "status": "passed"
 });
 formatter.match({
@@ -470,14 +470,14 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.ValidateYourCapInAgentDealSummary(String,String)"
 });
 formatter.result({
-  "duration": 17540455929,
+  "duration": 25538013360,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.advisory_checks()"
 });
 formatter.result({
-  "duration": 23485180587,
+  "duration": 23477981685,
   "status": "passed"
 });
 formatter.match({
@@ -506,7 +506,7 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.enter_ten_digit_contact_number_perform_the_credit_checks(String,String,String,String,String)"
 });
 formatter.result({
-  "duration": 98064853777,
+  "duration": 99220640743,
   "status": "passed"
 });
 formatter.match({
@@ -531,14 +531,14 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.register_the_customer(String,String,String,String)"
 });
 formatter.result({
-  "duration": 36725506420,
+  "duration": 37850268170,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.Validate_Register_Status()"
 });
 formatter.result({
-  "duration": 16079989935,
+  "duration": 16100052201,
   "status": "passed"
 });
 formatter.match({
@@ -595,32 +595,32 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.Choose_Your_Preferences_AFA(String,String,String,String,String,String,String,String,String,String,String,String)"
 });
 formatter.result({
-  "duration": 85174568537,
+  "duration": 84920428578,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.HomeDelivery_Address()"
 });
 formatter.result({
-  "duration": 5000512454,
+  "duration": 5000424685,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.pay_by_card_payn_device()"
 });
 formatter.result({
-  "duration": 57420932341,
+  "duration": 59026533953,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.order_confirmation_message_should_be_displayed()"
 });
 formatter.result({
-  "duration": 5814936768,
+  "duration": 5690161999,
   "status": "passed"
 });
 formatter.after({
-  "duration": 20222194578,
+  "duration": 20292363636,
   "status": "passed"
 });
 formatter.uri("05_Reg_CFA_ Cookie_pop_up_for_the_Shop_pages.feature");
@@ -632,7 +632,7 @@ formatter.feature({
   "keyword": "Feature"
 });
 formatter.before({
-  "duration": 42982694759,
+  "duration": 40962005927,
   "status": "passed"
 });
 formatter.scenario({
@@ -713,81 +713,88 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.i_am_an_CFA_user_and_Lands_on_shop_page()"
 });
 formatter.result({
-  "duration": 962696656,
+  "duration": 668412475,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.a_cookies_pop_up_should_be_displayed()"
 });
 formatter.result({
-  "duration": 917252085,
+  "duration": 681425171,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.clickOnCookiePolicyLink()"
 });
 formatter.result({
-  "duration": 20770552849,
+  "duration": 3961556116,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.theCookiePolicyPageShouldBeOpened()"
 });
 formatter.result({
-  "duration": 28474479,
-  "error_message": "java.lang.AssertionError: Unable to find \u0027cookie policy\u0027 page\r\n\tat org.testng.Assert.fail(Assert.java:94)\r\n\tat steps.E2EOrderPlaced_Steps.theCookiePolicyPageShouldBeOpened(E2EOrderPlaced_Steps.java:9980)\r\n\tat ✽.Then the \u0027cookie policy\u0027 page should be opened(05_Reg_CFA_ Cookie_pop_up_for_the_Shop_pages.feature:10)\r\n",
-  "status": "failed"
+  "duration": 17471350232,
+  "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.Delete_all_cookies()"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 1656699669,
+  "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.launch_the_shop_phones_page()"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 17455212563,
+  "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.clickOnManageCookiesLink()"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 3833589383,
+  "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.theManageCookiesPageShouldBeOpened()"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 5961210705,
+  "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.Delete_all_cookies()"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 3001613448,
+  "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.launch_the_shop_phones_page()"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 19121672550,
+  "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.clickOnCloseIcon()"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 28759731741,
+  "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.theShopHomePageShouldBeDisplayedWithoutTheCookies()"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 23508475116,
+  "status": "passed"
 });
 formatter.after({
-  "duration": 20811341448,
+  "duration": 20098617120,
   "status": "passed"
 });
 formatter.uri("06_Reg_CFA_PayG_Freesim_Phones_delivery_page_mark_mandatory_fields_with_asterisk.feature");
@@ -891,7 +898,7 @@ formatter.examples({
   "keyword": "Examples"
 });
 formatter.before({
-  "duration": 39340909139,
+  "duration": 65749401991,
   "status": "passed"
 });
 formatter.scenario({
@@ -962,28 +969,28 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.i_am_an_CFA_user_and_Lands_on_shop_page()"
 });
 formatter.result({
-  "duration": 910923203,
+  "duration": 737794647,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.navigate_to_PayG_SIMO_page()"
 });
 formatter.result({
-  "duration": 92393124973,
+  "duration": 132186542092,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.selectAPayAsYouGoBundle()"
 });
 formatter.result({
-  "duration": 45390686568,
+  "duration": 15366642778,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.verify_copy_text_allFields_narked_with_asterisk_PAYG_sim_journey()"
 });
 formatter.result({
-  "duration": 530330356,
+  "duration": 464182260,
   "status": "passed"
 });
 formatter.match({
@@ -996,7 +1003,7 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.verifyAsteriskIsDisplayedAgainstMandatoryFieldsOf(String)"
 });
 formatter.result({
-  "duration": 604607912,
+  "duration": 5628603937,
   "status": "passed"
 });
 formatter.match({
@@ -1017,18 +1024,18 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.i_enter_details_in_Delivery_PageTEST_and_ACCEPTA_new(String,String,String)"
 });
 formatter.result({
-  "duration": 71629265527,
+  "duration": 71549986286,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.OrderConfirmationPage()"
 });
 formatter.result({
-  "duration": 23807967319,
+  "duration": 23569890910,
   "status": "passed"
 });
 formatter.after({
-  "duration": 22077141709,
+  "duration": 20084034151,
   "status": "passed"
 });
 formatter.uri("07_Reg_CFA_PayG_Freesim_To_Show_BigBundle_DataRollOver_In_DeliveryPage.feature");
@@ -1117,7 +1124,7 @@ formatter.examples({
   "keyword": "Examples"
 });
 formatter.before({
-  "duration": 52366241296,
+  "duration": 63119982659,
   "status": "passed"
 });
 formatter.scenario({
@@ -1181,14 +1188,14 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.i_am_an_CFA_user_and_Lands_on_shop_page()"
 });
 formatter.result({
-  "duration": 904171760,
+  "duration": 472435656,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.navigate_to_PayG_SIMO_page()"
 });
 formatter.result({
-  "duration": 90373126516,
+  "duration": 118325020836,
   "status": "passed"
 });
 formatter.match({
@@ -1209,7 +1216,7 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.selectAPayAsYouGoBundleHavingDataRollOver(String,String,String)"
 });
 formatter.result({
-  "duration": 35642865030,
+  "duration": 38630190135,
   "status": "passed"
 });
 formatter.match({
@@ -1222,7 +1229,7 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.validateYourOrderSectionDeliveryPage(String)"
 });
 formatter.result({
-  "duration": 10163846988,
+  "duration": 10127916478,
   "status": "passed"
 });
 formatter.match({
@@ -1243,18 +1250,18 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.i_enter_details_in_Delivery_PageTEST_and_ACCEPTA_new(String,String,String)"
 });
 formatter.result({
-  "duration": 70970616339,
+  "duration": 71616990931,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.free_Sim_order_confirmation_is_displayed()"
 });
 formatter.result({
-  "duration": 2437792724,
+  "duration": 2444502013,
   "status": "passed"
 });
 formatter.after({
-  "duration": 20094364136,
+  "duration": 20157847202,
   "status": "passed"
 });
 formatter.uri("08_Reg_CFA_Phones_checkout_delivery_validate_10_digit_contact_number.feature");
@@ -1469,7 +1476,7 @@ formatter.examples({
   "keyword": "Examples"
 });
 formatter.before({
-  "duration": 38709633078,
+  "duration": 61951896306,
   "status": "passed"
 });
 formatter.scenario({
@@ -1652,14 +1659,14 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.i_am_an_CFA_user_and_Lands_on_shop_page()"
 });
 formatter.result({
-  "duration": 763930227,
+  "duration": 535436585,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.navigate_to_PAYM_Phones_page()"
 });
 formatter.result({
-  "duration": 59924039980,
+  "duration": 68346096881,
   "status": "passed"
 });
 formatter.match({
@@ -1672,14 +1679,14 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.Choose_PAYM_Handset(String)"
 });
 formatter.result({
-  "duration": 31391678210,
+  "duration": 31704158195,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.click_on_the_color_dropdown()"
 });
 formatter.result({
-  "duration": 22292076636,
+  "duration": 43249080823,
   "status": "passed"
 });
 formatter.match({
@@ -1692,7 +1699,7 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.verify_the_name_of_the_colour_is_next_to_the_colour_tile_in_CFAPhoneColour(String)"
 });
 formatter.result({
-  "duration": 315074437,
+  "duration": 244774519,
   "status": "passed"
 });
 formatter.match({
@@ -1705,21 +1712,21 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.select_color_of_the_device(String)"
 });
 formatter.result({
-  "duration": 19670159590,
+  "duration": 19748846007,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.Navigate_to_View_tariff_page()"
 });
 formatter.result({
-  "duration": 29513057321,
+  "duration": 131959399071,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.land_on_the_Tariffs_and_extra_page()"
 });
 formatter.result({
-  "duration": 16183186121,
+  "duration": 16069196727,
   "status": "passed"
 });
 formatter.match({
@@ -1732,7 +1739,7 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.ValidateBillSpendCap(String)"
 });
 formatter.result({
-  "duration": 37969098441,
+  "duration": 39887660606,
   "status": "passed"
 });
 formatter.match({
@@ -1753,14 +1760,14 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.ChooseBillSpendCap(String,String,String)"
 });
 formatter.result({
-  "duration": 70693588801,
+  "duration": 73299522053,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.i_Land_on_the_basket_page_and_choose_home_delivery_option()"
 });
 formatter.result({
-  "duration": 40632927027,
+  "duration": 60049528865,
   "status": "passed"
 });
 formatter.match({
@@ -1781,7 +1788,7 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.ValidateBillCapIn_BasketPage(String,String,String)"
 });
 formatter.result({
-  "duration": 26349790736,
+  "duration": 31392820350,
   "status": "passed"
 });
 formatter.match({
@@ -1794,7 +1801,7 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.CheckoutFromBasket(String)"
 });
 formatter.result({
-  "duration": 34994968889,
+  "duration": 48925900287,
   "status": "passed"
 });
 formatter.match({
@@ -1811,7 +1818,7 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.enter_a_digit_home_number(String,String)"
 });
 formatter.result({
-  "duration": 84032065551,
+  "duration": 83379896837,
   "status": "passed"
 });
 formatter.match({
@@ -1828,7 +1835,7 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.isThisOrder4UorSomeoneElse(String,String)"
 });
 formatter.result({
-  "duration": 78822972886,
+  "duration": 78776614731,
   "status": "passed"
 });
 formatter.match({
@@ -1841,28 +1848,28 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.CreditCheckPaymentPage_HomeDelivery(String)"
 });
 formatter.result({
-  "duration": 165485229426,
+  "duration": 170888017695,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.AgreementsPageConfirmation()"
 });
 formatter.result({
-  "duration": 51494361233,
+  "duration": 51468530325,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.ReviewPageConfirmation()"
 });
 formatter.result({
-  "duration": 58760903986,
+  "duration": 81524665516,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.OrderConfirmationPage()"
 });
 formatter.result({
-  "duration": 3492253023,
+  "duration": 3578433090,
   "status": "passed"
 });
 formatter.match({
@@ -1919,11 +1926,11 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.Choose_Your_Preferences(String,String,String,String,String,String,String,String,String,String,String,String)"
 });
 formatter.result({
-  "duration": 96701114588,
+  "duration": 96805173723,
   "status": "passed"
 });
 formatter.after({
-  "duration": 20116528137,
+  "duration": 20157259013,
   "status": "passed"
 });
 formatter.uri("102_FR_Upfront_CFA_PayMTablets_Till_TnE.feature");
@@ -2100,7 +2107,7 @@ formatter.examples({
   "keyword": "Examples"
 });
 formatter.before({
-  "duration": 40932649778,
+  "duration": 70502853351,
   "status": "passed"
 });
 formatter.scenario({
@@ -2237,14 +2244,14 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.i_am_an_CFA_user_and_Lands_on_shop_page()"
 });
 formatter.result({
-  "duration": 869478464,
+  "duration": 745695908,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.navigate_to_PAYM_Tablets_page()"
 });
 formatter.result({
-  "duration": 62582324645,
+  "duration": 69727841805,
   "status": "passed"
 });
 formatter.match({
@@ -2257,7 +2264,7 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.select_any_available_Tablet(String)"
 });
 formatter.result({
-  "duration": 61778420508,
+  "duration": 77987637071,
   "status": "passed"
 });
 formatter.match({
@@ -2278,14 +2285,14 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.fr_PDpage(String,String,String)"
 });
 formatter.result({
-  "duration": 261108033357,
+  "duration": 253123497987,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.i_Land_on_the_basket_page_and_choose_home_delivery_option()"
 });
 formatter.result({
-  "duration": 37624277946,
+  "duration": 51946612873,
   "status": "passed"
 });
 formatter.match({
@@ -2298,14 +2305,14 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.CheckoutFromBasket(String)"
 });
 formatter.result({
-  "duration": 35729867944,
+  "duration": 39218581022,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.verify_copy_text_allFields_narked_with_asterisk()"
 });
 formatter.result({
-  "duration": 539231771,
+  "duration": 382906083,
   "status": "passed"
 });
 formatter.match({
@@ -2318,7 +2325,7 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.verifyAsteriskIsDisplayedAgainstMandatoryFieldsOf(String)"
 });
 formatter.result({
-  "duration": 1099649351,
+  "duration": 5856737182,
   "status": "passed"
 });
 formatter.match({
@@ -2335,7 +2342,7 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.DeliveryPage_Inputs_gdpr(String,String)"
 });
 formatter.result({
-  "duration": 37457757205,
+  "duration": 38164778058,
   "status": "passed"
 });
 formatter.match({
@@ -2352,14 +2359,14 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.isThisOrder4UorSomeoneElse(String,String)"
 });
 formatter.result({
-  "duration": 78810220985,
+  "duration": 78948185623,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.verify_copy_text_allFields_narked_with_asterisk()"
 });
 formatter.result({
-  "duration": 2058918084,
+  "duration": 7244939792,
   "status": "passed"
 });
 formatter.match({
@@ -2372,28 +2379,28 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.verifyAsteriskIsDisplayedAgainstMandatoryFieldsOf(String)"
 });
 formatter.result({
-  "duration": 128080496018,
+  "duration": 147681147711,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.AgreementsPageConfirmation()"
 });
 formatter.result({
-  "duration": 51381583073,
+  "duration": 51670117230,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.ReviewPageConfirmation()"
 });
 formatter.result({
-  "duration": 57538034512,
+  "duration": 67131471091,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.OrderConfirmationPage()"
 });
 formatter.result({
-  "duration": 3482677064,
+  "duration": 3576442026,
   "status": "passed"
 });
 formatter.match({
@@ -2450,11 +2457,11 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.Choose_Your_Preferences(String,String,String,String,String,String,String,String,String,String,String,String)"
 });
 formatter.result({
-  "duration": 96849402856,
+  "duration": 97467028003,
   "status": "passed"
 });
 formatter.after({
-  "duration": 19999883211,
+  "duration": 20217549037,
   "status": "passed"
 });
 formatter.uri("111_FR_Upfront_CFA_PayMTablets_Till_TnE.feature");
@@ -2631,7 +2638,7 @@ formatter.examples({
   "keyword": "Examples"
 });
 formatter.before({
-  "duration": 34155882360,
+  "duration": 70238822915,
   "status": "passed"
 });
 formatter.scenario({
@@ -2768,14 +2775,14 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.i_am_an_CFA_user_and_Lands_on_shop_page()"
 });
 formatter.result({
-  "duration": 886057846,
+  "duration": 748141030,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.navigate_to_PAYM_Tablets_page()"
 });
 formatter.result({
-  "duration": 57167808600,
+  "duration": 71673727405,
   "status": "passed"
 });
 formatter.match({
@@ -2788,7 +2795,7 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.select_any_available_Tablet(String)"
 });
 formatter.result({
-  "duration": 70761076692,
+  "duration": 79066486176,
   "status": "passed"
 });
 formatter.match({
@@ -2809,14 +2816,14 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.fr_PDpage(String,String,String)"
 });
 formatter.result({
-  "duration": 1251617971361,
+  "duration": 1237714034948,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.i_Land_on_the_basket_page_and_choose_home_delivery_option()"
 });
 formatter.result({
-  "duration": 39354667900,
+  "duration": 39404801770,
   "status": "passed"
 });
 formatter.match({
@@ -2829,14 +2836,14 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.CheckoutFromBasket(String)"
 });
 formatter.result({
-  "duration": 33770979659,
+  "duration": 35150780447,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.verify_copy_text_allFields_narked_with_asterisk()"
 });
 formatter.result({
-  "duration": 369802642,
+  "duration": 365542137,
   "status": "passed"
 });
 formatter.match({
@@ -2849,7 +2856,7 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.verifyAsteriskIsDisplayedAgainstMandatoryFieldsOf(String)"
 });
 formatter.result({
-  "duration": 780854666,
+  "duration": 5802064676,
   "status": "passed"
 });
 formatter.match({
@@ -2866,7 +2873,7 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.DeliveryPage_Inputs_gdpr(String,String)"
 });
 formatter.result({
-  "duration": 37664343163,
+  "duration": 37518916346,
   "status": "passed"
 });
 formatter.match({
@@ -2883,14 +2890,14 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.isThisOrder4UorSomeoneElse(String,String)"
 });
 formatter.result({
-  "duration": 78802592212,
+  "duration": 78832133067,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.verify_copy_text_allFields_narked_with_asterisk()"
 });
 formatter.result({
-  "duration": 1635299251,
+  "duration": 820499889,
   "status": "passed"
 });
 formatter.match({
@@ -2903,28 +2910,28 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.verifyAsteriskIsDisplayedAgainstMandatoryFieldsOf(String)"
 });
 formatter.result({
-  "duration": 121160138065,
+  "duration": 124546544216,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.AgreementsPageConfirmation()"
 });
 formatter.result({
-  "duration": 51507425278,
+  "duration": 51483663969,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.ReviewPageConfirmation()"
 });
 formatter.result({
-  "duration": 55465664857,
+  "duration": 54818931033,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.OrderConfirmationPage()"
 });
 formatter.result({
-  "duration": 3509609933,
+  "duration": 3509639106,
   "status": "passed"
 });
 formatter.match({
@@ -2981,11 +2988,11 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.Choose_Your_Preferences(String,String,String,String,String,String,String,String,String,String,String,String)"
 });
 formatter.result({
-  "duration": 96669044789,
+  "duration": 96859747844,
   "status": "passed"
 });
 formatter.after({
-  "duration": 20292888848,
+  "duration": 20342828932,
   "status": "passed"
 });
 formatter.uri("112_FR_Term_CFA_PayMTablets_Till_TnE.feature");
@@ -3132,7 +3139,7 @@ formatter.examples({
     },
     {
       "cells": [
-        "Galaxy Tab A 2016 7.0",
+        "iPad Pro 10.5 inch",
         "£39",
         "8GB",
         "Space Grey",
@@ -3162,7 +3169,7 @@ formatter.examples({
   "keyword": "Examples"
 });
 formatter.before({
-  "duration": 39536951917,
+  "duration": 39864827074,
   "status": "passed"
 });
 formatter.scenario({
@@ -3191,7 +3198,7 @@ formatter.step({
 });
 formatter.step({
   "line": 7,
-  "name": "select any available Galaxy Tab A 2016 7.0 Tablet",
+  "name": "select any available iPad Pro 10.5 inch Tablet",
   "matchedColumns": [
     0
   ],
@@ -3299,27 +3306,27 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.i_am_an_CFA_user_and_Lands_on_shop_page()"
 });
 formatter.result({
-  "duration": 884971712,
+  "duration": 713831807,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.navigate_to_PAYM_Tablets_page()"
 });
 formatter.result({
-  "duration": 58311588120,
+  "duration": 61082016899,
   "status": "passed"
 });
 formatter.match({
   "arguments": [
     {
-      "val": "Galaxy Tab A 2016 7.0",
+      "val": "iPad Pro 10.5 inch",
       "offset": 21
     }
   ],
   "location": "E2EOrderPlaced_Steps.select_any_available_Tablet(String)"
 });
 formatter.result({
-  "duration": 60180326569,
+  "duration": 116002474496,
   "status": "passed"
 });
 formatter.match({
@@ -3340,15 +3347,15 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.fr_PDpage(String,String,String)"
 });
 formatter.result({
-  "duration": 131671822235,
-  "error_message": "java.lang.AssertionError:  Not Matched \u003d \u003d\u003dThe Monthly upfront price from the PD page and TnE FR Calc Upfront value are not matched  + ie, ::: £0.00\r\n\tat org.junit.Assert.fail(Assert.java:88)\r\n\tat actionsPerformed.ConnectedDeviceDetailsPageAction.flexibleReressh_CFA(ConnectedDeviceDetailsPageAction.java:909)\r\n\tat steps.E2EOrderPlaced_Steps.fr_PDpage(E2EOrderPlaced_Steps.java:11193)\r\n\tat ✽.And Build your plan with min max and max(112_FR_Term_CFA_PayMTablets_Till_TnE.feature:8)\r\n",
-  "status": "failed"
+  "duration": 125739732272,
+  "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.i_Land_on_the_basket_page_and_choose_home_delivery_option()"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 39822219863,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -3360,13 +3367,15 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.CheckoutFromBasket(String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 36492855563,
+  "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.verify_copy_text_allFields_narked_with_asterisk()"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 377089317,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -3378,7 +3387,8 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.verifyAsteriskIsDisplayedAgainstMandatoryFieldsOf(String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 5825679628,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -3394,7 +3404,8 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.DeliveryPage_Inputs_gdpr(String,String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 37566192612,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -3410,13 +3421,15 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.isThisOrder4UorSomeoneElse(String,String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 78755855784,
+  "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.verify_copy_text_allFields_narked_with_asterisk()"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 3480580402,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -3428,25 +3441,29 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.verifyAsteriskIsDisplayedAgainstMandatoryFieldsOf(String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 130414641009,
+  "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.AgreementsPageConfirmation()"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 51535091528,
+  "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.ReviewPageConfirmation()"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 53382649502,
+  "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.OrderConfirmationPage()"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 3621551339,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -3502,10 +3519,11 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.Choose_Your_Preferences(String,String,String,String,String,String,String,String,String,String,String,String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 96920140500,
+  "status": "passed"
 });
 formatter.after({
-  "duration": 20244548980,
+  "duration": 20496998363,
   "status": "passed"
 });
 formatter.uri("113_FR_Term_CFA_PayMTablets_Till_TnE.feature");
@@ -3682,7 +3700,7 @@ formatter.examples({
   "keyword": "Examples"
 });
 formatter.before({
-  "duration": 39672081647,
+  "duration": 43260569255,
   "status": "passed"
 });
 formatter.scenario({
@@ -3819,14 +3837,14 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.i_am_an_CFA_user_and_Lands_on_shop_page()"
 });
 formatter.result({
-  "duration": 916779975,
+  "duration": 709389604,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.navigate_to_PAYM_Tablets_page()"
 });
 formatter.result({
-  "duration": 58152198210,
+  "duration": 58388962088,
   "status": "passed"
 });
 formatter.match({
@@ -3839,7 +3857,7 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.select_any_available_Tablet(String)"
 });
 formatter.result({
-  "duration": 61616545124,
+  "duration": 64173876576,
   "status": "passed"
 });
 formatter.match({
@@ -3860,14 +3878,14 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.fr_PDpage(String,String,String)"
 });
 formatter.result({
-  "duration": 200688343931,
+  "duration": 180513032338,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.i_Land_on_the_basket_page_and_choose_home_delivery_option()"
 });
 formatter.result({
-  "duration": 41667741358,
+  "duration": 38621720504,
   "status": "passed"
 });
 formatter.match({
@@ -3880,14 +3898,14 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.CheckoutFromBasket(String)"
 });
 formatter.result({
-  "duration": 34583231704,
+  "duration": 33716944039,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.verify_copy_text_allFields_narked_with_asterisk()"
 });
 formatter.result({
-  "duration": 377334445,
+  "duration": 634092988,
   "status": "passed"
 });
 formatter.match({
@@ -3900,7 +3918,7 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.verifyAsteriskIsDisplayedAgainstMandatoryFieldsOf(String)"
 });
 formatter.result({
-  "duration": 826711537,
+  "duration": 5795131342,
   "status": "passed"
 });
 formatter.match({
@@ -3917,7 +3935,7 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.DeliveryPage_Inputs_gdpr(String,String)"
 });
 formatter.result({
-  "duration": 37692875683,
+  "duration": 38396708693,
   "status": "passed"
 });
 formatter.match({
@@ -3934,14 +3952,14 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.isThisOrder4UorSomeoneElse(String,String)"
 });
 formatter.result({
-  "duration": 78842937014,
+  "duration": 78798094935,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.verify_copy_text_allFields_narked_with_asterisk()"
 });
 formatter.result({
-  "duration": 4360244733,
+  "duration": 1584695775,
   "status": "passed"
 });
 formatter.match({
@@ -3954,28 +3972,28 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.verifyAsteriskIsDisplayedAgainstMandatoryFieldsOf(String)"
 });
 formatter.result({
-  "duration": 118509339196,
+  "duration": 129367401548,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.AgreementsPageConfirmation()"
 });
 formatter.result({
-  "duration": 51386284345,
+  "duration": 51515898252,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.ReviewPageConfirmation()"
 });
 formatter.result({
-  "duration": 54911786378,
+  "duration": 56270326742,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.OrderConfirmationPage()"
 });
 formatter.result({
-  "duration": 3617135438,
+  "duration": 3562223579,
   "status": "passed"
 });
 formatter.match({
@@ -4032,11 +4050,11 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.Choose_Your_Preferences(String,String,String,String,String,String,String,String,String,String,String,String)"
 });
 formatter.result({
-  "duration": 96536720109,
+  "duration": 96743477637,
   "status": "passed"
 });
 formatter.after({
-  "duration": 20167011252,
+  "duration": 18765673789,
   "status": "passed"
 });
 formatter.uri("114_FR_Term_CFA_PayMTablets_Till_TnE.feature");
@@ -4213,7 +4231,7 @@ formatter.examples({
   "keyword": "Examples"
 });
 formatter.before({
-  "duration": 39394201552,
+  "duration": 37404935545,
   "status": "passed"
 });
 formatter.scenario({
@@ -4350,14 +4368,14 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.i_am_an_CFA_user_and_Lands_on_shop_page()"
 });
 formatter.result({
-  "duration": 962958900,
+  "duration": 714064676,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.navigate_to_PAYM_Tablets_page()"
 });
 formatter.result({
-  "duration": 59271197664,
+  "duration": 58898933157,
   "status": "passed"
 });
 formatter.match({
@@ -4370,7 +4388,7 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.select_any_available_Tablet(String)"
 });
 formatter.result({
-  "duration": 65350317700,
+  "duration": 59476550498,
   "status": "passed"
 });
 formatter.match({
@@ -4391,14 +4409,14 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.fr_PDpage(String,String,String)"
 });
 formatter.result({
-  "duration": 462336859052,
+  "duration": 445743711922,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.i_Land_on_the_basket_page_and_choose_home_delivery_option()"
 });
 formatter.result({
-  "duration": 40695600396,
+  "duration": 38242570405,
   "status": "passed"
 });
 formatter.match({
@@ -4411,14 +4429,14 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.CheckoutFromBasket(String)"
 });
 formatter.result({
-  "duration": 33091058310,
+  "duration": 33506802920,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.verify_copy_text_allFields_narked_with_asterisk()"
 });
 formatter.result({
-  "duration": 342769971,
+  "duration": 410714444,
   "status": "passed"
 });
 formatter.match({
@@ -4431,7 +4449,7 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.verifyAsteriskIsDisplayedAgainstMandatoryFieldsOf(String)"
 });
 formatter.result({
-  "duration": 726601756,
+  "duration": 5907110108,
   "status": "passed"
 });
 formatter.match({
@@ -4448,7 +4466,7 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.DeliveryPage_Inputs_gdpr(String,String)"
 });
 formatter.result({
-  "duration": 37251788458,
+  "duration": 38835390755,
   "status": "passed"
 });
 formatter.match({
@@ -4465,14 +4483,14 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.isThisOrder4UorSomeoneElse(String,String)"
 });
 formatter.result({
-  "duration": 78700043672,
+  "duration": 78893920106,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.verify_copy_text_allFields_narked_with_asterisk()"
 });
 formatter.result({
-  "duration": 1631700393,
+  "duration": 2391332537,
   "status": "passed"
 });
 formatter.match({
@@ -4485,28 +4503,29 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.verifyAsteriskIsDisplayedAgainstMandatoryFieldsOf(String)"
 });
 formatter.result({
-  "duration": 125004979087,
+  "duration": 131386586331,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.AgreementsPageConfirmation()"
 });
 formatter.result({
-  "duration": 43756757636,
-  "error_message": "java.lang.AssertionError: Agreements page is not displayed or unable to enter some information in thie page, Please review the screenshots for failure\r\n\tat org.testng.Assert.fail(Assert.java:94)\r\n\tat steps.E2EOrderPlaced_Steps.AgreementsPageConfirmation(E2EOrderPlaced_Steps.java:2225)\r\n\tat ✽.And Continue to Agreements page and confirm all the agreement checks(114_FR_Term_CFA_PayMTablets_Till_TnE.feature:18)\r\n",
-  "status": "failed"
+  "duration": 51656387879,
+  "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.ReviewPageConfirmation()"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 56326537669,
+  "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.OrderConfirmationPage()"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 3600242071,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -4562,10 +4581,11 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.Choose_Your_Preferences(String,String,String,String,String,String,String,String,String,String,String,String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 97499753506,
+  "status": "passed"
 });
 formatter.after({
-  "duration": 20827274954,
+  "duration": 20099911701,
   "status": "passed"
 });
 formatter.uri("115_FR_Data_CFA_PayMTablets_Till_TnE.feature");
@@ -4742,7 +4762,7 @@ formatter.examples({
   "keyword": "Examples"
 });
 formatter.before({
-  "duration": 35818568186,
+  "duration": 40197432072,
   "status": "passed"
 });
 formatter.scenario({
@@ -4879,14 +4899,14 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.i_am_an_CFA_user_and_Lands_on_shop_page()"
 });
 formatter.result({
-  "duration": 847469120,
+  "duration": 731574430,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.navigate_to_PAYM_Tablets_page()"
 });
 formatter.result({
-  "duration": 173430296311,
+  "duration": 61630259500,
   "status": "passed"
 });
 formatter.match({
@@ -4899,7 +4919,7 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.select_any_available_Tablet(String)"
 });
 formatter.result({
-  "duration": 41305349485,
+  "duration": 65023289714,
   "status": "passed"
 });
 formatter.match({
@@ -4920,14 +4940,14 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.fr_PDpage(String,String,String)"
 });
 formatter.result({
-  "duration": 324197959526,
+  "duration": 188219076134,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.i_Land_on_the_basket_page_and_choose_home_delivery_option()"
 });
 formatter.result({
-  "duration": 36962329303,
+  "duration": 40012768857,
   "status": "passed"
 });
 formatter.match({
@@ -4940,14 +4960,14 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.CheckoutFromBasket(String)"
 });
 formatter.result({
-  "duration": 33580857002,
+  "duration": 35501479850,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.verify_copy_text_allFields_narked_with_asterisk()"
 });
 formatter.result({
-  "duration": 373645694,
+  "duration": 384831674,
   "status": "passed"
 });
 formatter.match({
@@ -4960,7 +4980,7 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.verifyAsteriskIsDisplayedAgainstMandatoryFieldsOf(String)"
 });
 formatter.result({
-  "duration": 768327141,
+  "duration": 5901030038,
   "status": "passed"
 });
 formatter.match({
@@ -4977,7 +4997,7 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.DeliveryPage_Inputs_gdpr(String,String)"
 });
 formatter.result({
-  "duration": 37434949098,
+  "duration": 37904293033,
   "status": "passed"
 });
 formatter.match({
@@ -4994,14 +5014,14 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.isThisOrder4UorSomeoneElse(String,String)"
 });
 formatter.result({
-  "duration": 78737122640,
+  "duration": 78939036497,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.verify_copy_text_allFields_narked_with_asterisk()"
 });
 formatter.result({
-  "duration": 3463250871,
+  "duration": 2324050431,
   "status": "passed"
 });
 formatter.match({
@@ -5014,28 +5034,28 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.verifyAsteriskIsDisplayedAgainstMandatoryFieldsOf(String)"
 });
 formatter.result({
-  "duration": 116832021880,
+  "duration": 128605234594,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.AgreementsPageConfirmation()"
 });
 formatter.result({
-  "duration": 51370685634,
+  "duration": 51695613891,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.ReviewPageConfirmation()"
 });
 formatter.result({
-  "duration": 52954802453,
+  "duration": 59010395576,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.OrderConfirmationPage()"
 });
 formatter.result({
-  "duration": 3457845328,
+  "duration": 3524354081,
   "status": "passed"
 });
 formatter.match({
@@ -5092,11 +5112,11 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.Choose_Your_Preferences(String,String,String,String,String,String,String,String,String,String,String,String)"
 });
 formatter.result({
-  "duration": 96452835804,
+  "duration": 97007185313,
   "status": "passed"
 });
 formatter.after({
-  "duration": 18481201280,
+  "duration": 21628006901,
   "status": "passed"
 });
 formatter.uri("116_FR_UpfrontAndTerm_CFA_Phones_Till_TnE.feature");
@@ -5288,7 +5308,7 @@ formatter.examples({
   "keyword": "Examples"
 });
 formatter.before({
-  "duration": 37299334163,
+  "duration": 50267263703,
   "status": "passed"
 });
 formatter.scenario({
@@ -5443,14 +5463,14 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.i_am_an_CFA_user_and_Lands_on_shop_page()"
 });
 formatter.result({
-  "duration": 853411891,
+  "duration": 748906171,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.navigate_to_PAYM_Phones_page()"
 });
 formatter.result({
-  "duration": 61374669541,
+  "duration": 61287763946,
   "status": "passed"
 });
 formatter.match({
@@ -5463,14 +5483,14 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.Choose_PAYM_Handset(String)"
 });
 formatter.result({
-  "duration": 30794683146,
+  "duration": 31913565672,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.click_on_the_color_dropdown()"
 });
 formatter.result({
-  "duration": 26172045903,
+  "duration": 31740764964,
   "status": "passed"
 });
 formatter.match({
@@ -5483,7 +5503,7 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.verify_the_name_of_the_colour_is_next_to_the_colour_tile_in_CFAPhoneColour(String)"
 });
 formatter.result({
-  "duration": 264231046,
+  "duration": 300786906,
   "status": "passed"
 });
 formatter.match({
@@ -5496,7 +5516,7 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.select_color_of_the_device(String)"
 });
 formatter.result({
-  "duration": 21924480238,
+  "duration": 21920012741,
   "status": "passed"
 });
 formatter.match({
@@ -5517,14 +5537,14 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.fr_PDpage(String,String,String)"
 });
 formatter.result({
-  "duration": 79849775519,
+  "duration": 62132594736,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.i_Land_on_the_basket_page_and_choose_home_delivery_option()"
 });
 formatter.result({
-  "duration": 36919373391,
+  "duration": 43678439991,
   "status": "passed"
 });
 formatter.match({
@@ -5537,14 +5557,14 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.CheckoutFromBasket(String)"
 });
 formatter.result({
-  "duration": 32981872284,
+  "duration": 40000717718,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.verify_copy_text_allFields_narked_with_asterisk()"
 });
 formatter.result({
-  "duration": 364971132,
+  "duration": 416305773,
   "status": "passed"
 });
 formatter.match({
@@ -5557,7 +5577,7 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.verifyAsteriskIsDisplayedAgainstMandatoryFieldsOf(String)"
 });
 formatter.result({
-  "duration": 764375793,
+  "duration": 5849435435,
   "status": "passed"
 });
 formatter.match({
@@ -5574,7 +5594,7 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.DeliveryPage_Inputs_gdpr(String,String)"
 });
 formatter.result({
-  "duration": 37457505933,
+  "duration": 37885128423,
   "status": "passed"
 });
 formatter.match({
@@ -5591,14 +5611,14 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.isThisOrder4UorSomeoneElse(String,String)"
 });
 formatter.result({
-  "duration": 78975087928,
+  "duration": 78964398673,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.verify_copy_text_allFields_narked_with_asterisk()"
 });
 formatter.result({
-  "duration": 3385461162,
+  "duration": 9265098872,
   "status": "passed"
 });
 formatter.match({
@@ -5611,28 +5631,28 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.verifyAsteriskIsDisplayedAgainstMandatoryFieldsOf(String)"
 });
 formatter.result({
-  "duration": 122459085765,
+  "duration": 141385130723,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.AgreementsPageConfirmation()"
 });
 formatter.result({
-  "duration": 51294972286,
+  "duration": 51608139439,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.ReviewPageConfirmation()"
 });
 formatter.result({
-  "duration": 54024118972,
+  "duration": 55840988454,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.OrderConfirmationPage()"
 });
 formatter.result({
-  "duration": 3492298322,
+  "duration": 3745756426,
   "status": "passed"
 });
 formatter.match({
@@ -5689,26 +5709,26 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.Choose_Your_Preferences(String,String,String,String,String,String,String,String,String,String,String,String)"
 });
 formatter.result({
-  "duration": 97323977622,
+  "duration": 98936076090,
   "status": "passed"
 });
 formatter.after({
-  "duration": 19960085192,
+  "duration": 21852643575,
   "status": "passed"
 });
 formatter.uri("119_FR_All_CFA_Phones_Till_TnE.feature");
 formatter.feature({
   "line": 1,
-  "name": "101_FR_Upfront_CFA_Phones_Till_TnE.feature",
+  "name": "119_FR_All_CFA_Phones_Till_TnE",
   "description": "",
-  "id": "101-fr-upfront-cfa-phones-till-tne.feature",
+  "id": "119-fr-all-cfa-phones-till-tne",
   "keyword": "Feature"
 });
 formatter.scenarioOutline({
   "line": 4,
   "name": "101_FR_Upfront_CFA_Phones_Till_TnE",
   "description": "",
-  "id": "101-fr-upfront-cfa-phones-till-tne.feature;101-fr-upfront-cfa-phones-till-tne",
+  "id": "119-fr-all-cfa-phones-till-tne;101-fr-upfront-cfa-phones-till-tne",
   "type": "scenario_outline",
   "keyword": "Scenario Outline",
   "tags": [
@@ -5823,7 +5843,7 @@ formatter.examples({
   "line": 26,
   "name": "",
   "description": "",
-  "id": "101-fr-upfront-cfa-phones-till-tne.feature;101-fr-upfront-cfa-phones-till-tne;",
+  "id": "119-fr-all-cfa-phones-till-tne;101-fr-upfront-cfa-phones-till-tne;",
   "rows": [
     {
       "cells": [
@@ -5851,7 +5871,7 @@ formatter.examples({
         "data"
       ],
       "line": 27,
-      "id": "101-fr-upfront-cfa-phones-till-tne.feature;101-fr-upfront-cfa-phones-till-tne;;1"
+      "id": "119-fr-all-cfa-phones-till-tne;101-fr-upfront-cfa-phones-till-tne;;1"
     },
     {
       "cells": [
@@ -5879,20 +5899,20 @@ formatter.examples({
         "max"
       ],
       "line": 28,
-      "id": "101-fr-upfront-cfa-phones-till-tne.feature;101-fr-upfront-cfa-phones-till-tne;;2"
+      "id": "119-fr-all-cfa-phones-till-tne;101-fr-upfront-cfa-phones-till-tne;;2"
     }
   ],
   "keyword": "Examples"
 });
 formatter.before({
-  "duration": 38265343723,
+  "duration": 45825891617,
   "status": "passed"
 });
 formatter.scenario({
   "line": 28,
   "name": "101_FR_Upfront_CFA_Phones_Till_TnE",
   "description": "",
-  "id": "101-fr-upfront-cfa-phones-till-tne.feature;101-fr-upfront-cfa-phones-till-tne;;2",
+  "id": "119-fr-all-cfa-phones-till-tne;101-fr-upfront-cfa-phones-till-tne;;2",
   "type": "scenario",
   "keyword": "Scenario Outline",
   "tags": [
@@ -6040,14 +6060,14 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.i_am_an_CFA_user_and_Lands_on_shop_page()"
 });
 formatter.result({
-  "duration": 835006359,
+  "duration": 822449192,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.navigate_to_PAYM_Phones_page()"
 });
 formatter.result({
-  "duration": 60443891212,
+  "duration": 62342154390,
   "status": "passed"
 });
 formatter.match({
@@ -6060,14 +6080,14 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.Choose_PAYM_Handset(String)"
 });
 formatter.result({
-  "duration": 30992862092,
+  "duration": 33690201636,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.click_on_the_color_dropdown()"
 });
 formatter.result({
-  "duration": 76545848731,
+  "duration": 28724612077,
   "status": "passed"
 });
 formatter.match({
@@ -6080,7 +6100,7 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.verify_the_name_of_the_colour_is_next_to_the_colour_tile_in_CFAPhoneColour(String)"
 });
 formatter.result({
-  "duration": 331763175,
+  "duration": 306991197,
   "status": "passed"
 });
 formatter.match({
@@ -6093,7 +6113,7 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.select_color_of_the_device(String)"
 });
 formatter.result({
-  "duration": 22047558092,
+  "duration": 21871515152,
   "status": "passed"
 });
 formatter.match({
@@ -6114,14 +6134,14 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.fr_PDpage(String,String,String)"
 });
 formatter.result({
-  "duration": 1816991187060,
+  "duration": 28724610466003,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.i_Land_on_the_basket_page_and_choose_home_delivery_option()"
 });
 formatter.result({
-  "duration": 39411035745,
+  "duration": 33722490068,
   "status": "passed"
 });
 formatter.match({
@@ -6134,14 +6154,14 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.CheckoutFromBasket(String)"
 });
 formatter.result({
-  "duration": 33278724867,
+  "duration": 33493968237,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.verify_copy_text_allFields_narked_with_asterisk()"
 });
 formatter.result({
-  "duration": 371169068,
+  "duration": 400227207,
   "status": "passed"
 });
 formatter.match({
@@ -6154,7 +6174,7 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.verifyAsteriskIsDisplayedAgainstMandatoryFieldsOf(String)"
 });
 formatter.result({
-  "duration": 748347795,
+  "duration": 5816569078,
   "status": "passed"
 });
 formatter.match({
@@ -6171,7 +6191,7 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.DeliveryPage_Inputs_gdpr(String,String)"
 });
 formatter.result({
-  "duration": 37886717879,
+  "duration": 37630006105,
   "status": "passed"
 });
 formatter.match({
@@ -6188,14 +6208,14 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.isThisOrder4UorSomeoneElse(String,String)"
 });
 formatter.result({
-  "duration": 78885495846,
+  "duration": 78775200531,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.verify_copy_text_allFields_narked_with_asterisk()"
 });
 formatter.result({
-  "duration": 1939583836,
+  "duration": 356316921,
   "status": "passed"
 });
 formatter.match({
@@ -6208,29 +6228,27 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.verifyAsteriskIsDisplayedAgainstMandatoryFieldsOf(String)"
 });
 formatter.result({
-  "duration": 120010220065,
-  "status": "passed"
+  "duration": 25055665207,
+  "error_message": "java.lang.AssertionError: Unable to select the sim free link\r\n\tat org.testng.Assert.fail(Assert.java:94)\r\n\tat steps.E2EOrderPlaced_Steps.verifyAsteriskIsDisplayedAgainstMandatoryFieldsOf(E2EOrderPlaced_Steps.java:8510)\r\n\tat ✽.And verify asterisk is displayed against mandatory fields of \"Payments page\"(119_FR_All_CFA_Phones_Till_TnE.feature:20)\r\n",
+  "status": "failed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.AgreementsPageConfirmation()"
 });
 formatter.result({
-  "duration": 51168696901,
-  "status": "passed"
+  "status": "skipped"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.ReviewPageConfirmation()"
 });
 formatter.result({
-  "duration": 55539717683,
-  "status": "passed"
+  "status": "skipped"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.OrderConfirmationPage()"
 });
 formatter.result({
-  "duration": 3456380161,
-  "status": "passed"
+  "status": "skipped"
 });
 formatter.match({
   "arguments": [
@@ -6286,11 +6304,10 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.Choose_Your_Preferences(String,String,String,String,String,String,String,String,String,String,String,String)"
 });
 formatter.result({
-  "duration": 96745519742,
-  "status": "passed"
+  "status": "skipped"
 });
 formatter.after({
-  "duration": 20175341465,
+  "duration": 21657238310,
   "status": "passed"
 });
 formatter.uri("11_Reg_CFA_Phones_SSC_checkout_pages_mark_mandatory_fields_with_asterisk.feature");
@@ -6539,7 +6556,7 @@ formatter.examples({
   "keyword": "Examples"
 });
 formatter.before({
-  "duration": 42630495347,
+  "duration": 38806975094,
   "status": "passed"
 });
 formatter.scenario({
@@ -6756,14 +6773,14 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.i_am_an_CFA_user_and_Lands_on_shop_page()"
 });
 formatter.result({
-  "duration": 966283482,
+  "duration": 752225791,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.navigate_to_PAYM_Phones_page()"
 });
 formatter.result({
-  "duration": 58035184869,
+  "duration": 57234527229,
   "status": "passed"
 });
 formatter.match({
@@ -6776,14 +6793,14 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.Choose_PAYM_Handset(String)"
 });
 formatter.result({
-  "duration": 30822655434,
+  "duration": 29831150984,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.click_on_the_color_dropdown()"
 });
 formatter.result({
-  "duration": 24090623007,
+  "duration": 21044465560,
   "status": "passed"
 });
 formatter.match({
@@ -6796,7 +6813,7 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.verify_the_name_of_the_colour_is_next_to_the_colour_tile_in_CFAPhoneColour(String)"
 });
 formatter.result({
-  "duration": 218628633,
+  "duration": 216139792,
   "status": "passed"
 });
 formatter.match({
@@ -6809,21 +6826,21 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.select_color_of_the_device(String)"
 });
 formatter.result({
-  "duration": 17717238495,
+  "duration": 17681102057,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.Navigate_to_device_details_page()"
 });
 formatter.result({
-  "duration": 34236741838,
+  "duration": 31927635833,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.land_on_the_Tariffs_and_extra_page()"
 });
 formatter.result({
-  "duration": 16069394731,
+  "duration": 16074189250,
   "status": "passed"
 });
 formatter.match({
@@ -6836,7 +6853,7 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.ValidateBillSpendCap(String)"
 });
 formatter.result({
-  "duration": 37845931403,
+  "duration": 39771065870,
   "status": "passed"
 });
 formatter.match({
@@ -6857,14 +6874,14 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.ChooseBillSpendCap(String,String,String)"
 });
 formatter.result({
-  "duration": 70395257250,
+  "duration": 73419226897,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.i_Land_on_the_basket_page_and_choose_home_delivery_option()"
 });
 formatter.result({
-  "duration": 41367470054,
+  "duration": 37376614023,
   "status": "passed"
 });
 formatter.match({
@@ -6877,14 +6894,14 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.CheckoutFromBasket(String)"
 });
 formatter.result({
-  "duration": 32684695171,
+  "duration": 35997857111,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.verify_copy_text_allFields_narked_with_asterisk()"
 });
 formatter.result({
-  "duration": 383994227,
+  "duration": 401752887,
   "status": "passed"
 });
 formatter.match({
@@ -6897,7 +6914,7 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.verifyAsteriskIsDisplayedAgainstMandatoryFieldsOf(String)"
 });
 formatter.result({
-  "duration": 761328672,
+  "duration": 5934134926,
   "status": "passed"
 });
 formatter.match({
@@ -6914,7 +6931,7 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.DeliveryPage_Inputs_gdpr(String,String)"
 });
 formatter.result({
-  "duration": 38103169643,
+  "duration": 38733676266,
   "status": "passed"
 });
 formatter.match({
@@ -6931,14 +6948,14 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.isThisOrder4UorSomeoneElse(String,String)"
 });
 formatter.result({
-  "duration": 78852562519,
+  "duration": 78835428622,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.verify_copy_text_allFields_narked_with_asterisk()"
 });
 formatter.result({
-  "duration": 1948231855,
+  "duration": 394333643,
   "status": "passed"
 });
 formatter.match({
@@ -6951,29 +6968,27 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.verifyAsteriskIsDisplayedAgainstMandatoryFieldsOf(String)"
 });
 formatter.result({
-  "duration": 118425905413,
-  "status": "passed"
+  "duration": 25405331210,
+  "error_message": "java.lang.AssertionError: Unable to select the sim free link\r\n\tat org.testng.Assert.fail(Assert.java:94)\r\n\tat steps.E2EOrderPlaced_Steps.verifyAsteriskIsDisplayedAgainstMandatoryFieldsOf(E2EOrderPlaced_Steps.java:8510)\r\n\tat ✽.And verify asterisk is displayed against mandatory fields of \"Payments page\"(11_Reg_CFA_Phones_SSC_checkout_pages_mark_mandatory_fields_with_asterisk.feature:34)\r\n",
+  "status": "failed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.AgreementsPageConfirmation()"
 });
 formatter.result({
-  "duration": 51496911826,
-  "status": "passed"
+  "status": "skipped"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.ReviewPageConfirmation()"
 });
 formatter.result({
-  "duration": 54822480604,
-  "status": "passed"
+  "status": "skipped"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.OrderConfirmationPage()"
 });
 formatter.result({
-  "duration": 3817028700,
-  "status": "passed"
+  "status": "skipped"
 });
 formatter.match({
   "arguments": [
@@ -7029,11 +7044,10 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.Choose_Your_Preferences(String,String,String,String,String,String,String,String,String,String,String,String)"
 });
 formatter.result({
-  "duration": 96811950872,
-  "status": "passed"
+  "status": "skipped"
 });
 formatter.after({
-  "duration": 19994739204,
+  "duration": 20565172661,
   "status": "passed"
 });
 formatter.uri("12_Reg_Consumer_Existing_PAYG_Phone_BigBundle_To_Show_£15_Data_Roll_Over_Copy_On_Basket_Page_Package_summary_CC_Order_confirmation.feature");
@@ -7238,7 +7252,7 @@ formatter.examples({
   "keyword": "Examples"
 });
 formatter.before({
-  "duration": 43573782443,
+  "duration": 29362849989,
   "status": "passed"
 });
 formatter.scenario({
@@ -7415,7 +7429,7 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.i_am_an_Existing_user_and_Navigates_to_Signin_page()"
 });
 formatter.result({
-  "duration": 50233750634,
+  "duration": 41648161026,
   "status": "passed"
 });
 formatter.match({
@@ -7432,14 +7446,14 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.signin_using_valid_ink_jun_and_test_credentials(String,String)"
 });
 formatter.result({
-  "duration": 29313240501,
+  "duration": 27205645831,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.navigate_to_Pay_as_you_Go_Phones_page()"
 });
 formatter.result({
-  "duration": 70893069410,
+  "duration": 64874304623,
   "status": "passed"
 });
 formatter.match({
@@ -7452,14 +7466,14 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.Choose_PAYG_Handset(String)"
 });
 formatter.result({
-  "duration": 115315382334,
+  "duration": 55274915461,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.click_on_the_color_dropdown()"
 });
 formatter.result({
-  "duration": 10830036473,
+  "duration": 10769635037,
   "status": "passed"
 });
 formatter.match({
@@ -7472,7 +7486,7 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.verify_the_name_of_the_colour_is_next_to_the_colour_tile_in_CFAPhoneColour(String)"
 });
 formatter.result({
-  "duration": 271157318,
+  "duration": 337876399,
   "status": "passed"
 });
 formatter.match({
@@ -7485,14 +7499,14 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.select_color_of_the_device(String)"
 });
 formatter.result({
-  "duration": 22349546187,
+  "duration": 22038983588,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.Navigate_to_device_details_page()"
 });
 formatter.result({
-  "duration": 37935152947,
+  "duration": 33599488255,
   "status": "passed"
 });
 formatter.match({
@@ -7509,9 +7523,8 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.land_on_the_Tariffs_and_extra_page_validate_Data_Roll_Over(String,String)"
 });
 formatter.result({
-  "duration": 19188145036,
-  "error_message": "java.lang.AssertionError: Unable to Land on Tariff and extras page\r\n\tat org.testng.Assert.fail(Assert.java:94)\r\n\tat steps.E2EOrderPlaced_Steps.land_on_the_Tariffs_and_extra_page_validate_Data_Roll_Over(E2EOrderPlaced_Steps.java:1100)\r\n\tat ✽.And Land on the \u0027Tariffs and extra\u0027 page and validate Data Roll over copy for £15 and 5GB(12_Reg_Consumer_Existing_PAYG_Phone_BigBundle_To_Show_£15_Data_Roll_Over_Copy_On_Basket_Page_Package_summary_CC_Order_confirmation.feature:16)\r\n",
-  "status": "failed"
+  "duration": 74678776200,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -7523,19 +7536,22 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.ValidateBillSpendCap(String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 29068599690,
+  "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.i_Land_on_the_basket_page_and_choose_to_collect_from_store()"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 79508520770,
+  "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.validate_all_the_Basket_contents()"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 13297894094,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -7547,13 +7563,15 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.CheckoutFromBasket(String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 48000736828,
+  "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.scrollToAnElement()"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 13703551249,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -7569,7 +7587,8 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.isThisOrder4UorSomeoneElse(String,String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 78899705375,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -7581,13 +7600,16 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.existingCustomerPaymentPage_ClickAndCollect(String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 117658373281,
+  "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.AgreementsPageConfirmation()"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 43352548197,
+  "error_message": "java.lang.AssertionError: Agreements page is not displayed or unable to enter some information in thie page, Please review the screenshots for failure\r\n\tat org.testng.Assert.fail(Assert.java:94)\r\n\tat steps.E2EOrderPlaced_Steps.AgreementsPageConfirmation(E2EOrderPlaced_Steps.java:2226)\r\n\tat ✽.And Continue to Agreements page and confirm all the agreement checks(12_Reg_Consumer_Existing_PAYG_Phone_BigBundle_To_Show_£15_Data_Roll_Over_Copy_On_Basket_Page_Package_summary_CC_Order_confirmation.feature:26)\r\n",
+  "status": "failed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.ReviewPageConfirmation()"
@@ -7658,7 +7680,7 @@ formatter.result({
   "status": "skipped"
 });
 formatter.after({
-  "duration": 20554492504,
+  "duration": 20379752444,
   "status": "passed"
 });
 formatter.uri("130_FR_UpFront_AFA_Tablets_E2E.feature");
@@ -7849,7 +7871,7 @@ formatter.examples({
   "keyword": "Examples"
 });
 formatter.before({
-  "duration": 38448765545,
+  "duration": 30924121212,
   "status": "passed"
 });
 formatter.scenario({
@@ -8001,14 +8023,14 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.LoginAgentShop()"
 });
 formatter.result({
-  "duration": 3679249283,
+  "duration": 2756715063,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.performs_Acquisition_for_New_user()"
 });
 formatter.result({
-  "duration": 13373701258,
+  "duration": 11067532315,
   "status": "passed"
 });
 formatter.match({
@@ -8021,7 +8043,7 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.SelectValid_Device(String)"
 });
 formatter.result({
-  "duration": 34807612707,
+  "duration": 34529750763,
   "status": "passed"
 });
 formatter.match({
@@ -8034,7 +8056,7 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.SelectTariff(String)"
 });
 formatter.result({
-  "duration": 23891254585,
+  "duration": 23966113338,
   "status": "passed"
 });
 formatter.match({
@@ -8055,7 +8077,7 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.Agent_fr_DealBuilder(String,String,String)"
 });
 formatter.result({
-  "duration": 221855645385,
+  "duration": 221659048883,
   "status": "passed"
 });
 formatter.match({
@@ -8068,7 +8090,7 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.ValidateBillCap_AgentDealBuilder(String)"
 });
 formatter.result({
-  "duration": 20560206298,
+  "duration": 25473509754,
   "status": "passed"
 });
 formatter.match({
@@ -8085,14 +8107,14 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.addBillCap_AgentDealBuilder(String,String)"
 });
 formatter.result({
-  "duration": 53322416194,
+  "duration": 57316172882,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.validate_all_the_Basket_content_and_checkout()"
 });
 formatter.result({
-  "duration": 18780633122,
+  "duration": 20754020438,
   "status": "passed"
 });
 formatter.match({
@@ -8109,14 +8131,14 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.ValidateYourCapInAgentDealSummary(String,String)"
 });
 formatter.result({
-  "duration": 17543420944,
+  "duration": 25483319973,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.advisory_checks()"
 });
 formatter.result({
-  "duration": 23485677116,
+  "duration": 23441682813,
   "status": "passed"
 });
 formatter.match({
@@ -8145,7 +8167,7 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.CreditCheck(String,String,String,String,String)"
 });
 formatter.result({
-  "duration": 87714125901,
+  "duration": 79137531343,
   "status": "passed"
 });
 formatter.match({
@@ -8166,14 +8188,14 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.Register_Customer_Phones(String,String,String)"
 });
 formatter.result({
-  "duration": 56054972753,
+  "duration": 56016528025,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.Validate_Register_Status()"
 });
 formatter.result({
-  "duration": 16079195419,
+  "duration": 16077321654,
   "status": "passed"
 });
 formatter.match({
@@ -8230,25 +8252,25 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.Choose_Your_Preferences_AFA(String,String,String,String,String,String,String,String,String,String,String,String)"
 });
 formatter.result({
-  "duration": 85356679140,
+  "duration": 85497546560,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.HomeDelivery_Address()"
 });
 formatter.result({
-  "duration": 5000365937,
+  "duration": 5000493342,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.click_on_Generate_CCA_button()"
 });
 formatter.result({
-  "duration": 30576466458,
+  "duration": 32433372439,
   "status": "passed"
 });
 formatter.after({
-  "duration": 18295663108,
+  "duration": 18059395355,
   "status": "passed"
 });
 formatter.uri("133_FR_UpFront_AFU_PAYM_Dongle_payByCard.feature");
@@ -8353,7 +8375,7 @@ formatter.examples({
     },
     {
       "cells": [
-        "07731705509",
+        "07731885329",
         "dongle",
         "Refresh",
         "max",
@@ -8381,7 +8403,7 @@ formatter.examples({
   "keyword": "Examples"
 });
 formatter.before({
-  "duration": 40045474300,
+  "duration": 33512295510,
   "status": "passed"
 });
 formatter.scenario({
@@ -8405,7 +8427,7 @@ formatter.step({
 });
 formatter.step({
   "line": 7,
-  "name": "performs Upgrade for 07731705509",
+  "name": "performs Upgrade for 07731885329",
   "matchedColumns": [
     0
   ],
@@ -8463,20 +8485,20 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.LoginAgentShop()"
 });
 formatter.result({
-  "duration": 3171382685,
+  "duration": 2537965583,
   "status": "passed"
 });
 formatter.match({
   "arguments": [
     {
-      "val": "07731705509",
+      "val": "07731885329",
       "offset": 21
     }
   ],
   "location": "E2EOrderPlaced_Steps.performs_Upgrade(String)"
 });
 formatter.result({
-  "duration": 95719206913,
+  "duration": 100884866887,
   "status": "passed"
 });
 formatter.match({
@@ -8489,7 +8511,7 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.SelectValid_Device(String)"
 });
 formatter.result({
-  "duration": 32754421865,
+  "duration": 32822935457,
   "status": "passed"
 });
 formatter.match({
@@ -8502,7 +8524,7 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.SelectTariff(String)"
 });
 formatter.result({
-  "duration": 24024024125,
+  "duration": 24545940102,
   "status": "passed"
 });
 formatter.match({
@@ -8523,7 +8545,7 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.Agent_fr_DealBuilder(String,String,String)"
 });
 formatter.result({
-  "duration": 189691753096,
+  "duration": 189915869941,
   "status": "passed"
 });
 formatter.match({
@@ -8536,7 +8558,7 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.ValidateBillCap_AgentDealBuilder(String)"
 });
 formatter.result({
-  "duration": 20505111094,
+  "duration": 25470986772,
   "status": "passed"
 });
 formatter.match({
@@ -8553,18 +8575,18 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.addBillCap_AgentDealBuilder(String,String)"
 });
 formatter.result({
-  "duration": 53369050947,
+  "duration": 57290580314,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.validate_all_the_Basket_content_and_checkout()"
 });
 formatter.result({
-  "duration": 18824156698,
+  "duration": 20845693608,
   "status": "passed"
 });
 formatter.after({
-  "duration": 17958697177,
+  "duration": 19733089493,
   "status": "passed"
 });
 formatter.uri("134_FR_UpFront_AFU_PAYM_Tablet.feature");
@@ -8669,7 +8691,7 @@ formatter.examples({
     },
     {
       "cells": [
-        "07743800890",
+        "07568410956",
         "iPad Pro 10.5 inch 256GB Space Grey",
         "Refresh",
         "avg",
@@ -8697,7 +8719,7 @@ formatter.examples({
   "keyword": "Examples"
 });
 formatter.before({
-  "duration": 44083837589,
+  "duration": 29247582747,
   "status": "passed"
 });
 formatter.scenario({
@@ -8721,7 +8743,7 @@ formatter.step({
 });
 formatter.step({
   "line": 7,
-  "name": "performs Upgrade for 07743800890",
+  "name": "performs Upgrade for 07568410956",
   "matchedColumns": [
     0
   ],
@@ -8779,20 +8801,20 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.LoginAgentShop()"
 });
 formatter.result({
-  "duration": 3403846167,
+  "duration": 2540471577,
   "status": "passed"
 });
 formatter.match({
   "arguments": [
     {
-      "val": "07743800890",
+      "val": "07568410956",
       "offset": 21
     }
   ],
   "location": "E2EOrderPlaced_Steps.performs_Upgrade(String)"
 });
 formatter.result({
-  "duration": 95778696200,
+  "duration": 100738579252,
   "status": "passed"
 });
 formatter.match({
@@ -8805,7 +8827,7 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.SelectValid_Device(String)"
 });
 formatter.result({
-  "duration": 34688851784,
+  "duration": 34479085512,
   "status": "passed"
 });
 formatter.match({
@@ -8818,7 +8840,7 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.SelectTariff(String)"
 });
 formatter.result({
-  "duration": 23878307684,
+  "duration": 24085298297,
   "status": "passed"
 });
 formatter.match({
@@ -8839,7 +8861,7 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.Agent_fr_DealBuilder(String,String,String)"
 });
 formatter.result({
-  "duration": 160905149953,
+  "duration": 160549786685,
   "status": "passed"
 });
 formatter.match({
@@ -8852,7 +8874,7 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.ValidateBillCap_AgentDealBuilder(String)"
 });
 formatter.result({
-  "duration": 20432702156,
+  "duration": 25631461358,
   "status": "passed"
 });
 formatter.match({
@@ -8869,18 +8891,18 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.addBillCap_AgentDealBuilder(String,String)"
 });
 formatter.result({
-  "duration": 43095604572,
+  "duration": 47054474320,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.validate_all_the_Basket_content_and_checkout()"
 });
 formatter.result({
-  "duration": 18769692152,
+  "duration": 20782916346,
   "status": "passed"
 });
 formatter.after({
-  "duration": 18896228011,
+  "duration": 18059571599,
   "status": "passed"
 });
 formatter.uri("14_Reg_CFA_PayG_FreeSim_Delivery_page_more_than_one_address_select_one_compress_others.feature");
@@ -9001,7 +9023,7 @@ formatter.examples({
   "keyword": "Examples"
 });
 formatter.before({
-  "duration": 40482246008,
+  "duration": 31135170449,
   "status": "passed"
 });
 formatter.scenario({
@@ -9085,21 +9107,21 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.i_am_an_CFA_user_and_Lands_on_shop_page()"
 });
 formatter.result({
-  "duration": 1086386765,
+  "duration": 663112408,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.navigate_to_PayG_SIMO_page()"
 });
 formatter.result({
-  "duration": 110527299515,
+  "duration": 79766309047,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.selectAPayAsYouGoBundle()"
 });
 formatter.result({
-  "duration": 12256452217,
+  "duration": 10805050564,
   "status": "passed"
 });
 formatter.match({
@@ -9120,14 +9142,14 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.i_enter_details_in_Delivery_PageTEST_and_ACCEPTA_new(String,String,String)"
 });
 formatter.result({
-  "duration": 67671019579,
+  "duration": 62676560053,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.free_Sim_order_confirmation_is_displayed()"
 });
 formatter.result({
-  "duration": 2433506581,
+  "duration": 2447963902,
   "status": "passed"
 });
 formatter.match({
@@ -9184,11 +9206,11 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.Choose_Your_Preferences(String,String,String,String,String,String,String,String,String,String,String,String)"
 });
 formatter.result({
-  "duration": 30431787312,
+  "duration": 30363776156,
   "status": "passed"
 });
 formatter.after({
-  "duration": 19897034914,
+  "duration": 19940398319,
   "status": "passed"
 });
 formatter.uri("15_Reg_CFA_Phones_CnC_Delivery_page_Payment_page_more_than_one_address_select_one_compress_others.feature");
@@ -9376,7 +9398,7 @@ formatter.examples({
   "keyword": "Examples"
 });
 formatter.before({
-  "duration": 41658113376,
+  "duration": 30029977438,
   "status": "passed"
 });
 formatter.scenario({
@@ -9537,14 +9559,14 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.i_am_an_CFA_user_and_Lands_on_shop_page()"
 });
 formatter.result({
-  "duration": 984983462,
+  "duration": 508872196,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.navigate_to_PAYM_Phones_page()"
 });
 formatter.result({
-  "duration": 59352946860,
+  "duration": 57570355231,
   "status": "passed"
 });
 formatter.match({
@@ -9557,14 +9579,14 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.Choose_PAYM_Handset(String)"
 });
 formatter.result({
-  "duration": 31046353753,
+  "duration": 31542781155,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.click_on_the_color_dropdown()"
 });
 formatter.result({
-  "duration": 23440959818,
+  "duration": 72649356514,
   "status": "passed"
 });
 formatter.match({
@@ -9577,7 +9599,7 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.verify_the_name_of_the_colour_is_next_to_the_colour_tile_in_CFAPhoneColour(String)"
 });
 formatter.result({
-  "duration": 270671761,
+  "duration": 355784295,
   "status": "passed"
 });
 formatter.match({
@@ -9590,22 +9612,23 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.select_color_of_the_device(String)"
 });
 formatter.result({
-  "duration": 21881762857,
+  "duration": 21881274408,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.Navigate_to_device_details_page()"
 });
 formatter.result({
-  "duration": 32552008446,
+  "duration": 34014715682,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.land_on_the_Tariffs_and_extra_page()"
 });
 formatter.result({
-  "duration": 16124483564,
-  "status": "passed"
+  "duration": 69722450077,
+  "error_message": "java.lang.AssertionError: Unable to Land on Tariff and extras page\r\n\tat org.testng.Assert.fail(Assert.java:94)\r\n\tat steps.E2EOrderPlaced_Steps.land_on_the_Tariffs_and_extra_page(E2EOrderPlaced_Steps.java:1081)\r\n\tat ✽.And Land on the \u0027Tariffs and extra\u0027 page(15_Reg_CFA_Phones_CnC_Delivery_page_Payment_page_more_than_one_address_select_one_compress_others.feature:15)\r\n",
+  "status": "failed"
 });
 formatter.match({
   "arguments": [
@@ -9617,8 +9640,7 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.ValidateBillSpendCap(String)"
 });
 formatter.result({
-  "duration": 37819906654,
-  "status": "passed"
+  "status": "skipped"
 });
 formatter.match({
   "arguments": [
@@ -9638,15 +9660,13 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.ChooseBillSpendCap(String,String,String)"
 });
 formatter.result({
-  "duration": 70342258224,
-  "status": "passed"
+  "status": "skipped"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.i_Land_on_the_basket_page_and_choose_home_delivery_option()"
 });
 formatter.result({
-  "duration": 40326310208,
-  "status": "passed"
+  "status": "skipped"
 });
 formatter.match({
   "arguments": [
@@ -9658,8 +9678,7 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.CheckoutFromBasket(String)"
 });
 formatter.result({
-  "duration": 32926106430,
-  "status": "passed"
+  "status": "skipped"
 });
 formatter.match({
   "arguments": [
@@ -9675,8 +9694,7 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.DeliveryPage_Inputs_gdpr_ClickAndCollect(String,String)"
 });
 formatter.result({
-  "duration": 36795442625,
-  "status": "passed"
+  "status": "skipped"
 });
 formatter.match({
   "arguments": [
@@ -9692,8 +9710,7 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.isThisOrder4UorSomeoneElse(String,String)"
 });
 formatter.result({
-  "duration": 78975318674,
-  "status": "passed"
+  "status": "skipped"
 });
 formatter.match({
   "arguments": [
@@ -9705,29 +9722,25 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.CreditCheckPaymentPage_ClickAndCollect_CreditCheck(String)"
 });
 formatter.result({
-  "duration": 159021219074,
-  "status": "passed"
+  "status": "skipped"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.AgreementsPageConfirmation()"
 });
 formatter.result({
-  "duration": 51408604772,
-  "status": "passed"
+  "status": "skipped"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.ReviewPageConfirmation()"
 });
 formatter.result({
-  "duration": 56952904815,
-  "status": "passed"
+  "status": "skipped"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.OrderConfirmationPage()"
 });
 formatter.result({
-  "duration": 3577770243,
-  "status": "passed"
+  "status": "skipped"
 });
 formatter.match({
   "arguments": [
@@ -9783,11 +9796,10 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.Choose_Your_Preferences(String,String,String,String,String,String,String,String,String,String,String,String)"
 });
 formatter.result({
-  "duration": 97292676505,
-  "status": "passed"
+  "status": "skipped"
 });
 formatter.after({
-  "duration": 20051344520,
+  "duration": 20756859101,
   "status": "passed"
 });
 formatter.uri("18_Reg_CFU_Tablet_Delivery_page_more_than_one_address_select_one_compress_others.feature");
@@ -9991,7 +10003,7 @@ formatter.examples({
     },
     {
       "cells": [
-        "rbmuatlokesh_donotusee5798@stf.ref.o2.co.uk",
+        "till99492490@stf.ref.o2.co.uk",
         "test123",
         "iPad 9.7 inch 2018",
         "Enabled",
@@ -10023,7 +10035,7 @@ formatter.examples({
   "keyword": "Examples"
 });
 formatter.before({
-  "duration": 39248967482,
+  "duration": 29909366954,
   "status": "passed"
 });
 formatter.scenario({
@@ -10047,7 +10059,7 @@ formatter.step({
 });
 formatter.step({
   "line": 8,
-  "name": "Signin using valid rbmuatlokesh_donotusee5798@stf.ref.o2.co.uk and test123 credentials",
+  "name": "Signin using valid till99492490@stf.ref.o2.co.uk and test123 credentials",
   "matchedColumns": [
     0,
     1
@@ -10228,52 +10240,52 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.i_am_an_Existing_user_and_Navigates_to_Signin_page()"
 });
 formatter.result({
-  "duration": 46948492684,
+  "duration": 39464704269,
   "status": "passed"
 });
 formatter.match({
   "arguments": [
     {
-      "val": "rbmuatlokesh_donotusee5798@stf.ref.o2.co.uk",
+      "val": "till99492490@stf.ref.o2.co.uk",
       "offset": 19
     },
     {
       "val": "test123",
-      "offset": 67
+      "offset": 53
     }
   ],
   "location": "E2EOrderPlaced_Steps.signin_using_valid_ink_jun_and_test_credentials(String,String)"
 });
 formatter.result({
-  "duration": 28932726221,
+  "duration": 27720459721,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.navigate_to_upgrade_upgrade_now()"
 });
 formatter.result({
-  "duration": 61041845359,
+  "duration": 60293141518,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.ClickOn_GetStartedCTA()"
 });
 formatter.result({
-  "duration": 8072581290,
+  "duration": 11241690600,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.click_on_Tablets_tab()"
 });
 formatter.result({
-  "duration": 11375986068,
+  "duration": 11452067772,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.click_on_View_all_tablets()"
 });
 formatter.result({
-  "duration": 75165879819,
+  "duration": 102688962265,
   "status": "passed"
 });
 formatter.match({
@@ -10286,22 +10298,23 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.Choose_PayMTablet(String)"
 });
 formatter.result({
-  "duration": 28808448983,
+  "duration": 29976096969,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.Navigate_to_device_details_page()"
 });
 formatter.result({
-  "duration": 114849507258,
+  "duration": 46742667551,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.land_on_the_Tariffs_and_extra_page()"
 });
 formatter.result({
-  "duration": 16238982056,
-  "status": "passed"
+  "duration": 69500688874,
+  "error_message": "java.lang.AssertionError: Unable to Land on Tariff and extras page\r\n\tat org.testng.Assert.fail(Assert.java:94)\r\n\tat steps.E2EOrderPlaced_Steps.land_on_the_Tariffs_and_extra_page(E2EOrderPlaced_Steps.java:1081)\r\n\tat ✽.And Land on the \u0027Tariffs and extra\u0027 page(18_Reg_CFU_Tablet_Delivery_page_more_than_one_address_select_one_compress_others.feature:18)\r\n",
+  "status": "failed"
 });
 formatter.match({
   "arguments": [
@@ -10313,8 +10326,7 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.ValidateBillSpendCap(String)"
 });
 formatter.result({
-  "duration": 37843974310,
-  "status": "passed"
+  "status": "skipped"
 });
 formatter.match({
   "arguments": [
@@ -10334,15 +10346,13 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.ChooseBillSpendCap(String,String,String)"
 });
 formatter.result({
-  "duration": 70258746936,
-  "status": "passed"
+  "status": "skipped"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.i_Land_on_the_basket_page_by_clicking_AddToBasket()"
 });
 formatter.result({
-  "duration": 91816004145,
-  "status": "passed"
+  "status": "skipped"
 });
 formatter.match({
   "arguments": [
@@ -10354,8 +10364,7 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.CheckoutFromBasket(String)"
 });
 formatter.result({
-  "duration": 98626466139,
-  "status": "passed"
+  "status": "skipped"
 });
 formatter.match({
   "arguments": [
@@ -10367,9 +10376,7 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.perform_skip_in_OTAC_page(String)"
 });
 formatter.result({
-  "duration": 17060188249,
-  "error_message": "java.lang.AssertionError: Unable to perform action in OTAC Page\r\n\tat org.testng.Assert.fail(Assert.java:94)\r\n\tat steps.E2EOrderPlaced_Steps.perform_skip_in_OTAC_page(E2EOrderPlaced_Steps.java:6090)\r\n\tat ✽.And perform enterCode in OTAC page(18_Reg_CFU_Tablet_Delivery_page_more_than_one_address_select_one_compress_others.feature:23)\r\n",
-  "status": "failed"
+  "status": "skipped"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.click_on_Use_a_different_delivery_address_link()"
@@ -10502,7 +10509,7 @@ formatter.result({
   "status": "skipped"
 });
 formatter.after({
-  "duration": 18628271054,
+  "duration": 20394766468,
   "status": "passed"
 });
 formatter.uri("27_Reg_AFU_SavedBasket.feature");
@@ -10603,7 +10610,7 @@ formatter.examples({
     },
     {
       "cells": [
-        "07801801173",
+        "07729000024",
         "Samsung Galaxy S8 Plus 64GB Midnight Black",
         "Refresh",
         "Enabled",
@@ -10616,7 +10623,7 @@ formatter.examples({
   "keyword": "Examples"
 });
 formatter.before({
-  "duration": 44135170430,
+  "duration": 28337667242,
   "status": "passed"
 });
 formatter.scenario({
@@ -10640,7 +10647,7 @@ formatter.step({
 });
 formatter.step({
   "line": 7,
-  "name": "performs Upgrade for 07801801173",
+  "name": "performs Upgrade for 07729000024",
   "matchedColumns": [
     0
   ],
@@ -10704,20 +10711,20 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.LoginAgentShop()"
 });
 formatter.result({
-  "duration": 3280623920,
+  "duration": 2549943110,
   "status": "passed"
 });
 formatter.match({
   "arguments": [
     {
-      "val": "07801801173",
+      "val": "07729000024",
       "offset": 21
     }
   ],
   "location": "E2EOrderPlaced_Steps.performs_Upgrade(String)"
 });
 formatter.result({
-  "duration": 97426777080,
+  "duration": 100316543419,
   "status": "passed"
 });
 formatter.match({
@@ -10730,7 +10737,7 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.SelectValid_Device(String)"
 });
 formatter.result({
-  "duration": 35198318386,
+  "duration": 36018797965,
   "status": "passed"
 });
 formatter.match({
@@ -10743,14 +10750,14 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.SelectTariff(String)"
 });
 formatter.result({
-  "duration": 23939219668,
+  "duration": 24165107896,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.select_a_valid_Handset_and_Tariff_combination()"
 });
 formatter.result({
-  "duration": 14881744100,
+  "duration": 14745727405,
   "status": "passed"
 });
 formatter.match({
@@ -10763,7 +10770,7 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.ValidateBillCap_AgentDealBuilder(String)"
 });
 formatter.result({
-  "duration": 20574369217,
+  "duration": 25674240920,
   "status": "passed"
 });
 formatter.match({
@@ -10780,25 +10787,25 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.addBillCap_AgentDealBuilder(String,String)"
 });
 formatter.result({
-  "duration": 36875743997,
+  "duration": 40949868082,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.choose_to_email_basket_to_save_the_basket()"
 });
 formatter.result({
-  "duration": 12910779872,
+  "duration": 12910502986,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.verifyEmailSentConfirmation()"
 });
 formatter.result({
-  "duration": 30740905883,
+  "duration": 33844745853,
   "status": "passed"
 });
 formatter.after({
-  "duration": 19830807278,
+  "duration": 18051623977,
   "status": "passed"
 });
 formatter.uri("37_Reg_CFA_Cover_me_copy_update_on_basket_summary.feature");
@@ -11045,7 +11052,7 @@ formatter.examples({
   "keyword": "Examples"
 });
 formatter.before({
-  "duration": 44530197996,
+  "duration": 28259751382,
   "status": "passed"
 });
 formatter.scenario({
@@ -11256,14 +11263,14 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.i_am_an_CFA_user_and_Lands_on_shop_page()"
 });
 formatter.result({
-  "duration": 908297583,
+  "duration": 776767618,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.navigate_to_PAYM_Tablets_page()"
 });
 formatter.result({
-  "duration": 58380316094,
+  "duration": 56918606680,
   "status": "passed"
 });
 formatter.match({
@@ -11276,14 +11283,14 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.Choose_PayMTablet(String)"
 });
 formatter.result({
-  "duration": 28565251920,
+  "duration": 28614791418,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.click_on_the_color_dropdown()"
 });
 formatter.result({
-  "duration": 24959284305,
+  "duration": 76596521832,
   "status": "passed"
 });
 formatter.match({
@@ -11296,7 +11303,7 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.verify_the_name_of_the_colour_is_next_to_the_colour_tile_in_CFAPhoneColour(String)"
 });
 formatter.result({
-  "duration": 221597187,
+  "duration": 257515417,
   "status": "passed"
 });
 formatter.match({
@@ -11309,7 +11316,7 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.select_color_of_the_device(String)"
 });
 formatter.result({
-  "duration": 19751868794,
+  "duration": 19766196505,
   "status": "passed"
 });
 formatter.match({
@@ -11322,22 +11329,23 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.select_capacity_of_the_device(String)"
 });
 formatter.result({
-  "duration": 19247326426,
+  "duration": 19155693342,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.Navigate_to_device_details_page()"
 });
 formatter.result({
-  "duration": 34882648681,
+  "duration": 32115995577,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.land_on_the_Tariffs_and_extra_page()"
 });
 formatter.result({
-  "duration": 16036122363,
-  "status": "passed"
+  "duration": 69491138067,
+  "error_message": "java.lang.AssertionError: Unable to Land on Tariff and extras page\r\n\tat org.testng.Assert.fail(Assert.java:94)\r\n\tat steps.E2EOrderPlaced_Steps.land_on_the_Tariffs_and_extra_page(E2EOrderPlaced_Steps.java:1081)\r\n\tat ✽.And Land on the \u0027Tariffs and extra\u0027 page(37_Reg_CFA_Cover_me_copy_update_on_basket_summary.feature:32)\r\n",
+  "status": "failed"
 });
 formatter.match({
   "arguments": [
@@ -11349,8 +11357,7 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.ValidateBillSpendCap(String)"
 });
 formatter.result({
-  "duration": 38025139279,
-  "status": "passed"
+  "status": "skipped"
 });
 formatter.match({
   "arguments": [
@@ -11370,29 +11377,25 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.ChooseBillSpendCap(String,String,String)"
 });
 formatter.result({
-  "duration": 70349125041,
-  "status": "passed"
+  "status": "skipped"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.select_an_insurance()"
 });
 formatter.result({
-  "duration": 10515615345,
-  "status": "passed"
+  "status": "skipped"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.i_Land_on_the_basket_page_and_choose_home_delivery_option()"
 });
 formatter.result({
-  "duration": 43044462132,
-  "status": "passed"
+  "status": "skipped"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.verify_cover_me_is_present_in_Basket_page()"
 });
 formatter.result({
-  "duration": 7477518193,
-  "status": "passed"
+  "status": "skipped"
 });
 formatter.match({
   "arguments": [
@@ -11404,8 +11407,7 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.CheckoutFromBasket(String)"
 });
 formatter.result({
-  "duration": 34304674588,
-  "status": "passed"
+  "status": "skipped"
 });
 formatter.match({
   "arguments": [
@@ -11421,8 +11423,7 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.DeliveryPage_Inputs_gdpr(String,String)"
 });
 formatter.result({
-  "duration": 37439989765,
-  "status": "passed"
+  "status": "skipped"
 });
 formatter.match({
   "arguments": [
@@ -11438,15 +11439,13 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.isThisOrder4UorSomeoneElse(String,String)"
 });
 formatter.result({
-  "duration": 78771462384,
-  "status": "passed"
+  "status": "skipped"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.verify_cover_me_is_present_in_payment_page()"
 });
 formatter.result({
-  "duration": 12397861282,
-  "status": "passed"
+  "status": "skipped"
 });
 formatter.match({
   "arguments": [
@@ -11458,50 +11457,43 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.CreditCheckPaymentPage_HomeDelivery(String)"
 });
 formatter.result({
-  "duration": 154981614641,
-  "status": "passed"
+  "status": "skipped"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.verify_cover_me_is_present_in_agreements_page()"
 });
 formatter.result({
-  "duration": 15018488345,
-  "status": "passed"
+  "status": "skipped"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.AgreementsPageConfirmation()"
 });
 formatter.result({
-  "duration": 51618004628,
-  "status": "passed"
+  "status": "skipped"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.verify_cover_me_is_present_in_review_page()"
 });
 formatter.result({
-  "duration": 10404056033,
-  "status": "passed"
+  "status": "skipped"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.ReviewPageConfirmation()"
 });
 formatter.result({
-  "duration": 41697237206,
-  "status": "passed"
+  "status": "skipped"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.OrderConfirmationPage()"
 });
 formatter.result({
-  "duration": 3564002636,
-  "status": "passed"
+  "status": "skipped"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.verify_cover_me_is_present_in_pdf_download()"
 });
 formatter.result({
-  "duration": 15180916174,
-  "status": "passed"
+  "status": "skipped"
 });
 formatter.match({
   "arguments": [
@@ -11557,1282 +11549,10 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.Choose_Your_Preferences(String,String,String,String,String,String,String,String,String,String,String,String)"
 });
 formatter.result({
-  "duration": 96800893822,
-  "status": "passed"
-});
-formatter.after({
-  "duration": 18165081409,
-  "status": "passed"
-});
-formatter.uri("44_Reg_CFA_seperate_tariff_ribbons_Tariff_page_Basket_page_html_overlay_for_tariff_ribbons.feature");
-formatter.feature({
-  "line": 1,
-  "name": "44_Reg_CFA_seperate_tariff_ribbons_Tariff_page_Basket_page_html_overlay_for_tariff_ribbons",
-  "description": "",
-  "id": "44-reg-cfa-seperate-tariff-ribbons-tariff-page-basket-page-html-overlay-for-tariff-ribbons",
-  "keyword": "Feature"
-});
-formatter.scenarioOutline({
-  "line": 4,
-  "name": "",
-  "description": "This scenario ensures that when the customer on Acquisition journey selects tariff for a device with ribbons, then the tariff ribbon should be displayed with html overlay on the following pages,\r\n1.Tariff and Extras page\r\n2.Basket page",
-  "id": "44-reg-cfa-seperate-tariff-ribbons-tariff-page-basket-page-html-overlay-for-tariff-ribbons;",
-  "type": "scenario_outline",
-  "keyword": "Scenario Outline",
-  "tags": [
-    {
-      "line": 3,
-      "name": "@Web"
-    }
-  ]
-});
-formatter.step({
-  "line": 9,
-  "name": "I am an CFA user and Lands on shop page",
-  "keyword": "Given "
-});
-formatter.step({
-  "line": 10,
-  "name": "navigate to PAYM Phones page",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 11,
-  "name": "I choose PayM \u003chandset\u003e",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 12,
-  "name": "click on the color dropdown",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 13,
-  "name": "verify the name of the colour is next to the colour tile in CFAPhoneColour",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 14,
-  "name": "select \u003ccolor\u003e color of the connected device",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 15,
-  "name": "Navigate to device details page",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 16,
-  "name": "Verify whether promotional ribbons are displayed for \u003ctariff\u003e on the Tariff tile in the Tariff and Extras page",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 17,
-  "name": "Verify \u0027Overlay icon\u0027 is displayed on the promotional ribbons for \u003ctariff\u003e in the Tariff and Extras page",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 18,
-  "name": "Click on the \u0027Overlay icon\u0027 for \u003ctariff\u003e in the Tariff and Extras page and verify pop up gets displayed",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 19,
-  "name": "Verify that the tariff ribbons are displayed in tariff upsell config of \u0027Your package\u0027 section",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 20,
-  "name": "Click on the \u0027Overlay icon\u0027 in tariff upsell config of \u0027Your package\u0027 section and verify pop up gets displayed in the Tariff and Extras Page",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 21,
-  "name": "Land on the \u0027Tariffs and extra\u0027 page",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 22,
-  "name": "Validate consumer Bill Spend Caps section when BSC is \u003cBSCstatus\u003e",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 23,
-  "name": "Choose your bill cap \u003cBillCap\u003e \u003cCapAmount\u003e when BSC is \u003cBSCstatus\u003e",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 24,
-  "name": "I Land on the basket page by clicking on Add to Basket button",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 25,
-  "name": "Verify Promotional ribbons are displayed under Tariff section in the Basket page",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 26,
-  "name": "Verify \u0027Overlay icon\u0027 is displayed on the promotional ribbons in the Basket page",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 27,
-  "name": "Click on the \u0027Overlay icon\u0027 in the Basket page and verify pop gets displayed",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 28,
-  "name": "click on \"go to checkout\" button",
-  "keyword": "And "
-});
-formatter.step({
-  "comments": [
-    {
-      "line": 29,
-      "value": "#And input \u003cFirstname\u003e and \u003cSurname\u003e and other valid details in Delivery page and Click on the \u0027Continue button\u0027"
-    }
-  ],
-  "line": 30,
-  "name": "input \u003cFirstname\u003e and \u003cSurname\u003e and other valid details in Delivery page to verify GDPR",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 31,
-  "name": "Is this order for You or Someone else \u003cconsumer\u003e when GDPR is \u003cstatus\u003e",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 32,
-  "name": "land on the payment page and input \u003cUsername\u003e and other details and click \u0027Continue on next step\u0027",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 33,
-  "name": "Continue to Agreements page and confirm all the agreement checks",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 34,
-  "name": "Continue to Review page and review the order",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 35,
-  "name": "order confirmation is displayed",
-  "keyword": "Then "
-});
-formatter.step({
-  "line": 36,
-  "name": "Choose \u003cconsumer\u003e \u003cstatus\u003e Business preferences \u003cB1\u003e \u003cB2\u003e \u003cB3\u003e \u003cB4\u003e And Channel Preferences \u003cText\u003e \u003cEmail\u003e \u003cPhone\u003e \u003cPost\u003e \u003cMBBStatus\u003e \u003cDeviceType\u003e",
-  "keyword": "Then "
-});
-formatter.examples({
-  "line": 38,
-  "name": "",
-  "description": "",
-  "id": "44-reg-cfa-seperate-tariff-ribbons-tariff-page-basket-page-html-overlay-for-tariff-ribbons;;",
-  "rows": [
-    {
-      "cells": [
-        "handset",
-        "color",
-        "tariff",
-        "BSCstatus",
-        "BillCap",
-        "CapAmount",
-        "Firstname",
-        "Surname",
-        "Username",
-        "consumer",
-        "B1",
-        "B2",
-        "B3",
-        "B4",
-        "Text",
-        "Email",
-        "Phone",
-        "Post",
-        "status",
-        "MBBStatus",
-        "DeviceType"
-      ],
-      "line": 39,
-      "id": "44-reg-cfa-seperate-tariff-ribbons-tariff-page-basket-page-html-overlay-for-tariff-ribbons;;;1"
-    },
-    {
-      "cells": [
-        "Xperia XZ2 Compact",
-        "Black",
-        "19.99upfront31.00amonth",
-        "Enabled",
-        "CapMyBill",
-        "£5",
-        "TEST",
-        "ACCEPTA",
-        "TEST ACCEPTA",
-        "Me",
-        "Select",
-        "Select",
-        "Not",
-        "Not",
-        "Select",
-        "Not",
-        "Not",
-        "Not",
-        "Enabled",
-        "No",
-        "Connected"
-      ],
-      "line": 40,
-      "id": "44-reg-cfa-seperate-tariff-ribbons-tariff-page-basket-page-html-overlay-for-tariff-ribbons;;;2"
-    }
-  ],
-  "keyword": "Examples"
-});
-formatter.before({
-  "duration": 39502749841,
-  "status": "passed"
-});
-formatter.scenario({
-  "line": 40,
-  "name": "",
-  "description": "This scenario ensures that when the customer on Acquisition journey selects tariff for a device with ribbons, then the tariff ribbon should be displayed with html overlay on the following pages,\r\n1.Tariff and Extras page\r\n2.Basket page",
-  "id": "44-reg-cfa-seperate-tariff-ribbons-tariff-page-basket-page-html-overlay-for-tariff-ribbons;;;2",
-  "type": "scenario",
-  "keyword": "Scenario Outline",
-  "tags": [
-    {
-      "line": 3,
-      "name": "@Web"
-    }
-  ]
-});
-formatter.step({
-  "line": 9,
-  "name": "I am an CFA user and Lands on shop page",
-  "keyword": "Given "
-});
-formatter.step({
-  "line": 10,
-  "name": "navigate to PAYM Phones page",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 11,
-  "name": "I choose PayM Xperia XZ2 Compact",
-  "matchedColumns": [
-    0
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "line": 12,
-  "name": "click on the color dropdown",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 13,
-  "name": "verify the name of the colour is next to the colour tile in CFAPhoneColour",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 14,
-  "name": "select Black color of the connected device",
-  "matchedColumns": [
-    1
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "line": 15,
-  "name": "Navigate to device details page",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 16,
-  "name": "Verify whether promotional ribbons are displayed for 19.99upfront31.00amonth on the Tariff tile in the Tariff and Extras page",
-  "matchedColumns": [
-    2
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "line": 17,
-  "name": "Verify \u0027Overlay icon\u0027 is displayed on the promotional ribbons for 19.99upfront31.00amonth in the Tariff and Extras page",
-  "matchedColumns": [
-    2
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "line": 18,
-  "name": "Click on the \u0027Overlay icon\u0027 for 19.99upfront31.00amonth in the Tariff and Extras page and verify pop up gets displayed",
-  "matchedColumns": [
-    2
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "line": 19,
-  "name": "Verify that the tariff ribbons are displayed in tariff upsell config of \u0027Your package\u0027 section",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 20,
-  "name": "Click on the \u0027Overlay icon\u0027 in tariff upsell config of \u0027Your package\u0027 section and verify pop up gets displayed in the Tariff and Extras Page",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 21,
-  "name": "Land on the \u0027Tariffs and extra\u0027 page",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 22,
-  "name": "Validate consumer Bill Spend Caps section when BSC is Enabled",
-  "matchedColumns": [
-    3
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "line": 23,
-  "name": "Choose your bill cap CapMyBill £5 when BSC is Enabled",
-  "matchedColumns": [
-    3,
-    4,
-    5
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "line": 24,
-  "name": "I Land on the basket page by clicking on Add to Basket button",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 25,
-  "name": "Verify Promotional ribbons are displayed under Tariff section in the Basket page",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 26,
-  "name": "Verify \u0027Overlay icon\u0027 is displayed on the promotional ribbons in the Basket page",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 27,
-  "name": "Click on the \u0027Overlay icon\u0027 in the Basket page and verify pop gets displayed",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 28,
-  "name": "click on \"go to checkout\" button",
-  "keyword": "And "
-});
-formatter.step({
-  "comments": [
-    {
-      "line": 29,
-      "value": "#And input \u003cFirstname\u003e and \u003cSurname\u003e and other valid details in Delivery page and Click on the \u0027Continue button\u0027"
-    }
-  ],
-  "line": 30,
-  "name": "input TEST and ACCEPTA and other valid details in Delivery page to verify GDPR",
-  "matchedColumns": [
-    6,
-    7
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "line": 31,
-  "name": "Is this order for You or Someone else Me when GDPR is Enabled",
-  "matchedColumns": [
-    18,
-    9
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "line": 32,
-  "name": "land on the payment page and input TEST ACCEPTA and other details and click \u0027Continue on next step\u0027",
-  "matchedColumns": [
-    8
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "line": 33,
-  "name": "Continue to Agreements page and confirm all the agreement checks",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 34,
-  "name": "Continue to Review page and review the order",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 35,
-  "name": "order confirmation is displayed",
-  "keyword": "Then "
-});
-formatter.step({
-  "line": 36,
-  "name": "Choose Me Enabled Business preferences Select Select Not Not And Channel Preferences Select Not Not Not No Connected",
-  "matchedColumns": [
-    16,
-    17,
-    18,
-    19,
-    20,
-    9,
-    10,
-    11,
-    12,
-    13,
-    14,
-    15
-  ],
-  "keyword": "Then "
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.i_am_an_CFA_user_and_Lands_on_shop_page()"
-});
-formatter.result({
-  "duration": 858112809,
-  "status": "passed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.navigate_to_PAYM_Phones_page()"
-});
-formatter.result({
-  "duration": 59972697655,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "Xperia XZ2 Compact",
-      "offset": 14
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.Choose_PAYM_Handset(String)"
-});
-formatter.result({
-  "duration": 34265934036,
-  "status": "passed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.click_on_the_color_dropdown()"
-});
-formatter.result({
-  "duration": 22963343594,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "",
-      "offset": 74
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.verify_the_name_of_the_colour_is_next_to_the_colour_tile_in_CFAPhoneColour(String)"
-});
-formatter.result({
-  "duration": 198385628,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "Black",
-      "offset": 7
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.select_color_of_the_device(String)"
-});
-formatter.result({
-  "duration": 17735703835,
-  "status": "passed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.Navigate_to_device_details_page()"
-});
-formatter.result({
-  "duration": 34038717194,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "19.99upfront31.00amonth",
-      "offset": 53
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.Verify_whether_promotional_ribbons_are_displayed_on_the_Tariff_tile_in_the_Tariff_and_Extras_page(String)"
-});
-formatter.result({
-  "duration": 40045273282,
-  "error_message": "java.lang.AssertionError: Failed to select the Tariff in the Extras\u0026Tariff page\r\n\tat org.testng.Assert.fail(Assert.java:94)\r\n\tat actionsPerformed.UpgradeCustomerPageActions.verifyPromotionalRibbonDisplayedTEpage(UpgradeCustomerPageActions.java:622)\r\n\tat steps.E2EOrderPlaced_Steps.Verify_whether_promotional_ribbons_are_displayed_on_the_Tariff_tile_in_the_Tariff_and_Extras_page(E2EOrderPlaced_Steps.java:5766)\r\n\tat ✽.And Verify whether promotional ribbons are displayed for 19.99upfront31.00amonth on the Tariff tile in the Tariff and Extras page(44_Reg_CFA_seperate_tariff_ribbons_Tariff_page_Basket_page_html_overlay_for_tariff_ribbons.feature:16)\r\n",
-  "status": "failed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "19.99upfront31.00amonth",
-      "offset": 66
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.Verify_Overlay_icon_is_displayed_on_the_promotional_ribbons(String)"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "19.99upfront31.00amonth",
-      "offset": 32
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.Click_Overlay_icon_on_the_promotional_ribbons(String)"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.Verify_that_the_tariff_ribbons_are_displayed_in_Your_package_section()"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.Click_on_the_Overlay_icon_in_Your_package_section_and_verify_pop_up_gets_displayed_in_the_Tariff_and_Extras_Page()"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.land_on_the_Tariffs_and_extra_page()"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "Enabled",
-      "offset": 54
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.ValidateBillSpendCap(String)"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "CapMyBill",
-      "offset": 21
-    },
-    {
-      "val": "£5",
-      "offset": 31
-    },
-    {
-      "val": "Enabled",
-      "offset": 46
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.ChooseBillSpendCap(String,String,String)"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.i_Land_on_the_basket_page_by_clicking_AddToBasket()"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.Verify_whether_promotional_ribbons_are_displayed_in_the_Basket_page()"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.Verify_whether_overlay_icon_are_displayed_in_the_Basket_page()"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.Click_on_overlay_icon_in_the_Basket_page()"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "go to checkout",
-      "offset": 10
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.CheckoutFromBasket(String)"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "TEST",
-      "offset": 6
-    },
-    {
-      "val": "ACCEPTA",
-      "offset": 15
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.DeliveryPage_Inputs_gdpr(String,String)"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "Me",
-      "offset": 38
-    },
-    {
-      "val": "Enabled",
-      "offset": 54
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.isThisOrder4UorSomeoneElse(String,String)"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "TEST ACCEPTA",
-      "offset": 35
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.CreditCheckPaymentPage_HomeDelivery(String)"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.AgreementsPageConfirmation()"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.ReviewPageConfirmation()"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.OrderConfirmationPage()"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "Me",
-      "offset": 7
-    },
-    {
-      "val": "Enabled",
-      "offset": 10
-    },
-    {
-      "val": "Select",
-      "offset": 39
-    },
-    {
-      "val": "Select",
-      "offset": 46
-    },
-    {
-      "val": "Not",
-      "offset": 53
-    },
-    {
-      "val": "Not",
-      "offset": 57
-    },
-    {
-      "val": "Select",
-      "offset": 85
-    },
-    {
-      "val": "Not",
-      "offset": 92
-    },
-    {
-      "val": "Not",
-      "offset": 96
-    },
-    {
-      "val": "Not",
-      "offset": 100
-    },
-    {
-      "val": "No",
-      "offset": 104
-    },
-    {
-      "val": "Connected",
-      "offset": 107
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.Choose_Your_Preferences(String,String,String,String,String,String,String,String,String,String,String,String)"
-});
-formatter.result({
   "status": "skipped"
 });
 formatter.after({
-  "duration": 20168432888,
-  "status": "passed"
-});
-formatter.uri("49_Reg_CFU_seperate_tariff_ribbons_Tariff_page_Basket_page_html_overlay_for_tariff_ribbons.feature");
-formatter.feature({
-  "line": 1,
-  "name": "49_Reg_CFU_seperate_tariff_ribbons_Tariff_page_Basket_page_html_overlay_for_tariff_ribbons",
-  "description": "",
-  "id": "49-reg-cfu-seperate-tariff-ribbons-tariff-page-basket-page-html-overlay-for-tariff-ribbons",
-  "keyword": "Feature"
-});
-formatter.scenarioOutline({
-  "line": 4,
-  "name": "",
-  "description": "This scenario ensures that when the customer on upgrade journey selects tariff for a device with ribbons, then the tariff ribbon should be displayed with html overlay on the following pages,\r\n1.Tariff and Extras page\r\n2.Basket page",
-  "id": "49-reg-cfu-seperate-tariff-ribbons-tariff-page-basket-page-html-overlay-for-tariff-ribbons;",
-  "type": "scenario_outline",
-  "keyword": "Scenario Outline",
-  "tags": [
-    {
-      "line": 3,
-      "name": "@Web"
-    }
-  ]
-});
-formatter.step({
-  "line": 9,
-  "name": "I am existing user and I click on Signin button",
-  "keyword": "Given "
-});
-formatter.step({
-  "line": 10,
-  "name": "Signin using valid \u003cusername\u003e and \u003cpassword\u003e credentials",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 11,
-  "name": "Navigate to upgrade phone",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 12,
-  "name": "Click on \u0027Get Started\u0027 CTA",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 13,
-  "name": "I choose upgrade PayM handset \u003chandset\u003e",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 14,
-  "name": "click on the color dropdown",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 15,
-  "name": "verify the name of the colour is next to the colour tile in CFAPhoneColour",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 16,
-  "name": "select \u003ccolor\u003e color of the connected device",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 17,
-  "name": "Navigate to device details page",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 18,
-  "name": "Verify whether promotional ribbons are displayed for \u003ctariff\u003e on the Tariff tile in the Tariff and Extras page",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 19,
-  "name": "Verify \u0027Overlay icon\u0027 is displayed on the promotional ribbons for \u003ctariff\u003e in the Tariff and Extras page",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 20,
-  "name": "Click on the \u0027Overlay icon\u0027 for \u003ctariff\u003e in the Tariff and Extras page and verify pop up gets displayed",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 21,
-  "name": "Select a tariff \u003ctariff\u003e",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 22,
-  "name": "Validate consumer Bill Spend Caps section when BSC is \u003cBSCstatus\u003e",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 23,
-  "name": "Choose your bill cap \u003cBillCap\u003e \u003cCapAmount\u003e when BSC is \u003cBSCstatus\u003e",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 24,
-  "name": "Verify that the tariff ribbons are displayed in tariff upsell config of \u0027Your package\u0027 section",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 25,
-  "name": "Click on the \u0027Overlay icon\u0027 in tariff upsell config of \u0027Your package\u0027 section and verify pop up gets displayed in the Tariff and Extras Page",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 26,
-  "name": "I Land on the basket page by clicking on Add to Basket button",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 27,
-  "name": "Verify Promotional ribbons are displayed under Tariff section in the Basket page",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 28,
-  "name": "Verify \u0027Overlay icon\u0027 is displayed on the promotional ribbons in the Basket page",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 29,
-  "name": "Click on the \u0027Overlay icon\u0027 in the Basket page and verify pop gets displayed",
-  "keyword": "And "
-});
-formatter.examples({
-  "line": 31,
-  "name": "",
-  "description": "",
-  "id": "49-reg-cfu-seperate-tariff-ribbons-tariff-page-basket-page-html-overlay-for-tariff-ribbons;;",
-  "rows": [
-    {
-      "cells": [
-        "username",
-        "password",
-        "handset",
-        "tariff",
-        "color",
-        "BSCstatus",
-        "BillCap",
-        "CapAmount"
-      ],
-      "line": 32,
-      "id": "49-reg-cfu-seperate-tariff-ribbons-tariff-page-basket-page-html-overlay-for-tariff-ribbons;;;1"
-    },
-    {
-      "cells": [
-        "ins_nov1474@stf.ref.o2.co.uk",
-        "test123",
-        "iPhone 8 Plus",
-        "9.99upfront84.00amonth",
-        "Space Grey",
-        "Enabled",
-        "CapMyBill",
-        "£10"
-      ],
-      "line": 33,
-      "id": "49-reg-cfu-seperate-tariff-ribbons-tariff-page-basket-page-html-overlay-for-tariff-ribbons;;;2"
-    }
-  ],
-  "keyword": "Examples"
-});
-formatter.before({
-  "duration": 40251903477,
-  "status": "passed"
-});
-formatter.scenario({
-  "line": 33,
-  "name": "",
-  "description": "This scenario ensures that when the customer on upgrade journey selects tariff for a device with ribbons, then the tariff ribbon should be displayed with html overlay on the following pages,\r\n1.Tariff and Extras page\r\n2.Basket page",
-  "id": "49-reg-cfu-seperate-tariff-ribbons-tariff-page-basket-page-html-overlay-for-tariff-ribbons;;;2",
-  "type": "scenario",
-  "keyword": "Scenario Outline",
-  "tags": [
-    {
-      "line": 3,
-      "name": "@Web"
-    }
-  ]
-});
-formatter.step({
-  "line": 9,
-  "name": "I am existing user and I click on Signin button",
-  "keyword": "Given "
-});
-formatter.step({
-  "line": 10,
-  "name": "Signin using valid ins_nov1474@stf.ref.o2.co.uk and test123 credentials",
-  "matchedColumns": [
-    0,
-    1
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "line": 11,
-  "name": "Navigate to upgrade phone",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 12,
-  "name": "Click on \u0027Get Started\u0027 CTA",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 13,
-  "name": "I choose upgrade PayM handset iPhone 8 Plus",
-  "matchedColumns": [
-    2
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "line": 14,
-  "name": "click on the color dropdown",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 15,
-  "name": "verify the name of the colour is next to the colour tile in CFAPhoneColour",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 16,
-  "name": "select Space Grey color of the connected device",
-  "matchedColumns": [
-    4
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "line": 17,
-  "name": "Navigate to device details page",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 18,
-  "name": "Verify whether promotional ribbons are displayed for 9.99upfront84.00amonth on the Tariff tile in the Tariff and Extras page",
-  "matchedColumns": [
-    3
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "line": 19,
-  "name": "Verify \u0027Overlay icon\u0027 is displayed on the promotional ribbons for 9.99upfront84.00amonth in the Tariff and Extras page",
-  "matchedColumns": [
-    3
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "line": 20,
-  "name": "Click on the \u0027Overlay icon\u0027 for 9.99upfront84.00amonth in the Tariff and Extras page and verify pop up gets displayed",
-  "matchedColumns": [
-    3
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "line": 21,
-  "name": "Select a tariff 9.99upfront84.00amonth",
-  "matchedColumns": [
-    3
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "line": 22,
-  "name": "Validate consumer Bill Spend Caps section when BSC is Enabled",
-  "matchedColumns": [
-    5
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "line": 23,
-  "name": "Choose your bill cap CapMyBill £10 when BSC is Enabled",
-  "matchedColumns": [
-    5,
-    6,
-    7
-  ],
-  "keyword": "And "
-});
-formatter.step({
-  "line": 24,
-  "name": "Verify that the tariff ribbons are displayed in tariff upsell config of \u0027Your package\u0027 section",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 25,
-  "name": "Click on the \u0027Overlay icon\u0027 in tariff upsell config of \u0027Your package\u0027 section and verify pop up gets displayed in the Tariff and Extras Page",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 26,
-  "name": "I Land on the basket page by clicking on Add to Basket button",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 27,
-  "name": "Verify Promotional ribbons are displayed under Tariff section in the Basket page",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 28,
-  "name": "Verify \u0027Overlay icon\u0027 is displayed on the promotional ribbons in the Basket page",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 29,
-  "name": "Click on the \u0027Overlay icon\u0027 in the Basket page and verify pop gets displayed",
-  "keyword": "And "
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.I_am_existing_user_and_I_click_on_Signin_button()"
-});
-formatter.result({
-  "duration": 32391086127,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "ins_nov1474@stf.ref.o2.co.uk",
-      "offset": 19
-    },
-    {
-      "val": "test123",
-      "offset": 52
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.signin_using_valid_ink_jun_and_test_credentials(String,String)"
-});
-formatter.result({
-  "duration": 30229945450,
-  "status": "passed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.navigate_to_upgrade_phone()"
-});
-formatter.result({
-  "duration": 50683546749,
-  "status": "passed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.ClickOn_GetStartedCTA()"
-});
-formatter.result({
-  "duration": 8355704132,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "iPhone 8 Plus",
-      "offset": 30
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.Choose_upgradePAYM_Handset(String)"
-});
-formatter.result({
-  "duration": 6110408059,
-  "error_message": "java.lang.AssertionError: Unable to choose upgrade paym Device\r\n\tat org.testng.Assert.fail(Assert.java:94)\r\n\tat steps.E2EOrderPlaced_Steps.Choose_upgradePAYM_Handset(E2EOrderPlaced_Steps.java:4003)\r\n\tat ✽.And I choose upgrade PayM handset iPhone 8 Plus(49_Reg_CFU_seperate_tariff_ribbons_Tariff_page_Basket_page_html_overlay_for_tariff_ribbons.feature:13)\r\n",
-  "status": "failed"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.click_on_the_color_dropdown()"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "",
-      "offset": 74
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.verify_the_name_of_the_colour_is_next_to_the_colour_tile_in_CFAPhoneColour(String)"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "Space Grey",
-      "offset": 7
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.select_color_of_the_device(String)"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.Navigate_to_device_details_page()"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "9.99upfront84.00amonth",
-      "offset": 53
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.Verify_whether_promotional_ribbons_are_displayed_on_the_Tariff_tile_in_the_Tariff_and_Extras_page(String)"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "9.99upfront84.00amonth",
-      "offset": 66
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.Verify_Overlay_icon_is_displayed_on_the_promotional_ribbons(String)"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "9.99upfront84.00amonth",
-      "offset": 32
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.Click_Overlay_icon_on_the_promotional_ribbons(String)"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "9.99upfront84.00amonth",
-      "offset": 16
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.selectATariffTariff(String)"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "Enabled",
-      "offset": 54
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.ValidateBillSpendCap(String)"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "CapMyBill",
-      "offset": 21
-    },
-    {
-      "val": "£10",
-      "offset": 31
-    },
-    {
-      "val": "Enabled",
-      "offset": 47
-    }
-  ],
-  "location": "E2EOrderPlaced_Steps.ChooseBillSpendCap(String,String,String)"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.Verify_that_the_tariff_ribbons_are_displayed_in_Your_package_section()"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.Click_on_the_Overlay_icon_in_Your_package_section_and_verify_pop_up_gets_displayed_in_the_Tariff_and_Extras_Page()"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.i_Land_on_the_basket_page_by_clicking_AddToBasket()"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.Verify_whether_promotional_ribbons_are_displayed_in_the_Basket_page()"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.Verify_whether_overlay_icon_are_displayed_in_the_Basket_page()"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.match({
-  "location": "E2EOrderPlaced_Steps.Click_on_overlay_icon_in_the_Basket_page()"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.after({
-  "duration": 20198041986,
+  "duration": 20516229507,
   "status": "passed"
 });
 formatter.uri("57_Reg_CS_CFU_SavedBasket.feature");
@@ -12977,7 +11697,7 @@ formatter.examples({
   "keyword": "Examples"
 });
 formatter.before({
-  "duration": 40800894530,
+  "duration": 29633569564,
   "status": "passed"
 });
 formatter.scenario({
@@ -13099,7 +11819,7 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.i_am_an_Existing_user_and_Navigates_to_Signin_page()"
 });
 formatter.result({
-  "duration": 63326630847,
+  "duration": 39410141119,
   "status": "passed"
 });
 formatter.match({
@@ -13116,21 +11836,21 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.signin_using_valid_ink_jun_and_test_credentials(String,String)"
 });
 formatter.result({
-  "duration": 31249193274,
+  "duration": 26483211325,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.choose_to_upgrade_any_Phone_in_My_upgrade_page()"
 });
 formatter.result({
-  "duration": 49259387858,
+  "duration": 41163072949,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.ClickOn_GetStartedCTA()"
 });
 formatter.result({
-  "duration": 8041001296,
+  "duration": 11164461667,
   "status": "passed"
 });
 formatter.match({
@@ -13143,14 +11863,14 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.select_device_from_recommended_devices_section(String)"
 });
 formatter.result({
-  "duration": 26645526395,
+  "duration": 18996932714,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.clickOnDeviceConfirm_CTA()"
 });
 formatter.result({
-  "duration": 4785925061,
+  "duration": 10231858792,
   "status": "passed"
 });
 formatter.match({
@@ -13163,7 +11883,7 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.selectATariffTariff(String)"
 });
 formatter.result({
-  "duration": 5169728534,
+  "duration": 5239290069,
   "status": "passed"
 });
 formatter.match({
@@ -13176,7 +11896,7 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.ValidateBillSpendCap(String)"
 });
 formatter.result({
-  "duration": 38146313479,
+  "duration": 39978977394,
   "status": "passed"
 });
 formatter.match({
@@ -13197,49 +11917,49 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.ChooseBillSpendCap(String,String,String)"
 });
 formatter.result({
-  "duration": 41734509760,
+  "duration": 41750790356,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.select_a_I_need_a_sim_option()"
 });
 formatter.result({
-  "duration": 11885417279,
+  "duration": 11908163681,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.verify_that_Confirm_CTA_is_displayed()"
 });
 formatter.result({
-  "duration": 366204136,
+  "duration": 423329706,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.click_on_Confirm_CTA()"
 });
 formatter.result({
-  "duration": 3621762389,
+  "duration": 3800493342,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.i_Land_on_the_basket_page_by_clicking_AddToBasket()"
 });
 formatter.result({
-  "duration": 93138416446,
+  "duration": 47565185755,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.verify_that_Go_to_checkout_CTA_is_enabled()"
 });
 formatter.result({
-  "duration": 384048729,
+  "duration": 352947401,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.verifies_the_basket_page_for_the_upgrade_journey()"
 });
 formatter.result({
-  "duration": 641729703,
+  "duration": 553965937,
   "status": "passed"
 });
 formatter.match({
@@ -13252,11 +11972,11 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.choose_to_email_basket_to_save_the_basket_CFU(String)"
 });
 formatter.result({
-  "duration": 6403829887,
+  "duration": 6282044504,
   "status": "passed"
 });
 formatter.after({
-  "duration": 19944152749,
+  "duration": 20219771909,
   "status": "passed"
 });
 formatter.uri("60_Reg_CS_Free_Sim_Tablet.feature");
@@ -13368,7 +12088,7 @@ formatter.examples({
   "keyword": "Examples"
 });
 formatter.before({
-  "duration": 49456371314,
+  "duration": 27685595223,
   "status": "passed"
 });
 formatter.scenario({
@@ -13446,21 +12166,21 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.i_am_an_CFA_user_and_Lands_on_shop_page()"
 });
 formatter.result({
-  "duration": 941711158,
+  "duration": 660214289,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.Navigate_to_FreeSim_page()"
 });
 formatter.result({
-  "duration": 82182612441,
+  "duration": 68626360540,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.select_iPads_and_Tablets_tab()"
 });
 formatter.result({
-  "duration": 10149358123,
+  "duration": 10089357929,
   "status": "passed"
 });
 formatter.match({
@@ -13477,7 +12197,7 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.select_surfer_type_and_simtype(String,String)"
 });
 formatter.result({
-  "duration": 31860482556,
+  "duration": 21265046848,
   "status": "passed"
 });
 formatter.match({
@@ -13506,7 +12226,7 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.Enter_delivery_details(String,String,String,String,String)"
 });
 formatter.result({
-  "duration": 9140165798,
+  "duration": 9190948905,
   "status": "passed"
 });
 formatter.match({
@@ -13527,18 +12247,18 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.i_enter_details_in_Delivery_PageTEST_and_ACCEPTA_new(String,String,String)"
 });
 formatter.result({
-  "duration": 69484904895,
+  "duration": 62747642734,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.OrdernumberFreeSim()"
 });
 formatter.result({
-  "duration": 1169749414,
+  "duration": 1053618580,
   "status": "passed"
 });
 formatter.after({
-  "duration": 19887005604,
+  "duration": 20134592524,
   "status": "passed"
 });
 formatter.scenarioOutline({
@@ -13642,7 +12362,7 @@ formatter.examples({
   "keyword": "Examples"
 });
 formatter.before({
-  "duration": 39990460140,
+  "duration": 28866332227,
   "status": "passed"
 });
 formatter.scenario({
@@ -13720,21 +12440,21 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.i_am_an_CFA_user_and_Lands_on_shop_page()"
 });
 formatter.result({
-  "duration": 908249806,
+  "duration": 464807963,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.Navigate_to_FreeSim_page()"
 });
 formatter.result({
-  "duration": 87012814542,
+  "duration": 76872828136,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.select_iPads_and_Tablets_tab()"
 });
 formatter.result({
-  "duration": 10045286022,
+  "duration": 10041419509,
   "status": "passed"
 });
 formatter.match({
@@ -13751,7 +12471,7 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.select_surfer_type_and_simtype(String,String)"
 });
 formatter.result({
-  "duration": 25099783835,
+  "duration": 18927806060,
   "status": "passed"
 });
 formatter.match({
@@ -13780,7 +12500,7 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.Enter_delivery_details(String,String,String,String,String)"
 });
 formatter.result({
-  "duration": 9211890638,
+  "duration": 9258177218,
   "status": "passed"
 });
 formatter.match({
@@ -13801,18 +12521,18 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.i_enter_details_in_Delivery_PageTEST_and_ACCEPTA_new(String,String,String)"
 });
 formatter.result({
-  "duration": 68748951557,
+  "duration": 61936858218,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.OrdernumberFreeSim()"
 });
 formatter.result({
-  "duration": 1064472267,
+  "duration": 850453970,
   "status": "passed"
 });
 formatter.after({
-  "duration": 19869384326,
+  "duration": 20156124044,
   "status": "passed"
 });
 formatter.scenarioOutline({
@@ -13916,7 +12636,7 @@ formatter.examples({
   "keyword": "Examples"
 });
 formatter.before({
-  "duration": 46687986841,
+  "duration": 27901981332,
   "status": "passed"
 });
 formatter.scenario({
@@ -13994,21 +12714,21 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.i_am_an_CFA_user_and_Lands_on_shop_page()"
 });
 formatter.result({
-  "duration": 871091563,
+  "duration": 670048219,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.Navigate_to_FreeSim_page()"
 });
 formatter.result({
-  "duration": 85842435531,
+  "duration": 68877015528,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.select_iPads_and_Tablets_tab()"
 });
 formatter.result({
-  "duration": 10051881394,
+  "duration": 10032238885,
   "status": "passed"
 });
 formatter.match({
@@ -14025,7 +12745,7 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.select_surfer_type_and_simtype(String,String)"
 });
 formatter.result({
-  "duration": 24456212411,
+  "duration": 19038181641,
   "status": "passed"
 });
 formatter.match({
@@ -14054,7 +12774,7 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.Enter_delivery_details(String,String,String,String,String)"
 });
 formatter.result({
-  "duration": 9487129541,
+  "duration": 9234907322,
   "status": "passed"
 });
 formatter.match({
@@ -14075,18 +12795,18 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.i_enter_details_in_Delivery_PageTEST_and_ACCEPTA_new(String,String,String)"
 });
 formatter.result({
-  "duration": 69191608703,
+  "duration": 62022483167,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.OrdernumberFreeSim()"
 });
 formatter.result({
-  "duration": 1182657387,
+  "duration": 1364510861,
   "status": "passed"
 });
 formatter.after({
-  "duration": 19883789316,
+  "duration": 20141148242,
   "status": "passed"
 });
 formatter.scenarioOutline({
@@ -14190,7 +12910,7 @@ formatter.examples({
   "keyword": "Examples"
 });
 formatter.before({
-  "duration": 39941335312,
+  "duration": 26960100509,
   "status": "passed"
 });
 formatter.scenario({
@@ -14268,21 +12988,21 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.i_am_an_CFA_user_and_Lands_on_shop_page()"
 });
 formatter.result({
-  "duration": 872401365,
+  "duration": 691449502,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.Navigate_to_FreeSim_page()"
 });
 formatter.result({
-  "duration": 81372313597,
+  "duration": 71203067640,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.select_iPads_and_Tablets_tab()"
 });
 formatter.result({
-  "duration": 10037398898,
+  "duration": 10064906702,
   "status": "passed"
 });
 formatter.match({
@@ -14299,7 +13019,7 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.select_surfer_type_and_simtype(String,String)"
 });
 formatter.result({
-  "duration": 26710440335,
+  "duration": 20897962752,
   "status": "passed"
 });
 formatter.match({
@@ -14328,7 +13048,7 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.Enter_delivery_details(String,String,String,String,String)"
 });
 formatter.result({
-  "duration": 9184821515,
+  "duration": 9159097191,
   "status": "passed"
 });
 formatter.match({
@@ -14349,18 +13069,18 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.i_enter_details_in_Delivery_PageTEST_and_ACCEPTA_new(String,String,String)"
 });
 formatter.result({
-  "duration": 69593643585,
+  "duration": 64078235434,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.OrdernumberFreeSim()"
 });
 formatter.result({
-  "duration": 824139710,
+  "duration": 885414378,
   "status": "passed"
 });
 formatter.after({
-  "duration": 19879465660,
+  "duration": 19882928556,
   "status": "passed"
 });
 formatter.scenarioOutline({
@@ -14464,7 +13184,7 @@ formatter.examples({
   "keyword": "Examples"
 });
 formatter.before({
-  "duration": 45848043861,
+  "duration": 35525522672,
   "status": "passed"
 });
 formatter.scenario({
@@ -14542,21 +13262,21 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.i_am_an_CFA_user_and_Lands_on_shop_page()"
 });
 formatter.result({
-  "duration": 934541400,
+  "duration": 472806901,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.Navigate_to_FreeSim_page()"
 });
 formatter.result({
-  "duration": 80333619761,
+  "duration": 78116674364,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.select_iPads_and_Tablets_tab()"
 });
 formatter.result({
-  "duration": 10038315158,
+  "duration": 10018473435,
   "status": "passed"
 });
 formatter.match({
@@ -14573,7 +13293,7 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.select_surfer_type_and_simtype(String,String)"
 });
 formatter.result({
-  "duration": 30073674148,
+  "duration": 21245937447,
   "status": "passed"
 });
 formatter.match({
@@ -14602,7 +13322,7 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.Enter_delivery_details(String,String,String,String,String)"
 });
 formatter.result({
-  "duration": 9275300129,
+  "duration": 9167799690,
   "status": "passed"
 });
 formatter.match({
@@ -14623,18 +13343,18 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.i_enter_details_in_Delivery_PageTEST_and_ACCEPTA_new(String,String,String)"
 });
 formatter.result({
-  "duration": 69617722919,
+  "duration": 61551096483,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.OrdernumberFreeSim()"
 });
 formatter.result({
-  "duration": 833321772,
+  "duration": 827258394,
   "status": "passed"
 });
 formatter.after({
-  "duration": 19877849023,
+  "duration": 19855749082,
   "status": "passed"
 });
 formatter.scenarioOutline({
@@ -14738,7 +13458,7 @@ formatter.examples({
   "keyword": "Examples"
 });
 formatter.before({
-  "duration": 38098214267,
+  "duration": 32275023048,
   "status": "passed"
 });
 formatter.scenario({
@@ -14816,21 +13536,21 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.i_am_an_CFA_user_and_Lands_on_shop_page()"
 });
 formatter.result({
-  "duration": 838264408,
+  "duration": 492344171,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.Navigate_to_FreeSim_page()"
 });
 formatter.result({
-  "duration": 81129892646,
+  "duration": 82567253970,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.select_iPads_and_Tablets_tab()"
 });
 formatter.result({
-  "duration": 10070486173,
+  "duration": 10019652997,
   "status": "passed"
 });
 formatter.match({
@@ -14847,7 +13567,7 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.select_surfer_type_and_simtype(String,String)"
 });
 formatter.result({
-  "duration": 25629687381,
+  "duration": 20931238576,
   "status": "passed"
 });
 formatter.match({
@@ -14876,7 +13596,7 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.Enter_delivery_details(String,String,String,String,String)"
 });
 formatter.result({
-  "duration": 9096892432,
+  "duration": 9145537005,
   "status": "passed"
 });
 formatter.match({
@@ -14897,18 +13617,18 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.i_enter_details_in_Delivery_PageTEST_and_ACCEPTA_new(String,String,String)"
 });
 formatter.result({
-  "duration": 68614320124,
+  "duration": 61813613979,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.OrdernumberFreeSim()"
 });
 formatter.result({
-  "duration": 832742784,
+  "duration": 836120151,
   "status": "passed"
 });
 formatter.after({
-  "duration": 19877474238,
+  "duration": 20134797434,
   "status": "passed"
 });
 formatter.uri("81_Reg_Jan_CFA_OOSForHomeDeliveryandCnC.feature");
@@ -15040,7 +13760,7 @@ formatter.examples({
   "keyword": "Examples"
 });
 formatter.before({
-  "duration": 37829530035,
+  "duration": 28322639770,
   "status": "passed"
 });
 formatter.scenario({
@@ -15146,14 +13866,14 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.i_am_an_CFA_user_and_Lands_on_shop_page()"
 });
 formatter.result({
-  "duration": 837580310,
+  "duration": 471451803,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.navigate_to_PAYM_Phones_page()"
 });
 formatter.result({
-  "duration": 61440161409,
+  "duration": 57034378942,
   "status": "passed"
 });
 formatter.match({
@@ -15166,14 +13886,14 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.Choose_PAYM_Handset(String)"
 });
 formatter.result({
-  "duration": 32427977525,
+  "duration": 33309324131,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.click_on_the_color_dropdown()"
 });
 formatter.result({
-  "duration": 24863069247,
+  "duration": 19836552622,
   "status": "passed"
 });
 formatter.match({
@@ -15186,7 +13906,7 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.verify_the_name_of_the_colour_is_next_to_the_colour_tile_in_CFAPhoneColour(String)"
 });
 formatter.result({
-  "duration": 212842288,
+  "duration": 243365273,
   "status": "passed"
 });
 formatter.match({
@@ -15199,29 +13919,30 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.select_color_of_the_device(String)"
 });
 formatter.result({
-  "duration": 15806141523,
+  "duration": 15749032515,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.Navigate_to_device_details_page()"
 });
 formatter.result({
-  "duration": 33665427174,
+  "duration": 33078270825,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.deliveryInformationSection_OOS_message_validation()"
 });
 formatter.result({
-  "duration": 153707614,
+  "duration": 81588675,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.land_on_the_Tariffs_and_extra_page()"
 });
 formatter.result({
-  "duration": 16134201792,
-  "status": "passed"
+  "duration": 69608114665,
+  "error_message": "java.lang.AssertionError: Unable to Land on Tariff and extras page\r\n\tat org.testng.Assert.fail(Assert.java:94)\r\n\tat steps.E2EOrderPlaced_Steps.land_on_the_Tariffs_and_extra_page(E2EOrderPlaced_Steps.java:1081)\r\n\tat ✽.And Land on the \u0027Tariffs and extra\u0027 page(81_Reg_Jan_CFA_OOSForHomeDeliveryandCnC.feature:18)\r\n",
+  "status": "failed"
 });
 formatter.match({
   "arguments": [
@@ -15233,8 +13954,7 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.ValidateBillSpendCap(String)"
 });
 formatter.result({
-  "duration": 37938629001,
-  "status": "passed"
+  "status": "skipped"
 });
 formatter.match({
   "arguments": [
@@ -15254,25 +13974,22 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.ChooseBillSpendCap(String,String,String)"
 });
 formatter.result({
-  "duration": 41770662559,
-  "status": "passed"
+  "status": "skipped"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.i_Land_on_the_basket_page_by_clicking_AddToBasket()"
 });
 formatter.result({
-  "duration": 58043334591,
-  "status": "passed"
+  "status": "skipped"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.delivery_section_should_show_OOS_message()"
 });
 formatter.result({
-  "duration": 909580489,
-  "status": "passed"
+  "status": "skipped"
 });
 formatter.after({
-  "duration": 19928803185,
+  "duration": 20593849502,
   "status": "passed"
 });
 formatter.uri("83_ Reg_Jan_Existing_OOSForHomeDeliveryandCnC.feature");
@@ -15402,7 +14119,7 @@ formatter.examples({
       "cells": [
         "iPhone 5s Like New",
         "Silver",
-        "inl_feb4914@stf.ref.o2.co.uk",
+        "inavl0wx_700444@o2.com",
         "test123",
         "Enabled",
         "CapMyBill",
@@ -15415,7 +14132,7 @@ formatter.examples({
   "keyword": "Examples"
 });
 formatter.before({
-  "duration": 48181322811,
+  "duration": 29383953285,
   "status": "passed"
 });
 formatter.scenario({
@@ -15439,7 +14156,7 @@ formatter.step({
 });
 formatter.step({
   "line": 11,
-  "name": "Signin using valid inl_feb4914@stf.ref.o2.co.uk and test123 credentials",
+  "name": "Signin using valid inavl0wx_700444@o2.com and test123 credentials",
   "matchedColumns": [
     2,
     3
@@ -15536,31 +14253,31 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.I_am_existing_user_and_I_click_on_Signin_button()"
 });
 formatter.result({
-  "duration": 34136624271,
+  "duration": 20506544216,
   "status": "passed"
 });
 formatter.match({
   "arguments": [
     {
-      "val": "inl_feb4914@stf.ref.o2.co.uk",
+      "val": "inavl0wx_700444@o2.com",
       "offset": 19
     },
     {
       "val": "test123",
-      "offset": 52
+      "offset": 46
     }
   ],
   "location": "E2EOrderPlaced_Steps.signin_using_valid_ink_jun_and_test_credentials(String,String)"
 });
 formatter.result({
-  "duration": 31339960674,
+  "duration": 35467072949,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.navigate_to_PAYM_Phones_page()"
 });
 formatter.result({
-  "duration": 60742304162,
+  "duration": 58831589471,
   "status": "passed"
 });
 formatter.match({
@@ -15573,14 +14290,14 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.Choose_PAYM_Handset(String)"
 });
 formatter.result({
-  "duration": 32204283453,
+  "duration": 33160933953,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.click_on_the_color_dropdown()"
 });
 formatter.result({
-  "duration": 22581920486,
+  "duration": 22847001637,
   "status": "passed"
 });
 formatter.match({
@@ -15593,7 +14310,7 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.verify_the_name_of_the_colour_is_next_to_the_colour_tile_in_CFAPhoneColour(String)"
 });
 formatter.result({
-  "duration": 255862965,
+  "duration": 229001017,
   "status": "passed"
 });
 formatter.match({
@@ -15606,28 +14323,28 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.select_color_of_the_device(String)"
 });
 formatter.result({
-  "duration": 15822512810,
+  "duration": 15684838222,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.Navigate_to_device_details_page()"
 });
 formatter.result({
-  "duration": 36409460161,
+  "duration": 34762067861,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.deliveryInformationSection_OOS_message_validation()"
 });
 formatter.result({
-  "duration": 102910231,
+  "duration": 85507101,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.land_on_the_Tariffs_and_extra_page()"
 });
 formatter.result({
-  "duration": 16080599359,
+  "duration": 16296016988,
   "status": "passed"
 });
 formatter.match({
@@ -15640,7 +14357,7 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.ValidateBillSpendCap(String)"
 });
 formatter.result({
-  "duration": 37911920508,
+  "duration": 40071646803,
   "status": "passed"
 });
 formatter.match({
@@ -15661,25 +14378,25 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.ChooseBillSpendCap(String,String,String)"
 });
 formatter.result({
-  "duration": 70197954571,
+  "duration": 73353357576,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.i_Land_on_the_basket_page_by_clicking_AddToBasket()"
 });
 formatter.result({
-  "duration": 56295476954,
+  "duration": 55121441805,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.delivery_section_should_show_OOS_message()"
 });
 formatter.result({
-  "duration": 896243937,
+  "duration": 969672550,
   "status": "passed"
 });
 formatter.after({
-  "duration": 20218614830,
+  "duration": 20203486662,
   "status": "passed"
 });
 formatter.uri("86_Reg_Jan_FreeSim_InvalidPostCode_EnteredManually.feature");
@@ -15772,7 +14489,7 @@ formatter.examples({
   "keyword": "Examples"
 });
 formatter.before({
-  "duration": 45193176501,
+  "duration": 29995029064,
   "status": "passed"
 });
 formatter.scenario({
@@ -15837,21 +14554,21 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.i_am_an_CFA_user_and_Lands_on_shop_page()"
 });
 formatter.result({
-  "duration": 908299706,
+  "duration": 667037912,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.Navigate_to_FreeSim_page()"
 });
 formatter.result({
-  "duration": 77594788821,
+  "duration": 69122394869,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.select_iPads_and_Tablets_tab()"
 });
 formatter.result({
-  "duration": 10028033868,
+  "duration": 10011319266,
   "status": "passed"
 });
 formatter.match({
@@ -15868,7 +14585,7 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.select_surfer_type_and_simtype(String,String)"
 });
 formatter.result({
-  "duration": 24924986675,
+  "duration": 18651222296,
   "status": "passed"
 });
 formatter.match({
@@ -15897,7 +14614,7 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.Enter_delivery_details(String,String,String,String,String)"
 });
 formatter.result({
-  "duration": 9199909188,
+  "duration": 9539359257,
   "status": "passed"
 });
 formatter.match({
@@ -15910,11 +14627,11 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.respective_Error_messageShould_Be_Displayed_Enter_Manually_section(String)"
 });
 formatter.result({
-  "duration": 90897637,
+  "duration": 335584516,
   "status": "passed"
 });
 formatter.after({
-  "duration": 19874036405,
+  "duration": 20108302057,
   "status": "passed"
 });
 formatter.uri("87_Reg_PayG Tablets_ShowMarketingMessageOnTariffAndExtrasPagePackageSummary.feature");
@@ -16098,7 +14815,7 @@ formatter.examples({
   "keyword": "Examples"
 });
 formatter.before({
-  "duration": 39065899920,
+  "duration": 31917743862,
   "status": "passed"
 });
 formatter.scenario({
@@ -16250,14 +14967,14 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.i_am_an_CFA_user_and_Lands_on_shop_page()"
 });
 formatter.result({
-  "duration": 826968826,
+  "duration": 665047556,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.navigateToPayAsYouGoTabletsPage()"
 });
 formatter.result({
-  "duration": 80651422803,
+  "duration": 71012217474,
   "status": "passed"
 });
 formatter.match({
@@ -16270,14 +14987,14 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.select_any_available_Tablet(String)"
 });
 formatter.result({
-  "duration": 38527360033,
+  "duration": 53392772926,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.Navigate_to_device_details_page()"
 });
 formatter.result({
-  "duration": 51129587226,
+  "duration": 33793983278,
   "status": "passed"
 });
 formatter.match({
@@ -16290,8 +15007,9 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.selectPayGTariffTariff(String)"
 });
 formatter.result({
-  "duration": 22379270659,
-  "status": "passed"
+  "duration": 51450891396,
+  "error_message": "java.lang.AssertionError: Unable to select PayG tariff\r\n\tat org.testng.Assert.fail(Assert.java:94)\r\n\tat steps.E2EOrderPlaced_Steps.selectPayGTariffTariff(E2EOrderPlaced_Steps.java:8402)\r\n\tat ✽.And Select a PayG tariff 1GB Preloaded(87_Reg_PayG Tablets_ShowMarketingMessageOnTariffAndExtrasPagePackageSummary.feature:9)\r\n",
+  "status": "failed"
 });
 formatter.match({
   "arguments": [
@@ -16303,9 +15021,7 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.ValidateBillSpendCap(String)"
 });
 formatter.result({
-  "duration": 5094477739,
-  "error_message": "java.lang.AssertionError: Bill spend cap section is enabled it suppose to be in disabled mode for disabled status\r\n\tat org.junit.Assert.fail(Assert.java:88)\r\n\tat actionsPerformed.PAYMandPAYGTariffAndExtrasPageActions.Validate_BillSpendCap(PAYMandPAYGTariffAndExtrasPageActions.java:1437)\r\n\tat steps.E2EOrderPlaced_Steps.ValidateBillSpendCap(E2EOrderPlaced_Steps.java:10868)\r\n\tat ✽.And Validate consumer Bill Spend Caps section when BSC is Disabled(87_Reg_PayG Tablets_ShowMarketingMessageOnTariffAndExtrasPagePackageSummary.feature:10)\r\n",
-  "status": "failed"
+  "status": "skipped"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.i_Land_on_the_basket_page_and_choose_home_delivery_option()"
@@ -16444,7 +15160,7 @@ formatter.result({
   "status": "skipped"
 });
 formatter.after({
-  "duration": 20268430481,
+  "duration": 20424029374,
   "status": "passed"
 });
 formatter.uri("90_Reg_Trustev_AFA_PAYM_Tablet_WithAccessoryClick_and_Collect.feature");
@@ -16639,7 +15355,7 @@ formatter.examples({
   "keyword": "Examples"
 });
 formatter.before({
-  "duration": 41043130388,
+  "duration": 28299238221,
   "status": "passed"
 });
 formatter.scenario({
@@ -16796,14 +15512,14 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.LoginAgentShop()"
 });
 formatter.result({
-  "duration": 3351885499,
+  "duration": 2763688388,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.performs_Acquisition_for_New_user()"
 });
 formatter.result({
-  "duration": 12502136878,
+  "duration": 12792862464,
   "status": "passed"
 });
 formatter.match({
@@ -16816,7 +15532,7 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.SelectValid_Device(String)"
 });
 formatter.result({
-  "duration": 35168249212,
+  "duration": 34593848795,
   "status": "passed"
 });
 formatter.match({
@@ -16829,7 +15545,7 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.SelectTariff(String)"
 });
 formatter.result({
-  "duration": 20880998776,
+  "duration": 20924137492,
   "status": "passed"
 });
 formatter.match({
@@ -16842,14 +15558,14 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.Select_Accessory(String)"
 });
 formatter.result({
-  "duration": 27337076350,
+  "duration": 27911800398,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.select_a_valid_Handset_and_Tariff_combination()"
 });
 formatter.result({
-  "duration": 49556678574,
+  "duration": 49489686352,
   "status": "passed"
 });
 formatter.match({
@@ -16862,7 +15578,7 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.ValidateBillCap_AgentDealBuilder(String)"
 });
 formatter.result({
-  "duration": 20662242384,
+  "duration": 25551435523,
   "status": "passed"
 });
 formatter.match({
@@ -16879,21 +15595,21 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.addBillCap_AgentDealBuilder(String,String)"
 });
 formatter.result({
-  "duration": 53346088184,
+  "duration": 57434022562,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.select_Store_for_click_and_Collect()"
 });
 formatter.result({
-  "duration": 13096963921,
+  "duration": 13101163106,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.validate_all_the_Basket_content_and_checkout()"
 });
 formatter.result({
-  "duration": 18787336434,
+  "duration": 20828622694,
   "status": "passed"
 });
 formatter.match({
@@ -16910,14 +15626,14 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.ValidateYourCapInAgentDealSummary(String,String)"
 });
 formatter.result({
-  "duration": 17502376825,
+  "duration": 25535229905,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.advisory_checks()"
 });
 formatter.result({
-  "duration": 23452915079,
+  "duration": 23446243928,
   "status": "passed"
 });
 formatter.match({
@@ -16946,7 +15662,7 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.CreditCheck(String,String,String,String,String)"
 });
 formatter.result({
-  "duration": 89766052240,
+  "duration": 79534981818,
   "status": "passed"
 });
 formatter.match({
@@ -16967,14 +15683,14 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.Register_Customer_Phones(String,String,String)"
 });
 formatter.result({
-  "duration": 55758152729,
+  "duration": 55783481530,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.Validate_Register_Status()"
 });
 formatter.result({
-  "duration": 16081992683,
+  "duration": 16080804424,
   "status": "passed"
 });
 formatter.match({
@@ -17031,25 +15747,25 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.Choose_Your_Preferences_AFA(String,String,String,String,String,String,String,String,String,String,String,String)"
 });
 formatter.result({
-  "duration": 84853996542,
+  "duration": 85076784782,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.pay_by_card_payn_device()"
 });
 formatter.result({
-  "duration": 57875789650,
+  "duration": 64334075116,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.order_confirmation_message_should_be_displayed()"
 });
 formatter.result({
-  "duration": 5654265722,
+  "duration": 5720327361,
   "status": "passed"
 });
 formatter.after({
-  "duration": 18102365571,
+  "duration": 17984813272,
   "status": "passed"
 });
 formatter.uri("92_Reg_Trustev_CFA_PayMPhonesHomeDeliveryWithoutAccessory.feature");
@@ -17256,7 +15972,7 @@ formatter.examples({
   "keyword": "Examples"
 });
 formatter.before({
-  "duration": 40881801786,
+  "duration": 31193162929,
   "status": "passed"
 });
 formatter.scenario({
@@ -17425,14 +16141,14 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.i_am_an_CFA_user_and_Lands_on_shop_page()"
 });
 formatter.result({
-  "duration": 934480528,
+  "duration": 463820925,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.navigate_to_PAYM_Phones_page()"
 });
 formatter.result({
-  "duration": 58884119156,
+  "duration": 57062006812,
   "status": "passed"
 });
 formatter.match({
@@ -17445,14 +16161,14 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.Choose_PAYM_Handset(String)"
 });
 formatter.result({
-  "duration": 31149532244,
+  "duration": 32463173634,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.click_on_the_color_dropdown()"
 });
 formatter.result({
-  "duration": 28188216170,
+  "duration": 16922429905,
   "status": "passed"
 });
 formatter.match({
@@ -17465,7 +16181,7 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.verify_the_name_of_the_colour_is_next_to_the_colour_tile_in_CFAPhoneColour(String)"
 });
 formatter.result({
-  "duration": 283141599,
+  "duration": 278552178,
   "status": "passed"
 });
 formatter.match({
@@ -17478,7 +16194,7 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.select_color_of_the_device(String)"
 });
 formatter.result({
-  "duration": 21934507779,
+  "duration": 21884888122,
   "status": "passed"
 });
 formatter.match({
@@ -17491,22 +16207,23 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.select_capacity_of_the_device(String)"
 });
 formatter.result({
-  "duration": 19176125718,
+  "duration": 19110197567,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.Navigate_to_device_details_page()"
 });
 formatter.result({
-  "duration": 34810498093,
+  "duration": 32833942933,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.land_on_the_Tariffs_and_extra_page()"
 });
 formatter.result({
-  "duration": 16081073592,
-  "status": "passed"
+  "duration": 69555020571,
+  "error_message": "java.lang.AssertionError: Unable to Land on Tariff and extras page\r\n\tat org.testng.Assert.fail(Assert.java:94)\r\n\tat steps.E2EOrderPlaced_Steps.land_on_the_Tariffs_and_extra_page(E2EOrderPlaced_Steps.java:1081)\r\n\tat ✽.And Land on the \u0027Tariffs and extra\u0027 page(92_Reg_Trustev_CFA_PayMPhonesHomeDeliveryWithoutAccessory.feature:16)\r\n",
+  "status": "failed"
 });
 formatter.match({
   "arguments": [
@@ -17518,8 +16235,7 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.ValidateBillSpendCap(String)"
 });
 formatter.result({
-  "duration": 37746865287,
-  "status": "passed"
+  "status": "skipped"
 });
 formatter.match({
   "arguments": [
@@ -17539,15 +16255,13 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.ChooseBillSpendCap(String,String,String)"
 });
 formatter.result({
-  "duration": 60800859847,
-  "status": "passed"
+  "status": "skipped"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.i_Land_on_the_basket_page_and_choose_home_delivery_option()"
 });
 formatter.result({
-  "duration": 40289889504,
-  "status": "passed"
+  "status": "skipped"
 });
 formatter.match({
   "arguments": [
@@ -17559,8 +16273,7 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.CheckoutFromBasket(String)"
 });
 formatter.result({
-  "duration": 34384767863,
-  "status": "passed"
+  "status": "skipped"
 });
 formatter.match({
   "arguments": [
@@ -17576,8 +16289,7 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.DeliveryPage_Inputs_gdpr(String,String)"
 });
 formatter.result({
-  "duration": 37933780503,
-  "status": "passed"
+  "status": "skipped"
 });
 formatter.match({
   "arguments": [
@@ -17593,8 +16305,7 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.isThisOrder4UorSomeoneElse(String,String)"
 });
 formatter.result({
-  "duration": 78938396131,
-  "status": "passed"
+  "status": "skipped"
 });
 formatter.match({
   "arguments": [
@@ -17606,29 +16317,25 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.CreditCheckPaymentPage_HomeDelivery(String)"
 });
 formatter.result({
-  "duration": 170875047512,
-  "status": "passed"
+  "status": "skipped"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.AgreementsPageConfirmation()"
 });
 formatter.result({
-  "duration": 51317220516,
-  "status": "passed"
+  "status": "skipped"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.ReviewPageConfirmationwithTrustev()"
 });
 formatter.result({
-  "duration": 45867199671,
-  "status": "passed"
+  "status": "skipped"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.OrderConfirmationPage()"
 });
 formatter.result({
-  "duration": 3443866793,
-  "status": "passed"
+  "status": "skipped"
 });
 formatter.match({
   "arguments": [
@@ -17684,11 +16391,10 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.Choose_Your_Preferences(String,String,String,String,String,String,String,String,String,String,String,String)"
 });
 formatter.result({
-  "duration": 97158701211,
-  "status": "passed"
+  "status": "skipped"
 });
 formatter.after({
-  "duration": 20031321290,
+  "duration": 20605513825,
   "status": "passed"
 });
 formatter.uri("93_Reg_Trustev_CFA_PayMTabletsHomeDeliveryWithAccessory.feature");
@@ -17868,7 +16574,7 @@ formatter.examples({
   "keyword": "Examples"
 });
 formatter.before({
-  "duration": 41006555026,
+  "duration": 28639469851,
   "status": "passed"
 });
 formatter.scenario({
@@ -18016,14 +16722,14 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.i_am_an_CFA_user_and_Lands_on_shop_page()"
 });
 formatter.result({
-  "duration": 920550478,
+  "duration": 680864941,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.navigate_to_PAYM_Tablets_page()"
 });
 formatter.result({
-  "duration": 57822363462,
+  "duration": 56832789206,
   "status": "passed"
 });
 formatter.match({
@@ -18036,22 +16742,23 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.select_any_available_Tablet(String)"
 });
 formatter.result({
-  "duration": 57391722448,
+  "duration": 58794030347,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.Navigate_to_device_details_page()"
 });
 formatter.result({
-  "duration": 33590648134,
+  "duration": 38925632028,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.land_on_the_Tariffs_and_extra_page()"
 });
 formatter.result({
-  "duration": 15986706979,
-  "status": "passed"
+  "duration": 69501948065,
+  "error_message": "java.lang.AssertionError: Unable to Land on Tariff and extras page\r\n\tat org.testng.Assert.fail(Assert.java:94)\r\n\tat steps.E2EOrderPlaced_Steps.land_on_the_Tariffs_and_extra_page(E2EOrderPlaced_Steps.java:1081)\r\n\tat ✽.And Land on the \u0027Tariffs and extra\u0027 page(93_Reg_Trustev_CFA_PayMTabletsHomeDeliveryWithAccessory.feature:9)\r\n",
+  "status": "failed"
 });
 formatter.match({
   "arguments": [
@@ -18063,8 +16770,7 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.ValidateBillSpendCap(String)"
 });
 formatter.result({
-  "duration": 37714861669,
-  "status": "passed"
+  "status": "skipped"
 });
 formatter.match({
   "arguments": [
@@ -18084,22 +16790,19 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.ChooseBillSpendCap(String,String,String)"
 });
 formatter.result({
-  "duration": 70268021721,
-  "status": "passed"
+  "status": "skipped"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.Choose_some_Accesssory()"
 });
 formatter.result({
-  "duration": 20643685381,
-  "status": "passed"
+  "status": "skipped"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.i_Land_on_the_basket_page_and_choose_home_delivery_option()"
 });
 formatter.result({
-  "duration": 38769630573,
-  "status": "passed"
+  "status": "skipped"
 });
 formatter.match({
   "arguments": [
@@ -18111,8 +16814,7 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.CheckoutFromBasket(String)"
 });
 formatter.result({
-  "duration": 32912965234,
-  "status": "passed"
+  "status": "skipped"
 });
 formatter.match({
   "arguments": [
@@ -18128,8 +16830,7 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.DeliveryPage_Inputs_gdpr(String,String)"
 });
 formatter.result({
-  "duration": 75387554511,
-  "status": "passed"
+  "status": "skipped"
 });
 formatter.match({
   "arguments": [
@@ -18145,9 +16846,7 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.isThisOrder4UorSomeoneElse(String,String)"
 });
 formatter.result({
-  "duration": 135845495039,
-  "error_message": "org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {\"method\":\"xpath\",\"selector\":\"//button[@id\u003d\u0027btn-continue\u0027 or @id\u003d\u0027change-delivery-confirm\u0027 or @id\u003d\u0027change-delivery-confirm-label\u0027 or @id\u003d\u0027btn-continue-label\u0027]\"}\n  (Session info: chrome\u003d69.0.3497.100)\n  (Driver info: chromedriver\u003d2.38.552522 (437e6fbedfa8762dec75e2c5b3ddb86763dc9dcb),platform\u003dWindows NT 10.0.10586 x86_64) (WARNING: The server did not provide any stacktrace information)\nCommand duration or timeout: 0 milliseconds\nFor documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html\nBuild info: version: \u00273.6.0\u0027, revision: \u00276fbf3ec767\u0027, time: \u00272017-09-27T15:28:36.4Z\u0027\nSystem info: host: \u0027LASST266243\u0027, ip: \u002710.172.59.222\u0027, os.name: \u0027Windows 10\u0027, os.arch: \u0027amd64\u0027, os.version: \u002710.0\u0027, java.version: \u00271.8.0_144\u0027\nDriver info: org.openqa.selenium.chrome.ChromeDriver\nCapabilities [{mobileEmulationEnabled\u003dfalse, hasTouchScreen\u003dfalse, platform\u003dXP, acceptSslCerts\u003dfalse, acceptInsecureCerts\u003dfalse, webStorageEnabled\u003dtrue, browserName\u003dchrome, takesScreenshot\u003dtrue, javascriptEnabled\u003dtrue, platformName\u003dXP, setWindowRect\u003dtrue, unexpectedAlertBehaviour\u003d, applicationCacheEnabled\u003dfalse, rotatable\u003dfalse, networkConnectionEnabled\u003dfalse, chrome\u003d{chromedriverVersion\u003d2.38.552522 (437e6fbedfa8762dec75e2c5b3ddb86763dc9dcb), userDataDir\u003dC:\\Users\\khanj6\\AppData\\Local\\Temp\\1\\scoped_dir11568_26856}, takesHeapSnapshot\u003dtrue, pageLoadStrategy\u003dnormal, unhandledPromptBehavior\u003d, databaseEnabled\u003dfalse, handlesAlerts\u003dtrue, version\u003d69.0.3497.100, browserConnectionEnabled\u003dfalse, nativeEvents\u003dtrue, locationContextEnabled\u003dtrue, cssSelectorsEnabled\u003dtrue}]\nSession ID: 10b594ac9b374e27cedc159022edbe94\n*** Element info: {Using\u003dxpath, value\u003d//button[@id\u003d\u0027btn-continue\u0027 or @id\u003d\u0027change-delivery-confirm\u0027 or @id\u003d\u0027change-delivery-confirm-label\u0027 or @id\u003d\u0027btn-continue-label\u0027]}\r\n\tat sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)\r\n\tat sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)\r\n\tat sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)\r\n\tat java.lang.reflect.Constructor.newInstance(Constructor.java:423)\r\n\tat org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:214)\r\n\tat org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:166)\r\n\tat org.openqa.selenium.remote.http.JsonHttpResponseCodec.reconstructValue(JsonHttpResponseCodec.java:40)\r\n\tat org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:82)\r\n\tat org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:45)\r\n\tat org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:164)\r\n\tat org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:586)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:356)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:458)\r\n\tat org.openqa.selenium.By$ByXPath.findElement(By.java:361)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:348)\r\n\tat org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)\r\n\tat org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)\r\n\tat com.sun.proxy.$Proxy23.isDisplayed(Unknown Source)\r\n\tat actionsPerformed.DeliveryPageActions.clickOnSubmitBtn(DeliveryPageActions.java:344)\r\n\tat steps.E2EOrderPlaced_Steps.isThisOrder4UorSomeoneElse(E2EOrderPlaced_Steps.java:10536)\r\n\tat ✽.And Is this order for You or Someone else Me when GDPR is Enabled(93_Reg_Trustev_CFA_PayMTabletsHomeDeliveryWithAccessory.feature:17)\r\n",
-  "status": "failed"
+  "status": "skipped"
 });
 formatter.match({
   "arguments": [
@@ -18236,7 +16935,7 @@ formatter.result({
   "status": "skipped"
 });
 formatter.after({
-  "duration": 20663213498,
+  "duration": 18941732183,
   "status": "passed"
 });
 formatter.uri("96_Reg_VOLTE_PayMPhonesHomeDeliveryWithAccessory.feature");
@@ -18436,7 +17135,7 @@ formatter.examples({
   "keyword": "Examples"
 });
 formatter.before({
-  "duration": 37848281685,
+  "duration": 33398624729,
   "status": "passed"
 });
 formatter.scenario({
@@ -18610,14 +17309,14 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.i_am_an_CFA_user_and_Lands_on_shop_page()"
 });
 formatter.result({
-  "duration": 823998856,
+  "duration": 700149878,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.navigate_to_PAYM_Phones_page()"
 });
 formatter.result({
-  "duration": 59182942988,
+  "duration": 57201599647,
   "status": "passed"
 });
 formatter.match({
@@ -18630,14 +17329,14 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.Choose_PAYM_Handset(String)"
 });
 formatter.result({
-  "duration": 30319506742,
+  "duration": 30206387260,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.click_on_the_color_dropdown()"
 });
 formatter.result({
-  "duration": 27867439619,
+  "duration": 17008524840,
   "status": "passed"
 });
 formatter.match({
@@ -18650,7 +17349,7 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.verify_the_name_of_the_colour_is_next_to_the_colour_tile_in_CFAPhoneColour(String)"
 });
 formatter.result({
-  "duration": 184266238,
+  "duration": 324916081,
   "status": "passed"
 });
 formatter.match({
@@ -18663,7 +17362,7 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.select_color_of_the_device(String)"
 });
 formatter.result({
-  "duration": 17634712831,
+  "duration": 17685306791,
   "status": "passed"
 });
 formatter.match({
@@ -18676,22 +17375,23 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.select_capacity_of_the_device(String)"
 });
 formatter.result({
-  "duration": 21561791439,
+  "duration": 21317442690,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.Navigate_to_device_details_page()"
 });
 formatter.result({
-  "duration": 35359559219,
+  "duration": 34253463216,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.land_on_the_Tariffs_and_extra_page()"
 });
 formatter.result({
-  "duration": 16024732289,
-  "status": "passed"
+  "duration": 69461874453,
+  "error_message": "java.lang.AssertionError: Unable to Land on Tariff and extras page\r\n\tat org.testng.Assert.fail(Assert.java:94)\r\n\tat steps.E2EOrderPlaced_Steps.land_on_the_Tariffs_and_extra_page(E2EOrderPlaced_Steps.java:1081)\r\n\tat ✽.And Land on the \u0027Tariffs and extra\u0027 page(96_Reg_VOLTE_PayMPhonesHomeDeliveryWithAccessory.feature:13)\r\n",
+  "status": "failed"
 });
 formatter.match({
   "arguments": [
@@ -18703,8 +17403,7 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.ValidateBillSpendCap(String)"
 });
 formatter.result({
-  "duration": 37872118241,
-  "status": "passed"
+  "status": "skipped"
 });
 formatter.match({
   "arguments": [
@@ -18724,22 +17423,19 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.ChooseBillSpendCap(String,String,String)"
 });
 formatter.result({
-  "duration": 70611025624,
-  "status": "passed"
+  "status": "skipped"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.Choose_some_Accesssory()"
 });
 formatter.result({
-  "duration": 7899926671,
-  "status": "passed"
+  "status": "skipped"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.i_Land_on_the_basket_page_and_choose_home_delivery_option()"
 });
 formatter.result({
-  "duration": 42723052090,
-  "status": "passed"
+  "status": "skipped"
 });
 formatter.match({
   "arguments": [
@@ -18751,8 +17447,7 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.CheckoutFromBasket(String)"
 });
 formatter.result({
-  "duration": 34741318536,
-  "status": "passed"
+  "status": "skipped"
 });
 formatter.match({
   "arguments": [
@@ -18768,8 +17463,7 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.DeliveryPage_Inputs_gdpr(String,String)"
 });
 formatter.result({
-  "duration": 37628150019,
-  "status": "passed"
+  "status": "skipped"
 });
 formatter.match({
   "arguments": [
@@ -18785,8 +17479,7 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.isThisOrder4UorSomeoneElse(String,String)"
 });
 formatter.result({
-  "duration": 78714082371,
-  "status": "passed"
+  "status": "skipped"
 });
 formatter.match({
   "arguments": [
@@ -18798,29 +17491,25 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.CreditCheckPaymentPage_HomeDelivery(String)"
 });
 formatter.result({
-  "duration": 166690808524,
-  "status": "passed"
+  "status": "skipped"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.AgreementsPageConfirmation()"
 });
 formatter.result({
-  "duration": 51545265142,
-  "status": "passed"
+  "status": "skipped"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.ReviewPageConfirmation()"
 });
 formatter.result({
-  "duration": 55097665006,
-  "status": "passed"
+  "status": "skipped"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.OrderConfirmationVolte()"
 });
 formatter.result({
-  "duration": 984292993,
-  "status": "passed"
+  "status": "skipped"
 });
 formatter.match({
   "arguments": [
@@ -18876,11 +17565,10 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.Choose_Your_Preferences(String,String,String,String,String,String,String,String,String,String,String,String)"
 });
 formatter.result({
-  "duration": 96592051013,
-  "status": "passed"
+  "status": "skipped"
 });
 formatter.after({
-  "duration": 20025935566,
+  "duration": 20544800530,
   "status": "passed"
 });
 formatter.uri("97_Reg_VOLTE_PayMPhonesHomeDeliveryWithoutAccessory.feature");
@@ -19074,7 +17762,7 @@ formatter.examples({
   "keyword": "Examples"
 });
 formatter.before({
-  "duration": 38470272344,
+  "duration": 30349306436,
   "status": "passed"
 });
 formatter.scenario({
@@ -19235,14 +17923,14 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.i_am_an_CFA_user_and_Lands_on_shop_page()"
 });
 formatter.result({
-  "duration": 935516761,
+  "duration": 659358902,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.navigate_to_PAYM_Phones_page()"
 });
 formatter.result({
-  "duration": 59592324936,
+  "duration": 57364774873,
   "status": "passed"
 });
 formatter.match({
@@ -19255,14 +17943,14 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.Choose_PAYM_Handset(String)"
 });
 formatter.result({
-  "duration": 31281151947,
+  "duration": 31951230258,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.click_on_the_color_dropdown()"
 });
 formatter.result({
-  "duration": 25473180734,
+  "duration": 17820193054,
   "status": "passed"
 });
 formatter.match({
@@ -19275,7 +17963,7 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.verify_the_name_of_the_colour_is_next_to_the_colour_tile_in_CFAPhoneColour(String)"
 });
 formatter.result({
-  "duration": 258378167,
+  "duration": 318566688,
   "status": "passed"
 });
 formatter.match({
@@ -19288,22 +17976,23 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.select_color_of_the_device(String)"
 });
 formatter.result({
-  "duration": 22120349247,
+  "duration": 22112142978,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.Navigate_to_device_details_page()"
 });
 formatter.result({
-  "duration": 33931897376,
+  "duration": 31104740721,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.land_on_the_Tariffs_and_extra_page()"
 });
 formatter.result({
-  "duration": 16088641140,
-  "status": "passed"
+  "duration": 69476258173,
+  "error_message": "java.lang.AssertionError: Unable to Land on Tariff and extras page\r\n\tat org.testng.Assert.fail(Assert.java:94)\r\n\tat steps.E2EOrderPlaced_Steps.land_on_the_Tariffs_and_extra_page(E2EOrderPlaced_Steps.java:1081)\r\n\tat ✽.And Land on the \u0027Tariffs and extra\u0027 page(97_Reg_VOLTE_PayMPhonesHomeDeliveryWithoutAccessory.feature:13)\r\n",
+  "status": "failed"
 });
 formatter.match({
   "arguments": [
@@ -19315,8 +18004,7 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.ValidateBillSpendCap(String)"
 });
 formatter.result({
-  "duration": 37807315073,
-  "status": "passed"
+  "status": "skipped"
 });
 formatter.match({
   "arguments": [
@@ -19336,15 +18024,13 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.ChooseBillSpendCap(String,String,String)"
 });
 formatter.result({
-  "duration": 70216566075,
-  "status": "passed"
+  "status": "skipped"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.i_Land_on_the_basket_page_and_choose_home_delivery_option()"
 });
 formatter.result({
-  "duration": 41102818923,
-  "status": "passed"
+  "status": "skipped"
 });
 formatter.match({
   "arguments": [
@@ -19356,8 +18042,7 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.CheckoutFromBasket(String)"
 });
 formatter.result({
-  "duration": 33282474489,
-  "status": "passed"
+  "status": "skipped"
 });
 formatter.match({
   "arguments": [
@@ -19373,8 +18058,7 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.DeliveryPage_Inputs_gdpr(String,String)"
 });
 formatter.result({
-  "duration": 37378219562,
-  "status": "passed"
+  "status": "skipped"
 });
 formatter.match({
   "arguments": [
@@ -19390,8 +18074,7 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.isThisOrder4UorSomeoneElse(String,String)"
 });
 formatter.result({
-  "duration": 78840842959,
-  "status": "passed"
+  "status": "skipped"
 });
 formatter.match({
   "arguments": [
@@ -19403,29 +18086,25 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.CreditCheckPaymentPage_HomeDelivery(String)"
 });
 formatter.result({
-  "duration": 155200849867,
-  "status": "passed"
+  "status": "skipped"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.AgreementsPageConfirmation()"
 });
 formatter.result({
-  "duration": 51615273190,
-  "status": "passed"
+  "status": "skipped"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.ReviewPageConfirmation()"
 });
 formatter.result({
-  "duration": 53774196300,
-  "status": "passed"
+  "status": "skipped"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.OrderConfirmationVolte()"
 });
 formatter.result({
-  "duration": 1068045291,
-  "status": "passed"
+  "status": "skipped"
 });
 formatter.match({
   "arguments": [
@@ -19481,11 +18160,10 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.Choose_Your_Preferences(String,String,String,String,String,String,String,String,String,String,String,String)"
 });
 formatter.result({
-  "duration": 96659583850,
-  "status": "passed"
+  "status": "skipped"
 });
 formatter.after({
-  "duration": 20105931163,
+  "duration": 19589619288,
   "status": "passed"
 });
 });

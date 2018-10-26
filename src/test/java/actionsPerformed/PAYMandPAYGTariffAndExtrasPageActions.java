@@ -1360,7 +1360,7 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 		try {
 			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 			JavascriptExecutor jse = (JavascriptExecutor) driver;
-			jse.executeScript("window.scrollBy(0,-100)", "");
+			jse.executeScript("window.scrollBy(0,100)", "");
 
 			if (BSCstatus.equalsIgnoreCase("Enabled")) {
 				Thread.sleep(4000);

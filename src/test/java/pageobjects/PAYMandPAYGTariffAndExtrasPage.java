@@ -238,10 +238,10 @@ public class PAYMandPAYGTariffAndExtrasPage {
 	@FindBy(how = How.XPATH, using = "//button[@class='close boxclose']")
 	public static WebElement CapMyBillOverlayPopupClose;
 
-	@FindBy(how = How.XPATH, using = "//div[@class='largeTitle']/p | //div[@class='build-spend-caps-container']/p")
+	@FindBy(how = How.XPATH, using = "//div[@class='largeTitle']/p | //div[@class='build-spend-caps-container']/p | //div[@class='build-spend-caps-container main-container']/p")
 	public static WebElement BillCapStatusMsg;
 
-	@FindBy(how = How.XPATH, using = "//div[@class='build-spend-caps-container']/p[2] | (//div[@class='selection-details'])[1]/p")
+	@FindBy(how = How.XPATH, using = "//div[@class='build-spend-caps-container']/p[2] | (//div[@class='selection-details'])[1]/p | //div[@class='build-spend-caps-container main-container']/p")
 	public static WebElement BillCapUpgradeStatusMsg;
 
 	@FindBy(how = How.XPATH, using = "//div[@class='selected-cap-msg']")
