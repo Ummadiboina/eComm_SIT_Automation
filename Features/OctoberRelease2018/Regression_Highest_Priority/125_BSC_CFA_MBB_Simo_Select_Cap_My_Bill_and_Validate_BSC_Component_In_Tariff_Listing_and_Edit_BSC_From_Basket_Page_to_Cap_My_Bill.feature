@@ -17,7 +17,8 @@ Feature: 125_BSC_CFA_MBB_Simo_Select_Cap_My_Bill_and_Validate_BSC_Component_In_T
     And Validate and click on BSC 'Edit' link at basket page to change <NewBillCap> <NewCapAmount>
     And Validate consumer Bill Spend Caps section when BSC is <BSCstatus>
     And Choose your bill cap <NextNewBillCap> <NextNewCapAmount> when BSC is <BSCstatus>
-    And I Land on the Plan included basket page and choose home delivery option
+    #Commented below step because of package option page changes, once we select BSC bolton it will directly land on basket page
+    #And I Land on the Plan included basket page and choose home delivery option
     And Validate Basket Page for applied Bill Spend Cap <NextNewBillCap> <NextNewCapAmount> when BSC is <BSCstatus>
     And click on "go to checkout" button
     And input <Firstname> and <Surname> and other valid details in Delivery page to verify GDPR
