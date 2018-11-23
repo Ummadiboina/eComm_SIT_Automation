@@ -20,6 +20,7 @@ import org.openqa.selenium.support.ui.Select;
 import GlobalActions.Screenshots;
 import helpers.Environment;
 import org.testng.asserts.Assertion;
+import pageobjects.BasketPage;
 import pageobjects.ConnectedDeviceDetailsPage;
 import pageobjects.MouseHoverPage;
 
@@ -60,6 +61,58 @@ public class ConnectedDeviceDetailsPageAction extends Environment {
         }
         Screenshots.captureScreenshot();
     }
+
+    public static void ClickAndCollectNow() throws IOException, InterruptedException {
+
+        log.debug("In click And Collect now function");
+        pageobjects.BasketPage.clickAndCollect.click();
+        Thread.sleep(3000);
+        pageobjects.BasketPage.StorePostcode.sendKeys("M4");
+        log.debug("PostCode Entered for Search");
+        Thread.sleep(2000);
+        Screenshots.captureScreenshot();
+        Thread.sleep(2000);
+        JavascriptExecutor jse = (JavascriptExecutor) driver;
+        jse.executeScript("arguments[0].click();", pageobjects.BasketPage.PostcodeSubmit);
+        //pageobjects.BasketPage.PostcodeSubmit.click();
+        Thread.sleep(5000);
+        log.debug("Postcode Submitted for Search");
+
+        scrollToAnElement.scrollToElement(BasketPage.firstStore);
+        Thread.sleep(2000);
+        Screenshots.captureScreenshot();
+
+        pageobjects.BasketPage.WhenToCollect.click();
+        Thread.sleep(6000);
+        Screenshots.captureScreenshot();
+
+        String collectionDetails = pageobjects.BasketPage.CollectionDetails.getText();
+        Thread.sleep(2000);
+        if(collectionDetails.contains("Today")){
+            log.debug("The device is available for collection today/now:: Collection Details is :"+collectionDetails);
+        }else{
+            log.debug("The device is not available for collection today/now:: Collection Details is :"+collectionDetails);
+            Assert.fail("The device is not available for collection today/now:: Collection Details is :"+collectionDetails);
+        }
+
+        //scrollToAnElement.scrollToElement(BasketPage.Collectfromthisstore);
+        //Thread.sleep(3000);
+        pageobjects.BasketPage.Collectfromthisstore.click();
+        log.debug("Store Selected for Collection Today/Now");
+
+        Thread.sleep(5000);
+        Screenshots.captureScreenshot();
+        String collectionDetailsPDpage = pageobjects.BasketPage.CollectionDetailsPDpage.getText();
+        Thread.sleep(2000);
+        if(collectionDetailsPDpage.contains("Today")){
+            log.debug("Delivery details - collection today/now:: is updated in PD page: " +collectionDetailsPDpage);
+        }else{
+            log.debug("Delivery details - collection today/now status is not matching in PD page: " +collectionDetailsPDpage);
+            Assert.fail("Delivery details - collection today/now status is not matching in PD page: " +collectionDetailsPDpage);
+        }
+    }
+
+
 
     public static void ViewAllTariffs() throws InterruptedException, IOException {
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
@@ -315,7 +368,7 @@ public class ConnectedDeviceDetailsPageAction extends Environment {
 
             Actions action = new Actions(driver);
             action.moveToElement(elementColor).click().build().perform();
-            log.debug("Selected " + color + "from color dropdown");
+            log.debug("Selected " + color + " from color dropdown\n");
             Thread.sleep(3000);
             Screenshots.captureScreenshot();
 
@@ -669,14 +722,13 @@ public class ConnectedDeviceDetailsPageAction extends Environment {
             if (upFront.contains("Min") || upFront.contains("min")) {
                 boolean b = false;
                 for (int i = 1; i < 100; i++) {
-
-
                     //String minValUpfrnt = (String) ConnectedDeviceDetailsPage.minVal_Upfrent.getText().subSequence(5, 7);
                     //String upFrntVal = ConnectedDeviceDetailsPage.upfrentVal.getText().substring(1, 3);
-                    int minUpfrentSize = ConnectedDeviceDetailsPage.minVal_Upfrent.getText().length();
 
+                    int minUpfrentSize = ConnectedDeviceDetailsPage.minVal_Upfrent.getText().length();
                     String minValUpfrnt = (String) ConnectedDeviceDetailsPage.minVal_Upfrent.getText().subSequence(5, minUpfrentSize);
                     Thread.sleep(2000);
+
                     int upfrentSize = ConnectedDeviceDetailsPage.upfrentVal.getText().length();
                     String upFrntVal = ConnectedDeviceDetailsPage.upfrentVal.getText().substring(1, upfrentSize-3);
                     Thread.sleep(2000);
@@ -684,6 +736,7 @@ public class ConnectedDeviceDetailsPageAction extends Environment {
                     if (driver.findElements(By.xpath("//div[contains(@data-calc,'upfront')]/..//div[contains(@class,'min-icon')]/..//div[contains(@class,'min-icon calc-track-element disable')]")).size() <= 0) {
                         CommonActions.clickWebElement(ConnectedDeviceDetailsPage.minIcon_Upfrent);
                     }
+
                     if (minValUpfrnt.contains(upFrntVal) && ConnectedDeviceDetailsPage.minIcon_Upfrent_disiabled.isDisplayed()) {
                         log.info("The Upfront cost is changes to minimum - " + ConnectedDeviceDetailsPage.minVal_Upfrent.getText());
                         b = true;
@@ -696,19 +749,28 @@ public class ConnectedDeviceDetailsPageAction extends Environment {
                 }
             }
 
-
             if (upFront.equalsIgnoreCase("max")) {
                 boolean b = false;
 
                 for (int i = 1; i < 100; i++) {
-                    String maxValUpfrnt = (String) ConnectedDeviceDetailsPage.maxVal_Upfrent.getText().subSequence(5, 7);
+                    //String maxValUpfrnt = (String) ConnectedDeviceDetailsPage.maxVal_Upfrent.getText().subSequence(5, 7);
+                    //String upFrntVal = ConnectedDeviceDetailsPage.upfrentVal.getText().substring(1, 3);
+
+                    int maxUpfrentSize = ConnectedDeviceDetailsPage.maxVal_Upfrent.getText().length();
+                    String maxValUpfrnt = (String) ConnectedDeviceDetailsPage.maxVal_Upfrent.getText().subSequence(5, maxUpfrentSize);
                     Thread.sleep(2000);
-                    String upFrntVal = ConnectedDeviceDetailsPage.upfrentVal.getText().substring(1, 3);
+
+                    int upfrentSize = ConnectedDeviceDetailsPage.upfrentVal.getText().length();
+                    String upFrntVal = ConnectedDeviceDetailsPage.upfrentVal.getText().substring(1, upfrentSize-3);
                     Thread.sleep(2000);
+
                     if (driver.findElements(By.xpath("//div[contains(@data-calc,'upfront')]/..//div[contains(@class,'max-icon')]/..//div[contains(@class,'max-icon calc-track-element disable')]")).size() <= 0) {
                         CommonActions.clickWebElement(ConnectedDeviceDetailsPage.maxIcon_Upfrent);
                     }
-                    if (maxValUpfrnt.contains(upFrntVal) && ConnectedDeviceDetailsPage.maxIcon_Upfrent_disiabled.isDisplayed()) {
+
+                    //if (maxValUpfrnt.contains(upFrntVal) && ConnectedDeviceDetailsPage.maxIcon_Upfrent_disiabled.isDisplayed()) {
+
+                    if (maxValUpfrnt.contains(upFrntVal) && (driver.findElements(By.xpath("//div[contains(@data-calc,'upfront')]/..//div[contains(@class,'max-icon')]/..//div[contains(@class,'max-icon calc-track-element disable')]")).size() >0)) {
                         log.info("the Upfront cost is changes to maximum - " + ConnectedDeviceDetailsPage.maxVal_Upfrent.getText());
                         b = true;
                         break;

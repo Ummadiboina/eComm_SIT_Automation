@@ -8,7 +8,6 @@ Feature: 56_Reg_CS_CFA_MBBPayG
     And Navigate to device details page
     And Select a PayG tariff <tariff>
     And Validate consumer Bill Spend Caps section when BSC is <BSCstatus>
-    #And Click on Dont Select Cap My Bill CTA
     And I Land on the basket page and choose home delivery option
     And click on "go to checkout" button
     And input <Firstname> and <Surname> and other valid details in Delivery page to verify GDPR

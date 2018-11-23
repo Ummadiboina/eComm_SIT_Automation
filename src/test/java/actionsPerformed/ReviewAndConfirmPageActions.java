@@ -30,7 +30,17 @@ public class ReviewAndConfirmPageActions extends Environment {
         String HeaderText= ReviewAndConfirmPage.RevConfHeading.getText();
         Screenshots.captureScreenshot();
         if(HeaderText.contains("Review & confirm")) {
-            log.debug("The Review and confirmation page for simo is displayed");
+            log.debug("The Review and confirmation page for simo is displayed. The sections in this page are::\n");
+
+            log.debug("First Section:: "+ReviewAndConfirmPage.firstSection.getText()+"\n");
+            Thread.sleep(1000);
+            log.debug("Second Section:: "+ReviewAndConfirmPage.secondSection.getText()+"\n");
+            Thread.sleep(1000);
+            log.debug("Third Section:: "+ReviewAndConfirmPage.thirdSection.getText()+"\n");
+            Thread.sleep(1000);
+            log.debug("Forth Section:: "+ReviewAndConfirmPage.forthSection.getText()+"\n");
+            Thread.sleep(1000);
+            log.debug("Fifth Section:: "+ReviewAndConfirmPage.fifthSection.getText()+"\n");
         }
         else
             Assert.fail("The Review and confirmation page is not displayed for upgrade simo");

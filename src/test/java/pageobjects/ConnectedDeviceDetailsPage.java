@@ -128,8 +128,6 @@ public class ConnectedDeviceDetailsPage {
     @FindBy(how = How.XPATH, using = "//div[contains(@data-calc,'upfront')]/..//div[contains(@class,'min-icon')]/..//div[contains(@class,'min-icon calc-track-element disable')]")
     public static WebElement minIcon_Upfrent_disiabled;
 
-
-
     @FindAll({@FindBy(how = How.XPATH, using = "//div[contains(@data-calc,'upfront')]/..//div[contains(@class,'min-icon')]")})
     public static List<WebElement> minIcon_Upfrent_1;
 

@@ -57,6 +57,7 @@ public class Agent_DealBuilderPageActions extends Environment {
             Agent_DealBuilderPage.SearchTextBox_PayMDevice.sendKeys(Device);
             log.debug("Clicked on SearchTextBox to enter" + Device);
             Thread.sleep(4000);
+            Screenshots.captureScreenshot();
             Agent_DealBuilderPage.SelectInStockPAYMDevice.click();
             Thread.sleep(6000);
         }
@@ -72,14 +73,12 @@ public class Agent_DealBuilderPageActions extends Environment {
             Thread.sleep(5000);
             log.debug("Selected Random Tariff ");
             Screenshots.captureScreenshot();
-        }
-        if (Tariff.contains("Standard")) {
+        }else if (Tariff.contains("Standard")) {
             Agent_DealBuilderPage.SearchTextBox_Tariff.sendKeys("Standard");
             Agent_DealBuilderPage.SelectingFirstAvailableTariff.click();
             Thread.sleep(5000);
             log.debug("Selected Random Tariff ");
-        }
-        if (Tariff.contains("Simo")) {
+        }else if (Tariff.contains("Simo")) {
             Agent_DealBuilderPage.SearchTextBox_Tariff.sendKeys("- / Simo");
             Thread.sleep(3000);
             //Agent_DealBuilderPage.SearchTextBox_Tariff.sendKeys("Simo");
@@ -87,25 +86,28 @@ public class Agent_DealBuilderPageActions extends Environment {
             Thread.sleep(5000);
             log.debug("Selected Random SimO Tariff ");
 
-        }
-        if (Tariff.contains("Refresh")) {
+        }else if (Tariff.contains("Refresh")) {
             Agent_DealBuilderPage.SearchTextBox_Tariff.sendKeys("Refresh");
             Thread.sleep(3000);
             Agent_DealBuilderPage.SelectingFirstAvailableTariff.click();
             Thread.sleep(5000);
             log.debug("Selected Refresh Tariff ");
 
-        }
-        ////////////////////////////// Basecomms
-        ////////////////////////////// Tariff//////////////////////////////////////
-
-        if (Tariff.contains("Base")) {
+        }else if (Tariff.contains("Base")) {
+            ////////////////////////////// Basecomms
+            ////////////////////////////// Tariff//////////////////////////////////////
             Agent_DealBuilderPage.SearchTextBox_Tariff.sendKeys("Base");
             Thread.sleep(2000);
             Agent_DealBuilderPage.SelectingFirstAvailableTariff.click();
             Thread.sleep(3000);
             log.debug("Selected Random Basecomms Tariff ");
 
+        }else{
+            Agent_DealBuilderPage.SearchTextBox_Tariff.sendKeys(Tariff);
+            Thread.sleep(3000);
+            Agent_DealBuilderPage.SelectingFirstAvailableTariff.click();
+            Thread.sleep(5000);
+            log.debug("Selected provided Tariff ");
         }
         Screenshots.captureScreenshot();
 
@@ -244,7 +246,7 @@ public class Agent_DealBuilderPageActions extends Environment {
         // Selecting a Bolton
         Thread.sleep(3000);
         Agent_DealBuilderPage.SelectBolton.click();
-        log.debug("Clicked on Extras Tab");
+        log.debug("Bolton selected");
         Thread.sleep(3000);
         Screenshots.captureScreenshot();
         Thread.sleep(4000);
@@ -358,7 +360,6 @@ public class Agent_DealBuilderPageActions extends Environment {
         Thread.sleep(3000);
         Agent_DealBuilderPage.prepayPlansTab.click();
         log.debug("Clicked on prepayPlansTab ");
-        log.debug("Clicked on prepayPlansTab ");
 
         if (Tariff.contains("Random")) {
 
@@ -415,9 +416,9 @@ public class Agent_DealBuilderPageActions extends Environment {
     public static void checkoutEnabledDisabled() throws InterruptedException, IOException {
         Thread.sleep(3000);
         if(Agent_DealBuilderPage.Checkout.isEnabled()){
-            log.debug("Checkout CTA is enabled");
+            log.debug("Checkout CTA is enabled\n");
         }else {
-            log.debug("Checkout CTA is disabled");
+            log.debug("Checkout CTA is disabled\n");
         }
         Screenshots.captureScreenshot();
     }
@@ -487,6 +488,7 @@ public class Agent_DealBuilderPageActions extends Environment {
 
             Agent_DealBuilderPage.SearchDevice.sendKeys(Status);
             Thread.sleep(3000);
+            Screenshots.captureScreenshot();
             log.debug("Sent search as - " + Status);
             Agent_DealBuilderPage.firstDevice.click();
             log.debug("Selected Delayed device");
@@ -496,6 +498,7 @@ public class Agent_DealBuilderPageActions extends Environment {
 
             Agent_DealBuilderPage.SearchDevice.sendKeys(Status);
             Thread.sleep(3000);
+            Screenshots.captureScreenshot();
             log.debug("Sent search as - " + Status);
             Agent_DealBuilderPage.firstDevice.click();
             log.debug("Selected pre order device");
@@ -524,9 +527,9 @@ public class Agent_DealBuilderPageActions extends Environment {
         try {
             if(driver.findElements(By.xpath("//*[@id='incomaptibleError']")).size()>0) {
                 String errorMessage = pageobjects.Agent_DealBuilderPage.incomaptibleError.getText();
-                log.debug("Error Message after adding Bill Spend cap bolton is: "+errorMessage);
+                log.debug("InCompatible Error Message after adding bolton is: "+errorMessage);
             }else{
-                log.debug("There is no incompatible error Message after adding Bill Spend cap bolton is");
+                log.debug("There is no incompatible error Message after adding bolton is");
             }
         } catch (Exception e) {
             // TODO Auto-generated catch block
@@ -552,7 +555,7 @@ public class Agent_DealBuilderPageActions extends Environment {
             executor.executeScript("arguments[0].click();", Agent_DealBuilderPage.AgentTradeInBtn);
 
             log.debug("The Trade In button is clicked");
-            Thread.sleep(10000);
+            Thread.sleep(12000);
             String Mainwindow1 = driver.getWindowHandle();
             // getting all the popup windows , hence using getwindowhandles
             // instead of
@@ -685,8 +688,57 @@ public class Agent_DealBuilderPageActions extends Environment {
         }*/
 
         driver.switchTo().window(Mainwindow);
+        Thread.sleep(4000);
+        log.debug("Selected store is" + Agent_DealBuilderPage.Storedetails.getText());
 
-        //log.debug("Selected store is" + Agent_DealBuilderPage.Storedetails.getText());
+    }
+
+    public static void clickAndCollectNowStore() throws InterruptedException, IOException {
+
+        // Selecting an Extra
+        Agent_DealBuilderPage.CheckStore.click();
+        log.debug("Clicked on Check store stock Tab");
+
+        Thread.sleep(4000);
+
+        String Mainwindow = driver.getWindowHandle();
+        // getting all the popup windows , hence using getwindowhandles instead of
+        // getwindowhandle
+        Set<String> s1 = driver.getWindowHandles();
+        Iterator<String> i1 = s1.iterator();
+        while (i1.hasNext()) {
+            String ChildWindow = i1.next();
+            if (!Mainwindow.equalsIgnoreCase(ChildWindow)) {
+                // Switching to Child window
+                driver.switchTo().window(ChildWindow);
+                Thread.sleep(3000);
+                Agent_DealBuilderPage.Postcode.sendKeys("M4");
+
+                Agent_DealBuilderPage.searchStore.click();
+                Thread.sleep(8000);
+                Screenshots.captureScreenshot();
+
+                String collectionDetails = Agent_DealBuilderPage.collectionDetails.getText();
+                Thread.sleep(2000);
+
+                if(collectionDetails.contains("Today")){
+                    log.debug("Device is available for click and collect now in provided store, status is:: " + collectionDetails+"\n");
+                }else{
+                    log.debug("Device is not available for click and collect now in provided store, status is:: " + collectionDetails+"\n");
+                    Assert.fail("Device is not available for click and collect now in provided store, status is:: " + collectionDetails+"\n");
+                }
+
+                /*JavascriptExecutor jse = (JavascriptExecutor) driver;
+                jse.executeScript("window.scrollBy(0,200)", "");*/
+                JavascriptExecutor executor = (JavascriptExecutor) driver;
+                executor.executeScript("arguments[0].click();", Agent_DealBuilderPage.selectStore);
+                Thread.sleep(3000);
+            }
+        }
+        Thread.sleep(5000);
+        driver.switchTo().window(Mainwindow);
+        Thread.sleep(3000);
+        log.debug("Selected store for click and collect now is:: " + Agent_DealBuilderPage.Storedetails.getText());
 
     }
 
@@ -712,7 +764,6 @@ public class Agent_DealBuilderPageActions extends Environment {
     //Remove Bolton
     public static void removeBolton() {
         try {
-
                 Agent_DealBuilderPage.removeBolton.isDisplayed();
                 log.debug(" Bolton is removed from the the builder ");
                 Screenshots.captureScreenshot();
@@ -1217,7 +1268,7 @@ public class Agent_DealBuilderPageActions extends Environment {
     }
 
     //Jamal----choose a valid Bill Cap Amount in agent-----
-    public static void addBillSpendCap_AgentDealBuilder(String BillCapAmount, String BSCstatus) throws IOException {
+    public static void  addBillSpendCap_AgentDealBuilder(String BillCapAmount, String BSCstatus) throws IOException {
         try {
             String BillCap = "";
             int cnt=0;
@@ -1337,7 +1388,7 @@ public class Agent_DealBuilderPageActions extends Environment {
                     log.debug("Bill Spend Cap header is displayed in " + pageTitle + " page ie :: " + pageobjects.Agent_DealBuilderPage.BillSpendCapHeader.getText());
                     Thread.sleep(3000);
                     AppliedBillCap = pageobjects.Agent_DealBuilderPage.appliedBillCap.getText();
-                    Thread.sleep(3000);
+                    Thread.sleep(6000);
 
                     /*if (AppliedBillCap.contains(BillCapAmount)) {
                         log.debug("Applied bill cap is validated successfully in " + pageTitle + " page ie :: " + AppliedBillCap);

@@ -268,7 +268,7 @@ public class OrderConfirmationPageActions extends Environment {
 
 	//GDPR Preferences Section --- JamalKhan
 
-	public static void PreferencesSection(String consumer, String gdprStatus,String BP1, String BP2, String BP3, String BP4, String Chn1, String Chn2, String Chn3, String Chn4, String MBBStatus, String DeviceType) throws IOException {
+	public static void PreferencesSection(String consumer, String gdprStatus,String BP1, String BP2, String BP3, String BP4, String Chn1, String Chn2, String Chn3, String Chn4, String MBBStatus, String DeviceType, String PreSelected) throws IOException {
 
 				try {
 					Thread.sleep(5000);
@@ -283,6 +283,10 @@ public class OrderConfirmationPageActions extends Environment {
 
 									//Choose your preferences link
 									if (driver.findElements(By.xpath("//div[@class='choose-preferences-bar']/a")).size() > 0) {
+										if (PreSelected.equalsIgnoreCase("Yes")) {
+											log.debug("Validating GDPR for pre selected options for Upgrade users:\n");
+										}
+
 										System.out.println("GDPR is Enabled and we are proceeding");
 										log.debug("GDPR is Enabled and we are proceeding");
 										driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
@@ -295,11 +299,30 @@ public class OrderConfirmationPageActions extends Environment {
 										Thread.sleep(5000);
 
 										// SaveMyPreferences button status before selecting business preferences
-										if(OrderConfirmationPage.SaveMyPreferences.isEnabled()){
-											Assert.fail("Failed:: 'SaveMyPrefernces' CTA is enabled before selecting Business preferences");
-										}else{
-											System.out.println("Preference Button is disabled before selecting Business/channels preferences");
-											log.debug("Preference Button is disabled before selecting Business/channel preferences");
+										if(PreSelected.equalsIgnoreCase("Yes")) {
+											if (OrderConfirmationPage.SaveMyPreferences.isEnabled()) {
+												if (BP1.equalsIgnoreCase("Select") || BP2.equalsIgnoreCase("Select") || BP3.equalsIgnoreCase("Select") || BP4.equalsIgnoreCase("Select")) {
+													System.out.println("User is Upgrade customer so, 'SaveMyPrefernces' CTA is enabled as preference are selected earlier\n");
+													log.debug("User is Upgrade customer so, 'SaveMyPrefernces' CTA is enabled as preference are selected earlier\n");
+												}else {
+													log.debug("Failed::User is Upgrade customer: 'SaveMyPrefernces' CTA is enabled but Business preferences were not selected earlier\n");
+													Assert.fail("Failed::User is Upgrade customer: 'SaveMyPrefernces' CTA is enabled but Business preferences were not selected earlier\n");
+												}
+											}else {
+												if (BP1.equalsIgnoreCase("Select") || BP2.equalsIgnoreCase("Select") || BP3.equalsIgnoreCase("Select") || BP4.equalsIgnoreCase("Select")) {
+													log.debug("Failed:: 'SaveMyPrefernces' CTA is disabled for UpGrade Customer, as preferences were selected earlier it is expected to be enabled");
+													Assert.fail("Failed:: 'SaveMyPrefernces' CTA is disabled for UpGrade Customer, as preferences were selected earlier it is expected to be enabled");
+												}else{
+													log.debug("Preference were not selected earlier\n");
+												}
+											}
+										}else {
+											if (OrderConfirmationPage.SaveMyPreferences.isEnabled()) {
+												Assert.fail("Failed:: 'SaveMyPrefernces' CTA is enabled before selecting Business preferences");
+											} else {
+												System.out.println("Preference Button is disabled before selecting Business/channels preferences");
+												log.debug("Preference Button is disabled before selecting Business/channel preferences");
+											}
 										}
 
 
@@ -538,13 +561,23 @@ public class OrderConfirmationPageActions extends Environment {
 										Thread.sleep(5000);
 
 										//Channel preference is not displaying before business preference selection
-										if(OrderConfirmationPage.Contact_Text.isDisplayed()){
-											Assert.fail("Failed:: 'Channel Preferences' are enabled before selecting Business preferences");
-										}else{
-											System.out.println("As expected Channel preference:: ie, Contact_Text is disabled before selecting business preferences");
-											log.debug("As expected Channel preference:: ie, Contact_Text is disabled before selecting business preferences");
+										if(PreSelected.equalsIgnoreCase("Yes")) {
+											if (OrderConfirmationPage.Contact_Text.isDisplayed()) {
+												if (BP1.equalsIgnoreCase("Select") || BP2.equalsIgnoreCase("Select") || BP3.equalsIgnoreCase("Select") || BP4.equalsIgnoreCase("Select")) {
+													System.out.println("User is Upgrade customer so, 'Channel Preferences' are displayed as business preference were selected earlier\n");
+													log.debug("User is Upgrade customer so, 'Channel Preferences' are displayed as business preference were selected earlier\n");
+												} else {
+													Assert.fail("Failed:: 'Channel Preferences' are disabled for UpGrade Customer, as business preferences were selected earlier it is expected to be displayed with pre selected options");
+												}
+											}
+										}else {
+											if (OrderConfirmationPage.Contact_Text.isDisplayed()) {
+												Assert.fail("Failed:: 'Channel Preferences' are enabled before selecting Business preferences");
+											} else {
+												System.out.println("As expected Channel preference:: ie, Contact_Text is disabled before selecting business preferences");
+												log.debug("As expected Channel preference:: ie, Contact_Text is disabled before selecting business preferences");
+											}
 										}
-
 
 										Thread.sleep(3000);
 										//Selecting O2 Products Business preferences
@@ -555,9 +588,19 @@ public class OrderConfirmationPageActions extends Environment {
 												log.debug("O2Products business preference checkBox is not displayed");
 												Assert.fail("O2Products business preference checkBox is not displayed");
 											}
-											OrderConfirmationPage.O2Products.click();
-											System.out.println("O2Products business preference selected");
-											log.debug("O2Products business preference selected");
+
+											if(PreSelected.equalsIgnoreCase("Yes")) {
+												if (OrderConfirmationPage.O2Products.isSelected()) {
+													System.out.println("User is Upgrade customer and as expected, 'O2Products Preference' is selected by default as this option was selected earlier\n");
+													log.debug("User is Upgrade customer and as expected, 'O2Products Preference' is selected by default as this option was selected earlier\n");
+												} else {
+													Assert.fail("Failed:: 'O2Products Preference' is expected to be selected by default as the customer was selected this preference earlier");
+												}
+											}else {
+												OrderConfirmationPage.O2Products.click();
+												System.out.println("O2Products business preference selected");
+												log.debug("O2Products business preference selected");
+											}
 										}
 										Thread.sleep(3000);
 										if (BP2.equalsIgnoreCase("Select")) {
@@ -566,9 +609,19 @@ public class OrderConfirmationPageActions extends Environment {
 												log.debug("O2 Perks And Extras business preference checkBox is not displayed");
 												Assert.fail("O2 Perks And Extras business preference checkBox is not displayed");
 											}
-											OrderConfirmationPage.O2PerksAndExtras.click();
-											System.out.println("O2 Perks And Extras business preference selected");
-											log.debug("O2 Perks And Extras business preference selected");
+
+											if(PreSelected.equalsIgnoreCase("Yes")) {
+												if (OrderConfirmationPage.O2PerksAndExtras.isSelected()) {
+													System.out.println("User is Upgrade customer and as expected, 'O2 Perks And Extras Preference' is selected by default as this option was selected earlier\n");
+													log.debug("User is Upgrade customer and as expected, 'O2 Perks And Extras Preference' is selected by default as this option was selected earlier\n");
+												} else {
+													Assert.fail("Failed:: 'O2 Perks And Extras Preference' is expected to be selected by default as the customer was selected this preference earlier");
+												}
+											}else {
+												OrderConfirmationPage.O2PerksAndExtras.click();
+												System.out.println("O2 Perks And Extras business preference selected");
+												log.debug("O2 Perks And Extras business preference selected");
+											}
 										}
 										Thread.sleep(3000);
 										if (BP3.equalsIgnoreCase("Select")) {
@@ -577,9 +630,19 @@ public class OrderConfirmationPageActions extends Environment {
 												log.debug("Offers From O2 Partner business preference checkBox is not displayed");
 												Assert.fail("Offers From O2 Partner business preference checkBox is not displayed");
 											}
-											OrderConfirmationPage.OffersFromO2Partner.click();
-											System.out.println("Offers From O2 Partner business preference selected");
-											log.debug("Offers From O2 Partner business preference selected");
+
+											if(PreSelected.equalsIgnoreCase("Yes")) {
+												if (OrderConfirmationPage.OffersFromO2Partner.isSelected()) {
+													System.out.println("User is Upgrade customer and as expected, 'Offers From O2 Partner Preference' is selected by default as this option was selected earlier\n");
+													log.debug("User is Upgrade customer and as expected, 'Offers From O2 Partner Preference' is selected by default as this option was selected earlier\n");
+												} else {
+													Assert.fail("Failed:: 'Offers From O2 Partner Preference' is expected to be selected by default as the customer was selected this preference earlier");
+												}
+											}else {
+												OrderConfirmationPage.OffersFromO2Partner.click();
+												System.out.println("Offers From O2 Partner business preference selected");
+												log.debug("Offers From O2 Partner business preference selected");
+											}
 										}
 										Thread.sleep(3000);
 										if (BP4.equalsIgnoreCase("Select")) {
@@ -595,28 +658,34 @@ public class OrderConfirmationPageActions extends Environment {
 
 										Thread.sleep(6000);
 										Screenshots.captureScreenshot();
-										//Channel preference is not displaying before business preference selection
-										if(OrderConfirmationPage.Contact_Text.isDisplayed()){
+										//Channel preference is displaying after business preference selection
+										if(PreSelected.equalsIgnoreCase("Yes")) {
+											log.debug("Pre selected User so, 'Channel Preferences' are displayed\n");
+										}else {
+											if (OrderConfirmationPage.Contact_Text.isDisplayed()) {
 
-											System.out.println("As expected Channel preference displyed after selecting business preferences");
-											log.debug("As expected Channel preference displyed after selecting business preferences");
+												System.out.println("As expected Channel preference displayed after selecting business preferences");
+												log.debug("As expected Channel preference displayed after selecting business preferences");
 
-										}else{
-											if(BP1.equalsIgnoreCase("Select") || BP2.equalsIgnoreCase("Select") || BP3.equalsIgnoreCase("Select") || BP4.equalsIgnoreCase("Select")) {
-												Assert.fail("Failed:: 'Channel Preferences' are not displyed after selecting Business preferences");
+											} else {
+												if (BP1.equalsIgnoreCase("Select") || BP2.equalsIgnoreCase("Select") || BP3.equalsIgnoreCase("Select") || BP4.equalsIgnoreCase("Select")) {
+													Assert.fail("Failed:: 'Channel Preferences' are not displayed after selecting Business preferences");
+												}
 											}
 										}
 
-
 										// SaveMyPreferences button status before selecting channels preferences
-
-										if(OrderConfirmationPage.SaveMyPreferences.isEnabled()){
-											if(BP1.equalsIgnoreCase("Select") || BP2.equalsIgnoreCase("Select") || BP3.equalsIgnoreCase("Select") || BP4.equalsIgnoreCase("Select")) {
-												Assert.fail("Failed to disable the 'SaveMyPrefernces' CTA after selecting Business preferences");
+										if(PreSelected.equalsIgnoreCase("Yes")) {
+											log.debug("Pre selected User so, 'Save Preference' CTA is enabled\n");
+										}else {
+											if (OrderConfirmationPage.SaveMyPreferences.isEnabled()) {
+												if (BP1.equalsIgnoreCase("Select") || BP2.equalsIgnoreCase("Select") || BP3.equalsIgnoreCase("Select") || BP4.equalsIgnoreCase("Select")) {
+													Assert.fail("Failed to disable the 'SaveMyPrefernces' CTA after selecting Business preferences");
+												}
+											} else {
+												System.out.println("Preference Button is disabled before selecting channels preferences");
+												log.debug("Preference Button is disabled before selecting channel preferences");
 											}
-										}else{
-											System.out.println("Preference Button is disabled before selecting channels preferences");
-											log.debug("Preference Button is disabled before selecting channel preferences");
 										}
 
 										Thread.sleep(3000);
@@ -628,19 +697,40 @@ public class OrderConfirmationPageActions extends Environment {
 												log.debug("Contact_Text preference checkBox is not displayed");
 												Assert.fail("Contact_Text preference checkBox is not displayed");
 											}
-											OrderConfirmationPage.Contact_Text.click();
-											System.out.println("Contact_Text preference selected");
-											log.debug("Contact_Text business preference selected");
+
+											if(PreSelected.equalsIgnoreCase("Yes")) {
+												if (OrderConfirmationPage.Contact_Text.isSelected()) {
+													System.out.println("User is Upgrade customer and as expected, 'Contact_Text Preference' is selected by default as this option was selected earlier\n");
+													log.debug("User is Upgrade customer and as expected, 'Contact_Text Preference' is selected by default as this option was selected earlier\n");
+												} else {
+													Assert.fail("Failed:: 'Contact_Text Preference' is expected to be selected by default as the customer was selected this preference earlier");
+												}
+											}else {
+												OrderConfirmationPage.Contact_Text.click();
+												System.out.println("Contact_Text preference selected");
+												log.debug("Contact_Text business preference selected");
+											}
 										}
+
 										if (Chn2.equalsIgnoreCase("Select")) {
 											if (driver.findElements(By.xpath("//input[@id='CP_E-mail']")).size() <= 0) {
 												System.out.println("Contact_Email preference checkBox is not displayed");
 												log.debug("Contact_Email preference checkBox is not displayed");
 												Assert.fail("Contact_Email preference checkBox is not displayed");
 											}
-											OrderConfirmationPage.Contact_Email.click();
-											System.out.println("Contact_Email preference selected");
-											log.debug("Contact_Email preference selected");
+
+											if(PreSelected.equalsIgnoreCase("Yes")) {
+												if (OrderConfirmationPage.Contact_Email.isSelected()) {
+													System.out.println("User is Upgrade customer and as expected, 'Contact_Email Preference' is selected by default as this option was selected earlier\n");
+													log.debug("User is Upgrade customer and as expected, 'Contact_Email Preference' is selected by default as this option was selected earlier\n");
+												} else {
+													Assert.fail("Failed:: 'Contact_Email Preference' is expected to be selected by default as the customer was selected this preference earlier");
+												}
+											}else {
+												OrderConfirmationPage.Contact_Email.click();
+												System.out.println("Contact_Email preference selected");
+												log.debug("Contact_Email preference selected");
+											}
 										}
 										if (Chn3.equalsIgnoreCase("Select")) {
 											if (driver.findElements(By.xpath("//input[@id='CP_Phone']")).size() <= 0) {
@@ -648,9 +738,19 @@ public class OrderConfirmationPageActions extends Environment {
 												log.debug("Contact_Phone preference checkBox is not displayed");
 												Assert.fail("CP_Post preference checkBox is not displayed");
 											}
-											OrderConfirmationPage.Contact_Phone.click();
-											System.out.println("Contact_Phone preference selected");
-											log.debug("Contact_Phone preference selected");
+
+											if(PreSelected.equalsIgnoreCase("Yes")) {
+												if (OrderConfirmationPage.Contact_Phone.isSelected()) {
+													System.out.println("User is Upgrade customer and as expected, 'Contact_Phone Preference' is selected by default as this option was selected earlier\n");
+													log.debug("User is Upgrade customer and as expected, 'Contact_Phone Preference' is selected by default as this option was selected earlier\n");
+												} else {
+													Assert.fail("Failed:: 'Contact_Phone Preference' is expected to be selected by default as the customer was selected this preference earlier");
+												}
+											}else {
+												OrderConfirmationPage.Contact_Phone.click();
+												System.out.println("Contact_Phone preference selected");
+												log.debug("Contact_Phone preference selected");
+											}
 										}
 										if (Chn4.equalsIgnoreCase("Select")) {
 											if (driver.findElements(By.xpath("//input[@id='CP_Post']")).size() <= 0) {
@@ -658,16 +758,25 @@ public class OrderConfirmationPageActions extends Environment {
 												log.debug("CP_Post preference checkBox is not displayed");
 												Assert.fail("CP_Post preference checkBox is not displayed");
 											}
-											OrderConfirmationPage.Contact_Post.click();
-											System.out.println("CP_Post preference selected");
-											log.debug("CP_Post preference selected");
+
+											if(PreSelected.equalsIgnoreCase("Yes")) {
+												if (OrderConfirmationPage.Contact_Post.isSelected()) {
+													System.out.println("User is Upgrade customer and as expected, 'Contact_Post Preference' is selected by default as this option was selected earlier\n");
+													log.debug("User is Upgrade customer and as expected, 'Contact_Post Preference' is selected by default as this option was selected earlier\n");
+												} else {
+													Assert.fail("Failed:: 'Contact_Post Preference' is expected to be selected by default as the customer was selected this preference earlier");
+												}
+											}else {
+												OrderConfirmationPage.Contact_Post.click();
+												System.out.println("CP_Post preference selected");
+												log.debug("CP_Post preference selected");
+											}
 										}
 
 										Thread.sleep(3000);
 
 										Screenshots.captureScreenshot();
 										// SaveMyPreferences button status after selecting channels preferences
-
 
 										if (driver.findElements(By.id("saveMyPrefernces")).size() > 0) {
 											OrderConfirmationPage.SaveMyPreferences.click();

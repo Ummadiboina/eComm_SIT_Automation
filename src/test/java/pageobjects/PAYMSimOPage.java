@@ -27,22 +27,21 @@ public class PAYMSimOPage {
 	public static WebElement BuyNowPromotedTariff;*/
 
 
-	@FindBy(how=How.XPATH,using=("//*[@class='tariff P12M  promoted-tariff  ']/div[@class='col-xs-12 col-sm-5 info-container buy-now']/div[@class='btn-wrapper']/form/button | (//*[@name='P12M']//*[@id='callToAction'])[1]"))
+	@FindBy(how=How.XPATH,using=("//*[@class='tariff P12M  promoted-tariff  ']/div[@class='col-xs-12 col-sm-5 info-container buy-now']/div[@class='btn-wrapper']/form/button | (//*[@name='P12M']//button[normalize-space()='Select'])[1]"))
 	public static WebElement BuyNowPromotedTariff12Months;
 
 
-	@FindBy(how=How.XPATH,using=("//*[@class='tariff P30D  promoted-tariff   no-promotion-exists ']/div[@class='col-xs-12 col-sm-5 info-container buy-now']/div[@class='btn-wrapper']/form/button | (//*[@name='P30D']//*[@id='callToAction'])[1]"))
+	@FindBy(how=How.XPATH,using=("//*[@class='tariff P30D  promoted-tariff   no-promotion-exists ']/div[@class='col-xs-12 col-sm-5 info-container buy-now']/div[@class='btn-wrapper']/form/button | (//*[@name='P30D']//button[normalize-space()='Select'])[1]"))
 	public static WebElement BuyNowPromotedTariff30Days;
 
 
-	@FindBy(how=How.XPATH,using=("(//*[@name='P12M']//*[@id='callToAction'])[2]"))
+	@FindBy(how=How.XPATH,using=("(//*[@name='P12M']//button[normalize-space()='Select'])[1]"))
 	public static WebElement BuyNowRandomTariff12Months;
 	
 	//@FindBy(how=How.XPATH,using=("(//button[@id='callToAction'])[1]"))
 
-	@FindBy(how=How.XPATH,using=("(//*[@name='P30D']//*[@id='callToAction'])[1]"))
+	@FindBy(how=How.XPATH,using=("(//*[@name='P30D']//button[normalize-space()='Select'])[1]"))
 	public static WebElement BuyNowRandomTariff30Months;
-	
 	
 	////////////////////////////////////////////
 	
@@ -215,6 +214,9 @@ public class PAYMSimOPage {
 
 	@FindBy(how = How.XPATH, using = ("//*[@id='simonly-upgrade-terms-label']/input"))
 	public static WebElement TermsAndConditionsCheckbox_ReviewPage;
+
+	@FindBy(how = How.XPATH, using = ("//div[@id='confirm']/div/form/fieldset/p[1]"))
+	public static WebElement confirmText;
 
 	@FindBy(how = How.XPATH, using = ("//button/span[contains(text(),'Place your order')]"))
 	public static WebElement PlaceYourOrder;

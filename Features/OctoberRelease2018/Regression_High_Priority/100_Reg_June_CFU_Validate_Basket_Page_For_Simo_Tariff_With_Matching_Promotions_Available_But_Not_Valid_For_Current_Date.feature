@@ -10,11 +10,12 @@ Feature: 100_Reg_June_CFU_Validate_Basket_Page_For_Simo_Tariff_With_Matching_Pro
     #And I click on 'Sim only Tariff' tab
     And Click on 'Get Started' CTA
     And Click on 'Select' CTA to buy a valid <tariffAmt> and <dataValue>
+    #And Select ribboned tariff <tariff> in upgrade journey
+    And Click on 'plus' accordion at get promo code section and enter valid <promoCode> details in Basket page
+    And Select 'I need a new sim' option
+    And click on "go to checkout" button
     And Validate consumer Bill Spend Caps section when BSC is <BSCstatus>
     And Choose your bill cap <BillCap> <CapAmount> when BSC is <BSCstatus>
-    #And Select ribboned tariff <tariff> in upgrade journey
-    #And I Land on the Plan included basket page and choose home delivery option
-    And Select 'I need a new sim' option
     And Click on 'I agree to the terms and condition' checkbox in SIMO review page
     And Is this order for You or Someone else <consumer> when GDPR is <status>
     #And Click on 'Place your order' CTA

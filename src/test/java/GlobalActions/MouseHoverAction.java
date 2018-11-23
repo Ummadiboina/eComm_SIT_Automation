@@ -135,7 +135,6 @@ public class MouseHoverAction extends Environment {
                 Thread.sleep(3000);
                 Screenshots.captureScreenshot();
 
-                log.debug("Clicking on PayG Phones");
                 // Move mouse pointer away from location
                 Point coordinates2 = driver.findElement(By.xpath("(//div[@class='navContainer']/ul)[1]")).getLocation();
                 Robot robot2 = new Robot();

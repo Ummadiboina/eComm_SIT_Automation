@@ -508,8 +508,19 @@ public class UpgradeCustomerPageActions extends Environment {
         Thread.sleep(3000);
         Screenshots.captureScreenshot();
             if (selectBtnEle.isDisplayed()) {
+                Thread.sleep(3000);
+                if(driver.findElements(By.xpath("//h3[contains(text(),'Device with 1GB preloaded data sim ')]")).size()>0) {
+                    tariffNameTxt = driver.findElement(By.xpath("//h3[contains(text(),'Device with 1GB preloaded data sim ')]")).getText();
+                    Thread.sleep(2000);
+                    log.debug("Tariff:"+tariffNameTxt);
+                }
+                if(driver.findElements(By.xpath("//h3[contains(text(),'Device with 1GB preloaded data sim ')]")).size()>0) {
+                    marketingMessage = driver.findElement(By.xpath("//h3[contains(text(),'Device with 1GB preloaded data sim ')]/../../ul/li/p")).getText();
+                    Thread.sleep(2000);
+                    log.debug("Marketing Message:"+marketingMessage);
+                }
                 ((JavascriptExecutor) driver).executeScript("arguments[0].click();", selectBtnEle);
-                log.debug("PayG Tariff has been selected");
+                log.debug("Selected 'Device with 1GB preloaded data tariff'");
                 //scrollToAnElement.scrollToElement(driver.findElement(By.xpath("//div[contains(text(),'Your extras')]")));
                 Thread.sleep(3000);
                 Screenshots.captureScreenshot();
@@ -518,19 +529,9 @@ public class UpgradeCustomerPageActions extends Environment {
                 log.debug("Failed to select the PayG Tariff in the Extras&Tariff page");
                 Assert.fail("Failed to select the PayG Tariff in the Extras&Tariff page");
             }
-            Thread.sleep(3000);
-            if(driver.findElements(By.xpath("(//p[normalize-space()='Selected'])[1]/../div[1]")).size()>0) {
-                tariffNameTxt = driver.findElement(By.xpath("(//p[normalize-space()='Selected'])[1]/../div[1]")).getText();
-                Thread.sleep(2000);
-                log.debug("Tariff:"+tariffNameTxt);
-            }
-            if(driver.findElements(By.xpath("(//p[normalize-space()='Selected'])[1]/../ul[1]")).size()>0) {
-                marketingMessage = driver.findElement(By.xpath("(//p[normalize-space()='Selected'])[1]/../ul[1]")).getText();
-                Thread.sleep(2000);
-                log.debug("Marketing Message:"+marketingMessage);
-            }
-        JavascriptExecutor jse = (JavascriptExecutor) driver;
-        jse.executeScript("window.scrollBy(0,100)", "");
+
+        /*JavascriptExecutor jse = (JavascriptExecutor) driver;
+        jse.executeScript("window.scrollBy(0,100)", "");*/
         Screenshots.captureScreenshot();
 
     }
@@ -1883,10 +1884,10 @@ public class UpgradeCustomerPageActions extends Environment {
     }
 
     public static void ClickIneedAsim() throws Exception {
-        Thread.sleep(3000);
+        Thread.sleep(5000);
         Screenshots.captureScreenshot();
         if (UpgradeCustomerPage.IneedAsimRadio.isDisplayed()) {
-            Thread.sleep(6000);
+            //Thread.sleep(6000);
             UpgradeCustomerPage.IneedAsimRadio.click();
             log.debug("The I need a sim radio button is clicked");
             Thread.sleep(2000);
@@ -2026,6 +2027,50 @@ public class UpgradeCustomerPageActions extends Environment {
         AcText = UpgradeCustomerPage.TradeInTextMyPkg.getText();
         Actcost1 = UpgradeCustomerPage.TradeInCost1MyPkg.getText();
         Actcost2 = UpgradeCustomerPage.TradeInCost2MyPkg.getText();
+        log.debug("Left to Pay Value: " + Actcost1);
+        log.debug("TradeIn Amount: " + Actcost2);
+        Screenshots.captureScreenshot();
+
+        tmpcost1 = org.apache.commons.lang3.StringUtils.substringBetween(Actcost1, "£", ".");
+        a = NumberUtils.toInt(tmpcost1);
+        tmpcost2 = org.apache.commons.lang3.StringUtils.substringBetween(Actcost2, "£", ".");
+        b = NumberUtils.toInt(tmpcost2);
+
+        if (AcText.contains("Upgrade on us")) {
+            log.debug("TradeIn offer text is displayed as expected: " + AcText);
+        } else {
+            log.debug("TradeIn offer text is not displayed as expected: " + AcText);
+            Assert.fail("TradeIn offer text is not displayed as expected");
+        }
+        if (a == b) {
+            log.debug("TradeIn values are matching: " + ", Left To Pay: " + a + ", TradeIn Amount: " + b);
+        } else {
+            log.debug("TradeIn values are not matching: " + ", Left To Pay: " + a + ", TradeIn Amount: " + b);
+            Assert.fail("TradeIn values are not matching");
+        }
+        if (Actcost2.contains("-")) {
+            log.debug("TradeIn Amount contains negative value: " + Actcost2);
+
+        } else {
+            log.debug("TradeIn Amount does not contain negative value: " + Actcost2);
+            Assert.fail("TradeIn Amount does not contain negative value");
+        }
+        Screenshots.captureScreenshot();
+        return a;
+    }
+
+
+    public static int verifyTradeInDisplayedInUpGradeOptionsPage() throws IOException, InterruptedException {
+        log.debug("verifyTradeInDisplayedInMyPackage");
+        Thread.sleep(4000);
+
+        String AcText = null, Actcost1 = null, Actcost2 = null, tmpcost1 = null, tmpcost2 = null;
+        int a = 0;
+        int b = 0;
+
+        AcText = UpgradeCustomerPage.TradeInTextUpgradePkg.getText();
+        Actcost1 = UpgradeCustomerPage.LeftToPayCost1UpgradePkg.getText();
+        Actcost2 = UpgradeCustomerPage.TradeInCostUpgradePkg.getText();
         log.debug("Left to Pay Value: " + Actcost1);
         log.debug("TradeIn Amount: " + Actcost2);
         Screenshots.captureScreenshot();
@@ -2264,8 +2309,8 @@ public class UpgradeCustomerPageActions extends Environment {
         if (text.contains("We'll buy you out of your contract, so you can choose a brand new phone") || text.contains("Upgrade to a new phone today. We'll pay off the rest of your Device Plan, saving you")) {
             log.debug("The Text is: " + text);
         } else {
-            log.debug("BuyOut is not displayed, hence failed");
-            //Assert.fail("BuyOut is not displayed, hence failed");
+            log.debug("BuyOut is not displayed, hence failed:: "+text);
+            Assert.fail("BuyOut is not displayed, hence failed:: "+text);
         }
     }
 
@@ -2319,8 +2364,9 @@ public class UpgradeCustomerPageActions extends Environment {
             WebElement Question2 = driver.findElement(By.xpath("//select[@id='question2']"));
             js.executeScript("arguments[0].setAttribute('style', 'display:block;')", Question2);
             new Select(Question2).selectByValue("0");
-
             Thread.sleep(2000);
+            Screenshots.captureScreenshot();
+
             // Select Second questionaire - Remove icloud from device
             WebElement Question3 = driver.findElement(By.xpath("//select[@id='question3']"));
             js.executeScript("arguments[0].setAttribute('style', 'display:block;')", Question3);
@@ -2335,16 +2381,19 @@ public class UpgradeCustomerPageActions extends Environment {
     }
 
     public static void UpgradeNowButton() throws InterruptedException, IOException {
-        log.debug("in UpgradeNowButton function");
-        Thread.sleep(8000);
-        Screenshots.captureScreenshot();
-        //driver.findElement(By.xpath("//button[contains(text(),'Upgrade now')]")).click();
-        ((JavascriptExecutor) driver).executeScript("arguments[0].click();",
-                driver.findElement(By.xpath("//button[contains(text(),'Upgrade now')]")));
+        if(driver.findElements(By.xpath("//button[contains(text(),'Upgrade now')]")).size()>0) {
+            log.debug("in UpgradeNowButton function");
+            Thread.sleep(3000);
+            JavascriptExecutor jse = (JavascriptExecutor) driver;
+            jse.executeScript("window.scrollBy(0,-140)", "");
+            Thread.sleep(2000);
+            Screenshots.captureScreenshot();
+            //driver.findElement(By.xpath("//button[contains(text(),'Upgrade now')]")).click();
+            ((JavascriptExecutor) driver).executeScript("arguments[0].click();",
+                    driver.findElement(By.xpath("//button[contains(text(),'Upgrade now')]")));
 
-        Thread.sleep(8000);
-
-
+            Thread.sleep(5000);
+        }
     }
 
     public static void VerifyUpgradeonUs() throws IOException {
@@ -2492,15 +2541,15 @@ public class UpgradeCustomerPageActions extends Environment {
     public static void Verify_Marketing_Message(String Section) throws Exception {
         Thread.sleep(3000);
         String section=driver.getTitle();
-
+        Thread.sleep(2000);
 
         if (section.contains("Tariffs And Extras") || section.contains("Your Package")) {
-            log.debug("Validating Marketing Message at Your Package Section\n");
-            scrollToAnElement.scrollToElement(pageobjects.PAYMandPAYGTariffAndExtrasPage.yourPackageSection);
+            log.debug("Validating Marketing Message at Tariff and Extras Section\n");
+            //scrollToAnElement.scrollToElement(pageobjects.PAYMandPAYGTariffAndExtrasPage.yourPackageSection);
             Screenshots.captureScreenshot();
-            String yourPackageMarketingMessage= driver.findElement(By.xpath("//ul[@class='orders']/li/section[6]/ul/li[2]")).getText();
+            String yourPackageMarketingMessage= driver.findElement(By.xpath("//div[contains(text(),'Pay As You Go Tariff')]/../div[2]/ul/li[1]")).getText();
             Thread.sleep(3000);
-            log.debug("Marketing Message at your package section is: "+yourPackageMarketingMessage);
+            log.debug("Marketing Message at Tariff and Extras section is: "+yourPackageMarketingMessage);
 
             if(UpgradeCustomerPageActions.marketingMessage.contains(yourPackageMarketingMessage)){
                 log.debug("Marketing message is validated successfully at Your Package section ie, "+yourPackageMarketingMessage);
@@ -3316,12 +3365,12 @@ public class UpgradeCustomerPageActions extends Environment {
 
      public static void clickOnGetStartedCTA(){
         try {
-            Thread.sleep(3000);
+            Thread.sleep(6000);
             if(driver.findElements(By.xpath("//button[@class='btnblue'] | //button[@class='btnblue ng-binding']")).size()>0){
                 /*scrollToAnElement.scrollToElement(UpgradeCustomerPage.chooseDeviseSection);
                 Screenshots.captureScreenshot();*/
                 JavascriptExecutor jse = (JavascriptExecutor) driver;
-                jse.executeScript("window.scrollBy(0,450)", "");
+                jse.executeScript("window.scrollBy(0,200)", "");
 
                 Thread.sleep(3000);
                 Screenshots.captureScreenshot();
@@ -3335,6 +3384,29 @@ public class UpgradeCustomerPageActions extends Environment {
         }catch (Exception e){
             log.info("Unable to click on Get Started CTA "+ e.getMessage());
             Assert.fail("Unable to click on Get Started CTA "+ e.getMessage());
+        }
+    }
+
+    public static void clickOnConfigureOwnUpgrade(){
+        try {
+            Thread.sleep(3000);
+            if(driver.findElements(By.xpath("//button[normalize-space()='Configure your own upgrade']")).size()>0){
+                /*scrollToAnElement.scrollToElement(UpgradeCustomerPage.chooseDeviseSection);
+                Screenshots.captureScreenshot();*/
+                JavascriptExecutor jse = (JavascriptExecutor) driver;
+                jse.executeScript("window.scrollBy(0,300)", "");
+
+                Thread.sleep(2000);
+                Screenshots.captureScreenshot();
+                log.debug("Clicking on Configure your own Upgrade CTA in upgrade options page");
+                //JavascriptExecutor jse = (JavascriptExecutor) driver;
+                jse.executeScript("arguments[0].click()", pageobjects.UpgradeCustomerPage.ConfigureOwnUpgrade);
+                Thread.sleep(4000);
+                Screenshots.captureScreenshot();
+            }
+        }catch (Exception e){
+            log.info("Unable to click on Configure your own Upgrade CTA "+ e.getMessage());
+            Assert.fail("Unable to click on Configure your own Upgrade CTA "+ e.getMessage());
         }
     }
 
