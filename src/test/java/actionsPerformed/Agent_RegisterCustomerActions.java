@@ -828,6 +828,7 @@ public class Agent_RegisterCustomerActions extends Environment {
 									System.out.println("As expected Save My Preference Button is disabled after selecting Business Preferences");
 									log.debug("As expected Save My Preference Button is disabled after selecting Business Preferences");
 								}
+								Thread.sleep(3000);
 
 								//Skip Preferences button status after selecting business preferences
 								if(Device_Module.equalsIgnoreCase("Tablet") || Device_Module.equalsIgnoreCase("MBB") || Device_Module.equalsIgnoreCase("Simo")) {
@@ -862,7 +863,7 @@ public class Agent_RegisterCustomerActions extends Environment {
 								}
 
 								Screenshots.captureScreenshot();
-								Thread.sleep(3000);
+								Thread.sleep(5000);
 								//Selecting Channel preferences
 								if (Chn1.equalsIgnoreCase("Select")) {
 									if (driver.findElements(By.xpath("//input[@name='CP_Text']")).size() <= 0) {
@@ -1086,7 +1087,7 @@ public class Agent_RegisterCustomerActions extends Environment {
 
 	//GDPR Preferences Section AFU --- JamalKhan
 
-	public static void PreferencesSection_AFU(String BP1, String BP2, String BP3, String BP4, String Chn1, String Chn2, String Chn3, String Chn4, String customer, String gdprStatus,String DeviceType) throws IOException {
+	public static void PreferencesSection_AFU(String BP1, String BP2, String BP3, String BP4, String Chn1, String Chn2, String Chn3, String Chn4, String customer, String gdprStatus,String DeviceType, String PreSelected) throws IOException {
 
 		try {
 			//driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
@@ -1110,6 +1111,10 @@ public class Agent_RegisterCustomerActions extends Environment {
 						//Is this order for you or someone else validation
 						String thisOrderHeader = Agent_RegisterCustomerPage.thisOrderTxt.getText();
 
+						if (PreSelected.equalsIgnoreCase("Yes")) {
+							log.debug("Validating GDPR for pre selected options for Upgrade users\n");
+						}
+
 						if (thisOrderHeader.contains("Is this order for you or someone else")) {
 							System.out.println("As expected Text:: " + thisOrderHeader + " is displayed");
 							log.debug("As expected Text:: " + thisOrderHeader + " is displayed");
@@ -1130,24 +1135,36 @@ public class Agent_RegisterCustomerActions extends Environment {
 								}
 
 								// SaveMyPreferences button status before selecting business preferences
-								if (Agent_RegisterCustomerPage.SaveMyPreferences.isEnabled()) {
-									System.out.println("As expected Save My Preference Button is enabled before selecting Business Preferences");
-									log.debug("As expected Save My Preference Button is enabled before selecting Business Preferences");
-								} else {
-									System.out.println("Save My Preference Button is disabled before selecting business/channel preferences");
-									log.debug("Save My Preference Button is disabled before selecting business/channel preferences");
-									Assert.fail("Save My Preference Button is disabled before selecting business/channel preferences");
-								}
+
+									if (Agent_RegisterCustomerPage.SaveMyPreferences.isEnabled()) {
+										System.out.println("As expected Save My Preference Button is enabled before selecting Business Preferences");
+										log.debug("As expected Save My Preference Button is enabled before selecting Business Preferences");
+									} else {
+										System.out.println("Save My Preference Button is disabled before selecting business/channel preferences");
+										log.debug("Save My Preference Button is disabled before selecting business/channel preferences");
+										Assert.fail("Save My Preference Button is disabled before selecting business/channel preferences");
+									}
+
 
 
 								//checking Channel preference is displaying/not
-								if (Agent_RegisterCustomerPage.ChannelePreferences.isDisplayed()) {
-									System.out.println("Channel preferences is displaying before selecting any business preferences");
-									log.debug("Channel preferences is displaying before selecting any business preferences");
-									Assert.fail("Channel preferences is displaying before selecting any business preferences");
-								}else{
-									System.out.println("Channel preferences is not displaying before selecting business preferences");
-									log.debug("Channel preferences is not displaying before selecting business preferences");
+								if (PreSelected.equalsIgnoreCase("Yes")) {
+									if(BP1.equalsIgnoreCase("Select") || BP2.equalsIgnoreCase("Select") || BP3.equalsIgnoreCase("Select")) {
+										if (Agent_RegisterCustomerPage.ChannelePreferences.isDisplayed()) {
+											log.debug("UpGrade Customer: Channel preferences are displaying as business preference were selected earlier\n");
+										}else{
+											Assert.fail("Failed:: UpGrade Customer: Channel preferences are not displaying as business preferences were selected earlier\n");
+										}
+									}
+								} else {
+									if (Agent_RegisterCustomerPage.ChannelePreferences.isDisplayed()) {
+										System.out.println("Channel preferences is displaying before selecting any business preferences");
+										log.debug("Channel preferences is displaying before selecting any business preferences");
+										Assert.fail("Channel preferences is displaying before selecting any business preferences");
+									} else {
+										System.out.println("Channel preferences is not displaying before selecting business preferences");
+										log.debug("Channel preferences is not displaying before selecting business preferences");
+									}
 								}
 
 								//GDPR_Business_Validation
@@ -1327,11 +1344,18 @@ public class Agent_RegisterCustomerActions extends Environment {
 										log.debug("O2Products business preference checkBox is not displayed");
 										Assert.fail("Failed :: O2Products business preference checkBox is not displayed");
 									}
-									Agent_RegisterCustomerPage.O2Products.click();
-									System.out.println("O2Products business preference selected");
-									log.debug("O2Products business preference selected");
-								}else{
-									log.debug("O2Products business preference selected for status NOT");
+
+									if (PreSelected.equalsIgnoreCase("Yes")) {
+										if(Agent_RegisterCustomerPage.O2Products.isSelected()) {
+											log.debug("As expected, O2Products option is pre selected as this option was selected earlier\n");
+										}else{
+											Assert.fail("O2Products option is not pre selected, it supposed to be pre-selected state as this option was selected earlier\n");
+										}
+									} else{
+										Agent_RegisterCustomerPage.O2Products.click();
+										System.out.println("O2Products business preference selected");
+										log.debug("O2Products business preference selected");
+									}
 								}
 
 								if (BP2.equalsIgnoreCase("Select")) {
@@ -1340,11 +1364,18 @@ public class Agent_RegisterCustomerActions extends Environment {
 										log.debug("O2 Perks And Extras business preference checkBox is not displayed");
 										Assert.fail("Failed :: O2 Perks And Extras business preference checkBox is not displayed");
 									}
-									Agent_RegisterCustomerPage.O2PerksAndExtras.click();
-									System.out.println("O2 Perks And Extras business preference selected");
-									log.debug("O2 Perks And Extras business preference selected");
-								}else{
-									log.debug("O2 Perks And Extras business preference selected for status NOT");
+
+									if (PreSelected.equalsIgnoreCase("Yes")) {
+										if(Agent_RegisterCustomerPage.O2PerksAndExtras.isSelected()) {
+											log.debug("As expected, O2PerksAndExtras option is pre selected as this option was selected earlier\n");
+										}else{
+											Assert.fail("O2PerksAndExtras option is not pre selected, it supposed to be pre-selected state as this option was selected earlier\n");
+										}
+									} else {
+										Agent_RegisterCustomerPage.O2PerksAndExtras.click();
+										System.out.println("O2 Perks And Extras business preference selected");
+										log.debug("O2 Perks And Extras business preference selected");
+									}
 								}
 
 								if (BP3.equalsIgnoreCase("Select")) {
@@ -1353,11 +1384,18 @@ public class Agent_RegisterCustomerActions extends Environment {
 										log.debug("Offers From O2 Partner business preference checkBox is not displayed");
 										Assert.fail("Failed :: Offers From O2 Partner business preference checkBox is not displayed");
 									}
-									Agent_RegisterCustomerPage.OffersFromO2Partner.click();
-									System.out.println("Offers From O2 Partner business preference selected");
-									log.debug("Offers From O2 Partner business preference selected");
-								}else{
-									log.debug("Offers From O2 Partner business preference selected for status NOT");
+
+									if (PreSelected.equalsIgnoreCase("Yes")) {
+										if(Agent_RegisterCustomerPage.OffersFromO2Partner.isSelected()) {
+											log.debug("As expected, OffersFromO2Partner option is pre selected as this option was selected earlier\n");
+										}else{
+											Assert.fail("OffersFromO2Partner option is not pre selected, it supposed to be pre-selected state as this option was selected earlier\n");
+										}
+									} else {
+										Agent_RegisterCustomerPage.OffersFromO2Partner.click();
+										System.out.println("Offers From O2 Partner business preference selected\n");
+										log.debug("Offers From O2 Partner business preference selected\n");
+									}
 								}
 
 								if (BP4.equalsIgnoreCase("Select")) {
@@ -1366,54 +1404,79 @@ public class Agent_RegisterCustomerActions extends Environment {
 										log.debug("Partners Contacting business preference checkBox is not displayed");
 										Assert.fail("Failed :: Partners Contacting business preference checkBox is not displayed");
 									}
-									Agent_RegisterCustomerPage.PartnersContacting.click();
-									System.out.println("Partners Contacting business preference selected");
-									log.debug("Partners Contacting business preference selected");
-								}else{
-									log.debug("Partners Contacting business preference selected for status NOT");
+
+									if (PreSelected.equalsIgnoreCase("Yes")) {
+										if(Agent_RegisterCustomerPage.PartnersContacting.isSelected()) {
+											log.debug("As expected, PartnersContacting option is pre selected as this option was selected earlier\n");
+										}else{
+											Assert.fail("PartnersContacting option is not pre selected, it supposed to be pre-selected state as this option was selected earlier\n");
+										}
+									} else {
+										Agent_RegisterCustomerPage.PartnersContacting.click();
+										System.out.println("Partners Contacting business preference selected");
+										log.debug("Partners Contacting business preference selected");
+									}
 								}
 
 								Thread.sleep(4000);
 								Screenshots.captureScreenshot();
 								// SaveMyPreferences button status after selecting business preferences
-								if(BP1.equalsIgnoreCase("Select") || BP2.equalsIgnoreCase("Select") || BP3.equalsIgnoreCase("Select") || BP4.equalsIgnoreCase("Select")) {
+								if (PreSelected.equalsIgnoreCase("Yes")) {
 									if (Agent_RegisterCustomerPage.SaveMyPreferences.isEnabled()) {
-										System.out.println("Save My Preference Button is displayed after selecting business preferences");
-										log.debug("Save My Preference Button is displayed after selecting business preferences");
-										Assert.fail("Save My Preference Button is displayed after selecting business preferences");
-									} else {
-										System.out.println("As expected Save My Preference Button is disabled after selecting Business Preferences");
-										log.debug("As expected Save My Preference Button is disabled after selecting Business Preferences");
-									}
-								}else{
-									if (Agent_RegisterCustomerPage.SaveMyPreferences.isEnabled()) {
-										System.out.println("As expected Save My Preference Button is enabled for no Business Preferences selection");
-										log.debug("As expected Save My Preference Button is enabled for no Business Preferences selection");
+										System.out.println("Pre-Selected preferences state:: Save My Preference Button is displayed\n");
+										log.debug("Pre-Selected preferences state:: Save My Preference Button is displayed\n");
 									}else{
-										System.out.println("Save My Preference Button is disabled for no Business Preferences selection");
-										log.debug("As expected Save My Preference Button is disabled for no Business Preferences selection");
-										Assert.fail("As expected Save My Preference Button is disabled for no Business Preferences selection");
+										log.debug("Pre-Selected preferences state:: Save My Preference Button is disabled\n");
+									}
+								}else {
+									if (BP1.equalsIgnoreCase("Select") || BP2.equalsIgnoreCase("Select") || BP3.equalsIgnoreCase("Select") || BP4.equalsIgnoreCase("Select")) {
+										if (Agent_RegisterCustomerPage.SaveMyPreferences.isEnabled()) {
+											System.out.println("Save My Preference Button is displayed after selecting business preferences");
+											log.debug("Save My Preference Button is displayed after selecting business preferences");
+											Assert.fail("Save My Preference Button is displayed after selecting business preferences");
+										} else {
+											System.out.println("As expected Save My Preference Button is disabled after selecting Business Preferences");
+											log.debug("As expected Save My Preference Button is disabled after selecting Business Preferences");
+										}
+									} else {
+										if (Agent_RegisterCustomerPage.SaveMyPreferences.isEnabled()) {
+											System.out.println("As expected Save My Preference Button is enabled for no Business Preferences selection");
+											log.debug("As expected Save My Preference Button is enabled for no Business Preferences selection");
+										} else {
+											System.out.println("Save My Preference Button is disabled for no Business Preferences selection");
+											log.debug("As expected Save My Preference Button is disabled for no Business Preferences selection");
+											Assert.fail("As expected Save My Preference Button is disabled for no Business Preferences selection");
+										}
 									}
 								}
 
 								//checking Channel preference is displaying/not after business preferences selection
-								if(BP1.equalsIgnoreCase("Select") || BP2.equalsIgnoreCase("Select") || BP3.equalsIgnoreCase("Select") || BP4.equalsIgnoreCase("Select")) {
+								if (PreSelected.equalsIgnoreCase("Yes")) {
 									if (Agent_RegisterCustomerPage.ChannelePreferences.isDisplayed()) {
-										System.out.println("Channel preferences is displaying after selecting business preferences");
-										log.debug("Channel preferences is displaying after selecting business preferences");
+										System.out.println("Pre-Selected preferences state:: Channel Preference are displayed\n");
+										log.debug("Pre-Selected preferences state:: Channel Preference are displayed\n");
 									}else{
-										System.out.println("Channel preferences are not displaying after selecting business preferences");
-										log.debug("Channel preferences are not displaying after selecting business preferences");
-										Assert.fail("Channel preferences are not displaying after selecting business preferences");
+										log.debug("Pre-Selected preferences state:: Channel Preference are not displayed\n");
 									}
-								}else{
-									if (Agent_RegisterCustomerPage.ChannelePreferences.isDisplayed()) {
-										System.out.println("Channel preferences is displaying even for no business preferences");
-										log.debug("Channel preferences is displaying even for no selecting business preferences");
-										Assert.fail("Channel preferences is displaying even for no selecting business preferences");
-									}else{
-										System.out.println("Channel preferences are not displaying for no business preferences");
-										log.debug("Channel preferences are not displaying for no business preferences");
+								}else {
+									if (BP1.equalsIgnoreCase("Select") || BP2.equalsIgnoreCase("Select") || BP3.equalsIgnoreCase("Select") || BP4.equalsIgnoreCase("Select")) {
+										if (Agent_RegisterCustomerPage.ChannelePreferences.isDisplayed()) {
+											System.out.println("Channel preferences is displaying after selecting business preferences");
+											log.debug("Channel preferences is displaying after selecting business preferences");
+										} else {
+											System.out.println("Channel preferences are not displaying after selecting business preferences");
+											log.debug("Channel preferences are not displaying after selecting business preferences");
+											Assert.fail("Channel preferences are not displaying after selecting business preferences");
+										}
+									} else {
+										if (Agent_RegisterCustomerPage.ChannelePreferences.isDisplayed()) {
+											System.out.println("Channel preferences is displaying even for no business preferences");
+											log.debug("Channel preferences is displaying even for no selecting business preferences");
+											Assert.fail("Channel preferences is displaying even for no selecting business preferences");
+										} else {
+											System.out.println("Channel preferences are not displaying for no business preferences");
+											log.debug("Channel preferences are not displaying for no business preferences");
+										}
 									}
 								}
 
@@ -1426,9 +1489,18 @@ public class Agent_RegisterCustomerActions extends Environment {
 										log.debug("Contact_Text channel preference checkBox is not displayed");
 										Assert.fail("Failed :: Contact_Text channel preference checkBox is not displayed");
 									}
-									Agent_RegisterCustomerPage.Contact_Text.click();
-									System.out.println("Contact_Text channel preference selected");
-									log.debug("Contact_Text business channel preference selected");
+
+									if (PreSelected.equalsIgnoreCase("Yes")) {
+										if(Agent_RegisterCustomerPage.Contact_Text.isSelected()) {
+											log.debug("As expected, Contact_Text option is pre selected as this option was selected earlier\n");
+										}else{
+											Assert.fail("Contact_Text option is not pre selected, it supposed to be pre-selected state as this option was selected earlier\n");
+										}
+									} else {
+										Agent_RegisterCustomerPage.Contact_Text.click();
+										System.out.println("Contact_Text channel preference selected");
+										log.debug("Contact_Text business channel preference selected");
+									}
 								}
 								if (Chn2.equalsIgnoreCase("Select")) {
 									if (driver.findElements(By.xpath("//input[@name='CP_E-mail']")).size() <= 0) {
@@ -1436,9 +1508,18 @@ public class Agent_RegisterCustomerActions extends Environment {
 										log.debug("Contact_Email channel preference checkBox is not displayed");
 										Assert.fail("Failed :: Contact_Email channel preference checkBox is not displayed");
 									}
-									Agent_RegisterCustomerPage.Contact_Email.click();
-									System.out.println("Contact_Email channel preference selected");
-									log.debug("Contact_Email channel preference selected");
+
+									if (PreSelected.equalsIgnoreCase("Yes")) {
+										if(Agent_RegisterCustomerPage.Contact_Email.isSelected()) {
+											log.debug("As expected, Contact_Email option is pre selected as this option was selected earlier\n");
+										}else{
+											Assert.fail("Contact_Email option is not pre selected, it supposed to be pre-selected state as this option was selected earlier\n");
+										}
+									} else {
+										Agent_RegisterCustomerPage.Contact_Email.click();
+										System.out.println("Contact_Email channel preference selected");
+										log.debug("Contact_Email channel preference selected");
+									}
 								}
 								if (Chn3.equalsIgnoreCase("Select")) {
 									if (driver.findElements(By.xpath("//input[@name='CP_Phone']")).size() <= 0) {
@@ -1446,9 +1527,18 @@ public class Agent_RegisterCustomerActions extends Environment {
 										log.debug("Contact_Phone channel preference checkBox is not displayed");
 										Assert.fail("Failed :: Contact_Phone channel preference checkBox is not displayed");
 									}
-									Agent_RegisterCustomerPage.Contact_Phone.click();
-									System.out.println("Contact_Phone channel preference selected");
-									log.debug("Contact_Phone channel preference selected");
+
+									if (PreSelected.equalsIgnoreCase("Yes")) {
+										if(Agent_RegisterCustomerPage.Contact_Phone.isSelected()) {
+											log.debug("As expected, Contact_Phone option is pre selected as this option was selected earlier\n");
+										}else{
+											Assert.fail("Contact_Phone option is not pre selected, it supposed to be pre-selected state as this option was selected earlier\n");
+										}
+									} else {
+										Agent_RegisterCustomerPage.Contact_Phone.click();
+										System.out.println("Contact_Phone channel preference selected");
+										log.debug("Contact_Phone channel preference selected");
+									}
 								}
 								if (Chn4.equalsIgnoreCase("Select")) {
 									if (driver.findElements(By.xpath("//input[@name='CP_Post']")).size() <= 0) {
@@ -1456,9 +1546,18 @@ public class Agent_RegisterCustomerActions extends Environment {
 										log.debug("Contact_Post channel preference checkBox is not displayed");
 										Assert.fail("Failed :: Contact_Post channel preference checkBox is not displayed");
 									}
-									Agent_RegisterCustomerPage.Contact_Post.click();
-									System.out.println("Contact_Post channel preference selected");
-									log.debug("Contact_Post channel preference selected");
+
+									if (PreSelected.equalsIgnoreCase("Yes")) {
+										if(Agent_RegisterCustomerPage.Contact_Post.isSelected()) {
+											log.debug("As expected, Contact_Post option is pre selected as this option was selected earlier\n");
+										}else{
+											Assert.fail("Contact_Post option is not pre selected, it supposed to be pre-selected state as this option was selected earlier\n");
+										}
+									} else {
+										Agent_RegisterCustomerPage.Contact_Post.click();
+										System.out.println("Contact_Post channel preference selected");
+										log.debug("Contact_Post channel preference selected");
+									}
 								}
 
 								Thread.sleep(3000);
@@ -1516,23 +1615,29 @@ public class Agent_RegisterCustomerActions extends Environment {
 								Thread.sleep(3000);
 								Screenshots.captureScreenshot();
 								boolean defaultSelect = Agent_RegisterCustomerPage.someoneElse_radioBtn.isSelected();
-								if (!defaultSelect) {
-									Thread.sleep(6000);
-									Agent_RegisterCustomerPage.someoneElse_radioBtn.click();
-									Thread.sleep(6000);
-									System.out.println("SomeOne else Order:: Me is selected by Default, as Requirement we have clicked Someone else");
-									log.debug("SomeOne else Order:: Me is selected by Default, as Requirement we have clicked Someone else");
-								}else
-								{
-									System.out.println("SomeOne else Order:: By default Someone else radio button is selected");
-									log.debug("SomeOne else Order:: By default Someone else radio button is selected");
-									Assert.fail("SomeOne else Order:: By default Someone else radio button is selected");
+								if (PreSelected.equalsIgnoreCase("Yes")) {
+									if(Agent_RegisterCustomerPage.someoneElse_radioBtn.isSelected()){
+										log.debug("As expected, SomeOne else option is selected as this was selected earlier for UpGrade Users");
+									}else{
+										log.debug("SomeOne else option is not pre-selected, it supposed to be pre-selected as this was selected earlier for UpGrade Users");
+									}
+								}else {
+									if (!defaultSelect) {
+										Thread.sleep(6000);
+										Agent_RegisterCustomerPage.someoneElse_radioBtn.click();
+										Thread.sleep(6000);
+										System.out.println("SomeOne else Order:: Me is selected by Default, as Requirement we have clicked Someone else");
+										log.debug("SomeOne else Order:: Me is selected by Default, as Requirement we have clicked Someone else");
+									} else {
+										System.out.println("SomeOne else Order:: By default Someone else radio button is selected");
+										log.debug("SomeOne else Order:: By default Someone else radio button is selected");
+										Assert.fail("SomeOne else Order:: By default Someone else radio button is selected");
+									}
 								}
 
 								//checking business preference is displaying/not for someone else order selection
 								if (Agent_RegisterCustomerPage.CustomerBusinessPreferences.isDisplayed()) {
 									Assert.fail("GDPR business preference Enabled:: for some one else order");
-
 								}else{
 									System.out.println("GDPR business preference Disabled:: business preferences is disabled for someone else order selection");
 									log.debug("GDPR business preference Disabled:: business preferences is disabled for someone else order selection");

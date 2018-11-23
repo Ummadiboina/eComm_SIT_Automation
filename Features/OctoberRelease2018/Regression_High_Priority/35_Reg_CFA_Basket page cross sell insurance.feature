@@ -29,5 +29,5 @@ Feature: 35_Reg_CFA_Basket page cross sell insurance
     Then Choose <consumer> <status> Business preferences <B1> <B2> <B3> <B4> And Channel Preferences <Text> <Email> <Phone> <Post> <MBBStatus> <DeviceType>
 
     Examples:
-      | handset   | tariff                 | BSCstatus | BillCap   | CapAmount | consumer | B1  | B2  | B3  | B4  | Text | Email | Phone | Post | status  | MBBStatus | DeviceType | Firstname | Surname | Username     |
-      | iPhone Xs | 9.99upfront44.00amonth | Enabled   | CapMyBill | £20       | Someone  | Not | Not | Not | Not | Not  | Not   | Not   | Not  | Enabled | No        | Connected  | TEST      | ACCEPTA | TEST ACCEPTA |
+      | handset  | tariff                 | BSCstatus | BillCap   | CapAmount | consumer | B1  | B2  | B3  | B4  | Text | Email | Phone | Post | status  | MBBStatus | DeviceType | Firstname | Surname | Username     |
+      | iPhone X | 9.99upfront44.00amonth | Enabled   | CapMyBill | £20       | Someone  | Not | Not | Not | Not | Not  | Not   | Not   | Not  | Enabled | No        | Connected  | TEST      | ACCEPTA | TEST ACCEPTA |

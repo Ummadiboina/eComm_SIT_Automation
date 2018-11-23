@@ -105,7 +105,7 @@ public class UpgradeCustomerPage {
 	//////////////////////////// Your Sim
 	//////////////////////////// Section///////////////////////////////////////////////////
 
-	@FindBy(how = How.XPATH, using = "//*[@id='yourSim'] | (//div[contains(text(),'Your sim')])[2]")
+	@FindBy(how = How.XPATH, using = "//*[@id='yourSim'] | (//div/h2[contains(text(),'Your sim')])[2]")
 	public static WebElement YourSimHeading;
 
 	@FindBy(how = How.XPATH, using = "//div[@id='yourSimSect']")
@@ -198,6 +198,15 @@ public class UpgradeCustomerPage {
 
 	@FindBy(how = How.XPATH, using = "//section[@id='qa-immediate-upgrade-fee']//p[@class='upfront']")
 	public static WebElement TradeInCost1MyPkg;
+
+	@FindBy(how = How.XPATH, using = "(//div[contains(text(),'Upgrade on us')])[1]")
+	public static WebElement TradeInTextUpgradePkg;
+
+	@FindBy(how = How.XPATH, using = "(//div[contains(text(),'Left to pay on your existing device')])[1]/../div[2]")
+	public static WebElement LeftToPayCost1UpgradePkg;
+
+	@FindBy(how = How.XPATH, using = "(//div[contains(text(),'Upgrade on us')])[1]/../div[2]")
+	public static WebElement TradeInCostUpgradePkg;
 	
 	@FindBy(how = How.XPATH, using = "//section[@id='qa-upgrade-promotion-discount']//p[@class='upfront']")
 	public static WebElement BuyoutCost2MyPkg;
@@ -390,6 +399,9 @@ public class UpgradeCustomerPage {
 
 	@FindBy(how = How.XPATH, using = "//button[@class='btnblue'] | //button[@class='btnblue ng-binding']")
 	public static WebElement GetStartedCTA;
+
+	@FindBy(how = How.XPATH, using = "//button[normalize-space()='Configure your own upgrade']")
+	public static WebElement ConfigureOwnUpgrade;
 
 	@FindBy(how = How.XPATH, using = "//div[contains(text(),'Choose your device')]")
 	public static WebElement chooseDeviseSection;

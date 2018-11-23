@@ -846,6 +846,10 @@ public class PAYMSimOPageActions extends Environment {
 		scrollToAnElement.scrollToElement(pageobjects.PAYMSimOPage.TermsAndConditionsCheckbox_ReviewPage);
 		Screenshots.captureScreenshot();
 
+		String confirmTxt = pageobjects.PAYMSimOPage.confirmText.getText();
+		Thread.sleep(2000);
+		log.debug("The confirmation text is:: "+confirmTxt);
+
 		WebElement element = pageobjects.PAYMSimOPage.TermsAndConditionsCheckbox_ReviewPage;
 		JavascriptExecutor executor = (JavascriptExecutor)driver;
 		executor.executeScript("arguments[0].click();", element);

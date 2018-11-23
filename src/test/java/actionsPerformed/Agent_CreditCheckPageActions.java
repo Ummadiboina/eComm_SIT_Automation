@@ -431,19 +431,20 @@ public class Agent_CreditCheckPageActions extends Environment {
 
 			}
 		}
+		Thread.sleep(10000);
 		// Switching to Parent window i.e Main Window.
 		driver.switchTo().window(Mainwindow);
 		//driver.manage().timeouts().implicitlyWait(12,TimeUnit.SECONDS);
-		Thread.sleep(4000);
+		Thread.sleep(3000);
 
 		//*[@id="cardCaptureError"]/ul/li[4]/label[1]
 		int success = driver.findElements(By.xpath("//*[@id = 'cardCaptureStatus' and @class ='success']")).size();
 		if (success > 0) {
 			Agent_CreditCheckDetailsPage.AgreeCreditCheck.click();
-			Thread.sleep(15000);
+			Thread.sleep(8000);
 			Agent_CreditCheckDetailsPage.PerformCreditCheck.click();
 			Screenshots.captureScreenshot();
-			Thread.sleep(30000);
+			Thread.sleep(20000);
 		}
 		else
 		{

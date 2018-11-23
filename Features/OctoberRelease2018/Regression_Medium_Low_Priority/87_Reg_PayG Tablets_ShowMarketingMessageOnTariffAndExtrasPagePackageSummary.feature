@@ -8,8 +8,7 @@ Feature:87_Reg_PayG Tablets_ShowMarketingMessageOnTariffAndExtrasPagePackageSumm
     And Navigate to device details page
     And Select a PayG tariff <tariff>
     And Validate consumer Bill Spend Caps section when BSC is <BSCstatus>
-    #And Click on Dont Select Cap My Bill CTA
-    #And Verify the copytext of marketing message
+    And Verify the copytext of marketing message
     And I Land on the basket page and choose home delivery option
     And Verify the copytext of marketing message
     And click on "go to checkout" button

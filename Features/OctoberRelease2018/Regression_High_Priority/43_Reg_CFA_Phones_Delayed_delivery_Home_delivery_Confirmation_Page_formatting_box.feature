@@ -31,5 +31,5 @@ Feature: 43_Reg_CFA_Phones_Delayed_delivery_Home_delivery_Confirmation_Page_form
     #Step 12 and Step 13 of ALM clubbed together
     #Close the browser
     Examples:
-      | handset   | Firstname | Surname | Username     | Status           | BSCstatus | BillCap   | CapAmount | color          | consumer | B1     | B2     | B3     | B4  | Text   | Email  | Phone | Post | status  | MBBStatus | DeviceType |
-      | Galaxy S9 | TEST      | ACCEPTA | TEST ACCEPTA | Delayed Delivery | Enabled   | CapMyBill | £10       | Midnight Black | Me       | Select | Select | Select | Not | Select | Select | Not   | Not  | Enabled | No        | Connected  |
+      | handset       | Firstname | Surname | Username     | Status           | BSCstatus | BillCap   | CapAmount | color      | consumer | B1     | B2     | B3     | B4  | Text   | Email  | Phone | Post | status  | MBBStatus | DeviceType |
+      | iPhone 8 Plus | TEST      | ACCEPTA | TEST ACCEPTA | Delayed Delivery | Enabled   | CapMyBill | £10       | Space Grey | Me       | Select | Select | Select | Not | Select | Select | Not   | Not  | Enabled | No        | Connected  |

@@ -12,6 +12,21 @@ public class ReviewAndConfirmPage extends Environment {
     @FindBy(how = How.XPATH, using = "//*[@class='heading']")
     public static WebElement RevConfHeading;
 
+    @FindBy(how = How.XPATH, using = "(//p[@class='section-heading'])[1]")
+    public static WebElement firstSection;
+
+    @FindBy(how = How.XPATH, using = "(//p[@class='section-heading'])[2]/span")
+    public static WebElement secondSection;
+
+    @FindBy(how = How.XPATH, using = "(//p[@class='section-heading'])[3]")
+    public static WebElement thirdSection;
+
+    @FindBy(how = How.XPATH, using = "(//p[@class='section-heading'])[4]")
+    public static WebElement forthSection;
+
+    @FindBy(how = How.XPATH, using = "(//p[@class='section-heading'])[5]")
+    public static WebElement fifthSection;
+
     @FindBy(how = How.XPATH, using = "//*[@class='nav-primary']")
     public static WebElement PrimaryNav;
 

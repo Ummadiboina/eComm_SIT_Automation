@@ -10,11 +10,13 @@ Feature: 54_Reg_Consumer_TradeIn
     And Click on 'Get Started' CTA
     And Click on Tablet section in upgrade options page
     And Select a <handset> device from Recommended devices section
+    And Click on device 'Confirm CTA'
     And Select ribboned tariff <tariff> in upgrade journey
     And Validate consumer Bill Spend Caps section when BSC is <BSCstatus>
     And Choose your bill cap <BillCap> <CapAmount> when BSC is <BSCstatus>
     Then choose appropriately in 'Your Sim Card'section
     #And verify if the tradein offer is displayed in My Package section
+    And verify if the tradein offer is displayed in UpGradeOptionsPage
     And I Land on the basket page for upgrades
     And verify if the trade in offer is displayed in Basket page
     And I select a Click and Collect store for Trade In
@@ -35,4 +37,4 @@ Feature: 54_Reg_Consumer_TradeIn
 
     Examples:
       | username                      | password | BSCstatus | BillCap   | CapAmount | handset  | tariff                     | OTAC | Delivery | Payment | Agreement | Review | Username     | Action    | consumer | B1     | B2  | B3     | B4  | Text | Email  | Phone | Post | status  | MBBStatus | DeviceType |
-      | dont41831567@stf.ref.o2.co.uk | test123  | Enabled   | CapMyBill | £15       | iPhone X | 39.99 upfront61.00 a month | OTAC | Delivery | Payment | Agreement | Review | TEST ACCEPTA | enterCode | Me       | Select | Not | Select | Not | Not  | Select | Not   | Not  | Enabled | No        | Connected  |
+      | dont20248850@stf.ref.o2.co.uk | test123  | Enabled   | CapMyBill | £15       | iPhone X | 39.99 upfront61.00 a month | OTAC | Delivery | Payment | Agreement | Review | TEST ACCEPTA | enterCode | Me       | Select | Not | Select | Not | Not  | Select | Not   | Not  | Enabled | No        | Connected  |

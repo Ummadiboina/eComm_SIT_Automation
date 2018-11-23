@@ -99,8 +99,20 @@ public class BasketPage {
 	@FindBy(how = How.ID, using = "store-postcode-submit")
 	public static WebElement PostcodeSubmit;
 
+	@FindBy(how = How.XPATH, using = "(//a[normalize-space()='See when you can collect'])[1]")
+	public static WebElement WhenToCollect;
+
+	@FindBy(how = How.XPATH, using = "(//div[@class='collectFrom'])[1]/p")
+	public static WebElement CollectionDetails;
+
+	@FindBy(how = How.XPATH, using = "(//span[@class='collection-info '])[1]")
+	public static WebElement CollectionDetailsPDpage;
+
 	@FindBy(how = How.XPATH, using = ("(//a[normalize-space()='Collect from this store'])[1]"))
 	public static WebElement Collectfromthisstore;
+
+	@FindBy(how = How.XPATH, using = ("(//div[@class='tileContent']/../div)[1]"))
+	public static WebElement firstStore;
 
 	@FindBy(how = How.XPATH, using = ("//div[@class='basket-header-xxl']"))
 	public static WebElement BasketHeaderXXL;

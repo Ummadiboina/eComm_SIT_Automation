@@ -15,7 +15,12 @@ import org.openqa.selenium.*;
 import helpers.Environment;
 import helpers.Filereadingutility;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import ru.yandex.qatools.ashot.AShot;
+import ru.yandex.qatools.ashot.Screenshot;
+import ru.yandex.qatools.ashot.screentaker.ViewportPastingStrategy;
 import steps.Hooks;
+
+import javax.imageio.ImageIO;
 
 public class Screenshots extends Environment {
 
@@ -82,7 +87,6 @@ public class Screenshots extends Environment {
 		}
 
 	}
-
 
 	public static String timestamp() {
 		return new SimpleDateFormat("yyyy-MM-dd HH-mm-ss").format(new Date());
