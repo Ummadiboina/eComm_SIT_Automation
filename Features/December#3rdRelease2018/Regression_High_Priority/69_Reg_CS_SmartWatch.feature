@@ -17,5 +17,5 @@ Feature: 69_Reg_CS_SmartWatch
     Then Choose <consumer> <status> Business preferences <B1> <B2> <B3> <B4> And Channel Preferences <Text> <Email> <Phone> <Post> <MBBStatus> <DeviceType> <PreSelected>
 
     Examples:
-      | Firstname | Surname | Username     | Device          | consumer | B1  | B2     | B3  | B4  | Text   | Email | Phone | Post | status  | MBBStatus | DeviceType    | PreSelected |
-      | TEST      | ACCEPTA | TEST ACCEPTA | Pebble Original | Me       | Not | Select | Not | Not | Select | Not   | Not   | Not  | Enabled | No        | Non Connected | No          |
+      | Firstname | Surname | Username     | Device          | consumer | B1  | B2  | B3  | B4  | Text | Email | Phone | Post | status   | MBBStatus | DeviceType    | PreSelected |
+      | TEST      | ACCEPTA | TEST ACCEPTA | Pebble Original | Me       | Not | Not | Not | Not | Not  | Not   | Not   | Not  | Disabled | No        | Non Connected | No          |

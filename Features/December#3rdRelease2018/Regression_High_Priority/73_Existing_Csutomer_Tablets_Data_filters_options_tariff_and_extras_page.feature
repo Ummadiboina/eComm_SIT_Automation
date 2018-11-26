@@ -10,10 +10,10 @@ Feature: 73_Existing_Csutomer_Tablets_Data_filters_options_tariff_and_extras_pag
     And Signin using valid <username> and <password> credentials
     And navigate to PAYM Tablets page
     And I choose <tabletname> Tablet
-    And click on the color dropdown
-    And verify the name of the colour is next to the colour tile in CFAPhoneColour
-    And select <color> color of the connected device
-    And select <Capacity> capacity of the connected device
+    #And click on the color dropdown
+    #And verify the name of the colour is next to the colour tile in CFAPhoneColour
+    #And select <color> color of the connected device
+    #And select <Capacity> capacity of the connected device
     And Navigate to device details page
     Then I should see data filters buttons next to existing sort drop-down for PAYM/SIMO tariffs <sortoption>
     #Verification point - A - More than 2 should be displayed
@@ -40,5 +40,5 @@ Feature: 73_Existing_Csutomer_Tablets_Data_filters_options_tariff_and_extras_pag
     Then Choose <consumer> <status> Business preferences <B1> <B2> <B3> <B4> And Channel Preferences <Text> <Email> <Phone> <Post> <MBBStatus> <DeviceType> <PreSelected>
 
     Examples:
-      | tabletname         | color      | Capacity | filtername | BSCstatus | BillCap   | CapAmount | sortoption                 | username                        | password | Username     | consumer | B1  | B2  | B3     | B4  | Text | Email  | Phone | Post | status  | MBBStatus | DeviceType | PreSelected |
-      | iPad Pro 10.5 inch | Space Grey | 512GB    | low        | Enabled   | CapMyBill | £60       | Monthly data (Low to High) | prashanth.dosala@telefonica.com | test123  | TEST ACCEPTA | Me       | Not | Not | Select | Not | Not  | Select | Not   | Not  | Enabled | No        | Connected  | No          |
+      | tabletname | color      | Capacity | filtername | BSCstatus | BillCap   | CapAmount | sortoption                 | username                        | password | Username     | consumer | B1  | B2  | B3     | B4  | Text | Email  | Phone | Post | status  | MBBStatus | DeviceType | PreSelected |
+      | A3 10      | Space Grey | 512GB    | low        | Enabled   | CapMyBill | £60       | Monthly data (Low to High) | prashanth.dosala@telefonica.com | test123  | TEST ACCEPTA | Me       | Not | Not | Select | Not | Not  | Select | Not   | Not  | Enabled | No        | Connected  | No          |

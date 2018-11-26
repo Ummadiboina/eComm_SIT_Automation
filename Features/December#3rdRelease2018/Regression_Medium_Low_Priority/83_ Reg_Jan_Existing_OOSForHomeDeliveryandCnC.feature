@@ -26,5 +26,5 @@ Feature: 83_ Reg_Jan_Existing_OOSForHomeDeliveryandCnC
 
 
     Examples:
-      | handset            | color  | username               | password | BSCstatus | BillCap   | CapAmount |
-      | iPhone 5s Like New | Silver | inavl0wx_700444@o2.com | test123  | Enabled   | CapMyBill | £10       |
+      | handset            | color  | username | password | BSCstatus | BillCap   | CapAmount |
+      | iPhone 5s Like New | Silver | b@o2.com | test123  | Enabled   | CapMyBill | £10       |

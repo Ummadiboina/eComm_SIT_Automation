@@ -953,7 +953,7 @@ public class ConnectedDeviceDetailsPageAction extends Environment {
         log.debug("We are at TnE page\n");
         Screenshots.captureScreenshot();
 
-        jse.executeScript("window.scrollBy(0,-600)", "");
+        jse.executeScript("window.scrollBy(0,-200)", "");
         Thread.sleep(2000);
         Screenshots.captureScreenshot();
 
@@ -971,7 +971,7 @@ public class ConnectedDeviceDetailsPageAction extends Environment {
             Assert.fail(" Not Matched = ==The Monthly upfront price from the PD page and TnE FR Calc Upfront value are not matched  + ie, ::: " + upFrontCost);
         }
 
-        scrollToAnElement.scrollToElement(driver.findElement(By.xpath("//div[contains(text(),'Your Spend Cap')] | //div/p/span[contains(text(),'Your Spend Cap')]")));
+        scrollToAnElement.scrollToElement(driver.findElement(By.xpath("//div[contains(text(),'Your Spend Cap')] | //div/p/span[contains(text(),'Your Spend Cap')] | (//div/h2[contains(normalize-space(),'Your Spend Cap')])[1]")));
         Thread.sleep(3000);
         Screenshots.captureScreenshot();
 
