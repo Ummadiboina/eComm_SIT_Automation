@@ -5,10 +5,10 @@ Feature: 111_FR_Upfront_CFA_PayMTablets_Till_TnE.feature
     Given I am an CFA user and Lands on shop page
     And navigate to PAYM Tablets page
     And select any available <Device> Tablet
-    And click on the color dropdown
-    And verify the name of the colour is next to the colour tile in CFAPhoneColour
-    And select <color> color of the connected device
-    And select <Capacity> capacity of the connected device
+    #And click on the color dropdown
+    #And verify the name of the colour is next to the colour tile in CFAPhoneColour
+    #And select <color> color of the connected device
+    #And select <Capacity> capacity of the connected device
     And Build your plan with <upFront> <term> and <data>
     #And Click on Dont Select Cap My Bill CTA when BSC is <BSCstatus>
     And I Land on the basket page and choose home delivery option
@@ -25,7 +25,7 @@ Feature: 111_FR_Upfront_CFA_PayMTablets_Till_TnE.feature
     Then Choose <consumer> <status> Business preferences <B1> <B2> <B3> <B4> And Channel Preferences <Text> <Email> <Phone> <Post> <MBBStatus> <DeviceType> <PreSelected>
 
     Examples:
-      | Device             | tariffAmt | dataValue | color | Capacity | Firstname | Surname | consumer | BSCstatus | B1     | B2  | B3  | B4  | Text   | Email | Phone | Post | status  | MBBStatus | DeviceType | upFront | term | data | PreSelected |
-      | iPad Pro 10.5 inch | £39       | 8GB       | Gold  | 64GB     | Test      | Accepta | Me       | Enabled   | Select | Not | Not | Not | Select | Not   | Not   | Not  | Enabled | No        | Connected  | max     | min  | max  | No          |
+      | Device           | tariffAmt | dataValue | color | Capacity | Firstname | Surname | consumer | BSCstatus | B1     | B2  | B3  | B4  | Text   | Email | Phone | Post | status  | MBBStatus | DeviceType | upFront | term | data | PreSelected |
+      | Galaxy Book 10.6 | £39       | 8GB       | Gold  | 64GB     | Test      | Accepta | Me       | Enabled   | Select | Not | Not | Not | Select | Not   | Not   | Not  | Enabled | No        | Connected  | max     | min  | max  | No          |
 
 

@@ -48,5 +48,5 @@ Feature: 47_CFU_Phones_Data_filters_options_tariff_and_extras_page
     Then Choose <consumer> <status> Business preferences <B1> <B2> <B3> <B4> And Channel Preferences <Text> <Email> <Phone> <Post> <MBBStatus> <DeviceType> <PreSelected>
 
     Examples:
-      | username         | password | handset  | BSCstatus | BillCap   | CapAmount | color      | filtername | Action | sortoption                 | Username     | Make  | Model   | Network | consumer | B1  | B2  | B3     | B4  | Text | Email  | Phone | Post | status  | MBBStatus | DeviceType | PreSelected |
-      | standup@flex.com | test123  | iPhone X | Enabled   | CapMyBill | £0        | Space Grey | high       | skip   | Monthly data (Low to High) | TEST ACCEPTA | Apple | Iphone7 | Orange  | Me       | Not | Not | Select | Not | Not  | Select | Not   | Not  | Enabled | No        | Connected  | No          |
+      | username                      | password | handset  | BSCstatus | BillCap   | CapAmount | color      | filtername | Action | sortoption                 | Username     | Make  | Model   | Network | consumer | B1  | B2  | B3     | B4  | Text | Email  | Phone | Post | status  | MBBStatus | DeviceType | PreSelected |
+      | 15fe42672847@stf.ref.o2.co.uk | test123  | iPhone X | Enabled   | CapMyBill | £0        | Space Grey | high       | skip   | Monthly data (Low to High) | TEST ACCEPTA | Apple | Iphone7 | Orange  | Me       | Not | Not | Select | Not | Not  | Select | Not   | Not  | Enabled | No        | Connected  | No          |

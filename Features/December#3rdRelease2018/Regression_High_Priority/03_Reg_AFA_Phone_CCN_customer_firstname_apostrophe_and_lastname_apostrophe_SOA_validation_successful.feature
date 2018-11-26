@@ -9,7 +9,7 @@ Feature: 03_Reg_AFA_Phone_CCN_customer_firstname_apostrophe_and_lastname_apostro
     And performs Acquisition for New user
     And Select a valid PayM <Device>
     And Select valid <Tariffs> from tariffs tab
-    #And select a valid Handset and Tariff combination
+    And select a valid Handset and Tariff combination
     And Select valid <Extras> from extras tab
     And Validate Bill Spend Cap in agent deal builder section when BSC is <BSCstatus>
     And Add your Bill Spend Cap <BillCapAmount> in agent deal builder when BSC is <BSCstatus>

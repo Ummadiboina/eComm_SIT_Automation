@@ -16,4 +16,4 @@ Feature: 27_Reg_AFU_SavedBasket
 
     Examples:
       | user        | Device                | Tariffs | BSCstatus | BillCapAmount |
-      | 07729000024 | iPhone Xs 64GB Silver | Refresh | Enabled   | No Spend Cap  |
+      | 07729000024 | iPhone Xs 64GB Silver | Refresh | Enabled   | No spend cap  |

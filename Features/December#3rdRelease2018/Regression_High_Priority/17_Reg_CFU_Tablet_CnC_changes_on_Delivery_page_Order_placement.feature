@@ -38,5 +38,5 @@ Feature: 17_Reg_CFU_Tablet_CnC_changes_on_Delivery_page_Order_placement
     Then Choose <consumer> <status> Business preferences <B1> <B2> <B3> <B4> And Channel Preferences <Text> <Email> <Phone> <Post> <MBBStatus> <DeviceType> <PreSelected>
 
     Examples:
-      | username                     | password | Firstname | Surname | BSCstatus | BillCap   | CapAmount | Tablet             | color      | Capacity | Username     | Action    | tariff | consumer | B1     | B2  | B3  | B4  | Text   | Email | Phone | Post | status  | MBBStatus | DeviceType | PreSelected |
-      | ins_feb2109@stf.ref.o2.co.uk | test123  | Test      | Accepta | Enabled   | CapMyBill | £30       | iPad Pro 10.5 inch | Space Grey | 512GB    | TEST ACCEPTA | enterCode |        | Me       | Select | Not | Not | Not | Select | Not   | Not   | Not  | Enabled | No        | Connected  | No          |
+      | username                                                | password | Firstname | Surname | BSCstatus | BillCap   | CapAmount | Tablet             | color      | Capacity | Username     | Action    | tariff | consumer | B1     | B2  | B3  | B4  | Text   | Email | Phone | Post | status  | MBBStatus | DeviceType | PreSelected |
+      | stester11c221f360-dc0c-4540-b4bc-3c9552dff20a@gmail.com | test123  | Test      | Accepta | Enabled   | CapMyBill | £30       | iPad Pro 10.5 inch | Space Grey | 512GB    | TEST ACCEPTA | enterCode |        | Me       | Select | Not | Not | Not | Select | Not   | Not   | Not  | Enabled | No        | Connected  | No          |

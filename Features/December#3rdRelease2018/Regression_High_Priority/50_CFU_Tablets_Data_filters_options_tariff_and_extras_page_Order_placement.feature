@@ -11,10 +11,10 @@ Feature: 50_CFU_Tablets_Data_filters_options_tariff_and_extras_page_Order_placem
     And Click on Tablet section in upgrade options page
     And Click on View all Tablets link in upgrade options page
     And Select PayM Tablet <Tablet>
-    And click on the color dropdown
-    And verify the name of the colour is next to the colour tile in CFAPhoneColour
-    And select <color> color of the connected device
-    And select <Capacity> capacity of the connected device
+    #And click on the color dropdown
+    #And verify the name of the colour is next to the colour tile in CFAPhoneColour
+    #And select <color> color of the connected device
+    #And select <Capacity> capacity of the connected device
     And Navigate to device details page
     #And Select a <Tablet> device from Recommended devices section
     #And Click on device 'Confirm CTA'
@@ -42,5 +42,5 @@ Feature: 50_CFU_Tablets_Data_filters_options_tariff_and_extras_page_Order_placem
     Then Choose <consumer> <status> Business preferences <B1> <B2> <B3> <B4> And Channel Preferences <Text> <Email> <Phone> <Post> <MBBStatus> <DeviceType> <PreSelected>
 
     Examples:
-      | Tablet             | Action | color      | Capacity | Surname | BSCstatus | BillCap   | CapAmount | Username     | filtername | sortoption                 | username                                                | password | consumer | B1  | B2  | B3     | B4  | Text | Email  | Phone | Post | status  | MBBStatus | DeviceType | PreSelected |
-      | iPad Pro 10.5 inch | skip   | Space Grey | 512GB    | ACCEPTA | Enabled   | CapMyBill | £100      | TEST ACCEPTA | low        | Monthly data (Low to High) | stester119a65f1cd-9cae-4087-acfc-dbe4f952980f@gmail.com | test123  | Me       | Not | Not | Select | Not | Not  | Select | Not   | Not  | Enabled | No        | Connected  | No          |
+      | Tablet | Action | color      | Capacity | Surname | BSCstatus | BillCap   | CapAmount | Username     | filtername | sortoption                 | username                                                | password | consumer | B1  | B2  | B3     | B4  | Text | Email  | Phone | Post | status  | MBBStatus | DeviceType | PreSelected |
+      | A3 10  | skip   | Space Grey | 512GB    | ACCEPTA | Enabled   | CapMyBill | £100      | TEST ACCEPTA | low        | Monthly data (Low to High) | stester119a65f1cd-9cae-4087-acfc-dbe4f952980f@gmail.com | test123  | Me       | Not | Not | Select | Not | Not  | Select | Not   | Not  | Enabled | No        | Connected  | No          |

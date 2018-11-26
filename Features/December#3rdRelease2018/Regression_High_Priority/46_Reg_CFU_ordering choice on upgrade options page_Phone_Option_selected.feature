@@ -37,5 +37,5 @@ Feature: 46_Reg_CFU_ordering choice on upgrade options page_Phone_Option_selecte
     Then Choose <consumer> <status> Business preferences <B1> <B2> <B3> <B4> And Channel Preferences <Text> <Email> <Phone> <Post> <MBBStatus> <DeviceType> <PreSelected>
 
     Examples:
-      | username      | password | handset  | BSCstatus | BillCap   | CapAmount         | Username     | Action | tariff                  | consumer | B1  | B2  | B3  | B4  | Text | Email | Phone | Post | status  | MBBStatus | DeviceType | PreSelected |
-      | a000826@a.com | test123  | iPhone X | Enabled   | CapMyBill | DontCapMyBillLink | TEST ACCEPTA | skip   | 19.99upfront45.00amonth | Someone  | Not | Not | Not | Not | Not  | Not   | Not   | Not  | Enabled | No        | Connected  | No          |
+      | username                                    | password | handset  | BSCstatus | BillCap   | CapAmount         | Username     | Action | tariff                  | consumer | B1  | B2  | B3  | B4  | Text | Email | Phone | Post | status  | MBBStatus | DeviceType | PreSelected |
+      | rbmuatlokesh_donotusee8049@stf.ref.o2.co.uk | test123  | iPhone X | Enabled   | CapMyBill | DontCapMyBillLink | TEST ACCEPTA | skip   | 19.99upfront45.00amonth | Someone  | Not | Not | Not | Not | Not  | Not   | Not   | Not  | Enabled | No        | Connected  | No          |

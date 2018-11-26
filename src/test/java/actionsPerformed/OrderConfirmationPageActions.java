@@ -802,9 +802,9 @@ public class OrderConfirmationPageActions extends Environment {
 										Assert.fail("Unable to find Choose your preferences link header");
 									}
 								} else {
-										System.out.println("GDPR status is Enabled:: but Choose your preferences section is Disbaled");
-										log.debug("GDPR status is Enabled:: but Choose your preferences section is Disbaled");
-										Assert.fail("GDPR status is Enabled:: but Choose your preferences section is Disbaled");
+										System.out.println("GDPR status is Enabled:: but Choose your preferences section is Disabled");
+										log.debug("GDPR status is Enabled:: but Choose your preferences section is Disabled");
+										Assert.fail("GDPR status is Enabled:: but Choose your preferences section is Disabled");
 								}
 							}else{
 									//This order is for someone else

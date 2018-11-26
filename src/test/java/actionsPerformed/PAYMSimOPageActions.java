@@ -775,6 +775,10 @@ public class PAYMSimOPageActions extends Environment {
 	}
 
 	public static void SelectCTAtoBuySIMOtariff() throws IOException, InterruptedException {
+		JavascriptExecutor jse = (JavascriptExecutor) driver;
+		jse.executeScript("window.scrollBy(0,100)", "");
+		Thread.sleep(4000);
+		Screenshots.captureScreenshot();
 		log.debug("clicking on Select to buy SIMO tariff");
 		WebElement element = pageobjects.PAYMSimOPage.SelectSIMOTariff;
 		JavascriptExecutor executor = (JavascriptExecutor)driver;
