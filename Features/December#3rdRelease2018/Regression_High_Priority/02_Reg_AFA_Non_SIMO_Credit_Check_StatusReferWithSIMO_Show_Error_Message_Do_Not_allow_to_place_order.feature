@@ -21,4 +21,4 @@ Feature: 02_Reg_AFA_Non_SIMO_Credit_Check_StatusReferWithSIMO_Show_Error_Message
 
     Examples:
       | Device                            | Tariff  | DeliveryType | BSCstatus | BillCapAmount | Firstname | Surname | Username    | HouseNumber | PostCode | B1     | B2  | B3     | B4     | Text   | Email  | Phone | Post | Consumer | status  | MBBStatus | DeviceType | DeviceModule |
-      | Galaxy Note9 128GB Midnight Black | Refresh | HomeDelivery | Enabled   | No Spend Cap  | TEST      | referc  | Test Referc | 6           | SL11ER   | Select | Not | Select | Select | Select | Select | Not   | Not  | Someone  | Enabled | No        | Connected  | simo         |
+      | Galaxy Note9 128GB Midnight Black | Refresh | HomeDelivery | Enabled   | No spend cap  | TEST      | referc  | Test Referc | 6           | SL11ER   | Select | Not | Select | Select | Select | Select | Not   | Not  | Someone  | Enabled | No        | Connected  | simo         |
