@@ -2951,7 +2951,7 @@ public class E2EOrderPlaced_Steps {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, Agent_DealBuilderPage.class);
             Agent_DealBuilderPageActions.ValdiateBasket();
-            Thread.sleep(5000);
+            Thread.sleep(7000);
             Agent_DealBuilderPageActions.checkout();
             Thread.sleep(7000);
         } catch (Exception e) {
@@ -3165,7 +3165,7 @@ public class E2EOrderPlaced_Steps {
             log.debug("Completed Credit check");
             Agent_CreditCheckPageActions.BankDetails(Username);
             log.debug("Completed Bank details");
-            Thread.sleep(10000);
+            Thread.sleep(15000);
 
         } catch (Exception e) {
             // TODO Auto-generated catch block
