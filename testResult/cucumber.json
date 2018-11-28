@@ -6,7 +6,7 @@
         "before": [
           {
             "result": {
-              "duration": 34580608949,
+              "duration": 46562904535,
               "status": "passed"
             },
             "match": {
@@ -21,7 +21,7 @@
         "after": [
           {
             "result": {
-              "duration": 19605300141,
+              "duration": 20495691393,
               "status": "passed"
             },
             "match": {
@@ -34,7 +34,7 @@
         "steps": [
           {
             "result": {
-              "duration": 3391986829,
+              "duration": 4278360914,
               "status": "passed"
             },
             "line": 7,
@@ -46,7 +46,7 @@
           },
           {
             "result": {
-              "duration": 11203705165,
+              "duration": 13690818981,
               "status": "passed"
             },
             "line": 8,
@@ -58,7 +58,7 @@
           },
           {
             "result": {
-              "duration": 35650597762,
+              "duration": 36718355562,
               "status": "passed"
             },
             "line": 9,
@@ -79,7 +79,7 @@
           },
           {
             "result": {
-              "duration": 27790091601,
+              "duration": 28006350104,
               "status": "passed"
             },
             "line": 10,
@@ -100,7 +100,7 @@
           },
           {
             "result": {
-              "duration": 14788724468,
+              "duration": 14840991526,
               "status": "passed"
             },
             "line": 11,
@@ -112,7 +112,7 @@
           },
           {
             "result": {
-              "duration": 3468022804,
+              "duration": 4122985975,
               "status": "passed"
             },
             "line": 12,
@@ -133,7 +133,7 @@
           },
           {
             "result": {
-              "duration": 25640046814,
+              "duration": 25763072427,
               "status": "passed"
             },
             "line": 13,
@@ -154,7 +154,7 @@
           },
           {
             "result": {
-              "duration": 45017381654,
+              "duration": 45037284521,
               "status": "passed"
             },
             "line": 14,
@@ -180,7 +180,7 @@
           },
           {
             "result": {
-              "duration": 20751067641,
+              "duration": 22735092049,
               "status": "passed"
             },
             "comments": [
@@ -198,7 +198,7 @@
           },
           {
             "result": {
-              "duration": 28479265280,
+              "duration": 28538855679,
               "status": "passed"
             },
             "line": 17,
@@ -224,7 +224,7 @@
           },
           {
             "result": {
-              "duration": 23422571588,
+              "duration": 23452971610,
               "status": "passed"
             },
             "line": 18,
@@ -236,7 +236,7 @@
           },
           {
             "result": {
-              "duration": 90036009050,
+              "duration": 95291048027,
               "status": "passed"
             },
             "line": 19,
@@ -277,7 +277,7 @@
           },
           {
             "result": {
-              "duration": 17540840728,
+              "duration": 17612430957,
               "error_message": "java.lang.AssertionError: Unable to Register customer , please see the failure screenshot\r\n\tat org.testng.Assert.fail(Assert.java:94)\r\n\tat steps.E2EOrderPlaced_Steps.register_the_customer(E2EOrderPlaced_Steps.java:3205)\r\n\tat ✽.And Register the customer with valid TEST, ACCEPTA, 14, SL11UP and other valid details in delivery page(01_Reg_AFA_checkout_delivery_validate_10_digit_and_11_contact_number.feature:20)\r\n",
               "status": "failed"
             },
@@ -456,7 +456,7 @@
         "before": [
           {
             "result": {
-              "duration": 33038031613,
+              "duration": 104141703971,
               "status": "passed"
             },
             "match": {
@@ -471,7 +471,7 @@
         "after": [
           {
             "result": {
-              "duration": 18241938503,
+              "duration": 20080191872,
               "status": "passed"
             },
             "match": {
@@ -484,7 +484,7 @@
         "steps": [
           {
             "result": {
-              "duration": 389859864,
+              "duration": 807798493,
               "status": "passed"
             },
             "line": 7,
@@ -496,7 +496,7 @@
           },
           {
             "result": {
-              "duration": 20344683986,
+              "duration": 753475251,
               "status": "passed"
             },
             "line": 8,
@@ -508,7 +508,7 @@
           },
           {
             "result": {
-              "duration": 20330894816,
+              "duration": 4156013382,
               "status": "passed"
             },
             "line": 9,
@@ -520,9 +520,8 @@
           },
           {
             "result": {
-              "duration": 18919368,
-              "error_message": "java.lang.AssertionError: Unable to find \u0027cookie policy\u0027 page\r\n\tat org.testng.Assert.fail(Assert.java:94)\r\n\tat steps.E2EOrderPlaced_Steps.theCookiePolicyPageShouldBeOpened(E2EOrderPlaced_Steps.java:10046)\r\n\tat ✽.Then the \u0027cookie policy\u0027 page should be opened(05_Reg_CFA_ Cookie_pop_up_for_the_Shop_pages.feature:10)\r\n",
-              "status": "failed"
+              "duration": 6807307273,
+              "status": "passed"
             },
             "line": 10,
             "name": "the \u0027cookie policy\u0027 page should be opened",
@@ -533,7 +532,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 2851616086,
+              "status": "passed"
             },
             "line": 11,
             "name": "Delete all cookies",
@@ -544,7 +544,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 9290309075,
+              "status": "passed"
             },
             "line": 12,
             "name": "launch the shop phones page",
@@ -555,7 +556,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 3832126932,
+              "status": "passed"
             },
             "line": 13,
             "name": "click on \u0027manage cookies\u0027 link",
@@ -566,7 +568,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 5795934561,
+              "status": "passed"
             },
             "line": 14,
             "name": "the \u0027manage cookies\u0027 page should be opened",
@@ -577,7 +580,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 3581800544,
+              "status": "passed"
             },
             "line": 15,
             "name": "Delete all cookies",
@@ -588,7 +592,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 141399517204,
+              "status": "passed"
             },
             "line": 16,
             "name": "launch the shop phones page",
@@ -599,7 +604,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 28477633429,
+              "status": "passed"
             },
             "line": 17,
             "name": "click on \u0027close icon\u0027",
@@ -610,7 +616,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 23404530966,
+              "status": "passed"
             },
             "line": 18,
             "name": "The Shop home page should be displayed without the cookies",
@@ -641,7 +648,7 @@
         "before": [
           {
             "result": {
-              "duration": 5903942953,
+              "duration": 119538194586,
               "status": "passed"
             },
             "match": {
@@ -656,7 +663,7 @@
         "after": [
           {
             "result": {
-              "duration": 18127898520,
+              "duration": 19865447726,
               "status": "passed"
             },
             "match": {
@@ -669,7 +676,7 @@
         "steps": [
           {
             "result": {
-              "duration": 363698554,
+              "duration": 720380956,
               "status": "passed"
             },
             "line": 5,
@@ -681,7 +688,7 @@
           },
           {
             "result": {
-              "duration": 61450756170,
+              "duration": 194454322108,
               "status": "passed"
             },
             "line": 6,
@@ -693,7 +700,7 @@
           },
           {
             "result": {
-              "duration": 20335106275,
+              "duration": 11161011218,
               "status": "passed"
             },
             "line": 7,
@@ -705,9 +712,8 @@
           },
           {
             "result": {
-              "duration": 20076471985,
-              "error_message": "java.lang.AssertionError: verify copy text ‘You\u0027ll need to give details for all fields marked with an asterisk * is not displayed$\r\n\tat org.testng.Assert.fail(Assert.java:94)\r\n\tat steps.E2EOrderPlaced_Steps.verify_copy_text_allFields_narked_with_asterisk_PAYG_sim_journey(E2EOrderPlaced_Steps.java:8713)\r\n\tat ✽.And verify copy text You will need to give details for all fields marked with an asterisk is displayed in PAYG Sim Journey(06_Reg_CFA_PayG_Freesim_Phones_delivery_page_mark_mandatory_fields_with_asterisk.feature:8)\r\n",
-              "status": "failed"
+              "duration": 356711423,
+              "status": "passed"
             },
             "line": 8,
             "name": "verify copy text You will need to give details for all fields marked with an asterisk is displayed in PAYG Sim Journey",
@@ -718,7 +724,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 5686795797,
+              "status": "passed"
             },
             "line": 9,
             "name": "verify asterisk is displayed against mandatory fields of \"PAYG Free sim\"",
@@ -735,7 +742,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 63648304109,
+              "status": "passed"
             },
             "comments": [
               {
@@ -775,7 +783,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 23455725693,
+              "status": "passed"
             },
             "line": 13,
             "name": "order confirmation is displayed",
@@ -806,7 +815,7 @@
         "before": [
           {
             "result": {
-              "duration": 5205931576,
+              "duration": 102375286795,
               "status": "passed"
             },
             "match": {
@@ -821,7 +830,7 @@
         "after": [
           {
             "result": {
-              "duration": 18134794699,
+              "duration": 19836982146,
               "status": "passed"
             },
             "match": {
@@ -834,7 +843,7 @@
         "steps": [
           {
             "result": {
-              "duration": 374888653,
+              "duration": 547797070,
               "status": "passed"
             },
             "line": 7,
@@ -846,7 +855,7 @@
           },
           {
             "result": {
-              "duration": 61324014916,
+              "duration": 165487680062,
               "status": "passed"
             },
             "line": 8,
@@ -858,7 +867,7 @@
           },
           {
             "result": {
-              "duration": 43063715152,
+              "duration": 32189548642,
               "status": "passed"
             },
             "line": 9,
@@ -889,9 +898,8 @@
           },
           {
             "result": {
-              "duration": 23057230918,
-              "error_message": "java.lang.AssertionError: Unable to validate Your order section in delivery page , please see the failure screenshot\r\n\tat org.testng.Assert.fail(Assert.java:94)\r\n\tat steps.E2EOrderPlaced_Steps.validateYourOrderSectionDeliveryPage(E2EOrderPlaced_Steps.java:3009)\r\n\tat ✽.And Validate Your order section in Delivery page £15(07_Reg_CFA_PayG_Freesim_To_Show_BigBundle_DataRollOver_In_DeliveryPage.feature:10)\r\n",
-              "status": "failed"
+              "duration": 10131736258,
+              "status": "passed"
             },
             "line": 10,
             "name": "Validate Your order section in Delivery page £15",
@@ -911,7 +919,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 63362039098,
+              "status": "passed"
             },
             "line": 11,
             "name": "Enter details in Delivery Page TEST and ACCEPTA for GDPR No",
@@ -941,7 +950,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 2443156783,
+              "status": "passed"
             },
             "line": 12,
             "name": "Free Sim order confirmation is displayed",
@@ -972,7 +982,7 @@
         "before": [
           {
             "result": {
-              "duration": 5119333329,
+              "duration": 103412678550,
               "status": "passed"
             },
             "match": {
@@ -987,7 +997,7 @@
         "after": [
           {
             "result": {
-              "duration": 18066982397,
+              "duration": 20440669899,
               "status": "passed"
             },
             "match": {
@@ -1000,7 +1010,7 @@
         "steps": [
           {
             "result": {
-              "duration": 355719783,
+              "duration": 572686095,
               "status": "passed"
             },
             "line": 8,
@@ -1012,7 +1022,7 @@
           },
           {
             "result": {
-              "duration": 54366801587,
+              "duration": 132303574468,
               "status": "passed"
             },
             "line": 9,
@@ -1024,9 +1034,8 @@
           },
           {
             "result": {
-              "duration": 24353254840,
-              "error_message": "java.lang.AssertionError: Unable to choose PayM phone\r\n\tat org.testng.Assert.fail(Assert.java:94)\r\n\tat steps.E2EOrderPlaced_Steps.Choose_PAYM_Handset(E2EOrderPlaced_Steps.java:506)\r\n\tat ✽.And I choose PayM iPhone X(08_Reg_CFA_Phones_checkout_delivery_validate_10_digit_contact_number.feature:10)\r\n",
-              "status": "failed"
+              "duration": 28760390186,
+              "status": "passed"
             },
             "line": 10,
             "name": "I choose PayM iPhone X",
@@ -1046,7 +1055,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 30027303360,
+              "status": "passed"
             },
             "comments": [
               {
@@ -1063,7 +1073,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 201929628,
+              "status": "passed"
             },
             "line": 13,
             "name": "verify the name of the colour is next to the colour tile in CFAPhoneColour",
@@ -1080,7 +1091,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 17646567500,
+              "status": "passed"
             },
             "line": 14,
             "name": "select Space Grey color of the connected device",
@@ -1100,7 +1112,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 102224235859,
+              "status": "passed"
             },
             "line": 15,
             "name": "Navigate to View tariff page",
@@ -1111,7 +1124,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 16170443828,
+              "status": "passed"
             },
             "line": 16,
             "name": "Land on the \u0027Tariffs and extra\u0027 page",
@@ -1122,7 +1136,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 39676527618,
+              "status": "passed"
             },
             "line": 17,
             "name": "Validate consumer Bill Spend Caps section when BSC is Enabled",
@@ -1142,7 +1157,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 68633619913,
+              "status": "passed"
             },
             "line": 18,
             "name": "Choose your bill cap CapMyBill £5 when BSC is Enabled",
@@ -1172,7 +1188,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 39788425774,
+              "status": "passed"
             },
             "line": 19,
             "name": "I Land on the basket page and choose home delivery option",
@@ -1183,7 +1200,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 31220532958,
+              "status": "passed"
             },
             "line": 20,
             "name": "Validate Basket Page for applied Bill Spend Cap CapMyBill £5 when BSC is Enabled",
@@ -1213,7 +1231,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 34078885612,
+              "status": "passed"
             },
             "line": 21,
             "name": "click on \"go to checkout\" button",
@@ -1230,7 +1249,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 82356439270,
+              "status": "passed"
             },
             "comments": [
               {
@@ -1261,7 +1281,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 78575660660,
+              "status": "passed"
             },
             "comments": [
               {
@@ -1292,7 +1313,9 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 41493410833,
+              "error_message": "java.lang.AssertionError: Unable to input details in payment page\r\n\tat org.testng.Assert.fail(Assert.java:94)\r\n\tat steps.E2EOrderPlaced_Steps.CreditCheckPaymentPage_HomeDelivery(E2EOrderPlaced_Steps.java:1901)\r\n\tat ✽.And land on the payment page and input TEST ACCEPTA and other details and click \u0027Continue on next step\u0027(08_Reg_CFA_Phones_checkout_delivery_validate_10_digit_contact_number.feature:26)\r\n",
+              "status": "failed"
             },
             "line": 26,
             "name": "land on the payment page and input TEST ACCEPTA and other details and click \u0027Continue on next step\u0027",
@@ -1445,7 +1468,7 @@
         "before": [
           {
             "result": {
-              "duration": 17121559741,
+              "duration": 46323042387,
               "status": "passed"
             },
             "match": {
@@ -1460,7 +1483,7 @@
         "after": [
           {
             "result": {
-              "duration": 18138839824,
+              "duration": 20407173922,
               "status": "passed"
             },
             "match": {
@@ -1473,7 +1496,7 @@
         "steps": [
           {
             "result": {
-              "duration": 382991291,
+              "duration": 747807475,
               "status": "passed"
             },
             "line": 5,
@@ -1485,7 +1508,7 @@
           },
           {
             "result": {
-              "duration": 57346546230,
+              "duration": 133116340007,
               "status": "passed"
             },
             "line": 6,
@@ -1497,9 +1520,8 @@
           },
           {
             "result": {
-              "duration": 41431944389,
-              "error_message": "java.lang.AssertionError: Unable to select tablet\r\n\tat org.testng.Assert.fail(Assert.java:94)\r\n\tat steps.E2EOrderPlaced_Steps.select_any_available_Tablet(E2EOrderPlaced_Steps.java:4099)\r\n\tat ✽.And select any available iPad Pro 10.5 inch Tablet(102_FR_Upfront_CFA_PayMTablets_Till_TnE.feature:7)\r\n",
-              "status": "failed"
+              "duration": 64830499681,
+              "status": "passed"
             },
             "line": 7,
             "name": "select any available iPad Pro 10.5 inch Tablet",
@@ -1519,7 +1541,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 10713369760,
+              "status": "passed"
             },
             "line": 8,
             "name": "click on the color dropdown",
@@ -1530,7 +1553,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 206160907,
+              "status": "passed"
             },
             "line": 9,
             "name": "verify the name of the colour is next to the colour tile in CFAPhoneColour",
@@ -1547,7 +1571,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 21738579068,
+              "status": "passed"
             },
             "line": 10,
             "name": "select Space Grey color of the connected device",
@@ -1567,7 +1592,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 23432127358,
+              "status": "passed"
             },
             "line": 11,
             "name": "select 512GB capacity of the connected device",
@@ -1587,7 +1613,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 314952037126,
+              "status": "passed"
             },
             "line": 12,
             "name": "Build your plan with avg avg and avg",
@@ -1617,7 +1644,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 38095053374,
+              "status": "passed"
             },
             "comments": [
               {
@@ -1634,7 +1662,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 34122431053,
+              "status": "passed"
             },
             "line": 15,
             "name": "click on \"go to checkout\" button",
@@ -1651,7 +1680,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 345533357,
+              "status": "passed"
             },
             "line": 16,
             "name": "verify copy text You will need to give details for all fields marked with an asterisk is displayed",
@@ -1662,7 +1692,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 5663413343,
+              "status": "passed"
             },
             "line": 17,
             "name": "verify asterisk is displayed against mandatory fields of \"Delivery page\"",
@@ -1679,7 +1710,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 37387819252,
+              "status": "passed"
             },
             "line": 18,
             "name": "input Test and Accepta and other valid details in Delivery page to verify GDPR",
@@ -1704,7 +1736,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 78700580367,
+              "status": "passed"
             },
             "line": 19,
             "name": "Is this order for You or Someone else Me when GDPR is Enabled",
@@ -1729,7 +1762,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 969584052,
+              "status": "passed"
             },
             "line": 20,
             "name": "verify copy text You will need to give details for all fields marked with an asterisk is displayed",
@@ -1740,7 +1774,9 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 26501591684,
+              "error_message": "java.lang.AssertionError: Unable to select the sim free link\r\n\tat org.testng.Assert.fail(Assert.java:94)\r\n\tat steps.E2EOrderPlaced_Steps.verifyAsteriskIsDisplayedAgainstMandatoryFieldsOf(E2EOrderPlaced_Steps.java:8572)\r\n\tat ✽.And verify asterisk is displayed against mandatory fields of \"Payments page\"(102_FR_Upfront_CFA_PayMTablets_Till_TnE.feature:21)\r\n",
+              "status": "failed"
             },
             "line": 21,
             "name": "verify asterisk is displayed against mandatory fields of \"Payments page\"",
@@ -1890,7 +1926,7 @@
         "before": [
           {
             "result": {
-              "duration": 5292975036,
+              "duration": 122009992487,
               "status": "passed"
             },
             "match": {
@@ -1905,7 +1941,7 @@
         "after": [
           {
             "result": {
-              "duration": 18163106331,
+              "duration": 20478728408,
               "status": "passed"
             },
             "match": {
@@ -1918,7 +1954,7 @@
         "steps": [
           {
             "result": {
-              "duration": 387141526,
+              "duration": 760365413,
               "status": "passed"
             },
             "line": 5,
@@ -1930,7 +1966,7 @@
           },
           {
             "result": {
-              "duration": 57295039714,
+              "duration": 58611846661,
               "status": "passed"
             },
             "line": 6,
@@ -1942,9 +1978,8 @@
           },
           {
             "result": {
-              "duration": 41320475166,
-              "error_message": "java.lang.AssertionError: Unable to select tablet\r\n\tat org.testng.Assert.fail(Assert.java:94)\r\n\tat steps.E2EOrderPlaced_Steps.select_any_available_Tablet(E2EOrderPlaced_Steps.java:4099)\r\n\tat ✽.And select any available Galaxy Book 10.6 Tablet(111_FR_Upfront_CFA_PayMTablets_Till_TnE.feature:7)\r\n",
-              "status": "failed"
+              "duration": 58648481768,
+              "status": "passed"
             },
             "line": 7,
             "name": "select any available Galaxy Book 10.6 Tablet",
@@ -1964,7 +1999,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 2579477496821,
+              "status": "passed"
             },
             "comments": [
               {
@@ -2012,7 +2048,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 37269524633,
+              "status": "passed"
             },
             "comments": [
               {
@@ -2029,7 +2066,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 32567456097,
+              "status": "passed"
             },
             "line": 15,
             "name": "click on \"go to checkout\" button",
@@ -2046,7 +2084,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 335587586,
+              "status": "passed"
             },
             "line": 16,
             "name": "verify copy text You will need to give details for all fields marked with an asterisk is displayed",
@@ -2057,7 +2096,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 5698208147,
+              "status": "passed"
             },
             "line": 17,
             "name": "verify asterisk is displayed against mandatory fields of \"Delivery page\"",
@@ -2074,7 +2114,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 36561083344,
+              "status": "passed"
             },
             "line": 18,
             "name": "input Test and Accepta and other valid details in Delivery page to verify GDPR",
@@ -2099,7 +2140,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 78605337655,
+              "status": "passed"
             },
             "line": 19,
             "name": "Is this order for You or Someone else Me when GDPR is Enabled",
@@ -2124,7 +2166,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 760210049,
+              "status": "passed"
             },
             "line": 20,
             "name": "verify copy text You will need to give details for all fields marked with an asterisk is displayed",
@@ -2135,7 +2178,9 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 26225698191,
+              "error_message": "java.lang.AssertionError: Unable to select the sim free link\r\n\tat org.testng.Assert.fail(Assert.java:94)\r\n\tat steps.E2EOrderPlaced_Steps.verifyAsteriskIsDisplayedAgainstMandatoryFieldsOf(E2EOrderPlaced_Steps.java:8572)\r\n\tat ✽.And verify asterisk is displayed against mandatory fields of \"Payments page\"(111_FR_Upfront_CFA_PayMTablets_Till_TnE.feature:21)\r\n",
+              "status": "failed"
             },
             "line": 21,
             "name": "verify asterisk is displayed against mandatory fields of \"Payments page\"",
@@ -2285,7 +2330,7 @@
         "before": [
           {
             "result": {
-              "duration": 5159438821,
+              "duration": 106861626621,
               "status": "passed"
             },
             "match": {
@@ -2300,7 +2345,7 @@
         "after": [
           {
             "result": {
-              "duration": 18069571207,
+              "duration": 20301275152,
               "status": "passed"
             },
             "match": {
@@ -2313,7 +2358,7 @@
         "steps": [
           {
             "result": {
-              "duration": 401060935,
+              "duration": 783002898,
               "status": "passed"
             },
             "line": 5,
@@ -2325,7 +2370,7 @@
           },
           {
             "result": {
-              "duration": 57331231378,
+              "duration": 133429119879,
               "status": "passed"
             },
             "line": 6,
@@ -2337,9 +2382,8 @@
           },
           {
             "result": {
-              "duration": 41350169503,
-              "error_message": "java.lang.AssertionError: Unable to select tablet\r\n\tat org.testng.Assert.fail(Assert.java:94)\r\n\tat steps.E2EOrderPlaced_Steps.select_any_available_Tablet(E2EOrderPlaced_Steps.java:4099)\r\n\tat ✽.And select any available iPad Pro 10.5 inch Tablet(112_FR_Term_CFA_PayMTablets_Till_TnE.feature:7)\r\n",
-              "status": "failed"
+              "duration": 59861182118,
+              "status": "passed"
             },
             "line": 7,
             "name": "select any available iPad Pro 10.5 inch Tablet",
@@ -2359,7 +2403,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 197178967258,
+              "status": "passed"
             },
             "line": 8,
             "name": "Build your plan with min max and max",
@@ -2389,7 +2434,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 38704297424,
+              "status": "passed"
             },
             "comments": [
               {
@@ -2406,7 +2452,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 35038930176,
+              "status": "passed"
             },
             "line": 11,
             "name": "click on \"go to checkout\" button",
@@ -2423,7 +2470,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 350408034,
+              "status": "passed"
             },
             "line": 12,
             "name": "verify copy text You will need to give details for all fields marked with an asterisk is displayed",
@@ -2434,7 +2482,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 5670366145,
+              "status": "passed"
             },
             "line": 13,
             "name": "verify asterisk is displayed against mandatory fields of \"Delivery page\"",
@@ -2451,7 +2500,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 36497751116,
+              "status": "passed"
             },
             "line": 14,
             "name": "input Test and Accepta and other valid details in Delivery page to verify GDPR",
@@ -2476,7 +2526,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 78693014603,
+              "status": "passed"
             },
             "line": 15,
             "name": "Is this order for You or Someone else Me when GDPR is Enabled",
@@ -2501,7 +2552,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 923126334,
+              "status": "passed"
             },
             "line": 16,
             "name": "verify copy text You will need to give details for all fields marked with an asterisk is displayed",
@@ -2512,7 +2564,9 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 26189527407,
+              "error_message": "java.lang.AssertionError: Unable to select the sim free link\r\n\tat org.testng.Assert.fail(Assert.java:94)\r\n\tat steps.E2EOrderPlaced_Steps.verifyAsteriskIsDisplayedAgainstMandatoryFieldsOf(E2EOrderPlaced_Steps.java:8572)\r\n\tat ✽.And verify asterisk is displayed against mandatory fields of \"Payments page\"(112_FR_Term_CFA_PayMTablets_Till_TnE.feature:17)\r\n",
+              "status": "failed"
             },
             "line": 17,
             "name": "verify asterisk is displayed against mandatory fields of \"Payments page\"",
@@ -2662,7 +2716,7 @@
         "before": [
           {
             "result": {
-              "duration": 5189151561,
+              "duration": 101168719253,
               "status": "passed"
             },
             "match": {
@@ -2677,7 +2731,7 @@
         "after": [
           {
             "result": {
-              "duration": 18085851863,
+              "duration": 20250025570,
               "status": "passed"
             },
             "match": {
@@ -2690,7 +2744,7 @@
         "steps": [
           {
             "result": {
-              "duration": 397455358,
+              "duration": 739018617,
               "status": "passed"
             },
             "line": 5,
@@ -2702,7 +2756,7 @@
           },
           {
             "result": {
-              "duration": 57369406323,
+              "duration": 135308045695,
               "status": "passed"
             },
             "line": 6,
@@ -2714,9 +2768,8 @@
           },
           {
             "result": {
-              "duration": 41302494352,
-              "error_message": "java.lang.AssertionError: Unable to select tablet\r\n\tat org.testng.Assert.fail(Assert.java:94)\r\n\tat steps.E2EOrderPlaced_Steps.select_any_available_Tablet(E2EOrderPlaced_Steps.java:4099)\r\n\tat ✽.And select any available iPad Pro 10.5 inch Tablet(113_FR_Term_CFA_PayMTablets_Till_TnE.feature:7)\r\n",
-              "status": "failed"
+              "duration": 61047538897,
+              "status": "passed"
             },
             "line": 7,
             "name": "select any available iPad Pro 10.5 inch Tablet",
@@ -2736,7 +2789,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 10709545824,
+              "status": "passed"
             },
             "line": 8,
             "name": "click on the color dropdown",
@@ -2747,7 +2801,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 206811383,
+              "status": "passed"
             },
             "line": 9,
             "name": "verify the name of the colour is next to the colour tile in CFAPhoneColour",
@@ -2764,7 +2819,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 21721856030,
+              "status": "passed"
             },
             "line": 10,
             "name": "select Space Grey color of the connected device",
@@ -2784,7 +2840,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 19180251577,
+              "status": "passed"
             },
             "line": 11,
             "name": "select 64GB capacity of the connected device",
@@ -2804,7 +2861,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 255895910388,
+              "status": "passed"
             },
             "line": 12,
             "name": "Build your plan with avg avg and min",
@@ -2834,7 +2892,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 37624578367,
+              "status": "passed"
             },
             "comments": [
               {
@@ -2851,7 +2910,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 35698290607,
+              "status": "passed"
             },
             "line": 15,
             "name": "click on \"go to checkout\" button",
@@ -2868,7 +2928,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 342259035,
+              "status": "passed"
             },
             "line": 16,
             "name": "verify copy text You will need to give details for all fields marked with an asterisk is displayed",
@@ -2879,7 +2940,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 5647752372,
+              "status": "passed"
             },
             "line": 17,
             "name": "verify asterisk is displayed against mandatory fields of \"Delivery page\"",
@@ -2896,7 +2958,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 36582449604,
+              "status": "passed"
             },
             "line": 18,
             "name": "input Test and Accepta and other valid details in Delivery page to verify GDPR",
@@ -2921,7 +2984,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 78566950368,
+              "status": "passed"
             },
             "line": 19,
             "name": "Is this order for You or Someone else Me when GDPR is Enabled",
@@ -2946,7 +3010,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 2757554352,
+              "status": "passed"
             },
             "line": 20,
             "name": "verify copy text You will need to give details for all fields marked with an asterisk is displayed",
@@ -2957,7 +3022,9 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 26206334674,
+              "error_message": "java.lang.AssertionError: Unable to select the sim free link\r\n\tat org.testng.Assert.fail(Assert.java:94)\r\n\tat steps.E2EOrderPlaced_Steps.verifyAsteriskIsDisplayedAgainstMandatoryFieldsOf(E2EOrderPlaced_Steps.java:8572)\r\n\tat ✽.And verify asterisk is displayed against mandatory fields of \"Payments page\"(113_FR_Term_CFA_PayMTablets_Till_TnE.feature:21)\r\n",
+              "status": "failed"
             },
             "line": 21,
             "name": "verify asterisk is displayed against mandatory fields of \"Payments page\"",
@@ -3107,7 +3174,7 @@
         "before": [
           {
             "result": {
-              "duration": 5069356740,
+              "duration": 102018312775,
               "status": "passed"
             },
             "match": {
@@ -3122,7 +3189,7 @@
         "after": [
           {
             "result": {
-              "duration": 18097124068,
+              "duration": 20333989354,
               "status": "passed"
             },
             "match": {
@@ -3135,7 +3202,7 @@
         "steps": [
           {
             "result": {
-              "duration": 388679240,
+              "duration": 749342003,
               "status": "passed"
             },
             "line": 5,
@@ -3147,7 +3214,7 @@
           },
           {
             "result": {
-              "duration": 57368996501,
+              "duration": 91683923156,
               "status": "passed"
             },
             "line": 6,
@@ -3159,9 +3226,8 @@
           },
           {
             "result": {
-              "duration": 41353862139,
-              "error_message": "java.lang.AssertionError: Unable to select tablet\r\n\tat org.testng.Assert.fail(Assert.java:94)\r\n\tat steps.E2EOrderPlaced_Steps.select_any_available_Tablet(E2EOrderPlaced_Steps.java:4099)\r\n\tat ✽.And select any available Galaxy Book 10.6 Tablet(114_FR_Term_CFA_PayMTablets_Till_TnE.feature:7)\r\n",
-              "status": "failed"
+              "duration": 56854413346,
+              "status": "passed"
             },
             "line": 7,
             "name": "select any available Galaxy Book 10.6 Tablet",
@@ -3181,7 +3247,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 1808675522177,
+              "status": "passed"
             },
             "line": 8,
             "name": "Build your plan with max max and min",
@@ -3211,7 +3278,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 38834942241,
+              "status": "passed"
             },
             "comments": [
               {
@@ -3228,7 +3296,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 32586744233,
+              "status": "passed"
             },
             "line": 11,
             "name": "click on \"go to checkout\" button",
@@ -3245,7 +3314,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 367499840,
+              "status": "passed"
             },
             "line": 12,
             "name": "verify copy text You will need to give details for all fields marked with an asterisk is displayed",
@@ -3256,7 +3326,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 5824136836,
+              "status": "passed"
             },
             "line": 13,
             "name": "verify asterisk is displayed against mandatory fields of \"Delivery page\"",
@@ -3273,7 +3344,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 37102009008,
+              "status": "passed"
             },
             "line": 14,
             "name": "input Test and Accepta and other valid details in Delivery page to verify GDPR",
@@ -3298,7 +3370,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 78549207732,
+              "status": "passed"
             },
             "line": 15,
             "name": "Is this order for You or Someone else Me when GDPR is Enabled",
@@ -3323,7 +3396,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 1612713019,
+              "status": "passed"
             },
             "line": 16,
             "name": "verify copy text You will need to give details for all fields marked with an asterisk is displayed",
@@ -3334,7 +3408,9 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 26246082722,
+              "error_message": "java.lang.AssertionError: Unable to select the sim free link\r\n\tat org.testng.Assert.fail(Assert.java:94)\r\n\tat steps.E2EOrderPlaced_Steps.verifyAsteriskIsDisplayedAgainstMandatoryFieldsOf(E2EOrderPlaced_Steps.java:8572)\r\n\tat ✽.And verify asterisk is displayed against mandatory fields of \"Payments page\"(114_FR_Term_CFA_PayMTablets_Till_TnE.feature:17)\r\n",
+              "status": "failed"
             },
             "line": 17,
             "name": "verify asterisk is displayed against mandatory fields of \"Payments page\"",
@@ -3484,7 +3560,7 @@
         "before": [
           {
             "result": {
-              "duration": 5076360505,
+              "duration": 106326400231,
               "status": "passed"
             },
             "match": {
@@ -3499,7 +3575,7 @@
         "after": [
           {
             "result": {
-              "duration": 18062035523,
+              "duration": 20276845496,
               "status": "passed"
             },
             "match": {
@@ -3512,7 +3588,7 @@
         "steps": [
           {
             "result": {
-              "duration": 430545759,
+              "duration": 735474619,
               "status": "passed"
             },
             "line": 5,
@@ -3524,7 +3600,7 @@
           },
           {
             "result": {
-              "duration": 57348645237,
+              "duration": 116426459227,
               "status": "passed"
             },
             "line": 6,
@@ -3536,9 +3612,8 @@
           },
           {
             "result": {
-              "duration": 41348290978,
-              "error_message": "java.lang.AssertionError: Unable to select tablet\r\n\tat org.testng.Assert.fail(Assert.java:94)\r\n\tat steps.E2EOrderPlaced_Steps.select_any_available_Tablet(E2EOrderPlaced_Steps.java:4099)\r\n\tat ✽.And select any available iPad Pro 10.5 inch Tablet(115_FR_Data_CFA_PayMTablets_Till_TnE.feature:7)\r\n",
-              "status": "failed"
+              "duration": 59500445035,
+              "status": "passed"
             },
             "line": 7,
             "name": "select any available iPad Pro 10.5 inch Tablet",
@@ -3558,7 +3633,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 10717121145,
+              "status": "passed"
             },
             "line": 8,
             "name": "click on the color dropdown",
@@ -3569,7 +3645,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 191319932,
+              "status": "passed"
             },
             "line": 9,
             "name": "verify the name of the colour is next to the colour tile in CFAPhoneColour",
@@ -3586,7 +3663,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 21720619842,
+              "status": "passed"
             },
             "line": 10,
             "name": "select Space Grey color of the connected device",
@@ -3606,7 +3684,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 23358386805,
+              "status": "passed"
             },
             "line": 11,
             "name": "select 512GB capacity of the connected device",
@@ -3626,7 +3705,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 179347030725,
+              "status": "passed"
             },
             "line": 12,
             "name": "Build your plan with avg max and avg",
@@ -3656,7 +3736,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 37154714199,
+              "status": "passed"
             },
             "comments": [
               {
@@ -3673,7 +3754,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 33696668664,
+              "status": "passed"
             },
             "line": 15,
             "name": "click on \"go to checkout\" button",
@@ -3690,7 +3772,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 331303574,
+              "status": "passed"
             },
             "line": 16,
             "name": "verify copy text You will need to give details for all fields marked with an asterisk is displayed",
@@ -3701,7 +3784,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 5660662092,
+              "status": "passed"
             },
             "line": 17,
             "name": "verify asterisk is displayed against mandatory fields of \"Delivery page\"",
@@ -3718,7 +3802,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 37421808925,
+              "status": "passed"
             },
             "line": 18,
             "name": "input Test and Accepta and other valid details in Delivery page to verify GDPR",
@@ -3743,7 +3828,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 78630072023,
+              "status": "passed"
             },
             "line": 19,
             "name": "Is this order for You or Someone else Me when GDPR is Enabled",
@@ -3768,7 +3854,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 1117144078,
+              "status": "passed"
             },
             "line": 20,
             "name": "verify copy text You will need to give details for all fields marked with an asterisk is displayed",
@@ -3779,7 +3866,9 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 26312089758,
+              "error_message": "java.lang.AssertionError: Unable to select the sim free link\r\n\tat org.testng.Assert.fail(Assert.java:94)\r\n\tat steps.E2EOrderPlaced_Steps.verifyAsteriskIsDisplayedAgainstMandatoryFieldsOf(E2EOrderPlaced_Steps.java:8572)\r\n\tat ✽.And verify asterisk is displayed against mandatory fields of \"Payments page\"(115_FR_Data_CFA_PayMTablets_Till_TnE.feature:21)\r\n",
+              "status": "failed"
             },
             "line": 21,
             "name": "verify asterisk is displayed against mandatory fields of \"Payments page\"",
@@ -3929,7 +4018,7 @@
         "before": [
           {
             "result": {
-              "duration": 5288630154,
+              "duration": 102457607048,
               "status": "passed"
             },
             "match": {
@@ -3944,7 +4033,7 @@
         "after": [
           {
             "result": {
-              "duration": 18052421006,
+              "duration": 20311376287,
               "status": "passed"
             },
             "match": {
@@ -3957,7 +4046,7 @@
         "steps": [
           {
             "result": {
-              "duration": 403483055,
+              "duration": 908762422,
               "status": "passed"
             },
             "line": 5,
@@ -3969,7 +4058,7 @@
           },
           {
             "result": {
-              "duration": 54373504180,
+              "duration": 133627861537,
               "status": "passed"
             },
             "line": 6,
@@ -3981,9 +4070,8 @@
           },
           {
             "result": {
-              "duration": 24292977159,
-              "error_message": "java.lang.AssertionError: Unable to choose PayM phone\r\n\tat org.testng.Assert.fail(Assert.java:94)\r\n\tat steps.E2EOrderPlaced_Steps.Choose_PAYM_Handset(E2EOrderPlaced_Steps.java:506)\r\n\tat ✽.And I choose PayM iPhone X(116_FR_UpfrontAndTerm_CFA_Phones_Till_TnE.feature:7)\r\n",
-              "status": "failed"
+              "duration": 29182215037,
+              "status": "passed"
             },
             "line": 7,
             "name": "I choose PayM iPhone X",
@@ -4003,7 +4091,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 85989093379,
+              "status": "passed"
             },
             "line": 8,
             "name": "click on the color dropdown",
@@ -4014,7 +4103,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 181340893,
+              "status": "passed"
             },
             "line": 9,
             "name": "verify the name of the colour is next to the colour tile in CFAPhoneColour",
@@ -4031,7 +4121,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 17669799192,
+              "status": "passed"
             },
             "line": 10,
             "name": "select Space Grey color of the connected device",
@@ -4051,7 +4142,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 132994343548,
+              "status": "passed"
             },
             "line": 11,
             "name": "Build your plan with min max and min",
@@ -4081,7 +4173,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 41000810086,
+              "status": "passed"
             },
             "comments": [
               {
@@ -4098,7 +4191,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 39369271485,
+              "status": "passed"
             },
             "line": 14,
             "name": "click on \"go to checkout\" button",
@@ -4115,7 +4209,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 325289326,
+              "status": "passed"
             },
             "line": 15,
             "name": "verify copy text You will need to give details for all fields marked with an asterisk is displayed",
@@ -4126,7 +4221,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 5644946619,
+              "status": "passed"
             },
             "line": 16,
             "name": "verify asterisk is displayed against mandatory fields of \"Delivery page\"",
@@ -4143,7 +4239,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 36498295775,
+              "status": "passed"
             },
             "line": 17,
             "name": "input Test and Accepta and other valid details in Delivery page to verify GDPR",
@@ -4168,7 +4265,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 78424025781,
+              "status": "passed"
             },
             "line": 18,
             "name": "Is this order for You or Someone else Me when GDPR is Enabled",
@@ -4193,7 +4291,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 1072020577,
+              "status": "passed"
             },
             "line": 19,
             "name": "verify copy text You will need to give details for all fields marked with an asterisk is displayed",
@@ -4204,7 +4303,9 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 26252286310,
+              "error_message": "java.lang.AssertionError: Unable to select the sim free link\r\n\tat org.testng.Assert.fail(Assert.java:94)\r\n\tat steps.E2EOrderPlaced_Steps.verifyAsteriskIsDisplayedAgainstMandatoryFieldsOf(E2EOrderPlaced_Steps.java:8572)\r\n\tat ✽.And verify asterisk is displayed against mandatory fields of \"Payments page\"(116_FR_UpfrontAndTerm_CFA_Phones_Till_TnE.feature:20)\r\n",
+              "status": "failed"
             },
             "line": 20,
             "name": "verify asterisk is displayed against mandatory fields of \"Payments page\"",
@@ -4354,7 +4455,7 @@
         "before": [
           {
             "result": {
-              "duration": 5214547022,
+              "duration": 33955340469,
               "status": "passed"
             },
             "match": {
@@ -4369,7 +4470,7 @@
         "after": [
           {
             "result": {
-              "duration": 18082843678,
+              "duration": 20784002324,
               "status": "passed"
             },
             "match": {
@@ -4382,7 +4483,7 @@
         "steps": [
           {
             "result": {
-              "duration": 411405910,
+              "duration": 729458246,
               "status": "passed"
             },
             "line": 5,
@@ -4394,7 +4495,7 @@
           },
           {
             "result": {
-              "duration": 54364144120,
+              "duration": 57825155727,
               "status": "passed"
             },
             "line": 6,
@@ -4406,9 +4507,8 @@
           },
           {
             "result": {
-              "duration": 24330136753,
-              "error_message": "java.lang.AssertionError: Unable to choose PayM phone\r\n\tat org.testng.Assert.fail(Assert.java:94)\r\n\tat steps.E2EOrderPlaced_Steps.Choose_PAYM_Handset(E2EOrderPlaced_Steps.java:506)\r\n\tat ✽.And I choose PayM iPhone X(119_FR_All_CFA_Phones_Till_TnE.feature:7)\r\n",
-              "status": "failed"
+              "duration": 28739123372,
+              "status": "passed"
             },
             "line": 7,
             "name": "I choose PayM iPhone X",
@@ -4428,7 +4528,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 23969808782,
+              "status": "passed"
             },
             "line": 8,
             "name": "click on the color dropdown",
@@ -4439,7 +4540,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 175006361,
+              "status": "passed"
             },
             "line": 9,
             "name": "verify the name of the colour is next to the colour tile in CFAPhoneColour",
@@ -4456,7 +4558,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 17648409926,
+              "status": "passed"
             },
             "line": 10,
             "name": "select Space Grey color of the connected device",
@@ -4476,7 +4579,9 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 1666335822224,
+              "error_message": "java.lang.AssertionError: \"Failed to displayed - the upfront MAx icon is not disable though changed to main value\"\r\n\tat org.junit.Assert.fail(Assert.java:88)\r\n\tat actionsPerformed.ConnectedDeviceDetailsPageAction.flexibleReressh_CFA(ConnectedDeviceDetailsPageAction.java:781)\r\n\tat steps.E2EOrderPlaced_Steps.fr_PDpage(E2EOrderPlaced_Steps.java:11284)\r\n\tat ✽.And Build your plan with max max and max(119_FR_All_CFA_Phones_Till_TnE.feature:11)\r\n",
+              "status": "failed"
             },
             "line": 11,
             "name": "Build your plan with max max and max",
@@ -4779,7 +4884,7 @@
         "before": [
           {
             "result": {
-              "duration": 5099149461,
+              "duration": 126203324011,
               "status": "passed"
             },
             "match": {
@@ -4794,7 +4899,7 @@
         "after": [
           {
             "result": {
-              "duration": 18098936058,
+              "duration": 20279250983,
               "status": "passed"
             },
             "match": {
@@ -4807,7 +4912,7 @@
         "steps": [
           {
             "result": {
-              "duration": 357492490,
+              "duration": 739118417,
               "status": "passed"
             },
             "line": 5,
@@ -4819,7 +4924,7 @@
           },
           {
             "result": {
-              "duration": 54389292556,
+              "duration": 132809626762,
               "status": "passed"
             },
             "line": 6,
@@ -4831,9 +4936,8 @@
           },
           {
             "result": {
-              "duration": 24305009904,
-              "error_message": "java.lang.AssertionError: Unable to choose PayM phone\r\n\tat org.testng.Assert.fail(Assert.java:94)\r\n\tat steps.E2EOrderPlaced_Steps.Choose_PAYM_Handset(E2EOrderPlaced_Steps.java:506)\r\n\tat ✽.And I choose PayM iPhone X(11_Reg_CFA_Phones_SSC_checkout_pages_mark_mandatory_fields_with_asterisk.feature:7)\r\n",
-              "status": "failed"
+              "duration": 28768145999,
+              "status": "passed"
             },
             "line": 7,
             "name": "I choose PayM iPhone X",
@@ -4853,7 +4957,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 27270969977,
+              "status": "passed"
             },
             "line": 8,
             "name": "click on the color dropdown",
@@ -4864,7 +4969,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 174481522,
+              "status": "passed"
             },
             "line": 9,
             "name": "verify the name of the colour is next to the colour tile in CFAPhoneColour",
@@ -4881,7 +4987,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 17618012382,
+              "status": "passed"
             },
             "line": 10,
             "name": "select Space Grey color of the connected device",
@@ -4901,7 +5008,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 165870309663,
+              "status": "passed"
             },
             "line": 11,
             "name": "Navigate to device details page",
@@ -4912,7 +5020,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 16006541920,
+              "status": "passed"
             },
             "line": 12,
             "name": "Land on the \u0027Tariffs and extra\u0027 page",
@@ -4923,7 +5032,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 39582748654,
+              "status": "passed"
             },
             "line": 13,
             "name": "Validate consumer Bill Spend Caps section when BSC is Enabled",
@@ -4943,7 +5053,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 68520334454,
+              "status": "passed"
             },
             "line": 14,
             "name": "Choose your bill cap CapMyBill £10 when BSC is Enabled",
@@ -4973,7 +5084,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 40664483549,
+              "status": "passed"
             },
             "line": 15,
             "name": "I Land on the basket page and choose home delivery option",
@@ -4984,7 +5096,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 33159405908,
+              "status": "passed"
             },
             "line": 16,
             "name": "click on \"go to checkout\" button",
@@ -5001,7 +5114,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 335596787,
+              "status": "passed"
             },
             "line": 17,
             "name": "verify copy text You will need to give details for all fields marked with an asterisk is displayed",
@@ -5012,7 +5126,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 5688560363,
+              "status": "passed"
             },
             "line": 18,
             "name": "verify asterisk is displayed against mandatory fields of \"Delivery page\"",
@@ -5029,7 +5144,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 36572088704,
+              "status": "passed"
             },
             "line": 19,
             "name": "input Test and Accepta and other valid details in Delivery page to verify GDPR",
@@ -5054,7 +5170,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 78470337692,
+              "status": "passed"
             },
             "line": 20,
             "name": "Is this order for You or Someone else Me when GDPR is Enabled",
@@ -5079,7 +5196,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 3343932294,
+              "status": "passed"
             },
             "comments": [
               {
@@ -5140,7 +5258,9 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 26183816454,
+              "error_message": "java.lang.AssertionError: Unable to select the sim free link\r\n\tat org.testng.Assert.fail(Assert.java:94)\r\n\tat steps.E2EOrderPlaced_Steps.verifyAsteriskIsDisplayedAgainstMandatoryFieldsOf(E2EOrderPlaced_Steps.java:8572)\r\n\tat ✽.And verify asterisk is displayed against mandatory fields of \"Payments page\"(11_Reg_CFA_Phones_SSC_checkout_pages_mark_mandatory_fields_with_asterisk.feature:34)\r\n",
+              "status": "failed"
             },
             "line": 34,
             "name": "verify asterisk is displayed against mandatory fields of \"Payments page\"",
@@ -5290,7 +5410,7 @@
         "before": [
           {
             "result": {
-              "duration": 5133323518,
+              "duration": 112289640550,
               "status": "passed"
             },
             "match": {
@@ -5305,7 +5425,7 @@
         "after": [
           {
             "result": {
-              "duration": 18093227228,
+              "duration": 20450949401,
               "status": "passed"
             },
             "match": {
@@ -5318,9 +5438,8 @@
         "steps": [
           {
             "result": {
-              "duration": 20069070077,
-              "error_message": "java.lang.AssertionError: Unable to do navigate to signin page\r\n\tat org.testng.Assert.fail(Assert.java:94)\r\n\tat steps.E2EOrderPlaced_Steps.i_am_an_Existing_user_and_Navigates_to_Signin_page(E2EOrderPlaced_Steps.java:490)\r\n\tat ✽.Given I am an Existing user and Navigates to Signin page(12_Reg_Consumer_Existing_PAYG_Phone_BigBundle_To_Show_£15_Data_Roll_Over_Copy_On_Basket_Page_Package_summary_CC_Order_confirmation.feature:7)\r\n",
-              "status": "failed"
+              "duration": 1537825110,
+              "status": "passed"
             },
             "line": 7,
             "name": "I am an Existing user and Navigates to Signin page",
@@ -5331,7 +5450,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 39141874199,
+              "status": "passed"
             },
             "line": 8,
             "name": "Signin using valid ins_feb2109@stf.ref.o2.co.uk and test123 credentials",
@@ -5356,7 +5476,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 140781222052,
+              "status": "passed"
             },
             "line": 9,
             "name": "navigate to Pay as you Go Phones page",
@@ -5367,7 +5488,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 120291239489,
+              "status": "passed"
             },
             "line": 10,
             "name": "I choose PayG iPhone X",
@@ -5387,7 +5509,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 10738416625,
+              "status": "passed"
             },
             "comments": [
               {
@@ -5404,7 +5527,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 159668505,
+              "status": "passed"
             },
             "line": 13,
             "name": "verify the name of the colour is next to the colour tile in CFAPhoneColour",
@@ -5421,7 +5545,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 17676246265,
+              "status": "passed"
             },
             "line": 14,
             "name": "select Space Grey color of the connected device",
@@ -5441,7 +5566,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 67277802807,
+              "status": "passed"
             },
             "line": 15,
             "name": "Navigate to device details page",
@@ -5452,7 +5578,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 74418035598,
+              "status": "passed"
             },
             "line": 16,
             "name": "Land on the \u0027Tariffs and extra\u0027 page and validate Data Roll over copy for £15 and 5GB",
@@ -5477,7 +5604,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 29736643211,
+              "status": "passed"
             },
             "line": 17,
             "name": "Validate consumer Bill Spend Caps section when BSC is Disabled",
@@ -5497,7 +5625,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 79561303118,
+              "status": "passed"
             },
             "comments": [
               {
@@ -5514,7 +5643,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 13411038203,
+              "status": "passed"
             },
             "line": 20,
             "name": "Validate all the Basket contents",
@@ -5525,7 +5655,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 44057791503,
+              "status": "passed"
             },
             "line": 21,
             "name": "click on \"go to checkout\" button",
@@ -5542,7 +5673,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 13611285016,
+              "status": "passed"
             },
             "comments": [
               {
@@ -5559,7 +5691,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 78563075825,
+              "status": "passed"
             },
             "line": 24,
             "name": "Is this order for You or Someone else Me when GDPR is Enabled",
@@ -5584,7 +5717,9 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 98210733350,
+              "error_message": "java.lang.AssertionError: Unable to input details in existing customer payment page\r\n\tat org.testng.Assert.fail(Assert.java:94)\r\n\tat steps.E2EOrderPlaced_Steps.existingCustomerPaymentPage_ClickAndCollect(E2EOrderPlaced_Steps.java:2056)\r\n\tat ✽.And land on the existing customer payment page and input TEST ACCEPTA and other details for Click and collect order(12_Reg_Consumer_Existing_PAYG_Phone_BigBundle_To_Show_£15_Data_Roll_Over_Copy_On_Basket_Page_Package_summary_CC_Order_confirmation.feature:26)\r\n",
+              "status": "failed"
             },
             "comments": [
               {
@@ -5738,7 +5873,7 @@
         "before": [
           {
             "result": {
-              "duration": 5220918715,
+              "duration": 103160473637,
               "status": "passed"
             },
             "match": {
@@ -5753,7 +5888,7 @@
         "after": [
           {
             "result": {
-              "duration": 18043498725,
+              "duration": 18335303400,
               "status": "passed"
             },
             "match": {
@@ -5766,7 +5901,7 @@
         "steps": [
           {
             "result": {
-              "duration": 453233854,
+              "duration": 3235721467,
               "status": "passed"
             },
             "line": 6,
@@ -5778,9 +5913,8 @@
           },
           {
             "result": {
-              "duration": 40040770477,
-              "error_message": "junit.framework.AssertionFailedError\r\n\tat junit.framework.Assert.fail(Assert.java:55)\r\n\tat junit.framework.Assert.fail(Assert.java:64)\r\n\tat actionsPerformed.Agent_HomePagePageActions.NewUser(Agent_HomePagePageActions.java:177)\r\n\tat steps.E2EOrderPlaced_Steps.performs_Acquisition_for_New_user(E2EOrderPlaced_Steps.java:2688)\r\n\tat ✽.And performs Acquisition for New user(130_FR_UpFront_AFA_Tablets_E2E.feature:7)\r\n",
-              "status": "failed"
+              "duration": 12142467342,
+              "status": "passed"
             },
             "line": 7,
             "name": "performs Acquisition for New user",
@@ -5791,7 +5925,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 34200425534,
+              "status": "passed"
             },
             "line": 8,
             "name": "Select a valid PayM iPad Pro 10.5 inch 256GB Space Grey",
@@ -5811,7 +5946,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 27773147019,
+              "status": "passed"
             },
             "line": 9,
             "name": "Select valid Refresh from tariffs tab",
@@ -5831,7 +5967,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 221149341225,
+              "status": "passed"
             },
             "line": 10,
             "name": "In Agent Build your plan with avg avg and avg",
@@ -5861,7 +5998,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 25288651033,
+              "status": "passed"
             },
             "line": 11,
             "name": "Validate Bill Spend Cap in agent deal builder section when BSC is Enabled",
@@ -5881,7 +6019,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 57150215369,
+              "status": "passed"
             },
             "line": 12,
             "name": "Add your Bill Spend Cap £100 in agent deal builder when BSC is Enabled",
@@ -5906,7 +6045,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 22679799464,
+              "status": "passed"
             },
             "line": 13,
             "name": "Validate all the Basket content and checkout",
@@ -5917,7 +6057,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 28443943512,
+              "status": "passed"
             },
             "line": 14,
             "name": "Validate deal summary for applied Bill Spend Cap £100 when BSC is Enabled",
@@ -5942,7 +6083,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 23417479261,
+              "status": "passed"
             },
             "line": 15,
             "name": "perform all the advisory checks",
@@ -5953,7 +6095,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 84944927189,
+              "status": "passed"
             },
             "line": 16,
             "name": "perform the credit checks using valid TEST, ACCEPTA, 18, SL11UP and valid TEST ACCEPTA",
@@ -5993,7 +6136,9 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 40101548579,
+              "error_message": "java.lang.AssertionError: Unable to Register customer\r\n\tat org.testng.Assert.fail(Assert.java:94)\r\n\tat steps.E2EOrderPlaced_Steps.Register_Customer_Phones(E2EOrderPlaced_Steps.java:8326)\r\n\tat ✽.And Register customer with valid test123, test123, vinudeep in delivery page(130_FR_UpFront_AFA_Tablets_E2E.feature:17)\r\n",
+              "status": "failed"
             },
             "line": 17,
             "name": "Register customer with valid test123, test123, vinudeep in delivery page",
@@ -6154,7 +6299,7 @@
         "before": [
           {
             "result": {
-              "duration": 5220724067,
+              "duration": 34888923611,
               "status": "passed"
             },
             "match": {
@@ -6169,7 +6314,7 @@
         "after": [
           {
             "result": {
-              "duration": 18132544929,
+              "duration": 17930179645,
               "status": "passed"
             },
             "match": {
@@ -6182,7 +6327,7 @@
         "steps": [
           {
             "result": {
-              "duration": 436036584,
+              "duration": 3660289076,
               "status": "passed"
             },
             "line": 6,
@@ -6194,9 +6339,8 @@
           },
           {
             "result": {
-              "duration": 20019295567,
-              "error_message": "org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {\"method\":\"id\",\"selector\":\"msisdn\"}\n  (Session info: chrome\u003d70.0.3538.102)\n  (Driver info: chromedriver\u003d2.38.552522 (437e6fbedfa8762dec75e2c5b3ddb86763dc9dcb),platform\u003dWindows NT 10.0.10586 x86_64) (WARNING: The server did not provide any stacktrace information)\nCommand duration or timeout: 0 milliseconds\nFor documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html\nBuild info: version: \u00273.6.0\u0027, revision: \u00276fbf3ec767\u0027, time: \u00272017-09-27T15:28:36.4Z\u0027\nSystem info: host: \u0027LASST266243\u0027, ip: \u002710.172.61.198\u0027, os.name: \u0027Windows 10\u0027, os.arch: \u0027amd64\u0027, os.version: \u002710.0\u0027, java.version: \u00271.8.0_144\u0027\nDriver info: org.openqa.selenium.chrome.ChromeDriver\nCapabilities [{mobileEmulationEnabled\u003dfalse, hasTouchScreen\u003dfalse, platform\u003dXP, acceptSslCerts\u003dfalse, acceptInsecureCerts\u003dfalse, webStorageEnabled\u003dtrue, browserName\u003dchrome, takesScreenshot\u003dtrue, javascriptEnabled\u003dtrue, platformName\u003dXP, setWindowRect\u003dtrue, unexpectedAlertBehaviour\u003d, applicationCacheEnabled\u003dfalse, rotatable\u003dfalse, networkConnectionEnabled\u003dfalse, chrome\u003d{chromedriverVersion\u003d2.38.552522 (437e6fbedfa8762dec75e2c5b3ddb86763dc9dcb), userDataDir\u003dC:\\Users\\khanj6\\AppData\\Local\\Temp\\1\\scoped_dir11468_29224}, takesHeapSnapshot\u003dtrue, pageLoadStrategy\u003dnormal, unhandledPromptBehavior\u003d, databaseEnabled\u003dfalse, handlesAlerts\u003dtrue, version\u003d70.0.3538.102, browserConnectionEnabled\u003dfalse, nativeEvents\u003dtrue, locationContextEnabled\u003dtrue, cssSelectorsEnabled\u003dtrue}]\nSession ID: 18f51638f1a8c162f7fcd08e963d9014\n*** Element info: {Using\u003did, value\u003dmsisdn}\r\n\tat sun.reflect.GeneratedConstructorAccessor28.newInstance(Unknown Source)\r\n\tat sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)\r\n\tat java.lang.reflect.Constructor.newInstance(Constructor.java:423)\r\n\tat org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:214)\r\n\tat org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:166)\r\n\tat org.openqa.selenium.remote.http.JsonHttpResponseCodec.reconstructValue(JsonHttpResponseCodec.java:40)\r\n\tat org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:82)\r\n\tat org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:45)\r\n\tat org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:164)\r\n\tat org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:586)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:356)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElementById(RemoteWebDriver.java:402)\r\n\tat org.openqa.selenium.By$ById.findElement(By.java:218)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:348)\r\n\tat org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)\r\n\tat org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)\r\n\tat com.sun.proxy.$Proxy23.sendKeys(Unknown Source)\r\n\tat actionsPerformed.Agent_HomePagePageActions.FindUser(Agent_HomePagePageActions.java:47)\r\n\tat steps.E2EOrderPlaced_Steps.performs_Upgrade(E2EOrderPlaced_Steps.java:2667)\r\n\tat ✽.And performs Upgrade for 07521128943(133_FR_UpFront_AFU_PAYM_Dongle_payByCard.feature:7)\r\n",
-              "status": "failed"
+              "duration": 94821528916,
+              "status": "passed"
             },
             "line": 7,
             "name": "performs Upgrade for 07521128943",
@@ -6216,7 +6360,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 32743559916,
+              "status": "passed"
             },
             "line": 8,
             "name": "Select a valid PayM dongle",
@@ -6236,7 +6381,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 27746608447,
+              "status": "passed"
             },
             "line": 9,
             "name": "Select valid Refresh from tariffs tab",
@@ -6256,7 +6402,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 189308649809,
+              "status": "passed"
             },
             "line": 10,
             "name": "In Agent Build your plan with max avg and avg",
@@ -6286,7 +6433,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 25326710959,
+              "status": "passed"
             },
             "line": 11,
             "name": "Validate Bill Spend Cap in agent deal builder section when BSC is Enabled",
@@ -6306,7 +6454,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 57124534306,
+              "status": "passed"
             },
             "line": 12,
             "name": "Add your Bill Spend Cap £100 in agent deal builder when BSC is Enabled",
@@ -6331,7 +6480,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 22669568092,
+              "status": "passed"
             },
             "line": 13,
             "name": "Validate all the Basket content and checkout",
@@ -6362,7 +6512,7 @@
         "before": [
           {
             "result": {
-              "duration": 5131973374,
+              "duration": 34980470501,
               "status": "passed"
             },
             "match": {
@@ -6377,7 +6527,7 @@
         "after": [
           {
             "result": {
-              "duration": 18023719725,
+              "duration": 17888137236,
               "status": "passed"
             },
             "match": {
@@ -6390,7 +6540,7 @@
         "steps": [
           {
             "result": {
-              "duration": 452581254,
+              "duration": 2973809669,
               "status": "passed"
             },
             "line": 6,
@@ -6402,9 +6552,8 @@
           },
           {
             "result": {
-              "duration": 20072239291,
-              "error_message": "org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {\"method\":\"id\",\"selector\":\"msisdn\"}\n  (Session info: chrome\u003d70.0.3538.102)\n  (Driver info: chromedriver\u003d2.38.552522 (437e6fbedfa8762dec75e2c5b3ddb86763dc9dcb),platform\u003dWindows NT 10.0.10586 x86_64) (WARNING: The server did not provide any stacktrace information)\nCommand duration or timeout: 0 milliseconds\nFor documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html\nBuild info: version: \u00273.6.0\u0027, revision: \u00276fbf3ec767\u0027, time: \u00272017-09-27T15:28:36.4Z\u0027\nSystem info: host: \u0027LASST266243\u0027, ip: \u002710.172.61.198\u0027, os.name: \u0027Windows 10\u0027, os.arch: \u0027amd64\u0027, os.version: \u002710.0\u0027, java.version: \u00271.8.0_144\u0027\nDriver info: org.openqa.selenium.chrome.ChromeDriver\nCapabilities [{mobileEmulationEnabled\u003dfalse, hasTouchScreen\u003dfalse, platform\u003dXP, acceptSslCerts\u003dfalse, acceptInsecureCerts\u003dfalse, webStorageEnabled\u003dtrue, browserName\u003dchrome, takesScreenshot\u003dtrue, javascriptEnabled\u003dtrue, platformName\u003dXP, setWindowRect\u003dtrue, unexpectedAlertBehaviour\u003d, applicationCacheEnabled\u003dfalse, rotatable\u003dfalse, networkConnectionEnabled\u003dfalse, chrome\u003d{chromedriverVersion\u003d2.38.552522 (437e6fbedfa8762dec75e2c5b3ddb86763dc9dcb), userDataDir\u003dC:\\Users\\khanj6\\AppData\\Local\\Temp\\1\\scoped_dir7080_11850}, takesHeapSnapshot\u003dtrue, pageLoadStrategy\u003dnormal, unhandledPromptBehavior\u003d, databaseEnabled\u003dfalse, handlesAlerts\u003dtrue, version\u003d70.0.3538.102, browserConnectionEnabled\u003dfalse, nativeEvents\u003dtrue, locationContextEnabled\u003dtrue, cssSelectorsEnabled\u003dtrue}]\nSession ID: 3134f4dcd16abe1e51bd8cdcf5aa751a\n*** Element info: {Using\u003did, value\u003dmsisdn}\r\n\tat sun.reflect.GeneratedConstructorAccessor28.newInstance(Unknown Source)\r\n\tat sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)\r\n\tat java.lang.reflect.Constructor.newInstance(Constructor.java:423)\r\n\tat org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:214)\r\n\tat org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:166)\r\n\tat org.openqa.selenium.remote.http.JsonHttpResponseCodec.reconstructValue(JsonHttpResponseCodec.java:40)\r\n\tat org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:82)\r\n\tat org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:45)\r\n\tat org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:164)\r\n\tat org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:586)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:356)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElementById(RemoteWebDriver.java:402)\r\n\tat org.openqa.selenium.By$ById.findElement(By.java:218)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:348)\r\n\tat org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)\r\n\tat org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)\r\n\tat com.sun.proxy.$Proxy23.sendKeys(Unknown Source)\r\n\tat actionsPerformed.Agent_HomePagePageActions.FindUser(Agent_HomePagePageActions.java:47)\r\n\tat steps.E2EOrderPlaced_Steps.performs_Upgrade(E2EOrderPlaced_Steps.java:2667)\r\n\tat ✽.And performs Upgrade for 07568417868(134_FR_UpFront_AFU_PAYM_Tablet.feature:7)\r\n",
-              "status": "failed"
+              "duration": 96420741550,
+              "status": "passed"
             },
             "line": 7,
             "name": "performs Upgrade for 07568417868",
@@ -6424,7 +6573,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 34216143838,
+              "status": "passed"
             },
             "line": 8,
             "name": "Select a valid PayM Samsung galaxy Book 10.6",
@@ -6444,7 +6594,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 27757695205,
+              "status": "passed"
             },
             "line": 9,
             "name": "Select valid Refresh from tariffs tab",
@@ -6464,7 +6615,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 159774808245,
+              "status": "passed"
             },
             "line": 10,
             "name": "In Agent Build your plan with avg avg and min",
@@ -6494,7 +6646,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 25269888092,
+              "status": "passed"
             },
             "line": 11,
             "name": "Validate Bill Spend Cap in agent deal builder section when BSC is Enabled",
@@ -6514,7 +6667,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 46959729235,
+              "status": "passed"
             },
             "line": 12,
             "name": "Add your Bill Spend Cap £10 in agent deal builder when BSC is Enabled",
@@ -6539,7 +6693,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 22708590990,
+              "status": "passed"
             },
             "line": 13,
             "name": "Validate all the Basket content and checkout",
@@ -6570,7 +6725,7 @@
         "before": [
           {
             "result": {
-              "duration": 5611434717,
+              "duration": 101584391831,
               "status": "passed"
             },
             "match": {
@@ -6585,7 +6740,7 @@
         "after": [
           {
             "result": {
-              "duration": 18086743702,
+              "duration": 19816235570,
               "status": "passed"
             },
             "match": {
@@ -6598,7 +6753,7 @@
         "steps": [
           {
             "result": {
-              "duration": 374941030,
+              "duration": 687788852,
               "status": "passed"
             },
             "line": 7,
@@ -6610,7 +6765,7 @@
           },
           {
             "result": {
-              "duration": 61347959017,
+              "duration": 88856227459,
               "status": "passed"
             },
             "line": 8,
@@ -6622,7 +6777,7 @@
           },
           {
             "result": {
-              "duration": 20320710512,
+              "duration": 12692814293,
               "status": "passed"
             },
             "line": 9,
@@ -6634,9 +6789,8 @@
           },
           {
             "result": {
-              "duration": 48081451064,
-              "error_message": "java.lang.AssertionError: Unable to input details in delivery page\r\n\tat org.testng.Assert.fail(Assert.java:94)\r\n\tat steps.E2EOrderPlaced_Steps.i_enter_details_in_Delivery_PageTEST_and_ACCEPTA_new(E2EOrderPlaced_Steps.java:6893)\r\n\tat ✽.And Enter details in Delivery Page TEST and ACCEPTA for GDPR Yes(14_Reg_CFA_PayG_FreeSim_Delivery_page_more_than_one_address_select_one_compress_others.feature:13)\r\n",
-              "status": "failed"
+              "duration": 67333052923,
+              "status": "passed"
             },
             "comments": [
               {
@@ -6680,7 +6834,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 2593863017,
+              "status": "passed"
             },
             "line": 14,
             "name": "Free Sim order confirmation is displayed",
@@ -6691,7 +6846,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 30395154272,
+              "status": "passed"
             },
             "line": 15,
             "name": "Choose Me Disabled Business preferences Not Not Not Not And Channel Preferences Not Not Not Not No Connected No",
@@ -6791,7 +6947,7 @@
         "before": [
           {
             "result": {
-              "duration": 5135816420,
+              "duration": 102344473060,
               "status": "passed"
             },
             "match": {
@@ -6806,7 +6962,7 @@
         "after": [
           {
             "result": {
-              "duration": 18301506252,
+              "duration": 20290214937,
               "status": "passed"
             },
             "match": {
@@ -6819,7 +6975,7 @@
         "steps": [
           {
             "result": {
-              "duration": 389901979,
+              "duration": 475777908,
               "status": "passed"
             },
             "line": 8,
@@ -6831,7 +6987,7 @@
           },
           {
             "result": {
-              "duration": 54379253354,
+              "duration": 59300622553,
               "status": "passed"
             },
             "line": 9,
@@ -6843,9 +6999,8 @@
           },
           {
             "result": {
-              "duration": 24349476558,
-              "error_message": "java.lang.AssertionError: Unable to choose PayM phone\r\n\tat org.testng.Assert.fail(Assert.java:94)\r\n\tat steps.E2EOrderPlaced_Steps.Choose_PAYM_Handset(E2EOrderPlaced_Steps.java:506)\r\n\tat ✽.And I choose PayM iPhone X(15_Reg_CFA_Phones_CnC_Delivery_page_Payment_page_more_than_one_address_select_one_compress_others.feature:10)\r\n",
-              "status": "failed"
+              "duration": 28910715619,
+              "status": "passed"
             },
             "line": 10,
             "name": "I choose PayM iPhone X",
@@ -6865,7 +7020,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 27482844314,
+              "status": "passed"
             },
             "line": 11,
             "name": "click on the color dropdown",
@@ -6876,7 +7032,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 147413862,
+              "status": "passed"
             },
             "line": 12,
             "name": "verify the name of the colour is next to the colour tile in CFAPhoneColour",
@@ -6893,7 +7050,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 15594038908,
+              "status": "passed"
             },
             "line": 13,
             "name": "select Silver color of the connected device",
@@ -6913,7 +7071,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 89181860779,
+              "status": "passed"
             },
             "line": 14,
             "name": "Navigate to device details page",
@@ -6924,7 +7083,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 16039278417,
+              "status": "passed"
             },
             "line": 15,
             "name": "Land on the \u0027Tariffs and extra\u0027 page",
@@ -6935,7 +7095,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 39570815710,
+              "status": "passed"
             },
             "line": 16,
             "name": "Validate consumer Bill Spend Caps section when BSC is Enabled",
@@ -6955,7 +7116,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 68542347299,
+              "status": "passed"
             },
             "line": 17,
             "name": "Choose your bill cap CapMyBill £15 when BSC is Enabled",
@@ -6985,7 +7147,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 38662176094,
+              "status": "passed"
             },
             "line": 18,
             "name": "I Land on the basket page and choose home delivery option",
@@ -6996,7 +7159,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 33397109593,
+              "status": "passed"
             },
             "line": 19,
             "name": "click on \"go to checkout\" button",
@@ -7013,7 +7177,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 35252850079,
+              "status": "passed"
             },
             "comments": [
               {
@@ -7044,7 +7209,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 78585103887,
+              "status": "passed"
             },
             "line": 22,
             "name": "Is this order for You or Someone else Me when GDPR is Enabled",
@@ -7069,7 +7235,9 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 121423331421,
+              "error_message": "java.lang.AssertionError: Unable to input details in payment page\r\n\tat org.testng.Assert.fail(Assert.java:94)\r\n\tat steps.E2EOrderPlaced_Steps.CreditCheckPaymentPage_ClickAndCollect_CreditCheck(E2EOrderPlaced_Steps.java:2082)\r\n\tat ✽.And land on the payment page and input TEST ACCEPTA and other details for Click and collect order and click \u0027Continue on next step\u0027 for payments(15_Reg_CFA_Phones_CnC_Delivery_page_Payment_page_more_than_one_address_select_one_compress_others.feature:23)\r\n",
+              "status": "failed"
             },
             "line": 23,
             "name": "land on the payment page and input TEST ACCEPTA and other details for Click and collect order and click \u0027Continue on next step\u0027 for payments",
@@ -7222,7 +7390,7 @@
         "before": [
           {
             "result": {
-              "duration": 5308917361,
+              "duration": 161231677404,
               "status": "passed"
             },
             "match": {
@@ -7237,7 +7405,7 @@
         "after": [
           {
             "result": {
-              "duration": 18139000142,
+              "duration": 20169028565,
               "status": "passed"
             },
             "match": {
@@ -7250,9 +7418,8 @@
         "steps": [
           {
             "result": {
-              "duration": 20081102468,
-              "error_message": "java.lang.AssertionError: Unable to do navigate to signin page\r\n\tat org.testng.Assert.fail(Assert.java:94)\r\n\tat steps.E2EOrderPlaced_Steps.i_am_an_Existing_user_and_Navigates_to_Signin_page(E2EOrderPlaced_Steps.java:490)\r\n\tat ✽.Given I am an Existing user and Navigates to Signin page(18_Reg_CFU_Tablet_Delivery_page_more_than_one_address_select_one_compress_others.feature:7)\r\n",
-              "status": "failed"
+              "duration": 1474378217,
+              "status": "passed"
             },
             "line": 7,
             "name": "I am an Existing user and Navigates to Signin page",
@@ -7263,7 +7430,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 43326544270,
+              "status": "passed"
             },
             "line": 8,
             "name": "Signin using valid inavl0wx_700444@o2.com and test123 credentials",
@@ -7288,7 +7456,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 58955976788,
+              "status": "passed"
             },
             "line": 9,
             "name": "Navigate to upgrade \u003e upgrade now",
@@ -7299,7 +7468,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 14210169580,
+              "status": "passed"
             },
             "line": 10,
             "name": "Click on \u0027Get Started\u0027 CTA",
@@ -7310,7 +7480,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 11350515621,
+              "status": "passed"
             },
             "line": 11,
             "name": "Click on Tablet section in upgrade options page",
@@ -7321,7 +7492,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 157399157637,
+              "status": "passed"
             },
             "line": 12,
             "name": "Click on View all Tablets link in upgrade options page",
@@ -7332,7 +7504,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 27801761240,
+              "status": "passed"
             },
             "line": 13,
             "name": "Select PayM Tablet Galaxy Book 10.6",
@@ -7352,7 +7525,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 126097014357,
+              "status": "passed"
             },
             "line": 14,
             "name": "Navigate to device details page",
@@ -7363,7 +7537,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 15967584847,
+              "status": "passed"
             },
             "comments": [
               {
@@ -7388,7 +7563,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 39619569914,
+              "status": "passed"
             },
             "line": 19,
             "name": "Validate consumer Bill Spend Caps section when BSC is Enabled",
@@ -7408,7 +7584,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 68470206747,
+              "status": "passed"
             },
             "line": 20,
             "name": "Choose your bill cap CapMyBill £60 when BSC is Enabled",
@@ -7438,7 +7615,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 40816949748,
+              "status": "passed"
             },
             "line": 21,
             "name": "I Land on the basket page by clicking on Add to Basket button",
@@ -7449,7 +7627,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 39983128323,
+              "status": "passed"
             },
             "line": 22,
             "name": "click on \"go to checkout\" button",
@@ -7466,7 +7645,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 36953193331,
+              "status": "passed"
             },
             "line": 23,
             "name": "perform enterCode in OTAC page",
@@ -7486,7 +7666,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 3071292950,
+              "status": "passed"
             },
             "line": 24,
             "name": "Click on \u0027Use a different delivery address\u0027link",
@@ -7497,7 +7678,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 8450749446,
+              "status": "passed"
             },
             "line": 25,
             "name": "enter a 11 and an SL11Er in Delivery section",
@@ -7522,7 +7704,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 78478654796,
+              "status": "passed"
             },
             "line": 26,
             "name": "Is this order for You or Someone else Me when GDPR is Enabled",
@@ -7547,7 +7730,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 13168729869,
+              "status": "passed"
             },
             "line": 27,
             "name": "Select the Home address",
@@ -7558,7 +7742,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 100605371630,
+              "status": "passed"
             },
             "line": 28,
             "name": "Enter cardDetails in payment page input Test Accepta and click \u0027Continue on next step\u0027",
@@ -7578,7 +7763,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 64127411902,
+              "status": "passed"
             },
             "comments": [
               {
@@ -7595,7 +7781,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 57144026645,
+              "status": "passed"
             },
             "line": 31,
             "name": "Continue to Review page and review the order",
@@ -7606,7 +7793,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 3309140320,
+              "status": "passed"
             },
             "comments": [
               {
@@ -7623,7 +7811,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 95935492810,
+              "status": "passed"
             },
             "line": 34,
             "name": "Choose Me Enabled Business preferences Not Not Select Not And Channel Preferences Not Select Not Select No Connected No",
@@ -7723,7 +7912,7 @@
         "before": [
           {
             "result": {
-              "duration": 5332725916,
+              "duration": 100417241083,
               "status": "passed"
             },
             "match": {
@@ -7738,7 +7927,7 @@
         "after": [
           {
             "result": {
-              "duration": 18154788165,
+              "duration": 20017702645,
               "status": "passed"
             },
             "match": {
@@ -7751,7 +7940,7 @@
         "steps": [
           {
             "result": {
-              "duration": 500615971,
+              "duration": 3089247221,
               "status": "passed"
             },
             "line": 6,
@@ -7763,9 +7952,8 @@
           },
           {
             "result": {
-              "duration": 20019540824,
-              "error_message": "org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {\"method\":\"id\",\"selector\":\"msisdn\"}\n  (Session info: chrome\u003d70.0.3538.102)\n  (Driver info: chromedriver\u003d2.38.552522 (437e6fbedfa8762dec75e2c5b3ddb86763dc9dcb),platform\u003dWindows NT 10.0.10586 x86_64) (WARNING: The server did not provide any stacktrace information)\nCommand duration or timeout: 0 milliseconds\nFor documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html\nBuild info: version: \u00273.6.0\u0027, revision: \u00276fbf3ec767\u0027, time: \u00272017-09-27T15:28:36.4Z\u0027\nSystem info: host: \u0027LASST266243\u0027, ip: \u002710.172.61.198\u0027, os.name: \u0027Windows 10\u0027, os.arch: \u0027amd64\u0027, os.version: \u002710.0\u0027, java.version: \u00271.8.0_144\u0027\nDriver info: org.openqa.selenium.chrome.ChromeDriver\nCapabilities [{mobileEmulationEnabled\u003dfalse, hasTouchScreen\u003dfalse, platform\u003dXP, acceptSslCerts\u003dfalse, acceptInsecureCerts\u003dfalse, webStorageEnabled\u003dtrue, browserName\u003dchrome, takesScreenshot\u003dtrue, javascriptEnabled\u003dtrue, platformName\u003dXP, setWindowRect\u003dtrue, unexpectedAlertBehaviour\u003d, applicationCacheEnabled\u003dfalse, rotatable\u003dfalse, networkConnectionEnabled\u003dfalse, chrome\u003d{chromedriverVersion\u003d2.38.552522 (437e6fbedfa8762dec75e2c5b3ddb86763dc9dcb), userDataDir\u003dC:\\Users\\khanj6\\AppData\\Local\\Temp\\1\\scoped_dir12104_17808}, takesHeapSnapshot\u003dtrue, pageLoadStrategy\u003dnormal, unhandledPromptBehavior\u003d, databaseEnabled\u003dfalse, handlesAlerts\u003dtrue, version\u003d70.0.3538.102, browserConnectionEnabled\u003dfalse, nativeEvents\u003dtrue, locationContextEnabled\u003dtrue, cssSelectorsEnabled\u003dtrue}]\nSession ID: 0b488b1a72507db1a132f44479130237\n*** Element info: {Using\u003did, value\u003dmsisdn}\r\n\tat sun.reflect.GeneratedConstructorAccessor28.newInstance(Unknown Source)\r\n\tat sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)\r\n\tat java.lang.reflect.Constructor.newInstance(Constructor.java:423)\r\n\tat org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:214)\r\n\tat org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:166)\r\n\tat org.openqa.selenium.remote.http.JsonHttpResponseCodec.reconstructValue(JsonHttpResponseCodec.java:40)\r\n\tat org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:82)\r\n\tat org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:45)\r\n\tat org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:164)\r\n\tat org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:586)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:356)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElementById(RemoteWebDriver.java:402)\r\n\tat org.openqa.selenium.By$ById.findElement(By.java:218)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:348)\r\n\tat org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)\r\n\tat org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)\r\n\tat com.sun.proxy.$Proxy23.sendKeys(Unknown Source)\r\n\tat actionsPerformed.Agent_HomePagePageActions.FindUser(Agent_HomePagePageActions.java:47)\r\n\tat steps.E2EOrderPlaced_Steps.performs_Upgrade(E2EOrderPlaced_Steps.java:2667)\r\n\tat ✽.And performs Upgrade for 07729000024(27_Reg_AFU_SavedBasket.feature:7)\r\n",
-              "status": "failed"
+              "duration": 111733710052,
+              "status": "passed"
             },
             "line": 7,
             "name": "performs Upgrade for 07729000024",
@@ -7785,7 +7973,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 35209459648,
+              "status": "passed"
             },
             "line": 8,
             "name": "Select a valid PayM iPhone Xs 64GB Silver",
@@ -7805,7 +7994,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 27713774980,
+              "status": "passed"
             },
             "line": 9,
             "name": "Select valid Refresh from tariffs tab",
@@ -7825,7 +8015,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 14685960582,
+              "status": "passed"
             },
             "line": 10,
             "name": "select a valid Handset and Tariff combination",
@@ -7836,7 +8027,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 25270962546,
+              "status": "passed"
             },
             "line": 11,
             "name": "Validate Bill Spend Cap in agent deal builder section when BSC is Enabled",
@@ -7856,7 +8048,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 40812463659,
+              "status": "passed"
             },
             "line": 12,
             "name": "Add your Bill Spend Cap No spend cap in agent deal builder when BSC is Enabled",
@@ -7881,7 +8074,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 12824201955,
+              "status": "passed"
             },
             "comments": [
               {
@@ -7898,7 +8092,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 33485854270,
+              "status": "passed"
             },
             "line": 15,
             "name": "Verify email is sent successfully",
@@ -7929,7 +8124,7 @@
         "before": [
           {
             "result": {
-              "duration": 5340779006,
+              "duration": 33715737379,
               "status": "passed"
             },
             "match": {
@@ -7944,7 +8139,7 @@
         "after": [
           {
             "result": {
-              "duration": 18233671654,
+              "duration": 20347493633,
               "status": "passed"
             },
             "match": {
@@ -7957,7 +8152,7 @@
         "steps": [
           {
             "result": {
-              "duration": 446428629,
+              "duration": 653272925,
               "status": "passed"
             },
             "line": 23,
@@ -7969,7 +8164,7 @@
           },
           {
             "result": {
-              "duration": 57457978648,
+              "duration": 58985964865,
               "status": "passed"
             },
             "line": 24,
@@ -7981,9 +8176,8 @@
           },
           {
             "result": {
-              "duration": 24354971276,
-              "error_message": "java.lang.AssertionError: Unable to choose PayM phone\r\n\tat org.testng.Assert.fail(Assert.java:94)\r\n\tat steps.E2EOrderPlaced_Steps.Choose_PayMTablet(E2EOrderPlaced_Steps.java:520)\r\n\tat ✽.And Select PayM Tablet iPad 9.7 inch 2018(37_Reg_CFA_Cover_me_copy_update_on_basket_summary.feature:26)\r\n",
-              "status": "failed"
+              "duration": 27814931433,
+              "status": "passed"
             },
             "comments": [
               {
@@ -8009,7 +8203,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 30588366884,
+              "status": "passed"
             },
             "line": 27,
             "name": "click on the color dropdown",
@@ -8020,7 +8215,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 265183997,
+              "status": "passed"
             },
             "line": 28,
             "name": "verify the name of the colour is next to the colour tile in CFAPhoneColour",
@@ -8037,7 +8233,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 19758627743,
+              "status": "passed"
             },
             "line": 29,
             "name": "select Space Grey color of the connected device",
@@ -8057,7 +8254,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 19232201890,
+              "status": "passed"
             },
             "line": 30,
             "name": "select 32GB capacity of the connected device",
@@ -8077,7 +8275,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 36697614650,
+              "status": "passed"
             },
             "line": 31,
             "name": "Navigate to device details page",
@@ -8088,7 +8287,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 16119385707,
+              "status": "passed"
             },
             "line": 32,
             "name": "Land on the \u0027Tariffs and extra\u0027 page",
@@ -8099,7 +8299,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 39757418099,
+              "status": "passed"
             },
             "line": 33,
             "name": "Validate consumer Bill Spend Caps section when BSC is Enabled",
@@ -8119,7 +8320,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 68993173541,
+              "status": "passed"
             },
             "line": 34,
             "name": "Choose your bill cap CapMyBill £60 when BSC is Enabled",
@@ -8149,7 +8351,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 10468824044,
+              "status": "passed"
             },
             "line": 35,
             "name": "select an insurance",
@@ -8160,7 +8363,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 42700771829,
+              "status": "passed"
             },
             "comments": [
               {
@@ -8177,7 +8381,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 7463755426,
+              "status": "passed"
             },
             "line": 38,
             "name": "verify cover me is present in Basket page",
@@ -8188,7 +8393,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 35443824954,
+              "status": "passed"
             },
             "line": 39,
             "name": "click on \"go to checkout\" button",
@@ -8205,7 +8411,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 37413271339,
+              "status": "passed"
             },
             "line": 40,
             "name": "input TEST and ACCEPTA and other valid details in Delivery page to verify GDPR",
@@ -8230,7 +8437,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 79027914199,
+              "status": "passed"
             },
             "line": 41,
             "name": "Is this order for You or Someone else Me when GDPR is Enabled",
@@ -8255,7 +8463,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 12453540688,
+              "status": "passed"
             },
             "comments": [
               {
@@ -8272,7 +8481,9 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 41850187729,
+              "error_message": "java.lang.AssertionError: Unable to input details in payment page\r\n\tat org.testng.Assert.fail(Assert.java:94)\r\n\tat steps.E2EOrderPlaced_Steps.CreditCheckPaymentPage_HomeDelivery(E2EOrderPlaced_Steps.java:1901)\r\n\tat ✽.And land on the payment page and input TEST ACCEPTA and other details and click \u0027Continue on next step\u0027(37_Reg_CFA_Cover_me_copy_update_on_basket_summary.feature:44)\r\n",
+              "status": "failed"
             },
             "line": 44,
             "name": "land on the payment page and input TEST ACCEPTA and other details and click \u0027Continue on next step\u0027",
@@ -8458,7 +8669,7 @@
         "before": [
           {
             "result": {
-              "duration": 5408664213,
+              "duration": 103879289630,
               "status": "passed"
             },
             "match": {
@@ -8473,7 +8684,7 @@
         "after": [
           {
             "result": {
-              "duration": 18168355792,
+              "duration": 20097497791,
               "status": "passed"
             },
             "match": {
@@ -8486,9 +8697,8 @@
         "steps": [
           {
             "result": {
-              "duration": 20052459582,
-              "error_message": "java.lang.AssertionError: Unable to do navigate to signin page\r\n\tat org.testng.Assert.fail(Assert.java:94)\r\n\tat steps.E2EOrderPlaced_Steps.i_am_an_Existing_user_and_Navigates_to_Signin_page(E2EOrderPlaced_Steps.java:490)\r\n\tat ✽.Given I am an Existing user and Navigates to Signin page(57_Reg_CS_CFU_SavedBasket.feature:5)\r\n",
-              "status": "failed"
+              "duration": 38767374840,
+              "status": "passed"
             },
             "line": 5,
             "name": "I am an Existing user and Navigates to Signin page",
@@ -8499,7 +8709,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 27688437559,
+              "status": "passed"
             },
             "line": 6,
             "name": "Signin using valid inavl0wx_104860@o2.com and test123 credentials",
@@ -8524,7 +8735,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 48769868096,
+              "status": "passed"
             },
             "line": 7,
             "name": "choose to upgrade any Phone in My upgrade page",
@@ -8535,7 +8747,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 14346088986,
+              "status": "passed"
             },
             "line": 8,
             "name": "Click on \u0027Get Started\u0027 CTA",
@@ -8546,7 +8759,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 18995528420,
+              "status": "passed"
             },
             "line": 9,
             "name": "Select a iPhone X device from Recommended devices section",
@@ -8566,7 +8780,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 17644732153,
+              "status": "passed"
             },
             "line": 10,
             "name": "Click on device \u0027Confirm CTA\u0027",
@@ -8577,7 +8792,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 5474414315,
+              "status": "passed"
             },
             "line": 11,
             "name": "Select a tariff Random",
@@ -8597,7 +8813,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 39986424233,
+              "status": "passed"
             },
             "line": 12,
             "name": "Validate consumer Bill Spend Caps section when BSC is Enabled",
@@ -8617,7 +8834,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 40070208941,
+              "status": "passed"
             },
             "line": 13,
             "name": "Choose your bill cap DontCapMyBill Nill when BSC is Enabled",
@@ -8647,7 +8865,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 7785892881,
+              "status": "passed"
             },
             "line": 14,
             "name": "Select a \u0027I need a sim\u0027option",
@@ -8658,7 +8877,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 373209731,
+              "status": "passed"
             },
             "line": 15,
             "name": "Verify that \u0027Confirm CTA\u0027 is displayed",
@@ -8669,7 +8889,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 3651034834,
+              "status": "passed"
             },
             "line": 16,
             "name": "Click on \u0027Confirm CTA\u0027",
@@ -8680,7 +8901,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 50909980560,
+              "status": "passed"
             },
             "line": 17,
             "name": "I Land on the basket page by clicking on Add to Basket button",
@@ -8691,7 +8913,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 365500281,
+              "status": "passed"
             },
             "line": 18,
             "name": "verify that \u0027Go to checkout\u0027 CTA is enabled",
@@ -8702,7 +8925,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 557513158,
+              "status": "passed"
             },
             "line": 19,
             "name": "Verifies the basket page for the upgrade journey",
@@ -8713,7 +8937,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 6242266573,
+              "status": "passed"
             },
             "line": 20,
             "name": "choose to email basket to save the basket in CFU for inavl0wx_104860@o2.com",
@@ -8753,7 +8978,7 @@
         "before": [
           {
             "result": {
-              "duration": 5439710110,
+              "duration": 102857908858,
               "status": "passed"
             },
             "match": {
@@ -8768,7 +8993,7 @@
         "after": [
           {
             "result": {
-              "duration": 18278487966,
+              "duration": 20545869354,
               "status": "passed"
             },
             "match": {
@@ -8781,7 +9006,7 @@
         "steps": [
           {
             "result": {
-              "duration": 394067432,
+              "duration": 773542330,
               "status": "passed"
             },
             "line": 5,
@@ -8793,7 +9018,7 @@
           },
           {
             "result": {
-              "duration": 42484560396,
+              "duration": 210378409292,
               "status": "passed"
             },
             "line": 6,
@@ -8805,9 +9030,8 @@
           },
           {
             "result": {
-              "duration": 13335964847,
-              "error_message": "java.lang.AssertionError: unable to do select ipads and tablets tab\r\n\tat org.testng.Assert.fail(Assert.java:94)\r\n\tat steps.E2EOrderPlaced_Steps.select_iPads_and_Tablets_tab(E2EOrderPlaced_Steps.java:6587)\r\n\tat ✽.And I select \u0027iPads and Tablets\u0027 tab(60_Reg_CS_Free_Sim_Tablet.feature:7)\r\n",
-              "status": "failed"
+              "duration": 10379425352,
+              "status": "passed"
             },
             "line": 7,
             "name": "I select \u0027iPads and Tablets\u0027 tab",
@@ -8818,7 +9042,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 24627672906,
+              "status": "passed"
             },
             "line": 8,
             "name": "I select Light surfer surfer and Tablet sim",
@@ -8843,7 +9068,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 9383937985,
+              "status": "passed"
             },
             "line": 9,
             "name": "I select \u0027Enter manually\u0027 and input 26, 100, slough, Berks, Sl11er",
@@ -8883,7 +9109,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 63418435510,
+              "status": "passed"
             },
             "comments": [
               {
@@ -8919,7 +9146,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 945170676,
+              "status": "passed"
             },
             "line": 12,
             "name": "verify order number is displayed",
@@ -8940,7 +9168,7 @@
         "before": [
           {
             "result": {
-              "duration": 5506982708,
+              "duration": 100648377367,
               "status": "passed"
             },
             "match": {
@@ -8955,7 +9183,7 @@
         "after": [
           {
             "result": {
-              "duration": 18304107094,
+              "duration": 19893996475,
               "status": "passed"
             },
             "match": {
@@ -8968,7 +9196,7 @@
         "steps": [
           {
             "result": {
-              "duration": 400545650,
+              "duration": 549719124,
               "status": "passed"
             },
             "line": 20,
@@ -8980,7 +9208,7 @@
           },
           {
             "result": {
-              "duration": 42389420316,
+              "duration": 84613193622,
               "status": "passed"
             },
             "line": 21,
@@ -8992,9 +9220,8 @@
           },
           {
             "result": {
-              "duration": 13368551289,
-              "error_message": "java.lang.AssertionError: unable to do select ipads and tablets tab\r\n\tat org.testng.Assert.fail(Assert.java:94)\r\n\tat steps.E2EOrderPlaced_Steps.select_iPads_and_Tablets_tab(E2EOrderPlaced_Steps.java:6587)\r\n\tat ✽.And I select \u0027iPads and Tablets\u0027 tab(60_Reg_CS_Free_Sim_Tablet.feature:22)\r\n",
-              "status": "failed"
+              "duration": 10173916337,
+              "status": "passed"
             },
             "line": 22,
             "name": "I select \u0027iPads and Tablets\u0027 tab",
@@ -9005,7 +9232,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 23951307729,
+              "status": "passed"
             },
             "line": 23,
             "name": "I select Light surfer surfer and Dongle sim",
@@ -9030,7 +9258,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 9314630792,
+              "status": "passed"
             },
             "line": 24,
             "name": "I select \u0027Enter manually\u0027 and input 26, 100, slough, Berks, Sl11er",
@@ -9070,7 +9299,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 68723350213,
+              "status": "passed"
             },
             "comments": [
               {
@@ -9106,7 +9336,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 1029624617,
+              "status": "passed"
             },
             "line": 27,
             "name": "verify order number is displayed",
@@ -9127,7 +9358,7 @@
         "before": [
           {
             "result": {
-              "duration": 5471257843,
+              "duration": 34707985460,
               "status": "passed"
             },
             "match": {
@@ -9142,7 +9373,7 @@
         "after": [
           {
             "result": {
-              "duration": 18102600028,
+              "duration": 18254989784,
               "status": "passed"
             },
             "match": {
@@ -9155,7 +9386,7 @@
         "steps": [
           {
             "result": {
-              "duration": 411092704,
+              "duration": 533758042,
               "status": "passed"
             },
             "line": 36,
@@ -9167,7 +9398,7 @@
           },
           {
             "result": {
-              "duration": 42392600145,
+              "duration": 75734154910,
               "status": "passed"
             },
             "line": 37,
@@ -9179,9 +9410,8 @@
           },
           {
             "result": {
-              "duration": 13354080498,
-              "error_message": "java.lang.AssertionError: unable to do select ipads and tablets tab\r\n\tat org.testng.Assert.fail(Assert.java:94)\r\n\tat steps.E2EOrderPlaced_Steps.select_iPads_and_Tablets_tab(E2EOrderPlaced_Steps.java:6587)\r\n\tat ✽.And I select \u0027iPads and Tablets\u0027 tab(60_Reg_CS_Free_Sim_Tablet.feature:38)\r\n",
-              "status": "failed"
+              "duration": 10064393233,
+              "status": "passed"
             },
             "line": 38,
             "name": "I select \u0027iPads and Tablets\u0027 tab",
@@ -9192,7 +9422,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 22536478857,
+              "status": "passed"
             },
             "line": 39,
             "name": "I select Steady surfer surfer and Tablet sim",
@@ -9217,7 +9448,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 9069212701,
+              "status": "passed"
             },
             "line": 40,
             "name": "I select \u0027Enter manually\u0027 and input 26, 100, slough, Berks, Sl11er",
@@ -9257,7 +9489,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 62429914395,
+              "status": "passed"
             },
             "comments": [
               {
@@ -9293,7 +9526,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 858408924,
+              "status": "passed"
             },
             "line": 43,
             "name": "verify order number is displayed",
@@ -9314,7 +9548,7 @@
         "before": [
           {
             "result": {
-              "duration": 5195971296,
+              "duration": 34635944002,
               "status": "passed"
             },
             "match": {
@@ -9329,7 +9563,7 @@
         "after": [
           {
             "result": {
-              "duration": 18072741835,
+              "duration": 20104257716,
               "status": "passed"
             },
             "match": {
@@ -9342,7 +9576,7 @@
         "steps": [
           {
             "result": {
-              "duration": 385094897,
+              "duration": 546908062,
               "status": "passed"
             },
             "line": 51,
@@ -9354,7 +9588,7 @@
           },
           {
             "result": {
-              "duration": 42339747023,
+              "duration": 76077592800,
               "status": "passed"
             },
             "line": 52,
@@ -9366,9 +9600,8 @@
           },
           {
             "result": {
-              "duration": 13339804708,
-              "error_message": "java.lang.AssertionError: unable to do select ipads and tablets tab\r\n\tat org.testng.Assert.fail(Assert.java:94)\r\n\tat steps.E2EOrderPlaced_Steps.select_iPads_and_Tablets_tab(E2EOrderPlaced_Steps.java:6587)\r\n\tat ✽.And I select \u0027iPads and Tablets\u0027 tab(60_Reg_CS_Free_Sim_Tablet.feature:53)\r\n",
-              "status": "failed"
+              "duration": 10146333392,
+              "status": "passed"
             },
             "line": 53,
             "name": "I select \u0027iPads and Tablets\u0027 tab",
@@ -9379,7 +9612,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 22653852265,
+              "status": "passed"
             },
             "line": 54,
             "name": "I select Steady surfer surfer and Dongle sim",
@@ -9404,7 +9638,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 9098377243,
+              "status": "passed"
             },
             "line": 55,
             "name": "I select \u0027Enter manually\u0027 and input 26, 100, slough, Berks, Sl11er",
@@ -9444,7 +9679,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 62271482077,
+              "status": "passed"
             },
             "comments": [
               {
@@ -9480,7 +9716,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 802951420,
+              "status": "passed"
             },
             "line": 58,
             "name": "verify order number is displayed",
@@ -9501,7 +9738,7 @@
         "before": [
           {
             "result": {
-              "duration": 5095356670,
+              "duration": 35028592279,
               "status": "passed"
             },
             "match": {
@@ -9516,7 +9753,7 @@
         "after": [
           {
             "result": {
-              "duration": 18116095813,
+              "duration": 20175444494,
               "status": "passed"
             },
             "match": {
@@ -9529,7 +9766,7 @@
         "steps": [
           {
             "result": {
-              "duration": 371888252,
+              "duration": 856188175,
               "status": "passed"
             },
             "line": 67,
@@ -9541,7 +9778,7 @@
           },
           {
             "result": {
-              "duration": 42373179649,
+              "duration": 153846598077,
               "status": "passed"
             },
             "line": 68,
@@ -9553,9 +9790,8 @@
           },
           {
             "result": {
-              "duration": 13293134646,
-              "error_message": "java.lang.AssertionError: unable to do select ipads and tablets tab\r\n\tat org.testng.Assert.fail(Assert.java:94)\r\n\tat steps.E2EOrderPlaced_Steps.select_iPads_and_Tablets_tab(E2EOrderPlaced_Steps.java:6587)\r\n\tat ✽.And I select \u0027iPads and Tablets\u0027 tab(60_Reg_CS_Free_Sim_Tablet.feature:69)\r\n",
-              "status": "failed"
+              "duration": 10210026603,
+              "status": "passed"
             },
             "line": 69,
             "name": "I select \u0027iPads and Tablets\u0027 tab",
@@ -9566,7 +9802,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 23431793625,
+              "status": "passed"
             },
             "line": 70,
             "name": "I select Ultimate surfer surfer and Tablet sim",
@@ -9591,7 +9828,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 9086183472,
+              "status": "passed"
             },
             "line": 71,
             "name": "I select \u0027Enter manually\u0027 and input 26, 100, slough, Berks, Sl11er",
@@ -9631,7 +9869,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 66998663657,
+              "status": "passed"
             },
             "comments": [
               {
@@ -9667,7 +9906,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 1046369243,
+              "status": "passed"
             },
             "line": 74,
             "name": "verify order number is displayed",
@@ -9688,7 +9928,7 @@
         "before": [
           {
             "result": {
-              "duration": 5112149780,
+              "duration": 104149941801,
               "status": "passed"
             },
             "match": {
@@ -9703,7 +9943,7 @@
         "after": [
           {
             "result": {
-              "duration": 18030408516,
+              "duration": 20132791247,
               "status": "passed"
             },
             "match": {
@@ -9716,7 +9956,7 @@
         "steps": [
           {
             "result": {
-              "duration": 389380325,
+              "duration": 515739361,
               "status": "passed"
             },
             "line": 82,
@@ -9728,7 +9968,7 @@
           },
           {
             "result": {
-              "duration": 42352402992,
+              "duration": 178612296474,
               "status": "passed"
             },
             "line": 83,
@@ -9740,9 +9980,8 @@
           },
           {
             "result": {
-              "duration": 13333316582,
-              "error_message": "java.lang.AssertionError: unable to do select ipads and tablets tab\r\n\tat org.testng.Assert.fail(Assert.java:94)\r\n\tat steps.E2EOrderPlaced_Steps.select_iPads_and_Tablets_tab(E2EOrderPlaced_Steps.java:6587)\r\n\tat ✽.And I select \u0027iPads and Tablets\u0027 tab(60_Reg_CS_Free_Sim_Tablet.feature:84)\r\n",
-              "status": "failed"
+              "duration": 10160556451,
+              "status": "passed"
             },
             "line": 84,
             "name": "I select \u0027iPads and Tablets\u0027 tab",
@@ -9753,7 +9992,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 26858559334,
+              "status": "passed"
             },
             "line": 85,
             "name": "I select Ultimate surfer surfer and Dongle sim",
@@ -9778,7 +10018,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 9076503129,
+              "status": "passed"
             },
             "line": 86,
             "name": "I select \u0027Enter manually\u0027 and input 26, 100, slough, Berks, Sl11er",
@@ -9818,7 +10059,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 63080230802,
+              "status": "passed"
             },
             "comments": [
               {
@@ -9854,7 +10096,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 824803592,
+              "status": "passed"
             },
             "line": 89,
             "name": "verify order number is displayed",
@@ -9885,7 +10128,7 @@
         "before": [
           {
             "result": {
-              "duration": 5072670700,
+              "duration": 35715042311,
               "status": "passed"
             },
             "match": {
@@ -9900,7 +10143,7 @@
         "after": [
           {
             "result": {
-              "duration": 18091013557,
+              "duration": 20079731089,
               "status": "passed"
             },
             "match": {
@@ -9913,7 +10156,7 @@
         "steps": [
           {
             "result": {
-              "duration": 385551788,
+              "duration": 518132816,
               "status": "passed"
             },
             "line": 10,
@@ -9925,7 +10168,7 @@
           },
           {
             "result": {
-              "duration": 54332790327,
+              "duration": 134721319157,
               "status": "passed"
             },
             "line": 11,
@@ -9937,9 +10180,8 @@
           },
           {
             "result": {
-              "duration": 24311806282,
-              "error_message": "java.lang.AssertionError: Unable to choose PayM phone\r\n\tat org.testng.Assert.fail(Assert.java:94)\r\n\tat steps.E2EOrderPlaced_Steps.Choose_PAYM_Handset(E2EOrderPlaced_Steps.java:506)\r\n\tat ✽.And I choose PayM iPhone 5s Like New(81_Reg_Jan_CFA_OOSForHomeDeliveryandCnC.feature:12)\r\n",
-              "status": "failed"
+              "duration": 32902430721,
+              "status": "passed"
             },
             "line": 12,
             "name": "I choose PayM iPhone 5s Like New",
@@ -9959,7 +10201,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 23417238606,
+              "status": "passed"
             },
             "line": 13,
             "name": "click on the color dropdown",
@@ -9970,7 +10213,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 236626047,
+              "status": "passed"
             },
             "line": 14,
             "name": "verify the name of the colour is next to the colour tile in CFAPhoneColour",
@@ -9987,7 +10231,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 15711759141,
+              "status": "passed"
             },
             "line": 15,
             "name": "select Silver color of the connected device",
@@ -10007,7 +10252,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 145434874716,
+              "status": "passed"
             },
             "line": 16,
             "name": "Navigate to device details page",
@@ -10018,7 +10264,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 101923363,
+              "status": "passed"
             },
             "line": 17,
             "name": "the Delivery information section should show the \u0027OOS message\u0027",
@@ -10029,7 +10276,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 16161031744,
+              "status": "passed"
             },
             "line": 18,
             "name": "Land on the \u0027Tariffs and extra\u0027 page",
@@ -10040,7 +10288,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 39998761689,
+              "status": "passed"
             },
             "line": 19,
             "name": "Validate consumer Bill Spend Caps section when BSC is Enabled",
@@ -10060,7 +10309,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 40196574702,
+              "status": "passed"
             },
             "line": 20,
             "name": "Choose your bill cap DontCapMyBill Nill when BSC is Enabled",
@@ -10090,7 +10340,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 56668388175,
+              "status": "passed"
             },
             "comments": [
               {
@@ -10107,7 +10358,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 949930334,
+              "status": "passed"
             },
             "line": 23,
             "name": "the Delivery section should show \u0027OOS message\u0027",
@@ -10138,7 +10390,7 @@
         "before": [
           {
             "result": {
-              "duration": 5061715240,
+              "duration": 104296651747,
               "status": "passed"
             },
             "match": {
@@ -10153,7 +10405,7 @@
         "after": [
           {
             "result": {
-              "duration": 18085469647,
+              "duration": 19961298446,
               "status": "passed"
             },
             "match": {
@@ -10166,9 +10418,8 @@
         "steps": [
           {
             "result": {
-              "duration": 20032798077,
-              "error_message": "java.lang.AssertionError: Unable to use as existing user\r\n\tat org.testng.Assert.fail(Assert.java:94)\r\n\tat steps.E2EOrderPlaced_Steps.I_am_existing_user_and_I_click_on_Signin_button(E2EOrderPlaced_Steps.java:3973)\r\n\tat ✽.Given I am existing user and I click on Signin button(83_ Reg_Jan_Existing_OOSForHomeDeliveryandCnC.feature:10)\r\n",
-              "status": "failed"
+              "duration": 1664397905,
+              "status": "passed"
             },
             "line": 10,
             "name": "I am existing user and I click on Signin button",
@@ -10179,7 +10430,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 37436746162,
+              "status": "passed"
             },
             "line": 11,
             "name": "Signin using valid b@o2.com and test123 credentials",
@@ -10204,7 +10456,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 133704493841,
+              "status": "passed"
             },
             "line": 12,
             "name": "navigate to PAYM Phones page",
@@ -10215,7 +10468,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 33212736448,
+              "status": "passed"
             },
             "line": 13,
             "name": "I choose PayM iPhone 5s Like New",
@@ -10235,7 +10489,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 27432981682,
+              "status": "passed"
             },
             "line": 14,
             "name": "click on the color dropdown",
@@ -10246,7 +10501,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 233503196,
+              "status": "passed"
             },
             "line": 15,
             "name": "verify the name of the colour is next to the colour tile in CFAPhoneColour",
@@ -10263,7 +10519,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 15706109414,
+              "status": "passed"
             },
             "line": 16,
             "name": "select Silver color of the connected device",
@@ -10283,7 +10540,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 107523053500,
+              "status": "passed"
             },
             "line": 17,
             "name": "Navigate to device details page",
@@ -10294,7 +10552,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 124302145,
+              "status": "passed"
             },
             "comments": [
               {
@@ -10311,7 +10570,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 16207694374,
+              "status": "passed"
             },
             "line": 20,
             "name": "Land on the \u0027Tariffs and extra\u0027 page",
@@ -10322,7 +10582,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 39799254890,
+              "status": "passed"
             },
             "line": 21,
             "name": "Validate consumer Bill Spend Caps section when BSC is Enabled",
@@ -10342,7 +10603,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 68908536630,
+              "status": "passed"
             },
             "line": 22,
             "name": "Choose your bill cap CapMyBill £10 when BSC is Enabled",
@@ -10372,7 +10634,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 58394029919,
+              "status": "passed"
             },
             "comments": [
               {
@@ -10389,7 +10652,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 909868373,
+              "status": "passed"
             },
             "line": 25,
             "name": "the Delivery section should show \u0027OOS message\u0027",
@@ -10420,7 +10684,7 @@
         "before": [
           {
             "result": {
-              "duration": 5180850028,
+              "duration": 62158468416,
               "status": "passed"
             },
             "match": {
@@ -10435,7 +10699,7 @@
         "after": [
           {
             "result": {
-              "duration": 18033221346,
+              "duration": 19943860169,
               "status": "passed"
             },
             "match": {
@@ -10448,7 +10712,7 @@
         "steps": [
           {
             "result": {
-              "duration": 372351513,
+              "duration": 962624526,
               "status": "passed"
             },
             "line": 8,
@@ -10460,7 +10724,7 @@
           },
           {
             "result": {
-              "duration": 42368227467,
+              "duration": 183500890600,
               "status": "passed"
             },
             "line": 9,
@@ -10472,9 +10736,8 @@
           },
           {
             "result": {
-              "duration": 13380623318,
-              "error_message": "java.lang.AssertionError: unable to do select ipads and tablets tab\r\n\tat org.testng.Assert.fail(Assert.java:94)\r\n\tat steps.E2EOrderPlaced_Steps.select_iPads_and_Tablets_tab(E2EOrderPlaced_Steps.java:6587)\r\n\tat ✽.And I select \u0027iPads and Tablets\u0027 tab(86_Reg_Jan_FreeSim_InvalidPostCode_EnteredManually.feature:10)\r\n",
-              "status": "failed"
+              "duration": 10208009349,
+              "status": "passed"
             },
             "line": 10,
             "name": "I select \u0027iPads and Tablets\u0027 tab",
@@ -10485,7 +10748,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 21286280229,
+              "status": "passed"
             },
             "line": 11,
             "name": "I select Light surfer surfer and iPad sim",
@@ -10510,7 +10774,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 9217478765,
+              "status": "passed"
             },
             "line": 12,
             "name": "I select \u0027Enter manually\u0027 and input 26, 100, High Street, Slough, SL111ER1232",
@@ -10550,7 +10815,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 81423813,
+              "status": "passed"
             },
             "line": 13,
             "name": "the respective Enter a valid UK postcode message should be displayed in enter manually section",
@@ -10590,7 +10856,7 @@
         "before": [
           {
             "result": {
-              "duration": 5243279092,
+              "duration": 35375838532,
               "status": "passed"
             },
             "match": {
@@ -10605,7 +10871,7 @@
         "after": [
           {
             "result": {
-              "duration": 18049122264,
+              "duration": 21586257969,
               "status": "passed"
             },
             "match": {
@@ -10618,7 +10884,7 @@
         "steps": [
           {
             "result": {
-              "duration": 360047678,
+              "duration": 877277330,
               "status": "passed"
             },
             "line": 5,
@@ -10630,7 +10896,7 @@
           },
           {
             "result": {
-              "duration": 62327420891,
+              "duration": 258925139341,
               "status": "passed"
             },
             "line": 6,
@@ -10642,9 +10908,8 @@
           },
           {
             "result": {
-              "duration": 41313660740,
-              "error_message": "java.lang.AssertionError: Unable to select tablet\r\n\tat org.testng.Assert.fail(Assert.java:94)\r\n\tat steps.E2EOrderPlaced_Steps.select_any_available_Tablet(E2EOrderPlaced_Steps.java:4099)\r\n\tat ✽.And select any available Galaxy Book 10.6 Tablet(87_Reg_PayG Tablets_ShowMarketingMessageOnTariffAndExtrasPagePackageSummary.feature:7)\r\n",
-              "status": "failed"
+              "duration": 59993844543,
+              "status": "passed"
             },
             "line": 7,
             "name": "select any available Galaxy Book 10.6 Tablet",
@@ -10664,7 +10929,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 35521149495,
+              "status": "passed"
             },
             "line": 8,
             "name": "Navigate to device details page",
@@ -10675,7 +10941,9 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 36744162615,
+              "error_message": "java.lang.AssertionError: Unable to select PayG tariff\r\n\tat org.testng.Assert.fail(Assert.java:94)\r\n\tat steps.E2EOrderPlaced_Steps.selectPayGTariffTariff(E2EOrderPlaced_Steps.java:8464)\r\n\tat ✽.And Select a PayG tariff 1GB Preloaded(87_Reg_PayG Tablets_ShowMarketingMessageOnTariffAndExtrasPagePackageSummary.feature:9)\r\n",
+              "status": "failed"
             },
             "line": 9,
             "name": "Select a PayG tariff 1GB Preloaded",
@@ -10969,7 +11237,7 @@
         "before": [
           {
             "result": {
-              "duration": 5130988459,
+              "duration": 105571994212,
               "status": "passed"
             },
             "match": {
@@ -10984,7 +11252,7 @@
         "after": [
           {
             "result": {
-              "duration": 18041566054,
+              "duration": 18378159436,
               "status": "passed"
             },
             "match": {
@@ -10997,7 +11265,7 @@
         "steps": [
           {
             "result": {
-              "duration": 533437051,
+              "duration": 3317474058,
               "status": "passed"
             },
             "line": 6,
@@ -11009,9 +11277,8 @@
           },
           {
             "result": {
-              "duration": 40031702389,
-              "error_message": "junit.framework.AssertionFailedError\r\n\tat junit.framework.Assert.fail(Assert.java:55)\r\n\tat junit.framework.Assert.fail(Assert.java:64)\r\n\tat actionsPerformed.Agent_HomePagePageActions.NewUser(Agent_HomePagePageActions.java:177)\r\n\tat steps.E2EOrderPlaced_Steps.performs_Acquisition_for_New_user(E2EOrderPlaced_Steps.java:2688)\r\n\tat ✽.And performs Acquisition for New user(90_Reg_Trustev_AFA_PAYM_Tablet_WithAccessoryClick_and_Collect.feature:7)\r\n",
-              "status": "failed"
+              "duration": 11611755709,
+              "status": "passed"
             },
             "line": 7,
             "name": "performs Acquisition for New user",
@@ -11022,7 +11289,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 35514969265,
+              "status": "passed"
             },
             "line": 8,
             "name": "Select a valid PayM Galaxy Tab A 10.5",
@@ -11042,7 +11310,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 25134305956,
+              "status": "passed"
             },
             "line": 9,
             "name": "Select valid Random from tariffs tab",
@@ -11062,7 +11331,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 27842244348,
+              "status": "passed"
             },
             "line": 10,
             "name": "Select a valid Accessory iPhone 7 Evo Elite Brushed Black",
@@ -11082,7 +11352,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 49473340216,
+              "status": "passed"
             },
             "line": 11,
             "name": "select a valid Handset and Tariff combination",
@@ -11093,7 +11364,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 25569279765,
+              "status": "passed"
             },
             "line": 12,
             "name": "Validate Bill Spend Cap in agent deal builder section when BSC is Enabled",
@@ -11113,7 +11385,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 57446004651,
+              "status": "passed"
             },
             "line": 13,
             "name": "Add your Bill Spend Cap £100 in agent deal builder when BSC is Enabled",
@@ -11138,7 +11411,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 32496991637,
+              "status": "passed"
             },
             "line": 14,
             "name": "select a valid store for Click and Collect",
@@ -11149,7 +11423,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 22803444408,
+              "status": "passed"
             },
             "line": 15,
             "name": "Validate all the Basket content and checkout",
@@ -11160,7 +11435,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 28515115073,
+              "status": "passed"
             },
             "line": 16,
             "name": "Validate deal summary for applied Bill Spend Cap £100 when BSC is Enabled",
@@ -11185,7 +11461,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 23457392228,
+              "status": "passed"
             },
             "line": 17,
             "name": "perform all the advisory checks",
@@ -11196,7 +11473,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 86585750116,
+              "status": "passed"
             },
             "line": 18,
             "name": "perform the credit checks using valid TEST, ACCEPTA, 32, SL11ER and valid TEST ACCEPTA",
@@ -11236,7 +11514,9 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 40063095820,
+              "error_message": "java.lang.AssertionError: Unable to Register customer\r\n\tat org.testng.Assert.fail(Assert.java:94)\r\n\tat steps.E2EOrderPlaced_Steps.Register_Customer_Phones(E2EOrderPlaced_Steps.java:8326)\r\n\tat ✽.And Register customer with valid test123, test123, Anything in delivery page(90_Reg_Trustev_AFA_PAYM_Tablet_WithAccessoryClick_and_Collect.feature:19)\r\n",
+              "status": "failed"
             },
             "line": 19,
             "name": "Register customer with valid test123, test123, Anything in delivery page",
@@ -11394,7 +11674,7 @@
         "before": [
           {
             "result": {
-              "duration": 5207003907,
+              "duration": 40958578339,
               "status": "passed"
             },
             "match": {
@@ -11409,7 +11689,7 @@
         "after": [
           {
             "result": {
-              "duration": 18093493718,
+              "duration": 18544920890,
               "status": "passed"
             },
             "match": {
@@ -11422,7 +11702,7 @@
         "steps": [
           {
             "result": {
-              "duration": 374306480,
+              "duration": 525737156,
               "status": "passed"
             },
             "line": 8,
@@ -11434,7 +11714,7 @@
           },
           {
             "result": {
-              "duration": 54345250587,
+              "duration": 60541100494,
               "status": "passed"
             },
             "line": 9,
@@ -11446,9 +11726,8 @@
           },
           {
             "result": {
-              "duration": 24342087745,
-              "error_message": "java.lang.AssertionError: Unable to choose PayM phone\r\n\tat org.testng.Assert.fail(Assert.java:94)\r\n\tat steps.E2EOrderPlaced_Steps.Choose_PAYM_Handset(E2EOrderPlaced_Steps.java:506)\r\n\tat ✽.And I choose PayM iPhone X(92_Reg_Trustev_CFA_PayMPhonesHomeDeliveryWithoutAccessory.feature:10)\r\n",
-              "status": "failed"
+              "duration": 31634156786,
+              "status": "passed"
             },
             "line": 10,
             "name": "I choose PayM iPhone X",
@@ -11468,7 +11747,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 25971920174,
+              "status": "passed"
             },
             "line": 11,
             "name": "click on the color dropdown",
@@ -11479,7 +11759,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 217529373,
+              "status": "passed"
             },
             "line": 12,
             "name": "verify the name of the colour is next to the colour tile in CFAPhoneColour",
@@ -11496,7 +11777,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 15760196247,
+              "status": "passed"
             },
             "line": 13,
             "name": "select Silver color of the connected device",
@@ -11516,7 +11798,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 21577623059,
+              "status": "passed"
             },
             "line": 14,
             "name": "select 256GB capacity of the connected device",
@@ -11536,7 +11819,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 109267842525,
+              "status": "passed"
             },
             "line": 15,
             "name": "Navigate to device details page",
@@ -11547,7 +11831,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 16184055693,
+              "status": "passed"
             },
             "line": 16,
             "name": "Land on the \u0027Tariffs and extra\u0027 page",
@@ -11558,7 +11843,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 39844331675,
+              "status": "passed"
             },
             "line": 17,
             "name": "Validate consumer Bill Spend Caps section when BSC is Enabled",
@@ -11578,7 +11864,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 59490291875,
+              "status": "passed"
             },
             "line": 18,
             "name": "Choose your bill cap CapMyBill DontCapMyBillLink when BSC is Enabled",
@@ -11608,7 +11895,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 39347711284,
+              "status": "passed"
             },
             "line": 19,
             "name": "I Land on the basket page and choose home delivery option",
@@ -11619,7 +11907,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 38200398992,
+              "status": "passed"
             },
             "line": 20,
             "name": "click on \"go to checkout\" button",
@@ -11636,7 +11925,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 37058750230,
+              "status": "passed"
             },
             "comments": [
               {
@@ -11667,7 +11957,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 78612714789,
+              "status": "passed"
             },
             "line": 23,
             "name": "Is this order for You or Someone else Me when GDPR is Enabled",
@@ -11692,7 +11983,9 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 41718458548,
+              "error_message": "java.lang.AssertionError: Unable to input details in payment page\r\n\tat org.testng.Assert.fail(Assert.java:94)\r\n\tat steps.E2EOrderPlaced_Steps.CreditCheckPaymentPage_HomeDelivery(E2EOrderPlaced_Steps.java:1901)\r\n\tat ✽.And land on the payment page and input TEST ACCEPTA and other details and click \u0027Continue on next step\u0027(92_Reg_Trustev_CFA_PayMPhonesHomeDeliveryWithoutAccessory.feature:24)\r\n",
+              "status": "failed"
             },
             "line": 24,
             "name": "land on the payment page and input TEST ACCEPTA and other details and click \u0027Continue on next step\u0027",
@@ -11845,7 +12138,7 @@
         "before": [
           {
             "result": {
-              "duration": 5011574793,
+              "duration": 160968352112,
               "status": "passed"
             },
             "match": {
@@ -11860,7 +12153,7 @@
         "after": [
           {
             "result": {
-              "duration": 18054854452,
+              "duration": 20581605898,
               "status": "passed"
             },
             "match": {
@@ -11873,7 +12166,7 @@
         "steps": [
           {
             "result": {
-              "duration": 375961337,
+              "duration": 808831185,
               "status": "passed"
             },
             "line": 5,
@@ -11885,7 +12178,7 @@
           },
           {
             "result": {
-              "duration": 57327000453,
+              "duration": 135606206136,
               "status": "passed"
             },
             "line": 6,
@@ -11897,9 +12190,8 @@
           },
           {
             "result": {
-              "duration": 41313076090,
-              "error_message": "java.lang.AssertionError: Unable to select tablet\r\n\tat org.testng.Assert.fail(Assert.java:94)\r\n\tat steps.E2EOrderPlaced_Steps.select_any_available_Tablet(E2EOrderPlaced_Steps.java:4099)\r\n\tat ✽.And select any available iPad Pro 10.5 inch Tablet(93_Reg_Trustev_CFA_PayMTabletsHomeDeliveryWithAccessory.feature:7)\r\n",
-              "status": "failed"
+              "duration": 61190331478,
+              "status": "passed"
             },
             "line": 7,
             "name": "select any available iPad Pro 10.5 inch Tablet",
@@ -11919,7 +12211,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 10834372101,
+              "status": "passed"
             },
             "line": 8,
             "name": "click on the color dropdown",
@@ -11930,7 +12223,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 261069506,
+              "status": "passed"
             },
             "line": 9,
             "name": "verify the name of the colour is next to the colour tile in CFAPhoneColour",
@@ -11947,7 +12241,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 21861456748,
+              "status": "passed"
             },
             "line": 10,
             "name": "select Space Grey color of the connected device",
@@ -11967,7 +12262,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 23583199882,
+              "status": "passed"
             },
             "line": 11,
             "name": "select 512GB capacity of the connected device",
@@ -11987,7 +12283,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 34462315745,
+              "status": "passed"
             },
             "line": 12,
             "name": "Navigate to device details page",
@@ -11998,7 +12295,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 16151713092,
+              "status": "passed"
             },
             "line": 13,
             "name": "Land on the \u0027Tariffs and extra\u0027 page",
@@ -12009,7 +12307,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 39829806736,
+              "status": "passed"
             },
             "line": 14,
             "name": "Validate consumer Bill Spend Caps section when BSC is Enabled",
@@ -12029,7 +12328,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 68898044077,
+              "status": "passed"
             },
             "line": 15,
             "name": "Choose your bill cap CapMyBill £15 when BSC is Enabled",
@@ -12059,7 +12359,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 7845660939,
+              "status": "passed"
             },
             "line": 16,
             "name": "Choose some Accesssory",
@@ -12070,7 +12371,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 40088399974,
+              "status": "passed"
             },
             "line": 17,
             "name": "I Land on the basket page and choose home delivery option",
@@ -12081,7 +12383,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 33774837266,
+              "status": "passed"
             },
             "line": 18,
             "name": "click on \"go to checkout\" button",
@@ -12098,7 +12401,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 37413696024,
+              "status": "passed"
             },
             "comments": [
               {
@@ -12129,7 +12433,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 78755244773,
+              "status": "passed"
             },
             "line": 21,
             "name": "Is this order for You or Someone else Me when GDPR is Enabled",
@@ -12154,7 +12459,9 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 41718634793,
+              "error_message": "java.lang.AssertionError: Unable to input details in payment page\r\n\tat org.testng.Assert.fail(Assert.java:94)\r\n\tat steps.E2EOrderPlaced_Steps.CreditCheckPaymentPage_HomeDelivery(E2EOrderPlaced_Steps.java:1901)\r\n\tat ✽.And land on the payment page and input TEST ACCEPTA and other details and click \u0027Continue on next step\u0027(93_Reg_Trustev_CFA_PayMTabletsHomeDeliveryWithAccessory.feature:22)\r\n",
+              "status": "failed"
             },
             "line": 22,
             "name": "land on the payment page and input TEST ACCEPTA and other details and click \u0027Continue on next step\u0027",
@@ -12307,7 +12614,7 @@
         "before": [
           {
             "result": {
-              "duration": 5215929726,
+              "duration": 35908238997,
               "status": "passed"
             },
             "match": {
@@ -12322,7 +12629,7 @@
         "after": [
           {
             "result": {
-              "duration": 18142342769,
+              "duration": 20076164796,
               "status": "passed"
             },
             "match": {
@@ -12335,7 +12642,7 @@
         "steps": [
           {
             "result": {
-              "duration": 361196452,
+              "duration": 842860495,
               "status": "passed"
             },
             "line": 5,
@@ -12347,7 +12654,7 @@
           },
           {
             "result": {
-              "duration": 54341351270,
+              "duration": 167041385209,
               "status": "passed"
             },
             "line": 6,
@@ -12359,9 +12666,8 @@
           },
           {
             "result": {
-              "duration": 24319705779,
-              "error_message": "java.lang.AssertionError: Unable to choose PayM phone\r\n\tat org.testng.Assert.fail(Assert.java:94)\r\n\tat steps.E2EOrderPlaced_Steps.Choose_PAYM_Handset(E2EOrderPlaced_Steps.java:506)\r\n\tat ✽.And I choose PayM Galaxy Note9(96_Reg_VOLTE_PayMPhonesHomeDeliveryWithAccessory.feature:7)\r\n",
-              "status": "failed"
+              "duration": 32711466817,
+              "status": "passed"
             },
             "line": 7,
             "name": "I choose PayM Galaxy Note9",
@@ -12381,7 +12687,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 28743685198,
+              "status": "passed"
             },
             "line": 8,
             "name": "click on the color dropdown",
@@ -12392,7 +12699,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 227522214,
+              "status": "passed"
             },
             "line": 9,
             "name": "verify the name of the colour is next to the colour tile in CFAPhoneColour",
@@ -12409,7 +12717,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 19843716589,
+              "status": "passed"
             },
             "line": 10,
             "name": "select Midnight Black color of the connected device",
@@ -12429,7 +12738,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 19244979248,
+              "status": "passed"
             },
             "line": 11,
             "name": "select 128GB capacity of the connected device",
@@ -12449,7 +12759,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 35538056563,
+              "status": "passed"
             },
             "line": 12,
             "name": "Navigate to device details page",
@@ -12460,7 +12771,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 16294664929,
+              "status": "passed"
             },
             "line": 13,
             "name": "Land on the \u0027Tariffs and extra\u0027 page",
@@ -12471,7 +12783,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 39900670401,
+              "status": "passed"
             },
             "line": 14,
             "name": "Validate consumer Bill Spend Caps section when BSC is Enabled",
@@ -12491,7 +12804,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 69836691590,
+              "status": "passed"
             },
             "line": 15,
             "name": "Choose your bill cap CapMyBill £20 when BSC is Enabled",
@@ -12521,7 +12835,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 8345840192,
+              "status": "passed"
             },
             "line": 16,
             "name": "Choose some Accesssory",
@@ -12532,7 +12847,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 45638564664,
+              "status": "passed"
             },
             "line": 17,
             "name": "I Land on the basket page and choose home delivery option",
@@ -12543,7 +12859,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 33936079230,
+              "status": "passed"
             },
             "line": 18,
             "name": "click on \"go to checkout\" button",
@@ -12560,7 +12877,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 38419785655,
+              "status": "passed"
             },
             "comments": [
               {
@@ -12591,7 +12909,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 78729858159,
+              "status": "passed"
             },
             "line": 21,
             "name": "Is this order for You or Someone else Me when GDPR is Enabled",
@@ -12616,7 +12935,9 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 41720525350,
+              "error_message": "java.lang.AssertionError: Unable to input details in payment page\r\n\tat org.testng.Assert.fail(Assert.java:94)\r\n\tat steps.E2EOrderPlaced_Steps.CreditCheckPaymentPage_HomeDelivery(E2EOrderPlaced_Steps.java:1901)\r\n\tat ✽.And land on the payment page and input TEST ACCEPTA and other details and click \u0027Continue on next step\u0027(96_Reg_VOLTE_PayMPhonesHomeDeliveryWithAccessory.feature:22)\r\n",
+              "status": "failed"
             },
             "line": 22,
             "name": "land on the payment page and input TEST ACCEPTA and other details and click \u0027Continue on next step\u0027",
@@ -12769,7 +13090,7 @@
         "before": [
           {
             "result": {
-              "duration": 5153968170,
+              "duration": 105630712235,
               "status": "passed"
             },
             "match": {
@@ -12784,7 +13105,7 @@
         "after": [
           {
             "result": {
-              "duration": 18114573671,
+              "duration": 21646456729,
               "status": "passed"
             },
             "match": {
@@ -12797,7 +13118,7 @@
         "steps": [
           {
             "result": {
-              "duration": 449989612,
+              "duration": 859374729,
               "status": "passed"
             },
             "line": 6,
@@ -12809,7 +13130,7 @@
           },
           {
             "result": {
-              "duration": 54341472660,
+              "duration": 133585783737,
               "status": "passed"
             },
             "line": 7,
@@ -12821,9 +13142,8 @@
           },
           {
             "result": {
-              "duration": 24323978818,
-              "error_message": "java.lang.AssertionError: Unable to choose PayM phone\r\n\tat org.testng.Assert.fail(Assert.java:94)\r\n\tat steps.E2EOrderPlaced_Steps.Choose_PAYM_Handset(E2EOrderPlaced_Steps.java:506)\r\n\tat ✽.And I choose PayM iPhone 7(97_Reg_VOLTE_PayMPhonesHomeDeliveryWithoutAccessory.feature:8)\r\n",
-              "status": "failed"
+              "duration": 30174775616,
+              "status": "passed"
             },
             "line": 8,
             "name": "I choose PayM iPhone 7",
@@ -12843,7 +13163,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 86783799184,
+              "status": "passed"
             },
             "line": 9,
             "name": "click on the color dropdown",
@@ -12854,7 +13175,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 283045544,
+              "status": "passed"
             },
             "line": 10,
             "name": "verify the name of the colour is next to the colour tile in CFAPhoneColour",
@@ -12871,7 +13193,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 21927591897,
+              "status": "passed"
             },
             "line": 11,
             "name": "select Black color of the connected device",
@@ -12891,7 +13214,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 32708945602,
+              "status": "passed"
             },
             "line": 12,
             "name": "Navigate to device details page",
@@ -12902,7 +13226,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 16142251107,
+              "status": "passed"
             },
             "line": 13,
             "name": "Land on the \u0027Tariffs and extra\u0027 page",
@@ -12913,7 +13238,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 39835842220,
+              "status": "passed"
             },
             "line": 14,
             "name": "Validate consumer Bill Spend Caps section when BSC is Enabled",
@@ -12933,7 +13259,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 68916219185,
+              "status": "passed"
             },
             "line": 15,
             "name": "Choose your bill cap CapMyBill £5 when BSC is Enabled",
@@ -12963,7 +13290,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 54298328899,
+              "status": "passed"
             },
             "line": 16,
             "name": "I Land on the basket page and choose home delivery option",
@@ -12974,7 +13302,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 36172073203,
+              "status": "passed"
             },
             "line": 17,
             "name": "click on \"go to checkout\" button",
@@ -12991,7 +13320,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 37307284093,
+              "status": "passed"
             },
             "comments": [
               {
@@ -13022,7 +13352,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 78703414787,
+              "status": "passed"
             },
             "line": 20,
             "name": "Is this order for You or Someone else Me when GDPR is Enabled",
@@ -13047,7 +13378,9 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 41681062548,
+              "error_message": "java.lang.AssertionError: Unable to input details in payment page\r\n\tat org.testng.Assert.fail(Assert.java:94)\r\n\tat steps.E2EOrderPlaced_Steps.CreditCheckPaymentPage_HomeDelivery(E2EOrderPlaced_Steps.java:1901)\r\n\tat ✽.And land on the payment page and input TEST ACCEPTA and other details and click \u0027Continue on next step\u0027(97_Reg_VOLTE_PayMPhonesHomeDeliveryWithoutAccessory.feature:21)\r\n",
+              "status": "failed"
             },
             "line": 21,
             "name": "land on the payment page and input TEST ACCEPTA and other details and click \u0027Continue on next step\u0027",

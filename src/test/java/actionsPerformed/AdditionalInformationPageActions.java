@@ -17,7 +17,7 @@ import pageobjects.PaymentPage;
 public class AdditionalInformationPageActions extends Environment {
 	final static Logger log = Logger.getLogger("AdditionalInformationPageActions");
 
-	public static void gettitlepage() throws IOException, InterruptedException {
+	public static void gettitlepage() throws IOException {
 
 		log.debug("Below is the Additional information page...");
 		log.debug(driver.getTitle());
@@ -25,7 +25,7 @@ public class AdditionalInformationPageActions extends Environment {
 		Screenshots.captureScreenshot();
 	}
 
-	public static void SectionsDisplayed() throws IOException, InterruptedException {
+	public static void SectionsDisplayed() throws IOException {
 
 		log.debug("Below are the sections displayed");
 		String passPortInfo = pageobjects.AdditionalInformationPage.passportInfo.getText();
@@ -74,7 +74,7 @@ public class AdditionalInformationPageActions extends Environment {
 	}
 
 	public static void AdditionalCardCCV() throws InterruptedException, IOException {
-		Thread.sleep(7000);
+		Thread.sleep(10000);
 		driver.switchTo().frame("deposit-iframe"); // switching the frame by ID
 
 
@@ -109,7 +109,7 @@ public class AdditionalInformationPageActions extends Environment {
 		driver.switchTo().defaultContent();
 	}
 
-	public static void ClickOn() throws IOException, InterruptedException {
+	public static void ClickOn() throws IOException {
 
 		log.debug("Clicking on continue to next step");
 		pageobjects.AdditionalInformationPage.Continue_Next_Step.click();
@@ -118,7 +118,7 @@ public class AdditionalInformationPageActions extends Environment {
 
 	}
 
-	public static void passportInfo() throws IOException, InterruptedException {
+	public static void passportInfo() throws IOException {
 
 		log.debug("Below are the sections displayed");
 		pageobjects.AdditionalInformationPage.passportInfo.getText();
@@ -133,7 +133,7 @@ public class AdditionalInformationPageActions extends Environment {
 		Screenshots.captureScreenshot();
 	}
 
-	public static void enterDrivingLicenceDetails(DataTable uservalue) throws IOException, InterruptedException {
+	public static void enterDrivingLicenceDetails(DataTable uservalue) throws IOException {
 
 		for (Map<String, String> user : uservalue.asMaps(String.class, String.class))
 		{
@@ -149,7 +149,7 @@ public class AdditionalInformationPageActions extends Environment {
 		Screenshots.captureScreenshot();
 	}
 
-	public static void enterPassportNumber(DataTable uservalue) throws IOException, InterruptedException {
+	public static void enterPassportNumber(DataTable uservalue) throws IOException {
 
 		for (Map<String, String> user : uservalue.asMaps(String.class, String.class))
 		{

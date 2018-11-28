@@ -48,5 +48,5 @@ Feature: 16_Reg_CFU_Buyout_with_Recycle_Order_placement
 
     Examples:
       | Tablet        | Action | Surname | Username     | BSCstatus | BillCap   | CapAmount | handset  | Delivery | Payment | filtername | sortoption                 | username               | password | consumer | B1     | B2     | B3  | B4  | Text | Email  | Phone | Post   | status  | MBBStatus | DeviceType | PreSelected |
-      | Random Device | skip   | ACCEPTA | TEST ACCEPTA | Enabled   | CapMyBill | £20       | iPhone X | Delivery | Payment | low        | Monthly data (Low to High) | in01808o_751147@o2.com | test123  | Someone  | Select | Select | Not | Not | Not  | Select | Not   | Select | Enabled | No        | Connected  | No          |
+      | Random Device | skip   | ACCEPTA | TEST ACCEPTA | Enabled   | CapMyBill | £20       | iPhone X | Delivery | Payment | low        | Monthly data (Low to High) | in034242_605463@o2.com | test123  | Someone  | Select | Select | Not | Not | Not  | Select | Not   | Select | Enabled | No        | Connected  | No          |
 

@@ -1886,7 +1886,7 @@ public class E2EOrderPlaced_Steps {
             Thread.sleep(10000);
             //CommonFunctionscheckTitle("Payment Page");
             PaymentPageActions.Set_Bank_details(Username);
-            Thread.sleep(18000);
+            Thread.sleep(30000);
             PaymentPageActions.Time_At_Address();
             Thread.sleep(15000);
             PaymentPageActions.Card_Details(Username);
@@ -1913,7 +1913,7 @@ public class E2EOrderPlaced_Steps {
             Thread.sleep(10000);
             //CommonFunctionscheckTitle("Payment Page");
             PaymentPageActions.Set_Bank_details(Username);
-            Thread.sleep(10000);
+            Thread.sleep(30000);
             PaymentPageActions.Time_At_Address();
             Thread.sleep(12000);
             PaymentPageActions.Card_Details(Username);
@@ -1938,7 +1938,7 @@ public class E2EOrderPlaced_Steps {
             driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
             PageFactory.initElements(driver, PaymentPage.class);
 
-            Thread.sleep(15000);
+            Thread.sleep(30000);
             PaymentPageActions.Card_Details(Username);
             Thread.sleep(12000);
             PaymentPageActions.Card_Details_CCV();
@@ -1982,7 +1982,7 @@ public class E2EOrderPlaced_Steps {
             // PaymentPageActions.Set_Bank_details(Username);
             //Thread.sleep(3000);
             //PaymentPageActions.Time_At_Address_CC();
-            Thread.sleep(18000);
+            Thread.sleep(30000);
             PaymentPageActions.Card_Details(Username);
             Thread.sleep(10000);
             PaymentPageActions.Card_Details_CCV();
@@ -2020,12 +2020,12 @@ public class E2EOrderPlaced_Steps {
             PageFactory.initElements(driver, PaymentPage.class);
             //CommonFunctionscheckTitle("Payment Page");
             PaymentPageActions.Set_Bank_details(Username);
-            Thread.sleep(5000);
+            Thread.sleep(30000);
             PaymentPageActions.Time_At_Address_CC();
             //PaymentPageActions.Time_At_Address();
-            Thread.sleep(5000);
+            Thread.sleep(10000);
             PaymentPageActions.Card_Details(Username);
-            Thread.sleep(7000);
+            Thread.sleep(10000);
             PaymentPageActions.Card_Details_CCV();
             Thread.sleep(12000);
         } catch (Exception e) {
@@ -2066,7 +2066,7 @@ public class E2EOrderPlaced_Steps {
             PageFactory.initElements(driver, PaymentPage.class);
             //CommonFunctionscheckTitle("Payment Page");
             PaymentPageActions.Set_Bank_details(Username);
-            Thread.sleep(8000);
+            Thread.sleep(30000);
             DeliveryPageActions.SetDelivery();
             Thread.sleep(15000);
             //PaymentPageActions.Time_At_Address_CC();
@@ -2091,7 +2091,7 @@ public class E2EOrderPlaced_Steps {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, PaymentPage.class);
             PaymentPageActions.ValidateNonCreditPaymentPage();
-            Thread.sleep(18000);
+            Thread.sleep(30000);
             PaymentPageActions.Card_Details(Username);
             Thread.sleep(12000);
             PaymentPageActions.Card_Details_CCV();
@@ -2111,7 +2111,7 @@ public class E2EOrderPlaced_Steps {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, PaymentPage.class);
             PaymentPageActions.ValidateNonCreditPaymentPage();
-            Thread.sleep(7000);
+            Thread.sleep(30000);
             PaymentPageActions.Card_Details(Username);
             Thread.sleep(10000);
             PaymentPageActions.Card_Details_CCV();
@@ -8057,7 +8057,7 @@ public class E2EOrderPlaced_Steps {
         try {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, PaymentPage.class);
-            Thread.sleep(15000);
+            Thread.sleep(30000);
             PaymentPageActions.Card_Details(Username);
             Thread.sleep(12000);
             PaymentPageActions.Card_Details_CCV();

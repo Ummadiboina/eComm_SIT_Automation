@@ -196,7 +196,7 @@ formatter.examples({
   "keyword": "Examples"
 });
 formatter.before({
-  "duration": 34580608949,
+  "duration": 46562904535,
   "status": "passed"
 });
 formatter.scenario({
@@ -363,14 +363,14 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.LoginAgentShop()"
 });
 formatter.result({
-  "duration": 3391986829,
+  "duration": 4278360914,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.performs_Acquisition_for_New_user()"
 });
 formatter.result({
-  "duration": 11203705165,
+  "duration": 13690818981,
   "status": "passed"
 });
 formatter.match({
@@ -383,7 +383,7 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.SelectValid_Device(String)"
 });
 formatter.result({
-  "duration": 35650597762,
+  "duration": 36718355562,
   "status": "passed"
 });
 formatter.match({
@@ -396,14 +396,14 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.SelectTariff(String)"
 });
 formatter.result({
-  "duration": 27790091601,
+  "duration": 28006350104,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.select_a_valid_Handset_and_Tariff_combination()"
 });
 formatter.result({
-  "duration": 14788724468,
+  "duration": 14840991526,
   "status": "passed"
 });
 formatter.match({
@@ -416,7 +416,7 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.select_valid_Random_from_extras_tab(String)"
 });
 formatter.result({
-  "duration": 3468022804,
+  "duration": 4122985975,
   "status": "passed"
 });
 formatter.match({
@@ -429,7 +429,7 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.ValidateBillCap_AgentDealBuilder(String)"
 });
 formatter.result({
-  "duration": 25640046814,
+  "duration": 25763072427,
   "status": "passed"
 });
 formatter.match({
@@ -446,14 +446,14 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.addBillCap_AgentDealBuilder(String,String)"
 });
 formatter.result({
-  "duration": 45017381654,
+  "duration": 45037284521,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.validate_all_the_Basket_content_and_checkout()"
 });
 formatter.result({
-  "duration": 20751067641,
+  "duration": 22735092049,
   "status": "passed"
 });
 formatter.match({
@@ -470,14 +470,14 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.ValidateYourCapInAgentDealSummary(String,String)"
 });
 formatter.result({
-  "duration": 28479265280,
+  "duration": 28538855679,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.advisory_checks()"
 });
 formatter.result({
-  "duration": 23422571588,
+  "duration": 23452971610,
   "status": "passed"
 });
 formatter.match({
@@ -506,7 +506,7 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.enter_ten_digit_contact_number_perform_the_credit_checks(String,String,String,String,String)"
 });
 formatter.result({
-  "duration": 90036009050,
+  "duration": 95291048027,
   "status": "passed"
 });
 formatter.match({
@@ -531,7 +531,7 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.register_the_customer(String,String,String,String)"
 });
 formatter.result({
-  "duration": 17540840728,
+  "duration": 17612430957,
   "error_message": "java.lang.AssertionError: Unable to Register customer , please see the failure screenshot\r\n\tat org.testng.Assert.fail(Assert.java:94)\r\n\tat steps.E2EOrderPlaced_Steps.register_the_customer(E2EOrderPlaced_Steps.java:3205)\r\n\tat ✽.And Register the customer with valid TEST, ACCEPTA, 14, SL11UP and other valid details in delivery page(01_Reg_AFA_checkout_delivery_validate_10_digit_and_11_contact_number.feature:20)\r\n",
   "status": "failed"
 });
@@ -616,7 +616,7 @@ formatter.result({
   "status": "skipped"
 });
 formatter.after({
-  "duration": 19605300141,
+  "duration": 20495691393,
   "status": "passed"
 });
 formatter.uri("05_Reg_CFA_ Cookie_pop_up_for_the_Shop_pages.feature");
@@ -628,7 +628,7 @@ formatter.feature({
   "keyword": "Feature"
 });
 formatter.before({
-  "duration": 33038031613,
+  "duration": 104141703971,
   "status": "passed"
 });
 formatter.scenario({
@@ -709,81 +709,88 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.i_am_an_CFA_user_and_Lands_on_shop_page()"
 });
 formatter.result({
-  "duration": 389859864,
+  "duration": 807798493,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.a_cookies_pop_up_should_be_displayed()"
 });
 formatter.result({
-  "duration": 20344683986,
+  "duration": 753475251,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.clickOnCookiePolicyLink()"
 });
 formatter.result({
-  "duration": 20330894816,
+  "duration": 4156013382,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.theCookiePolicyPageShouldBeOpened()"
 });
 formatter.result({
-  "duration": 18919368,
-  "error_message": "java.lang.AssertionError: Unable to find \u0027cookie policy\u0027 page\r\n\tat org.testng.Assert.fail(Assert.java:94)\r\n\tat steps.E2EOrderPlaced_Steps.theCookiePolicyPageShouldBeOpened(E2EOrderPlaced_Steps.java:10046)\r\n\tat ✽.Then the \u0027cookie policy\u0027 page should be opened(05_Reg_CFA_ Cookie_pop_up_for_the_Shop_pages.feature:10)\r\n",
-  "status": "failed"
+  "duration": 6807307273,
+  "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.Delete_all_cookies()"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 2851616086,
+  "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.launch_the_shop_phones_page()"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 9290309075,
+  "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.clickOnManageCookiesLink()"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 3832126932,
+  "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.theManageCookiesPageShouldBeOpened()"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 5795934561,
+  "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.Delete_all_cookies()"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 3581800544,
+  "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.launch_the_shop_phones_page()"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 141399517204,
+  "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.clickOnCloseIcon()"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 28477633429,
+  "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.theShopHomePageShouldBeDisplayedWithoutTheCookies()"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 23404530966,
+  "status": "passed"
 });
 formatter.after({
-  "duration": 18241938503,
+  "duration": 20080191872,
   "status": "passed"
 });
 formatter.uri("06_Reg_CFA_PayG_Freesim_Phones_delivery_page_mark_mandatory_fields_with_asterisk.feature");
@@ -887,7 +894,7 @@ formatter.examples({
   "keyword": "Examples"
 });
 formatter.before({
-  "duration": 5903942953,
+  "duration": 119538194586,
   "status": "passed"
 });
 formatter.scenario({
@@ -958,30 +965,29 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.i_am_an_CFA_user_and_Lands_on_shop_page()"
 });
 formatter.result({
-  "duration": 363698554,
+  "duration": 720380956,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.navigate_to_PayG_SIMO_page()"
 });
 formatter.result({
-  "duration": 61450756170,
+  "duration": 194454322108,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.selectAPayAsYouGoBundle()"
 });
 formatter.result({
-  "duration": 20335106275,
+  "duration": 11161011218,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.verify_copy_text_allFields_narked_with_asterisk_PAYG_sim_journey()"
 });
 formatter.result({
-  "duration": 20076471985,
-  "error_message": "java.lang.AssertionError: verify copy text ‘You\u0027ll need to give details for all fields marked with an asterisk * is not displayed$\r\n\tat org.testng.Assert.fail(Assert.java:94)\r\n\tat steps.E2EOrderPlaced_Steps.verify_copy_text_allFields_narked_with_asterisk_PAYG_sim_journey(E2EOrderPlaced_Steps.java:8713)\r\n\tat ✽.And verify copy text You will need to give details for all fields marked with an asterisk is displayed in PAYG Sim Journey(06_Reg_CFA_PayG_Freesim_Phones_delivery_page_mark_mandatory_fields_with_asterisk.feature:8)\r\n",
-  "status": "failed"
+  "duration": 356711423,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -993,7 +999,8 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.verifyAsteriskIsDisplayedAgainstMandatoryFieldsOf(String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 5686795797,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -1013,16 +1020,18 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.i_enter_details_in_Delivery_PageTEST_and_ACCEPTA_new(String,String,String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 63648304109,
+  "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.OrderConfirmationPage()"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 23455725693,
+  "status": "passed"
 });
 formatter.after({
-  "duration": 18127898520,
+  "duration": 19865447726,
   "status": "passed"
 });
 formatter.uri("07_Reg_CFA_PayG_Freesim_To_Show_BigBundle_DataRollOver_In_DeliveryPage.feature");
@@ -1111,7 +1120,7 @@ formatter.examples({
   "keyword": "Examples"
 });
 formatter.before({
-  "duration": 5205931576,
+  "duration": 102375286795,
   "status": "passed"
 });
 formatter.scenario({
@@ -1175,14 +1184,14 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.i_am_an_CFA_user_and_Lands_on_shop_page()"
 });
 formatter.result({
-  "duration": 374888653,
+  "duration": 547797070,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.navigate_to_PayG_SIMO_page()"
 });
 formatter.result({
-  "duration": 61324014916,
+  "duration": 165487680062,
   "status": "passed"
 });
 formatter.match({
@@ -1203,7 +1212,7 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.selectAPayAsYouGoBundleHavingDataRollOver(String,String,String)"
 });
 formatter.result({
-  "duration": 43063715152,
+  "duration": 32189548642,
   "status": "passed"
 });
 formatter.match({
@@ -1216,9 +1225,8 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.validateYourOrderSectionDeliveryPage(String)"
 });
 formatter.result({
-  "duration": 23057230918,
-  "error_message": "java.lang.AssertionError: Unable to validate Your order section in delivery page , please see the failure screenshot\r\n\tat org.testng.Assert.fail(Assert.java:94)\r\n\tat steps.E2EOrderPlaced_Steps.validateYourOrderSectionDeliveryPage(E2EOrderPlaced_Steps.java:3009)\r\n\tat ✽.And Validate Your order section in Delivery page £15(07_Reg_CFA_PayG_Freesim_To_Show_BigBundle_DataRollOver_In_DeliveryPage.feature:10)\r\n",
-  "status": "failed"
+  "duration": 10131736258,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -1238,16 +1246,18 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.i_enter_details_in_Delivery_PageTEST_and_ACCEPTA_new(String,String,String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 63362039098,
+  "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.free_Sim_order_confirmation_is_displayed()"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 2443156783,
+  "status": "passed"
 });
 formatter.after({
-  "duration": 18134794699,
+  "duration": 19836982146,
   "status": "passed"
 });
 formatter.uri("08_Reg_CFA_Phones_checkout_delivery_validate_10_digit_contact_number.feature");
@@ -1464,7 +1474,7 @@ formatter.examples({
   "keyword": "Examples"
 });
 formatter.before({
-  "duration": 5119333329,
+  "duration": 103412678550,
   "status": "passed"
 });
 formatter.scenario({
@@ -1648,14 +1658,14 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.i_am_an_CFA_user_and_Lands_on_shop_page()"
 });
 formatter.result({
-  "duration": 355719783,
+  "duration": 572686095,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.navigate_to_PAYM_Phones_page()"
 });
 formatter.result({
-  "duration": 54366801587,
+  "duration": 132303574468,
   "status": "passed"
 });
 formatter.match({
@@ -1668,15 +1678,15 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.Choose_PAYM_Handset(String)"
 });
 formatter.result({
-  "duration": 24353254840,
-  "error_message": "java.lang.AssertionError: Unable to choose PayM phone\r\n\tat org.testng.Assert.fail(Assert.java:94)\r\n\tat steps.E2EOrderPlaced_Steps.Choose_PAYM_Handset(E2EOrderPlaced_Steps.java:506)\r\n\tat ✽.And I choose PayM iPhone X(08_Reg_CFA_Phones_checkout_delivery_validate_10_digit_contact_number.feature:10)\r\n",
-  "status": "failed"
+  "duration": 28760390186,
+  "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.click_on_the_color_dropdown()"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 30027303360,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -1688,7 +1698,8 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.verify_the_name_of_the_colour_is_next_to_the_colour_tile_in_CFAPhoneColour(String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 201929628,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -1700,19 +1711,22 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.select_color_of_the_device(String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 17646567500,
+  "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.Navigate_to_View_tariff_page()"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 102224235859,
+  "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.land_on_the_Tariffs_and_extra_page()"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 16170443828,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -1724,7 +1738,8 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.ValidateBillSpendCap(String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 39676527618,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -1744,13 +1759,15 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.ChooseBillSpendCap(String,String,String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 68633619913,
+  "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.i_Land_on_the_basket_page_and_choose_home_delivery_option()"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 39788425774,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -1770,7 +1787,8 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.ValidateBillCapIn_BasketPage(String,String,String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 31220532958,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -1782,7 +1800,8 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.CheckoutFromBasket(String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 34078885612,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -1798,7 +1817,8 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.enter_a_digit_home_number(String,String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 82356439270,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -1814,7 +1834,8 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.isThisOrder4UorSomeoneElse(String,String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 78575660660,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -1826,7 +1847,9 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.CreditCheckPaymentPage_HomeDelivery(String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 41493410833,
+  "error_message": "java.lang.AssertionError: Unable to input details in payment page\r\n\tat org.testng.Assert.fail(Assert.java:94)\r\n\tat steps.E2EOrderPlaced_Steps.CreditCheckPaymentPage_HomeDelivery(E2EOrderPlaced_Steps.java:1901)\r\n\tat ✽.And land on the payment page and input TEST ACCEPTA and other details and click \u0027Continue on next step\u0027(08_Reg_CFA_Phones_checkout_delivery_validate_10_digit_contact_number.feature:26)\r\n",
+  "status": "failed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.AgreementsPageConfirmation()"
@@ -1907,7 +1930,7 @@ formatter.result({
   "status": "skipped"
 });
 formatter.after({
-  "duration": 18066982397,
+  "duration": 20440669899,
   "status": "passed"
 });
 formatter.uri("102_FR_Upfront_CFA_PayMTablets_Till_TnE.feature");
@@ -2108,7 +2131,7 @@ formatter.examples({
   "keyword": "Examples"
 });
 formatter.before({
-  "duration": 17121559741,
+  "duration": 46323042387,
   "status": "passed"
 });
 formatter.scenario({
@@ -2272,14 +2295,14 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.i_am_an_CFA_user_and_Lands_on_shop_page()"
 });
 formatter.result({
-  "duration": 382991291,
+  "duration": 747807475,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.navigate_to_PAYM_Tablets_page()"
 });
 formatter.result({
-  "duration": 57346546230,
+  "duration": 133116340007,
   "status": "passed"
 });
 formatter.match({
@@ -2292,15 +2315,15 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.select_any_available_Tablet(String)"
 });
 formatter.result({
-  "duration": 41431944389,
-  "error_message": "java.lang.AssertionError: Unable to select tablet\r\n\tat org.testng.Assert.fail(Assert.java:94)\r\n\tat steps.E2EOrderPlaced_Steps.select_any_available_Tablet(E2EOrderPlaced_Steps.java:4099)\r\n\tat ✽.And select any available iPad Pro 10.5 inch Tablet(102_FR_Upfront_CFA_PayMTablets_Till_TnE.feature:7)\r\n",
-  "status": "failed"
+  "duration": 64830499681,
+  "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.click_on_the_color_dropdown()"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 10713369760,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -2312,7 +2335,8 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.verify_the_name_of_the_colour_is_next_to_the_colour_tile_in_CFAPhoneColour(String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 206160907,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -2324,7 +2348,8 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.select_color_of_the_device(String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 21738579068,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -2336,7 +2361,8 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.select_capacity_of_the_device(String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 23432127358,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -2356,13 +2382,15 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.fr_PDpage(String,String,String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 314952037126,
+  "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.i_Land_on_the_basket_page_and_choose_home_delivery_option()"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 38095053374,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -2374,13 +2402,15 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.CheckoutFromBasket(String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 34122431053,
+  "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.verify_copy_text_allFields_narked_with_asterisk()"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 345533357,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -2392,7 +2422,8 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.verifyAsteriskIsDisplayedAgainstMandatoryFieldsOf(String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 5663413343,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -2408,7 +2439,8 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.DeliveryPage_Inputs_gdpr(String,String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 37387819252,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -2424,13 +2456,15 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.isThisOrder4UorSomeoneElse(String,String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 78700580367,
+  "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.verify_copy_text_allFields_narked_with_asterisk()"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 969584052,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -2442,7 +2476,9 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.verifyAsteriskIsDisplayedAgainstMandatoryFieldsOf(String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 26501591684,
+  "error_message": "java.lang.AssertionError: Unable to select the sim free link\r\n\tat org.testng.Assert.fail(Assert.java:94)\r\n\tat steps.E2EOrderPlaced_Steps.verifyAsteriskIsDisplayedAgainstMandatoryFieldsOf(E2EOrderPlaced_Steps.java:8572)\r\n\tat ✽.And verify asterisk is displayed against mandatory fields of \"Payments page\"(102_FR_Upfront_CFA_PayMTablets_Till_TnE.feature:21)\r\n",
+  "status": "failed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.AgreementsPageConfirmation()"
@@ -2523,7 +2559,7 @@ formatter.result({
   "status": "skipped"
 });
 formatter.after({
-  "duration": 18138839824,
+  "duration": 20407173922,
   "status": "passed"
 });
 formatter.uri("111_FR_Upfront_CFA_PayMTablets_Till_TnE.feature");
@@ -2722,7 +2758,7 @@ formatter.examples({
   "keyword": "Examples"
 });
 formatter.before({
-  "duration": 5292975036,
+  "duration": 122009992487,
   "status": "passed"
 });
 formatter.scenario({
@@ -2878,14 +2914,14 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.i_am_an_CFA_user_and_Lands_on_shop_page()"
 });
 formatter.result({
-  "duration": 387141526,
+  "duration": 760365413,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.navigate_to_PAYM_Tablets_page()"
 });
 formatter.result({
-  "duration": 57295039714,
+  "duration": 58611846661,
   "status": "passed"
 });
 formatter.match({
@@ -2898,9 +2934,8 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.select_any_available_Tablet(String)"
 });
 formatter.result({
-  "duration": 41320475166,
-  "error_message": "java.lang.AssertionError: Unable to select tablet\r\n\tat org.testng.Assert.fail(Assert.java:94)\r\n\tat steps.E2EOrderPlaced_Steps.select_any_available_Tablet(E2EOrderPlaced_Steps.java:4099)\r\n\tat ✽.And select any available Galaxy Book 10.6 Tablet(111_FR_Upfront_CFA_PayMTablets_Till_TnE.feature:7)\r\n",
-  "status": "failed"
+  "duration": 58648481768,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -2920,13 +2955,15 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.fr_PDpage(String,String,String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 2579477496821,
+  "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.i_Land_on_the_basket_page_and_choose_home_delivery_option()"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 37269524633,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -2938,13 +2975,15 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.CheckoutFromBasket(String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 32567456097,
+  "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.verify_copy_text_allFields_narked_with_asterisk()"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 335587586,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -2956,7 +2995,8 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.verifyAsteriskIsDisplayedAgainstMandatoryFieldsOf(String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 5698208147,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -2972,7 +3012,8 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.DeliveryPage_Inputs_gdpr(String,String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 36561083344,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -2988,13 +3029,15 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.isThisOrder4UorSomeoneElse(String,String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 78605337655,
+  "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.verify_copy_text_allFields_narked_with_asterisk()"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 760210049,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -3006,7 +3049,9 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.verifyAsteriskIsDisplayedAgainstMandatoryFieldsOf(String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 26225698191,
+  "error_message": "java.lang.AssertionError: Unable to select the sim free link\r\n\tat org.testng.Assert.fail(Assert.java:94)\r\n\tat steps.E2EOrderPlaced_Steps.verifyAsteriskIsDisplayedAgainstMandatoryFieldsOf(E2EOrderPlaced_Steps.java:8572)\r\n\tat ✽.And verify asterisk is displayed against mandatory fields of \"Payments page\"(111_FR_Upfront_CFA_PayMTablets_Till_TnE.feature:21)\r\n",
+  "status": "failed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.AgreementsPageConfirmation()"
@@ -3087,7 +3132,7 @@ formatter.result({
   "status": "skipped"
 });
 formatter.after({
-  "duration": 18163106331,
+  "duration": 20478728408,
   "status": "passed"
 });
 formatter.uri("112_FR_Term_CFA_PayMTablets_Till_TnE.feature");
@@ -3266,7 +3311,7 @@ formatter.examples({
   "keyword": "Examples"
 });
 formatter.before({
-  "duration": 5159438821,
+  "duration": 106861626621,
   "status": "passed"
 });
 formatter.scenario({
@@ -3404,14 +3449,14 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.i_am_an_CFA_user_and_Lands_on_shop_page()"
 });
 formatter.result({
-  "duration": 401060935,
+  "duration": 783002898,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.navigate_to_PAYM_Tablets_page()"
 });
 formatter.result({
-  "duration": 57331231378,
+  "duration": 133429119879,
   "status": "passed"
 });
 formatter.match({
@@ -3424,9 +3469,8 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.select_any_available_Tablet(String)"
 });
 formatter.result({
-  "duration": 41350169503,
-  "error_message": "java.lang.AssertionError: Unable to select tablet\r\n\tat org.testng.Assert.fail(Assert.java:94)\r\n\tat steps.E2EOrderPlaced_Steps.select_any_available_Tablet(E2EOrderPlaced_Steps.java:4099)\r\n\tat ✽.And select any available iPad Pro 10.5 inch Tablet(112_FR_Term_CFA_PayMTablets_Till_TnE.feature:7)\r\n",
-  "status": "failed"
+  "duration": 59861182118,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -3446,13 +3490,15 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.fr_PDpage(String,String,String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 197178967258,
+  "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.i_Land_on_the_basket_page_and_choose_home_delivery_option()"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 38704297424,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -3464,13 +3510,15 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.CheckoutFromBasket(String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 35038930176,
+  "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.verify_copy_text_allFields_narked_with_asterisk()"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 350408034,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -3482,7 +3530,8 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.verifyAsteriskIsDisplayedAgainstMandatoryFieldsOf(String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 5670366145,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -3498,7 +3547,8 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.DeliveryPage_Inputs_gdpr(String,String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 36497751116,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -3514,13 +3564,15 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.isThisOrder4UorSomeoneElse(String,String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 78693014603,
+  "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.verify_copy_text_allFields_narked_with_asterisk()"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 923126334,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -3532,7 +3584,9 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.verifyAsteriskIsDisplayedAgainstMandatoryFieldsOf(String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 26189527407,
+  "error_message": "java.lang.AssertionError: Unable to select the sim free link\r\n\tat org.testng.Assert.fail(Assert.java:94)\r\n\tat steps.E2EOrderPlaced_Steps.verifyAsteriskIsDisplayedAgainstMandatoryFieldsOf(E2EOrderPlaced_Steps.java:8572)\r\n\tat ✽.And verify asterisk is displayed against mandatory fields of \"Payments page\"(112_FR_Term_CFA_PayMTablets_Till_TnE.feature:17)\r\n",
+  "status": "failed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.AgreementsPageConfirmation()"
@@ -3613,7 +3667,7 @@ formatter.result({
   "status": "skipped"
 });
 formatter.after({
-  "duration": 18069571207,
+  "duration": 20301275152,
   "status": "passed"
 });
 formatter.uri("113_FR_Term_CFA_PayMTablets_Till_TnE.feature");
@@ -3814,7 +3868,7 @@ formatter.examples({
   "keyword": "Examples"
 });
 formatter.before({
-  "duration": 5189151561,
+  "duration": 101168719253,
   "status": "passed"
 });
 formatter.scenario({
@@ -3978,14 +4032,14 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.i_am_an_CFA_user_and_Lands_on_shop_page()"
 });
 formatter.result({
-  "duration": 397455358,
+  "duration": 739018617,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.navigate_to_PAYM_Tablets_page()"
 });
 formatter.result({
-  "duration": 57369406323,
+  "duration": 135308045695,
   "status": "passed"
 });
 formatter.match({
@@ -3998,15 +4052,15 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.select_any_available_Tablet(String)"
 });
 formatter.result({
-  "duration": 41302494352,
-  "error_message": "java.lang.AssertionError: Unable to select tablet\r\n\tat org.testng.Assert.fail(Assert.java:94)\r\n\tat steps.E2EOrderPlaced_Steps.select_any_available_Tablet(E2EOrderPlaced_Steps.java:4099)\r\n\tat ✽.And select any available iPad Pro 10.5 inch Tablet(113_FR_Term_CFA_PayMTablets_Till_TnE.feature:7)\r\n",
-  "status": "failed"
+  "duration": 61047538897,
+  "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.click_on_the_color_dropdown()"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 10709545824,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -4018,7 +4072,8 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.verify_the_name_of_the_colour_is_next_to_the_colour_tile_in_CFAPhoneColour(String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 206811383,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -4030,7 +4085,8 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.select_color_of_the_device(String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 21721856030,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -4042,7 +4098,8 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.select_capacity_of_the_device(String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 19180251577,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -4062,13 +4119,15 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.fr_PDpage(String,String,String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 255895910388,
+  "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.i_Land_on_the_basket_page_and_choose_home_delivery_option()"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 37624578367,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -4080,13 +4139,15 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.CheckoutFromBasket(String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 35698290607,
+  "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.verify_copy_text_allFields_narked_with_asterisk()"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 342259035,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -4098,7 +4159,8 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.verifyAsteriskIsDisplayedAgainstMandatoryFieldsOf(String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 5647752372,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -4114,7 +4176,8 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.DeliveryPage_Inputs_gdpr(String,String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 36582449604,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -4130,13 +4193,15 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.isThisOrder4UorSomeoneElse(String,String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 78566950368,
+  "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.verify_copy_text_allFields_narked_with_asterisk()"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 2757554352,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -4148,7 +4213,9 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.verifyAsteriskIsDisplayedAgainstMandatoryFieldsOf(String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 26206334674,
+  "error_message": "java.lang.AssertionError: Unable to select the sim free link\r\n\tat org.testng.Assert.fail(Assert.java:94)\r\n\tat steps.E2EOrderPlaced_Steps.verifyAsteriskIsDisplayedAgainstMandatoryFieldsOf(E2EOrderPlaced_Steps.java:8572)\r\n\tat ✽.And verify asterisk is displayed against mandatory fields of \"Payments page\"(113_FR_Term_CFA_PayMTablets_Till_TnE.feature:21)\r\n",
+  "status": "failed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.AgreementsPageConfirmation()"
@@ -4229,7 +4296,7 @@ formatter.result({
   "status": "skipped"
 });
 formatter.after({
-  "duration": 18085851863,
+  "duration": 20250025570,
   "status": "passed"
 });
 formatter.uri("114_FR_Term_CFA_PayMTablets_Till_TnE.feature");
@@ -4408,7 +4475,7 @@ formatter.examples({
   "keyword": "Examples"
 });
 formatter.before({
-  "duration": 5069356740,
+  "duration": 102018312775,
   "status": "passed"
 });
 formatter.scenario({
@@ -4546,14 +4613,14 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.i_am_an_CFA_user_and_Lands_on_shop_page()"
 });
 formatter.result({
-  "duration": 388679240,
+  "duration": 749342003,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.navigate_to_PAYM_Tablets_page()"
 });
 formatter.result({
-  "duration": 57368996501,
+  "duration": 91683923156,
   "status": "passed"
 });
 formatter.match({
@@ -4566,9 +4633,8 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.select_any_available_Tablet(String)"
 });
 formatter.result({
-  "duration": 41353862139,
-  "error_message": "java.lang.AssertionError: Unable to select tablet\r\n\tat org.testng.Assert.fail(Assert.java:94)\r\n\tat steps.E2EOrderPlaced_Steps.select_any_available_Tablet(E2EOrderPlaced_Steps.java:4099)\r\n\tat ✽.And select any available Galaxy Book 10.6 Tablet(114_FR_Term_CFA_PayMTablets_Till_TnE.feature:7)\r\n",
-  "status": "failed"
+  "duration": 56854413346,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -4588,13 +4654,15 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.fr_PDpage(String,String,String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 1808675522177,
+  "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.i_Land_on_the_basket_page_and_choose_home_delivery_option()"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 38834942241,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -4606,13 +4674,15 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.CheckoutFromBasket(String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 32586744233,
+  "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.verify_copy_text_allFields_narked_with_asterisk()"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 367499840,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -4624,7 +4694,8 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.verifyAsteriskIsDisplayedAgainstMandatoryFieldsOf(String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 5824136836,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -4640,7 +4711,8 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.DeliveryPage_Inputs_gdpr(String,String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 37102009008,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -4656,13 +4728,15 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.isThisOrder4UorSomeoneElse(String,String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 78549207732,
+  "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.verify_copy_text_allFields_narked_with_asterisk()"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 1612713019,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -4674,7 +4748,9 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.verifyAsteriskIsDisplayedAgainstMandatoryFieldsOf(String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 26246082722,
+  "error_message": "java.lang.AssertionError: Unable to select the sim free link\r\n\tat org.testng.Assert.fail(Assert.java:94)\r\n\tat steps.E2EOrderPlaced_Steps.verifyAsteriskIsDisplayedAgainstMandatoryFieldsOf(E2EOrderPlaced_Steps.java:8572)\r\n\tat ✽.And verify asterisk is displayed against mandatory fields of \"Payments page\"(114_FR_Term_CFA_PayMTablets_Till_TnE.feature:17)\r\n",
+  "status": "failed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.AgreementsPageConfirmation()"
@@ -4755,7 +4831,7 @@ formatter.result({
   "status": "skipped"
 });
 formatter.after({
-  "duration": 18097124068,
+  "duration": 20333989354,
   "status": "passed"
 });
 formatter.uri("115_FR_Data_CFA_PayMTablets_Till_TnE.feature");
@@ -4956,7 +5032,7 @@ formatter.examples({
   "keyword": "Examples"
 });
 formatter.before({
-  "duration": 5076360505,
+  "duration": 106326400231,
   "status": "passed"
 });
 formatter.scenario({
@@ -5120,14 +5196,14 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.i_am_an_CFA_user_and_Lands_on_shop_page()"
 });
 formatter.result({
-  "duration": 430545759,
+  "duration": 735474619,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.navigate_to_PAYM_Tablets_page()"
 });
 formatter.result({
-  "duration": 57348645237,
+  "duration": 116426459227,
   "status": "passed"
 });
 formatter.match({
@@ -5140,15 +5216,15 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.select_any_available_Tablet(String)"
 });
 formatter.result({
-  "duration": 41348290978,
-  "error_message": "java.lang.AssertionError: Unable to select tablet\r\n\tat org.testng.Assert.fail(Assert.java:94)\r\n\tat steps.E2EOrderPlaced_Steps.select_any_available_Tablet(E2EOrderPlaced_Steps.java:4099)\r\n\tat ✽.And select any available iPad Pro 10.5 inch Tablet(115_FR_Data_CFA_PayMTablets_Till_TnE.feature:7)\r\n",
-  "status": "failed"
+  "duration": 59500445035,
+  "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.click_on_the_color_dropdown()"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 10717121145,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -5160,7 +5236,8 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.verify_the_name_of_the_colour_is_next_to_the_colour_tile_in_CFAPhoneColour(String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 191319932,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -5172,7 +5249,8 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.select_color_of_the_device(String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 21720619842,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -5184,7 +5262,8 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.select_capacity_of_the_device(String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 23358386805,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -5204,13 +5283,15 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.fr_PDpage(String,String,String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 179347030725,
+  "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.i_Land_on_the_basket_page_and_choose_home_delivery_option()"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 37154714199,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -5222,13 +5303,15 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.CheckoutFromBasket(String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 33696668664,
+  "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.verify_copy_text_allFields_narked_with_asterisk()"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 331303574,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -5240,7 +5323,8 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.verifyAsteriskIsDisplayedAgainstMandatoryFieldsOf(String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 5660662092,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -5256,7 +5340,8 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.DeliveryPage_Inputs_gdpr(String,String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 37421808925,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -5272,13 +5357,15 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.isThisOrder4UorSomeoneElse(String,String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 78630072023,
+  "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.verify_copy_text_allFields_narked_with_asterisk()"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 1117144078,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -5290,7 +5377,9 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.verifyAsteriskIsDisplayedAgainstMandatoryFieldsOf(String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 26312089758,
+  "error_message": "java.lang.AssertionError: Unable to select the sim free link\r\n\tat org.testng.Assert.fail(Assert.java:94)\r\n\tat steps.E2EOrderPlaced_Steps.verifyAsteriskIsDisplayedAgainstMandatoryFieldsOf(E2EOrderPlaced_Steps.java:8572)\r\n\tat ✽.And verify asterisk is displayed against mandatory fields of \"Payments page\"(115_FR_Data_CFA_PayMTablets_Till_TnE.feature:21)\r\n",
+  "status": "failed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.AgreementsPageConfirmation()"
@@ -5371,7 +5460,7 @@ formatter.result({
   "status": "skipped"
 });
 formatter.after({
-  "duration": 18062035523,
+  "duration": 20276845496,
   "status": "passed"
 });
 formatter.uri("116_FR_UpfrontAndTerm_CFA_Phones_Till_TnE.feature");
@@ -5565,7 +5654,7 @@ formatter.examples({
   "keyword": "Examples"
 });
 formatter.before({
-  "duration": 5288630154,
+  "duration": 102457607048,
   "status": "passed"
 });
 formatter.scenario({
@@ -5721,14 +5810,14 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.i_am_an_CFA_user_and_Lands_on_shop_page()"
 });
 formatter.result({
-  "duration": 403483055,
+  "duration": 908762422,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.navigate_to_PAYM_Phones_page()"
 });
 formatter.result({
-  "duration": 54373504180,
+  "duration": 133627861537,
   "status": "passed"
 });
 formatter.match({
@@ -5741,15 +5830,15 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.Choose_PAYM_Handset(String)"
 });
 formatter.result({
-  "duration": 24292977159,
-  "error_message": "java.lang.AssertionError: Unable to choose PayM phone\r\n\tat org.testng.Assert.fail(Assert.java:94)\r\n\tat steps.E2EOrderPlaced_Steps.Choose_PAYM_Handset(E2EOrderPlaced_Steps.java:506)\r\n\tat ✽.And I choose PayM iPhone X(116_FR_UpfrontAndTerm_CFA_Phones_Till_TnE.feature:7)\r\n",
-  "status": "failed"
+  "duration": 29182215037,
+  "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.click_on_the_color_dropdown()"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 85989093379,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -5761,7 +5850,8 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.verify_the_name_of_the_colour_is_next_to_the_colour_tile_in_CFAPhoneColour(String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 181340893,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -5773,7 +5863,8 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.select_color_of_the_device(String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 17669799192,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -5793,13 +5884,15 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.fr_PDpage(String,String,String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 132994343548,
+  "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.i_Land_on_the_basket_page_and_choose_home_delivery_option()"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 41000810086,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -5811,13 +5904,15 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.CheckoutFromBasket(String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 39369271485,
+  "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.verify_copy_text_allFields_narked_with_asterisk()"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 325289326,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -5829,7 +5924,8 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.verifyAsteriskIsDisplayedAgainstMandatoryFieldsOf(String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 5644946619,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -5845,7 +5941,8 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.DeliveryPage_Inputs_gdpr(String,String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 36498295775,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -5861,13 +5958,15 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.isThisOrder4UorSomeoneElse(String,String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 78424025781,
+  "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.verify_copy_text_allFields_narked_with_asterisk()"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 1072020577,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -5879,7 +5978,9 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.verifyAsteriskIsDisplayedAgainstMandatoryFieldsOf(String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 26252286310,
+  "error_message": "java.lang.AssertionError: Unable to select the sim free link\r\n\tat org.testng.Assert.fail(Assert.java:94)\r\n\tat steps.E2EOrderPlaced_Steps.verifyAsteriskIsDisplayedAgainstMandatoryFieldsOf(E2EOrderPlaced_Steps.java:8572)\r\n\tat ✽.And verify asterisk is displayed against mandatory fields of \"Payments page\"(116_FR_UpfrontAndTerm_CFA_Phones_Till_TnE.feature:20)\r\n",
+  "status": "failed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.AgreementsPageConfirmation()"
@@ -5960,7 +6061,7 @@ formatter.result({
   "status": "skipped"
 });
 formatter.after({
-  "duration": 18052421006,
+  "duration": 20311376287,
   "status": "passed"
 });
 formatter.uri("119_FR_All_CFA_Phones_Till_TnE.feature");
@@ -6154,7 +6255,7 @@ formatter.examples({
   "keyword": "Examples"
 });
 formatter.before({
-  "duration": 5214547022,
+  "duration": 33955340469,
   "status": "passed"
 });
 formatter.scenario({
@@ -6310,14 +6411,14 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.i_am_an_CFA_user_and_Lands_on_shop_page()"
 });
 formatter.result({
-  "duration": 411405910,
+  "duration": 729458246,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.navigate_to_PAYM_Phones_page()"
 });
 formatter.result({
-  "duration": 54364144120,
+  "duration": 57825155727,
   "status": "passed"
 });
 formatter.match({
@@ -6330,15 +6431,15 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.Choose_PAYM_Handset(String)"
 });
 formatter.result({
-  "duration": 24330136753,
-  "error_message": "java.lang.AssertionError: Unable to choose PayM phone\r\n\tat org.testng.Assert.fail(Assert.java:94)\r\n\tat steps.E2EOrderPlaced_Steps.Choose_PAYM_Handset(E2EOrderPlaced_Steps.java:506)\r\n\tat ✽.And I choose PayM iPhone X(119_FR_All_CFA_Phones_Till_TnE.feature:7)\r\n",
-  "status": "failed"
+  "duration": 28739123372,
+  "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.click_on_the_color_dropdown()"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 23969808782,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -6350,7 +6451,8 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.verify_the_name_of_the_colour_is_next_to_the_colour_tile_in_CFAPhoneColour(String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 175006361,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -6362,7 +6464,8 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.select_color_of_the_device(String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 17648409926,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -6382,7 +6485,9 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.fr_PDpage(String,String,String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 1666335822224,
+  "error_message": "java.lang.AssertionError: \"Failed to displayed - the upfront MAx icon is not disable though changed to main value\"\r\n\tat org.junit.Assert.fail(Assert.java:88)\r\n\tat actionsPerformed.ConnectedDeviceDetailsPageAction.flexibleReressh_CFA(ConnectedDeviceDetailsPageAction.java:781)\r\n\tat steps.E2EOrderPlaced_Steps.fr_PDpage(E2EOrderPlaced_Steps.java:11284)\r\n\tat ✽.And Build your plan with max max and max(119_FR_All_CFA_Phones_Till_TnE.feature:11)\r\n",
+  "status": "failed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.i_Land_on_the_basket_page_and_choose_home_delivery_option()"
@@ -6549,7 +6654,7 @@ formatter.result({
   "status": "skipped"
 });
 formatter.after({
-  "duration": 18082843678,
+  "duration": 20784002324,
   "status": "passed"
 });
 formatter.uri("11_Reg_CFA_Phones_SSC_checkout_pages_mark_mandatory_fields_with_asterisk.feature");
@@ -6800,7 +6905,7 @@ formatter.examples({
   "keyword": "Examples"
 });
 formatter.before({
-  "duration": 5099149461,
+  "duration": 126203324011,
   "status": "passed"
 });
 formatter.scenario({
@@ -7018,14 +7123,14 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.i_am_an_CFA_user_and_Lands_on_shop_page()"
 });
 formatter.result({
-  "duration": 357492490,
+  "duration": 739118417,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.navigate_to_PAYM_Phones_page()"
 });
 formatter.result({
-  "duration": 54389292556,
+  "duration": 132809626762,
   "status": "passed"
 });
 formatter.match({
@@ -7038,15 +7143,15 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.Choose_PAYM_Handset(String)"
 });
 formatter.result({
-  "duration": 24305009904,
-  "error_message": "java.lang.AssertionError: Unable to choose PayM phone\r\n\tat org.testng.Assert.fail(Assert.java:94)\r\n\tat steps.E2EOrderPlaced_Steps.Choose_PAYM_Handset(E2EOrderPlaced_Steps.java:506)\r\n\tat ✽.And I choose PayM iPhone X(11_Reg_CFA_Phones_SSC_checkout_pages_mark_mandatory_fields_with_asterisk.feature:7)\r\n",
-  "status": "failed"
+  "duration": 28768145999,
+  "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.click_on_the_color_dropdown()"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 27270969977,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -7058,7 +7163,8 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.verify_the_name_of_the_colour_is_next_to_the_colour_tile_in_CFAPhoneColour(String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 174481522,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -7070,19 +7176,22 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.select_color_of_the_device(String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 17618012382,
+  "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.Navigate_to_device_details_page()"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 165870309663,
+  "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.land_on_the_Tariffs_and_extra_page()"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 16006541920,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -7094,7 +7203,8 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.ValidateBillSpendCap(String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 39582748654,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -7114,13 +7224,15 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.ChooseBillSpendCap(String,String,String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 68520334454,
+  "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.i_Land_on_the_basket_page_and_choose_home_delivery_option()"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 40664483549,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -7132,13 +7244,15 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.CheckoutFromBasket(String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 33159405908,
+  "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.verify_copy_text_allFields_narked_with_asterisk()"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 335596787,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -7150,7 +7264,8 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.verifyAsteriskIsDisplayedAgainstMandatoryFieldsOf(String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 5688560363,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -7166,7 +7281,8 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.DeliveryPage_Inputs_gdpr(String,String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 36572088704,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -7182,13 +7298,15 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.isThisOrder4UorSomeoneElse(String,String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 78470337692,
+  "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.verify_copy_text_allFields_narked_with_asterisk()"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 3343932294,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -7200,7 +7318,9 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.verifyAsteriskIsDisplayedAgainstMandatoryFieldsOf(String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 26183816454,
+  "error_message": "java.lang.AssertionError: Unable to select the sim free link\r\n\tat org.testng.Assert.fail(Assert.java:94)\r\n\tat steps.E2EOrderPlaced_Steps.verifyAsteriskIsDisplayedAgainstMandatoryFieldsOf(E2EOrderPlaced_Steps.java:8572)\r\n\tat ✽.And verify asterisk is displayed against mandatory fields of \"Payments page\"(11_Reg_CFA_Phones_SSC_checkout_pages_mark_mandatory_fields_with_asterisk.feature:34)\r\n",
+  "status": "failed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.AgreementsPageConfirmation()"
@@ -7281,7 +7401,7 @@ formatter.result({
   "status": "skipped"
 });
 formatter.after({
-  "duration": 18098936058,
+  "duration": 20279250983,
   "status": "passed"
 });
 formatter.uri("12_Reg_Consumer_Existing_PAYG_Phone_BigBundle_To_Show_£15_Data_Roll_Over_Copy_On_Basket_Page_Package_summary_CC_Order_confirmation.feature");
@@ -7495,7 +7615,7 @@ formatter.examples({
   "keyword": "Examples"
 });
 formatter.before({
-  "duration": 5133323518,
+  "duration": 112289640550,
   "status": "passed"
 });
 formatter.scenario({
@@ -7680,9 +7800,8 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.i_am_an_Existing_user_and_Navigates_to_Signin_page()"
 });
 formatter.result({
-  "duration": 20069070077,
-  "error_message": "java.lang.AssertionError: Unable to do navigate to signin page\r\n\tat org.testng.Assert.fail(Assert.java:94)\r\n\tat steps.E2EOrderPlaced_Steps.i_am_an_Existing_user_and_Navigates_to_Signin_page(E2EOrderPlaced_Steps.java:490)\r\n\tat ✽.Given I am an Existing user and Navigates to Signin page(12_Reg_Consumer_Existing_PAYG_Phone_BigBundle_To_Show_£15_Data_Roll_Over_Copy_On_Basket_Page_Package_summary_CC_Order_confirmation.feature:7)\r\n",
-  "status": "failed"
+  "duration": 1537825110,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -7698,13 +7817,15 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.signin_using_valid_ink_jun_and_test_credentials(String,String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 39141874199,
+  "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.navigate_to_Pay_as_you_Go_Phones_page()"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 140781222052,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -7716,13 +7837,15 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.Choose_PAYG_Handset(String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 120291239489,
+  "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.click_on_the_color_dropdown()"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 10738416625,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -7734,7 +7857,8 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.verify_the_name_of_the_colour_is_next_to_the_colour_tile_in_CFAPhoneColour(String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 159668505,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -7746,13 +7870,15 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.select_color_of_the_device(String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 17676246265,
+  "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.Navigate_to_device_details_page()"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 67277802807,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -7768,7 +7894,8 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.land_on_the_Tariffs_and_extra_page_validate_Data_Roll_Over(String,String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 74418035598,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -7780,19 +7907,22 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.ValidateBillSpendCap(String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 29736643211,
+  "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.i_Land_on_the_basket_page_and_choose_to_collect_from_store()"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 79561303118,
+  "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.validate_all_the_Basket_contents()"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 13411038203,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -7804,13 +7934,15 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.CheckoutFromBasket(String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 44057791503,
+  "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.scrollToAnElement()"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 13611285016,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -7826,7 +7958,8 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.isThisOrder4UorSomeoneElse(String,String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 78563075825,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -7838,7 +7971,9 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.existingCustomerPaymentPage_ClickAndCollect(String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 98210733350,
+  "error_message": "java.lang.AssertionError: Unable to input details in existing customer payment page\r\n\tat org.testng.Assert.fail(Assert.java:94)\r\n\tat steps.E2EOrderPlaced_Steps.existingCustomerPaymentPage_ClickAndCollect(E2EOrderPlaced_Steps.java:2056)\r\n\tat ✽.And land on the existing customer payment page and input TEST ACCEPTA and other details for Click and collect order(12_Reg_Consumer_Existing_PAYG_Phone_BigBundle_To_Show_£15_Data_Roll_Over_Copy_On_Basket_Page_Package_summary_CC_Order_confirmation.feature:26)\r\n",
+  "status": "failed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.ReviewPageConfirmation()"
@@ -7913,7 +8048,7 @@ formatter.result({
   "status": "skipped"
 });
 formatter.after({
-  "duration": 18093227228,
+  "duration": 20450949401,
   "status": "passed"
 });
 formatter.uri("130_FR_UpFront_AFA_Tablets_E2E.feature");
@@ -8104,7 +8239,7 @@ formatter.examples({
   "keyword": "Examples"
 });
 formatter.before({
-  "duration": 5220918715,
+  "duration": 103160473637,
   "status": "passed"
 });
 formatter.scenario({
@@ -8256,16 +8391,15 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.LoginAgentShop()"
 });
 formatter.result({
-  "duration": 453233854,
+  "duration": 3235721467,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.performs_Acquisition_for_New_user()"
 });
 formatter.result({
-  "duration": 40040770477,
-  "error_message": "junit.framework.AssertionFailedError\r\n\tat junit.framework.Assert.fail(Assert.java:55)\r\n\tat junit.framework.Assert.fail(Assert.java:64)\r\n\tat actionsPerformed.Agent_HomePagePageActions.NewUser(Agent_HomePagePageActions.java:177)\r\n\tat steps.E2EOrderPlaced_Steps.performs_Acquisition_for_New_user(E2EOrderPlaced_Steps.java:2688)\r\n\tat ✽.And performs Acquisition for New user(130_FR_UpFront_AFA_Tablets_E2E.feature:7)\r\n",
-  "status": "failed"
+  "duration": 12142467342,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -8277,7 +8411,8 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.SelectValid_Device(String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 34200425534,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -8289,7 +8424,8 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.SelectTariff(String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 27773147019,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -8309,7 +8445,8 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.Agent_fr_DealBuilder(String,String,String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 221149341225,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -8321,7 +8458,8 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.ValidateBillCap_AgentDealBuilder(String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 25288651033,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -8337,13 +8475,15 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.addBillCap_AgentDealBuilder(String,String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 57150215369,
+  "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.validate_all_the_Basket_content_and_checkout()"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 22679799464,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -8359,13 +8499,15 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.ValidateYourCapInAgentDealSummary(String,String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 28443943512,
+  "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.advisory_checks()"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 23417479261,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -8393,7 +8535,8 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.CreditCheck(String,String,String,String,String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 84944927189,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -8413,7 +8556,9 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.Register_Customer_Phones(String,String,String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 40101548579,
+  "error_message": "java.lang.AssertionError: Unable to Register customer\r\n\tat org.testng.Assert.fail(Assert.java:94)\r\n\tat steps.E2EOrderPlaced_Steps.Register_Customer_Phones(E2EOrderPlaced_Steps.java:8326)\r\n\tat ✽.And Register customer with valid test123, test123, vinudeep in delivery page(130_FR_UpFront_AFA_Tablets_E2E.feature:17)\r\n",
+  "status": "failed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.Validate_Register_Status()"
@@ -8490,7 +8635,7 @@ formatter.result({
   "status": "skipped"
 });
 formatter.after({
-  "duration": 18043498725,
+  "duration": 18335303400,
   "status": "passed"
 });
 formatter.uri("133_FR_UpFront_AFU_PAYM_Dongle_payByCard.feature");
@@ -8623,7 +8768,7 @@ formatter.examples({
   "keyword": "Examples"
 });
 formatter.before({
-  "duration": 5220724067,
+  "duration": 34888923611,
   "status": "passed"
 });
 formatter.scenario({
@@ -8705,7 +8850,7 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.LoginAgentShop()"
 });
 formatter.result({
-  "duration": 436036584,
+  "duration": 3660289076,
   "status": "passed"
 });
 formatter.match({
@@ -8718,9 +8863,8 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.performs_Upgrade(String)"
 });
 formatter.result({
-  "duration": 20019295567,
-  "error_message": "org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {\"method\":\"id\",\"selector\":\"msisdn\"}\n  (Session info: chrome\u003d70.0.3538.102)\n  (Driver info: chromedriver\u003d2.38.552522 (437e6fbedfa8762dec75e2c5b3ddb86763dc9dcb),platform\u003dWindows NT 10.0.10586 x86_64) (WARNING: The server did not provide any stacktrace information)\nCommand duration or timeout: 0 milliseconds\nFor documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html\nBuild info: version: \u00273.6.0\u0027, revision: \u00276fbf3ec767\u0027, time: \u00272017-09-27T15:28:36.4Z\u0027\nSystem info: host: \u0027LASST266243\u0027, ip: \u002710.172.61.198\u0027, os.name: \u0027Windows 10\u0027, os.arch: \u0027amd64\u0027, os.version: \u002710.0\u0027, java.version: \u00271.8.0_144\u0027\nDriver info: org.openqa.selenium.chrome.ChromeDriver\nCapabilities [{mobileEmulationEnabled\u003dfalse, hasTouchScreen\u003dfalse, platform\u003dXP, acceptSslCerts\u003dfalse, acceptInsecureCerts\u003dfalse, webStorageEnabled\u003dtrue, browserName\u003dchrome, takesScreenshot\u003dtrue, javascriptEnabled\u003dtrue, platformName\u003dXP, setWindowRect\u003dtrue, unexpectedAlertBehaviour\u003d, applicationCacheEnabled\u003dfalse, rotatable\u003dfalse, networkConnectionEnabled\u003dfalse, chrome\u003d{chromedriverVersion\u003d2.38.552522 (437e6fbedfa8762dec75e2c5b3ddb86763dc9dcb), userDataDir\u003dC:\\Users\\khanj6\\AppData\\Local\\Temp\\1\\scoped_dir11468_29224}, takesHeapSnapshot\u003dtrue, pageLoadStrategy\u003dnormal, unhandledPromptBehavior\u003d, databaseEnabled\u003dfalse, handlesAlerts\u003dtrue, version\u003d70.0.3538.102, browserConnectionEnabled\u003dfalse, nativeEvents\u003dtrue, locationContextEnabled\u003dtrue, cssSelectorsEnabled\u003dtrue}]\nSession ID: 18f51638f1a8c162f7fcd08e963d9014\n*** Element info: {Using\u003did, value\u003dmsisdn}\r\n\tat sun.reflect.GeneratedConstructorAccessor28.newInstance(Unknown Source)\r\n\tat sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)\r\n\tat java.lang.reflect.Constructor.newInstance(Constructor.java:423)\r\n\tat org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:214)\r\n\tat org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:166)\r\n\tat org.openqa.selenium.remote.http.JsonHttpResponseCodec.reconstructValue(JsonHttpResponseCodec.java:40)\r\n\tat org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:82)\r\n\tat org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:45)\r\n\tat org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:164)\r\n\tat org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:586)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:356)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElementById(RemoteWebDriver.java:402)\r\n\tat org.openqa.selenium.By$ById.findElement(By.java:218)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:348)\r\n\tat org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)\r\n\tat org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)\r\n\tat com.sun.proxy.$Proxy23.sendKeys(Unknown Source)\r\n\tat actionsPerformed.Agent_HomePagePageActions.FindUser(Agent_HomePagePageActions.java:47)\r\n\tat steps.E2EOrderPlaced_Steps.performs_Upgrade(E2EOrderPlaced_Steps.java:2667)\r\n\tat ✽.And performs Upgrade for 07521128943(133_FR_UpFront_AFU_PAYM_Dongle_payByCard.feature:7)\r\n",
-  "status": "failed"
+  "duration": 94821528916,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -8732,7 +8876,8 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.SelectValid_Device(String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 32743559916,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -8744,7 +8889,8 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.SelectTariff(String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 27746608447,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -8764,7 +8910,8 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.Agent_fr_DealBuilder(String,String,String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 189308649809,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -8776,7 +8923,8 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.ValidateBillCap_AgentDealBuilder(String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 25326710959,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -8792,16 +8940,18 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.addBillCap_AgentDealBuilder(String,String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 57124534306,
+  "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.validate_all_the_Basket_content_and_checkout()"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 22669568092,
+  "status": "passed"
 });
 formatter.after({
-  "duration": 18132544929,
+  "duration": 17930179645,
   "status": "passed"
 });
 formatter.uri("134_FR_UpFront_AFU_PAYM_Tablet.feature");
@@ -8934,7 +9084,7 @@ formatter.examples({
   "keyword": "Examples"
 });
 formatter.before({
-  "duration": 5131973374,
+  "duration": 34980470501,
   "status": "passed"
 });
 formatter.scenario({
@@ -9016,7 +9166,7 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.LoginAgentShop()"
 });
 formatter.result({
-  "duration": 452581254,
+  "duration": 2973809669,
   "status": "passed"
 });
 formatter.match({
@@ -9029,9 +9179,8 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.performs_Upgrade(String)"
 });
 formatter.result({
-  "duration": 20072239291,
-  "error_message": "org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {\"method\":\"id\",\"selector\":\"msisdn\"}\n  (Session info: chrome\u003d70.0.3538.102)\n  (Driver info: chromedriver\u003d2.38.552522 (437e6fbedfa8762dec75e2c5b3ddb86763dc9dcb),platform\u003dWindows NT 10.0.10586 x86_64) (WARNING: The server did not provide any stacktrace information)\nCommand duration or timeout: 0 milliseconds\nFor documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html\nBuild info: version: \u00273.6.0\u0027, revision: \u00276fbf3ec767\u0027, time: \u00272017-09-27T15:28:36.4Z\u0027\nSystem info: host: \u0027LASST266243\u0027, ip: \u002710.172.61.198\u0027, os.name: \u0027Windows 10\u0027, os.arch: \u0027amd64\u0027, os.version: \u002710.0\u0027, java.version: \u00271.8.0_144\u0027\nDriver info: org.openqa.selenium.chrome.ChromeDriver\nCapabilities [{mobileEmulationEnabled\u003dfalse, hasTouchScreen\u003dfalse, platform\u003dXP, acceptSslCerts\u003dfalse, acceptInsecureCerts\u003dfalse, webStorageEnabled\u003dtrue, browserName\u003dchrome, takesScreenshot\u003dtrue, javascriptEnabled\u003dtrue, platformName\u003dXP, setWindowRect\u003dtrue, unexpectedAlertBehaviour\u003d, applicationCacheEnabled\u003dfalse, rotatable\u003dfalse, networkConnectionEnabled\u003dfalse, chrome\u003d{chromedriverVersion\u003d2.38.552522 (437e6fbedfa8762dec75e2c5b3ddb86763dc9dcb), userDataDir\u003dC:\\Users\\khanj6\\AppData\\Local\\Temp\\1\\scoped_dir7080_11850}, takesHeapSnapshot\u003dtrue, pageLoadStrategy\u003dnormal, unhandledPromptBehavior\u003d, databaseEnabled\u003dfalse, handlesAlerts\u003dtrue, version\u003d70.0.3538.102, browserConnectionEnabled\u003dfalse, nativeEvents\u003dtrue, locationContextEnabled\u003dtrue, cssSelectorsEnabled\u003dtrue}]\nSession ID: 3134f4dcd16abe1e51bd8cdcf5aa751a\n*** Element info: {Using\u003did, value\u003dmsisdn}\r\n\tat sun.reflect.GeneratedConstructorAccessor28.newInstance(Unknown Source)\r\n\tat sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)\r\n\tat java.lang.reflect.Constructor.newInstance(Constructor.java:423)\r\n\tat org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:214)\r\n\tat org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:166)\r\n\tat org.openqa.selenium.remote.http.JsonHttpResponseCodec.reconstructValue(JsonHttpResponseCodec.java:40)\r\n\tat org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:82)\r\n\tat org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:45)\r\n\tat org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:164)\r\n\tat org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:586)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:356)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElementById(RemoteWebDriver.java:402)\r\n\tat org.openqa.selenium.By$ById.findElement(By.java:218)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:348)\r\n\tat org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)\r\n\tat org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)\r\n\tat com.sun.proxy.$Proxy23.sendKeys(Unknown Source)\r\n\tat actionsPerformed.Agent_HomePagePageActions.FindUser(Agent_HomePagePageActions.java:47)\r\n\tat steps.E2EOrderPlaced_Steps.performs_Upgrade(E2EOrderPlaced_Steps.java:2667)\r\n\tat ✽.And performs Upgrade for 07568417868(134_FR_UpFront_AFU_PAYM_Tablet.feature:7)\r\n",
-  "status": "failed"
+  "duration": 96420741550,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -9043,7 +9192,8 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.SelectValid_Device(String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 34216143838,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -9055,7 +9205,8 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.SelectTariff(String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 27757695205,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -9075,7 +9226,8 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.Agent_fr_DealBuilder(String,String,String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 159774808245,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -9087,7 +9239,8 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.ValidateBillCap_AgentDealBuilder(String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 25269888092,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -9103,16 +9256,18 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.addBillCap_AgentDealBuilder(String,String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 46959729235,
+  "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.validate_all_the_Basket_content_and_checkout()"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 22708590990,
+  "status": "passed"
 });
 formatter.after({
-  "duration": 18023719725,
+  "duration": 17888137236,
   "status": "passed"
 });
 formatter.uri("14_Reg_CFA_PayG_FreeSim_Delivery_page_more_than_one_address_select_one_compress_others.feature");
@@ -9235,7 +9390,7 @@ formatter.examples({
   "keyword": "Examples"
 });
 formatter.before({
-  "duration": 5611434717,
+  "duration": 101584391831,
   "status": "passed"
 });
 formatter.scenario({
@@ -9320,21 +9475,21 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.i_am_an_CFA_user_and_Lands_on_shop_page()"
 });
 formatter.result({
-  "duration": 374941030,
+  "duration": 687788852,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.navigate_to_PayG_SIMO_page()"
 });
 formatter.result({
-  "duration": 61347959017,
+  "duration": 88856227459,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.selectAPayAsYouGoBundle()"
 });
 formatter.result({
-  "duration": 20320710512,
+  "duration": 12692814293,
   "status": "passed"
 });
 formatter.match({
@@ -9355,15 +9510,15 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.i_enter_details_in_Delivery_PageTEST_and_ACCEPTA_new(String,String,String)"
 });
 formatter.result({
-  "duration": 48081451064,
-  "error_message": "java.lang.AssertionError: Unable to input details in delivery page\r\n\tat org.testng.Assert.fail(Assert.java:94)\r\n\tat steps.E2EOrderPlaced_Steps.i_enter_details_in_Delivery_PageTEST_and_ACCEPTA_new(E2EOrderPlaced_Steps.java:6893)\r\n\tat ✽.And Enter details in Delivery Page TEST and ACCEPTA for GDPR Yes(14_Reg_CFA_PayG_FreeSim_Delivery_page_more_than_one_address_select_one_compress_others.feature:13)\r\n",
-  "status": "failed"
+  "duration": 67333052923,
+  "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.free_Sim_order_confirmation_is_displayed()"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 2593863017,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -9423,10 +9578,11 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.Choose_Your_Preferences(String,String,String,String,String,String,String,String,String,String,String,String,String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 30395154272,
+  "status": "passed"
 });
 formatter.after({
-  "duration": 18086743702,
+  "duration": 19816235570,
   "status": "passed"
 });
 formatter.uri("15_Reg_CFA_Phones_CnC_Delivery_page_Payment_page_more_than_one_address_select_one_compress_others.feature");
@@ -9616,7 +9772,7 @@ formatter.examples({
   "keyword": "Examples"
 });
 formatter.before({
-  "duration": 5135816420,
+  "duration": 102344473060,
   "status": "passed"
 });
 formatter.scenario({
@@ -9778,14 +9934,14 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.i_am_an_CFA_user_and_Lands_on_shop_page()"
 });
 formatter.result({
-  "duration": 389901979,
+  "duration": 475777908,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.navigate_to_PAYM_Phones_page()"
 });
 formatter.result({
-  "duration": 54379253354,
+  "duration": 59300622553,
   "status": "passed"
 });
 formatter.match({
@@ -9798,15 +9954,15 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.Choose_PAYM_Handset(String)"
 });
 formatter.result({
-  "duration": 24349476558,
-  "error_message": "java.lang.AssertionError: Unable to choose PayM phone\r\n\tat org.testng.Assert.fail(Assert.java:94)\r\n\tat steps.E2EOrderPlaced_Steps.Choose_PAYM_Handset(E2EOrderPlaced_Steps.java:506)\r\n\tat ✽.And I choose PayM iPhone X(15_Reg_CFA_Phones_CnC_Delivery_page_Payment_page_more_than_one_address_select_one_compress_others.feature:10)\r\n",
-  "status": "failed"
+  "duration": 28910715619,
+  "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.click_on_the_color_dropdown()"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 27482844314,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -9818,7 +9974,8 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.verify_the_name_of_the_colour_is_next_to_the_colour_tile_in_CFAPhoneColour(String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 147413862,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -9830,19 +9987,22 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.select_color_of_the_device(String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 15594038908,
+  "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.Navigate_to_device_details_page()"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 89181860779,
+  "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.land_on_the_Tariffs_and_extra_page()"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 16039278417,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -9854,7 +10014,8 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.ValidateBillSpendCap(String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 39570815710,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -9874,13 +10035,15 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.ChooseBillSpendCap(String,String,String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 68542347299,
+  "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.i_Land_on_the_basket_page_and_choose_home_delivery_option()"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 38662176094,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -9892,7 +10055,8 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.CheckoutFromBasket(String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 33397109593,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -9908,7 +10072,8 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.DeliveryPage_Inputs_gdpr_ClickAndCollect(String,String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 35252850079,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -9924,7 +10089,8 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.isThisOrder4UorSomeoneElse(String,String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 78585103887,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -9936,7 +10102,9 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.CreditCheckPaymentPage_ClickAndCollect_CreditCheck(String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 121423331421,
+  "error_message": "java.lang.AssertionError: Unable to input details in payment page\r\n\tat org.testng.Assert.fail(Assert.java:94)\r\n\tat steps.E2EOrderPlaced_Steps.CreditCheckPaymentPage_ClickAndCollect_CreditCheck(E2EOrderPlaced_Steps.java:2082)\r\n\tat ✽.And land on the payment page and input TEST ACCEPTA and other details for Click and collect order and click \u0027Continue on next step\u0027 for payments(15_Reg_CFA_Phones_CnC_Delivery_page_Payment_page_more_than_one_address_select_one_compress_others.feature:23)\r\n",
+  "status": "failed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.AgreementsPageConfirmation()"
@@ -10017,7 +10185,7 @@ formatter.result({
   "status": "skipped"
 });
 formatter.after({
-  "duration": 18301506252,
+  "duration": 20290214937,
   "status": "passed"
 });
 formatter.uri("18_Reg_CFU_Tablet_Delivery_page_more_than_one_address_select_one_compress_others.feature");
@@ -10255,7 +10423,7 @@ formatter.examples({
   "keyword": "Examples"
 });
 formatter.before({
-  "duration": 5308917361,
+  "duration": 161231677404,
   "status": "passed"
 });
 formatter.scenario({
@@ -10461,9 +10629,8 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.i_am_an_Existing_user_and_Navigates_to_Signin_page()"
 });
 formatter.result({
-  "duration": 20081102468,
-  "error_message": "java.lang.AssertionError: Unable to do navigate to signin page\r\n\tat org.testng.Assert.fail(Assert.java:94)\r\n\tat steps.E2EOrderPlaced_Steps.i_am_an_Existing_user_and_Navigates_to_Signin_page(E2EOrderPlaced_Steps.java:490)\r\n\tat ✽.Given I am an Existing user and Navigates to Signin page(18_Reg_CFU_Tablet_Delivery_page_more_than_one_address_select_one_compress_others.feature:7)\r\n",
-  "status": "failed"
+  "duration": 1474378217,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -10479,31 +10646,36 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.signin_using_valid_ink_jun_and_test_credentials(String,String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 43326544270,
+  "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.navigate_to_upgrade_upgrade_now()"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 58955976788,
+  "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.ClickOn_GetStartedCTA()"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 14210169580,
+  "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.click_on_Tablets_tab()"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 11350515621,
+  "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.click_on_View_all_tablets()"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 157399157637,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -10515,19 +10687,22 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.Choose_PayMTablet(String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 27801761240,
+  "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.Navigate_to_device_details_page()"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 126097014357,
+  "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.land_on_the_Tariffs_and_extra_page()"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 15967584847,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -10539,7 +10714,8 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.ValidateBillSpendCap(String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 39619569914,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -10559,13 +10735,15 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.ChooseBillSpendCap(String,String,String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 68470206747,
+  "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.i_Land_on_the_basket_page_by_clicking_AddToBasket()"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 40816949748,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -10577,7 +10755,8 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.CheckoutFromBasket(String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 39983128323,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -10589,13 +10768,15 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.perform_skip_in_OTAC_page(String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 36953193331,
+  "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.click_on_Use_a_different_delivery_address_link()"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 3071292950,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -10611,7 +10792,8 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.enter_houseNum_and_PostCode(String,String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 8450749446,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -10627,13 +10809,15 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.isThisOrder4UorSomeoneElse(String,String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 78478654796,
+  "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.selectTheHomeAddress()"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 13168729869,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -10645,25 +10829,29 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.CreditCheckPaymentPg_ClickAndCollect(String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 100605371630,
+  "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.AgreementsPageConfirmation()"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 64127411902,
+  "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.ReviewPageConfirmation()"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 57144026645,
+  "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.OrderConfirmationPage()"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 3309140320,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -10723,10 +10911,11 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.Choose_Your_Preferences(String,String,String,String,String,String,String,String,String,String,String,String,String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 95935492810,
+  "status": "passed"
 });
 formatter.after({
-  "duration": 18139000142,
+  "duration": 20169028565,
   "status": "passed"
 });
 formatter.uri("27_Reg_AFU_SavedBasket.feature");
@@ -10840,7 +11029,7 @@ formatter.examples({
   "keyword": "Examples"
 });
 formatter.before({
-  "duration": 5332725916,
+  "duration": 100417241083,
   "status": "passed"
 });
 formatter.scenario({
@@ -10928,7 +11117,7 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.LoginAgentShop()"
 });
 formatter.result({
-  "duration": 500615971,
+  "duration": 3089247221,
   "status": "passed"
 });
 formatter.match({
@@ -10941,9 +11130,8 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.performs_Upgrade(String)"
 });
 formatter.result({
-  "duration": 20019540824,
-  "error_message": "org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {\"method\":\"id\",\"selector\":\"msisdn\"}\n  (Session info: chrome\u003d70.0.3538.102)\n  (Driver info: chromedriver\u003d2.38.552522 (437e6fbedfa8762dec75e2c5b3ddb86763dc9dcb),platform\u003dWindows NT 10.0.10586 x86_64) (WARNING: The server did not provide any stacktrace information)\nCommand duration or timeout: 0 milliseconds\nFor documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html\nBuild info: version: \u00273.6.0\u0027, revision: \u00276fbf3ec767\u0027, time: \u00272017-09-27T15:28:36.4Z\u0027\nSystem info: host: \u0027LASST266243\u0027, ip: \u002710.172.61.198\u0027, os.name: \u0027Windows 10\u0027, os.arch: \u0027amd64\u0027, os.version: \u002710.0\u0027, java.version: \u00271.8.0_144\u0027\nDriver info: org.openqa.selenium.chrome.ChromeDriver\nCapabilities [{mobileEmulationEnabled\u003dfalse, hasTouchScreen\u003dfalse, platform\u003dXP, acceptSslCerts\u003dfalse, acceptInsecureCerts\u003dfalse, webStorageEnabled\u003dtrue, browserName\u003dchrome, takesScreenshot\u003dtrue, javascriptEnabled\u003dtrue, platformName\u003dXP, setWindowRect\u003dtrue, unexpectedAlertBehaviour\u003d, applicationCacheEnabled\u003dfalse, rotatable\u003dfalse, networkConnectionEnabled\u003dfalse, chrome\u003d{chromedriverVersion\u003d2.38.552522 (437e6fbedfa8762dec75e2c5b3ddb86763dc9dcb), userDataDir\u003dC:\\Users\\khanj6\\AppData\\Local\\Temp\\1\\scoped_dir12104_17808}, takesHeapSnapshot\u003dtrue, pageLoadStrategy\u003dnormal, unhandledPromptBehavior\u003d, databaseEnabled\u003dfalse, handlesAlerts\u003dtrue, version\u003d70.0.3538.102, browserConnectionEnabled\u003dfalse, nativeEvents\u003dtrue, locationContextEnabled\u003dtrue, cssSelectorsEnabled\u003dtrue}]\nSession ID: 0b488b1a72507db1a132f44479130237\n*** Element info: {Using\u003did, value\u003dmsisdn}\r\n\tat sun.reflect.GeneratedConstructorAccessor28.newInstance(Unknown Source)\r\n\tat sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)\r\n\tat java.lang.reflect.Constructor.newInstance(Constructor.java:423)\r\n\tat org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:214)\r\n\tat org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:166)\r\n\tat org.openqa.selenium.remote.http.JsonHttpResponseCodec.reconstructValue(JsonHttpResponseCodec.java:40)\r\n\tat org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:82)\r\n\tat org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:45)\r\n\tat org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:164)\r\n\tat org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:586)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:356)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElementById(RemoteWebDriver.java:402)\r\n\tat org.openqa.selenium.By$ById.findElement(By.java:218)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:348)\r\n\tat org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)\r\n\tat org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)\r\n\tat com.sun.proxy.$Proxy23.sendKeys(Unknown Source)\r\n\tat actionsPerformed.Agent_HomePagePageActions.FindUser(Agent_HomePagePageActions.java:47)\r\n\tat steps.E2EOrderPlaced_Steps.performs_Upgrade(E2EOrderPlaced_Steps.java:2667)\r\n\tat ✽.And performs Upgrade for 07729000024(27_Reg_AFU_SavedBasket.feature:7)\r\n",
-  "status": "failed"
+  "duration": 111733710052,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -10955,7 +11143,8 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.SelectValid_Device(String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 35209459648,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -10967,13 +11156,15 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.SelectTariff(String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 27713774980,
+  "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.select_a_valid_Handset_and_Tariff_combination()"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 14685960582,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -10985,7 +11176,8 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.ValidateBillCap_AgentDealBuilder(String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 25270962546,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -11001,22 +11193,25 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.addBillCap_AgentDealBuilder(String,String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 40812463659,
+  "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.choose_to_email_basket_to_save_the_basket()"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 12824201955,
+  "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.verifyEmailSentConfirmation()"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 33485854270,
+  "status": "passed"
 });
 formatter.after({
-  "duration": 18154788165,
+  "duration": 20017702645,
   "status": "passed"
 });
 formatter.uri("37_Reg_CFA_Cover_me_copy_update_on_basket_summary.feature");
@@ -11265,7 +11460,7 @@ formatter.examples({
   "keyword": "Examples"
 });
 formatter.before({
-  "duration": 5340779006,
+  "duration": 33715737379,
   "status": "passed"
 });
 formatter.scenario({
@@ -11477,14 +11672,14 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.i_am_an_CFA_user_and_Lands_on_shop_page()"
 });
 formatter.result({
-  "duration": 446428629,
+  "duration": 653272925,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.navigate_to_PAYM_Tablets_page()"
 });
 formatter.result({
-  "duration": 57457978648,
+  "duration": 58985964865,
   "status": "passed"
 });
 formatter.match({
@@ -11497,15 +11692,15 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.Choose_PayMTablet(String)"
 });
 formatter.result({
-  "duration": 24354971276,
-  "error_message": "java.lang.AssertionError: Unable to choose PayM phone\r\n\tat org.testng.Assert.fail(Assert.java:94)\r\n\tat steps.E2EOrderPlaced_Steps.Choose_PayMTablet(E2EOrderPlaced_Steps.java:520)\r\n\tat ✽.And Select PayM Tablet iPad 9.7 inch 2018(37_Reg_CFA_Cover_me_copy_update_on_basket_summary.feature:26)\r\n",
-  "status": "failed"
+  "duration": 27814931433,
+  "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.click_on_the_color_dropdown()"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 30588366884,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -11517,7 +11712,8 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.verify_the_name_of_the_colour_is_next_to_the_colour_tile_in_CFAPhoneColour(String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 265183997,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -11529,7 +11725,8 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.select_color_of_the_device(String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 19758627743,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -11541,19 +11738,22 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.select_capacity_of_the_device(String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 19232201890,
+  "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.Navigate_to_device_details_page()"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 36697614650,
+  "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.land_on_the_Tariffs_and_extra_page()"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 16119385707,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -11565,7 +11765,8 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.ValidateBillSpendCap(String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 39757418099,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -11585,25 +11786,29 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.ChooseBillSpendCap(String,String,String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 68993173541,
+  "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.select_an_insurance()"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 10468824044,
+  "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.i_Land_on_the_basket_page_and_choose_home_delivery_option()"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 42700771829,
+  "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.verify_cover_me_is_present_in_Basket_page()"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 7463755426,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -11615,7 +11820,8 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.CheckoutFromBasket(String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 35443824954,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -11631,7 +11837,8 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.DeliveryPage_Inputs_gdpr(String,String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 37413271339,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -11647,13 +11854,15 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.isThisOrder4UorSomeoneElse(String,String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 79027914199,
+  "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.verify_cover_me_is_present_in_payment_page()"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 12453540688,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -11665,7 +11874,9 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.CreditCheckPaymentPage_HomeDelivery(String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 41850187729,
+  "error_message": "java.lang.AssertionError: Unable to input details in payment page\r\n\tat org.testng.Assert.fail(Assert.java:94)\r\n\tat steps.E2EOrderPlaced_Steps.CreditCheckPaymentPage_HomeDelivery(E2EOrderPlaced_Steps.java:1901)\r\n\tat ✽.And land on the payment page and input TEST ACCEPTA and other details and click \u0027Continue on next step\u0027(37_Reg_CFA_Cover_me_copy_update_on_basket_summary.feature:44)\r\n",
+  "status": "failed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.verify_cover_me_is_present_in_agreements_page()"
@@ -11764,7 +11975,7 @@ formatter.result({
   "status": "skipped"
 });
 formatter.after({
-  "duration": 18233671654,
+  "duration": 20347493633,
   "status": "passed"
 });
 formatter.uri("57_Reg_CS_CFU_SavedBasket.feature");
@@ -11909,7 +12120,7 @@ formatter.examples({
   "keyword": "Examples"
 });
 formatter.before({
-  "duration": 5408664213,
+  "duration": 103879289630,
   "status": "passed"
 });
 formatter.scenario({
@@ -12031,9 +12242,8 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.i_am_an_Existing_user_and_Navigates_to_Signin_page()"
 });
 formatter.result({
-  "duration": 20052459582,
-  "error_message": "java.lang.AssertionError: Unable to do navigate to signin page\r\n\tat org.testng.Assert.fail(Assert.java:94)\r\n\tat steps.E2EOrderPlaced_Steps.i_am_an_Existing_user_and_Navigates_to_Signin_page(E2EOrderPlaced_Steps.java:490)\r\n\tat ✽.Given I am an Existing user and Navigates to Signin page(57_Reg_CS_CFU_SavedBasket.feature:5)\r\n",
-  "status": "failed"
+  "duration": 38767374840,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -12049,19 +12259,22 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.signin_using_valid_ink_jun_and_test_credentials(String,String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 27688437559,
+  "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.choose_to_upgrade_any_Phone_in_My_upgrade_page()"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 48769868096,
+  "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.ClickOn_GetStartedCTA()"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 14346088986,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -12073,13 +12286,15 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.select_device_from_recommended_devices_section(String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 18995528420,
+  "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.clickOnDeviceConfirm_CTA()"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 17644732153,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -12091,7 +12306,8 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.selectATariffTariff(String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 5474414315,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -12103,7 +12319,8 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.ValidateBillSpendCap(String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 39986424233,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -12123,43 +12340,50 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.ChooseBillSpendCap(String,String,String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 40070208941,
+  "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.select_a_I_need_a_sim_option()"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 7785892881,
+  "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.verify_that_Confirm_CTA_is_displayed()"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 373209731,
+  "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.click_on_Confirm_CTA()"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 3651034834,
+  "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.i_Land_on_the_basket_page_by_clicking_AddToBasket()"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 50909980560,
+  "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.verify_that_Go_to_checkout_CTA_is_enabled()"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 365500281,
+  "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.verifies_the_basket_page_for_the_upgrade_journey()"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 557513158,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -12171,10 +12395,11 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.choose_to_email_basket_to_save_the_basket_CFU(String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 6242266573,
+  "status": "passed"
 });
 formatter.after({
-  "duration": 18168355792,
+  "duration": 20097497791,
   "status": "passed"
 });
 formatter.uri("60_Reg_CS_Free_Sim_Tablet.feature");
@@ -12286,7 +12511,7 @@ formatter.examples({
   "keyword": "Examples"
 });
 formatter.before({
-  "duration": 5439710110,
+  "duration": 102857908858,
   "status": "passed"
 });
 formatter.scenario({
@@ -12364,23 +12589,22 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.i_am_an_CFA_user_and_Lands_on_shop_page()"
 });
 formatter.result({
-  "duration": 394067432,
+  "duration": 773542330,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.Navigate_to_FreeSim_page()"
 });
 formatter.result({
-  "duration": 42484560396,
+  "duration": 210378409292,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.select_iPads_and_Tablets_tab()"
 });
 formatter.result({
-  "duration": 13335964847,
-  "error_message": "java.lang.AssertionError: unable to do select ipads and tablets tab\r\n\tat org.testng.Assert.fail(Assert.java:94)\r\n\tat steps.E2EOrderPlaced_Steps.select_iPads_and_Tablets_tab(E2EOrderPlaced_Steps.java:6587)\r\n\tat ✽.And I select \u0027iPads and Tablets\u0027 tab(60_Reg_CS_Free_Sim_Tablet.feature:7)\r\n",
-  "status": "failed"
+  "duration": 10379425352,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -12396,7 +12620,8 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.select_surfer_type_and_simtype(String,String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 24627672906,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -12424,7 +12649,8 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.Enter_delivery_details(String,String,String,String,String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 9383937985,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -12444,16 +12670,18 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.i_enter_details_in_Delivery_PageTEST_and_ACCEPTA_new(String,String,String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 63418435510,
+  "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.OrdernumberFreeSim()"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 945170676,
+  "status": "passed"
 });
 formatter.after({
-  "duration": 18278487966,
+  "duration": 20545869354,
   "status": "passed"
 });
 formatter.scenarioOutline({
@@ -12557,7 +12785,7 @@ formatter.examples({
   "keyword": "Examples"
 });
 formatter.before({
-  "duration": 5506982708,
+  "duration": 100648377367,
   "status": "passed"
 });
 formatter.scenario({
@@ -12635,23 +12863,22 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.i_am_an_CFA_user_and_Lands_on_shop_page()"
 });
 formatter.result({
-  "duration": 400545650,
+  "duration": 549719124,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.Navigate_to_FreeSim_page()"
 });
 formatter.result({
-  "duration": 42389420316,
+  "duration": 84613193622,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.select_iPads_and_Tablets_tab()"
 });
 formatter.result({
-  "duration": 13368551289,
-  "error_message": "java.lang.AssertionError: unable to do select ipads and tablets tab\r\n\tat org.testng.Assert.fail(Assert.java:94)\r\n\tat steps.E2EOrderPlaced_Steps.select_iPads_and_Tablets_tab(E2EOrderPlaced_Steps.java:6587)\r\n\tat ✽.And I select \u0027iPads and Tablets\u0027 tab(60_Reg_CS_Free_Sim_Tablet.feature:22)\r\n",
-  "status": "failed"
+  "duration": 10173916337,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -12667,7 +12894,8 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.select_surfer_type_and_simtype(String,String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 23951307729,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -12695,7 +12923,8 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.Enter_delivery_details(String,String,String,String,String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 9314630792,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -12715,16 +12944,18 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.i_enter_details_in_Delivery_PageTEST_and_ACCEPTA_new(String,String,String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 68723350213,
+  "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.OrdernumberFreeSim()"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 1029624617,
+  "status": "passed"
 });
 formatter.after({
-  "duration": 18304107094,
+  "duration": 19893996475,
   "status": "passed"
 });
 formatter.scenarioOutline({
@@ -12828,7 +13059,7 @@ formatter.examples({
   "keyword": "Examples"
 });
 formatter.before({
-  "duration": 5471257843,
+  "duration": 34707985460,
   "status": "passed"
 });
 formatter.scenario({
@@ -12906,23 +13137,22 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.i_am_an_CFA_user_and_Lands_on_shop_page()"
 });
 formatter.result({
-  "duration": 411092704,
+  "duration": 533758042,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.Navigate_to_FreeSim_page()"
 });
 formatter.result({
-  "duration": 42392600145,
+  "duration": 75734154910,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.select_iPads_and_Tablets_tab()"
 });
 formatter.result({
-  "duration": 13354080498,
-  "error_message": "java.lang.AssertionError: unable to do select ipads and tablets tab\r\n\tat org.testng.Assert.fail(Assert.java:94)\r\n\tat steps.E2EOrderPlaced_Steps.select_iPads_and_Tablets_tab(E2EOrderPlaced_Steps.java:6587)\r\n\tat ✽.And I select \u0027iPads and Tablets\u0027 tab(60_Reg_CS_Free_Sim_Tablet.feature:38)\r\n",
-  "status": "failed"
+  "duration": 10064393233,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -12938,7 +13168,8 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.select_surfer_type_and_simtype(String,String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 22536478857,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -12966,7 +13197,8 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.Enter_delivery_details(String,String,String,String,String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 9069212701,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -12986,16 +13218,18 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.i_enter_details_in_Delivery_PageTEST_and_ACCEPTA_new(String,String,String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 62429914395,
+  "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.OrdernumberFreeSim()"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 858408924,
+  "status": "passed"
 });
 formatter.after({
-  "duration": 18102600028,
+  "duration": 18254989784,
   "status": "passed"
 });
 formatter.scenarioOutline({
@@ -13099,7 +13333,7 @@ formatter.examples({
   "keyword": "Examples"
 });
 formatter.before({
-  "duration": 5195971296,
+  "duration": 34635944002,
   "status": "passed"
 });
 formatter.scenario({
@@ -13177,23 +13411,22 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.i_am_an_CFA_user_and_Lands_on_shop_page()"
 });
 formatter.result({
-  "duration": 385094897,
+  "duration": 546908062,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.Navigate_to_FreeSim_page()"
 });
 formatter.result({
-  "duration": 42339747023,
+  "duration": 76077592800,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.select_iPads_and_Tablets_tab()"
 });
 formatter.result({
-  "duration": 13339804708,
-  "error_message": "java.lang.AssertionError: unable to do select ipads and tablets tab\r\n\tat org.testng.Assert.fail(Assert.java:94)\r\n\tat steps.E2EOrderPlaced_Steps.select_iPads_and_Tablets_tab(E2EOrderPlaced_Steps.java:6587)\r\n\tat ✽.And I select \u0027iPads and Tablets\u0027 tab(60_Reg_CS_Free_Sim_Tablet.feature:53)\r\n",
-  "status": "failed"
+  "duration": 10146333392,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -13209,7 +13442,8 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.select_surfer_type_and_simtype(String,String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 22653852265,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -13237,7 +13471,8 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.Enter_delivery_details(String,String,String,String,String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 9098377243,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -13257,16 +13492,18 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.i_enter_details_in_Delivery_PageTEST_and_ACCEPTA_new(String,String,String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 62271482077,
+  "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.OrdernumberFreeSim()"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 802951420,
+  "status": "passed"
 });
 formatter.after({
-  "duration": 18072741835,
+  "duration": 20104257716,
   "status": "passed"
 });
 formatter.scenarioOutline({
@@ -13370,7 +13607,7 @@ formatter.examples({
   "keyword": "Examples"
 });
 formatter.before({
-  "duration": 5095356670,
+  "duration": 35028592279,
   "status": "passed"
 });
 formatter.scenario({
@@ -13448,23 +13685,22 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.i_am_an_CFA_user_and_Lands_on_shop_page()"
 });
 formatter.result({
-  "duration": 371888252,
+  "duration": 856188175,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.Navigate_to_FreeSim_page()"
 });
 formatter.result({
-  "duration": 42373179649,
+  "duration": 153846598077,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.select_iPads_and_Tablets_tab()"
 });
 formatter.result({
-  "duration": 13293134646,
-  "error_message": "java.lang.AssertionError: unable to do select ipads and tablets tab\r\n\tat org.testng.Assert.fail(Assert.java:94)\r\n\tat steps.E2EOrderPlaced_Steps.select_iPads_and_Tablets_tab(E2EOrderPlaced_Steps.java:6587)\r\n\tat ✽.And I select \u0027iPads and Tablets\u0027 tab(60_Reg_CS_Free_Sim_Tablet.feature:69)\r\n",
-  "status": "failed"
+  "duration": 10210026603,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -13480,7 +13716,8 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.select_surfer_type_and_simtype(String,String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 23431793625,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -13508,7 +13745,8 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.Enter_delivery_details(String,String,String,String,String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 9086183472,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -13528,16 +13766,18 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.i_enter_details_in_Delivery_PageTEST_and_ACCEPTA_new(String,String,String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 66998663657,
+  "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.OrdernumberFreeSim()"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 1046369243,
+  "status": "passed"
 });
 formatter.after({
-  "duration": 18116095813,
+  "duration": 20175444494,
   "status": "passed"
 });
 formatter.scenarioOutline({
@@ -13641,7 +13881,7 @@ formatter.examples({
   "keyword": "Examples"
 });
 formatter.before({
-  "duration": 5112149780,
+  "duration": 104149941801,
   "status": "passed"
 });
 formatter.scenario({
@@ -13719,23 +13959,22 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.i_am_an_CFA_user_and_Lands_on_shop_page()"
 });
 formatter.result({
-  "duration": 389380325,
+  "duration": 515739361,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.Navigate_to_FreeSim_page()"
 });
 formatter.result({
-  "duration": 42352402992,
+  "duration": 178612296474,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.select_iPads_and_Tablets_tab()"
 });
 formatter.result({
-  "duration": 13333316582,
-  "error_message": "java.lang.AssertionError: unable to do select ipads and tablets tab\r\n\tat org.testng.Assert.fail(Assert.java:94)\r\n\tat steps.E2EOrderPlaced_Steps.select_iPads_and_Tablets_tab(E2EOrderPlaced_Steps.java:6587)\r\n\tat ✽.And I select \u0027iPads and Tablets\u0027 tab(60_Reg_CS_Free_Sim_Tablet.feature:84)\r\n",
-  "status": "failed"
+  "duration": 10160556451,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -13751,7 +13990,8 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.select_surfer_type_and_simtype(String,String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 26858559334,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -13779,7 +14019,8 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.Enter_delivery_details(String,String,String,String,String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 9076503129,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -13799,16 +14040,18 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.i_enter_details_in_Delivery_PageTEST_and_ACCEPTA_new(String,String,String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 63080230802,
+  "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.OrdernumberFreeSim()"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 824803592,
+  "status": "passed"
 });
 formatter.after({
-  "duration": 18030408516,
+  "duration": 20132791247,
   "status": "passed"
 });
 formatter.uri("81_Reg_Jan_CFA_OOSForHomeDeliveryandCnC.feature");
@@ -13940,7 +14183,7 @@ formatter.examples({
   "keyword": "Examples"
 });
 formatter.before({
-  "duration": 5072670700,
+  "duration": 35715042311,
   "status": "passed"
 });
 formatter.scenario({
@@ -14046,14 +14289,14 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.i_am_an_CFA_user_and_Lands_on_shop_page()"
 });
 formatter.result({
-  "duration": 385551788,
+  "duration": 518132816,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.navigate_to_PAYM_Phones_page()"
 });
 formatter.result({
-  "duration": 54332790327,
+  "duration": 134721319157,
   "status": "passed"
 });
 formatter.match({
@@ -14066,15 +14309,15 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.Choose_PAYM_Handset(String)"
 });
 formatter.result({
-  "duration": 24311806282,
-  "error_message": "java.lang.AssertionError: Unable to choose PayM phone\r\n\tat org.testng.Assert.fail(Assert.java:94)\r\n\tat steps.E2EOrderPlaced_Steps.Choose_PAYM_Handset(E2EOrderPlaced_Steps.java:506)\r\n\tat ✽.And I choose PayM iPhone 5s Like New(81_Reg_Jan_CFA_OOSForHomeDeliveryandCnC.feature:12)\r\n",
-  "status": "failed"
+  "duration": 32902430721,
+  "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.click_on_the_color_dropdown()"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 23417238606,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -14086,7 +14329,8 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.verify_the_name_of_the_colour_is_next_to_the_colour_tile_in_CFAPhoneColour(String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 236626047,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -14098,25 +14342,29 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.select_color_of_the_device(String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 15711759141,
+  "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.Navigate_to_device_details_page()"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 145434874716,
+  "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.deliveryInformationSection_OOS_message_validation()"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 101923363,
+  "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.land_on_the_Tariffs_and_extra_page()"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 16161031744,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -14128,7 +14376,8 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.ValidateBillSpendCap(String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 39998761689,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -14148,22 +14397,25 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.ChooseBillSpendCap(String,String,String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 40196574702,
+  "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.i_Land_on_the_basket_page_by_clicking_AddToBasket()"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 56668388175,
+  "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.delivery_section_should_show_OOS_message()"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 949930334,
+  "status": "passed"
 });
 formatter.after({
-  "duration": 18091013557,
+  "duration": 20079731089,
   "status": "passed"
 });
 formatter.uri("83_ Reg_Jan_Existing_OOSForHomeDeliveryandCnC.feature");
@@ -14306,7 +14558,7 @@ formatter.examples({
   "keyword": "Examples"
 });
 formatter.before({
-  "duration": 5061715240,
+  "duration": 104296651747,
   "status": "passed"
 });
 formatter.scenario({
@@ -14427,9 +14679,8 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.I_am_existing_user_and_I_click_on_Signin_button()"
 });
 formatter.result({
-  "duration": 20032798077,
-  "error_message": "java.lang.AssertionError: Unable to use as existing user\r\n\tat org.testng.Assert.fail(Assert.java:94)\r\n\tat steps.E2EOrderPlaced_Steps.I_am_existing_user_and_I_click_on_Signin_button(E2EOrderPlaced_Steps.java:3973)\r\n\tat ✽.Given I am existing user and I click on Signin button(83_ Reg_Jan_Existing_OOSForHomeDeliveryandCnC.feature:10)\r\n",
-  "status": "failed"
+  "duration": 1664397905,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -14445,13 +14696,15 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.signin_using_valid_ink_jun_and_test_credentials(String,String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 37436746162,
+  "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.navigate_to_PAYM_Phones_page()"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 133704493841,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -14463,13 +14716,15 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.Choose_PAYM_Handset(String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 33212736448,
+  "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.click_on_the_color_dropdown()"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 27432981682,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -14481,7 +14736,8 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.verify_the_name_of_the_colour_is_next_to_the_colour_tile_in_CFAPhoneColour(String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 233503196,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -14493,25 +14749,29 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.select_color_of_the_device(String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 15706109414,
+  "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.Navigate_to_device_details_page()"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 107523053500,
+  "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.deliveryInformationSection_OOS_message_validation()"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 124302145,
+  "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.land_on_the_Tariffs_and_extra_page()"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 16207694374,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -14523,7 +14783,8 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.ValidateBillSpendCap(String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 39799254890,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -14543,22 +14804,25 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.ChooseBillSpendCap(String,String,String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 68908536630,
+  "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.i_Land_on_the_basket_page_by_clicking_AddToBasket()"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 58394029919,
+  "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.delivery_section_should_show_OOS_message()"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 909868373,
+  "status": "passed"
 });
 formatter.after({
-  "duration": 18085469647,
+  "duration": 19961298446,
   "status": "passed"
 });
 formatter.uri("86_Reg_Jan_FreeSim_InvalidPostCode_EnteredManually.feature");
@@ -14651,7 +14915,7 @@ formatter.examples({
   "keyword": "Examples"
 });
 formatter.before({
-  "duration": 5180850028,
+  "duration": 62158468416,
   "status": "passed"
 });
 formatter.scenario({
@@ -14716,23 +14980,22 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.i_am_an_CFA_user_and_Lands_on_shop_page()"
 });
 formatter.result({
-  "duration": 372351513,
+  "duration": 962624526,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.Navigate_to_FreeSim_page()"
 });
 formatter.result({
-  "duration": 42368227467,
+  "duration": 183500890600,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.select_iPads_and_Tablets_tab()"
 });
 formatter.result({
-  "duration": 13380623318,
-  "error_message": "java.lang.AssertionError: unable to do select ipads and tablets tab\r\n\tat org.testng.Assert.fail(Assert.java:94)\r\n\tat steps.E2EOrderPlaced_Steps.select_iPads_and_Tablets_tab(E2EOrderPlaced_Steps.java:6587)\r\n\tat ✽.And I select \u0027iPads and Tablets\u0027 tab(86_Reg_Jan_FreeSim_InvalidPostCode_EnteredManually.feature:10)\r\n",
-  "status": "failed"
+  "duration": 10208009349,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -14748,7 +15011,8 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.select_surfer_type_and_simtype(String,String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 21286280229,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -14776,7 +15040,8 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.Enter_delivery_details(String,String,String,String,String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 9217478765,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -14788,10 +15053,11 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.respective_Error_messageShould_Be_Displayed_Enter_Manually_section(String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 81423813,
+  "status": "passed"
 });
 formatter.after({
-  "duration": 18033221346,
+  "duration": 19943860169,
   "status": "passed"
 });
 formatter.uri("87_Reg_PayG Tablets_ShowMarketingMessageOnTariffAndExtrasPagePackageSummary.feature");
@@ -14972,7 +15238,7 @@ formatter.examples({
   "keyword": "Examples"
 });
 formatter.before({
-  "duration": 5243279092,
+  "duration": 35375838532,
   "status": "passed"
 });
 formatter.scenario({
@@ -15120,14 +15386,14 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.i_am_an_CFA_user_and_Lands_on_shop_page()"
 });
 formatter.result({
-  "duration": 360047678,
+  "duration": 877277330,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.navigateToPayAsYouGoTabletsPage()"
 });
 formatter.result({
-  "duration": 62327420891,
+  "duration": 258925139341,
   "status": "passed"
 });
 formatter.match({
@@ -15140,15 +15406,15 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.select_any_available_Tablet(String)"
 });
 formatter.result({
-  "duration": 41313660740,
-  "error_message": "java.lang.AssertionError: Unable to select tablet\r\n\tat org.testng.Assert.fail(Assert.java:94)\r\n\tat steps.E2EOrderPlaced_Steps.select_any_available_Tablet(E2EOrderPlaced_Steps.java:4099)\r\n\tat ✽.And select any available Galaxy Book 10.6 Tablet(87_Reg_PayG Tablets_ShowMarketingMessageOnTariffAndExtrasPagePackageSummary.feature:7)\r\n",
-  "status": "failed"
+  "duration": 59993844543,
+  "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.Navigate_to_device_details_page()"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 35521149495,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -15160,7 +15426,9 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.selectPayGTariffTariff(String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 36744162615,
+  "error_message": "java.lang.AssertionError: Unable to select PayG tariff\r\n\tat org.testng.Assert.fail(Assert.java:94)\r\n\tat steps.E2EOrderPlaced_Steps.selectPayGTariffTariff(E2EOrderPlaced_Steps.java:8464)\r\n\tat ✽.And Select a PayG tariff 1GB Preloaded(87_Reg_PayG Tablets_ShowMarketingMessageOnTariffAndExtrasPagePackageSummary.feature:9)\r\n",
+  "status": "failed"
 });
 formatter.match({
   "arguments": [
@@ -15321,7 +15589,7 @@ formatter.result({
   "status": "skipped"
 });
 formatter.after({
-  "duration": 18049122264,
+  "duration": 21586257969,
   "status": "passed"
 });
 formatter.uri("90_Reg_Trustev_AFA_PAYM_Tablet_WithAccessoryClick_and_Collect.feature");
@@ -15516,7 +15784,7 @@ formatter.examples({
   "keyword": "Examples"
 });
 formatter.before({
-  "duration": 5130988459,
+  "duration": 105571994212,
   "status": "passed"
 });
 formatter.scenario({
@@ -15673,16 +15941,15 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.LoginAgentShop()"
 });
 formatter.result({
-  "duration": 533437051,
+  "duration": 3317474058,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.performs_Acquisition_for_New_user()"
 });
 formatter.result({
-  "duration": 40031702389,
-  "error_message": "junit.framework.AssertionFailedError\r\n\tat junit.framework.Assert.fail(Assert.java:55)\r\n\tat junit.framework.Assert.fail(Assert.java:64)\r\n\tat actionsPerformed.Agent_HomePagePageActions.NewUser(Agent_HomePagePageActions.java:177)\r\n\tat steps.E2EOrderPlaced_Steps.performs_Acquisition_for_New_user(E2EOrderPlaced_Steps.java:2688)\r\n\tat ✽.And performs Acquisition for New user(90_Reg_Trustev_AFA_PAYM_Tablet_WithAccessoryClick_and_Collect.feature:7)\r\n",
-  "status": "failed"
+  "duration": 11611755709,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -15694,7 +15961,8 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.SelectValid_Device(String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 35514969265,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -15706,7 +15974,8 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.SelectTariff(String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 25134305956,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -15718,13 +15987,15 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.Select_Accessory(String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 27842244348,
+  "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.select_a_valid_Handset_and_Tariff_combination()"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 49473340216,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -15736,7 +16007,8 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.ValidateBillCap_AgentDealBuilder(String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 25569279765,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -15752,19 +16024,22 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.addBillCap_AgentDealBuilder(String,String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 57446004651,
+  "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.select_Store_for_click_and_Collect()"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 32496991637,
+  "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.validate_all_the_Basket_content_and_checkout()"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 22803444408,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -15780,13 +16055,15 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.ValidateYourCapInAgentDealSummary(String,String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 28515115073,
+  "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.advisory_checks()"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 23457392228,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -15814,7 +16091,8 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.CreditCheck(String,String,String,String,String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 86585750116,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -15834,7 +16112,9 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.Register_Customer_Phones(String,String,String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 40063095820,
+  "error_message": "java.lang.AssertionError: Unable to Register customer\r\n\tat org.testng.Assert.fail(Assert.java:94)\r\n\tat steps.E2EOrderPlaced_Steps.Register_Customer_Phones(E2EOrderPlaced_Steps.java:8326)\r\n\tat ✽.And Register customer with valid test123, test123, Anything in delivery page(90_Reg_Trustev_AFA_PAYM_Tablet_WithAccessoryClick_and_Collect.feature:19)\r\n",
+  "status": "failed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.Validate_Register_Status()"
@@ -15911,7 +16191,7 @@ formatter.result({
   "status": "skipped"
 });
 formatter.after({
-  "duration": 18041566054,
+  "duration": 18378159436,
   "status": "passed"
 });
 formatter.uri("92_Reg_Trustev_CFA_PayMPhonesHomeDeliveryWithoutAccessory.feature");
@@ -16120,7 +16400,7 @@ formatter.examples({
   "keyword": "Examples"
 });
 formatter.before({
-  "duration": 5207003907,
+  "duration": 40958578339,
   "status": "passed"
 });
 formatter.scenario({
@@ -16290,14 +16570,14 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.i_am_an_CFA_user_and_Lands_on_shop_page()"
 });
 formatter.result({
-  "duration": 374306480,
+  "duration": 525737156,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.navigate_to_PAYM_Phones_page()"
 });
 formatter.result({
-  "duration": 54345250587,
+  "duration": 60541100494,
   "status": "passed"
 });
 formatter.match({
@@ -16310,15 +16590,15 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.Choose_PAYM_Handset(String)"
 });
 formatter.result({
-  "duration": 24342087745,
-  "error_message": "java.lang.AssertionError: Unable to choose PayM phone\r\n\tat org.testng.Assert.fail(Assert.java:94)\r\n\tat steps.E2EOrderPlaced_Steps.Choose_PAYM_Handset(E2EOrderPlaced_Steps.java:506)\r\n\tat ✽.And I choose PayM iPhone X(92_Reg_Trustev_CFA_PayMPhonesHomeDeliveryWithoutAccessory.feature:10)\r\n",
-  "status": "failed"
+  "duration": 31634156786,
+  "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.click_on_the_color_dropdown()"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 25971920174,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -16330,7 +16610,8 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.verify_the_name_of_the_colour_is_next_to_the_colour_tile_in_CFAPhoneColour(String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 217529373,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -16342,7 +16623,8 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.select_color_of_the_device(String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 15760196247,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -16354,19 +16636,22 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.select_capacity_of_the_device(String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 21577623059,
+  "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.Navigate_to_device_details_page()"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 109267842525,
+  "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.land_on_the_Tariffs_and_extra_page()"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 16184055693,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -16378,7 +16663,8 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.ValidateBillSpendCap(String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 39844331675,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -16398,13 +16684,15 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.ChooseBillSpendCap(String,String,String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 59490291875,
+  "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.i_Land_on_the_basket_page_and_choose_home_delivery_option()"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 39347711284,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -16416,7 +16704,8 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.CheckoutFromBasket(String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 38200398992,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -16432,7 +16721,8 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.DeliveryPage_Inputs_gdpr(String,String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 37058750230,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -16448,7 +16738,8 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.isThisOrder4UorSomeoneElse(String,String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 78612714789,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -16460,7 +16751,9 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.CreditCheckPaymentPage_HomeDelivery(String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 41718458548,
+  "error_message": "java.lang.AssertionError: Unable to input details in payment page\r\n\tat org.testng.Assert.fail(Assert.java:94)\r\n\tat steps.E2EOrderPlaced_Steps.CreditCheckPaymentPage_HomeDelivery(E2EOrderPlaced_Steps.java:1901)\r\n\tat ✽.And land on the payment page and input TEST ACCEPTA and other details and click \u0027Continue on next step\u0027(92_Reg_Trustev_CFA_PayMPhonesHomeDeliveryWithoutAccessory.feature:24)\r\n",
+  "status": "failed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.AgreementsPageConfirmation()"
@@ -16541,7 +16834,7 @@ formatter.result({
   "status": "skipped"
 });
 formatter.after({
-  "duration": 18093493718,
+  "duration": 18544920890,
   "status": "passed"
 });
 formatter.uri("93_Reg_Trustev_CFA_PayMTabletsHomeDeliveryWithAccessory.feature");
@@ -16743,7 +17036,7 @@ formatter.examples({
   "keyword": "Examples"
 });
 formatter.before({
-  "duration": 5011574793,
+  "duration": 160968352112,
   "status": "passed"
 });
 formatter.scenario({
@@ -16918,14 +17211,14 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.i_am_an_CFA_user_and_Lands_on_shop_page()"
 });
 formatter.result({
-  "duration": 375961337,
+  "duration": 808831185,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.navigate_to_PAYM_Tablets_page()"
 });
 formatter.result({
-  "duration": 57327000453,
+  "duration": 135606206136,
   "status": "passed"
 });
 formatter.match({
@@ -16938,15 +17231,15 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.select_any_available_Tablet(String)"
 });
 formatter.result({
-  "duration": 41313076090,
-  "error_message": "java.lang.AssertionError: Unable to select tablet\r\n\tat org.testng.Assert.fail(Assert.java:94)\r\n\tat steps.E2EOrderPlaced_Steps.select_any_available_Tablet(E2EOrderPlaced_Steps.java:4099)\r\n\tat ✽.And select any available iPad Pro 10.5 inch Tablet(93_Reg_Trustev_CFA_PayMTabletsHomeDeliveryWithAccessory.feature:7)\r\n",
-  "status": "failed"
+  "duration": 61190331478,
+  "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.click_on_the_color_dropdown()"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 10834372101,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -16958,7 +17251,8 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.verify_the_name_of_the_colour_is_next_to_the_colour_tile_in_CFAPhoneColour(String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 261069506,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -16970,7 +17264,8 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.select_color_of_the_device(String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 21861456748,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -16982,19 +17277,22 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.select_capacity_of_the_device(String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 23583199882,
+  "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.Navigate_to_device_details_page()"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 34462315745,
+  "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.land_on_the_Tariffs_and_extra_page()"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 16151713092,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -17006,7 +17304,8 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.ValidateBillSpendCap(String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 39829806736,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -17026,19 +17325,22 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.ChooseBillSpendCap(String,String,String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 68898044077,
+  "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.Choose_some_Accesssory()"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 7845660939,
+  "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.i_Land_on_the_basket_page_and_choose_home_delivery_option()"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 40088399974,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -17050,7 +17352,8 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.CheckoutFromBasket(String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 33774837266,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -17066,7 +17369,8 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.DeliveryPage_Inputs_gdpr(String,String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 37413696024,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -17082,7 +17386,8 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.isThisOrder4UorSomeoneElse(String,String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 78755244773,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -17094,7 +17399,9 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.CreditCheckPaymentPage_HomeDelivery(String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 41718634793,
+  "error_message": "java.lang.AssertionError: Unable to input details in payment page\r\n\tat org.testng.Assert.fail(Assert.java:94)\r\n\tat steps.E2EOrderPlaced_Steps.CreditCheckPaymentPage_HomeDelivery(E2EOrderPlaced_Steps.java:1901)\r\n\tat ✽.And land on the payment page and input TEST ACCEPTA and other details and click \u0027Continue on next step\u0027(93_Reg_Trustev_CFA_PayMTabletsHomeDeliveryWithAccessory.feature:22)\r\n",
+  "status": "failed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.AgreementsPageConfirmation()"
@@ -17175,7 +17482,7 @@ formatter.result({
   "status": "skipped"
 });
 formatter.after({
-  "duration": 18054854452,
+  "duration": 20581605898,
   "status": "passed"
 });
 formatter.uri("96_Reg_VOLTE_PayMPhonesHomeDeliveryWithAccessory.feature");
@@ -17377,7 +17684,7 @@ formatter.examples({
   "keyword": "Examples"
 });
 formatter.before({
-  "duration": 5215929726,
+  "duration": 35908238997,
   "status": "passed"
 });
 formatter.scenario({
@@ -17552,14 +17859,14 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.i_am_an_CFA_user_and_Lands_on_shop_page()"
 });
 formatter.result({
-  "duration": 361196452,
+  "duration": 842860495,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.navigate_to_PAYM_Phones_page()"
 });
 formatter.result({
-  "duration": 54341351270,
+  "duration": 167041385209,
   "status": "passed"
 });
 formatter.match({
@@ -17572,15 +17879,15 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.Choose_PAYM_Handset(String)"
 });
 formatter.result({
-  "duration": 24319705779,
-  "error_message": "java.lang.AssertionError: Unable to choose PayM phone\r\n\tat org.testng.Assert.fail(Assert.java:94)\r\n\tat steps.E2EOrderPlaced_Steps.Choose_PAYM_Handset(E2EOrderPlaced_Steps.java:506)\r\n\tat ✽.And I choose PayM Galaxy Note9(96_Reg_VOLTE_PayMPhonesHomeDeliveryWithAccessory.feature:7)\r\n",
-  "status": "failed"
+  "duration": 32711466817,
+  "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.click_on_the_color_dropdown()"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 28743685198,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -17592,7 +17899,8 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.verify_the_name_of_the_colour_is_next_to_the_colour_tile_in_CFAPhoneColour(String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 227522214,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -17604,7 +17912,8 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.select_color_of_the_device(String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 19843716589,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -17616,19 +17925,22 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.select_capacity_of_the_device(String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 19244979248,
+  "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.Navigate_to_device_details_page()"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 35538056563,
+  "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.land_on_the_Tariffs_and_extra_page()"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 16294664929,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -17640,7 +17952,8 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.ValidateBillSpendCap(String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 39900670401,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -17660,19 +17973,22 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.ChooseBillSpendCap(String,String,String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 69836691590,
+  "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.Choose_some_Accesssory()"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 8345840192,
+  "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.i_Land_on_the_basket_page_and_choose_home_delivery_option()"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 45638564664,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -17684,7 +18000,8 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.CheckoutFromBasket(String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 33936079230,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -17700,7 +18017,8 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.DeliveryPage_Inputs_gdpr(String,String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 38419785655,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -17716,7 +18034,8 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.isThisOrder4UorSomeoneElse(String,String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 78729858159,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -17728,7 +18047,9 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.CreditCheckPaymentPage_HomeDelivery(String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 41720525350,
+  "error_message": "java.lang.AssertionError: Unable to input details in payment page\r\n\tat org.testng.Assert.fail(Assert.java:94)\r\n\tat steps.E2EOrderPlaced_Steps.CreditCheckPaymentPage_HomeDelivery(E2EOrderPlaced_Steps.java:1901)\r\n\tat ✽.And land on the payment page and input TEST ACCEPTA and other details and click \u0027Continue on next step\u0027(96_Reg_VOLTE_PayMPhonesHomeDeliveryWithAccessory.feature:22)\r\n",
+  "status": "failed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.AgreementsPageConfirmation()"
@@ -17809,7 +18130,7 @@ formatter.result({
   "status": "skipped"
 });
 formatter.after({
-  "duration": 18142342769,
+  "duration": 20076164796,
   "status": "passed"
 });
 formatter.uri("97_Reg_VOLTE_PayMPhonesHomeDeliveryWithoutAccessory.feature");
@@ -18005,7 +18326,7 @@ formatter.examples({
   "keyword": "Examples"
 });
 formatter.before({
-  "duration": 5153968170,
+  "duration": 105630712235,
   "status": "passed"
 });
 formatter.scenario({
@@ -18167,14 +18488,14 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.i_am_an_CFA_user_and_Lands_on_shop_page()"
 });
 formatter.result({
-  "duration": 449989612,
+  "duration": 859374729,
   "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.navigate_to_PAYM_Phones_page()"
 });
 formatter.result({
-  "duration": 54341472660,
+  "duration": 133585783737,
   "status": "passed"
 });
 formatter.match({
@@ -18187,15 +18508,15 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.Choose_PAYM_Handset(String)"
 });
 formatter.result({
-  "duration": 24323978818,
-  "error_message": "java.lang.AssertionError: Unable to choose PayM phone\r\n\tat org.testng.Assert.fail(Assert.java:94)\r\n\tat steps.E2EOrderPlaced_Steps.Choose_PAYM_Handset(E2EOrderPlaced_Steps.java:506)\r\n\tat ✽.And I choose PayM iPhone 7(97_Reg_VOLTE_PayMPhonesHomeDeliveryWithoutAccessory.feature:8)\r\n",
-  "status": "failed"
+  "duration": 30174775616,
+  "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.click_on_the_color_dropdown()"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 86783799184,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -18207,7 +18528,8 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.verify_the_name_of_the_colour_is_next_to_the_colour_tile_in_CFAPhoneColour(String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 283045544,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -18219,19 +18541,22 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.select_color_of_the_device(String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 21927591897,
+  "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.Navigate_to_device_details_page()"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 32708945602,
+  "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.land_on_the_Tariffs_and_extra_page()"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 16142251107,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -18243,7 +18568,8 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.ValidateBillSpendCap(String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 39835842220,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -18263,13 +18589,15 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.ChooseBillSpendCap(String,String,String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 68916219185,
+  "status": "passed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.i_Land_on_the_basket_page_and_choose_home_delivery_option()"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 54298328899,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -18281,7 +18609,8 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.CheckoutFromBasket(String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 36172073203,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -18297,7 +18626,8 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.DeliveryPage_Inputs_gdpr(String,String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 37307284093,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -18313,7 +18643,8 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.isThisOrder4UorSomeoneElse(String,String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 78703414787,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -18325,7 +18656,9 @@ formatter.match({
   "location": "E2EOrderPlaced_Steps.CreditCheckPaymentPage_HomeDelivery(String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 41681062548,
+  "error_message": "java.lang.AssertionError: Unable to input details in payment page\r\n\tat org.testng.Assert.fail(Assert.java:94)\r\n\tat steps.E2EOrderPlaced_Steps.CreditCheckPaymentPage_HomeDelivery(E2EOrderPlaced_Steps.java:1901)\r\n\tat ✽.And land on the payment page and input TEST ACCEPTA and other details and click \u0027Continue on next step\u0027(97_Reg_VOLTE_PayMPhonesHomeDeliveryWithoutAccessory.feature:21)\r\n",
+  "status": "failed"
 });
 formatter.match({
   "location": "E2EOrderPlaced_Steps.AgreementsPageConfirmation()"
@@ -18406,7 +18739,7 @@ formatter.result({
   "status": "skipped"
 });
 formatter.after({
-  "duration": 18114573671,
+  "duration": 21646456729,
   "status": "passed"
 });
 });

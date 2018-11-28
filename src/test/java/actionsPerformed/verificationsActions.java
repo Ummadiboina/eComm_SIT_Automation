@@ -102,7 +102,7 @@ public class verificationsActions extends Environment {
             Assert.assertTrue(ActualText.contains("*"),
                     "Assertion Failed: Expected Message: " + ExpectedText + " is not present in the page");
             log.debug("Assertion Success: '*' is present in: " + ActualText);
-            Thread.sleep(4000);
+            Thread.sleep(10000);
             //Below will set bank details
             Set_Bank_details();
 
@@ -111,7 +111,7 @@ public class verificationsActions extends Environment {
                     "Assertion Failed: Expected Message: " + ExpectedText + " is not present in the page");
             log.debug("Assertion Success: '*' is present in: " + ActualText);*/
 
-            Thread.sleep(4000);
+            Thread.sleep(30000);
             Time_At_Address();
 
             //Below is iframe related
@@ -160,7 +160,7 @@ public class verificationsActions extends Environment {
 
             Thread.sleep(12000);
             PaymentPageActions.Card_Details_CCV();
-
+            Thread.sleep(10000);
         }
 
         if (Field.contains("Review")) {
