@@ -1,7 +1,7 @@
 Feature: 119_FR_All_CFA_Phones_Till_TnE
 
   @Web
-  Scenario Outline: 101_FR_Upfront_CFA_Phones_Till_TnE
+  Scenario Outline: 119_FR_All_CFA_Phones_Till_TnE
     Given I am an CFA user and Lands on shop page
     And navigate to PAYM Phones page
     And I choose PayM <handset>

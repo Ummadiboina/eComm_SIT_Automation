@@ -20,6 +20,7 @@ Feature: 51_Reg_Consumer_Buyout
     And Verify that 'Confirm CTA' is displayed
     And Click on 'Confirm CTA'
     #And verify if the buyout offer is displayed in My Package section
+    And Click on 'Continue' button on upgrade page at extra section
     And I Land on the basket page by clicking on Add to Basket button in the BuyOut Journey
     And verify if the buyout offer is displayed in Basket page
     And click on "go to checkout" button

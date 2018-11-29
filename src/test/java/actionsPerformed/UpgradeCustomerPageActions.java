@@ -1967,7 +1967,7 @@ public class UpgradeCustomerPageActions extends Environment {
     public static void selectTariffFromRecommendedSection() throws IOException, InterruptedException {
         log.debug("Going to select tariff from recommended section");
         Screenshots.captureScreenshot();
-        Thread.sleep(5000);
+        Thread.sleep(7000);
         executor.executeScript("arguments[0].click();", UpgradeCustomerPage.RandomTariffUpgrade);
 
     }
