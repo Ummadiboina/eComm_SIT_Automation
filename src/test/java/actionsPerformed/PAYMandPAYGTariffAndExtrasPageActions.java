@@ -278,10 +278,11 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 
 		JavascriptExecutor jse = (JavascriptExecutor) driver;
-		jse.executeScript("window.scrollBy(0,600)", "");
+		Screenshots.captureScreenshot();
+		jse.executeScript("window.scrollBy(0,500)", "");
+		Thread.sleep(3000);
 		Screenshots.captureScreenshot();
 		pageobjects.PAYMandPAYGTariffAndExtrasPage.addToBasketBuyOutJourney.sendKeys(Keys.ENTER);
-		log.debug("Clicked on Add to Basket in Tariff and Extras page");
 		log.debug("Clicked on Add to Basket in Tariff and Extras page");
 
 		Thread.sleep(12000);
@@ -1506,11 +1507,11 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 						}
 
 						//Cap My bill Continue button under Bill spend cap section Before selecting cap amount
-						if (pageobjects.PAYMandPAYGTariffAndExtrasPage.CapMyBillContinueButton.isEnabled() && BSCRetainedFlag == false) {
+						if (BSCRetainedFlag == true) {
+							log.debug("Cap My Bill button is Enabled as it already selected cap amount and trying to change BSC cap option by clicking edit link");
+						} else if (pageobjects.PAYMandPAYGTariffAndExtrasPage.CapMyBillContinueButton.isEnabled() && BSCRetainedFlag == false) {
 							log.debug("Cap My Bill button is Enabled before selecting cap amount");
 							Assert.fail("Cap My Bill button is Enabled before selecting cap amount");
-						} else if (BSCRetainedFlag == true) {
-							log.debug("Cap My Bill button is Enabled as it already selected cap amount and trying to change BSC cap option by clicking edit link");
 						} else {
 							log.debug("As expected Cap My Bill button is disabled before selecting Cap Amount");
 						}

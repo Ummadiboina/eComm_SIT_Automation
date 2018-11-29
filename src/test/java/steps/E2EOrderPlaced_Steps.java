@@ -1499,13 +1499,14 @@ public class E2EOrderPlaced_Steps {
     @And("^input ([^\"]*) and ([^\"]*) and other valid details in Delivery page to verify GDPR to click and collect$")
     public void DeliveryPage_Inputs_gdpr_ClickAndCollect(String Firstname, String Surname) {
         try {
-            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
             PageFactory.initElements(driver, DeliveryPage.class);
             //CommonFunctionscheckTitle("Delivery Page");
             //DeliveryPageActions.SetDelivery();
             JavascriptExecutor jse = (JavascriptExecutor) driver;
             jse.executeScript("window.scrollBy(0,300)", "");
             Screenshots.captureScreenshot();
+            Thread.sleep(5000);
             DeliveryPageActions.ClickAndCollect();
             Thread.sleep(5000);
             DeliveryPageActions.AboutYou(Firstname, Surname);
@@ -2227,7 +2228,7 @@ public class E2EOrderPlaced_Steps {
         try {
             // Write code here that turns the phrase above into concrete actions
             // driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-            Thread.sleep(10000);
+            Thread.sleep(20000);
             PageFactory.initElements(driver, AgreementPage.class);
             PageFactory.initElements(driver, ReviewPage.class);
             Thread.sleep(10000);
@@ -6958,7 +6959,7 @@ public class E2EOrderPlaced_Steps {
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         try {
             PageFactory.initElements(driver, UpgradePhonesListingPage.class);
-            Thread.sleep(4000);
+            Thread.sleep(5000);
             UpgradeCustomerPageActions.selectTariffFromRecommendedSection();
             Thread.sleep(2000);
         } catch (Exception e) {

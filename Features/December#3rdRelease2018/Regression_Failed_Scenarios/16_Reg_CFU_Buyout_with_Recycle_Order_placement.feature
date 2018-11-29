@@ -1,7 +1,9 @@
-Feature: 51_Reg_Consumer_Buyout
+Feature: 16_Reg_CFU_Buyout_with_Recycle_Order_placement
+
+  This scenario ensures that when  a customer in an upgrade journey has opted for Buyout ,then the Buyout is displayed with Recycle in  'Your package' summary
 
   @Web
-  Scenario Outline: This scenario ensures that the customer is able to successully Buyout the device
+  Scenario Outline: CFU_Buyout_with_Recycle_Order_placement
     Given I am an Existing user and Navigates to Signin page
     And Signin using valid <username> and <password> credentials
     And Navigate to upgrade > upgrade now
@@ -13,31 +15,38 @@ Feature: 51_Reg_Consumer_Buyout
     And Click on Tablet section in upgrade options page
     And Select a <handset> device from Recommended devices section
     And Click on device 'Confirm CTA'
+    #Then Select a Tariff
     And select any random tariff from Recommended devices section
     And Validate consumer Bill Spend Caps section when BSC is <BSCstatus>
     And Choose your bill cap <BillCap> <CapAmount> when BSC is <BSCstatus>
     And Select a 'I need a sim'option
     And Verify that 'Confirm CTA' is displayed
     And Click on 'Confirm CTA'
-    #And verify if the buyout offer is displayed in My Package section
     And Click on 'Continue' button on upgrade page at extra section
+    And Verify that the same recycle section is displayed as it is displayed to the non-buyout and non-trade-in users
+    And Verify that the customer is able to do recycle and buyout together
+    When Click on any one of the recycle option then Click on  'Yes get an accurate quote'
+    #And Answer the Questions in the questionnaire
+    #Then Click on 'Accept and continue to upgrade'
+    And answer the questionnaire and click on 'Accept and continue to upgrade' button
+    #And Verify that in 'Your package' summary Buyout is displayed with Recycle
     And I Land on the basket page by clicking on Add to Basket button in the BuyOut Journey
     And verify if the buyout offer is displayed in Basket page
     And click on "go to checkout" button
-    And verify if buyout offer is displayed under Order Summary section in <OTAC> page
     And perform <Action> in OTAC page
     And verify if buyout offer is displayed under Order Summary section in <Delivery> page
-    #Then Click on the 'Continue button' in delivery page
     And Is this order for You or Someone else <consumer> when GDPR is <status>
     And verify if buyout offer is displayed under Order Summary section in <Payment> page
+    #And Click on the 'Continue button' in delivery page
+    #And land on the payment page and input <Username> and other details and click 'Continue' on next step for otac
     And land on the payment page and input <Username> and other details and click 'Continue on next step' in upgrade journey
-    And verify if buyout offer is displayed under Order Summary section in <Agreement> page
+    #And land on the payment page and input <Username> and other details for Click and collect order and click 'Continue on next step'
     And Continue to Agreements page and confirm all the agreement checks
-    And verify if buyout offer is displayed under Order Summary section in <Review> page
     And Continue to Review page and review the order
     Then order confirmation is displayed
     Then Choose <consumer> <status> Business preferences <B1> <B2> <B3> <B4> And Channel Preferences <Text> <Email> <Phone> <Post> <MBBStatus> <DeviceType> <PreSelected>
 
     Examples:
-      | username                      | BSCstatus | BillCap   | CapAmount | password | handset  | Action | Username     | OTAC | Delivery | Payment | Agreement | Review | Username     | Action    | consumer | B1  | B2  | B3     | B4  | Text | Email  | Phone | Post | status  | MBBStatus | DeviceType | PreSelected |
-      | 23oc75299627@stf.ref.o2.co.uk | Enabled   | CapMyBill | £200      | test123  | iPhone X | skip   | TEST ACCEPTA | OTAC | Delivery | Payment | Agreement | Review | TEST ACCEPTA | enterCode | Me       | Not | Not | Select | Not | Not  | Select | Not   | Not  | Enabled | No        | Connected  | No          |
+      | Tablet        | Action | Surname | Username     | BSCstatus | BillCap   | CapAmount | handset  | Delivery | Payment | filtername | sortoption                 | username               | password | consumer | B1     | B2     | B3  | B4  | Text | Email  | Phone | Post   | status  | MBBStatus | DeviceType | PreSelected |
+      | Random Device | skip   | ACCEPTA | TEST ACCEPTA | Enabled   | CapMyBill | £20       | iPhone X | Delivery | Payment | low        | Monthly data (Low to High) | in034242_605463@o2.com | test123  | Someone  | Select | Select | Not | Not | Not  | Select | Not   | Select | Enabled | No        | Connected  | No          |
+

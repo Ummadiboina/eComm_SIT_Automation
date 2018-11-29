@@ -129,9 +129,9 @@ public class PaymentPageActions extends Environment {
     }
 
     public static void Time_At_Address() throws IOException, InterruptedException {
-
+        Thread.sleep(7000);
         scrollToAnElement.scrollToElement(PaymentPage.Stay_Address_Years);
-        Thread.sleep(5000);
+
         pageobjects.PaymentPage.Stay_Address_Years.sendKeys("9");
         log.debug("Entered the stayed at address - 9");
         Thread.sleep(2000);

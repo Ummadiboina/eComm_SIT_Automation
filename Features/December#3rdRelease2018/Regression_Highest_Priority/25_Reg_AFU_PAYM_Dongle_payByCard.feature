@@ -19,5 +19,5 @@ Feature: 25_Reg_AFU_PAYM_Dongle_payByCard
     Then Order confirmation message should be displayed
 
     Examples:
-      | user       | Device | Tariffs | BSCstatus | BillCapAmount | consumer | B1     | B2  | B3     | B4  | Text | Email  | Phone | Post | status  | MBBStatus | DeviceType | PreSelected |
-      | 7568419263 | dongle | Random  | Enabled   | £200          | Me       | Select | Not | Select | Not | Not  | Select | Not   | Not  | Enabled | No        | Connected  | No          |
+      | user        | Device | Tariffs | BSCstatus | BillCapAmount | consumer | B1     | B2  | B3     | B4  | Text | Email  | Phone | Post | status  | MBBStatus | DeviceType | PreSelected |
+      | 07568419263 | dongle | Random  | Enabled   | £200          | Me       | Select | Not | Select | Not | Not  | Select | Not   | Not  | Enabled | No        | Connected  | No          |
