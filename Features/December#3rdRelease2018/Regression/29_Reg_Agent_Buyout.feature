@@ -14,7 +14,7 @@ Feature: 29_Reg_Agent_Buyout
     And clicks on 'Buyout' button
     And Validate all the Basket content and checkout
     Then Validate deal summary for applied Bill Spend Cap <BillCapAmount> when BSC is <BSCstatus>
-    And Choose Business preferences <B1> <B2> <B3> <B4> and Channel Preferences <Text> <Email> <Phone> <Post> for <consumer> when GDPR <status> <DeviceType> for AFU journey
+    And Choose Business preferences <B1> <B2> <B3> <B4> and Channel Preferences <Text> <Email> <Phone> <Post> for <consumer> when GDPR <status> <DeviceType> for AFU journey <PreSelected>
     Then perform all the advisory checks_new
     And Click on 'Generate CCA' button
     And click on the 'CCA' link
@@ -27,5 +27,5 @@ Feature: 29_Reg_Agent_Buyout
     #Then order confirmation is displayed
 
     Examples:
-      | User        | Device                       | BSCstatus | BillCapAmount | Tariffs | username      | DeliveryType | Firstname | Surname | HouseNumber | PostCode | Username     | password | consumer | B1  | B2  | B3     | B4  | Text   | Email  | Phone  | Post   | status  | MBBStatus | DeviceType |
-      | 07568420524 | iPhone 7 Plus 32GB Rose Gold | Enabled   | £15           | Refresh | erto@1234.com | HomeDelivery | Test      | Accepta | Flat 9      | SL11EL   | Test Accepta | test123  | Me       | Not | Not | Select | Not | Select | Select | Select | Select | Enabled | No        | Connected  |
+      | User        | Device                       | BSCstatus | BillCapAmount | Tariffs | username      | DeliveryType | Firstname | Surname | HouseNumber | PostCode | Username     | password | consumer | B1  | B2  | B3     | B4  | Text   | Email  | Phone  | Post   | status  | MBBStatus | DeviceType | PreSelected |
+      | 07568420524 | iPhone 7 Plus 32GB Rose Gold | Enabled   | £15           | Refresh | erto@1234.com | HomeDelivery | Test      | Accepta | Flat 9      | SL11EL   | Test Accepta | test123  | Me       | Not | Not | Select | Not | Select | Select | Select | Select | Enabled | No        | Connected  | No          |

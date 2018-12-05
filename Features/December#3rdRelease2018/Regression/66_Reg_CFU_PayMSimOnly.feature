@@ -37,9 +37,9 @@ Feature: 66_Reg_CFU_PayMSimOnly
     And Is this order for You or Someone else <consumer> when GDPR is <status>
     #And Click on 'Place your order' CTA
     Then order confirmation is displayed
-    Then Choose <consumer> <status> Business preferences <B1> <B2> <B3> <B4> And Channel Preferences <Text> <Email> <Phone> <Post> <MBBStatus> <DeviceType>
+    Then Choose <consumer> <status> Business preferences <B1> <B2> <B3> <B4> And Channel Preferences <Text> <Email> <Phone> <Post> <MBBStatus> <DeviceType> <PreSelected>
 
 
     Examples:
-      | Contract | GiftBlock  | username                      | BSCstatus | BillCap   | CapAmount | Username     | password | filtername | sortoption                 | consumer | B1     | B2  | B3     | B4  | Text | Email  | Phone | Post | status  | MBBStatus | DeviceType |
-      | 30 Days  | Configured | 02ma49092549@stf.ref.o2.co.uk | Enabled   | CapMyBill | £30       | TEST ACCEPTA | test123  | high       | Monthly data (Low to High) | Me       | Select | Not | Select | Not | Not  | Select | Not   | Not  | Enabled | No        | Connected  |
+      | Contract | GiftBlock  | username                      | BSCstatus | BillCap   | CapAmount | Username     | password | filtername | sortoption                 | consumer | B1     | B2  | B3     | B4  | Text | Email  | Phone | Post | status  | MBBStatus | DeviceType | PreSelected |
+      | 30 Days  | Configured | 02ma49092549@stf.ref.o2.co.uk | Enabled   | CapMyBill | £30       | TEST ACCEPTA | test123  | high       | Monthly data (Low to High) | Me       | Select | Not | Select | Not | Not  | Select | Not   | Not  | Enabled | No        | Connected  | No          |

@@ -25,9 +25,9 @@ Feature: 92_Reg_Trustev_CFA_PayMPhonesHomeDeliveryWithoutAccessory
     And Continue to Agreements page and confirm all the agreement checks
     And Continue to Review page and review the order for Trustev details
     Then order confirmation is displayed
-    Then Choose <consumer> <status> Business preferences <B1> <B2> <B3> <B4> And Channel Preferences <Text> <Email> <Phone> <Post> <MBBStatus> <DeviceType>
+    Then Choose <consumer> <status> Business preferences <B1> <B2> <B3> <B4> And Channel Preferences <Text> <Email> <Phone> <Post> <MBBStatus> <DeviceType> <PreSelected>
 
     #Close the browser
     Examples:
-      | handset       | color      | Capacity | Firstname | Surname | BSCstatus | BillCap   | CapAmount         | Username     | consumer | B1     | B2  | B3     | B4  | Text   | Email  | Phone  | Post   | status  | MBBStatus | DeviceType |
-      | iPhone 8 Plus | Space Grey | 64GB     | TEST      | ACCEPTA | Enabled   | CapMyBill | DontCapMyBillLink | TEST ACCEPTA | Me       | Select | Not | Select | Not | Select | Select | Select | Select | Enabled | No        | Connected  |
+      | handset       | color      | Capacity | Firstname | Surname | BSCstatus | BillCap   | CapAmount         | Username     | consumer | B1     | B2  | B3     | B4  | Text   | Email  | Phone  | Post   | status  | MBBStatus | DeviceType | PreSelected |
+      | iPhone 8 Plus | Space Grey | 64GB     | TEST      | ACCEPTA | Enabled   | CapMyBill | DontCapMyBillLink | TEST ACCEPTA | Me       | Select | Not | Select | Not | Select | Select | Select | Select | Enabled | No        | Connected  | No          |

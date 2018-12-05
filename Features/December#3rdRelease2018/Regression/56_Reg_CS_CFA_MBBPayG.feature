@@ -17,9 +17,9 @@ Feature: 56_Reg_CS_CFA_MBBPayG
     And land on the Non Credit check payment page and input <Username> and other details and click 'Continue on next step' for GDPR
     And Continue to Review page and review the order
     Then order confirmation is displayed
-    Then Choose <consumer> <status> Business preferences <B1> <B2> <B3> <B4> And Channel Preferences <Text> <Email> <Phone> <Post> <MBBStatus> <DeviceType>
+    Then Choose <consumer> <status> Business preferences <B1> <B2> <B3> <B4> And Channel Preferences <Text> <Email> <Phone> <Post> <MBBStatus> <DeviceType> <PreSelected>
 
 
     Examples:
-      | Firstname | Surname | Username     | tariff | BSCstatus | consumer | B1     | B2  | B3  | B4  | Text   | Email | Phone | Post | status  | MBBStatus | DeviceType |
-      | TEST      | ACCEPTA | TEST ACCEPTA |        | Disabled  | Me       | Select | Not | Not | Not | Select | Not   | Not   | Not  | Enabled | No        | Connected  |
+      | Firstname | Surname | Username     | tariff | BSCstatus | consumer | B1     | B2  | B3  | B4  | Text   | Email | Phone | Post | status  | MBBStatus | DeviceType | PreSelected |
+      | TEST      | ACCEPTA | TEST ACCEPTA |        | Disabled  | Me       | Select | Not | Not | Not | Select | Not   | Not   | Not  | Enabled | No        | Connected  | No          |

@@ -34,8 +34,8 @@ Feature: 09_Reg_CFA_Phones_Colour_Dropdowns_With_ColourNames_Beside_the_Colour_M
     And Continue to Agreements page and confirm all the agreement checks
     And Continue to Review page and review the order
     Then order confirmation is displayed
-    Then Choose <consumer> <status> Business preferences <B1> <B2> <B3> <B4> And Channel Preferences <Text> <Email> <Phone> <Post> <MBBStatus> <DeviceType>
+    Then Choose <consumer> <status> Business preferences <B1> <B2> <B3> <B4> And Channel Preferences <Text> <Email> <Phone> <Post> <MBBStatus> <DeviceType> <PreSelected>
 
     Examples:
-      | handset       | Username     | Firstname | Surname | color      | consumer | BSCstatus | BillCap   | CapAmount | B1     | B2     | B3  | B4  | Text   | Email  | Phone  | Post   | status  | MBBStatus | DeviceType |
-      | iPhone 8 Plus | TEST ACCEPTA | Test      | Accepta | Space Grey | Me       | Enabled   | CapMyBill | £0        | Select | Select | Not | Not | Select | Select | Select | Select | Enabled | No        | Connected  |
+      | handset       | Username     | Firstname | Surname | color      | consumer | BSCstatus | BillCap   | CapAmount | B1     | B2     | B3  | B4  | Text   | Email  | Phone  | Post   | status  | MBBStatus | DeviceType | PreSelected |
+      | iPhone 8 Plus | TEST ACCEPTA | Test      | Accepta | Space Grey | Me       | Enabled   | CapMyBill | £0        | Select | Select | Not | Not | Select | Select | Select | Select | Enabled | No        | Connected  | No          |

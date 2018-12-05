@@ -41,8 +41,8 @@ Feature: 48_CFU_Recycle_Phones_DD_Confirmation_Page_changes
     And Continue to Review page and review the order
     Then order confirmation is displayed
     Then Verify contents of order confirmation page for Phones containing <Status>
-    Then Choose <consumer> <status> Business preferences <B1> <B2> <B3> <B4> And Channel Preferences <Text> <Email> <Phone> <Post> <MBBStatus> <DeviceType>
+    Then Choose <consumer> <status> Business preferences <B1> <B2> <B3> <B4> And Channel Preferences <Text> <Email> <Phone> <Post> <MBBStatus> <DeviceType> <PreSelected>
 
     Examples:
-      | username                      | password | BSCstatus | BillCap   | CapAmount | handset   | tariff                  | Firstname | Surname | Username     | Action | Status           | Make  | Model   | Network | consumer | B1     | B2  | B3  | B4  | Text   | Email | Phone | Post | status  | MBBStatus | DeviceType |
-      | 12oc57872873@stf.ref.o2.co.uk | test123  | Enabled   | CapMyBill | £5        | Galaxy S9 | 29.99upfront60.34amonth | TEST      | ACCEPTA | TEST ACCEPTA | skip   | Delayed Delivery | Apple | Iphone7 | Orange  | Me       | Select | Not | Not | Not | Select | Not   | Not   | Not  | Enabled | No        | Connected  |
+      | username                      | password | BSCstatus | BillCap   | CapAmount | handset   | tariff                  | Firstname | Surname | Username     | Action | Status           | Make  | Model   | Network | consumer | B1     | B2  | B3  | B4  | Text   | Email | Phone | Post | status  | MBBStatus | DeviceType | PreSelected |
+      | 12oc57872873@stf.ref.o2.co.uk | test123  | Enabled   | CapMyBill | £5        | Galaxy S9 | 29.99upfront60.34amonth | TEST      | ACCEPTA | TEST ACCEPTA | skip   | Delayed Delivery | Apple | Iphone7 | Orange  | Me       | Select | Not | Not | Not | Select | Not   | Not   | Not  | Enabled | No        | Connected  | No          |

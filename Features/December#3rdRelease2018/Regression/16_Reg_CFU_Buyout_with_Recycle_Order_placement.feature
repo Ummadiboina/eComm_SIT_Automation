@@ -44,9 +44,9 @@ Feature: 16_Reg_CFU_Buyout_with_Recycle_Order_placement
     And Continue to Agreements page and confirm all the agreement checks
     And Continue to Review page and review the order
     Then order confirmation is displayed
-    Then Choose <consumer> <status> Business preferences <B1> <B2> <B3> <B4> And Channel Preferences <Text> <Email> <Phone> <Post> <MBBStatus> <DeviceType>
+    Then Choose <consumer> <status> Business preferences <B1> <B2> <B3> <B4> And Channel Preferences <Text> <Email> <Phone> <Post> <MBBStatus> <DeviceType> <PreSelected>
 
     Examples:
-      | Tablet        | Action | Surname | Username     | BSCstatus | BillCap   | CapAmount | handset       | Delivery | Payment | filtername | sortoption                 | username               | password | consumer | B1     | B2     | B3  | B4  | Text | Email  | Phone | Post   | status  | MBBStatus | DeviceType |
-      | Random Device | skip   | ACCEPTA | TEST ACCEPTA | Enabled   | CapMyBill | £20       | iPhone 8 Plus | Delivery | Payment | low        | Monthly data (Low to High) | in01808o_751147@o2.com | test123  | Someone  | Select | Select | Not | Not | Not  | Select | Not   | Select | Enabled | No        | Connected  |
+      | Tablet        | Action | Surname | Username     | BSCstatus | BillCap   | CapAmount | handset       | Delivery | Payment | filtername | sortoption                 | username               | password | consumer | B1     | B2     | B3  | B4  | Text | Email  | Phone | Post   | status  | MBBStatus | DeviceType | PreSelected |
+      | Random Device | skip   | ACCEPTA | TEST ACCEPTA | Enabled   | CapMyBill | £20       | iPhone 8 Plus | Delivery | Payment | low        | Monthly data (Low to High) | in01808o_751147@o2.com | test123  | Someone  | Select | Select | Not | Not | Not  | Select | Not   | Select | Enabled | No        | Connected  | No          |
 

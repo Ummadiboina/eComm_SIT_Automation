@@ -32,8 +32,8 @@ Feature: 54_Reg_Consumer_TradeIn
     And verify if trade in offer is displayed under Order Summary section in <Review> page
     And Continue to Review page and review the order
     Then order confirmation is displayed
-    Then Choose <consumer> <status> Business preferences <B1> <B2> <B3> <B4> And Channel Preferences <Text> <Email> <Phone> <Post> <MBBStatus> <DeviceType>
+    Then Choose <consumer> <status> Business preferences <B1> <B2> <B3> <B4> And Channel Preferences <Text> <Email> <Phone> <Post> <MBBStatus> <DeviceType> <PreSelected>
 
     Examples:
-      | username                      | password | BSCstatus | BillCap   | CapAmount | handset  | tariff                  | OTAC | Delivery | Payment | Agreement | Review | Username     | Action    | consumer | B1     | B2  | B3     | B4  | Text | Email  | Phone | Post | status  | MBBStatus | DeviceType |
-      | dont41831567@stf.ref.o2.co.uk | test123  | Enabled   | CapMyBill | £15       | iPhone X | 19.99upfront45.00amonth | OTAC | Delivery | Payment | Agreement | Review | TEST ACCEPTA | enterCode | Me       | Select | Not | Select | Not | Not  | Select | Not   | Not  | Enabled | No        | Connected  |
+      | username                      | password | BSCstatus | BillCap   | CapAmount | handset  | tariff                  | OTAC | Delivery | Payment | Agreement | Review | Username     | Action    | consumer | B1     | B2  | B3     | B4  | Text | Email  | Phone | Post | status  | MBBStatus | DeviceType | PreSelected |
+      | dont41831567@stf.ref.o2.co.uk | test123  | Enabled   | CapMyBill | £15       | iPhone X | 19.99upfront45.00amonth | OTAC | Delivery | Payment | Agreement | Review | TEST ACCEPTA | enterCode | Me       | Select | Not | Select | Not | Not  | Select | Not   | Not  | Enabled | No        | Connected  | No          |

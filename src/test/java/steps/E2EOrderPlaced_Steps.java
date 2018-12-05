@@ -2228,7 +2228,7 @@ public class E2EOrderPlaced_Steps {
         try {
             // Write code here that turns the phrase above into concrete actions
             // driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-            Thread.sleep(20000);
+            Thread.sleep(25000);
             PageFactory.initElements(driver, AgreementPage.class);
             PageFactory.initElements(driver, ReviewPage.class);
             Thread.sleep(10000);

@@ -35,8 +35,8 @@ Feature: 11_Reg_CFA_Phones_SSC_checkout_pages_mark_mandatory_fields_with_asteris
     And Continue to Agreements page and confirm all the agreement checks
     And Continue to Review page and review the order
     Then order confirmation is displayed
-    Then Choose <consumer> <status> Business preferences <B1> <B2> <B3> <B4> And Channel Preferences <Text> <Email> <Phone> <Post> <MBBStatus> <DeviceType>
+    Then Choose <consumer> <status> Business preferences <B1> <B2> <B3> <B4> And Channel Preferences <Text> <Email> <Phone> <Post> <MBBStatus> <DeviceType> <PreSelected>
 
     Examples:
-      | handset  | tariffAmt | dataValue | color      | Firstname | Surname | consumer | BSCstatus | BillCap   | CapAmount | B1     | B2  | B3  | B4  | Text   | Email | Phone | Post | status  | MBBStatus | DeviceType |
-      | iPhone X | £39       | 8GB       | Space Grey | Test      | Accepta | Me       | Enabled   | CapMyBill | £10       | Select | Not | Not | Not | Select | Not   | Not   | Not  | Enabled | No        | Connected  |
+      | handset  | tariffAmt | dataValue | color      | Firstname | Surname | consumer | BSCstatus | BillCap   | CapAmount | B1     | B2  | B3  | B4  | Text   | Email | Phone | Post | status  | MBBStatus | DeviceType | PreSelected |
+      | iPhone X | £39       | 8GB       | Space Grey | Test      | Accepta | Me       | Enabled   | CapMyBill | £10       | Select | Not | Not | Not | Select | Not   | Not   | Not  | Enabled | No        | Connected  | No          |

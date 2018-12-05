@@ -27,10 +27,10 @@ Feature: 08_Reg_CFA_Phones_checkout_delivery_validate_10_digit_contact_number
     And Continue to Agreements page and confirm all the agreement checks
     And Continue to Review page and review the order
     When order confirmation is displayed
-    Then Choose <consumer> <status> Business preferences <B1> <B2> <B3> <B4> And Channel Preferences <Text> <Email> <Phone> <Post> <MBBStatus> <DeviceType>
+    Then Choose <consumer> <status> Business preferences <B1> <B2> <B3> <B4> And Channel Preferences <Text> <Email> <Phone> <Post> <MBBStatus> <DeviceType> <PreSelected>
 
       #Step 12 and Step 13 of ALM clubbed together
       #Close the browser
     Examples:
-      | handset        | Firstname | Surname | Username     | BSCstatus | BillCap   | CapAmount | color | consumer | B1  | B2  | B3     | B4  | Text | Email  | Phone | Post | status  | MBBStatus | DeviceType |
-      | Galaxy J3 2017 | TEST      | ACCEPTA | TEST ACCEPTA | Enabled   | CapMyBill | £5        | Black | Me       | Not | Not | Select | Not | Not  | Select | Not   | Not  | Enabled | No        | Connected  |
+      | handset        | Firstname | Surname | Username     | BSCstatus | BillCap   | CapAmount | color | consumer | B1  | B2  | B3     | B4  | Text | Email  | Phone | Post | status  | MBBStatus | DeviceType | PreSelected |
+      | Galaxy J3 2017 | TEST      | ACCEPTA | TEST ACCEPTA | Enabled   | CapMyBill | £5        | Black | Me       | Not | Not | Select | Not | Not  | Select | Not   | Not  | Enabled | No        | Connected  | No          |

@@ -4,7 +4,7 @@ Feature: 129_BSC_CFA_MBB_Edit_BSC_Component_from_Basket_Page_and_Select_Don't_Ca
 
   @Web
   Scenario Outline: 129_BSC_CFA_MBB_Edit_BSC_Component_from_Basket_Page_and_Select_Don't_Cap_My_Bill_and_Validate_Values
-  Given I am an CFA user and Lands on shop page
+    Given I am an CFA user and Lands on shop page
     And Navigate to PayM MBB page
     And I choose MBB PayM <Device_Name>
     And Navigate to device details page
@@ -30,8 +30,8 @@ Feature: 129_BSC_CFA_MBB_Edit_BSC_Component_from_Basket_Page_and_Select_Don't_Ca
     When order confirmation is displayed
     And Validate order confirmation page for applied Bill Spend Cap <NewBillCap> <NewCapAmount> when BSC is <BSCstatus>
     Then verify cover me is present in  pdf download
-    Then Choose <consumer> <status> Business preferences <B1> <B2> <B3> <B4> And Channel Preferences <Text> <Email> <Phone> <Post> <MBBStatus> <DeviceType>
+    Then Choose <consumer> <status> Business preferences <B1> <B2> <B3> <B4> And Channel Preferences <Text> <Email> <Phone> <Post> <MBBStatus> <DeviceType> <PreSelected>
 
     Examples:
-      | Device_Name   | Firstname | Surname | Username     | BillCap   | CapAmount | NewBillCap | NewCapAmount      | BSCstatus | color      | consumer | B1  | B2  | B3     | B4  | Text | Email  | Phone | Post | status  | MBBStatus | DeviceType |
-      | Random Device | TEST      | ACCEPTA | TEST ACCEPTA | CapMyBill | £5        | CapMyBill  | DontCapMyBillLink | Enabled   | Space Grey | Me       | Not | Not | Select | Not | Not  | Select | Not   | Not  | Enabled | No        | Connected  |
+      | Device_Name   | Firstname | Surname | Username     | BillCap   | CapAmount | NewBillCap | NewCapAmount      | BSCstatus | color      | consumer | B1  | B2  | B3     | B4  | Text | Email  | Phone | Post | status  | MBBStatus | DeviceType | PreSelected |
+      | Random Device | TEST      | ACCEPTA | TEST ACCEPTA | CapMyBill | £5        | CapMyBill  | DontCapMyBillLink | Enabled   | Space Grey | Me       | Not | Not | Select | Not | Not  | Select | Not   | Not  | Enabled | No        | Connected  | No          |

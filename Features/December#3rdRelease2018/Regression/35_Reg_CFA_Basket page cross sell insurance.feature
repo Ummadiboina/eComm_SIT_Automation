@@ -26,8 +26,8 @@ Feature: 35_Reg_CFA_Basket page cross sell insurance
     And Continue to Agreements page and confirm all the agreement checks
     And Continue to Review page and review the order
     When order confirmation is displayed
-    Then Choose <consumer> <status> Business preferences <B1> <B2> <B3> <B4> And Channel Preferences <Text> <Email> <Phone> <Post> <MBBStatus> <DeviceType>
+    Then Choose <consumer> <status> Business preferences <B1> <B2> <B3> <B4> And Channel Preferences <Text> <Email> <Phone> <Post> <MBBStatus> <DeviceType> <PreSelected>
 
     Examples:
-      | handset   | tariff                 | BSCstatus | BillCap   | CapAmount | consumer | B1  | B2  | B3  | B4  | Text | Email | Phone | Post | status  | MBBStatus | DeviceType | Firstname | Surname | Username     |
-      | iPhone Xs | 9.99upfront44.00amonth | Enabled   | CapMyBill | £20       | Someone  | Not | Not | Not | Not | Not  | Not   | Not   | Not  | Enabled | No        | Connected  | TEST      | ACCEPTA | TEST ACCEPTA |
+      | handset   | tariff                 | BSCstatus | BillCap   | CapAmount | consumer | B1  | B2  | B3  | B4  | Text | Email | Phone | Post | status  | MBBStatus | DeviceType | Firstname | Surname | Username     | PreSelected |
+      | iPhone Xs | 9.99upfront44.00amonth | Enabled   | CapMyBill | £20       | Someone  | Not | Not | Not | Not | Not  | Not   | Not   | Not  | Enabled | No        | Connected  | TEST      | ACCEPTA | TEST ACCEPTA | No          |

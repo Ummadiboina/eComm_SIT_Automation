@@ -31,12 +31,12 @@ Feature: 13_Reg_AFU_eComm_Promotions_and_added_Bolton_Incompatible_error_message
     # Then Click on 'Checkout' CTA and Proceed till Order placement
     And Validate all the Basket content and checkout
     Then Validate deal summary for applied Bill Spend Cap <BillCapAmount> when BSC is <BSCstatus>
-    And Choose Business preferences <B1> <B2> <B3> <B4> and Channel Preferences <Text> <Email> <Phone> <Post> for <consumer> when GDPR <status> <DeviceType> for AFU journey
+    And Choose Business preferences <B1> <B2> <B3> <B4> and Channel Preferences <Text> <Email> <Phone> <Post> for <consumer> when GDPR <status> <DeviceType> for AFU journey <PreSelected>
     Then perform all the advisory checks
     When Pay by card
     #When submit order button is clicked
     Then Order confirmation message should be displayed
 
     Examples:
-      | user        | Device               | Button | Tariffs | BSCstatus | BillCapAmount | ErrorMsg                     | Bolton | consumer | B1     | B2  | B3  | B4  | Text   | Email | Phone | Post | status  | MBBStatus | DeviceType |
-      | 07521130254 | Apple iPhone 6s 32GB | Button | Refresh | Enabled   | £15           | incompatible with each other | Bolton | Someone  | Select | Not | Not | Not | Select | Not   | Not   | Not  | Enabled | No        | Connected  |
+      | user        | Device               | Button | Tariffs | BSCstatus | BillCapAmount | ErrorMsg                     | Bolton | consumer | B1     | B2  | B3  | B4  | Text   | Email | Phone | Post | status  | MBBStatus | DeviceType |PreSelected |
+      | 07521130254 | Apple iPhone 6s 32GB | Button | Refresh | Enabled   | £15           | incompatible with each other | Bolton | Someone  | Select | Not | Not | Not | Select | Not   | Not   | Not  | Enabled | No        | Connected  |No          |
