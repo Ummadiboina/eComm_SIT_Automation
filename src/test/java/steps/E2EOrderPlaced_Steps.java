@@ -2228,7 +2228,7 @@ public class E2EOrderPlaced_Steps {
         try {
             // Write code here that turns the phrase above into concrete actions
             // driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-            Thread.sleep(20000);
+            Thread.sleep(25000);
             PageFactory.initElements(driver, AgreementPage.class);
             PageFactory.initElements(driver, ReviewPage.class);
             Thread.sleep(10000);
@@ -3853,9 +3853,9 @@ public class E2EOrderPlaced_Steps {
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         try {
             PageFactory.initElements(driver, PaymentPage.class);
-            Thread.sleep(2000);
+            Thread.sleep(32000);
             PaymentPageActions.Time_At_Address();
-            Thread.sleep(10000);
+            Thread.sleep(15000);
             PaymentPageActions.Card_Details(Username);
             Thread.sleep(15000);
             PaymentPageActions.Card_Details_CCV();

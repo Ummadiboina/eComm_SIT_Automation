@@ -23,8 +23,8 @@ Feature: 76_Reg_FNT_DifferentStoreAddressthanBillingAddres
     And Continue to Agreements page and confirm all the agreement checks
     And Continue to Review page and review the order
     Then order confirmation is displayed
-    Then Choose <consumer> <status> Business preferences <B1> <B2> <B3> <B4> And Channel Preferences <Text> <Email> <Phone> <Post> <MBBStatus> <DeviceType>
+    Then Choose <consumer> <status> Business preferences <B1> <B2> <B3> <B4> And Channel Preferences <Text> <Email> <Phone> <Post> <MBBStatus> <DeviceType> <PreSelected>
 
     Examples:
-      | handset       | color      | Capacity | Firstname | BSCstatus | BillCap       | CapAmount | Surname | Username     | consumer | B1     | B2  | B3     | B4  | Text   | Email | Phone | Post   | status  | MBBStatus | DeviceType |
-      | iPhone 8 Plus | Space Grey | 64GB     | TEST      | Enabled   | DontCapMyBill | Nill      | ACCEPTA | TEST ACCEPTA | Me       | Select | Not | Select | Not | Select | Not   | Not   | Select | Enabled | No        | Connected  |
+      | handset       | color      | Capacity | Firstname | BSCstatus | BillCap       | CapAmount | Surname | Username     | consumer | B1     | B2  | B3     | B4  | Text   | Email | Phone | Post   | status  | MBBStatus | DeviceType | PreSelected |
+      | iPhone 8 Plus | Space Grey | 64GB     | TEST      | Enabled   | DontCapMyBill | Nill      | ACCEPTA | TEST ACCEPTA | Me       | Select | Not | Select | Not | Select | Not   | Not   | Select | Enabled | No        | Connected  | No          |

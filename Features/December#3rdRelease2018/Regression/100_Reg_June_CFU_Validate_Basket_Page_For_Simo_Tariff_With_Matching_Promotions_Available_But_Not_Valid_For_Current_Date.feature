@@ -20,8 +20,8 @@ Feature: 100_Reg_June_CFU_Validate_Basket_Page_For_Simo_Tariff_With_Matching_Pro
     And Is this order for You or Someone else <consumer> when GDPR is <status>
     #And Click on 'Place your order' CTA
     Then order confirmation is displayed
-    Then Choose <consumer> <status> Business preferences <B1> <B2> <B3> <B4> And Channel Preferences <Text> <Email> <Phone> <Post> <MBBStatus> <DeviceType>
+    Then Choose <consumer> <status> Business preferences <B1> <B2> <B3> <B4> And Channel Preferences <Text> <Email> <Phone> <Post> <MBBStatus> <DeviceType> <PreSelected>
 
     Examples:
-      | username                      | tariffAmt | dataValue | promoCode | password | Username     | BSCstatus | BillCap   | CapAmount | consumer | B1     | B2  | B3     | B4  | Text   | Email  | Phone | Post | status  | MBBStatus | DeviceType |
-      | 16fe87427757@stf.ref.o2.co.uk | £15       | 5GB       | promoCode | test123  | TEST ACCEPTA | Enabled   | CapMyBill | £30       | Me       | Select | Not | Select | Not | Select | Select | Not   | Not  | Enabled | No        | Connected  |
+      | username                      | tariffAmt | dataValue | promoCode | password | Username     | BSCstatus | BillCap   | CapAmount | consumer | B1     | B2  | B3     | B4  | Text   | Email  | Phone | Post | status  | MBBStatus | DeviceType | PreSelected |
+      | 16fe87427757@stf.ref.o2.co.uk | £15       | 5GB       | promoCode | test123  | TEST ACCEPTA | Enabled   | CapMyBill | £30       | Me       | Select | Not | Select | Not | Select | Select | Not   | Not  | Enabled | No        | Connected  | No          |

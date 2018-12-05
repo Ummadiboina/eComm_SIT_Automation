@@ -25,7 +25,7 @@ public class Agent_DealBuilderPageActions extends Environment {
     final static Logger log = Logger.getLogger("Agent_DealBuilderPageActions");
     public static ArrayList deviceNames;
     public static ArrayList DevicesAndTariffs;
-    public  static ArrayList lstOfDeviceAdded_DB;
+    public static ArrayList lstOfDeviceAdded_DB;
     public static String upFrontCost;
     public static String totalCostPerMonth;
 
@@ -73,12 +73,12 @@ public class Agent_DealBuilderPageActions extends Environment {
             Thread.sleep(5000);
             log.debug("Selected Random Tariff ");
             Screenshots.captureScreenshot();
-        }else if (Tariff.contains("Standard")) {
+        } else if (Tariff.contains("Standard")) {
             Agent_DealBuilderPage.SearchTextBox_Tariff.sendKeys("Standard");
             Agent_DealBuilderPage.SelectingFirstAvailableTariff.click();
             Thread.sleep(5000);
             log.debug("Selected Random Tariff ");
-        }else if (Tariff.contains("Simo")) {
+        } else if (Tariff.contains("Simo")) {
             Agent_DealBuilderPage.SearchTextBox_Tariff.sendKeys("- / Simo");
             Thread.sleep(3000);
             //Agent_DealBuilderPage.SearchTextBox_Tariff.sendKeys("Simo");
@@ -86,14 +86,14 @@ public class Agent_DealBuilderPageActions extends Environment {
             Thread.sleep(5000);
             log.debug("Selected Random SimO Tariff ");
 
-        }else if (Tariff.contains("Refresh")) {
+        } else if (Tariff.contains("Refresh")) {
             Agent_DealBuilderPage.SearchTextBox_Tariff.sendKeys("Refresh");
             Thread.sleep(3000);
             Agent_DealBuilderPage.SelectingFirstAvailableTariff.click();
             Thread.sleep(5000);
             log.debug("Selected Refresh Tariff ");
 
-        }else if (Tariff.contains("Base")) {
+        } else if (Tariff.contains("Base")) {
             ////////////////////////////// Basecomms
             ////////////////////////////// Tariff//////////////////////////////////////
             Agent_DealBuilderPage.SearchTextBox_Tariff.sendKeys("Base");
@@ -102,7 +102,7 @@ public class Agent_DealBuilderPageActions extends Environment {
             Thread.sleep(3000);
             log.debug("Selected Random Basecomms Tariff ");
 
-        }else{
+        } else {
             Agent_DealBuilderPage.SearchTextBox_Tariff.sendKeys(Tariff);
             Thread.sleep(3000);
             Agent_DealBuilderPage.SelectingFirstAvailableTariff.click();
@@ -116,12 +116,12 @@ public class Agent_DealBuilderPageActions extends Environment {
     /////////////////////////////////// validation//////////////////////////////////
 
     public static void BasecommsAgentOffersColumnValidation() throws InterruptedException, IOException {
-    Thread.sleep(8000);
+        Thread.sleep(8000);
         Screenshots.captureScreenshot();
         List<WebElement> menuOuter = driver.findElements(By.xpath("//*[@id='planTable']/tbody/tr"));
         log.debug(menuOuter.size());
         int j = 1;
-        for (int i = 0; i < menuOuter.size()-1; i++) {
+        for (int i = 0; i < menuOuter.size() - 1; i++) {
             j = i + 1;
             if (menuOuter.get(i).getText().trim().contains("Base Comms")) {
                 if (driver.findElement(By.xpath("//*[@id='planTable']/tbody/tr[" + j + "]/td[11]")).getText().equalsIgnoreCase("Base Comms")) {
@@ -144,7 +144,7 @@ public class Agent_DealBuilderPageActions extends Environment {
         try {
             Thread.sleep(3000);
             log.debug("Tariff Name: " + driver.findElement(By.xpath("//*[@id='planTable']/tbody/tr[1]/td[6]")).getText());
-                if (driver.findElement(By.xpath("//*[@id='planTable']/tbody/tr[1]/td[6]")).getText().equals("Standard")) {
+            if (driver.findElement(By.xpath("//*[@id='planTable']/tbody/tr[1]/td[6]")).getText().equals("Standard")) {
                 log.debug("Selected Tariff is a Standard Tariff hence Handset Tariff combination is not required");
             } else {
 
@@ -157,12 +157,12 @@ public class Agent_DealBuilderPageActions extends Environment {
 
                 String priceCombinationLastItem = driver.findElement(By.xpath("(//*[@class='priceSelection']/select/option)[" + menuOuter.size() + "]")).getText();
 
-                if(priceCombinationLastItem.contains("Build tariff")){
-                    log.debug("Build tariff option is present in the price dropdown menu ie :: "+ priceCombinationLastItem);
-                    int selectSize=menuOuter.size()-1;
+                if (priceCombinationLastItem.contains("Build tariff")) {
+                    log.debug("Build tariff option is present in the price dropdown menu ie :: " + priceCombinationLastItem);
+                    int selectSize = menuOuter.size() - 1;
                     driver.findElement(By.xpath("(//*[@class='priceSelection']/select/option)[" + selectSize + "]")).click();
                     log.debug("Selected Option : " + driver.findElement(By.xpath("(//*[@class='priceSelection']/select/option)[" + selectSize + "]")).getText());
-                }else{
+                } else {
                     driver.findElement(By.xpath("(//*[@class='priceSelection']/select/option)[" + menuOuter.size() + "]")).click();
                     log.debug("Selected Option : " + driver.findElement(By.xpath("(//*[@class='priceSelection']/select/option)[" + menuOuter.size() + "]")).getText());
                 }
@@ -192,8 +192,8 @@ public class Agent_DealBuilderPageActions extends Environment {
                 for (int i = 0; i < menuOuter.size(); i++) {
                     log.debug("Option " + i + " is: " + menuOuter.get(i).getText());
                 }
-                    driver.findElement(By.xpath("(//*[@class='priceSelection']/select/option[2])")).click();
-                    log.debug("Selected Option : "+driver.findElement(By.xpath("(//*[@class='priceSelection']/select/option[2])")).getText());
+                driver.findElement(By.xpath("(//*[@class='priceSelection']/select/option[2])")).click();
+                log.debug("Selected Option : " + driver.findElement(By.xpath("(//*[@class='priceSelection']/select/option[2])")).getText());
 
                 log.debug("Selected combination of handset and talk plan");
                 Thread.sleep(5000);
@@ -269,8 +269,7 @@ public class Agent_DealBuilderPageActions extends Environment {
             log.debug("searched iPhone 7 Plus 128GB Jet Black");
             log.debug("Clicked on SearchTextBox to enter" + Device);
             Thread.sleep(3000);
-        }
-        else if (Device.contains("iPhone 6s 32GB Gold")) {
+        } else if (Device.contains("iPhone 6s 32GB Gold")) {
             log.debug("searching iPhone 6s 32GB Gold");
 
             // pageobjects.Agent_DealBuilderPage.prepayDeviceTableFilter.click();
@@ -281,7 +280,7 @@ public class Agent_DealBuilderPageActions extends Environment {
             log.debug("searched iPhone 6s 32GB Gold");
             log.debug("Clicked on SearchTextBox to enter" + Device);
             Thread.sleep(3000);
-        }else if(Device.contains("Galaxy Tab S3 9.7")){
+        } else if (Device.contains("Galaxy Tab S3 9.7")) {
             log.debug("searching Galaxy Tab S3 9.7");
 
             // pageobjects.Agent_DealBuilderPage.prepayDeviceTableFilter.click();
@@ -292,8 +291,8 @@ public class Agent_DealBuilderPageActions extends Environment {
             log.debug("searched iPhone 6s 32GB Gold");
             log.debug("Clicked on SearchTextBox to enter" + Device);
             Thread.sleep(3000);
-        }else{
-            log.debug("searching " +Device);
+        } else {
+            log.debug("searching " + Device);
 
             // pageobjects.Agent_DealBuilderPage.prepayDeviceTableFilter.click();
             Agent_DealBuilderPage.SearchTextBox_PrepayDevice.sendKeys(Device);
@@ -390,7 +389,7 @@ public class Agent_DealBuilderPageActions extends Environment {
         Thread.sleep(3000);
         //String str1 = Agent_DealBuilderPage.dealBuilderContent.getText();
         log.debug("Validated Basket page");
-                Screenshots.captureScreenshot();
+        Screenshots.captureScreenshot();
     }
 
     public static void checkout() throws InterruptedException, IOException {
@@ -404,9 +403,9 @@ public class Agent_DealBuilderPageActions extends Environment {
 
     public static void validateCheckout() throws InterruptedException, IOException {
         Thread.sleep(3000);
-        if(Agent_DealBuilderPage.Checkout.isEnabled()) {
+        if (Agent_DealBuilderPage.Checkout.isEnabled()) {
             log.debug("Checkout is enabled");
-        }else{
+        } else {
             log.debug("Checkout is disabled");
         }
 
@@ -415,9 +414,9 @@ public class Agent_DealBuilderPageActions extends Environment {
 
     public static void checkoutEnabledDisabled() throws InterruptedException, IOException {
         Thread.sleep(3000);
-        if(Agent_DealBuilderPage.Checkout.isEnabled()){
+        if (Agent_DealBuilderPage.Checkout.isEnabled()) {
             log.debug("Checkout CTA is enabled\n");
-        }else {
+        } else {
             log.debug("Checkout CTA is disabled\n");
         }
         Screenshots.captureScreenshot();
@@ -461,10 +460,10 @@ public class Agent_DealBuilderPageActions extends Environment {
         Thread.sleep(5000);
         Screenshots.captureScreenshot();
 
-		/*
+        /*
          * String text = Agent_DealBuilderPage.emailConfirmation.getText();
-		 * Assert.assertEquals(text, "Email sent successfully");
-		 */
+         * Assert.assertEquals(text, "Email sent successfully");
+         */
         // driver.close();
 
     }
@@ -525,10 +524,10 @@ public class Agent_DealBuilderPageActions extends Environment {
     public static void verifyIncompatibleErrror(String strError) throws IOException, InterruptedException {
         Thread.sleep(3000);
         try {
-            if(driver.findElements(By.xpath("//*[@id='incomaptibleError']")).size()>0) {
+            if (driver.findElements(By.xpath("//*[@id='incomaptibleError']")).size() > 0) {
                 String errorMessage = pageobjects.Agent_DealBuilderPage.incomaptibleError.getText();
-                log.debug("InCompatible Error Message after adding bolton is: "+errorMessage);
-            }else{
+                log.debug("InCompatible Error Message after adding bolton is: " + errorMessage);
+            } else {
                 log.debug("There is no incompatible error Message after adding bolton is");
             }
         } catch (Exception e) {
@@ -597,11 +596,11 @@ public class Agent_DealBuilderPageActions extends Environment {
             driver.switchTo().window(Mainwindow1);
             Thread.sleep(5000);
 
-            if(driver.findElements(By.xpath("//*[@id='dealBuilderContent']/div[@class='basketContents']/div[@class='lineItemContainer']/table[@class='lineItemTable discounts']/tbody/tr[@id='TRADEIN_']/td[@class='lineItemDescription']/p[4]/input[@id='tradeInHomeDeliveryCheckbox']")).size()>0) {
+            if (driver.findElements(By.xpath("//*[@id='dealBuilderContent']/div[@class='basketContents']/div[@class='lineItemContainer']/table[@class='lineItemTable discounts']/tbody/tr[@id='TRADEIN_']/td[@class='lineItemDescription']/p[4]/input[@id='tradeInHomeDeliveryCheckbox']")).size() > 0) {
                 //JavascriptExecutor executor = (JavascriptExecutor) driver;
                 executor.executeScript("arguments[0].click();", Agent_DealBuilderPage.TradeInCheckBox);
             }
-                Screenshots.captureScreenshot();
+            Screenshots.captureScreenshot();
 
             // Agent_DealBuilderPage.TradeInCheckboxText.click();
             // Agent_DealBuilderPage.TradeInCheckBox.click();
@@ -626,13 +625,13 @@ public class Agent_DealBuilderPageActions extends Environment {
     public static void AgentBuyOut() throws InterruptedException, IOException {
         Thread.sleep(3000);
         Screenshots.captureScreenshot();
-        if(Agent_DealBuilderPage.AgentBuyOut_Button.isDisplayed()) {
+        if (Agent_DealBuilderPage.AgentBuyOut_Button.isDisplayed()) {
             log.debug("The Buy Out Questionair is displayed");
             Agent_DealBuilderPage.AgentBuyOut_Button.click();
             Screenshots.captureScreenshot();
         }
         Thread.sleep(7000);
-        if(Agent_DealBuilderPage.Checkout.isDisplayed()) {
+        if (Agent_DealBuilderPage.Checkout.isDisplayed()) {
             log.debug("Deal Builder is displayed");
             Agent_DealBuilderPage.Checkout.click();
             Screenshots.captureScreenshot();
@@ -721,11 +720,11 @@ public class Agent_DealBuilderPageActions extends Environment {
                 String collectionDetails = Agent_DealBuilderPage.collectionDetails.getText();
                 Thread.sleep(2000);
 
-                if(collectionDetails.contains("Today")){
-                    log.debug("Device is available for click and collect now in provided store, status is:: " + collectionDetails+"\n");
-                }else{
-                    log.debug("Device is not available for click and collect now in provided store, status is:: " + collectionDetails+"\n");
-                    Assert.fail("Device is not available for click and collect now in provided store, status is:: " + collectionDetails+"\n");
+                if (collectionDetails.contains("Today")) {
+                    log.debug("Device is available for click and collect now in provided store, status is:: " + collectionDetails + "\n");
+                } else {
+                    log.debug("Device is not available for click and collect now in provided store, status is:: " + collectionDetails + "\n");
+                    Assert.fail("Device is not available for click and collect now in provided store, status is:: " + collectionDetails + "\n");
                 }
 
                 /*JavascriptExecutor jse = (JavascriptExecutor) driver;
@@ -764,9 +763,9 @@ public class Agent_DealBuilderPageActions extends Environment {
     //Remove Bolton
     public static void removeBolton() {
         try {
-                Agent_DealBuilderPage.removeBolton.isDisplayed();
-                log.debug(" Bolton is removed from the the builder ");
-                Screenshots.captureScreenshot();
+            Agent_DealBuilderPage.removeBolton.isDisplayed();
+            log.debug(" Bolton is removed from the the builder ");
+            Screenshots.captureScreenshot();
         } catch (Exception e) {
             // TODO Auto-generated catch block
             log.debug("Bolton removing is not done");
@@ -884,6 +883,7 @@ public class Agent_DealBuilderPageActions extends Environment {
         Screenshots.captureScreenshot();
 
     }
+
     public static void ClickPlusaccordion() throws InterruptedException, IOException {
         Agent_DealBuilderPage.PlusButton.click();
         System.out.println("Clicked on Plus button");
@@ -891,9 +891,9 @@ public class Agent_DealBuilderPageActions extends Environment {
         Thread.sleep(3000);
         Screenshots.captureScreenshot();
     }
-    
-    
-     /********************************************************
+
+
+    /********************************************************
      * Shubhashree
      */
 
@@ -933,14 +933,13 @@ public class Agent_DealBuilderPageActions extends Environment {
                 int i;
 
                 outerloop:
-                for (i = 0; i < stockStatus.size()-1; i++){
+                for (i = 0; i < stockStatus.size() - 1; i++) {
                     if (stockStatus.get(i).getText().trim().contains("Out of stock")) {
 
                         i++;
                         break;
-                    }
-                    else if (stockStatus.get(i).getText().trim().contains("In stock")){
-                        driver.findElement(By.xpath("//table[@id='smartTechDeviceTable']/tbody/tr["+i+"]/td/a/img")).click();
+                    } else if (stockStatus.get(i).getText().trim().contains("In stock")) {
+                        driver.findElement(By.xpath("//table[@id='smartTechDeviceTable']/tbody/tr[" + i + "]/td/a/img")).click();
                         flag = true;
                         break outerloop;
                     }
@@ -953,7 +952,7 @@ public class Agent_DealBuilderPageActions extends Environment {
             Thread.sleep(3000);
 
         }
-        if(flag == false){
+        if (flag == false) {
             driver.findElement(By.xpath("//*[@id='smartTechDeviceTable_filter']/label/a")).click();
             System.out.println("searching In Stock Smart Tech Device");
             Agent_DealBuilderPage.SearchTextBox_SmartTechDevice.sendKeys("In Stock");
@@ -967,7 +966,6 @@ public class Agent_DealBuilderPageActions extends Environment {
     }
 
 
-
     public static Hashtable getSelectedProducts() throws InterruptedException {
         Hashtable selectedElements = new Hashtable();
         deviceNames = new ArrayList();
@@ -977,9 +975,9 @@ public class Agent_DealBuilderPageActions extends Environment {
         for (int i = 0, j = 1; i < elementsList.size() - 1; i++, j++) {
             // elementsList.get(i).click();
             WebElement addedDeviveName = driver.findElement(By.xpath("(//a[@class='basketHeading'])[" + j + "]"));
-            if(addedDeviveName.getText().contains("empty")) {
+            if (addedDeviveName.getText().contains("empty")) {
                 System.out.println("the device is added as empty");
-            }else{
+            } else {
                 lstOfDeviceAdded_DB.add(addedDeviveName.getText());
             }
 
@@ -1001,7 +999,7 @@ public class Agent_DealBuilderPageActions extends Environment {
                 Thread.sleep(2000);
 
                 selectedElements.put(dNaame, tariffName);
-            } else{
+            } else {
 
                 continue;
             }
@@ -1011,8 +1009,7 @@ public class Agent_DealBuilderPageActions extends Environment {
     }
 
 
-
-    public static void validateEmailBasketPopupDeviceList (Hashtable DeviceList){
+    public static void validateEmailBasketPopupDeviceList(Hashtable DeviceList) {
 
         ArrayList DealBuilderDeviceList = new ArrayList<String>();
         DealBuilderDeviceList = (ArrayList) DeviceList.get("DEVICES");
@@ -1039,36 +1036,36 @@ public class Agent_DealBuilderPageActions extends Environment {
         }
     }
 
-    public static void verifyDevive_and_CopyClipboard_Btn () {
+    public static void verifyDevive_and_CopyClipboard_Btn() {
         try {
             //list of the devices which are selected at the deal builder page
             //int lstOfDeviceAddedInBuilder = lstOfDeviceAdded_DB.size();
             //CommonActions.switchToWindow();
-            String mainWindowHandle = driver.getWindowHandle ();
+            String mainWindowHandle = driver.getWindowHandle();
 
-            String childWindowpopUp="";
+            String childWindowpopUp = "";
             try {
                 //String mainWindowHandle = driver.getWindowHandle ();
                 //Switch to child window and close it
-                for (String childWindowHandle : driver.getWindowHandles ()) {
+                for (String childWindowHandle : driver.getWindowHandles()) {
                     //If window handle is not main window handle then close it
-                    if (!childWindowHandle.equals (mainWindowHandle)) {
-                        driver.switchTo ().window (childWindowHandle);
+                    if (!childWindowHandle.equals(mainWindowHandle)) {
+                        driver.switchTo().window(childWindowHandle);
 
-                        childWindowpopUp=driver.getWindowHandle ();
+                        childWindowpopUp = driver.getWindowHandle();
 
                         System.out.println(" Driver is Switch to Child Window");
                         log.info(" Driver is Switch to Child Window");
                     } else {
                         //switch back to main window
-                        driver.switchTo ().window (mainWindowHandle);
+                        driver.switchTo().window(mainWindowHandle);
                         System.out.println(" Driver is still stands in Main Window");
                         log.info(" Driver is still stands in Main Window");
                     }
                 }
-            } catch (Exception e){
-                System.out.println ("Failed to switch to window :: " + e.getStackTrace ());
-                log.info("Failed to switch to window :: " + e.getStackTrace ());
+            } catch (Exception e) {
+                System.out.println("Failed to switch to window :: " + e.getStackTrace());
+                log.info("Failed to switch to window :: " + e.getStackTrace());
 
             }
 
@@ -1167,7 +1164,7 @@ public class Agent_DealBuilderPageActions extends Environment {
                     }
                     Thread.sleep(5000);
                     //CommonActions.switchToWindow();
-                    driver.switchTo ().window (childWindowpopUp);
+                    driver.switchTo().window(childWindowpopUp);
                 }
             }
             driver.close();
@@ -1183,7 +1180,7 @@ public class Agent_DealBuilderPageActions extends Environment {
     public static void ValidateBillSpendCap_AgentDealBuilder(String BSCstatus) throws IOException {
         try {
 
-            if(BSCstatus.equalsIgnoreCase("Enabled")) {
+            if (BSCstatus.equalsIgnoreCase("Enabled")) {
                 if (driver.findElements(By.xpath("(//th[contains(text(),'Spend cap')])[1]")).size() > 0) {
 
                     log.debug("Bill spend cap section is enabled");
@@ -1201,19 +1198,19 @@ public class Agent_DealBuilderPageActions extends Environment {
                     }*/
 
                     //Spend cap overlay icon
-                    if(driver.findElements(By.xpath("//a[@id='billSpendCapOverlay']")).size()>0) {
+                    if (driver.findElements(By.xpath("//a[@id='billSpendCapOverlay']")).size() > 0) {
                         log.debug("BSC overlay icon is present and clicking on it");
                         Agent_DealBuilderPage.BSCoverlayIcon.click();
                         log.debug("BSC overlay icon is clicked");
                         Thread.sleep(3000);
                         Screenshots.captureScreenshot();
-                        String overlayText =Agent_DealBuilderPage.BSCoverlayText.getText();
+                        String overlayText = Agent_DealBuilderPage.BSCoverlayText.getText();
                         Thread.sleep(3000);
-                        log.debug("BSC overlay text is: "+overlayText);
+                        log.debug("BSC overlay text is: " + overlayText);
                         log.debug("\n BSC overlay is closing now");
                         Agent_DealBuilderPage.BSCoverlayClosed.click();
                         log.debug("\n BSC overlay is closed");
-                    }else{
+                    } else {
                         log.debug("BSC overlay icon is not present");
                         Assert.fail("BSC overlay icon is not present");
                     }
@@ -1227,17 +1224,17 @@ public class Agent_DealBuilderPageActions extends Environment {
                         log.debug("Cap Option " + i + " is: " + menuOuter.get(i).getText());
                     }
                     Thread.sleep(3000);
-                    if(driver.findElements(By.xpath("//span[@class='selectedBillSpendCap']")).size()>0) {
+                    if (driver.findElements(By.xpath("//span[@class='selectedBillSpendCap']")).size() > 0) {
                         String BillCapStatus = pageobjects.Agent_DealBuilderPage.BillSpendCapMessage.getText();
                         Thread.sleep(2000);
                         log.debug("Bill Spend Status message before selecting bill cap:: " + BillCapStatus);
                     }
 
                     //Checkout CTA status before selecting BSC bolton
-                    if(Agent_DealBuilderPage.Checkout.isEnabled()) {
+                    if (Agent_DealBuilderPage.Checkout.isEnabled()) {
                         log.debug("Checkout is enabled before selecting BSC bolton");
                         Assert.fail("Checkout is enabled before selecting BSC bolton");
-                    }else{
+                    } else {
                         log.debug("As expected Checkout is disabled before selecting BSC bolton");
                     }
 
@@ -1247,14 +1244,14 @@ public class Agent_DealBuilderPageActions extends Environment {
                     Assert.fail("Bill Spend Cap section is not displayed under deal builder section");
                     Screenshots.captureScreenshot();
                 }
-            }else if(BSCstatus.equalsIgnoreCase("Disabled")){
+            } else if (BSCstatus.equalsIgnoreCase("Disabled")) {
                 if (driver.findElements(By.xpath("(//th[contains(text(),'Spend cap')])[1]")).size() > 0) {
                     log.debug("Bill spend cap section is enabled it suppose to be in disabled status");
                     Assert.fail("Bill spend cap section is enabled it suppose to be in disabled status");
-                }else{
+                } else {
                     log.debug("As expected, Bill spend cap section is disabled\n");
                 }
-            }else {
+            } else {
                 System.out.println("Unable to validate bill spend cap section \n");
                 log.debug("Unable to validate bill spend cap section \n");
                 Assert.fail("Unable to validate bill spend cap section \n");
@@ -1268,12 +1265,12 @@ public class Agent_DealBuilderPageActions extends Environment {
     }
 
     //Jamal----choose a valid Bill Cap Amount in agent-----
-    public static void  addBillSpendCap_AgentDealBuilder(String BillCapAmount, String BSCstatus) throws IOException {
+    public static void addBillSpendCap_AgentDealBuilder(String BillCapAmount, String BSCstatus) throws IOException {
         try {
             String BillCap = "";
-            int cnt=0;
+            int cnt = 0;
 
-            if(BSCstatus.equalsIgnoreCase("Enabled")) {
+            if (BSCstatus.equalsIgnoreCase("Enabled")) {
                 if (driver.findElements(By.xpath("(//th[contains(text(),'Spend cap')])[1]")).size() > 0) {
 
                     log.debug("Bill spend cap section is enabled");
@@ -1305,7 +1302,7 @@ public class Agent_DealBuilderPageActions extends Environment {
                     Screenshots.captureScreenshot();
 
                     //status message validation
-                    if(BillCapAmount.equalsIgnoreCase("No Spend Cap")){
+                    if (BillCapAmount.equalsIgnoreCase("No Spend Cap")) {
                         Thread.sleep(3000);
                         if (BillCapStatus.contains("No spend cap applied")) {
                             log.debug("Bill Spend Status message after selecting No bill cap:: " + BillCapStatus);
@@ -1315,7 +1312,7 @@ public class Agent_DealBuilderPageActions extends Environment {
                             Assert.fail("Status message after selecting No bill cap does not matching :: " + BillCapStatus);
                         }
 
-                    }else {
+                    } else {
                         Thread.sleep(3000);
                         if (BillCapStatus.contains(BillCapAmount)) {
                             log.debug("Bill Spend Status message after selecting bill cap:: " + BillCapStatus);
@@ -1340,14 +1337,14 @@ public class Agent_DealBuilderPageActions extends Environment {
                     Assert.fail("Not able to select your Bill Spend Cap");
                     Screenshots.captureScreenshot();
                 }
-            }else if(BSCstatus.equalsIgnoreCase("Disabled")){
+            } else if (BSCstatus.equalsIgnoreCase("Disabled")) {
                 if (driver.findElements(By.xpath("(//th[contains(text(),'Spend cap')])[1]")).size() > 0) {
                     log.debug("Bill spend cap section is enabled it suppose to be disabled for disable status");
                     Assert.fail("Bill spend cap section is enabled it suppose to be disabled for disable status");
-                }else{
+                } else {
                     log.debug("As expected, Bill spend cap section is disabled");
                 }
-            }else {
+            } else {
                 System.out.println("Unable to validate bill spend cap section \n");
                 log.debug("Unable to validate bill spend cap section \n");
                 Assert.fail("Unable to validate bill spend cap section \n");
@@ -1363,10 +1360,10 @@ public class Agent_DealBuilderPageActions extends Environment {
     public static void verify_BSC_Bolton_PresentOrNotInAgentExtraTab() throws InterruptedException, IOException {
 
         Thread.sleep(3000);
-        if(driver.findElements(By.xpath("//*[normalize-space()='Spend cap']")).size()>0){
+        if (driver.findElements(By.xpath("//*[normalize-space()='Spend cap']")).size() > 0) {
             log.debug("Bill Spend Cap Bolton is available in extra tab");
             Assert.fail("Bill Spend Cap Bolton is available in extra tab");
-        }else{
+        } else {
             log.debug("As expected Bill Spend Cap Bolton is not available in extra tab");
         }
         Screenshots.captureScreenshot();
@@ -1376,10 +1373,10 @@ public class Agent_DealBuilderPageActions extends Environment {
     //Validating your bill cap in Basket page
     public static void ValidateAppliedBillSpendCapInAgentDealSummary(String BillCapAmount, String BSCstatus) throws InterruptedException {
         Thread.sleep(6000);
-        String AppliedBillCap="";
+        String AppliedBillCap = "";
         String pageTitle = driver.getTitle();
         try {
-            if(BSCstatus.equalsIgnoreCase("Enabled")) {
+            if (BSCstatus.equalsIgnoreCase("Enabled")) {
                 if (driver.findElements(By.xpath("(//th[contains(text(),'Spend cap')])[1]")).size() > 0) {
 
                     log.debug("Bill spend cap section is displayed");
@@ -1398,7 +1395,7 @@ public class Agent_DealBuilderPageActions extends Environment {
                     }*/
 
                     //status message validation
-                    if(BillCapAmount.equalsIgnoreCase("No Spend Cap")){
+                    if (BillCapAmount.equalsIgnoreCase("No Spend Cap")) {
                         Thread.sleep(3000);
                         if (AppliedBillCap.contains("No spend cap applied")) {
                             log.debug("Bill Spend Status message after selecting No bill cap:: " + AppliedBillCap);
@@ -1408,7 +1405,7 @@ public class Agent_DealBuilderPageActions extends Environment {
                             Assert.fail("Status message after selecting No bill cap does not matching :: " + AppliedBillCap);
                         }
 
-                    }else {
+                    } else {
                         Thread.sleep(3000);
                         if (AppliedBillCap.contains(BillCapAmount)) {
                             log.debug("Bill Spend Status message after selecting bill cap:: " + AppliedBillCap);
@@ -1423,51 +1420,50 @@ public class Agent_DealBuilderPageActions extends Environment {
                     log.debug("Bill cap section is not present under deal summary section in " + pageTitle + " page");
                     Assert.fail("Bill cap section is not present under deal summary section in " + pageTitle + " page");
                 }
-            }else if(BSCstatus.equalsIgnoreCase("Disabled")){
+            } else if (BSCstatus.equalsIgnoreCase("Disabled")) {
                 if (driver.findElements(By.xpath("(//th[contains(text(),'Spend cap')])[1]")).size() > 0) {
                     log.debug("Bill spend cap section is enabled it suppose to be in disabled status in " + pageTitle + " page");
                     Assert.fail("Bill spend cap section is enabled it suppose to be in disabled status in " + pageTitle + " page");
-                }else{
+                } else {
                     log.debug("As expected, Bill spend cap section is disabled in " + pageTitle + " page");
                 }
-            }else {
+            } else {
                 System.out.println("Unable to validate bill spend cap section in " + pageTitle + " page for invalid status\n");
                 log.debug("Unable to validate bill spend cap section in " + pageTitle + " page for invalid status\n");
                 Assert.fail("Unable to validate bill spend cap section in " + pageTitle + " page for invalid status\n");
             }
-        }catch(Exception e){
+        } catch (Exception e) {
             log.debug("Unable to validate Bill cap section in " + pageTitle + " page is:: " + e);
             Assert.fail("Unable to validate Bill cap section in " + pageTitle + " page is:: " + e);
         }
     }
-    
+
     /*********************************************************************************************************************************************************************
-       * validation    : To validate the flexible refresh (ITFD - 466)                                                                                                 *
-       * Created by    : Venkata                                                                                                                                       *
-       * Created date  : 02/08/18     - August Release                                                                                                                 *
-       * Modified by/date :                                                                                                                                            *
-       * Reason to change:                                                                                                                                             *
+     * validation    : To validate the flexible refresh (ITFD - 466)                                                                                                 *
+     * Created by    : Venkata                                                                                                                                       *
+     * Created date  : 02/08/18     - August Release                                                                                                                 *
+     * Modified by/date :                                                                                                                                            *
+     * Reason to change:                                                                                                                                             *
      **********************************************************************************************************************************************************************/
-    public static void buildTariff_DealBuilder_Agent(String buildTariff){
-        try{
-        log.info("Entered int to method - buildTariff_DealBuilder_Agent");
-        //CommonActions.clickWebElement(Agent_DealBuilderPage.priceSection);
-        //CommonActions.selectValueFromDropDown(Agent_DealBuilderPage.priceSection,null,null,buildTariff);
+    public static void buildTariff_DealBuilder_Agent(String buildTariff) {
+        try {
+            log.info("Entered int to method - buildTariff_DealBuilder_Agent");
+            //CommonActions.clickWebElement(Agent_DealBuilderPage.priceSection);
+            //CommonActions.selectValueFromDropDown(Agent_DealBuilderPage.priceSection,null,null,buildTariff);
 
 
+            log.info("From pricing section Selected Tariff - " + buildTariff);
+            CommonActions.driverWait(3000);
 
-        log.info("From pricing section Selected Tariff - " + buildTariff);
-        CommonActions.driverWait(3000);
 
-
-        }catch (Exception e){
+        } catch (Exception e) {
 
         }
     }
 
     ////Agent FR Calc validation By Jamal Khan
 
-    public static void flexibleReressh_AFA(String upFront,String term,String data)  throws InterruptedException, IOException {
+    public static void flexibleReressh_AFA(String upFront, String term, String data) throws InterruptedException, IOException {
         upFrontCost = "";
         totalCostPerMonth = "";
 
@@ -1481,12 +1477,12 @@ public class Agent_DealBuilderPageActions extends Environment {
         Screenshots.captureScreenshot();
         String priceCombinationLastItem = driver.findElement(By.xpath("(//*[@class='priceSelection']/select/option)[" + menuOuter.size() + "]")).getText();
 
-        if(priceCombinationLastItem.contains("Build tariff")){
-            log.debug("Build tariff option is present in the price dropdown menu ie :: "+ priceCombinationLastItem);
+        if (priceCombinationLastItem.contains("Build tariff")) {
+            log.debug("Build tariff option is present in the price dropdown menu ie :: " + priceCombinationLastItem);
 
             driver.findElement(By.xpath("(//*[@class='priceSelection']/select/option)[" + menuOuter.size() + "]")).click();
             log.debug("Selected Option : " + driver.findElement(By.xpath("(//*[@class='priceSelection']/select/option)[" + menuOuter.size() + "]")).getText());
-        }else{
+        } else {
             log.debug("Build tariff option does not exist in the Device/Tariff drop down");
             Assert.fail("Build tariff option does not exist in the Device/Tariff drop down");
         }
@@ -1507,7 +1503,7 @@ public class Agent_DealBuilderPageActions extends Environment {
 
                 //FR Validations
 
-                if (driver.findElements(By.xpath("//div[@class='devicePlanFlexCalculator']")).size()>0) {
+                if (driver.findElements(By.xpath("//div[@class='devicePlanFlexCalculator']")).size() > 0) {
 
                     if (Agent_DealBuilderPage.planFRCaluclator.isDisplayed()) {
                         System.out.println("FR calc is Displayed");
@@ -1583,7 +1579,7 @@ public class Agent_DealBuilderPageActions extends Environment {
 
                             //String upFrntVal = Agent_DealBuilderPage.upfrentVal.getText().substring(1, 3);
                             int upfrentSize = Agent_DealBuilderPage.upfrentVal.getText().length();
-                            String upFrntVal = Agent_DealBuilderPage.upfrentVal.getText().substring(1, upfrentSize-3);
+                            String upFrntVal = Agent_DealBuilderPage.upfrentVal.getText().substring(1, upfrentSize - 3);
                             Thread.sleep(2000);
 
                             if (driver.findElements(By.xpath("//span[@id='minUpfront']/../a[@class='previousUpfront disablePrevious']")).size() <= 0) {
@@ -1610,7 +1606,7 @@ public class Agent_DealBuilderPageActions extends Environment {
                             Thread.sleep(2000);
                             String upFrntVal = Agent_DealBuilderPage.upfrentVal.getText().substring(1, 3);
                             Thread.sleep(2000);
-                            if (driver.findElements(By.xpath("//span[@id='maxUpfront']/../a[contains(@class,'nextUpfront disableNext')]")).size() <=0) {
+                            if (driver.findElements(By.xpath("//span[@id='maxUpfront']/../a[contains(@class,'nextUpfront disableNext')]")).size() <= 0) {
                                 CommonActions.clickWebElement(Agent_DealBuilderPage.maxIcon_Upfrent);
                             }
                             if (maxValUpfrnt.contains(upFrntVal) && Agent_DealBuilderPage.maxIcon_Upfrent_disiabled.isDisplayed()) {
@@ -1807,9 +1803,9 @@ public class Agent_DealBuilderPageActions extends Environment {
 
         Thread.sleep(3000);
 
-        if(dealBuilderUpfrontVal.contains(upFrontCost)){
+        if (dealBuilderUpfrontVal.contains(upFrontCost)) {
             log.debug("FR build plan selected upfront cost is matching with deal builder upfront cost\n");
-        }else{
+        } else {
             log.debug("Not Matching:: FR build plan selected upfront cost is not matching with deal builder upfront cost\n");
             Assert.fail("Not Matching:: FR build plan selected upfront cost is not matching with deal builder upfront cost\n");
         }

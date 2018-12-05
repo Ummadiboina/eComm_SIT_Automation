@@ -19,9 +19,9 @@ Feature: 67_Reg_CS_PayMTabletsHomeDeliveryWithAccessory
     And Continue to Agreements page and confirm all the agreement checks
     And Continue to Review page and review the order for Trustev details
     Then order confirmation is displayed
-    Then Choose <consumer> <status> Business preferences <B1> <B2> <B3> <B4> And Channel Preferences <Text> <Email> <Phone> <Post> <MBBStatus> <DeviceType>
+    Then Choose <consumer> <status> Business preferences <B1> <B2> <B3> <B4> And Channel Preferences <Text> <Email> <Phone> <Post> <MBBStatus> <DeviceType> <PreSelected>
 
 
     Examples:
-      | Device                | color | Capacity | BSCstatus | BillCap       | CapAmount | Firstname | Surname | Username     | consumer | B1  | B2     | B3  | B4  | Text   | Email  | Phone | Post | status  | MBBStatus | DeviceType |
-      | Galaxy Tab A 2016 7.0 | Gold  | 64GB     | Enabled   | DontCapMyBill | Nill      | TEST      | ACCEPTA | TEST ACCEPTA | Me       | Not | Select | Not | Not | Select | Select | Not   | Not  | Enabled | No        | Connected  |
+      | Device                | color | Capacity | BSCstatus | BillCap       | CapAmount | Firstname | Surname | Username     | consumer | B1  | B2     | B3  | B4  | Text   | Email  | Phone | Post | status  | MBBStatus | DeviceType | PreSelected |
+      | Galaxy Tab A 2016 7.0 | Gold  | 64GB     | Enabled   | DontCapMyBill | Nill      | TEST      | ACCEPTA | TEST ACCEPTA | Me       | Not | Select | Not | Not | Select | Select | Not   | Not  | Enabled | No        | Connected  | No          |

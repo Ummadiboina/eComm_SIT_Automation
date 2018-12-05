@@ -25,8 +25,8 @@ Feature: 78_Reg_FNT_PayMPhonesAdditionalDepositConfirmation
     And Continue to Agreements page and confirm all the agreement checks
     And Continue to Review page and review the order
     Then order confirmation is displayed
-    Then Choose <consumer> <status> Business preferences <B1> <B2> <B3> <B4> And Channel Preferences <Text> <Email> <Phone> <Post> <MBBStatus> <DeviceType>
+    Then Choose <consumer> <status> Business preferences <B1> <B2> <B3> <B4> And Channel Preferences <Text> <Email> <Phone> <Post> <MBBStatus> <DeviceType> <PreSelected>
 
     Examples:
-      | Firstname | Surname | Username     | handset       | color      | BSCstatus | BillCap   | CapAmount | Username2    | consumer | B1     | B2  | B3  | B4  | Text   | Email | Phone | Post | status  | MBBStatus | DeviceType |
-      | test      | acceptb | test acceptb | iPhone 8 Plus | Space Grey | Enabled   | CapMyBill | £200      | TEST ACCEPTB | Me       | Select | Not | Not | Not | Select | Not   | Not   | Not  | Enabled | No        | Connected  |
+      | Firstname | Surname | Username     | handset       | color      | BSCstatus | BillCap   | CapAmount | Username2    | consumer | B1     | B2  | B3  | B4  | Text   | Email | Phone | Post | status  | MBBStatus | DeviceType | PreSelected |
+      | test      | acceptb | test acceptb | iPhone 8 Plus | Space Grey | Enabled   | CapMyBill | £200      | TEST ACCEPTB | Me       | Select | Not | Not | Not | Select | Not   | Not   | Not  | Enabled | No        | Connected  | No          |

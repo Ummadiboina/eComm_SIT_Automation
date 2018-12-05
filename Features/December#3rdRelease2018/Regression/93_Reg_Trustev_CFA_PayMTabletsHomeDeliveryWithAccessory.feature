@@ -19,8 +19,8 @@ Feature: 93_Reg_Trustev_CFA_PayMTabletsHomeDeliveryWithAccessory
     And Continue to Agreements page and confirm all the agreement checks
     And Continue to Review page and review the order for Trustev details
     Then order confirmation is displayed
-    Then Choose <consumer> <status> Business preferences <B1> <B2> <B3> <B4> And Channel Preferences <Text> <Email> <Phone> <Post> <MBBStatus> <DeviceType>
+    Then Choose <consumer> <status> Business preferences <B1> <B2> <B3> <B4> And Channel Preferences <Text> <Email> <Phone> <Post> <MBBStatus> <DeviceType> <PreSelected>
 
     Examples:
-      | Device | color | Capacity | Firstname | Surname | Username     | consumer | BSCstatus | BillCap   | CapAmount | B1  | B2  | B3     | B4  | Text | Email  | Phone | Post | status  | MBBStatus | DeviceType |
-      | A3 10  | Gold  | 64GB     | TEST      | ACCEPTA | TEST ACCEPTA | Me       | Enabled   | CapMyBill | £15       | Not | Not | Select | Not | Not  | Select | Not   | Not  | Enabled | No        | Connected  |
+      | Device | color | Capacity | Firstname | Surname | Username     | consumer | BSCstatus | BillCap   | CapAmount | B1  | B2  | B3     | B4  | Text | Email  | Phone | Post | status  | MBBStatus | DeviceType | PreSelected |
+      | A3 10  | Gold  | 64GB     | TEST      | ACCEPTA | TEST ACCEPTA | Me       | Enabled   | CapMyBill | £15       | Not | Not | Select | Not | Not  | Select | Not   | Not  | Enabled | No        | Connected  | No          |

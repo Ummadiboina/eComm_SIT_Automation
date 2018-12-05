@@ -31,9 +31,9 @@ Feature: 18_Reg_CFU_Tablet_Delivery_page_more_than_one_address_select_one_compre
     And Continue to Review page and review the order
     #And Click on 'I agree to the terms and condition' checkbox
     Then order confirmation is displayed
-    Then Choose <consumer> <status> Business preferences <B1> <B2> <B3> <B4> And Channel Preferences <Text> <Email> <Phone> <Post> <MBBStatus> <DeviceType>
+    Then Choose <consumer> <status> Business preferences <B1> <B2> <B3> <B4> And Channel Preferences <Text> <Email> <Phone> <Post> <MBBStatus> <DeviceType> <PreSelected>
 
     Examples:
-      | username                                    | password | Tablet             | BSCstatus | BillCap   | CapAmount | color | tariff                 | houseNumber | PostCode | Username     | Action    | consumer | B1  | B2  | B3     | B4  | Text | Email  | Phone | Post   | status  | MBBStatus | DeviceType |
-      | rbmuatlokesh_donotusee5798@stf.ref.o2.co.uk | test123  | iPad 9.7 inch 2018 | Enabled   | CapMyBill | £60       | Gold  | 9.99upfront60.00amonth | 11          | SL11Er   | Test Accepta | enterCode | Me       | Not | Not | Select | Not | Not  | Select | Not   | Select | Enabled | No        | Connected  |
+      | username                                    | password | Tablet             | BSCstatus | BillCap   | CapAmount | color | tariff                 | houseNumber | PostCode | Username     | Action    | consumer | B1  | B2  | B3     | B4  | Text | Email  | Phone | Post   | status  | MBBStatus | DeviceType | PreSelected |
+      | rbmuatlokesh_donotusee5798@stf.ref.o2.co.uk | test123  | iPad 9.7 inch 2018 | Enabled   | CapMyBill | £60       | Gold  | 9.99upfront60.00amonth | 11          | SL11Er   | Test Accepta | enterCode | Me       | Not | Not | Select | Not | Not  | Select | Not   | Select | Enabled | No        | Connected  | No          |
 

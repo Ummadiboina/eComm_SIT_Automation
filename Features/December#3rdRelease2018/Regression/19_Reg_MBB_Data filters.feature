@@ -32,10 +32,10 @@ Feature: 19_Reg_MBB_Data filters
     And Continue to Agreements page and confirm all the agreement checks
     And Continue to Review page and review the order
     Then order confirmation is displayed
-    Then Choose <consumer> <status> Business preferences <B1> <B2> <B3> <B4> And Channel Preferences <Text> <Email> <Phone> <Post> <MBBStatus> <DeviceType>
+    Then Choose <consumer> <status> Business preferences <B1> <B2> <B3> <B4> And Channel Preferences <Text> <Email> <Phone> <Post> <MBBStatus> <DeviceType> <PreSelected>
 
 
 
     Examples:
-      | Device_Name   | Firstname | Surname | Username     | filtername | sortoption                 | consumer | BSCstatus | BillCap       | CapAmount | B1  | B2  | B3  | B4  | Text | Email | Phone | Post | status  | MBBStatus | DeviceType |
-      | Random Device | TEST      | ACCEPTA | TEST ACCEPTA | high       | Monthly data (High to low) | Someone  | Enabled   | DontCapMyBill | Nill      | Not | Not | Not | Not | Not  | Not   | Not   | Not  | Enabled | No        | Connected  |
+      | Device_Name   | Firstname | Surname | Username     | filtername | sortoption                 | consumer | BSCstatus | BillCap       | CapAmount | B1  | B2  | B3  | B4  | Text | Email | Phone | Post | status  | MBBStatus | DeviceType | PreSelected |
+      | Random Device | TEST      | ACCEPTA | TEST ACCEPTA | high       | Monthly data (High to low) | Someone  | Enabled   | DontCapMyBill | Nill      | Not | Not | Not | Not | Not  | Not   | Not   | Not  | Enabled | No        | Connected  | No          |

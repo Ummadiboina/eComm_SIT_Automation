@@ -26,10 +26,10 @@ Feature: 43_Reg_CFA_Phones_Delayed_delivery_Home_delivery_Confirmation_Page_form
     And Continue to Review page and review the order
     When order confirmation is displayed
     Then Verify contents of order confirmation page for Phones containing <Status>
-    Then Choose <consumer> <status> Business preferences <B1> <B2> <B3> <B4> And Channel Preferences <Text> <Email> <Phone> <Post> <MBBStatus> <DeviceType>
+    Then Choose <consumer> <status> Business preferences <B1> <B2> <B3> <B4> And Channel Preferences <Text> <Email> <Phone> <Post> <MBBStatus> <DeviceType> <PreSelected>
 
     #Step 12 and Step 13 of ALM clubbed together
     #Close the browser
     Examples:
-      | handset   | Firstname | Surname | Username     | Status           | BSCstatus | BillCap   | CapAmount | color          | consumer | B1     | B2     | B3     | B4  | Text   | Email  | Phone | Post | status  | MBBStatus | DeviceType |
-      | Galaxy S9 | TEST      | ACCEPTA | TEST ACCEPTA | Delayed Delivery | Enabled   | CapMyBill | £10       | Midnight Black | Me       | Select | Select | Select | Not | Select | Select | Not   | Not  | Enabled | No        | Connected  |
+      | handset   | Firstname | Surname | Username     | Status           | BSCstatus | BillCap   | CapAmount | color          | consumer | B1     | B2     | B3     | B4  | Text   | Email  | Phone | Post | status  | MBBStatus | DeviceType | PreSelected |
+      | Galaxy S9 | TEST      | ACCEPTA | TEST ACCEPTA | Delayed Delivery | Enabled   | CapMyBill | £10       | Midnight Black | Me       | Select | Select | Select | Not | Select | Select | Not   | Not  | Enabled | No        | Connected  | No          |

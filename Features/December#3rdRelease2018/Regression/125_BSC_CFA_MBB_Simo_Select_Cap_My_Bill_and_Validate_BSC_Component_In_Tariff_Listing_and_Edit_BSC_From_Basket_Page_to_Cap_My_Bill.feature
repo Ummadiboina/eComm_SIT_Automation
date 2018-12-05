@@ -28,8 +28,8 @@ Feature: 125_BSC_CFA_MBB_Simo_Select_Cap_My_Bill_and_Validate_BSC_Component_In_T
     Then order confirmation is displayed
     And Validate order confirmation page for applied Bill Spend Cap <NextNewBillCap> <NextNewCapAmount> when BSC is <BSCstatus>
     Then verify cover me is present in  pdf download
-    Then Choose <consumer> <status> Business preferences <B1> <B2> <B3> <B4> And Channel Preferences <Text> <Email> <Phone> <Post> <MBBStatus> <DeviceType>
+    Then Choose <consumer> <status> Business preferences <B1> <B2> <B3> <B4> And Channel Preferences <Text> <Email> <Phone> <Post> <MBBStatus> <DeviceType> <PreSelected>
 
     Examples:
-      | Contract | Firstname | Surname | Username     | BillCap       | CapAmount | NewBillCap | NewCapAmount      | NextNewBillCap | NextNewCapAmount | BSCstatus | consumer | B1  | B2  | B3     | B4  | Text | Email  | Phone | Post   | status  | MBBStatus | DeviceType |
-      | 30 Days  | TEST      | ACCEPTA | TEST ACCEPTA | DontCapMyBill | Nill      | CapMyBill  | DontCapMyBillLink | CapMyBill      | £0               | Enabled   | Me       | Not | Not | Select | Not | Not  | Select | Not   | Select | Enabled | No        | Connected  |
+      | Contract | Firstname | Surname | Username     | BillCap       | CapAmount | NewBillCap | NewCapAmount      | NextNewBillCap | NextNewCapAmount | BSCstatus | consumer | B1  | B2  | B3     | B4  | Text | Email  | Phone | Post   | status  | MBBStatus | DeviceType | PreSelected |
+      | 30 Days  | TEST      | ACCEPTA | TEST ACCEPTA | DontCapMyBill | Nill      | CapMyBill  | DontCapMyBillLink | CapMyBill      | £0               | Enabled   | Me       | Not | Not | Select | Not | Not  | Select | Not   | Select | Enabled | No        | Connected  | No          |

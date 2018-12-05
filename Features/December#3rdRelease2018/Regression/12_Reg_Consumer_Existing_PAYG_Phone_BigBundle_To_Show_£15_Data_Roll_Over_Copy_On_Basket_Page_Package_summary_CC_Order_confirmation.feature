@@ -26,8 +26,8 @@ Feature: 12_Reg_Consumer_Existing_PAYG_Phone_BigBundle_To_Show_£15_Data_Roll_Ov
     And Continue to Agreements page and confirm all the agreement checks
     And Continue to Review page and review the order
     Then order confirmation is displayed
-    Then Choose <consumer> <status> Business preferences <B1> <B2> <B3> <B4> And Channel Preferences <Text> <Email> <Phone> <Post> <MBBStatus> <DeviceType>
+    Then Choose <consumer> <status> Business preferences <B1> <B2> <B3> <B4> And Channel Preferences <Text> <Email> <Phone> <Post> <MBBStatus> <DeviceType> <PreSelected>
 
     Examples:
-      | username                     | password | handset       | color      | Username     | Tariff_Value | Data | consumer | BSCstatus | B1     | B2  | B3     | B4  | Text   | Email  | Phone | Post | status  | MBBStatus | DeviceType |
-      | ina_feb3593@stf.ref.o2.co.uk | test123  | iPhone 8 Plus | Space Grey | TEST ACCEPTA | £15          | 5GB  | Me       | Disabled  | Select | Not | Select | Not | Select | Select | Not   | Not  | Enabled | No        | Connected  |
+      | username                     | password | handset       | color      | Username     | Tariff_Value | Data | consumer | BSCstatus | B1     | B2  | B3     | B4  | Text   | Email  | Phone | Post | status  | MBBStatus | DeviceType | PreSelected |
+      | ina_feb3593@stf.ref.o2.co.uk | test123  | iPhone 8 Plus | Space Grey | TEST ACCEPTA | £15          | 5GB  | Me       | Disabled  | Select | Not | Select | Not | Select | Select | Not   | Not  | Enabled | No        | Connected  | No          |

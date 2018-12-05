@@ -17,8 +17,8 @@ Feature: 64_Reg_CS_PayMSimOnly
     And land on the payment page and input <Username> and other details and click 'Continue on next step' for SimOnly
     And Continue to Review page and review the order
     Then order confirmation is displayed
-    Then Choose <consumer> <status> Business preferences <B1> <B2> <B3> <B4> And Channel Preferences <Text> <Email> <Phone> <Post> <MBBStatus> <DeviceType>
+    Then Choose <consumer> <status> Business preferences <B1> <B2> <B3> <B4> And Channel Preferences <Text> <Email> <Phone> <Post> <MBBStatus> <DeviceType> <PreSelected>
 
     Examples:
-      | Contract | Firstname | Surname | Username     | BSCstatus | BillCap   | CapAmount | consumer | B1  | B2  | B3     | B4  | Text | Email  | Phone | Post   | status  | MBBStatus | DeviceType |
-      | 30 Days  | TEST      | ACCEPTA | TEST ACCEPTA | Enabled   | CapMyBill | £0        | Me       | Not | Not | Select | Not | Not  | Select | Not   | Select | Enabled | No        | Connected  |
+      | Contract | Firstname | Surname | Username     | BSCstatus | BillCap   | CapAmount | consumer | B1  | B2  | B3     | B4  | Text | Email  | Phone | Post   | status  | MBBStatus | DeviceType | PreSelected |
+      | 30 Days  | TEST      | ACCEPTA | TEST ACCEPTA | Enabled   | CapMyBill | £0        | Me       | Not | Not | Select | Not | Not  | Select | Not   | Select | Enabled | No        | Connected  | No          |

@@ -34,8 +34,8 @@ Feature: 39_Reg_CFA_morethan12Tablet
     And Continue to Agreements page and confirm all the agreement checks
     And Continue to Review page and review the order
     Then order confirmation is displayed
-    Then Choose <consumer> <status> Business preferences <B1> <B2> <B3> <B4> And Channel Preferences <Text> <Email> <Phone> <Post> <MBBStatus> <DeviceType>
+    Then Choose <consumer> <status> Business preferences <B1> <B2> <B3> <B4> And Channel Preferences <Text> <Email> <Phone> <Post> <MBBStatus> <DeviceType> <PreSelected>
 
     Examples:
-      | Firstname | Surname | Username     | BSCstatus | BillCap   | CapAmount | limit1 | tabletname         | color      | capacity | limit2 | accessoryname | fitnesstrackername | consumer | B1  | B2  | B3  | B4  | Text | Email | Phone | Post | status  | MBBStatus | DeviceType |
-      | TEST      | ACCEPTA | TEST ACCEPTA | Enabled   | CapMyBill | £100      | 6      | iPad 9.7 inch 2018 | Space Grey | 256GB    | 6      | AirPods       | Fitbit Ionic       | Someone  | Not | Not | Not | Not | Not  | Not   | Not   | Not  | Enabled | No        | Connected  |
+      | Firstname | Surname | Username     | BSCstatus | BillCap   | CapAmount | limit1 | tabletname         | color      | capacity | limit2 | accessoryname | fitnesstrackername | consumer | B1  | B2  | B3  | B4  | Text | Email | Phone | Post | status  | MBBStatus | DeviceType | PreSelected |
+      | TEST      | ACCEPTA | TEST ACCEPTA | Enabled   | CapMyBill | £100      | 6      | iPad 9.7 inch 2018 | Space Grey | 256GB    | 6      | AirPods       | Fitbit Ionic       | Someone  | Not | Not | Not | Not | Not  | Not   | Not   | Not  | Enabled | No        | Connected  | No          |

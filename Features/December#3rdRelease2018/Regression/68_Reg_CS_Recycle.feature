@@ -42,8 +42,8 @@ Feature: 68_Reg_CS_Recycle
     And Continue to Agreements page and confirm all the agreement checks
     And Continue to Review page and review the order
     Then order confirmation is displayed
-    Then Choose <consumer> <status> Business preferences <B1> <B2> <B3> <B4> And Channel Preferences <Text> <Email> <Phone> <Post> <MBBStatus> <DeviceType>
+    Then Choose <consumer> <status> Business preferences <B1> <B2> <B3> <B4> And Channel Preferences <Text> <Email> <Phone> <Post> <MBBStatus> <DeviceType> <PreSelected>
 
     Examples:
-      | username                                    | password | handset  | BSCstatus | BillCap   | CapAmount | tariff                  | Firstname | Surname | Username     | Action | Make  | Model   | Network | consumer | B1  | B2     | B3  | B4  | Text   | Email | Phone | Post | status  | MBBStatus | DeviceType |
-      | rbmuatlokesh_donotusee2108@stf.ref.o2.co.uk | test123  | iPhone 7 | Enabled   | CapMyBill | £10       | 29.99upfront46.00amonth | TEST      | ACCEPTA | TEST ACCEPTA | skip   | Apple | Iphone7 | Orange  | Me       | Not | Select | Not | Not | Select | Not   | Not   | Not  | Enabled | No        | Connected  |
+      | username                                    | password | handset  | BSCstatus | BillCap   | CapAmount | tariff                  | Firstname | Surname | Username     | Action | Make  | Model   | Network | consumer | B1  | B2     | B3  | B4  | Text   | Email | Phone | Post | status  | MBBStatus | DeviceType | PreSelected |
+      | rbmuatlokesh_donotusee2108@stf.ref.o2.co.uk | test123  | iPhone 7 | Enabled   | CapMyBill | £10       | 29.99upfront46.00amonth | TEST      | ACCEPTA | TEST ACCEPTA | skip   | Apple | Iphone7 | Orange  | Me       | Not | Select | Not | Not | Select | Not   | Not   | Not  | Enabled | No        | Connected  | No          |
