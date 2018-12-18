@@ -70,6 +70,17 @@ public class OrderConfirmationPageActions extends Environment {
 		}
 	}
 
+	public static void gdprConsentValidationInOrderConfirmationPage() {
+
+		//gdpr consent validation
+		if(driver.findElements(By.xpath("//label[contains(text(),'GDPR CONSENT')]")).size()>0) {
+			log.debug("Failed due to GDPR is displaying in order confirmation page for consumer acquisition journey \n");
+			Assert.fail("Failed due to GDPR is displaying in order confirmation page for consumer acquisition journey \n");
+		}else{
+			log.debug("As expected, GDPR is in disabled state for consumer acquisition journey\n");
+		}
+	}
+
 	public static void OrderDeclineMessageDisplayed() throws IOException {
 		log.debug("This is order decline page and the message in this page is as below......");
 
@@ -395,7 +406,7 @@ public class OrderConfirmationPageActions extends Environment {
 
 */
 										Screenshots.captureScreenshot();
-										  //O2 Products
+										//O2 Products
 										if (driver.findElements(By.id("preference-heading-B1")).size() > 0) {
 
 											//O2Products Tile Text validation

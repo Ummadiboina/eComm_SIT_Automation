@@ -55,7 +55,7 @@ public class UpgradeCustomerPageActions extends Environment {
             pageobjects.UpgradeCustomerPage.signInButton.click();
             log.debug("Clicked on Signin button");
         }
-        Thread.sleep(10000);
+        Thread.sleep(12000);
 
         log.debug("Title of the page is " + driver.getTitle());
         /*
@@ -1950,11 +1950,11 @@ public class UpgradeCustomerPageActions extends Environment {
     }
 
     public static void clickRemoveOfferButton() throws IOException, InterruptedException {
-        log.debug("Going to click on Remove Offer aButton");
+        log.debug("Going to click on Remove Offer Button");
         Thread.sleep(4000);
-        Screenshots.captureScreenshot();
-        if (UpgradeCustomerPage.RemoveOffer.size() > 0) {
 
+        if (UpgradeCustomerPage.RemoveOffer.size() > 0) {
+            Screenshots.captureScreenshot();
             UpgradeCustomerPage.RemoveOffer.get(0).click();
             log.debug("Remove Offer button is clicked");
         } else {
@@ -1987,6 +1987,52 @@ public class UpgradeCustomerPageActions extends Environment {
         log.debug("Buy out Amount: " + Actcost2);
 
         scrollToAnElement.scrollToElement(UpgradeCustomerPage.BuyoutTextMyPkg);
+        Screenshots.captureScreenshot();
+
+        tmpcost1 = org.apache.commons.lang3.StringUtils.substringBetween(Actcost1, "£", ".");
+        a = NumberUtils.toInt(tmpcost1);
+        tmpcost2 = org.apache.commons.lang3.StringUtils.substringBetween(Actcost2, "£", ".");
+        b = NumberUtils.toInt(tmpcost2);
+
+        if (AcText.contains("Upgrade on us")) {
+            log.debug("Buy out offer text is displayed as expected: " + AcText);
+        } else {
+            log.debug("Buy out offer text is not displayed as expected: " + AcText);
+            Assert.fail("Buy out offer text is not displayed as expected");
+        }
+        if (a == b) {
+            log.debug("Buy out values are matching: " + ", Left To Pay: " + a + ", Buy Out Amount: " + b);
+        } else {
+            log.debug("Buy out values are not matching: " + ", Left To Pay: " + a + ", Buy Out Amount: " + b);
+            Assert.fail("Buy out values are not matching");
+        }
+        if (Actcost2.contains("-")) {
+            log.debug("Buy Out Amount contains negative value: " + Actcost2);
+
+        } else {
+            log.debug("Buy Out Amount does not contain negative value: " + Actcost2);
+            Assert.fail("Buy Out Amount does not contain negative value");
+        }
+        Screenshots.captureScreenshot();
+        return a;
+    }
+
+    public static int verifyBuyOutDisplayedInUpGradeOptionsPage() throws IOException, InterruptedException {
+        log.debug("verifyBuyOutDisplayedInUpGradeOptionsPage");
+
+        Thread.sleep(4000);
+        String AcText = null, Actcost1 = null, Actcost2 = null, tmpcost1 = null, tmpcost2 = null;
+        int a = 0;
+        int b = 0;
+
+        AcText = UpgradeCustomerPage.BuyoutTextUpgradePkg.getText();
+        Actcost1 = UpgradeCustomerPage.LeftToPayCost1UpgradePkg.getText();
+        Actcost2 = UpgradeCustomerPage.BuyoutCostUpgradePkg.getText();
+        log.debug("Left to Pay Value: " + Actcost1+"\n");
+        log.debug("Buy out Amount: " + Actcost2+"\n");
+
+        scrollToAnElement.scrollToElement(UpgradeCustomerPage.BuyoutTextMyPkg);
+        Thread.sleep(3000);
         Screenshots.captureScreenshot();
 
         tmpcost1 = org.apache.commons.lang3.StringUtils.substringBetween(Actcost1, "£", ".");
@@ -2301,11 +2347,12 @@ public class UpgradeCustomerPageActions extends Environment {
 
     }
 
-    public static void verifyBuyOutMessage() throws IOException {
+    public static void verifyBuyOutMessage() throws IOException, InterruptedException {
         log.debug("in verify BuyOut message function");
 
         Screenshots.captureScreenshot();
         String text = driver.findElement(By.xpath("//div[@class='trade-in-offer']/p")).getText();
+        Thread.sleep(3000);
         if (text.contains("We'll buy you out of your contract, so you can choose a brand new phone") || text.contains("Upgrade to a new phone today. We'll pay off the rest of your Device Plan, saving you")) {
             log.debug("The Text is: " + text);
         } else {

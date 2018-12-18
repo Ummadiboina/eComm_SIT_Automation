@@ -111,7 +111,7 @@ public class verificationsActions extends Environment {
                     "Assertion Failed: Expected Message: " + ExpectedText + " is not present in the page");
             log.debug("Assertion Success: '*' is present in: " + ActualText);*/
 
-            Thread.sleep(30000);
+            Thread.sleep(10000);
             Time_At_Address();
 
             //Below is iframe related
