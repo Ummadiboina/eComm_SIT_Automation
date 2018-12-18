@@ -55,6 +55,8 @@ public class E2EOrderPlaced_Steps {
     static int TradeInValue = 0;
     public static Hashtable selectedElements = new Hashtable();
     static String expPlnList;
+    static String EmailId_CCAcontinue="";
+
 
     public E2EOrderPlaced_Steps() {
         driver = Hooks.driver;
@@ -924,6 +926,22 @@ public class E2EOrderPlaced_Steps {
         }
     }
 
+    @Given("^Signin using valid ([^\"]*) and ([^\"]*) credentials for upgrade CCA User$")
+    public void signin_using_valid_test_credentials_upgradeCCAUser(String username, String password) {
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, UpgradeCustomerPage.class);
+            Screenshots.captureScreenshot();
+            UpgradeCustomerPageActions.Login(E2EOrderPlaced_Steps.EmailId_CCAcontinue, password);
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+            log.debug("Unable to signin using credentials");
+            Assert.fail("Unable to signin using credentials");
+
+        }
+    }
+
     @Given("^choose to upgrade any Phone in My upgrade page$")
     public void choose_to_upgrade_any_Phone_in_My_upgrade_page() throws Throwable {
         PageFactory.initElements(driver, MouseHoverPage.class);
@@ -1501,8 +1519,6 @@ public class E2EOrderPlaced_Steps {
         try {
             driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
             PageFactory.initElements(driver, DeliveryPage.class);
-            //CommonFunctionscheckTitle("Delivery Page");
-            //DeliveryPageActions.SetDelivery();
             JavascriptExecutor jse = (JavascriptExecutor) driver;
             jse.executeScript("window.scrollBy(0,300)", "");
             Screenshots.captureScreenshot();
@@ -1887,9 +1903,9 @@ public class E2EOrderPlaced_Steps {
             Thread.sleep(10000);
             //CommonFunctionscheckTitle("Payment Page");
             PaymentPageActions.Set_Bank_details(Username);
-            Thread.sleep(30000);
+            Thread.sleep(10000);
             PaymentPageActions.Time_At_Address();
-            Thread.sleep(15000);
+            Thread.sleep(12000);
             PaymentPageActions.Card_Details(Username);
             Thread.sleep(12000);
             PaymentPageActions.Card_Details_CCV();
@@ -1914,7 +1930,7 @@ public class E2EOrderPlaced_Steps {
             Thread.sleep(10000);
             //CommonFunctionscheckTitle("Payment Page");
             PaymentPageActions.Set_Bank_details(Username);
-            Thread.sleep(30000);
+            Thread.sleep(12000);
             PaymentPageActions.Time_At_Address();
             Thread.sleep(12000);
             PaymentPageActions.Card_Details(Username);
@@ -1939,7 +1955,7 @@ public class E2EOrderPlaced_Steps {
             driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
             PageFactory.initElements(driver, PaymentPage.class);
 
-            Thread.sleep(30000);
+            Thread.sleep(12000);
             PaymentPageActions.Card_Details(Username);
             Thread.sleep(12000);
             PaymentPageActions.Card_Details_CCV();
@@ -2067,12 +2083,12 @@ public class E2EOrderPlaced_Steps {
             PageFactory.initElements(driver, PaymentPage.class);
             //CommonFunctionscheckTitle("Payment Page");
             PaymentPageActions.Set_Bank_details(Username);
-            Thread.sleep(30000);
+            Thread.sleep(10000);
             DeliveryPageActions.SetDelivery();
-            Thread.sleep(15000);
+            Thread.sleep(10000);
             //PaymentPageActions.Time_At_Address_CC();
             PaymentPageActions.Time_At_Address();
-            Thread.sleep(18000);
+            Thread.sleep(12000);
             PaymentPageActions.Card_Details(Username);
             Thread.sleep(10000);
             PaymentPageActions.Card_Details_CCV();
@@ -2089,10 +2105,10 @@ public class E2EOrderPlaced_Steps {
     @Given("^land on the Non Credit check payment page and input ([^\"]*) and other details and click 'Continue on next step'$")
     public void NonCreditCheckPaymentPage_HomeDelivery(String Username) {
         try {
-            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
             PageFactory.initElements(driver, PaymentPage.class);
             PaymentPageActions.ValidateNonCreditPaymentPage();
-            Thread.sleep(30000);
+            Thread.sleep(12000);
             PaymentPageActions.Card_Details(Username);
             Thread.sleep(12000);
             PaymentPageActions.Card_Details_CCV();
@@ -2109,10 +2125,10 @@ public class E2EOrderPlaced_Steps {
     @Given("^land on the Non Credit check payment page and input ([^\"]*) and other details and click 'Continue on next step' for GDPR$")
     public void NonCreditCheckPaymentPage_HomeDelivery_for_GDPR(String Username) {
         try {
-            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
             PageFactory.initElements(driver, PaymentPage.class);
             PaymentPageActions.ValidateNonCreditPaymentPage();
-            Thread.sleep(30000);
+            Thread.sleep(12000);
             PaymentPageActions.Card_Details(Username);
             Thread.sleep(10000);
             PaymentPageActions.Card_Details_CCV();
@@ -2227,11 +2243,11 @@ public class E2EOrderPlaced_Steps {
 
         try {
             // Write code here that turns the phrase above into concrete actions
-            // driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-            Thread.sleep(25000);
+            driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+            //Thread.sleep(25000);
             PageFactory.initElements(driver, AgreementPage.class);
             PageFactory.initElements(driver, ReviewPage.class);
-            Thread.sleep(10000);
+            Thread.sleep(5000);
             AgreementPageActions.gettitlepage();
             //CommonFunctionscheckTitle("Agreement Page");
             Thread.sleep(3000);
@@ -2477,11 +2493,24 @@ public class E2EOrderPlaced_Steps {
             //CommonFunctionscheckTitle("Confirmation Page");
             OrderConfirmationPageActions.gettitlepage();
             OrderConfirmationPageActions.MessageDisplayed();
-        } catch (Exception e) {
+            } catch (Exception e) {
             // TODO Auto-generated catch block
             log.debug("Error in order confirmation page , Please review the screenshots for failure");
             Assert.fail("Error in order confirmation page , Please review the screenshots for failure");
 
+        }
+    }
+
+    @Then("^Validate consumer GDPR consent section is hidden in Order confirmation page or not$")
+    public void gdprValidationInOrderConfirmationPage() {
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, OrderConfirmationPage.class);
+            OrderConfirmationPageActions.gdprConsentValidationInOrderConfirmationPage();
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            log.debug("Error in order confirmation page , Please review the screenshots for failure");
+            Assert.fail("Error in order confirmation page , Please review the screenshots for failure");
         }
     }
 
@@ -3030,6 +3059,15 @@ public class E2EOrderPlaced_Steps {
             Thread.sleep(6000);
             PageFactory.initElements(driver, Agent_AdvisoryPage.class);
             PageFactory.initElements(driver, DeliveryPage.class);
+
+            if (pageobjects.DeliveryPage.EmailId_CCAcontinue.isDisplayed()) {
+                JavascriptExecutor jse = (JavascriptExecutor) driver;
+                scrollToAnElement.scrollToElement(pageobjects.DeliveryPage.EmailId_CCAcontinue);
+                Thread.sleep(3000);
+                Screenshots.captureScreenshot();
+
+                EmailId_CCAcontinue = pageobjects.DeliveryPage.EmailId_CCAcontinue.getAttribute("value");
+            }
 
             if (pageobjects.DeliveryPage.HouseNum.isDisplayed()) {
                 DeliveryPageActions.SetDelivery_AFU();
@@ -3853,11 +3891,11 @@ public class E2EOrderPlaced_Steps {
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         try {
             PageFactory.initElements(driver, PaymentPage.class);
-            Thread.sleep(32000);
+            Thread.sleep(12000);
             PaymentPageActions.Time_At_Address();
-            Thread.sleep(15000);
+            Thread.sleep(12000);
             PaymentPageActions.Card_Details(Username);
-            Thread.sleep(15000);
+            Thread.sleep(12000);
             PaymentPageActions.Card_Details_CCV();
             Thread.sleep(10000);
             //PaymentPageActions.depositCard_Details_CCV();
@@ -5766,7 +5804,7 @@ public class E2EOrderPlaced_Steps {
             Thread.sleep(4000);
             JavascriptExecutor executor = (JavascriptExecutor) driver;
             executor.executeScript("arguments[0].click();", driver.findElement(By.xpath("(//button[normalize-space()='Select'])[1]")));
-            Thread.sleep(7000);
+            Thread.sleep(10000);
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -5925,6 +5963,23 @@ public class E2EOrderPlaced_Steps {
             JavascriptExecutor jse = (JavascriptExecutor) driver;
             jse.executeScript("window.scrollBy(0,-100)", "");
             Screenshots.captureScreenshot();
+        } catch (Exception e) {
+            e.printStackTrace();
+            Assert.fail(
+                    "Unable to Verify that the tariff ribbons are displayed in tariff upsell config of 'Your package' section");
+        }
+    }
+
+    @And("^Scroll to top of the page$")
+    public void scroll_to_TopPage() {
+        try {
+
+            Thread.sleep(3000);
+            JavascriptExecutor jse = (JavascriptExecutor) driver;
+            jse.executeScript("window.scrollBy(0,-1100)", "");
+            Thread.sleep(2000);
+            Screenshots.captureScreenshot();
+
         } catch (Exception e) {
             e.printStackTrace();
             Assert.fail(
@@ -6926,7 +6981,7 @@ public class E2EOrderPlaced_Steps {
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         try {
             PageFactory.initElements(driver, UpgradePhonesListingPage.class);
-            Screenshots.captureScreenshot();
+
             UpgradeCustomerPageActions.clickRemoveOfferButton();
             // driver.findElement(By.xpath("//button[contains(text(),'Continue to upgrade')]")).click();
             Thread.sleep(4000);
@@ -6983,6 +7038,23 @@ public class E2EOrderPlaced_Steps {
             // TODO Auto-generated catch block
             e.printStackTrace();
             Assert.fail("Unable to verify if the buyout offer is displayed in My Package section");
+
+        }
+    }
+
+    @And("^verify if the buyout offer is displayed in UpGradeOptionsPage$")
+    public void verifyBuyOutOfferInUpGradeOptionsPage() {
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+        try {
+            int tmpBuyOutValue = 0;
+            PageFactory.initElements(driver, UpgradePhonesListingPage.class);
+            tmpBuyOutValue = UpgradeCustomerPageActions.verifyBuyOutDisplayedInUpGradeOptionsPage();
+            BuyOutValue = tmpBuyOutValue;
+            Thread.sleep(2000);
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+            Assert.fail("Unable to verify if the buyout offer is displayed in UpGradeOptionsPage section");
 
         }
     }
@@ -8058,7 +8130,7 @@ public class E2EOrderPlaced_Steps {
         try {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, PaymentPage.class);
-            Thread.sleep(30000);
+            Thread.sleep(12000);
             PaymentPageActions.Card_Details(Username);
             Thread.sleep(12000);
             PaymentPageActions.Card_Details_CCV();
@@ -11327,4 +11399,158 @@ public class E2EOrderPlaced_Steps {
 
         }
     }
+
+    //GDPR - Consumer channel, ITFD-864, Jan 2019 Release new changes validation By Jamal Khan
+
+    @And("^Validate consumer GDPR consent section and choose Business preferences ([^\"]*) ([^\"]*) ([^\"]*) with ([^\"]*) for ([^\"]*) in delivery page when GDPR is ([^\"]*) and ([^\"]*)$")
+    public void gdprConsentValidationIn_DeliveryPage(String BP1, String BP2, String BP3, String keyEvent, String DeviceType, String GDPRstatus, String PreSelected) {
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, DeliveryPage.class);
+            DeliveryPageActions.GDPRvalidation(BP1, BP2, BP3, keyEvent, DeviceType, GDPRstatus, PreSelected);
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            log.debug("Unable to validate GDPR consent in delivery page");
+            Assert.fail("Unable to validate GDPR consent in delivery page");
+        }
+    }
+
+
+    @And("^Navigate to BudgetLed and click on See your Budget$")
+    public void Navigate_to_Budegetled_Click_on_SeeyourBudgetlink() {
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, PAYMandPAYGTariffAndExtrasPage.class);
+            //ConnectedDeviceDetailsPageAction.GetTitle();
+            Thread.sleep(5000);
+            PAYMandPAYGTariffAndExtrasPageActions.Budgetledlinkclick();
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            log.debug("Unable to navigate to device details page");
+            Assert.fail("Unable to navigate to device details page");
+
+        }
+
+
+    }
+
+
+    @And("^Configure the Budgetled ([^\"]*) ([^\"]*)$")
+    public void Configure_the_Budget_to_the_Max(String monthlyBudget, String monthlyData) {
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, PAYMandPAYGTariffAndExtrasPage.class);
+            PAYMandPAYGTariffAndExtrasPageActions.budgetLedValidation(monthlyBudget, monthlyData);
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            log.debug("Unable to click on the monthy budget Max button");
+            Assert.fail("Unable to click on the monthy budget Max button");
+
+        }
+
+
+    }
+
+    @Given("^Choose some CFUAccesssory$")
+    public void Choose_some_CFUAccesssory() {
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, PAYMandPAYGTariffAndExtrasPage.class);
+            JavascriptExecutor jse = (JavascriptExecutor) driver;
+            jse.executeScript("window.scrollBy(0,300)", "");
+            Thread.sleep(3000);
+            Screenshots.captureScreenshot();
+            PAYMandPAYGTariffAndExtrasPageActions.addCFUAccessory();
+            Thread.sleep(2000);
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            log.debug("Unable to choose Accesssory");
+            Assert.fail("Unable to choose Accesssory");
+
+        }
+
+    }
+
+    @Given("^select an \"([^\"]*)\" Accessory with Quanity([^\"]*)$")
+    public void select_an_Accessory_With_Quantity(String elementName,String elementQuantity) {
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, AccessoryPage.class);
+            AccessoryPageActions.SelectAnyAccessorywithQuantity(elementName ,elementQuantity);
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            log.debug("Unable to select accessory");
+            Assert.fail("Unable to select accessory");
+
+        }
+
+    }
+
+
+
+    @When("^Navigate to LikenewPhone Page$")
+    public void  Navigate_to_LikenewPhone_Page() throws Throwable {
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, MouseHoverPage.class);
+            MouseHoverAction.mousehovertoLIkenewphone();
+
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            log.debug("unable to see the cookie pop up");
+            Assert.fail("unable to see the cookie pop up");
+        }
+    }
+
+
+    @When("^Given I am an CFA user and Lands on LikeNewPhone page and select$")
+    public void Given_I_am_an_CFA_user_and_Lands_on_LikeNewPhone_page_and_select()  {
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, LikenewPage.class);
+            //driver.get("https://www.ref.o2.co.uk/shop/like-new/sim-free-phones");
+            LikeNewPageActions.LIkenewphone();
+
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            log.debug("unable to see the cookie pop up");
+            Assert.fail("unable to see the cookie pop up");
+        }
+    }
+
+
+
+
+    @And("^I Land on the Plan included basket page and choose Continue Shopping$")
+    public void I_Land_on_the_Plan_included_basket_page_and_choose_Continue_Shopping() {
+        try {
+            Thread.sleep(5000);
+            driver.findElement(By.xpath("//button[@id='btnAddToBasket'] | //input[@id='qa-proceed-to-basket']")).click();
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, BasketPage.class);
+            Thread.sleep(7000);
+            BasketPageActions.continueShopping();
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            log.debug("Unable to Land on the Plan included basket page and choose Continue shopping");
+            Assert.fail("Unable to Land on the Plan included basket page and choose Continue shopping");
+        }
+    }
+
+
+    @And("^veriy Confirmation Page for Curved Banner Messages$")
+    public void veriy_Confirmation_Page_for_Curved_Banner_Messages () {
+        try {
+            Thread.sleep(5000);
+            // driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, ReviewAndConfirmPage.class);
+            Thread.sleep(7000);
+            ReviewAndConfirmPageActions.CurvedBannermesage();
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            log.debug("Unable to Land on the Plan included basket page and choose Continue shopping");
+            Assert.fail("Unable to Land on the Plan included basket page and choose Continue shopping");
+        }
+    }
+
 }

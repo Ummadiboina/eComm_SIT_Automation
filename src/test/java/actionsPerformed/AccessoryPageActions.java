@@ -1,5 +1,6 @@
 package actionsPerformed;
 
+import java.awt.*;
 import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -816,6 +817,94 @@ public class AccessoryPageActions extends Environment {
 			Screenshots.captureScreenshot();
 
 		}
+
+	}
+
+
+	public static  void SelectAnyAccessorywithQuantity(String elementName,  String elementQuantity) throws IOException, InterruptedException, AWTException {
+
+		Thread.sleep(3000);
+		if (driver.findElements(By.xpath("//p[contains(text(),'Explore our range of cases, screen protectors, headphones and more.')]/following-sibling::p")).size() > 0) {
+			WebElement ele = driver.findElement(By.xpath("//p[contains(text(),'Explore our range of cases, screen protectors, headphones and more.')]/following-sibling::p/../.."));
+			JavascriptExecutor executor = (JavascriptExecutor) driver;
+			Thread.sleep(2000);
+			executor.executeScript("arguments[0].scrollIntoView(true);", ele);
+			executor.executeScript("arguments[0].click();", ele);
+		}
+
+		Thread.sleep(8000);
+		Autoredirection.redirect();
+		JavascriptExecutor executor = (JavascriptExecutor) driver;
+		Thread.sleep(1000);
+		executor.executeScript("arguments[0].scrollIntoView(true);", pageobjects.AccessoryPage.ViewAllProductsOnOnePage);
+		Thread.sleep(2000);
+		executor.executeScript("arguments[0].click();", pageobjects.AccessoryPage.ViewAllProductsOnOnePage);
+
+		String Elementquan=elementQuantity.trim();
+		UserSpecifiedAccessoryLimit = Integer.parseInt(Elementquan);
+		if (elementName.contains("Random")) {
+			// static int quan=0;
+			//int quan =0;
+			//WebElement quantity="";
+			//  WebElement quantity1 = null;
+			log.debug("Selecting Any Accessory");
+			accessoryName = pageobjects.AccessoryPage.RandomAccessory.getText();
+			log.debug("Selected an accessory -  " + accessoryName);
+			pageobjects.AccessoryPage.RandomAccessory.click();
+			Thread.sleep(20000);
+
+           /* List<WebElement> quantity = driver.findElements(By.xpath("//select[@class='accessory-option ng-pristine ng-valid']/option"));
+
+            for (int i = 1; i <= quantity.size(); i++) {
+                String quantity2 = driver.findElement(By.xpath("(//select[@class='accessory-option ng-pristine ng-valid']/option)[" + i + "]")).getAttribute("innerText");
+                Thread.sleep(2000);
+                if (quantity2.contains("2")) {
+                    quantity1 = driver.findElement(By.xpath("(//select[@class='accessory-option ng-pristine ng-valid']/option)[" + i + "]"));
+                    break;
+                }
+            }
+WebElement */
+
+
+
+
+
+
+			WebElement quan1=driver.findElement(By.xpath("//div[@on-dimension-select='selectQuantityDimension']/select"));
+			JavascriptExecutor js = (JavascriptExecutor) driver;
+			js.executeScript("arguments[0].setAttribute('style', 'display:block;')", quan1);
+			new Select(quan1).selectByIndex(UserSpecifiedAccessoryLimit);
+			NonConnectedDeviceDetailsPageAction.ClickonBasketIcon();
+
+
+
+
+
+
+			//quantity1 = driver.findElement(By.xpath("//select[@class='accessory-option ng-valid ng-dirty']//option)[2]"));
+
+
+			//Thread.sleep(3000);
+           /*Point coordinates = driver.findElement(By.xpath("(//select[@class='accessory-option ng-pristine ng-valid']/option)[2]")).getLocation();
+            Robot robot = new Robot();
+            //robot.mouseMove(quantity1.getLocation().getX(), quantity1.getLocation().getY());
+            robot.mouseMove(coordinates.getX() +120, coordinates.getY() +120);
+            Thread.sleep(2000);
+            log.debug("Moving Mouse Color dropdown");
+            //driver.findElement(By.xpath("//div[@on-dimension-select='selectQuantityDimension']/span[@role='combobox']")).click();
+            Actions action = new Actions(driver);
+            action.moveToElement(quantity1).click().build().perform();
+            log.debug("Selected " + quantity1 + " from color dropdown\n");*/
+
+
+			//driver.findElement(By.xpath("//div[@on-dimension-select='selectQuantityDimension']/span[@role='combobox']"))lic.ck();
+			//Thread.sleep(10000);
+			//	driver.findElement(By.xpath("//div[@class='ng-isolate-scope ng-pristine ng-valid']//select[@class='accessory-option ng-pristine ng-valid']//option[2]")).click();
+			//driver.findElement(By.xpath("//div[@on-dimension-select='selectQuantityDimension']/span[@role='combobox']//li[3]")).click();
+
+
+		}
+		//SelectAnyAccessory2Quantity
 
 	}
 }

@@ -260,5 +260,65 @@ public class PAYMandPAYGTariffAndExtrasPage {
 
 	@FindBy(how = How.XPATH, using = "//h3[normalize-space()='Spend Cap']")
 	public static WebElement BillSpendCapHeader_YourPackage;
+	@FindBy(how = How.XPATH, using = ("(//button[@class='accessorySelect secondary selectButton tst-select'])[2]"))
+	public static WebElement AddCFUAccessory;
+
+	@FindBy(how = How.XPATH, using = "//p[normalize-space()='Set your budget']")
+	public static WebElement SeeyourBudgetlink;
+
+	/* /////Click on Budget Plus button //////*/
+	@FindBy(how = How.XPATH, using = "//span[@aria-label='Increase monthly cost']")
+	public static WebElement BudgetPlusbutton;
+	/* /////Click on Budget minus button //////*/
+	@FindBy(how = How.XPATH, using = "//span[@aria-label='Reduce monthly cost']")
+	public static WebElement Budgetminusbutton;
+	/* //capture Budgetmax label//// */
+	@FindBy(how = How.XPATH, using = "//div[@class='budget-led-price budget-led-maxTermMonth']")
+	public static WebElement BudgetMaxButtonlabel;
+	/* //Monthly budget label//// */
+	@FindBy(how = How.XPATH, using = "//div[@class='budget-led-defaultTermMonth value']")
+	public static WebElement MonthlyBudgetlabel;
+	/* //capture Budgetminlabel//// */
+	@FindBy(how = How.XPATH, using = "div[@class='budget-led-price budget-led-minTermMonth'")
+	public static WebElement BudgetMinButtonlabel;
+
+	/* Monthly data */
+//click on dataplus button
+	@FindBy(how = How.XPATH, using = "//span[@aria-label='Increase data usage']")
+	public static WebElement dataPlusButton;
+	//click on dataminusbutton
+	@FindBy(how = How.XPATH, using = "//span[@aria-label='Reduce data usage']")
+	public static WebElement dataminusButton;
+	//DataMinlabel
+	@FindBy(how = How.XPATH, using = "//div[@class='budget-led-price budget-led-min-term-data']")
+	public static WebElement dataminusButtonlabel;
+	/* Datamaxlabel */
+	@FindBy(how = How.XPATH, using = "//div[@class='budget-led-price budget-led-max-term-data']")
+	public static WebElement dataPlusButtonlabel;
+
+	//datamonthlylabel
+	@FindBy(how = How.XPATH, using = "//div[@class='value budget-led-default-term-data']")
+	public static WebElement Monthlydatalabel;
+
+
+	//Find your Plan Button click
+	@FindBy(how = How.XPATH, using = "//a[normalize-space()='Find your plan']")
+	public static WebElement findYourPlan;
+	///Pay for device inFull link
+	@FindBy(how = How.XPATH, using = "//a[@id='link-pay-for-your-device']")
+	public static WebElement payForDeviceInFull;
+
+//Search result copy data
+
+	@FindBy(how = How.XPATH, using = "(//div[@class='col-sm-4 col-md-2 no-gutter dataAmount'])[1]")
+	public static WebElement DataBudgetledResult;
+	@FindBy(how = How.XPATH, using = "((//div[@class='tariffs-container pay-monthly-tariffs']//div[@class='col-sm-4 col-md-2 no-gutter dataAmount'])/../../parent::div)[1]/div//div[@class='dataPriceWrap dataPriceWrap-al-2']//p[@class='dataPrice']")
+	public static WebElement MonthlyBudgetResult;
+	@FindBy(how = How.XPATH, using = "(((//div[@class='tariffs-container pay-monthly-tariffs']//div[@class='col-sm-4 col-md-2 no-gutter dataAmount'])/../../parent::div)[1]/div//p[@class='dataPrice'])[1]")
+	public static WebElement upfrontBudgetResult;
+	//Total device cost link
+	@FindBy(how = How.XPATH, using = "//a[@class='budget-led-title']")
+	public static WebElement totalDeviceCostLink;
+
 
 }

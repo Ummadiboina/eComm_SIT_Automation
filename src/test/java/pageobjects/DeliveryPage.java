@@ -15,6 +15,9 @@ public class DeliveryPage {
     @FindBy(how = How.XPATH, using = "//input[@name='houseNum']")
     public static WebElement HouseNum;
 
+    @FindBy(how = How.XPATH, using = "//input[@id='ccaEmail']")
+    public static WebElement EmailId_CCAcontinue;
+
     @FindBy(how = How.XPATH, using = "//a[@title='Click and collect']")
     public static WebElement clickAndCollect;
 
@@ -223,6 +226,57 @@ public class DeliveryPage {
 
     @FindBy(how = How.XPATH, using = "//input[@id='consent-yes']")
     public static WebElement Me_radioBtn;
+
+    @FindBy(how = How.XPATH, using = "//div[normalize-space()='gdprHeaderTxt']")
+    public static WebElement gdprHeaderTxt;
+
+    @FindBy(how = How.XPATH, using = "//div[normalize-space()='gdprHeaderDescription']")
+    public static WebElement gdprHeaderDescription;
+
+    @FindBy(how = How.XPATH, using = "//div[normalize-space()='O2Products_Text']")
+    public static WebElement O2Products_Text;
+
+    @FindBy(how = How.XPATH, using = "//div[normalize-space()='O2Products_MoreInfoLink']")
+    public static WebElement O2Products_MoreInfoLink;
+
+    @FindBy(how = How.XPATH, using = "//div[normalize-space()='O2Products_OverlayText']")
+    public static WebElement O2Products_OverlayText;
+
+    @FindBy(how = How.XPATH, using = "//div[normalize-space()='O2Products_OverlayCloseButton']")
+    public static WebElement O2Products_OverlayCloseButton;
+
+    @FindBy(how = How.XPATH, using = "//div[normalize-space()='O2PerksAndExtras_Text']")
+    public static WebElement O2PerksAndExtras_Text;
+
+    @FindBy(how = How.XPATH, using = "//div[normalize-space()='O2PerksAndExtras_MoreInfoLink']")
+    public static WebElement O2PerksAndExtras_MoreInfoLink;
+
+    @FindBy(how = How.XPATH, using = "//div[normalize-space()='O2PerksAndExtras_OverlayText']")
+    public static WebElement O2PerksAndExtras_OverlayText;
+
+    @FindBy(how = How.XPATH, using = "//div[normalize-space()='O2PerksAndExtras_OverlayCloseButton']")
+    public static WebElement O2PerksAndExtras_OverlayCloseButton;
+
+    @FindBy(how = How.XPATH, using = "//div[normalize-space()='OffersFromO2Partner_Text']")
+    public static WebElement OffersFromO2Partner_Text;
+
+    @FindBy(how = How.XPATH, using = "//div[normalize-space()='OffersFromO2Partner_MoreInfoLink']")
+    public static WebElement OffersFromO2Partner_MoreInfoLink;
+
+    @FindBy(how = How.XPATH, using = "//div[normalize-space()='OffersFromO2Partner_OverlayText']")
+    public static WebElement OffersFromO2Partner_OverlayText;
+
+    @FindBy(how = How.XPATH, using = "//div[normalize-space()='OffersFromO2Partner_OverlayCloseButton']")
+    public static WebElement OffersFromO2Partner_OverlayCloseButton;
+
+    @FindBy(how = How.XPATH, using = "//div[normalize-space()='O2Products']")
+    public static WebElement O2Products;
+
+    @FindBy(how = How.XPATH, using = "//div[normalize-space()='O2PerksAndExtras']")
+    public static WebElement O2PerksAndExtras;
+
+    @FindBy(how = How.XPATH, using = "//div[normalize-space()='OffersFromO2Partner']")
+    public static WebElement OffersFromO2Partner;
 
     @FindBy(how = How.XPATH, using = "//input[@id='consent-no']")
     public static WebElement someoneElse_radioBtn;

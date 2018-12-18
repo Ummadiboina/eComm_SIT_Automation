@@ -19,5 +19,5 @@ Feature: 16_AFU_Tablets_GDPR_Enabled_CC_EndUser__MP_MP- All_CP - Email
     Then Order confirmation message should be displayed
 
     Examples:
-      | user        | Device                              | postCode | Tariffs | BSCstatus | BillCapAmount | consumer | B1     | B2     | B3     | B4  | Text   | Email | Phone | Post | status  | MBBStatus | DeviceType | PreSelected |
-      | 07568414065 | iPad Pro 10.5 inch 256GB Space Grey | SL11UP   | Refresh | Enabled   | £20           | Me       | Select | Select | Select | Not | Select | Not   | Not   | Not  | Enabled | No        | Connected  | Yes         |
+      | user        | Device                              | postCode | Tariffs | BSCstatus | BillCapAmount | consumer | B1     | B2     | B3     | B4  | Text | Email  | Phone | Post | status  | MBBStatus | DeviceType | PreSelected |
+      | 07568414065 | iPad Pro 10.5 inch 256GB Space Grey | SL11UP   | Refresh | Enabled   | £20           | Me       | Select | Select | Select | Not | Not  | Select | Not   | Not  | Enabled | No        | Connected  | Yes         |

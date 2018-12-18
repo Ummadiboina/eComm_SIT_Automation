@@ -7,6 +7,7 @@ import java.util.concurrent.TimeUnit;
 
 import GlobalActions.*;
 import org.apache.log4j.Logger;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Reporter;
@@ -99,13 +100,13 @@ public class FreeSimDeliveryPageActions extends Environment {
 		//driver.switchTo ().window (mainWindowHandle);
 
 		*/
-		Thread.sleep(10000);
-		if(CheckBox.equalsIgnoreCase("Yes")){
+		Thread.sleep(10000);if(CheckBox.equalsIgnoreCase("Yes")){
+
 			log.debug("Clicking on Marketing check box because customer should not be contacted for Marketing Preferences");
 			DeliveryPage.marketCheckBox.click();
 			log.debug("Clicked on Marketing check box because customer should not be contacted for Marketing Preferences");
 		}else{
-			log.debug("Not Clicked on Marketing check box because customer should be contacted for Marketing Preferences");
+			log.debug("Not Clicked on Marketing check box because customer doesnt want to be contacted for Marketing Preferences");
 		}
 
 

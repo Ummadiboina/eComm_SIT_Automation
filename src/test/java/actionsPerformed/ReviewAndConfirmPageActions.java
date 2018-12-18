@@ -100,7 +100,37 @@ public class ReviewAndConfirmPageActions extends Environment {
         else
             log.debug("The About you section is not displayed");
     }
+
+
+    public static void CurvedBannermesage() {
+        String CurvedBanner1 = ReviewAndConfirmPage.CurvedBannerGoodnews.getText();
+        String CurvedBanner = CurvedBanner1.substring(0, CurvedBanner1.length() - 5);
+        String Yourorderconfirmation = ReviewAndConfirmPage.CurvedBannerYourordercomplete.getText();
+
+        if (CurvedBanner.equals("Good news,")) {
+            System.out.println(CurvedBanner + "Message exists inside curved banner in confirmation page");
+            log.debug(CurvedBanner + "Message exists inside curved banner in confirmation page");
+        } else {
+
+            System.out.println("Curved Banner Message does not exist");
+            Assert.fail("Curved Banner Message does not exist");
+        }
+
+        if (Yourorderconfirmation.equals("Your order's complete")) {
+            System.out.println(Yourorderconfirmation + "message is didsplayed in curved banner");
+            log.debug(Yourorderconfirmation + "message is displayed in curved banner");
+
+        } else {
+            System.out.println("Your Order's complete message not displayed");
+            Assert.fail("Your order confirmation message is displayed in curved banner");
+        }
+    }
+
+
 }
+
+
+
 
 
 

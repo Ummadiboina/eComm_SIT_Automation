@@ -2,11 +2,10 @@ package GlobalActions;
 
 import helpers.Environment;
 import org.apache.log4j.Logger;
-import org.openqa.selenium.By;
-import org.openqa.selenium.ElementNotVisibleException;
-import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.*;
 import org.openqa.selenium.Point;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import pageobjects.MouseHoverPage;
 import steps.Hooks;
@@ -1219,13 +1218,14 @@ public class MouseHoverAction extends Environment {
 
             Actions action1 = new Actions(driver);
             action1.moveToElement(MouseHoverPage.MouseMoveonUpgrade_Drupal).perform();
-            log.debug("Moving mouse on the PayG Sims");
+            log.debug("Moving mouse on the Drupal Nav Upgrades link");
             Thread.sleep(5000);
 
             // MouseHoverPage.MoveMouseOnPhones_Drupal.click();
             JavascriptExecutor executor = (JavascriptExecutor) driver;
             executor.executeScript("arguments[0].click();", MouseHoverPage.MouseMoveonUpgrade_Drupal);
             Thread.sleep(5000);
+            log.debug("Drupal Nav Upgrades link is clicked\n");
 
             //driver.manage().timeouts().implicitlyWait(15,TimeUnit.SECONDS);
 
@@ -1754,6 +1754,53 @@ public class MouseHoverAction extends Environment {
             Assert.fail("Failed to Navigate to the Shop mouse over");
             Thread.sleep(2000);
         }
+
+    }
+    //like new navigation
+    public static void mousehovertoLIkenewphone() {
+        // if(driver.findElements(By.xpath("//ul[@class='linksDesktop']//a[contains(text(),'Shop')]")).size()>1)
+
+        // Point coordinates=MouseHoverPage.MoveMouseonShop1.getLocation();
+        try {
+               /* Point coordinates=MouseHoverPage.MoveMouseonShop1.getLocation();
+                Robot robot=new Robot();
+                robot.mouseMove(coordinates.getX()+100,coordinates.getY()+100);
+                Actions action=new Actions(driver);
+                action.moveToElement(driver.findElement(By.xpath("//ul[@class='linksDesktop']//a[contains(text(),'Shop')]"))).perform();
+
+Actions action1=new Actions(driver);
+action1.moveToElement(MouseHoverPage.MoveMouseonLikenew1).perform();
+
+JavascriptExecutor executor=(JavascriptExecutor) driver;
+executor.executeScript("arguments[0].click();",MouseHoverPage.MoveMouseonLikenew1);*/
+
+
+            WebElement colour = driver.findElement(By.xpath("//div[@class='colour-wrapper qa-selectboxit-colour ng-isolate-scope']//select"));
+            CommonActions.scrollToElement(colour);
+            JavascriptExecutor js = (JavascriptExecutor) driver;
+            js.executeScript("arguments[0].setAttribute('style', 'display:block;')", colour);
+            new Select(colour).selectByVisibleText("Rose Gold");
+            CommonActions.clickWebElement(MouseHoverPage.SelectDeviceonlySimfree);
+            Thread.sleep(20000);
+            Autoredirection.redirect();
+            CommonActions.clickWebElement(MouseHoverPage.AddtoBasketbutton);
+            Thread.sleep(20000);
+            CommonActions.clickWebElement(MouseHoverPage.Idontwantspendcapbutton);
+            Thread.sleep(20000);
+            CommonActions.clickWebElement(MouseHoverPage.AddAccessories);
+            Thread.sleep(20000);
+            CommonActions.clickWebElement(MouseHoverPage.Addtobasket);
+
+
+
+
+
+
+//js.executeScript("arguments[0].setAttribute('style','display:block;')",colour);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
 
     }
 }
