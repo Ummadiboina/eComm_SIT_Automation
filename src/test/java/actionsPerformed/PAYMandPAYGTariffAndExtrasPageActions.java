@@ -1390,7 +1390,7 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 						log.debug("Info text is displayed after selecting your bill cap: " + pageobjects.PAYMandPAYGTariffAndExtrasPage.Info1Text.getText());
 					}
 					Thread.sleep(3000);
-					//Bill Cap overlay
+					//Bill Cap overlay#
 					PAYMandPAYGTariffAndExtrasPage.CapMyBillOverlay.click();
 					log.debug("BSC overlay icon is clicked");
 					Thread.sleep(4000);

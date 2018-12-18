@@ -202,11 +202,17 @@ public class UpgradeCustomerPage {
 	@FindBy(how = How.XPATH, using = "(//div[contains(text(),'Upgrade on us')])[1]")
 	public static WebElement TradeInTextUpgradePkg;
 
+	@FindBy(how = How.XPATH, using = "(//div[contains(text(),'Upgrade on us')])[1]")
+	public static WebElement BuyoutTextUpgradePkg;
+
 	@FindBy(how = How.XPATH, using = "(//div[contains(text(),'Left to pay on your existing device')])[1]/../div[2]")
 	public static WebElement LeftToPayCost1UpgradePkg;
 
 	@FindBy(how = How.XPATH, using = "(//div[contains(text(),'Upgrade on us')])[1]/../div[2]")
 	public static WebElement TradeInCostUpgradePkg;
+
+	@FindBy(how = How.XPATH, using = "(//div[contains(text(),'Upgrade on us')])[1]/../div[2]")
+	public static WebElement BuyoutCostUpgradePkg;
 	
 	@FindBy(how = How.XPATH, using = "//section[@id='qa-upgrade-promotion-discount']//p[@class='upfront']")
 	public static WebElement BuyoutCost2MyPkg;

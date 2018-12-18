@@ -1594,7 +1594,10 @@ public class Agent_RegisterCustomerActions extends Environment {
 								}
 
 
+								JavascriptExecutor jse = (JavascriptExecutor) driver;
+								jse.executeScript("window.scrollBy(0,300)", "");
 								Thread.sleep(3000);
+								Screenshots.captureScreenshot();
 
 								//Save My Preference Text Message
 								if(Chn1.equalsIgnoreCase("Select") || Chn2.equalsIgnoreCase("Select") || Chn3.equalsIgnoreCase("Select") || Chn4.equalsIgnoreCase("Select")) {

@@ -18,5 +18,5 @@ Feature: 17_AFU_Phones_GDPR_Enabled_Home_Delivery_EndUser_Migrated_MP_OptIn_B2_B
     Then Order confirmation message should be displayed
 
     Examples:
-      | user        | Device   | Tariffs | BSCstatus | BillCapAmount | consumer | B1     | B2  | B3     | B4  | Text   | Email | Phone  | Post | status  | MBBStatus | DeviceType | PreSelected |
-      | 07568414065 | iPhone X | Refresh | Enabled   | £10           | Me       | Select | Not | Select | Not | Select | Not   | Select | Not  | Enabled | No        | Connected  | Yes         |
+      | user        | Device   | Tariffs | BSCstatus | BillCapAmount | consumer | B1  | B2     | B3     | B4  | Text   | Email | Phone  | Post | status  | MBBStatus | DeviceType | PreSelected |
+      | 07568414065 | iPhone X | Refresh | Enabled   | £10           | Me       | Not | Select | Select | Not | Select | Not   | Select | Not  | Enabled | No        | Connected  | Yes         |

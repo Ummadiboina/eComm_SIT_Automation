@@ -1219,13 +1219,14 @@ public class MouseHoverAction extends Environment {
 
             Actions action1 = new Actions(driver);
             action1.moveToElement(MouseHoverPage.MouseMoveonUpgrade_Drupal).perform();
-            log.debug("Moving mouse on the PayG Sims");
+            log.debug("Moving mouse on the Drupal Nav Upgrades link");
             Thread.sleep(5000);
 
             // MouseHoverPage.MoveMouseOnPhones_Drupal.click();
             JavascriptExecutor executor = (JavascriptExecutor) driver;
             executor.executeScript("arguments[0].click();", MouseHoverPage.MouseMoveonUpgrade_Drupal);
             Thread.sleep(5000);
+            log.debug("Drupal Nav Upgrades link is clicked\n");
 
             //driver.manage().timeouts().implicitlyWait(15,TimeUnit.SECONDS);
 

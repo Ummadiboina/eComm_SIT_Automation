@@ -15,6 +15,8 @@ import org.testng.Assert;
 import org.testng.Reporter;
 import pageobjects.DeliveryPage;
 
+import java.awt.*;
+import java.awt.event.KeyEvent;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
@@ -226,9 +228,9 @@ public class DeliveryPageActions extends Environment {
             Thread.sleep(3000);
             js.executeScript("arguments[0].click();", driver.findElement(By.xpath("//*[@id='checkbox-terms-agreement-required']")));
             log.debug("checkbox Selected");
-           /* pageobjects.DeliveryPage.Continue.click();
+            pageobjects.DeliveryPage.Continue.click();
             log.debug("Clicking on the continue link");
-            Thread.sleep(4000);*/
+            Thread.sleep(4000);
             Screenshots.captureScreenshot();
         } else {
             WebElement element = pageobjects.DeliveryPage.Continue;
@@ -970,6 +972,351 @@ public class DeliveryPageActions extends Environment {
         }
     }
 
+    //GDPR validation, ITFD-864, Jan 2019 Release, By Jamal Khan
 
+    public static void GDPRvalidation(String BP1, String BP2, String BP3, String keyEvent, String DeviceType, String GDPRstatus, String PreSelected) throws InterruptedException, IOException {
+        Thread.sleep(5000);
 
+        String pageTitle = driver.getTitle();
+        log.debug("Currently we are at "+pageTitle+" page and in Consumer GDPR validation function\n");
+
+        Screenshots.captureScreenshot();
+
+        if(GDPRstatus.equalsIgnoreCase("Enabled")) {
+
+            //gdpr end user question validation
+            if(driver.findElements(By.xpath("//label[contains(text(),'Is this order for you or someone else?')]")).size()>0){
+                if(DeliveryPage.Me_radioBtn.isDisplayed() || DeliveryPage.thisOrderTxt.isDisplayed() || DeliveryPage.someoneElse_radioBtn.isDisplayed()) {
+                    log.debug("Failing because GDPR end user question(old requirement) with options are displaying\n");
+                    Assert.fail("Failing because GDPR end user question(old requirement) with options are displaying");
+                }
+            }else{
+                log.debug("As expected, GDPR end user question with options are not displaying\n");
+            }
+
+            //gdpr consent validation
+            if(DeviceType.equalsIgnoreCase("Connected")) {
+
+                log.debug("Device type is connected device\n");
+                if (driver.findElements(By.xpath("//label[contains(text(),'GDPR CONSENT')]")).size() > 0) {
+                    log.debug("As expected, GDPR consent is in enabled mode\n");
+
+                    //Header text validation
+                    String headerTxt = DeliveryPage.gdprHeaderTxt.getText();
+                    Thread.sleep(1000);
+                    if (headerTxt.equalsIgnoreCase("")) {
+                        log.debug("Header text is validated and it is matching with expected result, the actual header is :: " + headerTxt + "\n");
+                    } else {
+                        log.debug("Failed due to header text is not matching with expected result, the actual header is :: " + headerTxt + "\n");
+                        Assert.fail("Failed due to header text is not matching with expected result, the actual header is :: " + headerTxt + "\n");
+                    }
+
+                    //Header description validation
+                    String headerDescription = DeliveryPage.gdprHeaderDescription.getText();
+                    Thread.sleep(1000);
+                    if (headerDescription.contains("")) {
+                        log.debug("Header description is validated and it is matching with expected result, the actual header description is :: " + headerDescription + "\n");
+                    } else {
+                        log.debug("Failed due to header description is not matching with expected result, the actual header description is :: " + headerDescription + "\n");
+                        Assert.fail("Failed due to header description is not matching with expected result, the actual header description is :: " + headerDescription + "\n");
+                    }
+
+                    //O2 Products
+                    if (driver.findElements(By.id("preference-heading-B1")).size() > 0) {
+
+                        //O2Products Tile Text
+                        String O2ProductsText = DeliveryPage.O2Products_Text.getText();
+                        Thread.sleep(2000);
+                        log.debug("O2 Tile Content text is:: " + O2ProductsText + "\n");
+
+                        //O2Products moreInfo Link
+                        if(keyEvent.equalsIgnoreCase("Yes")){
+                            log.debug("Clicking on the O2Products 'Learn more about' with keyboard keys\n");
+                            DeliveryPage.O2Products_MoreInfoLink.sendKeys(Keys.ENTER);
+                            log.debug("Clicked on the O2Products 'Learn more about' with keyboard keys\n");
+                        }else {
+                            DeliveryPage.O2Products_MoreInfoLink.click();
+                            log.debug("Clicked on Learn more about O2 products\n");
+                        }
+
+                        Thread.sleep(3000);
+                        Screenshots.captureScreenshot();
+
+                        //O2Products Overlay Text
+                        String O2ProductsOverlayText = DeliveryPage.O2Products_OverlayText.getText();
+                        Thread.sleep(2000);
+                        log.debug("O2 products overlay text is:: " + O2ProductsOverlayText + "\n");
+                        Thread.sleep(1000);
+
+                        //O2Products Overlay Close Button clicking
+                        if (DeliveryPage.O2Products_OverlayCloseButton.isEnabled()) {
+                            if(keyEvent.equalsIgnoreCase("Yes")){
+                                log.debug("Clicking on the O2Products 'O2Products Overlay Close icon' with keyboard keys\n");
+                                DeliveryPage.O2Products_OverlayCloseButton.sendKeys(Keys.ENTER);
+                                log.debug("Clicked on the O2Products 'O2Products Overlay Close icon' with keyboard keys\n");
+                            }else {
+                                DeliveryPage.O2Products_OverlayCloseButton.click();
+                                log.debug("Clicked on O2 products overlay close button\n");
+                            }
+                        } else {
+                            log.debug("Failed due to - O2 products overlay close button is disabled\n");
+                            Assert.fail("Failed due to - O2 products overlay close button is disabled");
+                        }
+                    }
+
+                    Thread.sleep(1000);
+
+                    //O2 Perks And Extras
+                    if (driver.findElements(By.id("preference-heading-B2")).size() > 0) {
+
+                        //O2 Perks And Extras Tile Text
+                        String O2PerksAndExtrasText = DeliveryPage.O2PerksAndExtras_Text.getText();
+                        Thread.sleep(2000);
+                        log.debug("O2 perks and extras Tile Content text is:: " + O2PerksAndExtrasText + "\n");
+
+                        //O2 Perks And Extras more info Link clicking
+                        if(keyEvent.equalsIgnoreCase("Yes")){
+                            log.debug("Clicking on the O2 perks and extras 'Learn more about' link with keyboard keys\n");
+                            DeliveryPage.O2PerksAndExtras_MoreInfoLink.sendKeys(Keys.ENTER);
+                            log.debug("Clicked on the O2 perks and extras 'Learn more about' link with keyboard keys\n");
+                        }else {
+                            DeliveryPage.O2PerksAndExtras_MoreInfoLink.click();
+                            log.debug("Clicked on Learn more about O2 perks and extras info link\n");
+                        }
+
+                        Thread.sleep(3000);
+                        Screenshots.captureScreenshot();
+
+                        //O2 Perks And Extras Overlay Text
+                        String O2PerksAndExtrasOverlayText = DeliveryPage.O2PerksAndExtras_OverlayText.getText();
+                        Thread.sleep(2000);
+                        log.debug("O2 perks and extras overlay text is:: " + O2PerksAndExtrasOverlayText + "\n");
+                        Thread.sleep(1000);
+
+                        //O2 Perks And Extras overlay Close Button clicking
+                        if (DeliveryPage.O2PerksAndExtras_OverlayCloseButton.isEnabled()) {
+                            if(keyEvent.equalsIgnoreCase("Yes")){
+                                log.debug("Clicking on the O2 perks and extras 'O2PerksAndExtras Overlay Close icon' with keyboard keys\n");
+                                DeliveryPage.O2PerksAndExtras_OverlayCloseButton.sendKeys(Keys.ENTER);
+                                log.debug("Clicked on the O2 perks and extras 'O2PerksAndExtras Overlay Close icon' with keyboard keys\n");
+                            }else {
+                                DeliveryPage.O2PerksAndExtras_OverlayCloseButton.click();
+                                log.debug("Clicked on O2 perks and extras overlay close button \n");
+                            }
+                        } else {
+                            log.debug("Failed due to - O2 perks and extras overlay close button is disabled\n");
+                            Assert.fail("Failed due to - O2 perks and extras overlay close button is disabled\n");
+                        }
+                    }
+
+                    Thread.sleep(1000);
+
+                    //Offers From O2 Partner Text
+                    if (driver.findElements(By.id("preference-heading-B3")).size() > 0) {
+
+                        //Offers From O2 Partner Tile Text
+                        String OffersFromO2PartnerText = DeliveryPage.OffersFromO2Partner_Text.getText();
+                        Thread.sleep(2000);
+                        log.debug("Offers from o2 partners brands Tile Content text is:: " + OffersFromO2PartnerText + "\n");
+
+                        //Offers From O2 Partner more info Link clicking
+                        if(keyEvent.equalsIgnoreCase("Yes")){
+                            log.debug("Clicking on the Offers From O2 Partner 'Learn more about' link with keyboard keys\n");
+                            DeliveryPage.OffersFromO2Partner_MoreInfoLink.sendKeys(Keys.ENTER);
+                            log.debug("Clicked on the Offers From O2 Partner 'Learn more about' link with keyboard keys\n");
+                        }else {
+                            DeliveryPage.OffersFromO2Partner_MoreInfoLink.click();
+                            log.debug("Clicked on Learn more about partner offers");
+                        }
+
+                        Thread.sleep(3000);
+                        Screenshots.captureScreenshot();
+
+                        //Offers From O2 Partner Overlay Text
+                        String OffersFromO2PartnerOverlayText = DeliveryPage.OffersFromO2Partner_OverlayText.getText();
+                        Thread.sleep(2000);
+                        log.debug("Offers from o2 overlay text is:: " + OffersFromO2PartnerOverlayText + "\n");
+                        Thread.sleep(1000);
+
+                        //OffersFromO2Partner overlay CloseButton
+                        if (DeliveryPage.OffersFromO2Partner_OverlayCloseButton.isEnabled()) {
+                            if(keyEvent.equalsIgnoreCase("Yes")){
+                                log.debug("Clicking on the Offers From O2 Partner 'Overlay Close icon' with keyboard keys\n");
+                                DeliveryPage.OffersFromO2Partner_OverlayCloseButton.sendKeys(Keys.ENTER);
+                                log.debug("Clicked on the Offers From O2 Partner 'Overlay Close icon' with keyboard keys\n");
+                            }else {
+                                DeliveryPage.OffersFromO2Partner_OverlayCloseButton.click();
+                                log.debug("Clicked on offers from partners and brands overlay close button");
+                            }
+                        } else {
+                            log.debug("Failed due to - offers from partners and brands overlay close button is disabled");
+                            Assert.fail("Failed due to - offers from partners and brands overlay close button is disabled");
+                        }
+                    }
+
+                    //Selecting O2 Products Business preferences
+                    if (BP1.equalsIgnoreCase("Select")) {
+
+                        if (driver.findElements(By.xpath("//input[@id='B1']")).size() <= 0) {
+                            log.debug("O2Products business preference checkBox is not displayed");
+                            Assert.fail("O2Products business preference checkBox is not displayed");
+                        }
+
+                        if (PreSelected.equalsIgnoreCase("Yes")) {
+                            if (DeliveryPage.O2Products.isSelected()) {
+                                log.debug("User is Upgrade customer and as expected, 'O2Products Preference' is selected by default as this option was selected earlier\n");
+                            } else {
+                                log.debug("Failed:: 'O2Products Preference' is expected to be selected by default as the customer was selected this preference earlier\n");
+                                Assert.fail("Failed:: 'O2Products Preference' is expected to be selected by default as the customer was selected this preference earlier\n");
+                            }
+                        } else {
+                            if (DeliveryPage.O2Products.isSelected()) {
+                                log.debug("Failing due to - O2Products business preference is pre-selected in consumer acquisition journey\n");
+                                Assert.fail("Failing due to - O2Products business preference is pre-selected in consumer acquisition journey\n");
+                            } else {
+                                if(keyEvent.equalsIgnoreCase("Yes")){
+                                    log.debug("Selecting the O2Products business preference checkBox with keyboard keys\n");
+                                    DeliveryPage.O2Products.sendKeys(Keys.SPACE);
+                                    log.debug("Selected option with keyboard keys\n");
+                                }else {
+                                    log.debug("Clicking on O2Products business preference\n");
+                                    DeliveryPage.O2Products.click();
+                                    log.debug("O2Products business preference selected\n");
+                                }
+                            }
+                        }
+                    } else {
+                        if (DeliveryPage.O2Products.isSelected()) {
+                            log.debug("Failed:: 'O2Products Preference' is selected by default, it should not be in selected state \n");
+                            Assert.fail("Failed:: 'O2Products Preference' is selected by default, it should not be in selected state \n");
+                        } else {
+                            log.debug("As expected, O2Products business preference is not selected by default/pre-ticked \n");
+                        }
+                    }
+                    Thread.sleep(2000);
+
+                    //Selecting O2 Perks And Extras business preference
+                    if (BP2.equalsIgnoreCase("Select")) {
+
+                        if (driver.findElements(By.xpath("//input[@id='B2']")).size() <= 0) {
+                            log.debug("O2 Perks And Extras business preference checkBox is not displayed");
+                            Assert.fail("O2 Perks And Extras business preference checkBox is not displayed");
+                        }
+
+                        if (PreSelected.equalsIgnoreCase("Yes")) {
+                            if (DeliveryPage.O2PerksAndExtras.isSelected()) {
+                                log.debug("User is Upgrade customer and as expected, 'O2 Perks And Extras Preference' is selected by default as this option was selected earlier\n");
+                            } else {
+                                log.debug("Failed:: 'O2 Perks And Extras Preference' is expected to be selected by default as the customer was selected this preference earlier");
+                                Assert.fail("Failed:: 'O2 Perks And Extras Preference' is expected to be selected by default as the customer was selected this preference earlier");
+                            }
+                        } else {
+                            if (DeliveryPage.O2PerksAndExtras.isSelected()) {
+                                log.debug("Failing due to - O2 Perks And Extras business preference selected is pre-selected in consumer acquisition journey\n");
+                                Assert.fail("Failing due to - O2 Perks And Extras business preference selected is pre-selected in consumer acquisition journey\n");
+                            } else {
+                                if(keyEvent.equalsIgnoreCase("Yes")){
+                                    log.debug("Selecting the O2 Perks And Extras business preference checkBox with keyboard keys\n");
+                                    DeliveryPage.O2PerksAndExtras.sendKeys(Keys.SPACE);
+                                    log.debug("Selected option with keyboard keys\n");
+                                }else {
+                                    log.debug("Clicking on O2 Perks And Extras business preference\n");
+                                    DeliveryPage.O2PerksAndExtras.click();
+                                    log.debug("O2 Perks And Extras business preference selected\n");
+                                }
+                            }
+                        }
+                    } else {
+                        if (DeliveryPage.O2PerksAndExtras.isSelected()) {
+                            log.debug("Failed:: 'O2 Perks And Extras Preference' is selected by default, it should not be in selected state \n");
+                            Assert.fail("Failed:: 'O2 Perks And Extras Preference' is selected by default, it should not be in selected state \n");
+                        } else {
+                            log.debug("As expected, O2 Perks And Extras business preference is not selected by default/pre-ticked \n");
+                        }
+                    }
+                    Thread.sleep(2000);
+
+                    //Selecting Offers From O2 Partner business preference
+                    if (BP3.equalsIgnoreCase("Select")) {
+
+                        if (driver.findElements(By.xpath("//input[@id='B3']")).size() <= 0) {
+                            log.debug("Offers From O2 Partner business preference checkBox is not displayed");
+                            Assert.fail("Offers From O2 Partner business preference checkBox is not displayed");
+                        }
+
+                        if (PreSelected.equalsIgnoreCase("Yes")) {
+                            if (DeliveryPage.OffersFromO2Partner.isSelected()) {
+                                log.debug("User is Upgrade customer and as expected, 'Offers From O2 Partner Preference' is selected by default as this option was selected earlier\n");
+                            } else {
+                                log.debug("Failed:: 'Offers From O2 Partner Preference' is expected to be selected by default as the customer was selected this preference earlier");
+                                Assert.fail("Failed:: 'Offers From O2 Partner Preference' is expected to be selected by default as the customer was selected this preference earlier");
+                            }
+                        } else {
+                            if (DeliveryPage.OffersFromO2Partner.isSelected()) {
+                                log.debug("Failing due to - Offers From O2 Partner business preference is pre-selected in consumer acquisition journey\n");
+                                Assert.fail("Failing due to - Offers From O2 Partner business preference is pre-selected in consumer acquisition journey\n");
+                            } else {
+                                if(keyEvent.equalsIgnoreCase("Yes")){
+                                    log.debug("Selecting the Offers From O2 Partner business preference checkBox with keyboard keys\n");
+                                    DeliveryPage.OffersFromO2Partner.sendKeys(Keys.SPACE);
+                                    log.debug("Selected option with keyboard keys\n");
+                                }else {
+                                    log.debug("Clicking on Offers From O2 Partner business preference\n");
+                                    DeliveryPage.OffersFromO2Partner.click();
+                                    log.debug("Offers From O2 Partner business preference selected\n");
+                                }
+                            }
+                        }
+                    } else {
+                        if (DeliveryPage.OffersFromO2Partner.isSelected()) {
+                            log.debug("Failed:: 'Offers From O2 Partner Preference' is selected by default, it should not be in selected state \n");
+                            Assert.fail("Failed:: 'Offers From O2 Partner Preference' is selected by default, it should not be in selected state \n");
+                        } else {
+                            log.debug("As expected, Offers From O2 Partner Preference business preference is not selected by default/pre-ticked \n");
+                        }
+                    }
+                    Thread.sleep(2000);
+                } else {
+                    log.debug("Failing because GDPR is disabled for enable status, it supposed to be in enabled mode\n");
+                    Assert.fail("Failing because GDPR is disabled for enable status, it supposed to be in enabled mode\n");
+                }
+            } else {
+                log.debug("Device type is non-connected device\n");
+                if(driver.findElements(By.xpath("//label[contains(text(),'GDPR CONSENT')]")).size()>0) {
+                    log.debug("Failed due to GDPR is in enabled mode for non-connected device \n");
+                    Assert.fail("Failed due to GDPR is in enabled mode for non-connected device \n");
+                }else{
+                    log.debug("As expected, GDPR is in disabled for non-connected device \n");
+                }
+            }
+        }else if(GDPRstatus.equalsIgnoreCase("Disabled")) {
+
+            //gdpr end user question validation
+            if(driver.findElements(By.xpath("//label[contains(text(),'Is this order for you or someone else?')]")).size()>0){
+                if(DeliveryPage.Me_radioBtn.isDisplayed() || DeliveryPage.thisOrderTxt.isDisplayed() || DeliveryPage.someoneElse_radioBtn.isDisplayed()) {
+                    log.debug("Failing because GDPR end user question(old requirement) with options are displaying\n");
+                    Assert.fail("Failing because GDPR end user question(old requirement) with options are displaying");
+                }
+            }
+
+            //gdpr consent validation
+            if(driver.findElements(By.xpath("//label[contains(text(),'GDPR CONSENT')]")).size()>0) {
+                log.debug("Failed due to GDPR is in enabled mode, it should be in disabled mode \n");
+                Assert.fail("Failed due to GDPR is in enabled mode, it should be in disabled mode \n");
+            }else{
+                log.debug("As expected, GDPR is in disabled mode for disabled state \n");
+            }
+        }
+
+        Screenshots.captureScreenshot();
+
+        log.debug("Clicking on Continue button\n");
+        if(DeliveryPage.continueBtn.isDisplayed()) {
+            DeliveryPage.continueBtn.click();
+        }else{
+            driver.findElement(By.xpath("(//button/span[@id='btn-continue-label'])[2]")).click();
+        }
+        log.debug("Clicked on Continue button\n");
+
+    }
 }
