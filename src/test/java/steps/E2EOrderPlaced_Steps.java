@@ -4165,7 +4165,7 @@ public class E2EOrderPlaced_Steps {
             PageFactory.initElements(driver, AccessoryPage.class);
             PageFactory.initElements(driver, NonConnectedDeviceDetailsPage.class);
             AccessoryPageActions.UserSpecifiedAccessoryLimit(Limit);
-            // NonConnectedDeviceDetailsPageAction.ClickonBasketIcon();
+             NonConnectedDeviceDetailsPageAction.ClickonBasketIcon();
         } catch (Exception e) {
             // TODO Auto-generated catch block
             log.debug("Unable to add accessories to basket");
@@ -11326,4 +11326,167 @@ public class E2EOrderPlaced_Steps {
 
         }
     }
+
+    @And("^Navigate to BudgetLed and click on See your Budget$")
+    public void Navigate_to_Budegetled_Click_on_SeeyourBudgetlink() {
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, PAYMandPAYGTariffAndExtrasPage.class);
+            //ConnectedDeviceDetailsPageAction.GetTitle();
+            Thread.sleep(5000);
+            PAYMandPAYGTariffAndExtrasPageActions.Budgetledlinkclick();
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            log.debug("Unable to navigate to device details page");
+            Assert.fail("Unable to navigate to device details page");
+
+        }
+
+
+    }
+
+
+    @And("^Configure the Budgetled ([^\"]*) ([^\"]*)$")
+    public void Configure_the_Budget_to_the_Max(String monthlyBudget, String monthlyData) {
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, PAYMandPAYGTariffAndExtrasPage.class);
+            PAYMandPAYGTariffAndExtrasPageActions.budgetLedValidation(monthlyBudget, monthlyData);
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            log.debug("Unable to click on the monthy budget Max button");
+            Assert.fail("Unable to click on the monthy budget Max button");
+
+        }
+
+
+    }
+
+    @Given("^Choose some CFUAccesssory$")
+    public void Choose_some_CFUAccesssory() {
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, PAYMandPAYGTariffAndExtrasPage.class);
+            JavascriptExecutor jse = (JavascriptExecutor) driver;
+            jse.executeScript("window.scrollBy(0,300)", "");
+            Thread.sleep(3000);
+            Screenshots.captureScreenshot();
+            PAYMandPAYGTariffAndExtrasPageActions.addCFUAccessory();
+            Thread.sleep(2000);
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            log.debug("Unable to choose Accesssory");
+            Assert.fail("Unable to choose Accesssory");
+
+        }
+
+    }
+
+    @Given("^select an \"([^\"]*)\" Accessory with Quanity([^\"]*)$")
+    public void select_an_Accessory_With_Quantity(String elementName,String elementQuantity) {
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, AccessoryPage.class);
+            AccessoryPageActions.SelectAnyAccessorywithQuantity(elementName ,elementQuantity);
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            log.debug("Unable to select accessory");
+            Assert.fail("Unable to select accessory");
+
+        }
+
+    }
+
+
+
+    @When("^Navigate to LikenewPhone Page$")
+    public void  Navigate_to_LikenewPhone_Page() throws Throwable {
+         try {
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+        PageFactory.initElements(driver, MouseHoverPage.class);
+       MouseHoverAction.mousehovertoLIkenewphone();
+
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            log.debug("unable to see the cookie pop up");
+            Assert.fail("unable to see the cookie pop up");
+        }
+    }
+
+
+    @When("^Given I am an CFA user and Lands on LikeNewPhone page and select$")
+    public void Given_I_am_an_CFA_user_and_Lands_on_LikeNewPhone_page_and_select()  {
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, LikenewPage.class);
+           //driver.get("https://www.ref.o2.co.uk/shop/like-new/sim-free-phones");
+            LikeNewPageActions.LIkenewphone();
+
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            log.debug("unable to see the cookie pop up");
+            Assert.fail("unable to see the cookie pop up");
+        }
+    }
+
+
+
+
+    @And("^I Land on the Plan included basket page and choose Continue Shopping$")
+    public void I_Land_on_the_Plan_included_basket_page_and_choose_Continue_Shopping() {
+        try {
+            Thread.sleep(5000);
+            driver.findElement(By.xpath("//button[@id='btnAddToBasket'] | //input[@id='qa-proceed-to-basket']")).click();
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, BasketPage.class);
+            Thread.sleep(7000);
+            BasketPageActions.continueShopping();
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            log.debug("Unable to Land on the Plan included basket page and choose Continue shopping");
+            Assert.fail("Unable to Land on the Plan included basket page and choose Continue shopping");
+        }
+    }
+
+
+    @And("^Validate the Order Confirmation Page ([^\"]*)$")
+    public void veriy_Confirmation_Page_for_Curved_Banner_and_devicedetails_Messages (String devicedetails) {
+        try {
+            Thread.sleep(5000);
+           // driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, ReviewAndConfirmPage.class);
+            Thread.sleep(7000);
+            ReviewAndConfirmPageActions.CurvedBannermesage();
+            ReviewAndConfirmPageActions.Devicedetails(devicedetails);
+
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            log.debug("Unable to Land on the Plan included basket page and choose Continue shopping");
+            Assert.fail("Unable to Land on the Plan included basket page and choose Continue shopping");
+        }
+    }
+
+
+
+    @And("Validate the Order Confirmation Page device ([^\"]*) and Accessories details$")
+    public void Validate_the_Order_Confirmation_Page_for_device_and_Accessoriesdetails (String devicedetails) {
+        try {
+            Thread.sleep(5000);
+            // driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, ReviewAndConfirmPage.class);
+            Thread.sleep(7000);
+            ReviewAndConfirmPageActions.CurvedBannermesage();
+            ReviewAndConfirmPageActions.Devicedetails(devicedetails);
+            ReviewAndConfirmPageActions.accessorydetails();
+           // ReviewAndConfirmPageActions.
+
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            log.debug("Unable to Land on the Plan included basket page and choose Continue shopping");
+            Assert.fail("Unable to Land on the Plan included basket page and choose Continue shopping");
+        }
+    }
 }
+
+
+

@@ -341,6 +341,7 @@ public class ConnectedDeviceDetailsPageAction extends Environment {
         // TODO Auto-generated method stub
         //Thread.sleep(5000);
 
+
         //ConnectedDeviceDetailsPage.ColorDropDown.click();
         //WebElement ele = driver.findElement(By.xpath("(//span[@class='selectboxit-option-icon-container']/following-sibling::span[normalize-space()='" + color + "'])[1]"));
 

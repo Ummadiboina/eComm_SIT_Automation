@@ -27,22 +27,21 @@ public class ReviewAndConfirmPageActions extends Environment {
 
     public static void ReviewConfirmPageHeader() throws Throwable {
         Thread.sleep(4000);
-        String HeaderText= ReviewAndConfirmPage.RevConfHeading.getText();
+        String HeaderText = ReviewAndConfirmPage.RevConfHeading.getText();
         Screenshots.captureScreenshot();
-        if(HeaderText.contains("Review & confirm")) {
+        if (HeaderText.contains("Review & confirm")) {
             log.debug("The Review and confirmation page for simo is displayed. The sections in this page are::\n");
 
-            log.debug("First Section:: "+ReviewAndConfirmPage.firstSection.getText()+"\n");
+            log.debug("First Section:: " + ReviewAndConfirmPage.firstSection.getText() + "\n");
             Thread.sleep(1000);
-            log.debug("Second Section:: "+ReviewAndConfirmPage.secondSection.getText()+"\n");
+            log.debug("Second Section:: " + ReviewAndConfirmPage.secondSection.getText() + "\n");
             Thread.sleep(1000);
-            log.debug("Third Section:: "+ReviewAndConfirmPage.thirdSection.getText()+"\n");
+            log.debug("Third Section:: " + ReviewAndConfirmPage.thirdSection.getText() + "\n");
             Thread.sleep(1000);
-            log.debug("Forth Section:: "+ReviewAndConfirmPage.forthSection.getText()+"\n");
+            log.debug("Forth Section:: " + ReviewAndConfirmPage.forthSection.getText() + "\n");
             Thread.sleep(1000);
-            log.debug("Fifth Section:: "+ReviewAndConfirmPage.fifthSection.getText()+"\n");
-        }
-        else
+            log.debug("Fifth Section:: " + ReviewAndConfirmPage.fifthSection.getText() + "\n");
+        } else
             Assert.fail("The Review and confirmation page is not displayed for upgrade simo");
 
     }
@@ -52,8 +51,7 @@ public class ReviewAndConfirmPageActions extends Environment {
         List<WebElement> PrimeHEad = driver.findElements(By.xpath("//*[@class='region region-header']"));
         if (PrimeHEad.size() > 0) {
             Assert.fail("The Primary header is displayed which is not correct");
-        }
-        else
+        } else
             log.debug("The Primary header is not displayed which is correct");
     }
 
@@ -62,8 +60,7 @@ public class ReviewAndConfirmPageActions extends Environment {
         List<WebElement> ProgBar = driver.findElements(By.xpath("//*[@id='checkout-progress-bar-xxl']"));
         if (ProgBar.size() > 0) {
             Assert.fail("The Progress bar is displayed which is not correct");
-        }
-        else
+        } else
             log.debug("The Progress bar is not displayed which is correct");
     }
 
@@ -72,8 +69,7 @@ public class ReviewAndConfirmPageActions extends Environment {
         List<WebElement> OrdrSummary = driver.findElements(By.xpath("//*[@class='basket-container']"));
         if (OrdrSummary.size() > 0) {
             Assert.fail("The Order Summary is displayed which is not correct");
-        }
-        else
+        } else
             log.debug("The Order Summary is not displayed which is correct");
     }
 
@@ -83,8 +79,7 @@ public class ReviewAndConfirmPageActions extends Environment {
         if (numblabel.size() > 0) {
             log.debug("The MSISDN is displayed as a label");
 
-        }
-        else
+        } else
             Assert.fail("The MSISDN is not displayed as a label");
     }
 
@@ -92,14 +87,76 @@ public class ReviewAndConfirmPageActions extends Environment {
 
         List<WebElement> AbtULabel = driver.findElements(By.xpath("//*[@class='default-content-container about-you-title']"));
         List<WebElement> AbtUSection = driver.findElements(By.xpath("//*[@class='form-element-container error-section']"));
-        if ((AbtULabel.size() > 0)&& (AbtUSection.size() > 0)) {
+        if ((AbtULabel.size() > 0) && (AbtUSection.size() > 0)) {
             Assert.fail("The About you section is displayed which is not correct");
+        } else
+            log.debug("The About you section is not displayed");
+    }
+
+    public static void CurvedBannermesage() {
+        String CurvedBanner1 = ReviewAndConfirmPage.CurvedBannerGoodnews.getText();
+        String CurvedBanner = CurvedBanner1.substring(0, CurvedBanner1.length() - 5);
+        String Yourorderconfirmation = ReviewAndConfirmPage.CurvedBannerYourordercomplete.getText();
+
+        if (CurvedBanner.equals("Good news,")) {
+            System.out.println(CurvedBanner + "Message exists inside curved banner in confirmation page");
+            log.debug(CurvedBanner + "Message exists inside curved banner in confirmation page");
+        } else {
+
+            System.out.println("Curved Banner Message does not exist");
+            Assert.fail("Curved Banner Message does not exist");
+        }
+
+        if (Yourorderconfirmation.equals("Your order's complete")) {
+            System.out.println(Yourorderconfirmation + "message is didsplayed in curved banner");
+            log.debug(Yourorderconfirmation + "message is displayed in curved banner");
+
+        } else {
+            System.out.println("Your Order's complete message not displayed");
+            Assert.fail("Your order confirmation message is displayed in curved banner");
+        }
+    }
+
+    public static void Devicedetails(String devicename) {
+        String devicedetail = ReviewAndConfirmPage.Devicedetails.getText();
+
+        if (devicedetail.equalsIgnoreCase(devicename)) {
+
+            System.out.println("device detailsmatched" + devicedetail);
+            log.debug("device detailsmatched" + devicedetail);
+
+        } else {
+
+
+            System.out.println("device details does not match");
+            Assert.fail("device details does not match");
         }
 
 
-        else
-            log.debug("The About you section is not displayed");
     }
+
+    public static void Tariffdetails() {
+        if (driver.findElements(By.xpath("//div[@class='con-tariff-summary']")).size() > 0) {
+            String Tariff = ReviewAndConfirmPage.Tariffdetails.getText();
+            System.out.println("Tariff details are:" + Tariff);
+            log.debug("Tariff details are:" + Tariff);
+
+        } else {
+            System.out.println("Tariff details are not matching");
+            log.debug("Tariff details are not matching");
+        }
+
+
+    }
+
+public static void accessorydetails(){
+
+        //add accessories
+
+
+
+
+}
 }
 
 

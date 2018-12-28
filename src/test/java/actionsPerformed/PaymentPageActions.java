@@ -55,7 +55,7 @@ public class PaymentPageActions extends Environment {
         jse.executeScript("window.scrollBy(0,300)", "");
 
         Thread.sleep(2000);
-        if(driver.findElements(By.xpath("//input[@id='accountName']")).size()>0) {
+        if (driver.findElements(By.xpath("//input[@id='accountName']")).size() > 0) {
             pageobjects.PaymentPage.Name_On_Account.sendKeys(Username);
             log.debug("Entered name is " + Username);
             Thread.sleep(2000);
@@ -72,6 +72,7 @@ public class PaymentPageActions extends Environment {
             log.debug("Entered sort code - 96");
             Thread.sleep(2000);
             Screenshots.captureScreenshot();
+            Thread.sleep(10000);
             pageobjects.PaymentPage.Accept_Terms_Checkbox.click();
             log.debug("Clicked on the Accept Terms checkbox");
         }
@@ -80,7 +81,7 @@ public class PaymentPageActions extends Environment {
     }
 
 
-    public static void enterPotalCodeAddress()  {
+    public static void enterPotalCodeAddress() {
 
         pageobjects.PaymentPage.housenumber.sendKeys("41");
         log.debug("Entered the House Number - 41");
@@ -129,7 +130,7 @@ public class PaymentPageActions extends Environment {
     }
 
     public static void Time_At_Address() throws IOException, InterruptedException {
-
+        Thread.sleep(18000);
         scrollToAnElement.scrollToElement(PaymentPage.Stay_Address_Years);
         pageobjects.PaymentPage.Stay_Address_Years.sendKeys("9");
         log.debug("Entered the stayed at address - 9");
@@ -147,7 +148,7 @@ public class PaymentPageActions extends Environment {
 
     public static void Time_At_Address_CC() throws InterruptedException, IOException {
 
-        Thread.sleep(5000);
+        Thread.sleep(10000);
         pageobjects.PaymentPage.housenumber.sendKeys("41");
         log.debug("Entered the House Number - 41");
 
@@ -173,33 +174,34 @@ public class PaymentPageActions extends Environment {
         Screenshots.captureScreenshot();
 
     }
+
     public static void Card_Details_CCV() throws InterruptedException, IOException {
 
-       //driver.manage().timeouts().implicitlyWait(15,TimeUnit.SECONDS);
+        //driver.manage().timeouts().implicitlyWait(15,TimeUnit.SECONDS);
         Thread.sleep(5000);
 
             /*driver.switchTo().frame("payment-iframe");
             Thread.sleep(5000);
             if (driver.findElements(By.xpath("//input[@type='password']")).size() > 0) {*/
 
-            if (driver.findElements(By.xpath("//iframe[@class='payment-iframe']")).size() > 0) {
+        if (driver.findElements(By.xpath("//iframe[@class='payment-iframe']")).size() > 0) {
 
-                driver.switchTo().frame("payment-iframe");
-                Thread.sleep(5000);
+            driver.switchTo().frame("payment-iframe");
+            Thread.sleep(5000);
 
-                PaymentPage.CCVSecurityCode.sendKeys("1234");
-                log.debug("Entered CVV security code");
-                Thread.sleep(3000);
-                Screenshots.captureScreenshot();
-                JavascriptExecutor executor = (JavascriptExecutor) driver;
-                executor.executeScript("arguments[0].click();", PaymentPage.Submit_Next_Step);
-                //PaymentPage.Submit_Next_Step.click();
-                log.debug("Clicking on submit to next step");
-                Thread.sleep(12000);
-                log.debug("*********We are done***************");
-                log.debug("Exiting the Card_CCV section");
-                driver.switchTo().defaultContent();
-            }
+            PaymentPage.CCVSecurityCode.sendKeys("1234");
+            log.debug("Entered CVV security code");
+            Thread.sleep(3000);
+            Screenshots.captureScreenshot();
+            JavascriptExecutor executor = (JavascriptExecutor) driver;
+            executor.executeScript("arguments[0].click();", PaymentPage.Submit_Next_Step);
+            //PaymentPage.Submit_Next_Step.click();
+            log.debug("Clicking on submit to next step");
+            Thread.sleep(12000);
+            log.debug("*********We are done***************");
+            log.debug("Exiting the Card_CCV section");
+            driver.switchTo().defaultContent();
+        }
     }
 
     public static void depositCard_Details_CCV() throws InterruptedException, IOException {
@@ -310,7 +312,6 @@ public class PaymentPageActions extends Environment {
 
 
     }
-
 
 
     public static void Card_Details() throws InterruptedException, IOException {

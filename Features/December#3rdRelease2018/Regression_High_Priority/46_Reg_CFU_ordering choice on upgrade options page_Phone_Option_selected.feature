@@ -34,7 +34,6 @@ Feature: 46_Reg_CFU_ordering choice on upgrade options page_Phone_Option_selecte
     And Continue to Agreements page and confirm all the agreement checks
     And Continue to Review page and review the order
     Then order confirmation is displayed
-    Then Choose <consumer> <status> Business preferences <B1> <B2> <B3> <B4> And Channel Preferences <Text> <Email> <Phone> <Post> <MBBStatus> <DeviceType> <PreSelected>
 
     Examples:
       | username                                    | password | handset  | BSCstatus | BillCap   | CapAmount         | Username     | Action | tariff                  | consumer | B1  | B2  | B3  | B4  | Text | Email | Phone | Post | status  | MBBStatus | DeviceType | PreSelected |

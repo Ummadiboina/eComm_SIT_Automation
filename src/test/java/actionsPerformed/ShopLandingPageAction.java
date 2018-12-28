@@ -185,6 +185,7 @@ public class ShopLandingPageAction extends Environment {
 
 	}
 
+	//to be deleted
 
 }
 
