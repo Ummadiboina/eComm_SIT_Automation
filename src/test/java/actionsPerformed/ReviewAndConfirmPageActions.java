@@ -6,6 +6,7 @@ import java.util.Comparator;
 import java.util.LinkedList;
 import java.util.List;
 
+import GlobalActions.CommonActions;
 import org.apache.commons.lang.StringUtils;
 import org.apache.log4j.Logger;
 import org.junit.Assert;
@@ -117,7 +118,7 @@ public class ReviewAndConfirmPageActions extends Environment {
         }
     }
 
-    public static void Devicedetails(String devicename) {
+    public static void Devicedetail(String devicename) {
         String devicedetail = ReviewAndConfirmPage.Devicedetails.getText();
 
         if (devicedetail.equalsIgnoreCase(devicename)) {
@@ -149,15 +150,74 @@ public class ReviewAndConfirmPageActions extends Environment {
 
     }
 
-public static void accessorydetails(){
 
-        //add accessories
+    public static void Storeopentimings() {
+        if (driver.findElements(By.xpath("//p[contains(text(),'See store opening times')]")).size() > 0) {
+
+            System.out.println("Click and collect is enabled");
+            log.debug("Click and collect is enabled");
+
+            CommonActions.clickWebElement(pageobjects.ReviewAndConfirmPage.Storeopentimings);
+
+        } else {
+            Assert.fail("Click and collect is disabled");
+            System.out.println("Click and collect is disabled");
+            log.debug("Click and collect is disabled");
 
 
+        }
+
+
+    }
+
+    public static void device_accessory_Tariff() {
+        String devicedetail = ReviewAndConfirmPage.Devicedetails.getText();
+//device
+        if (driver.findElements(By.xpath("//div[@class='con-device-name']//span")).size() > 0) {
+
+            System.out.println("device detailsmatched" + devicedetail);
+            log.debug("device detailsmatched" + devicedetail);
+
+        } else {
+
+
+            System.out.println("device details does not match");
+            Assert.fail("device details does not match");
+        }
+        //tariff
+        if (driver.findElements(By.xpath("//div[@class='con-tariff-summary']")).size() > 1) {
+            String Tariff = pageobjects.ReviewAndConfirmPage.Tariffdetails.getText();
+            System.out.println("Tariff displayed=" + Tariff);
+            log.debug("Tariff displayed=" + Tariff);
+        } else {
+
+            System.out.println("Tariff not displayed");
+            Assert.fail("Tariff not displayed");
+        }
+        //Accessories
+        if (driver.findElements(By.xpath("//ul[@class='acc-list']")).size() > 0) {
+            String Accessories = ReviewAndConfirmPage.Accessoriesdetails.getText();
+
+            System.out.println("Tariff details are" + Accessories);
+
+            log.debug("Tariff details are" + Accessories);
+        }
+        else{
+
+
+            System.out.println("Tariff not displayed");
+            log.debug("Tariff not displayed");
+            Assert.fail("Tariff not displayed");
+
+        }
+
+
+    }
 
 
 }
-}
+//accessories
+
 
 
 

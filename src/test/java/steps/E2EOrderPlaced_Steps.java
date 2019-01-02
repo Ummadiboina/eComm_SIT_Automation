@@ -666,7 +666,6 @@ public class E2EOrderPlaced_Steps {
     }
 
 
-
     @And("^Navigate to View tariff page$")
     public void Navigate_to_View_tariff_page() {
         try {
@@ -4165,7 +4164,7 @@ public class E2EOrderPlaced_Steps {
             PageFactory.initElements(driver, AccessoryPage.class);
             PageFactory.initElements(driver, NonConnectedDeviceDetailsPage.class);
             AccessoryPageActions.UserSpecifiedAccessoryLimit(Limit);
-             NonConnectedDeviceDetailsPageAction.ClickonBasketIcon();
+            NonConnectedDeviceDetailsPageAction.ClickonBasketIcon();
         } catch (Exception e) {
             // TODO Auto-generated catch block
             log.debug("Unable to add accessories to basket");
@@ -11383,11 +11382,11 @@ public class E2EOrderPlaced_Steps {
     }
 
     @Given("^select an \"([^\"]*)\" Accessory with Quanity([^\"]*)$")
-    public void select_an_Accessory_With_Quantity(String elementName,String elementQuantity) {
+    public void select_an_Accessory_With_Quantity(String elementName, String elementQuantity) {
         try {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, AccessoryPage.class);
-            AccessoryPageActions.SelectAnyAccessorywithQuantity(elementName ,elementQuantity);
+            AccessoryPageActions.SelectAnyAccessorywithQuantity(elementName, elementQuantity);
         } catch (Exception e) {
             // TODO Auto-generated catch block
             log.debug("Unable to select accessory");
@@ -11398,13 +11397,12 @@ public class E2EOrderPlaced_Steps {
     }
 
 
-
     @When("^Navigate to LikenewPhone Page$")
-    public void  Navigate_to_LikenewPhone_Page() throws Throwable {
-         try {
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        PageFactory.initElements(driver, MouseHoverPage.class);
-       MouseHoverAction.mousehovertoLIkenewphone();
+    public void Navigate_to_LikenewPhone_Page() throws Throwable {
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, MouseHoverPage.class);
+            MouseHoverAction.mousehovertoLIkenewphone();
 
         } catch (Exception e) {
             // TODO Auto-generated catch block
@@ -11415,11 +11413,11 @@ public class E2EOrderPlaced_Steps {
 
 
     @When("^Given I am an CFA user and Lands on LikeNewPhone page and select$")
-    public void Given_I_am_an_CFA_user_and_Lands_on_LikeNewPhone_page_and_select()  {
+    public void Given_I_am_an_CFA_user_and_Lands_on_LikeNewPhone_page_and_select() {
         try {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, LikenewPage.class);
-           //driver.get("https://www.ref.o2.co.uk/shop/like-new/sim-free-phones");
+            //driver.get("https://www.ref.o2.co.uk/shop/like-new/sim-free-phones");
             LikeNewPageActions.LIkenewphone();
 
         } catch (Exception e) {
@@ -11428,8 +11426,6 @@ public class E2EOrderPlaced_Steps {
             Assert.fail("unable to see the cookie pop up");
         }
     }
-
-
 
 
     @And("^I Land on the Plan included basket page and choose Continue Shopping$")
@@ -11450,43 +11446,67 @@ public class E2EOrderPlaced_Steps {
 
 
     @And("^Validate the Order Confirmation Page ([^\"]*)$")
-    public void veriy_Confirmation_Page_for_Curved_Banner_and_devicedetails_Messages (String devicedetails) {
-        try {
-            Thread.sleep(5000);
-           // driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-            PageFactory.initElements(driver, ReviewAndConfirmPage.class);
-            Thread.sleep(7000);
-            ReviewAndConfirmPageActions.CurvedBannermesage();
-            ReviewAndConfirmPageActions.Devicedetails(devicedetails);
-
-        } catch (Exception e) {
-            // TODO Auto-generated catch block
-            log.debug("Unable to Land on the Plan included basket page and choose Continue shopping");
-            Assert.fail("Unable to Land on the Plan included basket page and choose Continue shopping");
-        }
-    }
-
-
-
-    @And("Validate the Order Confirmation Page device ([^\"]*) and Accessories details$")
-    public void Validate_the_Order_Confirmation_Page_for_device_and_Accessoriesdetails (String devicedetails) {
+    public void validate_Confirmation_Page_for_Curved_Banner_and_devicedetails_Messages(String devicedetails) {
         try {
             Thread.sleep(5000);
             // driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, ReviewAndConfirmPage.class);
             Thread.sleep(7000);
             ReviewAndConfirmPageActions.CurvedBannermesage();
-            ReviewAndConfirmPageActions.Devicedetails(devicedetails);
-            ReviewAndConfirmPageActions.accessorydetails();
-           // ReviewAndConfirmPageActions.
+            ReviewAndConfirmPageActions.Devicedetail(devicedetails);
 
         } catch (Exception e) {
             // TODO Auto-generated catch block
-            log.debug("Unable to Land on the Plan included basket page and choose Continue shopping");
-            Assert.fail("Unable to Land on the Plan included basket page and choose Continue shopping");
+            log.debug("Unable to validate confirmation page");
+            Assert.fail("Unable to validate confirmation page");
         }
     }
+
+
+    @And("Validate the Order Confirmation Page for device Tariff and Accessories$")
+    public void Validate_the_Order_Confirmation_Page_for_device_Tariff_and_Accessories() {
+        try {
+            Thread.sleep(5000);
+            // driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, ReviewAndConfirmPage.class);
+            Thread.sleep(7000);
+
+            ReviewAndConfirmPageActions.device_accessory_Tariff();
+
+
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            log.debug("Unable to validate the order confirmation page");
+            Assert.fail("Unable to validate the order confirmation page");
+        }
+
+
+    }
+
+
+    @And("veriy Confirmation Page for Shop open timings$")
+    public void veriy_Confirmation_Page_for_Shop_open_timings() {
+        try {
+            Thread.sleep(5000);
+
+            PageFactory.initElements(driver, ReviewAndConfirmPage.class);
+            Thread.sleep(7000);
+            ReviewAndConfirmPageActions.Storeopentimings();
+
+
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            log.debug("Unable to verify shop timings");
+            Assert.fail("Unable to verify shop timings");
+        }
+
+
+    }
 }
+
+
+
+
 
 
 

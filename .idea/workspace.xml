@@ -5,30 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b3431a87-97b1-4ffe-b872-0e6a8e54231a" name="Default" comment="Merge branch 'master' of https://bitbucket.org/ecommautomationteam/regression into Sharmi_19-02-2018&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;Features/FebruaryRelease2018/Regression/Reg_Jan_ConsumerToAcceptTenDigitsPhoneNumber.feature&#10;#&#9;src/test/java/actionsPerformed/Agent_DealBuilderPageActions.java&#10;#&#9;src/test/java/actionsPerformed/DeliveryPageActions.java&#10;#&#9;src/test/java/actionsPerformed/PAYMandPAYGTariffAndExtrasPageActions.java&#10;#&#9;src/test/java/actionsPerformed/UpgradeCustomerPageActions.java&#10;#&#9;src/test/java/steps/E2EOrderPlaced_Steps.java">
-      <change afterPath="$PROJECT_DIR$/Features/December#3rdRelease2018/ITFD353/CFA_BudgetLed.feature" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Features/December#3rdRelease2018/ITFD353/Order Confirmation_Deviceonly.feature" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Features/December#3rdRelease2018/ITFD353/Order Confirmation_Phone_CurvedBannerupdate.feature" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Configurations/Properties/AppConfig.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Configurations/Properties/AppConfig.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Features/December#3rdRelease2018/Regression_High_Priority/46_Reg_CFU_ordering choice on upgrade options page_Phone_Option_selected.feature" beforeDir="false" afterPath="$PROJECT_DIR$/Features/December#3rdRelease2018/Regression_High_Priority/46_Reg_CFU_ordering choice on upgrade options page_Phone_Option_selected.feature" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Features/December#3rdRelease2018/Regression_High_Priority/59_Reg_CS_Free_Sim_iPad.feature" beforeDir="false" afterPath="$PROJECT_DIR$/Features/December#3rdRelease2018/Regression_High_Priority/59_Reg_CS_Free_Sim_iPad.feature" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Features/OctoberRelease2018/Regression/79_Reg_FNT_PayMPhonesClickAndCollect.feature" beforeDir="false" afterPath="$PROJECT_DIR$/Features/OctoberRelease2018/Regression/79_Reg_FNT_PayMPhonesClickAndCollect.feature" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Features/OctoberRelease2018/Regression_Highest_Priority/121_FR_Mix_CFU_Phone.feature" beforeDir="false" afterPath="$PROJECT_DIR$/Features/OctoberRelease2018/Regression_Highest_Priority/121_FR_Mix_CFU_Phone.feature" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/debug.log" beforeDir="false" afterPath="$PROJECT_DIR$/debug.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eCommAutomationSit.iml" beforeDir="false" afterPath="$PROJECT_DIR$/eCommAutomationSit.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/GlobalActions/MouseHoverAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GlobalActions/MouseHoverAction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/actionsPerformed/AccessoryPageActions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/actionsPerformed/AccessoryPageActions.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/actionsPerformed/ConnectedDeviceDetailsPageAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/actionsPerformed/ConnectedDeviceDetailsPageAction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/actionsPerformed/PAYMandPAYGTariffAndExtrasPageActions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/actionsPerformed/PAYMandPAYGTariffAndExtrasPageActions.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/actionsPerformed/PaymentPageActions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/actionsPerformed/PaymentPageActions.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/actionsPerformed/ReviewAndConfirmPageActions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/actionsPerformed/ReviewAndConfirmPageActions.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/actionsPerformed/ShopLandingPageAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/actionsPerformed/ShopLandingPageAction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pageobjects/MouseHoverPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pageobjects/MouseHoverPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pageobjects/PAYMandPAYGTariffAndExtrasPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pageobjects/PAYMandPAYGTariffAndExtrasPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/pageobjects/ReviewAndConfirmPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pageobjects/ReviewAndConfirmPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/steps/E2EOrderPlaced_Steps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/steps/E2EOrderPlaced_Steps.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/testRunner/RunnerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/testRunner/RunnerTest.java" afterDir="false" />
     </list>
     <list id="9d0aef85-48ac-4e71-b67a-fff455014d99" name="New changelist" comment="New changelist" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -63,7 +43,7 @@
         <entry file="file://$PROJECT_DIR$/src/test/java/steps/E2EOrderPlaced_Steps.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="186">
-              <caret line="11471" column="16" selection-start-line="11471" selection-start-column="16" selection-end-line="11471" selection-end-column="16" />
+              <caret line="11466" column="75" selection-start-line="11466" selection-start-column="75" selection-end-line="11466" selection-end-column="75" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -72,25 +52,19 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/actionsPerformed/AccessoryPageActions.java">
+        <entry file="file://$PROJECT_DIR$/Features/December#3rdRelease2018/ITFD353/Order Confirmation_Likenewphone_Sim_Accessory.feature">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="237">
-              <caret line="848" column="11" selection-start-line="848" selection-start-column="11" selection-end-line="848" selection-end-column="25" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="238">
+              <caret line="14" column="18" lean-forward="true" selection-start-line="14" selection-start-column="18" selection-end-line="14" selection-end-column="18" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/actionsPerformed/PAYMandPAYGTariffAndExtrasPageActions.java">
+        <entry file="file://$PROJECT_DIR$/Features/December#3rdRelease2018/ITFD353/Order Confimation Page_Click&amp;Collect_StoreTimings.feature">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-34756">
-              <caret line="35" column="72" lean-forward="true" selection-start-line="35" selection-start-column="72" selection-end-line="35" selection-end-column="72" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="362">
+              <caret line="24" column="23" selection-start-line="24" selection-start-column="23" selection-end-line="24" selection-end-column="23" />
             </state>
           </provider>
         </entry>
@@ -107,8 +81,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Features/December#3rdRelease2018/ITFD353/Order Confirmation_PAYM_Phone_Accessories.feature">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="379">
-              <caret line="28" column="36" selection-start-line="28" selection-start-column="36" selection-end-line="28" selection-end-column="36" />
+            <state relative-caret-position="362">
+              <caret line="27" column="10" selection-start-line="27" selection-start-column="10" selection-end-line="27" selection-end-column="10" />
             </state>
           </provider>
         </entry>
@@ -116,8 +90,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Features/December#3rdRelease2018/ITFD353/Order Confirmation_PAYG_Phone_Accessories.feature">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="362">
-              <caret line="25" column="28" lean-forward="true" selection-start-line="25" selection-start-column="28" selection-end-line="25" selection-end-column="28" />
+            <state relative-caret-position="379">
+              <caret line="24" column="30" lean-forward="true" selection-start-line="24" selection-start-column="30" selection-end-line="24" selection-end-column="30" />
             </state>
           </provider>
         </entry>
@@ -125,8 +99,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/actionsPerformed/ReviewAndConfirmPageActions.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="223">
-              <caret line="153" column="25" selection-start-line="153" selection-start-column="25" selection-end-line="153" selection-end-column="25" />
+            <state relative-caret-position="186">
+              <caret line="120" column="35" selection-start-line="120" selection-start-column="35" selection-end-line="120" selection-end-column="35" />
             </state>
           </provider>
         </entry>
@@ -135,16 +109,7 @@
         <entry file="file://$PROJECT_DIR$/Features/December#3rdRelease2018/ITFD353/Order Confirmation_Deviceonly.feature">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="408">
-              <caret line="24" column="54" selection-start-line="24" selection-start-column="54" selection-end-line="24" selection-end-column="54" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Features/December#3rdRelease2018/ITFD353/Order Confirmation_Accessorywithquantity.feature">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="22" column="37" selection-start-line="22" selection-start-column="37" selection-end-line="22" selection-end-column="37" />
+              <caret line="24" column="30" lean-forward="true" selection-start-line="24" selection-start-column="30" selection-end-line="24" selection-end-column="30" />
             </state>
           </provider>
         </entry>
@@ -153,7 +118,19 @@
         <entry file="file://$PROJECT_DIR$/Features/December#3rdRelease2018/ITFD353/Order Confirmation_Phone_CurvedBannerupdate.feature">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="408">
-              <caret line="24" column="8" lean-forward="true" selection-start-line="24" selection-start-column="8" selection-end-line="24" selection-end-column="54" />
+              <caret line="24" column="24" selection-start-line="24" selection-start-column="24" selection-end-line="24" selection-end-column="24" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/pageobjects/ReviewAndConfirmPage.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="390">
+              <caret line="75" column="38" lean-forward="true" selection-start-line="75" selection-start-column="38" selection-end-line="75" selection-end-column="61" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -295,24 +272,24 @@
         <option value="$PROJECT_DIR$/Features/December#3rdRelease2018/ITFD353/Order Confirmation_Likenewphone_Sim" />
         <option value="$PROJECT_DIR$/Features/December#3rdRelease2018/ITFD353/Order Confirmation_Likenewphone_Sim_Accessory" />
         <option value="$PROJECT_DIR$/src/test/java/pageobjects/LikenewPage.java" />
-        <option value="$PROJECT_DIR$/Features/December#3rdRelease2018/ITFD353/Order Confirmation_Likenewphone_Sim_Accessory.feature" />
         <option value="$PROJECT_DIR$/src/test/java/actionsPerformed/LikeNewPageActions.java" />
         <option value="$PROJECT_DIR$/Features/December#3rdRelease2018/ITFD353/Order Confirmation_device_Accessory_Sim.feature" />
-        <option value="$PROJECT_DIR$/Features/December#3rdRelease2018/ITFD353/Order Confimation Page_Click&amp;Collect_StoreTimings.feature" />
         <option value="$PROJECT_DIR$/Features/OctoberRelease2018/Regression/79_Reg_FNT_PayMPhonesClickAndCollect.feature" />
-        <option value="$PROJECT_DIR$/Features/December#3rdRelease2018/ITFD353/Order Confirmation_PAYG_Phone_Accessories.feature" />
         <option value="$PROJECT_DIR$/src/test/java/actionsPerformed/PaymentPageActions.java" />
         <option value="$PROJECT_DIR$/Configurations/Properties/AppConfig.properties" />
         <option value="$PROJECT_DIR$/src/test/java/GlobalActions/MouseHoverAction.java" />
-        <option value="$PROJECT_DIR$/src/test/java/pageobjects/ReviewAndConfirmPage.java" />
         <option value="$PROJECT_DIR$/Features/December#3rdRelease2018/ITFD353/Order Confirmation_Accessory_Sim.feature" />
-        <option value="$PROJECT_DIR$/Features/December#3rdRelease2018/ITFD353/Order Confirmation_Phone_CurvedBannerupdate.feature" />
         <option value="$PROJECT_DIR$/src/test/java/actionsPerformed/PAYMandPAYGTariffAndExtrasPageActions.java" />
         <option value="$PROJECT_DIR$/Features/December#3rdRelease2018/ITFD353/Order Confirmation_Deviceonly.feature" />
         <option value="$PROJECT_DIR$/Features/December#3rdRelease2018/ITFD353/Order Confirmation_Accessorywithquantity.feature" />
+        <option value="$PROJECT_DIR$/Features/December#3rdRelease2018/ITFD353/Order Confirmation_Likenewphone_Sim_Accessory.feature" />
+        <option value="$PROJECT_DIR$/Features/December#3rdRelease2018/ITFD353/Order Confirmation_Phone_CurvedBannerupdate.feature" />
+        <option value="$PROJECT_DIR$/Features/December#3rdRelease2018/ITFD353/Order Confimation Page_Click&amp;Collect_StoreTimings.feature" />
+        <option value="$PROJECT_DIR$/src/test/java/pageobjects/ReviewAndConfirmPage.java" />
+        <option value="$PROJECT_DIR$/Features/December#3rdRelease2018/ITFD353/Order Confirmation_PAYM_Phone_Accessories.feature" />
+        <option value="$PROJECT_DIR$/Features/December#3rdRelease2018/ITFD353/Order Confirmation_PAYG_Phone_Accessories.feature" />
         <option value="$PROJECT_DIR$/src/test/java/actionsPerformed/ReviewAndConfirmPageActions.java" />
         <option value="$PROJECT_DIR$/src/test/java/steps/E2EOrderPlaced_Steps.java" />
-        <option value="$PROJECT_DIR$/Features/December#3rdRelease2018/ITFD353/Order Confirmation_PAYM_Phone_Accessories.feature" />
       </list>
     </option>
   </component>
@@ -348,7 +325,6 @@
     </navigator>
     <panes>
       <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -473,6 +449,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -480,7 +457,7 @@
     <property name="Git.Branch.Popup.ShowAllRemotes" value="true" />
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1545995344760" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1546442482621" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15128593" />
@@ -699,13 +676,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1510763568253</updated>
-    </task>
-    <task id="LOCAL-00020" summary="Merged venkta23012018_v1 into master">
-      <created>1517999055410</created>
-      <option name="number" value="00020" />
-      <option name="presentableId" value="LOCAL-00020" />
-      <option name="project" value="LOCAL" />
-      <updated>1517999055410</updated>
     </task>
     <task id="LOCAL-00021" summary="Merged venkta23012018_v1 into master">
       <created>1518018372931</created>
@@ -1043,7 +1013,14 @@
       <option name="project" value="LOCAL" />
       <updated>1531120148004</updated>
     </task>
-    <option name="localTasksCounter" value="69" />
+    <task id="LOCAL-00069" summary="Merge branch 'master' of https://bitbucket.org/ecommautomationteam/regression into Sharmi_19-02-2018&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;Features/FebruaryRelease2018/Regression/Reg_Jan_ConsumerToAcceptTenDigitsPhoneNumber.feature&#10;#&#9;src/test/java/actionsPerformed/Agent_DealBuilderPageActions.java&#10;#&#9;src/test/java/actionsPerformed/DeliveryPageActions.java&#10;#&#9;src/test/java/actionsPerformed/PAYMandPAYGTariffAndExtrasPageActions.java&#10;#&#9;src/test/java/actionsPerformed/UpgradeCustomerPageActions.java&#10;#&#9;src/test/java/steps/E2EOrderPlaced_Steps.java">
+      <created>1545995376590</created>
+      <option name="number" value="00069" />
+      <option name="presentableId" value="LOCAL-00069" />
+      <option name="project" value="LOCAL" />
+      <updated>1545995376594</updated>
+    </task>
+    <option name="localTasksCounter" value="70" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1091,7 +1068,7 @@
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.30711043" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.31164902" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.24876848" />
       <window_info id="Nl-Palette" order="2" />
       <window_info id="Capture Tool" order="3" />
@@ -1124,7 +1101,7 @@
       <window_info anchor="right" id="Coverage" order="10" side_tool="true" weight="0.0741301" />
     </layout>
     <layout-to-restore>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.30711043" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.31164902" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.24876848" />
       <window_info id="Nl-Palette" order="2" />
       <window_info id="Capture Tool" order="3" />
@@ -1136,7 +1113,7 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49367756" weight="0.0" />
       <window_info anchor="bottom" id="Run" order="2" sideWeight="0.7306003" weight="0.2569558" />
-      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.7170953" visible="true" weight="0.3371522" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.7170953" weight="0.3371522" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="Event Log" order="6" sideWeight="0.28290468" side_tool="true" weight="0.2569558" />
@@ -1265,7 +1242,7 @@
         </line-breakpoint>
         <line-breakpoint type="java-method">
           <url>file://$PROJECT_DIR$/src/test/java/steps/E2EOrderPlaced_Steps.java</url>
-          <line>5747</line>
+          <line>5746</line>
           <properties class="steps.E2EOrderPlaced_Steps">
             <option name="EMULATED" value="true" />
           </properties>
@@ -1273,7 +1250,7 @@
         </line-breakpoint>
         <line-breakpoint type="java-method">
           <url>file://$PROJECT_DIR$/src/test/java/steps/E2EOrderPlaced_Steps.java</url>
-          <line>6482</line>
+          <line>6481</line>
           <properties class="steps.E2EOrderPlaced_Steps">
             <option name="EMULATED" value="true" />
           </properties>
@@ -1281,7 +1258,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/test/java/steps/E2EOrderPlaced_Steps.java</url>
-          <line>6344</line>
+          <line>6343</line>
           <properties class="steps.E2EOrderPlaced_Steps">
             <option name="EMULATED" value="true" />
           </properties>
@@ -1297,7 +1274,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/test/java/steps/E2EOrderPlaced_Steps.java</url>
-          <line>5148</line>
+          <line>5147</line>
           <properties class="steps.E2EOrderPlaced_Steps" method="Verify_new_image_is_as_per_the_selected_device_name_capacity_and_color_in_the_TE_page">
             <option name="EMULATED" value="true" />
           </properties>
@@ -1305,7 +1282,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/test/java/steps/E2EOrderPlaced_Steps.java</url>
-          <line>5175</line>
+          <line>5174</line>
           <properties class="steps.E2EOrderPlaced_Steps">
             <option name="EMULATED" value="true" />
           </properties>
@@ -1313,7 +1290,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/test/java/steps/E2EOrderPlaced_Steps.java</url>
-          <line>5074</line>
+          <line>5073</line>
           <properties class="steps.E2EOrderPlaced_Steps">
             <option name="EMULATED" value="true" />
           </properties>
@@ -1321,7 +1298,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/test/java/steps/E2EOrderPlaced_Steps.java</url>
-          <line>5217</line>
+          <line>5216</line>
           <properties class="steps.E2EOrderPlaced_Steps">
             <option name="EMULATED" value="true" />
           </properties>
@@ -1329,7 +1306,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/test/java/steps/E2EOrderPlaced_Steps.java</url>
-          <line>950</line>
+          <line>949</line>
           <properties class="steps.E2EOrderPlaced_Steps" method="Logput">
             <option name="EMULATED" value="true" />
           </properties>
@@ -1345,7 +1322,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/test/java/steps/E2EOrderPlaced_Steps.java</url>
-          <line>1113</line>
+          <line>1112</line>
           <properties class="steps.E2EOrderPlaced_Steps">
             <option name="EMULATED" value="true" />
           </properties>
@@ -1373,7 +1350,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/steps/E2EOrderPlaced_Steps.java</url>
-          <line>5161</line>
+          <line>5160</line>
           <properties />
           <option name="timeStamp" value="128" />
         </line-breakpoint>
@@ -1385,13 +1362,13 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/steps/E2EOrderPlaced_Steps.java</url>
-          <line>1641</line>
+          <line>1640</line>
           <properties />
           <option name="timeStamp" value="182" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/steps/E2EOrderPlaced_Steps.java</url>
-          <line>1803</line>
+          <line>1802</line>
           <properties />
           <option name="timeStamp" value="184" />
         </line-breakpoint>
@@ -1409,13 +1386,13 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/steps/E2EOrderPlaced_Steps.java</url>
-          <line>10133</line>
+          <line>10132</line>
           <properties />
           <option name="timeStamp" value="196" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/steps/E2EOrderPlaced_Steps.java</url>
-          <line>4084</line>
+          <line>4083</line>
           <properties />
           <option name="timeStamp" value="197" />
         </line-breakpoint>
@@ -1427,7 +1404,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/steps/E2EOrderPlaced_Steps.java</url>
-          <line>1914</line>
+          <line>1913</line>
           <properties />
           <option name="timeStamp" value="241" />
         </line-breakpoint>
@@ -1674,24 +1651,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Features/December#3rdRelease2018/ITFD353/Order Confirmation_Likenewphone_Sim_Accessory.feature">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="4" selection-start-line="14" selection-start-column="4" selection-end-line="15" selection-end-column="91" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/actionsPerformed/PaymentPageActions.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="168">
           <caret line="150" selection-start-line="150" selection-end-line="150" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Features/December#3rdRelease2018/ITFD353/Order Confimation Page_Click&amp;Collect_StoreTimings.feature">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="20" column="31" selection-start-line="20" selection-start-column="31" selection-end-line="20" selection-end-column="31" />
         </state>
       </provider>
     </entry>
@@ -1736,13 +1699,47 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/pageobjects/ReviewAndConfirmPage.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/actionsPerformed/AccessoryPageActions.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="387">
-          <caret line="76" lean-forward="true" selection-start-line="76" selection-end-line="76" />
+        <state relative-caret-position="14059">
+          <caret line="848" column="11" selection-start-line="848" selection-start-column="11" selection-end-line="848" selection-end-column="25" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/actionsPerformed/PAYMandPAYGTariffAndExtrasPageActions.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="35" column="72" selection-start-line="35" selection-start-column="72" selection-end-line="35" selection-end-column="72" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Features/December#3rdRelease2018/ITFD353/Order Confirmation_Accessorywithquantity.feature">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="23" column="78" lean-forward="true" selection-start-line="23" selection-start-column="78" selection-end-line="23" selection-end-column="78" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/pageobjects/ReviewAndConfirmPage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="75" column="38" lean-forward="true" selection-start-line="75" selection-start-column="38" selection-end-line="75" selection-end-column="61" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Features/December#3rdRelease2018/ITFD353/Order Confimation Page_Click&amp;Collect_StoreTimings.feature">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="362">
+          <caret line="24" column="23" selection-start-line="24" selection-start-column="23" selection-end-line="24" selection-end-column="23" />
         </state>
       </provider>
     </entry>
@@ -1753,72 +1750,52 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/actionsPerformed/PAYMandPAYGTariffAndExtrasPageActions.java">
+    <entry file="file://$PROJECT_DIR$/Features/December#3rdRelease2018/ITFD353/Order Confirmation_Likenewphone_Sim_Accessory.feature">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-34756">
-          <caret line="35" column="72" lean-forward="true" selection-start-line="35" selection-start-column="72" selection-end-line="35" selection-end-column="72" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="238">
+          <caret line="14" column="18" lean-forward="true" selection-start-line="14" selection-start-column="18" selection-end-line="14" selection-end-column="18" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Features/December#3rdRelease2018/ITFD353/Order Confirmation_Phone_CurvedBannerupdate.feature">
+    <entry file="file://$PROJECT_DIR$/src/test/java/actionsPerformed/ReviewAndConfirmPageActions.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="24" column="8" lean-forward="true" selection-start-line="24" selection-start-column="8" selection-end-line="24" selection-end-column="54" />
+        <state relative-caret-position="186">
+          <caret line="120" column="35" selection-start-line="120" selection-start-column="35" selection-end-line="120" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Features/December#3rdRelease2018/ITFD353/Order Confirmation_PAYG_Phone_Accessories.feature">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="379">
+          <caret line="24" column="30" lean-forward="true" selection-start-line="24" selection-start-column="30" selection-end-line="24" selection-end-column="30" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Features/December#3rdRelease2018/ITFD353/Order Confirmation_Deviceonly.feature">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="408">
-          <caret line="24" column="54" selection-start-line="24" selection-start-column="54" selection-end-line="24" selection-end-column="54" />
+          <caret line="24" column="30" lean-forward="true" selection-start-line="24" selection-start-column="30" selection-end-line="24" selection-end-column="30" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/actionsPerformed/AccessoryPageActions.java">
+    <entry file="file://$PROJECT_DIR$/Features/December#3rdRelease2018/ITFD353/Order Confirmation_Phone_CurvedBannerupdate.feature">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="237">
-          <caret line="848" column="11" selection-start-line="848" selection-start-column="11" selection-end-line="848" selection-end-column="25" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Features/December#3rdRelease2018/ITFD353/Order Confirmation_Accessorywithquantity.feature">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="22" column="37" selection-start-line="22" selection-start-column="37" selection-end-line="22" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/actionsPerformed/ReviewAndConfirmPageActions.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="223">
-          <caret line="153" column="25" selection-start-line="153" selection-start-column="25" selection-end-line="153" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Features/December#3rdRelease2018/ITFD353/Order Confirmation_PAYG_Phone_Accessories.feature">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="362">
-          <caret line="25" column="28" lean-forward="true" selection-start-line="25" selection-start-column="28" selection-end-line="25" selection-end-column="28" />
+        <state relative-caret-position="408">
+          <caret line="24" column="24" selection-start-line="24" selection-start-column="24" selection-end-line="24" selection-end-column="24" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Features/December#3rdRelease2018/ITFD353/Order Confirmation_PAYM_Phone_Accessories.feature">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="379">
-          <caret line="28" column="36" selection-start-line="28" selection-start-column="36" selection-end-line="28" selection-end-column="36" />
+        <state relative-caret-position="362">
+          <caret line="27" column="10" selection-start-line="27" selection-start-column="10" selection-end-line="27" selection-end-column="10" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/steps/E2EOrderPlaced_Steps.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="186">
-          <caret line="11471" column="16" selection-start-line="11471" selection-start-column="16" selection-end-line="11471" selection-end-column="16" />
+          <caret line="11466" column="75" selection-start-line="11466" selection-start-column="75" selection-end-line="11466" selection-end-column="75" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

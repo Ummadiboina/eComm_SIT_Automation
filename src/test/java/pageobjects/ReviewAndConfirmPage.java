@@ -59,6 +59,10 @@ public class ReviewAndConfirmPage extends Environment {
     @FindBy(how = How.XPATH, using = "//a[@id='download']")
     public static WebElement Downloadyourconfirmationlink;
 
+    @FindBy(how = How.XPATH, using = "//div[@class='order-confirmation']//p")
+    public static WebElement Orderconfirmationnumber;
+
+
     @FindBy(how = How.XPATH, using = "//p[contains(text(),'See store opening times')]")
     public static WebElement Storeopentimings;
 
@@ -69,9 +73,10 @@ public class ReviewAndConfirmPage extends Environment {
     public static WebElement Tariffdetails;
 
 
+    @FindBy(how = How.XPATH, using = "//ul[@class='acc-list']")
+    public static WebElement Accessoriesdetails;
 
-    @FindBy(how = How.XPATH, using = "//div[@class='order-confirmation']//p")
-    public static WebElement Orderconfirmationnumber;
+
 
 
 
