@@ -205,18 +205,24 @@ public class ReviewAndConfirmPageActions extends Environment {
         else{
 
 
-            System.out.println("Tariff not displayed");
-            log.debug("Tariff not displayed");
-            Assert.fail("Tariff not displayed");
+            System.out.println("Accessories not displayed");
+            log.debug("Accessories not displayed");
+            Assert.fail("Accessories not displayed");
 
         }
 
 
     }
+public static void Accessorieswithquantity(String Limit)
+
+{
+
 
 
 }
-//accessories
+
+}
+
 
 
 

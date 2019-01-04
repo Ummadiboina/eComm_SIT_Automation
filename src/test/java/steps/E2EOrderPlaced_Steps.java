@@ -11454,6 +11454,7 @@ public class E2EOrderPlaced_Steps {
             Thread.sleep(7000);
             ReviewAndConfirmPageActions.CurvedBannermesage();
             ReviewAndConfirmPageActions.Devicedetail(devicedetails);
+            ReviewAndConfirmPageActions.Tariffdetails();
 
         } catch (Exception e) {
             // TODO Auto-generated catch block
@@ -11463,7 +11464,7 @@ public class E2EOrderPlaced_Steps {
     }
 
 
-    @And("Validate the Order Confirmation Page for device Tariff and Accessories$")
+    @And("^Validate the Order Confirmation Page for device Tariff and Accessories$")
     public void Validate_the_Order_Confirmation_Page_for_device_Tariff_and_Accessories() {
         try {
             Thread.sleep(5000);
@@ -11484,7 +11485,7 @@ public class E2EOrderPlaced_Steps {
     }
 
 
-    @And("veriy Confirmation Page for Shop open timings$")
+    @And("^veriy Confirmation Page for Shop open timings$")
     public void veriy_Confirmation_Page_for_Shop_open_timings() {
         try {
             Thread.sleep(5000);
@@ -11502,6 +11503,28 @@ public class E2EOrderPlaced_Steps {
 
 
     }
+
+   // validate the Confirmation Page for Accessories with Quantity <limit1>
+    @And("^validate the Confirmation Page for Accessories with Quantity ([^\"]*)$")
+    public void validate_the_Confirmation_Page_for_Accessories_with_Quantity(String Limit) {
+        try {
+            Thread.sleep(5000);
+
+            PageFactory.initElements(driver, ReviewAndConfirmPage.class);
+            Thread.sleep(7000);
+            ReviewAndConfirmPageActions.Accessorieswithquantity(Limit);
+
+
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            log.debug("Unable to verify Accessories");
+            Assert.fail("Unable to verify Accessories");
+        }
+
+
+    }
+
+
 }
 
 

@@ -28,5 +28,5 @@ Feature: Order Confirmation_Phone_CurvedBannerupdate
     #And Validate consumer GDPR consent section is hidden in Order confirmation page or not
 
     Examples:
-      | handset      | color          | Firstname | BSCstatus | BillCap       | CapAmount | Surname | Username     | consumer | B1  | B2     | B3  | B4  | Text   | Email | Phone | Post | status  | MBBStatus | DeviceType | PreSelected |
-      | Galaxy Note9 | Midnight Black | TEST      | Enabled   | DontCapMyBill | Nill      | ACCEPTA | TEST ACCEPTA | Me       | Not | Select | Not | Not | Select | Not   | Not   | Not  | Enabled | No        | Connected  | No          |
+      | handset      | color          | Firstname | BSCstatus | BillCap       | CapAmount | Surname | Username     | consumer | B1     | B2     | B3     | KeyEvent | DeviceType | GDPRstatus | PreSelected | Post | status  | MBBStatus | DeviceType | PreSelected |
+      | Galaxy Note9 | Midnight Black | TEST      | Enabled   | DontCapMyBill | Nill      | ACCEPTA | TEST ACCEPTA | Me       | Select | Select | Select | No       | Connected  | Enabled    | No          | Not  | Enabled | No        | Connected  | No          |
