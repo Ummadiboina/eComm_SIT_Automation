@@ -38,7 +38,8 @@ Feature: 37_Reg_CFA_Cover_me_copy_update_on_basket_summary
     And verify cover me is present in Basket page
     And click on "go to checkout" button
     And input <Firstname> and <Surname> and other valid details in Delivery page to verify GDPR
-    And Is this order for You or Someone else <consumer> when GDPR is <status>
+    #And Is this order for You or Someone else <consumer> when GDPR is <GDPRstatus>
+    And Validate consumer GDPR consent section and choose Business preferences <B1> <B2> <B3> with <KeyEvent> for <DeviceType> in delivery page when GDPR is <GDPRstatus> and <PreSelected>
     #And input <Firstname> and <Surname> and other valid details in Delivery page and Click on the 'Continue button'
     Then verify cover me is present in  payment page
     And land on the payment page and input <Username> and other details and click 'Continue on next step'
@@ -48,9 +49,10 @@ Feature: 37_Reg_CFA_Cover_me_copy_update_on_basket_summary
     And Continue to Review page and review the order
     When order confirmation is displayed
     Then verify cover me is present in  pdf download
-    Then Choose <consumer> <status> Business preferences <B1> <B2> <B3> <B4> And Channel Preferences <Text> <Email> <Phone> <Post> <MBBStatus> <DeviceType> <PreSelected>
+    #Then Choose <consumer> <status> Business preferences <B1> <B2> <B3> <B4> And Channel Preferences <Text> <Email> <Phone> <Post> <MBBStatus> <DeviceType> <PreSelected>
+    Then Validate consumer GDPR consent section is hidden in Order confirmation page or not
 
     #And pdf content
     Examples:
-      | tabletname         | color      | capacity | Status   | handset | BSCstatus | BillCap   | CapAmount | Firstname | Surname | Username     | consumer | B1  | B2     | B3     | B4  | Text | Email  | Phone | Post | status  | MBBStatus | DeviceType | PreSelected |
-      | iPad 9.7 inch 2018 | Space Grey | 32GB     | In Stock | Samsung | Enabled   | CapMyBill | £60       | TEST      | ACCEPTA | TEST ACCEPTA | Me       | Not | Select | Select | Not | Not  | Select | Not   | Not  | Enabled | No        | Connected  | No          |
+      | tabletname         | color      | capacity | Status   | handset | BSCstatus | BillCap   | CapAmount | Firstname | Surname | Username     | consumer | B1  | B2     | B3     | B4  | Text | Email  | Phone | Post | GDPRstatus | MBBStatus | DeviceType | PreSelected | KeyEvent |
+      | iPad 9.7 inch 2018 | Space Grey | 32GB     | In Stock | Samsung | Enabled   | CapMyBill | £60       | TEST      | ACCEPTA | TEST ACCEPTA | Me       | Not | Select | Select | Not | Not  | Select | Not   | Not  | Enabled    | No        | Connected  | No          | No       |
