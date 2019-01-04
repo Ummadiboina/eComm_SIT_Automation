@@ -16,7 +16,7 @@ Feature: 07_CFA_Smart_Watch_Home_Delivery_GDPR_Should_Not_Display_For_NonConnect
     And land on the Non Credit check payment page and input <Username> and other details and click 'Continue on next step'
     And Continue to Review page and review the order
     Then order confirmation is displayed
-    And Validate consumer GDPR consent section is hidden in Order confirmation page or not
+    Then Validate consumer GDPR consent section is hidden in Order confirmation page or not
 
     Examples:
       | Firstname | Surname | Username     | Device          | B1  | B2  | B3  | B4  | GDPRstatus | DeviceType    | PreSelected | KeyEvent |

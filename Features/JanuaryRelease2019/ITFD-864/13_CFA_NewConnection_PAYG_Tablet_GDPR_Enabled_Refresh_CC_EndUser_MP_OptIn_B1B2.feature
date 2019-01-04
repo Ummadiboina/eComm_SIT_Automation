@@ -19,7 +19,7 @@ Feature: 13_CFA_NewConnection_PAYG_Tablet_GDPR_Enabled_Refresh_CC_EndUser_MP_Opt
     And land on the Non Credit check payment page and input <Username> and other details and click 'Continue on next step' for GDPR
     And Continue to Review page and review the order
     Then order confirmation is displayed
-    And Validate consumer GDPR consent section is hidden in Order confirmation page or not
+    Then Validate consumer GDPR consent section is hidden in Order confirmation page or not
 
     Examples:
       | Device | Firstname | tariff        | BSCstatus | Surname | Username     | B1     | B2     | B3  | B4  | GDPRstatus | DeviceType | PreSelected | KeyEvent |

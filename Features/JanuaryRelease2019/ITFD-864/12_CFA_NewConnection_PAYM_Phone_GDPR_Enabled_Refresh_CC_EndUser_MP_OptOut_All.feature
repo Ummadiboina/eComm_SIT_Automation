@@ -28,7 +28,7 @@ Feature: 12_CFA_NewConnection_PAYM_Phone_GDPR_Enabled_Refresh_CC_EndUser_MP_OptO
     And Continue to Agreements page and confirm all the agreement checks
     And Continue to Review page and review the order
     Then order confirmation is displayed
-    And Validate consumer GDPR consent section is hidden in Order confirmation page or not
+    Then Validate consumer GDPR consent section is hidden in Order confirmation page or not
 
     Examples:
       | handset  | color  | Firstname | Surname | Username     | GDPRstatus | BSCstatus | BillCap   | CapAmount | B1  | B2  | B3  | B4  | DeviceType | PreSelected | KeyEvent |

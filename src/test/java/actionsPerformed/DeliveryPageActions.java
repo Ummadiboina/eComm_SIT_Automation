@@ -985,7 +985,7 @@ public class DeliveryPageActions extends Environment {
         if(GDPRstatus.equalsIgnoreCase("Enabled")) {
 
             //gdpr end user question validation
-            if(driver.findElements(By.xpath("//label[contains(text(),'Is this order for you or someone else?')]")).size()>0){
+            if(driver.findElements(By.xpath("//*[contains(text(),'Is this order for you or someone else?')]")).size()>0){
                 if(DeliveryPage.Me_radioBtn.isDisplayed() || DeliveryPage.thisOrderTxt.isDisplayed() || DeliveryPage.someoneElse_radioBtn.isDisplayed()) {
                     log.debug("Failing because GDPR end user question(old requirement) with options are displaying\n");
                     Assert.fail("Failing because GDPR end user question(old requirement) with options are displaying");

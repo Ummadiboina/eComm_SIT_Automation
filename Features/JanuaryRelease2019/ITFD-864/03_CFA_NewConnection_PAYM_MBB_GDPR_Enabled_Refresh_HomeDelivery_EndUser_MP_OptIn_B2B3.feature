@@ -22,7 +22,7 @@ Feature: 03_CFA_NewConnection_PAYM_MBB_GDPR_Enabled_Refresh_HomeDelivery_EndUser
     And Continue to Agreements page and confirm all the agreement checks
     And Continue to Review page and review the order
     Then order confirmation is displayed
-    And Validate consumer GDPR consent section is hidden in Order confirmation page or not
+    Then Validate consumer GDPR consent section is hidden in Order confirmation page or not
 
     Examples:
       | Device_Name   | Firstname | Surname | Username     | BSCstatus | BillCap       | CapAmount | B1  | B2     | B3     | B4  | GDPRstatus | DeviceType | PreSelected | KeyEvent |

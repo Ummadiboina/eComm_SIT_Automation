@@ -73,7 +73,7 @@ public class OrderConfirmationPageActions extends Environment {
 	public static void gdprConsentValidationInOrderConfirmationPage() {
 
 		//gdpr consent validation
-		if(driver.findElements(By.xpath("//label[contains(text(),'GDPR CONSENT')]")).size()>0) {
+		if(driver.findElements(By.xpath("//div[@class='choose-preferences-bar']/a")).size()>0) {
 			log.debug("Failed due to GDPR is displaying in order confirmation page for consumer acquisition journey \n");
 			Assert.fail("Failed due to GDPR is displaying in order confirmation page for consumer acquisition journey \n");
 		}else{
