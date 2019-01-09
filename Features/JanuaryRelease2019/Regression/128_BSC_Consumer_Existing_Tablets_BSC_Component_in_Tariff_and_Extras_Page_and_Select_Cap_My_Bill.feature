@@ -19,7 +19,8 @@ Feature: 128_BSC_Consumer_Existing_Tablets_BSC_Component_in_Tariff_and_Extras_Pa
     And click on "go to checkout" button
     And Validate applied Bill Spend Cap <NewBillCap> <NewCapAmount> when BSC is <BSCstatus>
     And Select existing account and begin fast checkout
-    And Is this order for You or Someone else <consumer> when GDPR is <status>
+    #And Is this order for You or Someone else <consumer> when GDPR is <status>
+    And Validate consumer GDPR consent section and choose Business preferences <B1> <B2> <B3> with <KeyEvent> for <DeviceType> in delivery page when GDPR is <GDPRstatus> and <PreSelected>
     And Validate applied Bill Spend Cap <NewBillCap> <NewCapAmount> when BSC is <BSCstatus>
     And land on the payment page and input <Username> and other details for existing customer
     And Validate applied Bill Spend Cap <NewBillCap> <NewCapAmount> when BSC is <BSCstatus>
@@ -29,8 +30,9 @@ Feature: 128_BSC_Consumer_Existing_Tablets_BSC_Component_in_Tariff_and_Extras_Pa
     Then order confirmation is displayed
     And Validate order confirmation page for applied Bill Spend Cap <NewBillCap> <NewCapAmount> when BSC is <BSCstatus>
     Then verify cover me is present in  pdf download
-    Then Choose <consumer> <status> Business preferences <B1> <B2> <B3> <B4> And Channel Preferences <Text> <Email> <Phone> <Post> <MBBStatus> <DeviceType> <PreSelected>
+    #Then Choose <consumer> <status> Business preferences <B1> <B2> <B3> <B4> And Channel Preferences <Text> <Email> <Phone> <Post> <MBBStatus> <DeviceType> <PreSelected>
+    Then Validate consumer GDPR consent section is hidden in Order confirmation page or not
 
     Examples:
-      | username                     | password | tabletname | houseNumber | PostCode | BillCap   | CapAmount | NewBillCap | NewCapAmount      | BSCstatus | Username     | Action    | tariff                   | consumer | B1  | B2  | B3  | B4  | Text | Email | Phone | Post | status  | MBBStatus | DeviceType | PreSelected |
-      | ins_feb7923@stf.ref.o2.co.uk | test123  | A3 10      | 11          | SL11ER   | CapMyBill | £5        | CapMyBill  | DontCapMyBillLink | Enabled   | TEST ACCEPTA | enterCode | 129.99upfront37.00amonth | Somone   | Not | Not | Not | Not | Not  | Not   | Not   | Not  | Enabled | No        | Connected  | No          |
+      | username                     | password | tabletname | houseNumber | PostCode | BillCap   | CapAmount | NewBillCap | NewCapAmount      | BSCstatus | Username     | Action    | tariff                   | consumer | B1  | B2  | B3  | B4  | GDPRstatus | MBBStatus | DeviceType | PreSelected | KeyEvent |
+      | ins_feb7923@stf.ref.o2.co.uk | test123  | A3 10      | 11          | SL11ER   | CapMyBill | £5        | CapMyBill  | DontCapMyBillLink | Enabled   | TEST ACCEPTA | enterCode | 129.99upfront37.00amonth | Somone   | Not | Not | Not | Not | Enabled    | No        | Connected  | No          | No       |

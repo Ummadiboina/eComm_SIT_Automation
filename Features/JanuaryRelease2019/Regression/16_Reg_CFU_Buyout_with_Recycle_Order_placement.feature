@@ -35,7 +35,8 @@ Feature: 16_Reg_CFU_Buyout_with_Recycle_Order_placement
     And click on "go to checkout" button
     And perform <Action> in OTAC page
     And verify if buyout offer is displayed under Order Summary section in <Delivery> page
-    And Is this order for You or Someone else <consumer> when GDPR is <status>
+    #And Is this order for You or Someone else <consumer> when GDPR is <status>
+    And Validate consumer GDPR consent section and choose Business preferences <B1> <B2> <B3> with <KeyEvent> for <DeviceType> in delivery page when GDPR is <GDPRstatus> and <PreSelected>
     And verify if buyout offer is displayed under Order Summary section in <Payment> page
     #And Click on the 'Continue button' in delivery page
     #And land on the payment page and input <Username> and other details and click 'Continue' on next step for otac
@@ -44,9 +45,10 @@ Feature: 16_Reg_CFU_Buyout_with_Recycle_Order_placement
     And Continue to Agreements page and confirm all the agreement checks
     And Continue to Review page and review the order
     Then order confirmation is displayed
-    Then Choose <consumer> <status> Business preferences <B1> <B2> <B3> <B4> And Channel Preferences <Text> <Email> <Phone> <Post> <MBBStatus> <DeviceType> <PreSelected>
+    #Then Choose <consumer> <status> Business preferences <B1> <B2> <B3> <B4> And Channel Preferences <Text> <Email> <Phone> <Post> <MBBStatus> <DeviceType> <PreSelected>
+    Then Validate consumer GDPR consent section is hidden in Order confirmation page or not
 
     Examples:
-      | Tablet        | Action | Surname | Username     | BSCstatus | BillCap   | CapAmount | handset       | Delivery | Payment | filtername | sortoption                 | username               | password | consumer | B1     | B2     | B3  | B4  | Text | Email  | Phone | Post   | status  | MBBStatus | DeviceType | PreSelected |
-      | Random Device | skip   | ACCEPTA | TEST ACCEPTA | Enabled   | CapMyBill | £20       | iPhone 8 Plus | Delivery | Payment | low        | Monthly data (Low to High) | in01808o_751147@o2.com | test123  | Someone  | Select | Select | Not | Not | Not  | Select | Not   | Select | Enabled | No        | Connected  | No          |
+      | Tablet        | Action | Surname | Username     | BSCstatus | BillCap   | CapAmount | handset       | Delivery | Payment | filtername | sortoption                 | username               | password | consumer | B1     | B2     | B3  | B4  | GDPRstatus | MBBStatus | DeviceType | PreSelected | KeyEvent |
+      | Random Device | skip   | ACCEPTA | TEST ACCEPTA | Enabled   | CapMyBill | £20       | iPhone 8 Plus | Delivery | Payment | low        | Monthly data (Low to High) | in01808o_751147@o2.com | test123  | Someone  | Select | Select | Not | Not | Enabled    | No        | Connected  | No          | No       |
 
