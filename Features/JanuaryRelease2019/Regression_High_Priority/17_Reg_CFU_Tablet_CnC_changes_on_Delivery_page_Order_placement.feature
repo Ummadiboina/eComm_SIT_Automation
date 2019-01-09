@@ -28,15 +28,17 @@ Feature: 17_Reg_CFU_Tablet_CnC_changes_on_Delivery_page_Order_placement
     And perform <Action> in OTAC page
     #And input <Firstname> and <Surname> and other valid details in Delivery page to verify GDPR
     And Enter details in Delivery page for Click and collect
-    And Is this order for You or Someone else <consumer> when GDPR is <status>
+    #And Is this order for You or Someone else <consumer> when GDPR is <status>
+    And Validate consumer GDPR consent section and choose Business preferences <B1> <B2> <B3> with <KeyEvent> for <DeviceType> in delivery page when GDPR is <GDPRstatus> and <PreSelected>
     #And input <Firstname> and <Surname> and other valid details in Delivery page for Click and collect and Click on the 'Continue button'
     #And Enter details in Delivery page for Click and collect and Click on the 'Continue button'
     And Enter cardDetails in payment page input <Username> and click 'Continue on next step'
     And Continue to Agreements page and confirm all the agreement checks
     And Continue to Review page and review the order
     Then order confirmation is displayed
-    Then Choose <consumer> <status> Business preferences <B1> <B2> <B3> <B4> And Channel Preferences <Text> <Email> <Phone> <Post> <MBBStatus> <DeviceType> <PreSelected>
+    #Then Choose <consumer> <status> Business preferences <B1> <B2> <B3> <B4> And Channel Preferences <Text> <Email> <Phone> <Post> <MBBStatus> <DeviceType> <PreSelected>
+    Then Validate consumer GDPR consent section is hidden in Order confirmation page or not
 
     Examples:
-      | username                                                | password | Firstname | Surname | BSCstatus | BillCap   | CapAmount | Tablet             | color      | Capacity | Username     | Action    | tariff | consumer | B1     | B2  | B3  | B4  | Text   | Email | Phone | Post | status  | MBBStatus | DeviceType | PreSelected |
-      | stester11c221f360-dc0c-4540-b4bc-3c9552dff20a@gmail.com | test123  | Test      | Accepta | Enabled   | CapMyBill | £30       | iPad Pro 10.5 inch | Space Grey | 512GB    | TEST ACCEPTA | enterCode |        | Me       | Select | Not | Not | Not | Select | Not   | Not   | Not  | Enabled | No        | Connected  | No          |
+      | username                                                | password | Firstname | Surname | BSCstatus | BillCap   | CapAmount | Tablet             | color      | Capacity | Username     | Action    | tariff | consumer | B1     | B2  | B3  | B4  | Text   | Email | Phone | Post | GDPRstatus | MBBStatus | DeviceType | PreSelected | KeyEvent |
+      | stester11c221f360-dc0c-4540-b4bc-3c9552dff20a@gmail.com | test123  | Test      | Accepta | Enabled   | CapMyBill | £30       | iPad Pro 10.5 inch | Space Grey | 512GB    | TEST ACCEPTA | enterCode |        | Me       | Select | Not | Not | Not | Select | Not   | Not   | Not  | Enabled    | No        | Connected  | No          | No       |

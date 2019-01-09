@@ -30,7 +30,8 @@ Feature: 127_BSC_CFU_Phones_Edit_BSC_Component_from_Your_Package_in_Upgrade_Opti
     And Validate applied Bill Spend Cap <BillCap> <NewCapAmount> when BSC is <BSCstatus>
     And Click on 'Use a different delivery address'link
     And enter a <houseNumber> and an <PostCode> in Delivery section
-    And Is this order for You or Someone else <consumer> when GDPR is <status>
+    #And Is this order for You or Someone else <consumer> when GDPR is <status>
+    And Validate consumer GDPR consent section and choose Business preferences <B1> <B2> <B3> with <KeyEvent> for <DeviceType> in delivery page when GDPR is <GDPRstatus> and <PreSelected>
     And Validate applied Bill Spend Cap <BillCap> <NewCapAmount> when BSC is <BSCstatus>
     And Select the Home address
     And land on the payment page and input <Username> and other details and click 'Continue on next step' in upgrade journey
@@ -41,8 +42,9 @@ Feature: 127_BSC_CFU_Phones_Edit_BSC_Component_from_Your_Package_in_Upgrade_Opti
     Then order confirmation is displayed
     And Validate order confirmation page for applied Bill Spend Cap <BillCap> <NewCapAmount> when BSC is <BSCstatus>
     Then verify cover me is present in  pdf download
-    Then Choose <consumer> <status> Business preferences <B1> <B2> <B3> <B4> And Channel Preferences <Text> <Email> <Phone> <Post> <MBBStatus> <DeviceType> <PreSelected>
+    #Then Choose <consumer> <status> Business preferences <B1> <B2> <B3> <B4> And Channel Preferences <Text> <Email> <Phone> <Post> <MBBStatus> <DeviceType> <PreSelected>
+    Then Validate consumer GDPR consent section is hidden in Order confirmation page or not
 
     Examples:
-      | username                      | password | handset  | houseNumber | PostCode | BillCap   | CapAmount | NewCapAmount | BSCstatus | Username     | Action    | tariff                   | consumer | B1     | B2     | B3     | B4  | Text   | Email  | Phone  | Post   | status  | MBBStatus | DeviceType | PreSelected |
-      | acce79497928@stf.ref.o2.co.uk | test123  | iPhone X | 11          | SL11ER   | CapMyBill | £5        | £10          | Enabled   | TEST ACCEPTA | enterCode | 129.99upfront37.00amonth | Me       | Select | Select | Select | Not | Select | Select | Select | Select | Enabled | No        | Connected  | No          |
+      | username                      | password | handset  | houseNumber | PostCode | BillCap   | CapAmount | NewCapAmount | BSCstatus | Username     | Action    | tariff                   | consumer | B1     | B2     | B3     | B4  | Text   | Email  | Phone  | Post   | GDPRstatus | MBBStatus | DeviceType | PreSelected | KeyEvent |
+      | acce79497928@stf.ref.o2.co.uk | test123  | iPhone X | 11          | SL11ER   | CapMyBill | £5        | £10          | Enabled   | TEST ACCEPTA | enterCode | 129.99upfront37.00amonth | Me       | Select | Select | Select | Not | Select | Select | Select | Select | Enabled    | No        | Connected  | No          | No       |

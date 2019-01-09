@@ -28,7 +28,8 @@ Feature: 51_Reg_Consumer_Buyout
     And perform <Action> in OTAC page
     And verify if buyout offer is displayed under Order Summary section in <Delivery> page
     #Then Click on the 'Continue button' in delivery page
-    And Is this order for You or Someone else <consumer> when GDPR is <status>
+    #And Is this order for You or Someone else <consumer> when GDPR is <status>
+    And Validate consumer GDPR consent section and choose Business preferences <B1> <B2> <B3> with <KeyEvent> for <DeviceType> in delivery page when GDPR is <GDPRstatus> and <PreSelected>
     And verify if buyout offer is displayed under Order Summary section in <Payment> page
     And land on the payment page and input <Username> and other details and click 'Continue on next step' in upgrade journey
     And verify if buyout offer is displayed under Order Summary section in <Agreement> page
@@ -36,8 +37,9 @@ Feature: 51_Reg_Consumer_Buyout
     And verify if buyout offer is displayed under Order Summary section in <Review> page
     And Continue to Review page and review the order
     Then order confirmation is displayed
-    Then Choose <consumer> <status> Business preferences <B1> <B2> <B3> <B4> And Channel Preferences <Text> <Email> <Phone> <Post> <MBBStatus> <DeviceType> <PreSelected>
+    #Then Choose <consumer> <status> Business preferences <B1> <B2> <B3> <B4> And Channel Preferences <Text> <Email> <Phone> <Post> <MBBStatus> <DeviceType> <PreSelected>
+    Then Validate consumer GDPR consent section is hidden in Order confirmation page or not
 
     Examples:
-      | username                      | BSCstatus | BillCap   | CapAmount | password | handset       | Action | Username     | OTAC | Delivery | Payment | Agreement | Review | Username     | Action    | consumer | B1  | B2  | B3     | B4  | Text | Email  | Phone | Post | status  | MBBStatus | DeviceType | PreSelected |
-      | 17oc58652753@stf.ref.o2.co.uk | Enabled   | CapMyBill | £200      | test123  | iPhone 8 Plus | skip   | TEST ACCEPTA | OTAC | Delivery | Payment | Agreement | Review | TEST ACCEPTA | enterCode | Me       | Not | Not | Select | Not | Not  | Select | Not   | Not  | Enabled | No        | Connected  | No          |
+      | username                      | BSCstatus | BillCap   | CapAmount | password | handset       | Action | Username     | OTAC | Delivery | Payment | Agreement | Review | Username     | Action    | consumer | B1  | B2  | B3     | B4  | GDPRstatus | MBBStatus | DeviceType | PreSelected | KeyEvent |
+      | 17oc58652753@stf.ref.o2.co.uk | Enabled   | CapMyBill | £200      | test123  | iPhone 8 Plus | skip   | TEST ACCEPTA | OTAC | Delivery | Payment | Agreement | Review | TEST ACCEPTA | enterCode | Me       | Not | Not | Select | Not | Enabled    | No        | Connected  | No          | No       |

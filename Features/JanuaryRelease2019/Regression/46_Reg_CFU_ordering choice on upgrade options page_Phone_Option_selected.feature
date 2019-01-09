@@ -29,13 +29,15 @@ Feature: 46_Reg_CFU_ordering choice on upgrade options page_Phone_Option_selecte
     And click on "go to checkout" button
     And perform <Action> in OTAC page
     #And Click on the 'Continue button' in delivery page
-    And Is this order for You or Someone else <consumer> when GDPR is <status>
+    #And Is this order for You or Someone else <consumer> when GDPR is <status>
+    And Validate consumer GDPR consent section and choose Business preferences <B1> <B2> <B3> with <KeyEvent> for <DeviceType> in delivery page when GDPR is <GDPRstatus> and <PreSelected>
     And land on the payment page and input <Username> and other details and click 'Continue on next step' in upgrade journey
     And Continue to Agreements page and confirm all the agreement checks
     And Continue to Review page and review the order
     Then order confirmation is displayed
-    Then Choose <consumer> <status> Business preferences <B1> <B2> <B3> <B4> And Channel Preferences <Text> <Email> <Phone> <Post> <MBBStatus> <DeviceType> <PreSelected>
+    #Then Choose <consumer> <status> Business preferences <B1> <B2> <B3> <B4> And Channel Preferences <Text> <Email> <Phone> <Post> <MBBStatus> <DeviceType> <PreSelected>
+    Then Validate consumer GDPR consent section is hidden in Order confirmation page or not
 
     Examples:
-      | username                                    | password | handset       | BSCstatus | BillCap   | CapAmount         | Username     | Action | tariff                  | consumer | B1  | B2  | B3  | B4  | Text | Email | Phone | Post | status  | MBBStatus | DeviceType | PreSelected |
-      | rbmuatlokesh_donotusee2589@stf.ref.o2.co.uk | test123  | iPhone 8 Plus | Enabled   | CapMyBill | DontCapMyBillLink | TEST ACCEPTA | skip   | 19.99upfront45.00amonth | Someone  | Not | Not | Not | Not | Not  | Not   | Not   | Not  | Enabled | No        | Connected  | No          |
+      | username                                    | password | handset       | BSCstatus | BillCap   | CapAmount         | Username     | Action | tariff                  | consumer | B1  | B2  | B3  | B4  | GDPRstatus | MBBStatus | DeviceType | PreSelected | KeyEvent |
+      | rbmuatlokesh_donotusee2589@stf.ref.o2.co.uk | test123  | iPhone 8 Plus | Enabled   | CapMyBill | DontCapMyBillLink | TEST ACCEPTA | skip   | 19.99upfront45.00amonth | Someone  | Not | Not | Not | Not | Enabled    | No        | Connected  | No          | No       |

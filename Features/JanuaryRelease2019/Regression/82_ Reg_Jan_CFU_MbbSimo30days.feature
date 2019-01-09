@@ -33,11 +33,13 @@ Feature: 82_ Reg_Jan_CFU_MbbSimo30days
     And Choose your bill cap <BillCap> <CapAmount> when BSC is <BSCstatus>
     And Select 'I’ll keep my current sim' option
     And Click on 'I agree to the terms and condition' checkbox in SIMO review page
-    And Is this order for You or Someone else <consumer> when GDPR is <status>
+    #And Is this order for You or Someone else <consumer> when GDPR is <status>
+    And Validate consumer GDPR consent section and choose Business preferences <B1> <B2> <B3> with <KeyEvent> for <DeviceType> in delivery page when GDPR is <GDPRstatus> and <PreSelected>
     #And Click on 'Place your order' CTA
     Then order confirmation is displayed
-    Then Choose <consumer> <status> Business preferences <B1> <B2> <B3> <B4> And Channel Preferences <Text> <Email> <Phone> <Post> <MBBStatus> <DeviceType> <PreSelected>
+    #Then Choose <consumer> <status> Business preferences <B1> <B2> <B3> <B4> And Channel Preferences <Text> <Email> <Phone> <Post> <MBBStatus> <DeviceType> <PreSelected>
+    Then Validate consumer GDPR consent section is hidden in Order confirmation page or not
 
     Examples:
-      | Contract | username                      | BSCstatus | BillCap       | CapAmount | password | filtername | sortoption                 | Username     | consumer | B1  | B2  | B3     | B4  | Text | Email  | Phone | Post | status  | MBBStatus | DeviceType | PreSelected |
-      | 30 Days  | 19fe03988056@stf.ref.o2.co.uk | Enabled   | DontCapMyBill | Nill      | test123  | low        | Monthly data (High to low) | TEST ACCEPTA | Me       | Not | Not | Select | Not | Not  | Select | Not   | Not  | Enabled | No        | Connected  | No          |
+      | Contract | username                      | BSCstatus | BillCap       | CapAmount | password | filtername | sortoption                 | Username     | consumer | B1  | B2  | B3     | B4  | GDPRstatus | MBBStatus | DeviceType | PreSelected | KeyEvent |
+      | 30 Days  | 19fe03988056@stf.ref.o2.co.uk | Enabled   | DontCapMyBill | Nill      | test123  | low        | Monthly data (High to low) | TEST ACCEPTA | Me       | Not | Not | Select | Not | Enabled    | No        | Connected  | No          | No       |

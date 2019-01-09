@@ -23,7 +23,8 @@ Feature: 18_Reg_CFU_Tablet_Delivery_page_more_than_one_address_select_one_compre
     And perform <Action> in OTAC page
     And Click on 'Use a different delivery address'link
     And enter a <houseNumber> and an <PostCode> in Delivery section
-    And Is this order for You or Someone else <consumer> when GDPR is <status>
+    #And Is this order for You or Someone else <consumer> when GDPR is <status>
+    And Validate consumer GDPR consent section and choose Business preferences <B1> <B2> <B3> with <KeyEvent> for <DeviceType> in delivery page when GDPR is <GDPRstatus> and <PreSelected>
     And Select the Home address
     And Enter cardDetails in payment page input <Username> and click 'Continue on next step'
     #And land on the payment page and input and other details and click 'Continue' on next step for otac
@@ -31,9 +32,10 @@ Feature: 18_Reg_CFU_Tablet_Delivery_page_more_than_one_address_select_one_compre
     And Continue to Review page and review the order
     #And Click on 'I agree to the terms and condition' checkbox
     Then order confirmation is displayed
-    Then Choose <consumer> <status> Business preferences <B1> <B2> <B3> <B4> And Channel Preferences <Text> <Email> <Phone> <Post> <MBBStatus> <DeviceType> <PreSelected>
+    #Then Choose <consumer> <status> Business preferences <B1> <B2> <B3> <B4> And Channel Preferences <Text> <Email> <Phone> <Post> <MBBStatus> <DeviceType> <PreSelected>
+    Then Validate consumer GDPR consent section is hidden in Order confirmation page or not
 
     Examples:
-      | username                                    | password | Tablet             | BSCstatus | BillCap   | CapAmount | color | tariff                 | houseNumber | PostCode | Username     | Action    | consumer | B1  | B2  | B3     | B4  | Text | Email  | Phone | Post   | status  | MBBStatus | DeviceType | PreSelected |
-      | rbmuatlokesh_donotusee5798@stf.ref.o2.co.uk | test123  | iPad 9.7 inch 2018 | Enabled   | CapMyBill | £60       | Gold  | 9.99upfront60.00amonth | 11          | SL11Er   | Test Accepta | enterCode | Me       | Not | Not | Select | Not | Not  | Select | Not   | Select | Enabled | No        | Connected  | No          |
+      | username                                    | password | Tablet             | BSCstatus | BillCap   | CapAmount | color | tariff                 | houseNumber | PostCode | Username     | Action    | consumer | B1  | B2  | B3     | B4  | GDPRstatus | MBBStatus | DeviceType | PreSelected | KeyEvent |
+      | rbmuatlokesh_donotusee5798@stf.ref.o2.co.uk | test123  | iPad 9.7 inch 2018 | Enabled   | CapMyBill | £60       | Gold  | 9.99upfront60.00amonth | 11          | SL11Er   | Test Accepta | enterCode | Me       | Not | Not | Select | Not | Enabled    | No        | Connected  | No          | No       |
 
