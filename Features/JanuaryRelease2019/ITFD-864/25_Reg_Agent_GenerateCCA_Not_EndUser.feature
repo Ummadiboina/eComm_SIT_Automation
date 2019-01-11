@@ -18,20 +18,16 @@ Feature: 25_Reg_Agent_GenerateCCA_Not_EndUser
     And validate register status
     And Choose Business preferences <B1> <B2> <B3> <B4> and Channel Preferences <Text> <Email> <Phone> <Post> for <Consumer> when GDPR <GDPRstatus> <DeviceType> <DeviceModule> for AFA journey
     And Choose <DeliveryType> delivery address and delivery time
-    #And Update Device Plan Link Email Address
-    #And Accept O2 Refresh Deal Summary
     And Click on 'Generate CCA' button
     #Then CCALink Should be generated
     And click on the 'CCA' link
     And Signin using valid <username> and <password> credentials for New User
     And Click on 'Continue' button on upgrade page
-    #And Is this order for You or Someone else <consumer> when GDPR is <status2>
     And Validate consumer GDPR consent section and choose Business preferences <B1> <B2> <B3> with <KeyEvent> for <DeviceType> in delivery page when GDPR is <GDPRstatus2> and <PreSelected>
     And land on the payment page and input details and click 'Continue on next step' in upgrade journey for CCA Link
     And Continue to CCA or Buyout or Trade In Agreements page and confirm all the agreement checks for SECCI and CCA not accepted
     And Continue to Review page, check order contract text and review the order
     Then order confirmation is displayed
-    #Then Choose <consumer> <status> Business preferences <B1> <B2> <B3> <B4> And Channel Preferences <Text> <Email> <Phone> <Post> <MBBStatus> <DeviceType>
     Then Validate consumer GDPR consent section is hidden in Order confirmation page or not
 
     Examples:
