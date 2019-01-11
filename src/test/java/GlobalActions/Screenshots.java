@@ -15,9 +15,9 @@ import org.openqa.selenium.*;
 import helpers.Environment;
 import helpers.Filereadingutility;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import ru.yandex.qatools.ashot.AShot;
-import ru.yandex.qatools.ashot.Screenshot;
-import ru.yandex.qatools.ashot.screentaker.ViewportPastingStrategy;
+//import ru.yandex.qatools.ashot.AShot;
+//import ru.yandex.qatools.ashot.Screenshot;
+//import ru.yandex.qatools.ashot.screentaker.ViewportPastingStrategy;
 import steps.Hooks;
 
 import javax.imageio.ImageIO;

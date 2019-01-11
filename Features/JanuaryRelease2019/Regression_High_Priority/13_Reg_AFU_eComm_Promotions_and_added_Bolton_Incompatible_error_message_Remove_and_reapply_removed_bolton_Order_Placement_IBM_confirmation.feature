@@ -12,7 +12,7 @@ Feature: 13_Reg_AFU_eComm_Promotions_and_added_Bolton_Incompatible_error_message
     #(Bolton1 for reference)
     And Select a Bolton
     Then Verify that the deal has already some offers Bolton <Bolton> promotions applied
-    #   since both Bolton1 and Bolton2 cannot be sold together
+    #since both Bolton1 and Bolton2 cannot be sold together
     And Verify that the error <ErrorMsg> is displayed in the deal about the conflict
     #which added Bolton2
     And Verify that the incompatible boltons Bolton1 and the Offers Bolton Promotion is highlighted
@@ -28,7 +28,7 @@ Feature: 13_Reg_AFU_eComm_Promotions_and_added_Bolton_Incompatible_error_message
     And Verify that the 'Checkout' CTA is enabled or disabled
     And Validate Bill Spend Cap in agent deal builder section when BSC is <BSCstatus>
     And Add your Bill Spend Cap <BillCapAmount> in agent deal builder when BSC is <BSCstatus>
-    # Then Click on 'Checkout' CTA and Proceed till Order placement
+    #Then Click on 'Checkout' CTA and Proceed till Order placement
     And Validate all the Basket content and checkout
     Then Validate deal summary for applied Bill Spend Cap <BillCapAmount> when BSC is <BSCstatus>
     And Choose Business preferences <B1> <B2> <B3> <B4> and Channel Preferences <Text> <Email> <Phone> <Post> for <consumer> when GDPR <status> <DeviceType> for AFU journey <PreSelected>
