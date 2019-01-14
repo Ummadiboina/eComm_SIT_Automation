@@ -9,6 +9,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 import GlobalActions.CommonActions;
+import GlobalActions.CommonUtilities;
 import GlobalActions.scrollToAnElement;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.math.NumberUtils;
@@ -30,8 +31,8 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
     static int AccessoryContainerSize = 0;
     static int SelectedAccessoryCount = 0;
 
-    static String accessoryname="";
-    static String FirstInsurancePrice="";
+    static String accessoryname = "";
+    static String FirstInsurancePrice = "";
     static JavascriptExecutor js = (JavascriptExecutor) driver;
     static ArrayList<Integer> datafilterlist = new ArrayList<Integer>();
     static int HighFilterGreater = 0;
@@ -230,14 +231,14 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
         driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 
 
-        if(driver.findElements(By.xpath("//a[@class='closed']/..//span[normalize-space()='Accessories']")).size() > 0){
+        if (driver.findElements(By.xpath("//a[@class='closed']/..//span[normalize-space()='Accessories']")).size() > 0) {
             driver.findElement(By.xpath("//a[@class='closed']/..//span[normalize-space()='Accessories']")).click();
         }
 
         if (driver.findElements(By.xpath("(//*[@id='accessoryTile_']/div[5]/input)[2] | (//*[@class='accessory-button-container']/input[@value='Add'])[2]")).size() > 0) {
             log.debug("The Accessory which will be added is  - "
                     + pageobjects.PAYMandPAYGTariffAndExtrasPage.AddRandomAccessory.getText());
-            accessoryname=PAYMandPAYGTariffAndExtrasPage.AddRandomAccessory.getText();
+            accessoryname = PAYMandPAYGTariffAndExtrasPage.AddRandomAccessory.getText();
             pageobjects.PAYMandPAYGTariffAndExtrasPage.AddRandomAccessory.sendKeys(Keys.ENTER);
             Thread.sleep(2000);
             log.debug("Added a random accessory to basket");
@@ -630,7 +631,7 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
             }
 
         }
-        log.debug("FirstInsurancePrice "+FirstInsurancePrice);
+        log.debug("FirstInsurancePrice " + FirstInsurancePrice);
         Screenshots.captureScreenshot();
     }
 
@@ -1911,6 +1912,7 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 
                     if (driver.findElements(By.xpath("//span[@aria-label='Increase monthly cost']/parent::div[@class='max-icon disable']")).size() >= 0) {
                         CommonActions.scrollToElement(PAYMandPAYGTariffAndExtrasPage.BudgetPlusbutton);
+                        CommonActions.clickWebElement(PAYMandPAYGTariffAndExtrasPage.BudgetPlusbutton);
                         String monthlyBudgetDisplayed1 = PAYMandPAYGTariffAndExtrasPage.MonthlyBudgetlabel.getText();
                         MonthlyBudgetdisplayed = monthlyBudgetDisplayed1.substring(1, monthlyBudgetDisplayed1.length() - 3);
 
@@ -1946,7 +1948,7 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 
                         String minBudgetdisplayed = PAYMandPAYGTariffAndExtrasPage.BudgetMinButtonlabel.getText().substring(5);
                         if (MonthlyBudgetdisplayed.equals(minBudgetdisplayed)) {
-                            if (driver.findElements(By.xpath("//span[@aria-label='Increase monthly cost']/parent::div[@class='max-icon disable']")).size() >= 1) {
+                            if (driver.findElements(By.xpath("//span[@aria-label='Reduce monthly cost']/parent::div[@class='min-icon disable']")).size() >= 1) {
                                 System.out.println("MinBudgetdisplayed matches with MonthlyBudgetdisplayed");
                                 System.out.println("Acutail" + monthlyBudgetDisplayed1 + " And Excepted :: " + minBudgetdisplayed + " are same");
                                 break;
@@ -2076,7 +2078,7 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
                 }
             }
 
-
+            Thread.sleep(5000);
             CommonActions.scrollToElement(PAYMandPAYGTariffAndExtrasPage.findYourPlan);
             CommonActions.clickWebElement(PAYMandPAYGTariffAndExtrasPage.findYourPlan);
 
@@ -2096,8 +2098,8 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
             Float MonthlyBudgetdisplayed1 = Float.parseFloat(MonthlyBudgetdisplayed);
 
             //verify the displayed result is correct by check the data and monthly value displayed
-
-            if (MonthlyDatadisplayed.equals(Budgetleddataresult) && (MonthlyBudgetdisplayed1 >= MonthlyBudgetresult2)) {
+            if (MonthlyDatadisplayed.equals(Budgetleddataresult)) {
+                // if (MonthlyDatadisplayed.equals(Budgetleddataresult) && (MonthlyBudgetdisplayed1 <= MonthlyBudgetresult2)) {
                 System.out.println("Budget led search result data" + Budgetleddataresult + "matches with the data search criteria entered in budget led " + MonthlyDatadisplayed);
                 System.out.println("Budget led search result Montly budget" + MonthlyBudgetresult + "matches with the monthly budget search criteria entered in budget led" + MonthlyBudgetdisplayed1);
                 log.debug("BudgetLed search criteria matches with the displayed search result");
@@ -2129,14 +2131,20 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
                     // actualtotalcostofdevice = Float.parseFloat(actualtotalcostofdevice1);
                     float monthlyDevicecost = MonthlyBudgetresult2 - StandardDataCharge;
                     float Expectedtotalcostofdevice1 = (monthlyDevicecost * airtime) + upfrontBudgetledResult;
-                    float Roundoff= (float) 0.05;
-                    float Expectedtotalcostofdevice3=Expectedtotalcostofdevice1-Roundoff;
+                    float Roundoff = (float) 0.99;
+                    float Expectedtotalcostofdevice3 = Expectedtotalcostofdevice1 - Roundoff;
                     String Expectedtotalcostofdevice2 = Float.toString(Expectedtotalcostofdevice3);
-                    String Expectedtotalcostofdevice = Expectedtotalcostofdevice2.substring(0, Expectedtotalcostofdevice2.length() - 3);
+                    String Expectedtotalcostofdevice = Expectedtotalcostofdevice2.substring(0, 3);
                     if (actualtotalcostofdevice.equalsIgnoreCase(Expectedtotalcostofdevice)) {
 
-                        System.out.println("Expected result is" + "Cost of device caculated from Budget led Result" + Expectedtotalcostofdevice+"Matches with the Actual result"+actualtotalcostofdevice);
-                        log.debug("Expected result is" + "Cost of device caculated from Budget led Result" + Expectedtotalcostofdevice+"Matches with the Actual result(Cost of device)"+actualtotalcostofdevice);
+                        System.out.println("Expected result is" + "Cost of device caculated from Budget led Result" + Expectedtotalcostofdevice + "Matches with the Actual result" + actualtotalcostofdevice);
+                        log.debug("Expected result is" + "Cost of device caculated from Budget led Result" + Expectedtotalcostofdevice + "Matches with the Actual result(Cost of device)" + actualtotalcostofdevice);
+                        Thread.sleep(3000);
+                        CommonActions.scrollToElement(PAYMandPAYGTariffAndExtrasPage.AddtoBasket);
+                        CommonUtilities.clickWebElement(PAYMandPAYGTariffAndExtrasPage.AddtoBasket);
+                        Thread.sleep(3000);
+                        CommonActions.clickWebElement(PAYMandPAYGTariffAndExtrasPage.Idontwantspendcap);
+
                         break;
                     }
 
@@ -2145,6 +2153,7 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 
 
             }
+
         }///tryblock
 
 
@@ -2161,15 +2170,15 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
         driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 
 
-        if(driver.findElements(By.xpath("//a[@class='closed']/..//span[normalize-space()='Accessories']")).size() > 0){
+        if (driver.findElements(By.xpath("//a[@class='closed']/..//span[normalize-space()='Accessories']")).size() > 0) {
             driver.findElement(By.xpath("//a[@class='closed']/..//span[normalize-space()='Accessories']")).click();
         }
 
         if (driver.findElements(By.xpath("(//button[@class='accessorySelect secondary selectButton tst-select'])[2]")).size() > 0) {
-           log.debug("The Accessory which will be added is  - "
-                   + pageobjects.PAYMandPAYGTariffAndExtrasPage.AddCFUAccessory.getText());
+            log.debug("The Accessory which will be added is  - "
+                    + pageobjects.PAYMandPAYGTariffAndExtrasPage.AddCFUAccessory.getText());
             pageobjects.PAYMandPAYGTariffAndExtrasPage.AddCFUAccessory.sendKeys(Keys.ENTER);
-          //  driver.findElement(By.xpath("(//*[@id='accessoryTile_']/div[5]/input)[2] | (//*[@class='accessory-button-container']/input[@value='Add'])[2]")).click();
+            //  driver.findElement(By.xpath("(//*[@id='accessoryTile_']/div[5]/input)[2] | (//*[@class='accessory-button-container']/input[@value='Add'])[2]")).click();
             Thread.sleep(2000);
             log.debug("Added a random accessory to basket");
         }
@@ -2177,4 +2186,306 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 
     }
 
+
+    public static void CFUbudgetLedValidation(String MonthlyBudget, String MonthlyData) throws InterruptedException {
+        String MonthlyBudgetdisplayed = "";
+        String MonthlyDatadisplayed = "";
+        Float StandardDataCharge;
+        //Float actualtotalcostofdevice;
+        int airtime;
+        float upfront;
+        float Monthly;
+        float contract;
+        try {
+            driver.manage().timeouts().implicitlyWait(25, TimeUnit.SECONDS);
+            if (MonthlyBudget.equalsIgnoreCase("Max")) {
+                CommonActions.scrollToElement(PAYMandPAYGTariffAndExtrasPage.BudgetPlusbutton);
+
+                for (int i = 1; i < 30; i++) {
+
+                    if (driver.findElements(By.xpath("//span[@aria-label='Increase monthly cost']/parent::div[@class='max-icon disable']")).size() >= 0) {
+                        CommonActions.scrollToElement(PAYMandPAYGTariffAndExtrasPage.BudgetPlusbutton);
+                        CommonActions.clickWebElement(PAYMandPAYGTariffAndExtrasPage.BudgetPlusbutton);
+                        String monthlyBudgetDisplayed1 = driver.findElement(By.xpath("//div[@class='budget-Led-defaultTermMonth value']")).getText();
+                        MonthlyBudgetdisplayed = monthlyBudgetDisplayed1.substring(1, monthlyBudgetDisplayed1.length() - 3);
+
+                        String MaxBudgetdisplayed = driver.findElement(By.xpath("//div[@class='budget-led-price budget-Led-maxTermMonth']")).getText().substring(5);
+                        if (MonthlyBudgetdisplayed.equals(MaxBudgetdisplayed)) {
+                            if (driver.findElements(By.xpath("//span[@aria-label='Increase monthly cost']/parent::div[@class='max-icon disable']")).size() >= 1) {
+                                System.out.println("MaxBudgetdisplayed matches with MonthlyBudgetdisplayed");
+                                System.out.println("Acutail" + monthlyBudgetDisplayed1 + " And Excepted :: " + MaxBudgetdisplayed + " are same");
+                                break;
+                            }
+                        }
+                           /* else{
+                                Assert.fail("MaxBudgetdisplayed does notmatches with MonthlyBudgetdisplayed");
+                                }*/
+                    } else {
+                        Assert.fail("MaxBudgetdisplayed does notmatches with MonthlyBudgetdisplayed and Monthly budget Max button is disabled");
+                    }
+                }
+
+
+            }
+
+            ////Monthly Min Budget
+            if (MonthlyBudget.equalsIgnoreCase("Min")) {
+                CommonActions.scrollToElement(PAYMandPAYGTariffAndExtrasPage.BudgetPlusbutton);
+
+                for (int i = 1; i < 30; i++) {
+
+                    if (driver.findElements(By.xpath("//span[@aria-label='Reduce monthly cost']/parent::div[@class='min-icon disable']")).size() >= 0) {
+                        PAYMandPAYGTariffAndExtrasPage.Budgetminusbutton.click();
+                        String monthlyBudgetDisplayed1 = driver.findElement(By.xpath("//div[@class='budget-Led-defaultTermMonth value']")).getText();
+                        MonthlyBudgetdisplayed = monthlyBudgetDisplayed1.substring(1, monthlyBudgetDisplayed1.length() - 3);
+
+                        String minBudgetdisplayed = driver.findElement(By.xpath("//div[@class='budget-led-price budget-Led-minTermMonth']")).getText().substring(5);
+                        if (MonthlyBudgetdisplayed.equals(minBudgetdisplayed)) {
+                            if (driver.findElements(By.xpath("//span[@aria-label='Reduce monthly cost']/parent::div[@class='min-icon disable']")).size() >= 1) {
+                                System.out.println("MinBudgetdisplayed matches with MonthlyBudgetdisplayed");
+                                System.out.println("Acutail" + monthlyBudgetDisplayed1 + " And Excepted :: " + minBudgetdisplayed + " are same");
+                                break;
+                            }
+                        }
+
+                    } else {
+                        Assert.fail("MinBudgetdisplayed does notmatches with MonthlyBudgetdisplayed");
+                    }
+                }
+
+
+            }
+////Average Budget
+
+            if (MonthlyBudget.equalsIgnoreCase("avg")) {
+
+                CommonActions.scrollToElement(PAYMandPAYGTariffAndExtrasPage.BudgetPlusbutton);
+
+                if (driver.findElements(By.xpath("//span[@aria-label='Reduce monthly cost']/parent::div[@class='min-icon disable']")).size() > 0) {
+
+
+                    CommonActions.clickWebElement(PAYMandPAYGTariffAndExtrasPage.BudgetPlusbutton);
+                }
+
+                if (driver.findElements(By.xpath("//span[@aria-label='Increase monthly cost']/parent::div[@class='max-icon disable']")).size() > 0) {
+
+
+                    CommonActions.clickWebElement(PAYMandPAYGTariffAndExtrasPage.Budgetminusbutton);
+                }
+
+                if (driver.findElements(By.xpath("//span[@aria-label='Reduce monthly cost']/parent::div[@class='min-icon disable']")).size() <= 0 && driver.findElements(By.xpath("//span[@aria-label='Increase monthly cost']/parent::div[@class='max-icon disable']")).size() <= 0) {
+                    String monthlyBudgetDisplayed1 = driver.findElement(By.xpath("//div[@class='budget-Led-defaultTermMonth value']")).getText();
+                    MonthlyBudgetdisplayed = monthlyBudgetDisplayed1.substring(1, monthlyBudgetDisplayed1.length() - 3);
+                    log.info("the monthly budget is changes to average  - " + monthlyBudgetDisplayed1);
+
+                } else {
+                    log.info("the monthly budget is not average ");
+                    Assert.fail("the monthly budget is not changed to average");
+                }
+
+            }
+
+
+///MONTHLY MAX DATA
+
+            if (MonthlyData.equalsIgnoreCase("Max")) {
+                CommonActions.scrollToElement(PAYMandPAYGTariffAndExtrasPage.dataPlusButton);
+
+                for (int i = 1; i < 30; i++) {
+
+                    if (driver.findElements(By.xpath("//span[@aria-label='Increase data usage']/parent:: div[@class='max-icon disable']")).size() >= 0) {
+                        CommonActions.clickWebElement(PAYMandPAYGTariffAndExtrasPage.dataPlusButton);
+                        MonthlyDatadisplayed = PAYMandPAYGTariffAndExtrasPage.Monthlydatalabel.getText();
+                        // MonthlyDatadisplayed = monthlyDataDisplayed1.substring(1, monthlyDataDisplayed1.length() - 3);
+
+                        String MaxDatadisplayed = PAYMandPAYGTariffAndExtrasPage.dataPlusButtonlabel.getText().substring(4);
+                        if (MonthlyDatadisplayed.equals(MaxDatadisplayed)) {
+                            if (driver.findElements(By.xpath("//span[@aria-label='Increase data usage']/parent:: div[@class='max-icon disable']")).size() >= 1) {
+                                System.out.println("MaxDatadisplayed matches with MonthlyDatadisplayed");
+                                System.out.println("Actual" + MonthlyDatadisplayed + " And Excepted :: " + MaxDatadisplayed + " are same");
+                                break;
+                            }
+                        }
+
+                    } else {
+                        Assert.fail("Maxdatadisplayed does notmatches with MonthlyDatadisplayed");
+                    }
+
+
+                }
+
+            }
+            ////Monthly Min data
+            if (MonthlyData.equalsIgnoreCase("Min")) {
+                CommonActions.scrollToElement(PAYMandPAYGTariffAndExtrasPage.dataPlusButton);
+
+                for (int i = 1; i < 30; i++) {
+
+                    if (driver.findElements(By.xpath("//span[@aria-label='Reduce data usage']/parent::div[@class='min-icon disable']")).size() >= 0) {
+                        CommonActions.clickWebElement(PAYMandPAYGTariffAndExtrasPage.dataminusButton);
+                        MonthlyDatadisplayed = PAYMandPAYGTariffAndExtrasPage.Monthlydatalabel.getText();
+                        // MonthlyDatadisplayed = monthlyDataDisplayed1.substring(1, monthlyDataDisplayed1.length() - 3);
+
+                        String MinDatadisplayed = PAYMandPAYGTariffAndExtrasPage.dataminusButtonlabel.getText().substring(4);
+                        if (MonthlyDatadisplayed.equals(MinDatadisplayed)) {
+                            if (driver.findElements(By.xpath("//span[@aria-label='Reduce data usage']/parent::div[@class='min-icon disable']")).size() >= 1) {
+                                System.out.println("MinDatadisplayed matches with MonthlyDatadisplayed");
+                                System.out.println("Actual" + MonthlyDatadisplayed + " And Excepted :: " + MinDatadisplayed + " are same");
+                                break;
+                            }
+                        }
+
+                    } else {
+                        Assert.fail("MinBudgetdisplayed does notmatches with MonthlyBudgetdisplayed");
+                    }
+
+
+                }
+
+            }
+
+
+            //Monthly Avg data
+            if (MonthlyBudget.equalsIgnoreCase("avg")) {
+                CommonActions.scrollToElement(PAYMandPAYGTariffAndExtrasPage.dataPlusButton);
+
+                if (driver.findElements(By.xpath("//span[@aria-label='Reduce data usage']/parent::div[@class='min-icon disable']")).size() > 0) {
+
+
+                    CommonActions.clickWebElement(PAYMandPAYGTariffAndExtrasPage.dataPlusButton);
+                }
+
+                if (driver.findElements(By.xpath("//span[@aria-label='Increase data usage']/parent:: div[@class='max-icon disable']")).size() > 0) {
+
+
+                    CommonActions.clickWebElement(PAYMandPAYGTariffAndExtrasPage.dataminusButton);
+                }
+
+                if (driver.findElements(By.xpath("//span[@aria-label='Reduce data usage']/parent::div[@class='min-icon disable']")).size() <= 0 && driver.findElements(By.xpath("//span[@aria-label='Increase data usage']/parent:: div[@class='max-icon disable']")).size() <= 0) {
+                    MonthlyDatadisplayed = driver.findElement(By.xpath("//div[@class='value budget-Led-default-term-data']")).getText();
+                    log.info("the monthly data is changes to average  - " + MonthlyDatadisplayed);
+
+                } else {
+                    log.info("the monthly budget is not average");
+                    Assert.fail("the data cost does not changes to average");
+                }
+            }
+
+            Thread.sleep(5000);
+            WebElement Totalcost = driver.findElement(By.xpath("//span[@class='budget-Led-down-arrow']"));
+            CommonActions.clickWebElement(Totalcost);
+            String actualtotalcostofdevice2 = driver.findElement(By.xpath("//a[@class='budget-led-title']//p")).getText();
+            String actualtotalcostofdevice = actualtotalcostofdevice2.substring(30, 33);
+            CommonActions.scrollToElement(PAYMandPAYGTariffAndExtrasPage.findYourPlan);
+            CommonActions.clickWebElement(PAYMandPAYGTariffAndExtrasPage.findYourPlan);
+
+/*
+
+            //Store the results displayed
+            String Budgetleddataresult1 = PAYMandPAYGTariffAndExtrasPage.DataBudgetledResult.getText();
+            String Budgetleddataresult = Budgetleddataresult1.substring(0, Budgetleddataresult1.length() - 10);
+            String MonthlyBudgetresult1 = PAYMandPAYGTariffAndExtrasPage.MonthlyBudgetResult.getText();
+            //After exe £29.89
+            String MonthlyBudgetresult = MonthlyBudgetresult1.substring(1);
+
+            String upfrontBudgetledResult1 = PAYMandPAYGTariffAndExtrasPage.upfrontBudgetResult.getText();
+            //£430.00
+            String upfrontBudgetledResult2 = upfrontBudgetledResult1.substring(1);
+            upfrontBudgetledResult = Float.parseFloat(upfrontBudgetledResult2);
+            Float MonthlyBudgetresult2 = Float.parseFloat(MonthlyBudgetresult);
+            Float MonthlyBudgetdisplayed1 = Float.parseFloat(MonthlyBudgetdisplayed);
+
+            //verify the displayed result is correct by check the data and monthly value displayed
+            if (MonthlyDatadisplayed.equals(Budgetleddataresult)){
+                // if (MonthlyDatadisplayed.equals(Budgetleddataresult) && (MonthlyBudgetdisplayed1 <= MonthlyBudgetresult2)) {
+                System.out.println("Budget led search result data" + Budgetleddataresult + "matches with the data search criteria entered in budget led " + MonthlyDatadisplayed);
+                System.out.println("Budget led search result Montly budget" + MonthlyBudgetresult + "matches with the monthly budget search criteria entered in budget led" + MonthlyBudgetdisplayed1);
+                log.debug("BudgetLed search criteria matches with the displayed search result");
+            } else {
+                System.out.println("BudgetLed search criteria matches with the dispalyed search result");
+                Assert.fail("BudgetLed search criteria matches with the dispalyed search result");
+
+            }
+
+            CommonActions.scrollToElement(PAYMandPAYGTariffAndExtrasPage.paydevicefulllink);
+            CommonActions.clickWebElement(PAYMandPAYGTariffAndExtrasPage.paydevicefulllink);
+            // List <String>StandardData=driver.findElements(By.xpath("(//div[@class='tariff-with-device-cost-zero sim-only-user']//div[@class='col-sm-4 col-md-2 no-gutter dataAmount']/span)"));
+            int listofdatasize = driver.findElements(By.xpath("(//div[@class='tariff-with-device-cost-zero sim-only-user']//div[@class='col-sm-4 col-md-2 no-gutter dataAmount']/span)")).size();
+
+            //Getting the Standard price for data to calculate further
+            for (int i = 1; i <= listofdatasize; i++) {
+                String data1 = driver.findElement(By.xpath("(//div[@class='dataAllowance clearfix tariff no-promotion-exists']//div[@class='col-sm-4 col-md-2 no-gutter dataAmount'])[" + i + "]")).getText();
+                String data = data1.substring(0, data1.length() - 10);
+                String airTime1 = driver.findElement(By.xpath(" ((//div[@class='tariffs-container pay-monthly-tariffs']//div[@class='col-sm-4 col-md-2 no-gutter dataAmount'])/../../parent::div)[1]//div[@class='col-sm-8 col-md-6 no-gutter dataDesc hidden-xs unlimted-al-1']//span[@class='device-plan-contract']")).getText();
+                String airTime2 = airTime1.substring(0, 2);
+                airtime = Integer.parseInt(airTime2);
+                if (data.equals(MonthlyDatadisplayed)) {
+
+                    String StandardDataCharge1 = driver.findElement(By.xpath("(//div[@class='tariff-with-device-cost-zero sim-only-user']//div[@class='col-sm-4 col-md-2 no-gutter dataAmount']/span)[" + i + "]/../../parent::div/following-sibling::div//div[@class='dataPriceWrap dataPriceWrap-al-2']//p[@class='dataPrice']")).getText();
+                    String StandardDataCharge2 = StandardDataCharge1.substring(1);
+                    StandardDataCharge = Float.parseFloat(StandardDataCharge2);
+                    String actualtotalcostofdevice2 = driver.findElement(By.xpath("((//div[@class='tariff-with-device-cost-zero sim-only-user']//div[@class='col-sm-4 col-md-2 no-gutter dataAmount']/span)[1]/../../parent::div/following-sibling::div//p[@class='dataPrice'])[1]")).getText();
+                    String actualtotalcostofdevice = actualtotalcostofdevice2.substring(1, actualtotalcostofdevice2.length() - 3);
+                    // actualtotalcostofdevice = Float.parseFloat(actualtotalcostofdevice1);
+                    float monthlyDevicecost = MonthlyBudgetresult2 - StandardDataCharge;
+                    float Expectedtotalcostofdevice1 = (monthlyDevicecost * airtime) + upfrontBudgetledResult;
+                    float Roundoff = (float) 0.99;
+                    float Expectedtotalcostofdevice3 = Expectedtotalcostofdevice1 - Roundoff;
+                    String Expectedtotalcostofdevice2 = Float.toString(Expectedtotalcostofdevice3);
+                    String Expectedtotalcostofdevice = Expectedtotalcostofdevice2.substring(0, 3);
+                    if (actualtotalcostofdevice.equalsIgnoreCase(Expectedtotalcostofdevice)) {
+
+                        System.out.println("Expected result is" + "Cost of device caculated from Budget led Result" + Expectedtotalcostofdevice + "Matches with the Actual result" + actualtotalcostofdevice);
+                        log.debug("Expected result is" + "Cost of device caculated from Budget led Result" + Expectedtotalcostofdevice + "Matches with the Actual result(Cost of device)" + actualtotalcostofdevice);
+                        Thread.sleep(3000);
+                        CommonActions.scrollToElement(PAYMandPAYGTariffAndExtrasPage.AddtoBasket);
+                        CommonUtilities.clickWebElement(PAYMandPAYGTariffAndExtrasPage.AddtoBasket);
+                        Thread.sleep(3000);
+                        CommonActions.clickWebElement(PAYMandPAYGTariffAndExtrasPage.Idontwantspendcap);
+
+                        break;
+                    }
+
+*/
+
+            //  String actualtotalcostofdevice2 = driver.findElement(By.xpath("((//div[@class='tariff-with-device-cost-zero sim-only-user']//div[@class='col-sm-4 col-md-2 no-gutter dataAmount']/span)[1]/../../parent::div/following-sibling::div//p[@class='dataPrice'])[1]")).getText();
+            //     String actualtotalcostofdevice = actualtotalcostofdevice2.substring(1, actualtotalcostofdevice2.length() - 3);
+            CommonActions.scrollToElement(PAYMandPAYGTariffAndExtrasPage.CFUAddtoBasket);
+            CommonUtilities.clickWebElement(PAYMandPAYGTariffAndExtrasPage.CFUAddtoBasket);
+            String Upfront2 = PAYMandPAYGTariffAndExtrasPage.CFUUpfront.getText();
+            String upfront1 = Upfront2.substring(1);
+            upfront = Float.parseFloat(upfront1);
+            String Monthly2 = PAYMandPAYGTariffAndExtrasPage.CFUMonthly.getText();
+            String Monthly1 = Monthly2.substring(1);
+            Monthly = Float.parseFloat(Monthly1);
+
+
+            String contract1 = PAYMandPAYGTariffAndExtrasPage.CFUMonths.getText();
+            contract = Float.parseFloat(contract1);
+            float expectedcostofdevice3 = Monthly * contract + upfront;
+            //  float Roundoff = (float) 0.99;
+            // float Expectedtotalcostofdevice2 = expectedcostofdevice3 - Roundoff;
+            String Expectedtotalcostofdevice1 = Float.toString(expectedcostofdevice3);
+            String Expectedtotalcostofdevice = Expectedtotalcostofdevice1.substring(0, 3);
+            if (actualtotalcostofdevice.equalsIgnoreCase(Expectedtotalcostofdevice)) {
+                System.out.println("Budget led successful");
+            } else {
+                System.out.println("Failed to validate actual cost adn expected cost of device");
+                Assert.fail("Failed to validate actual cost adn expected cost of device");
+
+
+            }
+        }///tryblock
+
+
+        catch (Exception e) {
+            log.debug("Unable to validate the monthlybudgetmax button");
+            Assert.fail("Unable to validate the monthlybudgetmax button");
+        }
+
+
+    }
 }
+
+
+

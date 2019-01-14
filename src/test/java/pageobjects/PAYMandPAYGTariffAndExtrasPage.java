@@ -282,7 +282,7 @@ public class PAYMandPAYGTariffAndExtrasPage {
     @FindBy(how = How.XPATH, using = "//div[@class='budget-led-defaultTermMonth value']")
     public static WebElement MonthlyBudgetlabel;
     /* //capture Budgetminlabel//// */
-    @FindBy(how = How.XPATH, using = "div[@class='budget-led-price budget-led-minTermMonth'")
+    @FindBy(how = How.XPATH, using = "//div[@class='budget-led-price budget-led-minTermMonth']")
     public static WebElement BudgetMinButtonlabel;
 
     /* Monthly data */
@@ -322,6 +322,30 @@ public class PAYMandPAYGTariffAndExtrasPage {
     //Total device cost link
     @FindBy(how = How.XPATH, using = "//a[@class='budget-led-title']")
     public static WebElement totalDeviceCostLink;
+//Add to basket
+    @FindBy(how = How.XPATH, using = "(//span[contains(text(),'Add to basket')])[1]")
+    public static WebElement AddtoBasket;
+
+
+    @FindBy(how = How.XPATH, using = "//button[@id='dontcap']")
+    public static WebElement Idontwantspendcap;
+
+
+    @FindBy(how = How.XPATH, using = "(//button[@class='btn buyNowBtn ng-binding ng-pristine ng-valid'])[1]")
+    public static WebElement CFUAddtoBasket;
+
+
+    @FindBy(how = How.XPATH, using = "//div[@class='upfront-cost ng-binding']")
+    public static WebElement CFUUpfront;
+
+@FindBy(how = How.XPATH, using = "//div[@class='monthly-cost ng-binding']")
+public static WebElement CFUMonthly;
+
+
+    @FindBy(how = How.XPATH, using = "(//span[@class='ng-binding'])[14]")
+    public static WebElement CFUMonths;
+
+
 
 }
 

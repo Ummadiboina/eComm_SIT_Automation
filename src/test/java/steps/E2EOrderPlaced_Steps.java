@@ -253,7 +253,7 @@ public class E2EOrderPlaced_Steps {
             PageFactory.initElements(driver, MouseHoverPage.class);
             MouseHoverAction.PayMPhonesLandingPage();
             Thread.sleep(4000);
-            Autoredirection.redirect();
+            //Autoredirection.redirect();
             Thread.sleep(8000);
             //GlobalActions.//CommonFunctionscheckTitle("PayM Phones Page");
 
@@ -3984,7 +3984,7 @@ public class E2EOrderPlaced_Steps {
             PageFactory.initElements(driver, UpgradePhonesListingPage.class);
             MouseHoverAction.UpgradeandUpgradeNow();
             Thread.sleep(5000);
-            Autoredirection.redirectUpgrades();
+            //Autoredirection.redirectUpgrades();
             //UpgradeCustomerPageActions.viewAllPhones();
             Thread.sleep(2000);
         } catch (Exception e) {
@@ -11336,8 +11336,8 @@ public class E2EOrderPlaced_Steps {
             PAYMandPAYGTariffAndExtrasPageActions.Budgetledlinkclick();
         } catch (Exception e) {
             // TODO Auto-generated catch block
-            log.debug("Unable to navigate to device details page");
-            Assert.fail("Unable to navigate to device details page");
+            log.debug("Unable to navigate to budget led");
+            Assert.fail("Unable to navigate to budget led");
 
         }
 
@@ -11351,6 +11351,7 @@ public class E2EOrderPlaced_Steps {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, PAYMandPAYGTariffAndExtrasPage.class);
             PAYMandPAYGTariffAndExtrasPageActions.budgetLedValidation(monthlyBudget, monthlyData);
+
         } catch (Exception e) {
             // TODO Auto-generated catch block
             log.debug("Unable to click on the monthy budget Max button");
@@ -11523,6 +11524,25 @@ public class E2EOrderPlaced_Steps {
 
 
     }
+
+
+    @And("^Calculate the CFU Budgetled ([^\"]*) ([^\"]*)$")
+    public void Calculate_the_CFU_Budgeled(String monthlyBudget, String monthlyData) {
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            PageFactory.initElements(driver, PAYMandPAYGTariffAndExtrasPage.class);
+            PAYMandPAYGTariffAndExtrasPageActions.CFUbudgetLedValidation(monthlyBudget, monthlyData);
+
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            log.debug("Unable to click on the monthy budget Max button");
+            Assert.fail("Unable to click on the monthy budget Max button");
+
+        }
+
+
+    }
+
 
 
 }
