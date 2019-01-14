@@ -5,19 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b3431a87-97b1-4ffe-b872-0e6a8e54231a" name="Default" comment="Merge branch 'master' of https://bitbucket.org/ecommautomationteam/regression into Sharmi_19-02-2018&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;Features/FebruaryRelease2018/Regression/Reg_Jan_ConsumerToAcceptTenDigitsPhoneNumber.feature&#10;#&#9;src/test/java/actionsPerformed/Agent_DealBuilderPageActions.java&#10;#&#9;src/test/java/actionsPerformed/DeliveryPageActions.java&#10;#&#9;src/test/java/actionsPerformed/PAYMandPAYGTariffAndExtrasPageActions.java&#10;#&#9;src/test/java/actionsPerformed/UpgradeCustomerPageActions.java&#10;#&#9;src/test/java/steps/E2EOrderPlaced_Steps.java">
-      <change afterPath="$PROJECT_DIR$/Features/December#3rdRelease2018/ITFD353/CFA_BudgetLed_AvgMonthlyBudget_AvgMonthlydata.feature" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Features/December#3rdRelease2018/ITFD353/CFA_BudgetLed_MaxMonthlyBudget_MaxMonthlydata" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Features/December#3rdRelease2018/ITFD353/CFA_BudgetLed_MaxMonthlyBudget_MinMonthlydata" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Features/December#3rdRelease2018/ITFD353/CFA_BudgetLed_MinMonthlyBudget_MaxMonthlydata.feature" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Features/December#3rdRelease2018/ITFD353/CFA_BudgetLed_MinMonthlyBudget_MinMonthlydata.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Features/December#3rdRelease2018/ITFD353/CFU_Budgetled_MinMonthlyBudget_MinMonthlydata" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Configurations/Properties/AppConfig.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Configurations/Properties/AppConfig.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Features/CompleteJuneReleaseTestCases/CFU_Refresh_Order_Ddphone_with_Instock_accessory.feature" beforeDir="false" afterPath="$PROJECT_DIR$/Features/CompleteJuneReleaseTestCases/CFU_Refresh_Order_Ddphone_with_Instock_accessory.feature" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Features/December#3rdRelease2018/ITFD353/CFA_BudgetLed.feature" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/debug.log" beforeDir="false" afterPath="$PROJECT_DIR$/debug.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/actionsPerformed/PAYMandPAYGTariffAndExtrasPageActions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/actionsPerformed/PAYMandPAYGTariffAndExtrasPageActions.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pageobjects/PAYMandPAYGTariffAndExtrasPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pageobjects/PAYMandPAYGTariffAndExtrasPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/steps/E2EOrderPlaced_Steps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/steps/E2EOrderPlaced_Steps.java" afterDir="false" />
     </list>
     <list id="9d0aef85-48ac-4e71-b67a-fff455014d99" name="New changelist" comment="New changelist" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -123,11 +115,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Features/December#3rdRelease2018/ITFD353/CFU_Budgetled_AvgMonthlyBudget_AvgMonthlydata">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" column="47" selection-start-line="4" selection-start-column="47" selection-end-line="4" selection-end-column="47" />
+            <state relative-caret-position="238">
+              <caret line="14" column="46" selection-end-line="41" selection-end-column="312" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Features/December#3rdRelease2018/ITFD353/CFU_Budgetled_MinMonthlyBudget_MinMonthlydata">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="153">
+              <caret line="9" column="32" lean-forward="true" selection-start-line="9" selection-start-column="32" selection-end-line="9" selection-end-column="32" />
             </state>
           </provider>
         </entry>
@@ -137,15 +138,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state>
               <caret column="48" selection-start-column="48" selection-end-column="48" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Features/SeptemberRelease2017/FTQ/ECOM-11739/CFU_Recycle_Phones_DD_Confirmation_Page_changes.feature">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="342">
-              <caret line="26" column="29" selection-start-line="26" selection-start-column="29" selection-end-line="26" selection-end-column="38" />
             </state>
           </provider>
         </entry>
@@ -246,7 +238,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="master" />
+        <entry key="$PROJECT_DIR$" value="Chetan04012019" />
       </map>
     </option>
     <option name="SIGN_OFF_COMMIT" value="true" />
@@ -254,7 +246,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Features/RemedyAutomation/LoginToRemedy.feature" />
         <option value="$PROJECT_DIR$/src/test/java/pageobjects/RemedyLoginPage.java" />
         <option value="$PROJECT_DIR$/Features/OctoberRelease2018/Regression_Highest_Priority/121_FR_Mix_CFU_Phone.feature" />
         <option value="$PROJECT_DIR$/Features/OctoberRelease2018/Regression/CFA_BudgetLed.feature" />
@@ -305,6 +296,7 @@
         <option value="$PROJECT_DIR$/src/test/java/actionsPerformed/PAYMandPAYGTariffAndExtrasPageActions.java" />
         <option value="$PROJECT_DIR$/Features/December#3rdRelease2018/ITFD353/CFU_Budgetled" />
         <option value="$PROJECT_DIR$/Features/December#3rdRelease2018/ITFD353/CFU_Budgetled_AvgMonthlyBudget_AvgMonthlydata" />
+        <option value="$PROJECT_DIR$/Features/December#3rdRelease2018/ITFD353/CFU_Budgetled_MinMonthlyBudget_MinMonthlydata" />
       </list>
     </option>
   </component>
@@ -408,7 +400,7 @@
     <property name="Git.Branch.Popup.ShowAllRemotes" value="true" />
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1547474710707" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1547477259407" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../untitled" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15128593" />
@@ -450,7 +442,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Cucumber java.Scenario:  (1)">
+  <component name="RunManager" selected="Cucumber java.Scenario:  (2)">
     <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Tests">
       <module name="" />
       <option name="TESTING_TYPE" value="0" />
@@ -503,15 +495,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Scenario: CFA_BudgetLed_AvgMonthlyBudget_AvgMonthlydata" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+    <configuration name="Scenario:  (2)" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
       <option name="CUCUMBER_CORE_VERSION" value="1.2" />
-      <option name="FILE_PATH" value="$PROJECT_DIR$/Features/December#3rdRelease2018/ITFD353/CFA_BudgetLed_AvgMonthlyBudget_AvgMonthlydata.feature" />
+      <option name="FILE_PATH" value="$PROJECT_DIR$/Features/December#3rdRelease2018/ITFD353/CFU_Budgetled_MinMonthlyBudget_MinMonthlydata" />
       <option name="GLUE" value="steps" />
       <option name="MAIN_CLASS_NAME" value="cucumber.api.cli.Main" />
       <module name="eCommAutomationSit" />
-      <option name="NAME_FILTER" value="^CFA_BudgetLed_AvgMonthlyBudget_AvgMonthlydata$" />
-      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvmSMFormatter --monochrome --name &quot;^CFA_BudgetLed_AvgMonthlyBudget_AvgMonthlydata$&quot;" />
-      <option name="SUGGESTED_NAME" value="Scenario: CFA_BudgetLed_AvgMonthlyBudget_AvgMonthlydata" />
+      <option name="NAME_FILTER" value="^$" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvmSMFormatter --monochrome --name &quot;^$&quot;" />
+      <option name="SUGGESTED_NAME" value="Scenario: " />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="cucumber.api.cli.*" />
@@ -522,15 +514,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Scenario: CFA_BudgetLed_MinMonthlyBudget_MaxMonthlydata (1)" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+    <configuration name="Scenario: CFA_BudgetLed_AvgMonthlyBudget_AvgMonthlydata" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
       <option name="CUCUMBER_CORE_VERSION" value="1.2" />
-      <option name="FILE_PATH" value="$PROJECT_DIR$/Features/December#3rdRelease2018/ITFD353/CFA_BudgetLed_MinMonthlyBudget_MaxMonthlydata.feature" />
+      <option name="FILE_PATH" value="$PROJECT_DIR$/Features/December#3rdRelease2018/ITFD353/CFA_BudgetLed_AvgMonthlyBudget_AvgMonthlydata.feature" />
       <option name="GLUE" value="steps" />
       <option name="MAIN_CLASS_NAME" value="cucumber.api.cli.Main" />
       <module name="eCommAutomationSit" />
-      <option name="NAME_FILTER" value="^CFA_BudgetLed_MinMonthlyBudget_MaxMonthlydata$" />
-      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvmSMFormatter --monochrome --name &quot;^CFA_BudgetLed_MinMonthlyBudget_MaxMonthlydata$&quot;" />
-      <option name="SUGGESTED_NAME" value="Scenario: CFA_BudgetLed_MinMonthlyBudget_MaxMonthlydata" />
+      <option name="NAME_FILTER" value="^CFA_BudgetLed_AvgMonthlyBudget_AvgMonthlydata$" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvmSMFormatter --monochrome --name &quot;^CFA_BudgetLed_AvgMonthlyBudget_AvgMonthlydata$&quot;" />
+      <option name="SUGGESTED_NAME" value="Scenario: CFA_BudgetLed_AvgMonthlyBudget_AvgMonthlydata" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="cucumber.api.cli.*" />
@@ -608,11 +600,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Cucumber java.Scenario:  (2)" />
         <item itemvalue="Cucumber java.Scenario:  (1)" />
         <item itemvalue="Cucumber java.Scenario: CFA_BudgetLed_AvgMonthlyBudget_AvgMonthlydata" />
         <item itemvalue="Cucumber java.Scenario: " />
         <item itemvalue="Cucumber java.Scenario: CFA_BudgetLed_MinMonthlyBudget_MinMonthlydata" />
-        <item itemvalue="Cucumber java.Scenario: CFA_BudgetLed_MinMonthlyBudget_MaxMonthlydata (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -627,13 +619,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1510763568253</updated>
-    </task>
-    <task id="LOCAL-00024" summary="Merged venkta23012018_v1 into master&#10;&#10;Signed-off-by: subbaiv1 &lt;hhhh&gt;">
-      <created>1518515529730</created>
-      <option name="number" value="00024" />
-      <option name="presentableId" value="LOCAL-00024" />
-      <option name="project" value="LOCAL" />
-      <updated>1518515529730</updated>
     </task>
     <task id="LOCAL-00025" summary="Merged venkta23012018_v1 into master&#10;&#10;Signed-off-by: subbaiv1 &lt;hhhh&gt;">
       <created>1518516424997</created>
@@ -971,13 +956,17 @@
       <option name="project" value="LOCAL" />
       <updated>1546621536750</updated>
     </task>
-    <option name="localTasksCounter" value="73" />
+    <task id="LOCAL-00073" summary="Merge branch 'master' of https://bitbucket.org/ecommautomationteam/regression into Sharmi_19-02-2018&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;Features/FebruaryRelease2018/Regression/Reg_Jan_ConsumerToAcceptTenDigitsPhoneNumber.feature&#10;#&#9;src/test/java/actionsPerformed/Agent_DealBuilderPageActions.java&#10;#&#9;src/test/java/actionsPerformed/DeliveryPageActions.java&#10;#&#9;src/test/java/actionsPerformed/PAYMandPAYGTariffAndExtrasPageActions.java&#10;#&#9;src/test/java/actionsPerformed/UpgradeCustomerPageActions.java&#10;#&#9;src/test/java/steps/E2EOrderPlaced_Steps.java">
+      <created>1547474918619</created>
+      <option name="number" value="00073" />
+      <option name="presentableId" value="LOCAL-00073" />
+      <option name="project" value="LOCAL" />
+      <updated>1547474918620</updated>
+    </task>
+    <option name="localTasksCounter" value="74" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="Scenario__CFA_BudgetLed_AvgMonthlyBudget_AvgMonthlydata - 2019.01.13 at 22h 24m 09s.xml">
-      <configuration name="Scenario: CFA_BudgetLed_AvgMonthlyBudget_AvgMonthlydata" configurationId="CucumberJavaRunConfigurationType" />
-    </history-entry>
     <history-entry file="Scenario___(1) - 2019.01.13 at 22h 24m 10s.xml">
       <configuration name="Scenario:  (1)" configurationId="CucumberJavaRunConfigurationType" />
     </history-entry>
@@ -1005,6 +994,9 @@
     <history-entry file="Scenario___(1) - 2019.01.14 at 14h 03m 47s.xml">
       <configuration name="Scenario:  (1)" configurationId="CucumberJavaRunConfigurationType" />
     </history-entry>
+    <history-entry file="Scenario___(2) - 2019.01.14 at 14h 25m 57s.xml">
+      <configuration name="Scenario:  (2)" configurationId="CucumberJavaRunConfigurationType" />
+    </history-entry>
   </component>
   <component name="TodoView" selected-index="3">
     <todo-panel id="selected-file">
@@ -1019,7 +1011,7 @@
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.30786687" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.30786687" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.24876848" />
       <window_info id="Nl-Palette" order="2" />
       <window_info id="Capture Tool" order="3" />
@@ -1038,7 +1030,7 @@
       <window_info anchor="bottom" id="TODO" order="7" sideWeight="0.7019667" weight="0.3398693" />
       <window_info anchor="bottom" id="Messages" order="8" sideWeight="0.6475038" weight="0.29623568" />
       <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.7299546" weight="0.30124223" />
-      <window_info anchor="bottom" id="Version Control" order="10" sideWeight="0.71860814" weight="0.31587562" />
+      <window_info active="true" anchor="bottom" id="Version Control" order="10" sideWeight="0.71860814" visible="true" weight="0.31587562" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.24962178" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" visible="true" weight="0.048440065" />
@@ -1403,13 +1395,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Features/OctoberRelease2018/Regression/64_Reg_CS_PayMSimOnly.feature">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="341">
-          <caret line="21" column="3" selection-start-line="21" selection-start-column="3" selection-end-line="23" selection-end-column="197" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/testRunner/BeforeSuite.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
@@ -1762,8 +1747,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Features/December#3rdRelease2018/ITFD353/CFU_Budgetled_AvgMonthlyBudget_AvgMonthlydata">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="47" selection-start-line="4" selection-start-column="47" selection-end-line="4" selection-end-column="47" />
+        <state relative-caret-position="238">
+          <caret line="14" column="46" selection-end-line="41" selection-end-column="312" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Features/December#3rdRelease2018/ITFD353/CFU_Budgetled_MinMonthlyBudget_MinMonthlydata">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="32" lean-forward="true" selection-start-line="9" selection-start-column="32" selection-end-line="9" selection-end-column="32" />
         </state>
       </provider>
     </entry>
