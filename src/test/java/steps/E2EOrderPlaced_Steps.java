@@ -573,7 +573,7 @@ public class E2EOrderPlaced_Steps {
     @Given("^select any available ([^\"]*) Smartwatch$")
     public void select_any_available_Smartwatch(String arg1) {
         try {
-            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
             PageFactory.initElements(driver, SmartwatchesPage.class);
             SmartwatchesPageActions.DeviceSelect(arg1);
         } catch (Exception e) {
@@ -1522,7 +1522,7 @@ public class E2EOrderPlaced_Steps {
             JavascriptExecutor jse = (JavascriptExecutor) driver;
             jse.executeScript("window.scrollBy(0,300)", "");
             Screenshots.captureScreenshot();
-            Thread.sleep(5000);
+            Thread.sleep(7000);
             DeliveryPageActions.ClickAndCollect();
             Thread.sleep(5000);
             DeliveryPageActions.AboutYou(Firstname, Surname);
@@ -1905,11 +1905,13 @@ public class E2EOrderPlaced_Steps {
             PaymentPageActions.Set_Bank_details(Username);
             Thread.sleep(10000);
             PaymentPageActions.Time_At_Address();
+            /*Thread.sleep(5000);
+            PaymentPageActions.ReviewConfirmCTA_PaymentPage();*/
             Thread.sleep(12000);
             PaymentPageActions.Card_Details(Username);
             Thread.sleep(12000);
             PaymentPageActions.Card_Details_CCV();
-
+            //Thread.sleep(30000);
 
         } catch (Exception e) {
             // TODO Auto-generated catch block
@@ -1932,11 +1934,12 @@ public class E2EOrderPlaced_Steps {
             PaymentPageActions.Set_Bank_details(Username);
             Thread.sleep(12000);
             PaymentPageActions.Time_At_Address();
+            /*Thread.sleep(5000);
+            PaymentPageActions.ReviewConfirmCTA_PaymentPage();*/
             Thread.sleep(12000);
             PaymentPageActions.Card_Details(Username);
-            Thread.sleep(12000);
+            Thread.sleep(20000);
             //PaymentPageActions.Card_Details_CCV();
-
 
         } catch (Exception e) {
             //TODO Auto-generated catch block
@@ -1954,7 +1957,8 @@ public class E2EOrderPlaced_Steps {
         try {
             driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
             PageFactory.initElements(driver, PaymentPage.class);
-
+            /*Thread.sleep(5000);
+            PaymentPageActions.ReviewConfirmCTA_PaymentPage();*/
             Thread.sleep(12000);
             PaymentPageActions.Card_Details(Username);
             Thread.sleep(12000);
@@ -1999,7 +2003,9 @@ public class E2EOrderPlaced_Steps {
             // PaymentPageActions.Set_Bank_details(Username);
             //Thread.sleep(3000);
             //PaymentPageActions.Time_At_Address_CC();
-            Thread.sleep(30000);
+            /*Thread.sleep(5000);
+            PaymentPageActions.ReviewConfirmCTA_PaymentPage();*/
+            Thread.sleep(10000);
             PaymentPageActions.Card_Details(Username);
             Thread.sleep(10000);
             PaymentPageActions.Card_Details_CCV();
@@ -2088,10 +2094,13 @@ public class E2EOrderPlaced_Steps {
             Thread.sleep(10000);
             //PaymentPageActions.Time_At_Address_CC();
             PaymentPageActions.Time_At_Address();
-            Thread.sleep(12000);
+            /*Thread.sleep(5000);
+            PaymentPageActions.ReviewConfirmCTA_PaymentPage();*/
+            Thread.sleep(15000);
             PaymentPageActions.Card_Details(Username);
-            Thread.sleep(10000);
+            Thread.sleep(25000);
             PaymentPageActions.Card_Details_CCV();
+            Thread.sleep(30000);
         } catch (Exception e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
@@ -2108,7 +2117,9 @@ public class E2EOrderPlaced_Steps {
             driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
             PageFactory.initElements(driver, PaymentPage.class);
             PaymentPageActions.ValidateNonCreditPaymentPage();
-            Thread.sleep(12000);
+            /*Thread.sleep(5000);
+            PaymentPageActions.ReviewConfirmCTA_PaymentPage();*/
+            Thread.sleep(10000);
             PaymentPageActions.Card_Details(Username);
             Thread.sleep(12000);
             PaymentPageActions.Card_Details_CCV();
@@ -2128,7 +2139,9 @@ public class E2EOrderPlaced_Steps {
             driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
             PageFactory.initElements(driver, PaymentPage.class);
             PaymentPageActions.ValidateNonCreditPaymentPage();
-            Thread.sleep(12000);
+            /*Thread.sleep(5000);
+            PaymentPageActions.ReviewConfirmCTA_PaymentPage();*/
+            Thread.sleep(10000);
             PaymentPageActions.Card_Details(Username);
             Thread.sleep(10000);
             PaymentPageActions.Card_Details_CCV();
@@ -2247,7 +2260,7 @@ public class E2EOrderPlaced_Steps {
             //Thread.sleep(25000);
             PageFactory.initElements(driver, AgreementPage.class);
             PageFactory.initElements(driver, ReviewPage.class);
-            Thread.sleep(5000);
+            Thread.sleep(35000);
             AgreementPageActions.gettitlepage();
             //CommonFunctionscheckTitle("Agreement Page");
             Thread.sleep(3000);
@@ -3893,7 +3906,9 @@ public class E2EOrderPlaced_Steps {
             PageFactory.initElements(driver, PaymentPage.class);
             Thread.sleep(12000);
             PaymentPageActions.Time_At_Address();
-            Thread.sleep(12000);
+            //Thread.sleep(12000);
+            /*Thread.sleep(5000);
+            PaymentPageActions.ReviewConfirmCTA_PaymentPage();*/
             PaymentPageActions.Card_Details(Username);
             Thread.sleep(12000);
             PaymentPageActions.Card_Details_CCV();
@@ -8130,6 +8145,8 @@ public class E2EOrderPlaced_Steps {
         try {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, PaymentPage.class);
+            /*Thread.sleep(5000);
+            PaymentPageActions.ReviewConfirmCTA_PaymentPage();*/
             Thread.sleep(12000);
             PaymentPageActions.Card_Details(Username);
             Thread.sleep(12000);
@@ -8150,6 +8167,9 @@ public class E2EOrderPlaced_Steps {
         try {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, PaymentPage.class);
+            /*Thread.sleep(5000);
+            PaymentPageActions.ReviewConfirmCTA_PaymentPage();*/
+            Thread.sleep(12000);
             PaymentPageActions.Card_Details_CCA();
             Thread.sleep(8000);
             PaymentPageActions.Card_Details_CCV();
@@ -11272,11 +11292,11 @@ public class E2EOrderPlaced_Steps {
             PageFactory.initElements(driver, UpgradeCustomerPage.class);
             Screenshots.captureScreenshot();
 
-           /* //Recommendation is going live in Jan so commented
+            //Recommendation is going live in Jan so commented
             UpgradeCustomerPageActions.clickOnConfigureOwnUpgrade();
-            //Thread.sleep(3000);*/
+            Thread.sleep(4000);
 
-            UpgradeCustomerPageActions.clickOnGetStartedCTA();
+            //UpgradeCustomerPageActions.clickOnGetStartedCTA();
 
         } catch (Exception e) {
             // TODO Auto-generated catch block
@@ -11408,6 +11428,8 @@ public class E2EOrderPlaced_Steps {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, DeliveryPage.class);
             DeliveryPageActions.GDPRvalidation(BP1, BP2, BP3, keyEvent, DeviceType, GDPRstatus, PreSelected);
+            Thread.sleep(3000);
+            //DeliveryPageActions.ReviewConfirmCTA_DeliveryPage();
         } catch (Exception e) {
             // TODO Auto-generated catch block
             log.debug("Unable to validate GDPR consent in delivery page");

@@ -125,7 +125,6 @@ public class ConnectedDeviceDetailsPageAction extends Environment {
         Screenshots.captureScreenshot();
         /*WebElement ele1 = pageobjects.ConnectedDeviceDetailsPage.ViewOurTariffs;
         jse.executeScript("arguments[0].click();", ele1);*/
-        Thread.sleep(2000);
 
         if (driver.findElements(By.xpath("(//a[normalize-space()='See our plans'])[1]")).size() > 0) {
             //When FR is ON
@@ -166,7 +165,6 @@ public class ConnectedDeviceDetailsPageAction extends Environment {
         //JavascriptExecutor jse = (JavascriptExecutor) driver;
         jse.executeScript("window.scrollBy(0,300)", "");
         Screenshots.captureScreenshot();
-
 
     }
 

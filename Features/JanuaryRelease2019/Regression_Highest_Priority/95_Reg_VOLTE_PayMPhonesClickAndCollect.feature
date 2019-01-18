@@ -26,5 +26,5 @@ Feature: 95_Reg_VOLTE_PayMPhonesClickAndCollect
     Then Validate consumer GDPR consent section is hidden in Order confirmation page or not
 
     Examples:
-      | handset  | color  | Firstname | Surname | Username     | BSCstatus | BillCap       | CapAmount | consumer | B1  | B2  | B3  | B4  | Text | Email | Phone | Post | GDPRstatus | MBBStatus | DeviceType | PreSelected | KeyEvent |
-      | iPhone X | Silver | TEST      | ACCEPTA | TEST ACCEPTA | Enabled   | DontCapMyBill | Nill      | Someone  | Not | Not | Not | Not | Not  | Not   | Not   | Not  | Enabled    | No        | Connected  | No          | No       |
+      | handset  | color      | Firstname | Surname | Username     | BSCstatus | BillCap       | CapAmount | consumer | B1  | B2  | B3  | B4  | Text | Email | Phone | Post | GDPRstatus | MBBStatus | DeviceType | PreSelected | KeyEvent |
+      | iPhone X | Space Grey | TEST      | ACCEPTA | TEST ACCEPTA | Enabled   | DontCapMyBill | Nill      | Someone  | Not | Not | Not | Not | Not  | Not   | Not   | Not  | Enabled    | No        | Connected  | No          | No       |

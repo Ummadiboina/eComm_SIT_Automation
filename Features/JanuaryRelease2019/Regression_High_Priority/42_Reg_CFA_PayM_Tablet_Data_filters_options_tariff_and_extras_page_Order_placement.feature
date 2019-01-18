@@ -37,5 +37,5 @@ Feature: 42_Reg_CFA_PayM_Tablet_Data_filters_options_tariff_and_extras_page_Orde
     Then Validate consumer GDPR consent section is hidden in Order confirmation page or not
 
     Examples:
-      | Firstname | Surname | Username     | filtername | BSCstatus | BillCap   | CapAmount | sortoption                 | tabletname       | consumer | B1     | B2  | B3  | B4  | Text | Email  | Phone | Post | GDPRstatus | MBBStatus | DeviceType | PreSelected | KeyEvent |
-      | TEST      | ACCEPTA | TEST ACCEPTA | low        | Enabled   | CapMyBill | £15       | Monthly data (High to low) | Galaxy Book 10.6 | Me       | Select | Not | Not | Not | Not  | Select | Not   | Not  | Enabled    | No        | Connected  | No          | No       |
+      | Firstname | Surname | Username     | filtername | BSCstatus | BillCap   | CapAmount | sortoption                 | tabletname         | consumer | B1     | B2  | B3  | B4  | Text | Email  | Phone | Post | GDPRstatus | MBBStatus | DeviceType | PreSelected | KeyEvent |
+      | TEST      | ACCEPTA | TEST ACCEPTA | low        | Enabled   | CapMyBill | £15       | Monthly data (High to low) | iPad Pro 10.5 inch | Me       | Select | Not | Not | Not | Not  | Select | Not   | Not  | Enabled    | No        | Connected  | No          | No       |

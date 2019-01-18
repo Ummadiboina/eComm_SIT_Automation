@@ -1,11 +1,11 @@
-Feature: 04_CFU_MBB_GDPR_Enabled_Hme_Delivery_complaint_EndUser_MP_OptOut
+Feature: 18_CFU_MBB_GDPR_Enabled_Hme_Delivery_complaint_EndUser_MP_OptOut
 
   This Scenario ensures that when the upgrade customer with complaint consent status selects 'PAYM MBB' and lands on
   delivery page then customer should not be displayed with end user question instead the customer should see GDPR consent
   and MP OptOut - B1B2B3 and place an order as an End user then the Order consent profile should be created in CMT as expected
 
   @Web
-  Scenario Outline: 04_CFU_MBB_GDPR_Enabled_Hme_Delivery_complaint_EndUser_MP_OptOut
+  Scenario Outline: 18_CFU_MBB_GDPR_Enabled_Hme_Delivery_complaint_EndUser_MP_OptOut
 
     Given I am an Existing user and Navigates to Signin page
     And Signin using valid <username> and <password> credentials
@@ -29,6 +29,6 @@ Feature: 04_CFU_MBB_GDPR_Enabled_Hme_Delivery_complaint_EndUser_MP_OptOut
     Then Validate consumer GDPR consent section is hidden in Order confirmation page or not
 
     Examples:
-      | Device_Name   | Action | BSCstatus | BillCap   | CapAmount | Username     | username                      | password | B1  | B2  | B3  | B4  | GDPRstatus | DeviceType | PreSelected | KeyEvent |
-      | Random Device | skip   | Enabled   | CapMyBill | £100      | TEST ACCEPTA | 10au66996482@stf.ref.o2.co.uk | test123  | Not | Not | Not | Not | Enabled    | Connected  | No          | No       |
+      | Device_Name   | Action | BSCstatus | BillCap   | CapAmount | Username     | username               | password | B1  | B2  | B3  | B4  | GDPRstatus | DeviceType | PreSelected | KeyEvent |
+      | Random Device | skip   | Enabled   | CapMyBill | £100      | TEST ACCEPTA | inavl0wx_492663@o2.com | test123  | Not | Not | Not | Not | Enabled    | Connected  | No          | No       |
 

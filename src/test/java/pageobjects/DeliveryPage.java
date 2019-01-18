@@ -227,55 +227,55 @@ public class DeliveryPage {
     @FindBy(how = How.XPATH, using = "//input[@id='consent-yes']")
     public static WebElement Me_radioBtn;
 
-    @FindBy(how = How.XPATH, using = "//div[normalize-space()='gdprHeaderTxt']")
+    @FindBy(how = How.XPATH, using = "//div[@class='GDPR-Content']/h2")
     public static WebElement gdprHeaderTxt;
 
-    @FindBy(how = How.XPATH, using = "//div[normalize-space()='gdprHeaderDescription']")
+    @FindBy(how = How.XPATH, using = "//div[@class='GDPR-Content']/p")
     public static WebElement gdprHeaderDescription;
 
-    @FindBy(how = How.XPATH, using = "//div[normalize-space()='O2Products_Text']")
+    @FindBy(how = How.XPATH, using = "//div[@class='GDPR-Content']/div[1]/div[1]/div/div/div/label/span")
     public static WebElement O2Products_Text;
 
-    @FindBy(how = How.XPATH, using = "//div[normalize-space()='O2Products_MoreInfoLink']")
+    @FindBy(how = How.XPATH, using = "//div[@class='GDPR-Content']/div[1]/div[1]/div/div/div/label/span/a")
     public static WebElement O2Products_MoreInfoLink;
 
-    @FindBy(how = How.XPATH, using = "//div[normalize-space()='O2Products_OverlayText']")
+    @FindBy(how = How.XPATH, using = "//div[@class='overlay-box B1']/div[2]")
     public static WebElement O2Products_OverlayText;
 
-    @FindBy(how = How.XPATH, using = "//div[normalize-space()='O2Products_OverlayCloseButton']")
+    @FindBy(how = How.XPATH, using = "//div[@class='overlay-box B1']/div[1]/a")
     public static WebElement O2Products_OverlayCloseButton;
 
-    @FindBy(how = How.XPATH, using = "//div[normalize-space()='O2PerksAndExtras_Text']")
+    @FindBy(how = How.XPATH, using = "//div[@class='GDPR-Content']/div[1]/div[2]/div/div/div/label/span")
     public static WebElement O2PerksAndExtras_Text;
 
-    @FindBy(how = How.XPATH, using = "//div[normalize-space()='O2PerksAndExtras_MoreInfoLink']")
+    @FindBy(how = How.XPATH, using = "//div[@class='GDPR-Content']/div[1]/div[2]/div/div/div/label/span/a")
     public static WebElement O2PerksAndExtras_MoreInfoLink;
 
-    @FindBy(how = How.XPATH, using = "//div[normalize-space()='O2PerksAndExtras_OverlayText']")
+    @FindBy(how = How.XPATH, using = "//div[@class='overlay-box B2']/div[2]")
     public static WebElement O2PerksAndExtras_OverlayText;
 
-    @FindBy(how = How.XPATH, using = "//div[normalize-space()='O2PerksAndExtras_OverlayCloseButton']")
+    @FindBy(how = How.XPATH, using = "//div[@class='overlay-box B2']/div[1]/a")
     public static WebElement O2PerksAndExtras_OverlayCloseButton;
 
-    @FindBy(how = How.XPATH, using = "//div[normalize-space()='OffersFromO2Partner_Text']")
+    @FindBy(how = How.XPATH, using = "//div[@class='GDPR-Content']/div[1]/div[3]/div/div/div/label/span")
     public static WebElement OffersFromO2Partner_Text;
 
-    @FindBy(how = How.XPATH, using = "//div[normalize-space()='OffersFromO2Partner_MoreInfoLink']")
+    @FindBy(how = How.XPATH, using = "//div[@class='GDPR-Content']/div[1]/div[3]/div/div/div/label/span/a")
     public static WebElement OffersFromO2Partner_MoreInfoLink;
 
-    @FindBy(how = How.XPATH, using = "//div[normalize-space()='OffersFromO2Partner_OverlayText']")
+    @FindBy(how = How.XPATH, using = "//div[@class='overlay-box B3']/div[2]")
     public static WebElement OffersFromO2Partner_OverlayText;
 
-    @FindBy(how = How.XPATH, using = "//div[normalize-space()='OffersFromO2Partner_OverlayCloseButton']")
+    @FindBy(how = How.XPATH, using = "//div[@class='overlay-box B3']/div[1]/a")
     public static WebElement OffersFromO2Partner_OverlayCloseButton;
 
-    @FindBy(how = How.XPATH, using = "//div[normalize-space()='O2Products']")
+    @FindBy(how = How.XPATH, using = "//div[@class='GDPR-Content']/div[1]/div[1]/div/div/div/label/input")
     public static WebElement O2Products;
 
-    @FindBy(how = How.XPATH, using = "//div[normalize-space()='O2PerksAndExtras']")
+    @FindBy(how = How.XPATH, using = "//div[@class='GDPR-Content']/div[1]/div[2]/div/div/div/label/input")
     public static WebElement O2PerksAndExtras;
 
-    @FindBy(how = How.XPATH, using = "//div[normalize-space()='OffersFromO2Partner']")
+    @FindBy(how = How.XPATH, using = "//div[@class='GDPR-Content']/div[1]/div[3]/div/div/div/label/input")
     public static WebElement OffersFromO2Partner;
 
     @FindBy(how = How.XPATH, using = "//input[@id='consent-no']")
@@ -295,6 +295,9 @@ public class DeliveryPage {
 
     @FindBy(how = How.XPATH, using = "//tr[@class='spendcap-items']")
     public static WebElement AppliedBillCap;
+
+    @FindBy(how = How.XPATH, using = "//h1[normalize-space()='Review your details']/../div[3]/button[text()='Confirm']")
+    public static WebElement reviewConfirmCTA;
 
 }
 

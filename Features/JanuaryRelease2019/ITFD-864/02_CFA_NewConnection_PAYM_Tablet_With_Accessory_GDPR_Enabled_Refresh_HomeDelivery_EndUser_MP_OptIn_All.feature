@@ -27,5 +27,5 @@ Feature: 02_CFA_NewConnection_PAYM_Tablet_With_Accessory_GDPR_Enabled_Refresh_Ho
     Then Validate consumer GDPR consent section is hidden in Order confirmation page or not
 
     Examples:
-      | Firstname | Surname | Username     | BSCstatus | BillCap   | CapAmount | tabletname       | B1     | B2     | B3     | B4  | GDPRstatus | DeviceType | PreSelected | KeyEvent |
-      | TEST      | ACCEPTA | TEST ACCEPTA | Enabled   | CapMyBill | £15       | Galaxy Book 10.6 | Select | Select | Select | Not | Enabled    | Connected  | No          | No       |
+      | Firstname | Surname | Username     | BSCstatus | BillCap   | CapAmount | tabletname         | B1     | B2     | B3     | B4  | GDPRstatus | DeviceType | PreSelected | KeyEvent |
+      | TEST      | ACCEPTA | TEST ACCEPTA | Enabled   | CapMyBill | £15       | iPad Pro 10.5 inch | Select | Select | Select | Not | Enabled    | Connected  | No          | No       |

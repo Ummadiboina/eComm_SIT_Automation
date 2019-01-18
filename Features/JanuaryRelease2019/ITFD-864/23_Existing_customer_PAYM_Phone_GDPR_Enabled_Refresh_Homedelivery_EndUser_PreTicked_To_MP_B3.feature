@@ -26,5 +26,5 @@ Feature: 23_Existing_customer_PAYM_Phone_GDPR_Enabled_Refresh_Homedelivery_EndUs
     Then Validate consumer GDPR consent section is hidden in Order confirmation page or not
 
     Examples:
-      | handset  | BSCstatus | BillCap   | CapAmount | username                                    | password | Username     | B1  | B2  | B3     | B4  | GDPRstatus | DeviceType | PreSelected | KeyEvent |
-      | iPhone X | Enabled   | CapMyBill | £60       | rbmuatlokesh_donotusee2512@stf.ref.o2.co.uk | test123  | TEST ACCEPTA | Not | Not | Select | Not | Enabled    | Connected  | Yes         | No       |
+      | handset  | BSCstatus | BillCap   | CapAmount | username               | password | Username     | B1  | B2  | B3     | B4  | GDPRstatus | DeviceType | PreSelected | KeyEvent |
+      | iPhone X | Enabled   | CapMyBill | £60       | in0183b9_561635@o2.com | test123  | TEST ACCEPTA | Not | Not | Select | Not | Enabled    | Connected  | Yes         | No       |

@@ -40,5 +40,5 @@ Feature: 11_Reg_CFA_Phones_SSC_checkout_pages_mark_mandatory_fields_with_asteris
     Then Validate consumer GDPR consent section is hidden in Order confirmation page or not
 
     Examples:
-      | handset  | tariffAmt | dataValue | color      | Firstname | Surname | consumer | BSCstatus | BillCap   | CapAmount | B1     | B2  | B3  | B4  | Text   | Email | Phone | Post | GDPRstatus | MBBStatus | DeviceType | PreSelected | KeyEvent |
-      | iPhone X | £39       | 8GB       | Space Grey | Test      | Accepta | Me       | Enabled   | CapMyBill | £10       | Select | Not | Not | Not | Select | Not   | Not   | Not  | Enabled    | No        | Connected  | No          | No       |
+      | handset   | tariffAmt | dataValue | color        | Firstname | Surname | consumer | BSCstatus | BillCap   | CapAmount | B1     | B2  | B3  | B4  | Text   | Email | Phone | Post | GDPRstatus | MBBStatus | DeviceType | PreSelected | KeyEvent |
+      | Galaxy S9 | £39       | 8GB       | Lilac Purple | Test      | Accepta | Me       | Enabled   | CapMyBill | £10       | Select | Not | Not | Not | Select | Not   | Not   | Not  | Enabled    | No        | Connected  | No          | No       |

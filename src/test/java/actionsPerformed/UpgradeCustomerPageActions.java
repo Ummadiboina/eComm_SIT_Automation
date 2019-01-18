@@ -1739,7 +1739,7 @@ public class UpgradeCustomerPageActions extends Environment {
 
         if (pageobjects.UpgradeCustomerPage.YourSimHeading.isDisplayed()) {
             log.debug(
-                    "The Your sim section is displayed" + pageobjects.UpgradeCustomerPage.YourSimHeading.getText());
+                    "The Your sim section is displayed" + pageobjects.UpgradeCustomerPage.YourSimHeading.getText()+"\n");
             log.debug("The Your sim section is displayed");
         } else
             log.debug("The Your sim section us not diplayed");
@@ -2031,7 +2031,7 @@ public class UpgradeCustomerPageActions extends Environment {
         log.debug("Left to Pay Value: " + Actcost1+"\n");
         log.debug("Buy out Amount: " + Actcost2+"\n");
 
-        scrollToAnElement.scrollToElement(UpgradeCustomerPage.BuyoutTextMyPkg);
+        scrollToAnElement.scrollToElement(UpgradeCustomerPage.BuyoutTextUpgradePkg);
         Thread.sleep(3000);
         Screenshots.captureScreenshot();
 
@@ -2329,12 +2329,13 @@ public class UpgradeCustomerPageActions extends Environment {
     public static void VerifyTradeinMessage() throws IOException, InterruptedException {
         log.debug("in verify tradein message function");
         //driver.findElement(By.xpath("//div[@class='ng-scope trade-in-offer']")).getText();
-        String text = driver.findElement(By.xpath("//div[@class='ng-scope trade-in-offer']")).getText();
+        Thread.sleep(2000);
+        String text = driver.findElement(By.xpath("//div[@class='ng-scope trade-in-offer'] | (//div[@id='tradeInOfferTile']/div/p)[1]")).getText();
         Screenshots.captureScreenshot();
-        Thread.sleep(4000);
+        Thread.sleep(2000);
         if (text.contains("trade in")) {
-            log.debug("Working fine");
-            log.debug("The Trade in Text is: " + text);
+            log.debug("Working fine\n");
+            log.debug("The Trade in Text is: " + text+"\n");
         } else {
             Assert.fail("Trade in not displayed, hence failed");
         }
@@ -2351,13 +2352,24 @@ public class UpgradeCustomerPageActions extends Environment {
         log.debug("in verify BuyOut message function");
 
         Screenshots.captureScreenshot();
-        String text = driver.findElement(By.xpath("//div[@class='trade-in-offer']/p")).getText();
+
+        String headerText = driver.findElement(By.xpath("(//div[@id='buyoutOfferTile']/h3)[1]")).getText();
         Thread.sleep(3000);
-        if (text.contains("We'll buy you out of your contract, so you can choose a brand new phone") || text.contains("Upgrade to a new phone today. We'll pay off the rest of your Device Plan, saving you")) {
-            log.debug("The Text is: " + text);
+        if (headerText.contains("Upgrade on us, saving you")) {
+            log.debug("The BuyOut header text is: " + headerText+"\n");
         } else {
-            log.debug("BuyOut is not displayed, hence failed:: "+text);
-            Assert.fail("BuyOut is not displayed, hence failed:: "+text);
+            log.debug("BuyOut header is not displayed, hence failed:: "+headerText);
+            Assert.fail("BuyOut header is not displayed, hence failed:: "+headerText);
+        }
+
+        //String text = driver.findElement(By.xpath("//div[@class='trade-in-offer']/p")).getText();
+        String descriptionText = driver.findElement(By.xpath("//div[@id='buyoutOfferTile']/div/p")).getText();
+        Thread.sleep(3000);
+        if (descriptionText.contains("Upgrade to a new phone today and we'll pay off the rest of your Device Plan.")) {
+            log.debug("The BuyOut text is: " + descriptionText+"\n");
+        } else {
+            log.debug("BuyOut is not displayed, hence failed:: "+descriptionText);
+            Assert.fail("BuyOut is not displayed, hence failed:: "+descriptionText);
         }
     }
 
@@ -3412,7 +3424,7 @@ public class UpgradeCustomerPageActions extends Environment {
 
      public static void clickOnGetStartedCTA(){
         try {
-            Thread.sleep(6000);
+            Thread.sleep(3000);
             if(driver.findElements(By.xpath("//button[@class='btnblue'] | //button[@class='btnblue ng-binding']")).size()>0){
                 /*scrollToAnElement.scrollToElement(UpgradeCustomerPage.chooseDeviseSection);
                 Screenshots.captureScreenshot();*/
@@ -3437,7 +3449,7 @@ public class UpgradeCustomerPageActions extends Environment {
     public static void clickOnConfigureOwnUpgrade(){
         try {
             Thread.sleep(3000);
-            if(driver.findElements(By.xpath("//button[normalize-space()='Configure your own upgrade']")).size()>0){
+            if(driver.findElements(By.xpath("(//button[normalize-space()='Configure your own upgrade'])[1]")).size()>0){
                 /*scrollToAnElement.scrollToElement(UpgradeCustomerPage.chooseDeviseSection);
                 Screenshots.captureScreenshot();*/
                 JavascriptExecutor jse = (JavascriptExecutor) driver;

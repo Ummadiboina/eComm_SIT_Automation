@@ -273,23 +273,18 @@ public class BasketPageActions extends Environment {
 		}
 
 		log.debug("The Main Headercontents are : " + pageobjects.BasketPage.MainHeaders.getText());
-		log.debug("The Main Headercontents are : " + pageobjects.BasketPage.MainHeaders.getText());
 
 		log.debug("The Device names is/are : " + pageobjects.BasketPage.AccessoryDetails.getText());
-		log.debug("The Device names is/are : " + pageobjects.BasketPage.AccessoryDetails.getText());
 
-		log.debug("The Device names is/are : " + pageobjects.BasketPage.DeviceHeadingNonConnected.getText());
 		log.debug("The Device names is/are : " + pageobjects.BasketPage.DeviceHeadingNonConnected.getText());
 
 		// Taking element name and storing it
 		String devicename1 = "Text111";
 
 		log.debug("The Device names is/are : " + pageobjects.BasketPage.DeviceQuantityNonConnected.getText());
-		log.debug("The Device names is/are : " + pageobjects.BasketPage.DeviceQuantityNonConnected.getText());
 
 		log.debug("The Device names is/are : " + pageobjects.BasketPage.DeviceQuantityNonConnected.getText());
 
-		log.debug("The Basket Totals are : " + pageobjects.BasketPage.totals.getText());
 		log.debug("The Basket Totals are : " + pageobjects.BasketPage.totals.getText());
 		Screenshots.captureScreenshot();
 

@@ -40,5 +40,5 @@ Feature: 16_CFU_Tablets_GDPR_Enabled_CC_EndUser_Complaint_PreTicked_To_MP_B2
     Then Validate consumer GDPR consent section is hidden in Order confirmation page or not
 
     Examples:
-      | username                     | password | tariff | BSCstatus | BillCap   | CapAmount | Tablet             | Username     | Action    | B1  | B2     | B3  | B4  | GDPRstatus | DeviceType | PreSelected | KeyEvent |
-      | ink_jun6562@stf.ref.o2.co.uk | test123  |        | Enabled   | CapMyBill | £10       | iPad 9.7 inch 2018 | TEST ACCEPTA | enterCode | Not | Select | Not | Not | Enabled    | Connected  | Yes         | No       |
+      | username               | password | tariff | BSCstatus | BillCap   | CapAmount | Tablet             | Username     | Action    | B1  | B2     | B3  | B4  | GDPRstatus | DeviceType | PreSelected | KeyEvent |
+      | inavl0ww_555130@o2.com | test123  |        | Enabled   | CapMyBill | £10       | iPad 9.7 inch 2018 | TEST ACCEPTA | enterCode | Not | Select | Not | Not | Enabled    | Connected  | Yes         | No       |

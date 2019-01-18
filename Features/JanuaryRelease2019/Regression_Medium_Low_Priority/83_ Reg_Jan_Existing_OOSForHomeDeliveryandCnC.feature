@@ -11,9 +11,9 @@ Feature: 83_ Reg_Jan_Existing_OOSForHomeDeliveryandCnC
     And Signin using valid <username> and <password> credentials
     And navigate to PAYM Phones page
     And I choose PayM <handset>
-    And click on the color dropdown
-    And verify the name of the colour is next to the colour tile in CFAPhoneColour
-    And select <color> color of the connected device
+    #And click on the color dropdown
+    #And verify the name of the colour is next to the colour tile in CFAPhoneColour
+    #And select <color> color of the connected device
     And Navigate to device details page
     #And select <color> color of the connected device
     And the Delivery information section should show the 'OOS message'
@@ -26,5 +26,5 @@ Feature: 83_ Reg_Jan_Existing_OOSForHomeDeliveryandCnC
 
 
     Examples:
-      | handset            | color  | username | password | BSCstatus | BillCap   | CapAmount |
-      | iPhone 5s Like New | Silver | b@o2.com | test123  | Enabled   | CapMyBill | £10       |
+      | handset            | color  | username               | password | BSCstatus | BillCap   | CapAmount |
+      | iPhone 5s Like New | Silver | in04796p_326403@o2.com | test123  | Enabled   | CapMyBill | £10       |

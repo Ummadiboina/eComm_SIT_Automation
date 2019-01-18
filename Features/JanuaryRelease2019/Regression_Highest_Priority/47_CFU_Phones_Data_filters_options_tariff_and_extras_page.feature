@@ -51,4 +51,4 @@ Feature: 47_CFU_Phones_Data_filters_options_tariff_and_extras_page
 
     Examples:
       | username                      | password | handset  | BSCstatus | BillCap   | CapAmount | color      | filtername | Action | sortoption                 | Username     | Make  | Model   | Network | consumer | B1  | B2  | B3     | B4  | Text | Email  | Phone | Post | GDPRstatus | MBBStatus | DeviceType | PreSelected | KeyEvent |
-      | 15fe42672847@stf.ref.o2.co.uk | test123  | iPhone X | Enabled   | CapMyBill | £0        | Space Grey | high       | skip   | Monthly data (Low to High) | TEST ACCEPTA | Apple | Iphone7 | Orange  | Me       | Not | Not | Select | Not | Not  | Select | Not   | Not  | Enabled    | No        | Connected  | No          | No       |
+      | acce40803315@stf.ref.o2.co.uk | test123  | iPhone X | Enabled   | CapMyBill | £0        | Space Grey | high       | skip   | Monthly data (Low to High) | TEST ACCEPTA | Apple | Iphone7 | Orange  | Me       | Not | Not | Select | Not | Not  | Select | Not   | Not  | Enabled    | No        | Connected  | No          | No       |

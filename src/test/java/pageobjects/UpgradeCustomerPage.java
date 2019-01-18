@@ -166,7 +166,7 @@ public class UpgradeCustomerPage {
 	@FindBy(how = How.XPATH, using = "//*[@id='confirmSim']")
 	public static WebElement ConfirmCTA;
 
-	@FindAll({@FindBy(how = How.XPATH, using = "//Button[normalize-space()='Remove offer'] | //Button[normalize-space()='Remove offer to see sim options']")})
+	@FindAll({@FindBy(how = How.XPATH, using = "//Button[normalize-space()='Remove offer'] | //Button[normalize-space()='Remove offer and see sim options']")})
 	public static List<WebElement> RemoveOffer;
 
 	@FindAll({@FindBy(how = How.XPATH, using = "//div[@class='btn-container']/button[@class='primary ng-scope']")})
@@ -406,7 +406,7 @@ public class UpgradeCustomerPage {
 	@FindBy(how = How.XPATH, using = "//button[@class='btnblue'] | //button[@class='btnblue ng-binding']")
 	public static WebElement GetStartedCTA;
 
-	@FindBy(how = How.XPATH, using = "//button[normalize-space()='Configure your own upgrade']")
+	@FindBy(how = How.XPATH, using = "(//button[normalize-space()='Configure your own upgrade'])[1]")
 	public static WebElement ConfigureOwnUpgrade;
 
 	@FindBy(how = How.XPATH, using = "//div[contains(text(),'Choose your device')]")

@@ -26,5 +26,5 @@ Feature: 22_CFU_SIMO_GDPR_Enabled_Home_Delivery_complaint_EndUser_MP_OptIn_B1B3
 
 
     Examples:
-      | username                      | BSCstatus | BillCap   | CapAmount | password | B1     | B2  | B3     | B4  | GDPRstatus | DeviceType | PreSelected | KeyEvent |
-      | 02ma49092549@stf.ref.o2.co.uk | Enabled   | CapMyBill | £20       | test123  | Select | Not | Select | Not | Enabled    | Connected  | No          | No       |
+      | username     | BSCstatus | BillCap   | CapAmount | password | B1     | B2  | B3     | B4  | GDPRstatus | DeviceType | PreSelected | KeyEvent |
+      | 15ju81666468 | Enabled   | CapMyBill | £20       | test123  | Select | Not | Select | Not | Enabled    | Connected  | No          | No       |

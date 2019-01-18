@@ -177,7 +177,7 @@ public class PaymentPageActions extends Environment {
     public static void Card_Details_CCV() throws InterruptedException, IOException {
 
        //driver.manage().timeouts().implicitlyWait(15,TimeUnit.SECONDS);
-        Thread.sleep(5000);
+        Thread.sleep(25000);
 
             /*driver.switchTo().frame("payment-iframe");
             Thread.sleep(5000);
@@ -242,7 +242,7 @@ public class PaymentPageActions extends Environment {
        /* if(driver.findElement(By.xpath(" (//button[@name='select-address-btn'])[2]")).isEnabled()){
             driver.findElement(By.xpath(" (//button[@name='select-address-btn'])[2]")).click();
         }*/
-        Thread.sleep(4000);
+        Thread.sleep(10000);
         driver.switchTo().frame("payment-iframe"); // switching the frame by ID
 
         log.debug("********We are switch to the iframe*******");
@@ -437,6 +437,21 @@ public class PaymentPageActions extends Environment {
 
         Screenshots.captureScreenshot();
 
+    }
+
+    public static void ReviewConfirmCTA_PaymentPage() {
+
+        try {
+            Screenshots.captureScreenshot();
+            if(driver.findElements(By.xpath("//h1[normalize-space()='Review details']/../div[3]/button[text()='Confirm']")).size()>0) {
+                if (PaymentPage.reviewConfirmCTA.isDisplayed()) {
+                    pageobjects.PaymentPage.reviewConfirmCTA.click();
+                    log.debug("Clicked on the Review Confirm CTA at Payment page\n");
+                }
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
 }
