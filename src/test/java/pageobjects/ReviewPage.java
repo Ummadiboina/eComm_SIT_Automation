@@ -17,7 +17,7 @@ public class ReviewPage {
 	@FindBy(how=How.XPATH,using="//label[@id='insurance-terms-label']/span")
 	public static WebElement TermsInsumranceTxt;
 
-	  @FindBy(how=How.ID,using="order-review-continue") 
+	  @FindBy(how=How.ID,using="order-review-continue-label")
 	  public static WebElement PayNow;
 	  
 

@@ -18,6 +18,7 @@ import org.openqa.selenium.WebElement;
 import GlobalActions.Screenshots;
 import GlobalActions.scrollToAnElement;
 import helpers.Environment;
+import pageobjects.BasketPage;
 import pageobjects.ReviewAndConfirmPage;
 
 import static helpers.Environment.driver;
@@ -98,7 +99,7 @@ public class ReviewAndConfirmPageActions extends Environment {
         String CurvedBanner1 = ReviewAndConfirmPage.CurvedBannerGoodnews.getText();
         String CurvedBanner = CurvedBanner1.substring(0, CurvedBanner1.length() - 5);
         String Yourorderconfirmation = ReviewAndConfirmPage.CurvedBannerYourordercomplete.getText();
-
+//Your order's complete
         if (CurvedBanner.equals("Good news,")) {
             System.out.println(CurvedBanner + "Message exists inside curved banner in confirmation page");
             log.debug(CurvedBanner + "Message exists inside curved banner in confirmation page");
@@ -118,13 +119,14 @@ public class ReviewAndConfirmPageActions extends Environment {
         }
     }
 
-    public static void Devicedetail(String devicename) {
+    public static void Devicedetail() {
         String devicedetail = ReviewAndConfirmPage.Devicedetails.getText();
+        String devicecolorcapacity = ReviewAndConfirmPage.Devicecolorcapacity.getText();
 
-        if (devicedetail.equalsIgnoreCase(devicename)) {
+        if (devicedetail.contains(BasketPageActions.devicename) && devicecolorcapacity.contains(BasketPageActions.devicecolorcapacity)) {
 
-            System.out.println("device detailsmatched" + devicedetail);
-            log.debug("device detailsmatched" + devicedetail);
+            System.out.println("device detailsmatched" + devicedetail+devicecolorcapacity);
+            log.debug("device detailsmatched" + devicedetail+devicecolorcapacity);
 
         } else {
 
@@ -137,17 +139,26 @@ public class ReviewAndConfirmPageActions extends Environment {
     }
 
     public static void Tariffdetails() {
-        if (driver.findElements(By.xpath("//div[@class='con-tariff-summary']")).size() > 0) {
+        if (driver.findElements(By.xpath("//div[@class='con-tariff-summary']//span[@class='get-data']")).size() > 0) {
+
             String Tariff = ReviewAndConfirmPage.Tariffdetails.getText();
-            System.out.println("Tariff details are:" + Tariff);
-            log.debug("Tariff details are:" + Tariff);
+            if (Tariff.contains(BasketPageActions.tariff)) {
+
+                System.out.println("Tariff details are:" + Tariff);
+                log.debug("Tariff details are:" + Tariff);
+
+            } else {
+                System.out.println("Tariff details are not matching");
+                log.debug("Tariff details are not matching");
+                Assert.fail("Tariff details are not matching");
+            }
+
 
         } else {
-            System.out.println("Tariff details are not matching");
-            log.debug("Tariff details are not matching");
+
+            System.out.println("Tariff details are not present");
+            log.debug("Tariff details are not present");
         }
-
-
     }
 
 
@@ -156,8 +167,12 @@ public class ReviewAndConfirmPageActions extends Environment {
 
             System.out.println("Click and collect is enabled");
             log.debug("Click and collect is enabled");
+            driver.findElement(By.xpath("//p[contains(text(),'See store opening times')]")).click();
+            String Storetimings= driver.findElement(By.xpath("//div[@class='store-content']//ul[@id='storeTimes']")).getText();
 
-            CommonActions.clickWebElement(pageobjects.ReviewAndConfirmPage.Storeopentimings);
+            System.out.println("Store timings:"+Storetimings);
+
+
 
         } else {
             Assert.fail("Click and collect is disabled");
@@ -170,56 +185,63 @@ public class ReviewAndConfirmPageActions extends Environment {
 
     }
 
-    public static void device_accessory_Tariff() {
-        String devicedetail = ReviewAndConfirmPage.Devicedetails.getText();
-//device
-        if (driver.findElements(By.xpath("//div[@class='con-device-name']//span")).size() > 0) {
+    public static void Accessories() {
 
-            System.out.println("device detailsmatched" + devicedetail);
-            log.debug("device detailsmatched" + devicedetail);
-
-        } else {
-
-
-            System.out.println("device details does not match");
-            Assert.fail("device details does not match");
-        }
-        //tariff
-        if (driver.findElements(By.xpath("//div[@class='con-tariff-summary']")).size() > 1) {
-            String Tariff = pageobjects.ReviewAndConfirmPage.Tariffdetails.getText();
-            System.out.println("Tariff displayed=" + Tariff);
-            log.debug("Tariff displayed=" + Tariff);
-        } else {
-
-            System.out.println("Tariff not displayed");
-            Assert.fail("Tariff not displayed");
-        }
-        //Accessories
         if (driver.findElements(By.xpath("//ul[@class='acc-list']")).size() > 0) {
-            String Accessories = ReviewAndConfirmPage.Accessoriesdetails.getText();
+            String Accessoriesdetails = ReviewAndConfirmPage.Accessoriesdetails.getText();
+            String Basketaccessories=BasketPageActions.accessories;
+            if (Accessoriesdetails.contains(Basketaccessories)) {
+                System.out.println("Accessories detailsmatched" + Accessoriesdetails);
+                log.debug("Accessories detailsmatched" + Accessoriesdetails);
 
-            System.out.println("Tariff details are" + Accessories);
+            } else {
 
-            log.debug("Tariff details are" + Accessories);
+
+                System.out.println("Accessories not displayed");
+                log.debug("Accessories not displayed");
+                Assert.fail("Accessories not displayed");
+
+            }
+
+
+        }
+
+        else
+        {
+            System.out.println("Accessories not present");
+            log.debug("Accessories not present");
+        }
+    }
+
+
+
+    public static void OrdernumberandPDfdownload() {
+
+        if (driver.findElements(By.xpath("//div[@class='order-confirmation']//span[@id='order-id']")).size() > 0) {
+            String ordernumber = ReviewAndConfirmPage.OrderNumber.getText();
+            System.out.println("order number is" + ordernumber);
+        } else {
+
+            System.out.println("Order number not found");
+            Assert.fail("Order number not found");
+        }
+
+        if(driver.findElements(By.xpath("//a[@id='download']")).size()>0){
+            System.out.println("Download pdf link is enabled");
+            log.debug("Download pdf link is enabled");
+            ReviewAndConfirmPage.Downloadyourorderconfirmation.click();
+
+
         }
         else{
+            System.out.println("Download pdf link is enabled");
+            Assert.fail("Download pdf link is enabled");
 
-
-            System.out.println("Accessories not displayed");
-            log.debug("Accessories not displayed");
-            Assert.fail("Accessories not displayed");
 
         }
 
 
     }
-public static void Accessorieswithquantity(String Limit)
-
-{
-
-
-
-}
 
 }
 

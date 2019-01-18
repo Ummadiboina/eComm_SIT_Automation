@@ -12,7 +12,7 @@ Feature: Order Confirmation_Likenewphone_Sim_Accessory
     And Continue to Agreements page and confirm all the agreement checks
     And Continue to Review page and review the order
     Then order confirmation is displayed
-    And Validate the Order Confirmation Page <handset>
+    And Validate the Order Confirmation Page
     #AND veriy Confirmation Page
     #And Validate consumer GDPR consent section is hidden in Order confirmation page or not
 

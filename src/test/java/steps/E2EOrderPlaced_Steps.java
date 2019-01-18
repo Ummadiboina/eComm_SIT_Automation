@@ -1170,15 +1170,21 @@ public class E2EOrderPlaced_Steps {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, BasketPage.class);
             PageFactory.initElements(driver, PAYMandPAYGTariffAndExtrasPage.class);
+            //BasketPageActions.DeviceandTariffdetail();
             String title = driver.getTitle();
             if (title.contains("Thanks for waiting")) {
                 log.debug("Queue page is displayed");
             } else {
                 log.debug("Queue page is not displayed");
                 PAYMandPAYGTariffAndExtrasPageActions.addToBasketLive();
+
+                BasketPageActions.DeviceandTariffdetail_Accessories();
                 // BasketPageActions.ValidateBasketPageContents();
                 Thread.sleep(4000);
                 BasketPageActions.CollectionorDelivery("homeDelivery");
+
+
+              //  BasketPageActions.DeviceandTariffdetail();
             }
         } catch (Exception e) {
             // TODO Auto-generated catch block
@@ -1471,7 +1477,7 @@ public class E2EOrderPlaced_Steps {
             DeliveryPageActions.SetDelivery();
             Thread.sleep(4000);
             DeliveryPageActions.AboutYou(Firstname, Surname);
-            // DeliveryPageActions.ClickContinue();
+            //DeliveryPageActions.ClickContinue();
             //DeliveryPageActions.clickOnSubmitBtn();
 
         } catch (Exception e) {
@@ -11446,16 +11452,18 @@ public class E2EOrderPlaced_Steps {
     }
 
 
-    @And("^Validate the Order Confirmation Page ([^\"]*)$")
-    public void validate_Confirmation_Page_for_Curved_Banner_and_devicedetails_Messages(String devicedetails) {
+    @And("^Validate the Order Confirmation Page$")
+    public void validate_Confirmation_Page_for_Curved_Banner_and_devicedetails_Messages() {
         try {
             Thread.sleep(5000);
             // driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, ReviewAndConfirmPage.class);
             Thread.sleep(7000);
             ReviewAndConfirmPageActions.CurvedBannermesage();
-            ReviewAndConfirmPageActions.Devicedetail(devicedetails);
+            ReviewAndConfirmPageActions.Devicedetail();
             ReviewAndConfirmPageActions.Tariffdetails();
+            ReviewAndConfirmPageActions.Accessories();
+            ReviewAndConfirmPageActions.OrdernumberandPDfdownload();
 
         } catch (Exception e) {
             // TODO Auto-generated catch block
@@ -11473,7 +11481,7 @@ public class E2EOrderPlaced_Steps {
             PageFactory.initElements(driver, ReviewAndConfirmPage.class);
             Thread.sleep(7000);
 
-            ReviewAndConfirmPageActions.device_accessory_Tariff();
+           // ReviewAndConfirmPageActions.device_accessory_Tariff();
 
 
         } catch (Exception e) {
@@ -11486,7 +11494,7 @@ public class E2EOrderPlaced_Steps {
     }
 
 
-    @And("^veriy Confirmation Page for Shop open timings$")
+    @And("^validate Confirmation Page for Shop open timings$")
     public void veriy_Confirmation_Page_for_Shop_open_timings() {
         try {
             Thread.sleep(5000);
@@ -11513,7 +11521,7 @@ public class E2EOrderPlaced_Steps {
 
             PageFactory.initElements(driver, ReviewAndConfirmPage.class);
             Thread.sleep(7000);
-            ReviewAndConfirmPageActions.Accessorieswithquantity(Limit);
+        //    ReviewAndConfirmPageActions.Accessorieswithquantity(Limit);
 
 
         } catch (Exception e) {
@@ -11544,6 +11552,28 @@ public class E2EOrderPlaced_Steps {
     }
 
 
+
+
+
+
+
+    @And("^click on continue button and Confirm button$")
+    public void click_on_continue_button_and_Confirm_button() {
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+
+            PageFactory.initElements(driver, DeliveryPage.class);
+            DeliveryPageActions.Continueandconfirmbutton();
+
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            log.debug("Unable to validate delivery page continue and confirm button");
+            Assert.fail("Unable to validate delivery page continue and confirm button");
+
+        }
+
+
+    }
 
 }
 

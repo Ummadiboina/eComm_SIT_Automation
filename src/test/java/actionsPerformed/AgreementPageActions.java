@@ -21,31 +21,37 @@ public class AgreementPageActions extends Environment {
 		Screenshots.captureScreenshot();
 	}
 
-	public static void Affordability() throws IOException {
+	public static void Affordability() throws InterruptedException, IOException {
 
 		log.debug("Selecting 'I agree that with my current financial commitments...'checkbox");
-		if (pageobjects.AgreementPage.affordabilityCheck1.isDisplayed()) {
+		if (driver.findElements(By.xpath("//*[@id='affordabilityInformationSection']//*[@id='affordability-terms-declaration']")).size()>0)
+		{
+			Thread.sleep(10000);
 			pageobjects.AgreementPage.affordabilityCheck1.click();
 			log.debug("Selecting affordability Checks # 1");
 			log.debug("Selecting ' I agree there are no future changes to my ...'checkbox");
 		}
-		if (pageobjects.AgreementPage.affordabilityCheck2.isDisplayed()) {
+		if (driver.findElements(By.xpath("//*[@id='affordabilityInformationSection']//*[@id='affordability-terms-declaration2']")).size()>0)
+			Thread.sleep(10000);{
 			pageobjects.AgreementPage.affordabilityCheck2.click();
 			log.debug("Selecting affordability Checks # 2");
 			log.debug("Clicking on the affordabilityButton ");
 		}
 
-		if (pageobjects.AgreementPage.affordabilityButton.isDisplayed()) {
+		if (driver.findElements(By.xpath("//*[@id='affordabilityInformationSection']//*[@id='affordabilityButton']")).size()>0)
+		{
+		Thread.sleep(10000);
 			pageobjects.AgreementPage.affordabilityButton.click();
 			log.debug("Selecting affordability button");
 			Screenshots.captureScreenshot();
 		}
 	}
 
-	public static void KeyInformation() throws IOException {
+	public static void KeyInformation() throws InterruptedException, IOException {
 		Screenshots.captureScreenshot();
 		log.debug("Verifying Key Information");
 		WebElement element = pageobjects.AgreementPage.keyInfoSection;
+		Thread.sleep(10000);
 		JavascriptExecutor executor = (JavascriptExecutor)driver;
 		executor.executeScript("arguments[0].click();", element);
 		//pageobjects.AgreementPage.keyInfoSection.click();
@@ -53,9 +59,10 @@ public class AgreementPageActions extends Environment {
 		Screenshots.captureScreenshot();
 	}
 
-	public static void secciSection() throws IOException {
+	public static void secciSection() throws InterruptedException, IOException  {
 		log.debug("Verifying Key Information");
 		WebElement element = pageobjects.AgreementPage.secciSection;
+		Thread.sleep(10000);
 		JavascriptExecutor executor = (JavascriptExecutor)driver;
 		executor.executeScript("arguments[0].click();", element);
 		//pageobjects.AgreementPage.secciSection.click();
@@ -63,9 +70,10 @@ public class AgreementPageActions extends Environment {
 		Screenshots.captureScreenshot();
 	}
 
-	public static void PayMMobileAgreement() throws IOException {
+	public static void PayMMobileAgreement() throws InterruptedException, IOException {
 		log.debug("Verifying Mobile Agreement section");
 		WebElement element = pageobjects.AgreementPage.PayMMobileAgreement;
+		Thread.sleep(10000);
 		JavascriptExecutor executor = (JavascriptExecutor)driver;
 		executor.executeScript("arguments[0].click();", element);
 		//pageobjects.AgreementPage.PayMMobileAgreement.click();
@@ -73,14 +81,16 @@ public class AgreementPageActions extends Environment {
 		Screenshots.captureScreenshot();
 	}
 
-	public static void TermsDeclarationCheckbox() throws IOException {
+	public static void TermsDeclarationCheckbox() throws InterruptedException, IOException {
 		log.debug("Verifying Consumner Credit Agreement");
 		WebElement element = pageobjects.AgreementPage.TermsDeclarationCheckbox;
+		Thread.sleep(10000);
 		JavascriptExecutor executor = (JavascriptExecutor)driver;
 		executor.executeScript("arguments[0].click();", element);
 		//pageobjects.AgreementPage.TermsDeclarationCheckbox.click();
 		log.debug("Clicking on the terms declaration");
 		WebElement element1 = pageobjects.AgreementPage.ccaSection;
+		Thread.sleep(10000);
 		JavascriptExecutor executor1 = (JavascriptExecutor)driver;
 		executor1.executeScript("arguments[0].click();", element1);
 		//pageobjects.AgreementPage.ccaSection.click();

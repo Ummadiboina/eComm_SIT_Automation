@@ -242,6 +242,12 @@ public class DeliveryPage {
     @FindBy(how = How.XPATH, using = "//tr[@class='spendcap-items']")
     public static WebElement AppliedBillCap;
 
+    @FindBy(how = How.XPATH, using = "//span[@id='btn-continue-label']")
+    public static WebElement Continuebutton;
+
+    @FindBy(how = How.XPATH, using = "//button[@class='button primary dr648_confirm']")
+    public static WebElement Confirmbutton;
+
 }
 
 

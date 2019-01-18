@@ -72,7 +72,7 @@ public class PaymentPageActions extends Environment {
             log.debug("Entered sort code - 96");
             Thread.sleep(2000);
             Screenshots.captureScreenshot();
-            Thread.sleep(10000);
+            Thread.sleep(20000);
             pageobjects.PaymentPage.Accept_Terms_Checkbox.click();
             log.debug("Clicked on the Accept Terms checkbox");
         }
@@ -143,6 +143,11 @@ public class PaymentPageActions extends Environment {
 
         pageobjects.PaymentPage.Confirm_Address_Checkbox.click();
         log.debug("Clicked on the Confirm Address checkbox");
+        if(driver.findElements(By.xpath("//button[@class='button primary']")).size()>0)
+        {
+            driver.findElement(By.xpath("//button[@class='button primary']")).click();
+
+        }
         Screenshots.captureScreenshot();
     }
 
@@ -273,6 +278,7 @@ public class PaymentPageActions extends Environment {
         PaymentPage.Continue_Next_Step.sendKeys(Keys.ENTER);
         log.debug("Clicking on continue to next step");
         Thread.sleep(10000);
+
         log.debug("*********We are done***************");
         log.debug("Exiting the Payments section");
         driver.switchTo().defaultContent();

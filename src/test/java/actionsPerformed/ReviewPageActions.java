@@ -54,6 +54,7 @@ public class ReviewPageActions extends Environment {
 	public static void PayNow() throws InterruptedException, IOException {
 		log.debug("Clicking on Pay now");
 		WebElement element = pageobjects.ReviewPage.PayNow;
+		Thread.sleep(10000);
 		JavascriptExecutor executor = (JavascriptExecutor)driver;
 		executor.executeScript("arguments[0].click();", element);
 		//pageobjects.ReviewPage.PayNow.click();

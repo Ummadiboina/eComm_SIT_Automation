@@ -1,5 +1,6 @@
 package actionsPerformed;
 
+import GlobalActions.CommonActions;
 import GlobalActions.RandomEmailAddressCreation;
 import GlobalActions.Screenshots;
 import GlobalActions.scrollToAnElement;
@@ -970,6 +971,11 @@ public class DeliveryPageActions extends Environment {
         }
     }
 
+public static void Continueandconfirmbutton()
+    {
+        CommonActions.clickWebElement(DeliveryPage.Continuebutton);
 
+        CommonActions.clickWebElement(DeliveryPage.Confirmbutton);
+    }
 
 }
