@@ -19,5 +19,5 @@ Feature: 07_CFA_Smart_Watch_Home_Delivery_GDPR_Should_Not_Display_For_NonConnect
     Then Validate consumer GDPR consent section is hidden in Order confirmation page or not
 
     Examples:
-      | Firstname | Surname | Username     | Device          | B1  | B2  | B3  | B4  | GDPRstatus | DeviceType    | PreSelected | KeyEvent |
-      | TEST      | ACCEPTA | TEST ACCEPTA | Pebble Original | Not | Not | Not | Not | Enabled    | Non Connected | No          | No       |
+      | Firstname | Surname | Username     | Device        | B1  | B2  | B3  | B4  | GDPRstatus | DeviceType    | PreSelected | KeyEvent |
+      | TEST      | ACCEPTA | TEST ACCEPTA | Random Device | Not | Not | Not | Not | Enabled    | Non Connected | No          | No       |

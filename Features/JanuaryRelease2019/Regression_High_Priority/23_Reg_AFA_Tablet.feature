@@ -24,5 +24,5 @@ Feature: 23_Reg_AFA_Tablet
     Then Order confirmation message should be displayed
 
     Examples:
-      | Device                   | Tariffs | DeliveryType | BSCstatus | BillCapAmount | Firstname | Surname | Username     | HouseNumber | PostCode | Consumer | B1     | B2     | B3     | B4  | Text   | Email  | Phone  | Post   | status  | MBBStatus | DeviceType | DeviceModule |
-      | Samsung galaxy Book 10.6 | Random  | HomeDelivery | Enabled   | £100          | TEST      | ACCEPTA | TEST ACCEPTA | 18          | SL11UP   | Me       | Select | Select | Select | Not | Select | Select | Select | Select | Enabled | No        | Connected  | Tablet       |
+      | Device                             | Tariffs | DeliveryType | BSCstatus | BillCapAmount | Firstname | Surname | Username     | HouseNumber | PostCode | Consumer | B1     | B2     | B3     | B4  | Text   | Email  | Phone  | Post   | status  | MBBStatus | DeviceType | DeviceModule |
+      | iPad Pro 10.5 inch 64GB Space Grey | Random  | HomeDelivery | Enabled   | £100          | TEST      | ACCEPTA | TEST ACCEPTA | 18          | SL11UP   | Me       | Select | Select | Select | Not | Select | Select | Select | Select | Enabled | No        | Connected  | Tablet       |

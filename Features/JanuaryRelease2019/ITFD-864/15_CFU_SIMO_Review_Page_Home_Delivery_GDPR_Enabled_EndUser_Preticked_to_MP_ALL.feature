@@ -26,5 +26,5 @@ Feature: 15_CFU_SIMO_Review_Page_Home_Delivery_GDPR_Enabled_EndUser_Preticked_to
 
 
     Examples:
-      | username                      | BSCstatus | BillCap   | CapAmount | password | B1     | B2     | B3     | B4  | GDPRstatus | DeviceType | PreSelected | KeyEvent |
-      | 02ma49092549@stf.ref.o2.co.uk | Enabled   | CapMyBill | £30       | test123  | Select | Select | Select | Not | Enabled    | Connected  | Yes         | No       |
+      | username        | BSCstatus | BillCap   | CapAmount | password | B1     | B2     | B3     | B4  | GDPRstatus | DeviceType | PreSelected | KeyEvent |
+      | in056936_403407 | Enabled   | CapMyBill | £30       | test123  | Select | Select | Select | Not | Enabled    | Connected  | Yes         | No       |

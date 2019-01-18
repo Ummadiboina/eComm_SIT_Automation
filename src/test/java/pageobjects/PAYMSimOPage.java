@@ -200,7 +200,7 @@ public class PAYMSimOPage {
 	@FindBy(how = How.XPATH, using = ("(//*[@id='callToAction'])[2]"))
 	public static WebElement BuyNowRandomTariffMBB12Months;
 
-	@FindBy(how = How.XPATH, using = ("(//*[@name='P12M']//*[@id='callToAction'])[1] | (//*[@name='P12M']//button[normalize-space()='Add to basket'])[13]"))
+	@FindBy(how = How.XPATH, using = ("(//*[@name='P12M']//*[@id='callToAction'])[1] | (//*[@name='P12M']//button[normalize-space()='Add to basket'])[1]"))
 	public static WebElement SelectSIMOTariff;
 
 	@FindBy(how = How.XPATH, using = ("//*[@id='tablet']"))

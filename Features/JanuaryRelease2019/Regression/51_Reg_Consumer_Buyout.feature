@@ -8,7 +8,7 @@ Feature: 51_Reg_Consumer_Buyout
     And Scroll to top of the page
     And Click on 'Remove Button'
     And Verify that the buyout offer section is displayed with 'Take offer and Upgrade' CTA under 'Your Options' heading
-    And Verify that '£XXX.XX left to pay on your current Device Plan' panel is displayed below the buyout offer panel and below to that upgrade and recycle options is displayed
+    #And Verify that '£XXX.XX left to pay on your current Device Plan' panel is displayed below the buyout offer panel and below to that upgrade and recycle options is displayed
     And click on 'Take offer and upgrade'button
     And Click on 'Get Started' CTA
     And Click on Tablet section in upgrade options page

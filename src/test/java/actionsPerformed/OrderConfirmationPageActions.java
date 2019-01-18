@@ -45,24 +45,24 @@ public class OrderConfirmationPageActions extends Environment {
 
 	public static void MessageDisplayed() throws IOException, InterruptedException {
 		log.debug("This is order confirmation page and the message in this page is as below......");
-		log.info("This is order confirmation/information page and the message in this page is as above......");
 		JavascriptExecutor jse = (JavascriptExecutor) driver;
-		jse.executeScript("window.scrollBy(0,120)", "");
+		//jse.executeScript("window.scrollBy(0,120)", "");
 		Screenshots.captureScreenshot();
 		Thread.sleep(2000);
-		jse.executeScript("window.scrollBy(0,150)", "");
+		jse.executeScript("window.scrollBy(0,300)", "");
+		Thread.sleep(2000);
 		Screenshots.captureScreenshot();
 
 		try {
-			List<WebElement> outercontainer = driver.findElements(By.xpath("//*[@id='order-number']"));
+			List<WebElement> outercontainer = driver.findElements(By.xpath("//*[@id='order-number'] | //div[@class='order-confirmation']/p"));
 			log.debug("Trying to find the Element for order number using element identifier");
 
-			List<WebElement> DataContainer = outercontainer.get(0).findElements(By.xpath("//*[@id='order-number']"));
+			List<WebElement> DataContainer = outercontainer.get(0).findElements(By.xpath("//*[@id='order-number'] | //div[@class='order-confirmation']/p"));
 
 			for (int i = 0; i <= DataContainer.size(); i++) {
 
 				log.debug(DataContainer.get(i).getText());
-				log.info(DataContainer.get(i).getText());
+				//log.info(DataContainer.get(i).getText());
 			}
 			Screenshots.captureScreenshot();
 		} catch (IndexOutOfBoundsException e) {
@@ -74,10 +74,10 @@ public class OrderConfirmationPageActions extends Environment {
 
 		//gdpr consent validation
 		if(driver.findElements(By.xpath("//div[@class='choose-preferences-bar']/a")).size()>0) {
-			log.debug("Failed due to GDPR is displaying in order confirmation page for consumer acquisition journey \n");
+			log.debug("Failed due to GDPR is displaying in order confirmation page \n");
 			Assert.fail("Failed due to GDPR is displaying in order confirmation page for consumer acquisition journey \n");
 		}else{
-			log.debug("As expected, GDPR is in disabled state for consumer acquisition journey\n");
+			log.debug("As expected, GDPR section is not displaying in order confirmation page\n");
 		}
 	}
 

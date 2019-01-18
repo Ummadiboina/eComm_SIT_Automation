@@ -22,5 +22,5 @@ Feature: 08_CFA_NewConnection_PAYG_Tablet_GDPR_Enabled_Refresh_HomeDelivery_EndU
     Then Validate consumer GDPR consent section is hidden in Order confirmation page or not
 
     Examples:
-      | Device | Firstname | tariff        | BSCstatus | Surname | Username     | B1  | B2  | B3  | B4  | GDPRstatus | DeviceType | PreSelected | KeyEvent |
-      | A3 10  | TEST      | 1GB Preloaded | Disabled  | ACCEPTA | TEST ACCEPTA | Not | Not | Not | Not | Enabled    | Connected  | No          | No       |
+      | Device             | Firstname | tariff        | BSCstatus | Surname | Username     | B1  | B2  | B3  | B4  | GDPRstatus | DeviceType | PreSelected | KeyEvent |
+      | iPad Pro 10.5 inch | TEST      | 1GB Preloaded | Disabled  | ACCEPTA | TEST ACCEPTA | Not | Not | Not | Not | Enabled    | Connected  | No          | No       |

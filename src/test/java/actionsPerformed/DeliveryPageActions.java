@@ -998,13 +998,13 @@ public class DeliveryPageActions extends Environment {
             if(DeviceType.equalsIgnoreCase("Connected")) {
 
                 log.debug("Device type is connected device\n");
-                if (driver.findElements(By.xpath("//label[contains(text(),'GDPR CONSENT')]")).size() > 0) {
+                if (driver.findElements(By.xpath("//div[@class='GDPR-Content']")).size() > 0) {
                     log.debug("As expected, GDPR consent is in enabled mode\n");
 
                     //Header text validation
                     String headerTxt = DeliveryPage.gdprHeaderTxt.getText();
                     Thread.sleep(1000);
-                    if (headerTxt.equalsIgnoreCase("")) {
+                    if (headerTxt.equalsIgnoreCase("Don't miss out")) {
                         log.debug("Header text is validated and it is matching with expected result, the actual header is :: " + headerTxt + "\n");
                     } else {
                         log.debug("Failed due to header text is not matching with expected result, the actual header is :: " + headerTxt + "\n");
@@ -1013,8 +1013,8 @@ public class DeliveryPageActions extends Environment {
 
                     //Header description validation
                     String headerDescription = DeliveryPage.gdprHeaderDescription.getText();
-                    Thread.sleep(1000);
-                    if (headerDescription.contains("")) {
+                    Thread.sleep(2000);
+                    if (headerDescription.contains("So we can keep you up to date with the things you're really interested in, let us know what you'd like to hear more about. We'll use information like your location, the services you use and how you access them. You can change your mind at any time. If you're not interested, we'll still send you service messages about your account or legal notices.")) {
                         log.debug("Header description is validated and it is matching with expected result, the actual header description is :: " + headerDescription + "\n");
                     } else {
                         log.debug("Failed due to header description is not matching with expected result, the actual header description is :: " + headerDescription + "\n");
@@ -1022,7 +1022,7 @@ public class DeliveryPageActions extends Environment {
                     }
 
                     //O2 Products
-                    if (driver.findElements(By.id("preference-heading-B1")).size() > 0) {
+                    if (driver.findElements(By.xpath("//div[@class='GDPR-Content']/div[1]/div[1]/div/div/div/label/input")).size() > 0) {
 
                         //O2Products Tile Text
                         String O2ProductsText = DeliveryPage.O2Products_Text.getText();
@@ -1067,7 +1067,7 @@ public class DeliveryPageActions extends Environment {
                     Thread.sleep(1000);
 
                     //O2 Perks And Extras
-                    if (driver.findElements(By.id("preference-heading-B2")).size() > 0) {
+                    if (driver.findElements(By.xpath("//div[@class='GDPR-Content']/div[1]/div[2]/div/div/div/label/input")).size() > 0) {
 
                         //O2 Perks And Extras Tile Text
                         String O2PerksAndExtrasText = DeliveryPage.O2PerksAndExtras_Text.getText();
@@ -1112,7 +1112,7 @@ public class DeliveryPageActions extends Environment {
                     Thread.sleep(1000);
 
                     //Offers From O2 Partner Text
-                    if (driver.findElements(By.id("preference-heading-B3")).size() > 0) {
+                    if (driver.findElements(By.xpath("//div[@class='GDPR-Content']/div[1]/div[3]/div/div/div/label/input")).size() > 0) {
 
                         //Offers From O2 Partner Tile Text
                         String OffersFromO2PartnerText = DeliveryPage.OffersFromO2Partner_Text.getText();
@@ -1154,10 +1154,46 @@ public class DeliveryPageActions extends Environment {
                         }
                     }
 
+                    //Privacy policy validation
+                    String privacyPolicyTxt = driver.findElement(By.xpath("//div[@class='GDPR-Content']/div[2]/label")).getText();
+                    Thread.sleep(1000);
+                    log.debug("GDPR privacy policy info text: "+privacyPolicyTxt);
+
+                    //clicking on privacy policy link
+                    if(driver.findElements(By.xpath("//div[@class='GDPR-Content']/div[2]/label/a")).size()>0) {
+                        driver.findElement(By.xpath("//div[@class='GDPR-Content']/div[2]/label/a")).click();
+                        Thread.sleep(5000);
+                        for (String winHandle : driver.getWindowHandles()) {
+                            driver.switchTo().window(winHandle);
+                        }
+
+                        String privacyPolicyURL = driver.getCurrentUrl();
+                        log.debug("The privacy policy URL is: " + privacyPolicyURL+"\n");
+
+                        if (privacyPolicyURL.contains("termsandconditions/privacy-policy")) {
+                            log.debug("Privacy policy page is displayed\n");
+                            Thread.sleep(2000);
+                            Screenshots.captureScreenshot();
+                        } else {
+                            Thread.sleep(2000);
+                            Screenshots.captureScreenshot();
+                            log.debug("Privacy policy page is not displayed\n");
+                        }
+                        driver.close();
+                        Thread.sleep(2000);
+                        for (String winHandle : driver.getWindowHandles()) {
+                            driver.switchTo().window(winHandle);
+                        }
+                        Thread.sleep(2000);
+                        log.debug("We are back to delivery page from gdpr privacy policy page, current page url is :"+driver.getCurrentUrl()+"\n");
+                        Screenshots.captureScreenshot();
+                    }
+
+
                     //Selecting O2 Products Business preferences
                     if (BP1.equalsIgnoreCase("Select")) {
 
-                        if (driver.findElements(By.xpath("//input[@id='B1']")).size() <= 0) {
+                        if (driver.findElements(By.xpath("//div[@class='GDPR-Content']/div[1]/div[1]/div/div/div/label/input")).size() <= 0) {
                             log.debug("O2Products business preference checkBox is not displayed");
                             Assert.fail("O2Products business preference checkBox is not displayed");
                         }
@@ -1198,7 +1234,7 @@ public class DeliveryPageActions extends Environment {
                     //Selecting O2 Perks And Extras business preference
                     if (BP2.equalsIgnoreCase("Select")) {
 
-                        if (driver.findElements(By.xpath("//input[@id='B2']")).size() <= 0) {
+                        if (driver.findElements(By.xpath("//div[@class='GDPR-Content']/div[1]/div[2]/div/div/div/label/input")).size() <= 0) {
                             log.debug("O2 Perks And Extras business preference checkBox is not displayed");
                             Assert.fail("O2 Perks And Extras business preference checkBox is not displayed");
                         }
@@ -1239,7 +1275,7 @@ public class DeliveryPageActions extends Environment {
                     //Selecting Offers From O2 Partner business preference
                     if (BP3.equalsIgnoreCase("Select")) {
 
-                        if (driver.findElements(By.xpath("//input[@id='B3']")).size() <= 0) {
+                        if (driver.findElements(By.xpath("//div[@class='GDPR-Content']/div[1]/div[3]/div/div/div/label/input")).size() <= 0) {
                             log.debug("Offers From O2 Partner business preference checkBox is not displayed");
                             Assert.fail("Offers From O2 Partner business preference checkBox is not displayed");
                         }
@@ -1282,7 +1318,7 @@ public class DeliveryPageActions extends Environment {
                 }
             } else {
                 log.debug("Device type is non-connected device\n");
-                if(driver.findElements(By.xpath("//label[contains(text(),'GDPR CONSENT')]")).size()>0) {
+                if(driver.findElements(By.xpath("//div[@class='GDPR-Content']")).size()>0) {
                     log.debug("Failed due to GDPR is in enabled mode for non-connected device \n");
                     Assert.fail("Failed due to GDPR is in enabled mode for non-connected device \n");
                 }else{
@@ -1300,7 +1336,7 @@ public class DeliveryPageActions extends Environment {
             }
 
             //gdpr consent validation
-            if(driver.findElements(By.xpath("//label[contains(text(),'GDPR CONSENT')]")).size()>0) {
+            if(driver.findElements(By.xpath("//div[@class='GDPR-Content']")).size()>0) {
                 log.debug("Failed due to GDPR is in enabled mode, it should be in disabled mode \n");
                 Assert.fail("Failed due to GDPR is in enabled mode, it should be in disabled mode \n");
             }else{
@@ -1318,5 +1354,20 @@ public class DeliveryPageActions extends Environment {
         }
         log.debug("Clicked on Continue button\n");
 
+    }
+
+    public static void ReviewConfirmCTA_DeliveryPage() {
+
+        try {
+            Screenshots.captureScreenshot();
+            if(driver.findElements(By.xpath("//h1[normalize-space()='Review your details']/../div[3]/button[text()='Confirm']")).size()>0) {
+                if (DeliveryPage.reviewConfirmCTA.isDisplayed()) {
+                    pageobjects.DeliveryPage.reviewConfirmCTA.click();
+                    log.debug("Clicked on the Review Confirm CTA at Delivery page\n");
+                }
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }

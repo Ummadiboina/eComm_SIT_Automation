@@ -142,4 +142,7 @@ public class PaymentPage {
     @FindBy(how = How.XPATH, using = "//*[@id='address-heading']/p")
     public static WebElement HomeAddress;
 
+    @FindBy(how = How.XPATH, using = "//h1[normalize-space()='Review details']/../div[3]/button[text()='Confirm']")
+    public static WebElement reviewConfirmCTA;
+
 }

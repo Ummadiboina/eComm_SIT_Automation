@@ -72,8 +72,8 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 
 			if (ElementName.equalsIgnoreCase("Randomtariff")) {
 				scrollToAnElement.scrollToElement(PAYMandPAYGTariffAndExtrasPage.RandomTariff1);
+				Thread.sleep(2000);
 				Screenshots.captureScreenshot();
-				Thread.sleep(4000);
 				pageobjects.PAYMandPAYGTariffAndExtrasPage.RandomTariff1.sendKeys(Keys.ENTER);
 				//pageobjects.PAYMandPAYGTariffAndExtrasPage.RandomTariff1.click();
 				log.debug("Selected a Random Tariff");
@@ -85,7 +85,7 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 
 				JavascriptExecutor executor = (JavascriptExecutor) driver;
 				executor.executeScript("window.scrollBy(0,-200)", "");
-				Thread.sleep(5000);
+				Thread.sleep(2000);
 				Screenshots.captureScreenshot();
 				//pageobjects.PAYMandPAYGTariffAndExtrasPage.paydevicefulllink.click();
 
@@ -217,6 +217,10 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 			Screenshots.captureScreenshot();
 			return plan;
 		} else {
+			JavascriptExecutor jse = (JavascriptExecutor) driver;
+			jse.executeScript("window.scrollBy(0,300)", "");
+			Thread.sleep(2000);
+			Screenshots.captureScreenshot();
 			driver.findElement(By.xpath("(//input[@type='button' and @value='Go to basket'])[1]")).click();
 			return plan;
 		}
@@ -260,8 +264,9 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 		if (driver.findElements(By.xpath("(//input[@value='Go to basket'])[1]")).size() > 0) {
 			//driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 			Thread.sleep(4000);
-        	log.debug("Click on the Add To Basket/Go To Basket CTA");
-
+        	log.debug("Clicking on the Add To Basket/Go To Basket CTA");
+			JavascriptExecutor jse = (JavascriptExecutor) driver;
+			jse.executeScript("window.scrollBy(0,300)", "");
 			Screenshots.captureScreenshot();
 			((JavascriptExecutor) driver).executeScript("arguments[0].click();", pageobjects.PAYMandPAYGTariffAndExtrasPage.addToBasketLive);
 			// pageobjects.PAYMandPAYGTariffAndExtrasPage.addToBasketLive.sendKeys(Keys.ENTER);

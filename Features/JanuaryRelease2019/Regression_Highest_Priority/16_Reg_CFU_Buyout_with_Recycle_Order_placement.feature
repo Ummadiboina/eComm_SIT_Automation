@@ -9,7 +9,7 @@ Feature: 16_Reg_CFU_Buyout_with_Recycle_Order_placement
     And Navigate to upgrade > upgrade now
     And Click on 'Remove Button'
     And Verify that the buyout offer section is displayed with 'Take offer and Upgrade' CTA under 'Your Options' heading
-    And Verify that '£XXX.XX left to pay on your current Device Plan' panel is displayed below the buyout offer panel and below to that upgrade and recycle options is displayed
+    #And Verify that '£XXX.XX left to pay on your current Device Plan' panel is displayed below the buyout offer panel and below to that upgrade and recycle options is displayed
     And click on 'Take offer and upgrade'button
     And Click on 'Get Started' CTA
     And Click on Tablet section in upgrade options page
@@ -50,5 +50,5 @@ Feature: 16_Reg_CFU_Buyout_with_Recycle_Order_placement
 
     Examples:
       | Tablet        | Action | Surname | Username     | BSCstatus | BillCap   | CapAmount | handset  | Delivery | Payment | filtername | sortoption                 | username               | password | consumer | B1     | B2     | B3  | B4  | Text | Email  | Phone | Post   | GDPRstatus | MBBStatus | DeviceType | PreSelected | KeyEvent |
-      | Random Device | skip   | ACCEPTA | TEST ACCEPTA | Enabled   | CapMyBill | £20       | iPhone X | Delivery | Payment | low        | Monthly data (Low to High) | in034242_605463@o2.com | test123  | Someone  | Select | Select | Not | Not | Not  | Select | Not   | Select | Enabled    | No        | Connected  | No          | No       |
+      | Random Device | skip   | ACCEPTA | TEST ACCEPTA | Enabled   | CapMyBill | £20       | iPhone X | Delivery | Payment | low        | Monthly data (Low to High) | in05261q_663227@o2.com | test123  | Someone  | Select | Select | Not | Not | Not  | Select | Not   | Select | Enabled    | No        | Connected  | No          | No       |
 

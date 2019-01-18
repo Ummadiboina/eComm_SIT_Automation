@@ -27,7 +27,7 @@ Feature: 111_FR_Upfront_CFA_PayMTablets_Till_TnE.feature
     Then Validate consumer GDPR consent section is hidden in Order confirmation page or not
 
     Examples:
-      | Device           | tariffAmt | dataValue | color | Capacity | Firstname | Surname | consumer | BSCstatus | B1     | B2  | B3  | B4  | Text   | Email | Phone | Post | GDPRstatus | MBBStatus | DeviceType | upFront | term | data | PreSelected | KeyEvent |
-      | Galaxy Book 10.6 | £39       | 8GB       | Gold  | 64GB     | Test      | Accepta | Me       | Enabled   | Select | Not | Not | Not | Select | Not   | Not   | Not  | Enabled    | No        | Connected  | max     | min  | max  | No          | No       |
+      | Device            | tariffAmt | dataValue | color | Capacity | Firstname | Surname | consumer | BSCstatus | B1     | B2  | B3  | B4  | Text   | Email | Phone | Post | GDPRstatus | MBBStatus | DeviceType | upFront | term | data | PreSelected | KeyEvent |
+      | Galaxy Tab A 10.5 | £39       | 8GB       | Gold  | 64GB     | Test      | Accepta | Me       | Enabled   | Select | Not | Not | Not | Select | Not   | Not   | Not  | Enabled    | No        | Connected  | max     | min  | max  | No          | No       |
 
 

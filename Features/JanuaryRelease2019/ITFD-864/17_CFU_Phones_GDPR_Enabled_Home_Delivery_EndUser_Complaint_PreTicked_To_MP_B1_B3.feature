@@ -43,5 +43,5 @@ Feature: 17_CFU_Phones_GDPR_Enabled_Home_Delivery_EndUser_Complaint_PreTicked_To
     Then Validate consumer GDPR consent section is hidden in Order confirmation page or not
 
     Examples:
-      | username                                    | password | houseNumber | PostCode | handset       | BSCstatus | BillCap       | CapAmount | Username     | Action    | tariff                   | B1     | B2  | B3     | B4  | GDPRstatus | DeviceType | PreSelected | KeyEvent |
-      | rbmuatlokesh_donotusee3035@stf.ref.o2.co.uk | test123  | 11          | SL11Er   | iPhone 8 Plus | Enabled   | DontCapMyBill | Nill      | TEST ACCEPTA | enterCode | 129.99upfront37.00amonth | Select | Not | Select | Not | Enabled    | Connected  | Yes         | No       |
+      | username                      | password | houseNumber | PostCode | handset       | BSCstatus | BillCap       | CapAmount | Username     | Action    | tariff                   | B1     | B2  | B3     | B4  | GDPRstatus | DeviceType | PreSelected | KeyEvent |
+      | 22fe97536512@stf.ref.o2.co.uk | test123  | 11          | SL11Er   | iPhone 8 Plus | Enabled   | DontCapMyBill | Nill      | TEST ACCEPTA | enterCode | 129.99upfront37.00amonth | Select | Not | Select | Not | Enabled    | Connected  | Yes         | No       |

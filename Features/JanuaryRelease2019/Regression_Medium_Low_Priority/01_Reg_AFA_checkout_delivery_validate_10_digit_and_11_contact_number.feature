@@ -28,5 +28,5 @@ Feature: 01_Reg_AFA_checkout_delivery_validate_10_digit_and_11_contact_number
     # Then CCALink Should be generated
 
     Examples:
-      | Device                   | Tariffs | Extras | BSCstatus | BillCapAmount | DeliveryType | Firstname | Surname | Username     | HouseNumber | PostCode | B1     | B2  | B3     | B4  | Text   | Email  | Phone | Post | Consumer | status  | MBBStatus | DeviceType | DeviceModule |
-      | iphone 7 plus 32GB Black | Refresh | Base   | Enabled   | £5            | HomeDelivery | TEST      | ACCEPTA | TEST ACCEPTA | 14          | SL11UP   | Select | Not | Select | Not | Select | Select | Not   | Not  | Me       | Enabled | No        | Connected  | Phone        |
+      | Device                        | Tariffs | Extras | BSCstatus | BillCapAmount | DeliveryType | Firstname | Surname | Username     | HouseNumber | PostCode | B1     | B2  | B3     | B4  | Text   | Email  | Phone | Post | Consumer | status  | MBBStatus | DeviceType | DeviceModule |
+      | iPhone 8 Plus 64GB Space Grey | Refresh | Base   | Enabled   | £5            | HomeDelivery | TEST      | ACCEPTA | TEST ACCEPTA | 14          | SL11UP   | Select | Not | Select | Not | Select | Select | Not   | Not  | Me       | Enabled | No        | Connected  | Phone        |

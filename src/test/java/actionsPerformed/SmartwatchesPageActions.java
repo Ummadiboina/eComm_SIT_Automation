@@ -75,14 +75,14 @@ public class SmartwatchesPageActions extends Environment {
 
 			if (elementName.contains("Random Device")) {
 				log.debug("Going to select Random Device");
-
-				pageobjects.SmartwatchesPage.RandomSmartWatch.click();
-				Thread.sleep(15000);
+				Thread.sleep(7000);
+				JavascriptExecutor executor = (JavascriptExecutor) driver;
+				executor.executeScript("arguments[0].click();", pageobjects.SmartwatchesPage.RandomSmartWatch);
+				//pageobjects.SmartwatchesPage.RandomSmartWatch.click();
+				Thread.sleep(2000);
 				log.debug("Clicked Random Device");
 
-			}
-
-			if (elementName.contains("Samsung Galaxy Gear")) {
+			}else if (elementName.contains("Samsung Galaxy Gear")) {
 				log.debug("Going to select SamsungGalaxyGear");
 
 				pageobjects.SmartwatchesPage.SamsungGalaxyGear.click();
@@ -93,12 +93,12 @@ public class SmartwatchesPageActions extends Environment {
 				pageobjects.SmartwatchesPage.SamsungGearS2.click();
 				Thread.sleep(15000);
 				log.debug("Selected SamsungGearS2");
-				log.debug("Selected SamsungGearS2");
+
 			} else if (elementName.contains("Pebble Original")) {
 				pageobjects.SmartwatchesPage.PebbleOriginal.click();
 				Thread.sleep(15000);
 				log.debug("Selected PebbleOriginal");
-				log.debug("Selected PebbleOriginal");
+
 			}
 			Screenshots.captureScreenshot();
 
@@ -121,9 +121,11 @@ public class SmartwatchesPageActions extends Environment {
 			// Below will give status like in stock / out of stock etc
 			Thread.sleep(5000);
 
-			String status = driver.findElement(By.className("status-info")).getText();
-			log.debug(status);
+			//String status = driver.findElement(By.className("status-info")).getText();
+			String status = driver.findElement(By.xpath("//p[@class='delivery-information']/span[1]")).getText();
 
+			log.debug("Delivery Information status:"+status);
+			Thread.sleep(3000);
 			if (status.contains("In Stock")) {
 				/*WebElement element = driver
 						.findElement(By.xpath("//select[@class='accessory-option ng-pristine ng-valid']"));
