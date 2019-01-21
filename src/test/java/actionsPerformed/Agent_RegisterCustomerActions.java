@@ -309,7 +309,6 @@ public class Agent_RegisterCustomerActions extends Environment {
 		Agent_RegisterCustomerPage.registerCustomer.click();
 		Thread.sleep(8000);
 		log.debug("Clicked on Register customer");
-		log.debug("Clicked on Register customer");
 
 	}
 

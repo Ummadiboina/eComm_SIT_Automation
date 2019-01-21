@@ -9,6 +9,7 @@ Feature: 99_Reg_June_CFU_Validate_Basket_Page_For_Simo_Tariff_With_Active_Vouche
     And Navigate to upgrade > upgrade now
     #And I click on 'Sim only Tariff' tab
     And Click on 'Get Started' CTA
+    And click on the 'MBB' button
     #And click on the 'Tablets' button
     And Click on 'Select' CTA to buy a valid <tariffAmt> and <dataValue>
     #And Select ribboned tariff <tariff> in upgrade journey
@@ -29,4 +30,4 @@ Feature: 99_Reg_June_CFU_Validate_Basket_Page_For_Simo_Tariff_With_Active_Vouche
 
     Examples:
       | username               | tariffAmt | dataValue | promoCode | password | BSCstatus | BillCap   | CapAmount | Username     | consumer | B1     | B2  | B3     | B4  | Text   | Email  | Phone | Post | GDPRstatus | MBBStatus | DeviceType | PreSelected | KeyEvent |
-      | in056936_403469@o2.com | £11       | 3GB       | VOUCHER1  | test123  | Enabled   | CapMyBill | £15       | TEST ACCEPTA | Me       | Select | Not | Select | Not | Select | Select | Not   | Not  | Enabled    | No        | Connected  | No          | No       |
+      | in056936_403469@o2.com | £25       | 30GB       | SIMOOFF   | test123  | Enabled   | CapMyBill | £15       | TEST ACCEPTA | Me       | Select | Not | Select | Not | Select | Select | Not   | Not  | Enabled    | No        | Connected  | No          | No       |

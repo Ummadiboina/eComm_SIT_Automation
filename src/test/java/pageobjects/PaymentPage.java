@@ -73,7 +73,7 @@ public class PaymentPage {
     @FindBy(how = How.XPATH, using = "//*[@id='txtSecurityCode' or @id='CardCvv' or @id='txtCardSecurityCode']")
     public static WebElement SecurityCode;
 
-    @FindBy(how = How.ID, using = "btnPayNow")
+    @FindBy(how = How.XPATH, using = "//input[@id='btnPayNow']")
     public static WebElement Continue_Next_Step;
 
     @FindBy(how = How.XPATH, using = "//input[@name='UsernamePasswordEntry']")

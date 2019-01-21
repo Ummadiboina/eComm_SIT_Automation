@@ -66,8 +66,9 @@ public class ConnectedDeviceDetailsPageAction extends Environment {
 
         log.debug("In click And Collect now function");
         pageobjects.BasketPage.clickAndCollect.click();
-        Thread.sleep(3000);
-        pageobjects.BasketPage.StorePostcode.sendKeys("M4");
+        Thread.sleep(6000);
+        Screenshots.captureScreenshot();
+        pageobjects.BasketPage.StorePostcode.sendKeys("g13hf");
         log.debug("PostCode Entered for Search");
         Thread.sleep(2000);
         Screenshots.captureScreenshot();
@@ -87,7 +88,7 @@ public class ConnectedDeviceDetailsPageAction extends Environment {
         Screenshots.captureScreenshot();
 
         String collectionDetails = pageobjects.BasketPage.CollectionDetails.getText();
-        Thread.sleep(2000);
+        Thread.sleep(4000);
         if(collectionDetails.contains("Today")){
             log.debug("The device is available for collection today/now:: Collection Details is :"+collectionDetails);
         }else{

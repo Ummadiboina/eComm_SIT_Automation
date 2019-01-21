@@ -34,5 +34,5 @@ Feature: 128_BSC_Consumer_Existing_Tablets_BSC_Component_in_Tariff_and_Extras_Pa
     Then Validate consumer GDPR consent section is hidden in Order confirmation page or not
 
     Examples:
-      | username               | password | tabletname         | houseNumber | PostCode | BillCap   | CapAmount | NewBillCap | NewCapAmount      | BSCstatus | Username     | Action    | tariff                   | consumer | B1  | B2  | B3  | B4  | Text | Email | Phone | Post | GDPRstatus | MBBStatus | DeviceType | PreSelected | KeyEvent |
-      | in04796p_326403@o2.com | test123  | iPad Pro 10.5 inch | 11          | SL11ER   | CapMyBill | £5        | CapMyBill  | DontCapMyBillLink | Enabled   | TEST ACCEPTA | enterCode | 129.99upfront37.00amonth | Somone   | Not | Not | Not | Not | Not  | Not   | Not   | Not  | Enabled    | No        | Connected  | No          | No       |
+      | username                      | password | tabletname         | houseNumber | PostCode | BillCap   | CapAmount | NewBillCap | NewCapAmount      | BSCstatus | Username     | Action    | tariff                   | consumer | B1  | B2  | B3  | B4  | Text | Email | Phone | Post | GDPRstatus | MBBStatus | DeviceType | PreSelected | KeyEvent |
+      | 05ap14239632@stf.ref.o2.co.uk | test123  | iPad Pro 10.5 inch | 11          | SL11ER   | CapMyBill | £5        | CapMyBill  | DontCapMyBillLink | Enabled   | TEST ACCEPTA | enterCode | 129.99upfront37.00amonth | Somone   | Not | Not | Not | Not | Not  | Not   | Not   | Not  | Enabled    | No        | Connected  | No          | No       |

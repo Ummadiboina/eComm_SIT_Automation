@@ -74,7 +74,7 @@ public class AdditionalInformationPageActions extends Environment {
 	}
 
 	public static void AdditionalCardCCV() throws InterruptedException, IOException {
-		Thread.sleep(10000);
+		Thread.sleep(15000);
 		driver.switchTo().frame("deposit-iframe"); // switching the frame by ID
 
 
@@ -90,7 +90,7 @@ public class AdditionalInformationPageActions extends Environment {
 
 		// log.debug(driver.getTitle());
 
-		Thread.sleep(10000);
+		Thread.sleep(15000);
 
 		if (driver.findElements(By.xpath("//input[@type='password']")).size() > 0) {
 			PaymentPage.CCVSecurityCode.sendKeys("1234");
@@ -104,7 +104,7 @@ public class AdditionalInformationPageActions extends Environment {
 			log.debug("*********We are done***************");
 			log.debug("Exiting the payment section");
 
-			Thread.sleep(10000);
+			Thread.sleep(15000);
 		}
 		driver.switchTo().defaultContent();
 	}

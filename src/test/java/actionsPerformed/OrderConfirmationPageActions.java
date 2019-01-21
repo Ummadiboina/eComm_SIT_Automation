@@ -27,11 +27,7 @@ public class OrderConfirmationPageActions extends Environment {
 		log.debug("The details are " + pageobjects.OrderConfirmationPage.deliverySection.getText());
 		log.debug("...................................");
 		log.debug("The details are " + pageobjects.OrderConfirmationPage.imsMessage.getText());
-		log.debug("The details are " + pageobjects.OrderConfirmationPage.OrderconfirmationMessage.getText());
-		log.debug("...................................");
-		log.debug(pageobjects.OrderConfirmationPage.deliverySection.getText());
-		log.debug("...................................");
-		log.debug(pageobjects.OrderConfirmationPage.imsMessage.getText());
+
 		Screenshots.captureScreenshot();
 	}
 
@@ -81,9 +77,10 @@ public class OrderConfirmationPageActions extends Environment {
 		}
 	}
 
-	public static void OrderDeclineMessageDisplayed() throws IOException {
+	public static void OrderDeclineMessageDisplayed() throws IOException, InterruptedException {
 		log.debug("This is order decline page and the message in this page is as below......");
 
+		Thread.sleep(6000);
 		try {
 			String outercontainer = driver.findElement(By.xpath("//h1[normalize-space()='Unable to continue']")).getText();
 			log.debug("Trying to find the Element for order decline using element identifier");
@@ -194,7 +191,6 @@ public class OrderConfirmationPageActions extends Environment {
 
 	public static void Orderid() throws IOException {
 		log.debug("Your order has been successfully placed.Order number: ");
-		log.info("Your order has been successfully placed.Order number: ");
 		log.debug(pageobjects.OrderConfirmationPage.orderid.getText());
 		scrollToAnElement.scrollToElement(pageobjects.OrderConfirmationPage.orderid);
 		Screenshots.captureScreenshot();
