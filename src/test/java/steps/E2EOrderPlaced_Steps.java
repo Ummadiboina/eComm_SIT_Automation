@@ -2401,7 +2401,7 @@ public class E2EOrderPlaced_Steps {
         try {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             PageFactory.initElements(driver, ReviewPage.class);
-            Thread.sleep(5000);
+            Thread.sleep(10000);
             JavascriptExecutor jse = (JavascriptExecutor) driver;
             jse.executeScript("window.scrollBy(0,300)", "");
             ReviewPageActions.gettitlepage();
@@ -3073,19 +3073,23 @@ public class E2EOrderPlaced_Steps {
             PageFactory.initElements(driver, Agent_AdvisoryPage.class);
             PageFactory.initElements(driver, DeliveryPage.class);
 
-            if (pageobjects.DeliveryPage.EmailId_CCAcontinue.isDisplayed()) {
-                JavascriptExecutor jse = (JavascriptExecutor) driver;
-                scrollToAnElement.scrollToElement(pageobjects.DeliveryPage.EmailId_CCAcontinue);
-                Thread.sleep(3000);
-                Screenshots.captureScreenshot();
+            if(driver.findElements(By.xpath("//input[@id='ccaEmail']")).size()>0) {
+                if (pageobjects.DeliveryPage.EmailId_CCAcontinue.isDisplayed()) {
+                    JavascriptExecutor jse = (JavascriptExecutor) driver;
+                    scrollToAnElement.scrollToElement(pageobjects.DeliveryPage.EmailId_CCAcontinue);
+                    Thread.sleep(3000);
+                    Screenshots.captureScreenshot();
 
-                EmailId_CCAcontinue = pageobjects.DeliveryPage.EmailId_CCAcontinue.getAttribute("value");
+                    EmailId_CCAcontinue = pageobjects.DeliveryPage.EmailId_CCAcontinue.getAttribute("value");
+                }
             }
 
-            if (pageobjects.DeliveryPage.HouseNum.isDisplayed()) {
+            //if (pageobjects.DeliveryPage.HouseNum.isDisplayed()) {
+            if (pageobjects.DeliveryPage.crdeitCheckContent.isDisplayed()) {
                 DeliveryPageActions.SetDelivery_AFU();
+                Thread.sleep(4000);
             }
-            Thread.sleep(4000);
+
             Agent_AdvisoryChecksActions.AgreeAdvsioryCheck();
             Thread.sleep(6000);
         } catch (Exception e) {
@@ -11275,7 +11279,7 @@ public class E2EOrderPlaced_Steps {
             log.debug("Currently we are at page: " + driver.getTitle());
             Thread.sleep(5000);
             Agent_DealBuilderPageActions.ValidateAppliedBillSpendCapInAgentDealSummary(BillCapAmount, BSCstatus);
-            Thread.sleep(5000);
+            //Thread.sleep(5000);
         } catch (Exception e) {
             // TODO Auto-generated catch block
             log.debug("Unable to validate your bill cap in deal summary");
@@ -11294,7 +11298,7 @@ public class E2EOrderPlaced_Steps {
 
             //Recommendation is going live in Jan so commented
             UpgradeCustomerPageActions.clickOnConfigureOwnUpgrade();
-            Thread.sleep(4000);
+            Thread.sleep(5000);
 
             //UpgradeCustomerPageActions.clickOnGetStartedCTA();
 

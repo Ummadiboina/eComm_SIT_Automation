@@ -83,7 +83,7 @@ public class FitnessTrackerPageActions extends Environment {
             WebElement element = pageobjects.FitnessTrackerPage.RandomFitnesstracker;
             JavascriptExecutor executor = (JavascriptExecutor) driver;
             executor.executeScript("arguments[0].click();", element);
-            Thread.sleep(5000);
+            //Thread.sleep(5000);
             // Assert.assertEquals(elementName,"Galaxy S7 is not found");
             log.debug("Random Fitness tracker Device Selected");
         }
@@ -139,22 +139,16 @@ public class FitnessTrackerPageActions extends Environment {
             log.debug(status);
 
             if (status.contains("In Stock")) {
-                /*WebElement element = driver
-                        .findElement(By.xpath("//select[@class='accessory-option ng-pristine ng-valid']"));
-                JavascriptExecutor js = (JavascriptExecutor) driver;
-                js.executeScript("arguments[0].setAttribute('style', 'display:block;')", element);
-                new Select(element).selectByValue("1");*/
 
-                WebElement element = driver
-                        .findElement(By.xpath("//div[@on-dimension-select='selectQuantityDimension']/select"));
+                WebElement element = driver.findElement(By.xpath("//div[@on-dimension-select='selectQuantityDimension']/select"));
                 JavascriptExecutor js = (JavascriptExecutor) driver;
                 js.executeScript("arguments[0].setAttribute('style', 'display:block;')", element);
                 new Select(element).selectByValue("1");
 
                 Thread.sleep(3000);
 
-                WebElement DeviceDetailsQuantity = driver.findElement(
-                        By.xpath("//div[@on-dimension-select='selectQuantityDimension']/span[@role='combobox']"));
+                //WebElement DeviceDetailsQuantity = driver.findElement(By.xpath("//div[@on-dimension-select='selectQuantityDimension']/span[@role='combobox']"));
+                WebElement DeviceDetailsQuantity = driver.findElement(By.xpath("//div[@on-dimension-select='selectQuantityDimension']/span"));
                 String DeviceDetailsQuantityValue = DeviceDetailsQuantity.getText();
                 log.debug("DeviceDetailsQuantityValue is " + DeviceDetailsQuantityValue);
 
@@ -171,8 +165,7 @@ public class FitnessTrackerPageActions extends Environment {
             Screenshots.captureScreenshot();
 
         } catch (Exception e) {
-            WebElement DeviceDetailsQuantity = driver.findElement(
-                    By.xpath("//div[@on-dimension-select='selectQuantityDimension']/span[@role='combobox']"));
+            WebElement DeviceDetailsQuantity = driver.findElement(By.xpath("//div[@on-dimension-select='selectQuantityDimension']/span[@role='combobox']"));
             String DeviceDetailsQuantityValue = DeviceDetailsQuantity.getText();
             log.debug(DeviceDetailsQuantityValue);
             Assert.assertEquals("3", DeviceDetailsQuantityValue);

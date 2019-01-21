@@ -260,7 +260,7 @@ public class PAYMandPAYGTariffAndExtrasPageActions extends Environment {
 	}
 
 	public static void addToBasketLive() throws InterruptedException, IOException {
-
+		Thread.sleep(4000);
 		if (driver.findElements(By.xpath("(//input[@value='Go to basket'])[1]")).size() > 0) {
 			//driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 			Thread.sleep(4000);

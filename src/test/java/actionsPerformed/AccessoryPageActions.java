@@ -306,16 +306,15 @@ public class AccessoryPageActions extends Environment {
 				js.executeScript("arguments[0].setAttribute('style', 'display:block;')", element);
 				new Select(element).selectByValue(Limit);*/
 
-				WebElement element = driver
-						.findElement(By.xpath("//div[@on-dimension-select='selectQuantityDimension']/select"));
+				WebElement element = driver.findElement(By.xpath("//div[@on-dimension-select='selectQuantityDimension']/select"));
 				JavascriptExecutor js = (JavascriptExecutor) driver;
 				js.executeScript("arguments[0].setAttribute('style', 'display:block;')", element);
 				new Select(element).selectByValue(Limit);
 
 				Thread.sleep(3000);
 
-				WebElement DeviceDetailsQuantity = driver.findElement(
-						By.xpath("//div[@on-dimension-select='selectQuantityDimension']/span[@role='combobox']"));
+				//WebElement DeviceDetailsQuantity = driver.findElement(By.xpath("//div[@on-dimension-select='selectQuantityDimension']/span[@role='combobox']"));
+				WebElement DeviceDetailsQuantity = driver.findElement(By.xpath("//div[@on-dimension-select='selectQuantityDimension']/span"));
 				String DeviceDetailsQuantityValue = DeviceDetailsQuantity.getText();
 				log.debug("DeviceDetailsQuantityValue is " + DeviceDetailsQuantityValue);
 				count = count + Integer.parseInt(Limit);

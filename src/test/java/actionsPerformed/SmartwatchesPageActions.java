@@ -75,7 +75,7 @@ public class SmartwatchesPageActions extends Environment {
 
 			if (elementName.contains("Random Device")) {
 				log.debug("Going to select Random Device");
-				Thread.sleep(7000);
+				Thread.sleep(2000);
 				JavascriptExecutor executor = (JavascriptExecutor) driver;
 				executor.executeScript("arguments[0].click();", pageobjects.SmartwatchesPage.RandomSmartWatch);
 				//pageobjects.SmartwatchesPage.RandomSmartWatch.click();
@@ -127,37 +127,25 @@ public class SmartwatchesPageActions extends Environment {
 			log.debug("Delivery Information status:"+status);
 			Thread.sleep(3000);
 			if (status.contains("In Stock")) {
-				/*WebElement element = driver
-						.findElement(By.xpath("//select[@class='accessory-option ng-pristine ng-valid']"));
-				JavascriptExecutor js = (JavascriptExecutor) driver;
-				js.executeScript("arguments[0].setAttribute('style', 'display:block;')", element);
-				new Select(element).selectByValue("1");*/
 
-				WebElement element = driver
-						.findElement(By.xpath("//div[@on-dimension-select='selectQuantityDimension']/select"));
+
+				WebElement element = driver.findElement(By.xpath("//div[@on-dimension-select='selectQuantityDimension']/select"));
 				JavascriptExecutor js = (JavascriptExecutor) driver;
 				js.executeScript("arguments[0].setAttribute('style', 'display:block;')", element);
-				new Select(element).selectByValue("1");
 				Thread.sleep(3000);
+				new Select(element).selectByValue("1");
+				Thread.sleep(2000);
 
-				WebElement DeviceDetailsQuantity = driver.findElement(
-						By.xpath("//div[@on-dimension-select='selectQuantityDimension']/span[@role='combobox']"));
+				//WebElement DeviceDetailsQuantity = driver.findElement(By.xpath("//div[@on-dimension-select='selectQuantityDimension']/span[@role='combobox']"));
+				WebElement DeviceDetailsQuantity = driver.findElement(By.xpath("//div[@on-dimension-select='selectQuantityDimension']/span"));
 				String DeviceDetailsQuantityValue = DeviceDetailsQuantity.getText();
+				Thread.sleep(2000);
 				log.debug("DeviceDetailsQuantityValue is " + DeviceDetailsQuantityValue);
+
 
 				driver.findElement(By.id("deviceDetailsSubmit")).click();
 
 				Thread.sleep(3000);
-
-				/*
-				 * WebElement BasketQuantity =
-				 * driver.findElement(By.id("accessory-quantitySelectBoxIt")); String
-				 * BasketQuantityvalue = BasketQuantity.getText();
-				 * log.debug("Basket value is "+BasketQuantityvalue);
-				 * Assert.assertEquals("4", BasketQuantityvalue); log.debug(
-				 * "Values are correct , Basket quantity = " + BasketQuantityvalue +
-				 * "Device added value = 4");
-				 */
 			} else {
 				driver.navigate().back();
 			}

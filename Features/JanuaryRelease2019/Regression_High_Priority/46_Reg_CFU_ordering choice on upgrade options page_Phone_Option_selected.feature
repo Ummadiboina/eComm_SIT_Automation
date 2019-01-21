@@ -39,5 +39,5 @@ Feature: 46_Reg_CFU_ordering choice on upgrade options page_Phone_Option_selecte
     Then Validate consumer GDPR consent section is hidden in Order confirmation page or not
 
     Examples:
-      | username                        | password | handset  | BSCstatus | BillCap   | CapAmount         | Username     | Action | tariff                  | consumer | B1  | B2  | B3  | B4  | Text | Email | Phone | Post | GDPRstatus | MBBStatus | DeviceType | PreSelected | KeyEvent |
-      | prashanth.dosala@telefonica.com | test123  | iPhone X | Enabled   | CapMyBill | DontCapMyBillLink | TEST ACCEPTA | skip   | 19.99upfront45.00amonth | Someone  | Not | Not | Not | Not | Not  | Not   | Not   | Not  | Enabled    | No        | Connected  | No          | No       |
+      | username                                                 | password | handset  | BSCstatus | BillCap   | CapAmount         | Username     | Action | tariff                  | consumer | B1  | B2  | B3  | B4  | Text | Email | Phone | Post | GDPRstatus | MBBStatus | DeviceType | PreSelected | KeyEvent |
+      | sittester-d00ce50b-650b-4033-8174-1c91ee516ad9@gmail.com | test123  | iPhone X | Enabled   | CapMyBill | DontCapMyBillLink | TEST ACCEPTA | skip   | 19.99upfront45.00amonth | Someone  | Not | Not | Not | Not | Not  | Not   | Not   | Not  | Enabled    | No        | Connected  | No          | No       |

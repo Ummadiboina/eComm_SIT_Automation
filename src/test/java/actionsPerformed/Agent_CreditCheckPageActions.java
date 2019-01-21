@@ -101,8 +101,10 @@ public class Agent_CreditCheckPageActions extends Environment {
 		Agent_CreditCheckDetailsPage.DOB.sendKeys("10-10-1971");
 		log.debug("Entered date of birth");
 		Thread.sleep(2000);
-		Agent_CreditCheckDetailsPage.ContactNumber.sendKeys("07888594958");
-		log.debug("Entered contact number");
+		String phoneNum = RandomEmailAddressCreation.RandomPhoneNum();
+		//Agent_CreditCheckDetailsPage.ContactNumber.sendKeys("07888594958");
+		Agent_CreditCheckDetailsPage.ContactNumber.sendKeys(phoneNum);
+		log.debug("Entered contact number:"+phoneNum);
 		Thread.sleep(2000);
 		try {
 			Agent_CreditCheckDetailsPage.HouseNumber.sendKeys(HouseNumber);
@@ -304,7 +306,7 @@ public class Agent_CreditCheckPageActions extends Environment {
 				System.out.println("Switched to child window");
 
 				//driver.manage().timeouts().implicitlyWait(15,TimeUnit.SECONDS);
-				Thread.sleep(10000);
+				Thread.sleep(15000);
 
 				Agent_CreditCheckDetailsPage.CardHolderName.sendKeys(Username);
 				log.debug("Entered card holder name");
@@ -360,7 +362,7 @@ public class Agent_CreditCheckPageActions extends Environment {
 			Thread.sleep(4000);
 			Agent_CreditCheckDetailsPage.PerformCreditCheck.click();
 			Screenshots.captureScreenshot();
-			Thread.sleep(15000);
+			Thread.sleep(20000);
 		}
 		else
 		{

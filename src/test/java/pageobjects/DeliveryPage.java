@@ -15,6 +15,9 @@ public class DeliveryPage {
     @FindBy(how = How.XPATH, using = "//input[@name='houseNum']")
     public static WebElement HouseNum;
 
+    @FindBy(how = How.XPATH, using = "//div[@id='creditCheckContent']")
+    public static WebElement crdeitCheckContent;
+
     @FindBy(how = How.XPATH, using = "//input[@id='ccaEmail']")
     public static WebElement EmailId_CCAcontinue;
 

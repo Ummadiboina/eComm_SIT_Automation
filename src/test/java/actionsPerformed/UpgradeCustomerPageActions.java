@@ -509,13 +509,13 @@ public class UpgradeCustomerPageActions extends Environment {
         Screenshots.captureScreenshot();
             if (selectBtnEle.isDisplayed()) {
                 Thread.sleep(3000);
-                if(driver.findElements(By.xpath("//h3[contains(text(),'Device with 1GB preloaded data sim ')]")).size()>0) {
+                if(driver.findElements(By.xpath("//h3[contains(text(),'Device with 1GB preloaded data sim ')] | //h3[contains(text(),'preloaded')]")).size()>0) {
                     tariffNameTxt = driver.findElement(By.xpath("//h3[contains(text(),'Device with 1GB preloaded data sim ')]")).getText();
                     Thread.sleep(2000);
                     log.debug("Tariff:"+tariffNameTxt);
                 }
-                if(driver.findElements(By.xpath("//h3[contains(text(),'Device with 1GB preloaded data sim ')]")).size()>0) {
-                    marketingMessage = driver.findElement(By.xpath("//h3[contains(text(),'Device with 1GB preloaded data sim ')]/../../ul/li/p")).getText();
+                if(driver.findElements(By.xpath("//h3[contains(text(),'Device with 1GB preloaded data sim ')] | //h3[contains(text(),'preloaded')]")).size()>0) {
+                    marketingMessage = driver.findElement(By.xpath("//h3[contains(text(),'Device with 1GB preloaded data sim ')]/../../ul/li/p | //h3[contains(text(),'preloaded')]/../../ul/li/p")).getText();
                     Thread.sleep(2000);
                     log.debug("Marketing Message:"+marketingMessage);
                 }

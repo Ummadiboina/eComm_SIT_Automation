@@ -698,7 +698,7 @@ public class Agent_DealBuilderPageActions extends Environment {
         Agent_DealBuilderPage.CheckStore.click();
         log.debug("Clicked on Check store stock Tab");
 
-        Thread.sleep(4000);
+        Thread.sleep(6000);
 
         String Mainwindow = driver.getWindowHandle();
         // getting all the popup windows , hence using getwindowhandles instead of
@@ -711,7 +711,7 @@ public class Agent_DealBuilderPageActions extends Environment {
                 // Switching to Child window
                 driver.switchTo().window(ChildWindow);
                 Thread.sleep(3000);
-                Agent_DealBuilderPage.Postcode.sendKeys("M4");
+                Agent_DealBuilderPage.Postcode.sendKeys("g13hf");
 
                 Agent_DealBuilderPage.searchStore.click();
                 Thread.sleep(8000);
@@ -1295,7 +1295,7 @@ public class Agent_DealBuilderPageActions extends Environment {
                         log.debug("Bill Spend Cap list does not contain specified cap amount and your Bill cap is not selected ie:: " + BillCapAmount);
                         Assert.fail("Bill Spend Cap list does not contain specified cap amount and your Bill cap is not selected ie:: " + BillCapAmount);
                     }
-                    Thread.sleep(6000);
+                    Thread.sleep(8000);
                     String BillCapStatus = pageobjects.Agent_DealBuilderPage.BillSpendCapMessage.getText();
 
                     Thread.sleep(3000);
@@ -1383,9 +1383,9 @@ public class Agent_DealBuilderPageActions extends Environment {
                     scrollToAnElement.scrollToElement(pageobjects.Agent_DealBuilderPage.BillSpendCapHeader);
                     Screenshots.captureScreenshot();
                     log.debug("Bill Spend Cap header is displayed in " + pageTitle + " page ie :: " + pageobjects.Agent_DealBuilderPage.BillSpendCapHeader.getText());
-                    Thread.sleep(3000);
+                    //Thread.sleep(3000);
                     AppliedBillCap = pageobjects.Agent_DealBuilderPage.appliedBillCap.getText();
-                    Thread.sleep(6000);
+                    Thread.sleep(3000);
 
                     /*if (AppliedBillCap.contains(BillCapAmount)) {
                         log.debug("Applied bill cap is validated successfully in " + pageTitle + " page ie :: " + AppliedBillCap);
@@ -1396,7 +1396,7 @@ public class Agent_DealBuilderPageActions extends Environment {
 
                     //status message validation
                     if (BillCapAmount.equalsIgnoreCase("No Spend Cap")) {
-                        Thread.sleep(3000);
+                        //Thread.sleep(3000);
                         if (AppliedBillCap.contains("No spend cap applied")) {
                             log.debug("Bill Spend Status message after selecting No bill cap:: " + AppliedBillCap);
                             log.debug("No Bill Spend Status message validated successfully");
@@ -1406,7 +1406,7 @@ public class Agent_DealBuilderPageActions extends Environment {
                         }
 
                     } else {
-                        Thread.sleep(3000);
+                        //Thread.sleep(3000);
                         if (AppliedBillCap.contains(BillCapAmount)) {
                             log.debug("Bill Spend Status message after selecting bill cap:: " + AppliedBillCap);
                             log.debug("Status message after selecting bill cap contain your bill cap amount :: " + AppliedBillCap);

@@ -122,7 +122,7 @@ public class DeliveryPageActions extends Environment {
             log.debug("Entering an Random email id is " + str);
             DeliveryPage.Email_Address.sendKeys(str);
             log.debug("Setting the About you options");
-            log.debug("Setting the About you options");
+
             Select dropdown = new Select(pageobjects.DeliveryPage.Title);
             dropdown.selectByIndex(2);
             log.debug("Selected the dropdown Mrs");
@@ -131,7 +131,9 @@ public class DeliveryPageActions extends Environment {
             // DeliveryPage.First_Name.sendKeys(map.get(0).get("FirstName"));
             DeliveryPage.Last_Name.sendKeys(Surname);
             log.debug("Entered first name and last name as " + Firstname + " " + Surname);
-            DeliveryPage.Contact_Number.sendKeys("07829483426");
+            String phoneNum = RandomEmailAddressCreation.RandomPhoneNum();
+            //DeliveryPage.Contact_Number.sendKeys("07829483426");
+            DeliveryPage.Contact_Number.sendKeys(phoneNum);
             log.debug("Enetered 10 digit contact number");
             Thread.sleep(3000);
             Screenshots.captureScreenshot();
@@ -1318,7 +1320,7 @@ public class DeliveryPageActions extends Environment {
                 }
             } else {
                 log.debug("Device type is non-connected device\n");
-                if(driver.findElements(By.xpath("//div[@class='GDPR-Content']")).size()>0) {
+                if(driver.findElements(By.xpath("//div[@class='GDPR-Content']/h2 | //div[@class='GDPR-Content']/p")).size()>0) {
                     log.debug("Failed due to GDPR is in enabled mode for non-connected device \n");
                     Assert.fail("Failed due to GDPR is in enabled mode for non-connected device \n");
                 }else{
@@ -1336,7 +1338,7 @@ public class DeliveryPageActions extends Environment {
             }
 
             //gdpr consent validation
-            if(driver.findElements(By.xpath("//div[@class='GDPR-Content']")).size()>0) {
+            if(driver.findElements(By.xpath("//div[@class='GDPR-Content']/h2 | //div[@class='GDPR-Content']/p")).size()>0) {
                 log.debug("Failed due to GDPR is in enabled mode, it should be in disabled mode \n");
                 Assert.fail("Failed due to GDPR is in enabled mode, it should be in disabled mode \n");
             }else{
